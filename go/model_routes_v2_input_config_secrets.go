@@ -21,7 +21,9 @@ import (
 type RoutesV2InputConfigSecrets struct {
 	ActorsInfoSecretsConfig *ActorsInfoSecretsConfig
 	AdminActivitySecretsConfig *AdminActivitySecretsConfig
+	AdminLogsSecretsConfig *AdminLogsSecretsConfig
 	AuditLogsSecretsConfig *AuditLogsSecretsConfig
+	AuthLogsSecretsConfig *AuthLogsSecretsConfig
 	AzureActivityLogsSecretsConfig *AzureActivityLogsSecretsConfig
 	CloudConfigurationFindingsSecretsConfig *CloudConfigurationFindingsSecretsConfig
 	CloudLogsSecretsConfig *CloudLogsSecretsConfig
@@ -32,6 +34,7 @@ type RoutesV2InputConfigSecrets struct {
 	DriveActivitySecretsConfig *DriveActivitySecretsConfig
 	EntraIdSecretsConfig *EntraIdSecretsConfig
 	EventSecretsConfig *EventSecretsConfig
+	EventsLogsSecretsConfig *EventsLogsSecretsConfig
 	LogAnalyticsQuerySecretsConfig *LogAnalyticsQuerySecretsConfig
 	LoginActivitySecretsConfig *LoginActivitySecretsConfig
 	LoginSessionsSecretsConfig *LoginSessionsSecretsConfig
@@ -69,10 +72,24 @@ func AdminActivitySecretsConfigAsRoutesV2InputConfigSecrets(v *AdminActivitySecr
 	}
 }
 
+// AdminLogsSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns AdminLogsSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func AdminLogsSecretsConfigAsRoutesV2InputConfigSecrets(v *AdminLogsSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		AdminLogsSecretsConfig: v,
+	}
+}
+
 // AuditLogsSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns AuditLogsSecretsConfig wrapped in RoutesV2InputConfigSecrets
 func AuditLogsSecretsConfigAsRoutesV2InputConfigSecrets(v *AuditLogsSecretsConfig) RoutesV2InputConfigSecrets {
 	return RoutesV2InputConfigSecrets{
 		AuditLogsSecretsConfig: v,
+	}
+}
+
+// AuthLogsSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns AuthLogsSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func AuthLogsSecretsConfigAsRoutesV2InputConfigSecrets(v *AuthLogsSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		AuthLogsSecretsConfig: v,
 	}
 }
 
@@ -143,6 +160,13 @@ func EntraIdSecretsConfigAsRoutesV2InputConfigSecrets(v *EntraIdSecretsConfig) R
 func EventSecretsConfigAsRoutesV2InputConfigSecrets(v *EventSecretsConfig) RoutesV2InputConfigSecrets {
 	return RoutesV2InputConfigSecrets{
 		EventSecretsConfig: v,
+	}
+}
+
+// EventsLogsSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns EventsLogsSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func EventsLogsSecretsConfigAsRoutesV2InputConfigSecrets(v *EventsLogsSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		EventsLogsSecretsConfig: v,
 	}
 }
 
@@ -332,6 +356,23 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.AdminActivitySecretsConfig = nil
 	}
 
+	// try to unmarshal data into AdminLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.AdminLogsSecretsConfig)
+	if err == nil {
+		jsonAdminLogsSecretsConfig, _ := json.Marshal(dst.AdminLogsSecretsConfig)
+		if string(jsonAdminLogsSecretsConfig) == "{}" { // empty struct
+			dst.AdminLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AdminLogsSecretsConfig); err != nil {
+				dst.AdminLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AdminLogsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into AuditLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.AuditLogsSecretsConfig)
 	if err == nil {
@@ -347,6 +388,23 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AuditLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into AuthLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.AuthLogsSecretsConfig)
+	if err == nil {
+		jsonAuthLogsSecretsConfig, _ := json.Marshal(dst.AuthLogsSecretsConfig)
+		if string(jsonAuthLogsSecretsConfig) == "{}" { // empty struct
+			dst.AuthLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AuthLogsSecretsConfig); err != nil {
+				dst.AuthLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AuthLogsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into AzureActivityLogsSecretsConfig
@@ -517,6 +575,23 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.EventSecretsConfig = nil
+	}
+
+	// try to unmarshal data into EventsLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.EventsLogsSecretsConfig)
+	if err == nil {
+		jsonEventsLogsSecretsConfig, _ := json.Marshal(dst.EventsLogsSecretsConfig)
+		if string(jsonEventsLogsSecretsConfig) == "{}" { // empty struct
+			dst.EventsLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.EventsLogsSecretsConfig); err != nil {
+				dst.EventsLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.EventsLogsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into LogAnalyticsQuerySecretsConfig
@@ -880,7 +955,9 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		// reset to nil
 		dst.ActorsInfoSecretsConfig = nil
 		dst.AdminActivitySecretsConfig = nil
+		dst.AdminLogsSecretsConfig = nil
 		dst.AuditLogsSecretsConfig = nil
+		dst.AuthLogsSecretsConfig = nil
 		dst.AzureActivityLogsSecretsConfig = nil
 		dst.CloudConfigurationFindingsSecretsConfig = nil
 		dst.CloudLogsSecretsConfig = nil
@@ -891,6 +968,7 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.DriveActivitySecretsConfig = nil
 		dst.EntraIdSecretsConfig = nil
 		dst.EventSecretsConfig = nil
+		dst.EventsLogsSecretsConfig = nil
 		dst.LogAnalyticsQuerySecretsConfig = nil
 		dst.LoginActivitySecretsConfig = nil
 		dst.LoginSessionsSecretsConfig = nil
@@ -931,8 +1009,16 @@ func (src RoutesV2InputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AdminActivitySecretsConfig)
 	}
 
+	if src.AdminLogsSecretsConfig != nil {
+		return json.Marshal(&src.AdminLogsSecretsConfig)
+	}
+
 	if src.AuditLogsSecretsConfig != nil {
 		return json.Marshal(&src.AuditLogsSecretsConfig)
+	}
+
+	if src.AuthLogsSecretsConfig != nil {
+		return json.Marshal(&src.AuthLogsSecretsConfig)
 	}
 
 	if src.AzureActivityLogsSecretsConfig != nil {
@@ -973,6 +1059,10 @@ func (src RoutesV2InputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.EventSecretsConfig != nil {
 		return json.Marshal(&src.EventSecretsConfig)
+	}
+
+	if src.EventsLogsSecretsConfig != nil {
+		return json.Marshal(&src.EventsLogsSecretsConfig)
 	}
 
 	if src.LogAnalyticsQuerySecretsConfig != nil {
@@ -1075,8 +1165,16 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 		return obj.AdminActivitySecretsConfig
 	}
 
+	if obj.AdminLogsSecretsConfig != nil {
+		return obj.AdminLogsSecretsConfig
+	}
+
 	if obj.AuditLogsSecretsConfig != nil {
 		return obj.AuditLogsSecretsConfig
+	}
+
+	if obj.AuthLogsSecretsConfig != nil {
+		return obj.AuthLogsSecretsConfig
 	}
 
 	if obj.AzureActivityLogsSecretsConfig != nil {
@@ -1117,6 +1215,10 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 
 	if obj.EventSecretsConfig != nil {
 		return obj.EventSecretsConfig
+	}
+
+	if obj.EventsLogsSecretsConfig != nil {
+		return obj.EventsLogsSecretsConfig
 	}
 
 	if obj.LogAnalyticsQuerySecretsConfig != nil {

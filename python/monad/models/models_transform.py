@@ -31,8 +31,8 @@ class ModelsTransform(BaseModel):
     config: Optional[ModelsTransformConfig] = None
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    id: StrictStr
-    name: StrictStr
+    id: Optional[StrictStr] = None
+    name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["config", "created_at", "description", "id", "name", "organization_id", "updated_at"]

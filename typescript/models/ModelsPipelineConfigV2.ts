@@ -17,12 +17,12 @@ import { HttpFile } from '../http/http';
 export class ModelsPipelineConfigV2 {
     'createdAt'?: string;
     'description'?: string;
-    'edges': Array<ModelsPipelineEdge>;
-    'enabled': boolean;
-    'id': string;
-    'name': string;
-    'nodes': Array<ModelsPipelineNode>;
-    'organizationId': string;
+    'edges'?: Array<ModelsPipelineEdge>;
+    'enabled'?: boolean;
+    'id'?: string;
+    'name'?: string;
+    'nodes'?: Array<ModelsPipelineNode>;
+    'organizationId'?: string;
     'organizationName'?: string;
     'updatedAt'?: string;
 

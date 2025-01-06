@@ -17,10 +17,10 @@ export class ModelsInput {
     'config'?: ModelsInputConfig;
     'createdAt'?: string;
     'description'?: string;
-    'id': string;
-    'name': string;
-    'organizationId': string;
-    'type': string;
+    'id'?: string;
+    'name'?: string;
+    'organizationId'?: string;
+    'type'?: string;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;

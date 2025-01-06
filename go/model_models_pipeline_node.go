@@ -13,8 +13,6 @@ package monad
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the ModelsPipelineNode type satisfies the MappedNullable interface at compile time
@@ -23,28 +21,23 @@ var _ MappedNullable = &ModelsPipelineNode{}
 // ModelsPipelineNode struct for ModelsPipelineNode
 type ModelsPipelineNode struct {
 	Component *ModelsNodeComponent `json:"component,omitempty"`
-	ComponentId string `json:"component_id"`
+	ComponentId *string `json:"component_id,omitempty"`
 	ComponentSubType *string `json:"component_sub_type,omitempty"`
-	ComponentType string `json:"component_type"`
+	ComponentType *string `json:"component_type,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
-	Enabled bool `json:"enabled"`
+	Enabled *bool `json:"enabled,omitempty"`
 	Id *string `json:"id,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	PipelineId *string `json:"pipeline_id,omitempty"`
 	Slug *string `json:"slug,omitempty"`
 }
 
-type _ModelsPipelineNode ModelsPipelineNode
-
 // NewModelsPipelineNode instantiates a new ModelsPipelineNode object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsPipelineNode(componentId string, componentType string, enabled bool) *ModelsPipelineNode {
+func NewModelsPipelineNode() *ModelsPipelineNode {
 	this := ModelsPipelineNode{}
-	this.ComponentId = componentId
-	this.ComponentType = componentType
-	this.Enabled = enabled
 	return &this
 }
 
@@ -88,28 +81,36 @@ func (o *ModelsPipelineNode) SetComponent(v ModelsNodeComponent) {
 	o.Component = &v
 }
 
-// GetComponentId returns the ComponentId field value
+// GetComponentId returns the ComponentId field value if set, zero value otherwise.
 func (o *ModelsPipelineNode) GetComponentId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ComponentId) {
 		var ret string
 		return ret
 	}
-
-	return o.ComponentId
+	return *o.ComponentId
 }
 
-// GetComponentIdOk returns a tuple with the ComponentId field value
+// GetComponentIdOk returns a tuple with the ComponentId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineNode) GetComponentIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ComponentId) {
 		return nil, false
 	}
-	return &o.ComponentId, true
+	return o.ComponentId, true
 }
 
-// SetComponentId sets field value
+// HasComponentId returns a boolean if a field has been set.
+func (o *ModelsPipelineNode) HasComponentId() bool {
+	if o != nil && !IsNil(o.ComponentId) {
+		return true
+	}
+
+	return false
+}
+
+// SetComponentId gets a reference to the given string and assigns it to the ComponentId field.
 func (o *ModelsPipelineNode) SetComponentId(v string) {
-	o.ComponentId = v
+	o.ComponentId = &v
 }
 
 // GetComponentSubType returns the ComponentSubType field value if set, zero value otherwise.
@@ -144,28 +145,36 @@ func (o *ModelsPipelineNode) SetComponentSubType(v string) {
 	o.ComponentSubType = &v
 }
 
-// GetComponentType returns the ComponentType field value
+// GetComponentType returns the ComponentType field value if set, zero value otherwise.
 func (o *ModelsPipelineNode) GetComponentType() string {
-	if o == nil {
+	if o == nil || IsNil(o.ComponentType) {
 		var ret string
 		return ret
 	}
-
-	return o.ComponentType
+	return *o.ComponentType
 }
 
-// GetComponentTypeOk returns a tuple with the ComponentType field value
+// GetComponentTypeOk returns a tuple with the ComponentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineNode) GetComponentTypeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ComponentType) {
 		return nil, false
 	}
-	return &o.ComponentType, true
+	return o.ComponentType, true
 }
 
-// SetComponentType sets field value
+// HasComponentType returns a boolean if a field has been set.
+func (o *ModelsPipelineNode) HasComponentType() bool {
+	if o != nil && !IsNil(o.ComponentType) {
+		return true
+	}
+
+	return false
+}
+
+// SetComponentType gets a reference to the given string and assigns it to the ComponentType field.
 func (o *ModelsPipelineNode) SetComponentType(v string) {
-	o.ComponentType = v
+	o.ComponentType = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -200,28 +209,36 @@ func (o *ModelsPipelineNode) SetCreatedAt(v string) {
 	o.CreatedAt = &v
 }
 
-// GetEnabled returns the Enabled field value
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *ModelsPipelineNode) GetEnabled() bool {
-	if o == nil {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
-
-	return o.Enabled
+	return *o.Enabled
 }
 
-// GetEnabledOk returns a tuple with the Enabled field value
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineNode) GetEnabledOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
-	return &o.Enabled, true
+	return o.Enabled, true
 }
 
-// SetEnabled sets field value
+// HasEnabled returns a boolean if a field has been set.
+func (o *ModelsPipelineNode) HasEnabled() bool {
+	if o != nil && !IsNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *ModelsPipelineNode) SetEnabled(v bool) {
-	o.Enabled = v
+	o.Enabled = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -365,15 +382,21 @@ func (o ModelsPipelineNode) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Component) {
 		toSerialize["component"] = o.Component
 	}
-	toSerialize["component_id"] = o.ComponentId
+	if !IsNil(o.ComponentId) {
+		toSerialize["component_id"] = o.ComponentId
+	}
 	if !IsNil(o.ComponentSubType) {
 		toSerialize["component_sub_type"] = o.ComponentSubType
 	}
-	toSerialize["component_type"] = o.ComponentType
+	if !IsNil(o.ComponentType) {
+		toSerialize["component_type"] = o.ComponentType
+	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
 	}
-	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
@@ -387,45 +410,6 @@ func (o ModelsPipelineNode) ToMap() (map[string]interface{}, error) {
 		toSerialize["slug"] = o.Slug
 	}
 	return toSerialize, nil
-}
-
-func (o *ModelsPipelineNode) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"component_id",
-		"component_type",
-		"enabled",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varModelsPipelineNode := _ModelsPipelineNode{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varModelsPipelineNode)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ModelsPipelineNode(varModelsPipelineNode)
-
-	return err
 }
 
 type NullableModelsPipelineNode struct {

@@ -29,11 +29,11 @@ class ModelsPipeline(BaseModel):
     """ # noqa: E501
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    enabled: StrictBool
-    id: StrictStr
+    enabled: Optional[StrictBool] = None
+    id: Optional[StrictStr] = None
     input_id: Optional[StrictStr] = None
-    name: StrictStr
-    organization_id: StrictStr
+    name: Optional[StrictStr] = None
+    organization_id: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["created_at", "description", "enabled", "id", "input_id", "name", "organization_id", "updated_at"]
 

@@ -13,8 +13,6 @@ package monad
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the ModelsPipelineEdgeCondition type satisfies the MappedNullable interface at compile time
@@ -23,18 +21,15 @@ var _ MappedNullable = &ModelsPipelineEdgeCondition{}
 // ModelsPipelineEdgeCondition struct for ModelsPipelineEdgeCondition
 type ModelsPipelineEdgeCondition struct {
 	Config map[string]interface{} `json:"config,omitempty"`
-	TypeId string `json:"type_id"`
+	TypeId *string `json:"type_id,omitempty"`
 }
-
-type _ModelsPipelineEdgeCondition ModelsPipelineEdgeCondition
 
 // NewModelsPipelineEdgeCondition instantiates a new ModelsPipelineEdgeCondition object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsPipelineEdgeCondition(typeId string) *ModelsPipelineEdgeCondition {
+func NewModelsPipelineEdgeCondition() *ModelsPipelineEdgeCondition {
 	this := ModelsPipelineEdgeCondition{}
-	this.TypeId = typeId
 	return &this
 }
 
@@ -78,28 +73,36 @@ func (o *ModelsPipelineEdgeCondition) SetConfig(v map[string]interface{}) {
 	o.Config = v
 }
 
-// GetTypeId returns the TypeId field value
+// GetTypeId returns the TypeId field value if set, zero value otherwise.
 func (o *ModelsPipelineEdgeCondition) GetTypeId() string {
-	if o == nil {
+	if o == nil || IsNil(o.TypeId) {
 		var ret string
 		return ret
 	}
-
-	return o.TypeId
+	return *o.TypeId
 }
 
-// GetTypeIdOk returns a tuple with the TypeId field value
+// GetTypeIdOk returns a tuple with the TypeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineEdgeCondition) GetTypeIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.TypeId) {
 		return nil, false
 	}
-	return &o.TypeId, true
+	return o.TypeId, true
 }
 
-// SetTypeId sets field value
+// HasTypeId returns a boolean if a field has been set.
+func (o *ModelsPipelineEdgeCondition) HasTypeId() bool {
+	if o != nil && !IsNil(o.TypeId) {
+		return true
+	}
+
+	return false
+}
+
+// SetTypeId gets a reference to the given string and assigns it to the TypeId field.
 func (o *ModelsPipelineEdgeCondition) SetTypeId(v string) {
-	o.TypeId = v
+	o.TypeId = &v
 }
 
 func (o ModelsPipelineEdgeCondition) MarshalJSON() ([]byte, error) {
@@ -115,45 +118,10 @@ func (o ModelsPipelineEdgeCondition) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
-	toSerialize["type_id"] = o.TypeId
+	if !IsNil(o.TypeId) {
+		toSerialize["type_id"] = o.TypeId
+	}
 	return toSerialize, nil
-}
-
-func (o *ModelsPipelineEdgeCondition) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type_id",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varModelsPipelineEdgeCondition := _ModelsPipelineEdgeCondition{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varModelsPipelineEdgeCondition)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ModelsPipelineEdgeCondition(varModelsPipelineEdgeCondition)
-
-	return err
 }
 
 type NullableModelsPipelineEdgeCondition struct {

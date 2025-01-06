@@ -13,8 +13,6 @@ package monad
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the ModelsPipelineEdge type satisfies the MappedNullable interface at compile time
@@ -22,28 +20,23 @@ var _ MappedNullable = &ModelsPipelineEdge{}
 
 // ModelsPipelineEdge struct for ModelsPipelineEdge
 type ModelsPipelineEdge struct {
-	Conditions ModelsPipelineEdgeConditions `json:"conditions"`
+	Conditions *ModelsPipelineEdgeConditions `json:"conditions,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
-	FromNodeInstanceId string `json:"from_node_instance_id"`
+	FromNodeInstanceId *string `json:"from_node_instance_id,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	PipelineId *string `json:"pipeline_id,omitempty"`
-	ToNodeInstanceId string `json:"to_node_instance_id"`
+	ToNodeInstanceId *string `json:"to_node_instance_id,omitempty"`
 }
-
-type _ModelsPipelineEdge ModelsPipelineEdge
 
 // NewModelsPipelineEdge instantiates a new ModelsPipelineEdge object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsPipelineEdge(conditions ModelsPipelineEdgeConditions, fromNodeInstanceId string, toNodeInstanceId string) *ModelsPipelineEdge {
+func NewModelsPipelineEdge() *ModelsPipelineEdge {
 	this := ModelsPipelineEdge{}
-	this.Conditions = conditions
-	this.FromNodeInstanceId = fromNodeInstanceId
-	this.ToNodeInstanceId = toNodeInstanceId
 	return &this
 }
 
@@ -55,28 +48,36 @@ func NewModelsPipelineEdgeWithDefaults() *ModelsPipelineEdge {
 	return &this
 }
 
-// GetConditions returns the Conditions field value
+// GetConditions returns the Conditions field value if set, zero value otherwise.
 func (o *ModelsPipelineEdge) GetConditions() ModelsPipelineEdgeConditions {
-	if o == nil {
+	if o == nil || IsNil(o.Conditions) {
 		var ret ModelsPipelineEdgeConditions
 		return ret
 	}
-
-	return o.Conditions
+	return *o.Conditions
 }
 
-// GetConditionsOk returns a tuple with the Conditions field value
+// GetConditionsOk returns a tuple with the Conditions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineEdge) GetConditionsOk() (*ModelsPipelineEdgeConditions, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Conditions) {
 		return nil, false
 	}
-	return &o.Conditions, true
+	return o.Conditions, true
 }
 
-// SetConditions sets field value
+// HasConditions returns a boolean if a field has been set.
+func (o *ModelsPipelineEdge) HasConditions() bool {
+	if o != nil && !IsNil(o.Conditions) {
+		return true
+	}
+
+	return false
+}
+
+// SetConditions gets a reference to the given ModelsPipelineEdgeConditions and assigns it to the Conditions field.
 func (o *ModelsPipelineEdge) SetConditions(v ModelsPipelineEdgeConditions) {
-	o.Conditions = v
+	o.Conditions = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -143,28 +144,36 @@ func (o *ModelsPipelineEdge) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetFromNodeInstanceId returns the FromNodeInstanceId field value
+// GetFromNodeInstanceId returns the FromNodeInstanceId field value if set, zero value otherwise.
 func (o *ModelsPipelineEdge) GetFromNodeInstanceId() string {
-	if o == nil {
+	if o == nil || IsNil(o.FromNodeInstanceId) {
 		var ret string
 		return ret
 	}
-
-	return o.FromNodeInstanceId
+	return *o.FromNodeInstanceId
 }
 
-// GetFromNodeInstanceIdOk returns a tuple with the FromNodeInstanceId field value
+// GetFromNodeInstanceIdOk returns a tuple with the FromNodeInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineEdge) GetFromNodeInstanceIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.FromNodeInstanceId) {
 		return nil, false
 	}
-	return &o.FromNodeInstanceId, true
+	return o.FromNodeInstanceId, true
 }
 
-// SetFromNodeInstanceId sets field value
+// HasFromNodeInstanceId returns a boolean if a field has been set.
+func (o *ModelsPipelineEdge) HasFromNodeInstanceId() bool {
+	if o != nil && !IsNil(o.FromNodeInstanceId) {
+		return true
+	}
+
+	return false
+}
+
+// SetFromNodeInstanceId gets a reference to the given string and assigns it to the FromNodeInstanceId field.
 func (o *ModelsPipelineEdge) SetFromNodeInstanceId(v string) {
-	o.FromNodeInstanceId = v
+	o.FromNodeInstanceId = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -295,28 +304,36 @@ func (o *ModelsPipelineEdge) SetPipelineId(v string) {
 	o.PipelineId = &v
 }
 
-// GetToNodeInstanceId returns the ToNodeInstanceId field value
+// GetToNodeInstanceId returns the ToNodeInstanceId field value if set, zero value otherwise.
 func (o *ModelsPipelineEdge) GetToNodeInstanceId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ToNodeInstanceId) {
 		var ret string
 		return ret
 	}
-
-	return o.ToNodeInstanceId
+	return *o.ToNodeInstanceId
 }
 
-// GetToNodeInstanceIdOk returns a tuple with the ToNodeInstanceId field value
+// GetToNodeInstanceIdOk returns a tuple with the ToNodeInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineEdge) GetToNodeInstanceIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ToNodeInstanceId) {
 		return nil, false
 	}
-	return &o.ToNodeInstanceId, true
+	return o.ToNodeInstanceId, true
 }
 
-// SetToNodeInstanceId sets field value
+// HasToNodeInstanceId returns a boolean if a field has been set.
+func (o *ModelsPipelineEdge) HasToNodeInstanceId() bool {
+	if o != nil && !IsNil(o.ToNodeInstanceId) {
+		return true
+	}
+
+	return false
+}
+
+// SetToNodeInstanceId gets a reference to the given string and assigns it to the ToNodeInstanceId field.
 func (o *ModelsPipelineEdge) SetToNodeInstanceId(v string) {
-	o.ToNodeInstanceId = v
+	o.ToNodeInstanceId = &v
 }
 
 func (o ModelsPipelineEdge) MarshalJSON() ([]byte, error) {
@@ -329,14 +346,18 @@ func (o ModelsPipelineEdge) MarshalJSON() ([]byte, error) {
 
 func (o ModelsPipelineEdge) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["conditions"] = o.Conditions
+	if !IsNil(o.Conditions) {
+		toSerialize["conditions"] = o.Conditions
+	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["from_node_instance_id"] = o.FromNodeInstanceId
+	if !IsNil(o.FromNodeInstanceId) {
+		toSerialize["from_node_instance_id"] = o.FromNodeInstanceId
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
@@ -349,47 +370,10 @@ func (o ModelsPipelineEdge) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PipelineId) {
 		toSerialize["pipeline_id"] = o.PipelineId
 	}
-	toSerialize["to_node_instance_id"] = o.ToNodeInstanceId
+	if !IsNil(o.ToNodeInstanceId) {
+		toSerialize["to_node_instance_id"] = o.ToNodeInstanceId
+	}
 	return toSerialize, nil
-}
-
-func (o *ModelsPipelineEdge) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"conditions",
-		"from_node_instance_id",
-		"to_node_instance_id",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varModelsPipelineEdge := _ModelsPipelineEdge{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varModelsPipelineEdge)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ModelsPipelineEdge(varModelsPipelineEdge)
-
-	return err
 }
 
 type NullableModelsPipelineEdge struct {

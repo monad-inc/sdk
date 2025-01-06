@@ -29,11 +29,11 @@ class ModelsPipelineNode(BaseModel):
     ModelsPipelineNode
     """ # noqa: E501
     component: Optional[ModelsNodeComponent] = None
-    component_id: StrictStr
+    component_id: Optional[StrictStr] = None
     component_sub_type: Optional[StrictStr] = None
-    component_type: StrictStr
+    component_type: Optional[StrictStr] = None
     created_at: Optional[StrictStr] = None
-    enabled: StrictBool
+    enabled: Optional[StrictBool] = None
     id: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None

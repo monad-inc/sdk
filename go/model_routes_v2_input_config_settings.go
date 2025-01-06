@@ -21,7 +21,9 @@ import (
 type RoutesV2InputConfigSettings struct {
 	ActorsInfoSettingsConfig *ActorsInfoSettingsConfig
 	AdminActivitySettingsConfig *AdminActivitySettingsConfig
+	AdminLogsSettingsConfig *AdminLogsSettingsConfig
 	AuditLogsSettingsConfig *AuditLogsSettingsConfig
+	AuthLogsSettingsConfig *AuthLogsSettingsConfig
 	AwsS3SettingsConfig *AwsS3SettingsConfig
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
 	CloudConfigurationFindingsSettingsConfig *CloudConfigurationFindingsSettingsConfig
@@ -36,6 +38,7 @@ type RoutesV2InputConfigSettings struct {
 	DriveActivitySettingsConfig *DriveActivitySettingsConfig
 	EntraIdSettingsConfig *EntraIdSettingsConfig
 	EventSettingsConfig *EventSettingsConfig
+	EventsLogsSettingsConfig *EventsLogsSettingsConfig
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
 	LoginActivitySettingsConfig *LoginActivitySettingsConfig
 	LoginSessionsSettingsConfig *LoginSessionsSettingsConfig
@@ -67,10 +70,24 @@ func AdminActivitySettingsConfigAsRoutesV2InputConfigSettings(v *AdminActivitySe
 	}
 }
 
+// AdminLogsSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns AdminLogsSettingsConfig wrapped in RoutesV2InputConfigSettings
+func AdminLogsSettingsConfigAsRoutesV2InputConfigSettings(v *AdminLogsSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		AdminLogsSettingsConfig: v,
+	}
+}
+
 // AuditLogsSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns AuditLogsSettingsConfig wrapped in RoutesV2InputConfigSettings
 func AuditLogsSettingsConfigAsRoutesV2InputConfigSettings(v *AuditLogsSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
 		AuditLogsSettingsConfig: v,
+	}
+}
+
+// AuthLogsSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns AuthLogsSettingsConfig wrapped in RoutesV2InputConfigSettings
+func AuthLogsSettingsConfigAsRoutesV2InputConfigSettings(v *AuthLogsSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		AuthLogsSettingsConfig: v,
 	}
 }
 
@@ -169,6 +186,13 @@ func EntraIdSettingsConfigAsRoutesV2InputConfigSettings(v *EntraIdSettingsConfig
 func EventSettingsConfigAsRoutesV2InputConfigSettings(v *EventSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
 		EventSettingsConfig: v,
+	}
+}
+
+// EventsLogsSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns EventsLogsSettingsConfig wrapped in RoutesV2InputConfigSettings
+func EventsLogsSettingsConfigAsRoutesV2InputConfigSettings(v *EventsLogsSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		EventsLogsSettingsConfig: v,
 	}
 }
 
@@ -316,6 +340,23 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.AdminActivitySettingsConfig = nil
 	}
 
+	// try to unmarshal data into AdminLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AdminLogsSettingsConfig)
+	if err == nil {
+		jsonAdminLogsSettingsConfig, _ := json.Marshal(dst.AdminLogsSettingsConfig)
+		if string(jsonAdminLogsSettingsConfig) == "{}" { // empty struct
+			dst.AdminLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AdminLogsSettingsConfig); err != nil {
+				dst.AdminLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AdminLogsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into AuditLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.AuditLogsSettingsConfig)
 	if err == nil {
@@ -331,6 +372,23 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AuditLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into AuthLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AuthLogsSettingsConfig)
+	if err == nil {
+		jsonAuthLogsSettingsConfig, _ := json.Marshal(dst.AuthLogsSettingsConfig)
+		if string(jsonAuthLogsSettingsConfig) == "{}" { // empty struct
+			dst.AuthLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AuthLogsSettingsConfig); err != nil {
+				dst.AuthLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AuthLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into AwsS3SettingsConfig
@@ -569,6 +627,23 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.EventSettingsConfig = nil
+	}
+
+	// try to unmarshal data into EventsLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.EventsLogsSettingsConfig)
+	if err == nil {
+		jsonEventsLogsSettingsConfig, _ := json.Marshal(dst.EventsLogsSettingsConfig)
+		if string(jsonEventsLogsSettingsConfig) == "{}" { // empty struct
+			dst.EventsLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.EventsLogsSettingsConfig); err != nil {
+				dst.EventsLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.EventsLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into LogAnalyticsQuerySettingsConfig
@@ -830,7 +905,9 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		// reset to nil
 		dst.ActorsInfoSettingsConfig = nil
 		dst.AdminActivitySettingsConfig = nil
+		dst.AdminLogsSettingsConfig = nil
 		dst.AuditLogsSettingsConfig = nil
+		dst.AuthLogsSettingsConfig = nil
 		dst.AwsS3SettingsConfig = nil
 		dst.AzureActivityLogsSettingsConfig = nil
 		dst.CloudConfigurationFindingsSettingsConfig = nil
@@ -845,6 +922,7 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.DriveActivitySettingsConfig = nil
 		dst.EntraIdSettingsConfig = nil
 		dst.EventSettingsConfig = nil
+		dst.EventsLogsSettingsConfig = nil
 		dst.LogAnalyticsQuerySettingsConfig = nil
 		dst.LoginActivitySettingsConfig = nil
 		dst.LoginSessionsSettingsConfig = nil
@@ -879,8 +957,16 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AdminActivitySettingsConfig)
 	}
 
+	if src.AdminLogsSettingsConfig != nil {
+		return json.Marshal(&src.AdminLogsSettingsConfig)
+	}
+
 	if src.AuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.AuditLogsSettingsConfig)
+	}
+
+	if src.AuthLogsSettingsConfig != nil {
+		return json.Marshal(&src.AuthLogsSettingsConfig)
 	}
 
 	if src.AwsS3SettingsConfig != nil {
@@ -937,6 +1023,10 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.EventSettingsConfig != nil {
 		return json.Marshal(&src.EventSettingsConfig)
+	}
+
+	if src.EventsLogsSettingsConfig != nil {
+		return json.Marshal(&src.EventsLogsSettingsConfig)
 	}
 
 	if src.LogAnalyticsQuerySettingsConfig != nil {
@@ -1015,8 +1105,16 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 		return obj.AdminActivitySettingsConfig
 	}
 
+	if obj.AdminLogsSettingsConfig != nil {
+		return obj.AdminLogsSettingsConfig
+	}
+
 	if obj.AuditLogsSettingsConfig != nil {
 		return obj.AuditLogsSettingsConfig
+	}
+
+	if obj.AuthLogsSettingsConfig != nil {
+		return obj.AuthLogsSettingsConfig
 	}
 
 	if obj.AwsS3SettingsConfig != nil {
@@ -1073,6 +1171,10 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.EventSettingsConfig != nil {
 		return obj.EventSettingsConfig
+	}
+
+	if obj.EventsLogsSettingsConfig != nil {
+		return obj.EventsLogsSettingsConfig
 	}
 
 	if obj.LogAnalyticsQuerySettingsConfig != nil {

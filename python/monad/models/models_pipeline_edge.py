@@ -28,15 +28,15 @@ class ModelsPipelineEdge(BaseModel):
     """
     ModelsPipelineEdge
     """ # noqa: E501
-    conditions: ModelsPipelineEdgeConditions
+    conditions: Optional[ModelsPipelineEdgeConditions] = None
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    from_node_instance_id: StrictStr
+    from_node_instance_id: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None
-    to_node_instance_id: StrictStr
+    to_node_instance_id: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["conditions", "created_at", "description", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "to_node_instance_id"]
 
     model_config = ConfigDict(

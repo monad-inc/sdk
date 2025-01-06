@@ -29,7 +29,7 @@ class ModelsPipelineEdgeConditions(BaseModel):
     ModelsPipelineEdgeConditions
     """ # noqa: E501
     conditions: Optional[List[ModelsPipelineEdgeCondition]] = None
-    operator: StrictStr
+    operator: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["conditions", "operator"]
 
     model_config = ConfigDict(

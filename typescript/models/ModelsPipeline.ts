@@ -15,11 +15,11 @@ import { HttpFile } from '../http/http';
 export class ModelsPipeline {
     'createdAt'?: string;
     'description'?: string;
-    'enabled': boolean;
-    'id': string;
+    'enabled'?: boolean;
+    'id'?: string;
     'inputId'?: string;
-    'name': string;
-    'organizationId': string;
+    'name'?: string;
+    'organizationId'?: string;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;

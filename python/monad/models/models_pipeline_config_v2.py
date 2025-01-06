@@ -31,12 +31,12 @@ class ModelsPipelineConfigV2(BaseModel):
     """ # noqa: E501
     created_at: Optional[StrictStr] = Field(default=None, alias="createdAt")
     description: Optional[StrictStr] = None
-    edges: List[ModelsPipelineEdge]
-    enabled: StrictBool
-    id: StrictStr
-    name: StrictStr
-    nodes: List[ModelsPipelineNode]
-    organization_id: StrictStr = Field(alias="organizationId")
+    edges: Optional[List[ModelsPipelineEdge]] = None
+    enabled: Optional[StrictBool] = None
+    id: Optional[StrictStr] = None
+    name: Optional[StrictStr] = None
+    nodes: Optional[List[ModelsPipelineNode]] = None
+    organization_id: Optional[StrictStr] = Field(default=None, alias="organizationId")
     organization_name: Optional[StrictStr] = Field(default=None, alias="organizationName")
     updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
     __properties: ClassVar[List[str]] = ["createdAt", "description", "edges", "enabled", "id", "name", "nodes", "organizationId", "organizationName", "updatedAt"]

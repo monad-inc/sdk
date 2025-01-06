@@ -2,10 +2,14 @@ export * from '../models/ActorsInfoSecretsConfig';
 export * from '../models/ActorsInfoSettingsConfig';
 export * from '../models/AdminActivitySecretsConfig';
 export * from '../models/AdminActivitySettingsConfig';
+export * from '../models/AdminLogsSecretsConfig';
+export * from '../models/AdminLogsSettingsConfig';
 export * from '../models/AuditLogsSecretsConfig';
 export * from '../models/AuditLogsSettingsConfig';
 export * from '../models/Auth0Auth0TokenResponse';
 export * from '../models/Auth0LoginRequest';
+export * from '../models/AuthLogsSecretsConfig';
+export * from '../models/AuthLogsSettingsConfig';
 export * from '../models/AwsS3SettingsConfig';
 export * from '../models/AzureActivityLogsSecretsConfig';
 export * from '../models/AzureActivityLogsSettingsConfig';
@@ -35,6 +39,8 @@ export * from '../models/EntraIdSecretsConfig';
 export * from '../models/EntraIdSettingsConfig';
 export * from '../models/EventSecretsConfig';
 export * from '../models/EventSettingsConfig';
+export * from '../models/EventsLogsSecretsConfig';
+export * from '../models/EventsLogsSettingsConfig';
 export * from '../models/HttpSecretsConfig';
 export * from '../models/HttpSettingsConfig';
 export * from '../models/InputsConnectorMeta';
@@ -184,10 +190,14 @@ import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AdminActivitySecretsConfig } from '../models/AdminActivitySecretsConfig';
 import { AdminActivitySettingsConfig } from '../models/AdminActivitySettingsConfig';
+import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
+import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
 import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { Auth0Auth0TokenResponse } from '../models/Auth0Auth0TokenResponse';
 import { Auth0LoginRequest } from '../models/Auth0LoginRequest';
+import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
+import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
@@ -217,6 +227,8 @@ import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
+import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
+import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
@@ -382,10 +394,14 @@ let typeMap: {[index: string]: any} = {
     "ActorsInfoSettingsConfig": ActorsInfoSettingsConfig,
     "AdminActivitySecretsConfig": AdminActivitySecretsConfig,
     "AdminActivitySettingsConfig": AdminActivitySettingsConfig,
+    "AdminLogsSecretsConfig": AdminLogsSecretsConfig,
+    "AdminLogsSettingsConfig": AdminLogsSettingsConfig,
     "AuditLogsSecretsConfig": AuditLogsSecretsConfig,
     "AuditLogsSettingsConfig": AuditLogsSettingsConfig,
     "Auth0Auth0TokenResponse": Auth0Auth0TokenResponse,
     "Auth0LoginRequest": Auth0LoginRequest,
+    "AuthLogsSecretsConfig": AuthLogsSecretsConfig,
+    "AuthLogsSettingsConfig": AuthLogsSettingsConfig,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
     "AzureActivityLogsSecretsConfig": AzureActivityLogsSecretsConfig,
     "AzureActivityLogsSettingsConfig": AzureActivityLogsSettingsConfig,
@@ -415,6 +431,8 @@ let typeMap: {[index: string]: any} = {
     "EntraIdSettingsConfig": EntraIdSettingsConfig,
     "EventSecretsConfig": EventSecretsConfig,
     "EventSettingsConfig": EventSettingsConfig,
+    "EventsLogsSecretsConfig": EventsLogsSecretsConfig,
+    "EventsLogsSettingsConfig": EventsLogsSettingsConfig,
     "HttpSecretsConfig": HttpSecretsConfig,
     "HttpSettingsConfig": HttpSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,

@@ -17,8 +17,8 @@ export class ModelsTransform {
     'config'?: ModelsTransformConfig;
     'createdAt'?: string;
     'description'?: string;
-    'id': string;
-    'name': string;
+    'id'?: string;
+    'name'?: string;
     'organizationId'?: string;
     'updatedAt'?: string;
 

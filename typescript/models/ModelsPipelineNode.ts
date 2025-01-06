@@ -15,11 +15,11 @@ import { HttpFile } from '../http/http';
 
 export class ModelsPipelineNode {
     'component'?: ModelsNodeComponent;
-    'componentId': string;
+    'componentId'?: string;
     'componentSubType'?: string;
-    'componentType': string;
+    'componentType'?: string;
     'createdAt'?: string;
-    'enabled': boolean;
+    'enabled'?: boolean;
     'id'?: string;
     'organizationId'?: string;
     'pipelineId'?: string;

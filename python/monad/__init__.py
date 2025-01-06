@@ -56,10 +56,14 @@ from monad.models.actors_info_secrets_config import ActorsInfoSecretsConfig
 from monad.models.actors_info_settings_config import ActorsInfoSettingsConfig
 from monad.models.admin_activity_secrets_config import AdminActivitySecretsConfig
 from monad.models.admin_activity_settings_config import AdminActivitySettingsConfig
+from monad.models.admin_logs_secrets_config import AdminLogsSecretsConfig
+from monad.models.admin_logs_settings_config import AdminLogsSettingsConfig
 from monad.models.audit_logs_secrets_config import AuditLogsSecretsConfig
 from monad.models.audit_logs_settings_config import AuditLogsSettingsConfig
 from monad.models.auth0_auth0_token_response import Auth0Auth0TokenResponse
 from monad.models.auth0_login_request import Auth0LoginRequest
+from monad.models.auth_logs_secrets_config import AuthLogsSecretsConfig
+from monad.models.auth_logs_settings_config import AuthLogsSettingsConfig
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig
 from monad.models.azure_activity_logs_secrets_config import AzureActivityLogsSecretsConfig
 from monad.models.azure_activity_logs_settings_config import AzureActivityLogsSettingsConfig
@@ -89,6 +93,8 @@ from monad.models.entra_id_secrets_config import EntraIdSecretsConfig
 from monad.models.entra_id_settings_config import EntraIdSettingsConfig
 from monad.models.event_secrets_config import EventSecretsConfig
 from monad.models.event_settings_config import EventSettingsConfig
+from monad.models.events_logs_secrets_config import EventsLogsSecretsConfig
+from monad.models.events_logs_settings_config import EventsLogsSettingsConfig
 from monad.models.http_secrets_config import HttpSecretsConfig
 from monad.models.http_settings_config import HttpSettingsConfig
 from monad.models.inputs_connector_meta import InputsConnectorMeta

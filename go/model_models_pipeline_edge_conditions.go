@@ -13,8 +13,6 @@ package monad
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the ModelsPipelineEdgeConditions type satisfies the MappedNullable interface at compile time
@@ -23,18 +21,15 @@ var _ MappedNullable = &ModelsPipelineEdgeConditions{}
 // ModelsPipelineEdgeConditions struct for ModelsPipelineEdgeConditions
 type ModelsPipelineEdgeConditions struct {
 	Conditions []ModelsPipelineEdgeCondition `json:"conditions,omitempty"`
-	Operator string `json:"operator"`
+	Operator *string `json:"operator,omitempty"`
 }
-
-type _ModelsPipelineEdgeConditions ModelsPipelineEdgeConditions
 
 // NewModelsPipelineEdgeConditions instantiates a new ModelsPipelineEdgeConditions object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsPipelineEdgeConditions(operator string) *ModelsPipelineEdgeConditions {
+func NewModelsPipelineEdgeConditions() *ModelsPipelineEdgeConditions {
 	this := ModelsPipelineEdgeConditions{}
-	this.Operator = operator
 	return &this
 }
 
@@ -78,28 +73,36 @@ func (o *ModelsPipelineEdgeConditions) SetConditions(v []ModelsPipelineEdgeCondi
 	o.Conditions = v
 }
 
-// GetOperator returns the Operator field value
+// GetOperator returns the Operator field value if set, zero value otherwise.
 func (o *ModelsPipelineEdgeConditions) GetOperator() string {
-	if o == nil {
+	if o == nil || IsNil(o.Operator) {
 		var ret string
 		return ret
 	}
-
-	return o.Operator
+	return *o.Operator
 }
 
-// GetOperatorOk returns a tuple with the Operator field value
+// GetOperatorOk returns a tuple with the Operator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineEdgeConditions) GetOperatorOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Operator) {
 		return nil, false
 	}
-	return &o.Operator, true
+	return o.Operator, true
 }
 
-// SetOperator sets field value
+// HasOperator returns a boolean if a field has been set.
+func (o *ModelsPipelineEdgeConditions) HasOperator() bool {
+	if o != nil && !IsNil(o.Operator) {
+		return true
+	}
+
+	return false
+}
+
+// SetOperator gets a reference to the given string and assigns it to the Operator field.
 func (o *ModelsPipelineEdgeConditions) SetOperator(v string) {
-	o.Operator = v
+	o.Operator = &v
 }
 
 func (o ModelsPipelineEdgeConditions) MarshalJSON() ([]byte, error) {
@@ -115,45 +118,10 @@ func (o ModelsPipelineEdgeConditions) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Conditions) {
 		toSerialize["conditions"] = o.Conditions
 	}
-	toSerialize["operator"] = o.Operator
+	if !IsNil(o.Operator) {
+		toSerialize["operator"] = o.Operator
+	}
 	return toSerialize, nil
-}
-
-func (o *ModelsPipelineEdgeConditions) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"operator",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varModelsPipelineEdgeConditions := _ModelsPipelineEdgeConditions{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varModelsPipelineEdgeConditions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ModelsPipelineEdgeConditions(varModelsPipelineEdgeConditions)
-
-	return err
 }
 
 type NullableModelsPipelineEdgeConditions struct {

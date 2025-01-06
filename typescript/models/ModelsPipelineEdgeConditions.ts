@@ -15,7 +15,7 @@ import { HttpFile } from '../http/http';
 
 export class ModelsPipelineEdgeConditions {
     'conditions'?: Array<ModelsPipelineEdgeCondition>;
-    'operator': string;
+    'operator'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 

@@ -28,7 +28,7 @@ class ModelsPipelineEdgeCondition(BaseModel):
     ModelsPipelineEdgeCondition
     """ # noqa: E501
     config: Optional[Dict[str, Any]] = None
-    type_id: StrictStr
+    type_id: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["config", "type_id"]
 
     model_config = ConfigDict(

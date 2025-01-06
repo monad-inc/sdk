@@ -14,7 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class ModelsPipelineEdgeCondition {
     'config'?: { [key: string]: any; };
-    'typeId': string;
+    'typeId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 

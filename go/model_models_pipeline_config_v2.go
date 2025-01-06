@@ -13,8 +13,6 @@ package monad
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the ModelsPipelineConfigV2 type satisfies the MappedNullable interface at compile time
@@ -24,30 +22,22 @@ var _ MappedNullable = &ModelsPipelineConfigV2{}
 type ModelsPipelineConfigV2 struct {
 	CreatedAt *string `json:"createdAt,omitempty"`
 	Description *string `json:"description,omitempty"`
-	Edges []ModelsPipelineEdge `json:"edges"`
-	Enabled bool `json:"enabled"`
-	Id string `json:"id"`
-	Name string `json:"name"`
-	Nodes []ModelsPipelineNode `json:"nodes"`
-	OrganizationId string `json:"organizationId"`
+	Edges []ModelsPipelineEdge `json:"edges,omitempty"`
+	Enabled *bool `json:"enabled,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Nodes []ModelsPipelineNode `json:"nodes,omitempty"`
+	OrganizationId *string `json:"organizationId,omitempty"`
 	OrganizationName *string `json:"organizationName,omitempty"`
 	UpdatedAt *string `json:"updatedAt,omitempty"`
 }
-
-type _ModelsPipelineConfigV2 ModelsPipelineConfigV2
 
 // NewModelsPipelineConfigV2 instantiates a new ModelsPipelineConfigV2 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsPipelineConfigV2(edges []ModelsPipelineEdge, enabled bool, id string, name string, nodes []ModelsPipelineNode, organizationId string) *ModelsPipelineConfigV2 {
+func NewModelsPipelineConfigV2() *ModelsPipelineConfigV2 {
 	this := ModelsPipelineConfigV2{}
-	this.Edges = edges
-	this.Enabled = enabled
-	this.Id = id
-	this.Name = name
-	this.Nodes = nodes
-	this.OrganizationId = organizationId
 	return &this
 }
 
@@ -123,148 +113,196 @@ func (o *ModelsPipelineConfigV2) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetEdges returns the Edges field value
+// GetEdges returns the Edges field value if set, zero value otherwise.
 func (o *ModelsPipelineConfigV2) GetEdges() []ModelsPipelineEdge {
-	if o == nil {
+	if o == nil || IsNil(o.Edges) {
 		var ret []ModelsPipelineEdge
 		return ret
 	}
-
 	return o.Edges
 }
 
-// GetEdgesOk returns a tuple with the Edges field value
+// GetEdgesOk returns a tuple with the Edges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineConfigV2) GetEdgesOk() ([]ModelsPipelineEdge, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Edges) {
 		return nil, false
 	}
 	return o.Edges, true
 }
 
-// SetEdges sets field value
+// HasEdges returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasEdges() bool {
+	if o != nil && !IsNil(o.Edges) {
+		return true
+	}
+
+	return false
+}
+
+// SetEdges gets a reference to the given []ModelsPipelineEdge and assigns it to the Edges field.
 func (o *ModelsPipelineConfigV2) SetEdges(v []ModelsPipelineEdge) {
 	o.Edges = v
 }
 
-// GetEnabled returns the Enabled field value
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *ModelsPipelineConfigV2) GetEnabled() bool {
-	if o == nil {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
-
-	return o.Enabled
+	return *o.Enabled
 }
 
-// GetEnabledOk returns a tuple with the Enabled field value
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineConfigV2) GetEnabledOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
-	return &o.Enabled, true
+	return o.Enabled, true
 }
 
-// SetEnabled sets field value
+// HasEnabled returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasEnabled() bool {
+	if o != nil && !IsNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *ModelsPipelineConfigV2) SetEnabled(v bool) {
-	o.Enabled = v
+	o.Enabled = &v
 }
 
-// GetId returns the Id field value
+// GetId returns the Id field value if set, zero value otherwise.
 func (o *ModelsPipelineConfigV2) GetId() string {
-	if o == nil {
+	if o == nil || IsNil(o.Id) {
 		var ret string
 		return ret
 	}
-
-	return o.Id
+	return *o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineConfigV2) GetIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return &o.Id, true
+	return o.Id, true
 }
 
-// SetId sets field value
+// HasId returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
 func (o *ModelsPipelineConfigV2) SetId(v string) {
-	o.Id = v
+	o.Id = &v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *ModelsPipelineConfigV2) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineConfigV2) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ModelsPipelineConfigV2) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
-// GetNodes returns the Nodes field value
+// GetNodes returns the Nodes field value if set, zero value otherwise.
 func (o *ModelsPipelineConfigV2) GetNodes() []ModelsPipelineNode {
-	if o == nil {
+	if o == nil || IsNil(o.Nodes) {
 		var ret []ModelsPipelineNode
 		return ret
 	}
-
 	return o.Nodes
 }
 
-// GetNodesOk returns a tuple with the Nodes field value
+// GetNodesOk returns a tuple with the Nodes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineConfigV2) GetNodesOk() ([]ModelsPipelineNode, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Nodes) {
 		return nil, false
 	}
 	return o.Nodes, true
 }
 
-// SetNodes sets field value
+// HasNodes returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasNodes() bool {
+	if o != nil && !IsNil(o.Nodes) {
+		return true
+	}
+
+	return false
+}
+
+// SetNodes gets a reference to the given []ModelsPipelineNode and assigns it to the Nodes field.
 func (o *ModelsPipelineConfigV2) SetNodes(v []ModelsPipelineNode) {
 	o.Nodes = v
 }
 
-// GetOrganizationId returns the OrganizationId field value
+// GetOrganizationId returns the OrganizationId field value if set, zero value otherwise.
 func (o *ModelsPipelineConfigV2) GetOrganizationId() string {
-	if o == nil {
+	if o == nil || IsNil(o.OrganizationId) {
 		var ret string
 		return ret
 	}
-
-	return o.OrganizationId
+	return *o.OrganizationId
 }
 
-// GetOrganizationIdOk returns a tuple with the OrganizationId field value
+// GetOrganizationIdOk returns a tuple with the OrganizationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelsPipelineConfigV2) GetOrganizationIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.OrganizationId) {
 		return nil, false
 	}
-	return &o.OrganizationId, true
+	return o.OrganizationId, true
 }
 
-// SetOrganizationId sets field value
+// HasOrganizationId returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasOrganizationId() bool {
+	if o != nil && !IsNil(o.OrganizationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrganizationId gets a reference to the given string and assigns it to the OrganizationId field.
 func (o *ModelsPipelineConfigV2) SetOrganizationId(v string) {
-	o.OrganizationId = v
+	o.OrganizationId = &v
 }
 
 // GetOrganizationName returns the OrganizationName field value if set, zero value otherwise.
@@ -347,12 +385,24 @@ func (o ModelsPipelineConfigV2) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["edges"] = o.Edges
-	toSerialize["enabled"] = o.Enabled
-	toSerialize["id"] = o.Id
-	toSerialize["name"] = o.Name
-	toSerialize["nodes"] = o.Nodes
-	toSerialize["organizationId"] = o.OrganizationId
+	if !IsNil(o.Edges) {
+		toSerialize["edges"] = o.Edges
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Nodes) {
+		toSerialize["nodes"] = o.Nodes
+	}
+	if !IsNil(o.OrganizationId) {
+		toSerialize["organizationId"] = o.OrganizationId
+	}
 	if !IsNil(o.OrganizationName) {
 		toSerialize["organizationName"] = o.OrganizationName
 	}
@@ -360,48 +410,6 @@ func (o ModelsPipelineConfigV2) ToMap() (map[string]interface{}, error) {
 		toSerialize["updatedAt"] = o.UpdatedAt
 	}
 	return toSerialize, nil
-}
-
-func (o *ModelsPipelineConfigV2) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"edges",
-		"enabled",
-		"id",
-		"name",
-		"nodes",
-		"organizationId",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varModelsPipelineConfigV2 := _ModelsPipelineConfigV2{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varModelsPipelineConfigV2)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ModelsPipelineConfigV2(varModelsPipelineConfigV2)
-
-	return err
 }
 
 type NullableModelsPipelineConfigV2 struct {

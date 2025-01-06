@@ -14,15 +14,15 @@ import { ModelsPipelineEdgeConditions } from '../models/ModelsPipelineEdgeCondit
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineEdge {
-    'conditions': ModelsPipelineEdgeConditions;
+    'conditions'?: ModelsPipelineEdgeConditions;
     'createdAt'?: string;
     'description'?: string;
-    'fromNodeInstanceId': string;
+    'fromNodeInstanceId'?: string;
     'id'?: string;
     'name'?: string;
     'organizationId'?: string;
     'pipelineId'?: string;
-    'toNodeInstanceId': string;
+    'toNodeInstanceId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 

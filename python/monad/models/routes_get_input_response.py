@@ -33,10 +33,10 @@ class RoutesGetInputResponse(BaseModel):
     config: Optional[ModelsInputConfig] = None
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    id: StrictStr
-    name: StrictStr
-    organization_id: StrictStr
-    type: StrictStr
+    id: Optional[StrictStr] = None
+    name: Optional[StrictStr] = None
+    organization_id: Optional[StrictStr] = None
+    type: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["component_of", "config", "created_at", "description", "id", "name", "organization_id", "type", "updated_at"]
 
