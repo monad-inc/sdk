@@ -1,6 +1,5 @@
-module github.com/GIT_USER_ID/GIT_REPO_ID
+module github.com/monad-inc/sdk/go
 
 go 1.18
 
-require (
-)
+require gopkg.in/validator.v2 v2.0.1
