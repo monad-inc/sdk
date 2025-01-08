@@ -186,6 +186,8 @@ import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
 import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
 import { V1OrganizationIdInputsBulkPost400Response } from '../models/V1OrganizationIdInputsBulkPost400Response';
 import { V1OrganizationIdInputsPost400Response } from '../models/V1OrganizationIdInputsPost400Response';
+import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
+import { VulnerabilitiesSettingsConfig } from '../models/VulnerabilitiesSettingsConfig';
 import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
 import { ObservableAuthenticationApi } from './ObservableAPI';

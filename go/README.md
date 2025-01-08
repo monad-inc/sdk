@@ -355,6 +355,8 @@ Class | Method | HTTP request | Description
  - [UsersSettingsConfig](docs/UsersSettingsConfig.md)
  - [V1OrganizationIdInputsBulkPost400Response](docs/V1OrganizationIdInputsBulkPost400Response.md)
  - [V1OrganizationIdInputsPost400Response](docs/V1OrganizationIdInputsPost400Response.md)
+ - [VulnerabilitiesSecretsConfig](docs/VulnerabilitiesSecretsConfig.md)
+ - [VulnerabilitiesSettingsConfig](docs/VulnerabilitiesSettingsConfig.md)
  - [VulnerabilityFindingsSecretsConfig](docs/VulnerabilityFindingsSecretsConfig.md)
  - [VulnerabilityFindingsSettingsConfig](docs/VulnerabilityFindingsSettingsConfig.md)
 

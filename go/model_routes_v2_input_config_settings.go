@@ -52,6 +52,7 @@ type RoutesV2InputConfigSettings struct {
 	SnykProjectsSettingsConfig *SnykProjectsSettingsConfig
 	UsersInfoSettingsConfig *UsersInfoSettingsConfig
 	UsersSettingsConfig *UsersSettingsConfig
+	VulnerabilitiesSettingsConfig *VulnerabilitiesSettingsConfig
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
 }
@@ -284,6 +285,13 @@ func UsersInfoSettingsConfigAsRoutesV2InputConfigSettings(v *UsersInfoSettingsCo
 func UsersSettingsConfigAsRoutesV2InputConfigSettings(v *UsersSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
 		UsersSettingsConfig: v,
+	}
+}
+
+// VulnerabilitiesSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns VulnerabilitiesSettingsConfig wrapped in RoutesV2InputConfigSettings
+func VulnerabilitiesSettingsConfigAsRoutesV2InputConfigSettings(v *VulnerabilitiesSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		VulnerabilitiesSettingsConfig: v,
 	}
 }
 
@@ -867,6 +875,23 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.UsersSettingsConfig = nil
 	}
 
+	// try to unmarshal data into VulnerabilitiesSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.VulnerabilitiesSettingsConfig)
+	if err == nil {
+		jsonVulnerabilitiesSettingsConfig, _ := json.Marshal(dst.VulnerabilitiesSettingsConfig)
+		if string(jsonVulnerabilitiesSettingsConfig) == "{}" { // empty struct
+			dst.VulnerabilitiesSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.VulnerabilitiesSettingsConfig); err != nil {
+				dst.VulnerabilitiesSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.VulnerabilitiesSettingsConfig = nil
+	}
+
 	// try to unmarshal data into VulnerabilityFindingsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.VulnerabilityFindingsSettingsConfig)
 	if err == nil {
@@ -936,6 +961,7 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.SnykProjectsSettingsConfig = nil
 		dst.UsersInfoSettingsConfig = nil
 		dst.UsersSettingsConfig = nil
+		dst.VulnerabilitiesSettingsConfig = nil
 		dst.VulnerabilityFindingsSettingsConfig = nil
 		dst.MapmapOfStringAny = nil
 
@@ -1079,6 +1105,10 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.UsersSettingsConfig != nil {
 		return json.Marshal(&src.UsersSettingsConfig)
+	}
+
+	if src.VulnerabilitiesSettingsConfig != nil {
+		return json.Marshal(&src.VulnerabilitiesSettingsConfig)
 	}
 
 	if src.VulnerabilityFindingsSettingsConfig != nil {
@@ -1227,6 +1257,10 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.UsersSettingsConfig != nil {
 		return obj.UsersSettingsConfig
+	}
+
+	if obj.VulnerabilitiesSettingsConfig != nil {
+		return obj.VulnerabilitiesSettingsConfig
 	}
 
 	if obj.VulnerabilityFindingsSettingsConfig != nil {

@@ -183,6 +183,8 @@ export * from '../models/UsersSecretsConfig';
 export * from '../models/UsersSettingsConfig';
 export * from '../models/V1OrganizationIdInputsBulkPost400Response';
 export * from '../models/V1OrganizationIdInputsPost400Response';
+export * from '../models/VulnerabilitiesSecretsConfig';
+export * from '../models/VulnerabilitiesSettingsConfig';
 export * from '../models/VulnerabilityFindingsSecretsConfig';
 export * from '../models/VulnerabilityFindingsSettingsConfig';
 
@@ -371,6 +373,8 @@ import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
 import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
 import { V1OrganizationIdInputsBulkPost400ResponseClass } from '../models/V1OrganizationIdInputsBulkPost400Response';
 import { V1OrganizationIdInputsPost400ResponseClass } from '../models/V1OrganizationIdInputsPost400Response';
+import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
+import { VulnerabilitiesSettingsConfig } from '../models/VulnerabilitiesSettingsConfig';
 import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
 
@@ -575,6 +579,8 @@ let typeMap: {[index: string]: any} = {
     "UsersSettingsConfig": UsersSettingsConfig,
     "V1OrganizationIdInputsBulkPost400Response": V1OrganizationIdInputsBulkPost400ResponseClass,
     "V1OrganizationIdInputsPost400Response": V1OrganizationIdInputsPost400ResponseClass,
+    "VulnerabilitiesSecretsConfig": VulnerabilitiesSecretsConfig,
+    "VulnerabilitiesSettingsConfig": VulnerabilitiesSettingsConfig,
     "VulnerabilityFindingsSecretsConfig": VulnerabilityFindingsSecretsConfig,
     "VulnerabilityFindingsSettingsConfig": VulnerabilityFindingsSettingsConfig,
 }

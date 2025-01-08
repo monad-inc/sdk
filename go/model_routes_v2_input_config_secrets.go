@@ -54,6 +54,7 @@ type RoutesV2InputConfigSecrets struct {
 	TenableVulnerabilitiesSecretsConfig *TenableVulnerabilitiesSecretsConfig
 	UsersInfoSecretsConfig *UsersInfoSecretsConfig
 	UsersSecretsConfig *UsersSecretsConfig
+	VulnerabilitiesSecretsConfig *VulnerabilitiesSecretsConfig
 	VulnerabilityFindingsSecretsConfig *VulnerabilityFindingsSecretsConfig
 	MapmapOfStringAny *map[string]interface{}
 }
@@ -300,6 +301,13 @@ func UsersInfoSecretsConfigAsRoutesV2InputConfigSecrets(v *UsersInfoSecretsConfi
 func UsersSecretsConfigAsRoutesV2InputConfigSecrets(v *UsersSecretsConfig) RoutesV2InputConfigSecrets {
 	return RoutesV2InputConfigSecrets{
 		UsersSecretsConfig: v,
+	}
+}
+
+// VulnerabilitiesSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns VulnerabilitiesSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func VulnerabilitiesSecretsConfigAsRoutesV2InputConfigSecrets(v *VulnerabilitiesSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		VulnerabilitiesSecretsConfig: v,
 	}
 }
 
@@ -917,6 +925,23 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.UsersSecretsConfig = nil
 	}
 
+	// try to unmarshal data into VulnerabilitiesSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.VulnerabilitiesSecretsConfig)
+	if err == nil {
+		jsonVulnerabilitiesSecretsConfig, _ := json.Marshal(dst.VulnerabilitiesSecretsConfig)
+		if string(jsonVulnerabilitiesSecretsConfig) == "{}" { // empty struct
+			dst.VulnerabilitiesSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.VulnerabilitiesSecretsConfig); err != nil {
+				dst.VulnerabilitiesSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.VulnerabilitiesSecretsConfig = nil
+	}
+
 	// try to unmarshal data into VulnerabilityFindingsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.VulnerabilityFindingsSecretsConfig)
 	if err == nil {
@@ -988,6 +1013,7 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.TenableVulnerabilitiesSecretsConfig = nil
 		dst.UsersInfoSecretsConfig = nil
 		dst.UsersSecretsConfig = nil
+		dst.VulnerabilitiesSecretsConfig = nil
 		dst.VulnerabilityFindingsSecretsConfig = nil
 		dst.MapmapOfStringAny = nil
 
@@ -1139,6 +1165,10 @@ func (src RoutesV2InputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.UsersSecretsConfig != nil {
 		return json.Marshal(&src.UsersSecretsConfig)
+	}
+
+	if src.VulnerabilitiesSecretsConfig != nil {
+		return json.Marshal(&src.VulnerabilitiesSecretsConfig)
 	}
 
 	if src.VulnerabilityFindingsSecretsConfig != nil {
@@ -1295,6 +1325,10 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 
 	if obj.UsersSecretsConfig != nil {
 		return obj.UsersSecretsConfig
+	}
+
+	if obj.VulnerabilitiesSecretsConfig != nil {
+		return obj.VulnerabilitiesSecretsConfig
 	}
 
 	if obj.VulnerabilityFindingsSecretsConfig != nil {
