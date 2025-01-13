@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Config** | Pointer to [**RoutesV2OutputConfig**](RoutesV2OutputConfig.md) |  | [optional] 
-**PromiseId** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -51,31 +50,6 @@ SetConfig sets Config field to given value.
 `func (o *RoutesV2TestOutputConnectionRequest) HasConfig() bool`
 
 HasConfig returns a boolean if a field has been set.
-
-### GetPromiseId
-
-`func (o *RoutesV2TestOutputConnectionRequest) GetPromiseId() string`
-
-GetPromiseId returns the PromiseId field if non-nil, zero value otherwise.
-
-### GetPromiseIdOk
-
-`func (o *RoutesV2TestOutputConnectionRequest) GetPromiseIdOk() (*string, bool)`
-
-GetPromiseIdOk returns a tuple with the PromiseId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPromiseId
-
-`func (o *RoutesV2TestOutputConnectionRequest) SetPromiseId(v string)`
-
-SetPromiseId sets PromiseId field to given value.
-
-### HasPromiseId
-
-`func (o *RoutesV2TestOutputConnectionRequest) HasPromiseId() bool`
-
-HasPromiseId returns a boolean if a field has been set.
 
 ### GetType
 

@@ -48,7 +48,6 @@ const request: OrganizationInputsApiV1OrganizationIdInputsBulkPostRequest = {
         },
         description: "description_example",
         name: "name_example",
-        promiseId: "promiseId_example",
         type: "type_example",
       },
     ],
@@ -366,7 +365,6 @@ const request: OrganizationInputsApiV1OrganizationIdInputsPostRequest = {
     },
     description: "description_example",
     name: "name_example",
-    promiseId: "promiseId_example",
     type: "type_example",
   },
 };
@@ -438,7 +436,6 @@ const request: OrganizationInputsApiV2OrganizationIdInputsBulkPostRequest = {
         },
         description: "description_example",
         name: "name_example",
-        promiseId: "promiseId_example",
         type: "type_example",
       },
     ],
@@ -585,7 +582,6 @@ const request: OrganizationInputsApiV2OrganizationIdInputsPostRequest = {
     },
     description: "description_example",
     name: "name_example",
-    promiseId: "promiseId_example",
     type: "type_example",
   },
 };

@@ -21,7 +21,6 @@ var _ MappedNullable = &RoutesV2TestOutputConnectionRequest{}
 // RoutesV2TestOutputConnectionRequest struct for RoutesV2TestOutputConnectionRequest
 type RoutesV2TestOutputConnectionRequest struct {
 	Config *RoutesV2OutputConfig `json:"config,omitempty"`
-	PromiseId *string `json:"promise_id,omitempty"`
 	Type *string `json:"type,omitempty"`
 }
 
@@ -74,38 +73,6 @@ func (o *RoutesV2TestOutputConnectionRequest) SetConfig(v RoutesV2OutputConfig) 
 	o.Config = &v
 }
 
-// GetPromiseId returns the PromiseId field value if set, zero value otherwise.
-func (o *RoutesV2TestOutputConnectionRequest) GetPromiseId() string {
-	if o == nil || IsNil(o.PromiseId) {
-		var ret string
-		return ret
-	}
-	return *o.PromiseId
-}
-
-// GetPromiseIdOk returns a tuple with the PromiseId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RoutesV2TestOutputConnectionRequest) GetPromiseIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PromiseId) {
-		return nil, false
-	}
-	return o.PromiseId, true
-}
-
-// HasPromiseId returns a boolean if a field has been set.
-func (o *RoutesV2TestOutputConnectionRequest) HasPromiseId() bool {
-	if o != nil && !IsNil(o.PromiseId) {
-		return true
-	}
-
-	return false
-}
-
-// SetPromiseId gets a reference to the given string and assigns it to the PromiseId field.
-func (o *RoutesV2TestOutputConnectionRequest) SetPromiseId(v string) {
-	o.PromiseId = &v
-}
-
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *RoutesV2TestOutputConnectionRequest) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -150,9 +117,6 @@ func (o RoutesV2TestOutputConnectionRequest) ToMap() (map[string]interface{}, er
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
-	}
-	if !IsNil(o.PromiseId) {
-		toSerialize["promise_id"] = o.PromiseId
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

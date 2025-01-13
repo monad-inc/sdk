@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **Config** | Pointer to [**RoutesV2InputConfig**](RoutesV2InputConfig.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**PromiseId** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -103,31 +102,6 @@ SetName sets Name field to given value.
 `func (o *RoutesV2CreateInputRequest) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetPromiseId
-
-`func (o *RoutesV2CreateInputRequest) GetPromiseId() string`
-
-GetPromiseId returns the PromiseId field if non-nil, zero value otherwise.
-
-### GetPromiseIdOk
-
-`func (o *RoutesV2CreateInputRequest) GetPromiseIdOk() (*string, bool)`
-
-GetPromiseIdOk returns a tuple with the PromiseId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPromiseId
-
-`func (o *RoutesV2CreateInputRequest) SetPromiseId(v string)`
-
-SetPromiseId sets PromiseId field to given value.
-
-### HasPromiseId
-
-`func (o *RoutesV2CreateInputRequest) HasPromiseId() bool`
-
-HasPromiseId returns a boolean if a field has been set.
 
 ### GetType
 

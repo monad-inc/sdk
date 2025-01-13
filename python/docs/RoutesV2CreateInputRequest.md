@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **config** | [**RoutesV2InputConfig**](RoutesV2InputConfig.md) |  | [optional] 
 **description** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**promise_id** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 
 ## Example

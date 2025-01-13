@@ -15,7 +15,6 @@ import { HttpFile } from '../http/http';
 
 export class RoutesV2TestOutputConnectionRequest {
     'config'?: RoutesV2OutputConfig;
-    'promiseId'?: string;
     'type'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -27,12 +26,6 @@ export class RoutesV2TestOutputConnectionRequest {
             "name": "config",
             "baseName": "config",
             "type": "RoutesV2OutputConfig",
-            "format": ""
-        },
-        {
-            "name": "promiseId",
-            "baseName": "promise_id",
-            "type": "string",
             "format": ""
         },
         {

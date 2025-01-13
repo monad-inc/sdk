@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **Config** | Pointer to [**ModelsInputConfig**](ModelsInputConfig.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
-**PromiseId** | Pointer to **string** |  | [optional] 
 **Type** | **string** |  | 
 
 ## Methods
@@ -98,31 +97,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-
-### GetPromiseId
-
-`func (o *RoutesCreateInputRequest) GetPromiseId() string`
-
-GetPromiseId returns the PromiseId field if non-nil, zero value otherwise.
-
-### GetPromiseIdOk
-
-`func (o *RoutesCreateInputRequest) GetPromiseIdOk() (*string, bool)`
-
-GetPromiseIdOk returns a tuple with the PromiseId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPromiseId
-
-`func (o *RoutesCreateInputRequest) SetPromiseId(v string)`
-
-SetPromiseId sets PromiseId field to given value.
-
-### HasPromiseId
-
-`func (o *RoutesCreateInputRequest) HasPromiseId() bool`
-
-HasPromiseId returns a boolean if a field has been set.
 
 ### GetType
 

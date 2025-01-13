@@ -505,7 +505,6 @@ const request: OrganizationOutputsApiV2OrganizationIdOutputsTestConnectionPostRe
         key: null,
       ,
     },
-    promiseId: "promiseId_example",
     type: "type_example",
   },
 };

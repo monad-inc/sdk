@@ -29,9 +29,8 @@ class RoutesV2TestOutputConnectionRequest(BaseModel):
     RoutesV2TestOutputConnectionRequest
     """ # noqa: E501
     config: Optional[RoutesV2OutputConfig] = None
-    promise_id: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["config", "promise_id", "type"]
+    __properties: ClassVar[List[str]] = ["config", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,7 +87,6 @@ class RoutesV2TestOutputConnectionRequest(BaseModel):
 
         _obj = cls.model_validate({
             "config": RoutesV2OutputConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
-            "promise_id": obj.get("promise_id"),
             "type": obj.get("type")
         })
         return _obj

@@ -23,7 +23,6 @@ type RoutesV2CreateInputRequest struct {
 	Config *RoutesV2InputConfig `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Name *string `json:"name,omitempty"`
-	PromiseId *string `json:"promise_id,omitempty"`
 	Type *string `json:"type,omitempty"`
 }
 
@@ -140,38 +139,6 @@ func (o *RoutesV2CreateInputRequest) SetName(v string) {
 	o.Name = &v
 }
 
-// GetPromiseId returns the PromiseId field value if set, zero value otherwise.
-func (o *RoutesV2CreateInputRequest) GetPromiseId() string {
-	if o == nil || IsNil(o.PromiseId) {
-		var ret string
-		return ret
-	}
-	return *o.PromiseId
-}
-
-// GetPromiseIdOk returns a tuple with the PromiseId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RoutesV2CreateInputRequest) GetPromiseIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PromiseId) {
-		return nil, false
-	}
-	return o.PromiseId, true
-}
-
-// HasPromiseId returns a boolean if a field has been set.
-func (o *RoutesV2CreateInputRequest) HasPromiseId() bool {
-	if o != nil && !IsNil(o.PromiseId) {
-		return true
-	}
-
-	return false
-}
-
-// SetPromiseId gets a reference to the given string and assigns it to the PromiseId field.
-func (o *RoutesV2CreateInputRequest) SetPromiseId(v string) {
-	o.PromiseId = &v
-}
-
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *RoutesV2CreateInputRequest) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -222,9 +189,6 @@ func (o RoutesV2CreateInputRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
-	}
-	if !IsNil(o.PromiseId) {
-		toSerialize["promise_id"] = o.PromiseId
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

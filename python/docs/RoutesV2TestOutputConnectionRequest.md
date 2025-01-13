@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **config** | [**RoutesV2OutputConfig**](RoutesV2OutputConfig.md) |  | [optional] 
-**promise_id** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 
 ## Example

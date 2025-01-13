@@ -17,7 +17,6 @@ export class RoutesCreateInputRequest {
     'config'?: ModelsInputConfig;
     'description'?: string;
     'name': string;
-    'promiseId'?: string;
     'type': string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -40,12 +39,6 @@ export class RoutesCreateInputRequest {
         {
             "name": "name",
             "baseName": "name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "promiseId",
-            "baseName": "promise_id",
             "type": "string",
             "format": ""
         },

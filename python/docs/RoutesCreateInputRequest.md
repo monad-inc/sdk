@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **config** | [**ModelsInputConfig**](ModelsInputConfig.md) |  | [optional] 
 **description** | **str** |  | [optional] 
 **name** | **str** |  | 
-**promise_id** | **str** |  | [optional] 
 **type** | **str** |  | 
 
 ## Example

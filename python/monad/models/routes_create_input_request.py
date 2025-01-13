@@ -31,9 +31,8 @@ class RoutesCreateInputRequest(BaseModel):
     config: Optional[ModelsInputConfig] = None
     description: Optional[StrictStr] = None
     name: StrictStr
-    promise_id: Optional[StrictStr] = None
     type: StrictStr
-    __properties: ClassVar[List[str]] = ["config", "description", "name", "promise_id", "type"]
+    __properties: ClassVar[List[str]] = ["config", "description", "name", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +91,6 @@ class RoutesCreateInputRequest(BaseModel):
             "config": ModelsInputConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
             "description": obj.get("description"),
             "name": obj.get("name"),
-            "promise_id": obj.get("promise_id"),
             "type": obj.get("type")
         })
         return _obj
