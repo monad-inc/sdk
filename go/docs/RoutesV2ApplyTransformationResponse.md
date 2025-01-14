@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Record** | Pointer to **[]int32** |  | [optional] 
+**Records** | Pointer to **[][]int32** |  | [optional] 
 
 ## Methods
 
@@ -25,30 +25,30 @@ NewRoutesV2ApplyTransformationResponseWithDefaults instantiates a new RoutesV2Ap
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetRecord
+### GetRecords
 
-`func (o *RoutesV2ApplyTransformationResponse) GetRecord() []int32`
+`func (o *RoutesV2ApplyTransformationResponse) GetRecords() [][]int32`
 
-GetRecord returns the Record field if non-nil, zero value otherwise.
+GetRecords returns the Records field if non-nil, zero value otherwise.
 
-### GetRecordOk
+### GetRecordsOk
 
-`func (o *RoutesV2ApplyTransformationResponse) GetRecordOk() (*[]int32, bool)`
+`func (o *RoutesV2ApplyTransformationResponse) GetRecordsOk() (*[][]int32, bool)`
 
-GetRecordOk returns a tuple with the Record field if it's non-nil, zero value otherwise
+GetRecordsOk returns a tuple with the Records field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRecord
+### SetRecords
 
-`func (o *RoutesV2ApplyTransformationResponse) SetRecord(v []int32)`
+`func (o *RoutesV2ApplyTransformationResponse) SetRecords(v [][]int32)`
 
-SetRecord sets Record field to given value.
+SetRecords sets Records field to given value.
 
-### HasRecord
+### HasRecords
 
-`func (o *RoutesV2ApplyTransformationResponse) HasRecord() bool`
+`func (o *RoutesV2ApplyTransformationResponse) HasRecords() bool`
 
-HasRecord returns a boolean if a field has been set.
+HasRecords returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

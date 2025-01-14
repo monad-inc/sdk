@@ -27,8 +27,8 @@ class RoutesV2ApplyTransformationResponse(BaseModel):
     """
     RoutesV2ApplyTransformationResponse
     """ # noqa: E501
-    record: Optional[List[StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["record"]
+    records: Optional[List[List[StrictInt]]] = None
+    __properties: ClassVar[List[str]] = ["records"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,7 +81,7 @@ class RoutesV2ApplyTransformationResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "record": obj.get("record")
+            "records": obj.get("records")
         })
         return _obj
 

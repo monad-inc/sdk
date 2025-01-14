@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**record** | **List[int]** |  | [optional] 
+**records** | **List[List[int]]** |  | [optional] 
 
 ## Example
 

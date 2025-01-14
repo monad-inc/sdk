@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesV2ApplyTransformationResponse{}
 
 // RoutesV2ApplyTransformationResponse struct for RoutesV2ApplyTransformationResponse
 type RoutesV2ApplyTransformationResponse struct {
-	Record []int32 `json:"record,omitempty"`
+	Records [][]int32 `json:"records,omitempty"`
 }
 
 // NewRoutesV2ApplyTransformationResponse instantiates a new RoutesV2ApplyTransformationResponse object
@@ -40,36 +40,36 @@ func NewRoutesV2ApplyTransformationResponseWithDefaults() *RoutesV2ApplyTransfor
 	return &this
 }
 
-// GetRecord returns the Record field value if set, zero value otherwise.
-func (o *RoutesV2ApplyTransformationResponse) GetRecord() []int32 {
-	if o == nil || IsNil(o.Record) {
-		var ret []int32
+// GetRecords returns the Records field value if set, zero value otherwise.
+func (o *RoutesV2ApplyTransformationResponse) GetRecords() [][]int32 {
+	if o == nil || IsNil(o.Records) {
+		var ret [][]int32
 		return ret
 	}
-	return o.Record
+	return o.Records
 }
 
-// GetRecordOk returns a tuple with the Record field value if set, nil otherwise
+// GetRecordsOk returns a tuple with the Records field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV2ApplyTransformationResponse) GetRecordOk() ([]int32, bool) {
-	if o == nil || IsNil(o.Record) {
+func (o *RoutesV2ApplyTransformationResponse) GetRecordsOk() ([][]int32, bool) {
+	if o == nil || IsNil(o.Records) {
 		return nil, false
 	}
-	return o.Record, true
+	return o.Records, true
 }
 
-// HasRecord returns a boolean if a field has been set.
-func (o *RoutesV2ApplyTransformationResponse) HasRecord() bool {
-	if o != nil && !IsNil(o.Record) {
+// HasRecords returns a boolean if a field has been set.
+func (o *RoutesV2ApplyTransformationResponse) HasRecords() bool {
+	if o != nil && !IsNil(o.Records) {
 		return true
 	}
 
 	return false
 }
 
-// SetRecord gets a reference to the given []int32 and assigns it to the Record field.
-func (o *RoutesV2ApplyTransformationResponse) SetRecord(v []int32) {
-	o.Record = v
+// SetRecords gets a reference to the given [][]int32 and assigns it to the Records field.
+func (o *RoutesV2ApplyTransformationResponse) SetRecords(v [][]int32) {
+	o.Records = v
 }
 
 func (o RoutesV2ApplyTransformationResponse) MarshalJSON() ([]byte, error) {
@@ -82,8 +82,8 @@ func (o RoutesV2ApplyTransformationResponse) MarshalJSON() ([]byte, error) {
 
 func (o RoutesV2ApplyTransformationResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Record) {
-		toSerialize["record"] = o.Record
+	if !IsNil(o.Records) {
+		toSerialize["records"] = o.Records
 	}
 	return toSerialize, nil
 }

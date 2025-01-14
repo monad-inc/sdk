@@ -13,7 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class RoutesV2ApplyTransformationResponse {
-    'record'?: Array<number>;
+    'records'?: Array<Array<number>>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -21,9 +21,9 @@ export class RoutesV2ApplyTransformationResponse {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "record",
-            "baseName": "record",
-            "type": "Array<number>",
+            "name": "records",
+            "baseName": "records",
+            "type": "Array<Array<number>>",
             "format": ""
         }    ];
 
