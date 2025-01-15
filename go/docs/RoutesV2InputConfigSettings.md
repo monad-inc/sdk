@@ -55,6 +55,7 @@ Name | Type | Description | Notes
 **TenantUrl** | Pointer to **string** | Unique URL for your Tines instance | [optional] 
 **Query** | Pointer to **string** | The query to run against the Log Analytics workspace | [optional] 
 **OrgUrl** | Pointer to **string** | URL of the organization to monitor | [optional] 
+**LogType** | Pointer to **string** |  | [optional] 
 **AssetStatus** | Pointer to **[]string** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
 **AssetType** | Pointer to **string** | Asset types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **DetectionMethod** | Pointer to **[]string** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 
@@ -1353,6 +1354,31 @@ SetOrgUrl sets OrgUrl field to given value.
 `func (o *RoutesV2InputConfigSettings) HasOrgUrl() bool`
 
 HasOrgUrl returns a boolean if a field has been set.
+
+### GetLogType
+
+`func (o *RoutesV2InputConfigSettings) GetLogType() string`
+
+GetLogType returns the LogType field if non-nil, zero value otherwise.
+
+### GetLogTypeOk
+
+`func (o *RoutesV2InputConfigSettings) GetLogTypeOk() (*string, bool)`
+
+GetLogTypeOk returns a tuple with the LogType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogType
+
+`func (o *RoutesV2InputConfigSettings) SetLogType(v string)`
+
+SetLogType sets LogType field to given value.
+
+### HasLogType
+
+`func (o *RoutesV2InputConfigSettings) HasLogType() bool`
+
+HasLogType returns a boolean if a field has been set.
 
 ### GetAssetStatus
 

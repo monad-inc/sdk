@@ -264,6 +264,7 @@ Class | Method | HTTP request | Description
  - [ModelsUserList](docs/ModelsUserList.md)
  - [MonadHttpSecretsConfig](docs/MonadHttpSecretsConfig.md)
  - [MonadHttpSettingsConfig](docs/MonadHttpSettingsConfig.md)
+ - [MonadLogSettingsConfig](docs/MonadLogSettingsConfig.md)
  - [OauthActivitySecretsConfig](docs/OauthActivitySecretsConfig.md)
  - [OauthActivitySettingsConfig](docs/OauthActivitySettingsConfig.md)
  - [OpensearchSecretsConfig](docs/OpensearchSecretsConfig.md)

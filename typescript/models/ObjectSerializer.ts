@@ -92,6 +92,7 @@ export * from '../models/ModelsUser';
 export * from '../models/ModelsUserList';
 export * from '../models/MonadHttpSecretsConfig';
 export * from '../models/MonadHttpSettingsConfig';
+export * from '../models/MonadLogSettingsConfig';
 export * from '../models/OauthActivitySecretsConfig';
 export * from '../models/OauthActivitySettingsConfig';
 export * from '../models/OpensearchSecretsConfig';
@@ -282,6 +283,7 @@ import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserList } from '../models/ModelsUserList';
 import { MonadHttpSecretsConfig } from '../models/MonadHttpSecretsConfig';
 import { MonadHttpSettingsConfig } from '../models/MonadHttpSettingsConfig';
+import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { OauthActivitySecretsConfig } from '../models/OauthActivitySecretsConfig';
 import { OauthActivitySettingsConfig } from '../models/OauthActivitySettingsConfig';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
@@ -488,6 +490,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsUserList": ModelsUserList,
     "MonadHttpSecretsConfig": MonadHttpSecretsConfig,
     "MonadHttpSettingsConfig": MonadHttpSettingsConfig,
+    "MonadLogSettingsConfig": MonadLogSettingsConfig,
     "OauthActivitySecretsConfig": OauthActivitySecretsConfig,
     "OauthActivitySettingsConfig": OauthActivitySettingsConfig,
     "OpensearchSecretsConfig": OpensearchSecretsConfig,

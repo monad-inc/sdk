@@ -96,6 +96,7 @@ import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserList } from '../models/ModelsUserList';
 import { MonadHttpSecretsConfig } from '../models/MonadHttpSecretsConfig';
 import { MonadHttpSettingsConfig } from '../models/MonadHttpSettingsConfig';
+import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { OauthActivitySecretsConfig } from '../models/OauthActivitySecretsConfig';
 import { OauthActivitySettingsConfig } from '../models/OauthActivitySettingsConfig';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
