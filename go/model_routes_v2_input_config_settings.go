@@ -49,6 +49,8 @@ type RoutesV2InputConfigSettings struct {
 	SemgrepDeploymentsSettingsConfig *SemgrepDeploymentsSettingsConfig
 	SemgrepProjectDetailsSettingsConfig *SemgrepProjectDetailsSettingsConfig
 	SemgrepProjectsSettingsConfig *SemgrepProjectsSettingsConfig
+	SlackUsersSettingsConfig *SlackUsersSettingsConfig
+	SlackgroupsSettingsConfig *SlackgroupsSettingsConfig
 	SnykOrganizationsSettingsConfig *SnykOrganizationsSettingsConfig
 	SnykProjectsSettingsConfig *SnykProjectsSettingsConfig
 	UsersInfoSettingsConfig *UsersInfoSettingsConfig
@@ -265,6 +267,20 @@ func SemgrepProjectDetailsSettingsConfigAsRoutesV2InputConfigSettings(v *Semgrep
 func SemgrepProjectsSettingsConfigAsRoutesV2InputConfigSettings(v *SemgrepProjectsSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
 		SemgrepProjectsSettingsConfig: v,
+	}
+}
+
+// SlackUsersSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns SlackUsersSettingsConfig wrapped in RoutesV2InputConfigSettings
+func SlackUsersSettingsConfigAsRoutesV2InputConfigSettings(v *SlackUsersSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		SlackUsersSettingsConfig: v,
+	}
+}
+
+// SlackgroupsSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns SlackgroupsSettingsConfig wrapped in RoutesV2InputConfigSettings
+func SlackgroupsSettingsConfigAsRoutesV2InputConfigSettings(v *SlackgroupsSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		SlackgroupsSettingsConfig: v,
 	}
 }
 
@@ -832,6 +848,40 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.SemgrepProjectsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into SlackUsersSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SlackUsersSettingsConfig)
+	if err == nil {
+		jsonSlackUsersSettingsConfig, _ := json.Marshal(dst.SlackUsersSettingsConfig)
+		if string(jsonSlackUsersSettingsConfig) == "{}" { // empty struct
+			dst.SlackUsersSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SlackUsersSettingsConfig); err != nil {
+				dst.SlackUsersSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SlackUsersSettingsConfig = nil
+	}
+
+	// try to unmarshal data into SlackgroupsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SlackgroupsSettingsConfig)
+	if err == nil {
+		jsonSlackgroupsSettingsConfig, _ := json.Marshal(dst.SlackgroupsSettingsConfig)
+		if string(jsonSlackgroupsSettingsConfig) == "{}" { // empty struct
+			dst.SlackgroupsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SlackgroupsSettingsConfig); err != nil {
+				dst.SlackgroupsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SlackgroupsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into SnykOrganizationsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.SnykOrganizationsSettingsConfig)
 	if err == nil {
@@ -983,6 +1033,8 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.SemgrepDeploymentsSettingsConfig = nil
 		dst.SemgrepProjectDetailsSettingsConfig = nil
 		dst.SemgrepProjectsSettingsConfig = nil
+		dst.SlackUsersSettingsConfig = nil
+		dst.SlackgroupsSettingsConfig = nil
 		dst.SnykOrganizationsSettingsConfig = nil
 		dst.SnykProjectsSettingsConfig = nil
 		dst.UsersInfoSettingsConfig = nil
@@ -1119,6 +1171,14 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.SemgrepProjectsSettingsConfig != nil {
 		return json.Marshal(&src.SemgrepProjectsSettingsConfig)
+	}
+
+	if src.SlackUsersSettingsConfig != nil {
+		return json.Marshal(&src.SlackUsersSettingsConfig)
+	}
+
+	if src.SlackgroupsSettingsConfig != nil {
+		return json.Marshal(&src.SlackgroupsSettingsConfig)
 	}
 
 	if src.SnykOrganizationsSettingsConfig != nil {
@@ -1275,6 +1335,14 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.SemgrepProjectsSettingsConfig != nil {
 		return obj.SemgrepProjectsSettingsConfig
+	}
+
+	if obj.SlackUsersSettingsConfig != nil {
+		return obj.SlackUsersSettingsConfig
+	}
+
+	if obj.SlackgroupsSettingsConfig != nil {
+		return obj.SlackgroupsSettingsConfig
 	}
 
 	if obj.SnykOrganizationsSettingsConfig != nil {

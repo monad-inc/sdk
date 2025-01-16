@@ -37,6 +37,8 @@ import { SemgrepDeploymentsSecretsConfig } from '../models/SemgrepDeploymentsSec
 import { SemgrepProjectDetailsSecretsConfig } from '../models/SemgrepProjectDetailsSecretsConfig';
 import { SemgrepProjectsSecretsConfig } from '../models/SemgrepProjectsSecretsConfig';
 import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
+import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
+import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
 import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
 import { SnykOrganizationsSecretsConfig } from '../models/SnykOrganizationsSecretsConfig';
 import { SnykProjectsSecretsConfig } from '../models/SnykProjectsSecretsConfig';
@@ -54,7 +56,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesV2InputConfigSecrets = ActorsInfoSecretsConfig | AdminActivitySecretsConfig | AdminLogsSecretsConfig | AuditLogsSecretsConfig | AuthLogsSecretsConfig | AzureActivityLogsSecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventorySecretsConfig | DetectSummariesSecretsConfig | DeviceActivitySecretsConfig | DeviceDetailsSecretsConfig | DriveActivitySecretsConfig | EntraIdSecretsConfig | EventSecretsConfig | EventsLogsSecretsConfig | LogAnalyticsQuerySecretsConfig | LoginActivitySecretsConfig | LoginSessionsSecretsConfig | MonadHttpSecretsConfig | OauthActivitySecretsConfig | RolesInfoSecretsConfig | SemgrepCodeFindingsSecretsConfig | SemgrepDeploymentsSecretsConfig | SemgrepProjectDetailsSecretsConfig | SemgrepProjectsSecretsConfig | SemgrepSupplyChainFindingsSecretsConfig | SnykIssuesSecretsConfig | SnykOrganizationsSecretsConfig | SnykProjectsSecretsConfig | SnykTargetsSecretsConfig | TenableAssetsSecretsConfig | TenableVulnerabilitiesSecretsConfig | UsersInfoSecretsConfig | UsersSecretsConfig | VulnerabilitiesSecretsConfig | VulnerabilityFindingsSecretsConfig | any;
+export type RoutesV2InputConfigSecrets = ActorsInfoSecretsConfig | AdminActivitySecretsConfig | AdminLogsSecretsConfig | AuditLogsSecretsConfig | AuthLogsSecretsConfig | AzureActivityLogsSecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventorySecretsConfig | DetectSummariesSecretsConfig | DeviceActivitySecretsConfig | DeviceDetailsSecretsConfig | DriveActivitySecretsConfig | EntraIdSecretsConfig | EventSecretsConfig | EventsLogsSecretsConfig | LogAnalyticsQuerySecretsConfig | LoginActivitySecretsConfig | LoginSessionsSecretsConfig | MonadHttpSecretsConfig | OauthActivitySecretsConfig | RolesInfoSecretsConfig | SemgrepCodeFindingsSecretsConfig | SemgrepDeploymentsSecretsConfig | SemgrepProjectDetailsSecretsConfig | SemgrepProjectsSecretsConfig | SemgrepSupplyChainFindingsSecretsConfig | SlackUsersSecretsConfig | SlackgroupsSecretsConfig | SnykIssuesSecretsConfig | SnykOrganizationsSecretsConfig | SnykProjectsSecretsConfig | SnykTargetsSecretsConfig | TenableAssetsSecretsConfig | TenableVulnerabilitiesSecretsConfig | UsersInfoSecretsConfig | UsersSecretsConfig | VulnerabilitiesSecretsConfig | VulnerabilityFindingsSecretsConfig | any;
 
 /**
 * @type RoutesV2InputConfigSecretsClass
@@ -65,6 +67,8 @@ export class RoutesV2InputConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
+
 
 
 

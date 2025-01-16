@@ -51,7 +51,7 @@ Name | Type | Description | Notes
 **Cloud** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **MemberCid** | Pointer to **string** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 
 **StoryId** | Pointer to **string** | Filter by the given story. | [optional] 
-**TeamId** | Pointer to **string** | Filter by the given team. | [optional] 
+**TeamId** | Pointer to **string** | Team ID to filter user results by | [optional] 
 **TenantUrl** | Pointer to **string** | Unique URL for your Tines instance | [optional] 
 **Query** | Pointer to **string** | The query to run against the Log Analytics workspace | [optional] 
 **OrgUrl** | Pointer to **string** | URL of the organization to monitor | [optional] 

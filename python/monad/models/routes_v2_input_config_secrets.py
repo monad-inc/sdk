@@ -45,6 +45,8 @@ from monad.models.semgrep_deployments_secrets_config import SemgrepDeploymentsSe
 from monad.models.semgrep_project_details_secrets_config import SemgrepProjectDetailsSecretsConfig
 from monad.models.semgrep_projects_secrets_config import SemgrepProjectsSecretsConfig
 from monad.models.semgrep_supply_chain_findings_secrets_config import SemgrepSupplyChainFindingsSecretsConfig
+from monad.models.slack_users_secrets_config import SlackUsersSecretsConfig
+from monad.models.slackgroups_secrets_config import SlackgroupsSecretsConfig
 from monad.models.snyk_issues_secrets_config import SnykIssuesSecretsConfig
 from monad.models.snyk_organizations_secrets_config import SnykOrganizationsSecretsConfig
 from monad.models.snyk_projects_secrets_config import SnykProjectsSecretsConfig
@@ -59,7 +61,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-ROUTESV2INPUTCONFIGSECRETS_ONE_OF_SCHEMAS = ["ActorsInfoSecretsConfig", "AdminActivitySecretsConfig", "AdminLogsSecretsConfig", "AuditLogsSecretsConfig", "AuthLogsSecretsConfig", "AzureActivityLogsSecretsConfig", "CloudConfigurationFindingsSecretsConfig", "CloudLogsSecretsConfig", "CloudResourceInventorySecretsConfig", "DetectSummariesSecretsConfig", "DeviceActivitySecretsConfig", "DeviceDetailsSecretsConfig", "DriveActivitySecretsConfig", "EntraIdSecretsConfig", "EventSecretsConfig", "EventsLogsSecretsConfig", "LogAnalyticsQuerySecretsConfig", "LoginActivitySecretsConfig", "LoginSessionsSecretsConfig", "MonadHttpSecretsConfig", "OauthActivitySecretsConfig", "RolesInfoSecretsConfig", "SemgrepCodeFindingsSecretsConfig", "SemgrepDeploymentsSecretsConfig", "SemgrepProjectDetailsSecretsConfig", "SemgrepProjectsSecretsConfig", "SemgrepSupplyChainFindingsSecretsConfig", "SnykIssuesSecretsConfig", "SnykOrganizationsSecretsConfig", "SnykProjectsSecretsConfig", "SnykTargetsSecretsConfig", "TenableAssetsSecretsConfig", "TenableVulnerabilitiesSecretsConfig", "UsersInfoSecretsConfig", "UsersSecretsConfig", "VulnerabilitiesSecretsConfig", "VulnerabilityFindingsSecretsConfig", "object"]
+ROUTESV2INPUTCONFIGSECRETS_ONE_OF_SCHEMAS = ["ActorsInfoSecretsConfig", "AdminActivitySecretsConfig", "AdminLogsSecretsConfig", "AuditLogsSecretsConfig", "AuthLogsSecretsConfig", "AzureActivityLogsSecretsConfig", "CloudConfigurationFindingsSecretsConfig", "CloudLogsSecretsConfig", "CloudResourceInventorySecretsConfig", "DetectSummariesSecretsConfig", "DeviceActivitySecretsConfig", "DeviceDetailsSecretsConfig", "DriveActivitySecretsConfig", "EntraIdSecretsConfig", "EventSecretsConfig", "EventsLogsSecretsConfig", "LogAnalyticsQuerySecretsConfig", "LoginActivitySecretsConfig", "LoginSessionsSecretsConfig", "MonadHttpSecretsConfig", "OauthActivitySecretsConfig", "RolesInfoSecretsConfig", "SemgrepCodeFindingsSecretsConfig", "SemgrepDeploymentsSecretsConfig", "SemgrepProjectDetailsSecretsConfig", "SemgrepProjectsSecretsConfig", "SemgrepSupplyChainFindingsSecretsConfig", "SlackUsersSecretsConfig", "SlackgroupsSecretsConfig", "SnykIssuesSecretsConfig", "SnykOrganizationsSecretsConfig", "SnykProjectsSecretsConfig", "SnykTargetsSecretsConfig", "TenableAssetsSecretsConfig", "TenableVulnerabilitiesSecretsConfig", "UsersInfoSecretsConfig", "UsersSecretsConfig", "VulnerabilitiesSecretsConfig", "VulnerabilityFindingsSecretsConfig", "object"]
 
 class RoutesV2InputConfigSecrets(BaseModel):
     """
@@ -133,28 +135,32 @@ class RoutesV2InputConfigSecrets(BaseModel):
     oneof_schema_33_validator: Optional[SemgrepProjectsSecretsConfig] = None
     # data type: SemgrepSupplyChainFindingsSecretsConfig
     oneof_schema_34_validator: Optional[SemgrepSupplyChainFindingsSecretsConfig] = None
+    # data type: SlackUsersSecretsConfig
+    oneof_schema_35_validator: Optional[SlackUsersSecretsConfig] = None
+    # data type: SlackgroupsSecretsConfig
+    oneof_schema_36_validator: Optional[SlackgroupsSecretsConfig] = None
     # data type: SnykIssuesSecretsConfig
-    oneof_schema_35_validator: Optional[SnykIssuesSecretsConfig] = None
+    oneof_schema_37_validator: Optional[SnykIssuesSecretsConfig] = None
     # data type: SnykOrganizationsSecretsConfig
-    oneof_schema_36_validator: Optional[SnykOrganizationsSecretsConfig] = None
+    oneof_schema_38_validator: Optional[SnykOrganizationsSecretsConfig] = None
     # data type: SnykProjectsSecretsConfig
-    oneof_schema_37_validator: Optional[SnykProjectsSecretsConfig] = None
+    oneof_schema_39_validator: Optional[SnykProjectsSecretsConfig] = None
     # data type: SnykTargetsSecretsConfig
-    oneof_schema_38_validator: Optional[SnykTargetsSecretsConfig] = None
+    oneof_schema_40_validator: Optional[SnykTargetsSecretsConfig] = None
     # data type: TenableAssetsSecretsConfig
-    oneof_schema_39_validator: Optional[TenableAssetsSecretsConfig] = None
+    oneof_schema_41_validator: Optional[TenableAssetsSecretsConfig] = None
     # data type: TenableVulnerabilitiesSecretsConfig
-    oneof_schema_40_validator: Optional[TenableVulnerabilitiesSecretsConfig] = None
+    oneof_schema_42_validator: Optional[TenableVulnerabilitiesSecretsConfig] = None
     # data type: UsersSecretsConfig
-    oneof_schema_41_validator: Optional[UsersSecretsConfig] = None
+    oneof_schema_43_validator: Optional[UsersSecretsConfig] = None
     # data type: UsersInfoSecretsConfig
-    oneof_schema_42_validator: Optional[UsersInfoSecretsConfig] = None
+    oneof_schema_44_validator: Optional[UsersInfoSecretsConfig] = None
     # data type: VulnerabilitiesSecretsConfig
-    oneof_schema_43_validator: Optional[VulnerabilitiesSecretsConfig] = None
+    oneof_schema_45_validator: Optional[VulnerabilitiesSecretsConfig] = None
     # data type: VulnerabilityFindingsSecretsConfig
-    oneof_schema_44_validator: Optional[VulnerabilityFindingsSecretsConfig] = None
-    actual_instance: Optional[Union[ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, MonadHttpSecretsConfig, OauthActivitySecretsConfig, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig, object]] = None
-    one_of_schemas: Set[str] = { "ActorsInfoSecretsConfig", "AdminActivitySecretsConfig", "AdminLogsSecretsConfig", "AuditLogsSecretsConfig", "AuthLogsSecretsConfig", "AzureActivityLogsSecretsConfig", "CloudConfigurationFindingsSecretsConfig", "CloudLogsSecretsConfig", "CloudResourceInventorySecretsConfig", "DetectSummariesSecretsConfig", "DeviceActivitySecretsConfig", "DeviceDetailsSecretsConfig", "DriveActivitySecretsConfig", "EntraIdSecretsConfig", "EventSecretsConfig", "EventsLogsSecretsConfig", "LogAnalyticsQuerySecretsConfig", "LoginActivitySecretsConfig", "LoginSessionsSecretsConfig", "MonadHttpSecretsConfig", "OauthActivitySecretsConfig", "RolesInfoSecretsConfig", "SemgrepCodeFindingsSecretsConfig", "SemgrepDeploymentsSecretsConfig", "SemgrepProjectDetailsSecretsConfig", "SemgrepProjectsSecretsConfig", "SemgrepSupplyChainFindingsSecretsConfig", "SnykIssuesSecretsConfig", "SnykOrganizationsSecretsConfig", "SnykProjectsSecretsConfig", "SnykTargetsSecretsConfig", "TenableAssetsSecretsConfig", "TenableVulnerabilitiesSecretsConfig", "UsersInfoSecretsConfig", "UsersSecretsConfig", "VulnerabilitiesSecretsConfig", "VulnerabilityFindingsSecretsConfig", "object" }
+    oneof_schema_46_validator: Optional[VulnerabilityFindingsSecretsConfig] = None
+    actual_instance: Optional[Union[ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, MonadHttpSecretsConfig, OauthActivitySecretsConfig, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig, object]] = None
+    one_of_schemas: Set[str] = { "ActorsInfoSecretsConfig", "AdminActivitySecretsConfig", "AdminLogsSecretsConfig", "AuditLogsSecretsConfig", "AuthLogsSecretsConfig", "AzureActivityLogsSecretsConfig", "CloudConfigurationFindingsSecretsConfig", "CloudLogsSecretsConfig", "CloudResourceInventorySecretsConfig", "DetectSummariesSecretsConfig", "DeviceActivitySecretsConfig", "DeviceDetailsSecretsConfig", "DriveActivitySecretsConfig", "EntraIdSecretsConfig", "EventSecretsConfig", "EventsLogsSecretsConfig", "LogAnalyticsQuerySecretsConfig", "LoginActivitySecretsConfig", "LoginSessionsSecretsConfig", "MonadHttpSecretsConfig", "OauthActivitySecretsConfig", "RolesInfoSecretsConfig", "SemgrepCodeFindingsSecretsConfig", "SemgrepDeploymentsSecretsConfig", "SemgrepProjectDetailsSecretsConfig", "SemgrepProjectsSecretsConfig", "SemgrepSupplyChainFindingsSecretsConfig", "SlackUsersSecretsConfig", "SlackgroupsSecretsConfig", "SnykIssuesSecretsConfig", "SnykOrganizationsSecretsConfig", "SnykProjectsSecretsConfig", "SnykTargetsSecretsConfig", "TenableAssetsSecretsConfig", "TenableVulnerabilitiesSecretsConfig", "UsersInfoSecretsConfig", "UsersSecretsConfig", "VulnerabilitiesSecretsConfig", "VulnerabilityFindingsSecretsConfig", "object" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -354,6 +360,16 @@ class RoutesV2InputConfigSecrets(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `SemgrepSupplyChainFindingsSecretsConfig`")
         else:
             match += 1
+        # validate data type: SlackUsersSecretsConfig
+        if not isinstance(v, SlackUsersSecretsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `SlackUsersSecretsConfig`")
+        else:
+            match += 1
+        # validate data type: SlackgroupsSecretsConfig
+        if not isinstance(v, SlackgroupsSecretsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `SlackgroupsSecretsConfig`")
+        else:
+            match += 1
         # validate data type: SnykIssuesSecretsConfig
         if not isinstance(v, SnykIssuesSecretsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `SnykIssuesSecretsConfig`")
@@ -406,10 +422,10 @@ class RoutesV2InputConfigSecrets(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in RoutesV2InputConfigSecrets with oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, MonadHttpSecretsConfig, OauthActivitySecretsConfig, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in RoutesV2InputConfigSecrets with oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, MonadHttpSecretsConfig, OauthActivitySecretsConfig, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in RoutesV2InputConfigSecrets with oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, MonadHttpSecretsConfig, OauthActivitySecretsConfig, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in RoutesV2InputConfigSecrets with oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, MonadHttpSecretsConfig, OauthActivitySecretsConfig, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -649,6 +665,18 @@ class RoutesV2InputConfigSecrets(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into SlackUsersSecretsConfig
+        try:
+            instance.actual_instance = SlackUsersSecretsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into SlackgroupsSecretsConfig
+        try:
+            instance.actual_instance = SlackgroupsSecretsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into SnykIssuesSecretsConfig
         try:
             instance.actual_instance = SnykIssuesSecretsConfig.from_json(json_str)
@@ -712,10 +740,10 @@ class RoutesV2InputConfigSecrets(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into RoutesV2InputConfigSecrets with oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, MonadHttpSecretsConfig, OauthActivitySecretsConfig, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into RoutesV2InputConfigSecrets with oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, MonadHttpSecretsConfig, OauthActivitySecretsConfig, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into RoutesV2InputConfigSecrets with oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, MonadHttpSecretsConfig, OauthActivitySecretsConfig, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into RoutesV2InputConfigSecrets with oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, MonadHttpSecretsConfig, OauthActivitySecretsConfig, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -729,7 +757,7 @@ class RoutesV2InputConfigSecrets(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, MonadHttpSecretsConfig, OauthActivitySecretsConfig, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig, object]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, MonadHttpSecretsConfig, OauthActivitySecretsConfig, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig, object]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

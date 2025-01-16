@@ -52,7 +52,7 @@ Name | Type | Description | Notes
 **cloud** | **str** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **member_cid** | **str** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 
 **story_id** | **str** | Filter by the given story. | [optional] 
-**team_id** | **str** | Filter by the given team. | [optional] 
+**team_id** | **str** | Team ID to filter user results by | [optional] 
 **tenant_url** | **str** | Unique URL for your Tines instance | [optional] 
 **query** | **str** | The query to run against the Log Analytics workspace | [optional] 
 **org_url** | **str** | URL of the organization to monitor | [optional] 

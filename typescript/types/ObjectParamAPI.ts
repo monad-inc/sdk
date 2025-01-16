@@ -167,6 +167,10 @@ import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettings
 import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
+import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
+import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
+import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
+import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
 import { SnowflakeSecretsConfig } from '../models/SnowflakeSecretsConfig';
 import { SnowflakeSettingsConfig } from '../models/SnowflakeSettingsConfig';
 import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';

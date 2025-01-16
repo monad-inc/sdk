@@ -12,10 +12,10 @@ Name | Type | Description | Notes
 **PersonalAccessToken** | Pointer to **string** | Your personal access token that grants read:audit_log | [optional] 
 **ApiKey** | Pointer to **string** | API Key for the Snyk API. This is required to authenticate requests. | [optional] 
 **AuthToken** | Pointer to **string** | Auth token to authenticate with Monad | [optional] 
+**Token** | Pointer to **string** | Token for the Wiz API. This is required to authenticate requests. | [optional] 
 **AccessKey** | Pointer to **string** | Access Key for the Tenable API. This is required to authenticate requests. | [optional] 
 **CustomerId** | Pointer to **string** | Google Workspace Customer ID. If you use your google workspace customer ID you will pull data on all users in all domains of your Google Workspace account. This should be set if Domain is not set. | [optional] 
 **Domain** | Pointer to **string** | Domain name your users belong to. If you use a google workspace domain you will only pull user data for users that belong to that domain. This should be set if CustomerID is not set | [optional] 
-**Token** | Pointer to **string** | Token for the Wiz API. This is required to authenticate requests. | [optional] 
 
 ## Methods
 
@@ -236,6 +236,31 @@ SetAuthToken sets AuthToken field to given value.
 
 HasAuthToken returns a boolean if a field has been set.
 
+### GetToken
+
+`func (o *RoutesV2InputConfigSecrets) GetToken() string`
+
+GetToken returns the Token field if non-nil, zero value otherwise.
+
+### GetTokenOk
+
+`func (o *RoutesV2InputConfigSecrets) GetTokenOk() (*string, bool)`
+
+GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToken
+
+`func (o *RoutesV2InputConfigSecrets) SetToken(v string)`
+
+SetToken sets Token field to given value.
+
+### HasToken
+
+`func (o *RoutesV2InputConfigSecrets) HasToken() bool`
+
+HasToken returns a boolean if a field has been set.
+
 ### GetAccessKey
 
 `func (o *RoutesV2InputConfigSecrets) GetAccessKey() string`
@@ -310,31 +335,6 @@ SetDomain sets Domain field to given value.
 `func (o *RoutesV2InputConfigSecrets) HasDomain() bool`
 
 HasDomain returns a boolean if a field has been set.
-
-### GetToken
-
-`func (o *RoutesV2InputConfigSecrets) GetToken() string`
-
-GetToken returns the Token field if non-nil, zero value otherwise.
-
-### GetTokenOk
-
-`func (o *RoutesV2InputConfigSecrets) GetTokenOk() (*string, bool)`
-
-GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetToken
-
-`func (o *RoutesV2InputConfigSecrets) SetToken(v string)`
-
-SetToken sets Token field to given value.
-
-### HasToken
-
-`func (o *RoutesV2InputConfigSecrets) HasToken() bool`
-
-HasToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

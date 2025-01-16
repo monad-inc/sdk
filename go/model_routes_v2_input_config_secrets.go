@@ -46,6 +46,8 @@ type RoutesV2InputConfigSecrets struct {
 	SemgrepProjectDetailsSecretsConfig *SemgrepProjectDetailsSecretsConfig
 	SemgrepProjectsSecretsConfig *SemgrepProjectsSecretsConfig
 	SemgrepSupplyChainFindingsSecretsConfig *SemgrepSupplyChainFindingsSecretsConfig
+	SlackUsersSecretsConfig *SlackUsersSecretsConfig
+	SlackgroupsSecretsConfig *SlackgroupsSecretsConfig
 	SnykIssuesSecretsConfig *SnykIssuesSecretsConfig
 	SnykOrganizationsSecretsConfig *SnykOrganizationsSecretsConfig
 	SnykProjectsSecretsConfig *SnykProjectsSecretsConfig
@@ -245,6 +247,20 @@ func SemgrepProjectsSecretsConfigAsRoutesV2InputConfigSecrets(v *SemgrepProjects
 func SemgrepSupplyChainFindingsSecretsConfigAsRoutesV2InputConfigSecrets(v *SemgrepSupplyChainFindingsSecretsConfig) RoutesV2InputConfigSecrets {
 	return RoutesV2InputConfigSecrets{
 		SemgrepSupplyChainFindingsSecretsConfig: v,
+	}
+}
+
+// SlackUsersSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns SlackUsersSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func SlackUsersSecretsConfigAsRoutesV2InputConfigSecrets(v *SlackUsersSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		SlackUsersSecretsConfig: v,
+	}
+}
+
+// SlackgroupsSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns SlackgroupsSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func SlackgroupsSecretsConfigAsRoutesV2InputConfigSecrets(v *SlackgroupsSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		SlackgroupsSecretsConfig: v,
 	}
 }
 
@@ -789,6 +805,40 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.SemgrepSupplyChainFindingsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into SlackUsersSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.SlackUsersSecretsConfig)
+	if err == nil {
+		jsonSlackUsersSecretsConfig, _ := json.Marshal(dst.SlackUsersSecretsConfig)
+		if string(jsonSlackUsersSecretsConfig) == "{}" { // empty struct
+			dst.SlackUsersSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SlackUsersSecretsConfig); err != nil {
+				dst.SlackUsersSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SlackUsersSecretsConfig = nil
+	}
+
+	// try to unmarshal data into SlackgroupsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.SlackgroupsSecretsConfig)
+	if err == nil {
+		jsonSlackgroupsSecretsConfig, _ := json.Marshal(dst.SlackgroupsSecretsConfig)
+		if string(jsonSlackgroupsSecretsConfig) == "{}" { // empty struct
+			dst.SlackgroupsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SlackgroupsSecretsConfig); err != nil {
+				dst.SlackgroupsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SlackgroupsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into SnykIssuesSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.SnykIssuesSecretsConfig)
 	if err == nil {
@@ -1005,6 +1055,8 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.SemgrepProjectDetailsSecretsConfig = nil
 		dst.SemgrepProjectsSecretsConfig = nil
 		dst.SemgrepSupplyChainFindingsSecretsConfig = nil
+		dst.SlackUsersSecretsConfig = nil
+		dst.SlackgroupsSecretsConfig = nil
 		dst.SnykIssuesSecretsConfig = nil
 		dst.SnykOrganizationsSecretsConfig = nil
 		dst.SnykProjectsSecretsConfig = nil
@@ -1133,6 +1185,14 @@ func (src RoutesV2InputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.SemgrepSupplyChainFindingsSecretsConfig != nil {
 		return json.Marshal(&src.SemgrepSupplyChainFindingsSecretsConfig)
+	}
+
+	if src.SlackUsersSecretsConfig != nil {
+		return json.Marshal(&src.SlackUsersSecretsConfig)
+	}
+
+	if src.SlackgroupsSecretsConfig != nil {
+		return json.Marshal(&src.SlackgroupsSecretsConfig)
 	}
 
 	if src.SnykIssuesSecretsConfig != nil {
@@ -1293,6 +1353,14 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 
 	if obj.SemgrepSupplyChainFindingsSecretsConfig != nil {
 		return obj.SemgrepSupplyChainFindingsSecretsConfig
+	}
+
+	if obj.SlackUsersSecretsConfig != nil {
+		return obj.SlackUsersSecretsConfig
+	}
+
+	if obj.SlackgroupsSecretsConfig != nil {
+		return obj.SlackgroupsSecretsConfig
 	}
 
 	if obj.SnykIssuesSecretsConfig != nil {

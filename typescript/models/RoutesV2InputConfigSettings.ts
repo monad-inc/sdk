@@ -40,6 +40,8 @@ import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
 import { SemgrepDeploymentsSettingsConfig } from '../models/SemgrepDeploymentsSettingsConfig';
 import { SemgrepProjectDetailsSettingsConfig } from '../models/SemgrepProjectDetailsSettingsConfig';
 import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettingsConfig';
+import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
+import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
 import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
 import { SnykProjectsSettingsConfig } from '../models/SnykProjectsSettingsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
@@ -53,7 +55,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesV2InputConfigSettings = ActorsInfoSettingsConfig | AdminActivitySettingsConfig | AdminLogsSettingsConfig | AuditLogsSettingsConfig | AuthLogsSettingsConfig | AwsS3SettingsConfig | AzureActivityLogsSettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudtrailSettingsConfig | DemoCustomSettingsConfig | DemoSettingsConfig | DetectSummariesSettingsConfig | DeviceActivitySettingsConfig | DeviceDetailsSettingsConfig | DriveActivitySettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | EventsLogsSettingsConfig | LogAnalyticsQuerySettingsConfig | LoginActivitySettingsConfig | LoginSessionsSettingsConfig | MonadHttpSettingsConfig | MonadLogSettingsConfig | OauthActivitySettingsConfig | RolesInfoSettingsConfig | SemgrepDeploymentsSettingsConfig | SemgrepProjectDetailsSettingsConfig | SemgrepProjectsSettingsConfig | SnykOrganizationsSettingsConfig | SnykProjectsSettingsConfig | UsersInfoSettingsConfig | UsersSettingsConfig | VulnerabilitiesSettingsConfig | VulnerabilityFindingsSettingsConfig | any;
+export type RoutesV2InputConfigSettings = ActorsInfoSettingsConfig | AdminActivitySettingsConfig | AdminLogsSettingsConfig | AuditLogsSettingsConfig | AuthLogsSettingsConfig | AwsS3SettingsConfig | AzureActivityLogsSettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudtrailSettingsConfig | DemoCustomSettingsConfig | DemoSettingsConfig | DetectSummariesSettingsConfig | DeviceActivitySettingsConfig | DeviceDetailsSettingsConfig | DriveActivitySettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | EventsLogsSettingsConfig | LogAnalyticsQuerySettingsConfig | LoginActivitySettingsConfig | LoginSessionsSettingsConfig | MonadHttpSettingsConfig | MonadLogSettingsConfig | OauthActivitySettingsConfig | RolesInfoSettingsConfig | SemgrepDeploymentsSettingsConfig | SemgrepProjectDetailsSettingsConfig | SemgrepProjectsSettingsConfig | SlackUsersSettingsConfig | SlackgroupsSettingsConfig | SnykOrganizationsSettingsConfig | SnykProjectsSettingsConfig | UsersInfoSettingsConfig | UsersSettingsConfig | VulnerabilitiesSettingsConfig | VulnerabilityFindingsSettingsConfig | any;
 
 /**
 * @type RoutesV2InputConfigSettingsClass
@@ -64,6 +66,8 @@ export class RoutesV2InputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
+
 
 
 
