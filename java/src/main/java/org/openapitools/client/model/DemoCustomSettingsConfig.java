@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Demo Custom settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-16T19:30:14.583103697Z[Etc/UTC]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-16T21:34:05.131294195Z[Etc/UTC]", comments = "Generator version: 7.10.0")
 public class DemoCustomSettingsConfig {
   public static final String SERIALIZED_NAME_CUSTOM_TEMPLATE = "custom_template";
   @SerializedName(SERIALIZED_NAME_CUSTOM_TEMPLATE)
