@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2GetOrganizationSummaryResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-17T15:58:37.129168319Z[Etc/UTC]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-17T18:14:02.910615416Z[Etc/UTC]", comments = "Generator version: 7.10.0")
 public class RoutesV2GetOrganizationSummaryResponse {
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
