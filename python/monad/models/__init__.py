@@ -107,8 +107,6 @@ from monad.models.models_transform_list import ModelsTransformList
 from monad.models.models_transform_operation import ModelsTransformOperation
 from monad.models.models_user import ModelsUser
 from monad.models.models_user_list import ModelsUserList
-from monad.models.monad_http_secrets_config import MonadHttpSecretsConfig
-from monad.models.monad_http_settings_config import MonadHttpSettingsConfig
 from monad.models.monad_log_settings_config import MonadLogSettingsConfig
 from monad.models.oauth_activity_secrets_config import OauthActivitySecretsConfig
 from monad.models.oauth_activity_settings_config import OauthActivitySettingsConfig

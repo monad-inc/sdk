@@ -38,7 +38,6 @@ type RoutesV2InputConfigSecrets struct {
 	LogAnalyticsQuerySecretsConfig *LogAnalyticsQuerySecretsConfig
 	LoginActivitySecretsConfig *LoginActivitySecretsConfig
 	LoginSessionsSecretsConfig *LoginSessionsSecretsConfig
-	MonadHttpSecretsConfig *MonadHttpSecretsConfig
 	OauthActivitySecretsConfig *OauthActivitySecretsConfig
 	RolesInfoSecretsConfig *RolesInfoSecretsConfig
 	SemgrepCodeFindingsSecretsConfig *SemgrepCodeFindingsSecretsConfig
@@ -191,13 +190,6 @@ func LoginActivitySecretsConfigAsRoutesV2InputConfigSecrets(v *LoginActivitySecr
 func LoginSessionsSecretsConfigAsRoutesV2InputConfigSecrets(v *LoginSessionsSecretsConfig) RoutesV2InputConfigSecrets {
 	return RoutesV2InputConfigSecrets{
 		LoginSessionsSecretsConfig: v,
-	}
-}
-
-// MonadHttpSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns MonadHttpSecretsConfig wrapped in RoutesV2InputConfigSecrets
-func MonadHttpSecretsConfigAsRoutesV2InputConfigSecrets(v *MonadHttpSecretsConfig) RoutesV2InputConfigSecrets {
-	return RoutesV2InputConfigSecrets{
-		MonadHttpSecretsConfig: v,
 	}
 }
 
@@ -669,23 +661,6 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.LoginSessionsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into MonadHttpSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.MonadHttpSecretsConfig)
-	if err == nil {
-		jsonMonadHttpSecretsConfig, _ := json.Marshal(dst.MonadHttpSecretsConfig)
-		if string(jsonMonadHttpSecretsConfig) == "{}" { // empty struct
-			dst.MonadHttpSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.MonadHttpSecretsConfig); err != nil {
-				dst.MonadHttpSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.MonadHttpSecretsConfig = nil
-	}
-
 	// try to unmarshal data into OauthActivitySecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.OauthActivitySecretsConfig)
 	if err == nil {
@@ -1047,7 +1022,6 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.LogAnalyticsQuerySecretsConfig = nil
 		dst.LoginActivitySecretsConfig = nil
 		dst.LoginSessionsSecretsConfig = nil
-		dst.MonadHttpSecretsConfig = nil
 		dst.OauthActivitySecretsConfig = nil
 		dst.RolesInfoSecretsConfig = nil
 		dst.SemgrepCodeFindingsSecretsConfig = nil
@@ -1153,10 +1127,6 @@ func (src RoutesV2InputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.LoginSessionsSecretsConfig != nil {
 		return json.Marshal(&src.LoginSessionsSecretsConfig)
-	}
-
-	if src.MonadHttpSecretsConfig != nil {
-		return json.Marshal(&src.MonadHttpSecretsConfig)
 	}
 
 	if src.OauthActivitySecretsConfig != nil {
@@ -1321,10 +1291,6 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 
 	if obj.LoginSessionsSecretsConfig != nil {
 		return obj.LoginSessionsSecretsConfig
-	}
-
-	if obj.MonadHttpSecretsConfig != nil {
-		return obj.MonadHttpSecretsConfig
 	}
 
 	if obj.OauthActivitySecretsConfig != nil {

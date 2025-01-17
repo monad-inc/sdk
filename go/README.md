@@ -262,8 +262,6 @@ Class | Method | HTTP request | Description
  - [ModelsTransformOperation](docs/ModelsTransformOperation.md)
  - [ModelsUser](docs/ModelsUser.md)
  - [ModelsUserList](docs/ModelsUserList.md)
- - [MonadHttpSecretsConfig](docs/MonadHttpSecretsConfig.md)
- - [MonadHttpSettingsConfig](docs/MonadHttpSettingsConfig.md)
  - [MonadLogSettingsConfig](docs/MonadLogSettingsConfig.md)
  - [OauthActivitySecretsConfig](docs/OauthActivitySecretsConfig.md)
  - [OauthActivitySettingsConfig](docs/OauthActivitySettingsConfig.md)

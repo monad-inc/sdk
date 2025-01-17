@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **SecretKey** | Pointer to **string** | Secret Key for the Tenable API. This is required to authenticate requests. | [optional] 
 **PersonalAccessToken** | Pointer to **string** | Your personal access token that grants read:audit_log | [optional] 
 **ApiKey** | Pointer to **string** | API Key for the Snyk API. This is required to authenticate requests. | [optional] 
-**AuthToken** | Pointer to **string** | Auth token to authenticate with Monad | [optional] 
 **Token** | Pointer to **string** | Token for the Wiz API. This is required to authenticate requests. | [optional] 
 **AccessKey** | Pointer to **string** | Access Key for the Tenable API. This is required to authenticate requests. | [optional] 
 **CustomerId** | Pointer to **string** | Google Workspace Customer ID. If you use your google workspace customer ID you will pull data on all users in all domains of your Google Workspace account. This should be set if Domain is not set. | [optional] 
@@ -210,31 +209,6 @@ SetApiKey sets ApiKey field to given value.
 `func (o *RoutesV2InputConfigSecrets) HasApiKey() bool`
 
 HasApiKey returns a boolean if a field has been set.
-
-### GetAuthToken
-
-`func (o *RoutesV2InputConfigSecrets) GetAuthToken() string`
-
-GetAuthToken returns the AuthToken field if non-nil, zero value otherwise.
-
-### GetAuthTokenOk
-
-`func (o *RoutesV2InputConfigSecrets) GetAuthTokenOk() (*string, bool)`
-
-GetAuthTokenOk returns a tuple with the AuthToken field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuthToken
-
-`func (o *RoutesV2InputConfigSecrets) SetAuthToken(v string)`
-
-SetAuthToken sets AuthToken field to given value.
-
-### HasAuthToken
-
-`func (o *RoutesV2InputConfigSecrets) HasAuthToken() bool`
-
-HasAuthToken returns a boolean if a field has been set.
 
 ### GetToken
 

@@ -42,7 +42,6 @@ type RoutesV2InputConfigSettings struct {
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
 	LoginActivitySettingsConfig *LoginActivitySettingsConfig
 	LoginSessionsSettingsConfig *LoginSessionsSettingsConfig
-	MonadHttpSettingsConfig *MonadHttpSettingsConfig
 	MonadLogSettingsConfig *MonadLogSettingsConfig
 	OauthActivitySettingsConfig *OauthActivitySettingsConfig
 	RolesInfoSettingsConfig *RolesInfoSettingsConfig
@@ -218,13 +217,6 @@ func LoginActivitySettingsConfigAsRoutesV2InputConfigSettings(v *LoginActivitySe
 func LoginSessionsSettingsConfigAsRoutesV2InputConfigSettings(v *LoginSessionsSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
 		LoginSessionsSettingsConfig: v,
-	}
-}
-
-// MonadHttpSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns MonadHttpSettingsConfig wrapped in RoutesV2InputConfigSettings
-func MonadHttpSettingsConfigAsRoutesV2InputConfigSettings(v *MonadHttpSettingsConfig) RoutesV2InputConfigSettings {
-	return RoutesV2InputConfigSettings{
-		MonadHttpSettingsConfig: v,
 	}
 }
 
@@ -729,23 +721,6 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.LoginSessionsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into MonadHttpSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.MonadHttpSettingsConfig)
-	if err == nil {
-		jsonMonadHttpSettingsConfig, _ := json.Marshal(dst.MonadHttpSettingsConfig)
-		if string(jsonMonadHttpSettingsConfig) == "{}" { // empty struct
-			dst.MonadHttpSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.MonadHttpSettingsConfig); err != nil {
-				dst.MonadHttpSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.MonadHttpSettingsConfig = nil
-	}
-
 	// try to unmarshal data into MonadLogSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.MonadLogSettingsConfig)
 	if err == nil {
@@ -1026,7 +1001,6 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.LogAnalyticsQuerySettingsConfig = nil
 		dst.LoginActivitySettingsConfig = nil
 		dst.LoginSessionsSettingsConfig = nil
-		dst.MonadHttpSettingsConfig = nil
 		dst.MonadLogSettingsConfig = nil
 		dst.OauthActivitySettingsConfig = nil
 		dst.RolesInfoSettingsConfig = nil
@@ -1143,10 +1117,6 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.LoginSessionsSettingsConfig != nil {
 		return json.Marshal(&src.LoginSessionsSettingsConfig)
-	}
-
-	if src.MonadHttpSettingsConfig != nil {
-		return json.Marshal(&src.MonadHttpSettingsConfig)
 	}
 
 	if src.MonadLogSettingsConfig != nil {
@@ -1307,10 +1277,6 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.LoginSessionsSettingsConfig != nil {
 		return obj.LoginSessionsSettingsConfig
-	}
-
-	if obj.MonadHttpSettingsConfig != nil {
-		return obj.MonadHttpSettingsConfig
 	}
 
 	if obj.MonadLogSettingsConfig != nil {

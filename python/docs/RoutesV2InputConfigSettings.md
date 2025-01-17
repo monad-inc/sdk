@@ -55,7 +55,6 @@ Name | Type | Description | Notes
 **team_id** | **str** | Team ID to filter user results by | [optional] 
 **tenant_url** | **str** | Unique URL for your Tines instance | [optional] 
 **query** | **str** | The query to run against the Log Analytics workspace | [optional] 
-**org_url** | **str** | URL of the organization to monitor | [optional] 
 **log_type** | **str** |  | [optional] 
 **asset_status** | **List[str]** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
 **asset_type** | **str** | Asset types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 

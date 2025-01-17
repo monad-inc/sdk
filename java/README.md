@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-01-17T14:25:02.184210344Z[Etc/UTC]
+  - Build date: 2025-01-17T14:47:15.418780967Z[Etc/UTC]
   - Generator version: 7.10.0
 
 This is the monad API
@@ -298,8 +298,6 @@ Class | Method | HTTP request | Description
  - [ModelsTransformOperation](docs/ModelsTransformOperation.md)
  - [ModelsUser](docs/ModelsUser.md)
  - [ModelsUserList](docs/ModelsUserList.md)
- - [MonadHttpSecretsConfig](docs/MonadHttpSecretsConfig.md)
- - [MonadHttpSettingsConfig](docs/MonadHttpSettingsConfig.md)
  - [MonadLogSettingsConfig](docs/MonadLogSettingsConfig.md)
  - [OauthActivitySecretsConfig](docs/OauthActivitySecretsConfig.md)
  - [OauthActivitySettingsConfig](docs/OauthActivitySettingsConfig.md)

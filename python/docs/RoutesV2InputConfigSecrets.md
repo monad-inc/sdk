@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **secret_key** | **str** | Secret Key for the Tenable API. This is required to authenticate requests. | [optional] 
 **personal_access_token** | **str** | Your personal access token that grants read:audit_log | [optional] 
 **api_key** | **str** | API Key for the Snyk API. This is required to authenticate requests. | [optional] 
-**auth_token** | **str** | Auth token to authenticate with Monad | [optional] 
 **token** | **str** | Token for the Wiz API. This is required to authenticate requests. | [optional] 
 **access_key** | **str** | Access Key for the Tenable API. This is required to authenticate requests. | [optional] 
 **customer_id** | **str** | Google Workspace Customer ID. If you use your google workspace customer ID you will pull data on all users in all domains of your Google Workspace account. This should be set if Domain is not set. | [optional] 
