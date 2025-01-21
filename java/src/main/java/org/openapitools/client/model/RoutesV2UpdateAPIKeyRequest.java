@@ -48,20 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2UpdateAPIKeyRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2UpdateAPIKeyRequest {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public RoutesV2UpdateAPIKeyRequest() {
   }
 
-  public RoutesV2UpdateAPIKeyRequest description(String description) {
+  public RoutesV2UpdateAPIKeyRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -75,12 +77,12 @@ public class RoutesV2UpdateAPIKeyRequest {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public RoutesV2UpdateAPIKeyRequest name(String name) {
+  public RoutesV2UpdateAPIKeyRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -94,7 +96,7 @@ public class RoutesV2UpdateAPIKeyRequest {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 

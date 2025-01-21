@@ -50,48 +50,57 @@ import org.openapitools.client.JSON;
 /**
  * HTTP Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class HttpSettingsConfig {
   public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
   @SerializedName(SERIALIZED_NAME_ENDPOINT)
+  @javax.annotation.Nullable
   private String endpoint;
 
   public static final String SERIALIZED_NAME_HEADERS = "headers";
   @SerializedName(SERIALIZED_NAME_HEADERS)
+  @javax.annotation.Nullable
   private Map<String, String> headers = new HashMap<>();
 
   public static final String SERIALIZED_NAME_MAX_BATCH_DATA_SIZE = "max_batch_data_size";
   @SerializedName(SERIALIZED_NAME_MAX_BATCH_DATA_SIZE)
+  @javax.annotation.Nullable
   private Integer maxBatchDataSize;
 
   public static final String SERIALIZED_NAME_MAX_BATCH_RECORD_COUNT = "max_batch_record_count";
   @SerializedName(SERIALIZED_NAME_MAX_BATCH_RECORD_COUNT)
+  @javax.annotation.Nullable
   private Integer maxBatchRecordCount;
 
   public static final String SERIALIZED_NAME_METHOD = "method";
   @SerializedName(SERIALIZED_NAME_METHOD)
+  @javax.annotation.Nullable
   private String method;
 
   public static final String SERIALIZED_NAME_PAYLOAD_STRUCTURE = "payload_structure";
   @SerializedName(SERIALIZED_NAME_PAYLOAD_STRUCTURE)
+  @javax.annotation.Nullable
   private String payloadStructure;
 
   public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
   @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
   private Integer rateLimit;
 
   public static final String SERIALIZED_NAME_TLS_SKIP_VERIFY = "tls_skip_verify";
   @SerializedName(SERIALIZED_NAME_TLS_SKIP_VERIFY)
+  @javax.annotation.Nullable
   private Boolean tlsSkipVerify;
 
   public static final String SERIALIZED_NAME_WRAPPER_KEY = "wrapper_key";
   @SerializedName(SERIALIZED_NAME_WRAPPER_KEY)
+  @javax.annotation.Nullable
   private String wrapperKey;
 
   public HttpSettingsConfig() {
   }
 
-  public HttpSettingsConfig endpoint(String endpoint) {
+  public HttpSettingsConfig endpoint(@javax.annotation.Nullable String endpoint) {
     this.endpoint = endpoint;
     return this;
   }
@@ -105,12 +114,12 @@ public class HttpSettingsConfig {
     return endpoint;
   }
 
-  public void setEndpoint(String endpoint) {
+  public void setEndpoint(@javax.annotation.Nullable String endpoint) {
     this.endpoint = endpoint;
   }
 
 
-  public HttpSettingsConfig headers(Map<String, String> headers) {
+  public HttpSettingsConfig headers(@javax.annotation.Nullable Map<String, String> headers) {
     this.headers = headers;
     return this;
   }
@@ -132,12 +141,12 @@ public class HttpSettingsConfig {
     return headers;
   }
 
-  public void setHeaders(Map<String, String> headers) {
+  public void setHeaders(@javax.annotation.Nullable Map<String, String> headers) {
     this.headers = headers;
   }
 
 
-  public HttpSettingsConfig maxBatchDataSize(Integer maxBatchDataSize) {
+  public HttpSettingsConfig maxBatchDataSize(@javax.annotation.Nullable Integer maxBatchDataSize) {
     this.maxBatchDataSize = maxBatchDataSize;
     return this;
   }
@@ -151,12 +160,12 @@ public class HttpSettingsConfig {
     return maxBatchDataSize;
   }
 
-  public void setMaxBatchDataSize(Integer maxBatchDataSize) {
+  public void setMaxBatchDataSize(@javax.annotation.Nullable Integer maxBatchDataSize) {
     this.maxBatchDataSize = maxBatchDataSize;
   }
 
 
-  public HttpSettingsConfig maxBatchRecordCount(Integer maxBatchRecordCount) {
+  public HttpSettingsConfig maxBatchRecordCount(@javax.annotation.Nullable Integer maxBatchRecordCount) {
     this.maxBatchRecordCount = maxBatchRecordCount;
     return this;
   }
@@ -170,12 +179,12 @@ public class HttpSettingsConfig {
     return maxBatchRecordCount;
   }
 
-  public void setMaxBatchRecordCount(Integer maxBatchRecordCount) {
+  public void setMaxBatchRecordCount(@javax.annotation.Nullable Integer maxBatchRecordCount) {
     this.maxBatchRecordCount = maxBatchRecordCount;
   }
 
 
-  public HttpSettingsConfig method(String method) {
+  public HttpSettingsConfig method(@javax.annotation.Nullable String method) {
     this.method = method;
     return this;
   }
@@ -189,12 +198,12 @@ public class HttpSettingsConfig {
     return method;
   }
 
-  public void setMethod(String method) {
+  public void setMethod(@javax.annotation.Nullable String method) {
     this.method = method;
   }
 
 
-  public HttpSettingsConfig payloadStructure(String payloadStructure) {
+  public HttpSettingsConfig payloadStructure(@javax.annotation.Nullable String payloadStructure) {
     this.payloadStructure = payloadStructure;
     return this;
   }
@@ -208,12 +217,12 @@ public class HttpSettingsConfig {
     return payloadStructure;
   }
 
-  public void setPayloadStructure(String payloadStructure) {
+  public void setPayloadStructure(@javax.annotation.Nullable String payloadStructure) {
     this.payloadStructure = payloadStructure;
   }
 
 
-  public HttpSettingsConfig rateLimit(Integer rateLimit) {
+  public HttpSettingsConfig rateLimit(@javax.annotation.Nullable Integer rateLimit) {
     this.rateLimit = rateLimit;
     return this;
   }
@@ -227,12 +236,12 @@ public class HttpSettingsConfig {
     return rateLimit;
   }
 
-  public void setRateLimit(Integer rateLimit) {
+  public void setRateLimit(@javax.annotation.Nullable Integer rateLimit) {
     this.rateLimit = rateLimit;
   }
 
 
-  public HttpSettingsConfig tlsSkipVerify(Boolean tlsSkipVerify) {
+  public HttpSettingsConfig tlsSkipVerify(@javax.annotation.Nullable Boolean tlsSkipVerify) {
     this.tlsSkipVerify = tlsSkipVerify;
     return this;
   }
@@ -246,12 +255,12 @@ public class HttpSettingsConfig {
     return tlsSkipVerify;
   }
 
-  public void setTlsSkipVerify(Boolean tlsSkipVerify) {
+  public void setTlsSkipVerify(@javax.annotation.Nullable Boolean tlsSkipVerify) {
     this.tlsSkipVerify = tlsSkipVerify;
   }
 
 
-  public HttpSettingsConfig wrapperKey(String wrapperKey) {
+  public HttpSettingsConfig wrapperKey(@javax.annotation.Nullable String wrapperKey) {
     this.wrapperKey = wrapperKey;
     return this;
   }
@@ -265,7 +274,7 @@ public class HttpSettingsConfig {
     return wrapperKey;
   }
 
-  public void setWrapperKey(String wrapperKey) {
+  public void setWrapperKey(@javax.annotation.Nullable String wrapperKey) {
     this.wrapperKey = wrapperKey;
   }
 

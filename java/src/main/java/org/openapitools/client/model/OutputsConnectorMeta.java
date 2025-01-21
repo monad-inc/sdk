@@ -49,40 +49,47 @@ import org.openapitools.client.JSON;
 /**
  * OutputsConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class OutputsConnectorMeta {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
+  @javax.annotation.Nullable
   private String authType;
 
   public static final String SERIALIZED_NAME_BILLING_TYPE = "billing_type";
   @SerializedName(SERIALIZED_NAME_BILLING_TYPE)
+  @javax.annotation.Nullable
   private Integer billingType;
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nullable
   private Object config = null;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_INTERNAL = "internal";
   @SerializedName(SERIALIZED_NAME_INTERNAL)
+  @javax.annotation.Nullable
   private Boolean internal;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_TYPE_I_D = "typeID";
   @SerializedName(SERIALIZED_NAME_TYPE_I_D)
+  @javax.annotation.Nullable
   private String typeID;
 
   public OutputsConnectorMeta() {
   }
 
-  public OutputsConnectorMeta authType(String authType) {
+  public OutputsConnectorMeta authType(@javax.annotation.Nullable String authType) {
     this.authType = authType;
     return this;
   }
@@ -96,12 +103,12 @@ public class OutputsConnectorMeta {
     return authType;
   }
 
-  public void setAuthType(String authType) {
+  public void setAuthType(@javax.annotation.Nullable String authType) {
     this.authType = authType;
   }
 
 
-  public OutputsConnectorMeta billingType(Integer billingType) {
+  public OutputsConnectorMeta billingType(@javax.annotation.Nullable Integer billingType) {
     this.billingType = billingType;
     return this;
   }
@@ -115,12 +122,12 @@ public class OutputsConnectorMeta {
     return billingType;
   }
 
-  public void setBillingType(Integer billingType) {
+  public void setBillingType(@javax.annotation.Nullable Integer billingType) {
     this.billingType = billingType;
   }
 
 
-  public OutputsConnectorMeta config(Object config) {
+  public OutputsConnectorMeta config(@javax.annotation.Nullable Object config) {
     this.config = config;
     return this;
   }
@@ -134,12 +141,12 @@ public class OutputsConnectorMeta {
     return config;
   }
 
-  public void setConfig(Object config) {
+  public void setConfig(@javax.annotation.Nullable Object config) {
     this.config = config;
   }
 
 
-  public OutputsConnectorMeta description(String description) {
+  public OutputsConnectorMeta description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -153,12 +160,12 @@ public class OutputsConnectorMeta {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public OutputsConnectorMeta internal(Boolean internal) {
+  public OutputsConnectorMeta internal(@javax.annotation.Nullable Boolean internal) {
     this.internal = internal;
     return this;
   }
@@ -172,12 +179,12 @@ public class OutputsConnectorMeta {
     return internal;
   }
 
-  public void setInternal(Boolean internal) {
+  public void setInternal(@javax.annotation.Nullable Boolean internal) {
     this.internal = internal;
   }
 
 
-  public OutputsConnectorMeta name(String name) {
+  public OutputsConnectorMeta name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -191,12 +198,12 @@ public class OutputsConnectorMeta {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public OutputsConnectorMeta typeID(String typeID) {
+  public OutputsConnectorMeta typeID(@javax.annotation.Nullable String typeID) {
     this.typeID = typeID;
     return this;
   }
@@ -210,7 +217,7 @@ public class OutputsConnectorMeta {
     return typeID;
   }
 
-  public void setTypeID(String typeID) {
+  public void setTypeID(@javax.annotation.Nullable String typeID) {
     this.typeID = typeID;
   }
 

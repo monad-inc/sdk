@@ -48,20 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * Demo settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class DemoSettingsConfig {
   public static final String SERIALIZED_NAME_RATE = "rate";
   @SerializedName(SERIALIZED_NAME_RATE)
+  @javax.annotation.Nullable
   private Integer rate;
 
   public static final String SERIALIZED_NAME_RECORD_TYPE = "record_type";
   @SerializedName(SERIALIZED_NAME_RECORD_TYPE)
+  @javax.annotation.Nullable
   private String recordType;
 
   public DemoSettingsConfig() {
   }
 
-  public DemoSettingsConfig rate(Integer rate) {
+  public DemoSettingsConfig rate(@javax.annotation.Nullable Integer rate) {
     this.rate = rate;
     return this;
   }
@@ -75,12 +77,12 @@ public class DemoSettingsConfig {
     return rate;
   }
 
-  public void setRate(Integer rate) {
+  public void setRate(@javax.annotation.Nullable Integer rate) {
     this.rate = rate;
   }
 
 
-  public DemoSettingsConfig recordType(String recordType) {
+  public DemoSettingsConfig recordType(@javax.annotation.Nullable String recordType) {
     this.recordType = recordType;
     return this;
   }
@@ -94,7 +96,7 @@ public class DemoSettingsConfig {
     return recordType;
   }
 
-  public void setRecordType(String recordType) {
+  public void setRecordType(@javax.annotation.Nullable String recordType) {
     this.recordType = recordType;
   }
 

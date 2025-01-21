@@ -48,20 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * RoutesAddUserToOrganizationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesAddUserToOrganizationRequest {
   public static final String SERIALIZED_NAME_ROLE_ID = "role_id";
   @SerializedName(SERIALIZED_NAME_ROLE_ID)
+  @javax.annotation.Nonnull
   private String roleId;
 
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
+  @javax.annotation.Nonnull
   private String userId;
 
   public RoutesAddUserToOrganizationRequest() {
   }
 
-  public RoutesAddUserToOrganizationRequest roleId(String roleId) {
+  public RoutesAddUserToOrganizationRequest roleId(@javax.annotation.Nonnull String roleId) {
     this.roleId = roleId;
     return this;
   }
@@ -75,12 +77,12 @@ public class RoutesAddUserToOrganizationRequest {
     return roleId;
   }
 
-  public void setRoleId(String roleId) {
+  public void setRoleId(@javax.annotation.Nonnull String roleId) {
     this.roleId = roleId;
   }
 
 
-  public RoutesAddUserToOrganizationRequest userId(String userId) {
+  public RoutesAddUserToOrganizationRequest userId(@javax.annotation.Nonnull String userId) {
     this.userId = userId;
     return this;
   }
@@ -94,7 +96,7 @@ public class RoutesAddUserToOrganizationRequest {
     return userId;
   }
 
-  public void setUserId(String userId) {
+  public void setUserId(@javax.annotation.Nonnull String userId) {
     this.userId = userId;
   }
 

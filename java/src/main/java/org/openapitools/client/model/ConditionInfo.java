@@ -49,28 +49,32 @@ import org.openapitools.client.JSON;
 /**
  * ConditionInfo
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ConditionInfo {
   public static final String SERIALIZED_NAME_CONFIG_META = "configMeta";
   @SerializedName(SERIALIZED_NAME_CONFIG_META)
+  @javax.annotation.Nullable
   private Object configMeta = null;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_TYPE_I_D = "typeID";
   @SerializedName(SERIALIZED_NAME_TYPE_I_D)
+  @javax.annotation.Nullable
   private String typeID;
 
   public ConditionInfo() {
   }
 
-  public ConditionInfo configMeta(Object configMeta) {
+  public ConditionInfo configMeta(@javax.annotation.Nullable Object configMeta) {
     this.configMeta = configMeta;
     return this;
   }
@@ -84,12 +88,12 @@ public class ConditionInfo {
     return configMeta;
   }
 
-  public void setConfigMeta(Object configMeta) {
+  public void setConfigMeta(@javax.annotation.Nullable Object configMeta) {
     this.configMeta = configMeta;
   }
 
 
-  public ConditionInfo description(String description) {
+  public ConditionInfo description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -103,12 +107,12 @@ public class ConditionInfo {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ConditionInfo name(String name) {
+  public ConditionInfo name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -122,12 +126,12 @@ public class ConditionInfo {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ConditionInfo typeID(String typeID) {
+  public ConditionInfo typeID(@javax.annotation.Nullable String typeID) {
     this.typeID = typeID;
     return this;
   }
@@ -141,7 +145,7 @@ public class ConditionInfo {
     return typeID;
   }
 
-  public void setTypeID(String typeID) {
+  public void setTypeID(@javax.annotation.Nullable String typeID) {
     this.typeID = typeID;
   }
 

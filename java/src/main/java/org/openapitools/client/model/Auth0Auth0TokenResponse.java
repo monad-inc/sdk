@@ -48,24 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * Auth0Auth0TokenResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class Auth0Auth0TokenResponse {
   public static final String SERIALIZED_NAME_ACCESS_TOKEN = "access_token";
   @SerializedName(SERIALIZED_NAME_ACCESS_TOKEN)
+  @javax.annotation.Nullable
   private String accessToken;
 
   public static final String SERIALIZED_NAME_EXPIRES_IN = "expires_in";
   @SerializedName(SERIALIZED_NAME_EXPIRES_IN)
+  @javax.annotation.Nullable
   private Integer expiresIn;
 
   public static final String SERIALIZED_NAME_TOKEN_TYPE = "token_type";
   @SerializedName(SERIALIZED_NAME_TOKEN_TYPE)
+  @javax.annotation.Nullable
   private String tokenType;
 
   public Auth0Auth0TokenResponse() {
   }
 
-  public Auth0Auth0TokenResponse accessToken(String accessToken) {
+  public Auth0Auth0TokenResponse accessToken(@javax.annotation.Nullable String accessToken) {
     this.accessToken = accessToken;
     return this;
   }
@@ -79,12 +82,12 @@ public class Auth0Auth0TokenResponse {
     return accessToken;
   }
 
-  public void setAccessToken(String accessToken) {
+  public void setAccessToken(@javax.annotation.Nullable String accessToken) {
     this.accessToken = accessToken;
   }
 
 
-  public Auth0Auth0TokenResponse expiresIn(Integer expiresIn) {
+  public Auth0Auth0TokenResponse expiresIn(@javax.annotation.Nullable Integer expiresIn) {
     this.expiresIn = expiresIn;
     return this;
   }
@@ -98,12 +101,12 @@ public class Auth0Auth0TokenResponse {
     return expiresIn;
   }
 
-  public void setExpiresIn(Integer expiresIn) {
+  public void setExpiresIn(@javax.annotation.Nullable Integer expiresIn) {
     this.expiresIn = expiresIn;
   }
 
 
-  public Auth0Auth0TokenResponse tokenType(String tokenType) {
+  public Auth0Auth0TokenResponse tokenType(@javax.annotation.Nullable String tokenType) {
     this.tokenType = tokenType;
     return this;
   }
@@ -117,7 +120,7 @@ public class Auth0Auth0TokenResponse {
     return tokenType;
   }
 
-  public void setTokenType(String tokenType) {
+  public void setTokenType(@javax.annotation.Nullable String tokenType) {
     this.tokenType = tokenType;
   }
 

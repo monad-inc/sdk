@@ -48,28 +48,32 @@ import org.openapitools.client.JSON;
 /**
  * AWS Cloudtrail settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class CloudtrailSettingsConfig {
   public static final String SERIALIZED_NAME_BUCKET = "bucket";
   @SerializedName(SERIALIZED_NAME_BUCKET)
+  @javax.annotation.Nullable
   private String bucket;
 
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
   @SerializedName(SERIALIZED_NAME_PREFIX)
+  @javax.annotation.Nullable
   private String prefix;
 
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
+  @javax.annotation.Nullable
   private String region;
 
   public static final String SERIALIZED_NAME_ROLE_ARN = "role_arn";
   @SerializedName(SERIALIZED_NAME_ROLE_ARN)
+  @javax.annotation.Nullable
   private String roleArn;
 
   public CloudtrailSettingsConfig() {
   }
 
-  public CloudtrailSettingsConfig bucket(String bucket) {
+  public CloudtrailSettingsConfig bucket(@javax.annotation.Nullable String bucket) {
     this.bucket = bucket;
     return this;
   }
@@ -83,12 +87,12 @@ public class CloudtrailSettingsConfig {
     return bucket;
   }
 
-  public void setBucket(String bucket) {
+  public void setBucket(@javax.annotation.Nullable String bucket) {
     this.bucket = bucket;
   }
 
 
-  public CloudtrailSettingsConfig prefix(String prefix) {
+  public CloudtrailSettingsConfig prefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
     return this;
   }
@@ -102,12 +106,12 @@ public class CloudtrailSettingsConfig {
     return prefix;
   }
 
-  public void setPrefix(String prefix) {
+  public void setPrefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
   }
 
 
-  public CloudtrailSettingsConfig region(String region) {
+  public CloudtrailSettingsConfig region(@javax.annotation.Nullable String region) {
     this.region = region;
     return this;
   }
@@ -121,12 +125,12 @@ public class CloudtrailSettingsConfig {
     return region;
   }
 
-  public void setRegion(String region) {
+  public void setRegion(@javax.annotation.Nullable String region) {
     this.region = region;
   }
 
 
-  public CloudtrailSettingsConfig roleArn(String roleArn) {
+  public CloudtrailSettingsConfig roleArn(@javax.annotation.Nullable String roleArn) {
     this.roleArn = roleArn;
     return this;
   }
@@ -140,7 +144,7 @@ public class CloudtrailSettingsConfig {
     return roleArn;
   }
 
-  public void setRoleArn(String roleArn) {
+  public void setRoleArn(@javax.annotation.Nullable String roleArn) {
     this.roleArn = roleArn;
   }
 

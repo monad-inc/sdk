@@ -50,16 +50,17 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2GenerateRecordResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2GenerateRecordResponse {
   public static final String SERIALIZED_NAME_RECORD = "record";
   @SerializedName(SERIALIZED_NAME_RECORD)
+  @javax.annotation.Nullable
   private List<Integer> record = new ArrayList<>();
 
   public RoutesV2GenerateRecordResponse() {
   }
 
-  public RoutesV2GenerateRecordResponse record(List<Integer> record) {
+  public RoutesV2GenerateRecordResponse record(@javax.annotation.Nullable List<Integer> record) {
     this.record = record;
     return this;
   }
@@ -81,7 +82,7 @@ public class RoutesV2GenerateRecordResponse {
     return record;
   }
 
-  public void setRecord(List<Integer> record) {
+  public void setRecord(@javax.annotation.Nullable List<Integer> record) {
     this.record = record;
   }
 

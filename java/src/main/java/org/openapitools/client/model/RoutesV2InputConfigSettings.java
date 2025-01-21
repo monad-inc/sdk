@@ -96,7 +96,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesV2InputConfigSettings.class.getName());
 
@@ -1148,6 +1148,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public ActorsInfoSettingsConfig getActorsInfoSettingsConfig() throws ClassCastException {
         return (ActorsInfoSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `AdminActivitySettingsConfig`. If the actual instance is not `AdminActivitySettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1158,6 +1159,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public AdminActivitySettingsConfig getAdminActivitySettingsConfig() throws ClassCastException {
         return (AdminActivitySettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `AdminLogsSettingsConfig`. If the actual instance is not `AdminLogsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1168,6 +1170,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public AdminLogsSettingsConfig getAdminLogsSettingsConfig() throws ClassCastException {
         return (AdminLogsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `AuditLogsSettingsConfig`. If the actual instance is not `AuditLogsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1178,6 +1181,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public AuditLogsSettingsConfig getAuditLogsSettingsConfig() throws ClassCastException {
         return (AuditLogsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `AuthLogsSettingsConfig`. If the actual instance is not `AuthLogsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1188,6 +1192,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public AuthLogsSettingsConfig getAuthLogsSettingsConfig() throws ClassCastException {
         return (AuthLogsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `AwsS3SettingsConfig`. If the actual instance is not `AwsS3SettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1198,6 +1203,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public AwsS3SettingsConfig getAwsS3SettingsConfig() throws ClassCastException {
         return (AwsS3SettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `AzureActivityLogsSettingsConfig`. If the actual instance is not `AzureActivityLogsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1208,6 +1214,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public AzureActivityLogsSettingsConfig getAzureActivityLogsSettingsConfig() throws ClassCastException {
         return (AzureActivityLogsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `Object`. If the actual instance is not `Object`,
      * the ClassCastException will be thrown.
@@ -1218,6 +1225,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public Object getObject() throws ClassCastException {
         return (Object)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `CloudConfigurationFindingsSettingsConfig`. If the actual instance is not `CloudConfigurationFindingsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1228,6 +1236,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public CloudConfigurationFindingsSettingsConfig getCloudConfigurationFindingsSettingsConfig() throws ClassCastException {
         return (CloudConfigurationFindingsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `CloudLogsSettingsConfig`. If the actual instance is not `CloudLogsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1238,6 +1247,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public CloudLogsSettingsConfig getCloudLogsSettingsConfig() throws ClassCastException {
         return (CloudLogsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `CloudResourceInventorySettingsConfig`. If the actual instance is not `CloudResourceInventorySettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1248,6 +1258,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public CloudResourceInventorySettingsConfig getCloudResourceInventorySettingsConfig() throws ClassCastException {
         return (CloudResourceInventorySettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `CloudtrailSettingsConfig`. If the actual instance is not `CloudtrailSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1258,6 +1269,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public CloudtrailSettingsConfig getCloudtrailSettingsConfig() throws ClassCastException {
         return (CloudtrailSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `DemoSettingsConfig`. If the actual instance is not `DemoSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1268,6 +1280,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public DemoSettingsConfig getDemoSettingsConfig() throws ClassCastException {
         return (DemoSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `DemoCustomSettingsConfig`. If the actual instance is not `DemoCustomSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1278,6 +1291,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public DemoCustomSettingsConfig getDemoCustomSettingsConfig() throws ClassCastException {
         return (DemoCustomSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `DetectSummariesSettingsConfig`. If the actual instance is not `DetectSummariesSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1288,6 +1302,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public DetectSummariesSettingsConfig getDetectSummariesSettingsConfig() throws ClassCastException {
         return (DetectSummariesSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `DeviceActivitySettingsConfig`. If the actual instance is not `DeviceActivitySettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1298,6 +1313,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public DeviceActivitySettingsConfig getDeviceActivitySettingsConfig() throws ClassCastException {
         return (DeviceActivitySettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `DeviceDetailsSettingsConfig`. If the actual instance is not `DeviceDetailsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1308,6 +1324,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public DeviceDetailsSettingsConfig getDeviceDetailsSettingsConfig() throws ClassCastException {
         return (DeviceDetailsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `DriveActivitySettingsConfig`. If the actual instance is not `DriveActivitySettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1318,6 +1335,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public DriveActivitySettingsConfig getDriveActivitySettingsConfig() throws ClassCastException {
         return (DriveActivitySettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `EntraIdSettingsConfig`. If the actual instance is not `EntraIdSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1328,6 +1346,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public EntraIdSettingsConfig getEntraIdSettingsConfig() throws ClassCastException {
         return (EntraIdSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `EventSettingsConfig`. If the actual instance is not `EventSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1338,6 +1357,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public EventSettingsConfig getEventSettingsConfig() throws ClassCastException {
         return (EventSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `EventsLogsSettingsConfig`. If the actual instance is not `EventsLogsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1348,6 +1368,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public EventsLogsSettingsConfig getEventsLogsSettingsConfig() throws ClassCastException {
         return (EventsLogsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `LogAnalyticsQuerySettingsConfig`. If the actual instance is not `LogAnalyticsQuerySettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1358,6 +1379,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public LogAnalyticsQuerySettingsConfig getLogAnalyticsQuerySettingsConfig() throws ClassCastException {
         return (LogAnalyticsQuerySettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `LoginActivitySettingsConfig`. If the actual instance is not `LoginActivitySettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1368,6 +1390,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public LoginActivitySettingsConfig getLoginActivitySettingsConfig() throws ClassCastException {
         return (LoginActivitySettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `LoginSessionsSettingsConfig`. If the actual instance is not `LoginSessionsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1378,6 +1401,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public LoginSessionsSettingsConfig getLoginSessionsSettingsConfig() throws ClassCastException {
         return (LoginSessionsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `MonadLogSettingsConfig`. If the actual instance is not `MonadLogSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1388,6 +1412,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public MonadLogSettingsConfig getMonadLogSettingsConfig() throws ClassCastException {
         return (MonadLogSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `OauthActivitySettingsConfig`. If the actual instance is not `OauthActivitySettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1398,6 +1423,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public OauthActivitySettingsConfig getOauthActivitySettingsConfig() throws ClassCastException {
         return (OauthActivitySettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `RolesInfoSettingsConfig`. If the actual instance is not `RolesInfoSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1408,6 +1434,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public RolesInfoSettingsConfig getRolesInfoSettingsConfig() throws ClassCastException {
         return (RolesInfoSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SemgrepDeploymentsSettingsConfig`. If the actual instance is not `SemgrepDeploymentsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1418,6 +1445,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public SemgrepDeploymentsSettingsConfig getSemgrepDeploymentsSettingsConfig() throws ClassCastException {
         return (SemgrepDeploymentsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SemgrepProjectDetailsSettingsConfig`. If the actual instance is not `SemgrepProjectDetailsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1428,6 +1456,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public SemgrepProjectDetailsSettingsConfig getSemgrepProjectDetailsSettingsConfig() throws ClassCastException {
         return (SemgrepProjectDetailsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SemgrepProjectsSettingsConfig`. If the actual instance is not `SemgrepProjectsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1438,6 +1467,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public SemgrepProjectsSettingsConfig getSemgrepProjectsSettingsConfig() throws ClassCastException {
         return (SemgrepProjectsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SlackUsersSettingsConfig`. If the actual instance is not `SlackUsersSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1448,6 +1478,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public SlackUsersSettingsConfig getSlackUsersSettingsConfig() throws ClassCastException {
         return (SlackUsersSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SlackgroupsSettingsConfig`. If the actual instance is not `SlackgroupsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1458,6 +1489,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public SlackgroupsSettingsConfig getSlackgroupsSettingsConfig() throws ClassCastException {
         return (SlackgroupsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SnykOrganizationsSettingsConfig`. If the actual instance is not `SnykOrganizationsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1468,6 +1500,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public SnykOrganizationsSettingsConfig getSnykOrganizationsSettingsConfig() throws ClassCastException {
         return (SnykOrganizationsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SnykProjectsSettingsConfig`. If the actual instance is not `SnykProjectsSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1478,6 +1511,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public SnykProjectsSettingsConfig getSnykProjectsSettingsConfig() throws ClassCastException {
         return (SnykProjectsSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `UsersSettingsConfig`. If the actual instance is not `UsersSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1488,6 +1522,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public UsersSettingsConfig getUsersSettingsConfig() throws ClassCastException {
         return (UsersSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `UsersInfoSettingsConfig`. If the actual instance is not `UsersInfoSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1498,6 +1533,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public UsersInfoSettingsConfig getUsersInfoSettingsConfig() throws ClassCastException {
         return (UsersInfoSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `VulnerabilitiesSettingsConfig`. If the actual instance is not `VulnerabilitiesSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -1508,6 +1544,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     public VulnerabilitiesSettingsConfig getVulnerabilitiesSettingsConfig() throws ClassCastException {
         return (VulnerabilitiesSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `VulnerabilityFindingsSettingsConfig`. If the actual instance is not `VulnerabilityFindingsSettingsConfig`,
      * the ClassCastException will be thrown.

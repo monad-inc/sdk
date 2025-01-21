@@ -48,32 +48,37 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganization
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsOrganization {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
   private String updatedAt;
 
   public ModelsOrganization() {
   }
 
-  public ModelsOrganization createdAt(String createdAt) {
+  public ModelsOrganization createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -87,12 +92,12 @@ public class ModelsOrganization {
     return createdAt;
   }
 
-  public void setCreatedAt(String createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ModelsOrganization description(String description) {
+  public ModelsOrganization description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -106,12 +111,12 @@ public class ModelsOrganization {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ModelsOrganization id(String id) {
+  public ModelsOrganization id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -125,12 +130,12 @@ public class ModelsOrganization {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public ModelsOrganization name(String name) {
+  public ModelsOrganization name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -144,12 +149,12 @@ public class ModelsOrganization {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ModelsOrganization updatedAt(String updatedAt) {
+  public ModelsOrganization updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -163,7 +168,7 @@ public class ModelsOrganization {
     return updatedAt;
   }
 
-  public void setUpdatedAt(String updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

@@ -48,44 +48,52 @@ import org.openapitools.client.JSON;
 /**
  * ModelsAPIKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsAPIKey {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_EXPIRATION_TIME = "expiration_time";
   @SerializedName(SERIALIZED_NAME_EXPIRATION_TIME)
+  @javax.annotation.Nullable
   private String expirationTime;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
+  @javax.annotation.Nullable
   private String organizationId;
 
   public static final String SERIALIZED_NAME_ROLE_ID = "role_id";
   @SerializedName(SERIALIZED_NAME_ROLE_ID)
+  @javax.annotation.Nullable
   private String roleId;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
   private String updatedAt;
 
   public ModelsAPIKey() {
   }
 
-  public ModelsAPIKey createdAt(String createdAt) {
+  public ModelsAPIKey createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -99,12 +107,12 @@ public class ModelsAPIKey {
     return createdAt;
   }
 
-  public void setCreatedAt(String createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ModelsAPIKey description(String description) {
+  public ModelsAPIKey description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -118,12 +126,12 @@ public class ModelsAPIKey {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ModelsAPIKey expirationTime(String expirationTime) {
+  public ModelsAPIKey expirationTime(@javax.annotation.Nullable String expirationTime) {
     this.expirationTime = expirationTime;
     return this;
   }
@@ -137,12 +145,12 @@ public class ModelsAPIKey {
     return expirationTime;
   }
 
-  public void setExpirationTime(String expirationTime) {
+  public void setExpirationTime(@javax.annotation.Nullable String expirationTime) {
     this.expirationTime = expirationTime;
   }
 
 
-  public ModelsAPIKey id(String id) {
+  public ModelsAPIKey id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -156,12 +164,12 @@ public class ModelsAPIKey {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public ModelsAPIKey name(String name) {
+  public ModelsAPIKey name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -175,12 +183,12 @@ public class ModelsAPIKey {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ModelsAPIKey organizationId(String organizationId) {
+  public ModelsAPIKey organizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -194,12 +202,12 @@ public class ModelsAPIKey {
     return organizationId;
   }
 
-  public void setOrganizationId(String organizationId) {
+  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
   }
 
 
-  public ModelsAPIKey roleId(String roleId) {
+  public ModelsAPIKey roleId(@javax.annotation.Nullable String roleId) {
     this.roleId = roleId;
     return this;
   }
@@ -213,12 +221,12 @@ public class ModelsAPIKey {
     return roleId;
   }
 
-  public void setRoleId(String roleId) {
+  public void setRoleId(@javax.annotation.Nullable String roleId) {
     this.roleId = roleId;
   }
 
 
-  public ModelsAPIKey updatedAt(String updatedAt) {
+  public ModelsAPIKey updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -232,7 +240,7 @@ public class ModelsAPIKey {
     return updatedAt;
   }
 
-  public void setUpdatedAt(String updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

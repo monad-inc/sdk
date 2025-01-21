@@ -48,40 +48,47 @@ import org.openapitools.client.JSON;
 /**
  * Snowflake Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SnowflakeSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
   private String account;
 
   public static final String SERIALIZED_NAME_DATABASE = "database";
   @SerializedName(SERIALIZED_NAME_DATABASE)
+  @javax.annotation.Nullable
   private String database;
 
   public static final String SERIALIZED_NAME_SCHEMA = "schema";
   @SerializedName(SERIALIZED_NAME_SCHEMA)
+  @javax.annotation.Nullable
   private String schema;
 
   public static final String SERIALIZED_NAME_STAGE = "stage";
   @SerializedName(SERIALIZED_NAME_STAGE)
+  @javax.annotation.Nullable
   private String stage;
 
   public static final String SERIALIZED_NAME_TABLE = "table";
   @SerializedName(SERIALIZED_NAME_TABLE)
+  @javax.annotation.Nullable
   private String table;
 
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
+  @javax.annotation.Nullable
   private String user;
 
   public static final String SERIALIZED_NAME_WAREHOUSE = "warehouse";
   @SerializedName(SERIALIZED_NAME_WAREHOUSE)
+  @javax.annotation.Nullable
   private String warehouse;
 
   public SnowflakeSettingsConfig() {
   }
 
-  public SnowflakeSettingsConfig account(String account) {
+  public SnowflakeSettingsConfig account(@javax.annotation.Nullable String account) {
     this.account = account;
     return this;
   }
@@ -95,12 +102,12 @@ public class SnowflakeSettingsConfig {
     return account;
   }
 
-  public void setAccount(String account) {
+  public void setAccount(@javax.annotation.Nullable String account) {
     this.account = account;
   }
 
 
-  public SnowflakeSettingsConfig database(String database) {
+  public SnowflakeSettingsConfig database(@javax.annotation.Nullable String database) {
     this.database = database;
     return this;
   }
@@ -114,12 +121,12 @@ public class SnowflakeSettingsConfig {
     return database;
   }
 
-  public void setDatabase(String database) {
+  public void setDatabase(@javax.annotation.Nullable String database) {
     this.database = database;
   }
 
 
-  public SnowflakeSettingsConfig schema(String schema) {
+  public SnowflakeSettingsConfig schema(@javax.annotation.Nullable String schema) {
     this.schema = schema;
     return this;
   }
@@ -133,12 +140,12 @@ public class SnowflakeSettingsConfig {
     return schema;
   }
 
-  public void setSchema(String schema) {
+  public void setSchema(@javax.annotation.Nullable String schema) {
     this.schema = schema;
   }
 
 
-  public SnowflakeSettingsConfig stage(String stage) {
+  public SnowflakeSettingsConfig stage(@javax.annotation.Nullable String stage) {
     this.stage = stage;
     return this;
   }
@@ -152,12 +159,12 @@ public class SnowflakeSettingsConfig {
     return stage;
   }
 
-  public void setStage(String stage) {
+  public void setStage(@javax.annotation.Nullable String stage) {
     this.stage = stage;
   }
 
 
-  public SnowflakeSettingsConfig table(String table) {
+  public SnowflakeSettingsConfig table(@javax.annotation.Nullable String table) {
     this.table = table;
     return this;
   }
@@ -171,12 +178,12 @@ public class SnowflakeSettingsConfig {
     return table;
   }
 
-  public void setTable(String table) {
+  public void setTable(@javax.annotation.Nullable String table) {
     this.table = table;
   }
 
 
-  public SnowflakeSettingsConfig user(String user) {
+  public SnowflakeSettingsConfig user(@javax.annotation.Nullable String user) {
     this.user = user;
     return this;
   }
@@ -190,12 +197,12 @@ public class SnowflakeSettingsConfig {
     return user;
   }
 
-  public void setUser(String user) {
+  public void setUser(@javax.annotation.Nullable String user) {
     this.user = user;
   }
 
 
-  public SnowflakeSettingsConfig warehouse(String warehouse) {
+  public SnowflakeSettingsConfig warehouse(@javax.annotation.Nullable String warehouse) {
     this.warehouse = warehouse;
     return this;
   }
@@ -209,7 +216,7 @@ public class SnowflakeSettingsConfig {
     return warehouse;
   }
 
-  public void setWarehouse(String warehouse) {
+  public void setWarehouse(@javax.annotation.Nullable String warehouse) {
     this.warehouse = warehouse;
   }
 

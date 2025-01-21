@@ -48,16 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2SuccessResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2SuccessResponse {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nullable
   private String message;
 
   public RoutesV2SuccessResponse() {
   }
 
-  public RoutesV2SuccessResponse message(String message) {
+  public RoutesV2SuccessResponse message(@javax.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
@@ -71,7 +72,7 @@ public class RoutesV2SuccessResponse {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
 

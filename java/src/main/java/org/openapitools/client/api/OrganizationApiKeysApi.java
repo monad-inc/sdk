@@ -84,7 +84,8 @@ public class OrganizationApiKeysApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key deleted successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
@@ -161,7 +162,8 @@ public class OrganizationApiKeysApi {
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key deleted successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
@@ -181,7 +183,8 @@ public class OrganizationApiKeysApi {
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key deleted successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
@@ -203,7 +206,8 @@ public class OrganizationApiKeysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key deleted successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
@@ -225,7 +229,8 @@ public class OrganizationApiKeysApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key details </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
@@ -302,7 +307,8 @@ public class OrganizationApiKeysApi {
      * @return ModelsAPIKey
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key details </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
@@ -322,7 +328,8 @@ public class OrganizationApiKeysApi {
      * @return ApiResponse&lt;ModelsAPIKey&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key details </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
@@ -344,7 +351,8 @@ public class OrganizationApiKeysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key details </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
@@ -367,7 +375,8 @@ public class OrganizationApiKeysApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -451,7 +460,8 @@ public class OrganizationApiKeysApi {
      * @return ModelsAPIKey
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -472,7 +482,8 @@ public class OrganizationApiKeysApi {
      * @return ApiResponse&lt;ModelsAPIKey&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -495,7 +506,8 @@ public class OrganizationApiKeysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -517,7 +529,8 @@ public class OrganizationApiKeysApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> New API key generated successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
@@ -594,7 +607,8 @@ public class OrganizationApiKeysApi {
      * @return ModelsAPIKeyWithToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> New API key generated successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
@@ -614,7 +628,8 @@ public class OrganizationApiKeysApi {
      * @return ApiResponse&lt;ModelsAPIKeyWithToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> New API key generated successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
@@ -636,7 +651,8 @@ public class OrganizationApiKeysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> New API key generated successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
@@ -659,7 +675,8 @@ public class OrganizationApiKeysApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of API keys </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list API keys </td><td>  -  </td></tr>
@@ -738,7 +755,8 @@ public class OrganizationApiKeysApi {
      * @return ModelsAPIKeyList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of API keys </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list API keys </td><td>  -  </td></tr>
@@ -758,7 +776,8 @@ public class OrganizationApiKeysApi {
      * @return ApiResponse&lt;ModelsAPIKeyList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of API keys </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list API keys </td><td>  -  </td></tr>
@@ -780,7 +799,8 @@ public class OrganizationApiKeysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of API keys </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list API keys </td><td>  -  </td></tr>
@@ -801,7 +821,8 @@ public class OrganizationApiKeysApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -878,7 +899,8 @@ public class OrganizationApiKeysApi {
      * @return ModelsAPIKeyWithToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -898,7 +920,8 @@ public class OrganizationApiKeysApi {
      * @return ApiResponse&lt;ModelsAPIKeyWithToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -920,7 +943,8 @@ public class OrganizationApiKeysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> API key created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>

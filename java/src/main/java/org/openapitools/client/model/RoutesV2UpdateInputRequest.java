@@ -49,28 +49,32 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2UpdateInputRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2UpdateInputRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nullable
   private RoutesV2InputConfig config;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private String type;
 
   public RoutesV2UpdateInputRequest() {
   }
 
-  public RoutesV2UpdateInputRequest config(RoutesV2InputConfig config) {
+  public RoutesV2UpdateInputRequest config(@javax.annotation.Nullable RoutesV2InputConfig config) {
     this.config = config;
     return this;
   }
@@ -84,12 +88,12 @@ public class RoutesV2UpdateInputRequest {
     return config;
   }
 
-  public void setConfig(RoutesV2InputConfig config) {
+  public void setConfig(@javax.annotation.Nullable RoutesV2InputConfig config) {
     this.config = config;
   }
 
 
-  public RoutesV2UpdateInputRequest description(String description) {
+  public RoutesV2UpdateInputRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -103,12 +107,12 @@ public class RoutesV2UpdateInputRequest {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public RoutesV2UpdateInputRequest name(String name) {
+  public RoutesV2UpdateInputRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -122,12 +126,12 @@ public class RoutesV2UpdateInputRequest {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public RoutesV2UpdateInputRequest type(String type) {
+  public RoutesV2UpdateInputRequest type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
@@ -141,7 +145,7 @@ public class RoutesV2UpdateInputRequest {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 

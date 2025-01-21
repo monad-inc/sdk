@@ -51,16 +51,17 @@ import org.openapitools.client.JSON;
 /**
  * ModelsTransformConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsTransformConfig {
   public static final String SERIALIZED_NAME_OPERATIONS = "operations";
   @SerializedName(SERIALIZED_NAME_OPERATIONS)
+  @javax.annotation.Nullable
   private List<ModelsTransformOperation> operations = new ArrayList<>();
 
   public ModelsTransformConfig() {
   }
 
-  public ModelsTransformConfig operations(List<ModelsTransformOperation> operations) {
+  public ModelsTransformConfig operations(@javax.annotation.Nullable List<ModelsTransformOperation> operations) {
     this.operations = operations;
     return this;
   }
@@ -82,7 +83,7 @@ public class ModelsTransformConfig {
     return operations;
   }
 
-  public void setOperations(List<ModelsTransformOperation> operations) {
+  public void setOperations(@javax.annotation.Nullable List<ModelsTransformOperation> operations) {
     this.operations = operations;
   }
 

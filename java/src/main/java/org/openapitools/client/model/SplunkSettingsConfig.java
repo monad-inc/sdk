@@ -48,24 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * Splunk Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SplunkSettingsConfig {
   public static final String SERIALIZED_NAME_ALLOW_INSECURE = "allow_insecure";
   @SerializedName(SERIALIZED_NAME_ALLOW_INSECURE)
+  @javax.annotation.Nullable
   private Boolean allowInsecure;
 
   public static final String SERIALIZED_NAME_PORT = "port";
   @SerializedName(SERIALIZED_NAME_PORT)
+  @javax.annotation.Nullable
   private String port;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
   private String url;
 
   public SplunkSettingsConfig() {
   }
 
-  public SplunkSettingsConfig allowInsecure(Boolean allowInsecure) {
+  public SplunkSettingsConfig allowInsecure(@javax.annotation.Nullable Boolean allowInsecure) {
     this.allowInsecure = allowInsecure;
     return this;
   }
@@ -79,12 +82,12 @@ public class SplunkSettingsConfig {
     return allowInsecure;
   }
 
-  public void setAllowInsecure(Boolean allowInsecure) {
+  public void setAllowInsecure(@javax.annotation.Nullable Boolean allowInsecure) {
     this.allowInsecure = allowInsecure;
   }
 
 
-  public SplunkSettingsConfig port(String port) {
+  public SplunkSettingsConfig port(@javax.annotation.Nullable String port) {
     this.port = port;
     return this;
   }
@@ -98,12 +101,12 @@ public class SplunkSettingsConfig {
     return port;
   }
 
-  public void setPort(String port) {
+  public void setPort(@javax.annotation.Nullable String port) {
     this.port = port;
   }
 
 
-  public SplunkSettingsConfig url(String url) {
+  public SplunkSettingsConfig url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
@@ -117,7 +120,7 @@ public class SplunkSettingsConfig {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 

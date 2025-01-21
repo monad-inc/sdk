@@ -48,24 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * RoutesUpdatePipelineRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesUpdatePipelineRequest {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public RoutesUpdatePipelineRequest() {
   }
 
-  public RoutesUpdatePipelineRequest description(String description) {
+  public RoutesUpdatePipelineRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -79,12 +82,12 @@ public class RoutesUpdatePipelineRequest {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public RoutesUpdatePipelineRequest enabled(Boolean enabled) {
+  public RoutesUpdatePipelineRequest enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -98,12 +101,12 @@ public class RoutesUpdatePipelineRequest {
     return enabled;
   }
 
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public RoutesUpdatePipelineRequest name(String name) {
+  public RoutesUpdatePipelineRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -117,7 +120,7 @@ public class RoutesUpdatePipelineRequest {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 

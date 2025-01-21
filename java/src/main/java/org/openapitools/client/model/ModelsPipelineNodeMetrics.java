@@ -51,32 +51,37 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNodeMetrics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsPipelineNodeMetrics {
   public static final String SERIALIZED_NAME_METRIC = "metric";
   @SerializedName(SERIALIZED_NAME_METRIC)
+  @javax.annotation.Nullable
   private String metric;
 
   public static final String SERIALIZED_NAME_NODE_ID = "node_id";
   @SerializedName(SERIALIZED_NAME_NODE_ID)
+  @javax.annotation.Nullable
   private String nodeId;
 
   public static final String SERIALIZED_NAME_NODE_SLUG = "node_slug";
   @SerializedName(SERIALIZED_NAME_NODE_SLUG)
+  @javax.annotation.Nullable
   private String nodeSlug;
 
   public static final String SERIALIZED_NAME_PIPELINE_ID = "pipeline_id";
   @SerializedName(SERIALIZED_NAME_PIPELINE_ID)
+  @javax.annotation.Nullable
   private String pipelineId;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
+  @javax.annotation.Nullable
   private List<ModelsPipelineNodeMetricsValue> values = new ArrayList<>();
 
   public ModelsPipelineNodeMetrics() {
   }
 
-  public ModelsPipelineNodeMetrics metric(String metric) {
+  public ModelsPipelineNodeMetrics metric(@javax.annotation.Nullable String metric) {
     this.metric = metric;
     return this;
   }
@@ -90,12 +95,12 @@ public class ModelsPipelineNodeMetrics {
     return metric;
   }
 
-  public void setMetric(String metric) {
+  public void setMetric(@javax.annotation.Nullable String metric) {
     this.metric = metric;
   }
 
 
-  public ModelsPipelineNodeMetrics nodeId(String nodeId) {
+  public ModelsPipelineNodeMetrics nodeId(@javax.annotation.Nullable String nodeId) {
     this.nodeId = nodeId;
     return this;
   }
@@ -109,12 +114,12 @@ public class ModelsPipelineNodeMetrics {
     return nodeId;
   }
 
-  public void setNodeId(String nodeId) {
+  public void setNodeId(@javax.annotation.Nullable String nodeId) {
     this.nodeId = nodeId;
   }
 
 
-  public ModelsPipelineNodeMetrics nodeSlug(String nodeSlug) {
+  public ModelsPipelineNodeMetrics nodeSlug(@javax.annotation.Nullable String nodeSlug) {
     this.nodeSlug = nodeSlug;
     return this;
   }
@@ -128,12 +133,12 @@ public class ModelsPipelineNodeMetrics {
     return nodeSlug;
   }
 
-  public void setNodeSlug(String nodeSlug) {
+  public void setNodeSlug(@javax.annotation.Nullable String nodeSlug) {
     this.nodeSlug = nodeSlug;
   }
 
 
-  public ModelsPipelineNodeMetrics pipelineId(String pipelineId) {
+  public ModelsPipelineNodeMetrics pipelineId(@javax.annotation.Nullable String pipelineId) {
     this.pipelineId = pipelineId;
     return this;
   }
@@ -147,12 +152,12 @@ public class ModelsPipelineNodeMetrics {
     return pipelineId;
   }
 
-  public void setPipelineId(String pipelineId) {
+  public void setPipelineId(@javax.annotation.Nullable String pipelineId) {
     this.pipelineId = pipelineId;
   }
 
 
-  public ModelsPipelineNodeMetrics values(List<ModelsPipelineNodeMetricsValue> values) {
+  public ModelsPipelineNodeMetrics values(@javax.annotation.Nullable List<ModelsPipelineNodeMetricsValue> values) {
     this.values = values;
     return this;
   }
@@ -174,7 +179,7 @@ public class ModelsPipelineNodeMetrics {
     return values;
   }
 
-  public void setValues(List<ModelsPipelineNodeMetricsValue> values) {
+  public void setValues(@javax.annotation.Nullable List<ModelsPipelineNodeMetricsValue> values) {
     this.values = values;
   }
 

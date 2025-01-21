@@ -52,20 +52,22 @@ import org.openapitools.client.JSON;
 /**
  * ModelsTransformList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsTransformList {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
+  @javax.annotation.Nullable
   private ModelsPagination pagination;
 
   public static final String SERIALIZED_NAME_TRANSFORMS = "transforms";
   @SerializedName(SERIALIZED_NAME_TRANSFORMS)
+  @javax.annotation.Nullable
   private List<ModelsTransform> transforms = new ArrayList<>();
 
   public ModelsTransformList() {
   }
 
-  public ModelsTransformList pagination(ModelsPagination pagination) {
+  public ModelsTransformList pagination(@javax.annotation.Nullable ModelsPagination pagination) {
     this.pagination = pagination;
     return this;
   }
@@ -79,12 +81,12 @@ public class ModelsTransformList {
     return pagination;
   }
 
-  public void setPagination(ModelsPagination pagination) {
+  public void setPagination(@javax.annotation.Nullable ModelsPagination pagination) {
     this.pagination = pagination;
   }
 
 
-  public ModelsTransformList transforms(List<ModelsTransform> transforms) {
+  public ModelsTransformList transforms(@javax.annotation.Nullable List<ModelsTransform> transforms) {
     this.transforms = transforms;
     return this;
   }
@@ -106,7 +108,7 @@ public class ModelsTransformList {
     return transforms;
   }
 
-  public void setTransforms(List<ModelsTransform> transforms) {
+  public void setTransforms(@javax.annotation.Nullable List<ModelsTransform> transforms) {
     this.transforms = transforms;
   }
 

@@ -49,44 +49,52 @@ import org.openapitools.client.JSON;
 /**
  * InputsConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class InputsConnectorMeta {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "authType";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
+  @javax.annotation.Nullable
   private String authType;
 
   public static final String SERIALIZED_NAME_BILLING_TYPE = "billing_type";
   @SerializedName(SERIALIZED_NAME_BILLING_TYPE)
+  @javax.annotation.Nullable
   private Integer billingType;
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nullable
   private Object config = null;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_HOUSE = "house";
   @SerializedName(SERIALIZED_NAME_HOUSE)
+  @javax.annotation.Nullable
   private String house;
 
   public static final String SERIALIZED_NAME_INTERNAL = "internal";
   @SerializedName(SERIALIZED_NAME_INTERNAL)
+  @javax.annotation.Nullable
   private Boolean internal;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_TYPE_I_D = "typeID";
   @SerializedName(SERIALIZED_NAME_TYPE_I_D)
+  @javax.annotation.Nullable
   private String typeID;
 
   public InputsConnectorMeta() {
   }
 
-  public InputsConnectorMeta authType(String authType) {
+  public InputsConnectorMeta authType(@javax.annotation.Nullable String authType) {
     this.authType = authType;
     return this;
   }
@@ -100,12 +108,12 @@ public class InputsConnectorMeta {
     return authType;
   }
 
-  public void setAuthType(String authType) {
+  public void setAuthType(@javax.annotation.Nullable String authType) {
     this.authType = authType;
   }
 
 
-  public InputsConnectorMeta billingType(Integer billingType) {
+  public InputsConnectorMeta billingType(@javax.annotation.Nullable Integer billingType) {
     this.billingType = billingType;
     return this;
   }
@@ -119,12 +127,12 @@ public class InputsConnectorMeta {
     return billingType;
   }
 
-  public void setBillingType(Integer billingType) {
+  public void setBillingType(@javax.annotation.Nullable Integer billingType) {
     this.billingType = billingType;
   }
 
 
-  public InputsConnectorMeta config(Object config) {
+  public InputsConnectorMeta config(@javax.annotation.Nullable Object config) {
     this.config = config;
     return this;
   }
@@ -138,12 +146,12 @@ public class InputsConnectorMeta {
     return config;
   }
 
-  public void setConfig(Object config) {
+  public void setConfig(@javax.annotation.Nullable Object config) {
     this.config = config;
   }
 
 
-  public InputsConnectorMeta description(String description) {
+  public InputsConnectorMeta description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -157,12 +165,12 @@ public class InputsConnectorMeta {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public InputsConnectorMeta house(String house) {
+  public InputsConnectorMeta house(@javax.annotation.Nullable String house) {
     this.house = house;
     return this;
   }
@@ -176,12 +184,12 @@ public class InputsConnectorMeta {
     return house;
   }
 
-  public void setHouse(String house) {
+  public void setHouse(@javax.annotation.Nullable String house) {
     this.house = house;
   }
 
 
-  public InputsConnectorMeta internal(Boolean internal) {
+  public InputsConnectorMeta internal(@javax.annotation.Nullable Boolean internal) {
     this.internal = internal;
     return this;
   }
@@ -195,12 +203,12 @@ public class InputsConnectorMeta {
     return internal;
   }
 
-  public void setInternal(Boolean internal) {
+  public void setInternal(@javax.annotation.Nullable Boolean internal) {
     this.internal = internal;
   }
 
 
-  public InputsConnectorMeta name(String name) {
+  public InputsConnectorMeta name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -214,12 +222,12 @@ public class InputsConnectorMeta {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public InputsConnectorMeta typeID(String typeID) {
+  public InputsConnectorMeta typeID(@javax.annotation.Nullable String typeID) {
     this.typeID = typeID;
     return this;
   }
@@ -233,7 +241,7 @@ public class InputsConnectorMeta {
     return typeID;
   }
 
-  public void setTypeID(String typeID) {
+  public void setTypeID(@javax.annotation.Nullable String typeID) {
     this.typeID = typeID;
   }
 

@@ -48,24 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * Google Workspace Users secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class UsersSecretsConfig {
   public static final String SERIALIZED_NAME_CREDENTIALS_JSON = "credentials_json";
   @SerializedName(SERIALIZED_NAME_CREDENTIALS_JSON)
+  @javax.annotation.Nullable
   private String credentialsJson;
 
   public static final String SERIALIZED_NAME_CUSTOMER_ID = "customer_id";
   @SerializedName(SERIALIZED_NAME_CUSTOMER_ID)
+  @javax.annotation.Nullable
   private String customerId;
 
   public static final String SERIALIZED_NAME_DOMAIN = "domain";
   @SerializedName(SERIALIZED_NAME_DOMAIN)
+  @javax.annotation.Nullable
   private String domain;
 
   public UsersSecretsConfig() {
   }
 
-  public UsersSecretsConfig credentialsJson(String credentialsJson) {
+  public UsersSecretsConfig credentialsJson(@javax.annotation.Nullable String credentialsJson) {
     this.credentialsJson = credentialsJson;
     return this;
   }
@@ -79,12 +82,12 @@ public class UsersSecretsConfig {
     return credentialsJson;
   }
 
-  public void setCredentialsJson(String credentialsJson) {
+  public void setCredentialsJson(@javax.annotation.Nullable String credentialsJson) {
     this.credentialsJson = credentialsJson;
   }
 
 
-  public UsersSecretsConfig customerId(String customerId) {
+  public UsersSecretsConfig customerId(@javax.annotation.Nullable String customerId) {
     this.customerId = customerId;
     return this;
   }
@@ -98,12 +101,12 @@ public class UsersSecretsConfig {
     return customerId;
   }
 
-  public void setCustomerId(String customerId) {
+  public void setCustomerId(@javax.annotation.Nullable String customerId) {
     this.customerId = customerId;
   }
 
 
-  public UsersSecretsConfig domain(String domain) {
+  public UsersSecretsConfig domain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
     return this;
   }
@@ -117,7 +120,7 @@ public class UsersSecretsConfig {
     return domain;
   }
 
-  public void setDomain(String domain) {
+  public void setDomain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
   }
 

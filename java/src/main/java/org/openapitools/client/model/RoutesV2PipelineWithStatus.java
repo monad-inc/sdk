@@ -48,20 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineWithStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2PipelineWithStatus {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private String status;
 
   public RoutesV2PipelineWithStatus() {
   }
 
-  public RoutesV2PipelineWithStatus id(String id) {
+  public RoutesV2PipelineWithStatus id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -75,12 +77,12 @@ public class RoutesV2PipelineWithStatus {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public RoutesV2PipelineWithStatus status(String status) {
+  public RoutesV2PipelineWithStatus status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
   }
@@ -94,7 +96,7 @@ public class RoutesV2PipelineWithStatus {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nonnull String status) {
     this.status = status;
   }
 

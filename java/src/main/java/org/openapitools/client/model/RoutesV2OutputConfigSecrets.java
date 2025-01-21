@@ -67,7 +67,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesV2OutputConfigSecrets.class.getName());
 
@@ -394,6 +394,7 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
     public CriblHttpSecretsConfig getCriblHttpSecretsConfig() throws ClassCastException {
         return (CriblHttpSecretsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `ElasticsearchSecretsConfig`. If the actual instance is not `ElasticsearchSecretsConfig`,
      * the ClassCastException will be thrown.
@@ -404,6 +405,7 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
     public ElasticsearchSecretsConfig getElasticsearchSecretsConfig() throws ClassCastException {
         return (ElasticsearchSecretsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `HttpSecretsConfig`. If the actual instance is not `HttpSecretsConfig`,
      * the ClassCastException will be thrown.
@@ -414,6 +416,7 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
     public HttpSecretsConfig getHttpSecretsConfig() throws ClassCastException {
         return (HttpSecretsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `OpensearchSecretsConfig`. If the actual instance is not `OpensearchSecretsConfig`,
      * the ClassCastException will be thrown.
@@ -424,6 +427,7 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
     public OpensearchSecretsConfig getOpensearchSecretsConfig() throws ClassCastException {
         return (OpensearchSecretsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `Object`. If the actual instance is not `Object`,
      * the ClassCastException will be thrown.
@@ -434,6 +438,7 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
     public Object getObject() throws ClassCastException {
         return (Object)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SentinelSecretsConfig`. If the actual instance is not `SentinelSecretsConfig`,
      * the ClassCastException will be thrown.
@@ -444,6 +449,7 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
     public SentinelSecretsConfig getSentinelSecretsConfig() throws ClassCastException {
         return (SentinelSecretsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SnowflakeSecretsConfig`. If the actual instance is not `SnowflakeSecretsConfig`,
      * the ClassCastException will be thrown.
@@ -454,6 +460,7 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
     public SnowflakeSecretsConfig getSnowflakeSecretsConfig() throws ClassCastException {
         return (SnowflakeSecretsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SplunkSecretsConfig`. If the actual instance is not `SplunkSecretsConfig`,
      * the ClassCastException will be thrown.
@@ -464,6 +471,7 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
     public SplunkSecretsConfig getSplunkSecretsConfig() throws ClassCastException {
         return (SplunkSecretsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SumologicSecretsConfig`. If the actual instance is not `SumologicSecretsConfig`,
      * the ClassCastException will be thrown.

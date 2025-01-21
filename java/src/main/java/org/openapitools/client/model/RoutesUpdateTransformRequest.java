@@ -49,24 +49,27 @@ import org.openapitools.client.JSON;
 /**
  * RoutesUpdateTransformRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesUpdateTransformRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nullable
   private ModelsTransformConfig config;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public RoutesUpdateTransformRequest() {
   }
 
-  public RoutesUpdateTransformRequest config(ModelsTransformConfig config) {
+  public RoutesUpdateTransformRequest config(@javax.annotation.Nullable ModelsTransformConfig config) {
     this.config = config;
     return this;
   }
@@ -80,12 +83,12 @@ public class RoutesUpdateTransformRequest {
     return config;
   }
 
-  public void setConfig(ModelsTransformConfig config) {
+  public void setConfig(@javax.annotation.Nullable ModelsTransformConfig config) {
     this.config = config;
   }
 
 
-  public RoutesUpdateTransformRequest description(String description) {
+  public RoutesUpdateTransformRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -99,12 +102,12 @@ public class RoutesUpdateTransformRequest {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public RoutesUpdateTransformRequest name(String name) {
+  public RoutesUpdateTransformRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -118,7 +121,7 @@ public class RoutesUpdateTransformRequest {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 

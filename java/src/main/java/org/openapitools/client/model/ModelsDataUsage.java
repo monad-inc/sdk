@@ -48,20 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * ModelsDataUsage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsDataUsage {
   public static final String SERIALIZED_NAME_BYTES = "bytes";
   @SerializedName(SERIALIZED_NAME_BYTES)
+  @javax.annotation.Nullable
   private Integer bytes;
 
   public static final String SERIALIZED_NAME_RECORDS = "records";
   @SerializedName(SERIALIZED_NAME_RECORDS)
+  @javax.annotation.Nullable
   private Integer records;
 
   public ModelsDataUsage() {
   }
 
-  public ModelsDataUsage bytes(Integer bytes) {
+  public ModelsDataUsage bytes(@javax.annotation.Nullable Integer bytes) {
     this.bytes = bytes;
     return this;
   }
@@ -75,12 +77,12 @@ public class ModelsDataUsage {
     return bytes;
   }
 
-  public void setBytes(Integer bytes) {
+  public void setBytes(@javax.annotation.Nullable Integer bytes) {
     this.bytes = bytes;
   }
 
 
-  public ModelsDataUsage records(Integer records) {
+  public ModelsDataUsage records(@javax.annotation.Nullable Integer records) {
     this.records = records;
     return this;
   }
@@ -94,7 +96,7 @@ public class ModelsDataUsage {
     return records;
   }
 
-  public void setRecords(Integer records) {
+  public void setRecords(@javax.annotation.Nullable Integer records) {
     this.records = records;
   }
 

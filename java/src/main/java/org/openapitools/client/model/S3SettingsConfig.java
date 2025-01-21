@@ -48,40 +48,47 @@ import org.openapitools.client.JSON;
 /**
  * S3 Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class S3SettingsConfig {
   public static final String SERIALIZED_NAME_BUCKET = "bucket";
   @SerializedName(SERIALIZED_NAME_BUCKET)
+  @javax.annotation.Nullable
   private String bucket;
 
   public static final String SERIALIZED_NAME_COMPRESSION = "compression";
   @SerializedName(SERIALIZED_NAME_COMPRESSION)
+  @javax.annotation.Nullable
   private String compression;
 
   public static final String SERIALIZED_NAME_FORMAT = "format";
   @SerializedName(SERIALIZED_NAME_FORMAT)
+  @javax.annotation.Nullable
   private String format;
 
   public static final String SERIALIZED_NAME_PARTITION_FORMAT = "partition_format";
   @SerializedName(SERIALIZED_NAME_PARTITION_FORMAT)
+  @javax.annotation.Nullable
   private String partitionFormat;
 
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
   @SerializedName(SERIALIZED_NAME_PREFIX)
+  @javax.annotation.Nullable
   private String prefix;
 
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
+  @javax.annotation.Nullable
   private String region;
 
   public static final String SERIALIZED_NAME_ROLE_ARN = "role_arn";
   @SerializedName(SERIALIZED_NAME_ROLE_ARN)
+  @javax.annotation.Nullable
   private String roleArn;
 
   public S3SettingsConfig() {
   }
 
-  public S3SettingsConfig bucket(String bucket) {
+  public S3SettingsConfig bucket(@javax.annotation.Nullable String bucket) {
     this.bucket = bucket;
     return this;
   }
@@ -95,12 +102,12 @@ public class S3SettingsConfig {
     return bucket;
   }
 
-  public void setBucket(String bucket) {
+  public void setBucket(@javax.annotation.Nullable String bucket) {
     this.bucket = bucket;
   }
 
 
-  public S3SettingsConfig compression(String compression) {
+  public S3SettingsConfig compression(@javax.annotation.Nullable String compression) {
     this.compression = compression;
     return this;
   }
@@ -114,12 +121,12 @@ public class S3SettingsConfig {
     return compression;
   }
 
-  public void setCompression(String compression) {
+  public void setCompression(@javax.annotation.Nullable String compression) {
     this.compression = compression;
   }
 
 
-  public S3SettingsConfig format(String format) {
+  public S3SettingsConfig format(@javax.annotation.Nullable String format) {
     this.format = format;
     return this;
   }
@@ -133,12 +140,12 @@ public class S3SettingsConfig {
     return format;
   }
 
-  public void setFormat(String format) {
+  public void setFormat(@javax.annotation.Nullable String format) {
     this.format = format;
   }
 
 
-  public S3SettingsConfig partitionFormat(String partitionFormat) {
+  public S3SettingsConfig partitionFormat(@javax.annotation.Nullable String partitionFormat) {
     this.partitionFormat = partitionFormat;
     return this;
   }
@@ -152,12 +159,12 @@ public class S3SettingsConfig {
     return partitionFormat;
   }
 
-  public void setPartitionFormat(String partitionFormat) {
+  public void setPartitionFormat(@javax.annotation.Nullable String partitionFormat) {
     this.partitionFormat = partitionFormat;
   }
 
 
-  public S3SettingsConfig prefix(String prefix) {
+  public S3SettingsConfig prefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
     return this;
   }
@@ -171,12 +178,12 @@ public class S3SettingsConfig {
     return prefix;
   }
 
-  public void setPrefix(String prefix) {
+  public void setPrefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
   }
 
 
-  public S3SettingsConfig region(String region) {
+  public S3SettingsConfig region(@javax.annotation.Nullable String region) {
     this.region = region;
     return this;
   }
@@ -190,12 +197,12 @@ public class S3SettingsConfig {
     return region;
   }
 
-  public void setRegion(String region) {
+  public void setRegion(@javax.annotation.Nullable String region) {
     this.region = region;
   }
 
 
-  public S3SettingsConfig roleArn(String roleArn) {
+  public S3SettingsConfig roleArn(@javax.annotation.Nullable String roleArn) {
     this.roleArn = roleArn;
     return this;
   }
@@ -209,7 +216,7 @@ public class S3SettingsConfig {
     return roleArn;
   }
 
-  public void setRoleArn(String roleArn) {
+  public void setRoleArn(@javax.annotation.Nullable String roleArn) {
     this.roleArn = roleArn;
   }
 

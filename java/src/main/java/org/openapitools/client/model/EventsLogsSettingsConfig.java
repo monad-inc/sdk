@@ -48,24 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * Tines Events Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class EventsLogsSettingsConfig {
   public static final String SERIALIZED_NAME_STORY_ID = "story_id";
   @SerializedName(SERIALIZED_NAME_STORY_ID)
+  @javax.annotation.Nullable
   private String storyId;
 
   public static final String SERIALIZED_NAME_TEAM_ID = "team_id";
   @SerializedName(SERIALIZED_NAME_TEAM_ID)
+  @javax.annotation.Nullable
   private String teamId;
 
   public static final String SERIALIZED_NAME_TENANT_URL = "tenant_url";
   @SerializedName(SERIALIZED_NAME_TENANT_URL)
+  @javax.annotation.Nullable
   private String tenantUrl;
 
   public EventsLogsSettingsConfig() {
   }
 
-  public EventsLogsSettingsConfig storyId(String storyId) {
+  public EventsLogsSettingsConfig storyId(@javax.annotation.Nullable String storyId) {
     this.storyId = storyId;
     return this;
   }
@@ -79,12 +82,12 @@ public class EventsLogsSettingsConfig {
     return storyId;
   }
 
-  public void setStoryId(String storyId) {
+  public void setStoryId(@javax.annotation.Nullable String storyId) {
     this.storyId = storyId;
   }
 
 
-  public EventsLogsSettingsConfig teamId(String teamId) {
+  public EventsLogsSettingsConfig teamId(@javax.annotation.Nullable String teamId) {
     this.teamId = teamId;
     return this;
   }
@@ -98,12 +101,12 @@ public class EventsLogsSettingsConfig {
     return teamId;
   }
 
-  public void setTeamId(String teamId) {
+  public void setTeamId(@javax.annotation.Nullable String teamId) {
     this.teamId = teamId;
   }
 
 
-  public EventsLogsSettingsConfig tenantUrl(String tenantUrl) {
+  public EventsLogsSettingsConfig tenantUrl(@javax.annotation.Nullable String tenantUrl) {
     this.tenantUrl = tenantUrl;
     return this;
   }
@@ -117,7 +120,7 @@ public class EventsLogsSettingsConfig {
     return tenantUrl;
   }
 
-  public void setTenantUrl(String tenantUrl) {
+  public void setTenantUrl(@javax.annotation.Nullable String tenantUrl) {
     this.tenantUrl = tenantUrl;
   }
 

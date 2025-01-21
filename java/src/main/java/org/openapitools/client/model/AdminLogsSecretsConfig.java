@@ -48,20 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * AdminLogsSecretsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class AdminLogsSecretsConfig {
   public static final String SERIALIZED_NAME_INTEGRATION_KEY = "integration_key";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_KEY)
+  @javax.annotation.Nullable
   private String integrationKey;
 
   public static final String SERIALIZED_NAME_SECRET_KEY = "secret_key";
   @SerializedName(SERIALIZED_NAME_SECRET_KEY)
+  @javax.annotation.Nullable
   private String secretKey;
 
   public AdminLogsSecretsConfig() {
   }
 
-  public AdminLogsSecretsConfig integrationKey(String integrationKey) {
+  public AdminLogsSecretsConfig integrationKey(@javax.annotation.Nullable String integrationKey) {
     this.integrationKey = integrationKey;
     return this;
   }
@@ -75,12 +77,12 @@ public class AdminLogsSecretsConfig {
     return integrationKey;
   }
 
-  public void setIntegrationKey(String integrationKey) {
+  public void setIntegrationKey(@javax.annotation.Nullable String integrationKey) {
     this.integrationKey = integrationKey;
   }
 
 
-  public AdminLogsSecretsConfig secretKey(String secretKey) {
+  public AdminLogsSecretsConfig secretKey(@javax.annotation.Nullable String secretKey) {
     this.secretKey = secretKey;
     return this;
   }
@@ -94,7 +96,7 @@ public class AdminLogsSecretsConfig {
     return secretKey;
   }
 
-  public void setSecretKey(String secretKey) {
+  public void setSecretKey(@javax.annotation.Nullable String secretKey) {
     this.secretKey = secretKey;
   }
 

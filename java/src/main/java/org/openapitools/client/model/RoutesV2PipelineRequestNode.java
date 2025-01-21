@@ -48,32 +48,37 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineRequestNode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2PipelineRequestNode {
   public static final String SERIALIZED_NAME_COMPONENT_ID = "component_id";
   @SerializedName(SERIALIZED_NAME_COMPONENT_ID)
+  @javax.annotation.Nonnull
   private String componentId;
 
   public static final String SERIALIZED_NAME_COMPONENT_TYPE = "component_type";
   @SerializedName(SERIALIZED_NAME_COMPONENT_TYPE)
+  @javax.annotation.Nonnull
   private String componentType;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nonnull
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
+  @javax.annotation.Nullable
   private String slug;
 
   public RoutesV2PipelineRequestNode() {
   }
 
-  public RoutesV2PipelineRequestNode componentId(String componentId) {
+  public RoutesV2PipelineRequestNode componentId(@javax.annotation.Nonnull String componentId) {
     this.componentId = componentId;
     return this;
   }
@@ -87,12 +92,12 @@ public class RoutesV2PipelineRequestNode {
     return componentId;
   }
 
-  public void setComponentId(String componentId) {
+  public void setComponentId(@javax.annotation.Nonnull String componentId) {
     this.componentId = componentId;
   }
 
 
-  public RoutesV2PipelineRequestNode componentType(String componentType) {
+  public RoutesV2PipelineRequestNode componentType(@javax.annotation.Nonnull String componentType) {
     this.componentType = componentType;
     return this;
   }
@@ -106,12 +111,12 @@ public class RoutesV2PipelineRequestNode {
     return componentType;
   }
 
-  public void setComponentType(String componentType) {
+  public void setComponentType(@javax.annotation.Nonnull String componentType) {
     this.componentType = componentType;
   }
 
 
-  public RoutesV2PipelineRequestNode enabled(Boolean enabled) {
+  public RoutesV2PipelineRequestNode enabled(@javax.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -125,12 +130,12 @@ public class RoutesV2PipelineRequestNode {
     return enabled;
   }
 
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public RoutesV2PipelineRequestNode id(String id) {
+  public RoutesV2PipelineRequestNode id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -144,12 +149,12 @@ public class RoutesV2PipelineRequestNode {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public RoutesV2PipelineRequestNode slug(String slug) {
+  public RoutesV2PipelineRequestNode slug(@javax.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -163,7 +168,7 @@ public class RoutesV2PipelineRequestNode {
     return slug;
   }
 
-  public void setSlug(String slug) {
+  public void setSlug(@javax.annotation.Nullable String slug) {
     this.slug = slug;
   }
 

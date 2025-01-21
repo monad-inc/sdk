@@ -48,24 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR event stream settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class EventSettingsConfig {
   public static final String SERIALIZED_NAME_APP_NAME = "app_name";
   @SerializedName(SERIALIZED_NAME_APP_NAME)
+  @javax.annotation.Nullable
   private String appName;
 
   public static final String SERIALIZED_NAME_CLOUD = "cloud";
   @SerializedName(SERIALIZED_NAME_CLOUD)
+  @javax.annotation.Nullable
   private String cloud;
 
   public static final String SERIALIZED_NAME_MEMBER_CID = "member_cid";
   @SerializedName(SERIALIZED_NAME_MEMBER_CID)
+  @javax.annotation.Nullable
   private String memberCid;
 
   public EventSettingsConfig() {
   }
 
-  public EventSettingsConfig appName(String appName) {
+  public EventSettingsConfig appName(@javax.annotation.Nullable String appName) {
     this.appName = appName;
     return this;
   }
@@ -79,12 +82,12 @@ public class EventSettingsConfig {
     return appName;
   }
 
-  public void setAppName(String appName) {
+  public void setAppName(@javax.annotation.Nullable String appName) {
     this.appName = appName;
   }
 
 
-  public EventSettingsConfig cloud(String cloud) {
+  public EventSettingsConfig cloud(@javax.annotation.Nullable String cloud) {
     this.cloud = cloud;
     return this;
   }
@@ -98,12 +101,12 @@ public class EventSettingsConfig {
     return cloud;
   }
 
-  public void setCloud(String cloud) {
+  public void setCloud(@javax.annotation.Nullable String cloud) {
     this.cloud = cloud;
   }
 
 
-  public EventSettingsConfig memberCid(String memberCid) {
+  public EventSettingsConfig memberCid(@javax.annotation.Nullable String memberCid) {
     this.memberCid = memberCid;
     return this;
   }
@@ -117,7 +120,7 @@ public class EventSettingsConfig {
     return memberCid;
   }
 
-  public void setMemberCid(String memberCid) {
+  public void setMemberCid(@javax.annotation.Nullable String memberCid) {
     this.memberCid = memberCid;
   }
 

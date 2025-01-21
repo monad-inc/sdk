@@ -49,32 +49,37 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineRequestEdge
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2PipelineRequestEdge {
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
+  @javax.annotation.Nullable
   private ModelsPipelineEdgeConditions conditions;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_FROM_NODE_INSTANCE_ID = "from_node_instance_id";
   @SerializedName(SERIALIZED_NAME_FROM_NODE_INSTANCE_ID)
+  @javax.annotation.Nonnull
   private String fromNodeInstanceId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_TO_NODE_INSTANCE_ID = "to_node_instance_id";
   @SerializedName(SERIALIZED_NAME_TO_NODE_INSTANCE_ID)
+  @javax.annotation.Nonnull
   private String toNodeInstanceId;
 
   public RoutesV2PipelineRequestEdge() {
   }
 
-  public RoutesV2PipelineRequestEdge conditions(ModelsPipelineEdgeConditions conditions) {
+  public RoutesV2PipelineRequestEdge conditions(@javax.annotation.Nullable ModelsPipelineEdgeConditions conditions) {
     this.conditions = conditions;
     return this;
   }
@@ -88,12 +93,12 @@ public class RoutesV2PipelineRequestEdge {
     return conditions;
   }
 
-  public void setConditions(ModelsPipelineEdgeConditions conditions) {
+  public void setConditions(@javax.annotation.Nullable ModelsPipelineEdgeConditions conditions) {
     this.conditions = conditions;
   }
 
 
-  public RoutesV2PipelineRequestEdge description(String description) {
+  public RoutesV2PipelineRequestEdge description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -107,12 +112,12 @@ public class RoutesV2PipelineRequestEdge {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public RoutesV2PipelineRequestEdge fromNodeInstanceId(String fromNodeInstanceId) {
+  public RoutesV2PipelineRequestEdge fromNodeInstanceId(@javax.annotation.Nonnull String fromNodeInstanceId) {
     this.fromNodeInstanceId = fromNodeInstanceId;
     return this;
   }
@@ -126,12 +131,12 @@ public class RoutesV2PipelineRequestEdge {
     return fromNodeInstanceId;
   }
 
-  public void setFromNodeInstanceId(String fromNodeInstanceId) {
+  public void setFromNodeInstanceId(@javax.annotation.Nonnull String fromNodeInstanceId) {
     this.fromNodeInstanceId = fromNodeInstanceId;
   }
 
 
-  public RoutesV2PipelineRequestEdge name(String name) {
+  public RoutesV2PipelineRequestEdge name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -145,12 +150,12 @@ public class RoutesV2PipelineRequestEdge {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public RoutesV2PipelineRequestEdge toNodeInstanceId(String toNodeInstanceId) {
+  public RoutesV2PipelineRequestEdge toNodeInstanceId(@javax.annotation.Nonnull String toNodeInstanceId) {
     this.toNodeInstanceId = toNodeInstanceId;
     return this;
   }
@@ -164,7 +169,7 @@ public class RoutesV2PipelineRequestEdge {
     return toNodeInstanceId;
   }
 
-  public void setToNodeInstanceId(String toNodeInstanceId) {
+  public void setToNodeInstanceId(@javax.annotation.Nonnull String toNodeInstanceId) {
     this.toNodeInstanceId = toNodeInstanceId;
   }
 

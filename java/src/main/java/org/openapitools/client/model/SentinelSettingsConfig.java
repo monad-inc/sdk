@@ -48,24 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * Sentinel Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SentinelSettingsConfig {
   public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
   @SerializedName(SERIALIZED_NAME_ENDPOINT)
+  @javax.annotation.Nullable
   private String endpoint;
 
   public static final String SERIALIZED_NAME_RULE_ID = "rule_id";
   @SerializedName(SERIALIZED_NAME_RULE_ID)
+  @javax.annotation.Nullable
   private String ruleId;
 
   public static final String SERIALIZED_NAME_STREAM_NAME = "stream_name";
   @SerializedName(SERIALIZED_NAME_STREAM_NAME)
+  @javax.annotation.Nullable
   private String streamName;
 
   public SentinelSettingsConfig() {
   }
 
-  public SentinelSettingsConfig endpoint(String endpoint) {
+  public SentinelSettingsConfig endpoint(@javax.annotation.Nullable String endpoint) {
     this.endpoint = endpoint;
     return this;
   }
@@ -79,12 +82,12 @@ public class SentinelSettingsConfig {
     return endpoint;
   }
 
-  public void setEndpoint(String endpoint) {
+  public void setEndpoint(@javax.annotation.Nullable String endpoint) {
     this.endpoint = endpoint;
   }
 
 
-  public SentinelSettingsConfig ruleId(String ruleId) {
+  public SentinelSettingsConfig ruleId(@javax.annotation.Nullable String ruleId) {
     this.ruleId = ruleId;
     return this;
   }
@@ -98,12 +101,12 @@ public class SentinelSettingsConfig {
     return ruleId;
   }
 
-  public void setRuleId(String ruleId) {
+  public void setRuleId(@javax.annotation.Nullable String ruleId) {
     this.ruleId = ruleId;
   }
 
 
-  public SentinelSettingsConfig streamName(String streamName) {
+  public SentinelSettingsConfig streamName(@javax.annotation.Nullable String streamName) {
     this.streamName = streamName;
     return this;
   }
@@ -117,7 +120,7 @@ public class SentinelSettingsConfig {
     return streamName;
   }
 
-  public void setStreamName(String streamName) {
+  public void setStreamName(@javax.annotation.Nullable String streamName) {
     this.streamName = streamName;
   }
 

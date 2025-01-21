@@ -48,24 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * Cribl HTTP Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class CriblHttpSettingsConfig {
   public static final String SERIALIZED_NAME_INGRESS_ADDRESS = "ingress_address";
   @SerializedName(SERIALIZED_NAME_INGRESS_ADDRESS)
+  @javax.annotation.Nullable
   private String ingressAddress;
 
   public static final String SERIALIZED_NAME_PATH = "path";
   @SerializedName(SERIALIZED_NAME_PATH)
+  @javax.annotation.Nullable
   private String path;
 
   public static final String SERIALIZED_NAME_PORT = "port";
   @SerializedName(SERIALIZED_NAME_PORT)
+  @javax.annotation.Nullable
   private Integer port;
 
   public CriblHttpSettingsConfig() {
   }
 
-  public CriblHttpSettingsConfig ingressAddress(String ingressAddress) {
+  public CriblHttpSettingsConfig ingressAddress(@javax.annotation.Nullable String ingressAddress) {
     this.ingressAddress = ingressAddress;
     return this;
   }
@@ -79,12 +82,12 @@ public class CriblHttpSettingsConfig {
     return ingressAddress;
   }
 
-  public void setIngressAddress(String ingressAddress) {
+  public void setIngressAddress(@javax.annotation.Nullable String ingressAddress) {
     this.ingressAddress = ingressAddress;
   }
 
 
-  public CriblHttpSettingsConfig path(String path) {
+  public CriblHttpSettingsConfig path(@javax.annotation.Nullable String path) {
     this.path = path;
     return this;
   }
@@ -98,12 +101,12 @@ public class CriblHttpSettingsConfig {
     return path;
   }
 
-  public void setPath(String path) {
+  public void setPath(@javax.annotation.Nullable String path) {
     this.path = path;
   }
 
 
-  public CriblHttpSettingsConfig port(Integer port) {
+  public CriblHttpSettingsConfig port(@javax.annotation.Nullable Integer port) {
     this.port = port;
     return this;
   }
@@ -117,7 +120,7 @@ public class CriblHttpSettingsConfig {
     return port;
   }
 
-  public void setPort(Integer port) {
+  public void setPort(@javax.annotation.Nullable Integer port) {
     this.port = port;
   }
 

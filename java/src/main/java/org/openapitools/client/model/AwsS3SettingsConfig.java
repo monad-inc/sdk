@@ -48,44 +48,52 @@ import org.openapitools.client.JSON;
 /**
  * AWS S3 settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class AwsS3SettingsConfig {
   public static final String SERIALIZED_NAME_BUCKET = "bucket";
   @SerializedName(SERIALIZED_NAME_BUCKET)
+  @javax.annotation.Nullable
   private String bucket;
 
   public static final String SERIALIZED_NAME_COMPRESSION = "compression";
   @SerializedName(SERIALIZED_NAME_COMPRESSION)
+  @javax.annotation.Nullable
   private String compression;
 
   public static final String SERIALIZED_NAME_FORMAT = "format";
   @SerializedName(SERIALIZED_NAME_FORMAT)
+  @javax.annotation.Nullable
   private String format;
 
   public static final String SERIALIZED_NAME_PARTITION_FORMAT = "partition_format";
   @SerializedName(SERIALIZED_NAME_PARTITION_FORMAT)
+  @javax.annotation.Nullable
   private String partitionFormat;
 
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
   @SerializedName(SERIALIZED_NAME_PREFIX)
+  @javax.annotation.Nullable
   private String prefix;
 
   public static final String SERIALIZED_NAME_RECORD_LOCATION = "record_location";
   @SerializedName(SERIALIZED_NAME_RECORD_LOCATION)
+  @javax.annotation.Nullable
   private String recordLocation;
 
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
+  @javax.annotation.Nullable
   private String region;
 
   public static final String SERIALIZED_NAME_ROLE_ARN = "role_arn";
   @SerializedName(SERIALIZED_NAME_ROLE_ARN)
+  @javax.annotation.Nullable
   private String roleArn;
 
   public AwsS3SettingsConfig() {
   }
 
-  public AwsS3SettingsConfig bucket(String bucket) {
+  public AwsS3SettingsConfig bucket(@javax.annotation.Nullable String bucket) {
     this.bucket = bucket;
     return this;
   }
@@ -99,12 +107,12 @@ public class AwsS3SettingsConfig {
     return bucket;
   }
 
-  public void setBucket(String bucket) {
+  public void setBucket(@javax.annotation.Nullable String bucket) {
     this.bucket = bucket;
   }
 
 
-  public AwsS3SettingsConfig compression(String compression) {
+  public AwsS3SettingsConfig compression(@javax.annotation.Nullable String compression) {
     this.compression = compression;
     return this;
   }
@@ -118,12 +126,12 @@ public class AwsS3SettingsConfig {
     return compression;
   }
 
-  public void setCompression(String compression) {
+  public void setCompression(@javax.annotation.Nullable String compression) {
     this.compression = compression;
   }
 
 
-  public AwsS3SettingsConfig format(String format) {
+  public AwsS3SettingsConfig format(@javax.annotation.Nullable String format) {
     this.format = format;
     return this;
   }
@@ -137,12 +145,12 @@ public class AwsS3SettingsConfig {
     return format;
   }
 
-  public void setFormat(String format) {
+  public void setFormat(@javax.annotation.Nullable String format) {
     this.format = format;
   }
 
 
-  public AwsS3SettingsConfig partitionFormat(String partitionFormat) {
+  public AwsS3SettingsConfig partitionFormat(@javax.annotation.Nullable String partitionFormat) {
     this.partitionFormat = partitionFormat;
     return this;
   }
@@ -156,12 +164,12 @@ public class AwsS3SettingsConfig {
     return partitionFormat;
   }
 
-  public void setPartitionFormat(String partitionFormat) {
+  public void setPartitionFormat(@javax.annotation.Nullable String partitionFormat) {
     this.partitionFormat = partitionFormat;
   }
 
 
-  public AwsS3SettingsConfig prefix(String prefix) {
+  public AwsS3SettingsConfig prefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
     return this;
   }
@@ -175,12 +183,12 @@ public class AwsS3SettingsConfig {
     return prefix;
   }
 
-  public void setPrefix(String prefix) {
+  public void setPrefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
   }
 
 
-  public AwsS3SettingsConfig recordLocation(String recordLocation) {
+  public AwsS3SettingsConfig recordLocation(@javax.annotation.Nullable String recordLocation) {
     this.recordLocation = recordLocation;
     return this;
   }
@@ -194,12 +202,12 @@ public class AwsS3SettingsConfig {
     return recordLocation;
   }
 
-  public void setRecordLocation(String recordLocation) {
+  public void setRecordLocation(@javax.annotation.Nullable String recordLocation) {
     this.recordLocation = recordLocation;
   }
 
 
-  public AwsS3SettingsConfig region(String region) {
+  public AwsS3SettingsConfig region(@javax.annotation.Nullable String region) {
     this.region = region;
     return this;
   }
@@ -213,12 +221,12 @@ public class AwsS3SettingsConfig {
     return region;
   }
 
-  public void setRegion(String region) {
+  public void setRegion(@javax.annotation.Nullable String region) {
     this.region = region;
   }
 
 
-  public AwsS3SettingsConfig roleArn(String roleArn) {
+  public AwsS3SettingsConfig roleArn(@javax.annotation.Nullable String roleArn) {
     this.roleArn = roleArn;
     return this;
   }
@@ -232,7 +240,7 @@ public class AwsS3SettingsConfig {
     return roleArn;
   }
 
-  public void setRoleArn(String roleArn) {
+  public void setRoleArn(@javax.annotation.Nullable String roleArn) {
     this.roleArn = roleArn;
   }
 

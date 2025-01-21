@@ -49,32 +49,37 @@ import org.openapitools.client.JSON;
 /**
  * RoutesCreateOutputRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesCreateOutputRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nullable
   private ModelsOutputConfig config;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_OUTPUT_TYPE = "output_type";
   @SerializedName(SERIALIZED_NAME_OUTPUT_TYPE)
+  @javax.annotation.Nonnull
   private String outputType;
 
   public static final String SERIALIZED_NAME_PROMISE_ID = "promise_id";
   @SerializedName(SERIALIZED_NAME_PROMISE_ID)
+  @javax.annotation.Nullable
   private String promiseId;
 
   public RoutesCreateOutputRequest() {
   }
 
-  public RoutesCreateOutputRequest config(ModelsOutputConfig config) {
+  public RoutesCreateOutputRequest config(@javax.annotation.Nullable ModelsOutputConfig config) {
     this.config = config;
     return this;
   }
@@ -88,12 +93,12 @@ public class RoutesCreateOutputRequest {
     return config;
   }
 
-  public void setConfig(ModelsOutputConfig config) {
+  public void setConfig(@javax.annotation.Nullable ModelsOutputConfig config) {
     this.config = config;
   }
 
 
-  public RoutesCreateOutputRequest description(String description) {
+  public RoutesCreateOutputRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -107,12 +112,12 @@ public class RoutesCreateOutputRequest {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public RoutesCreateOutputRequest name(String name) {
+  public RoutesCreateOutputRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -126,12 +131,12 @@ public class RoutesCreateOutputRequest {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public RoutesCreateOutputRequest outputType(String outputType) {
+  public RoutesCreateOutputRequest outputType(@javax.annotation.Nonnull String outputType) {
     this.outputType = outputType;
     return this;
   }
@@ -145,12 +150,12 @@ public class RoutesCreateOutputRequest {
     return outputType;
   }
 
-  public void setOutputType(String outputType) {
+  public void setOutputType(@javax.annotation.Nonnull String outputType) {
     this.outputType = outputType;
   }
 
 
-  public RoutesCreateOutputRequest promiseId(String promiseId) {
+  public RoutesCreateOutputRequest promiseId(@javax.annotation.Nullable String promiseId) {
     this.promiseId = promiseId;
     return this;
   }
@@ -164,7 +169,7 @@ public class RoutesCreateOutputRequest {
     return promiseId;
   }
 
-  public void setPromiseId(String promiseId) {
+  public void setPromiseId(@javax.annotation.Nullable String promiseId) {
     this.promiseId = promiseId;
   }
 

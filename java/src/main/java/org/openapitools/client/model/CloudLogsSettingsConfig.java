@@ -50,20 +50,22 @@ import org.openapitools.client.JSON;
 /**
  * Google Cloud Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class CloudLogsSettingsConfig {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
+  @javax.annotation.Nullable
   private String filter;
 
   public static final String SERIALIZED_NAME_RESOURCE_NAMES = "resource_names";
   @SerializedName(SERIALIZED_NAME_RESOURCE_NAMES)
+  @javax.annotation.Nullable
   private List<String> resourceNames = new ArrayList<>();
 
   public CloudLogsSettingsConfig() {
   }
 
-  public CloudLogsSettingsConfig filter(String filter) {
+  public CloudLogsSettingsConfig filter(@javax.annotation.Nullable String filter) {
     this.filter = filter;
     return this;
   }
@@ -77,12 +79,12 @@ public class CloudLogsSettingsConfig {
     return filter;
   }
 
-  public void setFilter(String filter) {
+  public void setFilter(@javax.annotation.Nullable String filter) {
     this.filter = filter;
   }
 
 
-  public CloudLogsSettingsConfig resourceNames(List<String> resourceNames) {
+  public CloudLogsSettingsConfig resourceNames(@javax.annotation.Nullable List<String> resourceNames) {
     this.resourceNames = resourceNames;
     return this;
   }
@@ -104,7 +106,7 @@ public class CloudLogsSettingsConfig {
     return resourceNames;
   }
 
-  public void setResourceNames(List<String> resourceNames) {
+  public void setResourceNames(@javax.annotation.Nullable List<String> resourceNames) {
     this.resourceNames = resourceNames;
   }
 

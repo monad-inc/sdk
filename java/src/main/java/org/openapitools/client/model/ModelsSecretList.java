@@ -52,20 +52,22 @@ import org.openapitools.client.JSON;
 /**
  * ModelsSecretList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsSecretList {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
+  @javax.annotation.Nullable
   private ModelsPagination pagination;
 
   public static final String SERIALIZED_NAME_SECRETS = "secrets";
   @SerializedName(SERIALIZED_NAME_SECRETS)
+  @javax.annotation.Nullable
   private List<ModelsSecret> secrets = new ArrayList<>();
 
   public ModelsSecretList() {
   }
 
-  public ModelsSecretList pagination(ModelsPagination pagination) {
+  public ModelsSecretList pagination(@javax.annotation.Nullable ModelsPagination pagination) {
     this.pagination = pagination;
     return this;
   }
@@ -79,12 +81,12 @@ public class ModelsSecretList {
     return pagination;
   }
 
-  public void setPagination(ModelsPagination pagination) {
+  public void setPagination(@javax.annotation.Nullable ModelsPagination pagination) {
     this.pagination = pagination;
   }
 
 
-  public ModelsSecretList secrets(List<ModelsSecret> secrets) {
+  public ModelsSecretList secrets(@javax.annotation.Nullable List<ModelsSecret> secrets) {
     this.secrets = secrets;
     return this;
   }
@@ -106,7 +108,7 @@ public class ModelsSecretList {
     return secrets;
   }
 
-  public void setSecrets(List<ModelsSecret> secrets) {
+  public void setSecrets(@javax.annotation.Nullable List<ModelsSecret> secrets) {
     this.secrets = secrets;
   }
 

@@ -48,36 +48,42 @@ import org.openapitools.client.JSON;
 /**
  * RoutesUpdateRoleRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesUpdateRoleRequest {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_PIPELINE_CREATE = "pipeline_create";
   @SerializedName(SERIALIZED_NAME_PIPELINE_CREATE)
+  @javax.annotation.Nullable
   private Boolean pipelineCreate;
 
   public static final String SERIALIZED_NAME_PIPELINE_DELETE = "pipeline_delete";
   @SerializedName(SERIALIZED_NAME_PIPELINE_DELETE)
+  @javax.annotation.Nullable
   private Boolean pipelineDelete;
 
   public static final String SERIALIZED_NAME_PIPELINE_READ = "pipeline_read";
   @SerializedName(SERIALIZED_NAME_PIPELINE_READ)
+  @javax.annotation.Nullable
   private Boolean pipelineRead;
 
   public static final String SERIALIZED_NAME_PIPELINE_UPDATE = "pipeline_update";
   @SerializedName(SERIALIZED_NAME_PIPELINE_UPDATE)
+  @javax.annotation.Nullable
   private Boolean pipelineUpdate;
 
   public RoutesUpdateRoleRequest() {
   }
 
-  public RoutesUpdateRoleRequest description(String description) {
+  public RoutesUpdateRoleRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -91,12 +97,12 @@ public class RoutesUpdateRoleRequest {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public RoutesUpdateRoleRequest name(String name) {
+  public RoutesUpdateRoleRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -110,12 +116,12 @@ public class RoutesUpdateRoleRequest {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public RoutesUpdateRoleRequest pipelineCreate(Boolean pipelineCreate) {
+  public RoutesUpdateRoleRequest pipelineCreate(@javax.annotation.Nullable Boolean pipelineCreate) {
     this.pipelineCreate = pipelineCreate;
     return this;
   }
@@ -129,12 +135,12 @@ public class RoutesUpdateRoleRequest {
     return pipelineCreate;
   }
 
-  public void setPipelineCreate(Boolean pipelineCreate) {
+  public void setPipelineCreate(@javax.annotation.Nullable Boolean pipelineCreate) {
     this.pipelineCreate = pipelineCreate;
   }
 
 
-  public RoutesUpdateRoleRequest pipelineDelete(Boolean pipelineDelete) {
+  public RoutesUpdateRoleRequest pipelineDelete(@javax.annotation.Nullable Boolean pipelineDelete) {
     this.pipelineDelete = pipelineDelete;
     return this;
   }
@@ -148,12 +154,12 @@ public class RoutesUpdateRoleRequest {
     return pipelineDelete;
   }
 
-  public void setPipelineDelete(Boolean pipelineDelete) {
+  public void setPipelineDelete(@javax.annotation.Nullable Boolean pipelineDelete) {
     this.pipelineDelete = pipelineDelete;
   }
 
 
-  public RoutesUpdateRoleRequest pipelineRead(Boolean pipelineRead) {
+  public RoutesUpdateRoleRequest pipelineRead(@javax.annotation.Nullable Boolean pipelineRead) {
     this.pipelineRead = pipelineRead;
     return this;
   }
@@ -167,12 +173,12 @@ public class RoutesUpdateRoleRequest {
     return pipelineRead;
   }
 
-  public void setPipelineRead(Boolean pipelineRead) {
+  public void setPipelineRead(@javax.annotation.Nullable Boolean pipelineRead) {
     this.pipelineRead = pipelineRead;
   }
 
 
-  public RoutesUpdateRoleRequest pipelineUpdate(Boolean pipelineUpdate) {
+  public RoutesUpdateRoleRequest pipelineUpdate(@javax.annotation.Nullable Boolean pipelineUpdate) {
     this.pipelineUpdate = pipelineUpdate;
     return this;
   }
@@ -186,7 +192,7 @@ public class RoutesUpdateRoleRequest {
     return pipelineUpdate;
   }
 
-  public void setPipelineUpdate(Boolean pipelineUpdate) {
+  public void setPipelineUpdate(@javax.annotation.Nullable Boolean pipelineUpdate) {
     this.pipelineUpdate = pipelineUpdate;
   }
 

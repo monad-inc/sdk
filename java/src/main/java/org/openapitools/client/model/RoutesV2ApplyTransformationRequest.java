@@ -51,20 +51,22 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2ApplyTransformationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2ApplyTransformationRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nullable
   private ModelsTransformConfig config;
 
   public static final String SERIALIZED_NAME_RECORD = "record";
   @SerializedName(SERIALIZED_NAME_RECORD)
+  @javax.annotation.Nullable
   private List<Integer> record = new ArrayList<>();
 
   public RoutesV2ApplyTransformationRequest() {
   }
 
-  public RoutesV2ApplyTransformationRequest config(ModelsTransformConfig config) {
+  public RoutesV2ApplyTransformationRequest config(@javax.annotation.Nullable ModelsTransformConfig config) {
     this.config = config;
     return this;
   }
@@ -78,12 +80,12 @@ public class RoutesV2ApplyTransformationRequest {
     return config;
   }
 
-  public void setConfig(ModelsTransformConfig config) {
+  public void setConfig(@javax.annotation.Nullable ModelsTransformConfig config) {
     this.config = config;
   }
 
 
-  public RoutesV2ApplyTransformationRequest record(List<Integer> record) {
+  public RoutesV2ApplyTransformationRequest record(@javax.annotation.Nullable List<Integer> record) {
     this.record = record;
     return this;
   }
@@ -105,7 +107,7 @@ public class RoutesV2ApplyTransformationRequest {
     return record;
   }
 
-  public void setRecord(List<Integer> record) {
+  public void setRecord(@javax.annotation.Nullable List<Integer> record) {
     this.record = record;
   }
 

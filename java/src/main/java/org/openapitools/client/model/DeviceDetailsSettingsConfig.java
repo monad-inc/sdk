@@ -48,20 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR device details settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class DeviceDetailsSettingsConfig {
   public static final String SERIALIZED_NAME_CLOUD_TYPE = "cloud_type";
   @SerializedName(SERIALIZED_NAME_CLOUD_TYPE)
+  @javax.annotation.Nullable
   private String cloudType;
 
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
+  @javax.annotation.Nullable
   private String cron;
 
   public DeviceDetailsSettingsConfig() {
   }
 
-  public DeviceDetailsSettingsConfig cloudType(String cloudType) {
+  public DeviceDetailsSettingsConfig cloudType(@javax.annotation.Nullable String cloudType) {
     this.cloudType = cloudType;
     return this;
   }
@@ -75,12 +77,12 @@ public class DeviceDetailsSettingsConfig {
     return cloudType;
   }
 
-  public void setCloudType(String cloudType) {
+  public void setCloudType(@javax.annotation.Nullable String cloudType) {
     this.cloudType = cloudType;
   }
 
 
-  public DeviceDetailsSettingsConfig cron(String cron) {
+  public DeviceDetailsSettingsConfig cron(@javax.annotation.Nullable String cron) {
     this.cron = cron;
     return this;
   }
@@ -94,7 +96,7 @@ public class DeviceDetailsSettingsConfig {
     return cron;
   }
 
-  public void setCron(String cron) {
+  public void setCron(@javax.annotation.Nullable String cron) {
     this.cron = cron;
   }
 

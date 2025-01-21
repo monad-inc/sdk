@@ -48,36 +48,42 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Azure Activity Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class AzureActivityLogsSettingsConfig {
   public static final String SERIALIZED_NAME_CORRELATION_ID = "correlation_id";
   @SerializedName(SERIALIZED_NAME_CORRELATION_ID)
+  @javax.annotation.Nullable
   private String correlationId;
 
   public static final String SERIALIZED_NAME_RESOURCE_GROUP_NAME = "resource_group_name";
   @SerializedName(SERIALIZED_NAME_RESOURCE_GROUP_NAME)
+  @javax.annotation.Nullable
   private String resourceGroupName;
 
   public static final String SERIALIZED_NAME_RESOURCE_PROVIDER = "resource_provider";
   @SerializedName(SERIALIZED_NAME_RESOURCE_PROVIDER)
+  @javax.annotation.Nullable
   private String resourceProvider;
 
   public static final String SERIALIZED_NAME_RESOURCE_URI = "resource_uri";
   @SerializedName(SERIALIZED_NAME_RESOURCE_URI)
+  @javax.annotation.Nullable
   private String resourceUri;
 
   public static final String SERIALIZED_NAME_SUBSCRIPTION_ID = "subscription_id";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTION_ID)
+  @javax.annotation.Nullable
   private String subscriptionId;
 
   public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
   @SerializedName(SERIALIZED_NAME_TENANT_ID)
+  @javax.annotation.Nullable
   private String tenantId;
 
   public AzureActivityLogsSettingsConfig() {
   }
 
-  public AzureActivityLogsSettingsConfig correlationId(String correlationId) {
+  public AzureActivityLogsSettingsConfig correlationId(@javax.annotation.Nullable String correlationId) {
     this.correlationId = correlationId;
     return this;
   }
@@ -91,12 +97,12 @@ public class AzureActivityLogsSettingsConfig {
     return correlationId;
   }
 
-  public void setCorrelationId(String correlationId) {
+  public void setCorrelationId(@javax.annotation.Nullable String correlationId) {
     this.correlationId = correlationId;
   }
 
 
-  public AzureActivityLogsSettingsConfig resourceGroupName(String resourceGroupName) {
+  public AzureActivityLogsSettingsConfig resourceGroupName(@javax.annotation.Nullable String resourceGroupName) {
     this.resourceGroupName = resourceGroupName;
     return this;
   }
@@ -110,12 +116,12 @@ public class AzureActivityLogsSettingsConfig {
     return resourceGroupName;
   }
 
-  public void setResourceGroupName(String resourceGroupName) {
+  public void setResourceGroupName(@javax.annotation.Nullable String resourceGroupName) {
     this.resourceGroupName = resourceGroupName;
   }
 
 
-  public AzureActivityLogsSettingsConfig resourceProvider(String resourceProvider) {
+  public AzureActivityLogsSettingsConfig resourceProvider(@javax.annotation.Nullable String resourceProvider) {
     this.resourceProvider = resourceProvider;
     return this;
   }
@@ -129,12 +135,12 @@ public class AzureActivityLogsSettingsConfig {
     return resourceProvider;
   }
 
-  public void setResourceProvider(String resourceProvider) {
+  public void setResourceProvider(@javax.annotation.Nullable String resourceProvider) {
     this.resourceProvider = resourceProvider;
   }
 
 
-  public AzureActivityLogsSettingsConfig resourceUri(String resourceUri) {
+  public AzureActivityLogsSettingsConfig resourceUri(@javax.annotation.Nullable String resourceUri) {
     this.resourceUri = resourceUri;
     return this;
   }
@@ -148,12 +154,12 @@ public class AzureActivityLogsSettingsConfig {
     return resourceUri;
   }
 
-  public void setResourceUri(String resourceUri) {
+  public void setResourceUri(@javax.annotation.Nullable String resourceUri) {
     this.resourceUri = resourceUri;
   }
 
 
-  public AzureActivityLogsSettingsConfig subscriptionId(String subscriptionId) {
+  public AzureActivityLogsSettingsConfig subscriptionId(@javax.annotation.Nullable String subscriptionId) {
     this.subscriptionId = subscriptionId;
     return this;
   }
@@ -167,12 +173,12 @@ public class AzureActivityLogsSettingsConfig {
     return subscriptionId;
   }
 
-  public void setSubscriptionId(String subscriptionId) {
+  public void setSubscriptionId(@javax.annotation.Nullable String subscriptionId) {
     this.subscriptionId = subscriptionId;
   }
 
 
-  public AzureActivityLogsSettingsConfig tenantId(String tenantId) {
+  public AzureActivityLogsSettingsConfig tenantId(@javax.annotation.Nullable String tenantId) {
     this.tenantId = tenantId;
     return this;
   }
@@ -186,7 +192,7 @@ public class AzureActivityLogsSettingsConfig {
     return tenantId;
   }
 
-  public void setTenantId(String tenantId) {
+  public void setTenantId(@javax.annotation.Nullable String tenantId) {
     this.tenantId = tenantId;
   }
 

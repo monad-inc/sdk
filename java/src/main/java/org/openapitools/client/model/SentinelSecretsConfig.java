@@ -48,24 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * Sentinel Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SentinelSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
+  @javax.annotation.Nullable
   private String clientId;
 
   public static final String SERIALIZED_NAME_CLIENT_SECRET = "client_secret";
   @SerializedName(SERIALIZED_NAME_CLIENT_SECRET)
+  @javax.annotation.Nullable
   private String clientSecret;
 
   public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
   @SerializedName(SERIALIZED_NAME_TENANT_ID)
+  @javax.annotation.Nullable
   private String tenantId;
 
   public SentinelSecretsConfig() {
   }
 
-  public SentinelSecretsConfig clientId(String clientId) {
+  public SentinelSecretsConfig clientId(@javax.annotation.Nullable String clientId) {
     this.clientId = clientId;
     return this;
   }
@@ -79,12 +82,12 @@ public class SentinelSecretsConfig {
     return clientId;
   }
 
-  public void setClientId(String clientId) {
+  public void setClientId(@javax.annotation.Nullable String clientId) {
     this.clientId = clientId;
   }
 
 
-  public SentinelSecretsConfig clientSecret(String clientSecret) {
+  public SentinelSecretsConfig clientSecret(@javax.annotation.Nullable String clientSecret) {
     this.clientSecret = clientSecret;
     return this;
   }
@@ -98,12 +101,12 @@ public class SentinelSecretsConfig {
     return clientSecret;
   }
 
-  public void setClientSecret(String clientSecret) {
+  public void setClientSecret(@javax.annotation.Nullable String clientSecret) {
     this.clientSecret = clientSecret;
   }
 
 
-  public SentinelSecretsConfig tenantId(String tenantId) {
+  public SentinelSecretsConfig tenantId(@javax.annotation.Nullable String tenantId) {
     this.tenantId = tenantId;
     return this;
   }
@@ -117,7 +120,7 @@ public class SentinelSecretsConfig {
     return tenantId;
   }
 
-  public void setTenantId(String tenantId) {
+  public void setTenantId(@javax.annotation.Nullable String tenantId) {
     this.tenantId = tenantId;
   }
 

@@ -52,20 +52,22 @@ import org.openapitools.client.JSON;
 /**
  * ModelsInputList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsInputList {
   public static final String SERIALIZED_NAME_INPUTS = "inputs";
   @SerializedName(SERIALIZED_NAME_INPUTS)
+  @javax.annotation.Nullable
   private List<ModelsInput> inputs = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
+  @javax.annotation.Nullable
   private ModelsPagination pagination;
 
   public ModelsInputList() {
   }
 
-  public ModelsInputList inputs(List<ModelsInput> inputs) {
+  public ModelsInputList inputs(@javax.annotation.Nullable List<ModelsInput> inputs) {
     this.inputs = inputs;
     return this;
   }
@@ -87,12 +89,12 @@ public class ModelsInputList {
     return inputs;
   }
 
-  public void setInputs(List<ModelsInput> inputs) {
+  public void setInputs(@javax.annotation.Nullable List<ModelsInput> inputs) {
     this.inputs = inputs;
   }
 
 
-  public ModelsInputList pagination(ModelsPagination pagination) {
+  public ModelsInputList pagination(@javax.annotation.Nullable ModelsPagination pagination) {
     this.pagination = pagination;
     return this;
   }
@@ -106,7 +108,7 @@ public class ModelsInputList {
     return pagination;
   }
 
-  public void setPagination(ModelsPagination pagination) {
+  public void setPagination(@javax.annotation.Nullable ModelsPagination pagination) {
     this.pagination = pagination;
   }
 

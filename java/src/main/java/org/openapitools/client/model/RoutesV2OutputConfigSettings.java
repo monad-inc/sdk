@@ -68,7 +68,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesV2OutputConfigSettings.class.getName());
 
@@ -393,6 +393,7 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     public CriblHttpSettingsConfig getCriblHttpSettingsConfig() throws ClassCastException {
         return (CriblHttpSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `ElasticsearchSettingsConfig`. If the actual instance is not `ElasticsearchSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -403,6 +404,7 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     public ElasticsearchSettingsConfig getElasticsearchSettingsConfig() throws ClassCastException {
         return (ElasticsearchSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `HttpSettingsConfig`. If the actual instance is not `HttpSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -413,6 +415,7 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     public HttpSettingsConfig getHttpSettingsConfig() throws ClassCastException {
         return (HttpSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `OpensearchSettingsConfig`. If the actual instance is not `OpensearchSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -423,6 +426,7 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     public OpensearchSettingsConfig getOpensearchSettingsConfig() throws ClassCastException {
         return (OpensearchSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `S3SettingsConfig`. If the actual instance is not `S3SettingsConfig`,
      * the ClassCastException will be thrown.
@@ -433,6 +437,7 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     public S3SettingsConfig getS3SettingsConfig() throws ClassCastException {
         return (S3SettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SentinelSettingsConfig`. If the actual instance is not `SentinelSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -443,6 +448,7 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     public SentinelSettingsConfig getSentinelSettingsConfig() throws ClassCastException {
         return (SentinelSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SnowflakeSettingsConfig`. If the actual instance is not `SnowflakeSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -453,6 +459,7 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     public SnowflakeSettingsConfig getSnowflakeSettingsConfig() throws ClassCastException {
         return (SnowflakeSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SplunkSettingsConfig`. If the actual instance is not `SplunkSettingsConfig`,
      * the ClassCastException will be thrown.
@@ -463,6 +470,7 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     public SplunkSettingsConfig getSplunkSettingsConfig() throws ClassCastException {
         return (SplunkSettingsConfig)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SumologicSettingsConfig`. If the actual instance is not `SumologicSettingsConfig`,
      * the ClassCastException will be thrown.

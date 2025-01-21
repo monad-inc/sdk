@@ -52,52 +52,62 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineConfigV2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsPipelineConfigV2 {
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_EDGES = "edges";
   @SerializedName(SERIALIZED_NAME_EDGES)
+  @javax.annotation.Nullable
   private List<ModelsPipelineEdge> edges = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_NODES = "nodes";
   @SerializedName(SERIALIZED_NAME_NODES)
+  @javax.annotation.Nullable
   private List<ModelsPipelineNode> nodes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organizationId";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
+  @javax.annotation.Nullable
   private String organizationId;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_NAME = "organizationName";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_NAME)
+  @javax.annotation.Nullable
   private String organizationName;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
   private String updatedAt;
 
   public ModelsPipelineConfigV2() {
   }
 
-  public ModelsPipelineConfigV2 createdAt(String createdAt) {
+  public ModelsPipelineConfigV2 createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -111,12 +121,12 @@ public class ModelsPipelineConfigV2 {
     return createdAt;
   }
 
-  public void setCreatedAt(String createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ModelsPipelineConfigV2 description(String description) {
+  public ModelsPipelineConfigV2 description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -130,12 +140,12 @@ public class ModelsPipelineConfigV2 {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ModelsPipelineConfigV2 edges(List<ModelsPipelineEdge> edges) {
+  public ModelsPipelineConfigV2 edges(@javax.annotation.Nullable List<ModelsPipelineEdge> edges) {
     this.edges = edges;
     return this;
   }
@@ -157,12 +167,12 @@ public class ModelsPipelineConfigV2 {
     return edges;
   }
 
-  public void setEdges(List<ModelsPipelineEdge> edges) {
+  public void setEdges(@javax.annotation.Nullable List<ModelsPipelineEdge> edges) {
     this.edges = edges;
   }
 
 
-  public ModelsPipelineConfigV2 enabled(Boolean enabled) {
+  public ModelsPipelineConfigV2 enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -176,12 +186,12 @@ public class ModelsPipelineConfigV2 {
     return enabled;
   }
 
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public ModelsPipelineConfigV2 id(String id) {
+  public ModelsPipelineConfigV2 id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -195,12 +205,12 @@ public class ModelsPipelineConfigV2 {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public ModelsPipelineConfigV2 name(String name) {
+  public ModelsPipelineConfigV2 name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -214,12 +224,12 @@ public class ModelsPipelineConfigV2 {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ModelsPipelineConfigV2 nodes(List<ModelsPipelineNode> nodes) {
+  public ModelsPipelineConfigV2 nodes(@javax.annotation.Nullable List<ModelsPipelineNode> nodes) {
     this.nodes = nodes;
     return this;
   }
@@ -241,12 +251,12 @@ public class ModelsPipelineConfigV2 {
     return nodes;
   }
 
-  public void setNodes(List<ModelsPipelineNode> nodes) {
+  public void setNodes(@javax.annotation.Nullable List<ModelsPipelineNode> nodes) {
     this.nodes = nodes;
   }
 
 
-  public ModelsPipelineConfigV2 organizationId(String organizationId) {
+  public ModelsPipelineConfigV2 organizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -260,12 +270,12 @@ public class ModelsPipelineConfigV2 {
     return organizationId;
   }
 
-  public void setOrganizationId(String organizationId) {
+  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
   }
 
 
-  public ModelsPipelineConfigV2 organizationName(String organizationName) {
+  public ModelsPipelineConfigV2 organizationName(@javax.annotation.Nullable String organizationName) {
     this.organizationName = organizationName;
     return this;
   }
@@ -279,12 +289,12 @@ public class ModelsPipelineConfigV2 {
     return organizationName;
   }
 
-  public void setOrganizationName(String organizationName) {
+  public void setOrganizationName(@javax.annotation.Nullable String organizationName) {
     this.organizationName = organizationName;
   }
 
 
-  public ModelsPipelineConfigV2 updatedAt(String updatedAt) {
+  public ModelsPipelineConfigV2 updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -298,7 +308,7 @@ public class ModelsPipelineConfigV2 {
     return updatedAt;
   }
 
-  public void setUpdatedAt(String updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

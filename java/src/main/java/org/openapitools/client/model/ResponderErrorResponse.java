@@ -48,20 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * ResponderErrorResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ResponderErrorResponse {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
+  @javax.annotation.Nullable
   private Integer code;
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
+  @javax.annotation.Nullable
   private String error;
 
   public ResponderErrorResponse() {
   }
 
-  public ResponderErrorResponse code(Integer code) {
+  public ResponderErrorResponse code(@javax.annotation.Nullable Integer code) {
     this.code = code;
     return this;
   }
@@ -75,12 +77,12 @@ public class ResponderErrorResponse {
     return code;
   }
 
-  public void setCode(Integer code) {
+  public void setCode(@javax.annotation.Nullable Integer code) {
     this.code = code;
   }
 
 
-  public ResponderErrorResponse error(String error) {
+  public ResponderErrorResponse error(@javax.annotation.Nullable String error) {
     this.error = error;
     return this;
   }
@@ -94,7 +96,7 @@ public class ResponderErrorResponse {
     return error;
   }
 
-  public void setError(String error) {
+  public void setError(@javax.annotation.Nullable String error) {
     this.error = error;
   }
 

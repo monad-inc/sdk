@@ -50,20 +50,22 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineEdgeCondition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsPipelineEdgeCondition {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nullable
   private Map<String, Object> config = new HashMap<>();
 
   public static final String SERIALIZED_NAME_TYPE_ID = "type_id";
   @SerializedName(SERIALIZED_NAME_TYPE_ID)
+  @javax.annotation.Nullable
   private String typeId;
 
   public ModelsPipelineEdgeCondition() {
   }
 
-  public ModelsPipelineEdgeCondition config(Map<String, Object> config) {
+  public ModelsPipelineEdgeCondition config(@javax.annotation.Nullable Map<String, Object> config) {
     this.config = config;
     return this;
   }
@@ -85,12 +87,12 @@ public class ModelsPipelineEdgeCondition {
     return config;
   }
 
-  public void setConfig(Map<String, Object> config) {
+  public void setConfig(@javax.annotation.Nullable Map<String, Object> config) {
     this.config = config;
   }
 
 
-  public ModelsPipelineEdgeCondition typeId(String typeId) {
+  public ModelsPipelineEdgeCondition typeId(@javax.annotation.Nullable String typeId) {
     this.typeId = typeId;
     return this;
   }
@@ -104,7 +106,7 @@ public class ModelsPipelineEdgeCondition {
     return typeId;
   }
 
-  public void setTypeId(String typeId) {
+  public void setTypeId(@javax.annotation.Nullable String typeId) {
     this.typeId = typeId;
   }
 

@@ -49,40 +49,47 @@ import org.openapitools.client.JSON;
 /**
  * ModelsTransform
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsTransform {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nullable
   private ModelsTransformConfig config;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
+  @javax.annotation.Nullable
   private String organizationId;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
   private String updatedAt;
 
   public ModelsTransform() {
   }
 
-  public ModelsTransform config(ModelsTransformConfig config) {
+  public ModelsTransform config(@javax.annotation.Nullable ModelsTransformConfig config) {
     this.config = config;
     return this;
   }
@@ -96,12 +103,12 @@ public class ModelsTransform {
     return config;
   }
 
-  public void setConfig(ModelsTransformConfig config) {
+  public void setConfig(@javax.annotation.Nullable ModelsTransformConfig config) {
     this.config = config;
   }
 
 
-  public ModelsTransform createdAt(String createdAt) {
+  public ModelsTransform createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -115,12 +122,12 @@ public class ModelsTransform {
     return createdAt;
   }
 
-  public void setCreatedAt(String createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ModelsTransform description(String description) {
+  public ModelsTransform description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -134,12 +141,12 @@ public class ModelsTransform {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ModelsTransform id(String id) {
+  public ModelsTransform id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -153,12 +160,12 @@ public class ModelsTransform {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public ModelsTransform name(String name) {
+  public ModelsTransform name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -172,12 +179,12 @@ public class ModelsTransform {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ModelsTransform organizationId(String organizationId) {
+  public ModelsTransform organizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -191,12 +198,12 @@ public class ModelsTransform {
     return organizationId;
   }
 
-  public void setOrganizationId(String organizationId) {
+  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
   }
 
 
-  public ModelsTransform updatedAt(String updatedAt) {
+  public ModelsTransform updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -210,7 +217,7 @@ public class ModelsTransform {
     return updatedAt;
   }
 
-  public void setUpdatedAt(String updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

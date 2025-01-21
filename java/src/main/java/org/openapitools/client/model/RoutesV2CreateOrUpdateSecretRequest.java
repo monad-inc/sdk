@@ -49,24 +49,27 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2CreateOrUpdateSecretRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2CreateOrUpdateSecretRequest {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private Object value = null;
 
   public RoutesV2CreateOrUpdateSecretRequest() {
   }
 
-  public RoutesV2CreateOrUpdateSecretRequest description(String description) {
+  public RoutesV2CreateOrUpdateSecretRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -80,12 +83,12 @@ public class RoutesV2CreateOrUpdateSecretRequest {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public RoutesV2CreateOrUpdateSecretRequest name(String name) {
+  public RoutesV2CreateOrUpdateSecretRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -99,12 +102,12 @@ public class RoutesV2CreateOrUpdateSecretRequest {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public RoutesV2CreateOrUpdateSecretRequest value(Object value) {
+  public RoutesV2CreateOrUpdateSecretRequest value(@javax.annotation.Nullable Object value) {
     this.value = value;
     return this;
   }
@@ -118,7 +121,7 @@ public class RoutesV2CreateOrUpdateSecretRequest {
     return value;
   }
 
-  public void setValue(Object value) {
+  public void setValue(@javax.annotation.Nullable Object value) {
     this.value = value;
   }
 

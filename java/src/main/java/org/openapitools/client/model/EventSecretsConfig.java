@@ -48,20 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR event stream secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class EventSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
+  @javax.annotation.Nullable
   private String clientId;
 
   public static final String SERIALIZED_NAME_CLIENT_SECRET = "client_secret";
   @SerializedName(SERIALIZED_NAME_CLIENT_SECRET)
+  @javax.annotation.Nullable
   private String clientSecret;
 
   public EventSecretsConfig() {
   }
 
-  public EventSecretsConfig clientId(String clientId) {
+  public EventSecretsConfig clientId(@javax.annotation.Nullable String clientId) {
     this.clientId = clientId;
     return this;
   }
@@ -75,12 +77,12 @@ public class EventSecretsConfig {
     return clientId;
   }
 
-  public void setClientId(String clientId) {
+  public void setClientId(@javax.annotation.Nullable String clientId) {
     this.clientId = clientId;
   }
 
 
-  public EventSecretsConfig clientSecret(String clientSecret) {
+  public EventSecretsConfig clientSecret(@javax.annotation.Nullable String clientSecret) {
     this.clientSecret = clientSecret;
     return this;
   }
@@ -94,7 +96,7 @@ public class EventSecretsConfig {
     return clientSecret;
   }
 
-  public void setClientSecret(String clientSecret) {
+  public void setClientSecret(@javax.annotation.Nullable String clientSecret) {
     this.clientSecret = clientSecret;
   }
 

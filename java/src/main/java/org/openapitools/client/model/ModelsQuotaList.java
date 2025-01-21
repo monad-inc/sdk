@@ -52,20 +52,22 @@ import org.openapitools.client.JSON;
 /**
  * ModelsQuotaList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsQuotaList {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
+  @javax.annotation.Nullable
   private ModelsPagination pagination;
 
   public static final String SERIALIZED_NAME_QUOTAS = "quotas";
   @SerializedName(SERIALIZED_NAME_QUOTAS)
+  @javax.annotation.Nullable
   private List<ModelsQuota> quotas = new ArrayList<>();
 
   public ModelsQuotaList() {
   }
 
-  public ModelsQuotaList pagination(ModelsPagination pagination) {
+  public ModelsQuotaList pagination(@javax.annotation.Nullable ModelsPagination pagination) {
     this.pagination = pagination;
     return this;
   }
@@ -79,12 +81,12 @@ public class ModelsQuotaList {
     return pagination;
   }
 
-  public void setPagination(ModelsPagination pagination) {
+  public void setPagination(@javax.annotation.Nullable ModelsPagination pagination) {
     this.pagination = pagination;
   }
 
 
-  public ModelsQuotaList quotas(List<ModelsQuota> quotas) {
+  public ModelsQuotaList quotas(@javax.annotation.Nullable List<ModelsQuota> quotas) {
     this.quotas = quotas;
     return this;
   }
@@ -106,7 +108,7 @@ public class ModelsQuotaList {
     return quotas;
   }
 
-  public void setQuotas(List<ModelsQuota> quotas) {
+  public void setQuotas(@javax.annotation.Nullable List<ModelsQuota> quotas) {
     this.quotas = quotas;
   }
 

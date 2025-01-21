@@ -79,7 +79,8 @@ public class OutputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Outputs retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -140,7 +141,8 @@ public class OutputsApi {
      * @return List&lt;OutputsConnectorMeta&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Outputs retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -156,7 +158,8 @@ public class OutputsApi {
      * @return ApiResponse&lt;List&lt;OutputsConnectorMeta&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Outputs retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -174,7 +177,8 @@ public class OutputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Outputs retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -193,7 +197,8 @@ public class OutputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Output config meta retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Output type not found </td><td>  -  </td></tr>
@@ -262,7 +267,8 @@ public class OutputsApi {
      * @return ModelsConnectorMeta
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Output config meta retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Output type not found </td><td>  -  </td></tr>
@@ -280,7 +286,8 @@ public class OutputsApi {
      * @return ApiResponse&lt;ModelsConnectorMeta&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Output config meta retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Output type not found </td><td>  -  </td></tr>
@@ -300,7 +307,8 @@ public class OutputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Output config meta retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Output type not found </td><td>  -  </td></tr>

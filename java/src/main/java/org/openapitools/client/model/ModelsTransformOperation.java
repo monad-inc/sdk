@@ -50,20 +50,22 @@ import org.openapitools.client.JSON;
 /**
  * ModelsTransformOperation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsTransformOperation {
   public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
   @SerializedName(SERIALIZED_NAME_ARGUMENTS)
+  @javax.annotation.Nullable
   private Map<String, Object> arguments = new HashMap<>();
 
   public static final String SERIALIZED_NAME_OPERATION = "operation";
   @SerializedName(SERIALIZED_NAME_OPERATION)
+  @javax.annotation.Nullable
   private String operation;
 
   public ModelsTransformOperation() {
   }
 
-  public ModelsTransformOperation arguments(Map<String, Object> arguments) {
+  public ModelsTransformOperation arguments(@javax.annotation.Nullable Map<String, Object> arguments) {
     this.arguments = arguments;
     return this;
   }
@@ -85,12 +87,12 @@ public class ModelsTransformOperation {
     return arguments;
   }
 
-  public void setArguments(Map<String, Object> arguments) {
+  public void setArguments(@javax.annotation.Nullable Map<String, Object> arguments) {
     this.arguments = arguments;
   }
 
 
-  public ModelsTransformOperation operation(String operation) {
+  public ModelsTransformOperation operation(@javax.annotation.Nullable String operation) {
     this.operation = operation;
     return this;
   }
@@ -104,7 +106,7 @@ public class ModelsTransformOperation {
     return operation;
   }
 
-  public void setOperation(String operation) {
+  public void setOperation(@javax.annotation.Nullable String operation) {
     this.operation = operation;
   }
 

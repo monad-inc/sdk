@@ -52,48 +52,57 @@ import org.openapitools.client.JSON;
 /**
  * RoutesGetInputResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesGetInputResponse {
   public static final String SERIALIZED_NAME_COMPONENT_OF = "component_of";
   @SerializedName(SERIALIZED_NAME_COMPONENT_OF)
+  @javax.annotation.Nullable
   private List<ModelsPipeline> componentOf = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nullable
   private ModelsInputConfig config;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
+  @javax.annotation.Nullable
   private String organizationId;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private String type;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
   private String updatedAt;
 
   public RoutesGetInputResponse() {
   }
 
-  public RoutesGetInputResponse componentOf(List<ModelsPipeline> componentOf) {
+  public RoutesGetInputResponse componentOf(@javax.annotation.Nullable List<ModelsPipeline> componentOf) {
     this.componentOf = componentOf;
     return this;
   }
@@ -115,12 +124,12 @@ public class RoutesGetInputResponse {
     return componentOf;
   }
 
-  public void setComponentOf(List<ModelsPipeline> componentOf) {
+  public void setComponentOf(@javax.annotation.Nullable List<ModelsPipeline> componentOf) {
     this.componentOf = componentOf;
   }
 
 
-  public RoutesGetInputResponse config(ModelsInputConfig config) {
+  public RoutesGetInputResponse config(@javax.annotation.Nullable ModelsInputConfig config) {
     this.config = config;
     return this;
   }
@@ -134,12 +143,12 @@ public class RoutesGetInputResponse {
     return config;
   }
 
-  public void setConfig(ModelsInputConfig config) {
+  public void setConfig(@javax.annotation.Nullable ModelsInputConfig config) {
     this.config = config;
   }
 
 
-  public RoutesGetInputResponse createdAt(String createdAt) {
+  public RoutesGetInputResponse createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -153,12 +162,12 @@ public class RoutesGetInputResponse {
     return createdAt;
   }
 
-  public void setCreatedAt(String createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public RoutesGetInputResponse description(String description) {
+  public RoutesGetInputResponse description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -172,12 +181,12 @@ public class RoutesGetInputResponse {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public RoutesGetInputResponse id(String id) {
+  public RoutesGetInputResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -191,12 +200,12 @@ public class RoutesGetInputResponse {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public RoutesGetInputResponse name(String name) {
+  public RoutesGetInputResponse name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -210,12 +219,12 @@ public class RoutesGetInputResponse {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public RoutesGetInputResponse organizationId(String organizationId) {
+  public RoutesGetInputResponse organizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -229,12 +238,12 @@ public class RoutesGetInputResponse {
     return organizationId;
   }
 
-  public void setOrganizationId(String organizationId) {
+  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
   }
 
 
-  public RoutesGetInputResponse type(String type) {
+  public RoutesGetInputResponse type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
@@ -248,12 +257,12 @@ public class RoutesGetInputResponse {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public RoutesGetInputResponse updatedAt(String updatedAt) {
+  public RoutesGetInputResponse updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -267,7 +276,7 @@ public class RoutesGetInputResponse {
     return updatedAt;
   }
 
-  public void setUpdatedAt(String updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

@@ -48,16 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * Slack Groups secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SlackgroupsSecretsConfig {
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
+  @javax.annotation.Nullable
   private String token;
 
   public SlackgroupsSecretsConfig() {
   }
 
-  public SlackgroupsSecretsConfig token(String token) {
+  public SlackgroupsSecretsConfig token(@javax.annotation.Nullable String token) {
     this.token = token;
     return this;
   }
@@ -71,7 +72,7 @@ public class SlackgroupsSecretsConfig {
     return token;
   }
 
-  public void setToken(String token) {
+  public void setToken(@javax.annotation.Nullable String token) {
     this.token = token;
   }
 

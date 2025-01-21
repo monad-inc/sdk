@@ -79,7 +79,8 @@ public class TransformsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Operation information </td><td>  -  </td></tr>
      </table>
@@ -142,7 +143,8 @@ public class TransformsApi {
      * @return OperationInformation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Operation information </td><td>  -  </td></tr>
      </table>
@@ -159,7 +161,8 @@ public class TransformsApi {
      * @return ApiResponse&lt;OperationInformation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Operation information </td><td>  -  </td></tr>
      </table>
@@ -178,7 +181,8 @@ public class TransformsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Operation information </td><td>  -  </td></tr>
      </table>
@@ -198,7 +202,8 @@ public class TransformsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Transform metadata </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
@@ -269,7 +274,8 @@ public class TransformsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Transform metadata </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
@@ -288,7 +294,8 @@ public class TransformsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Transform metadata </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
@@ -309,7 +316,8 @@ public class TransformsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Transform metadata </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>

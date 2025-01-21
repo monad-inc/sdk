@@ -50,28 +50,32 @@ import org.openapitools.client.JSON;
 /**
  * Wiz cloud configuration findings settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class CloudConfigurationFindingsSettingsConfig {
   public static final String SERIALIZED_NAME_ENDPOINT_URL = "endpoint_url";
   @SerializedName(SERIALIZED_NAME_ENDPOINT_URL)
+  @javax.annotation.Nullable
   private String endpointUrl;
 
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private List<String> result = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SEVERITY = "severity";
   @SerializedName(SERIALIZED_NAME_SEVERITY)
+  @javax.annotation.Nullable
   private List<String> severity = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private List<String> status = new ArrayList<>();
 
   public CloudConfigurationFindingsSettingsConfig() {
   }
 
-  public CloudConfigurationFindingsSettingsConfig endpointUrl(String endpointUrl) {
+  public CloudConfigurationFindingsSettingsConfig endpointUrl(@javax.annotation.Nullable String endpointUrl) {
     this.endpointUrl = endpointUrl;
     return this;
   }
@@ -85,12 +89,12 @@ public class CloudConfigurationFindingsSettingsConfig {
     return endpointUrl;
   }
 
-  public void setEndpointUrl(String endpointUrl) {
+  public void setEndpointUrl(@javax.annotation.Nullable String endpointUrl) {
     this.endpointUrl = endpointUrl;
   }
 
 
-  public CloudConfigurationFindingsSettingsConfig result(List<String> result) {
+  public CloudConfigurationFindingsSettingsConfig result(@javax.annotation.Nullable List<String> result) {
     this.result = result;
     return this;
   }
@@ -112,12 +116,12 @@ public class CloudConfigurationFindingsSettingsConfig {
     return result;
   }
 
-  public void setResult(List<String> result) {
+  public void setResult(@javax.annotation.Nullable List<String> result) {
     this.result = result;
   }
 
 
-  public CloudConfigurationFindingsSettingsConfig severity(List<String> severity) {
+  public CloudConfigurationFindingsSettingsConfig severity(@javax.annotation.Nullable List<String> severity) {
     this.severity = severity;
     return this;
   }
@@ -139,12 +143,12 @@ public class CloudConfigurationFindingsSettingsConfig {
     return severity;
   }
 
-  public void setSeverity(List<String> severity) {
+  public void setSeverity(@javax.annotation.Nullable List<String> severity) {
     this.severity = severity;
   }
 
 
-  public CloudConfigurationFindingsSettingsConfig status(List<String> status) {
+  public CloudConfigurationFindingsSettingsConfig status(@javax.annotation.Nullable List<String> status) {
     this.status = status;
     return this;
   }
@@ -166,7 +170,7 @@ public class CloudConfigurationFindingsSettingsConfig {
     return status;
   }
 
-  public void setStatus(List<String> status) {
+  public void setStatus(@javax.annotation.Nullable List<String> status) {
     this.status = status;
   }
 

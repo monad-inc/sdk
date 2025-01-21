@@ -48,20 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * Google Workspace Users settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class UsersSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
+  @javax.annotation.Nullable
   private String cron;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
   private String email;
 
   public UsersSettingsConfig() {
   }
 
-  public UsersSettingsConfig cron(String cron) {
+  public UsersSettingsConfig cron(@javax.annotation.Nullable String cron) {
     this.cron = cron;
     return this;
   }
@@ -75,12 +77,12 @@ public class UsersSettingsConfig {
     return cron;
   }
 
-  public void setCron(String cron) {
+  public void setCron(@javax.annotation.Nullable String cron) {
     this.cron = cron;
   }
 
 
-  public UsersSettingsConfig email(String email) {
+  public UsersSettingsConfig email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -94,7 +96,7 @@ public class UsersSettingsConfig {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 

@@ -49,20 +49,22 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2TestOutputConnectionRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T17:13:38.384485740Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2TestOutputConnectionRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nullable
   private RoutesV2OutputConfig config;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private String type;
 
   public RoutesV2TestOutputConnectionRequest() {
   }
 
-  public RoutesV2TestOutputConnectionRequest config(RoutesV2OutputConfig config) {
+  public RoutesV2TestOutputConnectionRequest config(@javax.annotation.Nullable RoutesV2OutputConfig config) {
     this.config = config;
     return this;
   }
@@ -76,12 +78,12 @@ public class RoutesV2TestOutputConnectionRequest {
     return config;
   }
 
-  public void setConfig(RoutesV2OutputConfig config) {
+  public void setConfig(@javax.annotation.Nullable RoutesV2OutputConfig config) {
     this.config = config;
   }
 
 
-  public RoutesV2TestOutputConnectionRequest type(String type) {
+  public RoutesV2TestOutputConnectionRequest type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
@@ -95,7 +97,7 @@ public class RoutesV2TestOutputConnectionRequest {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
