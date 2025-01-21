@@ -48,42 +48,36 @@ import org.openapitools.client.JSON;
 /**
  * ModelsUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsUser {
   public static final String SERIALIZED_NAME_AUTH_ID = "auth_id";
   @SerializedName(SERIALIZED_NAME_AUTH_ID)
-  @javax.annotation.Nullable
   private String authId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
-  @javax.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
   private String updatedAt;
 
   public static final String SERIALIZED_NAME_USERNAME = "username";
   @SerializedName(SERIALIZED_NAME_USERNAME)
-  @javax.annotation.Nullable
   private String username;
 
   public ModelsUser() {
   }
 
-  public ModelsUser authId(@javax.annotation.Nullable String authId) {
+  public ModelsUser authId(String authId) {
     this.authId = authId;
     return this;
   }
@@ -97,12 +91,12 @@ public class ModelsUser {
     return authId;
   }
 
-  public void setAuthId(@javax.annotation.Nullable String authId) {
+  public void setAuthId(String authId) {
     this.authId = authId;
   }
 
 
-  public ModelsUser createdAt(@javax.annotation.Nullable String createdAt) {
+  public ModelsUser createdAt(String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -116,12 +110,12 @@ public class ModelsUser {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ModelsUser email(@javax.annotation.Nullable String email) {
+  public ModelsUser email(String email) {
     this.email = email;
     return this;
   }
@@ -135,12 +129,12 @@ public class ModelsUser {
     return email;
   }
 
-  public void setEmail(@javax.annotation.Nullable String email) {
+  public void setEmail(String email) {
     this.email = email;
   }
 
 
-  public ModelsUser id(@javax.annotation.Nullable String id) {
+  public ModelsUser id(String id) {
     this.id = id;
     return this;
   }
@@ -154,12 +148,12 @@ public class ModelsUser {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
 
-  public ModelsUser updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public ModelsUser updatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -173,12 +167,12 @@ public class ModelsUser {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public ModelsUser username(@javax.annotation.Nullable String username) {
+  public ModelsUser username(String username) {
     this.username = username;
     return this;
   }
@@ -192,7 +186,7 @@ public class ModelsUser {
     return username;
   }
 
-  public void setUsername(@javax.annotation.Nullable String username) {
+  public void setUsername(String username) {
     this.username = username;
   }
 

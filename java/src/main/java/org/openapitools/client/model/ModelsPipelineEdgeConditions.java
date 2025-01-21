@@ -51,22 +51,20 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineEdgeConditions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsPipelineEdgeConditions {
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
-  @javax.annotation.Nullable
   private List<ModelsPipelineEdgeCondition> conditions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
-  @javax.annotation.Nullable
   private String operator;
 
   public ModelsPipelineEdgeConditions() {
   }
 
-  public ModelsPipelineEdgeConditions conditions(@javax.annotation.Nullable List<ModelsPipelineEdgeCondition> conditions) {
+  public ModelsPipelineEdgeConditions conditions(List<ModelsPipelineEdgeCondition> conditions) {
     this.conditions = conditions;
     return this;
   }
@@ -88,12 +86,12 @@ public class ModelsPipelineEdgeConditions {
     return conditions;
   }
 
-  public void setConditions(@javax.annotation.Nullable List<ModelsPipelineEdgeCondition> conditions) {
+  public void setConditions(List<ModelsPipelineEdgeCondition> conditions) {
     this.conditions = conditions;
   }
 
 
-  public ModelsPipelineEdgeConditions operator(@javax.annotation.Nullable String operator) {
+  public ModelsPipelineEdgeConditions operator(String operator) {
     this.operator = operator;
     return this;
   }
@@ -107,7 +105,7 @@ public class ModelsPipelineEdgeConditions {
     return operator;
   }
 
-  public void setOperator(@javax.annotation.Nullable String operator) {
+  public void setOperator(String operator) {
     this.operator = operator;
   }
 

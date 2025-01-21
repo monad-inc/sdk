@@ -78,8 +78,7 @@ public class OauthApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Oauth callback successful </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
@@ -148,8 +147,7 @@ public class OauthApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Oauth callback successful </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
@@ -167,8 +165,7 @@ public class OauthApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Oauth callback successful </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
@@ -188,8 +185,7 @@ public class OauthApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Oauth callback successful </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
@@ -210,8 +206,7 @@ public class OauthApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Oauth redirect retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
@@ -287,8 +282,7 @@ public class OauthApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Oauth redirect retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
@@ -307,8 +301,7 @@ public class OauthApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Oauth redirect retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
@@ -329,8 +322,7 @@ public class OauthApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Oauth redirect retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>

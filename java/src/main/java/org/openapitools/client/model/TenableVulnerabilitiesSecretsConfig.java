@@ -48,22 +48,20 @@ import org.openapitools.client.JSON;
 /**
  * Tenable vulnerabilities secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class TenableVulnerabilitiesSecretsConfig {
   public static final String SERIALIZED_NAME_ACCESS_KEY = "access_key";
   @SerializedName(SERIALIZED_NAME_ACCESS_KEY)
-  @javax.annotation.Nullable
   private String accessKey;
 
   public static final String SERIALIZED_NAME_SECRET_KEY = "secret_key";
   @SerializedName(SERIALIZED_NAME_SECRET_KEY)
-  @javax.annotation.Nullable
   private String secretKey;
 
   public TenableVulnerabilitiesSecretsConfig() {
   }
 
-  public TenableVulnerabilitiesSecretsConfig accessKey(@javax.annotation.Nullable String accessKey) {
+  public TenableVulnerabilitiesSecretsConfig accessKey(String accessKey) {
     this.accessKey = accessKey;
     return this;
   }
@@ -77,12 +75,12 @@ public class TenableVulnerabilitiesSecretsConfig {
     return accessKey;
   }
 
-  public void setAccessKey(@javax.annotation.Nullable String accessKey) {
+  public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
   }
 
 
-  public TenableVulnerabilitiesSecretsConfig secretKey(@javax.annotation.Nullable String secretKey) {
+  public TenableVulnerabilitiesSecretsConfig secretKey(String secretKey) {
     this.secretKey = secretKey;
     return this;
   }
@@ -96,7 +94,7 @@ public class TenableVulnerabilitiesSecretsConfig {
     return secretKey;
   }
 
-  public void setSecretKey(@javax.annotation.Nullable String secretKey) {
+  public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
   }
 

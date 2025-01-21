@@ -48,22 +48,20 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR roles info secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class RolesInfoSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
-  @javax.annotation.Nullable
   private String clientId;
 
   public static final String SERIALIZED_NAME_CLIENT_SECRET = "client_secret";
   @SerializedName(SERIALIZED_NAME_CLIENT_SECRET)
-  @javax.annotation.Nullable
   private String clientSecret;
 
   public RolesInfoSecretsConfig() {
   }
 
-  public RolesInfoSecretsConfig clientId(@javax.annotation.Nullable String clientId) {
+  public RolesInfoSecretsConfig clientId(String clientId) {
     this.clientId = clientId;
     return this;
   }
@@ -77,12 +75,12 @@ public class RolesInfoSecretsConfig {
     return clientId;
   }
 
-  public void setClientId(@javax.annotation.Nullable String clientId) {
+  public void setClientId(String clientId) {
     this.clientId = clientId;
   }
 
 
-  public RolesInfoSecretsConfig clientSecret(@javax.annotation.Nullable String clientSecret) {
+  public RolesInfoSecretsConfig clientSecret(String clientSecret) {
     this.clientSecret = clientSecret;
     return this;
   }
@@ -96,7 +94,7 @@ public class RolesInfoSecretsConfig {
     return clientSecret;
   }
 
-  public void setClientSecret(@javax.annotation.Nullable String clientSecret) {
+  public void setClientSecret(String clientSecret) {
     this.clientSecret = clientSecret;
   }
 

@@ -48,47 +48,40 @@ import org.openapitools.client.JSON;
 /**
  * Elasticsearch Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ElasticsearchSettingsConfig {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
-  @javax.annotation.Nullable
   private String authType;
 
   public static final String SERIALIZED_NAME_CLOUD_ID = "cloud_id";
   @SerializedName(SERIALIZED_NAME_CLOUD_ID)
-  @javax.annotation.Nullable
   private String cloudId;
 
   public static final String SERIALIZED_NAME_CONNECTION_TYPE = "connection_type";
   @SerializedName(SERIALIZED_NAME_CONNECTION_TYPE)
-  @javax.annotation.Nullable
   private String connectionType;
 
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
-  @javax.annotation.Nullable
   private String index;
 
   public static final String SERIALIZED_NAME_INSECURE_SKIP_VERIFY = "insecure_skip_verify";
   @SerializedName(SERIALIZED_NAME_INSECURE_SKIP_VERIFY)
-  @javax.annotation.Nullable
   private Boolean insecureSkipVerify;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
-  @javax.annotation.Nullable
   private String url;
 
   public static final String SERIALIZED_NAME_USERNAME = "username";
   @SerializedName(SERIALIZED_NAME_USERNAME)
-  @javax.annotation.Nullable
   private String username;
 
   public ElasticsearchSettingsConfig() {
   }
 
-  public ElasticsearchSettingsConfig authType(@javax.annotation.Nullable String authType) {
+  public ElasticsearchSettingsConfig authType(String authType) {
     this.authType = authType;
     return this;
   }
@@ -102,12 +95,12 @@ public class ElasticsearchSettingsConfig {
     return authType;
   }
 
-  public void setAuthType(@javax.annotation.Nullable String authType) {
+  public void setAuthType(String authType) {
     this.authType = authType;
   }
 
 
-  public ElasticsearchSettingsConfig cloudId(@javax.annotation.Nullable String cloudId) {
+  public ElasticsearchSettingsConfig cloudId(String cloudId) {
     this.cloudId = cloudId;
     return this;
   }
@@ -121,12 +114,12 @@ public class ElasticsearchSettingsConfig {
     return cloudId;
   }
 
-  public void setCloudId(@javax.annotation.Nullable String cloudId) {
+  public void setCloudId(String cloudId) {
     this.cloudId = cloudId;
   }
 
 
-  public ElasticsearchSettingsConfig connectionType(@javax.annotation.Nullable String connectionType) {
+  public ElasticsearchSettingsConfig connectionType(String connectionType) {
     this.connectionType = connectionType;
     return this;
   }
@@ -140,12 +133,12 @@ public class ElasticsearchSettingsConfig {
     return connectionType;
   }
 
-  public void setConnectionType(@javax.annotation.Nullable String connectionType) {
+  public void setConnectionType(String connectionType) {
     this.connectionType = connectionType;
   }
 
 
-  public ElasticsearchSettingsConfig index(@javax.annotation.Nullable String index) {
+  public ElasticsearchSettingsConfig index(String index) {
     this.index = index;
     return this;
   }
@@ -159,12 +152,12 @@ public class ElasticsearchSettingsConfig {
     return index;
   }
 
-  public void setIndex(@javax.annotation.Nullable String index) {
+  public void setIndex(String index) {
     this.index = index;
   }
 
 
-  public ElasticsearchSettingsConfig insecureSkipVerify(@javax.annotation.Nullable Boolean insecureSkipVerify) {
+  public ElasticsearchSettingsConfig insecureSkipVerify(Boolean insecureSkipVerify) {
     this.insecureSkipVerify = insecureSkipVerify;
     return this;
   }
@@ -178,12 +171,12 @@ public class ElasticsearchSettingsConfig {
     return insecureSkipVerify;
   }
 
-  public void setInsecureSkipVerify(@javax.annotation.Nullable Boolean insecureSkipVerify) {
+  public void setInsecureSkipVerify(Boolean insecureSkipVerify) {
     this.insecureSkipVerify = insecureSkipVerify;
   }
 
 
-  public ElasticsearchSettingsConfig url(@javax.annotation.Nullable String url) {
+  public ElasticsearchSettingsConfig url(String url) {
     this.url = url;
     return this;
   }
@@ -197,12 +190,12 @@ public class ElasticsearchSettingsConfig {
     return url;
   }
 
-  public void setUrl(@javax.annotation.Nullable String url) {
+  public void setUrl(String url) {
     this.url = url;
   }
 
 
-  public ElasticsearchSettingsConfig username(@javax.annotation.Nullable String username) {
+  public ElasticsearchSettingsConfig username(String username) {
     this.username = username;
     return this;
   }
@@ -216,7 +209,7 @@ public class ElasticsearchSettingsConfig {
     return username;
   }
 
-  public void setUsername(@javax.annotation.Nullable String username) {
+  public void setUsername(String username) {
     this.username = username;
   }
 

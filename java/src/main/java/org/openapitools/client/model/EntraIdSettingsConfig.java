@@ -48,27 +48,24 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Entra ID settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class EntraIdSettingsConfig {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
-  @javax.annotation.Nullable
   private String category;
 
   public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
   @SerializedName(SERIALIZED_NAME_TENANT_ID)
-  @javax.annotation.Nullable
   private String tenantId;
 
   public static final String SERIALIZED_NAME_WORKSPACE_ID = "workspace_id";
   @SerializedName(SERIALIZED_NAME_WORKSPACE_ID)
-  @javax.annotation.Nullable
   private String workspaceId;
 
   public EntraIdSettingsConfig() {
   }
 
-  public EntraIdSettingsConfig category(@javax.annotation.Nullable String category) {
+  public EntraIdSettingsConfig category(String category) {
     this.category = category;
     return this;
   }
@@ -82,12 +79,12 @@ public class EntraIdSettingsConfig {
     return category;
   }
 
-  public void setCategory(@javax.annotation.Nullable String category) {
+  public void setCategory(String category) {
     this.category = category;
   }
 
 
-  public EntraIdSettingsConfig tenantId(@javax.annotation.Nullable String tenantId) {
+  public EntraIdSettingsConfig tenantId(String tenantId) {
     this.tenantId = tenantId;
     return this;
   }
@@ -101,12 +98,12 @@ public class EntraIdSettingsConfig {
     return tenantId;
   }
 
-  public void setTenantId(@javax.annotation.Nullable String tenantId) {
+  public void setTenantId(String tenantId) {
     this.tenantId = tenantId;
   }
 
 
-  public EntraIdSettingsConfig workspaceId(@javax.annotation.Nullable String workspaceId) {
+  public EntraIdSettingsConfig workspaceId(String workspaceId) {
     this.workspaceId = workspaceId;
     return this;
   }
@@ -120,7 +117,7 @@ public class EntraIdSettingsConfig {
     return workspaceId;
   }
 
-  public void setWorkspaceId(@javax.annotation.Nullable String workspaceId) {
+  public void setWorkspaceId(String workspaceId) {
     this.workspaceId = workspaceId;
   }
 

@@ -48,22 +48,20 @@ import org.openapitools.client.JSON;
 /**
  * Auth0LoginRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class Auth0LoginRequest {
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)
-  @javax.annotation.Nullable
   private String password;
 
   public static final String SERIALIZED_NAME_USERNAME = "username";
   @SerializedName(SERIALIZED_NAME_USERNAME)
-  @javax.annotation.Nullable
   private String username;
 
   public Auth0LoginRequest() {
   }
 
-  public Auth0LoginRequest password(@javax.annotation.Nullable String password) {
+  public Auth0LoginRequest password(String password) {
     this.password = password;
     return this;
   }
@@ -77,12 +75,12 @@ public class Auth0LoginRequest {
     return password;
   }
 
-  public void setPassword(@javax.annotation.Nullable String password) {
+  public void setPassword(String password) {
     this.password = password;
   }
 
 
-  public Auth0LoginRequest username(@javax.annotation.Nullable String username) {
+  public Auth0LoginRequest username(String username) {
     this.username = username;
     return this;
   }
@@ -96,7 +94,7 @@ public class Auth0LoginRequest {
     return username;
   }
 
-  public void setUsername(@javax.annotation.Nullable String username) {
+  public void setUsername(String username) {
     this.username = username;
   }
 

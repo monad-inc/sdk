@@ -50,57 +50,48 @@ import org.openapitools.client.JSON;
 /**
  * GitHub audit logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class AuditLogsSettingsConfig {
   public static final String SERIALIZED_NAME_ACTIONS = "actions";
   @SerializedName(SERIALIZED_NAME_ACTIONS)
-  @javax.annotation.Nullable
   private List<String> actions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ACTOR = "actor";
   @SerializedName(SERIALIZED_NAME_ACTOR)
-  @javax.annotation.Nullable
   private String actor;
 
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
-  @javax.annotation.Nullable
   private String country;
 
   public static final String SERIALIZED_NAME_CREATED_AFTER = "created_after";
   @SerializedName(SERIALIZED_NAME_CREATED_AFTER)
-  @javax.annotation.Nullable
   private String createdAfter;
 
   public static final String SERIALIZED_NAME_ENTERPRISE = "enterprise";
   @SerializedName(SERIALIZED_NAME_ENTERPRISE)
-  @javax.annotation.Nullable
   private String enterprise;
 
   public static final String SERIALIZED_NAME_INCLUDE = "include";
   @SerializedName(SERIALIZED_NAME_INCLUDE)
-  @javax.annotation.Nullable
   private String include;
 
   public static final String SERIALIZED_NAME_ORGANIZATION = "organization";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION)
-  @javax.annotation.Nullable
   private String organization;
 
   public static final String SERIALIZED_NAME_REPOSITORY = "repository";
   @SerializedName(SERIALIZED_NAME_REPOSITORY)
-  @javax.annotation.Nullable
   private String repository;
 
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
-  @javax.annotation.Nullable
   private String user;
 
   public AuditLogsSettingsConfig() {
   }
 
-  public AuditLogsSettingsConfig actions(@javax.annotation.Nullable List<String> actions) {
+  public AuditLogsSettingsConfig actions(List<String> actions) {
     this.actions = actions;
     return this;
   }
@@ -122,12 +113,12 @@ public class AuditLogsSettingsConfig {
     return actions;
   }
 
-  public void setActions(@javax.annotation.Nullable List<String> actions) {
+  public void setActions(List<String> actions) {
     this.actions = actions;
   }
 
 
-  public AuditLogsSettingsConfig actor(@javax.annotation.Nullable String actor) {
+  public AuditLogsSettingsConfig actor(String actor) {
     this.actor = actor;
     return this;
   }
@@ -141,12 +132,12 @@ public class AuditLogsSettingsConfig {
     return actor;
   }
 
-  public void setActor(@javax.annotation.Nullable String actor) {
+  public void setActor(String actor) {
     this.actor = actor;
   }
 
 
-  public AuditLogsSettingsConfig country(@javax.annotation.Nullable String country) {
+  public AuditLogsSettingsConfig country(String country) {
     this.country = country;
     return this;
   }
@@ -160,12 +151,12 @@ public class AuditLogsSettingsConfig {
     return country;
   }
 
-  public void setCountry(@javax.annotation.Nullable String country) {
+  public void setCountry(String country) {
     this.country = country;
   }
 
 
-  public AuditLogsSettingsConfig createdAfter(@javax.annotation.Nullable String createdAfter) {
+  public AuditLogsSettingsConfig createdAfter(String createdAfter) {
     this.createdAfter = createdAfter;
     return this;
   }
@@ -179,12 +170,12 @@ public class AuditLogsSettingsConfig {
     return createdAfter;
   }
 
-  public void setCreatedAfter(@javax.annotation.Nullable String createdAfter) {
+  public void setCreatedAfter(String createdAfter) {
     this.createdAfter = createdAfter;
   }
 
 
-  public AuditLogsSettingsConfig enterprise(@javax.annotation.Nullable String enterprise) {
+  public AuditLogsSettingsConfig enterprise(String enterprise) {
     this.enterprise = enterprise;
     return this;
   }
@@ -198,12 +189,12 @@ public class AuditLogsSettingsConfig {
     return enterprise;
   }
 
-  public void setEnterprise(@javax.annotation.Nullable String enterprise) {
+  public void setEnterprise(String enterprise) {
     this.enterprise = enterprise;
   }
 
 
-  public AuditLogsSettingsConfig include(@javax.annotation.Nullable String include) {
+  public AuditLogsSettingsConfig include(String include) {
     this.include = include;
     return this;
   }
@@ -217,12 +208,12 @@ public class AuditLogsSettingsConfig {
     return include;
   }
 
-  public void setInclude(@javax.annotation.Nullable String include) {
+  public void setInclude(String include) {
     this.include = include;
   }
 
 
-  public AuditLogsSettingsConfig organization(@javax.annotation.Nullable String organization) {
+  public AuditLogsSettingsConfig organization(String organization) {
     this.organization = organization;
     return this;
   }
@@ -236,12 +227,12 @@ public class AuditLogsSettingsConfig {
     return organization;
   }
 
-  public void setOrganization(@javax.annotation.Nullable String organization) {
+  public void setOrganization(String organization) {
     this.organization = organization;
   }
 
 
-  public AuditLogsSettingsConfig repository(@javax.annotation.Nullable String repository) {
+  public AuditLogsSettingsConfig repository(String repository) {
     this.repository = repository;
     return this;
   }
@@ -255,12 +246,12 @@ public class AuditLogsSettingsConfig {
     return repository;
   }
 
-  public void setRepository(@javax.annotation.Nullable String repository) {
+  public void setRepository(String repository) {
     this.repository = repository;
   }
 
 
-  public AuditLogsSettingsConfig user(@javax.annotation.Nullable String user) {
+  public AuditLogsSettingsConfig user(String user) {
     this.user = user;
     return this;
   }
@@ -274,7 +265,7 @@ public class AuditLogsSettingsConfig {
     return user;
   }
 
-  public void setUser(@javax.annotation.Nullable String user) {
+  public void setUser(String user) {
     this.user = user;
   }
 

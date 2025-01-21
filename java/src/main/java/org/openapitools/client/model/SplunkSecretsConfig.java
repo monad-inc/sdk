@@ -48,17 +48,16 @@ import org.openapitools.client.JSON;
 /**
  * Splunk Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class SplunkSecretsConfig {
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
-  @javax.annotation.Nullable
   private String token;
 
   public SplunkSecretsConfig() {
   }
 
-  public SplunkSecretsConfig token(@javax.annotation.Nullable String token) {
+  public SplunkSecretsConfig token(String token) {
     this.token = token;
     return this;
   }
@@ -72,7 +71,7 @@ public class SplunkSecretsConfig {
     return token;
   }
 
-  public void setToken(@javax.annotation.Nullable String token) {
+  public void setToken(String token) {
     this.token = token;
   }
 

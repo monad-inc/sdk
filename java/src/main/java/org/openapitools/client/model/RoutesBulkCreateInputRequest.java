@@ -51,17 +51,16 @@ import org.openapitools.client.JSON;
 /**
  * RoutesBulkCreateInputRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class RoutesBulkCreateInputRequest {
   public static final String SERIALIZED_NAME_INPUTS = "inputs";
   @SerializedName(SERIALIZED_NAME_INPUTS)
-  @javax.annotation.Nonnull
   private List<RoutesCreateInputRequest> inputs = new ArrayList<>();
 
   public RoutesBulkCreateInputRequest() {
   }
 
-  public RoutesBulkCreateInputRequest inputs(@javax.annotation.Nonnull List<RoutesCreateInputRequest> inputs) {
+  public RoutesBulkCreateInputRequest inputs(List<RoutesCreateInputRequest> inputs) {
     this.inputs = inputs;
     return this;
   }
@@ -83,7 +82,7 @@ public class RoutesBulkCreateInputRequest {
     return inputs;
   }
 
-  public void setInputs(@javax.annotation.Nonnull List<RoutesCreateInputRequest> inputs) {
+  public void setInputs(List<RoutesCreateInputRequest> inputs) {
     this.inputs = inputs;
   }
 

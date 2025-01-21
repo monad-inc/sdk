@@ -52,22 +52,20 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganizationList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsOrganizationList {
   public static final String SERIALIZED_NAME_ORGANIZATIONS = "organizations";
   @SerializedName(SERIALIZED_NAME_ORGANIZATIONS)
-  @javax.annotation.Nullable
   private List<ModelsOrganization> organizations = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
-  @javax.annotation.Nullable
   private ModelsPagination pagination;
 
   public ModelsOrganizationList() {
   }
 
-  public ModelsOrganizationList organizations(@javax.annotation.Nullable List<ModelsOrganization> organizations) {
+  public ModelsOrganizationList organizations(List<ModelsOrganization> organizations) {
     this.organizations = organizations;
     return this;
   }
@@ -89,12 +87,12 @@ public class ModelsOrganizationList {
     return organizations;
   }
 
-  public void setOrganizations(@javax.annotation.Nullable List<ModelsOrganization> organizations) {
+  public void setOrganizations(List<ModelsOrganization> organizations) {
     this.organizations = organizations;
   }
 
 
-  public ModelsOrganizationList pagination(@javax.annotation.Nullable ModelsPagination pagination) {
+  public ModelsOrganizationList pagination(ModelsPagination pagination) {
     this.pagination = pagination;
     return this;
   }
@@ -108,7 +106,7 @@ public class ModelsOrganizationList {
     return pagination;
   }
 
-  public void setPagination(@javax.annotation.Nullable ModelsPagination pagination) {
+  public void setPagination(ModelsPagination pagination) {
     this.pagination = pagination;
   }
 

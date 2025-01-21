@@ -48,17 +48,16 @@ import org.openapitools.client.JSON;
 /**
  * GitHub audit logs secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class AuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_PERSONAL_ACCESS_TOKEN = "personal_access_token";
   @SerializedName(SERIALIZED_NAME_PERSONAL_ACCESS_TOKEN)
-  @javax.annotation.Nullable
   private String personalAccessToken;
 
   public AuditLogsSecretsConfig() {
   }
 
-  public AuditLogsSecretsConfig personalAccessToken(@javax.annotation.Nullable String personalAccessToken) {
+  public AuditLogsSecretsConfig personalAccessToken(String personalAccessToken) {
     this.personalAccessToken = personalAccessToken;
     return this;
   }
@@ -72,7 +71,7 @@ public class AuditLogsSecretsConfig {
     return personalAccessToken;
   }
 
-  public void setPersonalAccessToken(@javax.annotation.Nullable String personalAccessToken) {
+  public void setPersonalAccessToken(String personalAccessToken) {
     this.personalAccessToken = personalAccessToken;
   }
 

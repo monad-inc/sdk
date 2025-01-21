@@ -50,22 +50,20 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2OutputConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class RoutesV2OutputConfig {
   public static final String SERIALIZED_NAME_SECRETS = "secrets";
   @SerializedName(SERIALIZED_NAME_SECRETS)
-  @javax.annotation.Nullable
   private RoutesV2OutputConfigSecrets secrets;
 
   public static final String SERIALIZED_NAME_SETTINGS = "settings";
   @SerializedName(SERIALIZED_NAME_SETTINGS)
-  @javax.annotation.Nullable
   private RoutesV2OutputConfigSettings settings;
 
   public RoutesV2OutputConfig() {
   }
 
-  public RoutesV2OutputConfig secrets(@javax.annotation.Nullable RoutesV2OutputConfigSecrets secrets) {
+  public RoutesV2OutputConfig secrets(RoutesV2OutputConfigSecrets secrets) {
     this.secrets = secrets;
     return this;
   }
@@ -79,12 +77,12 @@ public class RoutesV2OutputConfig {
     return secrets;
   }
 
-  public void setSecrets(@javax.annotation.Nullable RoutesV2OutputConfigSecrets secrets) {
+  public void setSecrets(RoutesV2OutputConfigSecrets secrets) {
     this.secrets = secrets;
   }
 
 
-  public RoutesV2OutputConfig settings(@javax.annotation.Nullable RoutesV2OutputConfigSettings settings) {
+  public RoutesV2OutputConfig settings(RoutesV2OutputConfigSettings settings) {
     this.settings = settings;
     return this;
   }
@@ -98,7 +96,7 @@ public class RoutesV2OutputConfig {
     return settings;
   }
 
-  public void setSettings(@javax.annotation.Nullable RoutesV2OutputConfigSettings settings) {
+  public void setSettings(RoutesV2OutputConfigSettings settings) {
     this.settings = settings;
   }
 

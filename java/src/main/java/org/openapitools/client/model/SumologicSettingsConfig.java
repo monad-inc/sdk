@@ -48,17 +48,16 @@ import org.openapitools.client.JSON;
 /**
  * Sumo Logic Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class SumologicSettingsConfig {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
-  @javax.annotation.Nullable
   private String url;
 
   public SumologicSettingsConfig() {
   }
 
-  public SumologicSettingsConfig url(@javax.annotation.Nullable String url) {
+  public SumologicSettingsConfig url(String url) {
     this.url = url;
     return this;
   }
@@ -72,7 +71,7 @@ public class SumologicSettingsConfig {
     return url;
   }
 
-  public void setUrl(@javax.annotation.Nullable String url) {
+  public void setUrl(String url) {
     this.url = url;
   }
 

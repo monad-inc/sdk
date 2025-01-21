@@ -48,57 +48,48 @@ import org.openapitools.client.JSON;
 /**
  * ModelsAPIKeyWithToken
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsAPIKeyWithToken {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_EXPIRATION_TIME = "expiration_time";
   @SerializedName(SERIALIZED_NAME_EXPIRATION_TIME)
-  @javax.annotation.Nullable
   private String expirationTime;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
-  @javax.annotation.Nullable
   private String organizationId;
 
   public static final String SERIALIZED_NAME_ROLE_ID = "role_id";
   @SerializedName(SERIALIZED_NAME_ROLE_ID)
-  @javax.annotation.Nullable
   private String roleId;
 
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
-  @javax.annotation.Nullable
   private String token;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
   private String updatedAt;
 
   public ModelsAPIKeyWithToken() {
   }
 
-  public ModelsAPIKeyWithToken createdAt(@javax.annotation.Nullable String createdAt) {
+  public ModelsAPIKeyWithToken createdAt(String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -112,12 +103,12 @@ public class ModelsAPIKeyWithToken {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ModelsAPIKeyWithToken description(@javax.annotation.Nullable String description) {
+  public ModelsAPIKeyWithToken description(String description) {
     this.description = description;
     return this;
   }
@@ -131,12 +122,12 @@ public class ModelsAPIKeyWithToken {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
 
-  public ModelsAPIKeyWithToken expirationTime(@javax.annotation.Nullable String expirationTime) {
+  public ModelsAPIKeyWithToken expirationTime(String expirationTime) {
     this.expirationTime = expirationTime;
     return this;
   }
@@ -150,12 +141,12 @@ public class ModelsAPIKeyWithToken {
     return expirationTime;
   }
 
-  public void setExpirationTime(@javax.annotation.Nullable String expirationTime) {
+  public void setExpirationTime(String expirationTime) {
     this.expirationTime = expirationTime;
   }
 
 
-  public ModelsAPIKeyWithToken id(@javax.annotation.Nullable String id) {
+  public ModelsAPIKeyWithToken id(String id) {
     this.id = id;
     return this;
   }
@@ -169,12 +160,12 @@ public class ModelsAPIKeyWithToken {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
 
-  public ModelsAPIKeyWithToken name(@javax.annotation.Nullable String name) {
+  public ModelsAPIKeyWithToken name(String name) {
     this.name = name;
     return this;
   }
@@ -188,12 +179,12 @@ public class ModelsAPIKeyWithToken {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
 
-  public ModelsAPIKeyWithToken organizationId(@javax.annotation.Nullable String organizationId) {
+  public ModelsAPIKeyWithToken organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -207,12 +198,12 @@ public class ModelsAPIKeyWithToken {
     return organizationId;
   }
 
-  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
+  public void setOrganizationId(String organizationId) {
     this.organizationId = organizationId;
   }
 
 
-  public ModelsAPIKeyWithToken roleId(@javax.annotation.Nullable String roleId) {
+  public ModelsAPIKeyWithToken roleId(String roleId) {
     this.roleId = roleId;
     return this;
   }
@@ -226,12 +217,12 @@ public class ModelsAPIKeyWithToken {
     return roleId;
   }
 
-  public void setRoleId(@javax.annotation.Nullable String roleId) {
+  public void setRoleId(String roleId) {
     this.roleId = roleId;
   }
 
 
-  public ModelsAPIKeyWithToken token(@javax.annotation.Nullable String token) {
+  public ModelsAPIKeyWithToken token(String token) {
     this.token = token;
     return this;
   }
@@ -245,12 +236,12 @@ public class ModelsAPIKeyWithToken {
     return token;
   }
 
-  public void setToken(@javax.annotation.Nullable String token) {
+  public void setToken(String token) {
     this.token = token;
   }
 
 
-  public ModelsAPIKeyWithToken updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public ModelsAPIKeyWithToken updatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -264,7 +255,7 @@ public class ModelsAPIKeyWithToken {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

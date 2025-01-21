@@ -52,22 +52,20 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganizationUserList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsOrganizationUserList {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
-  @javax.annotation.Nullable
   private ModelsPagination pagination;
 
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
-  @javax.annotation.Nullable
   private List<ModelsOrganizationUser> users = new ArrayList<>();
 
   public ModelsOrganizationUserList() {
   }
 
-  public ModelsOrganizationUserList pagination(@javax.annotation.Nullable ModelsPagination pagination) {
+  public ModelsOrganizationUserList pagination(ModelsPagination pagination) {
     this.pagination = pagination;
     return this;
   }
@@ -81,12 +79,12 @@ public class ModelsOrganizationUserList {
     return pagination;
   }
 
-  public void setPagination(@javax.annotation.Nullable ModelsPagination pagination) {
+  public void setPagination(ModelsPagination pagination) {
     this.pagination = pagination;
   }
 
 
-  public ModelsOrganizationUserList users(@javax.annotation.Nullable List<ModelsOrganizationUser> users) {
+  public ModelsOrganizationUserList users(List<ModelsOrganizationUser> users) {
     this.users = users;
     return this;
   }
@@ -108,7 +106,7 @@ public class ModelsOrganizationUserList {
     return users;
   }
 
-  public void setUsers(@javax.annotation.Nullable List<ModelsOrganizationUser> users) {
+  public void setUsers(List<ModelsOrganizationUser> users) {
     this.users = users;
   }
 

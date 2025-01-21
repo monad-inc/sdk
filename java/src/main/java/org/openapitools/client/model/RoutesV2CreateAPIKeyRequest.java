@@ -48,32 +48,28 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2CreateAPIKeyRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class RoutesV2CreateAPIKeyRequest {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_EXPIRATION_TIME = "expiration_time";
   @SerializedName(SERIALIZED_NAME_EXPIRATION_TIME)
-  @javax.annotation.Nonnull
   private String expirationTime;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_ROLE_ID = "role_id";
   @SerializedName(SERIALIZED_NAME_ROLE_ID)
-  @javax.annotation.Nonnull
   private String roleId;
 
   public RoutesV2CreateAPIKeyRequest() {
   }
 
-  public RoutesV2CreateAPIKeyRequest description(@javax.annotation.Nullable String description) {
+  public RoutesV2CreateAPIKeyRequest description(String description) {
     this.description = description;
     return this;
   }
@@ -87,12 +83,12 @@ public class RoutesV2CreateAPIKeyRequest {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
 
-  public RoutesV2CreateAPIKeyRequest expirationTime(@javax.annotation.Nonnull String expirationTime) {
+  public RoutesV2CreateAPIKeyRequest expirationTime(String expirationTime) {
     this.expirationTime = expirationTime;
     return this;
   }
@@ -106,12 +102,12 @@ public class RoutesV2CreateAPIKeyRequest {
     return expirationTime;
   }
 
-  public void setExpirationTime(@javax.annotation.Nonnull String expirationTime) {
+  public void setExpirationTime(String expirationTime) {
     this.expirationTime = expirationTime;
   }
 
 
-  public RoutesV2CreateAPIKeyRequest name(@javax.annotation.Nonnull String name) {
+  public RoutesV2CreateAPIKeyRequest name(String name) {
     this.name = name;
     return this;
   }
@@ -125,12 +121,12 @@ public class RoutesV2CreateAPIKeyRequest {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
 
-  public RoutesV2CreateAPIKeyRequest roleId(@javax.annotation.Nonnull String roleId) {
+  public RoutesV2CreateAPIKeyRequest roleId(String roleId) {
     this.roleId = roleId;
     return this;
   }
@@ -144,7 +140,7 @@ public class RoutesV2CreateAPIKeyRequest {
     return roleId;
   }
 
-  public void setRoleId(@javax.annotation.Nonnull String roleId) {
+  public void setRoleId(String roleId) {
     this.roleId = roleId;
   }
 

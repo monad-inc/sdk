@@ -50,17 +50,16 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2ListTemplatesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class RoutesV2ListTemplatesResponse {
   public static final String SERIALIZED_NAME_TEMPLATES = "templates";
   @SerializedName(SERIALIZED_NAME_TEMPLATES)
-  @javax.annotation.Nullable
   private List<String> templates = new ArrayList<>();
 
   public RoutesV2ListTemplatesResponse() {
   }
 
-  public RoutesV2ListTemplatesResponse templates(@javax.annotation.Nullable List<String> templates) {
+  public RoutesV2ListTemplatesResponse templates(List<String> templates) {
     this.templates = templates;
     return this;
   }
@@ -82,7 +81,7 @@ public class RoutesV2ListTemplatesResponse {
     return templates;
   }
 
-  public void setTemplates(@javax.annotation.Nullable List<String> templates) {
+  public void setTemplates(List<String> templates) {
     this.templates = templates;
   }
 

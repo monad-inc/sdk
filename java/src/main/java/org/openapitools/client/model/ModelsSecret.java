@@ -48,47 +48,40 @@ import org.openapitools.client.JSON;
 /**
  * ModelsSecret
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsSecret {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
-  @javax.annotation.Nullable
   private String organizationId;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
   private String updatedAt;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
   private String value;
 
   public ModelsSecret() {
   }
 
-  public ModelsSecret createdAt(@javax.annotation.Nullable String createdAt) {
+  public ModelsSecret createdAt(String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -102,12 +95,12 @@ public class ModelsSecret {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ModelsSecret description(@javax.annotation.Nullable String description) {
+  public ModelsSecret description(String description) {
     this.description = description;
     return this;
   }
@@ -121,12 +114,12 @@ public class ModelsSecret {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
 
-  public ModelsSecret id(@javax.annotation.Nullable String id) {
+  public ModelsSecret id(String id) {
     this.id = id;
     return this;
   }
@@ -140,12 +133,12 @@ public class ModelsSecret {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
 
-  public ModelsSecret name(@javax.annotation.Nullable String name) {
+  public ModelsSecret name(String name) {
     this.name = name;
     return this;
   }
@@ -159,12 +152,12 @@ public class ModelsSecret {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
 
-  public ModelsSecret organizationId(@javax.annotation.Nullable String organizationId) {
+  public ModelsSecret organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -178,12 +171,12 @@ public class ModelsSecret {
     return organizationId;
   }
 
-  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
+  public void setOrganizationId(String organizationId) {
     this.organizationId = organizationId;
   }
 
 
-  public ModelsSecret updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public ModelsSecret updatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -197,12 +190,12 @@ public class ModelsSecret {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public ModelsSecret value(@javax.annotation.Nullable String value) {
+  public ModelsSecret value(String value) {
     this.value = value;
     return this;
   }
@@ -216,7 +209,7 @@ public class ModelsSecret {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable String value) {
+  public void setValue(String value) {
     this.value = value;
   }
 

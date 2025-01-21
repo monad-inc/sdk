@@ -48,17 +48,16 @@ import org.openapitools.client.JSON;
 /**
  * RoutesUpdateUserInOrganizationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class RoutesUpdateUserInOrganizationRequest {
   public static final String SERIALIZED_NAME_ROLE_ID = "role_id";
   @SerializedName(SERIALIZED_NAME_ROLE_ID)
-  @javax.annotation.Nullable
   private String roleId;
 
   public RoutesUpdateUserInOrganizationRequest() {
   }
 
-  public RoutesUpdateUserInOrganizationRequest roleId(@javax.annotation.Nullable String roleId) {
+  public RoutesUpdateUserInOrganizationRequest roleId(String roleId) {
     this.roleId = roleId;
     return this;
   }
@@ -72,7 +71,7 @@ public class RoutesUpdateUserInOrganizationRequest {
     return roleId;
   }
 
-  public void setRoleId(@javax.annotation.Nullable String roleId) {
+  public void setRoleId(String roleId) {
     this.roleId = roleId;
   }
 

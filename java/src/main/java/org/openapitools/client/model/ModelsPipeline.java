@@ -48,52 +48,44 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipeline
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsPipeline {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_INPUT_ID = "input_id";
   @SerializedName(SERIALIZED_NAME_INPUT_ID)
-  @javax.annotation.Nullable
   private String inputId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
-  @javax.annotation.Nullable
   private String organizationId;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
   private String updatedAt;
 
   public ModelsPipeline() {
   }
 
-  public ModelsPipeline createdAt(@javax.annotation.Nullable String createdAt) {
+  public ModelsPipeline createdAt(String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -107,12 +99,12 @@ public class ModelsPipeline {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ModelsPipeline description(@javax.annotation.Nullable String description) {
+  public ModelsPipeline description(String description) {
     this.description = description;
     return this;
   }
@@ -126,12 +118,12 @@ public class ModelsPipeline {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
 
-  public ModelsPipeline enabled(@javax.annotation.Nullable Boolean enabled) {
+  public ModelsPipeline enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -145,12 +137,12 @@ public class ModelsPipeline {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public ModelsPipeline id(@javax.annotation.Nullable String id) {
+  public ModelsPipeline id(String id) {
     this.id = id;
     return this;
   }
@@ -164,12 +156,12 @@ public class ModelsPipeline {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
 
-  public ModelsPipeline inputId(@javax.annotation.Nullable String inputId) {
+  public ModelsPipeline inputId(String inputId) {
     this.inputId = inputId;
     return this;
   }
@@ -183,12 +175,12 @@ public class ModelsPipeline {
     return inputId;
   }
 
-  public void setInputId(@javax.annotation.Nullable String inputId) {
+  public void setInputId(String inputId) {
     this.inputId = inputId;
   }
 
 
-  public ModelsPipeline name(@javax.annotation.Nullable String name) {
+  public ModelsPipeline name(String name) {
     this.name = name;
     return this;
   }
@@ -202,12 +194,12 @@ public class ModelsPipeline {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
 
-  public ModelsPipeline organizationId(@javax.annotation.Nullable String organizationId) {
+  public ModelsPipeline organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -221,12 +213,12 @@ public class ModelsPipeline {
     return organizationId;
   }
 
-  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
+  public void setOrganizationId(String organizationId) {
     this.organizationId = organizationId;
   }
 
 
-  public ModelsPipeline updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public ModelsPipeline updatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -240,7 +232,7 @@ public class ModelsPipeline {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

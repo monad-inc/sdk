@@ -52,22 +52,20 @@ import org.openapitools.client.JSON;
 /**
  * ModelsRoleList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsRoleList {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
-  @javax.annotation.Nullable
   private ModelsPagination pagination;
 
   public static final String SERIALIZED_NAME_ROLES = "roles";
   @SerializedName(SERIALIZED_NAME_ROLES)
-  @javax.annotation.Nullable
   private List<ModelsRole> roles = new ArrayList<>();
 
   public ModelsRoleList() {
   }
 
-  public ModelsRoleList pagination(@javax.annotation.Nullable ModelsPagination pagination) {
+  public ModelsRoleList pagination(ModelsPagination pagination) {
     this.pagination = pagination;
     return this;
   }
@@ -81,12 +79,12 @@ public class ModelsRoleList {
     return pagination;
   }
 
-  public void setPagination(@javax.annotation.Nullable ModelsPagination pagination) {
+  public void setPagination(ModelsPagination pagination) {
     this.pagination = pagination;
   }
 
 
-  public ModelsRoleList roles(@javax.annotation.Nullable List<ModelsRole> roles) {
+  public ModelsRoleList roles(List<ModelsRole> roles) {
     this.roles = roles;
     return this;
   }
@@ -108,7 +106,7 @@ public class ModelsRoleList {
     return roles;
   }
 
-  public void setRoles(@javax.annotation.Nullable List<ModelsRole> roles) {
+  public void setRoles(List<ModelsRole> roles) {
     this.roles = roles;
   }
 

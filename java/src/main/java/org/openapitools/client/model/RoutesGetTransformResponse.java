@@ -52,52 +52,44 @@ import org.openapitools.client.JSON;
 /**
  * RoutesGetTransformResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class RoutesGetTransformResponse {
   public static final String SERIALIZED_NAME_COMPONENT_OF = "component_of";
   @SerializedName(SERIALIZED_NAME_COMPONENT_OF)
-  @javax.annotation.Nullable
   private List<ModelsPipeline> componentOf = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  @javax.annotation.Nullable
   private ModelsTransformConfig config;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
-  @javax.annotation.Nullable
   private String organizationId;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
   private String updatedAt;
 
   public RoutesGetTransformResponse() {
   }
 
-  public RoutesGetTransformResponse componentOf(@javax.annotation.Nullable List<ModelsPipeline> componentOf) {
+  public RoutesGetTransformResponse componentOf(List<ModelsPipeline> componentOf) {
     this.componentOf = componentOf;
     return this;
   }
@@ -119,12 +111,12 @@ public class RoutesGetTransformResponse {
     return componentOf;
   }
 
-  public void setComponentOf(@javax.annotation.Nullable List<ModelsPipeline> componentOf) {
+  public void setComponentOf(List<ModelsPipeline> componentOf) {
     this.componentOf = componentOf;
   }
 
 
-  public RoutesGetTransformResponse config(@javax.annotation.Nullable ModelsTransformConfig config) {
+  public RoutesGetTransformResponse config(ModelsTransformConfig config) {
     this.config = config;
     return this;
   }
@@ -138,12 +130,12 @@ public class RoutesGetTransformResponse {
     return config;
   }
 
-  public void setConfig(@javax.annotation.Nullable ModelsTransformConfig config) {
+  public void setConfig(ModelsTransformConfig config) {
     this.config = config;
   }
 
 
-  public RoutesGetTransformResponse createdAt(@javax.annotation.Nullable String createdAt) {
+  public RoutesGetTransformResponse createdAt(String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -157,12 +149,12 @@ public class RoutesGetTransformResponse {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public RoutesGetTransformResponse description(@javax.annotation.Nullable String description) {
+  public RoutesGetTransformResponse description(String description) {
     this.description = description;
     return this;
   }
@@ -176,12 +168,12 @@ public class RoutesGetTransformResponse {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
 
-  public RoutesGetTransformResponse id(@javax.annotation.Nullable String id) {
+  public RoutesGetTransformResponse id(String id) {
     this.id = id;
     return this;
   }
@@ -195,12 +187,12 @@ public class RoutesGetTransformResponse {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
 
-  public RoutesGetTransformResponse name(@javax.annotation.Nullable String name) {
+  public RoutesGetTransformResponse name(String name) {
     this.name = name;
     return this;
   }
@@ -214,12 +206,12 @@ public class RoutesGetTransformResponse {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
 
-  public RoutesGetTransformResponse organizationId(@javax.annotation.Nullable String organizationId) {
+  public RoutesGetTransformResponse organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -233,12 +225,12 @@ public class RoutesGetTransformResponse {
     return organizationId;
   }
 
-  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
+  public void setOrganizationId(String organizationId) {
     this.organizationId = organizationId;
   }
 
 
-  public RoutesGetTransformResponse updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public RoutesGetTransformResponse updatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -252,7 +244,7 @@ public class RoutesGetTransformResponse {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

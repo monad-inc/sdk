@@ -49,62 +49,52 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsPipelineNode {
   public static final String SERIALIZED_NAME_COMPONENT = "component";
   @SerializedName(SERIALIZED_NAME_COMPONENT)
-  @javax.annotation.Nullable
   private ModelsNodeComponent component;
 
   public static final String SERIALIZED_NAME_COMPONENT_ID = "component_id";
   @SerializedName(SERIALIZED_NAME_COMPONENT_ID)
-  @javax.annotation.Nullable
   private String componentId;
 
   public static final String SERIALIZED_NAME_COMPONENT_SUB_TYPE = "component_sub_type";
   @SerializedName(SERIALIZED_NAME_COMPONENT_SUB_TYPE)
-  @javax.annotation.Nullable
   private String componentSubType;
 
   public static final String SERIALIZED_NAME_COMPONENT_TYPE = "component_type";
   @SerializedName(SERIALIZED_NAME_COMPONENT_TYPE)
-  @javax.annotation.Nullable
   private String componentType;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
-  @javax.annotation.Nullable
   private String organizationId;
 
   public static final String SERIALIZED_NAME_PIPELINE_ID = "pipeline_id";
   @SerializedName(SERIALIZED_NAME_PIPELINE_ID)
-  @javax.annotation.Nullable
   private String pipelineId;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
   private String slug;
 
   public ModelsPipelineNode() {
   }
 
-  public ModelsPipelineNode component(@javax.annotation.Nullable ModelsNodeComponent component) {
+  public ModelsPipelineNode component(ModelsNodeComponent component) {
     this.component = component;
     return this;
   }
@@ -118,12 +108,12 @@ public class ModelsPipelineNode {
     return component;
   }
 
-  public void setComponent(@javax.annotation.Nullable ModelsNodeComponent component) {
+  public void setComponent(ModelsNodeComponent component) {
     this.component = component;
   }
 
 
-  public ModelsPipelineNode componentId(@javax.annotation.Nullable String componentId) {
+  public ModelsPipelineNode componentId(String componentId) {
     this.componentId = componentId;
     return this;
   }
@@ -137,12 +127,12 @@ public class ModelsPipelineNode {
     return componentId;
   }
 
-  public void setComponentId(@javax.annotation.Nullable String componentId) {
+  public void setComponentId(String componentId) {
     this.componentId = componentId;
   }
 
 
-  public ModelsPipelineNode componentSubType(@javax.annotation.Nullable String componentSubType) {
+  public ModelsPipelineNode componentSubType(String componentSubType) {
     this.componentSubType = componentSubType;
     return this;
   }
@@ -156,12 +146,12 @@ public class ModelsPipelineNode {
     return componentSubType;
   }
 
-  public void setComponentSubType(@javax.annotation.Nullable String componentSubType) {
+  public void setComponentSubType(String componentSubType) {
     this.componentSubType = componentSubType;
   }
 
 
-  public ModelsPipelineNode componentType(@javax.annotation.Nullable String componentType) {
+  public ModelsPipelineNode componentType(String componentType) {
     this.componentType = componentType;
     return this;
   }
@@ -175,12 +165,12 @@ public class ModelsPipelineNode {
     return componentType;
   }
 
-  public void setComponentType(@javax.annotation.Nullable String componentType) {
+  public void setComponentType(String componentType) {
     this.componentType = componentType;
   }
 
 
-  public ModelsPipelineNode createdAt(@javax.annotation.Nullable String createdAt) {
+  public ModelsPipelineNode createdAt(String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -194,12 +184,12 @@ public class ModelsPipelineNode {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ModelsPipelineNode enabled(@javax.annotation.Nullable Boolean enabled) {
+  public ModelsPipelineNode enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -213,12 +203,12 @@ public class ModelsPipelineNode {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public ModelsPipelineNode id(@javax.annotation.Nullable String id) {
+  public ModelsPipelineNode id(String id) {
     this.id = id;
     return this;
   }
@@ -232,12 +222,12 @@ public class ModelsPipelineNode {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
 
-  public ModelsPipelineNode organizationId(@javax.annotation.Nullable String organizationId) {
+  public ModelsPipelineNode organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -251,12 +241,12 @@ public class ModelsPipelineNode {
     return organizationId;
   }
 
-  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
+  public void setOrganizationId(String organizationId) {
     this.organizationId = organizationId;
   }
 
 
-  public ModelsPipelineNode pipelineId(@javax.annotation.Nullable String pipelineId) {
+  public ModelsPipelineNode pipelineId(String pipelineId) {
     this.pipelineId = pipelineId;
     return this;
   }
@@ -270,12 +260,12 @@ public class ModelsPipelineNode {
     return pipelineId;
   }
 
-  public void setPipelineId(@javax.annotation.Nullable String pipelineId) {
+  public void setPipelineId(String pipelineId) {
     this.pipelineId = pipelineId;
   }
 
 
-  public ModelsPipelineNode slug(@javax.annotation.Nullable String slug) {
+  public ModelsPipelineNode slug(String slug) {
     this.slug = slug;
     return this;
   }
@@ -289,7 +279,7 @@ public class ModelsPipelineNode {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(String slug) {
     this.slug = slug;
   }
 

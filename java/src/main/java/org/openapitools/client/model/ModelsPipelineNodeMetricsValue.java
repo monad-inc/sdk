@@ -49,22 +49,20 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNodeMetricsValue
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsPipelineNodeMetricsValue {
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
-  @javax.annotation.Nullable
   private Integer timestamp;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
   private BigDecimal value;
 
   public ModelsPipelineNodeMetricsValue() {
   }
 
-  public ModelsPipelineNodeMetricsValue timestamp(@javax.annotation.Nullable Integer timestamp) {
+  public ModelsPipelineNodeMetricsValue timestamp(Integer timestamp) {
     this.timestamp = timestamp;
     return this;
   }
@@ -78,12 +76,12 @@ public class ModelsPipelineNodeMetricsValue {
     return timestamp;
   }
 
-  public void setTimestamp(@javax.annotation.Nullable Integer timestamp) {
+  public void setTimestamp(Integer timestamp) {
     this.timestamp = timestamp;
   }
 
 
-  public ModelsPipelineNodeMetricsValue value(@javax.annotation.Nullable BigDecimal value) {
+  public ModelsPipelineNodeMetricsValue value(BigDecimal value) {
     this.value = value;
     return this;
   }
@@ -97,7 +95,7 @@ public class ModelsPipelineNodeMetricsValue {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable BigDecimal value) {
+  public void setValue(BigDecimal value) {
     this.value = value;
   }
 

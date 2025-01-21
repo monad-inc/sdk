@@ -48,67 +48,56 @@ import org.openapitools.client.JSON;
 /**
  * ModelsQuota
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsQuota {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_CURRENT_USAGE = "current_usage";
   @SerializedName(SERIALIZED_NAME_CURRENT_USAGE)
-  @javax.annotation.Nullable
   private Integer currentUsage;
 
   public static final String SERIALIZED_NAME_CURRENT_USAGE_UPDATED_AT = "current_usage_updated_at";
   @SerializedName(SERIALIZED_NAME_CURRENT_USAGE_UPDATED_AT)
-  @javax.annotation.Nullable
   private String currentUsageUpdatedAt;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_LIMIT_AMOUNT = "limit_amount";
   @SerializedName(SERIALIZED_NAME_LIMIT_AMOUNT)
-  @javax.annotation.Nullable
   private Integer limitAmount;
 
   public static final String SERIALIZED_NAME_LIMIT_TYPE = "limit_type";
   @SerializedName(SERIALIZED_NAME_LIMIT_TYPE)
-  @javax.annotation.Nullable
   private String limitType;
 
   public static final String SERIALIZED_NAME_LIMIT_UNIT = "limit_unit";
   @SerializedName(SERIALIZED_NAME_LIMIT_UNIT)
-  @javax.annotation.Nullable
   private String limitUnit;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
-  @javax.annotation.Nullable
   private String organizationId;
 
   public static final String SERIALIZED_NAME_TIMEFRAME = "timeframe";
   @SerializedName(SERIALIZED_NAME_TIMEFRAME)
-  @javax.annotation.Nullable
   private String timeframe;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
   private String updatedAt;
 
   public ModelsQuota() {
   }
 
-  public ModelsQuota createdAt(@javax.annotation.Nullable String createdAt) {
+  public ModelsQuota createdAt(String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -122,12 +111,12 @@ public class ModelsQuota {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ModelsQuota currentUsage(@javax.annotation.Nullable Integer currentUsage) {
+  public ModelsQuota currentUsage(Integer currentUsage) {
     this.currentUsage = currentUsage;
     return this;
   }
@@ -141,12 +130,12 @@ public class ModelsQuota {
     return currentUsage;
   }
 
-  public void setCurrentUsage(@javax.annotation.Nullable Integer currentUsage) {
+  public void setCurrentUsage(Integer currentUsage) {
     this.currentUsage = currentUsage;
   }
 
 
-  public ModelsQuota currentUsageUpdatedAt(@javax.annotation.Nullable String currentUsageUpdatedAt) {
+  public ModelsQuota currentUsageUpdatedAt(String currentUsageUpdatedAt) {
     this.currentUsageUpdatedAt = currentUsageUpdatedAt;
     return this;
   }
@@ -160,12 +149,12 @@ public class ModelsQuota {
     return currentUsageUpdatedAt;
   }
 
-  public void setCurrentUsageUpdatedAt(@javax.annotation.Nullable String currentUsageUpdatedAt) {
+  public void setCurrentUsageUpdatedAt(String currentUsageUpdatedAt) {
     this.currentUsageUpdatedAt = currentUsageUpdatedAt;
   }
 
 
-  public ModelsQuota id(@javax.annotation.Nullable String id) {
+  public ModelsQuota id(String id) {
     this.id = id;
     return this;
   }
@@ -179,12 +168,12 @@ public class ModelsQuota {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
 
-  public ModelsQuota limitAmount(@javax.annotation.Nullable Integer limitAmount) {
+  public ModelsQuota limitAmount(Integer limitAmount) {
     this.limitAmount = limitAmount;
     return this;
   }
@@ -198,12 +187,12 @@ public class ModelsQuota {
     return limitAmount;
   }
 
-  public void setLimitAmount(@javax.annotation.Nullable Integer limitAmount) {
+  public void setLimitAmount(Integer limitAmount) {
     this.limitAmount = limitAmount;
   }
 
 
-  public ModelsQuota limitType(@javax.annotation.Nullable String limitType) {
+  public ModelsQuota limitType(String limitType) {
     this.limitType = limitType;
     return this;
   }
@@ -217,12 +206,12 @@ public class ModelsQuota {
     return limitType;
   }
 
-  public void setLimitType(@javax.annotation.Nullable String limitType) {
+  public void setLimitType(String limitType) {
     this.limitType = limitType;
   }
 
 
-  public ModelsQuota limitUnit(@javax.annotation.Nullable String limitUnit) {
+  public ModelsQuota limitUnit(String limitUnit) {
     this.limitUnit = limitUnit;
     return this;
   }
@@ -236,12 +225,12 @@ public class ModelsQuota {
     return limitUnit;
   }
 
-  public void setLimitUnit(@javax.annotation.Nullable String limitUnit) {
+  public void setLimitUnit(String limitUnit) {
     this.limitUnit = limitUnit;
   }
 
 
-  public ModelsQuota name(@javax.annotation.Nullable String name) {
+  public ModelsQuota name(String name) {
     this.name = name;
     return this;
   }
@@ -255,12 +244,12 @@ public class ModelsQuota {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
 
-  public ModelsQuota organizationId(@javax.annotation.Nullable String organizationId) {
+  public ModelsQuota organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -274,12 +263,12 @@ public class ModelsQuota {
     return organizationId;
   }
 
-  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
+  public void setOrganizationId(String organizationId) {
     this.organizationId = organizationId;
   }
 
 
-  public ModelsQuota timeframe(@javax.annotation.Nullable String timeframe) {
+  public ModelsQuota timeframe(String timeframe) {
     this.timeframe = timeframe;
     return this;
   }
@@ -293,12 +282,12 @@ public class ModelsQuota {
     return timeframe;
   }
 
-  public void setTimeframe(@javax.annotation.Nullable String timeframe) {
+  public void setTimeframe(String timeframe) {
     this.timeframe = timeframe;
   }
 
 
-  public ModelsQuota updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public ModelsQuota updatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -312,7 +301,7 @@ public class ModelsQuota {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

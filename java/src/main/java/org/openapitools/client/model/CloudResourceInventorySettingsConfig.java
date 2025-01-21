@@ -50,27 +50,24 @@ import org.openapitools.client.JSON;
 /**
  * Wiz cloud resource inventory settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class CloudResourceInventorySettingsConfig {
   public static final String SERIALIZED_NAME_CLOUD_PLATFORM = "cloudPlatform";
   @SerializedName(SERIALIZED_NAME_CLOUD_PLATFORM)
-  @javax.annotation.Nullable
   private List<String> cloudPlatform = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENDPOINT_URL = "endpoint_url";
   @SerializedName(SERIALIZED_NAME_ENDPOINT_URL)
-  @javax.annotation.Nullable
   private String endpointUrl;
 
   public static final String SERIALIZED_NAME_ENTITY_TYPE = "entityType";
   @SerializedName(SERIALIZED_NAME_ENTITY_TYPE)
-  @javax.annotation.Nullable
   private List<String> entityType = new ArrayList<>();
 
   public CloudResourceInventorySettingsConfig() {
   }
 
-  public CloudResourceInventorySettingsConfig cloudPlatform(@javax.annotation.Nullable List<String> cloudPlatform) {
+  public CloudResourceInventorySettingsConfig cloudPlatform(List<String> cloudPlatform) {
     this.cloudPlatform = cloudPlatform;
     return this;
   }
@@ -92,12 +89,12 @@ public class CloudResourceInventorySettingsConfig {
     return cloudPlatform;
   }
 
-  public void setCloudPlatform(@javax.annotation.Nullable List<String> cloudPlatform) {
+  public void setCloudPlatform(List<String> cloudPlatform) {
     this.cloudPlatform = cloudPlatform;
   }
 
 
-  public CloudResourceInventorySettingsConfig endpointUrl(@javax.annotation.Nullable String endpointUrl) {
+  public CloudResourceInventorySettingsConfig endpointUrl(String endpointUrl) {
     this.endpointUrl = endpointUrl;
     return this;
   }
@@ -111,12 +108,12 @@ public class CloudResourceInventorySettingsConfig {
     return endpointUrl;
   }
 
-  public void setEndpointUrl(@javax.annotation.Nullable String endpointUrl) {
+  public void setEndpointUrl(String endpointUrl) {
     this.endpointUrl = endpointUrl;
   }
 
 
-  public CloudResourceInventorySettingsConfig entityType(@javax.annotation.Nullable List<String> entityType) {
+  public CloudResourceInventorySettingsConfig entityType(List<String> entityType) {
     this.entityType = entityType;
     return this;
   }
@@ -138,7 +135,7 @@ public class CloudResourceInventorySettingsConfig {
     return entityType;
   }
 
-  public void setEntityType(@javax.annotation.Nullable List<String> entityType) {
+  public void setEntityType(List<String> entityType) {
     this.entityType = entityType;
   }
 

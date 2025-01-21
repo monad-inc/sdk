@@ -48,22 +48,20 @@ import org.openapitools.client.JSON;
 /**
  * Tenable assets secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class TenableAssetsSecretsConfig {
   public static final String SERIALIZED_NAME_ACCESS_KEY = "access_key";
   @SerializedName(SERIALIZED_NAME_ACCESS_KEY)
-  @javax.annotation.Nullable
   private String accessKey;
 
   public static final String SERIALIZED_NAME_SECRET_KEY = "secret_key";
   @SerializedName(SERIALIZED_NAME_SECRET_KEY)
-  @javax.annotation.Nullable
   private String secretKey;
 
   public TenableAssetsSecretsConfig() {
   }
 
-  public TenableAssetsSecretsConfig accessKey(@javax.annotation.Nullable String accessKey) {
+  public TenableAssetsSecretsConfig accessKey(String accessKey) {
     this.accessKey = accessKey;
     return this;
   }
@@ -77,12 +75,12 @@ public class TenableAssetsSecretsConfig {
     return accessKey;
   }
 
-  public void setAccessKey(@javax.annotation.Nullable String accessKey) {
+  public void setAccessKey(String accessKey) {
     this.accessKey = accessKey;
   }
 
 
-  public TenableAssetsSecretsConfig secretKey(@javax.annotation.Nullable String secretKey) {
+  public TenableAssetsSecretsConfig secretKey(String secretKey) {
     this.secretKey = secretKey;
     return this;
   }
@@ -96,7 +94,7 @@ public class TenableAssetsSecretsConfig {
     return secretKey;
   }
 
-  public void setSecretKey(@javax.annotation.Nullable String secretKey) {
+  public void setSecretKey(String secretKey) {
     this.secretKey = secretKey;
   }
 

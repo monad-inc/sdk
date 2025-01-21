@@ -79,8 +79,7 @@ public class InputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -141,8 +140,7 @@ public class InputsApi {
      * @return List&lt;InputsConnectorMeta&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -158,8 +156,7 @@ public class InputsApi {
      * @return ApiResponse&lt;List&lt;InputsConnectorMeta&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -177,8 +174,7 @@ public class InputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -197,8 +193,7 @@ public class InputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input config meta retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Input type not found </td><td>  -  </td></tr>
@@ -267,8 +262,7 @@ public class InputsApi {
      * @return ModelsConnectorMeta
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input config meta retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Input type not found </td><td>  -  </td></tr>
@@ -286,8 +280,7 @@ public class InputsApi {
      * @return ApiResponse&lt;ModelsConnectorMeta&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input config meta retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Input type not found </td><td>  -  </td></tr>
@@ -307,8 +300,7 @@ public class InputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input config meta retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Input type not found </td><td>  -  </td></tr>

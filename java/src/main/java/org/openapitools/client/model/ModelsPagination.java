@@ -48,27 +48,24 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPagination
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsPagination {
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
-  @javax.annotation.Nullable
   private Integer limit;
 
   public static final String SERIALIZED_NAME_OFFSET = "offset";
   @SerializedName(SERIALIZED_NAME_OFFSET)
-  @javax.annotation.Nullable
   private Integer offset;
 
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
-  @javax.annotation.Nullable
   private Integer total;
 
   public ModelsPagination() {
   }
 
-  public ModelsPagination limit(@javax.annotation.Nullable Integer limit) {
+  public ModelsPagination limit(Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -82,12 +79,12 @@ public class ModelsPagination {
     return limit;
   }
 
-  public void setLimit(@javax.annotation.Nullable Integer limit) {
+  public void setLimit(Integer limit) {
     this.limit = limit;
   }
 
 
-  public ModelsPagination offset(@javax.annotation.Nullable Integer offset) {
+  public ModelsPagination offset(Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -101,12 +98,12 @@ public class ModelsPagination {
     return offset;
   }
 
-  public void setOffset(@javax.annotation.Nullable Integer offset) {
+  public void setOffset(Integer offset) {
     this.offset = offset;
   }
 
 
-  public ModelsPagination total(@javax.annotation.Nullable Integer total) {
+  public ModelsPagination total(Integer total) {
     this.total = total;
     return this;
   }
@@ -120,7 +117,7 @@ public class ModelsPagination {
     return total;
   }
 
-  public void setTotal(@javax.annotation.Nullable Integer total) {
+  public void setTotal(Integer total) {
     this.total = total;
   }
 

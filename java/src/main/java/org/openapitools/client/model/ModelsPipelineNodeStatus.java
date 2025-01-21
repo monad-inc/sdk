@@ -49,37 +49,32 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNodeStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsPipelineNodeStatus {
   public static final String SERIALIZED_NAME_EGRESS = "egress";
   @SerializedName(SERIALIZED_NAME_EGRESS)
-  @javax.annotation.Nullable
   private ModelsDataUsage egress;
 
   public static final String SERIALIZED_NAME_INGRESS = "ingress";
   @SerializedName(SERIALIZED_NAME_INGRESS)
-  @javax.annotation.Nullable
   private ModelsDataUsage ingress;
 
   public static final String SERIALIZED_NAME_NODE_ID = "node_id";
   @SerializedName(SERIALIZED_NAME_NODE_ID)
-  @javax.annotation.Nullable
   private String nodeId;
 
   public static final String SERIALIZED_NAME_NODE_SLUG = "node_slug";
   @SerializedName(SERIALIZED_NAME_NODE_SLUG)
-  @javax.annotation.Nullable
   private String nodeSlug;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
   private String status;
 
   public ModelsPipelineNodeStatus() {
   }
 
-  public ModelsPipelineNodeStatus egress(@javax.annotation.Nullable ModelsDataUsage egress) {
+  public ModelsPipelineNodeStatus egress(ModelsDataUsage egress) {
     this.egress = egress;
     return this;
   }
@@ -93,12 +88,12 @@ public class ModelsPipelineNodeStatus {
     return egress;
   }
 
-  public void setEgress(@javax.annotation.Nullable ModelsDataUsage egress) {
+  public void setEgress(ModelsDataUsage egress) {
     this.egress = egress;
   }
 
 
-  public ModelsPipelineNodeStatus ingress(@javax.annotation.Nullable ModelsDataUsage ingress) {
+  public ModelsPipelineNodeStatus ingress(ModelsDataUsage ingress) {
     this.ingress = ingress;
     return this;
   }
@@ -112,12 +107,12 @@ public class ModelsPipelineNodeStatus {
     return ingress;
   }
 
-  public void setIngress(@javax.annotation.Nullable ModelsDataUsage ingress) {
+  public void setIngress(ModelsDataUsage ingress) {
     this.ingress = ingress;
   }
 
 
-  public ModelsPipelineNodeStatus nodeId(@javax.annotation.Nullable String nodeId) {
+  public ModelsPipelineNodeStatus nodeId(String nodeId) {
     this.nodeId = nodeId;
     return this;
   }
@@ -131,12 +126,12 @@ public class ModelsPipelineNodeStatus {
     return nodeId;
   }
 
-  public void setNodeId(@javax.annotation.Nullable String nodeId) {
+  public void setNodeId(String nodeId) {
     this.nodeId = nodeId;
   }
 
 
-  public ModelsPipelineNodeStatus nodeSlug(@javax.annotation.Nullable String nodeSlug) {
+  public ModelsPipelineNodeStatus nodeSlug(String nodeSlug) {
     this.nodeSlug = nodeSlug;
     return this;
   }
@@ -150,12 +145,12 @@ public class ModelsPipelineNodeStatus {
     return nodeSlug;
   }
 
-  public void setNodeSlug(@javax.annotation.Nullable String nodeSlug) {
+  public void setNodeSlug(String nodeSlug) {
     this.nodeSlug = nodeSlug;
   }
 
 
-  public ModelsPipelineNodeStatus status(@javax.annotation.Nullable String status) {
+  public ModelsPipelineNodeStatus status(String status) {
     this.status = status;
     return this;
   }
@@ -169,7 +164,7 @@ public class ModelsPipelineNodeStatus {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable String status) {
+  public void setStatus(String status) {
     this.status = status;
   }
 

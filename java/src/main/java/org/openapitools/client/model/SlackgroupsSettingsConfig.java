@@ -48,22 +48,20 @@ import org.openapitools.client.JSON;
 /**
  * Slack Groups settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class SlackgroupsSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
-  @javax.annotation.Nullable
   private String cron;
 
   public static final String SERIALIZED_NAME_TEAM_ID = "team_id";
   @SerializedName(SERIALIZED_NAME_TEAM_ID)
-  @javax.annotation.Nullable
   private String teamId;
 
   public SlackgroupsSettingsConfig() {
   }
 
-  public SlackgroupsSettingsConfig cron(@javax.annotation.Nullable String cron) {
+  public SlackgroupsSettingsConfig cron(String cron) {
     this.cron = cron;
     return this;
   }
@@ -77,12 +75,12 @@ public class SlackgroupsSettingsConfig {
     return cron;
   }
 
-  public void setCron(@javax.annotation.Nullable String cron) {
+  public void setCron(String cron) {
     this.cron = cron;
   }
 
 
-  public SlackgroupsSettingsConfig teamId(@javax.annotation.Nullable String teamId) {
+  public SlackgroupsSettingsConfig teamId(String teamId) {
     this.teamId = teamId;
     return this;
   }
@@ -96,7 +94,7 @@ public class SlackgroupsSettingsConfig {
     return teamId;
   }
 
-  public void setTeamId(@javax.annotation.Nullable String teamId) {
+  public void setTeamId(String teamId) {
     this.teamId = teamId;
   }
 

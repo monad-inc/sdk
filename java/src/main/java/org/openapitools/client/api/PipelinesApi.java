@@ -92,8 +92,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of pipelines </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid limit or offset </td><td>  -  </td></tr>
@@ -173,8 +172,7 @@ public class PipelinesApi {
      * @return ModelsPipelineList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of pipelines </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid limit or offset </td><td>  -  </td></tr>
@@ -195,8 +193,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;ModelsPipelineList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of pipelines </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid limit or offset </td><td>  -  </td></tr>
@@ -219,8 +216,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of pipelines </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid limit or offset </td><td>  -  </td></tr>
@@ -242,8 +238,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline deleted successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
@@ -319,8 +314,7 @@ public class PipelinesApi {
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline deleted successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
@@ -339,8 +333,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline deleted successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
@@ -361,8 +354,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline deleted successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
@@ -383,8 +375,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline details </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
@@ -460,8 +451,7 @@ public class PipelinesApi {
      * @return ModelsPipeline
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline details </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
@@ -480,8 +470,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;ModelsPipeline&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline details </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
@@ -502,8 +491,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline details </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
@@ -525,8 +513,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Response body for updating a pipeline </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -610,8 +597,7 @@ public class PipelinesApi {
      * @return ModelsPipeline
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Response body for updating a pipeline </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -632,8 +618,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;ModelsPipeline&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Response body for updating a pipeline </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -656,8 +641,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Response body for updating a pipeline </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -680,8 +664,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Organization Pipeline Summary </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipelines for organization </td><td>  -  </td></tr>
@@ -760,8 +743,7 @@ public class PipelinesApi {
      * @return RoutesV2GetOrganizationSummaryResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Organization Pipeline Summary </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipelines for organization </td><td>  -  </td></tr>
@@ -781,8 +763,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;RoutesV2GetOrganizationSummaryResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Organization Pipeline Summary </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipelines for organization </td><td>  -  </td></tr>
@@ -804,8 +785,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Organization Pipeline Summary </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipelines for organization </td><td>  -  </td></tr>
@@ -827,8 +807,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of pipelines </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid limit or offset </td><td>  -  </td></tr>
@@ -908,8 +887,7 @@ public class PipelinesApi {
      * @return ModelsPipelineList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of pipelines </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid limit or offset </td><td>  -  </td></tr>
@@ -930,8 +908,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;ModelsPipelineList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of pipelines </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid limit or offset </td><td>  -  </td></tr>
@@ -954,8 +931,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of pipelines </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid limit or offset </td><td>  -  </td></tr>
@@ -977,8 +953,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline deleted successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
@@ -1054,8 +1029,7 @@ public class PipelinesApi {
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline deleted successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
@@ -1074,8 +1048,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline deleted successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
@@ -1096,8 +1069,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline deleted successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
@@ -1118,8 +1090,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline configuration retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
@@ -1195,8 +1166,7 @@ public class PipelinesApi {
      * @return ModelsPipelineConfigV2
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline configuration retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
@@ -1215,8 +1185,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;ModelsPipelineConfigV2&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline configuration retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
@@ -1237,8 +1206,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline configuration retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
@@ -1264,8 +1232,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline node metrics </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get node </td><td>  -  </td></tr>
@@ -1373,8 +1340,7 @@ public class PipelinesApi {
      * @return ModelsPipelineNodeMetrics
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline node metrics </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get node </td><td>  -  </td></tr>
@@ -1398,8 +1364,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;ModelsPipelineNodeMetrics&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline node metrics </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get node </td><td>  -  </td></tr>
@@ -1425,8 +1390,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline node metrics </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get node </td><td>  -  </td></tr>
@@ -1448,8 +1412,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -1533,8 +1496,7 @@ public class PipelinesApi {
      * @return ModelsPipelineConfigV2
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -1555,8 +1517,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;ModelsPipelineConfigV2&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -1579,8 +1540,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
@@ -1605,8 +1565,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline status </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
@@ -1697,8 +1656,7 @@ public class PipelinesApi {
      * @return ModelsPipelineStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline status </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
@@ -1720,8 +1678,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;ModelsPipelineStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline status </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
@@ -1745,8 +1702,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline status </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
@@ -1771,8 +1727,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline Node status </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline node status </td><td>  -  </td></tr>
@@ -1870,8 +1825,7 @@ public class PipelinesApi {
      * @return ModelsPipelineNodeStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline Node status </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline node status </td><td>  -  </td></tr>
@@ -1894,8 +1848,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;ModelsPipelineNodeStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline Node status </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline node status </td><td>  -  </td></tr>
@@ -1920,8 +1873,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline Node status </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get pipeline node status </td><td>  -  </td></tr>
@@ -1942,8 +1894,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Pipeline created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body or Failed to create pipeline </td><td>  -  </td></tr>
@@ -2020,8 +1971,7 @@ public class PipelinesApi {
      * @return ModelsPipelineConfigV2
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Pipeline created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body or Failed to create pipeline </td><td>  -  </td></tr>
@@ -2041,8 +1991,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;ModelsPipelineConfigV2&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Pipeline created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body or Failed to create pipeline </td><td>  -  </td></tr>
@@ -2064,8 +2013,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Pipeline created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body or Failed to create pipeline </td><td>  -  </td></tr>
@@ -2090,8 +2038,7 @@ public class PipelinesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of pipelines with status </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid query parameters or time range </td><td>  -  </td></tr>
@@ -2181,8 +2128,7 @@ public class PipelinesApi {
      * @return List&lt;RoutesV2PipelineWithStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of pipelines with status </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid query parameters or time range </td><td>  -  </td></tr>
@@ -2205,8 +2151,7 @@ public class PipelinesApi {
      * @return ApiResponse&lt;List&lt;RoutesV2PipelineWithStatus&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of pipelines with status </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid query parameters or time range </td><td>  -  </td></tr>
@@ -2231,8 +2176,7 @@ public class PipelinesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of pipelines with status </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid query parameters or time range </td><td>  -  </td></tr>

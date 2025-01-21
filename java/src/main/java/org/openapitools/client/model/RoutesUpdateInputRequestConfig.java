@@ -50,22 +50,20 @@ import org.openapitools.client.JSON;
 /**
  * RoutesUpdateInputRequestConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class RoutesUpdateInputRequestConfig {
   public static final String SERIALIZED_NAME_SECRETS = "secrets";
   @SerializedName(SERIALIZED_NAME_SECRETS)
-  @javax.annotation.Nullable
   private Map<String, Object> secrets = new HashMap<>();
 
   public static final String SERIALIZED_NAME_SETTINGS = "settings";
   @SerializedName(SERIALIZED_NAME_SETTINGS)
-  @javax.annotation.Nullable
   private Map<String, Object> settings = new HashMap<>();
 
   public RoutesUpdateInputRequestConfig() {
   }
 
-  public RoutesUpdateInputRequestConfig secrets(@javax.annotation.Nullable Map<String, Object> secrets) {
+  public RoutesUpdateInputRequestConfig secrets(Map<String, Object> secrets) {
     this.secrets = secrets;
     return this;
   }
@@ -87,12 +85,12 @@ public class RoutesUpdateInputRequestConfig {
     return secrets;
   }
 
-  public void setSecrets(@javax.annotation.Nullable Map<String, Object> secrets) {
+  public void setSecrets(Map<String, Object> secrets) {
     this.secrets = secrets;
   }
 
 
-  public RoutesUpdateInputRequestConfig settings(@javax.annotation.Nullable Map<String, Object> settings) {
+  public RoutesUpdateInputRequestConfig settings(Map<String, Object> settings) {
     this.settings = settings;
     return this;
   }
@@ -114,7 +112,7 @@ public class RoutesUpdateInputRequestConfig {
     return settings;
   }
 
-  public void setSettings(@javax.annotation.Nullable Map<String, Object> settings) {
+  public void setSettings(Map<String, Object> settings) {
     this.settings = settings;
   }
 

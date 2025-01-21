@@ -48,37 +48,32 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR actors info settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ActorsInfoSettingsConfig {
   public static final String SERIALIZED_NAME_ACTOR_TYPE = "actor_type";
   @SerializedName(SERIALIZED_NAME_ACTOR_TYPE)
-  @javax.annotation.Nullable
   private String actorType;
 
   public static final String SERIALIZED_NAME_CLOUD_TYPE = "cloud_type";
   @SerializedName(SERIALIZED_NAME_CLOUD_TYPE)
-  @javax.annotation.Nullable
   private String cloudType;
 
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
-  @javax.annotation.Nullable
   private String cron;
 
   public static final String SERIALIZED_NAME_SORT = "sort";
   @SerializedName(SERIALIZED_NAME_SORT)
-  @javax.annotation.Nullable
   private String sort;
 
   public static final String SERIALIZED_NAME_TARGET_INDUSTRIES = "target_industries";
   @SerializedName(SERIALIZED_NAME_TARGET_INDUSTRIES)
-  @javax.annotation.Nullable
   private String targetIndustries;
 
   public ActorsInfoSettingsConfig() {
   }
 
-  public ActorsInfoSettingsConfig actorType(@javax.annotation.Nullable String actorType) {
+  public ActorsInfoSettingsConfig actorType(String actorType) {
     this.actorType = actorType;
     return this;
   }
@@ -92,12 +87,12 @@ public class ActorsInfoSettingsConfig {
     return actorType;
   }
 
-  public void setActorType(@javax.annotation.Nullable String actorType) {
+  public void setActorType(String actorType) {
     this.actorType = actorType;
   }
 
 
-  public ActorsInfoSettingsConfig cloudType(@javax.annotation.Nullable String cloudType) {
+  public ActorsInfoSettingsConfig cloudType(String cloudType) {
     this.cloudType = cloudType;
     return this;
   }
@@ -111,12 +106,12 @@ public class ActorsInfoSettingsConfig {
     return cloudType;
   }
 
-  public void setCloudType(@javax.annotation.Nullable String cloudType) {
+  public void setCloudType(String cloudType) {
     this.cloudType = cloudType;
   }
 
 
-  public ActorsInfoSettingsConfig cron(@javax.annotation.Nullable String cron) {
+  public ActorsInfoSettingsConfig cron(String cron) {
     this.cron = cron;
     return this;
   }
@@ -130,12 +125,12 @@ public class ActorsInfoSettingsConfig {
     return cron;
   }
 
-  public void setCron(@javax.annotation.Nullable String cron) {
+  public void setCron(String cron) {
     this.cron = cron;
   }
 
 
-  public ActorsInfoSettingsConfig sort(@javax.annotation.Nullable String sort) {
+  public ActorsInfoSettingsConfig sort(String sort) {
     this.sort = sort;
     return this;
   }
@@ -149,12 +144,12 @@ public class ActorsInfoSettingsConfig {
     return sort;
   }
 
-  public void setSort(@javax.annotation.Nullable String sort) {
+  public void setSort(String sort) {
     this.sort = sort;
   }
 
 
-  public ActorsInfoSettingsConfig targetIndustries(@javax.annotation.Nullable String targetIndustries) {
+  public ActorsInfoSettingsConfig targetIndustries(String targetIndustries) {
     this.targetIndustries = targetIndustries;
     return this;
   }
@@ -168,7 +163,7 @@ public class ActorsInfoSettingsConfig {
     return targetIndustries;
   }
 
-  public void setTargetIndustries(@javax.annotation.Nullable String targetIndustries) {
+  public void setTargetIndustries(String targetIndustries) {
     this.targetIndustries = targetIndustries;
   }
 

@@ -49,57 +49,48 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineEdge
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsPipelineEdge {
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
-  @javax.annotation.Nullable
   private ModelsPipelineEdgeConditions conditions;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_FROM_NODE_INSTANCE_ID = "from_node_instance_id";
   @SerializedName(SERIALIZED_NAME_FROM_NODE_INSTANCE_ID)
-  @javax.annotation.Nullable
   private String fromNodeInstanceId;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
-  @javax.annotation.Nullable
   private String organizationId;
 
   public static final String SERIALIZED_NAME_PIPELINE_ID = "pipeline_id";
   @SerializedName(SERIALIZED_NAME_PIPELINE_ID)
-  @javax.annotation.Nullable
   private String pipelineId;
 
   public static final String SERIALIZED_NAME_TO_NODE_INSTANCE_ID = "to_node_instance_id";
   @SerializedName(SERIALIZED_NAME_TO_NODE_INSTANCE_ID)
-  @javax.annotation.Nullable
   private String toNodeInstanceId;
 
   public ModelsPipelineEdge() {
   }
 
-  public ModelsPipelineEdge conditions(@javax.annotation.Nullable ModelsPipelineEdgeConditions conditions) {
+  public ModelsPipelineEdge conditions(ModelsPipelineEdgeConditions conditions) {
     this.conditions = conditions;
     return this;
   }
@@ -113,12 +104,12 @@ public class ModelsPipelineEdge {
     return conditions;
   }
 
-  public void setConditions(@javax.annotation.Nullable ModelsPipelineEdgeConditions conditions) {
+  public void setConditions(ModelsPipelineEdgeConditions conditions) {
     this.conditions = conditions;
   }
 
 
-  public ModelsPipelineEdge createdAt(@javax.annotation.Nullable String createdAt) {
+  public ModelsPipelineEdge createdAt(String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -132,12 +123,12 @@ public class ModelsPipelineEdge {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ModelsPipelineEdge description(@javax.annotation.Nullable String description) {
+  public ModelsPipelineEdge description(String description) {
     this.description = description;
     return this;
   }
@@ -151,12 +142,12 @@ public class ModelsPipelineEdge {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
 
-  public ModelsPipelineEdge fromNodeInstanceId(@javax.annotation.Nullable String fromNodeInstanceId) {
+  public ModelsPipelineEdge fromNodeInstanceId(String fromNodeInstanceId) {
     this.fromNodeInstanceId = fromNodeInstanceId;
     return this;
   }
@@ -170,12 +161,12 @@ public class ModelsPipelineEdge {
     return fromNodeInstanceId;
   }
 
-  public void setFromNodeInstanceId(@javax.annotation.Nullable String fromNodeInstanceId) {
+  public void setFromNodeInstanceId(String fromNodeInstanceId) {
     this.fromNodeInstanceId = fromNodeInstanceId;
   }
 
 
-  public ModelsPipelineEdge id(@javax.annotation.Nullable String id) {
+  public ModelsPipelineEdge id(String id) {
     this.id = id;
     return this;
   }
@@ -189,12 +180,12 @@ public class ModelsPipelineEdge {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
 
-  public ModelsPipelineEdge name(@javax.annotation.Nullable String name) {
+  public ModelsPipelineEdge name(String name) {
     this.name = name;
     return this;
   }
@@ -208,12 +199,12 @@ public class ModelsPipelineEdge {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
 
-  public ModelsPipelineEdge organizationId(@javax.annotation.Nullable String organizationId) {
+  public ModelsPipelineEdge organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -227,12 +218,12 @@ public class ModelsPipelineEdge {
     return organizationId;
   }
 
-  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
+  public void setOrganizationId(String organizationId) {
     this.organizationId = organizationId;
   }
 
 
-  public ModelsPipelineEdge pipelineId(@javax.annotation.Nullable String pipelineId) {
+  public ModelsPipelineEdge pipelineId(String pipelineId) {
     this.pipelineId = pipelineId;
     return this;
   }
@@ -246,12 +237,12 @@ public class ModelsPipelineEdge {
     return pipelineId;
   }
 
-  public void setPipelineId(@javax.annotation.Nullable String pipelineId) {
+  public void setPipelineId(String pipelineId) {
     this.pipelineId = pipelineId;
   }
 
 
-  public ModelsPipelineEdge toNodeInstanceId(@javax.annotation.Nullable String toNodeInstanceId) {
+  public ModelsPipelineEdge toNodeInstanceId(String toNodeInstanceId) {
     this.toNodeInstanceId = toNodeInstanceId;
     return this;
   }
@@ -265,7 +256,7 @@ public class ModelsPipelineEdge {
     return toNodeInstanceId;
   }
 
-  public void setToNodeInstanceId(@javax.annotation.Nullable String toNodeInstanceId) {
+  public void setToNodeInstanceId(String toNodeInstanceId) {
     this.toNodeInstanceId = toNodeInstanceId;
   }
 

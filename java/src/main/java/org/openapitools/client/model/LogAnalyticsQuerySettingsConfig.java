@@ -48,27 +48,24 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Log Analytics Query settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class LogAnalyticsQuerySettingsConfig {
   public static final String SERIALIZED_NAME_QUERY = "query";
   @SerializedName(SERIALIZED_NAME_QUERY)
-  @javax.annotation.Nullable
   private String query;
 
   public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
   @SerializedName(SERIALIZED_NAME_TENANT_ID)
-  @javax.annotation.Nullable
   private String tenantId;
 
   public static final String SERIALIZED_NAME_WORKSPACE_ID = "workspace_id";
   @SerializedName(SERIALIZED_NAME_WORKSPACE_ID)
-  @javax.annotation.Nullable
   private String workspaceId;
 
   public LogAnalyticsQuerySettingsConfig() {
   }
 
-  public LogAnalyticsQuerySettingsConfig query(@javax.annotation.Nullable String query) {
+  public LogAnalyticsQuerySettingsConfig query(String query) {
     this.query = query;
     return this;
   }
@@ -82,12 +79,12 @@ public class LogAnalyticsQuerySettingsConfig {
     return query;
   }
 
-  public void setQuery(@javax.annotation.Nullable String query) {
+  public void setQuery(String query) {
     this.query = query;
   }
 
 
-  public LogAnalyticsQuerySettingsConfig tenantId(@javax.annotation.Nullable String tenantId) {
+  public LogAnalyticsQuerySettingsConfig tenantId(String tenantId) {
     this.tenantId = tenantId;
     return this;
   }
@@ -101,12 +98,12 @@ public class LogAnalyticsQuerySettingsConfig {
     return tenantId;
   }
 
-  public void setTenantId(@javax.annotation.Nullable String tenantId) {
+  public void setTenantId(String tenantId) {
     this.tenantId = tenantId;
   }
 
 
-  public LogAnalyticsQuerySettingsConfig workspaceId(@javax.annotation.Nullable String workspaceId) {
+  public LogAnalyticsQuerySettingsConfig workspaceId(String workspaceId) {
     this.workspaceId = workspaceId;
     return this;
   }
@@ -120,7 +117,7 @@ public class LogAnalyticsQuerySettingsConfig {
     return workspaceId;
   }
 
-  public void setWorkspaceId(@javax.annotation.Nullable String workspaceId) {
+  public void setWorkspaceId(String workspaceId) {
     this.workspaceId = workspaceId;
   }
 

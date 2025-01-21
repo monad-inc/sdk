@@ -48,62 +48,52 @@ import org.openapitools.client.JSON;
 /**
  * ModelsRole
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsRole {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
-  @javax.annotation.Nullable
   private String organizationId;
 
   public static final String SERIALIZED_NAME_PIPELINE_CREATE = "pipeline_create";
   @SerializedName(SERIALIZED_NAME_PIPELINE_CREATE)
-  @javax.annotation.Nullable
   private Boolean pipelineCreate;
 
   public static final String SERIALIZED_NAME_PIPELINE_DELETE = "pipeline_delete";
   @SerializedName(SERIALIZED_NAME_PIPELINE_DELETE)
-  @javax.annotation.Nullable
   private Boolean pipelineDelete;
 
   public static final String SERIALIZED_NAME_PIPELINE_READ = "pipeline_read";
   @SerializedName(SERIALIZED_NAME_PIPELINE_READ)
-  @javax.annotation.Nullable
   private Boolean pipelineRead;
 
   public static final String SERIALIZED_NAME_PIPELINE_UPDATE = "pipeline_update";
   @SerializedName(SERIALIZED_NAME_PIPELINE_UPDATE)
-  @javax.annotation.Nullable
   private Boolean pipelineUpdate;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
   private String updatedAt;
 
   public ModelsRole() {
   }
 
-  public ModelsRole createdAt(@javax.annotation.Nullable String createdAt) {
+  public ModelsRole createdAt(String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -117,12 +107,12 @@ public class ModelsRole {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ModelsRole description(@javax.annotation.Nullable String description) {
+  public ModelsRole description(String description) {
     this.description = description;
     return this;
   }
@@ -136,12 +126,12 @@ public class ModelsRole {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
 
-  public ModelsRole id(@javax.annotation.Nullable String id) {
+  public ModelsRole id(String id) {
     this.id = id;
     return this;
   }
@@ -155,12 +145,12 @@ public class ModelsRole {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
 
-  public ModelsRole name(@javax.annotation.Nullable String name) {
+  public ModelsRole name(String name) {
     this.name = name;
     return this;
   }
@@ -174,12 +164,12 @@ public class ModelsRole {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
 
-  public ModelsRole organizationId(@javax.annotation.Nullable String organizationId) {
+  public ModelsRole organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -193,12 +183,12 @@ public class ModelsRole {
     return organizationId;
   }
 
-  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
+  public void setOrganizationId(String organizationId) {
     this.organizationId = organizationId;
   }
 
 
-  public ModelsRole pipelineCreate(@javax.annotation.Nullable Boolean pipelineCreate) {
+  public ModelsRole pipelineCreate(Boolean pipelineCreate) {
     this.pipelineCreate = pipelineCreate;
     return this;
   }
@@ -212,12 +202,12 @@ public class ModelsRole {
     return pipelineCreate;
   }
 
-  public void setPipelineCreate(@javax.annotation.Nullable Boolean pipelineCreate) {
+  public void setPipelineCreate(Boolean pipelineCreate) {
     this.pipelineCreate = pipelineCreate;
   }
 
 
-  public ModelsRole pipelineDelete(@javax.annotation.Nullable Boolean pipelineDelete) {
+  public ModelsRole pipelineDelete(Boolean pipelineDelete) {
     this.pipelineDelete = pipelineDelete;
     return this;
   }
@@ -231,12 +221,12 @@ public class ModelsRole {
     return pipelineDelete;
   }
 
-  public void setPipelineDelete(@javax.annotation.Nullable Boolean pipelineDelete) {
+  public void setPipelineDelete(Boolean pipelineDelete) {
     this.pipelineDelete = pipelineDelete;
   }
 
 
-  public ModelsRole pipelineRead(@javax.annotation.Nullable Boolean pipelineRead) {
+  public ModelsRole pipelineRead(Boolean pipelineRead) {
     this.pipelineRead = pipelineRead;
     return this;
   }
@@ -250,12 +240,12 @@ public class ModelsRole {
     return pipelineRead;
   }
 
-  public void setPipelineRead(@javax.annotation.Nullable Boolean pipelineRead) {
+  public void setPipelineRead(Boolean pipelineRead) {
     this.pipelineRead = pipelineRead;
   }
 
 
-  public ModelsRole pipelineUpdate(@javax.annotation.Nullable Boolean pipelineUpdate) {
+  public ModelsRole pipelineUpdate(Boolean pipelineUpdate) {
     this.pipelineUpdate = pipelineUpdate;
     return this;
   }
@@ -269,12 +259,12 @@ public class ModelsRole {
     return pipelineUpdate;
   }
 
-  public void setPipelineUpdate(@javax.annotation.Nullable Boolean pipelineUpdate) {
+  public void setPipelineUpdate(Boolean pipelineUpdate) {
     this.pipelineUpdate = pipelineUpdate;
   }
 
 
-  public ModelsRole updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public ModelsRole updatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -288,7 +278,7 @@ public class ModelsRole {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

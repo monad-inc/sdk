@@ -52,37 +52,32 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2CreatePipelineRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class RoutesV2CreatePipelineRequest {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_EDGES = "edges";
   @SerializedName(SERIALIZED_NAME_EDGES)
-  @javax.annotation.Nonnull
   private List<RoutesV2PipelineRequestEdge> edges = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nonnull
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_NODES = "nodes";
   @SerializedName(SERIALIZED_NAME_NODES)
-  @javax.annotation.Nonnull
   private List<RoutesV2PipelineRequestNode> nodes = new ArrayList<>();
 
   public RoutesV2CreatePipelineRequest() {
   }
 
-  public RoutesV2CreatePipelineRequest description(@javax.annotation.Nullable String description) {
+  public RoutesV2CreatePipelineRequest description(String description) {
     this.description = description;
     return this;
   }
@@ -96,12 +91,12 @@ public class RoutesV2CreatePipelineRequest {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
 
-  public RoutesV2CreatePipelineRequest edges(@javax.annotation.Nonnull List<RoutesV2PipelineRequestEdge> edges) {
+  public RoutesV2CreatePipelineRequest edges(List<RoutesV2PipelineRequestEdge> edges) {
     this.edges = edges;
     return this;
   }
@@ -123,12 +118,12 @@ public class RoutesV2CreatePipelineRequest {
     return edges;
   }
 
-  public void setEdges(@javax.annotation.Nonnull List<RoutesV2PipelineRequestEdge> edges) {
+  public void setEdges(List<RoutesV2PipelineRequestEdge> edges) {
     this.edges = edges;
   }
 
 
-  public RoutesV2CreatePipelineRequest enabled(@javax.annotation.Nonnull Boolean enabled) {
+  public RoutesV2CreatePipelineRequest enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -142,12 +137,12 @@ public class RoutesV2CreatePipelineRequest {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nonnull Boolean enabled) {
+  public void setEnabled(Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public RoutesV2CreatePipelineRequest name(@javax.annotation.Nonnull String name) {
+  public RoutesV2CreatePipelineRequest name(String name) {
     this.name = name;
     return this;
   }
@@ -161,12 +156,12 @@ public class RoutesV2CreatePipelineRequest {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
 
-  public RoutesV2CreatePipelineRequest nodes(@javax.annotation.Nonnull List<RoutesV2PipelineRequestNode> nodes) {
+  public RoutesV2CreatePipelineRequest nodes(List<RoutesV2PipelineRequestNode> nodes) {
     this.nodes = nodes;
     return this;
   }
@@ -188,7 +183,7 @@ public class RoutesV2CreatePipelineRequest {
     return nodes;
   }
 
-  public void setNodes(@javax.annotation.Nonnull List<RoutesV2PipelineRequestNode> nodes) {
+  public void setNodes(List<RoutesV2PipelineRequestNode> nodes) {
     this.nodes = nodes;
   }
 

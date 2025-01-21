@@ -93,8 +93,7 @@ public class OrganizationInputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Validation error </td><td>  -  </td></tr>
@@ -171,8 +170,7 @@ public class OrganizationInputsApi {
      * @return List&lt;ModelsInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Validation error </td><td>  -  </td></tr>
@@ -192,8 +190,7 @@ public class OrganizationInputsApi {
      * @return ApiResponse&lt;List&lt;ModelsInput&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Validation error </td><td>  -  </td></tr>
@@ -215,8 +212,7 @@ public class OrganizationInputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Validation error </td><td>  -  </td></tr>
@@ -239,8 +235,7 @@ public class OrganizationInputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -318,8 +313,7 @@ public class OrganizationInputsApi {
      * @return ModelsInputList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -338,8 +332,7 @@ public class OrganizationInputsApi {
      * @return ApiResponse&lt;ModelsInputList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -360,8 +353,7 @@ public class OrganizationInputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -381,8 +373,7 @@ public class OrganizationInputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete input </td><td>  -  </td></tr>
@@ -458,8 +449,7 @@ public class OrganizationInputsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete input </td><td>  -  </td></tr>
@@ -478,8 +468,7 @@ public class OrganizationInputsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete input </td><td>  -  </td></tr>
@@ -500,8 +489,7 @@ public class OrganizationInputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete input </td><td>  -  </td></tr>
@@ -522,8 +510,7 @@ public class OrganizationInputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -598,8 +585,7 @@ public class OrganizationInputsApi {
      * @return RoutesGetInputResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -617,8 +603,7 @@ public class OrganizationInputsApi {
      * @return ApiResponse&lt;RoutesGetInputResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -638,8 +623,7 @@ public class OrganizationInputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input retrieved successfully </td><td>  -  </td></tr>
      </table>
@@ -660,8 +644,7 @@ public class OrganizationInputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON config in body </td><td>  -  </td></tr>
@@ -745,8 +728,7 @@ public class OrganizationInputsApi {
      * @return ModelsInput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON config in body </td><td>  -  </td></tr>
@@ -767,8 +749,7 @@ public class OrganizationInputsApi {
      * @return ApiResponse&lt;ModelsInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON config in body </td><td>  -  </td></tr>
@@ -791,8 +772,7 @@ public class OrganizationInputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON config in body </td><td>  -  </td></tr>
@@ -814,8 +794,7 @@ public class OrganizationInputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Failed to create input </td><td>  -  </td></tr>
@@ -891,8 +870,7 @@ public class OrganizationInputsApi {
      * @return ModelsInput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Failed to create input </td><td>  -  </td></tr>
@@ -911,8 +889,7 @@ public class OrganizationInputsApi {
      * @return ApiResponse&lt;ModelsInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Failed to create input </td><td>  -  </td></tr>
@@ -933,8 +910,7 @@ public class OrganizationInputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Failed to create input </td><td>  -  </td></tr>
@@ -955,8 +931,7 @@ public class OrganizationInputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Validation error </td><td>  -  </td></tr>
@@ -1033,8 +1008,7 @@ public class OrganizationInputsApi {
      * @return List&lt;ModelsInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Validation error </td><td>  -  </td></tr>
@@ -1054,8 +1028,7 @@ public class OrganizationInputsApi {
      * @return ApiResponse&lt;List&lt;ModelsInput&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Validation error </td><td>  -  </td></tr>
@@ -1077,8 +1050,7 @@ public class OrganizationInputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Validation error </td><td>  -  </td></tr>
@@ -1101,8 +1073,7 @@ public class OrganizationInputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body, input type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
@@ -1187,8 +1158,7 @@ public class OrganizationInputsApi {
      * @return ModelsInput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body, input type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
@@ -1210,8 +1180,7 @@ public class OrganizationInputsApi {
      * @return ApiResponse&lt;ModelsInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body, input type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
@@ -1235,8 +1204,7 @@ public class OrganizationInputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body, input type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
@@ -1259,8 +1227,7 @@ public class OrganizationInputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body, input type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
@@ -1337,8 +1304,7 @@ public class OrganizationInputsApi {
      * @return ModelsInput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body, input type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
@@ -1358,8 +1324,7 @@ public class OrganizationInputsApi {
      * @return ApiResponse&lt;ModelsInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body, input type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
@@ -1381,8 +1346,7 @@ public class OrganizationInputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Input created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body, input type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
@@ -1404,8 +1368,7 @@ public class OrganizationInputsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Connection test successful </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body, input type, or configuration </td><td>  -  </td></tr>
@@ -1482,8 +1445,7 @@ public class OrganizationInputsApi {
      * @return RoutesV2SuccessResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Connection test successful </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body, input type, or configuration </td><td>  -  </td></tr>
@@ -1503,8 +1465,7 @@ public class OrganizationInputsApi {
      * @return ApiResponse&lt;RoutesV2SuccessResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Connection test successful </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body, input type, or configuration </td><td>  -  </td></tr>
@@ -1526,8 +1487,7 @@ public class OrganizationInputsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Connection test successful </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body, input type, or configuration </td><td>  -  </td></tr>

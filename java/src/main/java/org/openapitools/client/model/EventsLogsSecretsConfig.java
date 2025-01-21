@@ -48,17 +48,16 @@ import org.openapitools.client.JSON;
 /**
  * Tines Events Logs secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class EventsLogsSecretsConfig {
   public static final String SERIALIZED_NAME_API_KEY = "api_key";
   @SerializedName(SERIALIZED_NAME_API_KEY)
-  @javax.annotation.Nullable
   private String apiKey;
 
   public EventsLogsSecretsConfig() {
   }
 
-  public EventsLogsSecretsConfig apiKey(@javax.annotation.Nullable String apiKey) {
+  public EventsLogsSecretsConfig apiKey(String apiKey) {
     this.apiKey = apiKey;
     return this;
   }
@@ -72,7 +71,7 @@ public class EventsLogsSecretsConfig {
     return apiKey;
   }
 
-  public void setApiKey(@javax.annotation.Nullable String apiKey) {
+  public void setApiKey(String apiKey) {
     this.apiKey = apiKey;
   }
 

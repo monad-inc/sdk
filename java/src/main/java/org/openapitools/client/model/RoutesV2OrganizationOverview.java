@@ -49,37 +49,32 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2OrganizationOverview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class RoutesV2OrganizationOverview {
   public static final String SERIALIZED_NAME_DISABLED = "disabled";
   @SerializedName(SERIALIZED_NAME_DISABLED)
-  @javax.annotation.Nonnull
   private Integer disabled;
 
   public static final String SERIALIZED_NAME_EGRESS = "egress";
   @SerializedName(SERIALIZED_NAME_EGRESS)
-  @javax.annotation.Nullable
   private ModelsDataUsage egress;
 
   public static final String SERIALIZED_NAME_HEALTHY = "healthy";
   @SerializedName(SERIALIZED_NAME_HEALTHY)
-  @javax.annotation.Nonnull
   private Integer healthy;
 
   public static final String SERIALIZED_NAME_INGRESS = "ingress";
   @SerializedName(SERIALIZED_NAME_INGRESS)
-  @javax.annotation.Nullable
   private ModelsDataUsage ingress;
 
   public static final String SERIALIZED_NAME_UNHEALTHY = "unhealthy";
   @SerializedName(SERIALIZED_NAME_UNHEALTHY)
-  @javax.annotation.Nonnull
   private Integer unhealthy;
 
   public RoutesV2OrganizationOverview() {
   }
 
-  public RoutesV2OrganizationOverview disabled(@javax.annotation.Nonnull Integer disabled) {
+  public RoutesV2OrganizationOverview disabled(Integer disabled) {
     this.disabled = disabled;
     return this;
   }
@@ -93,12 +88,12 @@ public class RoutesV2OrganizationOverview {
     return disabled;
   }
 
-  public void setDisabled(@javax.annotation.Nonnull Integer disabled) {
+  public void setDisabled(Integer disabled) {
     this.disabled = disabled;
   }
 
 
-  public RoutesV2OrganizationOverview egress(@javax.annotation.Nullable ModelsDataUsage egress) {
+  public RoutesV2OrganizationOverview egress(ModelsDataUsage egress) {
     this.egress = egress;
     return this;
   }
@@ -112,12 +107,12 @@ public class RoutesV2OrganizationOverview {
     return egress;
   }
 
-  public void setEgress(@javax.annotation.Nullable ModelsDataUsage egress) {
+  public void setEgress(ModelsDataUsage egress) {
     this.egress = egress;
   }
 
 
-  public RoutesV2OrganizationOverview healthy(@javax.annotation.Nonnull Integer healthy) {
+  public RoutesV2OrganizationOverview healthy(Integer healthy) {
     this.healthy = healthy;
     return this;
   }
@@ -131,12 +126,12 @@ public class RoutesV2OrganizationOverview {
     return healthy;
   }
 
-  public void setHealthy(@javax.annotation.Nonnull Integer healthy) {
+  public void setHealthy(Integer healthy) {
     this.healthy = healthy;
   }
 
 
-  public RoutesV2OrganizationOverview ingress(@javax.annotation.Nullable ModelsDataUsage ingress) {
+  public RoutesV2OrganizationOverview ingress(ModelsDataUsage ingress) {
     this.ingress = ingress;
     return this;
   }
@@ -150,12 +145,12 @@ public class RoutesV2OrganizationOverview {
     return ingress;
   }
 
-  public void setIngress(@javax.annotation.Nullable ModelsDataUsage ingress) {
+  public void setIngress(ModelsDataUsage ingress) {
     this.ingress = ingress;
   }
 
 
-  public RoutesV2OrganizationOverview unhealthy(@javax.annotation.Nonnull Integer unhealthy) {
+  public RoutesV2OrganizationOverview unhealthy(Integer unhealthy) {
     this.unhealthy = unhealthy;
     return this;
   }
@@ -169,7 +164,7 @@ public class RoutesV2OrganizationOverview {
     return unhealthy;
   }
 
-  public void setUnhealthy(@javax.annotation.Nonnull Integer unhealthy) {
+  public void setUnhealthy(Integer unhealthy) {
     this.unhealthy = unhealthy;
   }
 

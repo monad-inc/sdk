@@ -49,32 +49,28 @@ import org.openapitools.client.JSON;
 /**
  * OperationInformation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class OperationInformation {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  @javax.annotation.Nullable
   private Object config = null;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_TYPE_ID = "type_id";
   @SerializedName(SERIALIZED_NAME_TYPE_ID)
-  @javax.annotation.Nullable
   private String typeId;
 
   public OperationInformation() {
   }
 
-  public OperationInformation config(@javax.annotation.Nullable Object config) {
+  public OperationInformation config(Object config) {
     this.config = config;
     return this;
   }
@@ -88,12 +84,12 @@ public class OperationInformation {
     return config;
   }
 
-  public void setConfig(@javax.annotation.Nullable Object config) {
+  public void setConfig(Object config) {
     this.config = config;
   }
 
 
-  public OperationInformation description(@javax.annotation.Nullable String description) {
+  public OperationInformation description(String description) {
     this.description = description;
     return this;
   }
@@ -107,12 +103,12 @@ public class OperationInformation {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
 
-  public OperationInformation name(@javax.annotation.Nullable String name) {
+  public OperationInformation name(String name) {
     this.name = name;
     return this;
   }
@@ -126,12 +122,12 @@ public class OperationInformation {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
 
-  public OperationInformation typeId(@javax.annotation.Nullable String typeId) {
+  public OperationInformation typeId(String typeId) {
     this.typeId = typeId;
     return this;
   }
@@ -145,7 +141,7 @@ public class OperationInformation {
     return typeId;
   }
 
-  public void setTypeId(@javax.annotation.Nullable String typeId) {
+  public void setTypeId(String typeId) {
     this.typeId = typeId;
   }
 

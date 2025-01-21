@@ -52,22 +52,20 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ModelsPipelineList {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
-  @javax.annotation.Nullable
   private ModelsPagination pagination;
 
   public static final String SERIALIZED_NAME_PIPELINES = "pipelines";
   @SerializedName(SERIALIZED_NAME_PIPELINES)
-  @javax.annotation.Nullable
   private List<ModelsPipeline> pipelines = new ArrayList<>();
 
   public ModelsPipelineList() {
   }
 
-  public ModelsPipelineList pagination(@javax.annotation.Nullable ModelsPagination pagination) {
+  public ModelsPipelineList pagination(ModelsPagination pagination) {
     this.pagination = pagination;
     return this;
   }
@@ -81,12 +79,12 @@ public class ModelsPipelineList {
     return pagination;
   }
 
-  public void setPagination(@javax.annotation.Nullable ModelsPagination pagination) {
+  public void setPagination(ModelsPagination pagination) {
     this.pagination = pagination;
   }
 
 
-  public ModelsPipelineList pipelines(@javax.annotation.Nullable List<ModelsPipeline> pipelines) {
+  public ModelsPipelineList pipelines(List<ModelsPipeline> pipelines) {
     this.pipelines = pipelines;
     return this;
   }
@@ -108,7 +106,7 @@ public class ModelsPipelineList {
     return pipelines;
   }
 
-  public void setPipelines(@javax.annotation.Nullable List<ModelsPipeline> pipelines) {
+  public void setPipelines(List<ModelsPipeline> pipelines) {
     this.pipelines = pipelines;
   }
 

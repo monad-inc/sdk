@@ -52,27 +52,24 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2GetOrganizationSummaryResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class RoutesV2GetOrganizationSummaryResponse {
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
-  @javax.annotation.Nonnull
   private String organizationId;
 
   public static final String SERIALIZED_NAME_PIPELINES = "pipelines";
   @SerializedName(SERIALIZED_NAME_PIPELINES)
-  @javax.annotation.Nullable
   private List<RoutesV2PipelineStatus> pipelines = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
-  @javax.annotation.Nullable
   private RoutesV2OrganizationOverview summary;
 
   public RoutesV2GetOrganizationSummaryResponse() {
   }
 
-  public RoutesV2GetOrganizationSummaryResponse organizationId(@javax.annotation.Nonnull String organizationId) {
+  public RoutesV2GetOrganizationSummaryResponse organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -86,12 +83,12 @@ public class RoutesV2GetOrganizationSummaryResponse {
     return organizationId;
   }
 
-  public void setOrganizationId(@javax.annotation.Nonnull String organizationId) {
+  public void setOrganizationId(String organizationId) {
     this.organizationId = organizationId;
   }
 
 
-  public RoutesV2GetOrganizationSummaryResponse pipelines(@javax.annotation.Nullable List<RoutesV2PipelineStatus> pipelines) {
+  public RoutesV2GetOrganizationSummaryResponse pipelines(List<RoutesV2PipelineStatus> pipelines) {
     this.pipelines = pipelines;
     return this;
   }
@@ -113,12 +110,12 @@ public class RoutesV2GetOrganizationSummaryResponse {
     return pipelines;
   }
 
-  public void setPipelines(@javax.annotation.Nullable List<RoutesV2PipelineStatus> pipelines) {
+  public void setPipelines(List<RoutesV2PipelineStatus> pipelines) {
     this.pipelines = pipelines;
   }
 
 
-  public RoutesV2GetOrganizationSummaryResponse summary(@javax.annotation.Nullable RoutesV2OrganizationOverview summary) {
+  public RoutesV2GetOrganizationSummaryResponse summary(RoutesV2OrganizationOverview summary) {
     this.summary = summary;
     return this;
   }
@@ -132,7 +129,7 @@ public class RoutesV2GetOrganizationSummaryResponse {
     return summary;
   }
 
-  public void setSummary(@javax.annotation.Nullable RoutesV2OrganizationOverview summary) {
+  public void setSummary(RoutesV2OrganizationOverview summary) {
     this.summary = summary;
   }
 

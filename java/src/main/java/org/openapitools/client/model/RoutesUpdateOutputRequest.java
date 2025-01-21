@@ -49,32 +49,28 @@ import org.openapitools.client.JSON;
 /**
  * RoutesUpdateOutputRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class RoutesUpdateOutputRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  @javax.annotation.Nullable
   private RoutesUpdateOutputRequestConfig config;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_OUTPUT_TYPE = "output_type";
   @SerializedName(SERIALIZED_NAME_OUTPUT_TYPE)
-  @javax.annotation.Nonnull
   private String outputType;
 
   public RoutesUpdateOutputRequest() {
   }
 
-  public RoutesUpdateOutputRequest config(@javax.annotation.Nullable RoutesUpdateOutputRequestConfig config) {
+  public RoutesUpdateOutputRequest config(RoutesUpdateOutputRequestConfig config) {
     this.config = config;
     return this;
   }
@@ -88,12 +84,12 @@ public class RoutesUpdateOutputRequest {
     return config;
   }
 
-  public void setConfig(@javax.annotation.Nullable RoutesUpdateOutputRequestConfig config) {
+  public void setConfig(RoutesUpdateOutputRequestConfig config) {
     this.config = config;
   }
 
 
-  public RoutesUpdateOutputRequest description(@javax.annotation.Nullable String description) {
+  public RoutesUpdateOutputRequest description(String description) {
     this.description = description;
     return this;
   }
@@ -107,12 +103,12 @@ public class RoutesUpdateOutputRequest {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
 
-  public RoutesUpdateOutputRequest name(@javax.annotation.Nullable String name) {
+  public RoutesUpdateOutputRequest name(String name) {
     this.name = name;
     return this;
   }
@@ -126,12 +122,12 @@ public class RoutesUpdateOutputRequest {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
 
-  public RoutesUpdateOutputRequest outputType(@javax.annotation.Nonnull String outputType) {
+  public RoutesUpdateOutputRequest outputType(String outputType) {
     this.outputType = outputType;
     return this;
   }
@@ -145,7 +141,7 @@ public class RoutesUpdateOutputRequest {
     return outputType;
   }
 
-  public void setOutputType(@javax.annotation.Nonnull String outputType) {
+  public void setOutputType(String outputType) {
     this.outputType = outputType;
   }
 

@@ -48,22 +48,20 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Azure Activity Logs secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class AzureActivityLogsSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
-  @javax.annotation.Nullable
   private String clientId;
 
   public static final String SERIALIZED_NAME_CLIENT_SECRET = "client_secret";
   @SerializedName(SERIALIZED_NAME_CLIENT_SECRET)
-  @javax.annotation.Nullable
   private String clientSecret;
 
   public AzureActivityLogsSecretsConfig() {
   }
 
-  public AzureActivityLogsSecretsConfig clientId(@javax.annotation.Nullable String clientId) {
+  public AzureActivityLogsSecretsConfig clientId(String clientId) {
     this.clientId = clientId;
     return this;
   }
@@ -77,12 +75,12 @@ public class AzureActivityLogsSecretsConfig {
     return clientId;
   }
 
-  public void setClientId(@javax.annotation.Nullable String clientId) {
+  public void setClientId(String clientId) {
     this.clientId = clientId;
   }
 
 
-  public AzureActivityLogsSecretsConfig clientSecret(@javax.annotation.Nullable String clientSecret) {
+  public AzureActivityLogsSecretsConfig clientSecret(String clientSecret) {
     this.clientSecret = clientSecret;
     return this;
   }
@@ -96,7 +94,7 @@ public class AzureActivityLogsSecretsConfig {
     return clientSecret;
   }
 
-  public void setClientSecret(@javax.annotation.Nullable String clientSecret) {
+  public void setClientSecret(String clientSecret) {
     this.clientSecret = clientSecret;
   }
 

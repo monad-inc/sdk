@@ -48,17 +48,16 @@ import org.openapitools.client.JSON;
 /**
  * Snowflake Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class SnowflakeSecretsConfig {
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)
-  @javax.annotation.Nullable
   private String password;
 
   public SnowflakeSecretsConfig() {
   }
 
-  public SnowflakeSecretsConfig password(@javax.annotation.Nullable String password) {
+  public SnowflakeSecretsConfig password(String password) {
     this.password = password;
     return this;
   }
@@ -72,7 +71,7 @@ public class SnowflakeSecretsConfig {
     return password;
   }
 
-  public void setPassword(@javax.annotation.Nullable String password) {
+  public void setPassword(String password) {
     this.password = password;
   }
 

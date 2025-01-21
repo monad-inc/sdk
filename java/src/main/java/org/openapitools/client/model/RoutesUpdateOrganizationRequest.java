@@ -48,22 +48,20 @@ import org.openapitools.client.JSON;
 /**
  * RoutesUpdateOrganizationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class RoutesUpdateOrganizationRequest {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
   private String name;
 
   public RoutesUpdateOrganizationRequest() {
   }
 
-  public RoutesUpdateOrganizationRequest description(@javax.annotation.Nullable String description) {
+  public RoutesUpdateOrganizationRequest description(String description) {
     this.description = description;
     return this;
   }
@@ -77,12 +75,12 @@ public class RoutesUpdateOrganizationRequest {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
 
-  public RoutesUpdateOrganizationRequest name(@javax.annotation.Nonnull String name) {
+  public RoutesUpdateOrganizationRequest name(String name) {
     this.name = name;
     return this;
   }
@@ -96,7 +94,7 @@ public class RoutesUpdateOrganizationRequest {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(String name) {
     this.name = name;
   }
 

@@ -48,22 +48,20 @@ import org.openapitools.client.JSON;
 /**
  * Demo Custom settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class DemoCustomSettingsConfig {
   public static final String SERIALIZED_NAME_CUSTOM_TEMPLATE = "custom_template";
   @SerializedName(SERIALIZED_NAME_CUSTOM_TEMPLATE)
-  @javax.annotation.Nullable
   private String customTemplate;
 
   public static final String SERIALIZED_NAME_RATE = "rate";
   @SerializedName(SERIALIZED_NAME_RATE)
-  @javax.annotation.Nullable
   private Integer rate;
 
   public DemoCustomSettingsConfig() {
   }
 
-  public DemoCustomSettingsConfig customTemplate(@javax.annotation.Nullable String customTemplate) {
+  public DemoCustomSettingsConfig customTemplate(String customTemplate) {
     this.customTemplate = customTemplate;
     return this;
   }
@@ -77,12 +75,12 @@ public class DemoCustomSettingsConfig {
     return customTemplate;
   }
 
-  public void setCustomTemplate(@javax.annotation.Nullable String customTemplate) {
+  public void setCustomTemplate(String customTemplate) {
     this.customTemplate = customTemplate;
   }
 
 
-  public DemoCustomSettingsConfig rate(@javax.annotation.Nullable Integer rate) {
+  public DemoCustomSettingsConfig rate(Integer rate) {
     this.rate = rate;
     return this;
   }
@@ -96,7 +94,7 @@ public class DemoCustomSettingsConfig {
     return rate;
   }
 
-  public void setRate(@javax.annotation.Nullable Integer rate) {
+  public void setRate(Integer rate) {
     this.rate = rate;
   }
 

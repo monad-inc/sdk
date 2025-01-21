@@ -48,17 +48,16 @@ import org.openapitools.client.JSON;
 /**
  * Snyk organizations settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class SnykOrganizationsSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
-  @javax.annotation.Nullable
   private String cron;
 
   public SnykOrganizationsSettingsConfig() {
   }
 
-  public SnykOrganizationsSettingsConfig cron(@javax.annotation.Nullable String cron) {
+  public SnykOrganizationsSettingsConfig cron(String cron) {
     this.cron = cron;
     return this;
   }
@@ -72,7 +71,7 @@ public class SnykOrganizationsSettingsConfig {
     return cron;
   }
 
-  public void setCron(@javax.annotation.Nullable String cron) {
+  public void setCron(String cron) {
     this.cron = cron;
   }
 

@@ -48,32 +48,28 @@ import org.openapitools.client.JSON;
 /**
  * OpenSearch Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:42:35.054287457Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-21T15:55:50.997871187Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class OpensearchSettingsConfig {
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
-  @javax.annotation.Nullable
   private String index;
 
   public static final String SERIALIZED_NAME_INSECURE_SKIP_VERIFY = "insecure_skip_verify";
   @SerializedName(SERIALIZED_NAME_INSECURE_SKIP_VERIFY)
-  @javax.annotation.Nullable
   private Boolean insecureSkipVerify;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
-  @javax.annotation.Nullable
   private String url;
 
   public static final String SERIALIZED_NAME_USERNAME = "username";
   @SerializedName(SERIALIZED_NAME_USERNAME)
-  @javax.annotation.Nullable
   private String username;
 
   public OpensearchSettingsConfig() {
   }
 
-  public OpensearchSettingsConfig index(@javax.annotation.Nullable String index) {
+  public OpensearchSettingsConfig index(String index) {
     this.index = index;
     return this;
   }
@@ -87,12 +83,12 @@ public class OpensearchSettingsConfig {
     return index;
   }
 
-  public void setIndex(@javax.annotation.Nullable String index) {
+  public void setIndex(String index) {
     this.index = index;
   }
 
 
-  public OpensearchSettingsConfig insecureSkipVerify(@javax.annotation.Nullable Boolean insecureSkipVerify) {
+  public OpensearchSettingsConfig insecureSkipVerify(Boolean insecureSkipVerify) {
     this.insecureSkipVerify = insecureSkipVerify;
     return this;
   }
@@ -106,12 +102,12 @@ public class OpensearchSettingsConfig {
     return insecureSkipVerify;
   }
 
-  public void setInsecureSkipVerify(@javax.annotation.Nullable Boolean insecureSkipVerify) {
+  public void setInsecureSkipVerify(Boolean insecureSkipVerify) {
     this.insecureSkipVerify = insecureSkipVerify;
   }
 
 
-  public OpensearchSettingsConfig url(@javax.annotation.Nullable String url) {
+  public OpensearchSettingsConfig url(String url) {
     this.url = url;
     return this;
   }
@@ -125,12 +121,12 @@ public class OpensearchSettingsConfig {
     return url;
   }
 
-  public void setUrl(@javax.annotation.Nullable String url) {
+  public void setUrl(String url) {
     this.url = url;
   }
 
 
-  public OpensearchSettingsConfig username(@javax.annotation.Nullable String username) {
+  public OpensearchSettingsConfig username(String username) {
     this.username = username;
     return this;
   }
@@ -144,7 +140,7 @@ public class OpensearchSettingsConfig {
     return username;
   }
 
-  public void setUsername(@javax.annotation.Nullable String username) {
+  public void setUsername(String username) {
     this.username = username;
   }
 
