@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * GitHub audit logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-22T01:58:49.639190406Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-22T15:23:02.198566206Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class AuditLogsSettingsConfig {
   public static final String SERIALIZED_NAME_ACTIONS = "actions";
   @SerializedName(SERIALIZED_NAME_ACTIONS)
