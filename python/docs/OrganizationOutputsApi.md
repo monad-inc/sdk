@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_organization_id_outputs_output_id_patch**
-> ModelsOutput v2_organization_id_outputs_output_id_patch(organization_id, output_id, routes_v2_update_output_request)
+> ModelsOutput v2_organization_id_outputs_output_id_patch(organization_id, output_id, routes_v2_update_output_request, test_connection=test_connection)
 
 Update output
 
@@ -515,10 +515,11 @@ with monad.ApiClient(configuration) as api_client:
     organization_id = 'organization_id_example' # str | Organization ID
     output_id = 'output_id_example' # str | Output ID
     routes_v2_update_output_request = monad.RoutesV2UpdateOutputRequest() # RoutesV2UpdateOutputRequest | Output configuration update
+    test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Update output
-        api_response = api_instance.v2_organization_id_outputs_output_id_patch(organization_id, output_id, routes_v2_update_output_request)
+        api_response = api_instance.v2_organization_id_outputs_output_id_patch(organization_id, output_id, routes_v2_update_output_request, test_connection=test_connection)
         print("The response of OrganizationOutputsApi->v2_organization_id_outputs_output_id_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -535,6 +536,7 @@ Name | Type | Description  | Notes
  **organization_id** | **str**| Organization ID | 
  **output_id** | **str**| Output ID | 
  **routes_v2_update_output_request** | [**RoutesV2UpdateOutputRequest**](RoutesV2UpdateOutputRequest.md)| Output configuration update | 
+ **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type
 
@@ -561,7 +563,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_organization_id_outputs_post**
-> ModelsOutput v2_organization_id_outputs_post(organization_id, routes_v2_create_output_request)
+> ModelsOutput v2_organization_id_outputs_post(organization_id, routes_v2_create_output_request, test_connection=test_connection)
 
 Create output
 
@@ -608,10 +610,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationOutputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     routes_v2_create_output_request = monad.RoutesV2CreateOutputRequest() # RoutesV2CreateOutputRequest | Output configuration
+    test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Create output
-        api_response = api_instance.v2_organization_id_outputs_post(organization_id, routes_v2_create_output_request)
+        api_response = api_instance.v2_organization_id_outputs_post(organization_id, routes_v2_create_output_request, test_connection=test_connection)
         print("The response of OrganizationOutputsApi->v2_organization_id_outputs_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -627,6 +630,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **routes_v2_create_output_request** | [**RoutesV2CreateOutputRequest**](RoutesV2CreateOutputRequest.md)| Output configuration | 
+ **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type
 

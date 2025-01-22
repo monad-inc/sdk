@@ -52,6 +52,8 @@ const request: OrganizationInputsApiV1OrganizationIdInputsBulkPostRequest = {
       },
     ],
   },
+    // Test connection before creating the input (optional)
+  testConnection: true,
 };
 
 const data = await apiInstance.v1OrganizationIdInputsBulkPost(request);
@@ -65,6 +67,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **routesBulkCreateInputRequest** | **RoutesBulkCreateInputRequest**| Request body for creating multiple inputs |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
 
 
 ### Return type
@@ -296,6 +299,8 @@ const request: OrganizationInputsApiV1OrganizationIdInputsInputIdPatchRequest = 
     name: "name_example",
     type: "type_example",
   },
+    // Test connection before creating the input (optional)
+  testConnection: true,
 };
 
 const data = await apiInstance.v1OrganizationIdInputsInputIdPatch(request);
@@ -310,6 +315,7 @@ Name | Type | Description  | Notes
  **routesUpdateInputRequest** | **RoutesUpdateInputRequest**| Request body for updating an input |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **inputId** | [**string**] | Input ID | defaults to undefined
+ **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
 
 
 ### Return type
@@ -367,6 +373,8 @@ const request: OrganizationInputsApiV1OrganizationIdInputsPostRequest = {
     name: "name_example",
     type: "type_example",
   },
+    // Test connection before creating the input (optional)
+  testConnection: true,
 };
 
 const data = await apiInstance.v1OrganizationIdInputsPost(request);
@@ -380,6 +388,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **routesCreateInputRequest** | **RoutesCreateInputRequest**| Request body for creating an input |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
 
 
 ### Return type
@@ -440,6 +449,8 @@ const request: OrganizationInputsApiV2OrganizationIdInputsBulkPostRequest = {
       },
     ],
   },
+    // Test connection before creating the input (optional)
+  testConnection: true,
 };
 
 const data = await apiInstance.v2OrganizationIdInputsBulkPost(request);
@@ -453,6 +464,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **routesV2BulkCreateInputRequest** | **RoutesV2BulkCreateInputRequest**| Request body for creating multiple inputs |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
 
 
 ### Return type
@@ -512,6 +524,8 @@ const request: OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest = 
     name: "name_example",
     type: "type_example",
   },
+    // Test connection before creating the input (optional)
+  testConnection: true,
 };
 
 const data = await apiInstance.v2OrganizationIdInputsInputIdPatch(request);
@@ -526,6 +540,7 @@ Name | Type | Description  | Notes
  **routesV2UpdateInputRequest** | **RoutesV2UpdateInputRequest**| Input configuration update |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **inputId** | [**string**] | Input ID | defaults to undefined
+ **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
 
 
 ### Return type
@@ -584,6 +599,8 @@ const request: OrganizationInputsApiV2OrganizationIdInputsPostRequest = {
     name: "name_example",
     type: "type_example",
   },
+    // Test connection before creating the input (optional)
+  testConnection: true,
 };
 
 const data = await apiInstance.v2OrganizationIdInputsPost(request);
@@ -597,6 +614,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **routesV2CreateInputRequest** | **RoutesV2CreateInputRequest**| Input configuration |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
 
 
 ### Return type

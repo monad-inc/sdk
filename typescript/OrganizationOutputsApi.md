@@ -366,6 +366,8 @@ const request: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchRequest
     name: "name_example",
     outputType: "outputType_example",
   },
+    // Test connection before creating the input (optional)
+  testConnection: true,
 };
 
 const data = await apiInstance.v2OrganizationIdOutputsOutputIdPatch(request);
@@ -380,6 +382,7 @@ Name | Type | Description  | Notes
  **routesV2UpdateOutputRequest** | **RoutesV2UpdateOutputRequest**| Output configuration update |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **outputId** | [**string**] | Output ID | defaults to undefined
+ **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
 
 
 ### Return type
@@ -439,6 +442,8 @@ const request: OrganizationOutputsApiV2OrganizationIdOutputsPostRequest = {
     outputType: "outputType_example",
     promiseId: "promiseId_example",
   },
+    // Test connection before creating the input (optional)
+  testConnection: true,
 };
 
 const data = await apiInstance.v2OrganizationIdOutputsPost(request);
@@ -452,6 +457,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **routesV2CreateOutputRequest** | **RoutesV2CreateOutputRequest**| Output configuration |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
 
 
 ### Return type

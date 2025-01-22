@@ -17,7 +17,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import Any, Dict, List, Optional
 from typing_extensions import Annotated
 from monad.models.models_input import ModelsInput
@@ -55,6 +55,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_bulk_create_input_request: Annotated[RoutesBulkCreateInputRequest, Field(description="Request body for creating multiple inputs")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -76,6 +77,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param routes_bulk_create_input_request: Request body for creating multiple inputs (required)
         :type routes_bulk_create_input_request: RoutesBulkCreateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -101,6 +104,7 @@ class OrganizationInputsApi:
         _param = self._v1_organization_id_inputs_bulk_post_serialize(
             organization_id=organization_id,
             routes_bulk_create_input_request=routes_bulk_create_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -128,6 +132,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_bulk_create_input_request: Annotated[RoutesBulkCreateInputRequest, Field(description="Request body for creating multiple inputs")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -149,6 +154,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param routes_bulk_create_input_request: Request body for creating multiple inputs (required)
         :type routes_bulk_create_input_request: RoutesBulkCreateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -174,6 +181,7 @@ class OrganizationInputsApi:
         _param = self._v1_organization_id_inputs_bulk_post_serialize(
             organization_id=organization_id,
             routes_bulk_create_input_request=routes_bulk_create_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -201,6 +209,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_bulk_create_input_request: Annotated[RoutesBulkCreateInputRequest, Field(description="Request body for creating multiple inputs")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -222,6 +231,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param routes_bulk_create_input_request: Request body for creating multiple inputs (required)
         :type routes_bulk_create_input_request: RoutesBulkCreateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -247,6 +258,7 @@ class OrganizationInputsApi:
         _param = self._v1_organization_id_inputs_bulk_post_serialize(
             organization_id=organization_id,
             routes_bulk_create_input_request=routes_bulk_create_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -269,6 +281,7 @@ class OrganizationInputsApi:
         self,
         organization_id,
         routes_bulk_create_input_request,
+        test_connection,
         _request_auth,
         _content_type,
         _headers,
@@ -293,6 +306,10 @@ class OrganizationInputsApi:
         if organization_id is not None:
             _path_params['organization_id'] = organization_id
         # process the query parameters
+        if test_connection is not None:
+            
+            _query_params.append(('test_connection', test_connection))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1205,6 +1222,7 @@ class OrganizationInputsApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         input_id: Annotated[StrictStr, Field(description="Input ID")],
         routes_update_input_request: Annotated[RoutesUpdateInputRequest, Field(description="Request body for updating an input")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1228,6 +1246,8 @@ class OrganizationInputsApi:
         :type input_id: str
         :param routes_update_input_request: Request body for updating an input (required)
         :type routes_update_input_request: RoutesUpdateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1254,6 +1274,7 @@ class OrganizationInputsApi:
             organization_id=organization_id,
             input_id=input_id,
             routes_update_input_request=routes_update_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1282,6 +1303,7 @@ class OrganizationInputsApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         input_id: Annotated[StrictStr, Field(description="Input ID")],
         routes_update_input_request: Annotated[RoutesUpdateInputRequest, Field(description="Request body for updating an input")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1305,6 +1327,8 @@ class OrganizationInputsApi:
         :type input_id: str
         :param routes_update_input_request: Request body for updating an input (required)
         :type routes_update_input_request: RoutesUpdateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1331,6 +1355,7 @@ class OrganizationInputsApi:
             organization_id=organization_id,
             input_id=input_id,
             routes_update_input_request=routes_update_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1359,6 +1384,7 @@ class OrganizationInputsApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         input_id: Annotated[StrictStr, Field(description="Input ID")],
         routes_update_input_request: Annotated[RoutesUpdateInputRequest, Field(description="Request body for updating an input")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1382,6 +1408,8 @@ class OrganizationInputsApi:
         :type input_id: str
         :param routes_update_input_request: Request body for updating an input (required)
         :type routes_update_input_request: RoutesUpdateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1408,6 +1436,7 @@ class OrganizationInputsApi:
             organization_id=organization_id,
             input_id=input_id,
             routes_update_input_request=routes_update_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1431,6 +1460,7 @@ class OrganizationInputsApi:
         organization_id,
         input_id,
         routes_update_input_request,
+        test_connection,
         _request_auth,
         _content_type,
         _headers,
@@ -1457,6 +1487,10 @@ class OrganizationInputsApi:
         if input_id is not None:
             _path_params['input_id'] = input_id
         # process the query parameters
+        if test_connection is not None:
+            
+            _query_params.append(('test_connection', test_connection))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1515,6 +1549,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_create_input_request: Annotated[RoutesCreateInputRequest, Field(description="Request body for creating an input")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1536,6 +1571,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param routes_create_input_request: Request body for creating an input (required)
         :type routes_create_input_request: RoutesCreateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1561,6 +1598,7 @@ class OrganizationInputsApi:
         _param = self._v1_organization_id_inputs_post_serialize(
             organization_id=organization_id,
             routes_create_input_request=routes_create_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1587,6 +1625,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_create_input_request: Annotated[RoutesCreateInputRequest, Field(description="Request body for creating an input")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1608,6 +1647,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param routes_create_input_request: Request body for creating an input (required)
         :type routes_create_input_request: RoutesCreateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1633,6 +1674,7 @@ class OrganizationInputsApi:
         _param = self._v1_organization_id_inputs_post_serialize(
             organization_id=organization_id,
             routes_create_input_request=routes_create_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1659,6 +1701,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_create_input_request: Annotated[RoutesCreateInputRequest, Field(description="Request body for creating an input")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1680,6 +1723,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param routes_create_input_request: Request body for creating an input (required)
         :type routes_create_input_request: RoutesCreateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1705,6 +1750,7 @@ class OrganizationInputsApi:
         _param = self._v1_organization_id_inputs_post_serialize(
             organization_id=organization_id,
             routes_create_input_request=routes_create_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1726,6 +1772,7 @@ class OrganizationInputsApi:
         self,
         organization_id,
         routes_create_input_request,
+        test_connection,
         _request_auth,
         _content_type,
         _headers,
@@ -1750,6 +1797,10 @@ class OrganizationInputsApi:
         if organization_id is not None:
             _path_params['organization_id'] = organization_id
         # process the query parameters
+        if test_connection is not None:
+            
+            _query_params.append(('test_connection', test_connection))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1808,6 +1859,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_v2_bulk_create_input_request: Annotated[RoutesV2BulkCreateInputRequest, Field(description="Request body for creating multiple inputs")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1829,6 +1881,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param routes_v2_bulk_create_input_request: Request body for creating multiple inputs (required)
         :type routes_v2_bulk_create_input_request: RoutesV2BulkCreateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1854,6 +1908,7 @@ class OrganizationInputsApi:
         _param = self._v2_organization_id_inputs_bulk_post_serialize(
             organization_id=organization_id,
             routes_v2_bulk_create_input_request=routes_v2_bulk_create_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1881,6 +1936,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_v2_bulk_create_input_request: Annotated[RoutesV2BulkCreateInputRequest, Field(description="Request body for creating multiple inputs")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1902,6 +1958,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param routes_v2_bulk_create_input_request: Request body for creating multiple inputs (required)
         :type routes_v2_bulk_create_input_request: RoutesV2BulkCreateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1927,6 +1985,7 @@ class OrganizationInputsApi:
         _param = self._v2_organization_id_inputs_bulk_post_serialize(
             organization_id=organization_id,
             routes_v2_bulk_create_input_request=routes_v2_bulk_create_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1954,6 +2013,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_v2_bulk_create_input_request: Annotated[RoutesV2BulkCreateInputRequest, Field(description="Request body for creating multiple inputs")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1975,6 +2035,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param routes_v2_bulk_create_input_request: Request body for creating multiple inputs (required)
         :type routes_v2_bulk_create_input_request: RoutesV2BulkCreateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2000,6 +2062,7 @@ class OrganizationInputsApi:
         _param = self._v2_organization_id_inputs_bulk_post_serialize(
             organization_id=organization_id,
             routes_v2_bulk_create_input_request=routes_v2_bulk_create_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2022,6 +2085,7 @@ class OrganizationInputsApi:
         self,
         organization_id,
         routes_v2_bulk_create_input_request,
+        test_connection,
         _request_auth,
         _content_type,
         _headers,
@@ -2046,6 +2110,10 @@ class OrganizationInputsApi:
         if organization_id is not None:
             _path_params['organization_id'] = organization_id
         # process the query parameters
+        if test_connection is not None:
+            
+            _query_params.append(('test_connection', test_connection))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -2105,6 +2173,7 @@ class OrganizationInputsApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         input_id: Annotated[StrictStr, Field(description="Input ID")],
         routes_v2_update_input_request: Annotated[RoutesV2UpdateInputRequest, Field(description="Input configuration update")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2128,6 +2197,8 @@ class OrganizationInputsApi:
         :type input_id: str
         :param routes_v2_update_input_request: Input configuration update (required)
         :type routes_v2_update_input_request: RoutesV2UpdateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2154,6 +2225,7 @@ class OrganizationInputsApi:
             organization_id=organization_id,
             input_id=input_id,
             routes_v2_update_input_request=routes_v2_update_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2183,6 +2255,7 @@ class OrganizationInputsApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         input_id: Annotated[StrictStr, Field(description="Input ID")],
         routes_v2_update_input_request: Annotated[RoutesV2UpdateInputRequest, Field(description="Input configuration update")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2206,6 +2279,8 @@ class OrganizationInputsApi:
         :type input_id: str
         :param routes_v2_update_input_request: Input configuration update (required)
         :type routes_v2_update_input_request: RoutesV2UpdateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2232,6 +2307,7 @@ class OrganizationInputsApi:
             organization_id=organization_id,
             input_id=input_id,
             routes_v2_update_input_request=routes_v2_update_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2261,6 +2337,7 @@ class OrganizationInputsApi:
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         input_id: Annotated[StrictStr, Field(description="Input ID")],
         routes_v2_update_input_request: Annotated[RoutesV2UpdateInputRequest, Field(description="Input configuration update")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2284,6 +2361,8 @@ class OrganizationInputsApi:
         :type input_id: str
         :param routes_v2_update_input_request: Input configuration update (required)
         :type routes_v2_update_input_request: RoutesV2UpdateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2310,6 +2389,7 @@ class OrganizationInputsApi:
             organization_id=organization_id,
             input_id=input_id,
             routes_v2_update_input_request=routes_v2_update_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2334,6 +2414,7 @@ class OrganizationInputsApi:
         organization_id,
         input_id,
         routes_v2_update_input_request,
+        test_connection,
         _request_auth,
         _content_type,
         _headers,
@@ -2360,6 +2441,10 @@ class OrganizationInputsApi:
         if input_id is not None:
             _path_params['input_id'] = input_id
         # process the query parameters
+        if test_connection is not None:
+            
+            _query_params.append(('test_connection', test_connection))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -2418,6 +2503,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_v2_create_input_request: Annotated[RoutesV2CreateInputRequest, Field(description="Input configuration")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2439,6 +2525,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param routes_v2_create_input_request: Input configuration (required)
         :type routes_v2_create_input_request: RoutesV2CreateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2464,6 +2552,7 @@ class OrganizationInputsApi:
         _param = self._v2_organization_id_inputs_post_serialize(
             organization_id=organization_id,
             routes_v2_create_input_request=routes_v2_create_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2491,6 +2580,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_v2_create_input_request: Annotated[RoutesV2CreateInputRequest, Field(description="Input configuration")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2512,6 +2602,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param routes_v2_create_input_request: Input configuration (required)
         :type routes_v2_create_input_request: RoutesV2CreateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2537,6 +2629,7 @@ class OrganizationInputsApi:
         _param = self._v2_organization_id_inputs_post_serialize(
             organization_id=organization_id,
             routes_v2_create_input_request=routes_v2_create_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2564,6 +2657,7 @@ class OrganizationInputsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_v2_create_input_request: Annotated[RoutesV2CreateInputRequest, Field(description="Input configuration")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2585,6 +2679,8 @@ class OrganizationInputsApi:
         :type organization_id: str
         :param routes_v2_create_input_request: Input configuration (required)
         :type routes_v2_create_input_request: RoutesV2CreateInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2610,6 +2706,7 @@ class OrganizationInputsApi:
         _param = self._v2_organization_id_inputs_post_serialize(
             organization_id=organization_id,
             routes_v2_create_input_request=routes_v2_create_input_request,
+            test_connection=test_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2632,6 +2729,7 @@ class OrganizationInputsApi:
         self,
         organization_id,
         routes_v2_create_input_request,
+        test_connection,
         _request_auth,
         _content_type,
         _headers,
@@ -2656,6 +2754,10 @@ class OrganizationInputsApi:
         if organization_id is not None:
             _path_params['organization_id'] = organization_id
         # process the query parameters
+        if test_connection is not None:
+            
+            _query_params.append(('test_connection', test_connection))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

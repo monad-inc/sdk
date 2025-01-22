@@ -998,6 +998,13 @@ export interface OrganizationInputsApiV1OrganizationIdInputsBulkPostRequest {
      * @memberof OrganizationInputsApiv1OrganizationIdInputsBulkPost
      */
     routesBulkCreateInputRequest: RoutesBulkCreateInputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationInputsApiv1OrganizationIdInputsBulkPost
+     */
+    testConnection?: boolean
 }
 
 export interface OrganizationInputsApiV1OrganizationIdInputsGetRequest {
@@ -1079,6 +1086,13 @@ export interface OrganizationInputsApiV1OrganizationIdInputsInputIdPatchRequest 
      * @memberof OrganizationInputsApiv1OrganizationIdInputsInputIdPatch
      */
     routesUpdateInputRequest: RoutesUpdateInputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationInputsApiv1OrganizationIdInputsInputIdPatch
+     */
+    testConnection?: boolean
 }
 
 export interface OrganizationInputsApiV1OrganizationIdInputsPostRequest {
@@ -1095,6 +1109,13 @@ export interface OrganizationInputsApiV1OrganizationIdInputsPostRequest {
      * @memberof OrganizationInputsApiv1OrganizationIdInputsPost
      */
     routesCreateInputRequest: RoutesCreateInputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationInputsApiv1OrganizationIdInputsPost
+     */
+    testConnection?: boolean
 }
 
 export interface OrganizationInputsApiV2OrganizationIdInputsBulkPostRequest {
@@ -1111,6 +1132,13 @@ export interface OrganizationInputsApiV2OrganizationIdInputsBulkPostRequest {
      * @memberof OrganizationInputsApiv2OrganizationIdInputsBulkPost
      */
     routesV2BulkCreateInputRequest: RoutesV2BulkCreateInputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationInputsApiv2OrganizationIdInputsBulkPost
+     */
+    testConnection?: boolean
 }
 
 export interface OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest {
@@ -1134,6 +1162,13 @@ export interface OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest 
      * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPatch
      */
     routesV2UpdateInputRequest: RoutesV2UpdateInputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPatch
+     */
+    testConnection?: boolean
 }
 
 export interface OrganizationInputsApiV2OrganizationIdInputsPostRequest {
@@ -1150,6 +1185,13 @@ export interface OrganizationInputsApiV2OrganizationIdInputsPostRequest {
      * @memberof OrganizationInputsApiv2OrganizationIdInputsPost
      */
     routesV2CreateInputRequest: RoutesV2CreateInputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationInputsApiv2OrganizationIdInputsPost
+     */
+    testConnection?: boolean
 }
 
 export interface OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequest {
@@ -1181,7 +1223,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v1OrganizationIdInputsBulkPostWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsBulkPostRequest, options?: Configuration): Promise<HttpInfo<Array<ModelsInput>>> {
-        return this.api.v1OrganizationIdInputsBulkPostWithHttpInfo(param.organizationId, param.routesBulkCreateInputRequest,  options).toPromise();
+        return this.api.v1OrganizationIdInputsBulkPostWithHttpInfo(param.organizationId, param.routesBulkCreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1190,7 +1232,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v1OrganizationIdInputsBulkPost(param: OrganizationInputsApiV1OrganizationIdInputsBulkPostRequest, options?: Configuration): Promise<Array<ModelsInput>> {
-        return this.api.v1OrganizationIdInputsBulkPost(param.organizationId, param.routesBulkCreateInputRequest,  options).toPromise();
+        return this.api.v1OrganizationIdInputsBulkPost(param.organizationId, param.routesBulkCreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1253,7 +1295,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v1OrganizationIdInputsInputIdPatchWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsInputIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        return this.api.v1OrganizationIdInputsInputIdPatchWithHttpInfo(param.organizationId, param.inputId, param.routesUpdateInputRequest,  options).toPromise();
+        return this.api.v1OrganizationIdInputsInputIdPatchWithHttpInfo(param.organizationId, param.inputId, param.routesUpdateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1262,7 +1304,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v1OrganizationIdInputsInputIdPatch(param: OrganizationInputsApiV1OrganizationIdInputsInputIdPatchRequest, options?: Configuration): Promise<ModelsInput> {
-        return this.api.v1OrganizationIdInputsInputIdPatch(param.organizationId, param.inputId, param.routesUpdateInputRequest,  options).toPromise();
+        return this.api.v1OrganizationIdInputsInputIdPatch(param.organizationId, param.inputId, param.routesUpdateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1271,7 +1313,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v1OrganizationIdInputsPostWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsPostRequest, options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        return this.api.v1OrganizationIdInputsPostWithHttpInfo(param.organizationId, param.routesCreateInputRequest,  options).toPromise();
+        return this.api.v1OrganizationIdInputsPostWithHttpInfo(param.organizationId, param.routesCreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1280,7 +1322,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v1OrganizationIdInputsPost(param: OrganizationInputsApiV1OrganizationIdInputsPostRequest, options?: Configuration): Promise<ModelsInput> {
-        return this.api.v1OrganizationIdInputsPost(param.organizationId, param.routesCreateInputRequest,  options).toPromise();
+        return this.api.v1OrganizationIdInputsPost(param.organizationId, param.routesCreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1289,7 +1331,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v2OrganizationIdInputsBulkPostWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsBulkPostRequest, options?: Configuration): Promise<HttpInfo<Array<ModelsInput>>> {
-        return this.api.v2OrganizationIdInputsBulkPostWithHttpInfo(param.organizationId, param.routesV2BulkCreateInputRequest,  options).toPromise();
+        return this.api.v2OrganizationIdInputsBulkPostWithHttpInfo(param.organizationId, param.routesV2BulkCreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1298,7 +1340,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v2OrganizationIdInputsBulkPost(param: OrganizationInputsApiV2OrganizationIdInputsBulkPostRequest, options?: Configuration): Promise<Array<ModelsInput>> {
-        return this.api.v2OrganizationIdInputsBulkPost(param.organizationId, param.routesV2BulkCreateInputRequest,  options).toPromise();
+        return this.api.v2OrganizationIdInputsBulkPost(param.organizationId, param.routesV2BulkCreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1307,7 +1349,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v2OrganizationIdInputsInputIdPatchWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        return this.api.v2OrganizationIdInputsInputIdPatchWithHttpInfo(param.organizationId, param.inputId, param.routesV2UpdateInputRequest,  options).toPromise();
+        return this.api.v2OrganizationIdInputsInputIdPatchWithHttpInfo(param.organizationId, param.inputId, param.routesV2UpdateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1316,7 +1358,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v2OrganizationIdInputsInputIdPatch(param: OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest, options?: Configuration): Promise<ModelsInput> {
-        return this.api.v2OrganizationIdInputsInputIdPatch(param.organizationId, param.inputId, param.routesV2UpdateInputRequest,  options).toPromise();
+        return this.api.v2OrganizationIdInputsInputIdPatch(param.organizationId, param.inputId, param.routesV2UpdateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1325,7 +1367,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v2OrganizationIdInputsPostWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsPostRequest, options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        return this.api.v2OrganizationIdInputsPostWithHttpInfo(param.organizationId, param.routesV2CreateInputRequest,  options).toPromise();
+        return this.api.v2OrganizationIdInputsPostWithHttpInfo(param.organizationId, param.routesV2CreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1334,7 +1376,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v2OrganizationIdInputsPost(param: OrganizationInputsApiV2OrganizationIdInputsPostRequest, options?: Configuration): Promise<ModelsInput> {
-        return this.api.v2OrganizationIdInputsPost(param.organizationId, param.routesV2CreateInputRequest,  options).toPromise();
+        return this.api.v2OrganizationIdInputsPost(param.organizationId, param.routesV2CreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1524,6 +1566,13 @@ export interface OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchReque
      * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPatch
      */
     routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPatch
+     */
+    testConnection?: boolean
 }
 
 export interface OrganizationOutputsApiV2OrganizationIdOutputsPostRequest {
@@ -1540,6 +1589,13 @@ export interface OrganizationOutputsApiV2OrganizationIdOutputsPostRequest {
      * @memberof OrganizationOutputsApiv2OrganizationIdOutputsPost
      */
     routesV2CreateOutputRequest: RoutesV2CreateOutputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsPost
+     */
+    testConnection?: boolean
 }
 
 export interface OrganizationOutputsApiV2OrganizationIdOutputsTestConnectionPostRequest {
@@ -1661,7 +1717,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
-        return this.api.v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(param.organizationId, param.outputId, param.routesV2UpdateOutputRequest,  options).toPromise();
+        return this.api.v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(param.organizationId, param.outputId, param.routesV2UpdateOutputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1670,7 +1726,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public v2OrganizationIdOutputsOutputIdPatch(param: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchRequest, options?: Configuration): Promise<ModelsOutput> {
-        return this.api.v2OrganizationIdOutputsOutputIdPatch(param.organizationId, param.outputId, param.routesV2UpdateOutputRequest,  options).toPromise();
+        return this.api.v2OrganizationIdOutputsOutputIdPatch(param.organizationId, param.outputId, param.routesV2UpdateOutputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1679,7 +1735,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public v2OrganizationIdOutputsPostWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsPostRequest, options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
-        return this.api.v2OrganizationIdOutputsPostWithHttpInfo(param.organizationId, param.routesV2CreateOutputRequest,  options).toPromise();
+        return this.api.v2OrganizationIdOutputsPostWithHttpInfo(param.organizationId, param.routesV2CreateOutputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1688,7 +1744,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public v2OrganizationIdOutputsPost(param: OrganizationOutputsApiV2OrganizationIdOutputsPostRequest, options?: Configuration): Promise<ModelsOutput> {
-        return this.api.v2OrganizationIdOutputsPost(param.organizationId, param.routesV2CreateOutputRequest,  options).toPromise();
+        return this.api.v2OrganizationIdOutputsPost(param.organizationId, param.routesV2CreateOutputRequest, param.testConnection,  options).toPromise();
     }
 
     /**

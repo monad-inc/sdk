@@ -33,8 +33,9 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
      * Bulk create inputs
      * @param organizationId Organization ID
      * @param routesBulkCreateInputRequest Request body for creating multiple inputs
+     * @param testConnection Test connection before creating the input
      */
-    public async v1OrganizationIdInputsBulkPost(organizationId: string, routesBulkCreateInputRequest: RoutesBulkCreateInputRequest, _options?: Configuration): Promise<RequestContext> {
+    public async v1OrganizationIdInputsBulkPost(organizationId: string, routesBulkCreateInputRequest: RoutesBulkCreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -49,6 +50,7 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
         // Path Params
         const localVarPath = '/v1/{organization_id}/inputs/bulk'
             .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
@@ -56,6 +58,11 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (testConnection !== undefined) {
+            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
+        }
 
 
         // Body Params
@@ -254,8 +261,9 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
      * @param organizationId Organization ID
      * @param inputId Input ID
      * @param routesUpdateInputRequest Request body for updating an input
+     * @param testConnection Test connection before creating the input
      */
-    public async v1OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesUpdateInputRequest: RoutesUpdateInputRequest, _options?: Configuration): Promise<RequestContext> {
+    public async v1OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesUpdateInputRequest: RoutesUpdateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -276,6 +284,7 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
         // Path Params
         const localVarPath = '/v1/{organization_id}/inputs/{input_id}'
             .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
@@ -284,6 +293,11 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (testConnection !== undefined) {
+            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
+        }
 
 
         // Body Params
@@ -322,8 +336,9 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
      * Create input
      * @param organizationId Organization ID
      * @param routesCreateInputRequest Request body for creating an input
+     * @param testConnection Test connection before creating the input
      */
-    public async v1OrganizationIdInputsPost(organizationId: string, routesCreateInputRequest: RoutesCreateInputRequest, _options?: Configuration): Promise<RequestContext> {
+    public async v1OrganizationIdInputsPost(organizationId: string, routesCreateInputRequest: RoutesCreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -338,6 +353,7 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
         // Path Params
         const localVarPath = '/v1/{organization_id}/inputs'
             .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
@@ -345,6 +361,11 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (testConnection !== undefined) {
+            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
+        }
 
 
         // Body Params
@@ -383,8 +404,9 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
      * Bulk create inputs
      * @param organizationId Organization ID
      * @param routesV2BulkCreateInputRequest Request body for creating multiple inputs
+     * @param testConnection Test connection before creating the input
      */
-    public async v2OrganizationIdInputsBulkPost(organizationId: string, routesV2BulkCreateInputRequest: RoutesV2BulkCreateInputRequest, _options?: Configuration): Promise<RequestContext> {
+    public async v2OrganizationIdInputsBulkPost(organizationId: string, routesV2BulkCreateInputRequest: RoutesV2BulkCreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -399,6 +421,7 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
         // Path Params
         const localVarPath = '/v2/{organization_id}/inputs/bulk'
             .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
@@ -406,6 +429,11 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (testConnection !== undefined) {
+            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
+        }
 
 
         // Body Params
@@ -445,8 +473,9 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
      * @param organizationId Organization ID
      * @param inputId Input ID
      * @param routesV2UpdateInputRequest Input configuration update
+     * @param testConnection Test connection before creating the input
      */
-    public async v2OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, _options?: Configuration): Promise<RequestContext> {
+    public async v2OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -467,6 +496,7 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
         // Path Params
         const localVarPath = '/v2/{organization_id}/inputs/{input_id}'
             .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
@@ -475,6 +505,11 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (testConnection !== undefined) {
+            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
+        }
 
 
         // Body Params
@@ -513,8 +548,9 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
      * Create input
      * @param organizationId Organization ID
      * @param routesV2CreateInputRequest Input configuration
+     * @param testConnection Test connection before creating the input
      */
-    public async v2OrganizationIdInputsPost(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, _options?: Configuration): Promise<RequestContext> {
+    public async v2OrganizationIdInputsPost(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -529,6 +565,7 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+
         // Path Params
         const localVarPath = '/v2/{organization_id}/inputs'
             .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
@@ -536,6 +573,11 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (testConnection !== undefined) {
+            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
+        }
 
 
         // Body Params

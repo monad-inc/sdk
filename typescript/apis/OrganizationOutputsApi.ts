@@ -319,8 +319,9 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
      * @param organizationId Organization ID
      * @param outputId Output ID
      * @param routesV2UpdateOutputRequest Output configuration update
+     * @param testConnection Test connection before creating the input
      */
-    public async v2OrganizationIdOutputsOutputIdPatch(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, _options?: Configuration): Promise<RequestContext> {
+    public async v2OrganizationIdOutputsOutputIdPatch(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -341,6 +342,7 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         }
 
 
+
         // Path Params
         const localVarPath = '/v2/{organization_id}/outputs/{output_id}'
             .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
@@ -349,6 +351,11 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (testConnection !== undefined) {
+            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
+        }
 
 
         // Body Params
@@ -387,8 +394,9 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
      * Create output
      * @param organizationId Organization ID
      * @param routesV2CreateOutputRequest Output configuration
+     * @param testConnection Test connection before creating the input
      */
-    public async v2OrganizationIdOutputsPost(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, _options?: Configuration): Promise<RequestContext> {
+    public async v2OrganizationIdOutputsPost(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -403,6 +411,7 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         }
 
 
+
         // Path Params
         const localVarPath = '/v2/{organization_id}/outputs'
             .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
@@ -410,6 +419,11 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (testConnection !== undefined) {
+            requestContext.setQueryParam("test_connection", ObjectSerializer.serialize(testConnection, "boolean", ""));
+        }
 
 
         // Body Params

@@ -799,9 +799,10 @@ export class PromiseOrganizationInputsApi {
      * Bulk create inputs
      * @param organizationId Organization ID
      * @param routesBulkCreateInputRequest Request body for creating multiple inputs
+     * @param [testConnection] Test connection before creating the input
      */
-    public v1OrganizationIdInputsBulkPostWithHttpInfo(organizationId: string, routesBulkCreateInputRequest: RoutesBulkCreateInputRequest, _options?: Configuration): Promise<HttpInfo<Array<ModelsInput>>> {
-        const result = this.api.v1OrganizationIdInputsBulkPostWithHttpInfo(organizationId, routesBulkCreateInputRequest, _options);
+    public v1OrganizationIdInputsBulkPostWithHttpInfo(organizationId: string, routesBulkCreateInputRequest: RoutesBulkCreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<Array<ModelsInput>>> {
+        const result = this.api.v1OrganizationIdInputsBulkPostWithHttpInfo(organizationId, routesBulkCreateInputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -810,9 +811,10 @@ export class PromiseOrganizationInputsApi {
      * Bulk create inputs
      * @param organizationId Organization ID
      * @param routesBulkCreateInputRequest Request body for creating multiple inputs
+     * @param [testConnection] Test connection before creating the input
      */
-    public v1OrganizationIdInputsBulkPost(organizationId: string, routesBulkCreateInputRequest: RoutesBulkCreateInputRequest, _options?: Configuration): Promise<Array<ModelsInput>> {
-        const result = this.api.v1OrganizationIdInputsBulkPost(organizationId, routesBulkCreateInputRequest, _options);
+    public v1OrganizationIdInputsBulkPost(organizationId: string, routesBulkCreateInputRequest: RoutesBulkCreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<Array<ModelsInput>> {
+        const result = this.api.v1OrganizationIdInputsBulkPost(organizationId, routesBulkCreateInputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -890,9 +892,10 @@ export class PromiseOrganizationInputsApi {
      * @param organizationId Organization ID
      * @param inputId Input ID
      * @param routesUpdateInputRequest Request body for updating an input
+     * @param [testConnection] Test connection before creating the input
      */
-    public v1OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId: string, inputId: string, routesUpdateInputRequest: RoutesUpdateInputRequest, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        const result = this.api.v1OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId, inputId, routesUpdateInputRequest, _options);
+    public v1OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId: string, inputId: string, routesUpdateInputRequest: RoutesUpdateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
+        const result = this.api.v1OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId, inputId, routesUpdateInputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -902,9 +905,10 @@ export class PromiseOrganizationInputsApi {
      * @param organizationId Organization ID
      * @param inputId Input ID
      * @param routesUpdateInputRequest Request body for updating an input
+     * @param [testConnection] Test connection before creating the input
      */
-    public v1OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesUpdateInputRequest: RoutesUpdateInputRequest, _options?: Configuration): Promise<ModelsInput> {
-        const result = this.api.v1OrganizationIdInputsInputIdPatch(organizationId, inputId, routesUpdateInputRequest, _options);
+    public v1OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesUpdateInputRequest: RoutesUpdateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<ModelsInput> {
+        const result = this.api.v1OrganizationIdInputsInputIdPatch(organizationId, inputId, routesUpdateInputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -913,9 +917,10 @@ export class PromiseOrganizationInputsApi {
      * Create input
      * @param organizationId Organization ID
      * @param routesCreateInputRequest Request body for creating an input
+     * @param [testConnection] Test connection before creating the input
      */
-    public v1OrganizationIdInputsPostWithHttpInfo(organizationId: string, routesCreateInputRequest: RoutesCreateInputRequest, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        const result = this.api.v1OrganizationIdInputsPostWithHttpInfo(organizationId, routesCreateInputRequest, _options);
+    public v1OrganizationIdInputsPostWithHttpInfo(organizationId: string, routesCreateInputRequest: RoutesCreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
+        const result = this.api.v1OrganizationIdInputsPostWithHttpInfo(organizationId, routesCreateInputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -924,9 +929,10 @@ export class PromiseOrganizationInputsApi {
      * Create input
      * @param organizationId Organization ID
      * @param routesCreateInputRequest Request body for creating an input
+     * @param [testConnection] Test connection before creating the input
      */
-    public v1OrganizationIdInputsPost(organizationId: string, routesCreateInputRequest: RoutesCreateInputRequest, _options?: Configuration): Promise<ModelsInput> {
-        const result = this.api.v1OrganizationIdInputsPost(organizationId, routesCreateInputRequest, _options);
+    public v1OrganizationIdInputsPost(organizationId: string, routesCreateInputRequest: RoutesCreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<ModelsInput> {
+        const result = this.api.v1OrganizationIdInputsPost(organizationId, routesCreateInputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -935,9 +941,10 @@ export class PromiseOrganizationInputsApi {
      * Bulk create inputs
      * @param organizationId Organization ID
      * @param routesV2BulkCreateInputRequest Request body for creating multiple inputs
+     * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdInputsBulkPostWithHttpInfo(organizationId: string, routesV2BulkCreateInputRequest: RoutesV2BulkCreateInputRequest, _options?: Configuration): Promise<HttpInfo<Array<ModelsInput>>> {
-        const result = this.api.v2OrganizationIdInputsBulkPostWithHttpInfo(organizationId, routesV2BulkCreateInputRequest, _options);
+    public v2OrganizationIdInputsBulkPostWithHttpInfo(organizationId: string, routesV2BulkCreateInputRequest: RoutesV2BulkCreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<Array<ModelsInput>>> {
+        const result = this.api.v2OrganizationIdInputsBulkPostWithHttpInfo(organizationId, routesV2BulkCreateInputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -946,9 +953,10 @@ export class PromiseOrganizationInputsApi {
      * Bulk create inputs
      * @param organizationId Organization ID
      * @param routesV2BulkCreateInputRequest Request body for creating multiple inputs
+     * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdInputsBulkPost(organizationId: string, routesV2BulkCreateInputRequest: RoutesV2BulkCreateInputRequest, _options?: Configuration): Promise<Array<ModelsInput>> {
-        const result = this.api.v2OrganizationIdInputsBulkPost(organizationId, routesV2BulkCreateInputRequest, _options);
+    public v2OrganizationIdInputsBulkPost(organizationId: string, routesV2BulkCreateInputRequest: RoutesV2BulkCreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<Array<ModelsInput>> {
+        const result = this.api.v2OrganizationIdInputsBulkPost(organizationId, routesV2BulkCreateInputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -958,9 +966,10 @@ export class PromiseOrganizationInputsApi {
      * @param organizationId Organization ID
      * @param inputId Input ID
      * @param routesV2UpdateInputRequest Input configuration update
+     * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        const result = this.api.v2OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId, inputId, routesV2UpdateInputRequest, _options);
+    public v2OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
+        const result = this.api.v2OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId, inputId, routesV2UpdateInputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -970,9 +979,10 @@ export class PromiseOrganizationInputsApi {
      * @param organizationId Organization ID
      * @param inputId Input ID
      * @param routesV2UpdateInputRequest Input configuration update
+     * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, _options?: Configuration): Promise<ModelsInput> {
-        const result = this.api.v2OrganizationIdInputsInputIdPatch(organizationId, inputId, routesV2UpdateInputRequest, _options);
+    public v2OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<ModelsInput> {
+        const result = this.api.v2OrganizationIdInputsInputIdPatch(organizationId, inputId, routesV2UpdateInputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -981,9 +991,10 @@ export class PromiseOrganizationInputsApi {
      * Create input
      * @param organizationId Organization ID
      * @param routesV2CreateInputRequest Input configuration
+     * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdInputsPostWithHttpInfo(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        const result = this.api.v2OrganizationIdInputsPostWithHttpInfo(organizationId, routesV2CreateInputRequest, _options);
+    public v2OrganizationIdInputsPostWithHttpInfo(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
+        const result = this.api.v2OrganizationIdInputsPostWithHttpInfo(organizationId, routesV2CreateInputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -992,9 +1003,10 @@ export class PromiseOrganizationInputsApi {
      * Create input
      * @param organizationId Organization ID
      * @param routesV2CreateInputRequest Input configuration
+     * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdInputsPost(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, _options?: Configuration): Promise<ModelsInput> {
-        const result = this.api.v2OrganizationIdInputsPost(organizationId, routesV2CreateInputRequest, _options);
+    public v2OrganizationIdInputsPost(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<ModelsInput> {
+        const result = this.api.v2OrganizationIdInputsPost(organizationId, routesV2CreateInputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -1200,9 +1212,10 @@ export class PromiseOrganizationOutputsApi {
      * @param organizationId Organization ID
      * @param outputId Output ID
      * @param routesV2UpdateOutputRequest Output configuration update
+     * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, _options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
-        const result = this.api.v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId, outputId, routesV2UpdateOutputRequest, _options);
+    public v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
+        const result = this.api.v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -1212,9 +1225,10 @@ export class PromiseOrganizationOutputsApi {
      * @param organizationId Organization ID
      * @param outputId Output ID
      * @param routesV2UpdateOutputRequest Output configuration update
+     * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdOutputsOutputIdPatch(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, _options?: Configuration): Promise<ModelsOutput> {
-        const result = this.api.v2OrganizationIdOutputsOutputIdPatch(organizationId, outputId, routesV2UpdateOutputRequest, _options);
+    public v2OrganizationIdOutputsOutputIdPatch(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<ModelsOutput> {
+        const result = this.api.v2OrganizationIdOutputsOutputIdPatch(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -1223,9 +1237,10 @@ export class PromiseOrganizationOutputsApi {
      * Create output
      * @param organizationId Organization ID
      * @param routesV2CreateOutputRequest Output configuration
+     * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdOutputsPostWithHttpInfo(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, _options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
-        const result = this.api.v2OrganizationIdOutputsPostWithHttpInfo(organizationId, routesV2CreateOutputRequest, _options);
+    public v2OrganizationIdOutputsPostWithHttpInfo(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
+        const result = this.api.v2OrganizationIdOutputsPostWithHttpInfo(organizationId, routesV2CreateOutputRequest, testConnection, _options);
         return result.toPromise();
     }
 
@@ -1234,9 +1249,10 @@ export class PromiseOrganizationOutputsApi {
      * Create output
      * @param organizationId Organization ID
      * @param routesV2CreateOutputRequest Output configuration
+     * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdOutputsPost(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, _options?: Configuration): Promise<ModelsOutput> {
-        const result = this.api.v2OrganizationIdOutputsPost(organizationId, routesV2CreateOutputRequest, _options);
+    public v2OrganizationIdOutputsPost(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<ModelsOutput> {
+        const result = this.api.v2OrganizationIdOutputsPost(organizationId, routesV2CreateOutputRequest, testConnection, _options);
         return result.toPromise();
     }
 

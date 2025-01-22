@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ## V2OrganizationIdOutputsOutputIdPatch
 
-> ModelsOutput V2OrganizationIdOutputsOutputIdPatch(ctx, organizationId, outputId).RoutesV2UpdateOutputRequest(routesV2UpdateOutputRequest).Execute()
+> ModelsOutput V2OrganizationIdOutputsOutputIdPatch(ctx, organizationId, outputId).RoutesV2UpdateOutputRequest(routesV2UpdateOutputRequest).TestConnection(testConnection).Execute()
 
 Update output
 
@@ -406,10 +406,11 @@ func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	outputId := "outputId_example" // string | Output ID
 	routesV2UpdateOutputRequest := *openapiclient.NewRoutesV2UpdateOutputRequest() // RoutesV2UpdateOutputRequest | Output configuration update
+	testConnection := true // bool | Test connection before creating the input (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationOutputsAPI.V2OrganizationIdOutputsOutputIdPatch(context.Background(), organizationId, outputId).RoutesV2UpdateOutputRequest(routesV2UpdateOutputRequest).Execute()
+	resp, r, err := apiClient.OrganizationOutputsAPI.V2OrganizationIdOutputsOutputIdPatch(context.Background(), organizationId, outputId).RoutesV2UpdateOutputRequest(routesV2UpdateOutputRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationOutputsAPI.V2OrganizationIdOutputsOutputIdPatch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -438,6 +439,7 @@ Name | Type | Description  | Notes
 
 
  **routesV2UpdateOutputRequest** | [**RoutesV2UpdateOutputRequest**](RoutesV2UpdateOutputRequest.md) | Output configuration update | 
+ **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type
 
@@ -459,7 +461,7 @@ Name | Type | Description  | Notes
 
 ## V2OrganizationIdOutputsPost
 
-> ModelsOutput V2OrganizationIdOutputsPost(ctx, organizationId).RoutesV2CreateOutputRequest(routesV2CreateOutputRequest).Execute()
+> ModelsOutput V2OrganizationIdOutputsPost(ctx, organizationId).RoutesV2CreateOutputRequest(routesV2CreateOutputRequest).TestConnection(testConnection).Execute()
 
 Create output
 
@@ -480,10 +482,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	routesV2CreateOutputRequest := *openapiclient.NewRoutesV2CreateOutputRequest() // RoutesV2CreateOutputRequest | Output configuration
+	testConnection := true // bool | Test connection before creating the input (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationOutputsAPI.V2OrganizationIdOutputsPost(context.Background(), organizationId).RoutesV2CreateOutputRequest(routesV2CreateOutputRequest).Execute()
+	resp, r, err := apiClient.OrganizationOutputsAPI.V2OrganizationIdOutputsPost(context.Background(), organizationId).RoutesV2CreateOutputRequest(routesV2CreateOutputRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationOutputsAPI.V2OrganizationIdOutputsPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -510,6 +513,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **routesV2CreateOutputRequest** | [**RoutesV2CreateOutputRequest**](RoutesV2CreateOutputRequest.md) | Output configuration | 
+ **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type
 

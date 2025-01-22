@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## V1OrganizationIdInputsBulkPost
 
-> []ModelsInput V1OrganizationIdInputsBulkPost(ctx, organizationId).RoutesBulkCreateInputRequest(routesBulkCreateInputRequest).Execute()
+> []ModelsInput V1OrganizationIdInputsBulkPost(ctx, organizationId).RoutesBulkCreateInputRequest(routesBulkCreateInputRequest).TestConnection(testConnection).Execute()
 
 Bulk create inputs
 
@@ -40,10 +40,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	routesBulkCreateInputRequest := *openapiclient.NewRoutesBulkCreateInputRequest([]openapiclient.RoutesCreateInputRequest{*openapiclient.NewRoutesCreateInputRequest("Name_example", "Type_example")}) // RoutesBulkCreateInputRequest | Request body for creating multiple inputs
+	testConnection := true // bool | Test connection before creating the input (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationInputsAPI.V1OrganizationIdInputsBulkPost(context.Background(), organizationId).RoutesBulkCreateInputRequest(routesBulkCreateInputRequest).Execute()
+	resp, r, err := apiClient.OrganizationInputsAPI.V1OrganizationIdInputsBulkPost(context.Background(), organizationId).RoutesBulkCreateInputRequest(routesBulkCreateInputRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.V1OrganizationIdInputsBulkPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -70,6 +71,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **routesBulkCreateInputRequest** | [**RoutesBulkCreateInputRequest**](RoutesBulkCreateInputRequest.md) | Request body for creating multiple inputs | 
+ **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type
 
@@ -311,7 +313,7 @@ Name | Type | Description  | Notes
 
 ## V1OrganizationIdInputsInputIdPatch
 
-> ModelsInput V1OrganizationIdInputsInputIdPatch(ctx, organizationId, inputId).RoutesUpdateInputRequest(routesUpdateInputRequest).Execute()
+> ModelsInput V1OrganizationIdInputsInputIdPatch(ctx, organizationId, inputId).RoutesUpdateInputRequest(routesUpdateInputRequest).TestConnection(testConnection).Execute()
 
 Update input
 
@@ -333,10 +335,11 @@ func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	inputId := "inputId_example" // string | Input ID
 	routesUpdateInputRequest := *openapiclient.NewRoutesUpdateInputRequest("Type_example") // RoutesUpdateInputRequest | Request body for updating an input
+	testConnection := true // bool | Test connection before creating the input (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationInputsAPI.V1OrganizationIdInputsInputIdPatch(context.Background(), organizationId, inputId).RoutesUpdateInputRequest(routesUpdateInputRequest).Execute()
+	resp, r, err := apiClient.OrganizationInputsAPI.V1OrganizationIdInputsInputIdPatch(context.Background(), organizationId, inputId).RoutesUpdateInputRequest(routesUpdateInputRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.V1OrganizationIdInputsInputIdPatch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -365,6 +368,7 @@ Name | Type | Description  | Notes
 
 
  **routesUpdateInputRequest** | [**RoutesUpdateInputRequest**](RoutesUpdateInputRequest.md) | Request body for updating an input | 
+ **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type
 
@@ -386,7 +390,7 @@ Name | Type | Description  | Notes
 
 ## V1OrganizationIdInputsPost
 
-> ModelsInput V1OrganizationIdInputsPost(ctx, organizationId).RoutesCreateInputRequest(routesCreateInputRequest).Execute()
+> ModelsInput V1OrganizationIdInputsPost(ctx, organizationId).RoutesCreateInputRequest(routesCreateInputRequest).TestConnection(testConnection).Execute()
 
 Create input
 
@@ -407,10 +411,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	routesCreateInputRequest := *openapiclient.NewRoutesCreateInputRequest("Name_example", "Type_example") // RoutesCreateInputRequest | Request body for creating an input
+	testConnection := true // bool | Test connection before creating the input (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationInputsAPI.V1OrganizationIdInputsPost(context.Background(), organizationId).RoutesCreateInputRequest(routesCreateInputRequest).Execute()
+	resp, r, err := apiClient.OrganizationInputsAPI.V1OrganizationIdInputsPost(context.Background(), organizationId).RoutesCreateInputRequest(routesCreateInputRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.V1OrganizationIdInputsPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -437,6 +442,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **routesCreateInputRequest** | [**RoutesCreateInputRequest**](RoutesCreateInputRequest.md) | Request body for creating an input | 
+ **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type
 
@@ -458,7 +464,7 @@ Name | Type | Description  | Notes
 
 ## V2OrganizationIdInputsBulkPost
 
-> []ModelsInput V2OrganizationIdInputsBulkPost(ctx, organizationId).RoutesV2BulkCreateInputRequest(routesV2BulkCreateInputRequest).Execute()
+> []ModelsInput V2OrganizationIdInputsBulkPost(ctx, organizationId).RoutesV2BulkCreateInputRequest(routesV2BulkCreateInputRequest).TestConnection(testConnection).Execute()
 
 Bulk create inputs
 
@@ -479,10 +485,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	routesV2BulkCreateInputRequest := *openapiclient.NewRoutesV2BulkCreateInputRequest() // RoutesV2BulkCreateInputRequest | Request body for creating multiple inputs
+	testConnection := true // bool | Test connection before creating the input (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationInputsAPI.V2OrganizationIdInputsBulkPost(context.Background(), organizationId).RoutesV2BulkCreateInputRequest(routesV2BulkCreateInputRequest).Execute()
+	resp, r, err := apiClient.OrganizationInputsAPI.V2OrganizationIdInputsBulkPost(context.Background(), organizationId).RoutesV2BulkCreateInputRequest(routesV2BulkCreateInputRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.V2OrganizationIdInputsBulkPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -509,6 +516,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **routesV2BulkCreateInputRequest** | [**RoutesV2BulkCreateInputRequest**](RoutesV2BulkCreateInputRequest.md) | Request body for creating multiple inputs | 
+ **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type
 
@@ -530,7 +538,7 @@ Name | Type | Description  | Notes
 
 ## V2OrganizationIdInputsInputIdPatch
 
-> ModelsInput V2OrganizationIdInputsInputIdPatch(ctx, organizationId, inputId).RoutesV2UpdateInputRequest(routesV2UpdateInputRequest).Execute()
+> ModelsInput V2OrganizationIdInputsInputIdPatch(ctx, organizationId, inputId).RoutesV2UpdateInputRequest(routesV2UpdateInputRequest).TestConnection(testConnection).Execute()
 
 Update input
 
@@ -552,10 +560,11 @@ func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	inputId := "inputId_example" // string | Input ID
 	routesV2UpdateInputRequest := *openapiclient.NewRoutesV2UpdateInputRequest() // RoutesV2UpdateInputRequest | Input configuration update
+	testConnection := true // bool | Test connection before creating the input (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationInputsAPI.V2OrganizationIdInputsInputIdPatch(context.Background(), organizationId, inputId).RoutesV2UpdateInputRequest(routesV2UpdateInputRequest).Execute()
+	resp, r, err := apiClient.OrganizationInputsAPI.V2OrganizationIdInputsInputIdPatch(context.Background(), organizationId, inputId).RoutesV2UpdateInputRequest(routesV2UpdateInputRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.V2OrganizationIdInputsInputIdPatch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -584,6 +593,7 @@ Name | Type | Description  | Notes
 
 
  **routesV2UpdateInputRequest** | [**RoutesV2UpdateInputRequest**](RoutesV2UpdateInputRequest.md) | Input configuration update | 
+ **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type
 
@@ -605,7 +615,7 @@ Name | Type | Description  | Notes
 
 ## V2OrganizationIdInputsPost
 
-> ModelsInput V2OrganizationIdInputsPost(ctx, organizationId).RoutesV2CreateInputRequest(routesV2CreateInputRequest).Execute()
+> ModelsInput V2OrganizationIdInputsPost(ctx, organizationId).RoutesV2CreateInputRequest(routesV2CreateInputRequest).TestConnection(testConnection).Execute()
 
 Create input
 
@@ -626,10 +636,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	routesV2CreateInputRequest := *openapiclient.NewRoutesV2CreateInputRequest() // RoutesV2CreateInputRequest | Input configuration
+	testConnection := true // bool | Test connection before creating the input (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationInputsAPI.V2OrganizationIdInputsPost(context.Background(), organizationId).RoutesV2CreateInputRequest(routesV2CreateInputRequest).Execute()
+	resp, r, err := apiClient.OrganizationInputsAPI.V2OrganizationIdInputsPost(context.Background(), organizationId).RoutesV2CreateInputRequest(routesV2CreateInputRequest).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.V2OrganizationIdInputsPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -656,6 +667,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **routesV2CreateInputRequest** | [**RoutesV2CreateInputRequest**](RoutesV2CreateInputRequest.md) | Input configuration | 
+ **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type
 

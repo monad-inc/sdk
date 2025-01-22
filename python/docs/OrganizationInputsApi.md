@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **v1_organization_id_inputs_bulk_post**
-> List[ModelsInput] v1_organization_id_inputs_bulk_post(organization_id, routes_bulk_create_input_request)
+> List[ModelsInput] v1_organization_id_inputs_bulk_post(organization_id, routes_bulk_create_input_request, test_connection=test_connection)
 
 Bulk create inputs
 
@@ -64,10 +64,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationInputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     routes_bulk_create_input_request = monad.RoutesBulkCreateInputRequest() # RoutesBulkCreateInputRequest | Request body for creating multiple inputs
+    test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Bulk create inputs
-        api_response = api_instance.v1_organization_id_inputs_bulk_post(organization_id, routes_bulk_create_input_request)
+        api_response = api_instance.v1_organization_id_inputs_bulk_post(organization_id, routes_bulk_create_input_request, test_connection=test_connection)
         print("The response of OrganizationInputsApi->v1_organization_id_inputs_bulk_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -83,6 +84,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **routes_bulk_create_input_request** | [**RoutesBulkCreateInputRequest**](RoutesBulkCreateInputRequest.md)| Request body for creating multiple inputs | 
+ **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type
 
@@ -374,7 +376,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_organization_id_inputs_input_id_patch**
-> ModelsInput v1_organization_id_inputs_input_id_patch(organization_id, input_id, routes_update_input_request)
+> ModelsInput v1_organization_id_inputs_input_id_patch(organization_id, input_id, routes_update_input_request, test_connection=test_connection)
 
 Update input
 
@@ -422,10 +424,11 @@ with monad.ApiClient(configuration) as api_client:
     organization_id = 'organization_id_example' # str | Organization ID
     input_id = 'input_id_example' # str | Input ID
     routes_update_input_request = monad.RoutesUpdateInputRequest() # RoutesUpdateInputRequest | Request body for updating an input
+    test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Update input
-        api_response = api_instance.v1_organization_id_inputs_input_id_patch(organization_id, input_id, routes_update_input_request)
+        api_response = api_instance.v1_organization_id_inputs_input_id_patch(organization_id, input_id, routes_update_input_request, test_connection=test_connection)
         print("The response of OrganizationInputsApi->v1_organization_id_inputs_input_id_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -442,6 +445,7 @@ Name | Type | Description  | Notes
  **organization_id** | **str**| Organization ID | 
  **input_id** | **str**| Input ID | 
  **routes_update_input_request** | [**RoutesUpdateInputRequest**](RoutesUpdateInputRequest.md)| Request body for updating an input | 
+ **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type
 
@@ -467,7 +471,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_organization_id_inputs_post**
-> ModelsInput v1_organization_id_inputs_post(organization_id, routes_create_input_request)
+> ModelsInput v1_organization_id_inputs_post(organization_id, routes_create_input_request, test_connection=test_connection)
 
 Create input
 
@@ -514,10 +518,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationInputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     routes_create_input_request = monad.RoutesCreateInputRequest() # RoutesCreateInputRequest | Request body for creating an input
+    test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Create input
-        api_response = api_instance.v1_organization_id_inputs_post(organization_id, routes_create_input_request)
+        api_response = api_instance.v1_organization_id_inputs_post(organization_id, routes_create_input_request, test_connection=test_connection)
         print("The response of OrganizationInputsApi->v1_organization_id_inputs_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -533,6 +538,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **routes_create_input_request** | [**RoutesCreateInputRequest**](RoutesCreateInputRequest.md)| Request body for creating an input | 
+ **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type
 
@@ -557,7 +563,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_organization_id_inputs_bulk_post**
-> List[ModelsInput] v2_organization_id_inputs_bulk_post(organization_id, routes_v2_bulk_create_input_request)
+> List[ModelsInput] v2_organization_id_inputs_bulk_post(organization_id, routes_v2_bulk_create_input_request, test_connection=test_connection)
 
 Bulk create inputs
 
@@ -604,10 +610,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationInputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     routes_v2_bulk_create_input_request = monad.RoutesV2BulkCreateInputRequest() # RoutesV2BulkCreateInputRequest | Request body for creating multiple inputs
+    test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Bulk create inputs
-        api_response = api_instance.v2_organization_id_inputs_bulk_post(organization_id, routes_v2_bulk_create_input_request)
+        api_response = api_instance.v2_organization_id_inputs_bulk_post(organization_id, routes_v2_bulk_create_input_request, test_connection=test_connection)
         print("The response of OrganizationInputsApi->v2_organization_id_inputs_bulk_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -623,6 +630,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **routes_v2_bulk_create_input_request** | [**RoutesV2BulkCreateInputRequest**](RoutesV2BulkCreateInputRequest.md)| Request body for creating multiple inputs | 
+ **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type
 
@@ -648,7 +656,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_organization_id_inputs_input_id_patch**
-> ModelsInput v2_organization_id_inputs_input_id_patch(organization_id, input_id, routes_v2_update_input_request)
+> ModelsInput v2_organization_id_inputs_input_id_patch(organization_id, input_id, routes_v2_update_input_request, test_connection=test_connection)
 
 Update input
 
@@ -696,10 +704,11 @@ with monad.ApiClient(configuration) as api_client:
     organization_id = 'organization_id_example' # str | Organization ID
     input_id = 'input_id_example' # str | Input ID
     routes_v2_update_input_request = monad.RoutesV2UpdateInputRequest() # RoutesV2UpdateInputRequest | Input configuration update
+    test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Update input
-        api_response = api_instance.v2_organization_id_inputs_input_id_patch(organization_id, input_id, routes_v2_update_input_request)
+        api_response = api_instance.v2_organization_id_inputs_input_id_patch(organization_id, input_id, routes_v2_update_input_request, test_connection=test_connection)
         print("The response of OrganizationInputsApi->v2_organization_id_inputs_input_id_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -716,6 +725,7 @@ Name | Type | Description  | Notes
  **organization_id** | **str**| Organization ID | 
  **input_id** | **str**| Input ID | 
  **routes_v2_update_input_request** | [**RoutesV2UpdateInputRequest**](RoutesV2UpdateInputRequest.md)| Input configuration update | 
+ **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type
 
@@ -742,7 +752,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_organization_id_inputs_post**
-> ModelsInput v2_organization_id_inputs_post(organization_id, routes_v2_create_input_request)
+> ModelsInput v2_organization_id_inputs_post(organization_id, routes_v2_create_input_request, test_connection=test_connection)
 
 Create input
 
@@ -789,10 +799,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationInputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     routes_v2_create_input_request = monad.RoutesV2CreateInputRequest() # RoutesV2CreateInputRequest | Input configuration
+    test_connection = True # bool | Test connection before creating the input (optional)
 
     try:
         # Create input
-        api_response = api_instance.v2_organization_id_inputs_post(organization_id, routes_v2_create_input_request)
+        api_response = api_instance.v2_organization_id_inputs_post(organization_id, routes_v2_create_input_request, test_connection=test_connection)
         print("The response of OrganizationInputsApi->v2_organization_id_inputs_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -808,6 +819,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **routes_v2_create_input_request** | [**RoutesV2CreateInputRequest**](RoutesV2CreateInputRequest.md)| Input configuration | 
+ **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type
 

@@ -412,7 +412,7 @@ public class Example {
 
 <a id="v2OrganizationIdOutputsOutputIdPatch"></a>
 # **v2OrganizationIdOutputsOutputIdPatch**
-> ModelsOutput v2OrganizationIdOutputsOutputIdPatch(organizationId, outputId, routesV2UpdateOutputRequest)
+> ModelsOutput v2OrganizationIdOutputsOutputIdPatch(organizationId, outputId, routesV2UpdateOutputRequest, testConnection)
 
 Update output
 
@@ -449,8 +449,9 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     String outputId = "outputId_example"; // String | Output ID
     RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest = new RoutesV2UpdateOutputRequest(); // RoutesV2UpdateOutputRequest | Output configuration update
+    Boolean testConnection = true; // Boolean | Test connection before creating the input
     try {
-      ModelsOutput result = apiInstance.v2OrganizationIdOutputsOutputIdPatch(organizationId, outputId, routesV2UpdateOutputRequest);
+      ModelsOutput result = apiInstance.v2OrganizationIdOutputsOutputIdPatch(organizationId, outputId, routesV2UpdateOutputRequest, testConnection);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationOutputsApi#v2OrganizationIdOutputsOutputIdPatch");
@@ -470,6 +471,7 @@ public class Example {
 | **organizationId** | **String**| Organization ID | |
 | **outputId** | **String**| Output ID | |
 | **routesV2UpdateOutputRequest** | [**RoutesV2UpdateOutputRequest**](RoutesV2UpdateOutputRequest.md)| Output configuration update | |
+| **testConnection** | **Boolean**| Test connection before creating the input | [optional] |
 
 ### Return type
 
@@ -494,7 +496,7 @@ public class Example {
 
 <a id="v2OrganizationIdOutputsPost"></a>
 # **v2OrganizationIdOutputsPost**
-> ModelsOutput v2OrganizationIdOutputsPost(organizationId, routesV2CreateOutputRequest)
+> ModelsOutput v2OrganizationIdOutputsPost(organizationId, routesV2CreateOutputRequest, testConnection)
 
 Create output
 
@@ -530,8 +532,9 @@ public class Example {
     OrganizationOutputsApi apiInstance = new OrganizationOutputsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     RoutesV2CreateOutputRequest routesV2CreateOutputRequest = new RoutesV2CreateOutputRequest(); // RoutesV2CreateOutputRequest | Output configuration
+    Boolean testConnection = true; // Boolean | Test connection before creating the input
     try {
-      ModelsOutput result = apiInstance.v2OrganizationIdOutputsPost(organizationId, routesV2CreateOutputRequest);
+      ModelsOutput result = apiInstance.v2OrganizationIdOutputsPost(organizationId, routesV2CreateOutputRequest, testConnection);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationOutputsApi#v2OrganizationIdOutputsPost");
@@ -550,6 +553,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **routesV2CreateOutputRequest** | [**RoutesV2CreateOutputRequest**](RoutesV2CreateOutputRequest.md)| Output configuration | |
+| **testConnection** | **Boolean**| Test connection before creating the input | [optional] |
 
 ### Return type
 

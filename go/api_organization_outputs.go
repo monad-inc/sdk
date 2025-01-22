@@ -813,11 +813,18 @@ type ApiV2OrganizationIdOutputsOutputIdPatchRequest struct {
 	organizationId string
 	outputId string
 	routesV2UpdateOutputRequest *RoutesV2UpdateOutputRequest
+	testConnection *bool
 }
 
 // Output configuration update
 func (r ApiV2OrganizationIdOutputsOutputIdPatchRequest) RoutesV2UpdateOutputRequest(routesV2UpdateOutputRequest RoutesV2UpdateOutputRequest) ApiV2OrganizationIdOutputsOutputIdPatchRequest {
 	r.routesV2UpdateOutputRequest = &routesV2UpdateOutputRequest
+	return r
+}
+
+// Test connection before creating the input
+func (r ApiV2OrganizationIdOutputsOutputIdPatchRequest) TestConnection(testConnection bool) ApiV2OrganizationIdOutputsOutputIdPatchRequest {
+	r.testConnection = &testConnection
 	return r
 }
 
@@ -870,6 +877,9 @@ func (a *OrganizationOutputsAPIService) V2OrganizationIdOutputsOutputIdPatchExec
 		return localVarReturnValue, nil, reportError("routesV2UpdateOutputRequest is required and must be specified")
 	}
 
+	if r.testConnection != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "test_connection", r.testConnection, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -991,11 +1001,18 @@ type ApiV2OrganizationIdOutputsPostRequest struct {
 	ApiService *OrganizationOutputsAPIService
 	organizationId string
 	routesV2CreateOutputRequest *RoutesV2CreateOutputRequest
+	testConnection *bool
 }
 
 // Output configuration
 func (r ApiV2OrganizationIdOutputsPostRequest) RoutesV2CreateOutputRequest(routesV2CreateOutputRequest RoutesV2CreateOutputRequest) ApiV2OrganizationIdOutputsPostRequest {
 	r.routesV2CreateOutputRequest = &routesV2CreateOutputRequest
+	return r
+}
+
+// Test connection before creating the input
+func (r ApiV2OrganizationIdOutputsPostRequest) TestConnection(testConnection bool) ApiV2OrganizationIdOutputsPostRequest {
+	r.testConnection = &testConnection
 	return r
 }
 
@@ -1045,6 +1062,9 @@ func (a *OrganizationOutputsAPIService) V2OrganizationIdOutputsPostExecute(r Api
 		return localVarReturnValue, nil, reportError("routesV2CreateOutputRequest is required and must be specified")
 	}
 
+	if r.testConnection != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "test_connection", r.testConnection, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 

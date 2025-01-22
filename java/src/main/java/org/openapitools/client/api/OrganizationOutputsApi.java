@@ -815,6 +815,7 @@ public class OrganizationOutputsApi {
      * @param organizationId Organization ID (required)
      * @param outputId Output ID (required)
      * @param routesV2UpdateOutputRequest Output configuration update (required)
+     * @param testConnection Test connection before creating the input (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -828,7 +829,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdOutputsOutputIdPatchCall(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdOutputsOutputIdPatchCall(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, Boolean testConnection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -855,6 +856,10 @@ public class OrganizationOutputsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (testConnection != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("test_connection", testConnection));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -876,7 +881,7 @@ public class OrganizationOutputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdOutputsOutputIdPatchValidateBeforeCall(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdOutputsOutputIdPatchValidateBeforeCall(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, Boolean testConnection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdOutputsOutputIdPatch(Async)");
@@ -892,7 +897,7 @@ public class OrganizationOutputsApi {
             throw new ApiException("Missing the required parameter 'routesV2UpdateOutputRequest' when calling v2OrganizationIdOutputsOutputIdPatch(Async)");
         }
 
-        return v2OrganizationIdOutputsOutputIdPatchCall(organizationId, outputId, routesV2UpdateOutputRequest, _callback);
+        return v2OrganizationIdOutputsOutputIdPatchCall(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, _callback);
 
     }
 
@@ -902,6 +907,7 @@ public class OrganizationOutputsApi {
      * @param organizationId Organization ID (required)
      * @param outputId Output ID (required)
      * @param routesV2UpdateOutputRequest Output configuration update (required)
+     * @param testConnection Test connection before creating the input (optional)
      * @return ModelsOutput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -914,8 +920,8 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsOutput v2OrganizationIdOutputsOutputIdPatch(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest) throws ApiException {
-        ApiResponse<ModelsOutput> localVarResp = v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId, outputId, routesV2UpdateOutputRequest);
+    public ModelsOutput v2OrganizationIdOutputsOutputIdPatch(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, Boolean testConnection) throws ApiException {
+        ApiResponse<ModelsOutput> localVarResp = v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId, outputId, routesV2UpdateOutputRequest, testConnection);
         return localVarResp.getData();
     }
 
@@ -925,6 +931,7 @@ public class OrganizationOutputsApi {
      * @param organizationId Organization ID (required)
      * @param outputId Output ID (required)
      * @param routesV2UpdateOutputRequest Output configuration update (required)
+     * @param testConnection Test connection before creating the input (optional)
      * @return ApiResponse&lt;ModelsOutput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -937,8 +944,8 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsOutput> v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest) throws ApiException {
-        okhttp3.Call localVarCall = v2OrganizationIdOutputsOutputIdPatchValidateBeforeCall(organizationId, outputId, routesV2UpdateOutputRequest, null);
+    public ApiResponse<ModelsOutput> v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, Boolean testConnection) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdOutputsOutputIdPatchValidateBeforeCall(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, null);
         Type localVarReturnType = new TypeToken<ModelsOutput>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -949,6 +956,7 @@ public class OrganizationOutputsApi {
      * @param organizationId Organization ID (required)
      * @param outputId Output ID (required)
      * @param routesV2UpdateOutputRequest Output configuration update (required)
+     * @param testConnection Test connection before creating the input (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -962,9 +970,9 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdOutputsOutputIdPatchAsync(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, final ApiCallback<ModelsOutput> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdOutputsOutputIdPatchAsync(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, Boolean testConnection, final ApiCallback<ModelsOutput> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2OrganizationIdOutputsOutputIdPatchValidateBeforeCall(organizationId, outputId, routesV2UpdateOutputRequest, _callback);
+        okhttp3.Call localVarCall = v2OrganizationIdOutputsOutputIdPatchValidateBeforeCall(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, _callback);
         Type localVarReturnType = new TypeToken<ModelsOutput>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -973,6 +981,7 @@ public class OrganizationOutputsApi {
      * Build call for v2OrganizationIdOutputsPost
      * @param organizationId Organization ID (required)
      * @param routesV2CreateOutputRequest Output configuration (required)
+     * @param testConnection Test connection before creating the input (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -985,7 +994,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdOutputsPostCall(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdOutputsPostCall(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest, Boolean testConnection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1011,6 +1020,10 @@ public class OrganizationOutputsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (testConnection != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("test_connection", testConnection));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1032,7 +1045,7 @@ public class OrganizationOutputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdOutputsPostValidateBeforeCall(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdOutputsPostValidateBeforeCall(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest, Boolean testConnection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdOutputsPost(Async)");
@@ -1043,7 +1056,7 @@ public class OrganizationOutputsApi {
             throw new ApiException("Missing the required parameter 'routesV2CreateOutputRequest' when calling v2OrganizationIdOutputsPost(Async)");
         }
 
-        return v2OrganizationIdOutputsPostCall(organizationId, routesV2CreateOutputRequest, _callback);
+        return v2OrganizationIdOutputsPostCall(organizationId, routesV2CreateOutputRequest, testConnection, _callback);
 
     }
 
@@ -1052,6 +1065,7 @@ public class OrganizationOutputsApi {
      * Create a new output with configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param routesV2CreateOutputRequest Output configuration (required)
+     * @param testConnection Test connection before creating the input (optional)
      * @return ModelsOutput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1063,8 +1077,8 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsOutput v2OrganizationIdOutputsPost(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest) throws ApiException {
-        ApiResponse<ModelsOutput> localVarResp = v2OrganizationIdOutputsPostWithHttpInfo(organizationId, routesV2CreateOutputRequest);
+    public ModelsOutput v2OrganizationIdOutputsPost(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest, Boolean testConnection) throws ApiException {
+        ApiResponse<ModelsOutput> localVarResp = v2OrganizationIdOutputsPostWithHttpInfo(organizationId, routesV2CreateOutputRequest, testConnection);
         return localVarResp.getData();
     }
 
@@ -1073,6 +1087,7 @@ public class OrganizationOutputsApi {
      * Create a new output with configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param routesV2CreateOutputRequest Output configuration (required)
+     * @param testConnection Test connection before creating the input (optional)
      * @return ApiResponse&lt;ModelsOutput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1084,8 +1099,8 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsOutput> v2OrganizationIdOutputsPostWithHttpInfo(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest) throws ApiException {
-        okhttp3.Call localVarCall = v2OrganizationIdOutputsPostValidateBeforeCall(organizationId, routesV2CreateOutputRequest, null);
+    public ApiResponse<ModelsOutput> v2OrganizationIdOutputsPostWithHttpInfo(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest, Boolean testConnection) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdOutputsPostValidateBeforeCall(organizationId, routesV2CreateOutputRequest, testConnection, null);
         Type localVarReturnType = new TypeToken<ModelsOutput>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1095,6 +1110,7 @@ public class OrganizationOutputsApi {
      * Create a new output with configuration including secrets handling
      * @param organizationId Organization ID (required)
      * @param routesV2CreateOutputRequest Output configuration (required)
+     * @param testConnection Test connection before creating the input (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1107,9 +1123,9 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdOutputsPostAsync(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest, final ApiCallback<ModelsOutput> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdOutputsPostAsync(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest, Boolean testConnection, final ApiCallback<ModelsOutput> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2OrganizationIdOutputsPostValidateBeforeCall(organizationId, routesV2CreateOutputRequest, _callback);
+        okhttp3.Call localVarCall = v2OrganizationIdOutputsPostValidateBeforeCall(organizationId, routesV2CreateOutputRequest, testConnection, _callback);
         Type localVarReturnType = new TypeToken<ModelsOutput>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

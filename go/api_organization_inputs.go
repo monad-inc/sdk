@@ -29,11 +29,18 @@ type ApiV1OrganizationIdInputsBulkPostRequest struct {
 	ApiService *OrganizationInputsAPIService
 	organizationId string
 	routesBulkCreateInputRequest *RoutesBulkCreateInputRequest
+	testConnection *bool
 }
 
 // Request body for creating multiple inputs
 func (r ApiV1OrganizationIdInputsBulkPostRequest) RoutesBulkCreateInputRequest(routesBulkCreateInputRequest RoutesBulkCreateInputRequest) ApiV1OrganizationIdInputsBulkPostRequest {
 	r.routesBulkCreateInputRequest = &routesBulkCreateInputRequest
+	return r
+}
+
+// Test connection before creating the input
+func (r ApiV1OrganizationIdInputsBulkPostRequest) TestConnection(testConnection bool) ApiV1OrganizationIdInputsBulkPostRequest {
+	r.testConnection = &testConnection
 	return r
 }
 
@@ -83,6 +90,9 @@ func (a *OrganizationInputsAPIService) V1OrganizationIdInputsBulkPostExecute(r A
 		return localVarReturnValue, nil, reportError("routesBulkCreateInputRequest is required and must be specified")
 	}
 
+	if r.testConnection != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "test_connection", r.testConnection, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -625,11 +635,18 @@ type ApiV1OrganizationIdInputsInputIdPatchRequest struct {
 	organizationId string
 	inputId string
 	routesUpdateInputRequest *RoutesUpdateInputRequest
+	testConnection *bool
 }
 
 // Request body for updating an input
 func (r ApiV1OrganizationIdInputsInputIdPatchRequest) RoutesUpdateInputRequest(routesUpdateInputRequest RoutesUpdateInputRequest) ApiV1OrganizationIdInputsInputIdPatchRequest {
 	r.routesUpdateInputRequest = &routesUpdateInputRequest
+	return r
+}
+
+// Test connection before creating the input
+func (r ApiV1OrganizationIdInputsInputIdPatchRequest) TestConnection(testConnection bool) ApiV1OrganizationIdInputsInputIdPatchRequest {
+	r.testConnection = &testConnection
 	return r
 }
 
@@ -682,6 +699,9 @@ func (a *OrganizationInputsAPIService) V1OrganizationIdInputsInputIdPatchExecute
 		return localVarReturnValue, nil, reportError("routesUpdateInputRequest is required and must be specified")
 	}
 
+	if r.testConnection != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "test_connection", r.testConnection, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -792,11 +812,18 @@ type ApiV1OrganizationIdInputsPostRequest struct {
 	ApiService *OrganizationInputsAPIService
 	organizationId string
 	routesCreateInputRequest *RoutesCreateInputRequest
+	testConnection *bool
 }
 
 // Request body for creating an input
 func (r ApiV1OrganizationIdInputsPostRequest) RoutesCreateInputRequest(routesCreateInputRequest RoutesCreateInputRequest) ApiV1OrganizationIdInputsPostRequest {
 	r.routesCreateInputRequest = &routesCreateInputRequest
+	return r
+}
+
+// Test connection before creating the input
+func (r ApiV1OrganizationIdInputsPostRequest) TestConnection(testConnection bool) ApiV1OrganizationIdInputsPostRequest {
+	r.testConnection = &testConnection
 	return r
 }
 
@@ -846,6 +873,9 @@ func (a *OrganizationInputsAPIService) V1OrganizationIdInputsPostExecute(r ApiV1
 		return localVarReturnValue, nil, reportError("routesCreateInputRequest is required and must be specified")
 	}
 
+	if r.testConnection != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "test_connection", r.testConnection, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -945,11 +975,18 @@ type ApiV2OrganizationIdInputsBulkPostRequest struct {
 	ApiService *OrganizationInputsAPIService
 	organizationId string
 	routesV2BulkCreateInputRequest *RoutesV2BulkCreateInputRequest
+	testConnection *bool
 }
 
 // Request body for creating multiple inputs
 func (r ApiV2OrganizationIdInputsBulkPostRequest) RoutesV2BulkCreateInputRequest(routesV2BulkCreateInputRequest RoutesV2BulkCreateInputRequest) ApiV2OrganizationIdInputsBulkPostRequest {
 	r.routesV2BulkCreateInputRequest = &routesV2BulkCreateInputRequest
+	return r
+}
+
+// Test connection before creating the input
+func (r ApiV2OrganizationIdInputsBulkPostRequest) TestConnection(testConnection bool) ApiV2OrganizationIdInputsBulkPostRequest {
+	r.testConnection = &testConnection
 	return r
 }
 
@@ -999,6 +1036,9 @@ func (a *OrganizationInputsAPIService) V2OrganizationIdInputsBulkPostExecute(r A
 		return localVarReturnValue, nil, reportError("routesV2BulkCreateInputRequest is required and must be specified")
 	}
 
+	if r.testConnection != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "test_connection", r.testConnection, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -1110,11 +1150,18 @@ type ApiV2OrganizationIdInputsInputIdPatchRequest struct {
 	organizationId string
 	inputId string
 	routesV2UpdateInputRequest *RoutesV2UpdateInputRequest
+	testConnection *bool
 }
 
 // Input configuration update
 func (r ApiV2OrganizationIdInputsInputIdPatchRequest) RoutesV2UpdateInputRequest(routesV2UpdateInputRequest RoutesV2UpdateInputRequest) ApiV2OrganizationIdInputsInputIdPatchRequest {
 	r.routesV2UpdateInputRequest = &routesV2UpdateInputRequest
+	return r
+}
+
+// Test connection before creating the input
+func (r ApiV2OrganizationIdInputsInputIdPatchRequest) TestConnection(testConnection bool) ApiV2OrganizationIdInputsInputIdPatchRequest {
+	r.testConnection = &testConnection
 	return r
 }
 
@@ -1167,6 +1214,9 @@ func (a *OrganizationInputsAPIService) V2OrganizationIdInputsInputIdPatchExecute
 		return localVarReturnValue, nil, reportError("routesV2UpdateInputRequest is required and must be specified")
 	}
 
+	if r.testConnection != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "test_connection", r.testConnection, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -1288,11 +1338,18 @@ type ApiV2OrganizationIdInputsPostRequest struct {
 	ApiService *OrganizationInputsAPIService
 	organizationId string
 	routesV2CreateInputRequest *RoutesV2CreateInputRequest
+	testConnection *bool
 }
 
 // Input configuration
 func (r ApiV2OrganizationIdInputsPostRequest) RoutesV2CreateInputRequest(routesV2CreateInputRequest RoutesV2CreateInputRequest) ApiV2OrganizationIdInputsPostRequest {
 	r.routesV2CreateInputRequest = &routesV2CreateInputRequest
+	return r
+}
+
+// Test connection before creating the input
+func (r ApiV2OrganizationIdInputsPostRequest) TestConnection(testConnection bool) ApiV2OrganizationIdInputsPostRequest {
+	r.testConnection = &testConnection
 	return r
 }
 
@@ -1342,6 +1399,9 @@ func (a *OrganizationInputsAPIService) V2OrganizationIdInputsPostExecute(r ApiV2
 		return localVarReturnValue, nil, reportError("routesV2CreateInputRequest is required and must be specified")
 	}
 
+	if r.testConnection != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "test_connection", r.testConnection, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
