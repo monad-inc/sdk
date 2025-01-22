@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,8 +33,8 @@ class OutputsConnectorMeta(BaseModel):
     description: Optional[StrictStr] = None
     internal: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
-    type_id: Optional[StrictStr] = Field(default=None, alias="typeID")
-    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "config", "description", "internal", "name", "typeID"]
+    type_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "config", "description", "internal", "name", "type_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +98,7 @@ class OutputsConnectorMeta(BaseModel):
             "description": obj.get("description"),
             "internal": obj.get("internal"),
             "name": obj.get("name"),
-            "typeID": obj.get("typeID")
+            "type_id": obj.get("type_id")
         })
         return _obj
 

@@ -19,7 +19,7 @@ export class OutputsConnectorMeta {
     'description'?: string;
     'internal'?: boolean;
     'name'?: string;
-    'typeID'?: string;
+    'typeId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -63,8 +63,8 @@ export class OutputsConnectorMeta {
             "format": ""
         },
         {
-            "name": "typeID",
-            "baseName": "typeID",
+            "name": "typeId",
+            "baseName": "type_id",
             "type": "string",
             "format": ""
         }    ];

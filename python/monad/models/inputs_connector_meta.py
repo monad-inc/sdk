@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,15 +27,15 @@ class InputsConnectorMeta(BaseModel):
     """
     InputsConnectorMeta
     """ # noqa: E501
-    auth_type: Optional[StrictStr] = Field(default=None, alias="authType")
+    auth_type: Optional[StrictStr] = None
     billing_type: Optional[StrictInt] = None
     config: Optional[Any] = None
     description: Optional[StrictStr] = None
     house: Optional[StrictStr] = None
     internal: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
-    type_id: Optional[StrictStr] = Field(default=None, alias="typeID")
-    __properties: ClassVar[List[str]] = ["authType", "billing_type", "config", "description", "house", "internal", "name", "typeID"]
+    type_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "config", "description", "house", "internal", "name", "type_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,14 +93,14 @@ class InputsConnectorMeta(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "authType": obj.get("authType"),
+            "auth_type": obj.get("auth_type"),
             "billing_type": obj.get("billing_type"),
             "config": obj.get("config"),
             "description": obj.get("description"),
             "house": obj.get("house"),
             "internal": obj.get("internal"),
             "name": obj.get("name"),
-            "typeID": obj.get("typeID")
+            "type_id": obj.get("type_id")
         })
         return _obj
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**TypeID** | Pointer to **string** |  | [optional] 
+**TypeId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -191,30 +191,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetTypeID
+### GetTypeId
 
-`func (o *OutputsConnectorMeta) GetTypeID() string`
+`func (o *OutputsConnectorMeta) GetTypeId() string`
 
-GetTypeID returns the TypeID field if non-nil, zero value otherwise.
+GetTypeId returns the TypeId field if non-nil, zero value otherwise.
 
-### GetTypeIDOk
+### GetTypeIdOk
 
-`func (o *OutputsConnectorMeta) GetTypeIDOk() (*string, bool)`
+`func (o *OutputsConnectorMeta) GetTypeIdOk() (*string, bool)`
 
-GetTypeIDOk returns a tuple with the TypeID field if it's non-nil, zero value otherwise
+GetTypeIdOk returns a tuple with the TypeId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTypeID
+### SetTypeId
 
-`func (o *OutputsConnectorMeta) SetTypeID(v string)`
+`func (o *OutputsConnectorMeta) SetTypeId(v string)`
 
-SetTypeID sets TypeID field to given value.
+SetTypeId sets TypeId field to given value.
 
-### HasTypeID
+### HasTypeId
 
-`func (o *OutputsConnectorMeta) HasTypeID() bool`
+`func (o *OutputsConnectorMeta) HasTypeId() bool`
 
-HasTypeID returns a boolean if a field has been set.
+HasTypeId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

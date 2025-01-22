@@ -20,14 +20,14 @@ var _ MappedNullable = &InputsConnectorMeta{}
 
 // InputsConnectorMeta struct for InputsConnectorMeta
 type InputsConnectorMeta struct {
-	AuthType *string `json:"authType,omitempty"`
+	AuthType *string `json:"auth_type,omitempty"`
 	BillingType *int32 `json:"billing_type,omitempty"`
 	Config interface{} `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	House *string `json:"house,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
 	Name *string `json:"name,omitempty"`
-	TypeID *string `json:"typeID,omitempty"`
+	TypeId *string `json:"type_id,omitempty"`
 }
 
 // NewInputsConnectorMeta instantiates a new InputsConnectorMeta object
@@ -272,36 +272,36 @@ func (o *InputsConnectorMeta) SetName(v string) {
 	o.Name = &v
 }
 
-// GetTypeID returns the TypeID field value if set, zero value otherwise.
-func (o *InputsConnectorMeta) GetTypeID() string {
-	if o == nil || IsNil(o.TypeID) {
+// GetTypeId returns the TypeId field value if set, zero value otherwise.
+func (o *InputsConnectorMeta) GetTypeId() string {
+	if o == nil || IsNil(o.TypeId) {
 		var ret string
 		return ret
 	}
-	return *o.TypeID
+	return *o.TypeId
 }
 
-// GetTypeIDOk returns a tuple with the TypeID field value if set, nil otherwise
+// GetTypeIdOk returns a tuple with the TypeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InputsConnectorMeta) GetTypeIDOk() (*string, bool) {
-	if o == nil || IsNil(o.TypeID) {
+func (o *InputsConnectorMeta) GetTypeIdOk() (*string, bool) {
+	if o == nil || IsNil(o.TypeId) {
 		return nil, false
 	}
-	return o.TypeID, true
+	return o.TypeId, true
 }
 
-// HasTypeID returns a boolean if a field has been set.
-func (o *InputsConnectorMeta) HasTypeID() bool {
-	if o != nil && !IsNil(o.TypeID) {
+// HasTypeId returns a boolean if a field has been set.
+func (o *InputsConnectorMeta) HasTypeId() bool {
+	if o != nil && !IsNil(o.TypeId) {
 		return true
 	}
 
 	return false
 }
 
-// SetTypeID gets a reference to the given string and assigns it to the TypeID field.
-func (o *InputsConnectorMeta) SetTypeID(v string) {
-	o.TypeID = &v
+// SetTypeId gets a reference to the given string and assigns it to the TypeId field.
+func (o *InputsConnectorMeta) SetTypeId(v string) {
+	o.TypeId = &v
 }
 
 func (o InputsConnectorMeta) MarshalJSON() ([]byte, error) {
@@ -315,7 +315,7 @@ func (o InputsConnectorMeta) MarshalJSON() ([]byte, error) {
 func (o InputsConnectorMeta) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.AuthType) {
-		toSerialize["authType"] = o.AuthType
+		toSerialize["auth_type"] = o.AuthType
 	}
 	if !IsNil(o.BillingType) {
 		toSerialize["billing_type"] = o.BillingType
@@ -335,8 +335,8 @@ func (o InputsConnectorMeta) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.TypeID) {
-		toSerialize["typeID"] = o.TypeID
+	if !IsNil(o.TypeId) {
+		toSerialize["type_id"] = o.TypeId
 	}
 	return toSerialize, nil
 }

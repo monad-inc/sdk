@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * OutputsConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-22T16:13:42.307147890Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-22T17:22:26.460313581Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class OutputsConnectorMeta {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
@@ -81,10 +81,10 @@ public class OutputsConnectorMeta {
   @javax.annotation.Nullable
   private String name;
 
-  public static final String SERIALIZED_NAME_TYPE_I_D = "typeID";
-  @SerializedName(SERIALIZED_NAME_TYPE_I_D)
+  public static final String SERIALIZED_NAME_TYPE_ID = "type_id";
+  @SerializedName(SERIALIZED_NAME_TYPE_ID)
   @javax.annotation.Nullable
-  private String typeID;
+  private String typeId;
 
   public OutputsConnectorMeta() {
   }
@@ -203,22 +203,22 @@ public class OutputsConnectorMeta {
   }
 
 
-  public OutputsConnectorMeta typeID(@javax.annotation.Nullable String typeID) {
-    this.typeID = typeID;
+  public OutputsConnectorMeta typeId(@javax.annotation.Nullable String typeId) {
+    this.typeId = typeId;
     return this;
   }
 
   /**
-   * Get typeID
-   * @return typeID
+   * Get typeId
+   * @return typeId
    */
   @javax.annotation.Nullable
-  public String getTypeID() {
-    return typeID;
+  public String getTypeId() {
+    return typeId;
   }
 
-  public void setTypeID(@javax.annotation.Nullable String typeID) {
-    this.typeID = typeID;
+  public void setTypeId(@javax.annotation.Nullable String typeId) {
+    this.typeId = typeId;
   }
 
 
@@ -238,7 +238,7 @@ public class OutputsConnectorMeta {
         Objects.equals(this.description, outputsConnectorMeta.description) &&
         Objects.equals(this.internal, outputsConnectorMeta.internal) &&
         Objects.equals(this.name, outputsConnectorMeta.name) &&
-        Objects.equals(this.typeID, outputsConnectorMeta.typeID);
+        Objects.equals(this.typeId, outputsConnectorMeta.typeId);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -247,7 +247,7 @@ public class OutputsConnectorMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, billingType, config, description, internal, name, typeID);
+    return Objects.hash(authType, billingType, config, description, internal, name, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -267,7 +267,7 @@ public class OutputsConnectorMeta {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    typeID: ").append(toIndentedString(typeID)).append("\n");
+    sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -296,7 +296,7 @@ public class OutputsConnectorMeta {
     openapiFields.add("description");
     openapiFields.add("internal");
     openapiFields.add("name");
-    openapiFields.add("typeID");
+    openapiFields.add("type_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -332,8 +332,8 @@ public class OutputsConnectorMeta {
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("typeID") != null && !jsonObj.get("typeID").isJsonNull()) && !jsonObj.get("typeID").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typeID` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typeID").toString()));
+      if ((jsonObj.get("type_id") != null && !jsonObj.get("type_id").isJsonNull()) && !jsonObj.get("type_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `type_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type_id").toString()));
       }
   }
 

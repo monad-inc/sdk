@@ -20,7 +20,7 @@ export class InputsConnectorMeta {
     'house'?: string;
     'internal'?: boolean;
     'name'?: string;
-    'typeID'?: string;
+    'typeId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,7 +29,7 @@ export class InputsConnectorMeta {
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
             "name": "authType",
-            "baseName": "authType",
+            "baseName": "auth_type",
             "type": "string",
             "format": ""
         },
@@ -70,8 +70,8 @@ export class InputsConnectorMeta {
             "format": ""
         },
         {
-            "name": "typeID",
-            "baseName": "typeID",
+            "name": "typeId",
+            "baseName": "type_id",
             "type": "string",
             "format": ""
         }    ];

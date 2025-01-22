@@ -13,7 +13,7 @@
 |**description** | **String** |  |  [optional] |
 |**internal** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**typeID** | **String** |  |  [optional] |
+|**typeId** | **String** |  |  [optional] |
 
 
 
