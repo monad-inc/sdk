@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Bucket** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
 **Compression** | Pointer to **string** | The compression method to be applied to the data before storing in S3 | [optional] 
-**Format** | Pointer to **string** | The format in which data will be stored in S3 (e.g., JSON, CSV) | [optional] 
+**FormatConfig** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
 **PartitionFormat** | Pointer to **string** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). | [optional] 
 **Prefix** | Pointer to **string** | An optional prefix for S3 object keys to organize data within the bucket | [optional] 
 **Region** | Pointer to **string** | The AWS region where the S3 bucket is located | [optional] 
@@ -81,30 +81,30 @@ SetCompression sets Compression field to given value.
 
 HasCompression returns a boolean if a field has been set.
 
-### GetFormat
+### GetFormatConfig
 
-`func (o *S3SettingsConfig) GetFormat() string`
+`func (o *S3SettingsConfig) GetFormatConfig() FormatterFormatConfig`
 
-GetFormat returns the Format field if non-nil, zero value otherwise.
+GetFormatConfig returns the FormatConfig field if non-nil, zero value otherwise.
 
-### GetFormatOk
+### GetFormatConfigOk
 
-`func (o *S3SettingsConfig) GetFormatOk() (*string, bool)`
+`func (o *S3SettingsConfig) GetFormatConfigOk() (*FormatterFormatConfig, bool)`
 
-GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+GetFormatConfigOk returns a tuple with the FormatConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFormat
+### SetFormatConfig
 
-`func (o *S3SettingsConfig) SetFormat(v string)`
+`func (o *S3SettingsConfig) SetFormatConfig(v FormatterFormatConfig)`
 
-SetFormat sets Format field to given value.
+SetFormatConfig sets FormatConfig field to given value.
 
-### HasFormat
+### HasFormatConfig
 
-`func (o *S3SettingsConfig) HasFormat() bool`
+`func (o *S3SettingsConfig) HasFormatConfig() bool`
 
-HasFormat returns a boolean if a field has been set.
+HasFormatConfig returns a boolean if a field has been set.
 
 ### GetPartitionFormat
 

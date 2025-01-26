@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.formatter_format_config import FormatterFormatConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,12 +30,12 @@ class S3SettingsConfig(BaseModel):
     """ # noqa: E501
     bucket: Optional[StrictStr] = Field(default=None, description="The name of the S3 bucket where data will be stored")
     compression: Optional[StrictStr] = Field(default=None, description="The compression method to be applied to the data before storing in S3")
-    format: Optional[StrictStr] = Field(default=None, description="The format in which data will be stored in S3 (e.g., JSON, CSV)")
+    format_config: Optional[FormatterFormatConfig] = None
     partition_format: Optional[StrictStr] = Field(default=None, description="Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., 'year=2024/month=01/day=01') and simple date-based formats (e.g., '2024/01/01').")
     prefix: Optional[StrictStr] = Field(default=None, description="An optional prefix for S3 object keys to organize data within the bucket")
     region: Optional[StrictStr] = Field(default=None, description="The AWS region where the S3 bucket is located")
     role_arn: Optional[StrictStr] = Field(default=None, description="The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket")
-    __properties: ClassVar[List[str]] = ["bucket", "compression", "format", "partition_format", "prefix", "region", "role_arn"]
+    __properties: ClassVar[List[str]] = ["bucket", "compression", "format_config", "partition_format", "prefix", "region", "role_arn"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -75,6 +76,9 @@ class S3SettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of format_config
+        if self.format_config:
+            _dict['format_config'] = self.format_config.to_dict()
         return _dict
 
     @classmethod
@@ -89,7 +93,7 @@ class S3SettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "bucket": obj.get("bucket"),
             "compression": obj.get("compression"),
-            "format": obj.get("format"),
+            "format_config": FormatterFormatConfig.from_dict(obj["format_config"]) if obj.get("format_config") is not None else None,
             "partition_format": obj.get("partition_format"),
             "prefix": obj.get("prefix"),
             "region": obj.get("region"),

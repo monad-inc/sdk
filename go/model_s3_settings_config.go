@@ -24,8 +24,7 @@ type S3SettingsConfig struct {
 	Bucket *string `json:"bucket,omitempty"`
 	// The compression method to be applied to the data before storing in S3
 	Compression *string `json:"compression,omitempty"`
-	// The format in which data will be stored in S3 (e.g., JSON, CSV)
-	Format *string `json:"format,omitempty"`
+	FormatConfig *FormatterFormatConfig `json:"format_config,omitempty"`
 	// Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., 'year=2024/month=01/day=01') and simple date-based formats (e.g., '2024/01/01').
 	PartitionFormat *string `json:"partition_format,omitempty"`
 	// An optional prefix for S3 object keys to organize data within the bucket
@@ -117,36 +116,36 @@ func (o *S3SettingsConfig) SetCompression(v string) {
 	o.Compression = &v
 }
 
-// GetFormat returns the Format field value if set, zero value otherwise.
-func (o *S3SettingsConfig) GetFormat() string {
-	if o == nil || IsNil(o.Format) {
-		var ret string
+// GetFormatConfig returns the FormatConfig field value if set, zero value otherwise.
+func (o *S3SettingsConfig) GetFormatConfig() FormatterFormatConfig {
+	if o == nil || IsNil(o.FormatConfig) {
+		var ret FormatterFormatConfig
 		return ret
 	}
-	return *o.Format
+	return *o.FormatConfig
 }
 
-// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// GetFormatConfigOk returns a tuple with the FormatConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *S3SettingsConfig) GetFormatOk() (*string, bool) {
-	if o == nil || IsNil(o.Format) {
+func (o *S3SettingsConfig) GetFormatConfigOk() (*FormatterFormatConfig, bool) {
+	if o == nil || IsNil(o.FormatConfig) {
 		return nil, false
 	}
-	return o.Format, true
+	return o.FormatConfig, true
 }
 
-// HasFormat returns a boolean if a field has been set.
-func (o *S3SettingsConfig) HasFormat() bool {
-	if o != nil && !IsNil(o.Format) {
+// HasFormatConfig returns a boolean if a field has been set.
+func (o *S3SettingsConfig) HasFormatConfig() bool {
+	if o != nil && !IsNil(o.FormatConfig) {
 		return true
 	}
 
 	return false
 }
 
-// SetFormat gets a reference to the given string and assigns it to the Format field.
-func (o *S3SettingsConfig) SetFormat(v string) {
-	o.Format = &v
+// SetFormatConfig gets a reference to the given FormatterFormatConfig and assigns it to the FormatConfig field.
+func (o *S3SettingsConfig) SetFormatConfig(v FormatterFormatConfig) {
+	o.FormatConfig = &v
 }
 
 // GetPartitionFormat returns the PartitionFormat field value if set, zero value otherwise.
@@ -293,8 +292,8 @@ func (o S3SettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Compression) {
 		toSerialize["compression"] = o.Compression
 	}
-	if !IsNil(o.Format) {
-		toSerialize["format"] = o.Format
+	if !IsNil(o.FormatConfig) {
+		toSerialize["format_config"] = o.FormatConfig
 	}
 	if !IsNil(o.PartitionFormat) {
 		toSerialize["partition_format"] = o.PartitionFormat

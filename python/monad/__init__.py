@@ -77,6 +77,7 @@ from monad.models.cloudtrail_settings_config import CloudtrailSettingsConfig
 from monad.models.condition_info import ConditionInfo
 from monad.models.cribl_http_secrets_config import CriblHttpSecretsConfig
 from monad.models.cribl_http_settings_config import CriblHttpSettingsConfig
+from monad.models.delimited_delimiter_formatter import DelimitedDelimiterFormatter
 from monad.models.demo_custom_settings_config import DemoCustomSettingsConfig
 from monad.models.demo_settings_config import DemoSettingsConfig
 from monad.models.detect_summaries_secrets_config import DetectSummariesSecretsConfig
@@ -95,9 +96,11 @@ from monad.models.event_secrets_config import EventSecretsConfig
 from monad.models.event_settings_config import EventSettingsConfig
 from monad.models.events_logs_secrets_config import EventsLogsSecretsConfig
 from monad.models.events_logs_settings_config import EventsLogsSettingsConfig
+from monad.models.formatter_format_config import FormatterFormatConfig
 from monad.models.http_secrets_config import HttpSecretsConfig
 from monad.models.http_settings_config import HttpSettingsConfig
 from monad.models.inputs_connector_meta import InputsConnectorMeta
+from monad.models.json_json_formatter import JsonJsonFormatter
 from monad.models.log_analytics_query_secrets_config import LogAnalyticsQuerySecretsConfig
 from monad.models.log_analytics_query_settings_config import LogAnalyticsQuerySettingsConfig
 from monad.models.login_activity_secrets_config import LoginActivitySecretsConfig
@@ -151,6 +154,7 @@ from monad.models.opensearch_secrets_config import OpensearchSecretsConfig
 from monad.models.opensearch_settings_config import OpensearchSettingsConfig
 from monad.models.operation_information import OperationInformation
 from monad.models.outputs_connector_meta import OutputsConnectorMeta
+from monad.models.parquet_parquet_formatter import ParquetParquetFormatter
 from monad.models.responder_error_response import ResponderErrorResponse
 from monad.models.roles_info_secrets_config import RolesInfoSecretsConfig
 from monad.models.roles_info_settings_config import RolesInfoSettingsConfig

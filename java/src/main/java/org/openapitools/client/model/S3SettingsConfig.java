@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.FormatterFormatConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * S3 Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-24T18:46:32.422901166Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-26T22:00:29.175050968Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class S3SettingsConfig {
   public static final String SERIALIZED_NAME_BUCKET = "bucket";
   @SerializedName(SERIALIZED_NAME_BUCKET)
@@ -60,10 +61,10 @@ public class S3SettingsConfig {
   @javax.annotation.Nullable
   private String compression;
 
-  public static final String SERIALIZED_NAME_FORMAT = "format";
-  @SerializedName(SERIALIZED_NAME_FORMAT)
+  public static final String SERIALIZED_NAME_FORMAT_CONFIG = "format_config";
+  @SerializedName(SERIALIZED_NAME_FORMAT_CONFIG)
   @javax.annotation.Nullable
-  private String format;
+  private FormatterFormatConfig formatConfig;
 
   public static final String SERIALIZED_NAME_PARTITION_FORMAT = "partition_format";
   @SerializedName(SERIALIZED_NAME_PARTITION_FORMAT)
@@ -126,22 +127,22 @@ public class S3SettingsConfig {
   }
 
 
-  public S3SettingsConfig format(@javax.annotation.Nullable String format) {
-    this.format = format;
+  public S3SettingsConfig formatConfig(@javax.annotation.Nullable FormatterFormatConfig formatConfig) {
+    this.formatConfig = formatConfig;
     return this;
   }
 
   /**
-   * The format in which data will be stored in S3 (e.g., JSON, CSV)
-   * @return format
+   * Get formatConfig
+   * @return formatConfig
    */
   @javax.annotation.Nullable
-  public String getFormat() {
-    return format;
+  public FormatterFormatConfig getFormatConfig() {
+    return formatConfig;
   }
 
-  public void setFormat(@javax.annotation.Nullable String format) {
-    this.format = format;
+  public void setFormatConfig(@javax.annotation.Nullable FormatterFormatConfig formatConfig) {
+    this.formatConfig = formatConfig;
   }
 
 
@@ -233,7 +234,7 @@ public class S3SettingsConfig {
     S3SettingsConfig s3SettingsConfig = (S3SettingsConfig) o;
     return Objects.equals(this.bucket, s3SettingsConfig.bucket) &&
         Objects.equals(this.compression, s3SettingsConfig.compression) &&
-        Objects.equals(this.format, s3SettingsConfig.format) &&
+        Objects.equals(this.formatConfig, s3SettingsConfig.formatConfig) &&
         Objects.equals(this.partitionFormat, s3SettingsConfig.partitionFormat) &&
         Objects.equals(this.prefix, s3SettingsConfig.prefix) &&
         Objects.equals(this.region, s3SettingsConfig.region) &&
@@ -242,7 +243,7 @@ public class S3SettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bucket, compression, format, partitionFormat, prefix, region, roleArn);
+    return Objects.hash(bucket, compression, formatConfig, partitionFormat, prefix, region, roleArn);
   }
 
   @Override
@@ -251,7 +252,7 @@ public class S3SettingsConfig {
     sb.append("class S3SettingsConfig {\n");
     sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
     sb.append("    compression: ").append(toIndentedString(compression)).append("\n");
-    sb.append("    format: ").append(toIndentedString(format)).append("\n");
+    sb.append("    formatConfig: ").append(toIndentedString(formatConfig)).append("\n");
     sb.append("    partitionFormat: ").append(toIndentedString(partitionFormat)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
@@ -280,7 +281,7 @@ public class S3SettingsConfig {
     openapiFields = new HashSet<String>();
     openapiFields.add("bucket");
     openapiFields.add("compression");
-    openapiFields.add("format");
+    openapiFields.add("format_config");
     openapiFields.add("partition_format");
     openapiFields.add("prefix");
     openapiFields.add("region");
@@ -317,8 +318,9 @@ public class S3SettingsConfig {
       if ((jsonObj.get("compression") != null && !jsonObj.get("compression").isJsonNull()) && !jsonObj.get("compression").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `compression` to be a primitive type in the JSON string but got `%s`", jsonObj.get("compression").toString()));
       }
-      if ((jsonObj.get("format") != null && !jsonObj.get("format").isJsonNull()) && !jsonObj.get("format").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
+      // validate the optional field `format_config`
+      if (jsonObj.get("format_config") != null && !jsonObj.get("format_config").isJsonNull()) {
+        FormatterFormatConfig.validateJsonElement(jsonObj.get("format_config"));
       }
       if ((jsonObj.get("partition_format") != null && !jsonObj.get("partition_format").isJsonNull()) && !jsonObj.get("partition_format").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `partition_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partition_format").toString()));

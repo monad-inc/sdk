@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { HttpFile } from '../http/http';
 
 /**
@@ -24,10 +25,7 @@ export class S3SettingsConfig {
     * The compression method to be applied to the data before storing in S3
     */
     'compression'?: string;
-    /**
-    * The format in which data will be stored in S3 (e.g., JSON, CSV)
-    */
-    'format'?: string;
+    'formatConfig'?: FormatterFormatConfig;
     /**
     * Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., \'year=2024/month=01/day=01\') and simple date-based formats (e.g., \'2024/01/01\').
     */
@@ -63,9 +61,9 @@ export class S3SettingsConfig {
             "format": ""
         },
         {
-            "name": "format",
-            "baseName": "format",
-            "type": "string",
+            "name": "formatConfig",
+            "baseName": "format_config",
+            "type": "FormatterFormatConfig",
             "format": ""
         },
         {

@@ -23,6 +23,7 @@ export * from '../models/CloudtrailSettingsConfig';
 export * from '../models/ConditionInfo';
 export * from '../models/CriblHttpSecretsConfig';
 export * from '../models/CriblHttpSettingsConfig';
+export * from '../models/DelimitedDelimiterFormatter';
 export * from '../models/DemoCustomSettingsConfig';
 export * from '../models/DemoSettingsConfig';
 export * from '../models/DetectSummariesSecretsConfig';
@@ -41,9 +42,11 @@ export * from '../models/EventSecretsConfig';
 export * from '../models/EventSettingsConfig';
 export * from '../models/EventsLogsSecretsConfig';
 export * from '../models/EventsLogsSettingsConfig';
+export * from '../models/FormatterFormatConfig';
 export * from '../models/HttpSecretsConfig';
 export * from '../models/HttpSettingsConfig';
 export * from '../models/InputsConnectorMeta';
+export * from '../models/JsonJsonFormatter';
 export * from '../models/LogAnalyticsQuerySecretsConfig';
 export * from '../models/LogAnalyticsQuerySettingsConfig';
 export * from '../models/LoginActivitySecretsConfig';
@@ -97,6 +100,7 @@ export * from '../models/OpensearchSecretsConfig';
 export * from '../models/OpensearchSettingsConfig';
 export * from '../models/OperationInformation';
 export * from '../models/OutputsConnectorMeta';
+export * from '../models/ParquetParquetFormatter';
 export * from '../models/ResponderErrorResponse';
 export * from '../models/RolesInfoSecretsConfig';
 export * from '../models/RolesInfoSettingsConfig';
@@ -216,6 +220,7 @@ import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
 import { ConditionInfo } from '../models/ConditionInfo';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
+import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
 import { DemoCustomSettingsConfig } from '../models/DemoCustomSettingsConfig';
 import { DemoSettingsConfig } from '../models/DemoSettingsConfig';
 import { DetectSummariesSecretsConfig } from '../models/DetectSummariesSecretsConfig';
@@ -234,9 +239,11 @@ import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
+import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
+import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
 import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig';
@@ -290,6 +297,7 @@ import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
+import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
 import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
@@ -425,6 +433,7 @@ let typeMap: {[index: string]: any} = {
     "ConditionInfo": ConditionInfo,
     "CriblHttpSecretsConfig": CriblHttpSecretsConfig,
     "CriblHttpSettingsConfig": CriblHttpSettingsConfig,
+    "DelimitedDelimiterFormatter": DelimitedDelimiterFormatter,
     "DemoCustomSettingsConfig": DemoCustomSettingsConfig,
     "DemoSettingsConfig": DemoSettingsConfig,
     "DetectSummariesSecretsConfig": DetectSummariesSecretsConfig,
@@ -443,9 +452,11 @@ let typeMap: {[index: string]: any} = {
     "EventSettingsConfig": EventSettingsConfig,
     "EventsLogsSecretsConfig": EventsLogsSecretsConfig,
     "EventsLogsSettingsConfig": EventsLogsSettingsConfig,
+    "FormatterFormatConfig": FormatterFormatConfig,
     "HttpSecretsConfig": HttpSecretsConfig,
     "HttpSettingsConfig": HttpSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,
+    "JsonJsonFormatter": JsonJsonFormatter,
     "LogAnalyticsQuerySecretsConfig": LogAnalyticsQuerySecretsConfig,
     "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,
     "LoginActivitySecretsConfig": LoginActivitySecretsConfig,
@@ -499,6 +510,7 @@ let typeMap: {[index: string]: any} = {
     "OpensearchSettingsConfig": OpensearchSettingsConfig,
     "OperationInformation": OperationInformation,
     "OutputsConnectorMeta": OutputsConnectorMeta,
+    "ParquetParquetFormatter": ParquetParquetFormatter,
     "ResponderErrorResponse": ResponderErrorResponse,
     "RolesInfoSecretsConfig": RolesInfoSecretsConfig,
     "RolesInfoSettingsConfig": RolesInfoSettingsConfig,
