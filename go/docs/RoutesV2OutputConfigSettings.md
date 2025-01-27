@@ -32,11 +32,12 @@ Name | Type | Description | Notes
 **RoleArn** | Pointer to **string** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
 **RuleId** | Pointer to **string** | The unique identifier of the Data Collection Rule (DCR). | [optional] 
 **StreamName** | Pointer to **string** | The name of the data stream defined in the Data Collection Rule. | [optional] 
-**Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;account_name.cloud_provider&#39; | [optional] 
+**Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
+**Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
 **Stage** | Pointer to **string** | The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage. | [optional] 
-**Table** | Pointer to **string** | The name of the table in Snowflake where the data will be written | [optional] 
+**Table** | Pointer to **string** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | [optional] 
 **User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
 **Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
 **AllowInsecure** | Pointer to **bool** | Whether to allow insecure connections (not recommended for production). | [optional] 
@@ -809,6 +810,31 @@ SetDatabase sets Database field to given value.
 `func (o *RoutesV2OutputConfigSettings) HasDatabase() bool`
 
 HasDatabase returns a boolean if a field has been set.
+
+### GetRole
+
+`func (o *RoutesV2OutputConfigSettings) GetRole() string`
+
+GetRole returns the Role field if non-nil, zero value otherwise.
+
+### GetRoleOk
+
+`func (o *RoutesV2OutputConfigSettings) GetRoleOk() (*string, bool)`
+
+GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRole
+
+`func (o *RoutesV2OutputConfigSettings) SetRole(v string)`
+
+SetRole sets Role field to given value.
+
+### HasRole
+
+`func (o *RoutesV2OutputConfigSettings) HasRole() bool`
+
+HasRole returns a boolean if a field has been set.
 
 ### GetSchema
 

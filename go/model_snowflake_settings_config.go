@@ -20,15 +20,17 @@ var _ MappedNullable = &SnowflakeSettingsConfig{}
 
 // SnowflakeSettingsConfig Snowflake Output Settings
 type SnowflakeSettingsConfig struct {
-	// The unique identifier for your Snowflake account, typically in the form of 'account_name.cloud_provider'
+	// The unique identifier for your Snowflake account, typically in the form of 'organization-account_name'.
 	Account *string `json:"account,omitempty"`
 	// The name of the Snowflake database to connect to and perform operations on
 	Database *string `json:"database,omitempty"`
+	// The name of the Role your service account was granted which can access your resources.
+	Role *string `json:"role,omitempty"`
 	// The schema within the Snowflake database where the target table resides.
 	Schema *string `json:"schema,omitempty"`
 	// The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage.
 	Stage *string `json:"stage,omitempty"`
-	// The name of the table in Snowflake where the data will be written
+	// The name of the table in Snowflake where the data will be written. If the table doesn't exist Monad will create the table.
 	Table *string `json:"table,omitempty"`
 	// The username of the Snowflake account used to establish the connection.
 	User *string `json:"user,omitempty"`
@@ -115,6 +117,38 @@ func (o *SnowflakeSettingsConfig) HasDatabase() bool {
 // SetDatabase gets a reference to the given string and assigns it to the Database field.
 func (o *SnowflakeSettingsConfig) SetDatabase(v string) {
 	o.Database = &v
+}
+
+// GetRole returns the Role field value if set, zero value otherwise.
+func (o *SnowflakeSettingsConfig) GetRole() string {
+	if o == nil || IsNil(o.Role) {
+		var ret string
+		return ret
+	}
+	return *o.Role
+}
+
+// GetRoleOk returns a tuple with the Role field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnowflakeSettingsConfig) GetRoleOk() (*string, bool) {
+	if o == nil || IsNil(o.Role) {
+		return nil, false
+	}
+	return o.Role, true
+}
+
+// HasRole returns a boolean if a field has been set.
+func (o *SnowflakeSettingsConfig) HasRole() bool {
+	if o != nil && !IsNil(o.Role) {
+		return true
+	}
+
+	return false
+}
+
+// SetRole gets a reference to the given string and assigns it to the Role field.
+func (o *SnowflakeSettingsConfig) SetRole(v string) {
+	o.Role = &v
 }
 
 // GetSchema returns the Schema field value if set, zero value otherwise.
@@ -292,6 +326,9 @@ func (o SnowflakeSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Database) {
 		toSerialize["database"] = o.Database
+	}
+	if !IsNil(o.Role) {
+		toSerialize["role"] = o.Role
 	}
 	if !IsNil(o.Schema) {
 		toSerialize["schema"] = o.Schema

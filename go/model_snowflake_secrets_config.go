@@ -20,8 +20,10 @@ var _ MappedNullable = &SnowflakeSecretsConfig{}
 
 // SnowflakeSecretsConfig Snowflake Output Secrets
 type SnowflakeSecretsConfig struct {
-	// The Users password
+	// The Users password if using password authentication. It is reccomended that you use service account authentication with a private key.
 	Password *string `json:"password,omitempty"`
+	// Your private KEY
+	PrivateKey *string `json:"private_key,omitempty"`
 }
 
 // NewSnowflakeSecretsConfig instantiates a new SnowflakeSecretsConfig object
@@ -73,6 +75,38 @@ func (o *SnowflakeSecretsConfig) SetPassword(v string) {
 	o.Password = &v
 }
 
+// GetPrivateKey returns the PrivateKey field value if set, zero value otherwise.
+func (o *SnowflakeSecretsConfig) GetPrivateKey() string {
+	if o == nil || IsNil(o.PrivateKey) {
+		var ret string
+		return ret
+	}
+	return *o.PrivateKey
+}
+
+// GetPrivateKeyOk returns a tuple with the PrivateKey field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnowflakeSecretsConfig) GetPrivateKeyOk() (*string, bool) {
+	if o == nil || IsNil(o.PrivateKey) {
+		return nil, false
+	}
+	return o.PrivateKey, true
+}
+
+// HasPrivateKey returns a boolean if a field has been set.
+func (o *SnowflakeSecretsConfig) HasPrivateKey() bool {
+	if o != nil && !IsNil(o.PrivateKey) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrivateKey gets a reference to the given string and assigns it to the PrivateKey field.
+func (o *SnowflakeSecretsConfig) SetPrivateKey(v string) {
+	o.PrivateKey = &v
+}
+
 func (o SnowflakeSecretsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -85,6 +119,9 @@ func (o SnowflakeSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Password) {
 		toSerialize["password"] = o.Password
+	}
+	if !IsNil(o.PrivateKey) {
+		toSerialize["private_key"] = o.PrivateKey
 	}
 	return toSerialize, nil
 }

@@ -8,7 +8,8 @@ Snowflake Output Secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**password** | **String** | The Users password |  [optional] |
+|**password** | **String** | The Users password if using password authentication. It is reccomended that you use service account authentication with a private key. |  [optional] |
+|**privateKey** | **String** | Your private KEY |  [optional] |
 
 
 

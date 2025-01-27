@@ -17,9 +17,13 @@ import { HttpFile } from '../http/http';
 */
 export class SnowflakeSecretsConfig {
     /**
-    * The Users password
+    * The Users password if using password authentication. It is reccomended that you use service account authentication with a private key.
     */
     'password'?: string;
+    /**
+    * Your private KEY
+    */
+    'privateKey'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,6 +33,12 @@ export class SnowflakeSecretsConfig {
         {
             "name": "password",
             "baseName": "password",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "privateKey",
+            "baseName": "private_key",
             "type": "string",
             "format": ""
         }    ];

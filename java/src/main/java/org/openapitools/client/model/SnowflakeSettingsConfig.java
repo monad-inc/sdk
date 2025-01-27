@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Snowflake Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-27T15:26:40.432709245Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-27T15:37:10.417855071Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SnowflakeSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
@@ -59,6 +59,11 @@ public class SnowflakeSettingsConfig {
   @SerializedName(SERIALIZED_NAME_DATABASE)
   @javax.annotation.Nullable
   private String database;
+
+  public static final String SERIALIZED_NAME_ROLE = "role";
+  @SerializedName(SERIALIZED_NAME_ROLE)
+  @javax.annotation.Nullable
+  private String role;
 
   public static final String SERIALIZED_NAME_SCHEMA = "schema";
   @SerializedName(SERIALIZED_NAME_SCHEMA)
@@ -94,7 +99,7 @@ public class SnowflakeSettingsConfig {
   }
 
   /**
-   * The unique identifier for your Snowflake account, typically in the form of &#39;account_name.cloud_provider&#39;
+   * The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;.
    * @return account
    */
   @javax.annotation.Nullable
@@ -123,6 +128,25 @@ public class SnowflakeSettingsConfig {
 
   public void setDatabase(@javax.annotation.Nullable String database) {
     this.database = database;
+  }
+
+
+  public SnowflakeSettingsConfig role(@javax.annotation.Nullable String role) {
+    this.role = role;
+    return this;
+  }
+
+  /**
+   * The name of the Role your service account was granted which can access your resources.
+   * @return role
+   */
+  @javax.annotation.Nullable
+  public String getRole() {
+    return role;
+  }
+
+  public void setRole(@javax.annotation.Nullable String role) {
+    this.role = role;
   }
 
 
@@ -170,7 +194,7 @@ public class SnowflakeSettingsConfig {
   }
 
   /**
-   * The name of the table in Snowflake where the data will be written
+   * The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table.
    * @return table
    */
   @javax.annotation.Nullable
@@ -233,6 +257,7 @@ public class SnowflakeSettingsConfig {
     SnowflakeSettingsConfig snowflakeSettingsConfig = (SnowflakeSettingsConfig) o;
     return Objects.equals(this.account, snowflakeSettingsConfig.account) &&
         Objects.equals(this.database, snowflakeSettingsConfig.database) &&
+        Objects.equals(this.role, snowflakeSettingsConfig.role) &&
         Objects.equals(this.schema, snowflakeSettingsConfig.schema) &&
         Objects.equals(this.stage, snowflakeSettingsConfig.stage) &&
         Objects.equals(this.table, snowflakeSettingsConfig.table) &&
@@ -242,7 +267,7 @@ public class SnowflakeSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(account, database, schema, stage, table, user, warehouse);
+    return Objects.hash(account, database, role, schema, stage, table, user, warehouse);
   }
 
   @Override
@@ -251,6 +276,7 @@ public class SnowflakeSettingsConfig {
     sb.append("class SnowflakeSettingsConfig {\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    database: ").append(toIndentedString(database)).append("\n");
+    sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    stage: ").append(toIndentedString(stage)).append("\n");
     sb.append("    table: ").append(toIndentedString(table)).append("\n");
@@ -280,6 +306,7 @@ public class SnowflakeSettingsConfig {
     openapiFields = new HashSet<String>();
     openapiFields.add("account");
     openapiFields.add("database");
+    openapiFields.add("role");
     openapiFields.add("schema");
     openapiFields.add("stage");
     openapiFields.add("table");
@@ -316,6 +343,9 @@ public class SnowflakeSettingsConfig {
       }
       if ((jsonObj.get("database") != null && !jsonObj.get("database").isJsonNull()) && !jsonObj.get("database").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `database` to be a primitive type in the JSON string but got `%s`", jsonObj.get("database").toString()));
+      }
+      if ((jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) && !jsonObj.get("role").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
       }
       if ((jsonObj.get("schema") != null && !jsonObj.get("schema").isJsonNull()) && !jsonObj.get("schema").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `schema` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema").toString()));

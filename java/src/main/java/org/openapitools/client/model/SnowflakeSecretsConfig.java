@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * Snowflake Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-27T15:26:40.432709245Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-27T15:37:10.417855071Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SnowflakeSecretsConfig {
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)
   @javax.annotation.Nullable
   private String password;
+
+  public static final String SERIALIZED_NAME_PRIVATE_KEY = "private_key";
+  @SerializedName(SERIALIZED_NAME_PRIVATE_KEY)
+  @javax.annotation.Nullable
+  private String privateKey;
 
   public SnowflakeSecretsConfig() {
   }
@@ -64,7 +69,7 @@ public class SnowflakeSecretsConfig {
   }
 
   /**
-   * The Users password
+   * The Users password if using password authentication. It is reccomended that you use service account authentication with a private key.
    * @return password
    */
   @javax.annotation.Nullable
@@ -74,6 +79,25 @@ public class SnowflakeSecretsConfig {
 
   public void setPassword(@javax.annotation.Nullable String password) {
     this.password = password;
+  }
+
+
+  public SnowflakeSecretsConfig privateKey(@javax.annotation.Nullable String privateKey) {
+    this.privateKey = privateKey;
+    return this;
+  }
+
+  /**
+   * Your private KEY
+   * @return privateKey
+   */
+  @javax.annotation.Nullable
+  public String getPrivateKey() {
+    return privateKey;
+  }
+
+  public void setPrivateKey(@javax.annotation.Nullable String privateKey) {
+    this.privateKey = privateKey;
   }
 
 
@@ -87,12 +111,13 @@ public class SnowflakeSecretsConfig {
       return false;
     }
     SnowflakeSecretsConfig snowflakeSecretsConfig = (SnowflakeSecretsConfig) o;
-    return Objects.equals(this.password, snowflakeSecretsConfig.password);
+    return Objects.equals(this.password, snowflakeSecretsConfig.password) &&
+        Objects.equals(this.privateKey, snowflakeSecretsConfig.privateKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(password);
+    return Objects.hash(password, privateKey);
   }
 
   @Override
@@ -100,6 +125,7 @@ public class SnowflakeSecretsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class SnowflakeSecretsConfig {\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -123,6 +149,7 @@ public class SnowflakeSecretsConfig {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("password");
+    openapiFields.add("private_key");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -151,6 +178,9 @@ public class SnowflakeSecretsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) && !jsonObj.get("password").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("password").toString()));
+      }
+      if ((jsonObj.get("private_key") != null && !jsonObj.get("private_key").isJsonNull()) && !jsonObj.get("private_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `private_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("private_key").toString()));
       }
   }
 

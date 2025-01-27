@@ -6,11 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuthToken** | Pointer to **string** | The authentication token value you&#39;ve set for your HTTP Source. This token is used to authenticate requests to your Cribl endpoint. | [optional] 
 **ApiKey** | Pointer to **string** | API key for authenticating with the Elasticsearch cluster. Required when auth type is set to &#39;api_key&#39;. | [optional] 
-**Password** | Pointer to **string** | The Users password | [optional] 
+**Password** | Pointer to **string** | The Users password if using password authentication. It is reccomended that you use service account authentication with a private key. | [optional] 
 **AuthHeaders** | Pointer to **map[string]string** | Authentication headers | [optional] 
 **ClientId** | Pointer to **string** | The application (client) ID registered in Azure Active Directory. | [optional] 
 **ClientSecret** | Pointer to **string** | The client secret associated with the registered application in Azure AD. | [optional] 
 **TenantId** | Pointer to **string** | The Azure Active Directory tenant (directory) ID. | [optional] 
+**PrivateKey** | Pointer to **string** | Your private KEY | [optional] 
 **Token** | Pointer to **string** | The token for authenticating with Splunk. | [optional] 
 **AccessId** | Pointer to **string** | The Access ID for authenticating with Sumo Logic. | [optional] 
 **AccessKey** | Pointer to **string** | The Access Key for authenticating with Sumo Logic. | [optional] 
@@ -208,6 +209,31 @@ SetTenantId sets TenantId field to given value.
 `func (o *RoutesV2OutputConfigSecrets) HasTenantId() bool`
 
 HasTenantId returns a boolean if a field has been set.
+
+### GetPrivateKey
+
+`func (o *RoutesV2OutputConfigSecrets) GetPrivateKey() string`
+
+GetPrivateKey returns the PrivateKey field if non-nil, zero value otherwise.
+
+### GetPrivateKeyOk
+
+`func (o *RoutesV2OutputConfigSecrets) GetPrivateKeyOk() (*string, bool)`
+
+GetPrivateKeyOk returns a tuple with the PrivateKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrivateKey
+
+`func (o *RoutesV2OutputConfigSecrets) SetPrivateKey(v string)`
+
+SetPrivateKey sets PrivateKey field to given value.
+
+### HasPrivateKey
+
+`func (o *RoutesV2OutputConfigSecrets) HasPrivateKey() bool`
+
+HasPrivateKey returns a boolean if a field has been set.
 
 ### GetToken
 

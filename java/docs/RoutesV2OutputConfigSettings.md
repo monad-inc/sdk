@@ -35,11 +35,12 @@
 |**roleArn** | **String** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket |  [optional] |
 |**ruleId** | **String** | The unique identifier of the Data Collection Rule (DCR). |  [optional] |
 |**streamName** | **String** | The name of the data stream defined in the Data Collection Rule. |  [optional] |
-|**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;account_name.cloud_provider&#39; |  [optional] |
+|**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  [optional] |
 |**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
+|**role** | **String** | The name of the Role your service account was granted which can access your resources. |  [optional] |
 |**schema** | **String** | The schema within the Snowflake database where the target table resides. |  [optional] |
 |**stage** | **String** | The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage. |  [optional] |
-|**table** | **String** | The name of the table in Snowflake where the data will be written |  [optional] |
+|**table** | **String** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. |  [optional] |
 |**user** | **String** | The username of the Snowflake account used to establish the connection. |  [optional] |
 |**warehouse** | **String** | The Snowflake virtual warehouse to use for executing queries and processing data. |  [optional] |
 |**allowInsecure** | **Boolean** | Whether to allow insecure connections (not recommended for production). |  [optional] |

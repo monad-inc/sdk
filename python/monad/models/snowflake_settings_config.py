@@ -27,14 +27,15 @@ class SnowflakeSettingsConfig(BaseModel):
     """
     Snowflake Output Settings
     """ # noqa: E501
-    account: Optional[StrictStr] = Field(default=None, description="The unique identifier for your Snowflake account, typically in the form of 'account_name.cloud_provider'")
+    account: Optional[StrictStr] = Field(default=None, description="The unique identifier for your Snowflake account, typically in the form of 'organization-account_name'.")
     database: Optional[StrictStr] = Field(default=None, description="The name of the Snowflake database to connect to and perform operations on")
+    role: Optional[StrictStr] = Field(default=None, description="The name of the Role your service account was granted which can access your resources.")
     var_schema: Optional[StrictStr] = Field(default=None, description="The schema within the Snowflake database where the target table resides.", alias="schema")
     stage: Optional[StrictStr] = Field(default=None, description="The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage.")
-    table: Optional[StrictStr] = Field(default=None, description="The name of the table in Snowflake where the data will be written")
+    table: Optional[StrictStr] = Field(default=None, description="The name of the table in Snowflake where the data will be written. If the table doesn't exist Monad will create the table.")
     user: Optional[StrictStr] = Field(default=None, description="The username of the Snowflake account used to establish the connection.")
     warehouse: Optional[StrictStr] = Field(default=None, description="The Snowflake virtual warehouse to use for executing queries and processing data.")
-    __properties: ClassVar[List[str]] = ["account", "database", "schema", "stage", "table", "user", "warehouse"]
+    __properties: ClassVar[List[str]] = ["account", "database", "role", "schema", "stage", "table", "user", "warehouse"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +90,7 @@ class SnowflakeSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "account": obj.get("account"),
             "database": obj.get("database"),
+            "role": obj.get("role"),
             "schema": obj.get("schema"),
             "stage": obj.get("stage"),
             "table": obj.get("table"),

@@ -7,11 +7,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **auth_token** | **str** | The authentication token value you&#39;ve set for your HTTP Source. This token is used to authenticate requests to your Cribl endpoint. | [optional] 
 **api_key** | **str** | API key for authenticating with the Elasticsearch cluster. Required when auth type is set to &#39;api_key&#39;. | [optional] 
-**password** | **str** | The Users password | [optional] 
+**password** | **str** | The Users password if using password authentication. It is reccomended that you use service account authentication with a private key. | [optional] 
 **auth_headers** | **Dict[str, str]** | Authentication headers | [optional] 
 **client_id** | **str** | The application (client) ID registered in Azure Active Directory. | [optional] 
 **client_secret** | **str** | The client secret associated with the registered application in Azure AD. | [optional] 
 **tenant_id** | **str** | The Azure Active Directory tenant (directory) ID. | [optional] 
+**private_key** | **str** | Your private KEY | [optional] 
 **token** | **str** | The token for authenticating with Splunk. | [optional] 
 **access_id** | **str** | The Access ID for authenticating with Sumo Logic. | [optional] 
 **access_key** | **str** | The Access Key for authenticating with Sumo Logic. | [optional] 

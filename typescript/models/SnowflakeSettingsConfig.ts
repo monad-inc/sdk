@@ -17,13 +17,17 @@ import { HttpFile } from '../http/http';
 */
 export class SnowflakeSettingsConfig {
     /**
-    * The unique identifier for your Snowflake account, typically in the form of \'account_name.cloud_provider\'
+    * The unique identifier for your Snowflake account, typically in the form of \'organization-account_name\'.
     */
     'account'?: string;
     /**
     * The name of the Snowflake database to connect to and perform operations on
     */
     'database'?: string;
+    /**
+    * The name of the Role your service account was granted which can access your resources.
+    */
+    'role'?: string;
     /**
     * The schema within the Snowflake database where the target table resides.
     */
@@ -33,7 +37,7 @@ export class SnowflakeSettingsConfig {
     */
     'stage'?: string;
     /**
-    * The name of the table in Snowflake where the data will be written
+    * The name of the table in Snowflake where the data will be written. If the table doesn\'t exist Monad will create the table.
     */
     'table'?: string;
     /**
@@ -59,6 +63,12 @@ export class SnowflakeSettingsConfig {
         {
             "name": "database",
             "baseName": "database",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "role",
+            "baseName": "role",
             "type": "string",
             "format": ""
         },

@@ -27,8 +27,9 @@ class SnowflakeSecretsConfig(BaseModel):
     """
     Snowflake Output Secrets
     """ # noqa: E501
-    password: Optional[StrictStr] = Field(default=None, description="The Users password")
-    __properties: ClassVar[List[str]] = ["password"]
+    password: Optional[StrictStr] = Field(default=None, description="The Users password if using password authentication. It is reccomended that you use service account authentication with a private key.")
+    private_key: Optional[StrictStr] = Field(default=None, description="Your private KEY")
+    __properties: ClassVar[List[str]] = ["password", "private_key"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,7 +82,8 @@ class SnowflakeSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "password": obj.get("password")
+            "password": obj.get("password"),
+            "private_key": obj.get("private_key")
         })
         return _obj
 
