@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2InputConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-28T15:48:04.264094785Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-28T16:55:49.632852187Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2InputConfig {
   public static final String SERIALIZED_NAME_SECRETS = "secrets";
   @SerializedName(SERIALIZED_NAME_SECRETS)
