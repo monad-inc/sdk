@@ -13,6 +13,7 @@
 |**integrationKey** | **String** |  |  [optional] |
 |**secretKey** | **String** | Secret Key for the Tenable API. This is required to authenticate requests. |  [optional] |
 |**personalAccessToken** | **String** | Your personal access token that grants read:audit_log |  [optional] |
+|**enterpriseId** | **String** | Client Secret for the Box API. This is required to authenticate requests. |  [optional] |
 |**apiKey** | **String** | API Key for the Snyk API. This is required to authenticate requests. |  [optional] |
 |**token** | **String** | Token for the Wiz API. This is required to authenticate requests. |  [optional] |
 |**accessKey** | **String** | Access Key for the Tenable API. This is required to authenticate requests. |  [optional] |

@@ -25,6 +25,7 @@ from monad.models.audit_logs_settings_config import AuditLogsSettingsConfig
 from monad.models.auth_logs_settings_config import AuthLogsSettingsConfig
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig
 from monad.models.azure_activity_logs_settings_config import AzureActivityLogsSettingsConfig
+from monad.models.box_users_settings_config import BoxUsersSettingsConfig
 from monad.models.cloud_configuration_findings_settings_config import CloudConfigurationFindingsSettingsConfig
 from monad.models.cloud_logs_settings_config import CloudLogsSettingsConfig
 from monad.models.cloud_resource_inventory_settings_config import CloudResourceInventorySettingsConfig
@@ -59,7 +60,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-ROUTESV2INPUTCONFIGSETTINGS_ONE_OF_SCHEMAS = ["ActorsInfoSettingsConfig", "AdminActivitySettingsConfig", "AdminLogsSettingsConfig", "AuditLogsSettingsConfig", "AuthLogsSettingsConfig", "AwsS3SettingsConfig", "AzureActivityLogsSettingsConfig", "CloudConfigurationFindingsSettingsConfig", "CloudLogsSettingsConfig", "CloudResourceInventorySettingsConfig", "CloudtrailSettingsConfig", "DemoCustomSettingsConfig", "DemoSettingsConfig", "DetectSummariesSettingsConfig", "DeviceActivitySettingsConfig", "DeviceDetailsSettingsConfig", "DriveActivitySettingsConfig", "EntraIdSettingsConfig", "EventSettingsConfig", "EventsLogsSettingsConfig", "LogAnalyticsQuerySettingsConfig", "LoginActivitySettingsConfig", "LoginSessionsSettingsConfig", "MonadLogSettingsConfig", "OauthActivitySettingsConfig", "RolesInfoSettingsConfig", "SemgrepDeploymentsSettingsConfig", "SemgrepProjectDetailsSettingsConfig", "SemgrepProjectsSettingsConfig", "SlackUsersSettingsConfig", "SlackgroupsSettingsConfig", "SnykOrganizationsSettingsConfig", "SnykProjectsSettingsConfig", "UsersInfoSettingsConfig", "UsersSettingsConfig", "VulnerabilitiesSettingsConfig", "VulnerabilityFindingsSettingsConfig", "object"]
+ROUTESV2INPUTCONFIGSETTINGS_ONE_OF_SCHEMAS = ["ActorsInfoSettingsConfig", "AdminActivitySettingsConfig", "AdminLogsSettingsConfig", "AuditLogsSettingsConfig", "AuthLogsSettingsConfig", "AwsS3SettingsConfig", "AzureActivityLogsSettingsConfig", "BoxUsersSettingsConfig", "CloudConfigurationFindingsSettingsConfig", "CloudLogsSettingsConfig", "CloudResourceInventorySettingsConfig", "CloudtrailSettingsConfig", "DemoCustomSettingsConfig", "DemoSettingsConfig", "DetectSummariesSettingsConfig", "DeviceActivitySettingsConfig", "DeviceDetailsSettingsConfig", "DriveActivitySettingsConfig", "EntraIdSettingsConfig", "EventSettingsConfig", "EventsLogsSettingsConfig", "LogAnalyticsQuerySettingsConfig", "LoginActivitySettingsConfig", "LoginSessionsSettingsConfig", "MonadLogSettingsConfig", "OauthActivitySettingsConfig", "RolesInfoSettingsConfig", "SemgrepDeploymentsSettingsConfig", "SemgrepProjectDetailsSettingsConfig", "SemgrepProjectsSettingsConfig", "SlackUsersSettingsConfig", "SlackgroupsSettingsConfig", "SnykOrganizationsSettingsConfig", "SnykProjectsSettingsConfig", "UsersInfoSettingsConfig", "UsersSettingsConfig", "VulnerabilitiesSettingsConfig", "VulnerabilityFindingsSettingsConfig", "object"]
 
 class RoutesV2InputConfigSettings(BaseModel):
     """
@@ -79,86 +80,88 @@ class RoutesV2InputConfigSettings(BaseModel):
     oneof_schema_6_validator: Optional[AwsS3SettingsConfig] = None
     # data type: AzureActivityLogsSettingsConfig
     oneof_schema_7_validator: Optional[AzureActivityLogsSettingsConfig] = None
+    # data type: BoxUsersSettingsConfig
+    oneof_schema_8_validator: Optional[BoxUsersSettingsConfig] = None
     # data type: object
-    oneof_schema_8_validator: Optional[Dict[str, Any]] = Field(default=None, description="Github Advisory Database settings")
+    oneof_schema_9_validator: Optional[Dict[str, Any]] = Field(default=None, description="Github Advisory Database settings")
     # data type: object
-    oneof_schema_9_validator: Optional[Dict[str, Any]] = Field(default=None, description="CISA KEV settings")
+    oneof_schema_10_validator: Optional[Dict[str, Any]] = Field(default=None, description="CISA KEV settings")
     # data type: CloudConfigurationFindingsSettingsConfig
-    oneof_schema_10_validator: Optional[CloudConfigurationFindingsSettingsConfig] = None
+    oneof_schema_11_validator: Optional[CloudConfigurationFindingsSettingsConfig] = None
     # data type: CloudLogsSettingsConfig
-    oneof_schema_11_validator: Optional[CloudLogsSettingsConfig] = None
+    oneof_schema_12_validator: Optional[CloudLogsSettingsConfig] = None
     # data type: CloudResourceInventorySettingsConfig
-    oneof_schema_12_validator: Optional[CloudResourceInventorySettingsConfig] = None
+    oneof_schema_13_validator: Optional[CloudResourceInventorySettingsConfig] = None
     # data type: CloudtrailSettingsConfig
-    oneof_schema_13_validator: Optional[CloudtrailSettingsConfig] = None
+    oneof_schema_14_validator: Optional[CloudtrailSettingsConfig] = None
     # data type: DemoSettingsConfig
-    oneof_schema_14_validator: Optional[DemoSettingsConfig] = None
+    oneof_schema_15_validator: Optional[DemoSettingsConfig] = None
     # data type: DemoCustomSettingsConfig
-    oneof_schema_15_validator: Optional[DemoCustomSettingsConfig] = None
+    oneof_schema_16_validator: Optional[DemoCustomSettingsConfig] = None
     # data type: DetectSummariesSettingsConfig
-    oneof_schema_16_validator: Optional[DetectSummariesSettingsConfig] = None
+    oneof_schema_17_validator: Optional[DetectSummariesSettingsConfig] = None
     # data type: DeviceActivitySettingsConfig
-    oneof_schema_17_validator: Optional[DeviceActivitySettingsConfig] = None
+    oneof_schema_18_validator: Optional[DeviceActivitySettingsConfig] = None
     # data type: DeviceDetailsSettingsConfig
-    oneof_schema_18_validator: Optional[DeviceDetailsSettingsConfig] = None
+    oneof_schema_19_validator: Optional[DeviceDetailsSettingsConfig] = None
     # data type: DriveActivitySettingsConfig
-    oneof_schema_19_validator: Optional[DriveActivitySettingsConfig] = None
+    oneof_schema_20_validator: Optional[DriveActivitySettingsConfig] = None
     # data type: EntraIdSettingsConfig
-    oneof_schema_20_validator: Optional[EntraIdSettingsConfig] = None
+    oneof_schema_21_validator: Optional[EntraIdSettingsConfig] = None
     # data type: EventSettingsConfig
-    oneof_schema_21_validator: Optional[EventSettingsConfig] = None
+    oneof_schema_22_validator: Optional[EventSettingsConfig] = None
     # data type: EventsLogsSettingsConfig
-    oneof_schema_22_validator: Optional[EventsLogsSettingsConfig] = None
+    oneof_schema_23_validator: Optional[EventsLogsSettingsConfig] = None
     # data type: LogAnalyticsQuerySettingsConfig
-    oneof_schema_23_validator: Optional[LogAnalyticsQuerySettingsConfig] = None
+    oneof_schema_24_validator: Optional[LogAnalyticsQuerySettingsConfig] = None
     # data type: LoginActivitySettingsConfig
-    oneof_schema_24_validator: Optional[LoginActivitySettingsConfig] = None
+    oneof_schema_25_validator: Optional[LoginActivitySettingsConfig] = None
     # data type: LoginSessionsSettingsConfig
-    oneof_schema_25_validator: Optional[LoginSessionsSettingsConfig] = None
+    oneof_schema_26_validator: Optional[LoginSessionsSettingsConfig] = None
     # data type: object
-    oneof_schema_26_validator: Optional[Dict[str, Any]] = Field(default=None, description="Monad HTTP settings")
+    oneof_schema_27_validator: Optional[Dict[str, Any]] = Field(default=None, description="Monad HTTP settings")
     # data type: MonadLogSettingsConfig
-    oneof_schema_27_validator: Optional[MonadLogSettingsConfig] = None
+    oneof_schema_28_validator: Optional[MonadLogSettingsConfig] = None
     # data type: OauthActivitySettingsConfig
-    oneof_schema_28_validator: Optional[OauthActivitySettingsConfig] = None
+    oneof_schema_29_validator: Optional[OauthActivitySettingsConfig] = None
     # data type: RolesInfoSettingsConfig
-    oneof_schema_29_validator: Optional[RolesInfoSettingsConfig] = None
+    oneof_schema_30_validator: Optional[RolesInfoSettingsConfig] = None
     # data type: object
-    oneof_schema_30_validator: Optional[Dict[str, Any]] = Field(default=None, description="Semgrep code findings settings")
+    oneof_schema_31_validator: Optional[Dict[str, Any]] = Field(default=None, description="Semgrep code findings settings")
     # data type: SemgrepDeploymentsSettingsConfig
-    oneof_schema_31_validator: Optional[SemgrepDeploymentsSettingsConfig] = None
+    oneof_schema_32_validator: Optional[SemgrepDeploymentsSettingsConfig] = None
     # data type: SemgrepProjectDetailsSettingsConfig
-    oneof_schema_32_validator: Optional[SemgrepProjectDetailsSettingsConfig] = None
+    oneof_schema_33_validator: Optional[SemgrepProjectDetailsSettingsConfig] = None
     # data type: SemgrepProjectsSettingsConfig
-    oneof_schema_33_validator: Optional[SemgrepProjectsSettingsConfig] = None
+    oneof_schema_34_validator: Optional[SemgrepProjectsSettingsConfig] = None
     # data type: object
-    oneof_schema_34_validator: Optional[Dict[str, Any]] = Field(default=None, description="Semgrep supply chain findings settings")
+    oneof_schema_35_validator: Optional[Dict[str, Any]] = Field(default=None, description="Semgrep supply chain findings settings")
     # data type: SlackUsersSettingsConfig
-    oneof_schema_35_validator: Optional[SlackUsersSettingsConfig] = None
+    oneof_schema_36_validator: Optional[SlackUsersSettingsConfig] = None
     # data type: SlackgroupsSettingsConfig
-    oneof_schema_36_validator: Optional[SlackgroupsSettingsConfig] = None
+    oneof_schema_37_validator: Optional[SlackgroupsSettingsConfig] = None
     # data type: object
-    oneof_schema_37_validator: Optional[Dict[str, Any]] = Field(default=None, description="Snyk issues settings")
+    oneof_schema_38_validator: Optional[Dict[str, Any]] = Field(default=None, description="Snyk issues settings")
     # data type: SnykOrganizationsSettingsConfig
-    oneof_schema_38_validator: Optional[SnykOrganizationsSettingsConfig] = None
+    oneof_schema_39_validator: Optional[SnykOrganizationsSettingsConfig] = None
     # data type: SnykProjectsSettingsConfig
-    oneof_schema_39_validator: Optional[SnykProjectsSettingsConfig] = None
+    oneof_schema_40_validator: Optional[SnykProjectsSettingsConfig] = None
     # data type: object
-    oneof_schema_40_validator: Optional[Dict[str, Any]] = Field(default=None, description="Snyk targets settings")
+    oneof_schema_41_validator: Optional[Dict[str, Any]] = Field(default=None, description="Snyk targets settings")
     # data type: object
-    oneof_schema_41_validator: Optional[Dict[str, Any]] = Field(default=None, description="Tenable assets settings")
+    oneof_schema_42_validator: Optional[Dict[str, Any]] = Field(default=None, description="Tenable assets settings")
     # data type: object
-    oneof_schema_42_validator: Optional[Dict[str, Any]] = Field(default=None, description="Tenable vulnerabilities settings")
+    oneof_schema_43_validator: Optional[Dict[str, Any]] = Field(default=None, description="Tenable vulnerabilities settings")
     # data type: UsersSettingsConfig
-    oneof_schema_43_validator: Optional[UsersSettingsConfig] = None
+    oneof_schema_44_validator: Optional[UsersSettingsConfig] = None
     # data type: UsersInfoSettingsConfig
-    oneof_schema_44_validator: Optional[UsersInfoSettingsConfig] = None
+    oneof_schema_45_validator: Optional[UsersInfoSettingsConfig] = None
     # data type: VulnerabilitiesSettingsConfig
-    oneof_schema_45_validator: Optional[VulnerabilitiesSettingsConfig] = None
+    oneof_schema_46_validator: Optional[VulnerabilitiesSettingsConfig] = None
     # data type: VulnerabilityFindingsSettingsConfig
-    oneof_schema_46_validator: Optional[VulnerabilityFindingsSettingsConfig] = None
-    actual_instance: Optional[Union[ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object]] = None
-    one_of_schemas: Set[str] = { "ActorsInfoSettingsConfig", "AdminActivitySettingsConfig", "AdminLogsSettingsConfig", "AuditLogsSettingsConfig", "AuthLogsSettingsConfig", "AwsS3SettingsConfig", "AzureActivityLogsSettingsConfig", "CloudConfigurationFindingsSettingsConfig", "CloudLogsSettingsConfig", "CloudResourceInventorySettingsConfig", "CloudtrailSettingsConfig", "DemoCustomSettingsConfig", "DemoSettingsConfig", "DetectSummariesSettingsConfig", "DeviceActivitySettingsConfig", "DeviceDetailsSettingsConfig", "DriveActivitySettingsConfig", "EntraIdSettingsConfig", "EventSettingsConfig", "EventsLogsSettingsConfig", "LogAnalyticsQuerySettingsConfig", "LoginActivitySettingsConfig", "LoginSessionsSettingsConfig", "MonadLogSettingsConfig", "OauthActivitySettingsConfig", "RolesInfoSettingsConfig", "SemgrepDeploymentsSettingsConfig", "SemgrepProjectDetailsSettingsConfig", "SemgrepProjectsSettingsConfig", "SlackUsersSettingsConfig", "SlackgroupsSettingsConfig", "SnykOrganizationsSettingsConfig", "SnykProjectsSettingsConfig", "UsersInfoSettingsConfig", "UsersSettingsConfig", "VulnerabilitiesSettingsConfig", "VulnerabilityFindingsSettingsConfig", "object" }
+    oneof_schema_47_validator: Optional[VulnerabilityFindingsSettingsConfig] = None
+    actual_instance: Optional[Union[ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object]] = None
+    one_of_schemas: Set[str] = { "ActorsInfoSettingsConfig", "AdminActivitySettingsConfig", "AdminLogsSettingsConfig", "AuditLogsSettingsConfig", "AuthLogsSettingsConfig", "AwsS3SettingsConfig", "AzureActivityLogsSettingsConfig", "BoxUsersSettingsConfig", "CloudConfigurationFindingsSettingsConfig", "CloudLogsSettingsConfig", "CloudResourceInventorySettingsConfig", "CloudtrailSettingsConfig", "DemoCustomSettingsConfig", "DemoSettingsConfig", "DetectSummariesSettingsConfig", "DeviceActivitySettingsConfig", "DeviceDetailsSettingsConfig", "DriveActivitySettingsConfig", "EntraIdSettingsConfig", "EventSettingsConfig", "EventsLogsSettingsConfig", "LogAnalyticsQuerySettingsConfig", "LoginActivitySettingsConfig", "LoginSessionsSettingsConfig", "MonadLogSettingsConfig", "OauthActivitySettingsConfig", "RolesInfoSettingsConfig", "SemgrepDeploymentsSettingsConfig", "SemgrepProjectDetailsSettingsConfig", "SemgrepProjectsSettingsConfig", "SlackUsersSettingsConfig", "SlackgroupsSettingsConfig", "SnykOrganizationsSettingsConfig", "SnykProjectsSettingsConfig", "UsersInfoSettingsConfig", "UsersSettingsConfig", "VulnerabilitiesSettingsConfig", "VulnerabilityFindingsSettingsConfig", "object" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -216,15 +219,20 @@ class RoutesV2InputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `AzureActivityLogsSettingsConfig`")
         else:
             match += 1
+        # validate data type: BoxUsersSettingsConfig
+        if not isinstance(v, BoxUsersSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `BoxUsersSettingsConfig`")
+        else:
+            match += 1
         # validate data type: object
         try:
-            instance.oneof_schema_8_validator = v
+            instance.oneof_schema_9_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
         # validate data type: object
         try:
-            instance.oneof_schema_9_validator = v
+            instance.oneof_schema_10_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -310,7 +318,7 @@ class RoutesV2InputConfigSettings(BaseModel):
             match += 1
         # validate data type: object
         try:
-            instance.oneof_schema_26_validator = v
+            instance.oneof_schema_27_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -331,7 +339,7 @@ class RoutesV2InputConfigSettings(BaseModel):
             match += 1
         # validate data type: object
         try:
-            instance.oneof_schema_30_validator = v
+            instance.oneof_schema_31_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -352,7 +360,7 @@ class RoutesV2InputConfigSettings(BaseModel):
             match += 1
         # validate data type: object
         try:
-            instance.oneof_schema_34_validator = v
+            instance.oneof_schema_35_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -368,7 +376,7 @@ class RoutesV2InputConfigSettings(BaseModel):
             match += 1
         # validate data type: object
         try:
-            instance.oneof_schema_37_validator = v
+            instance.oneof_schema_38_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -384,12 +392,6 @@ class RoutesV2InputConfigSettings(BaseModel):
             match += 1
         # validate data type: object
         try:
-            instance.oneof_schema_40_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # validate data type: object
-        try:
             instance.oneof_schema_41_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
@@ -397,6 +399,12 @@ class RoutesV2InputConfigSettings(BaseModel):
         # validate data type: object
         try:
             instance.oneof_schema_42_validator = v
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # validate data type: object
+        try:
+            instance.oneof_schema_43_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -422,10 +430,10 @@ class RoutesV2InputConfigSettings(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in RoutesV2InputConfigSettings with oneOf schemas: ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in RoutesV2InputConfigSettings with oneOf schemas: ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in RoutesV2InputConfigSettings with oneOf schemas: ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in RoutesV2InputConfigSettings with oneOf schemas: ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -482,12 +490,9 @@ class RoutesV2InputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into object
+        # deserialize data into BoxUsersSettingsConfig
         try:
-            # validation
-            instance.oneof_schema_8_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_8_validator
+            instance.actual_instance = BoxUsersSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -497,6 +502,15 @@ class RoutesV2InputConfigSettings(BaseModel):
             instance.oneof_schema_9_validator = json.loads(json_str)
             # assign value to actual_instance
             instance.actual_instance = instance.oneof_schema_9_validator
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into object
+        try:
+            # validation
+            instance.oneof_schema_10_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_10_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -599,9 +613,9 @@ class RoutesV2InputConfigSettings(BaseModel):
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_26_validator = json.loads(json_str)
+            instance.oneof_schema_27_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_26_validator
+            instance.actual_instance = instance.oneof_schema_27_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -626,9 +640,9 @@ class RoutesV2InputConfigSettings(BaseModel):
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_30_validator = json.loads(json_str)
+            instance.oneof_schema_31_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_30_validator
+            instance.actual_instance = instance.oneof_schema_31_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -653,9 +667,9 @@ class RoutesV2InputConfigSettings(BaseModel):
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_34_validator = json.loads(json_str)
+            instance.oneof_schema_35_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_34_validator
+            instance.actual_instance = instance.oneof_schema_35_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -674,9 +688,9 @@ class RoutesV2InputConfigSettings(BaseModel):
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_37_validator = json.loads(json_str)
+            instance.oneof_schema_38_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_37_validator
+            instance.actual_instance = instance.oneof_schema_38_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -695,15 +709,6 @@ class RoutesV2InputConfigSettings(BaseModel):
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_40_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_40_validator
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # deserialize data into object
-        try:
-            # validation
             instance.oneof_schema_41_validator = json.loads(json_str)
             # assign value to actual_instance
             instance.actual_instance = instance.oneof_schema_41_validator
@@ -716,6 +721,15 @@ class RoutesV2InputConfigSettings(BaseModel):
             instance.oneof_schema_42_validator = json.loads(json_str)
             # assign value to actual_instance
             instance.actual_instance = instance.oneof_schema_42_validator
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into object
+        try:
+            # validation
+            instance.oneof_schema_43_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_43_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -746,10 +760,10 @@ class RoutesV2InputConfigSettings(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into RoutesV2InputConfigSettings with oneOf schemas: ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into RoutesV2InputConfigSettings with oneOf schemas: ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into RoutesV2InputConfigSettings with oneOf schemas: ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into RoutesV2InputConfigSettings with oneOf schemas: ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -763,7 +777,7 @@ class RoutesV2InputConfigSettings(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

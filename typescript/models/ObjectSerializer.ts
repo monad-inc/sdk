@@ -13,6 +13,8 @@ export * from '../models/AuthLogsSettingsConfig';
 export * from '../models/AwsS3SettingsConfig';
 export * from '../models/AzureActivityLogsSecretsConfig';
 export * from '../models/AzureActivityLogsSettingsConfig';
+export * from '../models/BoxUsersSecretsConfig';
+export * from '../models/BoxUsersSettingsConfig';
 export * from '../models/CloudConfigurationFindingsSecretsConfig';
 export * from '../models/CloudConfigurationFindingsSettingsConfig';
 export * from '../models/CloudLogsSecretsConfig';
@@ -210,6 +212,8 @@ import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
+import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
+import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
 import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigurationFindingsSecretsConfig';
 import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';
 import { CloudLogsSecretsConfig } from '../models/CloudLogsSecretsConfig';
@@ -423,6 +427,8 @@ let typeMap: {[index: string]: any} = {
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
     "AzureActivityLogsSecretsConfig": AzureActivityLogsSecretsConfig,
     "AzureActivityLogsSettingsConfig": AzureActivityLogsSettingsConfig,
+    "BoxUsersSecretsConfig": BoxUsersSecretsConfig,
+    "BoxUsersSettingsConfig": BoxUsersSettingsConfig,
     "CloudConfigurationFindingsSecretsConfig": CloudConfigurationFindingsSecretsConfig,
     "CloudConfigurationFindingsSettingsConfig": CloudConfigurationFindingsSettingsConfig,
     "CloudLogsSecretsConfig": CloudLogsSecretsConfig,

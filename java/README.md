@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-01-27T19:05:26.464396829Z[Etc/UTC]
+  - Build date: 2025-01-28T15:48:04.264094785Z[Etc/UTC]
   - Generator version: 7.11.0
 
 This is the monad API
@@ -221,6 +221,8 @@ Class | Method | HTTP request | Description
  - [AwsS3SettingsConfig](docs/AwsS3SettingsConfig.md)
  - [AzureActivityLogsSecretsConfig](docs/AzureActivityLogsSecretsConfig.md)
  - [AzureActivityLogsSettingsConfig](docs/AzureActivityLogsSettingsConfig.md)
+ - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
+ - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
  - [CloudConfigurationFindingsSecretsConfig](docs/CloudConfigurationFindingsSecretsConfig.md)
  - [CloudConfigurationFindingsSettingsConfig](docs/CloudConfigurationFindingsSettingsConfig.md)
  - [CloudLogsSecretsConfig](docs/CloudLogsSecretsConfig.md)

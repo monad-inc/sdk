@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **ResourceUri** | Pointer to **string** | The URI of the resource | [optional] 
 **SubscriptionId** | Pointer to **string** | The subscription ID of the Azure subscription | [optional] 
 **TenantId** | Pointer to **string** | The tenant ID of the Azure AD application | [optional] 
+**FilterTerm** | Pointer to **string** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
 **EndpointUrl** | Pointer to **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. | [optional] 
 **Result** | Pointer to **[]string** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. | [optional] 
 **Severity** | Pointer to **[]string** | Severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. | [optional] 
@@ -828,6 +829,31 @@ SetTenantId sets TenantId field to given value.
 `func (o *RoutesV2InputConfigSettings) HasTenantId() bool`
 
 HasTenantId returns a boolean if a field has been set.
+
+### GetFilterTerm
+
+`func (o *RoutesV2InputConfigSettings) GetFilterTerm() string`
+
+GetFilterTerm returns the FilterTerm field if non-nil, zero value otherwise.
+
+### GetFilterTermOk
+
+`func (o *RoutesV2InputConfigSettings) GetFilterTermOk() (*string, bool)`
+
+GetFilterTermOk returns a tuple with the FilterTerm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFilterTerm
+
+`func (o *RoutesV2InputConfigSettings) SetFilterTerm(v string)`
+
+SetFilterTerm sets FilterTerm field to given value.
+
+### HasFilterTerm
+
+`func (o *RoutesV2InputConfigSettings) HasFilterTerm() bool`
+
+HasFilterTerm returns a boolean if a field has been set.
 
 ### GetEndpointUrl
 

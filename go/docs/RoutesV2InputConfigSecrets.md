@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **IntegrationKey** | Pointer to **string** |  | [optional] 
 **SecretKey** | Pointer to **string** | Secret Key for the Tenable API. This is required to authenticate requests. | [optional] 
 **PersonalAccessToken** | Pointer to **string** | Your personal access token that grants read:audit_log | [optional] 
+**EnterpriseId** | Pointer to **string** | Client Secret for the Box API. This is required to authenticate requests. | [optional] 
 **ApiKey** | Pointer to **string** | API Key for the Snyk API. This is required to authenticate requests. | [optional] 
 **Token** | Pointer to **string** | Token for the Wiz API. This is required to authenticate requests. | [optional] 
 **AccessKey** | Pointer to **string** | Access Key for the Tenable API. This is required to authenticate requests. | [optional] 
@@ -184,6 +185,31 @@ SetPersonalAccessToken sets PersonalAccessToken field to given value.
 `func (o *RoutesV2InputConfigSecrets) HasPersonalAccessToken() bool`
 
 HasPersonalAccessToken returns a boolean if a field has been set.
+
+### GetEnterpriseId
+
+`func (o *RoutesV2InputConfigSecrets) GetEnterpriseId() string`
+
+GetEnterpriseId returns the EnterpriseId field if non-nil, zero value otherwise.
+
+### GetEnterpriseIdOk
+
+`func (o *RoutesV2InputConfigSecrets) GetEnterpriseIdOk() (*string, bool)`
+
+GetEnterpriseIdOk returns a tuple with the EnterpriseId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnterpriseId
+
+`func (o *RoutesV2InputConfigSecrets) SetEnterpriseId(v string)`
+
+SetEnterpriseId sets EnterpriseId field to given value.
+
+### HasEnterpriseId
+
+`func (o *RoutesV2InputConfigSecrets) HasEnterpriseId() bool`
+
+HasEnterpriseId returns a boolean if a field has been set.
 
 ### GetApiKey
 

@@ -185,6 +185,8 @@ Class | Method | HTTP request | Description
  - [AwsS3SettingsConfig](docs/AwsS3SettingsConfig.md)
  - [AzureActivityLogsSecretsConfig](docs/AzureActivityLogsSecretsConfig.md)
  - [AzureActivityLogsSettingsConfig](docs/AzureActivityLogsSettingsConfig.md)
+ - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
+ - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
  - [CloudConfigurationFindingsSecretsConfig](docs/CloudConfigurationFindingsSecretsConfig.md)
  - [CloudConfigurationFindingsSettingsConfig](docs/CloudConfigurationFindingsSettingsConfig.md)
  - [CloudLogsSecretsConfig](docs/CloudLogsSecretsConfig.md)

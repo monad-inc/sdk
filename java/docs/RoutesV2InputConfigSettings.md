@@ -37,6 +37,7 @@
 |**resourceUri** | **String** | The URI of the resource |  [optional] |
 |**subscriptionId** | **String** | The subscription ID of the Azure subscription |  [optional] |
 |**tenantId** | **String** | The tenant ID of the Azure AD application |  [optional] |
+|**filterTerm** | **String** | Limits the results to only users who&#39;s name or login start with the search term. |  [optional] |
 |**endpointUrl** | **String** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. |  [optional] |
 |**result** | **List&lt;String&gt;** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. |  [optional] |
 |**severity** | **List&lt;String&gt;** | Severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. |  [optional] |
