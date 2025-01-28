@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsTransformConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-28T16:55:49.632852187Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-28T18:37:16.274032431Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsTransformConfig {
   public static final String SERIALIZED_NAME_OPERATIONS = "operations";
   @SerializedName(SERIALIZED_NAME_OPERATIONS)
