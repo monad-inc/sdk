@@ -22,6 +22,7 @@ var _ MappedNullable = &SnowflakeSettingsConfig{}
 type SnowflakeSettingsConfig struct {
 	// The unique identifier for your Snowflake account, typically in the form of 'organization-account_name'.
 	Account *string `json:"account,omitempty"`
+	BatchConfig *BatchConfigBatchConfig `json:"batch_config,omitempty"`
 	// The name of the Snowflake database to connect to and perform operations on
 	Database *string `json:"database,omitempty"`
 	// The name of the Role your service account was granted which can access your resources.
@@ -85,6 +86,38 @@ func (o *SnowflakeSettingsConfig) HasAccount() bool {
 // SetAccount gets a reference to the given string and assigns it to the Account field.
 func (o *SnowflakeSettingsConfig) SetAccount(v string) {
 	o.Account = &v
+}
+
+// GetBatchConfig returns the BatchConfig field value if set, zero value otherwise.
+func (o *SnowflakeSettingsConfig) GetBatchConfig() BatchConfigBatchConfig {
+	if o == nil || IsNil(o.BatchConfig) {
+		var ret BatchConfigBatchConfig
+		return ret
+	}
+	return *o.BatchConfig
+}
+
+// GetBatchConfigOk returns a tuple with the BatchConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnowflakeSettingsConfig) GetBatchConfigOk() (*BatchConfigBatchConfig, bool) {
+	if o == nil || IsNil(o.BatchConfig) {
+		return nil, false
+	}
+	return o.BatchConfig, true
+}
+
+// HasBatchConfig returns a boolean if a field has been set.
+func (o *SnowflakeSettingsConfig) HasBatchConfig() bool {
+	if o != nil && !IsNil(o.BatchConfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetBatchConfig gets a reference to the given BatchConfigBatchConfig and assigns it to the BatchConfig field.
+func (o *SnowflakeSettingsConfig) SetBatchConfig(v BatchConfigBatchConfig) {
+	o.BatchConfig = &v
 }
 
 // GetDatabase returns the Database field value if set, zero value otherwise.
@@ -323,6 +356,9 @@ func (o SnowflakeSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
+	}
+	if !IsNil(o.BatchConfig) {
+		toSerialize["batch_config"] = o.BatchConfig
 	}
 	if !IsNil(o.Database) {
 		toSerialize["database"] = o.Database

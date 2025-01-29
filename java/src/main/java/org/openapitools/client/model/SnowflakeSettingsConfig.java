@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.BatchConfigBatchConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,12 +49,17 @@ import org.openapitools.client.JSON;
 /**
  * Snowflake Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-29T14:25:54.234437843Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-29T22:09:24.102124374Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SnowflakeSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
   @javax.annotation.Nullable
   private String account;
+
+  public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
+  @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
+  @javax.annotation.Nullable
+  private BatchConfigBatchConfig batchConfig;
 
   public static final String SERIALIZED_NAME_DATABASE = "database";
   @SerializedName(SERIALIZED_NAME_DATABASE)
@@ -109,6 +115,25 @@ public class SnowflakeSettingsConfig {
 
   public void setAccount(@javax.annotation.Nullable String account) {
     this.account = account;
+  }
+
+
+  public SnowflakeSettingsConfig batchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
+    this.batchConfig = batchConfig;
+    return this;
+  }
+
+  /**
+   * Get batchConfig
+   * @return batchConfig
+   */
+  @javax.annotation.Nullable
+  public BatchConfigBatchConfig getBatchConfig() {
+    return batchConfig;
+  }
+
+  public void setBatchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
+    this.batchConfig = batchConfig;
   }
 
 
@@ -256,6 +281,7 @@ public class SnowflakeSettingsConfig {
     }
     SnowflakeSettingsConfig snowflakeSettingsConfig = (SnowflakeSettingsConfig) o;
     return Objects.equals(this.account, snowflakeSettingsConfig.account) &&
+        Objects.equals(this.batchConfig, snowflakeSettingsConfig.batchConfig) &&
         Objects.equals(this.database, snowflakeSettingsConfig.database) &&
         Objects.equals(this.role, snowflakeSettingsConfig.role) &&
         Objects.equals(this.schema, snowflakeSettingsConfig.schema) &&
@@ -267,7 +293,7 @@ public class SnowflakeSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(account, database, role, schema, stage, table, user, warehouse);
+    return Objects.hash(account, batchConfig, database, role, schema, stage, table, user, warehouse);
   }
 
   @Override
@@ -275,6 +301,7 @@ public class SnowflakeSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class SnowflakeSettingsConfig {\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
+    sb.append("    batchConfig: ").append(toIndentedString(batchConfig)).append("\n");
     sb.append("    database: ").append(toIndentedString(database)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
@@ -305,6 +332,7 @@ public class SnowflakeSettingsConfig {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("account");
+    openapiFields.add("batch_config");
     openapiFields.add("database");
     openapiFields.add("role");
     openapiFields.add("schema");
@@ -340,6 +368,10 @@ public class SnowflakeSettingsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) && !jsonObj.get("account").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `account` to be a primitive type in the JSON string but got `%s`", jsonObj.get("account").toString()));
+      }
+      // validate the optional field `batch_config`
+      if (jsonObj.get("batch_config") != null && !jsonObj.get("batch_config").isJsonNull()) {
+        BatchConfigBatchConfig.validateJsonElement(jsonObj.get("batch_config"));
       }
       if ((jsonObj.get("database") != null && !jsonObj.get("database").isJsonNull()) && !jsonObj.get("database").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `database` to be a primitive type in the JSON string but got `%s`", jsonObj.get("database").toString()));

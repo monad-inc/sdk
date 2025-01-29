@@ -8,6 +8,7 @@ S3 Output Settings
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**batchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  |  [optional] |
 |**bucket** | **String** | The name of the S3 bucket where data will be stored |  [optional] |
 |**compression** | **String** | The compression method to be applied to the data before storing in S3 |  [optional] |
 |**formatConfig** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  |  [optional] |

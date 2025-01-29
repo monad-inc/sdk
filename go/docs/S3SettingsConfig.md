@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
 **Bucket** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
 **Compression** | Pointer to **string** | The compression method to be applied to the data before storing in S3 | [optional] 
 **FormatConfig** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
@@ -30,6 +31,31 @@ will change when the set of required properties is changed
 NewS3SettingsConfigWithDefaults instantiates a new S3SettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBatchConfig
+
+`func (o *S3SettingsConfig) GetBatchConfig() BatchConfigBatchConfig`
+
+GetBatchConfig returns the BatchConfig field if non-nil, zero value otherwise.
+
+### GetBatchConfigOk
+
+`func (o *S3SettingsConfig) GetBatchConfigOk() (*BatchConfigBatchConfig, bool)`
+
+GetBatchConfigOk returns a tuple with the BatchConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBatchConfig
+
+`func (o *S3SettingsConfig) SetBatchConfig(v BatchConfigBatchConfig)`
+
+SetBatchConfig sets BatchConfig field to given value.
+
+### HasBatchConfig
+
+`func (o *S3SettingsConfig) HasBatchConfig() bool`
+
+HasBatchConfig returns a boolean if a field has been set.
 
 ### GetBucket
 

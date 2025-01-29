@@ -20,6 +20,7 @@ var _ MappedNullable = &S3SettingsConfig{}
 
 // S3SettingsConfig S3 Output Settings
 type S3SettingsConfig struct {
+	BatchConfig *BatchConfigBatchConfig `json:"batch_config,omitempty"`
 	// The name of the S3 bucket where data will be stored
 	Bucket *string `json:"bucket,omitempty"`
 	// The compression method to be applied to the data before storing in S3
@@ -50,6 +51,38 @@ func NewS3SettingsConfig() *S3SettingsConfig {
 func NewS3SettingsConfigWithDefaults() *S3SettingsConfig {
 	this := S3SettingsConfig{}
 	return &this
+}
+
+// GetBatchConfig returns the BatchConfig field value if set, zero value otherwise.
+func (o *S3SettingsConfig) GetBatchConfig() BatchConfigBatchConfig {
+	if o == nil || IsNil(o.BatchConfig) {
+		var ret BatchConfigBatchConfig
+		return ret
+	}
+	return *o.BatchConfig
+}
+
+// GetBatchConfigOk returns a tuple with the BatchConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *S3SettingsConfig) GetBatchConfigOk() (*BatchConfigBatchConfig, bool) {
+	if o == nil || IsNil(o.BatchConfig) {
+		return nil, false
+	}
+	return o.BatchConfig, true
+}
+
+// HasBatchConfig returns a boolean if a field has been set.
+func (o *S3SettingsConfig) HasBatchConfig() bool {
+	if o != nil && !IsNil(o.BatchConfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetBatchConfig gets a reference to the given BatchConfigBatchConfig and assigns it to the BatchConfig field.
+func (o *S3SettingsConfig) SetBatchConfig(v BatchConfigBatchConfig) {
+	o.BatchConfig = &v
 }
 
 // GetBucket returns the Bucket field value if set, zero value otherwise.
@@ -286,6 +319,9 @@ func (o S3SettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o S3SettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BatchConfig) {
+		toSerialize["batch_config"] = o.BatchConfig
+	}
 	if !IsNil(o.Bucket) {
 		toSerialize["bucket"] = o.Bucket
 	}

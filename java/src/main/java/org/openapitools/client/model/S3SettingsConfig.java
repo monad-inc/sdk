@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.BatchConfigBatchConfig;
 import org.openapitools.client.model.FormatterFormatConfig;
 
 import com.google.gson.Gson;
@@ -49,8 +50,13 @@ import org.openapitools.client.JSON;
 /**
  * S3 Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-29T14:25:54.234437843Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-29T22:09:24.102124374Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class S3SettingsConfig {
+  public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
+  @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
+  @javax.annotation.Nullable
+  private BatchConfigBatchConfig batchConfig;
+
   public static final String SERIALIZED_NAME_BUCKET = "bucket";
   @SerializedName(SERIALIZED_NAME_BUCKET)
   @javax.annotation.Nullable
@@ -88,6 +94,25 @@ public class S3SettingsConfig {
 
   public S3SettingsConfig() {
   }
+
+  public S3SettingsConfig batchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
+    this.batchConfig = batchConfig;
+    return this;
+  }
+
+  /**
+   * Get batchConfig
+   * @return batchConfig
+   */
+  @javax.annotation.Nullable
+  public BatchConfigBatchConfig getBatchConfig() {
+    return batchConfig;
+  }
+
+  public void setBatchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
+    this.batchConfig = batchConfig;
+  }
+
 
   public S3SettingsConfig bucket(@javax.annotation.Nullable String bucket) {
     this.bucket = bucket;
@@ -232,7 +257,8 @@ public class S3SettingsConfig {
       return false;
     }
     S3SettingsConfig s3SettingsConfig = (S3SettingsConfig) o;
-    return Objects.equals(this.bucket, s3SettingsConfig.bucket) &&
+    return Objects.equals(this.batchConfig, s3SettingsConfig.batchConfig) &&
+        Objects.equals(this.bucket, s3SettingsConfig.bucket) &&
         Objects.equals(this.compression, s3SettingsConfig.compression) &&
         Objects.equals(this.formatConfig, s3SettingsConfig.formatConfig) &&
         Objects.equals(this.partitionFormat, s3SettingsConfig.partitionFormat) &&
@@ -243,13 +269,14 @@ public class S3SettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bucket, compression, formatConfig, partitionFormat, prefix, region, roleArn);
+    return Objects.hash(batchConfig, bucket, compression, formatConfig, partitionFormat, prefix, region, roleArn);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class S3SettingsConfig {\n");
+    sb.append("    batchConfig: ").append(toIndentedString(batchConfig)).append("\n");
     sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
     sb.append("    compression: ").append(toIndentedString(compression)).append("\n");
     sb.append("    formatConfig: ").append(toIndentedString(formatConfig)).append("\n");
@@ -279,6 +306,7 @@ public class S3SettingsConfig {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("batch_config");
     openapiFields.add("bucket");
     openapiFields.add("compression");
     openapiFields.add("format_config");
@@ -312,6 +340,10 @@ public class S3SettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `batch_config`
+      if (jsonObj.get("batch_config") != null && !jsonObj.get("batch_config").isJsonNull()) {
+        BatchConfigBatchConfig.validateJsonElement(jsonObj.get("batch_config"));
+      }
       if ((jsonObj.get("bucket") != null && !jsonObj.get("bucket").isJsonNull()) && !jsonObj.get("bucket").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `bucket` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucket").toString()));
       }

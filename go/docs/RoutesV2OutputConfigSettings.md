@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **RateLimit** | Pointer to **int32** | Maximum number of requests per second to send to the endpoint. | [optional] 
 **TlsSkipVerify** | Pointer to **bool** | Skip TLS verification. | [optional] 
 **WrapperKey** | Pointer to **string** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. | [optional] 
+**BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
 **Bucket** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
 **Compression** | Pointer to **string** | The compression method to be applied to the data before storing in S3 | [optional] 
 **FormatConfig** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
@@ -535,6 +536,31 @@ SetWrapperKey sets WrapperKey field to given value.
 `func (o *RoutesV2OutputConfigSettings) HasWrapperKey() bool`
 
 HasWrapperKey returns a boolean if a field has been set.
+
+### GetBatchConfig
+
+`func (o *RoutesV2OutputConfigSettings) GetBatchConfig() BatchConfigBatchConfig`
+
+GetBatchConfig returns the BatchConfig field if non-nil, zero value otherwise.
+
+### GetBatchConfigOk
+
+`func (o *RoutesV2OutputConfigSettings) GetBatchConfigOk() (*BatchConfigBatchConfig, bool)`
+
+GetBatchConfigOk returns a tuple with the BatchConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBatchConfig
+
+`func (o *RoutesV2OutputConfigSettings) SetBatchConfig(v BatchConfigBatchConfig)`
+
+SetBatchConfig sets BatchConfig field to given value.
+
+### HasBatchConfig
+
+`func (o *RoutesV2OutputConfigSettings) HasBatchConfig() bool`
+
+HasBatchConfig returns a boolean if a field has been set.
 
 ### GetBucket
 

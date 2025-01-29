@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { HttpFile } from '../http/http';
 
@@ -17,6 +18,7 @@ import { HttpFile } from '../http/http';
 * S3 Output Settings
 */
 export class S3SettingsConfig {
+    'batchConfig'?: BatchConfigBatchConfig;
     /**
     * The name of the S3 bucket where data will be stored
     */
@@ -48,6 +50,12 @@ export class S3SettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "batchConfig",
+            "baseName": "batch_config",
+            "type": "BatchConfigBatchConfig",
+            "format": ""
+        },
         {
             "name": "bucket",
             "baseName": "bucket",

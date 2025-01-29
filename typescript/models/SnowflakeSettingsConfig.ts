@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { HttpFile } from '../http/http';
 
 /**
@@ -20,6 +21,7 @@ export class SnowflakeSettingsConfig {
     * The unique identifier for your Snowflake account, typically in the form of \'organization-account_name\'.
     */
     'account'?: string;
+    'batchConfig'?: BatchConfigBatchConfig;
     /**
     * The name of the Snowflake database to connect to and perform operations on
     */
@@ -58,6 +60,12 @@ export class SnowflakeSettingsConfig {
             "name": "account",
             "baseName": "account",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "batchConfig",
+            "baseName": "batch_config",
+            "type": "BatchConfigBatchConfig",
             "format": ""
         },
         {

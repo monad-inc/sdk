@@ -26,6 +26,7 @@
 |**rateLimit** | **Integer** | Maximum number of requests per second to send to the endpoint. |  [optional] |
 |**tlsSkipVerify** | **Boolean** | Skip TLS verification. |  [optional] |
 |**wrapperKey** | **String** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. |  [optional] |
+|**batchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  |  [optional] |
 |**bucket** | **String** | The name of the S3 bucket where data will be stored |  [optional] |
 |**compression** | **String** | The compression method to be applied to the data before storing in S3 |  [optional] |
 |**formatConfig** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  |  [optional] |

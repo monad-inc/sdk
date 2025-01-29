@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.batch_config_batch_config import BatchConfigBatchConfig
 from monad.models.formatter_format_config import FormatterFormatConfig
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,6 +29,7 @@ class S3SettingsConfig(BaseModel):
     """
     S3 Output Settings
     """ # noqa: E501
+    batch_config: Optional[BatchConfigBatchConfig] = None
     bucket: Optional[StrictStr] = Field(default=None, description="The name of the S3 bucket where data will be stored")
     compression: Optional[StrictStr] = Field(default=None, description="The compression method to be applied to the data before storing in S3")
     format_config: Optional[FormatterFormatConfig] = None
@@ -35,7 +37,7 @@ class S3SettingsConfig(BaseModel):
     prefix: Optional[StrictStr] = Field(default=None, description="An optional prefix for S3 object keys to organize data within the bucket")
     region: Optional[StrictStr] = Field(default=None, description="The AWS region where the S3 bucket is located")
     role_arn: Optional[StrictStr] = Field(default=None, description="The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket")
-    __properties: ClassVar[List[str]] = ["bucket", "compression", "format_config", "partition_format", "prefix", "region", "role_arn"]
+    __properties: ClassVar[List[str]] = ["batch_config", "bucket", "compression", "format_config", "partition_format", "prefix", "region", "role_arn"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +78,9 @@ class S3SettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of batch_config
+        if self.batch_config:
+            _dict['batch_config'] = self.batch_config.to_dict()
         # override the default output from pydantic by calling `to_dict()` of format_config
         if self.format_config:
             _dict['format_config'] = self.format_config.to_dict()
@@ -91,6 +96,7 @@ class S3SettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "batch_config": BatchConfigBatchConfig.from_dict(obj["batch_config"]) if obj.get("batch_config") is not None else None,
             "bucket": obj.get("bucket"),
             "compression": obj.get("compression"),
             "format_config": FormatterFormatConfig.from_dict(obj["format_config"]) if obj.get("format_config") is not None else None,
