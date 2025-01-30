@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-01-30T17:05:44.349648936Z[Etc/UTC]
+  - Build date: 2025-01-30T17:21:07.819756121Z[Etc/UTC]
   - Generator version: 7.11.0
 
 This is the monad API
@@ -222,6 +222,8 @@ Class | Method | HTTP request | Description
  - [AzureActivityLogsSecretsConfig](docs/AzureActivityLogsSecretsConfig.md)
  - [AzureActivityLogsSettingsConfig](docs/AzureActivityLogsSettingsConfig.md)
  - [BatchConfigBatchConfig](docs/BatchConfigBatchConfig.md)
+ - [BoxEventsSecretsConfig](docs/BoxEventsSecretsConfig.md)
+ - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
  - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
  - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
  - [CloudConfigurationFindingsSecretsConfig](docs/CloudConfigurationFindingsSecretsConfig.md)

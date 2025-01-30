@@ -27,6 +27,7 @@ import org.openapitools.client.model.AdminLogsSecretsConfig;
 import org.openapitools.client.model.AuditLogsSecretsConfig;
 import org.openapitools.client.model.AuthLogsSecretsConfig;
 import org.openapitools.client.model.AzureActivityLogsSecretsConfig;
+import org.openapitools.client.model.BoxEventsSecretsConfig;
 import org.openapitools.client.model.BoxUsersSecretsConfig;
 import org.openapitools.client.model.CloudConfigurationFindingsSecretsConfig;
 import org.openapitools.client.model.CloudLogsSecretsConfig;
@@ -96,7 +97,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-30T17:05:44.349648936Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-30T17:21:07.819756121Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesV2InputConfigSecrets.class.getName());
 
@@ -115,6 +116,7 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             final TypeAdapter<AuthLogsSecretsConfig> adapterAuthLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(AuthLogsSecretsConfig.class));
             final TypeAdapter<Object> adapterObject = gson.getDelegateAdapter(this, TypeToken.get(Object.class));
             final TypeAdapter<AzureActivityLogsSecretsConfig> adapterAzureActivityLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(AzureActivityLogsSecretsConfig.class));
+            final TypeAdapter<BoxEventsSecretsConfig> adapterBoxEventsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BoxEventsSecretsConfig.class));
             final TypeAdapter<BoxUsersSecretsConfig> adapterBoxUsersSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BoxUsersSecretsConfig.class));
             final TypeAdapter<CloudConfigurationFindingsSecretsConfig> adapterCloudConfigurationFindingsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CloudConfigurationFindingsSecretsConfig.class));
             final TypeAdapter<CloudLogsSecretsConfig> adapterCloudLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CloudLogsSecretsConfig.class));
@@ -196,6 +198,12 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `AzureActivityLogsSecretsConfig`
                     if (value.getActualInstance() instanceof AzureActivityLogsSecretsConfig) {
                         JsonElement element = adapterAzureActivityLogsSecretsConfig.toJsonTree((AzureActivityLogsSecretsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `BoxEventsSecretsConfig`
+                    if (value.getActualInstance() instanceof BoxEventsSecretsConfig) {
+                        JsonElement element = adapterBoxEventsSecretsConfig.toJsonTree((BoxEventsSecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -397,7 +405,7 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxUsersSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig");
                 }
 
                 @Override
@@ -494,6 +502,18 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format("Deserialization for AzureActivityLogsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'AzureActivityLogsSecretsConfig'", e);
+                    }
+                    // deserialize BoxEventsSecretsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        BoxEventsSecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterBoxEventsSecretsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'BoxEventsSecretsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for BoxEventsSecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'BoxEventsSecretsConfig'", e);
                     }
                     // deserialize BoxUsersSecretsConfig
                     try {
@@ -924,6 +944,7 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
         schemas.put("AuthLogsSecretsConfig", AuthLogsSecretsConfig.class);
         schemas.put("Object", Object.class);
         schemas.put("AzureActivityLogsSecretsConfig", AzureActivityLogsSecretsConfig.class);
+        schemas.put("BoxEventsSecretsConfig", BoxEventsSecretsConfig.class);
         schemas.put("BoxUsersSecretsConfig", BoxUsersSecretsConfig.class);
         schemas.put("CloudConfigurationFindingsSecretsConfig", CloudConfigurationFindingsSecretsConfig.class);
         schemas.put("CloudLogsSecretsConfig", CloudLogsSecretsConfig.class);
@@ -967,7 +988,7 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxUsersSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig
+     * ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -1004,6 +1025,11 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
         }
 
         if (instance instanceof AzureActivityLogsSecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof BoxEventsSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -1173,14 +1199,14 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxUsersSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig");
+        throw new RuntimeException("Invalid instance type. Must be ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxUsersSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig
+     * ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig
      *
-     * @return The actual instance (ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxUsersSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig)
+     * @return The actual instance (ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -1263,6 +1289,17 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
      */
     public AzureActivityLogsSecretsConfig getAzureActivityLogsSecretsConfig() throws ClassCastException {
         return (AzureActivityLogsSecretsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `BoxEventsSecretsConfig`. If the actual instance is not `BoxEventsSecretsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `BoxEventsSecretsConfig`
+     * @throws ClassCastException if the instance is not `BoxEventsSecretsConfig`
+     */
+    public BoxEventsSecretsConfig getBoxEventsSecretsConfig() throws ClassCastException {
+        return (BoxEventsSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -1696,6 +1733,14 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             errorMessages.add(String.format("Deserialization for AzureActivityLogsSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with BoxEventsSecretsConfig
+        try {
+            BoxEventsSecretsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for BoxEventsSecretsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with BoxUsersSecretsConfig
         try {
             BoxUsersSecretsConfig.validateJsonElement(jsonElement);
@@ -1961,7 +2006,7 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for RoutesV2InputConfigSecrets with oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxUsersSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format("The JSON string is invalid for RoutesV2InputConfigSecrets with oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

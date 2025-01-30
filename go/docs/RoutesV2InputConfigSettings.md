@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **ResourceUri** | Pointer to **string** | The URI of the resource | [optional] 
 **SubscriptionId** | Pointer to **string** | The subscription ID of the Azure subscription | [optional] 
 **TenantId** | Pointer to **string** | The tenant ID of the Azure AD application | [optional] 
+**EventType** | Pointer to **[]string** | A list of event types to filter by. | [optional] 
 **FilterTerm** | Pointer to **string** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
 **EndpointUrl** | Pointer to **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. | [optional] 
 **Result** | Pointer to **[]string** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. | [optional] 
@@ -829,6 +830,31 @@ SetTenantId sets TenantId field to given value.
 `func (o *RoutesV2InputConfigSettings) HasTenantId() bool`
 
 HasTenantId returns a boolean if a field has been set.
+
+### GetEventType
+
+`func (o *RoutesV2InputConfigSettings) GetEventType() []string`
+
+GetEventType returns the EventType field if non-nil, zero value otherwise.
+
+### GetEventTypeOk
+
+`func (o *RoutesV2InputConfigSettings) GetEventTypeOk() (*[]string, bool)`
+
+GetEventTypeOk returns a tuple with the EventType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEventType
+
+`func (o *RoutesV2InputConfigSettings) SetEventType(v []string)`
+
+SetEventType sets EventType field to given value.
+
+### HasEventType
+
+`func (o *RoutesV2InputConfigSettings) HasEventType() bool`
+
+HasEventType returns a boolean if a field has been set.
 
 ### GetFilterTerm
 

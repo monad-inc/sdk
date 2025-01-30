@@ -26,6 +26,7 @@ type RoutesV2InputConfigSettings struct {
 	AuthLogsSettingsConfig *AuthLogsSettingsConfig
 	AwsS3SettingsConfig *AwsS3SettingsConfig
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
+	BoxEventsSettingsConfig *BoxEventsSettingsConfig
 	BoxUsersSettingsConfig *BoxUsersSettingsConfig
 	CloudConfigurationFindingsSettingsConfig *CloudConfigurationFindingsSettingsConfig
 	CloudLogsSettingsConfig *CloudLogsSettingsConfig
@@ -106,6 +107,13 @@ func AwsS3SettingsConfigAsRoutesV2InputConfigSettings(v *AwsS3SettingsConfig) Ro
 func AzureActivityLogsSettingsConfigAsRoutesV2InputConfigSettings(v *AzureActivityLogsSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
 		AzureActivityLogsSettingsConfig: v,
+	}
+}
+
+// BoxEventsSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns BoxEventsSettingsConfig wrapped in RoutesV2InputConfigSettings
+func BoxEventsSettingsConfigAsRoutesV2InputConfigSettings(v *BoxEventsSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		BoxEventsSettingsConfig: v,
 	}
 }
 
@@ -455,6 +463,23 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AzureActivityLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into BoxEventsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.BoxEventsSettingsConfig)
+	if err == nil {
+		jsonBoxEventsSettingsConfig, _ := json.Marshal(dst.BoxEventsSettingsConfig)
+		if string(jsonBoxEventsSettingsConfig) == "{}" { // empty struct
+			dst.BoxEventsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BoxEventsSettingsConfig); err != nil {
+				dst.BoxEventsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BoxEventsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into BoxUsersSettingsConfig
@@ -1010,6 +1035,7 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.AuthLogsSettingsConfig = nil
 		dst.AwsS3SettingsConfig = nil
 		dst.AzureActivityLogsSettingsConfig = nil
+		dst.BoxEventsSettingsConfig = nil
 		dst.BoxUsersSettingsConfig = nil
 		dst.CloudConfigurationFindingsSettingsConfig = nil
 		dst.CloudLogsSettingsConfig = nil
@@ -1079,6 +1105,10 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.AzureActivityLogsSettingsConfig != nil {
 		return json.Marshal(&src.AzureActivityLogsSettingsConfig)
+	}
+
+	if src.BoxEventsSettingsConfig != nil {
+		return json.Marshal(&src.BoxEventsSettingsConfig)
 	}
 
 	if src.BoxUsersSettingsConfig != nil {
@@ -1243,6 +1273,10 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.AzureActivityLogsSettingsConfig != nil {
 		return obj.AzureActivityLogsSettingsConfig
+	}
+
+	if obj.BoxEventsSettingsConfig != nil {
+		return obj.BoxEventsSettingsConfig
 	}
 
 	if obj.BoxUsersSettingsConfig != nil {

@@ -30,6 +30,7 @@ import org.openapitools.client.model.AuditLogsSettingsConfig;
 import org.openapitools.client.model.AuthLogsSettingsConfig;
 import org.openapitools.client.model.AwsS3SettingsConfig;
 import org.openapitools.client.model.AzureActivityLogsSettingsConfig;
+import org.openapitools.client.model.BoxEventsSettingsConfig;
 import org.openapitools.client.model.BoxUsersSettingsConfig;
 import org.openapitools.client.model.CloudConfigurationFindingsSettingsConfig;
 import org.openapitools.client.model.CloudLogsSettingsConfig;
@@ -97,7 +98,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-30T17:05:44.349648936Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-30T17:21:07.819756121Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesV2InputConfigSettings.class.getName());
 
@@ -116,6 +117,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
             final TypeAdapter<AuthLogsSettingsConfig> adapterAuthLogsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(AuthLogsSettingsConfig.class));
             final TypeAdapter<AwsS3SettingsConfig> adapterAwsS3SettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(AwsS3SettingsConfig.class));
             final TypeAdapter<AzureActivityLogsSettingsConfig> adapterAzureActivityLogsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(AzureActivityLogsSettingsConfig.class));
+            final TypeAdapter<BoxEventsSettingsConfig> adapterBoxEventsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(BoxEventsSettingsConfig.class));
             final TypeAdapter<BoxUsersSettingsConfig> adapterBoxUsersSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(BoxUsersSettingsConfig.class));
             final TypeAdapter<Object> adapterObject = gson.getDelegateAdapter(this, TypeToken.get(Object.class));
             final TypeAdapter<CloudConfigurationFindingsSettingsConfig> adapterCloudConfigurationFindingsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(CloudConfigurationFindingsSettingsConfig.class));
@@ -196,6 +198,12 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `AzureActivityLogsSettingsConfig`
                     if (value.getActualInstance() instanceof AzureActivityLogsSettingsConfig) {
                         JsonElement element = adapterAzureActivityLogsSettingsConfig.toJsonTree((AzureActivityLogsSettingsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `BoxEventsSettingsConfig`
+                    if (value.getActualInstance() instanceof BoxEventsSettingsConfig) {
+                        JsonElement element = adapterBoxEventsSettingsConfig.toJsonTree((BoxEventsSettingsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -391,7 +399,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig");
                 }
 
                 @Override
@@ -486,6 +494,18 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format("Deserialization for AzureActivityLogsSettingsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'AzureActivityLogsSettingsConfig'", e);
+                    }
+                    // deserialize BoxEventsSettingsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        BoxEventsSettingsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterBoxEventsSettingsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'BoxEventsSettingsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for BoxEventsSettingsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'BoxEventsSettingsConfig'", e);
                     }
                     // deserialize BoxUsersSettingsConfig
                     try {
@@ -906,6 +926,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
         schemas.put("AuthLogsSettingsConfig", AuthLogsSettingsConfig.class);
         schemas.put("AwsS3SettingsConfig", AwsS3SettingsConfig.class);
         schemas.put("AzureActivityLogsSettingsConfig", AzureActivityLogsSettingsConfig.class);
+        schemas.put("BoxEventsSettingsConfig", BoxEventsSettingsConfig.class);
         schemas.put("BoxUsersSettingsConfig", BoxUsersSettingsConfig.class);
         schemas.put("Object", Object.class);
         schemas.put("CloudConfigurationFindingsSettingsConfig", CloudConfigurationFindingsSettingsConfig.class);
@@ -948,7 +969,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig
+     * ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -985,6 +1006,11 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
         }
 
         if (instance instanceof AzureActivityLogsSettingsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof BoxEventsSettingsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -1149,14 +1175,14 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig");
+        throw new RuntimeException("Invalid instance type. Must be ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig
+     * ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig
      *
-     * @return The actual instance (ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig)
+     * @return The actual instance (ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -1239,6 +1265,17 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
      */
     public AzureActivityLogsSettingsConfig getAzureActivityLogsSettingsConfig() throws ClassCastException {
         return (AzureActivityLogsSettingsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `BoxEventsSettingsConfig`. If the actual instance is not `BoxEventsSettingsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `BoxEventsSettingsConfig`
+     * @throws ClassCastException if the instance is not `BoxEventsSettingsConfig`
+     */
+    public BoxEventsSettingsConfig getBoxEventsSettingsConfig() throws ClassCastException {
+        return (BoxEventsSettingsConfig)super.getActualInstance();
     }
 
     /**
@@ -1659,6 +1696,14 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
             errorMessages.add(String.format("Deserialization for AzureActivityLogsSettingsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with BoxEventsSettingsConfig
+        try {
+            BoxEventsSettingsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for BoxEventsSettingsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with BoxUsersSettingsConfig
         try {
             BoxUsersSettingsConfig.validateJsonElement(jsonElement);
@@ -1918,7 +1963,7 @@ public class RoutesV2InputConfigSettings extends AbstractOpenApiSchema {
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for RoutesV2InputConfigSettings with oneOf schemas: ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format("The JSON string is invalid for RoutesV2InputConfigSettings with oneOf schemas: ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsS3SettingsConfig, AzureActivityLogsSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, DemoCustomSettingsConfig, DemoSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, RolesInfoSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

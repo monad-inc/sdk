@@ -192,6 +192,8 @@ Class | Method | HTTP request | Description
  - [AzureActivityLogsSecretsConfig](docs/AzureActivityLogsSecretsConfig.md)
  - [AzureActivityLogsSettingsConfig](docs/AzureActivityLogsSettingsConfig.md)
  - [BatchConfigBatchConfig](docs/BatchConfigBatchConfig.md)
+ - [BoxEventsSecretsConfig](docs/BoxEventsSecretsConfig.md)
+ - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
  - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
  - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
  - [CloudConfigurationFindingsSecretsConfig](docs/CloudConfigurationFindingsSecretsConfig.md)

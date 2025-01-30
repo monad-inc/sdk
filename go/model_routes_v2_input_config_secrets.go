@@ -25,6 +25,7 @@ type RoutesV2InputConfigSecrets struct {
 	AuditLogsSecretsConfig *AuditLogsSecretsConfig
 	AuthLogsSecretsConfig *AuthLogsSecretsConfig
 	AzureActivityLogsSecretsConfig *AzureActivityLogsSecretsConfig
+	BoxEventsSecretsConfig *BoxEventsSecretsConfig
 	BoxUsersSecretsConfig *BoxUsersSecretsConfig
 	CloudConfigurationFindingsSecretsConfig *CloudConfigurationFindingsSecretsConfig
 	CloudLogsSecretsConfig *CloudLogsSecretsConfig
@@ -100,6 +101,13 @@ func AuthLogsSecretsConfigAsRoutesV2InputConfigSecrets(v *AuthLogsSecretsConfig)
 func AzureActivityLogsSecretsConfigAsRoutesV2InputConfigSecrets(v *AzureActivityLogsSecretsConfig) RoutesV2InputConfigSecrets {
 	return RoutesV2InputConfigSecrets{
 		AzureActivityLogsSecretsConfig: v,
+	}
+}
+
+// BoxEventsSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns BoxEventsSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func BoxEventsSecretsConfigAsRoutesV2InputConfigSecrets(v *BoxEventsSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		BoxEventsSecretsConfig: v,
 	}
 }
 
@@ -446,6 +454,23 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AzureActivityLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into BoxEventsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.BoxEventsSecretsConfig)
+	if err == nil {
+		jsonBoxEventsSecretsConfig, _ := json.Marshal(dst.BoxEventsSecretsConfig)
+		if string(jsonBoxEventsSecretsConfig) == "{}" { // empty struct
+			dst.BoxEventsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BoxEventsSecretsConfig); err != nil {
+				dst.BoxEventsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BoxEventsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into BoxUsersSecretsConfig
@@ -1034,6 +1059,7 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.AuditLogsSecretsConfig = nil
 		dst.AuthLogsSecretsConfig = nil
 		dst.AzureActivityLogsSecretsConfig = nil
+		dst.BoxEventsSecretsConfig = nil
 		dst.BoxUsersSecretsConfig = nil
 		dst.CloudConfigurationFindingsSecretsConfig = nil
 		dst.CloudLogsSecretsConfig = nil
@@ -1101,6 +1127,10 @@ func (src RoutesV2InputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.AzureActivityLogsSecretsConfig != nil {
 		return json.Marshal(&src.AzureActivityLogsSecretsConfig)
+	}
+
+	if src.BoxEventsSecretsConfig != nil {
+		return json.Marshal(&src.BoxEventsSecretsConfig)
 	}
 
 	if src.BoxUsersSecretsConfig != nil {
@@ -1269,6 +1299,10 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 
 	if obj.AzureActivityLogsSecretsConfig != nil {
 		return obj.AzureActivityLogsSecretsConfig
+	}
+
+	if obj.BoxEventsSecretsConfig != nil {
+		return obj.BoxEventsSecretsConfig
 	}
 
 	if obj.BoxUsersSecretsConfig != nil {

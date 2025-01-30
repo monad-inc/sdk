@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineConfigV2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-30T17:05:44.349648936Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-30T17:21:07.819756121Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsPipelineConfigV2 {
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
