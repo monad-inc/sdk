@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Tenable assets secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-30T17:21:07.819756121Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-01-31T23:16:17.079194367Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class TenableAssetsSecretsConfig {
   public static final String SERIALIZED_NAME_ACCESS_KEY = "access_key";
   @SerializedName(SERIALIZED_NAME_ACCESS_KEY)
