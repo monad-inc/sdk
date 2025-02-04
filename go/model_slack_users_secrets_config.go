@@ -20,8 +20,7 @@ var _ MappedNullable = &SlackUsersSecretsConfig{}
 
 // SlackUsersSecretsConfig Slack Users secrets
 type SlackUsersSecretsConfig struct {
-	// Token to authenticate against the slack API
-	Token *string `json:"token,omitempty"`
+	Token *ModelsSecret `json:"token,omitempty"`
 }
 
 // NewSlackUsersSecretsConfig instantiates a new SlackUsersSecretsConfig object
@@ -42,9 +41,9 @@ func NewSlackUsersSecretsConfigWithDefaults() *SlackUsersSecretsConfig {
 }
 
 // GetToken returns the Token field value if set, zero value otherwise.
-func (o *SlackUsersSecretsConfig) GetToken() string {
+func (o *SlackUsersSecretsConfig) GetToken() ModelsSecret {
 	if o == nil || IsNil(o.Token) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.Token
@@ -52,7 +51,7 @@ func (o *SlackUsersSecretsConfig) GetToken() string {
 
 // GetTokenOk returns a tuple with the Token field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SlackUsersSecretsConfig) GetTokenOk() (*string, bool) {
+func (o *SlackUsersSecretsConfig) GetTokenOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.Token) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *SlackUsersSecretsConfig) HasToken() bool {
 	return false
 }
 
-// SetToken gets a reference to the given string and assigns it to the Token field.
-func (o *SlackUsersSecretsConfig) SetToken(v string) {
+// SetToken gets a reference to the given ModelsSecret and assigns it to the Token field.
+func (o *SlackUsersSecretsConfig) SetToken(v ModelsSecret) {
 	o.Token = &v
 }
 

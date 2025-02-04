@@ -20,12 +20,9 @@ var _ MappedNullable = &BoxEventsSecretsConfig{}
 
 // BoxEventsSecretsConfig Box Events secrets
 type BoxEventsSecretsConfig struct {
-	// Client Secret for the Box API. This is required to authenticate requests.
-	ClientId *string `json:"client_id,omitempty"`
-	// Client ID for the Box API. This is required to authenticate requests.
-	ClientSecret *string `json:"client_secret,omitempty"`
-	// Client Secret for the Box API. This is required to authenticate requests.
-	EnterpriseId *string `json:"enterprise_id,omitempty"`
+	ClientId *ModelsSecret `json:"client_id,omitempty"`
+	ClientSecret *ModelsSecret `json:"client_secret,omitempty"`
+	EnterpriseId *ModelsSecret `json:"enterprise_id,omitempty"`
 }
 
 // NewBoxEventsSecretsConfig instantiates a new BoxEventsSecretsConfig object
@@ -46,9 +43,9 @@ func NewBoxEventsSecretsConfigWithDefaults() *BoxEventsSecretsConfig {
 }
 
 // GetClientId returns the ClientId field value if set, zero value otherwise.
-func (o *BoxEventsSecretsConfig) GetClientId() string {
+func (o *BoxEventsSecretsConfig) GetClientId() ModelsSecret {
 	if o == nil || IsNil(o.ClientId) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientId
@@ -56,7 +53,7 @@ func (o *BoxEventsSecretsConfig) GetClientId() string {
 
 // GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BoxEventsSecretsConfig) GetClientIdOk() (*string, bool) {
+func (o *BoxEventsSecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientId) {
 		return nil, false
 	}
@@ -72,15 +69,15 @@ func (o *BoxEventsSecretsConfig) HasClientId() bool {
 	return false
 }
 
-// SetClientId gets a reference to the given string and assigns it to the ClientId field.
-func (o *BoxEventsSecretsConfig) SetClientId(v string) {
+// SetClientId gets a reference to the given ModelsSecret and assigns it to the ClientId field.
+func (o *BoxEventsSecretsConfig) SetClientId(v ModelsSecret) {
 	o.ClientId = &v
 }
 
 // GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
-func (o *BoxEventsSecretsConfig) GetClientSecret() string {
+func (o *BoxEventsSecretsConfig) GetClientSecret() ModelsSecret {
 	if o == nil || IsNil(o.ClientSecret) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientSecret
@@ -88,7 +85,7 @@ func (o *BoxEventsSecretsConfig) GetClientSecret() string {
 
 // GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BoxEventsSecretsConfig) GetClientSecretOk() (*string, bool) {
+func (o *BoxEventsSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientSecret) {
 		return nil, false
 	}
@@ -104,15 +101,15 @@ func (o *BoxEventsSecretsConfig) HasClientSecret() bool {
 	return false
 }
 
-// SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
-func (o *BoxEventsSecretsConfig) SetClientSecret(v string) {
+// SetClientSecret gets a reference to the given ModelsSecret and assigns it to the ClientSecret field.
+func (o *BoxEventsSecretsConfig) SetClientSecret(v ModelsSecret) {
 	o.ClientSecret = &v
 }
 
 // GetEnterpriseId returns the EnterpriseId field value if set, zero value otherwise.
-func (o *BoxEventsSecretsConfig) GetEnterpriseId() string {
+func (o *BoxEventsSecretsConfig) GetEnterpriseId() ModelsSecret {
 	if o == nil || IsNil(o.EnterpriseId) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.EnterpriseId
@@ -120,7 +117,7 @@ func (o *BoxEventsSecretsConfig) GetEnterpriseId() string {
 
 // GetEnterpriseIdOk returns a tuple with the EnterpriseId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BoxEventsSecretsConfig) GetEnterpriseIdOk() (*string, bool) {
+func (o *BoxEventsSecretsConfig) GetEnterpriseIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.EnterpriseId) {
 		return nil, false
 	}
@@ -136,8 +133,8 @@ func (o *BoxEventsSecretsConfig) HasEnterpriseId() bool {
 	return false
 }
 
-// SetEnterpriseId gets a reference to the given string and assigns it to the EnterpriseId field.
-func (o *BoxEventsSecretsConfig) SetEnterpriseId(v string) {
+// SetEnterpriseId gets a reference to the given ModelsSecret and assigns it to the EnterpriseId field.
+func (o *BoxEventsSecretsConfig) SetEnterpriseId(v ModelsSecret) {
 	o.EnterpriseId = &v
 }
 

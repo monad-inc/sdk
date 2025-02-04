@@ -6,8 +6,8 @@ Snowflake Output Secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**password** | **str** | The Users password if using password authentication. It is reccomended that you use service account authentication with a private key. | [optional] 
-**private_key** | **str** | Your private KEY | [optional] 
+**password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

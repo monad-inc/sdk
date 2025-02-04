@@ -20,10 +20,8 @@ var _ MappedNullable = &LoginSessionsSecretsConfig{}
 
 // LoginSessionsSecretsConfig CrowdStrike EDR login sessions secrets
 type LoginSessionsSecretsConfig struct {
-	// Client ID for the CrowdStrike API. This is required to authenticate requests.
-	ClientId *string `json:"client_id,omitempty"`
-	// Client Secret for the CrowdStrike API. This is required to authenticate requests.
-	ClientSecret *string `json:"client_secret,omitempty"`
+	ClientId *ModelsSecret `json:"client_id,omitempty"`
+	ClientSecret *ModelsSecret `json:"client_secret,omitempty"`
 }
 
 // NewLoginSessionsSecretsConfig instantiates a new LoginSessionsSecretsConfig object
@@ -44,9 +42,9 @@ func NewLoginSessionsSecretsConfigWithDefaults() *LoginSessionsSecretsConfig {
 }
 
 // GetClientId returns the ClientId field value if set, zero value otherwise.
-func (o *LoginSessionsSecretsConfig) GetClientId() string {
+func (o *LoginSessionsSecretsConfig) GetClientId() ModelsSecret {
 	if o == nil || IsNil(o.ClientId) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientId
@@ -54,7 +52,7 @@ func (o *LoginSessionsSecretsConfig) GetClientId() string {
 
 // GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoginSessionsSecretsConfig) GetClientIdOk() (*string, bool) {
+func (o *LoginSessionsSecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientId) {
 		return nil, false
 	}
@@ -70,15 +68,15 @@ func (o *LoginSessionsSecretsConfig) HasClientId() bool {
 	return false
 }
 
-// SetClientId gets a reference to the given string and assigns it to the ClientId field.
-func (o *LoginSessionsSecretsConfig) SetClientId(v string) {
+// SetClientId gets a reference to the given ModelsSecret and assigns it to the ClientId field.
+func (o *LoginSessionsSecretsConfig) SetClientId(v ModelsSecret) {
 	o.ClientId = &v
 }
 
 // GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
-func (o *LoginSessionsSecretsConfig) GetClientSecret() string {
+func (o *LoginSessionsSecretsConfig) GetClientSecret() ModelsSecret {
 	if o == nil || IsNil(o.ClientSecret) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientSecret
@@ -86,7 +84,7 @@ func (o *LoginSessionsSecretsConfig) GetClientSecret() string {
 
 // GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoginSessionsSecretsConfig) GetClientSecretOk() (*string, bool) {
+func (o *LoginSessionsSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientSecret) {
 		return nil, false
 	}
@@ -102,8 +100,8 @@ func (o *LoginSessionsSecretsConfig) HasClientSecret() bool {
 	return false
 }
 
-// SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
-func (o *LoginSessionsSecretsConfig) SetClientSecret(v string) {
+// SetClientSecret gets a reference to the given ModelsSecret and assigns it to the ClientSecret field.
+func (o *LoginSessionsSecretsConfig) SetClientSecret(v ModelsSecret) {
 	o.ClientSecret = &v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiKey** | Pointer to **string** | API Key to authenticate the Tines API. | [optional] 
+**ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetApiKey
 
-`func (o *EventsLogsSecretsConfig) GetApiKey() string`
+`func (o *EventsLogsSecretsConfig) GetApiKey() ModelsSecret`
 
 GetApiKey returns the ApiKey field if non-nil, zero value otherwise.
 
 ### GetApiKeyOk
 
-`func (o *EventsLogsSecretsConfig) GetApiKeyOk() (*string, bool)`
+`func (o *EventsLogsSecretsConfig) GetApiKeyOk() (*ModelsSecret, bool)`
 
 GetApiKeyOk returns a tuple with the ApiKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApiKey
 
-`func (o *EventsLogsSecretsConfig) SetApiKey(v string)`
+`func (o *EventsLogsSecretsConfig) SetApiKey(v ModelsSecret)`
 
 SetApiKey sets ApiKey field to given value.
 

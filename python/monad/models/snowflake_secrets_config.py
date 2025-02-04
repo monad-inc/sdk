@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +28,8 @@ class SnowflakeSecretsConfig(BaseModel):
     """
     Snowflake Output Secrets
     """ # noqa: E501
-    password: Optional[StrictStr] = Field(default=None, description="The Users password if using password authentication. It is reccomended that you use service account authentication with a private key.")
-    private_key: Optional[StrictStr] = Field(default=None, description="Your private KEY")
+    password: Optional[ModelsSecret] = None
+    private_key: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["password", "private_key"]
 
     model_config = ConfigDict(
@@ -70,6 +71,12 @@ class SnowflakeSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of password
+        if self.password:
+            _dict['password'] = self.password.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of private_key
+        if self.private_key:
+            _dict['private_key'] = self.private_key.to_dict()
         return _dict
 
     @classmethod
@@ -82,8 +89,8 @@ class SnowflakeSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "password": obj.get("password"),
-            "private_key": obj.get("private_key")
+            "password": ModelsSecret.from_dict(obj["password"]) if obj.get("password") is not None else None,
+            "private_key": ModelsSecret.from_dict(obj["private_key"]) if obj.get("private_key") is not None else None
         })
         return _obj
 

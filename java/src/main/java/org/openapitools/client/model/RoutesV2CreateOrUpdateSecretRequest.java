@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2CreateOrUpdateSecretRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2CreateOrUpdateSecretRequest {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -64,7 +63,7 @@ public class RoutesV2CreateOrUpdateSecretRequest {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
   @javax.annotation.Nullable
-  private Object value = null;
+  private String value;
 
   public RoutesV2CreateOrUpdateSecretRequest() {
   }
@@ -107,7 +106,7 @@ public class RoutesV2CreateOrUpdateSecretRequest {
   }
 
 
-  public RoutesV2CreateOrUpdateSecretRequest value(@javax.annotation.Nullable Object value) {
+  public RoutesV2CreateOrUpdateSecretRequest value(@javax.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -117,11 +116,11 @@ public class RoutesV2CreateOrUpdateSecretRequest {
    * @return value
    */
   @javax.annotation.Nullable
-  public Object getValue() {
+  public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable Object value) {
+  public void setValue(@javax.annotation.Nullable String value) {
     this.value = value;
   }
 
@@ -141,20 +140,9 @@ public class RoutesV2CreateOrUpdateSecretRequest {
         Objects.equals(this.value, routesV2CreateOrUpdateSecretRequest.value);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(description, name, value);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -220,6 +208,9 @@ public class RoutesV2CreateOrUpdateSecretRequest {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("value") != null && !jsonObj.get("value").isJsonNull()) && !jsonObj.get("value").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("value").toString()));
       }
   }
 

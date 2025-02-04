@@ -20,8 +20,7 @@ var _ MappedNullable = &EventsLogsSecretsConfig{}
 
 // EventsLogsSecretsConfig Tines Events Logs secrets
 type EventsLogsSecretsConfig struct {
-	// API Key to authenticate the Tines API.
-	ApiKey *string `json:"api_key,omitempty"`
+	ApiKey *ModelsSecret `json:"api_key,omitempty"`
 }
 
 // NewEventsLogsSecretsConfig instantiates a new EventsLogsSecretsConfig object
@@ -42,9 +41,9 @@ func NewEventsLogsSecretsConfigWithDefaults() *EventsLogsSecretsConfig {
 }
 
 // GetApiKey returns the ApiKey field value if set, zero value otherwise.
-func (o *EventsLogsSecretsConfig) GetApiKey() string {
+func (o *EventsLogsSecretsConfig) GetApiKey() ModelsSecret {
 	if o == nil || IsNil(o.ApiKey) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ApiKey
@@ -52,7 +51,7 @@ func (o *EventsLogsSecretsConfig) GetApiKey() string {
 
 // GetApiKeyOk returns a tuple with the ApiKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsLogsSecretsConfig) GetApiKeyOk() (*string, bool) {
+func (o *EventsLogsSecretsConfig) GetApiKeyOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ApiKey) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *EventsLogsSecretsConfig) HasApiKey() bool {
 	return false
 }
 
-// SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
-func (o *EventsLogsSecretsConfig) SetApiKey(v string) {
+// SetApiKey gets a reference to the given ModelsSecret and assigns it to the ApiKey field.
+func (o *EventsLogsSecretsConfig) SetApiKey(v ModelsSecret) {
 	o.ApiKey = &v
 }
 

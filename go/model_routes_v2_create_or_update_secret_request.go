@@ -22,7 +22,7 @@ var _ MappedNullable = &RoutesV2CreateOrUpdateSecretRequest{}
 type RoutesV2CreateOrUpdateSecretRequest struct {
 	Description *string `json:"description,omitempty"`
 	Name *string `json:"name,omitempty"`
-	Value interface{} `json:"value,omitempty"`
+	Value *string `json:"value,omitempty"`
 }
 
 // NewRoutesV2CreateOrUpdateSecretRequest instantiates a new RoutesV2CreateOrUpdateSecretRequest object
@@ -106,23 +106,22 @@ func (o *RoutesV2CreateOrUpdateSecretRequest) SetName(v string) {
 	o.Name = &v
 }
 
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RoutesV2CreateOrUpdateSecretRequest) GetValue() interface{} {
-	if o == nil {
-		var ret interface{}
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *RoutesV2CreateOrUpdateSecretRequest) GetValue() string {
+	if o == nil || IsNil(o.Value) {
+		var ret string
 		return ret
 	}
-	return o.Value
+	return *o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RoutesV2CreateOrUpdateSecretRequest) GetValueOk() (*interface{}, bool) {
+func (o *RoutesV2CreateOrUpdateSecretRequest) GetValueOk() (*string, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
-	return &o.Value, true
+	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
@@ -134,9 +133,9 @@ func (o *RoutesV2CreateOrUpdateSecretRequest) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given interface{} and assigns it to the Value field.
-func (o *RoutesV2CreateOrUpdateSecretRequest) SetValue(v interface{}) {
-	o.Value = v
+// SetValue gets a reference to the given string and assigns it to the Value field.
+func (o *RoutesV2CreateOrUpdateSecretRequest) SetValue(v string) {
+	o.Value = &v
 }
 
 func (o RoutesV2CreateOrUpdateSecretRequest) MarshalJSON() ([]byte, error) {
@@ -155,7 +154,7 @@ func (o RoutesV2CreateOrUpdateSecretRequest) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if o.Value != nil {
+	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
 	return toSerialize, nil

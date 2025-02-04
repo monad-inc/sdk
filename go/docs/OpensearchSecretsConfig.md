@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Password** | Pointer to **string** | The password for authenticating with OpenSearch. | [optional] 
+**Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPassword
 
-`func (o *OpensearchSecretsConfig) GetPassword() string`
+`func (o *OpensearchSecretsConfig) GetPassword() ModelsSecret`
 
 GetPassword returns the Password field if non-nil, zero value otherwise.
 
 ### GetPasswordOk
 
-`func (o *OpensearchSecretsConfig) GetPasswordOk() (*string, bool)`
+`func (o *OpensearchSecretsConfig) GetPasswordOk() (*ModelsSecret, bool)`
 
 GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPassword
 
-`func (o *OpensearchSecretsConfig) SetPassword(v string)`
+`func (o *OpensearchSecretsConfig) SetPassword(v ModelsSecret)`
 
 SetPassword sets Password field to given value.
 

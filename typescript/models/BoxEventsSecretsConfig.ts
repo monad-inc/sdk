@@ -10,24 +10,16 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Box Events secrets
 */
 export class BoxEventsSecretsConfig {
-    /**
-    * Client Secret for the Box API. This is required to authenticate requests.
-    */
-    'clientId'?: string;
-    /**
-    * Client ID for the Box API. This is required to authenticate requests.
-    */
-    'clientSecret'?: string;
-    /**
-    * Client Secret for the Box API. This is required to authenticate requests.
-    */
-    'enterpriseId'?: string;
+    'clientId'?: ModelsSecret;
+    'clientSecret'?: ModelsSecret;
+    'enterpriseId'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -37,19 +29,19 @@ export class BoxEventsSecretsConfig {
         {
             "name": "clientId",
             "baseName": "client_id",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         },
         {
             "name": "clientSecret",
             "baseName": "client_secret",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         },
         {
             "name": "enterpriseId",
             "baseName": "enterprise_id",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

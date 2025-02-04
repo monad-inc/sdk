@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Password** | Pointer to **string** | The Users password if using password authentication. It is reccomended that you use service account authentication with a private key. | [optional] 
-**PrivateKey** | Pointer to **string** | Your private KEY | [optional] 
+**Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**PrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPassword
 
-`func (o *SnowflakeSecretsConfig) GetPassword() string`
+`func (o *SnowflakeSecretsConfig) GetPassword() ModelsSecret`
 
 GetPassword returns the Password field if non-nil, zero value otherwise.
 
 ### GetPasswordOk
 
-`func (o *SnowflakeSecretsConfig) GetPasswordOk() (*string, bool)`
+`func (o *SnowflakeSecretsConfig) GetPasswordOk() (*ModelsSecret, bool)`
 
 GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPassword
 
-`func (o *SnowflakeSecretsConfig) SetPassword(v string)`
+`func (o *SnowflakeSecretsConfig) SetPassword(v ModelsSecret)`
 
 SetPassword sets Password field to given value.
 
@@ -53,20 +53,20 @@ HasPassword returns a boolean if a field has been set.
 
 ### GetPrivateKey
 
-`func (o *SnowflakeSecretsConfig) GetPrivateKey() string`
+`func (o *SnowflakeSecretsConfig) GetPrivateKey() ModelsSecret`
 
 GetPrivateKey returns the PrivateKey field if non-nil, zero value otherwise.
 
 ### GetPrivateKeyOk
 
-`func (o *SnowflakeSecretsConfig) GetPrivateKeyOk() (*string, bool)`
+`func (o *SnowflakeSecretsConfig) GetPrivateKeyOk() (*ModelsSecret, bool)`
 
 GetPrivateKeyOk returns a tuple with the PrivateKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrivateKey
 
-`func (o *SnowflakeSecretsConfig) SetPrivateKey(v string)`
+`func (o *SnowflakeSecretsConfig) SetPrivateKey(v ModelsSecret)`
 
 SetPrivateKey sets PrivateKey field to given value.
 

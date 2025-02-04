@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | Pointer to **string** | Client Secret for the Box API. This is required to authenticate requests. | [optional] 
-**ClientSecret** | Pointer to **string** | Client ID for the Box API. This is required to authenticate requests. | [optional] 
-**EnterpriseId** | Pointer to **string** | Client Secret for the Box API. This is required to authenticate requests. | [optional] 
+**ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**EnterpriseId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetClientId
 
-`func (o *BoxEventsSecretsConfig) GetClientId() string`
+`func (o *BoxEventsSecretsConfig) GetClientId() ModelsSecret`
 
 GetClientId returns the ClientId field if non-nil, zero value otherwise.
 
 ### GetClientIdOk
 
-`func (o *BoxEventsSecretsConfig) GetClientIdOk() (*string, bool)`
+`func (o *BoxEventsSecretsConfig) GetClientIdOk() (*ModelsSecret, bool)`
 
 GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientId
 
-`func (o *BoxEventsSecretsConfig) SetClientId(v string)`
+`func (o *BoxEventsSecretsConfig) SetClientId(v ModelsSecret)`
 
 SetClientId sets ClientId field to given value.
 
@@ -54,20 +54,20 @@ HasClientId returns a boolean if a field has been set.
 
 ### GetClientSecret
 
-`func (o *BoxEventsSecretsConfig) GetClientSecret() string`
+`func (o *BoxEventsSecretsConfig) GetClientSecret() ModelsSecret`
 
 GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
 
 ### GetClientSecretOk
 
-`func (o *BoxEventsSecretsConfig) GetClientSecretOk() (*string, bool)`
+`func (o *BoxEventsSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool)`
 
 GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientSecret
 
-`func (o *BoxEventsSecretsConfig) SetClientSecret(v string)`
+`func (o *BoxEventsSecretsConfig) SetClientSecret(v ModelsSecret)`
 
 SetClientSecret sets ClientSecret field to given value.
 
@@ -79,20 +79,20 @@ HasClientSecret returns a boolean if a field has been set.
 
 ### GetEnterpriseId
 
-`func (o *BoxEventsSecretsConfig) GetEnterpriseId() string`
+`func (o *BoxEventsSecretsConfig) GetEnterpriseId() ModelsSecret`
 
 GetEnterpriseId returns the EnterpriseId field if non-nil, zero value otherwise.
 
 ### GetEnterpriseIdOk
 
-`func (o *BoxEventsSecretsConfig) GetEnterpriseIdOk() (*string, bool)`
+`func (o *BoxEventsSecretsConfig) GetEnterpriseIdOk() (*ModelsSecret, bool)`
 
 GetEnterpriseIdOk returns a tuple with the EnterpriseId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnterpriseId
 
-`func (o *BoxEventsSecretsConfig) SetEnterpriseId(v string)`
+`func (o *BoxEventsSecretsConfig) SetEnterpriseId(v ModelsSecret)`
 
 SetEnterpriseId sets EnterpriseId field to given value.
 

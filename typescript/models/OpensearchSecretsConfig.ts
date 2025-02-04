@@ -10,16 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * OpenSearch Output Secrets
 */
 export class OpensearchSecretsConfig {
-    /**
-    * The password for authenticating with OpenSearch.
-    */
-    'password'?: string;
+    'password'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,7 +27,7 @@ export class OpensearchSecretsConfig {
         {
             "name": "password",
             "baseName": "password",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

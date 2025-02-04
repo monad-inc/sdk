@@ -134,7 +134,6 @@ import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformReq
 import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUserInOrganizationRequest';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
-import { RoutesV2BulkCreateInputRequest } from '../models/RoutesV2BulkCreateInputRequest';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
 import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
@@ -1127,29 +1126,6 @@ export interface OrganizationInputsApiV1OrganizationIdInputsPostRequest {
     testConnection?: boolean
 }
 
-export interface OrganizationInputsApiV2OrganizationIdInputsBulkPostRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsBulkPost
-     */
-    organizationId: string
-    /**
-     * Request body for creating multiple inputs
-     * @type RoutesV2BulkCreateInputRequest
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsBulkPost
-     */
-    routesV2BulkCreateInputRequest: RoutesV2BulkCreateInputRequest
-    /**
-     * Test connection before creating the input
-     * Defaults to: undefined
-     * @type boolean
-     * @memberof OrganizationInputsApiv2OrganizationIdInputsBulkPost
-     */
-    testConnection?: boolean
-}
-
 export interface OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest {
     /**
      * Organization ID
@@ -1332,24 +1308,6 @@ export class ObjectOrganizationInputsApi {
      */
     public v1OrganizationIdInputsPost(param: OrganizationInputsApiV1OrganizationIdInputsPostRequest, options?: Configuration): Promise<ModelsInput> {
         return this.api.v1OrganizationIdInputsPost(param.organizationId, param.routesCreateInputRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Create multiple inputs in a single request
-     * Bulk create inputs
-     * @param param the request object
-     */
-    public v2OrganizationIdInputsBulkPostWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsBulkPostRequest, options?: Configuration): Promise<HttpInfo<Array<ModelsInput>>> {
-        return this.api.v2OrganizationIdInputsBulkPostWithHttpInfo(param.organizationId, param.routesV2BulkCreateInputRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Create multiple inputs in a single request
-     * Bulk create inputs
-     * @param param the request object
-     */
-    public v2OrganizationIdInputsBulkPost(param: OrganizationInputsApiV2OrganizationIdInputsBulkPostRequest, options?: Configuration): Promise<Array<ModelsInput>> {
-        return this.api.v2OrganizationIdInputsBulkPost(param.organizationId, param.routesV2BulkCreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**

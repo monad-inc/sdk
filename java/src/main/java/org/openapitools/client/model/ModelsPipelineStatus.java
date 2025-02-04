@@ -52,12 +52,17 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsPipelineStatus {
   public static final String SERIALIZED_NAME_EGRESS = "egress";
   @SerializedName(SERIALIZED_NAME_EGRESS)
   @javax.annotation.Nullable
   private ModelsDataUsage egress;
+
+  public static final String SERIALIZED_NAME_ERRORS = "errors";
+  @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nullable
+  private Integer errors;
 
   public static final String SERIALIZED_NAME_INGRESS = "ingress";
   @SerializedName(SERIALIZED_NAME_INGRESS)
@@ -103,6 +108,25 @@ public class ModelsPipelineStatus {
 
   public void setEgress(@javax.annotation.Nullable ModelsDataUsage egress) {
     this.egress = egress;
+  }
+
+
+  public ModelsPipelineStatus errors(@javax.annotation.Nullable Integer errors) {
+    this.errors = errors;
+    return this;
+  }
+
+  /**
+   * Get errors
+   * @return errors
+   */
+  @javax.annotation.Nullable
+  public Integer getErrors() {
+    return errors;
+  }
+
+  public void setErrors(@javax.annotation.Nullable Integer errors) {
+    this.errors = errors;
   }
 
 
@@ -220,6 +244,7 @@ public class ModelsPipelineStatus {
     }
     ModelsPipelineStatus modelsPipelineStatus = (ModelsPipelineStatus) o;
     return Objects.equals(this.egress, modelsPipelineStatus.egress) &&
+        Objects.equals(this.errors, modelsPipelineStatus.errors) &&
         Objects.equals(this.ingress, modelsPipelineStatus.ingress) &&
         Objects.equals(this.nodes, modelsPipelineStatus.nodes) &&
         Objects.equals(this.organizationId, modelsPipelineStatus.organizationId) &&
@@ -229,7 +254,7 @@ public class ModelsPipelineStatus {
 
   @Override
   public int hashCode() {
-    return Objects.hash(egress, ingress, nodes, organizationId, pipelineId, status);
+    return Objects.hash(egress, errors, ingress, nodes, organizationId, pipelineId, status);
   }
 
   @Override
@@ -237,6 +262,7 @@ public class ModelsPipelineStatus {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsPipelineStatus {\n");
     sb.append("    egress: ").append(toIndentedString(egress)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    ingress: ").append(toIndentedString(ingress)).append("\n");
     sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
@@ -265,6 +291,7 @@ public class ModelsPipelineStatus {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("egress");
+    openapiFields.add("errors");
     openapiFields.add("ingress");
     openapiFields.add("nodes");
     openapiFields.add("organization_id");

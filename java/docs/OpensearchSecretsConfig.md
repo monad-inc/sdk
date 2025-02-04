@@ -8,7 +8,7 @@ OpenSearch Output Secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**password** | **String** | The password for authenticating with OpenSearch. |  [optional] |
+|**password** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 
 
 

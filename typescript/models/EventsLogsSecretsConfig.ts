@@ -10,16 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Tines Events Logs secrets
 */
 export class EventsLogsSecretsConfig {
-    /**
-    * API Key to authenticate the Tines API.
-    */
-    'apiKey'?: string;
+    'apiKey'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,7 +27,7 @@ export class EventsLogsSecretsConfig {
         {
             "name": "apiKey",
             "baseName": "api_key",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

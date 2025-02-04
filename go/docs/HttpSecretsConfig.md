@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthHeaders** | Pointer to **map[string]string** | Authentication headers | [optional] 
+**AuthHeaders** | Pointer to [**map[string]ModelsSecret**](ModelsSecret.md) | Authentication headers | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAuthHeaders
 
-`func (o *HttpSecretsConfig) GetAuthHeaders() map[string]string`
+`func (o *HttpSecretsConfig) GetAuthHeaders() map[string]ModelsSecret`
 
 GetAuthHeaders returns the AuthHeaders field if non-nil, zero value otherwise.
 
 ### GetAuthHeadersOk
 
-`func (o *HttpSecretsConfig) GetAuthHeadersOk() (*map[string]string, bool)`
+`func (o *HttpSecretsConfig) GetAuthHeadersOk() (*map[string]ModelsSecret, bool)`
 
 GetAuthHeadersOk returns a tuple with the AuthHeaders field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthHeaders
 
-`func (o *HttpSecretsConfig) SetAuthHeaders(v map[string]string)`
+`func (o *HttpSecretsConfig) SetAuthHeaders(v map[string]ModelsSecret)`
 
 SetAuthHeaders sets AuthHeaders field to given value.
 

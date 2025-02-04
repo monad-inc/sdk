@@ -10,16 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Slack Users secrets
 */
 export class SlackUsersSecretsConfig {
-    /**
-    * Token to authenticate against the slack API
-    */
-    'token'?: string;
+    'token'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,7 +27,7 @@ export class SlackUsersSecretsConfig {
         {
             "name": "token",
             "baseName": "token",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

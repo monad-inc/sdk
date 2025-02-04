@@ -20,10 +20,8 @@ var _ MappedNullable = &RolesInfoSecretsConfig{}
 
 // RolesInfoSecretsConfig CrowdStrike EDR roles info secrets
 type RolesInfoSecretsConfig struct {
-	// Client ID for the CrowdStrike API. This is required to authenticate requests.
-	ClientId *string `json:"client_id,omitempty"`
-	// Client Secret for the CrowdStrike API. This is required to authenticate requests.
-	ClientSecret *string `json:"client_secret,omitempty"`
+	ClientId *ModelsSecret `json:"client_id,omitempty"`
+	ClientSecret *ModelsSecret `json:"client_secret,omitempty"`
 }
 
 // NewRolesInfoSecretsConfig instantiates a new RolesInfoSecretsConfig object
@@ -44,9 +42,9 @@ func NewRolesInfoSecretsConfigWithDefaults() *RolesInfoSecretsConfig {
 }
 
 // GetClientId returns the ClientId field value if set, zero value otherwise.
-func (o *RolesInfoSecretsConfig) GetClientId() string {
+func (o *RolesInfoSecretsConfig) GetClientId() ModelsSecret {
 	if o == nil || IsNil(o.ClientId) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientId
@@ -54,7 +52,7 @@ func (o *RolesInfoSecretsConfig) GetClientId() string {
 
 // GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RolesInfoSecretsConfig) GetClientIdOk() (*string, bool) {
+func (o *RolesInfoSecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientId) {
 		return nil, false
 	}
@@ -70,15 +68,15 @@ func (o *RolesInfoSecretsConfig) HasClientId() bool {
 	return false
 }
 
-// SetClientId gets a reference to the given string and assigns it to the ClientId field.
-func (o *RolesInfoSecretsConfig) SetClientId(v string) {
+// SetClientId gets a reference to the given ModelsSecret and assigns it to the ClientId field.
+func (o *RolesInfoSecretsConfig) SetClientId(v ModelsSecret) {
 	o.ClientId = &v
 }
 
 // GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
-func (o *RolesInfoSecretsConfig) GetClientSecret() string {
+func (o *RolesInfoSecretsConfig) GetClientSecret() ModelsSecret {
 	if o == nil || IsNil(o.ClientSecret) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientSecret
@@ -86,7 +84,7 @@ func (o *RolesInfoSecretsConfig) GetClientSecret() string {
 
 // GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RolesInfoSecretsConfig) GetClientSecretOk() (*string, bool) {
+func (o *RolesInfoSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientSecret) {
 		return nil, false
 	}
@@ -102,8 +100,8 @@ func (o *RolesInfoSecretsConfig) HasClientSecret() bool {
 	return false
 }
 
-// SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
-func (o *RolesInfoSecretsConfig) SetClientSecret(v string) {
+// SetClientSecret gets a reference to the given ModelsSecret and assigns it to the ClientSecret field.
+func (o *RolesInfoSecretsConfig) SetClientSecret(v ModelsSecret) {
 	o.ClientSecret = &v
 }
 

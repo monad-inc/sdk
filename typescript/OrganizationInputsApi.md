@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**v1OrganizationIdInputsInputIdGet**](OrganizationInputsApi.md#v1OrganizationIdInputsInputIdGet) | **GET** /v1/{organization_id}/inputs/{input_id} | Get input
 [**v1OrganizationIdInputsInputIdPatch**](OrganizationInputsApi.md#v1OrganizationIdInputsInputIdPatch) | **PATCH** /v1/{organization_id}/inputs/{input_id} | Update input
 [**v1OrganizationIdInputsPost**](OrganizationInputsApi.md#v1OrganizationIdInputsPost) | **POST** /v1/{organization_id}/inputs | Create input
-[**v2OrganizationIdInputsBulkPost**](OrganizationInputsApi.md#v2OrganizationIdInputsBulkPost) | **POST** /v2/{organization_id}/inputs/bulk | Bulk create inputs
 [**v2OrganizationIdInputsInputIdPatch**](OrganizationInputsApi.md#v2OrganizationIdInputsInputIdPatch) | **PATCH** /v2/{organization_id}/inputs/{input_id} | Update input
 [**v2OrganizationIdInputsPost**](OrganizationInputsApi.md#v2OrganizationIdInputsPost) | **POST** /v2/{organization_id}/inputs | Create input
 [**v2OrganizationIdInputsTestConnectionPost**](OrganizationInputsApi.md#v2OrganizationIdInputsTestConnectionPost) | **POST** /v2/{organization_id}/inputs/test-connection | Test input connection
@@ -410,83 +409,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Input created successfully |  -  |
 **400** | Failed to create input |  -  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **v2OrganizationIdInputsBulkPost**
-> Array<ModelsInput> v2OrganizationIdInputsBulkPost(routesV2BulkCreateInputRequest)
-
-Create multiple inputs in a single request
-
-### Example
-
-
-```typescript
-import { createConfiguration, OrganizationInputsApi } from '';
-import type { OrganizationInputsApiV2OrganizationIdInputsBulkPostRequest } from '';
-
-const configuration = createConfiguration();
-const apiInstance = new OrganizationInputsApi(configuration);
-
-const request: OrganizationInputsApiV2OrganizationIdInputsBulkPostRequest = {
-    // Organization ID
-  organizationId: "organization_id_example",
-    // Request body for creating multiple inputs
-  routesV2BulkCreateInputRequest: {
-    inputs: [
-      {
-        config: {
-          secrets: 
-            key: null,
-          ,
-          settings: 
-            key: null,
-          ,
-        },
-        description: "description_example",
-        name: "name_example",
-        type: "type_example",
-      },
-    ],
-  },
-    // Test connection before creating the input (optional)
-  testConnection: true,
-};
-
-const data = await apiInstance.v2OrganizationIdInputsBulkPost(request);
-console.log('API called successfully. Returned data:', data);
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **routesV2BulkCreateInputRequest** | **RoutesV2BulkCreateInputRequest**| Request body for creating multiple inputs |
- **organizationId** | [**string**] | Organization ID | defaults to undefined
- **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
-
-
-### Return type
-
-**Array<ModelsInput>**
-
-### Authorization
-
-[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Inputs created successfully |  -  |
-**400** | Validation error |  -  |
-**500** | Failed to create inputs |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

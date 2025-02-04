@@ -20,8 +20,7 @@ var _ MappedNullable = &SemgrepProjectDetailsSecretsConfig{}
 
 // SemgrepProjectDetailsSecretsConfig Semgrep project details secrets
 type SemgrepProjectDetailsSecretsConfig struct {
-	// API Key for the Semgrep API. This is required to authenticate requests.
-	ApiKey *string `json:"api_key,omitempty"`
+	ApiKey *ModelsSecret `json:"api_key,omitempty"`
 }
 
 // NewSemgrepProjectDetailsSecretsConfig instantiates a new SemgrepProjectDetailsSecretsConfig object
@@ -42,9 +41,9 @@ func NewSemgrepProjectDetailsSecretsConfigWithDefaults() *SemgrepProjectDetailsS
 }
 
 // GetApiKey returns the ApiKey field value if set, zero value otherwise.
-func (o *SemgrepProjectDetailsSecretsConfig) GetApiKey() string {
+func (o *SemgrepProjectDetailsSecretsConfig) GetApiKey() ModelsSecret {
 	if o == nil || IsNil(o.ApiKey) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ApiKey
@@ -52,7 +51,7 @@ func (o *SemgrepProjectDetailsSecretsConfig) GetApiKey() string {
 
 // GetApiKeyOk returns a tuple with the ApiKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SemgrepProjectDetailsSecretsConfig) GetApiKeyOk() (*string, bool) {
+func (o *SemgrepProjectDetailsSecretsConfig) GetApiKeyOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ApiKey) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *SemgrepProjectDetailsSecretsConfig) HasApiKey() bool {
 	return false
 }
 
-// SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
-func (o *SemgrepProjectDetailsSecretsConfig) SetApiKey(v string) {
+// SetApiKey gets a reference to the given ModelsSecret and assigns it to the ApiKey field.
+func (o *SemgrepProjectDetailsSecretsConfig) SetApiKey(v ModelsSecret) {
 	o.ApiKey = &v
 }
 

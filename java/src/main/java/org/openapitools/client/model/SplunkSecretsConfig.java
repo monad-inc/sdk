@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsSecret;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,31 +49,31 @@ import org.openapitools.client.JSON;
 /**
  * Splunk Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SplunkSecretsConfig {
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
   @javax.annotation.Nullable
-  private String token;
+  private ModelsSecret token;
 
   public SplunkSecretsConfig() {
   }
 
-  public SplunkSecretsConfig token(@javax.annotation.Nullable String token) {
+  public SplunkSecretsConfig token(@javax.annotation.Nullable ModelsSecret token) {
     this.token = token;
     return this;
   }
 
   /**
-   * The token for authenticating with Splunk.
+   * Get token
    * @return token
    */
   @javax.annotation.Nullable
-  public String getToken() {
+  public ModelsSecret getToken() {
     return token;
   }
 
-  public void setToken(@javax.annotation.Nullable String token) {
+  public void setToken(@javax.annotation.Nullable ModelsSecret token) {
     this.token = token;
   }
 
@@ -149,8 +150,9 @@ public class SplunkSecretsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("token") != null && !jsonObj.get("token").isJsonNull()) && !jsonObj.get("token").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("token").toString()));
+      // validate the optional field `token`
+      if (jsonObj.get("token") != null && !jsonObj.get("token").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("token"));
       }
   }
 

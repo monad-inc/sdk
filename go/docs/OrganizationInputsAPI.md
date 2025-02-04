@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**V1OrganizationIdInputsInputIdGet**](OrganizationInputsAPI.md#V1OrganizationIdInputsInputIdGet) | **Get** /v1/{organization_id}/inputs/{input_id} | Get input
 [**V1OrganizationIdInputsInputIdPatch**](OrganizationInputsAPI.md#V1OrganizationIdInputsInputIdPatch) | **Patch** /v1/{organization_id}/inputs/{input_id} | Update input
 [**V1OrganizationIdInputsPost**](OrganizationInputsAPI.md#V1OrganizationIdInputsPost) | **Post** /v1/{organization_id}/inputs | Create input
-[**V2OrganizationIdInputsBulkPost**](OrganizationInputsAPI.md#V2OrganizationIdInputsBulkPost) | **Post** /v2/{organization_id}/inputs/bulk | Bulk create inputs
 [**V2OrganizationIdInputsInputIdPatch**](OrganizationInputsAPI.md#V2OrganizationIdInputsInputIdPatch) | **Patch** /v2/{organization_id}/inputs/{input_id} | Update input
 [**V2OrganizationIdInputsPost**](OrganizationInputsAPI.md#V2OrganizationIdInputsPost) | **Post** /v2/{organization_id}/inputs | Create input
 [**V2OrganizationIdInputsTestConnectionPost**](OrganizationInputsAPI.md#V2OrganizationIdInputsTestConnectionPost) | **Post** /v2/{organization_id}/inputs/test-connection | Test input connection
@@ -447,80 +446,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ModelsInput**](ModelsInput.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## V2OrganizationIdInputsBulkPost
-
-> []ModelsInput V2OrganizationIdInputsBulkPost(ctx, organizationId).RoutesV2BulkCreateInputRequest(routesV2BulkCreateInputRequest).TestConnection(testConnection).Execute()
-
-Bulk create inputs
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/monad-inc/sdk/go"
-)
-
-func main() {
-	organizationId := "organizationId_example" // string | Organization ID
-	routesV2BulkCreateInputRequest := *openapiclient.NewRoutesV2BulkCreateInputRequest() // RoutesV2BulkCreateInputRequest | Request body for creating multiple inputs
-	testConnection := true // bool | Test connection before creating the input (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationInputsAPI.V2OrganizationIdInputsBulkPost(context.Background(), organizationId).RoutesV2BulkCreateInputRequest(routesV2BulkCreateInputRequest).TestConnection(testConnection).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.V2OrganizationIdInputsBulkPost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V2OrganizationIdInputsBulkPost`: []ModelsInput
-	fmt.Fprintf(os.Stdout, "Response from `OrganizationInputsAPI.V2OrganizationIdInputsBulkPost`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**organizationId** | **string** | Organization ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV2OrganizationIdInputsBulkPostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **routesV2BulkCreateInputRequest** | [**RoutesV2BulkCreateInputRequest**](RoutesV2BulkCreateInputRequest.md) | Request body for creating multiple inputs | 
- **testConnection** | **bool** | Test connection before creating the input | 
-
-### Return type
-
-[**[]ModelsInput**](ModelsInput.md)
 
 ### Authorization
 

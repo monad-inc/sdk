@@ -6,8 +6,8 @@ Microsoft Azure Activity Logs secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**client_id** | **str** | The client ID of the Azure AD application | [optional] 
-**client_secret** | **str** | The client secret of the Azure AD application | [optional] 
+**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

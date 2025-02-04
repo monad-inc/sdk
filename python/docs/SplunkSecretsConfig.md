@@ -6,7 +6,7 @@ Splunk Output Secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**token** | **str** | The token for authenticating with Splunk. | [optional] 
+**token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

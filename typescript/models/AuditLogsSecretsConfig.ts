@@ -10,16 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * GitHub audit logs secrets
 */
 export class AuditLogsSecretsConfig {
-    /**
-    * Your personal access token that grants read:audit_log
-    */
-    'personalAccessToken'?: string;
+    'personalAccessToken'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,7 +27,7 @@ export class AuditLogsSecretsConfig {
         {
             "name": "personalAccessToken",
             "baseName": "personal_access_token",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

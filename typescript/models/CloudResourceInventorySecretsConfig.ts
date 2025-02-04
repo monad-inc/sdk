@@ -10,20 +10,15 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Wiz cloud resource inventory secrets
 */
 export class CloudResourceInventorySecretsConfig {
-    /**
-    * Client ID for the Wiz API. This is required to authenticate requests.
-    */
-    'clientId'?: string;
-    /**
-    * Client Secret for the Wiz API. This is required to authenticate requests.
-    */
-    'clientSecret'?: string;
+    'clientId'?: ModelsSecret;
+    'clientSecret'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -33,13 +28,13 @@ export class CloudResourceInventorySecretsConfig {
         {
             "name": "clientId",
             "baseName": "client_id",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         },
         {
             "name": "clientSecret",
             "baseName": "client_secret",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

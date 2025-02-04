@@ -20,10 +20,8 @@ var _ MappedNullable = &LogAnalyticsQuerySecretsConfig{}
 
 // LogAnalyticsQuerySecretsConfig Microsoft Log Analytics Query secrets
 type LogAnalyticsQuerySecretsConfig struct {
-	// The client ID of the Azure AD application
-	ClientId *string `json:"client_id,omitempty"`
-	// The client secret of the Azure AD application
-	ClientSecret *string `json:"client_secret,omitempty"`
+	ClientId *ModelsSecret `json:"client_id,omitempty"`
+	ClientSecret *ModelsSecret `json:"client_secret,omitempty"`
 }
 
 // NewLogAnalyticsQuerySecretsConfig instantiates a new LogAnalyticsQuerySecretsConfig object
@@ -44,9 +42,9 @@ func NewLogAnalyticsQuerySecretsConfigWithDefaults() *LogAnalyticsQuerySecretsCo
 }
 
 // GetClientId returns the ClientId field value if set, zero value otherwise.
-func (o *LogAnalyticsQuerySecretsConfig) GetClientId() string {
+func (o *LogAnalyticsQuerySecretsConfig) GetClientId() ModelsSecret {
 	if o == nil || IsNil(o.ClientId) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientId
@@ -54,7 +52,7 @@ func (o *LogAnalyticsQuerySecretsConfig) GetClientId() string {
 
 // GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogAnalyticsQuerySecretsConfig) GetClientIdOk() (*string, bool) {
+func (o *LogAnalyticsQuerySecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientId) {
 		return nil, false
 	}
@@ -70,15 +68,15 @@ func (o *LogAnalyticsQuerySecretsConfig) HasClientId() bool {
 	return false
 }
 
-// SetClientId gets a reference to the given string and assigns it to the ClientId field.
-func (o *LogAnalyticsQuerySecretsConfig) SetClientId(v string) {
+// SetClientId gets a reference to the given ModelsSecret and assigns it to the ClientId field.
+func (o *LogAnalyticsQuerySecretsConfig) SetClientId(v ModelsSecret) {
 	o.ClientId = &v
 }
 
 // GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
-func (o *LogAnalyticsQuerySecretsConfig) GetClientSecret() string {
+func (o *LogAnalyticsQuerySecretsConfig) GetClientSecret() ModelsSecret {
 	if o == nil || IsNil(o.ClientSecret) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientSecret
@@ -86,7 +84,7 @@ func (o *LogAnalyticsQuerySecretsConfig) GetClientSecret() string {
 
 // GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogAnalyticsQuerySecretsConfig) GetClientSecretOk() (*string, bool) {
+func (o *LogAnalyticsQuerySecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientSecret) {
 		return nil, false
 	}
@@ -102,8 +100,8 @@ func (o *LogAnalyticsQuerySecretsConfig) HasClientSecret() bool {
 	return false
 }
 
-// SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
-func (o *LogAnalyticsQuerySecretsConfig) SetClientSecret(v string) {
+// SetClientSecret gets a reference to the given ModelsSecret and assigns it to the ClientSecret field.
+func (o *LogAnalyticsQuerySecretsConfig) SetClientSecret(v ModelsSecret) {
 	o.ClientSecret = &v
 }
 

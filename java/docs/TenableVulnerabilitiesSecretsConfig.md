@@ -8,8 +8,8 @@ Tenable vulnerabilities secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**accessKey** | **String** | Access Key for the Tenable API. This is required to authenticate requests. |  [optional] |
-|**secretKey** | **String** | Secret Key for the Tenable API. This is required to authenticate requests. |  [optional] |
+|**accessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 
 
 

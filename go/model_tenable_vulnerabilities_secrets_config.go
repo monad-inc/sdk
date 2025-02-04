@@ -20,10 +20,8 @@ var _ MappedNullable = &TenableVulnerabilitiesSecretsConfig{}
 
 // TenableVulnerabilitiesSecretsConfig Tenable vulnerabilities secrets
 type TenableVulnerabilitiesSecretsConfig struct {
-	// Access Key for the Tenable API. This is required to authenticate requests.
-	AccessKey *string `json:"access_key,omitempty"`
-	// Secret Key for the Tenable API. This is required to authenticate requests.
-	SecretKey *string `json:"secret_key,omitempty"`
+	AccessKey *ModelsSecret `json:"access_key,omitempty"`
+	SecretKey *ModelsSecret `json:"secret_key,omitempty"`
 }
 
 // NewTenableVulnerabilitiesSecretsConfig instantiates a new TenableVulnerabilitiesSecretsConfig object
@@ -44,9 +42,9 @@ func NewTenableVulnerabilitiesSecretsConfigWithDefaults() *TenableVulnerabilitie
 }
 
 // GetAccessKey returns the AccessKey field value if set, zero value otherwise.
-func (o *TenableVulnerabilitiesSecretsConfig) GetAccessKey() string {
+func (o *TenableVulnerabilitiesSecretsConfig) GetAccessKey() ModelsSecret {
 	if o == nil || IsNil(o.AccessKey) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.AccessKey
@@ -54,7 +52,7 @@ func (o *TenableVulnerabilitiesSecretsConfig) GetAccessKey() string {
 
 // GetAccessKeyOk returns a tuple with the AccessKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TenableVulnerabilitiesSecretsConfig) GetAccessKeyOk() (*string, bool) {
+func (o *TenableVulnerabilitiesSecretsConfig) GetAccessKeyOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.AccessKey) {
 		return nil, false
 	}
@@ -70,15 +68,15 @@ func (o *TenableVulnerabilitiesSecretsConfig) HasAccessKey() bool {
 	return false
 }
 
-// SetAccessKey gets a reference to the given string and assigns it to the AccessKey field.
-func (o *TenableVulnerabilitiesSecretsConfig) SetAccessKey(v string) {
+// SetAccessKey gets a reference to the given ModelsSecret and assigns it to the AccessKey field.
+func (o *TenableVulnerabilitiesSecretsConfig) SetAccessKey(v ModelsSecret) {
 	o.AccessKey = &v
 }
 
 // GetSecretKey returns the SecretKey field value if set, zero value otherwise.
-func (o *TenableVulnerabilitiesSecretsConfig) GetSecretKey() string {
+func (o *TenableVulnerabilitiesSecretsConfig) GetSecretKey() ModelsSecret {
 	if o == nil || IsNil(o.SecretKey) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.SecretKey
@@ -86,7 +84,7 @@ func (o *TenableVulnerabilitiesSecretsConfig) GetSecretKey() string {
 
 // GetSecretKeyOk returns a tuple with the SecretKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TenableVulnerabilitiesSecretsConfig) GetSecretKeyOk() (*string, bool) {
+func (o *TenableVulnerabilitiesSecretsConfig) GetSecretKeyOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.SecretKey) {
 		return nil, false
 	}
@@ -102,8 +100,8 @@ func (o *TenableVulnerabilitiesSecretsConfig) HasSecretKey() bool {
 	return false
 }
 
-// SetSecretKey gets a reference to the given string and assigns it to the SecretKey field.
-func (o *TenableVulnerabilitiesSecretsConfig) SetSecretKey(v string) {
+// SetSecretKey gets a reference to the given ModelsSecret and assigns it to the SecretKey field.
+func (o *TenableVulnerabilitiesSecretsConfig) SetSecretKey(v ModelsSecret) {
 	o.SecretKey = &v
 }
 

@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +28,8 @@ class AuthLogsSecretsConfig(BaseModel):
     """
     AuthLogsSecretsConfig
     """ # noqa: E501
-    integration_key: Optional[StrictStr] = None
-    secret_key: Optional[StrictStr] = None
+    integration_key: Optional[ModelsSecret] = None
+    secret_key: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["integration_key", "secret_key"]
 
     model_config = ConfigDict(
@@ -70,6 +71,12 @@ class AuthLogsSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of integration_key
+        if self.integration_key:
+            _dict['integration_key'] = self.integration_key.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of secret_key
+        if self.secret_key:
+            _dict['secret_key'] = self.secret_key.to_dict()
         return _dict
 
     @classmethod
@@ -82,8 +89,8 @@ class AuthLogsSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "integration_key": obj.get("integration_key"),
-            "secret_key": obj.get("secret_key")
+            "integration_key": ModelsSecret.from_dict(obj["integration_key"]) if obj.get("integration_key") is not None else None,
+            "secret_key": ModelsSecret.from_dict(obj["secret_key"]) if obj.get("secret_key") is not None else None
         })
         return _obj
 

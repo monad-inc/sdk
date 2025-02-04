@@ -10,16 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Cribl HTTP Output Secrets
 */
 export class CriblHttpSecretsConfig {
-    /**
-    * The authentication token value you\'ve set for your HTTP Source. This token is used to authenticate requests to your Cribl endpoint.
-    */
-    'authToken'?: string;
+    'authToken'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,7 +27,7 @@ export class CriblHttpSecretsConfig {
         {
             "name": "authToken",
             "baseName": "auth_token",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

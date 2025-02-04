@@ -10,20 +10,15 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Sumo Logic Output Secrets
 */
 export class SumologicSecretsConfig {
-    /**
-    * The Access ID for authenticating with Sumo Logic.
-    */
-    'accessId'?: string;
-    /**
-    * The Access Key for authenticating with Sumo Logic.
-    */
-    'accessKey'?: string;
+    'accessId'?: ModelsSecret;
+    'accessKey'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -33,13 +28,13 @@ export class SumologicSecretsConfig {
         {
             "name": "accessId",
             "baseName": "access_id",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         },
         {
             "name": "accessKey",
             "baseName": "access_key",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

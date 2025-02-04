@@ -20,10 +20,8 @@ var _ MappedNullable = &SumologicSecretsConfig{}
 
 // SumologicSecretsConfig Sumo Logic Output Secrets
 type SumologicSecretsConfig struct {
-	// The Access ID for authenticating with Sumo Logic.
-	AccessId *string `json:"access_id,omitempty"`
-	// The Access Key for authenticating with Sumo Logic.
-	AccessKey *string `json:"access_key,omitempty"`
+	AccessId *ModelsSecret `json:"access_id,omitempty"`
+	AccessKey *ModelsSecret `json:"access_key,omitempty"`
 }
 
 // NewSumologicSecretsConfig instantiates a new SumologicSecretsConfig object
@@ -44,9 +42,9 @@ func NewSumologicSecretsConfigWithDefaults() *SumologicSecretsConfig {
 }
 
 // GetAccessId returns the AccessId field value if set, zero value otherwise.
-func (o *SumologicSecretsConfig) GetAccessId() string {
+func (o *SumologicSecretsConfig) GetAccessId() ModelsSecret {
 	if o == nil || IsNil(o.AccessId) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.AccessId
@@ -54,7 +52,7 @@ func (o *SumologicSecretsConfig) GetAccessId() string {
 
 // GetAccessIdOk returns a tuple with the AccessId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SumologicSecretsConfig) GetAccessIdOk() (*string, bool) {
+func (o *SumologicSecretsConfig) GetAccessIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.AccessId) {
 		return nil, false
 	}
@@ -70,15 +68,15 @@ func (o *SumologicSecretsConfig) HasAccessId() bool {
 	return false
 }
 
-// SetAccessId gets a reference to the given string and assigns it to the AccessId field.
-func (o *SumologicSecretsConfig) SetAccessId(v string) {
+// SetAccessId gets a reference to the given ModelsSecret and assigns it to the AccessId field.
+func (o *SumologicSecretsConfig) SetAccessId(v ModelsSecret) {
 	o.AccessId = &v
 }
 
 // GetAccessKey returns the AccessKey field value if set, zero value otherwise.
-func (o *SumologicSecretsConfig) GetAccessKey() string {
+func (o *SumologicSecretsConfig) GetAccessKey() ModelsSecret {
 	if o == nil || IsNil(o.AccessKey) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.AccessKey
@@ -86,7 +84,7 @@ func (o *SumologicSecretsConfig) GetAccessKey() string {
 
 // GetAccessKeyOk returns a tuple with the AccessKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SumologicSecretsConfig) GetAccessKeyOk() (*string, bool) {
+func (o *SumologicSecretsConfig) GetAccessKeyOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.AccessKey) {
 		return nil, false
 	}
@@ -102,8 +100,8 @@ func (o *SumologicSecretsConfig) HasAccessKey() bool {
 	return false
 }
 
-// SetAccessKey gets a reference to the given string and assigns it to the AccessKey field.
-func (o *SumologicSecretsConfig) SetAccessKey(v string) {
+// SetAccessKey gets a reference to the given ModelsSecret and assigns it to the AccessKey field.
+func (o *SumologicSecretsConfig) SetAccessKey(v ModelsSecret) {
 	o.AccessKey = &v
 }
 

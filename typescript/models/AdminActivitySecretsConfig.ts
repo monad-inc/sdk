@@ -10,16 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Google Workspace Admin Activity secrets
 */
 export class AdminActivitySecretsConfig {
-    /**
-    * JSON credentials to authenticate with Google Cloud.
-    */
-    'credentialsJson'?: string;
+    'credentialsJson'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,7 +27,7 @@ export class AdminActivitySecretsConfig {
         {
             "name": "credentialsJson",
             "baseName": "credentials_json",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

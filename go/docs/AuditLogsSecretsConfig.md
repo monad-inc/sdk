@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PersonalAccessToken** | Pointer to **string** | Your personal access token that grants read:audit_log | [optional] 
+**PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPersonalAccessToken
 
-`func (o *AuditLogsSecretsConfig) GetPersonalAccessToken() string`
+`func (o *AuditLogsSecretsConfig) GetPersonalAccessToken() ModelsSecret`
 
 GetPersonalAccessToken returns the PersonalAccessToken field if non-nil, zero value otherwise.
 
 ### GetPersonalAccessTokenOk
 
-`func (o *AuditLogsSecretsConfig) GetPersonalAccessTokenOk() (*string, bool)`
+`func (o *AuditLogsSecretsConfig) GetPersonalAccessTokenOk() (*ModelsSecret, bool)`
 
 GetPersonalAccessTokenOk returns a tuple with the PersonalAccessToken field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPersonalAccessToken
 
-`func (o *AuditLogsSecretsConfig) SetPersonalAccessToken(v string)`
+`func (o *AuditLogsSecretsConfig) SetPersonalAccessToken(v ModelsSecret)`
 
 SetPersonalAccessToken sets PersonalAccessToken field to given value.
 

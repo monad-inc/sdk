@@ -10,24 +10,16 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Google Workspace Users secrets
 */
 export class UsersSecretsConfig {
-    /**
-    * JSON credentials to authenticate with Google Cloud.
-    */
-    'credentialsJson'?: string;
-    /**
-    * Google Workspace Customer ID. If you use your google workspace customer ID you will pull data on all users in all domains of your Google Workspace account. This should be set if Domain is not set.
-    */
-    'customerId'?: string;
-    /**
-    * Domain name your users belong to. If you use a google workspace domain you will only pull user data for users that belong to that domain. This should be set if CustomerID is not set
-    */
-    'domain'?: string;
+    'credentialsJson'?: ModelsSecret;
+    'customerId'?: ModelsSecret;
+    'domain'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -37,19 +29,19 @@ export class UsersSecretsConfig {
         {
             "name": "credentialsJson",
             "baseName": "credentials_json",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         },
         {
             "name": "customerId",
             "baseName": "customer_id",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         },
         {
             "name": "domain",
             "baseName": "domain",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

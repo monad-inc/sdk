@@ -6,8 +6,8 @@ Sumo Logic Output Secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**access_id** | **str** | The Access ID for authenticating with Sumo Logic. | [optional] 
-**access_key** | **str** | The Access Key for authenticating with Sumo Logic. | [optional] 
+**access_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

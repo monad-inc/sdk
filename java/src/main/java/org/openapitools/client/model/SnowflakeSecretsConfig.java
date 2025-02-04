@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsSecret;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,55 +49,55 @@ import org.openapitools.client.JSON;
 /**
  * Snowflake Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SnowflakeSecretsConfig {
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)
   @javax.annotation.Nullable
-  private String password;
+  private ModelsSecret password;
 
   public static final String SERIALIZED_NAME_PRIVATE_KEY = "private_key";
   @SerializedName(SERIALIZED_NAME_PRIVATE_KEY)
   @javax.annotation.Nullable
-  private String privateKey;
+  private ModelsSecret privateKey;
 
   public SnowflakeSecretsConfig() {
   }
 
-  public SnowflakeSecretsConfig password(@javax.annotation.Nullable String password) {
+  public SnowflakeSecretsConfig password(@javax.annotation.Nullable ModelsSecret password) {
     this.password = password;
     return this;
   }
 
   /**
-   * The Users password if using password authentication. It is reccomended that you use service account authentication with a private key.
+   * Get password
    * @return password
    */
   @javax.annotation.Nullable
-  public String getPassword() {
+  public ModelsSecret getPassword() {
     return password;
   }
 
-  public void setPassword(@javax.annotation.Nullable String password) {
+  public void setPassword(@javax.annotation.Nullable ModelsSecret password) {
     this.password = password;
   }
 
 
-  public SnowflakeSecretsConfig privateKey(@javax.annotation.Nullable String privateKey) {
+  public SnowflakeSecretsConfig privateKey(@javax.annotation.Nullable ModelsSecret privateKey) {
     this.privateKey = privateKey;
     return this;
   }
 
   /**
-   * Your private KEY
+   * Get privateKey
    * @return privateKey
    */
   @javax.annotation.Nullable
-  public String getPrivateKey() {
+  public ModelsSecret getPrivateKey() {
     return privateKey;
   }
 
-  public void setPrivateKey(@javax.annotation.Nullable String privateKey) {
+  public void setPrivateKey(@javax.annotation.Nullable ModelsSecret privateKey) {
     this.privateKey = privateKey;
   }
 
@@ -176,11 +177,13 @@ public class SnowflakeSecretsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) && !jsonObj.get("password").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("password").toString()));
+      // validate the optional field `password`
+      if (jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("password"));
       }
-      if ((jsonObj.get("private_key") != null && !jsonObj.get("private_key").isJsonNull()) && !jsonObj.get("private_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `private_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("private_key").toString()));
+      // validate the optional field `private_key`
+      if (jsonObj.get("private_key") != null && !jsonObj.get("private_key").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("private_key"));
       }
   }
 

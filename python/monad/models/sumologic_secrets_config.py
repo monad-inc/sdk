@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +28,8 @@ class SumologicSecretsConfig(BaseModel):
     """
     Sumo Logic Output Secrets
     """ # noqa: E501
-    access_id: Optional[StrictStr] = Field(default=None, description="The Access ID for authenticating with Sumo Logic.")
-    access_key: Optional[StrictStr] = Field(default=None, description="The Access Key for authenticating with Sumo Logic.")
+    access_id: Optional[ModelsSecret] = None
+    access_key: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["access_id", "access_key"]
 
     model_config = ConfigDict(
@@ -70,6 +71,12 @@ class SumologicSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of access_id
+        if self.access_id:
+            _dict['access_id'] = self.access_id.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of access_key
+        if self.access_key:
+            _dict['access_key'] = self.access_key.to_dict()
         return _dict
 
     @classmethod
@@ -82,8 +89,8 @@ class SumologicSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "access_id": obj.get("access_id"),
-            "access_key": obj.get("access_key")
+            "access_id": ModelsSecret.from_dict(obj["access_id"]) if obj.get("access_id") is not None else None,
+            "access_key": ModelsSecret.from_dict(obj["access_key"]) if obj.get("access_key") is not None else None
         })
         return _obj
 

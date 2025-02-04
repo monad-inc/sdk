@@ -20,8 +20,7 @@ var _ MappedNullable = &CriblHttpSecretsConfig{}
 
 // CriblHttpSecretsConfig Cribl HTTP Output Secrets
 type CriblHttpSecretsConfig struct {
-	// The authentication token value you've set for your HTTP Source. This token is used to authenticate requests to your Cribl endpoint.
-	AuthToken *string `json:"auth_token,omitempty"`
+	AuthToken *ModelsSecret `json:"auth_token,omitempty"`
 }
 
 // NewCriblHttpSecretsConfig instantiates a new CriblHttpSecretsConfig object
@@ -42,9 +41,9 @@ func NewCriblHttpSecretsConfigWithDefaults() *CriblHttpSecretsConfig {
 }
 
 // GetAuthToken returns the AuthToken field value if set, zero value otherwise.
-func (o *CriblHttpSecretsConfig) GetAuthToken() string {
+func (o *CriblHttpSecretsConfig) GetAuthToken() ModelsSecret {
 	if o == nil || IsNil(o.AuthToken) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.AuthToken
@@ -52,7 +51,7 @@ func (o *CriblHttpSecretsConfig) GetAuthToken() string {
 
 // GetAuthTokenOk returns a tuple with the AuthToken field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CriblHttpSecretsConfig) GetAuthTokenOk() (*string, bool) {
+func (o *CriblHttpSecretsConfig) GetAuthTokenOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.AuthToken) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *CriblHttpSecretsConfig) HasAuthToken() bool {
 	return false
 }
 
-// SetAuthToken gets a reference to the given string and assigns it to the AuthToken field.
-func (o *CriblHttpSecretsConfig) SetAuthToken(v string) {
+// SetAuthToken gets a reference to the given ModelsSecret and assigns it to the AuthToken field.
+func (o *CriblHttpSecretsConfig) SetAuthToken(v ModelsSecret) {
 	o.AuthToken = &v
 }
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccessId** | Pointer to **string** | The Access ID for authenticating with Sumo Logic. | [optional] 
-**AccessKey** | Pointer to **string** | The Access Key for authenticating with Sumo Logic. | [optional] 
+**AccessId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAccessId
 
-`func (o *SumologicSecretsConfig) GetAccessId() string`
+`func (o *SumologicSecretsConfig) GetAccessId() ModelsSecret`
 
 GetAccessId returns the AccessId field if non-nil, zero value otherwise.
 
 ### GetAccessIdOk
 
-`func (o *SumologicSecretsConfig) GetAccessIdOk() (*string, bool)`
+`func (o *SumologicSecretsConfig) GetAccessIdOk() (*ModelsSecret, bool)`
 
 GetAccessIdOk returns a tuple with the AccessId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccessId
 
-`func (o *SumologicSecretsConfig) SetAccessId(v string)`
+`func (o *SumologicSecretsConfig) SetAccessId(v ModelsSecret)`
 
 SetAccessId sets AccessId field to given value.
 
@@ -53,20 +53,20 @@ HasAccessId returns a boolean if a field has been set.
 
 ### GetAccessKey
 
-`func (o *SumologicSecretsConfig) GetAccessKey() string`
+`func (o *SumologicSecretsConfig) GetAccessKey() ModelsSecret`
 
 GetAccessKey returns the AccessKey field if non-nil, zero value otherwise.
 
 ### GetAccessKeyOk
 
-`func (o *SumologicSecretsConfig) GetAccessKeyOk() (*string, bool)`
+`func (o *SumologicSecretsConfig) GetAccessKeyOk() (*ModelsSecret, bool)`
 
 GetAccessKeyOk returns a tuple with the AccessKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccessKey
 
-`func (o *SumologicSecretsConfig) SetAccessKey(v string)`
+`func (o *SumologicSecretsConfig) SetAccessKey(v ModelsSecret)`
 
 SetAccessKey sets AccessKey field to given value.
 

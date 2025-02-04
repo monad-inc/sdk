@@ -6,8 +6,8 @@ Elasticsearch Output Secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**api_key** | **str** | API key for authenticating with the Elasticsearch cluster. Required when auth type is set to &#39;api_key&#39;. | [optional] 
-**password** | **str** | Password for authenticating with the Elasticsearch cluster. Required when auth type is set to &#39;password&#39;. | [optional] 
+**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

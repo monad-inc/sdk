@@ -6,9 +6,9 @@ Google Workspace Users secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**credentials_json** | **str** | JSON credentials to authenticate with Google Cloud. | [optional] 
-**customer_id** | **str** | Google Workspace Customer ID. If you use your google workspace customer ID you will pull data on all users in all domains of your Google Workspace account. This should be set if Domain is not set. | [optional] 
-**domain** | **str** | Domain name your users belong to. If you use a google workspace domain you will only pull user data for users that belong to that domain. This should be set if CustomerID is not set | [optional] 
+**credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**customer_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**domain** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

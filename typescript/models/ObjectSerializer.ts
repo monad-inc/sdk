@@ -131,7 +131,6 @@ export * from '../models/RoutesUpdateTransformRequest';
 export * from '../models/RoutesUpdateUserInOrganizationRequest';
 export * from '../models/RoutesV2ApplyTransformationRequest';
 export * from '../models/RoutesV2ApplyTransformationResponse';
-export * from '../models/RoutesV2BulkCreateInputRequest';
 export * from '../models/RoutesV2CreateAPIKeyRequest';
 export * from '../models/RoutesV2CreateInputRequest';
 export * from '../models/RoutesV2CreateOrUpdateSecretRequest';
@@ -333,7 +332,6 @@ import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformReq
 import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUserInOrganizationRequest';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
-import { RoutesV2BulkCreateInputRequest } from '../models/RoutesV2BulkCreateInputRequest';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
 import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
@@ -551,7 +549,6 @@ let typeMap: {[index: string]: any} = {
     "RoutesUpdateUserInOrganizationRequest": RoutesUpdateUserInOrganizationRequest,
     "RoutesV2ApplyTransformationRequest": RoutesV2ApplyTransformationRequest,
     "RoutesV2ApplyTransformationResponse": RoutesV2ApplyTransformationResponse,
-    "RoutesV2BulkCreateInputRequest": RoutesV2BulkCreateInputRequest,
     "RoutesV2CreateAPIKeyRequest": RoutesV2CreateAPIKeyRequest,
     "RoutesV2CreateInputRequest": RoutesV2CreateInputRequest,
     "RoutesV2CreateOrUpdateSecretRequest": RoutesV2CreateOrUpdateSecretRequest,

@@ -20,8 +20,7 @@ var _ MappedNullable = &DeviceActivitySecretsConfig{}
 
 // DeviceActivitySecretsConfig Google Workspace Device Activity secrets
 type DeviceActivitySecretsConfig struct {
-	// JSON credentials to authenticate with Google Cloud.
-	CredentialsJson *string `json:"credentials_json,omitempty"`
+	CredentialsJson *ModelsSecret `json:"credentials_json,omitempty"`
 }
 
 // NewDeviceActivitySecretsConfig instantiates a new DeviceActivitySecretsConfig object
@@ -42,9 +41,9 @@ func NewDeviceActivitySecretsConfigWithDefaults() *DeviceActivitySecretsConfig {
 }
 
 // GetCredentialsJson returns the CredentialsJson field value if set, zero value otherwise.
-func (o *DeviceActivitySecretsConfig) GetCredentialsJson() string {
+func (o *DeviceActivitySecretsConfig) GetCredentialsJson() ModelsSecret {
 	if o == nil || IsNil(o.CredentialsJson) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.CredentialsJson
@@ -52,7 +51,7 @@ func (o *DeviceActivitySecretsConfig) GetCredentialsJson() string {
 
 // GetCredentialsJsonOk returns a tuple with the CredentialsJson field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceActivitySecretsConfig) GetCredentialsJsonOk() (*string, bool) {
+func (o *DeviceActivitySecretsConfig) GetCredentialsJsonOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.CredentialsJson) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *DeviceActivitySecretsConfig) HasCredentialsJson() bool {
 	return false
 }
 
-// SetCredentialsJson gets a reference to the given string and assigns it to the CredentialsJson field.
-func (o *DeviceActivitySecretsConfig) SetCredentialsJson(v string) {
+// SetCredentialsJson gets a reference to the given ModelsSecret and assigns it to the CredentialsJson field.
+func (o *DeviceActivitySecretsConfig) SetCredentialsJson(v ModelsSecret) {
 	o.CredentialsJson = &v
 }
 

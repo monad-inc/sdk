@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsSecret;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,31 +49,31 @@ import org.openapitools.client.JSON;
 /**
  * Google Workspace Drive Activity secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class DriveActivitySecretsConfig {
   public static final String SERIALIZED_NAME_CREDENTIALS_JSON = "credentials_json";
   @SerializedName(SERIALIZED_NAME_CREDENTIALS_JSON)
   @javax.annotation.Nullable
-  private String credentialsJson;
+  private ModelsSecret credentialsJson;
 
   public DriveActivitySecretsConfig() {
   }
 
-  public DriveActivitySecretsConfig credentialsJson(@javax.annotation.Nullable String credentialsJson) {
+  public DriveActivitySecretsConfig credentialsJson(@javax.annotation.Nullable ModelsSecret credentialsJson) {
     this.credentialsJson = credentialsJson;
     return this;
   }
 
   /**
-   * JSON credentials to authenticate with Google Cloud.
+   * Get credentialsJson
    * @return credentialsJson
    */
   @javax.annotation.Nullable
-  public String getCredentialsJson() {
+  public ModelsSecret getCredentialsJson() {
     return credentialsJson;
   }
 
-  public void setCredentialsJson(@javax.annotation.Nullable String credentialsJson) {
+  public void setCredentialsJson(@javax.annotation.Nullable ModelsSecret credentialsJson) {
     this.credentialsJson = credentialsJson;
   }
 
@@ -149,8 +150,9 @@ public class DriveActivitySecretsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("credentials_json") != null && !jsonObj.get("credentials_json").isJsonNull()) && !jsonObj.get("credentials_json").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `credentials_json` to be a primitive type in the JSON string but got `%s`", jsonObj.get("credentials_json").toString()));
+      // validate the optional field `credentials_json`
+      if (jsonObj.get("credentials_json") != null && !jsonObj.get("credentials_json").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("credentials_json"));
       }
   }
 

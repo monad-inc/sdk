@@ -112,7 +112,6 @@ Class | Method | HTTP request | Description
 *OrganizationInputsApi* | [**v1_organization_id_inputs_input_id_get**](docs/OrganizationInputsApi.md#v1_organization_id_inputs_input_id_get) | **GET** /v1/{organization_id}/inputs/{input_id} | Get input
 *OrganizationInputsApi* | [**v1_organization_id_inputs_input_id_patch**](docs/OrganizationInputsApi.md#v1_organization_id_inputs_input_id_patch) | **PATCH** /v1/{organization_id}/inputs/{input_id} | Update input
 *OrganizationInputsApi* | [**v1_organization_id_inputs_post**](docs/OrganizationInputsApi.md#v1_organization_id_inputs_post) | **POST** /v1/{organization_id}/inputs | Create input
-*OrganizationInputsApi* | [**v2_organization_id_inputs_bulk_post**](docs/OrganizationInputsApi.md#v2_organization_id_inputs_bulk_post) | **POST** /v2/{organization_id}/inputs/bulk | Bulk create inputs
 *OrganizationInputsApi* | [**v2_organization_id_inputs_input_id_patch**](docs/OrganizationInputsApi.md#v2_organization_id_inputs_input_id_patch) | **PATCH** /v2/{organization_id}/inputs/{input_id} | Update input
 *OrganizationInputsApi* | [**v2_organization_id_inputs_post**](docs/OrganizationInputsApi.md#v2_organization_id_inputs_post) | **POST** /v2/{organization_id}/inputs | Create input
 *OrganizationInputsApi* | [**v2_organization_id_inputs_test_connection_post**](docs/OrganizationInputsApi.md#v2_organization_id_inputs_test_connection_post) | **POST** /v2/{organization_id}/inputs/test-connection | Test input connection
@@ -309,7 +308,6 @@ Class | Method | HTTP request | Description
  - [RoutesUpdateUserInOrganizationRequest](docs/RoutesUpdateUserInOrganizationRequest.md)
  - [RoutesV2ApplyTransformationRequest](docs/RoutesV2ApplyTransformationRequest.md)
  - [RoutesV2ApplyTransformationResponse](docs/RoutesV2ApplyTransformationResponse.md)
- - [RoutesV2BulkCreateInputRequest](docs/RoutesV2BulkCreateInputRequest.md)
  - [RoutesV2CreateAPIKeyRequest](docs/RoutesV2CreateAPIKeyRequest.md)
  - [RoutesV2CreateInputRequest](docs/RoutesV2CreateInputRequest.md)
  - [RoutesV2CreateOrUpdateSecretRequest](docs/RoutesV2CreateOrUpdateSecretRequest.md)

@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | Pointer to **string** | The application (client) ID registered in Azure Active Directory. | [optional] 
-**ClientSecret** | Pointer to **string** | The client secret associated with the registered application in Azure AD. | [optional] 
-**TenantId** | Pointer to **string** | The Azure Active Directory tenant (directory) ID. | [optional] 
+**ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**TenantId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetClientId
 
-`func (o *SentinelSecretsConfig) GetClientId() string`
+`func (o *SentinelSecretsConfig) GetClientId() ModelsSecret`
 
 GetClientId returns the ClientId field if non-nil, zero value otherwise.
 
 ### GetClientIdOk
 
-`func (o *SentinelSecretsConfig) GetClientIdOk() (*string, bool)`
+`func (o *SentinelSecretsConfig) GetClientIdOk() (*ModelsSecret, bool)`
 
 GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientId
 
-`func (o *SentinelSecretsConfig) SetClientId(v string)`
+`func (o *SentinelSecretsConfig) SetClientId(v ModelsSecret)`
 
 SetClientId sets ClientId field to given value.
 
@@ -54,20 +54,20 @@ HasClientId returns a boolean if a field has been set.
 
 ### GetClientSecret
 
-`func (o *SentinelSecretsConfig) GetClientSecret() string`
+`func (o *SentinelSecretsConfig) GetClientSecret() ModelsSecret`
 
 GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
 
 ### GetClientSecretOk
 
-`func (o *SentinelSecretsConfig) GetClientSecretOk() (*string, bool)`
+`func (o *SentinelSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool)`
 
 GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientSecret
 
-`func (o *SentinelSecretsConfig) SetClientSecret(v string)`
+`func (o *SentinelSecretsConfig) SetClientSecret(v ModelsSecret)`
 
 SetClientSecret sets ClientSecret field to given value.
 
@@ -79,20 +79,20 @@ HasClientSecret returns a boolean if a field has been set.
 
 ### GetTenantId
 
-`func (o *SentinelSecretsConfig) GetTenantId() string`
+`func (o *SentinelSecretsConfig) GetTenantId() ModelsSecret`
 
 GetTenantId returns the TenantId field if non-nil, zero value otherwise.
 
 ### GetTenantIdOk
 
-`func (o *SentinelSecretsConfig) GetTenantIdOk() (*string, bool)`
+`func (o *SentinelSecretsConfig) GetTenantIdOk() (*ModelsSecret, bool)`
 
 GetTenantIdOk returns a tuple with the TenantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenantId
 
-`func (o *SentinelSecretsConfig) SetTenantId(v string)`
+`func (o *SentinelSecretsConfig) SetTenantId(v ModelsSecret)`
 
 SetTenantId sets TenantId field to given value.
 

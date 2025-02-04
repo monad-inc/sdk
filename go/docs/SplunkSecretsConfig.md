@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Token** | Pointer to **string** | The token for authenticating with Splunk. | [optional] 
+**Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetToken
 
-`func (o *SplunkSecretsConfig) GetToken() string`
+`func (o *SplunkSecretsConfig) GetToken() ModelsSecret`
 
 GetToken returns the Token field if non-nil, zero value otherwise.
 
 ### GetTokenOk
 
-`func (o *SplunkSecretsConfig) GetTokenOk() (*string, bool)`
+`func (o *SplunkSecretsConfig) GetTokenOk() (*ModelsSecret, bool)`
 
 GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetToken
 
-`func (o *SplunkSecretsConfig) SetToken(v string)`
+`func (o *SplunkSecretsConfig) SetToken(v ModelsSecret)`
 
 SetToken sets Token field to given value.
 

@@ -10,16 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Snyk targets secrets
 */
 export class SnykTargetsSecretsConfig {
-    /**
-    * API Key for the Snyk API. This is required to authenticate requests.
-    */
-    'apiKey'?: string;
+    'apiKey'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,7 +27,7 @@ export class SnykTargetsSecretsConfig {
         {
             "name": "apiKey",
             "baseName": "api_key",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

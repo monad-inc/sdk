@@ -20,10 +20,8 @@ var _ MappedNullable = &TenableAssetsSecretsConfig{}
 
 // TenableAssetsSecretsConfig Tenable assets secrets
 type TenableAssetsSecretsConfig struct {
-	// Access Key for the Tenable API. This is required to authenticate requests.
-	AccessKey *string `json:"access_key,omitempty"`
-	// Secret Key for the Tenable API. This is required to authenticate requests.
-	SecretKey *string `json:"secret_key,omitempty"`
+	AccessKey *ModelsSecret `json:"access_key,omitempty"`
+	SecretKey *ModelsSecret `json:"secret_key,omitempty"`
 }
 
 // NewTenableAssetsSecretsConfig instantiates a new TenableAssetsSecretsConfig object
@@ -44,9 +42,9 @@ func NewTenableAssetsSecretsConfigWithDefaults() *TenableAssetsSecretsConfig {
 }
 
 // GetAccessKey returns the AccessKey field value if set, zero value otherwise.
-func (o *TenableAssetsSecretsConfig) GetAccessKey() string {
+func (o *TenableAssetsSecretsConfig) GetAccessKey() ModelsSecret {
 	if o == nil || IsNil(o.AccessKey) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.AccessKey
@@ -54,7 +52,7 @@ func (o *TenableAssetsSecretsConfig) GetAccessKey() string {
 
 // GetAccessKeyOk returns a tuple with the AccessKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TenableAssetsSecretsConfig) GetAccessKeyOk() (*string, bool) {
+func (o *TenableAssetsSecretsConfig) GetAccessKeyOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.AccessKey) {
 		return nil, false
 	}
@@ -70,15 +68,15 @@ func (o *TenableAssetsSecretsConfig) HasAccessKey() bool {
 	return false
 }
 
-// SetAccessKey gets a reference to the given string and assigns it to the AccessKey field.
-func (o *TenableAssetsSecretsConfig) SetAccessKey(v string) {
+// SetAccessKey gets a reference to the given ModelsSecret and assigns it to the AccessKey field.
+func (o *TenableAssetsSecretsConfig) SetAccessKey(v ModelsSecret) {
 	o.AccessKey = &v
 }
 
 // GetSecretKey returns the SecretKey field value if set, zero value otherwise.
-func (o *TenableAssetsSecretsConfig) GetSecretKey() string {
+func (o *TenableAssetsSecretsConfig) GetSecretKey() ModelsSecret {
 	if o == nil || IsNil(o.SecretKey) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.SecretKey
@@ -86,7 +84,7 @@ func (o *TenableAssetsSecretsConfig) GetSecretKey() string {
 
 // GetSecretKeyOk returns a tuple with the SecretKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TenableAssetsSecretsConfig) GetSecretKeyOk() (*string, bool) {
+func (o *TenableAssetsSecretsConfig) GetSecretKeyOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.SecretKey) {
 		return nil, false
 	}
@@ -102,8 +100,8 @@ func (o *TenableAssetsSecretsConfig) HasSecretKey() bool {
 	return false
 }
 
-// SetSecretKey gets a reference to the given string and assigns it to the SecretKey field.
-func (o *TenableAssetsSecretsConfig) SetSecretKey(v string) {
+// SetSecretKey gets a reference to the given ModelsSecret and assigns it to the SecretKey field.
+func (o *TenableAssetsSecretsConfig) SetSecretKey(v ModelsSecret) {
 	o.SecretKey = &v
 }
 

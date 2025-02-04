@@ -20,8 +20,7 @@ var _ MappedNullable = &DriveActivitySecretsConfig{}
 
 // DriveActivitySecretsConfig Google Workspace Drive Activity secrets
 type DriveActivitySecretsConfig struct {
-	// JSON credentials to authenticate with Google Cloud.
-	CredentialsJson *string `json:"credentials_json,omitempty"`
+	CredentialsJson *ModelsSecret `json:"credentials_json,omitempty"`
 }
 
 // NewDriveActivitySecretsConfig instantiates a new DriveActivitySecretsConfig object
@@ -42,9 +41,9 @@ func NewDriveActivitySecretsConfigWithDefaults() *DriveActivitySecretsConfig {
 }
 
 // GetCredentialsJson returns the CredentialsJson field value if set, zero value otherwise.
-func (o *DriveActivitySecretsConfig) GetCredentialsJson() string {
+func (o *DriveActivitySecretsConfig) GetCredentialsJson() ModelsSecret {
 	if o == nil || IsNil(o.CredentialsJson) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.CredentialsJson
@@ -52,7 +51,7 @@ func (o *DriveActivitySecretsConfig) GetCredentialsJson() string {
 
 // GetCredentialsJsonOk returns a tuple with the CredentialsJson field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriveActivitySecretsConfig) GetCredentialsJsonOk() (*string, bool) {
+func (o *DriveActivitySecretsConfig) GetCredentialsJsonOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.CredentialsJson) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *DriveActivitySecretsConfig) HasCredentialsJson() bool {
 	return false
 }
 
-// SetCredentialsJson gets a reference to the given string and assigns it to the CredentialsJson field.
-func (o *DriveActivitySecretsConfig) SetCredentialsJson(v string) {
+// SetCredentialsJson gets a reference to the given ModelsSecret and assigns it to the CredentialsJson field.
+func (o *DriveActivitySecretsConfig) SetCredentialsJson(v ModelsSecret) {
 	o.CredentialsJson = &v
 }
 

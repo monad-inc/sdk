@@ -26,6 +26,7 @@ import java.util.Map;
 import org.openapitools.client.model.CriblHttpSecretsConfig;
 import org.openapitools.client.model.ElasticsearchSecretsConfig;
 import org.openapitools.client.model.HttpSecretsConfig;
+import org.openapitools.client.model.ModelsSecret;
 import org.openapitools.client.model.OpensearchSecretsConfig;
 import org.openapitools.client.model.SentinelSecretsConfig;
 import org.openapitools.client.model.SnowflakeSecretsConfig;
@@ -67,7 +68,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesV2OutputConfigSecrets.class.getName());
 

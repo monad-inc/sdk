@@ -20,8 +20,7 @@ var _ MappedNullable = &SplunkSecretsConfig{}
 
 // SplunkSecretsConfig Splunk Output Secrets
 type SplunkSecretsConfig struct {
-	// The token for authenticating with Splunk.
-	Token *string `json:"token,omitempty"`
+	Token *ModelsSecret `json:"token,omitempty"`
 }
 
 // NewSplunkSecretsConfig instantiates a new SplunkSecretsConfig object
@@ -42,9 +41,9 @@ func NewSplunkSecretsConfigWithDefaults() *SplunkSecretsConfig {
 }
 
 // GetToken returns the Token field value if set, zero value otherwise.
-func (o *SplunkSecretsConfig) GetToken() string {
+func (o *SplunkSecretsConfig) GetToken() ModelsSecret {
 	if o == nil || IsNil(o.Token) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.Token
@@ -52,7 +51,7 @@ func (o *SplunkSecretsConfig) GetToken() string {
 
 // GetTokenOk returns a tuple with the Token field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SplunkSecretsConfig) GetTokenOk() (*string, bool) {
+func (o *SplunkSecretsConfig) GetTokenOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.Token) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *SplunkSecretsConfig) HasToken() bool {
 	return false
 }
 
-// SetToken gets a reference to the given string and assigns it to the Token field.
-func (o *SplunkSecretsConfig) SetToken(v string) {
+// SetToken gets a reference to the given ModelsSecret and assigns it to the Token field.
+func (o *SplunkSecretsConfig) SetToken(v ModelsSecret) {
 	o.Token = &v
 }
 

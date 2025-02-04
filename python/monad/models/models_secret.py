@@ -18,22 +18,22 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
 class ModelsSecret(BaseModel):
     """
-    ModelsSecret
+    The Access ID for authenticating with Sumo Logic.
     """ # noqa: E501
-    created_at: Optional[StrictStr] = None
-    description: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
-    organization_id: Optional[StrictStr] = None
-    updated_at: Optional[StrictStr] = None
-    value: Optional[StrictStr] = None
+    created_at: Optional[StrictStr] = Field(default=None, description="When the secret was created")
+    description: Optional[StrictStr] = Field(default=None, description="The user set Description of the secret")
+    id: Optional[StrictStr] = Field(default=None, description="The ID of the secret")
+    name: Optional[StrictStr] = Field(default=None, description="The user set Name of the secret")
+    organization_id: Optional[StrictStr] = Field(default=None, description="The OrganizationID the secret belongs to")
+    updated_at: Optional[StrictStr] = Field(default=None, description="When the secret was updated")
+    value: Optional[StrictStr] = Field(default=None, description="The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload.")
     __properties: ClassVar[List[str]] = ["created_at", "description", "id", "name", "organization_id", "updated_at", "value"]
 
     model_config = ConfigDict(

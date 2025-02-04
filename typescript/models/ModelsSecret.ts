@@ -12,13 +12,37 @@
 
 import { HttpFile } from '../http/http';
 
+/**
+* The Access ID for authenticating with Sumo Logic.
+*/
 export class ModelsSecret {
+    /**
+    * When the secret was created
+    */
     'createdAt'?: string;
+    /**
+    * The user set Description of the secret
+    */
     'description'?: string;
+    /**
+    * The ID of the secret
+    */
     'id'?: string;
+    /**
+    * The user set Name of the secret
+    */
     'name'?: string;
+    /**
+    * The OrganizationID the secret belongs to
+    */
     'organizationId'?: string;
+    /**
+    * When the secret was updated
+    */
     'updatedAt'?: string;
+    /**
+    * The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload.
+    */
     'value'?: string;
 
     static readonly discriminator: string | undefined = undefined;

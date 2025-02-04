@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiKey** | Pointer to **string** | API key for authenticating with the Elasticsearch cluster. Required when auth type is set to &#39;api_key&#39;. | [optional] 
-**Password** | Pointer to **string** | Password for authenticating with the Elasticsearch cluster. Required when auth type is set to &#39;password&#39;. | [optional] 
+**ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetApiKey
 
-`func (o *ElasticsearchSecretsConfig) GetApiKey() string`
+`func (o *ElasticsearchSecretsConfig) GetApiKey() ModelsSecret`
 
 GetApiKey returns the ApiKey field if non-nil, zero value otherwise.
 
 ### GetApiKeyOk
 
-`func (o *ElasticsearchSecretsConfig) GetApiKeyOk() (*string, bool)`
+`func (o *ElasticsearchSecretsConfig) GetApiKeyOk() (*ModelsSecret, bool)`
 
 GetApiKeyOk returns a tuple with the ApiKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApiKey
 
-`func (o *ElasticsearchSecretsConfig) SetApiKey(v string)`
+`func (o *ElasticsearchSecretsConfig) SetApiKey(v ModelsSecret)`
 
 SetApiKey sets ApiKey field to given value.
 
@@ -53,20 +53,20 @@ HasApiKey returns a boolean if a field has been set.
 
 ### GetPassword
 
-`func (o *ElasticsearchSecretsConfig) GetPassword() string`
+`func (o *ElasticsearchSecretsConfig) GetPassword() ModelsSecret`
 
 GetPassword returns the Password field if non-nil, zero value otherwise.
 
 ### GetPasswordOk
 
-`func (o *ElasticsearchSecretsConfig) GetPasswordOk() (*string, bool)`
+`func (o *ElasticsearchSecretsConfig) GetPasswordOk() (*ModelsSecret, bool)`
 
 GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPassword
 
-`func (o *ElasticsearchSecretsConfig) SetPassword(v string)`
+`func (o *ElasticsearchSecretsConfig) SetPassword(v ModelsSecret)`
 
 SetPassword sets Password field to given value.
 

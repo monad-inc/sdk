@@ -29,7 +29,7 @@ class RoutesV2CreateOrUpdateSecretRequest(BaseModel):
     """ # noqa: E501
     description: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
-    value: Optional[Any] = None
+    value: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["description", "name", "value"]
 
     model_config = ConfigDict(
@@ -71,11 +71,6 @@ class RoutesV2CreateOrUpdateSecretRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if value (nullable) is None
-        # and model_fields_set contains the field
-        if self.value is None and "value" in self.model_fields_set:
-            _dict['value'] = None
-
         return _dict
 
     @classmethod

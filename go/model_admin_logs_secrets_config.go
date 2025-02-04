@@ -20,8 +20,8 @@ var _ MappedNullable = &AdminLogsSecretsConfig{}
 
 // AdminLogsSecretsConfig struct for AdminLogsSecretsConfig
 type AdminLogsSecretsConfig struct {
-	IntegrationKey *string `json:"integration_key,omitempty"`
-	SecretKey *string `json:"secret_key,omitempty"`
+	IntegrationKey *ModelsSecret `json:"integration_key,omitempty"`
+	SecretKey *ModelsSecret `json:"secret_key,omitempty"`
 }
 
 // NewAdminLogsSecretsConfig instantiates a new AdminLogsSecretsConfig object
@@ -42,9 +42,9 @@ func NewAdminLogsSecretsConfigWithDefaults() *AdminLogsSecretsConfig {
 }
 
 // GetIntegrationKey returns the IntegrationKey field value if set, zero value otherwise.
-func (o *AdminLogsSecretsConfig) GetIntegrationKey() string {
+func (o *AdminLogsSecretsConfig) GetIntegrationKey() ModelsSecret {
 	if o == nil || IsNil(o.IntegrationKey) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.IntegrationKey
@@ -52,7 +52,7 @@ func (o *AdminLogsSecretsConfig) GetIntegrationKey() string {
 
 // GetIntegrationKeyOk returns a tuple with the IntegrationKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdminLogsSecretsConfig) GetIntegrationKeyOk() (*string, bool) {
+func (o *AdminLogsSecretsConfig) GetIntegrationKeyOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.IntegrationKey) {
 		return nil, false
 	}
@@ -68,15 +68,15 @@ func (o *AdminLogsSecretsConfig) HasIntegrationKey() bool {
 	return false
 }
 
-// SetIntegrationKey gets a reference to the given string and assigns it to the IntegrationKey field.
-func (o *AdminLogsSecretsConfig) SetIntegrationKey(v string) {
+// SetIntegrationKey gets a reference to the given ModelsSecret and assigns it to the IntegrationKey field.
+func (o *AdminLogsSecretsConfig) SetIntegrationKey(v ModelsSecret) {
 	o.IntegrationKey = &v
 }
 
 // GetSecretKey returns the SecretKey field value if set, zero value otherwise.
-func (o *AdminLogsSecretsConfig) GetSecretKey() string {
+func (o *AdminLogsSecretsConfig) GetSecretKey() ModelsSecret {
 	if o == nil || IsNil(o.SecretKey) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.SecretKey
@@ -84,7 +84,7 @@ func (o *AdminLogsSecretsConfig) GetSecretKey() string {
 
 // GetSecretKeyOk returns a tuple with the SecretKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdminLogsSecretsConfig) GetSecretKeyOk() (*string, bool) {
+func (o *AdminLogsSecretsConfig) GetSecretKeyOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.SecretKey) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *AdminLogsSecretsConfig) HasSecretKey() bool {
 	return false
 }
 
-// SetSecretKey gets a reference to the given string and assigns it to the SecretKey field.
-func (o *AdminLogsSecretsConfig) SetSecretKey(v string) {
+// SetSecretKey gets a reference to the given ModelsSecret and assigns it to the SecretKey field.
+func (o *AdminLogsSecretsConfig) SetSecretKey(v ModelsSecret) {
 	o.SecretKey = &v
 }
 

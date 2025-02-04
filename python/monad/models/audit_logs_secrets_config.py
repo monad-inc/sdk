@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,7 @@ class AuditLogsSecretsConfig(BaseModel):
     """
     GitHub audit logs secrets
     """ # noqa: E501
-    personal_access_token: Optional[StrictStr] = Field(default=None, description="Your personal access token that grants read:audit_log")
+    personal_access_token: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["personal_access_token"]
 
     model_config = ConfigDict(
@@ -69,6 +70,9 @@ class AuditLogsSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of personal_access_token
+        if self.personal_access_token:
+            _dict['personal_access_token'] = self.personal_access_token.to_dict()
         return _dict
 
     @classmethod
@@ -81,7 +85,7 @@ class AuditLogsSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "personal_access_token": obj.get("personal_access_token")
+            "personal_access_token": ModelsSecret.from_dict(obj["personal_access_token"]) if obj.get("personal_access_token") is not None else None
         })
         return _obj
 

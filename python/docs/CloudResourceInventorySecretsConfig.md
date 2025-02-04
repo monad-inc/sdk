@@ -6,8 +6,8 @@ Wiz cloud resource inventory secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**client_id** | **str** | Client ID for the Wiz API. This is required to authenticate requests. | [optional] 
-**client_secret** | **str** | Client Secret for the Wiz API. This is required to authenticate requests. | [optional] 
+**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

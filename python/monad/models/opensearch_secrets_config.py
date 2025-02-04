@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,7 @@ class OpensearchSecretsConfig(BaseModel):
     """
     OpenSearch Output Secrets
     """ # noqa: E501
-    password: Optional[StrictStr] = Field(default=None, description="The password for authenticating with OpenSearch.")
+    password: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["password"]
 
     model_config = ConfigDict(
@@ -69,6 +70,9 @@ class OpensearchSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of password
+        if self.password:
+            _dict['password'] = self.password.to_dict()
         return _dict
 
     @classmethod
@@ -81,7 +85,7 @@ class OpensearchSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "password": obj.get("password")
+            "password": ModelsSecret.from_dict(obj["password"]) if obj.get("password") is not None else None
         })
         return _obj
 

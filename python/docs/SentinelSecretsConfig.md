@@ -6,9 +6,9 @@ Sentinel Output Secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**client_id** | **str** | The application (client) ID registered in Azure Active Directory. | [optional] 
-**client_secret** | **str** | The client secret associated with the registered application in Azure AD. | [optional] 
-**tenant_id** | **str** | The Azure Active Directory tenant (directory) ID. | [optional] 
+**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**tenant_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

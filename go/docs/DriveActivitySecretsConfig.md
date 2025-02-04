@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CredentialsJson** | Pointer to **string** | JSON credentials to authenticate with Google Cloud. | [optional] 
+**CredentialsJson** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCredentialsJson
 
-`func (o *DriveActivitySecretsConfig) GetCredentialsJson() string`
+`func (o *DriveActivitySecretsConfig) GetCredentialsJson() ModelsSecret`
 
 GetCredentialsJson returns the CredentialsJson field if non-nil, zero value otherwise.
 
 ### GetCredentialsJsonOk
 
-`func (o *DriveActivitySecretsConfig) GetCredentialsJsonOk() (*string, bool)`
+`func (o *DriveActivitySecretsConfig) GetCredentialsJsonOk() (*ModelsSecret, bool)`
 
 GetCredentialsJsonOk returns a tuple with the CredentialsJson field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCredentialsJson
 
-`func (o *DriveActivitySecretsConfig) SetCredentialsJson(v string)`
+`func (o *DriveActivitySecretsConfig) SetCredentialsJson(v ModelsSecret)`
 
 SetCredentialsJson sets CredentialsJson field to given value.
 

@@ -10,11 +10,12 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 export class AuthLogsSecretsConfig {
-    'integrationKey'?: string;
-    'secretKey'?: string;
+    'integrationKey'?: ModelsSecret;
+    'secretKey'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -24,13 +25,13 @@ export class AuthLogsSecretsConfig {
         {
             "name": "integrationKey",
             "baseName": "integration_key",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         },
         {
             "name": "secretKey",
             "baseName": "secret_key",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

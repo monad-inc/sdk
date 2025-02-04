@@ -20,10 +20,8 @@ var _ MappedNullable = &SnowflakeSecretsConfig{}
 
 // SnowflakeSecretsConfig Snowflake Output Secrets
 type SnowflakeSecretsConfig struct {
-	// The Users password if using password authentication. It is reccomended that you use service account authentication with a private key.
-	Password *string `json:"password,omitempty"`
-	// Your private KEY
-	PrivateKey *string `json:"private_key,omitempty"`
+	Password *ModelsSecret `json:"password,omitempty"`
+	PrivateKey *ModelsSecret `json:"private_key,omitempty"`
 }
 
 // NewSnowflakeSecretsConfig instantiates a new SnowflakeSecretsConfig object
@@ -44,9 +42,9 @@ func NewSnowflakeSecretsConfigWithDefaults() *SnowflakeSecretsConfig {
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise.
-func (o *SnowflakeSecretsConfig) GetPassword() string {
+func (o *SnowflakeSecretsConfig) GetPassword() ModelsSecret {
 	if o == nil || IsNil(o.Password) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.Password
@@ -54,7 +52,7 @@ func (o *SnowflakeSecretsConfig) GetPassword() string {
 
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SnowflakeSecretsConfig) GetPasswordOk() (*string, bool) {
+func (o *SnowflakeSecretsConfig) GetPasswordOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
@@ -70,15 +68,15 @@ func (o *SnowflakeSecretsConfig) HasPassword() bool {
 	return false
 }
 
-// SetPassword gets a reference to the given string and assigns it to the Password field.
-func (o *SnowflakeSecretsConfig) SetPassword(v string) {
+// SetPassword gets a reference to the given ModelsSecret and assigns it to the Password field.
+func (o *SnowflakeSecretsConfig) SetPassword(v ModelsSecret) {
 	o.Password = &v
 }
 
 // GetPrivateKey returns the PrivateKey field value if set, zero value otherwise.
-func (o *SnowflakeSecretsConfig) GetPrivateKey() string {
+func (o *SnowflakeSecretsConfig) GetPrivateKey() ModelsSecret {
 	if o == nil || IsNil(o.PrivateKey) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.PrivateKey
@@ -86,7 +84,7 @@ func (o *SnowflakeSecretsConfig) GetPrivateKey() string {
 
 // GetPrivateKeyOk returns a tuple with the PrivateKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SnowflakeSecretsConfig) GetPrivateKeyOk() (*string, bool) {
+func (o *SnowflakeSecretsConfig) GetPrivateKeyOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.PrivateKey) {
 		return nil, false
 	}
@@ -102,8 +100,8 @@ func (o *SnowflakeSecretsConfig) HasPrivateKey() bool {
 	return false
 }
 
-// SetPrivateKey gets a reference to the given string and assigns it to the PrivateKey field.
-func (o *SnowflakeSecretsConfig) SetPrivateKey(v string) {
+// SetPrivateKey gets a reference to the given ModelsSecret and assigns it to the PrivateKey field.
+func (o *SnowflakeSecretsConfig) SetPrivateKey(v ModelsSecret) {
 	o.PrivateKey = &v
 }
 

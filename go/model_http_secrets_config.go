@@ -21,7 +21,7 @@ var _ MappedNullable = &HttpSecretsConfig{}
 // HttpSecretsConfig HTTP Output Secrets
 type HttpSecretsConfig struct {
 	// Authentication headers
-	AuthHeaders map[string]string `json:"auth_headers,omitempty"`
+	AuthHeaders map[string]ModelsSecret `json:"auth_headers,omitempty"`
 }
 
 // NewHttpSecretsConfig instantiates a new HttpSecretsConfig object
@@ -42,9 +42,9 @@ func NewHttpSecretsConfigWithDefaults() *HttpSecretsConfig {
 }
 
 // GetAuthHeaders returns the AuthHeaders field value if set, zero value otherwise.
-func (o *HttpSecretsConfig) GetAuthHeaders() map[string]string {
+func (o *HttpSecretsConfig) GetAuthHeaders() map[string]ModelsSecret {
 	if o == nil || IsNil(o.AuthHeaders) {
-		var ret map[string]string
+		var ret map[string]ModelsSecret
 		return ret
 	}
 	return o.AuthHeaders
@@ -52,9 +52,9 @@ func (o *HttpSecretsConfig) GetAuthHeaders() map[string]string {
 
 // GetAuthHeadersOk returns a tuple with the AuthHeaders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HttpSecretsConfig) GetAuthHeadersOk() (map[string]string, bool) {
+func (o *HttpSecretsConfig) GetAuthHeadersOk() (map[string]ModelsSecret, bool) {
 	if o == nil || IsNil(o.AuthHeaders) {
-		return map[string]string{}, false
+		return map[string]ModelsSecret{}, false
 	}
 	return o.AuthHeaders, true
 }
@@ -68,8 +68,8 @@ func (o *HttpSecretsConfig) HasAuthHeaders() bool {
 	return false
 }
 
-// SetAuthHeaders gets a reference to the given map[string]string and assigns it to the AuthHeaders field.
-func (o *HttpSecretsConfig) SetAuthHeaders(v map[string]string) {
+// SetAuthHeaders gets a reference to the given map[string]ModelsSecret and assigns it to the AuthHeaders field.
+func (o *HttpSecretsConfig) SetAuthHeaders(v map[string]ModelsSecret) {
 	o.AuthHeaders = v
 }
 

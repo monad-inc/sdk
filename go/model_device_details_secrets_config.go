@@ -20,10 +20,8 @@ var _ MappedNullable = &DeviceDetailsSecretsConfig{}
 
 // DeviceDetailsSecretsConfig CrowdStrike EDR device details secrets
 type DeviceDetailsSecretsConfig struct {
-	// Client ID for the CrowdStrike API. This is required to authenticate requests.
-	ClientId *string `json:"client_id,omitempty"`
-	// Client Secret for the CrowdStrike API. This is required to authenticate requests.
-	ClientSecret *string `json:"client_secret,omitempty"`
+	ClientId *ModelsSecret `json:"client_id,omitempty"`
+	ClientSecret *ModelsSecret `json:"client_secret,omitempty"`
 }
 
 // NewDeviceDetailsSecretsConfig instantiates a new DeviceDetailsSecretsConfig object
@@ -44,9 +42,9 @@ func NewDeviceDetailsSecretsConfigWithDefaults() *DeviceDetailsSecretsConfig {
 }
 
 // GetClientId returns the ClientId field value if set, zero value otherwise.
-func (o *DeviceDetailsSecretsConfig) GetClientId() string {
+func (o *DeviceDetailsSecretsConfig) GetClientId() ModelsSecret {
 	if o == nil || IsNil(o.ClientId) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientId
@@ -54,7 +52,7 @@ func (o *DeviceDetailsSecretsConfig) GetClientId() string {
 
 // GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceDetailsSecretsConfig) GetClientIdOk() (*string, bool) {
+func (o *DeviceDetailsSecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientId) {
 		return nil, false
 	}
@@ -70,15 +68,15 @@ func (o *DeviceDetailsSecretsConfig) HasClientId() bool {
 	return false
 }
 
-// SetClientId gets a reference to the given string and assigns it to the ClientId field.
-func (o *DeviceDetailsSecretsConfig) SetClientId(v string) {
+// SetClientId gets a reference to the given ModelsSecret and assigns it to the ClientId field.
+func (o *DeviceDetailsSecretsConfig) SetClientId(v ModelsSecret) {
 	o.ClientId = &v
 }
 
 // GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
-func (o *DeviceDetailsSecretsConfig) GetClientSecret() string {
+func (o *DeviceDetailsSecretsConfig) GetClientSecret() ModelsSecret {
 	if o == nil || IsNil(o.ClientSecret) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientSecret
@@ -86,7 +84,7 @@ func (o *DeviceDetailsSecretsConfig) GetClientSecret() string {
 
 // GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceDetailsSecretsConfig) GetClientSecretOk() (*string, bool) {
+func (o *DeviceDetailsSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientSecret) {
 		return nil, false
 	}
@@ -102,8 +100,8 @@ func (o *DeviceDetailsSecretsConfig) HasClientSecret() bool {
 	return false
 }
 
-// SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
-func (o *DeviceDetailsSecretsConfig) SetClientSecret(v string) {
+// SetClientSecret gets a reference to the given ModelsSecret and assigns it to the ClientSecret field.
+func (o *DeviceDetailsSecretsConfig) SetClientSecret(v ModelsSecret) {
 	o.ClientSecret = &v
 }
 

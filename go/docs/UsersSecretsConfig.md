@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CredentialsJson** | Pointer to **string** | JSON credentials to authenticate with Google Cloud. | [optional] 
-**CustomerId** | Pointer to **string** | Google Workspace Customer ID. If you use your google workspace customer ID you will pull data on all users in all domains of your Google Workspace account. This should be set if Domain is not set. | [optional] 
-**Domain** | Pointer to **string** | Domain name your users belong to. If you use a google workspace domain you will only pull user data for users that belong to that domain. This should be set if CustomerID is not set | [optional] 
+**CredentialsJson** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**CustomerId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**Domain** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCredentialsJson
 
-`func (o *UsersSecretsConfig) GetCredentialsJson() string`
+`func (o *UsersSecretsConfig) GetCredentialsJson() ModelsSecret`
 
 GetCredentialsJson returns the CredentialsJson field if non-nil, zero value otherwise.
 
 ### GetCredentialsJsonOk
 
-`func (o *UsersSecretsConfig) GetCredentialsJsonOk() (*string, bool)`
+`func (o *UsersSecretsConfig) GetCredentialsJsonOk() (*ModelsSecret, bool)`
 
 GetCredentialsJsonOk returns a tuple with the CredentialsJson field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCredentialsJson
 
-`func (o *UsersSecretsConfig) SetCredentialsJson(v string)`
+`func (o *UsersSecretsConfig) SetCredentialsJson(v ModelsSecret)`
 
 SetCredentialsJson sets CredentialsJson field to given value.
 
@@ -54,20 +54,20 @@ HasCredentialsJson returns a boolean if a field has been set.
 
 ### GetCustomerId
 
-`func (o *UsersSecretsConfig) GetCustomerId() string`
+`func (o *UsersSecretsConfig) GetCustomerId() ModelsSecret`
 
 GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
 ### GetCustomerIdOk
 
-`func (o *UsersSecretsConfig) GetCustomerIdOk() (*string, bool)`
+`func (o *UsersSecretsConfig) GetCustomerIdOk() (*ModelsSecret, bool)`
 
 GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerId
 
-`func (o *UsersSecretsConfig) SetCustomerId(v string)`
+`func (o *UsersSecretsConfig) SetCustomerId(v ModelsSecret)`
 
 SetCustomerId sets CustomerId field to given value.
 
@@ -79,20 +79,20 @@ HasCustomerId returns a boolean if a field has been set.
 
 ### GetDomain
 
-`func (o *UsersSecretsConfig) GetDomain() string`
+`func (o *UsersSecretsConfig) GetDomain() ModelsSecret`
 
 GetDomain returns the Domain field if non-nil, zero value otherwise.
 
 ### GetDomainOk
 
-`func (o *UsersSecretsConfig) GetDomainOk() (*string, bool)`
+`func (o *UsersSecretsConfig) GetDomainOk() (*ModelsSecret, bool)`
 
 GetDomainOk returns a tuple with the Domain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDomain
 
-`func (o *UsersSecretsConfig) SetDomain(v string)`
+`func (o *UsersSecretsConfig) SetDomain(v ModelsSecret)`
 
 SetDomain sets Domain field to given value.
 

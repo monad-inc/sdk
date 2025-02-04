@@ -6,7 +6,7 @@ GitHub audit logs secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**personal_access_token** | **str** | Your personal access token that grants read:audit_log | [optional] 
+**personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

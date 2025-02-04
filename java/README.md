@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-02-03T23:42:26.720484864Z[Etc/UTC]
+  - Build date: 2025-02-04T18:38:54.966127337Z[Etc/UTC]
   - Generator version: 7.11.0
 
 This is the monad API
@@ -142,7 +142,6 @@ Class | Method | HTTP request | Description
 *OrganizationInputsApi* | [**v1OrganizationIdInputsInputIdGet**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsInputIdGet) | **GET** /v1/{organization_id}/inputs/{input_id} | Get input
 *OrganizationInputsApi* | [**v1OrganizationIdInputsInputIdPatch**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsInputIdPatch) | **PATCH** /v1/{organization_id}/inputs/{input_id} | Update input
 *OrganizationInputsApi* | [**v1OrganizationIdInputsPost**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsPost) | **POST** /v1/{organization_id}/inputs | Create input
-*OrganizationInputsApi* | [**v2OrganizationIdInputsBulkPost**](docs/OrganizationInputsApi.md#v2OrganizationIdInputsBulkPost) | **POST** /v2/{organization_id}/inputs/bulk | Bulk create inputs
 *OrganizationInputsApi* | [**v2OrganizationIdInputsInputIdPatch**](docs/OrganizationInputsApi.md#v2OrganizationIdInputsInputIdPatch) | **PATCH** /v2/{organization_id}/inputs/{input_id} | Update input
 *OrganizationInputsApi* | [**v2OrganizationIdInputsPost**](docs/OrganizationInputsApi.md#v2OrganizationIdInputsPost) | **POST** /v2/{organization_id}/inputs | Create input
 *OrganizationInputsApi* | [**v2OrganizationIdInputsTestConnectionPost**](docs/OrganizationInputsApi.md#v2OrganizationIdInputsTestConnectionPost) | **POST** /v2/{organization_id}/inputs/test-connection | Test input connection
@@ -339,7 +338,6 @@ Class | Method | HTTP request | Description
  - [RoutesUpdateUserInOrganizationRequest](docs/RoutesUpdateUserInOrganizationRequest.md)
  - [RoutesV2ApplyTransformationRequest](docs/RoutesV2ApplyTransformationRequest.md)
  - [RoutesV2ApplyTransformationResponse](docs/RoutesV2ApplyTransformationResponse.md)
- - [RoutesV2BulkCreateInputRequest](docs/RoutesV2BulkCreateInputRequest.md)
  - [RoutesV2CreateAPIKeyRequest](docs/RoutesV2CreateAPIKeyRequest.md)
  - [RoutesV2CreateInputRequest](docs/RoutesV2CreateInputRequest.md)
  - [RoutesV2CreateOrUpdateSecretRequest](docs/RoutesV2CreateOrUpdateSecretRequest.md)

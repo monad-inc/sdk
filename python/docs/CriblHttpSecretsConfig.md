@@ -6,7 +6,7 @@ Cribl HTTP Output Secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auth_token** | **str** | The authentication token value you&#39;ve set for your HTTP Source. This token is used to authenticate requests to your Cribl endpoint. | [optional] 
+**auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

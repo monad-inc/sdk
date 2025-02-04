@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +28,9 @@ class UsersSecretsConfig(BaseModel):
     """
     Google Workspace Users secrets
     """ # noqa: E501
-    credentials_json: Optional[StrictStr] = Field(default=None, description="JSON credentials to authenticate with Google Cloud.")
-    customer_id: Optional[StrictStr] = Field(default=None, description="Google Workspace Customer ID. If you use your google workspace customer ID you will pull data on all users in all domains of your Google Workspace account. This should be set if Domain is not set.")
-    domain: Optional[StrictStr] = Field(default=None, description="Domain name your users belong to. If you use a google workspace domain you will only pull user data for users that belong to that domain. This should be set if CustomerID is not set")
+    credentials_json: Optional[ModelsSecret] = None
+    customer_id: Optional[ModelsSecret] = None
+    domain: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["credentials_json", "customer_id", "domain"]
 
     model_config = ConfigDict(
@@ -71,6 +72,15 @@ class UsersSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of credentials_json
+        if self.credentials_json:
+            _dict['credentials_json'] = self.credentials_json.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of customer_id
+        if self.customer_id:
+            _dict['customer_id'] = self.customer_id.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of domain
+        if self.domain:
+            _dict['domain'] = self.domain.to_dict()
         return _dict
 
     @classmethod
@@ -83,9 +93,9 @@ class UsersSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "credentials_json": obj.get("credentials_json"),
-            "customer_id": obj.get("customer_id"),
-            "domain": obj.get("domain")
+            "credentials_json": ModelsSecret.from_dict(obj["credentials_json"]) if obj.get("credentials_json") is not None else None,
+            "customer_id": ModelsSecret.from_dict(obj["customer_id"]) if obj.get("customer_id") is not None else None,
+            "domain": ModelsSecret.from_dict(obj["domain"]) if obj.get("domain") is not None else None
         })
         return _obj
 

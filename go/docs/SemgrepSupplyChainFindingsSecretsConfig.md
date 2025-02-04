@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiKey** | Pointer to **string** | API Key for the Semgrep API. This is required to authenticate requests. | [optional] 
+**ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetApiKey
 
-`func (o *SemgrepSupplyChainFindingsSecretsConfig) GetApiKey() string`
+`func (o *SemgrepSupplyChainFindingsSecretsConfig) GetApiKey() ModelsSecret`
 
 GetApiKey returns the ApiKey field if non-nil, zero value otherwise.
 
 ### GetApiKeyOk
 
-`func (o *SemgrepSupplyChainFindingsSecretsConfig) GetApiKeyOk() (*string, bool)`
+`func (o *SemgrepSupplyChainFindingsSecretsConfig) GetApiKeyOk() (*ModelsSecret, bool)`
 
 GetApiKeyOk returns a tuple with the ApiKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApiKey
 
-`func (o *SemgrepSupplyChainFindingsSecretsConfig) SetApiKey(v string)`
+`func (o *SemgrepSupplyChainFindingsSecretsConfig) SetApiKey(v ModelsSecret)`
 
 SetApiKey sets ApiKey field to given value.
 

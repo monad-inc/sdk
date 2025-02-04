@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsSecret;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,31 +49,31 @@ import org.openapitools.client.JSON;
 /**
  * Cribl HTTP Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class CriblHttpSecretsConfig {
   public static final String SERIALIZED_NAME_AUTH_TOKEN = "auth_token";
   @SerializedName(SERIALIZED_NAME_AUTH_TOKEN)
   @javax.annotation.Nullable
-  private String authToken;
+  private ModelsSecret authToken;
 
   public CriblHttpSecretsConfig() {
   }
 
-  public CriblHttpSecretsConfig authToken(@javax.annotation.Nullable String authToken) {
+  public CriblHttpSecretsConfig authToken(@javax.annotation.Nullable ModelsSecret authToken) {
     this.authToken = authToken;
     return this;
   }
 
   /**
-   * The authentication token value you&#39;ve set for your HTTP Source. This token is used to authenticate requests to your Cribl endpoint.
+   * Get authToken
    * @return authToken
    */
   @javax.annotation.Nullable
-  public String getAuthToken() {
+  public ModelsSecret getAuthToken() {
     return authToken;
   }
 
-  public void setAuthToken(@javax.annotation.Nullable String authToken) {
+  public void setAuthToken(@javax.annotation.Nullable ModelsSecret authToken) {
     this.authToken = authToken;
   }
 
@@ -149,8 +150,9 @@ public class CriblHttpSecretsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("auth_token") != null && !jsonObj.get("auth_token").isJsonNull()) && !jsonObj.get("auth_token").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `auth_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_token").toString()));
+      // validate the optional field `auth_token`
+      if (jsonObj.get("auth_token") != null && !jsonObj.get("auth_token").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("auth_token"));
       }
   }
 

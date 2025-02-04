@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +28,8 @@ class ElasticsearchSecretsConfig(BaseModel):
     """
     Elasticsearch Output Secrets
     """ # noqa: E501
-    api_key: Optional[StrictStr] = Field(default=None, description="API key for authenticating with the Elasticsearch cluster. Required when auth type is set to 'api_key'.")
-    password: Optional[StrictStr] = Field(default=None, description="Password for authenticating with the Elasticsearch cluster. Required when auth type is set to 'password'.")
+    api_key: Optional[ModelsSecret] = None
+    password: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["api_key", "password"]
 
     model_config = ConfigDict(
@@ -70,6 +71,12 @@ class ElasticsearchSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of api_key
+        if self.api_key:
+            _dict['api_key'] = self.api_key.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of password
+        if self.password:
+            _dict['password'] = self.password.to_dict()
         return _dict
 
     @classmethod
@@ -82,8 +89,8 @@ class ElasticsearchSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "api_key": obj.get("api_key"),
-            "password": obj.get("password")
+            "api_key": ModelsSecret.from_dict(obj["api_key"]) if obj.get("api_key") is not None else None,
+            "password": ModelsSecret.from_dict(obj["password"]) if obj.get("password") is not None else None
         })
         return _obj
 

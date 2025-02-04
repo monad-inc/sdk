@@ -20,10 +20,8 @@ var _ MappedNullable = &DetectSummariesSecretsConfig{}
 
 // DetectSummariesSecretsConfig CrowdStrike EDR detect summaries secrets
 type DetectSummariesSecretsConfig struct {
-	// Client ID for the CrowdStrike API. This is required to authenticate requests.
-	ClientId *string `json:"client_id,omitempty"`
-	// Client Secret for the CrowdStrike API. This is required to authenticate requests.
-	ClientSecret *string `json:"client_secret,omitempty"`
+	ClientId *ModelsSecret `json:"client_id,omitempty"`
+	ClientSecret *ModelsSecret `json:"client_secret,omitempty"`
 }
 
 // NewDetectSummariesSecretsConfig instantiates a new DetectSummariesSecretsConfig object
@@ -44,9 +42,9 @@ func NewDetectSummariesSecretsConfigWithDefaults() *DetectSummariesSecretsConfig
 }
 
 // GetClientId returns the ClientId field value if set, zero value otherwise.
-func (o *DetectSummariesSecretsConfig) GetClientId() string {
+func (o *DetectSummariesSecretsConfig) GetClientId() ModelsSecret {
 	if o == nil || IsNil(o.ClientId) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientId
@@ -54,7 +52,7 @@ func (o *DetectSummariesSecretsConfig) GetClientId() string {
 
 // GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DetectSummariesSecretsConfig) GetClientIdOk() (*string, bool) {
+func (o *DetectSummariesSecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientId) {
 		return nil, false
 	}
@@ -70,15 +68,15 @@ func (o *DetectSummariesSecretsConfig) HasClientId() bool {
 	return false
 }
 
-// SetClientId gets a reference to the given string and assigns it to the ClientId field.
-func (o *DetectSummariesSecretsConfig) SetClientId(v string) {
+// SetClientId gets a reference to the given ModelsSecret and assigns it to the ClientId field.
+func (o *DetectSummariesSecretsConfig) SetClientId(v ModelsSecret) {
 	o.ClientId = &v
 }
 
 // GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
-func (o *DetectSummariesSecretsConfig) GetClientSecret() string {
+func (o *DetectSummariesSecretsConfig) GetClientSecret() ModelsSecret {
 	if o == nil || IsNil(o.ClientSecret) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientSecret
@@ -86,7 +84,7 @@ func (o *DetectSummariesSecretsConfig) GetClientSecret() string {
 
 // GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DetectSummariesSecretsConfig) GetClientSecretOk() (*string, bool) {
+func (o *DetectSummariesSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientSecret) {
 		return nil, false
 	}
@@ -102,8 +100,8 @@ func (o *DetectSummariesSecretsConfig) HasClientSecret() bool {
 	return false
 }
 
-// SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
-func (o *DetectSummariesSecretsConfig) SetClientSecret(v string) {
+// SetClientSecret gets a reference to the given ModelsSecret and assigns it to the ClientSecret field.
+func (o *DetectSummariesSecretsConfig) SetClientSecret(v ModelsSecret) {
 	o.ClientSecret = &v
 }
 

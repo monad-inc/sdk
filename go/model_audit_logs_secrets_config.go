@@ -20,8 +20,7 @@ var _ MappedNullable = &AuditLogsSecretsConfig{}
 
 // AuditLogsSecretsConfig GitHub audit logs secrets
 type AuditLogsSecretsConfig struct {
-	// Your personal access token that grants read:audit_log
-	PersonalAccessToken *string `json:"personal_access_token,omitempty"`
+	PersonalAccessToken *ModelsSecret `json:"personal_access_token,omitempty"`
 }
 
 // NewAuditLogsSecretsConfig instantiates a new AuditLogsSecretsConfig object
@@ -42,9 +41,9 @@ func NewAuditLogsSecretsConfigWithDefaults() *AuditLogsSecretsConfig {
 }
 
 // GetPersonalAccessToken returns the PersonalAccessToken field value if set, zero value otherwise.
-func (o *AuditLogsSecretsConfig) GetPersonalAccessToken() string {
+func (o *AuditLogsSecretsConfig) GetPersonalAccessToken() ModelsSecret {
 	if o == nil || IsNil(o.PersonalAccessToken) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.PersonalAccessToken
@@ -52,7 +51,7 @@ func (o *AuditLogsSecretsConfig) GetPersonalAccessToken() string {
 
 // GetPersonalAccessTokenOk returns a tuple with the PersonalAccessToken field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AuditLogsSecretsConfig) GetPersonalAccessTokenOk() (*string, bool) {
+func (o *AuditLogsSecretsConfig) GetPersonalAccessTokenOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.PersonalAccessToken) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *AuditLogsSecretsConfig) HasPersonalAccessToken() bool {
 	return false
 }
 
-// SetPersonalAccessToken gets a reference to the given string and assigns it to the PersonalAccessToken field.
-func (o *AuditLogsSecretsConfig) SetPersonalAccessToken(v string) {
+// SetPersonalAccessToken gets a reference to the given ModelsSecret and assigns it to the PersonalAccessToken field.
+func (o *AuditLogsSecretsConfig) SetPersonalAccessToken(v ModelsSecret) {
 	o.PersonalAccessToken = &v
 }
 

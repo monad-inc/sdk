@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,7 @@ class CloudLogsSecretsConfig(BaseModel):
     """
     Google Cloud Logs secrets
     """ # noqa: E501
-    credentials_json: Optional[StrictStr] = Field(default=None, description="JSON credentials to authenticate with Google Cloud.")
+    credentials_json: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["credentials_json"]
 
     model_config = ConfigDict(
@@ -69,6 +70,9 @@ class CloudLogsSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of credentials_json
+        if self.credentials_json:
+            _dict['credentials_json'] = self.credentials_json.to_dict()
         return _dict
 
     @classmethod
@@ -81,7 +85,7 @@ class CloudLogsSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "credentials_json": obj.get("credentials_json")
+            "credentials_json": ModelsSecret.from_dict(obj["credentials_json"]) if obj.get("credentials_json") is not None else None
         })
         return _obj
 

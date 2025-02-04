@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsSecret;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,31 +49,31 @@ import org.openapitools.client.JSON;
 /**
  * OpenSearch Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class OpensearchSecretsConfig {
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)
   @javax.annotation.Nullable
-  private String password;
+  private ModelsSecret password;
 
   public OpensearchSecretsConfig() {
   }
 
-  public OpensearchSecretsConfig password(@javax.annotation.Nullable String password) {
+  public OpensearchSecretsConfig password(@javax.annotation.Nullable ModelsSecret password) {
     this.password = password;
     return this;
   }
 
   /**
-   * The password for authenticating with OpenSearch.
+   * Get password
    * @return password
    */
   @javax.annotation.Nullable
-  public String getPassword() {
+  public ModelsSecret getPassword() {
     return password;
   }
 
-  public void setPassword(@javax.annotation.Nullable String password) {
+  public void setPassword(@javax.annotation.Nullable ModelsSecret password) {
     this.password = password;
   }
 
@@ -149,8 +150,9 @@ public class OpensearchSecretsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) && !jsonObj.get("password").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("password").toString()));
+      // validate the optional field `password`
+      if (jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("password"));
       }
   }
 

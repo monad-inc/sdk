@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsSecret;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,22 +49,22 @@ import org.openapitools.client.JSON;
 /**
  * AdminLogsSecretsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class AdminLogsSecretsConfig {
   public static final String SERIALIZED_NAME_INTEGRATION_KEY = "integration_key";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_KEY)
   @javax.annotation.Nullable
-  private String integrationKey;
+  private ModelsSecret integrationKey;
 
   public static final String SERIALIZED_NAME_SECRET_KEY = "secret_key";
   @SerializedName(SERIALIZED_NAME_SECRET_KEY)
   @javax.annotation.Nullable
-  private String secretKey;
+  private ModelsSecret secretKey;
 
   public AdminLogsSecretsConfig() {
   }
 
-  public AdminLogsSecretsConfig integrationKey(@javax.annotation.Nullable String integrationKey) {
+  public AdminLogsSecretsConfig integrationKey(@javax.annotation.Nullable ModelsSecret integrationKey) {
     this.integrationKey = integrationKey;
     return this;
   }
@@ -73,16 +74,16 @@ public class AdminLogsSecretsConfig {
    * @return integrationKey
    */
   @javax.annotation.Nullable
-  public String getIntegrationKey() {
+  public ModelsSecret getIntegrationKey() {
     return integrationKey;
   }
 
-  public void setIntegrationKey(@javax.annotation.Nullable String integrationKey) {
+  public void setIntegrationKey(@javax.annotation.Nullable ModelsSecret integrationKey) {
     this.integrationKey = integrationKey;
   }
 
 
-  public AdminLogsSecretsConfig secretKey(@javax.annotation.Nullable String secretKey) {
+  public AdminLogsSecretsConfig secretKey(@javax.annotation.Nullable ModelsSecret secretKey) {
     this.secretKey = secretKey;
     return this;
   }
@@ -92,11 +93,11 @@ public class AdminLogsSecretsConfig {
    * @return secretKey
    */
   @javax.annotation.Nullable
-  public String getSecretKey() {
+  public ModelsSecret getSecretKey() {
     return secretKey;
   }
 
-  public void setSecretKey(@javax.annotation.Nullable String secretKey) {
+  public void setSecretKey(@javax.annotation.Nullable ModelsSecret secretKey) {
     this.secretKey = secretKey;
   }
 
@@ -176,11 +177,13 @@ public class AdminLogsSecretsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("integration_key") != null && !jsonObj.get("integration_key").isJsonNull()) && !jsonObj.get("integration_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `integration_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("integration_key").toString()));
+      // validate the optional field `integration_key`
+      if (jsonObj.get("integration_key") != null && !jsonObj.get("integration_key").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("integration_key"));
       }
-      if ((jsonObj.get("secret_key") != null && !jsonObj.get("secret_key").isJsonNull()) && !jsonObj.get("secret_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `secret_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secret_key").toString()));
+      // validate the optional field `secret_key`
+      if (jsonObj.get("secret_key") != null && !jsonObj.get("secret_key").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("secret_key"));
       }
   }
 

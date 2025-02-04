@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +28,8 @@ class TenableVulnerabilitiesSecretsConfig(BaseModel):
     """
     Tenable vulnerabilities secrets
     """ # noqa: E501
-    access_key: Optional[StrictStr] = Field(default=None, description="Access Key for the Tenable API. This is required to authenticate requests.")
-    secret_key: Optional[StrictStr] = Field(default=None, description="Secret Key for the Tenable API. This is required to authenticate requests.")
+    access_key: Optional[ModelsSecret] = None
+    secret_key: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["access_key", "secret_key"]
 
     model_config = ConfigDict(
@@ -70,6 +71,12 @@ class TenableVulnerabilitiesSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of access_key
+        if self.access_key:
+            _dict['access_key'] = self.access_key.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of secret_key
+        if self.secret_key:
+            _dict['secret_key'] = self.secret_key.to_dict()
         return _dict
 
     @classmethod
@@ -82,8 +89,8 @@ class TenableVulnerabilitiesSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "access_key": obj.get("access_key"),
-            "secret_key": obj.get("secret_key")
+            "access_key": ModelsSecret.from_dict(obj["access_key"]) if obj.get("access_key") is not None else None,
+            "secret_key": ModelsSecret.from_dict(obj["secret_key"]) if obj.get("secret_key") is not None else None
         })
         return _obj
 

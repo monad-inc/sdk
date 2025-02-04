@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,7 @@ class SplunkSecretsConfig(BaseModel):
     """
     Splunk Output Secrets
     """ # noqa: E501
-    token: Optional[StrictStr] = Field(default=None, description="The token for authenticating with Splunk.")
+    token: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["token"]
 
     model_config = ConfigDict(
@@ -69,6 +70,9 @@ class SplunkSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of token
+        if self.token:
+            _dict['token'] = self.token.to_dict()
         return _dict
 
     @classmethod
@@ -81,7 +85,7 @@ class SplunkSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "token": obj.get("token")
+            "token": ModelsSecret.from_dict(obj["token"]) if obj.get("token") is not None else None
         })
         return _obj
 

@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsSecret;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,55 +49,55 @@ import org.openapitools.client.JSON;
 /**
  * Elasticsearch Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ElasticsearchSecretsConfig {
   public static final String SERIALIZED_NAME_API_KEY = "api_key";
   @SerializedName(SERIALIZED_NAME_API_KEY)
   @javax.annotation.Nullable
-  private String apiKey;
+  private ModelsSecret apiKey;
 
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)
   @javax.annotation.Nullable
-  private String password;
+  private ModelsSecret password;
 
   public ElasticsearchSecretsConfig() {
   }
 
-  public ElasticsearchSecretsConfig apiKey(@javax.annotation.Nullable String apiKey) {
+  public ElasticsearchSecretsConfig apiKey(@javax.annotation.Nullable ModelsSecret apiKey) {
     this.apiKey = apiKey;
     return this;
   }
 
   /**
-   * API key for authenticating with the Elasticsearch cluster. Required when auth type is set to &#39;api_key&#39;.
+   * Get apiKey
    * @return apiKey
    */
   @javax.annotation.Nullable
-  public String getApiKey() {
+  public ModelsSecret getApiKey() {
     return apiKey;
   }
 
-  public void setApiKey(@javax.annotation.Nullable String apiKey) {
+  public void setApiKey(@javax.annotation.Nullable ModelsSecret apiKey) {
     this.apiKey = apiKey;
   }
 
 
-  public ElasticsearchSecretsConfig password(@javax.annotation.Nullable String password) {
+  public ElasticsearchSecretsConfig password(@javax.annotation.Nullable ModelsSecret password) {
     this.password = password;
     return this;
   }
 
   /**
-   * Password for authenticating with the Elasticsearch cluster. Required when auth type is set to &#39;password&#39;.
+   * Get password
    * @return password
    */
   @javax.annotation.Nullable
-  public String getPassword() {
+  public ModelsSecret getPassword() {
     return password;
   }
 
-  public void setPassword(@javax.annotation.Nullable String password) {
+  public void setPassword(@javax.annotation.Nullable ModelsSecret password) {
     this.password = password;
   }
 
@@ -176,11 +177,13 @@ public class ElasticsearchSecretsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("api_key") != null && !jsonObj.get("api_key").isJsonNull()) && !jsonObj.get("api_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `api_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("api_key").toString()));
+      // validate the optional field `api_key`
+      if (jsonObj.get("api_key") != null && !jsonObj.get("api_key").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("api_key"));
       }
-      if ((jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) && !jsonObj.get("password").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("password").toString()));
+      // validate the optional field `password`
+      if (jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("password"));
       }
   }
 

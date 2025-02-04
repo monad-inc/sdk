@@ -10,20 +10,15 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Microsoft Entra ID secrets
 */
 export class EntraIdSecretsConfig {
-    /**
-    * The client ID of the Azure AD application
-    */
-    'clientId'?: string;
-    /**
-    * The client secret of the Azure AD application
-    */
-    'clientSecret'?: string;
+    'clientId'?: ModelsSecret;
+    'clientSecret'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -33,13 +28,13 @@ export class EntraIdSecretsConfig {
         {
             "name": "clientId",
             "baseName": "client_id",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         },
         {
             "name": "clientSecret",
             "baseName": "client_secret",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

@@ -20,10 +20,8 @@ var _ MappedNullable = &VulnerabilitiesSecretsConfig{}
 
 // VulnerabilitiesSecretsConfig CrowdStrike EDR vulnerabilities secrets
 type VulnerabilitiesSecretsConfig struct {
-	// Client ID for the CrowdStrike API. This is required to authenticate requests.
-	ClientId *string `json:"client_id,omitempty"`
-	// Client Secret for the CrowdStrike API. This is required to authenticate requests.
-	ClientSecret *string `json:"client_secret,omitempty"`
+	ClientId *ModelsSecret `json:"client_id,omitempty"`
+	ClientSecret *ModelsSecret `json:"client_secret,omitempty"`
 }
 
 // NewVulnerabilitiesSecretsConfig instantiates a new VulnerabilitiesSecretsConfig object
@@ -44,9 +42,9 @@ func NewVulnerabilitiesSecretsConfigWithDefaults() *VulnerabilitiesSecretsConfig
 }
 
 // GetClientId returns the ClientId field value if set, zero value otherwise.
-func (o *VulnerabilitiesSecretsConfig) GetClientId() string {
+func (o *VulnerabilitiesSecretsConfig) GetClientId() ModelsSecret {
 	if o == nil || IsNil(o.ClientId) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientId
@@ -54,7 +52,7 @@ func (o *VulnerabilitiesSecretsConfig) GetClientId() string {
 
 // GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VulnerabilitiesSecretsConfig) GetClientIdOk() (*string, bool) {
+func (o *VulnerabilitiesSecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientId) {
 		return nil, false
 	}
@@ -70,15 +68,15 @@ func (o *VulnerabilitiesSecretsConfig) HasClientId() bool {
 	return false
 }
 
-// SetClientId gets a reference to the given string and assigns it to the ClientId field.
-func (o *VulnerabilitiesSecretsConfig) SetClientId(v string) {
+// SetClientId gets a reference to the given ModelsSecret and assigns it to the ClientId field.
+func (o *VulnerabilitiesSecretsConfig) SetClientId(v ModelsSecret) {
 	o.ClientId = &v
 }
 
 // GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
-func (o *VulnerabilitiesSecretsConfig) GetClientSecret() string {
+func (o *VulnerabilitiesSecretsConfig) GetClientSecret() ModelsSecret {
 	if o == nil || IsNil(o.ClientSecret) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientSecret
@@ -86,7 +84,7 @@ func (o *VulnerabilitiesSecretsConfig) GetClientSecret() string {
 
 // GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VulnerabilitiesSecretsConfig) GetClientSecretOk() (*string, bool) {
+func (o *VulnerabilitiesSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientSecret) {
 		return nil, false
 	}
@@ -102,8 +100,8 @@ func (o *VulnerabilitiesSecretsConfig) HasClientSecret() bool {
 	return false
 }
 
-// SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
-func (o *VulnerabilitiesSecretsConfig) SetClientSecret(v string) {
+// SetClientSecret gets a reference to the given ModelsSecret and assigns it to the ClientSecret field.
+func (o *VulnerabilitiesSecretsConfig) SetClientSecret(v ModelsSecret) {
 	o.ClientSecret = &v
 }
 

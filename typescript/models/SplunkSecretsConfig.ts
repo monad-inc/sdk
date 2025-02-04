@@ -10,16 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Splunk Output Secrets
 */
 export class SplunkSecretsConfig {
-    /**
-    * The token for authenticating with Splunk.
-    */
-    'token'?: string;
+    'token'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,7 +27,7 @@ export class SplunkSecretsConfig {
         {
             "name": "token",
             "baseName": "token",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

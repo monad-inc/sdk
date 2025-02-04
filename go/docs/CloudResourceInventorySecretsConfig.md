@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | Pointer to **string** | Client ID for the Wiz API. This is required to authenticate requests. | [optional] 
-**ClientSecret** | Pointer to **string** | Client Secret for the Wiz API. This is required to authenticate requests. | [optional] 
+**ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetClientId
 
-`func (o *CloudResourceInventorySecretsConfig) GetClientId() string`
+`func (o *CloudResourceInventorySecretsConfig) GetClientId() ModelsSecret`
 
 GetClientId returns the ClientId field if non-nil, zero value otherwise.
 
 ### GetClientIdOk
 
-`func (o *CloudResourceInventorySecretsConfig) GetClientIdOk() (*string, bool)`
+`func (o *CloudResourceInventorySecretsConfig) GetClientIdOk() (*ModelsSecret, bool)`
 
 GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientId
 
-`func (o *CloudResourceInventorySecretsConfig) SetClientId(v string)`
+`func (o *CloudResourceInventorySecretsConfig) SetClientId(v ModelsSecret)`
 
 SetClientId sets ClientId field to given value.
 
@@ -53,20 +53,20 @@ HasClientId returns a boolean if a field has been set.
 
 ### GetClientSecret
 
-`func (o *CloudResourceInventorySecretsConfig) GetClientSecret() string`
+`func (o *CloudResourceInventorySecretsConfig) GetClientSecret() ModelsSecret`
 
 GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
 
 ### GetClientSecretOk
 
-`func (o *CloudResourceInventorySecretsConfig) GetClientSecretOk() (*string, bool)`
+`func (o *CloudResourceInventorySecretsConfig) GetClientSecretOk() (*ModelsSecret, bool)`
 
 GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientSecret
 
-`func (o *CloudResourceInventorySecretsConfig) SetClientSecret(v string)`
+`func (o *CloudResourceInventorySecretsConfig) SetClientSecret(v ModelsSecret)`
 
 SetClientSecret sets ClientSecret field to given value.
 

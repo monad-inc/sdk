@@ -6,7 +6,7 @@ HTTP Output Secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auth_headers** | **Dict[str, str]** | Authentication headers | [optional] 
+**auth_headers** | [**Dict[str, ModelsSecret]**](ModelsSecret.md) | Authentication headers | [optional] 
 
 ## Example
 

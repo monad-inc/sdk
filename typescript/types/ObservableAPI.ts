@@ -135,7 +135,6 @@ import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformReq
 import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUserInOrganizationRequest';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
-import { RoutesV2BulkCreateInputRequest } from '../models/RoutesV2BulkCreateInputRequest';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
 import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
@@ -1291,43 +1290,6 @@ export class ObservableOrganizationInputsApi {
      */
     public v1OrganizationIdInputsPost(organizationId: string, routesCreateInputRequest: RoutesCreateInputRequest, testConnection?: boolean, _options?: Configuration): Observable<ModelsInput> {
         return this.v1OrganizationIdInputsPostWithHttpInfo(organizationId, routesCreateInputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsInput>) => apiResponse.data));
-    }
-
-    /**
-     * Create multiple inputs in a single request
-     * Bulk create inputs
-     * @param organizationId Organization ID
-     * @param routesV2BulkCreateInputRequest Request body for creating multiple inputs
-     * @param [testConnection] Test connection before creating the input
-     */
-    public v2OrganizationIdInputsBulkPostWithHttpInfo(organizationId: string, routesV2BulkCreateInputRequest: RoutesV2BulkCreateInputRequest, testConnection?: boolean, _options?: Configuration): Observable<HttpInfo<Array<ModelsInput>>> {
-        const requestContextPromise = this.requestFactory.v2OrganizationIdInputsBulkPost(organizationId, routesV2BulkCreateInputRequest, testConnection, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdInputsBulkPostWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Create multiple inputs in a single request
-     * Bulk create inputs
-     * @param organizationId Organization ID
-     * @param routesV2BulkCreateInputRequest Request body for creating multiple inputs
-     * @param [testConnection] Test connection before creating the input
-     */
-    public v2OrganizationIdInputsBulkPost(organizationId: string, routesV2BulkCreateInputRequest: RoutesV2BulkCreateInputRequest, testConnection?: boolean, _options?: Configuration): Observable<Array<ModelsInput>> {
-        return this.v2OrganizationIdInputsBulkPostWithHttpInfo(organizationId, routesV2BulkCreateInputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsInput>>) => apiResponse.data));
     }
 
     /**

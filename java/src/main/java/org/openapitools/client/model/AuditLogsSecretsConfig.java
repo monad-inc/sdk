@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsSecret;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,31 +49,31 @@ import org.openapitools.client.JSON;
 /**
  * GitHub audit logs secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class AuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_PERSONAL_ACCESS_TOKEN = "personal_access_token";
   @SerializedName(SERIALIZED_NAME_PERSONAL_ACCESS_TOKEN)
   @javax.annotation.Nullable
-  private String personalAccessToken;
+  private ModelsSecret personalAccessToken;
 
   public AuditLogsSecretsConfig() {
   }
 
-  public AuditLogsSecretsConfig personalAccessToken(@javax.annotation.Nullable String personalAccessToken) {
+  public AuditLogsSecretsConfig personalAccessToken(@javax.annotation.Nullable ModelsSecret personalAccessToken) {
     this.personalAccessToken = personalAccessToken;
     return this;
   }
 
   /**
-   * Your personal access token that grants read:audit_log
+   * Get personalAccessToken
    * @return personalAccessToken
    */
   @javax.annotation.Nullable
-  public String getPersonalAccessToken() {
+  public ModelsSecret getPersonalAccessToken() {
     return personalAccessToken;
   }
 
-  public void setPersonalAccessToken(@javax.annotation.Nullable String personalAccessToken) {
+  public void setPersonalAccessToken(@javax.annotation.Nullable ModelsSecret personalAccessToken) {
     this.personalAccessToken = personalAccessToken;
   }
 
@@ -149,8 +150,9 @@ public class AuditLogsSecretsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("personal_access_token") != null && !jsonObj.get("personal_access_token").isJsonNull()) && !jsonObj.get("personal_access_token").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `personal_access_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("personal_access_token").toString()));
+      // validate the optional field `personal_access_token`
+      if (jsonObj.get("personal_access_token") != null && !jsonObj.get("personal_access_token").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("personal_access_token"));
       }
   }
 

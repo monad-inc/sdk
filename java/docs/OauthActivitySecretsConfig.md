@@ -8,7 +8,7 @@ Google Workspace OAuth Activity secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**credentialsJson** | **String** | JSON credentials to authenticate with Google Cloud. |  [optional] |
+|**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 
 
 

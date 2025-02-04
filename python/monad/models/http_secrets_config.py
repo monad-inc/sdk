@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,7 @@ class HttpSecretsConfig(BaseModel):
     """
     HTTP Output Secrets
     """ # noqa: E501
-    auth_headers: Optional[Dict[str, StrictStr]] = Field(default=None, description="Authentication headers")
+    auth_headers: Optional[Dict[str, ModelsSecret]] = Field(default=None, description="Authentication headers")
     __properties: ClassVar[List[str]] = ["auth_headers"]
 
     model_config = ConfigDict(
@@ -69,6 +70,13 @@ class HttpSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each value in auth_headers (dict)
+        _field_dict = {}
+        if self.auth_headers:
+            for _key_auth_headers in self.auth_headers:
+                if self.auth_headers[_key_auth_headers]:
+                    _field_dict[_key_auth_headers] = self.auth_headers[_key_auth_headers].to_dict()
+            _dict['auth_headers'] = _field_dict
         return _dict
 
     @classmethod
@@ -81,7 +89,12 @@ class HttpSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "auth_headers": obj.get("auth_headers")
+            "auth_headers": dict(
+                (_k, ModelsSecret.from_dict(_v))
+                for _k, _v in obj["auth_headers"].items()
+            )
+            if obj.get("auth_headers") is not None
+            else None
         })
         return _obj
 

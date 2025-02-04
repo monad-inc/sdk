@@ -20,12 +20,9 @@ var _ MappedNullable = &UsersSecretsConfig{}
 
 // UsersSecretsConfig Google Workspace Users secrets
 type UsersSecretsConfig struct {
-	// JSON credentials to authenticate with Google Cloud.
-	CredentialsJson *string `json:"credentials_json,omitempty"`
-	// Google Workspace Customer ID. If you use your google workspace customer ID you will pull data on all users in all domains of your Google Workspace account. This should be set if Domain is not set.
-	CustomerId *string `json:"customer_id,omitempty"`
-	// Domain name your users belong to. If you use a google workspace domain you will only pull user data for users that belong to that domain. This should be set if CustomerID is not set
-	Domain *string `json:"domain,omitempty"`
+	CredentialsJson *ModelsSecret `json:"credentials_json,omitempty"`
+	CustomerId *ModelsSecret `json:"customer_id,omitempty"`
+	Domain *ModelsSecret `json:"domain,omitempty"`
 }
 
 // NewUsersSecretsConfig instantiates a new UsersSecretsConfig object
@@ -46,9 +43,9 @@ func NewUsersSecretsConfigWithDefaults() *UsersSecretsConfig {
 }
 
 // GetCredentialsJson returns the CredentialsJson field value if set, zero value otherwise.
-func (o *UsersSecretsConfig) GetCredentialsJson() string {
+func (o *UsersSecretsConfig) GetCredentialsJson() ModelsSecret {
 	if o == nil || IsNil(o.CredentialsJson) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.CredentialsJson
@@ -56,7 +53,7 @@ func (o *UsersSecretsConfig) GetCredentialsJson() string {
 
 // GetCredentialsJsonOk returns a tuple with the CredentialsJson field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UsersSecretsConfig) GetCredentialsJsonOk() (*string, bool) {
+func (o *UsersSecretsConfig) GetCredentialsJsonOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.CredentialsJson) {
 		return nil, false
 	}
@@ -72,15 +69,15 @@ func (o *UsersSecretsConfig) HasCredentialsJson() bool {
 	return false
 }
 
-// SetCredentialsJson gets a reference to the given string and assigns it to the CredentialsJson field.
-func (o *UsersSecretsConfig) SetCredentialsJson(v string) {
+// SetCredentialsJson gets a reference to the given ModelsSecret and assigns it to the CredentialsJson field.
+func (o *UsersSecretsConfig) SetCredentialsJson(v ModelsSecret) {
 	o.CredentialsJson = &v
 }
 
 // GetCustomerId returns the CustomerId field value if set, zero value otherwise.
-func (o *UsersSecretsConfig) GetCustomerId() string {
+func (o *UsersSecretsConfig) GetCustomerId() ModelsSecret {
 	if o == nil || IsNil(o.CustomerId) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.CustomerId
@@ -88,7 +85,7 @@ func (o *UsersSecretsConfig) GetCustomerId() string {
 
 // GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UsersSecretsConfig) GetCustomerIdOk() (*string, bool) {
+func (o *UsersSecretsConfig) GetCustomerIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.CustomerId) {
 		return nil, false
 	}
@@ -104,15 +101,15 @@ func (o *UsersSecretsConfig) HasCustomerId() bool {
 	return false
 }
 
-// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
-func (o *UsersSecretsConfig) SetCustomerId(v string) {
+// SetCustomerId gets a reference to the given ModelsSecret and assigns it to the CustomerId field.
+func (o *UsersSecretsConfig) SetCustomerId(v ModelsSecret) {
 	o.CustomerId = &v
 }
 
 // GetDomain returns the Domain field value if set, zero value otherwise.
-func (o *UsersSecretsConfig) GetDomain() string {
+func (o *UsersSecretsConfig) GetDomain() ModelsSecret {
 	if o == nil || IsNil(o.Domain) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.Domain
@@ -120,7 +117,7 @@ func (o *UsersSecretsConfig) GetDomain() string {
 
 // GetDomainOk returns a tuple with the Domain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UsersSecretsConfig) GetDomainOk() (*string, bool) {
+func (o *UsersSecretsConfig) GetDomainOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.Domain) {
 		return nil, false
 	}
@@ -136,8 +133,8 @@ func (o *UsersSecretsConfig) HasDomain() bool {
 	return false
 }
 
-// SetDomain gets a reference to the given string and assigns it to the Domain field.
-func (o *UsersSecretsConfig) SetDomain(v string) {
+// SetDomain gets a reference to the given ModelsSecret and assigns it to the Domain field.
+func (o *UsersSecretsConfig) SetDomain(v ModelsSecret) {
 	o.Domain = &v
 }
 

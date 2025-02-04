@@ -20,12 +20,9 @@ var _ MappedNullable = &SentinelSecretsConfig{}
 
 // SentinelSecretsConfig Sentinel Output Secrets
 type SentinelSecretsConfig struct {
-	// The application (client) ID registered in Azure Active Directory.
-	ClientId *string `json:"client_id,omitempty"`
-	// The client secret associated with the registered application in Azure AD.
-	ClientSecret *string `json:"client_secret,omitempty"`
-	// The Azure Active Directory tenant (directory) ID.
-	TenantId *string `json:"tenant_id,omitempty"`
+	ClientId *ModelsSecret `json:"client_id,omitempty"`
+	ClientSecret *ModelsSecret `json:"client_secret,omitempty"`
+	TenantId *ModelsSecret `json:"tenant_id,omitempty"`
 }
 
 // NewSentinelSecretsConfig instantiates a new SentinelSecretsConfig object
@@ -46,9 +43,9 @@ func NewSentinelSecretsConfigWithDefaults() *SentinelSecretsConfig {
 }
 
 // GetClientId returns the ClientId field value if set, zero value otherwise.
-func (o *SentinelSecretsConfig) GetClientId() string {
+func (o *SentinelSecretsConfig) GetClientId() ModelsSecret {
 	if o == nil || IsNil(o.ClientId) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientId
@@ -56,7 +53,7 @@ func (o *SentinelSecretsConfig) GetClientId() string {
 
 // GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SentinelSecretsConfig) GetClientIdOk() (*string, bool) {
+func (o *SentinelSecretsConfig) GetClientIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientId) {
 		return nil, false
 	}
@@ -72,15 +69,15 @@ func (o *SentinelSecretsConfig) HasClientId() bool {
 	return false
 }
 
-// SetClientId gets a reference to the given string and assigns it to the ClientId field.
-func (o *SentinelSecretsConfig) SetClientId(v string) {
+// SetClientId gets a reference to the given ModelsSecret and assigns it to the ClientId field.
+func (o *SentinelSecretsConfig) SetClientId(v ModelsSecret) {
 	o.ClientId = &v
 }
 
 // GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
-func (o *SentinelSecretsConfig) GetClientSecret() string {
+func (o *SentinelSecretsConfig) GetClientSecret() ModelsSecret {
 	if o == nil || IsNil(o.ClientSecret) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ClientSecret
@@ -88,7 +85,7 @@ func (o *SentinelSecretsConfig) GetClientSecret() string {
 
 // GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SentinelSecretsConfig) GetClientSecretOk() (*string, bool) {
+func (o *SentinelSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ClientSecret) {
 		return nil, false
 	}
@@ -104,15 +101,15 @@ func (o *SentinelSecretsConfig) HasClientSecret() bool {
 	return false
 }
 
-// SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
-func (o *SentinelSecretsConfig) SetClientSecret(v string) {
+// SetClientSecret gets a reference to the given ModelsSecret and assigns it to the ClientSecret field.
+func (o *SentinelSecretsConfig) SetClientSecret(v ModelsSecret) {
 	o.ClientSecret = &v
 }
 
 // GetTenantId returns the TenantId field value if set, zero value otherwise.
-func (o *SentinelSecretsConfig) GetTenantId() string {
+func (o *SentinelSecretsConfig) GetTenantId() ModelsSecret {
 	if o == nil || IsNil(o.TenantId) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.TenantId
@@ -120,7 +117,7 @@ func (o *SentinelSecretsConfig) GetTenantId() string {
 
 // GetTenantIdOk returns a tuple with the TenantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SentinelSecretsConfig) GetTenantIdOk() (*string, bool) {
+func (o *SentinelSecretsConfig) GetTenantIdOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.TenantId) {
 		return nil, false
 	}
@@ -136,8 +133,8 @@ func (o *SentinelSecretsConfig) HasTenantId() bool {
 	return false
 }
 
-// SetTenantId gets a reference to the given string and assigns it to the TenantId field.
-func (o *SentinelSecretsConfig) SetTenantId(v string) {
+// SetTenantId gets a reference to the given ModelsSecret and assigns it to the TenantId field.
+func (o *SentinelSecretsConfig) SetTenantId(v ModelsSecret) {
 	o.TenantId = &v
 }
 

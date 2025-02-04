@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsSecret;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,79 +49,79 @@ import org.openapitools.client.JSON;
 /**
  * Google Workspace Users secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class UsersSecretsConfig {
   public static final String SERIALIZED_NAME_CREDENTIALS_JSON = "credentials_json";
   @SerializedName(SERIALIZED_NAME_CREDENTIALS_JSON)
   @javax.annotation.Nullable
-  private String credentialsJson;
+  private ModelsSecret credentialsJson;
 
   public static final String SERIALIZED_NAME_CUSTOMER_ID = "customer_id";
   @SerializedName(SERIALIZED_NAME_CUSTOMER_ID)
   @javax.annotation.Nullable
-  private String customerId;
+  private ModelsSecret customerId;
 
   public static final String SERIALIZED_NAME_DOMAIN = "domain";
   @SerializedName(SERIALIZED_NAME_DOMAIN)
   @javax.annotation.Nullable
-  private String domain;
+  private ModelsSecret domain;
 
   public UsersSecretsConfig() {
   }
 
-  public UsersSecretsConfig credentialsJson(@javax.annotation.Nullable String credentialsJson) {
+  public UsersSecretsConfig credentialsJson(@javax.annotation.Nullable ModelsSecret credentialsJson) {
     this.credentialsJson = credentialsJson;
     return this;
   }
 
   /**
-   * JSON credentials to authenticate with Google Cloud.
+   * Get credentialsJson
    * @return credentialsJson
    */
   @javax.annotation.Nullable
-  public String getCredentialsJson() {
+  public ModelsSecret getCredentialsJson() {
     return credentialsJson;
   }
 
-  public void setCredentialsJson(@javax.annotation.Nullable String credentialsJson) {
+  public void setCredentialsJson(@javax.annotation.Nullable ModelsSecret credentialsJson) {
     this.credentialsJson = credentialsJson;
   }
 
 
-  public UsersSecretsConfig customerId(@javax.annotation.Nullable String customerId) {
+  public UsersSecretsConfig customerId(@javax.annotation.Nullable ModelsSecret customerId) {
     this.customerId = customerId;
     return this;
   }
 
   /**
-   * Google Workspace Customer ID. If you use your google workspace customer ID you will pull data on all users in all domains of your Google Workspace account. This should be set if Domain is not set.
+   * Get customerId
    * @return customerId
    */
   @javax.annotation.Nullable
-  public String getCustomerId() {
+  public ModelsSecret getCustomerId() {
     return customerId;
   }
 
-  public void setCustomerId(@javax.annotation.Nullable String customerId) {
+  public void setCustomerId(@javax.annotation.Nullable ModelsSecret customerId) {
     this.customerId = customerId;
   }
 
 
-  public UsersSecretsConfig domain(@javax.annotation.Nullable String domain) {
+  public UsersSecretsConfig domain(@javax.annotation.Nullable ModelsSecret domain) {
     this.domain = domain;
     return this;
   }
 
   /**
-   * Domain name your users belong to. If you use a google workspace domain you will only pull user data for users that belong to that domain. This should be set if CustomerID is not set
+   * Get domain
    * @return domain
    */
   @javax.annotation.Nullable
-  public String getDomain() {
+  public ModelsSecret getDomain() {
     return domain;
   }
 
-  public void setDomain(@javax.annotation.Nullable String domain) {
+  public void setDomain(@javax.annotation.Nullable ModelsSecret domain) {
     this.domain = domain;
   }
 
@@ -203,14 +204,17 @@ public class UsersSecretsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("credentials_json") != null && !jsonObj.get("credentials_json").isJsonNull()) && !jsonObj.get("credentials_json").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `credentials_json` to be a primitive type in the JSON string but got `%s`", jsonObj.get("credentials_json").toString()));
+      // validate the optional field `credentials_json`
+      if (jsonObj.get("credentials_json") != null && !jsonObj.get("credentials_json").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("credentials_json"));
       }
-      if ((jsonObj.get("customer_id") != null && !jsonObj.get("customer_id").isJsonNull()) && !jsonObj.get("customer_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `customer_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customer_id").toString()));
+      // validate the optional field `customer_id`
+      if (jsonObj.get("customer_id") != null && !jsonObj.get("customer_id").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("customer_id"));
       }
-      if ((jsonObj.get("domain") != null && !jsonObj.get("domain").isJsonNull()) && !jsonObj.get("domain").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain").toString()));
+      // validate the optional field `domain`
+      if (jsonObj.get("domain") != null && !jsonObj.get("domain").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("domain"));
       }
   }
 

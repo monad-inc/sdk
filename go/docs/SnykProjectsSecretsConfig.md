@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiKey** | Pointer to **string** | API Key for the Snyk API. This is required to authenticate requests. | [optional] 
+**ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetApiKey
 
-`func (o *SnykProjectsSecretsConfig) GetApiKey() string`
+`func (o *SnykProjectsSecretsConfig) GetApiKey() ModelsSecret`
 
 GetApiKey returns the ApiKey field if non-nil, zero value otherwise.
 
 ### GetApiKeyOk
 
-`func (o *SnykProjectsSecretsConfig) GetApiKeyOk() (*string, bool)`
+`func (o *SnykProjectsSecretsConfig) GetApiKeyOk() (*ModelsSecret, bool)`
 
 GetApiKeyOk returns a tuple with the ApiKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApiKey
 
-`func (o *SnykProjectsSecretsConfig) SetApiKey(v string)`
+`func (o *SnykProjectsSecretsConfig) SetApiKey(v ModelsSecret)`
 
 SetApiKey sets ApiKey field to given value.
 

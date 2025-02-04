@@ -46,9 +46,9 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ModelsSecret
+ * The Access ID for authenticating with Sumo Logic.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ModelsSecret {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -94,7 +94,7 @@ public class ModelsSecret {
   }
 
   /**
-   * Get createdAt
+   * When the secret was created
    * @return createdAt
    */
   @javax.annotation.Nullable
@@ -113,7 +113,7 @@ public class ModelsSecret {
   }
 
   /**
-   * Get description
+   * The user set Description of the secret
    * @return description
    */
   @javax.annotation.Nullable
@@ -132,7 +132,7 @@ public class ModelsSecret {
   }
 
   /**
-   * Get id
+   * The ID of the secret
    * @return id
    */
   @javax.annotation.Nullable
@@ -151,7 +151,7 @@ public class ModelsSecret {
   }
 
   /**
-   * Get name
+   * The user set Name of the secret
    * @return name
    */
   @javax.annotation.Nullable
@@ -170,7 +170,7 @@ public class ModelsSecret {
   }
 
   /**
-   * Get organizationId
+   * The OrganizationID the secret belongs to
    * @return organizationId
    */
   @javax.annotation.Nullable
@@ -189,7 +189,7 @@ public class ModelsSecret {
   }
 
   /**
-   * Get updatedAt
+   * When the secret was updated
    * @return updatedAt
    */
   @javax.annotation.Nullable
@@ -208,7 +208,7 @@ public class ModelsSecret {
   }
 
   /**
-   * Get value
+   * The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload.
    * @return value
    */
   @javax.annotation.Nullable

@@ -10,24 +10,16 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Sentinel Output Secrets
 */
 export class SentinelSecretsConfig {
-    /**
-    * The application (client) ID registered in Azure Active Directory.
-    */
-    'clientId'?: string;
-    /**
-    * The client secret associated with the registered application in Azure AD.
-    */
-    'clientSecret'?: string;
-    /**
-    * The Azure Active Directory tenant (directory) ID.
-    */
-    'tenantId'?: string;
+    'clientId'?: ModelsSecret;
+    'clientSecret'?: ModelsSecret;
+    'tenantId'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -37,19 +29,19 @@ export class SentinelSecretsConfig {
         {
             "name": "clientId",
             "baseName": "client_id",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         },
         {
             "name": "clientSecret",
             "baseName": "client_secret",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         },
         {
             "name": "tenantId",
             "baseName": "tenant_id",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

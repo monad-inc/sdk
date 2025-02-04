@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
@@ -19,7 +20,7 @@ export class HttpSecretsConfig {
     /**
     * Authentication headers
     */
-    'authHeaders'?: { [key: string]: string; };
+    'authHeaders'?: { [key: string]: ModelsSecret; };
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,7 +30,7 @@ export class HttpSecretsConfig {
         {
             "name": "authHeaders",
             "baseName": "auth_headers",
-            "type": "{ [key: string]: string; }",
+            "type": "{ [key: string]: ModelsSecret; }",
             "format": ""
         }    ];
 

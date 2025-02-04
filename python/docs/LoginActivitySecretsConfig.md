@@ -6,7 +6,7 @@ Google Workspace Login Activity secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**credentials_json** | **str** | JSON credentials to authenticate with Google Cloud. | [optional] 
+**credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

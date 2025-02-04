@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsSecret;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,79 +49,79 @@ import org.openapitools.client.JSON;
 /**
  * Sentinel Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SentinelSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
   @javax.annotation.Nullable
-  private String clientId;
+  private ModelsSecret clientId;
 
   public static final String SERIALIZED_NAME_CLIENT_SECRET = "client_secret";
   @SerializedName(SERIALIZED_NAME_CLIENT_SECRET)
   @javax.annotation.Nullable
-  private String clientSecret;
+  private ModelsSecret clientSecret;
 
   public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
   @SerializedName(SERIALIZED_NAME_TENANT_ID)
   @javax.annotation.Nullable
-  private String tenantId;
+  private ModelsSecret tenantId;
 
   public SentinelSecretsConfig() {
   }
 
-  public SentinelSecretsConfig clientId(@javax.annotation.Nullable String clientId) {
+  public SentinelSecretsConfig clientId(@javax.annotation.Nullable ModelsSecret clientId) {
     this.clientId = clientId;
     return this;
   }
 
   /**
-   * The application (client) ID registered in Azure Active Directory.
+   * Get clientId
    * @return clientId
    */
   @javax.annotation.Nullable
-  public String getClientId() {
+  public ModelsSecret getClientId() {
     return clientId;
   }
 
-  public void setClientId(@javax.annotation.Nullable String clientId) {
+  public void setClientId(@javax.annotation.Nullable ModelsSecret clientId) {
     this.clientId = clientId;
   }
 
 
-  public SentinelSecretsConfig clientSecret(@javax.annotation.Nullable String clientSecret) {
+  public SentinelSecretsConfig clientSecret(@javax.annotation.Nullable ModelsSecret clientSecret) {
     this.clientSecret = clientSecret;
     return this;
   }
 
   /**
-   * The client secret associated with the registered application in Azure AD.
+   * Get clientSecret
    * @return clientSecret
    */
   @javax.annotation.Nullable
-  public String getClientSecret() {
+  public ModelsSecret getClientSecret() {
     return clientSecret;
   }
 
-  public void setClientSecret(@javax.annotation.Nullable String clientSecret) {
+  public void setClientSecret(@javax.annotation.Nullable ModelsSecret clientSecret) {
     this.clientSecret = clientSecret;
   }
 
 
-  public SentinelSecretsConfig tenantId(@javax.annotation.Nullable String tenantId) {
+  public SentinelSecretsConfig tenantId(@javax.annotation.Nullable ModelsSecret tenantId) {
     this.tenantId = tenantId;
     return this;
   }
 
   /**
-   * The Azure Active Directory tenant (directory) ID.
+   * Get tenantId
    * @return tenantId
    */
   @javax.annotation.Nullable
-  public String getTenantId() {
+  public ModelsSecret getTenantId() {
     return tenantId;
   }
 
-  public void setTenantId(@javax.annotation.Nullable String tenantId) {
+  public void setTenantId(@javax.annotation.Nullable ModelsSecret tenantId) {
     this.tenantId = tenantId;
   }
 
@@ -203,14 +204,17 @@ public class SentinelSecretsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("client_id") != null && !jsonObj.get("client_id").isJsonNull()) && !jsonObj.get("client_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `client_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("client_id").toString()));
+      // validate the optional field `client_id`
+      if (jsonObj.get("client_id") != null && !jsonObj.get("client_id").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("client_id"));
       }
-      if ((jsonObj.get("client_secret") != null && !jsonObj.get("client_secret").isJsonNull()) && !jsonObj.get("client_secret").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `client_secret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("client_secret").toString()));
+      // validate the optional field `client_secret`
+      if (jsonObj.get("client_secret") != null && !jsonObj.get("client_secret").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("client_secret"));
       }
-      if ((jsonObj.get("tenant_id") != null && !jsonObj.get("tenant_id").isJsonNull()) && !jsonObj.get("tenant_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tenant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_id").toString()));
+      // validate the optional field `tenant_id`
+      if (jsonObj.get("tenant_id") != null && !jsonObj.get("tenant_id").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("tenant_id"));
       }
   }
 

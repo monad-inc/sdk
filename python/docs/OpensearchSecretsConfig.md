@@ -6,7 +6,7 @@ OpenSearch Output Secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**password** | **str** | The password for authenticating with OpenSearch. | [optional] 
+**password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

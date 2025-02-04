@@ -6,7 +6,7 @@ Semgrep project details secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**api_key** | **str** | API Key for the Semgrep API. This is required to authenticate requests. | [optional] 
+**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

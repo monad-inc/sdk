@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccessKey** | Pointer to **string** | Access Key for the Tenable API. This is required to authenticate requests. | [optional] 
-**SecretKey** | Pointer to **string** | Secret Key for the Tenable API. This is required to authenticate requests. | [optional] 
+**AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAccessKey
 
-`func (o *TenableAssetsSecretsConfig) GetAccessKey() string`
+`func (o *TenableAssetsSecretsConfig) GetAccessKey() ModelsSecret`
 
 GetAccessKey returns the AccessKey field if non-nil, zero value otherwise.
 
 ### GetAccessKeyOk
 
-`func (o *TenableAssetsSecretsConfig) GetAccessKeyOk() (*string, bool)`
+`func (o *TenableAssetsSecretsConfig) GetAccessKeyOk() (*ModelsSecret, bool)`
 
 GetAccessKeyOk returns a tuple with the AccessKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccessKey
 
-`func (o *TenableAssetsSecretsConfig) SetAccessKey(v string)`
+`func (o *TenableAssetsSecretsConfig) SetAccessKey(v ModelsSecret)`
 
 SetAccessKey sets AccessKey field to given value.
 
@@ -53,20 +53,20 @@ HasAccessKey returns a boolean if a field has been set.
 
 ### GetSecretKey
 
-`func (o *TenableAssetsSecretsConfig) GetSecretKey() string`
+`func (o *TenableAssetsSecretsConfig) GetSecretKey() ModelsSecret`
 
 GetSecretKey returns the SecretKey field if non-nil, zero value otherwise.
 
 ### GetSecretKeyOk
 
-`func (o *TenableAssetsSecretsConfig) GetSecretKeyOk() (*string, bool)`
+`func (o *TenableAssetsSecretsConfig) GetSecretKeyOk() (*ModelsSecret, bool)`
 
 GetSecretKeyOk returns a tuple with the SecretKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecretKey
 
-`func (o *TenableAssetsSecretsConfig) SetSecretKey(v string)`
+`func (o *TenableAssetsSecretsConfig) SetSecretKey(v ModelsSecret)`
 
 SetSecretKey sets SecretKey field to given value.
 

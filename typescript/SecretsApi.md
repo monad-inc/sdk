@@ -93,7 +93,7 @@ const request: SecretsApiV2OrganizationIdSecretsPostRequest = {
   routesV2CreateOrUpdateSecretRequest: {
     description: "description_example",
     name: "name_example",
-    value: null,
+    value: "value_example",
   },
 };
 
@@ -273,7 +273,7 @@ const request: SecretsApiV2OrganizationIdSecretsSecretIdPatchRequest = {
   routesV2CreateOrUpdateSecretRequest: {
     description: "description_example",
     name: "name_example",
-    value: null,
+    value: "value_example",
   },
 };
 

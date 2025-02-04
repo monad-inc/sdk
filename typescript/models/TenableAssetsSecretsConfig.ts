@@ -10,20 +10,15 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Tenable assets secrets
 */
 export class TenableAssetsSecretsConfig {
-    /**
-    * Access Key for the Tenable API. This is required to authenticate requests.
-    */
-    'accessKey'?: string;
-    /**
-    * Secret Key for the Tenable API. This is required to authenticate requests.
-    */
-    'secretKey'?: string;
+    'accessKey'?: ModelsSecret;
+    'secretKey'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -33,13 +28,13 @@ export class TenableAssetsSecretsConfig {
         {
             "name": "accessKey",
             "baseName": "access_key",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         },
         {
             "name": "secretKey",
             "baseName": "secret_key",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

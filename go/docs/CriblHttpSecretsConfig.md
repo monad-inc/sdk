@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthToken** | Pointer to **string** | The authentication token value you&#39;ve set for your HTTP Source. This token is used to authenticate requests to your Cribl endpoint. | [optional] 
+**AuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAuthToken
 
-`func (o *CriblHttpSecretsConfig) GetAuthToken() string`
+`func (o *CriblHttpSecretsConfig) GetAuthToken() ModelsSecret`
 
 GetAuthToken returns the AuthToken field if non-nil, zero value otherwise.
 
 ### GetAuthTokenOk
 
-`func (o *CriblHttpSecretsConfig) GetAuthTokenOk() (*string, bool)`
+`func (o *CriblHttpSecretsConfig) GetAuthTokenOk() (*ModelsSecret, bool)`
 
 GetAuthTokenOk returns a tuple with the AuthToken field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthToken
 
-`func (o *CriblHttpSecretsConfig) SetAuthToken(v string)`
+`func (o *CriblHttpSecretsConfig) SetAuthToken(v ModelsSecret)`
 
 SetAuthToken sets AuthToken field to given value.
 

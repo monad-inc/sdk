@@ -106,7 +106,6 @@ Class | Method | HTTP request | Description
 *OrganizationInputsAPI* | [**V1OrganizationIdInputsInputIdGet**](docs/OrganizationInputsAPI.md#v1organizationidinputsinputidget) | **Get** /v1/{organization_id}/inputs/{input_id} | Get input
 *OrganizationInputsAPI* | [**V1OrganizationIdInputsInputIdPatch**](docs/OrganizationInputsAPI.md#v1organizationidinputsinputidpatch) | **Patch** /v1/{organization_id}/inputs/{input_id} | Update input
 *OrganizationInputsAPI* | [**V1OrganizationIdInputsPost**](docs/OrganizationInputsAPI.md#v1organizationidinputspost) | **Post** /v1/{organization_id}/inputs | Create input
-*OrganizationInputsAPI* | [**V2OrganizationIdInputsBulkPost**](docs/OrganizationInputsAPI.md#v2organizationidinputsbulkpost) | **Post** /v2/{organization_id}/inputs/bulk | Bulk create inputs
 *OrganizationInputsAPI* | [**V2OrganizationIdInputsInputIdPatch**](docs/OrganizationInputsAPI.md#v2organizationidinputsinputidpatch) | **Patch** /v2/{organization_id}/inputs/{input_id} | Update input
 *OrganizationInputsAPI* | [**V2OrganizationIdInputsPost**](docs/OrganizationInputsAPI.md#v2organizationidinputspost) | **Post** /v2/{organization_id}/inputs | Create input
 *OrganizationInputsAPI* | [**V2OrganizationIdInputsTestConnectionPost**](docs/OrganizationInputsAPI.md#v2organizationidinputstestconnectionpost) | **Post** /v2/{organization_id}/inputs/test-connection | Test input connection
@@ -303,7 +302,6 @@ Class | Method | HTTP request | Description
  - [RoutesUpdateUserInOrganizationRequest](docs/RoutesUpdateUserInOrganizationRequest.md)
  - [RoutesV2ApplyTransformationRequest](docs/RoutesV2ApplyTransformationRequest.md)
  - [RoutesV2ApplyTransformationResponse](docs/RoutesV2ApplyTransformationResponse.md)
- - [RoutesV2BulkCreateInputRequest](docs/RoutesV2BulkCreateInputRequest.md)
  - [RoutesV2CreateAPIKeyRequest](docs/RoutesV2CreateAPIKeyRequest.md)
  - [RoutesV2CreateInputRequest](docs/RoutesV2CreateInputRequest.md)
  - [RoutesV2CreateOrUpdateSecretRequest](docs/RoutesV2CreateOrUpdateSecretRequest.md)

@@ -20,8 +20,7 @@ var _ MappedNullable = &OpensearchSecretsConfig{}
 
 // OpensearchSecretsConfig OpenSearch Output Secrets
 type OpensearchSecretsConfig struct {
-	// The password for authenticating with OpenSearch.
-	Password *string `json:"password,omitempty"`
+	Password *ModelsSecret `json:"password,omitempty"`
 }
 
 // NewOpensearchSecretsConfig instantiates a new OpensearchSecretsConfig object
@@ -42,9 +41,9 @@ func NewOpensearchSecretsConfigWithDefaults() *OpensearchSecretsConfig {
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise.
-func (o *OpensearchSecretsConfig) GetPassword() string {
+func (o *OpensearchSecretsConfig) GetPassword() ModelsSecret {
 	if o == nil || IsNil(o.Password) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.Password
@@ -52,7 +51,7 @@ func (o *OpensearchSecretsConfig) GetPassword() string {
 
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OpensearchSecretsConfig) GetPasswordOk() (*string, bool) {
+func (o *OpensearchSecretsConfig) GetPasswordOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *OpensearchSecretsConfig) HasPassword() bool {
 	return false
 }
 
-// SetPassword gets a reference to the given string and assigns it to the Password field.
-func (o *OpensearchSecretsConfig) SetPassword(v string) {
+// SetPassword gets a reference to the given ModelsSecret and assigns it to the Password field.
+func (o *OpensearchSecretsConfig) SetPassword(v ModelsSecret) {
 	o.Password = &v
 }
 

@@ -10,7 +10,6 @@ All URIs are relative to *https://monad.com/api*
 | [**v1OrganizationIdInputsInputIdGet**](OrganizationInputsApi.md#v1OrganizationIdInputsInputIdGet) | **GET** /v1/{organization_id}/inputs/{input_id} | Get input |
 | [**v1OrganizationIdInputsInputIdPatch**](OrganizationInputsApi.md#v1OrganizationIdInputsInputIdPatch) | **PATCH** /v1/{organization_id}/inputs/{input_id} | Update input |
 | [**v1OrganizationIdInputsPost**](OrganizationInputsApi.md#v1OrganizationIdInputsPost) | **POST** /v1/{organization_id}/inputs | Create input |
-| [**v2OrganizationIdInputsBulkPost**](OrganizationInputsApi.md#v2OrganizationIdInputsBulkPost) | **POST** /v2/{organization_id}/inputs/bulk | Bulk create inputs |
 | [**v2OrganizationIdInputsInputIdPatch**](OrganizationInputsApi.md#v2OrganizationIdInputsInputIdPatch) | **PATCH** /v2/{organization_id}/inputs/{input_id} | Update input |
 | [**v2OrganizationIdInputsPost**](OrganizationInputsApi.md#v2OrganizationIdInputsPost) | **POST** /v2/{organization_id}/inputs | Create input |
 | [**v2OrganizationIdInputsTestConnectionPost**](OrganizationInputsApi.md#v2OrganizationIdInputsTestConnectionPost) | **POST** /v2/{organization_id}/inputs/test-connection | Test input connection |
@@ -493,87 +492,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Input created successfully |  -  |
 | **400** | Failed to create input |  -  |
-
-<a id="v2OrganizationIdInputsBulkPost"></a>
-# **v2OrganizationIdInputsBulkPost**
-> List&lt;ModelsInput&gt; v2OrganizationIdInputsBulkPost(organizationId, routesV2BulkCreateInputRequest, testConnection)
-
-Bulk create inputs
-
-Create multiple inputs in a single request
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.OrganizationInputsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://monad.com/api");
-    
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: Bearer
-    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-    Bearer.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Bearer.setApiKeyPrefix("Token");
-
-    OrganizationInputsApi apiInstance = new OrganizationInputsApi(defaultClient);
-    String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV2BulkCreateInputRequest routesV2BulkCreateInputRequest = new RoutesV2BulkCreateInputRequest(); // RoutesV2BulkCreateInputRequest | Request body for creating multiple inputs
-    Boolean testConnection = true; // Boolean | Test connection before creating the input
-    try {
-      List<ModelsInput> result = apiInstance.v2OrganizationIdInputsBulkPost(organizationId, routesV2BulkCreateInputRequest, testConnection);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrganizationInputsApi#v2OrganizationIdInputsBulkPost");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organizationId** | **String**| Organization ID | |
-| **routesV2BulkCreateInputRequest** | [**RoutesV2BulkCreateInputRequest**](RoutesV2BulkCreateInputRequest.md)| Request body for creating multiple inputs | |
-| **testConnection** | **Boolean**| Test connection before creating the input | [optional] |
-
-### Return type
-
-[**List&lt;ModelsInput&gt;**](ModelsInput.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Inputs created successfully |  -  |
-| **400** | Validation error |  -  |
-| **500** | Failed to create inputs |  -  |
 
 <a id="v2OrganizationIdInputsInputIdPatch"></a>
 # **v2OrganizationIdInputsInputIdPatch**

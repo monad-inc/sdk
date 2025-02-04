@@ -20,10 +20,8 @@ var _ MappedNullable = &ElasticsearchSecretsConfig{}
 
 // ElasticsearchSecretsConfig Elasticsearch Output Secrets
 type ElasticsearchSecretsConfig struct {
-	// API key for authenticating with the Elasticsearch cluster. Required when auth type is set to 'api_key'.
-	ApiKey *string `json:"api_key,omitempty"`
-	// Password for authenticating with the Elasticsearch cluster. Required when auth type is set to 'password'.
-	Password *string `json:"password,omitempty"`
+	ApiKey *ModelsSecret `json:"api_key,omitempty"`
+	Password *ModelsSecret `json:"password,omitempty"`
 }
 
 // NewElasticsearchSecretsConfig instantiates a new ElasticsearchSecretsConfig object
@@ -44,9 +42,9 @@ func NewElasticsearchSecretsConfigWithDefaults() *ElasticsearchSecretsConfig {
 }
 
 // GetApiKey returns the ApiKey field value if set, zero value otherwise.
-func (o *ElasticsearchSecretsConfig) GetApiKey() string {
+func (o *ElasticsearchSecretsConfig) GetApiKey() ModelsSecret {
 	if o == nil || IsNil(o.ApiKey) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ApiKey
@@ -54,7 +52,7 @@ func (o *ElasticsearchSecretsConfig) GetApiKey() string {
 
 // GetApiKeyOk returns a tuple with the ApiKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ElasticsearchSecretsConfig) GetApiKeyOk() (*string, bool) {
+func (o *ElasticsearchSecretsConfig) GetApiKeyOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ApiKey) {
 		return nil, false
 	}
@@ -70,15 +68,15 @@ func (o *ElasticsearchSecretsConfig) HasApiKey() bool {
 	return false
 }
 
-// SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
-func (o *ElasticsearchSecretsConfig) SetApiKey(v string) {
+// SetApiKey gets a reference to the given ModelsSecret and assigns it to the ApiKey field.
+func (o *ElasticsearchSecretsConfig) SetApiKey(v ModelsSecret) {
 	o.ApiKey = &v
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise.
-func (o *ElasticsearchSecretsConfig) GetPassword() string {
+func (o *ElasticsearchSecretsConfig) GetPassword() ModelsSecret {
 	if o == nil || IsNil(o.Password) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.Password
@@ -86,7 +84,7 @@ func (o *ElasticsearchSecretsConfig) GetPassword() string {
 
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ElasticsearchSecretsConfig) GetPasswordOk() (*string, bool) {
+func (o *ElasticsearchSecretsConfig) GetPasswordOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
@@ -102,8 +100,8 @@ func (o *ElasticsearchSecretsConfig) HasPassword() bool {
 	return false
 }
 
-// SetPassword gets a reference to the given string and assigns it to the Password field.
-func (o *ElasticsearchSecretsConfig) SetPassword(v string) {
+// SetPassword gets a reference to the given ModelsSecret and assigns it to the Password field.
+func (o *ElasticsearchSecretsConfig) SetPassword(v ModelsSecret) {
 	o.Password = &v
 }
 

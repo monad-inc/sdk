@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**integration_key** | **str** |  | [optional] 
-**secret_key** | **str** |  | [optional] 
+**integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

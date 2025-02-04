@@ -15,7 +15,7 @@ import { HttpFile } from '../http/http';
 export class RoutesV2CreateOrUpdateSecretRequest {
     'description'?: string;
     'name'?: string;
-    'value'?: any | null;
+    'value'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -37,7 +37,7 @@ export class RoutesV2CreateOrUpdateSecretRequest {
         {
             "name": "value",
             "baseName": "value",
-            "type": "any",
+            "type": "string",
             "format": ""
         }    ];
 

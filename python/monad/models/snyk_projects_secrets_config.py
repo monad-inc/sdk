@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,7 @@ class SnykProjectsSecretsConfig(BaseModel):
     """
     Snyk projects secrets
     """ # noqa: E501
-    api_key: Optional[StrictStr] = Field(default=None, description="API Key for the Snyk API. This is required to authenticate requests.")
+    api_key: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["api_key"]
 
     model_config = ConfigDict(
@@ -69,6 +70,9 @@ class SnykProjectsSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of api_key
+        if self.api_key:
+            _dict['api_key'] = self.api_key.to_dict()
         return _dict
 
     @classmethod
@@ -81,7 +85,7 @@ class SnykProjectsSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "api_key": obj.get("api_key")
+            "api_key": ModelsSecret.from_dict(obj["api_key"]) if obj.get("api_key") is not None else None
         })
         return _obj
 

@@ -8,7 +8,7 @@ Tines Events Logs secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**apiKey** | **String** | API Key to authenticate the Tines API. |  [optional] |
+|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 
 
 

@@ -6,7 +6,7 @@ Slack Users secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**token** | **str** | Token to authenticate against the slack API | [optional] 
+**token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

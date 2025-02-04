@@ -18,14 +18,21 @@ import (
 // checks if the ModelsSecret type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ModelsSecret{}
 
-// ModelsSecret struct for ModelsSecret
+// ModelsSecret The Access ID for authenticating with Sumo Logic.
 type ModelsSecret struct {
+	// When the secret was created
 	CreatedAt *string `json:"created_at,omitempty"`
+	// The user set Description of the secret
 	Description *string `json:"description,omitempty"`
+	// The ID of the secret
 	Id *string `json:"id,omitempty"`
+	// The user set Name of the secret
 	Name *string `json:"name,omitempty"`
+	// The OrganizationID the secret belongs to
 	OrganizationId *string `json:"organization_id,omitempty"`
+	// When the secret was updated
 	UpdatedAt *string `json:"updated_at,omitempty"`
+	// The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload.
 	Value *string `json:"value,omitempty"`
 }
 

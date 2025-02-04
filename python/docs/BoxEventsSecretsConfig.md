@@ -6,9 +6,9 @@ Box Events secrets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**client_id** | **str** | Client Secret for the Box API. This is required to authenticate requests. | [optional] 
-**client_secret** | **str** | Client ID for the Box API. This is required to authenticate requests. | [optional] 
-**enterprise_id** | **str** | Client Secret for the Box API. This is required to authenticate requests. | [optional] 
+**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**enterprise_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

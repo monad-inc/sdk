@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**integrationKey** | **String** |  |  [optional] |
-|**secretKey** | **String** |  |  [optional] |
+|**integrationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 
 
 

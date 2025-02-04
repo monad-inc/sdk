@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | Pointer to **string** | The client ID of the Azure AD application | [optional] 
-**ClientSecret** | Pointer to **string** | The client secret of the Azure AD application | [optional] 
+**ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetClientId
 
-`func (o *AzureActivityLogsSecretsConfig) GetClientId() string`
+`func (o *AzureActivityLogsSecretsConfig) GetClientId() ModelsSecret`
 
 GetClientId returns the ClientId field if non-nil, zero value otherwise.
 
 ### GetClientIdOk
 
-`func (o *AzureActivityLogsSecretsConfig) GetClientIdOk() (*string, bool)`
+`func (o *AzureActivityLogsSecretsConfig) GetClientIdOk() (*ModelsSecret, bool)`
 
 GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientId
 
-`func (o *AzureActivityLogsSecretsConfig) SetClientId(v string)`
+`func (o *AzureActivityLogsSecretsConfig) SetClientId(v ModelsSecret)`
 
 SetClientId sets ClientId field to given value.
 
@@ -53,20 +53,20 @@ HasClientId returns a boolean if a field has been set.
 
 ### GetClientSecret
 
-`func (o *AzureActivityLogsSecretsConfig) GetClientSecret() string`
+`func (o *AzureActivityLogsSecretsConfig) GetClientSecret() ModelsSecret`
 
 GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
 
 ### GetClientSecretOk
 
-`func (o *AzureActivityLogsSecretsConfig) GetClientSecretOk() (*string, bool)`
+`func (o *AzureActivityLogsSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool)`
 
 GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientSecret
 
-`func (o *AzureActivityLogsSecretsConfig) SetClientSecret(v string)`
+`func (o *AzureActivityLogsSecretsConfig) SetClientSecret(v ModelsSecret)`
 
 SetClientSecret sets ClientSecret field to given value.
 

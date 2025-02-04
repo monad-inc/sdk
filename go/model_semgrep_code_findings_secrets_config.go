@@ -20,8 +20,7 @@ var _ MappedNullable = &SemgrepCodeFindingsSecretsConfig{}
 
 // SemgrepCodeFindingsSecretsConfig Semgrep code findings secrets
 type SemgrepCodeFindingsSecretsConfig struct {
-	// API Key for the Semgrep API. This is required to authenticate requests.
-	ApiKey *string `json:"api_key,omitempty"`
+	ApiKey *ModelsSecret `json:"api_key,omitempty"`
 }
 
 // NewSemgrepCodeFindingsSecretsConfig instantiates a new SemgrepCodeFindingsSecretsConfig object
@@ -42,9 +41,9 @@ func NewSemgrepCodeFindingsSecretsConfigWithDefaults() *SemgrepCodeFindingsSecre
 }
 
 // GetApiKey returns the ApiKey field value if set, zero value otherwise.
-func (o *SemgrepCodeFindingsSecretsConfig) GetApiKey() string {
+func (o *SemgrepCodeFindingsSecretsConfig) GetApiKey() ModelsSecret {
 	if o == nil || IsNil(o.ApiKey) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ApiKey
@@ -52,7 +51,7 @@ func (o *SemgrepCodeFindingsSecretsConfig) GetApiKey() string {
 
 // GetApiKeyOk returns a tuple with the ApiKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SemgrepCodeFindingsSecretsConfig) GetApiKeyOk() (*string, bool) {
+func (o *SemgrepCodeFindingsSecretsConfig) GetApiKeyOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ApiKey) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *SemgrepCodeFindingsSecretsConfig) HasApiKey() bool {
 	return false
 }
 
-// SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
-func (o *SemgrepCodeFindingsSecretsConfig) SetApiKey(v string) {
+// SetApiKey gets a reference to the given ModelsSecret and assigns it to the ApiKey field.
+func (o *SemgrepCodeFindingsSecretsConfig) SetApiKey(v ModelsSecret) {
 	o.ApiKey = &v
 }
 

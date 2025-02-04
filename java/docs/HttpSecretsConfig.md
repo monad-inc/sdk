@@ -8,7 +8,7 @@ HTTP Output Secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**authHeaders** | **Map&lt;String, String&gt;** | Authentication headers |  [optional] |
+|**authHeaders** | [**Map&lt;String, ModelsSecret&gt;**](ModelsSecret.md) | Authentication headers |  [optional] |
 
 
 

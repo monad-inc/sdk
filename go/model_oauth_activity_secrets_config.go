@@ -20,8 +20,7 @@ var _ MappedNullable = &OauthActivitySecretsConfig{}
 
 // OauthActivitySecretsConfig Google Workspace OAuth Activity secrets
 type OauthActivitySecretsConfig struct {
-	// JSON credentials to authenticate with Google Cloud.
-	CredentialsJson *string `json:"credentials_json,omitempty"`
+	CredentialsJson *ModelsSecret `json:"credentials_json,omitempty"`
 }
 
 // NewOauthActivitySecretsConfig instantiates a new OauthActivitySecretsConfig object
@@ -42,9 +41,9 @@ func NewOauthActivitySecretsConfigWithDefaults() *OauthActivitySecretsConfig {
 }
 
 // GetCredentialsJson returns the CredentialsJson field value if set, zero value otherwise.
-func (o *OauthActivitySecretsConfig) GetCredentialsJson() string {
+func (o *OauthActivitySecretsConfig) GetCredentialsJson() ModelsSecret {
 	if o == nil || IsNil(o.CredentialsJson) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.CredentialsJson
@@ -52,7 +51,7 @@ func (o *OauthActivitySecretsConfig) GetCredentialsJson() string {
 
 // GetCredentialsJsonOk returns a tuple with the CredentialsJson field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OauthActivitySecretsConfig) GetCredentialsJsonOk() (*string, bool) {
+func (o *OauthActivitySecretsConfig) GetCredentialsJsonOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.CredentialsJson) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *OauthActivitySecretsConfig) HasCredentialsJson() bool {
 	return false
 }
 
-// SetCredentialsJson gets a reference to the given string and assigns it to the CredentialsJson field.
-func (o *OauthActivitySecretsConfig) SetCredentialsJson(v string) {
+// SetCredentialsJson gets a reference to the given ModelsSecret and assigns it to the CredentialsJson field.
+func (o *OauthActivitySecretsConfig) SetCredentialsJson(v ModelsSecret) {
 	o.CredentialsJson = &v
 }
 

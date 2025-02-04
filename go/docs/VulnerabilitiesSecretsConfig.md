@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | Pointer to **string** | Client ID for the CrowdStrike API. This is required to authenticate requests. | [optional] 
-**ClientSecret** | Pointer to **string** | Client Secret for the CrowdStrike API. This is required to authenticate requests. | [optional] 
+**ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetClientId
 
-`func (o *VulnerabilitiesSecretsConfig) GetClientId() string`
+`func (o *VulnerabilitiesSecretsConfig) GetClientId() ModelsSecret`
 
 GetClientId returns the ClientId field if non-nil, zero value otherwise.
 
 ### GetClientIdOk
 
-`func (o *VulnerabilitiesSecretsConfig) GetClientIdOk() (*string, bool)`
+`func (o *VulnerabilitiesSecretsConfig) GetClientIdOk() (*ModelsSecret, bool)`
 
 GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientId
 
-`func (o *VulnerabilitiesSecretsConfig) SetClientId(v string)`
+`func (o *VulnerabilitiesSecretsConfig) SetClientId(v ModelsSecret)`
 
 SetClientId sets ClientId field to given value.
 
@@ -53,20 +53,20 @@ HasClientId returns a boolean if a field has been set.
 
 ### GetClientSecret
 
-`func (o *VulnerabilitiesSecretsConfig) GetClientSecret() string`
+`func (o *VulnerabilitiesSecretsConfig) GetClientSecret() ModelsSecret`
 
 GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
 
 ### GetClientSecretOk
 
-`func (o *VulnerabilitiesSecretsConfig) GetClientSecretOk() (*string, bool)`
+`func (o *VulnerabilitiesSecretsConfig) GetClientSecretOk() (*ModelsSecret, bool)`
 
 GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientSecret
 
-`func (o *VulnerabilitiesSecretsConfig) SetClientSecret(v string)`
+`func (o *VulnerabilitiesSecretsConfig) SetClientSecret(v ModelsSecret)`
 
 SetClientSecret sets ClientSecret field to given value.
 

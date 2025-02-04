@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,7 @@ class CriblHttpSecretsConfig(BaseModel):
     """
     Cribl HTTP Output Secrets
     """ # noqa: E501
-    auth_token: Optional[StrictStr] = Field(default=None, description="The authentication token value you've set for your HTTP Source. This token is used to authenticate requests to your Cribl endpoint.")
+    auth_token: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["auth_token"]
 
     model_config = ConfigDict(
@@ -69,6 +70,9 @@ class CriblHttpSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of auth_token
+        if self.auth_token:
+            _dict['auth_token'] = self.auth_token.to_dict()
         return _dict
 
     @classmethod
@@ -81,7 +85,7 @@ class CriblHttpSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "auth_token": obj.get("auth_token")
+            "auth_token": ModelsSecret.from_dict(obj["auth_token"]) if obj.get("auth_token") is not None else None
         })
         return _obj
 

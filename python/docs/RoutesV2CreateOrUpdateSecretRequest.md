@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**value** | **object** |  | [optional] 
+**value** | **str** |  | [optional] 
 
 ## Example
 

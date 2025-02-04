@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**client_id** | **str** | Client ID for the Wiz API. This is required to authenticate requests. | [optional] 
-**client_secret** | **str** | Client Secret for the Wiz API. This is required to authenticate requests. | [optional] 
-**credentials_json** | **str** | JSON credentials to authenticate with Google Cloud. | [optional] 
-**integration_key** | **str** |  | [optional] 
-**secret_key** | **str** | Secret Key for the Tenable API. This is required to authenticate requests. | [optional] 
-**personal_access_token** | **str** | Your personal access token that grants read:audit_log | [optional] 
-**enterprise_id** | **str** | Client Secret for the Box API. This is required to authenticate requests. | [optional] 
-**api_key** | **str** | API Key for the Snyk API. This is required to authenticate requests. | [optional] 
-**token** | **str** | Token for the Wiz API. This is required to authenticate requests. | [optional] 
-**access_key** | **str** | Access Key for the Tenable API. This is required to authenticate requests. | [optional] 
-**customer_id** | **str** | Google Workspace Customer ID. If you use your google workspace customer ID you will pull data on all users in all domains of your Google Workspace account. This should be set if Domain is not set. | [optional] 
-**domain** | **str** | Domain name your users belong to. If you use a google workspace domain you will only pull user data for users that belong to that domain. This should be set if CustomerID is not set | [optional] 
+**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**enterprise_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**customer_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**domain** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

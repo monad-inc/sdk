@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IntegrationKey** | Pointer to **string** |  | [optional] 
-**SecretKey** | Pointer to **string** |  | [optional] 
+**IntegrationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetIntegrationKey
 
-`func (o *AdminLogsSecretsConfig) GetIntegrationKey() string`
+`func (o *AdminLogsSecretsConfig) GetIntegrationKey() ModelsSecret`
 
 GetIntegrationKey returns the IntegrationKey field if non-nil, zero value otherwise.
 
 ### GetIntegrationKeyOk
 
-`func (o *AdminLogsSecretsConfig) GetIntegrationKeyOk() (*string, bool)`
+`func (o *AdminLogsSecretsConfig) GetIntegrationKeyOk() (*ModelsSecret, bool)`
 
 GetIntegrationKeyOk returns a tuple with the IntegrationKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIntegrationKey
 
-`func (o *AdminLogsSecretsConfig) SetIntegrationKey(v string)`
+`func (o *AdminLogsSecretsConfig) SetIntegrationKey(v ModelsSecret)`
 
 SetIntegrationKey sets IntegrationKey field to given value.
 
@@ -53,20 +53,20 @@ HasIntegrationKey returns a boolean if a field has been set.
 
 ### GetSecretKey
 
-`func (o *AdminLogsSecretsConfig) GetSecretKey() string`
+`func (o *AdminLogsSecretsConfig) GetSecretKey() ModelsSecret`
 
 GetSecretKey returns the SecretKey field if non-nil, zero value otherwise.
 
 ### GetSecretKeyOk
 
-`func (o *AdminLogsSecretsConfig) GetSecretKeyOk() (*string, bool)`
+`func (o *AdminLogsSecretsConfig) GetSecretKeyOk() (*ModelsSecret, bool)`
 
 GetSecretKeyOk returns a tuple with the SecretKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecretKey
 
-`func (o *AdminLogsSecretsConfig) SetSecretKey(v string)`
+`func (o *AdminLogsSecretsConfig) SetSecretKey(v ModelsSecret)`
 
 SetSecretKey sets SecretKey field to given value.
 

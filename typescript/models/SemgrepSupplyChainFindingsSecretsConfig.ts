@@ -10,16 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Semgrep supply chain findings secrets
 */
 export class SemgrepSupplyChainFindingsSecretsConfig {
-    /**
-    * API Key for the Semgrep API. This is required to authenticate requests.
-    */
-    'apiKey'?: string;
+    'apiKey'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,7 +27,7 @@ export class SemgrepSupplyChainFindingsSecretsConfig {
         {
             "name": "apiKey",
             "baseName": "api_key",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

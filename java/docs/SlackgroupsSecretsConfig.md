@@ -8,7 +8,7 @@ Slack Groups secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**token** | **String** | Token to authenticate against the slack API |  [optional] |
+|**token** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 
 
 

@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +28,9 @@ class BoxUsersSecretsConfig(BaseModel):
     """
     Box Users secrets
     """ # noqa: E501
-    client_id: Optional[StrictStr] = Field(default=None, description="Client Secret for the Box API. This is required to authenticate requests.")
-    client_secret: Optional[StrictStr] = Field(default=None, description="Client ID for the Box API. This is required to authenticate requests.")
-    enterprise_id: Optional[StrictStr] = Field(default=None, description="Client Secret for the Box API. This is required to authenticate requests.")
+    client_id: Optional[ModelsSecret] = None
+    client_secret: Optional[ModelsSecret] = None
+    enterprise_id: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["client_id", "client_secret", "enterprise_id"]
 
     model_config = ConfigDict(
@@ -71,6 +72,15 @@ class BoxUsersSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of client_id
+        if self.client_id:
+            _dict['client_id'] = self.client_id.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of client_secret
+        if self.client_secret:
+            _dict['client_secret'] = self.client_secret.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of enterprise_id
+        if self.enterprise_id:
+            _dict['enterprise_id'] = self.enterprise_id.to_dict()
         return _dict
 
     @classmethod
@@ -83,9 +93,9 @@ class BoxUsersSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "client_id": obj.get("client_id"),
-            "client_secret": obj.get("client_secret"),
-            "enterprise_id": obj.get("enterprise_id")
+            "client_id": ModelsSecret.from_dict(obj["client_id"]) if obj.get("client_id") is not None else None,
+            "client_secret": ModelsSecret.from_dict(obj["client_secret"]) if obj.get("client_secret") is not None else None,
+            "enterprise_id": ModelsSecret.from_dict(obj["enterprise_id"]) if obj.get("enterprise_id") is not None else None
         })
         return _obj
 

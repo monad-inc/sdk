@@ -8,7 +8,7 @@ GitHub audit logs secrets
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**personalAccessToken** | **String** | Your personal access token that grants read:audit_log |  [optional] |
+|**personalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 
 
 

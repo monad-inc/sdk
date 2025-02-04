@@ -10,20 +10,15 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Elasticsearch Output Secrets
 */
 export class ElasticsearchSecretsConfig {
-    /**
-    * API key for authenticating with the Elasticsearch cluster. Required when auth type is set to \'api_key\'.
-    */
-    'apiKey'?: string;
-    /**
-    * Password for authenticating with the Elasticsearch cluster. Required when auth type is set to \'password\'.
-    */
-    'password'?: string;
+    'apiKey'?: ModelsSecret;
+    'password'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -33,13 +28,13 @@ export class ElasticsearchSecretsConfig {
         {
             "name": "apiKey",
             "baseName": "api_key",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         },
         {
             "name": "password",
             "baseName": "password",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

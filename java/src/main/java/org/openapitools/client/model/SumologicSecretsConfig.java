@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsSecret;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,55 +49,55 @@ import org.openapitools.client.JSON;
 /**
  * Sumo Logic Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-03T23:42:26.720484864Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SumologicSecretsConfig {
   public static final String SERIALIZED_NAME_ACCESS_ID = "access_id";
   @SerializedName(SERIALIZED_NAME_ACCESS_ID)
   @javax.annotation.Nullable
-  private String accessId;
+  private ModelsSecret accessId;
 
   public static final String SERIALIZED_NAME_ACCESS_KEY = "access_key";
   @SerializedName(SERIALIZED_NAME_ACCESS_KEY)
   @javax.annotation.Nullable
-  private String accessKey;
+  private ModelsSecret accessKey;
 
   public SumologicSecretsConfig() {
   }
 
-  public SumologicSecretsConfig accessId(@javax.annotation.Nullable String accessId) {
+  public SumologicSecretsConfig accessId(@javax.annotation.Nullable ModelsSecret accessId) {
     this.accessId = accessId;
     return this;
   }
 
   /**
-   * The Access ID for authenticating with Sumo Logic.
+   * Get accessId
    * @return accessId
    */
   @javax.annotation.Nullable
-  public String getAccessId() {
+  public ModelsSecret getAccessId() {
     return accessId;
   }
 
-  public void setAccessId(@javax.annotation.Nullable String accessId) {
+  public void setAccessId(@javax.annotation.Nullable ModelsSecret accessId) {
     this.accessId = accessId;
   }
 
 
-  public SumologicSecretsConfig accessKey(@javax.annotation.Nullable String accessKey) {
+  public SumologicSecretsConfig accessKey(@javax.annotation.Nullable ModelsSecret accessKey) {
     this.accessKey = accessKey;
     return this;
   }
 
   /**
-   * The Access Key for authenticating with Sumo Logic.
+   * Get accessKey
    * @return accessKey
    */
   @javax.annotation.Nullable
-  public String getAccessKey() {
+  public ModelsSecret getAccessKey() {
     return accessKey;
   }
 
-  public void setAccessKey(@javax.annotation.Nullable String accessKey) {
+  public void setAccessKey(@javax.annotation.Nullable ModelsSecret accessKey) {
     this.accessKey = accessKey;
   }
 
@@ -176,11 +177,13 @@ public class SumologicSecretsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("access_id") != null && !jsonObj.get("access_id").isJsonNull()) && !jsonObj.get("access_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `access_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("access_id").toString()));
+      // validate the optional field `access_id`
+      if (jsonObj.get("access_id") != null && !jsonObj.get("access_id").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("access_id"));
       }
-      if ((jsonObj.get("access_key") != null && !jsonObj.get("access_key").isJsonNull()) && !jsonObj.get("access_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `access_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("access_key").toString()));
+      // validate the optional field `access_key`
+      if (jsonObj.get("access_key") != null && !jsonObj.get("access_key").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("access_key"));
       }
   }
 

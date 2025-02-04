@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Egress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
+**Errors** | Pointer to **int32** |  | [optional] 
 **Ingress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **Nodes** | Pointer to [**[]ModelsPipelineNodeStatus**](ModelsPipelineNodeStatus.md) |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
@@ -54,6 +55,31 @@ SetEgress sets Egress field to given value.
 `func (o *ModelsPipelineStatus) HasEgress() bool`
 
 HasEgress returns a boolean if a field has been set.
+
+### GetErrors
+
+`func (o *ModelsPipelineStatus) GetErrors() int32`
+
+GetErrors returns the Errors field if non-nil, zero value otherwise.
+
+### GetErrorsOk
+
+`func (o *ModelsPipelineStatus) GetErrorsOk() (*int32, bool)`
+
+GetErrorsOk returns a tuple with the Errors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetErrors
+
+`func (o *ModelsPipelineStatus) SetErrors(v int32)`
+
+SetErrors sets Errors field to given value.
+
+### HasErrors
+
+`func (o *ModelsPipelineStatus) HasErrors() bool`
+
+HasErrors returns a boolean if a field has been set.
 
 ### GetIngress
 

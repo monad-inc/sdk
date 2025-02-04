@@ -20,8 +20,7 @@ var _ MappedNullable = &SnykProjectsSecretsConfig{}
 
 // SnykProjectsSecretsConfig Snyk projects secrets
 type SnykProjectsSecretsConfig struct {
-	// API Key for the Snyk API. This is required to authenticate requests.
-	ApiKey *string `json:"api_key,omitempty"`
+	ApiKey *ModelsSecret `json:"api_key,omitempty"`
 }
 
 // NewSnykProjectsSecretsConfig instantiates a new SnykProjectsSecretsConfig object
@@ -42,9 +41,9 @@ func NewSnykProjectsSecretsConfigWithDefaults() *SnykProjectsSecretsConfig {
 }
 
 // GetApiKey returns the ApiKey field value if set, zero value otherwise.
-func (o *SnykProjectsSecretsConfig) GetApiKey() string {
+func (o *SnykProjectsSecretsConfig) GetApiKey() ModelsSecret {
 	if o == nil || IsNil(o.ApiKey) {
-		var ret string
+		var ret ModelsSecret
 		return ret
 	}
 	return *o.ApiKey
@@ -52,7 +51,7 @@ func (o *SnykProjectsSecretsConfig) GetApiKey() string {
 
 // GetApiKeyOk returns a tuple with the ApiKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SnykProjectsSecretsConfig) GetApiKeyOk() (*string, bool) {
+func (o *SnykProjectsSecretsConfig) GetApiKeyOk() (*ModelsSecret, bool) {
 	if o == nil || IsNil(o.ApiKey) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *SnykProjectsSecretsConfig) HasApiKey() bool {
 	return false
 }
 
-// SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
-func (o *SnykProjectsSecretsConfig) SetApiKey(v string) {
+// SetApiKey gets a reference to the given ModelsSecret and assigns it to the ApiKey field.
+func (o *SnykProjectsSecretsConfig) SetApiKey(v ModelsSecret) {
 	o.ApiKey = &v
 }
 

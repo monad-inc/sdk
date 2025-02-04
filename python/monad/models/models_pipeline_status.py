@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_data_usage import ModelsDataUsage
 from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus
@@ -30,12 +30,13 @@ class ModelsPipelineStatus(BaseModel):
     ModelsPipelineStatus
     """ # noqa: E501
     egress: Optional[ModelsDataUsage] = None
+    errors: Optional[StrictInt] = None
     ingress: Optional[ModelsDataUsage] = None
     nodes: Optional[List[ModelsPipelineNodeStatus]] = None
     organization_id: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["egress", "ingress", "nodes", "organization_id", "pipeline_id", "status"]
+    __properties: ClassVar[List[str]] = ["egress", "errors", "ingress", "nodes", "organization_id", "pipeline_id", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -102,6 +103,7 @@ class ModelsPipelineStatus(BaseModel):
 
         _obj = cls.model_validate({
             "egress": ModelsDataUsage.from_dict(obj["egress"]) if obj.get("egress") is not None else None,
+            "errors": obj.get("errors"),
             "ingress": ModelsDataUsage.from_dict(obj["ingress"]) if obj.get("ingress") is not None else None,
             "nodes": [ModelsPipelineNodeStatus.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None,
             "organization_id": obj.get("organization_id"),

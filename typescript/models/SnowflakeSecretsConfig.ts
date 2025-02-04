@@ -10,20 +10,15 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
 * Snowflake Output Secrets
 */
 export class SnowflakeSecretsConfig {
-    /**
-    * The Users password if using password authentication. It is reccomended that you use service account authentication with a private key.
-    */
-    'password'?: string;
-    /**
-    * Your private KEY
-    */
-    'privateKey'?: string;
+    'password'?: ModelsSecret;
+    'privateKey'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -33,13 +28,13 @@ export class SnowflakeSecretsConfig {
         {
             "name": "password",
             "baseName": "password",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         },
         {
             "name": "privateKey",
             "baseName": "private_key",
-            "type": "string",
+            "type": "ModelsSecret",
             "format": ""
         }    ];
 

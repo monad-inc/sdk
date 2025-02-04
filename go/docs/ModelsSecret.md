@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedAt** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**OrganizationId** | Pointer to **string** |  | [optional] 
-**UpdatedAt** | Pointer to **string** |  | [optional] 
-**Value** | Pointer to **string** |  | [optional] 
+**CreatedAt** | Pointer to **string** | When the secret was created | [optional] 
+**Description** | Pointer to **string** | The user set Description of the secret | [optional] 
+**Id** | Pointer to **string** | The ID of the secret | [optional] 
+**Name** | Pointer to **string** | The user set Name of the secret | [optional] 
+**OrganizationId** | Pointer to **string** | The OrganizationID the secret belongs to | [optional] 
+**UpdatedAt** | Pointer to **string** | When the secret was updated | [optional] 
+**Value** | Pointer to **string** | The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload. | [optional] 
 
 ## Methods
 
