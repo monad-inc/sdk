@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS Cloudtrail settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T19:18:32.141595715Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class CloudtrailSettingsConfig {
   public static final String SERIALIZED_NAME_BUCKET = "bucket";
   @SerializedName(SERIALIZED_NAME_BUCKET)

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Workspace OAuth Activity secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T18:38:54.966127337Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-04T19:18:32.141595715Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class OauthActivitySecretsConfig {
   public static final String SERIALIZED_NAME_CREDENTIALS_JSON = "credentials_json";
   @SerializedName(SERIALIZED_NAME_CREDENTIALS_JSON)
