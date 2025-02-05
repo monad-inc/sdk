@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-02-05T15:31:21.366692873Z[Etc/UTC]
+  - Build date: 2025-02-05T18:55:37.715073041Z[Etc/UTC]
   - Generator version: 7.11.0
 
 This is the monad API
