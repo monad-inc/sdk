@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Semgrep deployments settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-06T23:16:19.330452438Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-07T15:11:34.404315812Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SemgrepDeploymentsSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
