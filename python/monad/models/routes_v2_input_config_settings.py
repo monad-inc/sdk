@@ -86,35 +86,35 @@ class RoutesV2InputConfigSettings(BaseModel):
     # data type: BoxUsersSettingsConfig
     oneof_schema_9_validator: Optional[BoxUsersSettingsConfig] = None
     # data type: object
-    oneof_schema_10_validator: Optional[Dict[str, Any]] = Field(default=None, description="Github Advisory Database settings")
-    # data type: object
-    oneof_schema_11_validator: Optional[Dict[str, Any]] = Field(default=None, description="CISA KEV settings")
+    oneof_schema_10_validator: Optional[Dict[str, Any]] = Field(default=None, description="CISA KEV settings")
     # data type: CloudConfigurationFindingsSettingsConfig
-    oneof_schema_12_validator: Optional[CloudConfigurationFindingsSettingsConfig] = None
+    oneof_schema_11_validator: Optional[CloudConfigurationFindingsSettingsConfig] = None
     # data type: CloudLogsSettingsConfig
-    oneof_schema_13_validator: Optional[CloudLogsSettingsConfig] = None
+    oneof_schema_12_validator: Optional[CloudLogsSettingsConfig] = None
     # data type: CloudResourceInventorySettingsConfig
-    oneof_schema_14_validator: Optional[CloudResourceInventorySettingsConfig] = None
+    oneof_schema_13_validator: Optional[CloudResourceInventorySettingsConfig] = None
     # data type: CloudtrailSettingsConfig
-    oneof_schema_15_validator: Optional[CloudtrailSettingsConfig] = None
+    oneof_schema_14_validator: Optional[CloudtrailSettingsConfig] = None
     # data type: DemoSettingsConfig
-    oneof_schema_16_validator: Optional[DemoSettingsConfig] = None
+    oneof_schema_15_validator: Optional[DemoSettingsConfig] = None
     # data type: DemoCustomSettingsConfig
-    oneof_schema_17_validator: Optional[DemoCustomSettingsConfig] = None
+    oneof_schema_16_validator: Optional[DemoCustomSettingsConfig] = None
     # data type: DetectSummariesSettingsConfig
-    oneof_schema_18_validator: Optional[DetectSummariesSettingsConfig] = None
+    oneof_schema_17_validator: Optional[DetectSummariesSettingsConfig] = None
     # data type: DeviceActivitySettingsConfig
-    oneof_schema_19_validator: Optional[DeviceActivitySettingsConfig] = None
+    oneof_schema_18_validator: Optional[DeviceActivitySettingsConfig] = None
     # data type: DeviceDetailsSettingsConfig
-    oneof_schema_20_validator: Optional[DeviceDetailsSettingsConfig] = None
+    oneof_schema_19_validator: Optional[DeviceDetailsSettingsConfig] = None
     # data type: DriveActivitySettingsConfig
-    oneof_schema_21_validator: Optional[DriveActivitySettingsConfig] = None
+    oneof_schema_20_validator: Optional[DriveActivitySettingsConfig] = None
     # data type: EntraIdSettingsConfig
-    oneof_schema_22_validator: Optional[EntraIdSettingsConfig] = None
+    oneof_schema_21_validator: Optional[EntraIdSettingsConfig] = None
     # data type: EventSettingsConfig
-    oneof_schema_23_validator: Optional[EventSettingsConfig] = None
+    oneof_schema_22_validator: Optional[EventSettingsConfig] = None
     # data type: EventsLogsSettingsConfig
-    oneof_schema_24_validator: Optional[EventsLogsSettingsConfig] = None
+    oneof_schema_23_validator: Optional[EventsLogsSettingsConfig] = None
+    # data type: object
+    oneof_schema_24_validator: Optional[Dict[str, Any]] = Field(default=None, description="Github Advisory Database settings")
     # data type: LogAnalyticsQuerySettingsConfig
     oneof_schema_25_validator: Optional[LogAnalyticsQuerySettingsConfig] = None
     # data type: LoginActivitySettingsConfig
@@ -238,12 +238,6 @@ class RoutesV2InputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # validate data type: object
-        try:
-            instance.oneof_schema_11_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
         # validate data type: CloudConfigurationFindingsSettingsConfig
         if not isinstance(v, CloudConfigurationFindingsSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `CloudConfigurationFindingsSettingsConfig`")
@@ -309,6 +303,12 @@ class RoutesV2InputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `EventsLogsSettingsConfig`")
         else:
             match += 1
+        # validate data type: object
+        try:
+            instance.oneof_schema_24_validator = v
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # validate data type: LogAnalyticsQuerySettingsConfig
         if not isinstance(v, LogAnalyticsQuerySettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `LogAnalyticsQuerySettingsConfig`")
@@ -519,15 +519,6 @@ class RoutesV2InputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into object
-        try:
-            # validation
-            instance.oneof_schema_11_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_11_validator
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
         # deserialize data into CloudConfigurationFindingsSettingsConfig
         try:
             instance.actual_instance = CloudConfigurationFindingsSettingsConfig.from_json(json_str)
@@ -603,6 +594,15 @@ class RoutesV2InputConfigSettings(BaseModel):
         # deserialize data into EventsLogsSettingsConfig
         try:
             instance.actual_instance = EventsLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into object
+        try:
+            # validation
+            instance.oneof_schema_24_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_24_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))

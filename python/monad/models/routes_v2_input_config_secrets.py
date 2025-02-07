@@ -87,35 +87,35 @@ class RoutesV2InputConfigSecrets(BaseModel):
     # data type: BoxUsersSecretsConfig
     oneof_schema_9_validator: Optional[BoxUsersSecretsConfig] = None
     # data type: object
-    oneof_schema_10_validator: Optional[Dict[str, Any]] = Field(default=None, description="Github Advisory Database secrets")
-    # data type: object
-    oneof_schema_11_validator: Optional[Dict[str, Any]] = Field(default=None, description="CISA KEV secrets")
+    oneof_schema_10_validator: Optional[Dict[str, Any]] = Field(default=None, description="CISA KEV secrets")
     # data type: CloudConfigurationFindingsSecretsConfig
-    oneof_schema_12_validator: Optional[CloudConfigurationFindingsSecretsConfig] = None
+    oneof_schema_11_validator: Optional[CloudConfigurationFindingsSecretsConfig] = None
     # data type: CloudLogsSecretsConfig
-    oneof_schema_13_validator: Optional[CloudLogsSecretsConfig] = None
+    oneof_schema_12_validator: Optional[CloudLogsSecretsConfig] = None
     # data type: CloudResourceInventorySecretsConfig
-    oneof_schema_14_validator: Optional[CloudResourceInventorySecretsConfig] = None
+    oneof_schema_13_validator: Optional[CloudResourceInventorySecretsConfig] = None
     # data type: object
-    oneof_schema_15_validator: Optional[Dict[str, Any]] = Field(default=None, description="AWS Cloudtrail secrets")
+    oneof_schema_14_validator: Optional[Dict[str, Any]] = Field(default=None, description="AWS Cloudtrail secrets")
     # data type: object
-    oneof_schema_16_validator: Optional[Dict[str, Any]] = Field(default=None, description="Demo secrets")
+    oneof_schema_15_validator: Optional[Dict[str, Any]] = Field(default=None, description="Demo secrets")
     # data type: object
-    oneof_schema_17_validator: Optional[Dict[str, Any]] = Field(default=None, description="Demo Custom secrets")
+    oneof_schema_16_validator: Optional[Dict[str, Any]] = Field(default=None, description="Demo Custom secrets")
     # data type: DetectSummariesSecretsConfig
-    oneof_schema_18_validator: Optional[DetectSummariesSecretsConfig] = None
+    oneof_schema_17_validator: Optional[DetectSummariesSecretsConfig] = None
     # data type: DeviceActivitySecretsConfig
-    oneof_schema_19_validator: Optional[DeviceActivitySecretsConfig] = None
+    oneof_schema_18_validator: Optional[DeviceActivitySecretsConfig] = None
     # data type: DeviceDetailsSecretsConfig
-    oneof_schema_20_validator: Optional[DeviceDetailsSecretsConfig] = None
+    oneof_schema_19_validator: Optional[DeviceDetailsSecretsConfig] = None
     # data type: DriveActivitySecretsConfig
-    oneof_schema_21_validator: Optional[DriveActivitySecretsConfig] = None
+    oneof_schema_20_validator: Optional[DriveActivitySecretsConfig] = None
     # data type: EntraIdSecretsConfig
-    oneof_schema_22_validator: Optional[EntraIdSecretsConfig] = None
+    oneof_schema_21_validator: Optional[EntraIdSecretsConfig] = None
     # data type: EventSecretsConfig
-    oneof_schema_23_validator: Optional[EventSecretsConfig] = None
+    oneof_schema_22_validator: Optional[EventSecretsConfig] = None
     # data type: EventsLogsSecretsConfig
-    oneof_schema_24_validator: Optional[EventsLogsSecretsConfig] = None
+    oneof_schema_23_validator: Optional[EventsLogsSecretsConfig] = None
+    # data type: object
+    oneof_schema_24_validator: Optional[Dict[str, Any]] = Field(default=None, description="Github Advisory Database secrets")
     # data type: LogAnalyticsQuerySecretsConfig
     oneof_schema_25_validator: Optional[LogAnalyticsQuerySecretsConfig] = None
     # data type: LoginActivitySecretsConfig
@@ -240,12 +240,6 @@ class RoutesV2InputConfigSecrets(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # validate data type: object
-        try:
-            instance.oneof_schema_11_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
         # validate data type: CloudConfigurationFindingsSecretsConfig
         if not isinstance(v, CloudConfigurationFindingsSecretsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `CloudConfigurationFindingsSecretsConfig`")
@@ -263,6 +257,12 @@ class RoutesV2InputConfigSecrets(BaseModel):
             match += 1
         # validate data type: object
         try:
+            instance.oneof_schema_14_validator = v
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # validate data type: object
+        try:
             instance.oneof_schema_15_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
@@ -270,12 +270,6 @@ class RoutesV2InputConfigSecrets(BaseModel):
         # validate data type: object
         try:
             instance.oneof_schema_16_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # validate data type: object
-        try:
-            instance.oneof_schema_17_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -314,6 +308,12 @@ class RoutesV2InputConfigSecrets(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `EventsLogsSecretsConfig`")
         else:
             match += 1
+        # validate data type: object
+        try:
+            instance.oneof_schema_24_validator = v
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # validate data type: LogAnalyticsQuerySecretsConfig
         if not isinstance(v, LogAnalyticsQuerySecretsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `LogAnalyticsQuerySecretsConfig`")
@@ -522,15 +522,6 @@ class RoutesV2InputConfigSecrets(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into object
-        try:
-            # validation
-            instance.oneof_schema_11_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_11_validator
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
         # deserialize data into CloudConfigurationFindingsSecretsConfig
         try:
             instance.actual_instance = CloudConfigurationFindingsSecretsConfig.from_json(json_str)
@@ -552,6 +543,15 @@ class RoutesV2InputConfigSecrets(BaseModel):
         # deserialize data into object
         try:
             # validation
+            instance.oneof_schema_14_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_14_validator
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into object
+        try:
+            # validation
             instance.oneof_schema_15_validator = json.loads(json_str)
             # assign value to actual_instance
             instance.actual_instance = instance.oneof_schema_15_validator
@@ -564,15 +564,6 @@ class RoutesV2InputConfigSecrets(BaseModel):
             instance.oneof_schema_16_validator = json.loads(json_str)
             # assign value to actual_instance
             instance.actual_instance = instance.oneof_schema_16_validator
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # deserialize data into object
-        try:
-            # validation
-            instance.oneof_schema_17_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_17_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -615,6 +606,15 @@ class RoutesV2InputConfigSecrets(BaseModel):
         # deserialize data into EventsLogsSecretsConfig
         try:
             instance.actual_instance = EventsLogsSecretsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into object
+        try:
+            # validation
+            instance.oneof_schema_24_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_24_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
