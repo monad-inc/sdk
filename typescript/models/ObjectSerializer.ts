@@ -115,7 +115,6 @@ export * from '../models/RoutesCreateInputRequest';
 export * from '../models/RoutesCreateOrganizationRequest';
 export * from '../models/RoutesCreateOutputRequest';
 export * from '../models/RoutesCreateRoleRequest';
-export * from '../models/RoutesCreateTransformRequest';
 export * from '../models/RoutesGetInputResponse';
 export * from '../models/RoutesGetOutputResponse';
 export * from '../models/RoutesGetTransformResponse';
@@ -316,7 +315,6 @@ import { RoutesCreateInputRequest } from '../models/RoutesCreateInputRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateOutputRequest } from '../models/RoutesCreateOutputRequest';
 import { RoutesCreateRoleRequest } from '../models/RoutesCreateRoleRequest';
-import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
@@ -533,7 +531,6 @@ let typeMap: {[index: string]: any} = {
     "RoutesCreateOrganizationRequest": RoutesCreateOrganizationRequest,
     "RoutesCreateOutputRequest": RoutesCreateOutputRequest,
     "RoutesCreateRoleRequest": RoutesCreateRoleRequest,
-    "RoutesCreateTransformRequest": RoutesCreateTransformRequest,
     "RoutesGetInputResponse": RoutesGetInputResponse,
     "RoutesGetOutputResponse": RoutesGetOutputResponse,
     "RoutesGetTransformResponse": RoutesGetTransformResponse,

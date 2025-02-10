@@ -119,7 +119,6 @@ import { RoutesCreateInputRequest } from '../models/RoutesCreateInputRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateOutputRequest } from '../models/RoutesCreateOutputRequest';
 import { RoutesCreateRoleRequest } from '../models/RoutesCreateRoleRequest';
-import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
@@ -1880,10 +1879,10 @@ export class ObservableOrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID
-     * @param routesCreateTransformRequest Request body for creating a transform
+     * @param body Request body for creating a transform
      */
-    public v1OrganizationIdTransformsPostWithHttpInfo(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: Configuration): Observable<HttpInfo<ModelsTransform>> {
-        const requestContextPromise = this.requestFactory.v1OrganizationIdTransformsPost(organizationId, routesCreateTransformRequest, _options);
+    public v1OrganizationIdTransformsPostWithHttpInfo(organizationId: string, body: any, _options?: Configuration): Observable<HttpInfo<ModelsTransform>> {
+        const requestContextPromise = this.requestFactory.v1OrganizationIdTransformsPost(organizationId, body, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1905,10 +1904,10 @@ export class ObservableOrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID
-     * @param routesCreateTransformRequest Request body for creating a transform
+     * @param body Request body for creating a transform
      */
-    public v1OrganizationIdTransformsPost(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: Configuration): Observable<ModelsTransform> {
-        return this.v1OrganizationIdTransformsPostWithHttpInfo(organizationId, routesCreateTransformRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsTransform>) => apiResponse.data));
+    public v1OrganizationIdTransformsPost(organizationId: string, body: any, _options?: Configuration): Observable<ModelsTransform> {
+        return this.v1OrganizationIdTransformsPostWithHttpInfo(organizationId, body, _options).pipe(map((apiResponse: HttpInfo<ModelsTransform>) => apiResponse.data));
     }
 
     /**

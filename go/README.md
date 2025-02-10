@@ -286,7 +286,6 @@ Class | Method | HTTP request | Description
  - [RoutesCreateOrganizationRequest](docs/RoutesCreateOrganizationRequest.md)
  - [RoutesCreateOutputRequest](docs/RoutesCreateOutputRequest.md)
  - [RoutesCreateRoleRequest](docs/RoutesCreateRoleRequest.md)
- - [RoutesCreateTransformRequest](docs/RoutesCreateTransformRequest.md)
  - [RoutesGetInputResponse](docs/RoutesGetInputResponse.md)
  - [RoutesGetOutputResponse](docs/RoutesGetOutputResponse.md)
  - [RoutesGetTransformResponse](docs/RoutesGetTransformResponse.md)

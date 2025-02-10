@@ -118,7 +118,6 @@ import { RoutesCreateInputRequest } from '../models/RoutesCreateInputRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateOutputRequest } from '../models/RoutesCreateOutputRequest';
 import { RoutesCreateRoleRequest } from '../models/RoutesCreateRoleRequest';
-import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
@@ -1831,10 +1830,10 @@ export interface OrganizationTransformsApiV1OrganizationIdTransformsPostRequest 
     organizationId: string
     /**
      * Request body for creating a transform
-     * @type RoutesCreateTransformRequest
+     * @type any
      * @memberof OrganizationTransformsApiv1OrganizationIdTransformsPost
      */
-    routesCreateTransformRequest: RoutesCreateTransformRequest
+    body: any
 }
 
 export interface OrganizationTransformsApiV1OrganizationIdTransformsTransformIdDeleteRequest {
@@ -1925,7 +1924,7 @@ export class ObjectOrganizationTransformsApi {
      * @param param the request object
      */
     public v1OrganizationIdTransformsPostWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsPostRequest, options?: Configuration): Promise<HttpInfo<ModelsTransform>> {
-        return this.api.v1OrganizationIdTransformsPostWithHttpInfo(param.organizationId, param.routesCreateTransformRequest,  options).toPromise();
+        return this.api.v1OrganizationIdTransformsPostWithHttpInfo(param.organizationId, param.body,  options).toPromise();
     }
 
     /**
@@ -1934,7 +1933,7 @@ export class ObjectOrganizationTransformsApi {
      * @param param the request object
      */
     public v1OrganizationIdTransformsPost(param: OrganizationTransformsApiV1OrganizationIdTransformsPostRequest, options?: Configuration): Promise<ModelsTransform> {
-        return this.api.v1OrganizationIdTransformsPost(param.organizationId, param.routesCreateTransformRequest,  options).toPromise();
+        return this.api.v1OrganizationIdTransformsPost(param.organizationId, param.body,  options).toPromise();
     }
 
     /**

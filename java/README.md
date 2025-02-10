@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-02-10T17:29:40.359170843Z[Etc/UTC]
+  - Build date: 2025-02-10T20:50:29.276587382Z[Etc/UTC]
   - Generator version: 7.11.0
 
 This is the monad API
@@ -322,7 +322,6 @@ Class | Method | HTTP request | Description
  - [RoutesCreateOrganizationRequest](docs/RoutesCreateOrganizationRequest.md)
  - [RoutesCreateOutputRequest](docs/RoutesCreateOutputRequest.md)
  - [RoutesCreateRoleRequest](docs/RoutesCreateRoleRequest.md)
- - [RoutesCreateTransformRequest](docs/RoutesCreateTransformRequest.md)
  - [RoutesGetInputResponse](docs/RoutesGetInputResponse.md)
  - [RoutesGetOutputResponse](docs/RoutesGetOutputResponse.md)
  - [RoutesGetTransformResponse](docs/RoutesGetTransformResponse.md)
