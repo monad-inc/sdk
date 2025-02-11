@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Config** | Pointer to [**RoutesTransformConfig**](RoutesTransformConfig.md) |  | [optional] 
+**Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetConfig
 
-`func (o *RoutesUpdateTransformRequest) GetConfig() RoutesTransformConfig`
+`func (o *RoutesUpdateTransformRequest) GetConfig() map[string]interface{}`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *RoutesUpdateTransformRequest) GetConfigOk() (*RoutesTransformConfig, bool)`
+`func (o *RoutesUpdateTransformRequest) GetConfigOk() (*map[string]interface{}, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *RoutesUpdateTransformRequest) SetConfig(v RoutesTransformConfig)`
+`func (o *RoutesUpdateTransformRequest) SetConfig(v map[string]interface{})`
 
 SetConfig sets Config field to given value.
 

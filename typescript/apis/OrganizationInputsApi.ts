@@ -15,7 +15,6 @@ import { RoutesBulkCreateInputRequest } from '../models/RoutesBulkCreateInputReq
 import { RoutesCreateInputRequest } from '../models/RoutesCreateInputRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesUpdateInputRequest } from '../models/RoutesUpdateInputRequest';
-import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
 import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest';
@@ -478,10 +477,10 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
      * Create a new input with configuration including secrets handling
      * Create input
      * @param organizationId Organization ID
-     * @param routesV2CreateInputRequest Input configuration
+     * @param body Input configuration
      * @param testConnection Test connection before creating the input
      */
-    public async v2OrganizationIdInputsPost(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async v2OrganizationIdInputsPost(organizationId: string, body: any, testConnection?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -490,9 +489,9 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV2CreateInputRequest' is not null or undefined
-        if (routesV2CreateInputRequest === null || routesV2CreateInputRequest === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsPost", "routesV2CreateInputRequest");
+        // verify required parameter 'body' is not null or undefined
+        if (body === null || body === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsPost", "body");
         }
 
 
@@ -517,7 +516,7 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2CreateInputRequest, "RoutesV2CreateInputRequest", ""),
+            ObjectSerializer.serialize(body, "any", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

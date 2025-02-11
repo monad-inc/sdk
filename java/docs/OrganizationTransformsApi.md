@@ -93,7 +93,7 @@ public class Example {
 
 <a id="v1OrganizationIdTransformsPost"></a>
 # **v1OrganizationIdTransformsPost**
-> ModelsTransform v1OrganizationIdTransformsPost(organizationId, routesCreateTransformRequest)
+> ModelsTransform v1OrganizationIdTransformsPost(organizationId, body)
 
 Create transform
 
@@ -128,9 +128,9 @@ public class Example {
 
     OrganizationTransformsApi apiInstance = new OrganizationTransformsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesCreateTransformRequest routesCreateTransformRequest = new RoutesCreateTransformRequest(); // RoutesCreateTransformRequest | Request body for creating a transform
+    Object body = null; // Object | Request body for creating a transform
     try {
-      ModelsTransform result = apiInstance.v1OrganizationIdTransformsPost(organizationId, routesCreateTransformRequest);
+      ModelsTransform result = apiInstance.v1OrganizationIdTransformsPost(organizationId, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationTransformsApi#v1OrganizationIdTransformsPost");
@@ -148,7 +148,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesCreateTransformRequest** | [**RoutesCreateTransformRequest**](RoutesCreateTransformRequest.md)| Request body for creating a transform | |
+| **body** | **Object**| Request body for creating a transform | |
 
 ### Return type
 

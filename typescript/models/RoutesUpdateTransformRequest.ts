@@ -10,11 +10,10 @@
  * Do not edit the class manually.
  */
 
-import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { HttpFile } from '../http/http';
 
 export class RoutesUpdateTransformRequest {
-    'config'?: RoutesTransformConfig;
+    'config'?: any;
     'description'?: string;
     'name': string;
 
@@ -26,7 +25,7 @@ export class RoutesUpdateTransformRequest {
         {
             "name": "config",
             "baseName": "config",
-            "type": "RoutesTransformConfig",
+            "type": "any",
             "format": ""
         },
         {

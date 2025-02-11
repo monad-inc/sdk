@@ -354,14 +354,7 @@ const request: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchRequest
   outputId: "output_id_example",
     // Output configuration update
   routesV2UpdateOutputRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
+    config: {},
     description: "description_example",
     name: "name_example",
     outputType: "outputType_example",
@@ -429,14 +422,7 @@ const request: OrganizationOutputsApiV2OrganizationIdOutputsPostRequest = {
   organizationId: "organization_id_example",
     // Output configuration
   routesV2CreateOutputRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
+    config: {},
     description: "description_example",
     name: "name_example",
     outputType: "outputType_example",
@@ -484,7 +470,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v2OrganizationIdOutputsTestConnectionPost**
-> RoutesV2SuccessResponse v2OrganizationIdOutputsTestConnectionPost(routesV2TestOutputConnectionRequest)
+> RoutesV2SuccessResponse v2OrganizationIdOutputsTestConnectionPost(body)
 
 Tests the connection for a given output type and configuration
 
@@ -502,17 +488,7 @@ const request: OrganizationOutputsApiV2OrganizationIdOutputsTestConnectionPostRe
     // Organization ID
   organizationId: "organization_id_example",
     // Output configuration to test
-  routesV2TestOutputConnectionRequest: {
-    config: {
-      secrets: 
-        key: null,
-      ,
-      settings: 
-        key: null,
-      ,
-    },
-    type: "type_example",
-  },
+  body: {},
 };
 
 const data = await apiInstance.v2OrganizationIdOutputsTestConnectionPost(request);
@@ -524,7 +500,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2TestOutputConnectionRequest** | **RoutesV2TestOutputConnectionRequest**| Output configuration to test |
+ **body** | **any**| Output configuration to test |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 

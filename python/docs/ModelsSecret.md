@@ -1,6 +1,5 @@
 # ModelsSecret
 
-The Access ID for authenticating with Sumo Logic.
 
 ## Properties
 

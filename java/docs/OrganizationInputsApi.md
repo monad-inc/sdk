@@ -579,7 +579,7 @@ public class Example {
 
 <a id="v2OrganizationIdInputsPost"></a>
 # **v2OrganizationIdInputsPost**
-> ModelsInput v2OrganizationIdInputsPost(organizationId, routesV2CreateInputRequest, testConnection)
+> ModelsInput v2OrganizationIdInputsPost(organizationId, body, testConnection)
 
 Create input
 
@@ -614,10 +614,10 @@ public class Example {
 
     OrganizationInputsApi apiInstance = new OrganizationInputsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV2CreateInputRequest routesV2CreateInputRequest = new RoutesV2CreateInputRequest(); // RoutesV2CreateInputRequest | Input configuration
+    Object body = null; // Object | Input configuration
     Boolean testConnection = true; // Boolean | Test connection before creating the input
     try {
-      ModelsInput result = apiInstance.v2OrganizationIdInputsPost(organizationId, routesV2CreateInputRequest, testConnection);
+      ModelsInput result = apiInstance.v2OrganizationIdInputsPost(organizationId, body, testConnection);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationInputsApi#v2OrganizationIdInputsPost");
@@ -635,7 +635,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV2CreateInputRequest** | [**RoutesV2CreateInputRequest**](RoutesV2CreateInputRequest.md)| Input configuration | |
+| **body** | **Object**| Input configuration | |
 | **testConnection** | **Boolean**| Test connection before creating the input | [optional] |
 
 ### Return type

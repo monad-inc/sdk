@@ -1,73 +1,49 @@
 import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
 import { Configuration} from '../configuration'
 
-import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddAdd } from '../models/AddAdd';
-import { AdminActivitySecretsConfig } from '../models/AdminActivitySecretsConfig';
 import { AdminActivitySettingsConfig } from '../models/AdminActivitySettingsConfig';
-import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
-import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { Auth0Auth0TokenResponse } from '../models/Auth0Auth0TokenResponse';
 import { Auth0LoginRequest } from '../models/Auth0LoginRequest';
-import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
-import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
-import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
-import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
-import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigurationFindingsSecretsConfig';
 import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';
-import { CloudLogsSecretsConfig } from '../models/CloudLogsSecretsConfig';
 import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
-import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
 import { ConditionInfo } from '../models/ConditionInfo';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
-import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
 import { DemoCustomSettingsConfig } from '../models/DemoCustomSettingsConfig';
 import { DemoSettingsConfig } from '../models/DemoSettingsConfig';
-import { DetectSummariesSecretsConfig } from '../models/DetectSummariesSecretsConfig';
 import { DetectSummariesSettingsConfig } from '../models/DetectSummariesSettingsConfig';
-import { DeviceActivitySecretsConfig } from '../models/DeviceActivitySecretsConfig';
 import { DeviceActivitySettingsConfig } from '../models/DeviceActivitySettingsConfig';
-import { DeviceDetailsSecretsConfig } from '../models/DeviceDetailsSecretsConfig';
 import { DeviceDetailsSettingsConfig } from '../models/DeviceDetailsSettingsConfig';
-import { DriveActivitySecretsConfig } from '../models/DriveActivitySecretsConfig';
 import { DriveActivitySettingsConfig } from '../models/DriveActivitySettingsConfig';
 import { DropKeyDropKey } from '../models/DropKeyDropKey';
 import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
 import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
 import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
-import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
-import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
-import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
-import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
 import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
-import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
-import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
-import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig';
 import { LoginActivitySettingsConfig } from '../models/LoginActivitySettingsConfig';
-import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
 import { LoginSessionsSettingsConfig } from '../models/LoginSessionsSettingsConfig';
 import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultiplyWithValueMathMultiplyWithValue';
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
@@ -114,9 +90,7 @@ import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
 import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
-import { OauthActivitySecretsConfig } from '../models/OauthActivitySecretsConfig';
 import { OauthActivitySettingsConfig } from '../models/OauthActivitySettingsConfig';
-import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
@@ -124,7 +98,6 @@ import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
-import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
 import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesBulkCreateInputRequest } from '../models/RoutesBulkCreateInputRequest';
@@ -132,14 +105,10 @@ import { RoutesCreateInputRequest } from '../models/RoutesCreateInputRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateOutputRequest } from '../models/RoutesCreateOutputRequest';
 import { RoutesCreateRoleRequest } from '../models/RoutesCreateRoleRequest';
-import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
-import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
-import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
-import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
 import { RoutesUpdateInputRequest } from '../models/RoutesUpdateInputRequest';
 import { RoutesUpdateInputRequestConfig } from '../models/RoutesUpdateInputRequestConfig';
 import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizationRequest';
@@ -152,21 +121,14 @@ import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUse
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
-import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
 import { RoutesV2CreatePipelineRequest } from '../models/RoutesV2CreatePipelineRequest';
 import { RoutesV2GenerateRecordRequest } from '../models/RoutesV2GenerateRecordRequest';
 import { RoutesV2GenerateRecordResponse } from '../models/RoutesV2GenerateRecordResponse';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
-import { RoutesV2InputConfig } from '../models/RoutesV2InputConfig';
-import { RoutesV2InputConfigSecrets } from '../models/RoutesV2InputConfigSecrets';
-import { RoutesV2InputConfigSettings } from '../models/RoutesV2InputConfigSettings';
 import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesResponse';
 import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOverview';
-import { RoutesV2OutputConfig } from '../models/RoutesV2OutputConfig';
-import { RoutesV2OutputConfigSecrets } from '../models/RoutesV2OutputConfigSecrets';
-import { RoutesV2OutputConfigSettings } from '../models/RoutesV2OutputConfigSettings';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
@@ -174,50 +136,28 @@ import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
-import { RoutesV2TestOutputConnectionRequest } from '../models/RoutesV2TestOutputConnectionRequest';
 import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyRequest';
 import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest';
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
-import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
-import { SemgrepDeploymentsSecretsConfig } from '../models/SemgrepDeploymentsSecretsConfig';
 import { SemgrepDeploymentsSettingsConfig } from '../models/SemgrepDeploymentsSettingsConfig';
-import { SemgrepProjectDetailsSecretsConfig } from '../models/SemgrepProjectDetailsSecretsConfig';
 import { SemgrepProjectDetailsSettingsConfig } from '../models/SemgrepProjectDetailsSettingsConfig';
-import { SemgrepProjectsSecretsConfig } from '../models/SemgrepProjectsSecretsConfig';
 import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettingsConfig';
-import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
-import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
-import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
 import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
-import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
 import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
-import { SnowflakeSecretsConfig } from '../models/SnowflakeSecretsConfig';
 import { SnowflakeSettingsConfig } from '../models/SnowflakeSettingsConfig';
-import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
-import { SnykOrganizationsSecretsConfig } from '../models/SnykOrganizationsSecretsConfig';
 import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
-import { SnykProjectsSecretsConfig } from '../models/SnykProjectsSecretsConfig';
 import { SnykProjectsSettingsConfig } from '../models/SnykProjectsSettingsConfig';
-import { SnykTargetsSecretsConfig } from '../models/SnykTargetsSecretsConfig';
-import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
 import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
-import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
 import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
-import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
-import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
-import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
-import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
 import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
 import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
 import { V1OrganizationIdInputsBulkPost400Response } from '../models/V1OrganizationIdInputsBulkPost400Response';
 import { V1OrganizationIdInputsPost400Response } from '../models/V1OrganizationIdInputsPost400Response';
-import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
 import { VulnerabilitiesSettingsConfig } from '../models/VulnerabilitiesSettingsConfig';
-import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
 import { ObservableAuthenticationApi } from './ObservableAPI';
 
@@ -992,11 +932,11 @@ export class PromiseOrganizationInputsApi {
      * Create a new input with configuration including secrets handling
      * Create input
      * @param organizationId Organization ID
-     * @param routesV2CreateInputRequest Input configuration
+     * @param body Input configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdInputsPostWithHttpInfo(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        const result = this.api.v2OrganizationIdInputsPostWithHttpInfo(organizationId, routesV2CreateInputRequest, testConnection, _options);
+    public v2OrganizationIdInputsPostWithHttpInfo(organizationId: string, body: any, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
+        const result = this.api.v2OrganizationIdInputsPostWithHttpInfo(organizationId, body, testConnection, _options);
         return result.toPromise();
     }
 
@@ -1004,11 +944,11 @@ export class PromiseOrganizationInputsApi {
      * Create a new input with configuration including secrets handling
      * Create input
      * @param organizationId Organization ID
-     * @param routesV2CreateInputRequest Input configuration
+     * @param body Input configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdInputsPost(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<ModelsInput> {
-        const result = this.api.v2OrganizationIdInputsPost(organizationId, routesV2CreateInputRequest, testConnection, _options);
+    public v2OrganizationIdInputsPost(organizationId: string, body: any, testConnection?: boolean, _options?: Configuration): Promise<ModelsInput> {
+        const result = this.api.v2OrganizationIdInputsPost(organizationId, body, testConnection, _options);
         return result.toPromise();
     }
 
@@ -1262,10 +1202,10 @@ export class PromiseOrganizationOutputsApi {
      * Tests the connection for a given output type and configuration
      * Test output connection
      * @param organizationId Organization ID
-     * @param routesV2TestOutputConnectionRequest Output configuration to test
+     * @param body Output configuration to test
      */
-    public v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(organizationId: string, routesV2TestOutputConnectionRequest: RoutesV2TestOutputConnectionRequest, _options?: Configuration): Promise<HttpInfo<RoutesV2SuccessResponse>> {
-        const result = this.api.v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(organizationId, routesV2TestOutputConnectionRequest, _options);
+    public v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(organizationId: string, body: any, _options?: Configuration): Promise<HttpInfo<RoutesV2SuccessResponse>> {
+        const result = this.api.v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(organizationId, body, _options);
         return result.toPromise();
     }
 
@@ -1273,10 +1213,10 @@ export class PromiseOrganizationOutputsApi {
      * Tests the connection for a given output type and configuration
      * Test output connection
      * @param organizationId Organization ID
-     * @param routesV2TestOutputConnectionRequest Output configuration to test
+     * @param body Output configuration to test
      */
-    public v2OrganizationIdOutputsTestConnectionPost(organizationId: string, routesV2TestOutputConnectionRequest: RoutesV2TestOutputConnectionRequest, _options?: Configuration): Promise<RoutesV2SuccessResponse> {
-        const result = this.api.v2OrganizationIdOutputsTestConnectionPost(organizationId, routesV2TestOutputConnectionRequest, _options);
+    public v2OrganizationIdOutputsTestConnectionPost(organizationId: string, body: any, _options?: Configuration): Promise<RoutesV2SuccessResponse> {
+        const result = this.api.v2OrganizationIdOutputsTestConnectionPost(organizationId, body, _options);
         return result.toPromise();
     }
 
@@ -1372,10 +1312,10 @@ export class PromiseOrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID
-     * @param routesCreateTransformRequest Request body for creating a transform
+     * @param body Request body for creating a transform
      */
-    public v1OrganizationIdTransformsPostWithHttpInfo(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: Configuration): Promise<HttpInfo<ModelsTransform>> {
-        const result = this.api.v1OrganizationIdTransformsPostWithHttpInfo(organizationId, routesCreateTransformRequest, _options);
+    public v1OrganizationIdTransformsPostWithHttpInfo(organizationId: string, body: any, _options?: Configuration): Promise<HttpInfo<ModelsTransform>> {
+        const result = this.api.v1OrganizationIdTransformsPostWithHttpInfo(organizationId, body, _options);
         return result.toPromise();
     }
 
@@ -1383,10 +1323,10 @@ export class PromiseOrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID
-     * @param routesCreateTransformRequest Request body for creating a transform
+     * @param body Request body for creating a transform
      */
-    public v1OrganizationIdTransformsPost(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: Configuration): Promise<ModelsTransform> {
-        const result = this.api.v1OrganizationIdTransformsPost(organizationId, routesCreateTransformRequest, _options);
+    public v1OrganizationIdTransformsPost(organizationId: string, body: any, _options?: Configuration): Promise<ModelsTransform> {
+        const result = this.api.v1OrganizationIdTransformsPost(organizationId, body, _options);
         return result.toPromise();
     }
 

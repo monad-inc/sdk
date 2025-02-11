@@ -29,7 +29,6 @@ import java.io.IOException;
 
 import org.openapitools.client.model.ModelsTransform;
 import org.openapitools.client.model.ModelsTransformList;
-import org.openapitools.client.model.RoutesCreateTransformRequest;
 import org.openapitools.client.model.RoutesGetTransformResponse;
 import org.openapitools.client.model.RoutesUpdateTransformRequest;
 
@@ -226,7 +225,7 @@ public class OrganizationTransformsApi {
     /**
      * Build call for v1OrganizationIdTransformsPost
      * @param organizationId Organization ID (required)
-     * @param routesCreateTransformRequest Request body for creating a transform (required)
+     * @param body Request body for creating a transform (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -239,7 +238,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to create transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdTransformsPostCall(String organizationId, RoutesCreateTransformRequest routesCreateTransformRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdTransformsPostCall(String organizationId, Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -253,7 +252,7 @@ public class OrganizationTransformsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesCreateTransformRequest;
+        Object localVarPostBody = body;
 
         // create path and map variables
         String localVarPath = "/v1/{organization_id}/transforms"
@@ -286,18 +285,18 @@ public class OrganizationTransformsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdTransformsPostValidateBeforeCall(String organizationId, RoutesCreateTransformRequest routesCreateTransformRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdTransformsPostValidateBeforeCall(String organizationId, Object body, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdTransformsPost(Async)");
         }
 
-        // verify the required parameter 'routesCreateTransformRequest' is set
-        if (routesCreateTransformRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesCreateTransformRequest' when calling v1OrganizationIdTransformsPost(Async)");
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling v1OrganizationIdTransformsPost(Async)");
         }
 
-        return v1OrganizationIdTransformsPostCall(organizationId, routesCreateTransformRequest, _callback);
+        return v1OrganizationIdTransformsPostCall(organizationId, body, _callback);
 
     }
 
@@ -305,7 +304,7 @@ public class OrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID (required)
-     * @param routesCreateTransformRequest Request body for creating a transform (required)
+     * @param body Request body for creating a transform (required)
      * @return ModelsTransform
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -317,8 +316,8 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to create transform </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsTransform v1OrganizationIdTransformsPost(String organizationId, RoutesCreateTransformRequest routesCreateTransformRequest) throws ApiException {
-        ApiResponse<ModelsTransform> localVarResp = v1OrganizationIdTransformsPostWithHttpInfo(organizationId, routesCreateTransformRequest);
+    public ModelsTransform v1OrganizationIdTransformsPost(String organizationId, Object body) throws ApiException {
+        ApiResponse<ModelsTransform> localVarResp = v1OrganizationIdTransformsPostWithHttpInfo(organizationId, body);
         return localVarResp.getData();
     }
 
@@ -326,7 +325,7 @@ public class OrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID (required)
-     * @param routesCreateTransformRequest Request body for creating a transform (required)
+     * @param body Request body for creating a transform (required)
      * @return ApiResponse&lt;ModelsTransform&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -338,8 +337,8 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to create transform </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsTransform> v1OrganizationIdTransformsPostWithHttpInfo(String organizationId, RoutesCreateTransformRequest routesCreateTransformRequest) throws ApiException {
-        okhttp3.Call localVarCall = v1OrganizationIdTransformsPostValidateBeforeCall(organizationId, routesCreateTransformRequest, null);
+    public ApiResponse<ModelsTransform> v1OrganizationIdTransformsPostWithHttpInfo(String organizationId, Object body) throws ApiException {
+        okhttp3.Call localVarCall = v1OrganizationIdTransformsPostValidateBeforeCall(organizationId, body, null);
         Type localVarReturnType = new TypeToken<ModelsTransform>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -348,7 +347,7 @@ public class OrganizationTransformsApi {
      * Create transform (asynchronously)
      * Create transform
      * @param organizationId Organization ID (required)
-     * @param routesCreateTransformRequest Request body for creating a transform (required)
+     * @param body Request body for creating a transform (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -361,9 +360,9 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to create transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdTransformsPostAsync(String organizationId, RoutesCreateTransformRequest routesCreateTransformRequest, final ApiCallback<ModelsTransform> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdTransformsPostAsync(String organizationId, Object body, final ApiCallback<ModelsTransform> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1OrganizationIdTransformsPostValidateBeforeCall(organizationId, routesCreateTransformRequest, _callback);
+        okhttp3.Call localVarCall = v1OrganizationIdTransformsPostValidateBeforeCall(organizationId, body, _callback);
         Type localVarReturnType = new TypeToken<ModelsTransform>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

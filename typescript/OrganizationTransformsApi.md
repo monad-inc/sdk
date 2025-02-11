@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1OrganizationIdTransformsPost**
-> ModelsTransform v1OrganizationIdTransformsPost(routesCreateTransformRequest)
+> ModelsTransform v1OrganizationIdTransformsPost(body)
 
 Create transform
 
@@ -90,20 +90,7 @@ const request: OrganizationTransformsApiV1OrganizationIdTransformsPostRequest = 
     // Organization ID
   organizationId: "organization_id_example",
     // Request body for creating a transform
-  routesCreateTransformRequest: {
-    config: {
-      operations: [
-        {
-          arguments: 
-            key: null,
-          ,
-          operation: "operation_example",
-        },
-      ],
-    },
-    description: "description_example",
-    name: "name_example",
-  },
+  body: {},
 };
 
 const data = await apiInstance.v1OrganizationIdTransformsPost(request);
@@ -115,7 +102,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesCreateTransformRequest** | **RoutesCreateTransformRequest**| Request body for creating a transform |
+ **body** | **any**| Request body for creating a transform |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
@@ -278,16 +265,7 @@ const request: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdPat
   transformId: "transform_id_example",
     // Request body for updating a transform
   routesUpdateTransformRequest: {
-    config: {
-      operations: [
-        {
-          arguments: 
-            key: null,
-          ,
-          operation: "operation_example",
-        },
-      ],
-    },
+    config: {},
     description: "description_example",
     name: "name_example",
   },

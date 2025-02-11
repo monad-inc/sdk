@@ -189,12 +189,12 @@ type ApiV1OrganizationIdTransformsPostRequest struct {
 	ctx context.Context
 	ApiService *OrganizationTransformsAPIService
 	organizationId string
-	routesCreateTransformRequest *RoutesCreateTransformRequest
+	body *map[string]interface{}
 }
 
 // Request body for creating a transform
-func (r ApiV1OrganizationIdTransformsPostRequest) RoutesCreateTransformRequest(routesCreateTransformRequest RoutesCreateTransformRequest) ApiV1OrganizationIdTransformsPostRequest {
-	r.routesCreateTransformRequest = &routesCreateTransformRequest
+func (r ApiV1OrganizationIdTransformsPostRequest) Body(body map[string]interface{}) ApiV1OrganizationIdTransformsPostRequest {
+	r.body = &body
 	return r
 }
 
@@ -240,8 +240,8 @@ func (a *OrganizationTransformsAPIService) V1OrganizationIdTransformsPostExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesCreateTransformRequest == nil {
-		return localVarReturnValue, nil, reportError("routesCreateTransformRequest is required and must be specified")
+	if r.body == nil {
+		return localVarReturnValue, nil, reportError("body is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -262,7 +262,7 @@ func (a *OrganizationTransformsAPIService) V1OrganizationIdTransformsPostExecute
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesCreateTransformRequest
+	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

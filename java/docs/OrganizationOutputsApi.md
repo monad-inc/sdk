@@ -577,7 +577,7 @@ public class Example {
 
 <a id="v2OrganizationIdOutputsTestConnectionPost"></a>
 # **v2OrganizationIdOutputsTestConnectionPost**
-> RoutesV2SuccessResponse v2OrganizationIdOutputsTestConnectionPost(organizationId, routesV2TestOutputConnectionRequest)
+> RoutesV2SuccessResponse v2OrganizationIdOutputsTestConnectionPost(organizationId, body)
 
 Test output connection
 
@@ -612,9 +612,9 @@ public class Example {
 
     OrganizationOutputsApi apiInstance = new OrganizationOutputsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest = new RoutesV2TestOutputConnectionRequest(); // RoutesV2TestOutputConnectionRequest | Output configuration to test
+    Object body = null; // Object | Output configuration to test
     try {
-      RoutesV2SuccessResponse result = apiInstance.v2OrganizationIdOutputsTestConnectionPost(organizationId, routesV2TestOutputConnectionRequest);
+      RoutesV2SuccessResponse result = apiInstance.v2OrganizationIdOutputsTestConnectionPost(organizationId, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationOutputsApi#v2OrganizationIdOutputsTestConnectionPost");
@@ -632,7 +632,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **routesV2TestOutputConnectionRequest** | [**RoutesV2TestOutputConnectionRequest**](RoutesV2TestOutputConnectionRequest.md)| Output configuration to test | |
+| **body** | **Object**| Output configuration to test | |
 
 ### Return type
 

@@ -10,11 +10,10 @@
  * Do not edit the class manually.
  */
 
-import { RoutesV2OutputConfig } from '../models/RoutesV2OutputConfig';
 import { HttpFile } from '../http/http';
 
 export class RoutesV2CreateOutputRequest {
-    'config'?: RoutesV2OutputConfig;
+    'config'?: any;
     'description'?: string;
     'name'?: string;
     'outputType'?: string;
@@ -28,7 +27,7 @@ export class RoutesV2CreateOutputRequest {
         {
             "name": "config",
             "baseName": "config",
-            "type": "RoutesV2OutputConfig",
+            "type": "any",
             "format": ""
         },
         {

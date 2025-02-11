@@ -1163,13 +1163,13 @@ type ApiV2OrganizationIdInputsPostRequest struct {
 	ctx context.Context
 	ApiService *OrganizationInputsAPIService
 	organizationId string
-	routesV2CreateInputRequest *RoutesV2CreateInputRequest
+	body *map[string]interface{}
 	testConnection *bool
 }
 
 // Input configuration
-func (r ApiV2OrganizationIdInputsPostRequest) RoutesV2CreateInputRequest(routesV2CreateInputRequest RoutesV2CreateInputRequest) ApiV2OrganizationIdInputsPostRequest {
-	r.routesV2CreateInputRequest = &routesV2CreateInputRequest
+func (r ApiV2OrganizationIdInputsPostRequest) Body(body map[string]interface{}) ApiV2OrganizationIdInputsPostRequest {
+	r.body = &body
 	return r
 }
 
@@ -1221,8 +1221,8 @@ func (a *OrganizationInputsAPIService) V2OrganizationIdInputsPostExecute(r ApiV2
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2CreateInputRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2CreateInputRequest is required and must be specified")
+	if r.body == nil {
+		return localVarReturnValue, nil, reportError("body is required and must be specified")
 	}
 
 	if r.testConnection != nil {
@@ -1246,7 +1246,7 @@ func (a *OrganizationInputsAPIService) V2OrganizationIdInputsPostExecute(r ApiV2
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2CreateInputRequest
+	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

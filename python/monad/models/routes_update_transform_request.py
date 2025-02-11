@@ -20,7 +20,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.routes_transform_config import RoutesTransformConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +27,7 @@ class RoutesUpdateTransformRequest(BaseModel):
     """
     RoutesUpdateTransformRequest
     """ # noqa: E501
-    config: Optional[RoutesTransformConfig] = None
+    config: Optional[Dict[str, Any]] = None
     description: Optional[StrictStr] = None
     name: StrictStr
     __properties: ClassVar[List[str]] = ["config", "description", "name"]
@@ -72,9 +71,6 @@ class RoutesUpdateTransformRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of config
-        if self.config:
-            _dict['config'] = self.config.to_dict()
         return _dict
 
     @classmethod
@@ -87,7 +83,7 @@ class RoutesUpdateTransformRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "config": RoutesTransformConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
+            "config": obj.get("config"),
             "description": obj.get("description"),
             "name": obj.get("name")
         })

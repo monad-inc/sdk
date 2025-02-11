@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictBool, StrictInt, StrictStr
-from typing import Optional
+from typing import Any, Dict, Optional
 from typing_extensions import Annotated
 from monad.models.models_output import ModelsOutput
 from monad.models.models_output_list import ModelsOutputList
@@ -27,7 +27,6 @@ from monad.models.routes_get_output_response import RoutesGetOutputResponse
 from monad.models.routes_update_output_request import RoutesUpdateOutputRequest
 from monad.models.routes_v2_create_output_request import RoutesV2CreateOutputRequest
 from monad.models.routes_v2_success_response import RoutesV2SuccessResponse
-from monad.models.routes_v2_test_output_connection_request import RoutesV2TestOutputConnectionRequest
 from monad.models.routes_v2_update_output_request import RoutesV2UpdateOutputRequest
 
 from monad.api_client import ApiClient, RequestSerialized
@@ -2162,7 +2161,7 @@ class OrganizationOutputsApi:
     def v2_organization_id_outputs_test_connection_post(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_test_output_connection_request: Annotated[RoutesV2TestOutputConnectionRequest, Field(description="Output configuration to test")],
+        body: Annotated[Dict[str, Any], Field(description="Output configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2182,8 +2181,8 @@ class OrganizationOutputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_test_output_connection_request: Output configuration to test (required)
-        :type routes_v2_test_output_connection_request: RoutesV2TestOutputConnectionRequest
+        :param body: Output configuration to test (required)
+        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2208,7 +2207,7 @@ class OrganizationOutputsApi:
 
         _param = self._v2_organization_id_outputs_test_connection_post_serialize(
             organization_id=organization_id,
-            routes_v2_test_output_connection_request=routes_v2_test_output_connection_request,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2235,7 +2234,7 @@ class OrganizationOutputsApi:
     def v2_organization_id_outputs_test_connection_post_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_test_output_connection_request: Annotated[RoutesV2TestOutputConnectionRequest, Field(description="Output configuration to test")],
+        body: Annotated[Dict[str, Any], Field(description="Output configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2255,8 +2254,8 @@ class OrganizationOutputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_test_output_connection_request: Output configuration to test (required)
-        :type routes_v2_test_output_connection_request: RoutesV2TestOutputConnectionRequest
+        :param body: Output configuration to test (required)
+        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2281,7 +2280,7 @@ class OrganizationOutputsApi:
 
         _param = self._v2_organization_id_outputs_test_connection_post_serialize(
             organization_id=organization_id,
-            routes_v2_test_output_connection_request=routes_v2_test_output_connection_request,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2308,7 +2307,7 @@ class OrganizationOutputsApi:
     def v2_organization_id_outputs_test_connection_post_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        routes_v2_test_output_connection_request: Annotated[RoutesV2TestOutputConnectionRequest, Field(description="Output configuration to test")],
+        body: Annotated[Dict[str, Any], Field(description="Output configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2328,8 +2327,8 @@ class OrganizationOutputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param routes_v2_test_output_connection_request: Output configuration to test (required)
-        :type routes_v2_test_output_connection_request: RoutesV2TestOutputConnectionRequest
+        :param body: Output configuration to test (required)
+        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2354,7 +2353,7 @@ class OrganizationOutputsApi:
 
         _param = self._v2_organization_id_outputs_test_connection_post_serialize(
             organization_id=organization_id,
-            routes_v2_test_output_connection_request=routes_v2_test_output_connection_request,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2376,7 +2375,7 @@ class OrganizationOutputsApi:
     def _v2_organization_id_outputs_test_connection_post_serialize(
         self,
         organization_id,
-        routes_v2_test_output_connection_request,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -2404,8 +2403,8 @@ class OrganizationOutputsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_v2_test_output_connection_request is not None:
-            _body_params = routes_v2_test_output_connection_request
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`

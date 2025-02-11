@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ## V2OrganizationIdInputsPost
 
-> ModelsInput V2OrganizationIdInputsPost(ctx, organizationId).RoutesV2CreateInputRequest(routesV2CreateInputRequest).TestConnection(testConnection).Execute()
+> ModelsInput V2OrganizationIdInputsPost(ctx, organizationId).Body(body).TestConnection(testConnection).Execute()
 
 Create input
 
@@ -560,12 +560,12 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	routesV2CreateInputRequest := *openapiclient.NewRoutesV2CreateInputRequest() // RoutesV2CreateInputRequest | Input configuration
+	body := map[string]interface{}{ ... } // map[string]interface{} | Input configuration
 	testConnection := true // bool | Test connection before creating the input (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationInputsAPI.V2OrganizationIdInputsPost(context.Background(), organizationId).RoutesV2CreateInputRequest(routesV2CreateInputRequest).TestConnection(testConnection).Execute()
+	resp, r, err := apiClient.OrganizationInputsAPI.V2OrganizationIdInputsPost(context.Background(), organizationId).Body(body).TestConnection(testConnection).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.V2OrganizationIdInputsPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -591,7 +591,7 @@ Other parameters are passed through a pointer to a apiV2OrganizationIdInputsPost
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **routesV2CreateInputRequest** | [**RoutesV2CreateInputRequest**](RoutesV2CreateInputRequest.md) | Input configuration | 
+ **body** | **map[string]interface{}** | Input configuration | 
  **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type
