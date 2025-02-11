@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_transform_config import ModelsTransformConfig
+from monad.models.routes_transform_config import RoutesTransformConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class RoutesCreateTransformRequest(BaseModel):
     """
     RoutesCreateTransformRequest
     """ # noqa: E501
-    config: Optional[ModelsTransformConfig] = None
+    config: Optional[RoutesTransformConfig] = None
     description: Optional[StrictStr] = None
     name: StrictStr
     __properties: ClassVar[List[str]] = ["config", "description", "name"]
@@ -87,7 +87,7 @@ class RoutesCreateTransformRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "config": ModelsTransformConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
+            "config": RoutesTransformConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
             "description": obj.get("description"),
             "name": obj.get("name")
         })

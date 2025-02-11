@@ -4,6 +4,7 @@ import { Observable, of, from } from '../rxjsStub';
 import {mergeMap, map} from  '../rxjsStub';
 import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
+import { AddAdd } from '../models/AddAdd';
 import { AdminActivitySecretsConfig } from '../models/AdminActivitySecretsConfig';
 import { AdminActivitySettingsConfig } from '../models/AdminActivitySettingsConfig';
 import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
@@ -30,6 +31,7 @@ import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInve
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
 import { ConditionInfo } from '../models/ConditionInfo';
+import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
@@ -43,6 +45,10 @@ import { DeviceDetailsSecretsConfig } from '../models/DeviceDetailsSecretsConfig
 import { DeviceDetailsSettingsConfig } from '../models/DeviceDetailsSettingsConfig';
 import { DriveActivitySecretsConfig } from '../models/DriveActivitySecretsConfig';
 import { DriveActivitySettingsConfig } from '../models/DriveActivitySettingsConfig';
+import { DropKeyDropKey } from '../models/DropKeyDropKey';
+import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
+import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
+import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
@@ -51,10 +57,12 @@ import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
+import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
+import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
@@ -62,6 +70,7 @@ import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig
 import { LoginActivitySettingsConfig } from '../models/LoginActivitySettingsConfig';
 import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
 import { LoginSessionsSettingsConfig } from '../models/LoginSessionsSettingsConfig';
+import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultiplyWithValueMathMultiplyWithValue';
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
@@ -103,6 +112,9 @@ import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserList } from '../models/ModelsUserList';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
+import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
+import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
+import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
 import { OauthActivitySecretsConfig } from '../models/OauthActivitySecretsConfig';
 import { OauthActivitySettingsConfig } from '../models/OauthActivitySettingsConfig';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
@@ -110,6 +122,8 @@ import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
+import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
+import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
 import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
@@ -119,10 +133,14 @@ import { RoutesCreateInputRequest } from '../models/RoutesCreateInputRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateOutputRequest } from '../models/RoutesCreateOutputRequest';
 import { RoutesCreateRoleRequest } from '../models/RoutesCreateRoleRequest';
+import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
+import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
+import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
+import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
 import { RoutesUpdateInputRequest } from '../models/RoutesUpdateInputRequest';
 import { RoutesUpdateInputRequestConfig } from '../models/RoutesUpdateInputRequestConfig';
 import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizationRequest';
@@ -195,6 +213,7 @@ import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
 import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
 import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
+import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
 import { V1OrganizationIdInputsBulkPost400Response } from '../models/V1OrganizationIdInputsBulkPost400Response';
 import { V1OrganizationIdInputsPost400Response } from '../models/V1OrganizationIdInputsPost400Response';
 import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
@@ -1879,10 +1898,10 @@ export class ObservableOrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID
-     * @param body Request body for creating a transform
+     * @param routesCreateTransformRequest Request body for creating a transform
      */
-    public v1OrganizationIdTransformsPostWithHttpInfo(organizationId: string, body: any, _options?: Configuration): Observable<HttpInfo<ModelsTransform>> {
-        const requestContextPromise = this.requestFactory.v1OrganizationIdTransformsPost(organizationId, body, _options);
+    public v1OrganizationIdTransformsPostWithHttpInfo(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: Configuration): Observable<HttpInfo<ModelsTransform>> {
+        const requestContextPromise = this.requestFactory.v1OrganizationIdTransformsPost(organizationId, routesCreateTransformRequest, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1904,10 +1923,10 @@ export class ObservableOrganizationTransformsApi {
      * Create transform
      * Create transform
      * @param organizationId Organization ID
-     * @param body Request body for creating a transform
+     * @param routesCreateTransformRequest Request body for creating a transform
      */
-    public v1OrganizationIdTransformsPost(organizationId: string, body: any, _options?: Configuration): Observable<ModelsTransform> {
-        return this.v1OrganizationIdTransformsPostWithHttpInfo(organizationId, body, _options).pipe(map((apiResponse: HttpInfo<ModelsTransform>) => apiResponse.data));
+    public v1OrganizationIdTransformsPost(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: Configuration): Observable<ModelsTransform> {
+        return this.v1OrganizationIdTransformsPostWithHttpInfo(organizationId, routesCreateTransformRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsTransform>) => apiResponse.data));
     }
 
     /**

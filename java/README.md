@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-02-11T16:04:16.898010404Z[Etc/UTC]
+  - Build date: 2025-02-11T21:19:27.438167347Z[Etc/UTC]
   - Generator version: 7.11.0
 
 This is the monad API
@@ -207,6 +207,7 @@ Class | Method | HTTP request | Description
 
  - [ActorsInfoSecretsConfig](docs/ActorsInfoSecretsConfig.md)
  - [ActorsInfoSettingsConfig](docs/ActorsInfoSettingsConfig.md)
+ - [AddAdd](docs/AddAdd.md)
  - [AdminActivitySecretsConfig](docs/AdminActivitySecretsConfig.md)
  - [AdminActivitySettingsConfig](docs/AdminActivitySettingsConfig.md)
  - [AdminLogsSecretsConfig](docs/AdminLogsSecretsConfig.md)
@@ -233,6 +234,7 @@ Class | Method | HTTP request | Description
  - [CloudResourceInventorySettingsConfig](docs/CloudResourceInventorySettingsConfig.md)
  - [CloudtrailSettingsConfig](docs/CloudtrailSettingsConfig.md)
  - [ConditionInfo](docs/ConditionInfo.md)
+ - [CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue](docs/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.md)
  - [CriblHttpSecretsConfig](docs/CriblHttpSecretsConfig.md)
  - [CriblHttpSettingsConfig](docs/CriblHttpSettingsConfig.md)
  - [DelimitedDelimiterFormatter](docs/DelimitedDelimiterFormatter.md)
@@ -246,6 +248,10 @@ Class | Method | HTTP request | Description
  - [DeviceDetailsSettingsConfig](docs/DeviceDetailsSettingsConfig.md)
  - [DriveActivitySecretsConfig](docs/DriveActivitySecretsConfig.md)
  - [DriveActivitySettingsConfig](docs/DriveActivitySettingsConfig.md)
+ - [DropKeyDropKey](docs/DropKeyDropKey.md)
+ - [DropKeyWhereValueEqDropKeyWhereValueEq](docs/DropKeyWhereValueEqDropKeyWhereValueEq.md)
+ - [DropRecordWhereValueEqDropRecordWhereValueEq](docs/DropRecordWhereValueEqDropRecordWhereValueEq.md)
+ - [DuplicateKeyValueToKeyDuplicateKeyValueToKey](docs/DuplicateKeyValueToKeyDuplicateKeyValueToKey.md)
  - [ElasticsearchSecretsConfig](docs/ElasticsearchSecretsConfig.md)
  - [ElasticsearchSettingsConfig](docs/ElasticsearchSettingsConfig.md)
  - [EntraIdSecretsConfig](docs/EntraIdSecretsConfig.md)
@@ -254,10 +260,12 @@ Class | Method | HTTP request | Description
  - [EventSettingsConfig](docs/EventSettingsConfig.md)
  - [EventsLogsSecretsConfig](docs/EventsLogsSecretsConfig.md)
  - [EventsLogsSettingsConfig](docs/EventsLogsSettingsConfig.md)
+ - [FlattenFlatten](docs/FlattenFlatten.md)
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
  - [HttpSecretsConfig](docs/HttpSecretsConfig.md)
  - [HttpSettingsConfig](docs/HttpSettingsConfig.md)
  - [InputsConnectorMeta](docs/InputsConnectorMeta.md)
+ - [JqJQ](docs/JqJQ.md)
  - [JsonJsonFormatter](docs/JsonJsonFormatter.md)
  - [LogAnalyticsQuerySecretsConfig](docs/LogAnalyticsQuerySecretsConfig.md)
  - [LogAnalyticsQuerySettingsConfig](docs/LogAnalyticsQuerySettingsConfig.md)
@@ -265,6 +273,7 @@ Class | Method | HTTP request | Description
  - [LoginActivitySettingsConfig](docs/LoginActivitySettingsConfig.md)
  - [LoginSessionsSecretsConfig](docs/LoginSessionsSecretsConfig.md)
  - [LoginSessionsSettingsConfig](docs/LoginSessionsSettingsConfig.md)
+ - [MathMultiplyWithValueMathMultiplyWithValue](docs/MathMultiplyWithValueMathMultiplyWithValue.md)
  - [ModelsAPIKey](docs/ModelsAPIKey.md)
  - [ModelsAPIKeyList](docs/ModelsAPIKeyList.md)
  - [ModelsAPIKeyWithToken](docs/ModelsAPIKeyWithToken.md)
@@ -306,6 +315,9 @@ Class | Method | HTTP request | Description
  - [ModelsUser](docs/ModelsUser.md)
  - [ModelsUserList](docs/ModelsUserList.md)
  - [MonadLogSettingsConfig](docs/MonadLogSettingsConfig.md)
+ - [MutateTypeMutateType](docs/MutateTypeMutateType.md)
+ - [MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq](docs/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq.md)
+ - [MutateValueWhereKeyEqMutateValueWhereKeyEq](docs/MutateValueWhereKeyEqMutateValueWhereKeyEq.md)
  - [OauthActivitySecretsConfig](docs/OauthActivitySecretsConfig.md)
  - [OauthActivitySettingsConfig](docs/OauthActivitySettingsConfig.md)
  - [OpensearchSecretsConfig](docs/OpensearchSecretsConfig.md)
@@ -313,6 +325,8 @@ Class | Method | HTTP request | Description
  - [OperationInformation](docs/OperationInformation.md)
  - [OutputsConnectorMeta](docs/OutputsConnectorMeta.md)
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
+ - [RenameKeyRenameKey](docs/RenameKeyRenameKey.md)
+ - [RenameKeyWhereValueEqRenameKeyWhereValueEq](docs/RenameKeyWhereValueEqRenameKeyWhereValueEq.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
  - [RolesInfoSecretsConfig](docs/RolesInfoSecretsConfig.md)
  - [RolesInfoSettingsConfig](docs/RolesInfoSettingsConfig.md)
@@ -322,10 +336,14 @@ Class | Method | HTTP request | Description
  - [RoutesCreateOrganizationRequest](docs/RoutesCreateOrganizationRequest.md)
  - [RoutesCreateOutputRequest](docs/RoutesCreateOutputRequest.md)
  - [RoutesCreateRoleRequest](docs/RoutesCreateRoleRequest.md)
+ - [RoutesCreateTransformRequest](docs/RoutesCreateTransformRequest.md)
  - [RoutesGetInputResponse](docs/RoutesGetInputResponse.md)
  - [RoutesGetOutputResponse](docs/RoutesGetOutputResponse.md)
  - [RoutesGetTransformResponse](docs/RoutesGetTransformResponse.md)
  - [RoutesInviteUserToOrganizationRequest](docs/RoutesInviteUserToOrganizationRequest.md)
+ - [RoutesTransformConfig](docs/RoutesTransformConfig.md)
+ - [RoutesTransformOperation](docs/RoutesTransformOperation.md)
+ - [RoutesTransformOperationArguments](docs/RoutesTransformOperationArguments.md)
  - [RoutesUpdateInputRequest](docs/RoutesUpdateInputRequest.md)
  - [RoutesUpdateInputRequestConfig](docs/RoutesUpdateInputRequestConfig.md)
  - [RoutesUpdateOrganizationRequest](docs/RoutesUpdateOrganizationRequest.md)
@@ -398,6 +416,7 @@ Class | Method | HTTP request | Description
  - [UsersInfoSettingsConfig](docs/UsersInfoSettingsConfig.md)
  - [UsersSecretsConfig](docs/UsersSecretsConfig.md)
  - [UsersSettingsConfig](docs/UsersSettingsConfig.md)
+ - [UtcTimestampTimestamp](docs/UtcTimestampTimestamp.md)
  - [V1OrganizationIdInputsBulkPost400Response](docs/V1OrganizationIdInputsBulkPost400Response.md)
  - [V1OrganizationIdInputsPost400Response](docs/V1OrganizationIdInputsPost400Response.md)
  - [VulnerabilitiesSecretsConfig](docs/VulnerabilitiesSecretsConfig.md)

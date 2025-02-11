@@ -22,7 +22,7 @@ var _ MappedNullable = &RoutesUpdateTransformRequest{}
 
 // RoutesUpdateTransformRequest struct for RoutesUpdateTransformRequest
 type RoutesUpdateTransformRequest struct {
-	Config *ModelsTransformConfig `json:"config,omitempty"`
+	Config *RoutesTransformConfig `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Name string `json:"name"`
 }
@@ -48,9 +48,9 @@ func NewRoutesUpdateTransformRequestWithDefaults() *RoutesUpdateTransformRequest
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *RoutesUpdateTransformRequest) GetConfig() ModelsTransformConfig {
+func (o *RoutesUpdateTransformRequest) GetConfig() RoutesTransformConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret ModelsTransformConfig
+		var ret RoutesTransformConfig
 		return ret
 	}
 	return *o.Config
@@ -58,7 +58,7 @@ func (o *RoutesUpdateTransformRequest) GetConfig() ModelsTransformConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesUpdateTransformRequest) GetConfigOk() (*ModelsTransformConfig, bool) {
+func (o *RoutesUpdateTransformRequest) GetConfigOk() (*RoutesTransformConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -74,8 +74,8 @@ func (o *RoutesUpdateTransformRequest) HasConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given ModelsTransformConfig and assigns it to the Config field.
-func (o *RoutesUpdateTransformRequest) SetConfig(v ModelsTransformConfig) {
+// SetConfig gets a reference to the given RoutesTransformConfig and assigns it to the Config field.
+func (o *RoutesUpdateTransformRequest) SetConfig(v RoutesTransformConfig) {
 	o.Config = &v
 }
 

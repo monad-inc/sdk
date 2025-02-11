@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsTransformConfig;
+import org.openapitools.client.model.RoutesTransformConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,12 +49,12 @@ import org.openapitools.client.JSON;
 /**
  * RoutesUpdateTransformRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T16:04:16.898010404Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T21:19:27.438167347Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesUpdateTransformRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
   @javax.annotation.Nullable
-  private ModelsTransformConfig config;
+  private RoutesTransformConfig config;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -69,7 +69,7 @@ public class RoutesUpdateTransformRequest {
   public RoutesUpdateTransformRequest() {
   }
 
-  public RoutesUpdateTransformRequest config(@javax.annotation.Nullable ModelsTransformConfig config) {
+  public RoutesUpdateTransformRequest config(@javax.annotation.Nullable RoutesTransformConfig config) {
     this.config = config;
     return this;
   }
@@ -79,11 +79,11 @@ public class RoutesUpdateTransformRequest {
    * @return config
    */
   @javax.annotation.Nullable
-  public ModelsTransformConfig getConfig() {
+  public RoutesTransformConfig getConfig() {
     return config;
   }
 
-  public void setConfig(@javax.annotation.Nullable ModelsTransformConfig config) {
+  public void setConfig(@javax.annotation.Nullable RoutesTransformConfig config) {
     this.config = config;
   }
 
@@ -214,7 +214,7 @@ public class RoutesUpdateTransformRequest {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `config`
       if (jsonObj.get("config") != null && !jsonObj.get("config").isJsonNull()) {
-        ModelsTransformConfig.validateJsonElement(jsonObj.get("config"));
+        RoutesTransformConfig.validateJsonElement(jsonObj.get("config"));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));

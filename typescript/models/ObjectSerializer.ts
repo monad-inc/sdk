@@ -1,5 +1,6 @@
 export * from '../models/ActorsInfoSecretsConfig';
 export * from '../models/ActorsInfoSettingsConfig';
+export * from '../models/AddAdd';
 export * from '../models/AdminActivitySecretsConfig';
 export * from '../models/AdminActivitySettingsConfig';
 export * from '../models/AdminLogsSecretsConfig';
@@ -26,6 +27,7 @@ export * from '../models/CloudResourceInventorySecretsConfig';
 export * from '../models/CloudResourceInventorySettingsConfig';
 export * from '../models/CloudtrailSettingsConfig';
 export * from '../models/ConditionInfo';
+export * from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 export * from '../models/CriblHttpSecretsConfig';
 export * from '../models/CriblHttpSettingsConfig';
 export * from '../models/DelimitedDelimiterFormatter';
@@ -39,6 +41,10 @@ export * from '../models/DeviceDetailsSecretsConfig';
 export * from '../models/DeviceDetailsSettingsConfig';
 export * from '../models/DriveActivitySecretsConfig';
 export * from '../models/DriveActivitySettingsConfig';
+export * from '../models/DropKeyDropKey';
+export * from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
+export * from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
+export * from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 export * from '../models/ElasticsearchSecretsConfig';
 export * from '../models/ElasticsearchSettingsConfig';
 export * from '../models/EntraIdSecretsConfig';
@@ -47,10 +53,12 @@ export * from '../models/EventSecretsConfig';
 export * from '../models/EventSettingsConfig';
 export * from '../models/EventsLogsSecretsConfig';
 export * from '../models/EventsLogsSettingsConfig';
+export * from '../models/FlattenFlatten';
 export * from '../models/FormatterFormatConfig';
 export * from '../models/HttpSecretsConfig';
 export * from '../models/HttpSettingsConfig';
 export * from '../models/InputsConnectorMeta';
+export * from '../models/JqJQ';
 export * from '../models/JsonJsonFormatter';
 export * from '../models/LogAnalyticsQuerySecretsConfig';
 export * from '../models/LogAnalyticsQuerySettingsConfig';
@@ -58,6 +66,7 @@ export * from '../models/LoginActivitySecretsConfig';
 export * from '../models/LoginActivitySettingsConfig';
 export * from '../models/LoginSessionsSecretsConfig';
 export * from '../models/LoginSessionsSettingsConfig';
+export * from '../models/MathMultiplyWithValueMathMultiplyWithValue';
 export * from '../models/ModelsAPIKey';
 export * from '../models/ModelsAPIKeyList';
 export * from '../models/ModelsAPIKeyWithToken';
@@ -99,6 +108,9 @@ export * from '../models/ModelsTransformOperation';
 export * from '../models/ModelsUser';
 export * from '../models/ModelsUserList';
 export * from '../models/MonadLogSettingsConfig';
+export * from '../models/MutateTypeMutateType';
+export * from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
+export * from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
 export * from '../models/OauthActivitySecretsConfig';
 export * from '../models/OauthActivitySettingsConfig';
 export * from '../models/OpensearchSecretsConfig';
@@ -106,6 +118,8 @@ export * from '../models/OpensearchSettingsConfig';
 export * from '../models/OperationInformation';
 export * from '../models/OutputsConnectorMeta';
 export * from '../models/ParquetParquetFormatter';
+export * from '../models/RenameKeyRenameKey';
+export * from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 export * from '../models/ResponderErrorResponse';
 export * from '../models/RolesInfoSecretsConfig';
 export * from '../models/RolesInfoSettingsConfig';
@@ -115,10 +129,14 @@ export * from '../models/RoutesCreateInputRequest';
 export * from '../models/RoutesCreateOrganizationRequest';
 export * from '../models/RoutesCreateOutputRequest';
 export * from '../models/RoutesCreateRoleRequest';
+export * from '../models/RoutesCreateTransformRequest';
 export * from '../models/RoutesGetInputResponse';
 export * from '../models/RoutesGetOutputResponse';
 export * from '../models/RoutesGetTransformResponse';
 export * from '../models/RoutesInviteUserToOrganizationRequest';
+export * from '../models/RoutesTransformConfig';
+export * from '../models/RoutesTransformOperation';
+export * from '../models/RoutesTransformOperationArguments';
 export * from '../models/RoutesUpdateInputRequest';
 export * from '../models/RoutesUpdateInputRequestConfig';
 export * from '../models/RoutesUpdateOrganizationRequest';
@@ -191,6 +209,7 @@ export * from '../models/UsersInfoSecretsConfig';
 export * from '../models/UsersInfoSettingsConfig';
 export * from '../models/UsersSecretsConfig';
 export * from '../models/UsersSettingsConfig';
+export * from '../models/UtcTimestampTimestamp';
 export * from '../models/V1OrganizationIdInputsBulkPost400Response';
 export * from '../models/V1OrganizationIdInputsPost400Response';
 export * from '../models/VulnerabilitiesSecretsConfig';
@@ -200,6 +219,7 @@ export * from '../models/VulnerabilityFindingsSettingsConfig';
 
 import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
+import { AddAdd } from '../models/AddAdd';
 import { AdminActivitySecretsConfig } from '../models/AdminActivitySecretsConfig';
 import { AdminActivitySettingsConfig } from '../models/AdminActivitySettingsConfig';
 import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
@@ -226,6 +246,7 @@ import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInve
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
 import { ConditionInfo } from '../models/ConditionInfo';
+import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
@@ -239,6 +260,10 @@ import { DeviceDetailsSecretsConfig } from '../models/DeviceDetailsSecretsConfig
 import { DeviceDetailsSettingsConfig } from '../models/DeviceDetailsSettingsConfig';
 import { DriveActivitySecretsConfig } from '../models/DriveActivitySecretsConfig';
 import { DriveActivitySettingsConfig } from '../models/DriveActivitySettingsConfig';
+import { DropKeyDropKey } from '../models/DropKeyDropKey';
+import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
+import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
+import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
@@ -247,10 +272,12 @@ import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
+import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
+import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
@@ -258,6 +285,7 @@ import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig
 import { LoginActivitySettingsConfig } from '../models/LoginActivitySettingsConfig';
 import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
 import { LoginSessionsSettingsConfig } from '../models/LoginSessionsSettingsConfig';
+import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultiplyWithValueMathMultiplyWithValue';
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
@@ -299,6 +327,9 @@ import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserList } from '../models/ModelsUserList';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
+import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
+import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
+import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
 import { OauthActivitySecretsConfig } from '../models/OauthActivitySecretsConfig';
 import { OauthActivitySettingsConfig } from '../models/OauthActivitySettingsConfig';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
@@ -306,6 +337,8 @@ import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
+import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
+import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
 import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
@@ -315,10 +348,14 @@ import { RoutesCreateInputRequest } from '../models/RoutesCreateInputRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateOutputRequest } from '../models/RoutesCreateOutputRequest';
 import { RoutesCreateRoleRequest } from '../models/RoutesCreateRoleRequest';
+import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
+import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
+import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
+import { RoutesTransformOperationArgumentsClass } from '../models/RoutesTransformOperationArguments';
 import { RoutesUpdateInputRequest } from '../models/RoutesUpdateInputRequest';
 import { RoutesUpdateInputRequestConfig } from '../models/RoutesUpdateInputRequestConfig';
 import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizationRequest';
@@ -391,6 +428,7 @@ import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
 import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
 import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
+import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
 import { V1OrganizationIdInputsBulkPost400ResponseClass } from '../models/V1OrganizationIdInputsBulkPost400Response';
 import { V1OrganizationIdInputsPost400ResponseClass } from '../models/V1OrganizationIdInputsPost400Response';
 import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
@@ -416,6 +454,7 @@ let enumsMap: Set<string> = new Set<string>([
 let typeMap: {[index: string]: any} = {
     "ActorsInfoSecretsConfig": ActorsInfoSecretsConfig,
     "ActorsInfoSettingsConfig": ActorsInfoSettingsConfig,
+    "AddAdd": AddAdd,
     "AdminActivitySecretsConfig": AdminActivitySecretsConfig,
     "AdminActivitySettingsConfig": AdminActivitySettingsConfig,
     "AdminLogsSecretsConfig": AdminLogsSecretsConfig,
@@ -442,6 +481,7 @@ let typeMap: {[index: string]: any} = {
     "CloudResourceInventorySettingsConfig": CloudResourceInventorySettingsConfig,
     "CloudtrailSettingsConfig": CloudtrailSettingsConfig,
     "ConditionInfo": ConditionInfo,
+    "CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue": CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue,
     "CriblHttpSecretsConfig": CriblHttpSecretsConfig,
     "CriblHttpSettingsConfig": CriblHttpSettingsConfig,
     "DelimitedDelimiterFormatter": DelimitedDelimiterFormatter,
@@ -455,6 +495,10 @@ let typeMap: {[index: string]: any} = {
     "DeviceDetailsSettingsConfig": DeviceDetailsSettingsConfig,
     "DriveActivitySecretsConfig": DriveActivitySecretsConfig,
     "DriveActivitySettingsConfig": DriveActivitySettingsConfig,
+    "DropKeyDropKey": DropKeyDropKey,
+    "DropKeyWhereValueEqDropKeyWhereValueEq": DropKeyWhereValueEqDropKeyWhereValueEq,
+    "DropRecordWhereValueEqDropRecordWhereValueEq": DropRecordWhereValueEqDropRecordWhereValueEq,
+    "DuplicateKeyValueToKeyDuplicateKeyValueToKey": DuplicateKeyValueToKeyDuplicateKeyValueToKey,
     "ElasticsearchSecretsConfig": ElasticsearchSecretsConfig,
     "ElasticsearchSettingsConfig": ElasticsearchSettingsConfig,
     "EntraIdSecretsConfig": EntraIdSecretsConfig,
@@ -463,10 +507,12 @@ let typeMap: {[index: string]: any} = {
     "EventSettingsConfig": EventSettingsConfig,
     "EventsLogsSecretsConfig": EventsLogsSecretsConfig,
     "EventsLogsSettingsConfig": EventsLogsSettingsConfig,
+    "FlattenFlatten": FlattenFlatten,
     "FormatterFormatConfig": FormatterFormatConfig,
     "HttpSecretsConfig": HttpSecretsConfig,
     "HttpSettingsConfig": HttpSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,
+    "JqJQ": JqJQ,
     "JsonJsonFormatter": JsonJsonFormatter,
     "LogAnalyticsQuerySecretsConfig": LogAnalyticsQuerySecretsConfig,
     "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,
@@ -474,6 +520,7 @@ let typeMap: {[index: string]: any} = {
     "LoginActivitySettingsConfig": LoginActivitySettingsConfig,
     "LoginSessionsSecretsConfig": LoginSessionsSecretsConfig,
     "LoginSessionsSettingsConfig": LoginSessionsSettingsConfig,
+    "MathMultiplyWithValueMathMultiplyWithValue": MathMultiplyWithValueMathMultiplyWithValue,
     "ModelsAPIKey": ModelsAPIKey,
     "ModelsAPIKeyList": ModelsAPIKeyList,
     "ModelsAPIKeyWithToken": ModelsAPIKeyWithToken,
@@ -515,6 +562,9 @@ let typeMap: {[index: string]: any} = {
     "ModelsUser": ModelsUser,
     "ModelsUserList": ModelsUserList,
     "MonadLogSettingsConfig": MonadLogSettingsConfig,
+    "MutateTypeMutateType": MutateTypeMutateType,
+    "MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq": MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq,
+    "MutateValueWhereKeyEqMutateValueWhereKeyEq": MutateValueWhereKeyEqMutateValueWhereKeyEq,
     "OauthActivitySecretsConfig": OauthActivitySecretsConfig,
     "OauthActivitySettingsConfig": OauthActivitySettingsConfig,
     "OpensearchSecretsConfig": OpensearchSecretsConfig,
@@ -522,6 +572,8 @@ let typeMap: {[index: string]: any} = {
     "OperationInformation": OperationInformation,
     "OutputsConnectorMeta": OutputsConnectorMeta,
     "ParquetParquetFormatter": ParquetParquetFormatter,
+    "RenameKeyRenameKey": RenameKeyRenameKey,
+    "RenameKeyWhereValueEqRenameKeyWhereValueEq": RenameKeyWhereValueEqRenameKeyWhereValueEq,
     "ResponderErrorResponse": ResponderErrorResponse,
     "RolesInfoSecretsConfig": RolesInfoSecretsConfig,
     "RolesInfoSettingsConfig": RolesInfoSettingsConfig,
@@ -531,10 +583,14 @@ let typeMap: {[index: string]: any} = {
     "RoutesCreateOrganizationRequest": RoutesCreateOrganizationRequest,
     "RoutesCreateOutputRequest": RoutesCreateOutputRequest,
     "RoutesCreateRoleRequest": RoutesCreateRoleRequest,
+    "RoutesCreateTransformRequest": RoutesCreateTransformRequest,
     "RoutesGetInputResponse": RoutesGetInputResponse,
     "RoutesGetOutputResponse": RoutesGetOutputResponse,
     "RoutesGetTransformResponse": RoutesGetTransformResponse,
     "RoutesInviteUserToOrganizationRequest": RoutesInviteUserToOrganizationRequest,
+    "RoutesTransformConfig": RoutesTransformConfig,
+    "RoutesTransformOperation": RoutesTransformOperation,
+    "RoutesTransformOperationArguments": RoutesTransformOperationArgumentsClass,
     "RoutesUpdateInputRequest": RoutesUpdateInputRequest,
     "RoutesUpdateInputRequestConfig": RoutesUpdateInputRequestConfig,
     "RoutesUpdateOrganizationRequest": RoutesUpdateOrganizationRequest,
@@ -607,6 +663,7 @@ let typeMap: {[index: string]: any} = {
     "UsersInfoSettingsConfig": UsersInfoSettingsConfig,
     "UsersSecretsConfig": UsersSecretsConfig,
     "UsersSettingsConfig": UsersSettingsConfig,
+    "UtcTimestampTimestamp": UtcTimestampTimestamp,
     "V1OrganizationIdInputsBulkPost400Response": V1OrganizationIdInputsBulkPost400ResponseClass,
     "V1OrganizationIdInputsPost400Response": V1OrganizationIdInputsPost400ResponseClass,
     "VulnerabilitiesSecretsConfig": VulnerabilitiesSecretsConfig,

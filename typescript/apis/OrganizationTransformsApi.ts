@@ -10,6 +10,7 @@ import {SecurityAuthentication} from '../auth/auth';
 
 import { ModelsTransform } from '../models/ModelsTransform';
 import { ModelsTransformList } from '../models/ModelsTransformList';
+import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformRequest';
 
@@ -79,9 +80,9 @@ export class OrganizationTransformsApiRequestFactory extends BaseAPIRequestFacto
      * Create transform
      * Create transform
      * @param organizationId Organization ID
-     * @param body Request body for creating a transform
+     * @param routesCreateTransformRequest Request body for creating a transform
      */
-    public async v1OrganizationIdTransformsPost(organizationId: string, body: any, _options?: Configuration): Promise<RequestContext> {
+    public async v1OrganizationIdTransformsPost(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -90,9 +91,9 @@ export class OrganizationTransformsApiRequestFactory extends BaseAPIRequestFacto
         }
 
 
-        // verify required parameter 'body' is not null or undefined
-        if (body === null || body === undefined) {
-            throw new RequiredError("OrganizationTransformsApi", "v1OrganizationIdTransformsPost", "body");
+        // verify required parameter 'routesCreateTransformRequest' is not null or undefined
+        if (routesCreateTransformRequest === null || routesCreateTransformRequest === undefined) {
+            throw new RequiredError("OrganizationTransformsApi", "v1OrganizationIdTransformsPost", "routesCreateTransformRequest");
         }
 
 
@@ -111,7 +112,7 @@ export class OrganizationTransformsApiRequestFactory extends BaseAPIRequestFacto
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "any", ""),
+            ObjectSerializer.serialize(routesCreateTransformRequest, "RoutesCreateTransformRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
