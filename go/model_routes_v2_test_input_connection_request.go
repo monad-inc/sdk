@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesV2TestInputConnectionRequest{}
 
 // RoutesV2TestInputConnectionRequest struct for RoutesV2TestInputConnectionRequest
 type RoutesV2TestInputConnectionRequest struct {
-	Config *ModelsInputConfig `json:"config,omitempty"`
+	Config *RoutesV2InputConfig `json:"config,omitempty"`
 	Type *string `json:"type,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewRoutesV2TestInputConnectionRequestWithDefaults() *RoutesV2TestInputConne
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *RoutesV2TestInputConnectionRequest) GetConfig() ModelsInputConfig {
+func (o *RoutesV2TestInputConnectionRequest) GetConfig() RoutesV2InputConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret ModelsInputConfig
+		var ret RoutesV2InputConfig
 		return ret
 	}
 	return *o.Config
@@ -52,7 +52,7 @@ func (o *RoutesV2TestInputConnectionRequest) GetConfig() ModelsInputConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV2TestInputConnectionRequest) GetConfigOk() (*ModelsInputConfig, bool) {
+func (o *RoutesV2TestInputConnectionRequest) GetConfigOk() (*RoutesV2InputConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *RoutesV2TestInputConnectionRequest) HasConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given ModelsInputConfig and assigns it to the Config field.
-func (o *RoutesV2TestInputConnectionRequest) SetConfig(v ModelsInputConfig) {
+// SetConfig gets a reference to the given RoutesV2InputConfig and assigns it to the Config field.
+func (o *RoutesV2TestInputConnectionRequest) SetConfig(v RoutesV2InputConfig) {
 	o.Config = &v
 }
 

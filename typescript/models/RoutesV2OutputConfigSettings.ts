@@ -26,7 +26,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesV2OutputConfigSettings = CriblHttpSettingsConfig | ElasticsearchSettingsConfig | HttpSettingsConfig | OpensearchSettingsConfig | S3SettingsConfig | SentinelSettingsConfig | SnowflakeSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig;
+export type RoutesV2OutputConfigSettings = CriblHttpSettingsConfig | ElasticsearchSettingsConfig | HttpSettingsConfig | OpensearchSettingsConfig | S3SettingsConfig | SentinelSettingsConfig | SnowflakeSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | { [key: string]: any; };
 
 /**
 * @type RoutesV2OutputConfigSettingsClass
@@ -37,6 +37,7 @@ export class RoutesV2OutputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

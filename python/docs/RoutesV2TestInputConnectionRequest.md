@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**ModelsInputConfig**](ModelsInputConfig.md) |  | [optional] 
+**config** | [**RoutesV2InputConfig**](RoutesV2InputConfig.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 
 ## Example

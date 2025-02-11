@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 
 ## V2OrganizationIdOutputsTestConnectionPost
 
-> RoutesV2SuccessResponse V2OrganizationIdOutputsTestConnectionPost(ctx, organizationId).Body(body).Execute()
+> RoutesV2SuccessResponse V2OrganizationIdOutputsTestConnectionPost(ctx, organizationId).RoutesV2TestOutputConnectionRequest(routesV2TestOutputConnectionRequest).Execute()
 
 Test output connection
 
@@ -555,11 +555,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	body := map[string]interface{}{ ... } // map[string]interface{} | Output configuration to test
+	routesV2TestOutputConnectionRequest := *openapiclient.NewRoutesV2TestOutputConnectionRequest() // RoutesV2TestOutputConnectionRequest | Output configuration to test
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationOutputsAPI.V2OrganizationIdOutputsTestConnectionPost(context.Background(), organizationId).Body(body).Execute()
+	resp, r, err := apiClient.OrganizationOutputsAPI.V2OrganizationIdOutputsTestConnectionPost(context.Background(), organizationId).RoutesV2TestOutputConnectionRequest(routesV2TestOutputConnectionRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationOutputsAPI.V2OrganizationIdOutputsTestConnectionPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -585,7 +585,7 @@ Other parameters are passed through a pointer to a apiV2OrganizationIdOutputsTes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | **map[string]interface{}** | Output configuration to test | 
+ **routesV2TestOutputConnectionRequest** | [**RoutesV2TestOutputConnectionRequest**](RoutesV2TestOutputConnectionRequest.md) | Output configuration to test | 
 
 ### Return type
 

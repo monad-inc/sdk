@@ -17,7 +17,7 @@ from __future__ import annotations
 import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
-from typing import Any, List, Optional
+from typing import Any, Dict, List, Optional
 from monad.models.cribl_http_settings_config import CriblHttpSettingsConfig
 from monad.models.elasticsearch_settings_config import ElasticsearchSettingsConfig
 from monad.models.http_settings_config import HttpSettingsConfig
@@ -31,7 +31,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-ROUTESV2OUTPUTCONFIGSETTINGS_ONE_OF_SCHEMAS = ["CriblHttpSettingsConfig", "ElasticsearchSettingsConfig", "HttpSettingsConfig", "OpensearchSettingsConfig", "S3SettingsConfig", "SentinelSettingsConfig", "SnowflakeSettingsConfig", "SplunkSettingsConfig", "SumologicSettingsConfig"]
+ROUTESV2OUTPUTCONFIGSETTINGS_ONE_OF_SCHEMAS = ["CriblHttpSettingsConfig", "Dict[str, object]", "ElasticsearchSettingsConfig", "HttpSettingsConfig", "OpensearchSettingsConfig", "S3SettingsConfig", "SentinelSettingsConfig", "SnowflakeSettingsConfig", "SplunkSettingsConfig", "SumologicSettingsConfig"]
 
 class RoutesV2OutputConfigSettings(BaseModel):
     """
@@ -43,20 +43,22 @@ class RoutesV2OutputConfigSettings(BaseModel):
     oneof_schema_2_validator: Optional[ElasticsearchSettingsConfig] = None
     # data type: HttpSettingsConfig
     oneof_schema_3_validator: Optional[HttpSettingsConfig] = None
+    # data type: Dict[str, object]
+    oneof_schema_4_validator: Optional[Dict[str, Any]] = None
     # data type: OpensearchSettingsConfig
-    oneof_schema_4_validator: Optional[OpensearchSettingsConfig] = None
+    oneof_schema_5_validator: Optional[OpensearchSettingsConfig] = None
     # data type: S3SettingsConfig
-    oneof_schema_5_validator: Optional[S3SettingsConfig] = None
+    oneof_schema_6_validator: Optional[S3SettingsConfig] = None
     # data type: SentinelSettingsConfig
-    oneof_schema_6_validator: Optional[SentinelSettingsConfig] = None
+    oneof_schema_7_validator: Optional[SentinelSettingsConfig] = None
     # data type: SnowflakeSettingsConfig
-    oneof_schema_7_validator: Optional[SnowflakeSettingsConfig] = None
+    oneof_schema_8_validator: Optional[SnowflakeSettingsConfig] = None
     # data type: SplunkSettingsConfig
-    oneof_schema_8_validator: Optional[SplunkSettingsConfig] = None
+    oneof_schema_9_validator: Optional[SplunkSettingsConfig] = None
     # data type: SumologicSettingsConfig
-    oneof_schema_9_validator: Optional[SumologicSettingsConfig] = None
-    actual_instance: Optional[Union[CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig]] = None
-    one_of_schemas: Set[str] = { "CriblHttpSettingsConfig", "ElasticsearchSettingsConfig", "HttpSettingsConfig", "OpensearchSettingsConfig", "S3SettingsConfig", "SentinelSettingsConfig", "SnowflakeSettingsConfig", "SplunkSettingsConfig", "SumologicSettingsConfig" }
+    oneof_schema_10_validator: Optional[SumologicSettingsConfig] = None
+    actual_instance: Optional[Union[CriblHttpSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, HttpSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig]] = None
+    one_of_schemas: Set[str] = { "CriblHttpSettingsConfig", "Dict[str, object]", "ElasticsearchSettingsConfig", "HttpSettingsConfig", "OpensearchSettingsConfig", "S3SettingsConfig", "SentinelSettingsConfig", "SnowflakeSettingsConfig", "SplunkSettingsConfig", "SumologicSettingsConfig" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -94,6 +96,12 @@ class RoutesV2OutputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `HttpSettingsConfig`")
         else:
             match += 1
+        # validate data type: Dict[str, object]
+        try:
+            instance.oneof_schema_4_validator = v
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # validate data type: OpensearchSettingsConfig
         if not isinstance(v, OpensearchSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `OpensearchSettingsConfig`")
@@ -126,10 +134,10 @@ class RoutesV2OutputConfigSettings(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in RoutesV2OutputConfigSettings with oneOf schemas: CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in RoutesV2OutputConfigSettings with oneOf schemas: CriblHttpSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, HttpSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in RoutesV2OutputConfigSettings with oneOf schemas: CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in RoutesV2OutputConfigSettings with oneOf schemas: CriblHttpSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, HttpSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -159,6 +167,15 @@ class RoutesV2OutputConfigSettings(BaseModel):
         # deserialize data into HttpSettingsConfig
         try:
             instance.actual_instance = HttpSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into Dict[str, object]
+        try:
+            # validation
+            instance.oneof_schema_4_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_4_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -201,10 +218,10 @@ class RoutesV2OutputConfigSettings(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into RoutesV2OutputConfigSettings with oneOf schemas: CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into RoutesV2OutputConfigSettings with oneOf schemas: CriblHttpSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, HttpSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into RoutesV2OutputConfigSettings with oneOf schemas: CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into RoutesV2OutputConfigSettings with oneOf schemas: CriblHttpSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, HttpSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -218,7 +235,7 @@ class RoutesV2OutputConfigSettings(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], CriblHttpSettingsConfig, Dict[str, object], ElasticsearchSettingsConfig, HttpSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

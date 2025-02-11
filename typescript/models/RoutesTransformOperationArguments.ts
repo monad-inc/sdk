@@ -32,7 +32,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesTransformOperationArguments = AddAdd | CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue | DropKeyDropKey | DropKeyWhereValueEqDropKeyWhereValueEq | DropRecordWhereValueEqDropRecordWhereValueEq | DuplicateKeyValueToKeyDuplicateKeyValueToKey | FlattenFlatten | JqJQ | MathMultiplyWithValueMathMultiplyWithValue | MutateTypeMutateType | MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq | MutateValueWhereKeyEqMutateValueWhereKeyEq | RenameKeyRenameKey | RenameKeyWhereValueEqRenameKeyWhereValueEq | UtcTimestampTimestamp;
+export type RoutesTransformOperationArguments = AddAdd | CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue | DropKeyDropKey | DropKeyWhereValueEqDropKeyWhereValueEq | DropRecordWhereValueEqDropRecordWhereValueEq | DuplicateKeyValueToKeyDuplicateKeyValueToKey | FlattenFlatten | JqJQ | MathMultiplyWithValueMathMultiplyWithValue | MutateTypeMutateType | MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq | MutateValueWhereKeyEqMutateValueWhereKeyEq | RenameKeyRenameKey | RenameKeyWhereValueEqRenameKeyWhereValueEq | UtcTimestampTimestamp | { [key: string]: any; };
 
 /**
 * @type RoutesTransformOperationArgumentsClass
@@ -43,6 +43,7 @@ export class RoutesTransformOperationArgumentsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

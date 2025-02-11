@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_input_config import ModelsInputConfig
+from monad.models.routes_v2_input_config import RoutesV2InputConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class RoutesV2TestInputConnectionRequest(BaseModel):
     """
     RoutesV2TestInputConnectionRequest
     """ # noqa: E501
-    config: Optional[ModelsInputConfig] = None
+    config: Optional[RoutesV2InputConfig] = None
     type: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["config", "type"]
 
@@ -86,7 +86,7 @@ class RoutesV2TestInputConnectionRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "config": ModelsInputConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
+            "config": RoutesV2InputConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
             "type": obj.get("type")
         })
         return _obj

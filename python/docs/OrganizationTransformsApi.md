@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_organization_id_transforms_post**
-> ModelsTransform v1_organization_id_transforms_post(organization_id, body)
+> ModelsTransform v1_organization_id_transforms_post(organization_id, routes_create_transform_request)
 
 Create transform
 
@@ -117,6 +117,7 @@ Create transform
 ```python
 import monad
 from monad.models.models_transform import ModelsTransform
+from monad.models.routes_create_transform_request import RoutesCreateTransformRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -148,11 +149,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationTransformsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    body = None # object | Request body for creating a transform
+    routes_create_transform_request = monad.RoutesCreateTransformRequest() # RoutesCreateTransformRequest | Request body for creating a transform
 
     try:
         # Create transform
-        api_response = api_instance.v1_organization_id_transforms_post(organization_id, body)
+        api_response = api_instance.v1_organization_id_transforms_post(organization_id, routes_create_transform_request)
         print("The response of OrganizationTransformsApi->v1_organization_id_transforms_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -167,7 +168,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **body** | **object**| Request body for creating a transform | 
+ **routes_create_transform_request** | [**RoutesCreateTransformRequest**](RoutesCreateTransformRequest.md)| Request body for creating a transform | 
 
 ### Return type
 

@@ -10,11 +10,11 @@
  * Do not edit the class manually.
  */
 
-import { ModelsInputConfig } from '../models/ModelsInputConfig';
+import { RoutesV2InputConfig } from '../models/RoutesV2InputConfig';
 import { HttpFile } from '../http/http';
 
 export class RoutesV2TestInputConnectionRequest {
-    'config'?: ModelsInputConfig;
+    'config'?: RoutesV2InputConfig;
     'type'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -25,7 +25,7 @@ export class RoutesV2TestInputConnectionRequest {
         {
             "name": "config",
             "baseName": "config",
-            "type": "ModelsInputConfig",
+            "type": "RoutesV2InputConfig",
             "format": ""
         },
         {

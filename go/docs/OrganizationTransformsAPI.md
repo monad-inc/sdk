@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1OrganizationIdTransformsPost
 
-> ModelsTransform V1OrganizationIdTransformsPost(ctx, organizationId).Body(body).Execute()
+> ModelsTransform V1OrganizationIdTransformsPost(ctx, organizationId).RoutesCreateTransformRequest(routesCreateTransformRequest).Execute()
 
 Create transform
 
@@ -108,11 +108,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	body := map[string]interface{}{ ... } // map[string]interface{} | Request body for creating a transform
+	routesCreateTransformRequest := *openapiclient.NewRoutesCreateTransformRequest("Name_example") // RoutesCreateTransformRequest | Request body for creating a transform
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationTransformsAPI.V1OrganizationIdTransformsPost(context.Background(), organizationId).Body(body).Execute()
+	resp, r, err := apiClient.OrganizationTransformsAPI.V1OrganizationIdTransformsPost(context.Background(), organizationId).RoutesCreateTransformRequest(routesCreateTransformRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationTransformsAPI.V1OrganizationIdTransformsPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -138,7 +138,7 @@ Other parameters are passed through a pointer to a apiV1OrganizationIdTransforms
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | **map[string]interface{}** | Request body for creating a transform | 
+ **routesCreateTransformRequest** | [**RoutesCreateTransformRequest**](RoutesCreateTransformRequest.md) | Request body for creating a transform | 
 
 ### Return type
 

@@ -5,17 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**delimiter** | **str** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 | [optional] 
-**key** | **str** | The key which values should be checked | [optional] 
-**type** | **str** | The new type of the key | [optional] 
-**new_key** | **str** | The new key to duplicate the value to | [optional] 
+**key** | **str** | The key to store the timestamp in | [optional] 
 **value** | **object** |  | [optional] 
-**format** | **str** | The format of the timestamp | [optional] 
 **key_to_watch** | **str** | The key to watch for | [optional] 
 **value_to_watch** | **object** |  | [optional] 
+**new_key** | **str** | The new key to duplicate the value to | [optional] 
+**delimiter** | **str** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 | [optional] 
 **query** | **str** | The JQ query to apply to the record | [optional] 
 **new_key** | **str** | The new key to rename to | [optional] 
+**type** | **str** | The new type of the key | [optional] 
 **value_to_set** | **object** |  | [optional] 
+**format** | **str** | The format of the timestamp | [optional] 
 
 ## Example
 

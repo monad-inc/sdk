@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR actors info settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T21:57:31.807810159Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T22:15:29.981276993Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class ActorsInfoSettingsConfig {
   public static final String SERIALIZED_NAME_ACTOR_TYPE = "actor_type";
   @SerializedName(SERIALIZED_NAME_ACTOR_TYPE)

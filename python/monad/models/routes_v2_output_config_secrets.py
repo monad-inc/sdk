@@ -30,7 +30,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-ROUTESV2OUTPUTCONFIGSECRETS_ONE_OF_SCHEMAS = ["CriblHttpSecretsConfig", "ElasticsearchSecretsConfig", "HttpSecretsConfig", "OpensearchSecretsConfig", "SentinelSecretsConfig", "SnowflakeSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object"]
+ROUTESV2OUTPUTCONFIGSECRETS_ONE_OF_SCHEMAS = ["CriblHttpSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "HttpSecretsConfig", "OpensearchSecretsConfig", "SentinelSecretsConfig", "SnowflakeSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object"]
 
 class RoutesV2OutputConfigSecrets(BaseModel):
     """
@@ -42,20 +42,22 @@ class RoutesV2OutputConfigSecrets(BaseModel):
     oneof_schema_2_validator: Optional[ElasticsearchSecretsConfig] = None
     # data type: HttpSecretsConfig
     oneof_schema_3_validator: Optional[HttpSecretsConfig] = None
+    # data type: Dict[str, object]
+    oneof_schema_4_validator: Optional[Dict[str, Any]] = None
     # data type: OpensearchSecretsConfig
-    oneof_schema_4_validator: Optional[OpensearchSecretsConfig] = None
+    oneof_schema_5_validator: Optional[OpensearchSecretsConfig] = None
     # data type: object
-    oneof_schema_5_validator: Optional[Dict[str, Any]] = Field(default=None, description="S3 Output Secrets")
+    oneof_schema_6_validator: Optional[Dict[str, Any]] = Field(default=None, description="S3 Output Secrets")
     # data type: SentinelSecretsConfig
-    oneof_schema_6_validator: Optional[SentinelSecretsConfig] = None
+    oneof_schema_7_validator: Optional[SentinelSecretsConfig] = None
     # data type: SnowflakeSecretsConfig
-    oneof_schema_7_validator: Optional[SnowflakeSecretsConfig] = None
+    oneof_schema_8_validator: Optional[SnowflakeSecretsConfig] = None
     # data type: SplunkSecretsConfig
-    oneof_schema_8_validator: Optional[SplunkSecretsConfig] = None
+    oneof_schema_9_validator: Optional[SplunkSecretsConfig] = None
     # data type: SumologicSecretsConfig
-    oneof_schema_9_validator: Optional[SumologicSecretsConfig] = None
-    actual_instance: Optional[Union[CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]] = None
-    one_of_schemas: Set[str] = { "CriblHttpSecretsConfig", "ElasticsearchSecretsConfig", "HttpSecretsConfig", "OpensearchSecretsConfig", "SentinelSecretsConfig", "SnowflakeSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object" }
+    oneof_schema_10_validator: Optional[SumologicSecretsConfig] = None
+    actual_instance: Optional[Union[CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]] = None
+    one_of_schemas: Set[str] = { "CriblHttpSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "HttpSecretsConfig", "OpensearchSecretsConfig", "SentinelSecretsConfig", "SnowflakeSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -93,6 +95,12 @@ class RoutesV2OutputConfigSecrets(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `HttpSecretsConfig`")
         else:
             match += 1
+        # validate data type: Dict[str, object]
+        try:
+            instance.oneof_schema_4_validator = v
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # validate data type: OpensearchSecretsConfig
         if not isinstance(v, OpensearchSecretsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `OpensearchSecretsConfig`")
@@ -100,7 +108,7 @@ class RoutesV2OutputConfigSecrets(BaseModel):
             match += 1
         # validate data type: object
         try:
-            instance.oneof_schema_5_validator = v
+            instance.oneof_schema_6_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -126,10 +134,10 @@ class RoutesV2OutputConfigSecrets(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -162,6 +170,15 @@ class RoutesV2OutputConfigSecrets(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into Dict[str, object]
+        try:
+            # validation
+            instance.oneof_schema_4_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_4_validator
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into OpensearchSecretsConfig
         try:
             instance.actual_instance = OpensearchSecretsConfig.from_json(json_str)
@@ -171,9 +188,9 @@ class RoutesV2OutputConfigSecrets(BaseModel):
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_5_validator = json.loads(json_str)
+            instance.oneof_schema_6_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_5_validator
+            instance.actual_instance = instance.oneof_schema_6_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -204,10 +221,10 @@ class RoutesV2OutputConfigSecrets(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -221,7 +238,7 @@ class RoutesV2OutputConfigSecrets(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

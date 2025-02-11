@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsInputConfig;
+import org.openapitools.client.model.RoutesV2InputConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,12 +49,12 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2TestInputConnectionRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T21:41:34.564950004Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T22:15:29.981276993Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2TestInputConnectionRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
   @javax.annotation.Nullable
-  private ModelsInputConfig config;
+  private RoutesV2InputConfig config;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -64,7 +64,7 @@ public class RoutesV2TestInputConnectionRequest {
   public RoutesV2TestInputConnectionRequest() {
   }
 
-  public RoutesV2TestInputConnectionRequest config(@javax.annotation.Nullable ModelsInputConfig config) {
+  public RoutesV2TestInputConnectionRequest config(@javax.annotation.Nullable RoutesV2InputConfig config) {
     this.config = config;
     return this;
   }
@@ -74,11 +74,11 @@ public class RoutesV2TestInputConnectionRequest {
    * @return config
    */
   @javax.annotation.Nullable
-  public ModelsInputConfig getConfig() {
+  public RoutesV2InputConfig getConfig() {
     return config;
   }
 
-  public void setConfig(@javax.annotation.Nullable ModelsInputConfig config) {
+  public void setConfig(@javax.annotation.Nullable RoutesV2InputConfig config) {
     this.config = config;
   }
 
@@ -179,7 +179,7 @@ public class RoutesV2TestInputConnectionRequest {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `config`
       if (jsonObj.get("config") != null && !jsonObj.get("config").isJsonNull()) {
-        ModelsInputConfig.validateJsonElement(jsonObj.get("config"));
+        RoutesV2InputConfig.validateJsonElement(jsonObj.get("config"));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

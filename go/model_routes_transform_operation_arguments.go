@@ -34,6 +34,7 @@ type RoutesTransformOperationArguments struct {
 	RenameKeyRenameKey *RenameKeyRenameKey
 	RenameKeyWhereValueEqRenameKeyWhereValueEq *RenameKeyWhereValueEqRenameKeyWhereValueEq
 	UtcTimestampTimestamp *UtcTimestampTimestamp
+	MapmapOfStringAny *map[string]interface{}
 }
 
 // AddAddAsRoutesTransformOperationArguments is a convenience function that returns AddAdd wrapped in RoutesTransformOperationArguments
@@ -138,6 +139,13 @@ func RenameKeyWhereValueEqRenameKeyWhereValueEqAsRoutesTransformOperationArgumen
 func UtcTimestampTimestampAsRoutesTransformOperationArguments(v *UtcTimestampTimestamp) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
 		UtcTimestampTimestamp: v,
+	}
+}
+
+// map[string]interface{}AsRoutesTransformOperationArguments is a convenience function that returns map[string]interface{} wrapped in RoutesTransformOperationArguments
+func MapmapOfStringAnyAsRoutesTransformOperationArguments(v *map[string]interface{}) RoutesTransformOperationArguments {
+	return RoutesTransformOperationArguments{
+		MapmapOfStringAny: v,
 	}
 }
 
@@ -401,6 +409,23 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		dst.UtcTimestampTimestamp = nil
 	}
 
+	// try to unmarshal data into MapmapOfStringAny
+	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
+	if err == nil {
+		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
+		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
+			dst.MapmapOfStringAny = nil
+		} else {
+			if err = validator.Validate(dst.MapmapOfStringAny); err != nil {
+				dst.MapmapOfStringAny = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.MapmapOfStringAny = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AddAdd = nil
@@ -418,6 +443,7 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		dst.RenameKeyRenameKey = nil
 		dst.RenameKeyWhereValueEqRenameKeyWhereValueEq = nil
 		dst.UtcTimestampTimestamp = nil
+		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(RoutesTransformOperationArguments)")
 	} else if match == 1 {
@@ -489,6 +515,10 @@ func (src RoutesTransformOperationArguments) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.UtcTimestampTimestamp)
 	}
 
+	if src.MapmapOfStringAny != nil {
+		return json.Marshal(&src.MapmapOfStringAny)
+	}
+
 	return nil, nil // no data in oneOf schemas
 }
 
@@ -555,6 +585,10 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 
 	if obj.UtcTimestampTimestamp != nil {
 		return obj.UtcTimestampTimestamp
+	}
+
+	if obj.MapmapOfStringAny != nil {
+		return obj.MapmapOfStringAny
 	}
 
 	// all schemas are nil

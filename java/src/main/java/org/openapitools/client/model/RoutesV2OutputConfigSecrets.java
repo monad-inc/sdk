@@ -68,7 +68,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T21:19:27.438167347Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T22:15:29.981276993Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesV2OutputConfigSecrets.class.getName());
 
@@ -83,6 +83,8 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
             final TypeAdapter<CriblHttpSecretsConfig> adapterCriblHttpSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CriblHttpSecretsConfig.class));
             final TypeAdapter<ElasticsearchSecretsConfig> adapterElasticsearchSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(ElasticsearchSecretsConfig.class));
             final TypeAdapter<HttpSecretsConfig> adapterHttpSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(HttpSecretsConfig.class));
+            final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
+            final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
             final TypeAdapter<OpensearchSecretsConfig> adapterOpensearchSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(OpensearchSecretsConfig.class));
             final TypeAdapter<Object> adapterObject = gson.getDelegateAdapter(this, TypeToken.get(Object.class));
             final TypeAdapter<SentinelSecretsConfig> adapterSentinelSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SentinelSecretsConfig.class));
@@ -114,6 +116,12 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
                     if (value.getActualInstance() instanceof HttpSecretsConfig) {
                         JsonElement element = adapterHttpSecretsConfig.toJsonTree((HttpSecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `Map<String, Object>`
+                    if (value.getActualInstance() instanceof Map<?, ?>) {
+                        JsonObject object = adapterMapStringObject.toJsonTree((Map<String, Object>)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, object);
                         return;
                     }
                     // check if the actual instance is of the type `OpensearchSecretsConfig`
@@ -152,7 +160,7 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, Object, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, Map<String, Object>, Object, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig");
                 }
 
                 @Override
@@ -199,6 +207,21 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format("Deserialization for HttpSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'HttpSecretsConfig'", e);
+                    }
+                    // deserialize Map<String, Object>
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        if (!jsonElement.isJsonObject()) {
+                            throw new IllegalArgumentException(String.format("Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
+                        }
+
+                        actualAdapter = adapterMapStringObject;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'Map<String, Object>'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'Map<String, Object>'", e);
                     }
                     // deserialize OpensearchSecretsConfig
                     try {
@@ -303,6 +326,7 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
         schemas.put("CriblHttpSecretsConfig", CriblHttpSecretsConfig.class);
         schemas.put("ElasticsearchSecretsConfig", ElasticsearchSecretsConfig.class);
         schemas.put("HttpSecretsConfig", HttpSecretsConfig.class);
+        schemas.put("Map<String, Object>", Map.class);
         schemas.put("OpensearchSecretsConfig", OpensearchSecretsConfig.class);
         schemas.put("Object", Object.class);
         schemas.put("SentinelSecretsConfig", SentinelSecretsConfig.class);
@@ -319,7 +343,7 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, Object, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
+     * CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, Map<String, Object>, Object, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -336,6 +360,11 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
         }
 
         if (instance instanceof HttpSecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof Map<?, ?>) {
             super.setActualInstance(instance);
             return;
         }
@@ -370,14 +399,14 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, Object, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig");
+        throw new RuntimeException("Invalid instance type. Must be CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, Map<String, Object>, Object, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, Object, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
+     * CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, Map<String, Object>, Object, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
      *
-     * @return The actual instance (CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, Object, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig)
+     * @return The actual instance (CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, Map<String, Object>, Object, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -416,6 +445,17 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
      */
     public HttpSecretsConfig getHttpSecretsConfig() throws ClassCastException {
         return (HttpSecretsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `Map<String, Object>`. If the actual instance is not `Map<String, Object>`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `Map<String, Object>`
+     * @throws ClassCastException if the instance is not `Map<String, Object>`
+     */
+    public Map<String, Object> getMapStringObject() throws ClassCastException {
+        return (Map<String, Object>)super.getActualInstance();
     }
 
     /**
@@ -518,6 +558,17 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
             errorMessages.add(String.format("Deserialization for HttpSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with Map<String, Object>
+        try {
+            if (!jsonElement.isJsonObject()) {
+                throw new IllegalArgumentException(String.format("Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
+            }
+
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with OpensearchSecretsConfig
         try {
             OpensearchSecretsConfig.validateJsonElement(jsonElement);
@@ -569,7 +620,7 @@ public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, Object, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format("The JSON string is invalid for RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, ElasticsearchSecretsConfig, HttpSecretsConfig, Map<String, Object>, Object, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

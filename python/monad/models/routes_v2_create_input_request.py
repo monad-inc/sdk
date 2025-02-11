@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.routes_v2_input_config import RoutesV2InputConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,7 @@ class RoutesV2CreateInputRequest(BaseModel):
     """
     RoutesV2CreateInputRequest
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = None
+    config: Optional[RoutesV2InputConfig] = None
     description: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
@@ -72,6 +73,9 @@ class RoutesV2CreateInputRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of config
+        if self.config:
+            _dict['config'] = self.config.to_dict()
         return _dict
 
     @classmethod
@@ -84,7 +88,7 @@ class RoutesV2CreateInputRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "config": obj.get("config"),
+            "config": RoutesV2InputConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
             "description": obj.get("description"),
             "name": obj.get("name"),
             "type": obj.get("type")

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Config** | Pointer to [**ModelsInputConfig**](ModelsInputConfig.md) |  | [optional] 
+**Config** | Pointer to [**RoutesV2InputConfig**](RoutesV2InputConfig.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetConfig
 
-`func (o *RoutesV2TestInputConnectionRequest) GetConfig() ModelsInputConfig`
+`func (o *RoutesV2TestInputConnectionRequest) GetConfig() RoutesV2InputConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *RoutesV2TestInputConnectionRequest) GetConfigOk() (*ModelsInputConfig, bool)`
+`func (o *RoutesV2TestInputConnectionRequest) GetConfigOk() (*RoutesV2InputConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *RoutesV2TestInputConnectionRequest) SetConfig(v ModelsInputConfig)`
+`func (o *RoutesV2TestInputConnectionRequest) SetConfig(v RoutesV2InputConfig)`
 
 SetConfig sets Config field to given value.
 

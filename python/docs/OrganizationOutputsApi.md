@@ -656,7 +656,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_organization_id_outputs_test_connection_post**
-> RoutesV2SuccessResponse v2_organization_id_outputs_test_connection_post(organization_id, body)
+> RoutesV2SuccessResponse v2_organization_id_outputs_test_connection_post(organization_id, routes_v2_test_output_connection_request)
 
 Test output connection
 
@@ -670,6 +670,7 @@ Tests the connection for a given output type and configuration
 ```python
 import monad
 from monad.models.routes_v2_success_response import RoutesV2SuccessResponse
+from monad.models.routes_v2_test_output_connection_request import RoutesV2TestOutputConnectionRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -701,11 +702,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationOutputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    body = None # object | Output configuration to test
+    routes_v2_test_output_connection_request = monad.RoutesV2TestOutputConnectionRequest() # RoutesV2TestOutputConnectionRequest | Output configuration to test
 
     try:
         # Test output connection
-        api_response = api_instance.v2_organization_id_outputs_test_connection_post(organization_id, body)
+        api_response = api_instance.v2_organization_id_outputs_test_connection_post(organization_id, routes_v2_test_output_connection_request)
         print("The response of OrganizationOutputsApi->v2_organization_id_outputs_test_connection_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -720,7 +721,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **body** | **object**| Output configuration to test | 
+ **routes_v2_test_output_connection_request** | [**RoutesV2TestOutputConnectionRequest**](RoutesV2TestOutputConnectionRequest.md)| Output configuration to test | 
 
 ### Return type
 

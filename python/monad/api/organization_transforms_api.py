@@ -22,6 +22,7 @@ from typing import Any, Dict, Optional
 from typing_extensions import Annotated
 from monad.models.models_transform import ModelsTransform
 from monad.models.models_transform_list import ModelsTransformList
+from monad.models.routes_create_transform_request import RoutesCreateTransformRequest
 from monad.models.routes_get_transform_response import RoutesGetTransformResponse
 from monad.models.routes_update_transform_request import RoutesUpdateTransformRequest
 
@@ -346,7 +347,7 @@ class OrganizationTransformsApi:
     def v1_organization_id_transforms_post(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        body: Annotated[Dict[str, Any], Field(description="Request body for creating a transform")],
+        routes_create_transform_request: Annotated[RoutesCreateTransformRequest, Field(description="Request body for creating a transform")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -366,8 +367,8 @@ class OrganizationTransformsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param body: Request body for creating a transform (required)
-        :type body: object
+        :param routes_create_transform_request: Request body for creating a transform (required)
+        :type routes_create_transform_request: RoutesCreateTransformRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -392,7 +393,7 @@ class OrganizationTransformsApi:
 
         _param = self._v1_organization_id_transforms_post_serialize(
             organization_id=organization_id,
-            body=body,
+            routes_create_transform_request=routes_create_transform_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -419,7 +420,7 @@ class OrganizationTransformsApi:
     def v1_organization_id_transforms_post_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        body: Annotated[Dict[str, Any], Field(description="Request body for creating a transform")],
+        routes_create_transform_request: Annotated[RoutesCreateTransformRequest, Field(description="Request body for creating a transform")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -439,8 +440,8 @@ class OrganizationTransformsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param body: Request body for creating a transform (required)
-        :type body: object
+        :param routes_create_transform_request: Request body for creating a transform (required)
+        :type routes_create_transform_request: RoutesCreateTransformRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -465,7 +466,7 @@ class OrganizationTransformsApi:
 
         _param = self._v1_organization_id_transforms_post_serialize(
             organization_id=organization_id,
-            body=body,
+            routes_create_transform_request=routes_create_transform_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -492,7 +493,7 @@ class OrganizationTransformsApi:
     def v1_organization_id_transforms_post_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        body: Annotated[Dict[str, Any], Field(description="Request body for creating a transform")],
+        routes_create_transform_request: Annotated[RoutesCreateTransformRequest, Field(description="Request body for creating a transform")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -512,8 +513,8 @@ class OrganizationTransformsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param body: Request body for creating a transform (required)
-        :type body: object
+        :param routes_create_transform_request: Request body for creating a transform (required)
+        :type routes_create_transform_request: RoutesCreateTransformRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -538,7 +539,7 @@ class OrganizationTransformsApi:
 
         _param = self._v1_organization_id_transforms_post_serialize(
             organization_id=organization_id,
-            body=body,
+            routes_create_transform_request=routes_create_transform_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -560,7 +561,7 @@ class OrganizationTransformsApi:
     def _v1_organization_id_transforms_post_serialize(
         self,
         organization_id,
-        body,
+        routes_create_transform_request,
         _request_auth,
         _content_type,
         _headers,
@@ -588,8 +589,8 @@ class OrganizationTransformsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if body is not None:
-            _body_params = body
+        if routes_create_transform_request is not None:
+            _body_params = routes_create_transform_request
 
 
         # set the HTTP header `Accept`

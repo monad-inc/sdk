@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | **object** |  | [optional] 
+**config** | [**RoutesTransformConfig**](RoutesTransformConfig.md) |  | [optional] 
 **description** | **str** |  | [optional] 
 **name** | **str** |  | 
 

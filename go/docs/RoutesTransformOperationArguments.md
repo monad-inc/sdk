@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Delimiter** | Pointer to **string** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 | [optional] 
-**Key** | Pointer to **string** | The key which values should be checked | [optional] 
-**Type** | Pointer to **string** | The new type of the key | [optional] 
-**NewKey** | Pointer to **string** | The new key to duplicate the value to | [optional] 
+**Key** | Pointer to **string** | The key to store the timestamp in | [optional] 
 **Value** | Pointer to **interface{}** |  | [optional] 
-**Format** | Pointer to **string** | The format of the timestamp | [optional] 
 **KeyToWatch** | Pointer to **string** | The key to watch for | [optional] 
 **ValueToWatch** | Pointer to **interface{}** |  | [optional] 
+**NewKey** | Pointer to **string** | The new key to duplicate the value to | [optional] 
+**Delimiter** | Pointer to **string** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 | [optional] 
 **Query** | Pointer to **string** | The JQ query to apply to the record | [optional] 
 **NewKey** | Pointer to **string** | The new key to rename to | [optional] 
+**Type** | Pointer to **string** | The new type of the key | [optional] 
 **ValueToSet** | Pointer to **interface{}** |  | [optional] 
+**Format** | Pointer to **string** | The format of the timestamp | [optional] 
 
 ## Methods
 
@@ -34,31 +34,6 @@ will change when the set of required properties is changed
 NewRoutesTransformOperationArgumentsWithDefaults instantiates a new RoutesTransformOperationArguments object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetDelimiter
-
-`func (o *RoutesTransformOperationArguments) GetDelimiter() string`
-
-GetDelimiter returns the Delimiter field if non-nil, zero value otherwise.
-
-### GetDelimiterOk
-
-`func (o *RoutesTransformOperationArguments) GetDelimiterOk() (*string, bool)`
-
-GetDelimiterOk returns a tuple with the Delimiter field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDelimiter
-
-`func (o *RoutesTransformOperationArguments) SetDelimiter(v string)`
-
-SetDelimiter sets Delimiter field to given value.
-
-### HasDelimiter
-
-`func (o *RoutesTransformOperationArguments) HasDelimiter() bool`
-
-HasDelimiter returns a boolean if a field has been set.
 
 ### GetKey
 
@@ -84,56 +59,6 @@ SetKey sets Key field to given value.
 `func (o *RoutesTransformOperationArguments) HasKey() bool`
 
 HasKey returns a boolean if a field has been set.
-
-### GetType
-
-`func (o *RoutesTransformOperationArguments) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *RoutesTransformOperationArguments) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *RoutesTransformOperationArguments) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *RoutesTransformOperationArguments) HasType() bool`
-
-HasType returns a boolean if a field has been set.
-
-### GetNewKey
-
-`func (o *RoutesTransformOperationArguments) GetNewKey() string`
-
-GetNewKey returns the NewKey field if non-nil, zero value otherwise.
-
-### GetNewKeyOk
-
-`func (o *RoutesTransformOperationArguments) GetNewKeyOk() (*string, bool)`
-
-GetNewKeyOk returns a tuple with the NewKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNewKey
-
-`func (o *RoutesTransformOperationArguments) SetNewKey(v string)`
-
-SetNewKey sets NewKey field to given value.
-
-### HasNewKey
-
-`func (o *RoutesTransformOperationArguments) HasNewKey() bool`
-
-HasNewKey returns a boolean if a field has been set.
 
 ### GetValue
 
@@ -170,31 +95,6 @@ HasValue returns a boolean if a field has been set.
 `func (o *RoutesTransformOperationArguments) UnsetValue()`
 
 UnsetValue ensures that no value is present for Value, not even an explicit nil
-### GetFormat
-
-`func (o *RoutesTransformOperationArguments) GetFormat() string`
-
-GetFormat returns the Format field if non-nil, zero value otherwise.
-
-### GetFormatOk
-
-`func (o *RoutesTransformOperationArguments) GetFormatOk() (*string, bool)`
-
-GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFormat
-
-`func (o *RoutesTransformOperationArguments) SetFormat(v string)`
-
-SetFormat sets Format field to given value.
-
-### HasFormat
-
-`func (o *RoutesTransformOperationArguments) HasFormat() bool`
-
-HasFormat returns a boolean if a field has been set.
-
 ### GetKeyToWatch
 
 `func (o *RoutesTransformOperationArguments) GetKeyToWatch() string`
@@ -255,6 +155,56 @@ HasValueToWatch returns a boolean if a field has been set.
 `func (o *RoutesTransformOperationArguments) UnsetValueToWatch()`
 
 UnsetValueToWatch ensures that no value is present for ValueToWatch, not even an explicit nil
+### GetNewKey
+
+`func (o *RoutesTransformOperationArguments) GetNewKey() string`
+
+GetNewKey returns the NewKey field if non-nil, zero value otherwise.
+
+### GetNewKeyOk
+
+`func (o *RoutesTransformOperationArguments) GetNewKeyOk() (*string, bool)`
+
+GetNewKeyOk returns a tuple with the NewKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNewKey
+
+`func (o *RoutesTransformOperationArguments) SetNewKey(v string)`
+
+SetNewKey sets NewKey field to given value.
+
+### HasNewKey
+
+`func (o *RoutesTransformOperationArguments) HasNewKey() bool`
+
+HasNewKey returns a boolean if a field has been set.
+
+### GetDelimiter
+
+`func (o *RoutesTransformOperationArguments) GetDelimiter() string`
+
+GetDelimiter returns the Delimiter field if non-nil, zero value otherwise.
+
+### GetDelimiterOk
+
+`func (o *RoutesTransformOperationArguments) GetDelimiterOk() (*string, bool)`
+
+GetDelimiterOk returns a tuple with the Delimiter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDelimiter
+
+`func (o *RoutesTransformOperationArguments) SetDelimiter(v string)`
+
+SetDelimiter sets Delimiter field to given value.
+
+### HasDelimiter
+
+`func (o *RoutesTransformOperationArguments) HasDelimiter() bool`
+
+HasDelimiter returns a boolean if a field has been set.
+
 ### GetQuery
 
 `func (o *RoutesTransformOperationArguments) GetQuery() string`
@@ -305,6 +255,31 @@ SetNewKey sets NewKey field to given value.
 
 HasNewKey returns a boolean if a field has been set.
 
+### GetType
+
+`func (o *RoutesTransformOperationArguments) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *RoutesTransformOperationArguments) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *RoutesTransformOperationArguments) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *RoutesTransformOperationArguments) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
 ### GetValueToSet
 
 `func (o *RoutesTransformOperationArguments) GetValueToSet() interface{}`
@@ -340,6 +315,31 @@ HasValueToSet returns a boolean if a field has been set.
 `func (o *RoutesTransformOperationArguments) UnsetValueToSet()`
 
 UnsetValueToSet ensures that no value is present for ValueToSet, not even an explicit nil
+### GetFormat
+
+`func (o *RoutesTransformOperationArguments) GetFormat() string`
+
+GetFormat returns the Format field if non-nil, zero value otherwise.
+
+### GetFormatOk
+
+`func (o *RoutesTransformOperationArguments) GetFormatOk() (*string, bool)`
+
+GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormat
+
+`func (o *RoutesTransformOperationArguments) SetFormat(v string)`
+
+SetFormat sets Format field to given value.
+
+### HasFormat
+
+`func (o *RoutesTransformOperationArguments) HasFormat() bool`
+
+HasFormat returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

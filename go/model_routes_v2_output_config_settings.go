@@ -28,6 +28,7 @@ type RoutesV2OutputConfigSettings struct {
 	SnowflakeSettingsConfig *SnowflakeSettingsConfig
 	SplunkSettingsConfig *SplunkSettingsConfig
 	SumologicSettingsConfig *SumologicSettingsConfig
+	MapmapOfStringAny *map[string]interface{}
 }
 
 // CriblHttpSettingsConfigAsRoutesV2OutputConfigSettings is a convenience function that returns CriblHttpSettingsConfig wrapped in RoutesV2OutputConfigSettings
@@ -90,6 +91,13 @@ func SplunkSettingsConfigAsRoutesV2OutputConfigSettings(v *SplunkSettingsConfig)
 func SumologicSettingsConfigAsRoutesV2OutputConfigSettings(v *SumologicSettingsConfig) RoutesV2OutputConfigSettings {
 	return RoutesV2OutputConfigSettings{
 		SumologicSettingsConfig: v,
+	}
+}
+
+// map[string]interface{}AsRoutesV2OutputConfigSettings is a convenience function that returns map[string]interface{} wrapped in RoutesV2OutputConfigSettings
+func MapmapOfStringAnyAsRoutesV2OutputConfigSettings(v *map[string]interface{}) RoutesV2OutputConfigSettings {
+	return RoutesV2OutputConfigSettings{
+		MapmapOfStringAny: v,
 	}
 }
 
@@ -251,6 +259,23 @@ func (dst *RoutesV2OutputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.SumologicSettingsConfig = nil
 	}
 
+	// try to unmarshal data into MapmapOfStringAny
+	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
+	if err == nil {
+		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
+		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
+			dst.MapmapOfStringAny = nil
+		} else {
+			if err = validator.Validate(dst.MapmapOfStringAny); err != nil {
+				dst.MapmapOfStringAny = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.MapmapOfStringAny = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.CriblHttpSettingsConfig = nil
@@ -262,6 +287,7 @@ func (dst *RoutesV2OutputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.SnowflakeSettingsConfig = nil
 		dst.SplunkSettingsConfig = nil
 		dst.SumologicSettingsConfig = nil
+		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(RoutesV2OutputConfigSettings)")
 	} else if match == 1 {
@@ -309,6 +335,10 @@ func (src RoutesV2OutputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.SumologicSettingsConfig)
 	}
 
+	if src.MapmapOfStringAny != nil {
+		return json.Marshal(&src.MapmapOfStringAny)
+	}
+
 	return nil, nil // no data in oneOf schemas
 }
 
@@ -351,6 +381,10 @@ func (obj *RoutesV2OutputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.SumologicSettingsConfig != nil {
 		return obj.SumologicSettingsConfig
+	}
+
+	if obj.MapmapOfStringAny != nil {
+		return obj.MapmapOfStringAny
 	}
 
 	// all schemas are nil

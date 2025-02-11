@@ -12,6 +12,9 @@
 
 import { HttpFile } from '../http/http';
 
+/**
+* The Access ID for authenticating with Sumo Logic.
+*/
 export class ModelsSecret {
     /**
     * When the secret was created
