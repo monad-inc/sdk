@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * OperationInformation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T21:41:34.564950004Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T21:57:31.807810159Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class OperationInformation {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)

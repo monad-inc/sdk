@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Auth0Auth0TokenResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T21:41:34.564950004Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T21:57:31.807810159Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class Auth0Auth0TokenResponse {
   public static final String SERIALIZED_NAME_ACCESS_TOKEN = "access_token";
   @SerializedName(SERIALIZED_NAME_ACCESS_TOKEN)

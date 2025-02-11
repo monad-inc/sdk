@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.RoutesV2InputConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,12 +48,12 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2CreateInputRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T21:19:27.438167347Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T21:57:31.807810159Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2CreateInputRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
   @javax.annotation.Nullable
-  private RoutesV2InputConfig config;
+  private Object config;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -74,7 +73,7 @@ public class RoutesV2CreateInputRequest {
   public RoutesV2CreateInputRequest() {
   }
 
-  public RoutesV2CreateInputRequest config(@javax.annotation.Nullable RoutesV2InputConfig config) {
+  public RoutesV2CreateInputRequest config(@javax.annotation.Nullable Object config) {
     this.config = config;
     return this;
   }
@@ -84,11 +83,11 @@ public class RoutesV2CreateInputRequest {
    * @return config
    */
   @javax.annotation.Nullable
-  public RoutesV2InputConfig getConfig() {
+  public Object getConfig() {
     return config;
   }
 
-  public void setConfig(@javax.annotation.Nullable RoutesV2InputConfig config) {
+  public void setConfig(@javax.annotation.Nullable Object config) {
     this.config = config;
   }
 
@@ -231,10 +230,6 @@ public class RoutesV2CreateInputRequest {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `config`
-      if (jsonObj.get("config") != null && !jsonObj.get("config").isJsonNull()) {
-        RoutesV2InputConfig.validateJsonElement(jsonObj.get("config"));
-      }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }

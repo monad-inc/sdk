@@ -11,7 +11,6 @@ import { Auth0LoginRequest } from '../models/Auth0LoginRequest';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
-import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
 import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';
@@ -21,7 +20,6 @@ import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
 import { ConditionInfo } from '../models/ConditionInfo';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
-import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
 import { DemoCustomSettingsConfig } from '../models/DemoCustomSettingsConfig';
 import { DemoSettingsConfig } from '../models/DemoSettingsConfig';
 import { DetectSummariesSettingsConfig } from '../models/DetectSummariesSettingsConfig';
@@ -37,11 +35,9 @@ import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
 import { FlattenFlatten } from '../models/FlattenFlatten';
-import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { JqJQ } from '../models/JqJQ';
-import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
 import { LoginActivitySettingsConfig } from '../models/LoginActivitySettingsConfig';
 import { LoginSessionsSettingsConfig } from '../models/LoginSessionsSettingsConfig';
@@ -86,19 +82,9 @@ import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserList } from '../models/ModelsUserList';
-import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
-import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
-import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
-import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
-import { OauthActivitySettingsConfig } from '../models/OauthActivitySettingsConfig';
-import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
-import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
-import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
-import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
-import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesBulkCreateInputRequest } from '../models/RoutesBulkCreateInputRequest';
 import { RoutesCreateInputRequest } from '../models/RoutesCreateInputRequest';
@@ -121,6 +107,7 @@ import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUse
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
+import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
 import { RoutesV2CreatePipelineRequest } from '../models/RoutesV2CreatePipelineRequest';
@@ -135,30 +122,12 @@ import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
-import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
 import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyRequest';
 import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest';
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
-import { S3SettingsConfig } from '../models/S3SettingsConfig';
-import { SemgrepDeploymentsSettingsConfig } from '../models/SemgrepDeploymentsSettingsConfig';
-import { SemgrepProjectDetailsSettingsConfig } from '../models/SemgrepProjectDetailsSettingsConfig';
-import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettingsConfig';
-import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
-import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
-import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
-import { SnowflakeSettingsConfig } from '../models/SnowflakeSettingsConfig';
-import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
-import { SnykProjectsSettingsConfig } from '../models/SnykProjectsSettingsConfig';
-import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
-import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
-import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
-import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
-import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
 import { V1OrganizationIdInputsBulkPost400Response } from '../models/V1OrganizationIdInputsBulkPost400Response';
 import { V1OrganizationIdInputsPost400Response } from '../models/V1OrganizationIdInputsPost400Response';
-import { VulnerabilitiesSettingsConfig } from '../models/VulnerabilitiesSettingsConfig';
-import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
 
 import { ObservableAuthenticationApi } from "./ObservableAPI";
 import { AuthenticationApiRequestFactory, AuthenticationApiResponseProcessor} from "../apis/AuthenticationApi";
@@ -1124,10 +1093,10 @@ export interface OrganizationInputsApiV2OrganizationIdInputsPostRequest {
     organizationId: string
     /**
      * Input configuration
-     * @type any
+     * @type RoutesV2CreateInputRequest
      * @memberof OrganizationInputsApiv2OrganizationIdInputsPost
      */
-    body: any
+    routesV2CreateInputRequest: RoutesV2CreateInputRequest
     /**
      * Test connection before creating the input
      * Defaults to: undefined
@@ -1147,10 +1116,10 @@ export interface OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRe
     organizationId: string
     /**
      * Input configuration to test
-     * @type RoutesV2TestInputConnectionRequest
+     * @type any
      * @memberof OrganizationInputsApiv2OrganizationIdInputsTestConnectionPost
      */
-    routesV2TestInputConnectionRequest: RoutesV2TestInputConnectionRequest
+    body: any
 }
 
 export class ObjectOrganizationInputsApi {
@@ -1292,7 +1261,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v2OrganizationIdInputsPostWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsPostRequest, options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        return this.api.v2OrganizationIdInputsPostWithHttpInfo(param.organizationId, param.body, param.testConnection,  options).toPromise();
+        return this.api.v2OrganizationIdInputsPostWithHttpInfo(param.organizationId, param.routesV2CreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1301,7 +1270,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v2OrganizationIdInputsPost(param: OrganizationInputsApiV2OrganizationIdInputsPostRequest, options?: Configuration): Promise<ModelsInput> {
-        return this.api.v2OrganizationIdInputsPost(param.organizationId, param.body, param.testConnection,  options).toPromise();
+        return this.api.v2OrganizationIdInputsPost(param.organizationId, param.routesV2CreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1310,7 +1279,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v2OrganizationIdInputsTestConnectionPostWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequest, options?: Configuration): Promise<HttpInfo<RoutesV2SuccessResponse>> {
-        return this.api.v2OrganizationIdInputsTestConnectionPostWithHttpInfo(param.organizationId, param.routesV2TestInputConnectionRequest,  options).toPromise();
+        return this.api.v2OrganizationIdInputsTestConnectionPostWithHttpInfo(param.organizationId, param.body,  options).toPromise();
     }
 
     /**
@@ -1319,7 +1288,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v2OrganizationIdInputsTestConnectionPost(param: OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequest, options?: Configuration): Promise<RoutesV2SuccessResponse> {
-        return this.api.v2OrganizationIdInputsTestConnectionPost(param.organizationId, param.routesV2TestInputConnectionRequest,  options).toPromise();
+        return this.api.v2OrganizationIdInputsTestConnectionPost(param.organizationId, param.body,  options).toPromise();
     }
 
 }

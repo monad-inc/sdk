@@ -8,7 +8,6 @@ export * from '../models/Auth0LoginRequest';
 export * from '../models/AuthLogsSettingsConfig';
 export * from '../models/AwsS3SettingsConfig';
 export * from '../models/AzureActivityLogsSettingsConfig';
-export * from '../models/BatchConfigBatchConfig';
 export * from '../models/BoxEventsSettingsConfig';
 export * from '../models/BoxUsersSettingsConfig';
 export * from '../models/CloudConfigurationFindingsSettingsConfig';
@@ -18,7 +17,6 @@ export * from '../models/CloudtrailSettingsConfig';
 export * from '../models/ConditionInfo';
 export * from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 export * from '../models/CriblHttpSettingsConfig';
-export * from '../models/DelimitedDelimiterFormatter';
 export * from '../models/DemoCustomSettingsConfig';
 export * from '../models/DemoSettingsConfig';
 export * from '../models/DetectSummariesSettingsConfig';
@@ -34,11 +32,9 @@ export * from '../models/EntraIdSettingsConfig';
 export * from '../models/EventSettingsConfig';
 export * from '../models/EventsLogsSettingsConfig';
 export * from '../models/FlattenFlatten';
-export * from '../models/FormatterFormatConfig';
 export * from '../models/HttpSettingsConfig';
 export * from '../models/InputsConnectorMeta';
 export * from '../models/JqJQ';
-export * from '../models/JsonJsonFormatter';
 export * from '../models/LogAnalyticsQuerySettingsConfig';
 export * from '../models/LoginActivitySettingsConfig';
 export * from '../models/LoginSessionsSettingsConfig';
@@ -83,19 +79,9 @@ export * from '../models/ModelsTransformList';
 export * from '../models/ModelsTransformOperation';
 export * from '../models/ModelsUser';
 export * from '../models/ModelsUserList';
-export * from '../models/MonadLogSettingsConfig';
-export * from '../models/MutateTypeMutateType';
-export * from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
-export * from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
-export * from '../models/OauthActivitySettingsConfig';
-export * from '../models/OpensearchSettingsConfig';
 export * from '../models/OperationInformation';
 export * from '../models/OutputsConnectorMeta';
-export * from '../models/ParquetParquetFormatter';
-export * from '../models/RenameKeyRenameKey';
-export * from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 export * from '../models/ResponderErrorResponse';
-export * from '../models/RolesInfoSettingsConfig';
 export * from '../models/RoutesAddUserToOrganizationRequest';
 export * from '../models/RoutesBulkCreateInputRequest';
 export * from '../models/RoutesCreateInputRequest';
@@ -118,6 +104,7 @@ export * from '../models/RoutesUpdateUserInOrganizationRequest';
 export * from '../models/RoutesV2ApplyTransformationRequest';
 export * from '../models/RoutesV2ApplyTransformationResponse';
 export * from '../models/RoutesV2CreateAPIKeyRequest';
+export * from '../models/RoutesV2CreateInputRequest';
 export * from '../models/RoutesV2CreateOrUpdateSecretRequest';
 export * from '../models/RoutesV2CreateOutputRequest';
 export * from '../models/RoutesV2CreatePipelineRequest';
@@ -132,30 +119,12 @@ export * from '../models/RoutesV2PipelineStatus';
 export * from '../models/RoutesV2PipelineWithStatus';
 export * from '../models/RoutesV2SecretResponse';
 export * from '../models/RoutesV2SuccessResponse';
-export * from '../models/RoutesV2TestInputConnectionRequest';
 export * from '../models/RoutesV2UpdateAPIKeyRequest';
 export * from '../models/RoutesV2UpdateInputRequest';
 export * from '../models/RoutesV2UpdateOutputRequest';
 export * from '../models/RoutesV2UpdatePipelineRequest';
-export * from '../models/S3SettingsConfig';
-export * from '../models/SemgrepDeploymentsSettingsConfig';
-export * from '../models/SemgrepProjectDetailsSettingsConfig';
-export * from '../models/SemgrepProjectsSettingsConfig';
-export * from '../models/SentinelSettingsConfig';
-export * from '../models/SlackUsersSettingsConfig';
-export * from '../models/SlackgroupsSettingsConfig';
-export * from '../models/SnowflakeSettingsConfig';
-export * from '../models/SnykOrganizationsSettingsConfig';
-export * from '../models/SnykProjectsSettingsConfig';
-export * from '../models/SplunkSettingsConfig';
-export * from '../models/SumologicSettingsConfig';
-export * from '../models/UsersInfoSettingsConfig';
-export * from '../models/UsersSettingsConfig';
-export * from '../models/UtcTimestampTimestamp';
 export * from '../models/V1OrganizationIdInputsBulkPost400Response';
 export * from '../models/V1OrganizationIdInputsPost400Response';
-export * from '../models/VulnerabilitiesSettingsConfig';
-export * from '../models/VulnerabilityFindingsSettingsConfig';
 
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddAdd } from '../models/AddAdd';
@@ -167,7 +136,6 @@ import { Auth0LoginRequest } from '../models/Auth0LoginRequest';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
-import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
 import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';
@@ -177,7 +145,6 @@ import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
 import { ConditionInfo } from '../models/ConditionInfo';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
-import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
 import { DemoCustomSettingsConfig } from '../models/DemoCustomSettingsConfig';
 import { DemoSettingsConfig } from '../models/DemoSettingsConfig';
 import { DetectSummariesSettingsConfig } from '../models/DetectSummariesSettingsConfig';
@@ -193,11 +160,9 @@ import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
 import { FlattenFlatten } from '../models/FlattenFlatten';
-import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { JqJQ } from '../models/JqJQ';
-import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
 import { LoginActivitySettingsConfig } from '../models/LoginActivitySettingsConfig';
 import { LoginSessionsSettingsConfig } from '../models/LoginSessionsSettingsConfig';
@@ -242,19 +207,9 @@ import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserList } from '../models/ModelsUserList';
-import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
-import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
-import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
-import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
-import { OauthActivitySettingsConfig } from '../models/OauthActivitySettingsConfig';
-import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
-import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
-import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
-import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
-import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesBulkCreateInputRequest } from '../models/RoutesBulkCreateInputRequest';
 import { RoutesCreateInputRequest } from '../models/RoutesCreateInputRequest';
@@ -277,6 +232,7 @@ import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUse
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
+import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
 import { RoutesV2CreatePipelineRequest } from '../models/RoutesV2CreatePipelineRequest';
@@ -291,30 +247,12 @@ import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
-import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
 import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyRequest';
 import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest';
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
-import { S3SettingsConfig } from '../models/S3SettingsConfig';
-import { SemgrepDeploymentsSettingsConfig } from '../models/SemgrepDeploymentsSettingsConfig';
-import { SemgrepProjectDetailsSettingsConfig } from '../models/SemgrepProjectDetailsSettingsConfig';
-import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettingsConfig';
-import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
-import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
-import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
-import { SnowflakeSettingsConfig } from '../models/SnowflakeSettingsConfig';
-import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
-import { SnykProjectsSettingsConfig } from '../models/SnykProjectsSettingsConfig';
-import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
-import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
-import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
-import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
-import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
 import { V1OrganizationIdInputsBulkPost400ResponseClass } from '../models/V1OrganizationIdInputsBulkPost400Response';
 import { V1OrganizationIdInputsPost400ResponseClass } from '../models/V1OrganizationIdInputsPost400Response';
-import { VulnerabilitiesSettingsConfig } from '../models/VulnerabilitiesSettingsConfig';
-import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -342,7 +280,6 @@ let typeMap: {[index: string]: any} = {
     "AuthLogsSettingsConfig": AuthLogsSettingsConfig,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
     "AzureActivityLogsSettingsConfig": AzureActivityLogsSettingsConfig,
-    "BatchConfigBatchConfig": BatchConfigBatchConfig,
     "BoxEventsSettingsConfig": BoxEventsSettingsConfig,
     "BoxUsersSettingsConfig": BoxUsersSettingsConfig,
     "CloudConfigurationFindingsSettingsConfig": CloudConfigurationFindingsSettingsConfig,
@@ -352,7 +289,6 @@ let typeMap: {[index: string]: any} = {
     "ConditionInfo": ConditionInfo,
     "CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue": CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue,
     "CriblHttpSettingsConfig": CriblHttpSettingsConfig,
-    "DelimitedDelimiterFormatter": DelimitedDelimiterFormatter,
     "DemoCustomSettingsConfig": DemoCustomSettingsConfig,
     "DemoSettingsConfig": DemoSettingsConfig,
     "DetectSummariesSettingsConfig": DetectSummariesSettingsConfig,
@@ -368,11 +304,9 @@ let typeMap: {[index: string]: any} = {
     "EventSettingsConfig": EventSettingsConfig,
     "EventsLogsSettingsConfig": EventsLogsSettingsConfig,
     "FlattenFlatten": FlattenFlatten,
-    "FormatterFormatConfig": FormatterFormatConfig,
     "HttpSettingsConfig": HttpSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,
     "JqJQ": JqJQ,
-    "JsonJsonFormatter": JsonJsonFormatter,
     "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,
     "LoginActivitySettingsConfig": LoginActivitySettingsConfig,
     "LoginSessionsSettingsConfig": LoginSessionsSettingsConfig,
@@ -417,19 +351,9 @@ let typeMap: {[index: string]: any} = {
     "ModelsTransformOperation": ModelsTransformOperation,
     "ModelsUser": ModelsUser,
     "ModelsUserList": ModelsUserList,
-    "MonadLogSettingsConfig": MonadLogSettingsConfig,
-    "MutateTypeMutateType": MutateTypeMutateType,
-    "MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq": MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq,
-    "MutateValueWhereKeyEqMutateValueWhereKeyEq": MutateValueWhereKeyEqMutateValueWhereKeyEq,
-    "OauthActivitySettingsConfig": OauthActivitySettingsConfig,
-    "OpensearchSettingsConfig": OpensearchSettingsConfig,
     "OperationInformation": OperationInformation,
     "OutputsConnectorMeta": OutputsConnectorMeta,
-    "ParquetParquetFormatter": ParquetParquetFormatter,
-    "RenameKeyRenameKey": RenameKeyRenameKey,
-    "RenameKeyWhereValueEqRenameKeyWhereValueEq": RenameKeyWhereValueEqRenameKeyWhereValueEq,
     "ResponderErrorResponse": ResponderErrorResponse,
-    "RolesInfoSettingsConfig": RolesInfoSettingsConfig,
     "RoutesAddUserToOrganizationRequest": RoutesAddUserToOrganizationRequest,
     "RoutesBulkCreateInputRequest": RoutesBulkCreateInputRequest,
     "RoutesCreateInputRequest": RoutesCreateInputRequest,
@@ -452,6 +376,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2ApplyTransformationRequest": RoutesV2ApplyTransformationRequest,
     "RoutesV2ApplyTransformationResponse": RoutesV2ApplyTransformationResponse,
     "RoutesV2CreateAPIKeyRequest": RoutesV2CreateAPIKeyRequest,
+    "RoutesV2CreateInputRequest": RoutesV2CreateInputRequest,
     "RoutesV2CreateOrUpdateSecretRequest": RoutesV2CreateOrUpdateSecretRequest,
     "RoutesV2CreateOutputRequest": RoutesV2CreateOutputRequest,
     "RoutesV2CreatePipelineRequest": RoutesV2CreatePipelineRequest,
@@ -466,30 +391,12 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2PipelineWithStatus": RoutesV2PipelineWithStatus,
     "RoutesV2SecretResponse": RoutesV2SecretResponse,
     "RoutesV2SuccessResponse": RoutesV2SuccessResponse,
-    "RoutesV2TestInputConnectionRequest": RoutesV2TestInputConnectionRequest,
     "RoutesV2UpdateAPIKeyRequest": RoutesV2UpdateAPIKeyRequest,
     "RoutesV2UpdateInputRequest": RoutesV2UpdateInputRequest,
     "RoutesV2UpdateOutputRequest": RoutesV2UpdateOutputRequest,
     "RoutesV2UpdatePipelineRequest": RoutesV2UpdatePipelineRequest,
-    "S3SettingsConfig": S3SettingsConfig,
-    "SemgrepDeploymentsSettingsConfig": SemgrepDeploymentsSettingsConfig,
-    "SemgrepProjectDetailsSettingsConfig": SemgrepProjectDetailsSettingsConfig,
-    "SemgrepProjectsSettingsConfig": SemgrepProjectsSettingsConfig,
-    "SentinelSettingsConfig": SentinelSettingsConfig,
-    "SlackUsersSettingsConfig": SlackUsersSettingsConfig,
-    "SlackgroupsSettingsConfig": SlackgroupsSettingsConfig,
-    "SnowflakeSettingsConfig": SnowflakeSettingsConfig,
-    "SnykOrganizationsSettingsConfig": SnykOrganizationsSettingsConfig,
-    "SnykProjectsSettingsConfig": SnykProjectsSettingsConfig,
-    "SplunkSettingsConfig": SplunkSettingsConfig,
-    "SumologicSettingsConfig": SumologicSettingsConfig,
-    "UsersInfoSettingsConfig": UsersInfoSettingsConfig,
-    "UsersSettingsConfig": UsersSettingsConfig,
-    "UtcTimestampTimestamp": UtcTimestampTimestamp,
     "V1OrganizationIdInputsBulkPost400Response": V1OrganizationIdInputsBulkPost400ResponseClass,
     "V1OrganizationIdInputsPost400Response": V1OrganizationIdInputsPost400ResponseClass,
-    "VulnerabilitiesSettingsConfig": VulnerabilitiesSettingsConfig,
-    "VulnerabilityFindingsSettingsConfig": VulnerabilityFindingsSettingsConfig,
 }
 
 type MimeTypeDescriptor = {

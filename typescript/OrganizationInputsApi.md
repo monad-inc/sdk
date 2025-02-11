@@ -483,7 +483,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v2OrganizationIdInputsPost**
-> ModelsInput v2OrganizationIdInputsPost(body)
+> ModelsInput v2OrganizationIdInputsPost(routesV2CreateInputRequest)
 
 Create a new input with configuration including secrets handling
 
@@ -501,7 +501,12 @@ const request: OrganizationInputsApiV2OrganizationIdInputsPostRequest = {
     // Organization ID
   organizationId: "organization_id_example",
     // Input configuration
-  body: {},
+  routesV2CreateInputRequest: {
+    config: {},
+    description: "description_example",
+    name: "name_example",
+    type: "type_example",
+  },
     // Test connection before creating the input (optional)
   testConnection: true,
 };
@@ -515,7 +520,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**| Input configuration |
+ **routesV2CreateInputRequest** | **RoutesV2CreateInputRequest**| Input configuration |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
 
@@ -544,7 +549,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v2OrganizationIdInputsTestConnectionPost**
-> RoutesV2SuccessResponse v2OrganizationIdInputsTestConnectionPost(routesV2TestInputConnectionRequest)
+> RoutesV2SuccessResponse v2OrganizationIdInputsTestConnectionPost(body)
 
 Tests the connection for a given input type and configuration
 
@@ -562,17 +567,7 @@ const request: OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequ
     // Organization ID
   organizationId: "organization_id_example",
     // Input configuration to test
-  routesV2TestInputConnectionRequest: {
-    config: {
-      secrets: {
-        "key": null,
-      },
-      settings: {
-        "key": null,
-      },
-    },
-    type: "type_example",
-  },
+  body: {},
 };
 
 const data = await apiInstance.v2OrganizationIdInputsTestConnectionPost(request);
@@ -584,7 +579,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **routesV2TestInputConnectionRequest** | **RoutesV2TestInputConnectionRequest**| Input configuration to test |
+ **body** | **any**| Input configuration to test |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 
