@@ -68,7 +68,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T15:51:21.608965540Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-11T16:04:16.898010404Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesV2OutputConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesV2OutputConfigSecrets.class.getName());
 
