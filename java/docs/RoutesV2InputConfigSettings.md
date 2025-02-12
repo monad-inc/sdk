@@ -39,12 +39,13 @@
 |**tenantId** | **String** | The tenant ID of the Azure AD application |  [optional] |
 |**eventType** | **List&lt;String&gt;** | A list of event types to filter by. |  [optional] |
 |**filterTerm** | **String** | Limits the results to only users who&#39;s name or login start with the search term. |  [optional] |
+|**assetTypes** | **List&lt;String&gt;** | The type of assets to scan for.  If left empty, will scan all assets |  [optional] |
+|**resourceNames** | **List&lt;String&gt;** | The resources to query logs from. |  [optional] |
 |**endpointUrl** | **String** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. |  [optional] |
 |**result** | **List&lt;String&gt;** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. |  [optional] |
 |**severity** | **List&lt;String&gt;** | Severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. |  [optional] |
 |**status** | **List&lt;String&gt;** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. |  [optional] |
 |**filter** | **String** | The filter to apply to the logs. |  [optional] |
-|**resourceNames** | **List&lt;String&gt;** | The resources to query logs from. |  [optional] |
 |**cloudPlatform** | **List&lt;String&gt;** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. |  [optional] |
 |**entityType** | **List&lt;String&gt;** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. |  [optional] |
 |**rate** | **Integer** | The rate at which to generate records (between 1 and 1000) per second |  [optional] |

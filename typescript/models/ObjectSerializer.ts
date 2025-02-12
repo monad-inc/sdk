@@ -19,6 +19,8 @@ export * from '../models/BoxEventsSecretsConfig';
 export * from '../models/BoxEventsSettingsConfig';
 export * from '../models/BoxUsersSecretsConfig';
 export * from '../models/BoxUsersSettingsConfig';
+export * from '../models/CloudAssetInventorySecretsConfig';
+export * from '../models/CloudAssetInventorySettingsConfig';
 export * from '../models/CloudConfigurationFindingsSecretsConfig';
 export * from '../models/CloudConfigurationFindingsSettingsConfig';
 export * from '../models/CloudLogsSecretsConfig';
@@ -238,6 +240,8 @@ import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
+import { CloudAssetInventorySecretsConfig } from '../models/CloudAssetInventorySecretsConfig';
+import { CloudAssetInventorySettingsConfig } from '../models/CloudAssetInventorySettingsConfig';
 import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigurationFindingsSecretsConfig';
 import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';
 import { CloudLogsSecretsConfig } from '../models/CloudLogsSecretsConfig';
@@ -473,6 +477,8 @@ let typeMap: {[index: string]: any} = {
     "BoxEventsSettingsConfig": BoxEventsSettingsConfig,
     "BoxUsersSecretsConfig": BoxUsersSecretsConfig,
     "BoxUsersSettingsConfig": BoxUsersSettingsConfig,
+    "CloudAssetInventorySecretsConfig": CloudAssetInventorySecretsConfig,
+    "CloudAssetInventorySettingsConfig": CloudAssetInventorySettingsConfig,
     "CloudConfigurationFindingsSecretsConfig": CloudConfigurationFindingsSecretsConfig,
     "CloudConfigurationFindingsSettingsConfig": CloudConfigurationFindingsSettingsConfig,
     "CloudLogsSecretsConfig": CloudLogsSecretsConfig,

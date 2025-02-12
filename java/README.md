@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-02-12T15:57:06.412632612Z[Etc/UTC]
+  - Build date: 2025-02-12T18:38:59.548625326Z[Etc/UTC]
   - Generator version: 7.11.0
 
 This is the monad API
@@ -226,6 +226,8 @@ Class | Method | HTTP request | Description
  - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
  - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
  - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
+ - [CloudAssetInventorySecretsConfig](docs/CloudAssetInventorySecretsConfig.md)
+ - [CloudAssetInventorySettingsConfig](docs/CloudAssetInventorySettingsConfig.md)
  - [CloudConfigurationFindingsSecretsConfig](docs/CloudConfigurationFindingsSecretsConfig.md)
  - [CloudConfigurationFindingsSettingsConfig](docs/CloudConfigurationFindingsSettingsConfig.md)
  - [CloudLogsSecretsConfig](docs/CloudLogsSecretsConfig.md)

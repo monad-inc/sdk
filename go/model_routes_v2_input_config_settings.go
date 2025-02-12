@@ -28,6 +28,7 @@ type RoutesV2InputConfigSettings struct {
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
 	BoxEventsSettingsConfig *BoxEventsSettingsConfig
 	BoxUsersSettingsConfig *BoxUsersSettingsConfig
+	CloudAssetInventorySettingsConfig *CloudAssetInventorySettingsConfig
 	CloudConfigurationFindingsSettingsConfig *CloudConfigurationFindingsSettingsConfig
 	CloudLogsSettingsConfig *CloudLogsSettingsConfig
 	CloudResourceInventorySettingsConfig *CloudResourceInventorySettingsConfig
@@ -121,6 +122,13 @@ func BoxEventsSettingsConfigAsRoutesV2InputConfigSettings(v *BoxEventsSettingsCo
 func BoxUsersSettingsConfigAsRoutesV2InputConfigSettings(v *BoxUsersSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
 		BoxUsersSettingsConfig: v,
+	}
+}
+
+// CloudAssetInventorySettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns CloudAssetInventorySettingsConfig wrapped in RoutesV2InputConfigSettings
+func CloudAssetInventorySettingsConfigAsRoutesV2InputConfigSettings(v *CloudAssetInventorySettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		CloudAssetInventorySettingsConfig: v,
 	}
 }
 
@@ -497,6 +505,23 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.BoxUsersSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CloudAssetInventorySettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudAssetInventorySettingsConfig)
+	if err == nil {
+		jsonCloudAssetInventorySettingsConfig, _ := json.Marshal(dst.CloudAssetInventorySettingsConfig)
+		if string(jsonCloudAssetInventorySettingsConfig) == "{}" { // empty struct
+			dst.CloudAssetInventorySettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudAssetInventorySettingsConfig); err != nil {
+				dst.CloudAssetInventorySettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudAssetInventorySettingsConfig = nil
 	}
 
 	// try to unmarshal data into CloudConfigurationFindingsSettingsConfig
@@ -1037,6 +1062,7 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.AzureActivityLogsSettingsConfig = nil
 		dst.BoxEventsSettingsConfig = nil
 		dst.BoxUsersSettingsConfig = nil
+		dst.CloudAssetInventorySettingsConfig = nil
 		dst.CloudConfigurationFindingsSettingsConfig = nil
 		dst.CloudLogsSettingsConfig = nil
 		dst.CloudResourceInventorySettingsConfig = nil
@@ -1113,6 +1139,10 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.BoxUsersSettingsConfig != nil {
 		return json.Marshal(&src.BoxUsersSettingsConfig)
+	}
+
+	if src.CloudAssetInventorySettingsConfig != nil {
+		return json.Marshal(&src.CloudAssetInventorySettingsConfig)
 	}
 
 	if src.CloudConfigurationFindingsSettingsConfig != nil {
@@ -1281,6 +1311,10 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.BoxUsersSettingsConfig != nil {
 		return obj.BoxUsersSettingsConfig
+	}
+
+	if obj.CloudAssetInventorySettingsConfig != nil {
+		return obj.CloudAssetInventorySettingsConfig
 	}
 
 	if obj.CloudConfigurationFindingsSettingsConfig != nil {

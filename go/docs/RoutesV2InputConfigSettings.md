@@ -36,12 +36,13 @@ Name | Type | Description | Notes
 **TenantId** | Pointer to **string** | The tenant ID of the Azure AD application | [optional] 
 **EventType** | Pointer to **[]string** | A list of event types to filter by. | [optional] 
 **FilterTerm** | Pointer to **string** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
+**AssetTypes** | Pointer to **[]string** | The type of assets to scan for.  If left empty, will scan all assets | [optional] 
+**ResourceNames** | Pointer to **[]string** | The resources to query logs from. | [optional] 
 **EndpointUrl** | Pointer to **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. | [optional] 
 **Result** | Pointer to **[]string** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. | [optional] 
 **Severity** | Pointer to **[]string** | Severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. | [optional] 
 **Status** | Pointer to **[]string** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. | [optional] 
 **Filter** | Pointer to **string** | The filter to apply to the logs. | [optional] 
-**ResourceNames** | Pointer to **[]string** | The resources to query logs from. | [optional] 
 **CloudPlatform** | Pointer to **[]string** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **EntityType** | Pointer to **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
 **Rate** | Pointer to **int32** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
@@ -881,6 +882,56 @@ SetFilterTerm sets FilterTerm field to given value.
 
 HasFilterTerm returns a boolean if a field has been set.
 
+### GetAssetTypes
+
+`func (o *RoutesV2InputConfigSettings) GetAssetTypes() []string`
+
+GetAssetTypes returns the AssetTypes field if non-nil, zero value otherwise.
+
+### GetAssetTypesOk
+
+`func (o *RoutesV2InputConfigSettings) GetAssetTypesOk() (*[]string, bool)`
+
+GetAssetTypesOk returns a tuple with the AssetTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssetTypes
+
+`func (o *RoutesV2InputConfigSettings) SetAssetTypes(v []string)`
+
+SetAssetTypes sets AssetTypes field to given value.
+
+### HasAssetTypes
+
+`func (o *RoutesV2InputConfigSettings) HasAssetTypes() bool`
+
+HasAssetTypes returns a boolean if a field has been set.
+
+### GetResourceNames
+
+`func (o *RoutesV2InputConfigSettings) GetResourceNames() []string`
+
+GetResourceNames returns the ResourceNames field if non-nil, zero value otherwise.
+
+### GetResourceNamesOk
+
+`func (o *RoutesV2InputConfigSettings) GetResourceNamesOk() (*[]string, bool)`
+
+GetResourceNamesOk returns a tuple with the ResourceNames field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceNames
+
+`func (o *RoutesV2InputConfigSettings) SetResourceNames(v []string)`
+
+SetResourceNames sets ResourceNames field to given value.
+
+### HasResourceNames
+
+`func (o *RoutesV2InputConfigSettings) HasResourceNames() bool`
+
+HasResourceNames returns a boolean if a field has been set.
+
 ### GetEndpointUrl
 
 `func (o *RoutesV2InputConfigSettings) GetEndpointUrl() string`
@@ -1005,31 +1056,6 @@ SetFilter sets Filter field to given value.
 `func (o *RoutesV2InputConfigSettings) HasFilter() bool`
 
 HasFilter returns a boolean if a field has been set.
-
-### GetResourceNames
-
-`func (o *RoutesV2InputConfigSettings) GetResourceNames() []string`
-
-GetResourceNames returns the ResourceNames field if non-nil, zero value otherwise.
-
-### GetResourceNamesOk
-
-`func (o *RoutesV2InputConfigSettings) GetResourceNamesOk() (*[]string, bool)`
-
-GetResourceNamesOk returns a tuple with the ResourceNames field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourceNames
-
-`func (o *RoutesV2InputConfigSettings) SetResourceNames(v []string)`
-
-SetResourceNames sets ResourceNames field to given value.
-
-### HasResourceNames
-
-`func (o *RoutesV2InputConfigSettings) HasResourceNames() bool`
-
-HasResourceNames returns a boolean if a field has been set.
 
 ### GetCloudPlatform
 

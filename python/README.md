@@ -196,6 +196,8 @@ Class | Method | HTTP request | Description
  - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
  - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
  - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
+ - [CloudAssetInventorySecretsConfig](docs/CloudAssetInventorySecretsConfig.md)
+ - [CloudAssetInventorySettingsConfig](docs/CloudAssetInventorySettingsConfig.md)
  - [CloudConfigurationFindingsSecretsConfig](docs/CloudConfigurationFindingsSecretsConfig.md)
  - [CloudConfigurationFindingsSettingsConfig](docs/CloudConfigurationFindingsSettingsConfig.md)
  - [CloudLogsSecretsConfig](docs/CloudLogsSecretsConfig.md)
