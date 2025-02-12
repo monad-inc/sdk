@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Box Events secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-12T15:04:43.119393081Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-12T15:57:06.412632612Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class BoxEventsSettingsConfig {
   public static final String SERIALIZED_NAME_EVENT_TYPE = "event_type";
   @SerializedName(SERIALIZED_NAME_EVENT_TYPE)
