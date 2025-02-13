@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Cloud Asset Inventory secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-13T20:32:11.048438485Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-13T20:46:16.359400297Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class CloudAssetInventorySecretsConfig {
   public static final String SERIALIZED_NAME_CREDENTIALS_JSON = "credentials_json";
   @SerializedName(SERIALIZED_NAME_CREDENTIALS_JSON)
