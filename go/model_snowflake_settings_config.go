@@ -22,6 +22,7 @@ var _ MappedNullable = &SnowflakeSettingsConfig{}
 type SnowflakeSettingsConfig struct {
 	// The unique identifier for your Snowflake account, typically in the form of 'organization-account_name'.
 	Account *string `json:"account,omitempty"`
+	AuthType *string `json:"auth_type,omitempty"`
 	BatchConfig *BatchConfigBatchConfig `json:"batch_config,omitempty"`
 	// The name of the Snowflake database to connect to and perform operations on
 	Database *string `json:"database,omitempty"`
@@ -86,6 +87,38 @@ func (o *SnowflakeSettingsConfig) HasAccount() bool {
 // SetAccount gets a reference to the given string and assigns it to the Account field.
 func (o *SnowflakeSettingsConfig) SetAccount(v string) {
 	o.Account = &v
+}
+
+// GetAuthType returns the AuthType field value if set, zero value otherwise.
+func (o *SnowflakeSettingsConfig) GetAuthType() string {
+	if o == nil || IsNil(o.AuthType) {
+		var ret string
+		return ret
+	}
+	return *o.AuthType
+}
+
+// GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnowflakeSettingsConfig) GetAuthTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.AuthType) {
+		return nil, false
+	}
+	return o.AuthType, true
+}
+
+// HasAuthType returns a boolean if a field has been set.
+func (o *SnowflakeSettingsConfig) HasAuthType() bool {
+	if o != nil && !IsNil(o.AuthType) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
+func (o *SnowflakeSettingsConfig) SetAuthType(v string) {
+	o.AuthType = &v
 }
 
 // GetBatchConfig returns the BatchConfig field value if set, zero value otherwise.
@@ -356,6 +389,9 @@ func (o SnowflakeSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
+	}
+	if !IsNil(o.AuthType) {
+		toSerialize["auth_type"] = o.AuthType
 	}
 	if !IsNil(o.BatchConfig) {
 		toSerialize["batch_config"] = o.BatchConfig

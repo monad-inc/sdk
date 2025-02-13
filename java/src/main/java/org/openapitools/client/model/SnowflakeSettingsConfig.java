@@ -49,12 +49,17 @@ import org.openapitools.client.JSON;
 /**
  * Snowflake Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-12T18:38:59.548625326Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-13T17:19:06.023919296Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class SnowflakeSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
   @javax.annotation.Nullable
   private String account;
+
+  public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
+  @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
+  @javax.annotation.Nullable
+  private String authType;
 
   public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
   @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
@@ -115,6 +120,25 @@ public class SnowflakeSettingsConfig {
 
   public void setAccount(@javax.annotation.Nullable String account) {
     this.account = account;
+  }
+
+
+  public SnowflakeSettingsConfig authType(@javax.annotation.Nullable String authType) {
+    this.authType = authType;
+    return this;
+  }
+
+  /**
+   * Get authType
+   * @return authType
+   */
+  @javax.annotation.Nullable
+  public String getAuthType() {
+    return authType;
+  }
+
+  public void setAuthType(@javax.annotation.Nullable String authType) {
+    this.authType = authType;
   }
 
 
@@ -281,6 +305,7 @@ public class SnowflakeSettingsConfig {
     }
     SnowflakeSettingsConfig snowflakeSettingsConfig = (SnowflakeSettingsConfig) o;
     return Objects.equals(this.account, snowflakeSettingsConfig.account) &&
+        Objects.equals(this.authType, snowflakeSettingsConfig.authType) &&
         Objects.equals(this.batchConfig, snowflakeSettingsConfig.batchConfig) &&
         Objects.equals(this.database, snowflakeSettingsConfig.database) &&
         Objects.equals(this.role, snowflakeSettingsConfig.role) &&
@@ -293,7 +318,7 @@ public class SnowflakeSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(account, batchConfig, database, role, schema, stage, table, user, warehouse);
+    return Objects.hash(account, authType, batchConfig, database, role, schema, stage, table, user, warehouse);
   }
 
   @Override
@@ -301,6 +326,7 @@ public class SnowflakeSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class SnowflakeSettingsConfig {\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
+    sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
     sb.append("    batchConfig: ").append(toIndentedString(batchConfig)).append("\n");
     sb.append("    database: ").append(toIndentedString(database)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
@@ -332,6 +358,7 @@ public class SnowflakeSettingsConfig {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("account");
+    openapiFields.add("auth_type");
     openapiFields.add("batch_config");
     openapiFields.add("database");
     openapiFields.add("role");
@@ -368,6 +395,9 @@ public class SnowflakeSettingsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) && !jsonObj.get("account").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `account` to be a primitive type in the JSON string but got `%s`", jsonObj.get("account").toString()));
+      }
+      if ((jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) && !jsonObj.get("auth_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
       }
       // validate the optional field `batch_config`
       if (jsonObj.get("batch_config") != null && !jsonObj.get("batch_config").isJsonNull()) {

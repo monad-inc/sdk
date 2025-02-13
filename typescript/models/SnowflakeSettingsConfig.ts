@@ -21,6 +21,7 @@ export class SnowflakeSettingsConfig {
     * The unique identifier for your Snowflake account, typically in the form of \'organization-account_name\'.
     */
     'account'?: string;
+    'authType'?: string;
     'batchConfig'?: BatchConfigBatchConfig;
     /**
     * The name of the Snowflake database to connect to and perform operations on
@@ -59,6 +60,12 @@ export class SnowflakeSettingsConfig {
         {
             "name": "account",
             "baseName": "account",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "authType",
+            "baseName": "auth_type",
             "type": "string",
             "format": ""
         },
