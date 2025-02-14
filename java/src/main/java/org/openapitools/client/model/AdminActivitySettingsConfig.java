@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Workspace Admin Activity settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-13T20:46:16.359400297Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-14T18:42:22.080055533Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class AdminActivitySettingsConfig {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
