@@ -60,6 +60,8 @@ export * from '../models/FormatterFormatConfig';
 export * from '../models/HttpSecretsConfig';
 export * from '../models/HttpSettingsConfig';
 export * from '../models/InputsConnectorMeta';
+export * from '../models/IssuesSecretsConfig';
+export * from '../models/IssuesSettingsConfig';
 export * from '../models/JqJQ';
 export * from '../models/JsonJsonFormatter';
 export * from '../models/LogAnalyticsQuerySecretsConfig';
@@ -281,6 +283,8 @@ import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
+import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
+import { IssuesSettingsConfig     , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum    } from '../models/IssuesSettingsConfig';
 import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
@@ -453,6 +457,15 @@ let primitives = [
                  ];
 
 let enumsMap: Set<string> = new Set<string>([
+    "IssuesSettingsConfigIssueTypesEnum",
+    "IssuesSettingsConfigResolutionReasonsEnum",
+    "IssuesSettingsConfigSeveritiesEnum",
+    "IssuesSettingsConfigStackLayersEnum",
+    "IssuesSettingsConfigStatusEnum",
+    "RoutesV2InputConfigSettingsIssueTypesEnum",
+    "RoutesV2InputConfigSettingsResolutionReasonsEnum",
+    "RoutesV2InputConfigSettingsSeveritiesEnum",
+    "RoutesV2InputConfigSettingsStackLayersEnum",
 ]);
 
 let typeMap: {[index: string]: any} = {
@@ -518,6 +531,8 @@ let typeMap: {[index: string]: any} = {
     "HttpSecretsConfig": HttpSecretsConfig,
     "HttpSettingsConfig": HttpSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,
+    "IssuesSecretsConfig": IssuesSecretsConfig,
+    "IssuesSettingsConfig": IssuesSettingsConfig,
     "JqJQ": JqJQ,
     "JsonJsonFormatter": JsonJsonFormatter,
     "LogAnalyticsQuerySecretsConfig": LogAnalyticsQuerySecretsConfig,

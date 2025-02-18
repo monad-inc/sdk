@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
