@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-02-18T16:12:32.700559047Z[Etc/UTC]
+  - Build date: 2025-02-18T20:16:21.768129770Z[Etc/UTC]
   - Generator version: 7.11.0
 
 This is the monad API
@@ -267,8 +267,6 @@ Class | Method | HTTP request | Description
  - [HttpSecretsConfig](docs/HttpSecretsConfig.md)
  - [HttpSettingsConfig](docs/HttpSettingsConfig.md)
  - [InputsConnectorMeta](docs/InputsConnectorMeta.md)
- - [IssuesSecretsConfig](docs/IssuesSecretsConfig.md)
- - [IssuesSettingsConfig](docs/IssuesSettingsConfig.md)
  - [JqJQ](docs/JqJQ.md)
  - [JsonJsonFormatter](docs/JsonJsonFormatter.md)
  - [LogAnalyticsQuerySecretsConfig](docs/LogAnalyticsQuerySecretsConfig.md)

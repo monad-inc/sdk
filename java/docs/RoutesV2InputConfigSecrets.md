@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
-|**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**integrationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

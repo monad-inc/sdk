@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **CredentialsJson** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **IntegrationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewRoutesV2InputConfigSecrets
 
-`func NewRoutesV2InputConfigSecrets(clientId ModelsSecret, clientSecret ModelsSecret, ) *RoutesV2InputConfigSecrets`
+`func NewRoutesV2InputConfigSecrets() *RoutesV2InputConfigSecrets`
 
 NewRoutesV2InputConfigSecrets instantiates a new RoutesV2InputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -55,6 +55,11 @@ and a boolean to check if the value has been set.
 
 SetClientId sets ClientId field to given value.
 
+### HasClientId
+
+`func (o *RoutesV2InputConfigSecrets) HasClientId() bool`
+
+HasClientId returns a boolean if a field has been set.
 
 ### GetClientSecret
 
@@ -75,6 +80,11 @@ and a boolean to check if the value has been set.
 
 SetClientSecret sets ClientSecret field to given value.
 
+### HasClientSecret
+
+`func (o *RoutesV2InputConfigSecrets) HasClientSecret() bool`
+
+HasClientSecret returns a boolean if a field has been set.
 
 ### GetCredentialsJson
 

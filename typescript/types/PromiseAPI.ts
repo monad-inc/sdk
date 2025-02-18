@@ -63,8 +63,6 @@ import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
-import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
-import { IssuesSettingsConfig } from '../models/IssuesSettingsConfig';
 import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
