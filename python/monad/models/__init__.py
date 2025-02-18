@@ -77,6 +77,8 @@ from monad.models.formatter_format_config import FormatterFormatConfig
 from monad.models.http_secrets_config import HttpSecretsConfig
 from monad.models.http_settings_config import HttpSettingsConfig
 from monad.models.inputs_connector_meta import InputsConnectorMeta
+from monad.models.issues_secrets_config import IssuesSecretsConfig
+from monad.models.issues_settings_config import IssuesSettingsConfig
 from monad.models.jq_jq import JqJQ
 from monad.models.json_json_formatter import JsonJsonFormatter
 from monad.models.log_analytics_query_secrets_config import LogAnalyticsQuerySecretsConfig

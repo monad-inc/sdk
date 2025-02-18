@@ -38,6 +38,7 @@ type RoutesV2InputConfigSecrets struct {
 	EntraIdSecretsConfig *EntraIdSecretsConfig
 	EventSecretsConfig *EventSecretsConfig
 	EventsLogsSecretsConfig *EventsLogsSecretsConfig
+	IssuesSecretsConfig *IssuesSecretsConfig
 	LogAnalyticsQuerySecretsConfig *LogAnalyticsQuerySecretsConfig
 	LoginActivitySecretsConfig *LoginActivitySecretsConfig
 	LoginSessionsSecretsConfig *LoginSessionsSecretsConfig
@@ -193,6 +194,13 @@ func EventSecretsConfigAsRoutesV2InputConfigSecrets(v *EventSecretsConfig) Route
 func EventsLogsSecretsConfigAsRoutesV2InputConfigSecrets(v *EventsLogsSecretsConfig) RoutesV2InputConfigSecrets {
 	return RoutesV2InputConfigSecrets{
 		EventsLogsSecretsConfig: v,
+	}
+}
+
+// IssuesSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns IssuesSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func IssuesSecretsConfigAsRoutesV2InputConfigSecrets(v *IssuesSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		IssuesSecretsConfig: v,
 	}
 }
 
@@ -685,6 +693,23 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.EventsLogsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into IssuesSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.IssuesSecretsConfig)
+	if err == nil {
+		jsonIssuesSecretsConfig, _ := json.Marshal(dst.IssuesSecretsConfig)
+		if string(jsonIssuesSecretsConfig) == "{}" { // empty struct
+			dst.IssuesSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.IssuesSecretsConfig); err != nil {
+				dst.IssuesSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.IssuesSecretsConfig = nil
+	}
+
 	// try to unmarshal data into LogAnalyticsQuerySecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.LogAnalyticsQuerySecretsConfig)
 	if err == nil {
@@ -1097,6 +1122,7 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.EntraIdSecretsConfig = nil
 		dst.EventSecretsConfig = nil
 		dst.EventsLogsSecretsConfig = nil
+		dst.IssuesSecretsConfig = nil
 		dst.LogAnalyticsQuerySecretsConfig = nil
 		dst.LoginActivitySecretsConfig = nil
 		dst.LoginSessionsSecretsConfig = nil
@@ -1205,6 +1231,10 @@ func (src RoutesV2InputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.EventsLogsSecretsConfig != nil {
 		return json.Marshal(&src.EventsLogsSecretsConfig)
+	}
+
+	if src.IssuesSecretsConfig != nil {
+		return json.Marshal(&src.IssuesSecretsConfig)
 	}
 
 	if src.LogAnalyticsQuerySecretsConfig != nil {
@@ -1381,6 +1411,10 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 
 	if obj.EventsLogsSecretsConfig != nil {
 		return obj.EventsLogsSecretsConfig
+	}
+
+	if obj.IssuesSecretsConfig != nil {
+		return obj.IssuesSecretsConfig
 	}
 
 	if obj.LogAnalyticsQuerySecretsConfig != nil {

@@ -56,6 +56,22 @@ Name | Type | Description | Notes
 **StoryId** | Pointer to **string** | Filter by the given story. | [optional] 
 **TeamId** | Pointer to **string** | Team ID to filter user results by | [optional] 
 **TenantUrl** | Pointer to **string** | Unique URL for your Tines instance | [optional] 
+**ControlIds** | Pointer to **[]string** | @Description Filter Issues created by specific control IDs | [optional] 
+**HasNote** | Pointer to **string** | @Description Filter Issues with or without a note | [optional] 
+**HasRemediation** | Pointer to **string** | @Description Filter Issues with or without remediation | [optional] 
+**HasServiceTicket** | Pointer to **string** | @Description Filter Issues with or without related service ticket | [optional] 
+**IssueIds** | Pointer to **[]string** | @Description Filter only Issues that match these specific IDs | [optional] 
+**IssueTypes** | Pointer to **[]string** | @Description Filter by Issue type | [optional] 
+**ProjectIds** | Pointer to **[]string** | @Description Filter Issues associated with specific project IDs | [optional] 
+**RelatedEntityId** | Pointer to **string** | @Description Filter by related entity ids | [optional] 
+**ResolutionReasons** | Pointer to **[]string** | @Description Filter Issues by resolution reason | [optional] 
+**RiskEqualsAll** | Pointer to **[]string** | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name @Description All specified risks must be present | [optional] 
+**RiskEqualsAny** | Pointer to **[]string** | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name | [optional] 
+**SearchQuery** | Pointer to **string** | @Description Free text search on Issue title or object name @Description Returns NULL if no match is found | [optional] 
+**SecurityScan** | Pointer to **string** | @Description Filter by security scan source | [optional] 
+**Severities** | Pointer to **[]string** | @Description Filter Issues according to Control severity | [optional] 
+**StackLayers** | Pointer to **[]string** | @Description Filter Issues from specific stack layers | [optional] 
+**TenantDataCenter** | Pointer to **string** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact | [optional] 
 **Query** | Pointer to **string** | The query to run against the Log Analytics workspace | [optional] 
 **LogType** | Pointer to **string** |  | [optional] 
 **AssetStatus** | Pointer to **[]string** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
@@ -1381,6 +1397,406 @@ SetTenantUrl sets TenantUrl field to given value.
 `func (o *RoutesV2InputConfigSettings) HasTenantUrl() bool`
 
 HasTenantUrl returns a boolean if a field has been set.
+
+### GetControlIds
+
+`func (o *RoutesV2InputConfigSettings) GetControlIds() []string`
+
+GetControlIds returns the ControlIds field if non-nil, zero value otherwise.
+
+### GetControlIdsOk
+
+`func (o *RoutesV2InputConfigSettings) GetControlIdsOk() (*[]string, bool)`
+
+GetControlIdsOk returns a tuple with the ControlIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetControlIds
+
+`func (o *RoutesV2InputConfigSettings) SetControlIds(v []string)`
+
+SetControlIds sets ControlIds field to given value.
+
+### HasControlIds
+
+`func (o *RoutesV2InputConfigSettings) HasControlIds() bool`
+
+HasControlIds returns a boolean if a field has been set.
+
+### GetHasNote
+
+`func (o *RoutesV2InputConfigSettings) GetHasNote() string`
+
+GetHasNote returns the HasNote field if non-nil, zero value otherwise.
+
+### GetHasNoteOk
+
+`func (o *RoutesV2InputConfigSettings) GetHasNoteOk() (*string, bool)`
+
+GetHasNoteOk returns a tuple with the HasNote field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasNote
+
+`func (o *RoutesV2InputConfigSettings) SetHasNote(v string)`
+
+SetHasNote sets HasNote field to given value.
+
+### HasHasNote
+
+`func (o *RoutesV2InputConfigSettings) HasHasNote() bool`
+
+HasHasNote returns a boolean if a field has been set.
+
+### GetHasRemediation
+
+`func (o *RoutesV2InputConfigSettings) GetHasRemediation() string`
+
+GetHasRemediation returns the HasRemediation field if non-nil, zero value otherwise.
+
+### GetHasRemediationOk
+
+`func (o *RoutesV2InputConfigSettings) GetHasRemediationOk() (*string, bool)`
+
+GetHasRemediationOk returns a tuple with the HasRemediation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasRemediation
+
+`func (o *RoutesV2InputConfigSettings) SetHasRemediation(v string)`
+
+SetHasRemediation sets HasRemediation field to given value.
+
+### HasHasRemediation
+
+`func (o *RoutesV2InputConfigSettings) HasHasRemediation() bool`
+
+HasHasRemediation returns a boolean if a field has been set.
+
+### GetHasServiceTicket
+
+`func (o *RoutesV2InputConfigSettings) GetHasServiceTicket() string`
+
+GetHasServiceTicket returns the HasServiceTicket field if non-nil, zero value otherwise.
+
+### GetHasServiceTicketOk
+
+`func (o *RoutesV2InputConfigSettings) GetHasServiceTicketOk() (*string, bool)`
+
+GetHasServiceTicketOk returns a tuple with the HasServiceTicket field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasServiceTicket
+
+`func (o *RoutesV2InputConfigSettings) SetHasServiceTicket(v string)`
+
+SetHasServiceTicket sets HasServiceTicket field to given value.
+
+### HasHasServiceTicket
+
+`func (o *RoutesV2InputConfigSettings) HasHasServiceTicket() bool`
+
+HasHasServiceTicket returns a boolean if a field has been set.
+
+### GetIssueIds
+
+`func (o *RoutesV2InputConfigSettings) GetIssueIds() []string`
+
+GetIssueIds returns the IssueIds field if non-nil, zero value otherwise.
+
+### GetIssueIdsOk
+
+`func (o *RoutesV2InputConfigSettings) GetIssueIdsOk() (*[]string, bool)`
+
+GetIssueIdsOk returns a tuple with the IssueIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssueIds
+
+`func (o *RoutesV2InputConfigSettings) SetIssueIds(v []string)`
+
+SetIssueIds sets IssueIds field to given value.
+
+### HasIssueIds
+
+`func (o *RoutesV2InputConfigSettings) HasIssueIds() bool`
+
+HasIssueIds returns a boolean if a field has been set.
+
+### GetIssueTypes
+
+`func (o *RoutesV2InputConfigSettings) GetIssueTypes() []string`
+
+GetIssueTypes returns the IssueTypes field if non-nil, zero value otherwise.
+
+### GetIssueTypesOk
+
+`func (o *RoutesV2InputConfigSettings) GetIssueTypesOk() (*[]string, bool)`
+
+GetIssueTypesOk returns a tuple with the IssueTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssueTypes
+
+`func (o *RoutesV2InputConfigSettings) SetIssueTypes(v []string)`
+
+SetIssueTypes sets IssueTypes field to given value.
+
+### HasIssueTypes
+
+`func (o *RoutesV2InputConfigSettings) HasIssueTypes() bool`
+
+HasIssueTypes returns a boolean if a field has been set.
+
+### GetProjectIds
+
+`func (o *RoutesV2InputConfigSettings) GetProjectIds() []string`
+
+GetProjectIds returns the ProjectIds field if non-nil, zero value otherwise.
+
+### GetProjectIdsOk
+
+`func (o *RoutesV2InputConfigSettings) GetProjectIdsOk() (*[]string, bool)`
+
+GetProjectIdsOk returns a tuple with the ProjectIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProjectIds
+
+`func (o *RoutesV2InputConfigSettings) SetProjectIds(v []string)`
+
+SetProjectIds sets ProjectIds field to given value.
+
+### HasProjectIds
+
+`func (o *RoutesV2InputConfigSettings) HasProjectIds() bool`
+
+HasProjectIds returns a boolean if a field has been set.
+
+### GetRelatedEntityId
+
+`func (o *RoutesV2InputConfigSettings) GetRelatedEntityId() string`
+
+GetRelatedEntityId returns the RelatedEntityId field if non-nil, zero value otherwise.
+
+### GetRelatedEntityIdOk
+
+`func (o *RoutesV2InputConfigSettings) GetRelatedEntityIdOk() (*string, bool)`
+
+GetRelatedEntityIdOk returns a tuple with the RelatedEntityId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRelatedEntityId
+
+`func (o *RoutesV2InputConfigSettings) SetRelatedEntityId(v string)`
+
+SetRelatedEntityId sets RelatedEntityId field to given value.
+
+### HasRelatedEntityId
+
+`func (o *RoutesV2InputConfigSettings) HasRelatedEntityId() bool`
+
+HasRelatedEntityId returns a boolean if a field has been set.
+
+### GetResolutionReasons
+
+`func (o *RoutesV2InputConfigSettings) GetResolutionReasons() []string`
+
+GetResolutionReasons returns the ResolutionReasons field if non-nil, zero value otherwise.
+
+### GetResolutionReasonsOk
+
+`func (o *RoutesV2InputConfigSettings) GetResolutionReasonsOk() (*[]string, bool)`
+
+GetResolutionReasonsOk returns a tuple with the ResolutionReasons field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResolutionReasons
+
+`func (o *RoutesV2InputConfigSettings) SetResolutionReasons(v []string)`
+
+SetResolutionReasons sets ResolutionReasons field to given value.
+
+### HasResolutionReasons
+
+`func (o *RoutesV2InputConfigSettings) HasResolutionReasons() bool`
+
+HasResolutionReasons returns a boolean if a field has been set.
+
+### GetRiskEqualsAll
+
+`func (o *RoutesV2InputConfigSettings) GetRiskEqualsAll() []string`
+
+GetRiskEqualsAll returns the RiskEqualsAll field if non-nil, zero value otherwise.
+
+### GetRiskEqualsAllOk
+
+`func (o *RoutesV2InputConfigSettings) GetRiskEqualsAllOk() (*[]string, bool)`
+
+GetRiskEqualsAllOk returns a tuple with the RiskEqualsAll field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRiskEqualsAll
+
+`func (o *RoutesV2InputConfigSettings) SetRiskEqualsAll(v []string)`
+
+SetRiskEqualsAll sets RiskEqualsAll field to given value.
+
+### HasRiskEqualsAll
+
+`func (o *RoutesV2InputConfigSettings) HasRiskEqualsAll() bool`
+
+HasRiskEqualsAll returns a boolean if a field has been set.
+
+### GetRiskEqualsAny
+
+`func (o *RoutesV2InputConfigSettings) GetRiskEqualsAny() []string`
+
+GetRiskEqualsAny returns the RiskEqualsAny field if non-nil, zero value otherwise.
+
+### GetRiskEqualsAnyOk
+
+`func (o *RoutesV2InputConfigSettings) GetRiskEqualsAnyOk() (*[]string, bool)`
+
+GetRiskEqualsAnyOk returns a tuple with the RiskEqualsAny field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRiskEqualsAny
+
+`func (o *RoutesV2InputConfigSettings) SetRiskEqualsAny(v []string)`
+
+SetRiskEqualsAny sets RiskEqualsAny field to given value.
+
+### HasRiskEqualsAny
+
+`func (o *RoutesV2InputConfigSettings) HasRiskEqualsAny() bool`
+
+HasRiskEqualsAny returns a boolean if a field has been set.
+
+### GetSearchQuery
+
+`func (o *RoutesV2InputConfigSettings) GetSearchQuery() string`
+
+GetSearchQuery returns the SearchQuery field if non-nil, zero value otherwise.
+
+### GetSearchQueryOk
+
+`func (o *RoutesV2InputConfigSettings) GetSearchQueryOk() (*string, bool)`
+
+GetSearchQueryOk returns a tuple with the SearchQuery field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSearchQuery
+
+`func (o *RoutesV2InputConfigSettings) SetSearchQuery(v string)`
+
+SetSearchQuery sets SearchQuery field to given value.
+
+### HasSearchQuery
+
+`func (o *RoutesV2InputConfigSettings) HasSearchQuery() bool`
+
+HasSearchQuery returns a boolean if a field has been set.
+
+### GetSecurityScan
+
+`func (o *RoutesV2InputConfigSettings) GetSecurityScan() string`
+
+GetSecurityScan returns the SecurityScan field if non-nil, zero value otherwise.
+
+### GetSecurityScanOk
+
+`func (o *RoutesV2InputConfigSettings) GetSecurityScanOk() (*string, bool)`
+
+GetSecurityScanOk returns a tuple with the SecurityScan field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecurityScan
+
+`func (o *RoutesV2InputConfigSettings) SetSecurityScan(v string)`
+
+SetSecurityScan sets SecurityScan field to given value.
+
+### HasSecurityScan
+
+`func (o *RoutesV2InputConfigSettings) HasSecurityScan() bool`
+
+HasSecurityScan returns a boolean if a field has been set.
+
+### GetSeverities
+
+`func (o *RoutesV2InputConfigSettings) GetSeverities() []string`
+
+GetSeverities returns the Severities field if non-nil, zero value otherwise.
+
+### GetSeveritiesOk
+
+`func (o *RoutesV2InputConfigSettings) GetSeveritiesOk() (*[]string, bool)`
+
+GetSeveritiesOk returns a tuple with the Severities field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSeverities
+
+`func (o *RoutesV2InputConfigSettings) SetSeverities(v []string)`
+
+SetSeverities sets Severities field to given value.
+
+### HasSeverities
+
+`func (o *RoutesV2InputConfigSettings) HasSeverities() bool`
+
+HasSeverities returns a boolean if a field has been set.
+
+### GetStackLayers
+
+`func (o *RoutesV2InputConfigSettings) GetStackLayers() []string`
+
+GetStackLayers returns the StackLayers field if non-nil, zero value otherwise.
+
+### GetStackLayersOk
+
+`func (o *RoutesV2InputConfigSettings) GetStackLayersOk() (*[]string, bool)`
+
+GetStackLayersOk returns a tuple with the StackLayers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStackLayers
+
+`func (o *RoutesV2InputConfigSettings) SetStackLayers(v []string)`
+
+SetStackLayers sets StackLayers field to given value.
+
+### HasStackLayers
+
+`func (o *RoutesV2InputConfigSettings) HasStackLayers() bool`
+
+HasStackLayers returns a boolean if a field has been set.
+
+### GetTenantDataCenter
+
+`func (o *RoutesV2InputConfigSettings) GetTenantDataCenter() string`
+
+GetTenantDataCenter returns the TenantDataCenter field if non-nil, zero value otherwise.
+
+### GetTenantDataCenterOk
+
+`func (o *RoutesV2InputConfigSettings) GetTenantDataCenterOk() (*string, bool)`
+
+GetTenantDataCenterOk returns a tuple with the TenantDataCenter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenantDataCenter
+
+`func (o *RoutesV2InputConfigSettings) SetTenantDataCenter(v string)`
+
+SetTenantDataCenter sets TenantDataCenter field to given value.
+
+### HasTenantDataCenter
+
+`func (o *RoutesV2InputConfigSettings) HasTenantDataCenter() bool`
+
+HasTenantDataCenter returns a boolean if a field has been set.
 
 ### GetQuery
 

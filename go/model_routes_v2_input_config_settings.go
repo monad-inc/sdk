@@ -42,6 +42,7 @@ type RoutesV2InputConfigSettings struct {
 	EntraIdSettingsConfig *EntraIdSettingsConfig
 	EventSettingsConfig *EventSettingsConfig
 	EventsLogsSettingsConfig *EventsLogsSettingsConfig
+	IssuesSettingsConfig *IssuesSettingsConfig
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
 	LoginActivitySettingsConfig *LoginActivitySettingsConfig
 	LoginSessionsSettingsConfig *LoginSessionsSettingsConfig
@@ -220,6 +221,13 @@ func EventSettingsConfigAsRoutesV2InputConfigSettings(v *EventSettingsConfig) Ro
 func EventsLogsSettingsConfigAsRoutesV2InputConfigSettings(v *EventsLogsSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
 		EventsLogsSettingsConfig: v,
+	}
+}
+
+// IssuesSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns IssuesSettingsConfig wrapped in RoutesV2InputConfigSettings
+func IssuesSettingsConfigAsRoutesV2InputConfigSettings(v *IssuesSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		IssuesSettingsConfig: v,
 	}
 }
 
@@ -745,6 +753,23 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.EventsLogsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into IssuesSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.IssuesSettingsConfig)
+	if err == nil {
+		jsonIssuesSettingsConfig, _ := json.Marshal(dst.IssuesSettingsConfig)
+		if string(jsonIssuesSettingsConfig) == "{}" { // empty struct
+			dst.IssuesSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.IssuesSettingsConfig); err != nil {
+				dst.IssuesSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.IssuesSettingsConfig = nil
+	}
+
 	// try to unmarshal data into LogAnalyticsQuerySettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.LogAnalyticsQuerySettingsConfig)
 	if err == nil {
@@ -1076,6 +1101,7 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.EntraIdSettingsConfig = nil
 		dst.EventSettingsConfig = nil
 		dst.EventsLogsSettingsConfig = nil
+		dst.IssuesSettingsConfig = nil
 		dst.LogAnalyticsQuerySettingsConfig = nil
 		dst.LoginActivitySettingsConfig = nil
 		dst.LoginSessionsSettingsConfig = nil
@@ -1195,6 +1221,10 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.EventsLogsSettingsConfig != nil {
 		return json.Marshal(&src.EventsLogsSettingsConfig)
+	}
+
+	if src.IssuesSettingsConfig != nil {
+		return json.Marshal(&src.IssuesSettingsConfig)
 	}
 
 	if src.LogAnalyticsQuerySettingsConfig != nil {
@@ -1367,6 +1397,10 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.EventsLogsSettingsConfig != nil {
 		return obj.EventsLogsSettingsConfig
+	}
+
+	if obj.IssuesSettingsConfig != nil {
+		return obj.IssuesSettingsConfig
 	}
 
 	if obj.LogAnalyticsQuerySettingsConfig != nil {
