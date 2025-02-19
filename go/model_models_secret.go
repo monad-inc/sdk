@@ -18,7 +18,7 @@ import (
 // checks if the ModelsSecret type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ModelsSecret{}
 
-// ModelsSecret The Access ID for authenticating with Sumo Logic.
+// ModelsSecret Token for the Wiz API. This is required to authenticate requests.
 type ModelsSecret struct {
 	// When the secret was created
 	CreatedAt *string `json:"created_at,omitempty"`

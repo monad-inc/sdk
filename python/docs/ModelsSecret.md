@@ -1,6 +1,6 @@
 # ModelsSecret
 
-The Access ID for authenticating with Sumo Logic.
+Token for the Wiz API. This is required to authenticate requests.
 
 ## Properties
 

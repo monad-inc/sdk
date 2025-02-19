@@ -30,7 +30,6 @@ export * from '../models/CloudResourceInventorySettingsConfig';
 export * from '../models/CloudtrailSettingsConfig';
 export * from '../models/ConditionInfo';
 export * from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
-export * from '../models/CriblHttpSecretsConfig';
 export * from '../models/CriblHttpSettingsConfig';
 export * from '../models/DelimitedDelimiterFormatter';
 export * from '../models/DemoCustomSettingsConfig';
@@ -47,7 +46,6 @@ export * from '../models/DropKeyDropKey';
 export * from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
 export * from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
 export * from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
-export * from '../models/ElasticsearchSecretsConfig';
 export * from '../models/ElasticsearchSettingsConfig';
 export * from '../models/EntraIdSecretsConfig';
 export * from '../models/EntraIdSettingsConfig';
@@ -57,7 +55,6 @@ export * from '../models/EventsLogsSecretsConfig';
 export * from '../models/EventsLogsSettingsConfig';
 export * from '../models/FlattenFlatten';
 export * from '../models/FormatterFormatConfig';
-export * from '../models/HttpSecretsConfig';
 export * from '../models/HttpSettingsConfig';
 export * from '../models/InputsConnectorMeta';
 export * from '../models/IssuesSecretsConfig';
@@ -117,7 +114,6 @@ export * from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAnd
 export * from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
 export * from '../models/OauthActivitySecretsConfig';
 export * from '../models/OauthActivitySettingsConfig';
-export * from '../models/OpensearchSecretsConfig';
 export * from '../models/OpensearchSettingsConfig';
 export * from '../models/OperationInformation';
 export * from '../models/OutputsConnectorMeta';
@@ -165,9 +161,6 @@ export * from '../models/RoutesV2InputConfigSecrets';
 export * from '../models/RoutesV2InputConfigSettings';
 export * from '../models/RoutesV2ListTemplatesResponse';
 export * from '../models/RoutesV2OrganizationOverview';
-export * from '../models/RoutesV2OutputConfig';
-export * from '../models/RoutesV2OutputConfigSecrets';
-export * from '../models/RoutesV2OutputConfigSettings';
 export * from '../models/RoutesV2PipelineRequestEdge';
 export * from '../models/RoutesV2PipelineRequestNode';
 export * from '../models/RoutesV2PipelineStatus';
@@ -175,7 +168,6 @@ export * from '../models/RoutesV2PipelineWithStatus';
 export * from '../models/RoutesV2SecretResponse';
 export * from '../models/RoutesV2SuccessResponse';
 export * from '../models/RoutesV2TestInputConnectionRequest';
-export * from '../models/RoutesV2TestOutputConnectionRequest';
 export * from '../models/RoutesV2UpdateAPIKeyRequest';
 export * from '../models/RoutesV2UpdateInputRequest';
 export * from '../models/RoutesV2UpdateOutputRequest';
@@ -189,24 +181,17 @@ export * from '../models/SemgrepProjectDetailsSettingsConfig';
 export * from '../models/SemgrepProjectsSecretsConfig';
 export * from '../models/SemgrepProjectsSettingsConfig';
 export * from '../models/SemgrepSupplyChainFindingsSecretsConfig';
-export * from '../models/SentinelSecretsConfig';
 export * from '../models/SentinelSettingsConfig';
 export * from '../models/SlackUsersSecretsConfig';
 export * from '../models/SlackUsersSettingsConfig';
 export * from '../models/SlackgroupsSecretsConfig';
 export * from '../models/SlackgroupsSettingsConfig';
-export * from '../models/SnowflakeSecretsConfig';
-export * from '../models/SnowflakeSettingsConfig';
 export * from '../models/SnykIssuesSecretsConfig';
 export * from '../models/SnykOrganizationsSecretsConfig';
 export * from '../models/SnykOrganizationsSettingsConfig';
 export * from '../models/SnykProjectsSecretsConfig';
 export * from '../models/SnykProjectsSettingsConfig';
 export * from '../models/SnykTargetsSecretsConfig';
-export * from '../models/SplunkSecretsConfig';
-export * from '../models/SplunkSettingsConfig';
-export * from '../models/SumologicSecretsConfig';
-export * from '../models/SumologicSettingsConfig';
 export * from '../models/TenableAssetsSecretsConfig';
 export * from '../models/TenableVulnerabilitiesSecretsConfig';
 export * from '../models/UsersInfoSecretsConfig';
@@ -253,7 +238,6 @@ import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInv
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
 import { ConditionInfo } from '../models/ConditionInfo';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
-import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
 import { DemoCustomSettingsConfig } from '../models/DemoCustomSettingsConfig';
@@ -270,7 +254,6 @@ import { DropKeyDropKey } from '../models/DropKeyDropKey';
 import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
 import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
 import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
-import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
@@ -280,7 +263,6 @@ import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
 import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
-import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
@@ -340,7 +322,6 @@ import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
 import { OauthActivitySecretsConfig } from '../models/OauthActivitySecretsConfig';
 import { OauthActivitySettingsConfig } from '../models/OauthActivitySettingsConfig';
-import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
@@ -388,9 +369,6 @@ import { RoutesV2InputConfigSecretsClass } from '../models/RoutesV2InputConfigSe
 import { RoutesV2InputConfigSettingsClass } from '../models/RoutesV2InputConfigSettings';
 import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesResponse';
 import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOverview';
-import { RoutesV2OutputConfig } from '../models/RoutesV2OutputConfig';
-import { RoutesV2OutputConfigSecretsClass } from '../models/RoutesV2OutputConfigSecrets';
-import { RoutesV2OutputConfigSettingsClass } from '../models/RoutesV2OutputConfigSettings';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
@@ -398,7 +376,6 @@ import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
-import { RoutesV2TestOutputConnectionRequest } from '../models/RoutesV2TestOutputConnectionRequest';
 import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyRequest';
 import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest';
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
@@ -412,24 +389,17 @@ import { SemgrepProjectDetailsSettingsConfig } from '../models/SemgrepProjectDet
 import { SemgrepProjectsSecretsConfig } from '../models/SemgrepProjectsSecretsConfig';
 import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettingsConfig';
 import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
-import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
 import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
 import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
 import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
 import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
-import { SnowflakeSecretsConfig } from '../models/SnowflakeSecretsConfig';
-import { SnowflakeSettingsConfig } from '../models/SnowflakeSettingsConfig';
 import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
 import { SnykOrganizationsSecretsConfig } from '../models/SnykOrganizationsSecretsConfig';
 import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
 import { SnykProjectsSecretsConfig } from '../models/SnykProjectsSecretsConfig';
 import { SnykProjectsSettingsConfig } from '../models/SnykProjectsSettingsConfig';
 import { SnykTargetsSecretsConfig } from '../models/SnykTargetsSecretsConfig';
-import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
-import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
-import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
-import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
 import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
 import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
@@ -501,7 +471,6 @@ let typeMap: {[index: string]: any} = {
     "CloudtrailSettingsConfig": CloudtrailSettingsConfig,
     "ConditionInfo": ConditionInfo,
     "CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue": CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue,
-    "CriblHttpSecretsConfig": CriblHttpSecretsConfig,
     "CriblHttpSettingsConfig": CriblHttpSettingsConfig,
     "DelimitedDelimiterFormatter": DelimitedDelimiterFormatter,
     "DemoCustomSettingsConfig": DemoCustomSettingsConfig,
@@ -518,7 +487,6 @@ let typeMap: {[index: string]: any} = {
     "DropKeyWhereValueEqDropKeyWhereValueEq": DropKeyWhereValueEqDropKeyWhereValueEq,
     "DropRecordWhereValueEqDropRecordWhereValueEq": DropRecordWhereValueEqDropRecordWhereValueEq,
     "DuplicateKeyValueToKeyDuplicateKeyValueToKey": DuplicateKeyValueToKeyDuplicateKeyValueToKey,
-    "ElasticsearchSecretsConfig": ElasticsearchSecretsConfig,
     "ElasticsearchSettingsConfig": ElasticsearchSettingsConfig,
     "EntraIdSecretsConfig": EntraIdSecretsConfig,
     "EntraIdSettingsConfig": EntraIdSettingsConfig,
@@ -528,7 +496,6 @@ let typeMap: {[index: string]: any} = {
     "EventsLogsSettingsConfig": EventsLogsSettingsConfig,
     "FlattenFlatten": FlattenFlatten,
     "FormatterFormatConfig": FormatterFormatConfig,
-    "HttpSecretsConfig": HttpSecretsConfig,
     "HttpSettingsConfig": HttpSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,
     "IssuesSecretsConfig": IssuesSecretsConfig,
@@ -588,7 +555,6 @@ let typeMap: {[index: string]: any} = {
     "MutateValueWhereKeyEqMutateValueWhereKeyEq": MutateValueWhereKeyEqMutateValueWhereKeyEq,
     "OauthActivitySecretsConfig": OauthActivitySecretsConfig,
     "OauthActivitySettingsConfig": OauthActivitySettingsConfig,
-    "OpensearchSecretsConfig": OpensearchSecretsConfig,
     "OpensearchSettingsConfig": OpensearchSettingsConfig,
     "OperationInformation": OperationInformation,
     "OutputsConnectorMeta": OutputsConnectorMeta,
@@ -636,9 +602,6 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2InputConfigSettings": RoutesV2InputConfigSettingsClass,
     "RoutesV2ListTemplatesResponse": RoutesV2ListTemplatesResponse,
     "RoutesV2OrganizationOverview": RoutesV2OrganizationOverview,
-    "RoutesV2OutputConfig": RoutesV2OutputConfig,
-    "RoutesV2OutputConfigSecrets": RoutesV2OutputConfigSecretsClass,
-    "RoutesV2OutputConfigSettings": RoutesV2OutputConfigSettingsClass,
     "RoutesV2PipelineRequestEdge": RoutesV2PipelineRequestEdge,
     "RoutesV2PipelineRequestNode": RoutesV2PipelineRequestNode,
     "RoutesV2PipelineStatus": RoutesV2PipelineStatus,
@@ -646,7 +609,6 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2SecretResponse": RoutesV2SecretResponse,
     "RoutesV2SuccessResponse": RoutesV2SuccessResponse,
     "RoutesV2TestInputConnectionRequest": RoutesV2TestInputConnectionRequest,
-    "RoutesV2TestOutputConnectionRequest": RoutesV2TestOutputConnectionRequest,
     "RoutesV2UpdateAPIKeyRequest": RoutesV2UpdateAPIKeyRequest,
     "RoutesV2UpdateInputRequest": RoutesV2UpdateInputRequest,
     "RoutesV2UpdateOutputRequest": RoutesV2UpdateOutputRequest,
@@ -660,24 +622,17 @@ let typeMap: {[index: string]: any} = {
     "SemgrepProjectsSecretsConfig": SemgrepProjectsSecretsConfig,
     "SemgrepProjectsSettingsConfig": SemgrepProjectsSettingsConfig,
     "SemgrepSupplyChainFindingsSecretsConfig": SemgrepSupplyChainFindingsSecretsConfig,
-    "SentinelSecretsConfig": SentinelSecretsConfig,
     "SentinelSettingsConfig": SentinelSettingsConfig,
     "SlackUsersSecretsConfig": SlackUsersSecretsConfig,
     "SlackUsersSettingsConfig": SlackUsersSettingsConfig,
     "SlackgroupsSecretsConfig": SlackgroupsSecretsConfig,
     "SlackgroupsSettingsConfig": SlackgroupsSettingsConfig,
-    "SnowflakeSecretsConfig": SnowflakeSecretsConfig,
-    "SnowflakeSettingsConfig": SnowflakeSettingsConfig,
     "SnykIssuesSecretsConfig": SnykIssuesSecretsConfig,
     "SnykOrganizationsSecretsConfig": SnykOrganizationsSecretsConfig,
     "SnykOrganizationsSettingsConfig": SnykOrganizationsSettingsConfig,
     "SnykProjectsSecretsConfig": SnykProjectsSecretsConfig,
     "SnykProjectsSettingsConfig": SnykProjectsSettingsConfig,
     "SnykTargetsSecretsConfig": SnykTargetsSecretsConfig,
-    "SplunkSecretsConfig": SplunkSecretsConfig,
-    "SplunkSettingsConfig": SplunkSettingsConfig,
-    "SumologicSecretsConfig": SumologicSecretsConfig,
-    "SumologicSettingsConfig": SumologicSettingsConfig,
     "TenableAssetsSecretsConfig": TenableAssetsSecretsConfig,
     "TenableVulnerabilitiesSecretsConfig": TenableVulnerabilitiesSecretsConfig,
     "UsersInfoSecretsConfig": UsersInfoSecretsConfig,

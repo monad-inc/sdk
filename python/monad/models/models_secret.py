@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class ModelsSecret(BaseModel):
     """
-    The Access ID for authenticating with Sumo Logic.
+    Token for the Wiz API. This is required to authenticate requests.
     """ # noqa: E501
     created_at: Optional[StrictStr] = Field(default=None, description="When the secret was created")
     description: Optional[StrictStr] = Field(default=None, description="The user set Description of the secret")

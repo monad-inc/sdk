@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-02-18T21:46:21.506800163Z[Etc/UTC]
+  - Build date: 2025-02-19T04:51:15.667895119Z[Etc/UTC]
   - Generator version: 7.11.0
 
 This is the monad API
@@ -237,7 +237,6 @@ Class | Method | HTTP request | Description
  - [CloudtrailSettingsConfig](docs/CloudtrailSettingsConfig.md)
  - [ConditionInfo](docs/ConditionInfo.md)
  - [CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue](docs/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.md)
- - [CriblHttpSecretsConfig](docs/CriblHttpSecretsConfig.md)
  - [CriblHttpSettingsConfig](docs/CriblHttpSettingsConfig.md)
  - [DelimitedDelimiterFormatter](docs/DelimitedDelimiterFormatter.md)
  - [DemoCustomSettingsConfig](docs/DemoCustomSettingsConfig.md)
@@ -254,7 +253,6 @@ Class | Method | HTTP request | Description
  - [DropKeyWhereValueEqDropKeyWhereValueEq](docs/DropKeyWhereValueEqDropKeyWhereValueEq.md)
  - [DropRecordWhereValueEqDropRecordWhereValueEq](docs/DropRecordWhereValueEqDropRecordWhereValueEq.md)
  - [DuplicateKeyValueToKeyDuplicateKeyValueToKey](docs/DuplicateKeyValueToKeyDuplicateKeyValueToKey.md)
- - [ElasticsearchSecretsConfig](docs/ElasticsearchSecretsConfig.md)
  - [ElasticsearchSettingsConfig](docs/ElasticsearchSettingsConfig.md)
  - [EntraIdSecretsConfig](docs/EntraIdSecretsConfig.md)
  - [EntraIdSettingsConfig](docs/EntraIdSettingsConfig.md)
@@ -264,7 +262,6 @@ Class | Method | HTTP request | Description
  - [EventsLogsSettingsConfig](docs/EventsLogsSettingsConfig.md)
  - [FlattenFlatten](docs/FlattenFlatten.md)
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
- - [HttpSecretsConfig](docs/HttpSecretsConfig.md)
  - [HttpSettingsConfig](docs/HttpSettingsConfig.md)
  - [InputsConnectorMeta](docs/InputsConnectorMeta.md)
  - [IssuesSecretsConfig](docs/IssuesSecretsConfig.md)
@@ -324,7 +321,6 @@ Class | Method | HTTP request | Description
  - [MutateValueWhereKeyEqMutateValueWhereKeyEq](docs/MutateValueWhereKeyEqMutateValueWhereKeyEq.md)
  - [OauthActivitySecretsConfig](docs/OauthActivitySecretsConfig.md)
  - [OauthActivitySettingsConfig](docs/OauthActivitySettingsConfig.md)
- - [OpensearchSecretsConfig](docs/OpensearchSecretsConfig.md)
  - [OpensearchSettingsConfig](docs/OpensearchSettingsConfig.md)
  - [OperationInformation](docs/OperationInformation.md)
  - [OutputsConnectorMeta](docs/OutputsConnectorMeta.md)
@@ -372,9 +368,6 @@ Class | Method | HTTP request | Description
  - [RoutesV2InputConfigSettings](docs/RoutesV2InputConfigSettings.md)
  - [RoutesV2ListTemplatesResponse](docs/RoutesV2ListTemplatesResponse.md)
  - [RoutesV2OrganizationOverview](docs/RoutesV2OrganizationOverview.md)
- - [RoutesV2OutputConfig](docs/RoutesV2OutputConfig.md)
- - [RoutesV2OutputConfigSecrets](docs/RoutesV2OutputConfigSecrets.md)
- - [RoutesV2OutputConfigSettings](docs/RoutesV2OutputConfigSettings.md)
  - [RoutesV2PipelineRequestEdge](docs/RoutesV2PipelineRequestEdge.md)
  - [RoutesV2PipelineRequestNode](docs/RoutesV2PipelineRequestNode.md)
  - [RoutesV2PipelineStatus](docs/RoutesV2PipelineStatus.md)
@@ -382,7 +375,6 @@ Class | Method | HTTP request | Description
  - [RoutesV2SecretResponse](docs/RoutesV2SecretResponse.md)
  - [RoutesV2SuccessResponse](docs/RoutesV2SuccessResponse.md)
  - [RoutesV2TestInputConnectionRequest](docs/RoutesV2TestInputConnectionRequest.md)
- - [RoutesV2TestOutputConnectionRequest](docs/RoutesV2TestOutputConnectionRequest.md)
  - [RoutesV2UpdateAPIKeyRequest](docs/RoutesV2UpdateAPIKeyRequest.md)
  - [RoutesV2UpdateInputRequest](docs/RoutesV2UpdateInputRequest.md)
  - [RoutesV2UpdateOutputRequest](docs/RoutesV2UpdateOutputRequest.md)
@@ -396,24 +388,17 @@ Class | Method | HTTP request | Description
  - [SemgrepProjectsSecretsConfig](docs/SemgrepProjectsSecretsConfig.md)
  - [SemgrepProjectsSettingsConfig](docs/SemgrepProjectsSettingsConfig.md)
  - [SemgrepSupplyChainFindingsSecretsConfig](docs/SemgrepSupplyChainFindingsSecretsConfig.md)
- - [SentinelSecretsConfig](docs/SentinelSecretsConfig.md)
  - [SentinelSettingsConfig](docs/SentinelSettingsConfig.md)
  - [SlackUsersSecretsConfig](docs/SlackUsersSecretsConfig.md)
  - [SlackUsersSettingsConfig](docs/SlackUsersSettingsConfig.md)
  - [SlackgroupsSecretsConfig](docs/SlackgroupsSecretsConfig.md)
  - [SlackgroupsSettingsConfig](docs/SlackgroupsSettingsConfig.md)
- - [SnowflakeSecretsConfig](docs/SnowflakeSecretsConfig.md)
- - [SnowflakeSettingsConfig](docs/SnowflakeSettingsConfig.md)
  - [SnykIssuesSecretsConfig](docs/SnykIssuesSecretsConfig.md)
  - [SnykOrganizationsSecretsConfig](docs/SnykOrganizationsSecretsConfig.md)
  - [SnykOrganizationsSettingsConfig](docs/SnykOrganizationsSettingsConfig.md)
  - [SnykProjectsSecretsConfig](docs/SnykProjectsSecretsConfig.md)
  - [SnykProjectsSettingsConfig](docs/SnykProjectsSettingsConfig.md)
  - [SnykTargetsSecretsConfig](docs/SnykTargetsSecretsConfig.md)
- - [SplunkSecretsConfig](docs/SplunkSecretsConfig.md)
- - [SplunkSettingsConfig](docs/SplunkSettingsConfig.md)
- - [SumologicSecretsConfig](docs/SumologicSecretsConfig.md)
- - [SumologicSettingsConfig](docs/SumologicSettingsConfig.md)
  - [TenableAssetsSecretsConfig](docs/TenableAssetsSecretsConfig.md)
  - [TenableVulnerabilitiesSecretsConfig](docs/TenableVulnerabilitiesSecretsConfig.md)
  - [UsersInfoSecretsConfig](docs/UsersInfoSecretsConfig.md)

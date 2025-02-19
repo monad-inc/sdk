@@ -35,7 +35,6 @@ import org.openapitools.client.model.RoutesGetOutputResponse;
 import org.openapitools.client.model.RoutesUpdateOutputRequest;
 import org.openapitools.client.model.RoutesV2CreateOutputRequest;
 import org.openapitools.client.model.RoutesV2SuccessResponse;
-import org.openapitools.client.model.RoutesV2TestOutputConnectionRequest;
 import org.openapitools.client.model.RoutesV2UpdateOutputRequest;
 
 import java.lang.reflect.Type;
@@ -1133,7 +1132,7 @@ public class OrganizationOutputsApi {
     /**
      * Build call for v2OrganizationIdOutputsTestConnectionPost
      * @param organizationId Organization ID (required)
-     * @param routesV2TestOutputConnectionRequest Output configuration to test (required)
+     * @param body Output configuration to test (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1146,7 +1145,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdOutputsTestConnectionPostCall(String organizationId, RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdOutputsTestConnectionPostCall(String organizationId, Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1160,7 +1159,7 @@ public class OrganizationOutputsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2TestOutputConnectionRequest;
+        Object localVarPostBody = body;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/outputs/test-connection"
@@ -1193,18 +1192,18 @@ public class OrganizationOutputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdOutputsTestConnectionPostValidateBeforeCall(String organizationId, RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdOutputsTestConnectionPostValidateBeforeCall(String organizationId, Object body, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdOutputsTestConnectionPost(Async)");
         }
 
-        // verify the required parameter 'routesV2TestOutputConnectionRequest' is set
-        if (routesV2TestOutputConnectionRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2TestOutputConnectionRequest' when calling v2OrganizationIdOutputsTestConnectionPost(Async)");
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling v2OrganizationIdOutputsTestConnectionPost(Async)");
         }
 
-        return v2OrganizationIdOutputsTestConnectionPostCall(organizationId, routesV2TestOutputConnectionRequest, _callback);
+        return v2OrganizationIdOutputsTestConnectionPostCall(organizationId, body, _callback);
 
     }
 
@@ -1212,7 +1211,7 @@ public class OrganizationOutputsApi {
      * Test output connection
      * Tests the connection for a given output type and configuration
      * @param organizationId Organization ID (required)
-     * @param routesV2TestOutputConnectionRequest Output configuration to test (required)
+     * @param body Output configuration to test (required)
      * @return RoutesV2SuccessResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1224,8 +1223,8 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2SuccessResponse v2OrganizationIdOutputsTestConnectionPost(String organizationId, RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest) throws ApiException {
-        ApiResponse<RoutesV2SuccessResponse> localVarResp = v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(organizationId, routesV2TestOutputConnectionRequest);
+    public RoutesV2SuccessResponse v2OrganizationIdOutputsTestConnectionPost(String organizationId, Object body) throws ApiException {
+        ApiResponse<RoutesV2SuccessResponse> localVarResp = v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(organizationId, body);
         return localVarResp.getData();
     }
 
@@ -1233,7 +1232,7 @@ public class OrganizationOutputsApi {
      * Test output connection
      * Tests the connection for a given output type and configuration
      * @param organizationId Organization ID (required)
-     * @param routesV2TestOutputConnectionRequest Output configuration to test (required)
+     * @param body Output configuration to test (required)
      * @return ApiResponse&lt;RoutesV2SuccessResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1245,8 +1244,8 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2SuccessResponse> v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(String organizationId, RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest) throws ApiException {
-        okhttp3.Call localVarCall = v2OrganizationIdOutputsTestConnectionPostValidateBeforeCall(organizationId, routesV2TestOutputConnectionRequest, null);
+    public ApiResponse<RoutesV2SuccessResponse> v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(String organizationId, Object body) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdOutputsTestConnectionPostValidateBeforeCall(organizationId, body, null);
         Type localVarReturnType = new TypeToken<RoutesV2SuccessResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1255,7 +1254,7 @@ public class OrganizationOutputsApi {
      * Test output connection (asynchronously)
      * Tests the connection for a given output type and configuration
      * @param organizationId Organization ID (required)
-     * @param routesV2TestOutputConnectionRequest Output configuration to test (required)
+     * @param body Output configuration to test (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1268,9 +1267,9 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdOutputsTestConnectionPostAsync(String organizationId, RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest, final ApiCallback<RoutesV2SuccessResponse> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdOutputsTestConnectionPostAsync(String organizationId, Object body, final ApiCallback<RoutesV2SuccessResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2OrganizationIdOutputsTestConnectionPostValidateBeforeCall(organizationId, routesV2TestOutputConnectionRequest, _callback);
+        okhttp3.Call localVarCall = v2OrganizationIdOutputsTestConnectionPostValidateBeforeCall(organizationId, body, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2SuccessResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
