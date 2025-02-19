@@ -39,6 +39,7 @@ import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
 import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
+import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { IssuesSettingsConfig } from '../models/IssuesSettingsConfig';

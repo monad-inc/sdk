@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-02-19T16:37:17.088791143Z[Etc/UTC]
+  - Build date: 2025-02-19T18:06:04.872902051Z[Etc/UTC]
   - Generator version: 7.11.0
 
 This is the monad API
@@ -243,6 +243,7 @@ Class | Method | HTTP request | Description
  - [EventsLogsSettingsConfig](docs/EventsLogsSettingsConfig.md)
  - [FlattenFlatten](docs/FlattenFlatten.md)
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
+ - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
  - [HttpSettingsConfig](docs/HttpSettingsConfig.md)
  - [InputsConnectorMeta](docs/InputsConnectorMeta.md)
  - [IssuesSettingsConfig](docs/IssuesSettingsConfig.md)

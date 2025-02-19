@@ -207,6 +207,7 @@ Class | Method | HTTP request | Description
  - [EventsLogsSettingsConfig](docs/EventsLogsSettingsConfig.md)
  - [FlattenFlatten](docs/FlattenFlatten.md)
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
+ - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
  - [HttpSettingsConfig](docs/HttpSettingsConfig.md)
  - [InputsConnectorMeta](docs/InputsConnectorMeta.md)
  - [IssuesSettingsConfig](docs/IssuesSettingsConfig.md)

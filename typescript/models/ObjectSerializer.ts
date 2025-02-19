@@ -36,6 +36,7 @@ export * from '../models/EventSettingsConfig';
 export * from '../models/EventsLogsSettingsConfig';
 export * from '../models/FlattenFlatten';
 export * from '../models/FormatterFormatConfig';
+export * from '../models/FullScansSettingsConfig';
 export * from '../models/HttpSettingsConfig';
 export * from '../models/InputsConnectorMeta';
 export * from '../models/IssuesSettingsConfig';
@@ -192,6 +193,7 @@ import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
 import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
+import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { IssuesSettingsConfig     , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum    } from '../models/IssuesSettingsConfig';
@@ -369,6 +371,7 @@ let typeMap: {[index: string]: any} = {
     "EventsLogsSettingsConfig": EventsLogsSettingsConfig,
     "FlattenFlatten": FlattenFlatten,
     "FormatterFormatConfig": FormatterFormatConfig,
+    "FullScansSettingsConfig": FullScansSettingsConfig,
     "HttpSettingsConfig": HttpSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,
     "IssuesSettingsConfig": IssuesSettingsConfig,

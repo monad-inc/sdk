@@ -90,6 +90,7 @@ from monad.models.event_settings_config import EventSettingsConfig
 from monad.models.events_logs_settings_config import EventsLogsSettingsConfig
 from monad.models.flatten_flatten import FlattenFlatten
 from monad.models.formatter_format_config import FormatterFormatConfig
+from monad.models.full_scans_settings_config import FullScansSettingsConfig
 from monad.models.http_settings_config import HttpSettingsConfig
 from monad.models.inputs_connector_meta import InputsConnectorMeta
 from monad.models.issues_settings_config import IssuesSettingsConfig
