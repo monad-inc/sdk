@@ -17,7 +17,6 @@ import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesUpdateInputRequest } from '../models/RoutesUpdateInputRequest';
 import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
-import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
 import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest';
 import { V1OrganizationIdInputsBulkPost400Response } from '../models/V1OrganizationIdInputsBulkPost400Response';
 import { V1OrganizationIdInputsPost400Response } from '../models/V1OrganizationIdInputsPost400Response';
@@ -546,9 +545,9 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
      * Tests the connection for a given input type and configuration
      * Test input connection
      * @param organizationId Organization ID
-     * @param routesV2TestInputConnectionRequest Input configuration to test
+     * @param body Input configuration to test
      */
-    public async v2OrganizationIdInputsTestConnectionPost(organizationId: string, routesV2TestInputConnectionRequest: RoutesV2TestInputConnectionRequest, _options?: Configuration): Promise<RequestContext> {
+    public async v2OrganizationIdInputsTestConnectionPost(organizationId: string, body: any, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -557,9 +556,9 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'routesV2TestInputConnectionRequest' is not null or undefined
-        if (routesV2TestInputConnectionRequest === null || routesV2TestInputConnectionRequest === undefined) {
-            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsTestConnectionPost", "routesV2TestInputConnectionRequest");
+        // verify required parameter 'body' is not null or undefined
+        if (body === null || body === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "v2OrganizationIdInputsTestConnectionPost", "body");
         }
 
 
@@ -578,7 +577,7 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesV2TestInputConnectionRequest, "RoutesV2TestInputConnectionRequest", ""),
+            ObjectSerializer.serialize(body, "any", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

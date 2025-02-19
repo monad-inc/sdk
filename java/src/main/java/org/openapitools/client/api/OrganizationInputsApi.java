@@ -36,7 +36,6 @@ import org.openapitools.client.model.RoutesGetInputResponse;
 import org.openapitools.client.model.RoutesUpdateInputRequest;
 import org.openapitools.client.model.RoutesV2CreateInputRequest;
 import org.openapitools.client.model.RoutesV2SuccessResponse;
-import org.openapitools.client.model.RoutesV2TestInputConnectionRequest;
 import org.openapitools.client.model.RoutesV2UpdateInputRequest;
 import org.openapitools.client.model.V1OrganizationIdInputsBulkPost400Response;
 import org.openapitools.client.model.V1OrganizationIdInputsPost400Response;
@@ -1293,7 +1292,7 @@ public class OrganizationInputsApi {
     /**
      * Build call for v2OrganizationIdInputsTestConnectionPost
      * @param organizationId Organization ID (required)
-     * @param routesV2TestInputConnectionRequest Input configuration to test (required)
+     * @param body Input configuration to test (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1306,7 +1305,7 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdInputsTestConnectionPostCall(String organizationId, RoutesV2TestInputConnectionRequest routesV2TestInputConnectionRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdInputsTestConnectionPostCall(String organizationId, Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1320,7 +1319,7 @@ public class OrganizationInputsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesV2TestInputConnectionRequest;
+        Object localVarPostBody = body;
 
         // create path and map variables
         String localVarPath = "/v2/{organization_id}/inputs/test-connection"
@@ -1353,18 +1352,18 @@ public class OrganizationInputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdInputsTestConnectionPostValidateBeforeCall(String organizationId, RoutesV2TestInputConnectionRequest routesV2TestInputConnectionRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdInputsTestConnectionPostValidateBeforeCall(String organizationId, Object body, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdInputsTestConnectionPost(Async)");
         }
 
-        // verify the required parameter 'routesV2TestInputConnectionRequest' is set
-        if (routesV2TestInputConnectionRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesV2TestInputConnectionRequest' when calling v2OrganizationIdInputsTestConnectionPost(Async)");
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling v2OrganizationIdInputsTestConnectionPost(Async)");
         }
 
-        return v2OrganizationIdInputsTestConnectionPostCall(organizationId, routesV2TestInputConnectionRequest, _callback);
+        return v2OrganizationIdInputsTestConnectionPostCall(organizationId, body, _callback);
 
     }
 
@@ -1372,7 +1371,7 @@ public class OrganizationInputsApi {
      * Test input connection
      * Tests the connection for a given input type and configuration
      * @param organizationId Organization ID (required)
-     * @param routesV2TestInputConnectionRequest Input configuration to test (required)
+     * @param body Input configuration to test (required)
      * @return RoutesV2SuccessResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1384,8 +1383,8 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2SuccessResponse v2OrganizationIdInputsTestConnectionPost(String organizationId, RoutesV2TestInputConnectionRequest routesV2TestInputConnectionRequest) throws ApiException {
-        ApiResponse<RoutesV2SuccessResponse> localVarResp = v2OrganizationIdInputsTestConnectionPostWithHttpInfo(organizationId, routesV2TestInputConnectionRequest);
+    public RoutesV2SuccessResponse v2OrganizationIdInputsTestConnectionPost(String organizationId, Object body) throws ApiException {
+        ApiResponse<RoutesV2SuccessResponse> localVarResp = v2OrganizationIdInputsTestConnectionPostWithHttpInfo(organizationId, body);
         return localVarResp.getData();
     }
 
@@ -1393,7 +1392,7 @@ public class OrganizationInputsApi {
      * Test input connection
      * Tests the connection for a given input type and configuration
      * @param organizationId Organization ID (required)
-     * @param routesV2TestInputConnectionRequest Input configuration to test (required)
+     * @param body Input configuration to test (required)
      * @return ApiResponse&lt;RoutesV2SuccessResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1405,8 +1404,8 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2SuccessResponse> v2OrganizationIdInputsTestConnectionPostWithHttpInfo(String organizationId, RoutesV2TestInputConnectionRequest routesV2TestInputConnectionRequest) throws ApiException {
-        okhttp3.Call localVarCall = v2OrganizationIdInputsTestConnectionPostValidateBeforeCall(organizationId, routesV2TestInputConnectionRequest, null);
+    public ApiResponse<RoutesV2SuccessResponse> v2OrganizationIdInputsTestConnectionPostWithHttpInfo(String organizationId, Object body) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdInputsTestConnectionPostValidateBeforeCall(organizationId, body, null);
         Type localVarReturnType = new TypeToken<RoutesV2SuccessResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1415,7 +1414,7 @@ public class OrganizationInputsApi {
      * Test input connection (asynchronously)
      * Tests the connection for a given input type and configuration
      * @param organizationId Organization ID (required)
-     * @param routesV2TestInputConnectionRequest Input configuration to test (required)
+     * @param body Input configuration to test (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1428,9 +1427,9 @@ public class OrganizationInputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdInputsTestConnectionPostAsync(String organizationId, RoutesV2TestInputConnectionRequest routesV2TestInputConnectionRequest, final ApiCallback<RoutesV2SuccessResponse> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdInputsTestConnectionPostAsync(String organizationId, Object body, final ApiCallback<RoutesV2SuccessResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2OrganizationIdInputsTestConnectionPostValidateBeforeCall(organizationId, routesV2TestInputConnectionRequest, _callback);
+        okhttp3.Call localVarCall = v2OrganizationIdInputsTestConnectionPostValidateBeforeCall(organizationId, body, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2SuccessResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

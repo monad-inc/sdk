@@ -1337,12 +1337,12 @@ type ApiV2OrganizationIdInputsTestConnectionPostRequest struct {
 	ctx context.Context
 	ApiService *OrganizationInputsAPIService
 	organizationId string
-	routesV2TestInputConnectionRequest *RoutesV2TestInputConnectionRequest
+	body *map[string]interface{}
 }
 
 // Input configuration to test
-func (r ApiV2OrganizationIdInputsTestConnectionPostRequest) RoutesV2TestInputConnectionRequest(routesV2TestInputConnectionRequest RoutesV2TestInputConnectionRequest) ApiV2OrganizationIdInputsTestConnectionPostRequest {
-	r.routesV2TestInputConnectionRequest = &routesV2TestInputConnectionRequest
+func (r ApiV2OrganizationIdInputsTestConnectionPostRequest) Body(body map[string]interface{}) ApiV2OrganizationIdInputsTestConnectionPostRequest {
+	r.body = &body
 	return r
 }
 
@@ -1388,8 +1388,8 @@ func (a *OrganizationInputsAPIService) V2OrganizationIdInputsTestConnectionPostE
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesV2TestInputConnectionRequest == nil {
-		return localVarReturnValue, nil, reportError("routesV2TestInputConnectionRequest is required and must be specified")
+	if r.body == nil {
+		return localVarReturnValue, nil, reportError("body is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1410,7 +1410,7 @@ func (a *OrganizationInputsAPIService) V2OrganizationIdInputsTestConnectionPostE
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.routesV2TestInputConnectionRequest
+	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

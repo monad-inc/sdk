@@ -2,7 +2,6 @@
 
 # ModelsSecret
 
-Token for the Wiz API. This is required to authenticate requests.
 
 ## Properties
 

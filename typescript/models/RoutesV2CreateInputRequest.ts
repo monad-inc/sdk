@@ -10,11 +10,10 @@
  * Do not edit the class manually.
  */
 
-import { RoutesV2InputConfig } from '../models/RoutesV2InputConfig';
 import { HttpFile } from '../http/http';
 
 export class RoutesV2CreateInputRequest {
-    'config'?: RoutesV2InputConfig;
+    'config'?: any;
     'description'?: string;
     'name'?: string;
     'type'?: string;
@@ -27,7 +26,7 @@ export class RoutesV2CreateInputRequest {
         {
             "name": "config",
             "baseName": "config",
-            "type": "RoutesV2InputConfig",
+            "type": "any",
             "format": ""
         },
         {

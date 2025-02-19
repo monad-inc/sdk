@@ -12,9 +12,6 @@
 
 import { HttpFile } from '../http/http';
 
-/**
-* Token for the Wiz API. This is required to authenticate requests.
-*/
 export class ModelsSecret {
     /**
     * When the secret was created

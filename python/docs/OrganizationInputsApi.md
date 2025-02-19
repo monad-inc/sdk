@@ -751,7 +751,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_organization_id_inputs_test_connection_post**
-> RoutesV2SuccessResponse v2_organization_id_inputs_test_connection_post(organization_id, routes_v2_test_input_connection_request)
+> RoutesV2SuccessResponse v2_organization_id_inputs_test_connection_post(organization_id, body)
 
 Test input connection
 
@@ -765,7 +765,6 @@ Tests the connection for a given input type and configuration
 ```python
 import monad
 from monad.models.routes_v2_success_response import RoutesV2SuccessResponse
-from monad.models.routes_v2_test_input_connection_request import RoutesV2TestInputConnectionRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -797,11 +796,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationInputsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    routes_v2_test_input_connection_request = monad.RoutesV2TestInputConnectionRequest() # RoutesV2TestInputConnectionRequest | Input configuration to test
+    body = None # object | Input configuration to test
 
     try:
         # Test input connection
-        api_response = api_instance.v2_organization_id_inputs_test_connection_post(organization_id, routes_v2_test_input_connection_request)
+        api_response = api_instance.v2_organization_id_inputs_test_connection_post(organization_id, body)
         print("The response of OrganizationInputsApi->v2_organization_id_inputs_test_connection_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -816,7 +815,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **routes_v2_test_input_connection_request** | [**RoutesV2TestInputConnectionRequest**](RoutesV2TestInputConnectionRequest.md)| Input configuration to test | 
+ **body** | **object**| Input configuration to test | 
 
 ### Return type
 
