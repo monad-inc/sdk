@@ -27,8 +27,9 @@ class AdminActivitySettingsConfig(BaseModel):
     """
     Google Workspace Admin Activity settings
     """ # noqa: E501
+    auth_type: Optional[StrictStr] = Field(default=None, description="Authentication type (service_account or oauth)")
     email: Optional[StrictStr] = Field(default=None, description="Email address to use for authenticating with Google Cloud.")
-    __properties: ClassVar[List[str]] = ["email"]
+    __properties: ClassVar[List[str]] = ["auth_type", "email"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,6 +82,7 @@ class AdminActivitySettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "auth_type": obj.get("auth_type"),
             "email": obj.get("email")
         })
         return _obj

@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Email** | Pointer to **string** | Email address to use for authenticating with Google Cloud. | [optional] 
+**AuthType** | Pointer to **string** | Authentication type (service_account or oauth) | [optional] 
+**Email** | Pointer to **string** | Email address to use for authenticating with Google Cloud (required for service_account auth). | [optional] 
 
 ## Methods
 
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewLoginActivitySettingsConfigWithDefaults instantiates a new LoginActivitySettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAuthType
+
+`func (o *LoginActivitySettingsConfig) GetAuthType() string`
+
+GetAuthType returns the AuthType field if non-nil, zero value otherwise.
+
+### GetAuthTypeOk
+
+`func (o *LoginActivitySettingsConfig) GetAuthTypeOk() (*string, bool)`
+
+GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthType
+
+`func (o *LoginActivitySettingsConfig) SetAuthType(v string)`
+
+SetAuthType sets AuthType field to given value.
+
+### HasAuthType
+
+`func (o *LoginActivitySettingsConfig) HasAuthType() bool`
+
+HasAuthType returns a boolean if a field has been set.
 
 ### GetEmail
 

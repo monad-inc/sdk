@@ -17,7 +17,11 @@ import { HttpFile } from '../http/http';
 */
 export class DriveActivitySettingsConfig {
     /**
-    * Email address to use for authenticating with Google Cloud.
+    * Authentication type (service_account or oauth)
+    */
+    'authType'?: string;
+    /**
+    * Email address to use for authenticating with Google Cloud (required for service_account auth).
     */
     'email'?: string;
 
@@ -26,6 +30,12 @@ export class DriveActivitySettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "authType",
+            "baseName": "auth_type",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "email",
             "baseName": "email",

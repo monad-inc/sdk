@@ -48,8 +48,13 @@ import org.openapitools.client.JSON;
 /**
  * Google Workspace Admin Activity settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T21:30:10.096023018Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T21:41:31.381850786Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class AdminActivitySettingsConfig {
+  public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
+  @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
+  @javax.annotation.Nullable
+  private String authType;
+
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
   @javax.annotation.Nullable
@@ -57,6 +62,25 @@ public class AdminActivitySettingsConfig {
 
   public AdminActivitySettingsConfig() {
   }
+
+  public AdminActivitySettingsConfig authType(@javax.annotation.Nullable String authType) {
+    this.authType = authType;
+    return this;
+  }
+
+  /**
+   * Authentication type (service_account or oauth)
+   * @return authType
+   */
+  @javax.annotation.Nullable
+  public String getAuthType() {
+    return authType;
+  }
+
+  public void setAuthType(@javax.annotation.Nullable String authType) {
+    this.authType = authType;
+  }
+
 
   public AdminActivitySettingsConfig email(@javax.annotation.Nullable String email) {
     this.email = email;
@@ -87,18 +111,20 @@ public class AdminActivitySettingsConfig {
       return false;
     }
     AdminActivitySettingsConfig adminActivitySettingsConfig = (AdminActivitySettingsConfig) o;
-    return Objects.equals(this.email, adminActivitySettingsConfig.email);
+    return Objects.equals(this.authType, adminActivitySettingsConfig.authType) &&
+        Objects.equals(this.email, adminActivitySettingsConfig.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email);
+    return Objects.hash(authType, email);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AdminActivitySettingsConfig {\n");
+    sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -122,6 +148,7 @@ public class AdminActivitySettingsConfig {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("auth_type");
     openapiFields.add("email");
 
     // a set of required properties/fields (JSON key names)
@@ -149,6 +176,9 @@ public class AdminActivitySettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) && !jsonObj.get("auth_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
+      }
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }

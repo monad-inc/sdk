@@ -8,7 +8,8 @@ Google Workspace Login Activity settings
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**email** | **String** | Email address to use for authenticating with Google Cloud. |  [optional] |
+|**authType** | **String** | Authentication type (service_account or oauth) |  [optional] |
+|**email** | **String** | Email address to use for authenticating with Google Cloud (required for service_account auth). |  [optional] |
 
 
 

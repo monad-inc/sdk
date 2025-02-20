@@ -20,7 +20,9 @@ var _ MappedNullable = &OauthActivitySettingsConfig{}
 
 // OauthActivitySettingsConfig Google Workspace OAuth Activity settings
 type OauthActivitySettingsConfig struct {
-	// Email address to use for authenticating with Google Cloud.
+	// Authentication type (service_account or oauth)
+	AuthType *string `json:"auth_type,omitempty"`
+	// Email address to use for authenticating with Google Cloud (required for service_account auth).
 	Email *string `json:"email,omitempty"`
 }
 
@@ -39,6 +41,38 @@ func NewOauthActivitySettingsConfig() *OauthActivitySettingsConfig {
 func NewOauthActivitySettingsConfigWithDefaults() *OauthActivitySettingsConfig {
 	this := OauthActivitySettingsConfig{}
 	return &this
+}
+
+// GetAuthType returns the AuthType field value if set, zero value otherwise.
+func (o *OauthActivitySettingsConfig) GetAuthType() string {
+	if o == nil || IsNil(o.AuthType) {
+		var ret string
+		return ret
+	}
+	return *o.AuthType
+}
+
+// GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OauthActivitySettingsConfig) GetAuthTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.AuthType) {
+		return nil, false
+	}
+	return o.AuthType, true
+}
+
+// HasAuthType returns a boolean if a field has been set.
+func (o *OauthActivitySettingsConfig) HasAuthType() bool {
+	if o != nil && !IsNil(o.AuthType) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
+func (o *OauthActivitySettingsConfig) SetAuthType(v string) {
+	o.AuthType = &v
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise.
@@ -83,6 +117,9 @@ func (o OauthActivitySettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o OauthActivitySettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AuthType) {
+		toSerialize["auth_type"] = o.AuthType
+	}
 	if !IsNil(o.Email) {
 		toSerialize["email"] = o.Email
 	}

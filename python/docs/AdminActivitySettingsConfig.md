@@ -6,6 +6,7 @@ Google Workspace Admin Activity settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**auth_type** | **str** | Authentication type (service_account or oauth) | [optional] 
 **email** | **str** | Email address to use for authenticating with Google Cloud. | [optional] 
 
 ## Example
