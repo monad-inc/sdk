@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesBulkCreateInputRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-21T21:57:40.625119496Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-21T22:25:55.567213484Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesBulkCreateInputRequest {
   public static final String SERIALIZED_NAME_INPUTS = "inputs";
   @SerializedName(SERIALIZED_NAME_INPUTS)
