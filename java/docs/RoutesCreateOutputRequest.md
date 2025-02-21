@@ -11,7 +11,6 @@
 |**description** | **String** |  |  [optional] |
 |**name** | **String** |  |  |
 |**outputType** | **String** |  |  |
-|**promiseId** | **String** |  |  [optional] |
 
 
 

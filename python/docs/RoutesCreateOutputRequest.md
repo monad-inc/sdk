@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **name** | **str** |  | 
 **output_type** | **str** |  | 
-**promise_id** | **str** |  | [optional] 
 
 ## Example
 

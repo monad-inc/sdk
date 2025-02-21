@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
 **OutputType** | **string** |  | 
-**PromiseId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -118,31 +117,6 @@ and a boolean to check if the value has been set.
 
 SetOutputType sets OutputType field to given value.
 
-
-### GetPromiseId
-
-`func (o *RoutesCreateOutputRequest) GetPromiseId() string`
-
-GetPromiseId returns the PromiseId field if non-nil, zero value otherwise.
-
-### GetPromiseIdOk
-
-`func (o *RoutesCreateOutputRequest) GetPromiseIdOk() (*string, bool)`
-
-GetPromiseIdOk returns a tuple with the PromiseId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPromiseId
-
-`func (o *RoutesCreateOutputRequest) SetPromiseId(v string)`
-
-SetPromiseId sets PromiseId field to given value.
-
-### HasPromiseId
-
-`func (o *RoutesCreateOutputRequest) HasPromiseId() bool`
-
-HasPromiseId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

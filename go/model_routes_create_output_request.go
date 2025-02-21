@@ -26,7 +26,6 @@ type RoutesCreateOutputRequest struct {
 	Description *string `json:"description,omitempty"`
 	Name string `json:"name"`
 	OutputType string `json:"output_type"`
-	PromiseId *string `json:"promise_id,omitempty"`
 }
 
 type _RoutesCreateOutputRequest RoutesCreateOutputRequest
@@ -162,38 +161,6 @@ func (o *RoutesCreateOutputRequest) SetOutputType(v string) {
 	o.OutputType = v
 }
 
-// GetPromiseId returns the PromiseId field value if set, zero value otherwise.
-func (o *RoutesCreateOutputRequest) GetPromiseId() string {
-	if o == nil || IsNil(o.PromiseId) {
-		var ret string
-		return ret
-	}
-	return *o.PromiseId
-}
-
-// GetPromiseIdOk returns a tuple with the PromiseId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RoutesCreateOutputRequest) GetPromiseIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PromiseId) {
-		return nil, false
-	}
-	return o.PromiseId, true
-}
-
-// HasPromiseId returns a boolean if a field has been set.
-func (o *RoutesCreateOutputRequest) HasPromiseId() bool {
-	if o != nil && !IsNil(o.PromiseId) {
-		return true
-	}
-
-	return false
-}
-
-// SetPromiseId gets a reference to the given string and assigns it to the PromiseId field.
-func (o *RoutesCreateOutputRequest) SetPromiseId(v string) {
-	o.PromiseId = &v
-}
-
 func (o RoutesCreateOutputRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -212,9 +179,6 @@ func (o RoutesCreateOutputRequest) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["name"] = o.Name
 	toSerialize["output_type"] = o.OutputType
-	if !IsNil(o.PromiseId) {
-		toSerialize["promise_id"] = o.PromiseId
-	}
 	return toSerialize, nil
 }
 

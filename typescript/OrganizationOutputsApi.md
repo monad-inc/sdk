@@ -292,7 +292,6 @@ const request: OrganizationOutputsApiV1OrganizationIdOutputsPostRequest = {
     description: "description_example",
     name: "name_example",
     outputType: "outputType_example",
-    promiseId: "promiseId_example",
   },
 };
 

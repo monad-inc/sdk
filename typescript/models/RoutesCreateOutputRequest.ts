@@ -18,7 +18,6 @@ export class RoutesCreateOutputRequest {
     'description'?: string;
     'name': string;
     'outputType': string;
-    'promiseId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -46,12 +45,6 @@ export class RoutesCreateOutputRequest {
         {
             "name": "outputType",
             "baseName": "output_type",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "promiseId",
-            "baseName": "promise_id",
             "type": "string",
             "format": ""
         }    ];

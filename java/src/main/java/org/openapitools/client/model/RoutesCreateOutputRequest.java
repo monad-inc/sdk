@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesCreateOutputRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-21T16:13:42.398019262Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-21T21:35:55.758490273Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesCreateOutputRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
@@ -70,11 +70,6 @@ public class RoutesCreateOutputRequest {
   @SerializedName(SERIALIZED_NAME_OUTPUT_TYPE)
   @javax.annotation.Nonnull
   private String outputType;
-
-  public static final String SERIALIZED_NAME_PROMISE_ID = "promise_id";
-  @SerializedName(SERIALIZED_NAME_PROMISE_ID)
-  @javax.annotation.Nullable
-  private String promiseId;
 
   public RoutesCreateOutputRequest() {
   }
@@ -155,25 +150,6 @@ public class RoutesCreateOutputRequest {
   }
 
 
-  public RoutesCreateOutputRequest promiseId(@javax.annotation.Nullable String promiseId) {
-    this.promiseId = promiseId;
-    return this;
-  }
-
-  /**
-   * Get promiseId
-   * @return promiseId
-   */
-  @javax.annotation.Nullable
-  public String getPromiseId() {
-    return promiseId;
-  }
-
-  public void setPromiseId(@javax.annotation.Nullable String promiseId) {
-    this.promiseId = promiseId;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -187,13 +163,12 @@ public class RoutesCreateOutputRequest {
     return Objects.equals(this.config, routesCreateOutputRequest.config) &&
         Objects.equals(this.description, routesCreateOutputRequest.description) &&
         Objects.equals(this.name, routesCreateOutputRequest.name) &&
-        Objects.equals(this.outputType, routesCreateOutputRequest.outputType) &&
-        Objects.equals(this.promiseId, routesCreateOutputRequest.promiseId);
+        Objects.equals(this.outputType, routesCreateOutputRequest.outputType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, description, name, outputType, promiseId);
+    return Objects.hash(config, description, name, outputType);
   }
 
   @Override
@@ -204,7 +179,6 @@ public class RoutesCreateOutputRequest {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    outputType: ").append(toIndentedString(outputType)).append("\n");
-    sb.append("    promiseId: ").append(toIndentedString(promiseId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -231,7 +205,6 @@ public class RoutesCreateOutputRequest {
     openapiFields.add("description");
     openapiFields.add("name");
     openapiFields.add("output_type");
-    openapiFields.add("promise_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -279,9 +252,6 @@ public class RoutesCreateOutputRequest {
       }
       if (!jsonObj.get("output_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `output_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("output_type").toString()));
-      }
-      if ((jsonObj.get("promise_id") != null && !jsonObj.get("promise_id").isJsonNull()) && !jsonObj.get("promise_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `promise_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("promise_id").toString()));
       }
   }
 
