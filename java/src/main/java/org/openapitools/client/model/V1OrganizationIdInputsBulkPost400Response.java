@@ -50,7 +50,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-24T20:07:41.507439045Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-24T20:48:53.854033282Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class V1OrganizationIdInputsBulkPost400Response extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(V1OrganizationIdInputsBulkPost400Response.class.getName());
 
