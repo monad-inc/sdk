@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * MathMultiplyWithValueMathMultiplyWithValue
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-26T21:42:37.416547853Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-26T22:23:32.067886160Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class MathMultiplyWithValueMathMultiplyWithValue {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
