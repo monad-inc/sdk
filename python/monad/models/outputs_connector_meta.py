@@ -29,12 +29,14 @@ class OutputsConnectorMeta(BaseModel):
     """ # noqa: E501
     auth_type: Optional[StrictStr] = None
     billing_type: Optional[StrictInt] = None
+    category: Optional[StrictStr] = None
     config: Optional[Any] = None
     description: Optional[StrictStr] = None
+    house: Optional[StrictStr] = None
     internal: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "config", "description", "internal", "name", "type_id"]
+    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "category", "config", "description", "house", "internal", "name", "type_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,8 +96,10 @@ class OutputsConnectorMeta(BaseModel):
         _obj = cls.model_validate({
             "auth_type": obj.get("auth_type"),
             "billing_type": obj.get("billing_type"),
+            "category": obj.get("category"),
             "config": obj.get("config"),
             "description": obj.get("description"),
+            "house": obj.get("house"),
             "internal": obj.get("internal"),
             "name": obj.get("name"),
             "type_id": obj.get("type_id")

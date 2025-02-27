@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * OutputsConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-27T18:02:05.936757748Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-27T18:23:06.015945469Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class OutputsConnectorMeta {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
@@ -61,6 +61,11 @@ public class OutputsConnectorMeta {
   @javax.annotation.Nullable
   private Integer billingType;
 
+  public static final String SERIALIZED_NAME_CATEGORY = "category";
+  @SerializedName(SERIALIZED_NAME_CATEGORY)
+  @javax.annotation.Nullable
+  private String category;
+
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
   @javax.annotation.Nullable
@@ -70,6 +75,11 @@ public class OutputsConnectorMeta {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
   private String description;
+
+  public static final String SERIALIZED_NAME_HOUSE = "house";
+  @SerializedName(SERIALIZED_NAME_HOUSE)
+  @javax.annotation.Nullable
+  private String house;
 
   public static final String SERIALIZED_NAME_INTERNAL = "internal";
   @SerializedName(SERIALIZED_NAME_INTERNAL)
@@ -127,6 +137,25 @@ public class OutputsConnectorMeta {
   }
 
 
+  public OutputsConnectorMeta category(@javax.annotation.Nullable String category) {
+    this.category = category;
+    return this;
+  }
+
+  /**
+   * Get category
+   * @return category
+   */
+  @javax.annotation.Nullable
+  public String getCategory() {
+    return category;
+  }
+
+  public void setCategory(@javax.annotation.Nullable String category) {
+    this.category = category;
+  }
+
+
   public OutputsConnectorMeta config(@javax.annotation.Nullable Object config) {
     this.config = config;
     return this;
@@ -162,6 +191,25 @@ public class OutputsConnectorMeta {
 
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public OutputsConnectorMeta house(@javax.annotation.Nullable String house) {
+    this.house = house;
+    return this;
+  }
+
+  /**
+   * Get house
+   * @return house
+   */
+  @javax.annotation.Nullable
+  public String getHouse() {
+    return house;
+  }
+
+  public void setHouse(@javax.annotation.Nullable String house) {
+    this.house = house;
   }
 
 
@@ -234,8 +282,10 @@ public class OutputsConnectorMeta {
     OutputsConnectorMeta outputsConnectorMeta = (OutputsConnectorMeta) o;
     return Objects.equals(this.authType, outputsConnectorMeta.authType) &&
         Objects.equals(this.billingType, outputsConnectorMeta.billingType) &&
+        Objects.equals(this.category, outputsConnectorMeta.category) &&
         Objects.equals(this.config, outputsConnectorMeta.config) &&
         Objects.equals(this.description, outputsConnectorMeta.description) &&
+        Objects.equals(this.house, outputsConnectorMeta.house) &&
         Objects.equals(this.internal, outputsConnectorMeta.internal) &&
         Objects.equals(this.name, outputsConnectorMeta.name) &&
         Objects.equals(this.typeId, outputsConnectorMeta.typeId);
@@ -247,7 +297,7 @@ public class OutputsConnectorMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, billingType, config, description, internal, name, typeId);
+    return Objects.hash(authType, billingType, category, config, description, house, internal, name, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -263,8 +313,10 @@ public class OutputsConnectorMeta {
     sb.append("class OutputsConnectorMeta {\n");
     sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
     sb.append("    billingType: ").append(toIndentedString(billingType)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    house: ").append(toIndentedString(house)).append("\n");
     sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
@@ -292,8 +344,10 @@ public class OutputsConnectorMeta {
     openapiFields = new HashSet<String>();
     openapiFields.add("auth_type");
     openapiFields.add("billing_type");
+    openapiFields.add("category");
     openapiFields.add("config");
     openapiFields.add("description");
+    openapiFields.add("house");
     openapiFields.add("internal");
     openapiFields.add("name");
     openapiFields.add("type_id");
@@ -326,8 +380,14 @@ public class OutputsConnectorMeta {
       if ((jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) && !jsonObj.get("auth_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
       }
+      if ((jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) && !jsonObj.get("category").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
+      }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("house") != null && !jsonObj.get("house").isJsonNull()) && !jsonObj.get("house").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `house` to be a primitive type in the JSON string but got `%s`", jsonObj.get("house").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

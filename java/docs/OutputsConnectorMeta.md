@@ -9,8 +9,10 @@
 |------------ | ------------- | ------------- | -------------|
 |**authType** | **String** |  |  [optional] |
 |**billingType** | **Integer** |  |  [optional] |
+|**category** | **String** |  |  [optional] |
 |**config** | **Object** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
+|**house** | **String** |  |  [optional] |
 |**internal** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**typeId** | **String** |  |  [optional] |

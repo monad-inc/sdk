@@ -6,8 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuthType** | Pointer to **string** |  | [optional] 
 **BillingType** | Pointer to **int32** |  | [optional] 
+**Category** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**House** | Pointer to **string** |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
@@ -81,6 +83,31 @@ SetBillingType sets BillingType field to given value.
 
 HasBillingType returns a boolean if a field has been set.
 
+### GetCategory
+
+`func (o *OutputsConnectorMeta) GetCategory() string`
+
+GetCategory returns the Category field if non-nil, zero value otherwise.
+
+### GetCategoryOk
+
+`func (o *OutputsConnectorMeta) GetCategoryOk() (*string, bool)`
+
+GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCategory
+
+`func (o *OutputsConnectorMeta) SetCategory(v string)`
+
+SetCategory sets Category field to given value.
+
+### HasCategory
+
+`func (o *OutputsConnectorMeta) HasCategory() bool`
+
+HasCategory returns a boolean if a field has been set.
+
 ### GetConfig
 
 `func (o *OutputsConnectorMeta) GetConfig() interface{}`
@@ -140,6 +167,31 @@ SetDescription sets Description field to given value.
 `func (o *OutputsConnectorMeta) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetHouse
+
+`func (o *OutputsConnectorMeta) GetHouse() string`
+
+GetHouse returns the House field if non-nil, zero value otherwise.
+
+### GetHouseOk
+
+`func (o *OutputsConnectorMeta) GetHouseOk() (*string, bool)`
+
+GetHouseOk returns a tuple with the House field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHouse
+
+`func (o *OutputsConnectorMeta) SetHouse(v string)`
+
+SetHouse sets House field to given value.
+
+### HasHouse
+
+`func (o *OutputsConnectorMeta) HasHouse() bool`
+
+HasHouse returns a boolean if a field has been set.
 
 ### GetInternal
 

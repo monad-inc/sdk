@@ -7,8 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **auth_type** | **str** |  | [optional] 
 **billing_type** | **int** |  | [optional] 
+**category** | **str** |  | [optional] 
 **config** | **object** |  | [optional] 
 **description** | **str** |  | [optional] 
+**house** | **str** |  | [optional] 
 **internal** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **type_id** | **str** |  | [optional] 

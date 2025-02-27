@@ -15,8 +15,10 @@ import { HttpFile } from '../http/http';
 export class OutputsConnectorMeta {
     'authType'?: string;
     'billingType'?: number;
+    'category'?: string;
     'config'?: any | null;
     'description'?: string;
+    'house'?: string;
     'internal'?: boolean;
     'name'?: string;
     'typeId'?: string;
@@ -39,6 +41,12 @@ export class OutputsConnectorMeta {
             "format": ""
         },
         {
+            "name": "category",
+            "baseName": "category",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "config",
             "baseName": "config",
             "type": "any",
@@ -47,6 +55,12 @@ export class OutputsConnectorMeta {
         {
             "name": "description",
             "baseName": "description",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "house",
+            "baseName": "house",
             "type": "string",
             "format": ""
         },
