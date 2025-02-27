@@ -15,6 +15,7 @@ import { HttpFile } from '../http/http';
 export class InputsConnectorMeta {
     'authType'?: string;
     'billingType'?: number;
+    'category'?: string;
     'config'?: any | null;
     'description'?: string;
     'house'?: string;
@@ -37,6 +38,12 @@ export class InputsConnectorMeta {
             "name": "billingType",
             "baseName": "billing_type",
             "type": "number",
+            "format": ""
+        },
+        {
+            "name": "category",
+            "baseName": "category",
+            "type": "string",
             "format": ""
         },
         {

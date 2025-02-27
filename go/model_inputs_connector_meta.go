@@ -22,6 +22,7 @@ var _ MappedNullable = &InputsConnectorMeta{}
 type InputsConnectorMeta struct {
 	AuthType *string `json:"auth_type,omitempty"`
 	BillingType *int32 `json:"billing_type,omitempty"`
+	Category *string `json:"category,omitempty"`
 	Config interface{} `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	House *string `json:"house,omitempty"`
@@ -109,6 +110,38 @@ func (o *InputsConnectorMeta) HasBillingType() bool {
 // SetBillingType gets a reference to the given int32 and assigns it to the BillingType field.
 func (o *InputsConnectorMeta) SetBillingType(v int32) {
 	o.BillingType = &v
+}
+
+// GetCategory returns the Category field value if set, zero value otherwise.
+func (o *InputsConnectorMeta) GetCategory() string {
+	if o == nil || IsNil(o.Category) {
+		var ret string
+		return ret
+	}
+	return *o.Category
+}
+
+// GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InputsConnectorMeta) GetCategoryOk() (*string, bool) {
+	if o == nil || IsNil(o.Category) {
+		return nil, false
+	}
+	return o.Category, true
+}
+
+// HasCategory returns a boolean if a field has been set.
+func (o *InputsConnectorMeta) HasCategory() bool {
+	if o != nil && !IsNil(o.Category) {
+		return true
+	}
+
+	return false
+}
+
+// SetCategory gets a reference to the given string and assigns it to the Category field.
+func (o *InputsConnectorMeta) SetCategory(v string) {
+	o.Category = &v
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -319,6 +352,9 @@ func (o InputsConnectorMeta) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.BillingType) {
 		toSerialize["billing_type"] = o.BillingType
+	}
+	if !IsNil(o.Category) {
+		toSerialize["category"] = o.Category
 	}
 	if o.Config != nil {
 		toSerialize["config"] = o.Config

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuthType** | Pointer to **string** |  | [optional] 
 **BillingType** | Pointer to **int32** |  | [optional] 
+**Category** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **House** | Pointer to **string** |  | [optional] 
@@ -81,6 +82,31 @@ SetBillingType sets BillingType field to given value.
 `func (o *InputsConnectorMeta) HasBillingType() bool`
 
 HasBillingType returns a boolean if a field has been set.
+
+### GetCategory
+
+`func (o *InputsConnectorMeta) GetCategory() string`
+
+GetCategory returns the Category field if non-nil, zero value otherwise.
+
+### GetCategoryOk
+
+`func (o *InputsConnectorMeta) GetCategoryOk() (*string, bool)`
+
+GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCategory
+
+`func (o *InputsConnectorMeta) SetCategory(v string)`
+
+SetCategory sets Category field to given value.
+
+### HasCategory
+
+`func (o *InputsConnectorMeta) HasCategory() bool`
+
+HasCategory returns a boolean if a field has been set.
 
 ### GetConfig
 
