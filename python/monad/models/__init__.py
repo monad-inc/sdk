@@ -38,6 +38,7 @@ from monad.models.math_multiply_with_value_math_multiply_with_value import MathM
 from monad.models.models_api_key import ModelsAPIKey
 from monad.models.models_api_key_list import ModelsAPIKeyList
 from monad.models.models_api_key_with_token import ModelsAPIKeyWithToken
+from monad.models.models_component_reference import ModelsComponentReference
 from monad.models.models_connector_meta import ModelsConnectorMeta
 from monad.models.models_data_usage import ModelsDataUsage
 from monad.models.models_input import ModelsInput
@@ -67,8 +68,8 @@ from monad.models.models_quota import ModelsQuota
 from monad.models.models_quota_list import ModelsQuotaList
 from monad.models.models_role import ModelsRole
 from monad.models.models_role_list import ModelsRoleList
-from monad.models.models_secret import ModelsSecret
-from monad.models.models_secret_list import ModelsSecretList
+from monad.models.models_secret_with_components import ModelsSecretWithComponents
+from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList
 from monad.models.models_transform import ModelsTransform
 from monad.models.models_transform_config import ModelsTransformConfig
 from monad.models.models_transform_list import ModelsTransformList

@@ -24,6 +24,7 @@ import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultip
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
+import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsInput } from '../models/ModelsInput';
@@ -53,8 +54,8 @@ import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsRole } from '../models/ModelsRole';
 import { ModelsRoleList } from '../models/ModelsRoleList';
-import { ModelsSecret } from '../models/ModelsSecret';
-import { ModelsSecretList } from '../models/ModelsSecretList';
+import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
+import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsTransform } from '../models/ModelsTransform';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
@@ -3309,20 +3310,20 @@ export class ObjectSecretsApi {
     }
 
     /**
-     * Lists all secrets for the specified organization
-     * List secrets
+     * Lists all secrets for the specified organization including inputs and outputs that use them
+     * List secrets with components
      * @param param the request object
      */
-    public v2OrganizationIdSecretsGetWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsGetRequest, options?: Configuration): Promise<HttpInfo<ModelsSecretList>> {
+    public v2OrganizationIdSecretsGetWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsGetRequest, options?: Configuration): Promise<HttpInfo<ModelsSecretWithComponentsList>> {
         return this.api.v2OrganizationIdSecretsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
     /**
-     * Lists all secrets for the specified organization
-     * List secrets
+     * Lists all secrets for the specified organization including inputs and outputs that use them
+     * List secrets with components
      * @param param the request object
      */
-    public v2OrganizationIdSecretsGet(param: SecretsApiV2OrganizationIdSecretsGetRequest, options?: Configuration): Promise<ModelsSecretList> {
+    public v2OrganizationIdSecretsGet(param: SecretsApiV2OrganizationIdSecretsGetRequest, options?: Configuration): Promise<ModelsSecretWithComponentsList> {
         return this.api.v2OrganizationIdSecretsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -3363,20 +3364,20 @@ export class ObjectSecretsApi {
     }
 
     /**
-     * Gets a specific secret by ID
-     * Get secret
+     * Gets a specific secret by ID including inputs and outputs that use it
+     * Get secret with components
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdGetWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsSecretIdGetRequest, options?: Configuration): Promise<HttpInfo<RoutesV2SecretResponse>> {
+    public v2OrganizationIdSecretsSecretIdGetWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsSecretIdGetRequest, options?: Configuration): Promise<HttpInfo<ModelsSecretWithComponents>> {
         return this.api.v2OrganizationIdSecretsSecretIdGetWithHttpInfo(param.organizationId, param.secretId,  options).toPromise();
     }
 
     /**
-     * Gets a specific secret by ID
-     * Get secret
+     * Gets a specific secret by ID including inputs and outputs that use it
+     * Get secret with components
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdGet(param: SecretsApiV2OrganizationIdSecretsSecretIdGetRequest, options?: Configuration): Promise<RoutesV2SecretResponse> {
+    public v2OrganizationIdSecretsSecretIdGet(param: SecretsApiV2OrganizationIdSecretsSecretIdGetRequest, options?: Configuration): Promise<ModelsSecretWithComponents> {
         return this.api.v2OrganizationIdSecretsSecretIdGet(param.organizationId, param.secretId,  options).toPromise();
     }
 

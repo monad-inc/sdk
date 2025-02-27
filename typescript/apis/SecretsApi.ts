@@ -8,7 +8,8 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
-import { ModelsSecretList } from '../models/ModelsSecretList';
+import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
+import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
@@ -19,8 +20,8 @@ import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 export class SecretsApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
-     * Lists all secrets for the specified organization
-     * List secrets
+     * Lists all secrets for the specified organization including inputs and outputs that use them
+     * List secrets with components
      * @param organizationId Organization ID
      * @param limit Limit number of results
      * @param offset Offset results
@@ -188,8 +189,8 @@ export class SecretsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Gets a specific secret by ID
-     * Get secret
+     * Gets a specific secret by ID including inputs and outputs that use it
+     * Get secret with components
      * @param organizationId Organization ID
      * @param secretId Secret ID
      */
@@ -318,13 +319,13 @@ export class SecretsApiResponseProcessor {
      * @params response Response returned by the server for a request to v2OrganizationIdSecretsGet
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdSecretsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsSecretList >> {
+     public async v2OrganizationIdSecretsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsSecretWithComponentsList >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsSecretList = ObjectSerializer.deserialize(
+            const body: ModelsSecretWithComponentsList = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsSecretList", ""
-            ) as ModelsSecretList;
+                "ModelsSecretWithComponentsList", ""
+            ) as ModelsSecretWithComponentsList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
@@ -337,10 +338,10 @@ export class SecretsApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsSecretList = ObjectSerializer.deserialize(
+            const body: ModelsSecretWithComponentsList = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsSecretList", ""
-            ) as ModelsSecretList;
+                "ModelsSecretWithComponentsList", ""
+            ) as ModelsSecretWithComponentsList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -436,13 +437,13 @@ export class SecretsApiResponseProcessor {
      * @params response Response returned by the server for a request to v2OrganizationIdSecretsSecretIdGet
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdSecretsSecretIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV2SecretResponse >> {
+     public async v2OrganizationIdSecretsSecretIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsSecretWithComponents >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: RoutesV2SecretResponse = ObjectSerializer.deserialize(
+            const body: ModelsSecretWithComponents = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RoutesV2SecretResponse", ""
-            ) as RoutesV2SecretResponse;
+                "ModelsSecretWithComponents", ""
+            ) as ModelsSecretWithComponents;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("404", response.httpStatusCode)) {
@@ -462,10 +463,10 @@ export class SecretsApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: RoutesV2SecretResponse = ObjectSerializer.deserialize(
+            const body: ModelsSecretWithComponents = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RoutesV2SecretResponse", ""
-            ) as RoutesV2SecretResponse;
+                "ModelsSecretWithComponents", ""
+            ) as ModelsSecretWithComponents;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

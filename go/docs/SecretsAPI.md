@@ -4,19 +4,19 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V2OrganizationIdSecretsGet**](SecretsAPI.md#V2OrganizationIdSecretsGet) | **Get** /v2/{organization_id}/secrets | List secrets
+[**V2OrganizationIdSecretsGet**](SecretsAPI.md#V2OrganizationIdSecretsGet) | **Get** /v2/{organization_id}/secrets | List secrets with components
 [**V2OrganizationIdSecretsPost**](SecretsAPI.md#V2OrganizationIdSecretsPost) | **Post** /v2/{organization_id}/secrets | Create secret
 [**V2OrganizationIdSecretsSecretIdDelete**](SecretsAPI.md#V2OrganizationIdSecretsSecretIdDelete) | **Delete** /v2/{organization_id}/secrets/{secret_id} | Delete secret
-[**V2OrganizationIdSecretsSecretIdGet**](SecretsAPI.md#V2OrganizationIdSecretsSecretIdGet) | **Get** /v2/{organization_id}/secrets/{secret_id} | Get secret
+[**V2OrganizationIdSecretsSecretIdGet**](SecretsAPI.md#V2OrganizationIdSecretsSecretIdGet) | **Get** /v2/{organization_id}/secrets/{secret_id} | Get secret with components
 [**V2OrganizationIdSecretsSecretIdPatch**](SecretsAPI.md#V2OrganizationIdSecretsSecretIdPatch) | **Patch** /v2/{organization_id}/secrets/{secret_id} | Update secret
 
 
 
 ## V2OrganizationIdSecretsGet
 
-> ModelsSecretList V2OrganizationIdSecretsGet(ctx, organizationId).Limit(limit).Offset(offset).Execute()
+> ModelsSecretWithComponentsList V2OrganizationIdSecretsGet(ctx, organizationId).Limit(limit).Offset(offset).Execute()
 
-List secrets
+List secrets with components
 
 
 
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecretsAPI.V2OrganizationIdSecretsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2OrganizationIdSecretsGet`: ModelsSecretList
+	// response from `V2OrganizationIdSecretsGet`: ModelsSecretWithComponentsList
 	fmt.Fprintf(os.Stdout, "Response from `SecretsAPI.V2OrganizationIdSecretsGet`: %v\n", resp)
 }
 ```
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsSecretList**](ModelsSecretList.md)
+[**ModelsSecretWithComponentsList**](ModelsSecretWithComponentsList.md)
 
 ### Authorization
 
@@ -231,9 +231,9 @@ Name | Type | Description  | Notes
 
 ## V2OrganizationIdSecretsSecretIdGet
 
-> RoutesV2SecretResponse V2OrganizationIdSecretsSecretIdGet(ctx, organizationId, secretId).Execute()
+> ModelsSecretWithComponents V2OrganizationIdSecretsSecretIdGet(ctx, organizationId, secretId).Execute()
 
-Get secret
+Get secret with components
 
 
 
@@ -260,7 +260,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecretsAPI.V2OrganizationIdSecretsSecretIdGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2OrganizationIdSecretsSecretIdGet`: RoutesV2SecretResponse
+	// response from `V2OrganizationIdSecretsSecretIdGet`: ModelsSecretWithComponents
 	fmt.Fprintf(os.Stdout, "Response from `SecretsAPI.V2OrganizationIdSecretsSecretIdGet`: %v\n", resp)
 }
 ```
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoutesV2SecretResponse**](RoutesV2SecretResponse.md)
+[**ModelsSecretWithComponents**](ModelsSecretWithComponents.md)
 
 ### Authorization
 

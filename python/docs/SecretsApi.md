@@ -4,19 +4,19 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2_organization_id_secrets_get**](SecretsApi.md#v2_organization_id_secrets_get) | **GET** /v2/{organization_id}/secrets | List secrets
+[**v2_organization_id_secrets_get**](SecretsApi.md#v2_organization_id_secrets_get) | **GET** /v2/{organization_id}/secrets | List secrets with components
 [**v2_organization_id_secrets_post**](SecretsApi.md#v2_organization_id_secrets_post) | **POST** /v2/{organization_id}/secrets | Create secret
 [**v2_organization_id_secrets_secret_id_delete**](SecretsApi.md#v2_organization_id_secrets_secret_id_delete) | **DELETE** /v2/{organization_id}/secrets/{secret_id} | Delete secret
-[**v2_organization_id_secrets_secret_id_get**](SecretsApi.md#v2_organization_id_secrets_secret_id_get) | **GET** /v2/{organization_id}/secrets/{secret_id} | Get secret
+[**v2_organization_id_secrets_secret_id_get**](SecretsApi.md#v2_organization_id_secrets_secret_id_get) | **GET** /v2/{organization_id}/secrets/{secret_id} | Get secret with components
 [**v2_organization_id_secrets_secret_id_patch**](SecretsApi.md#v2_organization_id_secrets_secret_id_patch) | **PATCH** /v2/{organization_id}/secrets/{secret_id} | Update secret
 
 
 # **v2_organization_id_secrets_get**
-> ModelsSecretList v2_organization_id_secrets_get(organization_id, limit=limit, offset=offset)
+> ModelsSecretWithComponentsList v2_organization_id_secrets_get(organization_id, limit=limit, offset=offset)
 
-List secrets
+List secrets with components
 
-Lists all secrets for the specified organization
+Lists all secrets for the specified organization including inputs and outputs that use them
 
 ### Example
 
@@ -25,7 +25,7 @@ Lists all secrets for the specified organization
 
 ```python
 import monad
-from monad.models.models_secret_list import ModelsSecretList
+from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -61,7 +61,7 @@ with monad.ApiClient(configuration) as api_client:
     offset = 56 # int | Offset results (optional)
 
     try:
-        # List secrets
+        # List secrets with components
         api_response = api_instance.v2_organization_id_secrets_get(organization_id, limit=limit, offset=offset)
         print("The response of SecretsApi->v2_organization_id_secrets_get:\n")
         pprint(api_response)
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsSecretList**](ModelsSecretList.md)
+[**ModelsSecretWithComponentsList**](ModelsSecretWithComponentsList.md)
 
 ### Authorization
 
@@ -281,11 +281,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_organization_id_secrets_secret_id_get**
-> RoutesV2SecretResponse v2_organization_id_secrets_secret_id_get(organization_id, secret_id)
+> ModelsSecretWithComponents v2_organization_id_secrets_secret_id_get(organization_id, secret_id)
 
-Get secret
+Get secret with components
 
-Gets a specific secret by ID
+Gets a specific secret by ID including inputs and outputs that use it
 
 ### Example
 
@@ -294,7 +294,7 @@ Gets a specific secret by ID
 
 ```python
 import monad
-from monad.models.routes_v2_secret_response import RoutesV2SecretResponse
+from monad.models.models_secret_with_components import ModelsSecretWithComponents
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -329,7 +329,7 @@ with monad.ApiClient(configuration) as api_client:
     secret_id = 'secret_id_example' # str | Secret ID
 
     try:
-        # Get secret
+        # Get secret with components
         api_response = api_instance.v2_organization_id_secrets_secret_id_get(organization_id, secret_id)
         print("The response of SecretsApi->v2_organization_id_secrets_secret_id_get:\n")
         pprint(api_response)
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoutesV2SecretResponse**](RoutesV2SecretResponse.md)
+[**ModelsSecretWithComponents**](ModelsSecretWithComponents.md)
 
 ### Authorization
 

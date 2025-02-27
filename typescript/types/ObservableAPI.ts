@@ -25,6 +25,7 @@ import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultip
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
+import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsInput } from '../models/ModelsInput';
@@ -54,8 +55,8 @@ import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsRole } from '../models/ModelsRole';
 import { ModelsRoleList } from '../models/ModelsRoleList';
-import { ModelsSecret } from '../models/ModelsSecret';
-import { ModelsSecretList } from '../models/ModelsSecretList';
+import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
+import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsTransform } from '../models/ModelsTransform';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
@@ -3213,13 +3214,13 @@ export class ObservableSecretsApi {
     }
 
     /**
-     * Lists all secrets for the specified organization
-     * List secrets
+     * Lists all secrets for the specified organization including inputs and outputs that use them
+     * List secrets with components
      * @param organizationId Organization ID
      * @param [limit] Limit number of results
      * @param [offset] Offset results
      */
-    public v2OrganizationIdSecretsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Observable<HttpInfo<ModelsSecretList>> {
+    public v2OrganizationIdSecretsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Observable<HttpInfo<ModelsSecretWithComponentsList>> {
         const requestContextPromise = this.requestFactory.v2OrganizationIdSecretsGet(organizationId, limit, offset, _options);
 
         // build promise chain
@@ -3239,14 +3240,14 @@ export class ObservableSecretsApi {
     }
 
     /**
-     * Lists all secrets for the specified organization
-     * List secrets
+     * Lists all secrets for the specified organization including inputs and outputs that use them
+     * List secrets with components
      * @param organizationId Organization ID
      * @param [limit] Limit number of results
      * @param [offset] Offset results
      */
-    public v2OrganizationIdSecretsGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Observable<ModelsSecretList> {
-        return this.v2OrganizationIdSecretsGetWithHttpInfo(organizationId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsSecretList>) => apiResponse.data));
+    public v2OrganizationIdSecretsGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Observable<ModelsSecretWithComponentsList> {
+        return this.v2OrganizationIdSecretsGetWithHttpInfo(organizationId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsSecretWithComponentsList>) => apiResponse.data));
     }
 
     /**
@@ -3320,12 +3321,12 @@ export class ObservableSecretsApi {
     }
 
     /**
-     * Gets a specific secret by ID
-     * Get secret
+     * Gets a specific secret by ID including inputs and outputs that use it
+     * Get secret with components
      * @param organizationId Organization ID
      * @param secretId Secret ID
      */
-    public v2OrganizationIdSecretsSecretIdGetWithHttpInfo(organizationId: string, secretId: string, _options?: Configuration): Observable<HttpInfo<RoutesV2SecretResponse>> {
+    public v2OrganizationIdSecretsSecretIdGetWithHttpInfo(organizationId: string, secretId: string, _options?: Configuration): Observable<HttpInfo<ModelsSecretWithComponents>> {
         const requestContextPromise = this.requestFactory.v2OrganizationIdSecretsSecretIdGet(organizationId, secretId, _options);
 
         // build promise chain
@@ -3345,13 +3346,13 @@ export class ObservableSecretsApi {
     }
 
     /**
-     * Gets a specific secret by ID
-     * Get secret
+     * Gets a specific secret by ID including inputs and outputs that use it
+     * Get secret with components
      * @param organizationId Organization ID
      * @param secretId Secret ID
      */
-    public v2OrganizationIdSecretsSecretIdGet(organizationId: string, secretId: string, _options?: Configuration): Observable<RoutesV2SecretResponse> {
-        return this.v2OrganizationIdSecretsSecretIdGetWithHttpInfo(organizationId, secretId, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SecretResponse>) => apiResponse.data));
+    public v2OrganizationIdSecretsSecretIdGet(organizationId: string, secretId: string, _options?: Configuration): Observable<ModelsSecretWithComponents> {
+        return this.v2OrganizationIdSecretsSecretIdGetWithHttpInfo(organizationId, secretId, _options).pipe(map((apiResponse: HttpInfo<ModelsSecretWithComponents>) => apiResponse.data));
     }
 
     /**

@@ -4,17 +4,17 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2OrganizationIdSecretsGet**](SecretsApi.md#v2OrganizationIdSecretsGet) | **GET** /v2/{organization_id}/secrets | List secrets
+[**v2OrganizationIdSecretsGet**](SecretsApi.md#v2OrganizationIdSecretsGet) | **GET** /v2/{organization_id}/secrets | List secrets with components
 [**v2OrganizationIdSecretsPost**](SecretsApi.md#v2OrganizationIdSecretsPost) | **POST** /v2/{organization_id}/secrets | Create secret
 [**v2OrganizationIdSecretsSecretIdDelete**](SecretsApi.md#v2OrganizationIdSecretsSecretIdDelete) | **DELETE** /v2/{organization_id}/secrets/{secret_id} | Delete secret
-[**v2OrganizationIdSecretsSecretIdGet**](SecretsApi.md#v2OrganizationIdSecretsSecretIdGet) | **GET** /v2/{organization_id}/secrets/{secret_id} | Get secret
+[**v2OrganizationIdSecretsSecretIdGet**](SecretsApi.md#v2OrganizationIdSecretsSecretIdGet) | **GET** /v2/{organization_id}/secrets/{secret_id} | Get secret with components
 [**v2OrganizationIdSecretsSecretIdPatch**](SecretsApi.md#v2OrganizationIdSecretsSecretIdPatch) | **PATCH** /v2/{organization_id}/secrets/{secret_id} | Update secret
 
 
 # **v2OrganizationIdSecretsGet**
-> ModelsSecretList v2OrganizationIdSecretsGet()
+> ModelsSecretWithComponentsList v2OrganizationIdSecretsGet()
 
-Lists all secrets for the specified organization
+Lists all secrets for the specified organization including inputs and outputs that use them
 
 ### Example
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ModelsSecretList**
+**ModelsSecretWithComponentsList**
 
 ### Authorization
 
@@ -192,9 +192,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v2OrganizationIdSecretsSecretIdGet**
-> RoutesV2SecretResponse v2OrganizationIdSecretsSecretIdGet()
+> ModelsSecretWithComponents v2OrganizationIdSecretsSecretIdGet()
 
-Gets a specific secret by ID
+Gets a specific secret by ID including inputs and outputs that use it
 
 ### Example
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**RoutesV2SecretResponse**
+**ModelsSecretWithComponents**
 
 ### Authorization
 

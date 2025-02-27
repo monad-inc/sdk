@@ -4,20 +4,20 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v2OrganizationIdSecretsGet**](SecretsApi.md#v2OrganizationIdSecretsGet) | **GET** /v2/{organization_id}/secrets | List secrets |
+| [**v2OrganizationIdSecretsGet**](SecretsApi.md#v2OrganizationIdSecretsGet) | **GET** /v2/{organization_id}/secrets | List secrets with components |
 | [**v2OrganizationIdSecretsPost**](SecretsApi.md#v2OrganizationIdSecretsPost) | **POST** /v2/{organization_id}/secrets | Create secret |
 | [**v2OrganizationIdSecretsSecretIdDelete**](SecretsApi.md#v2OrganizationIdSecretsSecretIdDelete) | **DELETE** /v2/{organization_id}/secrets/{secret_id} | Delete secret |
-| [**v2OrganizationIdSecretsSecretIdGet**](SecretsApi.md#v2OrganizationIdSecretsSecretIdGet) | **GET** /v2/{organization_id}/secrets/{secret_id} | Get secret |
+| [**v2OrganizationIdSecretsSecretIdGet**](SecretsApi.md#v2OrganizationIdSecretsSecretIdGet) | **GET** /v2/{organization_id}/secrets/{secret_id} | Get secret with components |
 | [**v2OrganizationIdSecretsSecretIdPatch**](SecretsApi.md#v2OrganizationIdSecretsSecretIdPatch) | **PATCH** /v2/{organization_id}/secrets/{secret_id} | Update secret |
 
 
 <a id="v2OrganizationIdSecretsGet"></a>
 # **v2OrganizationIdSecretsGet**
-> ModelsSecretList v2OrganizationIdSecretsGet(organizationId, limit, offset)
+> ModelsSecretWithComponentsList v2OrganizationIdSecretsGet(organizationId, limit, offset)
 
-List secrets
+List secrets with components
 
-Lists all secrets for the specified organization
+Lists all secrets for the specified organization including inputs and outputs that use them
 
 ### Example
 ```java
@@ -51,7 +51,7 @@ public class Example {
     Integer limit = 56; // Integer | Limit number of results
     Integer offset = 56; // Integer | Offset results
     try {
-      ModelsSecretList result = apiInstance.v2OrganizationIdSecretsGet(organizationId, limit, offset);
+      ModelsSecretWithComponentsList result = apiInstance.v2OrganizationIdSecretsGet(organizationId, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SecretsApi#v2OrganizationIdSecretsGet");
@@ -74,7 +74,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsSecretList**](ModelsSecretList.md)
+[**ModelsSecretWithComponentsList**](ModelsSecretWithComponentsList.md)
 
 ### Authorization
 
@@ -250,11 +250,11 @@ null (empty response body)
 
 <a id="v2OrganizationIdSecretsSecretIdGet"></a>
 # **v2OrganizationIdSecretsSecretIdGet**
-> RoutesV2SecretResponse v2OrganizationIdSecretsSecretIdGet(organizationId, secretId)
+> ModelsSecretWithComponents v2OrganizationIdSecretsSecretIdGet(organizationId, secretId)
 
-Get secret
+Get secret with components
 
-Gets a specific secret by ID
+Gets a specific secret by ID including inputs and outputs that use it
 
 ### Example
 ```java
@@ -287,7 +287,7 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     String secretId = "secretId_example"; // String | Secret ID
     try {
-      RoutesV2SecretResponse result = apiInstance.v2OrganizationIdSecretsSecretIdGet(organizationId, secretId);
+      ModelsSecretWithComponents result = apiInstance.v2OrganizationIdSecretsSecretIdGet(organizationId, secretId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SecretsApi#v2OrganizationIdSecretsSecretIdGet");
@@ -309,7 +309,7 @@ public class Example {
 
 ### Return type
 
-[**RoutesV2SecretResponse**](RoutesV2SecretResponse.md)
+[**ModelsSecretWithComponents**](ModelsSecretWithComponents.md)
 
 ### Authorization
 

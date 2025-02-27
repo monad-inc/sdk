@@ -21,6 +21,7 @@ export * from '../models/MathMultiplyWithValueMathMultiplyWithValue';
 export * from '../models/ModelsAPIKey';
 export * from '../models/ModelsAPIKeyList';
 export * from '../models/ModelsAPIKeyWithToken';
+export * from '../models/ModelsComponentReference';
 export * from '../models/ModelsConnectorMeta';
 export * from '../models/ModelsDataUsage';
 export * from '../models/ModelsInput';
@@ -50,8 +51,8 @@ export * from '../models/ModelsQuota';
 export * from '../models/ModelsQuotaList';
 export * from '../models/ModelsRole';
 export * from '../models/ModelsRoleList';
-export * from '../models/ModelsSecret';
-export * from '../models/ModelsSecretList';
+export * from '../models/ModelsSecretWithComponents';
+export * from '../models/ModelsSecretWithComponentsList';
 export * from '../models/ModelsTransform';
 export * from '../models/ModelsTransformConfig';
 export * from '../models/ModelsTransformList';
@@ -138,6 +139,7 @@ import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultip
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
+import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsInput } from '../models/ModelsInput';
@@ -167,8 +169,8 @@ import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsRole } from '../models/ModelsRole';
 import { ModelsRoleList } from '../models/ModelsRoleList';
-import { ModelsSecret } from '../models/ModelsSecret';
-import { ModelsSecretList } from '../models/ModelsSecretList';
+import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
+import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsTransform } from '../models/ModelsTransform';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
@@ -271,6 +273,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsAPIKey": ModelsAPIKey,
     "ModelsAPIKeyList": ModelsAPIKeyList,
     "ModelsAPIKeyWithToken": ModelsAPIKeyWithToken,
+    "ModelsComponentReference": ModelsComponentReference,
     "ModelsConnectorMeta": ModelsConnectorMeta,
     "ModelsDataUsage": ModelsDataUsage,
     "ModelsInput": ModelsInput,
@@ -300,8 +303,8 @@ let typeMap: {[index: string]: any} = {
     "ModelsQuotaList": ModelsQuotaList,
     "ModelsRole": ModelsRole,
     "ModelsRoleList": ModelsRoleList,
-    "ModelsSecret": ModelsSecret,
-    "ModelsSecretList": ModelsSecretList,
+    "ModelsSecretWithComponents": ModelsSecretWithComponents,
+    "ModelsSecretWithComponentsList": ModelsSecretWithComponentsList,
     "ModelsTransform": ModelsTransform,
     "ModelsTransformConfig": ModelsTransformConfig,
     "ModelsTransformList": ModelsTransformList,

@@ -162,10 +162,10 @@ Class | Method | HTTP request | Description
 *SandboxApi* | [**v2_sandbox_template_get**](docs/SandboxApi.md#v2_sandbox_template_get) | **GET** /v2/sandbox/template | List available templates
 *SandboxApi* | [**v2_sandbox_template_post**](docs/SandboxApi.md#v2_sandbox_template_post) | **POST** /v2/sandbox/template | Generate sample record
 *SandboxApi* | [**v2_sandbox_transform_post**](docs/SandboxApi.md#v2_sandbox_transform_post) | **POST** /v2/sandbox/transform | Apply transformation to record
-*SecretsApi* | [**v2_organization_id_secrets_get**](docs/SecretsApi.md#v2_organization_id_secrets_get) | **GET** /v2/{organization_id}/secrets | List secrets
+*SecretsApi* | [**v2_organization_id_secrets_get**](docs/SecretsApi.md#v2_organization_id_secrets_get) | **GET** /v2/{organization_id}/secrets | List secrets with components
 *SecretsApi* | [**v2_organization_id_secrets_post**](docs/SecretsApi.md#v2_organization_id_secrets_post) | **POST** /v2/{organization_id}/secrets | Create secret
 *SecretsApi* | [**v2_organization_id_secrets_secret_id_delete**](docs/SecretsApi.md#v2_organization_id_secrets_secret_id_delete) | **DELETE** /v2/{organization_id}/secrets/{secret_id} | Delete secret
-*SecretsApi* | [**v2_organization_id_secrets_secret_id_get**](docs/SecretsApi.md#v2_organization_id_secrets_secret_id_get) | **GET** /v2/{organization_id}/secrets/{secret_id} | Get secret
+*SecretsApi* | [**v2_organization_id_secrets_secret_id_get**](docs/SecretsApi.md#v2_organization_id_secrets_secret_id_get) | **GET** /v2/{organization_id}/secrets/{secret_id} | Get secret with components
 *SecretsApi* | [**v2_organization_id_secrets_secret_id_patch**](docs/SecretsApi.md#v2_organization_id_secrets_secret_id_patch) | **PATCH** /v2/{organization_id}/secrets/{secret_id} | Update secret
 *TransformsApi* | [**v1_transforms_get**](docs/TransformsApi.md#v1_transforms_get) | **GET** /v1/transforms | List transforms
 *TransformsApi* | [**v1_transforms_transform_type_id_get**](docs/TransformsApi.md#v1_transforms_transform_type_id_get) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata
@@ -198,6 +198,7 @@ Class | Method | HTTP request | Description
  - [ModelsAPIKey](docs/ModelsAPIKey.md)
  - [ModelsAPIKeyList](docs/ModelsAPIKeyList.md)
  - [ModelsAPIKeyWithToken](docs/ModelsAPIKeyWithToken.md)
+ - [ModelsComponentReference](docs/ModelsComponentReference.md)
  - [ModelsConnectorMeta](docs/ModelsConnectorMeta.md)
  - [ModelsDataUsage](docs/ModelsDataUsage.md)
  - [ModelsInput](docs/ModelsInput.md)
@@ -227,8 +228,8 @@ Class | Method | HTTP request | Description
  - [ModelsQuotaList](docs/ModelsQuotaList.md)
  - [ModelsRole](docs/ModelsRole.md)
  - [ModelsRoleList](docs/ModelsRoleList.md)
- - [ModelsSecret](docs/ModelsSecret.md)
- - [ModelsSecretList](docs/ModelsSecretList.md)
+ - [ModelsSecretWithComponents](docs/ModelsSecretWithComponents.md)
+ - [ModelsSecretWithComponentsList](docs/ModelsSecretWithComponentsList.md)
  - [ModelsTransform](docs/ModelsTransform.md)
  - [ModelsTransformConfig](docs/ModelsTransformConfig.md)
  - [ModelsTransformList](docs/ModelsTransformList.md)

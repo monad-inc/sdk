@@ -20,7 +20,8 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
-from monad.models.models_secret_list import ModelsSecretList
+from monad.models.models_secret_with_components import ModelsSecretWithComponents
+from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList
 from monad.models.routes_v2_create_or_update_secret_request import RoutesV2CreateOrUpdateSecretRequest
 from monad.models.routes_v2_secret_response import RoutesV2SecretResponse
 
@@ -60,10 +61,10 @@ class SecretsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelsSecretList:
-        """List secrets
+    ) -> ModelsSecretWithComponentsList:
+        """List secrets with components
 
-        Lists all secrets for the specified organization
+        Lists all secrets for the specified organization including inputs and outputs that use them
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -104,7 +105,7 @@ class SecretsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsSecretList",
+            '200': "ModelsSecretWithComponentsList",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -136,10 +137,10 @@ class SecretsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelsSecretList]:
-        """List secrets
+    ) -> ApiResponse[ModelsSecretWithComponentsList]:
+        """List secrets with components
 
-        Lists all secrets for the specified organization
+        Lists all secrets for the specified organization including inputs and outputs that use them
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -180,7 +181,7 @@ class SecretsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsSecretList",
+            '200': "ModelsSecretWithComponentsList",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -213,9 +214,9 @@ class SecretsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List secrets
+        """List secrets with components
 
-        Lists all secrets for the specified organization
+        Lists all secrets for the specified organization including inputs and outputs that use them
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -256,7 +257,7 @@ class SecretsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsSecretList",
+            '200': "ModelsSecretWithComponentsList",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -937,10 +938,10 @@ class SecretsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RoutesV2SecretResponse:
-        """Get secret
+    ) -> ModelsSecretWithComponents:
+        """Get secret with components
 
-        Gets a specific secret by ID
+        Gets a specific secret by ID including inputs and outputs that use it
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -978,7 +979,7 @@ class SecretsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoutesV2SecretResponse",
+            '200': "ModelsSecretWithComponents",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -1010,10 +1011,10 @@ class SecretsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[RoutesV2SecretResponse]:
-        """Get secret
+    ) -> ApiResponse[ModelsSecretWithComponents]:
+        """Get secret with components
 
-        Gets a specific secret by ID
+        Gets a specific secret by ID including inputs and outputs that use it
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -1051,7 +1052,7 @@ class SecretsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoutesV2SecretResponse",
+            '200': "ModelsSecretWithComponents",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -1084,9 +1085,9 @@ class SecretsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get secret
+        """Get secret with components
 
-        Gets a specific secret by ID
+        Gets a specific secret by ID including inputs and outputs that use it
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -1124,7 +1125,7 @@ class SecretsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "RoutesV2SecretResponse",
+            '200': "ModelsSecretWithComponents",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }

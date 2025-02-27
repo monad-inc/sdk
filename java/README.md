@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-02-26T22:23:32.067886160Z[Etc/UTC]
+  - Build date: 2025-02-27T13:56:43.355928777Z[Etc/UTC]
   - Generator version: 7.11.0
 
 This is the monad API
@@ -192,10 +192,10 @@ Class | Method | HTTP request | Description
 *SandboxApi* | [**v2SandboxTemplateGet**](docs/SandboxApi.md#v2SandboxTemplateGet) | **GET** /v2/sandbox/template | List available templates
 *SandboxApi* | [**v2SandboxTemplatePost**](docs/SandboxApi.md#v2SandboxTemplatePost) | **POST** /v2/sandbox/template | Generate sample record
 *SandboxApi* | [**v2SandboxTransformPost**](docs/SandboxApi.md#v2SandboxTransformPost) | **POST** /v2/sandbox/transform | Apply transformation to record
-*SecretsApi* | [**v2OrganizationIdSecretsGet**](docs/SecretsApi.md#v2OrganizationIdSecretsGet) | **GET** /v2/{organization_id}/secrets | List secrets
+*SecretsApi* | [**v2OrganizationIdSecretsGet**](docs/SecretsApi.md#v2OrganizationIdSecretsGet) | **GET** /v2/{organization_id}/secrets | List secrets with components
 *SecretsApi* | [**v2OrganizationIdSecretsPost**](docs/SecretsApi.md#v2OrganizationIdSecretsPost) | **POST** /v2/{organization_id}/secrets | Create secret
 *SecretsApi* | [**v2OrganizationIdSecretsSecretIdDelete**](docs/SecretsApi.md#v2OrganizationIdSecretsSecretIdDelete) | **DELETE** /v2/{organization_id}/secrets/{secret_id} | Delete secret
-*SecretsApi* | [**v2OrganizationIdSecretsSecretIdGet**](docs/SecretsApi.md#v2OrganizationIdSecretsSecretIdGet) | **GET** /v2/{organization_id}/secrets/{secret_id} | Get secret
+*SecretsApi* | [**v2OrganizationIdSecretsSecretIdGet**](docs/SecretsApi.md#v2OrganizationIdSecretsSecretIdGet) | **GET** /v2/{organization_id}/secrets/{secret_id} | Get secret with components
 *SecretsApi* | [**v2OrganizationIdSecretsSecretIdPatch**](docs/SecretsApi.md#v2OrganizationIdSecretsSecretIdPatch) | **PATCH** /v2/{organization_id}/secrets/{secret_id} | Update secret
 *TransformsApi* | [**v1TransformsGet**](docs/TransformsApi.md#v1TransformsGet) | **GET** /v1/transforms | List transforms
 *TransformsApi* | [**v1TransformsTransformTypeIdGet**](docs/TransformsApi.md#v1TransformsTransformTypeIdGet) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata
@@ -228,6 +228,7 @@ Class | Method | HTTP request | Description
  - [ModelsAPIKey](docs/ModelsAPIKey.md)
  - [ModelsAPIKeyList](docs/ModelsAPIKeyList.md)
  - [ModelsAPIKeyWithToken](docs/ModelsAPIKeyWithToken.md)
+ - [ModelsComponentReference](docs/ModelsComponentReference.md)
  - [ModelsConnectorMeta](docs/ModelsConnectorMeta.md)
  - [ModelsDataUsage](docs/ModelsDataUsage.md)
  - [ModelsInput](docs/ModelsInput.md)
@@ -257,8 +258,8 @@ Class | Method | HTTP request | Description
  - [ModelsQuotaList](docs/ModelsQuotaList.md)
  - [ModelsRole](docs/ModelsRole.md)
  - [ModelsRoleList](docs/ModelsRoleList.md)
- - [ModelsSecret](docs/ModelsSecret.md)
- - [ModelsSecretList](docs/ModelsSecretList.md)
+ - [ModelsSecretWithComponents](docs/ModelsSecretWithComponents.md)
+ - [ModelsSecretWithComponentsList](docs/ModelsSecretWithComponentsList.md)
  - [ModelsTransform](docs/ModelsTransform.md)
  - [ModelsTransformConfig](docs/ModelsTransformConfig.md)
  - [ModelsTransformList](docs/ModelsTransformList.md)

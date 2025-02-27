@@ -156,10 +156,10 @@ Class | Method | HTTP request | Description
 *SandboxAPI* | [**V2SandboxTemplateGet**](docs/SandboxAPI.md#v2sandboxtemplateget) | **Get** /v2/sandbox/template | List available templates
 *SandboxAPI* | [**V2SandboxTemplatePost**](docs/SandboxAPI.md#v2sandboxtemplatepost) | **Post** /v2/sandbox/template | Generate sample record
 *SandboxAPI* | [**V2SandboxTransformPost**](docs/SandboxAPI.md#v2sandboxtransformpost) | **Post** /v2/sandbox/transform | Apply transformation to record
-*SecretsAPI* | [**V2OrganizationIdSecretsGet**](docs/SecretsAPI.md#v2organizationidsecretsget) | **Get** /v2/{organization_id}/secrets | List secrets
+*SecretsAPI* | [**V2OrganizationIdSecretsGet**](docs/SecretsAPI.md#v2organizationidsecretsget) | **Get** /v2/{organization_id}/secrets | List secrets with components
 *SecretsAPI* | [**V2OrganizationIdSecretsPost**](docs/SecretsAPI.md#v2organizationidsecretspost) | **Post** /v2/{organization_id}/secrets | Create secret
 *SecretsAPI* | [**V2OrganizationIdSecretsSecretIdDelete**](docs/SecretsAPI.md#v2organizationidsecretssecretiddelete) | **Delete** /v2/{organization_id}/secrets/{secret_id} | Delete secret
-*SecretsAPI* | [**V2OrganizationIdSecretsSecretIdGet**](docs/SecretsAPI.md#v2organizationidsecretssecretidget) | **Get** /v2/{organization_id}/secrets/{secret_id} | Get secret
+*SecretsAPI* | [**V2OrganizationIdSecretsSecretIdGet**](docs/SecretsAPI.md#v2organizationidsecretssecretidget) | **Get** /v2/{organization_id}/secrets/{secret_id} | Get secret with components
 *SecretsAPI* | [**V2OrganizationIdSecretsSecretIdPatch**](docs/SecretsAPI.md#v2organizationidsecretssecretidpatch) | **Patch** /v2/{organization_id}/secrets/{secret_id} | Update secret
 *TransformsAPI* | [**V1TransformsGet**](docs/TransformsAPI.md#v1transformsget) | **Get** /v1/transforms | List transforms
 *TransformsAPI* | [**V1TransformsTransformTypeIdGet**](docs/TransformsAPI.md#v1transformstransformtypeidget) | **Get** /v1/transforms/{transform_type_id} | Get transform metadata
@@ -192,6 +192,7 @@ Class | Method | HTTP request | Description
  - [ModelsAPIKey](docs/ModelsAPIKey.md)
  - [ModelsAPIKeyList](docs/ModelsAPIKeyList.md)
  - [ModelsAPIKeyWithToken](docs/ModelsAPIKeyWithToken.md)
+ - [ModelsComponentReference](docs/ModelsComponentReference.md)
  - [ModelsConnectorMeta](docs/ModelsConnectorMeta.md)
  - [ModelsDataUsage](docs/ModelsDataUsage.md)
  - [ModelsInput](docs/ModelsInput.md)
@@ -221,8 +222,8 @@ Class | Method | HTTP request | Description
  - [ModelsQuotaList](docs/ModelsQuotaList.md)
  - [ModelsRole](docs/ModelsRole.md)
  - [ModelsRoleList](docs/ModelsRoleList.md)
- - [ModelsSecret](docs/ModelsSecret.md)
- - [ModelsSecretList](docs/ModelsSecretList.md)
+ - [ModelsSecretWithComponents](docs/ModelsSecretWithComponents.md)
+ - [ModelsSecretWithComponentsList](docs/ModelsSecretWithComponentsList.md)
  - [ModelsTransform](docs/ModelsTransform.md)
  - [ModelsTransformConfig](docs/ModelsTransformConfig.md)
  - [ModelsTransformList](docs/ModelsTransformList.md)

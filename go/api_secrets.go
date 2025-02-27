@@ -44,14 +44,14 @@ func (r ApiV2OrganizationIdSecretsGetRequest) Offset(offset int32) ApiV2Organiza
 	return r
 }
 
-func (r ApiV2OrganizationIdSecretsGetRequest) Execute() (*ModelsSecretList, *http.Response, error) {
+func (r ApiV2OrganizationIdSecretsGetRequest) Execute() (*ModelsSecretWithComponentsList, *http.Response, error) {
 	return r.ApiService.V2OrganizationIdSecretsGetExecute(r)
 }
 
 /*
-V2OrganizationIdSecretsGet List secrets
+V2OrganizationIdSecretsGet List secrets with components
 
-Lists all secrets for the specified organization
+Lists all secrets for the specified organization including inputs and outputs that use them
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
@@ -66,13 +66,13 @@ func (a *SecretsAPIService) V2OrganizationIdSecretsGet(ctx context.Context, orga
 }
 
 // Execute executes the request
-//  @return ModelsSecretList
-func (a *SecretsAPIService) V2OrganizationIdSecretsGetExecute(r ApiV2OrganizationIdSecretsGetRequest) (*ModelsSecretList, *http.Response, error) {
+//  @return ModelsSecretWithComponentsList
+func (a *SecretsAPIService) V2OrganizationIdSecretsGetExecute(r ApiV2OrganizationIdSecretsGetRequest) (*ModelsSecretWithComponentsList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsSecretList
+		localVarReturnValue  *ModelsSecretWithComponentsList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsAPIService.V2OrganizationIdSecretsGet")
@@ -501,14 +501,14 @@ type ApiV2OrganizationIdSecretsSecretIdGetRequest struct {
 	secretId string
 }
 
-func (r ApiV2OrganizationIdSecretsSecretIdGetRequest) Execute() (*RoutesV2SecretResponse, *http.Response, error) {
+func (r ApiV2OrganizationIdSecretsSecretIdGetRequest) Execute() (*ModelsSecretWithComponents, *http.Response, error) {
 	return r.ApiService.V2OrganizationIdSecretsSecretIdGetExecute(r)
 }
 
 /*
-V2OrganizationIdSecretsSecretIdGet Get secret
+V2OrganizationIdSecretsSecretIdGet Get secret with components
 
-Gets a specific secret by ID
+Gets a specific secret by ID including inputs and outputs that use it
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
@@ -525,13 +525,13 @@ func (a *SecretsAPIService) V2OrganizationIdSecretsSecretIdGet(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return RoutesV2SecretResponse
-func (a *SecretsAPIService) V2OrganizationIdSecretsSecretIdGetExecute(r ApiV2OrganizationIdSecretsSecretIdGetRequest) (*RoutesV2SecretResponse, *http.Response, error) {
+//  @return ModelsSecretWithComponents
+func (a *SecretsAPIService) V2OrganizationIdSecretsSecretIdGetExecute(r ApiV2OrganizationIdSecretsSecretIdGetRequest) (*ModelsSecretWithComponents, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RoutesV2SecretResponse
+		localVarReturnValue  *ModelsSecretWithComponents
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsAPIService.V2OrganizationIdSecretsSecretIdGet")
