@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesInviteUserToOrganizationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-27T13:56:43.355928777Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-27T15:57:07.441104317Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class RoutesInviteUserToOrganizationRequest {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
