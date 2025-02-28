@@ -13,8 +13,8 @@ package monad
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // RoutesTransformOperationArguments - struct for RoutesTransformOperationArguments
@@ -589,6 +589,76 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 
 	if obj.MapmapOfStringAny != nil {
 		return obj.MapmapOfStringAny
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj RoutesTransformOperationArguments) GetActualInstanceValue() (interface{}) {
+	if obj.AddAdd != nil {
+		return *obj.AddAdd
+	}
+
+	if obj.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue != nil {
+		return *obj.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
+	}
+
+	if obj.DropKeyDropKey != nil {
+		return *obj.DropKeyDropKey
+	}
+
+	if obj.DropKeyWhereValueEqDropKeyWhereValueEq != nil {
+		return *obj.DropKeyWhereValueEqDropKeyWhereValueEq
+	}
+
+	if obj.DropRecordWhereValueEqDropRecordWhereValueEq != nil {
+		return *obj.DropRecordWhereValueEqDropRecordWhereValueEq
+	}
+
+	if obj.DuplicateKeyValueToKeyDuplicateKeyValueToKey != nil {
+		return *obj.DuplicateKeyValueToKeyDuplicateKeyValueToKey
+	}
+
+	if obj.FlattenFlatten != nil {
+		return *obj.FlattenFlatten
+	}
+
+	if obj.JqJQ != nil {
+		return *obj.JqJQ
+	}
+
+	if obj.MathMultiplyWithValueMathMultiplyWithValue != nil {
+		return *obj.MathMultiplyWithValueMathMultiplyWithValue
+	}
+
+	if obj.MutateTypeMutateType != nil {
+		return *obj.MutateTypeMutateType
+	}
+
+	if obj.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq != nil {
+		return *obj.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq
+	}
+
+	if obj.MutateValueWhereKeyEqMutateValueWhereKeyEq != nil {
+		return *obj.MutateValueWhereKeyEqMutateValueWhereKeyEq
+	}
+
+	if obj.RenameKeyRenameKey != nil {
+		return *obj.RenameKeyRenameKey
+	}
+
+	if obj.RenameKeyWhereValueEqRenameKeyWhereValueEq != nil {
+		return *obj.RenameKeyWhereValueEqRenameKeyWhereValueEq
+	}
+
+	if obj.UtcTimestampTimestamp != nil {
+		return *obj.UtcTimestampTimestamp
+	}
+
+	if obj.MapmapOfStringAny != nil {
+		return *obj.MapmapOfStringAny
 	}
 
 	// all schemas are nil

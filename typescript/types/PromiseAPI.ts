@@ -1,5 +1,6 @@
 import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
-import { Configuration} from '../configuration'
+import { Configuration, ConfigurationOptions, PromiseConfigurationOptions } from '../configuration'
+import { PromiseMiddleware, Middleware, PromiseMiddlewareWrapper } from '../middleware';
 
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddAdd } from '../models/AddAdd';
@@ -136,8 +137,20 @@ export class PromiseAuthenticationApi {
      * Displays a page with the access token for the user to include in requests.
      * Handle login callback
      */
-    public v1LoginCallbackGetWithHttpInfo(_options?: Configuration): Promise<HttpInfo<string>> {
-        const result = this.api.v1LoginCallbackGetWithHttpInfo(_options);
+    public v1LoginCallbackGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1LoginCallbackGetWithHttpInfo(observableOptions);
         return result.toPromise();
     }
 
@@ -145,8 +158,20 @@ export class PromiseAuthenticationApi {
      * Displays a page with the access token for the user to include in requests.
      * Handle login callback
      */
-    public v1LoginCallbackGet(_options?: Configuration): Promise<string> {
-        const result = this.api.v1LoginCallbackGet(_options);
+    public v1LoginCallbackGet(_options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1LoginCallbackGet(observableOptions);
         return result.toPromise();
     }
 
@@ -154,8 +179,20 @@ export class PromiseAuthenticationApi {
      * Redirects the user to Authentication service login page to initiate the login process.
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
      */
-    public v1LoginGetWithHttpInfo(_options?: Configuration): Promise<HttpInfo<void>> {
-        const result = this.api.v1LoginGetWithHttpInfo(_options);
+    public v1LoginGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1LoginGetWithHttpInfo(observableOptions);
         return result.toPromise();
     }
 
@@ -163,8 +200,20 @@ export class PromiseAuthenticationApi {
      * Redirects the user to Authentication service login page to initiate the login process.
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
      */
-    public v1LoginGet(_options?: Configuration): Promise<void> {
-        const result = this.api.v1LoginGet(_options);
+    public v1LoginGet(_options?: PromiseConfigurationOptions): Promise<void> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1LoginGet(observableOptions);
         return result.toPromise();
     }
 
@@ -172,8 +221,20 @@ export class PromiseAuthenticationApi {
      * Resends the email verification to the user\'s email address
      * Resend email verification
      */
-    public v1LoginResendVerificationPostWithHttpInfo(_options?: Configuration): Promise<HttpInfo<string>> {
-        const result = this.api.v1LoginResendVerificationPostWithHttpInfo(_options);
+    public v1LoginResendVerificationPostWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1LoginResendVerificationPostWithHttpInfo(observableOptions);
         return result.toPromise();
     }
 
@@ -181,8 +242,20 @@ export class PromiseAuthenticationApi {
      * Resends the email verification to the user\'s email address
      * Resend email verification
      */
-    public v1LoginResendVerificationPost(_options?: Configuration): Promise<string> {
-        const result = this.api.v1LoginResendVerificationPost(_options);
+    public v1LoginResendVerificationPost(_options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1LoginResendVerificationPost(observableOptions);
         return result.toPromise();
     }
 
@@ -191,8 +264,20 @@ export class PromiseAuthenticationApi {
      * Get Authentication token
      * @param auth0LoginRequest Login request
      */
-    public v1LoginTokenPostWithHttpInfo(auth0LoginRequest: Auth0LoginRequest, _options?: Configuration): Promise<HttpInfo<Auth0Auth0TokenResponse>> {
-        const result = this.api.v1LoginTokenPostWithHttpInfo(auth0LoginRequest, _options);
+    public v1LoginTokenPostWithHttpInfo(auth0LoginRequest: Auth0LoginRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Auth0Auth0TokenResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1LoginTokenPostWithHttpInfo(auth0LoginRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -201,8 +286,20 @@ export class PromiseAuthenticationApi {
      * Get Authentication token
      * @param auth0LoginRequest Login request
      */
-    public v1LoginTokenPost(auth0LoginRequest: Auth0LoginRequest, _options?: Configuration): Promise<Auth0Auth0TokenResponse> {
-        const result = this.api.v1LoginTokenPost(auth0LoginRequest, _options);
+    public v1LoginTokenPost(auth0LoginRequest: Auth0LoginRequest, _options?: PromiseConfigurationOptions): Promise<Auth0Auth0TokenResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1LoginTokenPost(auth0LoginRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -230,8 +327,20 @@ export class PromiseConditionsApi {
      * List conditions
      * @param [body]
      */
-    public v2ConditionsGetWithHttpInfo(body?: any, _options?: Configuration): Promise<HttpInfo<Array<ConditionInfo>>> {
-        const result = this.api.v2ConditionsGetWithHttpInfo(body, _options);
+    public v2ConditionsGetWithHttpInfo(body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ConditionInfo>>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2ConditionsGetWithHttpInfo(body, observableOptions);
         return result.toPromise();
     }
 
@@ -240,8 +349,20 @@ export class PromiseConditionsApi {
      * List conditions
      * @param [body]
      */
-    public v2ConditionsGet(body?: any, _options?: Configuration): Promise<Array<ConditionInfo>> {
-        const result = this.api.v2ConditionsGet(body, _options);
+    public v2ConditionsGet(body?: any, _options?: PromiseConfigurationOptions): Promise<Array<ConditionInfo>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2ConditionsGet(body, observableOptions);
         return result.toPromise();
     }
 
@@ -270,8 +391,20 @@ export class PromiseDataApi {
      * @param organizationId Organization ID
      * @param nodeId Node ID
      */
-    public v1OrganizationIdDataNodeIdGetWithHttpInfo(organizationId: string, nodeId: string, _options?: Configuration): Promise<HttpInfo<string>> {
-        const result = this.api.v1OrganizationIdDataNodeIdGetWithHttpInfo(organizationId, nodeId, _options);
+    public v1OrganizationIdDataNodeIdGetWithHttpInfo(organizationId: string, nodeId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdDataNodeIdGetWithHttpInfo(organizationId, nodeId, observableOptions);
         return result.toPromise();
     }
 
@@ -281,8 +414,20 @@ export class PromiseDataApi {
      * @param organizationId Organization ID
      * @param nodeId Node ID
      */
-    public v1OrganizationIdDataNodeIdGet(organizationId: string, nodeId: string, _options?: Configuration): Promise<string> {
-        const result = this.api.v1OrganizationIdDataNodeIdGet(organizationId, nodeId, _options);
+    public v1OrganizationIdDataNodeIdGet(organizationId: string, nodeId: string, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdDataNodeIdGet(organizationId, nodeId, observableOptions);
         return result.toPromise();
     }
 
@@ -309,8 +454,20 @@ export class PromiseInputsApi {
      * List inputs
      * List inputs
      */
-    public v1InputsGetWithHttpInfo(_options?: Configuration): Promise<HttpInfo<Array<InputsConnectorMeta>>> {
-        const result = this.api.v1InputsGetWithHttpInfo(_options);
+    public v1InputsGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<InputsConnectorMeta>>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1InputsGetWithHttpInfo(observableOptions);
         return result.toPromise();
     }
 
@@ -318,8 +475,20 @@ export class PromiseInputsApi {
      * List inputs
      * List inputs
      */
-    public v1InputsGet(_options?: Configuration): Promise<Array<InputsConnectorMeta>> {
-        const result = this.api.v1InputsGet(_options);
+    public v1InputsGet(_options?: PromiseConfigurationOptions): Promise<Array<InputsConnectorMeta>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1InputsGet(observableOptions);
         return result.toPromise();
     }
 
@@ -328,8 +497,20 @@ export class PromiseInputsApi {
      * Get input config meta
      * @param inputTypeId Input type ID
      */
-    public v1InputsInputTypeIdGetWithHttpInfo(inputTypeId: string, _options?: Configuration): Promise<HttpInfo<ModelsConnectorMeta>> {
-        const result = this.api.v1InputsInputTypeIdGetWithHttpInfo(inputTypeId, _options);
+    public v1InputsInputTypeIdGetWithHttpInfo(inputTypeId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnectorMeta>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1InputsInputTypeIdGetWithHttpInfo(inputTypeId, observableOptions);
         return result.toPromise();
     }
 
@@ -338,8 +519,20 @@ export class PromiseInputsApi {
      * Get input config meta
      * @param inputTypeId Input type ID
      */
-    public v1InputsInputTypeIdGet(inputTypeId: string, _options?: Configuration): Promise<ModelsConnectorMeta> {
-        const result = this.api.v1InputsInputTypeIdGet(inputTypeId, _options);
+    public v1InputsInputTypeIdGet(inputTypeId: string, _options?: PromiseConfigurationOptions): Promise<ModelsConnectorMeta> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1InputsInputTypeIdGet(inputTypeId, observableOptions);
         return result.toPromise();
     }
 
@@ -368,8 +561,20 @@ export class PromiseLogsApi {
      * @param organizationId Organization ID
      * @param [since] RFC3339 timestamp to start streaming from
      */
-    public v1OrganizationIdLogsApiGetWithHttpInfo(organizationId: string, since?: string, _options?: Configuration): Promise<HttpInfo<string>> {
-        const result = this.api.v1OrganizationIdLogsApiGetWithHttpInfo(organizationId, since, _options);
+    public v1OrganizationIdLogsApiGetWithHttpInfo(organizationId: string, since?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdLogsApiGetWithHttpInfo(organizationId, since, observableOptions);
         return result.toPromise();
     }
 
@@ -379,8 +584,20 @@ export class PromiseLogsApi {
      * @param organizationId Organization ID
      * @param [since] RFC3339 timestamp to start streaming from
      */
-    public v1OrganizationIdLogsApiGet(organizationId: string, since?: string, _options?: Configuration): Promise<string> {
-        const result = this.api.v1OrganizationIdLogsApiGet(organizationId, since, _options);
+    public v1OrganizationIdLogsApiGet(organizationId: string, since?: string, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdLogsApiGet(organizationId, since, observableOptions);
         return result.toPromise();
     }
 
@@ -391,8 +608,20 @@ export class PromiseLogsApi {
      * @param [since] RFC3339 timestamp to start streaming from
      * @param [last] Duration to start streaming from (e.g., \&#39;5h\&#39; or \&#39;30m\&#39;)
      */
-    public v1OrganizationIdLogsGetWithHttpInfo(organizationId: string, since?: string, last?: string, _options?: Configuration): Promise<HttpInfo<string>> {
-        const result = this.api.v1OrganizationIdLogsGetWithHttpInfo(organizationId, since, last, _options);
+    public v1OrganizationIdLogsGetWithHttpInfo(organizationId: string, since?: string, last?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdLogsGetWithHttpInfo(organizationId, since, last, observableOptions);
         return result.toPromise();
     }
 
@@ -403,8 +632,20 @@ export class PromiseLogsApi {
      * @param [since] RFC3339 timestamp to start streaming from
      * @param [last] Duration to start streaming from (e.g., \&#39;5h\&#39; or \&#39;30m\&#39;)
      */
-    public v1OrganizationIdLogsGet(organizationId: string, since?: string, last?: string, _options?: Configuration): Promise<string> {
-        const result = this.api.v1OrganizationIdLogsGet(organizationId, since, last, _options);
+    public v1OrganizationIdLogsGet(organizationId: string, since?: string, last?: string, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdLogsGet(organizationId, since, last, observableOptions);
         return result.toPromise();
     }
 
@@ -414,8 +655,20 @@ export class PromiseLogsApi {
      * @param organizationId Organization ID
      * @param [since] RFC3339 timestamp to start streaming from
      */
-    public v1OrganizationIdLogsPipelinesGetWithHttpInfo(organizationId: string, since?: string, _options?: Configuration): Promise<HttpInfo<string>> {
-        const result = this.api.v1OrganizationIdLogsPipelinesGetWithHttpInfo(organizationId, since, _options);
+    public v1OrganizationIdLogsPipelinesGetWithHttpInfo(organizationId: string, since?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdLogsPipelinesGetWithHttpInfo(organizationId, since, observableOptions);
         return result.toPromise();
     }
 
@@ -425,8 +678,20 @@ export class PromiseLogsApi {
      * @param organizationId Organization ID
      * @param [since] RFC3339 timestamp to start streaming from
      */
-    public v1OrganizationIdLogsPipelinesGet(organizationId: string, since?: string, _options?: Configuration): Promise<string> {
-        const result = this.api.v1OrganizationIdLogsPipelinesGet(organizationId, since, _options);
+    public v1OrganizationIdLogsPipelinesGet(organizationId: string, since?: string, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdLogsPipelinesGet(organizationId, since, observableOptions);
         return result.toPromise();
     }
 
@@ -438,8 +703,20 @@ export class PromiseLogsApi {
      * @param [since] RFC3339 timestamp to start streaming from
      * @param [last] Duration to start streaming from (e.g., \&#39;5h\&#39; or \&#39;30m\&#39;)
      */
-    public v1OrganizationIdLogsPipelinesPipelineIdGetWithHttpInfo(organizationId: string, pipelineId: string, since?: string, last?: string, _options?: Configuration): Promise<HttpInfo<string>> {
-        const result = this.api.v1OrganizationIdLogsPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, since, last, _options);
+    public v1OrganizationIdLogsPipelinesPipelineIdGetWithHttpInfo(organizationId: string, pipelineId: string, since?: string, last?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdLogsPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, since, last, observableOptions);
         return result.toPromise();
     }
 
@@ -451,8 +728,20 @@ export class PromiseLogsApi {
      * @param [since] RFC3339 timestamp to start streaming from
      * @param [last] Duration to start streaming from (e.g., \&#39;5h\&#39; or \&#39;30m\&#39;)
      */
-    public v1OrganizationIdLogsPipelinesPipelineIdGet(organizationId: string, pipelineId: string, since?: string, last?: string, _options?: Configuration): Promise<string> {
-        const result = this.api.v1OrganizationIdLogsPipelinesPipelineIdGet(organizationId, pipelineId, since, last, _options);
+    public v1OrganizationIdLogsPipelinesPipelineIdGet(organizationId: string, pipelineId: string, since?: string, last?: string, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdLogsPipelinesPipelineIdGet(organizationId, pipelineId, since, last, observableOptions);
         return result.toPromise();
     }
 
@@ -465,8 +754,20 @@ export class PromiseLogsApi {
      * @param [since] RFC3339 timestamp to start streaming from
      * @param [last] Duration to start streaming from (e.g., \&#39;5h\&#39; or \&#39;30m\&#39;)
      */
-    public v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, since?: string, last?: string, _options?: Configuration): Promise<HttpInfo<string>> {
-        const result = this.api.v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetWithHttpInfo(organizationId, pipelineId, nodeId, since, last, _options);
+    public v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, since?: string, last?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetWithHttpInfo(organizationId, pipelineId, nodeId, since, last, observableOptions);
         return result.toPromise();
     }
 
@@ -479,8 +780,20 @@ export class PromiseLogsApi {
      * @param [since] RFC3339 timestamp to start streaming from
      * @param [last] Duration to start streaming from (e.g., \&#39;5h\&#39; or \&#39;30m\&#39;)
      */
-    public v1OrganizationIdLogsPipelinesPipelineIdNodeIdGet(organizationId: string, pipelineId: string, nodeId: string, since?: string, last?: string, _options?: Configuration): Promise<string> {
-        const result = this.api.v1OrganizationIdLogsPipelinesPipelineIdNodeIdGet(organizationId, pipelineId, nodeId, since, last, _options);
+    public v1OrganizationIdLogsPipelinesPipelineIdNodeIdGet(organizationId: string, pipelineId: string, nodeId: string, since?: string, last?: string, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdLogsPipelinesPipelineIdNodeIdGet(organizationId, pipelineId, nodeId, since, last, observableOptions);
         return result.toPromise();
     }
 
@@ -508,8 +821,20 @@ export class PromiseOauthApi {
      * Oauth callback
      * @param typeId component type ID
      */
-    public v1OauthTypeIdCallbackGetWithHttpInfo(typeId: string, _options?: Configuration): Promise<HttpInfo<any>> {
-        const result = this.api.v1OauthTypeIdCallbackGetWithHttpInfo(typeId, _options);
+    public v1OauthTypeIdCallbackGetWithHttpInfo(typeId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<any>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OauthTypeIdCallbackGetWithHttpInfo(typeId, observableOptions);
         return result.toPromise();
     }
 
@@ -518,8 +843,20 @@ export class PromiseOauthApi {
      * Oauth callback
      * @param typeId component type ID
      */
-    public v1OauthTypeIdCallbackGet(typeId: string, _options?: Configuration): Promise<any> {
-        const result = this.api.v1OauthTypeIdCallbackGet(typeId, _options);
+    public v1OauthTypeIdCallbackGet(typeId: string, _options?: PromiseConfigurationOptions): Promise<any> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OauthTypeIdCallbackGet(typeId, observableOptions);
         return result.toPromise();
     }
 
@@ -529,8 +866,20 @@ export class PromiseOauthApi {
      * @param typeId component type ID
      * @param organizationId organization ID
      */
-    public v1OauthTypeIdOrganizationIdGetWithHttpInfo(typeId: string, organizationId: string, _options?: Configuration): Promise<HttpInfo<any>> {
-        const result = this.api.v1OauthTypeIdOrganizationIdGetWithHttpInfo(typeId, organizationId, _options);
+    public v1OauthTypeIdOrganizationIdGetWithHttpInfo(typeId: string, organizationId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<any>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OauthTypeIdOrganizationIdGetWithHttpInfo(typeId, organizationId, observableOptions);
         return result.toPromise();
     }
 
@@ -540,8 +889,20 @@ export class PromiseOauthApi {
      * @param typeId component type ID
      * @param organizationId organization ID
      */
-    public v1OauthTypeIdOrganizationIdGet(typeId: string, organizationId: string, _options?: Configuration): Promise<any> {
-        const result = this.api.v1OauthTypeIdOrganizationIdGet(typeId, organizationId, _options);
+    public v1OauthTypeIdOrganizationIdGet(typeId: string, organizationId: string, _options?: PromiseConfigurationOptions): Promise<any> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OauthTypeIdOrganizationIdGet(typeId, organizationId, observableOptions);
         return result.toPromise();
     }
 
@@ -570,8 +931,20 @@ export class PromiseOrganizationApiKeysApi {
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
      */
-    public v2OrganizationIdApiKeysApiKeyIdDeleteWithHttpInfo(organizationId: string, apiKeyId: string, _options?: Configuration): Promise<HttpInfo<string>> {
-        const result = this.api.v2OrganizationIdApiKeysApiKeyIdDeleteWithHttpInfo(organizationId, apiKeyId, _options);
+    public v2OrganizationIdApiKeysApiKeyIdDeleteWithHttpInfo(organizationId: string, apiKeyId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdApiKeysApiKeyIdDeleteWithHttpInfo(organizationId, apiKeyId, observableOptions);
         return result.toPromise();
     }
 
@@ -581,8 +954,20 @@ export class PromiseOrganizationApiKeysApi {
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
      */
-    public v2OrganizationIdApiKeysApiKeyIdDelete(organizationId: string, apiKeyId: string, _options?: Configuration): Promise<string> {
-        const result = this.api.v2OrganizationIdApiKeysApiKeyIdDelete(organizationId, apiKeyId, _options);
+    public v2OrganizationIdApiKeysApiKeyIdDelete(organizationId: string, apiKeyId: string, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdApiKeysApiKeyIdDelete(organizationId, apiKeyId, observableOptions);
         return result.toPromise();
     }
 
@@ -592,8 +977,20 @@ export class PromiseOrganizationApiKeysApi {
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
      */
-    public v2OrganizationIdApiKeysApiKeyIdGetWithHttpInfo(organizationId: string, apiKeyId: string, _options?: Configuration): Promise<HttpInfo<ModelsAPIKey>> {
-        const result = this.api.v2OrganizationIdApiKeysApiKeyIdGetWithHttpInfo(organizationId, apiKeyId, _options);
+    public v2OrganizationIdApiKeysApiKeyIdGetWithHttpInfo(organizationId: string, apiKeyId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAPIKey>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdApiKeysApiKeyIdGetWithHttpInfo(organizationId, apiKeyId, observableOptions);
         return result.toPromise();
     }
 
@@ -603,8 +1000,20 @@ export class PromiseOrganizationApiKeysApi {
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
      */
-    public v2OrganizationIdApiKeysApiKeyIdGet(organizationId: string, apiKeyId: string, _options?: Configuration): Promise<ModelsAPIKey> {
-        const result = this.api.v2OrganizationIdApiKeysApiKeyIdGet(organizationId, apiKeyId, _options);
+    public v2OrganizationIdApiKeysApiKeyIdGet(organizationId: string, apiKeyId: string, _options?: PromiseConfigurationOptions): Promise<ModelsAPIKey> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdApiKeysApiKeyIdGet(organizationId, apiKeyId, observableOptions);
         return result.toPromise();
     }
 
@@ -615,8 +1024,20 @@ export class PromiseOrganizationApiKeysApi {
      * @param apiKeyId API Key ID
      * @param routesV2UpdateAPIKeyRequest Request body for updating an API key
      */
-    public v2OrganizationIdApiKeysApiKeyIdPatchWithHttpInfo(organizationId: string, apiKeyId: string, routesV2UpdateAPIKeyRequest: RoutesV2UpdateAPIKeyRequest, _options?: Configuration): Promise<HttpInfo<ModelsAPIKey>> {
-        const result = this.api.v2OrganizationIdApiKeysApiKeyIdPatchWithHttpInfo(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest, _options);
+    public v2OrganizationIdApiKeysApiKeyIdPatchWithHttpInfo(organizationId: string, apiKeyId: string, routesV2UpdateAPIKeyRequest: RoutesV2UpdateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAPIKey>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdApiKeysApiKeyIdPatchWithHttpInfo(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -627,8 +1048,20 @@ export class PromiseOrganizationApiKeysApi {
      * @param apiKeyId API Key ID
      * @param routesV2UpdateAPIKeyRequest Request body for updating an API key
      */
-    public v2OrganizationIdApiKeysApiKeyIdPatch(organizationId: string, apiKeyId: string, routesV2UpdateAPIKeyRequest: RoutesV2UpdateAPIKeyRequest, _options?: Configuration): Promise<ModelsAPIKey> {
-        const result = this.api.v2OrganizationIdApiKeysApiKeyIdPatch(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest, _options);
+    public v2OrganizationIdApiKeysApiKeyIdPatch(organizationId: string, apiKeyId: string, routesV2UpdateAPIKeyRequest: RoutesV2UpdateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAPIKey> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdApiKeysApiKeyIdPatch(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -638,8 +1071,20 @@ export class PromiseOrganizationApiKeysApi {
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
      */
-    public v2OrganizationIdApiKeysApiKeyIdRegeneratePostWithHttpInfo(organizationId: string, apiKeyId: string, _options?: Configuration): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
-        const result = this.api.v2OrganizationIdApiKeysApiKeyIdRegeneratePostWithHttpInfo(organizationId, apiKeyId, _options);
+    public v2OrganizationIdApiKeysApiKeyIdRegeneratePostWithHttpInfo(organizationId: string, apiKeyId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdApiKeysApiKeyIdRegeneratePostWithHttpInfo(organizationId, apiKeyId, observableOptions);
         return result.toPromise();
     }
 
@@ -649,8 +1094,20 @@ export class PromiseOrganizationApiKeysApi {
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
      */
-    public v2OrganizationIdApiKeysApiKeyIdRegeneratePost(organizationId: string, apiKeyId: string, _options?: Configuration): Promise<ModelsAPIKeyWithToken> {
-        const result = this.api.v2OrganizationIdApiKeysApiKeyIdRegeneratePost(organizationId, apiKeyId, _options);
+    public v2OrganizationIdApiKeysApiKeyIdRegeneratePost(organizationId: string, apiKeyId: string, _options?: PromiseConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdApiKeysApiKeyIdRegeneratePost(organizationId, apiKeyId, observableOptions);
         return result.toPromise();
     }
 
@@ -661,8 +1118,20 @@ export class PromiseOrganizationApiKeysApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v2OrganizationIdApiKeysGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<HttpInfo<ModelsAPIKeyList>> {
-        const result = this.api.v2OrganizationIdApiKeysGetWithHttpInfo(organizationId, limit, offset, _options);
+    public v2OrganizationIdApiKeysGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdApiKeysGetWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -673,8 +1142,20 @@ export class PromiseOrganizationApiKeysApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v2OrganizationIdApiKeysGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<ModelsAPIKeyList> {
-        const result = this.api.v2OrganizationIdApiKeysGet(organizationId, limit, offset, _options);
+    public v2OrganizationIdApiKeysGet(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsAPIKeyList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdApiKeysGet(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -684,8 +1165,20 @@ export class PromiseOrganizationApiKeysApi {
      * @param organizationId Organization ID
      * @param routesV2CreateAPIKeyRequest Request body for creating an API key
      */
-    public v2OrganizationIdApiKeysPostWithHttpInfo(organizationId: string, routesV2CreateAPIKeyRequest: RoutesV2CreateAPIKeyRequest, _options?: Configuration): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
-        const result = this.api.v2OrganizationIdApiKeysPostWithHttpInfo(organizationId, routesV2CreateAPIKeyRequest, _options);
+    public v2OrganizationIdApiKeysPostWithHttpInfo(organizationId: string, routesV2CreateAPIKeyRequest: RoutesV2CreateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdApiKeysPostWithHttpInfo(organizationId, routesV2CreateAPIKeyRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -695,8 +1188,20 @@ export class PromiseOrganizationApiKeysApi {
      * @param organizationId Organization ID
      * @param routesV2CreateAPIKeyRequest Request body for creating an API key
      */
-    public v2OrganizationIdApiKeysPost(organizationId: string, routesV2CreateAPIKeyRequest: RoutesV2CreateAPIKeyRequest, _options?: Configuration): Promise<ModelsAPIKeyWithToken> {
-        const result = this.api.v2OrganizationIdApiKeysPost(organizationId, routesV2CreateAPIKeyRequest, _options);
+    public v2OrganizationIdApiKeysPost(organizationId: string, routesV2CreateAPIKeyRequest: RoutesV2CreateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdApiKeysPost(organizationId, routesV2CreateAPIKeyRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -726,8 +1231,20 @@ export class PromiseOrganizationInputsApi {
      * @param routesBulkCreateInputRequest Request body for creating multiple inputs
      * @param [testConnection] Test connection before creating the input
      */
-    public v1OrganizationIdInputsBulkPostWithHttpInfo(organizationId: string, routesBulkCreateInputRequest: RoutesBulkCreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<Array<ModelsInput>>> {
-        const result = this.api.v1OrganizationIdInputsBulkPostWithHttpInfo(organizationId, routesBulkCreateInputRequest, testConnection, _options);
+    public v1OrganizationIdInputsBulkPostWithHttpInfo(organizationId: string, routesBulkCreateInputRequest: RoutesBulkCreateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsInput>>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInputsBulkPostWithHttpInfo(organizationId, routesBulkCreateInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -738,8 +1255,20 @@ export class PromiseOrganizationInputsApi {
      * @param routesBulkCreateInputRequest Request body for creating multiple inputs
      * @param [testConnection] Test connection before creating the input
      */
-    public v1OrganizationIdInputsBulkPost(organizationId: string, routesBulkCreateInputRequest: RoutesBulkCreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<Array<ModelsInput>> {
-        const result = this.api.v1OrganizationIdInputsBulkPost(organizationId, routesBulkCreateInputRequest, testConnection, _options);
+    public v1OrganizationIdInputsBulkPost(organizationId: string, routesBulkCreateInputRequest: RoutesBulkCreateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<Array<ModelsInput>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInputsBulkPost(organizationId, routesBulkCreateInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -750,8 +1279,20 @@ export class PromiseOrganizationInputsApi {
      * @param [limit] Limit the number of organizations returned (default: DefaultLimit)
      * @param [offset] Offset the organizations returned (default: 0)
      */
-    public v1OrganizationIdInputsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<HttpInfo<ModelsInputList>> {
-        const result = this.api.v1OrganizationIdInputsGetWithHttpInfo(organizationId, limit, offset, _options);
+    public v1OrganizationIdInputsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsInputList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInputsGetWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -762,8 +1303,20 @@ export class PromiseOrganizationInputsApi {
      * @param [limit] Limit the number of organizations returned (default: DefaultLimit)
      * @param [offset] Offset the organizations returned (default: 0)
      */
-    public v1OrganizationIdInputsGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<ModelsInputList> {
-        const result = this.api.v1OrganizationIdInputsGet(organizationId, limit, offset, _options);
+    public v1OrganizationIdInputsGet(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsInputList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInputsGet(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -773,8 +1326,20 @@ export class PromiseOrganizationInputsApi {
      * @param organizationId Organization ID
      * @param inputId Input ID
      */
-    public v1OrganizationIdInputsInputIdDeleteWithHttpInfo(organizationId: string, inputId: string, _options?: Configuration): Promise<HttpInfo<any>> {
-        const result = this.api.v1OrganizationIdInputsInputIdDeleteWithHttpInfo(organizationId, inputId, _options);
+    public v1OrganizationIdInputsInputIdDeleteWithHttpInfo(organizationId: string, inputId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<any>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInputsInputIdDeleteWithHttpInfo(organizationId, inputId, observableOptions);
         return result.toPromise();
     }
 
@@ -784,8 +1349,20 @@ export class PromiseOrganizationInputsApi {
      * @param organizationId Organization ID
      * @param inputId Input ID
      */
-    public v1OrganizationIdInputsInputIdDelete(organizationId: string, inputId: string, _options?: Configuration): Promise<any> {
-        const result = this.api.v1OrganizationIdInputsInputIdDelete(organizationId, inputId, _options);
+    public v1OrganizationIdInputsInputIdDelete(organizationId: string, inputId: string, _options?: PromiseConfigurationOptions): Promise<any> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInputsInputIdDelete(organizationId, inputId, observableOptions);
         return result.toPromise();
     }
 
@@ -795,8 +1372,20 @@ export class PromiseOrganizationInputsApi {
      * @param organizationId Organization ID
      * @param inputId Input ID
      */
-    public v1OrganizationIdInputsInputIdGetWithHttpInfo(organizationId: string, inputId: string, _options?: Configuration): Promise<HttpInfo<RoutesGetInputResponse>> {
-        const result = this.api.v1OrganizationIdInputsInputIdGetWithHttpInfo(organizationId, inputId, _options);
+    public v1OrganizationIdInputsInputIdGetWithHttpInfo(organizationId: string, inputId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesGetInputResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInputsInputIdGetWithHttpInfo(organizationId, inputId, observableOptions);
         return result.toPromise();
     }
 
@@ -806,8 +1395,20 @@ export class PromiseOrganizationInputsApi {
      * @param organizationId Organization ID
      * @param inputId Input ID
      */
-    public v1OrganizationIdInputsInputIdGet(organizationId: string, inputId: string, _options?: Configuration): Promise<RoutesGetInputResponse> {
-        const result = this.api.v1OrganizationIdInputsInputIdGet(organizationId, inputId, _options);
+    public v1OrganizationIdInputsInputIdGet(organizationId: string, inputId: string, _options?: PromiseConfigurationOptions): Promise<RoutesGetInputResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInputsInputIdGet(organizationId, inputId, observableOptions);
         return result.toPromise();
     }
 
@@ -819,8 +1420,20 @@ export class PromiseOrganizationInputsApi {
      * @param routesUpdateInputRequest Request body for updating an input
      * @param [testConnection] Test connection before creating the input
      */
-    public v1OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId: string, inputId: string, routesUpdateInputRequest: RoutesUpdateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        const result = this.api.v1OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId, inputId, routesUpdateInputRequest, testConnection, _options);
+    public v1OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId: string, inputId: string, routesUpdateInputRequest: RoutesUpdateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId, inputId, routesUpdateInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -832,8 +1445,20 @@ export class PromiseOrganizationInputsApi {
      * @param routesUpdateInputRequest Request body for updating an input
      * @param [testConnection] Test connection before creating the input
      */
-    public v1OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesUpdateInputRequest: RoutesUpdateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<ModelsInput> {
-        const result = this.api.v1OrganizationIdInputsInputIdPatch(organizationId, inputId, routesUpdateInputRequest, testConnection, _options);
+    public v1OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesUpdateInputRequest: RoutesUpdateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsInput> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInputsInputIdPatch(organizationId, inputId, routesUpdateInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -844,8 +1469,20 @@ export class PromiseOrganizationInputsApi {
      * @param routesCreateInputRequest Request body for creating an input
      * @param [testConnection] Test connection before creating the input
      */
-    public v1OrganizationIdInputsPostWithHttpInfo(organizationId: string, routesCreateInputRequest: RoutesCreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        const result = this.api.v1OrganizationIdInputsPostWithHttpInfo(organizationId, routesCreateInputRequest, testConnection, _options);
+    public v1OrganizationIdInputsPostWithHttpInfo(organizationId: string, routesCreateInputRequest: RoutesCreateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInputsPostWithHttpInfo(organizationId, routesCreateInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -856,8 +1493,20 @@ export class PromiseOrganizationInputsApi {
      * @param routesCreateInputRequest Request body for creating an input
      * @param [testConnection] Test connection before creating the input
      */
-    public v1OrganizationIdInputsPost(organizationId: string, routesCreateInputRequest: RoutesCreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<ModelsInput> {
-        const result = this.api.v1OrganizationIdInputsPost(organizationId, routesCreateInputRequest, testConnection, _options);
+    public v1OrganizationIdInputsPost(organizationId: string, routesCreateInputRequest: RoutesCreateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsInput> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInputsPost(organizationId, routesCreateInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -869,8 +1518,20 @@ export class PromiseOrganizationInputsApi {
      * @param routesV2UpdateInputRequest Input configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        const result = this.api.v2OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId, inputId, routesV2UpdateInputRequest, testConnection, _options);
+    public v2OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId, inputId, routesV2UpdateInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -882,8 +1543,20 @@ export class PromiseOrganizationInputsApi {
      * @param routesV2UpdateInputRequest Input configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<ModelsInput> {
-        const result = this.api.v2OrganizationIdInputsInputIdPatch(organizationId, inputId, routesV2UpdateInputRequest, testConnection, _options);
+    public v2OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsInput> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdInputsInputIdPatch(organizationId, inputId, routesV2UpdateInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -894,8 +1567,20 @@ export class PromiseOrganizationInputsApi {
      * @param routesV2CreateInputRequest Input configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdInputsPostWithHttpInfo(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsInput>> {
-        const result = this.api.v2OrganizationIdInputsPostWithHttpInfo(organizationId, routesV2CreateInputRequest, testConnection, _options);
+    public v2OrganizationIdInputsPostWithHttpInfo(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdInputsPostWithHttpInfo(organizationId, routesV2CreateInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -906,8 +1591,20 @@ export class PromiseOrganizationInputsApi {
      * @param routesV2CreateInputRequest Input configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdInputsPost(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: Configuration): Promise<ModelsInput> {
-        const result = this.api.v2OrganizationIdInputsPost(organizationId, routesV2CreateInputRequest, testConnection, _options);
+    public v2OrganizationIdInputsPost(organizationId: string, routesV2CreateInputRequest: RoutesV2CreateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsInput> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdInputsPost(organizationId, routesV2CreateInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -917,8 +1614,20 @@ export class PromiseOrganizationInputsApi {
      * @param organizationId Organization ID
      * @param body Input configuration to test
      */
-    public v2OrganizationIdInputsTestConnectionPostWithHttpInfo(organizationId: string, body: any, _options?: Configuration): Promise<HttpInfo<RoutesV2SuccessResponse>> {
-        const result = this.api.v2OrganizationIdInputsTestConnectionPostWithHttpInfo(organizationId, body, _options);
+    public v2OrganizationIdInputsTestConnectionPostWithHttpInfo(organizationId: string, body: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdInputsTestConnectionPostWithHttpInfo(organizationId, body, observableOptions);
         return result.toPromise();
     }
 
@@ -928,8 +1637,20 @@ export class PromiseOrganizationInputsApi {
      * @param organizationId Organization ID
      * @param body Input configuration to test
      */
-    public v2OrganizationIdInputsTestConnectionPost(organizationId: string, body: any, _options?: Configuration): Promise<RoutesV2SuccessResponse> {
-        const result = this.api.v2OrganizationIdInputsTestConnectionPost(organizationId, body, _options);
+    public v2OrganizationIdInputsTestConnectionPost(organizationId: string, body: any, _options?: PromiseConfigurationOptions): Promise<RoutesV2SuccessResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdInputsTestConnectionPost(organizationId, body, observableOptions);
         return result.toPromise();
     }
 
@@ -958,8 +1679,20 @@ export class PromiseOrganizationInvitesApi {
      * @param organizationId Organization ID
      * @param routesInviteUserToOrganizationRequest Request body for inviting a user to an organization
      */
-    public v1OrganizationIdInvitesPostWithHttpInfo(organizationId: string, routesInviteUserToOrganizationRequest: RoutesInviteUserToOrganizationRequest, _options?: Configuration): Promise<HttpInfo<string>> {
-        const result = this.api.v1OrganizationIdInvitesPostWithHttpInfo(organizationId, routesInviteUserToOrganizationRequest, _options);
+    public v1OrganizationIdInvitesPostWithHttpInfo(organizationId: string, routesInviteUserToOrganizationRequest: RoutesInviteUserToOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInvitesPostWithHttpInfo(organizationId, routesInviteUserToOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -969,8 +1702,20 @@ export class PromiseOrganizationInvitesApi {
      * @param organizationId Organization ID
      * @param routesInviteUserToOrganizationRequest Request body for inviting a user to an organization
      */
-    public v1OrganizationIdInvitesPost(organizationId: string, routesInviteUserToOrganizationRequest: RoutesInviteUserToOrganizationRequest, _options?: Configuration): Promise<string> {
-        const result = this.api.v1OrganizationIdInvitesPost(organizationId, routesInviteUserToOrganizationRequest, _options);
+    public v1OrganizationIdInvitesPost(organizationId: string, routesInviteUserToOrganizationRequest: RoutesInviteUserToOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdInvitesPost(organizationId, routesInviteUserToOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1000,8 +1745,20 @@ export class PromiseOrganizationOutputsApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v1OrganizationIdOutputsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<HttpInfo<ModelsOutputList>> {
-        const result = this.api.v1OrganizationIdOutputsGetWithHttpInfo(organizationId, limit, offset, _options);
+    public v1OrganizationIdOutputsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOutputList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdOutputsGetWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -1012,8 +1769,20 @@ export class PromiseOrganizationOutputsApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v1OrganizationIdOutputsGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<ModelsOutputList> {
-        const result = this.api.v1OrganizationIdOutputsGet(organizationId, limit, offset, _options);
+    public v1OrganizationIdOutputsGet(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsOutputList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdOutputsGet(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -1023,8 +1792,20 @@ export class PromiseOrganizationOutputsApi {
      * @param organizationId Organization ID
      * @param outputId Output ID
      */
-    public v1OrganizationIdOutputsOutputIdDeleteWithHttpInfo(organizationId: string, outputId: string, _options?: Configuration): Promise<HttpInfo<string>> {
-        const result = this.api.v1OrganizationIdOutputsOutputIdDeleteWithHttpInfo(organizationId, outputId, _options);
+    public v1OrganizationIdOutputsOutputIdDeleteWithHttpInfo(organizationId: string, outputId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdOutputsOutputIdDeleteWithHttpInfo(organizationId, outputId, observableOptions);
         return result.toPromise();
     }
 
@@ -1034,8 +1815,20 @@ export class PromiseOrganizationOutputsApi {
      * @param organizationId Organization ID
      * @param outputId Output ID
      */
-    public v1OrganizationIdOutputsOutputIdDelete(organizationId: string, outputId: string, _options?: Configuration): Promise<string> {
-        const result = this.api.v1OrganizationIdOutputsOutputIdDelete(organizationId, outputId, _options);
+    public v1OrganizationIdOutputsOutputIdDelete(organizationId: string, outputId: string, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdOutputsOutputIdDelete(organizationId, outputId, observableOptions);
         return result.toPromise();
     }
 
@@ -1045,8 +1838,20 @@ export class PromiseOrganizationOutputsApi {
      * @param organizationId Organization ID
      * @param outputId Output ID
      */
-    public v1OrganizationIdOutputsOutputIdGetWithHttpInfo(organizationId: string, outputId: string, _options?: Configuration): Promise<HttpInfo<RoutesGetOutputResponse>> {
-        const result = this.api.v1OrganizationIdOutputsOutputIdGetWithHttpInfo(organizationId, outputId, _options);
+    public v1OrganizationIdOutputsOutputIdGetWithHttpInfo(organizationId: string, outputId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesGetOutputResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdOutputsOutputIdGetWithHttpInfo(organizationId, outputId, observableOptions);
         return result.toPromise();
     }
 
@@ -1056,8 +1861,20 @@ export class PromiseOrganizationOutputsApi {
      * @param organizationId Organization ID
      * @param outputId Output ID
      */
-    public v1OrganizationIdOutputsOutputIdGet(organizationId: string, outputId: string, _options?: Configuration): Promise<RoutesGetOutputResponse> {
-        const result = this.api.v1OrganizationIdOutputsOutputIdGet(organizationId, outputId, _options);
+    public v1OrganizationIdOutputsOutputIdGet(organizationId: string, outputId: string, _options?: PromiseConfigurationOptions): Promise<RoutesGetOutputResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdOutputsOutputIdGet(organizationId, outputId, observableOptions);
         return result.toPromise();
     }
 
@@ -1068,8 +1885,20 @@ export class PromiseOrganizationOutputsApi {
      * @param outputId Output ID
      * @param routesUpdateOutputRequest Request body for updating an output
      */
-    public v1OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId: string, outputId: string, routesUpdateOutputRequest: RoutesUpdateOutputRequest, _options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
-        const result = this.api.v1OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId, outputId, routesUpdateOutputRequest, _options);
+    public v1OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId: string, outputId: string, routesUpdateOutputRequest: RoutesUpdateOutputRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId, outputId, routesUpdateOutputRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1080,8 +1909,20 @@ export class PromiseOrganizationOutputsApi {
      * @param outputId Output ID
      * @param routesUpdateOutputRequest Request body for updating an output
      */
-    public v1OrganizationIdOutputsOutputIdPatch(organizationId: string, outputId: string, routesUpdateOutputRequest: RoutesUpdateOutputRequest, _options?: Configuration): Promise<ModelsOutput> {
-        const result = this.api.v1OrganizationIdOutputsOutputIdPatch(organizationId, outputId, routesUpdateOutputRequest, _options);
+    public v1OrganizationIdOutputsOutputIdPatch(organizationId: string, outputId: string, routesUpdateOutputRequest: RoutesUpdateOutputRequest, _options?: PromiseConfigurationOptions): Promise<ModelsOutput> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdOutputsOutputIdPatch(organizationId, outputId, routesUpdateOutputRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1091,8 +1932,20 @@ export class PromiseOrganizationOutputsApi {
      * @param organizationId Organization ID
      * @param routesCreateOutputRequest Request body for creating an output
      */
-    public v1OrganizationIdOutputsPostWithHttpInfo(organizationId: string, routesCreateOutputRequest: RoutesCreateOutputRequest, _options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
-        const result = this.api.v1OrganizationIdOutputsPostWithHttpInfo(organizationId, routesCreateOutputRequest, _options);
+    public v1OrganizationIdOutputsPostWithHttpInfo(organizationId: string, routesCreateOutputRequest: RoutesCreateOutputRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdOutputsPostWithHttpInfo(organizationId, routesCreateOutputRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1102,8 +1955,20 @@ export class PromiseOrganizationOutputsApi {
      * @param organizationId Organization ID
      * @param routesCreateOutputRequest Request body for creating an output
      */
-    public v1OrganizationIdOutputsPost(organizationId: string, routesCreateOutputRequest: RoutesCreateOutputRequest, _options?: Configuration): Promise<ModelsOutput> {
-        const result = this.api.v1OrganizationIdOutputsPost(organizationId, routesCreateOutputRequest, _options);
+    public v1OrganizationIdOutputsPost(organizationId: string, routesCreateOutputRequest: RoutesCreateOutputRequest, _options?: PromiseConfigurationOptions): Promise<ModelsOutput> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdOutputsPost(organizationId, routesCreateOutputRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1115,8 +1980,20 @@ export class PromiseOrganizationOutputsApi {
      * @param routesV2UpdateOutputRequest Output configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
-        const result = this.api.v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, _options);
+    public v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -1128,8 +2005,20 @@ export class PromiseOrganizationOutputsApi {
      * @param routesV2UpdateOutputRequest Output configuration update
      * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdOutputsOutputIdPatch(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<ModelsOutput> {
-        const result = this.api.v2OrganizationIdOutputsOutputIdPatch(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, _options);
+    public v2OrganizationIdOutputsOutputIdPatch(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsOutput> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdOutputsOutputIdPatch(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -1140,8 +2029,20 @@ export class PromiseOrganizationOutputsApi {
      * @param routesV2CreateOutputRequest Output configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdOutputsPostWithHttpInfo(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
-        const result = this.api.v2OrganizationIdOutputsPostWithHttpInfo(organizationId, routesV2CreateOutputRequest, testConnection, _options);
+    public v2OrganizationIdOutputsPostWithHttpInfo(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdOutputsPostWithHttpInfo(organizationId, routesV2CreateOutputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -1152,8 +2053,20 @@ export class PromiseOrganizationOutputsApi {
      * @param routesV2CreateOutputRequest Output configuration
      * @param [testConnection] Test connection before creating the input
      */
-    public v2OrganizationIdOutputsPost(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, testConnection?: boolean, _options?: Configuration): Promise<ModelsOutput> {
-        const result = this.api.v2OrganizationIdOutputsPost(organizationId, routesV2CreateOutputRequest, testConnection, _options);
+    public v2OrganizationIdOutputsPost(organizationId: string, routesV2CreateOutputRequest: RoutesV2CreateOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsOutput> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdOutputsPost(organizationId, routesV2CreateOutputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -1163,8 +2076,20 @@ export class PromiseOrganizationOutputsApi {
      * @param organizationId Organization ID
      * @param body Output configuration to test
      */
-    public v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(organizationId: string, body: any, _options?: Configuration): Promise<HttpInfo<RoutesV2SuccessResponse>> {
-        const result = this.api.v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(organizationId, body, _options);
+    public v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(organizationId: string, body: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(organizationId, body, observableOptions);
         return result.toPromise();
     }
 
@@ -1174,8 +2099,20 @@ export class PromiseOrganizationOutputsApi {
      * @param organizationId Organization ID
      * @param body Output configuration to test
      */
-    public v2OrganizationIdOutputsTestConnectionPost(organizationId: string, body: any, _options?: Configuration): Promise<RoutesV2SuccessResponse> {
-        const result = this.api.v2OrganizationIdOutputsTestConnectionPost(organizationId, body, _options);
+    public v2OrganizationIdOutputsTestConnectionPost(organizationId: string, body: any, _options?: PromiseConfigurationOptions): Promise<RoutesV2SuccessResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdOutputsTestConnectionPost(organizationId, body, observableOptions);
         return result.toPromise();
     }
 
@@ -1206,8 +2143,20 @@ export class PromiseOrganizationQuotasApi {
      * @param [offset] Offset
      * @param [body]
      */
-    public v2OrganizationIdQuotasGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, body?: any, _options?: Configuration): Promise<HttpInfo<ModelsQuotaList>> {
-        const result = this.api.v2OrganizationIdQuotasGetWithHttpInfo(organizationId, limit, offset, body, _options);
+    public v2OrganizationIdQuotasGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsQuotaList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdQuotasGetWithHttpInfo(organizationId, limit, offset, body, observableOptions);
         return result.toPromise();
     }
 
@@ -1219,8 +2168,20 @@ export class PromiseOrganizationQuotasApi {
      * @param [offset] Offset
      * @param [body]
      */
-    public v2OrganizationIdQuotasGet(organizationId: string, limit?: number, offset?: number, body?: any, _options?: Configuration): Promise<ModelsQuotaList> {
-        const result = this.api.v2OrganizationIdQuotasGet(organizationId, limit, offset, body, _options);
+    public v2OrganizationIdQuotasGet(organizationId: string, limit?: number, offset?: number, body?: any, _options?: PromiseConfigurationOptions): Promise<ModelsQuotaList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdQuotasGet(organizationId, limit, offset, body, observableOptions);
         return result.toPromise();
     }
 
@@ -1250,8 +2211,20 @@ export class PromiseOrganizationTransformsApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v1OrganizationIdTransformsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<HttpInfo<ModelsTransformList>> {
-        const result = this.api.v1OrganizationIdTransformsGetWithHttpInfo(organizationId, limit, offset, _options);
+    public v1OrganizationIdTransformsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsTransformList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdTransformsGetWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -1262,8 +2235,20 @@ export class PromiseOrganizationTransformsApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v1OrganizationIdTransformsGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<ModelsTransformList> {
-        const result = this.api.v1OrganizationIdTransformsGet(organizationId, limit, offset, _options);
+    public v1OrganizationIdTransformsGet(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsTransformList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdTransformsGet(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -1273,8 +2258,20 @@ export class PromiseOrganizationTransformsApi {
      * @param organizationId Organization ID
      * @param routesCreateTransformRequest Request body for creating a transform
      */
-    public v1OrganizationIdTransformsPostWithHttpInfo(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: Configuration): Promise<HttpInfo<ModelsTransform>> {
-        const result = this.api.v1OrganizationIdTransformsPostWithHttpInfo(organizationId, routesCreateTransformRequest, _options);
+    public v1OrganizationIdTransformsPostWithHttpInfo(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsTransform>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdTransformsPostWithHttpInfo(organizationId, routesCreateTransformRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1284,8 +2281,20 @@ export class PromiseOrganizationTransformsApi {
      * @param organizationId Organization ID
      * @param routesCreateTransformRequest Request body for creating a transform
      */
-    public v1OrganizationIdTransformsPost(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: Configuration): Promise<ModelsTransform> {
-        const result = this.api.v1OrganizationIdTransformsPost(organizationId, routesCreateTransformRequest, _options);
+    public v1OrganizationIdTransformsPost(organizationId: string, routesCreateTransformRequest: RoutesCreateTransformRequest, _options?: PromiseConfigurationOptions): Promise<ModelsTransform> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdTransformsPost(organizationId, routesCreateTransformRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1295,8 +2304,20 @@ export class PromiseOrganizationTransformsApi {
      * @param organizationId Organization ID
      * @param transformId Transform ID
      */
-    public v1OrganizationIdTransformsTransformIdDeleteWithHttpInfo(organizationId: string, transformId: string, _options?: Configuration): Promise<HttpInfo<any>> {
-        const result = this.api.v1OrganizationIdTransformsTransformIdDeleteWithHttpInfo(organizationId, transformId, _options);
+    public v1OrganizationIdTransformsTransformIdDeleteWithHttpInfo(organizationId: string, transformId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<any>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdTransformsTransformIdDeleteWithHttpInfo(organizationId, transformId, observableOptions);
         return result.toPromise();
     }
 
@@ -1306,8 +2327,20 @@ export class PromiseOrganizationTransformsApi {
      * @param organizationId Organization ID
      * @param transformId Transform ID
      */
-    public v1OrganizationIdTransformsTransformIdDelete(organizationId: string, transformId: string, _options?: Configuration): Promise<any> {
-        const result = this.api.v1OrganizationIdTransformsTransformIdDelete(organizationId, transformId, _options);
+    public v1OrganizationIdTransformsTransformIdDelete(organizationId: string, transformId: string, _options?: PromiseConfigurationOptions): Promise<any> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdTransformsTransformIdDelete(organizationId, transformId, observableOptions);
         return result.toPromise();
     }
 
@@ -1317,8 +2350,20 @@ export class PromiseOrganizationTransformsApi {
      * @param transformId Transform ID
      * @param organizationId Organization ID
      */
-    public v1OrganizationIdTransformsTransformIdGetWithHttpInfo(transformId: string, organizationId: string, _options?: Configuration): Promise<HttpInfo<RoutesGetTransformResponse>> {
-        const result = this.api.v1OrganizationIdTransformsTransformIdGetWithHttpInfo(transformId, organizationId, _options);
+    public v1OrganizationIdTransformsTransformIdGetWithHttpInfo(transformId: string, organizationId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesGetTransformResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdTransformsTransformIdGetWithHttpInfo(transformId, organizationId, observableOptions);
         return result.toPromise();
     }
 
@@ -1328,8 +2373,20 @@ export class PromiseOrganizationTransformsApi {
      * @param transformId Transform ID
      * @param organizationId Organization ID
      */
-    public v1OrganizationIdTransformsTransformIdGet(transformId: string, organizationId: string, _options?: Configuration): Promise<RoutesGetTransformResponse> {
-        const result = this.api.v1OrganizationIdTransformsTransformIdGet(transformId, organizationId, _options);
+    public v1OrganizationIdTransformsTransformIdGet(transformId: string, organizationId: string, _options?: PromiseConfigurationOptions): Promise<RoutesGetTransformResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdTransformsTransformIdGet(transformId, organizationId, observableOptions);
         return result.toPromise();
     }
 
@@ -1340,8 +2397,20 @@ export class PromiseOrganizationTransformsApi {
      * @param transformId Transform ID
      * @param routesUpdateTransformRequest Request body for updating a transform
      */
-    public v1OrganizationIdTransformsTransformIdPatchWithHttpInfo(organizationId: string, transformId: string, routesUpdateTransformRequest: RoutesUpdateTransformRequest, _options?: Configuration): Promise<HttpInfo<ModelsTransform>> {
-        const result = this.api.v1OrganizationIdTransformsTransformIdPatchWithHttpInfo(organizationId, transformId, routesUpdateTransformRequest, _options);
+    public v1OrganizationIdTransformsTransformIdPatchWithHttpInfo(organizationId: string, transformId: string, routesUpdateTransformRequest: RoutesUpdateTransformRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsTransform>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdTransformsTransformIdPatchWithHttpInfo(organizationId, transformId, routesUpdateTransformRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1352,8 +2421,20 @@ export class PromiseOrganizationTransformsApi {
      * @param transformId Transform ID
      * @param routesUpdateTransformRequest Request body for updating a transform
      */
-    public v1OrganizationIdTransformsTransformIdPatch(organizationId: string, transformId: string, routesUpdateTransformRequest: RoutesUpdateTransformRequest, _options?: Configuration): Promise<ModelsTransform> {
-        const result = this.api.v1OrganizationIdTransformsTransformIdPatch(organizationId, transformId, routesUpdateTransformRequest, _options);
+    public v1OrganizationIdTransformsTransformIdPatch(organizationId: string, transformId: string, routesUpdateTransformRequest: RoutesUpdateTransformRequest, _options?: PromiseConfigurationOptions): Promise<ModelsTransform> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdTransformsTransformIdPatch(organizationId, transformId, routesUpdateTransformRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1383,8 +2464,20 @@ export class PromiseOrganizationUsersApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v1OrganizationIdUsersGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<HttpInfo<ModelsOrganizationUserList>> {
-        const result = this.api.v1OrganizationIdUsersGetWithHttpInfo(organizationId, limit, offset, _options);
+    public v1OrganizationIdUsersGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOrganizationUserList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdUsersGetWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -1395,8 +2488,20 @@ export class PromiseOrganizationUsersApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v1OrganizationIdUsersGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<ModelsOrganizationUserList> {
-        const result = this.api.v1OrganizationIdUsersGet(organizationId, limit, offset, _options);
+    public v1OrganizationIdUsersGet(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsOrganizationUserList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdUsersGet(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -1406,8 +2511,20 @@ export class PromiseOrganizationUsersApi {
      * @param organizationId organization ID
      * @param routesAddUserToOrganizationRequest Request body for adding a user to an organization
      */
-    public v1OrganizationIdUsersPostWithHttpInfo(organizationId: string, routesAddUserToOrganizationRequest: RoutesAddUserToOrganizationRequest, _options?: Configuration): Promise<HttpInfo<ModelsOrganizationUser>> {
-        const result = this.api.v1OrganizationIdUsersPostWithHttpInfo(organizationId, routesAddUserToOrganizationRequest, _options);
+    public v1OrganizationIdUsersPostWithHttpInfo(organizationId: string, routesAddUserToOrganizationRequest: RoutesAddUserToOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOrganizationUser>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdUsersPostWithHttpInfo(organizationId, routesAddUserToOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1417,8 +2534,20 @@ export class PromiseOrganizationUsersApi {
      * @param organizationId organization ID
      * @param routesAddUserToOrganizationRequest Request body for adding a user to an organization
      */
-    public v1OrganizationIdUsersPost(organizationId: string, routesAddUserToOrganizationRequest: RoutesAddUserToOrganizationRequest, _options?: Configuration): Promise<ModelsOrganizationUser> {
-        const result = this.api.v1OrganizationIdUsersPost(organizationId, routesAddUserToOrganizationRequest, _options);
+    public v1OrganizationIdUsersPost(organizationId: string, routesAddUserToOrganizationRequest: RoutesAddUserToOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<ModelsOrganizationUser> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdUsersPost(organizationId, routesAddUserToOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1428,8 +2557,20 @@ export class PromiseOrganizationUsersApi {
      * @param organizationId Organization ID
      * @param userId User ID
      */
-    public v1OrganizationIdUsersUserIdDeleteWithHttpInfo(organizationId: string, userId: string, _options?: Configuration): Promise<HttpInfo<any>> {
-        const result = this.api.v1OrganizationIdUsersUserIdDeleteWithHttpInfo(organizationId, userId, _options);
+    public v1OrganizationIdUsersUserIdDeleteWithHttpInfo(organizationId: string, userId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<any>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdUsersUserIdDeleteWithHttpInfo(organizationId, userId, observableOptions);
         return result.toPromise();
     }
 
@@ -1439,8 +2580,20 @@ export class PromiseOrganizationUsersApi {
      * @param organizationId Organization ID
      * @param userId User ID
      */
-    public v1OrganizationIdUsersUserIdDelete(organizationId: string, userId: string, _options?: Configuration): Promise<any> {
-        const result = this.api.v1OrganizationIdUsersUserIdDelete(organizationId, userId, _options);
+    public v1OrganizationIdUsersUserIdDelete(organizationId: string, userId: string, _options?: PromiseConfigurationOptions): Promise<any> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdUsersUserIdDelete(organizationId, userId, observableOptions);
         return result.toPromise();
     }
 
@@ -1451,8 +2604,20 @@ export class PromiseOrganizationUsersApi {
      * @param userId User ID
      * @param routesUpdateUserInOrganizationRequest Request body for updating a user in an organization
      */
-    public v1OrganizationIdUsersUserIdPatchWithHttpInfo(organizationId: string, userId: string, routesUpdateUserInOrganizationRequest: RoutesUpdateUserInOrganizationRequest, _options?: Configuration): Promise<HttpInfo<ModelsOrganizationUser>> {
-        const result = this.api.v1OrganizationIdUsersUserIdPatchWithHttpInfo(organizationId, userId, routesUpdateUserInOrganizationRequest, _options);
+    public v1OrganizationIdUsersUserIdPatchWithHttpInfo(organizationId: string, userId: string, routesUpdateUserInOrganizationRequest: RoutesUpdateUserInOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOrganizationUser>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdUsersUserIdPatchWithHttpInfo(organizationId, userId, routesUpdateUserInOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1463,8 +2628,20 @@ export class PromiseOrganizationUsersApi {
      * @param userId User ID
      * @param routesUpdateUserInOrganizationRequest Request body for updating a user in an organization
      */
-    public v1OrganizationIdUsersUserIdPatch(organizationId: string, userId: string, routesUpdateUserInOrganizationRequest: RoutesUpdateUserInOrganizationRequest, _options?: Configuration): Promise<ModelsOrganizationUser> {
-        const result = this.api.v1OrganizationIdUsersUserIdPatch(organizationId, userId, routesUpdateUserInOrganizationRequest, _options);
+    public v1OrganizationIdUsersUserIdPatch(organizationId: string, userId: string, routesUpdateUserInOrganizationRequest: RoutesUpdateUserInOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<ModelsOrganizationUser> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdUsersUserIdPatch(organizationId, userId, routesUpdateUserInOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1493,8 +2670,20 @@ export class PromiseOrganizationsApi {
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
      */
-    public v1OrganizationsGetWithHttpInfo(limit?: number, offset?: number, _options?: Configuration): Promise<HttpInfo<ModelsOrganizationList>> {
-        const result = this.api.v1OrganizationsGetWithHttpInfo(limit, offset, _options);
+    public v1OrganizationsGetWithHttpInfo(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOrganizationList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationsGetWithHttpInfo(limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -1504,8 +2693,20 @@ export class PromiseOrganizationsApi {
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
      */
-    public v1OrganizationsGet(limit?: number, offset?: number, _options?: Configuration): Promise<ModelsOrganizationList> {
-        const result = this.api.v1OrganizationsGet(limit, offset, _options);
+    public v1OrganizationsGet(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsOrganizationList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationsGet(limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -1514,8 +2715,20 @@ export class PromiseOrganizationsApi {
      * Delete organization
      * @param organizationId Organization ID
      */
-    public v1OrganizationsOrganizationIdDeleteWithHttpInfo(organizationId: string, _options?: Configuration): Promise<HttpInfo<any>> {
-        const result = this.api.v1OrganizationsOrganizationIdDeleteWithHttpInfo(organizationId, _options);
+    public v1OrganizationsOrganizationIdDeleteWithHttpInfo(organizationId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<any>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationsOrganizationIdDeleteWithHttpInfo(organizationId, observableOptions);
         return result.toPromise();
     }
 
@@ -1524,8 +2737,20 @@ export class PromiseOrganizationsApi {
      * Delete organization
      * @param organizationId Organization ID
      */
-    public v1OrganizationsOrganizationIdDelete(organizationId: string, _options?: Configuration): Promise<any> {
-        const result = this.api.v1OrganizationsOrganizationIdDelete(organizationId, _options);
+    public v1OrganizationsOrganizationIdDelete(organizationId: string, _options?: PromiseConfigurationOptions): Promise<any> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationsOrganizationIdDelete(organizationId, observableOptions);
         return result.toPromise();
     }
 
@@ -1535,8 +2760,20 @@ export class PromiseOrganizationsApi {
      * @param organizationId Organization ID
      * @param routesUpdateOrganizationRequest Request body for updating an organization
      */
-    public v1OrganizationsOrganizationIdPatchWithHttpInfo(organizationId: string, routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest, _options?: Configuration): Promise<HttpInfo<ModelsOrganization>> {
-        const result = this.api.v1OrganizationsOrganizationIdPatchWithHttpInfo(organizationId, routesUpdateOrganizationRequest, _options);
+    public v1OrganizationsOrganizationIdPatchWithHttpInfo(organizationId: string, routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOrganization>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationsOrganizationIdPatchWithHttpInfo(organizationId, routesUpdateOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1546,8 +2783,20 @@ export class PromiseOrganizationsApi {
      * @param organizationId Organization ID
      * @param routesUpdateOrganizationRequest Request body for updating an organization
      */
-    public v1OrganizationsOrganizationIdPatch(organizationId: string, routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest, _options?: Configuration): Promise<ModelsOrganization> {
-        const result = this.api.v1OrganizationsOrganizationIdPatch(organizationId, routesUpdateOrganizationRequest, _options);
+    public v1OrganizationsOrganizationIdPatch(organizationId: string, routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<ModelsOrganization> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationsOrganizationIdPatch(organizationId, routesUpdateOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1556,8 +2805,20 @@ export class PromiseOrganizationsApi {
      * Create organization
      * @param routesCreateOrganizationRequest Request body for creating an organization
      */
-    public v1OrganizationsPostWithHttpInfo(routesCreateOrganizationRequest: RoutesCreateOrganizationRequest, _options?: Configuration): Promise<HttpInfo<ModelsOrganization>> {
-        const result = this.api.v1OrganizationsPostWithHttpInfo(routesCreateOrganizationRequest, _options);
+    public v1OrganizationsPostWithHttpInfo(routesCreateOrganizationRequest: RoutesCreateOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOrganization>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationsPostWithHttpInfo(routesCreateOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1566,8 +2827,20 @@ export class PromiseOrganizationsApi {
      * Create organization
      * @param routesCreateOrganizationRequest Request body for creating an organization
      */
-    public v1OrganizationsPost(routesCreateOrganizationRequest: RoutesCreateOrganizationRequest, _options?: Configuration): Promise<ModelsOrganization> {
-        const result = this.api.v1OrganizationsPost(routesCreateOrganizationRequest, _options);
+    public v1OrganizationsPost(routesCreateOrganizationRequest: RoutesCreateOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<ModelsOrganization> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationsPost(routesCreateOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1594,8 +2867,20 @@ export class PromiseOutputsApi {
      * List outputs
      * List outputs
      */
-    public v1OutputsGetWithHttpInfo(_options?: Configuration): Promise<HttpInfo<Array<OutputsConnectorMeta>>> {
-        const result = this.api.v1OutputsGetWithHttpInfo(_options);
+    public v1OutputsGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<OutputsConnectorMeta>>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OutputsGetWithHttpInfo(observableOptions);
         return result.toPromise();
     }
 
@@ -1603,8 +2888,20 @@ export class PromiseOutputsApi {
      * List outputs
      * List outputs
      */
-    public v1OutputsGet(_options?: Configuration): Promise<Array<OutputsConnectorMeta>> {
-        const result = this.api.v1OutputsGet(_options);
+    public v1OutputsGet(_options?: PromiseConfigurationOptions): Promise<Array<OutputsConnectorMeta>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OutputsGet(observableOptions);
         return result.toPromise();
     }
 
@@ -1613,8 +2910,20 @@ export class PromiseOutputsApi {
      * Get output config meta
      * @param outputTypeId Output type ID
      */
-    public v1OutputsOutputTypeIdGetWithHttpInfo(outputTypeId: string, _options?: Configuration): Promise<HttpInfo<ModelsConnectorMeta>> {
-        const result = this.api.v1OutputsOutputTypeIdGetWithHttpInfo(outputTypeId, _options);
+    public v1OutputsOutputTypeIdGetWithHttpInfo(outputTypeId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnectorMeta>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OutputsOutputTypeIdGetWithHttpInfo(outputTypeId, observableOptions);
         return result.toPromise();
     }
 
@@ -1623,8 +2932,20 @@ export class PromiseOutputsApi {
      * Get output config meta
      * @param outputTypeId Output type ID
      */
-    public v1OutputsOutputTypeIdGet(outputTypeId: string, _options?: Configuration): Promise<ModelsConnectorMeta> {
-        const result = this.api.v1OutputsOutputTypeIdGet(outputTypeId, _options);
+    public v1OutputsOutputTypeIdGet(outputTypeId: string, _options?: PromiseConfigurationOptions): Promise<ModelsConnectorMeta> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OutputsOutputTypeIdGet(outputTypeId, observableOptions);
         return result.toPromise();
     }
 
@@ -1654,8 +2975,20 @@ export class PromisePipelinesApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v1OrganizationIdPipelinesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<HttpInfo<ModelsPipelineList>> {
-        const result = this.api.v1OrganizationIdPipelinesGetWithHttpInfo(organizationId, limit, offset, _options);
+    public v1OrganizationIdPipelinesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdPipelinesGetWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -1666,8 +2999,20 @@ export class PromisePipelinesApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v1OrganizationIdPipelinesGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<ModelsPipelineList> {
-        const result = this.api.v1OrganizationIdPipelinesGet(organizationId, limit, offset, _options);
+    public v1OrganizationIdPipelinesGet(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdPipelinesGet(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -1677,8 +3022,20 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      */
-    public v1OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(organizationId: string, pipelineId: string, _options?: Configuration): Promise<HttpInfo<string>> {
-        const result = this.api.v1OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(organizationId, pipelineId, _options);
+    public v1OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(organizationId, pipelineId, observableOptions);
         return result.toPromise();
     }
 
@@ -1688,8 +3045,20 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      */
-    public v1OrganizationIdPipelinesPipelineIdDelete(organizationId: string, pipelineId: string, _options?: Configuration): Promise<string> {
-        const result = this.api.v1OrganizationIdPipelinesPipelineIdDelete(organizationId, pipelineId, _options);
+    public v1OrganizationIdPipelinesPipelineIdDelete(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdPipelinesPipelineIdDelete(organizationId, pipelineId, observableOptions);
         return result.toPromise();
     }
 
@@ -1699,8 +3068,20 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      */
-    public v1OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId: string, pipelineId: string, _options?: Configuration): Promise<HttpInfo<ModelsPipeline>> {
-        const result = this.api.v1OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, _options);
+    public v1OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipeline>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, observableOptions);
         return result.toPromise();
     }
 
@@ -1710,8 +3091,20 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      */
-    public v1OrganizationIdPipelinesPipelineIdGet(organizationId: string, pipelineId: string, _options?: Configuration): Promise<ModelsPipeline> {
-        const result = this.api.v1OrganizationIdPipelinesPipelineIdGet(organizationId, pipelineId, _options);
+    public v1OrganizationIdPipelinesPipelineIdGet(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipeline> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdPipelinesPipelineIdGet(organizationId, pipelineId, observableOptions);
         return result.toPromise();
     }
 
@@ -1722,8 +3115,20 @@ export class PromisePipelinesApi {
      * @param pipelineId Pipeline ID
      * @param routesUpdatePipelineRequest Request body for updating a pipeline
      */
-    public v1OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(organizationId: string, pipelineId: string, routesUpdatePipelineRequest: RoutesUpdatePipelineRequest, _options?: Configuration): Promise<HttpInfo<ModelsPipeline>> {
-        const result = this.api.v1OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(organizationId, pipelineId, routesUpdatePipelineRequest, _options);
+    public v1OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(organizationId: string, pipelineId: string, routesUpdatePipelineRequest: RoutesUpdatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipeline>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(organizationId, pipelineId, routesUpdatePipelineRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1734,8 +3139,20 @@ export class PromisePipelinesApi {
      * @param pipelineId Pipeline ID
      * @param routesUpdatePipelineRequest Request body for updating a pipeline
      */
-    public v1OrganizationIdPipelinesPipelineIdPatch(organizationId: string, pipelineId: string, routesUpdatePipelineRequest: RoutesUpdatePipelineRequest, _options?: Configuration): Promise<ModelsPipeline> {
-        const result = this.api.v1OrganizationIdPipelinesPipelineIdPatch(organizationId, pipelineId, routesUpdatePipelineRequest, _options);
+    public v1OrganizationIdPipelinesPipelineIdPatch(organizationId: string, pipelineId: string, routesUpdatePipelineRequest: RoutesUpdatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<ModelsPipeline> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdPipelinesPipelineIdPatch(organizationId, pipelineId, routesUpdatePipelineRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1746,8 +3163,20 @@ export class PromisePipelinesApi {
      * @param [start] ISO3339 start time, default 24 hours ago
      * @param [end] ISO3339 end time, default now
      */
-    public v2OrganizationIdPipelineSummaryGetWithHttpInfo(organizationId: string, start?: string, end?: string, _options?: Configuration): Promise<HttpInfo<RoutesV2GetOrganizationSummaryResponse>> {
-        const result = this.api.v2OrganizationIdPipelineSummaryGetWithHttpInfo(organizationId, start, end, _options);
+    public v2OrganizationIdPipelineSummaryGetWithHttpInfo(organizationId: string, start?: string, end?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2GetOrganizationSummaryResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelineSummaryGetWithHttpInfo(organizationId, start, end, observableOptions);
         return result.toPromise();
     }
 
@@ -1758,8 +3187,20 @@ export class PromisePipelinesApi {
      * @param [start] ISO3339 start time, default 24 hours ago
      * @param [end] ISO3339 end time, default now
      */
-    public v2OrganizationIdPipelineSummaryGet(organizationId: string, start?: string, end?: string, _options?: Configuration): Promise<RoutesV2GetOrganizationSummaryResponse> {
-        const result = this.api.v2OrganizationIdPipelineSummaryGet(organizationId, start, end, _options);
+    public v2OrganizationIdPipelineSummaryGet(organizationId: string, start?: string, end?: string, _options?: PromiseConfigurationOptions): Promise<RoutesV2GetOrganizationSummaryResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelineSummaryGet(organizationId, start, end, observableOptions);
         return result.toPromise();
     }
 
@@ -1770,8 +3211,20 @@ export class PromisePipelinesApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v2OrganizationIdPipelinesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<HttpInfo<ModelsPipelineList>> {
-        const result = this.api.v2OrganizationIdPipelinesGetWithHttpInfo(organizationId, limit, offset, _options);
+    public v2OrganizationIdPipelinesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesGetWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -1782,8 +3235,20 @@ export class PromisePipelinesApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v2OrganizationIdPipelinesGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<ModelsPipelineList> {
-        const result = this.api.v2OrganizationIdPipelinesGet(organizationId, limit, offset, _options);
+    public v2OrganizationIdPipelinesGet(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesGet(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -1793,8 +3258,20 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      */
-    public v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(organizationId: string, pipelineId: string, _options?: Configuration): Promise<HttpInfo<string>> {
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(organizationId, pipelineId, _options);
+    public v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(organizationId, pipelineId, observableOptions);
         return result.toPromise();
     }
 
@@ -1804,8 +3281,20 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      */
-    public v2OrganizationIdPipelinesPipelineIdDelete(organizationId: string, pipelineId: string, _options?: Configuration): Promise<string> {
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdDelete(organizationId, pipelineId, _options);
+    public v2OrganizationIdPipelinesPipelineIdDelete(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdDelete(organizationId, pipelineId, observableOptions);
         return result.toPromise();
     }
 
@@ -1815,8 +3304,20 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      */
-    public v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId: string, pipelineId: string, _options?: Configuration): Promise<HttpInfo<ModelsPipelineConfigV2>> {
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, _options);
+    public v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, observableOptions);
         return result.toPromise();
     }
 
@@ -1826,8 +3327,20 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      */
-    public v2OrganizationIdPipelinesPipelineIdGet(organizationId: string, pipelineId: string, _options?: Configuration): Promise<ModelsPipelineConfigV2> {
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdGet(organizationId, pipelineId, _options);
+    public v2OrganizationIdPipelinesPipelineIdGet(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineConfigV2> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdGet(organizationId, pipelineId, observableOptions);
         return result.toPromise();
     }
 
@@ -1842,8 +3355,20 @@ export class PromisePipelinesApi {
      * @param [end] ISO3339 end time, default now
      * @param [resolution] Resolution of the data, default 15m
      */
-    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: Configuration): Promise<HttpInfo<ModelsPipelineNodeMetrics>> {
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId, pipelineId, nodeId, metric, start, end, resolution, _options);
+    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineNodeMetrics>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId, pipelineId, nodeId, metric, start, end, resolution, observableOptions);
         return result.toPromise();
     }
 
@@ -1858,8 +3383,20 @@ export class PromisePipelinesApi {
      * @param [end] ISO3339 end time, default now
      * @param [resolution] Resolution of the data, default 15m
      */
-    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: Configuration): Promise<ModelsPipelineNodeMetrics> {
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId, pipelineId, nodeId, metric, start, end, resolution, _options);
+    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineNodeMetrics> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId, pipelineId, nodeId, metric, start, end, resolution, observableOptions);
         return result.toPromise();
     }
 
@@ -1870,8 +3407,20 @@ export class PromisePipelinesApi {
      * @param pipelineId Pipeline ID
      * @param routesV2UpdatePipelineRequest Request body for updating a pipeline
      */
-    public v2OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(organizationId: string, pipelineId: string, routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest, _options?: Configuration): Promise<HttpInfo<ModelsPipelineConfigV2>> {
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(organizationId, pipelineId, routesV2UpdatePipelineRequest, _options);
+    public v2OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(organizationId: string, pipelineId: string, routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(organizationId, pipelineId, routesV2UpdatePipelineRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1882,8 +3431,20 @@ export class PromisePipelinesApi {
      * @param pipelineId Pipeline ID
      * @param routesV2UpdatePipelineRequest Request body for updating a pipeline
      */
-    public v2OrganizationIdPipelinesPipelineIdPatch(organizationId: string, pipelineId: string, routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest, _options?: Configuration): Promise<ModelsPipelineConfigV2> {
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdPatch(organizationId, pipelineId, routesV2UpdatePipelineRequest, _options);
+    public v2OrganizationIdPipelinesPipelineIdPatch(organizationId: string, pipelineId: string, routesV2UpdatePipelineRequest: RoutesV2UpdatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineConfigV2> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdPatch(organizationId, pipelineId, routesV2UpdatePipelineRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1896,8 +3457,20 @@ export class PromisePipelinesApi {
      * @param [start] ISO3339 start time, default 24 hours ago
      * @param [end] ISO3339 end time, default now
      */
-    public v2OrganizationIdPipelinesPipelineIdStatusGetWithHttpInfo(organizationId: string, pipelineId: string, metrics?: Array<string>, start?: string, end?: string, _options?: Configuration): Promise<HttpInfo<ModelsPipelineStatus>> {
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdStatusGetWithHttpInfo(organizationId, pipelineId, metrics, start, end, _options);
+    public v2OrganizationIdPipelinesPipelineIdStatusGetWithHttpInfo(organizationId: string, pipelineId: string, metrics?: Array<string>, start?: string, end?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineStatus>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdStatusGetWithHttpInfo(organizationId, pipelineId, metrics, start, end, observableOptions);
         return result.toPromise();
     }
 
@@ -1910,8 +3483,20 @@ export class PromisePipelinesApi {
      * @param [start] ISO3339 start time, default 24 hours ago
      * @param [end] ISO3339 end time, default now
      */
-    public v2OrganizationIdPipelinesPipelineIdStatusGet(organizationId: string, pipelineId: string, metrics?: Array<string>, start?: string, end?: string, _options?: Configuration): Promise<ModelsPipelineStatus> {
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdStatusGet(organizationId, pipelineId, metrics, start, end, _options);
+    public v2OrganizationIdPipelinesPipelineIdStatusGet(organizationId: string, pipelineId: string, metrics?: Array<string>, start?: string, end?: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineStatus> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdStatusGet(organizationId, pipelineId, metrics, start, end, observableOptions);
         return result.toPromise();
     }
 
@@ -1925,8 +3510,20 @@ export class PromisePipelinesApi {
      * @param [start] ISO3339 start time, default 24 hours ago
      * @param [end] ISO3339 end time, default now
      */
-    public v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, metrics?: Array<string>, start?: string, end?: string, _options?: Configuration): Promise<HttpInfo<ModelsPipelineNodeStatus>> {
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetWithHttpInfo(organizationId, pipelineId, nodeId, metrics, start, end, _options);
+    public v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, metrics?: Array<string>, start?: string, end?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineNodeStatus>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetWithHttpInfo(organizationId, pipelineId, nodeId, metrics, start, end, observableOptions);
         return result.toPromise();
     }
 
@@ -1940,8 +3537,20 @@ export class PromisePipelinesApi {
      * @param [start] ISO3339 start time, default 24 hours ago
      * @param [end] ISO3339 end time, default now
      */
-    public v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(organizationId: string, pipelineId: string, nodeId: string, metrics?: Array<string>, start?: string, end?: string, _options?: Configuration): Promise<ModelsPipelineNodeStatus> {
-        const result = this.api.v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(organizationId, pipelineId, nodeId, metrics, start, end, _options);
+    public v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(organizationId: string, pipelineId: string, nodeId: string, metrics?: Array<string>, start?: string, end?: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineNodeStatus> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(organizationId, pipelineId, nodeId, metrics, start, end, observableOptions);
         return result.toPromise();
     }
 
@@ -1951,8 +3560,20 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param routesV2CreatePipelineRequest Request body for creating a pipeline
      */
-    public v2OrganizationIdPipelinesPostWithHttpInfo(organizationId: string, routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest, _options?: Configuration): Promise<HttpInfo<ModelsPipelineConfigV2>> {
-        const result = this.api.v2OrganizationIdPipelinesPostWithHttpInfo(organizationId, routesV2CreatePipelineRequest, _options);
+    public v2OrganizationIdPipelinesPostWithHttpInfo(organizationId: string, routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPostWithHttpInfo(organizationId, routesV2CreatePipelineRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1962,8 +3583,20 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param routesV2CreatePipelineRequest Request body for creating a pipeline
      */
-    public v2OrganizationIdPipelinesPost(organizationId: string, routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest, _options?: Configuration): Promise<ModelsPipelineConfigV2> {
-        const result = this.api.v2OrganizationIdPipelinesPost(organizationId, routesV2CreatePipelineRequest, _options);
+    public v2OrganizationIdPipelinesPost(organizationId: string, routesV2CreatePipelineRequest: RoutesV2CreatePipelineRequest, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineConfigV2> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesPost(organizationId, routesV2CreatePipelineRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -1976,8 +3609,20 @@ export class PromisePipelinesApi {
      * @param [start] Start time (RFC3339 format) for status metrics (default: 24 hours ago)
      * @param [end] End time (RFC3339 format) for status metrics (default: now)
      */
-    public v2OrganizationIdPipelinesStatusesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, start?: string, end?: string, _options?: Configuration): Promise<HttpInfo<Array<RoutesV2PipelineWithStatus>>> {
-        const result = this.api.v2OrganizationIdPipelinesStatusesGetWithHttpInfo(organizationId, limit, offset, start, end, _options);
+    public v2OrganizationIdPipelinesStatusesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, start?: string, end?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<RoutesV2PipelineWithStatus>>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesStatusesGetWithHttpInfo(organizationId, limit, offset, start, end, observableOptions);
         return result.toPromise();
     }
 
@@ -1990,8 +3635,20 @@ export class PromisePipelinesApi {
      * @param [start] Start time (RFC3339 format) for status metrics (default: 24 hours ago)
      * @param [end] End time (RFC3339 format) for status metrics (default: now)
      */
-    public v2OrganizationIdPipelinesStatusesGet(organizationId: string, limit?: number, offset?: number, start?: string, end?: string, _options?: Configuration): Promise<Array<RoutesV2PipelineWithStatus>> {
-        const result = this.api.v2OrganizationIdPipelinesStatusesGet(organizationId, limit, offset, start, end, _options);
+    public v2OrganizationIdPipelinesStatusesGet(organizationId: string, limit?: number, offset?: number, start?: string, end?: string, _options?: PromiseConfigurationOptions): Promise<Array<RoutesV2PipelineWithStatus>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesStatusesGet(organizationId, limit, offset, start, end, observableOptions);
         return result.toPromise();
     }
 
@@ -2021,8 +3678,20 @@ export class PromiseRolesApi {
      * @param [limit] Limit the number of roles returned (default: 10)
      * @param [offset] Offset the roles returned (default: 0)
      */
-    public v1OrganizationIdRolesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<HttpInfo<ModelsRoleList>> {
-        const result = this.api.v1OrganizationIdRolesGetWithHttpInfo(organizationId, limit, offset, _options);
+    public v1OrganizationIdRolesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsRoleList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdRolesGetWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -2033,8 +3702,20 @@ export class PromiseRolesApi {
      * @param [limit] Limit the number of roles returned (default: 10)
      * @param [offset] Offset the roles returned (default: 0)
      */
-    public v1OrganizationIdRolesGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<ModelsRoleList> {
-        const result = this.api.v1OrganizationIdRolesGet(organizationId, limit, offset, _options);
+    public v1OrganizationIdRolesGet(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsRoleList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdRolesGet(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -2044,8 +3725,20 @@ export class PromiseRolesApi {
      * @param organizationId Organization ID
      * @param routesCreateRoleRequest Request body for creating a role
      */
-    public v1OrganizationIdRolesPostWithHttpInfo(organizationId: string, routesCreateRoleRequest: RoutesCreateRoleRequest, _options?: Configuration): Promise<HttpInfo<ModelsRole>> {
-        const result = this.api.v1OrganizationIdRolesPostWithHttpInfo(organizationId, routesCreateRoleRequest, _options);
+    public v1OrganizationIdRolesPostWithHttpInfo(organizationId: string, routesCreateRoleRequest: RoutesCreateRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsRole>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdRolesPostWithHttpInfo(organizationId, routesCreateRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2055,8 +3748,20 @@ export class PromiseRolesApi {
      * @param organizationId Organization ID
      * @param routesCreateRoleRequest Request body for creating a role
      */
-    public v1OrganizationIdRolesPost(organizationId: string, routesCreateRoleRequest: RoutesCreateRoleRequest, _options?: Configuration): Promise<ModelsRole> {
-        const result = this.api.v1OrganizationIdRolesPost(organizationId, routesCreateRoleRequest, _options);
+    public v1OrganizationIdRolesPost(organizationId: string, routesCreateRoleRequest: RoutesCreateRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsRole> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdRolesPost(organizationId, routesCreateRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2066,8 +3771,20 @@ export class PromiseRolesApi {
      * @param organizationId Organization ID
      * @param roleId Role ID
      */
-    public v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(organizationId: string, roleId: string, _options?: Configuration): Promise<HttpInfo<any>> {
-        const result = this.api.v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(organizationId, roleId, _options);
+    public v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(organizationId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<any>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(organizationId, roleId, observableOptions);
         return result.toPromise();
     }
 
@@ -2077,8 +3794,20 @@ export class PromiseRolesApi {
      * @param organizationId Organization ID
      * @param roleId Role ID
      */
-    public v1OrganizationIdRolesRoleIdDelete(organizationId: string, roleId: string, _options?: Configuration): Promise<any> {
-        const result = this.api.v1OrganizationIdRolesRoleIdDelete(organizationId, roleId, _options);
+    public v1OrganizationIdRolesRoleIdDelete(organizationId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<any> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdRolesRoleIdDelete(organizationId, roleId, observableOptions);
         return result.toPromise();
     }
 
@@ -2088,8 +3817,20 @@ export class PromiseRolesApi {
      * @param organizationId Organization ID
      * @param roleId Role ID
      */
-    public v1OrganizationIdRolesRoleIdGetWithHttpInfo(organizationId: string, roleId: string, _options?: Configuration): Promise<HttpInfo<ModelsRole>> {
-        const result = this.api.v1OrganizationIdRolesRoleIdGetWithHttpInfo(organizationId, roleId, _options);
+    public v1OrganizationIdRolesRoleIdGetWithHttpInfo(organizationId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsRole>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdRolesRoleIdGetWithHttpInfo(organizationId, roleId, observableOptions);
         return result.toPromise();
     }
 
@@ -2099,8 +3840,20 @@ export class PromiseRolesApi {
      * @param organizationId Organization ID
      * @param roleId Role ID
      */
-    public v1OrganizationIdRolesRoleIdGet(organizationId: string, roleId: string, _options?: Configuration): Promise<ModelsRole> {
-        const result = this.api.v1OrganizationIdRolesRoleIdGet(organizationId, roleId, _options);
+    public v1OrganizationIdRolesRoleIdGet(organizationId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<ModelsRole> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdRolesRoleIdGet(organizationId, roleId, observableOptions);
         return result.toPromise();
     }
 
@@ -2111,8 +3864,20 @@ export class PromiseRolesApi {
      * @param roleId Role ID
      * @param routesUpdateRoleRequest Request body for updating a role
      */
-    public v1OrganizationIdRolesRoleIdPatchWithHttpInfo(organizationId: string, roleId: string, routesUpdateRoleRequest: RoutesUpdateRoleRequest, _options?: Configuration): Promise<HttpInfo<ModelsRole>> {
-        const result = this.api.v1OrganizationIdRolesRoleIdPatchWithHttpInfo(organizationId, roleId, routesUpdateRoleRequest, _options);
+    public v1OrganizationIdRolesRoleIdPatchWithHttpInfo(organizationId: string, roleId: string, routesUpdateRoleRequest: RoutesUpdateRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsRole>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdRolesRoleIdPatchWithHttpInfo(organizationId, roleId, routesUpdateRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2123,8 +3888,20 @@ export class PromiseRolesApi {
      * @param roleId Role ID
      * @param routesUpdateRoleRequest Request body for updating a role
      */
-    public v1OrganizationIdRolesRoleIdPatch(organizationId: string, roleId: string, routesUpdateRoleRequest: RoutesUpdateRoleRequest, _options?: Configuration): Promise<ModelsRole> {
-        const result = this.api.v1OrganizationIdRolesRoleIdPatch(organizationId, roleId, routesUpdateRoleRequest, _options);
+    public v1OrganizationIdRolesRoleIdPatch(organizationId: string, roleId: string, routesUpdateRoleRequest: RoutesUpdateRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsRole> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1OrganizationIdRolesRoleIdPatch(organizationId, roleId, routesUpdateRoleRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2152,8 +3929,20 @@ export class PromiseSandboxApi {
      * List available templates
      * @param [body]
      */
-    public v2SandboxTemplateGetWithHttpInfo(body?: any, _options?: Configuration): Promise<HttpInfo<RoutesV2ListTemplatesResponse>> {
-        const result = this.api.v2SandboxTemplateGetWithHttpInfo(body, _options);
+    public v2SandboxTemplateGetWithHttpInfo(body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2ListTemplatesResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2SandboxTemplateGetWithHttpInfo(body, observableOptions);
         return result.toPromise();
     }
 
@@ -2162,8 +3951,20 @@ export class PromiseSandboxApi {
      * List available templates
      * @param [body]
      */
-    public v2SandboxTemplateGet(body?: any, _options?: Configuration): Promise<RoutesV2ListTemplatesResponse> {
-        const result = this.api.v2SandboxTemplateGet(body, _options);
+    public v2SandboxTemplateGet(body?: any, _options?: PromiseConfigurationOptions): Promise<RoutesV2ListTemplatesResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2SandboxTemplateGet(body, observableOptions);
         return result.toPromise();
     }
 
@@ -2172,8 +3973,20 @@ export class PromiseSandboxApi {
      * Generate sample record
      * @param routesV2GenerateRecordRequest Record generation parameters
      */
-    public v2SandboxTemplatePostWithHttpInfo(routesV2GenerateRecordRequest: RoutesV2GenerateRecordRequest, _options?: Configuration): Promise<HttpInfo<RoutesV2GenerateRecordResponse>> {
-        const result = this.api.v2SandboxTemplatePostWithHttpInfo(routesV2GenerateRecordRequest, _options);
+    public v2SandboxTemplatePostWithHttpInfo(routesV2GenerateRecordRequest: RoutesV2GenerateRecordRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2GenerateRecordResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2SandboxTemplatePostWithHttpInfo(routesV2GenerateRecordRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2182,8 +3995,20 @@ export class PromiseSandboxApi {
      * Generate sample record
      * @param routesV2GenerateRecordRequest Record generation parameters
      */
-    public v2SandboxTemplatePost(routesV2GenerateRecordRequest: RoutesV2GenerateRecordRequest, _options?: Configuration): Promise<RoutesV2GenerateRecordResponse> {
-        const result = this.api.v2SandboxTemplatePost(routesV2GenerateRecordRequest, _options);
+    public v2SandboxTemplatePost(routesV2GenerateRecordRequest: RoutesV2GenerateRecordRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2GenerateRecordResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2SandboxTemplatePost(routesV2GenerateRecordRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2192,8 +4017,20 @@ export class PromiseSandboxApi {
      * Apply transformation to record
      * @param routesV2ApplyTransformationRequest Transform configuration and record
      */
-    public v2SandboxTransformPostWithHttpInfo(routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: Configuration): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
-        const result = this.api.v2SandboxTransformPostWithHttpInfo(routesV2ApplyTransformationRequest, _options);
+    public v2SandboxTransformPostWithHttpInfo(routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2SandboxTransformPostWithHttpInfo(routesV2ApplyTransformationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2202,8 +4039,20 @@ export class PromiseSandboxApi {
      * Apply transformation to record
      * @param routesV2ApplyTransformationRequest Transform configuration and record
      */
-    public v2SandboxTransformPost(routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: Configuration): Promise<RoutesV2ApplyTransformationResponse> {
-        const result = this.api.v2SandboxTransformPost(routesV2ApplyTransformationRequest, _options);
+    public v2SandboxTransformPost(routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2SandboxTransformPost(routesV2ApplyTransformationRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2233,8 +4082,20 @@ export class PromiseSecretsApi {
      * @param [limit] Limit number of results
      * @param [offset] Offset results
      */
-    public v2OrganizationIdSecretsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<HttpInfo<ModelsSecretWithComponentsList>> {
-        const result = this.api.v2OrganizationIdSecretsGetWithHttpInfo(organizationId, limit, offset, _options);
+    public v2OrganizationIdSecretsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsSecretWithComponentsList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdSecretsGetWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -2245,8 +4106,20 @@ export class PromiseSecretsApi {
      * @param [limit] Limit number of results
      * @param [offset] Offset results
      */
-    public v2OrganizationIdSecretsGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<ModelsSecretWithComponentsList> {
-        const result = this.api.v2OrganizationIdSecretsGet(organizationId, limit, offset, _options);
+    public v2OrganizationIdSecretsGet(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsSecretWithComponentsList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdSecretsGet(organizationId, limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -2256,8 +4129,20 @@ export class PromiseSecretsApi {
      * @param organizationId Organization ID
      * @param routesV2CreateOrUpdateSecretRequest Secret to create
      */
-    public v2OrganizationIdSecretsPostWithHttpInfo(organizationId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: Configuration): Promise<HttpInfo<RoutesV2SecretResponse>> {
-        const result = this.api.v2OrganizationIdSecretsPostWithHttpInfo(organizationId, routesV2CreateOrUpdateSecretRequest, _options);
+    public v2OrganizationIdSecretsPostWithHttpInfo(organizationId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdSecretsPostWithHttpInfo(organizationId, routesV2CreateOrUpdateSecretRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2267,8 +4152,20 @@ export class PromiseSecretsApi {
      * @param organizationId Organization ID
      * @param routesV2CreateOrUpdateSecretRequest Secret to create
      */
-    public v2OrganizationIdSecretsPost(organizationId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: Configuration): Promise<RoutesV2SecretResponse> {
-        const result = this.api.v2OrganizationIdSecretsPost(organizationId, routesV2CreateOrUpdateSecretRequest, _options);
+    public v2OrganizationIdSecretsPost(organizationId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdSecretsPost(organizationId, routesV2CreateOrUpdateSecretRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2278,8 +4175,20 @@ export class PromiseSecretsApi {
      * @param organizationId Organization ID
      * @param secretId Secret ID
      */
-    public v2OrganizationIdSecretsSecretIdDeleteWithHttpInfo(organizationId: string, secretId: string, _options?: Configuration): Promise<HttpInfo<void>> {
-        const result = this.api.v2OrganizationIdSecretsSecretIdDeleteWithHttpInfo(organizationId, secretId, _options);
+    public v2OrganizationIdSecretsSecretIdDeleteWithHttpInfo(organizationId: string, secretId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdSecretsSecretIdDeleteWithHttpInfo(organizationId, secretId, observableOptions);
         return result.toPromise();
     }
 
@@ -2289,8 +4198,20 @@ export class PromiseSecretsApi {
      * @param organizationId Organization ID
      * @param secretId Secret ID
      */
-    public v2OrganizationIdSecretsSecretIdDelete(organizationId: string, secretId: string, _options?: Configuration): Promise<void> {
-        const result = this.api.v2OrganizationIdSecretsSecretIdDelete(organizationId, secretId, _options);
+    public v2OrganizationIdSecretsSecretIdDelete(organizationId: string, secretId: string, _options?: PromiseConfigurationOptions): Promise<void> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdSecretsSecretIdDelete(organizationId, secretId, observableOptions);
         return result.toPromise();
     }
 
@@ -2300,8 +4221,20 @@ export class PromiseSecretsApi {
      * @param organizationId Organization ID
      * @param secretId Secret ID
      */
-    public v2OrganizationIdSecretsSecretIdGetWithHttpInfo(organizationId: string, secretId: string, _options?: Configuration): Promise<HttpInfo<ModelsSecretWithComponents>> {
-        const result = this.api.v2OrganizationIdSecretsSecretIdGetWithHttpInfo(organizationId, secretId, _options);
+    public v2OrganizationIdSecretsSecretIdGetWithHttpInfo(organizationId: string, secretId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsSecretWithComponents>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdSecretsSecretIdGetWithHttpInfo(organizationId, secretId, observableOptions);
         return result.toPromise();
     }
 
@@ -2311,8 +4244,20 @@ export class PromiseSecretsApi {
      * @param organizationId Organization ID
      * @param secretId Secret ID
      */
-    public v2OrganizationIdSecretsSecretIdGet(organizationId: string, secretId: string, _options?: Configuration): Promise<ModelsSecretWithComponents> {
-        const result = this.api.v2OrganizationIdSecretsSecretIdGet(organizationId, secretId, _options);
+    public v2OrganizationIdSecretsSecretIdGet(organizationId: string, secretId: string, _options?: PromiseConfigurationOptions): Promise<ModelsSecretWithComponents> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdSecretsSecretIdGet(organizationId, secretId, observableOptions);
         return result.toPromise();
     }
 
@@ -2323,8 +4268,20 @@ export class PromiseSecretsApi {
      * @param secretId Secret ID
      * @param routesV2CreateOrUpdateSecretRequest Secret updates
      */
-    public v2OrganizationIdSecretsSecretIdPatchWithHttpInfo(organizationId: string, secretId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: Configuration): Promise<HttpInfo<RoutesV2SecretResponse>> {
-        const result = this.api.v2OrganizationIdSecretsSecretIdPatchWithHttpInfo(organizationId, secretId, routesV2CreateOrUpdateSecretRequest, _options);
+    public v2OrganizationIdSecretsSecretIdPatchWithHttpInfo(organizationId: string, secretId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdSecretsSecretIdPatchWithHttpInfo(organizationId, secretId, routesV2CreateOrUpdateSecretRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2335,8 +4292,20 @@ export class PromiseSecretsApi {
      * @param secretId Secret ID
      * @param routesV2CreateOrUpdateSecretRequest Secret updates
      */
-    public v2OrganizationIdSecretsSecretIdPatch(organizationId: string, secretId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: Configuration): Promise<RoutesV2SecretResponse> {
-        const result = this.api.v2OrganizationIdSecretsSecretIdPatch(organizationId, secretId, routesV2CreateOrUpdateSecretRequest, _options);
+    public v2OrganizationIdSecretsSecretIdPatch(organizationId: string, secretId: string, routesV2CreateOrUpdateSecretRequest: RoutesV2CreateOrUpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdSecretsSecretIdPatch(organizationId, secretId, routesV2CreateOrUpdateSecretRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -2364,8 +4333,20 @@ export class PromiseTransformsApi {
      * List transforms
      * @param [body]
      */
-    public v1TransformsGetWithHttpInfo(body?: any, _options?: Configuration): Promise<HttpInfo<OperationInformation>> {
-        const result = this.api.v1TransformsGetWithHttpInfo(body, _options);
+    public v1TransformsGetWithHttpInfo(body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<OperationInformation>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1TransformsGetWithHttpInfo(body, observableOptions);
         return result.toPromise();
     }
 
@@ -2374,8 +4355,20 @@ export class PromiseTransformsApi {
      * List transforms
      * @param [body]
      */
-    public v1TransformsGet(body?: any, _options?: Configuration): Promise<OperationInformation> {
-        const result = this.api.v1TransformsGet(body, _options);
+    public v1TransformsGet(body?: any, _options?: PromiseConfigurationOptions): Promise<OperationInformation> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1TransformsGet(body, observableOptions);
         return result.toPromise();
     }
 
@@ -2385,8 +4378,20 @@ export class PromiseTransformsApi {
      * @param transformTypeId Transform type ID
      * @param [body]
      */
-    public v1TransformsTransformTypeIdGetWithHttpInfo(transformTypeId: string, body?: any, _options?: Configuration): Promise<HttpInfo<any>> {
-        const result = this.api.v1TransformsTransformTypeIdGetWithHttpInfo(transformTypeId, body, _options);
+    public v1TransformsTransformTypeIdGetWithHttpInfo(transformTypeId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<any>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1TransformsTransformTypeIdGetWithHttpInfo(transformTypeId, body, observableOptions);
         return result.toPromise();
     }
 
@@ -2396,8 +4401,20 @@ export class PromiseTransformsApi {
      * @param transformTypeId Transform type ID
      * @param [body]
      */
-    public v1TransformsTransformTypeIdGet(transformTypeId: string, body?: any, _options?: Configuration): Promise<any> {
-        const result = this.api.v1TransformsTransformTypeIdGet(transformTypeId, body, _options);
+    public v1TransformsTransformTypeIdGet(transformTypeId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<any> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1TransformsTransformTypeIdGet(transformTypeId, body, observableOptions);
         return result.toPromise();
     }
 
@@ -2426,8 +4443,20 @@ export class PromiseUsersApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v1UsersGetWithHttpInfo(limit?: number, offset?: number, _options?: Configuration): Promise<HttpInfo<ModelsUserList>> {
-        const result = this.api.v1UsersGetWithHttpInfo(limit, offset, _options);
+    public v1UsersGetWithHttpInfo(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsUserList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1UsersGetWithHttpInfo(limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -2437,8 +4466,20 @@ export class PromiseUsersApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v1UsersGet(limit?: number, offset?: number, _options?: Configuration): Promise<ModelsUserList> {
-        const result = this.api.v1UsersGet(limit, offset, _options);
+    public v1UsersGet(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsUserList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1UsersGet(limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -2447,8 +4488,20 @@ export class PromiseUsersApi {
      * Create user
      * @param [body]
      */
-    public v1UsersPostWithHttpInfo(body?: any, _options?: Configuration): Promise<HttpInfo<ModelsUser>> {
-        const result = this.api.v1UsersPostWithHttpInfo(body, _options);
+    public v1UsersPostWithHttpInfo(body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsUser>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1UsersPostWithHttpInfo(body, observableOptions);
         return result.toPromise();
     }
 
@@ -2457,8 +4510,20 @@ export class PromiseUsersApi {
      * Create user
      * @param [body]
      */
-    public v1UsersPost(body?: any, _options?: Configuration): Promise<ModelsUser> {
-        const result = this.api.v1UsersPost(body, _options);
+    public v1UsersPost(body?: any, _options?: PromiseConfigurationOptions): Promise<ModelsUser> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1UsersPost(body, observableOptions);
         return result.toPromise();
     }
 

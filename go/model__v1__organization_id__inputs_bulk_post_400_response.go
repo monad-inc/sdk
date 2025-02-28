@@ -13,8 +13,8 @@ package monad
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // V1OrganizationIdInputsBulkPost400Response - struct for V1OrganizationIdInputsBulkPost400Response
@@ -79,6 +79,16 @@ func (obj *V1OrganizationIdInputsBulkPost400Response) GetActualInstance() (inter
 	}
 	if obj.String != nil {
 		return obj.String
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj V1OrganizationIdInputsBulkPost400Response) GetActualInstanceValue() (interface{}) {
+	if obj.String != nil {
+		return *obj.String
 	}
 
 	// all schemas are nil

@@ -1,5 +1,6 @@
 import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
-import { Configuration} from '../configuration'
+import { Configuration, ConfigurationOptions } from '../configuration'
+import type { Middleware } from '../middleware';
 
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddAdd } from '../models/AddAdd';
@@ -152,7 +153,7 @@ export class ObjectAuthenticationApi {
      * Handle login callback
      * @param param the request object
      */
-    public v1LoginCallbackGetWithHttpInfo(param: AuthenticationApiV1LoginCallbackGetRequest = {}, options?: Configuration): Promise<HttpInfo<string>> {
+    public v1LoginCallbackGetWithHttpInfo(param: AuthenticationApiV1LoginCallbackGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
         return this.api.v1LoginCallbackGetWithHttpInfo( options).toPromise();
     }
 
@@ -161,7 +162,7 @@ export class ObjectAuthenticationApi {
      * Handle login callback
      * @param param the request object
      */
-    public v1LoginCallbackGet(param: AuthenticationApiV1LoginCallbackGetRequest = {}, options?: Configuration): Promise<string> {
+    public v1LoginCallbackGet(param: AuthenticationApiV1LoginCallbackGetRequest = {}, options?: ConfigurationOptions): Promise<string> {
         return this.api.v1LoginCallbackGet( options).toPromise();
     }
 
@@ -170,7 +171,7 @@ export class ObjectAuthenticationApi {
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
      * @param param the request object
      */
-    public v1LoginGetWithHttpInfo(param: AuthenticationApiV1LoginGetRequest = {}, options?: Configuration): Promise<HttpInfo<void>> {
+    public v1LoginGetWithHttpInfo(param: AuthenticationApiV1LoginGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
         return this.api.v1LoginGetWithHttpInfo( options).toPromise();
     }
 
@@ -179,7 +180,7 @@ export class ObjectAuthenticationApi {
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
      * @param param the request object
      */
-    public v1LoginGet(param: AuthenticationApiV1LoginGetRequest = {}, options?: Configuration): Promise<void> {
+    public v1LoginGet(param: AuthenticationApiV1LoginGetRequest = {}, options?: ConfigurationOptions): Promise<void> {
         return this.api.v1LoginGet( options).toPromise();
     }
 
@@ -188,7 +189,7 @@ export class ObjectAuthenticationApi {
      * Resend email verification
      * @param param the request object
      */
-    public v1LoginResendVerificationPostWithHttpInfo(param: AuthenticationApiV1LoginResendVerificationPostRequest = {}, options?: Configuration): Promise<HttpInfo<string>> {
+    public v1LoginResendVerificationPostWithHttpInfo(param: AuthenticationApiV1LoginResendVerificationPostRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
         return this.api.v1LoginResendVerificationPostWithHttpInfo( options).toPromise();
     }
 
@@ -197,7 +198,7 @@ export class ObjectAuthenticationApi {
      * Resend email verification
      * @param param the request object
      */
-    public v1LoginResendVerificationPost(param: AuthenticationApiV1LoginResendVerificationPostRequest = {}, options?: Configuration): Promise<string> {
+    public v1LoginResendVerificationPost(param: AuthenticationApiV1LoginResendVerificationPostRequest = {}, options?: ConfigurationOptions): Promise<string> {
         return this.api.v1LoginResendVerificationPost( options).toPromise();
     }
 
@@ -206,7 +207,7 @@ export class ObjectAuthenticationApi {
      * Get Authentication token
      * @param param the request object
      */
-    public v1LoginTokenPostWithHttpInfo(param: AuthenticationApiV1LoginTokenPostRequest, options?: Configuration): Promise<HttpInfo<Auth0Auth0TokenResponse>> {
+    public v1LoginTokenPostWithHttpInfo(param: AuthenticationApiV1LoginTokenPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<Auth0Auth0TokenResponse>> {
         return this.api.v1LoginTokenPostWithHttpInfo(param.auth0LoginRequest,  options).toPromise();
     }
 
@@ -215,7 +216,7 @@ export class ObjectAuthenticationApi {
      * Get Authentication token
      * @param param the request object
      */
-    public v1LoginTokenPost(param: AuthenticationApiV1LoginTokenPostRequest, options?: Configuration): Promise<Auth0Auth0TokenResponse> {
+    public v1LoginTokenPost(param: AuthenticationApiV1LoginTokenPostRequest, options?: ConfigurationOptions): Promise<Auth0Auth0TokenResponse> {
         return this.api.v1LoginTokenPost(param.auth0LoginRequest,  options).toPromise();
     }
 
@@ -245,7 +246,7 @@ export class ObjectConditionsApi {
      * List conditions
      * @param param the request object
      */
-    public v2ConditionsGetWithHttpInfo(param: ConditionsApiV2ConditionsGetRequest = {}, options?: Configuration): Promise<HttpInfo<Array<ConditionInfo>>> {
+    public v2ConditionsGetWithHttpInfo(param: ConditionsApiV2ConditionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<ConditionInfo>>> {
         return this.api.v2ConditionsGetWithHttpInfo(param.body,  options).toPromise();
     }
 
@@ -254,7 +255,7 @@ export class ObjectConditionsApi {
      * List conditions
      * @param param the request object
      */
-    public v2ConditionsGet(param: ConditionsApiV2ConditionsGetRequest = {}, options?: Configuration): Promise<Array<ConditionInfo>> {
+    public v2ConditionsGet(param: ConditionsApiV2ConditionsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<ConditionInfo>> {
         return this.api.v2ConditionsGet(param.body,  options).toPromise();
     }
 
@@ -292,7 +293,7 @@ export class ObjectDataApi {
      * Stream node data
      * @param param the request object
      */
-    public v1OrganizationIdDataNodeIdGetWithHttpInfo(param: DataApiV1OrganizationIdDataNodeIdGetRequest, options?: Configuration): Promise<HttpInfo<string>> {
+    public v1OrganizationIdDataNodeIdGetWithHttpInfo(param: DataApiV1OrganizationIdDataNodeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
         return this.api.v1OrganizationIdDataNodeIdGetWithHttpInfo(param.organizationId, param.nodeId,  options).toPromise();
     }
 
@@ -301,7 +302,7 @@ export class ObjectDataApi {
      * Stream node data
      * @param param the request object
      */
-    public v1OrganizationIdDataNodeIdGet(param: DataApiV1OrganizationIdDataNodeIdGetRequest, options?: Configuration): Promise<string> {
+    public v1OrganizationIdDataNodeIdGet(param: DataApiV1OrganizationIdDataNodeIdGetRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.v1OrganizationIdDataNodeIdGet(param.organizationId, param.nodeId,  options).toPromise();
     }
 
@@ -335,7 +336,7 @@ export class ObjectInputsApi {
      * List inputs
      * @param param the request object
      */
-    public v1InputsGetWithHttpInfo(param: InputsApiV1InputsGetRequest = {}, options?: Configuration): Promise<HttpInfo<Array<InputsConnectorMeta>>> {
+    public v1InputsGetWithHttpInfo(param: InputsApiV1InputsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<InputsConnectorMeta>>> {
         return this.api.v1InputsGetWithHttpInfo( options).toPromise();
     }
 
@@ -344,7 +345,7 @@ export class ObjectInputsApi {
      * List inputs
      * @param param the request object
      */
-    public v1InputsGet(param: InputsApiV1InputsGetRequest = {}, options?: Configuration): Promise<Array<InputsConnectorMeta>> {
+    public v1InputsGet(param: InputsApiV1InputsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<InputsConnectorMeta>> {
         return this.api.v1InputsGet( options).toPromise();
     }
 
@@ -353,7 +354,7 @@ export class ObjectInputsApi {
      * Get input config meta
      * @param param the request object
      */
-    public v1InputsInputTypeIdGetWithHttpInfo(param: InputsApiV1InputsInputTypeIdGetRequest, options?: Configuration): Promise<HttpInfo<ModelsConnectorMeta>> {
+    public v1InputsInputTypeIdGetWithHttpInfo(param: InputsApiV1InputsInputTypeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectorMeta>> {
         return this.api.v1InputsInputTypeIdGetWithHttpInfo(param.inputTypeId,  options).toPromise();
     }
 
@@ -362,7 +363,7 @@ export class ObjectInputsApi {
      * Get input config meta
      * @param param the request object
      */
-    public v1InputsInputTypeIdGet(param: InputsApiV1InputsInputTypeIdGetRequest, options?: Configuration): Promise<ModelsConnectorMeta> {
+    public v1InputsInputTypeIdGet(param: InputsApiV1InputsInputTypeIdGetRequest, options?: ConfigurationOptions): Promise<ModelsConnectorMeta> {
         return this.api.v1InputsInputTypeIdGet(param.inputTypeId,  options).toPromise();
     }
 
@@ -510,7 +511,7 @@ export class ObjectLogsApi {
      * Stream organization api logs
      * @param param the request object
      */
-    public v1OrganizationIdLogsApiGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsApiGetRequest, options?: Configuration): Promise<HttpInfo<string>> {
+    public v1OrganizationIdLogsApiGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsApiGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
         return this.api.v1OrganizationIdLogsApiGetWithHttpInfo(param.organizationId, param.since,  options).toPromise();
     }
 
@@ -519,7 +520,7 @@ export class ObjectLogsApi {
      * Stream organization api logs
      * @param param the request object
      */
-    public v1OrganizationIdLogsApiGet(param: LogsApiV1OrganizationIdLogsApiGetRequest, options?: Configuration): Promise<string> {
+    public v1OrganizationIdLogsApiGet(param: LogsApiV1OrganizationIdLogsApiGetRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.v1OrganizationIdLogsApiGet(param.organizationId, param.since,  options).toPromise();
     }
 
@@ -528,7 +529,7 @@ export class ObjectLogsApi {
      * Stream organization logs
      * @param param the request object
      */
-    public v1OrganizationIdLogsGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsGetRequest, options?: Configuration): Promise<HttpInfo<string>> {
+    public v1OrganizationIdLogsGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
         return this.api.v1OrganizationIdLogsGetWithHttpInfo(param.organizationId, param.since, param.last,  options).toPromise();
     }
 
@@ -537,7 +538,7 @@ export class ObjectLogsApi {
      * Stream organization logs
      * @param param the request object
      */
-    public v1OrganizationIdLogsGet(param: LogsApiV1OrganizationIdLogsGetRequest, options?: Configuration): Promise<string> {
+    public v1OrganizationIdLogsGet(param: LogsApiV1OrganizationIdLogsGetRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.v1OrganizationIdLogsGet(param.organizationId, param.since, param.last,  options).toPromise();
     }
 
@@ -546,7 +547,7 @@ export class ObjectLogsApi {
      * Stream organization pipeline logs
      * @param param the request object
      */
-    public v1OrganizationIdLogsPipelinesGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsPipelinesGetRequest, options?: Configuration): Promise<HttpInfo<string>> {
+    public v1OrganizationIdLogsPipelinesGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsPipelinesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
         return this.api.v1OrganizationIdLogsPipelinesGetWithHttpInfo(param.organizationId, param.since,  options).toPromise();
     }
 
@@ -555,7 +556,7 @@ export class ObjectLogsApi {
      * Stream organization pipeline logs
      * @param param the request object
      */
-    public v1OrganizationIdLogsPipelinesGet(param: LogsApiV1OrganizationIdLogsPipelinesGetRequest, options?: Configuration): Promise<string> {
+    public v1OrganizationIdLogsPipelinesGet(param: LogsApiV1OrganizationIdLogsPipelinesGetRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.v1OrganizationIdLogsPipelinesGet(param.organizationId, param.since,  options).toPromise();
     }
 
@@ -564,7 +565,7 @@ export class ObjectLogsApi {
      * Stream pipeline logs
      * @param param the request object
      */
-    public v1OrganizationIdLogsPipelinesPipelineIdGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsPipelinesPipelineIdGetRequest, options?: Configuration): Promise<HttpInfo<string>> {
+    public v1OrganizationIdLogsPipelinesPipelineIdGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
         return this.api.v1OrganizationIdLogsPipelinesPipelineIdGetWithHttpInfo(param.organizationId, param.pipelineId, param.since, param.last,  options).toPromise();
     }
 
@@ -573,7 +574,7 @@ export class ObjectLogsApi {
      * Stream pipeline logs
      * @param param the request object
      */
-    public v1OrganizationIdLogsPipelinesPipelineIdGet(param: LogsApiV1OrganizationIdLogsPipelinesPipelineIdGetRequest, options?: Configuration): Promise<string> {
+    public v1OrganizationIdLogsPipelinesPipelineIdGet(param: LogsApiV1OrganizationIdLogsPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.v1OrganizationIdLogsPipelinesPipelineIdGet(param.organizationId, param.pipelineId, param.since, param.last,  options).toPromise();
     }
 
@@ -582,7 +583,7 @@ export class ObjectLogsApi {
      * Stream node logs
      * @param param the request object
      */
-    public v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsPipelinesPipelineIdNodeIdGetRequest, options?: Configuration): Promise<HttpInfo<string>> {
+    public v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetWithHttpInfo(param: LogsApiV1OrganizationIdLogsPipelinesPipelineIdNodeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
         return this.api.v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.since, param.last,  options).toPromise();
     }
 
@@ -591,7 +592,7 @@ export class ObjectLogsApi {
      * Stream node logs
      * @param param the request object
      */
-    public v1OrganizationIdLogsPipelinesPipelineIdNodeIdGet(param: LogsApiV1OrganizationIdLogsPipelinesPipelineIdNodeIdGetRequest, options?: Configuration): Promise<string> {
+    public v1OrganizationIdLogsPipelinesPipelineIdNodeIdGet(param: LogsApiV1OrganizationIdLogsPipelinesPipelineIdNodeIdGetRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.v1OrganizationIdLogsPipelinesPipelineIdNodeIdGet(param.organizationId, param.pipelineId, param.nodeId, param.since, param.last,  options).toPromise();
     }
 
@@ -639,7 +640,7 @@ export class ObjectOauthApi {
      * Oauth callback
      * @param param the request object
      */
-    public v1OauthTypeIdCallbackGetWithHttpInfo(param: OauthApiV1OauthTypeIdCallbackGetRequest, options?: Configuration): Promise<HttpInfo<any>> {
+    public v1OauthTypeIdCallbackGetWithHttpInfo(param: OauthApiV1OauthTypeIdCallbackGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
         return this.api.v1OauthTypeIdCallbackGetWithHttpInfo(param.typeId,  options).toPromise();
     }
 
@@ -648,7 +649,7 @@ export class ObjectOauthApi {
      * Oauth callback
      * @param param the request object
      */
-    public v1OauthTypeIdCallbackGet(param: OauthApiV1OauthTypeIdCallbackGetRequest, options?: Configuration): Promise<any> {
+    public v1OauthTypeIdCallbackGet(param: OauthApiV1OauthTypeIdCallbackGetRequest, options?: ConfigurationOptions): Promise<any> {
         return this.api.v1OauthTypeIdCallbackGet(param.typeId,  options).toPromise();
     }
 
@@ -657,7 +658,7 @@ export class ObjectOauthApi {
      * Get oauth redirect
      * @param param the request object
      */
-    public v1OauthTypeIdOrganizationIdGetWithHttpInfo(param: OauthApiV1OauthTypeIdOrganizationIdGetRequest, options?: Configuration): Promise<HttpInfo<any>> {
+    public v1OauthTypeIdOrganizationIdGetWithHttpInfo(param: OauthApiV1OauthTypeIdOrganizationIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
         return this.api.v1OauthTypeIdOrganizationIdGetWithHttpInfo(param.typeId, param.organizationId,  options).toPromise();
     }
 
@@ -666,7 +667,7 @@ export class ObjectOauthApi {
      * Get oauth redirect
      * @param param the request object
      */
-    public v1OauthTypeIdOrganizationIdGet(param: OauthApiV1OauthTypeIdOrganizationIdGetRequest, options?: Configuration): Promise<any> {
+    public v1OauthTypeIdOrganizationIdGet(param: OauthApiV1OauthTypeIdOrganizationIdGetRequest, options?: ConfigurationOptions): Promise<any> {
         return this.api.v1OauthTypeIdOrganizationIdGet(param.typeId, param.organizationId,  options).toPromise();
     }
 
@@ -801,7 +802,7 @@ export class ObjectOrganizationApiKeysApi {
      * Delete API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdDeleteWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdDeleteRequest, options?: Configuration): Promise<HttpInfo<string>> {
+    public v2OrganizationIdApiKeysApiKeyIdDeleteWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
         return this.api.v2OrganizationIdApiKeysApiKeyIdDeleteWithHttpInfo(param.organizationId, param.apiKeyId,  options).toPromise();
     }
 
@@ -810,7 +811,7 @@ export class ObjectOrganizationApiKeysApi {
      * Delete API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdDelete(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdDeleteRequest, options?: Configuration): Promise<string> {
+    public v2OrganizationIdApiKeysApiKeyIdDelete(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.v2OrganizationIdApiKeysApiKeyIdDelete(param.organizationId, param.apiKeyId,  options).toPromise();
     }
 
@@ -819,7 +820,7 @@ export class ObjectOrganizationApiKeysApi {
      * Get API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdGetWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdGetRequest, options?: Configuration): Promise<HttpInfo<ModelsAPIKey>> {
+    public v2OrganizationIdApiKeysApiKeyIdGetWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKey>> {
         return this.api.v2OrganizationIdApiKeysApiKeyIdGetWithHttpInfo(param.organizationId, param.apiKeyId,  options).toPromise();
     }
 
@@ -828,7 +829,7 @@ export class ObjectOrganizationApiKeysApi {
      * Get API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdGet(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdGetRequest, options?: Configuration): Promise<ModelsAPIKey> {
+    public v2OrganizationIdApiKeysApiKeyIdGet(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdGetRequest, options?: ConfigurationOptions): Promise<ModelsAPIKey> {
         return this.api.v2OrganizationIdApiKeysApiKeyIdGet(param.organizationId, param.apiKeyId,  options).toPromise();
     }
 
@@ -837,7 +838,7 @@ export class ObjectOrganizationApiKeysApi {
      * Update API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdPatchWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsAPIKey>> {
+    public v2OrganizationIdApiKeysApiKeyIdPatchWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKey>> {
         return this.api.v2OrganizationIdApiKeysApiKeyIdPatchWithHttpInfo(param.organizationId, param.apiKeyId, param.routesV2UpdateAPIKeyRequest,  options).toPromise();
     }
 
@@ -846,7 +847,7 @@ export class ObjectOrganizationApiKeysApi {
      * Update API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdPatch(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdPatchRequest, options?: Configuration): Promise<ModelsAPIKey> {
+    public v2OrganizationIdApiKeysApiKeyIdPatch(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsAPIKey> {
         return this.api.v2OrganizationIdApiKeysApiKeyIdPatch(param.organizationId, param.apiKeyId, param.routesV2UpdateAPIKeyRequest,  options).toPromise();
     }
 
@@ -855,7 +856,7 @@ export class ObjectOrganizationApiKeysApi {
      * Regenerate API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdRegeneratePostWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdRegeneratePostRequest, options?: Configuration): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
+    public v2OrganizationIdApiKeysApiKeyIdRegeneratePostWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdRegeneratePostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
         return this.api.v2OrganizationIdApiKeysApiKeyIdRegeneratePostWithHttpInfo(param.organizationId, param.apiKeyId,  options).toPromise();
     }
 
@@ -864,7 +865,7 @@ export class ObjectOrganizationApiKeysApi {
      * Regenerate API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysApiKeyIdRegeneratePost(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdRegeneratePostRequest, options?: Configuration): Promise<ModelsAPIKeyWithToken> {
+    public v2OrganizationIdApiKeysApiKeyIdRegeneratePost(param: OrganizationApiKeysApiV2OrganizationIdApiKeysApiKeyIdRegeneratePostRequest, options?: ConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
         return this.api.v2OrganizationIdApiKeysApiKeyIdRegeneratePost(param.organizationId, param.apiKeyId,  options).toPromise();
     }
 
@@ -873,7 +874,7 @@ export class ObjectOrganizationApiKeysApi {
      * List API keys
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysGetWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysGetRequest, options?: Configuration): Promise<HttpInfo<ModelsAPIKeyList>> {
+    public v2OrganizationIdApiKeysGetWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyList>> {
         return this.api.v2OrganizationIdApiKeysGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -882,7 +883,7 @@ export class ObjectOrganizationApiKeysApi {
      * List API keys
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysGet(param: OrganizationApiKeysApiV2OrganizationIdApiKeysGetRequest, options?: Configuration): Promise<ModelsAPIKeyList> {
+    public v2OrganizationIdApiKeysGet(param: OrganizationApiKeysApiV2OrganizationIdApiKeysGetRequest, options?: ConfigurationOptions): Promise<ModelsAPIKeyList> {
         return this.api.v2OrganizationIdApiKeysGet(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -891,7 +892,7 @@ export class ObjectOrganizationApiKeysApi {
      * Create API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysPostWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysPostRequest, options?: Configuration): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
+    public v2OrganizationIdApiKeysPostWithHttpInfo(param: OrganizationApiKeysApiV2OrganizationIdApiKeysPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
         return this.api.v2OrganizationIdApiKeysPostWithHttpInfo(param.organizationId, param.routesV2CreateAPIKeyRequest,  options).toPromise();
     }
 
@@ -900,7 +901,7 @@ export class ObjectOrganizationApiKeysApi {
      * Create API key
      * @param param the request object
      */
-    public v2OrganizationIdApiKeysPost(param: OrganizationApiKeysApiV2OrganizationIdApiKeysPostRequest, options?: Configuration): Promise<ModelsAPIKeyWithToken> {
+    public v2OrganizationIdApiKeysPost(param: OrganizationApiKeysApiV2OrganizationIdApiKeysPostRequest, options?: ConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
         return this.api.v2OrganizationIdApiKeysPost(param.organizationId, param.routesV2CreateAPIKeyRequest,  options).toPromise();
     }
 
@@ -1124,7 +1125,7 @@ export class ObjectOrganizationInputsApi {
      * Bulk create inputs
      * @param param the request object
      */
-    public v1OrganizationIdInputsBulkPostWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsBulkPostRequest, options?: Configuration): Promise<HttpInfo<Array<ModelsInput>>> {
+    public v1OrganizationIdInputsBulkPostWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsBulkPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsInput>>> {
         return this.api.v1OrganizationIdInputsBulkPostWithHttpInfo(param.organizationId, param.routesBulkCreateInputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1133,7 +1134,7 @@ export class ObjectOrganizationInputsApi {
      * Bulk create inputs
      * @param param the request object
      */
-    public v1OrganizationIdInputsBulkPost(param: OrganizationInputsApiV1OrganizationIdInputsBulkPostRequest, options?: Configuration): Promise<Array<ModelsInput>> {
+    public v1OrganizationIdInputsBulkPost(param: OrganizationInputsApiV1OrganizationIdInputsBulkPostRequest, options?: ConfigurationOptions): Promise<Array<ModelsInput>> {
         return this.api.v1OrganizationIdInputsBulkPost(param.organizationId, param.routesBulkCreateInputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1142,7 +1143,7 @@ export class ObjectOrganizationInputsApi {
      * List inputs
      * @param param the request object
      */
-    public v1OrganizationIdInputsGetWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsGetRequest, options?: Configuration): Promise<HttpInfo<ModelsInputList>> {
+    public v1OrganizationIdInputsGetWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInputList>> {
         return this.api.v1OrganizationIdInputsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -1151,7 +1152,7 @@ export class ObjectOrganizationInputsApi {
      * List inputs
      * @param param the request object
      */
-    public v1OrganizationIdInputsGet(param: OrganizationInputsApiV1OrganizationIdInputsGetRequest, options?: Configuration): Promise<ModelsInputList> {
+    public v1OrganizationIdInputsGet(param: OrganizationInputsApiV1OrganizationIdInputsGetRequest, options?: ConfigurationOptions): Promise<ModelsInputList> {
         return this.api.v1OrganizationIdInputsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -1160,7 +1161,7 @@ export class ObjectOrganizationInputsApi {
      * Delete input
      * @param param the request object
      */
-    public v1OrganizationIdInputsInputIdDeleteWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsInputIdDeleteRequest, options?: Configuration): Promise<HttpInfo<any>> {
+    public v1OrganizationIdInputsInputIdDeleteWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsInputIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
         return this.api.v1OrganizationIdInputsInputIdDeleteWithHttpInfo(param.organizationId, param.inputId,  options).toPromise();
     }
 
@@ -1169,7 +1170,7 @@ export class ObjectOrganizationInputsApi {
      * Delete input
      * @param param the request object
      */
-    public v1OrganizationIdInputsInputIdDelete(param: OrganizationInputsApiV1OrganizationIdInputsInputIdDeleteRequest, options?: Configuration): Promise<any> {
+    public v1OrganizationIdInputsInputIdDelete(param: OrganizationInputsApiV1OrganizationIdInputsInputIdDeleteRequest, options?: ConfigurationOptions): Promise<any> {
         return this.api.v1OrganizationIdInputsInputIdDelete(param.organizationId, param.inputId,  options).toPromise();
     }
 
@@ -1178,7 +1179,7 @@ export class ObjectOrganizationInputsApi {
      * Get input
      * @param param the request object
      */
-    public v1OrganizationIdInputsInputIdGetWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsInputIdGetRequest, options?: Configuration): Promise<HttpInfo<RoutesGetInputResponse>> {
+    public v1OrganizationIdInputsInputIdGetWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsInputIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesGetInputResponse>> {
         return this.api.v1OrganizationIdInputsInputIdGetWithHttpInfo(param.organizationId, param.inputId,  options).toPromise();
     }
 
@@ -1187,7 +1188,7 @@ export class ObjectOrganizationInputsApi {
      * Get input
      * @param param the request object
      */
-    public v1OrganizationIdInputsInputIdGet(param: OrganizationInputsApiV1OrganizationIdInputsInputIdGetRequest, options?: Configuration): Promise<RoutesGetInputResponse> {
+    public v1OrganizationIdInputsInputIdGet(param: OrganizationInputsApiV1OrganizationIdInputsInputIdGetRequest, options?: ConfigurationOptions): Promise<RoutesGetInputResponse> {
         return this.api.v1OrganizationIdInputsInputIdGet(param.organizationId, param.inputId,  options).toPromise();
     }
 
@@ -1196,7 +1197,7 @@ export class ObjectOrganizationInputsApi {
      * Update input
      * @param param the request object
      */
-    public v1OrganizationIdInputsInputIdPatchWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsInputIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsInput>> {
+    public v1OrganizationIdInputsInputIdPatchWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsInputIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
         return this.api.v1OrganizationIdInputsInputIdPatchWithHttpInfo(param.organizationId, param.inputId, param.routesUpdateInputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1205,7 +1206,7 @@ export class ObjectOrganizationInputsApi {
      * Update input
      * @param param the request object
      */
-    public v1OrganizationIdInputsInputIdPatch(param: OrganizationInputsApiV1OrganizationIdInputsInputIdPatchRequest, options?: Configuration): Promise<ModelsInput> {
+    public v1OrganizationIdInputsInputIdPatch(param: OrganizationInputsApiV1OrganizationIdInputsInputIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
         return this.api.v1OrganizationIdInputsInputIdPatch(param.organizationId, param.inputId, param.routesUpdateInputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1214,7 +1215,7 @@ export class ObjectOrganizationInputsApi {
      * Create input
      * @param param the request object
      */
-    public v1OrganizationIdInputsPostWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsPostRequest, options?: Configuration): Promise<HttpInfo<ModelsInput>> {
+    public v1OrganizationIdInputsPostWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
         return this.api.v1OrganizationIdInputsPostWithHttpInfo(param.organizationId, param.routesCreateInputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1223,7 +1224,7 @@ export class ObjectOrganizationInputsApi {
      * Create input
      * @param param the request object
      */
-    public v1OrganizationIdInputsPost(param: OrganizationInputsApiV1OrganizationIdInputsPostRequest, options?: Configuration): Promise<ModelsInput> {
+    public v1OrganizationIdInputsPost(param: OrganizationInputsApiV1OrganizationIdInputsPostRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
         return this.api.v1OrganizationIdInputsPost(param.organizationId, param.routesCreateInputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1232,7 +1233,7 @@ export class ObjectOrganizationInputsApi {
      * Update input
      * @param param the request object
      */
-    public v2OrganizationIdInputsInputIdPatchWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsInput>> {
+    public v2OrganizationIdInputsInputIdPatchWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
         return this.api.v2OrganizationIdInputsInputIdPatchWithHttpInfo(param.organizationId, param.inputId, param.routesV2UpdateInputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1241,7 +1242,7 @@ export class ObjectOrganizationInputsApi {
      * Update input
      * @param param the request object
      */
-    public v2OrganizationIdInputsInputIdPatch(param: OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest, options?: Configuration): Promise<ModelsInput> {
+    public v2OrganizationIdInputsInputIdPatch(param: OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
         return this.api.v2OrganizationIdInputsInputIdPatch(param.organizationId, param.inputId, param.routesV2UpdateInputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1250,7 +1251,7 @@ export class ObjectOrganizationInputsApi {
      * Create input
      * @param param the request object
      */
-    public v2OrganizationIdInputsPostWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsPostRequest, options?: Configuration): Promise<HttpInfo<ModelsInput>> {
+    public v2OrganizationIdInputsPostWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
         return this.api.v2OrganizationIdInputsPostWithHttpInfo(param.organizationId, param.routesV2CreateInputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1259,7 +1260,7 @@ export class ObjectOrganizationInputsApi {
      * Create input
      * @param param the request object
      */
-    public v2OrganizationIdInputsPost(param: OrganizationInputsApiV2OrganizationIdInputsPostRequest, options?: Configuration): Promise<ModelsInput> {
+    public v2OrganizationIdInputsPost(param: OrganizationInputsApiV2OrganizationIdInputsPostRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
         return this.api.v2OrganizationIdInputsPost(param.organizationId, param.routesV2CreateInputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1268,7 +1269,7 @@ export class ObjectOrganizationInputsApi {
      * Test input connection
      * @param param the request object
      */
-    public v2OrganizationIdInputsTestConnectionPostWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequest, options?: Configuration): Promise<HttpInfo<RoutesV2SuccessResponse>> {
+    public v2OrganizationIdInputsTestConnectionPostWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
         return this.api.v2OrganizationIdInputsTestConnectionPostWithHttpInfo(param.organizationId, param.body,  options).toPromise();
     }
 
@@ -1277,7 +1278,7 @@ export class ObjectOrganizationInputsApi {
      * Test input connection
      * @param param the request object
      */
-    public v2OrganizationIdInputsTestConnectionPost(param: OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequest, options?: Configuration): Promise<RoutesV2SuccessResponse> {
+    public v2OrganizationIdInputsTestConnectionPost(param: OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<RoutesV2SuccessResponse> {
         return this.api.v2OrganizationIdInputsTestConnectionPost(param.organizationId, param.body,  options).toPromise();
     }
 
@@ -1314,7 +1315,7 @@ export class ObjectOrganizationInvitesApi {
      * Invite user to organization
      * @param param the request object
      */
-    public v1OrganizationIdInvitesPostWithHttpInfo(param: OrganizationInvitesApiV1OrganizationIdInvitesPostRequest, options?: Configuration): Promise<HttpInfo<string>> {
+    public v1OrganizationIdInvitesPostWithHttpInfo(param: OrganizationInvitesApiV1OrganizationIdInvitesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
         return this.api.v1OrganizationIdInvitesPostWithHttpInfo(param.organizationId, param.routesInviteUserToOrganizationRequest,  options).toPromise();
     }
 
@@ -1323,7 +1324,7 @@ export class ObjectOrganizationInvitesApi {
      * Invite user to organization
      * @param param the request object
      */
-    public v1OrganizationIdInvitesPost(param: OrganizationInvitesApiV1OrganizationIdInvitesPostRequest, options?: Configuration): Promise<string> {
+    public v1OrganizationIdInvitesPost(param: OrganizationInvitesApiV1OrganizationIdInvitesPostRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.v1OrganizationIdInvitesPost(param.organizationId, param.routesInviteUserToOrganizationRequest,  options).toPromise();
     }
 
@@ -1510,7 +1511,7 @@ export class ObjectOrganizationOutputsApi {
      * List outputs
      * @param param the request object
      */
-    public v1OrganizationIdOutputsGetWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsGetRequest, options?: Configuration): Promise<HttpInfo<ModelsOutputList>> {
+    public v1OrganizationIdOutputsGetWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutputList>> {
         return this.api.v1OrganizationIdOutputsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -1519,7 +1520,7 @@ export class ObjectOrganizationOutputsApi {
      * List outputs
      * @param param the request object
      */
-    public v1OrganizationIdOutputsGet(param: OrganizationOutputsApiV1OrganizationIdOutputsGetRequest, options?: Configuration): Promise<ModelsOutputList> {
+    public v1OrganizationIdOutputsGet(param: OrganizationOutputsApiV1OrganizationIdOutputsGetRequest, options?: ConfigurationOptions): Promise<ModelsOutputList> {
         return this.api.v1OrganizationIdOutputsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -1528,7 +1529,7 @@ export class ObjectOrganizationOutputsApi {
      * Delete output
      * @param param the request object
      */
-    public v1OrganizationIdOutputsOutputIdDeleteWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdDeleteRequest, options?: Configuration): Promise<HttpInfo<string>> {
+    public v1OrganizationIdOutputsOutputIdDeleteWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
         return this.api.v1OrganizationIdOutputsOutputIdDeleteWithHttpInfo(param.organizationId, param.outputId,  options).toPromise();
     }
 
@@ -1537,7 +1538,7 @@ export class ObjectOrganizationOutputsApi {
      * Delete output
      * @param param the request object
      */
-    public v1OrganizationIdOutputsOutputIdDelete(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdDeleteRequest, options?: Configuration): Promise<string> {
+    public v1OrganizationIdOutputsOutputIdDelete(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.v1OrganizationIdOutputsOutputIdDelete(param.organizationId, param.outputId,  options).toPromise();
     }
 
@@ -1546,7 +1547,7 @@ export class ObjectOrganizationOutputsApi {
      * Get output
      * @param param the request object
      */
-    public v1OrganizationIdOutputsOutputIdGetWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdGetRequest, options?: Configuration): Promise<HttpInfo<RoutesGetOutputResponse>> {
+    public v1OrganizationIdOutputsOutputIdGetWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesGetOutputResponse>> {
         return this.api.v1OrganizationIdOutputsOutputIdGetWithHttpInfo(param.organizationId, param.outputId,  options).toPromise();
     }
 
@@ -1555,7 +1556,7 @@ export class ObjectOrganizationOutputsApi {
      * Get output
      * @param param the request object
      */
-    public v1OrganizationIdOutputsOutputIdGet(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdGetRequest, options?: Configuration): Promise<RoutesGetOutputResponse> {
+    public v1OrganizationIdOutputsOutputIdGet(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdGetRequest, options?: ConfigurationOptions): Promise<RoutesGetOutputResponse> {
         return this.api.v1OrganizationIdOutputsOutputIdGet(param.organizationId, param.outputId,  options).toPromise();
     }
 
@@ -1564,7 +1565,7 @@ export class ObjectOrganizationOutputsApi {
      * Update output
      * @param param the request object
      */
-    public v1OrganizationIdOutputsOutputIdPatchWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
+    public v1OrganizationIdOutputsOutputIdPatchWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
         return this.api.v1OrganizationIdOutputsOutputIdPatchWithHttpInfo(param.organizationId, param.outputId, param.routesUpdateOutputRequest,  options).toPromise();
     }
 
@@ -1573,7 +1574,7 @@ export class ObjectOrganizationOutputsApi {
      * Update output
      * @param param the request object
      */
-    public v1OrganizationIdOutputsOutputIdPatch(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdPatchRequest, options?: Configuration): Promise<ModelsOutput> {
+    public v1OrganizationIdOutputsOutputIdPatch(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
         return this.api.v1OrganizationIdOutputsOutputIdPatch(param.organizationId, param.outputId, param.routesUpdateOutputRequest,  options).toPromise();
     }
 
@@ -1582,7 +1583,7 @@ export class ObjectOrganizationOutputsApi {
      * Create output
      * @param param the request object
      */
-    public v1OrganizationIdOutputsPostWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsPostRequest, options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
+    public v1OrganizationIdOutputsPostWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
         return this.api.v1OrganizationIdOutputsPostWithHttpInfo(param.organizationId, param.routesCreateOutputRequest,  options).toPromise();
     }
 
@@ -1591,7 +1592,7 @@ export class ObjectOrganizationOutputsApi {
      * Create output
      * @param param the request object
      */
-    public v1OrganizationIdOutputsPost(param: OrganizationOutputsApiV1OrganizationIdOutputsPostRequest, options?: Configuration): Promise<ModelsOutput> {
+    public v1OrganizationIdOutputsPost(param: OrganizationOutputsApiV1OrganizationIdOutputsPostRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
         return this.api.v1OrganizationIdOutputsPost(param.organizationId, param.routesCreateOutputRequest,  options).toPromise();
     }
 
@@ -1600,7 +1601,7 @@ export class ObjectOrganizationOutputsApi {
      * Update output
      * @param param the request object
      */
-    public v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
+    public v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
         return this.api.v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(param.organizationId, param.outputId, param.routesV2UpdateOutputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1609,7 +1610,7 @@ export class ObjectOrganizationOutputsApi {
      * Update output
      * @param param the request object
      */
-    public v2OrganizationIdOutputsOutputIdPatch(param: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchRequest, options?: Configuration): Promise<ModelsOutput> {
+    public v2OrganizationIdOutputsOutputIdPatch(param: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
         return this.api.v2OrganizationIdOutputsOutputIdPatch(param.organizationId, param.outputId, param.routesV2UpdateOutputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1618,7 +1619,7 @@ export class ObjectOrganizationOutputsApi {
      * Create output
      * @param param the request object
      */
-    public v2OrganizationIdOutputsPostWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsPostRequest, options?: Configuration): Promise<HttpInfo<ModelsOutput>> {
+    public v2OrganizationIdOutputsPostWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
         return this.api.v2OrganizationIdOutputsPostWithHttpInfo(param.organizationId, param.routesV2CreateOutputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1627,7 +1628,7 @@ export class ObjectOrganizationOutputsApi {
      * Create output
      * @param param the request object
      */
-    public v2OrganizationIdOutputsPost(param: OrganizationOutputsApiV2OrganizationIdOutputsPostRequest, options?: Configuration): Promise<ModelsOutput> {
+    public v2OrganizationIdOutputsPost(param: OrganizationOutputsApiV2OrganizationIdOutputsPostRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
         return this.api.v2OrganizationIdOutputsPost(param.organizationId, param.routesV2CreateOutputRequest, param.testConnection,  options).toPromise();
     }
 
@@ -1636,7 +1637,7 @@ export class ObjectOrganizationOutputsApi {
      * Test output connection
      * @param param the request object
      */
-    public v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsTestConnectionPostRequest, options?: Configuration): Promise<HttpInfo<RoutesV2SuccessResponse>> {
+    public v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
         return this.api.v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(param.organizationId, param.body,  options).toPromise();
     }
 
@@ -1645,7 +1646,7 @@ export class ObjectOrganizationOutputsApi {
      * Test output connection
      * @param param the request object
      */
-    public v2OrganizationIdOutputsTestConnectionPost(param: OrganizationOutputsApiV2OrganizationIdOutputsTestConnectionPostRequest, options?: Configuration): Promise<RoutesV2SuccessResponse> {
+    public v2OrganizationIdOutputsTestConnectionPost(param: OrganizationOutputsApiV2OrganizationIdOutputsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<RoutesV2SuccessResponse> {
         return this.api.v2OrganizationIdOutputsTestConnectionPost(param.organizationId, param.body,  options).toPromise();
     }
 
@@ -1696,7 +1697,7 @@ export class ObjectOrganizationQuotasApi {
      * Get Organization Quotas
      * @param param the request object
      */
-    public v2OrganizationIdQuotasGetWithHttpInfo(param: OrganizationQuotasApiV2OrganizationIdQuotasGetRequest, options?: Configuration): Promise<HttpInfo<ModelsQuotaList>> {
+    public v2OrganizationIdQuotasGetWithHttpInfo(param: OrganizationQuotasApiV2OrganizationIdQuotasGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsQuotaList>> {
         return this.api.v2OrganizationIdQuotasGetWithHttpInfo(param.organizationId, param.limit, param.offset, param.body,  options).toPromise();
     }
 
@@ -1705,7 +1706,7 @@ export class ObjectOrganizationQuotasApi {
      * Get Organization Quotas
      * @param param the request object
      */
-    public v2OrganizationIdQuotasGet(param: OrganizationQuotasApiV2OrganizationIdQuotasGetRequest, options?: Configuration): Promise<ModelsQuotaList> {
+    public v2OrganizationIdQuotasGet(param: OrganizationQuotasApiV2OrganizationIdQuotasGetRequest, options?: ConfigurationOptions): Promise<ModelsQuotaList> {
         return this.api.v2OrganizationIdQuotasGet(param.organizationId, param.limit, param.offset, param.body,  options).toPromise();
     }
 
@@ -1823,7 +1824,7 @@ export class ObjectOrganizationTransformsApi {
      * List transforms
      * @param param the request object
      */
-    public v1OrganizationIdTransformsGetWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsGetRequest, options?: Configuration): Promise<HttpInfo<ModelsTransformList>> {
+    public v1OrganizationIdTransformsGetWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransformList>> {
         return this.api.v1OrganizationIdTransformsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -1832,7 +1833,7 @@ export class ObjectOrganizationTransformsApi {
      * List transforms
      * @param param the request object
      */
-    public v1OrganizationIdTransformsGet(param: OrganizationTransformsApiV1OrganizationIdTransformsGetRequest, options?: Configuration): Promise<ModelsTransformList> {
+    public v1OrganizationIdTransformsGet(param: OrganizationTransformsApiV1OrganizationIdTransformsGetRequest, options?: ConfigurationOptions): Promise<ModelsTransformList> {
         return this.api.v1OrganizationIdTransformsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -1841,7 +1842,7 @@ export class ObjectOrganizationTransformsApi {
      * Create transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsPostWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsPostRequest, options?: Configuration): Promise<HttpInfo<ModelsTransform>> {
+    public v1OrganizationIdTransformsPostWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransform>> {
         return this.api.v1OrganizationIdTransformsPostWithHttpInfo(param.organizationId, param.routesCreateTransformRequest,  options).toPromise();
     }
 
@@ -1850,7 +1851,7 @@ export class ObjectOrganizationTransformsApi {
      * Create transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsPost(param: OrganizationTransformsApiV1OrganizationIdTransformsPostRequest, options?: Configuration): Promise<ModelsTransform> {
+    public v1OrganizationIdTransformsPost(param: OrganizationTransformsApiV1OrganizationIdTransformsPostRequest, options?: ConfigurationOptions): Promise<ModelsTransform> {
         return this.api.v1OrganizationIdTransformsPost(param.organizationId, param.routesCreateTransformRequest,  options).toPromise();
     }
 
@@ -1859,7 +1860,7 @@ export class ObjectOrganizationTransformsApi {
      * Delete transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsTransformIdDeleteWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdDeleteRequest, options?: Configuration): Promise<HttpInfo<any>> {
+    public v1OrganizationIdTransformsTransformIdDeleteWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
         return this.api.v1OrganizationIdTransformsTransformIdDeleteWithHttpInfo(param.organizationId, param.transformId,  options).toPromise();
     }
 
@@ -1868,7 +1869,7 @@ export class ObjectOrganizationTransformsApi {
      * Delete transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsTransformIdDelete(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdDeleteRequest, options?: Configuration): Promise<any> {
+    public v1OrganizationIdTransformsTransformIdDelete(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdDeleteRequest, options?: ConfigurationOptions): Promise<any> {
         return this.api.v1OrganizationIdTransformsTransformIdDelete(param.organizationId, param.transformId,  options).toPromise();
     }
 
@@ -1877,7 +1878,7 @@ export class ObjectOrganizationTransformsApi {
      * Get transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsTransformIdGetWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdGetRequest, options?: Configuration): Promise<HttpInfo<RoutesGetTransformResponse>> {
+    public v1OrganizationIdTransformsTransformIdGetWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesGetTransformResponse>> {
         return this.api.v1OrganizationIdTransformsTransformIdGetWithHttpInfo(param.transformId, param.organizationId,  options).toPromise();
     }
 
@@ -1886,7 +1887,7 @@ export class ObjectOrganizationTransformsApi {
      * Get transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsTransformIdGet(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdGetRequest, options?: Configuration): Promise<RoutesGetTransformResponse> {
+    public v1OrganizationIdTransformsTransformIdGet(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdGetRequest, options?: ConfigurationOptions): Promise<RoutesGetTransformResponse> {
         return this.api.v1OrganizationIdTransformsTransformIdGet(param.transformId, param.organizationId,  options).toPromise();
     }
 
@@ -1895,7 +1896,7 @@ export class ObjectOrganizationTransformsApi {
      * Update transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsTransformIdPatchWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsTransform>> {
+    public v1OrganizationIdTransformsTransformIdPatchWithHttpInfo(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransform>> {
         return this.api.v1OrganizationIdTransformsTransformIdPatchWithHttpInfo(param.organizationId, param.transformId, param.routesUpdateTransformRequest,  options).toPromise();
     }
 
@@ -1904,7 +1905,7 @@ export class ObjectOrganizationTransformsApi {
      * Update transform
      * @param param the request object
      */
-    public v1OrganizationIdTransformsTransformIdPatch(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdPatchRequest, options?: Configuration): Promise<ModelsTransform> {
+    public v1OrganizationIdTransformsTransformIdPatch(param: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsTransform> {
         return this.api.v1OrganizationIdTransformsTransformIdPatch(param.organizationId, param.transformId, param.routesUpdateTransformRequest,  options).toPromise();
     }
 
@@ -2005,7 +2006,7 @@ export class ObjectOrganizationUsersApi {
      * List organization users
      * @param param the request object
      */
-    public v1OrganizationIdUsersGetWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersGetRequest, options?: Configuration): Promise<HttpInfo<ModelsOrganizationUserList>> {
+    public v1OrganizationIdUsersGetWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationUserList>> {
         return this.api.v1OrganizationIdUsersGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -2014,7 +2015,7 @@ export class ObjectOrganizationUsersApi {
      * List organization users
      * @param param the request object
      */
-    public v1OrganizationIdUsersGet(param: OrganizationUsersApiV1OrganizationIdUsersGetRequest, options?: Configuration): Promise<ModelsOrganizationUserList> {
+    public v1OrganizationIdUsersGet(param: OrganizationUsersApiV1OrganizationIdUsersGetRequest, options?: ConfigurationOptions): Promise<ModelsOrganizationUserList> {
         return this.api.v1OrganizationIdUsersGet(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -2023,7 +2024,7 @@ export class ObjectOrganizationUsersApi {
      * Add user to organization
      * @param param the request object
      */
-    public v1OrganizationIdUsersPostWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersPostRequest, options?: Configuration): Promise<HttpInfo<ModelsOrganizationUser>> {
+    public v1OrganizationIdUsersPostWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationUser>> {
         return this.api.v1OrganizationIdUsersPostWithHttpInfo(param.organizationId, param.routesAddUserToOrganizationRequest,  options).toPromise();
     }
 
@@ -2032,7 +2033,7 @@ export class ObjectOrganizationUsersApi {
      * Add user to organization
      * @param param the request object
      */
-    public v1OrganizationIdUsersPost(param: OrganizationUsersApiV1OrganizationIdUsersPostRequest, options?: Configuration): Promise<ModelsOrganizationUser> {
+    public v1OrganizationIdUsersPost(param: OrganizationUsersApiV1OrganizationIdUsersPostRequest, options?: ConfigurationOptions): Promise<ModelsOrganizationUser> {
         return this.api.v1OrganizationIdUsersPost(param.organizationId, param.routesAddUserToOrganizationRequest,  options).toPromise();
     }
 
@@ -2041,7 +2042,7 @@ export class ObjectOrganizationUsersApi {
      * Remove user from organization
      * @param param the request object
      */
-    public v1OrganizationIdUsersUserIdDeleteWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersUserIdDeleteRequest, options?: Configuration): Promise<HttpInfo<any>> {
+    public v1OrganizationIdUsersUserIdDeleteWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
         return this.api.v1OrganizationIdUsersUserIdDeleteWithHttpInfo(param.organizationId, param.userId,  options).toPromise();
     }
 
@@ -2050,7 +2051,7 @@ export class ObjectOrganizationUsersApi {
      * Remove user from organization
      * @param param the request object
      */
-    public v1OrganizationIdUsersUserIdDelete(param: OrganizationUsersApiV1OrganizationIdUsersUserIdDeleteRequest, options?: Configuration): Promise<any> {
+    public v1OrganizationIdUsersUserIdDelete(param: OrganizationUsersApiV1OrganizationIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<any> {
         return this.api.v1OrganizationIdUsersUserIdDelete(param.organizationId, param.userId,  options).toPromise();
     }
 
@@ -2059,7 +2060,7 @@ export class ObjectOrganizationUsersApi {
      * Update user in organization
      * @param param the request object
      */
-    public v1OrganizationIdUsersUserIdPatchWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersUserIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsOrganizationUser>> {
+    public v1OrganizationIdUsersUserIdPatchWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersUserIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationUser>> {
         return this.api.v1OrganizationIdUsersUserIdPatchWithHttpInfo(param.organizationId, param.userId, param.routesUpdateUserInOrganizationRequest,  options).toPromise();
     }
 
@@ -2068,7 +2069,7 @@ export class ObjectOrganizationUsersApi {
      * Update user in organization
      * @param param the request object
      */
-    public v1OrganizationIdUsersUserIdPatch(param: OrganizationUsersApiV1OrganizationIdUsersUserIdPatchRequest, options?: Configuration): Promise<ModelsOrganizationUser> {
+    public v1OrganizationIdUsersUserIdPatch(param: OrganizationUsersApiV1OrganizationIdUsersUserIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsOrganizationUser> {
         return this.api.v1OrganizationIdUsersUserIdPatch(param.organizationId, param.userId, param.routesUpdateUserInOrganizationRequest,  options).toPromise();
     }
 
@@ -2141,7 +2142,7 @@ export class ObjectOrganizationsApi {
      * List organizations for user
      * @param param the request object
      */
-    public v1OrganizationsGetWithHttpInfo(param: OrganizationsApiV1OrganizationsGetRequest = {}, options?: Configuration): Promise<HttpInfo<ModelsOrganizationList>> {
+    public v1OrganizationsGetWithHttpInfo(param: OrganizationsApiV1OrganizationsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationList>> {
         return this.api.v1OrganizationsGetWithHttpInfo(param.limit, param.offset,  options).toPromise();
     }
 
@@ -2150,7 +2151,7 @@ export class ObjectOrganizationsApi {
      * List organizations for user
      * @param param the request object
      */
-    public v1OrganizationsGet(param: OrganizationsApiV1OrganizationsGetRequest = {}, options?: Configuration): Promise<ModelsOrganizationList> {
+    public v1OrganizationsGet(param: OrganizationsApiV1OrganizationsGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsOrganizationList> {
         return this.api.v1OrganizationsGet(param.limit, param.offset,  options).toPromise();
     }
 
@@ -2159,7 +2160,7 @@ export class ObjectOrganizationsApi {
      * Delete organization
      * @param param the request object
      */
-    public v1OrganizationsOrganizationIdDeleteWithHttpInfo(param: OrganizationsApiV1OrganizationsOrganizationIdDeleteRequest, options?: Configuration): Promise<HttpInfo<any>> {
+    public v1OrganizationsOrganizationIdDeleteWithHttpInfo(param: OrganizationsApiV1OrganizationsOrganizationIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
         return this.api.v1OrganizationsOrganizationIdDeleteWithHttpInfo(param.organizationId,  options).toPromise();
     }
 
@@ -2168,7 +2169,7 @@ export class ObjectOrganizationsApi {
      * Delete organization
      * @param param the request object
      */
-    public v1OrganizationsOrganizationIdDelete(param: OrganizationsApiV1OrganizationsOrganizationIdDeleteRequest, options?: Configuration): Promise<any> {
+    public v1OrganizationsOrganizationIdDelete(param: OrganizationsApiV1OrganizationsOrganizationIdDeleteRequest, options?: ConfigurationOptions): Promise<any> {
         return this.api.v1OrganizationsOrganizationIdDelete(param.organizationId,  options).toPromise();
     }
 
@@ -2177,7 +2178,7 @@ export class ObjectOrganizationsApi {
      * Update organization
      * @param param the request object
      */
-    public v1OrganizationsOrganizationIdPatchWithHttpInfo(param: OrganizationsApiV1OrganizationsOrganizationIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsOrganization>> {
+    public v1OrganizationsOrganizationIdPatchWithHttpInfo(param: OrganizationsApiV1OrganizationsOrganizationIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganization>> {
         return this.api.v1OrganizationsOrganizationIdPatchWithHttpInfo(param.organizationId, param.routesUpdateOrganizationRequest,  options).toPromise();
     }
 
@@ -2186,7 +2187,7 @@ export class ObjectOrganizationsApi {
      * Update organization
      * @param param the request object
      */
-    public v1OrganizationsOrganizationIdPatch(param: OrganizationsApiV1OrganizationsOrganizationIdPatchRequest, options?: Configuration): Promise<ModelsOrganization> {
+    public v1OrganizationsOrganizationIdPatch(param: OrganizationsApiV1OrganizationsOrganizationIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsOrganization> {
         return this.api.v1OrganizationsOrganizationIdPatch(param.organizationId, param.routesUpdateOrganizationRequest,  options).toPromise();
     }
 
@@ -2195,7 +2196,7 @@ export class ObjectOrganizationsApi {
      * Create organization
      * @param param the request object
      */
-    public v1OrganizationsPostWithHttpInfo(param: OrganizationsApiV1OrganizationsPostRequest, options?: Configuration): Promise<HttpInfo<ModelsOrganization>> {
+    public v1OrganizationsPostWithHttpInfo(param: OrganizationsApiV1OrganizationsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganization>> {
         return this.api.v1OrganizationsPostWithHttpInfo(param.routesCreateOrganizationRequest,  options).toPromise();
     }
 
@@ -2204,7 +2205,7 @@ export class ObjectOrganizationsApi {
      * Create organization
      * @param param the request object
      */
-    public v1OrganizationsPost(param: OrganizationsApiV1OrganizationsPostRequest, options?: Configuration): Promise<ModelsOrganization> {
+    public v1OrganizationsPost(param: OrganizationsApiV1OrganizationsPostRequest, options?: ConfigurationOptions): Promise<ModelsOrganization> {
         return this.api.v1OrganizationsPost(param.routesCreateOrganizationRequest,  options).toPromise();
     }
 
@@ -2238,7 +2239,7 @@ export class ObjectOutputsApi {
      * List outputs
      * @param param the request object
      */
-    public v1OutputsGetWithHttpInfo(param: OutputsApiV1OutputsGetRequest = {}, options?: Configuration): Promise<HttpInfo<Array<OutputsConnectorMeta>>> {
+    public v1OutputsGetWithHttpInfo(param: OutputsApiV1OutputsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<OutputsConnectorMeta>>> {
         return this.api.v1OutputsGetWithHttpInfo( options).toPromise();
     }
 
@@ -2247,7 +2248,7 @@ export class ObjectOutputsApi {
      * List outputs
      * @param param the request object
      */
-    public v1OutputsGet(param: OutputsApiV1OutputsGetRequest = {}, options?: Configuration): Promise<Array<OutputsConnectorMeta>> {
+    public v1OutputsGet(param: OutputsApiV1OutputsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<OutputsConnectorMeta>> {
         return this.api.v1OutputsGet( options).toPromise();
     }
 
@@ -2256,7 +2257,7 @@ export class ObjectOutputsApi {
      * Get output config meta
      * @param param the request object
      */
-    public v1OutputsOutputTypeIdGetWithHttpInfo(param: OutputsApiV1OutputsOutputTypeIdGetRequest, options?: Configuration): Promise<HttpInfo<ModelsConnectorMeta>> {
+    public v1OutputsOutputTypeIdGetWithHttpInfo(param: OutputsApiV1OutputsOutputTypeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectorMeta>> {
         return this.api.v1OutputsOutputTypeIdGetWithHttpInfo(param.outputTypeId,  options).toPromise();
     }
 
@@ -2265,7 +2266,7 @@ export class ObjectOutputsApi {
      * Get output config meta
      * @param param the request object
      */
-    public v1OutputsOutputTypeIdGet(param: OutputsApiV1OutputsOutputTypeIdGetRequest, options?: Configuration): Promise<ModelsConnectorMeta> {
+    public v1OutputsOutputTypeIdGet(param: OutputsApiV1OutputsOutputTypeIdGetRequest, options?: ConfigurationOptions): Promise<ModelsConnectorMeta> {
         return this.api.v1OutputsOutputTypeIdGet(param.outputTypeId,  options).toPromise();
     }
 
@@ -2661,7 +2662,7 @@ export class ObjectPipelinesApi {
      * List pipelines
      * @param param the request object
      */
-    public v1OrganizationIdPipelinesGetWithHttpInfo(param: PipelinesApiV1OrganizationIdPipelinesGetRequest, options?: Configuration): Promise<HttpInfo<ModelsPipelineList>> {
+    public v1OrganizationIdPipelinesGetWithHttpInfo(param: PipelinesApiV1OrganizationIdPipelinesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineList>> {
         return this.api.v1OrganizationIdPipelinesGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -2670,7 +2671,7 @@ export class ObjectPipelinesApi {
      * List pipelines
      * @param param the request object
      */
-    public v1OrganizationIdPipelinesGet(param: PipelinesApiV1OrganizationIdPipelinesGetRequest, options?: Configuration): Promise<ModelsPipelineList> {
+    public v1OrganizationIdPipelinesGet(param: PipelinesApiV1OrganizationIdPipelinesGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineList> {
         return this.api.v1OrganizationIdPipelinesGet(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -2679,7 +2680,7 @@ export class ObjectPipelinesApi {
      * Delete pipeline
      * @param param the request object
      */
-    public v1OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdDeleteRequest, options?: Configuration): Promise<HttpInfo<string>> {
+    public v1OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
         return this.api.v1OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
     }
 
@@ -2688,7 +2689,7 @@ export class ObjectPipelinesApi {
      * Delete pipeline
      * @param param the request object
      */
-    public v1OrganizationIdPipelinesPipelineIdDelete(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdDeleteRequest, options?: Configuration): Promise<string> {
+    public v1OrganizationIdPipelinesPipelineIdDelete(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.v1OrganizationIdPipelinesPipelineIdDelete(param.organizationId, param.pipelineId,  options).toPromise();
     }
 
@@ -2697,7 +2698,7 @@ export class ObjectPipelinesApi {
      * Get pipeline
      * @param param the request object
      */
-    public v1OrganizationIdPipelinesPipelineIdGetWithHttpInfo(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdGetRequest, options?: Configuration): Promise<HttpInfo<ModelsPipeline>> {
+    public v1OrganizationIdPipelinesPipelineIdGetWithHttpInfo(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipeline>> {
         return this.api.v1OrganizationIdPipelinesPipelineIdGetWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
     }
 
@@ -2706,7 +2707,7 @@ export class ObjectPipelinesApi {
      * Get pipeline
      * @param param the request object
      */
-    public v1OrganizationIdPipelinesPipelineIdGet(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdGetRequest, options?: Configuration): Promise<ModelsPipeline> {
+    public v1OrganizationIdPipelinesPipelineIdGet(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<ModelsPipeline> {
         return this.api.v1OrganizationIdPipelinesPipelineIdGet(param.organizationId, param.pipelineId,  options).toPromise();
     }
 
@@ -2715,7 +2716,7 @@ export class ObjectPipelinesApi {
      * Update pipeline
      * @param param the request object
      */
-    public v1OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsPipeline>> {
+    public v1OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipeline>> {
         return this.api.v1OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(param.organizationId, param.pipelineId, param.routesUpdatePipelineRequest,  options).toPromise();
     }
 
@@ -2724,7 +2725,7 @@ export class ObjectPipelinesApi {
      * Update pipeline
      * @param param the request object
      */
-    public v1OrganizationIdPipelinesPipelineIdPatch(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdPatchRequest, options?: Configuration): Promise<ModelsPipeline> {
+    public v1OrganizationIdPipelinesPipelineIdPatch(param: PipelinesApiV1OrganizationIdPipelinesPipelineIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsPipeline> {
         return this.api.v1OrganizationIdPipelinesPipelineIdPatch(param.organizationId, param.pipelineId, param.routesUpdatePipelineRequest,  options).toPromise();
     }
 
@@ -2733,7 +2734,7 @@ export class ObjectPipelinesApi {
      * Get status of all pipelines for an organization
      * @param param the request object
      */
-    public v2OrganizationIdPipelineSummaryGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelineSummaryGetRequest, options?: Configuration): Promise<HttpInfo<RoutesV2GetOrganizationSummaryResponse>> {
+    public v2OrganizationIdPipelineSummaryGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelineSummaryGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2GetOrganizationSummaryResponse>> {
         return this.api.v2OrganizationIdPipelineSummaryGetWithHttpInfo(param.organizationId, param.start, param.end,  options).toPromise();
     }
 
@@ -2742,7 +2743,7 @@ export class ObjectPipelinesApi {
      * Get status of all pipelines for an organization
      * @param param the request object
      */
-    public v2OrganizationIdPipelineSummaryGet(param: PipelinesApiV2OrganizationIdPipelineSummaryGetRequest, options?: Configuration): Promise<RoutesV2GetOrganizationSummaryResponse> {
+    public v2OrganizationIdPipelineSummaryGet(param: PipelinesApiV2OrganizationIdPipelineSummaryGetRequest, options?: ConfigurationOptions): Promise<RoutesV2GetOrganizationSummaryResponse> {
         return this.api.v2OrganizationIdPipelineSummaryGet(param.organizationId, param.start, param.end,  options).toPromise();
     }
 
@@ -2751,7 +2752,7 @@ export class ObjectPipelinesApi {
      * List pipelines
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesGetRequest, options?: Configuration): Promise<HttpInfo<ModelsPipelineList>> {
+    public v2OrganizationIdPipelinesGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineList>> {
         return this.api.v2OrganizationIdPipelinesGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -2760,7 +2761,7 @@ export class ObjectPipelinesApi {
      * List pipelines
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesGet(param: PipelinesApiV2OrganizationIdPipelinesGetRequest, options?: Configuration): Promise<ModelsPipelineList> {
+    public v2OrganizationIdPipelinesGet(param: PipelinesApiV2OrganizationIdPipelinesGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineList> {
         return this.api.v2OrganizationIdPipelinesGet(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -2769,7 +2770,7 @@ export class ObjectPipelinesApi {
      * Delete pipeline
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdDeleteRequest, options?: Configuration): Promise<HttpInfo<string>> {
+    public v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
         return this.api.v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
     }
 
@@ -2778,7 +2779,7 @@ export class ObjectPipelinesApi {
      * Delete pipeline
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdDelete(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdDeleteRequest, options?: Configuration): Promise<string> {
+    public v2OrganizationIdPipelinesPipelineIdDelete(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.v2OrganizationIdPipelinesPipelineIdDelete(param.organizationId, param.pipelineId,  options).toPromise();
     }
 
@@ -2787,7 +2788,7 @@ export class ObjectPipelinesApi {
      * Get pipeline configuration
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdGetRequest, options?: Configuration): Promise<HttpInfo<ModelsPipelineConfigV2>> {
+    public v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
         return this.api.v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
     }
 
@@ -2796,7 +2797,7 @@ export class ObjectPipelinesApi {
      * Get pipeline configuration
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdGetRequest, options?: Configuration): Promise<ModelsPipelineConfigV2> {
+    public v2OrganizationIdPipelinesPipelineIdGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineConfigV2> {
         return this.api.v2OrganizationIdPipelinesPipelineIdGet(param.organizationId, param.pipelineId,  options).toPromise();
     }
 
@@ -2805,7 +2806,7 @@ export class ObjectPipelinesApi {
      * Get pipeline node metrics
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest, options?: Configuration): Promise<HttpInfo<ModelsPipelineNodeMetrics>> {
+    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineNodeMetrics>> {
         return this.api.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
     }
 
@@ -2814,7 +2815,7 @@ export class ObjectPipelinesApi {
      * Get pipeline node metrics
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest, options?: Configuration): Promise<ModelsPipelineNodeMetrics> {
+    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineNodeMetrics> {
         return this.api.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
     }
 
@@ -2823,7 +2824,7 @@ export class ObjectPipelinesApi {
      * Update pipeline
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsPipelineConfigV2>> {
+    public v2OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
         return this.api.v2OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(param.organizationId, param.pipelineId, param.routesV2UpdatePipelineRequest,  options).toPromise();
     }
 
@@ -2832,7 +2833,7 @@ export class ObjectPipelinesApi {
      * Update pipeline
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdPatch(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdPatchRequest, options?: Configuration): Promise<ModelsPipelineConfigV2> {
+    public v2OrganizationIdPipelinesPipelineIdPatch(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsPipelineConfigV2> {
         return this.api.v2OrganizationIdPipelinesPipelineIdPatch(param.organizationId, param.pipelineId, param.routesV2UpdatePipelineRequest,  options).toPromise();
     }
 
@@ -2841,7 +2842,7 @@ export class ObjectPipelinesApi {
      * Get pipeline status
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdStatusGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusGetRequest, options?: Configuration): Promise<HttpInfo<ModelsPipelineStatus>> {
+    public v2OrganizationIdPipelinesPipelineIdStatusGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineStatus>> {
         return this.api.v2OrganizationIdPipelinesPipelineIdStatusGetWithHttpInfo(param.organizationId, param.pipelineId, param.metrics, param.start, param.end,  options).toPromise();
     }
 
@@ -2850,7 +2851,7 @@ export class ObjectPipelinesApi {
      * Get pipeline status
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdStatusGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusGetRequest, options?: Configuration): Promise<ModelsPipelineStatus> {
+    public v2OrganizationIdPipelinesPipelineIdStatusGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineStatus> {
         return this.api.v2OrganizationIdPipelinesPipelineIdStatusGet(param.organizationId, param.pipelineId, param.metrics, param.start, param.end,  options).toPromise();
     }
 
@@ -2859,7 +2860,7 @@ export class ObjectPipelinesApi {
      * Get pipeline node status
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusNodeIdGetRequest, options?: Configuration): Promise<HttpInfo<ModelsPipelineNodeStatus>> {
+    public v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusNodeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineNodeStatus>> {
         return this.api.v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.metrics, param.start, param.end,  options).toPromise();
     }
 
@@ -2868,7 +2869,7 @@ export class ObjectPipelinesApi {
      * Get pipeline node status
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusNodeIdGetRequest, options?: Configuration): Promise<ModelsPipelineNodeStatus> {
+    public v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusNodeIdGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineNodeStatus> {
         return this.api.v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(param.organizationId, param.pipelineId, param.nodeId, param.metrics, param.start, param.end,  options).toPromise();
     }
 
@@ -2877,7 +2878,7 @@ export class ObjectPipelinesApi {
      * Create pipeline
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPostWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPostRequest, options?: Configuration): Promise<HttpInfo<ModelsPipelineConfigV2>> {
+    public v2OrganizationIdPipelinesPostWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineConfigV2>> {
         return this.api.v2OrganizationIdPipelinesPostWithHttpInfo(param.organizationId, param.routesV2CreatePipelineRequest,  options).toPromise();
     }
 
@@ -2886,7 +2887,7 @@ export class ObjectPipelinesApi {
      * Create pipeline
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPost(param: PipelinesApiV2OrganizationIdPipelinesPostRequest, options?: Configuration): Promise<ModelsPipelineConfigV2> {
+    public v2OrganizationIdPipelinesPost(param: PipelinesApiV2OrganizationIdPipelinesPostRequest, options?: ConfigurationOptions): Promise<ModelsPipelineConfigV2> {
         return this.api.v2OrganizationIdPipelinesPost(param.organizationId, param.routesV2CreatePipelineRequest,  options).toPromise();
     }
 
@@ -2895,7 +2896,7 @@ export class ObjectPipelinesApi {
      * Get pipeline status
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesStatusesGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesStatusesGetRequest, options?: Configuration): Promise<HttpInfo<Array<RoutesV2PipelineWithStatus>>> {
+    public v2OrganizationIdPipelinesStatusesGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesStatusesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<RoutesV2PipelineWithStatus>>> {
         return this.api.v2OrganizationIdPipelinesStatusesGetWithHttpInfo(param.organizationId, param.limit, param.offset, param.start, param.end,  options).toPromise();
     }
 
@@ -2904,7 +2905,7 @@ export class ObjectPipelinesApi {
      * Get pipeline status
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesStatusesGet(param: PipelinesApiV2OrganizationIdPipelinesStatusesGetRequest, options?: Configuration): Promise<Array<RoutesV2PipelineWithStatus>> {
+    public v2OrganizationIdPipelinesStatusesGet(param: PipelinesApiV2OrganizationIdPipelinesStatusesGetRequest, options?: ConfigurationOptions): Promise<Array<RoutesV2PipelineWithStatus>> {
         return this.api.v2OrganizationIdPipelinesStatusesGet(param.organizationId, param.limit, param.offset, param.start, param.end,  options).toPromise();
     }
 
@@ -3022,7 +3023,7 @@ export class ObjectRolesApi {
      * List roles
      * @param param the request object
      */
-    public v1OrganizationIdRolesGetWithHttpInfo(param: RolesApiV1OrganizationIdRolesGetRequest, options?: Configuration): Promise<HttpInfo<ModelsRoleList>> {
+    public v1OrganizationIdRolesGetWithHttpInfo(param: RolesApiV1OrganizationIdRolesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleList>> {
         return this.api.v1OrganizationIdRolesGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -3031,7 +3032,7 @@ export class ObjectRolesApi {
      * List roles
      * @param param the request object
      */
-    public v1OrganizationIdRolesGet(param: RolesApiV1OrganizationIdRolesGetRequest, options?: Configuration): Promise<ModelsRoleList> {
+    public v1OrganizationIdRolesGet(param: RolesApiV1OrganizationIdRolesGetRequest, options?: ConfigurationOptions): Promise<ModelsRoleList> {
         return this.api.v1OrganizationIdRolesGet(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -3040,7 +3041,7 @@ export class ObjectRolesApi {
      * Create role
      * @param param the request object
      */
-    public v1OrganizationIdRolesPostWithHttpInfo(param: RolesApiV1OrganizationIdRolesPostRequest, options?: Configuration): Promise<HttpInfo<ModelsRole>> {
+    public v1OrganizationIdRolesPostWithHttpInfo(param: RolesApiV1OrganizationIdRolesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRole>> {
         return this.api.v1OrganizationIdRolesPostWithHttpInfo(param.organizationId, param.routesCreateRoleRequest,  options).toPromise();
     }
 
@@ -3049,7 +3050,7 @@ export class ObjectRolesApi {
      * Create role
      * @param param the request object
      */
-    public v1OrganizationIdRolesPost(param: RolesApiV1OrganizationIdRolesPostRequest, options?: Configuration): Promise<ModelsRole> {
+    public v1OrganizationIdRolesPost(param: RolesApiV1OrganizationIdRolesPostRequest, options?: ConfigurationOptions): Promise<ModelsRole> {
         return this.api.v1OrganizationIdRolesPost(param.organizationId, param.routesCreateRoleRequest,  options).toPromise();
     }
 
@@ -3058,7 +3059,7 @@ export class ObjectRolesApi {
      * Delete role
      * @param param the request object
      */
-    public v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(param: RolesApiV1OrganizationIdRolesRoleIdDeleteRequest, options?: Configuration): Promise<HttpInfo<any>> {
+    public v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(param: RolesApiV1OrganizationIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
         return this.api.v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(param.organizationId, param.roleId,  options).toPromise();
     }
 
@@ -3067,7 +3068,7 @@ export class ObjectRolesApi {
      * Delete role
      * @param param the request object
      */
-    public v1OrganizationIdRolesRoleIdDelete(param: RolesApiV1OrganizationIdRolesRoleIdDeleteRequest, options?: Configuration): Promise<any> {
+    public v1OrganizationIdRolesRoleIdDelete(param: RolesApiV1OrganizationIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<any> {
         return this.api.v1OrganizationIdRolesRoleIdDelete(param.organizationId, param.roleId,  options).toPromise();
     }
 
@@ -3076,7 +3077,7 @@ export class ObjectRolesApi {
      * Get role
      * @param param the request object
      */
-    public v1OrganizationIdRolesRoleIdGetWithHttpInfo(param: RolesApiV1OrganizationIdRolesRoleIdGetRequest, options?: Configuration): Promise<HttpInfo<ModelsRole>> {
+    public v1OrganizationIdRolesRoleIdGetWithHttpInfo(param: RolesApiV1OrganizationIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRole>> {
         return this.api.v1OrganizationIdRolesRoleIdGetWithHttpInfo(param.organizationId, param.roleId,  options).toPromise();
     }
 
@@ -3085,7 +3086,7 @@ export class ObjectRolesApi {
      * Get role
      * @param param the request object
      */
-    public v1OrganizationIdRolesRoleIdGet(param: RolesApiV1OrganizationIdRolesRoleIdGetRequest, options?: Configuration): Promise<ModelsRole> {
+    public v1OrganizationIdRolesRoleIdGet(param: RolesApiV1OrganizationIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<ModelsRole> {
         return this.api.v1OrganizationIdRolesRoleIdGet(param.organizationId, param.roleId,  options).toPromise();
     }
 
@@ -3094,7 +3095,7 @@ export class ObjectRolesApi {
      * Update role
      * @param param the request object
      */
-    public v1OrganizationIdRolesRoleIdPatchWithHttpInfo(param: RolesApiV1OrganizationIdRolesRoleIdPatchRequest, options?: Configuration): Promise<HttpInfo<ModelsRole>> {
+    public v1OrganizationIdRolesRoleIdPatchWithHttpInfo(param: RolesApiV1OrganizationIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRole>> {
         return this.api.v1OrganizationIdRolesRoleIdPatchWithHttpInfo(param.organizationId, param.roleId, param.routesUpdateRoleRequest,  options).toPromise();
     }
 
@@ -3103,7 +3104,7 @@ export class ObjectRolesApi {
      * Update role
      * @param param the request object
      */
-    public v1OrganizationIdRolesRoleIdPatch(param: RolesApiV1OrganizationIdRolesRoleIdPatchRequest, options?: Configuration): Promise<ModelsRole> {
+    public v1OrganizationIdRolesRoleIdPatch(param: RolesApiV1OrganizationIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsRole> {
         return this.api.v1OrganizationIdRolesRoleIdPatch(param.organizationId, param.roleId, param.routesUpdateRoleRequest,  options).toPromise();
     }
 
@@ -3151,7 +3152,7 @@ export class ObjectSandboxApi {
      * List available templates
      * @param param the request object
      */
-    public v2SandboxTemplateGetWithHttpInfo(param: SandboxApiV2SandboxTemplateGetRequest = {}, options?: Configuration): Promise<HttpInfo<RoutesV2ListTemplatesResponse>> {
+    public v2SandboxTemplateGetWithHttpInfo(param: SandboxApiV2SandboxTemplateGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2ListTemplatesResponse>> {
         return this.api.v2SandboxTemplateGetWithHttpInfo(param.body,  options).toPromise();
     }
 
@@ -3160,7 +3161,7 @@ export class ObjectSandboxApi {
      * List available templates
      * @param param the request object
      */
-    public v2SandboxTemplateGet(param: SandboxApiV2SandboxTemplateGetRequest = {}, options?: Configuration): Promise<RoutesV2ListTemplatesResponse> {
+    public v2SandboxTemplateGet(param: SandboxApiV2SandboxTemplateGetRequest = {}, options?: ConfigurationOptions): Promise<RoutesV2ListTemplatesResponse> {
         return this.api.v2SandboxTemplateGet(param.body,  options).toPromise();
     }
 
@@ -3169,7 +3170,7 @@ export class ObjectSandboxApi {
      * Generate sample record
      * @param param the request object
      */
-    public v2SandboxTemplatePostWithHttpInfo(param: SandboxApiV2SandboxTemplatePostRequest, options?: Configuration): Promise<HttpInfo<RoutesV2GenerateRecordResponse>> {
+    public v2SandboxTemplatePostWithHttpInfo(param: SandboxApiV2SandboxTemplatePostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2GenerateRecordResponse>> {
         return this.api.v2SandboxTemplatePostWithHttpInfo(param.routesV2GenerateRecordRequest,  options).toPromise();
     }
 
@@ -3178,7 +3179,7 @@ export class ObjectSandboxApi {
      * Generate sample record
      * @param param the request object
      */
-    public v2SandboxTemplatePost(param: SandboxApiV2SandboxTemplatePostRequest, options?: Configuration): Promise<RoutesV2GenerateRecordResponse> {
+    public v2SandboxTemplatePost(param: SandboxApiV2SandboxTemplatePostRequest, options?: ConfigurationOptions): Promise<RoutesV2GenerateRecordResponse> {
         return this.api.v2SandboxTemplatePost(param.routesV2GenerateRecordRequest,  options).toPromise();
     }
 
@@ -3187,7 +3188,7 @@ export class ObjectSandboxApi {
      * Apply transformation to record
      * @param param the request object
      */
-    public v2SandboxTransformPostWithHttpInfo(param: SandboxApiV2SandboxTransformPostRequest, options?: Configuration): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
+    public v2SandboxTransformPostWithHttpInfo(param: SandboxApiV2SandboxTransformPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2ApplyTransformationResponse>> {
         return this.api.v2SandboxTransformPostWithHttpInfo(param.routesV2ApplyTransformationRequest,  options).toPromise();
     }
 
@@ -3196,7 +3197,7 @@ export class ObjectSandboxApi {
      * Apply transformation to record
      * @param param the request object
      */
-    public v2SandboxTransformPost(param: SandboxApiV2SandboxTransformPostRequest, options?: Configuration): Promise<RoutesV2ApplyTransformationResponse> {
+    public v2SandboxTransformPost(param: SandboxApiV2SandboxTransformPostRequest, options?: ConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
         return this.api.v2SandboxTransformPost(param.routesV2ApplyTransformationRequest,  options).toPromise();
     }
 
@@ -3314,7 +3315,7 @@ export class ObjectSecretsApi {
      * List secrets with components
      * @param param the request object
      */
-    public v2OrganizationIdSecretsGetWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsGetRequest, options?: Configuration): Promise<HttpInfo<ModelsSecretWithComponentsList>> {
+    public v2OrganizationIdSecretsGetWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsSecretWithComponentsList>> {
         return this.api.v2OrganizationIdSecretsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -3323,7 +3324,7 @@ export class ObjectSecretsApi {
      * List secrets with components
      * @param param the request object
      */
-    public v2OrganizationIdSecretsGet(param: SecretsApiV2OrganizationIdSecretsGetRequest, options?: Configuration): Promise<ModelsSecretWithComponentsList> {
+    public v2OrganizationIdSecretsGet(param: SecretsApiV2OrganizationIdSecretsGetRequest, options?: ConfigurationOptions): Promise<ModelsSecretWithComponentsList> {
         return this.api.v2OrganizationIdSecretsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -3332,7 +3333,7 @@ export class ObjectSecretsApi {
      * Create secret
      * @param param the request object
      */
-    public v2OrganizationIdSecretsPostWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsPostRequest, options?: Configuration): Promise<HttpInfo<RoutesV2SecretResponse>> {
+    public v2OrganizationIdSecretsPostWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
         return this.api.v2OrganizationIdSecretsPostWithHttpInfo(param.organizationId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
     }
 
@@ -3341,7 +3342,7 @@ export class ObjectSecretsApi {
      * Create secret
      * @param param the request object
      */
-    public v2OrganizationIdSecretsPost(param: SecretsApiV2OrganizationIdSecretsPostRequest, options?: Configuration): Promise<RoutesV2SecretResponse> {
+    public v2OrganizationIdSecretsPost(param: SecretsApiV2OrganizationIdSecretsPostRequest, options?: ConfigurationOptions): Promise<RoutesV2SecretResponse> {
         return this.api.v2OrganizationIdSecretsPost(param.organizationId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
     }
 
@@ -3350,7 +3351,7 @@ export class ObjectSecretsApi {
      * Delete secret
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdDeleteWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsSecretIdDeleteRequest, options?: Configuration): Promise<HttpInfo<void>> {
+    public v2OrganizationIdSecretsSecretIdDeleteWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsSecretIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
         return this.api.v2OrganizationIdSecretsSecretIdDeleteWithHttpInfo(param.organizationId, param.secretId,  options).toPromise();
     }
 
@@ -3359,7 +3360,7 @@ export class ObjectSecretsApi {
      * Delete secret
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdDelete(param: SecretsApiV2OrganizationIdSecretsSecretIdDeleteRequest, options?: Configuration): Promise<void> {
+    public v2OrganizationIdSecretsSecretIdDelete(param: SecretsApiV2OrganizationIdSecretsSecretIdDeleteRequest, options?: ConfigurationOptions): Promise<void> {
         return this.api.v2OrganizationIdSecretsSecretIdDelete(param.organizationId, param.secretId,  options).toPromise();
     }
 
@@ -3368,7 +3369,7 @@ export class ObjectSecretsApi {
      * Get secret with components
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdGetWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsSecretIdGetRequest, options?: Configuration): Promise<HttpInfo<ModelsSecretWithComponents>> {
+    public v2OrganizationIdSecretsSecretIdGetWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsSecretIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsSecretWithComponents>> {
         return this.api.v2OrganizationIdSecretsSecretIdGetWithHttpInfo(param.organizationId, param.secretId,  options).toPromise();
     }
 
@@ -3377,7 +3378,7 @@ export class ObjectSecretsApi {
      * Get secret with components
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdGet(param: SecretsApiV2OrganizationIdSecretsSecretIdGetRequest, options?: Configuration): Promise<ModelsSecretWithComponents> {
+    public v2OrganizationIdSecretsSecretIdGet(param: SecretsApiV2OrganizationIdSecretsSecretIdGetRequest, options?: ConfigurationOptions): Promise<ModelsSecretWithComponents> {
         return this.api.v2OrganizationIdSecretsSecretIdGet(param.organizationId, param.secretId,  options).toPromise();
     }
 
@@ -3386,7 +3387,7 @@ export class ObjectSecretsApi {
      * Update secret
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdPatchWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsSecretIdPatchRequest, options?: Configuration): Promise<HttpInfo<RoutesV2SecretResponse>> {
+    public v2OrganizationIdSecretsSecretIdPatchWithHttpInfo(param: SecretsApiV2OrganizationIdSecretsSecretIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
         return this.api.v2OrganizationIdSecretsSecretIdPatchWithHttpInfo(param.organizationId, param.secretId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
     }
 
@@ -3395,7 +3396,7 @@ export class ObjectSecretsApi {
      * Update secret
      * @param param the request object
      */
-    public v2OrganizationIdSecretsSecretIdPatch(param: SecretsApiV2OrganizationIdSecretsSecretIdPatchRequest, options?: Configuration): Promise<RoutesV2SecretResponse> {
+    public v2OrganizationIdSecretsSecretIdPatch(param: SecretsApiV2OrganizationIdSecretsSecretIdPatchRequest, options?: ConfigurationOptions): Promise<RoutesV2SecretResponse> {
         return this.api.v2OrganizationIdSecretsSecretIdPatch(param.organizationId, param.secretId, param.routesV2CreateOrUpdateSecretRequest,  options).toPromise();
     }
 
@@ -3441,7 +3442,7 @@ export class ObjectTransformsApi {
      * List transforms
      * @param param the request object
      */
-    public v1TransformsGetWithHttpInfo(param: TransformsApiV1TransformsGetRequest = {}, options?: Configuration): Promise<HttpInfo<OperationInformation>> {
+    public v1TransformsGetWithHttpInfo(param: TransformsApiV1TransformsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<OperationInformation>> {
         return this.api.v1TransformsGetWithHttpInfo(param.body,  options).toPromise();
     }
 
@@ -3450,7 +3451,7 @@ export class ObjectTransformsApi {
      * List transforms
      * @param param the request object
      */
-    public v1TransformsGet(param: TransformsApiV1TransformsGetRequest = {}, options?: Configuration): Promise<OperationInformation> {
+    public v1TransformsGet(param: TransformsApiV1TransformsGetRequest = {}, options?: ConfigurationOptions): Promise<OperationInformation> {
         return this.api.v1TransformsGet(param.body,  options).toPromise();
     }
 
@@ -3459,7 +3460,7 @@ export class ObjectTransformsApi {
      * Get transform metadata
      * @param param the request object
      */
-    public v1TransformsTransformTypeIdGetWithHttpInfo(param: TransformsApiV1TransformsTransformTypeIdGetRequest, options?: Configuration): Promise<HttpInfo<any>> {
+    public v1TransformsTransformTypeIdGetWithHttpInfo(param: TransformsApiV1TransformsTransformTypeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
         return this.api.v1TransformsTransformTypeIdGetWithHttpInfo(param.transformTypeId, param.body,  options).toPromise();
     }
 
@@ -3468,7 +3469,7 @@ export class ObjectTransformsApi {
      * Get transform metadata
      * @param param the request object
      */
-    public v1TransformsTransformTypeIdGet(param: TransformsApiV1TransformsTransformTypeIdGetRequest, options?: Configuration): Promise<any> {
+    public v1TransformsTransformTypeIdGet(param: TransformsApiV1TransformsTransformTypeIdGetRequest, options?: ConfigurationOptions): Promise<any> {
         return this.api.v1TransformsTransformTypeIdGet(param.transformTypeId, param.body,  options).toPromise();
     }
 
@@ -3515,7 +3516,7 @@ export class ObjectUsersApi {
      * List users
      * @param param the request object
      */
-    public v1UsersGetWithHttpInfo(param: UsersApiV1UsersGetRequest = {}, options?: Configuration): Promise<HttpInfo<ModelsUserList>> {
+    public v1UsersGetWithHttpInfo(param: UsersApiV1UsersGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsUserList>> {
         return this.api.v1UsersGetWithHttpInfo(param.limit, param.offset,  options).toPromise();
     }
 
@@ -3524,7 +3525,7 @@ export class ObjectUsersApi {
      * List users
      * @param param the request object
      */
-    public v1UsersGet(param: UsersApiV1UsersGetRequest = {}, options?: Configuration): Promise<ModelsUserList> {
+    public v1UsersGet(param: UsersApiV1UsersGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsUserList> {
         return this.api.v1UsersGet(param.limit, param.offset,  options).toPromise();
     }
 
@@ -3533,7 +3534,7 @@ export class ObjectUsersApi {
      * Create user
      * @param param the request object
      */
-    public v1UsersPostWithHttpInfo(param: UsersApiV1UsersPostRequest = {}, options?: Configuration): Promise<HttpInfo<ModelsUser>> {
+    public v1UsersPostWithHttpInfo(param: UsersApiV1UsersPostRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsUser>> {
         return this.api.v1UsersPostWithHttpInfo(param.body,  options).toPromise();
     }
 
@@ -3542,7 +3543,7 @@ export class ObjectUsersApi {
      * Create user
      * @param param the request object
      */
-    public v1UsersPost(param: UsersApiV1UsersPostRequest = {}, options?: Configuration): Promise<ModelsUser> {
+    public v1UsersPost(param: UsersApiV1UsersPostRequest = {}, options?: ConfigurationOptions): Promise<ModelsUser> {
         return this.api.v1UsersPost(param.body,  options).toPromise();
     }
 
