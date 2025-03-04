@@ -2463,7 +2463,7 @@ class PipelinesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsPipelineNodeMetrics",
-            '500': "V1OrganizationIdInputsBulkPost400Response",
+            '500': "V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2555,7 +2555,7 @@ class PipelinesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsPipelineNodeMetrics",
-            '500': "V1OrganizationIdInputsBulkPost400Response",
+            '500': "V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2647,7 +2647,7 @@ class PipelinesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsPipelineNodeMetrics",
-            '500': "V1OrganizationIdInputsBulkPost400Response",
+            '500': "V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response",
         }
         response_data = self.api_client.call_api(
             *_param,

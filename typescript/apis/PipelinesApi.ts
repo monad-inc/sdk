@@ -19,7 +19,7 @@ import { RoutesV2CreatePipelineRequest } from '../models/RoutesV2CreatePipelineR
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
-import { V1OrganizationIdInputsBulkPost400Response } from '../models/V1OrganizationIdInputsBulkPost400Response';
+import { V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response } from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
 
 /**
  * no description
@@ -1251,11 +1251,11 @@ export class PipelinesApiResponseProcessor {
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: V1OrganizationIdInputsBulkPost400Response = ObjectSerializer.deserialize(
+            const body: V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "V1OrganizationIdInputsBulkPost400Response", ""
-            ) as V1OrganizationIdInputsBulkPost400Response;
-            throw new ApiException<V1OrganizationIdInputsBulkPost400Response>(response.httpStatusCode, "Failed to get node", body, response.headers);
+                "V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response", ""
+            ) as V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response;
+            throw new ApiException<V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response>(response.httpStatusCode, "Failed to get node", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml

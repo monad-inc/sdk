@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-03-03T20:35:58.095180180Z[Etc/UTC]
+  - Build date: 2025-03-04T18:44:45.064768197Z[Etc/UTC]
   - Generator version: 7.12.0
 
 This is the monad API
@@ -136,12 +136,9 @@ Class | Method | HTTP request | Description
 *OrganizationApiKeysApi* | [**v2OrganizationIdApiKeysApiKeyIdRegeneratePost**](docs/OrganizationApiKeysApi.md#v2OrganizationIdApiKeysApiKeyIdRegeneratePost) | **POST** /v2/{organization_id}/api_keys/{api_key_id}/regenerate | Regenerate API key
 *OrganizationApiKeysApi* | [**v2OrganizationIdApiKeysGet**](docs/OrganizationApiKeysApi.md#v2OrganizationIdApiKeysGet) | **GET** /v2/{organization_id}/api_keys | List API keys
 *OrganizationApiKeysApi* | [**v2OrganizationIdApiKeysPost**](docs/OrganizationApiKeysApi.md#v2OrganizationIdApiKeysPost) | **POST** /v2/{organization_id}/api_keys | Create API key
-*OrganizationInputsApi* | [**v1OrganizationIdInputsBulkPost**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsBulkPost) | **POST** /v1/{organization_id}/inputs/bulk | Bulk create inputs
 *OrganizationInputsApi* | [**v1OrganizationIdInputsGet**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsGet) | **GET** /v1/{organization_id}/inputs | List inputs
 *OrganizationInputsApi* | [**v1OrganizationIdInputsInputIdDelete**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsInputIdDelete) | **DELETE** /v1/{organization_id}/inputs/{input_id} | Delete input
 *OrganizationInputsApi* | [**v1OrganizationIdInputsInputIdGet**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsInputIdGet) | **GET** /v1/{organization_id}/inputs/{input_id} | Get input
-*OrganizationInputsApi* | [**v1OrganizationIdInputsInputIdPatch**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsInputIdPatch) | **PATCH** /v1/{organization_id}/inputs/{input_id} | Update input
-*OrganizationInputsApi* | [**v1OrganizationIdInputsPost**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsPost) | **POST** /v1/{organization_id}/inputs | Create input
 *OrganizationInputsApi* | [**v2OrganizationIdInputsInputIdPatch**](docs/OrganizationInputsApi.md#v2OrganizationIdInputsInputIdPatch) | **PATCH** /v2/{organization_id}/inputs/{input_id} | Update input
 *OrganizationInputsApi* | [**v2OrganizationIdInputsPost**](docs/OrganizationInputsApi.md#v2OrganizationIdInputsPost) | **POST** /v2/{organization_id}/inputs | Create input
 *OrganizationInputsApi* | [**v2OrganizationIdInputsTestConnectionPost**](docs/OrganizationInputsApi.md#v2OrganizationIdInputsTestConnectionPost) | **POST** /v2/{organization_id}/inputs/test-connection | Test input connection
@@ -149,8 +146,6 @@ Class | Method | HTTP request | Description
 *OrganizationOutputsApi* | [**v1OrganizationIdOutputsGet**](docs/OrganizationOutputsApi.md#v1OrganizationIdOutputsGet) | **GET** /v1/{organization_id}/outputs | List outputs
 *OrganizationOutputsApi* | [**v1OrganizationIdOutputsOutputIdDelete**](docs/OrganizationOutputsApi.md#v1OrganizationIdOutputsOutputIdDelete) | **DELETE** /v1/{organization_id}/outputs/{output_id} | Delete output
 *OrganizationOutputsApi* | [**v1OrganizationIdOutputsOutputIdGet**](docs/OrganizationOutputsApi.md#v1OrganizationIdOutputsOutputIdGet) | **GET** /v1/{organization_id}/outputs/{output_id} | Get output
-*OrganizationOutputsApi* | [**v1OrganizationIdOutputsOutputIdPatch**](docs/OrganizationOutputsApi.md#v1OrganizationIdOutputsOutputIdPatch) | **PATCH** /v1/{organization_id}/outputs/{output_id} | Update output
-*OrganizationOutputsApi* | [**v1OrganizationIdOutputsPost**](docs/OrganizationOutputsApi.md#v1OrganizationIdOutputsPost) | **POST** /v1/{organization_id}/outputs | Create output
 *OrganizationOutputsApi* | [**v2OrganizationIdOutputsOutputIdPatch**](docs/OrganizationOutputsApi.md#v2OrganizationIdOutputsOutputIdPatch) | **PATCH** /v2/{organization_id}/outputs/{output_id} | Update output
 *OrganizationOutputsApi* | [**v2OrganizationIdOutputsPost**](docs/OrganizationOutputsApi.md#v2OrganizationIdOutputsPost) | **POST** /v2/{organization_id}/outputs | Create output
 *OrganizationOutputsApi* | [**v2OrganizationIdOutputsTestConnectionPost**](docs/OrganizationOutputsApi.md#v2OrganizationIdOutputsTestConnectionPost) | **POST** /v2/{organization_id}/outputs/test-connection | Test output connection
@@ -275,10 +270,7 @@ Class | Method | HTTP request | Description
  - [RenameKeyWhereValueEqRenameKeyWhereValueEq](docs/RenameKeyWhereValueEqRenameKeyWhereValueEq.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
  - [RoutesAddUserToOrganizationRequest](docs/RoutesAddUserToOrganizationRequest.md)
- - [RoutesBulkCreateInputRequest](docs/RoutesBulkCreateInputRequest.md)
- - [RoutesCreateInputRequest](docs/RoutesCreateInputRequest.md)
  - [RoutesCreateOrganizationRequest](docs/RoutesCreateOrganizationRequest.md)
- - [RoutesCreateOutputRequest](docs/RoutesCreateOutputRequest.md)
  - [RoutesCreateRoleRequest](docs/RoutesCreateRoleRequest.md)
  - [RoutesCreateTransformRequest](docs/RoutesCreateTransformRequest.md)
  - [RoutesGetInputResponse](docs/RoutesGetInputResponse.md)
@@ -288,11 +280,7 @@ Class | Method | HTTP request | Description
  - [RoutesTransformConfig](docs/RoutesTransformConfig.md)
  - [RoutesTransformOperation](docs/RoutesTransformOperation.md)
  - [RoutesTransformOperationArguments](docs/RoutesTransformOperationArguments.md)
- - [RoutesUpdateInputRequest](docs/RoutesUpdateInputRequest.md)
- - [RoutesUpdateInputRequestConfig](docs/RoutesUpdateInputRequestConfig.md)
  - [RoutesUpdateOrganizationRequest](docs/RoutesUpdateOrganizationRequest.md)
- - [RoutesUpdateOutputRequest](docs/RoutesUpdateOutputRequest.md)
- - [RoutesUpdateOutputRequestConfig](docs/RoutesUpdateOutputRequestConfig.md)
  - [RoutesUpdatePipelineRequest](docs/RoutesUpdatePipelineRequest.md)
  - [RoutesUpdateRoleRequest](docs/RoutesUpdateRoleRequest.md)
  - [RoutesUpdateTransformRequest](docs/RoutesUpdateTransformRequest.md)
@@ -320,8 +308,7 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdateOutputRequest](docs/RoutesV2UpdateOutputRequest.md)
  - [RoutesV2UpdatePipelineRequest](docs/RoutesV2UpdatePipelineRequest.md)
  - [UtcTimestampTimestamp](docs/UtcTimestampTimestamp.md)
- - [V1OrganizationIdInputsBulkPost400Response](docs/V1OrganizationIdInputsBulkPost400Response.md)
- - [V1OrganizationIdInputsPost400Response](docs/V1OrganizationIdInputsPost400Response.md)
+ - [V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response](docs/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response.md)
 
 
 <a id="documentation-for-authorization"></a>

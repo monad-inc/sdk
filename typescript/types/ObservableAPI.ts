@@ -73,10 +73,7 @@ import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
-import { RoutesBulkCreateInputRequest } from '../models/RoutesBulkCreateInputRequest';
-import { RoutesCreateInputRequest } from '../models/RoutesCreateInputRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
-import { RoutesCreateOutputRequest } from '../models/RoutesCreateOutputRequest';
 import { RoutesCreateRoleRequest } from '../models/RoutesCreateRoleRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
@@ -86,11 +83,7 @@ import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUse
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
-import { RoutesUpdateInputRequest } from '../models/RoutesUpdateInputRequest';
-import { RoutesUpdateInputRequestConfig } from '../models/RoutesUpdateInputRequestConfig';
 import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizationRequest';
-import { RoutesUpdateOutputRequest } from '../models/RoutesUpdateOutputRequest';
-import { RoutesUpdateOutputRequestConfig } from '../models/RoutesUpdateOutputRequestConfig';
 import { RoutesUpdatePipelineRequest } from '../models/RoutesUpdatePipelineRequest';
 import { RoutesUpdateRoleRequest } from '../models/RoutesUpdateRoleRequest';
 import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformRequest';
@@ -118,8 +111,7 @@ import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
-import { V1OrganizationIdInputsBulkPost400Response } from '../models/V1OrganizationIdInputsBulkPost400Response';
-import { V1OrganizationIdInputsPost400Response } from '../models/V1OrganizationIdInputsPost400Response';
+import { V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response } from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
 
 import { AuthenticationApiRequestFactory, AuthenticationApiResponseProcessor} from "../apis/AuthenticationApi";
 export class ObservableAuthenticationApi {
@@ -1600,72 +1592,6 @@ export class ObservableOrganizationInputsApi {
     }
 
     /**
-     * Create multiple inputs in a single request
-     * Bulk create inputs
-     * @param organizationId Organization ID
-     * @param routesBulkCreateInputRequest Request body for creating multiple inputs
-     * @param [testConnection] Test connection before creating the input
-     */
-    public v1OrganizationIdInputsBulkPostWithHttpInfo(organizationId: string, routesBulkCreateInputRequest: RoutesBulkCreateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsInput>>> {
-    let _config = this.configuration;
-    let allMiddleware: Middleware[] = [];
-    if (_options && _options.middleware){
-      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
-      // call-time middleware provided
-      const calltimeMiddleware: Middleware[] = _options.middleware;
-
-      switch(middlewareMergeStrategy){
-      case 'append':
-        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
-        break;
-      case 'prepend':
-        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
-        break;
-      case 'replace':
-        allMiddleware = calltimeMiddleware
-        break;
-      default: 
-        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
-      }
-	}
-	if (_options){
-    _config = {
-      baseServer: _options.baseServer || this.configuration.baseServer,
-      httpApi: _options.httpApi || this.configuration.httpApi,
-      authMethods: _options.authMethods || this.configuration.authMethods,
-      middleware: allMiddleware || this.configuration.middleware
-		};
-	}
-
-        const requestContextPromise = this.requestFactory.v1OrganizationIdInputsBulkPost(organizationId, routesBulkCreateInputRequest, testConnection, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of allMiddleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1OrganizationIdInputsBulkPostWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Create multiple inputs in a single request
-     * Bulk create inputs
-     * @param organizationId Organization ID
-     * @param routesBulkCreateInputRequest Request body for creating multiple inputs
-     * @param [testConnection] Test connection before creating the input
-     */
-    public v1OrganizationIdInputsBulkPost(organizationId: string, routesBulkCreateInputRequest: RoutesBulkCreateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<Array<ModelsInput>> {
-        return this.v1OrganizationIdInputsBulkPostWithHttpInfo(organizationId, routesBulkCreateInputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsInput>>) => apiResponse.data));
-    }
-
-    /**
      * List inputs
      * List inputs
      * @param organizationId Organization ID
@@ -1857,140 +1783,6 @@ export class ObservableOrganizationInputsApi {
      */
     public v1OrganizationIdInputsInputIdGet(organizationId: string, inputId: string, _options?: ConfigurationOptions): Observable<RoutesGetInputResponse> {
         return this.v1OrganizationIdInputsInputIdGetWithHttpInfo(organizationId, inputId, _options).pipe(map((apiResponse: HttpInfo<RoutesGetInputResponse>) => apiResponse.data));
-    }
-
-    /**
-     * Update input
-     * Update input
-     * @param organizationId Organization ID
-     * @param inputId Input ID
-     * @param routesUpdateInputRequest Request body for updating an input
-     * @param [testConnection] Test connection before creating the input
-     */
-    public v1OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId: string, inputId: string, routesUpdateInputRequest: RoutesUpdateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsInput>> {
-    let _config = this.configuration;
-    let allMiddleware: Middleware[] = [];
-    if (_options && _options.middleware){
-      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
-      // call-time middleware provided
-      const calltimeMiddleware: Middleware[] = _options.middleware;
-
-      switch(middlewareMergeStrategy){
-      case 'append':
-        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
-        break;
-      case 'prepend':
-        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
-        break;
-      case 'replace':
-        allMiddleware = calltimeMiddleware
-        break;
-      default: 
-        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
-      }
-	}
-	if (_options){
-    _config = {
-      baseServer: _options.baseServer || this.configuration.baseServer,
-      httpApi: _options.httpApi || this.configuration.httpApi,
-      authMethods: _options.authMethods || this.configuration.authMethods,
-      middleware: allMiddleware || this.configuration.middleware
-		};
-	}
-
-        const requestContextPromise = this.requestFactory.v1OrganizationIdInputsInputIdPatch(organizationId, inputId, routesUpdateInputRequest, testConnection, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of allMiddleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1OrganizationIdInputsInputIdPatchWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Update input
-     * Update input
-     * @param organizationId Organization ID
-     * @param inputId Input ID
-     * @param routesUpdateInputRequest Request body for updating an input
-     * @param [testConnection] Test connection before creating the input
-     */
-    public v1OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesUpdateInputRequest: RoutesUpdateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsInput> {
-        return this.v1OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId, inputId, routesUpdateInputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsInput>) => apiResponse.data));
-    }
-
-    /**
-     * Create input
-     * Create input
-     * @param organizationId Organization ID
-     * @param routesCreateInputRequest Request body for creating an input
-     * @param [testConnection] Test connection before creating the input
-     */
-    public v1OrganizationIdInputsPostWithHttpInfo(organizationId: string, routesCreateInputRequest: RoutesCreateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsInput>> {
-    let _config = this.configuration;
-    let allMiddleware: Middleware[] = [];
-    if (_options && _options.middleware){
-      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
-      // call-time middleware provided
-      const calltimeMiddleware: Middleware[] = _options.middleware;
-
-      switch(middlewareMergeStrategy){
-      case 'append':
-        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
-        break;
-      case 'prepend':
-        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
-        break;
-      case 'replace':
-        allMiddleware = calltimeMiddleware
-        break;
-      default: 
-        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
-      }
-	}
-	if (_options){
-    _config = {
-      baseServer: _options.baseServer || this.configuration.baseServer,
-      httpApi: _options.httpApi || this.configuration.httpApi,
-      authMethods: _options.authMethods || this.configuration.authMethods,
-      middleware: allMiddleware || this.configuration.middleware
-		};
-	}
-
-        const requestContextPromise = this.requestFactory.v1OrganizationIdInputsPost(organizationId, routesCreateInputRequest, testConnection, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of allMiddleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1OrganizationIdInputsPostWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Create input
-     * Create input
-     * @param organizationId Organization ID
-     * @param routesCreateInputRequest Request body for creating an input
-     * @param [testConnection] Test connection before creating the input
-     */
-    public v1OrganizationIdInputsPost(organizationId: string, routesCreateInputRequest: RoutesCreateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsInput> {
-        return this.v1OrganizationIdInputsPostWithHttpInfo(organizationId, routesCreateInputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsInput>) => apiResponse.data));
     }
 
     /**
@@ -2483,136 +2275,6 @@ export class ObservableOrganizationOutputsApi {
      */
     public v1OrganizationIdOutputsOutputIdGet(organizationId: string, outputId: string, _options?: ConfigurationOptions): Observable<RoutesGetOutputResponse> {
         return this.v1OrganizationIdOutputsOutputIdGetWithHttpInfo(organizationId, outputId, _options).pipe(map((apiResponse: HttpInfo<RoutesGetOutputResponse>) => apiResponse.data));
-    }
-
-    /**
-     * Update output
-     * Update output
-     * @param organizationId Organization ID
-     * @param outputId Output ID
-     * @param routesUpdateOutputRequest Request body for updating an output
-     */
-    public v1OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId: string, outputId: string, routesUpdateOutputRequest: RoutesUpdateOutputRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOutput>> {
-    let _config = this.configuration;
-    let allMiddleware: Middleware[] = [];
-    if (_options && _options.middleware){
-      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
-      // call-time middleware provided
-      const calltimeMiddleware: Middleware[] = _options.middleware;
-
-      switch(middlewareMergeStrategy){
-      case 'append':
-        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
-        break;
-      case 'prepend':
-        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
-        break;
-      case 'replace':
-        allMiddleware = calltimeMiddleware
-        break;
-      default: 
-        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
-      }
-	}
-	if (_options){
-    _config = {
-      baseServer: _options.baseServer || this.configuration.baseServer,
-      httpApi: _options.httpApi || this.configuration.httpApi,
-      authMethods: _options.authMethods || this.configuration.authMethods,
-      middleware: allMiddleware || this.configuration.middleware
-		};
-	}
-
-        const requestContextPromise = this.requestFactory.v1OrganizationIdOutputsOutputIdPatch(organizationId, outputId, routesUpdateOutputRequest, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of allMiddleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1OrganizationIdOutputsOutputIdPatchWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Update output
-     * Update output
-     * @param organizationId Organization ID
-     * @param outputId Output ID
-     * @param routesUpdateOutputRequest Request body for updating an output
-     */
-    public v1OrganizationIdOutputsOutputIdPatch(organizationId: string, outputId: string, routesUpdateOutputRequest: RoutesUpdateOutputRequest, _options?: ConfigurationOptions): Observable<ModelsOutput> {
-        return this.v1OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId, outputId, routesUpdateOutputRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsOutput>) => apiResponse.data));
-    }
-
-    /**
-     * Create output
-     * Create output
-     * @param organizationId Organization ID
-     * @param routesCreateOutputRequest Request body for creating an output
-     */
-    public v1OrganizationIdOutputsPostWithHttpInfo(organizationId: string, routesCreateOutputRequest: RoutesCreateOutputRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOutput>> {
-    let _config = this.configuration;
-    let allMiddleware: Middleware[] = [];
-    if (_options && _options.middleware){
-      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
-      // call-time middleware provided
-      const calltimeMiddleware: Middleware[] = _options.middleware;
-
-      switch(middlewareMergeStrategy){
-      case 'append':
-        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
-        break;
-      case 'prepend':
-        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
-        break;
-      case 'replace':
-        allMiddleware = calltimeMiddleware
-        break;
-      default: 
-        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
-      }
-	}
-	if (_options){
-    _config = {
-      baseServer: _options.baseServer || this.configuration.baseServer,
-      httpApi: _options.httpApi || this.configuration.httpApi,
-      authMethods: _options.authMethods || this.configuration.authMethods,
-      middleware: allMiddleware || this.configuration.middleware
-		};
-	}
-
-        const requestContextPromise = this.requestFactory.v1OrganizationIdOutputsPost(organizationId, routesCreateOutputRequest, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of allMiddleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1OrganizationIdOutputsPostWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Create output
-     * Create output
-     * @param organizationId Organization ID
-     * @param routesCreateOutputRequest Request body for creating an output
-     */
-    public v1OrganizationIdOutputsPost(organizationId: string, routesCreateOutputRequest: RoutesCreateOutputRequest, _options?: ConfigurationOptions): Observable<ModelsOutput> {
-        return this.v1OrganizationIdOutputsPostWithHttpInfo(organizationId, routesCreateOutputRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsOutput>) => apiResponse.data));
     }
 
     /**

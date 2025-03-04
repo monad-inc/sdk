@@ -72,10 +72,7 @@ import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
-import { RoutesBulkCreateInputRequest } from '../models/RoutesBulkCreateInputRequest';
-import { RoutesCreateInputRequest } from '../models/RoutesCreateInputRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
-import { RoutesCreateOutputRequest } from '../models/RoutesCreateOutputRequest';
 import { RoutesCreateRoleRequest } from '../models/RoutesCreateRoleRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
@@ -85,11 +82,7 @@ import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUse
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
-import { RoutesUpdateInputRequest } from '../models/RoutesUpdateInputRequest';
-import { RoutesUpdateInputRequestConfig } from '../models/RoutesUpdateInputRequestConfig';
 import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizationRequest';
-import { RoutesUpdateOutputRequest } from '../models/RoutesUpdateOutputRequest';
-import { RoutesUpdateOutputRequestConfig } from '../models/RoutesUpdateOutputRequestConfig';
 import { RoutesUpdatePipelineRequest } from '../models/RoutesUpdatePipelineRequest';
 import { RoutesUpdateRoleRequest } from '../models/RoutesUpdateRoleRequest';
 import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformRequest';
@@ -117,8 +110,7 @@ import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
-import { V1OrganizationIdInputsBulkPost400Response } from '../models/V1OrganizationIdInputsBulkPost400Response';
-import { V1OrganizationIdInputsPost400Response } from '../models/V1OrganizationIdInputsPost400Response';
+import { V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response } from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
 
 import { ObservableAuthenticationApi } from "./ObservableAPI";
 import { AuthenticationApiRequestFactory, AuthenticationApiResponseProcessor} from "../apis/AuthenticationApi";
@@ -910,29 +902,6 @@ export class ObjectOrganizationApiKeysApi {
 import { ObservableOrganizationInputsApi } from "./ObservableAPI";
 import { OrganizationInputsApiRequestFactory, OrganizationInputsApiResponseProcessor} from "../apis/OrganizationInputsApi";
 
-export interface OrganizationInputsApiV1OrganizationIdInputsBulkPostRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsBulkPost
-     */
-    organizationId: string
-    /**
-     * Request body for creating multiple inputs
-     * @type RoutesBulkCreateInputRequest
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsBulkPost
-     */
-    routesBulkCreateInputRequest: RoutesBulkCreateInputRequest
-    /**
-     * Test connection before creating the input
-     * Defaults to: undefined
-     * @type boolean
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsBulkPost
-     */
-    testConnection?: boolean
-}
-
 export interface OrganizationInputsApiV1OrganizationIdInputsGetRequest {
     /**
      * Organization ID
@@ -989,59 +958,6 @@ export interface OrganizationInputsApiV1OrganizationIdInputsInputIdGetRequest {
      * @memberof OrganizationInputsApiv1OrganizationIdInputsInputIdGet
      */
     inputId: string
-}
-
-export interface OrganizationInputsApiV1OrganizationIdInputsInputIdPatchRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsInputIdPatch
-     */
-    organizationId: string
-    /**
-     * Input ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsInputIdPatch
-     */
-    inputId: string
-    /**
-     * Request body for updating an input
-     * @type RoutesUpdateInputRequest
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsInputIdPatch
-     */
-    routesUpdateInputRequest: RoutesUpdateInputRequest
-    /**
-     * Test connection before creating the input
-     * Defaults to: undefined
-     * @type boolean
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsInputIdPatch
-     */
-    testConnection?: boolean
-}
-
-export interface OrganizationInputsApiV1OrganizationIdInputsPostRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsPost
-     */
-    organizationId: string
-    /**
-     * Request body for creating an input
-     * @type RoutesCreateInputRequest
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsPost
-     */
-    routesCreateInputRequest: RoutesCreateInputRequest
-    /**
-     * Test connection before creating the input
-     * Defaults to: undefined
-     * @type boolean
-     * @memberof OrganizationInputsApiv1OrganizationIdInputsPost
-     */
-    testConnection?: boolean
 }
 
 export interface OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest {
@@ -1121,24 +1037,6 @@ export class ObjectOrganizationInputsApi {
     }
 
     /**
-     * Create multiple inputs in a single request
-     * Bulk create inputs
-     * @param param the request object
-     */
-    public v1OrganizationIdInputsBulkPostWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsBulkPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsInput>>> {
-        return this.api.v1OrganizationIdInputsBulkPostWithHttpInfo(param.organizationId, param.routesBulkCreateInputRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Create multiple inputs in a single request
-     * Bulk create inputs
-     * @param param the request object
-     */
-    public v1OrganizationIdInputsBulkPost(param: OrganizationInputsApiV1OrganizationIdInputsBulkPostRequest, options?: ConfigurationOptions): Promise<Array<ModelsInput>> {
-        return this.api.v1OrganizationIdInputsBulkPost(param.organizationId, param.routesBulkCreateInputRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
      * List inputs
      * List inputs
      * @param param the request object
@@ -1190,42 +1088,6 @@ export class ObjectOrganizationInputsApi {
      */
     public v1OrganizationIdInputsInputIdGet(param: OrganizationInputsApiV1OrganizationIdInputsInputIdGetRequest, options?: ConfigurationOptions): Promise<RoutesGetInputResponse> {
         return this.api.v1OrganizationIdInputsInputIdGet(param.organizationId, param.inputId,  options).toPromise();
-    }
-
-    /**
-     * Update input
-     * Update input
-     * @param param the request object
-     */
-    public v1OrganizationIdInputsInputIdPatchWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsInputIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
-        return this.api.v1OrganizationIdInputsInputIdPatchWithHttpInfo(param.organizationId, param.inputId, param.routesUpdateInputRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Update input
-     * Update input
-     * @param param the request object
-     */
-    public v1OrganizationIdInputsInputIdPatch(param: OrganizationInputsApiV1OrganizationIdInputsInputIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
-        return this.api.v1OrganizationIdInputsInputIdPatch(param.organizationId, param.inputId, param.routesUpdateInputRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Create input
-     * Create input
-     * @param param the request object
-     */
-    public v1OrganizationIdInputsPostWithHttpInfo(param: OrganizationInputsApiV1OrganizationIdInputsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
-        return this.api.v1OrganizationIdInputsPostWithHttpInfo(param.organizationId, param.routesCreateInputRequest, param.testConnection,  options).toPromise();
-    }
-
-    /**
-     * Create input
-     * Create input
-     * @param param the request object
-     */
-    public v1OrganizationIdInputsPost(param: OrganizationInputsApiV1OrganizationIdInputsPostRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
-        return this.api.v1OrganizationIdInputsPost(param.organizationId, param.routesCreateInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -1391,45 +1253,6 @@ export interface OrganizationOutputsApiV1OrganizationIdOutputsOutputIdGetRequest
     outputId: string
 }
 
-export interface OrganizationOutputsApiV1OrganizationIdOutputsOutputIdPatchRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationOutputsApiv1OrganizationIdOutputsOutputIdPatch
-     */
-    organizationId: string
-    /**
-     * Output ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationOutputsApiv1OrganizationIdOutputsOutputIdPatch
-     */
-    outputId: string
-    /**
-     * Request body for updating an output
-     * @type RoutesUpdateOutputRequest
-     * @memberof OrganizationOutputsApiv1OrganizationIdOutputsOutputIdPatch
-     */
-    routesUpdateOutputRequest: RoutesUpdateOutputRequest
-}
-
-export interface OrganizationOutputsApiV1OrganizationIdOutputsPostRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof OrganizationOutputsApiv1OrganizationIdOutputsPost
-     */
-    organizationId: string
-    /**
-     * Request body for creating an output
-     * @type RoutesCreateOutputRequest
-     * @memberof OrganizationOutputsApiv1OrganizationIdOutputsPost
-     */
-    routesCreateOutputRequest: RoutesCreateOutputRequest
-}
-
 export interface OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchRequest {
     /**
      * Organization ID
@@ -1558,42 +1381,6 @@ export class ObjectOrganizationOutputsApi {
      */
     public v1OrganizationIdOutputsOutputIdGet(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdGetRequest, options?: ConfigurationOptions): Promise<RoutesGetOutputResponse> {
         return this.api.v1OrganizationIdOutputsOutputIdGet(param.organizationId, param.outputId,  options).toPromise();
-    }
-
-    /**
-     * Update output
-     * Update output
-     * @param param the request object
-     */
-    public v1OrganizationIdOutputsOutputIdPatchWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
-        return this.api.v1OrganizationIdOutputsOutputIdPatchWithHttpInfo(param.organizationId, param.outputId, param.routesUpdateOutputRequest,  options).toPromise();
-    }
-
-    /**
-     * Update output
-     * Update output
-     * @param param the request object
-     */
-    public v1OrganizationIdOutputsOutputIdPatch(param: OrganizationOutputsApiV1OrganizationIdOutputsOutputIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
-        return this.api.v1OrganizationIdOutputsOutputIdPatch(param.organizationId, param.outputId, param.routesUpdateOutputRequest,  options).toPromise();
-    }
-
-    /**
-     * Create output
-     * Create output
-     * @param param the request object
-     */
-    public v1OrganizationIdOutputsPostWithHttpInfo(param: OrganizationOutputsApiV1OrganizationIdOutputsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
-        return this.api.v1OrganizationIdOutputsPostWithHttpInfo(param.organizationId, param.routesCreateOutputRequest,  options).toPromise();
-    }
-
-    /**
-     * Create output
-     * Create output
-     * @param param the request object
-     */
-    public v1OrganizationIdOutputsPost(param: OrganizationOutputsApiV1OrganizationIdOutputsPostRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
-        return this.api.v1OrganizationIdOutputsPost(param.organizationId, param.routesCreateOutputRequest,  options).toPromise();
     }
 
     /**

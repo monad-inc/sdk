@@ -68,10 +68,7 @@ export * from '../models/RenameKeyRenameKey';
 export * from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 export * from '../models/ResponderErrorResponse';
 export * from '../models/RoutesAddUserToOrganizationRequest';
-export * from '../models/RoutesBulkCreateInputRequest';
-export * from '../models/RoutesCreateInputRequest';
 export * from '../models/RoutesCreateOrganizationRequest';
-export * from '../models/RoutesCreateOutputRequest';
 export * from '../models/RoutesCreateRoleRequest';
 export * from '../models/RoutesCreateTransformRequest';
 export * from '../models/RoutesGetInputResponse';
@@ -81,11 +78,7 @@ export * from '../models/RoutesInviteUserToOrganizationRequest';
 export * from '../models/RoutesTransformConfig';
 export * from '../models/RoutesTransformOperation';
 export * from '../models/RoutesTransformOperationArguments';
-export * from '../models/RoutesUpdateInputRequest';
-export * from '../models/RoutesUpdateInputRequestConfig';
 export * from '../models/RoutesUpdateOrganizationRequest';
-export * from '../models/RoutesUpdateOutputRequest';
-export * from '../models/RoutesUpdateOutputRequestConfig';
 export * from '../models/RoutesUpdatePipelineRequest';
 export * from '../models/RoutesUpdateRoleRequest';
 export * from '../models/RoutesUpdateTransformRequest';
@@ -113,8 +106,7 @@ export * from '../models/RoutesV2UpdateInputRequest';
 export * from '../models/RoutesV2UpdateOutputRequest';
 export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/UtcTimestampTimestamp';
-export * from '../models/V1OrganizationIdInputsBulkPost400Response';
-export * from '../models/V1OrganizationIdInputsPost400Response';
+export * from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
 
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddAdd } from '../models/AddAdd';
@@ -186,10 +178,7 @@ import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
-import { RoutesBulkCreateInputRequest } from '../models/RoutesBulkCreateInputRequest';
-import { RoutesCreateInputRequest } from '../models/RoutesCreateInputRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
-import { RoutesCreateOutputRequest } from '../models/RoutesCreateOutputRequest';
 import { RoutesCreateRoleRequest } from '../models/RoutesCreateRoleRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
@@ -199,11 +188,7 @@ import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUse
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArgumentsClass } from '../models/RoutesTransformOperationArguments';
-import { RoutesUpdateInputRequest } from '../models/RoutesUpdateInputRequest';
-import { RoutesUpdateInputRequestConfig } from '../models/RoutesUpdateInputRequestConfig';
 import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizationRequest';
-import { RoutesUpdateOutputRequest } from '../models/RoutesUpdateOutputRequest';
-import { RoutesUpdateOutputRequestConfig } from '../models/RoutesUpdateOutputRequestConfig';
 import { RoutesUpdatePipelineRequest } from '../models/RoutesUpdatePipelineRequest';
 import { RoutesUpdateRoleRequest } from '../models/RoutesUpdateRoleRequest';
 import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformRequest';
@@ -231,8 +216,7 @@ import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
-import { V1OrganizationIdInputsBulkPost400ResponseClass } from '../models/V1OrganizationIdInputsBulkPost400Response';
-import { V1OrganizationIdInputsPost400ResponseClass } from '../models/V1OrganizationIdInputsPost400Response';
+import { V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500ResponseClass } from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -320,10 +304,7 @@ let typeMap: {[index: string]: any} = {
     "RenameKeyWhereValueEqRenameKeyWhereValueEq": RenameKeyWhereValueEqRenameKeyWhereValueEq,
     "ResponderErrorResponse": ResponderErrorResponse,
     "RoutesAddUserToOrganizationRequest": RoutesAddUserToOrganizationRequest,
-    "RoutesBulkCreateInputRequest": RoutesBulkCreateInputRequest,
-    "RoutesCreateInputRequest": RoutesCreateInputRequest,
     "RoutesCreateOrganizationRequest": RoutesCreateOrganizationRequest,
-    "RoutesCreateOutputRequest": RoutesCreateOutputRequest,
     "RoutesCreateRoleRequest": RoutesCreateRoleRequest,
     "RoutesCreateTransformRequest": RoutesCreateTransformRequest,
     "RoutesGetInputResponse": RoutesGetInputResponse,
@@ -333,11 +314,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesTransformConfig": RoutesTransformConfig,
     "RoutesTransformOperation": RoutesTransformOperation,
     "RoutesTransformOperationArguments": RoutesTransformOperationArgumentsClass,
-    "RoutesUpdateInputRequest": RoutesUpdateInputRequest,
-    "RoutesUpdateInputRequestConfig": RoutesUpdateInputRequestConfig,
     "RoutesUpdateOrganizationRequest": RoutesUpdateOrganizationRequest,
-    "RoutesUpdateOutputRequest": RoutesUpdateOutputRequest,
-    "RoutesUpdateOutputRequestConfig": RoutesUpdateOutputRequestConfig,
     "RoutesUpdatePipelineRequest": RoutesUpdatePipelineRequest,
     "RoutesUpdateRoleRequest": RoutesUpdateRoleRequest,
     "RoutesUpdateTransformRequest": RoutesUpdateTransformRequest,
@@ -365,8 +342,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdateOutputRequest": RoutesV2UpdateOutputRequest,
     "RoutesV2UpdatePipelineRequest": RoutesV2UpdatePipelineRequest,
     "UtcTimestampTimestamp": UtcTimestampTimestamp,
-    "V1OrganizationIdInputsBulkPost400Response": V1OrganizationIdInputsBulkPost400ResponseClass,
-    "V1OrganizationIdInputsPost400Response": V1OrganizationIdInputsPost400ResponseClass,
+    "V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response": V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500ResponseClass,
 }
 
 type MimeTypeDescriptor = {
