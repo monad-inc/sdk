@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * MutateTypeMutateType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-05T15:01:44.870359146Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-05T18:25:29.690545982Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class MutateTypeMutateType {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
