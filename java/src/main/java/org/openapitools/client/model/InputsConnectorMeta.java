@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * InputsConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-06T08:30:55.883288575Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-06T10:22:23.831417114Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class InputsConnectorMeta {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
