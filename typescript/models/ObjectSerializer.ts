@@ -36,6 +36,8 @@ export * from '../models/ModelsOutput';
 export * from '../models/ModelsOutputConfig';
 export * from '../models/ModelsOutputList';
 export * from '../models/ModelsPagination';
+export * from '../models/ModelsPermission';
+export * from '../models/ModelsPermissionList';
 export * from '../models/ModelsPipeline';
 export * from '../models/ModelsPipelineConfigV2';
 export * from '../models/ModelsPipelineEdge';
@@ -51,6 +53,8 @@ export * from '../models/ModelsQuota';
 export * from '../models/ModelsQuotaList';
 export * from '../models/ModelsRole';
 export * from '../models/ModelsRoleList';
+export * from '../models/ModelsRoleWithPermissions';
+export * from '../models/ModelsRoleWithPermissionsList';
 export * from '../models/ModelsSecretWithComponents';
 export * from '../models/ModelsSecretWithComponentsList';
 export * from '../models/ModelsTransform';
@@ -90,6 +94,7 @@ export * from '../models/RoutesV2CreateInputRequest';
 export * from '../models/RoutesV2CreateOrUpdateSecretRequest';
 export * from '../models/RoutesV2CreateOutputRequest';
 export * from '../models/RoutesV2CreatePipelineRequest';
+export * from '../models/RoutesV2CreateRoleV2Request';
 export * from '../models/RoutesV2GenerateRecordRequest';
 export * from '../models/RoutesV2GenerateRecordResponse';
 export * from '../models/RoutesV2GetOrganizationSummaryResponse';
@@ -105,6 +110,7 @@ export * from '../models/RoutesV2UpdateAPIKeyRequest';
 export * from '../models/RoutesV2UpdateInputRequest';
 export * from '../models/RoutesV2UpdateOutputRequest';
 export * from '../models/RoutesV2UpdatePipelineRequest';
+export * from '../models/RoutesV2UpdateRoleV2Request';
 export * from '../models/UtcTimestampTimestamp';
 export * from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
 
@@ -146,6 +152,8 @@ import { ModelsOutput } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
+import { ModelsPermission } from '../models/ModelsPermission';
+import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline } from '../models/ModelsPipeline';
 import { ModelsPipelineConfigV2 } from '../models/ModelsPipelineConfigV2';
 import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
@@ -161,6 +169,8 @@ import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsRole } from '../models/ModelsRole';
 import { ModelsRoleList } from '../models/ModelsRoleList';
+import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
+import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsTransform } from '../models/ModelsTransform';
@@ -200,6 +210,7 @@ import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
 import { RoutesV2CreatePipelineRequest } from '../models/RoutesV2CreatePipelineRequest';
+import { RoutesV2CreateRoleV2Request } from '../models/RoutesV2CreateRoleV2Request';
 import { RoutesV2GenerateRecordRequest } from '../models/RoutesV2GenerateRecordRequest';
 import { RoutesV2GenerateRecordResponse } from '../models/RoutesV2GenerateRecordResponse';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
@@ -215,6 +226,7 @@ import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyReque
 import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest';
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
+import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
 import { V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500ResponseClass } from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
 
@@ -272,6 +284,8 @@ let typeMap: {[index: string]: any} = {
     "ModelsOutputConfig": ModelsOutputConfig,
     "ModelsOutputList": ModelsOutputList,
     "ModelsPagination": ModelsPagination,
+    "ModelsPermission": ModelsPermission,
+    "ModelsPermissionList": ModelsPermissionList,
     "ModelsPipeline": ModelsPipeline,
     "ModelsPipelineConfigV2": ModelsPipelineConfigV2,
     "ModelsPipelineEdge": ModelsPipelineEdge,
@@ -287,6 +301,8 @@ let typeMap: {[index: string]: any} = {
     "ModelsQuotaList": ModelsQuotaList,
     "ModelsRole": ModelsRole,
     "ModelsRoleList": ModelsRoleList,
+    "ModelsRoleWithPermissions": ModelsRoleWithPermissions,
+    "ModelsRoleWithPermissionsList": ModelsRoleWithPermissionsList,
     "ModelsSecretWithComponents": ModelsSecretWithComponents,
     "ModelsSecretWithComponentsList": ModelsSecretWithComponentsList,
     "ModelsTransform": ModelsTransform,
@@ -326,6 +342,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2CreateOrUpdateSecretRequest": RoutesV2CreateOrUpdateSecretRequest,
     "RoutesV2CreateOutputRequest": RoutesV2CreateOutputRequest,
     "RoutesV2CreatePipelineRequest": RoutesV2CreatePipelineRequest,
+    "RoutesV2CreateRoleV2Request": RoutesV2CreateRoleV2Request,
     "RoutesV2GenerateRecordRequest": RoutesV2GenerateRecordRequest,
     "RoutesV2GenerateRecordResponse": RoutesV2GenerateRecordResponse,
     "RoutesV2GetOrganizationSummaryResponse": RoutesV2GetOrganizationSummaryResponse,
@@ -341,6 +358,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdateInputRequest": RoutesV2UpdateInputRequest,
     "RoutesV2UpdateOutputRequest": RoutesV2UpdateOutputRequest,
     "RoutesV2UpdatePipelineRequest": RoutesV2UpdatePipelineRequest,
+    "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
     "UtcTimestampTimestamp": UtcTimestampTimestamp,
     "V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response": V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500ResponseClass,
 }

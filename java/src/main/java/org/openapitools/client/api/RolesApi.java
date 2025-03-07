@@ -29,8 +29,12 @@ import java.io.IOException;
 
 import org.openapitools.client.model.ModelsRole;
 import org.openapitools.client.model.ModelsRoleList;
+import org.openapitools.client.model.ModelsRoleWithPermissions;
+import org.openapitools.client.model.ModelsRoleWithPermissionsList;
 import org.openapitools.client.model.RoutesCreateRoleRequest;
 import org.openapitools.client.model.RoutesUpdateRoleRequest;
+import org.openapitools.client.model.RoutesV2CreateRoleV2Request;
+import org.openapitools.client.model.RoutesV2UpdateRoleV2Request;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -801,6 +805,735 @@ public class RolesApi {
 
         okhttp3.Call localVarCall = v1OrganizationIdRolesRoleIdPatchValidateBeforeCall(organizationId, roleId, routesUpdateRoleRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsRole>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdRolesGet
+     * @param organizationId Organization ID (required)
+     * @param limit Limit the number of roles returned (default: 10) (optional)
+     * @param offset Offset the roles returned (default: 0) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Roles retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Error listing roles </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdRolesGetCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/roles"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdRolesGetValidateBeforeCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdRolesGet(Async)");
+        }
+
+        return v2OrganizationIdRolesGetCall(organizationId, limit, offset, _callback);
+
+    }
+
+    /**
+     * List roles
+     * List roles with their associated permissions
+     * @param organizationId Organization ID (required)
+     * @param limit Limit the number of roles returned (default: 10) (optional)
+     * @param offset Offset the roles returned (default: 0) (optional)
+     * @return ModelsRoleWithPermissionsList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Roles retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Error listing roles </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsRoleWithPermissionsList v2OrganizationIdRolesGet(String organizationId, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<ModelsRoleWithPermissionsList> localVarResp = v2OrganizationIdRolesGetWithHttpInfo(organizationId, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List roles
+     * List roles with their associated permissions
+     * @param organizationId Organization ID (required)
+     * @param limit Limit the number of roles returned (default: 10) (optional)
+     * @param offset Offset the roles returned (default: 0) (optional)
+     * @return ApiResponse&lt;ModelsRoleWithPermissionsList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Roles retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Error listing roles </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsRoleWithPermissionsList> v2OrganizationIdRolesGetWithHttpInfo(String organizationId, Integer limit, Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdRolesGetValidateBeforeCall(organizationId, limit, offset, null);
+        Type localVarReturnType = new TypeToken<ModelsRoleWithPermissionsList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List roles (asynchronously)
+     * List roles with their associated permissions
+     * @param organizationId Organization ID (required)
+     * @param limit Limit the number of roles returned (default: 10) (optional)
+     * @param offset Offset the roles returned (default: 0) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Roles retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Error listing roles </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdRolesGetAsync(String organizationId, Integer limit, Integer offset, final ApiCallback<ModelsRoleWithPermissionsList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdRolesGetValidateBeforeCall(organizationId, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<ModelsRoleWithPermissionsList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdRolesPost
+     * @param organizationId Organization ID (required)
+     * @param routesV2CreateRoleV2Request Request body for creating a role (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Role created successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdRolesPostCall(String organizationId, RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = routesV2CreateRoleV2Request;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/roles"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdRolesPostValidateBeforeCall(String organizationId, RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdRolesPost(Async)");
+        }
+
+        // verify the required parameter 'routesV2CreateRoleV2Request' is set
+        if (routesV2CreateRoleV2Request == null) {
+            throw new ApiException("Missing the required parameter 'routesV2CreateRoleV2Request' when calling v2OrganizationIdRolesPost(Async)");
+        }
+
+        return v2OrganizationIdRolesPostCall(organizationId, routesV2CreateRoleV2Request, _callback);
+
+    }
+
+    /**
+     * Create role
+     * Create a new role with permissions
+     * @param organizationId Organization ID (required)
+     * @param routesV2CreateRoleV2Request Request body for creating a role (required)
+     * @return ModelsRoleWithPermissions
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Role created successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsRoleWithPermissions v2OrganizationIdRolesPost(String organizationId, RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request) throws ApiException {
+        ApiResponse<ModelsRoleWithPermissions> localVarResp = v2OrganizationIdRolesPostWithHttpInfo(organizationId, routesV2CreateRoleV2Request);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create role
+     * Create a new role with permissions
+     * @param organizationId Organization ID (required)
+     * @param routesV2CreateRoleV2Request Request body for creating a role (required)
+     * @return ApiResponse&lt;ModelsRoleWithPermissions&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Role created successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsRoleWithPermissions> v2OrganizationIdRolesPostWithHttpInfo(String organizationId, RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdRolesPostValidateBeforeCall(organizationId, routesV2CreateRoleV2Request, null);
+        Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create role (asynchronously)
+     * Create a new role with permissions
+     * @param organizationId Organization ID (required)
+     * @param routesV2CreateRoleV2Request Request body for creating a role (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Role created successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdRolesPostAsync(String organizationId, RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request, final ApiCallback<ModelsRoleWithPermissions> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdRolesPostValidateBeforeCall(organizationId, routesV2CreateRoleV2Request, _callback);
+        Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdRolesRoleIdDelete
+     * @param organizationId Organization ID (required)
+     * @param roleId Role ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to delete role </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdRolesRoleIdDeleteCall(String organizationId, String roleId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/roles/{role_id}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "role_id" + "}", localVarApiClient.escapeString(roleId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdRolesRoleIdDeleteValidateBeforeCall(String organizationId, String roleId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdRolesRoleIdDelete(Async)");
+        }
+
+        // verify the required parameter 'roleId' is set
+        if (roleId == null) {
+            throw new ApiException("Missing the required parameter 'roleId' when calling v2OrganizationIdRolesRoleIdDelete(Async)");
+        }
+
+        return v2OrganizationIdRolesRoleIdDeleteCall(organizationId, roleId, _callback);
+
+    }
+
+    /**
+     * Delete role
+     * Delete a role
+     * @param organizationId Organization ID (required)
+     * @param roleId Role ID (required)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to delete role </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object v2OrganizationIdRolesRoleIdDelete(String organizationId, String roleId) throws ApiException {
+        ApiResponse<Object> localVarResp = v2OrganizationIdRolesRoleIdDeleteWithHttpInfo(organizationId, roleId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Delete role
+     * Delete a role
+     * @param organizationId Organization ID (required)
+     * @param roleId Role ID (required)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to delete role </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> v2OrganizationIdRolesRoleIdDeleteWithHttpInfo(String organizationId, String roleId) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdRolesRoleIdDeleteValidateBeforeCall(organizationId, roleId, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Delete role (asynchronously)
+     * Delete a role
+     * @param organizationId Organization ID (required)
+     * @param roleId Role ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to delete role </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdRolesRoleIdDeleteAsync(String organizationId, String roleId, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdRolesRoleIdDeleteValidateBeforeCall(organizationId, roleId, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdRolesRoleIdGet
+     * @param organizationId Organization ID (required)
+     * @param roleId Role ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Role retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Error getting role </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdRolesRoleIdGetCall(String organizationId, String roleId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/roles/{role_id}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "role_id" + "}", localVarApiClient.escapeString(roleId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdRolesRoleIdGetValidateBeforeCall(String organizationId, String roleId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdRolesRoleIdGet(Async)");
+        }
+
+        // verify the required parameter 'roleId' is set
+        if (roleId == null) {
+            throw new ApiException("Missing the required parameter 'roleId' when calling v2OrganizationIdRolesRoleIdGet(Async)");
+        }
+
+        return v2OrganizationIdRolesRoleIdGetCall(organizationId, roleId, _callback);
+
+    }
+
+    /**
+     * Get role
+     * Get a role with its associated permissions
+     * @param organizationId Organization ID (required)
+     * @param roleId Role ID (required)
+     * @return ModelsRoleWithPermissions
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Role retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Error getting role </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsRoleWithPermissions v2OrganizationIdRolesRoleIdGet(String organizationId, String roleId) throws ApiException {
+        ApiResponse<ModelsRoleWithPermissions> localVarResp = v2OrganizationIdRolesRoleIdGetWithHttpInfo(organizationId, roleId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get role
+     * Get a role with its associated permissions
+     * @param organizationId Organization ID (required)
+     * @param roleId Role ID (required)
+     * @return ApiResponse&lt;ModelsRoleWithPermissions&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Role retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Error getting role </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsRoleWithPermissions> v2OrganizationIdRolesRoleIdGetWithHttpInfo(String organizationId, String roleId) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdRolesRoleIdGetValidateBeforeCall(organizationId, roleId, null);
+        Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get role (asynchronously)
+     * Get a role with its associated permissions
+     * @param organizationId Organization ID (required)
+     * @param roleId Role ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Role retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Error getting role </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdRolesRoleIdGetAsync(String organizationId, String roleId, final ApiCallback<ModelsRoleWithPermissions> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdRolesRoleIdGetValidateBeforeCall(organizationId, roleId, _callback);
+        Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdRolesRoleIdPatch
+     * @param organizationId Organization ID (required)
+     * @param roleId Role ID (required)
+     * @param routesV2UpdateRoleV2Request Request body for updating a role (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Role updated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdRolesRoleIdPatchCall(String organizationId, String roleId, RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = routesV2UpdateRoleV2Request;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/roles/{role_id}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "role_id" + "}", localVarApiClient.escapeString(roleId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdRolesRoleIdPatchValidateBeforeCall(String organizationId, String roleId, RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdRolesRoleIdPatch(Async)");
+        }
+
+        // verify the required parameter 'roleId' is set
+        if (roleId == null) {
+            throw new ApiException("Missing the required parameter 'roleId' when calling v2OrganizationIdRolesRoleIdPatch(Async)");
+        }
+
+        // verify the required parameter 'routesV2UpdateRoleV2Request' is set
+        if (routesV2UpdateRoleV2Request == null) {
+            throw new ApiException("Missing the required parameter 'routesV2UpdateRoleV2Request' when calling v2OrganizationIdRolesRoleIdPatch(Async)");
+        }
+
+        return v2OrganizationIdRolesRoleIdPatchCall(organizationId, roleId, routesV2UpdateRoleV2Request, _callback);
+
+    }
+
+    /**
+     * Update role
+     * Update a role and its permissions
+     * @param organizationId Organization ID (required)
+     * @param roleId Role ID (required)
+     * @param routesV2UpdateRoleV2Request Request body for updating a role (required)
+     * @return ModelsRoleWithPermissions
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Role updated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsRoleWithPermissions v2OrganizationIdRolesRoleIdPatch(String organizationId, String roleId, RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request) throws ApiException {
+        ApiResponse<ModelsRoleWithPermissions> localVarResp = v2OrganizationIdRolesRoleIdPatchWithHttpInfo(organizationId, roleId, routesV2UpdateRoleV2Request);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update role
+     * Update a role and its permissions
+     * @param organizationId Organization ID (required)
+     * @param roleId Role ID (required)
+     * @param routesV2UpdateRoleV2Request Request body for updating a role (required)
+     * @return ApiResponse&lt;ModelsRoleWithPermissions&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Role updated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsRoleWithPermissions> v2OrganizationIdRolesRoleIdPatchWithHttpInfo(String organizationId, String roleId, RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdRolesRoleIdPatchValidateBeforeCall(organizationId, roleId, routesV2UpdateRoleV2Request, null);
+        Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update role (asynchronously)
+     * Update a role and its permissions
+     * @param organizationId Organization ID (required)
+     * @param roleId Role ID (required)
+     * @param routesV2UpdateRoleV2Request Request body for updating a role (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Role updated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdRolesRoleIdPatchAsync(String organizationId, String roleId, RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request, final ApiCallback<ModelsRoleWithPermissions> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdRolesRoleIdPatchValidateBeforeCall(organizationId, roleId, routesV2UpdateRoleV2Request, _callback);
+        Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

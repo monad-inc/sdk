@@ -129,6 +129,7 @@ Class | Method | HTTP request | Description
 *OrganizationsAPI* | [**V1OrganizationsPost**](docs/OrganizationsAPI.md#v1organizationspost) | **Post** /v1/organizations | Create organization
 *OutputsAPI* | [**V1OutputsGet**](docs/OutputsAPI.md#v1outputsget) | **Get** /v1/outputs | List outputs
 *OutputsAPI* | [**V1OutputsOutputTypeIdGet**](docs/OutputsAPI.md#v1outputsoutputtypeidget) | **Get** /v1/outputs/{output_type_id} | Get output config meta
+*PermissionsAPI* | [**V2OrganizationIdRolesPermissionsGet**](docs/PermissionsAPI.md#v2organizationidrolespermissionsget) | **Get** /v2/{organization_id}/roles/permissions | List permissions
 *PipelinesAPI* | [**V1OrganizationIdPipelinesGet**](docs/PipelinesAPI.md#v1organizationidpipelinesget) | **Get** /v1/{organization_id}/pipelines | List pipelines
 *PipelinesAPI* | [**V1OrganizationIdPipelinesPipelineIdDelete**](docs/PipelinesAPI.md#v1organizationidpipelinespipelineiddelete) | **Delete** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 *PipelinesAPI* | [**V1OrganizationIdPipelinesPipelineIdGet**](docs/PipelinesAPI.md#v1organizationidpipelinespipelineidget) | **Get** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline
@@ -148,6 +149,11 @@ Class | Method | HTTP request | Description
 *RolesAPI* | [**V1OrganizationIdRolesRoleIdDelete**](docs/RolesAPI.md#v1organizationidrolesroleiddelete) | **Delete** /v1/{organization_id}/roles/{role_id} | Delete role
 *RolesAPI* | [**V1OrganizationIdRolesRoleIdGet**](docs/RolesAPI.md#v1organizationidrolesroleidget) | **Get** /v1/{organization_id}/roles/{role_id} | Get role
 *RolesAPI* | [**V1OrganizationIdRolesRoleIdPatch**](docs/RolesAPI.md#v1organizationidrolesroleidpatch) | **Patch** /v1/{organization_id}/roles/{role_id} | Update role
+*RolesAPI* | [**V2OrganizationIdRolesGet**](docs/RolesAPI.md#v2organizationidrolesget) | **Get** /v2/{organization_id}/roles | List roles
+*RolesAPI* | [**V2OrganizationIdRolesPost**](docs/RolesAPI.md#v2organizationidrolespost) | **Post** /v2/{organization_id}/roles | Create role
+*RolesAPI* | [**V2OrganizationIdRolesRoleIdDelete**](docs/RolesAPI.md#v2organizationidrolesroleiddelete) | **Delete** /v2/{organization_id}/roles/{role_id} | Delete role
+*RolesAPI* | [**V2OrganizationIdRolesRoleIdGet**](docs/RolesAPI.md#v2organizationidrolesroleidget) | **Get** /v2/{organization_id}/roles/{role_id} | Get role
+*RolesAPI* | [**V2OrganizationIdRolesRoleIdPatch**](docs/RolesAPI.md#v2organizationidrolesroleidpatch) | **Patch** /v2/{organization_id}/roles/{role_id} | Update role
 *SandboxAPI* | [**V2SandboxTemplateGet**](docs/SandboxAPI.md#v2sandboxtemplateget) | **Get** /v2/sandbox/template | List available templates
 *SandboxAPI* | [**V2SandboxTemplatePost**](docs/SandboxAPI.md#v2sandboxtemplatepost) | **Post** /v2/sandbox/template | Generate sample record
 *SandboxAPI* | [**V2SandboxTransformPost**](docs/SandboxAPI.md#v2sandboxtransformpost) | **Post** /v2/sandbox/transform | Apply transformation to record
@@ -202,6 +208,8 @@ Class | Method | HTTP request | Description
  - [ModelsOutputConfig](docs/ModelsOutputConfig.md)
  - [ModelsOutputList](docs/ModelsOutputList.md)
  - [ModelsPagination](docs/ModelsPagination.md)
+ - [ModelsPermission](docs/ModelsPermission.md)
+ - [ModelsPermissionList](docs/ModelsPermissionList.md)
  - [ModelsPipeline](docs/ModelsPipeline.md)
  - [ModelsPipelineConfigV2](docs/ModelsPipelineConfigV2.md)
  - [ModelsPipelineEdge](docs/ModelsPipelineEdge.md)
@@ -217,6 +225,8 @@ Class | Method | HTTP request | Description
  - [ModelsQuotaList](docs/ModelsQuotaList.md)
  - [ModelsRole](docs/ModelsRole.md)
  - [ModelsRoleList](docs/ModelsRoleList.md)
+ - [ModelsRoleWithPermissions](docs/ModelsRoleWithPermissions.md)
+ - [ModelsRoleWithPermissionsList](docs/ModelsRoleWithPermissionsList.md)
  - [ModelsSecretWithComponents](docs/ModelsSecretWithComponents.md)
  - [ModelsSecretWithComponentsList](docs/ModelsSecretWithComponentsList.md)
  - [ModelsTransform](docs/ModelsTransform.md)
@@ -256,6 +266,7 @@ Class | Method | HTTP request | Description
  - [RoutesV2CreateOrUpdateSecretRequest](docs/RoutesV2CreateOrUpdateSecretRequest.md)
  - [RoutesV2CreateOutputRequest](docs/RoutesV2CreateOutputRequest.md)
  - [RoutesV2CreatePipelineRequest](docs/RoutesV2CreatePipelineRequest.md)
+ - [RoutesV2CreateRoleV2Request](docs/RoutesV2CreateRoleV2Request.md)
  - [RoutesV2GenerateRecordRequest](docs/RoutesV2GenerateRecordRequest.md)
  - [RoutesV2GenerateRecordResponse](docs/RoutesV2GenerateRecordResponse.md)
  - [RoutesV2GetOrganizationSummaryResponse](docs/RoutesV2GetOrganizationSummaryResponse.md)
@@ -271,6 +282,7 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdateInputRequest](docs/RoutesV2UpdateInputRequest.md)
  - [RoutesV2UpdateOutputRequest](docs/RoutesV2UpdateOutputRequest.md)
  - [RoutesV2UpdatePipelineRequest](docs/RoutesV2UpdatePipelineRequest.md)
+ - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [UtcTimestampTimestamp](docs/UtcTimestampTimestamp.md)
  - [V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response](docs/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response.md)
 

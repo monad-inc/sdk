@@ -80,6 +80,8 @@ type APIClient struct {
 
 	OutputsAPI *OutputsAPIService
 
+	PermissionsAPI *PermissionsAPIService
+
 	PipelinesAPI *PipelinesAPIService
 
 	RolesAPI *RolesAPIService
@@ -124,6 +126,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.OrganizationUsersAPI = (*OrganizationUsersAPIService)(&c.common)
 	c.OrganizationsAPI = (*OrganizationsAPIService)(&c.common)
 	c.OutputsAPI = (*OutputsAPIService)(&c.common)
+	c.PermissionsAPI = (*PermissionsAPIService)(&c.common)
 	c.PipelinesAPI = (*PipelinesAPIService)(&c.common)
 	c.RolesAPI = (*RolesAPIService)(&c.common)
 	c.SandboxAPI = (*SandboxAPIService)(&c.common)

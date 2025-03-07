@@ -40,6 +40,8 @@ import { ModelsOutput } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
+import { ModelsPermission } from '../models/ModelsPermission';
+import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline } from '../models/ModelsPipeline';
 import { ModelsPipelineConfigV2 } from '../models/ModelsPipelineConfigV2';
 import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
@@ -55,6 +57,8 @@ import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsRole } from '../models/ModelsRole';
 import { ModelsRoleList } from '../models/ModelsRoleList';
+import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
+import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsTransform } from '../models/ModelsTransform';
@@ -94,6 +98,7 @@ import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
 import { RoutesV2CreatePipelineRequest } from '../models/RoutesV2CreatePipelineRequest';
+import { RoutesV2CreateRoleV2Request } from '../models/RoutesV2CreateRoleV2Request';
 import { RoutesV2GenerateRecordRequest } from '../models/RoutesV2GenerateRecordRequest';
 import { RoutesV2GenerateRecordResponse } from '../models/RoutesV2GenerateRecordResponse';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
@@ -109,6 +114,7 @@ import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyReque
 import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest';
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
+import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
 import { V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response } from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
 
@@ -2059,6 +2065,60 @@ export class ObjectOutputsApi {
 
 }
 
+import { ObservablePermissionsApi } from "./ObservableAPI";
+import { PermissionsApiRequestFactory, PermissionsApiResponseProcessor} from "../apis/PermissionsApi";
+
+export interface PermissionsApiV2OrganizationIdRolesPermissionsGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PermissionsApiv2OrganizationIdRolesPermissionsGet
+     */
+    organizationId: string
+    /**
+     * Limit the number of permissions returned (default: 10)
+     * Defaults to: undefined
+     * @type number
+     * @memberof PermissionsApiv2OrganizationIdRolesPermissionsGet
+     */
+    limit?: number
+    /**
+     * Offset the permissions returned (default: 0)
+     * Defaults to: undefined
+     * @type number
+     * @memberof PermissionsApiv2OrganizationIdRolesPermissionsGet
+     */
+    offset?: number
+}
+
+export class ObjectPermissionsApi {
+    private api: ObservablePermissionsApi
+
+    public constructor(configuration: Configuration, requestFactory?: PermissionsApiRequestFactory, responseProcessor?: PermissionsApiResponseProcessor) {
+        this.api = new ObservablePermissionsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * List all available permissions in the system
+     * List permissions
+     * @param param the request object
+     */
+    public v2OrganizationIdRolesPermissionsGetWithHttpInfo(param: PermissionsApiV2OrganizationIdRolesPermissionsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPermissionList>> {
+        return this.api.v2OrganizationIdRolesPermissionsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List all available permissions in the system
+     * List permissions
+     * @param param the request object
+     */
+    public v2OrganizationIdRolesPermissionsGet(param: PermissionsApiV2OrganizationIdRolesPermissionsGetRequest, options?: ConfigurationOptions): Promise<ModelsPermissionList> {
+        return this.api.v2OrganizationIdRolesPermissionsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+}
+
 import { ObservablePipelinesApi } from "./ObservableAPI";
 import { PipelinesApiRequestFactory, PipelinesApiResponseProcessor} from "../apis/PipelinesApi";
 
@@ -2798,6 +2858,103 @@ export interface RolesApiV1OrganizationIdRolesRoleIdPatchRequest {
     routesUpdateRoleRequest: RoutesUpdateRoleRequest
 }
 
+export interface RolesApiV2OrganizationIdRolesGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof RolesApiv2OrganizationIdRolesGet
+     */
+    organizationId: string
+    /**
+     * Limit the number of roles returned (default: 10)
+     * Defaults to: undefined
+     * @type number
+     * @memberof RolesApiv2OrganizationIdRolesGet
+     */
+    limit?: number
+    /**
+     * Offset the roles returned (default: 0)
+     * Defaults to: undefined
+     * @type number
+     * @memberof RolesApiv2OrganizationIdRolesGet
+     */
+    offset?: number
+}
+
+export interface RolesApiV2OrganizationIdRolesPostRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof RolesApiv2OrganizationIdRolesPost
+     */
+    organizationId: string
+    /**
+     * Request body for creating a role
+     * @type RoutesV2CreateRoleV2Request
+     * @memberof RolesApiv2OrganizationIdRolesPost
+     */
+    routesV2CreateRoleV2Request: RoutesV2CreateRoleV2Request
+}
+
+export interface RolesApiV2OrganizationIdRolesRoleIdDeleteRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof RolesApiv2OrganizationIdRolesRoleIdDelete
+     */
+    organizationId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof RolesApiv2OrganizationIdRolesRoleIdDelete
+     */
+    roleId: string
+}
+
+export interface RolesApiV2OrganizationIdRolesRoleIdGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof RolesApiv2OrganizationIdRolesRoleIdGet
+     */
+    organizationId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof RolesApiv2OrganizationIdRolesRoleIdGet
+     */
+    roleId: string
+}
+
+export interface RolesApiV2OrganizationIdRolesRoleIdPatchRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof RolesApiv2OrganizationIdRolesRoleIdPatch
+     */
+    organizationId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof RolesApiv2OrganizationIdRolesRoleIdPatch
+     */
+    roleId: string
+    /**
+     * Request body for updating a role
+     * @type RoutesV2UpdateRoleV2Request
+     * @memberof RolesApiv2OrganizationIdRolesRoleIdPatch
+     */
+    routesV2UpdateRoleV2Request: RoutesV2UpdateRoleV2Request
+}
+
 export class ObjectRolesApi {
     private api: ObservableRolesApi
 
@@ -2893,6 +3050,96 @@ export class ObjectRolesApi {
      */
     public v1OrganizationIdRolesRoleIdPatch(param: RolesApiV1OrganizationIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsRole> {
         return this.api.v1OrganizationIdRolesRoleIdPatch(param.organizationId, param.roleId, param.routesUpdateRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * List roles with their associated permissions
+     * List roles
+     * @param param the request object
+     */
+    public v2OrganizationIdRolesGetWithHttpInfo(param: RolesApiV2OrganizationIdRolesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissionsList>> {
+        return this.api.v2OrganizationIdRolesGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List roles with their associated permissions
+     * List roles
+     * @param param the request object
+     */
+    public v2OrganizationIdRolesGet(param: RolesApiV2OrganizationIdRolesGetRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissionsList> {
+        return this.api.v2OrganizationIdRolesGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Create a new role with permissions
+     * Create role
+     * @param param the request object
+     */
+    public v2OrganizationIdRolesPostWithHttpInfo(param: RolesApiV2OrganizationIdRolesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
+        return this.api.v2OrganizationIdRolesPostWithHttpInfo(param.organizationId, param.routesV2CreateRoleV2Request,  options).toPromise();
+    }
+
+    /**
+     * Create a new role with permissions
+     * Create role
+     * @param param the request object
+     */
+    public v2OrganizationIdRolesPost(param: RolesApiV2OrganizationIdRolesPostRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissions> {
+        return this.api.v2OrganizationIdRolesPost(param.organizationId, param.routesV2CreateRoleV2Request,  options).toPromise();
+    }
+
+    /**
+     * Delete a role
+     * Delete role
+     * @param param the request object
+     */
+    public v2OrganizationIdRolesRoleIdDeleteWithHttpInfo(param: RolesApiV2OrganizationIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
+        return this.api.v2OrganizationIdRolesRoleIdDeleteWithHttpInfo(param.organizationId, param.roleId,  options).toPromise();
+    }
+
+    /**
+     * Delete a role
+     * Delete role
+     * @param param the request object
+     */
+    public v2OrganizationIdRolesRoleIdDelete(param: RolesApiV2OrganizationIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<any> {
+        return this.api.v2OrganizationIdRolesRoleIdDelete(param.organizationId, param.roleId,  options).toPromise();
+    }
+
+    /**
+     * Get a role with its associated permissions
+     * Get role
+     * @param param the request object
+     */
+    public v2OrganizationIdRolesRoleIdGetWithHttpInfo(param: RolesApiV2OrganizationIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
+        return this.api.v2OrganizationIdRolesRoleIdGetWithHttpInfo(param.organizationId, param.roleId,  options).toPromise();
+    }
+
+    /**
+     * Get a role with its associated permissions
+     * Get role
+     * @param param the request object
+     */
+    public v2OrganizationIdRolesRoleIdGet(param: RolesApiV2OrganizationIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissions> {
+        return this.api.v2OrganizationIdRolesRoleIdGet(param.organizationId, param.roleId,  options).toPromise();
+    }
+
+    /**
+     * Update a role and its permissions
+     * Update role
+     * @param param the request object
+     */
+    public v2OrganizationIdRolesRoleIdPatchWithHttpInfo(param: RolesApiV2OrganizationIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleWithPermissions>> {
+        return this.api.v2OrganizationIdRolesRoleIdPatchWithHttpInfo(param.organizationId, param.roleId, param.routesV2UpdateRoleV2Request,  options).toPromise();
+    }
+
+    /**
+     * Update a role and its permissions
+     * Update role
+     * @param param the request object
+     */
+    public v2OrganizationIdRolesRoleIdPatch(param: RolesApiV2OrganizationIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsRoleWithPermissions> {
+        return this.api.v2OrganizationIdRolesRoleIdPatch(param.organizationId, param.roleId, param.routesV2UpdateRoleV2Request,  options).toPromise();
     }
 
 }

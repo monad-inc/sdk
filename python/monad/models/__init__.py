@@ -53,6 +53,8 @@ from monad.models.models_output import ModelsOutput
 from monad.models.models_output_config import ModelsOutputConfig
 from monad.models.models_output_list import ModelsOutputList
 from monad.models.models_pagination import ModelsPagination
+from monad.models.models_permission import ModelsPermission
+from monad.models.models_permission_list import ModelsPermissionList
 from monad.models.models_pipeline import ModelsPipeline
 from monad.models.models_pipeline_config_v2 import ModelsPipelineConfigV2
 from monad.models.models_pipeline_edge import ModelsPipelineEdge
@@ -68,6 +70,8 @@ from monad.models.models_quota import ModelsQuota
 from monad.models.models_quota_list import ModelsQuotaList
 from monad.models.models_role import ModelsRole
 from monad.models.models_role_list import ModelsRoleList
+from monad.models.models_role_with_permissions import ModelsRoleWithPermissions
+from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList
 from monad.models.models_secret_with_components import ModelsSecretWithComponents
 from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList
 from monad.models.models_transform import ModelsTransform
@@ -107,6 +111,7 @@ from monad.models.routes_v2_create_input_request import RoutesV2CreateInputReque
 from monad.models.routes_v2_create_or_update_secret_request import RoutesV2CreateOrUpdateSecretRequest
 from monad.models.routes_v2_create_output_request import RoutesV2CreateOutputRequest
 from monad.models.routes_v2_create_pipeline_request import RoutesV2CreatePipelineRequest
+from monad.models.routes_v2_create_role_v2_request import RoutesV2CreateRoleV2Request
 from monad.models.routes_v2_generate_record_request import RoutesV2GenerateRecordRequest
 from monad.models.routes_v2_generate_record_response import RoutesV2GenerateRecordResponse
 from monad.models.routes_v2_get_organization_summary_response import RoutesV2GetOrganizationSummaryResponse
@@ -122,5 +127,6 @@ from monad.models.routes_v2_update_api_key_request import RoutesV2UpdateAPIKeyRe
 from monad.models.routes_v2_update_input_request import RoutesV2UpdateInputRequest
 from monad.models.routes_v2_update_output_request import RoutesV2UpdateOutputRequest
 from monad.models.routes_v2_update_pipeline_request import RoutesV2UpdatePipelineRequest
+from monad.models.routes_v2_update_role_v2_request import RoutesV2UpdateRoleV2Request
 from monad.models.utc_timestamp_timestamp import UtcTimestampTimestamp
 from monad.models.v2_organization_id_pipelines_pipeline_id_node_id_metrics_get500_response import V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response
