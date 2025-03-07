@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-07T17:18:15.951197667Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-07T18:24:29.540587705Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsPipelineStatus {
   public static final String SERIALIZED_NAME_EGRESS = "egress";
   @SerializedName(SERIALIZED_NAME_EGRESS)
