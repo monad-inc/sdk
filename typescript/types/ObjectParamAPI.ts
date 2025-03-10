@@ -3511,6 +3511,9 @@ export class ObjectTransformsApi {
 import { ObservableUsersApi } from "./ObservableAPI";
 import { UsersApiRequestFactory, UsersApiResponseProcessor} from "../apis/UsersApi";
 
+export interface UsersApiV1UsersGetRequest {
+}
+
 export interface UsersApiV1UsersPostRequest {
     /**
      * 
@@ -3525,6 +3528,24 @@ export class ObjectUsersApi {
 
     public constructor(configuration: Configuration, requestFactory?: UsersApiRequestFactory, responseProcessor?: UsersApiResponseProcessor) {
         this.api = new ObservableUsersApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Get your current user
+     * Get your current user
+     * @param param the request object
+     */
+    public v1UsersGetWithHttpInfo(param: UsersApiV1UsersGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsUser>> {
+        return this.api.v1UsersGetWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * Get your current user
+     * Get your current user
+     * @param param the request object
+     */
+    public v1UsersGet(param: UsersApiV1UsersGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsUser> {
+        return this.api.v1UsersGet( options).toPromise();
     }
 
     /**

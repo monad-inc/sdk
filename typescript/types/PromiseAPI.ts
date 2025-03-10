@@ -4496,6 +4496,48 @@ export class PromiseUsersApi {
     }
 
     /**
+     * Get your current user
+     * Get your current user
+     */
+    public v1UsersGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsUser>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1UsersGetWithHttpInfo(observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get your current user
+     * Get your current user
+     */
+    public v1UsersGet(_options?: PromiseConfigurationOptions): Promise<ModelsUser> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v1UsersGet(observableOptions);
+        return result.toPromise();
+    }
+
+    /**
      * Create user
      * Create user
      * @param [body]
