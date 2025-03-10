@@ -170,7 +170,6 @@ Class | Method | HTTP request | Description
 *SecretsApi* | [**v2_organization_id_secrets_secret_id_patch**](docs/SecretsApi.md#v2_organization_id_secrets_secret_id_patch) | **PATCH** /v2/{organization_id}/secrets/{secret_id} | Update secret
 *TransformsApi* | [**v1_transforms_get**](docs/TransformsApi.md#v1_transforms_get) | **GET** /v1/transforms | List transforms
 *TransformsApi* | [**v1_transforms_transform_type_id_get**](docs/TransformsApi.md#v1_transforms_transform_type_id_get) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata
-*UsersApi* | [**v1_users_get**](docs/UsersApi.md#v1_users_get) | **GET** /v1/users | List users
 *UsersApi* | [**v1_users_post**](docs/UsersApi.md#v1_users_post) | **POST** /v1/users | Create user
 
 
@@ -240,7 +239,6 @@ Class | Method | HTTP request | Description
  - [ModelsTransformList](docs/ModelsTransformList.md)
  - [ModelsTransformOperation](docs/ModelsTransformOperation.md)
  - [ModelsUser](docs/ModelsUser.md)
- - [ModelsUserList](docs/ModelsUserList.md)
  - [MutateTypeMutateType](docs/MutateTypeMutateType.md)
  - [MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq](docs/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq.md)
  - [MutateValueWhereKeyEqMutateValueWhereKeyEq](docs/MutateValueWhereKeyEqMutateValueWhereKeyEq.md)

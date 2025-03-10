@@ -66,7 +66,6 @@ import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsUser } from '../models/ModelsUser';
-import { ModelsUserList } from '../models/ModelsUserList';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
 import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
@@ -3512,23 +3511,6 @@ export class ObjectTransformsApi {
 import { ObservableUsersApi } from "./ObservableAPI";
 import { UsersApiRequestFactory, UsersApiResponseProcessor} from "../apis/UsersApi";
 
-export interface UsersApiV1UsersGetRequest {
-    /**
-     * Limit
-     * Defaults to: undefined
-     * @type number
-     * @memberof UsersApiv1UsersGet
-     */
-    limit?: number
-    /**
-     * Offset
-     * Defaults to: undefined
-     * @type number
-     * @memberof UsersApiv1UsersGet
-     */
-    offset?: number
-}
-
 export interface UsersApiV1UsersPostRequest {
     /**
      * 
@@ -3543,24 +3525,6 @@ export class ObjectUsersApi {
 
     public constructor(configuration: Configuration, requestFactory?: UsersApiRequestFactory, responseProcessor?: UsersApiResponseProcessor) {
         this.api = new ObservableUsersApi(configuration, requestFactory, responseProcessor);
-    }
-
-    /**
-     * List users
-     * List users
-     * @param param the request object
-     */
-    public v1UsersGetWithHttpInfo(param: UsersApiV1UsersGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsUserList>> {
-        return this.api.v1UsersGetWithHttpInfo(param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * List users
-     * List users
-     * @param param the request object
-     */
-    public v1UsersGet(param: UsersApiV1UsersGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsUserList> {
-        return this.api.v1UsersGet(param.limit, param.offset,  options).toPromise();
     }
 
     /**

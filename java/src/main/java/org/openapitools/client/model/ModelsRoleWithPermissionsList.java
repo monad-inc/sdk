@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsRoleWithPermissionsList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-07T18:24:29.540587705Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-10T19:43:09.585057540Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsRoleWithPermissionsList {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)

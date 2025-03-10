@@ -66,7 +66,6 @@ import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsUser } from '../models/ModelsUser';
-import { ModelsUserList } from '../models/ModelsUserList';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
 import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
@@ -4494,52 +4493,6 @@ export class PromiseUsersApi {
         responseProcessor?: UsersApiResponseProcessor
     ) {
         this.api = new ObservableUsersApi(configuration, requestFactory, responseProcessor);
-    }
-
-    /**
-     * List users
-     * List users
-     * @param [limit] Limit
-     * @param [offset] Offset
-     */
-    public v1UsersGetWithHttpInfo(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsUserList>> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
-        const result = this.api.v1UsersGetWithHttpInfo(limit, offset, observableOptions);
-        return result.toPromise();
-    }
-
-    /**
-     * List users
-     * List users
-     * @param [limit] Limit
-     * @param [offset] Offset
-     */
-    public v1UsersGet(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsUserList> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
-        const result = this.api.v1UsersGet(limit, offset, observableOptions);
-        return result.toPromise();
     }
 
     /**

@@ -62,7 +62,6 @@ export * from '../models/ModelsTransformConfig';
 export * from '../models/ModelsTransformList';
 export * from '../models/ModelsTransformOperation';
 export * from '../models/ModelsUser';
-export * from '../models/ModelsUserList';
 export * from '../models/MutateTypeMutateType';
 export * from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 export * from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
@@ -178,7 +177,6 @@ import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsUser } from '../models/ModelsUser';
-import { ModelsUserList } from '../models/ModelsUserList';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
 import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
@@ -310,7 +308,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsTransformList": ModelsTransformList,
     "ModelsTransformOperation": ModelsTransformOperation,
     "ModelsUser": ModelsUser,
-    "ModelsUserList": ModelsUserList,
     "MutateTypeMutateType": MutateTypeMutateType,
     "MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq": MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq,
     "MutateValueWhereKeyEqMutateValueWhereKeyEq": MutateValueWhereKeyEqMutateValueWhereKeyEq,
