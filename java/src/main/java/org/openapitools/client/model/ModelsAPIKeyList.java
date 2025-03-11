@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsAPIKeyList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-11T20:24:47.106721175Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-11T20:40:08.378634499Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsAPIKeyList {
   public static final String SERIALIZED_NAME_API_KEYS = "api_keys";
   @SerializedName(SERIALIZED_NAME_API_KEYS)
