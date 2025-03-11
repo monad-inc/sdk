@@ -29,6 +29,7 @@ type ModelsRole struct {
 	PipelineDelete *bool `json:"pipeline_delete,omitempty"`
 	PipelineRead *bool `json:"pipeline_read,omitempty"`
 	PipelineUpdate *bool `json:"pipeline_update,omitempty"`
+	Protected *bool `json:"protected,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
 
@@ -337,6 +338,38 @@ func (o *ModelsRole) SetPipelineUpdate(v bool) {
 	o.PipelineUpdate = &v
 }
 
+// GetProtected returns the Protected field value if set, zero value otherwise.
+func (o *ModelsRole) GetProtected() bool {
+	if o == nil || IsNil(o.Protected) {
+		var ret bool
+		return ret
+	}
+	return *o.Protected
+}
+
+// GetProtectedOk returns a tuple with the Protected field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsRole) GetProtectedOk() (*bool, bool) {
+	if o == nil || IsNil(o.Protected) {
+		return nil, false
+	}
+	return o.Protected, true
+}
+
+// HasProtected returns a boolean if a field has been set.
+func (o *ModelsRole) HasProtected() bool {
+	if o != nil && !IsNil(o.Protected) {
+		return true
+	}
+
+	return false
+}
+
+// SetProtected gets a reference to the given bool and assigns it to the Protected field.
+func (o *ModelsRole) SetProtected(v bool) {
+	o.Protected = &v
+}
+
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *ModelsRole) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
@@ -405,6 +438,9 @@ func (o ModelsRole) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PipelineUpdate) {
 		toSerialize["pipeline_update"] = o.PipelineUpdate
+	}
+	if !IsNil(o.Protected) {
+		toSerialize["protected"] = o.Protected
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt

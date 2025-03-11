@@ -16,6 +16,7 @@
 |**pipelineDelete** | **Boolean** |  |  [optional] |
 |**pipelineRead** | **Boolean** |  |  [optional] |
 |**pipelineUpdate** | **Boolean** |  |  [optional] |
+|**_protected** | **Boolean** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 
 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **permissions** | [**List[ModelsPermission]**](ModelsPermission.md) |  | [optional] 
+**protected** | **bool** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 
 ## Example

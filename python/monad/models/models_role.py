@@ -36,8 +36,9 @@ class ModelsRole(BaseModel):
     pipeline_delete: Optional[StrictBool] = None
     pipeline_read: Optional[StrictBool] = None
     pipeline_update: Optional[StrictBool] = None
+    protected: Optional[StrictBool] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "name", "organization_id", "pipeline_create", "pipeline_delete", "pipeline_read", "pipeline_update", "updated_at"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "name", "organization_id", "pipeline_create", "pipeline_delete", "pipeline_read", "pipeline_update", "protected", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,6 +100,7 @@ class ModelsRole(BaseModel):
             "pipeline_delete": obj.get("pipeline_delete"),
             "pipeline_read": obj.get("pipeline_read"),
             "pipeline_update": obj.get("pipeline_update"),
+            "protected": obj.get("protected"),
             "updated_at": obj.get("updated_at")
         })
         return _obj

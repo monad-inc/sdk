@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsRoleWithPermissions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-11T20:09:21.567842195Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-11T20:24:47.106721175Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsRoleWithPermissions {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -82,6 +82,11 @@ public class ModelsRoleWithPermissions {
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
   @javax.annotation.Nullable
   private List<ModelsPermission> permissions = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_PROTECTED = "protected";
+  @SerializedName(SERIALIZED_NAME_PROTECTED)
+  @javax.annotation.Nullable
+  private Boolean _protected;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -213,6 +218,25 @@ public class ModelsRoleWithPermissions {
   }
 
 
+  public ModelsRoleWithPermissions _protected(@javax.annotation.Nullable Boolean _protected) {
+    this._protected = _protected;
+    return this;
+  }
+
+  /**
+   * Get _protected
+   * @return _protected
+   */
+  @javax.annotation.Nullable
+  public Boolean getProtected() {
+    return _protected;
+  }
+
+  public void setProtected(@javax.annotation.Nullable Boolean _protected) {
+    this._protected = _protected;
+  }
+
+
   public ModelsRoleWithPermissions updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -248,12 +272,13 @@ public class ModelsRoleWithPermissions {
         Objects.equals(this.name, modelsRoleWithPermissions.name) &&
         Objects.equals(this.organizationId, modelsRoleWithPermissions.organizationId) &&
         Objects.equals(this.permissions, modelsRoleWithPermissions.permissions) &&
+        Objects.equals(this._protected, modelsRoleWithPermissions._protected) &&
         Objects.equals(this.updatedAt, modelsRoleWithPermissions.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, id, name, organizationId, permissions, updatedAt);
+    return Objects.hash(createdAt, description, id, name, organizationId, permissions, _protected, updatedAt);
   }
 
   @Override
@@ -266,6 +291,7 @@ public class ModelsRoleWithPermissions {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+    sb.append("    _protected: ").append(toIndentedString(_protected)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -295,6 +321,7 @@ public class ModelsRoleWithPermissions {
     openapiFields.add("name");
     openapiFields.add("organization_id");
     openapiFields.add("permissions");
+    openapiFields.add("protected");
     openapiFields.add("updated_at");
 
     // a set of required properties/fields (JSON key names)

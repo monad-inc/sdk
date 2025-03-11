@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_permission import ModelsPermission
 from typing import Optional, Set
@@ -34,8 +34,9 @@ class ModelsRoleWithPermissions(BaseModel):
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     permissions: Optional[List[ModelsPermission]] = None
+    protected: Optional[StrictBool] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "name", "organization_id", "permissions", "updated_at"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "name", "organization_id", "permissions", "protected", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,6 +102,7 @@ class ModelsRoleWithPermissions(BaseModel):
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
             "permissions": [ModelsPermission.from_dict(_item) for _item in obj["permissions"]] if obj.get("permissions") is not None else None,
+            "protected": obj.get("protected"),
             "updated_at": obj.get("updated_at")
         })
         return _obj

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **PipelineDelete** | Pointer to **bool** |  | [optional] 
 **PipelineRead** | Pointer to **bool** |  | [optional] 
 **PipelineUpdate** | Pointer to **bool** |  | [optional] 
+**Protected** | Pointer to **bool** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -258,6 +259,31 @@ SetPipelineUpdate sets PipelineUpdate field to given value.
 `func (o *ModelsRole) HasPipelineUpdate() bool`
 
 HasPipelineUpdate returns a boolean if a field has been set.
+
+### GetProtected
+
+`func (o *ModelsRole) GetProtected() bool`
+
+GetProtected returns the Protected field if non-nil, zero value otherwise.
+
+### GetProtectedOk
+
+`func (o *ModelsRole) GetProtectedOk() (*bool, bool)`
+
+GetProtectedOk returns a tuple with the Protected field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProtected
+
+`func (o *ModelsRole) SetProtected(v bool)`
+
+SetProtected sets Protected field to given value.
+
+### HasProtected
+
+`func (o *ModelsRole) HasProtected() bool`
+
+HasProtected returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

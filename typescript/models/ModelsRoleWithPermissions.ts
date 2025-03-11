@@ -20,6 +20,7 @@ export class ModelsRoleWithPermissions {
     'name'?: string;
     'organizationId'?: string;
     'permissions'?: Array<ModelsPermission>;
+    '_protected'?: boolean;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -61,6 +62,12 @@ export class ModelsRoleWithPermissions {
             "name": "permissions",
             "baseName": "permissions",
             "type": "Array<ModelsPermission>",
+            "format": ""
+        },
+        {
+            "name": "_protected",
+            "baseName": "protected",
+            "type": "boolean",
             "format": ""
         },
         {

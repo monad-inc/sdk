@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **Permissions** | Pointer to [**[]ModelsPermission**](ModelsPermission.md) |  | [optional] 
+**Protected** | Pointer to **bool** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -180,6 +181,31 @@ SetPermissions sets Permissions field to given value.
 `func (o *ModelsRoleWithPermissions) HasPermissions() bool`
 
 HasPermissions returns a boolean if a field has been set.
+
+### GetProtected
+
+`func (o *ModelsRoleWithPermissions) GetProtected() bool`
+
+GetProtected returns the Protected field if non-nil, zero value otherwise.
+
+### GetProtectedOk
+
+`func (o *ModelsRoleWithPermissions) GetProtectedOk() (*bool, bool)`
+
+GetProtectedOk returns a tuple with the Protected field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProtected
+
+`func (o *ModelsRoleWithPermissions) SetProtected(v bool)`
+
+SetProtected sets Protected field to given value.
+
+### HasProtected
+
+`func (o *ModelsRoleWithPermissions) HasProtected() bool`
+
+HasProtected returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

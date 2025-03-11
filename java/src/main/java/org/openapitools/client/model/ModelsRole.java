@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsRole
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-11T20:09:21.567842195Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-11T20:24:47.106721175Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsRole {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -94,6 +94,11 @@ public class ModelsRole {
   @SerializedName(SERIALIZED_NAME_PIPELINE_UPDATE)
   @javax.annotation.Nullable
   private Boolean pipelineUpdate;
+
+  public static final String SERIALIZED_NAME_PROTECTED = "protected";
+  @SerializedName(SERIALIZED_NAME_PROTECTED)
+  @javax.annotation.Nullable
+  private Boolean _protected;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -274,6 +279,25 @@ public class ModelsRole {
   }
 
 
+  public ModelsRole _protected(@javax.annotation.Nullable Boolean _protected) {
+    this._protected = _protected;
+    return this;
+  }
+
+  /**
+   * Get _protected
+   * @return _protected
+   */
+  @javax.annotation.Nullable
+  public Boolean getProtected() {
+    return _protected;
+  }
+
+  public void setProtected(@javax.annotation.Nullable Boolean _protected) {
+    this._protected = _protected;
+  }
+
+
   public ModelsRole updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -312,12 +336,13 @@ public class ModelsRole {
         Objects.equals(this.pipelineDelete, modelsRole.pipelineDelete) &&
         Objects.equals(this.pipelineRead, modelsRole.pipelineRead) &&
         Objects.equals(this.pipelineUpdate, modelsRole.pipelineUpdate) &&
+        Objects.equals(this._protected, modelsRole._protected) &&
         Objects.equals(this.updatedAt, modelsRole.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, id, name, organizationId, pipelineCreate, pipelineDelete, pipelineRead, pipelineUpdate, updatedAt);
+    return Objects.hash(createdAt, description, id, name, organizationId, pipelineCreate, pipelineDelete, pipelineRead, pipelineUpdate, _protected, updatedAt);
   }
 
   @Override
@@ -333,6 +358,7 @@ public class ModelsRole {
     sb.append("    pipelineDelete: ").append(toIndentedString(pipelineDelete)).append("\n");
     sb.append("    pipelineRead: ").append(toIndentedString(pipelineRead)).append("\n");
     sb.append("    pipelineUpdate: ").append(toIndentedString(pipelineUpdate)).append("\n");
+    sb.append("    _protected: ").append(toIndentedString(_protected)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -365,6 +391,7 @@ public class ModelsRole {
     openapiFields.add("pipeline_delete");
     openapiFields.add("pipeline_read");
     openapiFields.add("pipeline_update");
+    openapiFields.add("protected");
     openapiFields.add("updated_at");
 
     // a set of required properties/fields (JSON key names)

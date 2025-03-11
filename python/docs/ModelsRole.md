@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **pipeline_delete** | **bool** |  | [optional] 
 **pipeline_read** | **bool** |  | [optional] 
 **pipeline_update** | **bool** |  | [optional] 
+**protected** | **bool** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 
 ## Example

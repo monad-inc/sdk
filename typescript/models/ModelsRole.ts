@@ -22,6 +22,7 @@ export class ModelsRole {
     'pipelineDelete'?: boolean;
     'pipelineRead'?: boolean;
     'pipelineUpdate'?: boolean;
+    '_protected'?: boolean;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -80,6 +81,12 @@ export class ModelsRole {
         {
             "name": "pipelineUpdate",
             "baseName": "pipeline_update",
+            "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "_protected",
+            "baseName": "protected",
             "type": "boolean",
             "format": ""
         },
