@@ -51,8 +51,6 @@ export * from '../models/ModelsPipelineNodeStatus';
 export * from '../models/ModelsPipelineStatus';
 export * from '../models/ModelsQuota';
 export * from '../models/ModelsQuotaList';
-export * from '../models/ModelsRole';
-export * from '../models/ModelsRoleList';
 export * from '../models/ModelsRoleWithPermissions';
 export * from '../models/ModelsRoleWithPermissionsList';
 export * from '../models/ModelsSecretWithComponents';
@@ -62,6 +60,7 @@ export * from '../models/ModelsTransformConfig';
 export * from '../models/ModelsTransformList';
 export * from '../models/ModelsTransformOperation';
 export * from '../models/ModelsUser';
+export * from '../models/ModelsUserRoleWithPermissions';
 export * from '../models/MutateTypeMutateType';
 export * from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 export * from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
@@ -72,7 +71,6 @@ export * from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 export * from '../models/ResponderErrorResponse';
 export * from '../models/RoutesAddUserToOrganizationRequest';
 export * from '../models/RoutesCreateOrganizationRequest';
-export * from '../models/RoutesCreateRoleRequest';
 export * from '../models/RoutesCreateTransformRequest';
 export * from '../models/RoutesGetInputResponse';
 export * from '../models/RoutesGetOutputResponse';
@@ -83,9 +81,9 @@ export * from '../models/RoutesTransformOperation';
 export * from '../models/RoutesTransformOperationArguments';
 export * from '../models/RoutesUpdateOrganizationRequest';
 export * from '../models/RoutesUpdatePipelineRequest';
-export * from '../models/RoutesUpdateRoleRequest';
 export * from '../models/RoutesUpdateTransformRequest';
 export * from '../models/RoutesUpdateUserInOrganizationRequest';
+export * from '../models/RoutesUserWithRoles';
 export * from '../models/RoutesV2ApplyTransformationRequest';
 export * from '../models/RoutesV2ApplyTransformationResponse';
 export * from '../models/RoutesV2CreateAPIKeyRequest';
@@ -166,8 +164,6 @@ import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
-import { ModelsRole } from '../models/ModelsRole';
-import { ModelsRoleList } from '../models/ModelsRoleList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
@@ -177,6 +173,7 @@ import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsUser } from '../models/ModelsUser';
+import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
 import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
@@ -187,7 +184,6 @@ import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyW
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
-import { RoutesCreateRoleRequest } from '../models/RoutesCreateRoleRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
@@ -198,9 +194,9 @@ import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArgumentsClass } from '../models/RoutesTransformOperationArguments';
 import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizationRequest';
 import { RoutesUpdatePipelineRequest } from '../models/RoutesUpdatePipelineRequest';
-import { RoutesUpdateRoleRequest } from '../models/RoutesUpdateRoleRequest';
 import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformRequest';
 import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUserInOrganizationRequest';
+import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
@@ -297,8 +293,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsPipelineStatus": ModelsPipelineStatus,
     "ModelsQuota": ModelsQuota,
     "ModelsQuotaList": ModelsQuotaList,
-    "ModelsRole": ModelsRole,
-    "ModelsRoleList": ModelsRoleList,
     "ModelsRoleWithPermissions": ModelsRoleWithPermissions,
     "ModelsRoleWithPermissionsList": ModelsRoleWithPermissionsList,
     "ModelsSecretWithComponents": ModelsSecretWithComponents,
@@ -308,6 +302,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsTransformList": ModelsTransformList,
     "ModelsTransformOperation": ModelsTransformOperation,
     "ModelsUser": ModelsUser,
+    "ModelsUserRoleWithPermissions": ModelsUserRoleWithPermissions,
     "MutateTypeMutateType": MutateTypeMutateType,
     "MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq": MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq,
     "MutateValueWhereKeyEqMutateValueWhereKeyEq": MutateValueWhereKeyEqMutateValueWhereKeyEq,
@@ -318,7 +313,6 @@ let typeMap: {[index: string]: any} = {
     "ResponderErrorResponse": ResponderErrorResponse,
     "RoutesAddUserToOrganizationRequest": RoutesAddUserToOrganizationRequest,
     "RoutesCreateOrganizationRequest": RoutesCreateOrganizationRequest,
-    "RoutesCreateRoleRequest": RoutesCreateRoleRequest,
     "RoutesCreateTransformRequest": RoutesCreateTransformRequest,
     "RoutesGetInputResponse": RoutesGetInputResponse,
     "RoutesGetOutputResponse": RoutesGetOutputResponse,
@@ -329,9 +323,9 @@ let typeMap: {[index: string]: any} = {
     "RoutesTransformOperationArguments": RoutesTransformOperationArgumentsClass,
     "RoutesUpdateOrganizationRequest": RoutesUpdateOrganizationRequest,
     "RoutesUpdatePipelineRequest": RoutesUpdatePipelineRequest,
-    "RoutesUpdateRoleRequest": RoutesUpdateRoleRequest,
     "RoutesUpdateTransformRequest": RoutesUpdateTransformRequest,
     "RoutesUpdateUserInOrganizationRequest": RoutesUpdateUserInOrganizationRequest,
+    "RoutesUserWithRoles": RoutesUserWithRoles,
     "RoutesV2ApplyTransformationRequest": RoutesV2ApplyTransformationRequest,
     "RoutesV2ApplyTransformationResponse": RoutesV2ApplyTransformationResponse,
     "RoutesV2CreateAPIKeyRequest": RoutesV2CreateAPIKeyRequest,

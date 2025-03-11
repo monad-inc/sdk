@@ -28,7 +28,7 @@ type ApiV1UsersGetRequest struct {
 	ApiService *UsersAPIService
 }
 
-func (r ApiV1UsersGetRequest) Execute() (*ModelsUser, *http.Response, error) {
+func (r ApiV1UsersGetRequest) Execute() (*RoutesUserWithRoles, *http.Response, error) {
 	return r.ApiService.V1UsersGetExecute(r)
 }
 
@@ -48,13 +48,13 @@ func (a *UsersAPIService) V1UsersGet(ctx context.Context) ApiV1UsersGetRequest {
 }
 
 // Execute executes the request
-//  @return ModelsUser
-func (a *UsersAPIService) V1UsersGetExecute(r ApiV1UsersGetRequest) (*ModelsUser, *http.Response, error) {
+//  @return RoutesUserWithRoles
+func (a *UsersAPIService) V1UsersGetExecute(r ApiV1UsersGetRequest) (*RoutesUserWithRoles, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsUser
+		localVarReturnValue  *RoutesUserWithRoles
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.V1UsersGet")

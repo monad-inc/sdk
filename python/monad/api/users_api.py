@@ -19,6 +19,7 @@ from typing_extensions import Annotated
 
 from typing import Any, Dict, Optional
 from monad.models.models_user import ModelsUser
+from monad.models.routes_user_with_roles import RoutesUserWithRoles
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -53,7 +54,7 @@ class UsersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelsUser:
+    ) -> RoutesUserWithRoles:
         """Get your current user
 
         Get your current user
@@ -88,7 +89,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsUser",
+            '200': "RoutesUserWithRoles",
             '400': "str",
             '500': "str",
         }
@@ -118,7 +119,7 @@ class UsersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelsUser]:
+    ) -> ApiResponse[RoutesUserWithRoles]:
         """Get your current user
 
         Get your current user
@@ -153,7 +154,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsUser",
+            '200': "RoutesUserWithRoles",
             '400': "str",
             '500': "str",
         }
@@ -218,7 +219,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsUser",
+            '200': "RoutesUserWithRoles",
             '400': "str",
             '500': "str",
         }

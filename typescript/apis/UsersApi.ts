@@ -9,6 +9,7 @@ import {SecurityAuthentication} from '../auth/auth';
 
 
 import { ModelsUser } from '../models/ModelsUser';
+import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
 
 /**
  * no description
@@ -104,13 +105,13 @@ export class UsersApiResponseProcessor {
      * @params response Response returned by the server for a request to v1UsersGet
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1UsersGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsUser >> {
+     public async v1UsersGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesUserWithRoles >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsUser = ObjectSerializer.deserialize(
+            const body: RoutesUserWithRoles = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsUser", ""
-            ) as ModelsUser;
+                "RoutesUserWithRoles", ""
+            ) as RoutesUserWithRoles;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -130,10 +131,10 @@ export class UsersApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsUser = ObjectSerializer.deserialize(
+            const body: RoutesUserWithRoles = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsUser", ""
-            ) as ModelsUser;
+                "RoutesUserWithRoles", ""
+            ) as RoutesUserWithRoles;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

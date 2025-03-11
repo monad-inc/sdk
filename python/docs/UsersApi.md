@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **v1_users_get**
-> ModelsUser v1_users_get()
+> RoutesUserWithRoles v1_users_get()
 
 Get your current user
 
@@ -21,7 +21,7 @@ Get your current user
 
 ```python
 import monad
-from monad.models.models_user import ModelsUser
+from monad.models.routes_user_with_roles import RoutesUserWithRoles
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -64,7 +64,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ModelsUser**](ModelsUser.md)
+[**RoutesUserWithRoles**](RoutesUserWithRoles.md)
 
 ### Authorization
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | User created successfully |  -  |
+**200** | Get user success |  -  |
 **400** | Invalid JSON request body |  -  |
 **500** | Error creating user |  -  |
 

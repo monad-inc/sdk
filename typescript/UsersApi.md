@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **v1UsersGet**
-> ModelsUser v1UsersGet()
+> RoutesUserWithRoles v1UsersGet()
 
 Get your current user
 
@@ -35,7 +35,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**ModelsUser**
+**RoutesUserWithRoles**
 
 ### Authorization
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | User created successfully |  -  |
+**200** | Get user success |  -  |
 **400** | Invalid JSON request body |  -  |
 **500** | Error creating user |  -  |
 

@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-03-11T20:40:08.378634499Z[Etc/UTC]
+  - Build date: 2025-03-11T20:49:49.300698284Z[Etc/UTC]
   - Generator version: 7.12.0
 
 This is the monad API
@@ -180,11 +180,6 @@ Class | Method | HTTP request | Description
 *PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
 *PipelinesApi* | [**v2OrganizationIdPipelinesPost**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPost) | **POST** /v2/{organization_id}/pipelines | Create pipeline
 *PipelinesApi* | [**v2OrganizationIdPipelinesStatusesGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesStatusesGet) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
-*RolesApi* | [**v1OrganizationIdRolesGet**](docs/RolesApi.md#v1OrganizationIdRolesGet) | **GET** /v1/{organization_id}/roles | List roles
-*RolesApi* | [**v1OrganizationIdRolesPost**](docs/RolesApi.md#v1OrganizationIdRolesPost) | **POST** /v1/{organization_id}/roles | Create role
-*RolesApi* | [**v1OrganizationIdRolesRoleIdDelete**](docs/RolesApi.md#v1OrganizationIdRolesRoleIdDelete) | **DELETE** /v1/{organization_id}/roles/{role_id} | Delete role
-*RolesApi* | [**v1OrganizationIdRolesRoleIdGet**](docs/RolesApi.md#v1OrganizationIdRolesRoleIdGet) | **GET** /v1/{organization_id}/roles/{role_id} | Get role
-*RolesApi* | [**v1OrganizationIdRolesRoleIdPatch**](docs/RolesApi.md#v1OrganizationIdRolesRoleIdPatch) | **PATCH** /v1/{organization_id}/roles/{role_id} | Update role
 *RolesApi* | [**v2OrganizationIdRolesGet**](docs/RolesApi.md#v2OrganizationIdRolesGet) | **GET** /v2/{organization_id}/roles | List roles
 *RolesApi* | [**v2OrganizationIdRolesPost**](docs/RolesApi.md#v2OrganizationIdRolesPost) | **POST** /v2/{organization_id}/roles | Create role
 *RolesApi* | [**v2OrganizationIdRolesRoleIdDelete**](docs/RolesApi.md#v2OrganizationIdRolesRoleIdDelete) | **DELETE** /v2/{organization_id}/roles/{role_id} | Delete role
@@ -259,8 +254,6 @@ Class | Method | HTTP request | Description
  - [ModelsPipelineStatus](docs/ModelsPipelineStatus.md)
  - [ModelsQuota](docs/ModelsQuota.md)
  - [ModelsQuotaList](docs/ModelsQuotaList.md)
- - [ModelsRole](docs/ModelsRole.md)
- - [ModelsRoleList](docs/ModelsRoleList.md)
  - [ModelsRoleWithPermissions](docs/ModelsRoleWithPermissions.md)
  - [ModelsRoleWithPermissionsList](docs/ModelsRoleWithPermissionsList.md)
  - [ModelsSecretWithComponents](docs/ModelsSecretWithComponents.md)
@@ -270,6 +263,7 @@ Class | Method | HTTP request | Description
  - [ModelsTransformList](docs/ModelsTransformList.md)
  - [ModelsTransformOperation](docs/ModelsTransformOperation.md)
  - [ModelsUser](docs/ModelsUser.md)
+ - [ModelsUserRoleWithPermissions](docs/ModelsUserRoleWithPermissions.md)
  - [MutateTypeMutateType](docs/MutateTypeMutateType.md)
  - [MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq](docs/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq.md)
  - [MutateValueWhereKeyEqMutateValueWhereKeyEq](docs/MutateValueWhereKeyEqMutateValueWhereKeyEq.md)
@@ -280,7 +274,6 @@ Class | Method | HTTP request | Description
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
  - [RoutesAddUserToOrganizationRequest](docs/RoutesAddUserToOrganizationRequest.md)
  - [RoutesCreateOrganizationRequest](docs/RoutesCreateOrganizationRequest.md)
- - [RoutesCreateRoleRequest](docs/RoutesCreateRoleRequest.md)
  - [RoutesCreateTransformRequest](docs/RoutesCreateTransformRequest.md)
  - [RoutesGetInputResponse](docs/RoutesGetInputResponse.md)
  - [RoutesGetOutputResponse](docs/RoutesGetOutputResponse.md)
@@ -291,9 +284,9 @@ Class | Method | HTTP request | Description
  - [RoutesTransformOperationArguments](docs/RoutesTransformOperationArguments.md)
  - [RoutesUpdateOrganizationRequest](docs/RoutesUpdateOrganizationRequest.md)
  - [RoutesUpdatePipelineRequest](docs/RoutesUpdatePipelineRequest.md)
- - [RoutesUpdateRoleRequest](docs/RoutesUpdateRoleRequest.md)
  - [RoutesUpdateTransformRequest](docs/RoutesUpdateTransformRequest.md)
  - [RoutesUpdateUserInOrganizationRequest](docs/RoutesUpdateUserInOrganizationRequest.md)
+ - [RoutesUserWithRoles](docs/RoutesUserWithRoles.md)
  - [RoutesV2ApplyTransformationRequest](docs/RoutesV2ApplyTransformationRequest.md)
  - [RoutesV2ApplyTransformationResponse](docs/RoutesV2ApplyTransformationResponse.md)
  - [RoutesV2CreateAPIKeyRequest](docs/RoutesV2CreateAPIKeyRequest.md)

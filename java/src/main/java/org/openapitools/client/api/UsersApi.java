@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.ModelsUser;
+import org.openapitools.client.model.RoutesUserWithRoles;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -139,7 +140,7 @@ public class UsersApi {
     /**
      * Get your current user
      * Get your current user
-     * @return ModelsUser
+     * @return RoutesUserWithRoles
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -150,15 +151,15 @@ public class UsersApi {
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsUser v1UsersGet() throws ApiException {
-        ApiResponse<ModelsUser> localVarResp = v1UsersGetWithHttpInfo();
+    public RoutesUserWithRoles v1UsersGet() throws ApiException {
+        ApiResponse<RoutesUserWithRoles> localVarResp = v1UsersGetWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * Get your current user
      * Get your current user
-     * @return ApiResponse&lt;ModelsUser&gt;
+     * @return ApiResponse&lt;RoutesUserWithRoles&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -169,9 +170,9 @@ public class UsersApi {
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsUser> v1UsersGetWithHttpInfo() throws ApiException {
+    public ApiResponse<RoutesUserWithRoles> v1UsersGetWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = v1UsersGetValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<ModelsUser>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesUserWithRoles>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -190,10 +191,10 @@ public class UsersApi {
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1UsersGetAsync(final ApiCallback<ModelsUser> _callback) throws ApiException {
+    public okhttp3.Call v1UsersGetAsync(final ApiCallback<RoutesUserWithRoles> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1UsersGetValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<ModelsUser>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesUserWithRoles>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -207,7 +208,7 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> User created successfully </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Get user success </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>
@@ -273,7 +274,7 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> User created successfully </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Get user success </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>
@@ -293,7 +294,7 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> User created successfully </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Get user success </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>
@@ -315,7 +316,7 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> User created successfully </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Get user success </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>

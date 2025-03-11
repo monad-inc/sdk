@@ -144,11 +144,6 @@ Class | Method | HTTP request | Description
 *PipelinesAPI* | [**V2OrganizationIdPipelinesPipelineIdStatusNodeIdGet**](docs/PipelinesAPI.md#v2organizationidpipelinespipelineidstatusnodeidget) | **Get** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
 *PipelinesAPI* | [**V2OrganizationIdPipelinesPost**](docs/PipelinesAPI.md#v2organizationidpipelinespost) | **Post** /v2/{organization_id}/pipelines | Create pipeline
 *PipelinesAPI* | [**V2OrganizationIdPipelinesStatusesGet**](docs/PipelinesAPI.md#v2organizationidpipelinesstatusesget) | **Get** /v2/{organization_id}/pipelines/statuses | Get pipeline status
-*RolesAPI* | [**V1OrganizationIdRolesGet**](docs/RolesAPI.md#v1organizationidrolesget) | **Get** /v1/{organization_id}/roles | List roles
-*RolesAPI* | [**V1OrganizationIdRolesPost**](docs/RolesAPI.md#v1organizationidrolespost) | **Post** /v1/{organization_id}/roles | Create role
-*RolesAPI* | [**V1OrganizationIdRolesRoleIdDelete**](docs/RolesAPI.md#v1organizationidrolesroleiddelete) | **Delete** /v1/{organization_id}/roles/{role_id} | Delete role
-*RolesAPI* | [**V1OrganizationIdRolesRoleIdGet**](docs/RolesAPI.md#v1organizationidrolesroleidget) | **Get** /v1/{organization_id}/roles/{role_id} | Get role
-*RolesAPI* | [**V1OrganizationIdRolesRoleIdPatch**](docs/RolesAPI.md#v1organizationidrolesroleidpatch) | **Patch** /v1/{organization_id}/roles/{role_id} | Update role
 *RolesAPI* | [**V2OrganizationIdRolesGet**](docs/RolesAPI.md#v2organizationidrolesget) | **Get** /v2/{organization_id}/roles | List roles
 *RolesAPI* | [**V2OrganizationIdRolesPost**](docs/RolesAPI.md#v2organizationidrolespost) | **Post** /v2/{organization_id}/roles | Create role
 *RolesAPI* | [**V2OrganizationIdRolesRoleIdDelete**](docs/RolesAPI.md#v2organizationidrolesroleiddelete) | **Delete** /v2/{organization_id}/roles/{role_id} | Delete role
@@ -223,8 +218,6 @@ Class | Method | HTTP request | Description
  - [ModelsPipelineStatus](docs/ModelsPipelineStatus.md)
  - [ModelsQuota](docs/ModelsQuota.md)
  - [ModelsQuotaList](docs/ModelsQuotaList.md)
- - [ModelsRole](docs/ModelsRole.md)
- - [ModelsRoleList](docs/ModelsRoleList.md)
  - [ModelsRoleWithPermissions](docs/ModelsRoleWithPermissions.md)
  - [ModelsRoleWithPermissionsList](docs/ModelsRoleWithPermissionsList.md)
  - [ModelsSecretWithComponents](docs/ModelsSecretWithComponents.md)
@@ -234,6 +227,7 @@ Class | Method | HTTP request | Description
  - [ModelsTransformList](docs/ModelsTransformList.md)
  - [ModelsTransformOperation](docs/ModelsTransformOperation.md)
  - [ModelsUser](docs/ModelsUser.md)
+ - [ModelsUserRoleWithPermissions](docs/ModelsUserRoleWithPermissions.md)
  - [MutateTypeMutateType](docs/MutateTypeMutateType.md)
  - [MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq](docs/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq.md)
  - [MutateValueWhereKeyEqMutateValueWhereKeyEq](docs/MutateValueWhereKeyEqMutateValueWhereKeyEq.md)
@@ -244,7 +238,6 @@ Class | Method | HTTP request | Description
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
  - [RoutesAddUserToOrganizationRequest](docs/RoutesAddUserToOrganizationRequest.md)
  - [RoutesCreateOrganizationRequest](docs/RoutesCreateOrganizationRequest.md)
- - [RoutesCreateRoleRequest](docs/RoutesCreateRoleRequest.md)
  - [RoutesCreateTransformRequest](docs/RoutesCreateTransformRequest.md)
  - [RoutesGetInputResponse](docs/RoutesGetInputResponse.md)
  - [RoutesGetOutputResponse](docs/RoutesGetOutputResponse.md)
@@ -255,9 +248,9 @@ Class | Method | HTTP request | Description
  - [RoutesTransformOperationArguments](docs/RoutesTransformOperationArguments.md)
  - [RoutesUpdateOrganizationRequest](docs/RoutesUpdateOrganizationRequest.md)
  - [RoutesUpdatePipelineRequest](docs/RoutesUpdatePipelineRequest.md)
- - [RoutesUpdateRoleRequest](docs/RoutesUpdateRoleRequest.md)
  - [RoutesUpdateTransformRequest](docs/RoutesUpdateTransformRequest.md)
  - [RoutesUpdateUserInOrganizationRequest](docs/RoutesUpdateUserInOrganizationRequest.md)
+ - [RoutesUserWithRoles](docs/RoutesUserWithRoles.md)
  - [RoutesV2ApplyTransformationRequest](docs/RoutesV2ApplyTransformationRequest.md)
  - [RoutesV2ApplyTransformationResponse](docs/RoutesV2ApplyTransformationResponse.md)
  - [RoutesV2CreateAPIKeyRequest](docs/RoutesV2CreateAPIKeyRequest.md)

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineRequestNode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-11T20:40:08.378634499Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-11T20:49:49.300698284Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class RoutesV2PipelineRequestNode {
   public static final String SERIALIZED_NAME_COMPONENT_ID = "component_id";
   @SerializedName(SERIALIZED_NAME_COMPONENT_ID)

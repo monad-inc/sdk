@@ -10,7 +10,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="v1UsersGet"></a>
 # **v1UsersGet**
-> ModelsUser v1UsersGet()
+> RoutesUserWithRoles v1UsersGet()
 
 Get your current user
 
@@ -39,7 +39,7 @@ public class Example {
 
     UsersApi apiInstance = new UsersApi(defaultClient);
     try {
-      ModelsUser result = apiInstance.v1UsersGet();
+      RoutesUserWithRoles result = apiInstance.v1UsersGet();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#v1UsersGet");
@@ -57,7 +57,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ModelsUser**](ModelsUser.md)
+[**RoutesUserWithRoles**](RoutesUserWithRoles.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | User created successfully |  -  |
+| **200** | Get user success |  -  |
 | **400** | Invalid JSON request body |  -  |
 | **500** | Error creating user |  -  |
 

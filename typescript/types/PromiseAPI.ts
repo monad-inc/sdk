@@ -55,8 +55,6 @@ import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
-import { ModelsRole } from '../models/ModelsRole';
-import { ModelsRoleList } from '../models/ModelsRoleList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
@@ -66,6 +64,7 @@ import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsUser } from '../models/ModelsUser';
+import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
 import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
@@ -76,7 +75,6 @@ import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyW
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
-import { RoutesCreateRoleRequest } from '../models/RoutesCreateRoleRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
@@ -87,9 +85,9 @@ import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
 import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizationRequest';
 import { RoutesUpdatePipelineRequest } from '../models/RoutesUpdatePipelineRequest';
-import { RoutesUpdateRoleRequest } from '../models/RoutesUpdateRoleRequest';
 import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformRequest';
 import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUserInOrganizationRequest';
+import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
@@ -3496,240 +3494,6 @@ export class PromiseRolesApi {
     }
 
     /**
-     * List roles
-     * List roles
-     * @param organizationId Organization ID
-     * @param [limit] Limit the number of roles returned (default: 10)
-     * @param [offset] Offset the roles returned (default: 0)
-     */
-    public v1OrganizationIdRolesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsRoleList>> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
-        const result = this.api.v1OrganizationIdRolesGetWithHttpInfo(organizationId, limit, offset, observableOptions);
-        return result.toPromise();
-    }
-
-    /**
-     * List roles
-     * List roles
-     * @param organizationId Organization ID
-     * @param [limit] Limit the number of roles returned (default: 10)
-     * @param [offset] Offset the roles returned (default: 0)
-     */
-    public v1OrganizationIdRolesGet(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsRoleList> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
-        const result = this.api.v1OrganizationIdRolesGet(organizationId, limit, offset, observableOptions);
-        return result.toPromise();
-    }
-
-    /**
-     * Create role
-     * Create role
-     * @param organizationId Organization ID
-     * @param routesCreateRoleRequest Request body for creating a role
-     */
-    public v1OrganizationIdRolesPostWithHttpInfo(organizationId: string, routesCreateRoleRequest: RoutesCreateRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsRole>> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
-        const result = this.api.v1OrganizationIdRolesPostWithHttpInfo(organizationId, routesCreateRoleRequest, observableOptions);
-        return result.toPromise();
-    }
-
-    /**
-     * Create role
-     * Create role
-     * @param organizationId Organization ID
-     * @param routesCreateRoleRequest Request body for creating a role
-     */
-    public v1OrganizationIdRolesPost(organizationId: string, routesCreateRoleRequest: RoutesCreateRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsRole> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
-        const result = this.api.v1OrganizationIdRolesPost(organizationId, routesCreateRoleRequest, observableOptions);
-        return result.toPromise();
-    }
-
-    /**
-     * Delete role
-     * Delete role
-     * @param organizationId Organization ID
-     * @param roleId Role ID
-     */
-    public v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(organizationId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<any>> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
-        const result = this.api.v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(organizationId, roleId, observableOptions);
-        return result.toPromise();
-    }
-
-    /**
-     * Delete role
-     * Delete role
-     * @param organizationId Organization ID
-     * @param roleId Role ID
-     */
-    public v1OrganizationIdRolesRoleIdDelete(organizationId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<any> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
-        const result = this.api.v1OrganizationIdRolesRoleIdDelete(organizationId, roleId, observableOptions);
-        return result.toPromise();
-    }
-
-    /**
-     * Get role
-     * Get role
-     * @param organizationId Organization ID
-     * @param roleId Role ID
-     */
-    public v1OrganizationIdRolesRoleIdGetWithHttpInfo(organizationId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsRole>> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
-        const result = this.api.v1OrganizationIdRolesRoleIdGetWithHttpInfo(organizationId, roleId, observableOptions);
-        return result.toPromise();
-    }
-
-    /**
-     * Get role
-     * Get role
-     * @param organizationId Organization ID
-     * @param roleId Role ID
-     */
-    public v1OrganizationIdRolesRoleIdGet(organizationId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<ModelsRole> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
-        const result = this.api.v1OrganizationIdRolesRoleIdGet(organizationId, roleId, observableOptions);
-        return result.toPromise();
-    }
-
-    /**
-     * Update role
-     * Update role
-     * @param organizationId Organization ID
-     * @param roleId Role ID
-     * @param routesUpdateRoleRequest Request body for updating a role
-     */
-    public v1OrganizationIdRolesRoleIdPatchWithHttpInfo(organizationId: string, roleId: string, routesUpdateRoleRequest: RoutesUpdateRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsRole>> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
-        const result = this.api.v1OrganizationIdRolesRoleIdPatchWithHttpInfo(organizationId, roleId, routesUpdateRoleRequest, observableOptions);
-        return result.toPromise();
-    }
-
-    /**
-     * Update role
-     * Update role
-     * @param organizationId Organization ID
-     * @param roleId Role ID
-     * @param routesUpdateRoleRequest Request body for updating a role
-     */
-    public v1OrganizationIdRolesRoleIdPatch(organizationId: string, roleId: string, routesUpdateRoleRequest: RoutesUpdateRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsRole> {
-        let observableOptions: undefined | ConfigurationOptions
-        if (_options){
-	    observableOptions = {
-                baseServer: _options.baseServer,
-                httpApi: _options.httpApi,
-                middleware: _options.middleware?.map(
-                    m => new PromiseMiddlewareWrapper(m)
-		),
-		middlewareMergeStrategy: _options.middlewareMergeStrategy,
-                authMethods: _options.authMethods
-	    }
-	}
-        const result = this.api.v1OrganizationIdRolesRoleIdPatch(organizationId, roleId, routesUpdateRoleRequest, observableOptions);
-        return result.toPromise();
-    }
-
-    /**
      * List roles with their associated permissions
      * List roles
      * @param organizationId Organization ID
@@ -4499,7 +4263,7 @@ export class PromiseUsersApi {
      * Get your current user
      * Get your current user
      */
-    public v1UsersGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsUser>> {
+    public v1UsersGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesUserWithRoles>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -4520,7 +4284,7 @@ export class PromiseUsersApi {
      * Get your current user
      * Get your current user
      */
-    public v1UsersGet(_options?: PromiseConfigurationOptions): Promise<ModelsUser> {
+    public v1UsersGet(_options?: PromiseConfigurationOptions): Promise<RoutesUserWithRoles> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {

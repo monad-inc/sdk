@@ -56,8 +56,6 @@ import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
-import { ModelsRole } from '../models/ModelsRole';
-import { ModelsRoleList } from '../models/ModelsRoleList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
@@ -67,6 +65,7 @@ import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsUser } from '../models/ModelsUser';
+import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
 import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
@@ -77,7 +76,6 @@ import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyW
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
-import { RoutesCreateRoleRequest } from '../models/RoutesCreateRoleRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
@@ -88,9 +86,9 @@ import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
 import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizationRequest';
 import { RoutesUpdatePipelineRequest } from '../models/RoutesUpdatePipelineRequest';
-import { RoutesUpdateRoleRequest } from '../models/RoutesUpdateRoleRequest';
 import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformRequest';
 import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUserInOrganizationRequest';
+import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
@@ -4653,330 +4651,6 @@ export class ObservableRolesApi {
     }
 
     /**
-     * List roles
-     * List roles
-     * @param organizationId Organization ID
-     * @param [limit] Limit the number of roles returned (default: 10)
-     * @param [offset] Offset the roles returned (default: 0)
-     */
-    public v1OrganizationIdRolesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsRoleList>> {
-    let _config = this.configuration;
-    let allMiddleware: Middleware[] = [];
-    if (_options && _options.middleware){
-      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
-      // call-time middleware provided
-      const calltimeMiddleware: Middleware[] = _options.middleware;
-
-      switch(middlewareMergeStrategy){
-      case 'append':
-        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
-        break;
-      case 'prepend':
-        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
-        break;
-      case 'replace':
-        allMiddleware = calltimeMiddleware
-        break;
-      default: 
-        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
-      }
-	}
-	if (_options){
-    _config = {
-      baseServer: _options.baseServer || this.configuration.baseServer,
-      httpApi: _options.httpApi || this.configuration.httpApi,
-      authMethods: _options.authMethods || this.configuration.authMethods,
-      middleware: allMiddleware || this.configuration.middleware
-		};
-	}
-
-        const requestContextPromise = this.requestFactory.v1OrganizationIdRolesGet(organizationId, limit, offset, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of allMiddleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1OrganizationIdRolesGetWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * List roles
-     * List roles
-     * @param organizationId Organization ID
-     * @param [limit] Limit the number of roles returned (default: 10)
-     * @param [offset] Offset the roles returned (default: 0)
-     */
-    public v1OrganizationIdRolesGet(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsRoleList> {
-        return this.v1OrganizationIdRolesGetWithHttpInfo(organizationId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsRoleList>) => apiResponse.data));
-    }
-
-    /**
-     * Create role
-     * Create role
-     * @param organizationId Organization ID
-     * @param routesCreateRoleRequest Request body for creating a role
-     */
-    public v1OrganizationIdRolesPostWithHttpInfo(organizationId: string, routesCreateRoleRequest: RoutesCreateRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsRole>> {
-    let _config = this.configuration;
-    let allMiddleware: Middleware[] = [];
-    if (_options && _options.middleware){
-      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
-      // call-time middleware provided
-      const calltimeMiddleware: Middleware[] = _options.middleware;
-
-      switch(middlewareMergeStrategy){
-      case 'append':
-        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
-        break;
-      case 'prepend':
-        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
-        break;
-      case 'replace':
-        allMiddleware = calltimeMiddleware
-        break;
-      default: 
-        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
-      }
-	}
-	if (_options){
-    _config = {
-      baseServer: _options.baseServer || this.configuration.baseServer,
-      httpApi: _options.httpApi || this.configuration.httpApi,
-      authMethods: _options.authMethods || this.configuration.authMethods,
-      middleware: allMiddleware || this.configuration.middleware
-		};
-	}
-
-        const requestContextPromise = this.requestFactory.v1OrganizationIdRolesPost(organizationId, routesCreateRoleRequest, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of allMiddleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1OrganizationIdRolesPostWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Create role
-     * Create role
-     * @param organizationId Organization ID
-     * @param routesCreateRoleRequest Request body for creating a role
-     */
-    public v1OrganizationIdRolesPost(organizationId: string, routesCreateRoleRequest: RoutesCreateRoleRequest, _options?: ConfigurationOptions): Observable<ModelsRole> {
-        return this.v1OrganizationIdRolesPostWithHttpInfo(organizationId, routesCreateRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsRole>) => apiResponse.data));
-    }
-
-    /**
-     * Delete role
-     * Delete role
-     * @param organizationId Organization ID
-     * @param roleId Role ID
-     */
-    public v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(organizationId: string, roleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<any>> {
-    let _config = this.configuration;
-    let allMiddleware: Middleware[] = [];
-    if (_options && _options.middleware){
-      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
-      // call-time middleware provided
-      const calltimeMiddleware: Middleware[] = _options.middleware;
-
-      switch(middlewareMergeStrategy){
-      case 'append':
-        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
-        break;
-      case 'prepend':
-        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
-        break;
-      case 'replace':
-        allMiddleware = calltimeMiddleware
-        break;
-      default: 
-        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
-      }
-	}
-	if (_options){
-    _config = {
-      baseServer: _options.baseServer || this.configuration.baseServer,
-      httpApi: _options.httpApi || this.configuration.httpApi,
-      authMethods: _options.authMethods || this.configuration.authMethods,
-      middleware: allMiddleware || this.configuration.middleware
-		};
-	}
-
-        const requestContextPromise = this.requestFactory.v1OrganizationIdRolesRoleIdDelete(organizationId, roleId, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of allMiddleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Delete role
-     * Delete role
-     * @param organizationId Organization ID
-     * @param roleId Role ID
-     */
-    public v1OrganizationIdRolesRoleIdDelete(organizationId: string, roleId: string, _options?: ConfigurationOptions): Observable<any> {
-        return this.v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(organizationId, roleId, _options).pipe(map((apiResponse: HttpInfo<any>) => apiResponse.data));
-    }
-
-    /**
-     * Get role
-     * Get role
-     * @param organizationId Organization ID
-     * @param roleId Role ID
-     */
-    public v1OrganizationIdRolesRoleIdGetWithHttpInfo(organizationId: string, roleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsRole>> {
-    let _config = this.configuration;
-    let allMiddleware: Middleware[] = [];
-    if (_options && _options.middleware){
-      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
-      // call-time middleware provided
-      const calltimeMiddleware: Middleware[] = _options.middleware;
-
-      switch(middlewareMergeStrategy){
-      case 'append':
-        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
-        break;
-      case 'prepend':
-        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
-        break;
-      case 'replace':
-        allMiddleware = calltimeMiddleware
-        break;
-      default: 
-        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
-      }
-	}
-	if (_options){
-    _config = {
-      baseServer: _options.baseServer || this.configuration.baseServer,
-      httpApi: _options.httpApi || this.configuration.httpApi,
-      authMethods: _options.authMethods || this.configuration.authMethods,
-      middleware: allMiddleware || this.configuration.middleware
-		};
-	}
-
-        const requestContextPromise = this.requestFactory.v1OrganizationIdRolesRoleIdGet(organizationId, roleId, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of allMiddleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1OrganizationIdRolesRoleIdGetWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Get role
-     * Get role
-     * @param organizationId Organization ID
-     * @param roleId Role ID
-     */
-    public v1OrganizationIdRolesRoleIdGet(organizationId: string, roleId: string, _options?: ConfigurationOptions): Observable<ModelsRole> {
-        return this.v1OrganizationIdRolesRoleIdGetWithHttpInfo(organizationId, roleId, _options).pipe(map((apiResponse: HttpInfo<ModelsRole>) => apiResponse.data));
-    }
-
-    /**
-     * Update role
-     * Update role
-     * @param organizationId Organization ID
-     * @param roleId Role ID
-     * @param routesUpdateRoleRequest Request body for updating a role
-     */
-    public v1OrganizationIdRolesRoleIdPatchWithHttpInfo(organizationId: string, roleId: string, routesUpdateRoleRequest: RoutesUpdateRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsRole>> {
-    let _config = this.configuration;
-    let allMiddleware: Middleware[] = [];
-    if (_options && _options.middleware){
-      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
-      // call-time middleware provided
-      const calltimeMiddleware: Middleware[] = _options.middleware;
-
-      switch(middlewareMergeStrategy){
-      case 'append':
-        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
-        break;
-      case 'prepend':
-        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
-        break;
-      case 'replace':
-        allMiddleware = calltimeMiddleware
-        break;
-      default: 
-        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
-      }
-	}
-	if (_options){
-    _config = {
-      baseServer: _options.baseServer || this.configuration.baseServer,
-      httpApi: _options.httpApi || this.configuration.httpApi,
-      authMethods: _options.authMethods || this.configuration.authMethods,
-      middleware: allMiddleware || this.configuration.middleware
-		};
-	}
-
-        const requestContextPromise = this.requestFactory.v1OrganizationIdRolesRoleIdPatch(organizationId, roleId, routesUpdateRoleRequest, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of allMiddleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of allMiddleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1OrganizationIdRolesRoleIdPatchWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Update role
-     * Update role
-     * @param organizationId Organization ID
-     * @param roleId Role ID
-     * @param routesUpdateRoleRequest Request body for updating a role
-     */
-    public v1OrganizationIdRolesRoleIdPatch(organizationId: string, roleId: string, routesUpdateRoleRequest: RoutesUpdateRoleRequest, _options?: ConfigurationOptions): Observable<ModelsRole> {
-        return this.v1OrganizationIdRolesRoleIdPatchWithHttpInfo(organizationId, roleId, routesUpdateRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsRole>) => apiResponse.data));
-    }
-
-    /**
      * List roles with their associated permissions
      * List roles
      * @param organizationId Organization ID
@@ -6012,7 +5686,7 @@ export class ObservableUsersApi {
      * Get your current user
      * Get your current user
      */
-    public v1UsersGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<ModelsUser>> {
+    public v1UsersGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<RoutesUserWithRoles>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -6064,8 +5738,8 @@ export class ObservableUsersApi {
      * Get your current user
      * Get your current user
      */
-    public v1UsersGet(_options?: ConfigurationOptions): Observable<ModelsUser> {
-        return this.v1UsersGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<ModelsUser>) => apiResponse.data));
+    public v1UsersGet(_options?: ConfigurationOptions): Observable<RoutesUserWithRoles> {
+        return this.v1UsersGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<RoutesUserWithRoles>) => apiResponse.data));
     }
 
     /**

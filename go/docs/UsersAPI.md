@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## V1UsersGet
 
-> ModelsUser V1UsersGet(ctx).Execute()
+> RoutesUserWithRoles V1UsersGet(ctx).Execute()
 
 Get your current user
 
@@ -38,7 +38,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.V1UsersGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1UsersGet`: ModelsUser
+	// response from `V1UsersGet`: RoutesUserWithRoles
 	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.V1UsersGet`: %v\n", resp)
 }
 ```
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiV1UsersGetRequest struct v
 
 ### Return type
 
-[**ModelsUser**](ModelsUser.md)
+[**RoutesUserWithRoles**](RoutesUserWithRoles.md)
 
 ### Authorization
 

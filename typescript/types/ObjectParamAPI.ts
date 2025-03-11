@@ -55,8 +55,6 @@ import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
-import { ModelsRole } from '../models/ModelsRole';
-import { ModelsRoleList } from '../models/ModelsRoleList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
@@ -66,6 +64,7 @@ import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsUser } from '../models/ModelsUser';
+import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
 import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
@@ -76,7 +75,6 @@ import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyW
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
-import { RoutesCreateRoleRequest } from '../models/RoutesCreateRoleRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
@@ -87,9 +85,9 @@ import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
 import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizationRequest';
 import { RoutesUpdatePipelineRequest } from '../models/RoutesUpdatePipelineRequest';
-import { RoutesUpdateRoleRequest } from '../models/RoutesUpdateRoleRequest';
 import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformRequest';
 import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUserInOrganizationRequest';
+import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
@@ -2760,103 +2758,6 @@ export class ObjectPipelinesApi {
 import { ObservableRolesApi } from "./ObservableAPI";
 import { RolesApiRequestFactory, RolesApiResponseProcessor} from "../apis/RolesApi";
 
-export interface RolesApiV1OrganizationIdRolesGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof RolesApiv1OrganizationIdRolesGet
-     */
-    organizationId: string
-    /**
-     * Limit the number of roles returned (default: 10)
-     * Defaults to: undefined
-     * @type number
-     * @memberof RolesApiv1OrganizationIdRolesGet
-     */
-    limit?: number
-    /**
-     * Offset the roles returned (default: 0)
-     * Defaults to: undefined
-     * @type number
-     * @memberof RolesApiv1OrganizationIdRolesGet
-     */
-    offset?: number
-}
-
-export interface RolesApiV1OrganizationIdRolesPostRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof RolesApiv1OrganizationIdRolesPost
-     */
-    organizationId: string
-    /**
-     * Request body for creating a role
-     * @type RoutesCreateRoleRequest
-     * @memberof RolesApiv1OrganizationIdRolesPost
-     */
-    routesCreateRoleRequest: RoutesCreateRoleRequest
-}
-
-export interface RolesApiV1OrganizationIdRolesRoleIdDeleteRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof RolesApiv1OrganizationIdRolesRoleIdDelete
-     */
-    organizationId: string
-    /**
-     * Role ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof RolesApiv1OrganizationIdRolesRoleIdDelete
-     */
-    roleId: string
-}
-
-export interface RolesApiV1OrganizationIdRolesRoleIdGetRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof RolesApiv1OrganizationIdRolesRoleIdGet
-     */
-    organizationId: string
-    /**
-     * Role ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof RolesApiv1OrganizationIdRolesRoleIdGet
-     */
-    roleId: string
-}
-
-export interface RolesApiV1OrganizationIdRolesRoleIdPatchRequest {
-    /**
-     * Organization ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof RolesApiv1OrganizationIdRolesRoleIdPatch
-     */
-    organizationId: string
-    /**
-     * Role ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof RolesApiv1OrganizationIdRolesRoleIdPatch
-     */
-    roleId: string
-    /**
-     * Request body for updating a role
-     * @type RoutesUpdateRoleRequest
-     * @memberof RolesApiv1OrganizationIdRolesRoleIdPatch
-     */
-    routesUpdateRoleRequest: RoutesUpdateRoleRequest
-}
-
 export interface RolesApiV2OrganizationIdRolesGetRequest {
     /**
      * Organization ID
@@ -2959,96 +2860,6 @@ export class ObjectRolesApi {
 
     public constructor(configuration: Configuration, requestFactory?: RolesApiRequestFactory, responseProcessor?: RolesApiResponseProcessor) {
         this.api = new ObservableRolesApi(configuration, requestFactory, responseProcessor);
-    }
-
-    /**
-     * List roles
-     * List roles
-     * @param param the request object
-     */
-    public v1OrganizationIdRolesGetWithHttpInfo(param: RolesApiV1OrganizationIdRolesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRoleList>> {
-        return this.api.v1OrganizationIdRolesGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * List roles
-     * List roles
-     * @param param the request object
-     */
-    public v1OrganizationIdRolesGet(param: RolesApiV1OrganizationIdRolesGetRequest, options?: ConfigurationOptions): Promise<ModelsRoleList> {
-        return this.api.v1OrganizationIdRolesGet(param.organizationId, param.limit, param.offset,  options).toPromise();
-    }
-
-    /**
-     * Create role
-     * Create role
-     * @param param the request object
-     */
-    public v1OrganizationIdRolesPostWithHttpInfo(param: RolesApiV1OrganizationIdRolesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRole>> {
-        return this.api.v1OrganizationIdRolesPostWithHttpInfo(param.organizationId, param.routesCreateRoleRequest,  options).toPromise();
-    }
-
-    /**
-     * Create role
-     * Create role
-     * @param param the request object
-     */
-    public v1OrganizationIdRolesPost(param: RolesApiV1OrganizationIdRolesPostRequest, options?: ConfigurationOptions): Promise<ModelsRole> {
-        return this.api.v1OrganizationIdRolesPost(param.organizationId, param.routesCreateRoleRequest,  options).toPromise();
-    }
-
-    /**
-     * Delete role
-     * Delete role
-     * @param param the request object
-     */
-    public v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(param: RolesApiV1OrganizationIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
-        return this.api.v1OrganizationIdRolesRoleIdDeleteWithHttpInfo(param.organizationId, param.roleId,  options).toPromise();
-    }
-
-    /**
-     * Delete role
-     * Delete role
-     * @param param the request object
-     */
-    public v1OrganizationIdRolesRoleIdDelete(param: RolesApiV1OrganizationIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<any> {
-        return this.api.v1OrganizationIdRolesRoleIdDelete(param.organizationId, param.roleId,  options).toPromise();
-    }
-
-    /**
-     * Get role
-     * Get role
-     * @param param the request object
-     */
-    public v1OrganizationIdRolesRoleIdGetWithHttpInfo(param: RolesApiV1OrganizationIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRole>> {
-        return this.api.v1OrganizationIdRolesRoleIdGetWithHttpInfo(param.organizationId, param.roleId,  options).toPromise();
-    }
-
-    /**
-     * Get role
-     * Get role
-     * @param param the request object
-     */
-    public v1OrganizationIdRolesRoleIdGet(param: RolesApiV1OrganizationIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<ModelsRole> {
-        return this.api.v1OrganizationIdRolesRoleIdGet(param.organizationId, param.roleId,  options).toPromise();
-    }
-
-    /**
-     * Update role
-     * Update role
-     * @param param the request object
-     */
-    public v1OrganizationIdRolesRoleIdPatchWithHttpInfo(param: RolesApiV1OrganizationIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsRole>> {
-        return this.api.v1OrganizationIdRolesRoleIdPatchWithHttpInfo(param.organizationId, param.roleId, param.routesUpdateRoleRequest,  options).toPromise();
-    }
-
-    /**
-     * Update role
-     * Update role
-     * @param param the request object
-     */
-    public v1OrganizationIdRolesRoleIdPatch(param: RolesApiV1OrganizationIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsRole> {
-        return this.api.v1OrganizationIdRolesRoleIdPatch(param.organizationId, param.roleId, param.routesUpdateRoleRequest,  options).toPromise();
     }
 
     /**
@@ -3535,7 +3346,7 @@ export class ObjectUsersApi {
      * Get your current user
      * @param param the request object
      */
-    public v1UsersGetWithHttpInfo(param: UsersApiV1UsersGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsUser>> {
+    public v1UsersGetWithHttpInfo(param: UsersApiV1UsersGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<RoutesUserWithRoles>> {
         return this.api.v1UsersGetWithHttpInfo( options).toPromise();
     }
 
@@ -3544,7 +3355,7 @@ export class ObjectUsersApi {
      * Get your current user
      * @param param the request object
      */
-    public v1UsersGet(param: UsersApiV1UsersGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsUser> {
+    public v1UsersGet(param: UsersApiV1UsersGetRequest = {}, options?: ConfigurationOptions): Promise<RoutesUserWithRoles> {
         return this.api.v1UsersGet( options).toPromise();
     }
 
