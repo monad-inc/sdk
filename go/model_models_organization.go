@@ -20,6 +20,7 @@ var _ MappedNullable = &ModelsOrganization{}
 
 // ModelsOrganization struct for ModelsOrganization
 type ModelsOrganization struct {
+	BillingAccountId *string `json:"billing_account_id,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -42,6 +43,38 @@ func NewModelsOrganization() *ModelsOrganization {
 func NewModelsOrganizationWithDefaults() *ModelsOrganization {
 	this := ModelsOrganization{}
 	return &this
+}
+
+// GetBillingAccountId returns the BillingAccountId field value if set, zero value otherwise.
+func (o *ModelsOrganization) GetBillingAccountId() string {
+	if o == nil || IsNil(o.BillingAccountId) {
+		var ret string
+		return ret
+	}
+	return *o.BillingAccountId
+}
+
+// GetBillingAccountIdOk returns a tuple with the BillingAccountId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsOrganization) GetBillingAccountIdOk() (*string, bool) {
+	if o == nil || IsNil(o.BillingAccountId) {
+		return nil, false
+	}
+	return o.BillingAccountId, true
+}
+
+// HasBillingAccountId returns a boolean if a field has been set.
+func (o *ModelsOrganization) HasBillingAccountId() bool {
+	if o != nil && !IsNil(o.BillingAccountId) {
+		return true
+	}
+
+	return false
+}
+
+// SetBillingAccountId gets a reference to the given string and assigns it to the BillingAccountId field.
+func (o *ModelsOrganization) SetBillingAccountId(v string) {
+	o.BillingAccountId = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -214,6 +247,9 @@ func (o ModelsOrganization) MarshalJSON() ([]byte, error) {
 
 func (o ModelsOrganization) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BillingAccountId) {
+		toSerialize["billing_account_id"] = o.BillingAccountId
+	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
 	}

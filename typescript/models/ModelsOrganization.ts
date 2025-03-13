@@ -13,6 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class ModelsOrganization {
+    'billingAccountId'?: string;
     'createdAt'?: string;
     'description'?: string;
     'id'?: string;
@@ -24,6 +25,12 @@ export class ModelsOrganization {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "billingAccountId",
+            "baseName": "billing_account_id",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "createdAt",
             "baseName": "created_at",

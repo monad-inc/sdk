@@ -48,8 +48,13 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganization
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-13T14:30:40.689204880Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-13T17:05:09.965246206Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsOrganization {
+  public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billing_account_id";
+  @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
+  @javax.annotation.Nullable
+  private String billingAccountId;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nullable
@@ -77,6 +82,25 @@ public class ModelsOrganization {
 
   public ModelsOrganization() {
   }
+
+  public ModelsOrganization billingAccountId(@javax.annotation.Nullable String billingAccountId) {
+    this.billingAccountId = billingAccountId;
+    return this;
+  }
+
+  /**
+   * Get billingAccountId
+   * @return billingAccountId
+   */
+  @javax.annotation.Nullable
+  public String getBillingAccountId() {
+    return billingAccountId;
+  }
+
+  public void setBillingAccountId(@javax.annotation.Nullable String billingAccountId) {
+    this.billingAccountId = billingAccountId;
+  }
+
 
   public ModelsOrganization createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
@@ -183,7 +207,8 @@ public class ModelsOrganization {
       return false;
     }
     ModelsOrganization modelsOrganization = (ModelsOrganization) o;
-    return Objects.equals(this.createdAt, modelsOrganization.createdAt) &&
+    return Objects.equals(this.billingAccountId, modelsOrganization.billingAccountId) &&
+        Objects.equals(this.createdAt, modelsOrganization.createdAt) &&
         Objects.equals(this.description, modelsOrganization.description) &&
         Objects.equals(this.id, modelsOrganization.id) &&
         Objects.equals(this.name, modelsOrganization.name) &&
@@ -192,13 +217,14 @@ public class ModelsOrganization {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, id, name, updatedAt);
+    return Objects.hash(billingAccountId, createdAt, description, id, name, updatedAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsOrganization {\n");
+    sb.append("    billingAccountId: ").append(toIndentedString(billingAccountId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -226,6 +252,7 @@ public class ModelsOrganization {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("billing_account_id");
     openapiFields.add("created_at");
     openapiFields.add("description");
     openapiFields.add("id");
@@ -257,6 +284,9 @@ public class ModelsOrganization {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("billing_account_id") != null && !jsonObj.get("billing_account_id").isJsonNull()) && !jsonObj.get("billing_account_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `billing_account_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("billing_account_id").toString()));
+      }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
       }
