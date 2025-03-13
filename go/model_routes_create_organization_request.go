@@ -22,6 +22,7 @@ var _ MappedNullable = &RoutesCreateOrganizationRequest{}
 
 // RoutesCreateOrganizationRequest struct for RoutesCreateOrganizationRequest
 type RoutesCreateOrganizationRequest struct {
+	BillingAccountId *string `json:"billing_account_id,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Name string `json:"name"`
 }
@@ -44,6 +45,38 @@ func NewRoutesCreateOrganizationRequest(name string) *RoutesCreateOrganizationRe
 func NewRoutesCreateOrganizationRequestWithDefaults() *RoutesCreateOrganizationRequest {
 	this := RoutesCreateOrganizationRequest{}
 	return &this
+}
+
+// GetBillingAccountId returns the BillingAccountId field value if set, zero value otherwise.
+func (o *RoutesCreateOrganizationRequest) GetBillingAccountId() string {
+	if o == nil || IsNil(o.BillingAccountId) {
+		var ret string
+		return ret
+	}
+	return *o.BillingAccountId
+}
+
+// GetBillingAccountIdOk returns a tuple with the BillingAccountId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesCreateOrganizationRequest) GetBillingAccountIdOk() (*string, bool) {
+	if o == nil || IsNil(o.BillingAccountId) {
+		return nil, false
+	}
+	return o.BillingAccountId, true
+}
+
+// HasBillingAccountId returns a boolean if a field has been set.
+func (o *RoutesCreateOrganizationRequest) HasBillingAccountId() bool {
+	if o != nil && !IsNil(o.BillingAccountId) {
+		return true
+	}
+
+	return false
+}
+
+// SetBillingAccountId gets a reference to the given string and assigns it to the BillingAccountId field.
+func (o *RoutesCreateOrganizationRequest) SetBillingAccountId(v string) {
+	o.BillingAccountId = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -112,6 +145,9 @@ func (o RoutesCreateOrganizationRequest) MarshalJSON() ([]byte, error) {
 
 func (o RoutesCreateOrganizationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BillingAccountId) {
+		toSerialize["billing_account_id"] = o.BillingAccountId
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}

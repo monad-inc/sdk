@@ -196,6 +196,7 @@ const apiInstance = new OrganizationsApi(configuration);
 const request: OrganizationsApiV1OrganizationsPostRequest = {
     // Request body for creating an organization
   routesCreateOrganizationRequest: {
+    billingAccountId: "billingAccountId_example",
     description: "description_example",
     name: "name_example",
   },

@@ -26,6 +26,9 @@ import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultip
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
+import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
+import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
+import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
@@ -92,11 +95,14 @@ import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
+import { RoutesV2CreateBillingAccountRequest } from '../models/RoutesV2CreateBillingAccountRequest';
+import { RoutesV2CreateBillingAccountRoleRequest } from '../models/RoutesV2CreateBillingAccountRoleRequest';
 import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
 import { RoutesV2CreatePipelineRequest } from '../models/RoutesV2CreatePipelineRequest';
 import { RoutesV2CreateRoleV2Request } from '../models/RoutesV2CreateRoleV2Request';
+import { RoutesV2CreatebillingAccountUserRoleRequest } from '../models/RoutesV2CreatebillingAccountUserRoleRequest';
 import { RoutesV2GenerateRecordRequest } from '../models/RoutesV2GenerateRecordRequest';
 import { RoutesV2GenerateRecordResponse } from '../models/RoutesV2GenerateRecordResponse';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
@@ -109,6 +115,8 @@ import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyRequest';
+import { RoutesV2UpdateBillingAccountRequest } from '../models/RoutesV2UpdateBillingAccountRequest';
+import { RoutesV2UpdateBillingAccountRoleRequest } from '../models/RoutesV2UpdateBillingAccountRoleRequest';
 import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest';
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
@@ -372,6 +380,1406 @@ export class ObservableAuthenticationApi {
      */
     public v1LoginTokenPost(auth0LoginRequest: Auth0LoginRequest, _options?: ConfigurationOptions): Observable<Auth0Auth0TokenResponse> {
         return this.v1LoginTokenPostWithHttpInfo(auth0LoginRequest, _options).pipe(map((apiResponse: HttpInfo<Auth0Auth0TokenResponse>) => apiResponse.data));
+    }
+
+}
+
+import { BillingAccountsApiRequestFactory, BillingAccountsApiResponseProcessor} from "../apis/BillingAccountsApi";
+export class ObservableBillingAccountsApi {
+    private requestFactory: BillingAccountsApiRequestFactory;
+    private responseProcessor: BillingAccountsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: BillingAccountsApiRequestFactory,
+        responseProcessor?: BillingAccountsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new BillingAccountsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new BillingAccountsApiResponseProcessor();
+    }
+
+    /**
+     * Delete Billing Account
+     * Delete Billing Account
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdDelete(billingAccountId, body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Delete Billing Account
+     * Delete Billing Account
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdDelete(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<void> {
+        return this.v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId, body, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    }
+
+    /**
+     * Get Billing Account
+     * Get Billing Account
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccount>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdGet(billingAccountId, body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get Billing Account
+     * Get Billing Account
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdGet(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<ModelsBillingAccount> {
+        return this.v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId, body, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccount>) => apiResponse.data));
+    }
+
+    /**
+     * Update Billing Account
+     * Update Billing Account
+     * @param billingAccountId Billing Account ID
+     * @param routesV2UpdateBillingAccountRequest Request body for updating a billing account
+     */
+    public v2BillingAccountsBillingAccountIdPatchWithHttpInfo(billingAccountId: string, routesV2UpdateBillingAccountRequest: RoutesV2UpdateBillingAccountRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccount>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdPatch(billingAccountId, routesV2UpdateBillingAccountRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdPatchWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Update Billing Account
+     * Update Billing Account
+     * @param billingAccountId Billing Account ID
+     * @param routesV2UpdateBillingAccountRequest Request body for updating a billing account
+     */
+    public v2BillingAccountsBillingAccountIdPatch(billingAccountId: string, routesV2UpdateBillingAccountRequest: RoutesV2UpdateBillingAccountRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccount> {
+        return this.v2BillingAccountsBillingAccountIdPatchWithHttpInfo(billingAccountId, routesV2UpdateBillingAccountRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccount>) => apiResponse.data));
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsBillingAccountRole>>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<Array<ModelsBillingAccountRole>> {
+        return this.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId, body, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsBillingAccountRole>>) => apiResponse.data));
+    }
+
+    /**
+     * Create Billing Account Role
+     * Create Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param routesV2CreateBillingAccountRoleRequest Create Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(billingAccountId: string, routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesPost(billingAccountId, routesV2CreateBillingAccountRoleRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Create Billing Account Role
+     * Create Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param routesV2CreateBillingAccountRoleRequest Create Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesPost(billingAccountId: string, routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
+        return this.v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(billingAccountId, routesV2CreateBillingAccountRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<string> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId, body, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId, body, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2UpdateBillingAccountRoleRequest Update Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(billingAccountId: string, roleId: string, routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdPatch(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2UpdateBillingAccountRoleRequest Update Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdPatch(billingAccountId: string, roleId: string, routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
+    }
+
+    /**
+     * Add a user to a billing account role
+     * Create Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2CreatebillingAccountUserRoleRequest Create Billing Account User Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(billingAccountId: string, roleId: string, routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Add a user to a billing account role
+     * Create Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2CreatebillingAccountUserRoleRequest Create Billing Account User Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(billingAccountId: string, roleId: string, routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest, _options?: ConfigurationOptions): Observable<string> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+    /**
+     * Remove a user to a billing account role
+     * Delete Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param userId User ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Remove a user to a billing account role
+     * Delete Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param userId User ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: ConfigurationOptions): Observable<string> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId, body, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+    /**
+     * List Billing Accounts
+     * List Billing Accounts
+     * @param billingAccountId Billing Account ID
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public v2BillingAccountsGetWithHttpInfo(billingAccountId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccount>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsGet(billingAccountId, limit, offset, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List Billing Accounts
+     * List Billing Accounts
+     * @param billingAccountId Billing Account ID
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public v2BillingAccountsGet(billingAccountId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsBillingAccount> {
+        return this.v2BillingAccountsGetWithHttpInfo(billingAccountId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccount>) => apiResponse.data));
+    }
+
+    /**
+     * Create Billing Account
+     * Create Billing Account
+     * @param routesV2CreateBillingAccountRequest Request body for creating a billing account
+     */
+    public v2BillingAccountsPostWithHttpInfo(routesV2CreateBillingAccountRequest: RoutesV2CreateBillingAccountRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccount>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsPost(routesV2CreateBillingAccountRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Create Billing Account
+     * Create Billing Account
+     * @param routesV2CreateBillingAccountRequest Request body for creating a billing account
+     */
+    public v2BillingAccountsPost(routesV2CreateBillingAccountRequest: RoutesV2CreateBillingAccountRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccount> {
+        return this.v2BillingAccountsPostWithHttpInfo(routesV2CreateBillingAccountRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccount>) => apiResponse.data));
+    }
+
+    /**
+     * Get Billing Permissions
+     * Get Billing Permissions
+     * @param [body]
+     */
+    public v2BillingPermissionsGetWithHttpInfo(body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsBillingAccountPermission>>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingPermissionsGet(body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingPermissionsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get Billing Permissions
+     * Get Billing Permissions
+     * @param [body]
+     */
+    public v2BillingPermissionsGet(body?: any, _options?: ConfigurationOptions): Observable<Array<ModelsBillingAccountPermission>> {
+        return this.v2BillingPermissionsGetWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsBillingAccountPermission>>) => apiResponse.data));
+    }
+
+}
+
+import { BillingAccountsRbacApiRequestFactory, BillingAccountsRbacApiResponseProcessor} from "../apis/BillingAccountsRbacApi";
+export class ObservableBillingAccountsRbacApi {
+    private requestFactory: BillingAccountsRbacApiRequestFactory;
+    private responseProcessor: BillingAccountsRbacApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: BillingAccountsRbacApiRequestFactory,
+        responseProcessor?: BillingAccountsRbacApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new BillingAccountsRbacApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new BillingAccountsRbacApiResponseProcessor();
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsBillingAccountRole>>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<Array<ModelsBillingAccountRole>> {
+        return this.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId, body, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsBillingAccountRole>>) => apiResponse.data));
+    }
+
+    /**
+     * Create Billing Account Role
+     * Create Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param routesV2CreateBillingAccountRoleRequest Create Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(billingAccountId: string, routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesPost(billingAccountId, routesV2CreateBillingAccountRoleRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Create Billing Account Role
+     * Create Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param routesV2CreateBillingAccountRoleRequest Create Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesPost(billingAccountId: string, routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
+        return this.v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(billingAccountId, routesV2CreateBillingAccountRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<string> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId, body, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId, body, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2UpdateBillingAccountRoleRequest Update Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(billingAccountId: string, roleId: string, routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdPatch(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2UpdateBillingAccountRoleRequest Update Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdPatch(billingAccountId: string, roleId: string, routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
+    }
+
+    /**
+     * Add a user to a billing account role
+     * Create Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2CreatebillingAccountUserRoleRequest Create Billing Account User Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(billingAccountId: string, roleId: string, routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Add a user to a billing account role
+     * Create Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2CreatebillingAccountUserRoleRequest Create Billing Account User Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(billingAccountId: string, roleId: string, routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest, _options?: ConfigurationOptions): Observable<string> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+    /**
+     * Remove a user to a billing account role
+     * Delete Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param userId User ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Remove a user to a billing account role
+     * Delete Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param userId User ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: ConfigurationOptions): Observable<string> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId, body, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+    /**
+     * Get Billing Permissions
+     * Get Billing Permissions
+     * @param [body]
+     */
+    public v2BillingPermissionsGetWithHttpInfo(body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsBillingAccountPermission>>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingPermissionsGet(body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingPermissionsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get Billing Permissions
+     * Get Billing Permissions
+     * @param [body]
+     */
+    public v2BillingPermissionsGet(body?: any, _options?: ConfigurationOptions): Observable<Array<ModelsBillingAccountPermission>> {
+        return this.v2BillingPermissionsGetWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsBillingAccountPermission>>) => apiResponse.data));
     }
 
 }

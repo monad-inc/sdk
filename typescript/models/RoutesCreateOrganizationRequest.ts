@@ -13,6 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class RoutesCreateOrganizationRequest {
+    'billingAccountId'?: string;
     'description'?: string;
     'name': string;
 
@@ -21,6 +22,12 @@ export class RoutesCreateOrganizationRequest {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "billingAccountId",
+            "baseName": "billing_account_id",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "description",
             "baseName": "description",

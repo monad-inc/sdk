@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-03-13T17:21:12.610838392Z[Etc/UTC]
+  - Build date: 2025-03-13T21:07:34.031027130Z[Etc/UTC]
   - Generator version: 7.12.0
 
 This is the monad API
@@ -119,6 +119,27 @@ Class | Method | HTTP request | Description
 *AuthenticationApi* | [**v1LoginGet**](docs/AuthenticationApi.md#v1LoginGet) | **GET** /v1/login | Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
 *AuthenticationApi* | [**v1LoginResendVerificationPost**](docs/AuthenticationApi.md#v1LoginResendVerificationPost) | **POST** /v1/login/resend-verification | Resend email verification
 *AuthenticationApi* | [**v1LoginTokenPost**](docs/AuthenticationApi.md#v1LoginTokenPost) | **POST** /v1/login/token | Get Authentication token
+*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdDelete**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdDelete) | **DELETE** /v2/billing/accounts/{billing_account_id} | Delete Billing Account
+*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdGet**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdGet) | **GET** /v2/billing/accounts/{billing_account_id} | Get Billing Account
+*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdPatch**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdPatch) | **PATCH** /v2/billing/accounts/{billing_account_id} | Update Billing Account
+*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesGet**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesGet) | **GET** /v2/billing/accounts/{billing_account_id}/roles | Get Billing Account Roles
+*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesPost**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesPost) | **POST** /v2/billing/accounts/{billing_account_id}/roles | Create Billing Account Role
+*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdDelete**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdDelete) | **DELETE** /v2/billing/accounts/{billing_account_id}/roles/{role_id} | Delete Billing Account Role
+*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdGet**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdGet) | **GET** /v2/billing/accounts/{billing_account_id}/roles/{role_id} | Get Billing Account Role
+*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdPatch**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdPatch) | **PATCH** /v2/billing/accounts/{billing_account_id}/roles/{role_id} | Update Billing Account Role
+*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost) | **POST** /v2/billing/accounts/{billing_account_id}/roles/{role_id}/users | Create Billing Account User Role
+*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete) | **DELETE** /v2/billing/accounts/{billing_account_id}/roles/{role_id}/users/{user_id} | Delete Billing Account User Role
+*BillingAccountsApi* | [**v2BillingAccountsGet**](docs/BillingAccountsApi.md#v2BillingAccountsGet) | **GET** /v2/billing/accounts | List Billing Accounts
+*BillingAccountsApi* | [**v2BillingAccountsPost**](docs/BillingAccountsApi.md#v2BillingAccountsPost) | **POST** /v2/billing/accounts | Create Billing Account
+*BillingAccountsApi* | [**v2BillingPermissionsGet**](docs/BillingAccountsApi.md#v2BillingPermissionsGet) | **GET** /v2/billing/permissions | Get Billing Permissions
+*BillingAccountsRbacApi* | [**v2BillingAccountsBillingAccountIdRolesGet**](docs/BillingAccountsRbacApi.md#v2BillingAccountsBillingAccountIdRolesGet) | **GET** /v2/billing/accounts/{billing_account_id}/roles | Get Billing Account Roles
+*BillingAccountsRbacApi* | [**v2BillingAccountsBillingAccountIdRolesPost**](docs/BillingAccountsRbacApi.md#v2BillingAccountsBillingAccountIdRolesPost) | **POST** /v2/billing/accounts/{billing_account_id}/roles | Create Billing Account Role
+*BillingAccountsRbacApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdDelete**](docs/BillingAccountsRbacApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdDelete) | **DELETE** /v2/billing/accounts/{billing_account_id}/roles/{role_id} | Delete Billing Account Role
+*BillingAccountsRbacApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdGet**](docs/BillingAccountsRbacApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdGet) | **GET** /v2/billing/accounts/{billing_account_id}/roles/{role_id} | Get Billing Account Role
+*BillingAccountsRbacApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdPatch**](docs/BillingAccountsRbacApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdPatch) | **PATCH** /v2/billing/accounts/{billing_account_id}/roles/{role_id} | Update Billing Account Role
+*BillingAccountsRbacApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost**](docs/BillingAccountsRbacApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost) | **POST** /v2/billing/accounts/{billing_account_id}/roles/{role_id}/users | Create Billing Account User Role
+*BillingAccountsRbacApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete**](docs/BillingAccountsRbacApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete) | **DELETE** /v2/billing/accounts/{billing_account_id}/roles/{role_id}/users/{user_id} | Delete Billing Account User Role
+*BillingAccountsRbacApi* | [**v2BillingPermissionsGet**](docs/BillingAccountsRbacApi.md#v2BillingPermissionsGet) | **GET** /v2/billing/permissions | Get Billing Permissions
 *ConditionsApi* | [**v2ConditionsGet**](docs/ConditionsApi.md#v2ConditionsGet) | **GET** /v2/conditions | List conditions
 *DataApi* | [**v1OrganizationIdDataNodeIdGet**](docs/DataApi.md#v1OrganizationIdDataNodeIdGet) | **GET** /v1/{organization_id}/data/{node_id} | Stream node data
 *InputsApi* | [**v1InputsGet**](docs/InputsApi.md#v1InputsGet) | **GET** /v1/inputs | List inputs
@@ -224,6 +245,9 @@ Class | Method | HTTP request | Description
  - [ModelsAPIKey](docs/ModelsAPIKey.md)
  - [ModelsAPIKeyList](docs/ModelsAPIKeyList.md)
  - [ModelsAPIKeyWithToken](docs/ModelsAPIKeyWithToken.md)
+ - [ModelsBillingAccount](docs/ModelsBillingAccount.md)
+ - [ModelsBillingAccountPermission](docs/ModelsBillingAccountPermission.md)
+ - [ModelsBillingAccountRole](docs/ModelsBillingAccountRole.md)
  - [ModelsComponentReference](docs/ModelsComponentReference.md)
  - [ModelsConnectorMeta](docs/ModelsConnectorMeta.md)
  - [ModelsDataUsage](docs/ModelsDataUsage.md)
@@ -290,11 +314,14 @@ Class | Method | HTTP request | Description
  - [RoutesV2ApplyTransformationRequest](docs/RoutesV2ApplyTransformationRequest.md)
  - [RoutesV2ApplyTransformationResponse](docs/RoutesV2ApplyTransformationResponse.md)
  - [RoutesV2CreateAPIKeyRequest](docs/RoutesV2CreateAPIKeyRequest.md)
+ - [RoutesV2CreateBillingAccountRequest](docs/RoutesV2CreateBillingAccountRequest.md)
+ - [RoutesV2CreateBillingAccountRoleRequest](docs/RoutesV2CreateBillingAccountRoleRequest.md)
  - [RoutesV2CreateInputRequest](docs/RoutesV2CreateInputRequest.md)
  - [RoutesV2CreateOrUpdateSecretRequest](docs/RoutesV2CreateOrUpdateSecretRequest.md)
  - [RoutesV2CreateOutputRequest](docs/RoutesV2CreateOutputRequest.md)
  - [RoutesV2CreatePipelineRequest](docs/RoutesV2CreatePipelineRequest.md)
  - [RoutesV2CreateRoleV2Request](docs/RoutesV2CreateRoleV2Request.md)
+ - [RoutesV2CreatebillingAccountUserRoleRequest](docs/RoutesV2CreatebillingAccountUserRoleRequest.md)
  - [RoutesV2GenerateRecordRequest](docs/RoutesV2GenerateRecordRequest.md)
  - [RoutesV2GenerateRecordResponse](docs/RoutesV2GenerateRecordResponse.md)
  - [RoutesV2GetOrganizationSummaryResponse](docs/RoutesV2GetOrganizationSummaryResponse.md)
@@ -307,6 +334,8 @@ Class | Method | HTTP request | Description
  - [RoutesV2SecretResponse](docs/RoutesV2SecretResponse.md)
  - [RoutesV2SuccessResponse](docs/RoutesV2SuccessResponse.md)
  - [RoutesV2UpdateAPIKeyRequest](docs/RoutesV2UpdateAPIKeyRequest.md)
+ - [RoutesV2UpdateBillingAccountRequest](docs/RoutesV2UpdateBillingAccountRequest.md)
+ - [RoutesV2UpdateBillingAccountRoleRequest](docs/RoutesV2UpdateBillingAccountRoleRequest.md)
  - [RoutesV2UpdateInputRequest](docs/RoutesV2UpdateInputRequest.md)
  - [RoutesV2UpdateOutputRequest](docs/RoutesV2UpdateOutputRequest.md)
  - [RoutesV2UpdatePipelineRequest](docs/RoutesV2UpdatePipelineRequest.md)

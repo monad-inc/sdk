@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**billing_account_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **name** | **str** |  | 
 

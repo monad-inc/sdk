@@ -2,6 +2,8 @@
 
 # import apis into api package
 from monad.api.authentication_api import AuthenticationApi
+from monad.api.billing_accounts_api import BillingAccountsApi
+from monad.api.billing_accounts_rbac_api import BillingAccountsRbacApi
 from monad.api.conditions_api import ConditionsApi
 from monad.api.data_api import DataApi
 from monad.api.inputs_api import InputsApi

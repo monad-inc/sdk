@@ -25,6 +25,9 @@ import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultip
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
+import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
+import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
+import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
@@ -91,11 +94,14 @@ import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
+import { RoutesV2CreateBillingAccountRequest } from '../models/RoutesV2CreateBillingAccountRequest';
+import { RoutesV2CreateBillingAccountRoleRequest } from '../models/RoutesV2CreateBillingAccountRoleRequest';
 import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
 import { RoutesV2CreatePipelineRequest } from '../models/RoutesV2CreatePipelineRequest';
 import { RoutesV2CreateRoleV2Request } from '../models/RoutesV2CreateRoleV2Request';
+import { RoutesV2CreatebillingAccountUserRoleRequest } from '../models/RoutesV2CreatebillingAccountUserRoleRequest';
 import { RoutesV2GenerateRecordRequest } from '../models/RoutesV2GenerateRecordRequest';
 import { RoutesV2GenerateRecordResponse } from '../models/RoutesV2GenerateRecordResponse';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
@@ -108,6 +114,8 @@ import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyRequest';
+import { RoutesV2UpdateBillingAccountRequest } from '../models/RoutesV2UpdateBillingAccountRequest';
+import { RoutesV2UpdateBillingAccountRoleRequest } from '../models/RoutesV2UpdateBillingAccountRoleRequest';
 import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest';
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
@@ -213,6 +221,815 @@ export class ObjectAuthenticationApi {
      */
     public v1LoginTokenPost(param: AuthenticationApiV1LoginTokenPostRequest, options?: ConfigurationOptions): Promise<Auth0Auth0TokenResponse> {
         return this.api.v1LoginTokenPost(param.auth0LoginRequest,  options).toPromise();
+    }
+
+}
+
+import { ObservableBillingAccountsApi } from "./ObservableAPI";
+import { BillingAccountsApiRequestFactory, BillingAccountsApiResponseProcessor} from "../apis/BillingAccountsApi";
+
+export interface BillingAccountsApiV2BillingAccountsBillingAccountIdDeleteRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdDelete
+     */
+    billingAccountId: string
+    /**
+     * 
+     * @type any
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdDelete
+     */
+    body?: any
+}
+
+export interface BillingAccountsApiV2BillingAccountsBillingAccountIdGetRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdGet
+     */
+    billingAccountId: string
+    /**
+     * 
+     * @type any
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdGet
+     */
+    body?: any
+}
+
+export interface BillingAccountsApiV2BillingAccountsBillingAccountIdPatchRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdPatch
+     */
+    billingAccountId: string
+    /**
+     * Request body for updating a billing account
+     * @type RoutesV2UpdateBillingAccountRequest
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdPatch
+     */
+    routesV2UpdateBillingAccountRequest: RoutesV2UpdateBillingAccountRequest
+}
+
+export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesGetRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesGet
+     */
+    billingAccountId: string
+    /**
+     * 
+     * @type any
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesGet
+     */
+    body?: any
+}
+
+export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesPostRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesPost
+     */
+    billingAccountId: string
+    /**
+     * Create Billing Account Role Request
+     * @type RoutesV2CreateBillingAccountRoleRequest
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesPost
+     */
+    routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest
+}
+
+export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdDelete
+     */
+    billingAccountId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdDelete
+     */
+    roleId: string
+    /**
+     * 
+     * @type any
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdDelete
+     */
+    body?: any
+}
+
+export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdGet
+     */
+    billingAccountId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdGet
+     */
+    roleId: string
+    /**
+     * 
+     * @type any
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdGet
+     */
+    body?: any
+}
+
+export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdPatchRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdPatch
+     */
+    billingAccountId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdPatch
+     */
+    roleId: string
+    /**
+     * Update Billing Account Role Request
+     * @type RoutesV2UpdateBillingAccountRoleRequest
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdPatch
+     */
+    routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest
+}
+
+export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersPostRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersPost
+     */
+    billingAccountId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersPost
+     */
+    roleId: string
+    /**
+     * Create Billing Account User Role Request
+     * @type RoutesV2CreatebillingAccountUserRoleRequest
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersPost
+     */
+    routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest
+}
+
+export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
+     */
+    billingAccountId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
+     */
+    roleId: string
+    /**
+     * User ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
+     */
+    userId: string
+    /**
+     * 
+     * @type any
+     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
+     */
+    body?: any
+}
+
+export interface BillingAccountsApiV2BillingAccountsGetRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsApiv2BillingAccountsGet
+     */
+    billingAccountId: string
+    /**
+     * Limit
+     * Defaults to: undefined
+     * @type number
+     * @memberof BillingAccountsApiv2BillingAccountsGet
+     */
+    limit?: number
+    /**
+     * Offset
+     * Defaults to: undefined
+     * @type number
+     * @memberof BillingAccountsApiv2BillingAccountsGet
+     */
+    offset?: number
+}
+
+export interface BillingAccountsApiV2BillingAccountsPostRequest {
+    /**
+     * Request body for creating a billing account
+     * @type RoutesV2CreateBillingAccountRequest
+     * @memberof BillingAccountsApiv2BillingAccountsPost
+     */
+    routesV2CreateBillingAccountRequest: RoutesV2CreateBillingAccountRequest
+}
+
+export interface BillingAccountsApiV2BillingPermissionsGetRequest {
+    /**
+     * 
+     * @type any
+     * @memberof BillingAccountsApiv2BillingPermissionsGet
+     */
+    body?: any
+}
+
+export class ObjectBillingAccountsApi {
+    private api: ObservableBillingAccountsApi
+
+    public constructor(configuration: Configuration, requestFactory?: BillingAccountsApiRequestFactory, responseProcessor?: BillingAccountsApiResponseProcessor) {
+        this.api = new ObservableBillingAccountsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Delete Billing Account
+     * Delete Billing Account
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(param.billingAccountId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Delete Billing Account
+     * Delete Billing Account
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdDelete(param: BillingAccountsApiV2BillingAccountsBillingAccountIdDeleteRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.v2BillingAccountsBillingAccountIdDelete(param.billingAccountId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account
+     * Get Billing Account
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdGetWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+        return this.api.v2BillingAccountsBillingAccountIdGetWithHttpInfo(param.billingAccountId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account
+     * Get Billing Account
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdGet(param: BillingAccountsApiV2BillingAccountsBillingAccountIdGetRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
+        return this.api.v2BillingAccountsBillingAccountIdGet(param.billingAccountId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Update Billing Account
+     * Update Billing Account
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdPatchWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+        return this.api.v2BillingAccountsBillingAccountIdPatchWithHttpInfo(param.billingAccountId, param.routesV2UpdateBillingAccountRequest,  options).toPromise();
+    }
+
+    /**
+     * Update Billing Account
+     * Update Billing Account
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdPatch(param: BillingAccountsApiV2BillingAccountsBillingAccountIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
+        return this.api.v2BillingAccountsBillingAccountIdPatch(param.billingAccountId, param.routesV2UpdateBillingAccountRequest,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountRole>>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(param.billingAccountId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesGet(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesGetRequest, options?: ConfigurationOptions): Promise<Array<ModelsBillingAccountRole>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesGet(param.billingAccountId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Create Billing Account Role
+     * Create Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(param.billingAccountId, param.routesV2CreateBillingAccountRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Create Billing Account Role
+     * Create Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesPost(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesPostRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesPost(param.billingAccountId, param.routesV2CreateBillingAccountRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGet(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(param.billingAccountId, param.roleId, param.routesV2UpdateBillingAccountRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdPatch(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdPatch(param.billingAccountId, param.roleId, param.routesV2UpdateBillingAccountRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Add a user to a billing account role
+     * Create Billing Account User Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(param.billingAccountId, param.roleId, param.routesV2CreatebillingAccountUserRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Add a user to a billing account role
+     * Create Billing Account User Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersPostRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(param.billingAccountId, param.roleId, param.routesV2CreatebillingAccountUserRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Remove a user to a billing account role
+     * Delete Billing Account User Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param.billingAccountId, param.roleId, param.userId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Remove a user to a billing account role
+     * Delete Billing Account User Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(param.billingAccountId, param.roleId, param.userId, param.body,  options).toPromise();
+    }
+
+    /**
+     * List Billing Accounts
+     * List Billing Accounts
+     * @param param the request object
+     */
+    public v2BillingAccountsGetWithHttpInfo(param: BillingAccountsApiV2BillingAccountsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+        return this.api.v2BillingAccountsGetWithHttpInfo(param.billingAccountId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List Billing Accounts
+     * List Billing Accounts
+     * @param param the request object
+     */
+    public v2BillingAccountsGet(param: BillingAccountsApiV2BillingAccountsGetRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
+        return this.api.v2BillingAccountsGet(param.billingAccountId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Create Billing Account
+     * Create Billing Account
+     * @param param the request object
+     */
+    public v2BillingAccountsPostWithHttpInfo(param: BillingAccountsApiV2BillingAccountsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+        return this.api.v2BillingAccountsPostWithHttpInfo(param.routesV2CreateBillingAccountRequest,  options).toPromise();
+    }
+
+    /**
+     * Create Billing Account
+     * Create Billing Account
+     * @param param the request object
+     */
+    public v2BillingAccountsPost(param: BillingAccountsApiV2BillingAccountsPostRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
+        return this.api.v2BillingAccountsPost(param.routesV2CreateBillingAccountRequest,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Permissions
+     * Get Billing Permissions
+     * @param param the request object
+     */
+    public v2BillingPermissionsGetWithHttpInfo(param: BillingAccountsApiV2BillingPermissionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountPermission>>> {
+        return this.api.v2BillingPermissionsGetWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Permissions
+     * Get Billing Permissions
+     * @param param the request object
+     */
+    public v2BillingPermissionsGet(param: BillingAccountsApiV2BillingPermissionsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<ModelsBillingAccountPermission>> {
+        return this.api.v2BillingPermissionsGet(param.body,  options).toPromise();
+    }
+
+}
+
+import { ObservableBillingAccountsRbacApi } from "./ObservableAPI";
+import { BillingAccountsRbacApiRequestFactory, BillingAccountsRbacApiResponseProcessor} from "../apis/BillingAccountsRbacApi";
+
+export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesGetRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesGet
+     */
+    billingAccountId: string
+    /**
+     * 
+     * @type any
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesGet
+     */
+    body?: any
+}
+
+export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesPostRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesPost
+     */
+    billingAccountId: string
+    /**
+     * Create Billing Account Role Request
+     * @type RoutesV2CreateBillingAccountRoleRequest
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesPost
+     */
+    routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest
+}
+
+export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdDelete
+     */
+    billingAccountId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdDelete
+     */
+    roleId: string
+    /**
+     * 
+     * @type any
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdDelete
+     */
+    body?: any
+}
+
+export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdGet
+     */
+    billingAccountId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdGet
+     */
+    roleId: string
+    /**
+     * 
+     * @type any
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdGet
+     */
+    body?: any
+}
+
+export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdPatchRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdPatch
+     */
+    billingAccountId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdPatch
+     */
+    roleId: string
+    /**
+     * Update Billing Account Role Request
+     * @type RoutesV2UpdateBillingAccountRoleRequest
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdPatch
+     */
+    routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest
+}
+
+export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersPostRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersPost
+     */
+    billingAccountId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersPost
+     */
+    roleId: string
+    /**
+     * Create Billing Account User Role Request
+     * @type RoutesV2CreatebillingAccountUserRoleRequest
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersPost
+     */
+    routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest
+}
+
+export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
+     */
+    billingAccountId: string
+    /**
+     * Role ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
+     */
+    roleId: string
+    /**
+     * User ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
+     */
+    userId: string
+    /**
+     * 
+     * @type any
+     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
+     */
+    body?: any
+}
+
+export interface BillingAccountsRbacApiV2BillingPermissionsGetRequest {
+    /**
+     * 
+     * @type any
+     * @memberof BillingAccountsRbacApiv2BillingPermissionsGet
+     */
+    body?: any
+}
+
+export class ObjectBillingAccountsRbacApi {
+    private api: ObservableBillingAccountsRbacApi
+
+    public constructor(configuration: Configuration, requestFactory?: BillingAccountsRbacApiRequestFactory, responseProcessor?: BillingAccountsRbacApiResponseProcessor) {
+        this.api = new ObservableBillingAccountsRbacApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountRole>>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(param.billingAccountId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesGet(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesGetRequest, options?: ConfigurationOptions): Promise<Array<ModelsBillingAccountRole>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesGet(param.billingAccountId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Create Billing Account Role
+     * Create Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(param.billingAccountId, param.routesV2CreateBillingAccountRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Create Billing Account Role
+     * Create Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesPost(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesPostRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesPost(param.billingAccountId, param.routesV2CreateBillingAccountRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGet(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(param.billingAccountId, param.roleId, param.routesV2UpdateBillingAccountRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdPatch(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdPatch(param.billingAccountId, param.roleId, param.routesV2UpdateBillingAccountRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Add a user to a billing account role
+     * Create Billing Account User Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(param.billingAccountId, param.roleId, param.routesV2CreatebillingAccountUserRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Add a user to a billing account role
+     * Create Billing Account User Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersPostRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(param.billingAccountId, param.roleId, param.routesV2CreatebillingAccountUserRoleRequest,  options).toPromise();
+    }
+
+    /**
+     * Remove a user to a billing account role
+     * Delete Billing Account User Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param.billingAccountId, param.roleId, param.userId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Remove a user to a billing account role
+     * Delete Billing Account User Role
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(param.billingAccountId, param.roleId, param.userId, param.body,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Permissions
+     * Get Billing Permissions
+     * @param param the request object
+     */
+    public v2BillingPermissionsGetWithHttpInfo(param: BillingAccountsRbacApiV2BillingPermissionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountPermission>>> {
+        return this.api.v2BillingPermissionsGetWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Permissions
+     * Get Billing Permissions
+     * @param param the request object
+     */
+    public v2BillingPermissionsGet(param: BillingAccountsRbacApiV2BillingPermissionsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<ModelsBillingAccountPermission>> {
+        return this.api.v2BillingPermissionsGet(param.body,  options).toPromise();
     }
 
 }

@@ -21,6 +21,9 @@ export * from '../models/MathMultiplyWithValueMathMultiplyWithValue';
 export * from '../models/ModelsAPIKey';
 export * from '../models/ModelsAPIKeyList';
 export * from '../models/ModelsAPIKeyWithToken';
+export * from '../models/ModelsBillingAccount';
+export * from '../models/ModelsBillingAccountPermission';
+export * from '../models/ModelsBillingAccountRole';
 export * from '../models/ModelsComponentReference';
 export * from '../models/ModelsConnectorMeta';
 export * from '../models/ModelsDataUsage';
@@ -87,11 +90,14 @@ export * from '../models/RoutesUserWithRoles';
 export * from '../models/RoutesV2ApplyTransformationRequest';
 export * from '../models/RoutesV2ApplyTransformationResponse';
 export * from '../models/RoutesV2CreateAPIKeyRequest';
+export * from '../models/RoutesV2CreateBillingAccountRequest';
+export * from '../models/RoutesV2CreateBillingAccountRoleRequest';
 export * from '../models/RoutesV2CreateInputRequest';
 export * from '../models/RoutesV2CreateOrUpdateSecretRequest';
 export * from '../models/RoutesV2CreateOutputRequest';
 export * from '../models/RoutesV2CreatePipelineRequest';
 export * from '../models/RoutesV2CreateRoleV2Request';
+export * from '../models/RoutesV2CreatebillingAccountUserRoleRequest';
 export * from '../models/RoutesV2GenerateRecordRequest';
 export * from '../models/RoutesV2GenerateRecordResponse';
 export * from '../models/RoutesV2GetOrganizationSummaryResponse';
@@ -104,6 +110,8 @@ export * from '../models/RoutesV2PipelineWithStatus';
 export * from '../models/RoutesV2SecretResponse';
 export * from '../models/RoutesV2SuccessResponse';
 export * from '../models/RoutesV2UpdateAPIKeyRequest';
+export * from '../models/RoutesV2UpdateBillingAccountRequest';
+export * from '../models/RoutesV2UpdateBillingAccountRoleRequest';
 export * from '../models/RoutesV2UpdateInputRequest';
 export * from '../models/RoutesV2UpdateOutputRequest';
 export * from '../models/RoutesV2UpdatePipelineRequest';
@@ -134,6 +142,9 @@ import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultip
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
+import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
+import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
+import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
@@ -200,11 +211,14 @@ import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
+import { RoutesV2CreateBillingAccountRequest } from '../models/RoutesV2CreateBillingAccountRequest';
+import { RoutesV2CreateBillingAccountRoleRequest } from '../models/RoutesV2CreateBillingAccountRoleRequest';
 import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
 import { RoutesV2CreatePipelineRequest } from '../models/RoutesV2CreatePipelineRequest';
 import { RoutesV2CreateRoleV2Request } from '../models/RoutesV2CreateRoleV2Request';
+import { RoutesV2CreatebillingAccountUserRoleRequest } from '../models/RoutesV2CreatebillingAccountUserRoleRequest';
 import { RoutesV2GenerateRecordRequest } from '../models/RoutesV2GenerateRecordRequest';
 import { RoutesV2GenerateRecordResponse } from '../models/RoutesV2GenerateRecordResponse';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
@@ -217,6 +231,8 @@ import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyRequest';
+import { RoutesV2UpdateBillingAccountRequest } from '../models/RoutesV2UpdateBillingAccountRequest';
+import { RoutesV2UpdateBillingAccountRoleRequest } from '../models/RoutesV2UpdateBillingAccountRoleRequest';
 import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest';
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
@@ -263,6 +279,9 @@ let typeMap: {[index: string]: any} = {
     "ModelsAPIKey": ModelsAPIKey,
     "ModelsAPIKeyList": ModelsAPIKeyList,
     "ModelsAPIKeyWithToken": ModelsAPIKeyWithToken,
+    "ModelsBillingAccount": ModelsBillingAccount,
+    "ModelsBillingAccountPermission": ModelsBillingAccountPermission,
+    "ModelsBillingAccountRole": ModelsBillingAccountRole,
     "ModelsComponentReference": ModelsComponentReference,
     "ModelsConnectorMeta": ModelsConnectorMeta,
     "ModelsDataUsage": ModelsDataUsage,
@@ -329,11 +348,14 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2ApplyTransformationRequest": RoutesV2ApplyTransformationRequest,
     "RoutesV2ApplyTransformationResponse": RoutesV2ApplyTransformationResponse,
     "RoutesV2CreateAPIKeyRequest": RoutesV2CreateAPIKeyRequest,
+    "RoutesV2CreateBillingAccountRequest": RoutesV2CreateBillingAccountRequest,
+    "RoutesV2CreateBillingAccountRoleRequest": RoutesV2CreateBillingAccountRoleRequest,
     "RoutesV2CreateInputRequest": RoutesV2CreateInputRequest,
     "RoutesV2CreateOrUpdateSecretRequest": RoutesV2CreateOrUpdateSecretRequest,
     "RoutesV2CreateOutputRequest": RoutesV2CreateOutputRequest,
     "RoutesV2CreatePipelineRequest": RoutesV2CreatePipelineRequest,
     "RoutesV2CreateRoleV2Request": RoutesV2CreateRoleV2Request,
+    "RoutesV2CreatebillingAccountUserRoleRequest": RoutesV2CreatebillingAccountUserRoleRequest,
     "RoutesV2GenerateRecordRequest": RoutesV2GenerateRecordRequest,
     "RoutesV2GenerateRecordResponse": RoutesV2GenerateRecordResponse,
     "RoutesV2GetOrganizationSummaryResponse": RoutesV2GetOrganizationSummaryResponse,
@@ -346,6 +368,8 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2SecretResponse": RoutesV2SecretResponse,
     "RoutesV2SuccessResponse": RoutesV2SuccessResponse,
     "RoutesV2UpdateAPIKeyRequest": RoutesV2UpdateAPIKeyRequest,
+    "RoutesV2UpdateBillingAccountRequest": RoutesV2UpdateBillingAccountRequest,
+    "RoutesV2UpdateBillingAccountRoleRequest": RoutesV2UpdateBillingAccountRoleRequest,
     "RoutesV2UpdateInputRequest": RoutesV2UpdateInputRequest,
     "RoutesV2UpdateOutputRequest": RoutesV2UpdateOutputRequest,
     "RoutesV2UpdatePipelineRequest": RoutesV2UpdatePipelineRequest,

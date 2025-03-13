@@ -25,6 +25,9 @@ import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultip
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
+import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
+import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
+import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
@@ -91,11 +94,14 @@ import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
+import { RoutesV2CreateBillingAccountRequest } from '../models/RoutesV2CreateBillingAccountRequest';
+import { RoutesV2CreateBillingAccountRoleRequest } from '../models/RoutesV2CreateBillingAccountRoleRequest';
 import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
 import { RoutesV2CreatePipelineRequest } from '../models/RoutesV2CreatePipelineRequest';
 import { RoutesV2CreateRoleV2Request } from '../models/RoutesV2CreateRoleV2Request';
+import { RoutesV2CreatebillingAccountUserRoleRequest } from '../models/RoutesV2CreatebillingAccountUserRoleRequest';
 import { RoutesV2GenerateRecordRequest } from '../models/RoutesV2GenerateRecordRequest';
 import { RoutesV2GenerateRecordResponse } from '../models/RoutesV2GenerateRecordResponse';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
@@ -108,6 +114,8 @@ import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyRequest';
+import { RoutesV2UpdateBillingAccountRequest } from '../models/RoutesV2UpdateBillingAccountRequest';
+import { RoutesV2UpdateBillingAccountRoleRequest } from '../models/RoutesV2UpdateBillingAccountRoleRequest';
 import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest';
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
@@ -295,6 +303,1030 @@ export class PromiseAuthenticationApi {
 	    }
 	}
         const result = this.api.v1LoginTokenPost(auth0LoginRequest, observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableBillingAccountsApi } from './ObservableAPI';
+
+import { BillingAccountsApiRequestFactory, BillingAccountsApiResponseProcessor} from "../apis/BillingAccountsApi";
+export class PromiseBillingAccountsApi {
+    private api: ObservableBillingAccountsApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: BillingAccountsApiRequestFactory,
+        responseProcessor?: BillingAccountsApiResponseProcessor
+    ) {
+        this.api = new ObservableBillingAccountsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Delete Billing Account
+     * Delete Billing Account
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Delete Billing Account
+     * Delete Billing Account
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdDelete(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<void> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdDelete(billingAccountId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Account
+     * Get Billing Account
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Account
+     * Get Billing Account
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdGet(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccount> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdGet(billingAccountId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update Billing Account
+     * Update Billing Account
+     * @param billingAccountId Billing Account ID
+     * @param routesV2UpdateBillingAccountRequest Request body for updating a billing account
+     */
+    public v2BillingAccountsBillingAccountIdPatchWithHttpInfo(billingAccountId: string, routesV2UpdateBillingAccountRequest: RoutesV2UpdateBillingAccountRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdPatchWithHttpInfo(billingAccountId, routesV2UpdateBillingAccountRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update Billing Account
+     * Update Billing Account
+     * @param billingAccountId Billing Account ID
+     * @param routesV2UpdateBillingAccountRequest Request body for updating a billing account
+     */
+    public v2BillingAccountsBillingAccountIdPatch(billingAccountId: string, routesV2UpdateBillingAccountRequest: RoutesV2UpdateBillingAccountRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccount> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdPatch(billingAccountId, routesV2UpdateBillingAccountRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountRole>>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<Array<ModelsBillingAccountRole>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create Billing Account Role
+     * Create Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param routesV2CreateBillingAccountRoleRequest Create Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(billingAccountId: string, routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(billingAccountId, routesV2CreateBillingAccountRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create Billing Account Role
+     * Create Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param routesV2CreateBillingAccountRoleRequest Create Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesPost(billingAccountId: string, routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesPost(billingAccountId, routesV2CreateBillingAccountRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2UpdateBillingAccountRoleRequest Update Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(billingAccountId: string, roleId: string, routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2UpdateBillingAccountRoleRequest Update Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdPatch(billingAccountId: string, roleId: string, routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdPatch(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Add a user to a billing account role
+     * Create Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2CreatebillingAccountUserRoleRequest Create Billing Account User Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(billingAccountId: string, roleId: string, routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Add a user to a billing account role
+     * Create Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2CreatebillingAccountUserRoleRequest Create Billing Account User Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(billingAccountId: string, roleId: string, routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Remove a user to a billing account role
+     * Delete Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param userId User ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Remove a user to a billing account role
+     * Delete Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param userId User ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List Billing Accounts
+     * List Billing Accounts
+     * @param billingAccountId Billing Account ID
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public v2BillingAccountsGetWithHttpInfo(billingAccountId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsGetWithHttpInfo(billingAccountId, limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List Billing Accounts
+     * List Billing Accounts
+     * @param billingAccountId Billing Account ID
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public v2BillingAccountsGet(billingAccountId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccount> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsGet(billingAccountId, limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create Billing Account
+     * Create Billing Account
+     * @param routesV2CreateBillingAccountRequest Request body for creating a billing account
+     */
+    public v2BillingAccountsPostWithHttpInfo(routesV2CreateBillingAccountRequest: RoutesV2CreateBillingAccountRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsPostWithHttpInfo(routesV2CreateBillingAccountRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create Billing Account
+     * Create Billing Account
+     * @param routesV2CreateBillingAccountRequest Request body for creating a billing account
+     */
+    public v2BillingAccountsPost(routesV2CreateBillingAccountRequest: RoutesV2CreateBillingAccountRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccount> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsPost(routesV2CreateBillingAccountRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Permissions
+     * Get Billing Permissions
+     * @param [body]
+     */
+    public v2BillingPermissionsGetWithHttpInfo(body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountPermission>>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingPermissionsGetWithHttpInfo(body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Permissions
+     * Get Billing Permissions
+     * @param [body]
+     */
+    public v2BillingPermissionsGet(body?: any, _options?: PromiseConfigurationOptions): Promise<Array<ModelsBillingAccountPermission>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingPermissionsGet(body, observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableBillingAccountsRbacApi } from './ObservableAPI';
+
+import { BillingAccountsRbacApiRequestFactory, BillingAccountsRbacApiResponseProcessor} from "../apis/BillingAccountsRbacApi";
+export class PromiseBillingAccountsRbacApi {
+    private api: ObservableBillingAccountsRbacApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: BillingAccountsRbacApiRequestFactory,
+        responseProcessor?: BillingAccountsRbacApiResponseProcessor
+    ) {
+        this.api = new ObservableBillingAccountsRbacApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountRole>>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Account Roles
+     * Get Billing Account Roles
+     * @param billingAccountId Billing Account ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<Array<ModelsBillingAccountRole>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create Billing Account Role
+     * Create Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param routesV2CreateBillingAccountRoleRequest Create Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(billingAccountId: string, routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(billingAccountId, routesV2CreateBillingAccountRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create Billing Account Role
+     * Create Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param routesV2CreateBillingAccountRoleRequest Create Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesPost(billingAccountId: string, routesV2CreateBillingAccountRoleRequest: RoutesV2CreateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesPost(billingAccountId, routesV2CreateBillingAccountRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Delete Billing Account Role
+     * Delete Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Account Role
+     * Get Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2UpdateBillingAccountRoleRequest Update Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(billingAccountId: string, roleId: string, routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update Billing Account Role
+     * Update Billing Account Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2UpdateBillingAccountRoleRequest Update Billing Account Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdPatch(billingAccountId: string, roleId: string, routesV2UpdateBillingAccountRoleRequest: RoutesV2UpdateBillingAccountRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdPatch(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Add a user to a billing account role
+     * Create Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2CreatebillingAccountUserRoleRequest Create Billing Account User Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(billingAccountId: string, roleId: string, routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Add a user to a billing account role
+     * Create Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param routesV2CreatebillingAccountUserRoleRequest Create Billing Account User Role Request
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(billingAccountId: string, roleId: string, routesV2CreatebillingAccountUserRoleRequest: RoutesV2CreatebillingAccountUserRoleRequest, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Remove a user to a billing account role
+     * Delete Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param userId User ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Remove a user to a billing account role
+     * Delete Billing Account User Role
+     * @param billingAccountId Billing Account ID
+     * @param roleId Role ID
+     * @param userId User ID
+     * @param [body]
+     */
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<string> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Permissions
+     * Get Billing Permissions
+     * @param [body]
+     */
+    public v2BillingPermissionsGetWithHttpInfo(body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountPermission>>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingPermissionsGetWithHttpInfo(body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Permissions
+     * Get Billing Permissions
+     * @param [body]
+     */
+    public v2BillingPermissionsGet(body?: any, _options?: PromiseConfigurationOptions): Promise<Array<ModelsBillingAccountPermission>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingPermissionsGet(body, observableOptions);
         return result.toPromise();
     }
 

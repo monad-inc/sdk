@@ -48,8 +48,13 @@ import org.openapitools.client.JSON;
 /**
  * RoutesCreateOrganizationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-13T17:21:12.610838392Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-13T21:07:34.031027130Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class RoutesCreateOrganizationRequest {
+  public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billing_account_id";
+  @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
+  @javax.annotation.Nullable
+  private String billingAccountId;
+
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
@@ -62,6 +67,25 @@ public class RoutesCreateOrganizationRequest {
 
   public RoutesCreateOrganizationRequest() {
   }
+
+  public RoutesCreateOrganizationRequest billingAccountId(@javax.annotation.Nullable String billingAccountId) {
+    this.billingAccountId = billingAccountId;
+    return this;
+  }
+
+  /**
+   * Get billingAccountId
+   * @return billingAccountId
+   */
+  @javax.annotation.Nullable
+  public String getBillingAccountId() {
+    return billingAccountId;
+  }
+
+  public void setBillingAccountId(@javax.annotation.Nullable String billingAccountId) {
+    this.billingAccountId = billingAccountId;
+  }
+
 
   public RoutesCreateOrganizationRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
@@ -111,19 +135,21 @@ public class RoutesCreateOrganizationRequest {
       return false;
     }
     RoutesCreateOrganizationRequest routesCreateOrganizationRequest = (RoutesCreateOrganizationRequest) o;
-    return Objects.equals(this.description, routesCreateOrganizationRequest.description) &&
+    return Objects.equals(this.billingAccountId, routesCreateOrganizationRequest.billingAccountId) &&
+        Objects.equals(this.description, routesCreateOrganizationRequest.description) &&
         Objects.equals(this.name, routesCreateOrganizationRequest.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, name);
+    return Objects.hash(billingAccountId, description, name);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesCreateOrganizationRequest {\n");
+    sb.append("    billingAccountId: ").append(toIndentedString(billingAccountId)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
@@ -148,6 +174,7 @@ public class RoutesCreateOrganizationRequest {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("billing_account_id");
     openapiFields.add("description");
     openapiFields.add("name");
 
@@ -184,6 +211,9 @@ public class RoutesCreateOrganizationRequest {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("billing_account_id") != null && !jsonObj.get("billing_account_id").isJsonNull()) && !jsonObj.get("billing_account_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `billing_account_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("billing_account_id").toString()));
+      }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
