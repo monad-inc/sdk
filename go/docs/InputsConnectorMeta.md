@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **House** | Pointer to **string** |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**Tier** | Pointer to **int32** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -242,6 +243,31 @@ SetName sets Name field to given value.
 `func (o *InputsConnectorMeta) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetTier
+
+`func (o *InputsConnectorMeta) GetTier() int32`
+
+GetTier returns the Tier field if non-nil, zero value otherwise.
+
+### GetTierOk
+
+`func (o *InputsConnectorMeta) GetTierOk() (*int32, bool)`
+
+GetTierOk returns a tuple with the Tier field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTier
+
+`func (o *InputsConnectorMeta) SetTier(v int32)`
+
+SetTier sets Tier field to given value.
+
+### HasTier
+
+`func (o *InputsConnectorMeta) HasTier() bool`
+
+HasTier returns a boolean if a field has been set.
 
 ### GetTypeId
 

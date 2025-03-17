@@ -15,6 +15,7 @@
 |**house** | **String** |  |  [optional] |
 |**internal** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
+|**tier** | **Integer** |  |  [optional] |
 |**typeId** | **String** |  |  [optional] |
 
 

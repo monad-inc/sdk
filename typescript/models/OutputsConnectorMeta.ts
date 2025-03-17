@@ -21,6 +21,7 @@ export class OutputsConnectorMeta {
     'house'?: string;
     'internal'?: boolean;
     'name'?: string;
+    'tier'?: number;
     'typeId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -74,6 +75,12 @@ export class OutputsConnectorMeta {
             "name": "name",
             "baseName": "name",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "tier",
+            "baseName": "tier",
+            "type": "number",
             "format": ""
         },
         {

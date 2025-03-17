@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **house** | **str** |  | [optional] 
 **internal** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
+**tier** | **int** |  | [optional] 
 **type_id** | **str** |  | [optional] 
 
 ## Example

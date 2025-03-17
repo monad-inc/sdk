@@ -28,6 +28,7 @@ type InputsConnectorMeta struct {
 	House *string `json:"house,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
 	Name *string `json:"name,omitempty"`
+	Tier *int32 `json:"tier,omitempty"`
 	TypeId *string `json:"type_id,omitempty"`
 }
 
@@ -305,6 +306,38 @@ func (o *InputsConnectorMeta) SetName(v string) {
 	o.Name = &v
 }
 
+// GetTier returns the Tier field value if set, zero value otherwise.
+func (o *InputsConnectorMeta) GetTier() int32 {
+	if o == nil || IsNil(o.Tier) {
+		var ret int32
+		return ret
+	}
+	return *o.Tier
+}
+
+// GetTierOk returns a tuple with the Tier field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InputsConnectorMeta) GetTierOk() (*int32, bool) {
+	if o == nil || IsNil(o.Tier) {
+		return nil, false
+	}
+	return o.Tier, true
+}
+
+// HasTier returns a boolean if a field has been set.
+func (o *InputsConnectorMeta) HasTier() bool {
+	if o != nil && !IsNil(o.Tier) {
+		return true
+	}
+
+	return false
+}
+
+// SetTier gets a reference to the given int32 and assigns it to the Tier field.
+func (o *InputsConnectorMeta) SetTier(v int32) {
+	o.Tier = &v
+}
+
 // GetTypeId returns the TypeId field value if set, zero value otherwise.
 func (o *InputsConnectorMeta) GetTypeId() string {
 	if o == nil || IsNil(o.TypeId) {
@@ -370,6 +403,9 @@ func (o InputsConnectorMeta) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Tier) {
+		toSerialize["tier"] = o.Tier
 	}
 	if !IsNil(o.TypeId) {
 		toSerialize["type_id"] = o.TypeId

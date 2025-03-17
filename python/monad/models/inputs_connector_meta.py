@@ -35,8 +35,9 @@ class InputsConnectorMeta(BaseModel):
     house: Optional[StrictStr] = None
     internal: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
+    tier: Optional[StrictInt] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "category", "config", "description", "house", "internal", "name", "type_id"]
+    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "category", "config", "description", "house", "internal", "name", "tier", "type_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -102,6 +103,7 @@ class InputsConnectorMeta(BaseModel):
             "house": obj.get("house"),
             "internal": obj.get("internal"),
             "name": obj.get("name"),
+            "tier": obj.get("tier"),
             "type_id": obj.get("type_id")
         })
         return _obj

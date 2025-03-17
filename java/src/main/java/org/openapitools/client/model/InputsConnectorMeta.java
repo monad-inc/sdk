@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * InputsConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-13T21:19:15.448757104Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-17T13:16:24.006925971Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class InputsConnectorMeta {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
@@ -90,6 +90,11 @@ public class InputsConnectorMeta {
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
+
+  public static final String SERIALIZED_NAME_TIER = "tier";
+  @SerializedName(SERIALIZED_NAME_TIER)
+  @javax.annotation.Nullable
+  private Integer tier;
 
   public static final String SERIALIZED_NAME_TYPE_ID = "type_id";
   @SerializedName(SERIALIZED_NAME_TYPE_ID)
@@ -251,6 +256,25 @@ public class InputsConnectorMeta {
   }
 
 
+  public InputsConnectorMeta tier(@javax.annotation.Nullable Integer tier) {
+    this.tier = tier;
+    return this;
+  }
+
+  /**
+   * Get tier
+   * @return tier
+   */
+  @javax.annotation.Nullable
+  public Integer getTier() {
+    return tier;
+  }
+
+  public void setTier(@javax.annotation.Nullable Integer tier) {
+    this.tier = tier;
+  }
+
+
   public InputsConnectorMeta typeId(@javax.annotation.Nullable String typeId) {
     this.typeId = typeId;
     return this;
@@ -288,6 +312,7 @@ public class InputsConnectorMeta {
         Objects.equals(this.house, inputsConnectorMeta.house) &&
         Objects.equals(this.internal, inputsConnectorMeta.internal) &&
         Objects.equals(this.name, inputsConnectorMeta.name) &&
+        Objects.equals(this.tier, inputsConnectorMeta.tier) &&
         Objects.equals(this.typeId, inputsConnectorMeta.typeId);
   }
 
@@ -297,7 +322,7 @@ public class InputsConnectorMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, billingType, category, config, description, house, internal, name, typeId);
+    return Objects.hash(authType, billingType, category, config, description, house, internal, name, tier, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -319,6 +344,7 @@ public class InputsConnectorMeta {
     sb.append("    house: ").append(toIndentedString(house)).append("\n");
     sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
     sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -350,6 +376,7 @@ public class InputsConnectorMeta {
     openapiFields.add("house");
     openapiFields.add("internal");
     openapiFields.add("name");
+    openapiFields.add("tier");
     openapiFields.add("type_id");
 
     // a set of required properties/fields (JSON key names)
