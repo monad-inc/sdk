@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsRoleWithPermissions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-18T15:35:23.692230174Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-18T15:49:56.552881886Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsRoleWithPermissions {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
