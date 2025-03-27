@@ -20,6 +20,7 @@ import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereVa
 import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
 import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 import { FlattenFlatten } from '../models/FlattenFlatten';
+import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { JqJQ } from '../models/JqJQ';
 import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultiplyWithValueMathMultiplyWithValue';
@@ -27,8 +28,11 @@ import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
+import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
 import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
+import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
+import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
@@ -56,6 +60,7 @@ import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeMetrics } from '../models/ModelsPipelineNodeMetrics';
 import { ModelsPipelineNodeMetricsValue } from '../models/ModelsPipelineNodeMetricsValue';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
+import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
@@ -76,6 +81,7 @@ import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
+import { ResourceQuantity } from '../models/ResourceQuantity';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
@@ -97,6 +103,8 @@ import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTran
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
 import { RoutesV2CreateBillingAccountRequest } from '../models/RoutesV2CreateBillingAccountRequest';
 import { RoutesV2CreateBillingAccountRoleRequest } from '../models/RoutesV2CreateBillingAccountRoleRequest';
+import { RoutesV2CreateBillingAccountSubscriptionRequest } from '../models/RoutesV2CreateBillingAccountSubscriptionRequest';
+import { RoutesV2CreateBillingAccountSubscriptionResponse } from '../models/RoutesV2CreateBillingAccountSubscriptionResponse';
 import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
@@ -468,9 +476,8 @@ export class ObservableBillingAccountsApi {
      * Get Billing Account
      * Get Billing Account
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccount>> {
+    public v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccount>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -501,7 +508,7 @@ export class ObservableBillingAccountsApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdGet(billingAccountId, body, _config);
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdGet(billingAccountId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -522,10 +529,9 @@ export class ObservableBillingAccountsApi {
      * Get Billing Account
      * Get Billing Account
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdGet(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<ModelsBillingAccount> {
-        return this.v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId, body, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccount>) => apiResponse.data));
+    public v2BillingAccountsBillingAccountIdGet(billingAccountId: string, _options?: ConfigurationOptions): Observable<ModelsBillingAccount> {
+        return this.v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccount>) => apiResponse.data));
     }
 
     /**
@@ -596,9 +602,8 @@ export class ObservableBillingAccountsApi {
      * Get Billing Account Roles
      * Get Billing Account Roles
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsBillingAccountRole>>> {
+    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId: string, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsBillingAccountRole>>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -629,7 +634,7 @@ export class ObservableBillingAccountsApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, body, _config);
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -650,10 +655,9 @@ export class ObservableBillingAccountsApi {
      * Get Billing Account Roles
      * Get Billing Account Roles
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<Array<ModelsBillingAccountRole>> {
-        return this.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId, body, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsBillingAccountRole>>) => apiResponse.data));
+    public v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, _options?: ConfigurationOptions): Observable<Array<ModelsBillingAccountRole>> {
+        return this.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsBillingAccountRole>>) => apiResponse.data));
     }
 
     /**
@@ -725,9 +729,8 @@ export class ObservableBillingAccountsApi {
      * Delete Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -758,7 +761,7 @@ export class ObservableBillingAccountsApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, body, _config);
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -780,10 +783,9 @@ export class ObservableBillingAccountsApi {
      * Delete Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<string> {
-        return this.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId, body, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, _options?: ConfigurationOptions): Observable<string> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
     }
 
     /**
@@ -791,9 +793,8 @@ export class ObservableBillingAccountsApi {
      * Get Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId: string, roleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -824,7 +825,7 @@ export class ObservableBillingAccountsApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, body, _config);
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -846,10 +847,9 @@ export class ObservableBillingAccountsApi {
      * Get Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
-        return this.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId, body, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
     }
 
     /**
@@ -990,9 +990,8 @@ export class ObservableBillingAccountsApi {
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
      * @param userId User ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, userId: string, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -1023,7 +1022,7 @@ export class ObservableBillingAccountsApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, body, _config);
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -1046,20 +1045,18 @@ export class ObservableBillingAccountsApi {
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
      * @param userId User ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: ConfigurationOptions): Observable<string> {
-        return this.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId, body, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, _options?: ConfigurationOptions): Observable<string> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
     }
 
     /**
      * List Billing Accounts
      * List Billing Accounts
-     * @param billingAccountId Billing Account ID
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v2BillingAccountsGetWithHttpInfo(billingAccountId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccount>> {
+    public v2BillingAccountsGetWithHttpInfo(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountList>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -1090,7 +1087,7 @@ export class ObservableBillingAccountsApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v2BillingAccountsGet(billingAccountId, limit, offset, _config);
+        const requestContextPromise = this.requestFactory.v2BillingAccountsGet(limit, offset, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -1110,12 +1107,11 @@ export class ObservableBillingAccountsApi {
     /**
      * List Billing Accounts
      * List Billing Accounts
-     * @param billingAccountId Billing Account ID
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v2BillingAccountsGet(billingAccountId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsBillingAccount> {
-        return this.v2BillingAccountsGetWithHttpInfo(billingAccountId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccount>) => apiResponse.data));
+    public v2BillingAccountsGet(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsBillingAccountList> {
+        return this.v2BillingAccountsGetWithHttpInfo(limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountList>) => apiResponse.data));
     }
 
     /**
@@ -1183,9 +1179,8 @@ export class ObservableBillingAccountsApi {
     /**
      * Get Billing Permissions
      * Get Billing Permissions
-     * @param [body]
      */
-    public v2BillingPermissionsGetWithHttpInfo(body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsBillingAccountPermission>>> {
+    public v2BillingPermissionsGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsBillingAccountPermission>>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -1216,7 +1211,7 @@ export class ObservableBillingAccountsApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v2BillingPermissionsGet(body, _config);
+        const requestContextPromise = this.requestFactory.v2BillingPermissionsGet(_config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -1236,10 +1231,9 @@ export class ObservableBillingAccountsApi {
     /**
      * Get Billing Permissions
      * Get Billing Permissions
-     * @param [body]
      */
-    public v2BillingPermissionsGet(body?: any, _options?: ConfigurationOptions): Observable<Array<ModelsBillingAccountPermission>> {
-        return this.v2BillingPermissionsGetWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsBillingAccountPermission>>) => apiResponse.data));
+    public v2BillingPermissionsGet(_options?: ConfigurationOptions): Observable<Array<ModelsBillingAccountPermission>> {
+        return this.v2BillingPermissionsGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<Array<ModelsBillingAccountPermission>>) => apiResponse.data));
     }
 
 }
@@ -1264,9 +1258,8 @@ export class ObservableBillingAccountsRbacApi {
      * Get Billing Account Roles
      * Get Billing Account Roles
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsBillingAccountRole>>> {
+    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId: string, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsBillingAccountRole>>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -1297,7 +1290,7 @@ export class ObservableBillingAccountsRbacApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, body, _config);
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -1318,10 +1311,9 @@ export class ObservableBillingAccountsRbacApi {
      * Get Billing Account Roles
      * Get Billing Account Roles
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<Array<ModelsBillingAccountRole>> {
-        return this.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId, body, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsBillingAccountRole>>) => apiResponse.data));
+    public v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, _options?: ConfigurationOptions): Observable<Array<ModelsBillingAccountRole>> {
+        return this.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsBillingAccountRole>>) => apiResponse.data));
     }
 
     /**
@@ -1393,9 +1385,8 @@ export class ObservableBillingAccountsRbacApi {
      * Delete Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -1426,7 +1417,7 @@ export class ObservableBillingAccountsRbacApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, body, _config);
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -1448,10 +1439,9 @@ export class ObservableBillingAccountsRbacApi {
      * Delete Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<string> {
-        return this.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId, body, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, _options?: ConfigurationOptions): Observable<string> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
     }
 
     /**
@@ -1459,9 +1449,8 @@ export class ObservableBillingAccountsRbacApi {
      * Get Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId: string, roleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountRole>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -1492,7 +1481,7 @@ export class ObservableBillingAccountsRbacApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, body, _config);
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -1514,10 +1503,9 @@ export class ObservableBillingAccountsRbacApi {
      * Get Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, body?: any, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
-        return this.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId, body, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, _options?: ConfigurationOptions): Observable<ModelsBillingAccountRole> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingAccountRole>) => apiResponse.data));
     }
 
     /**
@@ -1658,9 +1646,8 @@ export class ObservableBillingAccountsRbacApi {
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
      * @param userId User ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, userId: string, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -1691,7 +1678,7 @@ export class ObservableBillingAccountsRbacApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, body, _config);
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -1714,18 +1701,16 @@ export class ObservableBillingAccountsRbacApi {
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
      * @param userId User ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: ConfigurationOptions): Observable<string> {
-        return this.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId, body, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, _options?: ConfigurationOptions): Observable<string> {
+        return this.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
     }
 
     /**
      * Get Billing Permissions
      * Get Billing Permissions
-     * @param [body]
      */
-    public v2BillingPermissionsGetWithHttpInfo(body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsBillingAccountPermission>>> {
+    public v2BillingPermissionsGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsBillingAccountPermission>>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -1756,7 +1741,7 @@ export class ObservableBillingAccountsRbacApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v2BillingPermissionsGet(body, _config);
+        const requestContextPromise = this.requestFactory.v2BillingPermissionsGet(_config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -1776,10 +1761,279 @@ export class ObservableBillingAccountsRbacApi {
     /**
      * Get Billing Permissions
      * Get Billing Permissions
-     * @param [body]
      */
-    public v2BillingPermissionsGet(body?: any, _options?: ConfigurationOptions): Observable<Array<ModelsBillingAccountPermission>> {
-        return this.v2BillingPermissionsGetWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsBillingAccountPermission>>) => apiResponse.data));
+    public v2BillingPermissionsGet(_options?: ConfigurationOptions): Observable<Array<ModelsBillingAccountPermission>> {
+        return this.v2BillingPermissionsGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<Array<ModelsBillingAccountPermission>>) => apiResponse.data));
+    }
+
+}
+
+import { BillingProductsApiRequestFactory, BillingProductsApiResponseProcessor} from "../apis/BillingProductsApi";
+export class ObservableBillingProductsApi {
+    private requestFactory: BillingProductsApiRequestFactory;
+    private responseProcessor: BillingProductsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: BillingProductsApiRequestFactory,
+        responseProcessor?: BillingProductsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new BillingProductsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new BillingProductsApiResponseProcessor();
+    }
+
+    /**
+     * Cancel Billing Account Subscription
+     * Cancel Billing Account Subscription
+     * @param billingAccountId Billing Account ID
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionDeleteWithHttpInfo(billingAccountId: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdSubscriptionDelete(billingAccountId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdSubscriptionDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Cancel Billing Account Subscription
+     * Cancel Billing Account Subscription
+     * @param billingAccountId Billing Account ID
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionDelete(billingAccountId: string, _options?: ConfigurationOptions): Observable<void> {
+        return this.v2BillingAccountsBillingAccountIdSubscriptionDeleteWithHttpInfo(billingAccountId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    }
+
+    /**
+     * Get Billing Account Subscription
+     * Get Billing Account Subscription
+     * @param billingAccountId Billing Account ID
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionGetWithHttpInfo(billingAccountId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingProduct>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdSubscriptionGet(billingAccountId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdSubscriptionGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get Billing Account Subscription
+     * Get Billing Account Subscription
+     * @param billingAccountId Billing Account ID
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionGet(billingAccountId: string, _options?: ConfigurationOptions): Observable<ModelsBillingProduct> {
+        return this.v2BillingAccountsBillingAccountIdSubscriptionGetWithHttpInfo(billingAccountId, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingProduct>) => apiResponse.data));
+    }
+
+    /**
+     * Create Billing Account Subscription
+     * Create Billing Account Subscription
+     * @param billingAccountId Billing Account ID
+     * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionPostWithHttpInfo(billingAccountId: string, routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdSubscriptionPost(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingAccountsBillingAccountIdSubscriptionPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Create Billing Account Subscription
+     * Create Billing Account Subscription
+     * @param billingAccountId Billing Account ID
+     * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionPost(billingAccountId: string, routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest, _options?: ConfigurationOptions): Observable<RoutesV2CreateBillingAccountSubscriptionResponse> {
+        return this.v2BillingAccountsBillingAccountIdSubscriptionPostWithHttpInfo(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse>) => apiResponse.data));
+    }
+
+    /**
+     * List Billing Products
+     * List Billing Products
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public v2BillingProductsGetWithHttpInfo(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingProductList>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2BillingProductsGet(limit, offset, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2BillingProductsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List Billing Products
+     * List Billing Products
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public v2BillingProductsGet(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsBillingProductList> {
+        return this.v2BillingProductsGetWithHttpInfo(limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingProductList>) => apiResponse.data));
     }
 
 }

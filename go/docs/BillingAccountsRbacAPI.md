@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## V2BillingAccountsBillingAccountIdRolesGet
 
-> []ModelsBillingAccountRole V2BillingAccountsBillingAccountIdRolesGet(ctx, billingAccountId).Body(body).Execute()
+> []ModelsBillingAccountRole V2BillingAccountsBillingAccountIdRolesGet(ctx, billingAccountId).Execute()
 
 Get Billing Account Roles
 
@@ -37,11 +37,10 @@ import (
 
 func main() {
 	billingAccountId := "billingAccountId_example" // string | Billing Account ID
-	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BillingAccountsRbacAPI.V2BillingAccountsBillingAccountIdRolesGet(context.Background(), billingAccountId).Body(body).Execute()
+	resp, r, err := apiClient.BillingAccountsRbacAPI.V2BillingAccountsBillingAccountIdRolesGet(context.Background(), billingAccountId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BillingAccountsRbacAPI.V2BillingAccountsBillingAccountIdRolesGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -67,7 +66,6 @@ Other parameters are passed through a pointer to a apiV2BillingAccountsBillingAc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | **map[string]interface{}** |  | 
 
 ### Return type
 
@@ -79,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -161,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## V2BillingAccountsBillingAccountIdRolesRoleIdDelete
 
-> string V2BillingAccountsBillingAccountIdRolesRoleIdDelete(ctx, billingAccountId, roleId).Body(body).Execute()
+> string V2BillingAccountsBillingAccountIdRolesRoleIdDelete(ctx, billingAccountId, roleId).Execute()
 
 Delete Billing Account Role
 
@@ -182,11 +180,10 @@ import (
 func main() {
 	billingAccountId := "billingAccountId_example" // string | Billing Account ID
 	roleId := "roleId_example" // string | Role ID
-	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BillingAccountsRbacAPI.V2BillingAccountsBillingAccountIdRolesRoleIdDelete(context.Background(), billingAccountId, roleId).Body(body).Execute()
+	resp, r, err := apiClient.BillingAccountsRbacAPI.V2BillingAccountsBillingAccountIdRolesRoleIdDelete(context.Background(), billingAccountId, roleId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BillingAccountsRbacAPI.V2BillingAccountsBillingAccountIdRolesRoleIdDelete``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -214,7 +211,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **body** | **map[string]interface{}** |  | 
 
 ### Return type
 
@@ -226,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -236,7 +232,7 @@ Name | Type | Description  | Notes
 
 ## V2BillingAccountsBillingAccountIdRolesRoleIdGet
 
-> ModelsBillingAccountRole V2BillingAccountsBillingAccountIdRolesRoleIdGet(ctx, billingAccountId, roleId).Body(body).Execute()
+> ModelsBillingAccountRole V2BillingAccountsBillingAccountIdRolesRoleIdGet(ctx, billingAccountId, roleId).Execute()
 
 Get Billing Account Role
 
@@ -257,11 +253,10 @@ import (
 func main() {
 	billingAccountId := "billingAccountId_example" // string | Billing Account ID
 	roleId := "roleId_example" // string | Role ID
-	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BillingAccountsRbacAPI.V2BillingAccountsBillingAccountIdRolesRoleIdGet(context.Background(), billingAccountId, roleId).Body(body).Execute()
+	resp, r, err := apiClient.BillingAccountsRbacAPI.V2BillingAccountsBillingAccountIdRolesRoleIdGet(context.Background(), billingAccountId, roleId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BillingAccountsRbacAPI.V2BillingAccountsBillingAccountIdRolesRoleIdGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -289,7 +284,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **body** | **map[string]interface{}** |  | 
 
 ### Return type
 
@@ -301,7 +295,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -461,7 +455,7 @@ Name | Type | Description  | Notes
 
 ## V2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
 
-> string V2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(ctx, billingAccountId, roleId, userId).Body(body).Execute()
+> string V2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(ctx, billingAccountId, roleId, userId).Execute()
 
 Delete Billing Account User Role
 
@@ -483,11 +477,10 @@ func main() {
 	billingAccountId := "billingAccountId_example" // string | Billing Account ID
 	roleId := "roleId_example" // string | Role ID
 	userId := "userId_example" // string | User ID
-	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BillingAccountsRbacAPI.V2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(context.Background(), billingAccountId, roleId, userId).Body(body).Execute()
+	resp, r, err := apiClient.BillingAccountsRbacAPI.V2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(context.Background(), billingAccountId, roleId, userId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BillingAccountsRbacAPI.V2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -517,7 +510,6 @@ Name | Type | Description  | Notes
 
 
 
- **body** | **map[string]interface{}** |  | 
 
 ### Return type
 
@@ -529,7 +521,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -539,7 +531,7 @@ Name | Type | Description  | Notes
 
 ## V2BillingPermissionsGet
 
-> []ModelsBillingAccountPermission V2BillingPermissionsGet(ctx).Body(body).Execute()
+> []ModelsBillingAccountPermission V2BillingPermissionsGet(ctx).Execute()
 
 Get Billing Permissions
 
@@ -558,11 +550,10 @@ import (
 )
 
 func main() {
-	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BillingAccountsRbacAPI.V2BillingPermissionsGet(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.BillingAccountsRbacAPI.V2BillingPermissionsGet(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BillingAccountsRbacAPI.V2BillingPermissionsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -574,16 +565,12 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiV2BillingPermissionsGetRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
 
 ### Return type
 
@@ -595,7 +582,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

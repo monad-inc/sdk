@@ -48,8 +48,18 @@ import org.openapitools.client.JSON;
 /**
  * ModelsQuota
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-18T15:49:56.552881886Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-27T20:20:16.476991945Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsQuota {
+  public static final String SERIALIZED_NAME_ACTION = "action";
+  @SerializedName(SERIALIZED_NAME_ACTION)
+  @javax.annotation.Nullable
+  private String action;
+
+  public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billing_account_id";
+  @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
+  @javax.annotation.Nullable
+  private String billingAccountId;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nullable
@@ -107,6 +117,44 @@ public class ModelsQuota {
 
   public ModelsQuota() {
   }
+
+  public ModelsQuota action(@javax.annotation.Nullable String action) {
+    this.action = action;
+    return this;
+  }
+
+  /**
+   * Get action
+   * @return action
+   */
+  @javax.annotation.Nullable
+  public String getAction() {
+    return action;
+  }
+
+  public void setAction(@javax.annotation.Nullable String action) {
+    this.action = action;
+  }
+
+
+  public ModelsQuota billingAccountId(@javax.annotation.Nullable String billingAccountId) {
+    this.billingAccountId = billingAccountId;
+    return this;
+  }
+
+  /**
+   * Get billingAccountId
+   * @return billingAccountId
+   */
+  @javax.annotation.Nullable
+  public String getBillingAccountId() {
+    return billingAccountId;
+  }
+
+  public void setBillingAccountId(@javax.annotation.Nullable String billingAccountId) {
+    this.billingAccountId = billingAccountId;
+  }
+
 
   public ModelsQuota createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
@@ -327,7 +375,9 @@ public class ModelsQuota {
       return false;
     }
     ModelsQuota modelsQuota = (ModelsQuota) o;
-    return Objects.equals(this.createdAt, modelsQuota.createdAt) &&
+    return Objects.equals(this.action, modelsQuota.action) &&
+        Objects.equals(this.billingAccountId, modelsQuota.billingAccountId) &&
+        Objects.equals(this.createdAt, modelsQuota.createdAt) &&
         Objects.equals(this.currentUsage, modelsQuota.currentUsage) &&
         Objects.equals(this.currentUsageUpdatedAt, modelsQuota.currentUsageUpdatedAt) &&
         Objects.equals(this.id, modelsQuota.id) &&
@@ -342,13 +392,15 @@ public class ModelsQuota {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, currentUsage, currentUsageUpdatedAt, id, limitAmount, limitType, limitUnit, name, organizationId, timeframe, updatedAt);
+    return Objects.hash(action, billingAccountId, createdAt, currentUsage, currentUsageUpdatedAt, id, limitAmount, limitType, limitUnit, name, organizationId, timeframe, updatedAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsQuota {\n");
+    sb.append("    action: ").append(toIndentedString(action)).append("\n");
+    sb.append("    billingAccountId: ").append(toIndentedString(billingAccountId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    currentUsage: ").append(toIndentedString(currentUsage)).append("\n");
     sb.append("    currentUsageUpdatedAt: ").append(toIndentedString(currentUsageUpdatedAt)).append("\n");
@@ -382,6 +434,8 @@ public class ModelsQuota {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("action");
+    openapiFields.add("billing_account_id");
     openapiFields.add("created_at");
     openapiFields.add("current_usage");
     openapiFields.add("current_usage_updated_at");
@@ -419,6 +473,12 @@ public class ModelsQuota {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("action") != null && !jsonObj.get("action").isJsonNull()) && !jsonObj.get("action").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `action` to be a primitive type in the JSON string but got `%s`", jsonObj.get("action").toString()));
+      }
+      if ((jsonObj.get("billing_account_id") != null && !jsonObj.get("billing_account_id").isJsonNull()) && !jsonObj.get("billing_account_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `billing_account_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("billing_account_id").toString()));
+      }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
       }

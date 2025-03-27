@@ -27,6 +27,8 @@ class ModelsQuota(BaseModel):
     """
     ModelsQuota
     """ # noqa: E501
+    action: Optional[StrictStr] = None
+    billing_account_id: Optional[StrictStr] = None
     created_at: Optional[StrictStr] = None
     current_usage: Optional[StrictInt] = None
     current_usage_updated_at: Optional[StrictStr] = None
@@ -38,7 +40,7 @@ class ModelsQuota(BaseModel):
     organization_id: Optional[StrictStr] = None
     timeframe: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["created_at", "current_usage", "current_usage_updated_at", "id", "limit_amount", "limit_type", "limit_unit", "name", "organization_id", "timeframe", "updated_at"]
+    __properties: ClassVar[List[str]] = ["action", "billing_account_id", "created_at", "current_usage", "current_usage_updated_at", "id", "limit_amount", "limit_type", "limit_unit", "name", "organization_id", "timeframe", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +93,8 @@ class ModelsQuota(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "action": obj.get("action"),
+            "billing_account_id": obj.get("billing_account_id"),
             "created_at": obj.get("created_at"),
             "current_usage": obj.get("current_usage"),
             "current_usage_updated_at": obj.get("current_usage_updated_at"),

@@ -95,8 +95,6 @@ const apiInstance = new BillingAccountsApi(configuration);
 const request: BillingAccountsApiV2BillingAccountsBillingAccountIdGetRequest = {
     // Billing Account ID
   billingAccountId: "billing_account_id_example",
-  
-  body: {},
 };
 
 const data = await apiInstance.v2BillingAccountsBillingAccountIdGet(request);
@@ -108,7 +106,6 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
 
 
@@ -122,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -215,8 +212,6 @@ const apiInstance = new BillingAccountsApi(configuration);
 const request: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesGetRequest = {
     // Billing Account ID
   billingAccountId: "billing_account_id_example",
-  
-  body: {},
 };
 
 const data = await apiInstance.v2BillingAccountsBillingAccountIdRolesGet(request);
@@ -228,7 +223,6 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
 
 
@@ -242,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -339,8 +333,6 @@ const request: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdDel
   billingAccountId: "billing_account_id_example",
     // Role ID
   roleId: "role_id_example",
-  
-  body: {},
 };
 
 const data = await apiInstance.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(request);
@@ -352,7 +344,6 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
  **roleId** | [**string**] | Role ID | defaults to undefined
 
@@ -367,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -400,8 +391,6 @@ const request: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdGet
   billingAccountId: "billing_account_id_example",
     // Role ID
   roleId: "role_id_example",
-  
-  body: {},
 };
 
 const data = await apiInstance.v2BillingAccountsBillingAccountIdRolesRoleIdGet(request);
@@ -413,7 +402,6 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
  **roleId** | [**string**] | Role ID | defaults to undefined
 
@@ -428,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -593,8 +581,6 @@ const request: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdUse
   roleId: "role_id_example",
     // User ID
   userId: "user_id_example",
-  
-  body: {},
 };
 
 const data = await apiInstance.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(request);
@@ -606,7 +592,6 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
  **roleId** | [**string**] | Role ID | defaults to undefined
  **userId** | [**string**] | User ID | defaults to undefined
@@ -622,7 +607,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -636,7 +621,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v2BillingAccountsGet**
-> ModelsBillingAccount v2BillingAccountsGet()
+> ModelsBillingAccountList v2BillingAccountsGet()
 
 List Billing Accounts
 
@@ -651,8 +636,6 @@ const configuration = createConfiguration();
 const apiInstance = new BillingAccountsApi(configuration);
 
 const request: BillingAccountsApiV2BillingAccountsGetRequest = {
-    // Billing Account ID
-  billingAccountId: "billing_account_id_example",
     // Limit (optional)
   limit: 1,
     // Offset (optional)
@@ -668,14 +651,13 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
  **limit** | [**number**] | Limit | (optional) defaults to undefined
  **offset** | [**number**] | Offset | (optional) defaults to undefined
 
 
 ### Return type
 
-**ModelsBillingAccount**
+**ModelsBillingAccountList**
 
 ### Authorization
 
@@ -765,15 +747,11 @@ Get Billing Permissions
 
 ```typescript
 import { createConfiguration, BillingAccountsApi } from '';
-import type { BillingAccountsApiV2BillingPermissionsGetRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new BillingAccountsApi(configuration);
 
-const request: BillingAccountsApiV2BillingPermissionsGetRequest = {
-  
-  body: {},
-};
+const request = {};
 
 const data = await apiInstance.v2BillingPermissionsGet(request);
 console.log('API called successfully. Returned data:', data);
@@ -781,10 +759,7 @@ console.log('API called successfully. Returned data:', data);
 
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -797,7 +772,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

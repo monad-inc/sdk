@@ -10,14 +10,21 @@
  * Do not edit the class manually.
  */
 
+import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { HttpFile } from '../http/http';
 
 export class ModelsBillingAccount {
     'billingEmail'?: string;
     'createdAt'?: string;
     'description'?: string;
+    'hasPaymentMethod'?: boolean;
     'id'?: string;
     'name'?: string;
+    'nextProduct'?: ModelsBillingProduct;
+    'nextProductId'?: string;
+    'product'?: ModelsBillingProduct;
+    'productChangeAfter'?: string;
+    'productId'?: string;
     'status'?: string;
     'updatedAt'?: string;
 
@@ -45,6 +52,12 @@ export class ModelsBillingAccount {
             "format": ""
         },
         {
+            "name": "hasPaymentMethod",
+            "baseName": "has_payment_method",
+            "type": "boolean",
+            "format": ""
+        },
+        {
             "name": "id",
             "baseName": "id",
             "type": "string",
@@ -53,6 +66,36 @@ export class ModelsBillingAccount {
         {
             "name": "name",
             "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "nextProduct",
+            "baseName": "next_product",
+            "type": "ModelsBillingProduct",
+            "format": ""
+        },
+        {
+            "name": "nextProductId",
+            "baseName": "next_product_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "product",
+            "baseName": "product",
+            "type": "ModelsBillingProduct",
+            "format": ""
+        },
+        {
+            "name": "productChangeAfter",
+            "baseName": "product_change_after",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "productId",
+            "baseName": "product_id",
             "type": "string",
             "format": ""
         },

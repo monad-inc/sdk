@@ -13,6 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class ModelsPipeline {
+    'componentTier'?: number;
     'createdAt'?: string;
     'description'?: string;
     'enabled'?: boolean;
@@ -27,6 +28,12 @@ export class ModelsPipeline {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "componentTier",
+            "baseName": "component_tier",
+            "type": "number",
+            "format": ""
+        },
         {
             "name": "createdAt",
             "baseName": "created_at",

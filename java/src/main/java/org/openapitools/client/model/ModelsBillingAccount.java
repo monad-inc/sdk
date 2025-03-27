@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsBillingProduct;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingAccount
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-18T15:49:56.552881886Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-27T20:20:16.476991945Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsBillingAccount {
   public static final String SERIALIZED_NAME_BILLING_EMAIL = "billing_email";
   @SerializedName(SERIALIZED_NAME_BILLING_EMAIL)
@@ -65,6 +66,11 @@ public class ModelsBillingAccount {
   @javax.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_HAS_PAYMENT_METHOD = "has_payment_method";
+  @SerializedName(SERIALIZED_NAME_HAS_PAYMENT_METHOD)
+  @javax.annotation.Nullable
+  private Boolean hasPaymentMethod;
+
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
@@ -74,6 +80,31 @@ public class ModelsBillingAccount {
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
+
+  public static final String SERIALIZED_NAME_NEXT_PRODUCT = "next_product";
+  @SerializedName(SERIALIZED_NAME_NEXT_PRODUCT)
+  @javax.annotation.Nullable
+  private ModelsBillingProduct nextProduct;
+
+  public static final String SERIALIZED_NAME_NEXT_PRODUCT_ID = "next_product_id";
+  @SerializedName(SERIALIZED_NAME_NEXT_PRODUCT_ID)
+  @javax.annotation.Nullable
+  private String nextProductId;
+
+  public static final String SERIALIZED_NAME_PRODUCT = "product";
+  @SerializedName(SERIALIZED_NAME_PRODUCT)
+  @javax.annotation.Nullable
+  private ModelsBillingProduct product;
+
+  public static final String SERIALIZED_NAME_PRODUCT_CHANGE_AFTER = "product_change_after";
+  @SerializedName(SERIALIZED_NAME_PRODUCT_CHANGE_AFTER)
+  @javax.annotation.Nullable
+  private String productChangeAfter;
+
+  public static final String SERIALIZED_NAME_PRODUCT_ID = "product_id";
+  @SerializedName(SERIALIZED_NAME_PRODUCT_ID)
+  @javax.annotation.Nullable
+  private String productId;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -145,6 +176,25 @@ public class ModelsBillingAccount {
   }
 
 
+  public ModelsBillingAccount hasPaymentMethod(@javax.annotation.Nullable Boolean hasPaymentMethod) {
+    this.hasPaymentMethod = hasPaymentMethod;
+    return this;
+  }
+
+  /**
+   * Get hasPaymentMethod
+   * @return hasPaymentMethod
+   */
+  @javax.annotation.Nullable
+  public Boolean getHasPaymentMethod() {
+    return hasPaymentMethod;
+  }
+
+  public void setHasPaymentMethod(@javax.annotation.Nullable Boolean hasPaymentMethod) {
+    this.hasPaymentMethod = hasPaymentMethod;
+  }
+
+
   public ModelsBillingAccount id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
@@ -180,6 +230,101 @@ public class ModelsBillingAccount {
 
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
+  }
+
+
+  public ModelsBillingAccount nextProduct(@javax.annotation.Nullable ModelsBillingProduct nextProduct) {
+    this.nextProduct = nextProduct;
+    return this;
+  }
+
+  /**
+   * Get nextProduct
+   * @return nextProduct
+   */
+  @javax.annotation.Nullable
+  public ModelsBillingProduct getNextProduct() {
+    return nextProduct;
+  }
+
+  public void setNextProduct(@javax.annotation.Nullable ModelsBillingProduct nextProduct) {
+    this.nextProduct = nextProduct;
+  }
+
+
+  public ModelsBillingAccount nextProductId(@javax.annotation.Nullable String nextProductId) {
+    this.nextProductId = nextProductId;
+    return this;
+  }
+
+  /**
+   * Get nextProductId
+   * @return nextProductId
+   */
+  @javax.annotation.Nullable
+  public String getNextProductId() {
+    return nextProductId;
+  }
+
+  public void setNextProductId(@javax.annotation.Nullable String nextProductId) {
+    this.nextProductId = nextProductId;
+  }
+
+
+  public ModelsBillingAccount product(@javax.annotation.Nullable ModelsBillingProduct product) {
+    this.product = product;
+    return this;
+  }
+
+  /**
+   * Get product
+   * @return product
+   */
+  @javax.annotation.Nullable
+  public ModelsBillingProduct getProduct() {
+    return product;
+  }
+
+  public void setProduct(@javax.annotation.Nullable ModelsBillingProduct product) {
+    this.product = product;
+  }
+
+
+  public ModelsBillingAccount productChangeAfter(@javax.annotation.Nullable String productChangeAfter) {
+    this.productChangeAfter = productChangeAfter;
+    return this;
+  }
+
+  /**
+   * Get productChangeAfter
+   * @return productChangeAfter
+   */
+  @javax.annotation.Nullable
+  public String getProductChangeAfter() {
+    return productChangeAfter;
+  }
+
+  public void setProductChangeAfter(@javax.annotation.Nullable String productChangeAfter) {
+    this.productChangeAfter = productChangeAfter;
+  }
+
+
+  public ModelsBillingAccount productId(@javax.annotation.Nullable String productId) {
+    this.productId = productId;
+    return this;
+  }
+
+  /**
+   * Get productId
+   * @return productId
+   */
+  @javax.annotation.Nullable
+  public String getProductId() {
+    return productId;
+  }
+
+  public void setProductId(@javax.annotation.Nullable String productId) {
+    this.productId = productId;
   }
 
 
@@ -234,15 +379,21 @@ public class ModelsBillingAccount {
     return Objects.equals(this.billingEmail, modelsBillingAccount.billingEmail) &&
         Objects.equals(this.createdAt, modelsBillingAccount.createdAt) &&
         Objects.equals(this.description, modelsBillingAccount.description) &&
+        Objects.equals(this.hasPaymentMethod, modelsBillingAccount.hasPaymentMethod) &&
         Objects.equals(this.id, modelsBillingAccount.id) &&
         Objects.equals(this.name, modelsBillingAccount.name) &&
+        Objects.equals(this.nextProduct, modelsBillingAccount.nextProduct) &&
+        Objects.equals(this.nextProductId, modelsBillingAccount.nextProductId) &&
+        Objects.equals(this.product, modelsBillingAccount.product) &&
+        Objects.equals(this.productChangeAfter, modelsBillingAccount.productChangeAfter) &&
+        Objects.equals(this.productId, modelsBillingAccount.productId) &&
         Objects.equals(this.status, modelsBillingAccount.status) &&
         Objects.equals(this.updatedAt, modelsBillingAccount.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingEmail, createdAt, description, id, name, status, updatedAt);
+    return Objects.hash(billingEmail, createdAt, description, hasPaymentMethod, id, name, nextProduct, nextProductId, product, productChangeAfter, productId, status, updatedAt);
   }
 
   @Override
@@ -252,8 +403,14 @@ public class ModelsBillingAccount {
     sb.append("    billingEmail: ").append(toIndentedString(billingEmail)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    hasPaymentMethod: ").append(toIndentedString(hasPaymentMethod)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    nextProduct: ").append(toIndentedString(nextProduct)).append("\n");
+    sb.append("    nextProductId: ").append(toIndentedString(nextProductId)).append("\n");
+    sb.append("    product: ").append(toIndentedString(product)).append("\n");
+    sb.append("    productChangeAfter: ").append(toIndentedString(productChangeAfter)).append("\n");
+    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -281,8 +438,14 @@ public class ModelsBillingAccount {
     openapiFields.add("billing_email");
     openapiFields.add("created_at");
     openapiFields.add("description");
+    openapiFields.add("has_payment_method");
     openapiFields.add("id");
     openapiFields.add("name");
+    openapiFields.add("next_product");
+    openapiFields.add("next_product_id");
+    openapiFields.add("product");
+    openapiFields.add("product_change_after");
+    openapiFields.add("product_id");
     openapiFields.add("status");
     openapiFields.add("updated_at");
 
@@ -325,6 +488,23 @@ public class ModelsBillingAccount {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      // validate the optional field `next_product`
+      if (jsonObj.get("next_product") != null && !jsonObj.get("next_product").isJsonNull()) {
+        ModelsBillingProduct.validateJsonElement(jsonObj.get("next_product"));
+      }
+      if ((jsonObj.get("next_product_id") != null && !jsonObj.get("next_product_id").isJsonNull()) && !jsonObj.get("next_product_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `next_product_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next_product_id").toString()));
+      }
+      // validate the optional field `product`
+      if (jsonObj.get("product") != null && !jsonObj.get("product").isJsonNull()) {
+        ModelsBillingProduct.validateJsonElement(jsonObj.get("product"));
+      }
+      if ((jsonObj.get("product_change_after") != null && !jsonObj.get("product_change_after").isJsonNull()) && !jsonObj.get("product_change_after").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `product_change_after` to be a primitive type in the JSON string but got `%s`", jsonObj.get("product_change_after").toString()));
+      }
+      if ((jsonObj.get("product_id") != null && !jsonObj.get("product_id").isJsonNull()) && !jsonObj.get("product_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `product_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("product_id").toString()));
       }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));

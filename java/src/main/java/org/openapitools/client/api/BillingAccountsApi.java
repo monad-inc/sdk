@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.ModelsBillingAccount;
+import org.openapitools.client.model.ModelsBillingAccountList;
 import org.openapitools.client.model.ModelsBillingAccountPermission;
 import org.openapitools.client.model.ModelsBillingAccountRole;
 import org.openapitools.client.model.RoutesV2CreateBillingAccountRequest;
@@ -218,7 +219,6 @@ public class BillingAccountsApi {
     /**
      * Build call for v2BillingAccountsBillingAccountIdGet
      * @param billingAccountId Billing Account ID (required)
-     * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -231,7 +231,7 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdGetCall(String billingAccountId, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdGetCall(String billingAccountId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -245,7 +245,7 @@ public class BillingAccountsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/v2/billing/accounts/{billing_account_id}"
@@ -266,7 +266,6 @@ public class BillingAccountsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -278,13 +277,13 @@ public class BillingAccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsBillingAccountIdGetValidateBeforeCall(String billingAccountId, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2BillingAccountsBillingAccountIdGetValidateBeforeCall(String billingAccountId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsBillingAccountIdGet(Async)");
         }
 
-        return v2BillingAccountsBillingAccountIdGetCall(billingAccountId, body, _callback);
+        return v2BillingAccountsBillingAccountIdGetCall(billingAccountId, _callback);
 
     }
 
@@ -292,7 +291,6 @@ public class BillingAccountsApi {
      * Get Billing Account
      * Get Billing Account
      * @param billingAccountId Billing Account ID (required)
-     * @param body  (optional)
      * @return ModelsBillingAccount
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -304,8 +302,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsBillingAccount v2BillingAccountsBillingAccountIdGet(String billingAccountId, Object body) throws ApiException {
-        ApiResponse<ModelsBillingAccount> localVarResp = v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId, body);
+    public ModelsBillingAccount v2BillingAccountsBillingAccountIdGet(String billingAccountId) throws ApiException {
+        ApiResponse<ModelsBillingAccount> localVarResp = v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId);
         return localVarResp.getData();
     }
 
@@ -313,7 +311,6 @@ public class BillingAccountsApi {
      * Get Billing Account
      * Get Billing Account
      * @param billingAccountId Billing Account ID (required)
-     * @param body  (optional)
      * @return ApiResponse&lt;ModelsBillingAccount&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -325,8 +322,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsBillingAccount> v2BillingAccountsBillingAccountIdGetWithHttpInfo(String billingAccountId, Object body) throws ApiException {
-        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdGetValidateBeforeCall(billingAccountId, body, null);
+    public ApiResponse<ModelsBillingAccount> v2BillingAccountsBillingAccountIdGetWithHttpInfo(String billingAccountId) throws ApiException {
+        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdGetValidateBeforeCall(billingAccountId, null);
         Type localVarReturnType = new TypeToken<ModelsBillingAccount>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -335,7 +332,6 @@ public class BillingAccountsApi {
      * Get Billing Account (asynchronously)
      * Get Billing Account
      * @param billingAccountId Billing Account ID (required)
-     * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -348,9 +344,9 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdGetAsync(String billingAccountId, Object body, final ApiCallback<ModelsBillingAccount> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdGetAsync(String billingAccountId, final ApiCallback<ModelsBillingAccount> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdGetValidateBeforeCall(billingAccountId, body, _callback);
+        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdGetValidateBeforeCall(billingAccountId, _callback);
         Type localVarReturnType = new TypeToken<ModelsBillingAccount>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -503,7 +499,6 @@ public class BillingAccountsApi {
     /**
      * Build call for v2BillingAccountsBillingAccountIdRolesGet
      * @param billingAccountId Billing Account ID (required)
-     * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -516,7 +511,7 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Roles </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesGetCall(String billingAccountId, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesGetCall(String billingAccountId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -530,7 +525,7 @@ public class BillingAccountsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/v2/billing/accounts/{billing_account_id}/roles"
@@ -551,7 +546,6 @@ public class BillingAccountsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -563,13 +557,13 @@ public class BillingAccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesGetValidateBeforeCall(String billingAccountId, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesGetValidateBeforeCall(String billingAccountId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsBillingAccountIdRolesGet(Async)");
         }
 
-        return v2BillingAccountsBillingAccountIdRolesGetCall(billingAccountId, body, _callback);
+        return v2BillingAccountsBillingAccountIdRolesGetCall(billingAccountId, _callback);
 
     }
 
@@ -577,7 +571,6 @@ public class BillingAccountsApi {
      * Get Billing Account Roles
      * Get Billing Account Roles
      * @param billingAccountId Billing Account ID (required)
-     * @param body  (optional)
      * @return List&lt;ModelsBillingAccountRole&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -589,8 +582,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Roles </td><td>  -  </td></tr>
      </table>
      */
-    public List<ModelsBillingAccountRole> v2BillingAccountsBillingAccountIdRolesGet(String billingAccountId, Object body) throws ApiException {
-        ApiResponse<List<ModelsBillingAccountRole>> localVarResp = v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId, body);
+    public List<ModelsBillingAccountRole> v2BillingAccountsBillingAccountIdRolesGet(String billingAccountId) throws ApiException {
+        ApiResponse<List<ModelsBillingAccountRole>> localVarResp = v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId);
         return localVarResp.getData();
     }
 
@@ -598,7 +591,6 @@ public class BillingAccountsApi {
      * Get Billing Account Roles
      * Get Billing Account Roles
      * @param billingAccountId Billing Account ID (required)
-     * @param body  (optional)
      * @return ApiResponse&lt;List&lt;ModelsBillingAccountRole&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -610,8 +602,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Roles </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ModelsBillingAccountRole>> v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(String billingAccountId, Object body) throws ApiException {
-        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesGetValidateBeforeCall(billingAccountId, body, null);
+    public ApiResponse<List<ModelsBillingAccountRole>> v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(String billingAccountId) throws ApiException {
+        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesGetValidateBeforeCall(billingAccountId, null);
         Type localVarReturnType = new TypeToken<List<ModelsBillingAccountRole>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -620,7 +612,6 @@ public class BillingAccountsApi {
      * Get Billing Account Roles (asynchronously)
      * Get Billing Account Roles
      * @param billingAccountId Billing Account ID (required)
-     * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -633,9 +624,9 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Roles </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesGetAsync(String billingAccountId, Object body, final ApiCallback<List<ModelsBillingAccountRole>> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesGetAsync(String billingAccountId, final ApiCallback<List<ModelsBillingAccountRole>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesGetValidateBeforeCall(billingAccountId, body, _callback);
+        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesGetValidateBeforeCall(billingAccountId, _callback);
         Type localVarReturnType = new TypeToken<List<ModelsBillingAccountRole>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -789,7 +780,6 @@ public class BillingAccountsApi {
      * Build call for v2BillingAccountsBillingAccountIdRolesRoleIdDelete
      * @param billingAccountId Billing Account ID (required)
      * @param roleId Role ID (required)
-     * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -802,7 +792,7 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdDeleteCall(String billingAccountId, String roleId, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdDeleteCall(String billingAccountId, String roleId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -816,7 +806,7 @@ public class BillingAccountsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/v2/billing/accounts/{billing_account_id}/roles/{role_id}"
@@ -838,7 +828,6 @@ public class BillingAccountsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -850,7 +839,7 @@ public class BillingAccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdDeleteValidateBeforeCall(String billingAccountId, String roleId, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdDeleteValidateBeforeCall(String billingAccountId, String roleId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsBillingAccountIdRolesRoleIdDelete(Async)");
@@ -861,7 +850,7 @@ public class BillingAccountsApi {
             throw new ApiException("Missing the required parameter 'roleId' when calling v2BillingAccountsBillingAccountIdRolesRoleIdDelete(Async)");
         }
 
-        return v2BillingAccountsBillingAccountIdRolesRoleIdDeleteCall(billingAccountId, roleId, body, _callback);
+        return v2BillingAccountsBillingAccountIdRolesRoleIdDeleteCall(billingAccountId, roleId, _callback);
 
     }
 
@@ -870,7 +859,6 @@ public class BillingAccountsApi {
      * Delete Billing Account Role
      * @param billingAccountId Billing Account ID (required)
      * @param roleId Role ID (required)
-     * @param body  (optional)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -882,8 +870,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public String v2BillingAccountsBillingAccountIdRolesRoleIdDelete(String billingAccountId, String roleId, Object body) throws ApiException {
-        ApiResponse<String> localVarResp = v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId, body);
+    public String v2BillingAccountsBillingAccountIdRolesRoleIdDelete(String billingAccountId, String roleId) throws ApiException {
+        ApiResponse<String> localVarResp = v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId);
         return localVarResp.getData();
     }
 
@@ -892,7 +880,6 @@ public class BillingAccountsApi {
      * Delete Billing Account Role
      * @param billingAccountId Billing Account ID (required)
      * @param roleId Role ID (required)
-     * @param body  (optional)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -904,8 +891,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(String billingAccountId, String roleId, Object body) throws ApiException {
-        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdDeleteValidateBeforeCall(billingAccountId, roleId, body, null);
+    public ApiResponse<String> v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(String billingAccountId, String roleId) throws ApiException {
+        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdDeleteValidateBeforeCall(billingAccountId, roleId, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -915,7 +902,6 @@ public class BillingAccountsApi {
      * Delete Billing Account Role
      * @param billingAccountId Billing Account ID (required)
      * @param roleId Role ID (required)
-     * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -928,9 +914,9 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdDeleteAsync(String billingAccountId, String roleId, Object body, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdDeleteAsync(String billingAccountId, String roleId, final ApiCallback<String> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdDeleteValidateBeforeCall(billingAccountId, roleId, body, _callback);
+        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdDeleteValidateBeforeCall(billingAccountId, roleId, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -939,7 +925,6 @@ public class BillingAccountsApi {
      * Build call for v2BillingAccountsBillingAccountIdRolesRoleIdGet
      * @param billingAccountId Billing Account ID (required)
      * @param roleId Role ID (required)
-     * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -952,7 +937,7 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdGetCall(String billingAccountId, String roleId, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdGetCall(String billingAccountId, String roleId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -966,7 +951,7 @@ public class BillingAccountsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/v2/billing/accounts/{billing_account_id}/roles/{role_id}"
@@ -988,7 +973,6 @@ public class BillingAccountsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1000,7 +984,7 @@ public class BillingAccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdGetValidateBeforeCall(String billingAccountId, String roleId, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdGetValidateBeforeCall(String billingAccountId, String roleId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsBillingAccountIdRolesRoleIdGet(Async)");
@@ -1011,7 +995,7 @@ public class BillingAccountsApi {
             throw new ApiException("Missing the required parameter 'roleId' when calling v2BillingAccountsBillingAccountIdRolesRoleIdGet(Async)");
         }
 
-        return v2BillingAccountsBillingAccountIdRolesRoleIdGetCall(billingAccountId, roleId, body, _callback);
+        return v2BillingAccountsBillingAccountIdRolesRoleIdGetCall(billingAccountId, roleId, _callback);
 
     }
 
@@ -1020,7 +1004,6 @@ public class BillingAccountsApi {
      * Get Billing Account Role
      * @param billingAccountId Billing Account ID (required)
      * @param roleId Role ID (required)
-     * @param body  (optional)
      * @return ModelsBillingAccountRole
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1032,8 +1015,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsBillingAccountRole v2BillingAccountsBillingAccountIdRolesRoleIdGet(String billingAccountId, String roleId, Object body) throws ApiException {
-        ApiResponse<ModelsBillingAccountRole> localVarResp = v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId, body);
+    public ModelsBillingAccountRole v2BillingAccountsBillingAccountIdRolesRoleIdGet(String billingAccountId, String roleId) throws ApiException {
+        ApiResponse<ModelsBillingAccountRole> localVarResp = v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId);
         return localVarResp.getData();
     }
 
@@ -1042,7 +1025,6 @@ public class BillingAccountsApi {
      * Get Billing Account Role
      * @param billingAccountId Billing Account ID (required)
      * @param roleId Role ID (required)
-     * @param body  (optional)
      * @return ApiResponse&lt;ModelsBillingAccountRole&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1054,8 +1036,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsBillingAccountRole> v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(String billingAccountId, String roleId, Object body) throws ApiException {
-        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdGetValidateBeforeCall(billingAccountId, roleId, body, null);
+    public ApiResponse<ModelsBillingAccountRole> v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(String billingAccountId, String roleId) throws ApiException {
+        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdGetValidateBeforeCall(billingAccountId, roleId, null);
         Type localVarReturnType = new TypeToken<ModelsBillingAccountRole>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1065,7 +1047,6 @@ public class BillingAccountsApi {
      * Get Billing Account Role
      * @param billingAccountId Billing Account ID (required)
      * @param roleId Role ID (required)
-     * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1078,9 +1059,9 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdGetAsync(String billingAccountId, String roleId, Object body, final ApiCallback<ModelsBillingAccountRole> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdGetAsync(String billingAccountId, String roleId, final ApiCallback<ModelsBillingAccountRole> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdGetValidateBeforeCall(billingAccountId, roleId, body, _callback);
+        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdGetValidateBeforeCall(billingAccountId, roleId, _callback);
         Type localVarReturnType = new TypeToken<ModelsBillingAccountRole>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1400,7 +1381,6 @@ public class BillingAccountsApi {
      * @param billingAccountId Billing Account ID (required)
      * @param roleId Role ID (required)
      * @param userId User ID (required)
-     * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1413,7 +1393,7 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account User Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteCall(String billingAccountId, String roleId, String userId, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteCall(String billingAccountId, String roleId, String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1427,7 +1407,7 @@ public class BillingAccountsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/v2/billing/accounts/{billing_account_id}/roles/{role_id}/users/{user_id}"
@@ -1450,7 +1430,6 @@ public class BillingAccountsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1462,7 +1441,7 @@ public class BillingAccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteValidateBeforeCall(String billingAccountId, String roleId, String userId, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteValidateBeforeCall(String billingAccountId, String roleId, String userId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(Async)");
@@ -1478,7 +1457,7 @@ public class BillingAccountsApi {
             throw new ApiException("Missing the required parameter 'userId' when calling v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(Async)");
         }
 
-        return v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteCall(billingAccountId, roleId, userId, body, _callback);
+        return v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteCall(billingAccountId, roleId, userId, _callback);
 
     }
 
@@ -1488,7 +1467,6 @@ public class BillingAccountsApi {
      * @param billingAccountId Billing Account ID (required)
      * @param roleId Role ID (required)
      * @param userId User ID (required)
-     * @param body  (optional)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1500,8 +1478,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account User Role </td><td>  -  </td></tr>
      </table>
      */
-    public String v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(String billingAccountId, String roleId, String userId, Object body) throws ApiException {
-        ApiResponse<String> localVarResp = v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId, body);
+    public String v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(String billingAccountId, String roleId, String userId) throws ApiException {
+        ApiResponse<String> localVarResp = v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId);
         return localVarResp.getData();
     }
 
@@ -1511,7 +1489,6 @@ public class BillingAccountsApi {
      * @param billingAccountId Billing Account ID (required)
      * @param roleId Role ID (required)
      * @param userId User ID (required)
-     * @param body  (optional)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1523,8 +1500,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account User Role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(String billingAccountId, String roleId, String userId, Object body) throws ApiException {
-        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteValidateBeforeCall(billingAccountId, roleId, userId, body, null);
+    public ApiResponse<String> v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(String billingAccountId, String roleId, String userId) throws ApiException {
+        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteValidateBeforeCall(billingAccountId, roleId, userId, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1535,7 +1512,6 @@ public class BillingAccountsApi {
      * @param billingAccountId Billing Account ID (required)
      * @param roleId Role ID (required)
      * @param userId User ID (required)
-     * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1548,16 +1524,15 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account User Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteAsync(String billingAccountId, String roleId, String userId, Object body, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteAsync(String billingAccountId, String roleId, String userId, final ApiCallback<String> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteValidateBeforeCall(billingAccountId, roleId, userId, body, _callback);
+        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteValidateBeforeCall(billingAccountId, roleId, userId, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for v2BillingAccountsGet
-     * @param billingAccountId Billing Account ID (required)
      * @param limit Limit (optional)
      * @param offset Offset (optional)
      * @param _callback Callback for upload/download progress
@@ -1572,7 +1547,7 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to list Billing Accounts </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsGetCall(String billingAccountId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsGetCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1589,8 +1564,7 @@ public class BillingAccountsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v2/billing/accounts"
-            .replace("{" + "billing_account_id" + "}", localVarApiClient.escapeString(billingAccountId.toString()));
+        String localVarPath = "/v2/billing/accounts";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1626,23 +1600,17 @@ public class BillingAccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsGetValidateBeforeCall(String billingAccountId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'billingAccountId' is set
-        if (billingAccountId == null) {
-            throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsGet(Async)");
-        }
-
-        return v2BillingAccountsGetCall(billingAccountId, limit, offset, _callback);
+    private okhttp3.Call v2BillingAccountsGetValidateBeforeCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        return v2BillingAccountsGetCall(limit, offset, _callback);
 
     }
 
     /**
      * List Billing Accounts
      * List Billing Accounts
-     * @param billingAccountId Billing Account ID (required)
      * @param limit Limit (optional)
      * @param offset Offset (optional)
-     * @return ModelsBillingAccount
+     * @return ModelsBillingAccountList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1653,18 +1621,17 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to list Billing Accounts </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsBillingAccount v2BillingAccountsGet(String billingAccountId, Integer limit, Integer offset) throws ApiException {
-        ApiResponse<ModelsBillingAccount> localVarResp = v2BillingAccountsGetWithHttpInfo(billingAccountId, limit, offset);
+    public ModelsBillingAccountList v2BillingAccountsGet(Integer limit, Integer offset) throws ApiException {
+        ApiResponse<ModelsBillingAccountList> localVarResp = v2BillingAccountsGetWithHttpInfo(limit, offset);
         return localVarResp.getData();
     }
 
     /**
      * List Billing Accounts
      * List Billing Accounts
-     * @param billingAccountId Billing Account ID (required)
      * @param limit Limit (optional)
      * @param offset Offset (optional)
-     * @return ApiResponse&lt;ModelsBillingAccount&gt;
+     * @return ApiResponse&lt;ModelsBillingAccountList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1675,16 +1642,15 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to list Billing Accounts </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsBillingAccount> v2BillingAccountsGetWithHttpInfo(String billingAccountId, Integer limit, Integer offset) throws ApiException {
-        okhttp3.Call localVarCall = v2BillingAccountsGetValidateBeforeCall(billingAccountId, limit, offset, null);
-        Type localVarReturnType = new TypeToken<ModelsBillingAccount>(){}.getType();
+    public ApiResponse<ModelsBillingAccountList> v2BillingAccountsGetWithHttpInfo(Integer limit, Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = v2BillingAccountsGetValidateBeforeCall(limit, offset, null);
+        Type localVarReturnType = new TypeToken<ModelsBillingAccountList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * List Billing Accounts (asynchronously)
      * List Billing Accounts
-     * @param billingAccountId Billing Account ID (required)
      * @param limit Limit (optional)
      * @param offset Offset (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1699,10 +1665,10 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to list Billing Accounts </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsGetAsync(String billingAccountId, Integer limit, Integer offset, final ApiCallback<ModelsBillingAccount> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsGetAsync(Integer limit, Integer offset, final ApiCallback<ModelsBillingAccountList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2BillingAccountsGetValidateBeforeCall(billingAccountId, limit, offset, _callback);
-        Type localVarReturnType = new TypeToken<ModelsBillingAccount>(){}.getType();
+        okhttp3.Call localVarCall = v2BillingAccountsGetValidateBeforeCall(limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<ModelsBillingAccountList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1843,7 +1809,6 @@ public class BillingAccountsApi {
     }
     /**
      * Build call for v2BillingPermissionsGet
-     * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1856,7 +1821,7 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Permissions </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingPermissionsGetCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingPermissionsGetCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1870,7 +1835,7 @@ public class BillingAccountsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/v2/billing/permissions";
@@ -1890,7 +1855,6 @@ public class BillingAccountsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1902,15 +1866,14 @@ public class BillingAccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingPermissionsGetValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
-        return v2BillingPermissionsGetCall(body, _callback);
+    private okhttp3.Call v2BillingPermissionsGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return v2BillingPermissionsGetCall(_callback);
 
     }
 
     /**
      * Get Billing Permissions
      * Get Billing Permissions
-     * @param body  (optional)
      * @return List&lt;ModelsBillingAccountPermission&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1922,15 +1885,14 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Permissions </td><td>  -  </td></tr>
      </table>
      */
-    public List<ModelsBillingAccountPermission> v2BillingPermissionsGet(Object body) throws ApiException {
-        ApiResponse<List<ModelsBillingAccountPermission>> localVarResp = v2BillingPermissionsGetWithHttpInfo(body);
+    public List<ModelsBillingAccountPermission> v2BillingPermissionsGet() throws ApiException {
+        ApiResponse<List<ModelsBillingAccountPermission>> localVarResp = v2BillingPermissionsGetWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * Get Billing Permissions
      * Get Billing Permissions
-     * @param body  (optional)
      * @return ApiResponse&lt;List&lt;ModelsBillingAccountPermission&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1942,8 +1904,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Permissions </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ModelsBillingAccountPermission>> v2BillingPermissionsGetWithHttpInfo(Object body) throws ApiException {
-        okhttp3.Call localVarCall = v2BillingPermissionsGetValidateBeforeCall(body, null);
+    public ApiResponse<List<ModelsBillingAccountPermission>> v2BillingPermissionsGetWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = v2BillingPermissionsGetValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<List<ModelsBillingAccountPermission>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1951,7 +1913,6 @@ public class BillingAccountsApi {
     /**
      * Get Billing Permissions (asynchronously)
      * Get Billing Permissions
-     * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1964,9 +1925,9 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Permissions </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingPermissionsGetAsync(Object body, final ApiCallback<List<ModelsBillingAccountPermission>> _callback) throws ApiException {
+    public okhttp3.Call v2BillingPermissionsGetAsync(final ApiCallback<List<ModelsBillingAccountPermission>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2BillingPermissionsGetValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = v2BillingPermissionsGetValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<List<ModelsBillingAccountPermission>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

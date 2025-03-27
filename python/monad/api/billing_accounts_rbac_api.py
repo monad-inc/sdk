@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
-from typing import Any, Dict, List, Optional
+from typing import List
 from typing_extensions import Annotated
 from monad.models.models_billing_account_permission import ModelsBillingAccountPermission
 from monad.models.models_billing_account_role import ModelsBillingAccountRole
@@ -48,7 +48,6 @@ class BillingAccountsRbacApi:
     def v2_billing_accounts_billing_account_id_roles_get(
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -68,8 +67,6 @@ class BillingAccountsRbacApi:
 
         :param billing_account_id: Billing Account ID (required)
         :type billing_account_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -94,7 +91,6 @@ class BillingAccountsRbacApi:
 
         _param = self._v2_billing_accounts_billing_account_id_roles_get_serialize(
             billing_account_id=billing_account_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -121,7 +117,6 @@ class BillingAccountsRbacApi:
     def v2_billing_accounts_billing_account_id_roles_get_with_http_info(
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -141,8 +136,6 @@ class BillingAccountsRbacApi:
 
         :param billing_account_id: Billing Account ID (required)
         :type billing_account_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -167,7 +160,6 @@ class BillingAccountsRbacApi:
 
         _param = self._v2_billing_accounts_billing_account_id_roles_get_serialize(
             billing_account_id=billing_account_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -194,7 +186,6 @@ class BillingAccountsRbacApi:
     def v2_billing_accounts_billing_account_id_roles_get_without_preload_content(
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -214,8 +205,6 @@ class BillingAccountsRbacApi:
 
         :param billing_account_id: Billing Account ID (required)
         :type billing_account_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -240,7 +229,6 @@ class BillingAccountsRbacApi:
 
         _param = self._v2_billing_accounts_billing_account_id_roles_get_serialize(
             billing_account_id=billing_account_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -262,7 +250,6 @@ class BillingAccountsRbacApi:
     def _v2_billing_accounts_billing_account_id_roles_get_serialize(
         self,
         billing_account_id,
-        body,
         _request_auth,
         _content_type,
         _headers,
@@ -290,8 +277,6 @@ class BillingAccountsRbacApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if body is not None:
-            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -302,19 +287,6 @@ class BillingAccountsRbacApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
@@ -639,7 +611,6 @@ class BillingAccountsRbacApi:
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -661,8 +632,6 @@ class BillingAccountsRbacApi:
         :type billing_account_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -688,7 +657,6 @@ class BillingAccountsRbacApi:
         _param = self._v2_billing_accounts_billing_account_id_roles_role_id_delete_serialize(
             billing_account_id=billing_account_id,
             role_id=role_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -716,7 +684,6 @@ class BillingAccountsRbacApi:
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -738,8 +705,6 @@ class BillingAccountsRbacApi:
         :type billing_account_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -765,7 +730,6 @@ class BillingAccountsRbacApi:
         _param = self._v2_billing_accounts_billing_account_id_roles_role_id_delete_serialize(
             billing_account_id=billing_account_id,
             role_id=role_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -793,7 +757,6 @@ class BillingAccountsRbacApi:
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -815,8 +778,6 @@ class BillingAccountsRbacApi:
         :type billing_account_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -842,7 +803,6 @@ class BillingAccountsRbacApi:
         _param = self._v2_billing_accounts_billing_account_id_roles_role_id_delete_serialize(
             billing_account_id=billing_account_id,
             role_id=role_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -865,7 +825,6 @@ class BillingAccountsRbacApi:
         self,
         billing_account_id,
         role_id,
-        body,
         _request_auth,
         _content_type,
         _headers,
@@ -895,8 +854,6 @@ class BillingAccountsRbacApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if body is not None:
-            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -907,19 +864,6 @@ class BillingAccountsRbacApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
@@ -949,7 +893,6 @@ class BillingAccountsRbacApi:
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -971,8 +914,6 @@ class BillingAccountsRbacApi:
         :type billing_account_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -998,7 +939,6 @@ class BillingAccountsRbacApi:
         _param = self._v2_billing_accounts_billing_account_id_roles_role_id_get_serialize(
             billing_account_id=billing_account_id,
             role_id=role_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1026,7 +966,6 @@ class BillingAccountsRbacApi:
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1048,8 +987,6 @@ class BillingAccountsRbacApi:
         :type billing_account_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1075,7 +1012,6 @@ class BillingAccountsRbacApi:
         _param = self._v2_billing_accounts_billing_account_id_roles_role_id_get_serialize(
             billing_account_id=billing_account_id,
             role_id=role_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1103,7 +1039,6 @@ class BillingAccountsRbacApi:
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1125,8 +1060,6 @@ class BillingAccountsRbacApi:
         :type billing_account_id: str
         :param role_id: Role ID (required)
         :type role_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1152,7 +1085,6 @@ class BillingAccountsRbacApi:
         _param = self._v2_billing_accounts_billing_account_id_roles_role_id_get_serialize(
             billing_account_id=billing_account_id,
             role_id=role_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1175,7 +1107,6 @@ class BillingAccountsRbacApi:
         self,
         billing_account_id,
         role_id,
-        body,
         _request_auth,
         _content_type,
         _headers,
@@ -1205,8 +1136,6 @@ class BillingAccountsRbacApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if body is not None:
-            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -1217,19 +1146,6 @@ class BillingAccountsRbacApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
@@ -1880,7 +1796,6 @@ class BillingAccountsRbacApi:
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
         user_id: Annotated[StrictStr, Field(description="User ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1904,8 +1819,6 @@ class BillingAccountsRbacApi:
         :type role_id: str
         :param user_id: User ID (required)
         :type user_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1932,7 +1845,6 @@ class BillingAccountsRbacApi:
             billing_account_id=billing_account_id,
             role_id=role_id,
             user_id=user_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1961,7 +1873,6 @@ class BillingAccountsRbacApi:
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
         user_id: Annotated[StrictStr, Field(description="User ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1985,8 +1896,6 @@ class BillingAccountsRbacApi:
         :type role_id: str
         :param user_id: User ID (required)
         :type user_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2013,7 +1922,6 @@ class BillingAccountsRbacApi:
             billing_account_id=billing_account_id,
             role_id=role_id,
             user_id=user_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2042,7 +1950,6 @@ class BillingAccountsRbacApi:
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
         role_id: Annotated[StrictStr, Field(description="Role ID")],
         user_id: Annotated[StrictStr, Field(description="User ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2066,8 +1973,6 @@ class BillingAccountsRbacApi:
         :type role_id: str
         :param user_id: User ID (required)
         :type user_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2094,7 +1999,6 @@ class BillingAccountsRbacApi:
             billing_account_id=billing_account_id,
             role_id=role_id,
             user_id=user_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2118,7 +2022,6 @@ class BillingAccountsRbacApi:
         billing_account_id,
         role_id,
         user_id,
-        body,
         _request_auth,
         _content_type,
         _headers,
@@ -2150,8 +2053,6 @@ class BillingAccountsRbacApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if body is not None:
-            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -2162,19 +2063,6 @@ class BillingAccountsRbacApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
@@ -2202,7 +2090,6 @@ class BillingAccountsRbacApi:
     @validate_call
     def v2_billing_permissions_get(
         self,
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2220,8 +2107,6 @@ class BillingAccountsRbacApi:
 
         Get Billing Permissions
 
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2245,7 +2130,6 @@ class BillingAccountsRbacApi:
         """ # noqa: E501
 
         _param = self._v2_billing_permissions_get_serialize(
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2271,7 +2155,6 @@ class BillingAccountsRbacApi:
     @validate_call
     def v2_billing_permissions_get_with_http_info(
         self,
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2289,8 +2172,6 @@ class BillingAccountsRbacApi:
 
         Get Billing Permissions
 
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2314,7 +2195,6 @@ class BillingAccountsRbacApi:
         """ # noqa: E501
 
         _param = self._v2_billing_permissions_get_serialize(
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2340,7 +2220,6 @@ class BillingAccountsRbacApi:
     @validate_call
     def v2_billing_permissions_get_without_preload_content(
         self,
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2358,8 +2237,6 @@ class BillingAccountsRbacApi:
 
         Get Billing Permissions
 
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2383,7 +2260,6 @@ class BillingAccountsRbacApi:
         """ # noqa: E501
 
         _param = self._v2_billing_permissions_get_serialize(
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2404,7 +2280,6 @@ class BillingAccountsRbacApi:
 
     def _v2_billing_permissions_get_serialize(
         self,
-        body,
         _request_auth,
         _content_type,
         _headers,
@@ -2430,8 +2305,6 @@ class BillingAccountsRbacApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if body is not None:
-            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -2442,19 +2315,6 @@ class BillingAccountsRbacApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [

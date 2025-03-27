@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,6 +27,7 @@ class ModelsPipeline(BaseModel):
     """
     ModelsPipeline
     """ # noqa: E501
+    component_tier: Optional[StrictInt] = None
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     enabled: Optional[StrictBool] = None
@@ -35,7 +36,7 @@ class ModelsPipeline(BaseModel):
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "enabled", "id", "input_id", "name", "organization_id", "updated_at"]
+    __properties: ClassVar[List[str]] = ["component_tier", "created_at", "description", "enabled", "id", "input_id", "name", "organization_id", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,6 +89,7 @@ class ModelsPipeline(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "component_tier": obj.get("component_tier"),
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
             "enabled": obj.get("enabled"),

@@ -19,6 +19,7 @@ import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereVa
 import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
 import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 import { FlattenFlatten } from '../models/FlattenFlatten';
+import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { JqJQ } from '../models/JqJQ';
 import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultiplyWithValueMathMultiplyWithValue';
@@ -26,8 +27,11 @@ import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
+import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
 import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
+import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
+import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
@@ -55,6 +59,7 @@ import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeMetrics } from '../models/ModelsPipelineNodeMetrics';
 import { ModelsPipelineNodeMetricsValue } from '../models/ModelsPipelineNodeMetricsValue';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
+import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
@@ -75,6 +80,7 @@ import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
+import { ResourceQuantity } from '../models/ResourceQuantity';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
@@ -96,6 +102,8 @@ import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTran
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
 import { RoutesV2CreateBillingAccountRequest } from '../models/RoutesV2CreateBillingAccountRequest';
 import { RoutesV2CreateBillingAccountRoleRequest } from '../models/RoutesV2CreateBillingAccountRoleRequest';
+import { RoutesV2CreateBillingAccountSubscriptionRequest } from '../models/RoutesV2CreateBillingAccountSubscriptionRequest';
+import { RoutesV2CreateBillingAccountSubscriptionResponse } from '../models/RoutesV2CreateBillingAccountSubscriptionResponse';
 import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
@@ -252,12 +260,6 @@ export interface BillingAccountsApiV2BillingAccountsBillingAccountIdGetRequest {
      * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdGet
      */
     billingAccountId: string
-    /**
-     * 
-     * @type any
-     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdGet
-     */
-    body?: any
 }
 
 export interface BillingAccountsApiV2BillingAccountsBillingAccountIdPatchRequest {
@@ -284,12 +286,6 @@ export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesGetRequ
      * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesGet
      */
     billingAccountId: string
-    /**
-     * 
-     * @type any
-     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesGet
-     */
-    body?: any
 }
 
 export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesPostRequest {
@@ -323,12 +319,6 @@ export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdD
      * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdDelete
      */
     roleId: string
-    /**
-     * 
-     * @type any
-     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdDelete
-     */
-    body?: any
 }
 
 export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest {
@@ -346,12 +336,6 @@ export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdG
      * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdGet
      */
     roleId: string
-    /**
-     * 
-     * @type any
-     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdGet
-     */
-    body?: any
 }
 
 export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdPatchRequest {
@@ -422,22 +406,9 @@ export interface BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdU
      * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
      */
     userId: string
-    /**
-     * 
-     * @type any
-     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
-     */
-    body?: any
 }
 
 export interface BillingAccountsApiV2BillingAccountsGetRequest {
-    /**
-     * Billing Account ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof BillingAccountsApiv2BillingAccountsGet
-     */
-    billingAccountId: string
     /**
      * Limit
      * Defaults to: undefined
@@ -464,12 +435,6 @@ export interface BillingAccountsApiV2BillingAccountsPostRequest {
 }
 
 export interface BillingAccountsApiV2BillingPermissionsGetRequest {
-    /**
-     * 
-     * @type any
-     * @memberof BillingAccountsApiv2BillingPermissionsGet
-     */
-    body?: any
 }
 
 export class ObjectBillingAccountsApi {
@@ -503,7 +468,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdGetWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
-        return this.api.v2BillingAccountsBillingAccountIdGetWithHttpInfo(param.billingAccountId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdGetWithHttpInfo(param.billingAccountId,  options).toPromise();
     }
 
     /**
@@ -512,7 +477,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdGet(param: BillingAccountsApiV2BillingAccountsBillingAccountIdGetRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
-        return this.api.v2BillingAccountsBillingAccountIdGet(param.billingAccountId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdGet(param.billingAccountId,  options).toPromise();
     }
 
     /**
@@ -539,7 +504,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountRole>>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(param.billingAccountId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(param.billingAccountId,  options).toPromise();
     }
 
     /**
@@ -548,7 +513,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesGet(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesGetRequest, options?: ConfigurationOptions): Promise<Array<ModelsBillingAccountRole>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesGet(param.billingAccountId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesGet(param.billingAccountId,  options).toPromise();
     }
 
     /**
@@ -575,7 +540,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(param.billingAccountId, param.roleId,  options).toPromise();
     }
 
     /**
@@ -584,7 +549,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(param.billingAccountId, param.roleId,  options).toPromise();
     }
 
     /**
@@ -593,7 +558,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(param.billingAccountId, param.roleId,  options).toPromise();
     }
 
     /**
@@ -602,7 +567,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesRoleIdGet(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGet(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGet(param.billingAccountId, param.roleId,  options).toPromise();
     }
 
     /**
@@ -647,7 +612,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param.billingAccountId, param.roleId, param.userId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param.billingAccountId, param.roleId, param.userId,  options).toPromise();
     }
 
     /**
@@ -656,7 +621,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(param: BillingAccountsApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(param.billingAccountId, param.roleId, param.userId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(param.billingAccountId, param.roleId, param.userId,  options).toPromise();
     }
 
     /**
@@ -664,8 +629,8 @@ export class ObjectBillingAccountsApi {
      * List Billing Accounts
      * @param param the request object
      */
-    public v2BillingAccountsGetWithHttpInfo(param: BillingAccountsApiV2BillingAccountsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
-        return this.api.v2BillingAccountsGetWithHttpInfo(param.billingAccountId, param.limit, param.offset,  options).toPromise();
+    public v2BillingAccountsGetWithHttpInfo(param: BillingAccountsApiV2BillingAccountsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountList>> {
+        return this.api.v2BillingAccountsGetWithHttpInfo(param.limit, param.offset,  options).toPromise();
     }
 
     /**
@@ -673,8 +638,8 @@ export class ObjectBillingAccountsApi {
      * List Billing Accounts
      * @param param the request object
      */
-    public v2BillingAccountsGet(param: BillingAccountsApiV2BillingAccountsGetRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccount> {
-        return this.api.v2BillingAccountsGet(param.billingAccountId, param.limit, param.offset,  options).toPromise();
+    public v2BillingAccountsGet(param: BillingAccountsApiV2BillingAccountsGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsBillingAccountList> {
+        return this.api.v2BillingAccountsGet(param.limit, param.offset,  options).toPromise();
     }
 
     /**
@@ -701,7 +666,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingPermissionsGetWithHttpInfo(param: BillingAccountsApiV2BillingPermissionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountPermission>>> {
-        return this.api.v2BillingPermissionsGetWithHttpInfo(param.body,  options).toPromise();
+        return this.api.v2BillingPermissionsGetWithHttpInfo( options).toPromise();
     }
 
     /**
@@ -710,7 +675,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingPermissionsGet(param: BillingAccountsApiV2BillingPermissionsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<ModelsBillingAccountPermission>> {
-        return this.api.v2BillingPermissionsGet(param.body,  options).toPromise();
+        return this.api.v2BillingPermissionsGet( options).toPromise();
     }
 
 }
@@ -726,12 +691,6 @@ export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesGet
      * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesGet
      */
     billingAccountId: string
-    /**
-     * 
-     * @type any
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesGet
-     */
-    body?: any
 }
 
 export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesPostRequest {
@@ -765,12 +724,6 @@ export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRol
      * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdDelete
      */
     roleId: string
-    /**
-     * 
-     * @type any
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdDelete
-     */
-    body?: any
 }
 
 export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest {
@@ -788,12 +741,6 @@ export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRol
      * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdGet
      */
     roleId: string
-    /**
-     * 
-     * @type any
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdGet
-     */
-    body?: any
 }
 
 export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdPatchRequest {
@@ -864,21 +811,9 @@ export interface BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRol
      * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
      */
     userId: string
-    /**
-     * 
-     * @type any
-     * @memberof BillingAccountsRbacApiv2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete
-     */
-    body?: any
 }
 
 export interface BillingAccountsRbacApiV2BillingPermissionsGetRequest {
-    /**
-     * 
-     * @type any
-     * @memberof BillingAccountsRbacApiv2BillingPermissionsGet
-     */
-    body?: any
 }
 
 export class ObjectBillingAccountsRbacApi {
@@ -894,7 +829,7 @@ export class ObjectBillingAccountsRbacApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountRole>>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(param.billingAccountId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(param.billingAccountId,  options).toPromise();
     }
 
     /**
@@ -903,7 +838,7 @@ export class ObjectBillingAccountsRbacApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesGet(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesGetRequest, options?: ConfigurationOptions): Promise<Array<ModelsBillingAccountRole>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesGet(param.billingAccountId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesGet(param.billingAccountId,  options).toPromise();
     }
 
     /**
@@ -930,7 +865,7 @@ export class ObjectBillingAccountsRbacApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(param.billingAccountId, param.roleId,  options).toPromise();
     }
 
     /**
@@ -939,7 +874,7 @@ export class ObjectBillingAccountsRbacApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(param.billingAccountId, param.roleId,  options).toPromise();
     }
 
     /**
@@ -948,7 +883,7 @@ export class ObjectBillingAccountsRbacApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(param.billingAccountId, param.roleId,  options).toPromise();
     }
 
     /**
@@ -957,7 +892,7 @@ export class ObjectBillingAccountsRbacApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesRoleIdGet(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<ModelsBillingAccountRole> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGet(param.billingAccountId, param.roleId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGet(param.billingAccountId, param.roleId,  options).toPromise();
     }
 
     /**
@@ -1002,7 +937,7 @@ export class ObjectBillingAccountsRbacApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param.billingAccountId, param.roleId, param.userId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param.billingAccountId, param.roleId, param.userId,  options).toPromise();
     }
 
     /**
@@ -1011,7 +946,7 @@ export class ObjectBillingAccountsRbacApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(param: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(param.billingAccountId, param.roleId, param.userId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(param.billingAccountId, param.roleId, param.userId,  options).toPromise();
     }
 
     /**
@@ -1020,7 +955,7 @@ export class ObjectBillingAccountsRbacApi {
      * @param param the request object
      */
     public v2BillingPermissionsGetWithHttpInfo(param: BillingAccountsRbacApiV2BillingPermissionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountPermission>>> {
-        return this.api.v2BillingPermissionsGetWithHttpInfo(param.body,  options).toPromise();
+        return this.api.v2BillingPermissionsGetWithHttpInfo( options).toPromise();
     }
 
     /**
@@ -1029,7 +964,144 @@ export class ObjectBillingAccountsRbacApi {
      * @param param the request object
      */
     public v2BillingPermissionsGet(param: BillingAccountsRbacApiV2BillingPermissionsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<ModelsBillingAccountPermission>> {
-        return this.api.v2BillingPermissionsGet(param.body,  options).toPromise();
+        return this.api.v2BillingPermissionsGet( options).toPromise();
+    }
+
+}
+
+import { ObservableBillingProductsApi } from "./ObservableAPI";
+import { BillingProductsApiRequestFactory, BillingProductsApiResponseProcessor} from "../apis/BillingProductsApi";
+
+export interface BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionDeleteRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingProductsApiv2BillingAccountsBillingAccountIdSubscriptionDelete
+     */
+    billingAccountId: string
+}
+
+export interface BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionGetRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingProductsApiv2BillingAccountsBillingAccountIdSubscriptionGet
+     */
+    billingAccountId: string
+}
+
+export interface BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionPostRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof BillingProductsApiv2BillingAccountsBillingAccountIdSubscriptionPost
+     */
+    billingAccountId: string
+    /**
+     * Request body for creating a billing subscription
+     * @type RoutesV2CreateBillingAccountSubscriptionRequest
+     * @memberof BillingProductsApiv2BillingAccountsBillingAccountIdSubscriptionPost
+     */
+    routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest
+}
+
+export interface BillingProductsApiV2BillingProductsGetRequest {
+    /**
+     * Limit
+     * Defaults to: undefined
+     * @type number
+     * @memberof BillingProductsApiv2BillingProductsGet
+     */
+    limit?: number
+    /**
+     * Offset
+     * Defaults to: undefined
+     * @type number
+     * @memberof BillingProductsApiv2BillingProductsGet
+     */
+    offset?: number
+}
+
+export class ObjectBillingProductsApi {
+    private api: ObservableBillingProductsApi
+
+    public constructor(configuration: Configuration, requestFactory?: BillingProductsApiRequestFactory, responseProcessor?: BillingProductsApiResponseProcessor) {
+        this.api = new ObservableBillingProductsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Cancel Billing Account Subscription
+     * Cancel Billing Account Subscription
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionDeleteWithHttpInfo(param: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.v2BillingAccountsBillingAccountIdSubscriptionDeleteWithHttpInfo(param.billingAccountId,  options).toPromise();
+    }
+
+    /**
+     * Cancel Billing Account Subscription
+     * Cancel Billing Account Subscription
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionDelete(param: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionDeleteRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.v2BillingAccountsBillingAccountIdSubscriptionDelete(param.billingAccountId,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Subscription
+     * Get Billing Account Subscription
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionGetWithHttpInfo(param: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingProduct>> {
+        return this.api.v2BillingAccountsBillingAccountIdSubscriptionGetWithHttpInfo(param.billingAccountId,  options).toPromise();
+    }
+
+    /**
+     * Get Billing Account Subscription
+     * Get Billing Account Subscription
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionGet(param: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionGetRequest, options?: ConfigurationOptions): Promise<ModelsBillingProduct> {
+        return this.api.v2BillingAccountsBillingAccountIdSubscriptionGet(param.billingAccountId,  options).toPromise();
+    }
+
+    /**
+     * Create Billing Account Subscription
+     * Create Billing Account Subscription
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionPostWithHttpInfo(param: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse>> {
+        return this.api.v2BillingAccountsBillingAccountIdSubscriptionPostWithHttpInfo(param.billingAccountId, param.routesV2CreateBillingAccountSubscriptionRequest,  options).toPromise();
+    }
+
+    /**
+     * Create Billing Account Subscription
+     * Create Billing Account Subscription
+     * @param param the request object
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionPost(param: BillingProductsApiV2BillingAccountsBillingAccountIdSubscriptionPostRequest, options?: ConfigurationOptions): Promise<RoutesV2CreateBillingAccountSubscriptionResponse> {
+        return this.api.v2BillingAccountsBillingAccountIdSubscriptionPost(param.billingAccountId, param.routesV2CreateBillingAccountSubscriptionRequest,  options).toPromise();
+    }
+
+    /**
+     * List Billing Products
+     * List Billing Products
+     * @param param the request object
+     */
+    public v2BillingProductsGetWithHttpInfo(param: BillingProductsApiV2BillingProductsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingProductList>> {
+        return this.api.v2BillingProductsGetWithHttpInfo(param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List Billing Products
+     * List Billing Products
+     * @param param the request object
+     */
+    public v2BillingProductsGet(param: BillingProductsApiV2BillingProductsGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsBillingProductList> {
+        return this.api.v2BillingProductsGet(param.limit, param.offset,  options).toPromise();
     }
 
 }

@@ -56,6 +56,8 @@ type APIClient struct {
 
 	BillingAccountsRbacAPI *BillingAccountsRbacAPIService
 
+	BillingProductsAPI *BillingProductsAPIService
+
 	ConditionsAPI *ConditionsAPIService
 
 	DataAPI *DataAPIService
@@ -118,6 +120,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.AuthenticationAPI = (*AuthenticationAPIService)(&c.common)
 	c.BillingAccountsAPI = (*BillingAccountsAPIService)(&c.common)
 	c.BillingAccountsRbacAPI = (*BillingAccountsRbacAPIService)(&c.common)
+	c.BillingProductsAPI = (*BillingProductsAPIService)(&c.common)
 	c.ConditionsAPI = (*ConditionsAPIService)(&c.common)
 	c.DataAPI = (*DataAPIService)(&c.common)
 	c.InputsAPI = (*InputsAPIService)(&c.common)

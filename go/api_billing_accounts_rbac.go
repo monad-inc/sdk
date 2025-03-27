@@ -28,12 +28,6 @@ type ApiV2BillingAccountsBillingAccountIdRolesGetRequest struct {
 	ctx context.Context
 	ApiService *BillingAccountsRbacAPIService
 	billingAccountId string
-	body *map[string]interface{}
-}
-
-func (r ApiV2BillingAccountsBillingAccountIdRolesGetRequest) Body(body map[string]interface{}) ApiV2BillingAccountsBillingAccountIdRolesGetRequest {
-	r.body = &body
-	return r
 }
 
 func (r ApiV2BillingAccountsBillingAccountIdRolesGetRequest) Execute() ([]ModelsBillingAccountRole, *http.Response, error) {
@@ -80,7 +74,7 @@ func (a *BillingAccountsRbacAPIService) V2BillingAccountsBillingAccountIdRolesGe
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -96,8 +90,6 @@ func (a *BillingAccountsRbacAPIService) V2BillingAccountsBillingAccountIdRolesGe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -325,12 +317,6 @@ type ApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest struct {
 	ApiService *BillingAccountsRbacAPIService
 	billingAccountId string
 	roleId string
-	body *map[string]interface{}
-}
-
-func (r ApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest) Body(body map[string]interface{}) ApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest {
-	r.body = &body
-	return r
 }
 
 func (r ApiV2BillingAccountsBillingAccountIdRolesRoleIdDeleteRequest) Execute() (string, *http.Response, error) {
@@ -380,7 +366,7 @@ func (a *BillingAccountsRbacAPIService) V2BillingAccountsBillingAccountIdRolesRo
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -396,8 +382,6 @@ func (a *BillingAccountsRbacAPIService) V2BillingAccountsBillingAccountIdRolesRo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -475,12 +459,6 @@ type ApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest struct {
 	ApiService *BillingAccountsRbacAPIService
 	billingAccountId string
 	roleId string
-	body *map[string]interface{}
-}
-
-func (r ApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest) Body(body map[string]interface{}) ApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest {
-	r.body = &body
-	return r
 }
 
 func (r ApiV2BillingAccountsBillingAccountIdRolesRoleIdGetRequest) Execute() (*ModelsBillingAccountRole, *http.Response, error) {
@@ -530,7 +508,7 @@ func (a *BillingAccountsRbacAPIService) V2BillingAccountsBillingAccountIdRolesRo
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -546,8 +524,6 @@ func (a *BillingAccountsRbacAPIService) V2BillingAccountsBillingAccountIdRolesRo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -934,12 +910,6 @@ type ApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest str
 	billingAccountId string
 	roleId string
 	userId string
-	body *map[string]interface{}
-}
-
-func (r ApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest) Body(body map[string]interface{}) ApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest {
-	r.body = &body
-	return r
 }
 
 func (r ApiV2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteRequest) Execute() (string, *http.Response, error) {
@@ -992,7 +962,7 @@ func (a *BillingAccountsRbacAPIService) V2BillingAccountsBillingAccountIdRolesRo
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -1008,8 +978,6 @@ func (a *BillingAccountsRbacAPIService) V2BillingAccountsBillingAccountIdRolesRo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1085,12 +1053,6 @@ func (a *BillingAccountsRbacAPIService) V2BillingAccountsBillingAccountIdRolesRo
 type ApiV2BillingPermissionsGetRequest struct {
 	ctx context.Context
 	ApiService *BillingAccountsRbacAPIService
-	body *map[string]interface{}
-}
-
-func (r ApiV2BillingPermissionsGetRequest) Body(body map[string]interface{}) ApiV2BillingPermissionsGetRequest {
-	r.body = &body
-	return r
 }
 
 func (r ApiV2BillingPermissionsGetRequest) Execute() ([]ModelsBillingAccountPermission, *http.Response, error) {
@@ -1134,7 +1096,7 @@ func (a *BillingAccountsRbacAPIService) V2BillingPermissionsGetExecute(r ApiV2Bi
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -1150,8 +1112,6 @@ func (a *BillingAccountsRbacAPIService) V2BillingPermissionsGetExecute(r ApiV2Bi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

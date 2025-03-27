@@ -93,7 +93,7 @@ null (empty response body)
 
 <a id="v2BillingAccountsBillingAccountIdGet"></a>
 # **v2BillingAccountsBillingAccountIdGet**
-> ModelsBillingAccount v2BillingAccountsBillingAccountIdGet(billingAccountId, body)
+> ModelsBillingAccount v2BillingAccountsBillingAccountIdGet(billingAccountId)
 
 Get Billing Account
 
@@ -122,9 +122,8 @@ public class Example {
 
     BillingAccountsApi apiInstance = new BillingAccountsApi(defaultClient);
     String billingAccountId = "billingAccountId_example"; // String | Billing Account ID
-    Object body = null; // Object | 
     try {
-      ModelsBillingAccount result = apiInstance.v2BillingAccountsBillingAccountIdGet(billingAccountId, body);
+      ModelsBillingAccount result = apiInstance.v2BillingAccountsBillingAccountIdGet(billingAccountId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingAccountsApi#v2BillingAccountsBillingAccountIdGet");
@@ -142,7 +141,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **billingAccountId** | **String**| Billing Account ID | |
-| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -154,7 +152,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -239,7 +237,7 @@ public class Example {
 
 <a id="v2BillingAccountsBillingAccountIdRolesGet"></a>
 # **v2BillingAccountsBillingAccountIdRolesGet**
-> List&lt;ModelsBillingAccountRole&gt; v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, body)
+> List&lt;ModelsBillingAccountRole&gt; v2BillingAccountsBillingAccountIdRolesGet(billingAccountId)
 
 Get Billing Account Roles
 
@@ -268,9 +266,8 @@ public class Example {
 
     BillingAccountsApi apiInstance = new BillingAccountsApi(defaultClient);
     String billingAccountId = "billingAccountId_example"; // String | Billing Account ID
-    Object body = null; // Object | 
     try {
-      List<ModelsBillingAccountRole> result = apiInstance.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, body);
+      List<ModelsBillingAccountRole> result = apiInstance.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingAccountsApi#v2BillingAccountsBillingAccountIdRolesGet");
@@ -288,7 +285,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **billingAccountId** | **String**| Billing Account ID | |
-| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -300,7 +296,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -385,7 +381,7 @@ public class Example {
 
 <a id="v2BillingAccountsBillingAccountIdRolesRoleIdDelete"></a>
 # **v2BillingAccountsBillingAccountIdRolesRoleIdDelete**
-> String v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, body)
+> String v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId)
 
 Delete Billing Account Role
 
@@ -415,9 +411,8 @@ public class Example {
     BillingAccountsApi apiInstance = new BillingAccountsApi(defaultClient);
     String billingAccountId = "billingAccountId_example"; // String | Billing Account ID
     String roleId = "roleId_example"; // String | Role ID
-    Object body = null; // Object | 
     try {
-      String result = apiInstance.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, body);
+      String result = apiInstance.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingAccountsApi#v2BillingAccountsBillingAccountIdRolesRoleIdDelete");
@@ -436,7 +431,6 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **billingAccountId** | **String**| Billing Account ID | |
 | **roleId** | **String**| Role ID | |
-| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -448,7 +442,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -460,7 +454,7 @@ public class Example {
 
 <a id="v2BillingAccountsBillingAccountIdRolesRoleIdGet"></a>
 # **v2BillingAccountsBillingAccountIdRolesRoleIdGet**
-> ModelsBillingAccountRole v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, body)
+> ModelsBillingAccountRole v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId)
 
 Get Billing Account Role
 
@@ -490,9 +484,8 @@ public class Example {
     BillingAccountsApi apiInstance = new BillingAccountsApi(defaultClient);
     String billingAccountId = "billingAccountId_example"; // String | Billing Account ID
     String roleId = "roleId_example"; // String | Role ID
-    Object body = null; // Object | 
     try {
-      ModelsBillingAccountRole result = apiInstance.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, body);
+      ModelsBillingAccountRole result = apiInstance.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingAccountsApi#v2BillingAccountsBillingAccountIdRolesRoleIdGet");
@@ -511,7 +504,6 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **billingAccountId** | **String**| Billing Account ID | |
 | **roleId** | **String**| Role ID | |
-| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -523,7 +515,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -685,7 +677,7 @@ public class Example {
 
 <a id="v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete"></a>
 # **v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete**
-> String v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, body)
+> String v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId)
 
 Delete Billing Account User Role
 
@@ -716,9 +708,8 @@ public class Example {
     String billingAccountId = "billingAccountId_example"; // String | Billing Account ID
     String roleId = "roleId_example"; // String | Role ID
     String userId = "userId_example"; // String | User ID
-    Object body = null; // Object | 
     try {
-      String result = apiInstance.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, body);
+      String result = apiInstance.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingAccountsApi#v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete");
@@ -738,7 +729,6 @@ public class Example {
 | **billingAccountId** | **String**| Billing Account ID | |
 | **roleId** | **String**| Role ID | |
 | **userId** | **String**| User ID | |
-| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -750,7 +740,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -762,7 +752,7 @@ public class Example {
 
 <a id="v2BillingAccountsGet"></a>
 # **v2BillingAccountsGet**
-> ModelsBillingAccount v2BillingAccountsGet(billingAccountId, limit, offset)
+> ModelsBillingAccountList v2BillingAccountsGet(limit, offset)
 
 List Billing Accounts
 
@@ -790,11 +780,10 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     BillingAccountsApi apiInstance = new BillingAccountsApi(defaultClient);
-    String billingAccountId = "billingAccountId_example"; // String | Billing Account ID
     Integer limit = 56; // Integer | Limit
     Integer offset = 56; // Integer | Offset
     try {
-      ModelsBillingAccount result = apiInstance.v2BillingAccountsGet(billingAccountId, limit, offset);
+      ModelsBillingAccountList result = apiInstance.v2BillingAccountsGet(limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingAccountsApi#v2BillingAccountsGet");
@@ -811,13 +800,12 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **billingAccountId** | **String**| Billing Account ID | |
 | **limit** | **Integer**| Limit | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
 
 ### Return type
 
-[**ModelsBillingAccount**](ModelsBillingAccount.md)
+[**ModelsBillingAccountList**](ModelsBillingAccountList.md)
 
 ### Authorization
 
@@ -908,7 +896,7 @@ public class Example {
 
 <a id="v2BillingPermissionsGet"></a>
 # **v2BillingPermissionsGet**
-> List&lt;ModelsBillingAccountPermission&gt; v2BillingPermissionsGet(body)
+> List&lt;ModelsBillingAccountPermission&gt; v2BillingPermissionsGet()
 
 Get Billing Permissions
 
@@ -936,9 +924,8 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     BillingAccountsApi apiInstance = new BillingAccountsApi(defaultClient);
-    Object body = null; // Object | 
     try {
-      List<ModelsBillingAccountPermission> result = apiInstance.v2BillingPermissionsGet(body);
+      List<ModelsBillingAccountPermission> result = apiInstance.v2BillingPermissionsGet();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingAccountsApi#v2BillingPermissionsGet");
@@ -952,10 +939,7 @@ public class Example {
 ```
 
 ### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -967,7 +951,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

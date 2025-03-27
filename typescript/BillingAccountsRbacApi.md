@@ -32,8 +32,6 @@ const apiInstance = new BillingAccountsRbacApi(configuration);
 const request: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesGetRequest = {
     // Billing Account ID
   billingAccountId: "billing_account_id_example",
-  
-  body: {},
 };
 
 const data = await apiInstance.v2BillingAccountsBillingAccountIdRolesGet(request);
@@ -45,7 +43,6 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
 
 
@@ -59,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -156,8 +153,6 @@ const request: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleI
   billingAccountId: "billing_account_id_example",
     // Role ID
   roleId: "role_id_example",
-  
-  body: {},
 };
 
 const data = await apiInstance.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(request);
@@ -169,7 +164,6 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
  **roleId** | [**string**] | Role ID | defaults to undefined
 
@@ -184,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -217,8 +211,6 @@ const request: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleI
   billingAccountId: "billing_account_id_example",
     // Role ID
   roleId: "role_id_example",
-  
-  body: {},
 };
 
 const data = await apiInstance.v2BillingAccountsBillingAccountIdRolesRoleIdGet(request);
@@ -230,7 +222,6 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
  **roleId** | [**string**] | Role ID | defaults to undefined
 
@@ -245,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -410,8 +401,6 @@ const request: BillingAccountsRbacApiV2BillingAccountsBillingAccountIdRolesRoleI
   roleId: "role_id_example",
     // User ID
   userId: "user_id_example",
-  
-  body: {},
 };
 
 const data = await apiInstance.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(request);
@@ -423,7 +412,6 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
  **roleId** | [**string**] | Role ID | defaults to undefined
  **userId** | [**string**] | User ID | defaults to undefined
@@ -439,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -462,15 +450,11 @@ Get Billing Permissions
 
 ```typescript
 import { createConfiguration, BillingAccountsRbacApi } from '';
-import type { BillingAccountsRbacApiV2BillingPermissionsGetRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new BillingAccountsRbacApi(configuration);
 
-const request: BillingAccountsRbacApiV2BillingPermissionsGetRequest = {
-  
-  body: {},
-};
+const request = {};
 
 const data = await apiInstance.v2BillingPermissionsGet(request);
 console.log('API called successfully. Returned data:', data);
@@ -478,10 +462,7 @@ console.log('API called successfully. Returned data:', data);
 
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -494,7 +475,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

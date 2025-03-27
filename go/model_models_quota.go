@@ -20,6 +20,8 @@ var _ MappedNullable = &ModelsQuota{}
 
 // ModelsQuota struct for ModelsQuota
 type ModelsQuota struct {
+	Action *string `json:"action,omitempty"`
+	BillingAccountId *string `json:"billing_account_id,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	CurrentUsage *int32 `json:"current_usage,omitempty"`
 	CurrentUsageUpdatedAt *string `json:"current_usage_updated_at,omitempty"`
@@ -48,6 +50,70 @@ func NewModelsQuota() *ModelsQuota {
 func NewModelsQuotaWithDefaults() *ModelsQuota {
 	this := ModelsQuota{}
 	return &this
+}
+
+// GetAction returns the Action field value if set, zero value otherwise.
+func (o *ModelsQuota) GetAction() string {
+	if o == nil || IsNil(o.Action) {
+		var ret string
+		return ret
+	}
+	return *o.Action
+}
+
+// GetActionOk returns a tuple with the Action field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsQuota) GetActionOk() (*string, bool) {
+	if o == nil || IsNil(o.Action) {
+		return nil, false
+	}
+	return o.Action, true
+}
+
+// HasAction returns a boolean if a field has been set.
+func (o *ModelsQuota) HasAction() bool {
+	if o != nil && !IsNil(o.Action) {
+		return true
+	}
+
+	return false
+}
+
+// SetAction gets a reference to the given string and assigns it to the Action field.
+func (o *ModelsQuota) SetAction(v string) {
+	o.Action = &v
+}
+
+// GetBillingAccountId returns the BillingAccountId field value if set, zero value otherwise.
+func (o *ModelsQuota) GetBillingAccountId() string {
+	if o == nil || IsNil(o.BillingAccountId) {
+		var ret string
+		return ret
+	}
+	return *o.BillingAccountId
+}
+
+// GetBillingAccountIdOk returns a tuple with the BillingAccountId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsQuota) GetBillingAccountIdOk() (*string, bool) {
+	if o == nil || IsNil(o.BillingAccountId) {
+		return nil, false
+	}
+	return o.BillingAccountId, true
+}
+
+// HasBillingAccountId returns a boolean if a field has been set.
+func (o *ModelsQuota) HasBillingAccountId() bool {
+	if o != nil && !IsNil(o.BillingAccountId) {
+		return true
+	}
+
+	return false
+}
+
+// SetBillingAccountId gets a reference to the given string and assigns it to the BillingAccountId field.
+func (o *ModelsQuota) SetBillingAccountId(v string) {
+	o.BillingAccountId = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -412,6 +478,12 @@ func (o ModelsQuota) MarshalJSON() ([]byte, error) {
 
 func (o ModelsQuota) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Action) {
+		toSerialize["action"] = o.Action
+	}
+	if !IsNil(o.BillingAccountId) {
+		toSerialize["billing_account_id"] = o.BillingAccountId
+	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
 	}

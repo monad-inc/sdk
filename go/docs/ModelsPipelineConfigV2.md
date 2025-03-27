@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BillingAccountId** | Pointer to **string** |  | [optional] 
+**ComponentTier** | Pointer to **int32** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Edges** | Pointer to [**[]ModelsPipelineEdge**](ModelsPipelineEdge.md) |  | [optional] 
@@ -13,6 +15,7 @@ Name | Type | Description | Notes
 **Nodes** | Pointer to [**[]ModelsPipelineNode**](ModelsPipelineNode.md) |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **OrganizationName** | Pointer to **string** |  | [optional] 
+**RetentionPolicy** | Pointer to [**ModelsPipelineRetentionPolicy**](ModelsPipelineRetentionPolicy.md) |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -33,6 +36,56 @@ will change when the set of required properties is changed
 NewModelsPipelineConfigV2WithDefaults instantiates a new ModelsPipelineConfigV2 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBillingAccountId
+
+`func (o *ModelsPipelineConfigV2) GetBillingAccountId() string`
+
+GetBillingAccountId returns the BillingAccountId field if non-nil, zero value otherwise.
+
+### GetBillingAccountIdOk
+
+`func (o *ModelsPipelineConfigV2) GetBillingAccountIdOk() (*string, bool)`
+
+GetBillingAccountIdOk returns a tuple with the BillingAccountId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillingAccountId
+
+`func (o *ModelsPipelineConfigV2) SetBillingAccountId(v string)`
+
+SetBillingAccountId sets BillingAccountId field to given value.
+
+### HasBillingAccountId
+
+`func (o *ModelsPipelineConfigV2) HasBillingAccountId() bool`
+
+HasBillingAccountId returns a boolean if a field has been set.
+
+### GetComponentTier
+
+`func (o *ModelsPipelineConfigV2) GetComponentTier() int32`
+
+GetComponentTier returns the ComponentTier field if non-nil, zero value otherwise.
+
+### GetComponentTierOk
+
+`func (o *ModelsPipelineConfigV2) GetComponentTierOk() (*int32, bool)`
+
+GetComponentTierOk returns a tuple with the ComponentTier field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComponentTier
+
+`func (o *ModelsPipelineConfigV2) SetComponentTier(v int32)`
+
+SetComponentTier sets ComponentTier field to given value.
+
+### HasComponentTier
+
+`func (o *ModelsPipelineConfigV2) HasComponentTier() bool`
+
+HasComponentTier returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -258,6 +311,31 @@ SetOrganizationName sets OrganizationName field to given value.
 `func (o *ModelsPipelineConfigV2) HasOrganizationName() bool`
 
 HasOrganizationName returns a boolean if a field has been set.
+
+### GetRetentionPolicy
+
+`func (o *ModelsPipelineConfigV2) GetRetentionPolicy() ModelsPipelineRetentionPolicy`
+
+GetRetentionPolicy returns the RetentionPolicy field if non-nil, zero value otherwise.
+
+### GetRetentionPolicyOk
+
+`func (o *ModelsPipelineConfigV2) GetRetentionPolicyOk() (*ModelsPipelineRetentionPolicy, bool)`
+
+GetRetentionPolicyOk returns a tuple with the RetentionPolicy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRetentionPolicy
+
+`func (o *ModelsPipelineConfigV2) SetRetentionPolicy(v ModelsPipelineRetentionPolicy)`
+
+SetRetentionPolicy sets RetentionPolicy field to given value.
+
+### HasRetentionPolicy
+
+`func (o *ModelsPipelineConfigV2) HasRetentionPolicy() bool`
+
+HasRetentionPolicy returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

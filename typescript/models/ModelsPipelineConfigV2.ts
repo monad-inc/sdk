@@ -12,9 +12,12 @@
 
 import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
 import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
+import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineConfigV2 {
+    'billingAccountId'?: string;
+    'componentTier'?: number;
     'createdAt'?: string;
     'description'?: string;
     'edges'?: Array<ModelsPipelineEdge>;
@@ -24,6 +27,7 @@ export class ModelsPipelineConfigV2 {
     'nodes'?: Array<ModelsPipelineNode>;
     'organizationId'?: string;
     'organizationName'?: string;
+    'retentionPolicy'?: ModelsPipelineRetentionPolicy;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -31,6 +35,18 @@ export class ModelsPipelineConfigV2 {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "billingAccountId",
+            "baseName": "billingAccountId",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "componentTier",
+            "baseName": "component_tier",
+            "type": "number",
+            "format": ""
+        },
         {
             "name": "createdAt",
             "baseName": "createdAt",
@@ -83,6 +99,12 @@ export class ModelsPipelineConfigV2 {
             "name": "organizationName",
             "baseName": "organizationName",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "retentionPolicy",
+            "baseName": "retention_policy",
+            "type": "ModelsPipelineRetentionPolicy",
             "format": ""
         },
         {

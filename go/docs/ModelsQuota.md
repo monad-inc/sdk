@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Action** | Pointer to **string** |  | [optional] 
+**BillingAccountId** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **CurrentUsage** | Pointer to **int32** |  | [optional] 
 **CurrentUsageUpdatedAt** | Pointer to **string** |  | [optional] 
@@ -34,6 +36,56 @@ will change when the set of required properties is changed
 NewModelsQuotaWithDefaults instantiates a new ModelsQuota object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAction
+
+`func (o *ModelsQuota) GetAction() string`
+
+GetAction returns the Action field if non-nil, zero value otherwise.
+
+### GetActionOk
+
+`func (o *ModelsQuota) GetActionOk() (*string, bool)`
+
+GetActionOk returns a tuple with the Action field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAction
+
+`func (o *ModelsQuota) SetAction(v string)`
+
+SetAction sets Action field to given value.
+
+### HasAction
+
+`func (o *ModelsQuota) HasAction() bool`
+
+HasAction returns a boolean if a field has been set.
+
+### GetBillingAccountId
+
+`func (o *ModelsQuota) GetBillingAccountId() string`
+
+GetBillingAccountId returns the BillingAccountId field if non-nil, zero value otherwise.
+
+### GetBillingAccountIdOk
+
+`func (o *ModelsQuota) GetBillingAccountIdOk() (*string, bool)`
+
+GetBillingAccountIdOk returns a tuple with the BillingAccountId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillingAccountId
+
+`func (o *ModelsQuota) SetBillingAccountId(v string)`
+
+SetBillingAccountId sets BillingAccountId field to given value.
+
+### HasBillingAccountId
+
+`func (o *ModelsQuota) HasBillingAccountId() bool`
+
+HasBillingAccountId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

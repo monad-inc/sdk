@@ -20,6 +20,7 @@ var _ MappedNullable = &ModelsPipeline{}
 
 // ModelsPipeline struct for ModelsPipeline
 type ModelsPipeline struct {
+	ComponentTier *int32 `json:"component_tier,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
@@ -45,6 +46,38 @@ func NewModelsPipeline() *ModelsPipeline {
 func NewModelsPipelineWithDefaults() *ModelsPipeline {
 	this := ModelsPipeline{}
 	return &this
+}
+
+// GetComponentTier returns the ComponentTier field value if set, zero value otherwise.
+func (o *ModelsPipeline) GetComponentTier() int32 {
+	if o == nil || IsNil(o.ComponentTier) {
+		var ret int32
+		return ret
+	}
+	return *o.ComponentTier
+}
+
+// GetComponentTierOk returns a tuple with the ComponentTier field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipeline) GetComponentTierOk() (*int32, bool) {
+	if o == nil || IsNil(o.ComponentTier) {
+		return nil, false
+	}
+	return o.ComponentTier, true
+}
+
+// HasComponentTier returns a boolean if a field has been set.
+func (o *ModelsPipeline) HasComponentTier() bool {
+	if o != nil && !IsNil(o.ComponentTier) {
+		return true
+	}
+
+	return false
+}
+
+// SetComponentTier gets a reference to the given int32 and assigns it to the ComponentTier field.
+func (o *ModelsPipeline) SetComponentTier(v int32) {
+	o.ComponentTier = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -313,6 +346,9 @@ func (o ModelsPipeline) MarshalJSON() ([]byte, error) {
 
 func (o ModelsPipeline) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ComponentTier) {
+		toSerialize["component_tier"] = o.ComponentTier
+	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
 	}

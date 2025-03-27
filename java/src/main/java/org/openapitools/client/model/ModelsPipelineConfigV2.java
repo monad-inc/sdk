@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.ModelsPipelineEdge;
 import org.openapitools.client.model.ModelsPipelineNode;
+import org.openapitools.client.model.ModelsPipelineRetentionPolicy;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,8 +53,18 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineConfigV2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-18T15:49:56.552881886Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-27T20:20:16.476991945Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsPipelineConfigV2 {
+  public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billingAccountId";
+  @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
+  @javax.annotation.Nullable
+  private String billingAccountId;
+
+  public static final String SERIALIZED_NAME_COMPONENT_TIER = "component_tier";
+  @SerializedName(SERIALIZED_NAME_COMPONENT_TIER)
+  @javax.annotation.Nullable
+  private Integer componentTier;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nullable
@@ -99,6 +110,11 @@ public class ModelsPipelineConfigV2 {
   @javax.annotation.Nullable
   private String organizationName;
 
+  public static final String SERIALIZED_NAME_RETENTION_POLICY = "retention_policy";
+  @SerializedName(SERIALIZED_NAME_RETENTION_POLICY)
+  @javax.annotation.Nullable
+  private ModelsPipelineRetentionPolicy retentionPolicy;
+
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   @javax.annotation.Nullable
@@ -106,6 +122,44 @@ public class ModelsPipelineConfigV2 {
 
   public ModelsPipelineConfigV2() {
   }
+
+  public ModelsPipelineConfigV2 billingAccountId(@javax.annotation.Nullable String billingAccountId) {
+    this.billingAccountId = billingAccountId;
+    return this;
+  }
+
+  /**
+   * Get billingAccountId
+   * @return billingAccountId
+   */
+  @javax.annotation.Nullable
+  public String getBillingAccountId() {
+    return billingAccountId;
+  }
+
+  public void setBillingAccountId(@javax.annotation.Nullable String billingAccountId) {
+    this.billingAccountId = billingAccountId;
+  }
+
+
+  public ModelsPipelineConfigV2 componentTier(@javax.annotation.Nullable Integer componentTier) {
+    this.componentTier = componentTier;
+    return this;
+  }
+
+  /**
+   * Get componentTier
+   * @return componentTier
+   */
+  @javax.annotation.Nullable
+  public Integer getComponentTier() {
+    return componentTier;
+  }
+
+  public void setComponentTier(@javax.annotation.Nullable Integer componentTier) {
+    this.componentTier = componentTier;
+  }
+
 
   public ModelsPipelineConfigV2 createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
@@ -294,6 +348,25 @@ public class ModelsPipelineConfigV2 {
   }
 
 
+  public ModelsPipelineConfigV2 retentionPolicy(@javax.annotation.Nullable ModelsPipelineRetentionPolicy retentionPolicy) {
+    this.retentionPolicy = retentionPolicy;
+    return this;
+  }
+
+  /**
+   * Get retentionPolicy
+   * @return retentionPolicy
+   */
+  @javax.annotation.Nullable
+  public ModelsPipelineRetentionPolicy getRetentionPolicy() {
+    return retentionPolicy;
+  }
+
+  public void setRetentionPolicy(@javax.annotation.Nullable ModelsPipelineRetentionPolicy retentionPolicy) {
+    this.retentionPolicy = retentionPolicy;
+  }
+
+
   public ModelsPipelineConfigV2 updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -323,7 +396,9 @@ public class ModelsPipelineConfigV2 {
       return false;
     }
     ModelsPipelineConfigV2 modelsPipelineConfigV2 = (ModelsPipelineConfigV2) o;
-    return Objects.equals(this.createdAt, modelsPipelineConfigV2.createdAt) &&
+    return Objects.equals(this.billingAccountId, modelsPipelineConfigV2.billingAccountId) &&
+        Objects.equals(this.componentTier, modelsPipelineConfigV2.componentTier) &&
+        Objects.equals(this.createdAt, modelsPipelineConfigV2.createdAt) &&
         Objects.equals(this.description, modelsPipelineConfigV2.description) &&
         Objects.equals(this.edges, modelsPipelineConfigV2.edges) &&
         Objects.equals(this.enabled, modelsPipelineConfigV2.enabled) &&
@@ -332,18 +407,21 @@ public class ModelsPipelineConfigV2 {
         Objects.equals(this.nodes, modelsPipelineConfigV2.nodes) &&
         Objects.equals(this.organizationId, modelsPipelineConfigV2.organizationId) &&
         Objects.equals(this.organizationName, modelsPipelineConfigV2.organizationName) &&
+        Objects.equals(this.retentionPolicy, modelsPipelineConfigV2.retentionPolicy) &&
         Objects.equals(this.updatedAt, modelsPipelineConfigV2.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, edges, enabled, id, name, nodes, organizationId, organizationName, updatedAt);
+    return Objects.hash(billingAccountId, componentTier, createdAt, description, edges, enabled, id, name, nodes, organizationId, organizationName, retentionPolicy, updatedAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsPipelineConfigV2 {\n");
+    sb.append("    billingAccountId: ").append(toIndentedString(billingAccountId)).append("\n");
+    sb.append("    componentTier: ").append(toIndentedString(componentTier)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    edges: ").append(toIndentedString(edges)).append("\n");
@@ -353,6 +431,7 @@ public class ModelsPipelineConfigV2 {
     sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    organizationName: ").append(toIndentedString(organizationName)).append("\n");
+    sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -376,6 +455,8 @@ public class ModelsPipelineConfigV2 {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("billingAccountId");
+    openapiFields.add("component_tier");
     openapiFields.add("createdAt");
     openapiFields.add("description");
     openapiFields.add("edges");
@@ -385,6 +466,7 @@ public class ModelsPipelineConfigV2 {
     openapiFields.add("nodes");
     openapiFields.add("organizationId");
     openapiFields.add("organizationName");
+    openapiFields.add("retention_policy");
     openapiFields.add("updatedAt");
 
     // a set of required properties/fields (JSON key names)
@@ -412,6 +494,9 @@ public class ModelsPipelineConfigV2 {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("billingAccountId") != null && !jsonObj.get("billingAccountId").isJsonNull()) && !jsonObj.get("billingAccountId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `billingAccountId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("billingAccountId").toString()));
+      }
       if ((jsonObj.get("createdAt") != null && !jsonObj.get("createdAt").isJsonNull()) && !jsonObj.get("createdAt").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `createdAt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdAt").toString()));
       }
@@ -457,6 +542,10 @@ public class ModelsPipelineConfigV2 {
       }
       if ((jsonObj.get("organizationName") != null && !jsonObj.get("organizationName").isJsonNull()) && !jsonObj.get("organizationName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `organizationName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organizationName").toString()));
+      }
+      // validate the optional field `retention_policy`
+      if (jsonObj.get("retention_policy") != null && !jsonObj.get("retention_policy").isJsonNull()) {
+        ModelsPipelineRetentionPolicy.validateJsonElement(jsonObj.get("retention_policy"));
       }
       if ((jsonObj.get("updatedAt") != null && !jsonObj.get("updatedAt").isJsonNull()) && !jsonObj.get("updatedAt").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `updatedAt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updatedAt").toString()));

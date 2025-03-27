@@ -48,8 +48,13 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipeline
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-18T15:49:56.552881886Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-27T20:20:16.476991945Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsPipeline {
+  public static final String SERIALIZED_NAME_COMPONENT_TIER = "component_tier";
+  @SerializedName(SERIALIZED_NAME_COMPONENT_TIER)
+  @javax.annotation.Nullable
+  private Integer componentTier;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nullable
@@ -92,6 +97,25 @@ public class ModelsPipeline {
 
   public ModelsPipeline() {
   }
+
+  public ModelsPipeline componentTier(@javax.annotation.Nullable Integer componentTier) {
+    this.componentTier = componentTier;
+    return this;
+  }
+
+  /**
+   * Get componentTier
+   * @return componentTier
+   */
+  @javax.annotation.Nullable
+  public Integer getComponentTier() {
+    return componentTier;
+  }
+
+  public void setComponentTier(@javax.annotation.Nullable Integer componentTier) {
+    this.componentTier = componentTier;
+  }
+
 
   public ModelsPipeline createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
@@ -255,7 +279,8 @@ public class ModelsPipeline {
       return false;
     }
     ModelsPipeline modelsPipeline = (ModelsPipeline) o;
-    return Objects.equals(this.createdAt, modelsPipeline.createdAt) &&
+    return Objects.equals(this.componentTier, modelsPipeline.componentTier) &&
+        Objects.equals(this.createdAt, modelsPipeline.createdAt) &&
         Objects.equals(this.description, modelsPipeline.description) &&
         Objects.equals(this.enabled, modelsPipeline.enabled) &&
         Objects.equals(this.id, modelsPipeline.id) &&
@@ -267,13 +292,14 @@ public class ModelsPipeline {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, enabled, id, inputId, name, organizationId, updatedAt);
+    return Objects.hash(componentTier, createdAt, description, enabled, id, inputId, name, organizationId, updatedAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsPipeline {\n");
+    sb.append("    componentTier: ").append(toIndentedString(componentTier)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
@@ -304,6 +330,7 @@ public class ModelsPipeline {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("component_tier");
     openapiFields.add("created_at");
     openapiFields.add("description");
     openapiFields.add("enabled");

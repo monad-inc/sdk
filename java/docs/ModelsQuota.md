@@ -7,6 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**action** | **String** |  |  [optional] |
+|**billingAccountId** | **String** |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
 |**currentUsage** | **Integer** |  |  [optional] |
 |**currentUsageUpdatedAt** | **String** |  |  [optional] |

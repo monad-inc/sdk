@@ -7,8 +7,14 @@ Name | Type | Description | Notes
 **BillingEmail** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**HasPaymentMethod** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**NextProduct** | Pointer to [**ModelsBillingProduct**](ModelsBillingProduct.md) |  | [optional] 
+**NextProductId** | Pointer to **string** |  | [optional] 
+**Product** | Pointer to [**ModelsBillingProduct**](ModelsBillingProduct.md) |  | [optional] 
+**ProductChangeAfter** | Pointer to **string** |  | [optional] 
+**ProductId** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
@@ -106,6 +112,31 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetHasPaymentMethod
+
+`func (o *ModelsBillingAccount) GetHasPaymentMethod() bool`
+
+GetHasPaymentMethod returns the HasPaymentMethod field if non-nil, zero value otherwise.
+
+### GetHasPaymentMethodOk
+
+`func (o *ModelsBillingAccount) GetHasPaymentMethodOk() (*bool, bool)`
+
+GetHasPaymentMethodOk returns a tuple with the HasPaymentMethod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasPaymentMethod
+
+`func (o *ModelsBillingAccount) SetHasPaymentMethod(v bool)`
+
+SetHasPaymentMethod sets HasPaymentMethod field to given value.
+
+### HasHasPaymentMethod
+
+`func (o *ModelsBillingAccount) HasHasPaymentMethod() bool`
+
+HasHasPaymentMethod returns a boolean if a field has been set.
+
 ### GetId
 
 `func (o *ModelsBillingAccount) GetId() string`
@@ -155,6 +186,131 @@ SetName sets Name field to given value.
 `func (o *ModelsBillingAccount) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetNextProduct
+
+`func (o *ModelsBillingAccount) GetNextProduct() ModelsBillingProduct`
+
+GetNextProduct returns the NextProduct field if non-nil, zero value otherwise.
+
+### GetNextProductOk
+
+`func (o *ModelsBillingAccount) GetNextProductOk() (*ModelsBillingProduct, bool)`
+
+GetNextProductOk returns a tuple with the NextProduct field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNextProduct
+
+`func (o *ModelsBillingAccount) SetNextProduct(v ModelsBillingProduct)`
+
+SetNextProduct sets NextProduct field to given value.
+
+### HasNextProduct
+
+`func (o *ModelsBillingAccount) HasNextProduct() bool`
+
+HasNextProduct returns a boolean if a field has been set.
+
+### GetNextProductId
+
+`func (o *ModelsBillingAccount) GetNextProductId() string`
+
+GetNextProductId returns the NextProductId field if non-nil, zero value otherwise.
+
+### GetNextProductIdOk
+
+`func (o *ModelsBillingAccount) GetNextProductIdOk() (*string, bool)`
+
+GetNextProductIdOk returns a tuple with the NextProductId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNextProductId
+
+`func (o *ModelsBillingAccount) SetNextProductId(v string)`
+
+SetNextProductId sets NextProductId field to given value.
+
+### HasNextProductId
+
+`func (o *ModelsBillingAccount) HasNextProductId() bool`
+
+HasNextProductId returns a boolean if a field has been set.
+
+### GetProduct
+
+`func (o *ModelsBillingAccount) GetProduct() ModelsBillingProduct`
+
+GetProduct returns the Product field if non-nil, zero value otherwise.
+
+### GetProductOk
+
+`func (o *ModelsBillingAccount) GetProductOk() (*ModelsBillingProduct, bool)`
+
+GetProductOk returns a tuple with the Product field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProduct
+
+`func (o *ModelsBillingAccount) SetProduct(v ModelsBillingProduct)`
+
+SetProduct sets Product field to given value.
+
+### HasProduct
+
+`func (o *ModelsBillingAccount) HasProduct() bool`
+
+HasProduct returns a boolean if a field has been set.
+
+### GetProductChangeAfter
+
+`func (o *ModelsBillingAccount) GetProductChangeAfter() string`
+
+GetProductChangeAfter returns the ProductChangeAfter field if non-nil, zero value otherwise.
+
+### GetProductChangeAfterOk
+
+`func (o *ModelsBillingAccount) GetProductChangeAfterOk() (*string, bool)`
+
+GetProductChangeAfterOk returns a tuple with the ProductChangeAfter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductChangeAfter
+
+`func (o *ModelsBillingAccount) SetProductChangeAfter(v string)`
+
+SetProductChangeAfter sets ProductChangeAfter field to given value.
+
+### HasProductChangeAfter
+
+`func (o *ModelsBillingAccount) HasProductChangeAfter() bool`
+
+HasProductChangeAfter returns a boolean if a field has been set.
+
+### GetProductId
+
+`func (o *ModelsBillingAccount) GetProductId() string`
+
+GetProductId returns the ProductId field if non-nil, zero value otherwise.
+
+### GetProductIdOk
+
+`func (o *ModelsBillingAccount) GetProductIdOk() (*string, bool)`
+
+GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductId
+
+`func (o *ModelsBillingAccount) SetProductId(v string)`
+
+SetProductId sets ProductId field to given value.
+
+### HasProductId
+
+`func (o *ModelsBillingAccount) HasProductId() bool`
+
+HasProductId returns a boolean if a field has been set.
 
 ### GetStatus
 

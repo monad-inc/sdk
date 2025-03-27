@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**billing_account_id** | **str** |  | [optional] 
+**component_tier** | **int** |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **edges** | [**List[ModelsPipelineEdge]**](ModelsPipelineEdge.md) |  | [optional] 
@@ -14,6 +16,7 @@ Name | Type | Description | Notes
 **nodes** | [**List[ModelsPipelineNode]**](ModelsPipelineNode.md) |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **organization_name** | **str** |  | [optional] 
+**retention_policy** | [**ModelsPipelineRetentionPolicy**](ModelsPipelineRetentionPolicy.md) |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 
 ## Example

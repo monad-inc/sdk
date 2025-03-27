@@ -9,6 +9,7 @@ import {SecurityAuthentication} from '../auth/auth';
 
 
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
+import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
 import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
 import { RoutesV2CreateBillingAccountRequest } from '../models/RoutesV2CreateBillingAccountRequest';
@@ -77,16 +78,14 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
      * Get Billing Account
      * Get Billing Account
      * @param billingAccountId Billing Account ID
-     * @param body 
      */
-    public async v2BillingAccountsBillingAccountIdGet(billingAccountId: string, body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async v2BillingAccountsBillingAccountIdGet(billingAccountId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'billingAccountId' is not null or undefined
         if (billingAccountId === null || billingAccountId === undefined) {
             throw new RequiredError("BillingAccountsApi", "v2BillingAccountsBillingAccountIdGet", "billingAccountId");
         }
-
 
 
         // Path Params
@@ -97,17 +96,6 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "any", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -184,16 +172,14 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
      * Get Billing Account Roles
      * Get Billing Account Roles
      * @param billingAccountId Billing Account ID
-     * @param body 
      */
-    public async v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'billingAccountId' is not null or undefined
         if (billingAccountId === null || billingAccountId === undefined) {
             throw new RequiredError("BillingAccountsApi", "v2BillingAccountsBillingAccountIdRolesGet", "billingAccountId");
         }
-
 
 
         // Path Params
@@ -204,17 +190,6 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "any", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -292,9 +267,8 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
      * Delete Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param body 
      */
-    public async v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'billingAccountId' is not null or undefined
@@ -309,7 +283,6 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-
         // Path Params
         const localVarPath = '/v2/billing/accounts/{billing_account_id}/roles/{role_id}'
             .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)))
@@ -319,17 +292,6 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "any", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -351,9 +313,8 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
      * Get Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param body 
      */
-    public async v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'billingAccountId' is not null or undefined
@@ -368,7 +329,6 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-
         // Path Params
         const localVarPath = '/v2/billing/accounts/{billing_account_id}/roles/{role_id}'
             .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)))
@@ -378,17 +338,6 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "any", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -539,9 +488,8 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
      * @param userId User ID
-     * @param body 
      */
-    public async v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'billingAccountId' is not null or undefined
@@ -562,7 +510,6 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-
         // Path Params
         const localVarPath = '/v2/billing/accounts/{billing_account_id}/roles/{role_id}/users/{user_id}'
             .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)))
@@ -573,17 +520,6 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "any", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -603,24 +539,16 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * List Billing Accounts
      * List Billing Accounts
-     * @param billingAccountId Billing Account ID
      * @param limit Limit
      * @param offset Offset
      */
-    public async v2BillingAccountsGet(billingAccountId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+    public async v2BillingAccountsGet(limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'billingAccountId' is not null or undefined
-        if (billingAccountId === null || billingAccountId === undefined) {
-            throw new RequiredError("BillingAccountsApi", "v2BillingAccountsGet", "billingAccountId");
-        }
-
 
 
 
         // Path Params
-        const localVarPath = '/v2/billing/accounts'
-            .replace('{' + 'billing_account_id' + '}', encodeURIComponent(String(billingAccountId)));
+        const localVarPath = '/v2/billing/accounts';
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -703,11 +631,9 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Get Billing Permissions
      * Get Billing Permissions
-     * @param body 
      */
-    public async v2BillingPermissionsGet(body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async v2BillingPermissionsGet(_options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
 
         // Path Params
         const localVarPath = '/v2/billing/permissions';
@@ -716,17 +642,6 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "any", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -1180,13 +1095,13 @@ export class BillingAccountsApiResponseProcessor {
      * @params response Response returned by the server for a request to v2BillingAccountsGet
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2BillingAccountsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsBillingAccount >> {
+     public async v2BillingAccountsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsBillingAccountList >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsBillingAccount = ObjectSerializer.deserialize(
+            const body: ModelsBillingAccountList = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsBillingAccount", ""
-            ) as ModelsBillingAccount;
+                "ModelsBillingAccountList", ""
+            ) as ModelsBillingAccountList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -1206,10 +1121,10 @@ export class BillingAccountsApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsBillingAccount = ObjectSerializer.deserialize(
+            const body: ModelsBillingAccountList = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsBillingAccount", ""
-            ) as ModelsBillingAccount;
+                "ModelsBillingAccountList", ""
+            ) as ModelsBillingAccountList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

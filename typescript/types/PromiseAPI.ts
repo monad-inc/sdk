@@ -19,6 +19,7 @@ import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereVa
 import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
 import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 import { FlattenFlatten } from '../models/FlattenFlatten';
+import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { JqJQ } from '../models/JqJQ';
 import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultiplyWithValueMathMultiplyWithValue';
@@ -26,8 +27,11 @@ import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
+import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
 import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
+import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
+import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
@@ -55,6 +59,7 @@ import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeMetrics } from '../models/ModelsPipelineNodeMetrics';
 import { ModelsPipelineNodeMetricsValue } from '../models/ModelsPipelineNodeMetricsValue';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
+import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
@@ -75,6 +80,7 @@ import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
+import { ResourceQuantity } from '../models/ResourceQuantity';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
@@ -96,6 +102,8 @@ import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTran
 import { RoutesV2CreateAPIKeyRequest } from '../models/RoutesV2CreateAPIKeyRequest';
 import { RoutesV2CreateBillingAccountRequest } from '../models/RoutesV2CreateBillingAccountRequest';
 import { RoutesV2CreateBillingAccountRoleRequest } from '../models/RoutesV2CreateBillingAccountRoleRequest';
+import { RoutesV2CreateBillingAccountSubscriptionRequest } from '../models/RoutesV2CreateBillingAccountSubscriptionRequest';
+import { RoutesV2CreateBillingAccountSubscriptionResponse } from '../models/RoutesV2CreateBillingAccountSubscriptionResponse';
 import { RoutesV2CreateInputRequest } from '../models/RoutesV2CreateInputRequest';
 import { RoutesV2CreateOrUpdateSecretRequest } from '../models/RoutesV2CreateOrUpdateSecretRequest';
 import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
@@ -375,9 +383,8 @@ export class PromiseBillingAccountsApi {
      * Get Billing Account
      * Get Billing Account
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+    public v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -390,7 +397,7 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdGetWithHttpInfo(billingAccountId, observableOptions);
         return result.toPromise();
     }
 
@@ -398,9 +405,8 @@ export class PromiseBillingAccountsApi {
      * Get Billing Account
      * Get Billing Account
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdGet(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccount> {
+    public v2BillingAccountsBillingAccountIdGet(billingAccountId: string, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccount> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -413,7 +419,7 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdGet(billingAccountId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdGet(billingAccountId, observableOptions);
         return result.toPromise();
     }
 
@@ -467,9 +473,8 @@ export class PromiseBillingAccountsApi {
      * Get Billing Account Roles
      * Get Billing Account Roles
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountRole>>> {
+    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountRole>>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -482,7 +487,7 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId, observableOptions);
         return result.toPromise();
     }
 
@@ -490,9 +495,8 @@ export class PromiseBillingAccountsApi {
      * Get Billing Account Roles
      * Get Billing Account Roles
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<Array<ModelsBillingAccountRole>> {
+    public v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, _options?: PromiseConfigurationOptions): Promise<Array<ModelsBillingAccountRole>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -505,7 +509,7 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, observableOptions);
         return result.toPromise();
     }
 
@@ -560,9 +564,8 @@ export class PromiseBillingAccountsApi {
      * Delete Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -575,7 +578,7 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId, observableOptions);
         return result.toPromise();
     }
 
@@ -584,9 +587,8 @@ export class PromiseBillingAccountsApi {
      * Delete Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<string> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<string> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -599,7 +601,7 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, observableOptions);
         return result.toPromise();
     }
 
@@ -608,9 +610,8 @@ export class PromiseBillingAccountsApi {
      * Get Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -623,7 +624,7 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId, observableOptions);
         return result.toPromise();
     }
 
@@ -632,9 +633,8 @@ export class PromiseBillingAccountsApi {
      * Get Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -647,7 +647,7 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, observableOptions);
         return result.toPromise();
     }
 
@@ -753,9 +753,8 @@ export class PromiseBillingAccountsApi {
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
      * @param userId User ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, userId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -768,7 +767,7 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId, observableOptions);
         return result.toPromise();
     }
 
@@ -778,9 +777,8 @@ export class PromiseBillingAccountsApi {
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
      * @param userId User ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<string> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, _options?: PromiseConfigurationOptions): Promise<string> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -793,18 +791,17 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, observableOptions);
         return result.toPromise();
     }
 
     /**
      * List Billing Accounts
      * List Billing Accounts
-     * @param billingAccountId Billing Account ID
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v2BillingAccountsGetWithHttpInfo(billingAccountId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccount>> {
+    public v2BillingAccountsGetWithHttpInfo(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountList>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -817,18 +814,17 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsGetWithHttpInfo(billingAccountId, limit, offset, observableOptions);
+        const result = this.api.v2BillingAccountsGetWithHttpInfo(limit, offset, observableOptions);
         return result.toPromise();
     }
 
     /**
      * List Billing Accounts
      * List Billing Accounts
-     * @param billingAccountId Billing Account ID
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v2BillingAccountsGet(billingAccountId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccount> {
+    public v2BillingAccountsGet(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountList> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -841,7 +837,7 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsGet(billingAccountId, limit, offset, observableOptions);
+        const result = this.api.v2BillingAccountsGet(limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -892,9 +888,8 @@ export class PromiseBillingAccountsApi {
     /**
      * Get Billing Permissions
      * Get Billing Permissions
-     * @param [body]
      */
-    public v2BillingPermissionsGetWithHttpInfo(body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountPermission>>> {
+    public v2BillingPermissionsGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountPermission>>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -907,16 +902,15 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingPermissionsGetWithHttpInfo(body, observableOptions);
+        const result = this.api.v2BillingPermissionsGetWithHttpInfo(observableOptions);
         return result.toPromise();
     }
 
     /**
      * Get Billing Permissions
      * Get Billing Permissions
-     * @param [body]
      */
-    public v2BillingPermissionsGet(body?: any, _options?: PromiseConfigurationOptions): Promise<Array<ModelsBillingAccountPermission>> {
+    public v2BillingPermissionsGet(_options?: PromiseConfigurationOptions): Promise<Array<ModelsBillingAccountPermission>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -929,7 +923,7 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingPermissionsGet(body, observableOptions);
+        const result = this.api.v2BillingPermissionsGet(observableOptions);
         return result.toPromise();
     }
 
@@ -956,9 +950,8 @@ export class PromiseBillingAccountsRbacApi {
      * Get Billing Account Roles
      * Get Billing Account Roles
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountRole>>> {
+    public v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountRole>>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -971,7 +964,7 @@ export class PromiseBillingAccountsRbacApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId, observableOptions);
         return result.toPromise();
     }
 
@@ -979,9 +972,8 @@ export class PromiseBillingAccountsRbacApi {
      * Get Billing Account Roles
      * Get Billing Account Roles
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<Array<ModelsBillingAccountRole>> {
+    public v2BillingAccountsBillingAccountIdRolesGet(billingAccountId: string, _options?: PromiseConfigurationOptions): Promise<Array<ModelsBillingAccountRole>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -994,7 +986,7 @@ export class PromiseBillingAccountsRbacApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesGet(billingAccountId, observableOptions);
         return result.toPromise();
     }
 
@@ -1049,9 +1041,8 @@ export class PromiseBillingAccountsRbacApi {
      * Delete Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -1064,7 +1055,7 @@ export class PromiseBillingAccountsRbacApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId, observableOptions);
         return result.toPromise();
     }
 
@@ -1073,9 +1064,8 @@ export class PromiseBillingAccountsRbacApi {
      * Delete Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<string> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<string> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -1088,7 +1078,7 @@ export class PromiseBillingAccountsRbacApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdDelete(billingAccountId, roleId, observableOptions);
         return result.toPromise();
     }
 
@@ -1097,9 +1087,8 @@ export class PromiseBillingAccountsRbacApi {
      * Get Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingAccountRole>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -1112,7 +1101,7 @@ export class PromiseBillingAccountsRbacApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId, observableOptions);
         return result.toPromise();
     }
 
@@ -1121,9 +1110,8 @@ export class PromiseBillingAccountsRbacApi {
      * Get Billing Account Role
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<ModelsBillingAccountRole> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -1136,7 +1124,7 @@ export class PromiseBillingAccountsRbacApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdGet(billingAccountId, roleId, observableOptions);
         return result.toPromise();
     }
 
@@ -1242,9 +1230,8 @@ export class PromiseBillingAccountsRbacApi {
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
      * @param userId User ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId: string, roleId: string, userId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -1257,7 +1244,7 @@ export class PromiseBillingAccountsRbacApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId, observableOptions);
         return result.toPromise();
     }
 
@@ -1267,9 +1254,8 @@ export class PromiseBillingAccountsRbacApi {
      * @param billingAccountId Billing Account ID
      * @param roleId Role ID
      * @param userId User ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<string> {
+    public v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId: string, roleId: string, userId: string, _options?: PromiseConfigurationOptions): Promise<string> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -1282,16 +1268,15 @@ export class PromiseBillingAccountsRbacApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(billingAccountId, roleId, userId, observableOptions);
         return result.toPromise();
     }
 
     /**
      * Get Billing Permissions
      * Get Billing Permissions
-     * @param [body]
      */
-    public v2BillingPermissionsGetWithHttpInfo(body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountPermission>>> {
+    public v2BillingPermissionsGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsBillingAccountPermission>>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -1304,16 +1289,15 @@ export class PromiseBillingAccountsRbacApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingPermissionsGetWithHttpInfo(body, observableOptions);
+        const result = this.api.v2BillingPermissionsGetWithHttpInfo(observableOptions);
         return result.toPromise();
     }
 
     /**
      * Get Billing Permissions
      * Get Billing Permissions
-     * @param [body]
      */
-    public v2BillingPermissionsGet(body?: any, _options?: PromiseConfigurationOptions): Promise<Array<ModelsBillingAccountPermission>> {
+    public v2BillingPermissionsGet(_options?: PromiseConfigurationOptions): Promise<Array<ModelsBillingAccountPermission>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -1326,7 +1310,206 @@ export class PromiseBillingAccountsRbacApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingPermissionsGet(body, observableOptions);
+        const result = this.api.v2BillingPermissionsGet(observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableBillingProductsApi } from './ObservableAPI';
+
+import { BillingProductsApiRequestFactory, BillingProductsApiResponseProcessor} from "../apis/BillingProductsApi";
+export class PromiseBillingProductsApi {
+    private api: ObservableBillingProductsApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: BillingProductsApiRequestFactory,
+        responseProcessor?: BillingProductsApiResponseProcessor
+    ) {
+        this.api = new ObservableBillingProductsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Cancel Billing Account Subscription
+     * Cancel Billing Account Subscription
+     * @param billingAccountId Billing Account ID
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionDeleteWithHttpInfo(billingAccountId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdSubscriptionDeleteWithHttpInfo(billingAccountId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Cancel Billing Account Subscription
+     * Cancel Billing Account Subscription
+     * @param billingAccountId Billing Account ID
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionDelete(billingAccountId: string, _options?: PromiseConfigurationOptions): Promise<void> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdSubscriptionDelete(billingAccountId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Account Subscription
+     * Get Billing Account Subscription
+     * @param billingAccountId Billing Account ID
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionGetWithHttpInfo(billingAccountId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingProduct>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdSubscriptionGetWithHttpInfo(billingAccountId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Billing Account Subscription
+     * Get Billing Account Subscription
+     * @param billingAccountId Billing Account ID
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionGet(billingAccountId: string, _options?: PromiseConfigurationOptions): Promise<ModelsBillingProduct> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdSubscriptionGet(billingAccountId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create Billing Account Subscription
+     * Create Billing Account Subscription
+     * @param billingAccountId Billing Account ID
+     * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionPostWithHttpInfo(billingAccountId: string, routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2CreateBillingAccountSubscriptionResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdSubscriptionPostWithHttpInfo(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create Billing Account Subscription
+     * Create Billing Account Subscription
+     * @param billingAccountId Billing Account ID
+     * @param routesV2CreateBillingAccountSubscriptionRequest Request body for creating a billing subscription
+     */
+    public v2BillingAccountsBillingAccountIdSubscriptionPost(billingAccountId: string, routesV2CreateBillingAccountSubscriptionRequest: RoutesV2CreateBillingAccountSubscriptionRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2CreateBillingAccountSubscriptionResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingAccountsBillingAccountIdSubscriptionPost(billingAccountId, routesV2CreateBillingAccountSubscriptionRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List Billing Products
+     * List Billing Products
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public v2BillingProductsGetWithHttpInfo(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingProductList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingProductsGetWithHttpInfo(limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List Billing Products
+     * List Billing Products
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public v2BillingProductsGet(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsBillingProductList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2BillingProductsGet(limit, offset, observableOptions);
         return result.toPromise();
     }
 

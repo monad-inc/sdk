@@ -23,8 +23,14 @@ type ModelsBillingAccount struct {
 	BillingEmail *string `json:"billing_email,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
+	HasPaymentMethod *bool `json:"has_payment_method,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	NextProduct *ModelsBillingProduct `json:"next_product,omitempty"`
+	NextProductId *string `json:"next_product_id,omitempty"`
+	Product *ModelsBillingProduct `json:"product,omitempty"`
+	ProductChangeAfter *string `json:"product_change_after,omitempty"`
+	ProductId *string `json:"product_id,omitempty"`
 	Status *string `json:"status,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
@@ -142,6 +148,38 @@ func (o *ModelsBillingAccount) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetHasPaymentMethod returns the HasPaymentMethod field value if set, zero value otherwise.
+func (o *ModelsBillingAccount) GetHasPaymentMethod() bool {
+	if o == nil || IsNil(o.HasPaymentMethod) {
+		var ret bool
+		return ret
+	}
+	return *o.HasPaymentMethod
+}
+
+// GetHasPaymentMethodOk returns a tuple with the HasPaymentMethod field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsBillingAccount) GetHasPaymentMethodOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasPaymentMethod) {
+		return nil, false
+	}
+	return o.HasPaymentMethod, true
+}
+
+// HasHasPaymentMethod returns a boolean if a field has been set.
+func (o *ModelsBillingAccount) HasHasPaymentMethod() bool {
+	if o != nil && !IsNil(o.HasPaymentMethod) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasPaymentMethod gets a reference to the given bool and assigns it to the HasPaymentMethod field.
+func (o *ModelsBillingAccount) SetHasPaymentMethod(v bool) {
+	o.HasPaymentMethod = &v
+}
+
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ModelsBillingAccount) GetId() string {
 	if o == nil || IsNil(o.Id) {
@@ -204,6 +242,166 @@ func (o *ModelsBillingAccount) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ModelsBillingAccount) SetName(v string) {
 	o.Name = &v
+}
+
+// GetNextProduct returns the NextProduct field value if set, zero value otherwise.
+func (o *ModelsBillingAccount) GetNextProduct() ModelsBillingProduct {
+	if o == nil || IsNil(o.NextProduct) {
+		var ret ModelsBillingProduct
+		return ret
+	}
+	return *o.NextProduct
+}
+
+// GetNextProductOk returns a tuple with the NextProduct field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsBillingAccount) GetNextProductOk() (*ModelsBillingProduct, bool) {
+	if o == nil || IsNil(o.NextProduct) {
+		return nil, false
+	}
+	return o.NextProduct, true
+}
+
+// HasNextProduct returns a boolean if a field has been set.
+func (o *ModelsBillingAccount) HasNextProduct() bool {
+	if o != nil && !IsNil(o.NextProduct) {
+		return true
+	}
+
+	return false
+}
+
+// SetNextProduct gets a reference to the given ModelsBillingProduct and assigns it to the NextProduct field.
+func (o *ModelsBillingAccount) SetNextProduct(v ModelsBillingProduct) {
+	o.NextProduct = &v
+}
+
+// GetNextProductId returns the NextProductId field value if set, zero value otherwise.
+func (o *ModelsBillingAccount) GetNextProductId() string {
+	if o == nil || IsNil(o.NextProductId) {
+		var ret string
+		return ret
+	}
+	return *o.NextProductId
+}
+
+// GetNextProductIdOk returns a tuple with the NextProductId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsBillingAccount) GetNextProductIdOk() (*string, bool) {
+	if o == nil || IsNil(o.NextProductId) {
+		return nil, false
+	}
+	return o.NextProductId, true
+}
+
+// HasNextProductId returns a boolean if a field has been set.
+func (o *ModelsBillingAccount) HasNextProductId() bool {
+	if o != nil && !IsNil(o.NextProductId) {
+		return true
+	}
+
+	return false
+}
+
+// SetNextProductId gets a reference to the given string and assigns it to the NextProductId field.
+func (o *ModelsBillingAccount) SetNextProductId(v string) {
+	o.NextProductId = &v
+}
+
+// GetProduct returns the Product field value if set, zero value otherwise.
+func (o *ModelsBillingAccount) GetProduct() ModelsBillingProduct {
+	if o == nil || IsNil(o.Product) {
+		var ret ModelsBillingProduct
+		return ret
+	}
+	return *o.Product
+}
+
+// GetProductOk returns a tuple with the Product field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsBillingAccount) GetProductOk() (*ModelsBillingProduct, bool) {
+	if o == nil || IsNil(o.Product) {
+		return nil, false
+	}
+	return o.Product, true
+}
+
+// HasProduct returns a boolean if a field has been set.
+func (o *ModelsBillingAccount) HasProduct() bool {
+	if o != nil && !IsNil(o.Product) {
+		return true
+	}
+
+	return false
+}
+
+// SetProduct gets a reference to the given ModelsBillingProduct and assigns it to the Product field.
+func (o *ModelsBillingAccount) SetProduct(v ModelsBillingProduct) {
+	o.Product = &v
+}
+
+// GetProductChangeAfter returns the ProductChangeAfter field value if set, zero value otherwise.
+func (o *ModelsBillingAccount) GetProductChangeAfter() string {
+	if o == nil || IsNil(o.ProductChangeAfter) {
+		var ret string
+		return ret
+	}
+	return *o.ProductChangeAfter
+}
+
+// GetProductChangeAfterOk returns a tuple with the ProductChangeAfter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsBillingAccount) GetProductChangeAfterOk() (*string, bool) {
+	if o == nil || IsNil(o.ProductChangeAfter) {
+		return nil, false
+	}
+	return o.ProductChangeAfter, true
+}
+
+// HasProductChangeAfter returns a boolean if a field has been set.
+func (o *ModelsBillingAccount) HasProductChangeAfter() bool {
+	if o != nil && !IsNil(o.ProductChangeAfter) {
+		return true
+	}
+
+	return false
+}
+
+// SetProductChangeAfter gets a reference to the given string and assigns it to the ProductChangeAfter field.
+func (o *ModelsBillingAccount) SetProductChangeAfter(v string) {
+	o.ProductChangeAfter = &v
+}
+
+// GetProductId returns the ProductId field value if set, zero value otherwise.
+func (o *ModelsBillingAccount) GetProductId() string {
+	if o == nil || IsNil(o.ProductId) {
+		var ret string
+		return ret
+	}
+	return *o.ProductId
+}
+
+// GetProductIdOk returns a tuple with the ProductId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsBillingAccount) GetProductIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ProductId) {
+		return nil, false
+	}
+	return o.ProductId, true
+}
+
+// HasProductId returns a boolean if a field has been set.
+func (o *ModelsBillingAccount) HasProductId() bool {
+	if o != nil && !IsNil(o.ProductId) {
+		return true
+	}
+
+	return false
+}
+
+// SetProductId gets a reference to the given string and assigns it to the ProductId field.
+func (o *ModelsBillingAccount) SetProductId(v string) {
+	o.ProductId = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -289,11 +487,29 @@ func (o ModelsBillingAccount) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	if !IsNil(o.HasPaymentMethod) {
+		toSerialize["has_payment_method"] = o.HasPaymentMethod
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.NextProduct) {
+		toSerialize["next_product"] = o.NextProduct
+	}
+	if !IsNil(o.NextProductId) {
+		toSerialize["next_product_id"] = o.NextProductId
+	}
+	if !IsNil(o.Product) {
+		toSerialize["product"] = o.Product
+	}
+	if !IsNil(o.ProductChangeAfter) {
+		toSerialize["product_change_after"] = o.ProductChangeAfter
+	}
+	if !IsNil(o.ProductId) {
+		toSerialize["product_id"] = o.ProductId
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

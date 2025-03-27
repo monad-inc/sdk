@@ -18,10 +18,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_pipeline_edge import ModelsPipelineEdge
 from monad.models.models_pipeline_node import ModelsPipelineNode
+from monad.models.models_pipeline_retention_policy import ModelsPipelineRetentionPolicy
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,6 +30,8 @@ class ModelsPipelineConfigV2(BaseModel):
     """
     ModelsPipelineConfigV2
     """ # noqa: E501
+    billing_account_id: Optional[StrictStr] = Field(default=None, alias="billingAccountId")
+    component_tier: Optional[StrictInt] = None
     created_at: Optional[StrictStr] = Field(default=None, alias="createdAt")
     description: Optional[StrictStr] = None
     edges: Optional[List[ModelsPipelineEdge]] = None
@@ -38,8 +41,9 @@ class ModelsPipelineConfigV2(BaseModel):
     nodes: Optional[List[ModelsPipelineNode]] = None
     organization_id: Optional[StrictStr] = Field(default=None, alias="organizationId")
     organization_name: Optional[StrictStr] = Field(default=None, alias="organizationName")
+    retention_policy: Optional[ModelsPipelineRetentionPolicy] = None
     updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
-    __properties: ClassVar[List[str]] = ["createdAt", "description", "edges", "enabled", "id", "name", "nodes", "organizationId", "organizationName", "updatedAt"]
+    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "description", "edges", "enabled", "id", "name", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +98,9 @@ class ModelsPipelineConfigV2(BaseModel):
                 if _item_nodes:
                     _items.append(_item_nodes.to_dict())
             _dict['nodes'] = _items
+        # override the default output from pydantic by calling `to_dict()` of retention_policy
+        if self.retention_policy:
+            _dict['retention_policy'] = self.retention_policy.to_dict()
         return _dict
 
     @classmethod
@@ -106,6 +113,8 @@ class ModelsPipelineConfigV2(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "billingAccountId": obj.get("billingAccountId"),
+            "component_tier": obj.get("component_tier"),
             "createdAt": obj.get("createdAt"),
             "description": obj.get("description"),
             "edges": [ModelsPipelineEdge.from_dict(_item) for _item in obj["edges"]] if obj.get("edges") is not None else None,
@@ -115,6 +124,7 @@ class ModelsPipelineConfigV2(BaseModel):
             "nodes": [ModelsPipelineNode.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None,
             "organizationId": obj.get("organizationId"),
             "organizationName": obj.get("organizationName"),
+            "retention_policy": ModelsPipelineRetentionPolicy.from_dict(obj["retention_policy"]) if obj.get("retention_policy") is not None else None,
             "updatedAt": obj.get("updatedAt")
         })
         return _obj

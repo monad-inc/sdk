@@ -110,6 +110,10 @@ Class | Method | HTTP request | Description
 *BillingAccountsRbacApi* | [**v2_billing_accounts_billing_account_id_roles_role_id_users_post**](docs/BillingAccountsRbacApi.md#v2_billing_accounts_billing_account_id_roles_role_id_users_post) | **POST** /v2/billing/accounts/{billing_account_id}/roles/{role_id}/users | Create Billing Account User Role
 *BillingAccountsRbacApi* | [**v2_billing_accounts_billing_account_id_roles_role_id_users_user_id_delete**](docs/BillingAccountsRbacApi.md#v2_billing_accounts_billing_account_id_roles_role_id_users_user_id_delete) | **DELETE** /v2/billing/accounts/{billing_account_id}/roles/{role_id}/users/{user_id} | Delete Billing Account User Role
 *BillingAccountsRbacApi* | [**v2_billing_permissions_get**](docs/BillingAccountsRbacApi.md#v2_billing_permissions_get) | **GET** /v2/billing/permissions | Get Billing Permissions
+*BillingProductsApi* | [**v2_billing_accounts_billing_account_id_subscription_delete**](docs/BillingProductsApi.md#v2_billing_accounts_billing_account_id_subscription_delete) | **DELETE** /v2/billing/accounts/{billing_account_id}/subscription | Cancel Billing Account Subscription
+*BillingProductsApi* | [**v2_billing_accounts_billing_account_id_subscription_get**](docs/BillingProductsApi.md#v2_billing_accounts_billing_account_id_subscription_get) | **GET** /v2/billing/accounts/{billing_account_id}/subscription | Get Billing Account Subscription
+*BillingProductsApi* | [**v2_billing_accounts_billing_account_id_subscription_post**](docs/BillingProductsApi.md#v2_billing_accounts_billing_account_id_subscription_post) | **POST** /v2/billing/accounts/{billing_account_id}/subscription | Create Billing Account Subscription
+*BillingProductsApi* | [**v2_billing_products_get**](docs/BillingProductsApi.md#v2_billing_products_get) | **GET** /v2/billing/products | List Billing Products
 *ConditionsApi* | [**v2_conditions_get**](docs/ConditionsApi.md#v2_conditions_get) | **GET** /v2/conditions | List conditions
 *DataApi* | [**v1_organization_id_data_node_id_get**](docs/DataApi.md#v1_organization_id_data_node_id_get) | **GET** /v1/{organization_id}/data/{node_id} | Stream node data
 *InputsApi* | [**v1_inputs_get**](docs/InputsApi.md#v1_inputs_get) | **GET** /v1/inputs | List inputs
@@ -209,6 +213,7 @@ Class | Method | HTTP request | Description
  - [DropRecordWhereValueEqDropRecordWhereValueEq](docs/DropRecordWhereValueEqDropRecordWhereValueEq.md)
  - [DuplicateKeyValueToKeyDuplicateKeyValueToKey](docs/DuplicateKeyValueToKeyDuplicateKeyValueToKey.md)
  - [FlattenFlatten](docs/FlattenFlatten.md)
+ - [FlattenallFlattenAll](docs/FlattenallFlattenAll.md)
  - [InputsConnectorMeta](docs/InputsConnectorMeta.md)
  - [JqJQ](docs/JqJQ.md)
  - [MathMultiplyWithValueMathMultiplyWithValue](docs/MathMultiplyWithValueMathMultiplyWithValue.md)
@@ -216,8 +221,11 @@ Class | Method | HTTP request | Description
  - [ModelsAPIKeyList](docs/ModelsAPIKeyList.md)
  - [ModelsAPIKeyWithToken](docs/ModelsAPIKeyWithToken.md)
  - [ModelsBillingAccount](docs/ModelsBillingAccount.md)
+ - [ModelsBillingAccountList](docs/ModelsBillingAccountList.md)
  - [ModelsBillingAccountPermission](docs/ModelsBillingAccountPermission.md)
  - [ModelsBillingAccountRole](docs/ModelsBillingAccountRole.md)
+ - [ModelsBillingProduct](docs/ModelsBillingProduct.md)
+ - [ModelsBillingProductList](docs/ModelsBillingProductList.md)
  - [ModelsComponentReference](docs/ModelsComponentReference.md)
  - [ModelsConnectorMeta](docs/ModelsConnectorMeta.md)
  - [ModelsDataUsage](docs/ModelsDataUsage.md)
@@ -245,6 +253,7 @@ Class | Method | HTTP request | Description
  - [ModelsPipelineNodeMetrics](docs/ModelsPipelineNodeMetrics.md)
  - [ModelsPipelineNodeMetricsValue](docs/ModelsPipelineNodeMetricsValue.md)
  - [ModelsPipelineNodeStatus](docs/ModelsPipelineNodeStatus.md)
+ - [ModelsPipelineRetentionPolicy](docs/ModelsPipelineRetentionPolicy.md)
  - [ModelsPipelineStatus](docs/ModelsPipelineStatus.md)
  - [ModelsQuota](docs/ModelsQuota.md)
  - [ModelsQuotaList](docs/ModelsQuotaList.md)
@@ -265,6 +274,7 @@ Class | Method | HTTP request | Description
  - [OutputsConnectorMeta](docs/OutputsConnectorMeta.md)
  - [RenameKeyRenameKey](docs/RenameKeyRenameKey.md)
  - [RenameKeyWhereValueEqRenameKeyWhereValueEq](docs/RenameKeyWhereValueEqRenameKeyWhereValueEq.md)
+ - [ResourceQuantity](docs/ResourceQuantity.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
  - [RoutesAddUserToOrganizationRequest](docs/RoutesAddUserToOrganizationRequest.md)
  - [RoutesCreateOrganizationRequest](docs/RoutesCreateOrganizationRequest.md)
@@ -286,6 +296,8 @@ Class | Method | HTTP request | Description
  - [RoutesV2CreateAPIKeyRequest](docs/RoutesV2CreateAPIKeyRequest.md)
  - [RoutesV2CreateBillingAccountRequest](docs/RoutesV2CreateBillingAccountRequest.md)
  - [RoutesV2CreateBillingAccountRoleRequest](docs/RoutesV2CreateBillingAccountRoleRequest.md)
+ - [RoutesV2CreateBillingAccountSubscriptionRequest](docs/RoutesV2CreateBillingAccountSubscriptionRequest.md)
+ - [RoutesV2CreateBillingAccountSubscriptionResponse](docs/RoutesV2CreateBillingAccountSubscriptionResponse.md)
  - [RoutesV2CreateInputRequest](docs/RoutesV2CreateInputRequest.md)
  - [RoutesV2CreateOrUpdateSecretRequest](docs/RoutesV2CreateOrUpdateSecretRequest.md)
  - [RoutesV2CreateOutputRequest](docs/RoutesV2CreateOutputRequest.md)

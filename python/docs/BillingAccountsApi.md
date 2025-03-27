@@ -100,7 +100,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_billing_accounts_billing_account_id_get**
-> ModelsBillingAccount v2_billing_accounts_billing_account_id_get(billing_account_id, body=body)
+> ModelsBillingAccount v2_billing_accounts_billing_account_id_get(billing_account_id)
 
 Get Billing Account
 
@@ -138,11 +138,10 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.BillingAccountsApi(api_client)
     billing_account_id = 'billing_account_id_example' # str | Billing Account ID
-    body = None # object |  (optional)
 
     try:
         # Get Billing Account
-        api_response = api_instance.v2_billing_accounts_billing_account_id_get(billing_account_id, body=body)
+        api_response = api_instance.v2_billing_accounts_billing_account_id_get(billing_account_id)
         print("The response of BillingAccountsApi->v2_billing_accounts_billing_account_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -157,7 +156,6 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billing_account_id** | **str**| Billing Account ID | 
- **body** | **object**|  | [optional] 
 
 ### Return type
 
@@ -169,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -267,7 +265,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_billing_accounts_billing_account_id_roles_get**
-> List[ModelsBillingAccountRole] v2_billing_accounts_billing_account_id_roles_get(billing_account_id, body=body)
+> List[ModelsBillingAccountRole] v2_billing_accounts_billing_account_id_roles_get(billing_account_id)
 
 Get Billing Account Roles
 
@@ -305,11 +303,10 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.BillingAccountsApi(api_client)
     billing_account_id = 'billing_account_id_example' # str | Billing Account ID
-    body = None # object |  (optional)
 
     try:
         # Get Billing Account Roles
-        api_response = api_instance.v2_billing_accounts_billing_account_id_roles_get(billing_account_id, body=body)
+        api_response = api_instance.v2_billing_accounts_billing_account_id_roles_get(billing_account_id)
         print("The response of BillingAccountsApi->v2_billing_accounts_billing_account_id_roles_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -324,7 +321,6 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billing_account_id** | **str**| Billing Account ID | 
- **body** | **object**|  | [optional] 
 
 ### Return type
 
@@ -336,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -434,7 +430,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_billing_accounts_billing_account_id_roles_role_id_delete**
-> str v2_billing_accounts_billing_account_id_roles_role_id_delete(billing_account_id, role_id, body=body)
+> str v2_billing_accounts_billing_account_id_roles_role_id_delete(billing_account_id, role_id)
 
 Delete Billing Account Role
 
@@ -472,11 +468,10 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.BillingAccountsApi(api_client)
     billing_account_id = 'billing_account_id_example' # str | Billing Account ID
     role_id = 'role_id_example' # str | Role ID
-    body = None # object |  (optional)
 
     try:
         # Delete Billing Account Role
-        api_response = api_instance.v2_billing_accounts_billing_account_id_roles_role_id_delete(billing_account_id, role_id, body=body)
+        api_response = api_instance.v2_billing_accounts_billing_account_id_roles_role_id_delete(billing_account_id, role_id)
         print("The response of BillingAccountsApi->v2_billing_accounts_billing_account_id_roles_role_id_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -492,7 +487,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billing_account_id** | **str**| Billing Account ID | 
  **role_id** | **str**| Role ID | 
- **body** | **object**|  | [optional] 
 
 ### Return type
 
@@ -504,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -518,7 +512,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_billing_accounts_billing_account_id_roles_role_id_get**
-> ModelsBillingAccountRole v2_billing_accounts_billing_account_id_roles_role_id_get(billing_account_id, role_id, body=body)
+> ModelsBillingAccountRole v2_billing_accounts_billing_account_id_roles_role_id_get(billing_account_id, role_id)
 
 Get Billing Account Role
 
@@ -557,11 +551,10 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.BillingAccountsApi(api_client)
     billing_account_id = 'billing_account_id_example' # str | Billing Account ID
     role_id = 'role_id_example' # str | Role ID
-    body = None # object |  (optional)
 
     try:
         # Get Billing Account Role
-        api_response = api_instance.v2_billing_accounts_billing_account_id_roles_role_id_get(billing_account_id, role_id, body=body)
+        api_response = api_instance.v2_billing_accounts_billing_account_id_roles_role_id_get(billing_account_id, role_id)
         print("The response of BillingAccountsApi->v2_billing_accounts_billing_account_id_roles_role_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -577,7 +570,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billing_account_id** | **str**| Billing Account ID | 
  **role_id** | **str**| Role ID | 
- **body** | **object**|  | [optional] 
 
 ### Return type
 
@@ -589,7 +581,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -774,7 +766,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_billing_accounts_billing_account_id_roles_role_id_users_user_id_delete**
-> str v2_billing_accounts_billing_account_id_roles_role_id_users_user_id_delete(billing_account_id, role_id, user_id, body=body)
+> str v2_billing_accounts_billing_account_id_roles_role_id_users_user_id_delete(billing_account_id, role_id, user_id)
 
 Delete Billing Account User Role
 
@@ -813,11 +805,10 @@ with monad.ApiClient(configuration) as api_client:
     billing_account_id = 'billing_account_id_example' # str | Billing Account ID
     role_id = 'role_id_example' # str | Role ID
     user_id = 'user_id_example' # str | User ID
-    body = None # object |  (optional)
 
     try:
         # Delete Billing Account User Role
-        api_response = api_instance.v2_billing_accounts_billing_account_id_roles_role_id_users_user_id_delete(billing_account_id, role_id, user_id, body=body)
+        api_response = api_instance.v2_billing_accounts_billing_account_id_roles_role_id_users_user_id_delete(billing_account_id, role_id, user_id)
         print("The response of BillingAccountsApi->v2_billing_accounts_billing_account_id_roles_role_id_users_user_id_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -834,7 +825,6 @@ Name | Type | Description  | Notes
  **billing_account_id** | **str**| Billing Account ID | 
  **role_id** | **str**| Role ID | 
  **user_id** | **str**| User ID | 
- **body** | **object**|  | [optional] 
 
 ### Return type
 
@@ -846,7 +836,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -860,7 +850,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_billing_accounts_get**
-> ModelsBillingAccount v2_billing_accounts_get(billing_account_id, limit=limit, offset=offset)
+> ModelsBillingAccountList v2_billing_accounts_get(limit=limit, offset=offset)
 
 List Billing Accounts
 
@@ -872,7 +862,7 @@ List Billing Accounts
 
 ```python
 import monad
-from monad.models.models_billing_account import ModelsBillingAccount
+from monad.models.models_billing_account_list import ModelsBillingAccountList
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -897,13 +887,12 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.BillingAccountsApi(api_client)
-    billing_account_id = 'billing_account_id_example' # str | Billing Account ID
     limit = 56 # int | Limit (optional)
     offset = 56 # int | Offset (optional)
 
     try:
         # List Billing Accounts
-        api_response = api_instance.v2_billing_accounts_get(billing_account_id, limit=limit, offset=offset)
+        api_response = api_instance.v2_billing_accounts_get(limit=limit, offset=offset)
         print("The response of BillingAccountsApi->v2_billing_accounts_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -917,13 +906,12 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billing_account_id** | **str**| Billing Account ID | 
  **limit** | **int**| Limit | [optional] 
  **offset** | **int**| Offset | [optional] 
 
 ### Return type
 
-[**ModelsBillingAccount**](ModelsBillingAccount.md)
+[**ModelsBillingAccountList**](ModelsBillingAccountList.md)
 
 ### Authorization
 
@@ -1027,7 +1015,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_billing_permissions_get**
-> List[ModelsBillingAccountPermission] v2_billing_permissions_get(body=body)
+> List[ModelsBillingAccountPermission] v2_billing_permissions_get()
 
 Get Billing Permissions
 
@@ -1064,11 +1052,10 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.BillingAccountsApi(api_client)
-    body = None # object |  (optional)
 
     try:
         # Get Billing Permissions
-        api_response = api_instance.v2_billing_permissions_get(body=body)
+        api_response = api_instance.v2_billing_permissions_get()
         print("The response of BillingAccountsApi->v2_billing_permissions_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -1079,10 +1066,7 @@ with monad.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **object**|  | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -1094,7 +1078,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

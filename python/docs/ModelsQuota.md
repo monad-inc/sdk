@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**action** | **str** |  | [optional] 
+**billing_account_id** | **str** |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **current_usage** | **int** |  | [optional] 
 **current_usage_updated_at** | **str** |  | [optional] 

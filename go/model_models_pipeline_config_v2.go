@@ -20,6 +20,8 @@ var _ MappedNullable = &ModelsPipelineConfigV2{}
 
 // ModelsPipelineConfigV2 struct for ModelsPipelineConfigV2
 type ModelsPipelineConfigV2 struct {
+	BillingAccountId *string `json:"billingAccountId,omitempty"`
+	ComponentTier *int32 `json:"component_tier,omitempty"`
 	CreatedAt *string `json:"createdAt,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Edges []ModelsPipelineEdge `json:"edges,omitempty"`
@@ -29,6 +31,7 @@ type ModelsPipelineConfigV2 struct {
 	Nodes []ModelsPipelineNode `json:"nodes,omitempty"`
 	OrganizationId *string `json:"organizationId,omitempty"`
 	OrganizationName *string `json:"organizationName,omitempty"`
+	RetentionPolicy *ModelsPipelineRetentionPolicy `json:"retention_policy,omitempty"`
 	UpdatedAt *string `json:"updatedAt,omitempty"`
 }
 
@@ -47,6 +50,70 @@ func NewModelsPipelineConfigV2() *ModelsPipelineConfigV2 {
 func NewModelsPipelineConfigV2WithDefaults() *ModelsPipelineConfigV2 {
 	this := ModelsPipelineConfigV2{}
 	return &this
+}
+
+// GetBillingAccountId returns the BillingAccountId field value if set, zero value otherwise.
+func (o *ModelsPipelineConfigV2) GetBillingAccountId() string {
+	if o == nil || IsNil(o.BillingAccountId) {
+		var ret string
+		return ret
+	}
+	return *o.BillingAccountId
+}
+
+// GetBillingAccountIdOk returns a tuple with the BillingAccountId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineConfigV2) GetBillingAccountIdOk() (*string, bool) {
+	if o == nil || IsNil(o.BillingAccountId) {
+		return nil, false
+	}
+	return o.BillingAccountId, true
+}
+
+// HasBillingAccountId returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasBillingAccountId() bool {
+	if o != nil && !IsNil(o.BillingAccountId) {
+		return true
+	}
+
+	return false
+}
+
+// SetBillingAccountId gets a reference to the given string and assigns it to the BillingAccountId field.
+func (o *ModelsPipelineConfigV2) SetBillingAccountId(v string) {
+	o.BillingAccountId = &v
+}
+
+// GetComponentTier returns the ComponentTier field value if set, zero value otherwise.
+func (o *ModelsPipelineConfigV2) GetComponentTier() int32 {
+	if o == nil || IsNil(o.ComponentTier) {
+		var ret int32
+		return ret
+	}
+	return *o.ComponentTier
+}
+
+// GetComponentTierOk returns a tuple with the ComponentTier field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineConfigV2) GetComponentTierOk() (*int32, bool) {
+	if o == nil || IsNil(o.ComponentTier) {
+		return nil, false
+	}
+	return o.ComponentTier, true
+}
+
+// HasComponentTier returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasComponentTier() bool {
+	if o != nil && !IsNil(o.ComponentTier) {
+		return true
+	}
+
+	return false
+}
+
+// SetComponentTier gets a reference to the given int32 and assigns it to the ComponentTier field.
+func (o *ModelsPipelineConfigV2) SetComponentTier(v int32) {
+	o.ComponentTier = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -337,6 +404,38 @@ func (o *ModelsPipelineConfigV2) SetOrganizationName(v string) {
 	o.OrganizationName = &v
 }
 
+// GetRetentionPolicy returns the RetentionPolicy field value if set, zero value otherwise.
+func (o *ModelsPipelineConfigV2) GetRetentionPolicy() ModelsPipelineRetentionPolicy {
+	if o == nil || IsNil(o.RetentionPolicy) {
+		var ret ModelsPipelineRetentionPolicy
+		return ret
+	}
+	return *o.RetentionPolicy
+}
+
+// GetRetentionPolicyOk returns a tuple with the RetentionPolicy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineConfigV2) GetRetentionPolicyOk() (*ModelsPipelineRetentionPolicy, bool) {
+	if o == nil || IsNil(o.RetentionPolicy) {
+		return nil, false
+	}
+	return o.RetentionPolicy, true
+}
+
+// HasRetentionPolicy returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasRetentionPolicy() bool {
+	if o != nil && !IsNil(o.RetentionPolicy) {
+		return true
+	}
+
+	return false
+}
+
+// SetRetentionPolicy gets a reference to the given ModelsPipelineRetentionPolicy and assigns it to the RetentionPolicy field.
+func (o *ModelsPipelineConfigV2) SetRetentionPolicy(v ModelsPipelineRetentionPolicy) {
+	o.RetentionPolicy = &v
+}
+
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *ModelsPipelineConfigV2) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
@@ -379,6 +478,12 @@ func (o ModelsPipelineConfigV2) MarshalJSON() ([]byte, error) {
 
 func (o ModelsPipelineConfigV2) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BillingAccountId) {
+		toSerialize["billingAccountId"] = o.BillingAccountId
+	}
+	if !IsNil(o.ComponentTier) {
+		toSerialize["component_tier"] = o.ComponentTier
+	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["createdAt"] = o.CreatedAt
 	}
@@ -405,6 +510,9 @@ func (o ModelsPipelineConfigV2) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.OrganizationName) {
 		toSerialize["organizationName"] = o.OrganizationName
+	}
+	if !IsNil(o.RetentionPolicy) {
+		toSerialize["retention_policy"] = o.RetentionPolicy
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updatedAt"] = o.UpdatedAt
