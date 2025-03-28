@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * A secret object without sensitive data
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-27T21:14:59.713223970Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-28T14:33:59.212528499Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class RoutesV2SecretResponse {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
