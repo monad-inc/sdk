@@ -32,6 +32,7 @@ type ModelsBillingAccount struct {
 	ProductChangeAfter *string `json:"product_change_after,omitempty"`
 	ProductId *string `json:"product_id,omitempty"`
 	Status *string `json:"status,omitempty"`
+	SuspendOn *string `json:"suspend_on,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
 
@@ -436,6 +437,38 @@ func (o *ModelsBillingAccount) SetStatus(v string) {
 	o.Status = &v
 }
 
+// GetSuspendOn returns the SuspendOn field value if set, zero value otherwise.
+func (o *ModelsBillingAccount) GetSuspendOn() string {
+	if o == nil || IsNil(o.SuspendOn) {
+		var ret string
+		return ret
+	}
+	return *o.SuspendOn
+}
+
+// GetSuspendOnOk returns a tuple with the SuspendOn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsBillingAccount) GetSuspendOnOk() (*string, bool) {
+	if o == nil || IsNil(o.SuspendOn) {
+		return nil, false
+	}
+	return o.SuspendOn, true
+}
+
+// HasSuspendOn returns a boolean if a field has been set.
+func (o *ModelsBillingAccount) HasSuspendOn() bool {
+	if o != nil && !IsNil(o.SuspendOn) {
+		return true
+	}
+
+	return false
+}
+
+// SetSuspendOn gets a reference to the given string and assigns it to the SuspendOn field.
+func (o *ModelsBillingAccount) SetSuspendOn(v string) {
+	o.SuspendOn = &v
+}
+
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *ModelsBillingAccount) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
@@ -513,6 +546,9 @@ func (o ModelsBillingAccount) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.SuspendOn) {
+		toSerialize["suspend_on"] = o.SuspendOn
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt

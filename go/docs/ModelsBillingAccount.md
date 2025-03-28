@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **ProductChangeAfter** | Pointer to **string** |  | [optional] 
 **ProductId** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
+**SuspendOn** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -336,6 +337,31 @@ SetStatus sets Status field to given value.
 `func (o *ModelsBillingAccount) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetSuspendOn
+
+`func (o *ModelsBillingAccount) GetSuspendOn() string`
+
+GetSuspendOn returns the SuspendOn field if non-nil, zero value otherwise.
+
+### GetSuspendOnOk
+
+`func (o *ModelsBillingAccount) GetSuspendOnOk() (*string, bool)`
+
+GetSuspendOnOk returns a tuple with the SuspendOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuspendOn
+
+`func (o *ModelsBillingAccount) SetSuspendOn(v string)`
+
+SetSuspendOn sets SuspendOn field to given value.
+
+### HasSuspendOn
+
+`func (o *ModelsBillingAccount) HasSuspendOn() bool`
+
+HasSuspendOn returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

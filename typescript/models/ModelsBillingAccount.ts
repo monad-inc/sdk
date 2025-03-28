@@ -26,6 +26,7 @@ export class ModelsBillingAccount {
     'productChangeAfter'?: string;
     'productId'?: string;
     'status'?: string;
+    'suspendOn'?: string;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -102,6 +103,12 @@ export class ModelsBillingAccount {
         {
             "name": "status",
             "baseName": "status",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "suspendOn",
+            "baseName": "suspend_on",
             "type": "string",
             "format": ""
         },

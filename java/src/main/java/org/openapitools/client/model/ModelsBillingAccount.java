@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingAccount
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-28T16:18:47.392946400Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-28T16:51:32.785194550Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsBillingAccount {
   public static final String SERIALIZED_NAME_BILLING_EMAIL = "billing_email";
   @SerializedName(SERIALIZED_NAME_BILLING_EMAIL)
@@ -110,6 +110,11 @@ public class ModelsBillingAccount {
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
   private String status;
+
+  public static final String SERIALIZED_NAME_SUSPEND_ON = "suspend_on";
+  @SerializedName(SERIALIZED_NAME_SUSPEND_ON)
+  @javax.annotation.Nullable
+  private String suspendOn;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -347,6 +352,25 @@ public class ModelsBillingAccount {
   }
 
 
+  public ModelsBillingAccount suspendOn(@javax.annotation.Nullable String suspendOn) {
+    this.suspendOn = suspendOn;
+    return this;
+  }
+
+  /**
+   * Get suspendOn
+   * @return suspendOn
+   */
+  @javax.annotation.Nullable
+  public String getSuspendOn() {
+    return suspendOn;
+  }
+
+  public void setSuspendOn(@javax.annotation.Nullable String suspendOn) {
+    this.suspendOn = suspendOn;
+  }
+
+
   public ModelsBillingAccount updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -388,12 +412,13 @@ public class ModelsBillingAccount {
         Objects.equals(this.productChangeAfter, modelsBillingAccount.productChangeAfter) &&
         Objects.equals(this.productId, modelsBillingAccount.productId) &&
         Objects.equals(this.status, modelsBillingAccount.status) &&
+        Objects.equals(this.suspendOn, modelsBillingAccount.suspendOn) &&
         Objects.equals(this.updatedAt, modelsBillingAccount.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingEmail, createdAt, description, hasPaymentMethod, id, name, nextProduct, nextProductId, product, productChangeAfter, productId, status, updatedAt);
+    return Objects.hash(billingEmail, createdAt, description, hasPaymentMethod, id, name, nextProduct, nextProductId, product, productChangeAfter, productId, status, suspendOn, updatedAt);
   }
 
   @Override
@@ -412,6 +437,7 @@ public class ModelsBillingAccount {
     sb.append("    productChangeAfter: ").append(toIndentedString(productChangeAfter)).append("\n");
     sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    suspendOn: ").append(toIndentedString(suspendOn)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -447,6 +473,7 @@ public class ModelsBillingAccount {
     openapiFields.add("product_change_after");
     openapiFields.add("product_id");
     openapiFields.add("status");
+    openapiFields.add("suspend_on");
     openapiFields.add("updated_at");
 
     // a set of required properties/fields (JSON key names)
@@ -508,6 +535,9 @@ public class ModelsBillingAccount {
       }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+      if ((jsonObj.get("suspend_on") != null && !jsonObj.get("suspend_on").isJsonNull()) && !jsonObj.get("suspend_on").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `suspend_on` to be a primitive type in the JSON string but got `%s`", jsonObj.get("suspend_on").toString()));
       }
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));

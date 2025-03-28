@@ -19,6 +19,7 @@
 |**productChangeAfter** | **String** |  |  [optional] |
 |**productId** | **String** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
+|**suspendOn** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 
 

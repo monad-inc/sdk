@@ -40,8 +40,9 @@ class ModelsBillingAccount(BaseModel):
     product_change_after: Optional[StrictStr] = None
     product_id: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
+    suspend_on: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["billing_email", "created_at", "description", "has_payment_method", "id", "name", "next_product", "next_product_id", "product", "product_change_after", "product_id", "status", "updated_at"]
+    __properties: ClassVar[List[str]] = ["billing_email", "created_at", "description", "has_payment_method", "id", "name", "next_product", "next_product_id", "product", "product_change_after", "product_id", "status", "suspend_on", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -112,6 +113,7 @@ class ModelsBillingAccount(BaseModel):
             "product_change_after": obj.get("product_change_after"),
             "product_id": obj.get("product_id"),
             "status": obj.get("status"),
+            "suspend_on": obj.get("suspend_on"),
             "updated_at": obj.get("updated_at")
         })
         return _obj

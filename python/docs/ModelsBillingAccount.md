@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **product_change_after** | **str** |  | [optional] 
 **product_id** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
+**suspend_on** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 
 ## Example
