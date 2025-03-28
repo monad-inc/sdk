@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsSecretWithComponents
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-28T16:51:32.785194550Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-28T19:17:05.630251506Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsSecretWithComponents {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
