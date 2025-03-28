@@ -27,16 +27,14 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
      * Delete Billing Account
      * Delete Billing Account
      * @param billingAccountId Billing Account ID
-     * @param body 
      */
-    public async v2BillingAccountsBillingAccountIdDelete(billingAccountId: string, body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async v2BillingAccountsBillingAccountIdDelete(billingAccountId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'billingAccountId' is not null or undefined
         if (billingAccountId === null || billingAccountId === undefined) {
             throw new RequiredError("BillingAccountsApi", "v2BillingAccountsBillingAccountIdDelete", "billingAccountId");
         }
-
 
 
         // Path Params
@@ -47,17 +45,6 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "any", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods

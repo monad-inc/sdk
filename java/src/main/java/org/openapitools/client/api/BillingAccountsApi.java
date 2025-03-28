@@ -83,7 +83,6 @@ public class BillingAccountsApi {
     /**
      * Build call for v2BillingAccountsBillingAccountIdDelete
      * @param billingAccountId Billing Account ID (required)
-     * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -96,7 +95,7 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdDeleteCall(String billingAccountId, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdDeleteCall(String billingAccountId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -110,7 +109,7 @@ public class BillingAccountsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/v2/billing/accounts/{billing_account_id}"
@@ -131,7 +130,6 @@ public class BillingAccountsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -143,13 +141,13 @@ public class BillingAccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsBillingAccountIdDeleteValidateBeforeCall(String billingAccountId, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2BillingAccountsBillingAccountIdDeleteValidateBeforeCall(String billingAccountId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsBillingAccountIdDelete(Async)");
         }
 
-        return v2BillingAccountsBillingAccountIdDeleteCall(billingAccountId, body, _callback);
+        return v2BillingAccountsBillingAccountIdDeleteCall(billingAccountId, _callback);
 
     }
 
@@ -157,7 +155,6 @@ public class BillingAccountsApi {
      * Delete Billing Account
      * Delete Billing Account
      * @param billingAccountId Billing Account ID (required)
-     * @param body  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -168,15 +165,14 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public void v2BillingAccountsBillingAccountIdDelete(String billingAccountId, Object body) throws ApiException {
-        v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId, body);
+    public void v2BillingAccountsBillingAccountIdDelete(String billingAccountId) throws ApiException {
+        v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId);
     }
 
     /**
      * Delete Billing Account
      * Delete Billing Account
      * @param billingAccountId Billing Account ID (required)
-     * @param body  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -188,8 +184,8 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(String billingAccountId, Object body) throws ApiException {
-        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdDeleteValidateBeforeCall(billingAccountId, body, null);
+    public ApiResponse<Void> v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(String billingAccountId) throws ApiException {
+        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdDeleteValidateBeforeCall(billingAccountId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -197,7 +193,6 @@ public class BillingAccountsApi {
      * Delete Billing Account (asynchronously)
      * Delete Billing Account
      * @param billingAccountId Billing Account ID (required)
-     * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -210,9 +205,9 @@ public class BillingAccountsApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdDeleteAsync(String billingAccountId, Object body, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdDeleteAsync(String billingAccountId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdDeleteValidateBeforeCall(billingAccountId, body, _callback);
+        okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdDeleteValidateBeforeCall(billingAccountId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

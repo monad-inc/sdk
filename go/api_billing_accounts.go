@@ -28,12 +28,6 @@ type ApiV2BillingAccountsBillingAccountIdDeleteRequest struct {
 	ctx context.Context
 	ApiService *BillingAccountsAPIService
 	billingAccountId string
-	body *map[string]interface{}
-}
-
-func (r ApiV2BillingAccountsBillingAccountIdDeleteRequest) Body(body map[string]interface{}) ApiV2BillingAccountsBillingAccountIdDeleteRequest {
-	r.body = &body
-	return r
 }
 
 func (r ApiV2BillingAccountsBillingAccountIdDeleteRequest) Execute() (*http.Response, error) {
@@ -78,7 +72,7 @@ func (a *BillingAccountsAPIService) V2BillingAccountsBillingAccountIdDeleteExecu
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -94,8 +88,6 @@ func (a *BillingAccountsAPIService) V2BillingAccountsBillingAccountIdDeleteExecu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

@@ -37,8 +37,6 @@ const apiInstance = new BillingAccountsApi(configuration);
 const request: BillingAccountsApiV2BillingAccountsBillingAccountIdDeleteRequest = {
     // Billing Account ID
   billingAccountId: "billing_account_id_example",
-  
-  body: {},
 };
 
 const data = await apiInstance.v2BillingAccountsBillingAccountIdDelete(request);
@@ -50,7 +48,6 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
  **billingAccountId** | [**string**] | Billing Account ID | defaults to undefined
 
 
@@ -64,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

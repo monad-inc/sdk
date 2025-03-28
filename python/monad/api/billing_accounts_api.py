@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictInt, StrictStr
-from typing import Any, Dict, List, Optional
+from typing import List, Optional
 from typing_extensions import Annotated
 from monad.models.models_billing_account import ModelsBillingAccount
 from monad.models.models_billing_account_list import ModelsBillingAccountList
@@ -52,7 +52,6 @@ class BillingAccountsApi:
     def v2_billing_accounts_billing_account_id_delete(
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -72,8 +71,6 @@ class BillingAccountsApi:
 
         :param billing_account_id: Billing Account ID (required)
         :type billing_account_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -98,7 +95,6 @@ class BillingAccountsApi:
 
         _param = self._v2_billing_accounts_billing_account_id_delete_serialize(
             billing_account_id=billing_account_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -125,7 +121,6 @@ class BillingAccountsApi:
     def v2_billing_accounts_billing_account_id_delete_with_http_info(
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -145,8 +140,6 @@ class BillingAccountsApi:
 
         :param billing_account_id: Billing Account ID (required)
         :type billing_account_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -171,7 +164,6 @@ class BillingAccountsApi:
 
         _param = self._v2_billing_accounts_billing_account_id_delete_serialize(
             billing_account_id=billing_account_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -198,7 +190,6 @@ class BillingAccountsApi:
     def v2_billing_accounts_billing_account_id_delete_without_preload_content(
         self,
         billing_account_id: Annotated[StrictStr, Field(description="Billing Account ID")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -218,8 +209,6 @@ class BillingAccountsApi:
 
         :param billing_account_id: Billing Account ID (required)
         :type billing_account_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -244,7 +233,6 @@ class BillingAccountsApi:
 
         _param = self._v2_billing_accounts_billing_account_id_delete_serialize(
             billing_account_id=billing_account_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -266,7 +254,6 @@ class BillingAccountsApi:
     def _v2_billing_accounts_billing_account_id_delete_serialize(
         self,
         billing_account_id,
-        body,
         _request_auth,
         _content_type,
         _headers,
@@ -294,8 +281,6 @@ class BillingAccountsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if body is not None:
-            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -306,19 +291,6 @@ class BillingAccountsApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [

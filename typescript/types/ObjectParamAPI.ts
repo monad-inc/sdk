@@ -244,12 +244,6 @@ export interface BillingAccountsApiV2BillingAccountsBillingAccountIdDeleteReques
      * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdDelete
      */
     billingAccountId: string
-    /**
-     * 
-     * @type any
-     * @memberof BillingAccountsApiv2BillingAccountsBillingAccountIdDelete
-     */
-    body?: any
 }
 
 export interface BillingAccountsApiV2BillingAccountsBillingAccountIdGetRequest {
@@ -450,7 +444,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(param: BillingAccountsApiV2BillingAccountsBillingAccountIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
-        return this.api.v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(param.billingAccountId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(param.billingAccountId,  options).toPromise();
     }
 
     /**
@@ -459,7 +453,7 @@ export class ObjectBillingAccountsApi {
      * @param param the request object
      */
     public v2BillingAccountsBillingAccountIdDelete(param: BillingAccountsApiV2BillingAccountsBillingAccountIdDeleteRequest, options?: ConfigurationOptions): Promise<void> {
-        return this.api.v2BillingAccountsBillingAccountIdDelete(param.billingAccountId, param.body,  options).toPromise();
+        return this.api.v2BillingAccountsBillingAccountIdDelete(param.billingAccountId,  options).toPromise();
     }
 
     /**

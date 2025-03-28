@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **v2_billing_accounts_billing_account_id_delete**
-> v2_billing_accounts_billing_account_id_delete(billing_account_id, body=body)
+> v2_billing_accounts_billing_account_id_delete(billing_account_id)
 
 Delete Billing Account
 
@@ -57,11 +57,10 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.BillingAccountsApi(api_client)
     billing_account_id = 'billing_account_id_example' # str | Billing Account ID
-    body = None # object |  (optional)
 
     try:
         # Delete Billing Account
-        api_instance.v2_billing_accounts_billing_account_id_delete(billing_account_id, body=body)
+        api_instance.v2_billing_accounts_billing_account_id_delete(billing_account_id)
     except Exception as e:
         print("Exception when calling BillingAccountsApi->v2_billing_accounts_billing_account_id_delete: %s\n" % e)
 ```
@@ -74,7 +73,6 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billing_account_id** | **str**| Billing Account ID | 
- **body** | **object**|  | [optional] 
 
 ### Return type
 
@@ -86,7 +84,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

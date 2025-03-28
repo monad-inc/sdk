@@ -412,9 +412,8 @@ export class ObservableBillingAccountsApi {
      * Delete Billing Account
      * Delete Billing Account
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+    public v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -445,7 +444,7 @@ export class ObservableBillingAccountsApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdDelete(billingAccountId, body, _config);
+        const requestContextPromise = this.requestFactory.v2BillingAccountsBillingAccountIdDelete(billingAccountId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -466,10 +465,9 @@ export class ObservableBillingAccountsApi {
      * Delete Billing Account
      * Delete Billing Account
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdDelete(billingAccountId: string, body?: any, _options?: ConfigurationOptions): Observable<void> {
-        return this.v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId, body, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    public v2BillingAccountsBillingAccountIdDelete(billingAccountId: string, _options?: ConfigurationOptions): Observable<void> {
+        return this.v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
     }
 
     /**

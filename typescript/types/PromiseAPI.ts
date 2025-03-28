@@ -337,9 +337,8 @@ export class PromiseBillingAccountsApi {
      * Delete Billing Account
      * Delete Billing Account
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
+    public v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -352,7 +351,7 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdDeleteWithHttpInfo(billingAccountId, observableOptions);
         return result.toPromise();
     }
 
@@ -360,9 +359,8 @@ export class PromiseBillingAccountsApi {
      * Delete Billing Account
      * Delete Billing Account
      * @param billingAccountId Billing Account ID
-     * @param [body]
      */
-    public v2BillingAccountsBillingAccountIdDelete(billingAccountId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<void> {
+    public v2BillingAccountsBillingAccountIdDelete(billingAccountId: string, _options?: PromiseConfigurationOptions): Promise<void> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -375,7 +373,7 @@ export class PromiseBillingAccountsApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v2BillingAccountsBillingAccountIdDelete(billingAccountId, body, observableOptions);
+        const result = this.api.v2BillingAccountsBillingAccountIdDelete(billingAccountId, observableOptions);
         return result.toPromise();
     }
 

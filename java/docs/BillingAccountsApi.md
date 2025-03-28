@@ -21,7 +21,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="v2BillingAccountsBillingAccountIdDelete"></a>
 # **v2BillingAccountsBillingAccountIdDelete**
-> v2BillingAccountsBillingAccountIdDelete(billingAccountId, body)
+> v2BillingAccountsBillingAccountIdDelete(billingAccountId)
 
 Delete Billing Account
 
@@ -50,9 +50,8 @@ public class Example {
 
     BillingAccountsApi apiInstance = new BillingAccountsApi(defaultClient);
     String billingAccountId = "billingAccountId_example"; // String | Billing Account ID
-    Object body = null; // Object | 
     try {
-      apiInstance.v2BillingAccountsBillingAccountIdDelete(billingAccountId, body);
+      apiInstance.v2BillingAccountsBillingAccountIdDelete(billingAccountId);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingAccountsApi#v2BillingAccountsBillingAccountIdDelete");
       System.err.println("Status code: " + e.getCode());
@@ -69,7 +68,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **billingAccountId** | **String**| Billing Account ID | |
-| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -81,7 +79,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

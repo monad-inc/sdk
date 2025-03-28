@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 ## V2BillingAccountsBillingAccountIdDelete
 
-> V2BillingAccountsBillingAccountIdDelete(ctx, billingAccountId).Body(body).Execute()
+> V2BillingAccountsBillingAccountIdDelete(ctx, billingAccountId).Execute()
 
 Delete Billing Account
 
@@ -42,11 +42,10 @@ import (
 
 func main() {
 	billingAccountId := "billingAccountId_example" // string | Billing Account ID
-	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.BillingAccountsAPI.V2BillingAccountsBillingAccountIdDelete(context.Background(), billingAccountId).Body(body).Execute()
+	r, err := apiClient.BillingAccountsAPI.V2BillingAccountsBillingAccountIdDelete(context.Background(), billingAccountId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BillingAccountsAPI.V2BillingAccountsBillingAccountIdDelete``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -70,7 +69,6 @@ Other parameters are passed through a pointer to a apiV2BillingAccountsBillingAc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | **map[string]interface{}** |  | 
 
 ### Return type
 
@@ -82,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
