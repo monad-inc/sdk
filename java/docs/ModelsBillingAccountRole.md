@@ -14,7 +14,7 @@
 |**name** | **String** |  |  [optional] |
 |**permissions** | **List&lt;String&gt;** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
-|**users** | **List&lt;String&gt;** |  |  [optional] |
+|**users** | [**List&lt;ModelsBillingAccountRoleUser&gt;**](ModelsBillingAccountRoleUser.md) |  |  [optional] |
 
 
 

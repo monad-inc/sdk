@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Permissions** | Pointer to **[]string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
-**Users** | Pointer to **[]string** |  | [optional] 
+**Users** | Pointer to [**[]ModelsBillingAccountRoleUser**](ModelsBillingAccountRoleUser.md) |  | [optional] 
 
 ## Methods
 
@@ -209,20 +209,20 @@ HasUpdatedAt returns a boolean if a field has been set.
 
 ### GetUsers
 
-`func (o *ModelsBillingAccountRole) GetUsers() []string`
+`func (o *ModelsBillingAccountRole) GetUsers() []ModelsBillingAccountRoleUser`
 
 GetUsers returns the Users field if non-nil, zero value otherwise.
 
 ### GetUsersOk
 
-`func (o *ModelsBillingAccountRole) GetUsersOk() (*[]string, bool)`
+`func (o *ModelsBillingAccountRole) GetUsersOk() (*[]ModelsBillingAccountRoleUser, bool)`
 
 GetUsersOk returns a tuple with the Users field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsers
 
-`func (o *ModelsBillingAccountRole) SetUsers(v []string)`
+`func (o *ModelsBillingAccountRole) SetUsers(v []ModelsBillingAccountRoleUser)`
 
 SetUsers sets Users field to given value.
 

@@ -26,6 +26,7 @@ export * from '../models/ModelsBillingAccount';
 export * from '../models/ModelsBillingAccountList';
 export * from '../models/ModelsBillingAccountPermission';
 export * from '../models/ModelsBillingAccountRole';
+export * from '../models/ModelsBillingAccountRoleUser';
 export * from '../models/ModelsBillingProduct';
 export * from '../models/ModelsBillingProductList';
 export * from '../models/ModelsComponentReference';
@@ -155,6 +156,7 @@ import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
 import { ModelsBillingAccountRole } from '../models/ModelsBillingAccountRole';
+import { ModelsBillingAccountRoleUser } from '../models/ModelsBillingAccountRoleUser';
 import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
@@ -301,6 +303,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsBillingAccountList": ModelsBillingAccountList,
     "ModelsBillingAccountPermission": ModelsBillingAccountPermission,
     "ModelsBillingAccountRole": ModelsBillingAccountRole,
+    "ModelsBillingAccountRoleUser": ModelsBillingAccountRoleUser,
     "ModelsBillingProduct": ModelsBillingProduct,
     "ModelsBillingProductList": ModelsBillingProductList,
     "ModelsComponentReference": ModelsComponentReference,

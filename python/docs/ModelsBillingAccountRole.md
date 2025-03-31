@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **permissions** | **List[str]** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
-**users** | **List[str]** |  | [optional] 
+**users** | [**List[ModelsBillingAccountRoleUser]**](ModelsBillingAccountRoleUser.md) |  | [optional] 
 
 ## Example
 

@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsBillingAccountRoleUser;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingAccountRole
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-28T19:34:15.732456519Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-31T17:48:23.685900495Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsBillingAccountRole {
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billing_account_id";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
@@ -90,7 +91,7 @@ public class ModelsBillingAccountRole {
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
   @javax.annotation.Nullable
-  private List<String> users = new ArrayList<>();
+  private List<ModelsBillingAccountRoleUser> users = new ArrayList<>();
 
   public ModelsBillingAccountRole() {
   }
@@ -236,12 +237,12 @@ public class ModelsBillingAccountRole {
   }
 
 
-  public ModelsBillingAccountRole users(@javax.annotation.Nullable List<String> users) {
+  public ModelsBillingAccountRole users(@javax.annotation.Nullable List<ModelsBillingAccountRoleUser> users) {
     this.users = users;
     return this;
   }
 
-  public ModelsBillingAccountRole addUsersItem(String usersItem) {
+  public ModelsBillingAccountRole addUsersItem(ModelsBillingAccountRoleUser usersItem) {
     if (this.users == null) {
       this.users = new ArrayList<>();
     }
@@ -254,11 +255,11 @@ public class ModelsBillingAccountRole {
    * @return users
    */
   @javax.annotation.Nullable
-  public List<String> getUsers() {
+  public List<ModelsBillingAccountRoleUser> getUsers() {
     return users;
   }
 
-  public void setUsers(@javax.annotation.Nullable List<String> users) {
+  public void setUsers(@javax.annotation.Nullable List<ModelsBillingAccountRoleUser> users) {
     this.users = users;
   }
 
@@ -378,9 +379,19 @@ public class ModelsBillingAccountRole {
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("users") != null && !jsonObj.get("users").isJsonNull() && !jsonObj.get("users").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `users` to be an array in the JSON string but got `%s`", jsonObj.get("users").toString()));
+      if (jsonObj.get("users") != null && !jsonObj.get("users").isJsonNull()) {
+        JsonArray jsonArrayusers = jsonObj.getAsJsonArray("users");
+        if (jsonArrayusers != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("users").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `users` to be an array in the JSON string but got `%s`", jsonObj.get("users").toString()));
+          }
+
+          // validate the optional field `users` (array)
+          for (int i = 0; i < jsonArrayusers.size(); i++) {
+            ModelsBillingAccountRoleUser.validateJsonElement(jsonArrayusers.get(i));
+          };
+        }
       }
   }
 

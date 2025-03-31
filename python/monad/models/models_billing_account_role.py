@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_billing_account_role_user import ModelsBillingAccountRoleUser
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,7 +35,7 @@ class ModelsBillingAccountRole(BaseModel):
     name: Optional[StrictStr] = None
     permissions: Optional[List[StrictStr]] = None
     updated_at: Optional[StrictStr] = None
-    users: Optional[List[StrictStr]] = None
+    users: Optional[List[ModelsBillingAccountRoleUser]] = None
     __properties: ClassVar[List[str]] = ["billing_account_id", "created_at", "description", "id", "name", "permissions", "updated_at", "users"]
 
     model_config = ConfigDict(
@@ -76,6 +77,13 @@ class ModelsBillingAccountRole(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in users (list)
+        _items = []
+        if self.users:
+            for _item_users in self.users:
+                if _item_users:
+                    _items.append(_item_users.to_dict())
+            _dict['users'] = _items
         return _dict
 
     @classmethod
@@ -95,7 +103,7 @@ class ModelsBillingAccountRole(BaseModel):
             "name": obj.get("name"),
             "permissions": obj.get("permissions"),
             "updated_at": obj.get("updated_at"),
-            "users": obj.get("users")
+            "users": [ModelsBillingAccountRoleUser.from_dict(_item) for _item in obj["users"]] if obj.get("users") is not None else None
         })
         return _obj
 

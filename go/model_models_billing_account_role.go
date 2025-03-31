@@ -27,7 +27,7 @@ type ModelsBillingAccountRole struct {
 	Name *string `json:"name,omitempty"`
 	Permissions []string `json:"permissions,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
-	Users []string `json:"users,omitempty"`
+	Users []ModelsBillingAccountRoleUser `json:"users,omitempty"`
 }
 
 // NewModelsBillingAccountRole instantiates a new ModelsBillingAccountRole object
@@ -272,9 +272,9 @@ func (o *ModelsBillingAccountRole) SetUpdatedAt(v string) {
 }
 
 // GetUsers returns the Users field value if set, zero value otherwise.
-func (o *ModelsBillingAccountRole) GetUsers() []string {
+func (o *ModelsBillingAccountRole) GetUsers() []ModelsBillingAccountRoleUser {
 	if o == nil || IsNil(o.Users) {
-		var ret []string
+		var ret []ModelsBillingAccountRoleUser
 		return ret
 	}
 	return o.Users
@@ -282,7 +282,7 @@ func (o *ModelsBillingAccountRole) GetUsers() []string {
 
 // GetUsersOk returns a tuple with the Users field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsBillingAccountRole) GetUsersOk() ([]string, bool) {
+func (o *ModelsBillingAccountRole) GetUsersOk() ([]ModelsBillingAccountRoleUser, bool) {
 	if o == nil || IsNil(o.Users) {
 		return nil, false
 	}
@@ -298,8 +298,8 @@ func (o *ModelsBillingAccountRole) HasUsers() bool {
 	return false
 }
 
-// SetUsers gets a reference to the given []string and assigns it to the Users field.
-func (o *ModelsBillingAccountRole) SetUsers(v []string) {
+// SetUsers gets a reference to the given []ModelsBillingAccountRoleUser and assigns it to the Users field.
+func (o *ModelsBillingAccountRole) SetUsers(v []ModelsBillingAccountRoleUser) {
 	o.Users = v
 }
 

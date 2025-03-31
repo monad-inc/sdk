@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-03-28T19:34:15.732456519Z[Etc/UTC]
+  - Build date: 2025-03-31T17:48:23.685900495Z[Etc/UTC]
   - Generator version: 7.12.0
 
 This is the monad API
@@ -254,6 +254,7 @@ Class | Method | HTTP request | Description
  - [ModelsBillingAccountList](docs/ModelsBillingAccountList.md)
  - [ModelsBillingAccountPermission](docs/ModelsBillingAccountPermission.md)
  - [ModelsBillingAccountRole](docs/ModelsBillingAccountRole.md)
+ - [ModelsBillingAccountRoleUser](docs/ModelsBillingAccountRoleUser.md)
  - [ModelsBillingProduct](docs/ModelsBillingProduct.md)
  - [ModelsBillingProductList](docs/ModelsBillingProductList.md)
  - [ModelsComponentReference](docs/ModelsComponentReference.md)

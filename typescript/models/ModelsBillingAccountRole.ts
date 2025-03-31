@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsBillingAccountRoleUser } from '../models/ModelsBillingAccountRoleUser';
 import { HttpFile } from '../http/http';
 
 export class ModelsBillingAccountRole {
@@ -20,7 +21,7 @@ export class ModelsBillingAccountRole {
     'name'?: string;
     'permissions'?: Array<string>;
     'updatedAt'?: string;
-    'users'?: Array<string>;
+    'users'?: Array<ModelsBillingAccountRoleUser>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -72,7 +73,7 @@ export class ModelsBillingAccountRole {
         {
             "name": "users",
             "baseName": "users",
-            "type": "Array<string>",
+            "type": "Array<ModelsBillingAccountRoleUser>",
             "format": ""
         }    ];
 

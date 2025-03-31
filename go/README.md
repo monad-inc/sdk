@@ -218,6 +218,7 @@ Class | Method | HTTP request | Description
  - [ModelsBillingAccountList](docs/ModelsBillingAccountList.md)
  - [ModelsBillingAccountPermission](docs/ModelsBillingAccountPermission.md)
  - [ModelsBillingAccountRole](docs/ModelsBillingAccountRole.md)
+ - [ModelsBillingAccountRoleUser](docs/ModelsBillingAccountRoleUser.md)
  - [ModelsBillingProduct](docs/ModelsBillingProduct.md)
  - [ModelsBillingProductList](docs/ModelsBillingProductList.md)
  - [ModelsComponentReference](docs/ModelsComponentReference.md)

@@ -43,6 +43,7 @@ from monad.models.models_billing_account import ModelsBillingAccount
 from monad.models.models_billing_account_list import ModelsBillingAccountList
 from monad.models.models_billing_account_permission import ModelsBillingAccountPermission
 from monad.models.models_billing_account_role import ModelsBillingAccountRole
+from monad.models.models_billing_account_role_user import ModelsBillingAccountRoleUser
 from monad.models.models_billing_product import ModelsBillingProduct
 from monad.models.models_billing_product_list import ModelsBillingProductList
 from monad.models.models_component_reference import ModelsComponentReference
