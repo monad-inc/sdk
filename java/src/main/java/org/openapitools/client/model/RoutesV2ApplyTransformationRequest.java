@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2ApplyTransformationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-02T16:34:34.593758814Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-03T13:31:09.752042252Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class RoutesV2ApplyTransformationRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
