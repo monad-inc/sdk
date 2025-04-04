@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNodeMetricsValue
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-04T17:14:49.717947479Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-04T17:57:38.878297779Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsPipelineNodeMetricsValue {
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
