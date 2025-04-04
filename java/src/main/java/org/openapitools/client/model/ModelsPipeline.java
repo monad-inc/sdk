@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipeline
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-04T17:57:38.878297779Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-04T18:35:01.450728318Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsPipeline {
   public static final String SERIALIZED_NAME_COMPONENT_TIER = "component_tier";
   @SerializedName(SERIALIZED_NAME_COMPONENT_TIER)
