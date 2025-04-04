@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesTransformOperation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-04T15:47:12.623787040Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-04T16:04:24.469690337Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class RoutesTransformOperation {
   public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
   @SerializedName(SERIALIZED_NAME_ARGUMENTS)
