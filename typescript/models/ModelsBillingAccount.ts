@@ -16,6 +16,8 @@ import { HttpFile } from '../http/http';
 export class ModelsBillingAccount {
     'billingEmail'?: string;
     'createdAt'?: string;
+    'currentBillingCycleEnd'?: string;
+    'currentBillingCycleStart'?: string;
     'description'?: string;
     'hasPaymentMethod'?: boolean;
     'id'?: string;
@@ -43,6 +45,18 @@ export class ModelsBillingAccount {
         {
             "name": "createdAt",
             "baseName": "created_at",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "currentBillingCycleEnd",
+            "baseName": "current_billing_cycle_end",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "currentBillingCycleStart",
+            "baseName": "current_billing_cycle_start",
             "type": "string",
             "format": ""
         },

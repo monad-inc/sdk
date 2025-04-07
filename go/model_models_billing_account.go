@@ -22,6 +22,8 @@ var _ MappedNullable = &ModelsBillingAccount{}
 type ModelsBillingAccount struct {
 	BillingEmail *string `json:"billing_email,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
+	CurrentBillingCycleEnd *string `json:"current_billing_cycle_end,omitempty"`
+	CurrentBillingCycleStart *string `json:"current_billing_cycle_start,omitempty"`
 	Description *string `json:"description,omitempty"`
 	HasPaymentMethod *bool `json:"has_payment_method,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -115,6 +117,70 @@ func (o *ModelsBillingAccount) HasCreatedAt() bool {
 // SetCreatedAt gets a reference to the given string and assigns it to the CreatedAt field.
 func (o *ModelsBillingAccount) SetCreatedAt(v string) {
 	o.CreatedAt = &v
+}
+
+// GetCurrentBillingCycleEnd returns the CurrentBillingCycleEnd field value if set, zero value otherwise.
+func (o *ModelsBillingAccount) GetCurrentBillingCycleEnd() string {
+	if o == nil || IsNil(o.CurrentBillingCycleEnd) {
+		var ret string
+		return ret
+	}
+	return *o.CurrentBillingCycleEnd
+}
+
+// GetCurrentBillingCycleEndOk returns a tuple with the CurrentBillingCycleEnd field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsBillingAccount) GetCurrentBillingCycleEndOk() (*string, bool) {
+	if o == nil || IsNil(o.CurrentBillingCycleEnd) {
+		return nil, false
+	}
+	return o.CurrentBillingCycleEnd, true
+}
+
+// HasCurrentBillingCycleEnd returns a boolean if a field has been set.
+func (o *ModelsBillingAccount) HasCurrentBillingCycleEnd() bool {
+	if o != nil && !IsNil(o.CurrentBillingCycleEnd) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrentBillingCycleEnd gets a reference to the given string and assigns it to the CurrentBillingCycleEnd field.
+func (o *ModelsBillingAccount) SetCurrentBillingCycleEnd(v string) {
+	o.CurrentBillingCycleEnd = &v
+}
+
+// GetCurrentBillingCycleStart returns the CurrentBillingCycleStart field value if set, zero value otherwise.
+func (o *ModelsBillingAccount) GetCurrentBillingCycleStart() string {
+	if o == nil || IsNil(o.CurrentBillingCycleStart) {
+		var ret string
+		return ret
+	}
+	return *o.CurrentBillingCycleStart
+}
+
+// GetCurrentBillingCycleStartOk returns a tuple with the CurrentBillingCycleStart field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsBillingAccount) GetCurrentBillingCycleStartOk() (*string, bool) {
+	if o == nil || IsNil(o.CurrentBillingCycleStart) {
+		return nil, false
+	}
+	return o.CurrentBillingCycleStart, true
+}
+
+// HasCurrentBillingCycleStart returns a boolean if a field has been set.
+func (o *ModelsBillingAccount) HasCurrentBillingCycleStart() bool {
+	if o != nil && !IsNil(o.CurrentBillingCycleStart) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrentBillingCycleStart gets a reference to the given string and assigns it to the CurrentBillingCycleStart field.
+func (o *ModelsBillingAccount) SetCurrentBillingCycleStart(v string) {
+	o.CurrentBillingCycleStart = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -516,6 +582,12 @@ func (o ModelsBillingAccount) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
+	}
+	if !IsNil(o.CurrentBillingCycleEnd) {
+		toSerialize["current_billing_cycle_end"] = o.CurrentBillingCycleEnd
+	}
+	if !IsNil(o.CurrentBillingCycleStart) {
+		toSerialize["current_billing_cycle_start"] = o.CurrentBillingCycleStart
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

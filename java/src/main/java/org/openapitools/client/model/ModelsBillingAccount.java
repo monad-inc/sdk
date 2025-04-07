@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingAccount
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-04T18:35:01.450728318Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-07T17:14:23.610111718Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsBillingAccount {
   public static final String SERIALIZED_NAME_BILLING_EMAIL = "billing_email";
   @SerializedName(SERIALIZED_NAME_BILLING_EMAIL)
@@ -60,6 +60,16 @@ public class ModelsBillingAccount {
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nullable
   private String createdAt;
+
+  public static final String SERIALIZED_NAME_CURRENT_BILLING_CYCLE_END = "current_billing_cycle_end";
+  @SerializedName(SERIALIZED_NAME_CURRENT_BILLING_CYCLE_END)
+  @javax.annotation.Nullable
+  private String currentBillingCycleEnd;
+
+  public static final String SERIALIZED_NAME_CURRENT_BILLING_CYCLE_START = "current_billing_cycle_start";
+  @SerializedName(SERIALIZED_NAME_CURRENT_BILLING_CYCLE_START)
+  @javax.annotation.Nullable
+  private String currentBillingCycleStart;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -159,6 +169,44 @@ public class ModelsBillingAccount {
 
   public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
+  }
+
+
+  public ModelsBillingAccount currentBillingCycleEnd(@javax.annotation.Nullable String currentBillingCycleEnd) {
+    this.currentBillingCycleEnd = currentBillingCycleEnd;
+    return this;
+  }
+
+  /**
+   * Get currentBillingCycleEnd
+   * @return currentBillingCycleEnd
+   */
+  @javax.annotation.Nullable
+  public String getCurrentBillingCycleEnd() {
+    return currentBillingCycleEnd;
+  }
+
+  public void setCurrentBillingCycleEnd(@javax.annotation.Nullable String currentBillingCycleEnd) {
+    this.currentBillingCycleEnd = currentBillingCycleEnd;
+  }
+
+
+  public ModelsBillingAccount currentBillingCycleStart(@javax.annotation.Nullable String currentBillingCycleStart) {
+    this.currentBillingCycleStart = currentBillingCycleStart;
+    return this;
+  }
+
+  /**
+   * Get currentBillingCycleStart
+   * @return currentBillingCycleStart
+   */
+  @javax.annotation.Nullable
+  public String getCurrentBillingCycleStart() {
+    return currentBillingCycleStart;
+  }
+
+  public void setCurrentBillingCycleStart(@javax.annotation.Nullable String currentBillingCycleStart) {
+    this.currentBillingCycleStart = currentBillingCycleStart;
   }
 
 
@@ -402,6 +450,8 @@ public class ModelsBillingAccount {
     ModelsBillingAccount modelsBillingAccount = (ModelsBillingAccount) o;
     return Objects.equals(this.billingEmail, modelsBillingAccount.billingEmail) &&
         Objects.equals(this.createdAt, modelsBillingAccount.createdAt) &&
+        Objects.equals(this.currentBillingCycleEnd, modelsBillingAccount.currentBillingCycleEnd) &&
+        Objects.equals(this.currentBillingCycleStart, modelsBillingAccount.currentBillingCycleStart) &&
         Objects.equals(this.description, modelsBillingAccount.description) &&
         Objects.equals(this.hasPaymentMethod, modelsBillingAccount.hasPaymentMethod) &&
         Objects.equals(this.id, modelsBillingAccount.id) &&
@@ -418,7 +468,7 @@ public class ModelsBillingAccount {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingEmail, createdAt, description, hasPaymentMethod, id, name, nextProduct, nextProductId, product, productChangeAfter, productId, status, suspendOn, updatedAt);
+    return Objects.hash(billingEmail, createdAt, currentBillingCycleEnd, currentBillingCycleStart, description, hasPaymentMethod, id, name, nextProduct, nextProductId, product, productChangeAfter, productId, status, suspendOn, updatedAt);
   }
 
   @Override
@@ -427,6 +477,8 @@ public class ModelsBillingAccount {
     sb.append("class ModelsBillingAccount {\n");
     sb.append("    billingEmail: ").append(toIndentedString(billingEmail)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    currentBillingCycleEnd: ").append(toIndentedString(currentBillingCycleEnd)).append("\n");
+    sb.append("    currentBillingCycleStart: ").append(toIndentedString(currentBillingCycleStart)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    hasPaymentMethod: ").append(toIndentedString(hasPaymentMethod)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -463,6 +515,8 @@ public class ModelsBillingAccount {
     openapiFields = new HashSet<String>();
     openapiFields.add("billing_email");
     openapiFields.add("created_at");
+    openapiFields.add("current_billing_cycle_end");
+    openapiFields.add("current_billing_cycle_start");
     openapiFields.add("description");
     openapiFields.add("has_payment_method");
     openapiFields.add("id");
@@ -506,6 +560,12 @@ public class ModelsBillingAccount {
       }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
+      }
+      if ((jsonObj.get("current_billing_cycle_end") != null && !jsonObj.get("current_billing_cycle_end").isJsonNull()) && !jsonObj.get("current_billing_cycle_end").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `current_billing_cycle_end` to be a primitive type in the JSON string but got `%s`", jsonObj.get("current_billing_cycle_end").toString()));
+      }
+      if ((jsonObj.get("current_billing_cycle_start") != null && !jsonObj.get("current_billing_cycle_start").isJsonNull()) && !jsonObj.get("current_billing_cycle_start").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `current_billing_cycle_start` to be a primitive type in the JSON string but got `%s`", jsonObj.get("current_billing_cycle_start").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));

@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BillingEmail** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
+**CurrentBillingCycleEnd** | Pointer to **string** |  | [optional] 
+**CurrentBillingCycleStart** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **HasPaymentMethod** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -87,6 +89,56 @@ SetCreatedAt sets CreatedAt field to given value.
 `func (o *ModelsBillingAccount) HasCreatedAt() bool`
 
 HasCreatedAt returns a boolean if a field has been set.
+
+### GetCurrentBillingCycleEnd
+
+`func (o *ModelsBillingAccount) GetCurrentBillingCycleEnd() string`
+
+GetCurrentBillingCycleEnd returns the CurrentBillingCycleEnd field if non-nil, zero value otherwise.
+
+### GetCurrentBillingCycleEndOk
+
+`func (o *ModelsBillingAccount) GetCurrentBillingCycleEndOk() (*string, bool)`
+
+GetCurrentBillingCycleEndOk returns a tuple with the CurrentBillingCycleEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentBillingCycleEnd
+
+`func (o *ModelsBillingAccount) SetCurrentBillingCycleEnd(v string)`
+
+SetCurrentBillingCycleEnd sets CurrentBillingCycleEnd field to given value.
+
+### HasCurrentBillingCycleEnd
+
+`func (o *ModelsBillingAccount) HasCurrentBillingCycleEnd() bool`
+
+HasCurrentBillingCycleEnd returns a boolean if a field has been set.
+
+### GetCurrentBillingCycleStart
+
+`func (o *ModelsBillingAccount) GetCurrentBillingCycleStart() string`
+
+GetCurrentBillingCycleStart returns the CurrentBillingCycleStart field if non-nil, zero value otherwise.
+
+### GetCurrentBillingCycleStartOk
+
+`func (o *ModelsBillingAccount) GetCurrentBillingCycleStartOk() (*string, bool)`
+
+GetCurrentBillingCycleStartOk returns a tuple with the CurrentBillingCycleStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentBillingCycleStart
+
+`func (o *ModelsBillingAccount) SetCurrentBillingCycleStart(v string)`
+
+SetCurrentBillingCycleStart sets CurrentBillingCycleStart field to given value.
+
+### HasCurrentBillingCycleStart
+
+`func (o *ModelsBillingAccount) HasCurrentBillingCycleStart() bool`
+
+HasCurrentBillingCycleStart returns a boolean if a field has been set.
 
 ### GetDescription
 

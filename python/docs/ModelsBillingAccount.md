@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **billing_email** | **str** |  | [optional] 
 **created_at** | **str** |  | [optional] 
+**current_billing_cycle_end** | **str** |  | [optional] 
+**current_billing_cycle_start** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **has_payment_method** | **bool** |  | [optional] 
 **id** | **str** |  | [optional] 

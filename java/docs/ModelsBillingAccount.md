@@ -9,6 +9,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**billingEmail** | **String** |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
+|**currentBillingCycleEnd** | **String** |  |  [optional] |
+|**currentBillingCycleStart** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**hasPaymentMethod** | **Boolean** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
