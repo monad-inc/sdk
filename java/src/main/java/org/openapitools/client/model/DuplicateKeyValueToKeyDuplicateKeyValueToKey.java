@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * DuplicateKeyValueToKeyDuplicateKeyValueToKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T16:30:03.731644768Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T16:45:28.091168658Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class DuplicateKeyValueToKeyDuplicateKeyValueToKey {
   public static final String SERIALIZED_NAME_NEW_KEY = "NewKey";
   @SerializedName(SERIALIZED_NAME_NEW_KEY)
