@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNodeMetrics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-07T19:47:01.442824252Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T16:30:03.731644768Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsPipelineNodeMetrics {
   public static final String SERIALIZED_NAME_METRIC = "metric";
   @SerializedName(SERIALIZED_NAME_METRIC)

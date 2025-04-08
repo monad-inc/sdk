@@ -18,12 +18,14 @@ export class ModelsQuota {
     'createdAt'?: string;
     'currentUsage'?: number;
     'currentUsageUpdatedAt'?: string;
+    'endAt'?: string;
     'id'?: string;
     'limitAmount'?: number;
     'limitType'?: string;
     'limitUnit'?: string;
     'name'?: string;
     'organizationId'?: string;
+    'startAt'?: string;
     'timeframe'?: string;
     'updatedAt'?: string;
 
@@ -63,6 +65,12 @@ export class ModelsQuota {
             "format": ""
         },
         {
+            "name": "endAt",
+            "baseName": "end_at",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "id",
             "baseName": "id",
             "type": "string",
@@ -95,6 +103,12 @@ export class ModelsQuota {
         {
             "name": "organizationId",
             "baseName": "organization_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "startAt",
+            "baseName": "start_at",
             "type": "string",
             "format": ""
         },

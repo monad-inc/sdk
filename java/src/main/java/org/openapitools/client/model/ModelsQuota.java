@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsQuota
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-07T19:47:01.442824252Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T16:30:03.731644768Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsQuota {
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
@@ -74,6 +74,11 @@ public class ModelsQuota {
   @SerializedName(SERIALIZED_NAME_CURRENT_USAGE_UPDATED_AT)
   @javax.annotation.Nullable
   private String currentUsageUpdatedAt;
+
+  public static final String SERIALIZED_NAME_END_AT = "end_at";
+  @SerializedName(SERIALIZED_NAME_END_AT)
+  @javax.annotation.Nullable
+  private String endAt;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -104,6 +109,11 @@ public class ModelsQuota {
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
   @javax.annotation.Nullable
   private String organizationId;
+
+  public static final String SERIALIZED_NAME_START_AT = "start_at";
+  @SerializedName(SERIALIZED_NAME_START_AT)
+  @javax.annotation.Nullable
+  private String startAt;
 
   public static final String SERIALIZED_NAME_TIMEFRAME = "timeframe";
   @SerializedName(SERIALIZED_NAME_TIMEFRAME)
@@ -210,6 +220,25 @@ public class ModelsQuota {
 
   public void setCurrentUsageUpdatedAt(@javax.annotation.Nullable String currentUsageUpdatedAt) {
     this.currentUsageUpdatedAt = currentUsageUpdatedAt;
+  }
+
+
+  public ModelsQuota endAt(@javax.annotation.Nullable String endAt) {
+    this.endAt = endAt;
+    return this;
+  }
+
+  /**
+   * Get endAt
+   * @return endAt
+   */
+  @javax.annotation.Nullable
+  public String getEndAt() {
+    return endAt;
+  }
+
+  public void setEndAt(@javax.annotation.Nullable String endAt) {
+    this.endAt = endAt;
   }
 
 
@@ -327,6 +356,25 @@ public class ModelsQuota {
   }
 
 
+  public ModelsQuota startAt(@javax.annotation.Nullable String startAt) {
+    this.startAt = startAt;
+    return this;
+  }
+
+  /**
+   * Get startAt
+   * @return startAt
+   */
+  @javax.annotation.Nullable
+  public String getStartAt() {
+    return startAt;
+  }
+
+  public void setStartAt(@javax.annotation.Nullable String startAt) {
+    this.startAt = startAt;
+  }
+
+
   public ModelsQuota timeframe(@javax.annotation.Nullable String timeframe) {
     this.timeframe = timeframe;
     return this;
@@ -380,19 +428,21 @@ public class ModelsQuota {
         Objects.equals(this.createdAt, modelsQuota.createdAt) &&
         Objects.equals(this.currentUsage, modelsQuota.currentUsage) &&
         Objects.equals(this.currentUsageUpdatedAt, modelsQuota.currentUsageUpdatedAt) &&
+        Objects.equals(this.endAt, modelsQuota.endAt) &&
         Objects.equals(this.id, modelsQuota.id) &&
         Objects.equals(this.limitAmount, modelsQuota.limitAmount) &&
         Objects.equals(this.limitType, modelsQuota.limitType) &&
         Objects.equals(this.limitUnit, modelsQuota.limitUnit) &&
         Objects.equals(this.name, modelsQuota.name) &&
         Objects.equals(this.organizationId, modelsQuota.organizationId) &&
+        Objects.equals(this.startAt, modelsQuota.startAt) &&
         Objects.equals(this.timeframe, modelsQuota.timeframe) &&
         Objects.equals(this.updatedAt, modelsQuota.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, billingAccountId, createdAt, currentUsage, currentUsageUpdatedAt, id, limitAmount, limitType, limitUnit, name, organizationId, timeframe, updatedAt);
+    return Objects.hash(action, billingAccountId, createdAt, currentUsage, currentUsageUpdatedAt, endAt, id, limitAmount, limitType, limitUnit, name, organizationId, startAt, timeframe, updatedAt);
   }
 
   @Override
@@ -404,12 +454,14 @@ public class ModelsQuota {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    currentUsage: ").append(toIndentedString(currentUsage)).append("\n");
     sb.append("    currentUsageUpdatedAt: ").append(toIndentedString(currentUsageUpdatedAt)).append("\n");
+    sb.append("    endAt: ").append(toIndentedString(endAt)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    limitAmount: ").append(toIndentedString(limitAmount)).append("\n");
     sb.append("    limitType: ").append(toIndentedString(limitType)).append("\n");
     sb.append("    limitUnit: ").append(toIndentedString(limitUnit)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    startAt: ").append(toIndentedString(startAt)).append("\n");
     sb.append("    timeframe: ").append(toIndentedString(timeframe)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -439,12 +491,14 @@ public class ModelsQuota {
     openapiFields.add("created_at");
     openapiFields.add("current_usage");
     openapiFields.add("current_usage_updated_at");
+    openapiFields.add("end_at");
     openapiFields.add("id");
     openapiFields.add("limit_amount");
     openapiFields.add("limit_type");
     openapiFields.add("limit_unit");
     openapiFields.add("name");
     openapiFields.add("organization_id");
+    openapiFields.add("start_at");
     openapiFields.add("timeframe");
     openapiFields.add("updated_at");
 
@@ -485,6 +539,9 @@ public class ModelsQuota {
       if ((jsonObj.get("current_usage_updated_at") != null && !jsonObj.get("current_usage_updated_at").isJsonNull()) && !jsonObj.get("current_usage_updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `current_usage_updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("current_usage_updated_at").toString()));
       }
+      if ((jsonObj.get("end_at") != null && !jsonObj.get("end_at").isJsonNull()) && !jsonObj.get("end_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `end_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("end_at").toString()));
+      }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
@@ -499,6 +556,9 @@ public class ModelsQuota {
       }
       if ((jsonObj.get("organization_id") != null && !jsonObj.get("organization_id").isJsonNull()) && !jsonObj.get("organization_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
+      }
+      if ((jsonObj.get("start_at") != null && !jsonObj.get("start_at").isJsonNull()) && !jsonObj.get("start_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `start_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("start_at").toString()));
       }
       if ((jsonObj.get("timeframe") != null && !jsonObj.get("timeframe").isJsonNull()) && !jsonObj.get("timeframe").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `timeframe` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timeframe").toString()));

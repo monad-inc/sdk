@@ -9,12 +9,14 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **CurrentUsage** | Pointer to **int32** |  | [optional] 
 **CurrentUsageUpdatedAt** | Pointer to **string** |  | [optional] 
+**EndAt** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **LimitAmount** | Pointer to **int32** |  | [optional] 
 **LimitType** | Pointer to **string** |  | [optional] 
 **LimitUnit** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
+**StartAt** | Pointer to **string** |  | [optional] 
 **Timeframe** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
@@ -161,6 +163,31 @@ SetCurrentUsageUpdatedAt sets CurrentUsageUpdatedAt field to given value.
 `func (o *ModelsQuota) HasCurrentUsageUpdatedAt() bool`
 
 HasCurrentUsageUpdatedAt returns a boolean if a field has been set.
+
+### GetEndAt
+
+`func (o *ModelsQuota) GetEndAt() string`
+
+GetEndAt returns the EndAt field if non-nil, zero value otherwise.
+
+### GetEndAtOk
+
+`func (o *ModelsQuota) GetEndAtOk() (*string, bool)`
+
+GetEndAtOk returns a tuple with the EndAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEndAt
+
+`func (o *ModelsQuota) SetEndAt(v string)`
+
+SetEndAt sets EndAt field to given value.
+
+### HasEndAt
+
+`func (o *ModelsQuota) HasEndAt() bool`
+
+HasEndAt returns a boolean if a field has been set.
 
 ### GetId
 
@@ -311,6 +338,31 @@ SetOrganizationId sets OrganizationId field to given value.
 `func (o *ModelsQuota) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
+
+### GetStartAt
+
+`func (o *ModelsQuota) GetStartAt() string`
+
+GetStartAt returns the StartAt field if non-nil, zero value otherwise.
+
+### GetStartAtOk
+
+`func (o *ModelsQuota) GetStartAtOk() (*string, bool)`
+
+GetStartAtOk returns a tuple with the StartAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartAt
+
+`func (o *ModelsQuota) SetStartAt(v string)`
+
+SetStartAt sets StartAt field to given value.
+
+### HasStartAt
+
+`func (o *ModelsQuota) HasStartAt() bool`
+
+HasStartAt returns a boolean if a field has been set.
 
 ### GetTimeframe
 

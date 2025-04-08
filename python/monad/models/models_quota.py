@@ -32,15 +32,17 @@ class ModelsQuota(BaseModel):
     created_at: Optional[StrictStr] = None
     current_usage: Optional[StrictInt] = None
     current_usage_updated_at: Optional[StrictStr] = None
+    end_at: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     limit_amount: Optional[StrictInt] = None
     limit_type: Optional[StrictStr] = None
     limit_unit: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
+    start_at: Optional[StrictStr] = None
     timeframe: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["action", "billing_account_id", "created_at", "current_usage", "current_usage_updated_at", "id", "limit_amount", "limit_type", "limit_unit", "name", "organization_id", "timeframe", "updated_at"]
+    __properties: ClassVar[List[str]] = ["action", "billing_account_id", "created_at", "current_usage", "current_usage_updated_at", "end_at", "id", "limit_amount", "limit_type", "limit_unit", "name", "organization_id", "start_at", "timeframe", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,12 +100,14 @@ class ModelsQuota(BaseModel):
             "created_at": obj.get("created_at"),
             "current_usage": obj.get("current_usage"),
             "current_usage_updated_at": obj.get("current_usage_updated_at"),
+            "end_at": obj.get("end_at"),
             "id": obj.get("id"),
             "limit_amount": obj.get("limit_amount"),
             "limit_type": obj.get("limit_type"),
             "limit_unit": obj.get("limit_unit"),
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
+            "start_at": obj.get("start_at"),
             "timeframe": obj.get("timeframe"),
             "updated_at": obj.get("updated_at")
         })

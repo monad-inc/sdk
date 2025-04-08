@@ -25,12 +25,14 @@ type ModelsQuota struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	CurrentUsage *int32 `json:"current_usage,omitempty"`
 	CurrentUsageUpdatedAt *string `json:"current_usage_updated_at,omitempty"`
+	EndAt *string `json:"end_at,omitempty"`
 	Id *string `json:"id,omitempty"`
 	LimitAmount *int32 `json:"limit_amount,omitempty"`
 	LimitType *string `json:"limit_type,omitempty"`
 	LimitUnit *string `json:"limit_unit,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
+	StartAt *string `json:"start_at,omitempty"`
 	Timeframe *string `json:"timeframe,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
@@ -210,6 +212,38 @@ func (o *ModelsQuota) HasCurrentUsageUpdatedAt() bool {
 // SetCurrentUsageUpdatedAt gets a reference to the given string and assigns it to the CurrentUsageUpdatedAt field.
 func (o *ModelsQuota) SetCurrentUsageUpdatedAt(v string) {
 	o.CurrentUsageUpdatedAt = &v
+}
+
+// GetEndAt returns the EndAt field value if set, zero value otherwise.
+func (o *ModelsQuota) GetEndAt() string {
+	if o == nil || IsNil(o.EndAt) {
+		var ret string
+		return ret
+	}
+	return *o.EndAt
+}
+
+// GetEndAtOk returns a tuple with the EndAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsQuota) GetEndAtOk() (*string, bool) {
+	if o == nil || IsNil(o.EndAt) {
+		return nil, false
+	}
+	return o.EndAt, true
+}
+
+// HasEndAt returns a boolean if a field has been set.
+func (o *ModelsQuota) HasEndAt() bool {
+	if o != nil && !IsNil(o.EndAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetEndAt gets a reference to the given string and assigns it to the EndAt field.
+func (o *ModelsQuota) SetEndAt(v string) {
+	o.EndAt = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -404,6 +438,38 @@ func (o *ModelsQuota) SetOrganizationId(v string) {
 	o.OrganizationId = &v
 }
 
+// GetStartAt returns the StartAt field value if set, zero value otherwise.
+func (o *ModelsQuota) GetStartAt() string {
+	if o == nil || IsNil(o.StartAt) {
+		var ret string
+		return ret
+	}
+	return *o.StartAt
+}
+
+// GetStartAtOk returns a tuple with the StartAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsQuota) GetStartAtOk() (*string, bool) {
+	if o == nil || IsNil(o.StartAt) {
+		return nil, false
+	}
+	return o.StartAt, true
+}
+
+// HasStartAt returns a boolean if a field has been set.
+func (o *ModelsQuota) HasStartAt() bool {
+	if o != nil && !IsNil(o.StartAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetStartAt gets a reference to the given string and assigns it to the StartAt field.
+func (o *ModelsQuota) SetStartAt(v string) {
+	o.StartAt = &v
+}
+
 // GetTimeframe returns the Timeframe field value if set, zero value otherwise.
 func (o *ModelsQuota) GetTimeframe() string {
 	if o == nil || IsNil(o.Timeframe) {
@@ -493,6 +559,9 @@ func (o ModelsQuota) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CurrentUsageUpdatedAt) {
 		toSerialize["current_usage_updated_at"] = o.CurrentUsageUpdatedAt
 	}
+	if !IsNil(o.EndAt) {
+		toSerialize["end_at"] = o.EndAt
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
@@ -510,6 +579,9 @@ func (o ModelsQuota) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.OrganizationId) {
 		toSerialize["organization_id"] = o.OrganizationId
+	}
+	if !IsNil(o.StartAt) {
+		toSerialize["start_at"] = o.StartAt
 	}
 	if !IsNil(o.Timeframe) {
 		toSerialize["timeframe"] = o.Timeframe
