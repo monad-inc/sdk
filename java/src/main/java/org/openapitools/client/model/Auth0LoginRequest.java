@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Auth0LoginRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T16:45:28.091168658Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T22:30:52.258376692Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class Auth0LoginRequest {
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)
