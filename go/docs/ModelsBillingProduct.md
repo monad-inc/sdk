@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Features** | Pointer to **[]string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**IsDefault** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **RecurringCostCents** | Pointer to **int32** |  | [optional] 
 **RecurringFrequency** | Pointer to **string** |  | [optional] 
@@ -134,6 +135,31 @@ SetId sets Id field to given value.
 `func (o *ModelsBillingProduct) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetIsDefault
+
+`func (o *ModelsBillingProduct) GetIsDefault() bool`
+
+GetIsDefault returns the IsDefault field if non-nil, zero value otherwise.
+
+### GetIsDefaultOk
+
+`func (o *ModelsBillingProduct) GetIsDefaultOk() (*bool, bool)`
+
+GetIsDefaultOk returns a tuple with the IsDefault field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDefault
+
+`func (o *ModelsBillingProduct) SetIsDefault(v bool)`
+
+SetIsDefault sets IsDefault field to given value.
+
+### HasIsDefault
+
+`func (o *ModelsBillingProduct) HasIsDefault() bool`
+
+HasIsDefault returns a boolean if a field has been set.
 
 ### GetName
 

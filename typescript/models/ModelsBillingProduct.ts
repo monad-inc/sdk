@@ -17,6 +17,7 @@ export class ModelsBillingProduct {
     'description'?: string;
     'features'?: Array<string>;
     'id'?: string;
+    'isDefault'?: boolean;
     'name'?: string;
     'recurringCostCents'?: number;
     'recurringFrequency'?: string;
@@ -52,6 +53,12 @@ export class ModelsBillingProduct {
             "name": "id",
             "baseName": "id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "isDefault",
+            "baseName": "is_default",
+            "type": "boolean",
             "format": ""
         },
         {

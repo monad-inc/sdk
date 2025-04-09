@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingProduct
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-08T22:30:52.258376692Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-09T17:27:27.354808510Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsBillingProduct {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -71,6 +71,11 @@ public class ModelsBillingProduct {
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
   private String id;
+
+  public static final String SERIALIZED_NAME_IS_DEFAULT = "is_default";
+  @SerializedName(SERIALIZED_NAME_IS_DEFAULT)
+  @javax.annotation.Nullable
+  private Boolean isDefault;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -191,6 +196,25 @@ public class ModelsBillingProduct {
 
   public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
+  }
+
+
+  public ModelsBillingProduct isDefault(@javax.annotation.Nullable Boolean isDefault) {
+    this.isDefault = isDefault;
+    return this;
+  }
+
+  /**
+   * Get isDefault
+   * @return isDefault
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsDefault() {
+    return isDefault;
+  }
+
+  public void setIsDefault(@javax.annotation.Nullable Boolean isDefault) {
+    this.isDefault = isDefault;
   }
 
 
@@ -341,6 +365,7 @@ public class ModelsBillingProduct {
         Objects.equals(this.description, modelsBillingProduct.description) &&
         Objects.equals(this.features, modelsBillingProduct.features) &&
         Objects.equals(this.id, modelsBillingProduct.id) &&
+        Objects.equals(this.isDefault, modelsBillingProduct.isDefault) &&
         Objects.equals(this.name, modelsBillingProduct.name) &&
         Objects.equals(this.recurringCostCents, modelsBillingProduct.recurringCostCents) &&
         Objects.equals(this.recurringFrequency, modelsBillingProduct.recurringFrequency) &&
@@ -352,7 +377,7 @@ public class ModelsBillingProduct {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, features, id, name, recurringCostCents, recurringFrequency, slug, updatedAt, usageUnit, usageUnitCostCents);
+    return Objects.hash(createdAt, description, features, id, isDefault, name, recurringCostCents, recurringFrequency, slug, updatedAt, usageUnit, usageUnitCostCents);
   }
 
   @Override
@@ -363,6 +388,7 @@ public class ModelsBillingProduct {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    features: ").append(toIndentedString(features)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    recurringCostCents: ").append(toIndentedString(recurringCostCents)).append("\n");
     sb.append("    recurringFrequency: ").append(toIndentedString(recurringFrequency)).append("\n");
@@ -396,6 +422,7 @@ public class ModelsBillingProduct {
     openapiFields.add("description");
     openapiFields.add("features");
     openapiFields.add("id");
+    openapiFields.add("is_default");
     openapiFields.add("name");
     openapiFields.add("recurring_cost_cents");
     openapiFields.add("recurring_frequency");

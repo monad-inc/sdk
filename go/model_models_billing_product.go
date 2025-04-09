@@ -24,6 +24,7 @@ type ModelsBillingProduct struct {
 	Description *string `json:"description,omitempty"`
 	Features []string `json:"features,omitempty"`
 	Id *string `json:"id,omitempty"`
+	IsDefault *bool `json:"is_default,omitempty"`
 	Name *string `json:"name,omitempty"`
 	RecurringCostCents *int32 `json:"recurring_cost_cents,omitempty"`
 	RecurringFrequency *string `json:"recurring_frequency,omitempty"`
@@ -176,6 +177,38 @@ func (o *ModelsBillingProduct) HasId() bool {
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *ModelsBillingProduct) SetId(v string) {
 	o.Id = &v
+}
+
+// GetIsDefault returns the IsDefault field value if set, zero value otherwise.
+func (o *ModelsBillingProduct) GetIsDefault() bool {
+	if o == nil || IsNil(o.IsDefault) {
+		var ret bool
+		return ret
+	}
+	return *o.IsDefault
+}
+
+// GetIsDefaultOk returns a tuple with the IsDefault field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsBillingProduct) GetIsDefaultOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsDefault) {
+		return nil, false
+	}
+	return o.IsDefault, true
+}
+
+// HasIsDefault returns a boolean if a field has been set.
+func (o *ModelsBillingProduct) HasIsDefault() bool {
+	if o != nil && !IsNil(o.IsDefault) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDefault gets a reference to the given bool and assigns it to the IsDefault field.
+func (o *ModelsBillingProduct) SetIsDefault(v bool) {
+	o.IsDefault = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -423,6 +456,9 @@ func (o ModelsBillingProduct) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.IsDefault) {
+		toSerialize["is_default"] = o.IsDefault
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

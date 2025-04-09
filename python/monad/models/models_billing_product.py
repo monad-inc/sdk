@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,6 +31,7 @@ class ModelsBillingProduct(BaseModel):
     description: Optional[StrictStr] = None
     features: Optional[List[StrictStr]] = None
     id: Optional[StrictStr] = None
+    is_default: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
     recurring_cost_cents: Optional[StrictInt] = None
     recurring_frequency: Optional[StrictStr] = None
@@ -38,7 +39,7 @@ class ModelsBillingProduct(BaseModel):
     updated_at: Optional[StrictStr] = None
     usage_unit: Optional[StrictStr] = None
     usage_unit_cost_cents: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "features", "id", "name", "recurring_cost_cents", "recurring_frequency", "slug", "updated_at", "usage_unit", "usage_unit_cost_cents"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "features", "id", "is_default", "name", "recurring_cost_cents", "recurring_frequency", "slug", "updated_at", "usage_unit", "usage_unit_cost_cents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +96,7 @@ class ModelsBillingProduct(BaseModel):
             "description": obj.get("description"),
             "features": obj.get("features"),
             "id": obj.get("id"),
+            "is_default": obj.get("is_default"),
             "name": obj.get("name"),
             "recurring_cost_cents": obj.get("recurring_cost_cents"),
             "recurring_frequency": obj.get("recurring_frequency"),

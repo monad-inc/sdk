@@ -11,6 +11,7 @@
 |**description** | **String** |  |  [optional] |
 |**features** | **List&lt;String&gt;** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
+|**isDefault** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**recurringCostCents** | **Integer** |  |  [optional] |
 |**recurringFrequency** | **String** |  |  [optional] |

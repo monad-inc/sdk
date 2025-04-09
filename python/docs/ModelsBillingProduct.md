@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **features** | **List[str]** |  | [optional] 
 **id** | **str** |  | [optional] 
+**is_default** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **recurring_cost_cents** | **int** |  | [optional] 
 **recurring_frequency** | **str** |  | [optional] 
