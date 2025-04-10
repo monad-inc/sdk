@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Semgrep supply chain findings secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T19:39:07.113856389Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T19:57:58.400156376Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class SemgrepSupplyChainFindingsSecretsConfig {
   public static final String SERIALIZED_NAME_API_KEY = "api_key";
   @SerializedName(SERIALIZED_NAME_API_KEY)
