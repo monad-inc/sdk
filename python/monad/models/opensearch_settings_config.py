@@ -27,11 +27,14 @@ class OpensearchSettingsConfig(BaseModel):
     """
     OpenSearch Output Settings
     """ # noqa: E501
+    auth_mode: Optional[StrictStr] = Field(default=None, description="The authentication mode (basic, aws_role)")
     index: Optional[StrictStr] = Field(default=None, description="The name of the OpenSearch index to use.")
     insecure_skip_verify: Optional[StrictBool] = Field(default=None, description="Whether to skip TLS certificate verification (not recommended for production).")
+    region: Optional[StrictStr] = Field(default=None, description="The AWS Region where the OpenSearch domain is located")
+    role_arn: Optional[StrictStr] = Field(default=None, description="The AWS IAM Role ARN to assume (used for aws_role auth)")
     url: Optional[StrictStr] = Field(default=None, description="The URL of the OpenSearch instance (must start with https).")
-    username: Optional[StrictStr] = Field(default=None, description="The username for authenticating with OpenSearch.")
-    __properties: ClassVar[List[str]] = ["index", "insecure_skip_verify", "url", "username"]
+    username: Optional[StrictStr] = Field(default=None, description="The username for authenticating with OpenSearch (used for basic auth).")
+    __properties: ClassVar[List[str]] = ["auth_mode", "index", "insecure_skip_verify", "region", "role_arn", "url", "username"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,8 +87,11 @@ class OpensearchSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "auth_mode": obj.get("auth_mode"),
             "index": obj.get("index"),
             "insecure_skip_verify": obj.get("insecure_skip_verify"),
+            "region": obj.get("region"),
+            "role_arn": obj.get("role_arn"),
             "url": obj.get("url"),
             "username": obj.get("username")
         })

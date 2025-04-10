@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesV2CreateInputRequest{}
 
 // RoutesV2CreateInputRequest struct for RoutesV2CreateInputRequest
 type RoutesV2CreateInputRequest struct {
-	Config map[string]interface{} `json:"config,omitempty"`
+	Config *RoutesV2InputConfig `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Type *string `json:"type,omitempty"`
@@ -44,19 +44,19 @@ func NewRoutesV2CreateInputRequestWithDefaults() *RoutesV2CreateInputRequest {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *RoutesV2CreateInputRequest) GetConfig() map[string]interface{} {
+func (o *RoutesV2CreateInputRequest) GetConfig() RoutesV2InputConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
+		var ret RoutesV2InputConfig
 		return ret
 	}
-	return o.Config
+	return *o.Config
 }
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV2CreateInputRequest) GetConfigOk() (map[string]interface{}, bool) {
+func (o *RoutesV2CreateInputRequest) GetConfigOk() (*RoutesV2InputConfig, bool) {
 	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Config, true
 }
@@ -70,9 +70,9 @@ func (o *RoutesV2CreateInputRequest) HasConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *RoutesV2CreateInputRequest) SetConfig(v map[string]interface{}) {
-	o.Config = v
+// SetConfig gets a reference to the given RoutesV2InputConfig and assigns it to the Config field.
+func (o *RoutesV2CreateInputRequest) SetConfig(v RoutesV2InputConfig) {
+	o.Config = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.

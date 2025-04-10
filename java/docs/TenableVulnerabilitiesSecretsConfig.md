@@ -2,7 +2,7 @@
 
 # TenableVulnerabilitiesSecretsConfig
 
-Tenable vulnerabilities secrets
+Tenable assets secrets
 
 ## Properties
 

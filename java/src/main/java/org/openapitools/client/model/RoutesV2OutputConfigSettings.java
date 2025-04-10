@@ -24,14 +24,16 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import org.openapitools.client.model.BatchConfigBatchConfig;
+import org.openapitools.client.model.BigquerySettingsConfig;
 import org.openapitools.client.model.CriblHttpSettingsConfig;
 import org.openapitools.client.model.ElasticsearchSettingsConfig;
 import org.openapitools.client.model.FormatterFormatConfig;
 import org.openapitools.client.model.HttpSettingsConfig;
+import org.openapitools.client.model.NextGenSiemSettingsConfig;
 import org.openapitools.client.model.OpensearchSettingsConfig;
 import org.openapitools.client.model.S3SettingsConfig;
 import org.openapitools.client.model.SentinelSettingsConfig;
-import org.openapitools.client.model.SnowflakeSettingsConfig;
+import org.openapitools.client.model.SnowflakeOutputSettingsConfig;
 import org.openapitools.client.model.SplunkSettingsConfig;
 import org.openapitools.client.model.SumologicSettingsConfig;
 
@@ -70,7 +72,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-18T21:46:21.506800163Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T17:25:27.914467533Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesV2OutputConfigSettings.class.getName());
 
@@ -82,15 +84,17 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
                 return null; // this class only serializes 'RoutesV2OutputConfigSettings' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<BigquerySettingsConfig> adapterBigquerySettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(BigquerySettingsConfig.class));
             final TypeAdapter<CriblHttpSettingsConfig> adapterCriblHttpSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(CriblHttpSettingsConfig.class));
             final TypeAdapter<ElasticsearchSettingsConfig> adapterElasticsearchSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(ElasticsearchSettingsConfig.class));
             final TypeAdapter<HttpSettingsConfig> adapterHttpSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(HttpSettingsConfig.class));
             final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
             final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
+            final TypeAdapter<NextGenSiemSettingsConfig> adapterNextGenSiemSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(NextGenSiemSettingsConfig.class));
             final TypeAdapter<OpensearchSettingsConfig> adapterOpensearchSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(OpensearchSettingsConfig.class));
             final TypeAdapter<S3SettingsConfig> adapterS3SettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(S3SettingsConfig.class));
             final TypeAdapter<SentinelSettingsConfig> adapterSentinelSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SentinelSettingsConfig.class));
-            final TypeAdapter<SnowflakeSettingsConfig> adapterSnowflakeSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnowflakeSettingsConfig.class));
+            final TypeAdapter<SnowflakeOutputSettingsConfig> adapterSnowflakeOutputSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnowflakeOutputSettingsConfig.class));
             final TypeAdapter<SplunkSettingsConfig> adapterSplunkSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SplunkSettingsConfig.class));
             final TypeAdapter<SumologicSettingsConfig> adapterSumologicSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SumologicSettingsConfig.class));
 
@@ -102,6 +106,12 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
                         return;
                     }
 
+                    // check if the actual instance is of the type `BigquerySettingsConfig`
+                    if (value.getActualInstance() instanceof BigquerySettingsConfig) {
+                        JsonElement element = adapterBigquerySettingsConfig.toJsonTree((BigquerySettingsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `CriblHttpSettingsConfig`
                     if (value.getActualInstance() instanceof CriblHttpSettingsConfig) {
                         JsonElement element = adapterCriblHttpSettingsConfig.toJsonTree((CriblHttpSettingsConfig)value.getActualInstance());
@@ -126,6 +136,12 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
                         elementAdapter.write(out, object);
                         return;
                     }
+                    // check if the actual instance is of the type `NextGenSiemSettingsConfig`
+                    if (value.getActualInstance() instanceof NextGenSiemSettingsConfig) {
+                        JsonElement element = adapterNextGenSiemSettingsConfig.toJsonTree((NextGenSiemSettingsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `OpensearchSettingsConfig`
                     if (value.getActualInstance() instanceof OpensearchSettingsConfig) {
                         JsonElement element = adapterOpensearchSettingsConfig.toJsonTree((OpensearchSettingsConfig)value.getActualInstance());
@@ -144,9 +160,9 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `SnowflakeSettingsConfig`
-                    if (value.getActualInstance() instanceof SnowflakeSettingsConfig) {
-                        JsonElement element = adapterSnowflakeSettingsConfig.toJsonTree((SnowflakeSettingsConfig)value.getActualInstance());
+                    // check if the actual instance is of the type `SnowflakeOutputSettingsConfig`
+                    if (value.getActualInstance() instanceof SnowflakeOutputSettingsConfig) {
+                        JsonElement element = adapterSnowflakeOutputSettingsConfig.toJsonTree((SnowflakeOutputSettingsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -162,7 +178,7 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig");
                 }
 
                 @Override
@@ -174,6 +190,18 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
                     ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
+                    // deserialize BigquerySettingsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        BigquerySettingsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterBigquerySettingsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'BigquerySettingsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for BigquerySettingsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'BigquerySettingsConfig'", e);
+                    }
                     // deserialize CriblHttpSettingsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -225,6 +253,18 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
                         errorMessages.add(String.format("Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'Map<String, Object>'", e);
                     }
+                    // deserialize NextGenSiemSettingsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        NextGenSiemSettingsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterNextGenSiemSettingsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'NextGenSiemSettingsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for NextGenSiemSettingsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'NextGenSiemSettingsConfig'", e);
+                    }
                     // deserialize OpensearchSettingsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -261,17 +301,17 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
                         errorMessages.add(String.format("Deserialization for SentinelSettingsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SentinelSettingsConfig'", e);
                     }
-                    // deserialize SnowflakeSettingsConfig
+                    // deserialize SnowflakeOutputSettingsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        SnowflakeSettingsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterSnowflakeSettingsConfig;
+                        SnowflakeOutputSettingsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterSnowflakeOutputSettingsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'SnowflakeSettingsConfig'");
+                        log.log(Level.FINER, "Input data matches schema 'SnowflakeOutputSettingsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for SnowflakeSettingsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'SnowflakeSettingsConfig'", e);
+                        errorMessages.add(String.format("Deserialization for SnowflakeOutputSettingsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'SnowflakeOutputSettingsConfig'", e);
                     }
                     // deserialize SplunkSettingsConfig
                     try {
@@ -323,14 +363,16 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     }
 
     static {
+        schemas.put("BigquerySettingsConfig", BigquerySettingsConfig.class);
         schemas.put("CriblHttpSettingsConfig", CriblHttpSettingsConfig.class);
         schemas.put("ElasticsearchSettingsConfig", ElasticsearchSettingsConfig.class);
         schemas.put("HttpSettingsConfig", HttpSettingsConfig.class);
         schemas.put("Map<String, Object>", Map.class);
+        schemas.put("NextGenSiemSettingsConfig", NextGenSiemSettingsConfig.class);
         schemas.put("OpensearchSettingsConfig", OpensearchSettingsConfig.class);
         schemas.put("S3SettingsConfig", S3SettingsConfig.class);
         schemas.put("SentinelSettingsConfig", SentinelSettingsConfig.class);
-        schemas.put("SnowflakeSettingsConfig", SnowflakeSettingsConfig.class);
+        schemas.put("SnowflakeOutputSettingsConfig", SnowflakeOutputSettingsConfig.class);
         schemas.put("SplunkSettingsConfig", SplunkSettingsConfig.class);
         schemas.put("SumologicSettingsConfig", SumologicSettingsConfig.class);
     }
@@ -343,12 +385,17 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
+     * BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
     @Override
     public void setActualInstance(Object instance) {
+        if (instance instanceof BigquerySettingsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof CriblHttpSettingsConfig) {
             super.setActualInstance(instance);
             return;
@@ -369,6 +416,11 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
             return;
         }
 
+        if (instance instanceof NextGenSiemSettingsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof OpensearchSettingsConfig) {
             super.setActualInstance(instance);
             return;
@@ -384,7 +436,7 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
             return;
         }
 
-        if (instance instanceof SnowflakeSettingsConfig) {
+        if (instance instanceof SnowflakeOutputSettingsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -399,19 +451,30 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig");
+        throw new RuntimeException("Invalid instance type. Must be BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
+     * BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
      *
-     * @return The actual instance (CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig)
+     * @return The actual instance (BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `BigquerySettingsConfig`. If the actual instance is not `BigquerySettingsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `BigquerySettingsConfig`
+     * @throws ClassCastException if the instance is not `BigquerySettingsConfig`
+     */
+    public BigquerySettingsConfig getBigquerySettingsConfig() throws ClassCastException {
+        return (BigquerySettingsConfig)super.getActualInstance();
     }
 
     /**
@@ -459,6 +522,17 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     }
 
     /**
+     * Get the actual instance of `NextGenSiemSettingsConfig`. If the actual instance is not `NextGenSiemSettingsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `NextGenSiemSettingsConfig`
+     * @throws ClassCastException if the instance is not `NextGenSiemSettingsConfig`
+     */
+    public NextGenSiemSettingsConfig getNextGenSiemSettingsConfig() throws ClassCastException {
+        return (NextGenSiemSettingsConfig)super.getActualInstance();
+    }
+
+    /**
      * Get the actual instance of `OpensearchSettingsConfig`. If the actual instance is not `OpensearchSettingsConfig`,
      * the ClassCastException will be thrown.
      *
@@ -492,14 +566,14 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `SnowflakeSettingsConfig`. If the actual instance is not `SnowflakeSettingsConfig`,
+     * Get the actual instance of `SnowflakeOutputSettingsConfig`. If the actual instance is not `SnowflakeOutputSettingsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `SnowflakeSettingsConfig`
-     * @throws ClassCastException if the instance is not `SnowflakeSettingsConfig`
+     * @return The actual instance of `SnowflakeOutputSettingsConfig`
+     * @throws ClassCastException if the instance is not `SnowflakeOutputSettingsConfig`
      */
-    public SnowflakeSettingsConfig getSnowflakeSettingsConfig() throws ClassCastException {
-        return (SnowflakeSettingsConfig)super.getActualInstance();
+    public SnowflakeOutputSettingsConfig getSnowflakeOutputSettingsConfig() throws ClassCastException {
+        return (SnowflakeOutputSettingsConfig)super.getActualInstance();
     }
 
     /**
@@ -534,6 +608,14 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
         // validate oneOf schemas one by one
         int validCount = 0;
         ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with BigquerySettingsConfig
+        try {
+            BigquerySettingsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for BigquerySettingsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with CriblHttpSettingsConfig
         try {
             CriblHttpSettingsConfig.validateJsonElement(jsonElement);
@@ -569,6 +651,14 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
             errorMessages.add(String.format("Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with NextGenSiemSettingsConfig
+        try {
+            NextGenSiemSettingsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for NextGenSiemSettingsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with OpensearchSettingsConfig
         try {
             OpensearchSettingsConfig.validateJsonElement(jsonElement);
@@ -593,12 +683,12 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
             errorMessages.add(String.format("Deserialization for SentinelSettingsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with SnowflakeSettingsConfig
+        // validate the json string with SnowflakeOutputSettingsConfig
         try {
-            SnowflakeSettingsConfig.validateJsonElement(jsonElement);
+            SnowflakeOutputSettingsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for SnowflakeSettingsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format("Deserialization for SnowflakeOutputSettingsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with SplunkSettingsConfig
@@ -618,7 +708,7 @@ public class RoutesV2OutputConfigSettings extends AbstractOpenApiSchema {
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for RoutesV2OutputConfigSettings with oneOf schemas: CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format("The JSON string is invalid for RoutesV2OutputConfigSettings with oneOf schemas: BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, OpensearchSettingsConfig, S3SettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

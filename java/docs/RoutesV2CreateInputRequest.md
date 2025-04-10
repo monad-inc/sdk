@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**config** | **Object** |  |  [optional] |
+|**config** | [**RoutesV2InputConfig**](RoutesV2InputConfig.md) |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**type** | **String** |  |  [optional] |

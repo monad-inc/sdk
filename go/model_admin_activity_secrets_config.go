@@ -21,6 +21,7 @@ var _ MappedNullable = &AdminActivitySecretsConfig{}
 // AdminActivitySecretsConfig Google Workspace Admin Activity secrets
 type AdminActivitySecretsConfig struct {
 	CredentialsJson *ModelsSecret `json:"credentials_json,omitempty"`
+	OauthToken *ModelsSecret `json:"oauth_token,omitempty"`
 }
 
 // NewAdminActivitySecretsConfig instantiates a new AdminActivitySecretsConfig object
@@ -72,6 +73,38 @@ func (o *AdminActivitySecretsConfig) SetCredentialsJson(v ModelsSecret) {
 	o.CredentialsJson = &v
 }
 
+// GetOauthToken returns the OauthToken field value if set, zero value otherwise.
+func (o *AdminActivitySecretsConfig) GetOauthToken() ModelsSecret {
+	if o == nil || IsNil(o.OauthToken) {
+		var ret ModelsSecret
+		return ret
+	}
+	return *o.OauthToken
+}
+
+// GetOauthTokenOk returns a tuple with the OauthToken field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AdminActivitySecretsConfig) GetOauthTokenOk() (*ModelsSecret, bool) {
+	if o == nil || IsNil(o.OauthToken) {
+		return nil, false
+	}
+	return o.OauthToken, true
+}
+
+// HasOauthToken returns a boolean if a field has been set.
+func (o *AdminActivitySecretsConfig) HasOauthToken() bool {
+	if o != nil && !IsNil(o.OauthToken) {
+		return true
+	}
+
+	return false
+}
+
+// SetOauthToken gets a reference to the given ModelsSecret and assigns it to the OauthToken field.
+func (o *AdminActivitySecretsConfig) SetOauthToken(v ModelsSecret) {
+	o.OauthToken = &v
+}
+
 func (o AdminActivitySecretsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -84,6 +117,9 @@ func (o AdminActivitySecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CredentialsJson) {
 		toSerialize["credentials_json"] = o.CredentialsJson
+	}
+	if !IsNil(o.OauthToken) {
+		toSerialize["oauth_token"] = o.OauthToken
 	}
 	return toSerialize, nil
 }

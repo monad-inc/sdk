@@ -7,8 +7,11 @@ Splunk Output Settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allow_insecure** | **bool** | Whether to allow insecure connections (not recommended for production). | [optional] 
+**index** | **str** | The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 **port** | **str** | The port of the Splunk instance. | [optional] 
+**to_create** | **bool** | Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 **url** | **str** | The URL of the Splunk instance (must start with http or https). | [optional] 
+**username** | **str** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. | [optional] 
 
 ## Example
 

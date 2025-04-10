@@ -17,6 +17,7 @@ import { HttpFile } from '../http/http';
 * Splunk Output Secrets
 */
 export class SplunkSecretsConfig {
+    'password'?: ModelsSecret;
     'token'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
@@ -24,6 +25,12 @@ export class SplunkSecretsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "password",
+            "baseName": "password",
+            "type": "ModelsSecret",
+            "format": ""
+        },
         {
             "name": "token",
             "baseName": "token",

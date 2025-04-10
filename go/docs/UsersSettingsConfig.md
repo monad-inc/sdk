@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AuthType** | Pointer to **string** | Authentication type (service_account or oauth) | [optional] 
 **Cron** | Pointer to **string** | Cron expression to schedule the data collection. | [optional] 
-**Email** | Pointer to **string** | Email address to use to authenticate with Google Cloud. | [optional] 
+**Email** | Pointer to **string** | Email address to use to authenticate with Google Cloud (required for service_account auth). | [optional] 
 
 ## Methods
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewUsersSettingsConfigWithDefaults instantiates a new UsersSettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAuthType
+
+`func (o *UsersSettingsConfig) GetAuthType() string`
+
+GetAuthType returns the AuthType field if non-nil, zero value otherwise.
+
+### GetAuthTypeOk
+
+`func (o *UsersSettingsConfig) GetAuthTypeOk() (*string, bool)`
+
+GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthType
+
+`func (o *UsersSettingsConfig) SetAuthType(v string)`
+
+SetAuthType sets AuthType field to given value.
+
+### HasAuthType
+
+`func (o *UsersSettingsConfig) HasAuthType() bool`
+
+HasAuthType returns a boolean if a field has been set.
 
 ### GetCron
 

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,9 @@ class CloudResourceInventorySettingsConfig(BaseModel):
     cloud_platform: Optional[List[StrictStr]] = Field(default=None, description="Cloud Platform types for Wiz. Ex: 'AWS', 'AZURE', 'GCP'.", alias="cloudPlatform")
     endpoint_url: Optional[StrictStr] = Field(default=None, description="Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-resource-inventory'.")
     entity_type: Optional[List[StrictStr]] = Field(default=None, description="Entity types for Wiz. Ex: 'ACCOUNT', 'REGION', 'VPC', 'SUBNET', 'INSTANCE'.", alias="entityType")
-    __properties: ClassVar[List[str]] = ["cloudPlatform", "endpoint_url", "entityType"]
+    full_snapshot: Optional[StrictBool] = Field(default=None, description="FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.")
+    interval: Optional[StrictInt] = Field(default=None, description="Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.")
+    __properties: ClassVar[List[str]] = ["cloudPlatform", "endpoint_url", "entityType", "full_snapshot", "interval"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,7 +87,9 @@ class CloudResourceInventorySettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "cloudPlatform": obj.get("cloudPlatform"),
             "endpoint_url": obj.get("endpoint_url"),
-            "entityType": obj.get("entityType")
+            "entityType": obj.get("entityType"),
+            "full_snapshot": obj.get("full_snapshot"),
+            "interval": obj.get("interval")
         })
         return _obj
 

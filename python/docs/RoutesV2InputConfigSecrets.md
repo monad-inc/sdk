@@ -8,12 +8,17 @@ Name | Type | Description | Notes
 **client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **enterprise_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**aws_access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**aws_secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **customer_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **domain** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

@@ -13,8 +13,8 @@ package monad
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // RoutesV2InputConfigSettings - struct for RoutesV2InputConfigSettings
@@ -26,6 +26,7 @@ type RoutesV2InputConfigSettings struct {
 	AuthLogsSettingsConfig *AuthLogsSettingsConfig
 	AwsS3SettingsConfig *AwsS3SettingsConfig
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
+	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BoxEventsSettingsConfig *BoxEventsSettingsConfig
 	BoxUsersSettingsConfig *BoxUsersSettingsConfig
 	CloudAssetInventorySettingsConfig *CloudAssetInventorySettingsConfig
@@ -33,15 +34,19 @@ type RoutesV2InputConfigSettings struct {
 	CloudLogsSettingsConfig *CloudLogsSettingsConfig
 	CloudResourceInventorySettingsConfig *CloudResourceInventorySettingsConfig
 	CloudtrailSettingsConfig *CloudtrailSettingsConfig
+	CrowdstrikeFdrSettingsConfig *CrowdstrikeFdrSettingsConfig
+	DefenderForEndpointAlertsSettingsConfig *DefenderForEndpointAlertsSettingsConfig
 	DemoCustomSettingsConfig *DemoCustomSettingsConfig
 	DemoSettingsConfig *DemoSettingsConfig
 	DetectSummariesSettingsConfig *DetectSummariesSettingsConfig
 	DeviceActivitySettingsConfig *DeviceActivitySettingsConfig
 	DeviceDetailsSettingsConfig *DeviceDetailsSettingsConfig
+	DevicesSettingsConfig *DevicesSettingsConfig
 	DriveActivitySettingsConfig *DriveActivitySettingsConfig
 	EntraIdSettingsConfig *EntraIdSettingsConfig
 	EventSettingsConfig *EventSettingsConfig
 	EventsLogsSettingsConfig *EventsLogsSettingsConfig
+	FullScansSettingsConfig *FullScansSettingsConfig
 	IssuesSettingsConfig *IssuesSettingsConfig
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
 	LoginActivitySettingsConfig *LoginActivitySettingsConfig
@@ -54,8 +59,12 @@ type RoutesV2InputConfigSettings struct {
 	SemgrepProjectsSettingsConfig *SemgrepProjectsSettingsConfig
 	SlackUsersSettingsConfig *SlackUsersSettingsConfig
 	SlackgroupsSettingsConfig *SlackgroupsSettingsConfig
+	SnowflakeInputSettingsConfig *SnowflakeInputSettingsConfig
 	SnykOrganizationsSettingsConfig *SnykOrganizationsSettingsConfig
 	SnykProjectsSettingsConfig *SnykProjectsSettingsConfig
+	TailscaleUsersSettingsConfig *TailscaleUsersSettingsConfig
+	TenableAssetsSettingsConfig *TenableAssetsSettingsConfig
+	TenableVulnerabilitiesSettingsConfig *TenableVulnerabilitiesSettingsConfig
 	UsersInfoSettingsConfig *UsersInfoSettingsConfig
 	UsersSettingsConfig *UsersSettingsConfig
 	VulnerabilitiesSettingsConfig *VulnerabilitiesSettingsConfig
@@ -112,6 +121,13 @@ func AzureActivityLogsSettingsConfigAsRoutesV2InputConfigSettings(v *AzureActivi
 	}
 }
 
+// BigqueryInputSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns BigqueryInputSettingsConfig wrapped in RoutesV2InputConfigSettings
+func BigqueryInputSettingsConfigAsRoutesV2InputConfigSettings(v *BigqueryInputSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		BigqueryInputSettingsConfig: v,
+	}
+}
+
 // BoxEventsSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns BoxEventsSettingsConfig wrapped in RoutesV2InputConfigSettings
 func BoxEventsSettingsConfigAsRoutesV2InputConfigSettings(v *BoxEventsSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
@@ -161,6 +177,20 @@ func CloudtrailSettingsConfigAsRoutesV2InputConfigSettings(v *CloudtrailSettings
 	}
 }
 
+// CrowdstrikeFdrSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns CrowdstrikeFdrSettingsConfig wrapped in RoutesV2InputConfigSettings
+func CrowdstrikeFdrSettingsConfigAsRoutesV2InputConfigSettings(v *CrowdstrikeFdrSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		CrowdstrikeFdrSettingsConfig: v,
+	}
+}
+
+// DefenderForEndpointAlertsSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns DefenderForEndpointAlertsSettingsConfig wrapped in RoutesV2InputConfigSettings
+func DefenderForEndpointAlertsSettingsConfigAsRoutesV2InputConfigSettings(v *DefenderForEndpointAlertsSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		DefenderForEndpointAlertsSettingsConfig: v,
+	}
+}
+
 // DemoCustomSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns DemoCustomSettingsConfig wrapped in RoutesV2InputConfigSettings
 func DemoCustomSettingsConfigAsRoutesV2InputConfigSettings(v *DemoCustomSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
@@ -196,6 +226,13 @@ func DeviceDetailsSettingsConfigAsRoutesV2InputConfigSettings(v *DeviceDetailsSe
 	}
 }
 
+// DevicesSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns DevicesSettingsConfig wrapped in RoutesV2InputConfigSettings
+func DevicesSettingsConfigAsRoutesV2InputConfigSettings(v *DevicesSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		DevicesSettingsConfig: v,
+	}
+}
+
 // DriveActivitySettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns DriveActivitySettingsConfig wrapped in RoutesV2InputConfigSettings
 func DriveActivitySettingsConfigAsRoutesV2InputConfigSettings(v *DriveActivitySettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
@@ -221,6 +258,13 @@ func EventSettingsConfigAsRoutesV2InputConfigSettings(v *EventSettingsConfig) Ro
 func EventsLogsSettingsConfigAsRoutesV2InputConfigSettings(v *EventsLogsSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
 		EventsLogsSettingsConfig: v,
+	}
+}
+
+// FullScansSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns FullScansSettingsConfig wrapped in RoutesV2InputConfigSettings
+func FullScansSettingsConfigAsRoutesV2InputConfigSettings(v *FullScansSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		FullScansSettingsConfig: v,
 	}
 }
 
@@ -308,6 +352,13 @@ func SlackgroupsSettingsConfigAsRoutesV2InputConfigSettings(v *SlackgroupsSettin
 	}
 }
 
+// SnowflakeInputSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns SnowflakeInputSettingsConfig wrapped in RoutesV2InputConfigSettings
+func SnowflakeInputSettingsConfigAsRoutesV2InputConfigSettings(v *SnowflakeInputSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		SnowflakeInputSettingsConfig: v,
+	}
+}
+
 // SnykOrganizationsSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns SnykOrganizationsSettingsConfig wrapped in RoutesV2InputConfigSettings
 func SnykOrganizationsSettingsConfigAsRoutesV2InputConfigSettings(v *SnykOrganizationsSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
@@ -319,6 +370,27 @@ func SnykOrganizationsSettingsConfigAsRoutesV2InputConfigSettings(v *SnykOrganiz
 func SnykProjectsSettingsConfigAsRoutesV2InputConfigSettings(v *SnykProjectsSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
 		SnykProjectsSettingsConfig: v,
+	}
+}
+
+// TailscaleUsersSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns TailscaleUsersSettingsConfig wrapped in RoutesV2InputConfigSettings
+func TailscaleUsersSettingsConfigAsRoutesV2InputConfigSettings(v *TailscaleUsersSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		TailscaleUsersSettingsConfig: v,
+	}
+}
+
+// TenableAssetsSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns TenableAssetsSettingsConfig wrapped in RoutesV2InputConfigSettings
+func TenableAssetsSettingsConfigAsRoutesV2InputConfigSettings(v *TenableAssetsSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		TenableAssetsSettingsConfig: v,
+	}
+}
+
+// TenableVulnerabilitiesSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns TenableVulnerabilitiesSettingsConfig wrapped in RoutesV2InputConfigSettings
+func TenableVulnerabilitiesSettingsConfigAsRoutesV2InputConfigSettings(v *TenableVulnerabilitiesSettingsConfig) RoutesV2InputConfigSettings {
+	return RoutesV2InputConfigSettings{
+		TenableVulnerabilitiesSettingsConfig: v,
 	}
 }
 
@@ -481,6 +553,23 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.AzureActivityLogsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into BigqueryInputSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.BigqueryInputSettingsConfig)
+	if err == nil {
+		jsonBigqueryInputSettingsConfig, _ := json.Marshal(dst.BigqueryInputSettingsConfig)
+		if string(jsonBigqueryInputSettingsConfig) == "{}" { // empty struct
+			dst.BigqueryInputSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BigqueryInputSettingsConfig); err != nil {
+				dst.BigqueryInputSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BigqueryInputSettingsConfig = nil
+	}
+
 	// try to unmarshal data into BoxEventsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.BoxEventsSettingsConfig)
 	if err == nil {
@@ -600,6 +689,40 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.CloudtrailSettingsConfig = nil
 	}
 
+	// try to unmarshal data into CrowdstrikeFdrSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CrowdstrikeFdrSettingsConfig)
+	if err == nil {
+		jsonCrowdstrikeFdrSettingsConfig, _ := json.Marshal(dst.CrowdstrikeFdrSettingsConfig)
+		if string(jsonCrowdstrikeFdrSettingsConfig) == "{}" { // empty struct
+			dst.CrowdstrikeFdrSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CrowdstrikeFdrSettingsConfig); err != nil {
+				dst.CrowdstrikeFdrSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CrowdstrikeFdrSettingsConfig = nil
+	}
+
+	// try to unmarshal data into DefenderForEndpointAlertsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.DefenderForEndpointAlertsSettingsConfig)
+	if err == nil {
+		jsonDefenderForEndpointAlertsSettingsConfig, _ := json.Marshal(dst.DefenderForEndpointAlertsSettingsConfig)
+		if string(jsonDefenderForEndpointAlertsSettingsConfig) == "{}" { // empty struct
+			dst.DefenderForEndpointAlertsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.DefenderForEndpointAlertsSettingsConfig); err != nil {
+				dst.DefenderForEndpointAlertsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.DefenderForEndpointAlertsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into DemoCustomSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.DemoCustomSettingsConfig)
 	if err == nil {
@@ -685,6 +808,23 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.DeviceDetailsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into DevicesSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.DevicesSettingsConfig)
+	if err == nil {
+		jsonDevicesSettingsConfig, _ := json.Marshal(dst.DevicesSettingsConfig)
+		if string(jsonDevicesSettingsConfig) == "{}" { // empty struct
+			dst.DevicesSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.DevicesSettingsConfig); err != nil {
+				dst.DevicesSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.DevicesSettingsConfig = nil
+	}
+
 	// try to unmarshal data into DriveActivitySettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.DriveActivitySettingsConfig)
 	if err == nil {
@@ -751,6 +891,23 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.EventsLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into FullScansSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.FullScansSettingsConfig)
+	if err == nil {
+		jsonFullScansSettingsConfig, _ := json.Marshal(dst.FullScansSettingsConfig)
+		if string(jsonFullScansSettingsConfig) == "{}" { // empty struct
+			dst.FullScansSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.FullScansSettingsConfig); err != nil {
+				dst.FullScansSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.FullScansSettingsConfig = nil
 	}
 
 	// try to unmarshal data into IssuesSettingsConfig
@@ -957,6 +1114,23 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.SlackgroupsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into SnowflakeInputSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SnowflakeInputSettingsConfig)
+	if err == nil {
+		jsonSnowflakeInputSettingsConfig, _ := json.Marshal(dst.SnowflakeInputSettingsConfig)
+		if string(jsonSnowflakeInputSettingsConfig) == "{}" { // empty struct
+			dst.SnowflakeInputSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SnowflakeInputSettingsConfig); err != nil {
+				dst.SnowflakeInputSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SnowflakeInputSettingsConfig = nil
+	}
+
 	// try to unmarshal data into SnykOrganizationsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.SnykOrganizationsSettingsConfig)
 	if err == nil {
@@ -989,6 +1163,57 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.SnykProjectsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into TailscaleUsersSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TailscaleUsersSettingsConfig)
+	if err == nil {
+		jsonTailscaleUsersSettingsConfig, _ := json.Marshal(dst.TailscaleUsersSettingsConfig)
+		if string(jsonTailscaleUsersSettingsConfig) == "{}" { // empty struct
+			dst.TailscaleUsersSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TailscaleUsersSettingsConfig); err != nil {
+				dst.TailscaleUsersSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TailscaleUsersSettingsConfig = nil
+	}
+
+	// try to unmarshal data into TenableAssetsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TenableAssetsSettingsConfig)
+	if err == nil {
+		jsonTenableAssetsSettingsConfig, _ := json.Marshal(dst.TenableAssetsSettingsConfig)
+		if string(jsonTenableAssetsSettingsConfig) == "{}" { // empty struct
+			dst.TenableAssetsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TenableAssetsSettingsConfig); err != nil {
+				dst.TenableAssetsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TenableAssetsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into TenableVulnerabilitiesSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TenableVulnerabilitiesSettingsConfig)
+	if err == nil {
+		jsonTenableVulnerabilitiesSettingsConfig, _ := json.Marshal(dst.TenableVulnerabilitiesSettingsConfig)
+		if string(jsonTenableVulnerabilitiesSettingsConfig) == "{}" { // empty struct
+			dst.TenableVulnerabilitiesSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TenableVulnerabilitiesSettingsConfig); err != nil {
+				dst.TenableVulnerabilitiesSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TenableVulnerabilitiesSettingsConfig = nil
 	}
 
 	// try to unmarshal data into UsersInfoSettingsConfig
@@ -1085,6 +1310,7 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.AuthLogsSettingsConfig = nil
 		dst.AwsS3SettingsConfig = nil
 		dst.AzureActivityLogsSettingsConfig = nil
+		dst.BigqueryInputSettingsConfig = nil
 		dst.BoxEventsSettingsConfig = nil
 		dst.BoxUsersSettingsConfig = nil
 		dst.CloudAssetInventorySettingsConfig = nil
@@ -1092,15 +1318,19 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.CloudLogsSettingsConfig = nil
 		dst.CloudResourceInventorySettingsConfig = nil
 		dst.CloudtrailSettingsConfig = nil
+		dst.CrowdstrikeFdrSettingsConfig = nil
+		dst.DefenderForEndpointAlertsSettingsConfig = nil
 		dst.DemoCustomSettingsConfig = nil
 		dst.DemoSettingsConfig = nil
 		dst.DetectSummariesSettingsConfig = nil
 		dst.DeviceActivitySettingsConfig = nil
 		dst.DeviceDetailsSettingsConfig = nil
+		dst.DevicesSettingsConfig = nil
 		dst.DriveActivitySettingsConfig = nil
 		dst.EntraIdSettingsConfig = nil
 		dst.EventSettingsConfig = nil
 		dst.EventsLogsSettingsConfig = nil
+		dst.FullScansSettingsConfig = nil
 		dst.IssuesSettingsConfig = nil
 		dst.LogAnalyticsQuerySettingsConfig = nil
 		dst.LoginActivitySettingsConfig = nil
@@ -1113,8 +1343,12 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.SemgrepProjectsSettingsConfig = nil
 		dst.SlackUsersSettingsConfig = nil
 		dst.SlackgroupsSettingsConfig = nil
+		dst.SnowflakeInputSettingsConfig = nil
 		dst.SnykOrganizationsSettingsConfig = nil
 		dst.SnykProjectsSettingsConfig = nil
+		dst.TailscaleUsersSettingsConfig = nil
+		dst.TenableAssetsSettingsConfig = nil
+		dst.TenableVulnerabilitiesSettingsConfig = nil
 		dst.UsersInfoSettingsConfig = nil
 		dst.UsersSettingsConfig = nil
 		dst.VulnerabilitiesSettingsConfig = nil
@@ -1159,6 +1393,10 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AzureActivityLogsSettingsConfig)
 	}
 
+	if src.BigqueryInputSettingsConfig != nil {
+		return json.Marshal(&src.BigqueryInputSettingsConfig)
+	}
+
 	if src.BoxEventsSettingsConfig != nil {
 		return json.Marshal(&src.BoxEventsSettingsConfig)
 	}
@@ -1187,6 +1425,14 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CloudtrailSettingsConfig)
 	}
 
+	if src.CrowdstrikeFdrSettingsConfig != nil {
+		return json.Marshal(&src.CrowdstrikeFdrSettingsConfig)
+	}
+
+	if src.DefenderForEndpointAlertsSettingsConfig != nil {
+		return json.Marshal(&src.DefenderForEndpointAlertsSettingsConfig)
+	}
+
 	if src.DemoCustomSettingsConfig != nil {
 		return json.Marshal(&src.DemoCustomSettingsConfig)
 	}
@@ -1207,6 +1453,10 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.DeviceDetailsSettingsConfig)
 	}
 
+	if src.DevicesSettingsConfig != nil {
+		return json.Marshal(&src.DevicesSettingsConfig)
+	}
+
 	if src.DriveActivitySettingsConfig != nil {
 		return json.Marshal(&src.DriveActivitySettingsConfig)
 	}
@@ -1221,6 +1471,10 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.EventsLogsSettingsConfig != nil {
 		return json.Marshal(&src.EventsLogsSettingsConfig)
+	}
+
+	if src.FullScansSettingsConfig != nil {
+		return json.Marshal(&src.FullScansSettingsConfig)
 	}
 
 	if src.IssuesSettingsConfig != nil {
@@ -1271,12 +1525,28 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.SlackgroupsSettingsConfig)
 	}
 
+	if src.SnowflakeInputSettingsConfig != nil {
+		return json.Marshal(&src.SnowflakeInputSettingsConfig)
+	}
+
 	if src.SnykOrganizationsSettingsConfig != nil {
 		return json.Marshal(&src.SnykOrganizationsSettingsConfig)
 	}
 
 	if src.SnykProjectsSettingsConfig != nil {
 		return json.Marshal(&src.SnykProjectsSettingsConfig)
+	}
+
+	if src.TailscaleUsersSettingsConfig != nil {
+		return json.Marshal(&src.TailscaleUsersSettingsConfig)
+	}
+
+	if src.TenableAssetsSettingsConfig != nil {
+		return json.Marshal(&src.TenableAssetsSettingsConfig)
+	}
+
+	if src.TenableVulnerabilitiesSettingsConfig != nil {
+		return json.Marshal(&src.TenableVulnerabilitiesSettingsConfig)
 	}
 
 	if src.UsersInfoSettingsConfig != nil {
@@ -1335,6 +1605,10 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 		return obj.AzureActivityLogsSettingsConfig
 	}
 
+	if obj.BigqueryInputSettingsConfig != nil {
+		return obj.BigqueryInputSettingsConfig
+	}
+
 	if obj.BoxEventsSettingsConfig != nil {
 		return obj.BoxEventsSettingsConfig
 	}
@@ -1363,6 +1637,14 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 		return obj.CloudtrailSettingsConfig
 	}
 
+	if obj.CrowdstrikeFdrSettingsConfig != nil {
+		return obj.CrowdstrikeFdrSettingsConfig
+	}
+
+	if obj.DefenderForEndpointAlertsSettingsConfig != nil {
+		return obj.DefenderForEndpointAlertsSettingsConfig
+	}
+
 	if obj.DemoCustomSettingsConfig != nil {
 		return obj.DemoCustomSettingsConfig
 	}
@@ -1383,6 +1665,10 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 		return obj.DeviceDetailsSettingsConfig
 	}
 
+	if obj.DevicesSettingsConfig != nil {
+		return obj.DevicesSettingsConfig
+	}
+
 	if obj.DriveActivitySettingsConfig != nil {
 		return obj.DriveActivitySettingsConfig
 	}
@@ -1397,6 +1683,10 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.EventsLogsSettingsConfig != nil {
 		return obj.EventsLogsSettingsConfig
+	}
+
+	if obj.FullScansSettingsConfig != nil {
+		return obj.FullScansSettingsConfig
 	}
 
 	if obj.IssuesSettingsConfig != nil {
@@ -1447,12 +1737,28 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 		return obj.SlackgroupsSettingsConfig
 	}
 
+	if obj.SnowflakeInputSettingsConfig != nil {
+		return obj.SnowflakeInputSettingsConfig
+	}
+
 	if obj.SnykOrganizationsSettingsConfig != nil {
 		return obj.SnykOrganizationsSettingsConfig
 	}
 
 	if obj.SnykProjectsSettingsConfig != nil {
 		return obj.SnykProjectsSettingsConfig
+	}
+
+	if obj.TailscaleUsersSettingsConfig != nil {
+		return obj.TailscaleUsersSettingsConfig
+	}
+
+	if obj.TenableAssetsSettingsConfig != nil {
+		return obj.TenableAssetsSettingsConfig
+	}
+
+	if obj.TenableVulnerabilitiesSettingsConfig != nil {
+		return obj.TenableVulnerabilitiesSettingsConfig
 	}
 
 	if obj.UsersInfoSettingsConfig != nil {
@@ -1473,6 +1779,216 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.MapmapOfStringAny != nil {
 		return obj.MapmapOfStringAny
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj RoutesV2InputConfigSettings) GetActualInstanceValue() (interface{}) {
+	if obj.ActorsInfoSettingsConfig != nil {
+		return *obj.ActorsInfoSettingsConfig
+	}
+
+	if obj.AdminActivitySettingsConfig != nil {
+		return *obj.AdminActivitySettingsConfig
+	}
+
+	if obj.AdminLogsSettingsConfig != nil {
+		return *obj.AdminLogsSettingsConfig
+	}
+
+	if obj.AuditLogsSettingsConfig != nil {
+		return *obj.AuditLogsSettingsConfig
+	}
+
+	if obj.AuthLogsSettingsConfig != nil {
+		return *obj.AuthLogsSettingsConfig
+	}
+
+	if obj.AwsS3SettingsConfig != nil {
+		return *obj.AwsS3SettingsConfig
+	}
+
+	if obj.AzureActivityLogsSettingsConfig != nil {
+		return *obj.AzureActivityLogsSettingsConfig
+	}
+
+	if obj.BigqueryInputSettingsConfig != nil {
+		return *obj.BigqueryInputSettingsConfig
+	}
+
+	if obj.BoxEventsSettingsConfig != nil {
+		return *obj.BoxEventsSettingsConfig
+	}
+
+	if obj.BoxUsersSettingsConfig != nil {
+		return *obj.BoxUsersSettingsConfig
+	}
+
+	if obj.CloudAssetInventorySettingsConfig != nil {
+		return *obj.CloudAssetInventorySettingsConfig
+	}
+
+	if obj.CloudConfigurationFindingsSettingsConfig != nil {
+		return *obj.CloudConfigurationFindingsSettingsConfig
+	}
+
+	if obj.CloudLogsSettingsConfig != nil {
+		return *obj.CloudLogsSettingsConfig
+	}
+
+	if obj.CloudResourceInventorySettingsConfig != nil {
+		return *obj.CloudResourceInventorySettingsConfig
+	}
+
+	if obj.CloudtrailSettingsConfig != nil {
+		return *obj.CloudtrailSettingsConfig
+	}
+
+	if obj.CrowdstrikeFdrSettingsConfig != nil {
+		return *obj.CrowdstrikeFdrSettingsConfig
+	}
+
+	if obj.DefenderForEndpointAlertsSettingsConfig != nil {
+		return *obj.DefenderForEndpointAlertsSettingsConfig
+	}
+
+	if obj.DemoCustomSettingsConfig != nil {
+		return *obj.DemoCustomSettingsConfig
+	}
+
+	if obj.DemoSettingsConfig != nil {
+		return *obj.DemoSettingsConfig
+	}
+
+	if obj.DetectSummariesSettingsConfig != nil {
+		return *obj.DetectSummariesSettingsConfig
+	}
+
+	if obj.DeviceActivitySettingsConfig != nil {
+		return *obj.DeviceActivitySettingsConfig
+	}
+
+	if obj.DeviceDetailsSettingsConfig != nil {
+		return *obj.DeviceDetailsSettingsConfig
+	}
+
+	if obj.DevicesSettingsConfig != nil {
+		return *obj.DevicesSettingsConfig
+	}
+
+	if obj.DriveActivitySettingsConfig != nil {
+		return *obj.DriveActivitySettingsConfig
+	}
+
+	if obj.EntraIdSettingsConfig != nil {
+		return *obj.EntraIdSettingsConfig
+	}
+
+	if obj.EventSettingsConfig != nil {
+		return *obj.EventSettingsConfig
+	}
+
+	if obj.EventsLogsSettingsConfig != nil {
+		return *obj.EventsLogsSettingsConfig
+	}
+
+	if obj.FullScansSettingsConfig != nil {
+		return *obj.FullScansSettingsConfig
+	}
+
+	if obj.IssuesSettingsConfig != nil {
+		return *obj.IssuesSettingsConfig
+	}
+
+	if obj.LogAnalyticsQuerySettingsConfig != nil {
+		return *obj.LogAnalyticsQuerySettingsConfig
+	}
+
+	if obj.LoginActivitySettingsConfig != nil {
+		return *obj.LoginActivitySettingsConfig
+	}
+
+	if obj.LoginSessionsSettingsConfig != nil {
+		return *obj.LoginSessionsSettingsConfig
+	}
+
+	if obj.MonadLogSettingsConfig != nil {
+		return *obj.MonadLogSettingsConfig
+	}
+
+	if obj.OauthActivitySettingsConfig != nil {
+		return *obj.OauthActivitySettingsConfig
+	}
+
+	if obj.RolesInfoSettingsConfig != nil {
+		return *obj.RolesInfoSettingsConfig
+	}
+
+	if obj.SemgrepDeploymentsSettingsConfig != nil {
+		return *obj.SemgrepDeploymentsSettingsConfig
+	}
+
+	if obj.SemgrepProjectDetailsSettingsConfig != nil {
+		return *obj.SemgrepProjectDetailsSettingsConfig
+	}
+
+	if obj.SemgrepProjectsSettingsConfig != nil {
+		return *obj.SemgrepProjectsSettingsConfig
+	}
+
+	if obj.SlackUsersSettingsConfig != nil {
+		return *obj.SlackUsersSettingsConfig
+	}
+
+	if obj.SlackgroupsSettingsConfig != nil {
+		return *obj.SlackgroupsSettingsConfig
+	}
+
+	if obj.SnowflakeInputSettingsConfig != nil {
+		return *obj.SnowflakeInputSettingsConfig
+	}
+
+	if obj.SnykOrganizationsSettingsConfig != nil {
+		return *obj.SnykOrganizationsSettingsConfig
+	}
+
+	if obj.SnykProjectsSettingsConfig != nil {
+		return *obj.SnykProjectsSettingsConfig
+	}
+
+	if obj.TailscaleUsersSettingsConfig != nil {
+		return *obj.TailscaleUsersSettingsConfig
+	}
+
+	if obj.TenableAssetsSettingsConfig != nil {
+		return *obj.TenableAssetsSettingsConfig
+	}
+
+	if obj.TenableVulnerabilitiesSettingsConfig != nil {
+		return *obj.TenableVulnerabilitiesSettingsConfig
+	}
+
+	if obj.UsersInfoSettingsConfig != nil {
+		return *obj.UsersInfoSettingsConfig
+	}
+
+	if obj.UsersSettingsConfig != nil {
+		return *obj.UsersSettingsConfig
+	}
+
+	if obj.VulnerabilitiesSettingsConfig != nil {
+		return *obj.VulnerabilitiesSettingsConfig
+	}
+
+	if obj.VulnerabilityFindingsSettingsConfig != nil {
+		return *obj.VulnerabilityFindingsSettingsConfig
+	}
+
+	if obj.MapmapOfStringAny != nil {
+		return *obj.MapmapOfStringAny
 	}
 
 	// all schemas are nil

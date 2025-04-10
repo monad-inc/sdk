@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | **object** |  | [optional] 
+**config** | [**RoutesV2OutputConfig**](RoutesV2OutputConfig.md) |  | [optional] 
 **description** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **output_type** | **str** |  | [optional] 

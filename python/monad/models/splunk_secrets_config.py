@@ -28,8 +28,9 @@ class SplunkSecretsConfig(BaseModel):
     """
     Splunk Output Secrets
     """ # noqa: E501
+    password: Optional[ModelsSecret] = None
     token: Optional[ModelsSecret] = None
-    __properties: ClassVar[List[str]] = ["token"]
+    __properties: ClassVar[List[str]] = ["password", "token"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,6 +71,9 @@ class SplunkSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of password
+        if self.password:
+            _dict['password'] = self.password.to_dict()
         # override the default output from pydantic by calling `to_dict()` of token
         if self.token:
             _dict['token'] = self.token.to_dict()
@@ -85,6 +89,7 @@ class SplunkSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "password": ModelsSecret.from_dict(obj["password"]) if obj.get("password") is not None else None,
             "token": ModelsSecret.from_dict(obj["token"]) if obj.get("token") is not None else None
         })
         return _obj

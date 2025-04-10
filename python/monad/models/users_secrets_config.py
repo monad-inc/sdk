@@ -31,7 +31,8 @@ class UsersSecretsConfig(BaseModel):
     credentials_json: Optional[ModelsSecret] = None
     customer_id: Optional[ModelsSecret] = None
     domain: Optional[ModelsSecret] = None
-    __properties: ClassVar[List[str]] = ["credentials_json", "customer_id", "domain"]
+    oauth_token: Optional[ModelsSecret] = None
+    __properties: ClassVar[List[str]] = ["credentials_json", "customer_id", "domain", "oauth_token"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,6 +82,9 @@ class UsersSecretsConfig(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of domain
         if self.domain:
             _dict['domain'] = self.domain.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of oauth_token
+        if self.oauth_token:
+            _dict['oauth_token'] = self.oauth_token.to_dict()
         return _dict
 
     @classmethod
@@ -95,7 +99,8 @@ class UsersSecretsConfig(BaseModel):
         _obj = cls.model_validate({
             "credentials_json": ModelsSecret.from_dict(obj["credentials_json"]) if obj.get("credentials_json") is not None else None,
             "customer_id": ModelsSecret.from_dict(obj["customer_id"]) if obj.get("customer_id") is not None else None,
-            "domain": ModelsSecret.from_dict(obj["domain"]) if obj.get("domain") is not None else None
+            "domain": ModelsSecret.from_dict(obj["domain"]) if obj.get("domain") is not None else None,
+            "oauth_token": ModelsSecret.from_dict(obj["oauth_token"]) if obj.get("oauth_token") is not None else None
         })
         return _obj
 

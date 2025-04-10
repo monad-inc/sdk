@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**credentials** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**authToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**password** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

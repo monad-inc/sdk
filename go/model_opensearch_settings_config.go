@@ -20,13 +20,19 @@ var _ MappedNullable = &OpensearchSettingsConfig{}
 
 // OpensearchSettingsConfig OpenSearch Output Settings
 type OpensearchSettingsConfig struct {
+	// The authentication mode (basic, aws_role)
+	AuthMode *string `json:"auth_mode,omitempty"`
 	// The name of the OpenSearch index to use.
 	Index *string `json:"index,omitempty"`
 	// Whether to skip TLS certificate verification (not recommended for production).
 	InsecureSkipVerify *bool `json:"insecure_skip_verify,omitempty"`
+	// The AWS Region where the OpenSearch domain is located
+	Region *string `json:"region,omitempty"`
+	// The AWS IAM Role ARN to assume (used for aws_role auth)
+	RoleArn *string `json:"role_arn,omitempty"`
 	// The URL of the OpenSearch instance (must start with https).
 	Url *string `json:"url,omitempty"`
-	// The username for authenticating with OpenSearch.
+	// The username for authenticating with OpenSearch (used for basic auth).
 	Username *string `json:"username,omitempty"`
 }
 
@@ -45,6 +51,38 @@ func NewOpensearchSettingsConfig() *OpensearchSettingsConfig {
 func NewOpensearchSettingsConfigWithDefaults() *OpensearchSettingsConfig {
 	this := OpensearchSettingsConfig{}
 	return &this
+}
+
+// GetAuthMode returns the AuthMode field value if set, zero value otherwise.
+func (o *OpensearchSettingsConfig) GetAuthMode() string {
+	if o == nil || IsNil(o.AuthMode) {
+		var ret string
+		return ret
+	}
+	return *o.AuthMode
+}
+
+// GetAuthModeOk returns a tuple with the AuthMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OpensearchSettingsConfig) GetAuthModeOk() (*string, bool) {
+	if o == nil || IsNil(o.AuthMode) {
+		return nil, false
+	}
+	return o.AuthMode, true
+}
+
+// HasAuthMode returns a boolean if a field has been set.
+func (o *OpensearchSettingsConfig) HasAuthMode() bool {
+	if o != nil && !IsNil(o.AuthMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthMode gets a reference to the given string and assigns it to the AuthMode field.
+func (o *OpensearchSettingsConfig) SetAuthMode(v string) {
+	o.AuthMode = &v
 }
 
 // GetIndex returns the Index field value if set, zero value otherwise.
@@ -109,6 +147,70 @@ func (o *OpensearchSettingsConfig) HasInsecureSkipVerify() bool {
 // SetInsecureSkipVerify gets a reference to the given bool and assigns it to the InsecureSkipVerify field.
 func (o *OpensearchSettingsConfig) SetInsecureSkipVerify(v bool) {
 	o.InsecureSkipVerify = &v
+}
+
+// GetRegion returns the Region field value if set, zero value otherwise.
+func (o *OpensearchSettingsConfig) GetRegion() string {
+	if o == nil || IsNil(o.Region) {
+		var ret string
+		return ret
+	}
+	return *o.Region
+}
+
+// GetRegionOk returns a tuple with the Region field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OpensearchSettingsConfig) GetRegionOk() (*string, bool) {
+	if o == nil || IsNil(o.Region) {
+		return nil, false
+	}
+	return o.Region, true
+}
+
+// HasRegion returns a boolean if a field has been set.
+func (o *OpensearchSettingsConfig) HasRegion() bool {
+	if o != nil && !IsNil(o.Region) {
+		return true
+	}
+
+	return false
+}
+
+// SetRegion gets a reference to the given string and assigns it to the Region field.
+func (o *OpensearchSettingsConfig) SetRegion(v string) {
+	o.Region = &v
+}
+
+// GetRoleArn returns the RoleArn field value if set, zero value otherwise.
+func (o *OpensearchSettingsConfig) GetRoleArn() string {
+	if o == nil || IsNil(o.RoleArn) {
+		var ret string
+		return ret
+	}
+	return *o.RoleArn
+}
+
+// GetRoleArnOk returns a tuple with the RoleArn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OpensearchSettingsConfig) GetRoleArnOk() (*string, bool) {
+	if o == nil || IsNil(o.RoleArn) {
+		return nil, false
+	}
+	return o.RoleArn, true
+}
+
+// HasRoleArn returns a boolean if a field has been set.
+func (o *OpensearchSettingsConfig) HasRoleArn() bool {
+	if o != nil && !IsNil(o.RoleArn) {
+		return true
+	}
+
+	return false
+}
+
+// SetRoleArn gets a reference to the given string and assigns it to the RoleArn field.
+func (o *OpensearchSettingsConfig) SetRoleArn(v string) {
+	o.RoleArn = &v
 }
 
 // GetUrl returns the Url field value if set, zero value otherwise.
@@ -185,11 +287,20 @@ func (o OpensearchSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o OpensearchSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AuthMode) {
+		toSerialize["auth_mode"] = o.AuthMode
+	}
 	if !IsNil(o.Index) {
 		toSerialize["index"] = o.Index
 	}
 	if !IsNil(o.InsecureSkipVerify) {
 		toSerialize["insecure_skip_verify"] = o.InsecureSkipVerify
+	}
+	if !IsNil(o.Region) {
+		toSerialize["region"] = o.Region
+	}
+	if !IsNil(o.RoleArn) {
+		toSerialize["role_arn"] = o.RoleArn
 	}
 	if !IsNil(o.Url) {
 		toSerialize["url"] = o.Url

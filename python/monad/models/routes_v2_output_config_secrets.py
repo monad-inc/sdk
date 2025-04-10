@@ -18,46 +18,52 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, Dict, List, Optional
+from monad.models.bigquery_secrets_config import BigquerySecretsConfig
 from monad.models.cribl_http_secrets_config import CriblHttpSecretsConfig
 from monad.models.elasticsearch_secrets_config import ElasticsearchSecretsConfig
 from monad.models.http_secrets_config import HttpSecretsConfig
+from monad.models.next_gen_siem_secrets_config import NextGenSiemSecretsConfig
 from monad.models.opensearch_secrets_config import OpensearchSecretsConfig
 from monad.models.sentinel_secrets_config import SentinelSecretsConfig
-from monad.models.snowflake_secrets_config import SnowflakeSecretsConfig
+from monad.models.snowflake_output_secrets_config import SnowflakeOutputSecretsConfig
 from monad.models.splunk_secrets_config import SplunkSecretsConfig
 from monad.models.sumologic_secrets_config import SumologicSecretsConfig
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-ROUTESV2OUTPUTCONFIGSECRETS_ONE_OF_SCHEMAS = ["CriblHttpSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "HttpSecretsConfig", "OpensearchSecretsConfig", "SentinelSecretsConfig", "SnowflakeSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object"]
+ROUTESV2OUTPUTCONFIGSECRETS_ONE_OF_SCHEMAS = ["BigquerySecretsConfig", "CriblHttpSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "HttpSecretsConfig", "NextGenSiemSecretsConfig", "OpensearchSecretsConfig", "SentinelSecretsConfig", "SnowflakeOutputSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object"]
 
 class RoutesV2OutputConfigSecrets(BaseModel):
     """
     RoutesV2OutputConfigSecrets
     """
+    # data type: BigquerySecretsConfig
+    oneof_schema_1_validator: Optional[BigquerySecretsConfig] = None
     # data type: CriblHttpSecretsConfig
-    oneof_schema_1_validator: Optional[CriblHttpSecretsConfig] = None
+    oneof_schema_2_validator: Optional[CriblHttpSecretsConfig] = None
     # data type: ElasticsearchSecretsConfig
-    oneof_schema_2_validator: Optional[ElasticsearchSecretsConfig] = None
+    oneof_schema_3_validator: Optional[ElasticsearchSecretsConfig] = None
     # data type: HttpSecretsConfig
-    oneof_schema_3_validator: Optional[HttpSecretsConfig] = None
+    oneof_schema_4_validator: Optional[HttpSecretsConfig] = None
     # data type: Dict[str, object]
-    oneof_schema_4_validator: Optional[Dict[str, Any]] = None
+    oneof_schema_5_validator: Optional[Dict[str, Any]] = None
+    # data type: NextGenSiemSecretsConfig
+    oneof_schema_6_validator: Optional[NextGenSiemSecretsConfig] = None
     # data type: OpensearchSecretsConfig
-    oneof_schema_5_validator: Optional[OpensearchSecretsConfig] = None
+    oneof_schema_7_validator: Optional[OpensearchSecretsConfig] = None
     # data type: object
-    oneof_schema_6_validator: Optional[Dict[str, Any]] = Field(default=None, description="S3 Output Secrets")
+    oneof_schema_8_validator: Optional[Dict[str, Any]] = Field(default=None, description="S3 Output Secrets")
     # data type: SentinelSecretsConfig
-    oneof_schema_7_validator: Optional[SentinelSecretsConfig] = None
-    # data type: SnowflakeSecretsConfig
-    oneof_schema_8_validator: Optional[SnowflakeSecretsConfig] = None
+    oneof_schema_9_validator: Optional[SentinelSecretsConfig] = None
+    # data type: SnowflakeOutputSecretsConfig
+    oneof_schema_10_validator: Optional[SnowflakeOutputSecretsConfig] = None
     # data type: SplunkSecretsConfig
-    oneof_schema_9_validator: Optional[SplunkSecretsConfig] = None
+    oneof_schema_11_validator: Optional[SplunkSecretsConfig] = None
     # data type: SumologicSecretsConfig
-    oneof_schema_10_validator: Optional[SumologicSecretsConfig] = None
-    actual_instance: Optional[Union[CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]] = None
-    one_of_schemas: Set[str] = { "CriblHttpSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "HttpSecretsConfig", "OpensearchSecretsConfig", "SentinelSecretsConfig", "SnowflakeSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object" }
+    oneof_schema_12_validator: Optional[SumologicSecretsConfig] = None
+    actual_instance: Optional[Union[BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]] = None
+    one_of_schemas: Set[str] = { "BigquerySecretsConfig", "CriblHttpSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "HttpSecretsConfig", "NextGenSiemSecretsConfig", "OpensearchSecretsConfig", "SentinelSecretsConfig", "SnowflakeOutputSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -80,6 +86,11 @@ class RoutesV2OutputConfigSecrets(BaseModel):
         instance = RoutesV2OutputConfigSecrets.model_construct()
         error_messages = []
         match = 0
+        # validate data type: BigquerySecretsConfig
+        if not isinstance(v, BigquerySecretsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `BigquerySecretsConfig`")
+        else:
+            match += 1
         # validate data type: CriblHttpSecretsConfig
         if not isinstance(v, CriblHttpSecretsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `CriblHttpSecretsConfig`")
@@ -97,10 +108,15 @@ class RoutesV2OutputConfigSecrets(BaseModel):
             match += 1
         # validate data type: Dict[str, object]
         try:
-            instance.oneof_schema_4_validator = v
+            instance.oneof_schema_5_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # validate data type: NextGenSiemSecretsConfig
+        if not isinstance(v, NextGenSiemSecretsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `NextGenSiemSecretsConfig`")
+        else:
+            match += 1
         # validate data type: OpensearchSecretsConfig
         if not isinstance(v, OpensearchSecretsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `OpensearchSecretsConfig`")
@@ -108,7 +124,7 @@ class RoutesV2OutputConfigSecrets(BaseModel):
             match += 1
         # validate data type: object
         try:
-            instance.oneof_schema_6_validator = v
+            instance.oneof_schema_8_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -117,9 +133,9 @@ class RoutesV2OutputConfigSecrets(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `SentinelSecretsConfig`")
         else:
             match += 1
-        # validate data type: SnowflakeSecretsConfig
-        if not isinstance(v, SnowflakeSecretsConfig):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `SnowflakeSecretsConfig`")
+        # validate data type: SnowflakeOutputSecretsConfig
+        if not isinstance(v, SnowflakeOutputSecretsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `SnowflakeOutputSecretsConfig`")
         else:
             match += 1
         # validate data type: SplunkSecretsConfig
@@ -134,10 +150,10 @@ class RoutesV2OutputConfigSecrets(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in RoutesV2OutputConfigSecrets with oneOf schemas: BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in RoutesV2OutputConfigSecrets with oneOf schemas: BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -152,6 +168,12 @@ class RoutesV2OutputConfigSecrets(BaseModel):
         error_messages = []
         match = 0
 
+        # deserialize data into BigquerySecretsConfig
+        try:
+            instance.actual_instance = BigquerySecretsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into CriblHttpSecretsConfig
         try:
             instance.actual_instance = CriblHttpSecretsConfig.from_json(json_str)
@@ -173,9 +195,15 @@ class RoutesV2OutputConfigSecrets(BaseModel):
         # deserialize data into Dict[str, object]
         try:
             # validation
-            instance.oneof_schema_4_validator = json.loads(json_str)
+            instance.oneof_schema_5_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_4_validator
+            instance.actual_instance = instance.oneof_schema_5_validator
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into NextGenSiemSecretsConfig
+        try:
+            instance.actual_instance = NextGenSiemSecretsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -188,9 +216,9 @@ class RoutesV2OutputConfigSecrets(BaseModel):
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_6_validator = json.loads(json_str)
+            instance.oneof_schema_8_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_6_validator
+            instance.actual_instance = instance.oneof_schema_8_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -200,9 +228,9 @@ class RoutesV2OutputConfigSecrets(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into SnowflakeSecretsConfig
+        # deserialize data into SnowflakeOutputSecretsConfig
         try:
-            instance.actual_instance = SnowflakeSecretsConfig.from_json(json_str)
+            instance.actual_instance = SnowflakeOutputSecretsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -221,10 +249,10 @@ class RoutesV2OutputConfigSecrets(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into RoutesV2OutputConfigSecrets with oneOf schemas: BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into RoutesV2OutputConfigSecrets with oneOf schemas: CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into RoutesV2OutputConfigSecrets with oneOf schemas: BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -238,7 +266,7 @@ class RoutesV2OutputConfigSecrets(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, OpensearchSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

@@ -11,6 +11,7 @@ Google Workspace Users secrets
 |**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**customerId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**domain** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**oauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 
 
 

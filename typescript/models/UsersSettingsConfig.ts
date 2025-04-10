@@ -17,11 +17,15 @@ import { HttpFile } from '../http/http';
 */
 export class UsersSettingsConfig {
     /**
+    * Authentication type (service_account or oauth)
+    */
+    'authType'?: string;
+    /**
     * Cron expression to schedule the data collection.
     */
     'cron'?: string;
     /**
-    * Email address to use to authenticate with Google Cloud.
+    * Email address to use to authenticate with Google Cloud (required for service_account auth).
     */
     'email'?: string;
 
@@ -30,6 +34,12 @@ export class UsersSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "authType",
+            "baseName": "auth_type",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "cron",
             "baseName": "cron",

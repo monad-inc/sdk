@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR event stream secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-19T16:11:31.865626042Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T17:25:27.914467533Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class EventSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)

@@ -23,6 +23,7 @@ type UsersSecretsConfig struct {
 	CredentialsJson *ModelsSecret `json:"credentials_json,omitempty"`
 	CustomerId *ModelsSecret `json:"customer_id,omitempty"`
 	Domain *ModelsSecret `json:"domain,omitempty"`
+	OauthToken *ModelsSecret `json:"oauth_token,omitempty"`
 }
 
 // NewUsersSecretsConfig instantiates a new UsersSecretsConfig object
@@ -138,6 +139,38 @@ func (o *UsersSecretsConfig) SetDomain(v ModelsSecret) {
 	o.Domain = &v
 }
 
+// GetOauthToken returns the OauthToken field value if set, zero value otherwise.
+func (o *UsersSecretsConfig) GetOauthToken() ModelsSecret {
+	if o == nil || IsNil(o.OauthToken) {
+		var ret ModelsSecret
+		return ret
+	}
+	return *o.OauthToken
+}
+
+// GetOauthTokenOk returns a tuple with the OauthToken field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UsersSecretsConfig) GetOauthTokenOk() (*ModelsSecret, bool) {
+	if o == nil || IsNil(o.OauthToken) {
+		return nil, false
+	}
+	return o.OauthToken, true
+}
+
+// HasOauthToken returns a boolean if a field has been set.
+func (o *UsersSecretsConfig) HasOauthToken() bool {
+	if o != nil && !IsNil(o.OauthToken) {
+		return true
+	}
+
+	return false
+}
+
+// SetOauthToken gets a reference to the given ModelsSecret and assigns it to the OauthToken field.
+func (o *UsersSecretsConfig) SetOauthToken(v ModelsSecret) {
+	o.OauthToken = &v
+}
+
 func (o UsersSecretsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -156,6 +189,9 @@ func (o UsersSecretsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Domain) {
 		toSerialize["domain"] = o.Domain
+	}
+	if !IsNil(o.OauthToken) {
+		toSerialize["oauth_token"] = o.OauthToken
 	}
 	return toSerialize, nil
 }

@@ -16,19 +16,24 @@ import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
+import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig';
 import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
 import { CloudAssetInventorySecretsConfig } from '../models/CloudAssetInventorySecretsConfig';
 import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigurationFindingsSecretsConfig';
 import { CloudLogsSecretsConfig } from '../models/CloudLogsSecretsConfig';
 import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
+import { CrowdstrikeFdrSecretsConfig } from '../models/CrowdstrikeFdrSecretsConfig';
+import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
 import { DetectSummariesSecretsConfig } from '../models/DetectSummariesSecretsConfig';
 import { DeviceActivitySecretsConfig } from '../models/DeviceActivitySecretsConfig';
 import { DeviceDetailsSecretsConfig } from '../models/DeviceDetailsSecretsConfig';
+import { DevicesSecretsConfig } from '../models/DevicesSecretsConfig';
 import { DriveActivitySecretsConfig } from '../models/DriveActivitySecretsConfig';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
+import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig';
@@ -42,10 +47,12 @@ import { SemgrepProjectsSecretsConfig } from '../models/SemgrepProjectsSecretsCo
 import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
 import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
+import { SnowflakeInputSecretsConfig } from '../models/SnowflakeInputSecretsConfig';
 import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
 import { SnykOrganizationsSecretsConfig } from '../models/SnykOrganizationsSecretsConfig';
 import { SnykProjectsSecretsConfig } from '../models/SnykProjectsSecretsConfig';
 import { SnykTargetsSecretsConfig } from '../models/SnykTargetsSecretsConfig';
+import { TailscaleUsersSecretsConfig } from '../models/TailscaleUsersSecretsConfig';
 import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
 import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
@@ -59,7 +66,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesV2InputConfigSecrets = ActorsInfoSecretsConfig | AdminActivitySecretsConfig | AdminLogsSecretsConfig | AuditLogsSecretsConfig | AuthLogsSecretsConfig | AzureActivityLogsSecretsConfig | BoxEventsSecretsConfig | BoxUsersSecretsConfig | CloudAssetInventorySecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventorySecretsConfig | DetectSummariesSecretsConfig | DeviceActivitySecretsConfig | DeviceDetailsSecretsConfig | DriveActivitySecretsConfig | EntraIdSecretsConfig | EventSecretsConfig | EventsLogsSecretsConfig | IssuesSecretsConfig | LogAnalyticsQuerySecretsConfig | LoginActivitySecretsConfig | LoginSessionsSecretsConfig | OauthActivitySecretsConfig | RolesInfoSecretsConfig | SemgrepCodeFindingsSecretsConfig | SemgrepDeploymentsSecretsConfig | SemgrepProjectDetailsSecretsConfig | SemgrepProjectsSecretsConfig | SemgrepSupplyChainFindingsSecretsConfig | SlackUsersSecretsConfig | SlackgroupsSecretsConfig | SnykIssuesSecretsConfig | SnykOrganizationsSecretsConfig | SnykProjectsSecretsConfig | SnykTargetsSecretsConfig | TenableAssetsSecretsConfig | TenableVulnerabilitiesSecretsConfig | UsersInfoSecretsConfig | UsersSecretsConfig | VulnerabilitiesSecretsConfig | VulnerabilityFindingsSecretsConfig | any | { [key: string]: any; };
+export type RoutesV2InputConfigSecrets = ActorsInfoSecretsConfig | AdminActivitySecretsConfig | AdminLogsSecretsConfig | AuditLogsSecretsConfig | AuthLogsSecretsConfig | AzureActivityLogsSecretsConfig | BigqueryInputSecretsConfig | BoxEventsSecretsConfig | BoxUsersSecretsConfig | CloudAssetInventorySecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventorySecretsConfig | CrowdstrikeFdrSecretsConfig | DefenderForEndpointAlertsSecretsConfig | DetectSummariesSecretsConfig | DeviceActivitySecretsConfig | DeviceDetailsSecretsConfig | DevicesSecretsConfig | DriveActivitySecretsConfig | EntraIdSecretsConfig | EventSecretsConfig | EventsLogsSecretsConfig | FullScansSecretsConfig | IssuesSecretsConfig | LogAnalyticsQuerySecretsConfig | LoginActivitySecretsConfig | LoginSessionsSecretsConfig | OauthActivitySecretsConfig | RolesInfoSecretsConfig | SemgrepCodeFindingsSecretsConfig | SemgrepDeploymentsSecretsConfig | SemgrepProjectDetailsSecretsConfig | SemgrepProjectsSecretsConfig | SemgrepSupplyChainFindingsSecretsConfig | SlackUsersSecretsConfig | SlackgroupsSecretsConfig | SnowflakeInputSecretsConfig | SnykIssuesSecretsConfig | SnykOrganizationsSecretsConfig | SnykProjectsSecretsConfig | SnykTargetsSecretsConfig | TailscaleUsersSecretsConfig | TenableAssetsSecretsConfig | TenableVulnerabilitiesSecretsConfig | UsersInfoSecretsConfig | UsersSecretsConfig | VulnerabilitiesSecretsConfig | VulnerabilityFindingsSecretsConfig | any | { [key: string]: any; };
 
 /**
 * @type RoutesV2InputConfigSecretsClass
@@ -70,6 +77,13 @@ export class RoutesV2InputConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
+
+
+
+
+
+
 
 
 

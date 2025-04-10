@@ -27,9 +27,10 @@ class UsersSettingsConfig(BaseModel):
     """
     Google Workspace Users settings
     """ # noqa: E501
+    auth_type: Optional[StrictStr] = Field(default=None, description="Authentication type (service_account or oauth)")
     cron: Optional[StrictStr] = Field(default=None, description="Cron expression to schedule the data collection.")
-    email: Optional[StrictStr] = Field(default=None, description="Email address to use to authenticate with Google Cloud.")
-    __properties: ClassVar[List[str]] = ["cron", "email"]
+    email: Optional[StrictStr] = Field(default=None, description="Email address to use to authenticate with Google Cloud (required for service_account auth).")
+    __properties: ClassVar[List[str]] = ["auth_type", "cron", "email"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +83,7 @@ class UsersSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "auth_type": obj.get("auth_type"),
             "cron": obj.get("cron"),
             "email": obj.get("email")
         })

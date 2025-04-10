@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Wiz cloud resource inventory settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-21T21:35:55.758490273Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T17:25:27.914467533Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class CloudResourceInventorySettingsConfig {
   public static final String SERIALIZED_NAME_CLOUD_PLATFORM = "cloudPlatform";
   @SerializedName(SERIALIZED_NAME_CLOUD_PLATFORM)
@@ -66,6 +66,16 @@ public class CloudResourceInventorySettingsConfig {
   @SerializedName(SERIALIZED_NAME_ENTITY_TYPE)
   @javax.annotation.Nullable
   private List<String> entityType = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_FULL_SNAPSHOT = "full_snapshot";
+  @SerializedName(SERIALIZED_NAME_FULL_SNAPSHOT)
+  @javax.annotation.Nullable
+  private Boolean fullSnapshot;
+
+  public static final String SERIALIZED_NAME_INTERVAL = "interval";
+  @SerializedName(SERIALIZED_NAME_INTERVAL)
+  @javax.annotation.Nullable
+  private Integer interval;
 
   public CloudResourceInventorySettingsConfig() {
   }
@@ -143,6 +153,44 @@ public class CloudResourceInventorySettingsConfig {
   }
 
 
+  public CloudResourceInventorySettingsConfig fullSnapshot(@javax.annotation.Nullable Boolean fullSnapshot) {
+    this.fullSnapshot = fullSnapshot;
+    return this;
+  }
+
+  /**
+   * FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.
+   * @return fullSnapshot
+   */
+  @javax.annotation.Nullable
+  public Boolean getFullSnapshot() {
+    return fullSnapshot;
+  }
+
+  public void setFullSnapshot(@javax.annotation.Nullable Boolean fullSnapshot) {
+    this.fullSnapshot = fullSnapshot;
+  }
+
+
+  public CloudResourceInventorySettingsConfig interval(@javax.annotation.Nullable Integer interval) {
+    this.interval = interval;
+    return this;
+  }
+
+  /**
+   * Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.
+   * @return interval
+   */
+  @javax.annotation.Nullable
+  public Integer getInterval() {
+    return interval;
+  }
+
+  public void setInterval(@javax.annotation.Nullable Integer interval) {
+    this.interval = interval;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -155,12 +203,14 @@ public class CloudResourceInventorySettingsConfig {
     CloudResourceInventorySettingsConfig cloudResourceInventorySettingsConfig = (CloudResourceInventorySettingsConfig) o;
     return Objects.equals(this.cloudPlatform, cloudResourceInventorySettingsConfig.cloudPlatform) &&
         Objects.equals(this.endpointUrl, cloudResourceInventorySettingsConfig.endpointUrl) &&
-        Objects.equals(this.entityType, cloudResourceInventorySettingsConfig.entityType);
+        Objects.equals(this.entityType, cloudResourceInventorySettingsConfig.entityType) &&
+        Objects.equals(this.fullSnapshot, cloudResourceInventorySettingsConfig.fullSnapshot) &&
+        Objects.equals(this.interval, cloudResourceInventorySettingsConfig.interval);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cloudPlatform, endpointUrl, entityType);
+    return Objects.hash(cloudPlatform, endpointUrl, entityType, fullSnapshot, interval);
   }
 
   @Override
@@ -170,6 +220,8 @@ public class CloudResourceInventorySettingsConfig {
     sb.append("    cloudPlatform: ").append(toIndentedString(cloudPlatform)).append("\n");
     sb.append("    endpointUrl: ").append(toIndentedString(endpointUrl)).append("\n");
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
+    sb.append("    fullSnapshot: ").append(toIndentedString(fullSnapshot)).append("\n");
+    sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -195,6 +247,8 @@ public class CloudResourceInventorySettingsConfig {
     openapiFields.add("cloudPlatform");
     openapiFields.add("endpoint_url");
     openapiFields.add("entityType");
+    openapiFields.add("full_snapshot");
+    openapiFields.add("interval");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

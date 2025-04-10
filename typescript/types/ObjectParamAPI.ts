@@ -2,26 +2,91 @@ import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/htt
 import { Configuration, ConfigurationOptions } from '../configuration'
 import type { Middleware } from '../middleware';
 
+import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddAdd } from '../models/AddAdd';
+import { AdminActivitySecretsConfig } from '../models/AdminActivitySecretsConfig';
 import { AdminActivitySettingsConfig } from '../models/AdminActivitySettingsConfig';
+import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
+import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { Auth0Auth0TokenResponse } from '../models/Auth0Auth0TokenResponse';
 import { Auth0LoginRequest } from '../models/Auth0LoginRequest';
+import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
+import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
+import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
+import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig';
+import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
+import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
+import { BigquerySettingsConfig } from '../models/BigquerySettingsConfig';
+import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
+import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
+import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
+import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
+import { CloudAssetInventorySecretsConfig } from '../models/CloudAssetInventorySecretsConfig';
+import { CloudAssetInventorySettingsConfig } from '../models/CloudAssetInventorySettingsConfig';
+import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigurationFindingsSecretsConfig';
+import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';
+import { CloudLogsSecretsConfig } from '../models/CloudLogsSecretsConfig';
+import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
+import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
+import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
+import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
 import { ConditionInfo } from '../models/ConditionInfo';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
+import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
+import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
+import { CrowdstrikeFdrSecretsConfig } from '../models/CrowdstrikeFdrSecretsConfig';
+import { CrowdstrikeFdrSettingsConfig } from '../models/CrowdstrikeFdrSettingsConfig';
+import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
+import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
+import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
+import { DemoCustomSettingsConfig } from '../models/DemoCustomSettingsConfig';
+import { DemoSettingsConfig } from '../models/DemoSettingsConfig';
+import { DetectSummariesSecretsConfig } from '../models/DetectSummariesSecretsConfig';
+import { DetectSummariesSettingsConfig } from '../models/DetectSummariesSettingsConfig';
+import { DeviceActivitySecretsConfig } from '../models/DeviceActivitySecretsConfig';
+import { DeviceActivitySettingsConfig } from '../models/DeviceActivitySettingsConfig';
+import { DeviceDetailsSecretsConfig } from '../models/DeviceDetailsSecretsConfig';
+import { DeviceDetailsSettingsConfig } from '../models/DeviceDetailsSettingsConfig';
+import { DevicesSecretsConfig } from '../models/DevicesSecretsConfig';
+import { DevicesSettingsConfig } from '../models/DevicesSettingsConfig';
+import { DriveActivitySecretsConfig } from '../models/DriveActivitySecretsConfig';
+import { DriveActivitySettingsConfig } from '../models/DriveActivitySettingsConfig';
 import { DropKeyDropKey } from '../models/DropKeyDropKey';
 import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
 import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
 import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
+import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
+import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
+import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
+import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
+import { EventSecretsConfig } from '../models/EventSecretsConfig';
+import { EventSettingsConfig } from '../models/EventSettingsConfig';
+import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
+import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
 import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
+import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
+import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
+import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
+import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
+import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
+import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
+import { IssuesSettingsConfig } from '../models/IssuesSettingsConfig';
 import { JqJQ } from '../models/JqJQ';
+import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
+import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
+import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
+import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig';
+import { LoginActivitySettingsConfig } from '../models/LoginActivitySettingsConfig';
+import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
+import { LoginSessionsSettingsConfig } from '../models/LoginSessionsSettingsConfig';
 import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultiplyWithValueMathMultiplyWithValue';
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
@@ -66,6 +131,7 @@ import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
+import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsTransform } from '../models/ModelsTransform';
@@ -74,15 +140,25 @@ import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
+import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
 import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
+import { NextGenSiemSecretsConfig } from '../models/NextGenSiemSecretsConfig';
+import { NextGenSiemSettingsConfig } from '../models/NextGenSiemSettingsConfig';
+import { OauthActivitySecretsConfig } from '../models/OauthActivitySecretsConfig';
+import { OauthActivitySettingsConfig } from '../models/OauthActivitySettingsConfig';
+import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
+import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
+import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResourceQuantity } from '../models/ResourceQuantity';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
+import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
+import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
@@ -114,14 +190,22 @@ import { RoutesV2CreatebillingAccountUserRoleRequest } from '../models/RoutesV2C
 import { RoutesV2GenerateRecordRequest } from '../models/RoutesV2GenerateRecordRequest';
 import { RoutesV2GenerateRecordResponse } from '../models/RoutesV2GenerateRecordResponse';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
+import { RoutesV2InputConfig } from '../models/RoutesV2InputConfig';
+import { RoutesV2InputConfigSecrets } from '../models/RoutesV2InputConfigSecrets';
+import { RoutesV2InputConfigSettings } from '../models/RoutesV2InputConfigSettings';
 import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesResponse';
 import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOverview';
+import { RoutesV2OutputConfig } from '../models/RoutesV2OutputConfig';
+import { RoutesV2OutputConfigSecrets } from '../models/RoutesV2OutputConfigSecrets';
+import { RoutesV2OutputConfigSettings } from '../models/RoutesV2OutputConfigSettings';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
+import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
+import { RoutesV2TestOutputConnectionRequest } from '../models/RoutesV2TestOutputConnectionRequest';
 import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyRequest';
 import { RoutesV2UpdateBillingAccountRequest } from '../models/RoutesV2UpdateBillingAccountRequest';
 import { RoutesV2UpdateBillingAccountRoleRequest } from '../models/RoutesV2UpdateBillingAccountRoleRequest';
@@ -129,8 +213,51 @@ import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
+import { S3SettingsConfig } from '../models/S3SettingsConfig';
+import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
+import { SemgrepDeploymentsSecretsConfig } from '../models/SemgrepDeploymentsSecretsConfig';
+import { SemgrepDeploymentsSettingsConfig } from '../models/SemgrepDeploymentsSettingsConfig';
+import { SemgrepProjectDetailsSecretsConfig } from '../models/SemgrepProjectDetailsSecretsConfig';
+import { SemgrepProjectDetailsSettingsConfig } from '../models/SemgrepProjectDetailsSettingsConfig';
+import { SemgrepProjectsSecretsConfig } from '../models/SemgrepProjectsSecretsConfig';
+import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettingsConfig';
+import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
+import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
+import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
+import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
+import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
+import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
+import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
+import { SnowflakeInputSecretsConfig } from '../models/SnowflakeInputSecretsConfig';
+import { SnowflakeInputSettingsConfig } from '../models/SnowflakeInputSettingsConfig';
+import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
+import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
+import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
+import { SnykOrganizationsSecretsConfig } from '../models/SnykOrganizationsSecretsConfig';
+import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
+import { SnykProjectsSecretsConfig } from '../models/SnykProjectsSecretsConfig';
+import { SnykProjectsSettingsConfig } from '../models/SnykProjectsSettingsConfig';
+import { SnykTargetsSecretsConfig } from '../models/SnykTargetsSecretsConfig';
+import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
+import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
+import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
+import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
+import { TailscaleUsersSecretsConfig } from '../models/TailscaleUsersSecretsConfig';
+import { TailscaleUsersSettingsConfig } from '../models/TailscaleUsersSettingsConfig';
+import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
+import { TenableAssetsSettingsConfig } from '../models/TenableAssetsSettingsConfig';
+import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
+import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
+import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
+import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
+import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
+import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
 import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
 import { V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response } from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
+import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
+import { VulnerabilitiesSettingsConfig } from '../models/VulnerabilitiesSettingsConfig';
+import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
+import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
 
 import { ObservableAuthenticationApi } from "./ObservableAPI";
 import { AuthenticationApiRequestFactory, AuthenticationApiResponseProcessor} from "../apis/AuthenticationApi";
@@ -1633,10 +1760,10 @@ export interface OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRe
     organizationId: string
     /**
      * Input configuration to test
-     * @type any
+     * @type RoutesV2TestInputConnectionRequest
      * @memberof OrganizationInputsApiv2OrganizationIdInputsTestConnectionPost
      */
-    body: any
+    routesV2TestInputConnectionRequest: RoutesV2TestInputConnectionRequest
 }
 
 export class ObjectOrganizationInputsApi {
@@ -1742,7 +1869,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v2OrganizationIdInputsTestConnectionPostWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
-        return this.api.v2OrganizationIdInputsTestConnectionPostWithHttpInfo(param.organizationId, param.body,  options).toPromise();
+        return this.api.v2OrganizationIdInputsTestConnectionPostWithHttpInfo(param.organizationId, param.routesV2TestInputConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -1751,7 +1878,7 @@ export class ObjectOrganizationInputsApi {
      * @param param the request object
      */
     public v2OrganizationIdInputsTestConnectionPost(param: OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<RoutesV2SuccessResponse> {
-        return this.api.v2OrganizationIdInputsTestConnectionPost(param.organizationId, param.body,  options).toPromise();
+        return this.api.v2OrganizationIdInputsTestConnectionPost(param.organizationId, param.routesV2TestInputConnectionRequest,  options).toPromise();
     }
 
 }
@@ -1926,10 +2053,10 @@ export interface OrganizationOutputsApiV2OrganizationIdOutputsTestConnectionPost
     organizationId: string
     /**
      * Output configuration to test
-     * @type any
+     * @type RoutesV2TestOutputConnectionRequest
      * @memberof OrganizationOutputsApiv2OrganizationIdOutputsTestConnectionPost
      */
-    body: any
+    routesV2TestOutputConnectionRequest: RoutesV2TestOutputConnectionRequest
 }
 
 export class ObjectOrganizationOutputsApi {
@@ -2035,7 +2162,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SuccessResponse>> {
-        return this.api.v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(param.organizationId, param.body,  options).toPromise();
+        return this.api.v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(param.organizationId, param.routesV2TestOutputConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -2044,7 +2171,7 @@ export class ObjectOrganizationOutputsApi {
      * @param param the request object
      */
     public v2OrganizationIdOutputsTestConnectionPost(param: OrganizationOutputsApiV2OrganizationIdOutputsTestConnectionPostRequest, options?: ConfigurationOptions): Promise<RoutesV2SuccessResponse> {
-        return this.api.v2OrganizationIdOutputsTestConnectionPost(param.organizationId, param.body,  options).toPromise();
+        return this.api.v2OrganizationIdOutputsTestConnectionPost(param.organizationId, param.routesV2TestOutputConnectionRequest,  options).toPromise();
     }
 
 }

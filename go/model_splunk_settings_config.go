@@ -22,10 +22,16 @@ var _ MappedNullable = &SplunkSettingsConfig{}
 type SplunkSettingsConfig struct {
 	// Whether to allow insecure connections (not recommended for production).
 	AllowInsecure *bool `json:"allow_insecure,omitempty"`
+	// The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token & Index scoping.
+	Index *string `json:"index,omitempty"`
 	// The port of the Splunk instance.
 	Port *string `json:"port,omitempty"`
+	// Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token & Index scoping.
+	ToCreate *bool `json:"to_create,omitempty"`
 	// The URL of the Splunk instance (must start with http or https).
 	Url *string `json:"url,omitempty"`
+	// Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used.
+	Username *string `json:"username,omitempty"`
 }
 
 // NewSplunkSettingsConfig instantiates a new SplunkSettingsConfig object
@@ -77,6 +83,38 @@ func (o *SplunkSettingsConfig) SetAllowInsecure(v bool) {
 	o.AllowInsecure = &v
 }
 
+// GetIndex returns the Index field value if set, zero value otherwise.
+func (o *SplunkSettingsConfig) GetIndex() string {
+	if o == nil || IsNil(o.Index) {
+		var ret string
+		return ret
+	}
+	return *o.Index
+}
+
+// GetIndexOk returns a tuple with the Index field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SplunkSettingsConfig) GetIndexOk() (*string, bool) {
+	if o == nil || IsNil(o.Index) {
+		return nil, false
+	}
+	return o.Index, true
+}
+
+// HasIndex returns a boolean if a field has been set.
+func (o *SplunkSettingsConfig) HasIndex() bool {
+	if o != nil && !IsNil(o.Index) {
+		return true
+	}
+
+	return false
+}
+
+// SetIndex gets a reference to the given string and assigns it to the Index field.
+func (o *SplunkSettingsConfig) SetIndex(v string) {
+	o.Index = &v
+}
+
 // GetPort returns the Port field value if set, zero value otherwise.
 func (o *SplunkSettingsConfig) GetPort() string {
 	if o == nil || IsNil(o.Port) {
@@ -107,6 +145,38 @@ func (o *SplunkSettingsConfig) HasPort() bool {
 // SetPort gets a reference to the given string and assigns it to the Port field.
 func (o *SplunkSettingsConfig) SetPort(v string) {
 	o.Port = &v
+}
+
+// GetToCreate returns the ToCreate field value if set, zero value otherwise.
+func (o *SplunkSettingsConfig) GetToCreate() bool {
+	if o == nil || IsNil(o.ToCreate) {
+		var ret bool
+		return ret
+	}
+	return *o.ToCreate
+}
+
+// GetToCreateOk returns a tuple with the ToCreate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SplunkSettingsConfig) GetToCreateOk() (*bool, bool) {
+	if o == nil || IsNil(o.ToCreate) {
+		return nil, false
+	}
+	return o.ToCreate, true
+}
+
+// HasToCreate returns a boolean if a field has been set.
+func (o *SplunkSettingsConfig) HasToCreate() bool {
+	if o != nil && !IsNil(o.ToCreate) {
+		return true
+	}
+
+	return false
+}
+
+// SetToCreate gets a reference to the given bool and assigns it to the ToCreate field.
+func (o *SplunkSettingsConfig) SetToCreate(v bool) {
+	o.ToCreate = &v
 }
 
 // GetUrl returns the Url field value if set, zero value otherwise.
@@ -141,6 +211,38 @@ func (o *SplunkSettingsConfig) SetUrl(v string) {
 	o.Url = &v
 }
 
+// GetUsername returns the Username field value if set, zero value otherwise.
+func (o *SplunkSettingsConfig) GetUsername() string {
+	if o == nil || IsNil(o.Username) {
+		var ret string
+		return ret
+	}
+	return *o.Username
+}
+
+// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SplunkSettingsConfig) GetUsernameOk() (*string, bool) {
+	if o == nil || IsNil(o.Username) {
+		return nil, false
+	}
+	return o.Username, true
+}
+
+// HasUsername returns a boolean if a field has been set.
+func (o *SplunkSettingsConfig) HasUsername() bool {
+	if o != nil && !IsNil(o.Username) {
+		return true
+	}
+
+	return false
+}
+
+// SetUsername gets a reference to the given string and assigns it to the Username field.
+func (o *SplunkSettingsConfig) SetUsername(v string) {
+	o.Username = &v
+}
+
 func (o SplunkSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -154,11 +256,20 @@ func (o SplunkSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AllowInsecure) {
 		toSerialize["allow_insecure"] = o.AllowInsecure
 	}
+	if !IsNil(o.Index) {
+		toSerialize["index"] = o.Index
+	}
 	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
 	}
+	if !IsNil(o.ToCreate) {
+		toSerialize["to_create"] = o.ToCreate
+	}
 	if !IsNil(o.Url) {
 		toSerialize["url"] = o.Url
+	}
+	if !IsNil(o.Username) {
+		toSerialize["username"] = o.Username
 	}
 	return toSerialize, nil
 }

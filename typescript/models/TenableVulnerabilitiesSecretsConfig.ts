@@ -14,7 +14,7 @@ import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
-* Tenable vulnerabilities secrets
+* Tenable assets secrets
 */
 export class TenableVulnerabilitiesSecretsConfig {
     'accessKey'?: ModelsSecret;

@@ -13,22 +13,31 @@ package monad
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // RoutesV2OutputConfigSettings - struct for RoutesV2OutputConfigSettings
 type RoutesV2OutputConfigSettings struct {
+	BigquerySettingsConfig *BigquerySettingsConfig
 	CriblHttpSettingsConfig *CriblHttpSettingsConfig
 	ElasticsearchSettingsConfig *ElasticsearchSettingsConfig
 	HttpSettingsConfig *HttpSettingsConfig
+	NextGenSiemSettingsConfig *NextGenSiemSettingsConfig
 	OpensearchSettingsConfig *OpensearchSettingsConfig
 	S3SettingsConfig *S3SettingsConfig
 	SentinelSettingsConfig *SentinelSettingsConfig
-	SnowflakeSettingsConfig *SnowflakeSettingsConfig
+	SnowflakeOutputSettingsConfig *SnowflakeOutputSettingsConfig
 	SplunkSettingsConfig *SplunkSettingsConfig
 	SumologicSettingsConfig *SumologicSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
+}
+
+// BigquerySettingsConfigAsRoutesV2OutputConfigSettings is a convenience function that returns BigquerySettingsConfig wrapped in RoutesV2OutputConfigSettings
+func BigquerySettingsConfigAsRoutesV2OutputConfigSettings(v *BigquerySettingsConfig) RoutesV2OutputConfigSettings {
+	return RoutesV2OutputConfigSettings{
+		BigquerySettingsConfig: v,
+	}
 }
 
 // CriblHttpSettingsConfigAsRoutesV2OutputConfigSettings is a convenience function that returns CriblHttpSettingsConfig wrapped in RoutesV2OutputConfigSettings
@@ -49,6 +58,13 @@ func ElasticsearchSettingsConfigAsRoutesV2OutputConfigSettings(v *ElasticsearchS
 func HttpSettingsConfigAsRoutesV2OutputConfigSettings(v *HttpSettingsConfig) RoutesV2OutputConfigSettings {
 	return RoutesV2OutputConfigSettings{
 		HttpSettingsConfig: v,
+	}
+}
+
+// NextGenSiemSettingsConfigAsRoutesV2OutputConfigSettings is a convenience function that returns NextGenSiemSettingsConfig wrapped in RoutesV2OutputConfigSettings
+func NextGenSiemSettingsConfigAsRoutesV2OutputConfigSettings(v *NextGenSiemSettingsConfig) RoutesV2OutputConfigSettings {
+	return RoutesV2OutputConfigSettings{
+		NextGenSiemSettingsConfig: v,
 	}
 }
 
@@ -73,10 +89,10 @@ func SentinelSettingsConfigAsRoutesV2OutputConfigSettings(v *SentinelSettingsCon
 	}
 }
 
-// SnowflakeSettingsConfigAsRoutesV2OutputConfigSettings is a convenience function that returns SnowflakeSettingsConfig wrapped in RoutesV2OutputConfigSettings
-func SnowflakeSettingsConfigAsRoutesV2OutputConfigSettings(v *SnowflakeSettingsConfig) RoutesV2OutputConfigSettings {
+// SnowflakeOutputSettingsConfigAsRoutesV2OutputConfigSettings is a convenience function that returns SnowflakeOutputSettingsConfig wrapped in RoutesV2OutputConfigSettings
+func SnowflakeOutputSettingsConfigAsRoutesV2OutputConfigSettings(v *SnowflakeOutputSettingsConfig) RoutesV2OutputConfigSettings {
 	return RoutesV2OutputConfigSettings{
-		SnowflakeSettingsConfig: v,
+		SnowflakeOutputSettingsConfig: v,
 	}
 }
 
@@ -106,6 +122,23 @@ func MapmapOfStringAnyAsRoutesV2OutputConfigSettings(v *map[string]interface{}) 
 func (dst *RoutesV2OutputConfigSettings) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into BigquerySettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.BigquerySettingsConfig)
+	if err == nil {
+		jsonBigquerySettingsConfig, _ := json.Marshal(dst.BigquerySettingsConfig)
+		if string(jsonBigquerySettingsConfig) == "{}" { // empty struct
+			dst.BigquerySettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BigquerySettingsConfig); err != nil {
+				dst.BigquerySettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BigquerySettingsConfig = nil
+	}
+
 	// try to unmarshal data into CriblHttpSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.CriblHttpSettingsConfig)
 	if err == nil {
@@ -155,6 +188,23 @@ func (dst *RoutesV2OutputConfigSettings) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.HttpSettingsConfig = nil
+	}
+
+	// try to unmarshal data into NextGenSiemSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.NextGenSiemSettingsConfig)
+	if err == nil {
+		jsonNextGenSiemSettingsConfig, _ := json.Marshal(dst.NextGenSiemSettingsConfig)
+		if string(jsonNextGenSiemSettingsConfig) == "{}" { // empty struct
+			dst.NextGenSiemSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.NextGenSiemSettingsConfig); err != nil {
+				dst.NextGenSiemSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.NextGenSiemSettingsConfig = nil
 	}
 
 	// try to unmarshal data into OpensearchSettingsConfig
@@ -208,21 +258,21 @@ func (dst *RoutesV2OutputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.SentinelSettingsConfig = nil
 	}
 
-	// try to unmarshal data into SnowflakeSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.SnowflakeSettingsConfig)
+	// try to unmarshal data into SnowflakeOutputSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SnowflakeOutputSettingsConfig)
 	if err == nil {
-		jsonSnowflakeSettingsConfig, _ := json.Marshal(dst.SnowflakeSettingsConfig)
-		if string(jsonSnowflakeSettingsConfig) == "{}" { // empty struct
-			dst.SnowflakeSettingsConfig = nil
+		jsonSnowflakeOutputSettingsConfig, _ := json.Marshal(dst.SnowflakeOutputSettingsConfig)
+		if string(jsonSnowflakeOutputSettingsConfig) == "{}" { // empty struct
+			dst.SnowflakeOutputSettingsConfig = nil
 		} else {
-			if err = validator.Validate(dst.SnowflakeSettingsConfig); err != nil {
-				dst.SnowflakeSettingsConfig = nil
+			if err = validator.Validate(dst.SnowflakeOutputSettingsConfig); err != nil {
+				dst.SnowflakeOutputSettingsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.SnowflakeSettingsConfig = nil
+		dst.SnowflakeOutputSettingsConfig = nil
 	}
 
 	// try to unmarshal data into SplunkSettingsConfig
@@ -278,13 +328,15 @@ func (dst *RoutesV2OutputConfigSettings) UnmarshalJSON(data []byte) error {
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.BigquerySettingsConfig = nil
 		dst.CriblHttpSettingsConfig = nil
 		dst.ElasticsearchSettingsConfig = nil
 		dst.HttpSettingsConfig = nil
+		dst.NextGenSiemSettingsConfig = nil
 		dst.OpensearchSettingsConfig = nil
 		dst.S3SettingsConfig = nil
 		dst.SentinelSettingsConfig = nil
-		dst.SnowflakeSettingsConfig = nil
+		dst.SnowflakeOutputSettingsConfig = nil
 		dst.SplunkSettingsConfig = nil
 		dst.SumologicSettingsConfig = nil
 		dst.MapmapOfStringAny = nil
@@ -299,6 +351,10 @@ func (dst *RoutesV2OutputConfigSettings) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src RoutesV2OutputConfigSettings) MarshalJSON() ([]byte, error) {
+	if src.BigquerySettingsConfig != nil {
+		return json.Marshal(&src.BigquerySettingsConfig)
+	}
+
 	if src.CriblHttpSettingsConfig != nil {
 		return json.Marshal(&src.CriblHttpSettingsConfig)
 	}
@@ -309,6 +365,10 @@ func (src RoutesV2OutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.HttpSettingsConfig != nil {
 		return json.Marshal(&src.HttpSettingsConfig)
+	}
+
+	if src.NextGenSiemSettingsConfig != nil {
+		return json.Marshal(&src.NextGenSiemSettingsConfig)
 	}
 
 	if src.OpensearchSettingsConfig != nil {
@@ -323,8 +383,8 @@ func (src RoutesV2OutputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.SentinelSettingsConfig)
 	}
 
-	if src.SnowflakeSettingsConfig != nil {
-		return json.Marshal(&src.SnowflakeSettingsConfig)
+	if src.SnowflakeOutputSettingsConfig != nil {
+		return json.Marshal(&src.SnowflakeOutputSettingsConfig)
 	}
 
 	if src.SplunkSettingsConfig != nil {
@@ -347,6 +407,10 @@ func (obj *RoutesV2OutputConfigSettings) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
+	if obj.BigquerySettingsConfig != nil {
+		return obj.BigquerySettingsConfig
+	}
+
 	if obj.CriblHttpSettingsConfig != nil {
 		return obj.CriblHttpSettingsConfig
 	}
@@ -357,6 +421,10 @@ func (obj *RoutesV2OutputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.HttpSettingsConfig != nil {
 		return obj.HttpSettingsConfig
+	}
+
+	if obj.NextGenSiemSettingsConfig != nil {
+		return obj.NextGenSiemSettingsConfig
 	}
 
 	if obj.OpensearchSettingsConfig != nil {
@@ -371,8 +439,8 @@ func (obj *RoutesV2OutputConfigSettings) GetActualInstance() (interface{}) {
 		return obj.SentinelSettingsConfig
 	}
 
-	if obj.SnowflakeSettingsConfig != nil {
-		return obj.SnowflakeSettingsConfig
+	if obj.SnowflakeOutputSettingsConfig != nil {
+		return obj.SnowflakeOutputSettingsConfig
 	}
 
 	if obj.SplunkSettingsConfig != nil {
@@ -385,6 +453,60 @@ func (obj *RoutesV2OutputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.MapmapOfStringAny != nil {
 		return obj.MapmapOfStringAny
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj RoutesV2OutputConfigSettings) GetActualInstanceValue() (interface{}) {
+	if obj.BigquerySettingsConfig != nil {
+		return *obj.BigquerySettingsConfig
+	}
+
+	if obj.CriblHttpSettingsConfig != nil {
+		return *obj.CriblHttpSettingsConfig
+	}
+
+	if obj.ElasticsearchSettingsConfig != nil {
+		return *obj.ElasticsearchSettingsConfig
+	}
+
+	if obj.HttpSettingsConfig != nil {
+		return *obj.HttpSettingsConfig
+	}
+
+	if obj.NextGenSiemSettingsConfig != nil {
+		return *obj.NextGenSiemSettingsConfig
+	}
+
+	if obj.OpensearchSettingsConfig != nil {
+		return *obj.OpensearchSettingsConfig
+	}
+
+	if obj.S3SettingsConfig != nil {
+		return *obj.S3SettingsConfig
+	}
+
+	if obj.SentinelSettingsConfig != nil {
+		return *obj.SentinelSettingsConfig
+	}
+
+	if obj.SnowflakeOutputSettingsConfig != nil {
+		return *obj.SnowflakeOutputSettingsConfig
+	}
+
+	if obj.SplunkSettingsConfig != nil {
+		return *obj.SplunkSettingsConfig
+	}
+
+	if obj.SumologicSettingsConfig != nil {
+		return *obj.SumologicSettingsConfig
+	}
+
+	if obj.MapmapOfStringAny != nil {
+		return *obj.MapmapOfStringAny
 	}
 
 	// all schemas are nil

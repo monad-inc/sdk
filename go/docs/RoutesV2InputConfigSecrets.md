@@ -7,12 +7,17 @@ Name | Type | Description | Notes
 **ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **CredentialsJson** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**OauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **IntegrationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **EnterpriseId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**AwsAccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**AwsSecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**PrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **CustomerId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Domain** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -100,6 +105,31 @@ SetCredentialsJson sets CredentialsJson field to given value.
 `func (o *RoutesV2InputConfigSecrets) HasCredentialsJson() bool`
 
 HasCredentialsJson returns a boolean if a field has been set.
+
+### GetOauthToken
+
+`func (o *RoutesV2InputConfigSecrets) GetOauthToken() ModelsSecret`
+
+GetOauthToken returns the OauthToken field if non-nil, zero value otherwise.
+
+### GetOauthTokenOk
+
+`func (o *RoutesV2InputConfigSecrets) GetOauthTokenOk() (*ModelsSecret, bool)`
+
+GetOauthTokenOk returns a tuple with the OauthToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOauthToken
+
+`func (o *RoutesV2InputConfigSecrets) SetOauthToken(v ModelsSecret)`
+
+SetOauthToken sets OauthToken field to given value.
+
+### HasOauthToken
+
+`func (o *RoutesV2InputConfigSecrets) HasOauthToken() bool`
+
+HasOauthToken returns a boolean if a field has been set.
 
 ### GetIntegrationKey
 
@@ -201,6 +231,56 @@ SetEnterpriseId sets EnterpriseId field to given value.
 
 HasEnterpriseId returns a boolean if a field has been set.
 
+### GetAwsAccessKey
+
+`func (o *RoutesV2InputConfigSecrets) GetAwsAccessKey() ModelsSecret`
+
+GetAwsAccessKey returns the AwsAccessKey field if non-nil, zero value otherwise.
+
+### GetAwsAccessKeyOk
+
+`func (o *RoutesV2InputConfigSecrets) GetAwsAccessKeyOk() (*ModelsSecret, bool)`
+
+GetAwsAccessKeyOk returns a tuple with the AwsAccessKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAwsAccessKey
+
+`func (o *RoutesV2InputConfigSecrets) SetAwsAccessKey(v ModelsSecret)`
+
+SetAwsAccessKey sets AwsAccessKey field to given value.
+
+### HasAwsAccessKey
+
+`func (o *RoutesV2InputConfigSecrets) HasAwsAccessKey() bool`
+
+HasAwsAccessKey returns a boolean if a field has been set.
+
+### GetAwsSecretKey
+
+`func (o *RoutesV2InputConfigSecrets) GetAwsSecretKey() ModelsSecret`
+
+GetAwsSecretKey returns the AwsSecretKey field if non-nil, zero value otherwise.
+
+### GetAwsSecretKeyOk
+
+`func (o *RoutesV2InputConfigSecrets) GetAwsSecretKeyOk() (*ModelsSecret, bool)`
+
+GetAwsSecretKeyOk returns a tuple with the AwsSecretKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAwsSecretKey
+
+`func (o *RoutesV2InputConfigSecrets) SetAwsSecretKey(v ModelsSecret)`
+
+SetAwsSecretKey sets AwsSecretKey field to given value.
+
+### HasAwsSecretKey
+
+`func (o *RoutesV2InputConfigSecrets) HasAwsSecretKey() bool`
+
+HasAwsSecretKey returns a boolean if a field has been set.
+
 ### GetApiKey
 
 `func (o *RoutesV2InputConfigSecrets) GetApiKey() ModelsSecret`
@@ -250,6 +330,56 @@ SetToken sets Token field to given value.
 `func (o *RoutesV2InputConfigSecrets) HasToken() bool`
 
 HasToken returns a boolean if a field has been set.
+
+### GetPassword
+
+`func (o *RoutesV2InputConfigSecrets) GetPassword() ModelsSecret`
+
+GetPassword returns the Password field if non-nil, zero value otherwise.
+
+### GetPasswordOk
+
+`func (o *RoutesV2InputConfigSecrets) GetPasswordOk() (*ModelsSecret, bool)`
+
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPassword
+
+`func (o *RoutesV2InputConfigSecrets) SetPassword(v ModelsSecret)`
+
+SetPassword sets Password field to given value.
+
+### HasPassword
+
+`func (o *RoutesV2InputConfigSecrets) HasPassword() bool`
+
+HasPassword returns a boolean if a field has been set.
+
+### GetPrivateKey
+
+`func (o *RoutesV2InputConfigSecrets) GetPrivateKey() ModelsSecret`
+
+GetPrivateKey returns the PrivateKey field if non-nil, zero value otherwise.
+
+### GetPrivateKeyOk
+
+`func (o *RoutesV2InputConfigSecrets) GetPrivateKeyOk() (*ModelsSecret, bool)`
+
+GetPrivateKeyOk returns a tuple with the PrivateKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrivateKey
+
+`func (o *RoutesV2InputConfigSecrets) SetPrivateKey(v ModelsSecret)`
+
+SetPrivateKey sets PrivateKey field to given value.
+
+### HasPrivateKey
+
+`func (o *RoutesV2InputConfigSecrets) HasPrivateKey() bool`
+
+HasPrivateKey returns a boolean if a field has been set.
 
 ### GetAccessKey
 

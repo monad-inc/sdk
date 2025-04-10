@@ -4,10 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AuthMode** | Pointer to **string** | The authentication mode (basic, aws_role) | [optional] 
 **Index** | Pointer to **string** | The name of the OpenSearch index to use. | [optional] 
 **InsecureSkipVerify** | Pointer to **bool** | Whether to skip TLS certificate verification (not recommended for production). | [optional] 
+**Region** | Pointer to **string** | The AWS Region where the OpenSearch domain is located | [optional] 
+**RoleArn** | Pointer to **string** | The AWS IAM Role ARN to assume (used for aws_role auth) | [optional] 
 **Url** | Pointer to **string** | The URL of the OpenSearch instance (must start with https). | [optional] 
-**Username** | Pointer to **string** | The username for authenticating with OpenSearch. | [optional] 
+**Username** | Pointer to **string** | The username for authenticating with OpenSearch (used for basic auth). | [optional] 
 
 ## Methods
 
@@ -27,6 +30,31 @@ will change when the set of required properties is changed
 NewOpensearchSettingsConfigWithDefaults instantiates a new OpensearchSettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAuthMode
+
+`func (o *OpensearchSettingsConfig) GetAuthMode() string`
+
+GetAuthMode returns the AuthMode field if non-nil, zero value otherwise.
+
+### GetAuthModeOk
+
+`func (o *OpensearchSettingsConfig) GetAuthModeOk() (*string, bool)`
+
+GetAuthModeOk returns a tuple with the AuthMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthMode
+
+`func (o *OpensearchSettingsConfig) SetAuthMode(v string)`
+
+SetAuthMode sets AuthMode field to given value.
+
+### HasAuthMode
+
+`func (o *OpensearchSettingsConfig) HasAuthMode() bool`
+
+HasAuthMode returns a boolean if a field has been set.
 
 ### GetIndex
 
@@ -77,6 +105,56 @@ SetInsecureSkipVerify sets InsecureSkipVerify field to given value.
 `func (o *OpensearchSettingsConfig) HasInsecureSkipVerify() bool`
 
 HasInsecureSkipVerify returns a boolean if a field has been set.
+
+### GetRegion
+
+`func (o *OpensearchSettingsConfig) GetRegion() string`
+
+GetRegion returns the Region field if non-nil, zero value otherwise.
+
+### GetRegionOk
+
+`func (o *OpensearchSettingsConfig) GetRegionOk() (*string, bool)`
+
+GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegion
+
+`func (o *OpensearchSettingsConfig) SetRegion(v string)`
+
+SetRegion sets Region field to given value.
+
+### HasRegion
+
+`func (o *OpensearchSettingsConfig) HasRegion() bool`
+
+HasRegion returns a boolean if a field has been set.
+
+### GetRoleArn
+
+`func (o *OpensearchSettingsConfig) GetRoleArn() string`
+
+GetRoleArn returns the RoleArn field if non-nil, zero value otherwise.
+
+### GetRoleArnOk
+
+`func (o *OpensearchSettingsConfig) GetRoleArnOk() (*string, bool)`
+
+GetRoleArnOk returns a tuple with the RoleArn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoleArn
+
+`func (o *OpensearchSettingsConfig) SetRoleArn(v string)`
+
+SetRoleArn sets RoleArn field to given value.
+
+### HasRoleArn
+
+`func (o *OpensearchSettingsConfig) HasRoleArn() bool`
+
+HasRoleArn returns a boolean if a field has been set.
 
 ### GetUrl
 

@@ -49,12 +49,17 @@ import org.openapitools.client.JSON;
 /**
  * Google Workspace Device Activity secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-19T16:11:31.865626042Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T17:25:27.914467533Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class DeviceActivitySecretsConfig {
   public static final String SERIALIZED_NAME_CREDENTIALS_JSON = "credentials_json";
   @SerializedName(SERIALIZED_NAME_CREDENTIALS_JSON)
   @javax.annotation.Nullable
   private ModelsSecret credentialsJson;
+
+  public static final String SERIALIZED_NAME_OAUTH_TOKEN = "oauth_token";
+  @SerializedName(SERIALIZED_NAME_OAUTH_TOKEN)
+  @javax.annotation.Nullable
+  private ModelsSecret oauthToken;
 
   public DeviceActivitySecretsConfig() {
   }
@@ -78,6 +83,25 @@ public class DeviceActivitySecretsConfig {
   }
 
 
+  public DeviceActivitySecretsConfig oauthToken(@javax.annotation.Nullable ModelsSecret oauthToken) {
+    this.oauthToken = oauthToken;
+    return this;
+  }
+
+  /**
+   * Get oauthToken
+   * @return oauthToken
+   */
+  @javax.annotation.Nullable
+  public ModelsSecret getOauthToken() {
+    return oauthToken;
+  }
+
+  public void setOauthToken(@javax.annotation.Nullable ModelsSecret oauthToken) {
+    this.oauthToken = oauthToken;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -88,12 +112,13 @@ public class DeviceActivitySecretsConfig {
       return false;
     }
     DeviceActivitySecretsConfig deviceActivitySecretsConfig = (DeviceActivitySecretsConfig) o;
-    return Objects.equals(this.credentialsJson, deviceActivitySecretsConfig.credentialsJson);
+    return Objects.equals(this.credentialsJson, deviceActivitySecretsConfig.credentialsJson) &&
+        Objects.equals(this.oauthToken, deviceActivitySecretsConfig.oauthToken);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(credentialsJson);
+    return Objects.hash(credentialsJson, oauthToken);
   }
 
   @Override
@@ -101,6 +126,7 @@ public class DeviceActivitySecretsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeviceActivitySecretsConfig {\n");
     sb.append("    credentialsJson: ").append(toIndentedString(credentialsJson)).append("\n");
+    sb.append("    oauthToken: ").append(toIndentedString(oauthToken)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -124,6 +150,7 @@ public class DeviceActivitySecretsConfig {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("credentials_json");
+    openapiFields.add("oauth_token");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -153,6 +180,10 @@ public class DeviceActivitySecretsConfig {
       // validate the optional field `credentials_json`
       if (jsonObj.get("credentials_json") != null && !jsonObj.get("credentials_json").isJsonNull()) {
         ModelsSecret.validateJsonElement(jsonObj.get("credentials_json"));
+      }
+      // validate the optional field `oauth_token`
+      if (jsonObj.get("oauth_token") != null && !jsonObj.get("oauth_token").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("oauth_token"));
       }
   }
 

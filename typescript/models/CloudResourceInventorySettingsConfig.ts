@@ -28,6 +28,14 @@ export class CloudResourceInventorySettingsConfig {
     * Entity types for Wiz. Ex: \'ACCOUNT\', \'REGION\', \'VPC\', \'SUBNET\', \'INSTANCE\'.
     */
     'entityType'?: Array<string>;
+    /**
+    * FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.
+    */
+    'fullSnapshot'?: boolean;
+    /**
+    * Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.
+    */
+    'interval'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -50,6 +58,18 @@ export class CloudResourceInventorySettingsConfig {
             "name": "entityType",
             "baseName": "entityType",
             "type": "Array<string>",
+            "format": ""
+        },
+        {
+            "name": "fullSnapshot",
+            "baseName": "full_snapshot",
+            "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "interval",
+            "baseName": "interval",
+            "type": "number",
             "format": ""
         }    ];
 

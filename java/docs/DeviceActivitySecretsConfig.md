@@ -9,6 +9,7 @@ Google Workspace Device Activity secrets
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**oauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 
 
 

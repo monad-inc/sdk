@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **CloudPlatform** | Pointer to **[]string** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **EndpointUrl** | Pointer to **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/cloud-resource-inventory&#39;. | [optional] 
 **EntityType** | Pointer to **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
+**FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
+**Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
 
 ## Methods
 
@@ -101,6 +103,56 @@ SetEntityType sets EntityType field to given value.
 `func (o *CloudResourceInventorySettingsConfig) HasEntityType() bool`
 
 HasEntityType returns a boolean if a field has been set.
+
+### GetFullSnapshot
+
+`func (o *CloudResourceInventorySettingsConfig) GetFullSnapshot() bool`
+
+GetFullSnapshot returns the FullSnapshot field if non-nil, zero value otherwise.
+
+### GetFullSnapshotOk
+
+`func (o *CloudResourceInventorySettingsConfig) GetFullSnapshotOk() (*bool, bool)`
+
+GetFullSnapshotOk returns a tuple with the FullSnapshot field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFullSnapshot
+
+`func (o *CloudResourceInventorySettingsConfig) SetFullSnapshot(v bool)`
+
+SetFullSnapshot sets FullSnapshot field to given value.
+
+### HasFullSnapshot
+
+`func (o *CloudResourceInventorySettingsConfig) HasFullSnapshot() bool`
+
+HasFullSnapshot returns a boolean if a field has been set.
+
+### GetInterval
+
+`func (o *CloudResourceInventorySettingsConfig) GetInterval() int32`
+
+GetInterval returns the Interval field if non-nil, zero value otherwise.
+
+### GetIntervalOk
+
+`func (o *CloudResourceInventorySettingsConfig) GetIntervalOk() (*int32, bool)`
+
+GetIntervalOk returns a tuple with the Interval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInterval
+
+`func (o *CloudResourceInventorySettingsConfig) SetInterval(v int32)`
+
+SetInterval sets Interval field to given value.
+
+### HasInterval
+
+`func (o *CloudResourceInventorySettingsConfig) HasInterval() bool`
+
+HasInterval returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

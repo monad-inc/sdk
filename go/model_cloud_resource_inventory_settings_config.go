@@ -26,6 +26,10 @@ type CloudResourceInventorySettingsConfig struct {
 	EndpointUrl *string `json:"endpoint_url,omitempty"`
 	// Entity types for Wiz. Ex: 'ACCOUNT', 'REGION', 'VPC', 'SUBNET', 'INSTANCE'.
 	EntityType []string `json:"entityType,omitempty"`
+	// FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.
+	FullSnapshot *bool `json:"full_snapshot,omitempty"`
+	// Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.
+	Interval *int32 `json:"interval,omitempty"`
 }
 
 // NewCloudResourceInventorySettingsConfig instantiates a new CloudResourceInventorySettingsConfig object
@@ -141,6 +145,70 @@ func (o *CloudResourceInventorySettingsConfig) SetEntityType(v []string) {
 	o.EntityType = v
 }
 
+// GetFullSnapshot returns the FullSnapshot field value if set, zero value otherwise.
+func (o *CloudResourceInventorySettingsConfig) GetFullSnapshot() bool {
+	if o == nil || IsNil(o.FullSnapshot) {
+		var ret bool
+		return ret
+	}
+	return *o.FullSnapshot
+}
+
+// GetFullSnapshotOk returns a tuple with the FullSnapshot field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudResourceInventorySettingsConfig) GetFullSnapshotOk() (*bool, bool) {
+	if o == nil || IsNil(o.FullSnapshot) {
+		return nil, false
+	}
+	return o.FullSnapshot, true
+}
+
+// HasFullSnapshot returns a boolean if a field has been set.
+func (o *CloudResourceInventorySettingsConfig) HasFullSnapshot() bool {
+	if o != nil && !IsNil(o.FullSnapshot) {
+		return true
+	}
+
+	return false
+}
+
+// SetFullSnapshot gets a reference to the given bool and assigns it to the FullSnapshot field.
+func (o *CloudResourceInventorySettingsConfig) SetFullSnapshot(v bool) {
+	o.FullSnapshot = &v
+}
+
+// GetInterval returns the Interval field value if set, zero value otherwise.
+func (o *CloudResourceInventorySettingsConfig) GetInterval() int32 {
+	if o == nil || IsNil(o.Interval) {
+		var ret int32
+		return ret
+	}
+	return *o.Interval
+}
+
+// GetIntervalOk returns a tuple with the Interval field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudResourceInventorySettingsConfig) GetIntervalOk() (*int32, bool) {
+	if o == nil || IsNil(o.Interval) {
+		return nil, false
+	}
+	return o.Interval, true
+}
+
+// HasInterval returns a boolean if a field has been set.
+func (o *CloudResourceInventorySettingsConfig) HasInterval() bool {
+	if o != nil && !IsNil(o.Interval) {
+		return true
+	}
+
+	return false
+}
+
+// SetInterval gets a reference to the given int32 and assigns it to the Interval field.
+func (o *CloudResourceInventorySettingsConfig) SetInterval(v int32) {
+	o.Interval = &v
+}
+
 func (o CloudResourceInventorySettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -159,6 +227,12 @@ func (o CloudResourceInventorySettingsConfig) ToMap() (map[string]interface{}, e
 	}
 	if !IsNil(o.EntityType) {
 		toSerialize["entityType"] = o.EntityType
+	}
+	if !IsNil(o.FullSnapshot) {
+		toSerialize["full_snapshot"] = o.FullSnapshot
+	}
+	if !IsNil(o.Interval) {
+		toSerialize["interval"] = o.Interval
 	}
 	return toSerialize, nil
 }

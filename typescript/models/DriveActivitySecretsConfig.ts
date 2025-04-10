@@ -18,6 +18,7 @@ import { HttpFile } from '../http/http';
 */
 export class DriveActivitySecretsConfig {
     'credentialsJson'?: ModelsSecret;
+    'oauthToken'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -27,6 +28,12 @@ export class DriveActivitySecretsConfig {
         {
             "name": "credentialsJson",
             "baseName": "credentials_json",
+            "type": "ModelsSecret",
+            "format": ""
+        },
+        {
+            "name": "oauthToken",
+            "baseName": "oauth_token",
             "type": "ModelsSecret",
             "format": ""
         }    ];

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CredentialsJson** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **CustomerId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Domain** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**OauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetDomain sets Domain field to given value.
 `func (o *UsersSecretsConfig) HasDomain() bool`
 
 HasDomain returns a boolean if a field has been set.
+
+### GetOauthToken
+
+`func (o *UsersSecretsConfig) GetOauthToken() ModelsSecret`
+
+GetOauthToken returns the OauthToken field if non-nil, zero value otherwise.
+
+### GetOauthTokenOk
+
+`func (o *UsersSecretsConfig) GetOauthTokenOk() (*ModelsSecret, bool)`
+
+GetOauthTokenOk returns a tuple with the OauthToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOauthToken
+
+`func (o *UsersSecretsConfig) SetOauthToken(v ModelsSecret)`
+
+SetOauthToken sets OauthToken field to given value.
+
+### HasOauthToken
+
+`func (o *UsersSecretsConfig) HasOauthToken() bool`
+
+HasOauthToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -48,8 +48,13 @@ import org.openapitools.client.JSON;
 /**
  * OpenSearch Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-21T21:35:55.758490273Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T17:25:27.914467533Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class OpensearchSettingsConfig {
+  public static final String SERIALIZED_NAME_AUTH_MODE = "auth_mode";
+  @SerializedName(SERIALIZED_NAME_AUTH_MODE)
+  @javax.annotation.Nullable
+  private String authMode;
+
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
   @javax.annotation.Nullable
@@ -59,6 +64,16 @@ public class OpensearchSettingsConfig {
   @SerializedName(SERIALIZED_NAME_INSECURE_SKIP_VERIFY)
   @javax.annotation.Nullable
   private Boolean insecureSkipVerify;
+
+  public static final String SERIALIZED_NAME_REGION = "region";
+  @SerializedName(SERIALIZED_NAME_REGION)
+  @javax.annotation.Nullable
+  private String region;
+
+  public static final String SERIALIZED_NAME_ROLE_ARN = "role_arn";
+  @SerializedName(SERIALIZED_NAME_ROLE_ARN)
+  @javax.annotation.Nullable
+  private String roleArn;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
@@ -72,6 +87,25 @@ public class OpensearchSettingsConfig {
 
   public OpensearchSettingsConfig() {
   }
+
+  public OpensearchSettingsConfig authMode(@javax.annotation.Nullable String authMode) {
+    this.authMode = authMode;
+    return this;
+  }
+
+  /**
+   * The authentication mode (basic, aws_role)
+   * @return authMode
+   */
+  @javax.annotation.Nullable
+  public String getAuthMode() {
+    return authMode;
+  }
+
+  public void setAuthMode(@javax.annotation.Nullable String authMode) {
+    this.authMode = authMode;
+  }
+
 
   public OpensearchSettingsConfig index(@javax.annotation.Nullable String index) {
     this.index = index;
@@ -111,6 +145,44 @@ public class OpensearchSettingsConfig {
   }
 
 
+  public OpensearchSettingsConfig region(@javax.annotation.Nullable String region) {
+    this.region = region;
+    return this;
+  }
+
+  /**
+   * The AWS Region where the OpenSearch domain is located
+   * @return region
+   */
+  @javax.annotation.Nullable
+  public String getRegion() {
+    return region;
+  }
+
+  public void setRegion(@javax.annotation.Nullable String region) {
+    this.region = region;
+  }
+
+
+  public OpensearchSettingsConfig roleArn(@javax.annotation.Nullable String roleArn) {
+    this.roleArn = roleArn;
+    return this;
+  }
+
+  /**
+   * The AWS IAM Role ARN to assume (used for aws_role auth)
+   * @return roleArn
+   */
+  @javax.annotation.Nullable
+  public String getRoleArn() {
+    return roleArn;
+  }
+
+  public void setRoleArn(@javax.annotation.Nullable String roleArn) {
+    this.roleArn = roleArn;
+  }
+
+
   public OpensearchSettingsConfig url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
@@ -136,7 +208,7 @@ public class OpensearchSettingsConfig {
   }
 
   /**
-   * The username for authenticating with OpenSearch.
+   * The username for authenticating with OpenSearch (used for basic auth).
    * @return username
    */
   @javax.annotation.Nullable
@@ -159,23 +231,29 @@ public class OpensearchSettingsConfig {
       return false;
     }
     OpensearchSettingsConfig opensearchSettingsConfig = (OpensearchSettingsConfig) o;
-    return Objects.equals(this.index, opensearchSettingsConfig.index) &&
+    return Objects.equals(this.authMode, opensearchSettingsConfig.authMode) &&
+        Objects.equals(this.index, opensearchSettingsConfig.index) &&
         Objects.equals(this.insecureSkipVerify, opensearchSettingsConfig.insecureSkipVerify) &&
+        Objects.equals(this.region, opensearchSettingsConfig.region) &&
+        Objects.equals(this.roleArn, opensearchSettingsConfig.roleArn) &&
         Objects.equals(this.url, opensearchSettingsConfig.url) &&
         Objects.equals(this.username, opensearchSettingsConfig.username);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(index, insecureSkipVerify, url, username);
+    return Objects.hash(authMode, index, insecureSkipVerify, region, roleArn, url, username);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OpensearchSettingsConfig {\n");
+    sb.append("    authMode: ").append(toIndentedString(authMode)).append("\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
     sb.append("    insecureSkipVerify: ").append(toIndentedString(insecureSkipVerify)).append("\n");
+    sb.append("    region: ").append(toIndentedString(region)).append("\n");
+    sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("}");
@@ -200,8 +278,11 @@ public class OpensearchSettingsConfig {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("auth_mode");
     openapiFields.add("index");
     openapiFields.add("insecure_skip_verify");
+    openapiFields.add("region");
+    openapiFields.add("role_arn");
     openapiFields.add("url");
     openapiFields.add("username");
 
@@ -230,8 +311,17 @@ public class OpensearchSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("auth_mode") != null && !jsonObj.get("auth_mode").isJsonNull()) && !jsonObj.get("auth_mode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `auth_mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_mode").toString()));
+      }
       if ((jsonObj.get("index") != null && !jsonObj.get("index").isJsonNull()) && !jsonObj.get("index").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `index` to be a primitive type in the JSON string but got `%s`", jsonObj.get("index").toString()));
+      }
+      if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
+      }
+      if ((jsonObj.get("role_arn") != null && !jsonObj.get("role_arn").isJsonNull()) && !jsonObj.get("role_arn").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `role_arn` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_arn").toString()));
       }
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));

@@ -48,8 +48,13 @@ import org.openapitools.client.JSON;
 /**
  * Google Workspace Users settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-19T16:11:31.865626042Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T17:25:27.914467533Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class UsersSettingsConfig {
+  public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
+  @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
+  @javax.annotation.Nullable
+  private String authType;
+
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
   @javax.annotation.Nullable
@@ -62,6 +67,25 @@ public class UsersSettingsConfig {
 
   public UsersSettingsConfig() {
   }
+
+  public UsersSettingsConfig authType(@javax.annotation.Nullable String authType) {
+    this.authType = authType;
+    return this;
+  }
+
+  /**
+   * Authentication type (service_account or oauth)
+   * @return authType
+   */
+  @javax.annotation.Nullable
+  public String getAuthType() {
+    return authType;
+  }
+
+  public void setAuthType(@javax.annotation.Nullable String authType) {
+    this.authType = authType;
+  }
+
 
   public UsersSettingsConfig cron(@javax.annotation.Nullable String cron) {
     this.cron = cron;
@@ -88,7 +112,7 @@ public class UsersSettingsConfig {
   }
 
   /**
-   * Email address to use to authenticate with Google Cloud.
+   * Email address to use to authenticate with Google Cloud (required for service_account auth).
    * @return email
    */
   @javax.annotation.Nullable
@@ -111,19 +135,21 @@ public class UsersSettingsConfig {
       return false;
     }
     UsersSettingsConfig usersSettingsConfig = (UsersSettingsConfig) o;
-    return Objects.equals(this.cron, usersSettingsConfig.cron) &&
+    return Objects.equals(this.authType, usersSettingsConfig.authType) &&
+        Objects.equals(this.cron, usersSettingsConfig.cron) &&
         Objects.equals(this.email, usersSettingsConfig.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cron, email);
+    return Objects.hash(authType, cron, email);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UsersSettingsConfig {\n");
+    sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
     sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
@@ -148,6 +174,7 @@ public class UsersSettingsConfig {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("auth_type");
     openapiFields.add("cron");
     openapiFields.add("email");
 
@@ -176,6 +203,9 @@ public class UsersSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) && !jsonObj.get("auth_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
+      }
       if ((jsonObj.get("cron") != null && !jsonObj.get("cron").isJsonNull()) && !jsonObj.get("cron").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `cron` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cron").toString()));
       }

@@ -6,10 +6,13 @@ OpenSearch Output Settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**auth_mode** | **str** | The authentication mode (basic, aws_role) | [optional] 
 **index** | **str** | The name of the OpenSearch index to use. | [optional] 
 **insecure_skip_verify** | **bool** | Whether to skip TLS certificate verification (not recommended for production). | [optional] 
+**region** | **str** | The AWS Region where the OpenSearch domain is located | [optional] 
+**role_arn** | **str** | The AWS IAM Role ARN to assume (used for aws_role auth) | [optional] 
 **url** | **str** | The URL of the OpenSearch instance (must start with https). | [optional] 
-**username** | **str** | The username for authenticating with OpenSearch. | [optional] 
+**username** | **str** | The username for authenticating with OpenSearch (used for basic auth). | [optional] 
 
 ## Example
 

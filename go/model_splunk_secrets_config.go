@@ -20,6 +20,7 @@ var _ MappedNullable = &SplunkSecretsConfig{}
 
 // SplunkSecretsConfig Splunk Output Secrets
 type SplunkSecretsConfig struct {
+	Password *ModelsSecret `json:"password,omitempty"`
 	Token *ModelsSecret `json:"token,omitempty"`
 }
 
@@ -38,6 +39,38 @@ func NewSplunkSecretsConfig() *SplunkSecretsConfig {
 func NewSplunkSecretsConfigWithDefaults() *SplunkSecretsConfig {
 	this := SplunkSecretsConfig{}
 	return &this
+}
+
+// GetPassword returns the Password field value if set, zero value otherwise.
+func (o *SplunkSecretsConfig) GetPassword() ModelsSecret {
+	if o == nil || IsNil(o.Password) {
+		var ret ModelsSecret
+		return ret
+	}
+	return *o.Password
+}
+
+// GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SplunkSecretsConfig) GetPasswordOk() (*ModelsSecret, bool) {
+	if o == nil || IsNil(o.Password) {
+		return nil, false
+	}
+	return o.Password, true
+}
+
+// HasPassword returns a boolean if a field has been set.
+func (o *SplunkSecretsConfig) HasPassword() bool {
+	if o != nil && !IsNil(o.Password) {
+		return true
+	}
+
+	return false
+}
+
+// SetPassword gets a reference to the given ModelsSecret and assigns it to the Password field.
+func (o *SplunkSecretsConfig) SetPassword(v ModelsSecret) {
+	o.Password = &v
 }
 
 // GetToken returns the Token field value if set, zero value otherwise.
@@ -82,6 +115,9 @@ func (o SplunkSecretsConfig) MarshalJSON() ([]byte, error) {
 
 func (o SplunkSecretsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Password) {
+		toSerialize["password"] = o.Password
+	}
 	if !IsNil(o.Token) {
 		toSerialize["token"] = o.Token
 	}

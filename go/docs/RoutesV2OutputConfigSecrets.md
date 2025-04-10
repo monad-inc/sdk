@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Credentials** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -34,6 +35,31 @@ will change when the set of required properties is changed
 NewRoutesV2OutputConfigSecretsWithDefaults instantiates a new RoutesV2OutputConfigSecrets object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCredentials
+
+`func (o *RoutesV2OutputConfigSecrets) GetCredentials() ModelsSecret`
+
+GetCredentials returns the Credentials field if non-nil, zero value otherwise.
+
+### GetCredentialsOk
+
+`func (o *RoutesV2OutputConfigSecrets) GetCredentialsOk() (*ModelsSecret, bool)`
+
+GetCredentialsOk returns a tuple with the Credentials field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCredentials
+
+`func (o *RoutesV2OutputConfigSecrets) SetCredentials(v ModelsSecret)`
+
+SetCredentials sets Credentials field to given value.
+
+### HasCredentials
+
+`func (o *RoutesV2OutputConfigSecrets) HasCredentials() bool`
+
+HasCredentials returns a boolean if a field has been set.
 
 ### GetAuthToken
 

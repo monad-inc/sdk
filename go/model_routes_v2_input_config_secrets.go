@@ -13,8 +13,8 @@ package monad
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // RoutesV2InputConfigSecrets - struct for RoutesV2InputConfigSecrets
@@ -25,19 +25,24 @@ type RoutesV2InputConfigSecrets struct {
 	AuditLogsSecretsConfig *AuditLogsSecretsConfig
 	AuthLogsSecretsConfig *AuthLogsSecretsConfig
 	AzureActivityLogsSecretsConfig *AzureActivityLogsSecretsConfig
+	BigqueryInputSecretsConfig *BigqueryInputSecretsConfig
 	BoxEventsSecretsConfig *BoxEventsSecretsConfig
 	BoxUsersSecretsConfig *BoxUsersSecretsConfig
 	CloudAssetInventorySecretsConfig *CloudAssetInventorySecretsConfig
 	CloudConfigurationFindingsSecretsConfig *CloudConfigurationFindingsSecretsConfig
 	CloudLogsSecretsConfig *CloudLogsSecretsConfig
 	CloudResourceInventorySecretsConfig *CloudResourceInventorySecretsConfig
+	CrowdstrikeFdrSecretsConfig *CrowdstrikeFdrSecretsConfig
+	DefenderForEndpointAlertsSecretsConfig *DefenderForEndpointAlertsSecretsConfig
 	DetectSummariesSecretsConfig *DetectSummariesSecretsConfig
 	DeviceActivitySecretsConfig *DeviceActivitySecretsConfig
 	DeviceDetailsSecretsConfig *DeviceDetailsSecretsConfig
+	DevicesSecretsConfig *DevicesSecretsConfig
 	DriveActivitySecretsConfig *DriveActivitySecretsConfig
 	EntraIdSecretsConfig *EntraIdSecretsConfig
 	EventSecretsConfig *EventSecretsConfig
 	EventsLogsSecretsConfig *EventsLogsSecretsConfig
+	FullScansSecretsConfig *FullScansSecretsConfig
 	IssuesSecretsConfig *IssuesSecretsConfig
 	LogAnalyticsQuerySecretsConfig *LogAnalyticsQuerySecretsConfig
 	LoginActivitySecretsConfig *LoginActivitySecretsConfig
@@ -51,10 +56,12 @@ type RoutesV2InputConfigSecrets struct {
 	SemgrepSupplyChainFindingsSecretsConfig *SemgrepSupplyChainFindingsSecretsConfig
 	SlackUsersSecretsConfig *SlackUsersSecretsConfig
 	SlackgroupsSecretsConfig *SlackgroupsSecretsConfig
+	SnowflakeInputSecretsConfig *SnowflakeInputSecretsConfig
 	SnykIssuesSecretsConfig *SnykIssuesSecretsConfig
 	SnykOrganizationsSecretsConfig *SnykOrganizationsSecretsConfig
 	SnykProjectsSecretsConfig *SnykProjectsSecretsConfig
 	SnykTargetsSecretsConfig *SnykTargetsSecretsConfig
+	TailscaleUsersSecretsConfig *TailscaleUsersSecretsConfig
 	TenableAssetsSecretsConfig *TenableAssetsSecretsConfig
 	TenableVulnerabilitiesSecretsConfig *TenableVulnerabilitiesSecretsConfig
 	UsersInfoSecretsConfig *UsersInfoSecretsConfig
@@ -106,6 +113,13 @@ func AzureActivityLogsSecretsConfigAsRoutesV2InputConfigSecrets(v *AzureActivity
 	}
 }
 
+// BigqueryInputSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns BigqueryInputSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func BigqueryInputSecretsConfigAsRoutesV2InputConfigSecrets(v *BigqueryInputSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		BigqueryInputSecretsConfig: v,
+	}
+}
+
 // BoxEventsSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns BoxEventsSecretsConfig wrapped in RoutesV2InputConfigSecrets
 func BoxEventsSecretsConfigAsRoutesV2InputConfigSecrets(v *BoxEventsSecretsConfig) RoutesV2InputConfigSecrets {
 	return RoutesV2InputConfigSecrets{
@@ -148,6 +162,20 @@ func CloudResourceInventorySecretsConfigAsRoutesV2InputConfigSecrets(v *CloudRes
 	}
 }
 
+// CrowdstrikeFdrSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns CrowdstrikeFdrSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func CrowdstrikeFdrSecretsConfigAsRoutesV2InputConfigSecrets(v *CrowdstrikeFdrSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		CrowdstrikeFdrSecretsConfig: v,
+	}
+}
+
+// DefenderForEndpointAlertsSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns DefenderForEndpointAlertsSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func DefenderForEndpointAlertsSecretsConfigAsRoutesV2InputConfigSecrets(v *DefenderForEndpointAlertsSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		DefenderForEndpointAlertsSecretsConfig: v,
+	}
+}
+
 // DetectSummariesSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns DetectSummariesSecretsConfig wrapped in RoutesV2InputConfigSecrets
 func DetectSummariesSecretsConfigAsRoutesV2InputConfigSecrets(v *DetectSummariesSecretsConfig) RoutesV2InputConfigSecrets {
 	return RoutesV2InputConfigSecrets{
@@ -166,6 +194,13 @@ func DeviceActivitySecretsConfigAsRoutesV2InputConfigSecrets(v *DeviceActivitySe
 func DeviceDetailsSecretsConfigAsRoutesV2InputConfigSecrets(v *DeviceDetailsSecretsConfig) RoutesV2InputConfigSecrets {
 	return RoutesV2InputConfigSecrets{
 		DeviceDetailsSecretsConfig: v,
+	}
+}
+
+// DevicesSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns DevicesSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func DevicesSecretsConfigAsRoutesV2InputConfigSecrets(v *DevicesSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		DevicesSecretsConfig: v,
 	}
 }
 
@@ -194,6 +229,13 @@ func EventSecretsConfigAsRoutesV2InputConfigSecrets(v *EventSecretsConfig) Route
 func EventsLogsSecretsConfigAsRoutesV2InputConfigSecrets(v *EventsLogsSecretsConfig) RoutesV2InputConfigSecrets {
 	return RoutesV2InputConfigSecrets{
 		EventsLogsSecretsConfig: v,
+	}
+}
+
+// FullScansSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns FullScansSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func FullScansSecretsConfigAsRoutesV2InputConfigSecrets(v *FullScansSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		FullScansSecretsConfig: v,
 	}
 }
 
@@ -288,6 +330,13 @@ func SlackgroupsSecretsConfigAsRoutesV2InputConfigSecrets(v *SlackgroupsSecretsC
 	}
 }
 
+// SnowflakeInputSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns SnowflakeInputSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func SnowflakeInputSecretsConfigAsRoutesV2InputConfigSecrets(v *SnowflakeInputSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		SnowflakeInputSecretsConfig: v,
+	}
+}
+
 // SnykIssuesSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns SnykIssuesSecretsConfig wrapped in RoutesV2InputConfigSecrets
 func SnykIssuesSecretsConfigAsRoutesV2InputConfigSecrets(v *SnykIssuesSecretsConfig) RoutesV2InputConfigSecrets {
 	return RoutesV2InputConfigSecrets{
@@ -313,6 +362,13 @@ func SnykProjectsSecretsConfigAsRoutesV2InputConfigSecrets(v *SnykProjectsSecret
 func SnykTargetsSecretsConfigAsRoutesV2InputConfigSecrets(v *SnykTargetsSecretsConfig) RoutesV2InputConfigSecrets {
 	return RoutesV2InputConfigSecrets{
 		SnykTargetsSecretsConfig: v,
+	}
+}
+
+// TailscaleUsersSecretsConfigAsRoutesV2InputConfigSecrets is a convenience function that returns TailscaleUsersSecretsConfig wrapped in RoutesV2InputConfigSecrets
+func TailscaleUsersSecretsConfigAsRoutesV2InputConfigSecrets(v *TailscaleUsersSecretsConfig) RoutesV2InputConfigSecrets {
+	return RoutesV2InputConfigSecrets{
+		TailscaleUsersSecretsConfig: v,
 	}
 }
 
@@ -472,6 +528,23 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.AzureActivityLogsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into BigqueryInputSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.BigqueryInputSecretsConfig)
+	if err == nil {
+		jsonBigqueryInputSecretsConfig, _ := json.Marshal(dst.BigqueryInputSecretsConfig)
+		if string(jsonBigqueryInputSecretsConfig) == "{}" { // empty struct
+			dst.BigqueryInputSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BigqueryInputSecretsConfig); err != nil {
+				dst.BigqueryInputSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BigqueryInputSecretsConfig = nil
+	}
+
 	// try to unmarshal data into BoxEventsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.BoxEventsSecretsConfig)
 	if err == nil {
@@ -574,6 +647,40 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.CloudResourceInventorySecretsConfig = nil
 	}
 
+	// try to unmarshal data into CrowdstrikeFdrSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CrowdstrikeFdrSecretsConfig)
+	if err == nil {
+		jsonCrowdstrikeFdrSecretsConfig, _ := json.Marshal(dst.CrowdstrikeFdrSecretsConfig)
+		if string(jsonCrowdstrikeFdrSecretsConfig) == "{}" { // empty struct
+			dst.CrowdstrikeFdrSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CrowdstrikeFdrSecretsConfig); err != nil {
+				dst.CrowdstrikeFdrSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CrowdstrikeFdrSecretsConfig = nil
+	}
+
+	// try to unmarshal data into DefenderForEndpointAlertsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.DefenderForEndpointAlertsSecretsConfig)
+	if err == nil {
+		jsonDefenderForEndpointAlertsSecretsConfig, _ := json.Marshal(dst.DefenderForEndpointAlertsSecretsConfig)
+		if string(jsonDefenderForEndpointAlertsSecretsConfig) == "{}" { // empty struct
+			dst.DefenderForEndpointAlertsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.DefenderForEndpointAlertsSecretsConfig); err != nil {
+				dst.DefenderForEndpointAlertsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.DefenderForEndpointAlertsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into DetectSummariesSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.DetectSummariesSecretsConfig)
 	if err == nil {
@@ -623,6 +730,23 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.DeviceDetailsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into DevicesSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.DevicesSecretsConfig)
+	if err == nil {
+		jsonDevicesSecretsConfig, _ := json.Marshal(dst.DevicesSecretsConfig)
+		if string(jsonDevicesSecretsConfig) == "{}" { // empty struct
+			dst.DevicesSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.DevicesSecretsConfig); err != nil {
+				dst.DevicesSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.DevicesSecretsConfig = nil
 	}
 
 	// try to unmarshal data into DriveActivitySecretsConfig
@@ -691,6 +815,23 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.EventsLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into FullScansSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.FullScansSecretsConfig)
+	if err == nil {
+		jsonFullScansSecretsConfig, _ := json.Marshal(dst.FullScansSecretsConfig)
+		if string(jsonFullScansSecretsConfig) == "{}" { // empty struct
+			dst.FullScansSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.FullScansSecretsConfig); err != nil {
+				dst.FullScansSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.FullScansSecretsConfig = nil
 	}
 
 	// try to unmarshal data into IssuesSecretsConfig
@@ -914,6 +1055,23 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.SlackgroupsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into SnowflakeInputSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.SnowflakeInputSecretsConfig)
+	if err == nil {
+		jsonSnowflakeInputSecretsConfig, _ := json.Marshal(dst.SnowflakeInputSecretsConfig)
+		if string(jsonSnowflakeInputSecretsConfig) == "{}" { // empty struct
+			dst.SnowflakeInputSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SnowflakeInputSecretsConfig); err != nil {
+				dst.SnowflakeInputSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SnowflakeInputSecretsConfig = nil
+	}
+
 	// try to unmarshal data into SnykIssuesSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.SnykIssuesSecretsConfig)
 	if err == nil {
@@ -980,6 +1138,23 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.SnykTargetsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into TailscaleUsersSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.TailscaleUsersSecretsConfig)
+	if err == nil {
+		jsonTailscaleUsersSecretsConfig, _ := json.Marshal(dst.TailscaleUsersSecretsConfig)
+		if string(jsonTailscaleUsersSecretsConfig) == "{}" { // empty struct
+			dst.TailscaleUsersSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TailscaleUsersSecretsConfig); err != nil {
+				dst.TailscaleUsersSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TailscaleUsersSecretsConfig = nil
 	}
 
 	// try to unmarshal data into TenableAssetsSecretsConfig
@@ -1109,19 +1284,24 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.AuditLogsSecretsConfig = nil
 		dst.AuthLogsSecretsConfig = nil
 		dst.AzureActivityLogsSecretsConfig = nil
+		dst.BigqueryInputSecretsConfig = nil
 		dst.BoxEventsSecretsConfig = nil
 		dst.BoxUsersSecretsConfig = nil
 		dst.CloudAssetInventorySecretsConfig = nil
 		dst.CloudConfigurationFindingsSecretsConfig = nil
 		dst.CloudLogsSecretsConfig = nil
 		dst.CloudResourceInventorySecretsConfig = nil
+		dst.CrowdstrikeFdrSecretsConfig = nil
+		dst.DefenderForEndpointAlertsSecretsConfig = nil
 		dst.DetectSummariesSecretsConfig = nil
 		dst.DeviceActivitySecretsConfig = nil
 		dst.DeviceDetailsSecretsConfig = nil
+		dst.DevicesSecretsConfig = nil
 		dst.DriveActivitySecretsConfig = nil
 		dst.EntraIdSecretsConfig = nil
 		dst.EventSecretsConfig = nil
 		dst.EventsLogsSecretsConfig = nil
+		dst.FullScansSecretsConfig = nil
 		dst.IssuesSecretsConfig = nil
 		dst.LogAnalyticsQuerySecretsConfig = nil
 		dst.LoginActivitySecretsConfig = nil
@@ -1135,10 +1315,12 @@ func (dst *RoutesV2InputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.SemgrepSupplyChainFindingsSecretsConfig = nil
 		dst.SlackUsersSecretsConfig = nil
 		dst.SlackgroupsSecretsConfig = nil
+		dst.SnowflakeInputSecretsConfig = nil
 		dst.SnykIssuesSecretsConfig = nil
 		dst.SnykOrganizationsSecretsConfig = nil
 		dst.SnykProjectsSecretsConfig = nil
 		dst.SnykTargetsSecretsConfig = nil
+		dst.TailscaleUsersSecretsConfig = nil
 		dst.TenableAssetsSecretsConfig = nil
 		dst.TenableVulnerabilitiesSecretsConfig = nil
 		dst.UsersInfoSecretsConfig = nil
@@ -1181,6 +1363,10 @@ func (src RoutesV2InputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AzureActivityLogsSecretsConfig)
 	}
 
+	if src.BigqueryInputSecretsConfig != nil {
+		return json.Marshal(&src.BigqueryInputSecretsConfig)
+	}
+
 	if src.BoxEventsSecretsConfig != nil {
 		return json.Marshal(&src.BoxEventsSecretsConfig)
 	}
@@ -1205,6 +1391,14 @@ func (src RoutesV2InputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CloudResourceInventorySecretsConfig)
 	}
 
+	if src.CrowdstrikeFdrSecretsConfig != nil {
+		return json.Marshal(&src.CrowdstrikeFdrSecretsConfig)
+	}
+
+	if src.DefenderForEndpointAlertsSecretsConfig != nil {
+		return json.Marshal(&src.DefenderForEndpointAlertsSecretsConfig)
+	}
+
 	if src.DetectSummariesSecretsConfig != nil {
 		return json.Marshal(&src.DetectSummariesSecretsConfig)
 	}
@@ -1215,6 +1409,10 @@ func (src RoutesV2InputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.DeviceDetailsSecretsConfig != nil {
 		return json.Marshal(&src.DeviceDetailsSecretsConfig)
+	}
+
+	if src.DevicesSecretsConfig != nil {
+		return json.Marshal(&src.DevicesSecretsConfig)
 	}
 
 	if src.DriveActivitySecretsConfig != nil {
@@ -1231,6 +1429,10 @@ func (src RoutesV2InputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.EventsLogsSecretsConfig != nil {
 		return json.Marshal(&src.EventsLogsSecretsConfig)
+	}
+
+	if src.FullScansSecretsConfig != nil {
+		return json.Marshal(&src.FullScansSecretsConfig)
 	}
 
 	if src.IssuesSecretsConfig != nil {
@@ -1285,6 +1487,10 @@ func (src RoutesV2InputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.SlackgroupsSecretsConfig)
 	}
 
+	if src.SnowflakeInputSecretsConfig != nil {
+		return json.Marshal(&src.SnowflakeInputSecretsConfig)
+	}
+
 	if src.SnykIssuesSecretsConfig != nil {
 		return json.Marshal(&src.SnykIssuesSecretsConfig)
 	}
@@ -1299,6 +1505,10 @@ func (src RoutesV2InputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.SnykTargetsSecretsConfig != nil {
 		return json.Marshal(&src.SnykTargetsSecretsConfig)
+	}
+
+	if src.TailscaleUsersSecretsConfig != nil {
+		return json.Marshal(&src.TailscaleUsersSecretsConfig)
 	}
 
 	if src.TenableAssetsSecretsConfig != nil {
@@ -1361,6 +1571,10 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 		return obj.AzureActivityLogsSecretsConfig
 	}
 
+	if obj.BigqueryInputSecretsConfig != nil {
+		return obj.BigqueryInputSecretsConfig
+	}
+
 	if obj.BoxEventsSecretsConfig != nil {
 		return obj.BoxEventsSecretsConfig
 	}
@@ -1385,6 +1599,14 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 		return obj.CloudResourceInventorySecretsConfig
 	}
 
+	if obj.CrowdstrikeFdrSecretsConfig != nil {
+		return obj.CrowdstrikeFdrSecretsConfig
+	}
+
+	if obj.DefenderForEndpointAlertsSecretsConfig != nil {
+		return obj.DefenderForEndpointAlertsSecretsConfig
+	}
+
 	if obj.DetectSummariesSecretsConfig != nil {
 		return obj.DetectSummariesSecretsConfig
 	}
@@ -1395,6 +1617,10 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 
 	if obj.DeviceDetailsSecretsConfig != nil {
 		return obj.DeviceDetailsSecretsConfig
+	}
+
+	if obj.DevicesSecretsConfig != nil {
+		return obj.DevicesSecretsConfig
 	}
 
 	if obj.DriveActivitySecretsConfig != nil {
@@ -1411,6 +1637,10 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 
 	if obj.EventsLogsSecretsConfig != nil {
 		return obj.EventsLogsSecretsConfig
+	}
+
+	if obj.FullScansSecretsConfig != nil {
+		return obj.FullScansSecretsConfig
 	}
 
 	if obj.IssuesSecretsConfig != nil {
@@ -1465,6 +1695,10 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 		return obj.SlackgroupsSecretsConfig
 	}
 
+	if obj.SnowflakeInputSecretsConfig != nil {
+		return obj.SnowflakeInputSecretsConfig
+	}
+
 	if obj.SnykIssuesSecretsConfig != nil {
 		return obj.SnykIssuesSecretsConfig
 	}
@@ -1479,6 +1713,10 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 
 	if obj.SnykTargetsSecretsConfig != nil {
 		return obj.SnykTargetsSecretsConfig
+	}
+
+	if obj.TailscaleUsersSecretsConfig != nil {
+		return obj.TailscaleUsersSecretsConfig
 	}
 
 	if obj.TenableAssetsSecretsConfig != nil {
@@ -1507,6 +1745,212 @@ func (obj *RoutesV2InputConfigSecrets) GetActualInstance() (interface{}) {
 
 	if obj.MapmapOfStringAny != nil {
 		return obj.MapmapOfStringAny
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj RoutesV2InputConfigSecrets) GetActualInstanceValue() (interface{}) {
+	if obj.ActorsInfoSecretsConfig != nil {
+		return *obj.ActorsInfoSecretsConfig
+	}
+
+	if obj.AdminActivitySecretsConfig != nil {
+		return *obj.AdminActivitySecretsConfig
+	}
+
+	if obj.AdminLogsSecretsConfig != nil {
+		return *obj.AdminLogsSecretsConfig
+	}
+
+	if obj.AuditLogsSecretsConfig != nil {
+		return *obj.AuditLogsSecretsConfig
+	}
+
+	if obj.AuthLogsSecretsConfig != nil {
+		return *obj.AuthLogsSecretsConfig
+	}
+
+	if obj.AzureActivityLogsSecretsConfig != nil {
+		return *obj.AzureActivityLogsSecretsConfig
+	}
+
+	if obj.BigqueryInputSecretsConfig != nil {
+		return *obj.BigqueryInputSecretsConfig
+	}
+
+	if obj.BoxEventsSecretsConfig != nil {
+		return *obj.BoxEventsSecretsConfig
+	}
+
+	if obj.BoxUsersSecretsConfig != nil {
+		return *obj.BoxUsersSecretsConfig
+	}
+
+	if obj.CloudAssetInventorySecretsConfig != nil {
+		return *obj.CloudAssetInventorySecretsConfig
+	}
+
+	if obj.CloudConfigurationFindingsSecretsConfig != nil {
+		return *obj.CloudConfigurationFindingsSecretsConfig
+	}
+
+	if obj.CloudLogsSecretsConfig != nil {
+		return *obj.CloudLogsSecretsConfig
+	}
+
+	if obj.CloudResourceInventorySecretsConfig != nil {
+		return *obj.CloudResourceInventorySecretsConfig
+	}
+
+	if obj.CrowdstrikeFdrSecretsConfig != nil {
+		return *obj.CrowdstrikeFdrSecretsConfig
+	}
+
+	if obj.DefenderForEndpointAlertsSecretsConfig != nil {
+		return *obj.DefenderForEndpointAlertsSecretsConfig
+	}
+
+	if obj.DetectSummariesSecretsConfig != nil {
+		return *obj.DetectSummariesSecretsConfig
+	}
+
+	if obj.DeviceActivitySecretsConfig != nil {
+		return *obj.DeviceActivitySecretsConfig
+	}
+
+	if obj.DeviceDetailsSecretsConfig != nil {
+		return *obj.DeviceDetailsSecretsConfig
+	}
+
+	if obj.DevicesSecretsConfig != nil {
+		return *obj.DevicesSecretsConfig
+	}
+
+	if obj.DriveActivitySecretsConfig != nil {
+		return *obj.DriveActivitySecretsConfig
+	}
+
+	if obj.EntraIdSecretsConfig != nil {
+		return *obj.EntraIdSecretsConfig
+	}
+
+	if obj.EventSecretsConfig != nil {
+		return *obj.EventSecretsConfig
+	}
+
+	if obj.EventsLogsSecretsConfig != nil {
+		return *obj.EventsLogsSecretsConfig
+	}
+
+	if obj.FullScansSecretsConfig != nil {
+		return *obj.FullScansSecretsConfig
+	}
+
+	if obj.IssuesSecretsConfig != nil {
+		return *obj.IssuesSecretsConfig
+	}
+
+	if obj.LogAnalyticsQuerySecretsConfig != nil {
+		return *obj.LogAnalyticsQuerySecretsConfig
+	}
+
+	if obj.LoginActivitySecretsConfig != nil {
+		return *obj.LoginActivitySecretsConfig
+	}
+
+	if obj.LoginSessionsSecretsConfig != nil {
+		return *obj.LoginSessionsSecretsConfig
+	}
+
+	if obj.OauthActivitySecretsConfig != nil {
+		return *obj.OauthActivitySecretsConfig
+	}
+
+	if obj.RolesInfoSecretsConfig != nil {
+		return *obj.RolesInfoSecretsConfig
+	}
+
+	if obj.SemgrepCodeFindingsSecretsConfig != nil {
+		return *obj.SemgrepCodeFindingsSecretsConfig
+	}
+
+	if obj.SemgrepDeploymentsSecretsConfig != nil {
+		return *obj.SemgrepDeploymentsSecretsConfig
+	}
+
+	if obj.SemgrepProjectDetailsSecretsConfig != nil {
+		return *obj.SemgrepProjectDetailsSecretsConfig
+	}
+
+	if obj.SemgrepProjectsSecretsConfig != nil {
+		return *obj.SemgrepProjectsSecretsConfig
+	}
+
+	if obj.SemgrepSupplyChainFindingsSecretsConfig != nil {
+		return *obj.SemgrepSupplyChainFindingsSecretsConfig
+	}
+
+	if obj.SlackUsersSecretsConfig != nil {
+		return *obj.SlackUsersSecretsConfig
+	}
+
+	if obj.SlackgroupsSecretsConfig != nil {
+		return *obj.SlackgroupsSecretsConfig
+	}
+
+	if obj.SnowflakeInputSecretsConfig != nil {
+		return *obj.SnowflakeInputSecretsConfig
+	}
+
+	if obj.SnykIssuesSecretsConfig != nil {
+		return *obj.SnykIssuesSecretsConfig
+	}
+
+	if obj.SnykOrganizationsSecretsConfig != nil {
+		return *obj.SnykOrganizationsSecretsConfig
+	}
+
+	if obj.SnykProjectsSecretsConfig != nil {
+		return *obj.SnykProjectsSecretsConfig
+	}
+
+	if obj.SnykTargetsSecretsConfig != nil {
+		return *obj.SnykTargetsSecretsConfig
+	}
+
+	if obj.TailscaleUsersSecretsConfig != nil {
+		return *obj.TailscaleUsersSecretsConfig
+	}
+
+	if obj.TenableAssetsSecretsConfig != nil {
+		return *obj.TenableAssetsSecretsConfig
+	}
+
+	if obj.TenableVulnerabilitiesSecretsConfig != nil {
+		return *obj.TenableVulnerabilitiesSecretsConfig
+	}
+
+	if obj.UsersInfoSecretsConfig != nil {
+		return *obj.UsersInfoSecretsConfig
+	}
+
+	if obj.UsersSecretsConfig != nil {
+		return *obj.UsersSecretsConfig
+	}
+
+	if obj.VulnerabilitiesSecretsConfig != nil {
+		return *obj.VulnerabilitiesSecretsConfig
+	}
+
+	if obj.VulnerabilityFindingsSecretsConfig != nil {
+		return *obj.VulnerabilityFindingsSecretsConfig
+	}
+
+	if obj.MapmapOfStringAny != nil {
+		return *obj.MapmapOfStringAny
 	}
 
 	// all schemas are nil

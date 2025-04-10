@@ -7,6 +7,8 @@ CrowdStrike EDR vulnerabilities settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cloud_type** | **str** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
+**cron** | **str** | Cron expression to schedule the data collection. | [optional] 
+**full_sync** | **bool** | Boolean to control weather the input performs full syncs or incremental syncs | [optional] 
 
 ## Example
 

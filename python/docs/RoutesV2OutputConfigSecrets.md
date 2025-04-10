@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**credentials** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

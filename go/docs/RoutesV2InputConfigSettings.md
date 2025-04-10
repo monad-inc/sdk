@@ -6,10 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ActorType** | Pointer to **string** | Type of actor. Ex: &#39;APT&#39;, &#39;eCrime&#39;, &#39;Hacktivist&#39;, &#39;Insider Threat&#39;, &#39;Nation-State&#39;, &#39;Unknown&#39;, &#39;Other&#39;, etc. Select &#39;None&#39; for no preference. | [optional] 
 **CloudType** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
-**Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
+**Cron** | Pointer to **string** | Cron expression to schedule the data collection. | [optional] 
 **Sort** | Pointer to **string** | Order fields in ascending or descending order. Ex: &#39;created_date|asc&#39;, &#39;created_date|desc&#39;. | [optional] 
 **TargetIndustries** | Pointer to **string** | Industries targeted by the actor. Ex: &#39;Financial&#39;, &#39;Healthcare&#39;, &#39;Energy&#39;, &#39;Government&#39;, &#39;Manufacturing&#39;, &#39;Technology&#39;, etc. Select &#39;None&#39; for no preference. | [optional] 
-**Email** | Pointer to **string** | Email address to use to authenticate with Google Cloud. | [optional] 
+**AuthType** | Pointer to **string** | Authentication type (service_account or oauth) | [optional] 
+**Email** | Pointer to **string** | Email address to use to authenticate with Google Cloud (required for service_account auth). | [optional] 
 **Host** | Pointer to **string** |  | [optional] 
 **Actions** | Pointer to **[]string** | Filter by specific actions. Use wildcards for broader matches (e.g., repo.*) | [optional] 
 **Actor** | Pointer to **string** | Filter by the username that initiated the action | [optional] 
@@ -19,7 +20,7 @@ Name | Type | Description | Notes
 **Include** | Pointer to **string** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
 **Organization** | Pointer to **string** | Filter by organization name | [optional] 
 **Repository** | Pointer to **string** | Filter by repository (format: org-name/repo-name) | [optional] 
-**User** | Pointer to **string** | Filter by the username that was affected by the action | [optional] 
+**User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
 **Bucket** | Pointer to **string** | The name of the S3 bucket | [optional] 
 **Compression** | Pointer to **string** | Compression format of the S3 objects. | [optional] 
 **Format** | Pointer to **string** | File format of the S3 objects. | [optional] 
@@ -34,21 +35,34 @@ Name | Type | Description | Notes
 **ResourceUri** | Pointer to **string** | The URI of the resource | [optional] 
 **SubscriptionId** | Pointer to **string** | The subscription ID of the Azure subscription | [optional] 
 **TenantId** | Pointer to **string** | The tenant ID of the Azure AD application | [optional] 
+**Dataset** | Pointer to **string** | The BigQuery dataset ID containing the table | [optional] 
+**Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
+**Query** | Pointer to **string** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
+**Table** | Pointer to **string** | The name of the table in Snowflake to query data from. | [optional] 
+**TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
 **EventType** | Pointer to **[]string** | A list of event types to filter by. | [optional] 
 **FilterTerm** | Pointer to **string** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
 **AssetTypes** | Pointer to **[]string** | The type of assets to scan for.  If left empty, will scan all assets | [optional] 
 **ResourceNames** | Pointer to **[]string** | The resources to query logs from. | [optional] 
 **EndpointUrl** | Pointer to **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. | [optional] 
 **Result** | Pointer to **[]string** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. | [optional] 
-**Severity** | Pointer to **[]string** | Severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. | [optional] 
+**Severity** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **[]string** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. | [optional] 
 **Filter** | Pointer to **string** | The filter to apply to the logs. | [optional] 
 **CloudPlatform** | Pointer to **[]string** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **EntityType** | Pointer to **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
+**FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
+**Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
+**AwsQueueUrl** | Pointer to **string** | AWS SQS queue URL provided to you by the CrowdStrike Falcon console | [optional] 
+**AwsRegionName** | Pointer to **string** | Name of the region where the queue resides | [optional] 
+**AwsS3Url** | Pointer to **string** | The URL of the S3 bucket | [optional] 
+**VisibilityTimeout** | Pointer to **int32** | Time in seconds before a message is returned back to the SQS queue | [optional] 
+**Category** | Pointer to **string** | The Category of logs to query | [optional] 
 **Rate** | Pointer to **int32** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
 **RecordType** | Pointer to **string** | The type of record to generate | [optional] 
 **CustomTemplate** | Pointer to **string** | A custom template using the functions we provide to generate demo data | [optional] 
-**Category** | Pointer to **string** | The Category of logs to query | [optional] 
+**FieldOption** | Pointer to **string** |  | [optional] 
+**OrganizationId** | Pointer to **string** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
 **WorkspaceId** | Pointer to **string** | The workspace ID of the Log Analytics workspace | [optional] 
 **AppName** | Pointer to **string** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
 **Cloud** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
@@ -56,6 +70,8 @@ Name | Type | Description | Notes
 **StoryId** | Pointer to **string** | Filter by the given story. | [optional] 
 **TeamId** | Pointer to **string** | Team ID to filter user results by | [optional] 
 **TenantUrl** | Pointer to **string** | Unique URL for your Tines instance | [optional] 
+**OrgSlug** | Pointer to **string** | Cron expression for scheduling the input | [optional] 
+**Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
 **ControlIds** | Pointer to **[]string** | @Description Filter Issues created by specific control IDs | [optional] 
 **HasNote** | Pointer to **string** | @Description Filter Issues with or without a note | [optional] 
 **HasRemediation** | Pointer to **string** | @Description Filter Issues with or without remediation | [optional] 
@@ -72,8 +88,15 @@ Name | Type | Description | Notes
 **Severities** | Pointer to **[]string** | @Description Filter Issues according to Control severity | [optional] 
 **StackLayers** | Pointer to **[]string** | @Description Filter Issues from specific stack layers | [optional] 
 **TenantDataCenter** | Pointer to **string** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact | [optional] 
-**Query** | Pointer to **string** | The query to run against the Log Analytics workspace | [optional] 
 **LogType** | Pointer to **string** |  | [optional] 
+**Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
+**Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
+**Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
+**Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
+**Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
+**UserRoleOption** | Pointer to **string** | Allows for filtering the output by user role. | [optional] 
+**UserTypeOption** | Pointer to **string** | Allows for filtering the output by user type. | [optional] 
+**FullSync** | Pointer to **bool** | Boolean to control weather the input performs full syncs or incremental syncs | [optional] 
 **AssetStatus** | Pointer to **[]string** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
 **AssetType** | Pointer to **string** | Asset types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **DetectionMethod** | Pointer to **[]string** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 
@@ -222,6 +245,31 @@ SetTargetIndustries sets TargetIndustries field to given value.
 `func (o *RoutesV2InputConfigSettings) HasTargetIndustries() bool`
 
 HasTargetIndustries returns a boolean if a field has been set.
+
+### GetAuthType
+
+`func (o *RoutesV2InputConfigSettings) GetAuthType() string`
+
+GetAuthType returns the AuthType field if non-nil, zero value otherwise.
+
+### GetAuthTypeOk
+
+`func (o *RoutesV2InputConfigSettings) GetAuthTypeOk() (*string, bool)`
+
+GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthType
+
+`func (o *RoutesV2InputConfigSettings) SetAuthType(v string)`
+
+SetAuthType sets AuthType field to given value.
+
+### HasAuthType
+
+`func (o *RoutesV2InputConfigSettings) HasAuthType() bool`
+
+HasAuthType returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -848,6 +896,131 @@ SetTenantId sets TenantId field to given value.
 
 HasTenantId returns a boolean if a field has been set.
 
+### GetDataset
+
+`func (o *RoutesV2InputConfigSettings) GetDataset() string`
+
+GetDataset returns the Dataset field if non-nil, zero value otherwise.
+
+### GetDatasetOk
+
+`func (o *RoutesV2InputConfigSettings) GetDatasetOk() (*string, bool)`
+
+GetDatasetOk returns a tuple with the Dataset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDataset
+
+`func (o *RoutesV2InputConfigSettings) SetDataset(v string)`
+
+SetDataset sets Dataset field to given value.
+
+### HasDataset
+
+`func (o *RoutesV2InputConfigSettings) HasDataset() bool`
+
+HasDataset returns a boolean if a field has been set.
+
+### GetProject
+
+`func (o *RoutesV2InputConfigSettings) GetProject() string`
+
+GetProject returns the Project field if non-nil, zero value otherwise.
+
+### GetProjectOk
+
+`func (o *RoutesV2InputConfigSettings) GetProjectOk() (*string, bool)`
+
+GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProject
+
+`func (o *RoutesV2InputConfigSettings) SetProject(v string)`
+
+SetProject sets Project field to given value.
+
+### HasProject
+
+`func (o *RoutesV2InputConfigSettings) HasProject() bool`
+
+HasProject returns a boolean if a field has been set.
+
+### GetQuery
+
+`func (o *RoutesV2InputConfigSettings) GetQuery() string`
+
+GetQuery returns the Query field if non-nil, zero value otherwise.
+
+### GetQueryOk
+
+`func (o *RoutesV2InputConfigSettings) GetQueryOk() (*string, bool)`
+
+GetQueryOk returns a tuple with the Query field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuery
+
+`func (o *RoutesV2InputConfigSettings) SetQuery(v string)`
+
+SetQuery sets Query field to given value.
+
+### HasQuery
+
+`func (o *RoutesV2InputConfigSettings) HasQuery() bool`
+
+HasQuery returns a boolean if a field has been set.
+
+### GetTable
+
+`func (o *RoutesV2InputConfigSettings) GetTable() string`
+
+GetTable returns the Table field if non-nil, zero value otherwise.
+
+### GetTableOk
+
+`func (o *RoutesV2InputConfigSettings) GetTableOk() (*string, bool)`
+
+GetTableOk returns a tuple with the Table field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTable
+
+`func (o *RoutesV2InputConfigSettings) SetTable(v string)`
+
+SetTable sets Table field to given value.
+
+### HasTable
+
+`func (o *RoutesV2InputConfigSettings) HasTable() bool`
+
+HasTable returns a boolean if a field has been set.
+
+### GetTimestampColumn
+
+`func (o *RoutesV2InputConfigSettings) GetTimestampColumn() string`
+
+GetTimestampColumn returns the TimestampColumn field if non-nil, zero value otherwise.
+
+### GetTimestampColumnOk
+
+`func (o *RoutesV2InputConfigSettings) GetTimestampColumnOk() (*string, bool)`
+
+GetTimestampColumnOk returns a tuple with the TimestampColumn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimestampColumn
+
+`func (o *RoutesV2InputConfigSettings) SetTimestampColumn(v string)`
+
+SetTimestampColumn sets TimestampColumn field to given value.
+
+### HasTimestampColumn
+
+`func (o *RoutesV2InputConfigSettings) HasTimestampColumn() bool`
+
+HasTimestampColumn returns a boolean if a field has been set.
+
 ### GetEventType
 
 `func (o *RoutesV2InputConfigSettings) GetEventType() []string`
@@ -1000,20 +1173,20 @@ HasResult returns a boolean if a field has been set.
 
 ### GetSeverity
 
-`func (o *RoutesV2InputConfigSettings) GetSeverity() []string`
+`func (o *RoutesV2InputConfigSettings) GetSeverity() string`
 
 GetSeverity returns the Severity field if non-nil, zero value otherwise.
 
 ### GetSeverityOk
 
-`func (o *RoutesV2InputConfigSettings) GetSeverityOk() (*[]string, bool)`
+`func (o *RoutesV2InputConfigSettings) GetSeverityOk() (*string, bool)`
 
 GetSeverityOk returns a tuple with the Severity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSeverity
 
-`func (o *RoutesV2InputConfigSettings) SetSeverity(v []string)`
+`func (o *RoutesV2InputConfigSettings) SetSeverity(v string)`
 
 SetSeverity sets Severity field to given value.
 
@@ -1123,6 +1296,181 @@ SetEntityType sets EntityType field to given value.
 
 HasEntityType returns a boolean if a field has been set.
 
+### GetFullSnapshot
+
+`func (o *RoutesV2InputConfigSettings) GetFullSnapshot() bool`
+
+GetFullSnapshot returns the FullSnapshot field if non-nil, zero value otherwise.
+
+### GetFullSnapshotOk
+
+`func (o *RoutesV2InputConfigSettings) GetFullSnapshotOk() (*bool, bool)`
+
+GetFullSnapshotOk returns a tuple with the FullSnapshot field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFullSnapshot
+
+`func (o *RoutesV2InputConfigSettings) SetFullSnapshot(v bool)`
+
+SetFullSnapshot sets FullSnapshot field to given value.
+
+### HasFullSnapshot
+
+`func (o *RoutesV2InputConfigSettings) HasFullSnapshot() bool`
+
+HasFullSnapshot returns a boolean if a field has been set.
+
+### GetInterval
+
+`func (o *RoutesV2InputConfigSettings) GetInterval() int32`
+
+GetInterval returns the Interval field if non-nil, zero value otherwise.
+
+### GetIntervalOk
+
+`func (o *RoutesV2InputConfigSettings) GetIntervalOk() (*int32, bool)`
+
+GetIntervalOk returns a tuple with the Interval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInterval
+
+`func (o *RoutesV2InputConfigSettings) SetInterval(v int32)`
+
+SetInterval sets Interval field to given value.
+
+### HasInterval
+
+`func (o *RoutesV2InputConfigSettings) HasInterval() bool`
+
+HasInterval returns a boolean if a field has been set.
+
+### GetAwsQueueUrl
+
+`func (o *RoutesV2InputConfigSettings) GetAwsQueueUrl() string`
+
+GetAwsQueueUrl returns the AwsQueueUrl field if non-nil, zero value otherwise.
+
+### GetAwsQueueUrlOk
+
+`func (o *RoutesV2InputConfigSettings) GetAwsQueueUrlOk() (*string, bool)`
+
+GetAwsQueueUrlOk returns a tuple with the AwsQueueUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAwsQueueUrl
+
+`func (o *RoutesV2InputConfigSettings) SetAwsQueueUrl(v string)`
+
+SetAwsQueueUrl sets AwsQueueUrl field to given value.
+
+### HasAwsQueueUrl
+
+`func (o *RoutesV2InputConfigSettings) HasAwsQueueUrl() bool`
+
+HasAwsQueueUrl returns a boolean if a field has been set.
+
+### GetAwsRegionName
+
+`func (o *RoutesV2InputConfigSettings) GetAwsRegionName() string`
+
+GetAwsRegionName returns the AwsRegionName field if non-nil, zero value otherwise.
+
+### GetAwsRegionNameOk
+
+`func (o *RoutesV2InputConfigSettings) GetAwsRegionNameOk() (*string, bool)`
+
+GetAwsRegionNameOk returns a tuple with the AwsRegionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAwsRegionName
+
+`func (o *RoutesV2InputConfigSettings) SetAwsRegionName(v string)`
+
+SetAwsRegionName sets AwsRegionName field to given value.
+
+### HasAwsRegionName
+
+`func (o *RoutesV2InputConfigSettings) HasAwsRegionName() bool`
+
+HasAwsRegionName returns a boolean if a field has been set.
+
+### GetAwsS3Url
+
+`func (o *RoutesV2InputConfigSettings) GetAwsS3Url() string`
+
+GetAwsS3Url returns the AwsS3Url field if non-nil, zero value otherwise.
+
+### GetAwsS3UrlOk
+
+`func (o *RoutesV2InputConfigSettings) GetAwsS3UrlOk() (*string, bool)`
+
+GetAwsS3UrlOk returns a tuple with the AwsS3Url field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAwsS3Url
+
+`func (o *RoutesV2InputConfigSettings) SetAwsS3Url(v string)`
+
+SetAwsS3Url sets AwsS3Url field to given value.
+
+### HasAwsS3Url
+
+`func (o *RoutesV2InputConfigSettings) HasAwsS3Url() bool`
+
+HasAwsS3Url returns a boolean if a field has been set.
+
+### GetVisibilityTimeout
+
+`func (o *RoutesV2InputConfigSettings) GetVisibilityTimeout() int32`
+
+GetVisibilityTimeout returns the VisibilityTimeout field if non-nil, zero value otherwise.
+
+### GetVisibilityTimeoutOk
+
+`func (o *RoutesV2InputConfigSettings) GetVisibilityTimeoutOk() (*int32, bool)`
+
+GetVisibilityTimeoutOk returns a tuple with the VisibilityTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVisibilityTimeout
+
+`func (o *RoutesV2InputConfigSettings) SetVisibilityTimeout(v int32)`
+
+SetVisibilityTimeout sets VisibilityTimeout field to given value.
+
+### HasVisibilityTimeout
+
+`func (o *RoutesV2InputConfigSettings) HasVisibilityTimeout() bool`
+
+HasVisibilityTimeout returns a boolean if a field has been set.
+
+### GetCategory
+
+`func (o *RoutesV2InputConfigSettings) GetCategory() string`
+
+GetCategory returns the Category field if non-nil, zero value otherwise.
+
+### GetCategoryOk
+
+`func (o *RoutesV2InputConfigSettings) GetCategoryOk() (*string, bool)`
+
+GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCategory
+
+`func (o *RoutesV2InputConfigSettings) SetCategory(v string)`
+
+SetCategory sets Category field to given value.
+
+### HasCategory
+
+`func (o *RoutesV2InputConfigSettings) HasCategory() bool`
+
+HasCategory returns a boolean if a field has been set.
+
 ### GetRate
 
 `func (o *RoutesV2InputConfigSettings) GetRate() int32`
@@ -1198,30 +1546,55 @@ SetCustomTemplate sets CustomTemplate field to given value.
 
 HasCustomTemplate returns a boolean if a field has been set.
 
-### GetCategory
+### GetFieldOption
 
-`func (o *RoutesV2InputConfigSettings) GetCategory() string`
+`func (o *RoutesV2InputConfigSettings) GetFieldOption() string`
 
-GetCategory returns the Category field if non-nil, zero value otherwise.
+GetFieldOption returns the FieldOption field if non-nil, zero value otherwise.
 
-### GetCategoryOk
+### GetFieldOptionOk
 
-`func (o *RoutesV2InputConfigSettings) GetCategoryOk() (*string, bool)`
+`func (o *RoutesV2InputConfigSettings) GetFieldOptionOk() (*string, bool)`
 
-GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
+GetFieldOptionOk returns a tuple with the FieldOption field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCategory
+### SetFieldOption
 
-`func (o *RoutesV2InputConfigSettings) SetCategory(v string)`
+`func (o *RoutesV2InputConfigSettings) SetFieldOption(v string)`
 
-SetCategory sets Category field to given value.
+SetFieldOption sets FieldOption field to given value.
 
-### HasCategory
+### HasFieldOption
 
-`func (o *RoutesV2InputConfigSettings) HasCategory() bool`
+`func (o *RoutesV2InputConfigSettings) HasFieldOption() bool`
 
-HasCategory returns a boolean if a field has been set.
+HasFieldOption returns a boolean if a field has been set.
+
+### GetOrganizationId
+
+`func (o *RoutesV2InputConfigSettings) GetOrganizationId() string`
+
+GetOrganizationId returns the OrganizationId field if non-nil, zero value otherwise.
+
+### GetOrganizationIdOk
+
+`func (o *RoutesV2InputConfigSettings) GetOrganizationIdOk() (*string, bool)`
+
+GetOrganizationIdOk returns a tuple with the OrganizationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrganizationId
+
+`func (o *RoutesV2InputConfigSettings) SetOrganizationId(v string)`
+
+SetOrganizationId sets OrganizationId field to given value.
+
+### HasOrganizationId
+
+`func (o *RoutesV2InputConfigSettings) HasOrganizationId() bool`
+
+HasOrganizationId returns a boolean if a field has been set.
 
 ### GetWorkspaceId
 
@@ -1397,6 +1770,56 @@ SetTenantUrl sets TenantUrl field to given value.
 `func (o *RoutesV2InputConfigSettings) HasTenantUrl() bool`
 
 HasTenantUrl returns a boolean if a field has been set.
+
+### GetOrgSlug
+
+`func (o *RoutesV2InputConfigSettings) GetOrgSlug() string`
+
+GetOrgSlug returns the OrgSlug field if non-nil, zero value otherwise.
+
+### GetOrgSlugOk
+
+`func (o *RoutesV2InputConfigSettings) GetOrgSlugOk() (*string, bool)`
+
+GetOrgSlugOk returns a tuple with the OrgSlug field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrgSlug
+
+`func (o *RoutesV2InputConfigSettings) SetOrgSlug(v string)`
+
+SetOrgSlug sets OrgSlug field to given value.
+
+### HasOrgSlug
+
+`func (o *RoutesV2InputConfigSettings) HasOrgSlug() bool`
+
+HasOrgSlug returns a boolean if a field has been set.
+
+### GetRepo
+
+`func (o *RoutesV2InputConfigSettings) GetRepo() string`
+
+GetRepo returns the Repo field if non-nil, zero value otherwise.
+
+### GetRepoOk
+
+`func (o *RoutesV2InputConfigSettings) GetRepoOk() (*string, bool)`
+
+GetRepoOk returns a tuple with the Repo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRepo
+
+`func (o *RoutesV2InputConfigSettings) SetRepo(v string)`
+
+SetRepo sets Repo field to given value.
+
+### HasRepo
+
+`func (o *RoutesV2InputConfigSettings) HasRepo() bool`
+
+HasRepo returns a boolean if a field has been set.
 
 ### GetControlIds
 
@@ -1798,31 +2221,6 @@ SetTenantDataCenter sets TenantDataCenter field to given value.
 
 HasTenantDataCenter returns a boolean if a field has been set.
 
-### GetQuery
-
-`func (o *RoutesV2InputConfigSettings) GetQuery() string`
-
-GetQuery returns the Query field if non-nil, zero value otherwise.
-
-### GetQueryOk
-
-`func (o *RoutesV2InputConfigSettings) GetQueryOk() (*string, bool)`
-
-GetQueryOk returns a tuple with the Query field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetQuery
-
-`func (o *RoutesV2InputConfigSettings) SetQuery(v string)`
-
-SetQuery sets Query field to given value.
-
-### HasQuery
-
-`func (o *RoutesV2InputConfigSettings) HasQuery() bool`
-
-HasQuery returns a boolean if a field has been set.
-
 ### GetLogType
 
 `func (o *RoutesV2InputConfigSettings) GetLogType() string`
@@ -1847,6 +2245,206 @@ SetLogType sets LogType field to given value.
 `func (o *RoutesV2InputConfigSettings) HasLogType() bool`
 
 HasLogType returns a boolean if a field has been set.
+
+### GetAccount
+
+`func (o *RoutesV2InputConfigSettings) GetAccount() string`
+
+GetAccount returns the Account field if non-nil, zero value otherwise.
+
+### GetAccountOk
+
+`func (o *RoutesV2InputConfigSettings) GetAccountOk() (*string, bool)`
+
+GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccount
+
+`func (o *RoutesV2InputConfigSettings) SetAccount(v string)`
+
+SetAccount sets Account field to given value.
+
+### HasAccount
+
+`func (o *RoutesV2InputConfigSettings) HasAccount() bool`
+
+HasAccount returns a boolean if a field has been set.
+
+### GetDatabase
+
+`func (o *RoutesV2InputConfigSettings) GetDatabase() string`
+
+GetDatabase returns the Database field if non-nil, zero value otherwise.
+
+### GetDatabaseOk
+
+`func (o *RoutesV2InputConfigSettings) GetDatabaseOk() (*string, bool)`
+
+GetDatabaseOk returns a tuple with the Database field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDatabase
+
+`func (o *RoutesV2InputConfigSettings) SetDatabase(v string)`
+
+SetDatabase sets Database field to given value.
+
+### HasDatabase
+
+`func (o *RoutesV2InputConfigSettings) HasDatabase() bool`
+
+HasDatabase returns a boolean if a field has been set.
+
+### GetRole
+
+`func (o *RoutesV2InputConfigSettings) GetRole() string`
+
+GetRole returns the Role field if non-nil, zero value otherwise.
+
+### GetRoleOk
+
+`func (o *RoutesV2InputConfigSettings) GetRoleOk() (*string, bool)`
+
+GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRole
+
+`func (o *RoutesV2InputConfigSettings) SetRole(v string)`
+
+SetRole sets Role field to given value.
+
+### HasRole
+
+`func (o *RoutesV2InputConfigSettings) HasRole() bool`
+
+HasRole returns a boolean if a field has been set.
+
+### GetSchema
+
+`func (o *RoutesV2InputConfigSettings) GetSchema() string`
+
+GetSchema returns the Schema field if non-nil, zero value otherwise.
+
+### GetSchemaOk
+
+`func (o *RoutesV2InputConfigSettings) GetSchemaOk() (*string, bool)`
+
+GetSchemaOk returns a tuple with the Schema field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchema
+
+`func (o *RoutesV2InputConfigSettings) SetSchema(v string)`
+
+SetSchema sets Schema field to given value.
+
+### HasSchema
+
+`func (o *RoutesV2InputConfigSettings) HasSchema() bool`
+
+HasSchema returns a boolean if a field has been set.
+
+### GetWarehouse
+
+`func (o *RoutesV2InputConfigSettings) GetWarehouse() string`
+
+GetWarehouse returns the Warehouse field if non-nil, zero value otherwise.
+
+### GetWarehouseOk
+
+`func (o *RoutesV2InputConfigSettings) GetWarehouseOk() (*string, bool)`
+
+GetWarehouseOk returns a tuple with the Warehouse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWarehouse
+
+`func (o *RoutesV2InputConfigSettings) SetWarehouse(v string)`
+
+SetWarehouse sets Warehouse field to given value.
+
+### HasWarehouse
+
+`func (o *RoutesV2InputConfigSettings) HasWarehouse() bool`
+
+HasWarehouse returns a boolean if a field has been set.
+
+### GetUserRoleOption
+
+`func (o *RoutesV2InputConfigSettings) GetUserRoleOption() string`
+
+GetUserRoleOption returns the UserRoleOption field if non-nil, zero value otherwise.
+
+### GetUserRoleOptionOk
+
+`func (o *RoutesV2InputConfigSettings) GetUserRoleOptionOk() (*string, bool)`
+
+GetUserRoleOptionOk returns a tuple with the UserRoleOption field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserRoleOption
+
+`func (o *RoutesV2InputConfigSettings) SetUserRoleOption(v string)`
+
+SetUserRoleOption sets UserRoleOption field to given value.
+
+### HasUserRoleOption
+
+`func (o *RoutesV2InputConfigSettings) HasUserRoleOption() bool`
+
+HasUserRoleOption returns a boolean if a field has been set.
+
+### GetUserTypeOption
+
+`func (o *RoutesV2InputConfigSettings) GetUserTypeOption() string`
+
+GetUserTypeOption returns the UserTypeOption field if non-nil, zero value otherwise.
+
+### GetUserTypeOptionOk
+
+`func (o *RoutesV2InputConfigSettings) GetUserTypeOptionOk() (*string, bool)`
+
+GetUserTypeOptionOk returns a tuple with the UserTypeOption field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserTypeOption
+
+`func (o *RoutesV2InputConfigSettings) SetUserTypeOption(v string)`
+
+SetUserTypeOption sets UserTypeOption field to given value.
+
+### HasUserTypeOption
+
+`func (o *RoutesV2InputConfigSettings) HasUserTypeOption() bool`
+
+HasUserTypeOption returns a boolean if a field has been set.
+
+### GetFullSync
+
+`func (o *RoutesV2InputConfigSettings) GetFullSync() bool`
+
+GetFullSync returns the FullSync field if non-nil, zero value otherwise.
+
+### GetFullSyncOk
+
+`func (o *RoutesV2InputConfigSettings) GetFullSyncOk() (*bool, bool)`
+
+GetFullSyncOk returns a tuple with the FullSync field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFullSync
+
+`func (o *RoutesV2InputConfigSettings) SetFullSync(v bool)`
+
+SetFullSync sets FullSync field to given value.
+
+### HasFullSync
+
+`func (o *RoutesV2InputConfigSettings) HasFullSync() bool`
+
+HasFullSync returns a boolean if a field has been set.
 
 ### GetAssetStatus
 

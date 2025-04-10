@@ -206,7 +206,14 @@ const request: OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest = 
   inputId: "input_id_example",
     // Input configuration update
   routesV2UpdateInputRequest: {
-    config: {},
+    config: {
+      secrets: 
+        key: null,
+      ,
+      settings: 
+        key: null,
+      ,
+    },
     description: "description_example",
     name: "name_example",
     type: "type_example",
@@ -274,7 +281,14 @@ const request: OrganizationInputsApiV2OrganizationIdInputsPostRequest = {
   organizationId: "organization_id_example",
     // Input configuration
   routesV2CreateInputRequest: {
-    config: {},
+    config: {
+      secrets: 
+        key: null,
+      ,
+      settings: 
+        key: null,
+      ,
+    },
     description: "description_example",
     name: "name_example",
     type: "type_example",
@@ -321,7 +335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v2OrganizationIdInputsTestConnectionPost**
-> RoutesV2SuccessResponse v2OrganizationIdInputsTestConnectionPost(body)
+> RoutesV2SuccessResponse v2OrganizationIdInputsTestConnectionPost(routesV2TestInputConnectionRequest)
 
 Tests the connection for a given input type and configuration
 
@@ -339,7 +353,17 @@ const request: OrganizationInputsApiV2OrganizationIdInputsTestConnectionPostRequ
     // Organization ID
   organizationId: "organization_id_example",
     // Input configuration to test
-  body: {},
+  routesV2TestInputConnectionRequest: {
+    config: {
+      secrets: 
+        key: null,
+      ,
+      settings: 
+        key: null,
+      ,
+    },
+    type: "type_example",
+  },
 };
 
 const data = await apiInstance.v2OrganizationIdInputsTestConnectionPost(request);
@@ -351,7 +375,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**| Input configuration to test |
+ **routesV2TestInputConnectionRequest** | **RoutesV2TestInputConnectionRequest**| Input configuration to test |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
 
 

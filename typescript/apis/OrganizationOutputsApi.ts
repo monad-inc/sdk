@@ -14,6 +14,7 @@ import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesV2CreateOutputRequest } from '../models/RoutesV2CreateOutputRequest';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
+import { RoutesV2TestOutputConnectionRequest } from '../models/RoutesV2TestOutputConnectionRequest';
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 
 /**
@@ -328,9 +329,9 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
      * Tests the connection for a given output type and configuration
      * Test output connection
      * @param organizationId Organization ID
-     * @param body Output configuration to test
+     * @param routesV2TestOutputConnectionRequest Output configuration to test
      */
-    public async v2OrganizationIdOutputsTestConnectionPost(organizationId: string, body: any, _options?: Configuration): Promise<RequestContext> {
+    public async v2OrganizationIdOutputsTestConnectionPost(organizationId: string, routesV2TestOutputConnectionRequest: RoutesV2TestOutputConnectionRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -339,9 +340,9 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         }
 
 
-        // verify required parameter 'body' is not null or undefined
-        if (body === null || body === undefined) {
-            throw new RequiredError("OrganizationOutputsApi", "v2OrganizationIdOutputsTestConnectionPost", "body");
+        // verify required parameter 'routesV2TestOutputConnectionRequest' is not null or undefined
+        if (routesV2TestOutputConnectionRequest === null || routesV2TestOutputConnectionRequest === undefined) {
+            throw new RequiredError("OrganizationOutputsApi", "v2OrganizationIdOutputsTestConnectionPost", "routesV2TestOutputConnectionRequest");
         }
 
 
@@ -360,7 +361,7 @@ export class OrganizationOutputsApiRequestFactory extends BaseAPIRequestFactory 
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "any", ""),
+            ObjectSerializer.serialize(routesV2TestOutputConnectionRequest, "RoutesV2TestOutputConnectionRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

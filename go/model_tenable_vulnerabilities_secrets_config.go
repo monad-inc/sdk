@@ -18,7 +18,7 @@ import (
 // checks if the TenableVulnerabilitiesSecretsConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TenableVulnerabilitiesSecretsConfig{}
 
-// TenableVulnerabilitiesSecretsConfig Tenable vulnerabilities secrets
+// TenableVulnerabilitiesSecretsConfig Tenable assets secrets
 type TenableVulnerabilitiesSecretsConfig struct {
 	AccessKey *ModelsSecret `json:"access_key,omitempty"`
 	SecretKey *ModelsSecret `json:"secret_key,omitempty"`

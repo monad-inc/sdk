@@ -7,6 +7,7 @@ Google Workspace Drive Activity secrets
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

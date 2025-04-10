@@ -48,22 +48,37 @@ import org.openapitools.client.JSON;
 /**
  * Splunk Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-18T21:46:21.506800163Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T17:25:27.914467533Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class SplunkSettingsConfig {
   public static final String SERIALIZED_NAME_ALLOW_INSECURE = "allow_insecure";
   @SerializedName(SERIALIZED_NAME_ALLOW_INSECURE)
   @javax.annotation.Nullable
   private Boolean allowInsecure;
 
+  public static final String SERIALIZED_NAME_INDEX = "index";
+  @SerializedName(SERIALIZED_NAME_INDEX)
+  @javax.annotation.Nullable
+  private String index;
+
   public static final String SERIALIZED_NAME_PORT = "port";
   @SerializedName(SERIALIZED_NAME_PORT)
   @javax.annotation.Nullable
   private String port;
 
+  public static final String SERIALIZED_NAME_TO_CREATE = "to_create";
+  @SerializedName(SERIALIZED_NAME_TO_CREATE)
+  @javax.annotation.Nullable
+  private Boolean toCreate;
+
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
   @javax.annotation.Nullable
   private String url;
+
+  public static final String SERIALIZED_NAME_USERNAME = "username";
+  @SerializedName(SERIALIZED_NAME_USERNAME)
+  @javax.annotation.Nullable
+  private String username;
 
   public SplunkSettingsConfig() {
   }
@@ -87,6 +102,25 @@ public class SplunkSettingsConfig {
   }
 
 
+  public SplunkSettingsConfig index(@javax.annotation.Nullable String index) {
+    this.index = index;
+    return this;
+  }
+
+  /**
+   * The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token &amp; Index scoping.
+   * @return index
+   */
+  @javax.annotation.Nullable
+  public String getIndex() {
+    return index;
+  }
+
+  public void setIndex(@javax.annotation.Nullable String index) {
+    this.index = index;
+  }
+
+
   public SplunkSettingsConfig port(@javax.annotation.Nullable String port) {
     this.port = port;
     return this;
@@ -103,6 +137,25 @@ public class SplunkSettingsConfig {
 
   public void setPort(@javax.annotation.Nullable String port) {
     this.port = port;
+  }
+
+
+  public SplunkSettingsConfig toCreate(@javax.annotation.Nullable Boolean toCreate) {
+    this.toCreate = toCreate;
+    return this;
+  }
+
+  /**
+   * Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping.
+   * @return toCreate
+   */
+  @javax.annotation.Nullable
+  public Boolean getToCreate() {
+    return toCreate;
+  }
+
+  public void setToCreate(@javax.annotation.Nullable Boolean toCreate) {
+    this.toCreate = toCreate;
   }
 
 
@@ -125,6 +178,25 @@ public class SplunkSettingsConfig {
   }
 
 
+  public SplunkSettingsConfig username(@javax.annotation.Nullable String username) {
+    this.username = username;
+    return this;
+  }
+
+  /**
+   * Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used.
+   * @return username
+   */
+  @javax.annotation.Nullable
+  public String getUsername() {
+    return username;
+  }
+
+  public void setUsername(@javax.annotation.Nullable String username) {
+    this.username = username;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -136,13 +208,16 @@ public class SplunkSettingsConfig {
     }
     SplunkSettingsConfig splunkSettingsConfig = (SplunkSettingsConfig) o;
     return Objects.equals(this.allowInsecure, splunkSettingsConfig.allowInsecure) &&
+        Objects.equals(this.index, splunkSettingsConfig.index) &&
         Objects.equals(this.port, splunkSettingsConfig.port) &&
-        Objects.equals(this.url, splunkSettingsConfig.url);
+        Objects.equals(this.toCreate, splunkSettingsConfig.toCreate) &&
+        Objects.equals(this.url, splunkSettingsConfig.url) &&
+        Objects.equals(this.username, splunkSettingsConfig.username);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowInsecure, port, url);
+    return Objects.hash(allowInsecure, index, port, toCreate, url, username);
   }
 
   @Override
@@ -150,8 +225,11 @@ public class SplunkSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class SplunkSettingsConfig {\n");
     sb.append("    allowInsecure: ").append(toIndentedString(allowInsecure)).append("\n");
+    sb.append("    index: ").append(toIndentedString(index)).append("\n");
     sb.append("    port: ").append(toIndentedString(port)).append("\n");
+    sb.append("    toCreate: ").append(toIndentedString(toCreate)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -175,8 +253,11 @@ public class SplunkSettingsConfig {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("allow_insecure");
+    openapiFields.add("index");
     openapiFields.add("port");
+    openapiFields.add("to_create");
     openapiFields.add("url");
+    openapiFields.add("username");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -203,11 +284,17 @@ public class SplunkSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("index") != null && !jsonObj.get("index").isJsonNull()) && !jsonObj.get("index").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `index` to be a primitive type in the JSON string but got `%s`", jsonObj.get("index").toString()));
+      }
       if ((jsonObj.get("port") != null && !jsonObj.get("port").isJsonNull()) && !jsonObj.get("port").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `port` to be a primitive type in the JSON string but got `%s`", jsonObj.get("port").toString()));
       }
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+      }
+      if ((jsonObj.get("username") != null && !jsonObj.get("username").isJsonNull()) && !jsonObj.get("username").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `username` to be a primitive type in the JSON string but got `%s`", jsonObj.get("username").toString()));
       }
   }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Config** | Pointer to **map[string]interface{}** |  | [optional] 
+**Config** | Pointer to [**RoutesV2OutputConfig**](RoutesV2OutputConfig.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OutputType** | Pointer to **string** |  | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetConfig
 
-`func (o *RoutesV2CreateOutputRequest) GetConfig() map[string]interface{}`
+`func (o *RoutesV2CreateOutputRequest) GetConfig() RoutesV2OutputConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *RoutesV2CreateOutputRequest) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *RoutesV2CreateOutputRequest) GetConfigOk() (*RoutesV2OutputConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *RoutesV2CreateOutputRequest) SetConfig(v map[string]interface{})`
+`func (o *RoutesV2CreateOutputRequest) SetConfig(v RoutesV2OutputConfig)`
 
 SetConfig sets Config field to given value.
 

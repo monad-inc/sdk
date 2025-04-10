@@ -20,6 +20,7 @@ export class UsersSecretsConfig {
     'credentialsJson'?: ModelsSecret;
     'customerId'?: ModelsSecret;
     'domain'?: ModelsSecret;
+    'oauthToken'?: ModelsSecret;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -41,6 +42,12 @@ export class UsersSecretsConfig {
         {
             "name": "domain",
             "baseName": "domain",
+            "type": "ModelsSecret",
+            "format": ""
+        },
+        {
+            "name": "oauthToken",
+            "baseName": "oauth_token",
             "type": "ModelsSecret",
             "format": ""
         }    ];

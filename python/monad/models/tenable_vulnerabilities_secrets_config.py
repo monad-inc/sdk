@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class TenableVulnerabilitiesSecretsConfig(BaseModel):
     """
-    Tenable vulnerabilities secrets
+    Tenable assets secrets
     """ # noqa: E501
     access_key: Optional[ModelsSecret] = None
     secret_key: Optional[ModelsSecret] = None

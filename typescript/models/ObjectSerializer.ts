@@ -1,23 +1,88 @@
+export * from '../models/ActorsInfoSecretsConfig';
 export * from '../models/ActorsInfoSettingsConfig';
 export * from '../models/AddAdd';
+export * from '../models/AdminActivitySecretsConfig';
 export * from '../models/AdminActivitySettingsConfig';
+export * from '../models/AdminLogsSecretsConfig';
 export * from '../models/AdminLogsSettingsConfig';
+export * from '../models/AuditLogsSecretsConfig';
 export * from '../models/AuditLogsSettingsConfig';
 export * from '../models/Auth0Auth0TokenResponse';
 export * from '../models/Auth0LoginRequest';
+export * from '../models/AuthLogsSecretsConfig';
 export * from '../models/AuthLogsSettingsConfig';
 export * from '../models/AwsS3SettingsConfig';
+export * from '../models/AzureActivityLogsSecretsConfig';
 export * from '../models/AzureActivityLogsSettingsConfig';
+export * from '../models/BatchConfigBatchConfig';
+export * from '../models/BigqueryInputSecretsConfig';
+export * from '../models/BigqueryInputSettingsConfig';
+export * from '../models/BigquerySecretsConfig';
+export * from '../models/BigquerySettingsConfig';
+export * from '../models/BoxEventsSecretsConfig';
+export * from '../models/BoxEventsSettingsConfig';
+export * from '../models/BoxUsersSecretsConfig';
+export * from '../models/BoxUsersSettingsConfig';
+export * from '../models/CloudAssetInventorySecretsConfig';
+export * from '../models/CloudAssetInventorySettingsConfig';
+export * from '../models/CloudConfigurationFindingsSecretsConfig';
+export * from '../models/CloudConfigurationFindingsSettingsConfig';
+export * from '../models/CloudLogsSecretsConfig';
+export * from '../models/CloudLogsSettingsConfig';
+export * from '../models/CloudResourceInventorySecretsConfig';
+export * from '../models/CloudResourceInventorySettingsConfig';
+export * from '../models/CloudtrailSettingsConfig';
 export * from '../models/ConditionInfo';
 export * from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
+export * from '../models/CriblHttpSecretsConfig';
+export * from '../models/CriblHttpSettingsConfig';
+export * from '../models/CrowdstrikeFdrSecretsConfig';
+export * from '../models/CrowdstrikeFdrSettingsConfig';
+export * from '../models/DefenderForEndpointAlertsSecretsConfig';
+export * from '../models/DefenderForEndpointAlertsSettingsConfig';
+export * from '../models/DelimitedDelimiterFormatter';
+export * from '../models/DemoCustomSettingsConfig';
+export * from '../models/DemoSettingsConfig';
+export * from '../models/DetectSummariesSecretsConfig';
+export * from '../models/DetectSummariesSettingsConfig';
+export * from '../models/DeviceActivitySecretsConfig';
+export * from '../models/DeviceActivitySettingsConfig';
+export * from '../models/DeviceDetailsSecretsConfig';
+export * from '../models/DeviceDetailsSettingsConfig';
+export * from '../models/DevicesSecretsConfig';
+export * from '../models/DevicesSettingsConfig';
+export * from '../models/DriveActivitySecretsConfig';
+export * from '../models/DriveActivitySettingsConfig';
 export * from '../models/DropKeyDropKey';
 export * from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
 export * from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
 export * from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
+export * from '../models/ElasticsearchSecretsConfig';
+export * from '../models/ElasticsearchSettingsConfig';
+export * from '../models/EntraIdSecretsConfig';
+export * from '../models/EntraIdSettingsConfig';
+export * from '../models/EventSecretsConfig';
+export * from '../models/EventSettingsConfig';
+export * from '../models/EventsLogsSecretsConfig';
+export * from '../models/EventsLogsSettingsConfig';
 export * from '../models/FlattenFlatten';
 export * from '../models/FlattenallFlattenAll';
+export * from '../models/FormatterFormatConfig';
+export * from '../models/FullScansSecretsConfig';
+export * from '../models/FullScansSettingsConfig';
+export * from '../models/HttpSecretsConfig';
+export * from '../models/HttpSettingsConfig';
 export * from '../models/InputsConnectorMeta';
+export * from '../models/IssuesSecretsConfig';
+export * from '../models/IssuesSettingsConfig';
 export * from '../models/JqJQ';
+export * from '../models/JsonJsonFormatter';
+export * from '../models/LogAnalyticsQuerySecretsConfig';
+export * from '../models/LogAnalyticsQuerySettingsConfig';
+export * from '../models/LoginActivitySecretsConfig';
+export * from '../models/LoginActivitySettingsConfig';
+export * from '../models/LoginSessionsSecretsConfig';
+export * from '../models/LoginSessionsSettingsConfig';
 export * from '../models/MathMultiplyWithValueMathMultiplyWithValue';
 export * from '../models/ModelsAPIKey';
 export * from '../models/ModelsAPIKeyList';
@@ -62,6 +127,7 @@ export * from '../models/ModelsQuota';
 export * from '../models/ModelsQuotaList';
 export * from '../models/ModelsRoleWithPermissions';
 export * from '../models/ModelsRoleWithPermissionsList';
+export * from '../models/ModelsSecret';
 export * from '../models/ModelsSecretWithComponents';
 export * from '../models/ModelsSecretWithComponentsList';
 export * from '../models/ModelsTransform';
@@ -70,15 +136,25 @@ export * from '../models/ModelsTransformList';
 export * from '../models/ModelsTransformOperation';
 export * from '../models/ModelsUser';
 export * from '../models/ModelsUserRoleWithPermissions';
+export * from '../models/MonadLogSettingsConfig';
 export * from '../models/MutateTypeMutateType';
 export * from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 export * from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
+export * from '../models/NextGenSiemSecretsConfig';
+export * from '../models/NextGenSiemSettingsConfig';
+export * from '../models/OauthActivitySecretsConfig';
+export * from '../models/OauthActivitySettingsConfig';
+export * from '../models/OpensearchSecretsConfig';
+export * from '../models/OpensearchSettingsConfig';
 export * from '../models/OperationInformation';
 export * from '../models/OutputsConnectorMeta';
+export * from '../models/ParquetParquetFormatter';
 export * from '../models/RenameKeyRenameKey';
 export * from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 export * from '../models/ResourceQuantity';
 export * from '../models/ResponderErrorResponse';
+export * from '../models/RolesInfoSecretsConfig';
+export * from '../models/RolesInfoSettingsConfig';
 export * from '../models/RoutesAddUserToOrganizationRequest';
 export * from '../models/RoutesCreateOrganizationRequest';
 export * from '../models/RoutesCreateTransformRequest';
@@ -110,14 +186,22 @@ export * from '../models/RoutesV2CreatebillingAccountUserRoleRequest';
 export * from '../models/RoutesV2GenerateRecordRequest';
 export * from '../models/RoutesV2GenerateRecordResponse';
 export * from '../models/RoutesV2GetOrganizationSummaryResponse';
+export * from '../models/RoutesV2InputConfig';
+export * from '../models/RoutesV2InputConfigSecrets';
+export * from '../models/RoutesV2InputConfigSettings';
 export * from '../models/RoutesV2ListTemplatesResponse';
 export * from '../models/RoutesV2OrganizationOverview';
+export * from '../models/RoutesV2OutputConfig';
+export * from '../models/RoutesV2OutputConfigSecrets';
+export * from '../models/RoutesV2OutputConfigSettings';
 export * from '../models/RoutesV2PipelineRequestEdge';
 export * from '../models/RoutesV2PipelineRequestNode';
 export * from '../models/RoutesV2PipelineStatus';
 export * from '../models/RoutesV2PipelineWithStatus';
 export * from '../models/RoutesV2SecretResponse';
 export * from '../models/RoutesV2SuccessResponse';
+export * from '../models/RoutesV2TestInputConnectionRequest';
+export * from '../models/RoutesV2TestOutputConnectionRequest';
 export * from '../models/RoutesV2UpdateAPIKeyRequest';
 export * from '../models/RoutesV2UpdateBillingAccountRequest';
 export * from '../models/RoutesV2UpdateBillingAccountRoleRequest';
@@ -125,29 +209,137 @@ export * from '../models/RoutesV2UpdateInputRequest';
 export * from '../models/RoutesV2UpdateOutputRequest';
 export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/RoutesV2UpdateRoleV2Request';
+export * from '../models/S3SettingsConfig';
+export * from '../models/SemgrepCodeFindingsSecretsConfig';
+export * from '../models/SemgrepDeploymentsSecretsConfig';
+export * from '../models/SemgrepDeploymentsSettingsConfig';
+export * from '../models/SemgrepProjectDetailsSecretsConfig';
+export * from '../models/SemgrepProjectDetailsSettingsConfig';
+export * from '../models/SemgrepProjectsSecretsConfig';
+export * from '../models/SemgrepProjectsSettingsConfig';
+export * from '../models/SemgrepSupplyChainFindingsSecretsConfig';
+export * from '../models/SentinelSecretsConfig';
+export * from '../models/SentinelSettingsConfig';
+export * from '../models/SlackUsersSecretsConfig';
+export * from '../models/SlackUsersSettingsConfig';
+export * from '../models/SlackgroupsSecretsConfig';
+export * from '../models/SlackgroupsSettingsConfig';
+export * from '../models/SnowflakeInputSecretsConfig';
+export * from '../models/SnowflakeInputSettingsConfig';
+export * from '../models/SnowflakeOutputSecretsConfig';
+export * from '../models/SnowflakeOutputSettingsConfig';
+export * from '../models/SnykIssuesSecretsConfig';
+export * from '../models/SnykOrganizationsSecretsConfig';
+export * from '../models/SnykOrganizationsSettingsConfig';
+export * from '../models/SnykProjectsSecretsConfig';
+export * from '../models/SnykProjectsSettingsConfig';
+export * from '../models/SnykTargetsSecretsConfig';
+export * from '../models/SplunkSecretsConfig';
+export * from '../models/SplunkSettingsConfig';
+export * from '../models/SumologicSecretsConfig';
+export * from '../models/SumologicSettingsConfig';
+export * from '../models/TailscaleUsersSecretsConfig';
+export * from '../models/TailscaleUsersSettingsConfig';
+export * from '../models/TenableAssetsSecretsConfig';
+export * from '../models/TenableAssetsSettingsConfig';
+export * from '../models/TenableVulnerabilitiesSecretsConfig';
+export * from '../models/TenableVulnerabilitiesSettingsConfig';
+export * from '../models/UsersInfoSecretsConfig';
+export * from '../models/UsersInfoSettingsConfig';
+export * from '../models/UsersSecretsConfig';
+export * from '../models/UsersSettingsConfig';
 export * from '../models/UtcTimestampTimestamp';
 export * from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
+export * from '../models/VulnerabilitiesSecretsConfig';
+export * from '../models/VulnerabilitiesSettingsConfig';
+export * from '../models/VulnerabilityFindingsSecretsConfig';
+export * from '../models/VulnerabilityFindingsSettingsConfig';
 
+import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddAdd } from '../models/AddAdd';
+import { AdminActivitySecretsConfig } from '../models/AdminActivitySecretsConfig';
 import { AdminActivitySettingsConfig } from '../models/AdminActivitySettingsConfig';
+import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
+import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { Auth0Auth0TokenResponse } from '../models/Auth0Auth0TokenResponse';
 import { Auth0LoginRequest } from '../models/Auth0LoginRequest';
+import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
+import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
+import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
+import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig';
+import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
+import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
+import { BigquerySettingsConfig } from '../models/BigquerySettingsConfig';
+import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
+import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
+import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
+import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
+import { CloudAssetInventorySecretsConfig } from '../models/CloudAssetInventorySecretsConfig';
+import { CloudAssetInventorySettingsConfig } from '../models/CloudAssetInventorySettingsConfig';
+import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigurationFindingsSecretsConfig';
+import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';
+import { CloudLogsSecretsConfig } from '../models/CloudLogsSecretsConfig';
+import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
+import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
+import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
+import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
 import { ConditionInfo } from '../models/ConditionInfo';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
+import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
+import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
+import { CrowdstrikeFdrSecretsConfig } from '../models/CrowdstrikeFdrSecretsConfig';
+import { CrowdstrikeFdrSettingsConfig } from '../models/CrowdstrikeFdrSettingsConfig';
+import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
+import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
+import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
+import { DemoCustomSettingsConfig } from '../models/DemoCustomSettingsConfig';
+import { DemoSettingsConfig } from '../models/DemoSettingsConfig';
+import { DetectSummariesSecretsConfig } from '../models/DetectSummariesSecretsConfig';
+import { DetectSummariesSettingsConfig } from '../models/DetectSummariesSettingsConfig';
+import { DeviceActivitySecretsConfig } from '../models/DeviceActivitySecretsConfig';
+import { DeviceActivitySettingsConfig } from '../models/DeviceActivitySettingsConfig';
+import { DeviceDetailsSecretsConfig } from '../models/DeviceDetailsSecretsConfig';
+import { DeviceDetailsSettingsConfig } from '../models/DeviceDetailsSettingsConfig';
+import { DevicesSecretsConfig } from '../models/DevicesSecretsConfig';
+import { DevicesSettingsConfig } from '../models/DevicesSettingsConfig';
+import { DriveActivitySecretsConfig } from '../models/DriveActivitySecretsConfig';
+import { DriveActivitySettingsConfig } from '../models/DriveActivitySettingsConfig';
 import { DropKeyDropKey } from '../models/DropKeyDropKey';
 import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
 import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
 import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
+import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
+import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
+import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
+import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
+import { EventSecretsConfig } from '../models/EventSecretsConfig';
+import { EventSettingsConfig } from '../models/EventSettingsConfig';
+import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
+import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
 import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
+import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
+import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
+import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
+import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
+import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
+import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
+import { IssuesSettingsConfig     , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum    } from '../models/IssuesSettingsConfig';
 import { JqJQ } from '../models/JqJQ';
+import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
+import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
+import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
+import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig';
+import { LoginActivitySettingsConfig } from '../models/LoginActivitySettingsConfig';
+import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
+import { LoginSessionsSettingsConfig } from '../models/LoginSessionsSettingsConfig';
 import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultiplyWithValueMathMultiplyWithValue';
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
@@ -192,6 +384,7 @@ import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
+import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsTransform } from '../models/ModelsTransform';
@@ -200,15 +393,25 @@ import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
+import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
 import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
+import { NextGenSiemSecretsConfig } from '../models/NextGenSiemSecretsConfig';
+import { NextGenSiemSettingsConfig } from '../models/NextGenSiemSettingsConfig';
+import { OauthActivitySecretsConfig } from '../models/OauthActivitySecretsConfig';
+import { OauthActivitySettingsConfig } from '../models/OauthActivitySettingsConfig';
+import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
+import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
+import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResourceQuantity, ResourceQuantityFormatEnum   } from '../models/ResourceQuantity';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
+import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
+import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
@@ -240,14 +443,22 @@ import { RoutesV2CreatebillingAccountUserRoleRequest } from '../models/RoutesV2C
 import { RoutesV2GenerateRecordRequest } from '../models/RoutesV2GenerateRecordRequest';
 import { RoutesV2GenerateRecordResponse } from '../models/RoutesV2GenerateRecordResponse';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
+import { RoutesV2InputConfig } from '../models/RoutesV2InputConfig';
+import { RoutesV2InputConfigSecretsClass } from '../models/RoutesV2InputConfigSecrets';
+import { RoutesV2InputConfigSettingsClass } from '../models/RoutesV2InputConfigSettings';
 import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesResponse';
 import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOverview';
+import { RoutesV2OutputConfig } from '../models/RoutesV2OutputConfig';
+import { RoutesV2OutputConfigSecretsClass } from '../models/RoutesV2OutputConfigSecrets';
+import { RoutesV2OutputConfigSettingsClass } from '../models/RoutesV2OutputConfigSettings';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
+import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
+import { RoutesV2TestOutputConnectionRequest } from '../models/RoutesV2TestOutputConnectionRequest';
 import { RoutesV2UpdateAPIKeyRequest } from '../models/RoutesV2UpdateAPIKeyRequest';
 import { RoutesV2UpdateBillingAccountRequest } from '../models/RoutesV2UpdateBillingAccountRequest';
 import { RoutesV2UpdateBillingAccountRoleRequest } from '../models/RoutesV2UpdateBillingAccountRoleRequest';
@@ -255,8 +466,51 @@ import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
+import { S3SettingsConfig } from '../models/S3SettingsConfig';
+import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
+import { SemgrepDeploymentsSecretsConfig } from '../models/SemgrepDeploymentsSecretsConfig';
+import { SemgrepDeploymentsSettingsConfig } from '../models/SemgrepDeploymentsSettingsConfig';
+import { SemgrepProjectDetailsSecretsConfig } from '../models/SemgrepProjectDetailsSecretsConfig';
+import { SemgrepProjectDetailsSettingsConfig } from '../models/SemgrepProjectDetailsSettingsConfig';
+import { SemgrepProjectsSecretsConfig } from '../models/SemgrepProjectsSecretsConfig';
+import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettingsConfig';
+import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
+import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
+import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
+import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
+import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
+import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
+import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
+import { SnowflakeInputSecretsConfig } from '../models/SnowflakeInputSecretsConfig';
+import { SnowflakeInputSettingsConfig } from '../models/SnowflakeInputSettingsConfig';
+import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
+import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
+import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
+import { SnykOrganizationsSecretsConfig } from '../models/SnykOrganizationsSecretsConfig';
+import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
+import { SnykProjectsSecretsConfig } from '../models/SnykProjectsSecretsConfig';
+import { SnykProjectsSettingsConfig } from '../models/SnykProjectsSettingsConfig';
+import { SnykTargetsSecretsConfig } from '../models/SnykTargetsSecretsConfig';
+import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
+import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
+import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
+import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
+import { TailscaleUsersSecretsConfig } from '../models/TailscaleUsersSecretsConfig';
+import { TailscaleUsersSettingsConfig } from '../models/TailscaleUsersSettingsConfig';
+import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
+import { TenableAssetsSettingsConfig } from '../models/TenableAssetsSettingsConfig';
+import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
+import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
+import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
+import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
+import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
+import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
 import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
 import { V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500ResponseClass } from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
+import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
+import { VulnerabilitiesSettingsConfig } from '../models/VulnerabilitiesSettingsConfig';
+import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
+import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -271,30 +525,104 @@ let primitives = [
                  ];
 
 let enumsMap: Set<string> = new Set<string>([
+    "IssuesSettingsConfigIssueTypesEnum",
+    "IssuesSettingsConfigResolutionReasonsEnum",
+    "IssuesSettingsConfigSeveritiesEnum",
+    "IssuesSettingsConfigStackLayersEnum",
+    "IssuesSettingsConfigStatusEnum",
     "ResourceQuantityFormatEnum",
+    "RoutesV2InputConfigSettingsIssueTypesEnum",
+    "RoutesV2InputConfigSettingsResolutionReasonsEnum",
+    "RoutesV2InputConfigSettingsSeveritiesEnum",
+    "RoutesV2InputConfigSettingsStackLayersEnum",
 ]);
 
 let typeMap: {[index: string]: any} = {
+    "ActorsInfoSecretsConfig": ActorsInfoSecretsConfig,
     "ActorsInfoSettingsConfig": ActorsInfoSettingsConfig,
     "AddAdd": AddAdd,
+    "AdminActivitySecretsConfig": AdminActivitySecretsConfig,
     "AdminActivitySettingsConfig": AdminActivitySettingsConfig,
+    "AdminLogsSecretsConfig": AdminLogsSecretsConfig,
     "AdminLogsSettingsConfig": AdminLogsSettingsConfig,
+    "AuditLogsSecretsConfig": AuditLogsSecretsConfig,
     "AuditLogsSettingsConfig": AuditLogsSettingsConfig,
     "Auth0Auth0TokenResponse": Auth0Auth0TokenResponse,
     "Auth0LoginRequest": Auth0LoginRequest,
+    "AuthLogsSecretsConfig": AuthLogsSecretsConfig,
     "AuthLogsSettingsConfig": AuthLogsSettingsConfig,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
+    "AzureActivityLogsSecretsConfig": AzureActivityLogsSecretsConfig,
     "AzureActivityLogsSettingsConfig": AzureActivityLogsSettingsConfig,
+    "BatchConfigBatchConfig": BatchConfigBatchConfig,
+    "BigqueryInputSecretsConfig": BigqueryInputSecretsConfig,
+    "BigqueryInputSettingsConfig": BigqueryInputSettingsConfig,
+    "BigquerySecretsConfig": BigquerySecretsConfig,
+    "BigquerySettingsConfig": BigquerySettingsConfig,
+    "BoxEventsSecretsConfig": BoxEventsSecretsConfig,
+    "BoxEventsSettingsConfig": BoxEventsSettingsConfig,
+    "BoxUsersSecretsConfig": BoxUsersSecretsConfig,
+    "BoxUsersSettingsConfig": BoxUsersSettingsConfig,
+    "CloudAssetInventorySecretsConfig": CloudAssetInventorySecretsConfig,
+    "CloudAssetInventorySettingsConfig": CloudAssetInventorySettingsConfig,
+    "CloudConfigurationFindingsSecretsConfig": CloudConfigurationFindingsSecretsConfig,
+    "CloudConfigurationFindingsSettingsConfig": CloudConfigurationFindingsSettingsConfig,
+    "CloudLogsSecretsConfig": CloudLogsSecretsConfig,
+    "CloudLogsSettingsConfig": CloudLogsSettingsConfig,
+    "CloudResourceInventorySecretsConfig": CloudResourceInventorySecretsConfig,
+    "CloudResourceInventorySettingsConfig": CloudResourceInventorySettingsConfig,
+    "CloudtrailSettingsConfig": CloudtrailSettingsConfig,
     "ConditionInfo": ConditionInfo,
     "CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue": CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue,
+    "CriblHttpSecretsConfig": CriblHttpSecretsConfig,
+    "CriblHttpSettingsConfig": CriblHttpSettingsConfig,
+    "CrowdstrikeFdrSecretsConfig": CrowdstrikeFdrSecretsConfig,
+    "CrowdstrikeFdrSettingsConfig": CrowdstrikeFdrSettingsConfig,
+    "DefenderForEndpointAlertsSecretsConfig": DefenderForEndpointAlertsSecretsConfig,
+    "DefenderForEndpointAlertsSettingsConfig": DefenderForEndpointAlertsSettingsConfig,
+    "DelimitedDelimiterFormatter": DelimitedDelimiterFormatter,
+    "DemoCustomSettingsConfig": DemoCustomSettingsConfig,
+    "DemoSettingsConfig": DemoSettingsConfig,
+    "DetectSummariesSecretsConfig": DetectSummariesSecretsConfig,
+    "DetectSummariesSettingsConfig": DetectSummariesSettingsConfig,
+    "DeviceActivitySecretsConfig": DeviceActivitySecretsConfig,
+    "DeviceActivitySettingsConfig": DeviceActivitySettingsConfig,
+    "DeviceDetailsSecretsConfig": DeviceDetailsSecretsConfig,
+    "DeviceDetailsSettingsConfig": DeviceDetailsSettingsConfig,
+    "DevicesSecretsConfig": DevicesSecretsConfig,
+    "DevicesSettingsConfig": DevicesSettingsConfig,
+    "DriveActivitySecretsConfig": DriveActivitySecretsConfig,
+    "DriveActivitySettingsConfig": DriveActivitySettingsConfig,
     "DropKeyDropKey": DropKeyDropKey,
     "DropKeyWhereValueEqDropKeyWhereValueEq": DropKeyWhereValueEqDropKeyWhereValueEq,
     "DropRecordWhereValueEqDropRecordWhereValueEq": DropRecordWhereValueEqDropRecordWhereValueEq,
     "DuplicateKeyValueToKeyDuplicateKeyValueToKey": DuplicateKeyValueToKeyDuplicateKeyValueToKey,
+    "ElasticsearchSecretsConfig": ElasticsearchSecretsConfig,
+    "ElasticsearchSettingsConfig": ElasticsearchSettingsConfig,
+    "EntraIdSecretsConfig": EntraIdSecretsConfig,
+    "EntraIdSettingsConfig": EntraIdSettingsConfig,
+    "EventSecretsConfig": EventSecretsConfig,
+    "EventSettingsConfig": EventSettingsConfig,
+    "EventsLogsSecretsConfig": EventsLogsSecretsConfig,
+    "EventsLogsSettingsConfig": EventsLogsSettingsConfig,
     "FlattenFlatten": FlattenFlatten,
     "FlattenallFlattenAll": FlattenallFlattenAll,
+    "FormatterFormatConfig": FormatterFormatConfig,
+    "FullScansSecretsConfig": FullScansSecretsConfig,
+    "FullScansSettingsConfig": FullScansSettingsConfig,
+    "HttpSecretsConfig": HttpSecretsConfig,
+    "HttpSettingsConfig": HttpSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,
+    "IssuesSecretsConfig": IssuesSecretsConfig,
+    "IssuesSettingsConfig": IssuesSettingsConfig,
     "JqJQ": JqJQ,
+    "JsonJsonFormatter": JsonJsonFormatter,
+    "LogAnalyticsQuerySecretsConfig": LogAnalyticsQuerySecretsConfig,
+    "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,
+    "LoginActivitySecretsConfig": LoginActivitySecretsConfig,
+    "LoginActivitySettingsConfig": LoginActivitySettingsConfig,
+    "LoginSessionsSecretsConfig": LoginSessionsSecretsConfig,
+    "LoginSessionsSettingsConfig": LoginSessionsSettingsConfig,
     "MathMultiplyWithValueMathMultiplyWithValue": MathMultiplyWithValueMathMultiplyWithValue,
     "ModelsAPIKey": ModelsAPIKey,
     "ModelsAPIKeyList": ModelsAPIKeyList,
@@ -339,6 +667,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsQuotaList": ModelsQuotaList,
     "ModelsRoleWithPermissions": ModelsRoleWithPermissions,
     "ModelsRoleWithPermissionsList": ModelsRoleWithPermissionsList,
+    "ModelsSecret": ModelsSecret,
     "ModelsSecretWithComponents": ModelsSecretWithComponents,
     "ModelsSecretWithComponentsList": ModelsSecretWithComponentsList,
     "ModelsTransform": ModelsTransform,
@@ -347,15 +676,25 @@ let typeMap: {[index: string]: any} = {
     "ModelsTransformOperation": ModelsTransformOperation,
     "ModelsUser": ModelsUser,
     "ModelsUserRoleWithPermissions": ModelsUserRoleWithPermissions,
+    "MonadLogSettingsConfig": MonadLogSettingsConfig,
     "MutateTypeMutateType": MutateTypeMutateType,
     "MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq": MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq,
     "MutateValueWhereKeyEqMutateValueWhereKeyEq": MutateValueWhereKeyEqMutateValueWhereKeyEq,
+    "NextGenSiemSecretsConfig": NextGenSiemSecretsConfig,
+    "NextGenSiemSettingsConfig": NextGenSiemSettingsConfig,
+    "OauthActivitySecretsConfig": OauthActivitySecretsConfig,
+    "OauthActivitySettingsConfig": OauthActivitySettingsConfig,
+    "OpensearchSecretsConfig": OpensearchSecretsConfig,
+    "OpensearchSettingsConfig": OpensearchSettingsConfig,
     "OperationInformation": OperationInformation,
     "OutputsConnectorMeta": OutputsConnectorMeta,
+    "ParquetParquetFormatter": ParquetParquetFormatter,
     "RenameKeyRenameKey": RenameKeyRenameKey,
     "RenameKeyWhereValueEqRenameKeyWhereValueEq": RenameKeyWhereValueEqRenameKeyWhereValueEq,
     "ResourceQuantity": ResourceQuantity,
     "ResponderErrorResponse": ResponderErrorResponse,
+    "RolesInfoSecretsConfig": RolesInfoSecretsConfig,
+    "RolesInfoSettingsConfig": RolesInfoSettingsConfig,
     "RoutesAddUserToOrganizationRequest": RoutesAddUserToOrganizationRequest,
     "RoutesCreateOrganizationRequest": RoutesCreateOrganizationRequest,
     "RoutesCreateTransformRequest": RoutesCreateTransformRequest,
@@ -387,14 +726,22 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2GenerateRecordRequest": RoutesV2GenerateRecordRequest,
     "RoutesV2GenerateRecordResponse": RoutesV2GenerateRecordResponse,
     "RoutesV2GetOrganizationSummaryResponse": RoutesV2GetOrganizationSummaryResponse,
+    "RoutesV2InputConfig": RoutesV2InputConfig,
+    "RoutesV2InputConfigSecrets": RoutesV2InputConfigSecretsClass,
+    "RoutesV2InputConfigSettings": RoutesV2InputConfigSettingsClass,
     "RoutesV2ListTemplatesResponse": RoutesV2ListTemplatesResponse,
     "RoutesV2OrganizationOverview": RoutesV2OrganizationOverview,
+    "RoutesV2OutputConfig": RoutesV2OutputConfig,
+    "RoutesV2OutputConfigSecrets": RoutesV2OutputConfigSecretsClass,
+    "RoutesV2OutputConfigSettings": RoutesV2OutputConfigSettingsClass,
     "RoutesV2PipelineRequestEdge": RoutesV2PipelineRequestEdge,
     "RoutesV2PipelineRequestNode": RoutesV2PipelineRequestNode,
     "RoutesV2PipelineStatus": RoutesV2PipelineStatus,
     "RoutesV2PipelineWithStatus": RoutesV2PipelineWithStatus,
     "RoutesV2SecretResponse": RoutesV2SecretResponse,
     "RoutesV2SuccessResponse": RoutesV2SuccessResponse,
+    "RoutesV2TestInputConnectionRequest": RoutesV2TestInputConnectionRequest,
+    "RoutesV2TestOutputConnectionRequest": RoutesV2TestOutputConnectionRequest,
     "RoutesV2UpdateAPIKeyRequest": RoutesV2UpdateAPIKeyRequest,
     "RoutesV2UpdateBillingAccountRequest": RoutesV2UpdateBillingAccountRequest,
     "RoutesV2UpdateBillingAccountRoleRequest": RoutesV2UpdateBillingAccountRoleRequest,
@@ -402,8 +749,51 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdateOutputRequest": RoutesV2UpdateOutputRequest,
     "RoutesV2UpdatePipelineRequest": RoutesV2UpdatePipelineRequest,
     "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
+    "S3SettingsConfig": S3SettingsConfig,
+    "SemgrepCodeFindingsSecretsConfig": SemgrepCodeFindingsSecretsConfig,
+    "SemgrepDeploymentsSecretsConfig": SemgrepDeploymentsSecretsConfig,
+    "SemgrepDeploymentsSettingsConfig": SemgrepDeploymentsSettingsConfig,
+    "SemgrepProjectDetailsSecretsConfig": SemgrepProjectDetailsSecretsConfig,
+    "SemgrepProjectDetailsSettingsConfig": SemgrepProjectDetailsSettingsConfig,
+    "SemgrepProjectsSecretsConfig": SemgrepProjectsSecretsConfig,
+    "SemgrepProjectsSettingsConfig": SemgrepProjectsSettingsConfig,
+    "SemgrepSupplyChainFindingsSecretsConfig": SemgrepSupplyChainFindingsSecretsConfig,
+    "SentinelSecretsConfig": SentinelSecretsConfig,
+    "SentinelSettingsConfig": SentinelSettingsConfig,
+    "SlackUsersSecretsConfig": SlackUsersSecretsConfig,
+    "SlackUsersSettingsConfig": SlackUsersSettingsConfig,
+    "SlackgroupsSecretsConfig": SlackgroupsSecretsConfig,
+    "SlackgroupsSettingsConfig": SlackgroupsSettingsConfig,
+    "SnowflakeInputSecretsConfig": SnowflakeInputSecretsConfig,
+    "SnowflakeInputSettingsConfig": SnowflakeInputSettingsConfig,
+    "SnowflakeOutputSecretsConfig": SnowflakeOutputSecretsConfig,
+    "SnowflakeOutputSettingsConfig": SnowflakeOutputSettingsConfig,
+    "SnykIssuesSecretsConfig": SnykIssuesSecretsConfig,
+    "SnykOrganizationsSecretsConfig": SnykOrganizationsSecretsConfig,
+    "SnykOrganizationsSettingsConfig": SnykOrganizationsSettingsConfig,
+    "SnykProjectsSecretsConfig": SnykProjectsSecretsConfig,
+    "SnykProjectsSettingsConfig": SnykProjectsSettingsConfig,
+    "SnykTargetsSecretsConfig": SnykTargetsSecretsConfig,
+    "SplunkSecretsConfig": SplunkSecretsConfig,
+    "SplunkSettingsConfig": SplunkSettingsConfig,
+    "SumologicSecretsConfig": SumologicSecretsConfig,
+    "SumologicSettingsConfig": SumologicSettingsConfig,
+    "TailscaleUsersSecretsConfig": TailscaleUsersSecretsConfig,
+    "TailscaleUsersSettingsConfig": TailscaleUsersSettingsConfig,
+    "TenableAssetsSecretsConfig": TenableAssetsSecretsConfig,
+    "TenableAssetsSettingsConfig": TenableAssetsSettingsConfig,
+    "TenableVulnerabilitiesSecretsConfig": TenableVulnerabilitiesSecretsConfig,
+    "TenableVulnerabilitiesSettingsConfig": TenableVulnerabilitiesSettingsConfig,
+    "UsersInfoSecretsConfig": UsersInfoSecretsConfig,
+    "UsersInfoSettingsConfig": UsersInfoSettingsConfig,
+    "UsersSecretsConfig": UsersSecretsConfig,
+    "UsersSettingsConfig": UsersSettingsConfig,
     "UtcTimestampTimestamp": UtcTimestampTimestamp,
     "V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response": V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500ResponseClass,
+    "VulnerabilitiesSecretsConfig": VulnerabilitiesSecretsConfig,
+    "VulnerabilitiesSettingsConfig": VulnerabilitiesSettingsConfig,
+    "VulnerabilityFindingsSecretsConfig": VulnerabilityFindingsSecretsConfig,
+    "VulnerabilityFindingsSettingsConfig": VulnerabilityFindingsSettingsConfig,
 }
 
 type MimeTypeDescriptor = {

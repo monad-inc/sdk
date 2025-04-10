@@ -13,21 +13,30 @@ package monad
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // RoutesV2OutputConfigSecrets - struct for RoutesV2OutputConfigSecrets
 type RoutesV2OutputConfigSecrets struct {
+	BigquerySecretsConfig *BigquerySecretsConfig
 	CriblHttpSecretsConfig *CriblHttpSecretsConfig
 	ElasticsearchSecretsConfig *ElasticsearchSecretsConfig
 	HttpSecretsConfig *HttpSecretsConfig
+	NextGenSiemSecretsConfig *NextGenSiemSecretsConfig
 	OpensearchSecretsConfig *OpensearchSecretsConfig
 	SentinelSecretsConfig *SentinelSecretsConfig
-	SnowflakeSecretsConfig *SnowflakeSecretsConfig
+	SnowflakeOutputSecretsConfig *SnowflakeOutputSecretsConfig
 	SplunkSecretsConfig *SplunkSecretsConfig
 	SumologicSecretsConfig *SumologicSecretsConfig
 	MapmapOfStringAny *map[string]interface{}
+}
+
+// BigquerySecretsConfigAsRoutesV2OutputConfigSecrets is a convenience function that returns BigquerySecretsConfig wrapped in RoutesV2OutputConfigSecrets
+func BigquerySecretsConfigAsRoutesV2OutputConfigSecrets(v *BigquerySecretsConfig) RoutesV2OutputConfigSecrets {
+	return RoutesV2OutputConfigSecrets{
+		BigquerySecretsConfig: v,
+	}
 }
 
 // CriblHttpSecretsConfigAsRoutesV2OutputConfigSecrets is a convenience function that returns CriblHttpSecretsConfig wrapped in RoutesV2OutputConfigSecrets
@@ -51,6 +60,13 @@ func HttpSecretsConfigAsRoutesV2OutputConfigSecrets(v *HttpSecretsConfig) Routes
 	}
 }
 
+// NextGenSiemSecretsConfigAsRoutesV2OutputConfigSecrets is a convenience function that returns NextGenSiemSecretsConfig wrapped in RoutesV2OutputConfigSecrets
+func NextGenSiemSecretsConfigAsRoutesV2OutputConfigSecrets(v *NextGenSiemSecretsConfig) RoutesV2OutputConfigSecrets {
+	return RoutesV2OutputConfigSecrets{
+		NextGenSiemSecretsConfig: v,
+	}
+}
+
 // OpensearchSecretsConfigAsRoutesV2OutputConfigSecrets is a convenience function that returns OpensearchSecretsConfig wrapped in RoutesV2OutputConfigSecrets
 func OpensearchSecretsConfigAsRoutesV2OutputConfigSecrets(v *OpensearchSecretsConfig) RoutesV2OutputConfigSecrets {
 	return RoutesV2OutputConfigSecrets{
@@ -65,10 +81,10 @@ func SentinelSecretsConfigAsRoutesV2OutputConfigSecrets(v *SentinelSecretsConfig
 	}
 }
 
-// SnowflakeSecretsConfigAsRoutesV2OutputConfigSecrets is a convenience function that returns SnowflakeSecretsConfig wrapped in RoutesV2OutputConfigSecrets
-func SnowflakeSecretsConfigAsRoutesV2OutputConfigSecrets(v *SnowflakeSecretsConfig) RoutesV2OutputConfigSecrets {
+// SnowflakeOutputSecretsConfigAsRoutesV2OutputConfigSecrets is a convenience function that returns SnowflakeOutputSecretsConfig wrapped in RoutesV2OutputConfigSecrets
+func SnowflakeOutputSecretsConfigAsRoutesV2OutputConfigSecrets(v *SnowflakeOutputSecretsConfig) RoutesV2OutputConfigSecrets {
 	return RoutesV2OutputConfigSecrets{
-		SnowflakeSecretsConfig: v,
+		SnowflakeOutputSecretsConfig: v,
 	}
 }
 
@@ -98,6 +114,23 @@ func MapmapOfStringAnyAsRoutesV2OutputConfigSecrets(v *map[string]interface{}) R
 func (dst *RoutesV2OutputConfigSecrets) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into BigquerySecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.BigquerySecretsConfig)
+	if err == nil {
+		jsonBigquerySecretsConfig, _ := json.Marshal(dst.BigquerySecretsConfig)
+		if string(jsonBigquerySecretsConfig) == "{}" { // empty struct
+			dst.BigquerySecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BigquerySecretsConfig); err != nil {
+				dst.BigquerySecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BigquerySecretsConfig = nil
+	}
+
 	// try to unmarshal data into CriblHttpSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.CriblHttpSecretsConfig)
 	if err == nil {
@@ -149,6 +182,23 @@ func (dst *RoutesV2OutputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.HttpSecretsConfig = nil
 	}
 
+	// try to unmarshal data into NextGenSiemSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.NextGenSiemSecretsConfig)
+	if err == nil {
+		jsonNextGenSiemSecretsConfig, _ := json.Marshal(dst.NextGenSiemSecretsConfig)
+		if string(jsonNextGenSiemSecretsConfig) == "{}" { // empty struct
+			dst.NextGenSiemSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.NextGenSiemSecretsConfig); err != nil {
+				dst.NextGenSiemSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.NextGenSiemSecretsConfig = nil
+	}
+
 	// try to unmarshal data into OpensearchSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.OpensearchSecretsConfig)
 	if err == nil {
@@ -183,21 +233,21 @@ func (dst *RoutesV2OutputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.SentinelSecretsConfig = nil
 	}
 
-	// try to unmarshal data into SnowflakeSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SnowflakeSecretsConfig)
+	// try to unmarshal data into SnowflakeOutputSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.SnowflakeOutputSecretsConfig)
 	if err == nil {
-		jsonSnowflakeSecretsConfig, _ := json.Marshal(dst.SnowflakeSecretsConfig)
-		if string(jsonSnowflakeSecretsConfig) == "{}" { // empty struct
-			dst.SnowflakeSecretsConfig = nil
+		jsonSnowflakeOutputSecretsConfig, _ := json.Marshal(dst.SnowflakeOutputSecretsConfig)
+		if string(jsonSnowflakeOutputSecretsConfig) == "{}" { // empty struct
+			dst.SnowflakeOutputSecretsConfig = nil
 		} else {
-			if err = validator.Validate(dst.SnowflakeSecretsConfig); err != nil {
-				dst.SnowflakeSecretsConfig = nil
+			if err = validator.Validate(dst.SnowflakeOutputSecretsConfig); err != nil {
+				dst.SnowflakeOutputSecretsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.SnowflakeSecretsConfig = nil
+		dst.SnowflakeOutputSecretsConfig = nil
 	}
 
 	// try to unmarshal data into SplunkSecretsConfig
@@ -253,12 +303,14 @@ func (dst *RoutesV2OutputConfigSecrets) UnmarshalJSON(data []byte) error {
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.BigquerySecretsConfig = nil
 		dst.CriblHttpSecretsConfig = nil
 		dst.ElasticsearchSecretsConfig = nil
 		dst.HttpSecretsConfig = nil
+		dst.NextGenSiemSecretsConfig = nil
 		dst.OpensearchSecretsConfig = nil
 		dst.SentinelSecretsConfig = nil
-		dst.SnowflakeSecretsConfig = nil
+		dst.SnowflakeOutputSecretsConfig = nil
 		dst.SplunkSecretsConfig = nil
 		dst.SumologicSecretsConfig = nil
 		dst.MapmapOfStringAny = nil
@@ -273,6 +325,10 @@ func (dst *RoutesV2OutputConfigSecrets) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src RoutesV2OutputConfigSecrets) MarshalJSON() ([]byte, error) {
+	if src.BigquerySecretsConfig != nil {
+		return json.Marshal(&src.BigquerySecretsConfig)
+	}
+
 	if src.CriblHttpSecretsConfig != nil {
 		return json.Marshal(&src.CriblHttpSecretsConfig)
 	}
@@ -285,6 +341,10 @@ func (src RoutesV2OutputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.HttpSecretsConfig)
 	}
 
+	if src.NextGenSiemSecretsConfig != nil {
+		return json.Marshal(&src.NextGenSiemSecretsConfig)
+	}
+
 	if src.OpensearchSecretsConfig != nil {
 		return json.Marshal(&src.OpensearchSecretsConfig)
 	}
@@ -293,8 +353,8 @@ func (src RoutesV2OutputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.SentinelSecretsConfig)
 	}
 
-	if src.SnowflakeSecretsConfig != nil {
-		return json.Marshal(&src.SnowflakeSecretsConfig)
+	if src.SnowflakeOutputSecretsConfig != nil {
+		return json.Marshal(&src.SnowflakeOutputSecretsConfig)
 	}
 
 	if src.SplunkSecretsConfig != nil {
@@ -317,6 +377,10 @@ func (obj *RoutesV2OutputConfigSecrets) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
+	if obj.BigquerySecretsConfig != nil {
+		return obj.BigquerySecretsConfig
+	}
+
 	if obj.CriblHttpSecretsConfig != nil {
 		return obj.CriblHttpSecretsConfig
 	}
@@ -329,6 +393,10 @@ func (obj *RoutesV2OutputConfigSecrets) GetActualInstance() (interface{}) {
 		return obj.HttpSecretsConfig
 	}
 
+	if obj.NextGenSiemSecretsConfig != nil {
+		return obj.NextGenSiemSecretsConfig
+	}
+
 	if obj.OpensearchSecretsConfig != nil {
 		return obj.OpensearchSecretsConfig
 	}
@@ -337,8 +405,8 @@ func (obj *RoutesV2OutputConfigSecrets) GetActualInstance() (interface{}) {
 		return obj.SentinelSecretsConfig
 	}
 
-	if obj.SnowflakeSecretsConfig != nil {
-		return obj.SnowflakeSecretsConfig
+	if obj.SnowflakeOutputSecretsConfig != nil {
+		return obj.SnowflakeOutputSecretsConfig
 	}
 
 	if obj.SplunkSecretsConfig != nil {
@@ -351,6 +419,56 @@ func (obj *RoutesV2OutputConfigSecrets) GetActualInstance() (interface{}) {
 
 	if obj.MapmapOfStringAny != nil {
 		return obj.MapmapOfStringAny
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj RoutesV2OutputConfigSecrets) GetActualInstanceValue() (interface{}) {
+	if obj.BigquerySecretsConfig != nil {
+		return *obj.BigquerySecretsConfig
+	}
+
+	if obj.CriblHttpSecretsConfig != nil {
+		return *obj.CriblHttpSecretsConfig
+	}
+
+	if obj.ElasticsearchSecretsConfig != nil {
+		return *obj.ElasticsearchSecretsConfig
+	}
+
+	if obj.HttpSecretsConfig != nil {
+		return *obj.HttpSecretsConfig
+	}
+
+	if obj.NextGenSiemSecretsConfig != nil {
+		return *obj.NextGenSiemSecretsConfig
+	}
+
+	if obj.OpensearchSecretsConfig != nil {
+		return *obj.OpensearchSecretsConfig
+	}
+
+	if obj.SentinelSecretsConfig != nil {
+		return *obj.SentinelSecretsConfig
+	}
+
+	if obj.SnowflakeOutputSecretsConfig != nil {
+		return *obj.SnowflakeOutputSecretsConfig
+	}
+
+	if obj.SplunkSecretsConfig != nil {
+		return *obj.SplunkSecretsConfig
+	}
+
+	if obj.SumologicSecretsConfig != nil {
+		return *obj.SumologicSecretsConfig
+	}
+
+	if obj.MapmapOfStringAny != nil {
+		return *obj.MapmapOfStringAny
 	}
 
 	// all schemas are nil

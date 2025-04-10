@@ -21,13 +21,25 @@ export class SplunkSettingsConfig {
     */
     'allowInsecure'?: boolean;
     /**
+    * The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token & Index scoping.
+    */
+    'index'?: string;
+    /**
     * The port of the Splunk instance.
     */
     'port'?: string;
     /**
+    * Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token & Index scoping.
+    */
+    'toCreate'?: boolean;
+    /**
     * The URL of the Splunk instance (must start with http or https).
     */
     'url'?: string;
+    /**
+    * Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used.
+    */
+    'username'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -41,14 +53,32 @@ export class SplunkSettingsConfig {
             "format": ""
         },
         {
+            "name": "index",
+            "baseName": "index",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "port",
             "baseName": "port",
             "type": "string",
             "format": ""
         },
         {
+            "name": "toCreate",
+            "baseName": "to_create",
+            "type": "boolean",
+            "format": ""
+        },
+        {
             "name": "url",
             "baseName": "url",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "username",
+            "baseName": "username",
             "type": "string",
             "format": ""
         }    ];

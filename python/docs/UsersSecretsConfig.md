@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **customer_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **domain** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

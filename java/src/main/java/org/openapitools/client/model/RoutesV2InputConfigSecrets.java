@@ -28,19 +28,24 @@ import org.openapitools.client.model.AdminLogsSecretsConfig;
 import org.openapitools.client.model.AuditLogsSecretsConfig;
 import org.openapitools.client.model.AuthLogsSecretsConfig;
 import org.openapitools.client.model.AzureActivityLogsSecretsConfig;
+import org.openapitools.client.model.BigqueryInputSecretsConfig;
 import org.openapitools.client.model.BoxEventsSecretsConfig;
 import org.openapitools.client.model.BoxUsersSecretsConfig;
 import org.openapitools.client.model.CloudAssetInventorySecretsConfig;
 import org.openapitools.client.model.CloudConfigurationFindingsSecretsConfig;
 import org.openapitools.client.model.CloudLogsSecretsConfig;
 import org.openapitools.client.model.CloudResourceInventorySecretsConfig;
+import org.openapitools.client.model.CrowdstrikeFdrSecretsConfig;
+import org.openapitools.client.model.DefenderForEndpointAlertsSecretsConfig;
 import org.openapitools.client.model.DetectSummariesSecretsConfig;
 import org.openapitools.client.model.DeviceActivitySecretsConfig;
 import org.openapitools.client.model.DeviceDetailsSecretsConfig;
+import org.openapitools.client.model.DevicesSecretsConfig;
 import org.openapitools.client.model.DriveActivitySecretsConfig;
 import org.openapitools.client.model.EntraIdSecretsConfig;
 import org.openapitools.client.model.EventSecretsConfig;
 import org.openapitools.client.model.EventsLogsSecretsConfig;
+import org.openapitools.client.model.FullScansSecretsConfig;
 import org.openapitools.client.model.IssuesSecretsConfig;
 import org.openapitools.client.model.LogAnalyticsQuerySecretsConfig;
 import org.openapitools.client.model.LoginActivitySecretsConfig;
@@ -55,10 +60,12 @@ import org.openapitools.client.model.SemgrepProjectsSecretsConfig;
 import org.openapitools.client.model.SemgrepSupplyChainFindingsSecretsConfig;
 import org.openapitools.client.model.SlackUsersSecretsConfig;
 import org.openapitools.client.model.SlackgroupsSecretsConfig;
+import org.openapitools.client.model.SnowflakeInputSecretsConfig;
 import org.openapitools.client.model.SnykIssuesSecretsConfig;
 import org.openapitools.client.model.SnykOrganizationsSecretsConfig;
 import org.openapitools.client.model.SnykProjectsSecretsConfig;
 import org.openapitools.client.model.SnykTargetsSecretsConfig;
+import org.openapitools.client.model.TailscaleUsersSecretsConfig;
 import org.openapitools.client.model.TenableAssetsSecretsConfig;
 import org.openapitools.client.model.TenableVulnerabilitiesSecretsConfig;
 import org.openapitools.client.model.UsersInfoSecretsConfig;
@@ -101,7 +108,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-19T16:11:31.865626042Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T17:25:27.914467533Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesV2InputConfigSecrets.class.getName());
 
@@ -120,19 +127,24 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             final TypeAdapter<AuthLogsSecretsConfig> adapterAuthLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(AuthLogsSecretsConfig.class));
             final TypeAdapter<Object> adapterObject = gson.getDelegateAdapter(this, TypeToken.get(Object.class));
             final TypeAdapter<AzureActivityLogsSecretsConfig> adapterAzureActivityLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(AzureActivityLogsSecretsConfig.class));
+            final TypeAdapter<BigqueryInputSecretsConfig> adapterBigqueryInputSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BigqueryInputSecretsConfig.class));
             final TypeAdapter<BoxEventsSecretsConfig> adapterBoxEventsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BoxEventsSecretsConfig.class));
             final TypeAdapter<BoxUsersSecretsConfig> adapterBoxUsersSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BoxUsersSecretsConfig.class));
             final TypeAdapter<CloudAssetInventorySecretsConfig> adapterCloudAssetInventorySecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CloudAssetInventorySecretsConfig.class));
             final TypeAdapter<CloudConfigurationFindingsSecretsConfig> adapterCloudConfigurationFindingsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CloudConfigurationFindingsSecretsConfig.class));
             final TypeAdapter<CloudLogsSecretsConfig> adapterCloudLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CloudLogsSecretsConfig.class));
             final TypeAdapter<CloudResourceInventorySecretsConfig> adapterCloudResourceInventorySecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CloudResourceInventorySecretsConfig.class));
+            final TypeAdapter<CrowdstrikeFdrSecretsConfig> adapterCrowdstrikeFdrSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CrowdstrikeFdrSecretsConfig.class));
+            final TypeAdapter<DefenderForEndpointAlertsSecretsConfig> adapterDefenderForEndpointAlertsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(DefenderForEndpointAlertsSecretsConfig.class));
             final TypeAdapter<DetectSummariesSecretsConfig> adapterDetectSummariesSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(DetectSummariesSecretsConfig.class));
             final TypeAdapter<DeviceActivitySecretsConfig> adapterDeviceActivitySecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(DeviceActivitySecretsConfig.class));
             final TypeAdapter<DeviceDetailsSecretsConfig> adapterDeviceDetailsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(DeviceDetailsSecretsConfig.class));
+            final TypeAdapter<DevicesSecretsConfig> adapterDevicesSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(DevicesSecretsConfig.class));
             final TypeAdapter<DriveActivitySecretsConfig> adapterDriveActivitySecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(DriveActivitySecretsConfig.class));
             final TypeAdapter<EntraIdSecretsConfig> adapterEntraIdSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(EntraIdSecretsConfig.class));
             final TypeAdapter<EventSecretsConfig> adapterEventSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(EventSecretsConfig.class));
             final TypeAdapter<EventsLogsSecretsConfig> adapterEventsLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(EventsLogsSecretsConfig.class));
+            final TypeAdapter<FullScansSecretsConfig> adapterFullScansSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(FullScansSecretsConfig.class));
             final TypeAdapter<IssuesSecretsConfig> adapterIssuesSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(IssuesSecretsConfig.class));
             final TypeAdapter<LogAnalyticsQuerySecretsConfig> adapterLogAnalyticsQuerySecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(LogAnalyticsQuerySecretsConfig.class));
             final TypeAdapter<LoginActivitySecretsConfig> adapterLoginActivitySecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(LoginActivitySecretsConfig.class));
@@ -148,10 +160,12 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             final TypeAdapter<SemgrepSupplyChainFindingsSecretsConfig> adapterSemgrepSupplyChainFindingsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SemgrepSupplyChainFindingsSecretsConfig.class));
             final TypeAdapter<SlackUsersSecretsConfig> adapterSlackUsersSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SlackUsersSecretsConfig.class));
             final TypeAdapter<SlackgroupsSecretsConfig> adapterSlackgroupsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SlackgroupsSecretsConfig.class));
+            final TypeAdapter<SnowflakeInputSecretsConfig> adapterSnowflakeInputSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnowflakeInputSecretsConfig.class));
             final TypeAdapter<SnykIssuesSecretsConfig> adapterSnykIssuesSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnykIssuesSecretsConfig.class));
             final TypeAdapter<SnykOrganizationsSecretsConfig> adapterSnykOrganizationsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnykOrganizationsSecretsConfig.class));
             final TypeAdapter<SnykProjectsSecretsConfig> adapterSnykProjectsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnykProjectsSecretsConfig.class));
             final TypeAdapter<SnykTargetsSecretsConfig> adapterSnykTargetsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnykTargetsSecretsConfig.class));
+            final TypeAdapter<TailscaleUsersSecretsConfig> adapterTailscaleUsersSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(TailscaleUsersSecretsConfig.class));
             final TypeAdapter<TenableAssetsSecretsConfig> adapterTenableAssetsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(TenableAssetsSecretsConfig.class));
             final TypeAdapter<TenableVulnerabilitiesSecretsConfig> adapterTenableVulnerabilitiesSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(TenableVulnerabilitiesSecretsConfig.class));
             final TypeAdapter<UsersSecretsConfig> adapterUsersSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(UsersSecretsConfig.class));
@@ -209,6 +223,12 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
+                    // check if the actual instance is of the type `BigqueryInputSecretsConfig`
+                    if (value.getActualInstance() instanceof BigqueryInputSecretsConfig) {
+                        JsonElement element = adapterBigqueryInputSecretsConfig.toJsonTree((BigqueryInputSecretsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `BoxEventsSecretsConfig`
                     if (value.getActualInstance() instanceof BoxEventsSecretsConfig) {
                         JsonElement element = adapterBoxEventsSecretsConfig.toJsonTree((BoxEventsSecretsConfig)value.getActualInstance());
@@ -245,6 +265,18 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
+                    // check if the actual instance is of the type `CrowdstrikeFdrSecretsConfig`
+                    if (value.getActualInstance() instanceof CrowdstrikeFdrSecretsConfig) {
+                        JsonElement element = adapterCrowdstrikeFdrSecretsConfig.toJsonTree((CrowdstrikeFdrSecretsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `DefenderForEndpointAlertsSecretsConfig`
+                    if (value.getActualInstance() instanceof DefenderForEndpointAlertsSecretsConfig) {
+                        JsonElement element = adapterDefenderForEndpointAlertsSecretsConfig.toJsonTree((DefenderForEndpointAlertsSecretsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `DetectSummariesSecretsConfig`
                     if (value.getActualInstance() instanceof DetectSummariesSecretsConfig) {
                         JsonElement element = adapterDetectSummariesSecretsConfig.toJsonTree((DetectSummariesSecretsConfig)value.getActualInstance());
@@ -260,6 +292,12 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `DeviceDetailsSecretsConfig`
                     if (value.getActualInstance() instanceof DeviceDetailsSecretsConfig) {
                         JsonElement element = adapterDeviceDetailsSecretsConfig.toJsonTree((DeviceDetailsSecretsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `DevicesSecretsConfig`
+                    if (value.getActualInstance() instanceof DevicesSecretsConfig) {
+                        JsonElement element = adapterDevicesSecretsConfig.toJsonTree((DevicesSecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -284,6 +322,12 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `EventsLogsSecretsConfig`
                     if (value.getActualInstance() instanceof EventsLogsSecretsConfig) {
                         JsonElement element = adapterEventsLogsSecretsConfig.toJsonTree((EventsLogsSecretsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `FullScansSecretsConfig`
+                    if (value.getActualInstance() instanceof FullScansSecretsConfig) {
+                        JsonElement element = adapterFullScansSecretsConfig.toJsonTree((FullScansSecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -371,6 +415,12 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
+                    // check if the actual instance is of the type `SnowflakeInputSecretsConfig`
+                    if (value.getActualInstance() instanceof SnowflakeInputSecretsConfig) {
+                        JsonElement element = adapterSnowflakeInputSecretsConfig.toJsonTree((SnowflakeInputSecretsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `SnykIssuesSecretsConfig`
                     if (value.getActualInstance() instanceof SnykIssuesSecretsConfig) {
                         JsonElement element = adapterSnykIssuesSecretsConfig.toJsonTree((SnykIssuesSecretsConfig)value.getActualInstance());
@@ -392,6 +442,12 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `SnykTargetsSecretsConfig`
                     if (value.getActualInstance() instanceof SnykTargetsSecretsConfig) {
                         JsonElement element = adapterSnykTargetsSecretsConfig.toJsonTree((SnykTargetsSecretsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `TailscaleUsersSecretsConfig`
+                    if (value.getActualInstance() instanceof TailscaleUsersSecretsConfig) {
+                        JsonElement element = adapterTailscaleUsersSecretsConfig.toJsonTree((TailscaleUsersSecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -431,7 +487,7 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudAssetInventorySecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, IssuesSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, Map<String, Object>, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BigqueryInputSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudAssetInventorySecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CrowdstrikeFdrSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DevicesSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, FullScansSecretsConfig, IssuesSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, Map<String, Object>, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnowflakeInputSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TailscaleUsersSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig");
                 }
 
                 @Override
@@ -529,6 +585,18 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                         errorMessages.add(String.format("Deserialization for AzureActivityLogsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'AzureActivityLogsSecretsConfig'", e);
                     }
+                    // deserialize BigqueryInputSecretsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        BigqueryInputSecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterBigqueryInputSecretsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'BigqueryInputSecretsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for BigqueryInputSecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'BigqueryInputSecretsConfig'", e);
+                    }
                     // deserialize BoxEventsSecretsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -601,6 +669,30 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                         errorMessages.add(String.format("Deserialization for CloudResourceInventorySecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'CloudResourceInventorySecretsConfig'", e);
                     }
+                    // deserialize CrowdstrikeFdrSecretsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        CrowdstrikeFdrSecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCrowdstrikeFdrSecretsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'CrowdstrikeFdrSecretsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for CrowdstrikeFdrSecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'CrowdstrikeFdrSecretsConfig'", e);
+                    }
+                    // deserialize DefenderForEndpointAlertsSecretsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        DefenderForEndpointAlertsSecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDefenderForEndpointAlertsSecretsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'DefenderForEndpointAlertsSecretsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DefenderForEndpointAlertsSecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DefenderForEndpointAlertsSecretsConfig'", e);
+                    }
                     // deserialize DetectSummariesSecretsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -636,6 +728,18 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format("Deserialization for DeviceDetailsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DeviceDetailsSecretsConfig'", e);
+                    }
+                    // deserialize DevicesSecretsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        DevicesSecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDevicesSecretsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'DevicesSecretsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DevicesSecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DevicesSecretsConfig'", e);
                     }
                     // deserialize DriveActivitySecretsConfig
                     try {
@@ -684,6 +788,18 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format("Deserialization for EventsLogsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'EventsLogsSecretsConfig'", e);
+                    }
+                    // deserialize FullScansSecretsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        FullScansSecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterFullScansSecretsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'FullScansSecretsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for FullScansSecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'FullScansSecretsConfig'", e);
                     }
                     // deserialize IssuesSecretsConfig
                     try {
@@ -856,6 +972,18 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                         errorMessages.add(String.format("Deserialization for SlackgroupsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SlackgroupsSecretsConfig'", e);
                     }
+                    // deserialize SnowflakeInputSecretsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        SnowflakeInputSecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterSnowflakeInputSecretsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'SnowflakeInputSecretsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for SnowflakeInputSecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'SnowflakeInputSecretsConfig'", e);
+                    }
                     // deserialize SnykIssuesSecretsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -903,6 +1031,18 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format("Deserialization for SnykTargetsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SnykTargetsSecretsConfig'", e);
+                    }
+                    // deserialize TailscaleUsersSecretsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        TailscaleUsersSecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterTailscaleUsersSecretsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'TailscaleUsersSecretsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for TailscaleUsersSecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'TailscaleUsersSecretsConfig'", e);
                     }
                     // deserialize TenableAssetsSecretsConfig
                     try {
@@ -1009,19 +1149,24 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
         schemas.put("AuthLogsSecretsConfig", AuthLogsSecretsConfig.class);
         schemas.put("Object", Object.class);
         schemas.put("AzureActivityLogsSecretsConfig", AzureActivityLogsSecretsConfig.class);
+        schemas.put("BigqueryInputSecretsConfig", BigqueryInputSecretsConfig.class);
         schemas.put("BoxEventsSecretsConfig", BoxEventsSecretsConfig.class);
         schemas.put("BoxUsersSecretsConfig", BoxUsersSecretsConfig.class);
         schemas.put("CloudAssetInventorySecretsConfig", CloudAssetInventorySecretsConfig.class);
         schemas.put("CloudConfigurationFindingsSecretsConfig", CloudConfigurationFindingsSecretsConfig.class);
         schemas.put("CloudLogsSecretsConfig", CloudLogsSecretsConfig.class);
         schemas.put("CloudResourceInventorySecretsConfig", CloudResourceInventorySecretsConfig.class);
+        schemas.put("CrowdstrikeFdrSecretsConfig", CrowdstrikeFdrSecretsConfig.class);
+        schemas.put("DefenderForEndpointAlertsSecretsConfig", DefenderForEndpointAlertsSecretsConfig.class);
         schemas.put("DetectSummariesSecretsConfig", DetectSummariesSecretsConfig.class);
         schemas.put("DeviceActivitySecretsConfig", DeviceActivitySecretsConfig.class);
         schemas.put("DeviceDetailsSecretsConfig", DeviceDetailsSecretsConfig.class);
+        schemas.put("DevicesSecretsConfig", DevicesSecretsConfig.class);
         schemas.put("DriveActivitySecretsConfig", DriveActivitySecretsConfig.class);
         schemas.put("EntraIdSecretsConfig", EntraIdSecretsConfig.class);
         schemas.put("EventSecretsConfig", EventSecretsConfig.class);
         schemas.put("EventsLogsSecretsConfig", EventsLogsSecretsConfig.class);
+        schemas.put("FullScansSecretsConfig", FullScansSecretsConfig.class);
         schemas.put("IssuesSecretsConfig", IssuesSecretsConfig.class);
         schemas.put("LogAnalyticsQuerySecretsConfig", LogAnalyticsQuerySecretsConfig.class);
         schemas.put("LoginActivitySecretsConfig", LoginActivitySecretsConfig.class);
@@ -1036,10 +1181,12 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
         schemas.put("SemgrepSupplyChainFindingsSecretsConfig", SemgrepSupplyChainFindingsSecretsConfig.class);
         schemas.put("SlackUsersSecretsConfig", SlackUsersSecretsConfig.class);
         schemas.put("SlackgroupsSecretsConfig", SlackgroupsSecretsConfig.class);
+        schemas.put("SnowflakeInputSecretsConfig", SnowflakeInputSecretsConfig.class);
         schemas.put("SnykIssuesSecretsConfig", SnykIssuesSecretsConfig.class);
         schemas.put("SnykOrganizationsSecretsConfig", SnykOrganizationsSecretsConfig.class);
         schemas.put("SnykProjectsSecretsConfig", SnykProjectsSecretsConfig.class);
         schemas.put("SnykTargetsSecretsConfig", SnykTargetsSecretsConfig.class);
+        schemas.put("TailscaleUsersSecretsConfig", TailscaleUsersSecretsConfig.class);
         schemas.put("TenableAssetsSecretsConfig", TenableAssetsSecretsConfig.class);
         schemas.put("TenableVulnerabilitiesSecretsConfig", TenableVulnerabilitiesSecretsConfig.class);
         schemas.put("UsersSecretsConfig", UsersSecretsConfig.class);
@@ -1056,7 +1203,7 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudAssetInventorySecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, IssuesSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, Map<String, Object>, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig
+     * ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BigqueryInputSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudAssetInventorySecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CrowdstrikeFdrSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DevicesSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, FullScansSecretsConfig, IssuesSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, Map<String, Object>, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnowflakeInputSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TailscaleUsersSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -1097,6 +1244,11 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             return;
         }
 
+        if (instance instanceof BigqueryInputSecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof BoxEventsSecretsConfig) {
             super.setActualInstance(instance);
             return;
@@ -1127,6 +1279,16 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             return;
         }
 
+        if (instance instanceof CrowdstrikeFdrSecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof DefenderForEndpointAlertsSecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof DetectSummariesSecretsConfig) {
             super.setActualInstance(instance);
             return;
@@ -1138,6 +1300,11 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
         }
 
         if (instance instanceof DeviceDetailsSecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof DevicesSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -1158,6 +1325,11 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
         }
 
         if (instance instanceof EventsLogsSecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof FullScansSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -1232,6 +1404,11 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             return;
         }
 
+        if (instance instanceof SnowflakeInputSecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof SnykIssuesSecretsConfig) {
             super.setActualInstance(instance);
             return;
@@ -1248,6 +1425,11 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
         }
 
         if (instance instanceof SnykTargetsSecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof TailscaleUsersSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -1282,14 +1464,14 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudAssetInventorySecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, IssuesSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, Map<String, Object>, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig");
+        throw new RuntimeException("Invalid instance type. Must be ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BigqueryInputSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudAssetInventorySecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CrowdstrikeFdrSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DevicesSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, FullScansSecretsConfig, IssuesSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, Map<String, Object>, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnowflakeInputSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TailscaleUsersSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudAssetInventorySecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, IssuesSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, Map<String, Object>, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig
+     * ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BigqueryInputSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudAssetInventorySecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CrowdstrikeFdrSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DevicesSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, FullScansSecretsConfig, IssuesSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, Map<String, Object>, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnowflakeInputSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TailscaleUsersSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig
      *
-     * @return The actual instance (ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudAssetInventorySecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, IssuesSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, Map<String, Object>, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig)
+     * @return The actual instance (ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BigqueryInputSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudAssetInventorySecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CrowdstrikeFdrSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DevicesSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, FullScansSecretsConfig, IssuesSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, Map<String, Object>, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnowflakeInputSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TailscaleUsersSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -1375,6 +1557,17 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
     }
 
     /**
+     * Get the actual instance of `BigqueryInputSecretsConfig`. If the actual instance is not `BigqueryInputSecretsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `BigqueryInputSecretsConfig`
+     * @throws ClassCastException if the instance is not `BigqueryInputSecretsConfig`
+     */
+    public BigqueryInputSecretsConfig getBigqueryInputSecretsConfig() throws ClassCastException {
+        return (BigqueryInputSecretsConfig)super.getActualInstance();
+    }
+
+    /**
      * Get the actual instance of `BoxEventsSecretsConfig`. If the actual instance is not `BoxEventsSecretsConfig`,
      * the ClassCastException will be thrown.
      *
@@ -1441,6 +1634,28 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
     }
 
     /**
+     * Get the actual instance of `CrowdstrikeFdrSecretsConfig`. If the actual instance is not `CrowdstrikeFdrSecretsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `CrowdstrikeFdrSecretsConfig`
+     * @throws ClassCastException if the instance is not `CrowdstrikeFdrSecretsConfig`
+     */
+    public CrowdstrikeFdrSecretsConfig getCrowdstrikeFdrSecretsConfig() throws ClassCastException {
+        return (CrowdstrikeFdrSecretsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `DefenderForEndpointAlertsSecretsConfig`. If the actual instance is not `DefenderForEndpointAlertsSecretsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `DefenderForEndpointAlertsSecretsConfig`
+     * @throws ClassCastException if the instance is not `DefenderForEndpointAlertsSecretsConfig`
+     */
+    public DefenderForEndpointAlertsSecretsConfig getDefenderForEndpointAlertsSecretsConfig() throws ClassCastException {
+        return (DefenderForEndpointAlertsSecretsConfig)super.getActualInstance();
+    }
+
+    /**
      * Get the actual instance of `DetectSummariesSecretsConfig`. If the actual instance is not `DetectSummariesSecretsConfig`,
      * the ClassCastException will be thrown.
      *
@@ -1471,6 +1686,17 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
      */
     public DeviceDetailsSecretsConfig getDeviceDetailsSecretsConfig() throws ClassCastException {
         return (DeviceDetailsSecretsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `DevicesSecretsConfig`. If the actual instance is not `DevicesSecretsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `DevicesSecretsConfig`
+     * @throws ClassCastException if the instance is not `DevicesSecretsConfig`
+     */
+    public DevicesSecretsConfig getDevicesSecretsConfig() throws ClassCastException {
+        return (DevicesSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -1515,6 +1741,17 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
      */
     public EventsLogsSecretsConfig getEventsLogsSecretsConfig() throws ClassCastException {
         return (EventsLogsSecretsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `FullScansSecretsConfig`. If the actual instance is not `FullScansSecretsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `FullScansSecretsConfig`
+     * @throws ClassCastException if the instance is not `FullScansSecretsConfig`
+     */
+    public FullScansSecretsConfig getFullScansSecretsConfig() throws ClassCastException {
+        return (FullScansSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -1672,6 +1909,17 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
     }
 
     /**
+     * Get the actual instance of `SnowflakeInputSecretsConfig`. If the actual instance is not `SnowflakeInputSecretsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `SnowflakeInputSecretsConfig`
+     * @throws ClassCastException if the instance is not `SnowflakeInputSecretsConfig`
+     */
+    public SnowflakeInputSecretsConfig getSnowflakeInputSecretsConfig() throws ClassCastException {
+        return (SnowflakeInputSecretsConfig)super.getActualInstance();
+    }
+
+    /**
      * Get the actual instance of `SnykIssuesSecretsConfig`. If the actual instance is not `SnykIssuesSecretsConfig`,
      * the ClassCastException will be thrown.
      *
@@ -1713,6 +1961,17 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
      */
     public SnykTargetsSecretsConfig getSnykTargetsSecretsConfig() throws ClassCastException {
         return (SnykTargetsSecretsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `TailscaleUsersSecretsConfig`. If the actual instance is not `TailscaleUsersSecretsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `TailscaleUsersSecretsConfig`
+     * @throws ClassCastException if the instance is not `TailscaleUsersSecretsConfig`
+     */
+    public TailscaleUsersSecretsConfig getTailscaleUsersSecretsConfig() throws ClassCastException {
+        return (TailscaleUsersSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -1849,6 +2108,14 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             errorMessages.add(String.format("Deserialization for AzureActivityLogsSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with BigqueryInputSecretsConfig
+        try {
+            BigqueryInputSecretsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for BigqueryInputSecretsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with BoxEventsSecretsConfig
         try {
             BoxEventsSecretsConfig.validateJsonElement(jsonElement);
@@ -1897,6 +2164,22 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             errorMessages.add(String.format("Deserialization for CloudResourceInventorySecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with CrowdstrikeFdrSecretsConfig
+        try {
+            CrowdstrikeFdrSecretsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for CrowdstrikeFdrSecretsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with DefenderForEndpointAlertsSecretsConfig
+        try {
+            DefenderForEndpointAlertsSecretsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for DefenderForEndpointAlertsSecretsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with DetectSummariesSecretsConfig
         try {
             DetectSummariesSecretsConfig.validateJsonElement(jsonElement);
@@ -1919,6 +2202,14 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             validCount++;
         } catch (Exception e) {
             errorMessages.add(String.format("Deserialization for DeviceDetailsSecretsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with DevicesSecretsConfig
+        try {
+            DevicesSecretsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for DevicesSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with DriveActivitySecretsConfig
@@ -1951,6 +2242,14 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             validCount++;
         } catch (Exception e) {
             errorMessages.add(String.format("Deserialization for EventsLogsSecretsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with FullScansSecretsConfig
+        try {
+            FullScansSecretsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for FullScansSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with IssuesSecretsConfig
@@ -2068,6 +2367,14 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             errorMessages.add(String.format("Deserialization for SlackgroupsSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with SnowflakeInputSecretsConfig
+        try {
+            SnowflakeInputSecretsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for SnowflakeInputSecretsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with SnykIssuesSecretsConfig
         try {
             SnykIssuesSecretsConfig.validateJsonElement(jsonElement);
@@ -2098,6 +2405,14 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             validCount++;
         } catch (Exception e) {
             errorMessages.add(String.format("Deserialization for SnykTargetsSecretsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with TailscaleUsersSecretsConfig
+        try {
+            TailscaleUsersSecretsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for TailscaleUsersSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with TenableAssetsSecretsConfig
@@ -2149,7 +2464,7 @@ public class RoutesV2InputConfigSecrets extends AbstractOpenApiSchema {
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for RoutesV2InputConfigSecrets with oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudAssetInventorySecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, IssuesSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, Map<String, Object>, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format("The JSON string is invalid for RoutesV2InputConfigSecrets with oneOf schemas: ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, BigqueryInputSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudAssetInventorySecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CrowdstrikeFdrSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DevicesSecretsConfig, DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, FullScansSecretsConfig, IssuesSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, Map<String, Object>, OauthActivitySecretsConfig, Object, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnowflakeInputSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TailscaleUsersSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

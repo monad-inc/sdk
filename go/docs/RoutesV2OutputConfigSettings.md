@@ -4,16 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Dataset** | Pointer to **string** | The name of the BigQuery dataset where the table resides | [optional] 
+**ProjectId** | Pointer to **string** | The Google Cloud Project ID where the BigQuery instance is located | [optional] 
+**Table** | Pointer to **string** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | [optional] 
 **IngressAddress** | Pointer to **string** | Your group&#39;s ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible. | [optional] 
 **Path** | Pointer to **string** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. | [optional] 
 **Port** | Pointer to **string** | The port of the Splunk instance. | [optional] 
 **AuthType** | Pointer to **string** |  | [optional] 
 **CloudId** | Pointer to **string** | The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to &#39;cloud_id&#39;. | [optional] 
 **ConnectionType** | Pointer to **string** | The type of connection to use with Elasticsearch. Choose between &#39;cloud_id&#39; for Elastic Cloud or &#39;url&#39; for direct connection. | [optional] 
-**Index** | Pointer to **string** | The name of the OpenSearch index to use. | [optional] 
+**Index** | Pointer to **string** | The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 **InsecureSkipVerify** | Pointer to **bool** | Whether to skip TLS certificate verification (not recommended for production). | [optional] 
 **Url** | Pointer to **string** | The URL of the Sumo Logic instance. | [optional] 
-**Username** | Pointer to **string** | The username for authenticating with OpenSearch. | [optional] 
+**Username** | Pointer to **string** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. | [optional] 
 **Endpoint** | Pointer to **string** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | [optional] 
 **Headers** | Pointer to **map[string]string** | Non secret headers | [optional] 
 **MaxBatchDataSize** | Pointer to **int32** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. | [optional] 
@@ -23,14 +26,15 @@ Name | Type | Description | Notes
 **RateLimit** | Pointer to **int32** | Maximum number of requests per second to send to the endpoint. | [optional] 
 **TlsSkipVerify** | Pointer to **bool** | Skip TLS verification. | [optional] 
 **WrapperKey** | Pointer to **string** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. | [optional] 
+**AuthMode** | Pointer to **string** | The authentication mode (basic, aws_role) | [optional] 
+**Region** | Pointer to **string** | The AWS region where the S3 bucket is located | [optional] 
+**RoleArn** | Pointer to **string** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
 **BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
 **Bucket** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
 **Compression** | Pointer to **string** | The compression method to be applied to the data before storing in S3 | [optional] 
 **FormatConfig** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
 **PartitionFormat** | Pointer to **string** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). | [optional] 
 **Prefix** | Pointer to **string** | An optional prefix for S3 object keys to organize data within the bucket | [optional] 
-**Region** | Pointer to **string** | The AWS region where the S3 bucket is located | [optional] 
-**RoleArn** | Pointer to **string** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
 **RuleId** | Pointer to **string** | The unique identifier of the Data Collection Rule (DCR). | [optional] 
 **StreamName** | Pointer to **string** | The name of the data stream defined in the Data Collection Rule. | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
@@ -38,10 +42,10 @@ Name | Type | Description | Notes
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
 **Stage** | Pointer to **string** | The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage. | [optional] 
-**Table** | Pointer to **string** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | [optional] 
 **User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
 **Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
 **AllowInsecure** | Pointer to **bool** | Whether to allow insecure connections (not recommended for production). | [optional] 
+**ToCreate** | Pointer to **bool** | Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 
 ## Methods
 
@@ -61,6 +65,81 @@ will change when the set of required properties is changed
 NewRoutesV2OutputConfigSettingsWithDefaults instantiates a new RoutesV2OutputConfigSettings object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDataset
+
+`func (o *RoutesV2OutputConfigSettings) GetDataset() string`
+
+GetDataset returns the Dataset field if non-nil, zero value otherwise.
+
+### GetDatasetOk
+
+`func (o *RoutesV2OutputConfigSettings) GetDatasetOk() (*string, bool)`
+
+GetDatasetOk returns a tuple with the Dataset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDataset
+
+`func (o *RoutesV2OutputConfigSettings) SetDataset(v string)`
+
+SetDataset sets Dataset field to given value.
+
+### HasDataset
+
+`func (o *RoutesV2OutputConfigSettings) HasDataset() bool`
+
+HasDataset returns a boolean if a field has been set.
+
+### GetProjectId
+
+`func (o *RoutesV2OutputConfigSettings) GetProjectId() string`
+
+GetProjectId returns the ProjectId field if non-nil, zero value otherwise.
+
+### GetProjectIdOk
+
+`func (o *RoutesV2OutputConfigSettings) GetProjectIdOk() (*string, bool)`
+
+GetProjectIdOk returns a tuple with the ProjectId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProjectId
+
+`func (o *RoutesV2OutputConfigSettings) SetProjectId(v string)`
+
+SetProjectId sets ProjectId field to given value.
+
+### HasProjectId
+
+`func (o *RoutesV2OutputConfigSettings) HasProjectId() bool`
+
+HasProjectId returns a boolean if a field has been set.
+
+### GetTable
+
+`func (o *RoutesV2OutputConfigSettings) GetTable() string`
+
+GetTable returns the Table field if non-nil, zero value otherwise.
+
+### GetTableOk
+
+`func (o *RoutesV2OutputConfigSettings) GetTableOk() (*string, bool)`
+
+GetTableOk returns a tuple with the Table field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTable
+
+`func (o *RoutesV2OutputConfigSettings) SetTable(v string)`
+
+SetTable sets Table field to given value.
+
+### HasTable
+
+`func (o *RoutesV2OutputConfigSettings) HasTable() bool`
+
+HasTable returns a boolean if a field has been set.
 
 ### GetIngressAddress
 
@@ -537,6 +616,81 @@ SetWrapperKey sets WrapperKey field to given value.
 
 HasWrapperKey returns a boolean if a field has been set.
 
+### GetAuthMode
+
+`func (o *RoutesV2OutputConfigSettings) GetAuthMode() string`
+
+GetAuthMode returns the AuthMode field if non-nil, zero value otherwise.
+
+### GetAuthModeOk
+
+`func (o *RoutesV2OutputConfigSettings) GetAuthModeOk() (*string, bool)`
+
+GetAuthModeOk returns a tuple with the AuthMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthMode
+
+`func (o *RoutesV2OutputConfigSettings) SetAuthMode(v string)`
+
+SetAuthMode sets AuthMode field to given value.
+
+### HasAuthMode
+
+`func (o *RoutesV2OutputConfigSettings) HasAuthMode() bool`
+
+HasAuthMode returns a boolean if a field has been set.
+
+### GetRegion
+
+`func (o *RoutesV2OutputConfigSettings) GetRegion() string`
+
+GetRegion returns the Region field if non-nil, zero value otherwise.
+
+### GetRegionOk
+
+`func (o *RoutesV2OutputConfigSettings) GetRegionOk() (*string, bool)`
+
+GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegion
+
+`func (o *RoutesV2OutputConfigSettings) SetRegion(v string)`
+
+SetRegion sets Region field to given value.
+
+### HasRegion
+
+`func (o *RoutesV2OutputConfigSettings) HasRegion() bool`
+
+HasRegion returns a boolean if a field has been set.
+
+### GetRoleArn
+
+`func (o *RoutesV2OutputConfigSettings) GetRoleArn() string`
+
+GetRoleArn returns the RoleArn field if non-nil, zero value otherwise.
+
+### GetRoleArnOk
+
+`func (o *RoutesV2OutputConfigSettings) GetRoleArnOk() (*string, bool)`
+
+GetRoleArnOk returns a tuple with the RoleArn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoleArn
+
+`func (o *RoutesV2OutputConfigSettings) SetRoleArn(v string)`
+
+SetRoleArn sets RoleArn field to given value.
+
+### HasRoleArn
+
+`func (o *RoutesV2OutputConfigSettings) HasRoleArn() bool`
+
+HasRoleArn returns a boolean if a field has been set.
+
 ### GetBatchConfig
 
 `func (o *RoutesV2OutputConfigSettings) GetBatchConfig() BatchConfigBatchConfig`
@@ -686,56 +840,6 @@ SetPrefix sets Prefix field to given value.
 `func (o *RoutesV2OutputConfigSettings) HasPrefix() bool`
 
 HasPrefix returns a boolean if a field has been set.
-
-### GetRegion
-
-`func (o *RoutesV2OutputConfigSettings) GetRegion() string`
-
-GetRegion returns the Region field if non-nil, zero value otherwise.
-
-### GetRegionOk
-
-`func (o *RoutesV2OutputConfigSettings) GetRegionOk() (*string, bool)`
-
-GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRegion
-
-`func (o *RoutesV2OutputConfigSettings) SetRegion(v string)`
-
-SetRegion sets Region field to given value.
-
-### HasRegion
-
-`func (o *RoutesV2OutputConfigSettings) HasRegion() bool`
-
-HasRegion returns a boolean if a field has been set.
-
-### GetRoleArn
-
-`func (o *RoutesV2OutputConfigSettings) GetRoleArn() string`
-
-GetRoleArn returns the RoleArn field if non-nil, zero value otherwise.
-
-### GetRoleArnOk
-
-`func (o *RoutesV2OutputConfigSettings) GetRoleArnOk() (*string, bool)`
-
-GetRoleArnOk returns a tuple with the RoleArn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRoleArn
-
-`func (o *RoutesV2OutputConfigSettings) SetRoleArn(v string)`
-
-SetRoleArn sets RoleArn field to given value.
-
-### HasRoleArn
-
-`func (o *RoutesV2OutputConfigSettings) HasRoleArn() bool`
-
-HasRoleArn returns a boolean if a field has been set.
 
 ### GetRuleId
 
@@ -912,31 +1016,6 @@ SetStage sets Stage field to given value.
 
 HasStage returns a boolean if a field has been set.
 
-### GetTable
-
-`func (o *RoutesV2OutputConfigSettings) GetTable() string`
-
-GetTable returns the Table field if non-nil, zero value otherwise.
-
-### GetTableOk
-
-`func (o *RoutesV2OutputConfigSettings) GetTableOk() (*string, bool)`
-
-GetTableOk returns a tuple with the Table field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTable
-
-`func (o *RoutesV2OutputConfigSettings) SetTable(v string)`
-
-SetTable sets Table field to given value.
-
-### HasTable
-
-`func (o *RoutesV2OutputConfigSettings) HasTable() bool`
-
-HasTable returns a boolean if a field has been set.
-
 ### GetUser
 
 `func (o *RoutesV2OutputConfigSettings) GetUser() string`
@@ -1011,6 +1090,31 @@ SetAllowInsecure sets AllowInsecure field to given value.
 `func (o *RoutesV2OutputConfigSettings) HasAllowInsecure() bool`
 
 HasAllowInsecure returns a boolean if a field has been set.
+
+### GetToCreate
+
+`func (o *RoutesV2OutputConfigSettings) GetToCreate() bool`
+
+GetToCreate returns the ToCreate field if non-nil, zero value otherwise.
+
+### GetToCreateOk
+
+`func (o *RoutesV2OutputConfigSettings) GetToCreateOk() (*bool, bool)`
+
+GetToCreateOk returns a tuple with the ToCreate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToCreate
+
+`func (o *RoutesV2OutputConfigSettings) SetToCreate(v bool)`
+
+SetToCreate sets ToCreate field to given value.
+
+### HasToCreate
+
+`func (o *RoutesV2OutputConfigSettings) HasToCreate() bool`
+
+HasToCreate returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

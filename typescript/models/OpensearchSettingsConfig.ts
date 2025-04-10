@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class OpensearchSettingsConfig {
     /**
+    * The authentication mode (basic, aws_role)
+    */
+    'authMode'?: string;
+    /**
     * The name of the OpenSearch index to use.
     */
     'index'?: string;
@@ -25,11 +29,19 @@ export class OpensearchSettingsConfig {
     */
     'insecureSkipVerify'?: boolean;
     /**
+    * The AWS Region where the OpenSearch domain is located
+    */
+    'region'?: string;
+    /**
+    * The AWS IAM Role ARN to assume (used for aws_role auth)
+    */
+    'roleArn'?: string;
+    /**
     * The URL of the OpenSearch instance (must start with https).
     */
     'url'?: string;
     /**
-    * The username for authenticating with OpenSearch.
+    * The username for authenticating with OpenSearch (used for basic auth).
     */
     'username'?: string;
 
@@ -38,6 +50,12 @@ export class OpensearchSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "authMode",
+            "baseName": "auth_mode",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "index",
             "baseName": "index",
@@ -48,6 +66,18 @@ export class OpensearchSettingsConfig {
             "name": "insecureSkipVerify",
             "baseName": "insecure_skip_verify",
             "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "region",
+            "baseName": "region",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "roleArn",
+            "baseName": "role_arn",
+            "type": "string",
             "format": ""
         },
         {

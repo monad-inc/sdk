@@ -29,7 +29,8 @@ class DriveActivitySecretsConfig(BaseModel):
     Google Workspace Drive Activity secrets
     """ # noqa: E501
     credentials_json: Optional[ModelsSecret] = None
-    __properties: ClassVar[List[str]] = ["credentials_json"]
+    oauth_token: Optional[ModelsSecret] = None
+    __properties: ClassVar[List[str]] = ["credentials_json", "oauth_token"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -73,6 +74,9 @@ class DriveActivitySecretsConfig(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of credentials_json
         if self.credentials_json:
             _dict['credentials_json'] = self.credentials_json.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of oauth_token
+        if self.oauth_token:
+            _dict['oauth_token'] = self.oauth_token.to_dict()
         return _dict
 
     @classmethod
@@ -85,7 +89,8 @@ class DriveActivitySecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "credentials_json": ModelsSecret.from_dict(obj["credentials_json"]) if obj.get("credentials_json") is not None else None
+            "credentials_json": ModelsSecret.from_dict(obj["credentials_json"]) if obj.get("credentials_json") is not None else None,
+            "oauth_token": ModelsSecret.from_dict(obj["oauth_token"]) if obj.get("oauth_token") is not None else None
         })
         return _obj
 

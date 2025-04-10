@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Workspace Users secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-19T16:11:31.865626042Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T17:25:27.914467533Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class UsersSecretsConfig {
   public static final String SERIALIZED_NAME_CREDENTIALS_JSON = "credentials_json";
   @SerializedName(SERIALIZED_NAME_CREDENTIALS_JSON)
@@ -65,6 +65,11 @@ public class UsersSecretsConfig {
   @SerializedName(SERIALIZED_NAME_DOMAIN)
   @javax.annotation.Nullable
   private ModelsSecret domain;
+
+  public static final String SERIALIZED_NAME_OAUTH_TOKEN = "oauth_token";
+  @SerializedName(SERIALIZED_NAME_OAUTH_TOKEN)
+  @javax.annotation.Nullable
+  private ModelsSecret oauthToken;
 
   public UsersSecretsConfig() {
   }
@@ -126,6 +131,25 @@ public class UsersSecretsConfig {
   }
 
 
+  public UsersSecretsConfig oauthToken(@javax.annotation.Nullable ModelsSecret oauthToken) {
+    this.oauthToken = oauthToken;
+    return this;
+  }
+
+  /**
+   * Get oauthToken
+   * @return oauthToken
+   */
+  @javax.annotation.Nullable
+  public ModelsSecret getOauthToken() {
+    return oauthToken;
+  }
+
+  public void setOauthToken(@javax.annotation.Nullable ModelsSecret oauthToken) {
+    this.oauthToken = oauthToken;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -138,12 +162,13 @@ public class UsersSecretsConfig {
     UsersSecretsConfig usersSecretsConfig = (UsersSecretsConfig) o;
     return Objects.equals(this.credentialsJson, usersSecretsConfig.credentialsJson) &&
         Objects.equals(this.customerId, usersSecretsConfig.customerId) &&
-        Objects.equals(this.domain, usersSecretsConfig.domain);
+        Objects.equals(this.domain, usersSecretsConfig.domain) &&
+        Objects.equals(this.oauthToken, usersSecretsConfig.oauthToken);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(credentialsJson, customerId, domain);
+    return Objects.hash(credentialsJson, customerId, domain, oauthToken);
   }
 
   @Override
@@ -153,6 +178,7 @@ public class UsersSecretsConfig {
     sb.append("    credentialsJson: ").append(toIndentedString(credentialsJson)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+    sb.append("    oauthToken: ").append(toIndentedString(oauthToken)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -178,6 +204,7 @@ public class UsersSecretsConfig {
     openapiFields.add("credentials_json");
     openapiFields.add("customer_id");
     openapiFields.add("domain");
+    openapiFields.add("oauth_token");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -215,6 +242,10 @@ public class UsersSecretsConfig {
       // validate the optional field `domain`
       if (jsonObj.get("domain") != null && !jsonObj.get("domain").isJsonNull()) {
         ModelsSecret.validateJsonElement(jsonObj.get("domain"));
+      }
+      // validate the optional field `oauth_token`
+      if (jsonObj.get("oauth_token") != null && !jsonObj.get("oauth_token").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("oauth_token"));
       }
   }
 

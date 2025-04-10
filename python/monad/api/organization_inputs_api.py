@@ -25,6 +25,7 @@ from monad.models.models_input_list import ModelsInputList
 from monad.models.routes_get_input_response import RoutesGetInputResponse
 from monad.models.routes_v2_create_input_request import RoutesV2CreateInputRequest
 from monad.models.routes_v2_success_response import RoutesV2SuccessResponse
+from monad.models.routes_v2_test_input_connection_request import RoutesV2TestInputConnectionRequest
 from monad.models.routes_v2_update_input_request import RoutesV2UpdateInputRequest
 
 from monad.api_client import ApiClient, RequestSerialized
@@ -1546,7 +1547,7 @@ class OrganizationInputsApi:
     def v2_organization_id_inputs_test_connection_post(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        body: Annotated[Dict[str, Any], Field(description="Input configuration to test")],
+        routes_v2_test_input_connection_request: Annotated[RoutesV2TestInputConnectionRequest, Field(description="Input configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1566,8 +1567,8 @@ class OrganizationInputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param body: Input configuration to test (required)
-        :type body: object
+        :param routes_v2_test_input_connection_request: Input configuration to test (required)
+        :type routes_v2_test_input_connection_request: RoutesV2TestInputConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1592,7 +1593,7 @@ class OrganizationInputsApi:
 
         _param = self._v2_organization_id_inputs_test_connection_post_serialize(
             organization_id=organization_id,
-            body=body,
+            routes_v2_test_input_connection_request=routes_v2_test_input_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1619,7 +1620,7 @@ class OrganizationInputsApi:
     def v2_organization_id_inputs_test_connection_post_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        body: Annotated[Dict[str, Any], Field(description="Input configuration to test")],
+        routes_v2_test_input_connection_request: Annotated[RoutesV2TestInputConnectionRequest, Field(description="Input configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1639,8 +1640,8 @@ class OrganizationInputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param body: Input configuration to test (required)
-        :type body: object
+        :param routes_v2_test_input_connection_request: Input configuration to test (required)
+        :type routes_v2_test_input_connection_request: RoutesV2TestInputConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1665,7 +1666,7 @@ class OrganizationInputsApi:
 
         _param = self._v2_organization_id_inputs_test_connection_post_serialize(
             organization_id=organization_id,
-            body=body,
+            routes_v2_test_input_connection_request=routes_v2_test_input_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1692,7 +1693,7 @@ class OrganizationInputsApi:
     def v2_organization_id_inputs_test_connection_post_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        body: Annotated[Dict[str, Any], Field(description="Input configuration to test")],
+        routes_v2_test_input_connection_request: Annotated[RoutesV2TestInputConnectionRequest, Field(description="Input configuration to test")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1712,8 +1713,8 @@ class OrganizationInputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param body: Input configuration to test (required)
-        :type body: object
+        :param routes_v2_test_input_connection_request: Input configuration to test (required)
+        :type routes_v2_test_input_connection_request: RoutesV2TestInputConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1738,7 +1739,7 @@ class OrganizationInputsApi:
 
         _param = self._v2_organization_id_inputs_test_connection_post_serialize(
             organization_id=organization_id,
-            body=body,
+            routes_v2_test_input_connection_request=routes_v2_test_input_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1760,7 +1761,7 @@ class OrganizationInputsApi:
     def _v2_organization_id_inputs_test_connection_post_serialize(
         self,
         organization_id,
-        body,
+        routes_v2_test_input_connection_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1788,8 +1789,8 @@ class OrganizationInputsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if body is not None:
-            _body_params = body
+        if routes_v2_test_input_connection_request is not None:
+            _body_params = routes_v2_test_input_connection_request
 
 
         # set the HTTP header `Accept`

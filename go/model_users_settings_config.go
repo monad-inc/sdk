@@ -20,9 +20,11 @@ var _ MappedNullable = &UsersSettingsConfig{}
 
 // UsersSettingsConfig Google Workspace Users settings
 type UsersSettingsConfig struct {
+	// Authentication type (service_account or oauth)
+	AuthType *string `json:"auth_type,omitempty"`
 	// Cron expression to schedule the data collection.
 	Cron *string `json:"cron,omitempty"`
-	// Email address to use to authenticate with Google Cloud.
+	// Email address to use to authenticate with Google Cloud (required for service_account auth).
 	Email *string `json:"email,omitempty"`
 }
 
@@ -41,6 +43,38 @@ func NewUsersSettingsConfig() *UsersSettingsConfig {
 func NewUsersSettingsConfigWithDefaults() *UsersSettingsConfig {
 	this := UsersSettingsConfig{}
 	return &this
+}
+
+// GetAuthType returns the AuthType field value if set, zero value otherwise.
+func (o *UsersSettingsConfig) GetAuthType() string {
+	if o == nil || IsNil(o.AuthType) {
+		var ret string
+		return ret
+	}
+	return *o.AuthType
+}
+
+// GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UsersSettingsConfig) GetAuthTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.AuthType) {
+		return nil, false
+	}
+	return o.AuthType, true
+}
+
+// HasAuthType returns a boolean if a field has been set.
+func (o *UsersSettingsConfig) HasAuthType() bool {
+	if o != nil && !IsNil(o.AuthType) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
+func (o *UsersSettingsConfig) SetAuthType(v string) {
+	o.AuthType = &v
 }
 
 // GetCron returns the Cron field value if set, zero value otherwise.
@@ -117,6 +151,9 @@ func (o UsersSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o UsersSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AuthType) {
+		toSerialize["auth_type"] = o.AuthType
+	}
 	if !IsNil(o.Cron) {
 		toSerialize["cron"] = o.Cron
 	}

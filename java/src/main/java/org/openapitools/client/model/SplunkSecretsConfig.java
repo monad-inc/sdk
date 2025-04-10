@@ -49,8 +49,13 @@ import org.openapitools.client.JSON;
 /**
  * Splunk Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-18T21:46:21.506800163Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T17:25:27.914467533Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class SplunkSecretsConfig {
+  public static final String SERIALIZED_NAME_PASSWORD = "password";
+  @SerializedName(SERIALIZED_NAME_PASSWORD)
+  @javax.annotation.Nullable
+  private ModelsSecret password;
+
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
   @javax.annotation.Nullable
@@ -58,6 +63,25 @@ public class SplunkSecretsConfig {
 
   public SplunkSecretsConfig() {
   }
+
+  public SplunkSecretsConfig password(@javax.annotation.Nullable ModelsSecret password) {
+    this.password = password;
+    return this;
+  }
+
+  /**
+   * Get password
+   * @return password
+   */
+  @javax.annotation.Nullable
+  public ModelsSecret getPassword() {
+    return password;
+  }
+
+  public void setPassword(@javax.annotation.Nullable ModelsSecret password) {
+    this.password = password;
+  }
+
 
   public SplunkSecretsConfig token(@javax.annotation.Nullable ModelsSecret token) {
     this.token = token;
@@ -88,18 +112,20 @@ public class SplunkSecretsConfig {
       return false;
     }
     SplunkSecretsConfig splunkSecretsConfig = (SplunkSecretsConfig) o;
-    return Objects.equals(this.token, splunkSecretsConfig.token);
+    return Objects.equals(this.password, splunkSecretsConfig.password) &&
+        Objects.equals(this.token, splunkSecretsConfig.token);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(token);
+    return Objects.hash(password, token);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SplunkSecretsConfig {\n");
+    sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -123,6 +149,7 @@ public class SplunkSecretsConfig {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("password");
     openapiFields.add("token");
 
     // a set of required properties/fields (JSON key names)
@@ -150,6 +177,10 @@ public class SplunkSecretsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `password`
+      if (jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) {
+        ModelsSecret.validateJsonElement(jsonObj.get("password"));
+      }
       // validate the optional field `token`
       if (jsonObj.get("token") != null && !jsonObj.get("token").isJsonNull()) {
         ModelsSecret.validateJsonElement(jsonObj.get("token"));
