@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsDataUsage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T19:57:58.400156376Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T20:11:33.475169283Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsDataUsage {
   public static final String SERIALIZED_NAME_BYTES = "bytes";
   @SerializedName(SERIALIZED_NAME_BYTES)
