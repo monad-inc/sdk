@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-04-09T21:48:29.898547927Z[Etc/UTC]
+  - Build date: 2025-04-10T14:19:37.951325840Z[Etc/UTC]
   - Generator version: 7.12.0
 
 This is the monad API
@@ -122,16 +122,8 @@ Class | Method | HTTP request | Description
 *BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdDelete**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdDelete) | **DELETE** /v2/billing/accounts/{billing_account_id} | Delete Billing Account
 *BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdGet**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdGet) | **GET** /v2/billing/accounts/{billing_account_id} | Get Billing Account
 *BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdPatch**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdPatch) | **PATCH** /v2/billing/accounts/{billing_account_id} | Update Billing Account
-*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesGet**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesGet) | **GET** /v2/billing/accounts/{billing_account_id}/roles | Get Billing Account Roles
-*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesPost**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesPost) | **POST** /v2/billing/accounts/{billing_account_id}/roles | Create Billing Account Role
-*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdDelete**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdDelete) | **DELETE** /v2/billing/accounts/{billing_account_id}/roles/{role_id} | Delete Billing Account Role
-*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdGet**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdGet) | **GET** /v2/billing/accounts/{billing_account_id}/roles/{role_id} | Get Billing Account Role
-*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdPatch**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdPatch) | **PATCH** /v2/billing/accounts/{billing_account_id}/roles/{role_id} | Update Billing Account Role
-*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost) | **POST** /v2/billing/accounts/{billing_account_id}/roles/{role_id}/users | Create Billing Account User Role
-*BillingAccountsApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete**](docs/BillingAccountsApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete) | **DELETE** /v2/billing/accounts/{billing_account_id}/roles/{role_id}/users/{user_id} | Delete Billing Account User Role
 *BillingAccountsApi* | [**v2BillingAccountsGet**](docs/BillingAccountsApi.md#v2BillingAccountsGet) | **GET** /v2/billing/accounts | List Billing Accounts
 *BillingAccountsApi* | [**v2BillingAccountsPost**](docs/BillingAccountsApi.md#v2BillingAccountsPost) | **POST** /v2/billing/accounts | Create Billing Account
-*BillingAccountsApi* | [**v2BillingPermissionsGet**](docs/BillingAccountsApi.md#v2BillingPermissionsGet) | **GET** /v2/billing/permissions | Get Billing Permissions
 *BillingAccountsRbacApi* | [**v2BillingAccountsBillingAccountIdRolesGet**](docs/BillingAccountsRbacApi.md#v2BillingAccountsBillingAccountIdRolesGet) | **GET** /v2/billing/accounts/{billing_account_id}/roles | Get Billing Account Roles
 *BillingAccountsRbacApi* | [**v2BillingAccountsBillingAccountIdRolesPost**](docs/BillingAccountsRbacApi.md#v2BillingAccountsBillingAccountIdRolesPost) | **POST** /v2/billing/accounts/{billing_account_id}/roles | Create Billing Account Role
 *BillingAccountsRbacApi* | [**v2BillingAccountsBillingAccountIdRolesRoleIdDelete**](docs/BillingAccountsRbacApi.md#v2BillingAccountsBillingAccountIdRolesRoleIdDelete) | **DELETE** /v2/billing/accounts/{billing_account_id}/roles/{role_id} | Delete Billing Account Role
