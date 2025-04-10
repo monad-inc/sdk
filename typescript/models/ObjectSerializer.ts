@@ -151,7 +151,6 @@ export * from '../models/OutputsConnectorMeta';
 export * from '../models/ParquetParquetFormatter';
 export * from '../models/RenameKeyRenameKey';
 export * from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
-export * from '../models/ResourceQuantity';
 export * from '../models/ResponderErrorResponse';
 export * from '../models/RolesInfoSecretsConfig';
 export * from '../models/RolesInfoSettingsConfig';
@@ -408,7 +407,6 @@ import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
-import { ResourceQuantity, ResourceQuantityFormatEnum   } from '../models/ResourceQuantity';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
 import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
@@ -530,7 +528,6 @@ let enumsMap: Set<string> = new Set<string>([
     "IssuesSettingsConfigSeveritiesEnum",
     "IssuesSettingsConfigStackLayersEnum",
     "IssuesSettingsConfigStatusEnum",
-    "ResourceQuantityFormatEnum",
     "RoutesV2InputConfigSettingsIssueTypesEnum",
     "RoutesV2InputConfigSettingsResolutionReasonsEnum",
     "RoutesV2InputConfigSettingsSeveritiesEnum",
@@ -691,7 +688,6 @@ let typeMap: {[index: string]: any} = {
     "ParquetParquetFormatter": ParquetParquetFormatter,
     "RenameKeyRenameKey": RenameKeyRenameKey,
     "RenameKeyWhereValueEqRenameKeyWhereValueEq": RenameKeyWhereValueEqRenameKeyWhereValueEq,
-    "ResourceQuantity": ResourceQuantity,
     "ResponderErrorResponse": ResponderErrorResponse,
     "RolesInfoSecretsConfig": RolesInfoSecretsConfig,
     "RolesInfoSettingsConfig": RolesInfoSettingsConfig,

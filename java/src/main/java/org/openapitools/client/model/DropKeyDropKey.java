@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * DropKeyDropKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T19:02:52.504236015Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T19:39:07.113856389Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class DropKeyDropKey {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)

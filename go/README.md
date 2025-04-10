@@ -335,7 +335,6 @@ Class | Method | HTTP request | Description
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
  - [RenameKeyRenameKey](docs/RenameKeyRenameKey.md)
  - [RenameKeyWhereValueEqRenameKeyWhereValueEq](docs/RenameKeyWhereValueEqRenameKeyWhereValueEq.md)
- - [ResourceQuantity](docs/ResourceQuantity.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
  - [RolesInfoSecretsConfig](docs/RolesInfoSecretsConfig.md)
  - [RolesInfoSettingsConfig](docs/RolesInfoSettingsConfig.md)

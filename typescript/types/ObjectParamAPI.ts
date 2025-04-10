@@ -155,7 +155,6 @@ import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
-import { ResourceQuantity } from '../models/ResourceQuantity';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
 import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **stream_age_limit** | **int** |  | [optional] 
 **stream_replicas** | **int** |  | [optional] 
-**stream_size_limit** | [**ResourceQuantity**](ResourceQuantity.md) |  | [optional] 
+**stream_size_limit** | **str** |  | [optional] 
 
 ## Example
 

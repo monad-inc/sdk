@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-04-10T19:02:52.504236015Z[Etc/UTC]
+  - Build date: 2025-04-10T19:39:07.113856389Z[Etc/UTC]
   - Generator version: 7.12.0
 
 This is the monad API
@@ -371,7 +371,6 @@ Class | Method | HTTP request | Description
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
  - [RenameKeyRenameKey](docs/RenameKeyRenameKey.md)
  - [RenameKeyWhereValueEqRenameKeyWhereValueEq](docs/RenameKeyWhereValueEqRenameKeyWhereValueEq.md)
- - [ResourceQuantity](docs/ResourceQuantity.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
  - [RolesInfoSecretsConfig](docs/RolesInfoSecretsConfig.md)
  - [RolesInfoSettingsConfig](docs/RolesInfoSettingsConfig.md)

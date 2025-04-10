@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * The Access ID for authenticating with Sumo Logic.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T19:02:52.504236015Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-10T19:39:07.113856389Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsSecret {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
