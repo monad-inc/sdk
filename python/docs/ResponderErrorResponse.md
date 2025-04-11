@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**additional_details** | **object** |  | [optional] 
 **code** | **int** |  | [optional] 
 **error** | **str** |  | [optional] 
 

@@ -27,9 +27,10 @@ class ResponderErrorResponse(BaseModel):
     """
     ResponderErrorResponse
     """ # noqa: E501
+    additional_details: Optional[Any] = None
     code: Optional[StrictInt] = None
     error: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["code", "error"]
+    __properties: ClassVar[List[str]] = ["additional_details", "code", "error"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,6 +71,11 @@ class ResponderErrorResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if additional_details (nullable) is None
+        # and model_fields_set contains the field
+        if self.additional_details is None and "additional_details" in self.model_fields_set:
+            _dict['additional_details'] = None
+
         return _dict
 
     @classmethod
@@ -82,6 +88,7 @@ class ResponderErrorResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "additional_details": obj.get("additional_details"),
             "code": obj.get("code"),
             "error": obj.get("error")
         })

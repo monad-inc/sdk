@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AdditionalDetails** | Pointer to **interface{}** |  | [optional] 
 **Code** | Pointer to **int32** |  | [optional] 
 **Error** | Pointer to **string** |  | [optional] 
 
@@ -26,6 +27,41 @@ NewResponderErrorResponseWithDefaults instantiates a new ResponderErrorResponse 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetAdditionalDetails
+
+`func (o *ResponderErrorResponse) GetAdditionalDetails() interface{}`
+
+GetAdditionalDetails returns the AdditionalDetails field if non-nil, zero value otherwise.
+
+### GetAdditionalDetailsOk
+
+`func (o *ResponderErrorResponse) GetAdditionalDetailsOk() (*interface{}, bool)`
+
+GetAdditionalDetailsOk returns a tuple with the AdditionalDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdditionalDetails
+
+`func (o *ResponderErrorResponse) SetAdditionalDetails(v interface{})`
+
+SetAdditionalDetails sets AdditionalDetails field to given value.
+
+### HasAdditionalDetails
+
+`func (o *ResponderErrorResponse) HasAdditionalDetails() bool`
+
+HasAdditionalDetails returns a boolean if a field has been set.
+
+### SetAdditionalDetailsNil
+
+`func (o *ResponderErrorResponse) SetAdditionalDetailsNil(b bool)`
+
+ SetAdditionalDetailsNil sets the value for AdditionalDetails to be an explicit nil
+
+### UnsetAdditionalDetails
+`func (o *ResponderErrorResponse) UnsetAdditionalDetails()`
+
+UnsetAdditionalDetails ensures that no value is present for AdditionalDetails, not even an explicit nil
 ### GetCode
 
 `func (o *ResponderErrorResponse) GetCode() int32`

@@ -20,6 +20,7 @@ var _ MappedNullable = &ResponderErrorResponse{}
 
 // ResponderErrorResponse struct for ResponderErrorResponse
 type ResponderErrorResponse struct {
+	AdditionalDetails interface{} `json:"additional_details,omitempty"`
 	Code *int32 `json:"code,omitempty"`
 	Error *string `json:"error,omitempty"`
 }
@@ -39,6 +40,39 @@ func NewResponderErrorResponse() *ResponderErrorResponse {
 func NewResponderErrorResponseWithDefaults() *ResponderErrorResponse {
 	this := ResponderErrorResponse{}
 	return &this
+}
+
+// GetAdditionalDetails returns the AdditionalDetails field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ResponderErrorResponse) GetAdditionalDetails() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.AdditionalDetails
+}
+
+// GetAdditionalDetailsOk returns a tuple with the AdditionalDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ResponderErrorResponse) GetAdditionalDetailsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AdditionalDetails) {
+		return nil, false
+	}
+	return &o.AdditionalDetails, true
+}
+
+// HasAdditionalDetails returns a boolean if a field has been set.
+func (o *ResponderErrorResponse) HasAdditionalDetails() bool {
+	if o != nil && !IsNil(o.AdditionalDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetAdditionalDetails gets a reference to the given interface{} and assigns it to the AdditionalDetails field.
+func (o *ResponderErrorResponse) SetAdditionalDetails(v interface{}) {
+	o.AdditionalDetails = v
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -115,6 +149,9 @@ func (o ResponderErrorResponse) MarshalJSON() ([]byte, error) {
 
 func (o ResponderErrorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AdditionalDetails != nil {
+		toSerialize["additional_details"] = o.AdditionalDetails
+	}
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}

@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,8 +49,13 @@ import org.openapitools.client.JSON;
 /**
  * ResponderErrorResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-11T15:35:43.251941689Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-11T15:53:41.696929545Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ResponderErrorResponse {
+  public static final String SERIALIZED_NAME_ADDITIONAL_DETAILS = "additional_details";
+  @SerializedName(SERIALIZED_NAME_ADDITIONAL_DETAILS)
+  @javax.annotation.Nullable
+  private Object additionalDetails = null;
+
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   @javax.annotation.Nullable
@@ -62,6 +68,25 @@ public class ResponderErrorResponse {
 
   public ResponderErrorResponse() {
   }
+
+  public ResponderErrorResponse additionalDetails(@javax.annotation.Nullable Object additionalDetails) {
+    this.additionalDetails = additionalDetails;
+    return this;
+  }
+
+  /**
+   * Get additionalDetails
+   * @return additionalDetails
+   */
+  @javax.annotation.Nullable
+  public Object getAdditionalDetails() {
+    return additionalDetails;
+  }
+
+  public void setAdditionalDetails(@javax.annotation.Nullable Object additionalDetails) {
+    this.additionalDetails = additionalDetails;
+  }
+
 
   public ResponderErrorResponse code(@javax.annotation.Nullable Integer code) {
     this.code = code;
@@ -111,19 +136,32 @@ public class ResponderErrorResponse {
       return false;
     }
     ResponderErrorResponse responderErrorResponse = (ResponderErrorResponse) o;
-    return Objects.equals(this.code, responderErrorResponse.code) &&
+    return Objects.equals(this.additionalDetails, responderErrorResponse.additionalDetails) &&
+        Objects.equals(this.code, responderErrorResponse.code) &&
         Objects.equals(this.error, responderErrorResponse.error);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, error);
+    return Objects.hash(additionalDetails, code, error);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ResponderErrorResponse {\n");
+    sb.append("    additionalDetails: ").append(toIndentedString(additionalDetails)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("}");
@@ -148,6 +186,7 @@ public class ResponderErrorResponse {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("additional_details");
     openapiFields.add("code");
     openapiFields.add("error");
 
