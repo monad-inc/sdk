@@ -22,7 +22,7 @@ var _ MappedNullable = &ModelsPipelineRetentionPolicy{}
 type ModelsPipelineRetentionPolicy struct {
 	StreamAgeLimit *int32 `json:"stream_age_limit,omitempty"`
 	StreamReplicas *int32 `json:"stream_replicas,omitempty"`
-	StreamSizeLimit *string `json:"stream_size_limit,omitempty"`
+	StreamSizeLimit *ResourceQuantity `json:"stream_size_limit,omitempty"`
 }
 
 // NewModelsPipelineRetentionPolicy instantiates a new ModelsPipelineRetentionPolicy object
@@ -107,9 +107,9 @@ func (o *ModelsPipelineRetentionPolicy) SetStreamReplicas(v int32) {
 }
 
 // GetStreamSizeLimit returns the StreamSizeLimit field value if set, zero value otherwise.
-func (o *ModelsPipelineRetentionPolicy) GetStreamSizeLimit() string {
+func (o *ModelsPipelineRetentionPolicy) GetStreamSizeLimit() ResourceQuantity {
 	if o == nil || IsNil(o.StreamSizeLimit) {
-		var ret string
+		var ret ResourceQuantity
 		return ret
 	}
 	return *o.StreamSizeLimit
@@ -117,7 +117,7 @@ func (o *ModelsPipelineRetentionPolicy) GetStreamSizeLimit() string {
 
 // GetStreamSizeLimitOk returns a tuple with the StreamSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPipelineRetentionPolicy) GetStreamSizeLimitOk() (*string, bool) {
+func (o *ModelsPipelineRetentionPolicy) GetStreamSizeLimitOk() (*ResourceQuantity, bool) {
 	if o == nil || IsNil(o.StreamSizeLimit) {
 		return nil, false
 	}
@@ -133,8 +133,8 @@ func (o *ModelsPipelineRetentionPolicy) HasStreamSizeLimit() bool {
 	return false
 }
 
-// SetStreamSizeLimit gets a reference to the given string and assigns it to the StreamSizeLimit field.
-func (o *ModelsPipelineRetentionPolicy) SetStreamSizeLimit(v string) {
+// SetStreamSizeLimit gets a reference to the given ResourceQuantity and assigns it to the StreamSizeLimit field.
+func (o *ModelsPipelineRetentionPolicy) SetStreamSizeLimit(v ResourceQuantity) {
 	o.StreamSizeLimit = &v
 }
 

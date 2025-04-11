@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.BatchConfigBatchConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,9 +46,9 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Snowflake Output Settings
+ * Snowflake Input Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-18T21:46:21.506800163Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-11T12:36:17.996127512Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class SnowflakeSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
@@ -61,45 +60,20 @@ public class SnowflakeSettingsConfig {
   @javax.annotation.Nullable
   private String authType;
 
-  public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
-  @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
+  public static final String SERIALIZED_NAME_CRON = "cron";
+  @SerializedName(SERIALIZED_NAME_CRON)
   @javax.annotation.Nullable
-  private BatchConfigBatchConfig batchConfig;
-
-  public static final String SERIALIZED_NAME_DATABASE = "database";
-  @SerializedName(SERIALIZED_NAME_DATABASE)
-  @javax.annotation.Nullable
-  private String database;
+  private String cron;
 
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
   @javax.annotation.Nullable
   private String role;
 
-  public static final String SERIALIZED_NAME_SCHEMA = "schema";
-  @SerializedName(SERIALIZED_NAME_SCHEMA)
-  @javax.annotation.Nullable
-  private String schema;
-
-  public static final String SERIALIZED_NAME_STAGE = "stage";
-  @SerializedName(SERIALIZED_NAME_STAGE)
-  @javax.annotation.Nullable
-  private String stage;
-
-  public static final String SERIALIZED_NAME_TABLE = "table";
-  @SerializedName(SERIALIZED_NAME_TABLE)
-  @javax.annotation.Nullable
-  private String table;
-
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
   @javax.annotation.Nullable
   private String user;
-
-  public static final String SERIALIZED_NAME_WAREHOUSE = "warehouse";
-  @SerializedName(SERIALIZED_NAME_WAREHOUSE)
-  @javax.annotation.Nullable
-  private String warehouse;
 
   public SnowflakeSettingsConfig() {
   }
@@ -129,7 +103,7 @@ public class SnowflakeSettingsConfig {
   }
 
   /**
-   * Get authType
+   * AuthType specifies the authentication method to use when connecting to Snowflake. Supported values are: - Password: Uses username and password authentication - Private Key: Uses key pair authentication with private/public key pair
    * @return authType
    */
   @javax.annotation.Nullable
@@ -142,41 +116,22 @@ public class SnowflakeSettingsConfig {
   }
 
 
-  public SnowflakeSettingsConfig batchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
-    this.batchConfig = batchConfig;
+  public SnowflakeSettingsConfig cron(@javax.annotation.Nullable String cron) {
+    this.cron = cron;
     return this;
   }
 
   /**
-   * Get batchConfig
-   * @return batchConfig
+   * Cron expression for scheduling the input
+   * @return cron
    */
   @javax.annotation.Nullable
-  public BatchConfigBatchConfig getBatchConfig() {
-    return batchConfig;
+  public String getCron() {
+    return cron;
   }
 
-  public void setBatchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
-    this.batchConfig = batchConfig;
-  }
-
-
-  public SnowflakeSettingsConfig database(@javax.annotation.Nullable String database) {
-    this.database = database;
-    return this;
-  }
-
-  /**
-   * The name of the Snowflake database to connect to and perform operations on
-   * @return database
-   */
-  @javax.annotation.Nullable
-  public String getDatabase() {
-    return database;
-  }
-
-  public void setDatabase(@javax.annotation.Nullable String database) {
-    this.database = database;
+  public void setCron(@javax.annotation.Nullable String cron) {
+    this.cron = cron;
   }
 
 
@@ -199,70 +154,13 @@ public class SnowflakeSettingsConfig {
   }
 
 
-  public SnowflakeSettingsConfig schema(@javax.annotation.Nullable String schema) {
-    this.schema = schema;
-    return this;
-  }
-
-  /**
-   * The schema within the Snowflake database where the target table resides.
-   * @return schema
-   */
-  @javax.annotation.Nullable
-  public String getSchema() {
-    return schema;
-  }
-
-  public void setSchema(@javax.annotation.Nullable String schema) {
-    this.schema = schema;
-  }
-
-
-  public SnowflakeSettingsConfig stage(@javax.annotation.Nullable String stage) {
-    this.stage = stage;
-    return this;
-  }
-
-  /**
-   * The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage.
-   * @return stage
-   */
-  @javax.annotation.Nullable
-  public String getStage() {
-    return stage;
-  }
-
-  public void setStage(@javax.annotation.Nullable String stage) {
-    this.stage = stage;
-  }
-
-
-  public SnowflakeSettingsConfig table(@javax.annotation.Nullable String table) {
-    this.table = table;
-    return this;
-  }
-
-  /**
-   * The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table.
-   * @return table
-   */
-  @javax.annotation.Nullable
-  public String getTable() {
-    return table;
-  }
-
-  public void setTable(@javax.annotation.Nullable String table) {
-    this.table = table;
-  }
-
-
   public SnowflakeSettingsConfig user(@javax.annotation.Nullable String user) {
     this.user = user;
     return this;
   }
 
   /**
-   * The username of the Snowflake account used to establish the connection.
+   * User specifies the username for authentication to Snowflake.
    * @return user
    */
   @javax.annotation.Nullable
@@ -272,25 +170,6 @@ public class SnowflakeSettingsConfig {
 
   public void setUser(@javax.annotation.Nullable String user) {
     this.user = user;
-  }
-
-
-  public SnowflakeSettingsConfig warehouse(@javax.annotation.Nullable String warehouse) {
-    this.warehouse = warehouse;
-    return this;
-  }
-
-  /**
-   * The Snowflake virtual warehouse to use for executing queries and processing data.
-   * @return warehouse
-   */
-  @javax.annotation.Nullable
-  public String getWarehouse() {
-    return warehouse;
-  }
-
-  public void setWarehouse(@javax.annotation.Nullable String warehouse) {
-    this.warehouse = warehouse;
   }
 
 
@@ -306,19 +185,14 @@ public class SnowflakeSettingsConfig {
     SnowflakeSettingsConfig snowflakeSettingsConfig = (SnowflakeSettingsConfig) o;
     return Objects.equals(this.account, snowflakeSettingsConfig.account) &&
         Objects.equals(this.authType, snowflakeSettingsConfig.authType) &&
-        Objects.equals(this.batchConfig, snowflakeSettingsConfig.batchConfig) &&
-        Objects.equals(this.database, snowflakeSettingsConfig.database) &&
+        Objects.equals(this.cron, snowflakeSettingsConfig.cron) &&
         Objects.equals(this.role, snowflakeSettingsConfig.role) &&
-        Objects.equals(this.schema, snowflakeSettingsConfig.schema) &&
-        Objects.equals(this.stage, snowflakeSettingsConfig.stage) &&
-        Objects.equals(this.table, snowflakeSettingsConfig.table) &&
-        Objects.equals(this.user, snowflakeSettingsConfig.user) &&
-        Objects.equals(this.warehouse, snowflakeSettingsConfig.warehouse);
+        Objects.equals(this.user, snowflakeSettingsConfig.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(account, authType, batchConfig, database, role, schema, stage, table, user, warehouse);
+    return Objects.hash(account, authType, cron, role, user);
   }
 
   @Override
@@ -327,14 +201,9 @@ public class SnowflakeSettingsConfig {
     sb.append("class SnowflakeSettingsConfig {\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
-    sb.append("    batchConfig: ").append(toIndentedString(batchConfig)).append("\n");
-    sb.append("    database: ").append(toIndentedString(database)).append("\n");
+    sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
-    sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
-    sb.append("    stage: ").append(toIndentedString(stage)).append("\n");
-    sb.append("    table: ").append(toIndentedString(table)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
-    sb.append("    warehouse: ").append(toIndentedString(warehouse)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -359,14 +228,9 @@ public class SnowflakeSettingsConfig {
     openapiFields = new HashSet<String>();
     openapiFields.add("account");
     openapiFields.add("auth_type");
-    openapiFields.add("batch_config");
-    openapiFields.add("database");
+    openapiFields.add("cron");
     openapiFields.add("role");
-    openapiFields.add("schema");
-    openapiFields.add("stage");
-    openapiFields.add("table");
     openapiFields.add("user");
-    openapiFields.add("warehouse");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -399,30 +263,14 @@ public class SnowflakeSettingsConfig {
       if ((jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) && !jsonObj.get("auth_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
       }
-      // validate the optional field `batch_config`
-      if (jsonObj.get("batch_config") != null && !jsonObj.get("batch_config").isJsonNull()) {
-        BatchConfigBatchConfig.validateJsonElement(jsonObj.get("batch_config"));
-      }
-      if ((jsonObj.get("database") != null && !jsonObj.get("database").isJsonNull()) && !jsonObj.get("database").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `database` to be a primitive type in the JSON string but got `%s`", jsonObj.get("database").toString()));
+      if ((jsonObj.get("cron") != null && !jsonObj.get("cron").isJsonNull()) && !jsonObj.get("cron").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `cron` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cron").toString()));
       }
       if ((jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) && !jsonObj.get("role").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
       }
-      if ((jsonObj.get("schema") != null && !jsonObj.get("schema").isJsonNull()) && !jsonObj.get("schema").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `schema` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema").toString()));
-      }
-      if ((jsonObj.get("stage") != null && !jsonObj.get("stage").isJsonNull()) && !jsonObj.get("stage").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stage").toString()));
-      }
-      if ((jsonObj.get("table") != null && !jsonObj.get("table").isJsonNull()) && !jsonObj.get("table").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `table` to be a primitive type in the JSON string but got `%s`", jsonObj.get("table").toString()));
-      }
       if ((jsonObj.get("user") != null && !jsonObj.get("user").isJsonNull()) && !jsonObj.get("user").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `user` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user").toString()));
-      }
-      if ((jsonObj.get("warehouse") != null && !jsonObj.get("warehouse").isJsonNull()) && !jsonObj.get("warehouse").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `warehouse` to be a primitive type in the JSON string but got `%s`", jsonObj.get("warehouse").toString()));
       }
   }
 

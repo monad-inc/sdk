@@ -2,22 +2,17 @@
 
 # SnowflakeSettingsConfig
 
-Snowflake Output Settings
+Snowflake Input Settings
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  [optional] |
-|**authType** | **String** |  |  [optional] |
-|**batchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  |  [optional] |
-|**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
+|**authType** | **String** | AuthType specifies the authentication method to use when connecting to Snowflake. Supported values are: - Password: Uses username and password authentication - Private Key: Uses key pair authentication with private/public key pair |  [optional] |
+|**cron** | **String** | Cron expression for scheduling the input |  [optional] |
 |**role** | **String** | The name of the Role your service account was granted which can access your resources. |  [optional] |
-|**schema** | **String** | The schema within the Snowflake database where the target table resides. |  [optional] |
-|**stage** | **String** | The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage. |  [optional] |
-|**table** | **String** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. |  [optional] |
-|**user** | **String** | The username of the Snowflake account used to establish the connection. |  [optional] |
-|**warehouse** | **String** | The Snowflake virtual warehouse to use for executing queries and processing data. |  [optional] |
+|**user** | **String** | User specifies the username for authentication to Snowflake. |  [optional] |
 
 
 

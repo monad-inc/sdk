@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-04-10T21:48:39.597916308Z[Etc/UTC]
+  - Build date: 2025-04-11T12:36:17.996127512Z[Etc/UTC]
   - Generator version: 7.12.0
 
 This is the monad API
@@ -236,7 +236,6 @@ Class | Method | HTTP request | Description
  - [AzureActivityLogsSettingsConfig](docs/AzureActivityLogsSettingsConfig.md)
  - [BatchConfigBatchConfig](docs/BatchConfigBatchConfig.md)
  - [BigqueryInputSecretsConfig](docs/BigqueryInputSecretsConfig.md)
- - [BigqueryInputSettingsConfig](docs/BigqueryInputSettingsConfig.md)
  - [BigquerySecretsConfig](docs/BigquerySecretsConfig.md)
  - [BigquerySettingsConfig](docs/BigquerySettingsConfig.md)
  - [BoxEventsSecretsConfig](docs/BoxEventsSecretsConfig.md)
@@ -286,7 +285,6 @@ Class | Method | HTTP request | Description
  - [EventsLogsSecretsConfig](docs/EventsLogsSecretsConfig.md)
  - [EventsLogsSettingsConfig](docs/EventsLogsSettingsConfig.md)
  - [FlattenFlatten](docs/FlattenFlatten.md)
- - [FlattenallFlattenAll](docs/FlattenallFlattenAll.md)
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
@@ -371,6 +369,7 @@ Class | Method | HTTP request | Description
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
  - [RenameKeyRenameKey](docs/RenameKeyRenameKey.md)
  - [RenameKeyWhereValueEqRenameKeyWhereValueEq](docs/RenameKeyWhereValueEqRenameKeyWhereValueEq.md)
+ - [ResourceQuantity](docs/ResourceQuantity.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
  - [RolesInfoSecretsConfig](docs/RolesInfoSecretsConfig.md)
  - [RolesInfoSettingsConfig](docs/RolesInfoSettingsConfig.md)
@@ -444,9 +443,9 @@ Class | Method | HTTP request | Description
  - [SlackgroupsSecretsConfig](docs/SlackgroupsSecretsConfig.md)
  - [SlackgroupsSettingsConfig](docs/SlackgroupsSettingsConfig.md)
  - [SnowflakeInputSecretsConfig](docs/SnowflakeInputSecretsConfig.md)
- - [SnowflakeInputSettingsConfig](docs/SnowflakeInputSettingsConfig.md)
  - [SnowflakeOutputSecretsConfig](docs/SnowflakeOutputSecretsConfig.md)
  - [SnowflakeOutputSettingsConfig](docs/SnowflakeOutputSettingsConfig.md)
+ - [SnowflakeSettingsConfig](docs/SnowflakeSettingsConfig.md)
  - [SnykIssuesSecretsConfig](docs/SnykIssuesSecretsConfig.md)
  - [SnykOrganizationsSecretsConfig](docs/SnykOrganizationsSecretsConfig.md)
  - [SnykOrganizationsSettingsConfig](docs/SnykOrganizationsSettingsConfig.md)
@@ -458,7 +457,6 @@ Class | Method | HTTP request | Description
  - [SumologicSecretsConfig](docs/SumologicSecretsConfig.md)
  - [SumologicSettingsConfig](docs/SumologicSettingsConfig.md)
  - [TailscaleUsersSecretsConfig](docs/TailscaleUsersSecretsConfig.md)
- - [TailscaleUsersSettingsConfig](docs/TailscaleUsersSettingsConfig.md)
  - [TenableAssetsSecretsConfig](docs/TenableAssetsSecretsConfig.md)
  - [TenableAssetsSettingsConfig](docs/TenableAssetsSettingsConfig.md)
  - [TenableVulnerabilitiesSecretsConfig](docs/TenableVulnerabilitiesSecretsConfig.md)

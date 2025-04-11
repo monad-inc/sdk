@@ -26,7 +26,6 @@ type RoutesV2InputConfigSettings struct {
 	AuthLogsSettingsConfig *AuthLogsSettingsConfig
 	AwsS3SettingsConfig *AwsS3SettingsConfig
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
-	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BoxEventsSettingsConfig *BoxEventsSettingsConfig
 	BoxUsersSettingsConfig *BoxUsersSettingsConfig
 	CloudAssetInventorySettingsConfig *CloudAssetInventorySettingsConfig
@@ -59,10 +58,9 @@ type RoutesV2InputConfigSettings struct {
 	SemgrepProjectsSettingsConfig *SemgrepProjectsSettingsConfig
 	SlackUsersSettingsConfig *SlackUsersSettingsConfig
 	SlackgroupsSettingsConfig *SlackgroupsSettingsConfig
-	SnowflakeInputSettingsConfig *SnowflakeInputSettingsConfig
+	SnowflakeSettingsConfig *SnowflakeSettingsConfig
 	SnykOrganizationsSettingsConfig *SnykOrganizationsSettingsConfig
 	SnykProjectsSettingsConfig *SnykProjectsSettingsConfig
-	TailscaleUsersSettingsConfig *TailscaleUsersSettingsConfig
 	TenableAssetsSettingsConfig *TenableAssetsSettingsConfig
 	TenableVulnerabilitiesSettingsConfig *TenableVulnerabilitiesSettingsConfig
 	UsersInfoSettingsConfig *UsersInfoSettingsConfig
@@ -118,13 +116,6 @@ func AwsS3SettingsConfigAsRoutesV2InputConfigSettings(v *AwsS3SettingsConfig) Ro
 func AzureActivityLogsSettingsConfigAsRoutesV2InputConfigSettings(v *AzureActivityLogsSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
 		AzureActivityLogsSettingsConfig: v,
-	}
-}
-
-// BigqueryInputSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns BigqueryInputSettingsConfig wrapped in RoutesV2InputConfigSettings
-func BigqueryInputSettingsConfigAsRoutesV2InputConfigSettings(v *BigqueryInputSettingsConfig) RoutesV2InputConfigSettings {
-	return RoutesV2InputConfigSettings{
-		BigqueryInputSettingsConfig: v,
 	}
 }
 
@@ -352,10 +343,10 @@ func SlackgroupsSettingsConfigAsRoutesV2InputConfigSettings(v *SlackgroupsSettin
 	}
 }
 
-// SnowflakeInputSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns SnowflakeInputSettingsConfig wrapped in RoutesV2InputConfigSettings
-func SnowflakeInputSettingsConfigAsRoutesV2InputConfigSettings(v *SnowflakeInputSettingsConfig) RoutesV2InputConfigSettings {
+// SnowflakeSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns SnowflakeSettingsConfig wrapped in RoutesV2InputConfigSettings
+func SnowflakeSettingsConfigAsRoutesV2InputConfigSettings(v *SnowflakeSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
-		SnowflakeInputSettingsConfig: v,
+		SnowflakeSettingsConfig: v,
 	}
 }
 
@@ -370,13 +361,6 @@ func SnykOrganizationsSettingsConfigAsRoutesV2InputConfigSettings(v *SnykOrganiz
 func SnykProjectsSettingsConfigAsRoutesV2InputConfigSettings(v *SnykProjectsSettingsConfig) RoutesV2InputConfigSettings {
 	return RoutesV2InputConfigSettings{
 		SnykProjectsSettingsConfig: v,
-	}
-}
-
-// TailscaleUsersSettingsConfigAsRoutesV2InputConfigSettings is a convenience function that returns TailscaleUsersSettingsConfig wrapped in RoutesV2InputConfigSettings
-func TailscaleUsersSettingsConfigAsRoutesV2InputConfigSettings(v *TailscaleUsersSettingsConfig) RoutesV2InputConfigSettings {
-	return RoutesV2InputConfigSettings{
-		TailscaleUsersSettingsConfig: v,
 	}
 }
 
@@ -551,23 +535,6 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AzureActivityLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into BigqueryInputSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.BigqueryInputSettingsConfig)
-	if err == nil {
-		jsonBigqueryInputSettingsConfig, _ := json.Marshal(dst.BigqueryInputSettingsConfig)
-		if string(jsonBigqueryInputSettingsConfig) == "{}" { // empty struct
-			dst.BigqueryInputSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.BigqueryInputSettingsConfig); err != nil {
-				dst.BigqueryInputSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.BigqueryInputSettingsConfig = nil
 	}
 
 	// try to unmarshal data into BoxEventsSettingsConfig
@@ -1114,21 +1081,21 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.SlackgroupsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into SnowflakeInputSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.SnowflakeInputSettingsConfig)
+	// try to unmarshal data into SnowflakeSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SnowflakeSettingsConfig)
 	if err == nil {
-		jsonSnowflakeInputSettingsConfig, _ := json.Marshal(dst.SnowflakeInputSettingsConfig)
-		if string(jsonSnowflakeInputSettingsConfig) == "{}" { // empty struct
-			dst.SnowflakeInputSettingsConfig = nil
+		jsonSnowflakeSettingsConfig, _ := json.Marshal(dst.SnowflakeSettingsConfig)
+		if string(jsonSnowflakeSettingsConfig) == "{}" { // empty struct
+			dst.SnowflakeSettingsConfig = nil
 		} else {
-			if err = validator.Validate(dst.SnowflakeInputSettingsConfig); err != nil {
-				dst.SnowflakeInputSettingsConfig = nil
+			if err = validator.Validate(dst.SnowflakeSettingsConfig); err != nil {
+				dst.SnowflakeSettingsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.SnowflakeInputSettingsConfig = nil
+		dst.SnowflakeSettingsConfig = nil
 	}
 
 	// try to unmarshal data into SnykOrganizationsSettingsConfig
@@ -1163,23 +1130,6 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.SnykProjectsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into TailscaleUsersSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.TailscaleUsersSettingsConfig)
-	if err == nil {
-		jsonTailscaleUsersSettingsConfig, _ := json.Marshal(dst.TailscaleUsersSettingsConfig)
-		if string(jsonTailscaleUsersSettingsConfig) == "{}" { // empty struct
-			dst.TailscaleUsersSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.TailscaleUsersSettingsConfig); err != nil {
-				dst.TailscaleUsersSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.TailscaleUsersSettingsConfig = nil
 	}
 
 	// try to unmarshal data into TenableAssetsSettingsConfig
@@ -1310,7 +1260,6 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.AuthLogsSettingsConfig = nil
 		dst.AwsS3SettingsConfig = nil
 		dst.AzureActivityLogsSettingsConfig = nil
-		dst.BigqueryInputSettingsConfig = nil
 		dst.BoxEventsSettingsConfig = nil
 		dst.BoxUsersSettingsConfig = nil
 		dst.CloudAssetInventorySettingsConfig = nil
@@ -1343,10 +1292,9 @@ func (dst *RoutesV2InputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.SemgrepProjectsSettingsConfig = nil
 		dst.SlackUsersSettingsConfig = nil
 		dst.SlackgroupsSettingsConfig = nil
-		dst.SnowflakeInputSettingsConfig = nil
+		dst.SnowflakeSettingsConfig = nil
 		dst.SnykOrganizationsSettingsConfig = nil
 		dst.SnykProjectsSettingsConfig = nil
-		dst.TailscaleUsersSettingsConfig = nil
 		dst.TenableAssetsSettingsConfig = nil
 		dst.TenableVulnerabilitiesSettingsConfig = nil
 		dst.UsersInfoSettingsConfig = nil
@@ -1391,10 +1339,6 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.AzureActivityLogsSettingsConfig != nil {
 		return json.Marshal(&src.AzureActivityLogsSettingsConfig)
-	}
-
-	if src.BigqueryInputSettingsConfig != nil {
-		return json.Marshal(&src.BigqueryInputSettingsConfig)
 	}
 
 	if src.BoxEventsSettingsConfig != nil {
@@ -1525,8 +1469,8 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.SlackgroupsSettingsConfig)
 	}
 
-	if src.SnowflakeInputSettingsConfig != nil {
-		return json.Marshal(&src.SnowflakeInputSettingsConfig)
+	if src.SnowflakeSettingsConfig != nil {
+		return json.Marshal(&src.SnowflakeSettingsConfig)
 	}
 
 	if src.SnykOrganizationsSettingsConfig != nil {
@@ -1535,10 +1479,6 @@ func (src RoutesV2InputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.SnykProjectsSettingsConfig != nil {
 		return json.Marshal(&src.SnykProjectsSettingsConfig)
-	}
-
-	if src.TailscaleUsersSettingsConfig != nil {
-		return json.Marshal(&src.TailscaleUsersSettingsConfig)
 	}
 
 	if src.TenableAssetsSettingsConfig != nil {
@@ -1603,10 +1543,6 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.AzureActivityLogsSettingsConfig != nil {
 		return obj.AzureActivityLogsSettingsConfig
-	}
-
-	if obj.BigqueryInputSettingsConfig != nil {
-		return obj.BigqueryInputSettingsConfig
 	}
 
 	if obj.BoxEventsSettingsConfig != nil {
@@ -1737,8 +1673,8 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 		return obj.SlackgroupsSettingsConfig
 	}
 
-	if obj.SnowflakeInputSettingsConfig != nil {
-		return obj.SnowflakeInputSettingsConfig
+	if obj.SnowflakeSettingsConfig != nil {
+		return obj.SnowflakeSettingsConfig
 	}
 
 	if obj.SnykOrganizationsSettingsConfig != nil {
@@ -1747,10 +1683,6 @@ func (obj *RoutesV2InputConfigSettings) GetActualInstance() (interface{}) {
 
 	if obj.SnykProjectsSettingsConfig != nil {
 		return obj.SnykProjectsSettingsConfig
-	}
-
-	if obj.TailscaleUsersSettingsConfig != nil {
-		return obj.TailscaleUsersSettingsConfig
 	}
 
 	if obj.TenableAssetsSettingsConfig != nil {
@@ -1813,10 +1745,6 @@ func (obj RoutesV2InputConfigSettings) GetActualInstanceValue() (interface{}) {
 
 	if obj.AzureActivityLogsSettingsConfig != nil {
 		return *obj.AzureActivityLogsSettingsConfig
-	}
-
-	if obj.BigqueryInputSettingsConfig != nil {
-		return *obj.BigqueryInputSettingsConfig
 	}
 
 	if obj.BoxEventsSettingsConfig != nil {
@@ -1947,8 +1875,8 @@ func (obj RoutesV2InputConfigSettings) GetActualInstanceValue() (interface{}) {
 		return *obj.SlackgroupsSettingsConfig
 	}
 
-	if obj.SnowflakeInputSettingsConfig != nil {
-		return *obj.SnowflakeInputSettingsConfig
+	if obj.SnowflakeSettingsConfig != nil {
+		return *obj.SnowflakeSettingsConfig
 	}
 
 	if obj.SnykOrganizationsSettingsConfig != nil {
@@ -1957,10 +1885,6 @@ func (obj RoutesV2InputConfigSettings) GetActualInstanceValue() (interface{}) {
 
 	if obj.SnykProjectsSettingsConfig != nil {
 		return *obj.SnykProjectsSettingsConfig
-	}
-
-	if obj.TailscaleUsersSettingsConfig != nil {
-		return *obj.TailscaleUsersSettingsConfig
 	}
 
 	if obj.TenableAssetsSettingsConfig != nil {

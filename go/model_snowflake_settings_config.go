@@ -18,26 +18,18 @@ import (
 // checks if the SnowflakeSettingsConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SnowflakeSettingsConfig{}
 
-// SnowflakeSettingsConfig Snowflake Output Settings
+// SnowflakeSettingsConfig Snowflake Input Settings
 type SnowflakeSettingsConfig struct {
 	// The unique identifier for your Snowflake account, typically in the form of 'organization-account_name'.
 	Account *string `json:"account,omitempty"`
+	// AuthType specifies the authentication method to use when connecting to Snowflake. Supported values are: - Password: Uses username and password authentication - Private Key: Uses key pair authentication with private/public key pair
 	AuthType *string `json:"auth_type,omitempty"`
-	BatchConfig *BatchConfigBatchConfig `json:"batch_config,omitempty"`
-	// The name of the Snowflake database to connect to and perform operations on
-	Database *string `json:"database,omitempty"`
+	// Cron expression for scheduling the input
+	Cron *string `json:"cron,omitempty"`
 	// The name of the Role your service account was granted which can access your resources.
 	Role *string `json:"role,omitempty"`
-	// The schema within the Snowflake database where the target table resides.
-	Schema *string `json:"schema,omitempty"`
-	// The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage.
-	Stage *string `json:"stage,omitempty"`
-	// The name of the table in Snowflake where the data will be written. If the table doesn't exist Monad will create the table.
-	Table *string `json:"table,omitempty"`
-	// The username of the Snowflake account used to establish the connection.
+	// User specifies the username for authentication to Snowflake.
 	User *string `json:"user,omitempty"`
-	// The Snowflake virtual warehouse to use for executing queries and processing data.
-	Warehouse *string `json:"warehouse,omitempty"`
 }
 
 // NewSnowflakeSettingsConfig instantiates a new SnowflakeSettingsConfig object
@@ -121,68 +113,36 @@ func (o *SnowflakeSettingsConfig) SetAuthType(v string) {
 	o.AuthType = &v
 }
 
-// GetBatchConfig returns the BatchConfig field value if set, zero value otherwise.
-func (o *SnowflakeSettingsConfig) GetBatchConfig() BatchConfigBatchConfig {
-	if o == nil || IsNil(o.BatchConfig) {
-		var ret BatchConfigBatchConfig
-		return ret
-	}
-	return *o.BatchConfig
-}
-
-// GetBatchConfigOk returns a tuple with the BatchConfig field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SnowflakeSettingsConfig) GetBatchConfigOk() (*BatchConfigBatchConfig, bool) {
-	if o == nil || IsNil(o.BatchConfig) {
-		return nil, false
-	}
-	return o.BatchConfig, true
-}
-
-// HasBatchConfig returns a boolean if a field has been set.
-func (o *SnowflakeSettingsConfig) HasBatchConfig() bool {
-	if o != nil && !IsNil(o.BatchConfig) {
-		return true
-	}
-
-	return false
-}
-
-// SetBatchConfig gets a reference to the given BatchConfigBatchConfig and assigns it to the BatchConfig field.
-func (o *SnowflakeSettingsConfig) SetBatchConfig(v BatchConfigBatchConfig) {
-	o.BatchConfig = &v
-}
-
-// GetDatabase returns the Database field value if set, zero value otherwise.
-func (o *SnowflakeSettingsConfig) GetDatabase() string {
-	if o == nil || IsNil(o.Database) {
+// GetCron returns the Cron field value if set, zero value otherwise.
+func (o *SnowflakeSettingsConfig) GetCron() string {
+	if o == nil || IsNil(o.Cron) {
 		var ret string
 		return ret
 	}
-	return *o.Database
+	return *o.Cron
 }
 
-// GetDatabaseOk returns a tuple with the Database field value if set, nil otherwise
+// GetCronOk returns a tuple with the Cron field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SnowflakeSettingsConfig) GetDatabaseOk() (*string, bool) {
-	if o == nil || IsNil(o.Database) {
+func (o *SnowflakeSettingsConfig) GetCronOk() (*string, bool) {
+	if o == nil || IsNil(o.Cron) {
 		return nil, false
 	}
-	return o.Database, true
+	return o.Cron, true
 }
 
-// HasDatabase returns a boolean if a field has been set.
-func (o *SnowflakeSettingsConfig) HasDatabase() bool {
-	if o != nil && !IsNil(o.Database) {
+// HasCron returns a boolean if a field has been set.
+func (o *SnowflakeSettingsConfig) HasCron() bool {
+	if o != nil && !IsNil(o.Cron) {
 		return true
 	}
 
 	return false
 }
 
-// SetDatabase gets a reference to the given string and assigns it to the Database field.
-func (o *SnowflakeSettingsConfig) SetDatabase(v string) {
-	o.Database = &v
+// SetCron gets a reference to the given string and assigns it to the Cron field.
+func (o *SnowflakeSettingsConfig) SetCron(v string) {
+	o.Cron = &v
 }
 
 // GetRole returns the Role field value if set, zero value otherwise.
@@ -217,102 +177,6 @@ func (o *SnowflakeSettingsConfig) SetRole(v string) {
 	o.Role = &v
 }
 
-// GetSchema returns the Schema field value if set, zero value otherwise.
-func (o *SnowflakeSettingsConfig) GetSchema() string {
-	if o == nil || IsNil(o.Schema) {
-		var ret string
-		return ret
-	}
-	return *o.Schema
-}
-
-// GetSchemaOk returns a tuple with the Schema field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SnowflakeSettingsConfig) GetSchemaOk() (*string, bool) {
-	if o == nil || IsNil(o.Schema) {
-		return nil, false
-	}
-	return o.Schema, true
-}
-
-// HasSchema returns a boolean if a field has been set.
-func (o *SnowflakeSettingsConfig) HasSchema() bool {
-	if o != nil && !IsNil(o.Schema) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchema gets a reference to the given string and assigns it to the Schema field.
-func (o *SnowflakeSettingsConfig) SetSchema(v string) {
-	o.Schema = &v
-}
-
-// GetStage returns the Stage field value if set, zero value otherwise.
-func (o *SnowflakeSettingsConfig) GetStage() string {
-	if o == nil || IsNil(o.Stage) {
-		var ret string
-		return ret
-	}
-	return *o.Stage
-}
-
-// GetStageOk returns a tuple with the Stage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SnowflakeSettingsConfig) GetStageOk() (*string, bool) {
-	if o == nil || IsNil(o.Stage) {
-		return nil, false
-	}
-	return o.Stage, true
-}
-
-// HasStage returns a boolean if a field has been set.
-func (o *SnowflakeSettingsConfig) HasStage() bool {
-	if o != nil && !IsNil(o.Stage) {
-		return true
-	}
-
-	return false
-}
-
-// SetStage gets a reference to the given string and assigns it to the Stage field.
-func (o *SnowflakeSettingsConfig) SetStage(v string) {
-	o.Stage = &v
-}
-
-// GetTable returns the Table field value if set, zero value otherwise.
-func (o *SnowflakeSettingsConfig) GetTable() string {
-	if o == nil || IsNil(o.Table) {
-		var ret string
-		return ret
-	}
-	return *o.Table
-}
-
-// GetTableOk returns a tuple with the Table field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SnowflakeSettingsConfig) GetTableOk() (*string, bool) {
-	if o == nil || IsNil(o.Table) {
-		return nil, false
-	}
-	return o.Table, true
-}
-
-// HasTable returns a boolean if a field has been set.
-func (o *SnowflakeSettingsConfig) HasTable() bool {
-	if o != nil && !IsNil(o.Table) {
-		return true
-	}
-
-	return false
-}
-
-// SetTable gets a reference to the given string and assigns it to the Table field.
-func (o *SnowflakeSettingsConfig) SetTable(v string) {
-	o.Table = &v
-}
-
 // GetUser returns the User field value if set, zero value otherwise.
 func (o *SnowflakeSettingsConfig) GetUser() string {
 	if o == nil || IsNil(o.User) {
@@ -345,38 +209,6 @@ func (o *SnowflakeSettingsConfig) SetUser(v string) {
 	o.User = &v
 }
 
-// GetWarehouse returns the Warehouse field value if set, zero value otherwise.
-func (o *SnowflakeSettingsConfig) GetWarehouse() string {
-	if o == nil || IsNil(o.Warehouse) {
-		var ret string
-		return ret
-	}
-	return *o.Warehouse
-}
-
-// GetWarehouseOk returns a tuple with the Warehouse field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SnowflakeSettingsConfig) GetWarehouseOk() (*string, bool) {
-	if o == nil || IsNil(o.Warehouse) {
-		return nil, false
-	}
-	return o.Warehouse, true
-}
-
-// HasWarehouse returns a boolean if a field has been set.
-func (o *SnowflakeSettingsConfig) HasWarehouse() bool {
-	if o != nil && !IsNil(o.Warehouse) {
-		return true
-	}
-
-	return false
-}
-
-// SetWarehouse gets a reference to the given string and assigns it to the Warehouse field.
-func (o *SnowflakeSettingsConfig) SetWarehouse(v string) {
-	o.Warehouse = &v
-}
-
 func (o SnowflakeSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -393,29 +225,14 @@ func (o SnowflakeSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AuthType) {
 		toSerialize["auth_type"] = o.AuthType
 	}
-	if !IsNil(o.BatchConfig) {
-		toSerialize["batch_config"] = o.BatchConfig
-	}
-	if !IsNil(o.Database) {
-		toSerialize["database"] = o.Database
+	if !IsNil(o.Cron) {
+		toSerialize["cron"] = o.Cron
 	}
 	if !IsNil(o.Role) {
 		toSerialize["role"] = o.Role
 	}
-	if !IsNil(o.Schema) {
-		toSerialize["schema"] = o.Schema
-	}
-	if !IsNil(o.Stage) {
-		toSerialize["stage"] = o.Stage
-	}
-	if !IsNil(o.Table) {
-		toSerialize["table"] = o.Table
-	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
-	}
-	if !IsNil(o.Warehouse) {
-		toSerialize["warehouse"] = o.Warehouse
 	}
 	return toSerialize, nil
 }

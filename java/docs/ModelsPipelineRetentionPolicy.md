@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**streamAgeLimit** | **Integer** |  |  [optional] |
 |**streamReplicas** | **Integer** |  |  [optional] |
-|**streamSizeLimit** | **String** |  |  [optional] |
+|**streamSizeLimit** | [**ResourceQuantity**](ResourceQuantity.md) |  |  [optional] |
 
 
 

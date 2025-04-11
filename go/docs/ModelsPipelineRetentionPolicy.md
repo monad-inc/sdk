@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **StreamAgeLimit** | Pointer to **int32** |  | [optional] 
 **StreamReplicas** | Pointer to **int32** |  | [optional] 
-**StreamSizeLimit** | Pointer to **string** |  | [optional] 
+**StreamSizeLimit** | Pointer to [**ResourceQuantity**](ResourceQuantity.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasStreamReplicas returns a boolean if a field has been set.
 
 ### GetStreamSizeLimit
 
-`func (o *ModelsPipelineRetentionPolicy) GetStreamSizeLimit() string`
+`func (o *ModelsPipelineRetentionPolicy) GetStreamSizeLimit() ResourceQuantity`
 
 GetStreamSizeLimit returns the StreamSizeLimit field if non-nil, zero value otherwise.
 
 ### GetStreamSizeLimitOk
 
-`func (o *ModelsPipelineRetentionPolicy) GetStreamSizeLimitOk() (*string, bool)`
+`func (o *ModelsPipelineRetentionPolicy) GetStreamSizeLimitOk() (*ResourceQuantity, bool)`
 
 GetStreamSizeLimitOk returns a tuple with the StreamSizeLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStreamSizeLimit
 
-`func (o *ModelsPipelineRetentionPolicy) SetStreamSizeLimit(v string)`
+`func (o *ModelsPipelineRetentionPolicy) SetStreamSizeLimit(v ResourceQuantity)`
 
 SetStreamSizeLimit sets StreamSizeLimit field to given value.
 

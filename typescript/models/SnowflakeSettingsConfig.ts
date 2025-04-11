@@ -10,47 +10,32 @@
  * Do not edit the class manually.
  */
 
-import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { HttpFile } from '../http/http';
 
 /**
-* Snowflake Output Settings
+* Snowflake Input Settings
 */
 export class SnowflakeSettingsConfig {
     /**
     * The unique identifier for your Snowflake account, typically in the form of \'organization-account_name\'.
     */
     'account'?: string;
-    'authType'?: string;
-    'batchConfig'?: BatchConfigBatchConfig;
     /**
-    * The name of the Snowflake database to connect to and perform operations on
+    * AuthType specifies the authentication method to use when connecting to Snowflake. Supported values are: - Password: Uses username and password authentication - Private Key: Uses key pair authentication with private/public key pair
     */
-    'database'?: string;
+    'authType'?: string;
+    /**
+    * Cron expression for scheduling the input
+    */
+    'cron'?: string;
     /**
     * The name of the Role your service account was granted which can access your resources.
     */
     'role'?: string;
     /**
-    * The schema within the Snowflake database where the target table resides.
-    */
-    'schema'?: string;
-    /**
-    * The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage.
-    */
-    'stage'?: string;
-    /**
-    * The name of the table in Snowflake where the data will be written. If the table doesn\'t exist Monad will create the table.
-    */
-    'table'?: string;
-    /**
-    * The username of the Snowflake account used to establish the connection.
+    * User specifies the username for authentication to Snowflake.
     */
     'user'?: string;
-    /**
-    * The Snowflake virtual warehouse to use for executing queries and processing data.
-    */
-    'warehouse'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -70,14 +55,8 @@ export class SnowflakeSettingsConfig {
             "format": ""
         },
         {
-            "name": "batchConfig",
-            "baseName": "batch_config",
-            "type": "BatchConfigBatchConfig",
-            "format": ""
-        },
-        {
-            "name": "database",
-            "baseName": "database",
+            "name": "cron",
+            "baseName": "cron",
             "type": "string",
             "format": ""
         },
@@ -88,32 +67,8 @@ export class SnowflakeSettingsConfig {
             "format": ""
         },
         {
-            "name": "schema",
-            "baseName": "schema",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "stage",
-            "baseName": "stage",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "table",
-            "baseName": "table",
-            "type": "string",
-            "format": ""
-        },
-        {
             "name": "user",
             "baseName": "user",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "warehouse",
-            "baseName": "warehouse",
             "type": "string",
             "format": ""
         }    ];

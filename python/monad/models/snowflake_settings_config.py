@@ -20,25 +20,19 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.batch_config_batch_config import BatchConfigBatchConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
 class SnowflakeSettingsConfig(BaseModel):
     """
-    Snowflake Output Settings
+    Snowflake Input Settings
     """ # noqa: E501
     account: Optional[StrictStr] = Field(default=None, description="The unique identifier for your Snowflake account, typically in the form of 'organization-account_name'.")
-    auth_type: Optional[StrictStr] = None
-    batch_config: Optional[BatchConfigBatchConfig] = None
-    database: Optional[StrictStr] = Field(default=None, description="The name of the Snowflake database to connect to and perform operations on")
+    auth_type: Optional[StrictStr] = Field(default=None, description="AuthType specifies the authentication method to use when connecting to Snowflake. Supported values are: - Password: Uses username and password authentication - Private Key: Uses key pair authentication with private/public key pair")
+    cron: Optional[StrictStr] = Field(default=None, description="Cron expression for scheduling the input")
     role: Optional[StrictStr] = Field(default=None, description="The name of the Role your service account was granted which can access your resources.")
-    var_schema: Optional[StrictStr] = Field(default=None, description="The schema within the Snowflake database where the target table resides.", alias="schema")
-    stage: Optional[StrictStr] = Field(default=None, description="The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage.")
-    table: Optional[StrictStr] = Field(default=None, description="The name of the table in Snowflake where the data will be written. If the table doesn't exist Monad will create the table.")
-    user: Optional[StrictStr] = Field(default=None, description="The username of the Snowflake account used to establish the connection.")
-    warehouse: Optional[StrictStr] = Field(default=None, description="The Snowflake virtual warehouse to use for executing queries and processing data.")
-    __properties: ClassVar[List[str]] = ["account", "auth_type", "batch_config", "database", "role", "schema", "stage", "table", "user", "warehouse"]
+    user: Optional[StrictStr] = Field(default=None, description="User specifies the username for authentication to Snowflake.")
+    __properties: ClassVar[List[str]] = ["account", "auth_type", "cron", "role", "user"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,9 +73,6 @@ class SnowflakeSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of batch_config
-        if self.batch_config:
-            _dict['batch_config'] = self.batch_config.to_dict()
         return _dict
 
     @classmethod
@@ -96,14 +87,9 @@ class SnowflakeSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "account": obj.get("account"),
             "auth_type": obj.get("auth_type"),
-            "batch_config": BatchConfigBatchConfig.from_dict(obj["batch_config"]) if obj.get("batch_config") is not None else None,
-            "database": obj.get("database"),
+            "cron": obj.get("cron"),
             "role": obj.get("role"),
-            "schema": obj.get("schema"),
-            "stage": obj.get("stage"),
-            "table": obj.get("table"),
-            "user": obj.get("user"),
-            "warehouse": obj.get("warehouse")
+            "user": obj.get("user")
         })
         return _obj
 

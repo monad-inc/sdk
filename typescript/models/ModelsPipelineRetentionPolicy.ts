@@ -10,12 +10,13 @@
  * Do not edit the class manually.
  */
 
+import { ResourceQuantity } from '../models/ResourceQuantity';
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineRetentionPolicy {
     'streamAgeLimit'?: number;
     'streamReplicas'?: number;
-    'streamSizeLimit'?: string;
+    'streamSizeLimit'?: ResourceQuantity;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -37,7 +38,7 @@ export class ModelsPipelineRetentionPolicy {
         {
             "name": "streamSizeLimit",
             "baseName": "stream_size_limit",
-            "type": "string",
+            "type": "ResourceQuantity",
             "format": ""
         }    ];
 
