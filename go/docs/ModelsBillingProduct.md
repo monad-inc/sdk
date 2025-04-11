@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ContactEmail** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Features** | Pointer to **[]string** |  | [optional] 
@@ -35,6 +36,31 @@ will change when the set of required properties is changed
 NewModelsBillingProductWithDefaults instantiates a new ModelsBillingProduct object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetContactEmail
+
+`func (o *ModelsBillingProduct) GetContactEmail() string`
+
+GetContactEmail returns the ContactEmail field if non-nil, zero value otherwise.
+
+### GetContactEmailOk
+
+`func (o *ModelsBillingProduct) GetContactEmailOk() (*string, bool)`
+
+GetContactEmailOk returns a tuple with the ContactEmail field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContactEmail
+
+`func (o *ModelsBillingProduct) SetContactEmail(v string)`
+
+SetContactEmail sets ContactEmail field to given value.
+
+### HasContactEmail
+
+`func (o *ModelsBillingProduct) HasContactEmail() bool`
+
+HasContactEmail returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

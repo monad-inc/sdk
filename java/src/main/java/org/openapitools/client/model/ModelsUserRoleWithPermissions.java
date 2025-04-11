@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsUserRoleWithPermissions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-11T15:53:41.696929545Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-11T21:08:52.138462016Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsUserRoleWithPermissions {
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)

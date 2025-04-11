@@ -50,8 +50,13 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingProduct
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-11T15:53:41.696929545Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-11T21:08:52.138462016Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsBillingProduct {
+  public static final String SERIALIZED_NAME_CONTACT_EMAIL = "contact_email";
+  @SerializedName(SERIALIZED_NAME_CONTACT_EMAIL)
+  @javax.annotation.Nullable
+  private String contactEmail;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nullable
@@ -114,6 +119,25 @@ public class ModelsBillingProduct {
 
   public ModelsBillingProduct() {
   }
+
+  public ModelsBillingProduct contactEmail(@javax.annotation.Nullable String contactEmail) {
+    this.contactEmail = contactEmail;
+    return this;
+  }
+
+  /**
+   * Get contactEmail
+   * @return contactEmail
+   */
+  @javax.annotation.Nullable
+  public String getContactEmail() {
+    return contactEmail;
+  }
+
+  public void setContactEmail(@javax.annotation.Nullable String contactEmail) {
+    this.contactEmail = contactEmail;
+  }
+
 
   public ModelsBillingProduct createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
@@ -361,7 +385,8 @@ public class ModelsBillingProduct {
       return false;
     }
     ModelsBillingProduct modelsBillingProduct = (ModelsBillingProduct) o;
-    return Objects.equals(this.createdAt, modelsBillingProduct.createdAt) &&
+    return Objects.equals(this.contactEmail, modelsBillingProduct.contactEmail) &&
+        Objects.equals(this.createdAt, modelsBillingProduct.createdAt) &&
         Objects.equals(this.description, modelsBillingProduct.description) &&
         Objects.equals(this.features, modelsBillingProduct.features) &&
         Objects.equals(this.id, modelsBillingProduct.id) &&
@@ -377,13 +402,14 @@ public class ModelsBillingProduct {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, features, id, isDefault, name, recurringCostCents, recurringFrequency, slug, updatedAt, usageUnit, usageUnitCostCents);
+    return Objects.hash(contactEmail, createdAt, description, features, id, isDefault, name, recurringCostCents, recurringFrequency, slug, updatedAt, usageUnit, usageUnitCostCents);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsBillingProduct {\n");
+    sb.append("    contactEmail: ").append(toIndentedString(contactEmail)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    features: ").append(toIndentedString(features)).append("\n");
@@ -418,6 +444,7 @@ public class ModelsBillingProduct {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("contact_email");
     openapiFields.add("created_at");
     openapiFields.add("description");
     openapiFields.add("features");
@@ -456,6 +483,9 @@ public class ModelsBillingProduct {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("contact_email") != null && !jsonObj.get("contact_email").isJsonNull()) && !jsonObj.get("contact_email").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `contact_email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contact_email").toString()));
+      }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
       }

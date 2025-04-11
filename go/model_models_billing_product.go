@@ -20,6 +20,7 @@ var _ MappedNullable = &ModelsBillingProduct{}
 
 // ModelsBillingProduct struct for ModelsBillingProduct
 type ModelsBillingProduct struct {
+	ContactEmail *string `json:"contact_email,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Features []string `json:"features,omitempty"`
@@ -49,6 +50,38 @@ func NewModelsBillingProduct() *ModelsBillingProduct {
 func NewModelsBillingProductWithDefaults() *ModelsBillingProduct {
 	this := ModelsBillingProduct{}
 	return &this
+}
+
+// GetContactEmail returns the ContactEmail field value if set, zero value otherwise.
+func (o *ModelsBillingProduct) GetContactEmail() string {
+	if o == nil || IsNil(o.ContactEmail) {
+		var ret string
+		return ret
+	}
+	return *o.ContactEmail
+}
+
+// GetContactEmailOk returns a tuple with the ContactEmail field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsBillingProduct) GetContactEmailOk() (*string, bool) {
+	if o == nil || IsNil(o.ContactEmail) {
+		return nil, false
+	}
+	return o.ContactEmail, true
+}
+
+// HasContactEmail returns a boolean if a field has been set.
+func (o *ModelsBillingProduct) HasContactEmail() bool {
+	if o != nil && !IsNil(o.ContactEmail) {
+		return true
+	}
+
+	return false
+}
+
+// SetContactEmail gets a reference to the given string and assigns it to the ContactEmail field.
+func (o *ModelsBillingProduct) SetContactEmail(v string) {
+	o.ContactEmail = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -445,6 +478,9 @@ func (o ModelsBillingProduct) MarshalJSON() ([]byte, error) {
 
 func (o ModelsBillingProduct) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ContactEmail) {
+		toSerialize["contact_email"] = o.ContactEmail
+	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
 	}

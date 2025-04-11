@@ -13,6 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class ModelsBillingProduct {
+    'contactEmail'?: string;
     'createdAt'?: string;
     'description'?: string;
     'features'?: Array<string>;
@@ -31,6 +32,12 @@ export class ModelsBillingProduct {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "contactEmail",
+            "baseName": "contact_email",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "createdAt",
             "baseName": "created_at",

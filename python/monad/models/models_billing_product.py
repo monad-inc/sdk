@@ -27,6 +27,7 @@ class ModelsBillingProduct(BaseModel):
     """
     ModelsBillingProduct
     """ # noqa: E501
+    contact_email: Optional[StrictStr] = None
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     features: Optional[List[StrictStr]] = None
@@ -39,7 +40,7 @@ class ModelsBillingProduct(BaseModel):
     updated_at: Optional[StrictStr] = None
     usage_unit: Optional[StrictStr] = None
     usage_unit_cost_cents: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "features", "id", "is_default", "name", "recurring_cost_cents", "recurring_frequency", "slug", "updated_at", "usage_unit", "usage_unit_cost_cents"]
+    __properties: ClassVar[List[str]] = ["contact_email", "created_at", "description", "features", "id", "is_default", "name", "recurring_cost_cents", "recurring_frequency", "slug", "updated_at", "usage_unit", "usage_unit_cost_cents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,6 +93,7 @@ class ModelsBillingProduct(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "contact_email": obj.get("contact_email"),
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
             "features": obj.get("features"),
