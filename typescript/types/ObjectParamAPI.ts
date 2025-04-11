@@ -20,6 +20,7 @@ import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecre
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig';
+import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
 import { BigquerySettingsConfig } from '../models/BigquerySettingsConfig';
 import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
@@ -69,6 +70,7 @@ import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
 import { FlattenFlatten } from '../models/FlattenFlatten';
+import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
@@ -153,7 +155,6 @@ import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
-import { ResourceQuantity } from '../models/ResourceQuantity';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
 import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
@@ -227,9 +228,9 @@ import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
 import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
 import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
 import { SnowflakeInputSecretsConfig } from '../models/SnowflakeInputSecretsConfig';
+import { SnowflakeInputSettingsConfig } from '../models/SnowflakeInputSettingsConfig';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
-import { SnowflakeSettingsConfig } from '../models/SnowflakeSettingsConfig';
 import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
 import { SnykOrganizationsSecretsConfig } from '../models/SnykOrganizationsSecretsConfig';
 import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
@@ -241,6 +242,7 @@ import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
 import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
 import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
 import { TailscaleUsersSecretsConfig } from '../models/TailscaleUsersSecretsConfig';
+import { TailscaleUsersSettingsConfig } from '../models/TailscaleUsersSettingsConfig';
 import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
 import { TenableAssetsSettingsConfig } from '../models/TenableAssetsSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
@@ -3482,6 +3484,73 @@ export class ObjectPipelinesApi {
      */
     public v2OrganizationIdPipelinesStatusesGet(param: PipelinesApiV2OrganizationIdPipelinesStatusesGetRequest, options?: ConfigurationOptions): Promise<Array<RoutesV2PipelineWithStatus>> {
         return this.api.v2OrganizationIdPipelinesStatusesGet(param.organizationId, param.limit, param.offset, param.start, param.end,  options).toPromise();
+    }
+
+}
+
+import { ObservableQuotasApi } from "./ObservableAPI";
+import { QuotasApiRequestFactory, QuotasApiResponseProcessor} from "../apis/QuotasApi";
+
+export interface QuotasApiV2QuotasGetRequest {
+    /**
+     * Billing Account ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof QuotasApiv2QuotasGet
+     */
+    billingAccountId?: string
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof QuotasApiv2QuotasGet
+     */
+    organizationId?: string
+    /**
+     * Limit
+     * Defaults to: undefined
+     * @type number
+     * @memberof QuotasApiv2QuotasGet
+     */
+    limit?: number
+    /**
+     * Offset
+     * Defaults to: undefined
+     * @type number
+     * @memberof QuotasApiv2QuotasGet
+     */
+    offset?: number
+    /**
+     * 
+     * @type any
+     * @memberof QuotasApiv2QuotasGet
+     */
+    body?: any
+}
+
+export class ObjectQuotasApi {
+    private api: ObservableQuotasApi
+
+    public constructor(configuration: Configuration, requestFactory?: QuotasApiRequestFactory, responseProcessor?: QuotasApiResponseProcessor) {
+        this.api = new ObservableQuotasApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * List quotas for a given billing account or organization id.
+     * List quotas
+     * @param param the request object
+     */
+    public v2QuotasGetWithHttpInfo(param: QuotasApiV2QuotasGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsQuotaList>> {
+        return this.api.v2QuotasGetWithHttpInfo(param.billingAccountId, param.organizationId, param.limit, param.offset, param.body,  options).toPromise();
+    }
+
+    /**
+     * List quotas for a given billing account or organization id.
+     * List quotas
+     * @param param the request object
+     */
+    public v2QuotasGet(param: QuotasApiV2QuotasGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsQuotaList> {
+        return this.api.v2QuotasGet(param.billingAccountId, param.organizationId, param.limit, param.offset, param.body,  options).toPromise();
     }
 
 }

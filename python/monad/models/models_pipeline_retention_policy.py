@@ -18,9 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.resource_quantity import ResourceQuantity
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +29,7 @@ class ModelsPipelineRetentionPolicy(BaseModel):
     """ # noqa: E501
     stream_age_limit: Optional[StrictInt] = None
     stream_replicas: Optional[StrictInt] = None
-    stream_size_limit: Optional[ResourceQuantity] = None
+    stream_size_limit: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["stream_age_limit", "stream_replicas", "stream_size_limit"]
 
     model_config = ConfigDict(
@@ -72,9 +71,6 @@ class ModelsPipelineRetentionPolicy(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of stream_size_limit
-        if self.stream_size_limit:
-            _dict['stream_size_limit'] = self.stream_size_limit.to_dict()
         return _dict
 
     @classmethod
@@ -89,7 +85,7 @@ class ModelsPipelineRetentionPolicy(BaseModel):
         _obj = cls.model_validate({
             "stream_age_limit": obj.get("stream_age_limit"),
             "stream_replicas": obj.get("stream_replicas"),
-            "stream_size_limit": ResourceQuantity.from_dict(obj["stream_size_limit"]) if obj.get("stream_size_limit") is not None else None
+            "stream_size_limit": obj.get("stream_size_limit")
         })
         return _obj
 

@@ -90,6 +90,8 @@ type APIClient struct {
 
 	PipelinesAPI *PipelinesAPIService
 
+	QuotasAPI *QuotasAPIService
+
 	RolesAPI *RolesAPIService
 
 	SandboxAPI *SandboxAPIService
@@ -137,6 +139,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.OutputsAPI = (*OutputsAPIService)(&c.common)
 	c.PermissionsAPI = (*PermissionsAPIService)(&c.common)
 	c.PipelinesAPI = (*PipelinesAPIService)(&c.common)
+	c.QuotasAPI = (*QuotasAPIService)(&c.common)
 	c.RolesAPI = (*RolesAPIService)(&c.common)
 	c.SandboxAPI = (*SandboxAPIService)(&c.common)
 	c.SecretsAPI = (*SecretsAPIService)(&c.common)

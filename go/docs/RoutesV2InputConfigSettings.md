@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Include** | Pointer to **string** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
 **Organization** | Pointer to **string** | Filter by organization name | [optional] 
 **Repository** | Pointer to **string** | Filter by repository (format: org-name/repo-name) | [optional] 
-**User** | Pointer to **string** | User specifies the username for authentication to Snowflake. | [optional] 
+**User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
 **Bucket** | Pointer to **string** | The name of the S3 bucket | [optional] 
 **Compression** | Pointer to **string** | Compression format of the S3 objects. | [optional] 
 **Format** | Pointer to **string** | File format of the S3 objects. | [optional] 
@@ -35,6 +35,11 @@ Name | Type | Description | Notes
 **ResourceUri** | Pointer to **string** | The URI of the resource | [optional] 
 **SubscriptionId** | Pointer to **string** | The subscription ID of the Azure subscription | [optional] 
 **TenantId** | Pointer to **string** | The tenant ID of the Azure AD application | [optional] 
+**Dataset** | Pointer to **string** | The BigQuery dataset ID containing the table | [optional] 
+**Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
+**Query** | Pointer to **string** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
+**Table** | Pointer to **string** | The name of the table in Snowflake to query data from. | [optional] 
+**TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
 **EventType** | Pointer to **[]string** | A list of event types to filter by. | [optional] 
 **FilterTerm** | Pointer to **string** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
 **AssetTypes** | Pointer to **[]string** | The type of assets to scan for.  If left empty, will scan all assets | [optional] 
@@ -83,10 +88,14 @@ Name | Type | Description | Notes
 **Severities** | Pointer to **[]string** | @Description Filter Issues according to Control severity | [optional] 
 **StackLayers** | Pointer to **[]string** | @Description Filter Issues from specific stack layers | [optional] 
 **TenantDataCenter** | Pointer to **string** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact | [optional] 
-**Query** | Pointer to **string** | The query to run against the Log Analytics workspace | [optional] 
 **LogType** | Pointer to **string** |  | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
+**Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
+**Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
+**Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
+**UserRoleOption** | Pointer to **string** | Allows for filtering the output by user role. | [optional] 
+**UserTypeOption** | Pointer to **string** | Allows for filtering the output by user type. | [optional] 
 **FullSync** | Pointer to **bool** | Boolean to control weather the input performs full syncs or incremental syncs | [optional] 
 **AssetStatus** | Pointer to **[]string** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
 **AssetType** | Pointer to **string** | Asset types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
@@ -886,6 +895,131 @@ SetTenantId sets TenantId field to given value.
 `func (o *RoutesV2InputConfigSettings) HasTenantId() bool`
 
 HasTenantId returns a boolean if a field has been set.
+
+### GetDataset
+
+`func (o *RoutesV2InputConfigSettings) GetDataset() string`
+
+GetDataset returns the Dataset field if non-nil, zero value otherwise.
+
+### GetDatasetOk
+
+`func (o *RoutesV2InputConfigSettings) GetDatasetOk() (*string, bool)`
+
+GetDatasetOk returns a tuple with the Dataset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDataset
+
+`func (o *RoutesV2InputConfigSettings) SetDataset(v string)`
+
+SetDataset sets Dataset field to given value.
+
+### HasDataset
+
+`func (o *RoutesV2InputConfigSettings) HasDataset() bool`
+
+HasDataset returns a boolean if a field has been set.
+
+### GetProject
+
+`func (o *RoutesV2InputConfigSettings) GetProject() string`
+
+GetProject returns the Project field if non-nil, zero value otherwise.
+
+### GetProjectOk
+
+`func (o *RoutesV2InputConfigSettings) GetProjectOk() (*string, bool)`
+
+GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProject
+
+`func (o *RoutesV2InputConfigSettings) SetProject(v string)`
+
+SetProject sets Project field to given value.
+
+### HasProject
+
+`func (o *RoutesV2InputConfigSettings) HasProject() bool`
+
+HasProject returns a boolean if a field has been set.
+
+### GetQuery
+
+`func (o *RoutesV2InputConfigSettings) GetQuery() string`
+
+GetQuery returns the Query field if non-nil, zero value otherwise.
+
+### GetQueryOk
+
+`func (o *RoutesV2InputConfigSettings) GetQueryOk() (*string, bool)`
+
+GetQueryOk returns a tuple with the Query field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuery
+
+`func (o *RoutesV2InputConfigSettings) SetQuery(v string)`
+
+SetQuery sets Query field to given value.
+
+### HasQuery
+
+`func (o *RoutesV2InputConfigSettings) HasQuery() bool`
+
+HasQuery returns a boolean if a field has been set.
+
+### GetTable
+
+`func (o *RoutesV2InputConfigSettings) GetTable() string`
+
+GetTable returns the Table field if non-nil, zero value otherwise.
+
+### GetTableOk
+
+`func (o *RoutesV2InputConfigSettings) GetTableOk() (*string, bool)`
+
+GetTableOk returns a tuple with the Table field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTable
+
+`func (o *RoutesV2InputConfigSettings) SetTable(v string)`
+
+SetTable sets Table field to given value.
+
+### HasTable
+
+`func (o *RoutesV2InputConfigSettings) HasTable() bool`
+
+HasTable returns a boolean if a field has been set.
+
+### GetTimestampColumn
+
+`func (o *RoutesV2InputConfigSettings) GetTimestampColumn() string`
+
+GetTimestampColumn returns the TimestampColumn field if non-nil, zero value otherwise.
+
+### GetTimestampColumnOk
+
+`func (o *RoutesV2InputConfigSettings) GetTimestampColumnOk() (*string, bool)`
+
+GetTimestampColumnOk returns a tuple with the TimestampColumn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimestampColumn
+
+`func (o *RoutesV2InputConfigSettings) SetTimestampColumn(v string)`
+
+SetTimestampColumn sets TimestampColumn field to given value.
+
+### HasTimestampColumn
+
+`func (o *RoutesV2InputConfigSettings) HasTimestampColumn() bool`
+
+HasTimestampColumn returns a boolean if a field has been set.
 
 ### GetEventType
 
@@ -2087,31 +2221,6 @@ SetTenantDataCenter sets TenantDataCenter field to given value.
 
 HasTenantDataCenter returns a boolean if a field has been set.
 
-### GetQuery
-
-`func (o *RoutesV2InputConfigSettings) GetQuery() string`
-
-GetQuery returns the Query field if non-nil, zero value otherwise.
-
-### GetQueryOk
-
-`func (o *RoutesV2InputConfigSettings) GetQueryOk() (*string, bool)`
-
-GetQueryOk returns a tuple with the Query field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetQuery
-
-`func (o *RoutesV2InputConfigSettings) SetQuery(v string)`
-
-SetQuery sets Query field to given value.
-
-### HasQuery
-
-`func (o *RoutesV2InputConfigSettings) HasQuery() bool`
-
-HasQuery returns a boolean if a field has been set.
-
 ### GetLogType
 
 `func (o *RoutesV2InputConfigSettings) GetLogType() string`
@@ -2162,6 +2271,31 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### GetDatabase
+
+`func (o *RoutesV2InputConfigSettings) GetDatabase() string`
+
+GetDatabase returns the Database field if non-nil, zero value otherwise.
+
+### GetDatabaseOk
+
+`func (o *RoutesV2InputConfigSettings) GetDatabaseOk() (*string, bool)`
+
+GetDatabaseOk returns a tuple with the Database field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDatabase
+
+`func (o *RoutesV2InputConfigSettings) SetDatabase(v string)`
+
+SetDatabase sets Database field to given value.
+
+### HasDatabase
+
+`func (o *RoutesV2InputConfigSettings) HasDatabase() bool`
+
+HasDatabase returns a boolean if a field has been set.
+
 ### GetRole
 
 `func (o *RoutesV2InputConfigSettings) GetRole() string`
@@ -2186,6 +2320,106 @@ SetRole sets Role field to given value.
 `func (o *RoutesV2InputConfigSettings) HasRole() bool`
 
 HasRole returns a boolean if a field has been set.
+
+### GetSchema
+
+`func (o *RoutesV2InputConfigSettings) GetSchema() string`
+
+GetSchema returns the Schema field if non-nil, zero value otherwise.
+
+### GetSchemaOk
+
+`func (o *RoutesV2InputConfigSettings) GetSchemaOk() (*string, bool)`
+
+GetSchemaOk returns a tuple with the Schema field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchema
+
+`func (o *RoutesV2InputConfigSettings) SetSchema(v string)`
+
+SetSchema sets Schema field to given value.
+
+### HasSchema
+
+`func (o *RoutesV2InputConfigSettings) HasSchema() bool`
+
+HasSchema returns a boolean if a field has been set.
+
+### GetWarehouse
+
+`func (o *RoutesV2InputConfigSettings) GetWarehouse() string`
+
+GetWarehouse returns the Warehouse field if non-nil, zero value otherwise.
+
+### GetWarehouseOk
+
+`func (o *RoutesV2InputConfigSettings) GetWarehouseOk() (*string, bool)`
+
+GetWarehouseOk returns a tuple with the Warehouse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWarehouse
+
+`func (o *RoutesV2InputConfigSettings) SetWarehouse(v string)`
+
+SetWarehouse sets Warehouse field to given value.
+
+### HasWarehouse
+
+`func (o *RoutesV2InputConfigSettings) HasWarehouse() bool`
+
+HasWarehouse returns a boolean if a field has been set.
+
+### GetUserRoleOption
+
+`func (o *RoutesV2InputConfigSettings) GetUserRoleOption() string`
+
+GetUserRoleOption returns the UserRoleOption field if non-nil, zero value otherwise.
+
+### GetUserRoleOptionOk
+
+`func (o *RoutesV2InputConfigSettings) GetUserRoleOptionOk() (*string, bool)`
+
+GetUserRoleOptionOk returns a tuple with the UserRoleOption field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserRoleOption
+
+`func (o *RoutesV2InputConfigSettings) SetUserRoleOption(v string)`
+
+SetUserRoleOption sets UserRoleOption field to given value.
+
+### HasUserRoleOption
+
+`func (o *RoutesV2InputConfigSettings) HasUserRoleOption() bool`
+
+HasUserRoleOption returns a boolean if a field has been set.
+
+### GetUserTypeOption
+
+`func (o *RoutesV2InputConfigSettings) GetUserTypeOption() string`
+
+GetUserTypeOption returns the UserTypeOption field if non-nil, zero value otherwise.
+
+### GetUserTypeOptionOk
+
+`func (o *RoutesV2InputConfigSettings) GetUserTypeOptionOk() (*string, bool)`
+
+GetUserTypeOptionOk returns a tuple with the UserTypeOption field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserTypeOption
+
+`func (o *RoutesV2InputConfigSettings) SetUserTypeOption(v string)`
+
+SetUserTypeOption sets UserTypeOption field to given value.
+
+### HasUserTypeOption
+
+`func (o *RoutesV2InputConfigSettings) HasUserTypeOption() bool`
+
+HasUserTypeOption returns a boolean if a field has been set.
 
 ### GetFullSync
 

@@ -26,6 +26,7 @@ type RoutesTransformOperationArguments struct {
 	DropRecordWhereValueEqDropRecordWhereValueEq *DropRecordWhereValueEqDropRecordWhereValueEq
 	DuplicateKeyValueToKeyDuplicateKeyValueToKey *DuplicateKeyValueToKeyDuplicateKeyValueToKey
 	FlattenFlatten *FlattenFlatten
+	FlattenallFlattenAll *FlattenallFlattenAll
 	JqJQ *JqJQ
 	MathMultiplyWithValueMathMultiplyWithValue *MathMultiplyWithValueMathMultiplyWithValue
 	MutateTypeMutateType *MutateTypeMutateType
@@ -83,6 +84,13 @@ func DuplicateKeyValueToKeyDuplicateKeyValueToKeyAsRoutesTransformOperationArgum
 func FlattenFlattenAsRoutesTransformOperationArguments(v *FlattenFlatten) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
 		FlattenFlatten: v,
+	}
+}
+
+// FlattenallFlattenAllAsRoutesTransformOperationArguments is a convenience function that returns FlattenallFlattenAll wrapped in RoutesTransformOperationArguments
+func FlattenallFlattenAllAsRoutesTransformOperationArguments(v *FlattenallFlattenAll) RoutesTransformOperationArguments {
+	return RoutesTransformOperationArguments{
+		FlattenallFlattenAll: v,
 	}
 }
 
@@ -273,6 +281,23 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		dst.FlattenFlatten = nil
 	}
 
+	// try to unmarshal data into FlattenallFlattenAll
+	err = newStrictDecoder(data).Decode(&dst.FlattenallFlattenAll)
+	if err == nil {
+		jsonFlattenallFlattenAll, _ := json.Marshal(dst.FlattenallFlattenAll)
+		if string(jsonFlattenallFlattenAll) == "{}" { // empty struct
+			dst.FlattenallFlattenAll = nil
+		} else {
+			if err = validator.Validate(dst.FlattenallFlattenAll); err != nil {
+				dst.FlattenallFlattenAll = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.FlattenallFlattenAll = nil
+	}
+
 	// try to unmarshal data into JqJQ
 	err = newStrictDecoder(data).Decode(&dst.JqJQ)
 	if err == nil {
@@ -435,6 +460,7 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		dst.DropRecordWhereValueEqDropRecordWhereValueEq = nil
 		dst.DuplicateKeyValueToKeyDuplicateKeyValueToKey = nil
 		dst.FlattenFlatten = nil
+		dst.FlattenallFlattenAll = nil
 		dst.JqJQ = nil
 		dst.MathMultiplyWithValueMathMultiplyWithValue = nil
 		dst.MutateTypeMutateType = nil
@@ -481,6 +507,10 @@ func (src RoutesTransformOperationArguments) MarshalJSON() ([]byte, error) {
 
 	if src.FlattenFlatten != nil {
 		return json.Marshal(&src.FlattenFlatten)
+	}
+
+	if src.FlattenallFlattenAll != nil {
+		return json.Marshal(&src.FlattenallFlattenAll)
 	}
 
 	if src.JqJQ != nil {
@@ -555,6 +585,10 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 		return obj.FlattenFlatten
 	}
 
+	if obj.FlattenallFlattenAll != nil {
+		return obj.FlattenallFlattenAll
+	}
+
 	if obj.JqJQ != nil {
 		return obj.JqJQ
 	}
@@ -623,6 +657,10 @@ func (obj RoutesTransformOperationArguments) GetActualInstanceValue() (interface
 
 	if obj.FlattenFlatten != nil {
 		return *obj.FlattenFlatten
+	}
+
+	if obj.FlattenallFlattenAll != nil {
+		return *obj.FlattenallFlattenAll
 	}
 
 	if obj.JqJQ != nil {

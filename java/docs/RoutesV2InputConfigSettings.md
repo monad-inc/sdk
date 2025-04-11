@@ -23,7 +23,7 @@
 |**include** | **String** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. |  [optional] |
 |**organization** | **String** | Filter by organization name |  [optional] |
 |**repository** | **String** | Filter by repository (format: org-name/repo-name) |  [optional] |
-|**user** | **String** | User specifies the username for authentication to Snowflake. |  [optional] |
+|**user** | **String** | The username of the Snowflake account used to establish the connection. |  [optional] |
 |**bucket** | **String** | The name of the S3 bucket |  [optional] |
 |**compression** | **String** | Compression format of the S3 objects. |  [optional] |
 |**format** | **String** | File format of the S3 objects. |  [optional] |
@@ -38,6 +38,11 @@
 |**resourceUri** | **String** | The URI of the resource |  [optional] |
 |**subscriptionId** | **String** | The subscription ID of the Azure subscription |  [optional] |
 |**tenantId** | **String** | The tenant ID of the Azure AD application |  [optional] |
+|**dataset** | **String** | The BigQuery dataset ID containing the table |  [optional] |
+|**project** | **String** | The GCP project ID containing the BigQuery dataset |  [optional] |
+|**query** | **String** | Optional custom query to use instead of table (must include timestamp_column) |  [optional] |
+|**table** | **String** | The name of the table in Snowflake to query data from. |  [optional] |
+|**timestampColumn** | **String** | The column containing timestamp values used for incremental loading |  [optional] |
 |**eventType** | **List&lt;String&gt;** | A list of event types to filter by. |  [optional] |
 |**filterTerm** | **String** | Limits the results to only users who&#39;s name or login start with the search term. |  [optional] |
 |**assetTypes** | **List&lt;String&gt;** | The type of assets to scan for.  If left empty, will scan all assets |  [optional] |
@@ -86,10 +91,14 @@
 |**severities** | [**List&lt;SeveritiesEnum&gt;**](#List&lt;SeveritiesEnum&gt;) | @Description Filter Issues according to Control severity |  [optional] |
 |**stackLayers** | [**List&lt;StackLayersEnum&gt;**](#List&lt;StackLayersEnum&gt;) | @Description Filter Issues from specific stack layers |  [optional] |
 |**tenantDataCenter** | **String** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact |  [optional] |
-|**query** | **String** | The query to run against the Log Analytics workspace |  [optional] |
 |**logType** | **String** |  |  [optional] |
 |**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  [optional] |
+|**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
 |**role** | **String** | The name of the Role your service account was granted which can access your resources. |  [optional] |
+|**schema** | **String** | The schema within the Snowflake database where the target table resides. |  [optional] |
+|**warehouse** | **String** | The Snowflake virtual warehouse to use for executing queries and processing data. |  [optional] |
+|**userRoleOption** | **String** | Allows for filtering the output by user role. |  [optional] |
+|**userTypeOption** | **String** | Allows for filtering the output by user type. |  [optional] |
 |**fullSync** | **Boolean** | Boolean to control weather the input performs full syncs or incremental syncs |  [optional] |
 |**assetStatus** | **List&lt;String&gt;** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. |  [optional] |
 |**assetType** | **String** | Asset types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. |  [optional] |

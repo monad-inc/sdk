@@ -20,6 +20,7 @@ import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecre
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig';
+import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
 import { BigquerySettingsConfig } from '../models/BigquerySettingsConfig';
 import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
@@ -69,6 +70,7 @@ import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
 import { FlattenFlatten } from '../models/FlattenFlatten';
+import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
@@ -153,7 +155,6 @@ import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
-import { ResourceQuantity } from '../models/ResourceQuantity';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
 import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
@@ -227,9 +228,9 @@ import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
 import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
 import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
 import { SnowflakeInputSecretsConfig } from '../models/SnowflakeInputSecretsConfig';
+import { SnowflakeInputSettingsConfig } from '../models/SnowflakeInputSettingsConfig';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
-import { SnowflakeSettingsConfig } from '../models/SnowflakeSettingsConfig';
 import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
 import { SnykOrganizationsSecretsConfig } from '../models/SnykOrganizationsSecretsConfig';
 import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
@@ -241,6 +242,7 @@ import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
 import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
 import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
 import { TailscaleUsersSecretsConfig } from '../models/TailscaleUsersSecretsConfig';
+import { TailscaleUsersSettingsConfig } from '../models/TailscaleUsersSettingsConfig';
 import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
 import { TenableAssetsSettingsConfig } from '../models/TenableAssetsSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
@@ -4441,6 +4443,77 @@ export class PromisePipelinesApi {
 	    }
 	}
         const result = this.api.v2OrganizationIdPipelinesStatusesGet(organizationId, limit, offset, start, end, observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableQuotasApi } from './ObservableAPI';
+
+import { QuotasApiRequestFactory, QuotasApiResponseProcessor} from "../apis/QuotasApi";
+export class PromiseQuotasApi {
+    private api: ObservableQuotasApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: QuotasApiRequestFactory,
+        responseProcessor?: QuotasApiResponseProcessor
+    ) {
+        this.api = new ObservableQuotasApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * List quotas for a given billing account or organization id.
+     * List quotas
+     * @param [billingAccountId] Billing Account ID
+     * @param [organizationId] Organization ID
+     * @param [limit] Limit
+     * @param [offset] Offset
+     * @param [body]
+     */
+    public v2QuotasGetWithHttpInfo(billingAccountId?: string, organizationId?: string, limit?: number, offset?: number, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsQuotaList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2QuotasGetWithHttpInfo(billingAccountId, organizationId, limit, offset, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List quotas for a given billing account or organization id.
+     * List quotas
+     * @param [billingAccountId] Billing Account ID
+     * @param [organizationId] Organization ID
+     * @param [limit] Limit
+     * @param [offset] Offset
+     * @param [body]
+     */
+    public v2QuotasGet(billingAccountId?: string, organizationId?: string, limit?: number, offset?: number, body?: any, _options?: PromiseConfigurationOptions): Promise<ModelsQuotaList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2QuotasGet(billingAccountId, organizationId, limit, offset, body, observableOptions);
         return result.toPromise();
     }
 

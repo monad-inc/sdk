@@ -17,6 +17,7 @@ import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereVa
 import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
 import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 import { FlattenFlatten } from '../models/FlattenFlatten';
+import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { JqJQ } from '../models/JqJQ';
 import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultiplyWithValueMathMultiplyWithValue';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
@@ -32,7 +33,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesTransformOperationArguments = AddAdd | CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue | DropKeyDropKey | DropKeyWhereValueEqDropKeyWhereValueEq | DropRecordWhereValueEqDropRecordWhereValueEq | DuplicateKeyValueToKeyDuplicateKeyValueToKey | FlattenFlatten | JqJQ | MathMultiplyWithValueMathMultiplyWithValue | MutateTypeMutateType | MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq | MutateValueWhereKeyEqMutateValueWhereKeyEq | RenameKeyRenameKey | RenameKeyWhereValueEqRenameKeyWhereValueEq | UtcTimestampTimestamp | { [key: string]: any; };
+export type RoutesTransformOperationArguments = AddAdd | CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue | DropKeyDropKey | DropKeyWhereValueEqDropKeyWhereValueEq | DropRecordWhereValueEqDropRecordWhereValueEq | DuplicateKeyValueToKeyDuplicateKeyValueToKey | FlattenFlatten | FlattenallFlattenAll | JqJQ | MathMultiplyWithValueMathMultiplyWithValue | MutateTypeMutateType | MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq | MutateValueWhereKeyEqMutateValueWhereKeyEq | RenameKeyRenameKey | RenameKeyWhereValueEqRenameKeyWhereValueEq | UtcTimestampTimestamp | { [key: string]: any; };
 
 /**
 * @type RoutesTransformOperationArgumentsClass
@@ -43,6 +44,7 @@ export class RoutesTransformOperationArgumentsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

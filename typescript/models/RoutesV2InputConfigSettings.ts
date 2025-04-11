@@ -17,6 +17,7 @@ import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
+import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
 import { CloudAssetInventorySettingsConfig } from '../models/CloudAssetInventorySettingsConfig';
@@ -49,9 +50,10 @@ import { SemgrepProjectDetailsSettingsConfig } from '../models/SemgrepProjectDet
 import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettingsConfig';
 import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
 import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
-import { SnowflakeSettingsConfig } from '../models/SnowflakeSettingsConfig';
+import { SnowflakeInputSettingsConfig } from '../models/SnowflakeInputSettingsConfig';
 import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
 import { SnykProjectsSettingsConfig } from '../models/SnykProjectsSettingsConfig';
+import { TailscaleUsersSettingsConfig } from '../models/TailscaleUsersSettingsConfig';
 import { TenableAssetsSettingsConfig } from '../models/TenableAssetsSettingsConfig';
 import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
@@ -65,7 +67,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesV2InputConfigSettings = ActorsInfoSettingsConfig | AdminActivitySettingsConfig | AdminLogsSettingsConfig | AuditLogsSettingsConfig | AuthLogsSettingsConfig | AwsS3SettingsConfig | AzureActivityLogsSettingsConfig | BoxEventsSettingsConfig | BoxUsersSettingsConfig | CloudAssetInventorySettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudtrailSettingsConfig | CrowdstrikeFdrSettingsConfig | DefenderForEndpointAlertsSettingsConfig | DemoCustomSettingsConfig | DemoSettingsConfig | DetectSummariesSettingsConfig | DeviceActivitySettingsConfig | DeviceDetailsSettingsConfig | DevicesSettingsConfig | DriveActivitySettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | EventsLogsSettingsConfig | FullScansSettingsConfig | IssuesSettingsConfig | LogAnalyticsQuerySettingsConfig | LoginActivitySettingsConfig | LoginSessionsSettingsConfig | MonadLogSettingsConfig | OauthActivitySettingsConfig | RolesInfoSettingsConfig | SemgrepDeploymentsSettingsConfig | SemgrepProjectDetailsSettingsConfig | SemgrepProjectsSettingsConfig | SlackUsersSettingsConfig | SlackgroupsSettingsConfig | SnowflakeSettingsConfig | SnykOrganizationsSettingsConfig | SnykProjectsSettingsConfig | TenableAssetsSettingsConfig | TenableVulnerabilitiesSettingsConfig | UsersInfoSettingsConfig | UsersSettingsConfig | VulnerabilitiesSettingsConfig | VulnerabilityFindingsSettingsConfig | any | { [key: string]: any; };
+export type RoutesV2InputConfigSettings = ActorsInfoSettingsConfig | AdminActivitySettingsConfig | AdminLogsSettingsConfig | AuditLogsSettingsConfig | AuthLogsSettingsConfig | AwsS3SettingsConfig | AzureActivityLogsSettingsConfig | BigqueryInputSettingsConfig | BoxEventsSettingsConfig | BoxUsersSettingsConfig | CloudAssetInventorySettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudtrailSettingsConfig | CrowdstrikeFdrSettingsConfig | DefenderForEndpointAlertsSettingsConfig | DemoCustomSettingsConfig | DemoSettingsConfig | DetectSummariesSettingsConfig | DeviceActivitySettingsConfig | DeviceDetailsSettingsConfig | DevicesSettingsConfig | DriveActivitySettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | EventsLogsSettingsConfig | FullScansSettingsConfig | IssuesSettingsConfig | LogAnalyticsQuerySettingsConfig | LoginActivitySettingsConfig | LoginSessionsSettingsConfig | MonadLogSettingsConfig | OauthActivitySettingsConfig | RolesInfoSettingsConfig | SemgrepDeploymentsSettingsConfig | SemgrepProjectDetailsSettingsConfig | SemgrepProjectsSettingsConfig | SlackUsersSettingsConfig | SlackgroupsSettingsConfig | SnowflakeInputSettingsConfig | SnykOrganizationsSettingsConfig | SnykProjectsSettingsConfig | TailscaleUsersSettingsConfig | TenableAssetsSettingsConfig | TenableVulnerabilitiesSettingsConfig | UsersInfoSettingsConfig | UsersSettingsConfig | VulnerabilitiesSettingsConfig | VulnerabilityFindingsSettingsConfig | any | { [key: string]: any; };
 
 /**
 * @type RoutesV2InputConfigSettingsClass
@@ -76,6 +78,8 @@ export class RoutesV2InputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
+
 
 
 

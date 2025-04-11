@@ -16,6 +16,7 @@ export * from '../models/AzureActivityLogsSecretsConfig';
 export * from '../models/AzureActivityLogsSettingsConfig';
 export * from '../models/BatchConfigBatchConfig';
 export * from '../models/BigqueryInputSecretsConfig';
+export * from '../models/BigqueryInputSettingsConfig';
 export * from '../models/BigquerySecretsConfig';
 export * from '../models/BigquerySettingsConfig';
 export * from '../models/BoxEventsSecretsConfig';
@@ -65,6 +66,7 @@ export * from '../models/EventSettingsConfig';
 export * from '../models/EventsLogsSecretsConfig';
 export * from '../models/EventsLogsSettingsConfig';
 export * from '../models/FlattenFlatten';
+export * from '../models/FlattenallFlattenAll';
 export * from '../models/FormatterFormatConfig';
 export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
@@ -149,7 +151,6 @@ export * from '../models/OutputsConnectorMeta';
 export * from '../models/ParquetParquetFormatter';
 export * from '../models/RenameKeyRenameKey';
 export * from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
-export * from '../models/ResourceQuantity';
 export * from '../models/ResponderErrorResponse';
 export * from '../models/RolesInfoSecretsConfig';
 export * from '../models/RolesInfoSettingsConfig';
@@ -223,9 +224,9 @@ export * from '../models/SlackUsersSettingsConfig';
 export * from '../models/SlackgroupsSecretsConfig';
 export * from '../models/SlackgroupsSettingsConfig';
 export * from '../models/SnowflakeInputSecretsConfig';
+export * from '../models/SnowflakeInputSettingsConfig';
 export * from '../models/SnowflakeOutputSecretsConfig';
 export * from '../models/SnowflakeOutputSettingsConfig';
-export * from '../models/SnowflakeSettingsConfig';
 export * from '../models/SnykIssuesSecretsConfig';
 export * from '../models/SnykOrganizationsSecretsConfig';
 export * from '../models/SnykOrganizationsSettingsConfig';
@@ -237,6 +238,7 @@ export * from '../models/SplunkSettingsConfig';
 export * from '../models/SumologicSecretsConfig';
 export * from '../models/SumologicSettingsConfig';
 export * from '../models/TailscaleUsersSecretsConfig';
+export * from '../models/TailscaleUsersSettingsConfig';
 export * from '../models/TenableAssetsSecretsConfig';
 export * from '../models/TenableAssetsSettingsConfig';
 export * from '../models/TenableVulnerabilitiesSecretsConfig';
@@ -270,6 +272,7 @@ import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecre
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig';
+import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
 import { BigquerySettingsConfig } from '../models/BigquerySettingsConfig';
 import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
@@ -319,6 +322,7 @@ import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
 import { FlattenFlatten } from '../models/FlattenFlatten';
+import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
@@ -403,7 +407,6 @@ import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
-import { ResourceQuantity, ResourceQuantityFormatEnum   } from '../models/ResourceQuantity';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
 import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
@@ -477,9 +480,9 @@ import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
 import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
 import { SlackgroupsSettingsConfig } from '../models/SlackgroupsSettingsConfig';
 import { SnowflakeInputSecretsConfig } from '../models/SnowflakeInputSecretsConfig';
+import { SnowflakeInputSettingsConfig } from '../models/SnowflakeInputSettingsConfig';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
-import { SnowflakeSettingsConfig } from '../models/SnowflakeSettingsConfig';
 import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
 import { SnykOrganizationsSecretsConfig } from '../models/SnykOrganizationsSecretsConfig';
 import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
@@ -491,6 +494,7 @@ import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
 import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
 import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
 import { TailscaleUsersSecretsConfig } from '../models/TailscaleUsersSecretsConfig';
+import { TailscaleUsersSettingsConfig } from '../models/TailscaleUsersSettingsConfig';
 import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
 import { TenableAssetsSettingsConfig } from '../models/TenableAssetsSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
@@ -524,7 +528,6 @@ let enumsMap: Set<string> = new Set<string>([
     "IssuesSettingsConfigSeveritiesEnum",
     "IssuesSettingsConfigStackLayersEnum",
     "IssuesSettingsConfigStatusEnum",
-    "ResourceQuantityFormatEnum",
     "RoutesV2InputConfigSettingsIssueTypesEnum",
     "RoutesV2InputConfigSettingsResolutionReasonsEnum",
     "RoutesV2InputConfigSettingsSeveritiesEnum",
@@ -550,6 +553,7 @@ let typeMap: {[index: string]: any} = {
     "AzureActivityLogsSettingsConfig": AzureActivityLogsSettingsConfig,
     "BatchConfigBatchConfig": BatchConfigBatchConfig,
     "BigqueryInputSecretsConfig": BigqueryInputSecretsConfig,
+    "BigqueryInputSettingsConfig": BigqueryInputSettingsConfig,
     "BigquerySecretsConfig": BigquerySecretsConfig,
     "BigquerySettingsConfig": BigquerySettingsConfig,
     "BoxEventsSecretsConfig": BoxEventsSecretsConfig,
@@ -599,6 +603,7 @@ let typeMap: {[index: string]: any} = {
     "EventsLogsSecretsConfig": EventsLogsSecretsConfig,
     "EventsLogsSettingsConfig": EventsLogsSettingsConfig,
     "FlattenFlatten": FlattenFlatten,
+    "FlattenallFlattenAll": FlattenallFlattenAll,
     "FormatterFormatConfig": FormatterFormatConfig,
     "FullScansSecretsConfig": FullScansSecretsConfig,
     "FullScansSettingsConfig": FullScansSettingsConfig,
@@ -683,7 +688,6 @@ let typeMap: {[index: string]: any} = {
     "ParquetParquetFormatter": ParquetParquetFormatter,
     "RenameKeyRenameKey": RenameKeyRenameKey,
     "RenameKeyWhereValueEqRenameKeyWhereValueEq": RenameKeyWhereValueEqRenameKeyWhereValueEq,
-    "ResourceQuantity": ResourceQuantity,
     "ResponderErrorResponse": ResponderErrorResponse,
     "RolesInfoSecretsConfig": RolesInfoSecretsConfig,
     "RolesInfoSettingsConfig": RolesInfoSettingsConfig,
@@ -757,9 +761,9 @@ let typeMap: {[index: string]: any} = {
     "SlackgroupsSecretsConfig": SlackgroupsSecretsConfig,
     "SlackgroupsSettingsConfig": SlackgroupsSettingsConfig,
     "SnowflakeInputSecretsConfig": SnowflakeInputSecretsConfig,
+    "SnowflakeInputSettingsConfig": SnowflakeInputSettingsConfig,
     "SnowflakeOutputSecretsConfig": SnowflakeOutputSecretsConfig,
     "SnowflakeOutputSettingsConfig": SnowflakeOutputSettingsConfig,
-    "SnowflakeSettingsConfig": SnowflakeSettingsConfig,
     "SnykIssuesSecretsConfig": SnykIssuesSecretsConfig,
     "SnykOrganizationsSecretsConfig": SnykOrganizationsSecretsConfig,
     "SnykOrganizationsSettingsConfig": SnykOrganizationsSettingsConfig,
@@ -771,6 +775,7 @@ let typeMap: {[index: string]: any} = {
     "SumologicSecretsConfig": SumologicSecretsConfig,
     "SumologicSettingsConfig": SumologicSettingsConfig,
     "TailscaleUsersSecretsConfig": TailscaleUsersSecretsConfig,
+    "TailscaleUsersSettingsConfig": TailscaleUsersSettingsConfig,
     "TenableAssetsSecretsConfig": TenableAssetsSecretsConfig,
     "TenableAssetsSettingsConfig": TenableAssetsSettingsConfig,
     "TenableVulnerabilitiesSecretsConfig": TenableVulnerabilitiesSecretsConfig,

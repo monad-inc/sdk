@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ResourceQuantity;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineRetentionPolicy
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-11T13:39:02.890405455Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-11T14:06:13.676175709Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsPipelineRetentionPolicy {
   public static final String SERIALIZED_NAME_STREAM_AGE_LIMIT = "stream_age_limit";
   @SerializedName(SERIALIZED_NAME_STREAM_AGE_LIMIT)
@@ -64,7 +63,7 @@ public class ModelsPipelineRetentionPolicy {
   public static final String SERIALIZED_NAME_STREAM_SIZE_LIMIT = "stream_size_limit";
   @SerializedName(SERIALIZED_NAME_STREAM_SIZE_LIMIT)
   @javax.annotation.Nullable
-  private ResourceQuantity streamSizeLimit;
+  private String streamSizeLimit;
 
   public ModelsPipelineRetentionPolicy() {
   }
@@ -107,7 +106,7 @@ public class ModelsPipelineRetentionPolicy {
   }
 
 
-  public ModelsPipelineRetentionPolicy streamSizeLimit(@javax.annotation.Nullable ResourceQuantity streamSizeLimit) {
+  public ModelsPipelineRetentionPolicy streamSizeLimit(@javax.annotation.Nullable String streamSizeLimit) {
     this.streamSizeLimit = streamSizeLimit;
     return this;
   }
@@ -117,11 +116,11 @@ public class ModelsPipelineRetentionPolicy {
    * @return streamSizeLimit
    */
   @javax.annotation.Nullable
-  public ResourceQuantity getStreamSizeLimit() {
+  public String getStreamSizeLimit() {
     return streamSizeLimit;
   }
 
-  public void setStreamSizeLimit(@javax.annotation.Nullable ResourceQuantity streamSizeLimit) {
+  public void setStreamSizeLimit(@javax.annotation.Nullable String streamSizeLimit) {
     this.streamSizeLimit = streamSizeLimit;
   }
 
@@ -204,9 +203,8 @@ public class ModelsPipelineRetentionPolicy {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `stream_size_limit`
-      if (jsonObj.get("stream_size_limit") != null && !jsonObj.get("stream_size_limit").isJsonNull()) {
-        ResourceQuantity.validateJsonElement(jsonObj.get("stream_size_limit"));
+      if ((jsonObj.get("stream_size_limit") != null && !jsonObj.get("stream_size_limit").isJsonNull()) && !jsonObj.get("stream_size_limit").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `stream_size_limit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stream_size_limit").toString()));
       }
   }
 

@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-04-11T13:39:02.890405455Z[Etc/UTC]
+  - Build date: 2025-04-11T14:06:13.676175709Z[Etc/UTC]
   - Generator version: 7.12.0
 
 This is the monad API
@@ -197,6 +197,7 @@ Class | Method | HTTP request | Description
 *PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
 *PipelinesApi* | [**v2OrganizationIdPipelinesPost**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPost) | **POST** /v2/{organization_id}/pipelines | Create pipeline
 *PipelinesApi* | [**v2OrganizationIdPipelinesStatusesGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesStatusesGet) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
+*QuotasApi* | [**v2QuotasGet**](docs/QuotasApi.md#v2QuotasGet) | **GET** /v2/quotas | List quotas
 *RolesApi* | [**v2OrganizationIdRolesGet**](docs/RolesApi.md#v2OrganizationIdRolesGet) | **GET** /v2/{organization_id}/roles | List roles
 *RolesApi* | [**v2OrganizationIdRolesPost**](docs/RolesApi.md#v2OrganizationIdRolesPost) | **POST** /v2/{organization_id}/roles | Create role
 *RolesApi* | [**v2OrganizationIdRolesRoleIdDelete**](docs/RolesApi.md#v2OrganizationIdRolesRoleIdDelete) | **DELETE** /v2/{organization_id}/roles/{role_id} | Delete role
@@ -236,6 +237,7 @@ Class | Method | HTTP request | Description
  - [AzureActivityLogsSettingsConfig](docs/AzureActivityLogsSettingsConfig.md)
  - [BatchConfigBatchConfig](docs/BatchConfigBatchConfig.md)
  - [BigqueryInputSecretsConfig](docs/BigqueryInputSecretsConfig.md)
+ - [BigqueryInputSettingsConfig](docs/BigqueryInputSettingsConfig.md)
  - [BigquerySecretsConfig](docs/BigquerySecretsConfig.md)
  - [BigquerySettingsConfig](docs/BigquerySettingsConfig.md)
  - [BoxEventsSecretsConfig](docs/BoxEventsSecretsConfig.md)
@@ -285,6 +287,7 @@ Class | Method | HTTP request | Description
  - [EventsLogsSecretsConfig](docs/EventsLogsSecretsConfig.md)
  - [EventsLogsSettingsConfig](docs/EventsLogsSettingsConfig.md)
  - [FlattenFlatten](docs/FlattenFlatten.md)
+ - [FlattenallFlattenAll](docs/FlattenallFlattenAll.md)
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
@@ -369,7 +372,6 @@ Class | Method | HTTP request | Description
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
  - [RenameKeyRenameKey](docs/RenameKeyRenameKey.md)
  - [RenameKeyWhereValueEqRenameKeyWhereValueEq](docs/RenameKeyWhereValueEqRenameKeyWhereValueEq.md)
- - [ResourceQuantity](docs/ResourceQuantity.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
  - [RolesInfoSecretsConfig](docs/RolesInfoSecretsConfig.md)
  - [RolesInfoSettingsConfig](docs/RolesInfoSettingsConfig.md)
@@ -443,9 +445,9 @@ Class | Method | HTTP request | Description
  - [SlackgroupsSecretsConfig](docs/SlackgroupsSecretsConfig.md)
  - [SlackgroupsSettingsConfig](docs/SlackgroupsSettingsConfig.md)
  - [SnowflakeInputSecretsConfig](docs/SnowflakeInputSecretsConfig.md)
+ - [SnowflakeInputSettingsConfig](docs/SnowflakeInputSettingsConfig.md)
  - [SnowflakeOutputSecretsConfig](docs/SnowflakeOutputSecretsConfig.md)
  - [SnowflakeOutputSettingsConfig](docs/SnowflakeOutputSettingsConfig.md)
- - [SnowflakeSettingsConfig](docs/SnowflakeSettingsConfig.md)
  - [SnykIssuesSecretsConfig](docs/SnykIssuesSecretsConfig.md)
  - [SnykOrganizationsSecretsConfig](docs/SnykOrganizationsSecretsConfig.md)
  - [SnykOrganizationsSettingsConfig](docs/SnykOrganizationsSettingsConfig.md)
@@ -457,6 +459,7 @@ Class | Method | HTTP request | Description
  - [SumologicSecretsConfig](docs/SumologicSecretsConfig.md)
  - [SumologicSettingsConfig](docs/SumologicSettingsConfig.md)
  - [TailscaleUsersSecretsConfig](docs/TailscaleUsersSecretsConfig.md)
+ - [TailscaleUsersSettingsConfig](docs/TailscaleUsersSettingsConfig.md)
  - [TenableAssetsSecretsConfig](docs/TenableAssetsSecretsConfig.md)
  - [TenableAssetsSettingsConfig](docs/TenableAssetsSettingsConfig.md)
  - [TenableVulnerabilitiesSecretsConfig](docs/TenableVulnerabilitiesSecretsConfig.md)
