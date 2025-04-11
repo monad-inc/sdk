@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Entra ID settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-11T12:36:17.996127512Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-11T13:25:06.461885679Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class EntraIdSettingsConfig {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
