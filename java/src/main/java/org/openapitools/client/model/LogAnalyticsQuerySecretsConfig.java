@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Log Analytics Query secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-14T17:13:03.328160623Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-14T21:03:41.601203769Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class LogAnalyticsQuerySecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)

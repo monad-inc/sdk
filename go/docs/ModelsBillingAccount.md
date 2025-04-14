@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **CurrentBillingCycleEnd** | Pointer to **string** |  | [optional] 
 **CurrentBillingCycleStart** | Pointer to **string** |  | [optional] 
+**DeletedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **HasPaymentMethod** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -139,6 +140,31 @@ SetCurrentBillingCycleStart sets CurrentBillingCycleStart field to given value.
 `func (o *ModelsBillingAccount) HasCurrentBillingCycleStart() bool`
 
 HasCurrentBillingCycleStart returns a boolean if a field has been set.
+
+### GetDeletedAt
+
+`func (o *ModelsBillingAccount) GetDeletedAt() string`
+
+GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
+
+### GetDeletedAtOk
+
+`func (o *ModelsBillingAccount) GetDeletedAtOk() (*string, bool)`
+
+GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeletedAt
+
+`func (o *ModelsBillingAccount) SetDeletedAt(v string)`
+
+SetDeletedAt sets DeletedAt field to given value.
+
+### HasDeletedAt
+
+`func (o *ModelsBillingAccount) HasDeletedAt() bool`
+
+HasDeletedAt returns a boolean if a field has been set.
 
 ### GetDescription
 

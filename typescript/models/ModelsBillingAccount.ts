@@ -18,6 +18,7 @@ export class ModelsBillingAccount {
     'createdAt'?: string;
     'currentBillingCycleEnd'?: string;
     'currentBillingCycleStart'?: string;
+    'deletedAt'?: string;
     'description'?: string;
     'hasPaymentMethod'?: boolean;
     'id'?: string;
@@ -57,6 +58,12 @@ export class ModelsBillingAccount {
         {
             "name": "currentBillingCycleStart",
             "baseName": "current_billing_cycle_start",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "deletedAt",
+            "baseName": "deleted_at",
             "type": "string",
             "format": ""
         },

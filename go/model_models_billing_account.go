@@ -24,6 +24,7 @@ type ModelsBillingAccount struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	CurrentBillingCycleEnd *string `json:"current_billing_cycle_end,omitempty"`
 	CurrentBillingCycleStart *string `json:"current_billing_cycle_start,omitempty"`
+	DeletedAt *string `json:"deleted_at,omitempty"`
 	Description *string `json:"description,omitempty"`
 	HasPaymentMethod *bool `json:"has_payment_method,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -181,6 +182,38 @@ func (o *ModelsBillingAccount) HasCurrentBillingCycleStart() bool {
 // SetCurrentBillingCycleStart gets a reference to the given string and assigns it to the CurrentBillingCycleStart field.
 func (o *ModelsBillingAccount) SetCurrentBillingCycleStart(v string) {
 	o.CurrentBillingCycleStart = &v
+}
+
+// GetDeletedAt returns the DeletedAt field value if set, zero value otherwise.
+func (o *ModelsBillingAccount) GetDeletedAt() string {
+	if o == nil || IsNil(o.DeletedAt) {
+		var ret string
+		return ret
+	}
+	return *o.DeletedAt
+}
+
+// GetDeletedAtOk returns a tuple with the DeletedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsBillingAccount) GetDeletedAtOk() (*string, bool) {
+	if o == nil || IsNil(o.DeletedAt) {
+		return nil, false
+	}
+	return o.DeletedAt, true
+}
+
+// HasDeletedAt returns a boolean if a field has been set.
+func (o *ModelsBillingAccount) HasDeletedAt() bool {
+	if o != nil && !IsNil(o.DeletedAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeletedAt gets a reference to the given string and assigns it to the DeletedAt field.
+func (o *ModelsBillingAccount) SetDeletedAt(v string) {
+	o.DeletedAt = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -588,6 +621,9 @@ func (o ModelsBillingAccount) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CurrentBillingCycleStart) {
 		toSerialize["current_billing_cycle_start"] = o.CurrentBillingCycleStart
+	}
+	if !IsNil(o.DeletedAt) {
+		toSerialize["deleted_at"] = o.DeletedAt
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

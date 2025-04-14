@@ -11,6 +11,7 @@
 |**createdAt** | **String** |  |  [optional] |
 |**currentBillingCycleEnd** | **String** |  |  [optional] |
 |**currentBillingCycleStart** | **String** |  |  [optional] |
+|**deletedAt** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**hasPaymentMethod** | **Boolean** |  |  [optional] |
 |**id** | **String** |  |  [optional] |

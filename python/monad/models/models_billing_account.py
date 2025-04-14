@@ -32,6 +32,7 @@ class ModelsBillingAccount(BaseModel):
     created_at: Optional[StrictStr] = None
     current_billing_cycle_end: Optional[StrictStr] = None
     current_billing_cycle_start: Optional[StrictStr] = None
+    deleted_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     has_payment_method: Optional[StrictBool] = None
     id: Optional[StrictStr] = None
@@ -44,7 +45,7 @@ class ModelsBillingAccount(BaseModel):
     status: Optional[StrictStr] = None
     suspend_on: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["billing_email", "created_at", "current_billing_cycle_end", "current_billing_cycle_start", "description", "has_payment_method", "id", "name", "next_product", "next_product_id", "product", "product_change_after", "product_id", "status", "suspend_on", "updated_at"]
+    __properties: ClassVar[List[str]] = ["billing_email", "created_at", "current_billing_cycle_end", "current_billing_cycle_start", "deleted_at", "description", "has_payment_method", "id", "name", "next_product", "next_product_id", "product", "product_change_after", "product_id", "status", "suspend_on", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,6 +108,7 @@ class ModelsBillingAccount(BaseModel):
             "created_at": obj.get("created_at"),
             "current_billing_cycle_end": obj.get("current_billing_cycle_end"),
             "current_billing_cycle_start": obj.get("current_billing_cycle_start"),
+            "deleted_at": obj.get("deleted_at"),
             "description": obj.get("description"),
             "has_payment_method": obj.get("has_payment_method"),
             "id": obj.get("id"),

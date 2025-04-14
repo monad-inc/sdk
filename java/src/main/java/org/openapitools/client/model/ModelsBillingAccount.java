@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingAccount
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-14T17:13:03.328160623Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-14T21:03:41.601203769Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsBillingAccount {
   public static final String SERIALIZED_NAME_BILLING_EMAIL = "billing_email";
   @SerializedName(SERIALIZED_NAME_BILLING_EMAIL)
@@ -70,6 +70,11 @@ public class ModelsBillingAccount {
   @SerializedName(SERIALIZED_NAME_CURRENT_BILLING_CYCLE_START)
   @javax.annotation.Nullable
   private String currentBillingCycleStart;
+
+  public static final String SERIALIZED_NAME_DELETED_AT = "deleted_at";
+  @SerializedName(SERIALIZED_NAME_DELETED_AT)
+  @javax.annotation.Nullable
+  private String deletedAt;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -207,6 +212,25 @@ public class ModelsBillingAccount {
 
   public void setCurrentBillingCycleStart(@javax.annotation.Nullable String currentBillingCycleStart) {
     this.currentBillingCycleStart = currentBillingCycleStart;
+  }
+
+
+  public ModelsBillingAccount deletedAt(@javax.annotation.Nullable String deletedAt) {
+    this.deletedAt = deletedAt;
+    return this;
+  }
+
+  /**
+   * Get deletedAt
+   * @return deletedAt
+   */
+  @javax.annotation.Nullable
+  public String getDeletedAt() {
+    return deletedAt;
+  }
+
+  public void setDeletedAt(@javax.annotation.Nullable String deletedAt) {
+    this.deletedAt = deletedAt;
   }
 
 
@@ -452,6 +476,7 @@ public class ModelsBillingAccount {
         Objects.equals(this.createdAt, modelsBillingAccount.createdAt) &&
         Objects.equals(this.currentBillingCycleEnd, modelsBillingAccount.currentBillingCycleEnd) &&
         Objects.equals(this.currentBillingCycleStart, modelsBillingAccount.currentBillingCycleStart) &&
+        Objects.equals(this.deletedAt, modelsBillingAccount.deletedAt) &&
         Objects.equals(this.description, modelsBillingAccount.description) &&
         Objects.equals(this.hasPaymentMethod, modelsBillingAccount.hasPaymentMethod) &&
         Objects.equals(this.id, modelsBillingAccount.id) &&
@@ -468,7 +493,7 @@ public class ModelsBillingAccount {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingEmail, createdAt, currentBillingCycleEnd, currentBillingCycleStart, description, hasPaymentMethod, id, name, nextProduct, nextProductId, product, productChangeAfter, productId, status, suspendOn, updatedAt);
+    return Objects.hash(billingEmail, createdAt, currentBillingCycleEnd, currentBillingCycleStart, deletedAt, description, hasPaymentMethod, id, name, nextProduct, nextProductId, product, productChangeAfter, productId, status, suspendOn, updatedAt);
   }
 
   @Override
@@ -479,6 +504,7 @@ public class ModelsBillingAccount {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    currentBillingCycleEnd: ").append(toIndentedString(currentBillingCycleEnd)).append("\n");
     sb.append("    currentBillingCycleStart: ").append(toIndentedString(currentBillingCycleStart)).append("\n");
+    sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    hasPaymentMethod: ").append(toIndentedString(hasPaymentMethod)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -517,6 +543,7 @@ public class ModelsBillingAccount {
     openapiFields.add("created_at");
     openapiFields.add("current_billing_cycle_end");
     openapiFields.add("current_billing_cycle_start");
+    openapiFields.add("deleted_at");
     openapiFields.add("description");
     openapiFields.add("has_payment_method");
     openapiFields.add("id");
@@ -566,6 +593,9 @@ public class ModelsBillingAccount {
       }
       if ((jsonObj.get("current_billing_cycle_start") != null && !jsonObj.get("current_billing_cycle_start").isJsonNull()) && !jsonObj.get("current_billing_cycle_start").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `current_billing_cycle_start` to be a primitive type in the JSON string but got `%s`", jsonObj.get("current_billing_cycle_start").toString()));
+      }
+      if ((jsonObj.get("deleted_at") != null && !jsonObj.get("deleted_at").isJsonNull()) && !jsonObj.get("deleted_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `deleted_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deleted_at").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
