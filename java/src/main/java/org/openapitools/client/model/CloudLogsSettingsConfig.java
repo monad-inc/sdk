@@ -50,8 +50,13 @@ import org.openapitools.client.JSON;
 /**
  * Google Cloud Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-14T14:00:26.452065269Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-14T14:18:59.076780162Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class CloudLogsSettingsConfig {
+  public static final String SERIALIZED_NAME_ENABLE_PROTO_PAYLOAD_PARSING = "enable_proto_payload_parsing";
+  @SerializedName(SERIALIZED_NAME_ENABLE_PROTO_PAYLOAD_PARSING)
+  @javax.annotation.Nullable
+  private Boolean enableProtoPayloadParsing;
+
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
   @javax.annotation.Nullable
@@ -64,6 +69,25 @@ public class CloudLogsSettingsConfig {
 
   public CloudLogsSettingsConfig() {
   }
+
+  public CloudLogsSettingsConfig enableProtoPayloadParsing(@javax.annotation.Nullable Boolean enableProtoPayloadParsing) {
+    this.enableProtoPayloadParsing = enableProtoPayloadParsing;
+    return this;
+  }
+
+  /**
+   * Enables automatic parsing of embedded protocol buffer payloads within the input.
+   * @return enableProtoPayloadParsing
+   */
+  @javax.annotation.Nullable
+  public Boolean getEnableProtoPayloadParsing() {
+    return enableProtoPayloadParsing;
+  }
+
+  public void setEnableProtoPayloadParsing(@javax.annotation.Nullable Boolean enableProtoPayloadParsing) {
+    this.enableProtoPayloadParsing = enableProtoPayloadParsing;
+  }
+
 
   public CloudLogsSettingsConfig filter(@javax.annotation.Nullable String filter) {
     this.filter = filter;
@@ -121,19 +145,21 @@ public class CloudLogsSettingsConfig {
       return false;
     }
     CloudLogsSettingsConfig cloudLogsSettingsConfig = (CloudLogsSettingsConfig) o;
-    return Objects.equals(this.filter, cloudLogsSettingsConfig.filter) &&
+    return Objects.equals(this.enableProtoPayloadParsing, cloudLogsSettingsConfig.enableProtoPayloadParsing) &&
+        Objects.equals(this.filter, cloudLogsSettingsConfig.filter) &&
         Objects.equals(this.resourceNames, cloudLogsSettingsConfig.resourceNames);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filter, resourceNames);
+    return Objects.hash(enableProtoPayloadParsing, filter, resourceNames);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CloudLogsSettingsConfig {\n");
+    sb.append("    enableProtoPayloadParsing: ").append(toIndentedString(enableProtoPayloadParsing)).append("\n");
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    resourceNames: ").append(toIndentedString(resourceNames)).append("\n");
     sb.append("}");
@@ -158,6 +184,7 @@ public class CloudLogsSettingsConfig {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("enable_proto_payload_parsing");
     openapiFields.add("filter");
     openapiFields.add("resource_names");
 

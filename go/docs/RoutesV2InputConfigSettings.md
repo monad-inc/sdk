@@ -48,6 +48,7 @@ Name | Type | Description | Notes
 **Result** | Pointer to **[]string** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **[]string** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. | [optional] 
+**EnableProtoPayloadParsing** | Pointer to **bool** | Enables automatic parsing of embedded protocol buffer payloads within the input. | [optional] 
 **Filter** | Pointer to **string** | The filter to apply to the logs. | [optional] 
 **CloudPlatform** | Pointer to **[]string** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **EntityType** | Pointer to **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
@@ -1220,6 +1221,31 @@ SetStatus sets Status field to given value.
 `func (o *RoutesV2InputConfigSettings) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetEnableProtoPayloadParsing
+
+`func (o *RoutesV2InputConfigSettings) GetEnableProtoPayloadParsing() bool`
+
+GetEnableProtoPayloadParsing returns the EnableProtoPayloadParsing field if non-nil, zero value otherwise.
+
+### GetEnableProtoPayloadParsingOk
+
+`func (o *RoutesV2InputConfigSettings) GetEnableProtoPayloadParsingOk() (*bool, bool)`
+
+GetEnableProtoPayloadParsingOk returns a tuple with the EnableProtoPayloadParsing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableProtoPayloadParsing
+
+`func (o *RoutesV2InputConfigSettings) SetEnableProtoPayloadParsing(v bool)`
+
+SetEnableProtoPayloadParsing sets EnableProtoPayloadParsing field to given value.
+
+### HasEnableProtoPayloadParsing
+
+`func (o *RoutesV2InputConfigSettings) HasEnableProtoPayloadParsing() bool`
+
+HasEnableProtoPayloadParsing returns a boolean if a field has been set.
 
 ### GetFilter
 

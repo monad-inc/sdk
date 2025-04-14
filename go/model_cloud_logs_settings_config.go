@@ -20,6 +20,8 @@ var _ MappedNullable = &CloudLogsSettingsConfig{}
 
 // CloudLogsSettingsConfig Google Cloud Logs settings
 type CloudLogsSettingsConfig struct {
+	// Enables automatic parsing of embedded protocol buffer payloads within the input.
+	EnableProtoPayloadParsing *bool `json:"enable_proto_payload_parsing,omitempty"`
 	// The filter to apply to the logs.
 	Filter *string `json:"filter,omitempty"`
 	// The resources to query logs from.
@@ -41,6 +43,38 @@ func NewCloudLogsSettingsConfig() *CloudLogsSettingsConfig {
 func NewCloudLogsSettingsConfigWithDefaults() *CloudLogsSettingsConfig {
 	this := CloudLogsSettingsConfig{}
 	return &this
+}
+
+// GetEnableProtoPayloadParsing returns the EnableProtoPayloadParsing field value if set, zero value otherwise.
+func (o *CloudLogsSettingsConfig) GetEnableProtoPayloadParsing() bool {
+	if o == nil || IsNil(o.EnableProtoPayloadParsing) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableProtoPayloadParsing
+}
+
+// GetEnableProtoPayloadParsingOk returns a tuple with the EnableProtoPayloadParsing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudLogsSettingsConfig) GetEnableProtoPayloadParsingOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableProtoPayloadParsing) {
+		return nil, false
+	}
+	return o.EnableProtoPayloadParsing, true
+}
+
+// HasEnableProtoPayloadParsing returns a boolean if a field has been set.
+func (o *CloudLogsSettingsConfig) HasEnableProtoPayloadParsing() bool {
+	if o != nil && !IsNil(o.EnableProtoPayloadParsing) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableProtoPayloadParsing gets a reference to the given bool and assigns it to the EnableProtoPayloadParsing field.
+func (o *CloudLogsSettingsConfig) SetEnableProtoPayloadParsing(v bool) {
+	o.EnableProtoPayloadParsing = &v
 }
 
 // GetFilter returns the Filter field value if set, zero value otherwise.
@@ -117,6 +151,9 @@ func (o CloudLogsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o CloudLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.EnableProtoPayloadParsing) {
+		toSerialize["enable_proto_payload_parsing"] = o.EnableProtoPayloadParsing
+	}
 	if !IsNil(o.Filter) {
 		toSerialize["filter"] = o.Filter
 	}

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,9 +27,10 @@ class CloudLogsSettingsConfig(BaseModel):
     """
     Google Cloud Logs settings
     """ # noqa: E501
+    enable_proto_payload_parsing: Optional[StrictBool] = Field(default=None, description="Enables automatic parsing of embedded protocol buffer payloads within the input.")
     filter: Optional[StrictStr] = Field(default=None, description="The filter to apply to the logs.")
     resource_names: Optional[List[StrictStr]] = Field(default=None, description="The resources to query logs from.")
-    __properties: ClassVar[List[str]] = ["filter", "resource_names"]
+    __properties: ClassVar[List[str]] = ["enable_proto_payload_parsing", "filter", "resource_names"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +83,7 @@ class CloudLogsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "enable_proto_payload_parsing": obj.get("enable_proto_payload_parsing"),
             "filter": obj.get("filter"),
             "resource_names": obj.get("resource_names")
         })

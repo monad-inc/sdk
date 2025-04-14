@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class CloudLogsSettingsConfig {
     /**
+    * Enables automatic parsing of embedded protocol buffer payloads within the input.
+    */
+    'enableProtoPayloadParsing'?: boolean;
+    /**
     * The filter to apply to the logs.
     */
     'filter'?: string;
@@ -30,6 +34,12 @@ export class CloudLogsSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "enableProtoPayloadParsing",
+            "baseName": "enable_proto_payload_parsing",
+            "type": "boolean",
+            "format": ""
+        },
         {
             "name": "filter",
             "baseName": "filter",

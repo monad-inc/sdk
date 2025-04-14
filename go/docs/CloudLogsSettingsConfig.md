@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**EnableProtoPayloadParsing** | Pointer to **bool** | Enables automatic parsing of embedded protocol buffer payloads within the input. | [optional] 
 **Filter** | Pointer to **string** | The filter to apply to the logs. | [optional] 
 **ResourceNames** | Pointer to **[]string** | The resources to query logs from. | [optional] 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewCloudLogsSettingsConfigWithDefaults instantiates a new CloudLogsSettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetEnableProtoPayloadParsing
+
+`func (o *CloudLogsSettingsConfig) GetEnableProtoPayloadParsing() bool`
+
+GetEnableProtoPayloadParsing returns the EnableProtoPayloadParsing field if non-nil, zero value otherwise.
+
+### GetEnableProtoPayloadParsingOk
+
+`func (o *CloudLogsSettingsConfig) GetEnableProtoPayloadParsingOk() (*bool, bool)`
+
+GetEnableProtoPayloadParsingOk returns a tuple with the EnableProtoPayloadParsing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableProtoPayloadParsing
+
+`func (o *CloudLogsSettingsConfig) SetEnableProtoPayloadParsing(v bool)`
+
+SetEnableProtoPayloadParsing sets EnableProtoPayloadParsing field to given value.
+
+### HasEnableProtoPayloadParsing
+
+`func (o *CloudLogsSettingsConfig) HasEnableProtoPayloadParsing() bool`
+
+HasEnableProtoPayloadParsing returns a boolean if a field has been set.
 
 ### GetFilter
 
