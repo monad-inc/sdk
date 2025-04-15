@@ -27,6 +27,7 @@ type ModelsBillingProduct struct {
 	Id *string `json:"id,omitempty"`
 	IsDefault *bool `json:"is_default,omitempty"`
 	Name *string `json:"name,omitempty"`
+	ProductType *string `json:"product_type,omitempty"`
 	RecurringCostCents *int32 `json:"recurring_cost_cents,omitempty"`
 	RecurringFrequency *string `json:"recurring_frequency,omitempty"`
 	Slug *string `json:"slug,omitempty"`
@@ -276,6 +277,38 @@ func (o *ModelsBillingProduct) SetName(v string) {
 	o.Name = &v
 }
 
+// GetProductType returns the ProductType field value if set, zero value otherwise.
+func (o *ModelsBillingProduct) GetProductType() string {
+	if o == nil || IsNil(o.ProductType) {
+		var ret string
+		return ret
+	}
+	return *o.ProductType
+}
+
+// GetProductTypeOk returns a tuple with the ProductType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsBillingProduct) GetProductTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.ProductType) {
+		return nil, false
+	}
+	return o.ProductType, true
+}
+
+// HasProductType returns a boolean if a field has been set.
+func (o *ModelsBillingProduct) HasProductType() bool {
+	if o != nil && !IsNil(o.ProductType) {
+		return true
+	}
+
+	return false
+}
+
+// SetProductType gets a reference to the given string and assigns it to the ProductType field.
+func (o *ModelsBillingProduct) SetProductType(v string) {
+	o.ProductType = &v
+}
+
 // GetRecurringCostCents returns the RecurringCostCents field value if set, zero value otherwise.
 func (o *ModelsBillingProduct) GetRecurringCostCents() int32 {
 	if o == nil || IsNil(o.RecurringCostCents) {
@@ -498,6 +531,9 @@ func (o ModelsBillingProduct) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.ProductType) {
+		toSerialize["product_type"] = o.ProductType
 	}
 	if !IsNil(o.RecurringCostCents) {
 		toSerialize["recurring_cost_cents"] = o.RecurringCostCents

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingProduct
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-15T18:56:24.316653650Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-15T21:15:29.533933263Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsBillingProduct {
   public static final String SERIALIZED_NAME_CONTACT_EMAIL = "contact_email";
   @SerializedName(SERIALIZED_NAME_CONTACT_EMAIL)
@@ -86,6 +86,11 @@ public class ModelsBillingProduct {
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
+
+  public static final String SERIALIZED_NAME_PRODUCT_TYPE = "product_type";
+  @SerializedName(SERIALIZED_NAME_PRODUCT_TYPE)
+  @javax.annotation.Nullable
+  private String productType;
 
   public static final String SERIALIZED_NAME_RECURRING_COST_CENTS = "recurring_cost_cents";
   @SerializedName(SERIALIZED_NAME_RECURRING_COST_CENTS)
@@ -261,6 +266,25 @@ public class ModelsBillingProduct {
   }
 
 
+  public ModelsBillingProduct productType(@javax.annotation.Nullable String productType) {
+    this.productType = productType;
+    return this;
+  }
+
+  /**
+   * Get productType
+   * @return productType
+   */
+  @javax.annotation.Nullable
+  public String getProductType() {
+    return productType;
+  }
+
+  public void setProductType(@javax.annotation.Nullable String productType) {
+    this.productType = productType;
+  }
+
+
   public ModelsBillingProduct recurringCostCents(@javax.annotation.Nullable Integer recurringCostCents) {
     this.recurringCostCents = recurringCostCents;
     return this;
@@ -392,6 +416,7 @@ public class ModelsBillingProduct {
         Objects.equals(this.id, modelsBillingProduct.id) &&
         Objects.equals(this.isDefault, modelsBillingProduct.isDefault) &&
         Objects.equals(this.name, modelsBillingProduct.name) &&
+        Objects.equals(this.productType, modelsBillingProduct.productType) &&
         Objects.equals(this.recurringCostCents, modelsBillingProduct.recurringCostCents) &&
         Objects.equals(this.recurringFrequency, modelsBillingProduct.recurringFrequency) &&
         Objects.equals(this.slug, modelsBillingProduct.slug) &&
@@ -402,7 +427,7 @@ public class ModelsBillingProduct {
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactEmail, createdAt, description, features, id, isDefault, name, recurringCostCents, recurringFrequency, slug, updatedAt, usageUnit, usageUnitCostCents);
+    return Objects.hash(contactEmail, createdAt, description, features, id, isDefault, name, productType, recurringCostCents, recurringFrequency, slug, updatedAt, usageUnit, usageUnitCostCents);
   }
 
   @Override
@@ -416,6 +441,7 @@ public class ModelsBillingProduct {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
     sb.append("    recurringCostCents: ").append(toIndentedString(recurringCostCents)).append("\n");
     sb.append("    recurringFrequency: ").append(toIndentedString(recurringFrequency)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
@@ -451,6 +477,7 @@ public class ModelsBillingProduct {
     openapiFields.add("id");
     openapiFields.add("is_default");
     openapiFields.add("name");
+    openapiFields.add("product_type");
     openapiFields.add("recurring_cost_cents");
     openapiFields.add("recurring_frequency");
     openapiFields.add("slug");
@@ -501,6 +528,9 @@ public class ModelsBillingProduct {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("product_type") != null && !jsonObj.get("product_type").isJsonNull()) && !jsonObj.get("product_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `product_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("product_type").toString()));
       }
       if ((jsonObj.get("recurring_frequency") != null && !jsonObj.get("recurring_frequency").isJsonNull()) && !jsonObj.get("recurring_frequency").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `recurring_frequency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("recurring_frequency").toString()));

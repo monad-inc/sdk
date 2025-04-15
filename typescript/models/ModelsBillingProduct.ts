@@ -20,6 +20,7 @@ export class ModelsBillingProduct {
     'id'?: string;
     'isDefault'?: boolean;
     'name'?: string;
+    'productType'?: string;
     'recurringCostCents'?: number;
     'recurringFrequency'?: string;
     'slug'?: string;
@@ -71,6 +72,12 @@ export class ModelsBillingProduct {
         {
             "name": "name",
             "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "productType",
+            "baseName": "product_type",
             "type": "string",
             "format": ""
         },

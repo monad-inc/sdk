@@ -14,6 +14,7 @@
 |**id** | **String** |  |  [optional] |
 |**isDefault** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
+|**productType** | **String** |  |  [optional] |
 |**recurringCostCents** | **Integer** |  |  [optional] |
 |**recurringFrequency** | **String** |  |  [optional] |
 |**slug** | **String** |  |  [optional] |

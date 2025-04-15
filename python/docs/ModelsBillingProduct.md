@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **is_default** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
+**product_type** | **str** |  | [optional] 
 **recurring_cost_cents** | **int** |  | [optional] 
 **recurring_frequency** | **str** |  | [optional] 
 **slug** | **str** |  | [optional] 
