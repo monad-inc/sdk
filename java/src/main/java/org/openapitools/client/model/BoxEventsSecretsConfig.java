@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Box Events secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-16T21:13:44.302167955Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-16T22:11:50.214790022Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class BoxEventsSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
