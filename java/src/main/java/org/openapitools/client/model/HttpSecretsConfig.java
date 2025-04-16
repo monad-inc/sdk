@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * HTTP Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-16T22:11:50.214790022Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-16T22:30:04.372606792Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class HttpSecretsConfig {
   public static final String SERIALIZED_NAME_AUTH_HEADERS = "auth_headers";
   @SerializedName(SERIALIZED_NAME_AUTH_HEADERS)
