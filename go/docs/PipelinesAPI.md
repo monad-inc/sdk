@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**V1OrganizationIdPipelinesPipelineIdPatch**](PipelinesAPI.md#V1OrganizationIdPipelinesPipelineIdPatch) | **Patch** /v1/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**V2OrganizationIdPipelineSummaryGet**](PipelinesAPI.md#V2OrganizationIdPipelineSummaryGet) | **Get** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 [**V2OrganizationIdPipelinesGet**](PipelinesAPI.md#V2OrganizationIdPipelinesGet) | **Get** /v2/{organization_id}/pipelines | List pipelines
+[**V2OrganizationIdPipelinesMetricsGet**](PipelinesAPI.md#V2OrganizationIdPipelinesMetricsGet) | **Get** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
 [**V2OrganizationIdPipelinesPipelineIdDelete**](PipelinesAPI.md#V2OrganizationIdPipelinesPipelineIdDelete) | **Delete** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 [**V2OrganizationIdPipelinesPipelineIdGet**](PipelinesAPI.md#V2OrganizationIdPipelinesPipelineIdGet) | **Get** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration
 [**V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet**](PipelinesAPI.md#V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet) | **Get** /v2/{organization_id}/pipelines/{pipeline_id}/{node_id}/metrics | Get pipeline node metrics
@@ -449,6 +450,80 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ModelsPipelineList**](ModelsPipelineList.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V2OrganizationIdPipelinesMetricsGet
+
+> RoutesV2MetricsResponse V2OrganizationIdPipelinesMetricsGet(ctx, organizationId).PipelineIds(pipelineIds).Resolution(resolution).Execute()
+
+Get metrics for specific pipelines
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	pipelineIds := "pipelineIds_example" // string | Comma-separated list of pipeline IDs
+	resolution := "resolution_example" // string | Resolution for metrics (default: 5m) (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PipelinesAPI.V2OrganizationIdPipelinesMetricsGet(context.Background(), organizationId).PipelineIds(pipelineIds).Resolution(resolution).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.V2OrganizationIdPipelinesMetricsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V2OrganizationIdPipelinesMetricsGet`: RoutesV2MetricsResponse
+	fmt.Fprintf(os.Stdout, "Response from `PipelinesAPI.V2OrganizationIdPipelinesMetricsGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV2OrganizationIdPipelinesMetricsGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pipelineIds** | **string** | Comma-separated list of pipeline IDs | 
+ **resolution** | **string** | Resolution for metrics (default: 5m) | 
+
+### Return type
+
+[**RoutesV2MetricsResponse**](RoutesV2MetricsResponse.md)
 
 ### Authorization
 

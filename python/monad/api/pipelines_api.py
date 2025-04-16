@@ -29,6 +29,7 @@ from monad.models.models_pipeline_status import ModelsPipelineStatus
 from monad.models.routes_update_pipeline_request import RoutesUpdatePipelineRequest
 from monad.models.routes_v2_create_pipeline_request import RoutesV2CreatePipelineRequest
 from monad.models.routes_v2_get_organization_summary_response import RoutesV2GetOrganizationSummaryResponse
+from monad.models.routes_v2_metrics_response import RoutesV2MetricsResponse
 from monad.models.routes_v2_pipeline_with_status import RoutesV2PipelineWithStatus
 from monad.models.routes_v2_update_pipeline_request import RoutesV2UpdatePipelineRequest
 
@@ -1809,6 +1810,308 @@ class PipelinesApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/v2/{organization_id}/pipelines',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def v2_organization_id_pipelines_metrics_get(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        pipeline_ids: Annotated[StrictStr, Field(description="Comma-separated list of pipeline IDs")],
+        resolution: Annotated[Optional[StrictStr], Field(description="Resolution for metrics (default: 5m)")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RoutesV2MetricsResponse:
+        """Get metrics for specific pipelines
+
+        Get aggregated ingress and egress metrics for specific pipelines
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param pipeline_ids: Comma-separated list of pipeline IDs (required)
+        :type pipeline_ids: str
+        :param resolution: Resolution for metrics (default: 5m)
+        :type resolution: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._v2_organization_id_pipelines_metrics_get_serialize(
+            organization_id=organization_id,
+            pipeline_ids=pipeline_ids,
+            resolution=resolution,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RoutesV2MetricsResponse",
+            '400': "str",
+            '500': "str",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def v2_organization_id_pipelines_metrics_get_with_http_info(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        pipeline_ids: Annotated[StrictStr, Field(description="Comma-separated list of pipeline IDs")],
+        resolution: Annotated[Optional[StrictStr], Field(description="Resolution for metrics (default: 5m)")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[RoutesV2MetricsResponse]:
+        """Get metrics for specific pipelines
+
+        Get aggregated ingress and egress metrics for specific pipelines
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param pipeline_ids: Comma-separated list of pipeline IDs (required)
+        :type pipeline_ids: str
+        :param resolution: Resolution for metrics (default: 5m)
+        :type resolution: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._v2_organization_id_pipelines_metrics_get_serialize(
+            organization_id=organization_id,
+            pipeline_ids=pipeline_ids,
+            resolution=resolution,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RoutesV2MetricsResponse",
+            '400': "str",
+            '500': "str",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def v2_organization_id_pipelines_metrics_get_without_preload_content(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        pipeline_ids: Annotated[StrictStr, Field(description="Comma-separated list of pipeline IDs")],
+        resolution: Annotated[Optional[StrictStr], Field(description="Resolution for metrics (default: 5m)")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get metrics for specific pipelines
+
+        Get aggregated ingress and egress metrics for specific pipelines
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param pipeline_ids: Comma-separated list of pipeline IDs (required)
+        :type pipeline_ids: str
+        :param resolution: Resolution for metrics (default: 5m)
+        :type resolution: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._v2_organization_id_pipelines_metrics_get_serialize(
+            organization_id=organization_id,
+            pipeline_ids=pipeline_ids,
+            resolution=resolution,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RoutesV2MetricsResponse",
+            '400': "str",
+            '500': "str",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _v2_organization_id_pipelines_metrics_get_serialize(
+        self,
+        organization_id,
+        pipeline_ids,
+        resolution,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if organization_id is not None:
+            _path_params['organization_id'] = organization_id
+        # process the query parameters
+        if pipeline_ids is not None:
+            
+            _query_params.append(('pipeline_ids', pipeline_ids))
+            
+        if resolution is not None:
+            
+            _query_params.append(('resolution', resolution))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'ApiKeyAuth', 
+            'Bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v2/{organization_id}/pipelines/metrics',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

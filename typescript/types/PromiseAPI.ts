@@ -193,10 +193,13 @@ import { RoutesV2InputConfig } from '../models/RoutesV2InputConfig';
 import { RoutesV2InputConfigSecrets } from '../models/RoutesV2InputConfigSecrets';
 import { RoutesV2InputConfigSettings } from '../models/RoutesV2InputConfigSettings';
 import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesResponse';
+import { RoutesV2MetricsResponse } from '../models/RoutesV2MetricsResponse';
+import { RoutesV2MetricsValue } from '../models/RoutesV2MetricsValue';
 import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOverview';
 import { RoutesV2OutputConfig } from '../models/RoutesV2OutputConfig';
 import { RoutesV2OutputConfigSecrets } from '../models/RoutesV2OutputConfigSecrets';
 import { RoutesV2OutputConfigSettings } from '../models/RoutesV2OutputConfigSettings';
+import { RoutesV2PipelineMetric } from '../models/RoutesV2PipelineMetric';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
@@ -4043,6 +4046,54 @@ export class PromisePipelinesApi {
 	    }
 	}
         const result = this.api.v2OrganizationIdPipelinesGet(organizationId, limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get aggregated ingress and egress metrics for specific pipelines
+     * Get metrics for specific pipelines
+     * @param organizationId Organization ID
+     * @param pipelineIds Comma-separated list of pipeline IDs
+     * @param [resolution] Resolution for metrics (default: 5m)
+     */
+    public v2OrganizationIdPipelinesMetricsGetWithHttpInfo(organizationId: string, pipelineIds: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2MetricsResponse>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesMetricsGetWithHttpInfo(organizationId, pipelineIds, resolution, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get aggregated ingress and egress metrics for specific pipelines
+     * Get metrics for specific pipelines
+     * @param organizationId Organization ID
+     * @param pipelineIds Comma-separated list of pipeline IDs
+     * @param [resolution] Resolution for metrics (default: 5m)
+     */
+    public v2OrganizationIdPipelinesMetricsGet(organizationId: string, pipelineIds: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<RoutesV2MetricsResponse> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2OrganizationIdPipelinesMetricsGet(organizationId, pipelineIds, resolution, observableOptions);
         return result.toPromise();
     }
 

@@ -193,10 +193,13 @@ import { RoutesV2InputConfig } from '../models/RoutesV2InputConfig';
 import { RoutesV2InputConfigSecrets } from '../models/RoutesV2InputConfigSecrets';
 import { RoutesV2InputConfigSettings } from '../models/RoutesV2InputConfigSettings';
 import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesResponse';
+import { RoutesV2MetricsResponse } from '../models/RoutesV2MetricsResponse';
+import { RoutesV2MetricsValue } from '../models/RoutesV2MetricsValue';
 import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOverview';
 import { RoutesV2OutputConfig } from '../models/RoutesV2OutputConfig';
 import { RoutesV2OutputConfigSecrets } from '../models/RoutesV2OutputConfigSecrets';
 import { RoutesV2OutputConfigSettings } from '../models/RoutesV2OutputConfigSettings';
+import { RoutesV2PipelineMetric } from '../models/RoutesV2PipelineMetric';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
@@ -2981,6 +2984,30 @@ export interface PipelinesApiV2OrganizationIdPipelinesGetRequest {
     offset?: number
 }
 
+export interface PipelinesApiV2OrganizationIdPipelinesMetricsGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdPipelinesMetricsGet
+     */
+    organizationId: string
+    /**
+     * Comma-separated list of pipeline IDs
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdPipelinesMetricsGet
+     */
+    pipelineIds: string
+    /**
+     * Resolution for metrics (default: 5m)
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdPipelinesMetricsGet
+     */
+    resolution?: string
+}
+
 export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdDeleteRequest {
     /**
      * Organization ID
@@ -3340,6 +3367,24 @@ export class ObjectPipelinesApi {
      */
     public v2OrganizationIdPipelinesGet(param: PipelinesApiV2OrganizationIdPipelinesGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineList> {
         return this.api.v2OrganizationIdPipelinesGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Get aggregated ingress and egress metrics for specific pipelines
+     * Get metrics for specific pipelines
+     * @param param the request object
+     */
+    public v2OrganizationIdPipelinesMetricsGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesMetricsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2MetricsResponse>> {
+        return this.api.v2OrganizationIdPipelinesMetricsGetWithHttpInfo(param.organizationId, param.pipelineIds, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get aggregated ingress and egress metrics for specific pipelines
+     * Get metrics for specific pipelines
+     * @param param the request object
+     */
+    public v2OrganizationIdPipelinesMetricsGet(param: PipelinesApiV2OrganizationIdPipelinesMetricsGetRequest, options?: ConfigurationOptions): Promise<RoutesV2MetricsResponse> {
+        return this.api.v2OrganizationIdPipelinesMetricsGet(param.organizationId, param.pipelineIds, param.resolution,  options).toPromise();
     }
 
     /**

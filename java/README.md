@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-04-16T22:30:04.372606792Z[Etc/UTC]
+  - Build date: 2025-04-16T23:26:08.924497299Z[Etc/UTC]
   - Generator version: 7.12.0
 
 This is the monad API
@@ -189,6 +189,7 @@ Class | Method | HTTP request | Description
 *PipelinesApi* | [**v1OrganizationIdPipelinesPipelineIdPatch**](docs/PipelinesApi.md#v1OrganizationIdPipelinesPipelineIdPatch) | **PATCH** /v1/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 *PipelinesApi* | [**v2OrganizationIdPipelineSummaryGet**](docs/PipelinesApi.md#v2OrganizationIdPipelineSummaryGet) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 *PipelinesApi* | [**v2OrganizationIdPipelinesGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesGet) | **GET** /v2/{organization_id}/pipelines | List pipelines
+*PipelinesApi* | [**v2OrganizationIdPipelinesMetricsGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesMetricsGet) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
 *PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdDelete**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdDelete) | **DELETE** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 *PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration
 *PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/{node_id}/metrics | Get pipeline node metrics
@@ -410,10 +411,13 @@ Class | Method | HTTP request | Description
  - [RoutesV2InputConfigSecrets](docs/RoutesV2InputConfigSecrets.md)
  - [RoutesV2InputConfigSettings](docs/RoutesV2InputConfigSettings.md)
  - [RoutesV2ListTemplatesResponse](docs/RoutesV2ListTemplatesResponse.md)
+ - [RoutesV2MetricsResponse](docs/RoutesV2MetricsResponse.md)
+ - [RoutesV2MetricsValue](docs/RoutesV2MetricsValue.md)
  - [RoutesV2OrganizationOverview](docs/RoutesV2OrganizationOverview.md)
  - [RoutesV2OutputConfig](docs/RoutesV2OutputConfig.md)
  - [RoutesV2OutputConfigSecrets](docs/RoutesV2OutputConfigSecrets.md)
  - [RoutesV2OutputConfigSettings](docs/RoutesV2OutputConfigSettings.md)
+ - [RoutesV2PipelineMetric](docs/RoutesV2PipelineMetric.md)
  - [RoutesV2PipelineRequestEdge](docs/RoutesV2PipelineRequestEdge.md)
  - [RoutesV2PipelineRequestNode](docs/RoutesV2PipelineRequestNode.md)
  - [RoutesV2PipelineStatus](docs/RoutesV2PipelineStatus.md)

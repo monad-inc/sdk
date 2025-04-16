@@ -153,6 +153,7 @@ Class | Method | HTTP request | Description
 *PipelinesAPI* | [**V1OrganizationIdPipelinesPipelineIdPatch**](docs/PipelinesAPI.md#v1organizationidpipelinespipelineidpatch) | **Patch** /v1/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 *PipelinesAPI* | [**V2OrganizationIdPipelineSummaryGet**](docs/PipelinesAPI.md#v2organizationidpipelinesummaryget) | **Get** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 *PipelinesAPI* | [**V2OrganizationIdPipelinesGet**](docs/PipelinesAPI.md#v2organizationidpipelinesget) | **Get** /v2/{organization_id}/pipelines | List pipelines
+*PipelinesAPI* | [**V2OrganizationIdPipelinesMetricsGet**](docs/PipelinesAPI.md#v2organizationidpipelinesmetricsget) | **Get** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
 *PipelinesAPI* | [**V2OrganizationIdPipelinesPipelineIdDelete**](docs/PipelinesAPI.md#v2organizationidpipelinespipelineiddelete) | **Delete** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 *PipelinesAPI* | [**V2OrganizationIdPipelinesPipelineIdGet**](docs/PipelinesAPI.md#v2organizationidpipelinespipelineidget) | **Get** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration
 *PipelinesAPI* | [**V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet**](docs/PipelinesAPI.md#v2organizationidpipelinespipelineidnodeidmetricsget) | **Get** /v2/{organization_id}/pipelines/{pipeline_id}/{node_id}/metrics | Get pipeline node metrics
@@ -374,10 +375,13 @@ Class | Method | HTTP request | Description
  - [RoutesV2InputConfigSecrets](docs/RoutesV2InputConfigSecrets.md)
  - [RoutesV2InputConfigSettings](docs/RoutesV2InputConfigSettings.md)
  - [RoutesV2ListTemplatesResponse](docs/RoutesV2ListTemplatesResponse.md)
+ - [RoutesV2MetricsResponse](docs/RoutesV2MetricsResponse.md)
+ - [RoutesV2MetricsValue](docs/RoutesV2MetricsValue.md)
  - [RoutesV2OrganizationOverview](docs/RoutesV2OrganizationOverview.md)
  - [RoutesV2OutputConfig](docs/RoutesV2OutputConfig.md)
  - [RoutesV2OutputConfigSecrets](docs/RoutesV2OutputConfigSecrets.md)
  - [RoutesV2OutputConfigSettings](docs/RoutesV2OutputConfigSettings.md)
+ - [RoutesV2PipelineMetric](docs/RoutesV2PipelineMetric.md)
  - [RoutesV2PipelineRequestEdge](docs/RoutesV2PipelineRequestEdge.md)
  - [RoutesV2PipelineRequestNode](docs/RoutesV2PipelineRequestNode.md)
  - [RoutesV2PipelineStatus](docs/RoutesV2PipelineStatus.md)

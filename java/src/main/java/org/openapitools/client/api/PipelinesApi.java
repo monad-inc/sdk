@@ -36,6 +36,7 @@ import org.openapitools.client.model.ModelsPipelineStatus;
 import org.openapitools.client.model.RoutesUpdatePipelineRequest;
 import org.openapitools.client.model.RoutesV2CreatePipelineRequest;
 import org.openapitools.client.model.RoutesV2GetOrganizationSummaryResponse;
+import org.openapitools.client.model.RoutesV2MetricsResponse;
 import org.openapitools.client.model.RoutesV2PipelineWithStatus;
 import org.openapitools.client.model.RoutesV2UpdatePipelineRequest;
 import org.openapitools.client.model.V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response;
@@ -966,6 +967,162 @@ public class PipelinesApi {
 
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesGetValidateBeforeCall(organizationId, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipelineList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdPipelinesMetricsGet
+     * @param organizationId Organization ID (required)
+     * @param pipelineIds Comma-separated list of pipeline IDs (required)
+     * @param resolution Resolution for metrics (default: 5m) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline metrics data </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request error </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdPipelinesMetricsGetCall(String organizationId, String pipelineIds, String resolution, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/pipelines/metrics"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (pipelineIds != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("pipeline_ids", pipelineIds));
+        }
+
+        if (resolution != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("resolution", resolution));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdPipelinesMetricsGetValidateBeforeCall(String organizationId, String pipelineIds, String resolution, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelinesMetricsGet(Async)");
+        }
+
+        // verify the required parameter 'pipelineIds' is set
+        if (pipelineIds == null) {
+            throw new ApiException("Missing the required parameter 'pipelineIds' when calling v2OrganizationIdPipelinesMetricsGet(Async)");
+        }
+
+        return v2OrganizationIdPipelinesMetricsGetCall(organizationId, pipelineIds, resolution, _callback);
+
+    }
+
+    /**
+     * Get metrics for specific pipelines
+     * Get aggregated ingress and egress metrics for specific pipelines
+     * @param organizationId Organization ID (required)
+     * @param pipelineIds Comma-separated list of pipeline IDs (required)
+     * @param resolution Resolution for metrics (default: 5m) (optional)
+     * @return RoutesV2MetricsResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline metrics data </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request error </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public RoutesV2MetricsResponse v2OrganizationIdPipelinesMetricsGet(String organizationId, String pipelineIds, String resolution) throws ApiException {
+        ApiResponse<RoutesV2MetricsResponse> localVarResp = v2OrganizationIdPipelinesMetricsGetWithHttpInfo(organizationId, pipelineIds, resolution);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get metrics for specific pipelines
+     * Get aggregated ingress and egress metrics for specific pipelines
+     * @param organizationId Organization ID (required)
+     * @param pipelineIds Comma-separated list of pipeline IDs (required)
+     * @param resolution Resolution for metrics (default: 5m) (optional)
+     * @return ApiResponse&lt;RoutesV2MetricsResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline metrics data </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request error </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<RoutesV2MetricsResponse> v2OrganizationIdPipelinesMetricsGetWithHttpInfo(String organizationId, String pipelineIds, String resolution) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdPipelinesMetricsGetValidateBeforeCall(organizationId, pipelineIds, resolution, null);
+        Type localVarReturnType = new TypeToken<RoutesV2MetricsResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get metrics for specific pipelines (asynchronously)
+     * Get aggregated ingress and egress metrics for specific pipelines
+     * @param organizationId Organization ID (required)
+     * @param pipelineIds Comma-separated list of pipeline IDs (required)
+     * @param resolution Resolution for metrics (default: 5m) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline metrics data </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request error </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdPipelinesMetricsGetAsync(String organizationId, String pipelineIds, String resolution, final ApiCallback<RoutesV2MetricsResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdPipelinesMetricsGetValidateBeforeCall(organizationId, pipelineIds, resolution, _callback);
+        Type localVarReturnType = new TypeToken<RoutesV2MetricsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**v1OrganizationIdPipelinesPipelineIdPatch**](PipelinesApi.md#v1OrganizationIdPipelinesPipelineIdPatch) | **PATCH** /v1/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**v2OrganizationIdPipelineSummaryGet**](PipelinesApi.md#v2OrganizationIdPipelineSummaryGet) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 [**v2OrganizationIdPipelinesGet**](PipelinesApi.md#v2OrganizationIdPipelinesGet) | **GET** /v2/{organization_id}/pipelines | List pipelines
+[**v2OrganizationIdPipelinesMetricsGet**](PipelinesApi.md#v2OrganizationIdPipelinesMetricsGet) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
 [**v2OrganizationIdPipelinesPipelineIdDelete**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdDelete) | **DELETE** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 [**v2OrganizationIdPipelinesPipelineIdGet**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration
 [**v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/{node_id}/metrics | Get pipeline node metrics
@@ -378,6 +379,67 @@ Name | Type | Description  | Notes
 **200** | List of pipelines |  -  |
 **400** | Invalid limit or offset |  -  |
 **500** | Failed to list pipelines |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v2OrganizationIdPipelinesMetricsGet**
+> RoutesV2MetricsResponse v2OrganizationIdPipelinesMetricsGet()
+
+Get aggregated ingress and egress metrics for specific pipelines
+
+### Example
+
+
+```typescript
+import { createConfiguration, PipelinesApi } from '';
+import type { PipelinesApiV2OrganizationIdPipelinesMetricsGetRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new PipelinesApi(configuration);
+
+const request: PipelinesApiV2OrganizationIdPipelinesMetricsGetRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Comma-separated list of pipeline IDs
+  pipelineIds: "pipeline_ids_example",
+    // Resolution for metrics (default: 5m) (optional)
+  resolution: "resolution_example",
+};
+
+const data = await apiInstance.v2OrganizationIdPipelinesMetricsGet(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **pipelineIds** | [**string**] | Comma-separated list of pipeline IDs | defaults to undefined
+ **resolution** | [**string**] | Resolution for metrics (default: 5m) | (optional) defaults to undefined
+
+
+### Return type
+
+**RoutesV2MetricsResponse**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Pipeline metrics data |  -  |
+**400** | Bad request error |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

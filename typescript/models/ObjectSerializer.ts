@@ -189,10 +189,13 @@ export * from '../models/RoutesV2InputConfig';
 export * from '../models/RoutesV2InputConfigSecrets';
 export * from '../models/RoutesV2InputConfigSettings';
 export * from '../models/RoutesV2ListTemplatesResponse';
+export * from '../models/RoutesV2MetricsResponse';
+export * from '../models/RoutesV2MetricsValue';
 export * from '../models/RoutesV2OrganizationOverview';
 export * from '../models/RoutesV2OutputConfig';
 export * from '../models/RoutesV2OutputConfigSecrets';
 export * from '../models/RoutesV2OutputConfigSettings';
+export * from '../models/RoutesV2PipelineMetric';
 export * from '../models/RoutesV2PipelineRequestEdge';
 export * from '../models/RoutesV2PipelineRequestNode';
 export * from '../models/RoutesV2PipelineStatus';
@@ -445,10 +448,13 @@ import { RoutesV2InputConfig } from '../models/RoutesV2InputConfig';
 import { RoutesV2InputConfigSecretsClass } from '../models/RoutesV2InputConfigSecrets';
 import { RoutesV2InputConfigSettingsClass } from '../models/RoutesV2InputConfigSettings';
 import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesResponse';
+import { RoutesV2MetricsResponse } from '../models/RoutesV2MetricsResponse';
+import { RoutesV2MetricsValue } from '../models/RoutesV2MetricsValue';
 import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOverview';
 import { RoutesV2OutputConfig } from '../models/RoutesV2OutputConfig';
 import { RoutesV2OutputConfigSecretsClass } from '../models/RoutesV2OutputConfigSecrets';
 import { RoutesV2OutputConfigSettingsClass } from '../models/RoutesV2OutputConfigSettings';
+import { RoutesV2PipelineMetric } from '../models/RoutesV2PipelineMetric';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
@@ -726,10 +732,13 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2InputConfigSecrets": RoutesV2InputConfigSecretsClass,
     "RoutesV2InputConfigSettings": RoutesV2InputConfigSettingsClass,
     "RoutesV2ListTemplatesResponse": RoutesV2ListTemplatesResponse,
+    "RoutesV2MetricsResponse": RoutesV2MetricsResponse,
+    "RoutesV2MetricsValue": RoutesV2MetricsValue,
     "RoutesV2OrganizationOverview": RoutesV2OrganizationOverview,
     "RoutesV2OutputConfig": RoutesV2OutputConfig,
     "RoutesV2OutputConfigSecrets": RoutesV2OutputConfigSecretsClass,
     "RoutesV2OutputConfigSettings": RoutesV2OutputConfigSettingsClass,
+    "RoutesV2PipelineMetric": RoutesV2PipelineMetric,
     "RoutesV2PipelineRequestEdge": RoutesV2PipelineRequestEdge,
     "RoutesV2PipelineRequestNode": RoutesV2PipelineRequestNode,
     "RoutesV2PipelineStatus": RoutesV2PipelineStatus,

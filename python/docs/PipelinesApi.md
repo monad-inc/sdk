@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**v1_organization_id_pipelines_pipeline_id_patch**](PipelinesApi.md#v1_organization_id_pipelines_pipeline_id_patch) | **PATCH** /v1/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**v2_organization_id_pipeline_summary_get**](PipelinesApi.md#v2_organization_id_pipeline_summary_get) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 [**v2_organization_id_pipelines_get**](PipelinesApi.md#v2_organization_id_pipelines_get) | **GET** /v2/{organization_id}/pipelines | List pipelines
+[**v2_organization_id_pipelines_metrics_get**](PipelinesApi.md#v2_organization_id_pipelines_metrics_get) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
 [**v2_organization_id_pipelines_pipeline_id_delete**](PipelinesApi.md#v2_organization_id_pipelines_pipeline_id_delete) | **DELETE** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 [**v2_organization_id_pipelines_pipeline_id_get**](PipelinesApi.md#v2_organization_id_pipelines_pipeline_id_get) | **GET** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration
 [**v2_organization_id_pipelines_pipeline_id_node_id_metrics_get**](PipelinesApi.md#v2_organization_id_pipelines_pipeline_id_node_id_metrics_get) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/{node_id}/metrics | Get pipeline node metrics
@@ -562,6 +563,98 @@ Name | Type | Description  | Notes
 **200** | List of pipelines |  -  |
 **400** | Invalid limit or offset |  -  |
 **500** | Failed to list pipelines |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v2_organization_id_pipelines_metrics_get**
+> RoutesV2MetricsResponse v2_organization_id_pipelines_metrics_get(organization_id, pipeline_ids, resolution=resolution)
+
+Get metrics for specific pipelines
+
+Get aggregated ingress and egress metrics for specific pipelines
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.routes_v2_metrics_response import RoutesV2MetricsResponse
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    pipeline_ids = 'pipeline_ids_example' # str | Comma-separated list of pipeline IDs
+    resolution = 'resolution_example' # str | Resolution for metrics (default: 5m) (optional)
+
+    try:
+        # Get metrics for specific pipelines
+        api_response = api_instance.v2_organization_id_pipelines_metrics_get(organization_id, pipeline_ids, resolution=resolution)
+        print("The response of PipelinesApi->v2_organization_id_pipelines_metrics_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->v2_organization_id_pipelines_metrics_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **pipeline_ids** | **str**| Comma-separated list of pipeline IDs | 
+ **resolution** | **str**| Resolution for metrics (default: 5m) | [optional] 
+
+### Return type
+
+[**RoutesV2MetricsResponse**](RoutesV2MetricsResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Pipeline metrics data |  -  |
+**400** | Bad request error |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
