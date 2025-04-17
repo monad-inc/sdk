@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-04-17T14:28:54.547934124Z[Etc/UTC]
+  - Build date: 2025-04-17T16:51:23.967357457Z[Etc/UTC]
   - Generator version: 7.12.0
 
 This is the monad API
@@ -229,10 +229,9 @@ Class | Method | HTTP request | Description
  - [AdminLogsSettingsConfig](docs/AdminLogsSettingsConfig.md)
  - [AuditLogsSecretsConfig](docs/AuditLogsSecretsConfig.md)
  - [AuditLogsSettingsConfig](docs/AuditLogsSettingsConfig.md)
- - [Auth0Auth0TokenResponse](docs/Auth0Auth0TokenResponse.md)
- - [Auth0LoginRequest](docs/Auth0LoginRequest.md)
  - [AuthLogsSecretsConfig](docs/AuthLogsSecretsConfig.md)
  - [AuthLogsSettingsConfig](docs/AuthLogsSettingsConfig.md)
+ - [AuthenticationtypesTokenResponse](docs/AuthenticationtypesTokenResponse.md)
  - [AwsS3SettingsConfig](docs/AwsS3SettingsConfig.md)
  - [AzureActivityLogsSecretsConfig](docs/AzureActivityLogsSecretsConfig.md)
  - [AzureActivityLogsSettingsConfig](docs/AzureActivityLogsSettingsConfig.md)
@@ -383,6 +382,8 @@ Class | Method | HTTP request | Description
  - [RoutesGetOutputResponse](docs/RoutesGetOutputResponse.md)
  - [RoutesGetTransformResponse](docs/RoutesGetTransformResponse.md)
  - [RoutesInviteUserToOrganizationRequest](docs/RoutesInviteUserToOrganizationRequest.md)
+ - [RoutesLoginRequest](docs/RoutesLoginRequest.md)
+ - [RoutesResendVerificationRequest](docs/RoutesResendVerificationRequest.md)
  - [RoutesTransformConfig](docs/RoutesTransformConfig.md)
  - [RoutesTransformOperation](docs/RoutesTransformOperation.md)
  - [RoutesTransformOperationArguments](docs/RoutesTransformOperationArguments.md)

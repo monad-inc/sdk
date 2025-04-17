@@ -11,10 +11,9 @@ import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
 import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
-import { Auth0Auth0TokenResponse } from '../models/Auth0Auth0TokenResponse';
-import { Auth0LoginRequest } from '../models/Auth0LoginRequest';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
+import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
@@ -165,6 +164,8 @@ import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
+import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
+import { RoutesResendVerificationRequest } from '../models/RoutesResendVerificationRequest';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
@@ -271,15 +272,21 @@ export interface AuthenticationApiV1LoginGetRequest {
 }
 
 export interface AuthenticationApiV1LoginResendVerificationPostRequest {
+    /**
+     * Resend verification request
+     * @type RoutesResendVerificationRequest
+     * @memberof AuthenticationApiv1LoginResendVerificationPost
+     */
+    routesResendVerificationRequest: RoutesResendVerificationRequest
 }
 
 export interface AuthenticationApiV1LoginTokenPostRequest {
     /**
      * Login request
-     * @type Auth0LoginRequest
+     * @type RoutesLoginRequest
      * @memberof AuthenticationApiv1LoginTokenPost
      */
-    auth0LoginRequest: Auth0LoginRequest
+    routesLoginRequest: RoutesLoginRequest
 }
 
 export class ObjectAuthenticationApi {
@@ -308,7 +315,7 @@ export class ObjectAuthenticationApi {
     }
 
     /**
-     * Redirects the user to Authentication service login page to initiate the login process.
+     * Redirects the user to authentication service login page to initiate the login process.
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
      * @param param the request object
      */
@@ -317,7 +324,7 @@ export class ObjectAuthenticationApi {
     }
 
     /**
-     * Redirects the user to Authentication service login page to initiate the login process.
+     * Redirects the user to authentication service login page to initiate the login process.
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
      * @param param the request object
      */
@@ -330,8 +337,8 @@ export class ObjectAuthenticationApi {
      * Resend email verification
      * @param param the request object
      */
-    public v1LoginResendVerificationPostWithHttpInfo(param: AuthenticationApiV1LoginResendVerificationPostRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v1LoginResendVerificationPostWithHttpInfo( options).toPromise();
+    public v1LoginResendVerificationPostWithHttpInfo(param: AuthenticationApiV1LoginResendVerificationPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.v1LoginResendVerificationPostWithHttpInfo(param.routesResendVerificationRequest,  options).toPromise();
     }
 
     /**
@@ -339,26 +346,26 @@ export class ObjectAuthenticationApi {
      * Resend email verification
      * @param param the request object
      */
-    public v1LoginResendVerificationPost(param: AuthenticationApiV1LoginResendVerificationPostRequest = {}, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v1LoginResendVerificationPost( options).toPromise();
+    public v1LoginResendVerificationPost(param: AuthenticationApiV1LoginResendVerificationPostRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.v1LoginResendVerificationPost(param.routesResendVerificationRequest,  options).toPromise();
     }
 
     /**
-     * Retrieve an authentication token from the Authentication service using username and password.
+     * Retrieve an authentication token from the authentication service using username and password.
      * Get Authentication token
      * @param param the request object
      */
-    public v1LoginTokenPostWithHttpInfo(param: AuthenticationApiV1LoginTokenPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<Auth0Auth0TokenResponse>> {
-        return this.api.v1LoginTokenPostWithHttpInfo(param.auth0LoginRequest,  options).toPromise();
+    public v1LoginTokenPostWithHttpInfo(param: AuthenticationApiV1LoginTokenPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<AuthenticationtypesTokenResponse>> {
+        return this.api.v1LoginTokenPostWithHttpInfo(param.routesLoginRequest,  options).toPromise();
     }
 
     /**
-     * Retrieve an authentication token from the Authentication service using username and password.
+     * Retrieve an authentication token from the authentication service using username and password.
      * Get Authentication token
      * @param param the request object
      */
-    public v1LoginTokenPost(param: AuthenticationApiV1LoginTokenPostRequest, options?: ConfigurationOptions): Promise<Auth0Auth0TokenResponse> {
-        return this.api.v1LoginTokenPost(param.auth0LoginRequest,  options).toPromise();
+    public v1LoginTokenPost(param: AuthenticationApiV1LoginTokenPostRequest, options?: ConfigurationOptions): Promise<AuthenticationtypesTokenResponse> {
+        return this.api.v1LoginTokenPost(param.routesLoginRequest,  options).toPromise();
     }
 
 }

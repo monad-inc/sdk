@@ -133,7 +133,7 @@ No authorization required
 
 ## V1LoginResendVerificationPost
 
-> string V1LoginResendVerificationPost(ctx).Execute()
+> string V1LoginResendVerificationPost(ctx).RoutesResendVerificationRequest(routesResendVerificationRequest).Execute()
 
 Resend email verification
 
@@ -152,10 +152,11 @@ import (
 )
 
 func main() {
+	routesResendVerificationRequest := *openapiclient.NewRoutesResendVerificationRequest() // RoutesResendVerificationRequest | Resend verification request
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AuthenticationAPI.V1LoginResendVerificationPost(context.Background()).Execute()
+	resp, r, err := apiClient.AuthenticationAPI.V1LoginResendVerificationPost(context.Background()).RoutesResendVerificationRequest(routesResendVerificationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationAPI.V1LoginResendVerificationPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -167,12 +168,16 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiV1LoginResendVerificationPostRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **routesResendVerificationRequest** | [**RoutesResendVerificationRequest**](RoutesResendVerificationRequest.md) | Resend verification request | 
 
 ### Return type
 
@@ -184,7 +189,7 @@ Other parameters are passed through a pointer to a apiV1LoginResendVerificationP
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -194,7 +199,7 @@ Other parameters are passed through a pointer to a apiV1LoginResendVerificationP
 
 ## V1LoginTokenPost
 
-> Auth0Auth0TokenResponse V1LoginTokenPost(ctx).Auth0LoginRequest(auth0LoginRequest).Execute()
+> AuthenticationtypesTokenResponse V1LoginTokenPost(ctx).RoutesLoginRequest(routesLoginRequest).Execute()
 
 Get Authentication token
 
@@ -213,16 +218,16 @@ import (
 )
 
 func main() {
-	auth0LoginRequest := *openapiclient.NewAuth0LoginRequest() // Auth0LoginRequest | Login request
+	routesLoginRequest := *openapiclient.NewRoutesLoginRequest() // RoutesLoginRequest | Login request
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AuthenticationAPI.V1LoginTokenPost(context.Background()).Auth0LoginRequest(auth0LoginRequest).Execute()
+	resp, r, err := apiClient.AuthenticationAPI.V1LoginTokenPost(context.Background()).RoutesLoginRequest(routesLoginRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationAPI.V1LoginTokenPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1LoginTokenPost`: Auth0Auth0TokenResponse
+	// response from `V1LoginTokenPost`: AuthenticationtypesTokenResponse
 	fmt.Fprintf(os.Stdout, "Response from `AuthenticationAPI.V1LoginTokenPost`: %v\n", resp)
 }
 ```
@@ -238,11 +243,11 @@ Other parameters are passed through a pointer to a apiV1LoginTokenPostRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **auth0LoginRequest** | [**Auth0LoginRequest**](Auth0LoginRequest.md) | Login request | 
+ **routesLoginRequest** | [**RoutesLoginRequest**](RoutesLoginRequest.md) | Login request | 
 
 ### Return type
 
-[**Auth0Auth0TokenResponse**](Auth0Auth0TokenResponse.md)
+[**AuthenticationtypesTokenResponse**](AuthenticationtypesTokenResponse.md)
 
 ### Authorization
 

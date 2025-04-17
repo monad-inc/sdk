@@ -19,8 +19,9 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from monad.models.auth0_auth0_token_response import Auth0Auth0TokenResponse
-from monad.models.auth0_login_request import Auth0LoginRequest
+from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse
+from monad.models.routes_login_request import RoutesLoginRequest
+from monad.models.routes_resend_verification_request import RoutesResendVerificationRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -304,7 +305,7 @@ class AuthenticationApi:
     ) -> None:
         """Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
 
-        Redirects the user to Authentication service login page to initiate the login process.
+        Redirects the user to authentication service login page to initiate the login process.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -367,7 +368,7 @@ class AuthenticationApi:
     ) -> ApiResponse[None]:
         """Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
 
-        Redirects the user to Authentication service login page to initiate the login process.
+        Redirects the user to authentication service login page to initiate the login process.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -430,7 +431,7 @@ class AuthenticationApi:
     ) -> RESTResponseType:
         """Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
 
-        Redirects the user to Authentication service login page to initiate the login process.
+        Redirects the user to authentication service login page to initiate the login process.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -534,6 +535,7 @@ class AuthenticationApi:
     @validate_call
     def v1_login_resend_verification_post(
         self,
+        routes_resend_verification_request: Annotated[RoutesResendVerificationRequest, Field(description="Resend verification request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -551,6 +553,8 @@ class AuthenticationApi:
 
         Resends the email verification to the user's email address
 
+        :param routes_resend_verification_request: Resend verification request (required)
+        :type routes_resend_verification_request: RoutesResendVerificationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -574,6 +578,7 @@ class AuthenticationApi:
         """ # noqa: E501
 
         _param = self._v1_login_resend_verification_post_serialize(
+            routes_resend_verification_request=routes_resend_verification_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -582,6 +587,7 @@ class AuthenticationApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "str",
+            '400': "str",
             '401': "str",
             '500': "str",
         }
@@ -599,6 +605,7 @@ class AuthenticationApi:
     @validate_call
     def v1_login_resend_verification_post_with_http_info(
         self,
+        routes_resend_verification_request: Annotated[RoutesResendVerificationRequest, Field(description="Resend verification request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -616,6 +623,8 @@ class AuthenticationApi:
 
         Resends the email verification to the user's email address
 
+        :param routes_resend_verification_request: Resend verification request (required)
+        :type routes_resend_verification_request: RoutesResendVerificationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -639,6 +648,7 @@ class AuthenticationApi:
         """ # noqa: E501
 
         _param = self._v1_login_resend_verification_post_serialize(
+            routes_resend_verification_request=routes_resend_verification_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -647,6 +657,7 @@ class AuthenticationApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "str",
+            '400': "str",
             '401': "str",
             '500': "str",
         }
@@ -664,6 +675,7 @@ class AuthenticationApi:
     @validate_call
     def v1_login_resend_verification_post_without_preload_content(
         self,
+        routes_resend_verification_request: Annotated[RoutesResendVerificationRequest, Field(description="Resend verification request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -681,6 +693,8 @@ class AuthenticationApi:
 
         Resends the email verification to the user's email address
 
+        :param routes_resend_verification_request: Resend verification request (required)
+        :type routes_resend_verification_request: RoutesResendVerificationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -704,6 +718,7 @@ class AuthenticationApi:
         """ # noqa: E501
 
         _param = self._v1_login_resend_verification_post_serialize(
+            routes_resend_verification_request=routes_resend_verification_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -712,6 +727,7 @@ class AuthenticationApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "str",
+            '400': "str",
             '401': "str",
             '500': "str",
         }
@@ -724,6 +740,7 @@ class AuthenticationApi:
 
     def _v1_login_resend_verification_post_serialize(
         self,
+        routes_resend_verification_request,
         _request_auth,
         _content_type,
         _headers,
@@ -749,6 +766,8 @@ class AuthenticationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if routes_resend_verification_request is not None:
+            _body_params = routes_resend_verification_request
 
 
         # set the HTTP header `Accept`
@@ -759,6 +778,19 @@ class AuthenticationApi:
                 ]
             )
 
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
@@ -787,7 +819,7 @@ class AuthenticationApi:
     @validate_call
     def v1_login_token_post(
         self,
-        auth0_login_request: Annotated[Auth0LoginRequest, Field(description="Login request")],
+        routes_login_request: Annotated[RoutesLoginRequest, Field(description="Login request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -800,13 +832,13 @@ class AuthenticationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Auth0Auth0TokenResponse:
+    ) -> AuthenticationtypesTokenResponse:
         """Get Authentication token
 
-        Retrieve an authentication token from the Authentication service using username and password.
+        Retrieve an authentication token from the authentication service using username and password.
 
-        :param auth0_login_request: Login request (required)
-        :type auth0_login_request: Auth0LoginRequest
+        :param routes_login_request: Login request (required)
+        :type routes_login_request: RoutesLoginRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -830,7 +862,7 @@ class AuthenticationApi:
         """ # noqa: E501
 
         _param = self._v1_login_token_post_serialize(
-            auth0_login_request=auth0_login_request,
+            routes_login_request=routes_login_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -838,7 +870,7 @@ class AuthenticationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Auth0Auth0TokenResponse",
+            '200': "AuthenticationtypesTokenResponse",
             '400': "str",
             '500': "str",
         }
@@ -856,7 +888,7 @@ class AuthenticationApi:
     @validate_call
     def v1_login_token_post_with_http_info(
         self,
-        auth0_login_request: Annotated[Auth0LoginRequest, Field(description="Login request")],
+        routes_login_request: Annotated[RoutesLoginRequest, Field(description="Login request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -869,13 +901,13 @@ class AuthenticationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Auth0Auth0TokenResponse]:
+    ) -> ApiResponse[AuthenticationtypesTokenResponse]:
         """Get Authentication token
 
-        Retrieve an authentication token from the Authentication service using username and password.
+        Retrieve an authentication token from the authentication service using username and password.
 
-        :param auth0_login_request: Login request (required)
-        :type auth0_login_request: Auth0LoginRequest
+        :param routes_login_request: Login request (required)
+        :type routes_login_request: RoutesLoginRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -899,7 +931,7 @@ class AuthenticationApi:
         """ # noqa: E501
 
         _param = self._v1_login_token_post_serialize(
-            auth0_login_request=auth0_login_request,
+            routes_login_request=routes_login_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -907,7 +939,7 @@ class AuthenticationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Auth0Auth0TokenResponse",
+            '200': "AuthenticationtypesTokenResponse",
             '400': "str",
             '500': "str",
         }
@@ -925,7 +957,7 @@ class AuthenticationApi:
     @validate_call
     def v1_login_token_post_without_preload_content(
         self,
-        auth0_login_request: Annotated[Auth0LoginRequest, Field(description="Login request")],
+        routes_login_request: Annotated[RoutesLoginRequest, Field(description="Login request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -941,10 +973,10 @@ class AuthenticationApi:
     ) -> RESTResponseType:
         """Get Authentication token
 
-        Retrieve an authentication token from the Authentication service using username and password.
+        Retrieve an authentication token from the authentication service using username and password.
 
-        :param auth0_login_request: Login request (required)
-        :type auth0_login_request: Auth0LoginRequest
+        :param routes_login_request: Login request (required)
+        :type routes_login_request: RoutesLoginRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -968,7 +1000,7 @@ class AuthenticationApi:
         """ # noqa: E501
 
         _param = self._v1_login_token_post_serialize(
-            auth0_login_request=auth0_login_request,
+            routes_login_request=routes_login_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -976,7 +1008,7 @@ class AuthenticationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Auth0Auth0TokenResponse",
+            '200': "AuthenticationtypesTokenResponse",
             '400': "str",
             '500': "str",
         }
@@ -989,7 +1021,7 @@ class AuthenticationApi:
 
     def _v1_login_token_post_serialize(
         self,
-        auth0_login_request,
+        routes_login_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1015,8 +1047,8 @@ class AuthenticationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if auth0_login_request is not None:
-            _body_params = auth0_login_request
+        if routes_login_request is not None:
+            _body_params = routes_login_request
 
 
         # set the HTTP header `Accept`

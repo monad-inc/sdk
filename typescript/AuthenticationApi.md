@@ -59,7 +59,7 @@ No authorization required
 # **v1LoginGet**
 > v1LoginGet()
 
-Redirects the user to Authentication service login page to initiate the login process.
+Redirects the user to authentication service login page to initiate the login process.
 
 ### Example
 
@@ -103,7 +103,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1LoginResendVerificationPost**
-> string v1LoginResendVerificationPost()
+> string v1LoginResendVerificationPost(routesResendVerificationRequest)
 
 Resends the email verification to the user\'s email address
 
@@ -112,11 +112,17 @@ Resends the email verification to the user\'s email address
 
 ```typescript
 import { createConfiguration, AuthenticationApi } from '';
+import type { AuthenticationApiV1LoginResendVerificationPostRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new AuthenticationApi(configuration);
 
-const request = {};
+const request: AuthenticationApiV1LoginResendVerificationPostRequest = {
+    // Resend verification request
+  routesResendVerificationRequest: {
+    userId: "usr_123456789",
+  },
+};
 
 const data = await apiInstance.v1LoginResendVerificationPost(request);
 console.log('API called successfully. Returned data:', data);
@@ -124,7 +130,10 @@ console.log('API called successfully. Returned data:', data);
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **routesResendVerificationRequest** | **RoutesResendVerificationRequest**| Resend verification request |
 
 
 ### Return type
@@ -137,7 +146,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -145,15 +154,16 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Verification email sent successfully |  -  |
+**400** | Invalid request body |  -  |
 **401** | Unauthorized |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1LoginTokenPost**
-> Auth0Auth0TokenResponse v1LoginTokenPost(auth0LoginRequest)
+> AuthenticationtypesTokenResponse v1LoginTokenPost(routesLoginRequest)
 
-Retrieve an authentication token from the Authentication service using username and password.
+Retrieve an authentication token from the authentication service using username and password.
 
 ### Example
 
@@ -167,7 +177,7 @@ const apiInstance = new AuthenticationApi(configuration);
 
 const request: AuthenticationApiV1LoginTokenPostRequest = {
     // Login request
-  auth0LoginRequest: {
+  routesLoginRequest: {
     password: "password_example",
     username: "username_example",
   },
@@ -182,12 +192,12 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **auth0LoginRequest** | **Auth0LoginRequest**| Login request |
+ **routesLoginRequest** | **RoutesLoginRequest**| Login request |
 
 
 ### Return type
 
-**Auth0Auth0TokenResponse**
+**AuthenticationtypesTokenResponse**
 
 ### Authorization
 

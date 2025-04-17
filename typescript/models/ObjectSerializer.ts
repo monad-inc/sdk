@@ -7,10 +7,9 @@ export * from '../models/AdminLogsSecretsConfig';
 export * from '../models/AdminLogsSettingsConfig';
 export * from '../models/AuditLogsSecretsConfig';
 export * from '../models/AuditLogsSettingsConfig';
-export * from '../models/Auth0Auth0TokenResponse';
-export * from '../models/Auth0LoginRequest';
 export * from '../models/AuthLogsSecretsConfig';
 export * from '../models/AuthLogsSettingsConfig';
+export * from '../models/AuthenticationtypesTokenResponse';
 export * from '../models/AwsS3SettingsConfig';
 export * from '../models/AzureActivityLogsSecretsConfig';
 export * from '../models/AzureActivityLogsSettingsConfig';
@@ -161,6 +160,8 @@ export * from '../models/RoutesGetInputResponse';
 export * from '../models/RoutesGetOutputResponse';
 export * from '../models/RoutesGetTransformResponse';
 export * from '../models/RoutesInviteUserToOrganizationRequest';
+export * from '../models/RoutesLoginRequest';
+export * from '../models/RoutesResendVerificationRequest';
 export * from '../models/RoutesTransformConfig';
 export * from '../models/RoutesTransformOperation';
 export * from '../models/RoutesTransformOperationArguments';
@@ -266,10 +267,9 @@ import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
 import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
-import { Auth0Auth0TokenResponse } from '../models/Auth0Auth0TokenResponse';
-import { Auth0LoginRequest } from '../models/Auth0LoginRequest';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
+import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
@@ -420,6 +420,8 @@ import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
+import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
+import { RoutesResendVerificationRequest } from '../models/RoutesResendVerificationRequest';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArgumentsClass } from '../models/RoutesTransformOperationArguments';
@@ -550,10 +552,9 @@ let typeMap: {[index: string]: any} = {
     "AdminLogsSettingsConfig": AdminLogsSettingsConfig,
     "AuditLogsSecretsConfig": AuditLogsSecretsConfig,
     "AuditLogsSettingsConfig": AuditLogsSettingsConfig,
-    "Auth0Auth0TokenResponse": Auth0Auth0TokenResponse,
-    "Auth0LoginRequest": Auth0LoginRequest,
     "AuthLogsSecretsConfig": AuthLogsSecretsConfig,
     "AuthLogsSettingsConfig": AuthLogsSettingsConfig,
+    "AuthenticationtypesTokenResponse": AuthenticationtypesTokenResponse,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
     "AzureActivityLogsSecretsConfig": AzureActivityLogsSecretsConfig,
     "AzureActivityLogsSettingsConfig": AzureActivityLogsSettingsConfig,
@@ -704,6 +705,8 @@ let typeMap: {[index: string]: any} = {
     "RoutesGetOutputResponse": RoutesGetOutputResponse,
     "RoutesGetTransformResponse": RoutesGetTransformResponse,
     "RoutesInviteUserToOrganizationRequest": RoutesInviteUserToOrganizationRequest,
+    "RoutesLoginRequest": RoutesLoginRequest,
+    "RoutesResendVerificationRequest": RoutesResendVerificationRequest,
     "RoutesTransformConfig": RoutesTransformConfig,
     "RoutesTransformOperation": RoutesTransformOperation,
     "RoutesTransformOperationArguments": RoutesTransformOperationArgumentsClass,

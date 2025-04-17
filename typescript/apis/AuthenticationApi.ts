@@ -8,8 +8,9 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
-import { Auth0Auth0TokenResponse } from '../models/Auth0Auth0TokenResponse';
-import { Auth0LoginRequest } from '../models/Auth0LoginRequest';
+import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
+import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
+import { RoutesResendVerificationRequest } from '../models/RoutesResendVerificationRequest';
 
 /**
  * no description
@@ -41,7 +42,7 @@ export class AuthenticationApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Redirects the user to Authentication service login page to initiate the login process.
+     * Redirects the user to authentication service login page to initiate the login process.
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
      */
     public async v1LoginGet(_options?: Configuration): Promise<RequestContext> {
@@ -67,9 +68,16 @@ export class AuthenticationApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Resends the email verification to the user\'s email address
      * Resend email verification
+     * @param routesResendVerificationRequest Resend verification request
      */
-    public async v1LoginResendVerificationPost(_options?: Configuration): Promise<RequestContext> {
+    public async v1LoginResendVerificationPost(routesResendVerificationRequest: RoutesResendVerificationRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
+        // verify required parameter 'routesResendVerificationRequest' is not null or undefined
+        if (routesResendVerificationRequest === null || routesResendVerificationRequest === undefined) {
+            throw new RequiredError("AuthenticationApi", "v1LoginResendVerificationPost", "routesResendVerificationRequest");
+        }
+
 
         // Path Params
         const localVarPath = '/v1/login/resend-verification';
@@ -78,6 +86,17 @@ export class AuthenticationApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(routesResendVerificationRequest, "RoutesResendVerificationRequest", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -100,16 +119,16 @@ export class AuthenticationApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Retrieve an authentication token from the Authentication service using username and password.
+     * Retrieve an authentication token from the authentication service using username and password.
      * Get Authentication token
-     * @param auth0LoginRequest Login request
+     * @param routesLoginRequest Login request
      */
-    public async v1LoginTokenPost(auth0LoginRequest: Auth0LoginRequest, _options?: Configuration): Promise<RequestContext> {
+    public async v1LoginTokenPost(routesLoginRequest: RoutesLoginRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'auth0LoginRequest' is not null or undefined
-        if (auth0LoginRequest === null || auth0LoginRequest === undefined) {
-            throw new RequiredError("AuthenticationApi", "v1LoginTokenPost", "auth0LoginRequest");
+        // verify required parameter 'routesLoginRequest' is not null or undefined
+        if (routesLoginRequest === null || routesLoginRequest === undefined) {
+            throw new RequiredError("AuthenticationApi", "v1LoginTokenPost", "routesLoginRequest");
         }
 
 
@@ -127,7 +146,7 @@ export class AuthenticationApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(auth0LoginRequest, "Auth0LoginRequest", ""),
+            ObjectSerializer.serialize(routesLoginRequest, "RoutesLoginRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -215,6 +234,13 @@ export class AuthenticationApiResponseProcessor {
             ) as string;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Invalid request body", body, response.headers);
+        }
         if (isCodeInRange("401", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
@@ -249,13 +275,13 @@ export class AuthenticationApiResponseProcessor {
      * @params response Response returned by the server for a request to v1LoginTokenPost
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1LoginTokenPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Auth0Auth0TokenResponse >> {
+     public async v1LoginTokenPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<AuthenticationtypesTokenResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: Auth0Auth0TokenResponse = ObjectSerializer.deserialize(
+            const body: AuthenticationtypesTokenResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Auth0Auth0TokenResponse", ""
-            ) as Auth0Auth0TokenResponse;
+                "AuthenticationtypesTokenResponse", ""
+            ) as AuthenticationtypesTokenResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -282,10 +308,10 @@ export class AuthenticationApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: Auth0Auth0TokenResponse = ObjectSerializer.deserialize(
+            const body: AuthenticationtypesTokenResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Auth0Auth0TokenResponse", ""
-            ) as Auth0Auth0TokenResponse;
+                "AuthenticationtypesTokenResponse", ""
+            ) as AuthenticationtypesTokenResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

@@ -74,7 +74,7 @@ No authorization required
 
 Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
 
-Redirects the user to Authentication service login page to initiate the login process.
+Redirects the user to authentication service login page to initiate the login process.
 
 ### Example
 ```java
@@ -127,7 +127,7 @@ No authorization required
 
 <a id="v1LoginResendVerificationPost"></a>
 # **v1LoginResendVerificationPost**
-> String v1LoginResendVerificationPost()
+> String v1LoginResendVerificationPost(routesResendVerificationRequest)
 
 Resend email verification
 
@@ -161,8 +161,9 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    RoutesResendVerificationRequest routesResendVerificationRequest = new RoutesResendVerificationRequest(); // RoutesResendVerificationRequest | Resend verification request
     try {
-      String result = apiInstance.v1LoginResendVerificationPost();
+      String result = apiInstance.v1LoginResendVerificationPost(routesResendVerificationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#v1LoginResendVerificationPost");
@@ -176,7 +177,10 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **routesResendVerificationRequest** | [**RoutesResendVerificationRequest**](RoutesResendVerificationRequest.md)| Resend verification request | |
 
 ### Return type
 
@@ -188,23 +192,24 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Verification email sent successfully |  -  |
+| **400** | Invalid request body |  -  |
 | **401** | Unauthorized |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="v1LoginTokenPost"></a>
 # **v1LoginTokenPost**
-> Auth0Auth0TokenResponse v1LoginTokenPost(auth0LoginRequest)
+> AuthenticationtypesTokenResponse v1LoginTokenPost(routesLoginRequest)
 
 Get Authentication token
 
-Retrieve an authentication token from the Authentication service using username and password.
+Retrieve an authentication token from the authentication service using username and password.
 
 ### Example
 ```java
@@ -221,9 +226,9 @@ public class Example {
     defaultClient.setBasePath("https://monad.com/api");
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
-    Auth0LoginRequest auth0LoginRequest = new Auth0LoginRequest(); // Auth0LoginRequest | Login request
+    RoutesLoginRequest routesLoginRequest = new RoutesLoginRequest(); // RoutesLoginRequest | Login request
     try {
-      Auth0Auth0TokenResponse result = apiInstance.v1LoginTokenPost(auth0LoginRequest);
+      AuthenticationtypesTokenResponse result = apiInstance.v1LoginTokenPost(routesLoginRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#v1LoginTokenPost");
@@ -240,11 +245,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **auth0LoginRequest** | [**Auth0LoginRequest**](Auth0LoginRequest.md)| Login request | |
+| **routesLoginRequest** | [**RoutesLoginRequest**](RoutesLoginRequest.md)| Login request | |
 
 ### Return type
 
-[**Auth0Auth0TokenResponse**](Auth0Auth0TokenResponse.md)
+[**AuthenticationtypesTokenResponse**](AuthenticationtypesTokenResponse.md)
 
 ### Authorization
 

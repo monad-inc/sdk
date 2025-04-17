@@ -134,7 +134,7 @@ func (r ApiV1LoginGetRequest) Execute() (*http.Response, error) {
 /*
 V1LoginGet Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
 
-Redirects the user to Authentication service login page to initiate the login process.
+Redirects the user to authentication service login page to initiate the login process.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiV1LoginGetRequest
@@ -223,6 +223,13 @@ func (a *AuthenticationAPIService) V1LoginGetExecute(r ApiV1LoginGetRequest) (*h
 type ApiV1LoginResendVerificationPostRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationAPIService
+	routesResendVerificationRequest *RoutesResendVerificationRequest
+}
+
+// Resend verification request
+func (r ApiV1LoginResendVerificationPostRequest) RoutesResendVerificationRequest(routesResendVerificationRequest RoutesResendVerificationRequest) ApiV1LoginResendVerificationPostRequest {
+	r.routesResendVerificationRequest = &routesResendVerificationRequest
+	return r
 }
 
 func (r ApiV1LoginResendVerificationPostRequest) Execute() (string, *http.Response, error) {
@@ -264,9 +271,12 @@ func (a *AuthenticationAPIService) V1LoginResendVerificationPostExecute(r ApiV1L
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.routesResendVerificationRequest == nil {
+		return localVarReturnValue, nil, reportError("routesResendVerificationRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -282,6 +292,8 @@ func (a *AuthenticationAPIService) V1LoginResendVerificationPostExecute(r ApiV1L
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.routesResendVerificationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -332,6 +344,17 @@ func (a *AuthenticationAPIService) V1LoginResendVerificationPostExecute(r ApiV1L
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 		if localVarHTTPResponse.StatusCode == 401 {
 			var v string
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
@@ -371,23 +394,23 @@ func (a *AuthenticationAPIService) V1LoginResendVerificationPostExecute(r ApiV1L
 type ApiV1LoginTokenPostRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationAPIService
-	auth0LoginRequest *Auth0LoginRequest
+	routesLoginRequest *RoutesLoginRequest
 }
 
 // Login request
-func (r ApiV1LoginTokenPostRequest) Auth0LoginRequest(auth0LoginRequest Auth0LoginRequest) ApiV1LoginTokenPostRequest {
-	r.auth0LoginRequest = &auth0LoginRequest
+func (r ApiV1LoginTokenPostRequest) RoutesLoginRequest(routesLoginRequest RoutesLoginRequest) ApiV1LoginTokenPostRequest {
+	r.routesLoginRequest = &routesLoginRequest
 	return r
 }
 
-func (r ApiV1LoginTokenPostRequest) Execute() (*Auth0Auth0TokenResponse, *http.Response, error) {
+func (r ApiV1LoginTokenPostRequest) Execute() (*AuthenticationtypesTokenResponse, *http.Response, error) {
 	return r.ApiService.V1LoginTokenPostExecute(r)
 }
 
 /*
 V1LoginTokenPost Get Authentication token
 
-Retrieve an authentication token from the Authentication service using username and password.
+Retrieve an authentication token from the authentication service using username and password.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiV1LoginTokenPostRequest
@@ -400,13 +423,13 @@ func (a *AuthenticationAPIService) V1LoginTokenPost(ctx context.Context) ApiV1Lo
 }
 
 // Execute executes the request
-//  @return Auth0Auth0TokenResponse
-func (a *AuthenticationAPIService) V1LoginTokenPostExecute(r ApiV1LoginTokenPostRequest) (*Auth0Auth0TokenResponse, *http.Response, error) {
+//  @return AuthenticationtypesTokenResponse
+func (a *AuthenticationAPIService) V1LoginTokenPostExecute(r ApiV1LoginTokenPostRequest) (*AuthenticationtypesTokenResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Auth0Auth0TokenResponse
+		localVarReturnValue  *AuthenticationtypesTokenResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationAPIService.V1LoginTokenPost")
@@ -419,8 +442,8 @@ func (a *AuthenticationAPIService) V1LoginTokenPostExecute(r ApiV1LoginTokenPost
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.auth0LoginRequest == nil {
-		return localVarReturnValue, nil, reportError("auth0LoginRequest is required and must be specified")
+	if r.routesLoginRequest == nil {
+		return localVarReturnValue, nil, reportError("routesLoginRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -441,7 +464,7 @@ func (a *AuthenticationAPIService) V1LoginTokenPostExecute(r ApiV1LoginTokenPost
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.auth0LoginRequest
+	localVarPostBody = r.routesLoginRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

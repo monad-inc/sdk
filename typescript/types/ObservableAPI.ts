@@ -12,10 +12,9 @@ import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
 import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
-import { Auth0Auth0TokenResponse } from '../models/Auth0Auth0TokenResponse';
-import { Auth0LoginRequest } from '../models/Auth0LoginRequest';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
+import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
@@ -166,6 +165,8 @@ import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
+import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
+import { RoutesResendVerificationRequest } from '../models/RoutesResendVerificationRequest';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
@@ -339,7 +340,7 @@ export class ObservableAuthenticationApi {
     }
 
     /**
-     * Redirects the user to Authentication service login page to initiate the login process.
+     * Redirects the user to authentication service login page to initiate the login process.
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
      */
     public v1LoginGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<void>> {
@@ -391,7 +392,7 @@ export class ObservableAuthenticationApi {
     }
 
     /**
-     * Redirects the user to Authentication service login page to initiate the login process.
+     * Redirects the user to authentication service login page to initiate the login process.
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
      */
     public v1LoginGet(_options?: ConfigurationOptions): Observable<void> {
@@ -401,8 +402,9 @@ export class ObservableAuthenticationApi {
     /**
      * Resends the email verification to the user\'s email address
      * Resend email verification
+     * @param routesResendVerificationRequest Resend verification request
      */
-    public v1LoginResendVerificationPostWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    public v1LoginResendVerificationPostWithHttpInfo(routesResendVerificationRequest: RoutesResendVerificationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -433,7 +435,7 @@ export class ObservableAuthenticationApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v1LoginResendVerificationPost(_config);
+        const requestContextPromise = this.requestFactory.v1LoginResendVerificationPost(routesResendVerificationRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -453,17 +455,18 @@ export class ObservableAuthenticationApi {
     /**
      * Resends the email verification to the user\'s email address
      * Resend email verification
+     * @param routesResendVerificationRequest Resend verification request
      */
-    public v1LoginResendVerificationPost(_options?: ConfigurationOptions): Observable<string> {
-        return this.v1LoginResendVerificationPostWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    public v1LoginResendVerificationPost(routesResendVerificationRequest: RoutesResendVerificationRequest, _options?: ConfigurationOptions): Observable<string> {
+        return this.v1LoginResendVerificationPostWithHttpInfo(routesResendVerificationRequest, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
     }
 
     /**
-     * Retrieve an authentication token from the Authentication service using username and password.
+     * Retrieve an authentication token from the authentication service using username and password.
      * Get Authentication token
-     * @param auth0LoginRequest Login request
+     * @param routesLoginRequest Login request
      */
-    public v1LoginTokenPostWithHttpInfo(auth0LoginRequest: Auth0LoginRequest, _options?: ConfigurationOptions): Observable<HttpInfo<Auth0Auth0TokenResponse>> {
+    public v1LoginTokenPostWithHttpInfo(routesLoginRequest: RoutesLoginRequest, _options?: ConfigurationOptions): Observable<HttpInfo<AuthenticationtypesTokenResponse>> {
     let _config = this.configuration;
     let allMiddleware: Middleware[] = [];
     if (_options && _options.middleware){
@@ -494,7 +497,7 @@ export class ObservableAuthenticationApi {
 		};
 	}
 
-        const requestContextPromise = this.requestFactory.v1LoginTokenPost(auth0LoginRequest, _config);
+        const requestContextPromise = this.requestFactory.v1LoginTokenPost(routesLoginRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of allMiddleware) {
@@ -512,12 +515,12 @@ export class ObservableAuthenticationApi {
     }
 
     /**
-     * Retrieve an authentication token from the Authentication service using username and password.
+     * Retrieve an authentication token from the authentication service using username and password.
      * Get Authentication token
-     * @param auth0LoginRequest Login request
+     * @param routesLoginRequest Login request
      */
-    public v1LoginTokenPost(auth0LoginRequest: Auth0LoginRequest, _options?: ConfigurationOptions): Observable<Auth0Auth0TokenResponse> {
-        return this.v1LoginTokenPostWithHttpInfo(auth0LoginRequest, _options).pipe(map((apiResponse: HttpInfo<Auth0Auth0TokenResponse>) => apiResponse.data));
+    public v1LoginTokenPost(routesLoginRequest: RoutesLoginRequest, _options?: ConfigurationOptions): Observable<AuthenticationtypesTokenResponse> {
+        return this.v1LoginTokenPostWithHttpInfo(routesLoginRequest, _options).pipe(map((apiResponse: HttpInfo<AuthenticationtypesTokenResponse>) => apiResponse.data));
     }
 
 }

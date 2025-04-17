@@ -11,10 +11,9 @@ import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
 import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
-import { Auth0Auth0TokenResponse } from '../models/Auth0Auth0TokenResponse';
-import { Auth0LoginRequest } from '../models/Auth0LoginRequest';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
+import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
@@ -165,6 +164,8 @@ import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
+import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
+import { RoutesResendVerificationRequest } from '../models/RoutesResendVerificationRequest';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
@@ -317,7 +318,7 @@ export class PromiseAuthenticationApi {
     }
 
     /**
-     * Redirects the user to Authentication service login page to initiate the login process.
+     * Redirects the user to authentication service login page to initiate the login process.
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
      */
     public v1LoginGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
@@ -338,7 +339,7 @@ export class PromiseAuthenticationApi {
     }
 
     /**
-     * Redirects the user to Authentication service login page to initiate the login process.
+     * Redirects the user to authentication service login page to initiate the login process.
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
      */
     public v1LoginGet(_options?: PromiseConfigurationOptions): Promise<void> {
@@ -361,8 +362,9 @@ export class PromiseAuthenticationApi {
     /**
      * Resends the email verification to the user\'s email address
      * Resend email verification
+     * @param routesResendVerificationRequest Resend verification request
      */
-    public v1LoginResendVerificationPostWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+    public v1LoginResendVerificationPostWithHttpInfo(routesResendVerificationRequest: RoutesResendVerificationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -375,15 +377,16 @@ export class PromiseAuthenticationApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v1LoginResendVerificationPostWithHttpInfo(observableOptions);
+        const result = this.api.v1LoginResendVerificationPostWithHttpInfo(routesResendVerificationRequest, observableOptions);
         return result.toPromise();
     }
 
     /**
      * Resends the email verification to the user\'s email address
      * Resend email verification
+     * @param routesResendVerificationRequest Resend verification request
      */
-    public v1LoginResendVerificationPost(_options?: PromiseConfigurationOptions): Promise<string> {
+    public v1LoginResendVerificationPost(routesResendVerificationRequest: RoutesResendVerificationRequest, _options?: PromiseConfigurationOptions): Promise<string> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -396,16 +399,16 @@ export class PromiseAuthenticationApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v1LoginResendVerificationPost(observableOptions);
+        const result = this.api.v1LoginResendVerificationPost(routesResendVerificationRequest, observableOptions);
         return result.toPromise();
     }
 
     /**
-     * Retrieve an authentication token from the Authentication service using username and password.
+     * Retrieve an authentication token from the authentication service using username and password.
      * Get Authentication token
-     * @param auth0LoginRequest Login request
+     * @param routesLoginRequest Login request
      */
-    public v1LoginTokenPostWithHttpInfo(auth0LoginRequest: Auth0LoginRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Auth0Auth0TokenResponse>> {
+    public v1LoginTokenPostWithHttpInfo(routesLoginRequest: RoutesLoginRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<AuthenticationtypesTokenResponse>> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -418,16 +421,16 @@ export class PromiseAuthenticationApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v1LoginTokenPostWithHttpInfo(auth0LoginRequest, observableOptions);
+        const result = this.api.v1LoginTokenPostWithHttpInfo(routesLoginRequest, observableOptions);
         return result.toPromise();
     }
 
     /**
-     * Retrieve an authentication token from the Authentication service using username and password.
+     * Retrieve an authentication token from the authentication service using username and password.
      * Get Authentication token
-     * @param auth0LoginRequest Login request
+     * @param routesLoginRequest Login request
      */
-    public v1LoginTokenPost(auth0LoginRequest: Auth0LoginRequest, _options?: PromiseConfigurationOptions): Promise<Auth0Auth0TokenResponse> {
+    public v1LoginTokenPost(routesLoginRequest: RoutesLoginRequest, _options?: PromiseConfigurationOptions): Promise<AuthenticationtypesTokenResponse> {
         let observableOptions: undefined | ConfigurationOptions
         if (_options){
 	    observableOptions = {
@@ -440,7 +443,7 @@ export class PromiseAuthenticationApi {
                 authMethods: _options.authMethods
 	    }
 	}
-        const result = this.api.v1LoginTokenPost(auth0LoginRequest, observableOptions);
+        const result = this.api.v1LoginTokenPost(routesLoginRequest, observableOptions);
         return result.toPromise();
     }
 

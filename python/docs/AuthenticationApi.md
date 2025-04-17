@@ -78,7 +78,7 @@ No authorization required
 
 Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
 
-Redirects the user to Authentication service login page to initiate the login process.
+Redirects the user to authentication service login page to initiate the login process.
 
 ### Example
 
@@ -135,7 +135,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_login_resend_verification_post**
-> str v1_login_resend_verification_post()
+> str v1_login_resend_verification_post(routes_resend_verification_request)
 
 Resend email verification
 
@@ -148,6 +148,7 @@ Resends the email verification to the user's email address
 
 ```python
 import monad
+from monad.models.routes_resend_verification_request import RoutesResendVerificationRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -178,10 +179,11 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.AuthenticationApi(api_client)
+    routes_resend_verification_request = monad.RoutesResendVerificationRequest() # RoutesResendVerificationRequest | Resend verification request
 
     try:
         # Resend email verification
-        api_response = api_instance.v1_login_resend_verification_post()
+        api_response = api_instance.v1_login_resend_verification_post(routes_resend_verification_request)
         print("The response of AuthenticationApi->v1_login_resend_verification_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -192,7 +194,10 @@ with monad.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **routes_resend_verification_request** | [**RoutesResendVerificationRequest**](RoutesResendVerificationRequest.md)| Resend verification request | 
 
 ### Return type
 
@@ -204,7 +209,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -212,25 +217,26 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Verification email sent successfully |  -  |
+**400** | Invalid request body |  -  |
 **401** | Unauthorized |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_login_token_post**
-> Auth0Auth0TokenResponse v1_login_token_post(auth0_login_request)
+> AuthenticationtypesTokenResponse v1_login_token_post(routes_login_request)
 
 Get Authentication token
 
-Retrieve an authentication token from the Authentication service using username and password.
+Retrieve an authentication token from the authentication service using username and password.
 
 ### Example
 
 
 ```python
 import monad
-from monad.models.auth0_auth0_token_response import Auth0Auth0TokenResponse
-from monad.models.auth0_login_request import Auth0LoginRequest
+from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse
+from monad.models.routes_login_request import RoutesLoginRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -245,11 +251,11 @@ configuration = monad.Configuration(
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.AuthenticationApi(api_client)
-    auth0_login_request = monad.Auth0LoginRequest() # Auth0LoginRequest | Login request
+    routes_login_request = monad.RoutesLoginRequest() # RoutesLoginRequest | Login request
 
     try:
         # Get Authentication token
-        api_response = api_instance.v1_login_token_post(auth0_login_request)
+        api_response = api_instance.v1_login_token_post(routes_login_request)
         print("The response of AuthenticationApi->v1_login_token_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -263,11 +269,11 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **auth0_login_request** | [**Auth0LoginRequest**](Auth0LoginRequest.md)| Login request | 
+ **routes_login_request** | [**RoutesLoginRequest**](RoutesLoginRequest.md)| Login request | 
 
 ### Return type
 
-[**Auth0Auth0TokenResponse**](Auth0Auth0TokenResponse.md)
+[**AuthenticationtypesTokenResponse**](AuthenticationtypesTokenResponse.md)
 
 ### Authorization
 

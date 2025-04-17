@@ -27,8 +27,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.Auth0Auth0TokenResponse;
-import org.openapitools.client.model.Auth0LoginRequest;
+import org.openapitools.client.model.AuthenticationtypesTokenResponse;
+import org.openapitools.client.model.RoutesLoginRequest;
+import org.openapitools.client.model.RoutesResendVerificationRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -255,7 +256,7 @@ public class AuthenticationApi {
 
     /**
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
-     * Redirects the user to Authentication service login page to initiate the login process.
+     * Redirects the user to authentication service login page to initiate the login process.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -270,7 +271,7 @@ public class AuthenticationApi {
 
     /**
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
-     * Redirects the user to Authentication service login page to initiate the login process.
+     * Redirects the user to authentication service login page to initiate the login process.
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -287,7 +288,7 @@ public class AuthenticationApi {
 
     /**
      * Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger. (asynchronously)
-     * Redirects the user to Authentication service login page to initiate the login process.
+     * Redirects the user to authentication service login page to initiate the login process.
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -306,6 +307,7 @@ public class AuthenticationApi {
     }
     /**
      * Build call for v1LoginResendVerificationPost
+     * @param routesResendVerificationRequest Resend verification request (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -314,11 +316,12 @@ public class AuthenticationApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Verification email sent successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1LoginResendVerificationPostCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1LoginResendVerificationPostCall(RoutesResendVerificationRequest routesResendVerificationRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -332,7 +335,7 @@ public class AuthenticationApi {
             basePath = null;
         }
 
-        Object localVarPostBody = null;
+        Object localVarPostBody = routesResendVerificationRequest;
 
         // create path and map variables
         String localVarPath = "/v1/login/resend-verification";
@@ -352,6 +355,7 @@ public class AuthenticationApi {
         }
 
         final String[] localVarContentTypes = {
+            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -363,14 +367,20 @@ public class AuthenticationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1LoginResendVerificationPostValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return v1LoginResendVerificationPostCall(_callback);
+    private okhttp3.Call v1LoginResendVerificationPostValidateBeforeCall(RoutesResendVerificationRequest routesResendVerificationRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'routesResendVerificationRequest' is set
+        if (routesResendVerificationRequest == null) {
+            throw new ApiException("Missing the required parameter 'routesResendVerificationRequest' when calling v1LoginResendVerificationPost(Async)");
+        }
+
+        return v1LoginResendVerificationPostCall(routesResendVerificationRequest, _callback);
 
     }
 
     /**
      * Resend email verification
      * Resends the email verification to the user&#39;s email address
+     * @param routesResendVerificationRequest Resend verification request (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -378,18 +388,20 @@ public class AuthenticationApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Verification email sent successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public String v1LoginResendVerificationPost() throws ApiException {
-        ApiResponse<String> localVarResp = v1LoginResendVerificationPostWithHttpInfo();
+    public String v1LoginResendVerificationPost(RoutesResendVerificationRequest routesResendVerificationRequest) throws ApiException {
+        ApiResponse<String> localVarResp = v1LoginResendVerificationPostWithHttpInfo(routesResendVerificationRequest);
         return localVarResp.getData();
     }
 
     /**
      * Resend email verification
      * Resends the email verification to the user&#39;s email address
+     * @param routesResendVerificationRequest Resend verification request (required)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -397,12 +409,13 @@ public class AuthenticationApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Verification email sent successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v1LoginResendVerificationPostWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = v1LoginResendVerificationPostValidateBeforeCall(null);
+    public ApiResponse<String> v1LoginResendVerificationPostWithHttpInfo(RoutesResendVerificationRequest routesResendVerificationRequest) throws ApiException {
+        okhttp3.Call localVarCall = v1LoginResendVerificationPostValidateBeforeCall(routesResendVerificationRequest, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -410,6 +423,7 @@ public class AuthenticationApi {
     /**
      * Resend email verification (asynchronously)
      * Resends the email verification to the user&#39;s email address
+     * @param routesResendVerificationRequest Resend verification request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -418,20 +432,21 @@ public class AuthenticationApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Verification email sent successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1LoginResendVerificationPostAsync(final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v1LoginResendVerificationPostAsync(RoutesResendVerificationRequest routesResendVerificationRequest, final ApiCallback<String> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1LoginResendVerificationPostValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = v1LoginResendVerificationPostValidateBeforeCall(routesResendVerificationRequest, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for v1LoginTokenPost
-     * @param auth0LoginRequest Login request (required)
+     * @param routesLoginRequest Login request (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -445,7 +460,7 @@ public class AuthenticationApi {
         <tr><td> 0 </td><td> Error message </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1LoginTokenPostCall(Auth0LoginRequest auth0LoginRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1LoginTokenPostCall(RoutesLoginRequest routesLoginRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -459,7 +474,7 @@ public class AuthenticationApi {
             basePath = null;
         }
 
-        Object localVarPostBody = auth0LoginRequest;
+        Object localVarPostBody = routesLoginRequest;
 
         // create path and map variables
         String localVarPath = "/v1/login/token";
@@ -491,21 +506,21 @@ public class AuthenticationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1LoginTokenPostValidateBeforeCall(Auth0LoginRequest auth0LoginRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'auth0LoginRequest' is set
-        if (auth0LoginRequest == null) {
-            throw new ApiException("Missing the required parameter 'auth0LoginRequest' when calling v1LoginTokenPost(Async)");
+    private okhttp3.Call v1LoginTokenPostValidateBeforeCall(RoutesLoginRequest routesLoginRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'routesLoginRequest' is set
+        if (routesLoginRequest == null) {
+            throw new ApiException("Missing the required parameter 'routesLoginRequest' when calling v1LoginTokenPost(Async)");
         }
 
-        return v1LoginTokenPostCall(auth0LoginRequest, _callback);
+        return v1LoginTokenPostCall(routesLoginRequest, _callback);
 
     }
 
     /**
      * Get Authentication token
-     * Retrieve an authentication token from the Authentication service using username and password.
-     * @param auth0LoginRequest Login request (required)
-     * @return Auth0Auth0TokenResponse
+     * Retrieve an authentication token from the authentication service using username and password.
+     * @param routesLoginRequest Login request (required)
+     * @return AuthenticationtypesTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -517,16 +532,16 @@ public class AuthenticationApi {
         <tr><td> 0 </td><td> Error message </td><td>  -  </td></tr>
      </table>
      */
-    public Auth0Auth0TokenResponse v1LoginTokenPost(Auth0LoginRequest auth0LoginRequest) throws ApiException {
-        ApiResponse<Auth0Auth0TokenResponse> localVarResp = v1LoginTokenPostWithHttpInfo(auth0LoginRequest);
+    public AuthenticationtypesTokenResponse v1LoginTokenPost(RoutesLoginRequest routesLoginRequest) throws ApiException {
+        ApiResponse<AuthenticationtypesTokenResponse> localVarResp = v1LoginTokenPostWithHttpInfo(routesLoginRequest);
         return localVarResp.getData();
     }
 
     /**
      * Get Authentication token
-     * Retrieve an authentication token from the Authentication service using username and password.
-     * @param auth0LoginRequest Login request (required)
-     * @return ApiResponse&lt;Auth0Auth0TokenResponse&gt;
+     * Retrieve an authentication token from the authentication service using username and password.
+     * @param routesLoginRequest Login request (required)
+     * @return ApiResponse&lt;AuthenticationtypesTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -538,16 +553,16 @@ public class AuthenticationApi {
         <tr><td> 0 </td><td> Error message </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Auth0Auth0TokenResponse> v1LoginTokenPostWithHttpInfo(Auth0LoginRequest auth0LoginRequest) throws ApiException {
-        okhttp3.Call localVarCall = v1LoginTokenPostValidateBeforeCall(auth0LoginRequest, null);
-        Type localVarReturnType = new TypeToken<Auth0Auth0TokenResponse>(){}.getType();
+    public ApiResponse<AuthenticationtypesTokenResponse> v1LoginTokenPostWithHttpInfo(RoutesLoginRequest routesLoginRequest) throws ApiException {
+        okhttp3.Call localVarCall = v1LoginTokenPostValidateBeforeCall(routesLoginRequest, null);
+        Type localVarReturnType = new TypeToken<AuthenticationtypesTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get Authentication token (asynchronously)
-     * Retrieve an authentication token from the Authentication service using username and password.
-     * @param auth0LoginRequest Login request (required)
+     * Retrieve an authentication token from the authentication service using username and password.
+     * @param routesLoginRequest Login request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -561,10 +576,10 @@ public class AuthenticationApi {
         <tr><td> 0 </td><td> Error message </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1LoginTokenPostAsync(Auth0LoginRequest auth0LoginRequest, final ApiCallback<Auth0Auth0TokenResponse> _callback) throws ApiException {
+    public okhttp3.Call v1LoginTokenPostAsync(RoutesLoginRequest routesLoginRequest, final ApiCallback<AuthenticationtypesTokenResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1LoginTokenPostValidateBeforeCall(auth0LoginRequest, _callback);
-        Type localVarReturnType = new TypeToken<Auth0Auth0TokenResponse>(){}.getType();
+        okhttp3.Call localVarCall = v1LoginTokenPostValidateBeforeCall(routesLoginRequest, _callback);
+        Type localVarReturnType = new TypeToken<AuthenticationtypesTokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
