@@ -48,39 +48,20 @@ import org.openapitools.client.JSON;
 /**
  * DuplicateKeyValueToKeyDuplicateKeyValueToKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-17T13:45:57.827644230Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-17T14:28:54.547934124Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class DuplicateKeyValueToKeyDuplicateKeyValueToKey {
-  public static final String SERIALIZED_NAME_NEW_KEY = "NewKey";
-  @SerializedName(SERIALIZED_NAME_NEW_KEY)
-  @javax.annotation.Nullable
-  private String newKey;
-
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
   @javax.annotation.Nullable
   private String key;
 
+  public static final String SERIALIZED_NAME_NEW_KEY = "new_key";
+  @SerializedName(SERIALIZED_NAME_NEW_KEY)
+  @javax.annotation.Nullable
+  private String newKey;
+
   public DuplicateKeyValueToKeyDuplicateKeyValueToKey() {
   }
-
-  public DuplicateKeyValueToKeyDuplicateKeyValueToKey newKey(@javax.annotation.Nullable String newKey) {
-    this.newKey = newKey;
-    return this;
-  }
-
-  /**
-   * The new key to duplicate the value to
-   * @return newKey
-   */
-  @javax.annotation.Nullable
-  public String getNewKey() {
-    return newKey;
-  }
-
-  public void setNewKey(@javax.annotation.Nullable String newKey) {
-    this.newKey = newKey;
-  }
-
 
   public DuplicateKeyValueToKeyDuplicateKeyValueToKey key(@javax.annotation.Nullable String key) {
     this.key = key;
@@ -101,6 +82,25 @@ public class DuplicateKeyValueToKeyDuplicateKeyValueToKey {
   }
 
 
+  public DuplicateKeyValueToKeyDuplicateKeyValueToKey newKey(@javax.annotation.Nullable String newKey) {
+    this.newKey = newKey;
+    return this;
+  }
+
+  /**
+   * The new key to duplicate the value to
+   * @return newKey
+   */
+  @javax.annotation.Nullable
+  public String getNewKey() {
+    return newKey;
+  }
+
+  public void setNewKey(@javax.annotation.Nullable String newKey) {
+    this.newKey = newKey;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -111,21 +111,21 @@ public class DuplicateKeyValueToKeyDuplicateKeyValueToKey {
       return false;
     }
     DuplicateKeyValueToKeyDuplicateKeyValueToKey duplicateKeyValueToKeyDuplicateKeyValueToKey = (DuplicateKeyValueToKeyDuplicateKeyValueToKey) o;
-    return Objects.equals(this.newKey, duplicateKeyValueToKeyDuplicateKeyValueToKey.newKey) &&
-        Objects.equals(this.key, duplicateKeyValueToKeyDuplicateKeyValueToKey.key);
+    return Objects.equals(this.key, duplicateKeyValueToKeyDuplicateKeyValueToKey.key) &&
+        Objects.equals(this.newKey, duplicateKeyValueToKeyDuplicateKeyValueToKey.newKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(newKey, key);
+    return Objects.hash(key, newKey);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DuplicateKeyValueToKeyDuplicateKeyValueToKey {\n");
-    sb.append("    newKey: ").append(toIndentedString(newKey)).append("\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    newKey: ").append(toIndentedString(newKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -148,8 +148,8 @@ public class DuplicateKeyValueToKeyDuplicateKeyValueToKey {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("NewKey");
     openapiFields.add("key");
+    openapiFields.add("new_key");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -176,11 +176,11 @@ public class DuplicateKeyValueToKeyDuplicateKeyValueToKey {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("NewKey") != null && !jsonObj.get("NewKey").isJsonNull()) && !jsonObj.get("NewKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `NewKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("NewKey").toString()));
-      }
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+      }
+      if ((jsonObj.get("new_key") != null && !jsonObj.get("new_key").isJsonNull()) && !jsonObj.get("new_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `new_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("new_key").toString()));
       }
   }
 

@@ -20,10 +20,10 @@ var _ MappedNullable = &DuplicateKeyValueToKeyDuplicateKeyValueToKey{}
 
 // DuplicateKeyValueToKeyDuplicateKeyValueToKey struct for DuplicateKeyValueToKeyDuplicateKeyValueToKey
 type DuplicateKeyValueToKeyDuplicateKeyValueToKey struct {
-	// The new key to duplicate the value to
-	NewKey *string `json:"NewKey,omitempty"`
 	// The key to duplicate from the record
 	Key *string `json:"key,omitempty"`
+	// The new key to duplicate the value to
+	NewKey *string `json:"new_key,omitempty"`
 }
 
 // NewDuplicateKeyValueToKeyDuplicateKeyValueToKey instantiates a new DuplicateKeyValueToKeyDuplicateKeyValueToKey object
@@ -41,38 +41,6 @@ func NewDuplicateKeyValueToKeyDuplicateKeyValueToKey() *DuplicateKeyValueToKeyDu
 func NewDuplicateKeyValueToKeyDuplicateKeyValueToKeyWithDefaults() *DuplicateKeyValueToKeyDuplicateKeyValueToKey {
 	this := DuplicateKeyValueToKeyDuplicateKeyValueToKey{}
 	return &this
-}
-
-// GetNewKey returns the NewKey field value if set, zero value otherwise.
-func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetNewKey() string {
-	if o == nil || IsNil(o.NewKey) {
-		var ret string
-		return ret
-	}
-	return *o.NewKey
-}
-
-// GetNewKeyOk returns a tuple with the NewKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetNewKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.NewKey) {
-		return nil, false
-	}
-	return o.NewKey, true
-}
-
-// HasNewKey returns a boolean if a field has been set.
-func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) HasNewKey() bool {
-	if o != nil && !IsNil(o.NewKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetNewKey gets a reference to the given string and assigns it to the NewKey field.
-func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) SetNewKey(v string) {
-	o.NewKey = &v
 }
 
 // GetKey returns the Key field value if set, zero value otherwise.
@@ -107,6 +75,38 @@ func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) SetKey(v string) {
 	o.Key = &v
 }
 
+// GetNewKey returns the NewKey field value if set, zero value otherwise.
+func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetNewKey() string {
+	if o == nil || IsNil(o.NewKey) {
+		var ret string
+		return ret
+	}
+	return *o.NewKey
+}
+
+// GetNewKeyOk returns a tuple with the NewKey field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetNewKeyOk() (*string, bool) {
+	if o == nil || IsNil(o.NewKey) {
+		return nil, false
+	}
+	return o.NewKey, true
+}
+
+// HasNewKey returns a boolean if a field has been set.
+func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) HasNewKey() bool {
+	if o != nil && !IsNil(o.NewKey) {
+		return true
+	}
+
+	return false
+}
+
+// SetNewKey gets a reference to the given string and assigns it to the NewKey field.
+func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) SetNewKey(v string) {
+	o.NewKey = &v
+}
+
 func (o DuplicateKeyValueToKeyDuplicateKeyValueToKey) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -117,11 +117,11 @@ func (o DuplicateKeyValueToKeyDuplicateKeyValueToKey) MarshalJSON() ([]byte, err
 
 func (o DuplicateKeyValueToKeyDuplicateKeyValueToKey) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NewKey) {
-		toSerialize["NewKey"] = o.NewKey
-	}
 	if !IsNil(o.Key) {
 		toSerialize["key"] = o.Key
+	}
+	if !IsNil(o.NewKey) {
+		toSerialize["new_key"] = o.NewKey
 	}
 	return toSerialize, nil
 }

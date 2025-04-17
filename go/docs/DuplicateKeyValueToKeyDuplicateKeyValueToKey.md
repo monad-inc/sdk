@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NewKey** | Pointer to **string** | The new key to duplicate the value to | [optional] 
 **Key** | Pointer to **string** | The key to duplicate from the record | [optional] 
+**NewKey** | Pointer to **string** | The new key to duplicate the value to | [optional] 
 
 ## Methods
 
@@ -25,31 +25,6 @@ will change when the set of required properties is changed
 NewDuplicateKeyValueToKeyDuplicateKeyValueToKeyWithDefaults instantiates a new DuplicateKeyValueToKeyDuplicateKeyValueToKey object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetNewKey
-
-`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetNewKey() string`
-
-GetNewKey returns the NewKey field if non-nil, zero value otherwise.
-
-### GetNewKeyOk
-
-`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetNewKeyOk() (*string, bool)`
-
-GetNewKeyOk returns a tuple with the NewKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNewKey
-
-`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) SetNewKey(v string)`
-
-SetNewKey sets NewKey field to given value.
-
-### HasNewKey
-
-`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) HasNewKey() bool`
-
-HasNewKey returns a boolean if a field has been set.
 
 ### GetKey
 
@@ -75,6 +50,31 @@ SetKey sets Key field to given value.
 `func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) HasKey() bool`
 
 HasKey returns a boolean if a field has been set.
+
+### GetNewKey
+
+`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetNewKey() string`
+
+GetNewKey returns the NewKey field if non-nil, zero value otherwise.
+
+### GetNewKeyOk
+
+`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetNewKeyOk() (*string, bool)`
+
+GetNewKeyOk returns a tuple with the NewKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNewKey
+
+`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) SetNewKey(v string)`
+
+SetNewKey sets NewKey field to given value.
+
+### HasNewKey
+
+`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) HasNewKey() bool`
+
+HasNewKey returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineRetentionPolicy
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-17T13:45:57.827644230Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-17T14:28:54.547934124Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsPipelineRetentionPolicy {
   public static final String SERIALIZED_NAME_STREAM_AGE_LIMIT = "stream_age_limit";
   @SerializedName(SERIALIZED_NAME_STREAM_AGE_LIMIT)

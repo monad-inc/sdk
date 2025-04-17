@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**new_key** | **str** | The new key to duplicate the value to | [optional] 
 **key** | **str** | The key to duplicate from the record | [optional] 
+**new_key** | **str** | The new key to duplicate the value to | [optional] 
 
 ## Example
 

@@ -8,10 +8,9 @@ Name | Type | Description | Notes
 **Value** | Pointer to **interface{}** |  | [optional] 
 **KeyToWatch** | Pointer to **string** | The key to watch for | [optional] 
 **ValueToWatch** | Pointer to **interface{}** |  | [optional] 
-**NewKey** | Pointer to **string** | The new key to duplicate the value to | [optional] 
+**NewKey** | Pointer to **string** | The new key to rename to | [optional] 
 **Delimiter** | Pointer to **string** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 | [optional] 
 **Query** | Pointer to **string** | The JQ query to apply to the record | [optional] 
-**NewKey** | Pointer to **string** | The new key to rename to | [optional] 
 **Type** | Pointer to **string** | The new type of the key | [optional] 
 **ValueToSet** | Pointer to **interface{}** |  | [optional] 
 **Format** | Pointer to **string** | The format of the timestamp | [optional] 
@@ -229,31 +228,6 @@ SetQuery sets Query field to given value.
 `func (o *RoutesTransformOperationArguments) HasQuery() bool`
 
 HasQuery returns a boolean if a field has been set.
-
-### GetNewKey
-
-`func (o *RoutesTransformOperationArguments) GetNewKey() string`
-
-GetNewKey returns the NewKey field if non-nil, zero value otherwise.
-
-### GetNewKeyOk
-
-`func (o *RoutesTransformOperationArguments) GetNewKeyOk() (*string, bool)`
-
-GetNewKeyOk returns a tuple with the NewKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNewKey
-
-`func (o *RoutesTransformOperationArguments) SetNewKey(v string)`
-
-SetNewKey sets NewKey field to given value.
-
-### HasNewKey
-
-`func (o *RoutesTransformOperationArguments) HasNewKey() bool`
-
-HasNewKey returns a boolean if a field has been set.
 
 ### GetType
 

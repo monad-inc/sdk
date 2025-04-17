@@ -27,9 +27,9 @@ class DuplicateKeyValueToKeyDuplicateKeyValueToKey(BaseModel):
     """
     DuplicateKeyValueToKeyDuplicateKeyValueToKey
     """ # noqa: E501
-    new_key: Optional[StrictStr] = Field(default=None, description="The new key to duplicate the value to", alias="NewKey")
     key: Optional[StrictStr] = Field(default=None, description="The key to duplicate from the record")
-    __properties: ClassVar[List[str]] = ["NewKey", "key"]
+    new_key: Optional[StrictStr] = Field(default=None, description="The new key to duplicate the value to")
+    __properties: ClassVar[List[str]] = ["key", "new_key"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,8 +82,8 @@ class DuplicateKeyValueToKeyDuplicateKeyValueToKey(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "NewKey": obj.get("NewKey"),
-            "key": obj.get("key")
+            "key": obj.get("key"),
+            "new_key": obj.get("new_key")
         })
         return _obj
 
