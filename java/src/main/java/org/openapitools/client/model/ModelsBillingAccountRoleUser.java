@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingAccountRoleUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-21T16:28:44.530568681Z[Etc/UTC]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-21T16:40:01.151820903Z[Etc/UTC]", comments = "Generator version: 7.12.0")
 public class ModelsBillingAccountRoleUser {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
