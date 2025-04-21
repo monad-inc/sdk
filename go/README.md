@@ -178,6 +178,8 @@ Class | Method | HTTP request | Description
 *SecretsAPI* | [**V2OrganizationIdSecretsSecretIdPatch**](docs/SecretsAPI.md#v2organizationidsecretssecretidpatch) | **Patch** /v2/{organization_id}/secrets/{secret_id} | Update secret
 *TransformsAPI* | [**V1TransformsGet**](docs/TransformsAPI.md#v1transformsget) | **Get** /v1/transforms | List transforms
 *TransformsAPI* | [**V1TransformsTransformTypeIdGet**](docs/TransformsAPI.md#v1transformstransformtypeidget) | **Get** /v1/transforms/{transform_type_id} | Get transform metadata
+*TransformsRepositoryAPI* | [**V2TransformsRepositoryGet**](docs/TransformsRepositoryAPI.md#v2transformsrepositoryget) | **Get** /v2/transforms/repository | List transforms
+*TransformsRepositoryAPI* | [**V2TransformsRepositoryTransformIdGet**](docs/TransformsRepositoryAPI.md#v2transformsrepositorytransformidget) | **Get** /v2/transforms/repository/{transform_id} | Get transform details
 *UsersAPI* | [**V1UsersGet**](docs/UsersAPI.md#v1usersget) | **Get** /v1/users | Get your current user
 *UsersAPI* | [**V1UsersPost**](docs/UsersAPI.md#v1userspost) | **Post** /v1/users | Create user
 
@@ -319,6 +321,8 @@ Class | Method | HTTP request | Description
  - [ModelsTransformConfig](docs/ModelsTransformConfig.md)
  - [ModelsTransformList](docs/ModelsTransformList.md)
  - [ModelsTransformOperation](docs/ModelsTransformOperation.md)
+ - [ModelsTransformsRepositoryList](docs/ModelsTransformsRepositoryList.md)
+ - [ModelsTransformsRepositoryTransform](docs/ModelsTransformsRepositoryTransform.md)
  - [ModelsUser](docs/ModelsUser.md)
  - [ModelsUserRoleWithPermissions](docs/ModelsUserRoleWithPermissions.md)
  - [MonadLogSettingsConfig](docs/MonadLogSettingsConfig.md)

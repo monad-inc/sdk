@@ -137,6 +137,8 @@ import { ModelsTransform } from '../models/ModelsTransform';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
+import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
+import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
 import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
@@ -4167,6 +4169,81 @@ export class ObjectTransformsApi {
      */
     public v1TransformsTransformTypeIdGet(param: TransformsApiV1TransformsTransformTypeIdGetRequest, options?: ConfigurationOptions): Promise<any> {
         return this.api.v1TransformsTransformTypeIdGet(param.transformTypeId, param.body,  options).toPromise();
+    }
+
+}
+
+import { ObservableTransformsRepositoryApi } from "./ObservableAPI";
+import { TransformsRepositoryApiRequestFactory, TransformsRepositoryApiResponseProcessor} from "../apis/TransformsRepositoryApi";
+
+export interface TransformsRepositoryApiV2TransformsRepositoryGetRequest {
+    /**
+     * Number of items to return (default: 10)
+     * Defaults to: undefined
+     * @type number
+     * @memberof TransformsRepositoryApiv2TransformsRepositoryGet
+     */
+    limit?: number
+    /**
+     * Number of items to skip (default: 0)
+     * Defaults to: undefined
+     * @type number
+     * @memberof TransformsRepositoryApiv2TransformsRepositoryGet
+     */
+    offset?: number
+}
+
+export interface TransformsRepositoryApiV2TransformsRepositoryTransformIdGetRequest {
+    /**
+     * Transform ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TransformsRepositoryApiv2TransformsRepositoryTransformIdGet
+     */
+    transformId: string
+}
+
+export class ObjectTransformsRepositoryApi {
+    private api: ObservableTransformsRepositoryApi
+
+    public constructor(configuration: Configuration, requestFactory?: TransformsRepositoryApiRequestFactory, responseProcessor?: TransformsRepositoryApiResponseProcessor) {
+        this.api = new ObservableTransformsRepositoryApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * List transforms from repository with pagination
+     * List transforms
+     * @param param the request object
+     */
+    public v2TransformsRepositoryGetWithHttpInfo(param: TransformsRepositoryApiV2TransformsRepositoryGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransformsRepositoryList>> {
+        return this.api.v2TransformsRepositoryGetWithHttpInfo(param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List transforms from repository with pagination
+     * List transforms
+     * @param param the request object
+     */
+    public v2TransformsRepositoryGet(param: TransformsRepositoryApiV2TransformsRepositoryGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsTransformsRepositoryList> {
+        return this.api.v2TransformsRepositoryGet(param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param param the request object
+     */
+    public v2TransformsRepositoryTransformIdGetWithHttpInfo(param: TransformsRepositoryApiV2TransformsRepositoryTransformIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsTransformsRepositoryTransform>> {
+        return this.api.v2TransformsRepositoryTransformIdGetWithHttpInfo(param.transformId,  options).toPromise();
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param param the request object
+     */
+    public v2TransformsRepositoryTransformIdGet(param: TransformsRepositoryApiV2TransformsRepositoryTransformIdGetRequest, options?: ConfigurationOptions): Promise<ModelsTransformsRepositoryTransform> {
+        return this.api.v2TransformsRepositoryTransformIdGet(param.transformId,  options).toPromise();
     }
 
 }

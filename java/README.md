@@ -2,7 +2,7 @@
 
 Monad Swagger API
 - API version: 1.0
-  - Build date: 2025-04-18T22:37:19.558587357Z[Etc/UTC]
+  - Build date: 2025-04-21T16:28:44.530568681Z[Etc/UTC]
   - Generator version: 7.12.0
 
 This is the monad API
@@ -214,6 +214,8 @@ Class | Method | HTTP request | Description
 *SecretsApi* | [**v2OrganizationIdSecretsSecretIdPatch**](docs/SecretsApi.md#v2OrganizationIdSecretsSecretIdPatch) | **PATCH** /v2/{organization_id}/secrets/{secret_id} | Update secret
 *TransformsApi* | [**v1TransformsGet**](docs/TransformsApi.md#v1TransformsGet) | **GET** /v1/transforms | List transforms
 *TransformsApi* | [**v1TransformsTransformTypeIdGet**](docs/TransformsApi.md#v1TransformsTransformTypeIdGet) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata
+*TransformsRepositoryApi* | [**v2TransformsRepositoryGet**](docs/TransformsRepositoryApi.md#v2TransformsRepositoryGet) | **GET** /v2/transforms/repository | List transforms
+*TransformsRepositoryApi* | [**v2TransformsRepositoryTransformIdGet**](docs/TransformsRepositoryApi.md#v2TransformsRepositoryTransformIdGet) | **GET** /v2/transforms/repository/{transform_id} | Get transform details
 *UsersApi* | [**v1UsersGet**](docs/UsersApi.md#v1UsersGet) | **GET** /v1/users | Get your current user
 *UsersApi* | [**v1UsersPost**](docs/UsersApi.md#v1UsersPost) | **POST** /v1/users | Create user
 
@@ -355,6 +357,8 @@ Class | Method | HTTP request | Description
  - [ModelsTransformConfig](docs/ModelsTransformConfig.md)
  - [ModelsTransformList](docs/ModelsTransformList.md)
  - [ModelsTransformOperation](docs/ModelsTransformOperation.md)
+ - [ModelsTransformsRepositoryList](docs/ModelsTransformsRepositoryList.md)
+ - [ModelsTransformsRepositoryTransform](docs/ModelsTransformsRepositoryTransform.md)
  - [ModelsUser](docs/ModelsUser.md)
  - [ModelsUserRoleWithPermissions](docs/ModelsUserRoleWithPermissions.md)
  - [MonadLogSettingsConfig](docs/MonadLogSettingsConfig.md)

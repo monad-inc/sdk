@@ -137,6 +137,8 @@ import { ModelsTransform } from '../models/ModelsTransform';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
+import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
+import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
 import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
@@ -5334,6 +5336,115 @@ export class PromiseTransformsApi {
 	    }
 	}
         const result = this.api.v1TransformsTransformTypeIdGet(transformTypeId, body, observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableTransformsRepositoryApi } from './ObservableAPI';
+
+import { TransformsRepositoryApiRequestFactory, TransformsRepositoryApiResponseProcessor} from "../apis/TransformsRepositoryApi";
+export class PromiseTransformsRepositoryApi {
+    private api: ObservableTransformsRepositoryApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: TransformsRepositoryApiRequestFactory,
+        responseProcessor?: TransformsRepositoryApiResponseProcessor
+    ) {
+        this.api = new ObservableTransformsRepositoryApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * List transforms from repository with pagination
+     * List transforms
+     * @param [limit] Number of items to return (default: 10)
+     * @param [offset] Number of items to skip (default: 0)
+     */
+    public v2TransformsRepositoryGetWithHttpInfo(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsTransformsRepositoryList>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2TransformsRepositoryGetWithHttpInfo(limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List transforms from repository with pagination
+     * List transforms
+     * @param [limit] Number of items to return (default: 10)
+     * @param [offset] Number of items to skip (default: 0)
+     */
+    public v2TransformsRepositoryGet(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsTransformsRepositoryList> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2TransformsRepositoryGet(limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param transformId Transform ID
+     */
+    public v2TransformsRepositoryTransformIdGetWithHttpInfo(transformId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsTransformsRepositoryTransform>> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2TransformsRepositoryTransformIdGetWithHttpInfo(transformId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param transformId Transform ID
+     */
+    public v2TransformsRepositoryTransformIdGet(transformId: string, _options?: PromiseConfigurationOptions): Promise<ModelsTransformsRepositoryTransform> {
+        let observableOptions: undefined | ConfigurationOptions
+        if (_options){
+	    observableOptions = {
+                baseServer: _options.baseServer,
+                httpApi: _options.httpApi,
+                middleware: _options.middleware?.map(
+                    m => new PromiseMiddlewareWrapper(m)
+		),
+		middlewareMergeStrategy: _options.middlewareMergeStrategy,
+                authMethods: _options.authMethods
+	    }
+	}
+        const result = this.api.v2TransformsRepositoryTransformIdGet(transformId, observableOptions);
         return result.toPromise();
     }
 

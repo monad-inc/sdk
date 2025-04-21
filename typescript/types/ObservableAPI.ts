@@ -138,6 +138,8 @@ import { ModelsTransform } from '../models/ModelsTransform';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
+import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
+import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
 import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
@@ -7097,6 +7099,150 @@ export class ObservableTransformsApi {
      */
     public v1TransformsTransformTypeIdGet(transformTypeId: string, body?: any, _options?: ConfigurationOptions): Observable<any> {
         return this.v1TransformsTransformTypeIdGetWithHttpInfo(transformTypeId, body, _options).pipe(map((apiResponse: HttpInfo<any>) => apiResponse.data));
+    }
+
+}
+
+import { TransformsRepositoryApiRequestFactory, TransformsRepositoryApiResponseProcessor} from "../apis/TransformsRepositoryApi";
+export class ObservableTransformsRepositoryApi {
+    private requestFactory: TransformsRepositoryApiRequestFactory;
+    private responseProcessor: TransformsRepositoryApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: TransformsRepositoryApiRequestFactory,
+        responseProcessor?: TransformsRepositoryApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new TransformsRepositoryApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new TransformsRepositoryApiResponseProcessor();
+    }
+
+    /**
+     * List transforms from repository with pagination
+     * List transforms
+     * @param [limit] Number of items to return (default: 10)
+     * @param [offset] Number of items to skip (default: 0)
+     */
+    public v2TransformsRepositoryGetWithHttpInfo(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsTransformsRepositoryList>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2TransformsRepositoryGet(limit, offset, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2TransformsRepositoryGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List transforms from repository with pagination
+     * List transforms
+     * @param [limit] Number of items to return (default: 10)
+     * @param [offset] Number of items to skip (default: 0)
+     */
+    public v2TransformsRepositoryGet(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsTransformsRepositoryList> {
+        return this.v2TransformsRepositoryGetWithHttpInfo(limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsTransformsRepositoryList>) => apiResponse.data));
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param transformId Transform ID
+     */
+    public v2TransformsRepositoryTransformIdGetWithHttpInfo(transformId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsTransformsRepositoryTransform>> {
+    let _config = this.configuration;
+    let allMiddleware: Middleware[] = [];
+    if (_options && _options.middleware){
+      const middlewareMergeStrategy = _options.middlewareMergeStrategy || 'replace' // default to replace behavior
+      // call-time middleware provided
+      const calltimeMiddleware: Middleware[] = _options.middleware;
+
+      switch(middlewareMergeStrategy){
+      case 'append':
+        allMiddleware = this.configuration.middleware.concat(calltimeMiddleware);
+        break;
+      case 'prepend':
+        allMiddleware = calltimeMiddleware.concat(this.configuration.middleware)
+        break;
+      case 'replace':
+        allMiddleware = calltimeMiddleware
+        break;
+      default: 
+        throw new Error(`unrecognized middleware merge strategy '${middlewareMergeStrategy}'`)
+      }
+	}
+	if (_options){
+    _config = {
+      baseServer: _options.baseServer || this.configuration.baseServer,
+      httpApi: _options.httpApi || this.configuration.httpApi,
+      authMethods: _options.authMethods || this.configuration.authMethods,
+      middleware: allMiddleware || this.configuration.middleware
+		};
+	}
+
+        const requestContextPromise = this.requestFactory.v2TransformsRepositoryTransformIdGet(transformId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of allMiddleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of allMiddleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2TransformsRepositoryTransformIdGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param transformId Transform ID
+     */
+    public v2TransformsRepositoryTransformIdGet(transformId: string, _options?: ConfigurationOptions): Observable<ModelsTransformsRepositoryTransform> {
+        return this.v2TransformsRepositoryTransformIdGetWithHttpInfo(transformId, _options).pipe(map((apiResponse: HttpInfo<ModelsTransformsRepositoryTransform>) => apiResponse.data));
     }
 
 }

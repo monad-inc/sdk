@@ -133,6 +133,8 @@ export * from '../models/ModelsTransform';
 export * from '../models/ModelsTransformConfig';
 export * from '../models/ModelsTransformList';
 export * from '../models/ModelsTransformOperation';
+export * from '../models/ModelsTransformsRepositoryList';
+export * from '../models/ModelsTransformsRepositoryTransform';
 export * from '../models/ModelsUser';
 export * from '../models/ModelsUserRoleWithPermissions';
 export * from '../models/MonadLogSettingsConfig';
@@ -393,6 +395,8 @@ import { ModelsTransform } from '../models/ModelsTransform';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
+import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
+import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
 import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
@@ -678,6 +682,8 @@ let typeMap: {[index: string]: any} = {
     "ModelsTransformConfig": ModelsTransformConfig,
     "ModelsTransformList": ModelsTransformList,
     "ModelsTransformOperation": ModelsTransformOperation,
+    "ModelsTransformsRepositoryList": ModelsTransformsRepositoryList,
+    "ModelsTransformsRepositoryTransform": ModelsTransformsRepositoryTransform,
     "ModelsUser": ModelsUser,
     "ModelsUserRoleWithPermissions": ModelsUserRoleWithPermissions,
     "MonadLogSettingsConfig": MonadLogSettingsConfig,

@@ -26,5 +26,6 @@ from monad.api.roles_api import RolesApi
 from monad.api.sandbox_api import SandboxApi
 from monad.api.secrets_api import SecretsApi
 from monad.api.transforms_api import TransformsApi
+from monad.api.transforms_repository_api import TransformsRepositoryApi
 from monad.api.users_api import UsersApi
 

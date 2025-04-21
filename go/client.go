@@ -100,6 +100,8 @@ type APIClient struct {
 
 	TransformsAPI *TransformsAPIService
 
+	TransformsRepositoryAPI *TransformsRepositoryAPIService
+
 	UsersAPI *UsersAPIService
 }
 
@@ -144,6 +146,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.SandboxAPI = (*SandboxAPIService)(&c.common)
 	c.SecretsAPI = (*SecretsAPIService)(&c.common)
 	c.TransformsAPI = (*TransformsAPIService)(&c.common)
+	c.TransformsRepositoryAPI = (*TransformsRepositoryAPIService)(&c.common)
 	c.UsersAPI = (*UsersAPIService)(&c.common)
 
 	return c
