@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganization
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-30T20:49:40.900862371Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-30T22:25:26.113613556Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ModelsOrganization {
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billing_account_id";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
