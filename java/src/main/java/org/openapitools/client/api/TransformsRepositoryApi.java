@@ -88,7 +88,7 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to list transforms </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2TransformsRepositoryGetCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2TransformsRepositoryGetCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,7 +141,7 @@ public class TransformsRepositoryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2TransformsRepositoryGetValidateBeforeCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2TransformsRepositoryGetValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         return v2TransformsRepositoryGetCall(limit, offset, _callback);
 
     }
@@ -161,7 +161,7 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to list transforms </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsTransformsRepositoryList v2TransformsRepositoryGet(Integer limit, Integer offset) throws ApiException {
+    public ModelsTransformsRepositoryList v2TransformsRepositoryGet(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<ModelsTransformsRepositoryList> localVarResp = v2TransformsRepositoryGetWithHttpInfo(limit, offset);
         return localVarResp.getData();
     }
@@ -181,7 +181,7 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to list transforms </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsTransformsRepositoryList> v2TransformsRepositoryGetWithHttpInfo(Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ModelsTransformsRepositoryList> v2TransformsRepositoryGetWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = v2TransformsRepositoryGetValidateBeforeCall(limit, offset, null);
         Type localVarReturnType = new TypeToken<ModelsTransformsRepositoryList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -203,7 +203,7 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to list transforms </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2TransformsRepositoryGetAsync(Integer limit, Integer offset, final ApiCallback<ModelsTransformsRepositoryList> _callback) throws ApiException {
+    public okhttp3.Call v2TransformsRepositoryGetAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsTransformsRepositoryList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2TransformsRepositoryGetValidateBeforeCall(limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsTransformsRepositoryList>(){}.getType();
@@ -224,7 +224,7 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to get transform details </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2TransformsRepositoryTransformIdGetCall(String transformId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2TransformsRepositoryTransformIdGetCall(@javax.annotation.Nonnull String transformId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -270,7 +270,7 @@ public class TransformsRepositoryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2TransformsRepositoryTransformIdGetValidateBeforeCall(String transformId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2TransformsRepositoryTransformIdGetValidateBeforeCall(@javax.annotation.Nonnull String transformId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'transformId' is set
         if (transformId == null) {
             throw new ApiException("Missing the required parameter 'transformId' when calling v2TransformsRepositoryTransformIdGet(Async)");
@@ -294,7 +294,7 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to get transform details </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsTransformsRepositoryTransform v2TransformsRepositoryTransformIdGet(String transformId) throws ApiException {
+    public ModelsTransformsRepositoryTransform v2TransformsRepositoryTransformIdGet(@javax.annotation.Nonnull String transformId) throws ApiException {
         ApiResponse<ModelsTransformsRepositoryTransform> localVarResp = v2TransformsRepositoryTransformIdGetWithHttpInfo(transformId);
         return localVarResp.getData();
     }
@@ -313,7 +313,7 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to get transform details </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsTransformsRepositoryTransform> v2TransformsRepositoryTransformIdGetWithHttpInfo(String transformId) throws ApiException {
+    public ApiResponse<ModelsTransformsRepositoryTransform> v2TransformsRepositoryTransformIdGetWithHttpInfo(@javax.annotation.Nonnull String transformId) throws ApiException {
         okhttp3.Call localVarCall = v2TransformsRepositoryTransformIdGetValidateBeforeCall(transformId, null);
         Type localVarReturnType = new TypeToken<ModelsTransformsRepositoryTransform>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -334,7 +334,7 @@ public class TransformsRepositoryApi {
         <tr><td> 500 </td><td> Failed to get transform details </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2TransformsRepositoryTransformIdGetAsync(String transformId, final ApiCallback<ModelsTransformsRepositoryTransform> _callback) throws ApiException {
+    public okhttp3.Call v2TransformsRepositoryTransformIdGetAsync(@javax.annotation.Nonnull String transformId, final ApiCallback<ModelsTransformsRepositoryTransform> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2TransformsRepositoryTransformIdGetValidateBeforeCall(transformId, _callback);
         Type localVarReturnType = new TypeToken<ModelsTransformsRepositoryTransform>(){}.getType();

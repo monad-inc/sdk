@@ -90,7 +90,7 @@ public class SandboxApi {
         <tr><td> 200 </td><td> List of template names </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2SandboxTemplateGetCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2SandboxTemplateGetCall(@javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -136,7 +136,7 @@ public class SandboxApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2SandboxTemplateGetValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2SandboxTemplateGetValidateBeforeCall(@javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         return v2SandboxTemplateGetCall(body, _callback);
 
     }
@@ -154,7 +154,7 @@ public class SandboxApi {
         <tr><td> 200 </td><td> List of template names </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2ListTemplatesResponse v2SandboxTemplateGet(Object body) throws ApiException {
+    public RoutesV2ListTemplatesResponse v2SandboxTemplateGet(@javax.annotation.Nullable Object body) throws ApiException {
         ApiResponse<RoutesV2ListTemplatesResponse> localVarResp = v2SandboxTemplateGetWithHttpInfo(body);
         return localVarResp.getData();
     }
@@ -172,7 +172,7 @@ public class SandboxApi {
         <tr><td> 200 </td><td> List of template names </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2ListTemplatesResponse> v2SandboxTemplateGetWithHttpInfo(Object body) throws ApiException {
+    public ApiResponse<RoutesV2ListTemplatesResponse> v2SandboxTemplateGetWithHttpInfo(@javax.annotation.Nullable Object body) throws ApiException {
         okhttp3.Call localVarCall = v2SandboxTemplateGetValidateBeforeCall(body, null);
         Type localVarReturnType = new TypeToken<RoutesV2ListTemplatesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -192,7 +192,7 @@ public class SandboxApi {
         <tr><td> 200 </td><td> List of template names </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2SandboxTemplateGetAsync(Object body, final ApiCallback<RoutesV2ListTemplatesResponse> _callback) throws ApiException {
+    public okhttp3.Call v2SandboxTemplateGetAsync(@javax.annotation.Nullable Object body, final ApiCallback<RoutesV2ListTemplatesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2SandboxTemplateGetValidateBeforeCall(body, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2ListTemplatesResponse>(){}.getType();
@@ -213,7 +213,7 @@ public class SandboxApi {
         <tr><td> 400 </td><td> Invalid request parameters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2SandboxTemplatePostCall(RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2SandboxTemplatePostCall(@javax.annotation.Nonnull RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -259,7 +259,7 @@ public class SandboxApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2SandboxTemplatePostValidateBeforeCall(RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2SandboxTemplatePostValidateBeforeCall(@javax.annotation.Nonnull RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routesV2GenerateRecordRequest' is set
         if (routesV2GenerateRecordRequest == null) {
             throw new ApiException("Missing the required parameter 'routesV2GenerateRecordRequest' when calling v2SandboxTemplatePost(Async)");
@@ -283,7 +283,7 @@ public class SandboxApi {
         <tr><td> 400 </td><td> Invalid request parameters </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2GenerateRecordResponse v2SandboxTemplatePost(RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest) throws ApiException {
+    public RoutesV2GenerateRecordResponse v2SandboxTemplatePost(@javax.annotation.Nonnull RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest) throws ApiException {
         ApiResponse<RoutesV2GenerateRecordResponse> localVarResp = v2SandboxTemplatePostWithHttpInfo(routesV2GenerateRecordRequest);
         return localVarResp.getData();
     }
@@ -302,7 +302,7 @@ public class SandboxApi {
         <tr><td> 400 </td><td> Invalid request parameters </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2GenerateRecordResponse> v2SandboxTemplatePostWithHttpInfo(RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest) throws ApiException {
+    public ApiResponse<RoutesV2GenerateRecordResponse> v2SandboxTemplatePostWithHttpInfo(@javax.annotation.Nonnull RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest) throws ApiException {
         okhttp3.Call localVarCall = v2SandboxTemplatePostValidateBeforeCall(routesV2GenerateRecordRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV2GenerateRecordResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -323,7 +323,7 @@ public class SandboxApi {
         <tr><td> 400 </td><td> Invalid request parameters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2SandboxTemplatePostAsync(RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest, final ApiCallback<RoutesV2GenerateRecordResponse> _callback) throws ApiException {
+    public okhttp3.Call v2SandboxTemplatePostAsync(@javax.annotation.Nonnull RoutesV2GenerateRecordRequest routesV2GenerateRecordRequest, final ApiCallback<RoutesV2GenerateRecordResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2SandboxTemplatePostValidateBeforeCall(routesV2GenerateRecordRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2GenerateRecordResponse>(){}.getType();
@@ -345,7 +345,7 @@ public class SandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2SandboxTransformPostCall(RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2SandboxTransformPostCall(@javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -391,7 +391,7 @@ public class SandboxApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2SandboxTransformPostValidateBeforeCall(RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2SandboxTransformPostValidateBeforeCall(@javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routesV2ApplyTransformationRequest' is set
         if (routesV2ApplyTransformationRequest == null) {
             throw new ApiException("Missing the required parameter 'routesV2ApplyTransformationRequest' when calling v2SandboxTransformPost(Async)");
@@ -416,7 +416,7 @@ public class SandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2ApplyTransformationResponse v2SandboxTransformPost(RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest) throws ApiException {
+    public RoutesV2ApplyTransformationResponse v2SandboxTransformPost(@javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest) throws ApiException {
         ApiResponse<RoutesV2ApplyTransformationResponse> localVarResp = v2SandboxTransformPostWithHttpInfo(routesV2ApplyTransformationRequest);
         return localVarResp.getData();
     }
@@ -436,7 +436,7 @@ public class SandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2ApplyTransformationResponse> v2SandboxTransformPostWithHttpInfo(RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest) throws ApiException {
+    public ApiResponse<RoutesV2ApplyTransformationResponse> v2SandboxTransformPostWithHttpInfo(@javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest) throws ApiException {
         okhttp3.Call localVarCall = v2SandboxTransformPostValidateBeforeCall(routesV2ApplyTransformationRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV2ApplyTransformationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -458,7 +458,7 @@ public class SandboxApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2SandboxTransformPostAsync(RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest, final ApiCallback<RoutesV2ApplyTransformationResponse> _callback) throws ApiException {
+    public okhttp3.Call v2SandboxTransformPostAsync(@javax.annotation.Nonnull RoutesV2ApplyTransformationRequest routesV2ApplyTransformationRequest, final ApiCallback<RoutesV2ApplyTransformationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2SandboxTransformPostValidateBeforeCall(routesV2ApplyTransformationRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2ApplyTransformationResponse>(){}.getType();

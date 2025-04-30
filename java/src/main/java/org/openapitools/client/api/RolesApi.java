@@ -91,7 +91,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Error listing roles </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdRolesGetCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdRolesGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -145,7 +145,7 @@ public class RolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdRolesGetValidateBeforeCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdRolesGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdRolesGet(Async)");
@@ -171,7 +171,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Error listing roles </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsRoleWithPermissionsList v2OrganizationIdRolesGet(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ModelsRoleWithPermissionsList v2OrganizationIdRolesGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<ModelsRoleWithPermissionsList> localVarResp = v2OrganizationIdRolesGetWithHttpInfo(organizationId, limit, offset);
         return localVarResp.getData();
     }
@@ -192,7 +192,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Error listing roles </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsRoleWithPermissionsList> v2OrganizationIdRolesGetWithHttpInfo(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ModelsRoleWithPermissionsList> v2OrganizationIdRolesGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdRolesGetValidateBeforeCall(organizationId, limit, offset, null);
         Type localVarReturnType = new TypeToken<ModelsRoleWithPermissionsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -215,7 +215,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Error listing roles </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdRolesGetAsync(String organizationId, Integer limit, Integer offset, final ApiCallback<ModelsRoleWithPermissionsList> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdRolesGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsRoleWithPermissionsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdRolesGetValidateBeforeCall(organizationId, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsRoleWithPermissionsList>(){}.getType();
@@ -238,7 +238,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdRolesPostCall(String organizationId, RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdRolesPostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -285,7 +285,7 @@ public class RolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdRolesPostValidateBeforeCall(String organizationId, RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdRolesPostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdRolesPost(Async)");
@@ -316,7 +316,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsRoleWithPermissions v2OrganizationIdRolesPost(String organizationId, RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request) throws ApiException {
+    public ModelsRoleWithPermissions v2OrganizationIdRolesPost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request) throws ApiException {
         ApiResponse<ModelsRoleWithPermissions> localVarResp = v2OrganizationIdRolesPostWithHttpInfo(organizationId, routesV2CreateRoleV2Request);
         return localVarResp.getData();
     }
@@ -337,7 +337,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsRoleWithPermissions> v2OrganizationIdRolesPostWithHttpInfo(String organizationId, RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request) throws ApiException {
+    public ApiResponse<ModelsRoleWithPermissions> v2OrganizationIdRolesPostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdRolesPostValidateBeforeCall(organizationId, routesV2CreateRoleV2Request, null);
         Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -360,7 +360,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdRolesPostAsync(String organizationId, RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request, final ApiCallback<ModelsRoleWithPermissions> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdRolesPostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateRoleV2Request routesV2CreateRoleV2Request, final ApiCallback<ModelsRoleWithPermissions> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdRolesPostValidateBeforeCall(organizationId, routesV2CreateRoleV2Request, _callback);
         Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
@@ -382,7 +382,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to delete role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdRolesRoleIdDeleteCall(String organizationId, String roleId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdRolesRoleIdDeleteCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -429,7 +429,7 @@ public class RolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdRolesRoleIdDeleteValidateBeforeCall(String organizationId, String roleId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdRolesRoleIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdRolesRoleIdDelete(Async)");
@@ -459,7 +459,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to delete role </td><td>  -  </td></tr>
      </table>
      */
-    public Object v2OrganizationIdRolesRoleIdDelete(String organizationId, String roleId) throws ApiException {
+    public Object v2OrganizationIdRolesRoleIdDelete(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId) throws ApiException {
         ApiResponse<Object> localVarResp = v2OrganizationIdRolesRoleIdDeleteWithHttpInfo(organizationId, roleId);
         return localVarResp.getData();
     }
@@ -479,7 +479,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to delete role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> v2OrganizationIdRolesRoleIdDeleteWithHttpInfo(String organizationId, String roleId) throws ApiException {
+    public ApiResponse<Object> v2OrganizationIdRolesRoleIdDeleteWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdRolesRoleIdDeleteValidateBeforeCall(organizationId, roleId, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -501,7 +501,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to delete role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdRolesRoleIdDeleteAsync(String organizationId, String roleId, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdRolesRoleIdDeleteAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdRolesRoleIdDeleteValidateBeforeCall(organizationId, roleId, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -523,7 +523,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Error getting role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdRolesRoleIdGetCall(String organizationId, String roleId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdRolesRoleIdGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -570,7 +570,7 @@ public class RolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdRolesRoleIdGetValidateBeforeCall(String organizationId, String roleId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdRolesRoleIdGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdRolesRoleIdGet(Async)");
@@ -600,7 +600,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Error getting role </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsRoleWithPermissions v2OrganizationIdRolesRoleIdGet(String organizationId, String roleId) throws ApiException {
+    public ModelsRoleWithPermissions v2OrganizationIdRolesRoleIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId) throws ApiException {
         ApiResponse<ModelsRoleWithPermissions> localVarResp = v2OrganizationIdRolesRoleIdGetWithHttpInfo(organizationId, roleId);
         return localVarResp.getData();
     }
@@ -620,7 +620,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Error getting role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsRoleWithPermissions> v2OrganizationIdRolesRoleIdGetWithHttpInfo(String organizationId, String roleId) throws ApiException {
+    public ApiResponse<ModelsRoleWithPermissions> v2OrganizationIdRolesRoleIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdRolesRoleIdGetValidateBeforeCall(organizationId, roleId, null);
         Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -642,7 +642,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Error getting role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdRolesRoleIdGetAsync(String organizationId, String roleId, final ApiCallback<ModelsRoleWithPermissions> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdRolesRoleIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, final ApiCallback<ModelsRoleWithPermissions> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdRolesRoleIdGetValidateBeforeCall(organizationId, roleId, _callback);
         Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
@@ -666,7 +666,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdRolesRoleIdPatchCall(String organizationId, String roleId, RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdRolesRoleIdPatchCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -714,7 +714,7 @@ public class RolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdRolesRoleIdPatchValidateBeforeCall(String organizationId, String roleId, RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdRolesRoleIdPatchValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdRolesRoleIdPatch(Async)");
@@ -751,7 +751,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsRoleWithPermissions v2OrganizationIdRolesRoleIdPatch(String organizationId, String roleId, RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request) throws ApiException {
+    public ModelsRoleWithPermissions v2OrganizationIdRolesRoleIdPatch(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request) throws ApiException {
         ApiResponse<ModelsRoleWithPermissions> localVarResp = v2OrganizationIdRolesRoleIdPatchWithHttpInfo(organizationId, roleId, routesV2UpdateRoleV2Request);
         return localVarResp.getData();
     }
@@ -773,7 +773,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsRoleWithPermissions> v2OrganizationIdRolesRoleIdPatchWithHttpInfo(String organizationId, String roleId, RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request) throws ApiException {
+    public ApiResponse<ModelsRoleWithPermissions> v2OrganizationIdRolesRoleIdPatchWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdRolesRoleIdPatchValidateBeforeCall(organizationId, roleId, routesV2UpdateRoleV2Request, null);
         Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -797,7 +797,7 @@ public class RolesApi {
         <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdRolesRoleIdPatchAsync(String organizationId, String roleId, RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request, final ApiCallback<ModelsRoleWithPermissions> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdRolesRoleIdPatchAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateRoleV2Request routesV2UpdateRoleV2Request, final ApiCallback<ModelsRoleWithPermissions> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdRolesRoleIdPatchValidateBeforeCall(organizationId, roleId, routesV2UpdateRoleV2Request, _callback);
         Type localVarReturnType = new TypeToken<ModelsRoleWithPermissions>(){}.getType();

@@ -213,7 +213,7 @@ public class UsersApi {
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1UsersPostCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1UsersPostCall(@javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -259,7 +259,7 @@ public class UsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1UsersPostValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1UsersPostValidateBeforeCall(@javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         return v1UsersPostCall(body, _callback);
 
     }
@@ -279,7 +279,7 @@ public class UsersApi {
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsUser v1UsersPost(Object body) throws ApiException {
+    public ModelsUser v1UsersPost(@javax.annotation.Nullable Object body) throws ApiException {
         ApiResponse<ModelsUser> localVarResp = v1UsersPostWithHttpInfo(body);
         return localVarResp.getData();
     }
@@ -299,7 +299,7 @@ public class UsersApi {
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsUser> v1UsersPostWithHttpInfo(Object body) throws ApiException {
+    public ApiResponse<ModelsUser> v1UsersPostWithHttpInfo(@javax.annotation.Nullable Object body) throws ApiException {
         okhttp3.Call localVarCall = v1UsersPostValidateBeforeCall(body, null);
         Type localVarReturnType = new TypeToken<ModelsUser>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -321,7 +321,7 @@ public class UsersApi {
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1UsersPostAsync(Object body, final ApiCallback<ModelsUser> _callback) throws ApiException {
+    public okhttp3.Call v1UsersPostAsync(@javax.annotation.Nullable Object body, final ApiCallback<ModelsUser> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1UsersPostValidateBeforeCall(body, _callback);
         Type localVarReturnType = new TypeToken<ModelsUser>(){}.getType();

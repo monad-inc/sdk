@@ -85,7 +85,7 @@ public class TransformsApi {
         <tr><td> 200 </td><td> Operation information </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1TransformsGetCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1TransformsGetCall(@javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -131,7 +131,7 @@ public class TransformsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1TransformsGetValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1TransformsGetValidateBeforeCall(@javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         return v1TransformsGetCall(body, _callback);
 
     }
@@ -149,7 +149,7 @@ public class TransformsApi {
         <tr><td> 200 </td><td> Operation information </td><td>  -  </td></tr>
      </table>
      */
-    public OperationInformation v1TransformsGet(Object body) throws ApiException {
+    public OperationInformation v1TransformsGet(@javax.annotation.Nullable Object body) throws ApiException {
         ApiResponse<OperationInformation> localVarResp = v1TransformsGetWithHttpInfo(body);
         return localVarResp.getData();
     }
@@ -167,7 +167,7 @@ public class TransformsApi {
         <tr><td> 200 </td><td> Operation information </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OperationInformation> v1TransformsGetWithHttpInfo(Object body) throws ApiException {
+    public ApiResponse<OperationInformation> v1TransformsGetWithHttpInfo(@javax.annotation.Nullable Object body) throws ApiException {
         okhttp3.Call localVarCall = v1TransformsGetValidateBeforeCall(body, null);
         Type localVarReturnType = new TypeToken<OperationInformation>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -187,7 +187,7 @@ public class TransformsApi {
         <tr><td> 200 </td><td> Operation information </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1TransformsGetAsync(Object body, final ApiCallback<OperationInformation> _callback) throws ApiException {
+    public okhttp3.Call v1TransformsGetAsync(@javax.annotation.Nullable Object body, final ApiCallback<OperationInformation> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1TransformsGetValidateBeforeCall(body, _callback);
         Type localVarReturnType = new TypeToken<OperationInformation>(){}.getType();
@@ -209,7 +209,7 @@ public class TransformsApi {
         <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1TransformsTransformTypeIdGetCall(String transformTypeId, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1TransformsTransformTypeIdGetCall(@javax.annotation.Nonnull String transformTypeId, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -256,7 +256,7 @@ public class TransformsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1TransformsTransformTypeIdGetValidateBeforeCall(String transformTypeId, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1TransformsTransformTypeIdGetValidateBeforeCall(@javax.annotation.Nonnull String transformTypeId, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'transformTypeId' is set
         if (transformTypeId == null) {
             throw new ApiException("Missing the required parameter 'transformTypeId' when calling v1TransformsTransformTypeIdGet(Async)");
@@ -281,7 +281,7 @@ public class TransformsApi {
         <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
      </table>
      */
-    public Object v1TransformsTransformTypeIdGet(String transformTypeId, Object body) throws ApiException {
+    public Object v1TransformsTransformTypeIdGet(@javax.annotation.Nonnull String transformTypeId, @javax.annotation.Nullable Object body) throws ApiException {
         ApiResponse<Object> localVarResp = v1TransformsTransformTypeIdGetWithHttpInfo(transformTypeId, body);
         return localVarResp.getData();
     }
@@ -301,7 +301,7 @@ public class TransformsApi {
         <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> v1TransformsTransformTypeIdGetWithHttpInfo(String transformTypeId, Object body) throws ApiException {
+    public ApiResponse<Object> v1TransformsTransformTypeIdGetWithHttpInfo(@javax.annotation.Nonnull String transformTypeId, @javax.annotation.Nullable Object body) throws ApiException {
         okhttp3.Call localVarCall = v1TransformsTransformTypeIdGetValidateBeforeCall(transformTypeId, body, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -323,7 +323,7 @@ public class TransformsApi {
         <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1TransformsTransformTypeIdGetAsync(String transformTypeId, Object body, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call v1TransformsTransformTypeIdGetAsync(@javax.annotation.Nonnull String transformTypeId, @javax.annotation.Nullable Object body, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1TransformsTransformTypeIdGetValidateBeforeCall(transformTypeId, body, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

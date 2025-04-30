@@ -204,7 +204,7 @@ public class OutputsApi {
         <tr><td> 404 </td><td> Output type not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OutputsOutputTypeIdGetCall(String outputTypeId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OutputsOutputTypeIdGetCall(@javax.annotation.Nonnull String outputTypeId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -250,7 +250,7 @@ public class OutputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OutputsOutputTypeIdGetValidateBeforeCall(String outputTypeId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OutputsOutputTypeIdGetValidateBeforeCall(@javax.annotation.Nonnull String outputTypeId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'outputTypeId' is set
         if (outputTypeId == null) {
             throw new ApiException("Missing the required parameter 'outputTypeId' when calling v1OutputsOutputTypeIdGet(Async)");
@@ -274,7 +274,7 @@ public class OutputsApi {
         <tr><td> 404 </td><td> Output type not found </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsConnectorMeta v1OutputsOutputTypeIdGet(String outputTypeId) throws ApiException {
+    public ModelsConnectorMeta v1OutputsOutputTypeIdGet(@javax.annotation.Nonnull String outputTypeId) throws ApiException {
         ApiResponse<ModelsConnectorMeta> localVarResp = v1OutputsOutputTypeIdGetWithHttpInfo(outputTypeId);
         return localVarResp.getData();
     }
@@ -293,7 +293,7 @@ public class OutputsApi {
         <tr><td> 404 </td><td> Output type not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsConnectorMeta> v1OutputsOutputTypeIdGetWithHttpInfo(String outputTypeId) throws ApiException {
+    public ApiResponse<ModelsConnectorMeta> v1OutputsOutputTypeIdGetWithHttpInfo(@javax.annotation.Nonnull String outputTypeId) throws ApiException {
         okhttp3.Call localVarCall = v1OutputsOutputTypeIdGetValidateBeforeCall(outputTypeId, null);
         Type localVarReturnType = new TypeToken<ModelsConnectorMeta>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -314,7 +314,7 @@ public class OutputsApi {
         <tr><td> 404 </td><td> Output type not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OutputsOutputTypeIdGetAsync(String outputTypeId, final ApiCallback<ModelsConnectorMeta> _callback) throws ApiException {
+    public okhttp3.Call v1OutputsOutputTypeIdGetAsync(@javax.annotation.Nonnull String outputTypeId, final ApiCallback<ModelsConnectorMeta> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OutputsOutputTypeIdGetValidateBeforeCall(outputTypeId, _callback);
         Type localVarReturnType = new TypeToken<ModelsConnectorMeta>(){}.getType();

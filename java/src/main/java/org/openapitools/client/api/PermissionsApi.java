@@ -88,7 +88,7 @@ public class PermissionsApi {
         <tr><td> 500 </td><td> Error listing permissions </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdRolesPermissionsGetCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdRolesPermissionsGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -142,7 +142,7 @@ public class PermissionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdRolesPermissionsGetValidateBeforeCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdRolesPermissionsGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdRolesPermissionsGet(Async)");
@@ -168,7 +168,7 @@ public class PermissionsApi {
         <tr><td> 500 </td><td> Error listing permissions </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsPermissionList v2OrganizationIdRolesPermissionsGet(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ModelsPermissionList v2OrganizationIdRolesPermissionsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<ModelsPermissionList> localVarResp = v2OrganizationIdRolesPermissionsGetWithHttpInfo(organizationId, limit, offset);
         return localVarResp.getData();
     }
@@ -189,7 +189,7 @@ public class PermissionsApi {
         <tr><td> 500 </td><td> Error listing permissions </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsPermissionList> v2OrganizationIdRolesPermissionsGetWithHttpInfo(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ModelsPermissionList> v2OrganizationIdRolesPermissionsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdRolesPermissionsGetValidateBeforeCall(organizationId, limit, offset, null);
         Type localVarReturnType = new TypeToken<ModelsPermissionList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -212,7 +212,7 @@ public class PermissionsApi {
         <tr><td> 500 </td><td> Error listing permissions </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdRolesPermissionsGetAsync(String organizationId, Integer limit, Integer offset, final ApiCallback<ModelsPermissionList> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdRolesPermissionsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsPermissionList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdRolesPermissionsGetValidateBeforeCall(organizationId, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsPermissionList>(){}.getType();

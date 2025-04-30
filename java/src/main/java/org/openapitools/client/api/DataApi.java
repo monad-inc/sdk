@@ -87,7 +87,7 @@ public class DataApi {
         <tr><td> 500 </td><td> Failed to create consumer </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdDataNodeIdGetCall(String organizationId, String nodeId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdDataNodeIdGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String nodeId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -135,7 +135,7 @@ public class DataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdDataNodeIdGetValidateBeforeCall(String organizationId, String nodeId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdDataNodeIdGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String nodeId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdDataNodeIdGet(Async)");
@@ -166,7 +166,7 @@ public class DataApi {
         <tr><td> 500 </td><td> Failed to create consumer </td><td>  -  </td></tr>
      </table>
      */
-    public String v1OrganizationIdDataNodeIdGet(String organizationId, String nodeId) throws ApiException {
+    public String v1OrganizationIdDataNodeIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String nodeId) throws ApiException {
         ApiResponse<String> localVarResp = v1OrganizationIdDataNodeIdGetWithHttpInfo(organizationId, nodeId);
         return localVarResp.getData();
     }
@@ -187,7 +187,7 @@ public class DataApi {
         <tr><td> 500 </td><td> Failed to create consumer </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v1OrganizationIdDataNodeIdGetWithHttpInfo(String organizationId, String nodeId) throws ApiException {
+    public ApiResponse<String> v1OrganizationIdDataNodeIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String nodeId) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdDataNodeIdGetValidateBeforeCall(organizationId, nodeId, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -210,7 +210,7 @@ public class DataApi {
         <tr><td> 500 </td><td> Failed to create consumer </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdDataNodeIdGetAsync(String organizationId, String nodeId, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdDataNodeIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String nodeId, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdDataNodeIdGetValidateBeforeCall(organizationId, nodeId, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();

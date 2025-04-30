@@ -85,7 +85,7 @@ public class ConditionsApi {
         <tr><td> 200 </td><td> Conditions information </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2ConditionsGetCall(Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2ConditionsGetCall(@javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -131,7 +131,7 @@ public class ConditionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2ConditionsGetValidateBeforeCall(Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2ConditionsGetValidateBeforeCall(@javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         return v2ConditionsGetCall(body, _callback);
 
     }
@@ -149,7 +149,7 @@ public class ConditionsApi {
         <tr><td> 200 </td><td> Conditions information </td><td>  -  </td></tr>
      </table>
      */
-    public List<ConditionInfo> v2ConditionsGet(Object body) throws ApiException {
+    public List<ConditionInfo> v2ConditionsGet(@javax.annotation.Nullable Object body) throws ApiException {
         ApiResponse<List<ConditionInfo>> localVarResp = v2ConditionsGetWithHttpInfo(body);
         return localVarResp.getData();
     }
@@ -167,7 +167,7 @@ public class ConditionsApi {
         <tr><td> 200 </td><td> Conditions information </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ConditionInfo>> v2ConditionsGetWithHttpInfo(Object body) throws ApiException {
+    public ApiResponse<List<ConditionInfo>> v2ConditionsGetWithHttpInfo(@javax.annotation.Nullable Object body) throws ApiException {
         okhttp3.Call localVarCall = v2ConditionsGetValidateBeforeCall(body, null);
         Type localVarReturnType = new TypeToken<List<ConditionInfo>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -187,7 +187,7 @@ public class ConditionsApi {
         <tr><td> 200 </td><td> Conditions information </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2ConditionsGetAsync(Object body, final ApiCallback<List<ConditionInfo>> _callback) throws ApiException {
+    public okhttp3.Call v2ConditionsGetAsync(@javax.annotation.Nullable Object body, final ApiCallback<List<ConditionInfo>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2ConditionsGetValidateBeforeCall(body, _callback);
         Type localVarReturnType = new TypeToken<List<ConditionInfo>>(){}.getType();

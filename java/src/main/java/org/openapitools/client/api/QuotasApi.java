@@ -91,7 +91,7 @@ public class QuotasApi {
         <tr><td> 500 </td><td> Failed to list quotas </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2QuotasGetCall(String billingAccountId, String organizationId, Integer limit, Integer offset, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2QuotasGetCall(@javax.annotation.Nullable String billingAccountId, @javax.annotation.Nullable String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -153,7 +153,7 @@ public class QuotasApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2QuotasGetValidateBeforeCall(String billingAccountId, String organizationId, Integer limit, Integer offset, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2QuotasGetValidateBeforeCall(@javax.annotation.Nullable String billingAccountId, @javax.annotation.Nullable String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         return v2QuotasGetCall(billingAccountId, organizationId, limit, offset, body, _callback);
 
     }
@@ -177,7 +177,7 @@ public class QuotasApi {
         <tr><td> 500 </td><td> Failed to list quotas </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsQuotaList v2QuotasGet(String billingAccountId, String organizationId, Integer limit, Integer offset, Object body) throws ApiException {
+    public ModelsQuotaList v2QuotasGet(@javax.annotation.Nullable String billingAccountId, @javax.annotation.Nullable String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body) throws ApiException {
         ApiResponse<ModelsQuotaList> localVarResp = v2QuotasGetWithHttpInfo(billingAccountId, organizationId, limit, offset, body);
         return localVarResp.getData();
     }
@@ -201,7 +201,7 @@ public class QuotasApi {
         <tr><td> 500 </td><td> Failed to list quotas </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsQuotaList> v2QuotasGetWithHttpInfo(String billingAccountId, String organizationId, Integer limit, Integer offset, Object body) throws ApiException {
+    public ApiResponse<ModelsQuotaList> v2QuotasGetWithHttpInfo(@javax.annotation.Nullable String billingAccountId, @javax.annotation.Nullable String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body) throws ApiException {
         okhttp3.Call localVarCall = v2QuotasGetValidateBeforeCall(billingAccountId, organizationId, limit, offset, body, null);
         Type localVarReturnType = new TypeToken<ModelsQuotaList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -227,7 +227,7 @@ public class QuotasApi {
         <tr><td> 500 </td><td> Failed to list quotas </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2QuotasGetAsync(String billingAccountId, String organizationId, Integer limit, Integer offset, Object body, final ApiCallback<ModelsQuotaList> _callback) throws ApiException {
+    public okhttp3.Call v2QuotasGetAsync(@javax.annotation.Nullable String billingAccountId, @javax.annotation.Nullable String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body, final ApiCallback<ModelsQuotaList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2QuotasGetValidateBeforeCall(billingAccountId, organizationId, limit, offset, body, _callback);
         Type localVarReturnType = new TypeToken<ModelsQuotaList>(){}.getType();

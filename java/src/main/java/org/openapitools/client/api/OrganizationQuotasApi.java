@@ -90,7 +90,7 @@ public class OrganizationQuotasApi {
         <tr><td> 500 </td><td> Failed to list quotas </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdQuotasGetCall(String organizationId, Integer limit, Integer offset, Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdQuotasGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -145,7 +145,7 @@ public class OrganizationQuotasApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdQuotasGetValidateBeforeCall(String organizationId, Integer limit, Integer offset, Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdQuotasGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdQuotasGet(Async)");
@@ -173,7 +173,7 @@ public class OrganizationQuotasApi {
         <tr><td> 500 </td><td> Failed to list quotas </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsQuotaList v2OrganizationIdQuotasGet(String organizationId, Integer limit, Integer offset, Object body) throws ApiException {
+    public ModelsQuotaList v2OrganizationIdQuotasGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body) throws ApiException {
         ApiResponse<ModelsQuotaList> localVarResp = v2OrganizationIdQuotasGetWithHttpInfo(organizationId, limit, offset, body);
         return localVarResp.getData();
     }
@@ -196,7 +196,7 @@ public class OrganizationQuotasApi {
         <tr><td> 500 </td><td> Failed to list quotas </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsQuotaList> v2OrganizationIdQuotasGetWithHttpInfo(String organizationId, Integer limit, Integer offset, Object body) throws ApiException {
+    public ApiResponse<ModelsQuotaList> v2OrganizationIdQuotasGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdQuotasGetValidateBeforeCall(organizationId, limit, offset, body, null);
         Type localVarReturnType = new TypeToken<ModelsQuotaList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -221,7 +221,7 @@ public class OrganizationQuotasApi {
         <tr><td> 500 </td><td> Failed to list quotas </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdQuotasGetAsync(String organizationId, Integer limit, Integer offset, Object body, final ApiCallback<ModelsQuotaList> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdQuotasGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body, final ApiCallback<ModelsQuotaList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdQuotasGetValidateBeforeCall(organizationId, limit, offset, body, _callback);
         Type localVarReturnType = new TypeToken<ModelsQuotaList>(){}.getType();

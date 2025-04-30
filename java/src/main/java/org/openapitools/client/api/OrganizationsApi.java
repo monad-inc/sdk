@@ -89,7 +89,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationsGetCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationsGetCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -142,7 +142,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationsGetValidateBeforeCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationsGetValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         return v1OrganizationsGetCall(limit, offset, _callback);
 
     }
@@ -161,7 +161,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsOrganizationList v1OrganizationsGet(Integer limit, Integer offset) throws ApiException {
+    public ModelsOrganizationList v1OrganizationsGet(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<ModelsOrganizationList> localVarResp = v1OrganizationsGetWithHttpInfo(limit, offset);
         return localVarResp.getData();
     }
@@ -180,7 +180,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsOrganizationList> v1OrganizationsGetWithHttpInfo(Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ModelsOrganizationList> v1OrganizationsGetWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationsGetValidateBeforeCall(limit, offset, null);
         Type localVarReturnType = new TypeToken<ModelsOrganizationList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -201,7 +201,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationsGetAsync(Integer limit, Integer offset, final ApiCallback<ModelsOrganizationList> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationsGetAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsOrganizationList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationsGetValidateBeforeCall(limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsOrganizationList>(){}.getType();
@@ -221,7 +221,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationsOrganizationIdDeleteCall(String organizationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationsOrganizationIdDeleteCall(@javax.annotation.Nonnull String organizationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -267,7 +267,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationsOrganizationIdDeleteValidateBeforeCall(String organizationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationsOrganizationIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String organizationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationsOrganizationIdDelete(Async)");
@@ -290,7 +290,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public Object v1OrganizationsOrganizationIdDelete(String organizationId) throws ApiException {
+    public Object v1OrganizationsOrganizationIdDelete(@javax.annotation.Nonnull String organizationId) throws ApiException {
         ApiResponse<Object> localVarResp = v1OrganizationsOrganizationIdDeleteWithHttpInfo(organizationId);
         return localVarResp.getData();
     }
@@ -308,7 +308,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> v1OrganizationsOrganizationIdDeleteWithHttpInfo(String organizationId) throws ApiException {
+    public ApiResponse<Object> v1OrganizationsOrganizationIdDeleteWithHttpInfo(@javax.annotation.Nonnull String organizationId) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationsOrganizationIdDeleteValidateBeforeCall(organizationId, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -328,7 +328,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationsOrganizationIdDeleteAsync(String organizationId, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationsOrganizationIdDeleteAsync(@javax.annotation.Nonnull String organizationId, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationsOrganizationIdDeleteValidateBeforeCall(organizationId, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -349,7 +349,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for updating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationsOrganizationIdPatchCall(String organizationId, RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationsOrganizationIdPatchCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -396,7 +396,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationsOrganizationIdPatchValidateBeforeCall(String organizationId, RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationsOrganizationIdPatchValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationsOrganizationIdPatch(Async)");
@@ -425,7 +425,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for updating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsOrganization v1OrganizationsOrganizationIdPatch(String organizationId, RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest) throws ApiException {
+    public ModelsOrganization v1OrganizationsOrganizationIdPatch(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest) throws ApiException {
         ApiResponse<ModelsOrganization> localVarResp = v1OrganizationsOrganizationIdPatchWithHttpInfo(organizationId, routesUpdateOrganizationRequest);
         return localVarResp.getData();
     }
@@ -444,7 +444,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for updating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsOrganization> v1OrganizationsOrganizationIdPatchWithHttpInfo(String organizationId, RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest) throws ApiException {
+    public ApiResponse<ModelsOrganization> v1OrganizationsOrganizationIdPatchWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationsOrganizationIdPatchValidateBeforeCall(organizationId, routesUpdateOrganizationRequest, null);
         Type localVarReturnType = new TypeToken<ModelsOrganization>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -465,7 +465,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for updating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationsOrganizationIdPatchAsync(String organizationId, RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest, final ApiCallback<ModelsOrganization> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationsOrganizationIdPatchAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest, final ApiCallback<ModelsOrganization> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationsOrganizationIdPatchValidateBeforeCall(organizationId, routesUpdateOrganizationRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsOrganization>(){}.getType();
@@ -485,7 +485,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for creating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationsPostCall(RoutesCreateOrganizationRequest routesCreateOrganizationRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationsPostCall(@javax.annotation.Nonnull RoutesCreateOrganizationRequest routesCreateOrganizationRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -531,7 +531,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationsPostValidateBeforeCall(RoutesCreateOrganizationRequest routesCreateOrganizationRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationsPostValidateBeforeCall(@javax.annotation.Nonnull RoutesCreateOrganizationRequest routesCreateOrganizationRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routesCreateOrganizationRequest' is set
         if (routesCreateOrganizationRequest == null) {
             throw new ApiException("Missing the required parameter 'routesCreateOrganizationRequest' when calling v1OrganizationsPost(Async)");
@@ -554,7 +554,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for creating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsOrganization v1OrganizationsPost(RoutesCreateOrganizationRequest routesCreateOrganizationRequest) throws ApiException {
+    public ModelsOrganization v1OrganizationsPost(@javax.annotation.Nonnull RoutesCreateOrganizationRequest routesCreateOrganizationRequest) throws ApiException {
         ApiResponse<ModelsOrganization> localVarResp = v1OrganizationsPostWithHttpInfo(routesCreateOrganizationRequest);
         return localVarResp.getData();
     }
@@ -572,7 +572,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for creating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsOrganization> v1OrganizationsPostWithHttpInfo(RoutesCreateOrganizationRequest routesCreateOrganizationRequest) throws ApiException {
+    public ApiResponse<ModelsOrganization> v1OrganizationsPostWithHttpInfo(@javax.annotation.Nonnull RoutesCreateOrganizationRequest routesCreateOrganizationRequest) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationsPostValidateBeforeCall(routesCreateOrganizationRequest, null);
         Type localVarReturnType = new TypeToken<ModelsOrganization>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -592,7 +592,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for creating an organization </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationsPostAsync(RoutesCreateOrganizationRequest routesCreateOrganizationRequest, final ApiCallback<ModelsOrganization> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationsPostAsync(@javax.annotation.Nonnull RoutesCreateOrganizationRequest routesCreateOrganizationRequest, final ApiCallback<ModelsOrganization> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationsPostValidateBeforeCall(routesCreateOrganizationRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsOrganization>(){}.getType();

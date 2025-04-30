@@ -204,7 +204,7 @@ public class InputsApi {
         <tr><td> 404 </td><td> Input type not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1InputsInputTypeIdGetCall(String inputTypeId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1InputsInputTypeIdGetCall(@javax.annotation.Nonnull String inputTypeId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -250,7 +250,7 @@ public class InputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1InputsInputTypeIdGetValidateBeforeCall(String inputTypeId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1InputsInputTypeIdGetValidateBeforeCall(@javax.annotation.Nonnull String inputTypeId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'inputTypeId' is set
         if (inputTypeId == null) {
             throw new ApiException("Missing the required parameter 'inputTypeId' when calling v1InputsInputTypeIdGet(Async)");
@@ -274,7 +274,7 @@ public class InputsApi {
         <tr><td> 404 </td><td> Input type not found </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsConnectorMeta v1InputsInputTypeIdGet(String inputTypeId) throws ApiException {
+    public ModelsConnectorMeta v1InputsInputTypeIdGet(@javax.annotation.Nonnull String inputTypeId) throws ApiException {
         ApiResponse<ModelsConnectorMeta> localVarResp = v1InputsInputTypeIdGetWithHttpInfo(inputTypeId);
         return localVarResp.getData();
     }
@@ -293,7 +293,7 @@ public class InputsApi {
         <tr><td> 404 </td><td> Input type not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsConnectorMeta> v1InputsInputTypeIdGetWithHttpInfo(String inputTypeId) throws ApiException {
+    public ApiResponse<ModelsConnectorMeta> v1InputsInputTypeIdGetWithHttpInfo(@javax.annotation.Nonnull String inputTypeId) throws ApiException {
         okhttp3.Call localVarCall = v1InputsInputTypeIdGetValidateBeforeCall(inputTypeId, null);
         Type localVarReturnType = new TypeToken<ModelsConnectorMeta>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -314,7 +314,7 @@ public class InputsApi {
         <tr><td> 404 </td><td> Input type not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1InputsInputTypeIdGetAsync(String inputTypeId, final ApiCallback<ModelsConnectorMeta> _callback) throws ApiException {
+    public okhttp3.Call v1InputsInputTypeIdGetAsync(@javax.annotation.Nonnull String inputTypeId, final ApiCallback<ModelsConnectorMeta> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1InputsInputTypeIdGetValidateBeforeCall(inputTypeId, _callback);
         Type localVarReturnType = new TypeToken<ModelsConnectorMeta>(){}.getType();

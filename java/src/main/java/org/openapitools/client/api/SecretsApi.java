@@ -92,7 +92,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdSecretsGetCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdSecretsGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -146,7 +146,7 @@ public class SecretsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdSecretsGetValidateBeforeCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdSecretsGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdSecretsGet(Async)");
@@ -172,7 +172,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsSecretWithComponentsList v2OrganizationIdSecretsGet(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ModelsSecretWithComponentsList v2OrganizationIdSecretsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<ModelsSecretWithComponentsList> localVarResp = v2OrganizationIdSecretsGetWithHttpInfo(organizationId, limit, offset);
         return localVarResp.getData();
     }
@@ -193,7 +193,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsSecretWithComponentsList> v2OrganizationIdSecretsGetWithHttpInfo(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ModelsSecretWithComponentsList> v2OrganizationIdSecretsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdSecretsGetValidateBeforeCall(organizationId, limit, offset, null);
         Type localVarReturnType = new TypeToken<ModelsSecretWithComponentsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -216,7 +216,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdSecretsGetAsync(String organizationId, Integer limit, Integer offset, final ApiCallback<ModelsSecretWithComponentsList> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdSecretsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsSecretWithComponentsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdSecretsGetValidateBeforeCall(organizationId, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsSecretWithComponentsList>(){}.getType();
@@ -239,7 +239,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdSecretsPostCall(String organizationId, RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdSecretsPostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -286,7 +286,7 @@ public class SecretsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdSecretsPostValidateBeforeCall(String organizationId, RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdSecretsPostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdSecretsPost(Async)");
@@ -317,7 +317,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2SecretResponse v2OrganizationIdSecretsPost(String organizationId, RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest) throws ApiException {
+    public RoutesV2SecretResponse v2OrganizationIdSecretsPost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest) throws ApiException {
         ApiResponse<RoutesV2SecretResponse> localVarResp = v2OrganizationIdSecretsPostWithHttpInfo(organizationId, routesV2CreateOrUpdateSecretRequest);
         return localVarResp.getData();
     }
@@ -338,7 +338,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2SecretResponse> v2OrganizationIdSecretsPostWithHttpInfo(String organizationId, RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest) throws ApiException {
+    public ApiResponse<RoutesV2SecretResponse> v2OrganizationIdSecretsPostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdSecretsPostValidateBeforeCall(organizationId, routesV2CreateOrUpdateSecretRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV2SecretResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -361,7 +361,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdSecretsPostAsync(String organizationId, RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback<RoutesV2SecretResponse> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdSecretsPostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback<RoutesV2SecretResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdSecretsPostValidateBeforeCall(organizationId, routesV2CreateOrUpdateSecretRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2SecretResponse>(){}.getType();
@@ -384,7 +384,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdSecretsSecretIdDeleteCall(String organizationId, String secretId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdSecretsSecretIdDeleteCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -431,7 +431,7 @@ public class SecretsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdSecretsSecretIdDeleteValidateBeforeCall(String organizationId, String secretId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdSecretsSecretIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdSecretsSecretIdDelete(Async)");
@@ -461,7 +461,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public void v2OrganizationIdSecretsSecretIdDelete(String organizationId, String secretId) throws ApiException {
+    public void v2OrganizationIdSecretsSecretIdDelete(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId) throws ApiException {
         v2OrganizationIdSecretsSecretIdDeleteWithHttpInfo(organizationId, secretId);
     }
 
@@ -481,7 +481,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v2OrganizationIdSecretsSecretIdDeleteWithHttpInfo(String organizationId, String secretId) throws ApiException {
+    public ApiResponse<Void> v2OrganizationIdSecretsSecretIdDeleteWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdSecretsSecretIdDeleteValidateBeforeCall(organizationId, secretId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -503,7 +503,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdSecretsSecretIdDeleteAsync(String organizationId, String secretId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdSecretsSecretIdDeleteAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdSecretsSecretIdDeleteValidateBeforeCall(organizationId, secretId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -525,7 +525,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdSecretsSecretIdGetCall(String organizationId, String secretId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdSecretsSecretIdGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -572,7 +572,7 @@ public class SecretsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdSecretsSecretIdGetValidateBeforeCall(String organizationId, String secretId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdSecretsSecretIdGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdSecretsSecretIdGet(Async)");
@@ -603,7 +603,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsSecretWithComponents v2OrganizationIdSecretsSecretIdGet(String organizationId, String secretId) throws ApiException {
+    public ModelsSecretWithComponents v2OrganizationIdSecretsSecretIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId) throws ApiException {
         ApiResponse<ModelsSecretWithComponents> localVarResp = v2OrganizationIdSecretsSecretIdGetWithHttpInfo(organizationId, secretId);
         return localVarResp.getData();
     }
@@ -624,7 +624,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsSecretWithComponents> v2OrganizationIdSecretsSecretIdGetWithHttpInfo(String organizationId, String secretId) throws ApiException {
+    public ApiResponse<ModelsSecretWithComponents> v2OrganizationIdSecretsSecretIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdSecretsSecretIdGetValidateBeforeCall(organizationId, secretId, null);
         Type localVarReturnType = new TypeToken<ModelsSecretWithComponents>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -647,7 +647,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdSecretsSecretIdGetAsync(String organizationId, String secretId, final ApiCallback<ModelsSecretWithComponents> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdSecretsSecretIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, final ApiCallback<ModelsSecretWithComponents> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdSecretsSecretIdGetValidateBeforeCall(organizationId, secretId, _callback);
         Type localVarReturnType = new TypeToken<ModelsSecretWithComponents>(){}.getType();
@@ -672,7 +672,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdSecretsSecretIdPatchCall(String organizationId, String secretId, RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdSecretsSecretIdPatchCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -720,7 +720,7 @@ public class SecretsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdSecretsSecretIdPatchValidateBeforeCall(String organizationId, String secretId, RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdSecretsSecretIdPatchValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdSecretsSecretIdPatch(Async)");
@@ -758,7 +758,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2SecretResponse v2OrganizationIdSecretsSecretIdPatch(String organizationId, String secretId, RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest) throws ApiException {
+    public RoutesV2SecretResponse v2OrganizationIdSecretsSecretIdPatch(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest) throws ApiException {
         ApiResponse<RoutesV2SecretResponse> localVarResp = v2OrganizationIdSecretsSecretIdPatchWithHttpInfo(organizationId, secretId, routesV2CreateOrUpdateSecretRequest);
         return localVarResp.getData();
     }
@@ -781,7 +781,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2SecretResponse> v2OrganizationIdSecretsSecretIdPatchWithHttpInfo(String organizationId, String secretId, RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest) throws ApiException {
+    public ApiResponse<RoutesV2SecretResponse> v2OrganizationIdSecretsSecretIdPatchWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdSecretsSecretIdPatchValidateBeforeCall(organizationId, secretId, routesV2CreateOrUpdateSecretRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV2SecretResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -806,7 +806,7 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdSecretsSecretIdPatchAsync(String organizationId, String secretId, RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback<RoutesV2SecretResponse> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdSecretsSecretIdPatchAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, @javax.annotation.Nonnull RoutesV2CreateOrUpdateSecretRequest routesV2CreateOrUpdateSecretRequest, final ApiCallback<RoutesV2SecretResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdSecretsSecretIdPatchValidateBeforeCall(organizationId, secretId, routesV2CreateOrUpdateSecretRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2SecretResponse>(){}.getType();

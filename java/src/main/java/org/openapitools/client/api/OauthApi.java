@@ -85,7 +85,7 @@ public class OauthApi {
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OauthTypeIdCallbackGetCall(String typeId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OauthTypeIdCallbackGetCall(@javax.annotation.Nonnull String typeId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -131,7 +131,7 @@ public class OauthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OauthTypeIdCallbackGetValidateBeforeCall(String typeId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OauthTypeIdCallbackGetValidateBeforeCall(@javax.annotation.Nonnull String typeId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'typeId' is set
         if (typeId == null) {
             throw new ApiException("Missing the required parameter 'typeId' when calling v1OauthTypeIdCallbackGet(Async)");
@@ -155,7 +155,7 @@ public class OauthApi {
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
      </table>
      */
-    public Object v1OauthTypeIdCallbackGet(String typeId) throws ApiException {
+    public Object v1OauthTypeIdCallbackGet(@javax.annotation.Nonnull String typeId) throws ApiException {
         ApiResponse<Object> localVarResp = v1OauthTypeIdCallbackGetWithHttpInfo(typeId);
         return localVarResp.getData();
     }
@@ -174,7 +174,7 @@ public class OauthApi {
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> v1OauthTypeIdCallbackGetWithHttpInfo(String typeId) throws ApiException {
+    public ApiResponse<Object> v1OauthTypeIdCallbackGetWithHttpInfo(@javax.annotation.Nonnull String typeId) throws ApiException {
         okhttp3.Call localVarCall = v1OauthTypeIdCallbackGetValidateBeforeCall(typeId, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -195,7 +195,7 @@ public class OauthApi {
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OauthTypeIdCallbackGetAsync(String typeId, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call v1OauthTypeIdCallbackGetAsync(@javax.annotation.Nonnull String typeId, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OauthTypeIdCallbackGetValidateBeforeCall(typeId, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -217,7 +217,7 @@ public class OauthApi {
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OauthTypeIdOrganizationIdGetCall(String typeId, String organizationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OauthTypeIdOrganizationIdGetCall(@javax.annotation.Nonnull String typeId, @javax.annotation.Nonnull String organizationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -264,7 +264,7 @@ public class OauthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OauthTypeIdOrganizationIdGetValidateBeforeCall(String typeId, String organizationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OauthTypeIdOrganizationIdGetValidateBeforeCall(@javax.annotation.Nonnull String typeId, @javax.annotation.Nonnull String organizationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'typeId' is set
         if (typeId == null) {
             throw new ApiException("Missing the required parameter 'typeId' when calling v1OauthTypeIdOrganizationIdGet(Async)");
@@ -294,7 +294,7 @@ public class OauthApi {
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
      </table>
      */
-    public Object v1OauthTypeIdOrganizationIdGet(String typeId, String organizationId) throws ApiException {
+    public Object v1OauthTypeIdOrganizationIdGet(@javax.annotation.Nonnull String typeId, @javax.annotation.Nonnull String organizationId) throws ApiException {
         ApiResponse<Object> localVarResp = v1OauthTypeIdOrganizationIdGetWithHttpInfo(typeId, organizationId);
         return localVarResp.getData();
     }
@@ -314,7 +314,7 @@ public class OauthApi {
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> v1OauthTypeIdOrganizationIdGetWithHttpInfo(String typeId, String organizationId) throws ApiException {
+    public ApiResponse<Object> v1OauthTypeIdOrganizationIdGetWithHttpInfo(@javax.annotation.Nonnull String typeId, @javax.annotation.Nonnull String organizationId) throws ApiException {
         okhttp3.Call localVarCall = v1OauthTypeIdOrganizationIdGetValidateBeforeCall(typeId, organizationId, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -336,7 +336,7 @@ public class OauthApi {
         <tr><td> 404 </td><td> oauth handler not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OauthTypeIdOrganizationIdGetAsync(String typeId, String organizationId, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call v1OauthTypeIdOrganizationIdGetAsync(@javax.annotation.Nonnull String typeId, @javax.annotation.Nonnull String organizationId, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OauthTypeIdOrganizationIdGetValidateBeforeCall(typeId, organizationId, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

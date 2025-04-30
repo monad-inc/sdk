@@ -92,7 +92,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to marshal transforms </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdTransformsGetCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdTransformsGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -146,7 +146,7 @@ public class OrganizationTransformsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdTransformsGetValidateBeforeCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdTransformsGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdTransformsGet(Async)");
@@ -172,7 +172,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to marshal transforms </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsTransformList v1OrganizationIdTransformsGet(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ModelsTransformList v1OrganizationIdTransformsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<ModelsTransformList> localVarResp = v1OrganizationIdTransformsGetWithHttpInfo(organizationId, limit, offset);
         return localVarResp.getData();
     }
@@ -193,7 +193,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to marshal transforms </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsTransformList> v1OrganizationIdTransformsGetWithHttpInfo(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ModelsTransformList> v1OrganizationIdTransformsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdTransformsGetValidateBeforeCall(organizationId, limit, offset, null);
         Type localVarReturnType = new TypeToken<ModelsTransformList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -216,7 +216,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to marshal transforms </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdTransformsGetAsync(String organizationId, Integer limit, Integer offset, final ApiCallback<ModelsTransformList> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdTransformsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsTransformList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdTransformsGetValidateBeforeCall(organizationId, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsTransformList>(){}.getType();
@@ -239,7 +239,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to create transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdTransformsPostCall(String organizationId, RoutesCreateTransformRequest routesCreateTransformRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdTransformsPostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesCreateTransformRequest routesCreateTransformRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -286,7 +286,7 @@ public class OrganizationTransformsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdTransformsPostValidateBeforeCall(String organizationId, RoutesCreateTransformRequest routesCreateTransformRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdTransformsPostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesCreateTransformRequest routesCreateTransformRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdTransformsPost(Async)");
@@ -317,7 +317,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to create transform </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsTransform v1OrganizationIdTransformsPost(String organizationId, RoutesCreateTransformRequest routesCreateTransformRequest) throws ApiException {
+    public ModelsTransform v1OrganizationIdTransformsPost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesCreateTransformRequest routesCreateTransformRequest) throws ApiException {
         ApiResponse<ModelsTransform> localVarResp = v1OrganizationIdTransformsPostWithHttpInfo(organizationId, routesCreateTransformRequest);
         return localVarResp.getData();
     }
@@ -338,7 +338,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to create transform </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsTransform> v1OrganizationIdTransformsPostWithHttpInfo(String organizationId, RoutesCreateTransformRequest routesCreateTransformRequest) throws ApiException {
+    public ApiResponse<ModelsTransform> v1OrganizationIdTransformsPostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesCreateTransformRequest routesCreateTransformRequest) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdTransformsPostValidateBeforeCall(organizationId, routesCreateTransformRequest, null);
         Type localVarReturnType = new TypeToken<ModelsTransform>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -361,7 +361,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to create transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdTransformsPostAsync(String organizationId, RoutesCreateTransformRequest routesCreateTransformRequest, final ApiCallback<ModelsTransform> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdTransformsPostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesCreateTransformRequest routesCreateTransformRequest, final ApiCallback<ModelsTransform> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdTransformsPostValidateBeforeCall(organizationId, routesCreateTransformRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsTransform>(){}.getType();
@@ -383,7 +383,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to delete transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdTransformsTransformIdDeleteCall(String organizationId, String transformId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdTransformsTransformIdDeleteCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String transformId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -430,7 +430,7 @@ public class OrganizationTransformsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdTransformsTransformIdDeleteValidateBeforeCall(String organizationId, String transformId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdTransformsTransformIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String transformId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdTransformsTransformIdDelete(Async)");
@@ -460,7 +460,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to delete transform </td><td>  -  </td></tr>
      </table>
      */
-    public Object v1OrganizationIdTransformsTransformIdDelete(String organizationId, String transformId) throws ApiException {
+    public Object v1OrganizationIdTransformsTransformIdDelete(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String transformId) throws ApiException {
         ApiResponse<Object> localVarResp = v1OrganizationIdTransformsTransformIdDeleteWithHttpInfo(organizationId, transformId);
         return localVarResp.getData();
     }
@@ -480,7 +480,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to delete transform </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> v1OrganizationIdTransformsTransformIdDeleteWithHttpInfo(String organizationId, String transformId) throws ApiException {
+    public ApiResponse<Object> v1OrganizationIdTransformsTransformIdDeleteWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String transformId) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdTransformsTransformIdDeleteValidateBeforeCall(organizationId, transformId, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -502,7 +502,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to delete transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdTransformsTransformIdDeleteAsync(String organizationId, String transformId, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdTransformsTransformIdDeleteAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String transformId, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdTransformsTransformIdDeleteValidateBeforeCall(organizationId, transformId, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -524,7 +524,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to get transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdTransformsTransformIdGetCall(String transformId, String organizationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdTransformsTransformIdGetCall(@javax.annotation.Nonnull String transformId, @javax.annotation.Nonnull String organizationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -571,7 +571,7 @@ public class OrganizationTransformsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdTransformsTransformIdGetValidateBeforeCall(String transformId, String organizationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdTransformsTransformIdGetValidateBeforeCall(@javax.annotation.Nonnull String transformId, @javax.annotation.Nonnull String organizationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'transformId' is set
         if (transformId == null) {
             throw new ApiException("Missing the required parameter 'transformId' when calling v1OrganizationIdTransformsTransformIdGet(Async)");
@@ -601,7 +601,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to get transform </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesGetTransformResponse v1OrganizationIdTransformsTransformIdGet(String transformId, String organizationId) throws ApiException {
+    public RoutesGetTransformResponse v1OrganizationIdTransformsTransformIdGet(@javax.annotation.Nonnull String transformId, @javax.annotation.Nonnull String organizationId) throws ApiException {
         ApiResponse<RoutesGetTransformResponse> localVarResp = v1OrganizationIdTransformsTransformIdGetWithHttpInfo(transformId, organizationId);
         return localVarResp.getData();
     }
@@ -621,7 +621,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to get transform </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesGetTransformResponse> v1OrganizationIdTransformsTransformIdGetWithHttpInfo(String transformId, String organizationId) throws ApiException {
+    public ApiResponse<RoutesGetTransformResponse> v1OrganizationIdTransformsTransformIdGetWithHttpInfo(@javax.annotation.Nonnull String transformId, @javax.annotation.Nonnull String organizationId) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdTransformsTransformIdGetValidateBeforeCall(transformId, organizationId, null);
         Type localVarReturnType = new TypeToken<RoutesGetTransformResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -643,7 +643,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to get transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdTransformsTransformIdGetAsync(String transformId, String organizationId, final ApiCallback<RoutesGetTransformResponse> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdTransformsTransformIdGetAsync(@javax.annotation.Nonnull String transformId, @javax.annotation.Nonnull String organizationId, final ApiCallback<RoutesGetTransformResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdTransformsTransformIdGetValidateBeforeCall(transformId, organizationId, _callback);
         Type localVarReturnType = new TypeToken<RoutesGetTransformResponse>(){}.getType();
@@ -667,7 +667,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to update transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdTransformsTransformIdPatchCall(String organizationId, String transformId, RoutesUpdateTransformRequest routesUpdateTransformRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdTransformsTransformIdPatchCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String transformId, @javax.annotation.Nonnull RoutesUpdateTransformRequest routesUpdateTransformRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -715,7 +715,7 @@ public class OrganizationTransformsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdTransformsTransformIdPatchValidateBeforeCall(String organizationId, String transformId, RoutesUpdateTransformRequest routesUpdateTransformRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdTransformsTransformIdPatchValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String transformId, @javax.annotation.Nonnull RoutesUpdateTransformRequest routesUpdateTransformRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdTransformsTransformIdPatch(Async)");
@@ -752,7 +752,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to update transform </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsTransform v1OrganizationIdTransformsTransformIdPatch(String organizationId, String transformId, RoutesUpdateTransformRequest routesUpdateTransformRequest) throws ApiException {
+    public ModelsTransform v1OrganizationIdTransformsTransformIdPatch(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String transformId, @javax.annotation.Nonnull RoutesUpdateTransformRequest routesUpdateTransformRequest) throws ApiException {
         ApiResponse<ModelsTransform> localVarResp = v1OrganizationIdTransformsTransformIdPatchWithHttpInfo(organizationId, transformId, routesUpdateTransformRequest);
         return localVarResp.getData();
     }
@@ -774,7 +774,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to update transform </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsTransform> v1OrganizationIdTransformsTransformIdPatchWithHttpInfo(String organizationId, String transformId, RoutesUpdateTransformRequest routesUpdateTransformRequest) throws ApiException {
+    public ApiResponse<ModelsTransform> v1OrganizationIdTransformsTransformIdPatchWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String transformId, @javax.annotation.Nonnull RoutesUpdateTransformRequest routesUpdateTransformRequest) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdTransformsTransformIdPatchValidateBeforeCall(organizationId, transformId, routesUpdateTransformRequest, null);
         Type localVarReturnType = new TypeToken<ModelsTransform>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -798,7 +798,7 @@ public class OrganizationTransformsApi {
         <tr><td> 500 </td><td> Failed to update transform </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdTransformsTransformIdPatchAsync(String organizationId, String transformId, RoutesUpdateTransformRequest routesUpdateTransformRequest, final ApiCallback<ModelsTransform> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdTransformsTransformIdPatchAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String transformId, @javax.annotation.Nonnull RoutesUpdateTransformRequest routesUpdateTransformRequest, final ApiCallback<ModelsTransform> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdTransformsTransformIdPatchValidateBeforeCall(organizationId, transformId, routesUpdateTransformRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsTransform>(){}.getType();

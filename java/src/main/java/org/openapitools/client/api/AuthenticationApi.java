@@ -321,7 +321,7 @@ public class AuthenticationApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1LoginResendVerificationPostCall(RoutesResendVerificationRequest routesResendVerificationRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1LoginResendVerificationPostCall(@javax.annotation.Nonnull RoutesResendVerificationRequest routesResendVerificationRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -367,7 +367,7 @@ public class AuthenticationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1LoginResendVerificationPostValidateBeforeCall(RoutesResendVerificationRequest routesResendVerificationRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1LoginResendVerificationPostValidateBeforeCall(@javax.annotation.Nonnull RoutesResendVerificationRequest routesResendVerificationRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routesResendVerificationRequest' is set
         if (routesResendVerificationRequest == null) {
             throw new ApiException("Missing the required parameter 'routesResendVerificationRequest' when calling v1LoginResendVerificationPost(Async)");
@@ -393,7 +393,7 @@ public class AuthenticationApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public String v1LoginResendVerificationPost(RoutesResendVerificationRequest routesResendVerificationRequest) throws ApiException {
+    public String v1LoginResendVerificationPost(@javax.annotation.Nonnull RoutesResendVerificationRequest routesResendVerificationRequest) throws ApiException {
         ApiResponse<String> localVarResp = v1LoginResendVerificationPostWithHttpInfo(routesResendVerificationRequest);
         return localVarResp.getData();
     }
@@ -414,7 +414,7 @@ public class AuthenticationApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v1LoginResendVerificationPostWithHttpInfo(RoutesResendVerificationRequest routesResendVerificationRequest) throws ApiException {
+    public ApiResponse<String> v1LoginResendVerificationPostWithHttpInfo(@javax.annotation.Nonnull RoutesResendVerificationRequest routesResendVerificationRequest) throws ApiException {
         okhttp3.Call localVarCall = v1LoginResendVerificationPostValidateBeforeCall(routesResendVerificationRequest, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -437,7 +437,7 @@ public class AuthenticationApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1LoginResendVerificationPostAsync(RoutesResendVerificationRequest routesResendVerificationRequest, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v1LoginResendVerificationPostAsync(@javax.annotation.Nonnull RoutesResendVerificationRequest routesResendVerificationRequest, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1LoginResendVerificationPostValidateBeforeCall(routesResendVerificationRequest, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -460,7 +460,7 @@ public class AuthenticationApi {
         <tr><td> 0 </td><td> Error message </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1LoginTokenPostCall(RoutesLoginRequest routesLoginRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1LoginTokenPostCall(@javax.annotation.Nonnull RoutesLoginRequest routesLoginRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -506,7 +506,7 @@ public class AuthenticationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1LoginTokenPostValidateBeforeCall(RoutesLoginRequest routesLoginRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1LoginTokenPostValidateBeforeCall(@javax.annotation.Nonnull RoutesLoginRequest routesLoginRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routesLoginRequest' is set
         if (routesLoginRequest == null) {
             throw new ApiException("Missing the required parameter 'routesLoginRequest' when calling v1LoginTokenPost(Async)");
@@ -532,7 +532,7 @@ public class AuthenticationApi {
         <tr><td> 0 </td><td> Error message </td><td>  -  </td></tr>
      </table>
      */
-    public AuthenticationtypesTokenResponse v1LoginTokenPost(RoutesLoginRequest routesLoginRequest) throws ApiException {
+    public AuthenticationtypesTokenResponse v1LoginTokenPost(@javax.annotation.Nonnull RoutesLoginRequest routesLoginRequest) throws ApiException {
         ApiResponse<AuthenticationtypesTokenResponse> localVarResp = v1LoginTokenPostWithHttpInfo(routesLoginRequest);
         return localVarResp.getData();
     }
@@ -553,7 +553,7 @@ public class AuthenticationApi {
         <tr><td> 0 </td><td> Error message </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuthenticationtypesTokenResponse> v1LoginTokenPostWithHttpInfo(RoutesLoginRequest routesLoginRequest) throws ApiException {
+    public ApiResponse<AuthenticationtypesTokenResponse> v1LoginTokenPostWithHttpInfo(@javax.annotation.Nonnull RoutesLoginRequest routesLoginRequest) throws ApiException {
         okhttp3.Call localVarCall = v1LoginTokenPostValidateBeforeCall(routesLoginRequest, null);
         Type localVarReturnType = new TypeToken<AuthenticationtypesTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -576,7 +576,7 @@ public class AuthenticationApi {
         <tr><td> 0 </td><td> Error message </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1LoginTokenPostAsync(RoutesLoginRequest routesLoginRequest, final ApiCallback<AuthenticationtypesTokenResponse> _callback) throws ApiException {
+    public okhttp3.Call v1LoginTokenPostAsync(@javax.annotation.Nonnull RoutesLoginRequest routesLoginRequest, final ApiCallback<AuthenticationtypesTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1LoginTokenPostValidateBeforeCall(routesLoginRequest, _callback);
         Type localVarReturnType = new TypeToken<AuthenticationtypesTokenResponse>(){}.getType();

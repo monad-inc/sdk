@@ -101,7 +101,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to list pipelines </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdPipelinesGetCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdPipelinesGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -155,7 +155,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdPipelinesGetValidateBeforeCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdPipelinesGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdPipelinesGet(Async)");
@@ -182,7 +182,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to list pipelines </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsPipelineList v1OrganizationIdPipelinesGet(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ModelsPipelineList v1OrganizationIdPipelinesGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<ModelsPipelineList> localVarResp = v1OrganizationIdPipelinesGetWithHttpInfo(organizationId, limit, offset);
         return localVarResp.getData();
     }
@@ -204,7 +204,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to list pipelines </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsPipelineList> v1OrganizationIdPipelinesGetWithHttpInfo(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ModelsPipelineList> v1OrganizationIdPipelinesGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdPipelinesGetValidateBeforeCall(organizationId, limit, offset, null);
         Type localVarReturnType = new TypeToken<ModelsPipelineList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -228,7 +228,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to list pipelines </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdPipelinesGetAsync(String organizationId, Integer limit, Integer offset, final ApiCallback<ModelsPipelineList> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdPipelinesGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsPipelineList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdPipelinesGetValidateBeforeCall(organizationId, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipelineList>(){}.getType();
@@ -250,7 +250,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdPipelinesPipelineIdDeleteCall(String organizationId, String pipelineId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdPipelinesPipelineIdDeleteCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -297,7 +297,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdPipelinesPipelineIdDeleteValidateBeforeCall(String organizationId, String pipelineId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdPipelinesPipelineIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdPipelinesPipelineIdDelete(Async)");
@@ -327,7 +327,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public String v1OrganizationIdPipelinesPipelineIdDelete(String organizationId, String pipelineId) throws ApiException {
+    public String v1OrganizationIdPipelinesPipelineIdDelete(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId) throws ApiException {
         ApiResponse<String> localVarResp = v1OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(organizationId, pipelineId);
         return localVarResp.getData();
     }
@@ -347,7 +347,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v1OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(String organizationId, String pipelineId) throws ApiException {
+    public ApiResponse<String> v1OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdPipelinesPipelineIdDeleteValidateBeforeCall(organizationId, pipelineId, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -369,7 +369,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdPipelinesPipelineIdDeleteAsync(String organizationId, String pipelineId, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdPipelinesPipelineIdDeleteAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdPipelinesPipelineIdDeleteValidateBeforeCall(organizationId, pipelineId, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -391,7 +391,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdPipelinesPipelineIdGetCall(String organizationId, String pipelineId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdPipelinesPipelineIdGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -438,7 +438,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdPipelinesPipelineIdGetValidateBeforeCall(String organizationId, String pipelineId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdPipelinesPipelineIdGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdPipelinesPipelineIdGet(Async)");
@@ -468,7 +468,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsPipeline v1OrganizationIdPipelinesPipelineIdGet(String organizationId, String pipelineId) throws ApiException {
+    public ModelsPipeline v1OrganizationIdPipelinesPipelineIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId) throws ApiException {
         ApiResponse<ModelsPipeline> localVarResp = v1OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId);
         return localVarResp.getData();
     }
@@ -488,7 +488,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsPipeline> v1OrganizationIdPipelinesPipelineIdGetWithHttpInfo(String organizationId, String pipelineId) throws ApiException {
+    public ApiResponse<ModelsPipeline> v1OrganizationIdPipelinesPipelineIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdPipelinesPipelineIdGetValidateBeforeCall(organizationId, pipelineId, null);
         Type localVarReturnType = new TypeToken<ModelsPipeline>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -510,7 +510,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdPipelinesPipelineIdGetAsync(String organizationId, String pipelineId, final ApiCallback<ModelsPipeline> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdPipelinesPipelineIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback<ModelsPipeline> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdPipelinesPipelineIdGetValidateBeforeCall(organizationId, pipelineId, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipeline>(){}.getType();
@@ -534,7 +534,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdPipelinesPipelineIdPatchCall(String organizationId, String pipelineId, RoutesUpdatePipelineRequest routesUpdatePipelineRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdPipelinesPipelineIdPatchCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesUpdatePipelineRequest routesUpdatePipelineRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -582,7 +582,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdPipelinesPipelineIdPatchValidateBeforeCall(String organizationId, String pipelineId, RoutesUpdatePipelineRequest routesUpdatePipelineRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdPipelinesPipelineIdPatchValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesUpdatePipelineRequest routesUpdatePipelineRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdPipelinesPipelineIdPatch(Async)");
@@ -619,7 +619,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsPipeline v1OrganizationIdPipelinesPipelineIdPatch(String organizationId, String pipelineId, RoutesUpdatePipelineRequest routesUpdatePipelineRequest) throws ApiException {
+    public ModelsPipeline v1OrganizationIdPipelinesPipelineIdPatch(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesUpdatePipelineRequest routesUpdatePipelineRequest) throws ApiException {
         ApiResponse<ModelsPipeline> localVarResp = v1OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(organizationId, pipelineId, routesUpdatePipelineRequest);
         return localVarResp.getData();
     }
@@ -641,7 +641,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsPipeline> v1OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(String organizationId, String pipelineId, RoutesUpdatePipelineRequest routesUpdatePipelineRequest) throws ApiException {
+    public ApiResponse<ModelsPipeline> v1OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesUpdatePipelineRequest routesUpdatePipelineRequest) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdPipelinesPipelineIdPatchValidateBeforeCall(organizationId, pipelineId, routesUpdatePipelineRequest, null);
         Type localVarReturnType = new TypeToken<ModelsPipeline>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -665,7 +665,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdPipelinesPipelineIdPatchAsync(String organizationId, String pipelineId, RoutesUpdatePipelineRequest routesUpdatePipelineRequest, final ApiCallback<ModelsPipeline> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdPipelinesPipelineIdPatchAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesUpdatePipelineRequest routesUpdatePipelineRequest, final ApiCallback<ModelsPipeline> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdPipelinesPipelineIdPatchValidateBeforeCall(organizationId, pipelineId, routesUpdatePipelineRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipeline>(){}.getType();
@@ -688,7 +688,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipelines for organization </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelineSummaryGetCall(String organizationId, String start, String end, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelineSummaryGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -742,7 +742,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdPipelineSummaryGetValidateBeforeCall(String organizationId, String start, String end, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdPipelineSummaryGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelineSummaryGet(Async)");
@@ -768,7 +768,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipelines for organization </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2GetOrganizationSummaryResponse v2OrganizationIdPipelineSummaryGet(String organizationId, String start, String end) throws ApiException {
+    public RoutesV2GetOrganizationSummaryResponse v2OrganizationIdPipelineSummaryGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end) throws ApiException {
         ApiResponse<RoutesV2GetOrganizationSummaryResponse> localVarResp = v2OrganizationIdPipelineSummaryGetWithHttpInfo(organizationId, start, end);
         return localVarResp.getData();
     }
@@ -789,7 +789,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipelines for organization </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2GetOrganizationSummaryResponse> v2OrganizationIdPipelineSummaryGetWithHttpInfo(String organizationId, String start, String end) throws ApiException {
+    public ApiResponse<RoutesV2GetOrganizationSummaryResponse> v2OrganizationIdPipelineSummaryGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdPipelineSummaryGetValidateBeforeCall(organizationId, start, end, null);
         Type localVarReturnType = new TypeToken<RoutesV2GetOrganizationSummaryResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -812,7 +812,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipelines for organization </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelineSummaryGetAsync(String organizationId, String start, String end, final ApiCallback<RoutesV2GetOrganizationSummaryResponse> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelineSummaryGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, final ApiCallback<RoutesV2GetOrganizationSummaryResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdPipelineSummaryGetValidateBeforeCall(organizationId, start, end, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2GetOrganizationSummaryResponse>(){}.getType();
@@ -836,7 +836,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to list pipelines </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesGetCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -890,7 +890,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdPipelinesGetValidateBeforeCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdPipelinesGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelinesGet(Async)");
@@ -917,7 +917,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to list pipelines </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsPipelineList v2OrganizationIdPipelinesGet(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ModelsPipelineList v2OrganizationIdPipelinesGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<ModelsPipelineList> localVarResp = v2OrganizationIdPipelinesGetWithHttpInfo(organizationId, limit, offset);
         return localVarResp.getData();
     }
@@ -939,7 +939,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to list pipelines </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsPipelineList> v2OrganizationIdPipelinesGetWithHttpInfo(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ModelsPipelineList> v2OrganizationIdPipelinesGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesGetValidateBeforeCall(organizationId, limit, offset, null);
         Type localVarReturnType = new TypeToken<ModelsPipelineList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -963,7 +963,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to list pipelines </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesGetAsync(String organizationId, Integer limit, Integer offset, final ApiCallback<ModelsPipelineList> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsPipelineList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesGetValidateBeforeCall(organizationId, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipelineList>(){}.getType();
@@ -987,7 +987,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesMetricsGetCall(String organizationId, String pipelineIds, String resolution, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesMetricsGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineIds, @javax.annotation.Nullable String resolution, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1041,7 +1041,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdPipelinesMetricsGetValidateBeforeCall(String organizationId, String pipelineIds, String resolution, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdPipelinesMetricsGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineIds, @javax.annotation.Nullable String resolution, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelinesMetricsGet(Async)");
@@ -1073,7 +1073,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2MetricsResponse v2OrganizationIdPipelinesMetricsGet(String organizationId, String pipelineIds, String resolution) throws ApiException {
+    public RoutesV2MetricsResponse v2OrganizationIdPipelinesMetricsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineIds, @javax.annotation.Nullable String resolution) throws ApiException {
         ApiResponse<RoutesV2MetricsResponse> localVarResp = v2OrganizationIdPipelinesMetricsGetWithHttpInfo(organizationId, pipelineIds, resolution);
         return localVarResp.getData();
     }
@@ -1095,7 +1095,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2MetricsResponse> v2OrganizationIdPipelinesMetricsGetWithHttpInfo(String organizationId, String pipelineIds, String resolution) throws ApiException {
+    public ApiResponse<RoutesV2MetricsResponse> v2OrganizationIdPipelinesMetricsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineIds, @javax.annotation.Nullable String resolution) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesMetricsGetValidateBeforeCall(organizationId, pipelineIds, resolution, null);
         Type localVarReturnType = new TypeToken<RoutesV2MetricsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1119,7 +1119,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesMetricsGetAsync(String organizationId, String pipelineIds, String resolution, final ApiCallback<RoutesV2MetricsResponse> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesMetricsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineIds, @javax.annotation.Nullable String resolution, final ApiCallback<RoutesV2MetricsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesMetricsGetValidateBeforeCall(organizationId, pipelineIds, resolution, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2MetricsResponse>(){}.getType();
@@ -1141,7 +1141,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdDeleteCall(String organizationId, String pipelineId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdDeleteCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1188,7 +1188,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdDeleteValidateBeforeCall(String organizationId, String pipelineId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelinesPipelineIdDelete(Async)");
@@ -1218,7 +1218,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public String v2OrganizationIdPipelinesPipelineIdDelete(String organizationId, String pipelineId) throws ApiException {
+    public String v2OrganizationIdPipelinesPipelineIdDelete(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId) throws ApiException {
         ApiResponse<String> localVarResp = v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(organizationId, pipelineId);
         return localVarResp.getData();
     }
@@ -1238,7 +1238,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(String organizationId, String pipelineId) throws ApiException {
+    public ApiResponse<String> v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdDeleteValidateBeforeCall(organizationId, pipelineId, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1260,7 +1260,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to delete pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdDeleteAsync(String organizationId, String pipelineId, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdDeleteAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdDeleteValidateBeforeCall(organizationId, pipelineId, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -1282,7 +1282,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdGetCall(String organizationId, String pipelineId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1329,7 +1329,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdGetValidateBeforeCall(String organizationId, String pipelineId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelinesPipelineIdGet(Async)");
@@ -1359,7 +1359,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsPipelineConfigV2 v2OrganizationIdPipelinesPipelineIdGet(String organizationId, String pipelineId) throws ApiException {
+    public ModelsPipelineConfigV2 v2OrganizationIdPipelinesPipelineIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId) throws ApiException {
         ApiResponse<ModelsPipelineConfigV2> localVarResp = v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId);
         return localVarResp.getData();
     }
@@ -1379,7 +1379,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsPipelineConfigV2> v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(String organizationId, String pipelineId) throws ApiException {
+    public ApiResponse<ModelsPipelineConfigV2> v2OrganizationIdPipelinesPipelineIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdGetValidateBeforeCall(organizationId, pipelineId, null);
         Type localVarReturnType = new TypeToken<ModelsPipelineConfigV2>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1401,7 +1401,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdGetAsync(String organizationId, String pipelineId, final ApiCallback<ModelsPipelineConfigV2> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback<ModelsPipelineConfigV2> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdGetValidateBeforeCall(organizationId, pipelineId, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipelineConfigV2>(){}.getType();
@@ -1428,7 +1428,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get node </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetCall(String organizationId, String pipelineId, String nodeId, String metric, String start, String end, String resolution, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1492,7 +1492,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetValidateBeforeCall(String organizationId, String pipelineId, String nodeId, String metric, String start, String end, String resolution, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(Async)");
@@ -1537,7 +1537,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get node </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsPipelineNodeMetrics v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(String organizationId, String pipelineId, String nodeId, String metric, String start, String end, String resolution) throws ApiException {
+    public ModelsPipelineNodeMetrics v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution) throws ApiException {
         ApiResponse<ModelsPipelineNodeMetrics> localVarResp = v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId, pipelineId, nodeId, metric, start, end, resolution);
         return localVarResp.getData();
     }
@@ -1562,7 +1562,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get node </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsPipelineNodeMetrics> v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(String organizationId, String pipelineId, String nodeId, String metric, String start, String end, String resolution) throws ApiException {
+    public ApiResponse<ModelsPipelineNodeMetrics> v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetValidateBeforeCall(organizationId, pipelineId, nodeId, metric, start, end, resolution, null);
         Type localVarReturnType = new TypeToken<ModelsPipelineNodeMetrics>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1589,7 +1589,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get node </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetAsync(String organizationId, String pipelineId, String nodeId, String metric, String start, String end, String resolution, final ApiCallback<ModelsPipelineNodeMetrics> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, final ApiCallback<ModelsPipelineNodeMetrics> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetValidateBeforeCall(organizationId, pipelineId, nodeId, metric, start, end, resolution, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipelineNodeMetrics>(){}.getType();
@@ -1613,7 +1613,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdPatchCall(String organizationId, String pipelineId, RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdPatchCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1661,7 +1661,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdPatchValidateBeforeCall(String organizationId, String pipelineId, RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdPatchValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelinesPipelineIdPatch(Async)");
@@ -1698,7 +1698,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsPipelineConfigV2 v2OrganizationIdPipelinesPipelineIdPatch(String organizationId, String pipelineId, RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest) throws ApiException {
+    public ModelsPipelineConfigV2 v2OrganizationIdPipelinesPipelineIdPatch(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest) throws ApiException {
         ApiResponse<ModelsPipelineConfigV2> localVarResp = v2OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(organizationId, pipelineId, routesV2UpdatePipelineRequest);
         return localVarResp.getData();
     }
@@ -1720,7 +1720,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsPipelineConfigV2> v2OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(String organizationId, String pipelineId, RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest) throws ApiException {
+    public ApiResponse<ModelsPipelineConfigV2> v2OrganizationIdPipelinesPipelineIdPatchWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdPatchValidateBeforeCall(organizationId, pipelineId, routesV2UpdatePipelineRequest, null);
         Type localVarReturnType = new TypeToken<ModelsPipelineConfigV2>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1744,7 +1744,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to update pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdPatchAsync(String organizationId, String pipelineId, RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest, final ApiCallback<ModelsPipelineConfigV2> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdPatchAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull RoutesV2UpdatePipelineRequest routesV2UpdatePipelineRequest, final ApiCallback<ModelsPipelineConfigV2> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdPatchValidateBeforeCall(organizationId, pipelineId, routesV2UpdatePipelineRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipelineConfigV2>(){}.getType();
@@ -1769,7 +1769,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdStatusGetCall(String organizationId, String pipelineId, List<String> metrics, String start, String end, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdStatusGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nullable List<String> metrics, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1828,7 +1828,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdStatusGetValidateBeforeCall(String organizationId, String pipelineId, List<String> metrics, String start, String end, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdStatusGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nullable List<String> metrics, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelinesPipelineIdStatusGet(Async)");
@@ -1861,7 +1861,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsPipelineStatus v2OrganizationIdPipelinesPipelineIdStatusGet(String organizationId, String pipelineId, List<String> metrics, String start, String end) throws ApiException {
+    public ModelsPipelineStatus v2OrganizationIdPipelinesPipelineIdStatusGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nullable List<String> metrics, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end) throws ApiException {
         ApiResponse<ModelsPipelineStatus> localVarResp = v2OrganizationIdPipelinesPipelineIdStatusGetWithHttpInfo(organizationId, pipelineId, metrics, start, end);
         return localVarResp.getData();
     }
@@ -1884,7 +1884,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsPipelineStatus> v2OrganizationIdPipelinesPipelineIdStatusGetWithHttpInfo(String organizationId, String pipelineId, List<String> metrics, String start, String end) throws ApiException {
+    public ApiResponse<ModelsPipelineStatus> v2OrganizationIdPipelinesPipelineIdStatusGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nullable List<String> metrics, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdStatusGetValidateBeforeCall(organizationId, pipelineId, metrics, start, end, null);
         Type localVarReturnType = new TypeToken<ModelsPipelineStatus>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1909,7 +1909,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdStatusGetAsync(String organizationId, String pipelineId, List<String> metrics, String start, String end, final ApiCallback<ModelsPipelineStatus> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdStatusGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nullable List<String> metrics, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, final ApiCallback<ModelsPipelineStatus> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdStatusGetValidateBeforeCall(organizationId, pipelineId, metrics, start, end, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipelineStatus>(){}.getType();
@@ -1935,7 +1935,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline node status </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetCall(String organizationId, String pipelineId, String nodeId, List<String> metrics, String start, String end, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nullable List<String> metrics, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1995,7 +1995,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetValidateBeforeCall(String organizationId, String pipelineId, String nodeId, List<String> metrics, String start, String end, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nullable List<String> metrics, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(Async)");
@@ -2034,7 +2034,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline node status </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsPipelineNodeStatus v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(String organizationId, String pipelineId, String nodeId, List<String> metrics, String start, String end) throws ApiException {
+    public ModelsPipelineNodeStatus v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nullable List<String> metrics, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end) throws ApiException {
         ApiResponse<ModelsPipelineNodeStatus> localVarResp = v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetWithHttpInfo(organizationId, pipelineId, nodeId, metrics, start, end);
         return localVarResp.getData();
     }
@@ -2058,7 +2058,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline node status </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsPipelineNodeStatus> v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetWithHttpInfo(String organizationId, String pipelineId, String nodeId, List<String> metrics, String start, String end) throws ApiException {
+    public ApiResponse<ModelsPipelineNodeStatus> v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nullable List<String> metrics, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetValidateBeforeCall(organizationId, pipelineId, nodeId, metrics, start, end, null);
         Type localVarReturnType = new TypeToken<ModelsPipelineNodeStatus>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2084,7 +2084,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to get pipeline node status </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetAsync(String organizationId, String pipelineId, String nodeId, List<String> metrics, String start, String end, final ApiCallback<ModelsPipelineNodeStatus> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nullable List<String> metrics, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, final ApiCallback<ModelsPipelineNodeStatus> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdStatusNodeIdGetValidateBeforeCall(organizationId, pipelineId, nodeId, metrics, start, end, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipelineNodeStatus>(){}.getType();
@@ -2107,7 +2107,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPostCall(String organizationId, RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2154,7 +2154,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdPipelinesPostValidateBeforeCall(String organizationId, RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdPipelinesPostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelinesPost(Async)");
@@ -2185,7 +2185,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsPipelineConfigV2 v2OrganizationIdPipelinesPost(String organizationId, RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest) throws ApiException {
+    public ModelsPipelineConfigV2 v2OrganizationIdPipelinesPost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest) throws ApiException {
         ApiResponse<ModelsPipelineConfigV2> localVarResp = v2OrganizationIdPipelinesPostWithHttpInfo(organizationId, routesV2CreatePipelineRequest);
         return localVarResp.getData();
     }
@@ -2206,7 +2206,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsPipelineConfigV2> v2OrganizationIdPipelinesPostWithHttpInfo(String organizationId, RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest) throws ApiException {
+    public ApiResponse<ModelsPipelineConfigV2> v2OrganizationIdPipelinesPostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPostValidateBeforeCall(organizationId, routesV2CreatePipelineRequest, null);
         Type localVarReturnType = new TypeToken<ModelsPipelineConfigV2>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2229,7 +2229,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPostAsync(String organizationId, RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest, final ApiCallback<ModelsPipelineConfigV2> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesPostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest, final ApiCallback<ModelsPipelineConfigV2> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPostValidateBeforeCall(organizationId, routesV2CreatePipelineRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipelineConfigV2>(){}.getType();
@@ -2255,7 +2255,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to retrieve pipeline status </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesStatusesGetCall(String organizationId, Integer limit, Integer offset, String start, String end, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesStatusesGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2317,7 +2317,7 @@ public class PipelinesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdPipelinesStatusesGetValidateBeforeCall(String organizationId, Integer limit, Integer offset, String start, String end, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdPipelinesStatusesGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelinesStatusesGet(Async)");
@@ -2346,7 +2346,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to retrieve pipeline status </td><td>  -  </td></tr>
      </table>
      */
-    public List<RoutesV2PipelineWithStatus> v2OrganizationIdPipelinesStatusesGet(String organizationId, Integer limit, Integer offset, String start, String end) throws ApiException {
+    public List<RoutesV2PipelineWithStatus> v2OrganizationIdPipelinesStatusesGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end) throws ApiException {
         ApiResponse<List<RoutesV2PipelineWithStatus>> localVarResp = v2OrganizationIdPipelinesStatusesGetWithHttpInfo(organizationId, limit, offset, start, end);
         return localVarResp.getData();
     }
@@ -2370,7 +2370,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to retrieve pipeline status </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<RoutesV2PipelineWithStatus>> v2OrganizationIdPipelinesStatusesGetWithHttpInfo(String organizationId, Integer limit, Integer offset, String start, String end) throws ApiException {
+    public ApiResponse<List<RoutesV2PipelineWithStatus>> v2OrganizationIdPipelinesStatusesGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesStatusesGetValidateBeforeCall(organizationId, limit, offset, start, end, null);
         Type localVarReturnType = new TypeToken<List<RoutesV2PipelineWithStatus>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2396,7 +2396,7 @@ public class PipelinesApi {
         <tr><td> 500 </td><td> Failed to retrieve pipeline status </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdPipelinesStatusesGetAsync(String organizationId, Integer limit, Integer offset, String start, String end, final ApiCallback<List<RoutesV2PipelineWithStatus>> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdPipelinesStatusesGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, final ApiCallback<List<RoutesV2PipelineWithStatus>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesStatusesGetValidateBeforeCall(organizationId, limit, offset, start, end, _callback);
         Type localVarReturnType = new TypeToken<List<RoutesV2PipelineWithStatus>>(){}.getType();

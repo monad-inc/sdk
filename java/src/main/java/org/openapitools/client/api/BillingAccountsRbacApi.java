@@ -91,7 +91,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Roles </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesGetCall(String billingAccountId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesGetCall(@javax.annotation.Nonnull String billingAccountId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,7 +137,7 @@ public class BillingAccountsRbacApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesGetValidateBeforeCall(String billingAccountId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesGetValidateBeforeCall(@javax.annotation.Nonnull String billingAccountId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsBillingAccountIdRolesGet(Async)");
@@ -162,7 +162,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Roles </td><td>  -  </td></tr>
      </table>
      */
-    public List<ModelsBillingAccountRole> v2BillingAccountsBillingAccountIdRolesGet(String billingAccountId) throws ApiException {
+    public List<ModelsBillingAccountRole> v2BillingAccountsBillingAccountIdRolesGet(@javax.annotation.Nonnull String billingAccountId) throws ApiException {
         ApiResponse<List<ModelsBillingAccountRole>> localVarResp = v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(billingAccountId);
         return localVarResp.getData();
     }
@@ -182,7 +182,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Roles </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ModelsBillingAccountRole>> v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(String billingAccountId) throws ApiException {
+    public ApiResponse<List<ModelsBillingAccountRole>> v2BillingAccountsBillingAccountIdRolesGetWithHttpInfo(@javax.annotation.Nonnull String billingAccountId) throws ApiException {
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesGetValidateBeforeCall(billingAccountId, null);
         Type localVarReturnType = new TypeToken<List<ModelsBillingAccountRole>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +204,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Roles </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesGetAsync(String billingAccountId, final ApiCallback<List<ModelsBillingAccountRole>> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesGetAsync(@javax.annotation.Nonnull String billingAccountId, final ApiCallback<List<ModelsBillingAccountRole>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesGetValidateBeforeCall(billingAccountId, _callback);
         Type localVarReturnType = new TypeToken<List<ModelsBillingAccountRole>>(){}.getType();
@@ -227,7 +227,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to create Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesPostCall(String billingAccountId, RoutesV2CreateBillingAccountRoleRequest routesV2CreateBillingAccountRoleRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesPostCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2CreateBillingAccountRoleRequest routesV2CreateBillingAccountRoleRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -274,7 +274,7 @@ public class BillingAccountsRbacApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesPostValidateBeforeCall(String billingAccountId, RoutesV2CreateBillingAccountRoleRequest routesV2CreateBillingAccountRoleRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesPostValidateBeforeCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2CreateBillingAccountRoleRequest routesV2CreateBillingAccountRoleRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsBillingAccountIdRolesPost(Async)");
@@ -305,7 +305,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to create Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsBillingAccountRole v2BillingAccountsBillingAccountIdRolesPost(String billingAccountId, RoutesV2CreateBillingAccountRoleRequest routesV2CreateBillingAccountRoleRequest) throws ApiException {
+    public ModelsBillingAccountRole v2BillingAccountsBillingAccountIdRolesPost(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2CreateBillingAccountRoleRequest routesV2CreateBillingAccountRoleRequest) throws ApiException {
         ApiResponse<ModelsBillingAccountRole> localVarResp = v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(billingAccountId, routesV2CreateBillingAccountRoleRequest);
         return localVarResp.getData();
     }
@@ -326,7 +326,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to create Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsBillingAccountRole> v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(String billingAccountId, RoutesV2CreateBillingAccountRoleRequest routesV2CreateBillingAccountRoleRequest) throws ApiException {
+    public ApiResponse<ModelsBillingAccountRole> v2BillingAccountsBillingAccountIdRolesPostWithHttpInfo(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2CreateBillingAccountRoleRequest routesV2CreateBillingAccountRoleRequest) throws ApiException {
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesPostValidateBeforeCall(billingAccountId, routesV2CreateBillingAccountRoleRequest, null);
         Type localVarReturnType = new TypeToken<ModelsBillingAccountRole>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -349,7 +349,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to create Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesPostAsync(String billingAccountId, RoutesV2CreateBillingAccountRoleRequest routesV2CreateBillingAccountRoleRequest, final ApiCallback<ModelsBillingAccountRole> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesPostAsync(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull RoutesV2CreateBillingAccountRoleRequest routesV2CreateBillingAccountRoleRequest, final ApiCallback<ModelsBillingAccountRole> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesPostValidateBeforeCall(billingAccountId, routesV2CreateBillingAccountRoleRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsBillingAccountRole>(){}.getType();
@@ -372,7 +372,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdDeleteCall(String billingAccountId, String roleId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdDeleteCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -419,7 +419,7 @@ public class BillingAccountsRbacApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdDeleteValidateBeforeCall(String billingAccountId, String roleId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsBillingAccountIdRolesRoleIdDelete(Async)");
@@ -450,7 +450,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public String v2BillingAccountsBillingAccountIdRolesRoleIdDelete(String billingAccountId, String roleId) throws ApiException {
+    public String v2BillingAccountsBillingAccountIdRolesRoleIdDelete(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId) throws ApiException {
         ApiResponse<String> localVarResp = v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(billingAccountId, roleId);
         return localVarResp.getData();
     }
@@ -471,7 +471,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(String billingAccountId, String roleId) throws ApiException {
+    public ApiResponse<String> v2BillingAccountsBillingAccountIdRolesRoleIdDeleteWithHttpInfo(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId) throws ApiException {
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdDeleteValidateBeforeCall(billingAccountId, roleId, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -494,7 +494,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdDeleteAsync(String billingAccountId, String roleId, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdDeleteAsync(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdDeleteValidateBeforeCall(billingAccountId, roleId, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -517,7 +517,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdGetCall(String billingAccountId, String roleId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdGetCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -564,7 +564,7 @@ public class BillingAccountsRbacApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdGetValidateBeforeCall(String billingAccountId, String roleId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdGetValidateBeforeCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsBillingAccountIdRolesRoleIdGet(Async)");
@@ -595,7 +595,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsBillingAccountRole v2BillingAccountsBillingAccountIdRolesRoleIdGet(String billingAccountId, String roleId) throws ApiException {
+    public ModelsBillingAccountRole v2BillingAccountsBillingAccountIdRolesRoleIdGet(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId) throws ApiException {
         ApiResponse<ModelsBillingAccountRole> localVarResp = v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(billingAccountId, roleId);
         return localVarResp.getData();
     }
@@ -616,7 +616,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsBillingAccountRole> v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(String billingAccountId, String roleId) throws ApiException {
+    public ApiResponse<ModelsBillingAccountRole> v2BillingAccountsBillingAccountIdRolesRoleIdGetWithHttpInfo(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId) throws ApiException {
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdGetValidateBeforeCall(billingAccountId, roleId, null);
         Type localVarReturnType = new TypeToken<ModelsBillingAccountRole>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -639,7 +639,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to get Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdGetAsync(String billingAccountId, String roleId, final ApiCallback<ModelsBillingAccountRole> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdGetAsync(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, final ApiCallback<ModelsBillingAccountRole> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdGetValidateBeforeCall(billingAccountId, roleId, _callback);
         Type localVarReturnType = new TypeToken<ModelsBillingAccountRole>(){}.getType();
@@ -663,7 +663,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to update Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdPatchCall(String billingAccountId, String roleId, RoutesV2UpdateBillingAccountRoleRequest routesV2UpdateBillingAccountRoleRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdPatchCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateBillingAccountRoleRequest routesV2UpdateBillingAccountRoleRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -711,7 +711,7 @@ public class BillingAccountsRbacApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdPatchValidateBeforeCall(String billingAccountId, String roleId, RoutesV2UpdateBillingAccountRoleRequest routesV2UpdateBillingAccountRoleRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdPatchValidateBeforeCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateBillingAccountRoleRequest routesV2UpdateBillingAccountRoleRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsBillingAccountIdRolesRoleIdPatch(Async)");
@@ -748,7 +748,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to update Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsBillingAccountRole v2BillingAccountsBillingAccountIdRolesRoleIdPatch(String billingAccountId, String roleId, RoutesV2UpdateBillingAccountRoleRequest routesV2UpdateBillingAccountRoleRequest) throws ApiException {
+    public ModelsBillingAccountRole v2BillingAccountsBillingAccountIdRolesRoleIdPatch(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateBillingAccountRoleRequest routesV2UpdateBillingAccountRoleRequest) throws ApiException {
         ApiResponse<ModelsBillingAccountRole> localVarResp = v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest);
         return localVarResp.getData();
     }
@@ -770,7 +770,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to update Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsBillingAccountRole> v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(String billingAccountId, String roleId, RoutesV2UpdateBillingAccountRoleRequest routesV2UpdateBillingAccountRoleRequest) throws ApiException {
+    public ApiResponse<ModelsBillingAccountRole> v2BillingAccountsBillingAccountIdRolesRoleIdPatchWithHttpInfo(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateBillingAccountRoleRequest routesV2UpdateBillingAccountRoleRequest) throws ApiException {
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdPatchValidateBeforeCall(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, null);
         Type localVarReturnType = new TypeToken<ModelsBillingAccountRole>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -794,7 +794,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to update Billing Account Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdPatchAsync(String billingAccountId, String roleId, RoutesV2UpdateBillingAccountRoleRequest routesV2UpdateBillingAccountRoleRequest, final ApiCallback<ModelsBillingAccountRole> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdPatchAsync(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2UpdateBillingAccountRoleRequest routesV2UpdateBillingAccountRoleRequest, final ApiCallback<ModelsBillingAccountRole> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdPatchValidateBeforeCall(billingAccountId, roleId, routesV2UpdateBillingAccountRoleRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsBillingAccountRole>(){}.getType();
@@ -818,7 +818,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to create Billing Account User Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostCall(String billingAccountId, String roleId, RoutesV2CreatebillingAccountUserRoleRequest routesV2CreatebillingAccountUserRoleRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2CreatebillingAccountUserRoleRequest routesV2CreatebillingAccountUserRoleRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -866,7 +866,7 @@ public class BillingAccountsRbacApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostValidateBeforeCall(String billingAccountId, String roleId, RoutesV2CreatebillingAccountUserRoleRequest routesV2CreatebillingAccountUserRoleRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostValidateBeforeCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2CreatebillingAccountUserRoleRequest routesV2CreatebillingAccountUserRoleRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(Async)");
@@ -903,7 +903,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to create Billing Account User Role </td><td>  -  </td></tr>
      </table>
      */
-    public String v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(String billingAccountId, String roleId, RoutesV2CreatebillingAccountUserRoleRequest routesV2CreatebillingAccountUserRoleRequest) throws ApiException {
+    public String v2BillingAccountsBillingAccountIdRolesRoleIdUsersPost(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2CreatebillingAccountUserRoleRequest routesV2CreatebillingAccountUserRoleRequest) throws ApiException {
         ApiResponse<String> localVarResp = v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest);
         return localVarResp.getData();
     }
@@ -925,7 +925,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to create Billing Account User Role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(String billingAccountId, String roleId, RoutesV2CreatebillingAccountUserRoleRequest routesV2CreatebillingAccountUserRoleRequest) throws ApiException {
+    public ApiResponse<String> v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostWithHttpInfo(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2CreatebillingAccountUserRoleRequest routesV2CreatebillingAccountUserRoleRequest) throws ApiException {
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostValidateBeforeCall(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -949,7 +949,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to create Billing Account User Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostAsync(String billingAccountId, String roleId, RoutesV2CreatebillingAccountUserRoleRequest routesV2CreatebillingAccountUserRoleRequest, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostAsync(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull RoutesV2CreatebillingAccountUserRoleRequest routesV2CreatebillingAccountUserRoleRequest, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdUsersPostValidateBeforeCall(billingAccountId, roleId, routesV2CreatebillingAccountUserRoleRequest, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -973,7 +973,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account User Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteCall(String billingAccountId, String roleId, String userId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1021,7 +1021,7 @@ public class BillingAccountsRbacApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteValidateBeforeCall(String billingAccountId, String roleId, String userId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'billingAccountId' is set
         if (billingAccountId == null) {
             throw new ApiException("Missing the required parameter 'billingAccountId' when calling v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(Async)");
@@ -1058,7 +1058,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account User Role </td><td>  -  </td></tr>
      </table>
      */
-    public String v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(String billingAccountId, String roleId, String userId) throws ApiException {
+    public String v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDelete(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull String userId) throws ApiException {
         ApiResponse<String> localVarResp = v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(billingAccountId, roleId, userId);
         return localVarResp.getData();
     }
@@ -1080,7 +1080,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account User Role </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(String billingAccountId, String roleId, String userId) throws ApiException {
+    public ApiResponse<String> v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull String userId) throws ApiException {
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteValidateBeforeCall(billingAccountId, roleId, userId, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1104,7 +1104,7 @@ public class BillingAccountsRbacApi {
         <tr><td> 500 </td><td> Failed to delete Billing Account User Role </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteAsync(String billingAccountId, String roleId, String userId, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteAsync(@javax.annotation.Nonnull String billingAccountId, @javax.annotation.Nonnull String roleId, @javax.annotation.Nonnull String userId, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2BillingAccountsBillingAccountIdRolesRoleIdUsersUserIdDeleteValidateBeforeCall(billingAccountId, roleId, userId, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();

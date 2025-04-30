@@ -95,7 +95,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Failed to marshal outputs </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdOutputsGetCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdOutputsGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -149,7 +149,7 @@ public class OrganizationOutputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdOutputsGetValidateBeforeCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdOutputsGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdOutputsGet(Async)");
@@ -175,7 +175,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Failed to marshal outputs </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsOutputList v1OrganizationIdOutputsGet(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ModelsOutputList v1OrganizationIdOutputsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<ModelsOutputList> localVarResp = v1OrganizationIdOutputsGetWithHttpInfo(organizationId, limit, offset);
         return localVarResp.getData();
     }
@@ -196,7 +196,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Failed to marshal outputs </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsOutputList> v1OrganizationIdOutputsGetWithHttpInfo(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ModelsOutputList> v1OrganizationIdOutputsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdOutputsGetValidateBeforeCall(organizationId, limit, offset, null);
         Type localVarReturnType = new TypeToken<ModelsOutputList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -219,7 +219,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Failed to marshal outputs </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdOutputsGetAsync(String organizationId, Integer limit, Integer offset, final ApiCallback<ModelsOutputList> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdOutputsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsOutputList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdOutputsGetValidateBeforeCall(organizationId, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsOutputList>(){}.getType();
@@ -241,7 +241,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Failed to delete output </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdOutputsOutputIdDeleteCall(String organizationId, String outputId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdOutputsOutputIdDeleteCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -288,7 +288,7 @@ public class OrganizationOutputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdOutputsOutputIdDeleteValidateBeforeCall(String organizationId, String outputId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdOutputsOutputIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdOutputsOutputIdDelete(Async)");
@@ -318,7 +318,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Failed to delete output </td><td>  -  </td></tr>
      </table>
      */
-    public String v1OrganizationIdOutputsOutputIdDelete(String organizationId, String outputId) throws ApiException {
+    public String v1OrganizationIdOutputsOutputIdDelete(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId) throws ApiException {
         ApiResponse<String> localVarResp = v1OrganizationIdOutputsOutputIdDeleteWithHttpInfo(organizationId, outputId);
         return localVarResp.getData();
     }
@@ -338,7 +338,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Failed to delete output </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v1OrganizationIdOutputsOutputIdDeleteWithHttpInfo(String organizationId, String outputId) throws ApiException {
+    public ApiResponse<String> v1OrganizationIdOutputsOutputIdDeleteWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdOutputsOutputIdDeleteValidateBeforeCall(organizationId, outputId, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -360,7 +360,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Failed to delete output </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdOutputsOutputIdDeleteAsync(String organizationId, String outputId, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdOutputsOutputIdDeleteAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdOutputsOutputIdDeleteValidateBeforeCall(organizationId, outputId, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -382,7 +382,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Failed to get output </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdOutputsOutputIdGetCall(String organizationId, String outputId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdOutputsOutputIdGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -429,7 +429,7 @@ public class OrganizationOutputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdOutputsOutputIdGetValidateBeforeCall(String organizationId, String outputId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdOutputsOutputIdGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdOutputsOutputIdGet(Async)");
@@ -459,7 +459,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Failed to get output </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesGetOutputResponse v1OrganizationIdOutputsOutputIdGet(String organizationId, String outputId) throws ApiException {
+    public RoutesGetOutputResponse v1OrganizationIdOutputsOutputIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId) throws ApiException {
         ApiResponse<RoutesGetOutputResponse> localVarResp = v1OrganizationIdOutputsOutputIdGetWithHttpInfo(organizationId, outputId);
         return localVarResp.getData();
     }
@@ -479,7 +479,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Failed to get output </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesGetOutputResponse> v1OrganizationIdOutputsOutputIdGetWithHttpInfo(String organizationId, String outputId) throws ApiException {
+    public ApiResponse<RoutesGetOutputResponse> v1OrganizationIdOutputsOutputIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdOutputsOutputIdGetValidateBeforeCall(organizationId, outputId, null);
         Type localVarReturnType = new TypeToken<RoutesGetOutputResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -501,7 +501,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Failed to get output </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdOutputsOutputIdGetAsync(String organizationId, String outputId, final ApiCallback<RoutesGetOutputResponse> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdOutputsOutputIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId, final ApiCallback<RoutesGetOutputResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdOutputsOutputIdGetValidateBeforeCall(organizationId, outputId, _callback);
         Type localVarReturnType = new TypeToken<RoutesGetOutputResponse>(){}.getType();
@@ -527,7 +527,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdOutputsOutputIdPatchCall(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdOutputsOutputIdPatchCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId, @javax.annotation.Nonnull RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -579,7 +579,7 @@ public class OrganizationOutputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdOutputsOutputIdPatchValidateBeforeCall(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdOutputsOutputIdPatchValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId, @javax.annotation.Nonnull RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdOutputsOutputIdPatch(Async)");
@@ -618,7 +618,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsOutput v2OrganizationIdOutputsOutputIdPatch(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, Boolean testConnection) throws ApiException {
+    public ModelsOutput v2OrganizationIdOutputsOutputIdPatch(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId, @javax.annotation.Nonnull RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
         ApiResponse<ModelsOutput> localVarResp = v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId, outputId, routesV2UpdateOutputRequest, testConnection);
         return localVarResp.getData();
     }
@@ -642,7 +642,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsOutput> v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, Boolean testConnection) throws ApiException {
+    public ApiResponse<ModelsOutput> v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId, @javax.annotation.Nonnull RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdOutputsOutputIdPatchValidateBeforeCall(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, null);
         Type localVarReturnType = new TypeToken<ModelsOutput>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -668,7 +668,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdOutputsOutputIdPatchAsync(String organizationId, String outputId, RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, Boolean testConnection, final ApiCallback<ModelsOutput> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdOutputsOutputIdPatchAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String outputId, @javax.annotation.Nonnull RoutesV2UpdateOutputRequest routesV2UpdateOutputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsOutput> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdOutputsOutputIdPatchValidateBeforeCall(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, _callback);
         Type localVarReturnType = new TypeToken<ModelsOutput>(){}.getType();
@@ -692,7 +692,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdOutputsPostCall(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest, Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdOutputsPostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOutputRequest routesV2CreateOutputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -743,7 +743,7 @@ public class OrganizationOutputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdOutputsPostValidateBeforeCall(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest, Boolean testConnection, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdOutputsPostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOutputRequest routesV2CreateOutputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdOutputsPost(Async)");
@@ -775,7 +775,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsOutput v2OrganizationIdOutputsPost(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest, Boolean testConnection) throws ApiException {
+    public ModelsOutput v2OrganizationIdOutputsPost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOutputRequest routesV2CreateOutputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
         ApiResponse<ModelsOutput> localVarResp = v2OrganizationIdOutputsPostWithHttpInfo(organizationId, routesV2CreateOutputRequest, testConnection);
         return localVarResp.getData();
     }
@@ -797,7 +797,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsOutput> v2OrganizationIdOutputsPostWithHttpInfo(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest, Boolean testConnection) throws ApiException {
+    public ApiResponse<ModelsOutput> v2OrganizationIdOutputsPostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOutputRequest routesV2CreateOutputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdOutputsPostValidateBeforeCall(organizationId, routesV2CreateOutputRequest, testConnection, null);
         Type localVarReturnType = new TypeToken<ModelsOutput>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -821,7 +821,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdOutputsPostAsync(String organizationId, RoutesV2CreateOutputRequest routesV2CreateOutputRequest, Boolean testConnection, final ApiCallback<ModelsOutput> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdOutputsPostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateOutputRequest routesV2CreateOutputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsOutput> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdOutputsPostValidateBeforeCall(organizationId, routesV2CreateOutputRequest, testConnection, _callback);
         Type localVarReturnType = new TypeToken<ModelsOutput>(){}.getType();
@@ -844,7 +844,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdOutputsTestConnectionPostCall(String organizationId, RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdOutputsTestConnectionPostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -891,7 +891,7 @@ public class OrganizationOutputsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdOutputsTestConnectionPostValidateBeforeCall(String organizationId, RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdOutputsTestConnectionPostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdOutputsTestConnectionPost(Async)");
@@ -922,7 +922,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV2SuccessResponse v2OrganizationIdOutputsTestConnectionPost(String organizationId, RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest) throws ApiException {
+    public RoutesV2SuccessResponse v2OrganizationIdOutputsTestConnectionPost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest) throws ApiException {
         ApiResponse<RoutesV2SuccessResponse> localVarResp = v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(organizationId, routesV2TestOutputConnectionRequest);
         return localVarResp.getData();
     }
@@ -943,7 +943,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV2SuccessResponse> v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(String organizationId, RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest) throws ApiException {
+    public ApiResponse<RoutesV2SuccessResponse> v2OrganizationIdOutputsTestConnectionPostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdOutputsTestConnectionPostValidateBeforeCall(organizationId, routesV2TestOutputConnectionRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV2SuccessResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -966,7 +966,7 @@ public class OrganizationOutputsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdOutputsTestConnectionPostAsync(String organizationId, RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest, final ApiCallback<RoutesV2SuccessResponse> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdOutputsTestConnectionPostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2TestOutputConnectionRequest routesV2TestOutputConnectionRequest, final ApiCallback<RoutesV2SuccessResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdOutputsTestConnectionPostValidateBeforeCall(organizationId, routesV2TestOutputConnectionRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2SuccessResponse>(){}.getType();

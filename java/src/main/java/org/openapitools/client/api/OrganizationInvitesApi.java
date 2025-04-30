@@ -88,7 +88,7 @@ public class OrganizationInvitesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdInvitesPostCall(String organizationId, RoutesInviteUserToOrganizationRequest routesInviteUserToOrganizationRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdInvitesPostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesInviteUserToOrganizationRequest routesInviteUserToOrganizationRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -135,7 +135,7 @@ public class OrganizationInvitesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdInvitesPostValidateBeforeCall(String organizationId, RoutesInviteUserToOrganizationRequest routesInviteUserToOrganizationRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdInvitesPostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesInviteUserToOrganizationRequest routesInviteUserToOrganizationRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdInvitesPost(Async)");
@@ -166,7 +166,7 @@ public class OrganizationInvitesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public String v1OrganizationIdInvitesPost(String organizationId, RoutesInviteUserToOrganizationRequest routesInviteUserToOrganizationRequest) throws ApiException {
+    public String v1OrganizationIdInvitesPost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesInviteUserToOrganizationRequest routesInviteUserToOrganizationRequest) throws ApiException {
         ApiResponse<String> localVarResp = v1OrganizationIdInvitesPostWithHttpInfo(organizationId, routesInviteUserToOrganizationRequest);
         return localVarResp.getData();
     }
@@ -187,7 +187,7 @@ public class OrganizationInvitesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v1OrganizationIdInvitesPostWithHttpInfo(String organizationId, RoutesInviteUserToOrganizationRequest routesInviteUserToOrganizationRequest) throws ApiException {
+    public ApiResponse<String> v1OrganizationIdInvitesPostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesInviteUserToOrganizationRequest routesInviteUserToOrganizationRequest) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdInvitesPostValidateBeforeCall(organizationId, routesInviteUserToOrganizationRequest, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -210,7 +210,7 @@ public class OrganizationInvitesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdInvitesPostAsync(String organizationId, RoutesInviteUserToOrganizationRequest routesInviteUserToOrganizationRequest, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdInvitesPostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesInviteUserToOrganizationRequest routesInviteUserToOrganizationRequest, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdInvitesPostValidateBeforeCall(organizationId, routesInviteUserToOrganizationRequest, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();

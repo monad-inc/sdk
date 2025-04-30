@@ -92,7 +92,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to delete API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdDeleteCall(String organizationId, String apiKeyId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdDeleteCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class OrganizationApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdApiKeysApiKeyIdDeleteValidateBeforeCall(String organizationId, String apiKeyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdApiKeysApiKeyIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdApiKeysApiKeyIdDelete(Async)");
@@ -170,7 +170,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to delete API key </td><td>  -  </td></tr>
      </table>
      */
-    public String v2OrganizationIdApiKeysApiKeyIdDelete(String organizationId, String apiKeyId) throws ApiException {
+    public String v2OrganizationIdApiKeysApiKeyIdDelete(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId) throws ApiException {
         ApiResponse<String> localVarResp = v2OrganizationIdApiKeysApiKeyIdDeleteWithHttpInfo(organizationId, apiKeyId);
         return localVarResp.getData();
     }
@@ -191,7 +191,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to delete API key </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v2OrganizationIdApiKeysApiKeyIdDeleteWithHttpInfo(String organizationId, String apiKeyId) throws ApiException {
+    public ApiResponse<String> v2OrganizationIdApiKeysApiKeyIdDeleteWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdApiKeysApiKeyIdDeleteValidateBeforeCall(organizationId, apiKeyId, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -214,7 +214,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to delete API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdDeleteAsync(String organizationId, String apiKeyId, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdDeleteAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdApiKeysApiKeyIdDeleteValidateBeforeCall(organizationId, apiKeyId, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -237,7 +237,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to get API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdGetCall(String organizationId, String apiKeyId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -284,7 +284,7 @@ public class OrganizationApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdApiKeysApiKeyIdGetValidateBeforeCall(String organizationId, String apiKeyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdApiKeysApiKeyIdGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdApiKeysApiKeyIdGet(Async)");
@@ -315,7 +315,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to get API key </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsAPIKey v2OrganizationIdApiKeysApiKeyIdGet(String organizationId, String apiKeyId) throws ApiException {
+    public ModelsAPIKey v2OrganizationIdApiKeysApiKeyIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId) throws ApiException {
         ApiResponse<ModelsAPIKey> localVarResp = v2OrganizationIdApiKeysApiKeyIdGetWithHttpInfo(organizationId, apiKeyId);
         return localVarResp.getData();
     }
@@ -336,7 +336,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to get API key </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsAPIKey> v2OrganizationIdApiKeysApiKeyIdGetWithHttpInfo(String organizationId, String apiKeyId) throws ApiException {
+    public ApiResponse<ModelsAPIKey> v2OrganizationIdApiKeysApiKeyIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdApiKeysApiKeyIdGetValidateBeforeCall(organizationId, apiKeyId, null);
         Type localVarReturnType = new TypeToken<ModelsAPIKey>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -359,7 +359,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to get API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdGetAsync(String organizationId, String apiKeyId, final ApiCallback<ModelsAPIKey> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, final ApiCallback<ModelsAPIKey> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdApiKeysApiKeyIdGetValidateBeforeCall(organizationId, apiKeyId, _callback);
         Type localVarReturnType = new TypeToken<ModelsAPIKey>(){}.getType();
@@ -383,7 +383,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to update API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdPatchCall(String organizationId, String apiKeyId, RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdPatchCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -431,7 +431,7 @@ public class OrganizationApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdApiKeysApiKeyIdPatchValidateBeforeCall(String organizationId, String apiKeyId, RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdApiKeysApiKeyIdPatchValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdApiKeysApiKeyIdPatch(Async)");
@@ -468,7 +468,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to update API key </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsAPIKey v2OrganizationIdApiKeysApiKeyIdPatch(String organizationId, String apiKeyId, RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest) throws ApiException {
+    public ModelsAPIKey v2OrganizationIdApiKeysApiKeyIdPatch(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest) throws ApiException {
         ApiResponse<ModelsAPIKey> localVarResp = v2OrganizationIdApiKeysApiKeyIdPatchWithHttpInfo(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest);
         return localVarResp.getData();
     }
@@ -490,7 +490,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to update API key </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsAPIKey> v2OrganizationIdApiKeysApiKeyIdPatchWithHttpInfo(String organizationId, String apiKeyId, RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest) throws ApiException {
+    public ApiResponse<ModelsAPIKey> v2OrganizationIdApiKeysApiKeyIdPatchWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdApiKeysApiKeyIdPatchValidateBeforeCall(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest, null);
         Type localVarReturnType = new TypeToken<ModelsAPIKey>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -514,7 +514,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to update API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdPatchAsync(String organizationId, String apiKeyId, RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest, final ApiCallback<ModelsAPIKey> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdPatchAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, @javax.annotation.Nonnull RoutesV2UpdateAPIKeyRequest routesV2UpdateAPIKeyRequest, final ApiCallback<ModelsAPIKey> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdApiKeysApiKeyIdPatchValidateBeforeCall(organizationId, apiKeyId, routesV2UpdateAPIKeyRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsAPIKey>(){}.getType();
@@ -537,7 +537,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to regenerate API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdRegeneratePostCall(String organizationId, String apiKeyId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdRegeneratePostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -584,7 +584,7 @@ public class OrganizationApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdApiKeysApiKeyIdRegeneratePostValidateBeforeCall(String organizationId, String apiKeyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdApiKeysApiKeyIdRegeneratePostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdApiKeysApiKeyIdRegeneratePost(Async)");
@@ -615,7 +615,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to regenerate API key </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsAPIKeyWithToken v2OrganizationIdApiKeysApiKeyIdRegeneratePost(String organizationId, String apiKeyId) throws ApiException {
+    public ModelsAPIKeyWithToken v2OrganizationIdApiKeysApiKeyIdRegeneratePost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId) throws ApiException {
         ApiResponse<ModelsAPIKeyWithToken> localVarResp = v2OrganizationIdApiKeysApiKeyIdRegeneratePostWithHttpInfo(organizationId, apiKeyId);
         return localVarResp.getData();
     }
@@ -636,7 +636,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to regenerate API key </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsAPIKeyWithToken> v2OrganizationIdApiKeysApiKeyIdRegeneratePostWithHttpInfo(String organizationId, String apiKeyId) throws ApiException {
+    public ApiResponse<ModelsAPIKeyWithToken> v2OrganizationIdApiKeysApiKeyIdRegeneratePostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdApiKeysApiKeyIdRegeneratePostValidateBeforeCall(organizationId, apiKeyId, null);
         Type localVarReturnType = new TypeToken<ModelsAPIKeyWithToken>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -659,7 +659,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to regenerate API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdRegeneratePostAsync(String organizationId, String apiKeyId, final ApiCallback<ModelsAPIKeyWithToken> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdApiKeysApiKeyIdRegeneratePostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String apiKeyId, final ApiCallback<ModelsAPIKeyWithToken> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdApiKeysApiKeyIdRegeneratePostValidateBeforeCall(organizationId, apiKeyId, _callback);
         Type localVarReturnType = new TypeToken<ModelsAPIKeyWithToken>(){}.getType();
@@ -682,7 +682,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to list API keys </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdApiKeysGetCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdApiKeysGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -736,7 +736,7 @@ public class OrganizationApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdApiKeysGetValidateBeforeCall(String organizationId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdApiKeysGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdApiKeysGet(Async)");
@@ -762,7 +762,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to list API keys </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsAPIKeyList v2OrganizationIdApiKeysGet(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ModelsAPIKeyList v2OrganizationIdApiKeysGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<ModelsAPIKeyList> localVarResp = v2OrganizationIdApiKeysGetWithHttpInfo(organizationId, limit, offset);
         return localVarResp.getData();
     }
@@ -783,7 +783,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to list API keys </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsAPIKeyList> v2OrganizationIdApiKeysGetWithHttpInfo(String organizationId, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ModelsAPIKeyList> v2OrganizationIdApiKeysGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdApiKeysGetValidateBeforeCall(organizationId, limit, offset, null);
         Type localVarReturnType = new TypeToken<ModelsAPIKeyList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -806,7 +806,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to list API keys </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdApiKeysGetAsync(String organizationId, Integer limit, Integer offset, final ApiCallback<ModelsAPIKeyList> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdApiKeysGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsAPIKeyList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdApiKeysGetValidateBeforeCall(organizationId, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsAPIKeyList>(){}.getType();
@@ -829,7 +829,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to create API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdApiKeysPostCall(String organizationId, RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdApiKeysPostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -876,7 +876,7 @@ public class OrganizationApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2OrganizationIdApiKeysPostValidateBeforeCall(String organizationId, RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2OrganizationIdApiKeysPostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdApiKeysPost(Async)");
@@ -907,7 +907,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to create API key </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsAPIKeyWithToken v2OrganizationIdApiKeysPost(String organizationId, RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest) throws ApiException {
+    public ModelsAPIKeyWithToken v2OrganizationIdApiKeysPost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest) throws ApiException {
         ApiResponse<ModelsAPIKeyWithToken> localVarResp = v2OrganizationIdApiKeysPostWithHttpInfo(organizationId, routesV2CreateAPIKeyRequest);
         return localVarResp.getData();
     }
@@ -928,7 +928,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to create API key </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsAPIKeyWithToken> v2OrganizationIdApiKeysPostWithHttpInfo(String organizationId, RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest) throws ApiException {
+    public ApiResponse<ModelsAPIKeyWithToken> v2OrganizationIdApiKeysPostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdApiKeysPostValidateBeforeCall(organizationId, routesV2CreateAPIKeyRequest, null);
         Type localVarReturnType = new TypeToken<ModelsAPIKeyWithToken>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -951,7 +951,7 @@ public class OrganizationApiKeysApi {
         <tr><td> 500 </td><td> Failed to create API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2OrganizationIdApiKeysPostAsync(String organizationId, RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest, final ApiCallback<ModelsAPIKeyWithToken> _callback) throws ApiException {
+    public okhttp3.Call v2OrganizationIdApiKeysPostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2CreateAPIKeyRequest routesV2CreateAPIKeyRequest, final ApiCallback<ModelsAPIKeyWithToken> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdApiKeysPostValidateBeforeCall(organizationId, routesV2CreateAPIKeyRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsAPIKeyWithToken>(){}.getType();

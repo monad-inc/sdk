@@ -87,7 +87,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdLogsApiGetCall(String organizationId, String since, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdLogsApiGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class LogsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdLogsApiGetValidateBeforeCall(String organizationId, String since, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdLogsApiGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdLogsApiGet(Async)");
@@ -164,7 +164,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public String v1OrganizationIdLogsApiGet(String organizationId, String since) throws ApiException {
+    public String v1OrganizationIdLogsApiGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since) throws ApiException {
         ApiResponse<String> localVarResp = v1OrganizationIdLogsApiGetWithHttpInfo(organizationId, since);
         return localVarResp.getData();
     }
@@ -185,7 +185,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v1OrganizationIdLogsApiGetWithHttpInfo(String organizationId, String since) throws ApiException {
+    public ApiResponse<String> v1OrganizationIdLogsApiGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdLogsApiGetValidateBeforeCall(organizationId, since, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -208,7 +208,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdLogsApiGetAsync(String organizationId, String since, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdLogsApiGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdLogsApiGetValidateBeforeCall(organizationId, since, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -232,7 +232,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdLogsGetCall(String organizationId, String since, String last, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdLogsGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -287,7 +287,7 @@ public class LogsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdLogsGetValidateBeforeCall(String organizationId, String since, String last, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdLogsGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdLogsGet(Async)");
@@ -314,7 +314,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public String v1OrganizationIdLogsGet(String organizationId, String since, String last) throws ApiException {
+    public String v1OrganizationIdLogsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last) throws ApiException {
         ApiResponse<String> localVarResp = v1OrganizationIdLogsGetWithHttpInfo(organizationId, since, last);
         return localVarResp.getData();
     }
@@ -336,7 +336,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v1OrganizationIdLogsGetWithHttpInfo(String organizationId, String since, String last) throws ApiException {
+    public ApiResponse<String> v1OrganizationIdLogsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdLogsGetValidateBeforeCall(organizationId, since, last, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -360,7 +360,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdLogsGetAsync(String organizationId, String since, String last, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdLogsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdLogsGetValidateBeforeCall(organizationId, since, last, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -383,7 +383,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdLogsPipelinesGetCall(String organizationId, String since, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdLogsPipelinesGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -434,7 +434,7 @@ public class LogsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdLogsPipelinesGetValidateBeforeCall(String organizationId, String since, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdLogsPipelinesGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdLogsPipelinesGet(Async)");
@@ -460,7 +460,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public String v1OrganizationIdLogsPipelinesGet(String organizationId, String since) throws ApiException {
+    public String v1OrganizationIdLogsPipelinesGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since) throws ApiException {
         ApiResponse<String> localVarResp = v1OrganizationIdLogsPipelinesGetWithHttpInfo(organizationId, since);
         return localVarResp.getData();
     }
@@ -481,7 +481,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v1OrganizationIdLogsPipelinesGetWithHttpInfo(String organizationId, String since) throws ApiException {
+    public ApiResponse<String> v1OrganizationIdLogsPipelinesGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdLogsPipelinesGetValidateBeforeCall(organizationId, since, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -504,7 +504,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdLogsPipelinesGetAsync(String organizationId, String since, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdLogsPipelinesGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdLogsPipelinesGetValidateBeforeCall(organizationId, since, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -529,7 +529,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdLogsPipelinesPipelineIdGetCall(String organizationId, String pipelineId, String since, String last, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdLogsPipelinesPipelineIdGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -585,7 +585,7 @@ public class LogsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdLogsPipelinesPipelineIdGetValidateBeforeCall(String organizationId, String pipelineId, String since, String last, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdLogsPipelinesPipelineIdGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdLogsPipelinesPipelineIdGet(Async)");
@@ -618,7 +618,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public String v1OrganizationIdLogsPipelinesPipelineIdGet(String organizationId, String pipelineId, String since, String last) throws ApiException {
+    public String v1OrganizationIdLogsPipelinesPipelineIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last) throws ApiException {
         ApiResponse<String> localVarResp = v1OrganizationIdLogsPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, since, last);
         return localVarResp.getData();
     }
@@ -641,7 +641,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v1OrganizationIdLogsPipelinesPipelineIdGetWithHttpInfo(String organizationId, String pipelineId, String since, String last) throws ApiException {
+    public ApiResponse<String> v1OrganizationIdLogsPipelinesPipelineIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdLogsPipelinesPipelineIdGetValidateBeforeCall(organizationId, pipelineId, since, last, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -666,7 +666,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdLogsPipelinesPipelineIdGetAsync(String organizationId, String pipelineId, String since, String last, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdLogsPipelinesPipelineIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdLogsPipelinesPipelineIdGetValidateBeforeCall(organizationId, pipelineId, since, last, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
@@ -692,7 +692,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetCall(String organizationId, String pipelineId, String nodeId, String since, String last, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -749,7 +749,7 @@ public class LogsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetValidateBeforeCall(String organizationId, String pipelineId, String nodeId, String since, String last, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdLogsPipelinesPipelineIdNodeIdGet(Async)");
@@ -788,7 +788,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public String v1OrganizationIdLogsPipelinesPipelineIdNodeIdGet(String organizationId, String pipelineId, String nodeId, String since, String last) throws ApiException {
+    public String v1OrganizationIdLogsPipelinesPipelineIdNodeIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last) throws ApiException {
         ApiResponse<String> localVarResp = v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetWithHttpInfo(organizationId, pipelineId, nodeId, since, last);
         return localVarResp.getData();
     }
@@ -812,7 +812,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetWithHttpInfo(String organizationId, String pipelineId, String nodeId, String since, String last) throws ApiException {
+    public ApiResponse<String> v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last) throws ApiException {
         okhttp3.Call localVarCall = v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetValidateBeforeCall(organizationId, pipelineId, nodeId, since, last, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -838,7 +838,7 @@ public class LogsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetAsync(String organizationId, String pipelineId, String nodeId, String since, String last, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, final ApiCallback<String> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OrganizationIdLogsPipelinesPipelineIdNodeIdGetValidateBeforeCall(organizationId, pipelineId, nodeId, since, last, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
