@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Semgrep deployments secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-05T13:50:47.082742972Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-05T18:32:50.725805259Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SemgrepDeploymentsSecretsConfig {
   public static final String SERIALIZED_NAME_API_KEY = "api_key";
   @SerializedName(SERIALIZED_NAME_API_KEY)
