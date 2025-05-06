@@ -442,8 +442,15 @@ func (a *BillingProductsAPIService) V2BillingAccountsBillingAccountIdSubscriptio
 type ApiV2BillingProductsGetRequest struct {
 	ctx context.Context
 	ApiService *BillingProductsAPIService
+	showInactive *bool
 	limit *int32
 	offset *int32
+}
+
+// Show inactive products
+func (r ApiV2BillingProductsGetRequest) ShowInactive(showInactive bool) ApiV2BillingProductsGetRequest {
+	r.showInactive = &showInactive
+	return r
 }
 
 // Limit
@@ -498,6 +505,9 @@ func (a *BillingProductsAPIService) V2BillingProductsGetExecute(r ApiV2BillingPr
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.showInactive != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "show_inactive", r.showInactive, "form", "")
+	}
 	if r.limit != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	}

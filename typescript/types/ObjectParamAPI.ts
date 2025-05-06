@@ -866,6 +866,13 @@ export interface BillingProductsApiV2BillingAccountsBillingAccountIdSubscription
 
 export interface BillingProductsApiV2BillingProductsGetRequest {
     /**
+     * Show inactive products
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof BillingProductsApiv2BillingProductsGet
+     */
+    showInactive?: boolean
+    /**
      * Limit
      * Defaults to: undefined
      * @type number
@@ -948,7 +955,7 @@ export class ObjectBillingProductsApi {
      * @param param the request object
      */
     public v2BillingProductsGetWithHttpInfo(param: BillingProductsApiV2BillingProductsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsBillingProductList>> {
-        return this.api.v2BillingProductsGetWithHttpInfo(param.limit, param.offset,  options).toPromise();
+        return this.api.v2BillingProductsGetWithHttpInfo(param.showInactive, param.limit, param.offset,  options).toPromise();
     }
 
     /**
@@ -957,7 +964,7 @@ export class ObjectBillingProductsApi {
      * @param param the request object
      */
     public v2BillingProductsGet(param: BillingProductsApiV2BillingProductsGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsBillingProductList> {
-        return this.api.v2BillingProductsGet(param.limit, param.offset,  options).toPromise();
+        return this.api.v2BillingProductsGet(param.showInactive, param.limit, param.offset,  options).toPromise();
     }
 
 }

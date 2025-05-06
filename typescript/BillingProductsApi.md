@@ -196,6 +196,8 @@ const configuration = createConfiguration();
 const apiInstance = new BillingProductsApi(configuration);
 
 const request: BillingProductsApiV2BillingProductsGetRequest = {
+    // Show inactive products (optional)
+  showInactive: true,
     // Limit (optional)
   limit: 1,
     // Offset (optional)
@@ -211,6 +213,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **showInactive** | [**boolean**] | Show inactive products | (optional) defaults to undefined
  **limit** | [**number**] | Limit | (optional) defaults to undefined
  **offset** | [**number**] | Offset | (optional) defaults to undefined
 

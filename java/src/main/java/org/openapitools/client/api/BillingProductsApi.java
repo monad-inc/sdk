@@ -488,6 +488,7 @@ public class BillingProductsApi {
     }
     /**
      * Build call for v2BillingProductsGet
+     * @param showInactive Show inactive products (optional)
      * @param limit Limit (optional)
      * @param offset Offset (optional)
      * @param _callback Callback for upload/download progress
@@ -502,7 +503,7 @@ public class BillingProductsApi {
         <tr><td> 500 </td><td> Failed to list billing products </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingProductsGetCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2BillingProductsGetCall(@javax.annotation.Nullable Boolean showInactive, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -526,6 +527,10 @@ public class BillingProductsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (showInactive != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("show_inactive", showInactive));
+        }
 
         if (limit != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
@@ -555,14 +560,15 @@ public class BillingProductsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2BillingProductsGetValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
-        return v2BillingProductsGetCall(limit, offset, _callback);
+    private okhttp3.Call v2BillingProductsGetValidateBeforeCall(@javax.annotation.Nullable Boolean showInactive, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+        return v2BillingProductsGetCall(showInactive, limit, offset, _callback);
 
     }
 
     /**
      * List Billing Products
      * List Billing Products
+     * @param showInactive Show inactive products (optional)
      * @param limit Limit (optional)
      * @param offset Offset (optional)
      * @return ModelsBillingProductList
@@ -576,14 +582,15 @@ public class BillingProductsApi {
         <tr><td> 500 </td><td> Failed to list billing products </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsBillingProductList v2BillingProductsGet(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
-        ApiResponse<ModelsBillingProductList> localVarResp = v2BillingProductsGetWithHttpInfo(limit, offset);
+    public ModelsBillingProductList v2BillingProductsGet(@javax.annotation.Nullable Boolean showInactive, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        ApiResponse<ModelsBillingProductList> localVarResp = v2BillingProductsGetWithHttpInfo(showInactive, limit, offset);
         return localVarResp.getData();
     }
 
     /**
      * List Billing Products
      * List Billing Products
+     * @param showInactive Show inactive products (optional)
      * @param limit Limit (optional)
      * @param offset Offset (optional)
      * @return ApiResponse&lt;ModelsBillingProductList&gt;
@@ -597,8 +604,8 @@ public class BillingProductsApi {
         <tr><td> 500 </td><td> Failed to list billing products </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsBillingProductList> v2BillingProductsGetWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
-        okhttp3.Call localVarCall = v2BillingProductsGetValidateBeforeCall(limit, offset, null);
+    public ApiResponse<ModelsBillingProductList> v2BillingProductsGetWithHttpInfo(@javax.annotation.Nullable Boolean showInactive, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = v2BillingProductsGetValidateBeforeCall(showInactive, limit, offset, null);
         Type localVarReturnType = new TypeToken<ModelsBillingProductList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -606,6 +613,7 @@ public class BillingProductsApi {
     /**
      * List Billing Products (asynchronously)
      * List Billing Products
+     * @param showInactive Show inactive products (optional)
      * @param limit Limit (optional)
      * @param offset Offset (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -620,9 +628,9 @@ public class BillingProductsApi {
         <tr><td> 500 </td><td> Failed to list billing products </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2BillingProductsGetAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsBillingProductList> _callback) throws ApiException {
+    public okhttp3.Call v2BillingProductsGetAsync(@javax.annotation.Nullable Boolean showInactive, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsBillingProductList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2BillingProductsGetValidateBeforeCall(limit, offset, _callback);
+        okhttp3.Call localVarCall = v2BillingProductsGetValidateBeforeCall(showInactive, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsBillingProductList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

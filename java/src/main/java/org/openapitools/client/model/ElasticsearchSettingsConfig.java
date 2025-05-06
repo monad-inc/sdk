@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Elasticsearch Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-05T18:32:50.725805259Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T17:39:11.547357890Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ElasticsearchSettingsConfig {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)

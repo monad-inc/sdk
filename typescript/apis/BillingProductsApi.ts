@@ -153,11 +153,13 @@ export class BillingProductsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * List Billing Products
      * List Billing Products
+     * @param showInactive Show inactive products
      * @param limit Limit
      * @param offset Offset
      */
-    public async v2BillingProductsGet(limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+    public async v2BillingProductsGet(showInactive?: boolean, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
 
 
 
@@ -167,6 +169,11 @@ export class BillingProductsApiRequestFactory extends BaseAPIRequestFactory {
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (showInactive !== undefined) {
+            requestContext.setQueryParam("show_inactive", ObjectSerializer.serialize(showInactive, "boolean", ""));
+        }
 
         // Query Params
         if (limit !== undefined) {

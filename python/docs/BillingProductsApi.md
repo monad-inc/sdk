@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_billing_products_get**
-> ModelsBillingProductList v2_billing_products_get(limit=limit, offset=offset)
+> ModelsBillingProductList v2_billing_products_get(show_inactive=show_inactive, limit=limit, offset=offset)
 
 List Billing Products
 
@@ -291,12 +291,13 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.BillingProductsApi(api_client)
+    show_inactive = True # bool | Show inactive products (optional)
     limit = 56 # int | Limit (optional)
     offset = 56 # int | Offset (optional)
 
     try:
         # List Billing Products
-        api_response = api_instance.v2_billing_products_get(limit=limit, offset=offset)
+        api_response = api_instance.v2_billing_products_get(show_inactive=show_inactive, limit=limit, offset=offset)
         print("The response of BillingProductsApi->v2_billing_products_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -310,6 +311,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **show_inactive** | **bool**| Show inactive products | [optional] 
  **limit** | **int**| Limit | [optional] 
  **offset** | **int**| Offset | [optional] 
 

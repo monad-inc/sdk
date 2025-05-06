@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineEdgeCondition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-05T18:32:50.725805259Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-06T17:39:11.547357890Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ModelsPipelineEdgeCondition {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)

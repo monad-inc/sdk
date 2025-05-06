@@ -226,7 +226,7 @@ public class Example {
 
 <a id="v2BillingProductsGet"></a>
 # **v2BillingProductsGet**
-> ModelsBillingProductList v2BillingProductsGet(limit, offset)
+> ModelsBillingProductList v2BillingProductsGet(showInactive, limit, offset)
 
 List Billing Products
 
@@ -254,10 +254,11 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     BillingProductsApi apiInstance = new BillingProductsApi(defaultClient);
+    Boolean showInactive = true; // Boolean | Show inactive products
     Integer limit = 56; // Integer | Limit
     Integer offset = 56; // Integer | Offset
     try {
-      ModelsBillingProductList result = apiInstance.v2BillingProductsGet(limit, offset);
+      ModelsBillingProductList result = apiInstance.v2BillingProductsGet(showInactive, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BillingProductsApi#v2BillingProductsGet");
@@ -274,6 +275,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **showInactive** | **Boolean**| Show inactive products | [optional] |
 | **limit** | **Integer**| Limit | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
 

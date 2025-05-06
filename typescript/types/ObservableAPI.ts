@@ -1036,13 +1036,14 @@ export class ObservableBillingProductsApi {
     /**
      * List Billing Products
      * List Billing Products
+     * @param [showInactive] Show inactive products
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v2BillingProductsGetWithHttpInfo(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingProductList>> {
+    public v2BillingProductsGetWithHttpInfo(showInactive?: boolean, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingProductList>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v2BillingProductsGet(limit, offset, _config);
+        const requestContextPromise = this.requestFactory.v2BillingProductsGet(showInactive, limit, offset, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1062,11 +1063,12 @@ export class ObservableBillingProductsApi {
     /**
      * List Billing Products
      * List Billing Products
+     * @param [showInactive] Show inactive products
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v2BillingProductsGet(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsBillingProductList> {
-        return this.v2BillingProductsGetWithHttpInfo(limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingProductList>) => apiResponse.data));
+    public v2BillingProductsGet(showInactive?: boolean, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsBillingProductList> {
+        return this.v2BillingProductsGetWithHttpInfo(showInactive, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsBillingProductList>) => apiResponse.data));
     }
 
 }

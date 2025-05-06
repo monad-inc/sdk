@@ -17,7 +17,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
 from monad.models.models_billing_product import ModelsBillingProduct
@@ -875,6 +875,7 @@ class BillingProductsApi:
     @validate_call
     def v2_billing_products_get(
         self,
+        show_inactive: Annotated[Optional[StrictBool], Field(description="Show inactive products")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
@@ -894,6 +895,8 @@ class BillingProductsApi:
 
         List Billing Products
 
+        :param show_inactive: Show inactive products
+        :type show_inactive: bool
         :param limit: Limit
         :type limit: int
         :param offset: Offset
@@ -921,6 +924,7 @@ class BillingProductsApi:
         """ # noqa: E501
 
         _param = self._v2_billing_products_get_serialize(
+            show_inactive=show_inactive,
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -948,6 +952,7 @@ class BillingProductsApi:
     @validate_call
     def v2_billing_products_get_with_http_info(
         self,
+        show_inactive: Annotated[Optional[StrictBool], Field(description="Show inactive products")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
@@ -967,6 +972,8 @@ class BillingProductsApi:
 
         List Billing Products
 
+        :param show_inactive: Show inactive products
+        :type show_inactive: bool
         :param limit: Limit
         :type limit: int
         :param offset: Offset
@@ -994,6 +1001,7 @@ class BillingProductsApi:
         """ # noqa: E501
 
         _param = self._v2_billing_products_get_serialize(
+            show_inactive=show_inactive,
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -1021,6 +1029,7 @@ class BillingProductsApi:
     @validate_call
     def v2_billing_products_get_without_preload_content(
         self,
+        show_inactive: Annotated[Optional[StrictBool], Field(description="Show inactive products")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
@@ -1040,6 +1049,8 @@ class BillingProductsApi:
 
         List Billing Products
 
+        :param show_inactive: Show inactive products
+        :type show_inactive: bool
         :param limit: Limit
         :type limit: int
         :param offset: Offset
@@ -1067,6 +1078,7 @@ class BillingProductsApi:
         """ # noqa: E501
 
         _param = self._v2_billing_products_get_serialize(
+            show_inactive=show_inactive,
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -1089,6 +1101,7 @@ class BillingProductsApi:
 
     def _v2_billing_products_get_serialize(
         self,
+        show_inactive,
         limit,
         offset,
         _request_auth,
@@ -1113,6 +1126,10 @@ class BillingProductsApi:
 
         # process the path parameters
         # process the query parameters
+        if show_inactive is not None:
+            
+            _query_params.append(('show_inactive', show_inactive))
+            
         if limit is not None:
             
             _query_params.append(('limit', limit))

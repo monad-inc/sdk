@@ -795,24 +795,26 @@ export class PromiseBillingProductsApi {
     /**
      * List Billing Products
      * List Billing Products
+     * @param [showInactive] Show inactive products
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v2BillingProductsGetWithHttpInfo(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingProductList>> {
+    public v2BillingProductsGetWithHttpInfo(showInactive?: boolean, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsBillingProductList>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v2BillingProductsGetWithHttpInfo(limit, offset, observableOptions);
+        const result = this.api.v2BillingProductsGetWithHttpInfo(showInactive, limit, offset, observableOptions);
         return result.toPromise();
     }
 
     /**
      * List Billing Products
      * List Billing Products
+     * @param [showInactive] Show inactive products
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v2BillingProductsGet(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsBillingProductList> {
+    public v2BillingProductsGet(showInactive?: boolean, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsBillingProductList> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v2BillingProductsGet(limit, offset, observableOptions);
+        const result = this.api.v2BillingProductsGet(showInactive, limit, offset, observableOptions);
         return result.toPromise();
     }
 

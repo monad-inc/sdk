@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ## V2BillingProductsGet
 
-> ModelsBillingProductList V2BillingProductsGet(ctx).Limit(limit).Offset(offset).Execute()
+> ModelsBillingProductList V2BillingProductsGet(ctx).ShowInactive(showInactive).Limit(limit).Offset(offset).Execute()
 
 List Billing Products
 
@@ -242,12 +242,13 @@ import (
 )
 
 func main() {
+	showInactive := true // bool | Show inactive products (optional)
 	limit := int32(56) // int32 | Limit (optional)
 	offset := int32(56) // int32 | Offset (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BillingProductsAPI.V2BillingProductsGet(context.Background()).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.BillingProductsAPI.V2BillingProductsGet(context.Background()).ShowInactive(showInactive).Limit(limit).Offset(offset).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BillingProductsAPI.V2BillingProductsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -268,6 +269,7 @@ Other parameters are passed through a pointer to a apiV2BillingProductsGetReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **showInactive** | **bool** | Show inactive products | 
  **limit** | **int32** | Limit | 
  **offset** | **int32** | Offset | 
 
