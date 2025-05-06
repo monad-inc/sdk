@@ -167,7 +167,6 @@ import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
-import { RoutesResendVerificationRequest } from '../models/RoutesResendVerificationRequest';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
@@ -274,12 +273,6 @@ export interface AuthenticationApiV1LoginGetRequest {
 }
 
 export interface AuthenticationApiV1LoginResendVerificationPostRequest {
-    /**
-     * Resend verification request
-     * @type RoutesResendVerificationRequest
-     * @memberof AuthenticationApiv1LoginResendVerificationPost
-     */
-    routesResendVerificationRequest: RoutesResendVerificationRequest
 }
 
 export interface AuthenticationApiV1LoginTokenPostRequest {
@@ -339,8 +332,8 @@ export class ObjectAuthenticationApi {
      * Resend email verification
      * @param param the request object
      */
-    public v1LoginResendVerificationPostWithHttpInfo(param: AuthenticationApiV1LoginResendVerificationPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v1LoginResendVerificationPostWithHttpInfo(param.routesResendVerificationRequest,  options).toPromise();
+    public v1LoginResendVerificationPostWithHttpInfo(param: AuthenticationApiV1LoginResendVerificationPostRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.v1LoginResendVerificationPostWithHttpInfo( options).toPromise();
     }
 
     /**
@@ -348,8 +341,8 @@ export class ObjectAuthenticationApi {
      * Resend email verification
      * @param param the request object
      */
-    public v1LoginResendVerificationPost(param: AuthenticationApiV1LoginResendVerificationPostRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v1LoginResendVerificationPost(param.routesResendVerificationRequest,  options).toPromise();
+    public v1LoginResendVerificationPost(param: AuthenticationApiV1LoginResendVerificationPostRequest = {}, options?: ConfigurationOptions): Promise<string> {
+        return this.api.v1LoginResendVerificationPost( options).toPromise();
     }
 
     /**

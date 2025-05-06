@@ -167,7 +167,6 @@ import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
-import { RoutesResendVerificationRequest } from '../models/RoutesResendVerificationRequest';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
@@ -320,22 +319,20 @@ export class PromiseAuthenticationApi {
     /**
      * Resends the email verification to the user\'s email address
      * Resend email verification
-     * @param routesResendVerificationRequest Resend verification request
      */
-    public v1LoginResendVerificationPostWithHttpInfo(routesResendVerificationRequest: RoutesResendVerificationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+    public v1LoginResendVerificationPostWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v1LoginResendVerificationPostWithHttpInfo(routesResendVerificationRequest, observableOptions);
+        const result = this.api.v1LoginResendVerificationPostWithHttpInfo(observableOptions);
         return result.toPromise();
     }
 
     /**
      * Resends the email verification to the user\'s email address
      * Resend email verification
-     * @param routesResendVerificationRequest Resend verification request
      */
-    public v1LoginResendVerificationPost(routesResendVerificationRequest: RoutesResendVerificationRequest, _options?: PromiseConfigurationOptions): Promise<string> {
+    public v1LoginResendVerificationPost(_options?: PromiseConfigurationOptions): Promise<string> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v1LoginResendVerificationPost(routesResendVerificationRequest, observableOptions);
+        const result = this.api.v1LoginResendVerificationPost(observableOptions);
         return result.toPromise();
     }
 

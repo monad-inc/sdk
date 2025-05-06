@@ -351,7 +351,6 @@ Class | Method | HTTP request | Description
  - [RoutesGetTransformResponse](docs/RoutesGetTransformResponse.md)
  - [RoutesInviteUserToOrganizationRequest](docs/RoutesInviteUserToOrganizationRequest.md)
  - [RoutesLoginRequest](docs/RoutesLoginRequest.md)
- - [RoutesResendVerificationRequest](docs/RoutesResendVerificationRequest.md)
  - [RoutesTransformConfig](docs/RoutesTransformConfig.md)
  - [RoutesTransformOperation](docs/RoutesTransformOperation.md)
  - [RoutesTransformOperationArguments](docs/RoutesTransformOperationArguments.md)

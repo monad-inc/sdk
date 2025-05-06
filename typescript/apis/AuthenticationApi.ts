@@ -10,7 +10,6 @@ import {SecurityAuthentication} from '../auth/auth';
 
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
-import { RoutesResendVerificationRequest } from '../models/RoutesResendVerificationRequest';
 
 /**
  * no description
@@ -68,16 +67,9 @@ export class AuthenticationApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Resends the email verification to the user\'s email address
      * Resend email verification
-     * @param routesResendVerificationRequest Resend verification request
      */
-    public async v1LoginResendVerificationPost(routesResendVerificationRequest: RoutesResendVerificationRequest, _options?: Configuration): Promise<RequestContext> {
+    public async v1LoginResendVerificationPost(_options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
-        // verify required parameter 'routesResendVerificationRequest' is not null or undefined
-        if (routesResendVerificationRequest === null || routesResendVerificationRequest === undefined) {
-            throw new RequiredError("AuthenticationApi", "v1LoginResendVerificationPost", "routesResendVerificationRequest");
-        }
-
 
         // Path Params
         const localVarPath = '/v1/login/resend-verification';
@@ -87,23 +79,7 @@ export class AuthenticationApiRequestFactory extends BaseAPIRequestFactory {
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(routesResendVerificationRequest, "RoutesResendVerificationRequest", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
-
         let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["ApiKeyAuth"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
         // Apply auth methods
         authMethod = _config.authMethods["Bearer"]
         if (authMethod?.applySecurityAuthentication) {

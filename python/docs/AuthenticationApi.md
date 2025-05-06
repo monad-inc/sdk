@@ -135,7 +135,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_login_resend_verification_post**
-> str v1_login_resend_verification_post(routes_resend_verification_request)
+> str v1_login_resend_verification_post()
 
 Resend email verification
 
@@ -143,12 +143,10 @@ Resends the email verification to the user's email address
 
 ### Example
 
-* Api Key Authentication (ApiKeyAuth):
 * Api Key Authentication (Bearer):
 
 ```python
 import monad
-from monad.models.routes_resend_verification_request import RoutesResendVerificationRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -163,12 +161,6 @@ configuration = monad.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure API key authorization: ApiKeyAuth
-configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
-
 # Configure API key authorization: Bearer
 configuration.api_key['Bearer'] = os.environ["API_KEY"]
 
@@ -179,11 +171,10 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.AuthenticationApi(api_client)
-    routes_resend_verification_request = monad.RoutesResendVerificationRequest() # RoutesResendVerificationRequest | Resend verification request
 
     try:
         # Resend email verification
-        api_response = api_instance.v1_login_resend_verification_post(routes_resend_verification_request)
+        api_response = api_instance.v1_login_resend_verification_post()
         print("The response of AuthenticationApi->v1_login_resend_verification_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -194,10 +185,7 @@ with monad.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **routes_resend_verification_request** | [**RoutesResendVerificationRequest**](RoutesResendVerificationRequest.md)| Resend verification request | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -205,11 +193,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+[Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

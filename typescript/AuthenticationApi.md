@@ -103,7 +103,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1LoginResendVerificationPost**
-> string v1LoginResendVerificationPost(routesResendVerificationRequest)
+> string v1LoginResendVerificationPost()
 
 Resends the email verification to the user\'s email address
 
@@ -112,17 +112,11 @@ Resends the email verification to the user\'s email address
 
 ```typescript
 import { createConfiguration, AuthenticationApi } from '';
-import type { AuthenticationApiV1LoginResendVerificationPostRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new AuthenticationApi(configuration);
 
-const request: AuthenticationApiV1LoginResendVerificationPostRequest = {
-    // Resend verification request
-  routesResendVerificationRequest: {
-    userId: "usr_123456789",
-  },
-};
+const request = {};
 
 const data = await apiInstance.v1LoginResendVerificationPost(request);
 console.log('API called successfully. Returned data:', data);
@@ -130,10 +124,7 @@ console.log('API called successfully. Returned data:', data);
 
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **routesResendVerificationRequest** | **RoutesResendVerificationRequest**| Resend verification request |
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -142,11 +133,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+[Bearer](README.md#Bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

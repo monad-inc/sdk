@@ -127,7 +127,7 @@ No authorization required
 
 <a id="v1LoginResendVerificationPost"></a>
 # **v1LoginResendVerificationPost**
-> String v1LoginResendVerificationPost(routesResendVerificationRequest)
+> String v1LoginResendVerificationPost()
 
 Resend email verification
 
@@ -148,12 +148,6 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://monad.com/api");
     
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
     // Configure API key authorization: Bearer
     ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
     Bearer.setApiKey("YOUR API KEY");
@@ -161,9 +155,8 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
-    RoutesResendVerificationRequest routesResendVerificationRequest = new RoutesResendVerificationRequest(); // RoutesResendVerificationRequest | Resend verification request
     try {
-      String result = apiInstance.v1LoginResendVerificationPost(routesResendVerificationRequest);
+      String result = apiInstance.v1LoginResendVerificationPost();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuthenticationApi#v1LoginResendVerificationPost");
@@ -177,10 +170,7 @@ public class Example {
 ```
 
 ### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **routesResendVerificationRequest** | [**RoutesResendVerificationRequest**](RoutesResendVerificationRequest.md)| Resend verification request | |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -188,11 +178,11 @@ public class Example {
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+[Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

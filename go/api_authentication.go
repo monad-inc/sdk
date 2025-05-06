@@ -223,13 +223,6 @@ func (a *AuthenticationAPIService) V1LoginGetExecute(r ApiV1LoginGetRequest) (*h
 type ApiV1LoginResendVerificationPostRequest struct {
 	ctx context.Context
 	ApiService *AuthenticationAPIService
-	routesResendVerificationRequest *RoutesResendVerificationRequest
-}
-
-// Resend verification request
-func (r ApiV1LoginResendVerificationPostRequest) RoutesResendVerificationRequest(routesResendVerificationRequest RoutesResendVerificationRequest) ApiV1LoginResendVerificationPostRequest {
-	r.routesResendVerificationRequest = &routesResendVerificationRequest
-	return r
 }
 
 func (r ApiV1LoginResendVerificationPostRequest) Execute() (string, *http.Response, error) {
@@ -271,12 +264,9 @@ func (a *AuthenticationAPIService) V1LoginResendVerificationPostExecute(r ApiV1L
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.routesResendVerificationRequest == nil {
-		return localVarReturnValue, nil, reportError("routesResendVerificationRequest is required and must be specified")
-	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -291,22 +281,6 @@ func (a *AuthenticationAPIService) V1LoginResendVerificationPostExecute(r ApiV1L
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.routesResendVerificationRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["ApiKeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["x-api-key"] = key
-			}
-		}
 	}
 	if r.ctx != nil {
 		// API Key Authentication

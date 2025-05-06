@@ -21,7 +21,6 @@ from pydantic import Field, StrictStr
 from typing_extensions import Annotated
 from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse
 from monad.models.routes_login_request import RoutesLoginRequest
-from monad.models.routes_resend_verification_request import RoutesResendVerificationRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -535,7 +534,6 @@ class AuthenticationApi:
     @validate_call
     def v1_login_resend_verification_post(
         self,
-        routes_resend_verification_request: Annotated[RoutesResendVerificationRequest, Field(description="Resend verification request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -553,8 +551,6 @@ class AuthenticationApi:
 
         Resends the email verification to the user's email address
 
-        :param routes_resend_verification_request: Resend verification request (required)
-        :type routes_resend_verification_request: RoutesResendVerificationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -578,7 +574,6 @@ class AuthenticationApi:
         """ # noqa: E501
 
         _param = self._v1_login_resend_verification_post_serialize(
-            routes_resend_verification_request=routes_resend_verification_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -605,7 +600,6 @@ class AuthenticationApi:
     @validate_call
     def v1_login_resend_verification_post_with_http_info(
         self,
-        routes_resend_verification_request: Annotated[RoutesResendVerificationRequest, Field(description="Resend verification request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -623,8 +617,6 @@ class AuthenticationApi:
 
         Resends the email verification to the user's email address
 
-        :param routes_resend_verification_request: Resend verification request (required)
-        :type routes_resend_verification_request: RoutesResendVerificationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -648,7 +640,6 @@ class AuthenticationApi:
         """ # noqa: E501
 
         _param = self._v1_login_resend_verification_post_serialize(
-            routes_resend_verification_request=routes_resend_verification_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -675,7 +666,6 @@ class AuthenticationApi:
     @validate_call
     def v1_login_resend_verification_post_without_preload_content(
         self,
-        routes_resend_verification_request: Annotated[RoutesResendVerificationRequest, Field(description="Resend verification request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -693,8 +683,6 @@ class AuthenticationApi:
 
         Resends the email verification to the user's email address
 
-        :param routes_resend_verification_request: Resend verification request (required)
-        :type routes_resend_verification_request: RoutesResendVerificationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -718,7 +706,6 @@ class AuthenticationApi:
         """ # noqa: E501
 
         _param = self._v1_login_resend_verification_post_serialize(
-            routes_resend_verification_request=routes_resend_verification_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -740,7 +727,6 @@ class AuthenticationApi:
 
     def _v1_login_resend_verification_post_serialize(
         self,
-        routes_resend_verification_request,
         _request_auth,
         _content_type,
         _headers,
@@ -766,8 +752,6 @@ class AuthenticationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if routes_resend_verification_request is not None:
-            _body_params = routes_resend_verification_request
 
 
         # set the HTTP header `Accept`
@@ -778,23 +762,9 @@ class AuthenticationApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
-            'ApiKeyAuth', 
             'Bearer'
         ]
 

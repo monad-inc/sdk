@@ -168,7 +168,6 @@ import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
-import { RoutesResendVerificationRequest } from '../models/RoutesResendVerificationRequest';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
@@ -348,12 +347,11 @@ export class ObservableAuthenticationApi {
     /**
      * Resends the email verification to the user\'s email address
      * Resend email verification
-     * @param routesResendVerificationRequest Resend verification request
      */
-    public v1LoginResendVerificationPostWithHttpInfo(routesResendVerificationRequest: RoutesResendVerificationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    public v1LoginResendVerificationPostWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<string>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v1LoginResendVerificationPost(routesResendVerificationRequest, _config);
+        const requestContextPromise = this.requestFactory.v1LoginResendVerificationPost(_config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -373,10 +371,9 @@ export class ObservableAuthenticationApi {
     /**
      * Resends the email verification to the user\'s email address
      * Resend email verification
-     * @param routesResendVerificationRequest Resend verification request
      */
-    public v1LoginResendVerificationPost(routesResendVerificationRequest: RoutesResendVerificationRequest, _options?: ConfigurationOptions): Observable<string> {
-        return this.v1LoginResendVerificationPostWithHttpInfo(routesResendVerificationRequest, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    public v1LoginResendVerificationPost(_options?: ConfigurationOptions): Observable<string> {
+        return this.v1LoginResendVerificationPostWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
     }
 
     /**

@@ -163,7 +163,6 @@ export * from '../models/RoutesGetOutputResponse';
 export * from '../models/RoutesGetTransformResponse';
 export * from '../models/RoutesInviteUserToOrganizationRequest';
 export * from '../models/RoutesLoginRequest';
-export * from '../models/RoutesResendVerificationRequest';
 export * from '../models/RoutesTransformConfig';
 export * from '../models/RoutesTransformOperation';
 export * from '../models/RoutesTransformOperationArguments';
@@ -425,7 +424,6 @@ import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
-import { RoutesResendVerificationRequest } from '../models/RoutesResendVerificationRequest';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArgumentsClass } from '../models/RoutesTransformOperationArguments';
@@ -712,7 +710,6 @@ let typeMap: {[index: string]: any} = {
     "RoutesGetTransformResponse": RoutesGetTransformResponse,
     "RoutesInviteUserToOrganizationRequest": RoutesInviteUserToOrganizationRequest,
     "RoutesLoginRequest": RoutesLoginRequest,
-    "RoutesResendVerificationRequest": RoutesResendVerificationRequest,
     "RoutesTransformConfig": RoutesTransformConfig,
     "RoutesTransformOperation": RoutesTransformOperation,
     "RoutesTransformOperationArguments": RoutesTransformOperationArgumentsClass,

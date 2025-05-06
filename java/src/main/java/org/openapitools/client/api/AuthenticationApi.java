@@ -29,7 +29,6 @@ import java.io.IOException;
 
 import org.openapitools.client.model.AuthenticationtypesTokenResponse;
 import org.openapitools.client.model.RoutesLoginRequest;
-import org.openapitools.client.model.RoutesResendVerificationRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -307,7 +306,6 @@ public class AuthenticationApi {
     }
     /**
      * Build call for v1LoginResendVerificationPost
-     * @param routesResendVerificationRequest Resend verification request (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -321,7 +319,7 @@ public class AuthenticationApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1LoginResendVerificationPostCall(@javax.annotation.Nonnull RoutesResendVerificationRequest routesResendVerificationRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1LoginResendVerificationPostCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -335,7 +333,7 @@ public class AuthenticationApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routesResendVerificationRequest;
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/v1/login/resend-verification";
@@ -355,32 +353,25 @@ public class AuthenticationApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        String[] localVarAuthNames = new String[] { "Bearer" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1LoginResendVerificationPostValidateBeforeCall(@javax.annotation.Nonnull RoutesResendVerificationRequest routesResendVerificationRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'routesResendVerificationRequest' is set
-        if (routesResendVerificationRequest == null) {
-            throw new ApiException("Missing the required parameter 'routesResendVerificationRequest' when calling v1LoginResendVerificationPost(Async)");
-        }
-
-        return v1LoginResendVerificationPostCall(routesResendVerificationRequest, _callback);
+    private okhttp3.Call v1LoginResendVerificationPostValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return v1LoginResendVerificationPostCall(_callback);
 
     }
 
     /**
      * Resend email verification
      * Resends the email verification to the user&#39;s email address
-     * @param routesResendVerificationRequest Resend verification request (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -393,15 +384,14 @@ public class AuthenticationApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public String v1LoginResendVerificationPost(@javax.annotation.Nonnull RoutesResendVerificationRequest routesResendVerificationRequest) throws ApiException {
-        ApiResponse<String> localVarResp = v1LoginResendVerificationPostWithHttpInfo(routesResendVerificationRequest);
+    public String v1LoginResendVerificationPost() throws ApiException {
+        ApiResponse<String> localVarResp = v1LoginResendVerificationPostWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * Resend email verification
      * Resends the email verification to the user&#39;s email address
-     * @param routesResendVerificationRequest Resend verification request (required)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -414,8 +404,8 @@ public class AuthenticationApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> v1LoginResendVerificationPostWithHttpInfo(@javax.annotation.Nonnull RoutesResendVerificationRequest routesResendVerificationRequest) throws ApiException {
-        okhttp3.Call localVarCall = v1LoginResendVerificationPostValidateBeforeCall(routesResendVerificationRequest, null);
+    public ApiResponse<String> v1LoginResendVerificationPostWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = v1LoginResendVerificationPostValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -423,7 +413,6 @@ public class AuthenticationApi {
     /**
      * Resend email verification (asynchronously)
      * Resends the email verification to the user&#39;s email address
-     * @param routesResendVerificationRequest Resend verification request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -437,9 +426,9 @@ public class AuthenticationApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1LoginResendVerificationPostAsync(@javax.annotation.Nonnull RoutesResendVerificationRequest routesResendVerificationRequest, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call v1LoginResendVerificationPostAsync(final ApiCallback<String> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1LoginResendVerificationPostValidateBeforeCall(routesResendVerificationRequest, _callback);
+        okhttp3.Call localVarCall = v1LoginResendVerificationPostValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

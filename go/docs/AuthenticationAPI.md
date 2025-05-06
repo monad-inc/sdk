@@ -133,7 +133,7 @@ No authorization required
 
 ## V1LoginResendVerificationPost
 
-> string V1LoginResendVerificationPost(ctx).RoutesResendVerificationRequest(routesResendVerificationRequest).Execute()
+> string V1LoginResendVerificationPost(ctx).Execute()
 
 Resend email verification
 
@@ -152,11 +152,10 @@ import (
 )
 
 func main() {
-	routesResendVerificationRequest := *openapiclient.NewRoutesResendVerificationRequest() // RoutesResendVerificationRequest | Resend verification request
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AuthenticationAPI.V1LoginResendVerificationPost(context.Background()).RoutesResendVerificationRequest(routesResendVerificationRequest).Execute()
+	resp, r, err := apiClient.AuthenticationAPI.V1LoginResendVerificationPost(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AuthenticationAPI.V1LoginResendVerificationPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -168,16 +167,12 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiV1LoginResendVerificationPostRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **routesResendVerificationRequest** | [**RoutesResendVerificationRequest**](RoutesResendVerificationRequest.md) | Resend verification request | 
 
 ### Return type
 
@@ -185,11 +180,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+[Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
