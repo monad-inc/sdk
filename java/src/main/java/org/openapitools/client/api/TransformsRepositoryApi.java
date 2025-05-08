@@ -27,6 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CommunityTransformsInternalTransformConfig;
+import org.openapitools.client.model.CommunityTransformsInternalTransformsIndex;
 import org.openapitools.client.model.ModelsTransformsRepositoryList;
 import org.openapitools.client.model.ModelsTransformsRepositoryTransform;
 
@@ -338,6 +340,262 @@ public class TransformsRepositoryApi {
 
         okhttp3.Call localVarCall = v2TransformsRepositoryTransformIdGetValidateBeforeCall(transformId, _callback);
         Type localVarReturnType = new TypeToken<ModelsTransformsRepositoryTransform>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v3TransformsRepositoryGet
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Transforms retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to list transforms </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3TransformsRepositoryGetCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/transforms/repository";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v3TransformsRepositoryGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return v3TransformsRepositoryGetCall(_callback);
+
+    }
+
+    /**
+     * List community transforms
+     * List transforms from repository index
+     * @return CommunityTransformsInternalTransformsIndex
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Transforms retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to list transforms </td><td>  -  </td></tr>
+     </table>
+     */
+    public CommunityTransformsInternalTransformsIndex v3TransformsRepositoryGet() throws ApiException {
+        ApiResponse<CommunityTransformsInternalTransformsIndex> localVarResp = v3TransformsRepositoryGetWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * List community transforms
+     * List transforms from repository index
+     * @return ApiResponse&lt;CommunityTransformsInternalTransformsIndex&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Transforms retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to list transforms </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CommunityTransformsInternalTransformsIndex> v3TransformsRepositoryGetWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = v3TransformsRepositoryGetValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<CommunityTransformsInternalTransformsIndex>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List community transforms (asynchronously)
+     * List transforms from repository index
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Transforms retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to list transforms </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3TransformsRepositoryGetAsync(final ApiCallback<CommunityTransformsInternalTransformsIndex> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v3TransformsRepositoryGetValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<CommunityTransformsInternalTransformsIndex>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v3TransformsRepositoryTransformIdGet
+     * @param transformId Transform ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Transform details retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to get transform details </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3TransformsRepositoryTransformIdGetCall(@javax.annotation.Nonnull String transformId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/transforms/repository/{transform_id}"
+            .replace("{" + "transform_id" + "}", localVarApiClient.escapeString(transformId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v3TransformsRepositoryTransformIdGetValidateBeforeCall(@javax.annotation.Nonnull String transformId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'transformId' is set
+        if (transformId == null) {
+            throw new ApiException("Missing the required parameter 'transformId' when calling v3TransformsRepositoryTransformIdGet(Async)");
+        }
+
+        return v3TransformsRepositoryTransformIdGetCall(transformId, _callback);
+
+    }
+
+    /**
+     * Get transform details
+     * Get detailed information about a specific transform from repository
+     * @param transformId Transform ID (required)
+     * @return CommunityTransformsInternalTransformConfig
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Transform details retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to get transform details </td><td>  -  </td></tr>
+     </table>
+     */
+    public CommunityTransformsInternalTransformConfig v3TransformsRepositoryTransformIdGet(@javax.annotation.Nonnull String transformId) throws ApiException {
+        ApiResponse<CommunityTransformsInternalTransformConfig> localVarResp = v3TransformsRepositoryTransformIdGetWithHttpInfo(transformId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get transform details
+     * Get detailed information about a specific transform from repository
+     * @param transformId Transform ID (required)
+     * @return ApiResponse&lt;CommunityTransformsInternalTransformConfig&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Transform details retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to get transform details </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CommunityTransformsInternalTransformConfig> v3TransformsRepositoryTransformIdGetWithHttpInfo(@javax.annotation.Nonnull String transformId) throws ApiException {
+        okhttp3.Call localVarCall = v3TransformsRepositoryTransformIdGetValidateBeforeCall(transformId, null);
+        Type localVarReturnType = new TypeToken<CommunityTransformsInternalTransformConfig>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get transform details (asynchronously)
+     * Get detailed information about a specific transform from repository
+     * @param transformId Transform ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Transform details retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Transform not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to get transform details </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3TransformsRepositoryTransformIdGetAsync(@javax.annotation.Nonnull String transformId, final ApiCallback<CommunityTransformsInternalTransformConfig> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v3TransformsRepositoryTransformIdGetValidateBeforeCall(transformId, _callback);
+        Type localVarReturnType = new TypeToken<CommunityTransformsInternalTransformConfig>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

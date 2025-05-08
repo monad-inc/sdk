@@ -180,6 +180,8 @@ Class | Method | HTTP request | Description
 *TransformsAPI* | [**V1TransformsTransformTypeIdGet**](docs/TransformsAPI.md#v1transformstransformtypeidget) | **Get** /v1/transforms/{transform_type_id} | Get transform metadata
 *TransformsRepositoryAPI* | [**V2TransformsRepositoryGet**](docs/TransformsRepositoryAPI.md#v2transformsrepositoryget) | **Get** /v2/transforms/repository | List transforms
 *TransformsRepositoryAPI* | [**V2TransformsRepositoryTransformIdGet**](docs/TransformsRepositoryAPI.md#v2transformsrepositorytransformidget) | **Get** /v2/transforms/repository/{transform_id} | Get transform details
+*TransformsRepositoryAPI* | [**V3TransformsRepositoryGet**](docs/TransformsRepositoryAPI.md#v3transformsrepositoryget) | **Get** /v3/transforms/repository | List community transforms
+*TransformsRepositoryAPI* | [**V3TransformsRepositoryTransformIdGet**](docs/TransformsRepositoryAPI.md#v3transformsrepositorytransformidget) | **Get** /v3/transforms/repository/{transform_id} | Get transform details
 *UsersAPI* | [**V1UsersGet**](docs/UsersAPI.md#v1usersget) | **Get** /v1/users | Get your current user
 *UsersAPI* | [**V1UsersPost**](docs/UsersAPI.md#v1userspost) | **Post** /v1/users | Create user
 
@@ -219,6 +221,9 @@ Class | Method | HTTP request | Description
  - [CloudResourceInventorySecretsConfig](docs/CloudResourceInventorySecretsConfig.md)
  - [CloudResourceInventorySettingsConfig](docs/CloudResourceInventorySettingsConfig.md)
  - [CloudtrailSettingsConfig](docs/CloudtrailSettingsConfig.md)
+ - [CommunityTransformsInternalTransformConfig](docs/CommunityTransformsInternalTransformConfig.md)
+ - [CommunityTransformsInternalTransformMetadata](docs/CommunityTransformsInternalTransformMetadata.md)
+ - [CommunityTransformsInternalTransformsIndex](docs/CommunityTransformsInternalTransformsIndex.md)
  - [ConditionInfo](docs/ConditionInfo.md)
  - [CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue](docs/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.md)
  - [CriblHttpSecretsConfig](docs/CriblHttpSecretsConfig.md)

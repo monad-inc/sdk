@@ -36,6 +36,9 @@ import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
 import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
+import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
+import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
+import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
 import { ConditionInfo } from '../models/ConditionInfo';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
@@ -4414,6 +4417,72 @@ export class ObservableTransformsRepositoryApi {
      */
     public v2TransformsRepositoryTransformIdGet(transformId: string, _options?: ConfigurationOptions): Observable<ModelsTransformsRepositoryTransform> {
         return this.v2TransformsRepositoryTransformIdGetWithHttpInfo(transformId, _options).pipe(map((apiResponse: HttpInfo<ModelsTransformsRepositoryTransform>) => apiResponse.data));
+    }
+
+    /**
+     * List transforms from repository index
+     * List community transforms
+     */
+    public v3TransformsRepositoryGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<CommunityTransformsInternalTransformsIndex>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3TransformsRepositoryGet(_config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3TransformsRepositoryGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List transforms from repository index
+     * List community transforms
+     */
+    public v3TransformsRepositoryGet(_options?: ConfigurationOptions): Observable<CommunityTransformsInternalTransformsIndex> {
+        return this.v3TransformsRepositoryGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<CommunityTransformsInternalTransformsIndex>) => apiResponse.data));
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param transformId Transform ID
+     */
+    public v3TransformsRepositoryTransformIdGetWithHttpInfo(transformId: string, _options?: ConfigurationOptions): Observable<HttpInfo<CommunityTransformsInternalTransformConfig>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3TransformsRepositoryTransformIdGet(transformId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3TransformsRepositoryTransformIdGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param transformId Transform ID
+     */
+    public v3TransformsRepositoryTransformIdGet(transformId: string, _options?: ConfigurationOptions): Observable<CommunityTransformsInternalTransformConfig> {
+        return this.v3TransformsRepositoryTransformIdGetWithHttpInfo(transformId, _options).pipe(map((apiResponse: HttpInfo<CommunityTransformsInternalTransformConfig>) => apiResponse.data));
     }
 
 }

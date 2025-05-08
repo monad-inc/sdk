@@ -186,6 +186,8 @@ Class | Method | HTTP request | Description
 *TransformsApi* | [**v1_transforms_transform_type_id_get**](docs/TransformsApi.md#v1_transforms_transform_type_id_get) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata
 *TransformsRepositoryApi* | [**v2_transforms_repository_get**](docs/TransformsRepositoryApi.md#v2_transforms_repository_get) | **GET** /v2/transforms/repository | List transforms
 *TransformsRepositoryApi* | [**v2_transforms_repository_transform_id_get**](docs/TransformsRepositoryApi.md#v2_transforms_repository_transform_id_get) | **GET** /v2/transforms/repository/{transform_id} | Get transform details
+*TransformsRepositoryApi* | [**v3_transforms_repository_get**](docs/TransformsRepositoryApi.md#v3_transforms_repository_get) | **GET** /v3/transforms/repository | List community transforms
+*TransformsRepositoryApi* | [**v3_transforms_repository_transform_id_get**](docs/TransformsRepositoryApi.md#v3_transforms_repository_transform_id_get) | **GET** /v3/transforms/repository/{transform_id} | Get transform details
 *UsersApi* | [**v1_users_get**](docs/UsersApi.md#v1_users_get) | **GET** /v1/users | Get your current user
 *UsersApi* | [**v1_users_post**](docs/UsersApi.md#v1_users_post) | **POST** /v1/users | Create user
 
@@ -225,6 +227,9 @@ Class | Method | HTTP request | Description
  - [CloudResourceInventorySecretsConfig](docs/CloudResourceInventorySecretsConfig.md)
  - [CloudResourceInventorySettingsConfig](docs/CloudResourceInventorySettingsConfig.md)
  - [CloudtrailSettingsConfig](docs/CloudtrailSettingsConfig.md)
+ - [CommunityTransformsInternalTransformConfig](docs/CommunityTransformsInternalTransformConfig.md)
+ - [CommunityTransformsInternalTransformMetadata](docs/CommunityTransformsInternalTransformMetadata.md)
+ - [CommunityTransformsInternalTransformsIndex](docs/CommunityTransformsInternalTransformsIndex.md)
  - [ConditionInfo](docs/ConditionInfo.md)
  - [CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue](docs/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.md)
  - [CriblHttpSecretsConfig](docs/CriblHttpSecretsConfig.md)

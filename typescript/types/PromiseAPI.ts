@@ -35,6 +35,9 @@ import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
 import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
+import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
+import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
+import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
 import { ConditionInfo } from '../models/ConditionInfo';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
@@ -3222,6 +3225,48 @@ export class PromiseTransformsRepositoryApi {
     public v2TransformsRepositoryTransformIdGet(transformId: string, _options?: PromiseConfigurationOptions): Promise<ModelsTransformsRepositoryTransform> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v2TransformsRepositoryTransformIdGet(transformId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List transforms from repository index
+     * List community transforms
+     */
+    public v3TransformsRepositoryGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<CommunityTransformsInternalTransformsIndex>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3TransformsRepositoryGetWithHttpInfo(observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List transforms from repository index
+     * List community transforms
+     */
+    public v3TransformsRepositoryGet(_options?: PromiseConfigurationOptions): Promise<CommunityTransformsInternalTransformsIndex> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3TransformsRepositoryGet(observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param transformId Transform ID
+     */
+    public v3TransformsRepositoryTransformIdGetWithHttpInfo(transformId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<CommunityTransformsInternalTransformConfig>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3TransformsRepositoryTransformIdGetWithHttpInfo(transformId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param transformId Transform ID
+     */
+    public v3TransformsRepositoryTransformIdGet(transformId: string, _options?: PromiseConfigurationOptions): Promise<CommunityTransformsInternalTransformConfig> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3TransformsRepositoryTransformIdGet(transformId, observableOptions);
         return result.toPromise();
     }
 

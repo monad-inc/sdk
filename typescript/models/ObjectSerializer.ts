@@ -31,6 +31,9 @@ export * from '../models/CloudLogsSettingsConfig';
 export * from '../models/CloudResourceInventorySecretsConfig';
 export * from '../models/CloudResourceInventorySettingsConfig';
 export * from '../models/CloudtrailSettingsConfig';
+export * from '../models/CommunityTransformsInternalTransformConfig';
+export * from '../models/CommunityTransformsInternalTransformMetadata';
+export * from '../models/CommunityTransformsInternalTransformsIndex';
 export * from '../models/ConditionInfo';
 export * from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 export * from '../models/CriblHttpSecretsConfig';
@@ -292,6 +295,9 @@ import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
 import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
+import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
+import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
+import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
 import { ConditionInfo } from '../models/ConditionInfo';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
@@ -578,6 +584,9 @@ let typeMap: {[index: string]: any} = {
     "CloudResourceInventorySecretsConfig": CloudResourceInventorySecretsConfig,
     "CloudResourceInventorySettingsConfig": CloudResourceInventorySettingsConfig,
     "CloudtrailSettingsConfig": CloudtrailSettingsConfig,
+    "CommunityTransformsInternalTransformConfig": CommunityTransformsInternalTransformConfig,
+    "CommunityTransformsInternalTransformMetadata": CommunityTransformsInternalTransformMetadata,
+    "CommunityTransformsInternalTransformsIndex": CommunityTransformsInternalTransformsIndex,
     "ConditionInfo": ConditionInfo,
     "CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue": CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue,
     "CriblHttpSecretsConfig": CriblHttpSecretsConfig,

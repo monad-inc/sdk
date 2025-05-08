@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-05-08T15:57:07.264450358Z[Etc/UTC]
+  - Build date: 2025-05-08T16:49:06.640295292Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -216,6 +216,8 @@ Class | Method | HTTP request | Description
 *TransformsApi* | [**v1TransformsTransformTypeIdGet**](docs/TransformsApi.md#v1TransformsTransformTypeIdGet) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata
 *TransformsRepositoryApi* | [**v2TransformsRepositoryGet**](docs/TransformsRepositoryApi.md#v2TransformsRepositoryGet) | **GET** /v2/transforms/repository | List transforms
 *TransformsRepositoryApi* | [**v2TransformsRepositoryTransformIdGet**](docs/TransformsRepositoryApi.md#v2TransformsRepositoryTransformIdGet) | **GET** /v2/transforms/repository/{transform_id} | Get transform details
+*TransformsRepositoryApi* | [**v3TransformsRepositoryGet**](docs/TransformsRepositoryApi.md#v3TransformsRepositoryGet) | **GET** /v3/transforms/repository | List community transforms
+*TransformsRepositoryApi* | [**v3TransformsRepositoryTransformIdGet**](docs/TransformsRepositoryApi.md#v3TransformsRepositoryTransformIdGet) | **GET** /v3/transforms/repository/{transform_id} | Get transform details
 *UsersApi* | [**v1UsersGet**](docs/UsersApi.md#v1UsersGet) | **GET** /v1/users | Get your current user
 *UsersApi* | [**v1UsersPost**](docs/UsersApi.md#v1UsersPost) | **POST** /v1/users | Create user
 
@@ -255,6 +257,9 @@ Class | Method | HTTP request | Description
  - [CloudResourceInventorySecretsConfig](docs/CloudResourceInventorySecretsConfig.md)
  - [CloudResourceInventorySettingsConfig](docs/CloudResourceInventorySettingsConfig.md)
  - [CloudtrailSettingsConfig](docs/CloudtrailSettingsConfig.md)
+ - [CommunityTransformsInternalTransformConfig](docs/CommunityTransformsInternalTransformConfig.md)
+ - [CommunityTransformsInternalTransformMetadata](docs/CommunityTransformsInternalTransformMetadata.md)
+ - [CommunityTransformsInternalTransformsIndex](docs/CommunityTransformsInternalTransformsIndex.md)
  - [ConditionInfo](docs/ConditionInfo.md)
  - [CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue](docs/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.md)
  - [CriblHttpSecretsConfig](docs/CriblHttpSecretsConfig.md)

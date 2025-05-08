@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v2TransformsRepositoryGet**](TransformsRepositoryApi.md#v2TransformsRepositoryGet) | **GET** /v2/transforms/repository | List transforms
 [**v2TransformsRepositoryTransformIdGet**](TransformsRepositoryApi.md#v2TransformsRepositoryTransformIdGet) | **GET** /v2/transforms/repository/{transform_id} | Get transform details
+[**v3TransformsRepositoryGet**](TransformsRepositoryApi.md#v3TransformsRepositoryGet) | **GET** /v3/transforms/repository | List community transforms
+[**v3TransformsRepositoryTransformIdGet**](TransformsRepositoryApi.md#v3TransformsRepositoryTransformIdGet) | **GET** /v3/transforms/repository/{transform_id} | Get transform details
 
 
 # **v2TransformsRepositoryGet**
@@ -115,6 +117,108 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Transform details retrieved successfully |  -  |
+**500** | Failed to get transform details |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v3TransformsRepositoryGet**
+> CommunityTransformsInternalTransformsIndex v3TransformsRepositoryGet()
+
+List transforms from repository index
+
+### Example
+
+
+```typescript
+import { createConfiguration, TransformsRepositoryApi } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new TransformsRepositoryApi(configuration);
+
+const request = {};
+
+const data = await apiInstance.v3TransformsRepositoryGet(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**CommunityTransformsInternalTransformsIndex**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Transforms retrieved successfully |  -  |
+**500** | Failed to list transforms |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v3TransformsRepositoryTransformIdGet**
+> CommunityTransformsInternalTransformConfig v3TransformsRepositoryTransformIdGet()
+
+Get detailed information about a specific transform from repository
+
+### Example
+
+
+```typescript
+import { createConfiguration, TransformsRepositoryApi } from '';
+import type { TransformsRepositoryApiV3TransformsRepositoryTransformIdGetRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new TransformsRepositoryApi(configuration);
+
+const request: TransformsRepositoryApiV3TransformsRepositoryTransformIdGetRequest = {
+    // Transform ID
+  transformId: "transform_id_example",
+};
+
+const data = await apiInstance.v3TransformsRepositoryTransformIdGet(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transformId** | [**string**] | Transform ID | defaults to undefined
+
+
+### Return type
+
+**CommunityTransformsInternalTransformConfig**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Transform details retrieved successfully |  -  |
+**404** | Transform not found |  -  |
 **500** | Failed to get transform details |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

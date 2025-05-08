@@ -35,6 +35,9 @@ import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
 import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
+import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
+import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
+import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
 import { ConditionInfo } from '../models/ConditionInfo';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
@@ -4203,6 +4206,19 @@ export interface TransformsRepositoryApiV2TransformsRepositoryTransformIdGetRequ
     transformId: string
 }
 
+export interface TransformsRepositoryApiV3TransformsRepositoryGetRequest {
+}
+
+export interface TransformsRepositoryApiV3TransformsRepositoryTransformIdGetRequest {
+    /**
+     * Transform ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TransformsRepositoryApiv3TransformsRepositoryTransformIdGet
+     */
+    transformId: string
+}
+
 export class ObjectTransformsRepositoryApi {
     private api: ObservableTransformsRepositoryApi
 
@@ -4244,6 +4260,42 @@ export class ObjectTransformsRepositoryApi {
      */
     public v2TransformsRepositoryTransformIdGet(param: TransformsRepositoryApiV2TransformsRepositoryTransformIdGetRequest, options?: ConfigurationOptions): Promise<ModelsTransformsRepositoryTransform> {
         return this.api.v2TransformsRepositoryTransformIdGet(param.transformId,  options).toPromise();
+    }
+
+    /**
+     * List transforms from repository index
+     * List community transforms
+     * @param param the request object
+     */
+    public v3TransformsRepositoryGetWithHttpInfo(param: TransformsRepositoryApiV3TransformsRepositoryGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<CommunityTransformsInternalTransformsIndex>> {
+        return this.api.v3TransformsRepositoryGetWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * List transforms from repository index
+     * List community transforms
+     * @param param the request object
+     */
+    public v3TransformsRepositoryGet(param: TransformsRepositoryApiV3TransformsRepositoryGetRequest = {}, options?: ConfigurationOptions): Promise<CommunityTransformsInternalTransformsIndex> {
+        return this.api.v3TransformsRepositoryGet( options).toPromise();
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param param the request object
+     */
+    public v3TransformsRepositoryTransformIdGetWithHttpInfo(param: TransformsRepositoryApiV3TransformsRepositoryTransformIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<CommunityTransformsInternalTransformConfig>> {
+        return this.api.v3TransformsRepositoryTransformIdGetWithHttpInfo(param.transformId,  options).toPromise();
+    }
+
+    /**
+     * Get detailed information about a specific transform from repository
+     * Get transform details
+     * @param param the request object
+     */
+    public v3TransformsRepositoryTransformIdGet(param: TransformsRepositoryApiV3TransformsRepositoryTransformIdGetRequest, options?: ConfigurationOptions): Promise<CommunityTransformsInternalTransformConfig> {
+        return this.api.v3TransformsRepositoryTransformIdGet(param.transformId,  options).toPromise();
     }
 
 }
