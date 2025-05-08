@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Wiz cloud resource inventory settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-08T15:16:38.728263593Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-08T15:57:07.264450358Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CloudResourceInventorySettingsConfig {
   public static final String SERIALIZED_NAME_CLOUD_PLATFORM = "cloudPlatform";
   @SerializedName(SERIALIZED_NAME_CLOUD_PLATFORM)
