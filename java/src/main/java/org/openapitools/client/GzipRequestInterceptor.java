@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0

@@ -2,7 +2,7 @@
 
 # flake8: noqa
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 

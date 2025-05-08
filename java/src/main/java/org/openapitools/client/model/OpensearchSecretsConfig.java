@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * OpenSearch Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-07T17:12:56.691587317Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-08T15:16:38.728263593Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class OpensearchSecretsConfig {
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)

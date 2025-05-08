@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "monad"
 version = "1.0.0"
-description = "Monad Swagger API"
+description = "Monad API"
 authors = ["API Support <support@swagger.io>"]
 license = "Apache 2.0"
 readme = "README.md"
 repository = "https://github.com/monad-inc/sdk/python"
-keywords = ["OpenAPI", "OpenAPI-Generator", "Monad Swagger API"]
+keywords = ["OpenAPI", "OpenAPI-Generator", "Monad API"]
 include = ["monad/py.typed"]
 
 [tool.poetry.dependencies]

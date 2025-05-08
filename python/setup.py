@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -34,11 +34,11 @@ REQUIRES = [
 setup(
     name=NAME,
     version=VERSION,
-    description="Monad Swagger API",
+    description="Monad API",
     author="API Support",
     author_email="support@swagger.io",
     url="",
-    keywords=["OpenAPI", "OpenAPI-Generator", "Monad Swagger API"],
+    keywords=["OpenAPI", "OpenAPI-Generator", "Monad API"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,

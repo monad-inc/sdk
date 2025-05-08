@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 

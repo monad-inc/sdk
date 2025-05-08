@@ -1,5 +1,5 @@
 /*
-Monad Swagger API
+Monad API
 
 This is the monad API
 
@@ -42,7 +42,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the Monad Swagger API API v1.0
+// APIClient manages communication with the Monad API API v1.0
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
