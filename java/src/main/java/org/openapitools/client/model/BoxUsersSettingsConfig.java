@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Box Users settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-08T21:38:06.977411222Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-08T22:43:09.632146847Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class BoxUsersSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
