@@ -157,6 +157,8 @@ import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
+import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
+import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';

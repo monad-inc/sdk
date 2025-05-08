@@ -25,6 +25,7 @@ type RoutesV2OutputConfigSecrets struct {
 	HttpSecretsConfig *HttpSecretsConfig
 	NextGenSiemSecretsConfig *NextGenSiemSecretsConfig
 	OpensearchSecretsConfig *OpensearchSecretsConfig
+	PostgresqlSecretsConfig *PostgresqlSecretsConfig
 	SentinelSecretsConfig *SentinelSecretsConfig
 	SnowflakeOutputSecretsConfig *SnowflakeOutputSecretsConfig
 	SplunkSecretsConfig *SplunkSecretsConfig
@@ -71,6 +72,13 @@ func NextGenSiemSecretsConfigAsRoutesV2OutputConfigSecrets(v *NextGenSiemSecrets
 func OpensearchSecretsConfigAsRoutesV2OutputConfigSecrets(v *OpensearchSecretsConfig) RoutesV2OutputConfigSecrets {
 	return RoutesV2OutputConfigSecrets{
 		OpensearchSecretsConfig: v,
+	}
+}
+
+// PostgresqlSecretsConfigAsRoutesV2OutputConfigSecrets is a convenience function that returns PostgresqlSecretsConfig wrapped in RoutesV2OutputConfigSecrets
+func PostgresqlSecretsConfigAsRoutesV2OutputConfigSecrets(v *PostgresqlSecretsConfig) RoutesV2OutputConfigSecrets {
+	return RoutesV2OutputConfigSecrets{
+		PostgresqlSecretsConfig: v,
 	}
 }
 
@@ -216,6 +224,23 @@ func (dst *RoutesV2OutputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.OpensearchSecretsConfig = nil
 	}
 
+	// try to unmarshal data into PostgresqlSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.PostgresqlSecretsConfig)
+	if err == nil {
+		jsonPostgresqlSecretsConfig, _ := json.Marshal(dst.PostgresqlSecretsConfig)
+		if string(jsonPostgresqlSecretsConfig) == "{}" { // empty struct
+			dst.PostgresqlSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PostgresqlSecretsConfig); err != nil {
+				dst.PostgresqlSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PostgresqlSecretsConfig = nil
+	}
+
 	// try to unmarshal data into SentinelSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.SentinelSecretsConfig)
 	if err == nil {
@@ -309,6 +334,7 @@ func (dst *RoutesV2OutputConfigSecrets) UnmarshalJSON(data []byte) error {
 		dst.HttpSecretsConfig = nil
 		dst.NextGenSiemSecretsConfig = nil
 		dst.OpensearchSecretsConfig = nil
+		dst.PostgresqlSecretsConfig = nil
 		dst.SentinelSecretsConfig = nil
 		dst.SnowflakeOutputSecretsConfig = nil
 		dst.SplunkSecretsConfig = nil
@@ -347,6 +373,10 @@ func (src RoutesV2OutputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.OpensearchSecretsConfig != nil {
 		return json.Marshal(&src.OpensearchSecretsConfig)
+	}
+
+	if src.PostgresqlSecretsConfig != nil {
+		return json.Marshal(&src.PostgresqlSecretsConfig)
 	}
 
 	if src.SentinelSecretsConfig != nil {
@@ -401,6 +431,10 @@ func (obj *RoutesV2OutputConfigSecrets) GetActualInstance() (interface{}) {
 		return obj.OpensearchSecretsConfig
 	}
 
+	if obj.PostgresqlSecretsConfig != nil {
+		return obj.PostgresqlSecretsConfig
+	}
+
 	if obj.SentinelSecretsConfig != nil {
 		return obj.SentinelSecretsConfig
 	}
@@ -449,6 +483,10 @@ func (obj RoutesV2OutputConfigSecrets) GetActualInstanceValue() (interface{}) {
 
 	if obj.OpensearchSecretsConfig != nil {
 		return *obj.OpensearchSecretsConfig
+	}
+
+	if obj.PostgresqlSecretsConfig != nil {
+		return *obj.PostgresqlSecretsConfig
 	}
 
 	if obj.SentinelSecretsConfig != nil {

@@ -12,6 +12,7 @@
 |**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**password** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**authHeaders** | [**Map&lt;String, ModelsSecret&gt;**](ModelsSecret.md) | Authentication headers |  [optional] |
+|**connectionString** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**tenantId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

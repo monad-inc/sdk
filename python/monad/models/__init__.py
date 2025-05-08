@@ -170,6 +170,8 @@ from monad.models.opensearch_settings_config import OpensearchSettingsConfig
 from monad.models.operation_information import OperationInformation
 from monad.models.outputs_connector_meta import OutputsConnectorMeta
 from monad.models.parquet_parquet_formatter import ParquetParquetFormatter
+from monad.models.postgresql_secrets_config import PostgresqlSecretsConfig
+from monad.models.postgresql_settings_config import PostgresqlSettingsConfig
 from monad.models.rename_key_rename_key import RenameKeyRenameKey
 from monad.models.rename_key_where_value_eq_rename_key_where_value_eq import RenameKeyWhereValueEqRenameKeyWhereValueEq
 from monad.models.responder_error_response import ResponderErrorResponse

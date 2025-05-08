@@ -343,6 +343,8 @@ Class | Method | HTTP request | Description
  - [OperationInformation](docs/OperationInformation.md)
  - [OutputsConnectorMeta](docs/OutputsConnectorMeta.md)
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
+ - [PostgresqlSecretsConfig](docs/PostgresqlSecretsConfig.md)
+ - [PostgresqlSettingsConfig](docs/PostgresqlSettingsConfig.md)
  - [RenameKeyRenameKey](docs/RenameKeyRenameKey.md)
  - [RenameKeyWhereValueEqRenameKeyWhereValueEq](docs/RenameKeyWhereValueEqRenameKeyWhereValueEq.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)

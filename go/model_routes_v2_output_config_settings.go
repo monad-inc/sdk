@@ -25,6 +25,7 @@ type RoutesV2OutputConfigSettings struct {
 	HttpSettingsConfig *HttpSettingsConfig
 	NextGenSiemSettingsConfig *NextGenSiemSettingsConfig
 	OpensearchSettingsConfig *OpensearchSettingsConfig
+	PostgresqlSettingsConfig *PostgresqlSettingsConfig
 	S3SettingsConfig *S3SettingsConfig
 	SentinelSettingsConfig *SentinelSettingsConfig
 	SnowflakeOutputSettingsConfig *SnowflakeOutputSettingsConfig
@@ -72,6 +73,13 @@ func NextGenSiemSettingsConfigAsRoutesV2OutputConfigSettings(v *NextGenSiemSetti
 func OpensearchSettingsConfigAsRoutesV2OutputConfigSettings(v *OpensearchSettingsConfig) RoutesV2OutputConfigSettings {
 	return RoutesV2OutputConfigSettings{
 		OpensearchSettingsConfig: v,
+	}
+}
+
+// PostgresqlSettingsConfigAsRoutesV2OutputConfigSettings is a convenience function that returns PostgresqlSettingsConfig wrapped in RoutesV2OutputConfigSettings
+func PostgresqlSettingsConfigAsRoutesV2OutputConfigSettings(v *PostgresqlSettingsConfig) RoutesV2OutputConfigSettings {
+	return RoutesV2OutputConfigSettings{
+		PostgresqlSettingsConfig: v,
 	}
 }
 
@@ -224,6 +232,23 @@ func (dst *RoutesV2OutputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.OpensearchSettingsConfig = nil
 	}
 
+	// try to unmarshal data into PostgresqlSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.PostgresqlSettingsConfig)
+	if err == nil {
+		jsonPostgresqlSettingsConfig, _ := json.Marshal(dst.PostgresqlSettingsConfig)
+		if string(jsonPostgresqlSettingsConfig) == "{}" { // empty struct
+			dst.PostgresqlSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PostgresqlSettingsConfig); err != nil {
+				dst.PostgresqlSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PostgresqlSettingsConfig = nil
+	}
+
 	// try to unmarshal data into S3SettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.S3SettingsConfig)
 	if err == nil {
@@ -334,6 +359,7 @@ func (dst *RoutesV2OutputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.HttpSettingsConfig = nil
 		dst.NextGenSiemSettingsConfig = nil
 		dst.OpensearchSettingsConfig = nil
+		dst.PostgresqlSettingsConfig = nil
 		dst.S3SettingsConfig = nil
 		dst.SentinelSettingsConfig = nil
 		dst.SnowflakeOutputSettingsConfig = nil
@@ -373,6 +399,10 @@ func (src RoutesV2OutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.OpensearchSettingsConfig != nil {
 		return json.Marshal(&src.OpensearchSettingsConfig)
+	}
+
+	if src.PostgresqlSettingsConfig != nil {
+		return json.Marshal(&src.PostgresqlSettingsConfig)
 	}
 
 	if src.S3SettingsConfig != nil {
@@ -431,6 +461,10 @@ func (obj *RoutesV2OutputConfigSettings) GetActualInstance() (interface{}) {
 		return obj.OpensearchSettingsConfig
 	}
 
+	if obj.PostgresqlSettingsConfig != nil {
+		return obj.PostgresqlSettingsConfig
+	}
+
 	if obj.S3SettingsConfig != nil {
 		return obj.S3SettingsConfig
 	}
@@ -483,6 +517,10 @@ func (obj RoutesV2OutputConfigSettings) GetActualInstanceValue() (interface{}) {
 
 	if obj.OpensearchSettingsConfig != nil {
 		return *obj.OpensearchSettingsConfig
+	}
+
+	if obj.PostgresqlSettingsConfig != nil {
+		return *obj.PostgresqlSettingsConfig
 	}
 
 	if obj.S3SettingsConfig != nil {

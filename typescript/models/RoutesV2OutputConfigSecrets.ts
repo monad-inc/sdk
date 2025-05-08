@@ -16,6 +16,7 @@ import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { NextGenSiemSecretsConfig } from '../models/NextGenSiemSecretsConfig';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
+import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
 import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
@@ -27,7 +28,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesV2OutputConfigSecrets = BigquerySecretsConfig | CriblHttpSecretsConfig | ElasticsearchSecretsConfig | HttpSecretsConfig | NextGenSiemSecretsConfig | OpensearchSecretsConfig | SentinelSecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | any | { [key: string]: any; };
+export type RoutesV2OutputConfigSecrets = BigquerySecretsConfig | CriblHttpSecretsConfig | ElasticsearchSecretsConfig | HttpSecretsConfig | NextGenSiemSecretsConfig | OpensearchSecretsConfig | PostgresqlSecretsConfig | SentinelSecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | any | { [key: string]: any; };
 
 /**
 * @type RoutesV2OutputConfigSecretsClass
@@ -38,6 +39,7 @@ export class RoutesV2OutputConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

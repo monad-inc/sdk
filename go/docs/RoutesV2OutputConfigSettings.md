@@ -29,6 +29,10 @@ Name | Type | Description | Notes
 **AuthMode** | Pointer to **string** | The authentication mode (basic, aws_role) | [optional] 
 **Region** | Pointer to **string** | The AWS region where the S3 bucket is located | [optional] 
 **RoleArn** | Pointer to **string** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
+**ColumnNames** | Pointer to **[]string** | The column names to write data to, must match the root fields of the data If not provided all root fields will be used | [optional] 
+**Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
+**Host** | Pointer to **string** | The host of the PostgreSQL database | [optional] 
+**User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
 **BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
 **Bucket** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
 **Compression** | Pointer to **string** | The compression method to be applied to the data before storing in S3 | [optional] 
@@ -38,11 +42,9 @@ Name | Type | Description | Notes
 **RuleId** | Pointer to **string** | The unique identifier of the Data Collection Rule (DCR). | [optional] 
 **StreamName** | Pointer to **string** | The name of the data stream defined in the Data Collection Rule. | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
-**Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
 **Stage** | Pointer to **string** | The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage. | [optional] 
-**User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
 **Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
 **AllowInsecure** | Pointer to **bool** | Whether to allow insecure connections (not recommended for production). | [optional] 
 **ToCreate** | Pointer to **bool** | Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
@@ -691,6 +693,106 @@ SetRoleArn sets RoleArn field to given value.
 
 HasRoleArn returns a boolean if a field has been set.
 
+### GetColumnNames
+
+`func (o *RoutesV2OutputConfigSettings) GetColumnNames() []string`
+
+GetColumnNames returns the ColumnNames field if non-nil, zero value otherwise.
+
+### GetColumnNamesOk
+
+`func (o *RoutesV2OutputConfigSettings) GetColumnNamesOk() (*[]string, bool)`
+
+GetColumnNamesOk returns a tuple with the ColumnNames field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetColumnNames
+
+`func (o *RoutesV2OutputConfigSettings) SetColumnNames(v []string)`
+
+SetColumnNames sets ColumnNames field to given value.
+
+### HasColumnNames
+
+`func (o *RoutesV2OutputConfigSettings) HasColumnNames() bool`
+
+HasColumnNames returns a boolean if a field has been set.
+
+### GetDatabase
+
+`func (o *RoutesV2OutputConfigSettings) GetDatabase() string`
+
+GetDatabase returns the Database field if non-nil, zero value otherwise.
+
+### GetDatabaseOk
+
+`func (o *RoutesV2OutputConfigSettings) GetDatabaseOk() (*string, bool)`
+
+GetDatabaseOk returns a tuple with the Database field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDatabase
+
+`func (o *RoutesV2OutputConfigSettings) SetDatabase(v string)`
+
+SetDatabase sets Database field to given value.
+
+### HasDatabase
+
+`func (o *RoutesV2OutputConfigSettings) HasDatabase() bool`
+
+HasDatabase returns a boolean if a field has been set.
+
+### GetHost
+
+`func (o *RoutesV2OutputConfigSettings) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *RoutesV2OutputConfigSettings) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHost
+
+`func (o *RoutesV2OutputConfigSettings) SetHost(v string)`
+
+SetHost sets Host field to given value.
+
+### HasHost
+
+`func (o *RoutesV2OutputConfigSettings) HasHost() bool`
+
+HasHost returns a boolean if a field has been set.
+
+### GetUser
+
+`func (o *RoutesV2OutputConfigSettings) GetUser() string`
+
+GetUser returns the User field if non-nil, zero value otherwise.
+
+### GetUserOk
+
+`func (o *RoutesV2OutputConfigSettings) GetUserOk() (*string, bool)`
+
+GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUser
+
+`func (o *RoutesV2OutputConfigSettings) SetUser(v string)`
+
+SetUser sets User field to given value.
+
+### HasUser
+
+`func (o *RoutesV2OutputConfigSettings) HasUser() bool`
+
+HasUser returns a boolean if a field has been set.
+
 ### GetBatchConfig
 
 `func (o *RoutesV2OutputConfigSettings) GetBatchConfig() BatchConfigBatchConfig`
@@ -916,31 +1018,6 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
-### GetDatabase
-
-`func (o *RoutesV2OutputConfigSettings) GetDatabase() string`
-
-GetDatabase returns the Database field if non-nil, zero value otherwise.
-
-### GetDatabaseOk
-
-`func (o *RoutesV2OutputConfigSettings) GetDatabaseOk() (*string, bool)`
-
-GetDatabaseOk returns a tuple with the Database field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDatabase
-
-`func (o *RoutesV2OutputConfigSettings) SetDatabase(v string)`
-
-SetDatabase sets Database field to given value.
-
-### HasDatabase
-
-`func (o *RoutesV2OutputConfigSettings) HasDatabase() bool`
-
-HasDatabase returns a boolean if a field has been set.
-
 ### GetRole
 
 `func (o *RoutesV2OutputConfigSettings) GetRole() string`
@@ -1015,31 +1092,6 @@ SetStage sets Stage field to given value.
 `func (o *RoutesV2OutputConfigSettings) HasStage() bool`
 
 HasStage returns a boolean if a field has been set.
-
-### GetUser
-
-`func (o *RoutesV2OutputConfigSettings) GetUser() string`
-
-GetUser returns the User field if non-nil, zero value otherwise.
-
-### GetUserOk
-
-`func (o *RoutesV2OutputConfigSettings) GetUserOk() (*string, bool)`
-
-GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUser
-
-`func (o *RoutesV2OutputConfigSettings) SetUser(v string)`
-
-SetUser sets User field to given value.
-
-### HasUser
-
-`func (o *RoutesV2OutputConfigSettings) HasUser() bool`
-
-HasUser returns a boolean if a field has been set.
 
 ### GetWarehouse
 

@@ -153,6 +153,8 @@ export * from '../models/OpensearchSettingsConfig';
 export * from '../models/OperationInformation';
 export * from '../models/OutputsConnectorMeta';
 export * from '../models/ParquetParquetFormatter';
+export * from '../models/PostgresqlSecretsConfig';
+export * from '../models/PostgresqlSettingsConfig';
 export * from '../models/RenameKeyRenameKey';
 export * from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 export * from '../models/ResponderErrorResponse';
@@ -417,6 +419,8 @@ import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
+import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
+import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
@@ -706,6 +710,8 @@ let typeMap: {[index: string]: any} = {
     "OperationInformation": OperationInformation,
     "OutputsConnectorMeta": OutputsConnectorMeta,
     "ParquetParquetFormatter": ParquetParquetFormatter,
+    "PostgresqlSecretsConfig": PostgresqlSecretsConfig,
+    "PostgresqlSettingsConfig": PostgresqlSettingsConfig,
     "RenameKeyRenameKey": RenameKeyRenameKey,
     "RenameKeyWhereValueEqRenameKeyWhereValueEq": RenameKeyWhereValueEqRenameKeyWhereValueEq,
     "ResponderErrorResponse": ResponderErrorResponse,

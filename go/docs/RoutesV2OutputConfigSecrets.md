@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AuthHeaders** | Pointer to [**map[string]ModelsSecret**](ModelsSecret.md) | Authentication headers | [optional] 
+**ConnectionString** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **TenantId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -160,6 +161,31 @@ SetAuthHeaders sets AuthHeaders field to given value.
 `func (o *RoutesV2OutputConfigSecrets) HasAuthHeaders() bool`
 
 HasAuthHeaders returns a boolean if a field has been set.
+
+### GetConnectionString
+
+`func (o *RoutesV2OutputConfigSecrets) GetConnectionString() ModelsSecret`
+
+GetConnectionString returns the ConnectionString field if non-nil, zero value otherwise.
+
+### GetConnectionStringOk
+
+`func (o *RoutesV2OutputConfigSecrets) GetConnectionStringOk() (*ModelsSecret, bool)`
+
+GetConnectionStringOk returns a tuple with the ConnectionString field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionString
+
+`func (o *RoutesV2OutputConfigSecrets) SetConnectionString(v ModelsSecret)`
+
+SetConnectionString sets ConnectionString field to given value.
+
+### HasConnectionString
+
+`func (o *RoutesV2OutputConfigSecrets) HasConnectionString() bool`
+
+HasConnectionString returns a boolean if a field has been set.
 
 ### GetClientId
 

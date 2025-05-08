@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-05-08T16:49:06.640295292Z[Etc/UTC]
+  - Build date: 2025-05-08T19:29:56.500529018Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -379,6 +379,8 @@ Class | Method | HTTP request | Description
  - [OperationInformation](docs/OperationInformation.md)
  - [OutputsConnectorMeta](docs/OutputsConnectorMeta.md)
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
+ - [PostgresqlSecretsConfig](docs/PostgresqlSecretsConfig.md)
+ - [PostgresqlSettingsConfig](docs/PostgresqlSettingsConfig.md)
  - [RenameKeyRenameKey](docs/RenameKeyRenameKey.md)
  - [RenameKeyWhereValueEqRenameKeyWhereValueEq](docs/RenameKeyWhereValueEqRenameKeyWhereValueEq.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)

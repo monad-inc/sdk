@@ -32,6 +32,10 @@
 |**authMode** | **String** | The authentication mode (basic, aws_role) |  [optional] |
 |**region** | **String** | The AWS region where the S3 bucket is located |  [optional] |
 |**roleArn** | **String** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket |  [optional] |
+|**columnNames** | **List&lt;String&gt;** | The column names to write data to, must match the root fields of the data If not provided all root fields will be used |  [optional] |
+|**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
+|**host** | **String** | The host of the PostgreSQL database |  [optional] |
+|**user** | **String** | The username of the Snowflake account used to establish the connection. |  [optional] |
 |**batchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  |  [optional] |
 |**bucket** | **String** | The name of the S3 bucket where data will be stored |  [optional] |
 |**compression** | **String** | The compression method to be applied to the data before storing in S3 |  [optional] |
@@ -41,11 +45,9 @@
 |**ruleId** | **String** | The unique identifier of the Data Collection Rule (DCR). |  [optional] |
 |**streamName** | **String** | The name of the data stream defined in the Data Collection Rule. |  [optional] |
 |**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  [optional] |
-|**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
 |**role** | **String** | The name of the Role your service account was granted which can access your resources. |  [optional] |
 |**schema** | **String** | The schema within the Snowflake database where the target table resides. |  [optional] |
 |**stage** | **String** | The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage. |  [optional] |
-|**user** | **String** | The username of the Snowflake account used to establish the connection. |  [optional] |
 |**warehouse** | **String** | The Snowflake virtual warehouse to use for executing queries and processing data. |  [optional] |
 |**allowInsecure** | **Boolean** | Whether to allow insecure connections (not recommended for production). |  [optional] |
 |**toCreate** | **Boolean** | Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. |  [optional] |

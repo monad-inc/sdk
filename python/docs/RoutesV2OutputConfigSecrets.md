@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **auth_headers** | [**Dict[str, ModelsSecret]**](ModelsSecret.md) | Authentication headers | [optional] 
+**connection_string** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **tenant_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
