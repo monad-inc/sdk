@@ -1,5 +1,6 @@
 # ParquetParquetFormatter
 
+Configuration for formatting data in Apache Parquet format
 
 ## Properties
 

@@ -42,6 +42,11 @@
 |**formatConfig** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  |  [optional] |
 |**partitionFormat** | **String** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). |  [optional] |
 |**prefix** | **String** | An optional prefix for S3 object keys to organize data within the bucket |  [optional] |
+|**bucketName** | **String** | Bucket Name |  [optional] |
+|**bucketUrl** | **String** | The name of the S3 bucket where data will be stored |  [optional] |
+|**key** | **String** | S3 Key |  [optional] |
+|**parquetFormat** | [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  |  [optional] |
+|**sourceAccountDetails** | [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  |  [optional] |
 |**ruleId** | **String** | The unique identifier of the Data Collection Rule (DCR). |  [optional] |
 |**streamName** | **String** | The name of the data stream defined in the Data Collection Rule. |  [optional] |
 |**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  [optional] |

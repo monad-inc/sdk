@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class ParquetParquetFormatter(BaseModel):
     """
-    ParquetParquetFormatter
+    Configuration for formatting data in Apache Parquet format
     """ # noqa: E501
     var_schema: StrictStr = Field(alias="schema")
     __properties: ClassVar[List[str]] = ["schema"]

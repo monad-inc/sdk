@@ -18,6 +18,7 @@ import { NextGenSiemSettingsConfig } from '../models/NextGenSiemSettingsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
+import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
 import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
@@ -29,7 +30,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesV2OutputConfigSettings = BigquerySettingsConfig | CriblHttpSettingsConfig | ElasticsearchSettingsConfig | HttpSettingsConfig | NextGenSiemSettingsConfig | OpensearchSettingsConfig | PostgresqlSettingsConfig | S3SettingsConfig | SentinelSettingsConfig | SnowflakeOutputSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | { [key: string]: any; };
+export type RoutesV2OutputConfigSettings = BigquerySettingsConfig | CriblHttpSettingsConfig | ElasticsearchSettingsConfig | HttpSettingsConfig | NextGenSiemSettingsConfig | OpensearchSettingsConfig | PostgresqlSettingsConfig | S3SettingsConfig | SecurityLakeSettingsConfig | SentinelSettingsConfig | SnowflakeOutputSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | { [key: string]: any; };
 
 /**
 * @type RoutesV2OutputConfigSettingsClass
@@ -40,6 +41,7 @@ export class RoutesV2OutputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

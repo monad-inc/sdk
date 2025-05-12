@@ -12,6 +12,9 @@
 
 import { HttpFile } from '../http/http';
 
+/**
+* Configuration for formatting data in Apache Parquet format
+*/
 export class ParquetParquetFormatter {
     'schema': string;
 

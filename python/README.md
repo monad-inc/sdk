@@ -415,6 +415,8 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdatePipelineRequest](docs/RoutesV2UpdatePipelineRequest.md)
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [S3SettingsConfig](docs/S3SettingsConfig.md)
+ - [SecurityLakeSettingsConfig](docs/SecurityLakeSettingsConfig.md)
+ - [SecurityLakeSourceAccountDetails](docs/SecurityLakeSourceAccountDetails.md)
  - [SemgrepCodeFindingsSecretsConfig](docs/SemgrepCodeFindingsSecretsConfig.md)
  - [SemgrepDeploymentsSecretsConfig](docs/SemgrepDeploymentsSecretsConfig.md)
  - [SemgrepDeploymentsSettingsConfig](docs/SemgrepDeploymentsSettingsConfig.md)

@@ -27,6 +27,7 @@ type RoutesV2OutputConfigSettings struct {
 	OpensearchSettingsConfig *OpensearchSettingsConfig
 	PostgresqlSettingsConfig *PostgresqlSettingsConfig
 	S3SettingsConfig *S3SettingsConfig
+	SecurityLakeSettingsConfig *SecurityLakeSettingsConfig
 	SentinelSettingsConfig *SentinelSettingsConfig
 	SnowflakeOutputSettingsConfig *SnowflakeOutputSettingsConfig
 	SplunkSettingsConfig *SplunkSettingsConfig
@@ -87,6 +88,13 @@ func PostgresqlSettingsConfigAsRoutesV2OutputConfigSettings(v *PostgresqlSetting
 func S3SettingsConfigAsRoutesV2OutputConfigSettings(v *S3SettingsConfig) RoutesV2OutputConfigSettings {
 	return RoutesV2OutputConfigSettings{
 		S3SettingsConfig: v,
+	}
+}
+
+// SecurityLakeSettingsConfigAsRoutesV2OutputConfigSettings is a convenience function that returns SecurityLakeSettingsConfig wrapped in RoutesV2OutputConfigSettings
+func SecurityLakeSettingsConfigAsRoutesV2OutputConfigSettings(v *SecurityLakeSettingsConfig) RoutesV2OutputConfigSettings {
+	return RoutesV2OutputConfigSettings{
+		SecurityLakeSettingsConfig: v,
 	}
 }
 
@@ -266,6 +274,23 @@ func (dst *RoutesV2OutputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.S3SettingsConfig = nil
 	}
 
+	// try to unmarshal data into SecurityLakeSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SecurityLakeSettingsConfig)
+	if err == nil {
+		jsonSecurityLakeSettingsConfig, _ := json.Marshal(dst.SecurityLakeSettingsConfig)
+		if string(jsonSecurityLakeSettingsConfig) == "{}" { // empty struct
+			dst.SecurityLakeSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SecurityLakeSettingsConfig); err != nil {
+				dst.SecurityLakeSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SecurityLakeSettingsConfig = nil
+	}
+
 	// try to unmarshal data into SentinelSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.SentinelSettingsConfig)
 	if err == nil {
@@ -361,6 +386,7 @@ func (dst *RoutesV2OutputConfigSettings) UnmarshalJSON(data []byte) error {
 		dst.OpensearchSettingsConfig = nil
 		dst.PostgresqlSettingsConfig = nil
 		dst.S3SettingsConfig = nil
+		dst.SecurityLakeSettingsConfig = nil
 		dst.SentinelSettingsConfig = nil
 		dst.SnowflakeOutputSettingsConfig = nil
 		dst.SplunkSettingsConfig = nil
@@ -407,6 +433,10 @@ func (src RoutesV2OutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.S3SettingsConfig != nil {
 		return json.Marshal(&src.S3SettingsConfig)
+	}
+
+	if src.SecurityLakeSettingsConfig != nil {
+		return json.Marshal(&src.SecurityLakeSettingsConfig)
 	}
 
 	if src.SentinelSettingsConfig != nil {
@@ -469,6 +499,10 @@ func (obj *RoutesV2OutputConfigSettings) GetActualInstance() (interface{}) {
 		return obj.S3SettingsConfig
 	}
 
+	if obj.SecurityLakeSettingsConfig != nil {
+		return obj.SecurityLakeSettingsConfig
+	}
+
 	if obj.SentinelSettingsConfig != nil {
 		return obj.SentinelSettingsConfig
 	}
@@ -525,6 +559,10 @@ func (obj RoutesV2OutputConfigSettings) GetActualInstanceValue() (interface{}) {
 
 	if obj.S3SettingsConfig != nil {
 		return *obj.S3SettingsConfig
+	}
+
+	if obj.SecurityLakeSettingsConfig != nil {
+		return *obj.SecurityLakeSettingsConfig
 	}
 
 	if obj.SentinelSettingsConfig != nil {

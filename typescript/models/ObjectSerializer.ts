@@ -219,6 +219,8 @@ export * from '../models/RoutesV2UpdateOutputRequest';
 export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/RoutesV2UpdateRoleV2Request';
 export * from '../models/S3SettingsConfig';
+export * from '../models/SecurityLakeSettingsConfig';
+export * from '../models/SecurityLakeSourceAccountDetails';
 export * from '../models/SemgrepCodeFindingsSecretsConfig';
 export * from '../models/SemgrepDeploymentsSecretsConfig';
 export * from '../models/SemgrepDeploymentsSettingsConfig';
@@ -485,6 +487,8 @@ import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputReque
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
+import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
+import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
 import { SemgrepDeploymentsSecretsConfig } from '../models/SemgrepDeploymentsSecretsConfig';
 import { SemgrepDeploymentsSettingsConfig } from '../models/SemgrepDeploymentsSettingsConfig';
@@ -776,6 +780,8 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdatePipelineRequest": RoutesV2UpdatePipelineRequest,
     "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
     "S3SettingsConfig": S3SettingsConfig,
+    "SecurityLakeSettingsConfig": SecurityLakeSettingsConfig,
+    "SecurityLakeSourceAccountDetails": SecurityLakeSourceAccountDetails,
     "SemgrepCodeFindingsSecretsConfig": SemgrepCodeFindingsSecretsConfig,
     "SemgrepDeploymentsSecretsConfig": SemgrepDeploymentsSecretsConfig,
     "SemgrepDeploymentsSettingsConfig": SemgrepDeploymentsSettingsConfig,

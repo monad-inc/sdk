@@ -39,6 +39,11 @@ Name | Type | Description | Notes
 **FormatConfig** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
 **PartitionFormat** | Pointer to **string** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). | [optional] 
 **Prefix** | Pointer to **string** | An optional prefix for S3 object keys to organize data within the bucket | [optional] 
+**BucketName** | Pointer to **string** | Bucket Name | [optional] 
+**BucketUrl** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
+**Key** | Pointer to **string** | S3 Key | [optional] 
+**ParquetFormat** | Pointer to [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  | [optional] 
+**SourceAccountDetails** | Pointer to [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  | [optional] 
 **RuleId** | Pointer to **string** | The unique identifier of the Data Collection Rule (DCR). | [optional] 
 **StreamName** | Pointer to **string** | The name of the data stream defined in the Data Collection Rule. | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
@@ -942,6 +947,131 @@ SetPrefix sets Prefix field to given value.
 `func (o *RoutesV2OutputConfigSettings) HasPrefix() bool`
 
 HasPrefix returns a boolean if a field has been set.
+
+### GetBucketName
+
+`func (o *RoutesV2OutputConfigSettings) GetBucketName() string`
+
+GetBucketName returns the BucketName field if non-nil, zero value otherwise.
+
+### GetBucketNameOk
+
+`func (o *RoutesV2OutputConfigSettings) GetBucketNameOk() (*string, bool)`
+
+GetBucketNameOk returns a tuple with the BucketName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBucketName
+
+`func (o *RoutesV2OutputConfigSettings) SetBucketName(v string)`
+
+SetBucketName sets BucketName field to given value.
+
+### HasBucketName
+
+`func (o *RoutesV2OutputConfigSettings) HasBucketName() bool`
+
+HasBucketName returns a boolean if a field has been set.
+
+### GetBucketUrl
+
+`func (o *RoutesV2OutputConfigSettings) GetBucketUrl() string`
+
+GetBucketUrl returns the BucketUrl field if non-nil, zero value otherwise.
+
+### GetBucketUrlOk
+
+`func (o *RoutesV2OutputConfigSettings) GetBucketUrlOk() (*string, bool)`
+
+GetBucketUrlOk returns a tuple with the BucketUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBucketUrl
+
+`func (o *RoutesV2OutputConfigSettings) SetBucketUrl(v string)`
+
+SetBucketUrl sets BucketUrl field to given value.
+
+### HasBucketUrl
+
+`func (o *RoutesV2OutputConfigSettings) HasBucketUrl() bool`
+
+HasBucketUrl returns a boolean if a field has been set.
+
+### GetKey
+
+`func (o *RoutesV2OutputConfigSettings) GetKey() string`
+
+GetKey returns the Key field if non-nil, zero value otherwise.
+
+### GetKeyOk
+
+`func (o *RoutesV2OutputConfigSettings) GetKeyOk() (*string, bool)`
+
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKey
+
+`func (o *RoutesV2OutputConfigSettings) SetKey(v string)`
+
+SetKey sets Key field to given value.
+
+### HasKey
+
+`func (o *RoutesV2OutputConfigSettings) HasKey() bool`
+
+HasKey returns a boolean if a field has been set.
+
+### GetParquetFormat
+
+`func (o *RoutesV2OutputConfigSettings) GetParquetFormat() ParquetParquetFormatter`
+
+GetParquetFormat returns the ParquetFormat field if non-nil, zero value otherwise.
+
+### GetParquetFormatOk
+
+`func (o *RoutesV2OutputConfigSettings) GetParquetFormatOk() (*ParquetParquetFormatter, bool)`
+
+GetParquetFormatOk returns a tuple with the ParquetFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParquetFormat
+
+`func (o *RoutesV2OutputConfigSettings) SetParquetFormat(v ParquetParquetFormatter)`
+
+SetParquetFormat sets ParquetFormat field to given value.
+
+### HasParquetFormat
+
+`func (o *RoutesV2OutputConfigSettings) HasParquetFormat() bool`
+
+HasParquetFormat returns a boolean if a field has been set.
+
+### GetSourceAccountDetails
+
+`func (o *RoutesV2OutputConfigSettings) GetSourceAccountDetails() SecurityLakeSourceAccountDetails`
+
+GetSourceAccountDetails returns the SourceAccountDetails field if non-nil, zero value otherwise.
+
+### GetSourceAccountDetailsOk
+
+`func (o *RoutesV2OutputConfigSettings) GetSourceAccountDetailsOk() (*SecurityLakeSourceAccountDetails, bool)`
+
+GetSourceAccountDetailsOk returns a tuple with the SourceAccountDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceAccountDetails
+
+`func (o *RoutesV2OutputConfigSettings) SetSourceAccountDetails(v SecurityLakeSourceAccountDetails)`
+
+SetSourceAccountDetails sets SourceAccountDetails field to given value.
+
+### HasSourceAccountDetails
+
+`func (o *RoutesV2OutputConfigSettings) HasSourceAccountDetails() bool`
+
+HasSourceAccountDetails returns a boolean if a field has been set.
 
 ### GetRuleId
 

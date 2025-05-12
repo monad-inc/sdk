@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-05-09T21:11:57.002956382Z[Etc/UTC]
+  - Build date: 2025-05-12T14:07:05.133402179Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -445,6 +445,8 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdatePipelineRequest](docs/RoutesV2UpdatePipelineRequest.md)
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [S3SettingsConfig](docs/S3SettingsConfig.md)
+ - [SecurityLakeSettingsConfig](docs/SecurityLakeSettingsConfig.md)
+ - [SecurityLakeSourceAccountDetails](docs/SecurityLakeSourceAccountDetails.md)
  - [SemgrepCodeFindingsSecretsConfig](docs/SemgrepCodeFindingsSecretsConfig.md)
  - [SemgrepDeploymentsSecretsConfig](docs/SemgrepDeploymentsSecretsConfig.md)
  - [SemgrepDeploymentsSettingsConfig](docs/SemgrepDeploymentsSettingsConfig.md)

@@ -57,14 +57,16 @@ class RoutesV2OutputConfigSecrets(BaseModel):
     oneof_schema_8_validator: Optional[PostgresqlSecretsConfig] = None
     # data type: object
     oneof_schema_9_validator: Optional[Dict[str, Any]] = Field(default=None, description="S3 Output Secrets")
+    # data type: object
+    oneof_schema_10_validator: Optional[Dict[str, Any]] = Field(default=None, description="Security Lake Output Secrets")
     # data type: SentinelSecretsConfig
-    oneof_schema_10_validator: Optional[SentinelSecretsConfig] = None
+    oneof_schema_11_validator: Optional[SentinelSecretsConfig] = None
     # data type: SnowflakeOutputSecretsConfig
-    oneof_schema_11_validator: Optional[SnowflakeOutputSecretsConfig] = None
+    oneof_schema_12_validator: Optional[SnowflakeOutputSecretsConfig] = None
     # data type: SplunkSecretsConfig
-    oneof_schema_12_validator: Optional[SplunkSecretsConfig] = None
+    oneof_schema_13_validator: Optional[SplunkSecretsConfig] = None
     # data type: SumologicSecretsConfig
-    oneof_schema_13_validator: Optional[SumologicSecretsConfig] = None
+    oneof_schema_14_validator: Optional[SumologicSecretsConfig] = None
     actual_instance: Optional[Union[BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, OpensearchSecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]] = None
     one_of_schemas: Set[str] = { "BigquerySecretsConfig", "CriblHttpSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "HttpSecretsConfig", "NextGenSiemSecretsConfig", "OpensearchSecretsConfig", "PostgresqlSecretsConfig", "SentinelSecretsConfig", "SnowflakeOutputSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object" }
 
@@ -133,6 +135,12 @@ class RoutesV2OutputConfigSecrets(BaseModel):
         # validate data type: object
         try:
             instance.oneof_schema_9_validator = v
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # validate data type: object
+        try:
+            instance.oneof_schema_10_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -233,6 +241,15 @@ class RoutesV2OutputConfigSecrets(BaseModel):
             instance.oneof_schema_9_validator = json.loads(json_str)
             # assign value to actual_instance
             instance.actual_instance = instance.oneof_schema_9_validator
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into object
+        try:
+            # validation
+            instance.oneof_schema_10_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_10_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))

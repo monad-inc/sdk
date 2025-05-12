@@ -20,7 +20,7 @@ import (
 // checks if the ParquetParquetFormatter type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ParquetParquetFormatter{}
 
-// ParquetParquetFormatter struct for ParquetParquetFormatter
+// ParquetParquetFormatter Configuration for formatting data in Apache Parquet format
 type ParquetParquetFormatter struct {
 	Schema string `json:"schema"`
 }
