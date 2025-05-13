@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-05-13T18:13:47.630781052Z[Etc/UTC]
+  - Build date: 2025-05-13T21:17:58.839841790Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -138,6 +138,8 @@ Class | Method | HTTP request | Description
 *BillingProductsApi* | [**v2BillingProductsGet**](docs/BillingProductsApi.md#v2BillingProductsGet) | **GET** /v2/billing/products | List Billing Products
 *ConditionsApi* | [**v2ConditionsGet**](docs/ConditionsApi.md#v2ConditionsGet) | **GET** /v2/conditions | List conditions
 *DataApi* | [**v1OrganizationIdDataNodeIdGet**](docs/DataApi.md#v1OrganizationIdDataNodeIdGet) | **GET** /v1/{organization_id}/data/{node_id} | Stream node data
+*EnrichmentsApi* | [**v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet**](docs/EnrichmentsApi.md#v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet) | **GET** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta
+*EnrichmentsApi* | [**v3OrganizationIdEnrichmentsMetaGet**](docs/EnrichmentsApi.md#v3OrganizationIdEnrichmentsMetaGet) | **GET** /v3/{organization_id}/enrichments_meta | List enrichments
 *InputsApi* | [**v1InputsGet**](docs/InputsApi.md#v1InputsGet) | **GET** /v1/inputs | List inputs
 *InputsApi* | [**v1InputsInputTypeIdGet**](docs/InputsApi.md#v1InputsInputTypeIdGet) | **GET** /v1/inputs/{input_type_id} | Get input config meta
 *LogsApi* | [**v1OrganizationIdLogsApiGet**](docs/LogsApi.md#v1OrganizationIdLogsApiGet) | **GET** /v1/{organization_id}/logs/api | Stream organization api logs
@@ -287,6 +289,7 @@ Class | Method | HTTP request | Description
  - [DuplicateKeyValueToKeyDuplicateKeyValueToKey](docs/DuplicateKeyValueToKeyDuplicateKeyValueToKey.md)
  - [ElasticsearchSecretsConfig](docs/ElasticsearchSecretsConfig.md)
  - [ElasticsearchSettingsConfig](docs/ElasticsearchSettingsConfig.md)
+ - [EnrichmentConnectorMeta](docs/EnrichmentConnectorMeta.md)
  - [EntraIdSecretsConfig](docs/EntraIdSecretsConfig.md)
  - [EntraIdSettingsConfig](docs/EntraIdSettingsConfig.md)
  - [EventSecretsConfig](docs/EventSecretsConfig.md)
@@ -418,16 +421,10 @@ Class | Method | HTTP request | Description
  - [RoutesV2GenerateRecordRequest](docs/RoutesV2GenerateRecordRequest.md)
  - [RoutesV2GenerateRecordResponse](docs/RoutesV2GenerateRecordResponse.md)
  - [RoutesV2GetOrganizationSummaryResponse](docs/RoutesV2GetOrganizationSummaryResponse.md)
- - [RoutesV2InputConfig](docs/RoutesV2InputConfig.md)
- - [RoutesV2InputConfigSecrets](docs/RoutesV2InputConfigSecrets.md)
- - [RoutesV2InputConfigSettings](docs/RoutesV2InputConfigSettings.md)
  - [RoutesV2ListTemplatesResponse](docs/RoutesV2ListTemplatesResponse.md)
  - [RoutesV2MetricsResponse](docs/RoutesV2MetricsResponse.md)
  - [RoutesV2MetricsValue](docs/RoutesV2MetricsValue.md)
  - [RoutesV2OrganizationOverview](docs/RoutesV2OrganizationOverview.md)
- - [RoutesV2OutputConfig](docs/RoutesV2OutputConfig.md)
- - [RoutesV2OutputConfigSecrets](docs/RoutesV2OutputConfigSecrets.md)
- - [RoutesV2OutputConfigSettings](docs/RoutesV2OutputConfigSettings.md)
  - [RoutesV2PipelineMetric](docs/RoutesV2PipelineMetric.md)
  - [RoutesV2PipelineRequestEdge](docs/RoutesV2PipelineRequestEdge.md)
  - [RoutesV2PipelineRequestNode](docs/RoutesV2PipelineRequestNode.md)
@@ -445,6 +442,12 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdatePipelineRequest](docs/RoutesV2UpdatePipelineRequest.md)
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [S3SettingsConfig](docs/S3SettingsConfig.md)
+ - [SecretProcessesorInputConfig](docs/SecretProcessesorInputConfig.md)
+ - [SecretProcessesorInputConfigSecrets](docs/SecretProcessesorInputConfigSecrets.md)
+ - [SecretProcessesorInputConfigSettings](docs/SecretProcessesorInputConfigSettings.md)
+ - [SecretProcessesorOutputConfig](docs/SecretProcessesorOutputConfig.md)
+ - [SecretProcessesorOutputConfigSecrets](docs/SecretProcessesorOutputConfigSecrets.md)
+ - [SecretProcessesorOutputConfigSettings](docs/SecretProcessesorOutputConfigSettings.md)
  - [SecurityLakeSettingsConfig](docs/SecurityLakeSettingsConfig.md)
  - [SecurityLakeSourceAccountDetails](docs/SecurityLakeSourceAccountDetails.md)
  - [SemgrepCodeFindingsSecretsConfig](docs/SemgrepCodeFindingsSecretsConfig.md)

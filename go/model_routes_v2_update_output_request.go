@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesV2UpdateOutputRequest{}
 
 // RoutesV2UpdateOutputRequest struct for RoutesV2UpdateOutputRequest
 type RoutesV2UpdateOutputRequest struct {
-	Config *RoutesV2OutputConfig `json:"config,omitempty"`
+	Config *SecretProcessesorOutputConfig `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OutputType *string `json:"output_type,omitempty"`
@@ -44,9 +44,9 @@ func NewRoutesV2UpdateOutputRequestWithDefaults() *RoutesV2UpdateOutputRequest {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *RoutesV2UpdateOutputRequest) GetConfig() RoutesV2OutputConfig {
+func (o *RoutesV2UpdateOutputRequest) GetConfig() SecretProcessesorOutputConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret RoutesV2OutputConfig
+		var ret SecretProcessesorOutputConfig
 		return ret
 	}
 	return *o.Config
@@ -54,7 +54,7 @@ func (o *RoutesV2UpdateOutputRequest) GetConfig() RoutesV2OutputConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV2UpdateOutputRequest) GetConfigOk() (*RoutesV2OutputConfig, bool) {
+func (o *RoutesV2UpdateOutputRequest) GetConfigOk() (*SecretProcessesorOutputConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *RoutesV2UpdateOutputRequest) HasConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given RoutesV2OutputConfig and assigns it to the Config field.
-func (o *RoutesV2UpdateOutputRequest) SetConfig(v RoutesV2OutputConfig) {
+// SetConfig gets a reference to the given SecretProcessesorOutputConfig and assigns it to the Config field.
+func (o *RoutesV2UpdateOutputRequest) SetConfig(v SecretProcessesorOutputConfig) {
 	o.Config = &v
 }
 

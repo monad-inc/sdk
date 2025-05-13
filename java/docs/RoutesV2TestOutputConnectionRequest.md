@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**config** | [**RoutesV2OutputConfig**](RoutesV2OutputConfig.md) |  |  [optional] |
+|**config** | [**SecretProcessesorOutputConfig**](SecretProcessesorOutputConfig.md) |  |  [optional] |
 |**type** | **String** |  |  [optional] |
 
 

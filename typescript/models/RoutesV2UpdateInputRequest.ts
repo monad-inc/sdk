@@ -10,11 +10,11 @@
  * Do not edit the class manually.
  */
 
-import { RoutesV2InputConfig } from '../models/RoutesV2InputConfig';
+import { SecretProcessesorInputConfig } from '../models/SecretProcessesorInputConfig';
 import { HttpFile } from '../http/http';
 
 export class RoutesV2UpdateInputRequest {
-    'config'?: RoutesV2InputConfig;
+    'config'?: SecretProcessesorInputConfig;
     'description'?: string;
     'name'?: string;
     'type'?: string;
@@ -27,7 +27,7 @@ export class RoutesV2UpdateInputRequest {
         {
             "name": "config",
             "baseName": "config",
-            "type": "RoutesV2InputConfig",
+            "type": "SecretProcessesorInputConfig",
             "format": ""
         },
         {

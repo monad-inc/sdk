@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesV2TestOutputConnectionRequest{}
 
 // RoutesV2TestOutputConnectionRequest struct for RoutesV2TestOutputConnectionRequest
 type RoutesV2TestOutputConnectionRequest struct {
-	Config *RoutesV2OutputConfig `json:"config,omitempty"`
+	Config *SecretProcessesorOutputConfig `json:"config,omitempty"`
 	Type *string `json:"type,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewRoutesV2TestOutputConnectionRequestWithDefaults() *RoutesV2TestOutputCon
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *RoutesV2TestOutputConnectionRequest) GetConfig() RoutesV2OutputConfig {
+func (o *RoutesV2TestOutputConnectionRequest) GetConfig() SecretProcessesorOutputConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret RoutesV2OutputConfig
+		var ret SecretProcessesorOutputConfig
 		return ret
 	}
 	return *o.Config
@@ -52,7 +52,7 @@ func (o *RoutesV2TestOutputConnectionRequest) GetConfig() RoutesV2OutputConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV2TestOutputConnectionRequest) GetConfigOk() (*RoutesV2OutputConfig, bool) {
+func (o *RoutesV2TestOutputConnectionRequest) GetConfigOk() (*SecretProcessesorOutputConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *RoutesV2TestOutputConnectionRequest) HasConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given RoutesV2OutputConfig and assigns it to the Config field.
-func (o *RoutesV2TestOutputConnectionRequest) SetConfig(v RoutesV2OutputConfig) {
+// SetConfig gets a reference to the given SecretProcessesorOutputConfig and assigns it to the Config field.
+func (o *RoutesV2TestOutputConnectionRequest) SetConfig(v SecretProcessesorOutputConfig) {
 	o.Config = &v
 }
 

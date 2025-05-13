@@ -65,6 +65,7 @@ import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropReco
 import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
+import { EnrichmentConnectorMeta } from '../models/EnrichmentConnectorMeta';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
@@ -196,16 +197,10 @@ import { RoutesV2CreatebillingAccountUserRoleRequest } from '../models/RoutesV2C
 import { RoutesV2GenerateRecordRequest } from '../models/RoutesV2GenerateRecordRequest';
 import { RoutesV2GenerateRecordResponse } from '../models/RoutesV2GenerateRecordResponse';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
-import { RoutesV2InputConfig } from '../models/RoutesV2InputConfig';
-import { RoutesV2InputConfigSecrets } from '../models/RoutesV2InputConfigSecrets';
-import { RoutesV2InputConfigSettings } from '../models/RoutesV2InputConfigSettings';
 import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesResponse';
 import { RoutesV2MetricsResponse } from '../models/RoutesV2MetricsResponse';
 import { RoutesV2MetricsValue } from '../models/RoutesV2MetricsValue';
 import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOverview';
-import { RoutesV2OutputConfig } from '../models/RoutesV2OutputConfig';
-import { RoutesV2OutputConfigSecrets } from '../models/RoutesV2OutputConfigSecrets';
-import { RoutesV2OutputConfigSettings } from '../models/RoutesV2OutputConfigSettings';
 import { RoutesV2PipelineMetric } from '../models/RoutesV2PipelineMetric';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
@@ -223,6 +218,12 @@ import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputReque
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
+import { SecretProcessesorInputConfig } from '../models/SecretProcessesorInputConfig';
+import { SecretProcessesorInputConfigSecrets } from '../models/SecretProcessesorInputConfigSecrets';
+import { SecretProcessesorInputConfigSettings } from '../models/SecretProcessesorInputConfigSettings';
+import { SecretProcessesorOutputConfig } from '../models/SecretProcessesorOutputConfig';
+import { SecretProcessesorOutputConfigSecrets } from '../models/SecretProcessesorOutputConfigSecrets';
+import { SecretProcessesorOutputConfigSettings } from '../models/SecretProcessesorOutputConfigSettings';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -1051,6 +1052,81 @@ export class ObjectDataApi {
      */
     public v1OrganizationIdDataNodeIdGet(param: DataApiV1OrganizationIdDataNodeIdGetRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.v1OrganizationIdDataNodeIdGet(param.organizationId, param.nodeId,  options).toPromise();
+    }
+
+}
+
+import { ObservableEnrichmentsApi } from "./ObservableAPI";
+import { EnrichmentsApiRequestFactory, EnrichmentsApiResponseProcessor} from "../apis/EnrichmentsApi";
+
+export interface EnrichmentsApiV3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof EnrichmentsApiv3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet
+     */
+    organizationId: string
+    /**
+     * Enrichment type ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof EnrichmentsApiv3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet
+     */
+    enrichmentTypeId: string
+}
+
+export interface EnrichmentsApiV3OrganizationIdEnrichmentsMetaGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof EnrichmentsApiv3OrganizationIdEnrichmentsMetaGet
+     */
+    organizationId: string
+}
+
+export class ObjectEnrichmentsApi {
+    private api: ObservableEnrichmentsApi
+
+    public constructor(configuration: Configuration, requestFactory?: EnrichmentsApiRequestFactory, responseProcessor?: EnrichmentsApiResponseProcessor) {
+        this.api = new ObservableEnrichmentsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Get enrichment config meta
+     * Get enrichment config meta
+     * @param param the request object
+     */
+    public v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetWithHttpInfo(param: EnrichmentsApiV3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<EnrichmentConnectorMeta>> {
+        return this.api.v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetWithHttpInfo(param.organizationId, param.enrichmentTypeId,  options).toPromise();
+    }
+
+    /**
+     * Get enrichment config meta
+     * Get enrichment config meta
+     * @param param the request object
+     */
+    public v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet(param: EnrichmentsApiV3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGetRequest, options?: ConfigurationOptions): Promise<EnrichmentConnectorMeta> {
+        return this.api.v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet(param.organizationId, param.enrichmentTypeId,  options).toPromise();
+    }
+
+    /**
+     * List available enrichment types
+     * List enrichments
+     * @param param the request object
+     */
+    public v3OrganizationIdEnrichmentsMetaGetWithHttpInfo(param: EnrichmentsApiV3OrganizationIdEnrichmentsMetaGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<EnrichmentConnectorMeta>>> {
+        return this.api.v3OrganizationIdEnrichmentsMetaGetWithHttpInfo(param.organizationId,  options).toPromise();
+    }
+
+    /**
+     * List available enrichment types
+     * List enrichments
+     * @param param the request object
+     */
+    public v3OrganizationIdEnrichmentsMetaGet(param: EnrichmentsApiV3OrganizationIdEnrichmentsMetaGetRequest, options?: ConfigurationOptions): Promise<Array<EnrichmentConnectorMeta>> {
+        return this.api.v3OrganizationIdEnrichmentsMetaGet(param.organizationId,  options).toPromise();
     }
 
 }

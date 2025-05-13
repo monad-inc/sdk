@@ -62,6 +62,8 @@ type APIClient struct {
 
 	DataAPI *DataAPIService
 
+	EnrichmentsAPI *EnrichmentsAPIService
+
 	InputsAPI *InputsAPIService
 
 	LogsAPI *LogsAPIService
@@ -127,6 +129,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.BillingProductsAPI = (*BillingProductsAPIService)(&c.common)
 	c.ConditionsAPI = (*ConditionsAPIService)(&c.common)
 	c.DataAPI = (*DataAPIService)(&c.common)
+	c.EnrichmentsAPI = (*EnrichmentsAPIService)(&c.common)
 	c.InputsAPI = (*InputsAPIService)(&c.common)
 	c.LogsAPI = (*LogsAPIService)(&c.common)
 	c.OauthAPI = (*OauthAPIService)(&c.common)

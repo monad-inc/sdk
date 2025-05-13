@@ -10,11 +10,11 @@
  * Do not edit the class manually.
  */
 
-import { RoutesV2OutputConfig } from '../models/RoutesV2OutputConfig';
+import { SecretProcessesorOutputConfig } from '../models/SecretProcessesorOutputConfig';
 import { HttpFile } from '../http/http';
 
 export class RoutesV2CreateOutputRequest {
-    'config'?: RoutesV2OutputConfig;
+    'config'?: SecretProcessesorOutputConfig;
     'description'?: string;
     'name'?: string;
     'outputType'?: string;
@@ -28,7 +28,7 @@ export class RoutesV2CreateOutputRequest {
         {
             "name": "config",
             "baseName": "config",
-            "type": "RoutesV2OutputConfig",
+            "type": "SecretProcessesorOutputConfig",
             "format": ""
         },
         {

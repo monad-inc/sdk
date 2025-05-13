@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.routes_v2_input_config import RoutesV2InputConfig
+from monad.models.secret_processesor_input_config import SecretProcessesorInputConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class RoutesV2CreateInputRequest(BaseModel):
     """
     RoutesV2CreateInputRequest
     """ # noqa: E501
-    config: Optional[RoutesV2InputConfig] = None
+    config: Optional[SecretProcessesorInputConfig] = None
     description: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
@@ -88,7 +88,7 @@ class RoutesV2CreateInputRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "config": RoutesV2InputConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
+            "config": SecretProcessesorInputConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
             "description": obj.get("description"),
             "name": obj.get("name"),
             "type": obj.get("type")

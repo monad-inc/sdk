@@ -61,6 +61,7 @@ export * from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
 export * from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 export * from '../models/ElasticsearchSecretsConfig';
 export * from '../models/ElasticsearchSettingsConfig';
+export * from '../models/EnrichmentConnectorMeta';
 export * from '../models/EntraIdSecretsConfig';
 export * from '../models/EntraIdSettingsConfig';
 export * from '../models/EventSecretsConfig';
@@ -192,16 +193,10 @@ export * from '../models/RoutesV2CreatebillingAccountUserRoleRequest';
 export * from '../models/RoutesV2GenerateRecordRequest';
 export * from '../models/RoutesV2GenerateRecordResponse';
 export * from '../models/RoutesV2GetOrganizationSummaryResponse';
-export * from '../models/RoutesV2InputConfig';
-export * from '../models/RoutesV2InputConfigSecrets';
-export * from '../models/RoutesV2InputConfigSettings';
 export * from '../models/RoutesV2ListTemplatesResponse';
 export * from '../models/RoutesV2MetricsResponse';
 export * from '../models/RoutesV2MetricsValue';
 export * from '../models/RoutesV2OrganizationOverview';
-export * from '../models/RoutesV2OutputConfig';
-export * from '../models/RoutesV2OutputConfigSecrets';
-export * from '../models/RoutesV2OutputConfigSettings';
 export * from '../models/RoutesV2PipelineMetric';
 export * from '../models/RoutesV2PipelineRequestEdge';
 export * from '../models/RoutesV2PipelineRequestNode';
@@ -219,6 +214,12 @@ export * from '../models/RoutesV2UpdateOutputRequest';
 export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/RoutesV2UpdateRoleV2Request';
 export * from '../models/S3SettingsConfig';
+export * from '../models/SecretProcessesorInputConfig';
+export * from '../models/SecretProcessesorInputConfigSecrets';
+export * from '../models/SecretProcessesorInputConfigSettings';
+export * from '../models/SecretProcessesorOutputConfig';
+export * from '../models/SecretProcessesorOutputConfigSecrets';
+export * from '../models/SecretProcessesorOutputConfigSettings';
 export * from '../models/SecurityLakeSettingsConfig';
 export * from '../models/SecurityLakeSourceAccountDetails';
 export * from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -329,6 +330,7 @@ import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropReco
 import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
+import { EnrichmentConnectorMeta } from '../models/EnrichmentConnectorMeta';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
@@ -460,16 +462,10 @@ import { RoutesV2CreatebillingAccountUserRoleRequest } from '../models/RoutesV2C
 import { RoutesV2GenerateRecordRequest } from '../models/RoutesV2GenerateRecordRequest';
 import { RoutesV2GenerateRecordResponse } from '../models/RoutesV2GenerateRecordResponse';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
-import { RoutesV2InputConfig } from '../models/RoutesV2InputConfig';
-import { RoutesV2InputConfigSecretsClass } from '../models/RoutesV2InputConfigSecrets';
-import { RoutesV2InputConfigSettingsClass } from '../models/RoutesV2InputConfigSettings';
 import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesResponse';
 import { RoutesV2MetricsResponse } from '../models/RoutesV2MetricsResponse';
 import { RoutesV2MetricsValue } from '../models/RoutesV2MetricsValue';
 import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOverview';
-import { RoutesV2OutputConfig } from '../models/RoutesV2OutputConfig';
-import { RoutesV2OutputConfigSecretsClass } from '../models/RoutesV2OutputConfigSecrets';
-import { RoutesV2OutputConfigSettingsClass } from '../models/RoutesV2OutputConfigSettings';
 import { RoutesV2PipelineMetric } from '../models/RoutesV2PipelineMetric';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
@@ -487,6 +483,12 @@ import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputReque
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
+import { SecretProcessesorInputConfig } from '../models/SecretProcessesorInputConfig';
+import { SecretProcessesorInputConfigSecretsClass } from '../models/SecretProcessesorInputConfigSecrets';
+import { SecretProcessesorInputConfigSettingsClass } from '../models/SecretProcessesorInputConfigSettings';
+import { SecretProcessesorOutputConfig } from '../models/SecretProcessesorOutputConfig';
+import { SecretProcessesorOutputConfigSecretsClass } from '../models/SecretProcessesorOutputConfigSecrets';
+import { SecretProcessesorOutputConfigSettingsClass } from '../models/SecretProcessesorOutputConfigSettings';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -552,10 +554,10 @@ let enumsMap: Set<string> = new Set<string>([
     "IssuesSettingsConfigSeveritiesEnum",
     "IssuesSettingsConfigStackLayersEnum",
     "IssuesSettingsConfigStatusEnum",
-    "RoutesV2InputConfigSettingsIssueTypesEnum",
-    "RoutesV2InputConfigSettingsResolutionReasonsEnum",
-    "RoutesV2InputConfigSettingsSeveritiesEnum",
-    "RoutesV2InputConfigSettingsStackLayersEnum",
+    "SecretProcessesorInputConfigSettingsIssueTypesEnum",
+    "SecretProcessesorInputConfigSettingsResolutionReasonsEnum",
+    "SecretProcessesorInputConfigSettingsSeveritiesEnum",
+    "SecretProcessesorInputConfigSettingsStackLayersEnum",
 ]);
 
 let typeMap: {[index: string]: any} = {
@@ -622,6 +624,7 @@ let typeMap: {[index: string]: any} = {
     "DuplicateKeyValueToKeyDuplicateKeyValueToKey": DuplicateKeyValueToKeyDuplicateKeyValueToKey,
     "ElasticsearchSecretsConfig": ElasticsearchSecretsConfig,
     "ElasticsearchSettingsConfig": ElasticsearchSettingsConfig,
+    "EnrichmentConnectorMeta": EnrichmentConnectorMeta,
     "EntraIdSecretsConfig": EntraIdSecretsConfig,
     "EntraIdSettingsConfig": EntraIdSettingsConfig,
     "EventSecretsConfig": EventSecretsConfig,
@@ -753,16 +756,10 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2GenerateRecordRequest": RoutesV2GenerateRecordRequest,
     "RoutesV2GenerateRecordResponse": RoutesV2GenerateRecordResponse,
     "RoutesV2GetOrganizationSummaryResponse": RoutesV2GetOrganizationSummaryResponse,
-    "RoutesV2InputConfig": RoutesV2InputConfig,
-    "RoutesV2InputConfigSecrets": RoutesV2InputConfigSecretsClass,
-    "RoutesV2InputConfigSettings": RoutesV2InputConfigSettingsClass,
     "RoutesV2ListTemplatesResponse": RoutesV2ListTemplatesResponse,
     "RoutesV2MetricsResponse": RoutesV2MetricsResponse,
     "RoutesV2MetricsValue": RoutesV2MetricsValue,
     "RoutesV2OrganizationOverview": RoutesV2OrganizationOverview,
-    "RoutesV2OutputConfig": RoutesV2OutputConfig,
-    "RoutesV2OutputConfigSecrets": RoutesV2OutputConfigSecretsClass,
-    "RoutesV2OutputConfigSettings": RoutesV2OutputConfigSettingsClass,
     "RoutesV2PipelineMetric": RoutesV2PipelineMetric,
     "RoutesV2PipelineRequestEdge": RoutesV2PipelineRequestEdge,
     "RoutesV2PipelineRequestNode": RoutesV2PipelineRequestNode,
@@ -780,6 +777,12 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdatePipelineRequest": RoutesV2UpdatePipelineRequest,
     "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
     "S3SettingsConfig": S3SettingsConfig,
+    "SecretProcessesorInputConfig": SecretProcessesorInputConfig,
+    "SecretProcessesorInputConfigSecrets": SecretProcessesorInputConfigSecretsClass,
+    "SecretProcessesorInputConfigSettings": SecretProcessesorInputConfigSettingsClass,
+    "SecretProcessesorOutputConfig": SecretProcessesorOutputConfig,
+    "SecretProcessesorOutputConfigSecrets": SecretProcessesorOutputConfigSecretsClass,
+    "SecretProcessesorOutputConfigSettings": SecretProcessesorOutputConfigSettingsClass,
     "SecurityLakeSettingsConfig": SecurityLakeSettingsConfig,
     "SecurityLakeSourceAccountDetails": SecurityLakeSourceAccountDetails,
     "SemgrepCodeFindingsSecretsConfig": SemgrepCodeFindingsSecretsConfig,

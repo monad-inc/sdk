@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.RoutesV2OutputConfig;
+import org.openapitools.client.model.SecretProcessesorOutputConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,12 +49,12 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2UpdateOutputRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-13T18:13:47.630781052Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-13T21:17:58.839841790Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RoutesV2UpdateOutputRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
   @javax.annotation.Nullable
-  private RoutesV2OutputConfig config;
+  private SecretProcessesorOutputConfig config;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -74,7 +74,7 @@ public class RoutesV2UpdateOutputRequest {
   public RoutesV2UpdateOutputRequest() {
   }
 
-  public RoutesV2UpdateOutputRequest config(@javax.annotation.Nullable RoutesV2OutputConfig config) {
+  public RoutesV2UpdateOutputRequest config(@javax.annotation.Nullable SecretProcessesorOutputConfig config) {
     this.config = config;
     return this;
   }
@@ -84,11 +84,11 @@ public class RoutesV2UpdateOutputRequest {
    * @return config
    */
   @javax.annotation.Nullable
-  public RoutesV2OutputConfig getConfig() {
+  public SecretProcessesorOutputConfig getConfig() {
     return config;
   }
 
-  public void setConfig(@javax.annotation.Nullable RoutesV2OutputConfig config) {
+  public void setConfig(@javax.annotation.Nullable SecretProcessesorOutputConfig config) {
     this.config = config;
   }
 
@@ -233,7 +233,7 @@ public class RoutesV2UpdateOutputRequest {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `config`
       if (jsonObj.get("config") != null && !jsonObj.get("config").isJsonNull()) {
-        RoutesV2OutputConfig.validateJsonElement(jsonObj.get("config"));
+        SecretProcessesorOutputConfig.validateJsonElement(jsonObj.get("config"));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));

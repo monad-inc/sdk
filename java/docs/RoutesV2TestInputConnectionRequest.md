@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**config** | [**RoutesV2InputConfig**](RoutesV2InputConfig.md) |  |  [optional] |
+|**config** | [**SecretProcessesorInputConfig**](SecretProcessesorInputConfig.md) |  |  [optional] |
 |**type** | **String** |  |  [optional] |
 
 

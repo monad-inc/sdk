@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.routes_v2_output_config import RoutesV2OutputConfig
+from monad.models.secret_processesor_output_config import SecretProcessesorOutputConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class RoutesV2TestOutputConnectionRequest(BaseModel):
     """
     RoutesV2TestOutputConnectionRequest
     """ # noqa: E501
-    config: Optional[RoutesV2OutputConfig] = None
+    config: Optional[SecretProcessesorOutputConfig] = None
     type: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["config", "type"]
 
@@ -86,7 +86,7 @@ class RoutesV2TestOutputConnectionRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "config": RoutesV2OutputConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
+            "config": SecretProcessesorOutputConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
             "type": obj.get("type")
         })
         return _obj

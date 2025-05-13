@@ -102,6 +102,8 @@ Class | Method | HTTP request | Description
 *BillingProductsAPI* | [**V2BillingProductsGet**](docs/BillingProductsAPI.md#v2billingproductsget) | **Get** /v2/billing/products | List Billing Products
 *ConditionsAPI* | [**V2ConditionsGet**](docs/ConditionsAPI.md#v2conditionsget) | **Get** /v2/conditions | List conditions
 *DataAPI* | [**V1OrganizationIdDataNodeIdGet**](docs/DataAPI.md#v1organizationiddatanodeidget) | **Get** /v1/{organization_id}/data/{node_id} | Stream node data
+*EnrichmentsAPI* | [**V3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet**](docs/EnrichmentsAPI.md#v3organizationidenrichmentsmetaenrichmenttypeidget) | **Get** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta
+*EnrichmentsAPI* | [**V3OrganizationIdEnrichmentsMetaGet**](docs/EnrichmentsAPI.md#v3organizationidenrichmentsmetaget) | **Get** /v3/{organization_id}/enrichments_meta | List enrichments
 *InputsAPI* | [**V1InputsGet**](docs/InputsAPI.md#v1inputsget) | **Get** /v1/inputs | List inputs
 *InputsAPI* | [**V1InputsInputTypeIdGet**](docs/InputsAPI.md#v1inputsinputtypeidget) | **Get** /v1/inputs/{input_type_id} | Get input config meta
 *LogsAPI* | [**V1OrganizationIdLogsApiGet**](docs/LogsAPI.md#v1organizationidlogsapiget) | **Get** /v1/{organization_id}/logs/api | Stream organization api logs
@@ -251,6 +253,7 @@ Class | Method | HTTP request | Description
  - [DuplicateKeyValueToKeyDuplicateKeyValueToKey](docs/DuplicateKeyValueToKeyDuplicateKeyValueToKey.md)
  - [ElasticsearchSecretsConfig](docs/ElasticsearchSecretsConfig.md)
  - [ElasticsearchSettingsConfig](docs/ElasticsearchSettingsConfig.md)
+ - [EnrichmentConnectorMeta](docs/EnrichmentConnectorMeta.md)
  - [EntraIdSecretsConfig](docs/EntraIdSecretsConfig.md)
  - [EntraIdSettingsConfig](docs/EntraIdSettingsConfig.md)
  - [EventSecretsConfig](docs/EventSecretsConfig.md)
@@ -382,16 +385,10 @@ Class | Method | HTTP request | Description
  - [RoutesV2GenerateRecordRequest](docs/RoutesV2GenerateRecordRequest.md)
  - [RoutesV2GenerateRecordResponse](docs/RoutesV2GenerateRecordResponse.md)
  - [RoutesV2GetOrganizationSummaryResponse](docs/RoutesV2GetOrganizationSummaryResponse.md)
- - [RoutesV2InputConfig](docs/RoutesV2InputConfig.md)
- - [RoutesV2InputConfigSecrets](docs/RoutesV2InputConfigSecrets.md)
- - [RoutesV2InputConfigSettings](docs/RoutesV2InputConfigSettings.md)
  - [RoutesV2ListTemplatesResponse](docs/RoutesV2ListTemplatesResponse.md)
  - [RoutesV2MetricsResponse](docs/RoutesV2MetricsResponse.md)
  - [RoutesV2MetricsValue](docs/RoutesV2MetricsValue.md)
  - [RoutesV2OrganizationOverview](docs/RoutesV2OrganizationOverview.md)
- - [RoutesV2OutputConfig](docs/RoutesV2OutputConfig.md)
- - [RoutesV2OutputConfigSecrets](docs/RoutesV2OutputConfigSecrets.md)
- - [RoutesV2OutputConfigSettings](docs/RoutesV2OutputConfigSettings.md)
  - [RoutesV2PipelineMetric](docs/RoutesV2PipelineMetric.md)
  - [RoutesV2PipelineRequestEdge](docs/RoutesV2PipelineRequestEdge.md)
  - [RoutesV2PipelineRequestNode](docs/RoutesV2PipelineRequestNode.md)
@@ -409,6 +406,12 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdatePipelineRequest](docs/RoutesV2UpdatePipelineRequest.md)
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [S3SettingsConfig](docs/S3SettingsConfig.md)
+ - [SecretProcessesorInputConfig](docs/SecretProcessesorInputConfig.md)
+ - [SecretProcessesorInputConfigSecrets](docs/SecretProcessesorInputConfigSecrets.md)
+ - [SecretProcessesorInputConfigSettings](docs/SecretProcessesorInputConfigSettings.md)
+ - [SecretProcessesorOutputConfig](docs/SecretProcessesorOutputConfig.md)
+ - [SecretProcessesorOutputConfigSecrets](docs/SecretProcessesorOutputConfigSecrets.md)
+ - [SecretProcessesorOutputConfigSettings](docs/SecretProcessesorOutputConfigSettings.md)
  - [SecurityLakeSettingsConfig](docs/SecurityLakeSettingsConfig.md)
  - [SecurityLakeSourceAccountDetails](docs/SecurityLakeSourceAccountDetails.md)
  - [SemgrepCodeFindingsSecretsConfig](docs/SemgrepCodeFindingsSecretsConfig.md)

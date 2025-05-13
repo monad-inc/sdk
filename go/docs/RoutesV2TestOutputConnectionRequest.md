@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Config** | Pointer to [**RoutesV2OutputConfig**](RoutesV2OutputConfig.md) |  | [optional] 
+**Config** | Pointer to [**SecretProcessesorOutputConfig**](SecretProcessesorOutputConfig.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetConfig
 
-`func (o *RoutesV2TestOutputConnectionRequest) GetConfig() RoutesV2OutputConfig`
+`func (o *RoutesV2TestOutputConnectionRequest) GetConfig() SecretProcessesorOutputConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *RoutesV2TestOutputConnectionRequest) GetConfigOk() (*RoutesV2OutputConfig, bool)`
+`func (o *RoutesV2TestOutputConnectionRequest) GetConfigOk() (*SecretProcessesorOutputConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *RoutesV2TestOutputConnectionRequest) SetConfig(v RoutesV2OutputConfig)`
+`func (o *RoutesV2TestOutputConnectionRequest) SetConfig(v SecretProcessesorOutputConfig)`
 
 SetConfig sets Config field to given value.
 

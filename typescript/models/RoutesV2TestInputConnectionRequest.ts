@@ -10,11 +10,11 @@
  * Do not edit the class manually.
  */
 
-import { RoutesV2InputConfig } from '../models/RoutesV2InputConfig';
+import { SecretProcessesorInputConfig } from '../models/SecretProcessesorInputConfig';
 import { HttpFile } from '../http/http';
 
 export class RoutesV2TestInputConnectionRequest {
-    'config'?: RoutesV2InputConfig;
+    'config'?: SecretProcessesorInputConfig;
     'type'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -25,7 +25,7 @@ export class RoutesV2TestInputConnectionRequest {
         {
             "name": "config",
             "baseName": "config",
-            "type": "RoutesV2InputConfig",
+            "type": "SecretProcessesorInputConfig",
             "format": ""
         },
         {
