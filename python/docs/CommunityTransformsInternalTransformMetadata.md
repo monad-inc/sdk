@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**author** | **str** |  | [optional] 
+**contributors** | **List[str]** |  | [optional] 
 **created_at** | **str** |  | [optional] 
-**created_by** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **last_modified** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 

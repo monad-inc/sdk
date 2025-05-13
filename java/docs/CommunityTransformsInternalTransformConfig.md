@@ -7,12 +7,12 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**author** | **String** |  |  [optional] |
 |**config** | **Map&lt;String, Object&gt;** |  |  [optional] |
-|**createdBy** | **String** |  |  [optional] |
+|**contributors** | **List&lt;String&gt;** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**inputs** | **List&lt;String&gt;** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**outputs** | **List&lt;String&gt;** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
 
 

@@ -20,8 +20,9 @@ var _ MappedNullable = &CommunityTransformsInternalTransformMetadata{}
 
 // CommunityTransformsInternalTransformMetadata struct for CommunityTransformsInternalTransformMetadata
 type CommunityTransformsInternalTransformMetadata struct {
+	Author *string `json:"author,omitempty"`
+	Contributors []string `json:"contributors,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
-	CreatedBy *string `json:"created_by,omitempty"`
 	Description *string `json:"description,omitempty"`
 	LastModified *string `json:"last_modified,omitempty"`
 	Name *string `json:"name,omitempty"`
@@ -44,6 +45,70 @@ func NewCommunityTransformsInternalTransformMetadata() *CommunityTransformsInter
 func NewCommunityTransformsInternalTransformMetadataWithDefaults() *CommunityTransformsInternalTransformMetadata {
 	this := CommunityTransformsInternalTransformMetadata{}
 	return &this
+}
+
+// GetAuthor returns the Author field value if set, zero value otherwise.
+func (o *CommunityTransformsInternalTransformMetadata) GetAuthor() string {
+	if o == nil || IsNil(o.Author) {
+		var ret string
+		return ret
+	}
+	return *o.Author
+}
+
+// GetAuthorOk returns a tuple with the Author field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CommunityTransformsInternalTransformMetadata) GetAuthorOk() (*string, bool) {
+	if o == nil || IsNil(o.Author) {
+		return nil, false
+	}
+	return o.Author, true
+}
+
+// HasAuthor returns a boolean if a field has been set.
+func (o *CommunityTransformsInternalTransformMetadata) HasAuthor() bool {
+	if o != nil && !IsNil(o.Author) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthor gets a reference to the given string and assigns it to the Author field.
+func (o *CommunityTransformsInternalTransformMetadata) SetAuthor(v string) {
+	o.Author = &v
+}
+
+// GetContributors returns the Contributors field value if set, zero value otherwise.
+func (o *CommunityTransformsInternalTransformMetadata) GetContributors() []string {
+	if o == nil || IsNil(o.Contributors) {
+		var ret []string
+		return ret
+	}
+	return o.Contributors
+}
+
+// GetContributorsOk returns a tuple with the Contributors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CommunityTransformsInternalTransformMetadata) GetContributorsOk() ([]string, bool) {
+	if o == nil || IsNil(o.Contributors) {
+		return nil, false
+	}
+	return o.Contributors, true
+}
+
+// HasContributors returns a boolean if a field has been set.
+func (o *CommunityTransformsInternalTransformMetadata) HasContributors() bool {
+	if o != nil && !IsNil(o.Contributors) {
+		return true
+	}
+
+	return false
+}
+
+// SetContributors gets a reference to the given []string and assigns it to the Contributors field.
+func (o *CommunityTransformsInternalTransformMetadata) SetContributors(v []string) {
+	o.Contributors = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -76,38 +141,6 @@ func (o *CommunityTransformsInternalTransformMetadata) HasCreatedAt() bool {
 // SetCreatedAt gets a reference to the given string and assigns it to the CreatedAt field.
 func (o *CommunityTransformsInternalTransformMetadata) SetCreatedAt(v string) {
 	o.CreatedAt = &v
-}
-
-// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *CommunityTransformsInternalTransformMetadata) GetCreatedBy() string {
-	if o == nil || IsNil(o.CreatedBy) {
-		var ret string
-		return ret
-	}
-	return *o.CreatedBy
-}
-
-// GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CommunityTransformsInternalTransformMetadata) GetCreatedByOk() (*string, bool) {
-	if o == nil || IsNil(o.CreatedBy) {
-		return nil, false
-	}
-	return o.CreatedBy, true
-}
-
-// HasCreatedBy returns a boolean if a field has been set.
-func (o *CommunityTransformsInternalTransformMetadata) HasCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
-func (o *CommunityTransformsInternalTransformMetadata) SetCreatedBy(v string) {
-	o.CreatedBy = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -280,11 +313,14 @@ func (o CommunityTransformsInternalTransformMetadata) MarshalJSON() ([]byte, err
 
 func (o CommunityTransformsInternalTransformMetadata) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Author) {
+		toSerialize["author"] = o.Author
+	}
+	if !IsNil(o.Contributors) {
+		toSerialize["contributors"] = o.Contributors
+	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
-	}
-	if !IsNil(o.CreatedBy) {
-		toSerialize["created_by"] = o.CreatedBy
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

@@ -7,8 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**author** | **String** |  |  [optional] |
+|**contributors** | **List&lt;String&gt;** |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
-|**createdBy** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**lastModified** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |

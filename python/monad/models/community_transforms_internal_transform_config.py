@@ -27,14 +27,14 @@ class CommunityTransformsInternalTransformConfig(BaseModel):
     """
     CommunityTransformsInternalTransformConfig
     """ # noqa: E501
+    author: Optional[StrictStr] = None
     config: Optional[Dict[str, Any]] = None
-    created_by: Optional[StrictStr] = None
+    contributors: Optional[List[StrictStr]] = None
     description: Optional[StrictStr] = None
     inputs: Optional[List[StrictStr]] = None
     name: Optional[StrictStr] = None
-    outputs: Optional[List[StrictStr]] = None
     tags: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["config", "created_by", "description", "inputs", "name", "outputs", "tags"]
+    __properties: ClassVar[List[str]] = ["author", "config", "contributors", "description", "inputs", "name", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,12 +87,12 @@ class CommunityTransformsInternalTransformConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "author": obj.get("author"),
             "config": obj.get("config"),
-            "created_by": obj.get("created_by"),
+            "contributors": obj.get("contributors"),
             "description": obj.get("description"),
             "inputs": obj.get("inputs"),
             "name": obj.get("name"),
-            "outputs": obj.get("outputs"),
             "tags": obj.get("tags")
         })
         return _obj

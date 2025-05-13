@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Author** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
-**CreatedBy** | Pointer to **string** |  | [optional] 
+**Contributors** | Pointer to **[]string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Inputs** | Pointer to **[]string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Outputs** | Pointer to **[]string** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -30,6 +30,31 @@ will change when the set of required properties is changed
 NewCommunityTransformsInternalTransformConfigWithDefaults instantiates a new CommunityTransformsInternalTransformConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAuthor
+
+`func (o *CommunityTransformsInternalTransformConfig) GetAuthor() string`
+
+GetAuthor returns the Author field if non-nil, zero value otherwise.
+
+### GetAuthorOk
+
+`func (o *CommunityTransformsInternalTransformConfig) GetAuthorOk() (*string, bool)`
+
+GetAuthorOk returns a tuple with the Author field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthor
+
+`func (o *CommunityTransformsInternalTransformConfig) SetAuthor(v string)`
+
+SetAuthor sets Author field to given value.
+
+### HasAuthor
+
+`func (o *CommunityTransformsInternalTransformConfig) HasAuthor() bool`
+
+HasAuthor returns a boolean if a field has been set.
 
 ### GetConfig
 
@@ -56,30 +81,30 @@ SetConfig sets Config field to given value.
 
 HasConfig returns a boolean if a field has been set.
 
-### GetCreatedBy
+### GetContributors
 
-`func (o *CommunityTransformsInternalTransformConfig) GetCreatedBy() string`
+`func (o *CommunityTransformsInternalTransformConfig) GetContributors() []string`
 
-GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
+GetContributors returns the Contributors field if non-nil, zero value otherwise.
 
-### GetCreatedByOk
+### GetContributorsOk
 
-`func (o *CommunityTransformsInternalTransformConfig) GetCreatedByOk() (*string, bool)`
+`func (o *CommunityTransformsInternalTransformConfig) GetContributorsOk() (*[]string, bool)`
 
-GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
+GetContributorsOk returns a tuple with the Contributors field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCreatedBy
+### SetContributors
 
-`func (o *CommunityTransformsInternalTransformConfig) SetCreatedBy(v string)`
+`func (o *CommunityTransformsInternalTransformConfig) SetContributors(v []string)`
 
-SetCreatedBy sets CreatedBy field to given value.
+SetContributors sets Contributors field to given value.
 
-### HasCreatedBy
+### HasContributors
 
-`func (o *CommunityTransformsInternalTransformConfig) HasCreatedBy() bool`
+`func (o *CommunityTransformsInternalTransformConfig) HasContributors() bool`
 
-HasCreatedBy returns a boolean if a field has been set.
+HasContributors returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -155,31 +180,6 @@ SetName sets Name field to given value.
 `func (o *CommunityTransformsInternalTransformConfig) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetOutputs
-
-`func (o *CommunityTransformsInternalTransformConfig) GetOutputs() []string`
-
-GetOutputs returns the Outputs field if non-nil, zero value otherwise.
-
-### GetOutputsOk
-
-`func (o *CommunityTransformsInternalTransformConfig) GetOutputsOk() (*[]string, bool)`
-
-GetOutputsOk returns a tuple with the Outputs field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOutputs
-
-`func (o *CommunityTransformsInternalTransformConfig) SetOutputs(v []string)`
-
-SetOutputs sets Outputs field to given value.
-
-### HasOutputs
-
-`func (o *CommunityTransformsInternalTransformConfig) HasOutputs() bool`
-
-HasOutputs returns a boolean if a field has been set.
 
 ### GetTags
 

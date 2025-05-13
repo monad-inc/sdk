@@ -13,12 +13,12 @@
 import { HttpFile } from '../http/http';
 
 export class CommunityTransformsInternalTransformConfig {
+    'author'?: string;
     'config'?: { [key: string]: any; };
-    'createdBy'?: string;
+    'contributors'?: Array<string>;
     'description'?: string;
     'inputs'?: Array<string>;
     'name'?: string;
-    'outputs'?: Array<string>;
     'tags'?: Array<string>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -27,15 +27,21 @@ export class CommunityTransformsInternalTransformConfig {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
+            "name": "author",
+            "baseName": "author",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "config",
             "baseName": "config",
             "type": "{ [key: string]: any; }",
             "format": ""
         },
         {
-            "name": "createdBy",
-            "baseName": "created_by",
-            "type": "string",
+            "name": "contributors",
+            "baseName": "contributors",
+            "type": "Array<string>",
             "format": ""
         },
         {
@@ -54,12 +60,6 @@ export class CommunityTransformsInternalTransformConfig {
             "name": "name",
             "baseName": "name",
             "type": "string",
-            "format": ""
-        },
-        {
-            "name": "outputs",
-            "baseName": "outputs",
-            "type": "Array<string>",
             "format": ""
         },
         {

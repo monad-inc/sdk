@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**author** | **str** |  | [optional] 
 **config** | **Dict[str, object]** |  | [optional] 
-**created_by** | **str** |  | [optional] 
+**contributors** | **List[str]** |  | [optional] 
 **description** | **str** |  | [optional] 
 **inputs** | **List[str]** |  | [optional] 
 **name** | **str** |  | [optional] 
-**outputs** | **List[str]** |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
 
 ## Example

@@ -50,17 +50,22 @@ import org.openapitools.client.JSON;
 /**
  * CommunityTransformsInternalTransformMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-13T01:21:45.691516714Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-13T14:15:40.712988431Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CommunityTransformsInternalTransformMetadata {
+  public static final String SERIALIZED_NAME_AUTHOR = "author";
+  @SerializedName(SERIALIZED_NAME_AUTHOR)
+  @javax.annotation.Nullable
+  private String author;
+
+  public static final String SERIALIZED_NAME_CONTRIBUTORS = "contributors";
+  @SerializedName(SERIALIZED_NAME_CONTRIBUTORS)
+  @javax.annotation.Nullable
+  private List<String> contributors = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nullable
   private String createdAt;
-
-  public static final String SERIALIZED_NAME_CREATED_BY = "created_by";
-  @SerializedName(SERIALIZED_NAME_CREATED_BY)
-  @javax.annotation.Nullable
-  private String createdBy;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -90,6 +95,52 @@ public class CommunityTransformsInternalTransformMetadata {
   public CommunityTransformsInternalTransformMetadata() {
   }
 
+  public CommunityTransformsInternalTransformMetadata author(@javax.annotation.Nullable String author) {
+    this.author = author;
+    return this;
+  }
+
+  /**
+   * Get author
+   * @return author
+   */
+  @javax.annotation.Nullable
+  public String getAuthor() {
+    return author;
+  }
+
+  public void setAuthor(@javax.annotation.Nullable String author) {
+    this.author = author;
+  }
+
+
+  public CommunityTransformsInternalTransformMetadata contributors(@javax.annotation.Nullable List<String> contributors) {
+    this.contributors = contributors;
+    return this;
+  }
+
+  public CommunityTransformsInternalTransformMetadata addContributorsItem(String contributorsItem) {
+    if (this.contributors == null) {
+      this.contributors = new ArrayList<>();
+    }
+    this.contributors.add(contributorsItem);
+    return this;
+  }
+
+  /**
+   * Get contributors
+   * @return contributors
+   */
+  @javax.annotation.Nullable
+  public List<String> getContributors() {
+    return contributors;
+  }
+
+  public void setContributors(@javax.annotation.Nullable List<String> contributors) {
+    this.contributors = contributors;
+  }
+
+
   public CommunityTransformsInternalTransformMetadata createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -106,25 +157,6 @@ public class CommunityTransformsInternalTransformMetadata {
 
   public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
-  }
-
-
-  public CommunityTransformsInternalTransformMetadata createdBy(@javax.annotation.Nullable String createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-
-  /**
-   * Get createdBy
-   * @return createdBy
-   */
-  @javax.annotation.Nullable
-  public String getCreatedBy() {
-    return createdBy;
-  }
-
-  public void setCreatedBy(@javax.annotation.Nullable String createdBy) {
-    this.createdBy = createdBy;
   }
 
 
@@ -241,8 +273,9 @@ public class CommunityTransformsInternalTransformMetadata {
       return false;
     }
     CommunityTransformsInternalTransformMetadata communityTransformsInternalTransformMetadata = (CommunityTransformsInternalTransformMetadata) o;
-    return Objects.equals(this.createdAt, communityTransformsInternalTransformMetadata.createdAt) &&
-        Objects.equals(this.createdBy, communityTransformsInternalTransformMetadata.createdBy) &&
+    return Objects.equals(this.author, communityTransformsInternalTransformMetadata.author) &&
+        Objects.equals(this.contributors, communityTransformsInternalTransformMetadata.contributors) &&
+        Objects.equals(this.createdAt, communityTransformsInternalTransformMetadata.createdAt) &&
         Objects.equals(this.description, communityTransformsInternalTransformMetadata.description) &&
         Objects.equals(this.lastModified, communityTransformsInternalTransformMetadata.lastModified) &&
         Objects.equals(this.name, communityTransformsInternalTransformMetadata.name) &&
@@ -252,15 +285,16 @@ public class CommunityTransformsInternalTransformMetadata {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, createdBy, description, lastModified, name, path, tags);
+    return Objects.hash(author, contributors, createdAt, description, lastModified, name, path, tags);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CommunityTransformsInternalTransformMetadata {\n");
+    sb.append("    author: ").append(toIndentedString(author)).append("\n");
+    sb.append("    contributors: ").append(toIndentedString(contributors)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -288,8 +322,9 @@ public class CommunityTransformsInternalTransformMetadata {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("author");
+    openapiFields.add("contributors");
     openapiFields.add("created_at");
-    openapiFields.add("created_by");
     openapiFields.add("description");
     openapiFields.add("last_modified");
     openapiFields.add("name");
@@ -321,11 +356,15 @@ public class CommunityTransformsInternalTransformMetadata {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("author") != null && !jsonObj.get("author").isJsonNull()) && !jsonObj.get("author").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `author` to be a primitive type in the JSON string but got `%s`", jsonObj.get("author").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("contributors") != null && !jsonObj.get("contributors").isJsonNull() && !jsonObj.get("contributors").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `contributors` to be an array in the JSON string but got `%s`", jsonObj.get("contributors").toString()));
+      }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
-      }
-      if ((jsonObj.get("created_by") != null && !jsonObj.get("created_by").isJsonNull()) && !jsonObj.get("created_by").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `created_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_by").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));

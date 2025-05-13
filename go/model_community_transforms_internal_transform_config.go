@@ -20,12 +20,12 @@ var _ MappedNullable = &CommunityTransformsInternalTransformConfig{}
 
 // CommunityTransformsInternalTransformConfig struct for CommunityTransformsInternalTransformConfig
 type CommunityTransformsInternalTransformConfig struct {
+	Author *string `json:"author,omitempty"`
 	Config map[string]interface{} `json:"config,omitempty"`
-	CreatedBy *string `json:"created_by,omitempty"`
+	Contributors []string `json:"contributors,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Inputs []string `json:"inputs,omitempty"`
 	Name *string `json:"name,omitempty"`
-	Outputs []string `json:"outputs,omitempty"`
 	Tags []string `json:"tags,omitempty"`
 }
 
@@ -44,6 +44,38 @@ func NewCommunityTransformsInternalTransformConfig() *CommunityTransformsInterna
 func NewCommunityTransformsInternalTransformConfigWithDefaults() *CommunityTransformsInternalTransformConfig {
 	this := CommunityTransformsInternalTransformConfig{}
 	return &this
+}
+
+// GetAuthor returns the Author field value if set, zero value otherwise.
+func (o *CommunityTransformsInternalTransformConfig) GetAuthor() string {
+	if o == nil || IsNil(o.Author) {
+		var ret string
+		return ret
+	}
+	return *o.Author
+}
+
+// GetAuthorOk returns a tuple with the Author field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CommunityTransformsInternalTransformConfig) GetAuthorOk() (*string, bool) {
+	if o == nil || IsNil(o.Author) {
+		return nil, false
+	}
+	return o.Author, true
+}
+
+// HasAuthor returns a boolean if a field has been set.
+func (o *CommunityTransformsInternalTransformConfig) HasAuthor() bool {
+	if o != nil && !IsNil(o.Author) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthor gets a reference to the given string and assigns it to the Author field.
+func (o *CommunityTransformsInternalTransformConfig) SetAuthor(v string) {
+	o.Author = &v
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
@@ -78,36 +110,36 @@ func (o *CommunityTransformsInternalTransformConfig) SetConfig(v map[string]inte
 	o.Config = v
 }
 
-// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *CommunityTransformsInternalTransformConfig) GetCreatedBy() string {
-	if o == nil || IsNil(o.CreatedBy) {
-		var ret string
+// GetContributors returns the Contributors field value if set, zero value otherwise.
+func (o *CommunityTransformsInternalTransformConfig) GetContributors() []string {
+	if o == nil || IsNil(o.Contributors) {
+		var ret []string
 		return ret
 	}
-	return *o.CreatedBy
+	return o.Contributors
 }
 
-// GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
+// GetContributorsOk returns a tuple with the Contributors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CommunityTransformsInternalTransformConfig) GetCreatedByOk() (*string, bool) {
-	if o == nil || IsNil(o.CreatedBy) {
+func (o *CommunityTransformsInternalTransformConfig) GetContributorsOk() ([]string, bool) {
+	if o == nil || IsNil(o.Contributors) {
 		return nil, false
 	}
-	return o.CreatedBy, true
+	return o.Contributors, true
 }
 
-// HasCreatedBy returns a boolean if a field has been set.
-func (o *CommunityTransformsInternalTransformConfig) HasCreatedBy() bool {
-	if o != nil && !IsNil(o.CreatedBy) {
+// HasContributors returns a boolean if a field has been set.
+func (o *CommunityTransformsInternalTransformConfig) HasContributors() bool {
+	if o != nil && !IsNil(o.Contributors) {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
-func (o *CommunityTransformsInternalTransformConfig) SetCreatedBy(v string) {
-	o.CreatedBy = &v
+// SetContributors gets a reference to the given []string and assigns it to the Contributors field.
+func (o *CommunityTransformsInternalTransformConfig) SetContributors(v []string) {
+	o.Contributors = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -206,38 +238,6 @@ func (o *CommunityTransformsInternalTransformConfig) SetName(v string) {
 	o.Name = &v
 }
 
-// GetOutputs returns the Outputs field value if set, zero value otherwise.
-func (o *CommunityTransformsInternalTransformConfig) GetOutputs() []string {
-	if o == nil || IsNil(o.Outputs) {
-		var ret []string
-		return ret
-	}
-	return o.Outputs
-}
-
-// GetOutputsOk returns a tuple with the Outputs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CommunityTransformsInternalTransformConfig) GetOutputsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Outputs) {
-		return nil, false
-	}
-	return o.Outputs, true
-}
-
-// HasOutputs returns a boolean if a field has been set.
-func (o *CommunityTransformsInternalTransformConfig) HasOutputs() bool {
-	if o != nil && !IsNil(o.Outputs) {
-		return true
-	}
-
-	return false
-}
-
-// SetOutputs gets a reference to the given []string and assigns it to the Outputs field.
-func (o *CommunityTransformsInternalTransformConfig) SetOutputs(v []string) {
-	o.Outputs = v
-}
-
 // GetTags returns the Tags field value if set, zero value otherwise.
 func (o *CommunityTransformsInternalTransformConfig) GetTags() []string {
 	if o == nil || IsNil(o.Tags) {
@@ -280,11 +280,14 @@ func (o CommunityTransformsInternalTransformConfig) MarshalJSON() ([]byte, error
 
 func (o CommunityTransformsInternalTransformConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Author) {
+		toSerialize["author"] = o.Author
+	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
-	if !IsNil(o.CreatedBy) {
-		toSerialize["created_by"] = o.CreatedBy
+	if !IsNil(o.Contributors) {
+		toSerialize["contributors"] = o.Contributors
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -294,9 +297,6 @@ func (o CommunityTransformsInternalTransformConfig) ToMap() (map[string]interfac
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
-	}
-	if !IsNil(o.Outputs) {
-		toSerialize["outputs"] = o.Outputs
 	}
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags

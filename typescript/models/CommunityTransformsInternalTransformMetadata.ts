@@ -13,8 +13,9 @@
 import { HttpFile } from '../http/http';
 
 export class CommunityTransformsInternalTransformMetadata {
+    'author'?: string;
+    'contributors'?: Array<string>;
     'createdAt'?: string;
-    'createdBy'?: string;
     'description'?: string;
     'lastModified'?: string;
     'name'?: string;
@@ -27,14 +28,20 @@ export class CommunityTransformsInternalTransformMetadata {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "createdAt",
-            "baseName": "created_at",
+            "name": "author",
+            "baseName": "author",
             "type": "string",
             "format": ""
         },
         {
-            "name": "createdBy",
-            "baseName": "created_by",
+            "name": "contributors",
+            "baseName": "contributors",
+            "type": "Array<string>",
+            "format": ""
+        },
+        {
+            "name": "createdAt",
+            "baseName": "created_at",
             "type": "string",
             "format": ""
         },

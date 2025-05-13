@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesCreateOrganizationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-13T01:21:45.691516714Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-13T14:15:40.712988431Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RoutesCreateOrganizationRequest {
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billing_account_id";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)

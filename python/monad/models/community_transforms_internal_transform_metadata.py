@@ -27,14 +27,15 @@ class CommunityTransformsInternalTransformMetadata(BaseModel):
     """
     CommunityTransformsInternalTransformMetadata
     """ # noqa: E501
+    author: Optional[StrictStr] = None
+    contributors: Optional[List[StrictStr]] = None
     created_at: Optional[StrictStr] = None
-    created_by: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     last_modified: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     path: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["created_at", "created_by", "description", "last_modified", "name", "path", "tags"]
+    __properties: ClassVar[List[str]] = ["author", "contributors", "created_at", "description", "last_modified", "name", "path", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,8 +88,9 @@ class CommunityTransformsInternalTransformMetadata(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "author": obj.get("author"),
+            "contributors": obj.get("contributors"),
             "created_at": obj.get("created_at"),
-            "created_by": obj.get("created_by"),
             "description": obj.get("description"),
             "last_modified": obj.get("last_modified"),
             "name": obj.get("name"),
