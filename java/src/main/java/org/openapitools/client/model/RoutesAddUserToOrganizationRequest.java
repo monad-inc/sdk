@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesAddUserToOrganizationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-12T19:48:28.670598466Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-13T01:21:45.691516714Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RoutesAddUserToOrganizationRequest {
   public static final String SERIALIZED_NAME_ROLE_ID = "role_id";
   @SerializedName(SERIALIZED_NAME_ROLE_ID)
