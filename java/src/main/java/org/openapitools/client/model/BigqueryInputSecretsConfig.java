@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * BigQuery Input Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-13T14:15:40.712988431Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-13T15:09:07.018329805Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class BigqueryInputSecretsConfig {
   public static final String SERIALIZED_NAME_CREDENTIALS_JSON = "credentials_json";
   @SerializedName(SERIALIZED_NAME_CREDENTIALS_JSON)
