@@ -13,8 +13,6 @@
 |**description** | **String** |  |  [optional] |
 |**edges** | [**List&lt;ModelsPipelineEdge&gt;**](ModelsPipelineEdge.md) |  |  [optional] |
 |**enabled** | **Boolean** |  |  [optional] |
-|**endpoint** | **String** |  |  [optional] |
-|**endpointHash** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**nodes** | [**List&lt;ModelsPipelineNode&gt;**](ModelsPipelineNode.md) |  |  [optional] |

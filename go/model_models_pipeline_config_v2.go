@@ -26,8 +26,6 @@ type ModelsPipelineConfigV2 struct {
 	Description *string `json:"description,omitempty"`
 	Edges []ModelsPipelineEdge `json:"edges,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
-	Endpoint *string `json:"endpoint,omitempty"`
-	EndpointHash *string `json:"endpoint_hash,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Nodes []ModelsPipelineNode `json:"nodes,omitempty"`
@@ -244,70 +242,6 @@ func (o *ModelsPipelineConfigV2) HasEnabled() bool {
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *ModelsPipelineConfigV2) SetEnabled(v bool) {
 	o.Enabled = &v
-}
-
-// GetEndpoint returns the Endpoint field value if set, zero value otherwise.
-func (o *ModelsPipelineConfigV2) GetEndpoint() string {
-	if o == nil || IsNil(o.Endpoint) {
-		var ret string
-		return ret
-	}
-	return *o.Endpoint
-}
-
-// GetEndpointOk returns a tuple with the Endpoint field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ModelsPipelineConfigV2) GetEndpointOk() (*string, bool) {
-	if o == nil || IsNil(o.Endpoint) {
-		return nil, false
-	}
-	return o.Endpoint, true
-}
-
-// HasEndpoint returns a boolean if a field has been set.
-func (o *ModelsPipelineConfigV2) HasEndpoint() bool {
-	if o != nil && !IsNil(o.Endpoint) {
-		return true
-	}
-
-	return false
-}
-
-// SetEndpoint gets a reference to the given string and assigns it to the Endpoint field.
-func (o *ModelsPipelineConfigV2) SetEndpoint(v string) {
-	o.Endpoint = &v
-}
-
-// GetEndpointHash returns the EndpointHash field value if set, zero value otherwise.
-func (o *ModelsPipelineConfigV2) GetEndpointHash() string {
-	if o == nil || IsNil(o.EndpointHash) {
-		var ret string
-		return ret
-	}
-	return *o.EndpointHash
-}
-
-// GetEndpointHashOk returns a tuple with the EndpointHash field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ModelsPipelineConfigV2) GetEndpointHashOk() (*string, bool) {
-	if o == nil || IsNil(o.EndpointHash) {
-		return nil, false
-	}
-	return o.EndpointHash, true
-}
-
-// HasEndpointHash returns a boolean if a field has been set.
-func (o *ModelsPipelineConfigV2) HasEndpointHash() bool {
-	if o != nil && !IsNil(o.EndpointHash) {
-		return true
-	}
-
-	return false
-}
-
-// SetEndpointHash gets a reference to the given string and assigns it to the EndpointHash field.
-func (o *ModelsPipelineConfigV2) SetEndpointHash(v string) {
-	o.EndpointHash = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -561,12 +495,6 @@ func (o ModelsPipelineConfigV2) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
-	}
-	if !IsNil(o.Endpoint) {
-		toSerialize["endpoint"] = o.Endpoint
-	}
-	if !IsNil(o.EndpointHash) {
-		toSerialize["endpoint_hash"] = o.EndpointHash
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id

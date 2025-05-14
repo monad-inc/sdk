@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineConfigV2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-14T18:57:52.908065864Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-14T20:56:27.069287812Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ModelsPipelineConfigV2 {
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billingAccountId";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
@@ -84,16 +84,6 @@ public class ModelsPipelineConfigV2 {
   @SerializedName(SERIALIZED_NAME_ENABLED)
   @javax.annotation.Nullable
   private Boolean enabled;
-
-  public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
-  @SerializedName(SERIALIZED_NAME_ENDPOINT)
-  @javax.annotation.Nullable
-  private String endpoint;
-
-  public static final String SERIALIZED_NAME_ENDPOINT_HASH = "endpoint_hash";
-  @SerializedName(SERIALIZED_NAME_ENDPOINT_HASH)
-  @javax.annotation.Nullable
-  private String endpointHash;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -255,44 +245,6 @@ public class ModelsPipelineConfigV2 {
   }
 
 
-  public ModelsPipelineConfigV2 endpoint(@javax.annotation.Nullable String endpoint) {
-    this.endpoint = endpoint;
-    return this;
-  }
-
-  /**
-   * Get endpoint
-   * @return endpoint
-   */
-  @javax.annotation.Nullable
-  public String getEndpoint() {
-    return endpoint;
-  }
-
-  public void setEndpoint(@javax.annotation.Nullable String endpoint) {
-    this.endpoint = endpoint;
-  }
-
-
-  public ModelsPipelineConfigV2 endpointHash(@javax.annotation.Nullable String endpointHash) {
-    this.endpointHash = endpointHash;
-    return this;
-  }
-
-  /**
-   * Get endpointHash
-   * @return endpointHash
-   */
-  @javax.annotation.Nullable
-  public String getEndpointHash() {
-    return endpointHash;
-  }
-
-  public void setEndpointHash(@javax.annotation.Nullable String endpointHash) {
-    this.endpointHash = endpointHash;
-  }
-
-
   public ModelsPipelineConfigV2 id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
@@ -450,8 +402,6 @@ public class ModelsPipelineConfigV2 {
         Objects.equals(this.description, modelsPipelineConfigV2.description) &&
         Objects.equals(this.edges, modelsPipelineConfigV2.edges) &&
         Objects.equals(this.enabled, modelsPipelineConfigV2.enabled) &&
-        Objects.equals(this.endpoint, modelsPipelineConfigV2.endpoint) &&
-        Objects.equals(this.endpointHash, modelsPipelineConfigV2.endpointHash) &&
         Objects.equals(this.id, modelsPipelineConfigV2.id) &&
         Objects.equals(this.name, modelsPipelineConfigV2.name) &&
         Objects.equals(this.nodes, modelsPipelineConfigV2.nodes) &&
@@ -463,7 +413,7 @@ public class ModelsPipelineConfigV2 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, componentTier, createdAt, description, edges, enabled, endpoint, endpointHash, id, name, nodes, organizationId, organizationName, retentionPolicy, updatedAt);
+    return Objects.hash(billingAccountId, componentTier, createdAt, description, edges, enabled, id, name, nodes, organizationId, organizationName, retentionPolicy, updatedAt);
   }
 
   @Override
@@ -476,8 +426,6 @@ public class ModelsPipelineConfigV2 {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    edges: ").append(toIndentedString(edges)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
-    sb.append("    endpointHash: ").append(toIndentedString(endpointHash)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
@@ -513,8 +461,6 @@ public class ModelsPipelineConfigV2 {
     openapiFields.add("description");
     openapiFields.add("edges");
     openapiFields.add("enabled");
-    openapiFields.add("endpoint");
-    openapiFields.add("endpoint_hash");
     openapiFields.add("id");
     openapiFields.add("name");
     openapiFields.add("nodes");
@@ -570,12 +516,6 @@ public class ModelsPipelineConfigV2 {
             ModelsPipelineEdge.validateJsonElement(jsonArrayedges.get(i));
           };
         }
-      }
-      if ((jsonObj.get("endpoint") != null && !jsonObj.get("endpoint").isJsonNull()) && !jsonObj.get("endpoint").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `endpoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint").toString()));
-      }
-      if ((jsonObj.get("endpoint_hash") != null && !jsonObj.get("endpoint_hash").isJsonNull()) && !jsonObj.get("endpoint_hash").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `endpoint_hash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint_hash").toString()));
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
