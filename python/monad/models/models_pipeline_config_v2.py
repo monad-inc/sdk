@@ -36,6 +36,8 @@ class ModelsPipelineConfigV2(BaseModel):
     description: Optional[StrictStr] = None
     edges: Optional[List[ModelsPipelineEdge]] = None
     enabled: Optional[StrictBool] = None
+    endpoint: Optional[StrictStr] = None
+    endpoint_hash: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     nodes: Optional[List[ModelsPipelineNode]] = None
@@ -43,7 +45,7 @@ class ModelsPipelineConfigV2(BaseModel):
     organization_name: Optional[StrictStr] = Field(default=None, alias="organizationName")
     retention_policy: Optional[ModelsPipelineRetentionPolicy] = None
     updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
-    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "description", "edges", "enabled", "id", "name", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"]
+    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "description", "edges", "enabled", "endpoint", "endpoint_hash", "id", "name", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -119,6 +121,8 @@ class ModelsPipelineConfigV2(BaseModel):
             "description": obj.get("description"),
             "edges": [ModelsPipelineEdge.from_dict(_item) for _item in obj["edges"]] if obj.get("edges") is not None else None,
             "enabled": obj.get("enabled"),
+            "endpoint": obj.get("endpoint"),
+            "endpoint_hash": obj.get("endpoint_hash"),
             "id": obj.get("id"),
             "name": obj.get("name"),
             "nodes": [ModelsPipelineNode.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None,

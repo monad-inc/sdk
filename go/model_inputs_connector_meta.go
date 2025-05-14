@@ -24,6 +24,7 @@ type InputsConnectorMeta struct {
 	BillingType *int32 `json:"billing_type,omitempty"`
 	Category *string `json:"category,omitempty"`
 	Config interface{} `json:"config,omitempty"`
+	DedicatedEndpoint *bool `json:"dedicated_endpoint,omitempty"`
 	Description *string `json:"description,omitempty"`
 	House *string `json:"house,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
@@ -176,6 +177,38 @@ func (o *InputsConnectorMeta) HasConfig() bool {
 // SetConfig gets a reference to the given interface{} and assigns it to the Config field.
 func (o *InputsConnectorMeta) SetConfig(v interface{}) {
 	o.Config = v
+}
+
+// GetDedicatedEndpoint returns the DedicatedEndpoint field value if set, zero value otherwise.
+func (o *InputsConnectorMeta) GetDedicatedEndpoint() bool {
+	if o == nil || IsNil(o.DedicatedEndpoint) {
+		var ret bool
+		return ret
+	}
+	return *o.DedicatedEndpoint
+}
+
+// GetDedicatedEndpointOk returns a tuple with the DedicatedEndpoint field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InputsConnectorMeta) GetDedicatedEndpointOk() (*bool, bool) {
+	if o == nil || IsNil(o.DedicatedEndpoint) {
+		return nil, false
+	}
+	return o.DedicatedEndpoint, true
+}
+
+// HasDedicatedEndpoint returns a boolean if a field has been set.
+func (o *InputsConnectorMeta) HasDedicatedEndpoint() bool {
+	if o != nil && !IsNil(o.DedicatedEndpoint) {
+		return true
+	}
+
+	return false
+}
+
+// SetDedicatedEndpoint gets a reference to the given bool and assigns it to the DedicatedEndpoint field.
+func (o *InputsConnectorMeta) SetDedicatedEndpoint(v bool) {
+	o.DedicatedEndpoint = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -391,6 +424,9 @@ func (o InputsConnectorMeta) ToMap() (map[string]interface{}, error) {
 	}
 	if o.Config != nil {
 		toSerialize["config"] = o.Config
+	}
+	if !IsNil(o.DedicatedEndpoint) {
+		toSerialize["dedicated_endpoint"] = o.DedicatedEndpoint
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

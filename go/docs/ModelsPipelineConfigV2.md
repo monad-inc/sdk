@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Edges** | Pointer to [**[]ModelsPipelineEdge**](ModelsPipelineEdge.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
+**Endpoint** | Pointer to **string** |  | [optional] 
+**EndpointHash** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Nodes** | Pointer to [**[]ModelsPipelineNode**](ModelsPipelineNode.md) |  | [optional] 
@@ -186,6 +188,56 @@ SetEnabled sets Enabled field to given value.
 `func (o *ModelsPipelineConfigV2) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
+
+### GetEndpoint
+
+`func (o *ModelsPipelineConfigV2) GetEndpoint() string`
+
+GetEndpoint returns the Endpoint field if non-nil, zero value otherwise.
+
+### GetEndpointOk
+
+`func (o *ModelsPipelineConfigV2) GetEndpointOk() (*string, bool)`
+
+GetEndpointOk returns a tuple with the Endpoint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEndpoint
+
+`func (o *ModelsPipelineConfigV2) SetEndpoint(v string)`
+
+SetEndpoint sets Endpoint field to given value.
+
+### HasEndpoint
+
+`func (o *ModelsPipelineConfigV2) HasEndpoint() bool`
+
+HasEndpoint returns a boolean if a field has been set.
+
+### GetEndpointHash
+
+`func (o *ModelsPipelineConfigV2) GetEndpointHash() string`
+
+GetEndpointHash returns the EndpointHash field if non-nil, zero value otherwise.
+
+### GetEndpointHashOk
+
+`func (o *ModelsPipelineConfigV2) GetEndpointHashOk() (*string, bool)`
+
+GetEndpointHashOk returns a tuple with the EndpointHash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEndpointHash
+
+`func (o *ModelsPipelineConfigV2) SetEndpointHash(v string)`
+
+SetEndpointHash sets EndpointHash field to given value.
+
+### HasEndpointHash
+
+`func (o *ModelsPipelineConfigV2) HasEndpointHash() bool`
+
+HasEndpointHash returns a boolean if a field has been set.
 
 ### GetId
 

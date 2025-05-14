@@ -31,13 +31,14 @@ class InputsConnectorMeta(BaseModel):
     billing_type: Optional[StrictInt] = None
     category: Optional[StrictStr] = None
     config: Optional[Any] = None
+    dedicated_endpoint: Optional[StrictBool] = None
     description: Optional[StrictStr] = None
     house: Optional[StrictStr] = None
     internal: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
     tier: Optional[StrictInt] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "category", "config", "description", "house", "internal", "name", "tier", "type_id"]
+    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "category", "config", "dedicated_endpoint", "description", "house", "internal", "name", "tier", "type_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,6 +100,7 @@ class InputsConnectorMeta(BaseModel):
             "billing_type": obj.get("billing_type"),
             "category": obj.get("category"),
             "config": obj.get("config"),
+            "dedicated_endpoint": obj.get("dedicated_endpoint"),
             "description": obj.get("description"),
             "house": obj.get("house"),
             "internal": obj.get("internal"),

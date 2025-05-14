@@ -17,6 +17,7 @@ export class InputsConnectorMeta {
     'billingType'?: number;
     'category'?: string;
     'config'?: any | null;
+    'dedicatedEndpoint'?: boolean;
     'description'?: string;
     'house'?: string;
     'internal'?: boolean;
@@ -51,6 +52,12 @@ export class InputsConnectorMeta {
             "name": "config",
             "baseName": "config",
             "type": "any",
+            "format": ""
+        },
+        {
+            "name": "dedicatedEndpoint",
+            "baseName": "dedicated_endpoint",
+            "type": "boolean",
             "format": ""
         },
         {

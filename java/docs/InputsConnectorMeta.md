@@ -11,6 +11,7 @@
 |**billingType** | **Integer** |  |  [optional] |
 |**category** | **String** |  |  [optional] |
 |**config** | **Object** |  |  [optional] |
+|**dedicatedEndpoint** | **Boolean** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**house** | **String** |  |  [optional] |
 |**internal** | **Boolean** |  |  [optional] |

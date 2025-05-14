@@ -22,6 +22,8 @@ export class ModelsPipelineConfigV2 {
     'description'?: string;
     'edges'?: Array<ModelsPipelineEdge>;
     'enabled'?: boolean;
+    'endpoint'?: string;
+    'endpointHash'?: string;
     'id'?: string;
     'name'?: string;
     'nodes'?: Array<ModelsPipelineNode>;
@@ -69,6 +71,18 @@ export class ModelsPipelineConfigV2 {
             "name": "enabled",
             "baseName": "enabled",
             "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "endpoint",
+            "baseName": "endpoint",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "endpointHash",
+            "baseName": "endpoint_hash",
+            "type": "string",
             "format": ""
         },
         {

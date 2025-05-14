@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **edges** | [**List[ModelsPipelineEdge]**](ModelsPipelineEdge.md) |  | [optional] 
 **enabled** | **bool** |  | [optional] 
+**endpoint** | **str** |  | [optional] 
+**endpoint_hash** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **nodes** | [**List[ModelsPipelineNode]**](ModelsPipelineNode.md) |  | [optional] 
