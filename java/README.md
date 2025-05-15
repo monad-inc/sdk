@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-05-14T21:44:01.869179486Z[Etc/UTC]
+  - Build date: 2025-05-15T14:47:48.954304140Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -155,6 +155,12 @@ Class | Method | HTTP request | Description
 *OrganizationApiKeysApi* | [**v2OrganizationIdApiKeysApiKeyIdRegeneratePost**](docs/OrganizationApiKeysApi.md#v2OrganizationIdApiKeysApiKeyIdRegeneratePost) | **POST** /v2/{organization_id}/api_keys/{api_key_id}/regenerate | Regenerate API key
 *OrganizationApiKeysApi* | [**v2OrganizationIdApiKeysGet**](docs/OrganizationApiKeysApi.md#v2OrganizationIdApiKeysGet) | **GET** /v2/{organization_id}/api_keys | List API keys
 *OrganizationApiKeysApi* | [**v2OrganizationIdApiKeysPost**](docs/OrganizationApiKeysApi.md#v2OrganizationIdApiKeysPost) | **POST** /v2/{organization_id}/api_keys | Create API key
+*OrganizationEnrichmentsApi* | [**v3OrganizationIdEnrichmentsEnrichmentIdDelete**](docs/OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdDelete) | **DELETE** /v3/{organization_id}/enrichments/{enrichment_id} | Delete enrichment
+*OrganizationEnrichmentsApi* | [**v3OrganizationIdEnrichmentsEnrichmentIdGet**](docs/OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdGet) | **GET** /v3/{organization_id}/enrichments/{enrichment_id} | Get enrichment
+*OrganizationEnrichmentsApi* | [**v3OrganizationIdEnrichmentsEnrichmentIdPatch**](docs/OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdPatch) | **PATCH** /v3/{organization_id}/enrichments/{enrichment_id} | Update enrichment
+*OrganizationEnrichmentsApi* | [**v3OrganizationIdEnrichmentsGet**](docs/OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsGet) | **GET** /v3/{organization_id}/enrichments | List enrichments
+*OrganizationEnrichmentsApi* | [**v3OrganizationIdEnrichmentsPost**](docs/OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsPost) | **POST** /v3/{organization_id}/enrichments | Create enrichment
+*OrganizationEnrichmentsApi* | [**v3OrganizationIdEnrichmentsTestConnectionPost**](docs/OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsTestConnectionPost) | **POST** /v3/{organization_id}/enrichments/test-connection | Test enrichment connection
 *OrganizationInputsApi* | [**v1OrganizationIdInputsGet**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsGet) | **GET** /v1/{organization_id}/inputs | List inputs
 *OrganizationInputsApi* | [**v1OrganizationIdInputsInputIdDelete**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsInputIdDelete) | **DELETE** /v1/{organization_id}/inputs/{input_id} | Delete input
 *OrganizationInputsApi* | [**v1OrganizationIdInputsInputIdGet**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsInputIdGet) | **GET** /v1/{organization_id}/inputs/{input_id} | Get input
@@ -308,6 +314,7 @@ Class | Method | HTTP request | Description
  - [IssuesSettingsConfig](docs/IssuesSettingsConfig.md)
  - [JqJQ](docs/JqJQ.md)
  - [JsonJsonFormatter](docs/JsonJsonFormatter.md)
+ - [KvLookupSettingsConfig](docs/KvLookupSettingsConfig.md)
  - [LogAnalyticsQuerySecretsConfig](docs/LogAnalyticsQuerySecretsConfig.md)
  - [LogAnalyticsQuerySettingsConfig](docs/LogAnalyticsQuerySettingsConfig.md)
  - [LoginActivitySecretsConfig](docs/LoginActivitySecretsConfig.md)
@@ -328,6 +335,9 @@ Class | Method | HTTP request | Description
  - [ModelsComponentReference](docs/ModelsComponentReference.md)
  - [ModelsConnectorMeta](docs/ModelsConnectorMeta.md)
  - [ModelsDataUsage](docs/ModelsDataUsage.md)
+ - [ModelsEnrichment](docs/ModelsEnrichment.md)
+ - [ModelsEnrichmentConfig](docs/ModelsEnrichmentConfig.md)
+ - [ModelsEnrichmentList](docs/ModelsEnrichmentList.md)
  - [ModelsInput](docs/ModelsInput.md)
  - [ModelsInputConfig](docs/ModelsInputConfig.md)
  - [ModelsInputList](docs/ModelsInputList.md)
@@ -441,7 +451,14 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdateOutputRequest](docs/RoutesV2UpdateOutputRequest.md)
  - [RoutesV2UpdatePipelineRequest](docs/RoutesV2UpdatePipelineRequest.md)
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
+ - [RoutesV3CreateEnrichmentRequest](docs/RoutesV3CreateEnrichmentRequest.md)
+ - [RoutesV3SuccessResponse](docs/RoutesV3SuccessResponse.md)
+ - [RoutesV3TestEnrichmentConnectionRequest](docs/RoutesV3TestEnrichmentConnectionRequest.md)
+ - [RoutesV3UpdateEnrichmentRequest](docs/RoutesV3UpdateEnrichmentRequest.md)
  - [S3SettingsConfig](docs/S3SettingsConfig.md)
+ - [SecretProcessesorEnrichmentConfig](docs/SecretProcessesorEnrichmentConfig.md)
+ - [SecretProcessesorEnrichmentConfigSecrets](docs/SecretProcessesorEnrichmentConfigSecrets.md)
+ - [SecretProcessesorEnrichmentConfigSettings](docs/SecretProcessesorEnrichmentConfigSettings.md)
  - [SecretProcessesorInputConfig](docs/SecretProcessesorInputConfig.md)
  - [SecretProcessesorInputConfigSecrets](docs/SecretProcessesorInputConfigSecrets.md)
  - [SecretProcessesorInputConfigSettings](docs/SecretProcessesorInputConfigSettings.md)

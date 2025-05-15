@@ -12,6 +12,7 @@ from monad.api.inputs_api import InputsApi
 from monad.api.logs_api import LogsApi
 from monad.api.oauth_api import OauthApi
 from monad.api.organization_api_keys_api import OrganizationApiKeysApi
+from monad.api.organization_enrichments_api import OrganizationEnrichmentsApi
 from monad.api.organization_inputs_api import OrganizationInputsApi
 from monad.api.organization_invites_api import OrganizationInvitesApi
 from monad.api.organization_outputs_api import OrganizationOutputsApi

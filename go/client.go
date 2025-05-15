@@ -72,6 +72,8 @@ type APIClient struct {
 
 	OrganizationApiKeysAPI *OrganizationApiKeysAPIService
 
+	OrganizationEnrichmentsAPI *OrganizationEnrichmentsAPIService
+
 	OrganizationInputsAPI *OrganizationInputsAPIService
 
 	OrganizationInvitesAPI *OrganizationInvitesAPIService
@@ -134,6 +136,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LogsAPI = (*LogsAPIService)(&c.common)
 	c.OauthAPI = (*OauthAPIService)(&c.common)
 	c.OrganizationApiKeysAPI = (*OrganizationApiKeysAPIService)(&c.common)
+	c.OrganizationEnrichmentsAPI = (*OrganizationEnrichmentsAPIService)(&c.common)
 	c.OrganizationInputsAPI = (*OrganizationInputsAPIService)(&c.common)
 	c.OrganizationInvitesAPI = (*OrganizationInvitesAPIService)(&c.common)
 	c.OrganizationOutputsAPI = (*OrganizationOutputsAPIService)(&c.common)

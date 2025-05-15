@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesGetInputResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-14T21:44:01.869179486Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-15T14:47:48.954304140Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RoutesGetInputResponse {
   public static final String SERIALIZED_NAME_COMPONENT_OF = "component_of";
   @SerializedName(SERIALIZED_NAME_COMPONENT_OF)

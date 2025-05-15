@@ -80,6 +80,7 @@ export * from '../models/IssuesSecretsConfig';
 export * from '../models/IssuesSettingsConfig';
 export * from '../models/JqJQ';
 export * from '../models/JsonJsonFormatter';
+export * from '../models/KvLookupSettingsConfig';
 export * from '../models/LogAnalyticsQuerySecretsConfig';
 export * from '../models/LogAnalyticsQuerySettingsConfig';
 export * from '../models/LoginActivitySecretsConfig';
@@ -100,6 +101,9 @@ export * from '../models/ModelsBillingProductList';
 export * from '../models/ModelsComponentReference';
 export * from '../models/ModelsConnectorMeta';
 export * from '../models/ModelsDataUsage';
+export * from '../models/ModelsEnrichment';
+export * from '../models/ModelsEnrichmentConfig';
+export * from '../models/ModelsEnrichmentList';
 export * from '../models/ModelsInput';
 export * from '../models/ModelsInputConfig';
 export * from '../models/ModelsInputList';
@@ -213,7 +217,14 @@ export * from '../models/RoutesV2UpdateInputRequest';
 export * from '../models/RoutesV2UpdateOutputRequest';
 export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/RoutesV2UpdateRoleV2Request';
+export * from '../models/RoutesV3CreateEnrichmentRequest';
+export * from '../models/RoutesV3SuccessResponse';
+export * from '../models/RoutesV3TestEnrichmentConnectionRequest';
+export * from '../models/RoutesV3UpdateEnrichmentRequest';
 export * from '../models/S3SettingsConfig';
+export * from '../models/SecretProcessesorEnrichmentConfig';
+export * from '../models/SecretProcessesorEnrichmentConfigSecrets';
+export * from '../models/SecretProcessesorEnrichmentConfigSettings';
 export * from '../models/SecretProcessesorInputConfig';
 export * from '../models/SecretProcessesorInputConfigSecrets';
 export * from '../models/SecretProcessesorInputConfigSettings';
@@ -349,6 +360,7 @@ import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig     , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum    } from '../models/IssuesSettingsConfig';
 import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
+import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
 import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig';
@@ -369,6 +381,9 @@ import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
+import { ModelsEnrichment } from '../models/ModelsEnrichment';
+import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
+import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
 import { ModelsInput } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputList } from '../models/ModelsInputList';
@@ -482,7 +497,14 @@ import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
+import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
+import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
+import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
+import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
+import { SecretProcessesorEnrichmentConfigSecretsClass } from '../models/SecretProcessesorEnrichmentConfigSecrets';
+import { SecretProcessesorEnrichmentConfigSettingsClass } from '../models/SecretProcessesorEnrichmentConfigSettings';
 import { SecretProcessesorInputConfig } from '../models/SecretProcessesorInputConfig';
 import { SecretProcessesorInputConfigSecretsClass } from '../models/SecretProcessesorInputConfigSecrets';
 import { SecretProcessesorInputConfigSettingsClass } from '../models/SecretProcessesorInputConfigSettings';
@@ -643,6 +665,7 @@ let typeMap: {[index: string]: any} = {
     "IssuesSettingsConfig": IssuesSettingsConfig,
     "JqJQ": JqJQ,
     "JsonJsonFormatter": JsonJsonFormatter,
+    "KvLookupSettingsConfig": KvLookupSettingsConfig,
     "LogAnalyticsQuerySecretsConfig": LogAnalyticsQuerySecretsConfig,
     "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,
     "LoginActivitySecretsConfig": LoginActivitySecretsConfig,
@@ -663,6 +686,9 @@ let typeMap: {[index: string]: any} = {
     "ModelsComponentReference": ModelsComponentReference,
     "ModelsConnectorMeta": ModelsConnectorMeta,
     "ModelsDataUsage": ModelsDataUsage,
+    "ModelsEnrichment": ModelsEnrichment,
+    "ModelsEnrichmentConfig": ModelsEnrichmentConfig,
+    "ModelsEnrichmentList": ModelsEnrichmentList,
     "ModelsInput": ModelsInput,
     "ModelsInputConfig": ModelsInputConfig,
     "ModelsInputList": ModelsInputList,
@@ -776,7 +802,14 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdateOutputRequest": RoutesV2UpdateOutputRequest,
     "RoutesV2UpdatePipelineRequest": RoutesV2UpdatePipelineRequest,
     "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
+    "RoutesV3CreateEnrichmentRequest": RoutesV3CreateEnrichmentRequest,
+    "RoutesV3SuccessResponse": RoutesV3SuccessResponse,
+    "RoutesV3TestEnrichmentConnectionRequest": RoutesV3TestEnrichmentConnectionRequest,
+    "RoutesV3UpdateEnrichmentRequest": RoutesV3UpdateEnrichmentRequest,
     "S3SettingsConfig": S3SettingsConfig,
+    "SecretProcessesorEnrichmentConfig": SecretProcessesorEnrichmentConfig,
+    "SecretProcessesorEnrichmentConfigSecrets": SecretProcessesorEnrichmentConfigSecretsClass,
+    "SecretProcessesorEnrichmentConfigSettings": SecretProcessesorEnrichmentConfigSettingsClass,
     "SecretProcessesorInputConfig": SecretProcessesorInputConfig,
     "SecretProcessesorInputConfigSecrets": SecretProcessesorInputConfigSecretsClass,
     "SecretProcessesorInputConfigSettings": SecretProcessesorInputConfigSettingsClass,

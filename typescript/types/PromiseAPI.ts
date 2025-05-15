@@ -84,6 +84,7 @@ import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig } from '../models/IssuesSettingsConfig';
 import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
+import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
 import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig';
@@ -104,6 +105,9 @@ import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
+import { ModelsEnrichment } from '../models/ModelsEnrichment';
+import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
+import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
 import { ModelsInput } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputList } from '../models/ModelsInputList';
@@ -217,7 +221,14 @@ import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
+import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
+import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
+import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
+import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
+import { SecretProcessesorEnrichmentConfigSecrets } from '../models/SecretProcessesorEnrichmentConfigSecrets';
+import { SecretProcessesorEnrichmentConfigSettings } from '../models/SecretProcessesorEnrichmentConfigSettings';
 import { SecretProcessesorInputConfig } from '../models/SecretProcessesorInputConfig';
 import { SecretProcessesorInputConfigSecrets } from '../models/SecretProcessesorInputConfigSecrets';
 import { SecretProcessesorInputConfigSettings } from '../models/SecretProcessesorInputConfigSettings';
@@ -1413,6 +1424,177 @@ export class PromiseOrganizationApiKeysApi {
     public v2OrganizationIdApiKeysPost(organizationId: string, routesV2CreateAPIKeyRequest: RoutesV2CreateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v2OrganizationIdApiKeysPost(organizationId, routesV2CreateAPIKeyRequest, observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableOrganizationEnrichmentsApi } from './ObservableAPI';
+
+import { OrganizationEnrichmentsApiRequestFactory, OrganizationEnrichmentsApiResponseProcessor} from "../apis/OrganizationEnrichmentsApi";
+export class PromiseOrganizationEnrichmentsApi {
+    private api: ObservableOrganizationEnrichmentsApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: OrganizationEnrichmentsApiRequestFactory,
+        responseProcessor?: OrganizationEnrichmentsApiResponseProcessor
+    ) {
+        this.api = new ObservableOrganizationEnrichmentsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Delete an enrichment by ID
+     * Delete enrichment
+     * @param organizationId Organization ID
+     * @param enrichmentId Enrichment ID
+     */
+    public v3OrganizationIdEnrichmentsEnrichmentIdDeleteWithHttpInfo(organizationId: string, enrichmentId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3SuccessResponse>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsEnrichmentIdDeleteWithHttpInfo(organizationId, enrichmentId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Delete an enrichment by ID
+     * Delete enrichment
+     * @param organizationId Organization ID
+     * @param enrichmentId Enrichment ID
+     */
+    public v3OrganizationIdEnrichmentsEnrichmentIdDelete(organizationId: string, enrichmentId: string, _options?: PromiseConfigurationOptions): Promise<RoutesV3SuccessResponse> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsEnrichmentIdDelete(organizationId, enrichmentId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get an enrichment by ID
+     * Get enrichment
+     * @param organizationId Organization ID
+     * @param enrichmentId Enrichment ID
+     */
+    public v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(organizationId: string, enrichmentId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(organizationId, enrichmentId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get an enrichment by ID
+     * Get enrichment
+     * @param organizationId Organization ID
+     * @param enrichmentId Enrichment ID
+     */
+    public v3OrganizationIdEnrichmentsEnrichmentIdGet(organizationId: string, enrichmentId: string, _options?: PromiseConfigurationOptions): Promise<ModelsEnrichment> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsEnrichmentIdGet(organizationId, enrichmentId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update an existing enrichment with new configuration including secrets handling
+     * Update enrichment
+     * @param organizationId Organization ID
+     * @param enrichmentId Enrichment ID
+     * @param routesV3UpdateEnrichmentRequest Enrichment configuration update
+     * @param [testConnection] Test connection before updating the enrichment
+     */
+    public v3OrganizationIdEnrichmentsEnrichmentIdPatchWithHttpInfo(organizationId: string, enrichmentId: string, routesV3UpdateEnrichmentRequest: RoutesV3UpdateEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsEnrichmentIdPatchWithHttpInfo(organizationId, enrichmentId, routesV3UpdateEnrichmentRequest, testConnection, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update an existing enrichment with new configuration including secrets handling
+     * Update enrichment
+     * @param organizationId Organization ID
+     * @param enrichmentId Enrichment ID
+     * @param routesV3UpdateEnrichmentRequest Enrichment configuration update
+     * @param [testConnection] Test connection before updating the enrichment
+     */
+    public v3OrganizationIdEnrichmentsEnrichmentIdPatch(organizationId: string, enrichmentId: string, routesV3UpdateEnrichmentRequest: RoutesV3UpdateEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsEnrichment> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsEnrichmentIdPatch(organizationId, enrichmentId, routesV3UpdateEnrichmentRequest, testConnection, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List all enrichments for an organization
+     * List enrichments
+     * @param organizationId Organization ID
+     * @param [limit] Number of results to return (default 100)
+     * @param [offset] Number of results to skip (default 0)
+     */
+    public v3OrganizationIdEnrichmentsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsEnrichmentList>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsGetWithHttpInfo(organizationId, limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List all enrichments for an organization
+     * List enrichments
+     * @param organizationId Organization ID
+     * @param [limit] Number of results to return (default 100)
+     * @param [offset] Number of results to skip (default 0)
+     */
+    public v3OrganizationIdEnrichmentsGet(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsEnrichmentList> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsGet(organizationId, limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create a new enrichment with configuration including secrets handling
+     * Create enrichment
+     * @param organizationId Organization ID
+     * @param routesV3CreateEnrichmentRequest Enrichment configuration
+     * @param [testConnection] Test connection before creating the enrichment
+     */
+    public v3OrganizationIdEnrichmentsPostWithHttpInfo(organizationId: string, routesV3CreateEnrichmentRequest: RoutesV3CreateEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsPostWithHttpInfo(organizationId, routesV3CreateEnrichmentRequest, testConnection, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create a new enrichment with configuration including secrets handling
+     * Create enrichment
+     * @param organizationId Organization ID
+     * @param routesV3CreateEnrichmentRequest Enrichment configuration
+     * @param [testConnection] Test connection before creating the enrichment
+     */
+    public v3OrganizationIdEnrichmentsPost(organizationId: string, routesV3CreateEnrichmentRequest: RoutesV3CreateEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsEnrichment> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsPost(organizationId, routesV3CreateEnrichmentRequest, testConnection, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Tests the connection for a given enrichment type and configuration
+     * Test enrichment connection
+     * @param organizationId Organization ID
+     * @param routesV3TestEnrichmentConnectionRequest Enrichment configuration to test
+     */
+    public v3OrganizationIdEnrichmentsTestConnectionPostWithHttpInfo(organizationId: string, routesV3TestEnrichmentConnectionRequest: RoutesV3TestEnrichmentConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3SuccessResponse>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsTestConnectionPostWithHttpInfo(organizationId, routesV3TestEnrichmentConnectionRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Tests the connection for a given enrichment type and configuration
+     * Test enrichment connection
+     * @param organizationId Organization ID
+     * @param routesV3TestEnrichmentConnectionRequest Enrichment configuration to test
+     */
+    public v3OrganizationIdEnrichmentsTestConnectionPost(organizationId: string, routesV3TestEnrichmentConnectionRequest: RoutesV3TestEnrichmentConnectionRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV3SuccessResponse> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsTestConnectionPost(organizationId, routesV3TestEnrichmentConnectionRequest, observableOptions);
         return result.toPromise();
     }
 
