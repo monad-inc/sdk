@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.community_transforms_internal_transform_metadata import CommunityTransformsInternalTransformMetadata
 from typing import Optional, Set
@@ -29,8 +29,9 @@ class CommunityTransformsInternalTransformsIndex(BaseModel):
     CommunityTransformsInternalTransformsIndex
     """ # noqa: E501
     last_updated: Optional[StrictStr] = None
+    schema_hash: Optional[StrictStr] = Field(default=None, description="Hash of the schema structure")
     transforms: Optional[List[CommunityTransformsInternalTransformMetadata]] = None
-    __properties: ClassVar[List[str]] = ["last_updated", "transforms"]
+    __properties: ClassVar[List[str]] = ["last_updated", "schema_hash", "transforms"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +92,7 @@ class CommunityTransformsInternalTransformsIndex(BaseModel):
 
         _obj = cls.model_validate({
             "last_updated": obj.get("last_updated"),
+            "schema_hash": obj.get("schema_hash"),
             "transforms": [CommunityTransformsInternalTransformMetadata.from_dict(_item) for _item in obj["transforms"]] if obj.get("transforms") is not None else None
         })
         return _obj

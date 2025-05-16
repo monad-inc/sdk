@@ -15,6 +15,10 @@ import { HttpFile } from '../http/http';
 
 export class CommunityTransformsInternalTransformsIndex {
     'lastUpdated'?: string;
+    /**
+    * Hash of the schema structure
+    */
+    'schemaHash'?: string;
     'transforms'?: Array<CommunityTransformsInternalTransformMetadata>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -25,6 +29,12 @@ export class CommunityTransformsInternalTransformsIndex {
         {
             "name": "lastUpdated",
             "baseName": "last_updated",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "schemaHash",
+            "baseName": "schema_hash",
             "type": "string",
             "format": ""
         },

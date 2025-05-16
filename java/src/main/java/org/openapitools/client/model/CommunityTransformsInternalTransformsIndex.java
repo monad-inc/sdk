@@ -51,12 +51,17 @@ import org.openapitools.client.JSON;
 /**
  * CommunityTransformsInternalTransformsIndex
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-16T16:19:51.397070560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-16T17:55:31.462424024Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CommunityTransformsInternalTransformsIndex {
   public static final String SERIALIZED_NAME_LAST_UPDATED = "last_updated";
   @SerializedName(SERIALIZED_NAME_LAST_UPDATED)
   @javax.annotation.Nullable
   private String lastUpdated;
+
+  public static final String SERIALIZED_NAME_SCHEMA_HASH = "schema_hash";
+  @SerializedName(SERIALIZED_NAME_SCHEMA_HASH)
+  @javax.annotation.Nullable
+  private String schemaHash;
 
   public static final String SERIALIZED_NAME_TRANSFORMS = "transforms";
   @SerializedName(SERIALIZED_NAME_TRANSFORMS)
@@ -82,6 +87,25 @@ public class CommunityTransformsInternalTransformsIndex {
 
   public void setLastUpdated(@javax.annotation.Nullable String lastUpdated) {
     this.lastUpdated = lastUpdated;
+  }
+
+
+  public CommunityTransformsInternalTransformsIndex schemaHash(@javax.annotation.Nullable String schemaHash) {
+    this.schemaHash = schemaHash;
+    return this;
+  }
+
+  /**
+   * Hash of the schema structure
+   * @return schemaHash
+   */
+  @javax.annotation.Nullable
+  public String getSchemaHash() {
+    return schemaHash;
+  }
+
+  public void setSchemaHash(@javax.annotation.Nullable String schemaHash) {
+    this.schemaHash = schemaHash;
   }
 
 
@@ -123,12 +147,13 @@ public class CommunityTransformsInternalTransformsIndex {
     }
     CommunityTransformsInternalTransformsIndex communityTransformsInternalTransformsIndex = (CommunityTransformsInternalTransformsIndex) o;
     return Objects.equals(this.lastUpdated, communityTransformsInternalTransformsIndex.lastUpdated) &&
+        Objects.equals(this.schemaHash, communityTransformsInternalTransformsIndex.schemaHash) &&
         Objects.equals(this.transforms, communityTransformsInternalTransformsIndex.transforms);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(lastUpdated, transforms);
+    return Objects.hash(lastUpdated, schemaHash, transforms);
   }
 
   @Override
@@ -136,6 +161,7 @@ public class CommunityTransformsInternalTransformsIndex {
     StringBuilder sb = new StringBuilder();
     sb.append("class CommunityTransformsInternalTransformsIndex {\n");
     sb.append("    lastUpdated: ").append(toIndentedString(lastUpdated)).append("\n");
+    sb.append("    schemaHash: ").append(toIndentedString(schemaHash)).append("\n");
     sb.append("    transforms: ").append(toIndentedString(transforms)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -160,6 +186,7 @@ public class CommunityTransformsInternalTransformsIndex {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("last_updated");
+    openapiFields.add("schema_hash");
     openapiFields.add("transforms");
 
     // a set of required properties/fields (JSON key names)
@@ -189,6 +216,9 @@ public class CommunityTransformsInternalTransformsIndex {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("last_updated") != null && !jsonObj.get("last_updated").isJsonNull()) && !jsonObj.get("last_updated").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `last_updated` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_updated").toString()));
+      }
+      if ((jsonObj.get("schema_hash") != null && !jsonObj.get("schema_hash").isJsonNull()) && !jsonObj.get("schema_hash").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `schema_hash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema_hash").toString()));
       }
       if (jsonObj.get("transforms") != null && !jsonObj.get("transforms").isJsonNull()) {
         JsonArray jsonArraytransforms = jsonObj.getAsJsonArray("transforms");

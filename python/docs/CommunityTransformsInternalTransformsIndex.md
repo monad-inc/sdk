@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **last_updated** | **str** |  | [optional] 
+**schema_hash** | **str** | Hash of the schema structure | [optional] 
 **transforms** | [**List[CommunityTransformsInternalTransformMetadata]**](CommunityTransformsInternalTransformMetadata.md) |  | [optional] 
 
 ## Example

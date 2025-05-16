@@ -21,6 +21,8 @@ var _ MappedNullable = &CommunityTransformsInternalTransformsIndex{}
 // CommunityTransformsInternalTransformsIndex struct for CommunityTransformsInternalTransformsIndex
 type CommunityTransformsInternalTransformsIndex struct {
 	LastUpdated *string `json:"last_updated,omitempty"`
+	// Hash of the schema structure
+	SchemaHash *string `json:"schema_hash,omitempty"`
 	Transforms []CommunityTransformsInternalTransformMetadata `json:"transforms,omitempty"`
 }
 
@@ -73,6 +75,38 @@ func (o *CommunityTransformsInternalTransformsIndex) SetLastUpdated(v string) {
 	o.LastUpdated = &v
 }
 
+// GetSchemaHash returns the SchemaHash field value if set, zero value otherwise.
+func (o *CommunityTransformsInternalTransformsIndex) GetSchemaHash() string {
+	if o == nil || IsNil(o.SchemaHash) {
+		var ret string
+		return ret
+	}
+	return *o.SchemaHash
+}
+
+// GetSchemaHashOk returns a tuple with the SchemaHash field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CommunityTransformsInternalTransformsIndex) GetSchemaHashOk() (*string, bool) {
+	if o == nil || IsNil(o.SchemaHash) {
+		return nil, false
+	}
+	return o.SchemaHash, true
+}
+
+// HasSchemaHash returns a boolean if a field has been set.
+func (o *CommunityTransformsInternalTransformsIndex) HasSchemaHash() bool {
+	if o != nil && !IsNil(o.SchemaHash) {
+		return true
+	}
+
+	return false
+}
+
+// SetSchemaHash gets a reference to the given string and assigns it to the SchemaHash field.
+func (o *CommunityTransformsInternalTransformsIndex) SetSchemaHash(v string) {
+	o.SchemaHash = &v
+}
+
 // GetTransforms returns the Transforms field value if set, zero value otherwise.
 func (o *CommunityTransformsInternalTransformsIndex) GetTransforms() []CommunityTransformsInternalTransformMetadata {
 	if o == nil || IsNil(o.Transforms) {
@@ -117,6 +151,9 @@ func (o CommunityTransformsInternalTransformsIndex) ToMap() (map[string]interfac
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.LastUpdated) {
 		toSerialize["last_updated"] = o.LastUpdated
+	}
+	if !IsNil(o.SchemaHash) {
+		toSerialize["schema_hash"] = o.SchemaHash
 	}
 	if !IsNil(o.Transforms) {
 		toSerialize["transforms"] = o.Transforms

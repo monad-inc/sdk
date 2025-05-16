@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LastUpdated** | Pointer to **string** |  | [optional] 
+**SchemaHash** | Pointer to **string** | Hash of the schema structure | [optional] 
 **Transforms** | Pointer to [**[]CommunityTransformsInternalTransformMetadata**](CommunityTransformsInternalTransformMetadata.md) |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetLastUpdated sets LastUpdated field to given value.
 `func (o *CommunityTransformsInternalTransformsIndex) HasLastUpdated() bool`
 
 HasLastUpdated returns a boolean if a field has been set.
+
+### GetSchemaHash
+
+`func (o *CommunityTransformsInternalTransformsIndex) GetSchemaHash() string`
+
+GetSchemaHash returns the SchemaHash field if non-nil, zero value otherwise.
+
+### GetSchemaHashOk
+
+`func (o *CommunityTransformsInternalTransformsIndex) GetSchemaHashOk() (*string, bool)`
+
+GetSchemaHashOk returns a tuple with the SchemaHash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchemaHash
+
+`func (o *CommunityTransformsInternalTransformsIndex) SetSchemaHash(v string)`
+
+SetSchemaHash sets SchemaHash field to given value.
+
+### HasSchemaHash
+
+`func (o *CommunityTransformsInternalTransformsIndex) HasSchemaHash() bool`
+
+HasSchemaHash returns a boolean if a field has been set.
 
 ### GetTransforms
 
