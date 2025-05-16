@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR vulnerabilities settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-16T18:23:24.272577951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-16T18:56:56.864376713Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class VulnerabilitiesSettingsConfig {
   public static final String SERIALIZED_NAME_CLOUD_TYPE = "cloud_type";
   @SerializedName(SERIALIZED_NAME_CLOUD_TYPE)
