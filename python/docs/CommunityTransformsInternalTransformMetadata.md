@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **contributors** | **List[str]** |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**inputs** | **List[str]** |  | [optional] 
 **last_modified** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **path** | **str** |  | [optional] 

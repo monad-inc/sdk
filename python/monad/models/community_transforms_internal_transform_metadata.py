@@ -31,11 +31,12 @@ class CommunityTransformsInternalTransformMetadata(BaseModel):
     contributors: Optional[List[StrictStr]] = None
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
+    inputs: Optional[List[StrictStr]] = None
     last_modified: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     path: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["author", "contributors", "created_at", "description", "last_modified", "name", "path", "tags"]
+    __properties: ClassVar[List[str]] = ["author", "contributors", "created_at", "description", "inputs", "last_modified", "name", "path", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,6 +93,7 @@ class CommunityTransformsInternalTransformMetadata(BaseModel):
             "contributors": obj.get("contributors"),
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
+            "inputs": obj.get("inputs"),
             "last_modified": obj.get("last_modified"),
             "name": obj.get("name"),
             "path": obj.get("path"),

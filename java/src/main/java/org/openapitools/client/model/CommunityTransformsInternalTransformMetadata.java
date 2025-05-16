@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * CommunityTransformsInternalTransformMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-16T15:30:38.700239328Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-16T16:19:51.397070560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CommunityTransformsInternalTransformMetadata {
   public static final String SERIALIZED_NAME_AUTHOR = "author";
   @SerializedName(SERIALIZED_NAME_AUTHOR)
@@ -71,6 +71,11 @@ public class CommunityTransformsInternalTransformMetadata {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
   private String description;
+
+  public static final String SERIALIZED_NAME_INPUTS = "inputs";
+  @SerializedName(SERIALIZED_NAME_INPUTS)
+  @javax.annotation.Nullable
+  private List<String> inputs = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LAST_MODIFIED = "last_modified";
   @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
@@ -179,6 +184,33 @@ public class CommunityTransformsInternalTransformMetadata {
   }
 
 
+  public CommunityTransformsInternalTransformMetadata inputs(@javax.annotation.Nullable List<String> inputs) {
+    this.inputs = inputs;
+    return this;
+  }
+
+  public CommunityTransformsInternalTransformMetadata addInputsItem(String inputsItem) {
+    if (this.inputs == null) {
+      this.inputs = new ArrayList<>();
+    }
+    this.inputs.add(inputsItem);
+    return this;
+  }
+
+  /**
+   * Get inputs
+   * @return inputs
+   */
+  @javax.annotation.Nullable
+  public List<String> getInputs() {
+    return inputs;
+  }
+
+  public void setInputs(@javax.annotation.Nullable List<String> inputs) {
+    this.inputs = inputs;
+  }
+
+
   public CommunityTransformsInternalTransformMetadata lastModified(@javax.annotation.Nullable String lastModified) {
     this.lastModified = lastModified;
     return this;
@@ -277,6 +309,7 @@ public class CommunityTransformsInternalTransformMetadata {
         Objects.equals(this.contributors, communityTransformsInternalTransformMetadata.contributors) &&
         Objects.equals(this.createdAt, communityTransformsInternalTransformMetadata.createdAt) &&
         Objects.equals(this.description, communityTransformsInternalTransformMetadata.description) &&
+        Objects.equals(this.inputs, communityTransformsInternalTransformMetadata.inputs) &&
         Objects.equals(this.lastModified, communityTransformsInternalTransformMetadata.lastModified) &&
         Objects.equals(this.name, communityTransformsInternalTransformMetadata.name) &&
         Objects.equals(this.path, communityTransformsInternalTransformMetadata.path) &&
@@ -285,7 +318,7 @@ public class CommunityTransformsInternalTransformMetadata {
 
   @Override
   public int hashCode() {
-    return Objects.hash(author, contributors, createdAt, description, lastModified, name, path, tags);
+    return Objects.hash(author, contributors, createdAt, description, inputs, lastModified, name, path, tags);
   }
 
   @Override
@@ -296,6 +329,7 @@ public class CommunityTransformsInternalTransformMetadata {
     sb.append("    contributors: ").append(toIndentedString(contributors)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
     sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
@@ -326,6 +360,7 @@ public class CommunityTransformsInternalTransformMetadata {
     openapiFields.add("contributors");
     openapiFields.add("created_at");
     openapiFields.add("description");
+    openapiFields.add("inputs");
     openapiFields.add("last_modified");
     openapiFields.add("name");
     openapiFields.add("path");
@@ -368,6 +403,10 @@ public class CommunityTransformsInternalTransformMetadata {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("inputs") != null && !jsonObj.get("inputs").isJsonNull() && !jsonObj.get("inputs").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `inputs` to be an array in the JSON string but got `%s`", jsonObj.get("inputs").toString()));
       }
       if ((jsonObj.get("last_modified") != null && !jsonObj.get("last_modified").isJsonNull()) && !jsonObj.get("last_modified").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `last_modified` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_modified").toString()));

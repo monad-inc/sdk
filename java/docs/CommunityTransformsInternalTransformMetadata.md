@@ -11,6 +11,7 @@
 |**contributors** | **List&lt;String&gt;** |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
+|**inputs** | **List&lt;String&gt;** |  |  [optional] |
 |**lastModified** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**path** | **String** |  |  [optional] |

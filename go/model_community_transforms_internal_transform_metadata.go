@@ -24,6 +24,7 @@ type CommunityTransformsInternalTransformMetadata struct {
 	Contributors []string `json:"contributors,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
+	Inputs []string `json:"inputs,omitempty"`
 	LastModified *string `json:"last_modified,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Path *string `json:"path,omitempty"`
@@ -175,6 +176,38 @@ func (o *CommunityTransformsInternalTransformMetadata) SetDescription(v string) 
 	o.Description = &v
 }
 
+// GetInputs returns the Inputs field value if set, zero value otherwise.
+func (o *CommunityTransformsInternalTransformMetadata) GetInputs() []string {
+	if o == nil || IsNil(o.Inputs) {
+		var ret []string
+		return ret
+	}
+	return o.Inputs
+}
+
+// GetInputsOk returns a tuple with the Inputs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CommunityTransformsInternalTransformMetadata) GetInputsOk() ([]string, bool) {
+	if o == nil || IsNil(o.Inputs) {
+		return nil, false
+	}
+	return o.Inputs, true
+}
+
+// HasInputs returns a boolean if a field has been set.
+func (o *CommunityTransformsInternalTransformMetadata) HasInputs() bool {
+	if o != nil && !IsNil(o.Inputs) {
+		return true
+	}
+
+	return false
+}
+
+// SetInputs gets a reference to the given []string and assigns it to the Inputs field.
+func (o *CommunityTransformsInternalTransformMetadata) SetInputs(v []string) {
+	o.Inputs = v
+}
+
 // GetLastModified returns the LastModified field value if set, zero value otherwise.
 func (o *CommunityTransformsInternalTransformMetadata) GetLastModified() string {
 	if o == nil || IsNil(o.LastModified) {
@@ -324,6 +357,9 @@ func (o CommunityTransformsInternalTransformMetadata) ToMap() (map[string]interf
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.Inputs) {
+		toSerialize["inputs"] = o.Inputs
 	}
 	if !IsNil(o.LastModified) {
 		toSerialize["last_modified"] = o.LastModified

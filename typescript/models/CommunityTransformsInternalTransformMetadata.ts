@@ -17,6 +17,7 @@ export class CommunityTransformsInternalTransformMetadata {
     'contributors'?: Array<string>;
     'createdAt'?: string;
     'description'?: string;
+    'inputs'?: Array<string>;
     'lastModified'?: string;
     'name'?: string;
     'path'?: string;
@@ -49,6 +50,12 @@ export class CommunityTransformsInternalTransformMetadata {
             "name": "description",
             "baseName": "description",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "inputs",
+            "baseName": "inputs",
+            "type": "Array<string>",
             "format": ""
         },
         {

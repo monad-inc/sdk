@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Contributors** | Pointer to **[]string** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Inputs** | Pointer to **[]string** |  | [optional] 
 **LastModified** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Path** | Pointer to **string** |  | [optional] 
@@ -131,6 +132,31 @@ SetDescription sets Description field to given value.
 `func (o *CommunityTransformsInternalTransformMetadata) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetInputs
+
+`func (o *CommunityTransformsInternalTransformMetadata) GetInputs() []string`
+
+GetInputs returns the Inputs field if non-nil, zero value otherwise.
+
+### GetInputsOk
+
+`func (o *CommunityTransformsInternalTransformMetadata) GetInputsOk() (*[]string, bool)`
+
+GetInputsOk returns a tuple with the Inputs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInputs
+
+`func (o *CommunityTransformsInternalTransformMetadata) SetInputs(v []string)`
+
+SetInputs sets Inputs field to given value.
+
+### HasInputs
+
+`func (o *CommunityTransformsInternalTransformMetadata) HasInputs() bool`
+
+HasInputs returns a boolean if a field has been set.
 
 ### GetLastModified
 
