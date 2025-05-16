@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Configuration for formatting data in Apache Parquet format
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-16T15:14:13.367181019Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-16T15:30:38.700239328Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ParquetParquetFormatter {
   public static final String SERIALIZED_NAME_SCHEMA = "schema";
   @SerializedName(SERIALIZED_NAME_SCHEMA)
