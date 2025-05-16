@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * EnrichmentConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-16T17:55:31.462424024Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-16T18:23:24.272577951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EnrichmentConnectorMeta {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
