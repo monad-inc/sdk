@@ -31,6 +31,7 @@ import org.openapitools.client.model.CommunityTransformsInternalTransformConfig;
 import org.openapitools.client.model.CommunityTransformsInternalTransformsIndex;
 import org.openapitools.client.model.ModelsTransformsRepositoryList;
 import org.openapitools.client.model.ModelsTransformsRepositoryTransform;
+import org.openapitools.client.model.RoutesV3ImportTransformResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -344,6 +345,141 @@ public class TransformsRepositoryApi {
         return localVarCall;
     }
     /**
+     * Build call for v3TransformsRepositoryExportPost
+     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> YAML-formatted transform </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to export transform </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3TransformsRepositoryExportPostCall(@javax.annotation.Nonnull CommunityTransformsInternalTransformConfig communityTransformsInternalTransformConfig, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = communityTransformsInternalTransformConfig;
+
+        // create path and map variables
+        String localVarPath = "/v3/transforms/repository/export";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v3TransformsRepositoryExportPostValidateBeforeCall(@javax.annotation.Nonnull CommunityTransformsInternalTransformConfig communityTransformsInternalTransformConfig, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'communityTransformsInternalTransformConfig' is set
+        if (communityTransformsInternalTransformConfig == null) {
+            throw new ApiException("Missing the required parameter 'communityTransformsInternalTransformConfig' when calling v3TransformsRepositoryExportPost(Async)");
+        }
+
+        return v3TransformsRepositoryExportPostCall(communityTransformsInternalTransformConfig, _callback);
+
+    }
+
+    /**
+     * Export transform to YAML
+     * Export transform to YAML format
+     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata (required)
+     * @return String
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> YAML-formatted transform </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to export transform </td><td>  -  </td></tr>
+     </table>
+     */
+    public String v3TransformsRepositoryExportPost(@javax.annotation.Nonnull CommunityTransformsInternalTransformConfig communityTransformsInternalTransformConfig) throws ApiException {
+        ApiResponse<String> localVarResp = v3TransformsRepositoryExportPostWithHttpInfo(communityTransformsInternalTransformConfig);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Export transform to YAML
+     * Export transform to YAML format
+     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata (required)
+     * @return ApiResponse&lt;String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> YAML-formatted transform </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to export transform </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<String> v3TransformsRepositoryExportPostWithHttpInfo(@javax.annotation.Nonnull CommunityTransformsInternalTransformConfig communityTransformsInternalTransformConfig) throws ApiException {
+        okhttp3.Call localVarCall = v3TransformsRepositoryExportPostValidateBeforeCall(communityTransformsInternalTransformConfig, null);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Export transform to YAML (asynchronously)
+     * Export transform to YAML format
+     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> YAML-formatted transform </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to export transform </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3TransformsRepositoryExportPostAsync(@javax.annotation.Nonnull CommunityTransformsInternalTransformConfig communityTransformsInternalTransformConfig, final ApiCallback<String> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v3TransformsRepositoryExportPostValidateBeforeCall(communityTransformsInternalTransformConfig, _callback);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for v3TransformsRepositoryGet
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -461,6 +597,141 @@ public class TransformsRepositoryApi {
 
         okhttp3.Call localVarCall = v3TransformsRepositoryGetValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<CommunityTransformsInternalTransformsIndex>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v3TransformsRepositoryImportPost
+     * @param body YAML transform definition (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Transform imported successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid YAML or transform validation failed </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to import transform </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3TransformsRepositoryImportPostCall(@javax.annotation.Nonnull String body, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/v3/transforms/repository/import";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v3TransformsRepositoryImportPostValidateBeforeCall(@javax.annotation.Nonnull String body, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling v3TransformsRepositoryImportPost(Async)");
+        }
+
+        return v3TransformsRepositoryImportPostCall(body, _callback);
+
+    }
+
+    /**
+     * Import transform from YAML
+     * Import transform from YAML file
+     * @param body YAML transform definition (required)
+     * @return RoutesV3ImportTransformResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Transform imported successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid YAML or transform validation failed </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to import transform </td><td>  -  </td></tr>
+     </table>
+     */
+    public RoutesV3ImportTransformResponse v3TransformsRepositoryImportPost(@javax.annotation.Nonnull String body) throws ApiException {
+        ApiResponse<RoutesV3ImportTransformResponse> localVarResp = v3TransformsRepositoryImportPostWithHttpInfo(body);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Import transform from YAML
+     * Import transform from YAML file
+     * @param body YAML transform definition (required)
+     * @return ApiResponse&lt;RoutesV3ImportTransformResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Transform imported successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid YAML or transform validation failed </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to import transform </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<RoutesV3ImportTransformResponse> v3TransformsRepositoryImportPostWithHttpInfo(@javax.annotation.Nonnull String body) throws ApiException {
+        okhttp3.Call localVarCall = v3TransformsRepositoryImportPostValidateBeforeCall(body, null);
+        Type localVarReturnType = new TypeToken<RoutesV3ImportTransformResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Import transform from YAML (asynchronously)
+     * Import transform from YAML file
+     * @param body YAML transform definition (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Transform imported successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid YAML or transform validation failed </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to import transform </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3TransformsRepositoryImportPostAsync(@javax.annotation.Nonnull String body, final ApiCallback<RoutesV3ImportTransformResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v3TransformsRepositoryImportPostValidateBeforeCall(body, _callback);
+        Type localVarReturnType = new TypeToken<RoutesV3ImportTransformResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

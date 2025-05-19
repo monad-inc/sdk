@@ -6,7 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v2TransformsRepositoryGet**](TransformsRepositoryApi.md#v2TransformsRepositoryGet) | **GET** /v2/transforms/repository | List transforms
 [**v2TransformsRepositoryTransformIdGet**](TransformsRepositoryApi.md#v2TransformsRepositoryTransformIdGet) | **GET** /v2/transforms/repository/{transform_id} | Get transform details
+[**v3TransformsRepositoryExportPost**](TransformsRepositoryApi.md#v3TransformsRepositoryExportPost) | **POST** /v3/transforms/repository/export | Export transform to YAML
 [**v3TransformsRepositoryGet**](TransformsRepositoryApi.md#v3TransformsRepositoryGet) | **GET** /v3/transforms/repository | List community transforms
+[**v3TransformsRepositoryImportPost**](TransformsRepositoryApi.md#v3TransformsRepositoryImportPost) | **POST** /v3/transforms/repository/import | Import transform from YAML
 [**v3TransformsRepositoryTransformIdGet**](TransformsRepositoryApi.md#v3TransformsRepositoryTransformIdGet) | **GET** /v3/transforms/repository/{transform_id} | Get transform details
 
 
@@ -121,6 +123,77 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **v3TransformsRepositoryExportPost**
+> string v3TransformsRepositoryExportPost(communityTransformsInternalTransformConfig)
+
+Export transform to YAML format
+
+### Example
+
+
+```typescript
+import { createConfiguration, TransformsRepositoryApi } from '';
+import type { TransformsRepositoryApiV3TransformsRepositoryExportPostRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new TransformsRepositoryApi(configuration);
+
+const request: TransformsRepositoryApiV3TransformsRepositoryExportPostRequest = {
+    // Transform to export and optional metadata
+  communityTransformsInternalTransformConfig: {
+    author: "author_example",
+    config: {
+      "key": null,
+    },
+    contributors: [
+      "contributors_example",
+    ],
+    description: "description_example",
+    inputs: [
+      "inputs_example",
+    ],
+    name: "name_example",
+    tags: [
+      "tags_example",
+    ],
+  },
+};
+
+const data = await apiInstance.v3TransformsRepositoryExportPost(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **communityTransformsInternalTransformConfig** | **CommunityTransformsInternalTransformConfig**| Transform to export and optional metadata |
+
+
+### Return type
+
+**string**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | YAML-formatted transform |  -  |
+**400** | Invalid request |  -  |
+**500** | Failed to export transform |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **v3TransformsRepositoryGet**
 > CommunityTransformsInternalTransformsIndex v3TransformsRepositoryGet()
 
@@ -165,6 +238,61 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Transforms retrieved successfully |  -  |
 **500** | Failed to list transforms |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v3TransformsRepositoryImportPost**
+> RoutesV3ImportTransformResponse v3TransformsRepositoryImportPost(body)
+
+Import transform from YAML file
+
+### Example
+
+
+```typescript
+import { createConfiguration, TransformsRepositoryApi } from '';
+import type { TransformsRepositoryApiV3TransformsRepositoryImportPostRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new TransformsRepositoryApi(configuration);
+
+const request: TransformsRepositoryApiV3TransformsRepositoryImportPostRequest = {
+    // YAML transform definition
+  body: "body_example",
+};
+
+const data = await apiInstance.v3TransformsRepositoryImportPost(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **string**| YAML transform definition |
+
+
+### Return type
+
+**RoutesV3ImportTransformResponse**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Transform imported successfully |  -  |
+**400** | Invalid YAML or transform validation failed |  -  |
+**500** | Failed to import transform |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

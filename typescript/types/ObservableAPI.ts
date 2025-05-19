@@ -223,8 +223,11 @@ import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputReque
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
+import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
+import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
@@ -4766,6 +4769,40 @@ export class ObservableTransformsRepositoryApi {
     }
 
     /**
+     * Export transform to YAML format
+     * Export transform to YAML
+     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata
+     */
+    public v3TransformsRepositoryExportPostWithHttpInfo(communityTransformsInternalTransformConfig: CommunityTransformsInternalTransformConfig, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3TransformsRepositoryExportPost(communityTransformsInternalTransformConfig, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3TransformsRepositoryExportPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Export transform to YAML format
+     * Export transform to YAML
+     * @param communityTransformsInternalTransformConfig Transform to export and optional metadata
+     */
+    public v3TransformsRepositoryExportPost(communityTransformsInternalTransformConfig: CommunityTransformsInternalTransformConfig, _options?: ConfigurationOptions): Observable<string> {
+        return this.v3TransformsRepositoryExportPostWithHttpInfo(communityTransformsInternalTransformConfig, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+    /**
      * List transforms from repository index
      * List community transforms
      */
@@ -4795,6 +4832,40 @@ export class ObservableTransformsRepositoryApi {
      */
     public v3TransformsRepositoryGet(_options?: ConfigurationOptions): Observable<CommunityTransformsInternalTransformsIndex> {
         return this.v3TransformsRepositoryGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<CommunityTransformsInternalTransformsIndex>) => apiResponse.data));
+    }
+
+    /**
+     * Import transform from YAML file
+     * Import transform from YAML
+     * @param body YAML transform definition
+     */
+    public v3TransformsRepositoryImportPostWithHttpInfo(body: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3ImportTransformResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3TransformsRepositoryImportPost(body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3TransformsRepositoryImportPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Import transform from YAML file
+     * Import transform from YAML
+     * @param body YAML transform definition
+     */
+    public v3TransformsRepositoryImportPost(body: string, _options?: ConfigurationOptions): Observable<RoutesV3ImportTransformResponse> {
+        return this.v3TransformsRepositoryImportPostWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<RoutesV3ImportTransformResponse>) => apiResponse.data));
     }
 
     /**

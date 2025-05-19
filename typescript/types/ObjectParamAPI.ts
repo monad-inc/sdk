@@ -222,8 +222,11 @@ import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputReque
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
+import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
+import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
@@ -4544,7 +4547,25 @@ export interface TransformsRepositoryApiV2TransformsRepositoryTransformIdGetRequ
     transformId: string
 }
 
+export interface TransformsRepositoryApiV3TransformsRepositoryExportPostRequest {
+    /**
+     * Transform to export and optional metadata
+     * @type CommunityTransformsInternalTransformConfig
+     * @memberof TransformsRepositoryApiv3TransformsRepositoryExportPost
+     */
+    communityTransformsInternalTransformConfig: CommunityTransformsInternalTransformConfig
+}
+
 export interface TransformsRepositoryApiV3TransformsRepositoryGetRequest {
+}
+
+export interface TransformsRepositoryApiV3TransformsRepositoryImportPostRequest {
+    /**
+     * YAML transform definition
+     * @type string
+     * @memberof TransformsRepositoryApiv3TransformsRepositoryImportPost
+     */
+    body: string
 }
 
 export interface TransformsRepositoryApiV3TransformsRepositoryTransformIdGetRequest {
@@ -4601,6 +4622,24 @@ export class ObjectTransformsRepositoryApi {
     }
 
     /**
+     * Export transform to YAML format
+     * Export transform to YAML
+     * @param param the request object
+     */
+    public v3TransformsRepositoryExportPostWithHttpInfo(param: TransformsRepositoryApiV3TransformsRepositoryExportPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.v3TransformsRepositoryExportPostWithHttpInfo(param.communityTransformsInternalTransformConfig,  options).toPromise();
+    }
+
+    /**
+     * Export transform to YAML format
+     * Export transform to YAML
+     * @param param the request object
+     */
+    public v3TransformsRepositoryExportPost(param: TransformsRepositoryApiV3TransformsRepositoryExportPostRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.v3TransformsRepositoryExportPost(param.communityTransformsInternalTransformConfig,  options).toPromise();
+    }
+
+    /**
      * List transforms from repository index
      * List community transforms
      * @param param the request object
@@ -4616,6 +4655,24 @@ export class ObjectTransformsRepositoryApi {
      */
     public v3TransformsRepositoryGet(param: TransformsRepositoryApiV3TransformsRepositoryGetRequest = {}, options?: ConfigurationOptions): Promise<CommunityTransformsInternalTransformsIndex> {
         return this.api.v3TransformsRepositoryGet( options).toPromise();
+    }
+
+    /**
+     * Import transform from YAML file
+     * Import transform from YAML
+     * @param param the request object
+     */
+    public v3TransformsRepositoryImportPostWithHttpInfo(param: TransformsRepositoryApiV3TransformsRepositoryImportPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3ImportTransformResponse>> {
+        return this.api.v3TransformsRepositoryImportPostWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * Import transform from YAML file
+     * Import transform from YAML
+     * @param param the request object
+     */
+    public v3TransformsRepositoryImportPost(param: TransformsRepositoryApiV3TransformsRepositoryImportPostRequest, options?: ConfigurationOptions): Promise<RoutesV3ImportTransformResponse> {
+        return this.api.v3TransformsRepositoryImportPost(param.body,  options).toPromise();
     }
 
     /**

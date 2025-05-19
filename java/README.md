@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-05-16T23:21:07.579301121Z[Etc/UTC]
+  - Build date: 2025-05-19T18:52:46.775666311Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -224,7 +224,9 @@ Class | Method | HTTP request | Description
 *TransformsApi* | [**v1TransformsTransformTypeIdGet**](docs/TransformsApi.md#v1TransformsTransformTypeIdGet) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata
 *TransformsRepositoryApi* | [**v2TransformsRepositoryGet**](docs/TransformsRepositoryApi.md#v2TransformsRepositoryGet) | **GET** /v2/transforms/repository | List transforms
 *TransformsRepositoryApi* | [**v2TransformsRepositoryTransformIdGet**](docs/TransformsRepositoryApi.md#v2TransformsRepositoryTransformIdGet) | **GET** /v2/transforms/repository/{transform_id} | Get transform details
+*TransformsRepositoryApi* | [**v3TransformsRepositoryExportPost**](docs/TransformsRepositoryApi.md#v3TransformsRepositoryExportPost) | **POST** /v3/transforms/repository/export | Export transform to YAML
 *TransformsRepositoryApi* | [**v3TransformsRepositoryGet**](docs/TransformsRepositoryApi.md#v3TransformsRepositoryGet) | **GET** /v3/transforms/repository | List community transforms
+*TransformsRepositoryApi* | [**v3TransformsRepositoryImportPost**](docs/TransformsRepositoryApi.md#v3TransformsRepositoryImportPost) | **POST** /v3/transforms/repository/import | Import transform from YAML
 *TransformsRepositoryApi* | [**v3TransformsRepositoryTransformIdGet**](docs/TransformsRepositoryApi.md#v3TransformsRepositoryTransformIdGet) | **GET** /v3/transforms/repository/{transform_id} | Get transform details
 *UsersApi* | [**v1UsersGet**](docs/UsersApi.md#v1UsersGet) | **GET** /v1/users | Get your current user
 *UsersApi* | [**v1UsersPost**](docs/UsersApi.md#v1UsersPost) | **POST** /v1/users | Create user
@@ -452,8 +454,11 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdatePipelineRequest](docs/RoutesV2UpdatePipelineRequest.md)
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [RoutesV3CreateEnrichmentRequest](docs/RoutesV3CreateEnrichmentRequest.md)
+ - [RoutesV3ImportTransformResponse](docs/RoutesV3ImportTransformResponse.md)
  - [RoutesV3SuccessResponse](docs/RoutesV3SuccessResponse.md)
  - [RoutesV3TestEnrichmentConnectionRequest](docs/RoutesV3TestEnrichmentConnectionRequest.md)
+ - [RoutesV3TransformConfig](docs/RoutesV3TransformConfig.md)
+ - [RoutesV3TransformOperation](docs/RoutesV3TransformOperation.md)
  - [RoutesV3UpdateEnrichmentRequest](docs/RoutesV3UpdateEnrichmentRequest.md)
  - [S3SettingsConfig](docs/S3SettingsConfig.md)
  - [SecretProcessesorEnrichmentConfig](docs/SecretProcessesorEnrichmentConfig.md)

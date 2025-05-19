@@ -218,8 +218,11 @@ export * from '../models/RoutesV2UpdateOutputRequest';
 export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/RoutesV2UpdateRoleV2Request';
 export * from '../models/RoutesV3CreateEnrichmentRequest';
+export * from '../models/RoutesV3ImportTransformResponse';
 export * from '../models/RoutesV3SuccessResponse';
 export * from '../models/RoutesV3TestEnrichmentConnectionRequest';
+export * from '../models/RoutesV3TransformConfig';
+export * from '../models/RoutesV3TransformOperation';
 export * from '../models/RoutesV3UpdateEnrichmentRequest';
 export * from '../models/S3SettingsConfig';
 export * from '../models/SecretProcessesorEnrichmentConfig';
@@ -498,8 +501,11 @@ import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputReque
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
+import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
+import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
@@ -803,8 +809,11 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdatePipelineRequest": RoutesV2UpdatePipelineRequest,
     "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
     "RoutesV3CreateEnrichmentRequest": RoutesV3CreateEnrichmentRequest,
+    "RoutesV3ImportTransformResponse": RoutesV3ImportTransformResponse,
     "RoutesV3SuccessResponse": RoutesV3SuccessResponse,
     "RoutesV3TestEnrichmentConnectionRequest": RoutesV3TestEnrichmentConnectionRequest,
+    "RoutesV3TransformConfig": RoutesV3TransformConfig,
+    "RoutesV3TransformOperation": RoutesV3TransformOperation,
     "RoutesV3UpdateEnrichmentRequest": RoutesV3UpdateEnrichmentRequest,
     "S3SettingsConfig": S3SettingsConfig,
     "SecretProcessesorEnrichmentConfig": SecretProcessesorEnrichmentConfig,

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Splunk Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-16T23:21:07.579301121Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-19T18:52:46.775666311Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SplunkSettingsConfig {
   public static final String SERIALIZED_NAME_ALLOW_INSECURE = "allow_insecure";
   @SerializedName(SERIALIZED_NAME_ALLOW_INSECURE)
