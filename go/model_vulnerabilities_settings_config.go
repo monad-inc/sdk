@@ -22,10 +22,6 @@ var _ MappedNullable = &VulnerabilitiesSettingsConfig{}
 type VulnerabilitiesSettingsConfig struct {
 	// Your cloud type for CrowdStrike. Ex: 'autodiscover', 'us-1', 'us-2', 'eu-1', 'us-gov-1'.
 	CloudType *string `json:"cloud_type,omitempty"`
-	// Cron expression to schedule the data collection.
-	Cron *string `json:"cron,omitempty"`
-	// Boolean to control weather the input performs full syncs or incremental syncs
-	FullSync *bool `json:"full_sync,omitempty"`
 }
 
 // NewVulnerabilitiesSettingsConfig instantiates a new VulnerabilitiesSettingsConfig object
@@ -77,70 +73,6 @@ func (o *VulnerabilitiesSettingsConfig) SetCloudType(v string) {
 	o.CloudType = &v
 }
 
-// GetCron returns the Cron field value if set, zero value otherwise.
-func (o *VulnerabilitiesSettingsConfig) GetCron() string {
-	if o == nil || IsNil(o.Cron) {
-		var ret string
-		return ret
-	}
-	return *o.Cron
-}
-
-// GetCronOk returns a tuple with the Cron field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VulnerabilitiesSettingsConfig) GetCronOk() (*string, bool) {
-	if o == nil || IsNil(o.Cron) {
-		return nil, false
-	}
-	return o.Cron, true
-}
-
-// HasCron returns a boolean if a field has been set.
-func (o *VulnerabilitiesSettingsConfig) HasCron() bool {
-	if o != nil && !IsNil(o.Cron) {
-		return true
-	}
-
-	return false
-}
-
-// SetCron gets a reference to the given string and assigns it to the Cron field.
-func (o *VulnerabilitiesSettingsConfig) SetCron(v string) {
-	o.Cron = &v
-}
-
-// GetFullSync returns the FullSync field value if set, zero value otherwise.
-func (o *VulnerabilitiesSettingsConfig) GetFullSync() bool {
-	if o == nil || IsNil(o.FullSync) {
-		var ret bool
-		return ret
-	}
-	return *o.FullSync
-}
-
-// GetFullSyncOk returns a tuple with the FullSync field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VulnerabilitiesSettingsConfig) GetFullSyncOk() (*bool, bool) {
-	if o == nil || IsNil(o.FullSync) {
-		return nil, false
-	}
-	return o.FullSync, true
-}
-
-// HasFullSync returns a boolean if a field has been set.
-func (o *VulnerabilitiesSettingsConfig) HasFullSync() bool {
-	if o != nil && !IsNil(o.FullSync) {
-		return true
-	}
-
-	return false
-}
-
-// SetFullSync gets a reference to the given bool and assigns it to the FullSync field.
-func (o *VulnerabilitiesSettingsConfig) SetFullSync(v bool) {
-	o.FullSync = &v
-}
-
 func (o VulnerabilitiesSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -153,12 +85,6 @@ func (o VulnerabilitiesSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CloudType) {
 		toSerialize["cloud_type"] = o.CloudType
-	}
-	if !IsNil(o.Cron) {
-		toSerialize["cron"] = o.Cron
-	}
-	if !IsNil(o.FullSync) {
-		toSerialize["full_sync"] = o.FullSync
 	}
 	return toSerialize, nil
 }

@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-05-20T22:04:32.898934686Z[Etc/UTC]
+  - Build date: 2025-05-20T22:30:12.151307644Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -500,16 +500,20 @@ Class | Method | HTTP request | Description
  - [SumologicSettingsConfig](docs/SumologicSettingsConfig.md)
  - [TailscaleUsersSecretsConfig](docs/TailscaleUsersSecretsConfig.md)
  - [TailscaleUsersSettingsConfig](docs/TailscaleUsersSettingsConfig.md)
+ - [TenableAssetsCronSecretsConfig](docs/TenableAssetsCronSecretsConfig.md)
+ - [TenableAssetsCronSettingsConfig](docs/TenableAssetsCronSettingsConfig.md)
  - [TenableAssetsSecretsConfig](docs/TenableAssetsSecretsConfig.md)
- - [TenableAssetsSettingsConfig](docs/TenableAssetsSettingsConfig.md)
+ - [TenableVulnerabilitiesCronSecretsConfig](docs/TenableVulnerabilitiesCronSecretsConfig.md)
+ - [TenableVulnerabilitiesCronSettingsConfig](docs/TenableVulnerabilitiesCronSettingsConfig.md)
  - [TenableVulnerabilitiesSecretsConfig](docs/TenableVulnerabilitiesSecretsConfig.md)
- - [TenableVulnerabilitiesSettingsConfig](docs/TenableVulnerabilitiesSettingsConfig.md)
  - [UsersInfoSecretsConfig](docs/UsersInfoSecretsConfig.md)
  - [UsersInfoSettingsConfig](docs/UsersInfoSettingsConfig.md)
  - [UsersSecretsConfig](docs/UsersSecretsConfig.md)
  - [UsersSettingsConfig](docs/UsersSettingsConfig.md)
  - [UtcTimestampTimestamp](docs/UtcTimestampTimestamp.md)
  - [V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response](docs/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response.md)
+ - [VulnerabilitiesCronSecretsConfig](docs/VulnerabilitiesCronSecretsConfig.md)
+ - [VulnerabilitiesCronSettingsConfig](docs/VulnerabilitiesCronSettingsConfig.md)
  - [VulnerabilitiesSecretsConfig](docs/VulnerabilitiesSecretsConfig.md)
  - [VulnerabilitiesSettingsConfig](docs/VulnerabilitiesSettingsConfig.md)
  - [VulnerabilityFindingsSecretsConfig](docs/VulnerabilityFindingsSecretsConfig.md)

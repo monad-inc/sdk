@@ -264,16 +264,20 @@ export * from '../models/SumologicSecretsConfig';
 export * from '../models/SumologicSettingsConfig';
 export * from '../models/TailscaleUsersSecretsConfig';
 export * from '../models/TailscaleUsersSettingsConfig';
+export * from '../models/TenableAssetsCronSecretsConfig';
+export * from '../models/TenableAssetsCronSettingsConfig';
 export * from '../models/TenableAssetsSecretsConfig';
-export * from '../models/TenableAssetsSettingsConfig';
+export * from '../models/TenableVulnerabilitiesCronSecretsConfig';
+export * from '../models/TenableVulnerabilitiesCronSettingsConfig';
 export * from '../models/TenableVulnerabilitiesSecretsConfig';
-export * from '../models/TenableVulnerabilitiesSettingsConfig';
 export * from '../models/UsersInfoSecretsConfig';
 export * from '../models/UsersInfoSettingsConfig';
 export * from '../models/UsersSecretsConfig';
 export * from '../models/UsersSettingsConfig';
 export * from '../models/UtcTimestampTimestamp';
 export * from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
+export * from '../models/VulnerabilitiesCronSecretsConfig';
+export * from '../models/VulnerabilitiesCronSettingsConfig';
 export * from '../models/VulnerabilitiesSecretsConfig';
 export * from '../models/VulnerabilitiesSettingsConfig';
 export * from '../models/VulnerabilityFindingsSecretsConfig';
@@ -545,16 +549,20 @@ import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
 import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
 import { TailscaleUsersSecretsConfig } from '../models/TailscaleUsersSecretsConfig';
 import { TailscaleUsersSettingsConfig } from '../models/TailscaleUsersSettingsConfig';
+import { TenableAssetsCronSecretsConfig } from '../models/TenableAssetsCronSecretsConfig';
+import { TenableAssetsCronSettingsConfig } from '../models/TenableAssetsCronSettingsConfig';
 import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
-import { TenableAssetsSettingsConfig } from '../models/TenableAssetsSettingsConfig';
+import { TenableVulnerabilitiesCronSecretsConfig } from '../models/TenableVulnerabilitiesCronSecretsConfig';
+import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
-import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
 import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
 import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
 import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
 import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
 import { V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500ResponseClass } from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
+import { VulnerabilitiesCronSecretsConfig } from '../models/VulnerabilitiesCronSecretsConfig';
+import { VulnerabilitiesCronSettingsConfig } from '../models/VulnerabilitiesCronSettingsConfig';
 import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
 import { VulnerabilitiesSettingsConfig } from '../models/VulnerabilitiesSettingsConfig';
 import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
@@ -851,16 +859,20 @@ let typeMap: {[index: string]: any} = {
     "SumologicSettingsConfig": SumologicSettingsConfig,
     "TailscaleUsersSecretsConfig": TailscaleUsersSecretsConfig,
     "TailscaleUsersSettingsConfig": TailscaleUsersSettingsConfig,
+    "TenableAssetsCronSecretsConfig": TenableAssetsCronSecretsConfig,
+    "TenableAssetsCronSettingsConfig": TenableAssetsCronSettingsConfig,
     "TenableAssetsSecretsConfig": TenableAssetsSecretsConfig,
-    "TenableAssetsSettingsConfig": TenableAssetsSettingsConfig,
+    "TenableVulnerabilitiesCronSecretsConfig": TenableVulnerabilitiesCronSecretsConfig,
+    "TenableVulnerabilitiesCronSettingsConfig": TenableVulnerabilitiesCronSettingsConfig,
     "TenableVulnerabilitiesSecretsConfig": TenableVulnerabilitiesSecretsConfig,
-    "TenableVulnerabilitiesSettingsConfig": TenableVulnerabilitiesSettingsConfig,
     "UsersInfoSecretsConfig": UsersInfoSecretsConfig,
     "UsersInfoSettingsConfig": UsersInfoSettingsConfig,
     "UsersSecretsConfig": UsersSecretsConfig,
     "UsersSettingsConfig": UsersSettingsConfig,
     "UtcTimestampTimestamp": UtcTimestampTimestamp,
     "V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response": V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500ResponseClass,
+    "VulnerabilitiesCronSecretsConfig": VulnerabilitiesCronSecretsConfig,
+    "VulnerabilitiesCronSettingsConfig": VulnerabilitiesCronSettingsConfig,
     "VulnerabilitiesSecretsConfig": VulnerabilitiesSecretsConfig,
     "VulnerabilitiesSettingsConfig": VulnerabilitiesSettingsConfig,
     "VulnerabilityFindingsSecretsConfig": VulnerabilityFindingsSecretsConfig,

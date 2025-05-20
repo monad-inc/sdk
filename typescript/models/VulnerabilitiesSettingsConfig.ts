@@ -20,14 +20,6 @@ export class VulnerabilitiesSettingsConfig {
     * Your cloud type for CrowdStrike. Ex: \'autodiscover\', \'us-1\', \'us-2\', \'eu-1\', \'us-gov-1\'.
     */
     'cloudType'?: string;
-    /**
-    * Cron expression to schedule the data collection.
-    */
-    'cron'?: string;
-    /**
-    * Boolean to control weather the input performs full syncs or incremental syncs
-    */
-    'fullSync'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -38,18 +30,6 @@ export class VulnerabilitiesSettingsConfig {
             "name": "cloudType",
             "baseName": "cloud_type",
             "type": "string",
-            "format": ""
-        },
-        {
-            "name": "cron",
-            "baseName": "cron",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "fullSync",
-            "baseName": "full_sync",
-            "type": "boolean",
             "format": ""
         }    ];
 

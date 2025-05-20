@@ -100,7 +100,6 @@
 |**warehouse** | **String** | The Snowflake virtual warehouse to use for executing queries and processing data. |  [optional] |
 |**userRoleOption** | **String** | Allows for filtering the output by user role. |  [optional] |
 |**userTypeOption** | **String** | Allows for filtering the output by user type. |  [optional] |
-|**fullSync** | **Boolean** | Boolean to control weather the input performs full syncs or incremental syncs |  [optional] |
 |**assetStatus** | **List&lt;String&gt;** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. |  [optional] |
 |**assetType** | **String** | Asset types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. |  [optional] |
 |**detectionMethod** | **List&lt;String&gt;** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. |  [optional] |

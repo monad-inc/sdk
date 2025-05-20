@@ -98,7 +98,6 @@ Name | Type | Description | Notes
 **warehouse** | **str** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
 **user_role_option** | **str** | Allows for filtering the output by user role. | [optional] 
 **user_type_option** | **str** | Allows for filtering the output by user type. | [optional] 
-**full_sync** | **bool** | Boolean to control weather the input performs full syncs or incremental syncs | [optional] 
 **asset_status** | **List[str]** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
 **asset_type** | **str** | Asset types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **detection_method** | **List[str]** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * FlattenallFlattenAll
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T22:04:32.898934686Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T22:30:12.151307644Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FlattenallFlattenAll {
   public static final String SERIALIZED_NAME_DELIMITER = "delimiter";
   @SerializedName(SERIALIZED_NAME_DELIMITER)

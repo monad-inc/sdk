@@ -97,7 +97,6 @@ Name | Type | Description | Notes
 **Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
 **UserRoleOption** | Pointer to **string** | Allows for filtering the output by user role. | [optional] 
 **UserTypeOption** | Pointer to **string** | Allows for filtering the output by user type. | [optional] 
-**FullSync** | Pointer to **bool** | Boolean to control weather the input performs full syncs or incremental syncs | [optional] 
 **AssetStatus** | Pointer to **[]string** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
 **AssetType** | Pointer to **string** | Asset types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **DetectionMethod** | Pointer to **[]string** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 
@@ -2446,31 +2445,6 @@ SetUserTypeOption sets UserTypeOption field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasUserTypeOption() bool`
 
 HasUserTypeOption returns a boolean if a field has been set.
-
-### GetFullSync
-
-`func (o *SecretProcessesorInputConfigSettings) GetFullSync() bool`
-
-GetFullSync returns the FullSync field if non-nil, zero value otherwise.
-
-### GetFullSyncOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetFullSyncOk() (*bool, bool)`
-
-GetFullSyncOk returns a tuple with the FullSync field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFullSync
-
-`func (o *SecretProcessesorInputConfigSettings) SetFullSync(v bool)`
-
-SetFullSync sets FullSync field to given value.
-
-### HasFullSync
-
-`func (o *SecretProcessesorInputConfigSettings) HasFullSync() bool`
-
-HasFullSync returns a boolean if a field has been set.
 
 ### GetAssetStatus
 

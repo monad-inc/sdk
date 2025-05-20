@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,9 +28,7 @@ class VulnerabilitiesSettingsConfig(BaseModel):
     CrowdStrike EDR vulnerabilities settings
     """ # noqa: E501
     cloud_type: Optional[StrictStr] = Field(default=None, description="Your cloud type for CrowdStrike. Ex: 'autodiscover', 'us-1', 'us-2', 'eu-1', 'us-gov-1'.")
-    cron: Optional[StrictStr] = Field(default=None, description="Cron expression to schedule the data collection.")
-    full_sync: Optional[StrictBool] = Field(default=None, description="Boolean to control weather the input performs full syncs or incremental syncs")
-    __properties: ClassVar[List[str]] = ["cloud_type", "cron", "full_sync"]
+    __properties: ClassVar[List[str]] = ["cloud_type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,9 +81,7 @@ class VulnerabilitiesSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "cloud_type": obj.get("cloud_type"),
-            "cron": obj.get("cron"),
-            "full_sync": obj.get("full_sync")
+            "cloud_type": obj.get("cloud_type")
         })
         return _obj
 

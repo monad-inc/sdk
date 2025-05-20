@@ -48,22 +48,12 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR vulnerabilities settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T22:04:32.898934686Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T22:30:12.151307644Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class VulnerabilitiesSettingsConfig {
   public static final String SERIALIZED_NAME_CLOUD_TYPE = "cloud_type";
   @SerializedName(SERIALIZED_NAME_CLOUD_TYPE)
   @javax.annotation.Nullable
   private String cloudType;
-
-  public static final String SERIALIZED_NAME_CRON = "cron";
-  @SerializedName(SERIALIZED_NAME_CRON)
-  @javax.annotation.Nullable
-  private String cron;
-
-  public static final String SERIALIZED_NAME_FULL_SYNC = "full_sync";
-  @SerializedName(SERIALIZED_NAME_FULL_SYNC)
-  @javax.annotation.Nullable
-  private Boolean fullSync;
 
   public VulnerabilitiesSettingsConfig() {
   }
@@ -87,44 +77,6 @@ public class VulnerabilitiesSettingsConfig {
   }
 
 
-  public VulnerabilitiesSettingsConfig cron(@javax.annotation.Nullable String cron) {
-    this.cron = cron;
-    return this;
-  }
-
-  /**
-   * Cron expression to schedule the data collection.
-   * @return cron
-   */
-  @javax.annotation.Nullable
-  public String getCron() {
-    return cron;
-  }
-
-  public void setCron(@javax.annotation.Nullable String cron) {
-    this.cron = cron;
-  }
-
-
-  public VulnerabilitiesSettingsConfig fullSync(@javax.annotation.Nullable Boolean fullSync) {
-    this.fullSync = fullSync;
-    return this;
-  }
-
-  /**
-   * Boolean to control weather the input performs full syncs or incremental syncs
-   * @return fullSync
-   */
-  @javax.annotation.Nullable
-  public Boolean getFullSync() {
-    return fullSync;
-  }
-
-  public void setFullSync(@javax.annotation.Nullable Boolean fullSync) {
-    this.fullSync = fullSync;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -135,14 +87,12 @@ public class VulnerabilitiesSettingsConfig {
       return false;
     }
     VulnerabilitiesSettingsConfig vulnerabilitiesSettingsConfig = (VulnerabilitiesSettingsConfig) o;
-    return Objects.equals(this.cloudType, vulnerabilitiesSettingsConfig.cloudType) &&
-        Objects.equals(this.cron, vulnerabilitiesSettingsConfig.cron) &&
-        Objects.equals(this.fullSync, vulnerabilitiesSettingsConfig.fullSync);
+    return Objects.equals(this.cloudType, vulnerabilitiesSettingsConfig.cloudType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cloudType, cron, fullSync);
+    return Objects.hash(cloudType);
   }
 
   @Override
@@ -150,8 +100,6 @@ public class VulnerabilitiesSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class VulnerabilitiesSettingsConfig {\n");
     sb.append("    cloudType: ").append(toIndentedString(cloudType)).append("\n");
-    sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
-    sb.append("    fullSync: ").append(toIndentedString(fullSync)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -175,8 +123,6 @@ public class VulnerabilitiesSettingsConfig {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("cloud_type");
-    openapiFields.add("cron");
-    openapiFields.add("full_sync");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -205,9 +151,6 @@ public class VulnerabilitiesSettingsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("cloud_type") != null && !jsonObj.get("cloud_type").isJsonNull()) && !jsonObj.get("cloud_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `cloud_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cloud_type").toString()));
-      }
-      if ((jsonObj.get("cron") != null && !jsonObj.get("cron").isJsonNull()) && !jsonObj.get("cron").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cron` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cron").toString()));
       }
   }
 

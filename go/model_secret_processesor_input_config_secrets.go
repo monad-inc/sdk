@@ -62,10 +62,13 @@ type SecretProcessesorInputConfigSecrets struct {
 	SnykProjectsSecretsConfig *SnykProjectsSecretsConfig
 	SnykTargetsSecretsConfig *SnykTargetsSecretsConfig
 	TailscaleUsersSecretsConfig *TailscaleUsersSecretsConfig
+	TenableAssetsCronSecretsConfig *TenableAssetsCronSecretsConfig
 	TenableAssetsSecretsConfig *TenableAssetsSecretsConfig
+	TenableVulnerabilitiesCronSecretsConfig *TenableVulnerabilitiesCronSecretsConfig
 	TenableVulnerabilitiesSecretsConfig *TenableVulnerabilitiesSecretsConfig
 	UsersInfoSecretsConfig *UsersInfoSecretsConfig
 	UsersSecretsConfig *UsersSecretsConfig
+	VulnerabilitiesCronSecretsConfig *VulnerabilitiesCronSecretsConfig
 	VulnerabilitiesSecretsConfig *VulnerabilitiesSecretsConfig
 	VulnerabilityFindingsSecretsConfig *VulnerabilityFindingsSecretsConfig
 	MapmapOfStringAny *map[string]interface{}
@@ -372,10 +375,24 @@ func TailscaleUsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Tailsca
 	}
 }
 
+// TenableAssetsCronSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TenableAssetsCronSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func TenableAssetsCronSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TenableAssetsCronSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		TenableAssetsCronSecretsConfig: v,
+	}
+}
+
 // TenableAssetsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TenableAssetsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func TenableAssetsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TenableAssetsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		TenableAssetsSecretsConfig: v,
+	}
+}
+
+// TenableVulnerabilitiesCronSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TenableVulnerabilitiesCronSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func TenableVulnerabilitiesCronSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TenableVulnerabilitiesCronSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		TenableVulnerabilitiesCronSecretsConfig: v,
 	}
 }
 
@@ -397,6 +414,13 @@ func UsersInfoSecretsConfigAsSecretProcessesorInputConfigSecrets(v *UsersInfoSec
 func UsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *UsersSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		UsersSecretsConfig: v,
+	}
+}
+
+// VulnerabilitiesCronSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns VulnerabilitiesCronSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func VulnerabilitiesCronSecretsConfigAsSecretProcessesorInputConfigSecrets(v *VulnerabilitiesCronSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		VulnerabilitiesCronSecretsConfig: v,
 	}
 }
 
@@ -1157,6 +1181,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.TailscaleUsersSecretsConfig = nil
 	}
 
+	// try to unmarshal data into TenableAssetsCronSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.TenableAssetsCronSecretsConfig)
+	if err == nil {
+		jsonTenableAssetsCronSecretsConfig, _ := json.Marshal(dst.TenableAssetsCronSecretsConfig)
+		if string(jsonTenableAssetsCronSecretsConfig) == "{}" { // empty struct
+			dst.TenableAssetsCronSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TenableAssetsCronSecretsConfig); err != nil {
+				dst.TenableAssetsCronSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TenableAssetsCronSecretsConfig = nil
+	}
+
 	// try to unmarshal data into TenableAssetsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.TenableAssetsSecretsConfig)
 	if err == nil {
@@ -1172,6 +1213,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.TenableAssetsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into TenableVulnerabilitiesCronSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.TenableVulnerabilitiesCronSecretsConfig)
+	if err == nil {
+		jsonTenableVulnerabilitiesCronSecretsConfig, _ := json.Marshal(dst.TenableVulnerabilitiesCronSecretsConfig)
+		if string(jsonTenableVulnerabilitiesCronSecretsConfig) == "{}" { // empty struct
+			dst.TenableVulnerabilitiesCronSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TenableVulnerabilitiesCronSecretsConfig); err != nil {
+				dst.TenableVulnerabilitiesCronSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TenableVulnerabilitiesCronSecretsConfig = nil
 	}
 
 	// try to unmarshal data into TenableVulnerabilitiesSecretsConfig
@@ -1223,6 +1281,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.UsersSecretsConfig = nil
+	}
+
+	// try to unmarshal data into VulnerabilitiesCronSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.VulnerabilitiesCronSecretsConfig)
+	if err == nil {
+		jsonVulnerabilitiesCronSecretsConfig, _ := json.Marshal(dst.VulnerabilitiesCronSecretsConfig)
+		if string(jsonVulnerabilitiesCronSecretsConfig) == "{}" { // empty struct
+			dst.VulnerabilitiesCronSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.VulnerabilitiesCronSecretsConfig); err != nil {
+				dst.VulnerabilitiesCronSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.VulnerabilitiesCronSecretsConfig = nil
 	}
 
 	// try to unmarshal data into VulnerabilitiesSecretsConfig
@@ -1321,10 +1396,13 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.SnykProjectsSecretsConfig = nil
 		dst.SnykTargetsSecretsConfig = nil
 		dst.TailscaleUsersSecretsConfig = nil
+		dst.TenableAssetsCronSecretsConfig = nil
 		dst.TenableAssetsSecretsConfig = nil
+		dst.TenableVulnerabilitiesCronSecretsConfig = nil
 		dst.TenableVulnerabilitiesSecretsConfig = nil
 		dst.UsersInfoSecretsConfig = nil
 		dst.UsersSecretsConfig = nil
+		dst.VulnerabilitiesCronSecretsConfig = nil
 		dst.VulnerabilitiesSecretsConfig = nil
 		dst.VulnerabilityFindingsSecretsConfig = nil
 		dst.MapmapOfStringAny = nil
@@ -1511,8 +1589,16 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.TailscaleUsersSecretsConfig)
 	}
 
+	if src.TenableAssetsCronSecretsConfig != nil {
+		return json.Marshal(&src.TenableAssetsCronSecretsConfig)
+	}
+
 	if src.TenableAssetsSecretsConfig != nil {
 		return json.Marshal(&src.TenableAssetsSecretsConfig)
+	}
+
+	if src.TenableVulnerabilitiesCronSecretsConfig != nil {
+		return json.Marshal(&src.TenableVulnerabilitiesCronSecretsConfig)
 	}
 
 	if src.TenableVulnerabilitiesSecretsConfig != nil {
@@ -1525,6 +1611,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.UsersSecretsConfig != nil {
 		return json.Marshal(&src.UsersSecretsConfig)
+	}
+
+	if src.VulnerabilitiesCronSecretsConfig != nil {
+		return json.Marshal(&src.VulnerabilitiesCronSecretsConfig)
 	}
 
 	if src.VulnerabilitiesSecretsConfig != nil {
@@ -1719,8 +1809,16 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.TailscaleUsersSecretsConfig
 	}
 
+	if obj.TenableAssetsCronSecretsConfig != nil {
+		return obj.TenableAssetsCronSecretsConfig
+	}
+
 	if obj.TenableAssetsSecretsConfig != nil {
 		return obj.TenableAssetsSecretsConfig
+	}
+
+	if obj.TenableVulnerabilitiesCronSecretsConfig != nil {
+		return obj.TenableVulnerabilitiesCronSecretsConfig
 	}
 
 	if obj.TenableVulnerabilitiesSecretsConfig != nil {
@@ -1733,6 +1831,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 	if obj.UsersSecretsConfig != nil {
 		return obj.UsersSecretsConfig
+	}
+
+	if obj.VulnerabilitiesCronSecretsConfig != nil {
+		return obj.VulnerabilitiesCronSecretsConfig
 	}
 
 	if obj.VulnerabilitiesSecretsConfig != nil {
@@ -1925,8 +2027,16 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.TailscaleUsersSecretsConfig
 	}
 
+	if obj.TenableAssetsCronSecretsConfig != nil {
+		return *obj.TenableAssetsCronSecretsConfig
+	}
+
 	if obj.TenableAssetsSecretsConfig != nil {
 		return *obj.TenableAssetsSecretsConfig
+	}
+
+	if obj.TenableVulnerabilitiesCronSecretsConfig != nil {
+		return *obj.TenableVulnerabilitiesCronSecretsConfig
 	}
 
 	if obj.TenableVulnerabilitiesSecretsConfig != nil {
@@ -1939,6 +2049,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.UsersSecretsConfig != nil {
 		return *obj.UsersSecretsConfig
+	}
+
+	if obj.VulnerabilitiesCronSecretsConfig != nil {
+		return *obj.VulnerabilitiesCronSecretsConfig
 	}
 
 	if obj.VulnerabilitiesSecretsConfig != nil {

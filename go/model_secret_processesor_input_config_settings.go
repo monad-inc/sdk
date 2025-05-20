@@ -63,10 +63,11 @@ type SecretProcessesorInputConfigSettings struct {
 	SnykOrganizationsSettingsConfig *SnykOrganizationsSettingsConfig
 	SnykProjectsSettingsConfig *SnykProjectsSettingsConfig
 	TailscaleUsersSettingsConfig *TailscaleUsersSettingsConfig
-	TenableAssetsSettingsConfig *TenableAssetsSettingsConfig
-	TenableVulnerabilitiesSettingsConfig *TenableVulnerabilitiesSettingsConfig
+	TenableAssetsCronSettingsConfig *TenableAssetsCronSettingsConfig
+	TenableVulnerabilitiesCronSettingsConfig *TenableVulnerabilitiesCronSettingsConfig
 	UsersInfoSettingsConfig *UsersInfoSettingsConfig
 	UsersSettingsConfig *UsersSettingsConfig
+	VulnerabilitiesCronSettingsConfig *VulnerabilitiesCronSettingsConfig
 	VulnerabilitiesSettingsConfig *VulnerabilitiesSettingsConfig
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
@@ -380,17 +381,17 @@ func TailscaleUsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *Tails
 	}
 }
 
-// TenableAssetsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TenableAssetsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func TenableAssetsSettingsConfigAsSecretProcessesorInputConfigSettings(v *TenableAssetsSettingsConfig) SecretProcessesorInputConfigSettings {
+// TenableAssetsCronSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TenableAssetsCronSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func TenableAssetsCronSettingsConfigAsSecretProcessesorInputConfigSettings(v *TenableAssetsCronSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
-		TenableAssetsSettingsConfig: v,
+		TenableAssetsCronSettingsConfig: v,
 	}
 }
 
-// TenableVulnerabilitiesSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TenableVulnerabilitiesSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func TenableVulnerabilitiesSettingsConfigAsSecretProcessesorInputConfigSettings(v *TenableVulnerabilitiesSettingsConfig) SecretProcessesorInputConfigSettings {
+// TenableVulnerabilitiesCronSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TenableVulnerabilitiesCronSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func TenableVulnerabilitiesCronSettingsConfigAsSecretProcessesorInputConfigSettings(v *TenableVulnerabilitiesCronSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
-		TenableVulnerabilitiesSettingsConfig: v,
+		TenableVulnerabilitiesCronSettingsConfig: v,
 	}
 }
 
@@ -405,6 +406,13 @@ func UsersInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *UsersInfoS
 func UsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *UsersSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		UsersSettingsConfig: v,
+	}
+}
+
+// VulnerabilitiesCronSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns VulnerabilitiesCronSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func VulnerabilitiesCronSettingsConfigAsSecretProcessesorInputConfigSettings(v *VulnerabilitiesCronSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		VulnerabilitiesCronSettingsConfig: v,
 	}
 }
 
@@ -1182,38 +1190,38 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.TailscaleUsersSettingsConfig = nil
 	}
 
-	// try to unmarshal data into TenableAssetsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.TenableAssetsSettingsConfig)
+	// try to unmarshal data into TenableAssetsCronSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TenableAssetsCronSettingsConfig)
 	if err == nil {
-		jsonTenableAssetsSettingsConfig, _ := json.Marshal(dst.TenableAssetsSettingsConfig)
-		if string(jsonTenableAssetsSettingsConfig) == "{}" { // empty struct
-			dst.TenableAssetsSettingsConfig = nil
+		jsonTenableAssetsCronSettingsConfig, _ := json.Marshal(dst.TenableAssetsCronSettingsConfig)
+		if string(jsonTenableAssetsCronSettingsConfig) == "{}" { // empty struct
+			dst.TenableAssetsCronSettingsConfig = nil
 		} else {
-			if err = validator.Validate(dst.TenableAssetsSettingsConfig); err != nil {
-				dst.TenableAssetsSettingsConfig = nil
+			if err = validator.Validate(dst.TenableAssetsCronSettingsConfig); err != nil {
+				dst.TenableAssetsCronSettingsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.TenableAssetsSettingsConfig = nil
+		dst.TenableAssetsCronSettingsConfig = nil
 	}
 
-	// try to unmarshal data into TenableVulnerabilitiesSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.TenableVulnerabilitiesSettingsConfig)
+	// try to unmarshal data into TenableVulnerabilitiesCronSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TenableVulnerabilitiesCronSettingsConfig)
 	if err == nil {
-		jsonTenableVulnerabilitiesSettingsConfig, _ := json.Marshal(dst.TenableVulnerabilitiesSettingsConfig)
-		if string(jsonTenableVulnerabilitiesSettingsConfig) == "{}" { // empty struct
-			dst.TenableVulnerabilitiesSettingsConfig = nil
+		jsonTenableVulnerabilitiesCronSettingsConfig, _ := json.Marshal(dst.TenableVulnerabilitiesCronSettingsConfig)
+		if string(jsonTenableVulnerabilitiesCronSettingsConfig) == "{}" { // empty struct
+			dst.TenableVulnerabilitiesCronSettingsConfig = nil
 		} else {
-			if err = validator.Validate(dst.TenableVulnerabilitiesSettingsConfig); err != nil {
-				dst.TenableVulnerabilitiesSettingsConfig = nil
+			if err = validator.Validate(dst.TenableVulnerabilitiesCronSettingsConfig); err != nil {
+				dst.TenableVulnerabilitiesCronSettingsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.TenableVulnerabilitiesSettingsConfig = nil
+		dst.TenableVulnerabilitiesCronSettingsConfig = nil
 	}
 
 	// try to unmarshal data into UsersInfoSettingsConfig
@@ -1248,6 +1256,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.UsersSettingsConfig = nil
+	}
+
+	// try to unmarshal data into VulnerabilitiesCronSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.VulnerabilitiesCronSettingsConfig)
+	if err == nil {
+		jsonVulnerabilitiesCronSettingsConfig, _ := json.Marshal(dst.VulnerabilitiesCronSettingsConfig)
+		if string(jsonVulnerabilitiesCronSettingsConfig) == "{}" { // empty struct
+			dst.VulnerabilitiesCronSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.VulnerabilitiesCronSettingsConfig); err != nil {
+				dst.VulnerabilitiesCronSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.VulnerabilitiesCronSettingsConfig = nil
 	}
 
 	// try to unmarshal data into VulnerabilitiesSettingsConfig
@@ -1347,10 +1372,11 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.SnykOrganizationsSettingsConfig = nil
 		dst.SnykProjectsSettingsConfig = nil
 		dst.TailscaleUsersSettingsConfig = nil
-		dst.TenableAssetsSettingsConfig = nil
-		dst.TenableVulnerabilitiesSettingsConfig = nil
+		dst.TenableAssetsCronSettingsConfig = nil
+		dst.TenableVulnerabilitiesCronSettingsConfig = nil
 		dst.UsersInfoSettingsConfig = nil
 		dst.UsersSettingsConfig = nil
+		dst.VulnerabilitiesCronSettingsConfig = nil
 		dst.VulnerabilitiesSettingsConfig = nil
 		dst.VulnerabilityFindingsSettingsConfig = nil
 		dst.MapmapOfStringAny = nil
@@ -1541,12 +1567,12 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.TailscaleUsersSettingsConfig)
 	}
 
-	if src.TenableAssetsSettingsConfig != nil {
-		return json.Marshal(&src.TenableAssetsSettingsConfig)
+	if src.TenableAssetsCronSettingsConfig != nil {
+		return json.Marshal(&src.TenableAssetsCronSettingsConfig)
 	}
 
-	if src.TenableVulnerabilitiesSettingsConfig != nil {
-		return json.Marshal(&src.TenableVulnerabilitiesSettingsConfig)
+	if src.TenableVulnerabilitiesCronSettingsConfig != nil {
+		return json.Marshal(&src.TenableVulnerabilitiesCronSettingsConfig)
 	}
 
 	if src.UsersInfoSettingsConfig != nil {
@@ -1555,6 +1581,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.UsersSettingsConfig != nil {
 		return json.Marshal(&src.UsersSettingsConfig)
+	}
+
+	if src.VulnerabilitiesCronSettingsConfig != nil {
+		return json.Marshal(&src.VulnerabilitiesCronSettingsConfig)
 	}
 
 	if src.VulnerabilitiesSettingsConfig != nil {
@@ -1753,12 +1783,12 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.TailscaleUsersSettingsConfig
 	}
 
-	if obj.TenableAssetsSettingsConfig != nil {
-		return obj.TenableAssetsSettingsConfig
+	if obj.TenableAssetsCronSettingsConfig != nil {
+		return obj.TenableAssetsCronSettingsConfig
 	}
 
-	if obj.TenableVulnerabilitiesSettingsConfig != nil {
-		return obj.TenableVulnerabilitiesSettingsConfig
+	if obj.TenableVulnerabilitiesCronSettingsConfig != nil {
+		return obj.TenableVulnerabilitiesCronSettingsConfig
 	}
 
 	if obj.UsersInfoSettingsConfig != nil {
@@ -1767,6 +1797,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.UsersSettingsConfig != nil {
 		return obj.UsersSettingsConfig
+	}
+
+	if obj.VulnerabilitiesCronSettingsConfig != nil {
+		return obj.VulnerabilitiesCronSettingsConfig
 	}
 
 	if obj.VulnerabilitiesSettingsConfig != nil {
@@ -1963,12 +1997,12 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.TailscaleUsersSettingsConfig
 	}
 
-	if obj.TenableAssetsSettingsConfig != nil {
-		return *obj.TenableAssetsSettingsConfig
+	if obj.TenableAssetsCronSettingsConfig != nil {
+		return *obj.TenableAssetsCronSettingsConfig
 	}
 
-	if obj.TenableVulnerabilitiesSettingsConfig != nil {
-		return *obj.TenableVulnerabilitiesSettingsConfig
+	if obj.TenableVulnerabilitiesCronSettingsConfig != nil {
+		return *obj.TenableVulnerabilitiesCronSettingsConfig
 	}
 
 	if obj.UsersInfoSettingsConfig != nil {
@@ -1977,6 +2011,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.UsersSettingsConfig != nil {
 		return *obj.UsersSettingsConfig
+	}
+
+	if obj.VulnerabilitiesCronSettingsConfig != nil {
+		return *obj.VulnerabilitiesCronSettingsConfig
 	}
 
 	if obj.VulnerabilitiesSettingsConfig != nil {
