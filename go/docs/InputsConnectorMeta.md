@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **House** | Pointer to **string** |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
+**IsCron** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Tier** | Pointer to **int32** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
@@ -244,6 +245,31 @@ SetInternal sets Internal field to given value.
 `func (o *InputsConnectorMeta) HasInternal() bool`
 
 HasInternal returns a boolean if a field has been set.
+
+### GetIsCron
+
+`func (o *InputsConnectorMeta) GetIsCron() bool`
+
+GetIsCron returns the IsCron field if non-nil, zero value otherwise.
+
+### GetIsCronOk
+
+`func (o *InputsConnectorMeta) GetIsCronOk() (*bool, bool)`
+
+GetIsCronOk returns a tuple with the IsCron field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCron
+
+`func (o *InputsConnectorMeta) SetIsCron(v bool)`
+
+SetIsCron sets IsCron field to given value.
+
+### HasIsCron
+
+`func (o *InputsConnectorMeta) HasIsCron() bool`
+
+HasIsCron returns a boolean if a field has been set.
 
 ### GetName
 

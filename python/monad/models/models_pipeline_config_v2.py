@@ -33,6 +33,7 @@ class ModelsPipelineConfigV2(BaseModel):
     billing_account_id: Optional[StrictStr] = Field(default=None, alias="billingAccountId")
     component_tier: Optional[StrictInt] = None
     created_at: Optional[StrictStr] = Field(default=None, alias="createdAt")
+    cron_schedule: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     edges: Optional[List[ModelsPipelineEdge]] = None
     enabled: Optional[StrictBool] = None
@@ -43,7 +44,7 @@ class ModelsPipelineConfigV2(BaseModel):
     organization_name: Optional[StrictStr] = Field(default=None, alias="organizationName")
     retention_policy: Optional[ModelsPipelineRetentionPolicy] = None
     updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
-    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "description", "edges", "enabled", "id", "name", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"]
+    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "name", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -116,6 +117,7 @@ class ModelsPipelineConfigV2(BaseModel):
             "billingAccountId": obj.get("billingAccountId"),
             "component_tier": obj.get("component_tier"),
             "createdAt": obj.get("createdAt"),
+            "cron_schedule": obj.get("cron_schedule"),
             "description": obj.get("description"),
             "edges": [ModelsPipelineEdge.from_dict(_item) for _item in obj["edges"]] if obj.get("edges") is not None else None,
             "enabled": obj.get("enabled"),

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ComponentTier** | Pointer to **int32** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
+**CronSchedule** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -82,6 +83,31 @@ SetCreatedAt sets CreatedAt field to given value.
 `func (o *ModelsPipeline) HasCreatedAt() bool`
 
 HasCreatedAt returns a boolean if a field has been set.
+
+### GetCronSchedule
+
+`func (o *ModelsPipeline) GetCronSchedule() string`
+
+GetCronSchedule returns the CronSchedule field if non-nil, zero value otherwise.
+
+### GetCronScheduleOk
+
+`func (o *ModelsPipeline) GetCronScheduleOk() (*string, bool)`
+
+GetCronScheduleOk returns a tuple with the CronSchedule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCronSchedule
+
+`func (o *ModelsPipeline) SetCronSchedule(v string)`
+
+SetCronSchedule sets CronSchedule field to given value.
+
+### HasCronSchedule
+
+`func (o *ModelsPipeline) HasCronSchedule() bool`
+
+HasCronSchedule returns a boolean if a field has been set.
 
 ### GetDescription
 

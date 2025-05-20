@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **billing_account_id** | **str** |  | [optional] 
 **component_tier** | **int** |  | [optional] 
 **created_at** | **str** |  | [optional] 
+**cron_schedule** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **edges** | [**List[ModelsPipelineEdge]**](ModelsPipelineEdge.md) |  | [optional] 
 **enabled** | **bool** |  | [optional] 

@@ -80,7 +80,6 @@ export * from '../models/IssuesSecretsConfig';
 export * from '../models/IssuesSettingsConfig';
 export * from '../models/JqJQ';
 export * from '../models/JsonJsonFormatter';
-export * from '../models/KvLookupSettingsConfig';
 export * from '../models/LogAnalyticsQuerySecretsConfig';
 export * from '../models/LogAnalyticsQuerySettingsConfig';
 export * from '../models/LoginActivitySecretsConfig';
@@ -227,7 +226,6 @@ export * from '../models/RoutesV3UpdateEnrichmentRequest';
 export * from '../models/S3SettingsConfig';
 export * from '../models/SecretProcessesorEnrichmentConfig';
 export * from '../models/SecretProcessesorEnrichmentConfigSecrets';
-export * from '../models/SecretProcessesorEnrichmentConfigSettings';
 export * from '../models/SecretProcessesorInputConfig';
 export * from '../models/SecretProcessesorInputConfigSecrets';
 export * from '../models/SecretProcessesorInputConfigSettings';
@@ -363,7 +361,6 @@ import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig     , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum    } from '../models/IssuesSettingsConfig';
 import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
-import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
 import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig';
@@ -510,7 +507,6 @@ import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichm
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
 import { SecretProcessesorEnrichmentConfigSecretsClass } from '../models/SecretProcessesorEnrichmentConfigSecrets';
-import { SecretProcessesorEnrichmentConfigSettingsClass } from '../models/SecretProcessesorEnrichmentConfigSettings';
 import { SecretProcessesorInputConfig } from '../models/SecretProcessesorInputConfig';
 import { SecretProcessesorInputConfigSecretsClass } from '../models/SecretProcessesorInputConfigSecrets';
 import { SecretProcessesorInputConfigSettingsClass } from '../models/SecretProcessesorInputConfigSettings';
@@ -671,7 +667,6 @@ let typeMap: {[index: string]: any} = {
     "IssuesSettingsConfig": IssuesSettingsConfig,
     "JqJQ": JqJQ,
     "JsonJsonFormatter": JsonJsonFormatter,
-    "KvLookupSettingsConfig": KvLookupSettingsConfig,
     "LogAnalyticsQuerySecretsConfig": LogAnalyticsQuerySecretsConfig,
     "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,
     "LoginActivitySecretsConfig": LoginActivitySecretsConfig,
@@ -818,7 +813,6 @@ let typeMap: {[index: string]: any} = {
     "S3SettingsConfig": S3SettingsConfig,
     "SecretProcessesorEnrichmentConfig": SecretProcessesorEnrichmentConfig,
     "SecretProcessesorEnrichmentConfigSecrets": SecretProcessesorEnrichmentConfigSecretsClass,
-    "SecretProcessesorEnrichmentConfigSettings": SecretProcessesorEnrichmentConfigSettingsClass,
     "SecretProcessesorInputConfig": SecretProcessesorInputConfig,
     "SecretProcessesorInputConfigSecrets": SecretProcessesorInputConfigSecretsClass,
     "SecretProcessesorInputConfigSettings": SecretProcessesorInputConfigSettingsClass,

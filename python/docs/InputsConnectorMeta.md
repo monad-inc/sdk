@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **house** | **str** |  | [optional] 
 **internal** | **bool** |  | [optional] 
+**is_cron** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **tier** | **int** |  | [optional] 
 **type_id** | **str** |  | [optional] 

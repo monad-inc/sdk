@@ -51,7 +51,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T16:38:57.184638103Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T21:00:29.692036015Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorEnrichmentConfigSecrets.class.getName());
 
@@ -63,7 +63,6 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
                 return null; // this class only serializes 'SecretProcessesorEnrichmentConfigSecrets' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<Object> adapterObject = gson.getDelegateAdapter(this, TypeToken.get(Object.class));
             final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
             final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
 
@@ -75,19 +74,13 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
                         return;
                     }
 
-                    // check if the actual instance is of the type `Object`
-                    if (value.getActualInstance() instanceof Object) {
-                        JsonPrimitive primitive = adapterObject.toJsonTree((Object)value.getActualInstance()).getAsJsonPrimitive();
-                        elementAdapter.write(out, primitive);
-                        return;
-                    }
                     // check if the actual instance is of the type `Map<String, Object>`
                     if (value.getActualInstance() instanceof Map<?, ?>) {
                         JsonObject object = adapterMapStringObject.toJsonTree((Map<String, Object>)value.getActualInstance()).getAsJsonObject();
                         elementAdapter.write(out, object);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: Map<String, Object>, Object");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: Map<String, Object>");
                 }
 
                 @Override
@@ -99,20 +92,6 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
                     ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
-                    // deserialize Object
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
-                        }
-                        actualAdapter = adapterObject;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'Object'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for Object failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'Object'", e);
-                    }
                     // deserialize Map<String, Object>
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -154,7 +133,6 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
     }
 
     static {
-        schemas.put("Object", Object.class);
         schemas.put("Map<String, Object>", Map.class);
     }
 
@@ -166,46 +144,30 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * Map<String, Object>, Object
+     * Map<String, Object>
      *
      * It could be an instance of the 'oneOf' schemas.
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (instance instanceof Object) {
-            super.setActualInstance(instance);
-            return;
-        }
-
         if (instance instanceof Map<?, ?>) {
             super.setActualInstance(instance);
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be Map<String, Object>, Object");
+        throw new RuntimeException("Invalid instance type. Must be Map<String, Object>");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * Map<String, Object>, Object
+     * Map<String, Object>
      *
-     * @return The actual instance (Map<String, Object>, Object)
+     * @return The actual instance (Map<String, Object>)
      */
     @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `Object`. If the actual instance is not `Object`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `Object`
-     * @throws ClassCastException if the instance is not `Object`
-     */
-    public Object getObject() throws ClassCastException {
-        return (Object)super.getActualInstance();
     }
 
     /**
@@ -229,16 +191,6 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
         // validate oneOf schemas one by one
         int validCount = 0;
         ArrayList<String> errorMessages = new ArrayList<>();
-        // validate the json string with Object
-        try {
-            if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
-            }
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for Object failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
         // validate the json string with Map<String, Object>
         try {
             if (!jsonElement.isJsonObject()) {
@@ -251,7 +203,7 @@ public class SecretProcessesorEnrichmentConfigSecrets extends AbstractOpenApiSch
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for SecretProcessesorEnrichmentConfigSecrets with oneOf schemas: Map<String, Object>, Object. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format("The JSON string is invalid for SecretProcessesorEnrichmentConfigSecrets with oneOf schemas: Map<String, Object>. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

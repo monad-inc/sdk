@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineConfigV2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T16:38:57.184638103Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T21:00:29.692036015Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ModelsPipelineConfigV2 {
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billingAccountId";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
@@ -69,6 +69,11 @@ public class ModelsPipelineConfigV2 {
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nullable
   private String createdAt;
+
+  public static final String SERIALIZED_NAME_CRON_SCHEDULE = "cron_schedule";
+  @SerializedName(SERIALIZED_NAME_CRON_SCHEDULE)
+  @javax.annotation.Nullable
+  private String cronSchedule;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -177,6 +182,25 @@ public class ModelsPipelineConfigV2 {
 
   public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
+  }
+
+
+  public ModelsPipelineConfigV2 cronSchedule(@javax.annotation.Nullable String cronSchedule) {
+    this.cronSchedule = cronSchedule;
+    return this;
+  }
+
+  /**
+   * Get cronSchedule
+   * @return cronSchedule
+   */
+  @javax.annotation.Nullable
+  public String getCronSchedule() {
+    return cronSchedule;
+  }
+
+  public void setCronSchedule(@javax.annotation.Nullable String cronSchedule) {
+    this.cronSchedule = cronSchedule;
   }
 
 
@@ -399,6 +423,7 @@ public class ModelsPipelineConfigV2 {
     return Objects.equals(this.billingAccountId, modelsPipelineConfigV2.billingAccountId) &&
         Objects.equals(this.componentTier, modelsPipelineConfigV2.componentTier) &&
         Objects.equals(this.createdAt, modelsPipelineConfigV2.createdAt) &&
+        Objects.equals(this.cronSchedule, modelsPipelineConfigV2.cronSchedule) &&
         Objects.equals(this.description, modelsPipelineConfigV2.description) &&
         Objects.equals(this.edges, modelsPipelineConfigV2.edges) &&
         Objects.equals(this.enabled, modelsPipelineConfigV2.enabled) &&
@@ -413,7 +438,7 @@ public class ModelsPipelineConfigV2 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, componentTier, createdAt, description, edges, enabled, id, name, nodes, organizationId, organizationName, retentionPolicy, updatedAt);
+    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, name, nodes, organizationId, organizationName, retentionPolicy, updatedAt);
   }
 
   @Override
@@ -423,6 +448,7 @@ public class ModelsPipelineConfigV2 {
     sb.append("    billingAccountId: ").append(toIndentedString(billingAccountId)).append("\n");
     sb.append("    componentTier: ").append(toIndentedString(componentTier)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    cronSchedule: ").append(toIndentedString(cronSchedule)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    edges: ").append(toIndentedString(edges)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
@@ -458,6 +484,7 @@ public class ModelsPipelineConfigV2 {
     openapiFields.add("billingAccountId");
     openapiFields.add("component_tier");
     openapiFields.add("createdAt");
+    openapiFields.add("cron_schedule");
     openapiFields.add("description");
     openapiFields.add("edges");
     openapiFields.add("enabled");
@@ -499,6 +526,9 @@ public class ModelsPipelineConfigV2 {
       }
       if ((jsonObj.get("createdAt") != null && !jsonObj.get("createdAt").isJsonNull()) && !jsonObj.get("createdAt").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `createdAt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdAt").toString()));
+      }
+      if ((jsonObj.get("cron_schedule") != null && !jsonObj.get("cron_schedule").isJsonNull()) && !jsonObj.get("cron_schedule").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `cron_schedule` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cron_schedule").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));

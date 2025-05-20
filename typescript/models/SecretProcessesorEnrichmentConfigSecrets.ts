@@ -17,7 +17,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorEnrichmentConfigSecrets = any | { [key: string]: any; };
+export type SecretProcessesorEnrichmentConfigSecrets = { [key: string]: any; };
 
 /**
 * @type SecretProcessesorEnrichmentConfigSecretsClass
@@ -28,4 +28,3 @@ export class SecretProcessesorEnrichmentConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
-

@@ -10,6 +10,7 @@
 |**billingAccountId** | **String** |  |  [optional] |
 |**componentTier** | **Integer** |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
+|**cronSchedule** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**edges** | [**List&lt;ModelsPipelineEdge&gt;**](ModelsPipelineEdge.md) |  |  [optional] |
 |**enabled** | **Boolean** |  |  [optional] |

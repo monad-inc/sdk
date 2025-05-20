@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **component_tier** | **int** |  | [optional] 
 **created_at** | **str** |  | [optional] 
+**cron_schedule** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **enabled** | **bool** |  | [optional] 
 **id** | **str** |  | [optional] 

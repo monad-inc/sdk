@@ -15,6 +15,7 @@ import { HttpFile } from '../http/http';
 export class ModelsPipeline {
     'componentTier'?: number;
     'createdAt'?: string;
+    'cronSchedule'?: string;
     'description'?: string;
     'enabled'?: boolean;
     'id'?: string;
@@ -37,6 +38,12 @@ export class ModelsPipeline {
         {
             "name": "createdAt",
             "baseName": "created_at",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "cronSchedule",
+            "baseName": "cron_schedule",
             "type": "string",
             "format": ""
         },

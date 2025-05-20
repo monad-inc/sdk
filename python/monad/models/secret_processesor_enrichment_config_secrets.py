@@ -22,18 +22,16 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-SECRETPROCESSESORENRICHMENTCONFIGSECRETS_ONE_OF_SCHEMAS = ["Dict[str, object]", "object"]
+SECRETPROCESSESORENRICHMENTCONFIGSECRETS_ONE_OF_SCHEMAS = ["Dict[str, object]"]
 
 class SecretProcessesorEnrichmentConfigSecrets(BaseModel):
     """
     SecretProcessesorEnrichmentConfigSecrets
     """
-    # data type: object
-    oneof_schema_1_validator: Optional[Dict[str, Any]] = Field(default=None, description="KVLookup enrichment settings")
     # data type: Dict[str, object]
-    oneof_schema_2_validator: Optional[Dict[str, Any]] = None
-    actual_instance: Optional[Union[Dict[str, object], object]] = None
-    one_of_schemas: Set[str] = { "Dict[str, object]", "object" }
+    oneof_schema_1_validator: Optional[Dict[str, Any]] = None
+    actual_instance: Optional[Union[Dict[str, object]]] = None
+    one_of_schemas: Set[str] = { "Dict[str, object]" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -56,24 +54,18 @@ class SecretProcessesorEnrichmentConfigSecrets(BaseModel):
         instance = SecretProcessesorEnrichmentConfigSecrets.model_construct()
         error_messages = []
         match = 0
-        # validate data type: object
+        # validate data type: Dict[str, object]
         try:
             instance.oneof_schema_1_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # validate data type: Dict[str, object]
-        try:
-            instance.oneof_schema_2_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorEnrichmentConfigSecrets with oneOf schemas: Dict[str, object], object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorEnrichmentConfigSecrets with oneOf schemas: Dict[str, object]. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorEnrichmentConfigSecrets with oneOf schemas: Dict[str, object], object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorEnrichmentConfigSecrets with oneOf schemas: Dict[str, object]. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -88,7 +80,7 @@ class SecretProcessesorEnrichmentConfigSecrets(BaseModel):
         error_messages = []
         match = 0
 
-        # deserialize data into object
+        # deserialize data into Dict[str, object]
         try:
             # validation
             instance.oneof_schema_1_validator = json.loads(json_str)
@@ -97,22 +89,13 @@ class SecretProcessesorEnrichmentConfigSecrets(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into Dict[str, object]
-        try:
-            # validation
-            instance.oneof_schema_2_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_2_validator
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorEnrichmentConfigSecrets with oneOf schemas: Dict[str, object], object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorEnrichmentConfigSecrets with oneOf schemas: Dict[str, object]. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorEnrichmentConfigSecrets with oneOf schemas: Dict[str, object], object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorEnrichmentConfigSecrets with oneOf schemas: Dict[str, object]. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -126,7 +109,7 @@ class SecretProcessesorEnrichmentConfigSecrets(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], Dict[str, object], object]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], Dict[str, object]]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

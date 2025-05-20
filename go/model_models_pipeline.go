@@ -22,6 +22,7 @@ var _ MappedNullable = &ModelsPipeline{}
 type ModelsPipeline struct {
 	ComponentTier *int32 `json:"component_tier,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
+	CronSchedule *string `json:"cron_schedule,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -110,6 +111,38 @@ func (o *ModelsPipeline) HasCreatedAt() bool {
 // SetCreatedAt gets a reference to the given string and assigns it to the CreatedAt field.
 func (o *ModelsPipeline) SetCreatedAt(v string) {
 	o.CreatedAt = &v
+}
+
+// GetCronSchedule returns the CronSchedule field value if set, zero value otherwise.
+func (o *ModelsPipeline) GetCronSchedule() string {
+	if o == nil || IsNil(o.CronSchedule) {
+		var ret string
+		return ret
+	}
+	return *o.CronSchedule
+}
+
+// GetCronScheduleOk returns a tuple with the CronSchedule field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipeline) GetCronScheduleOk() (*string, bool) {
+	if o == nil || IsNil(o.CronSchedule) {
+		return nil, false
+	}
+	return o.CronSchedule, true
+}
+
+// HasCronSchedule returns a boolean if a field has been set.
+func (o *ModelsPipeline) HasCronSchedule() bool {
+	if o != nil && !IsNil(o.CronSchedule) {
+		return true
+	}
+
+	return false
+}
+
+// SetCronSchedule gets a reference to the given string and assigns it to the CronSchedule field.
+func (o *ModelsPipeline) SetCronSchedule(v string) {
+	o.CronSchedule = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -351,6 +384,9 @@ func (o ModelsPipeline) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
+	}
+	if !IsNil(o.CronSchedule) {
+		toSerialize["cron_schedule"] = o.CronSchedule
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

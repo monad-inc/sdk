@@ -21,6 +21,7 @@ export class InputsConnectorMeta {
     'description'?: string;
     'house'?: string;
     'internal'?: boolean;
+    'isCron'?: boolean;
     'name'?: string;
     'tier'?: number;
     'typeId'?: string;
@@ -75,6 +76,12 @@ export class InputsConnectorMeta {
         {
             "name": "internal",
             "baseName": "internal",
+            "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "isCron",
+            "baseName": "is_cron",
             "type": "boolean",
             "format": ""
         },

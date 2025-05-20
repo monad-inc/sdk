@@ -21,7 +21,7 @@ var _ MappedNullable = &SecretProcessesorEnrichmentConfig{}
 // SecretProcessesorEnrichmentConfig struct for SecretProcessesorEnrichmentConfig
 type SecretProcessesorEnrichmentConfig struct {
 	Secrets *SecretProcessesorEnrichmentConfigSecrets `json:"secrets,omitempty"`
-	Settings *SecretProcessesorEnrichmentConfigSettings `json:"settings,omitempty"`
+	Settings *SecretProcessesorEnrichmentConfigSecrets `json:"settings,omitempty"`
 }
 
 // NewSecretProcessesorEnrichmentConfig instantiates a new SecretProcessesorEnrichmentConfig object
@@ -74,9 +74,9 @@ func (o *SecretProcessesorEnrichmentConfig) SetSecrets(v SecretProcessesorEnrich
 }
 
 // GetSettings returns the Settings field value if set, zero value otherwise.
-func (o *SecretProcessesorEnrichmentConfig) GetSettings() SecretProcessesorEnrichmentConfigSettings {
+func (o *SecretProcessesorEnrichmentConfig) GetSettings() SecretProcessesorEnrichmentConfigSecrets {
 	if o == nil || IsNil(o.Settings) {
-		var ret SecretProcessesorEnrichmentConfigSettings
+		var ret SecretProcessesorEnrichmentConfigSecrets
 		return ret
 	}
 	return *o.Settings
@@ -84,7 +84,7 @@ func (o *SecretProcessesorEnrichmentConfig) GetSettings() SecretProcessesorEnric
 
 // GetSettingsOk returns a tuple with the Settings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SecretProcessesorEnrichmentConfig) GetSettingsOk() (*SecretProcessesorEnrichmentConfigSettings, bool) {
+func (o *SecretProcessesorEnrichmentConfig) GetSettingsOk() (*SecretProcessesorEnrichmentConfigSecrets, bool) {
 	if o == nil || IsNil(o.Settings) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *SecretProcessesorEnrichmentConfig) HasSettings() bool {
 	return false
 }
 
-// SetSettings gets a reference to the given SecretProcessesorEnrichmentConfigSettings and assigns it to the Settings field.
-func (o *SecretProcessesorEnrichmentConfig) SetSettings(v SecretProcessesorEnrichmentConfigSettings) {
+// SetSettings gets a reference to the given SecretProcessesorEnrichmentConfigSecrets and assigns it to the Settings field.
+func (o *SecretProcessesorEnrichmentConfig) SetSettings(v SecretProcessesorEnrichmentConfigSecrets) {
 	o.Settings = &v
 }
 

@@ -28,6 +28,7 @@ type InputsConnectorMeta struct {
 	Description *string `json:"description,omitempty"`
 	House *string `json:"house,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
+	IsCron *bool `json:"is_cron,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Tier *int32 `json:"tier,omitempty"`
 	TypeId *string `json:"type_id,omitempty"`
@@ -307,6 +308,38 @@ func (o *InputsConnectorMeta) SetInternal(v bool) {
 	o.Internal = &v
 }
 
+// GetIsCron returns the IsCron field value if set, zero value otherwise.
+func (o *InputsConnectorMeta) GetIsCron() bool {
+	if o == nil || IsNil(o.IsCron) {
+		var ret bool
+		return ret
+	}
+	return *o.IsCron
+}
+
+// GetIsCronOk returns a tuple with the IsCron field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InputsConnectorMeta) GetIsCronOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsCron) {
+		return nil, false
+	}
+	return o.IsCron, true
+}
+
+// HasIsCron returns a boolean if a field has been set.
+func (o *InputsConnectorMeta) HasIsCron() bool {
+	if o != nil && !IsNil(o.IsCron) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCron gets a reference to the given bool and assigns it to the IsCron field.
+func (o *InputsConnectorMeta) SetIsCron(v bool) {
+	o.IsCron = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *InputsConnectorMeta) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -436,6 +469,9 @@ func (o InputsConnectorMeta) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Internal) {
 		toSerialize["internal"] = o.Internal
+	}
+	if !IsNil(o.IsCron) {
+		toSerialize["is_cron"] = o.IsCron
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

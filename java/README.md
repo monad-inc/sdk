@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-05-20T16:38:57.184638103Z[Etc/UTC]
+  - Build date: 2025-05-20T21:00:29.692036015Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -316,7 +316,6 @@ Class | Method | HTTP request | Description
  - [IssuesSettingsConfig](docs/IssuesSettingsConfig.md)
  - [JqJQ](docs/JqJQ.md)
  - [JsonJsonFormatter](docs/JsonJsonFormatter.md)
- - [KvLookupSettingsConfig](docs/KvLookupSettingsConfig.md)
  - [LogAnalyticsQuerySecretsConfig](docs/LogAnalyticsQuerySecretsConfig.md)
  - [LogAnalyticsQuerySettingsConfig](docs/LogAnalyticsQuerySettingsConfig.md)
  - [LoginActivitySecretsConfig](docs/LoginActivitySecretsConfig.md)
@@ -463,7 +462,6 @@ Class | Method | HTTP request | Description
  - [S3SettingsConfig](docs/S3SettingsConfig.md)
  - [SecretProcessesorEnrichmentConfig](docs/SecretProcessesorEnrichmentConfig.md)
  - [SecretProcessesorEnrichmentConfigSecrets](docs/SecretProcessesorEnrichmentConfigSecrets.md)
- - [SecretProcessesorEnrichmentConfigSettings](docs/SecretProcessesorEnrichmentConfigSettings.md)
  - [SecretProcessesorInputConfig](docs/SecretProcessesorInputConfig.md)
  - [SecretProcessesorInputConfigSecrets](docs/SecretProcessesorInputConfigSecrets.md)
  - [SecretProcessesorInputConfigSettings](docs/SecretProcessesorInputConfigSettings.md)

@@ -19,6 +19,7 @@ export class ModelsPipelineConfigV2 {
     'billingAccountId'?: string;
     'componentTier'?: number;
     'createdAt'?: string;
+    'cronSchedule'?: string;
     'description'?: string;
     'edges'?: Array<ModelsPipelineEdge>;
     'enabled'?: boolean;
@@ -50,6 +51,12 @@ export class ModelsPipelineConfigV2 {
         {
             "name": "createdAt",
             "baseName": "createdAt",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "cronSchedule",
+            "baseName": "cron_schedule",
             "type": "string",
             "format": ""
         },

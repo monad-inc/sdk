@@ -29,6 +29,7 @@ class ModelsPipeline(BaseModel):
     """ # noqa: E501
     component_tier: Optional[StrictInt] = None
     created_at: Optional[StrictStr] = None
+    cron_schedule: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     enabled: Optional[StrictBool] = None
     id: Optional[StrictStr] = None
@@ -36,7 +37,7 @@ class ModelsPipeline(BaseModel):
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["component_tier", "created_at", "description", "enabled", "id", "input_id", "name", "organization_id", "updated_at"]
+    __properties: ClassVar[List[str]] = ["component_tier", "created_at", "cron_schedule", "description", "enabled", "id", "input_id", "name", "organization_id", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +92,7 @@ class ModelsPipeline(BaseModel):
         _obj = cls.model_validate({
             "component_tier": obj.get("component_tier"),
             "created_at": obj.get("created_at"),
+            "cron_schedule": obj.get("cron_schedule"),
             "description": obj.get("description"),
             "enabled": obj.get("enabled"),
             "id": obj.get("id"),

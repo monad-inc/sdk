@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**componentTier** | **Integer** |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
+|**cronSchedule** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**enabled** | **Boolean** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
