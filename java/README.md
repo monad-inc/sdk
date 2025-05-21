@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-05-21T21:22:33.363495576Z[Etc/UTC]
+  - Build date: 2025-05-21T23:45:58.297226680Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -234,6 +234,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [ActivityLogsSecretsConfig](docs/ActivityLogsSecretsConfig.md)
+ - [ActivityLogsSettingsConfig](docs/ActivityLogsSettingsConfig.md)
  - [ActorsInfoSecretsConfig](docs/ActorsInfoSecretsConfig.md)
  - [ActorsInfoSettingsConfig](docs/ActorsInfoSettingsConfig.md)
  - [AddAdd](docs/AddAdd.md)

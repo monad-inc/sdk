@@ -198,6 +198,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [ActivityLogsSecretsConfig](docs/ActivityLogsSecretsConfig.md)
+ - [ActivityLogsSettingsConfig](docs/ActivityLogsSettingsConfig.md)
  - [ActorsInfoSecretsConfig](docs/ActorsInfoSecretsConfig.md)
  - [ActorsInfoSettingsConfig](docs/ActorsInfoSettingsConfig.md)
  - [AddAdd](docs/AddAdd.md)

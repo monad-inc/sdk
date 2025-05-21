@@ -3,6 +3,8 @@ import { Configuration, ConfigurationOptions, mergeConfiguration } from '../conf
 import type { Middleware } from '../middleware';
 import { Observable, of, from } from '../rxjsStub';
 import {mergeMap, map} from  '../rxjsStub';
+import { ActivityLogsSecretsConfig } from '../models/ActivityLogsSecretsConfig';
+import { ActivityLogsSettingsConfig } from '../models/ActivityLogsSettingsConfig';
 import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddAdd } from '../models/AddAdd';

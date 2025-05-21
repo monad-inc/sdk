@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **CredentialsJson** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -14,7 +15,6 @@ Name | Type | Description | Notes
 **EnterpriseId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AwsAccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AwsSecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **PrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -40,6 +40,31 @@ will change when the set of required properties is changed
 NewSecretProcessesorInputConfigSecretsWithDefaults instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetApiKey
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApiKey() ModelsSecret`
+
+GetApiKey returns the ApiKey field if non-nil, zero value otherwise.
+
+### GetApiKeyOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApiKeyOk() (*ModelsSecret, bool)`
+
+GetApiKeyOk returns a tuple with the ApiKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiKey
+
+`func (o *SecretProcessesorInputConfigSecrets) SetApiKey(v ModelsSecret)`
+
+SetApiKey sets ApiKey field to given value.
+
+### HasApiKey
+
+`func (o *SecretProcessesorInputConfigSecrets) HasApiKey() bool`
+
+HasApiKey returns a boolean if a field has been set.
 
 ### GetClientId
 
@@ -280,31 +305,6 @@ SetAwsSecretKey sets AwsSecretKey field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasAwsSecretKey() bool`
 
 HasAwsSecretKey returns a boolean if a field has been set.
-
-### GetApiKey
-
-`func (o *SecretProcessesorInputConfigSecrets) GetApiKey() ModelsSecret`
-
-GetApiKey returns the ApiKey field if non-nil, zero value otherwise.
-
-### GetApiKeyOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetApiKeyOk() (*ModelsSecret, bool)`
-
-GetApiKeyOk returns a tuple with the ApiKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApiKey
-
-`func (o *SecretProcessesorInputConfigSecrets) SetApiKey(v ModelsSecret)`
-
-SetApiKey sets ApiKey field to given value.
-
-### HasApiKey
-
-`func (o *SecretProcessesorInputConfigSecrets) HasApiKey() bool`
-
-HasApiKey returns a boolean if a field has been set.
 
 ### GetToken
 

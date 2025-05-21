@@ -1,3 +1,5 @@
+export * from '../models/ActivityLogsSecretsConfig'
+export * from '../models/ActivityLogsSettingsConfig'
 export * from '../models/ActorsInfoSecretsConfig'
 export * from '../models/ActorsInfoSettingsConfig'
 export * from '../models/AddAdd'

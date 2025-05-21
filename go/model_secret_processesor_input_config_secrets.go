@@ -19,6 +19,7 @@ import (
 
 // SecretProcessesorInputConfigSecrets - struct for SecretProcessesorInputConfigSecrets
 type SecretProcessesorInputConfigSecrets struct {
+	ActivityLogsSecretsConfig *ActivityLogsSecretsConfig
 	ActorsInfoSecretsConfig *ActorsInfoSecretsConfig
 	AdminActivitySecretsConfig *AdminActivitySecretsConfig
 	AdminLogsSecretsConfig *AdminLogsSecretsConfig
@@ -72,6 +73,13 @@ type SecretProcessesorInputConfigSecrets struct {
 	VulnerabilitiesSecretsConfig *VulnerabilitiesSecretsConfig
 	VulnerabilityFindingsSecretsConfig *VulnerabilityFindingsSecretsConfig
 	MapmapOfStringAny *map[string]interface{}
+}
+
+// ActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ActivityLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func ActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ActivityLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		ActivityLogsSecretsConfig: v,
+	}
 }
 
 // ActorsInfoSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ActorsInfoSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
@@ -450,6 +458,23 @@ func MapmapOfStringAnyAsSecretProcessesorInputConfigSecrets(v *map[string]interf
 func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into ActivityLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.ActivityLogsSecretsConfig)
+	if err == nil {
+		jsonActivityLogsSecretsConfig, _ := json.Marshal(dst.ActivityLogsSecretsConfig)
+		if string(jsonActivityLogsSecretsConfig) == "{}" { // empty struct
+			dst.ActivityLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ActivityLogsSecretsConfig); err != nil {
+				dst.ActivityLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ActivityLogsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into ActorsInfoSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.ActorsInfoSecretsConfig)
 	if err == nil {
@@ -1353,6 +1378,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.ActivityLogsSecretsConfig = nil
 		dst.ActorsInfoSecretsConfig = nil
 		dst.AdminActivitySecretsConfig = nil
 		dst.AdminLogsSecretsConfig = nil
@@ -1417,6 +1443,10 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
+	if src.ActivityLogsSecretsConfig != nil {
+		return json.Marshal(&src.ActivityLogsSecretsConfig)
+	}
+
 	if src.ActorsInfoSecretsConfig != nil {
 		return json.Marshal(&src.ActorsInfoSecretsConfig)
 	}
@@ -1637,6 +1667,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 	if obj == nil {
 		return nil
 	}
+	if obj.ActivityLogsSecretsConfig != nil {
+		return obj.ActivityLogsSecretsConfig
+	}
+
 	if obj.ActorsInfoSecretsConfig != nil {
 		return obj.ActorsInfoSecretsConfig
 	}
@@ -1855,6 +1889,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 // Get the actual instance value
 func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interface{}) {
+	if obj.ActivityLogsSecretsConfig != nil {
+		return *obj.ActivityLogsSecretsConfig
+	}
+
 	if obj.ActorsInfoSecretsConfig != nil {
 		return *obj.ActorsInfoSecretsConfig
 	}

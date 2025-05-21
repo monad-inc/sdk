@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ActivityLogsSecretsConfig } from '../models/ActivityLogsSecretsConfig';
 import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { AdminActivitySecretsConfig } from '../models/AdminActivitySecretsConfig';
 import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
@@ -69,7 +70,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorInputConfigSecrets = ActorsInfoSecretsConfig | AdminActivitySecretsConfig | AdminLogsSecretsConfig | AuditLogsSecretsConfig | AuthLogsSecretsConfig | AzureActivityLogsSecretsConfig | BigqueryInputSecretsConfig | BoxEventsSecretsConfig | BoxUsersSecretsConfig | CloudAssetInventorySecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventorySecretsConfig | CrowdstrikeFdrSecretsConfig | DefenderForEndpointAlertsSecretsConfig | DetectSummariesSecretsConfig | DeviceActivitySecretsConfig | DeviceDetailsSecretsConfig | DevicesSecretsConfig | DriveActivitySecretsConfig | EntraIdSecretsConfig | EventSecretsConfig | EventsLogsSecretsConfig | FullScansSecretsConfig | IssuesSecretsConfig | LogAnalyticsQuerySecretsConfig | LoginActivitySecretsConfig | LoginSessionsSecretsConfig | OauthActivitySecretsConfig | RolesInfoSecretsConfig | SemgrepCodeFindingsSecretsConfig | SemgrepDeploymentsSecretsConfig | SemgrepProjectDetailsSecretsConfig | SemgrepProjectsSecretsConfig | SemgrepSupplyChainFindingsSecretsConfig | SlackUsersSecretsConfig | SlackgroupsSecretsConfig | SnowflakeInputSecretsConfig | SnykIssuesSecretsConfig | SnykOrganizationsSecretsConfig | SnykProjectsSecretsConfig | SnykTargetsSecretsConfig | TailscaleUsersSecretsConfig | TenableAssetsCronSecretsConfig | TenableAssetsSecretsConfig | TenableVulnerabilitiesCronSecretsConfig | TenableVulnerabilitiesSecretsConfig | UsersInfoSecretsConfig | UsersSecretsConfig | VulnerabilitiesCronSecretsConfig | VulnerabilitiesSecretsConfig | VulnerabilityFindingsSecretsConfig | any | { [key: string]: any; };
+export type SecretProcessesorInputConfigSecrets = ActivityLogsSecretsConfig | ActorsInfoSecretsConfig | AdminActivitySecretsConfig | AdminLogsSecretsConfig | AuditLogsSecretsConfig | AuthLogsSecretsConfig | AzureActivityLogsSecretsConfig | BigqueryInputSecretsConfig | BoxEventsSecretsConfig | BoxUsersSecretsConfig | CloudAssetInventorySecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventorySecretsConfig | CrowdstrikeFdrSecretsConfig | DefenderForEndpointAlertsSecretsConfig | DetectSummariesSecretsConfig | DeviceActivitySecretsConfig | DeviceDetailsSecretsConfig | DevicesSecretsConfig | DriveActivitySecretsConfig | EntraIdSecretsConfig | EventSecretsConfig | EventsLogsSecretsConfig | FullScansSecretsConfig | IssuesSecretsConfig | LogAnalyticsQuerySecretsConfig | LoginActivitySecretsConfig | LoginSessionsSecretsConfig | OauthActivitySecretsConfig | RolesInfoSecretsConfig | SemgrepCodeFindingsSecretsConfig | SemgrepDeploymentsSecretsConfig | SemgrepProjectDetailsSecretsConfig | SemgrepProjectsSecretsConfig | SemgrepSupplyChainFindingsSecretsConfig | SlackUsersSecretsConfig | SlackgroupsSecretsConfig | SnowflakeInputSecretsConfig | SnykIssuesSecretsConfig | SnykOrganizationsSecretsConfig | SnykProjectsSecretsConfig | SnykTargetsSecretsConfig | TailscaleUsersSecretsConfig | TenableAssetsCronSecretsConfig | TenableAssetsSecretsConfig | TenableVulnerabilitiesCronSecretsConfig | TenableVulnerabilitiesSecretsConfig | UsersInfoSecretsConfig | UsersSecretsConfig | VulnerabilitiesCronSecretsConfig | VulnerabilitiesSecretsConfig | VulnerabilityFindingsSecretsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorInputConfigSecretsClass
@@ -80,6 +81,7 @@ export class SecretProcessesorInputConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

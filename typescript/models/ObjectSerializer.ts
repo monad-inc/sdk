@@ -1,3 +1,5 @@
+export * from '../models/ActivityLogsSecretsConfig';
+export * from '../models/ActivityLogsSettingsConfig';
 export * from '../models/ActorsInfoSecretsConfig';
 export * from '../models/ActorsInfoSettingsConfig';
 export * from '../models/AddAdd';
@@ -283,6 +285,8 @@ export * from '../models/VulnerabilitiesSettingsConfig';
 export * from '../models/VulnerabilityFindingsSecretsConfig';
 export * from '../models/VulnerabilityFindingsSettingsConfig';
 
+import { ActivityLogsSecretsConfig } from '../models/ActivityLogsSecretsConfig';
+import { ActivityLogsSettingsConfig } from '../models/ActivityLogsSettingsConfig';
 import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddAdd } from '../models/AddAdd';
@@ -593,6 +597,8 @@ let enumsMap: Set<string> = new Set<string>([
 ]);
 
 let typeMap: {[index: string]: any} = {
+    "ActivityLogsSecretsConfig": ActivityLogsSecretsConfig,
+    "ActivityLogsSettingsConfig": ActivityLogsSettingsConfig,
     "ActorsInfoSecretsConfig": ActorsInfoSecretsConfig,
     "ActorsInfoSettingsConfig": ActorsInfoSettingsConfig,
     "AddAdd": AddAdd,

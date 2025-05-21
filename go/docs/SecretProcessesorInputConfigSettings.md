@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**FleetUrl** | Pointer to **string** | URL of the Fleet DM instance | [optional] 
 **ActorType** | Pointer to **string** | Type of actor. Ex: &#39;APT&#39;, &#39;eCrime&#39;, &#39;Hacktivist&#39;, &#39;Insider Threat&#39;, &#39;Nation-State&#39;, &#39;Unknown&#39;, &#39;Other&#39;, etc. Select &#39;None&#39; for no preference. | [optional] 
 **CloudType** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **Cron** | Pointer to **string** | Cron expression to schedule the data collection. | [optional] 
@@ -120,6 +121,31 @@ will change when the set of required properties is changed
 NewSecretProcessesorInputConfigSettingsWithDefaults instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetFleetUrl
+
+`func (o *SecretProcessesorInputConfigSettings) GetFleetUrl() string`
+
+GetFleetUrl returns the FleetUrl field if non-nil, zero value otherwise.
+
+### GetFleetUrlOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetFleetUrlOk() (*string, bool)`
+
+GetFleetUrlOk returns a tuple with the FleetUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFleetUrl
+
+`func (o *SecretProcessesorInputConfigSettings) SetFleetUrl(v string)`
+
+SetFleetUrl sets FleetUrl field to given value.
+
+### HasFleetUrl
+
+`func (o *SecretProcessesorInputConfigSettings) HasFleetUrl() bool`
+
+HasFleetUrl returns a boolean if a field has been set.
 
 ### GetActorType
 

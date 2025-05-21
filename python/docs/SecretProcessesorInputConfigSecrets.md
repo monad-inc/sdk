@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -15,7 +16,6 @@ Name | Type | Description | Notes
 **enterprise_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **aws_access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **aws_secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

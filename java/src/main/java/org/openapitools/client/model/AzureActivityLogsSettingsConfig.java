@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Azure Activity Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-21T21:22:33.363495576Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-21T23:45:58.297226680Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AzureActivityLogsSettingsConfig {
   public static final String SERIALIZED_NAME_CORRELATION_ID = "correlation_id";
   @SerializedName(SERIALIZED_NAME_CORRELATION_ID)

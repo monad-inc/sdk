@@ -2,6 +2,8 @@ import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/htt
 import { Configuration, PromiseConfigurationOptions, wrapOptions } from '../configuration'
 import { PromiseMiddleware, Middleware, PromiseMiddlewareWrapper } from '../middleware';
 
+import { ActivityLogsSecretsConfig } from '../models/ActivityLogsSecretsConfig';
+import { ActivityLogsSettingsConfig } from '../models/ActivityLogsSettingsConfig';
 import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddAdd } from '../models/AddAdd';

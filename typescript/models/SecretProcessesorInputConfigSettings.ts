@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ActivityLogsSettingsConfig } from '../models/ActivityLogsSettingsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AdminActivitySettingsConfig } from '../models/AdminActivitySettingsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
@@ -68,7 +69,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorInputConfigSettings = ActorsInfoSettingsConfig | AdminActivitySettingsConfig | AdminLogsSettingsConfig | AuditLogsSettingsConfig | AuthLogsSettingsConfig | AwsS3SettingsConfig | AzureActivityLogsSettingsConfig | BigqueryInputSettingsConfig | BoxEventsSettingsConfig | BoxUsersSettingsConfig | CloudAssetInventorySettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudtrailSettingsConfig | CrowdstrikeFdrSettingsConfig | DefenderForEndpointAlertsSettingsConfig | DemoCustomSettingsConfig | DemoSettingsConfig | DetectSummariesSettingsConfig | DeviceActivitySettingsConfig | DeviceDetailsSettingsConfig | DevicesSettingsConfig | DriveActivitySettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | EventsLogsSettingsConfig | FullScansSettingsConfig | IssuesSettingsConfig | LogAnalyticsQuerySettingsConfig | LoginActivitySettingsConfig | LoginSessionsSettingsConfig | MonadLogSettingsConfig | OauthActivitySettingsConfig | RolesInfoSettingsConfig | SemgrepDeploymentsSettingsConfig | SemgrepProjectDetailsSettingsConfig | SemgrepProjectsSettingsConfig | SlackUsersSettingsConfig | SlackgroupsSettingsConfig | SnowflakeInputSettingsConfig | SnykOrganizationsSettingsConfig | SnykProjectsSettingsConfig | TailscaleUsersSettingsConfig | TenableAssetsCronSettingsConfig | TenableVulnerabilitiesCronSettingsConfig | UsersInfoSettingsConfig | UsersSettingsConfig | VulnerabilitiesCronSettingsConfig | VulnerabilitiesSettingsConfig | VulnerabilityFindingsSettingsConfig | any | { [key: string]: any; };
+export type SecretProcessesorInputConfigSettings = ActivityLogsSettingsConfig | ActorsInfoSettingsConfig | AdminActivitySettingsConfig | AdminLogsSettingsConfig | AuditLogsSettingsConfig | AuthLogsSettingsConfig | AwsS3SettingsConfig | AzureActivityLogsSettingsConfig | BigqueryInputSettingsConfig | BoxEventsSettingsConfig | BoxUsersSettingsConfig | CloudAssetInventorySettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudtrailSettingsConfig | CrowdstrikeFdrSettingsConfig | DefenderForEndpointAlertsSettingsConfig | DemoCustomSettingsConfig | DemoSettingsConfig | DetectSummariesSettingsConfig | DeviceActivitySettingsConfig | DeviceDetailsSettingsConfig | DevicesSettingsConfig | DriveActivitySettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | EventsLogsSettingsConfig | FullScansSettingsConfig | IssuesSettingsConfig | LogAnalyticsQuerySettingsConfig | LoginActivitySettingsConfig | LoginSessionsSettingsConfig | MonadLogSettingsConfig | OauthActivitySettingsConfig | RolesInfoSettingsConfig | SemgrepDeploymentsSettingsConfig | SemgrepProjectDetailsSettingsConfig | SemgrepProjectsSettingsConfig | SlackUsersSettingsConfig | SlackgroupsSettingsConfig | SnowflakeInputSettingsConfig | SnykOrganizationsSettingsConfig | SnykProjectsSettingsConfig | TailscaleUsersSettingsConfig | TenableAssetsCronSettingsConfig | TenableVulnerabilitiesCronSettingsConfig | UsersInfoSettingsConfig | UsersSettingsConfig | VulnerabilitiesCronSettingsConfig | VulnerabilitiesSettingsConfig | VulnerabilityFindingsSettingsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorInputConfigSettingsClass
@@ -79,6 +80,7 @@ export class SecretProcessesorInputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

@@ -60,6 +60,8 @@ from monad.exceptions import ApiAttributeError
 from monad.exceptions import ApiException
 
 # import models into sdk package
+from monad.models.activity_logs_secrets_config import ActivityLogsSecretsConfig
+from monad.models.activity_logs_settings_config import ActivityLogsSettingsConfig
 from monad.models.actors_info_secrets_config import ActorsInfoSecretsConfig
 from monad.models.actors_info_settings_config import ActorsInfoSettingsConfig
 from monad.models.add_add import AddAdd

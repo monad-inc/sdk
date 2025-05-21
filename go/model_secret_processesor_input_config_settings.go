@@ -19,6 +19,7 @@ import (
 
 // SecretProcessesorInputConfigSettings - struct for SecretProcessesorInputConfigSettings
 type SecretProcessesorInputConfigSettings struct {
+	ActivityLogsSettingsConfig *ActivityLogsSettingsConfig
 	ActorsInfoSettingsConfig *ActorsInfoSettingsConfig
 	AdminActivitySettingsConfig *AdminActivitySettingsConfig
 	AdminLogsSettingsConfig *AdminLogsSettingsConfig
@@ -71,6 +72,13 @@ type SecretProcessesorInputConfigSettings struct {
 	VulnerabilitiesSettingsConfig *VulnerabilitiesSettingsConfig
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
+}
+
+// ActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ActivityLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func ActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ActivityLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		ActivityLogsSettingsConfig: v,
+	}
 }
 
 // ActorsInfoSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ActorsInfoSettingsConfig wrapped in SecretProcessesorInputConfigSettings
@@ -442,6 +450,23 @@ func MapmapOfStringAnyAsSecretProcessesorInputConfigSettings(v *map[string]inter
 func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into ActivityLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.ActivityLogsSettingsConfig)
+	if err == nil {
+		jsonActivityLogsSettingsConfig, _ := json.Marshal(dst.ActivityLogsSettingsConfig)
+		if string(jsonActivityLogsSettingsConfig) == "{}" { // empty struct
+			dst.ActivityLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ActivityLogsSettingsConfig); err != nil {
+				dst.ActivityLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ActivityLogsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into ActorsInfoSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.ActorsInfoSettingsConfig)
 	if err == nil {
@@ -1328,6 +1353,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.ActivityLogsSettingsConfig = nil
 		dst.ActorsInfoSettingsConfig = nil
 		dst.AdminActivitySettingsConfig = nil
 		dst.AdminLogsSettingsConfig = nil
@@ -1391,6 +1417,10 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
+	if src.ActivityLogsSettingsConfig != nil {
+		return json.Marshal(&src.ActivityLogsSettingsConfig)
+	}
+
 	if src.ActorsInfoSettingsConfig != nil {
 		return json.Marshal(&src.ActorsInfoSettingsConfig)
 	}
@@ -1607,6 +1637,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 	if obj == nil {
 		return nil
 	}
+	if obj.ActivityLogsSettingsConfig != nil {
+		return obj.ActivityLogsSettingsConfig
+	}
+
 	if obj.ActorsInfoSettingsConfig != nil {
 		return obj.ActorsInfoSettingsConfig
 	}
@@ -1821,6 +1855,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 // Get the actual instance value
 func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interface{}) {
+	if obj.ActivityLogsSettingsConfig != nil {
+		return *obj.ActivityLogsSettingsConfig
+	}
+
 	if obj.ActorsInfoSettingsConfig != nil {
 		return *obj.ActorsInfoSettingsConfig
 	}
