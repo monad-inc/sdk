@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **House** | Pointer to **string** |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
 **IsCron** | Pointer to **bool** |  | [optional] 
+**LogoKey** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Tier** | Pointer to **int32** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
@@ -270,6 +271,31 @@ SetIsCron sets IsCron field to given value.
 `func (o *InputsConnectorMeta) HasIsCron() bool`
 
 HasIsCron returns a boolean if a field has been set.
+
+### GetLogoKey
+
+`func (o *InputsConnectorMeta) GetLogoKey() string`
+
+GetLogoKey returns the LogoKey field if non-nil, zero value otherwise.
+
+### GetLogoKeyOk
+
+`func (o *InputsConnectorMeta) GetLogoKeyOk() (*string, bool)`
+
+GetLogoKeyOk returns a tuple with the LogoKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogoKey
+
+`func (o *InputsConnectorMeta) SetLogoKey(v string)`
+
+SetLogoKey sets LogoKey field to given value.
+
+### HasLogoKey
+
+`func (o *InputsConnectorMeta) HasLogoKey() bool`
+
+HasLogoKey returns a boolean if a field has been set.
 
 ### GetName
 

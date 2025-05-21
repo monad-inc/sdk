@@ -29,6 +29,7 @@ type InputsConnectorMeta struct {
 	House *string `json:"house,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
 	IsCron *bool `json:"is_cron,omitempty"`
+	LogoKey *string `json:"logo_key,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Tier *int32 `json:"tier,omitempty"`
 	TypeId *string `json:"type_id,omitempty"`
@@ -340,6 +341,38 @@ func (o *InputsConnectorMeta) SetIsCron(v bool) {
 	o.IsCron = &v
 }
 
+// GetLogoKey returns the LogoKey field value if set, zero value otherwise.
+func (o *InputsConnectorMeta) GetLogoKey() string {
+	if o == nil || IsNil(o.LogoKey) {
+		var ret string
+		return ret
+	}
+	return *o.LogoKey
+}
+
+// GetLogoKeyOk returns a tuple with the LogoKey field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InputsConnectorMeta) GetLogoKeyOk() (*string, bool) {
+	if o == nil || IsNil(o.LogoKey) {
+		return nil, false
+	}
+	return o.LogoKey, true
+}
+
+// HasLogoKey returns a boolean if a field has been set.
+func (o *InputsConnectorMeta) HasLogoKey() bool {
+	if o != nil && !IsNil(o.LogoKey) {
+		return true
+	}
+
+	return false
+}
+
+// SetLogoKey gets a reference to the given string and assigns it to the LogoKey field.
+func (o *InputsConnectorMeta) SetLogoKey(v string) {
+	o.LogoKey = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *InputsConnectorMeta) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -472,6 +505,9 @@ func (o InputsConnectorMeta) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.IsCron) {
 		toSerialize["is_cron"] = o.IsCron
+	}
+	if !IsNil(o.LogoKey) {
+		toSerialize["logo_key"] = o.LogoKey
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

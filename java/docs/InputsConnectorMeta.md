@@ -16,6 +16,7 @@
 |**house** | **String** |  |  [optional] |
 |**internal** | **Boolean** |  |  [optional] |
 |**isCron** | **Boolean** |  |  [optional] |
+|**logoKey** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**tier** | **Integer** |  |  [optional] |
 |**typeId** | **String** |  |  [optional] |

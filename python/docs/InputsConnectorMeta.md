@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **house** | **str** |  | [optional] 
 **internal** | **bool** |  | [optional] 
 **is_cron** | **bool** |  | [optional] 
+**logo_key** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **tier** | **int** |  | [optional] 
 **type_id** | **str** |  | [optional] 
