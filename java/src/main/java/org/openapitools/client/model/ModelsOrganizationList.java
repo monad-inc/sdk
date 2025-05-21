@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganizationList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-21T14:55:06.945600719Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-21T15:10:16.514984695Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ModelsOrganizationList {
   public static final String SERIALIZED_NAME_ORGANIZATIONS = "organizations";
   @SerializedName(SERIALIZED_NAME_ORGANIZATIONS)
