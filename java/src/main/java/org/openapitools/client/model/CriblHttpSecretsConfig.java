@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Cribl HTTP Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-21T15:10:16.514984695Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-21T15:28:21.801761683Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CriblHttpSecretsConfig {
   public static final String SERIALIZED_NAME_AUTH_TOKEN = "auth_token";
   @SerializedName(SERIALIZED_NAME_AUTH_TOKEN)
