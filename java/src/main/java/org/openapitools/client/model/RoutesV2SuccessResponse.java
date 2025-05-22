@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2SuccessResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:18:21.933890994Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:57:08.438939094Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RoutesV2SuccessResponse {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
