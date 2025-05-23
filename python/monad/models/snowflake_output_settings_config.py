@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.batch_config_batch_config import BatchConfigBatchConfig
 from typing import Optional, Set
@@ -31,6 +31,7 @@ class SnowflakeOutputSettingsConfig(BaseModel):
     account: Optional[StrictStr] = Field(default=None, description="The unique identifier for your Snowflake account, typically in the form of 'organization-account_name'.")
     auth_type: Optional[StrictStr] = None
     batch_config: Optional[BatchConfigBatchConfig] = None
+    case_insensitivity: Optional[StrictBool] = Field(default=None, description="Treat column names as case-insensitive (convert to uppercase) to match Snowflake's default behavior.")
     database: Optional[StrictStr] = Field(default=None, description="The name of the Snowflake database to connect to and perform operations on")
     role: Optional[StrictStr] = Field(default=None, description="The name of the Role your service account was granted which can access your resources.")
     var_schema: Optional[StrictStr] = Field(default=None, description="The schema within the Snowflake database where the target table resides.", alias="schema")
@@ -38,7 +39,7 @@ class SnowflakeOutputSettingsConfig(BaseModel):
     table: Optional[StrictStr] = Field(default=None, description="The name of the table in Snowflake where the data will be written. If the table doesn't exist Monad will create the table.")
     user: Optional[StrictStr] = Field(default=None, description="The username of the Snowflake account used to establish the connection.")
     warehouse: Optional[StrictStr] = Field(default=None, description="The Snowflake virtual warehouse to use for executing queries and processing data.")
-    __properties: ClassVar[List[str]] = ["account", "auth_type", "batch_config", "database", "role", "schema", "stage", "table", "user", "warehouse"]
+    __properties: ClassVar[List[str]] = ["account", "auth_type", "batch_config", "case_insensitivity", "database", "role", "schema", "stage", "table", "user", "warehouse"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,6 +98,7 @@ class SnowflakeOutputSettingsConfig(BaseModel):
             "account": obj.get("account"),
             "auth_type": obj.get("auth_type"),
             "batch_config": BatchConfigBatchConfig.from_dict(obj["batch_config"]) if obj.get("batch_config") is not None else None,
+            "case_insensitivity": obj.get("case_insensitivity"),
             "database": obj.get("database"),
             "role": obj.get("role"),
             "schema": obj.get("schema"),

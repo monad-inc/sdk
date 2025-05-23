@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Snowflake Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-23T17:42:31.169342290Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-23T18:06:56.652492292Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SnowflakeOutputSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
@@ -65,6 +65,11 @@ public class SnowflakeOutputSettingsConfig {
   @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
   @javax.annotation.Nullable
   private BatchConfigBatchConfig batchConfig;
+
+  public static final String SERIALIZED_NAME_CASE_INSENSITIVITY = "case_insensitivity";
+  @SerializedName(SERIALIZED_NAME_CASE_INSENSITIVITY)
+  @javax.annotation.Nullable
+  private Boolean caseInsensitivity;
 
   public static final String SERIALIZED_NAME_DATABASE = "database";
   @SerializedName(SERIALIZED_NAME_DATABASE)
@@ -158,6 +163,25 @@ public class SnowflakeOutputSettingsConfig {
 
   public void setBatchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
     this.batchConfig = batchConfig;
+  }
+
+
+  public SnowflakeOutputSettingsConfig caseInsensitivity(@javax.annotation.Nullable Boolean caseInsensitivity) {
+    this.caseInsensitivity = caseInsensitivity;
+    return this;
+  }
+
+  /**
+   * Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior.
+   * @return caseInsensitivity
+   */
+  @javax.annotation.Nullable
+  public Boolean getCaseInsensitivity() {
+    return caseInsensitivity;
+  }
+
+  public void setCaseInsensitivity(@javax.annotation.Nullable Boolean caseInsensitivity) {
+    this.caseInsensitivity = caseInsensitivity;
   }
 
 
@@ -307,6 +331,7 @@ public class SnowflakeOutputSettingsConfig {
     return Objects.equals(this.account, snowflakeOutputSettingsConfig.account) &&
         Objects.equals(this.authType, snowflakeOutputSettingsConfig.authType) &&
         Objects.equals(this.batchConfig, snowflakeOutputSettingsConfig.batchConfig) &&
+        Objects.equals(this.caseInsensitivity, snowflakeOutputSettingsConfig.caseInsensitivity) &&
         Objects.equals(this.database, snowflakeOutputSettingsConfig.database) &&
         Objects.equals(this.role, snowflakeOutputSettingsConfig.role) &&
         Objects.equals(this.schema, snowflakeOutputSettingsConfig.schema) &&
@@ -318,7 +343,7 @@ public class SnowflakeOutputSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(account, authType, batchConfig, database, role, schema, stage, table, user, warehouse);
+    return Objects.hash(account, authType, batchConfig, caseInsensitivity, database, role, schema, stage, table, user, warehouse);
   }
 
   @Override
@@ -328,6 +353,7 @@ public class SnowflakeOutputSettingsConfig {
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
     sb.append("    batchConfig: ").append(toIndentedString(batchConfig)).append("\n");
+    sb.append("    caseInsensitivity: ").append(toIndentedString(caseInsensitivity)).append("\n");
     sb.append("    database: ").append(toIndentedString(database)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
@@ -360,6 +386,7 @@ public class SnowflakeOutputSettingsConfig {
     openapiFields.add("account");
     openapiFields.add("auth_type");
     openapiFields.add("batch_config");
+    openapiFields.add("case_insensitivity");
     openapiFields.add("database");
     openapiFields.add("role");
     openapiFields.add("schema");

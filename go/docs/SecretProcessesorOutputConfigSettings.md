@@ -47,6 +47,7 @@ Name | Type | Description | Notes
 **RuleId** | Pointer to **string** | The unique identifier of the Data Collection Rule (DCR). | [optional] 
 **StreamName** | Pointer to **string** | The name of the data stream defined in the Data Collection Rule. | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
+**CaseInsensitivity** | Pointer to **bool** | Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior. | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
 **Stage** | Pointer to **string** | The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage. | [optional] 
@@ -1147,6 +1148,31 @@ SetAccount sets Account field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasAccount() bool`
 
 HasAccount returns a boolean if a field has been set.
+
+### GetCaseInsensitivity
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCaseInsensitivity() bool`
+
+GetCaseInsensitivity returns the CaseInsensitivity field if non-nil, zero value otherwise.
+
+### GetCaseInsensitivityOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCaseInsensitivityOk() (*bool, bool)`
+
+GetCaseInsensitivityOk returns a tuple with the CaseInsensitivity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCaseInsensitivity
+
+`func (o *SecretProcessesorOutputConfigSettings) SetCaseInsensitivity(v bool)`
+
+SetCaseInsensitivity sets CaseInsensitivity field to given value.
+
+### HasCaseInsensitivity
+
+`func (o *SecretProcessesorOutputConfigSettings) HasCaseInsensitivity() bool`
+
+HasCaseInsensitivity returns a boolean if a field has been set.
 
 ### GetRole
 

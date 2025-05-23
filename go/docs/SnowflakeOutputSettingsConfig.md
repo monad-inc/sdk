@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **AuthType** | Pointer to **string** |  | [optional] 
 **BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
+**CaseInsensitivity** | Pointer to **bool** | Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior. | [optional] 
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
@@ -108,6 +109,31 @@ SetBatchConfig sets BatchConfig field to given value.
 `func (o *SnowflakeOutputSettingsConfig) HasBatchConfig() bool`
 
 HasBatchConfig returns a boolean if a field has been set.
+
+### GetCaseInsensitivity
+
+`func (o *SnowflakeOutputSettingsConfig) GetCaseInsensitivity() bool`
+
+GetCaseInsensitivity returns the CaseInsensitivity field if non-nil, zero value otherwise.
+
+### GetCaseInsensitivityOk
+
+`func (o *SnowflakeOutputSettingsConfig) GetCaseInsensitivityOk() (*bool, bool)`
+
+GetCaseInsensitivityOk returns a tuple with the CaseInsensitivity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCaseInsensitivity
+
+`func (o *SnowflakeOutputSettingsConfig) SetCaseInsensitivity(v bool)`
+
+SetCaseInsensitivity sets CaseInsensitivity field to given value.
+
+### HasCaseInsensitivity
+
+`func (o *SnowflakeOutputSettingsConfig) HasCaseInsensitivity() bool`
+
+HasCaseInsensitivity returns a boolean if a field has been set.
 
 ### GetDatabase
 

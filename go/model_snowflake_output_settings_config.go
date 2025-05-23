@@ -24,6 +24,8 @@ type SnowflakeOutputSettingsConfig struct {
 	Account *string `json:"account,omitempty"`
 	AuthType *string `json:"auth_type,omitempty"`
 	BatchConfig *BatchConfigBatchConfig `json:"batch_config,omitempty"`
+	// Treat column names as case-insensitive (convert to uppercase) to match Snowflake's default behavior.
+	CaseInsensitivity *bool `json:"case_insensitivity,omitempty"`
 	// The name of the Snowflake database to connect to and perform operations on
 	Database *string `json:"database,omitempty"`
 	// The name of the Role your service account was granted which can access your resources.
@@ -151,6 +153,38 @@ func (o *SnowflakeOutputSettingsConfig) HasBatchConfig() bool {
 // SetBatchConfig gets a reference to the given BatchConfigBatchConfig and assigns it to the BatchConfig field.
 func (o *SnowflakeOutputSettingsConfig) SetBatchConfig(v BatchConfigBatchConfig) {
 	o.BatchConfig = &v
+}
+
+// GetCaseInsensitivity returns the CaseInsensitivity field value if set, zero value otherwise.
+func (o *SnowflakeOutputSettingsConfig) GetCaseInsensitivity() bool {
+	if o == nil || IsNil(o.CaseInsensitivity) {
+		var ret bool
+		return ret
+	}
+	return *o.CaseInsensitivity
+}
+
+// GetCaseInsensitivityOk returns a tuple with the CaseInsensitivity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnowflakeOutputSettingsConfig) GetCaseInsensitivityOk() (*bool, bool) {
+	if o == nil || IsNil(o.CaseInsensitivity) {
+		return nil, false
+	}
+	return o.CaseInsensitivity, true
+}
+
+// HasCaseInsensitivity returns a boolean if a field has been set.
+func (o *SnowflakeOutputSettingsConfig) HasCaseInsensitivity() bool {
+	if o != nil && !IsNil(o.CaseInsensitivity) {
+		return true
+	}
+
+	return false
+}
+
+// SetCaseInsensitivity gets a reference to the given bool and assigns it to the CaseInsensitivity field.
+func (o *SnowflakeOutputSettingsConfig) SetCaseInsensitivity(v bool) {
+	o.CaseInsensitivity = &v
 }
 
 // GetDatabase returns the Database field value if set, zero value otherwise.
@@ -395,6 +429,9 @@ func (o SnowflakeOutputSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.BatchConfig) {
 		toSerialize["batch_config"] = o.BatchConfig
+	}
+	if !IsNil(o.CaseInsensitivity) {
+		toSerialize["case_insensitivity"] = o.CaseInsensitivity
 	}
 	if !IsNil(o.Database) {
 		toSerialize["database"] = o.Database

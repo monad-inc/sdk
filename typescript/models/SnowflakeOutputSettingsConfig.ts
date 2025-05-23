@@ -24,6 +24,10 @@ export class SnowflakeOutputSettingsConfig {
     'authType'?: string;
     'batchConfig'?: BatchConfigBatchConfig;
     /**
+    * Treat column names as case-insensitive (convert to uppercase) to match Snowflake\'s default behavior.
+    */
+    'caseInsensitivity'?: boolean;
+    /**
     * The name of the Snowflake database to connect to and perform operations on
     */
     'database'?: string;
@@ -73,6 +77,12 @@ export class SnowflakeOutputSettingsConfig {
             "name": "batchConfig",
             "baseName": "batch_config",
             "type": "BatchConfigBatchConfig",
+            "format": ""
+        },
+        {
+            "name": "caseInsensitivity",
+            "baseName": "case_insensitivity",
+            "type": "boolean",
             "format": ""
         },
         {
