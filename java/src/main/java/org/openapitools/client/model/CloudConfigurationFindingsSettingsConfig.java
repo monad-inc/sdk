@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Wiz cloud configuration findings settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T22:39:17.466728765Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-23T15:13:22.839564706Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CloudConfigurationFindingsSettingsConfig {
   public static final String SERIALIZED_NAME_ENDPOINT_URL = "endpoint_url";
   @SerializedName(SERIALIZED_NAME_ENDPOINT_URL)
