@@ -17,6 +17,7 @@ export class EnrichmentConnectorMeta {
     'description'?: string;
     'house'?: string;
     'internal'?: boolean;
+    'logoKey'?: string;
     'name'?: string;
     'tier'?: number;
     'typeId'?: string;
@@ -48,6 +49,12 @@ export class EnrichmentConnectorMeta {
             "name": "internal",
             "baseName": "internal",
             "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "logoKey",
+            "baseName": "logo_key",
+            "type": "string",
             "format": ""
         },
         {

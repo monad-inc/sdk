@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **House** | Pointer to **string** |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
+**LogoKey** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Tier** | Pointer to **int32** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
@@ -140,6 +141,31 @@ SetInternal sets Internal field to given value.
 `func (o *EnrichmentConnectorMeta) HasInternal() bool`
 
 HasInternal returns a boolean if a field has been set.
+
+### GetLogoKey
+
+`func (o *EnrichmentConnectorMeta) GetLogoKey() string`
+
+GetLogoKey returns the LogoKey field if non-nil, zero value otherwise.
+
+### GetLogoKeyOk
+
+`func (o *EnrichmentConnectorMeta) GetLogoKeyOk() (*string, bool)`
+
+GetLogoKeyOk returns a tuple with the LogoKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogoKey
+
+`func (o *EnrichmentConnectorMeta) SetLogoKey(v string)`
+
+SetLogoKey sets LogoKey field to given value.
+
+### HasLogoKey
+
+`func (o *EnrichmentConnectorMeta) HasLogoKey() bool`
+
+HasLogoKey returns a boolean if a field has been set.
 
 ### GetName
 

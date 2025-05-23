@@ -31,10 +31,11 @@ class EnrichmentConnectorMeta(BaseModel):
     description: Optional[StrictStr] = None
     house: Optional[StrictStr] = None
     internal: Optional[StrictBool] = None
+    logo_key: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     tier: Optional[StrictInt] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["config", "description", "house", "internal", "name", "tier", "type_id"]
+    __properties: ClassVar[List[str]] = ["config", "description", "house", "internal", "logo_key", "name", "tier", "type_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,6 +97,7 @@ class EnrichmentConnectorMeta(BaseModel):
             "description": obj.get("description"),
             "house": obj.get("house"),
             "internal": obj.get("internal"),
+            "logo_key": obj.get("logo_key"),
             "name": obj.get("name"),
             "tier": obj.get("tier"),
             "type_id": obj.get("type_id")

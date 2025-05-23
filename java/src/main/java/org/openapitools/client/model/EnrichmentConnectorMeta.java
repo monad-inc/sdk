@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * EnrichmentConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-23T18:06:56.652492292Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-23T19:56:37.351994987Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EnrichmentConnectorMeta {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
@@ -70,6 +70,11 @@ public class EnrichmentConnectorMeta {
   @SerializedName(SERIALIZED_NAME_INTERNAL)
   @javax.annotation.Nullable
   private Boolean internal;
+
+  public static final String SERIALIZED_NAME_LOGO_KEY = "logo_key";
+  @SerializedName(SERIALIZED_NAME_LOGO_KEY)
+  @javax.annotation.Nullable
+  private String logoKey;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -165,6 +170,25 @@ public class EnrichmentConnectorMeta {
   }
 
 
+  public EnrichmentConnectorMeta logoKey(@javax.annotation.Nullable String logoKey) {
+    this.logoKey = logoKey;
+    return this;
+  }
+
+  /**
+   * Get logoKey
+   * @return logoKey
+   */
+  @javax.annotation.Nullable
+  public String getLogoKey() {
+    return logoKey;
+  }
+
+  public void setLogoKey(@javax.annotation.Nullable String logoKey) {
+    this.logoKey = logoKey;
+  }
+
+
   public EnrichmentConnectorMeta name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
@@ -236,6 +260,7 @@ public class EnrichmentConnectorMeta {
         Objects.equals(this.description, enrichmentConnectorMeta.description) &&
         Objects.equals(this.house, enrichmentConnectorMeta.house) &&
         Objects.equals(this.internal, enrichmentConnectorMeta.internal) &&
+        Objects.equals(this.logoKey, enrichmentConnectorMeta.logoKey) &&
         Objects.equals(this.name, enrichmentConnectorMeta.name) &&
         Objects.equals(this.tier, enrichmentConnectorMeta.tier) &&
         Objects.equals(this.typeId, enrichmentConnectorMeta.typeId);
@@ -247,7 +272,7 @@ public class EnrichmentConnectorMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, description, house, internal, name, tier, typeId);
+    return Objects.hash(config, description, house, internal, logoKey, name, tier, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -265,6 +290,7 @@ public class EnrichmentConnectorMeta {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    house: ").append(toIndentedString(house)).append("\n");
     sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
+    sb.append("    logoKey: ").append(toIndentedString(logoKey)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
     sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
@@ -294,6 +320,7 @@ public class EnrichmentConnectorMeta {
     openapiFields.add("description");
     openapiFields.add("house");
     openapiFields.add("internal");
+    openapiFields.add("logo_key");
     openapiFields.add("name");
     openapiFields.add("tier");
     openapiFields.add("type_id");
@@ -328,6 +355,9 @@ public class EnrichmentConnectorMeta {
       }
       if ((jsonObj.get("house") != null && !jsonObj.get("house").isJsonNull()) && !jsonObj.get("house").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `house` to be a primitive type in the JSON string but got `%s`", jsonObj.get("house").toString()));
+      }
+      if ((jsonObj.get("logo_key") != null && !jsonObj.get("logo_key").isJsonNull()) && !jsonObj.get("logo_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `logo_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("logo_key").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
