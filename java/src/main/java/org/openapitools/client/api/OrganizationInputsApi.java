@@ -32,6 +32,7 @@ import org.openapitools.client.model.ModelsInputList;
 import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesGetInputResponse;
 import org.openapitools.client.model.RoutesV2CreateInputRequest;
+import org.openapitools.client.model.RoutesV2PutInputRequest;
 import org.openapitools.client.model.RoutesV2SuccessResponse;
 import org.openapitools.client.model.RoutesV2TestInputConnectionRequest;
 import org.openapitools.client.model.RoutesV2UpdateInputRequest;
@@ -663,6 +664,173 @@ public class OrganizationInputsApi {
     public okhttp3.Call v2OrganizationIdInputsInputIdPatchAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2UpdateInputRequest routesV2UpdateInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsInput> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdInputsInputIdPatchValidateBeforeCall(organizationId, inputId, routesV2UpdateInputRequest, testConnection, _callback);
+        Type localVarReturnType = new TypeToken<ModelsInput>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdInputsInputIdPut
+     * @param organizationId Organization ID (required)
+     * @param inputId Input ID (required)
+     * @param routesV2PutInputRequest Input configuration update (required)
+     * @param testConnection Test connection before creating the input (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Input updated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body, input type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Input not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdInputsInputIdPutCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2PutInputRequest routesV2PutInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = routesV2PutInputRequest;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/inputs/{input_id}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "input_id" + "}", localVarApiClient.escapeString(inputId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (testConnection != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("test_connection", testConnection));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdInputsInputIdPutValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2PutInputRequest routesV2PutInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdInputsInputIdPut(Async)");
+        }
+
+        // verify the required parameter 'inputId' is set
+        if (inputId == null) {
+            throw new ApiException("Missing the required parameter 'inputId' when calling v2OrganizationIdInputsInputIdPut(Async)");
+        }
+
+        // verify the required parameter 'routesV2PutInputRequest' is set
+        if (routesV2PutInputRequest == null) {
+            throw new ApiException("Missing the required parameter 'routesV2PutInputRequest' when calling v2OrganizationIdInputsInputIdPut(Async)");
+        }
+
+        return v2OrganizationIdInputsInputIdPutCall(organizationId, inputId, routesV2PutInputRequest, testConnection, _callback);
+
+    }
+
+    /**
+     * Replace input
+     * Replace an existing input with new configuration including secrets handling
+     * @param organizationId Organization ID (required)
+     * @param inputId Input ID (required)
+     * @param routesV2PutInputRequest Input configuration update (required)
+     * @param testConnection Test connection before creating the input (optional)
+     * @return ModelsInput
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Input updated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body, input type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Input not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsInput v2OrganizationIdInputsInputIdPut(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2PutInputRequest routesV2PutInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        ApiResponse<ModelsInput> localVarResp = v2OrganizationIdInputsInputIdPutWithHttpInfo(organizationId, inputId, routesV2PutInputRequest, testConnection);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Replace input
+     * Replace an existing input with new configuration including secrets handling
+     * @param organizationId Organization ID (required)
+     * @param inputId Input ID (required)
+     * @param routesV2PutInputRequest Input configuration update (required)
+     * @param testConnection Test connection before creating the input (optional)
+     * @return ApiResponse&lt;ModelsInput&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Input updated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body, input type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Input not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsInput> v2OrganizationIdInputsInputIdPutWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2PutInputRequest routesV2PutInputRequest, @javax.annotation.Nullable Boolean testConnection) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdInputsInputIdPutValidateBeforeCall(organizationId, inputId, routesV2PutInputRequest, testConnection, null);
+        Type localVarReturnType = new TypeToken<ModelsInput>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Replace input (asynchronously)
+     * Replace an existing input with new configuration including secrets handling
+     * @param organizationId Organization ID (required)
+     * @param inputId Input ID (required)
+     * @param routesV2PutInputRequest Input configuration update (required)
+     * @param testConnection Test connection before creating the input (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Input updated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body, input type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Input not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdInputsInputIdPutAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull RoutesV2PutInputRequest routesV2PutInputRequest, @javax.annotation.Nullable Boolean testConnection, final ApiCallback<ModelsInput> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdInputsInputIdPutValidateBeforeCall(organizationId, inputId, routesV2PutInputRequest, testConnection, _callback);
         Type localVarReturnType = new TypeToken<ModelsInput>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

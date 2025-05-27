@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**V1OrganizationIdOutputsOutputIdDelete**](OrganizationOutputsAPI.md#V1OrganizationIdOutputsOutputIdDelete) | **Delete** /v1/{organization_id}/outputs/{output_id} | Delete output
 [**V1OrganizationIdOutputsOutputIdGet**](OrganizationOutputsAPI.md#V1OrganizationIdOutputsOutputIdGet) | **Get** /v1/{organization_id}/outputs/{output_id} | Get output
 [**V2OrganizationIdOutputsOutputIdPatch**](OrganizationOutputsAPI.md#V2OrganizationIdOutputsOutputIdPatch) | **Patch** /v2/{organization_id}/outputs/{output_id} | Update output
+[**V2OrganizationIdOutputsOutputIdPut**](OrganizationOutputsAPI.md#V2OrganizationIdOutputsOutputIdPut) | **Put** /v2/{organization_id}/outputs/{output_id} | Replace output
 [**V2OrganizationIdOutputsPost**](OrganizationOutputsAPI.md#V2OrganizationIdOutputsPost) | **Post** /v2/{organization_id}/outputs | Create output
 [**V2OrganizationIdOutputsTestConnectionPost**](OrganizationOutputsAPI.md#V2OrganizationIdOutputsTestConnectionPost) | **Post** /v2/{organization_id}/outputs/test-connection | Test output connection
 
@@ -290,6 +291,83 @@ Name | Type | Description  | Notes
 
 
  **routesV2UpdateOutputRequest** | [**RoutesV2UpdateOutputRequest**](RoutesV2UpdateOutputRequest.md) | Output configuration update | 
+ **testConnection** | **bool** | Test connection before creating the input | 
+
+### Return type
+
+[**ModelsOutput**](ModelsOutput.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V2OrganizationIdOutputsOutputIdPut
+
+> ModelsOutput V2OrganizationIdOutputsOutputIdPut(ctx, organizationId, outputId).RoutesV2PutOutputRequest(routesV2PutOutputRequest).TestConnection(testConnection).Execute()
+
+Replace output
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	outputId := "outputId_example" // string | Output ID
+	routesV2PutOutputRequest := *openapiclient.NewRoutesV2PutOutputRequest() // RoutesV2PutOutputRequest | Output configuration update
+	testConnection := true // bool | Test connection before creating the input (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OrganizationOutputsAPI.V2OrganizationIdOutputsOutputIdPut(context.Background(), organizationId, outputId).RoutesV2PutOutputRequest(routesV2PutOutputRequest).TestConnection(testConnection).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationOutputsAPI.V2OrganizationIdOutputsOutputIdPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V2OrganizationIdOutputsOutputIdPut`: ModelsOutput
+	fmt.Fprintf(os.Stdout, "Response from `OrganizationOutputsAPI.V2OrganizationIdOutputsOutputIdPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**outputId** | **string** | Output ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV2OrganizationIdOutputsOutputIdPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **routesV2PutOutputRequest** | [**RoutesV2PutOutputRequest**](RoutesV2PutOutputRequest.md) | Output configuration update | 
  **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type

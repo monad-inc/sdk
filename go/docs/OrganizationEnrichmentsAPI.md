@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**V3OrganizationIdEnrichmentsEnrichmentIdDelete**](OrganizationEnrichmentsAPI.md#V3OrganizationIdEnrichmentsEnrichmentIdDelete) | **Delete** /v3/{organization_id}/enrichments/{enrichment_id} | Delete enrichment
 [**V3OrganizationIdEnrichmentsEnrichmentIdGet**](OrganizationEnrichmentsAPI.md#V3OrganizationIdEnrichmentsEnrichmentIdGet) | **Get** /v3/{organization_id}/enrichments/{enrichment_id} | Get enrichment
 [**V3OrganizationIdEnrichmentsEnrichmentIdPatch**](OrganizationEnrichmentsAPI.md#V3OrganizationIdEnrichmentsEnrichmentIdPatch) | **Patch** /v3/{organization_id}/enrichments/{enrichment_id} | Update enrichment
+[**V3OrganizationIdEnrichmentsEnrichmentIdPut**](OrganizationEnrichmentsAPI.md#V3OrganizationIdEnrichmentsEnrichmentIdPut) | **Put** /v3/{organization_id}/enrichments/{enrichment_id} | Replace enrichment
 [**V3OrganizationIdEnrichmentsGet**](OrganizationEnrichmentsAPI.md#V3OrganizationIdEnrichmentsGet) | **Get** /v3/{organization_id}/enrichments | List enrichments
 [**V3OrganizationIdEnrichmentsPost**](OrganizationEnrichmentsAPI.md#V3OrganizationIdEnrichmentsPost) | **Post** /v3/{organization_id}/enrichments | Create enrichment
 [**V3OrganizationIdEnrichmentsTestConnectionPost**](OrganizationEnrichmentsAPI.md#V3OrganizationIdEnrichmentsTestConnectionPost) | **Post** /v3/{organization_id}/enrichments/test-connection | Test enrichment connection
@@ -216,6 +217,83 @@ Name | Type | Description  | Notes
 
 
  **routesV3UpdateEnrichmentRequest** | [**RoutesV3UpdateEnrichmentRequest**](RoutesV3UpdateEnrichmentRequest.md) | Enrichment configuration update | 
+ **testConnection** | **bool** | Test connection before updating the enrichment | 
+
+### Return type
+
+[**ModelsEnrichment**](ModelsEnrichment.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V3OrganizationIdEnrichmentsEnrichmentIdPut
+
+> ModelsEnrichment V3OrganizationIdEnrichmentsEnrichmentIdPut(ctx, organizationId, enrichmentId).RoutesV3PutEnrichmentRequest(routesV3PutEnrichmentRequest).TestConnection(testConnection).Execute()
+
+Replace enrichment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	enrichmentId := "enrichmentId_example" // string | Enrichment ID
+	routesV3PutEnrichmentRequest := *openapiclient.NewRoutesV3PutEnrichmentRequest() // RoutesV3PutEnrichmentRequest | Enrichment configuration update
+	testConnection := true // bool | Test connection before updating the enrichment (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OrganizationEnrichmentsAPI.V3OrganizationIdEnrichmentsEnrichmentIdPut(context.Background(), organizationId, enrichmentId).RoutesV3PutEnrichmentRequest(routesV3PutEnrichmentRequest).TestConnection(testConnection).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationEnrichmentsAPI.V3OrganizationIdEnrichmentsEnrichmentIdPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V3OrganizationIdEnrichmentsEnrichmentIdPut`: ModelsEnrichment
+	fmt.Fprintf(os.Stdout, "Response from `OrganizationEnrichmentsAPI.V3OrganizationIdEnrichmentsEnrichmentIdPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**enrichmentId** | **string** | Enrichment ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV3OrganizationIdEnrichmentsEnrichmentIdPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **routesV3PutEnrichmentRequest** | [**RoutesV3PutEnrichmentRequest**](RoutesV3PutEnrichmentRequest.md) | Enrichment configuration update | 
  **testConnection** | **bool** | Test connection before updating the enrichment | 
 
 ### Return type

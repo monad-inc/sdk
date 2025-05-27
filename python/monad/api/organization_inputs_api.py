@@ -24,6 +24,7 @@ from monad.models.models_input import ModelsInput
 from monad.models.models_input_list import ModelsInputList
 from monad.models.routes_get_input_response import RoutesGetInputResponse
 from monad.models.routes_v2_create_input_request import RoutesV2CreateInputRequest
+from monad.models.routes_v2_put_input_request import RoutesV2PutInputRequest
 from monad.models.routes_v2_success_response import RoutesV2SuccessResponse
 from monad.models.routes_v2_test_input_connection_request import RoutesV2TestInputConnectionRequest
 from monad.models.routes_v2_update_input_request import RoutesV2UpdateInputRequest
@@ -1214,6 +1215,337 @@ class OrganizationInputsApi:
 
         return self.api_client.param_serialize(
             method='PATCH',
+            resource_path='/v2/{organization_id}/inputs/{input_id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def v2_organization_id_inputs_input_id_put(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        input_id: Annotated[StrictStr, Field(description="Input ID")],
+        routes_v2_put_input_request: Annotated[RoutesV2PutInputRequest, Field(description="Input configuration update")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ModelsInput:
+        """Replace input
+
+        Replace an existing input with new configuration including secrets handling
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param input_id: Input ID (required)
+        :type input_id: str
+        :param routes_v2_put_input_request: Input configuration update (required)
+        :type routes_v2_put_input_request: RoutesV2PutInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._v2_organization_id_inputs_input_id_put_serialize(
+            organization_id=organization_id,
+            input_id=input_id,
+            routes_v2_put_input_request=routes_v2_put_input_request,
+            test_connection=test_connection,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsInput",
+            '400': "ResponderErrorResponse",
+            '404': "ResponderErrorResponse",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def v2_organization_id_inputs_input_id_put_with_http_info(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        input_id: Annotated[StrictStr, Field(description="Input ID")],
+        routes_v2_put_input_request: Annotated[RoutesV2PutInputRequest, Field(description="Input configuration update")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ModelsInput]:
+        """Replace input
+
+        Replace an existing input with new configuration including secrets handling
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param input_id: Input ID (required)
+        :type input_id: str
+        :param routes_v2_put_input_request: Input configuration update (required)
+        :type routes_v2_put_input_request: RoutesV2PutInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._v2_organization_id_inputs_input_id_put_serialize(
+            organization_id=organization_id,
+            input_id=input_id,
+            routes_v2_put_input_request=routes_v2_put_input_request,
+            test_connection=test_connection,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsInput",
+            '400': "ResponderErrorResponse",
+            '404': "ResponderErrorResponse",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def v2_organization_id_inputs_input_id_put_without_preload_content(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        input_id: Annotated[StrictStr, Field(description="Input ID")],
+        routes_v2_put_input_request: Annotated[RoutesV2PutInputRequest, Field(description="Input configuration update")],
+        test_connection: Annotated[Optional[StrictBool], Field(description="Test connection before creating the input")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Replace input
+
+        Replace an existing input with new configuration including secrets handling
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param input_id: Input ID (required)
+        :type input_id: str
+        :param routes_v2_put_input_request: Input configuration update (required)
+        :type routes_v2_put_input_request: RoutesV2PutInputRequest
+        :param test_connection: Test connection before creating the input
+        :type test_connection: bool
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._v2_organization_id_inputs_input_id_put_serialize(
+            organization_id=organization_id,
+            input_id=input_id,
+            routes_v2_put_input_request=routes_v2_put_input_request,
+            test_connection=test_connection,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsInput",
+            '400': "ResponderErrorResponse",
+            '404': "ResponderErrorResponse",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _v2_organization_id_inputs_input_id_put_serialize(
+        self,
+        organization_id,
+        input_id,
+        routes_v2_put_input_request,
+        test_connection,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if organization_id is not None:
+            _path_params['organization_id'] = organization_id
+        if input_id is not None:
+            _path_params['input_id'] = input_id
+        # process the query parameters
+        if test_connection is not None:
+            
+            _query_params.append(('test_connection', test_connection))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if routes_v2_put_input_request is not None:
+            _body_params = routes_v2_put_input_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'ApiKeyAuth', 
+            'Bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
             resource_path='/v2/{organization_id}/inputs/{input_id}',
             path_params=_path_params,
             query_params=_query_params,

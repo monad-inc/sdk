@@ -216,6 +216,8 @@ import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEd
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
+import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
+import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
@@ -229,6 +231,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
+import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
@@ -2043,6 +2046,46 @@ export class ObservableOrganizationEnrichmentsApi {
     }
 
     /**
+     * Replace an existing enrichment with new configuration including secrets handling
+     * Replace enrichment
+     * @param organizationId Organization ID
+     * @param enrichmentId Enrichment ID
+     * @param routesV3PutEnrichmentRequest Enrichment configuration update
+     * @param [testConnection] Test connection before updating the enrichment
+     */
+    public v3OrganizationIdEnrichmentsEnrichmentIdPutWithHttpInfo(organizationId: string, enrichmentId: string, routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsEnrichment>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdEnrichmentsEnrichmentIdPut(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdEnrichmentsEnrichmentIdPutWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Replace an existing enrichment with new configuration including secrets handling
+     * Replace enrichment
+     * @param organizationId Organization ID
+     * @param enrichmentId Enrichment ID
+     * @param routesV3PutEnrichmentRequest Enrichment configuration update
+     * @param [testConnection] Test connection before updating the enrichment
+     */
+    public v3OrganizationIdEnrichmentsEnrichmentIdPut(organizationId: string, enrichmentId: string, routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsEnrichment> {
+        return this.v3OrganizationIdEnrichmentsEnrichmentIdPutWithHttpInfo(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsEnrichment>) => apiResponse.data));
+    }
+
+    /**
      * List all enrichments for an organization
      * List enrichments
      * @param organizationId Organization ID
@@ -2320,6 +2363,46 @@ export class ObservableOrganizationInputsApi {
      */
     public v2OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsInput> {
         return this.v2OrganizationIdInputsInputIdPatchWithHttpInfo(organizationId, inputId, routesV2UpdateInputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsInput>) => apiResponse.data));
+    }
+
+    /**
+     * Replace an existing input with new configuration including secrets handling
+     * Replace input
+     * @param organizationId Organization ID
+     * @param inputId Input ID
+     * @param routesV2PutInputRequest Input configuration update
+     * @param [testConnection] Test connection before creating the input
+     */
+    public v2OrganizationIdInputsInputIdPutWithHttpInfo(organizationId: string, inputId: string, routesV2PutInputRequest: RoutesV2PutInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsInput>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdInputsInputIdPut(organizationId, inputId, routesV2PutInputRequest, testConnection, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdInputsInputIdPutWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Replace an existing input with new configuration including secrets handling
+     * Replace input
+     * @param organizationId Organization ID
+     * @param inputId Input ID
+     * @param routesV2PutInputRequest Input configuration update
+     * @param [testConnection] Test connection before creating the input
+     */
+    public v2OrganizationIdInputsInputIdPut(organizationId: string, inputId: string, routesV2PutInputRequest: RoutesV2PutInputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsInput> {
+        return this.v2OrganizationIdInputsInputIdPutWithHttpInfo(organizationId, inputId, routesV2PutInputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsInput>) => apiResponse.data));
     }
 
     /**
@@ -2616,6 +2699,46 @@ export class ObservableOrganizationOutputsApi {
      */
     public v2OrganizationIdOutputsOutputIdPatch(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsOutput> {
         return this.v2OrganizationIdOutputsOutputIdPatchWithHttpInfo(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsOutput>) => apiResponse.data));
+    }
+
+    /**
+     * Replace an existing output with new configuration including secrets handling
+     * Replace output
+     * @param organizationId Organization ID
+     * @param outputId Output ID
+     * @param routesV2PutOutputRequest Output configuration update
+     * @param [testConnection] Test connection before creating the input
+     */
+    public v2OrganizationIdOutputsOutputIdPutWithHttpInfo(organizationId: string, outputId: string, routesV2PutOutputRequest: RoutesV2PutOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOutput>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdOutputsOutputIdPut(organizationId, outputId, routesV2PutOutputRequest, testConnection, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdOutputsOutputIdPutWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Replace an existing output with new configuration including secrets handling
+     * Replace output
+     * @param organizationId Organization ID
+     * @param outputId Output ID
+     * @param routesV2PutOutputRequest Output configuration update
+     * @param [testConnection] Test connection before creating the input
+     */
+    public v2OrganizationIdOutputsOutputIdPut(organizationId: string, outputId: string, routesV2PutOutputRequest: RoutesV2PutOutputRequest, testConnection?: boolean, _options?: ConfigurationOptions): Observable<ModelsOutput> {
+        return this.v2OrganizationIdOutputsOutputIdPutWithHttpInfo(organizationId, outputId, routesV2PutOutputRequest, testConnection, _options).pipe(map((apiResponse: HttpInfo<ModelsOutput>) => apiResponse.data));
     }
 
     /**

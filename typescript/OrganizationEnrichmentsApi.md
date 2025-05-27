@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**v3OrganizationIdEnrichmentsEnrichmentIdDelete**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdDelete) | **DELETE** /v3/{organization_id}/enrichments/{enrichment_id} | Delete enrichment
 [**v3OrganizationIdEnrichmentsEnrichmentIdGet**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdGet) | **GET** /v3/{organization_id}/enrichments/{enrichment_id} | Get enrichment
 [**v3OrganizationIdEnrichmentsEnrichmentIdPatch**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdPatch) | **PATCH** /v3/{organization_id}/enrichments/{enrichment_id} | Update enrichment
+[**v3OrganizationIdEnrichmentsEnrichmentIdPut**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdPut) | **PUT** /v3/{organization_id}/enrichments/{enrichment_id} | Replace enrichment
 [**v3OrganizationIdEnrichmentsGet**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsGet) | **GET** /v3/{organization_id}/enrichments | List enrichments
 [**v3OrganizationIdEnrichmentsPost**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsPost) | **POST** /v3/{organization_id}/enrichments | Create enrichment
 [**v3OrganizationIdEnrichmentsTestConnectionPost**](OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsTestConnectionPost) | **POST** /v3/{organization_id}/enrichments/test-connection | Test enrichment connection
@@ -176,6 +177,83 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **routesV3UpdateEnrichmentRequest** | **RoutesV3UpdateEnrichmentRequest**| Enrichment configuration update |
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **enrichmentId** | [**string**] | Enrichment ID | defaults to undefined
+ **testConnection** | [**boolean**] | Test connection before updating the enrichment | (optional) defaults to undefined
+
+
+### Return type
+
+**ModelsEnrichment**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Enrichment updated successfully |  -  |
+**400** | Invalid request body, enrichment type, configuration validation error, or secret processing error |  -  |
+**404** | Enrichment not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v3OrganizationIdEnrichmentsEnrichmentIdPut**
+> ModelsEnrichment v3OrganizationIdEnrichmentsEnrichmentIdPut(routesV3PutEnrichmentRequest)
+
+Replace an existing enrichment with new configuration including secrets handling
+
+### Example
+
+
+```typescript
+import { createConfiguration, OrganizationEnrichmentsApi } from '';
+import type { OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPutRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new OrganizationEnrichmentsApi(configuration);
+
+const request: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPutRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Enrichment ID
+  enrichmentId: "enrichment_id_example",
+    // Enrichment configuration update
+  routesV3PutEnrichmentRequest: {
+    config: {
+      secrets: 
+        key: null,
+      ,
+      settings: 
+        key: null,
+      ,
+    },
+    description: "description_example",
+    name: "name_example",
+    type: "type_example",
+  },
+    // Test connection before updating the enrichment (optional)
+  testConnection: true,
+};
+
+const data = await apiInstance.v3OrganizationIdEnrichmentsEnrichmentIdPut(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **routesV3PutEnrichmentRequest** | **RoutesV3PutEnrichmentRequest**| Enrichment configuration update |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **enrichmentId** | [**string**] | Enrichment ID | defaults to undefined
  **testConnection** | [**boolean**] | Test connection before updating the enrichment | (optional) defaults to undefined

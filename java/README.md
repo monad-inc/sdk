@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-05-27T17:46:54.187027120Z[Etc/UTC]
+  - Build date: 2025-05-27T21:04:11.137712083Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -158,6 +158,7 @@ Class | Method | HTTP request | Description
 *OrganizationEnrichmentsApi* | [**v3OrganizationIdEnrichmentsEnrichmentIdDelete**](docs/OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdDelete) | **DELETE** /v3/{organization_id}/enrichments/{enrichment_id} | Delete enrichment
 *OrganizationEnrichmentsApi* | [**v3OrganizationIdEnrichmentsEnrichmentIdGet**](docs/OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdGet) | **GET** /v3/{organization_id}/enrichments/{enrichment_id} | Get enrichment
 *OrganizationEnrichmentsApi* | [**v3OrganizationIdEnrichmentsEnrichmentIdPatch**](docs/OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdPatch) | **PATCH** /v3/{organization_id}/enrichments/{enrichment_id} | Update enrichment
+*OrganizationEnrichmentsApi* | [**v3OrganizationIdEnrichmentsEnrichmentIdPut**](docs/OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsEnrichmentIdPut) | **PUT** /v3/{organization_id}/enrichments/{enrichment_id} | Replace enrichment
 *OrganizationEnrichmentsApi* | [**v3OrganizationIdEnrichmentsGet**](docs/OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsGet) | **GET** /v3/{organization_id}/enrichments | List enrichments
 *OrganizationEnrichmentsApi* | [**v3OrganizationIdEnrichmentsPost**](docs/OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsPost) | **POST** /v3/{organization_id}/enrichments | Create enrichment
 *OrganizationEnrichmentsApi* | [**v3OrganizationIdEnrichmentsTestConnectionPost**](docs/OrganizationEnrichmentsApi.md#v3OrganizationIdEnrichmentsTestConnectionPost) | **POST** /v3/{organization_id}/enrichments/test-connection | Test enrichment connection
@@ -165,6 +166,7 @@ Class | Method | HTTP request | Description
 *OrganizationInputsApi* | [**v1OrganizationIdInputsInputIdDelete**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsInputIdDelete) | **DELETE** /v1/{organization_id}/inputs/{input_id} | Delete input
 *OrganizationInputsApi* | [**v1OrganizationIdInputsInputIdGet**](docs/OrganizationInputsApi.md#v1OrganizationIdInputsInputIdGet) | **GET** /v1/{organization_id}/inputs/{input_id} | Get input
 *OrganizationInputsApi* | [**v2OrganizationIdInputsInputIdPatch**](docs/OrganizationInputsApi.md#v2OrganizationIdInputsInputIdPatch) | **PATCH** /v2/{organization_id}/inputs/{input_id} | Update input
+*OrganizationInputsApi* | [**v2OrganizationIdInputsInputIdPut**](docs/OrganizationInputsApi.md#v2OrganizationIdInputsInputIdPut) | **PUT** /v2/{organization_id}/inputs/{input_id} | Replace input
 *OrganizationInputsApi* | [**v2OrganizationIdInputsPost**](docs/OrganizationInputsApi.md#v2OrganizationIdInputsPost) | **POST** /v2/{organization_id}/inputs | Create input
 *OrganizationInputsApi* | [**v2OrganizationIdInputsTestConnectionPost**](docs/OrganizationInputsApi.md#v2OrganizationIdInputsTestConnectionPost) | **POST** /v2/{organization_id}/inputs/test-connection | Test input connection
 *OrganizationInvitesApi* | [**v1OrganizationIdInvitesPost**](docs/OrganizationInvitesApi.md#v1OrganizationIdInvitesPost) | **POST** /v1/{organization_id}/invites | Invite user to organization
@@ -172,6 +174,7 @@ Class | Method | HTTP request | Description
 *OrganizationOutputsApi* | [**v1OrganizationIdOutputsOutputIdDelete**](docs/OrganizationOutputsApi.md#v1OrganizationIdOutputsOutputIdDelete) | **DELETE** /v1/{organization_id}/outputs/{output_id} | Delete output
 *OrganizationOutputsApi* | [**v1OrganizationIdOutputsOutputIdGet**](docs/OrganizationOutputsApi.md#v1OrganizationIdOutputsOutputIdGet) | **GET** /v1/{organization_id}/outputs/{output_id} | Get output
 *OrganizationOutputsApi* | [**v2OrganizationIdOutputsOutputIdPatch**](docs/OrganizationOutputsApi.md#v2OrganizationIdOutputsOutputIdPatch) | **PATCH** /v2/{organization_id}/outputs/{output_id} | Update output
+*OrganizationOutputsApi* | [**v2OrganizationIdOutputsOutputIdPut**](docs/OrganizationOutputsApi.md#v2OrganizationIdOutputsOutputIdPut) | **PUT** /v2/{organization_id}/outputs/{output_id} | Replace output
 *OrganizationOutputsApi* | [**v2OrganizationIdOutputsPost**](docs/OrganizationOutputsApi.md#v2OrganizationIdOutputsPost) | **POST** /v2/{organization_id}/outputs | Create output
 *OrganizationOutputsApi* | [**v2OrganizationIdOutputsTestConnectionPost**](docs/OrganizationOutputsApi.md#v2OrganizationIdOutputsTestConnectionPost) | **POST** /v2/{organization_id}/outputs/test-connection | Test output connection
 *OrganizationQuotasApi* | [**v2OrganizationIdQuotasGet**](docs/OrganizationQuotasApi.md#v2OrganizationIdQuotasGet) | **GET** /v2/{organization_id}/quotas | Get Organization Quotas
@@ -447,6 +450,8 @@ Class | Method | HTTP request | Description
  - [RoutesV2PipelineRequestNode](docs/RoutesV2PipelineRequestNode.md)
  - [RoutesV2PipelineStatus](docs/RoutesV2PipelineStatus.md)
  - [RoutesV2PipelineWithStatus](docs/RoutesV2PipelineWithStatus.md)
+ - [RoutesV2PutInputRequest](docs/RoutesV2PutInputRequest.md)
+ - [RoutesV2PutOutputRequest](docs/RoutesV2PutOutputRequest.md)
  - [RoutesV2SecretResponse](docs/RoutesV2SecretResponse.md)
  - [RoutesV2SuccessResponse](docs/RoutesV2SuccessResponse.md)
  - [RoutesV2TestInputConnectionRequest](docs/RoutesV2TestInputConnectionRequest.md)
@@ -460,6 +465,7 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [RoutesV3CreateEnrichmentRequest](docs/RoutesV3CreateEnrichmentRequest.md)
  - [RoutesV3ImportTransformResponse](docs/RoutesV3ImportTransformResponse.md)
+ - [RoutesV3PutEnrichmentRequest](docs/RoutesV3PutEnrichmentRequest.md)
  - [RoutesV3SuccessResponse](docs/RoutesV3SuccessResponse.md)
  - [RoutesV3TestEnrichmentConnectionRequest](docs/RoutesV3TestEnrichmentConnectionRequest.md)
  - [RoutesV3TransformConfig](docs/RoutesV3TransformConfig.md)

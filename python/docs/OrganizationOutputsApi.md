@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**v1_organization_id_outputs_output_id_delete**](OrganizationOutputsApi.md#v1_organization_id_outputs_output_id_delete) | **DELETE** /v1/{organization_id}/outputs/{output_id} | Delete output
 [**v1_organization_id_outputs_output_id_get**](OrganizationOutputsApi.md#v1_organization_id_outputs_output_id_get) | **GET** /v1/{organization_id}/outputs/{output_id} | Get output
 [**v2_organization_id_outputs_output_id_patch**](OrganizationOutputsApi.md#v2_organization_id_outputs_output_id_patch) | **PATCH** /v2/{organization_id}/outputs/{output_id} | Update output
+[**v2_organization_id_outputs_output_id_put**](OrganizationOutputsApi.md#v2_organization_id_outputs_output_id_put) | **PUT** /v2/{organization_id}/outputs/{output_id} | Replace output
 [**v2_organization_id_outputs_post**](OrganizationOutputsApi.md#v2_organization_id_outputs_post) | **POST** /v2/{organization_id}/outputs | Create output
 [**v2_organization_id_outputs_test_connection_post**](OrganizationOutputsApi.md#v2_organization_id_outputs_test_connection_post) | **POST** /v2/{organization_id}/outputs/test-connection | Test output connection
 
@@ -350,6 +351,102 @@ Name | Type | Description  | Notes
  **organization_id** | **str**| Organization ID | 
  **output_id** | **str**| Output ID | 
  **routes_v2_update_output_request** | [**RoutesV2UpdateOutputRequest**](RoutesV2UpdateOutputRequest.md)| Output configuration update | 
+ **test_connection** | **bool**| Test connection before creating the input | [optional] 
+
+### Return type
+
+[**ModelsOutput**](ModelsOutput.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Output updated successfully |  -  |
+**400** | Invalid request body, output type, configuration validation error, or secret processing error |  -  |
+**404** | Output not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v2_organization_id_outputs_output_id_put**
+> ModelsOutput v2_organization_id_outputs_output_id_put(organization_id, output_id, routes_v2_put_output_request, test_connection=test_connection)
+
+Replace output
+
+Replace an existing output with new configuration including secrets handling
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.models_output import ModelsOutput
+from monad.models.routes_v2_put_output_request import RoutesV2PutOutputRequest
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.OrganizationOutputsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    output_id = 'output_id_example' # str | Output ID
+    routes_v2_put_output_request = monad.RoutesV2PutOutputRequest() # RoutesV2PutOutputRequest | Output configuration update
+    test_connection = True # bool | Test connection before creating the input (optional)
+
+    try:
+        # Replace output
+        api_response = api_instance.v2_organization_id_outputs_output_id_put(organization_id, output_id, routes_v2_put_output_request, test_connection=test_connection)
+        print("The response of OrganizationOutputsApi->v2_organization_id_outputs_output_id_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationOutputsApi->v2_organization_id_outputs_output_id_put: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **output_id** | **str**| Output ID | 
+ **routes_v2_put_output_request** | [**RoutesV2PutOutputRequest**](RoutesV2PutOutputRequest.md)| Output configuration update | 
  **test_connection** | **bool**| Test connection before creating the input | [optional] 
 
 ### Return type

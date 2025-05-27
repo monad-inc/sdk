@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**V1OrganizationIdInputsInputIdDelete**](OrganizationInputsAPI.md#V1OrganizationIdInputsInputIdDelete) | **Delete** /v1/{organization_id}/inputs/{input_id} | Delete input
 [**V1OrganizationIdInputsInputIdGet**](OrganizationInputsAPI.md#V1OrganizationIdInputsInputIdGet) | **Get** /v1/{organization_id}/inputs/{input_id} | Get input
 [**V2OrganizationIdInputsInputIdPatch**](OrganizationInputsAPI.md#V2OrganizationIdInputsInputIdPatch) | **Patch** /v2/{organization_id}/inputs/{input_id} | Update input
+[**V2OrganizationIdInputsInputIdPut**](OrganizationInputsAPI.md#V2OrganizationIdInputsInputIdPut) | **Put** /v2/{organization_id}/inputs/{input_id} | Replace input
 [**V2OrganizationIdInputsPost**](OrganizationInputsAPI.md#V2OrganizationIdInputsPost) | **Post** /v2/{organization_id}/inputs | Create input
 [**V2OrganizationIdInputsTestConnectionPost**](OrganizationInputsAPI.md#V2OrganizationIdInputsTestConnectionPost) | **Post** /v2/{organization_id}/inputs/test-connection | Test input connection
 
@@ -290,6 +291,83 @@ Name | Type | Description  | Notes
 
 
  **routesV2UpdateInputRequest** | [**RoutesV2UpdateInputRequest**](RoutesV2UpdateInputRequest.md) | Input configuration update | 
+ **testConnection** | **bool** | Test connection before creating the input | 
+
+### Return type
+
+[**ModelsInput**](ModelsInput.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V2OrganizationIdInputsInputIdPut
+
+> ModelsInput V2OrganizationIdInputsInputIdPut(ctx, organizationId, inputId).RoutesV2PutInputRequest(routesV2PutInputRequest).TestConnection(testConnection).Execute()
+
+Replace input
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	inputId := "inputId_example" // string | Input ID
+	routesV2PutInputRequest := *openapiclient.NewRoutesV2PutInputRequest() // RoutesV2PutInputRequest | Input configuration update
+	testConnection := true // bool | Test connection before creating the input (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OrganizationInputsAPI.V2OrganizationIdInputsInputIdPut(context.Background(), organizationId, inputId).RoutesV2PutInputRequest(routesV2PutInputRequest).TestConnection(testConnection).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.V2OrganizationIdInputsInputIdPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V2OrganizationIdInputsInputIdPut`: ModelsInput
+	fmt.Fprintf(os.Stdout, "Response from `OrganizationInputsAPI.V2OrganizationIdInputsInputIdPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**inputId** | **string** | Input ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV2OrganizationIdInputsInputIdPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **routesV2PutInputRequest** | [**RoutesV2PutInputRequest**](RoutesV2PutInputRequest.md) | Input configuration update | 
  **testConnection** | **bool** | Test connection before creating the input | 
 
 ### Return type

@@ -215,6 +215,8 @@ import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEd
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
+import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
+import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
@@ -228,6 +230,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
+import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
@@ -1534,6 +1537,34 @@ export class PromiseOrganizationEnrichmentsApi {
     }
 
     /**
+     * Replace an existing enrichment with new configuration including secrets handling
+     * Replace enrichment
+     * @param organizationId Organization ID
+     * @param enrichmentId Enrichment ID
+     * @param routesV3PutEnrichmentRequest Enrichment configuration update
+     * @param [testConnection] Test connection before updating the enrichment
+     */
+    public v3OrganizationIdEnrichmentsEnrichmentIdPutWithHttpInfo(organizationId: string, enrichmentId: string, routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsEnrichmentIdPutWithHttpInfo(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Replace an existing enrichment with new configuration including secrets handling
+     * Replace enrichment
+     * @param organizationId Organization ID
+     * @param enrichmentId Enrichment ID
+     * @param routesV3PutEnrichmentRequest Enrichment configuration update
+     * @param [testConnection] Test connection before updating the enrichment
+     */
+    public v3OrganizationIdEnrichmentsEnrichmentIdPut(organizationId: string, enrichmentId: string, routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsEnrichment> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdEnrichmentsEnrichmentIdPut(organizationId, enrichmentId, routesV3PutEnrichmentRequest, testConnection, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
      * List all enrichments for an organization
      * List enrichments
      * @param organizationId Organization ID
@@ -1727,6 +1758,34 @@ export class PromiseOrganizationInputsApi {
     public v2OrganizationIdInputsInputIdPatch(organizationId: string, inputId: string, routesV2UpdateInputRequest: RoutesV2UpdateInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsInput> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v2OrganizationIdInputsInputIdPatch(organizationId, inputId, routesV2UpdateInputRequest, testConnection, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Replace an existing input with new configuration including secrets handling
+     * Replace input
+     * @param organizationId Organization ID
+     * @param inputId Input ID
+     * @param routesV2PutInputRequest Input configuration update
+     * @param [testConnection] Test connection before creating the input
+     */
+    public v2OrganizationIdInputsInputIdPutWithHttpInfo(organizationId: string, inputId: string, routesV2PutInputRequest: RoutesV2PutInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdInputsInputIdPutWithHttpInfo(organizationId, inputId, routesV2PutInputRequest, testConnection, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Replace an existing input with new configuration including secrets handling
+     * Replace input
+     * @param organizationId Organization ID
+     * @param inputId Input ID
+     * @param routesV2PutInputRequest Input configuration update
+     * @param [testConnection] Test connection before creating the input
+     */
+    public v2OrganizationIdInputsInputIdPut(organizationId: string, inputId: string, routesV2PutInputRequest: RoutesV2PutInputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsInput> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdInputsInputIdPut(organizationId, inputId, routesV2PutInputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 
@@ -1941,6 +2000,34 @@ export class PromiseOrganizationOutputsApi {
     public v2OrganizationIdOutputsOutputIdPatch(organizationId: string, outputId: string, routesV2UpdateOutputRequest: RoutesV2UpdateOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsOutput> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v2OrganizationIdOutputsOutputIdPatch(organizationId, outputId, routesV2UpdateOutputRequest, testConnection, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Replace an existing output with new configuration including secrets handling
+     * Replace output
+     * @param organizationId Organization ID
+     * @param outputId Output ID
+     * @param routesV2PutOutputRequest Output configuration update
+     * @param [testConnection] Test connection before creating the input
+     */
+    public v2OrganizationIdOutputsOutputIdPutWithHttpInfo(organizationId: string, outputId: string, routesV2PutOutputRequest: RoutesV2PutOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdOutputsOutputIdPutWithHttpInfo(organizationId, outputId, routesV2PutOutputRequest, testConnection, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Replace an existing output with new configuration including secrets handling
+     * Replace output
+     * @param organizationId Organization ID
+     * @param outputId Output ID
+     * @param routesV2PutOutputRequest Output configuration update
+     * @param [testConnection] Test connection before creating the input
+     */
+    public v2OrganizationIdOutputsOutputIdPut(organizationId: string, outputId: string, routesV2PutOutputRequest: RoutesV2PutOutputRequest, testConnection?: boolean, _options?: PromiseConfigurationOptions): Promise<ModelsOutput> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdOutputsOutputIdPut(organizationId, outputId, routesV2PutOutputRequest, testConnection, observableOptions);
         return result.toPromise();
     }
 

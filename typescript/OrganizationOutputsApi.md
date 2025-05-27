@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**v1OrganizationIdOutputsOutputIdDelete**](OrganizationOutputsApi.md#v1OrganizationIdOutputsOutputIdDelete) | **DELETE** /v1/{organization_id}/outputs/{output_id} | Delete output
 [**v1OrganizationIdOutputsOutputIdGet**](OrganizationOutputsApi.md#v1OrganizationIdOutputsOutputIdGet) | **GET** /v1/{organization_id}/outputs/{output_id} | Get output
 [**v2OrganizationIdOutputsOutputIdPatch**](OrganizationOutputsApi.md#v2OrganizationIdOutputsOutputIdPatch) | **PATCH** /v2/{organization_id}/outputs/{output_id} | Update output
+[**v2OrganizationIdOutputsOutputIdPut**](OrganizationOutputsApi.md#v2OrganizationIdOutputsOutputIdPut) | **PUT** /v2/{organization_id}/outputs/{output_id} | Replace output
 [**v2OrganizationIdOutputsPost**](OrganizationOutputsApi.md#v2OrganizationIdOutputsPost) | **POST** /v2/{organization_id}/outputs | Create output
 [**v2OrganizationIdOutputsTestConnectionPost**](OrganizationOutputsApi.md#v2OrganizationIdOutputsTestConnectionPost) | **POST** /v2/{organization_id}/outputs/test-connection | Test output connection
 
@@ -234,6 +235,83 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **routesV2UpdateOutputRequest** | **RoutesV2UpdateOutputRequest**| Output configuration update |
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **outputId** | [**string**] | Output ID | defaults to undefined
+ **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined
+
+
+### Return type
+
+**ModelsOutput**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Output updated successfully |  -  |
+**400** | Invalid request body, output type, configuration validation error, or secret processing error |  -  |
+**404** | Output not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v2OrganizationIdOutputsOutputIdPut**
+> ModelsOutput v2OrganizationIdOutputsOutputIdPut(routesV2PutOutputRequest)
+
+Replace an existing output with new configuration including secrets handling
+
+### Example
+
+
+```typescript
+import { createConfiguration, OrganizationOutputsApi } from '';
+import type { OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPutRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new OrganizationOutputsApi(configuration);
+
+const request: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPutRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Output ID
+  outputId: "output_id_example",
+    // Output configuration update
+  routesV2PutOutputRequest: {
+    config: {
+      secrets: 
+        key: null,
+      ,
+      settings: 
+        key: null,
+      ,
+    },
+    description: "description_example",
+    name: "name_example",
+    outputType: "outputType_example",
+  },
+    // Test connection before creating the input (optional)
+  testConnection: true,
+};
+
+const data = await apiInstance.v2OrganizationIdOutputsOutputIdPut(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **routesV2PutOutputRequest** | **RoutesV2PutOutputRequest**| Output configuration update |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **outputId** | [**string**] | Output ID | defaults to undefined
  **testConnection** | [**boolean**] | Test connection before creating the input | (optional) defaults to undefined

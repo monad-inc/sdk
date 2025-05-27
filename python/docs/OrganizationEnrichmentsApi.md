@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**v3_organization_id_enrichments_enrichment_id_delete**](OrganizationEnrichmentsApi.md#v3_organization_id_enrichments_enrichment_id_delete) | **DELETE** /v3/{organization_id}/enrichments/{enrichment_id} | Delete enrichment
 [**v3_organization_id_enrichments_enrichment_id_get**](OrganizationEnrichmentsApi.md#v3_organization_id_enrichments_enrichment_id_get) | **GET** /v3/{organization_id}/enrichments/{enrichment_id} | Get enrichment
 [**v3_organization_id_enrichments_enrichment_id_patch**](OrganizationEnrichmentsApi.md#v3_organization_id_enrichments_enrichment_id_patch) | **PATCH** /v3/{organization_id}/enrichments/{enrichment_id} | Update enrichment
+[**v3_organization_id_enrichments_enrichment_id_put**](OrganizationEnrichmentsApi.md#v3_organization_id_enrichments_enrichment_id_put) | **PUT** /v3/{organization_id}/enrichments/{enrichment_id} | Replace enrichment
 [**v3_organization_id_enrichments_get**](OrganizationEnrichmentsApi.md#v3_organization_id_enrichments_get) | **GET** /v3/{organization_id}/enrichments | List enrichments
 [**v3_organization_id_enrichments_post**](OrganizationEnrichmentsApi.md#v3_organization_id_enrichments_post) | **POST** /v3/{organization_id}/enrichments | Create enrichment
 [**v3_organization_id_enrichments_test_connection_post**](OrganizationEnrichmentsApi.md#v3_organization_id_enrichments_test_connection_post) | **POST** /v3/{organization_id}/enrichments/test-connection | Test enrichment connection
@@ -262,6 +263,102 @@ Name | Type | Description  | Notes
  **organization_id** | **str**| Organization ID | 
  **enrichment_id** | **str**| Enrichment ID | 
  **routes_v3_update_enrichment_request** | [**RoutesV3UpdateEnrichmentRequest**](RoutesV3UpdateEnrichmentRequest.md)| Enrichment configuration update | 
+ **test_connection** | **bool**| Test connection before updating the enrichment | [optional] 
+
+### Return type
+
+[**ModelsEnrichment**](ModelsEnrichment.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Enrichment updated successfully |  -  |
+**400** | Invalid request body, enrichment type, configuration validation error, or secret processing error |  -  |
+**404** | Enrichment not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v3_organization_id_enrichments_enrichment_id_put**
+> ModelsEnrichment v3_organization_id_enrichments_enrichment_id_put(organization_id, enrichment_id, routes_v3_put_enrichment_request, test_connection=test_connection)
+
+Replace enrichment
+
+Replace an existing enrichment with new configuration including secrets handling
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.models_enrichment import ModelsEnrichment
+from monad.models.routes_v3_put_enrichment_request import RoutesV3PutEnrichmentRequest
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.OrganizationEnrichmentsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    enrichment_id = 'enrichment_id_example' # str | Enrichment ID
+    routes_v3_put_enrichment_request = monad.RoutesV3PutEnrichmentRequest() # RoutesV3PutEnrichmentRequest | Enrichment configuration update
+    test_connection = True # bool | Test connection before updating the enrichment (optional)
+
+    try:
+        # Replace enrichment
+        api_response = api_instance.v3_organization_id_enrichments_enrichment_id_put(organization_id, enrichment_id, routes_v3_put_enrichment_request, test_connection=test_connection)
+        print("The response of OrganizationEnrichmentsApi->v3_organization_id_enrichments_enrichment_id_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationEnrichmentsApi->v3_organization_id_enrichments_enrichment_id_put: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **enrichment_id** | **str**| Enrichment ID | 
+ **routes_v3_put_enrichment_request** | [**RoutesV3PutEnrichmentRequest**](RoutesV3PutEnrichmentRequest.md)| Enrichment configuration update | 
  **test_connection** | **bool**| Test connection before updating the enrichment | [optional] 
 
 ### Return type

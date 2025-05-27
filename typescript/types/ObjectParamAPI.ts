@@ -215,6 +215,8 @@ import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEd
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
+import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
+import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
@@ -228,6 +230,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
+import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
@@ -1819,6 +1822,36 @@ export interface OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichment
     testConnection?: boolean
 }
 
+export interface OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPutRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdPut
+     */
+    organizationId: string
+    /**
+     * Enrichment ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdPut
+     */
+    enrichmentId: string
+    /**
+     * Enrichment configuration update
+     * @type RoutesV3PutEnrichmentRequest
+     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdPut
+     */
+    routesV3PutEnrichmentRequest: RoutesV3PutEnrichmentRequest
+    /**
+     * Test connection before updating the enrichment
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationEnrichmentsApiv3OrganizationIdEnrichmentsEnrichmentIdPut
+     */
+    testConnection?: boolean
+}
+
 export interface OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsGetRequest {
     /**
      * Organization ID
@@ -1941,6 +1974,24 @@ export class ObjectOrganizationEnrichmentsApi {
      */
     public v3OrganizationIdEnrichmentsEnrichmentIdPatch(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsEnrichment> {
         return this.api.v3OrganizationIdEnrichmentsEnrichmentIdPatch(param.organizationId, param.enrichmentId, param.routesV3UpdateEnrichmentRequest, param.testConnection,  options).toPromise();
+    }
+
+    /**
+     * Replace an existing enrichment with new configuration including secrets handling
+     * Replace enrichment
+     * @param param the request object
+     */
+    public v3OrganizationIdEnrichmentsEnrichmentIdPutWithHttpInfo(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPutRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
+        return this.api.v3OrganizationIdEnrichmentsEnrichmentIdPutWithHttpInfo(param.organizationId, param.enrichmentId, param.routesV3PutEnrichmentRequest, param.testConnection,  options).toPromise();
+    }
+
+    /**
+     * Replace an existing enrichment with new configuration including secrets handling
+     * Replace enrichment
+     * @param param the request object
+     */
+    public v3OrganizationIdEnrichmentsEnrichmentIdPut(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdPutRequest, options?: ConfigurationOptions): Promise<ModelsEnrichment> {
+        return this.api.v3OrganizationIdEnrichmentsEnrichmentIdPut(param.organizationId, param.enrichmentId, param.routesV3PutEnrichmentRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -2090,6 +2141,36 @@ export interface OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest 
     testConnection?: boolean
 }
 
+export interface OrganizationInputsApiV2OrganizationIdInputsInputIdPutRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPut
+     */
+    organizationId: string
+    /**
+     * Input ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPut
+     */
+    inputId: string
+    /**
+     * Input configuration update
+     * @type RoutesV2PutInputRequest
+     * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPut
+     */
+    routesV2PutInputRequest: RoutesV2PutInputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationInputsApiv2OrganizationIdInputsInputIdPut
+     */
+    testConnection?: boolean
+}
+
 export interface OrganizationInputsApiV2OrganizationIdInputsPostRequest {
     /**
      * Organization ID
@@ -2206,6 +2287,24 @@ export class ObjectOrganizationInputsApi {
      */
     public v2OrganizationIdInputsInputIdPatch(param: OrganizationInputsApiV2OrganizationIdInputsInputIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
         return this.api.v2OrganizationIdInputsInputIdPatch(param.organizationId, param.inputId, param.routesV2UpdateInputRequest, param.testConnection,  options).toPromise();
+    }
+
+    /**
+     * Replace an existing input with new configuration including secrets handling
+     * Replace input
+     * @param param the request object
+     */
+    public v2OrganizationIdInputsInputIdPutWithHttpInfo(param: OrganizationInputsApiV2OrganizationIdInputsInputIdPutRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsInput>> {
+        return this.api.v2OrganizationIdInputsInputIdPutWithHttpInfo(param.organizationId, param.inputId, param.routesV2PutInputRequest, param.testConnection,  options).toPromise();
+    }
+
+    /**
+     * Replace an existing input with new configuration including secrets handling
+     * Replace input
+     * @param param the request object
+     */
+    public v2OrganizationIdInputsInputIdPut(param: OrganizationInputsApiV2OrganizationIdInputsInputIdPutRequest, options?: ConfigurationOptions): Promise<ModelsInput> {
+        return this.api.v2OrganizationIdInputsInputIdPut(param.organizationId, param.inputId, param.routesV2PutInputRequest, param.testConnection,  options).toPromise();
     }
 
     /**
@@ -2383,6 +2482,36 @@ export interface OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchReque
     testConnection?: boolean
 }
 
+export interface OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPutRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPut
+     */
+    organizationId: string
+    /**
+     * Output ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPut
+     */
+    outputId: string
+    /**
+     * Output configuration update
+     * @type RoutesV2PutOutputRequest
+     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPut
+     */
+    routesV2PutOutputRequest: RoutesV2PutOutputRequest
+    /**
+     * Test connection before creating the input
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationOutputsApiv2OrganizationIdOutputsOutputIdPut
+     */
+    testConnection?: boolean
+}
+
 export interface OrganizationOutputsApiV2OrganizationIdOutputsPostRequest {
     /**
      * Organization ID
@@ -2499,6 +2628,24 @@ export class ObjectOrganizationOutputsApi {
      */
     public v2OrganizationIdOutputsOutputIdPatch(param: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
         return this.api.v2OrganizationIdOutputsOutputIdPatch(param.organizationId, param.outputId, param.routesV2UpdateOutputRequest, param.testConnection,  options).toPromise();
+    }
+
+    /**
+     * Replace an existing output with new configuration including secrets handling
+     * Replace output
+     * @param param the request object
+     */
+    public v2OrganizationIdOutputsOutputIdPutWithHttpInfo(param: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPutRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOutput>> {
+        return this.api.v2OrganizationIdOutputsOutputIdPutWithHttpInfo(param.organizationId, param.outputId, param.routesV2PutOutputRequest, param.testConnection,  options).toPromise();
+    }
+
+    /**
+     * Replace an existing output with new configuration including secrets handling
+     * Replace output
+     * @param param the request object
+     */
+    public v2OrganizationIdOutputsOutputIdPut(param: OrganizationOutputsApiV2OrganizationIdOutputsOutputIdPutRequest, options?: ConfigurationOptions): Promise<ModelsOutput> {
+        return this.api.v2OrganizationIdOutputsOutputIdPut(param.organizationId, param.outputId, param.routesV2PutOutputRequest, param.testConnection,  options).toPromise();
     }
 
     /**

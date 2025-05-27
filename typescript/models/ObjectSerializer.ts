@@ -211,6 +211,8 @@ export * from '../models/RoutesV2PipelineRequestEdge';
 export * from '../models/RoutesV2PipelineRequestNode';
 export * from '../models/RoutesV2PipelineStatus';
 export * from '../models/RoutesV2PipelineWithStatus';
+export * from '../models/RoutesV2PutInputRequest';
+export * from '../models/RoutesV2PutOutputRequest';
 export * from '../models/RoutesV2SecretResponse';
 export * from '../models/RoutesV2SuccessResponse';
 export * from '../models/RoutesV2TestInputConnectionRequest';
@@ -224,6 +226,7 @@ export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/RoutesV2UpdateRoleV2Request';
 export * from '../models/RoutesV3CreateEnrichmentRequest';
 export * from '../models/RoutesV3ImportTransformResponse';
+export * from '../models/RoutesV3PutEnrichmentRequest';
 export * from '../models/RoutesV3SuccessResponse';
 export * from '../models/RoutesV3TestEnrichmentConnectionRequest';
 export * from '../models/RoutesV3TransformConfig';
@@ -502,6 +505,8 @@ import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEd
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
+import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
+import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
@@ -515,6 +520,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
+import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
@@ -818,6 +824,8 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2PipelineRequestNode": RoutesV2PipelineRequestNode,
     "RoutesV2PipelineStatus": RoutesV2PipelineStatus,
     "RoutesV2PipelineWithStatus": RoutesV2PipelineWithStatus,
+    "RoutesV2PutInputRequest": RoutesV2PutInputRequest,
+    "RoutesV2PutOutputRequest": RoutesV2PutOutputRequest,
     "RoutesV2SecretResponse": RoutesV2SecretResponse,
     "RoutesV2SuccessResponse": RoutesV2SuccessResponse,
     "RoutesV2TestInputConnectionRequest": RoutesV2TestInputConnectionRequest,
@@ -831,6 +839,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
     "RoutesV3CreateEnrichmentRequest": RoutesV3CreateEnrichmentRequest,
     "RoutesV3ImportTransformResponse": RoutesV3ImportTransformResponse,
+    "RoutesV3PutEnrichmentRequest": RoutesV3PutEnrichmentRequest,
     "RoutesV3SuccessResponse": RoutesV3SuccessResponse,
     "RoutesV3TestEnrichmentConnectionRequest": RoutesV3TestEnrichmentConnectionRequest,
     "RoutesV3TransformConfig": RoutesV3TransformConfig,

@@ -644,6 +644,195 @@ func (a *OrganizationInputsAPIService) V2OrganizationIdInputsInputIdPatchExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiV2OrganizationIdInputsInputIdPutRequest struct {
+	ctx context.Context
+	ApiService *OrganizationInputsAPIService
+	organizationId string
+	inputId string
+	routesV2PutInputRequest *RoutesV2PutInputRequest
+	testConnection *bool
+}
+
+// Input configuration update
+func (r ApiV2OrganizationIdInputsInputIdPutRequest) RoutesV2PutInputRequest(routesV2PutInputRequest RoutesV2PutInputRequest) ApiV2OrganizationIdInputsInputIdPutRequest {
+	r.routesV2PutInputRequest = &routesV2PutInputRequest
+	return r
+}
+
+// Test connection before creating the input
+func (r ApiV2OrganizationIdInputsInputIdPutRequest) TestConnection(testConnection bool) ApiV2OrganizationIdInputsInputIdPutRequest {
+	r.testConnection = &testConnection
+	return r
+}
+
+func (r ApiV2OrganizationIdInputsInputIdPutRequest) Execute() (*ModelsInput, *http.Response, error) {
+	return r.ApiService.V2OrganizationIdInputsInputIdPutExecute(r)
+}
+
+/*
+V2OrganizationIdInputsInputIdPut Replace input
+
+Replace an existing input with new configuration including secrets handling
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
+ @param inputId Input ID
+ @return ApiV2OrganizationIdInputsInputIdPutRequest
+*/
+func (a *OrganizationInputsAPIService) V2OrganizationIdInputsInputIdPut(ctx context.Context, organizationId string, inputId string) ApiV2OrganizationIdInputsInputIdPutRequest {
+	return ApiV2OrganizationIdInputsInputIdPutRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+		inputId: inputId,
+	}
+}
+
+// Execute executes the request
+//  @return ModelsInput
+func (a *OrganizationInputsAPIService) V2OrganizationIdInputsInputIdPutExecute(r ApiV2OrganizationIdInputsInputIdPutRequest) (*ModelsInput, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ModelsInput
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationInputsAPIService.V2OrganizationIdInputsInputIdPut")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v2/{organization_id}/inputs/{input_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"input_id"+"}", url.PathEscape(parameterValueToString(r.inputId, "inputId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.routesV2PutInputRequest == nil {
+		return localVarReturnValue, nil, reportError("routesV2PutInputRequest is required and must be specified")
+	}
+
+	if r.testConnection != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "test_connection", r.testConnection, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.routesV2PutInputRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiV2OrganizationIdInputsPostRequest struct {
 	ctx context.Context
 	ApiService *OrganizationInputsAPIService
