@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-05-27T17:07:28.585532412Z[Etc/UTC]
+  - Build date: 2025-05-27T17:36:15.043219526Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -394,6 +394,10 @@ Class | Method | HTTP request | Description
  - [OpensearchSettingsConfig](docs/OpensearchSettingsConfig.md)
  - [OperationInformation](docs/OperationInformation.md)
  - [OutputsConnectorMeta](docs/OutputsConnectorMeta.md)
+ - [PagerdutyAlertsConfig](docs/PagerdutyAlertsConfig.md)
+ - [PagerdutySecretsConfig](docs/PagerdutySecretsConfig.md)
+ - [PagerdutySettingsConfig](docs/PagerdutySettingsConfig.md)
+ - [PagerdutySummaryConfig](docs/PagerdutySummaryConfig.md)
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
  - [PostgresqlSecretsConfig](docs/PostgresqlSecretsConfig.md)
  - [PostgresqlSettingsConfig](docs/PostgresqlSettingsConfig.md)

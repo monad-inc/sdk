@@ -16,6 +16,7 @@ import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConf
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { NextGenSiemSettingsConfig } from '../models/NextGenSiemSettingsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
+import { PagerdutySettingsConfig } from '../models/PagerdutySettingsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
@@ -30,7 +31,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSettings = BigquerySettingsConfig | CriblHttpSettingsConfig | ElasticsearchSettingsConfig | HttpSettingsConfig | NextGenSiemSettingsConfig | OpensearchSettingsConfig | PostgresqlSettingsConfig | S3SettingsConfig | SecurityLakeSettingsConfig | SentinelSettingsConfig | SnowflakeOutputSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | { [key: string]: any; };
+export type SecretProcessesorOutputConfigSettings = BigquerySettingsConfig | CriblHttpSettingsConfig | ElasticsearchSettingsConfig | HttpSettingsConfig | NextGenSiemSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PostgresqlSettingsConfig | S3SettingsConfig | SecurityLakeSettingsConfig | SentinelSettingsConfig | SnowflakeOutputSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorOutputConfigSettingsClass
@@ -41,6 +42,7 @@ export class SecretProcessesorOutputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * OpenSearch Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-27T17:07:28.585532412Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-27T17:36:15.043219526Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class OpensearchSecretsConfig {
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)

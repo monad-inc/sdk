@@ -29,6 +29,9 @@ Name | Type | Description | Notes
 **AuthMode** | Pointer to **string** | The authentication mode (basic, aws_role) | [optional] 
 **Region** | Pointer to **string** | The AWS region where the S3 bucket is located | [optional] 
 **RoleArn** | Pointer to **string** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
+**AlertsConfig** | Pointer to [**PagerdutyAlertsConfig**](PagerdutyAlertsConfig.md) |  | [optional] 
+**DefaultEventType** | Pointer to **string** | EventType determines whether events are sent as &#39;change&#39; or &#39;alert&#39; events. We recommend reading the docs for this output before making this choice. | [optional] 
+**SummaryConfig** | Pointer to [**PagerdutySummaryConfig**](PagerdutySummaryConfig.md) |  | [optional] 
 **ColumnNames** | Pointer to **[]string** | The column names to write data to, must match the root fields of the data If not provided all root fields will be used | [optional] 
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Host** | Pointer to **string** | The host of the PostgreSQL database | [optional] 
@@ -698,6 +701,81 @@ SetRoleArn sets RoleArn field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasRoleArn() bool`
 
 HasRoleArn returns a boolean if a field has been set.
+
+### GetAlertsConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) GetAlertsConfig() PagerdutyAlertsConfig`
+
+GetAlertsConfig returns the AlertsConfig field if non-nil, zero value otherwise.
+
+### GetAlertsConfigOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetAlertsConfigOk() (*PagerdutyAlertsConfig, bool)`
+
+GetAlertsConfigOk returns a tuple with the AlertsConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlertsConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) SetAlertsConfig(v PagerdutyAlertsConfig)`
+
+SetAlertsConfig sets AlertsConfig field to given value.
+
+### HasAlertsConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) HasAlertsConfig() bool`
+
+HasAlertsConfig returns a boolean if a field has been set.
+
+### GetDefaultEventType
+
+`func (o *SecretProcessesorOutputConfigSettings) GetDefaultEventType() string`
+
+GetDefaultEventType returns the DefaultEventType field if non-nil, zero value otherwise.
+
+### GetDefaultEventTypeOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetDefaultEventTypeOk() (*string, bool)`
+
+GetDefaultEventTypeOk returns a tuple with the DefaultEventType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultEventType
+
+`func (o *SecretProcessesorOutputConfigSettings) SetDefaultEventType(v string)`
+
+SetDefaultEventType sets DefaultEventType field to given value.
+
+### HasDefaultEventType
+
+`func (o *SecretProcessesorOutputConfigSettings) HasDefaultEventType() bool`
+
+HasDefaultEventType returns a boolean if a field has been set.
+
+### GetSummaryConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSummaryConfig() PagerdutySummaryConfig`
+
+GetSummaryConfig returns the SummaryConfig field if non-nil, zero value otherwise.
+
+### GetSummaryConfigOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSummaryConfigOk() (*PagerdutySummaryConfig, bool)`
+
+GetSummaryConfigOk returns a tuple with the SummaryConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSummaryConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) SetSummaryConfig(v PagerdutySummaryConfig)`
+
+SetSummaryConfig sets SummaryConfig field to given value.
+
+### HasSummaryConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) HasSummaryConfig() bool`
+
+HasSummaryConfig returns a boolean if a field has been set.
 
 ### GetColumnNames
 

@@ -158,6 +158,10 @@ export * from '../models/OpensearchSecretsConfig';
 export * from '../models/OpensearchSettingsConfig';
 export * from '../models/OperationInformation';
 export * from '../models/OutputsConnectorMeta';
+export * from '../models/PagerdutyAlertsConfig';
+export * from '../models/PagerdutySecretsConfig';
+export * from '../models/PagerdutySettingsConfig';
+export * from '../models/PagerdutySummaryConfig';
 export * from '../models/ParquetParquetFormatter';
 export * from '../models/PostgresqlSecretsConfig';
 export * from '../models/PostgresqlSettingsConfig';
@@ -445,6 +449,10 @@ import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
+import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
+import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
+import { PagerdutySettingsConfig } from '../models/PagerdutySettingsConfig';
+import { PagerdutySummaryConfig } from '../models/PagerdutySummaryConfig';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
@@ -757,6 +765,10 @@ let typeMap: {[index: string]: any} = {
     "OpensearchSettingsConfig": OpensearchSettingsConfig,
     "OperationInformation": OperationInformation,
     "OutputsConnectorMeta": OutputsConnectorMeta,
+    "PagerdutyAlertsConfig": PagerdutyAlertsConfig,
+    "PagerdutySecretsConfig": PagerdutySecretsConfig,
+    "PagerdutySettingsConfig": PagerdutySettingsConfig,
+    "PagerdutySummaryConfig": PagerdutySummaryConfig,
     "ParquetParquetFormatter": ParquetParquetFormatter,
     "PostgresqlSecretsConfig": PostgresqlSecretsConfig,
     "PostgresqlSettingsConfig": PostgresqlSettingsConfig,

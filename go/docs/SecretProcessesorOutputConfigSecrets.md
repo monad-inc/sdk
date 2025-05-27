@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AuthHeaders** | Pointer to [**map[string]ModelsSecret**](ModelsSecret.md) | Authentication headers | [optional] 
+**RoutingKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ConnectionString** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -161,6 +162,31 @@ SetAuthHeaders sets AuthHeaders field to given value.
 `func (o *SecretProcessesorOutputConfigSecrets) HasAuthHeaders() bool`
 
 HasAuthHeaders returns a boolean if a field has been set.
+
+### GetRoutingKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetRoutingKey() ModelsSecret`
+
+GetRoutingKey returns the RoutingKey field if non-nil, zero value otherwise.
+
+### GetRoutingKeyOk
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetRoutingKeyOk() (*ModelsSecret, bool)`
+
+GetRoutingKeyOk returns a tuple with the RoutingKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoutingKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) SetRoutingKey(v ModelsSecret)`
+
+SetRoutingKey sets RoutingKey field to given value.
+
+### HasRoutingKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) HasRoutingKey() bool`
+
+HasRoutingKey returns a boolean if a field has been set.
 
 ### GetConnectionString
 

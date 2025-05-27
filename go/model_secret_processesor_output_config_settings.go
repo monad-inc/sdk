@@ -25,6 +25,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	HttpSettingsConfig *HttpSettingsConfig
 	NextGenSiemSettingsConfig *NextGenSiemSettingsConfig
 	OpensearchSettingsConfig *OpensearchSettingsConfig
+	PagerdutySettingsConfig *PagerdutySettingsConfig
 	PostgresqlSettingsConfig *PostgresqlSettingsConfig
 	S3SettingsConfig *S3SettingsConfig
 	SecurityLakeSettingsConfig *SecurityLakeSettingsConfig
@@ -74,6 +75,13 @@ func NextGenSiemSettingsConfigAsSecretProcessesorOutputConfigSettings(v *NextGen
 func OpensearchSettingsConfigAsSecretProcessesorOutputConfigSettings(v *OpensearchSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		OpensearchSettingsConfig: v,
+	}
+}
+
+// PagerdutySettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns PagerdutySettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func PagerdutySettingsConfigAsSecretProcessesorOutputConfigSettings(v *PagerdutySettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		PagerdutySettingsConfig: v,
 	}
 }
 
@@ -240,6 +248,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.OpensearchSettingsConfig = nil
 	}
 
+	// try to unmarshal data into PagerdutySettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.PagerdutySettingsConfig)
+	if err == nil {
+		jsonPagerdutySettingsConfig, _ := json.Marshal(dst.PagerdutySettingsConfig)
+		if string(jsonPagerdutySettingsConfig) == "{}" { // empty struct
+			dst.PagerdutySettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PagerdutySettingsConfig); err != nil {
+				dst.PagerdutySettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PagerdutySettingsConfig = nil
+	}
+
 	// try to unmarshal data into PostgresqlSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.PostgresqlSettingsConfig)
 	if err == nil {
@@ -384,6 +409,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.HttpSettingsConfig = nil
 		dst.NextGenSiemSettingsConfig = nil
 		dst.OpensearchSettingsConfig = nil
+		dst.PagerdutySettingsConfig = nil
 		dst.PostgresqlSettingsConfig = nil
 		dst.S3SettingsConfig = nil
 		dst.SecurityLakeSettingsConfig = nil
@@ -425,6 +451,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.OpensearchSettingsConfig != nil {
 		return json.Marshal(&src.OpensearchSettingsConfig)
+	}
+
+	if src.PagerdutySettingsConfig != nil {
+		return json.Marshal(&src.PagerdutySettingsConfig)
 	}
 
 	if src.PostgresqlSettingsConfig != nil {
@@ -491,6 +521,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.OpensearchSettingsConfig
 	}
 
+	if obj.PagerdutySettingsConfig != nil {
+		return obj.PagerdutySettingsConfig
+	}
+
 	if obj.PostgresqlSettingsConfig != nil {
 		return obj.PostgresqlSettingsConfig
 	}
@@ -551,6 +585,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.OpensearchSettingsConfig != nil {
 		return *obj.OpensearchSettingsConfig
+	}
+
+	if obj.PagerdutySettingsConfig != nil {
+		return *obj.PagerdutySettingsConfig
 	}
 
 	if obj.PostgresqlSettingsConfig != nil {
