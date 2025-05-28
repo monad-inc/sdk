@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Details about the source AWS account and region for Security Lake
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-27T21:04:11.137712083Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-28T15:34:49.564266397Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SecurityLakeSourceAccountDetails {
   public static final String SERIALIZED_NAME_SOURCE_ACCOUNT_ID = "source_account_id";
   @SerializedName(SERIALIZED_NAME_SOURCE_ACCOUNT_ID)
