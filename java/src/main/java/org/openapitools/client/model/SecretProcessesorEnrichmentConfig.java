@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.SecretProcessesorEnrichmentConfigSecrets;
+import org.openapitools.client.model.SecretProcessesorEnrichmentConfigSettings;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * SecretProcessesorEnrichmentConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:05:47.491549793Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-30T01:24:23.843275344Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SecretProcessesorEnrichmentConfig {
   public static final String SERIALIZED_NAME_SECRETS = "secrets";
   @SerializedName(SERIALIZED_NAME_SECRETS)
@@ -59,7 +60,7 @@ public class SecretProcessesorEnrichmentConfig {
   public static final String SERIALIZED_NAME_SETTINGS = "settings";
   @SerializedName(SERIALIZED_NAME_SETTINGS)
   @javax.annotation.Nullable
-  private SecretProcessesorEnrichmentConfigSecrets settings;
+  private SecretProcessesorEnrichmentConfigSettings settings;
 
   public SecretProcessesorEnrichmentConfig() {
   }
@@ -83,7 +84,7 @@ public class SecretProcessesorEnrichmentConfig {
   }
 
 
-  public SecretProcessesorEnrichmentConfig settings(@javax.annotation.Nullable SecretProcessesorEnrichmentConfigSecrets settings) {
+  public SecretProcessesorEnrichmentConfig settings(@javax.annotation.Nullable SecretProcessesorEnrichmentConfigSettings settings) {
     this.settings = settings;
     return this;
   }
@@ -93,11 +94,11 @@ public class SecretProcessesorEnrichmentConfig {
    * @return settings
    */
   @javax.annotation.Nullable
-  public SecretProcessesorEnrichmentConfigSecrets getSettings() {
+  public SecretProcessesorEnrichmentConfigSettings getSettings() {
     return settings;
   }
 
-  public void setSettings(@javax.annotation.Nullable SecretProcessesorEnrichmentConfigSecrets settings) {
+  public void setSettings(@javax.annotation.Nullable SecretProcessesorEnrichmentConfigSettings settings) {
     this.settings = settings;
   }
 
@@ -183,7 +184,7 @@ public class SecretProcessesorEnrichmentConfig {
       }
       // validate the optional field `settings`
       if (jsonObj.get("settings") != null && !jsonObj.get("settings").isJsonNull()) {
-        SecretProcessesorEnrichmentConfigSecrets.validateJsonElement(jsonObj.get("settings"));
+        SecretProcessesorEnrichmentConfigSettings.validateJsonElement(jsonObj.get("settings"));
       }
   }
 

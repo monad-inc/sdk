@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.secret_processesor_enrichment_config_secrets import SecretProcessesorEnrichmentConfigSecrets
+from monad.models.secret_processesor_enrichment_config_settings import SecretProcessesorEnrichmentConfigSettings
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +30,7 @@ class SecretProcessesorEnrichmentConfig(BaseModel):
     SecretProcessesorEnrichmentConfig
     """ # noqa: E501
     secrets: Optional[SecretProcessesorEnrichmentConfigSecrets] = None
-    settings: Optional[SecretProcessesorEnrichmentConfigSecrets] = None
+    settings: Optional[SecretProcessesorEnrichmentConfigSettings] = None
     __properties: ClassVar[List[str]] = ["secrets", "settings"]
 
     model_config = ConfigDict(
@@ -90,7 +91,7 @@ class SecretProcessesorEnrichmentConfig(BaseModel):
 
         _obj = cls.model_validate({
             "secrets": SecretProcessesorEnrichmentConfigSecrets.from_dict(obj["secrets"]) if obj.get("secrets") is not None else None,
-            "settings": SecretProcessesorEnrichmentConfigSecrets.from_dict(obj["settings"]) if obj.get("settings") is not None else None
+            "settings": SecretProcessesorEnrichmentConfigSettings.from_dict(obj["settings"]) if obj.get("settings") is not None else None
         })
         return _obj
 

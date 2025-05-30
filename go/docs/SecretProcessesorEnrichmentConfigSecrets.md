@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -23,6 +24,31 @@ will change when the set of required properties is changed
 NewSecretProcessesorEnrichmentConfigSecretsWithDefaults instantiates a new SecretProcessesorEnrichmentConfigSecrets object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetApiKey
+
+`func (o *SecretProcessesorEnrichmentConfigSecrets) GetApiKey() ModelsSecret`
+
+GetApiKey returns the ApiKey field if non-nil, zero value otherwise.
+
+### GetApiKeyOk
+
+`func (o *SecretProcessesorEnrichmentConfigSecrets) GetApiKeyOk() (*ModelsSecret, bool)`
+
+GetApiKeyOk returns a tuple with the ApiKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiKey
+
+`func (o *SecretProcessesorEnrichmentConfigSecrets) SetApiKey(v ModelsSecret)`
+
+SetApiKey sets ApiKey field to given value.
+
+### HasApiKey
+
+`func (o *SecretProcessesorEnrichmentConfigSecrets) HasApiKey() bool`
+
+HasApiKey returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -7,10 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**destinationKey** | **String** | DestinationKey the path where the result will be stored in the record. Use &#39;.&#39; for the root object, &#39;field.subfield&#39; for nested properties, &#39;array[0]&#39; for array elements, or combined paths like &#39;users[0].name&#39;. |  [optional] |
-|**errorOnMissingKey** | **Boolean** | ErrorOnMissingKey if true, will throw an error if the key is not found in the KV lookup output |  [optional] |
-|**joinKey** | **String** | JoinKey is the key in the record whose value will be used to join with the KV lookup output |  [optional] |
-|**kvLookupOutputId** | **String** | KVLookupOutputID is the ID of the KV lookup output to join with |  [optional] |
+|**destinationPath** | **String** | DestinationPath is the path where the GreyNoise data will be stored |  [optional] |
+|**errorOnRateLimit** | **Boolean** | ErrorOnRateLimit determines if rate limiting should cause an error (true) or return custom response (false) |  [optional] |
+|**ipFieldPath** | **String** | IPFieldPath is the path to the IP address field in the record |  [optional] |
+|**noMatchResponse** | **String** | NoMatchResponse is the value to add when no match is found |  [optional] |
+|**rateLimitResponse** | **String** | RateLimitResponse is the value to add when rate limited |  [optional] |
 
 
 

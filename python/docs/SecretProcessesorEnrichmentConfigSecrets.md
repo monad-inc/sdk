@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-05-29T16:05:47.491549793Z[Etc/UTC]
+  - Build date: 2025-05-30T01:24:23.843275344Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -272,6 +272,8 @@ Class | Method | HTTP request | Description
  - [CloudResourceInventorySecretsConfig](docs/CloudResourceInventorySecretsConfig.md)
  - [CloudResourceInventorySettingsConfig](docs/CloudResourceInventorySettingsConfig.md)
  - [CloudtrailSettingsConfig](docs/CloudtrailSettingsConfig.md)
+ - [CommunityEditionSecretsConfig](docs/CommunityEditionSecretsConfig.md)
+ - [CommunityEditionSettingsConfig](docs/CommunityEditionSettingsConfig.md)
  - [CommunityTransformsInternalTransformConfig](docs/CommunityTransformsInternalTransformConfig.md)
  - [CommunityTransformsInternalTransformMetadata](docs/CommunityTransformsInternalTransformMetadata.md)
  - [CommunityTransformsInternalTransformsIndex](docs/CommunityTransformsInternalTransformsIndex.md)
@@ -474,6 +476,7 @@ Class | Method | HTTP request | Description
  - [S3SettingsConfig](docs/S3SettingsConfig.md)
  - [SecretProcessesorEnrichmentConfig](docs/SecretProcessesorEnrichmentConfig.md)
  - [SecretProcessesorEnrichmentConfigSecrets](docs/SecretProcessesorEnrichmentConfigSecrets.md)
+ - [SecretProcessesorEnrichmentConfigSettings](docs/SecretProcessesorEnrichmentConfigSettings.md)
  - [SecretProcessesorInputConfig](docs/SecretProcessesorInputConfig.md)
  - [SecretProcessesorInputConfigSecrets](docs/SecretProcessesorInputConfigSecrets.md)
  - [SecretProcessesorInputConfigSettings](docs/SecretProcessesorInputConfigSettings.md)

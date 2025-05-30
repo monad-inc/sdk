@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
+import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettingsConfig';
 import { HttpFile } from '../http/http';
 
 /**
@@ -18,7 +18,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorEnrichmentConfigSettings = KvLookupSettingsConfig | { [key: string]: any; };
+export type SecretProcessesorEnrichmentConfigSettings = CommunityEditionSettingsConfig | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorEnrichmentConfigSettingsClass

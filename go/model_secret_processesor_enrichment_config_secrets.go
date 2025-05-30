@@ -19,7 +19,15 @@ import (
 
 // SecretProcessesorEnrichmentConfigSecrets - struct for SecretProcessesorEnrichmentConfigSecrets
 type SecretProcessesorEnrichmentConfigSecrets struct {
+	CommunityEditionSecretsConfig *CommunityEditionSecretsConfig
 	MapmapOfStringAny *map[string]interface{}
+}
+
+// CommunityEditionSecretsConfigAsSecretProcessesorEnrichmentConfigSecrets is a convenience function that returns CommunityEditionSecretsConfig wrapped in SecretProcessesorEnrichmentConfigSecrets
+func CommunityEditionSecretsConfigAsSecretProcessesorEnrichmentConfigSecrets(v *CommunityEditionSecretsConfig) SecretProcessesorEnrichmentConfigSecrets {
+	return SecretProcessesorEnrichmentConfigSecrets{
+		CommunityEditionSecretsConfig: v,
+	}
 }
 
 // map[string]interface{}AsSecretProcessesorEnrichmentConfigSecrets is a convenience function that returns map[string]interface{} wrapped in SecretProcessesorEnrichmentConfigSecrets
@@ -34,6 +42,23 @@ func MapmapOfStringAnyAsSecretProcessesorEnrichmentConfigSecrets(v *map[string]i
 func (dst *SecretProcessesorEnrichmentConfigSecrets) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into CommunityEditionSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CommunityEditionSecretsConfig)
+	if err == nil {
+		jsonCommunityEditionSecretsConfig, _ := json.Marshal(dst.CommunityEditionSecretsConfig)
+		if string(jsonCommunityEditionSecretsConfig) == "{}" { // empty struct
+			dst.CommunityEditionSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CommunityEditionSecretsConfig); err != nil {
+				dst.CommunityEditionSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CommunityEditionSecretsConfig = nil
+	}
+
 	// try to unmarshal data into MapmapOfStringAny
 	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
 	if err == nil {
@@ -53,6 +78,7 @@ func (dst *SecretProcessesorEnrichmentConfigSecrets) UnmarshalJSON(data []byte) 
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.CommunityEditionSecretsConfig = nil
 		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(SecretProcessesorEnrichmentConfigSecrets)")
@@ -65,6 +91,10 @@ func (dst *SecretProcessesorEnrichmentConfigSecrets) UnmarshalJSON(data []byte) 
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src SecretProcessesorEnrichmentConfigSecrets) MarshalJSON() ([]byte, error) {
+	if src.CommunityEditionSecretsConfig != nil {
+		return json.Marshal(&src.CommunityEditionSecretsConfig)
+	}
+
 	if src.MapmapOfStringAny != nil {
 		return json.Marshal(&src.MapmapOfStringAny)
 	}
@@ -77,6 +107,10 @@ func (obj *SecretProcessesorEnrichmentConfigSecrets) GetActualInstance() (interf
 	if obj == nil {
 		return nil
 	}
+	if obj.CommunityEditionSecretsConfig != nil {
+		return obj.CommunityEditionSecretsConfig
+	}
+
 	if obj.MapmapOfStringAny != nil {
 		return obj.MapmapOfStringAny
 	}
@@ -87,6 +121,10 @@ func (obj *SecretProcessesorEnrichmentConfigSecrets) GetActualInstance() (interf
 
 // Get the actual instance value
 func (obj SecretProcessesorEnrichmentConfigSecrets) GetActualInstanceValue() (interface{}) {
+	if obj.CommunityEditionSecretsConfig != nil {
+		return *obj.CommunityEditionSecretsConfig
+	}
+
 	if obj.MapmapOfStringAny != nil {
 		return *obj.MapmapOfStringAny
 	}

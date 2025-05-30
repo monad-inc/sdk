@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { CommunityEditionSecretsConfig } from '../models/CommunityEditionSecretsConfig';
 import { HttpFile } from '../http/http';
 
 /**
@@ -17,7 +18,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorEnrichmentConfigSecrets = { [key: string]: any; };
+export type SecretProcessesorEnrichmentConfigSecrets = CommunityEditionSecretsConfig | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorEnrichmentConfigSecretsClass
@@ -28,3 +29,4 @@ export class SecretProcessesorEnrichmentConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+

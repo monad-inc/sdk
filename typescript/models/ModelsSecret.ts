@@ -13,7 +13,7 @@
 import { HttpFile } from '../http/http';
 
 /**
-* The Access ID for authenticating with Sumo Logic.
+* APIKey for GreyNoise Community API
 */
 export class ModelsSecret {
     /**

@@ -19,14 +19,14 @@ import (
 
 // SecretProcessesorEnrichmentConfigSettings - struct for SecretProcessesorEnrichmentConfigSettings
 type SecretProcessesorEnrichmentConfigSettings struct {
-	KvLookupSettingsConfig *KvLookupSettingsConfig
+	CommunityEditionSettingsConfig *CommunityEditionSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
 }
 
-// KvLookupSettingsConfigAsSecretProcessesorEnrichmentConfigSettings is a convenience function that returns KvLookupSettingsConfig wrapped in SecretProcessesorEnrichmentConfigSettings
-func KvLookupSettingsConfigAsSecretProcessesorEnrichmentConfigSettings(v *KvLookupSettingsConfig) SecretProcessesorEnrichmentConfigSettings {
+// CommunityEditionSettingsConfigAsSecretProcessesorEnrichmentConfigSettings is a convenience function that returns CommunityEditionSettingsConfig wrapped in SecretProcessesorEnrichmentConfigSettings
+func CommunityEditionSettingsConfigAsSecretProcessesorEnrichmentConfigSettings(v *CommunityEditionSettingsConfig) SecretProcessesorEnrichmentConfigSettings {
 	return SecretProcessesorEnrichmentConfigSettings{
-		KvLookupSettingsConfig: v,
+		CommunityEditionSettingsConfig: v,
 	}
 }
 
@@ -42,21 +42,21 @@ func MapmapOfStringAnyAsSecretProcessesorEnrichmentConfigSettings(v *map[string]
 func (dst *SecretProcessesorEnrichmentConfigSettings) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into KvLookupSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.KvLookupSettingsConfig)
+	// try to unmarshal data into CommunityEditionSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CommunityEditionSettingsConfig)
 	if err == nil {
-		jsonKvLookupSettingsConfig, _ := json.Marshal(dst.KvLookupSettingsConfig)
-		if string(jsonKvLookupSettingsConfig) == "{}" { // empty struct
-			dst.KvLookupSettingsConfig = nil
+		jsonCommunityEditionSettingsConfig, _ := json.Marshal(dst.CommunityEditionSettingsConfig)
+		if string(jsonCommunityEditionSettingsConfig) == "{}" { // empty struct
+			dst.CommunityEditionSettingsConfig = nil
 		} else {
-			if err = validator.Validate(dst.KvLookupSettingsConfig); err != nil {
-				dst.KvLookupSettingsConfig = nil
+			if err = validator.Validate(dst.CommunityEditionSettingsConfig); err != nil {
+				dst.CommunityEditionSettingsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.KvLookupSettingsConfig = nil
+		dst.CommunityEditionSettingsConfig = nil
 	}
 
 	// try to unmarshal data into MapmapOfStringAny
@@ -78,7 +78,7 @@ func (dst *SecretProcessesorEnrichmentConfigSettings) UnmarshalJSON(data []byte)
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.KvLookupSettingsConfig = nil
+		dst.CommunityEditionSettingsConfig = nil
 		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(SecretProcessesorEnrichmentConfigSettings)")
@@ -91,8 +91,8 @@ func (dst *SecretProcessesorEnrichmentConfigSettings) UnmarshalJSON(data []byte)
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src SecretProcessesorEnrichmentConfigSettings) MarshalJSON() ([]byte, error) {
-	if src.KvLookupSettingsConfig != nil {
-		return json.Marshal(&src.KvLookupSettingsConfig)
+	if src.CommunityEditionSettingsConfig != nil {
+		return json.Marshal(&src.CommunityEditionSettingsConfig)
 	}
 
 	if src.MapmapOfStringAny != nil {
@@ -107,8 +107,8 @@ func (obj *SecretProcessesorEnrichmentConfigSettings) GetActualInstance() (inter
 	if obj == nil {
 		return nil
 	}
-	if obj.KvLookupSettingsConfig != nil {
-		return obj.KvLookupSettingsConfig
+	if obj.CommunityEditionSettingsConfig != nil {
+		return obj.CommunityEditionSettingsConfig
 	}
 
 	if obj.MapmapOfStringAny != nil {
@@ -121,8 +121,8 @@ func (obj *SecretProcessesorEnrichmentConfigSettings) GetActualInstance() (inter
 
 // Get the actual instance value
 func (obj SecretProcessesorEnrichmentConfigSettings) GetActualInstanceValue() (interface{}) {
-	if obj.KvLookupSettingsConfig != nil {
-		return *obj.KvLookupSettingsConfig
+	if obj.CommunityEditionSettingsConfig != nil {
+		return *obj.CommunityEditionSettingsConfig
 	}
 
 	if obj.MapmapOfStringAny != nil {

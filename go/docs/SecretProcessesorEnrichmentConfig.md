@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Secrets** | Pointer to [**SecretProcessesorEnrichmentConfigSecrets**](SecretProcessesorEnrichmentConfigSecrets.md) |  | [optional] 
-**Settings** | Pointer to [**SecretProcessesorEnrichmentConfigSecrets**](SecretProcessesorEnrichmentConfigSecrets.md) |  | [optional] 
+**Settings** | Pointer to [**SecretProcessesorEnrichmentConfigSettings**](SecretProcessesorEnrichmentConfigSettings.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasSecrets returns a boolean if a field has been set.
 
 ### GetSettings
 
-`func (o *SecretProcessesorEnrichmentConfig) GetSettings() SecretProcessesorEnrichmentConfigSecrets`
+`func (o *SecretProcessesorEnrichmentConfig) GetSettings() SecretProcessesorEnrichmentConfigSettings`
 
 GetSettings returns the Settings field if non-nil, zero value otherwise.
 
 ### GetSettingsOk
 
-`func (o *SecretProcessesorEnrichmentConfig) GetSettingsOk() (*SecretProcessesorEnrichmentConfigSecrets, bool)`
+`func (o *SecretProcessesorEnrichmentConfig) GetSettingsOk() (*SecretProcessesorEnrichmentConfigSettings, bool)`
 
 GetSettingsOk returns a tuple with the Settings field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSettings
 
-`func (o *SecretProcessesorEnrichmentConfig) SetSettings(v SecretProcessesorEnrichmentConfigSecrets)`
+`func (o *SecretProcessesorEnrichmentConfig) SetSettings(v SecretProcessesorEnrichmentConfigSettings)`
 
 SetSettings sets Settings field to given value.
 

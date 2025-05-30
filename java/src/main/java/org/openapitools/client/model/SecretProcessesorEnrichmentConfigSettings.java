@@ -22,7 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
-import org.openapitools.client.model.KvLookupSettingsConfig;
+import org.openapitools.client.model.CommunityEditionSettingsConfig;
 
 
 
@@ -59,7 +59,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T16:38:57.184638103Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-30T01:24:23.843275344Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorEnrichmentConfigSettings.class.getName());
 
@@ -71,7 +71,7 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
                 return null; // this class only serializes 'SecretProcessesorEnrichmentConfigSettings' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<KvLookupSettingsConfig> adapterKvLookupSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(KvLookupSettingsConfig.class));
+            final TypeAdapter<CommunityEditionSettingsConfig> adapterCommunityEditionSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(CommunityEditionSettingsConfig.class));
             final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
             final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
 
@@ -83,9 +83,9 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
                         return;
                     }
 
-                    // check if the actual instance is of the type `KvLookupSettingsConfig`
-                    if (value.getActualInstance() instanceof KvLookupSettingsConfig) {
-                        JsonElement element = adapterKvLookupSettingsConfig.toJsonTree((KvLookupSettingsConfig)value.getActualInstance());
+                    // check if the actual instance is of the type `CommunityEditionSettingsConfig`
+                    if (value.getActualInstance() instanceof CommunityEditionSettingsConfig) {
+                        JsonElement element = adapterCommunityEditionSettingsConfig.toJsonTree((CommunityEditionSettingsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -95,7 +95,7 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
                         elementAdapter.write(out, object);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: KvLookupSettingsConfig, Map<String, Object>");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: CommunityEditionSettingsConfig, Map<String, Object>");
                 }
 
                 @Override
@@ -107,17 +107,17 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
                     ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
-                    // deserialize KvLookupSettingsConfig
+                    // deserialize CommunityEditionSettingsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        KvLookupSettingsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterKvLookupSettingsConfig;
+                        CommunityEditionSettingsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCommunityEditionSettingsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'KvLookupSettingsConfig'");
+                        log.log(Level.FINER, "Input data matches schema 'CommunityEditionSettingsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for KvLookupSettingsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'KvLookupSettingsConfig'", e);
+                        errorMessages.add(String.format("Deserialization for CommunityEditionSettingsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'CommunityEditionSettingsConfig'", e);
                     }
                     // deserialize Map<String, Object>
                     try {
@@ -160,7 +160,7 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
     }
 
     static {
-        schemas.put("KvLookupSettingsConfig", KvLookupSettingsConfig.class);
+        schemas.put("CommunityEditionSettingsConfig", CommunityEditionSettingsConfig.class);
         schemas.put("Map<String, Object>", Map.class);
     }
 
@@ -172,13 +172,13 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * KvLookupSettingsConfig, Map<String, Object>
+     * CommunityEditionSettingsConfig, Map<String, Object>
      *
      * It could be an instance of the 'oneOf' schemas.
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (instance instanceof KvLookupSettingsConfig) {
+        if (instance instanceof CommunityEditionSettingsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -188,14 +188,14 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be KvLookupSettingsConfig, Map<String, Object>");
+        throw new RuntimeException("Invalid instance type. Must be CommunityEditionSettingsConfig, Map<String, Object>");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * KvLookupSettingsConfig, Map<String, Object>
+     * CommunityEditionSettingsConfig, Map<String, Object>
      *
-     * @return The actual instance (KvLookupSettingsConfig, Map<String, Object>)
+     * @return The actual instance (CommunityEditionSettingsConfig, Map<String, Object>)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -204,14 +204,14 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
     }
 
     /**
-     * Get the actual instance of `KvLookupSettingsConfig`. If the actual instance is not `KvLookupSettingsConfig`,
+     * Get the actual instance of `CommunityEditionSettingsConfig`. If the actual instance is not `CommunityEditionSettingsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `KvLookupSettingsConfig`
-     * @throws ClassCastException if the instance is not `KvLookupSettingsConfig`
+     * @return The actual instance of `CommunityEditionSettingsConfig`
+     * @throws ClassCastException if the instance is not `CommunityEditionSettingsConfig`
      */
-    public KvLookupSettingsConfig getKvLookupSettingsConfig() throws ClassCastException {
-        return (KvLookupSettingsConfig)super.getActualInstance();
+    public CommunityEditionSettingsConfig getCommunityEditionSettingsConfig() throws ClassCastException {
+        return (CommunityEditionSettingsConfig)super.getActualInstance();
     }
 
     /**
@@ -235,12 +235,12 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
         // validate oneOf schemas one by one
         int validCount = 0;
         ArrayList<String> errorMessages = new ArrayList<>();
-        // validate the json string with KvLookupSettingsConfig
+        // validate the json string with CommunityEditionSettingsConfig
         try {
-            KvLookupSettingsConfig.validateJsonElement(jsonElement);
+            CommunityEditionSettingsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for KvLookupSettingsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format("Deserialization for CommunityEditionSettingsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with Map<String, Object>
@@ -255,7 +255,7 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for SecretProcessesorEnrichmentConfigSettings with oneOf schemas: KvLookupSettingsConfig, Map<String, Object>. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format("The JSON string is invalid for SecretProcessesorEnrichmentConfigSettings with oneOf schemas: CommunityEditionSettingsConfig, Map<String, Object>. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

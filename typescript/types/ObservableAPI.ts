@@ -38,6 +38,8 @@ import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
 import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
+import { CommunityEditionSecretsConfig } from '../models/CommunityEditionSecretsConfig';
+import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettingsConfig';
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
@@ -240,6 +242,7 @@ import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichm
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
 import { SecretProcessesorEnrichmentConfigSecrets } from '../models/SecretProcessesorEnrichmentConfigSecrets';
+import { SecretProcessesorEnrichmentConfigSettings } from '../models/SecretProcessesorEnrichmentConfigSettings';
 import { SecretProcessesorInputConfig } from '../models/SecretProcessesorInputConfig';
 import { SecretProcessesorInputConfigSecrets } from '../models/SecretProcessesorInputConfigSecrets';
 import { SecretProcessesorInputConfigSettings } from '../models/SecretProcessesorInputConfigSettings';

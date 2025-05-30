@@ -11,11 +11,12 @@
  */
 
 import { SecretProcessesorEnrichmentConfigSecrets } from '../models/SecretProcessesorEnrichmentConfigSecrets';
+import { SecretProcessesorEnrichmentConfigSettings } from '../models/SecretProcessesorEnrichmentConfigSettings';
 import { HttpFile } from '../http/http';
 
 export class SecretProcessesorEnrichmentConfig {
     'secrets'?: SecretProcessesorEnrichmentConfigSecrets;
-    'settings'?: SecretProcessesorEnrichmentConfigSecrets;
+    'settings'?: SecretProcessesorEnrichmentConfigSettings;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -31,7 +32,7 @@ export class SecretProcessesorEnrichmentConfig {
         {
             "name": "settings",
             "baseName": "settings",
-            "type": "SecretProcessesorEnrichmentConfigSecrets",
+            "type": "SecretProcessesorEnrichmentConfigSettings",
             "format": ""
         }    ];
 

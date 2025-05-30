@@ -1,6 +1,6 @@
 # ModelsSecret
 
-The Access ID for authenticating with Sumo Logic.
+APIKey for GreyNoise Community API
 
 ## Properties
 

@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DestinationKey** | Pointer to **string** | DestinationKey the path where the result will be stored in the record. Use &#39;.&#39; for the root object, &#39;field.subfield&#39; for nested properties, &#39;array[0]&#39; for array elements, or combined paths like &#39;users[0].name&#39;. | [optional] 
-**ErrorOnMissingKey** | Pointer to **bool** | ErrorOnMissingKey if true, will throw an error if the key is not found in the KV lookup output | [optional] 
-**JoinKey** | Pointer to **string** | JoinKey is the key in the record whose value will be used to join with the KV lookup output | [optional] 
-**KvLookupOutputId** | Pointer to **string** | KVLookupOutputID is the ID of the KV lookup output to join with | [optional] 
+**DestinationPath** | Pointer to **string** | DestinationPath is the path where the GreyNoise data will be stored | [optional] 
+**ErrorOnRateLimit** | Pointer to **bool** | ErrorOnRateLimit determines if rate limiting should cause an error (true) or return custom response (false) | [optional] 
+**IpFieldPath** | Pointer to **string** | IPFieldPath is the path to the IP address field in the record | [optional] 
+**NoMatchResponse** | Pointer to **string** | NoMatchResponse is the value to add when no match is found | [optional] 
+**RateLimitResponse** | Pointer to **string** | RateLimitResponse is the value to add when rate limited | [optional] 
 
 ## Methods
 
@@ -28,105 +29,130 @@ NewSecretProcessesorEnrichmentConfigSettingsWithDefaults instantiates a new Secr
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetDestinationKey
+### GetDestinationPath
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) GetDestinationKey() string`
+`func (o *SecretProcessesorEnrichmentConfigSettings) GetDestinationPath() string`
 
-GetDestinationKey returns the DestinationKey field if non-nil, zero value otherwise.
+GetDestinationPath returns the DestinationPath field if non-nil, zero value otherwise.
 
-### GetDestinationKeyOk
+### GetDestinationPathOk
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) GetDestinationKeyOk() (*string, bool)`
+`func (o *SecretProcessesorEnrichmentConfigSettings) GetDestinationPathOk() (*string, bool)`
 
-GetDestinationKeyOk returns a tuple with the DestinationKey field if it's non-nil, zero value otherwise
+GetDestinationPathOk returns a tuple with the DestinationPath field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDestinationKey
+### SetDestinationPath
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) SetDestinationKey(v string)`
+`func (o *SecretProcessesorEnrichmentConfigSettings) SetDestinationPath(v string)`
 
-SetDestinationKey sets DestinationKey field to given value.
+SetDestinationPath sets DestinationPath field to given value.
 
-### HasDestinationKey
+### HasDestinationPath
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) HasDestinationKey() bool`
+`func (o *SecretProcessesorEnrichmentConfigSettings) HasDestinationPath() bool`
 
-HasDestinationKey returns a boolean if a field has been set.
+HasDestinationPath returns a boolean if a field has been set.
 
-### GetErrorOnMissingKey
+### GetErrorOnRateLimit
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) GetErrorOnMissingKey() bool`
+`func (o *SecretProcessesorEnrichmentConfigSettings) GetErrorOnRateLimit() bool`
 
-GetErrorOnMissingKey returns the ErrorOnMissingKey field if non-nil, zero value otherwise.
+GetErrorOnRateLimit returns the ErrorOnRateLimit field if non-nil, zero value otherwise.
 
-### GetErrorOnMissingKeyOk
+### GetErrorOnRateLimitOk
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) GetErrorOnMissingKeyOk() (*bool, bool)`
+`func (o *SecretProcessesorEnrichmentConfigSettings) GetErrorOnRateLimitOk() (*bool, bool)`
 
-GetErrorOnMissingKeyOk returns a tuple with the ErrorOnMissingKey field if it's non-nil, zero value otherwise
+GetErrorOnRateLimitOk returns a tuple with the ErrorOnRateLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetErrorOnMissingKey
+### SetErrorOnRateLimit
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) SetErrorOnMissingKey(v bool)`
+`func (o *SecretProcessesorEnrichmentConfigSettings) SetErrorOnRateLimit(v bool)`
 
-SetErrorOnMissingKey sets ErrorOnMissingKey field to given value.
+SetErrorOnRateLimit sets ErrorOnRateLimit field to given value.
 
-### HasErrorOnMissingKey
+### HasErrorOnRateLimit
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) HasErrorOnMissingKey() bool`
+`func (o *SecretProcessesorEnrichmentConfigSettings) HasErrorOnRateLimit() bool`
 
-HasErrorOnMissingKey returns a boolean if a field has been set.
+HasErrorOnRateLimit returns a boolean if a field has been set.
 
-### GetJoinKey
+### GetIpFieldPath
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) GetJoinKey() string`
+`func (o *SecretProcessesorEnrichmentConfigSettings) GetIpFieldPath() string`
 
-GetJoinKey returns the JoinKey field if non-nil, zero value otherwise.
+GetIpFieldPath returns the IpFieldPath field if non-nil, zero value otherwise.
 
-### GetJoinKeyOk
+### GetIpFieldPathOk
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) GetJoinKeyOk() (*string, bool)`
+`func (o *SecretProcessesorEnrichmentConfigSettings) GetIpFieldPathOk() (*string, bool)`
 
-GetJoinKeyOk returns a tuple with the JoinKey field if it's non-nil, zero value otherwise
+GetIpFieldPathOk returns a tuple with the IpFieldPath field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetJoinKey
+### SetIpFieldPath
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) SetJoinKey(v string)`
+`func (o *SecretProcessesorEnrichmentConfigSettings) SetIpFieldPath(v string)`
 
-SetJoinKey sets JoinKey field to given value.
+SetIpFieldPath sets IpFieldPath field to given value.
 
-### HasJoinKey
+### HasIpFieldPath
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) HasJoinKey() bool`
+`func (o *SecretProcessesorEnrichmentConfigSettings) HasIpFieldPath() bool`
 
-HasJoinKey returns a boolean if a field has been set.
+HasIpFieldPath returns a boolean if a field has been set.
 
-### GetKvLookupOutputId
+### GetNoMatchResponse
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) GetKvLookupOutputId() string`
+`func (o *SecretProcessesorEnrichmentConfigSettings) GetNoMatchResponse() string`
 
-GetKvLookupOutputId returns the KvLookupOutputId field if non-nil, zero value otherwise.
+GetNoMatchResponse returns the NoMatchResponse field if non-nil, zero value otherwise.
 
-### GetKvLookupOutputIdOk
+### GetNoMatchResponseOk
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) GetKvLookupOutputIdOk() (*string, bool)`
+`func (o *SecretProcessesorEnrichmentConfigSettings) GetNoMatchResponseOk() (*string, bool)`
 
-GetKvLookupOutputIdOk returns a tuple with the KvLookupOutputId field if it's non-nil, zero value otherwise
+GetNoMatchResponseOk returns a tuple with the NoMatchResponse field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKvLookupOutputId
+### SetNoMatchResponse
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) SetKvLookupOutputId(v string)`
+`func (o *SecretProcessesorEnrichmentConfigSettings) SetNoMatchResponse(v string)`
 
-SetKvLookupOutputId sets KvLookupOutputId field to given value.
+SetNoMatchResponse sets NoMatchResponse field to given value.
 
-### HasKvLookupOutputId
+### HasNoMatchResponse
 
-`func (o *SecretProcessesorEnrichmentConfigSettings) HasKvLookupOutputId() bool`
+`func (o *SecretProcessesorEnrichmentConfigSettings) HasNoMatchResponse() bool`
 
-HasKvLookupOutputId returns a boolean if a field has been set.
+HasNoMatchResponse returns a boolean if a field has been set.
+
+### GetRateLimitResponse
+
+`func (o *SecretProcessesorEnrichmentConfigSettings) GetRateLimitResponse() string`
+
+GetRateLimitResponse returns the RateLimitResponse field if non-nil, zero value otherwise.
+
+### GetRateLimitResponseOk
+
+`func (o *SecretProcessesorEnrichmentConfigSettings) GetRateLimitResponseOk() (*string, bool)`
+
+GetRateLimitResponseOk returns a tuple with the RateLimitResponse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimitResponse
+
+`func (o *SecretProcessesorEnrichmentConfigSettings) SetRateLimitResponse(v string)`
+
+SetRateLimitResponse sets RateLimitResponse field to given value.
+
+### HasRateLimitResponse
+
+`func (o *SecretProcessesorEnrichmentConfigSettings) HasRateLimitResponse() bool`
+
+HasRateLimitResponse returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

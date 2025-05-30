@@ -33,6 +33,8 @@ export * from '../models/CloudLogsSettingsConfig';
 export * from '../models/CloudResourceInventorySecretsConfig';
 export * from '../models/CloudResourceInventorySettingsConfig';
 export * from '../models/CloudtrailSettingsConfig';
+export * from '../models/CommunityEditionSecretsConfig';
+export * from '../models/CommunityEditionSettingsConfig';
 export * from '../models/CommunityTransformsInternalTransformConfig';
 export * from '../models/CommunityTransformsInternalTransformMetadata';
 export * from '../models/CommunityTransformsInternalTransformsIndex';
@@ -235,6 +237,7 @@ export * from '../models/RoutesV3UpdateEnrichmentRequest';
 export * from '../models/S3SettingsConfig';
 export * from '../models/SecretProcessesorEnrichmentConfig';
 export * from '../models/SecretProcessesorEnrichmentConfigSecrets';
+export * from '../models/SecretProcessesorEnrichmentConfigSettings';
 export * from '../models/SecretProcessesorInputConfig';
 export * from '../models/SecretProcessesorInputConfigSecrets';
 export * from '../models/SecretProcessesorInputConfigSettings';
@@ -327,6 +330,8 @@ import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
 import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
+import { CommunityEditionSecretsConfig } from '../models/CommunityEditionSecretsConfig';
+import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettingsConfig';
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
@@ -529,6 +534,7 @@ import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichm
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
 import { SecretProcessesorEnrichmentConfigSecretsClass } from '../models/SecretProcessesorEnrichmentConfigSecrets';
+import { SecretProcessesorEnrichmentConfigSettingsClass } from '../models/SecretProcessesorEnrichmentConfigSettings';
 import { SecretProcessesorInputConfig } from '../models/SecretProcessesorInputConfig';
 import { SecretProcessesorInputConfigSecretsClass } from '../models/SecretProcessesorInputConfigSecrets';
 import { SecretProcessesorInputConfigSettingsClass } from '../models/SecretProcessesorInputConfigSettings';
@@ -646,6 +652,8 @@ let typeMap: {[index: string]: any} = {
     "CloudResourceInventorySecretsConfig": CloudResourceInventorySecretsConfig,
     "CloudResourceInventorySettingsConfig": CloudResourceInventorySettingsConfig,
     "CloudtrailSettingsConfig": CloudtrailSettingsConfig,
+    "CommunityEditionSecretsConfig": CommunityEditionSecretsConfig,
+    "CommunityEditionSettingsConfig": CommunityEditionSettingsConfig,
     "CommunityTransformsInternalTransformConfig": CommunityTransformsInternalTransformConfig,
     "CommunityTransformsInternalTransformMetadata": CommunityTransformsInternalTransformMetadata,
     "CommunityTransformsInternalTransformsIndex": CommunityTransformsInternalTransformsIndex,
@@ -848,6 +856,7 @@ let typeMap: {[index: string]: any} = {
     "S3SettingsConfig": S3SettingsConfig,
     "SecretProcessesorEnrichmentConfig": SecretProcessesorEnrichmentConfig,
     "SecretProcessesorEnrichmentConfigSecrets": SecretProcessesorEnrichmentConfigSecretsClass,
+    "SecretProcessesorEnrichmentConfigSettings": SecretProcessesorEnrichmentConfigSettingsClass,
     "SecretProcessesorInputConfig": SecretProcessesorInputConfig,
     "SecretProcessesorInputConfigSecrets": SecretProcessesorInputConfigSecretsClass,
     "SecretProcessesorInputConfigSettings": SecretProcessesorInputConfigSettingsClass,
