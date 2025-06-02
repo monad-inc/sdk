@@ -30,11 +30,11 @@ class AwsS3SettingsConfig(BaseModel):
     bucket: Optional[StrictStr] = Field(default=None, description="Name of the S3 bucket.")
     compression: Optional[StrictStr] = Field(default=None, description="Compression format of the S3 objects.")
     format: Optional[StrictStr] = Field(default=None, description="File format of the S3 objects.")
-    partition_format: Optional[StrictStr] = Field(default=None, description="Role ARN to assume when reading from S3.")
+    partition_format: Optional[StrictStr] = Field(default=None, description="Specifies the partition format of your S3 bucket. Select the option that matches how your data is currently organized in S3. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format ('year=2024/month=01/day=01') commonly used in data lake setups, and simple date format ('2024/01/01') for basic chronological organization.")
     prefix: Optional[StrictStr] = Field(default=None, description="Prefix of the S3 object keys to read.")
-    record_location: Optional[StrictStr] = Field(default=None, description="Specifies the partition format of your S3 bucket. Select the option that matches how your data is currently organized in S3. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format ('year=2024/month=01/day=01') commonly used in data lake setups, and simple date format ('2024/01/01') for basic chronological organization.")
+    record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the JSON object. This can be ignored if the record is not in JSON format.")
     region: Optional[StrictStr] = Field(default=None, description="AWS Region of your bucket.")
-    role_arn: Optional[StrictStr] = Field(default=None, description="Location of the record in the JSON object. This can be ignored if the record is not in JSON format.")
+    role_arn: Optional[StrictStr] = Field(default=None, description="Role ARN to assume when reading from S3.")
     __properties: ClassVar[List[str]] = ["bucket", "compression", "format", "partition_format", "prefix", "record_location", "region", "role_arn"]
 
     model_config = ConfigDict(

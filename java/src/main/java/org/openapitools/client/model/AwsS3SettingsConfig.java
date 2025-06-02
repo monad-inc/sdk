@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS S3 settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-02T13:03:29.743123505Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-02T14:13:05.284307732Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AwsS3SettingsConfig {
   public static final String SERIALIZED_NAME_BUCKET = "bucket";
   @SerializedName(SERIALIZED_NAME_BUCKET)
@@ -156,7 +156,7 @@ public class AwsS3SettingsConfig {
   }
 
   /**
-   * Role ARN to assume when reading from S3.
+   * Specifies the partition format of your S3 bucket. Select the option that matches how your data is currently organized in S3. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization.
    * @return partitionFormat
    */
   @javax.annotation.Nullable
@@ -194,7 +194,7 @@ public class AwsS3SettingsConfig {
   }
 
   /**
-   * Specifies the partition format of your S3 bucket. Select the option that matches how your data is currently organized in S3. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization.
+   * Location of the record in the JSON object. This can be ignored if the record is not in JSON format.
    * @return recordLocation
    */
   @javax.annotation.Nullable
@@ -232,7 +232,7 @@ public class AwsS3SettingsConfig {
   }
 
   /**
-   * Location of the record in the JSON object. This can be ignored if the record is not in JSON format.
+   * Role ARN to assume when reading from S3.
    * @return roleArn
    */
   @javax.annotation.Nullable

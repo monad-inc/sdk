@@ -26,15 +26,15 @@ type AwsS3SettingsConfig struct {
 	Compression *string `json:"compression,omitempty"`
 	// File format of the S3 objects.
 	Format *string `json:"format,omitempty"`
-	// Role ARN to assume when reading from S3.
+	// Specifies the partition format of your S3 bucket. Select the option that matches how your data is currently organized in S3. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format ('year=2024/month=01/day=01') commonly used in data lake setups, and simple date format ('2024/01/01') for basic chronological organization.
 	PartitionFormat *string `json:"partition_format,omitempty"`
 	// Prefix of the S3 object keys to read.
 	Prefix *string `json:"prefix,omitempty"`
-	// Specifies the partition format of your S3 bucket. Select the option that matches how your data is currently organized in S3. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format ('year=2024/month=01/day=01') commonly used in data lake setups, and simple date format ('2024/01/01') for basic chronological organization.
+	// Location of the record in the JSON object. This can be ignored if the record is not in JSON format.
 	RecordLocation *string `json:"record_location,omitempty"`
 	// AWS Region of your bucket.
 	Region *string `json:"region,omitempty"`
-	// Location of the record in the JSON object. This can be ignored if the record is not in JSON format.
+	// Role ARN to assume when reading from S3.
 	RoleArn *string `json:"role_arn,omitempty"`
 }
 

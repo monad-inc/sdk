@@ -29,7 +29,7 @@ export class AwsS3SettingsConfig {
     */
     'format'?: string;
     /**
-    * Role ARN to assume when reading from S3.
+    * Specifies the partition format of your S3 bucket. Select the option that matches how your data is currently organized in S3. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (\'year=2024/month=01/day=01\') commonly used in data lake setups, and simple date format (\'2024/01/01\') for basic chronological organization.
     */
     'partitionFormat'?: string;
     /**
@@ -37,7 +37,7 @@ export class AwsS3SettingsConfig {
     */
     'prefix'?: string;
     /**
-    * Specifies the partition format of your S3 bucket. Select the option that matches how your data is currently organized in S3. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (\'year=2024/month=01/day=01\') commonly used in data lake setups, and simple date format (\'2024/01/01\') for basic chronological organization.
+    * Location of the record in the JSON object. This can be ignored if the record is not in JSON format.
     */
     'recordLocation'?: string;
     /**
@@ -45,7 +45,7 @@ export class AwsS3SettingsConfig {
     */
     'region'?: string;
     /**
-    * Location of the record in the JSON object. This can be ignored if the record is not in JSON format.
+    * Role ARN to assume when reading from S3.
     */
     'roleArn'?: string;
 
