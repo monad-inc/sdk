@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **record_location** | **str** | Specifies the partition format of your S3 bucket. Select the option that matches how your data is currently organized in S3. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. | [optional] 
 **region** | **str** | The region of the S3 bucket | [optional] 
 **role_arn** | **str** | The ARN of the role to assume to access the bucket | [optional] 
+**queue_url** | **str** | The URL of the SQS queue to poll for messages. | [optional] 
 **correlation_id** | **str** | The correlation ID of the log | [optional] 
 **resource_group_name** | **str** | The name of the resource group | [optional] 
 **resource_provider** | **str** | The provider of the resource | [optional] 

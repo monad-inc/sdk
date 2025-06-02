@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **RecordLocation** | Pointer to **string** | Specifies the partition format of your S3 bucket. Select the option that matches how your data is currently organized in S3. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. | [optional] 
 **Region** | Pointer to **string** | The region of the S3 bucket | [optional] 
 **RoleArn** | Pointer to **string** | The ARN of the role to assume to access the bucket | [optional] 
+**QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
 **CorrelationId** | Pointer to **string** | The correlation ID of the log | [optional] 
 **ResourceGroupName** | Pointer to **string** | The name of the resource group | [optional] 
 **ResourceProvider** | Pointer to **string** | The provider of the resource | [optional] 
@@ -771,6 +772,31 @@ SetRoleArn sets RoleArn field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasRoleArn() bool`
 
 HasRoleArn returns a boolean if a field has been set.
+
+### GetQueueUrl
+
+`func (o *SecretProcessesorInputConfigSettings) GetQueueUrl() string`
+
+GetQueueUrl returns the QueueUrl field if non-nil, zero value otherwise.
+
+### GetQueueUrlOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetQueueUrlOk() (*string, bool)`
+
+GetQueueUrlOk returns a tuple with the QueueUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQueueUrl
+
+`func (o *SecretProcessesorInputConfigSettings) SetQueueUrl(v string)`
+
+SetQueueUrl sets QueueUrl field to given value.
+
+### HasQueueUrl
+
+`func (o *SecretProcessesorInputConfigSettings) HasQueueUrl() bool`
+
+HasQueueUrl returns a boolean if a field has been set.
 
 ### GetCorrelationId
 

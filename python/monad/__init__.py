@@ -75,6 +75,7 @@ from monad.models.auth_logs_secrets_config import AuthLogsSecretsConfig
 from monad.models.auth_logs_settings_config import AuthLogsSettingsConfig
 from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig
+from monad.models.awssqs_settings_config import AwssqsSettingsConfig
 from monad.models.azure_activity_logs_secrets_config import AzureActivityLogsSecretsConfig
 from monad.models.azure_activity_logs_settings_config import AzureActivityLogsSettingsConfig
 from monad.models.batch_config_batch_config import BatchConfigBatchConfig

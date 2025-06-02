@@ -26,6 +26,7 @@ type SecretProcessesorInputConfigSettings struct {
 	AuditLogsSettingsConfig *AuditLogsSettingsConfig
 	AuthLogsSettingsConfig *AuthLogsSettingsConfig
 	AwsS3SettingsConfig *AwsS3SettingsConfig
+	AwssqsSettingsConfig *AwssqsSettingsConfig
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
 	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BoxEventsSettingsConfig *BoxEventsSettingsConfig
@@ -120,6 +121,13 @@ func AuthLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AuthLogsSet
 func AwsS3SettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsS3SettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		AwsS3SettingsConfig: v,
+	}
+}
+
+// AwssqsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AwssqsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func AwssqsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AwssqsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		AwssqsSettingsConfig: v,
 	}
 }
 
@@ -567,6 +575,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.AwsS3SettingsConfig = nil
+	}
+
+	// try to unmarshal data into AwssqsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AwssqsSettingsConfig)
+	if err == nil {
+		jsonAwssqsSettingsConfig, _ := json.Marshal(dst.AwssqsSettingsConfig)
+		if string(jsonAwssqsSettingsConfig) == "{}" { // empty struct
+			dst.AwssqsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AwssqsSettingsConfig); err != nil {
+				dst.AwssqsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AwssqsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into AzureActivityLogsSettingsConfig
@@ -1360,6 +1385,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AuditLogsSettingsConfig = nil
 		dst.AuthLogsSettingsConfig = nil
 		dst.AwsS3SettingsConfig = nil
+		dst.AwssqsSettingsConfig = nil
 		dst.AzureActivityLogsSettingsConfig = nil
 		dst.BigqueryInputSettingsConfig = nil
 		dst.BoxEventsSettingsConfig = nil
@@ -1443,6 +1469,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.AwsS3SettingsConfig != nil {
 		return json.Marshal(&src.AwsS3SettingsConfig)
+	}
+
+	if src.AwssqsSettingsConfig != nil {
+		return json.Marshal(&src.AwssqsSettingsConfig)
 	}
 
 	if src.AzureActivityLogsSettingsConfig != nil {
@@ -1665,6 +1695,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.AwsS3SettingsConfig
 	}
 
+	if obj.AwssqsSettingsConfig != nil {
+		return obj.AwssqsSettingsConfig
+	}
+
 	if obj.AzureActivityLogsSettingsConfig != nil {
 		return obj.AzureActivityLogsSettingsConfig
 	}
@@ -1881,6 +1915,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.AwsS3SettingsConfig != nil {
 		return *obj.AwsS3SettingsConfig
+	}
+
+	if obj.AwssqsSettingsConfig != nil {
+		return *obj.AwssqsSettingsConfig
 	}
 
 	if obj.AzureActivityLogsSettingsConfig != nil {
