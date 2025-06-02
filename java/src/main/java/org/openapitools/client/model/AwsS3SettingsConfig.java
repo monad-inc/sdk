@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS S3 settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-02T09:38:41.277533254Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-02T13:03:29.743123505Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AwsS3SettingsConfig {
   public static final String SERIALIZED_NAME_BUCKET = "bucket";
   @SerializedName(SERIALIZED_NAME_BUCKET)
