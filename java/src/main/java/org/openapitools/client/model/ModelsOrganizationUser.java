@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganizationUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-03T15:22:21.846730456Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-03T15:48:06.698788730Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ModelsOrganizationUser {
   public static final String SERIALIZED_NAME_AUTH_ID = "auth_id";
   @SerializedName(SERIALIZED_NAME_AUTH_ID)

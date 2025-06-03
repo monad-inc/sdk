@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Wiz Issues settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-03T15:22:21.846730456Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-03T15:48:06.698788730Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IssuesSettingsConfig {
   public static final String SERIALIZED_NAME_CONTROL_IDS = "control_ids";
   @SerializedName(SERIALIZED_NAME_CONTROL_IDS)
