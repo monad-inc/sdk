@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2CreateBillingAccountRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-03T14:10:15.074925534Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-03T15:22:21.846730456Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RoutesV2CreateBillingAccountRequest {
   public static final String SERIALIZED_NAME_BILLING_EMAIL = "billing_email";
   @SerializedName(SERIALIZED_NAME_BILLING_EMAIL)
