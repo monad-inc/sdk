@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsQuotaList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-03T15:48:06.698788730Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-03T21:12:03.198845274Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ModelsQuotaList {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
