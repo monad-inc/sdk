@@ -15,10 +15,10 @@ Name | Type | Description | Notes
 **EnterpriseId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AwsAccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AwsSecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **PrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **CustomerId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Domain** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
@@ -306,6 +306,31 @@ SetAwsSecretKey sets AwsSecretKey field to given value.
 
 HasAwsSecretKey returns a boolean if a field has been set.
 
+### GetAccessKey
+
+`func (o *SecretProcessesorInputConfigSecrets) GetAccessKey() ModelsSecret`
+
+GetAccessKey returns the AccessKey field if non-nil, zero value otherwise.
+
+### GetAccessKeyOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetAccessKeyOk() (*ModelsSecret, bool)`
+
+GetAccessKeyOk returns a tuple with the AccessKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccessKey
+
+`func (o *SecretProcessesorInputConfigSecrets) SetAccessKey(v ModelsSecret)`
+
+SetAccessKey sets AccessKey field to given value.
+
+### HasAccessKey
+
+`func (o *SecretProcessesorInputConfigSecrets) HasAccessKey() bool`
+
+HasAccessKey returns a boolean if a field has been set.
+
 ### GetToken
 
 `func (o *SecretProcessesorInputConfigSecrets) GetToken() ModelsSecret`
@@ -380,31 +405,6 @@ SetPrivateKey sets PrivateKey field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasPrivateKey() bool`
 
 HasPrivateKey returns a boolean if a field has been set.
-
-### GetAccessKey
-
-`func (o *SecretProcessesorInputConfigSecrets) GetAccessKey() ModelsSecret`
-
-GetAccessKey returns the AccessKey field if non-nil, zero value otherwise.
-
-### GetAccessKeyOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetAccessKeyOk() (*ModelsSecret, bool)`
-
-GetAccessKeyOk returns a tuple with the AccessKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccessKey
-
-`func (o *SecretProcessesorInputConfigSecrets) SetAccessKey(v ModelsSecret)`
-
-SetAccessKey sets AccessKey field to given value.
-
-### HasAccessKey
-
-`func (o *SecretProcessesorInputConfigSecrets) HasAccessKey() bool`
-
-HasAccessKey returns a boolean if a field has been set.
 
 ### GetCustomerId
 

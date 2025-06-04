@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AuthHeaders** | Pointer to [**map[string]ModelsSecret**](ModelsSecret.md) | Authentication headers | [optional] 
+**AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **RoutingKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ConnectionString** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -17,7 +19,6 @@ Name | Type | Description | Notes
 **PrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AccessId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -162,6 +163,56 @@ SetAuthHeaders sets AuthHeaders field to given value.
 `func (o *SecretProcessesorOutputConfigSecrets) HasAuthHeaders() bool`
 
 HasAuthHeaders returns a boolean if a field has been set.
+
+### GetAccessKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetAccessKey() ModelsSecret`
+
+GetAccessKey returns the AccessKey field if non-nil, zero value otherwise.
+
+### GetAccessKeyOk
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetAccessKeyOk() (*ModelsSecret, bool)`
+
+GetAccessKeyOk returns a tuple with the AccessKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccessKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) SetAccessKey(v ModelsSecret)`
+
+SetAccessKey sets AccessKey field to given value.
+
+### HasAccessKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) HasAccessKey() bool`
+
+HasAccessKey returns a boolean if a field has been set.
+
+### GetSecretKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetSecretKey() ModelsSecret`
+
+GetSecretKey returns the SecretKey field if non-nil, zero value otherwise.
+
+### GetSecretKeyOk
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetSecretKeyOk() (*ModelsSecret, bool)`
+
+GetSecretKeyOk returns a tuple with the SecretKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecretKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) SetSecretKey(v ModelsSecret)`
+
+SetSecretKey sets SecretKey field to given value.
+
+### HasSecretKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) HasSecretKey() bool`
+
+HasSecretKey returns a boolean if a field has been set.
 
 ### GetRoutingKey
 
@@ -362,31 +413,6 @@ SetAccessId sets AccessId field to given value.
 `func (o *SecretProcessesorOutputConfigSecrets) HasAccessId() bool`
 
 HasAccessId returns a boolean if a field has been set.
-
-### GetAccessKey
-
-`func (o *SecretProcessesorOutputConfigSecrets) GetAccessKey() ModelsSecret`
-
-GetAccessKey returns the AccessKey field if non-nil, zero value otherwise.
-
-### GetAccessKeyOk
-
-`func (o *SecretProcessesorOutputConfigSecrets) GetAccessKeyOk() (*ModelsSecret, bool)`
-
-GetAccessKeyOk returns a tuple with the AccessKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccessKey
-
-`func (o *SecretProcessesorOutputConfigSecrets) SetAccessKey(v ModelsSecret)`
-
-SetAccessKey sets AccessKey field to given value.
-
-### HasAccessKey
-
-`func (o *SecretProcessesorOutputConfigSecrets) HasAccessKey() bool`
-
-HasAccessKey returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

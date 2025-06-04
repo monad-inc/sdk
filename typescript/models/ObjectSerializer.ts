@@ -157,6 +157,10 @@ export * from '../models/NextGenSiemSecretsConfig';
 export * from '../models/NextGenSiemSettingsConfig';
 export * from '../models/OauthActivitySecretsConfig';
 export * from '../models/OauthActivitySettingsConfig';
+export * from '../models/ObjectStorageInputSecretsConfig';
+export * from '../models/ObjectStorageInputSettingsConfig';
+export * from '../models/ObjectStorageSecretsConfig';
+export * from '../models/ObjectStorageSettingsConfig';
 export * from '../models/OpensearchSecretsConfig';
 export * from '../models/OpensearchSettingsConfig';
 export * from '../models/OperationInformation';
@@ -455,6 +459,10 @@ import { NextGenSiemSecretsConfig } from '../models/NextGenSiemSecretsConfig';
 import { NextGenSiemSettingsConfig } from '../models/NextGenSiemSettingsConfig';
 import { OauthActivitySecretsConfig } from '../models/OauthActivitySecretsConfig';
 import { OauthActivitySettingsConfig } from '../models/OauthActivitySettingsConfig';
+import { ObjectStorageInputSecretsConfig } from '../models/ObjectStorageInputSecretsConfig';
+import { ObjectStorageInputSettingsConfig } from '../models/ObjectStorageInputSettingsConfig';
+import { ObjectStorageSecretsConfig } from '../models/ObjectStorageSecretsConfig';
+import { ObjectStorageSettingsConfig } from '../models/ObjectStorageSettingsConfig';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
@@ -778,6 +786,10 @@ let typeMap: {[index: string]: any} = {
     "NextGenSiemSettingsConfig": NextGenSiemSettingsConfig,
     "OauthActivitySecretsConfig": OauthActivitySecretsConfig,
     "OauthActivitySettingsConfig": OauthActivitySettingsConfig,
+    "ObjectStorageInputSecretsConfig": ObjectStorageInputSecretsConfig,
+    "ObjectStorageInputSettingsConfig": ObjectStorageInputSettingsConfig,
+    "ObjectStorageSecretsConfig": ObjectStorageSecretsConfig,
+    "ObjectStorageSettingsConfig": ObjectStorageSettingsConfig,
     "OpensearchSecretsConfig": OpensearchSecretsConfig,
     "OpensearchSettingsConfig": OpensearchSettingsConfig,
     "OperationInformation": OperationInformation,

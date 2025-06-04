@@ -55,6 +55,7 @@ type SecretProcessesorInputConfigSettings struct {
 	LoginSessionsSettingsConfig *LoginSessionsSettingsConfig
 	MonadLogSettingsConfig *MonadLogSettingsConfig
 	OauthActivitySettingsConfig *OauthActivitySettingsConfig
+	ObjectStorageInputSettingsConfig *ObjectStorageInputSettingsConfig
 	RolesInfoSettingsConfig *RolesInfoSettingsConfig
 	SemgrepDeploymentsSettingsConfig *SemgrepDeploymentsSettingsConfig
 	SemgrepProjectDetailsSettingsConfig *SemgrepProjectDetailsSettingsConfig
@@ -324,6 +325,13 @@ func MonadLogSettingsConfigAsSecretProcessesorInputConfigSettings(v *MonadLogSet
 func OauthActivitySettingsConfigAsSecretProcessesorInputConfigSettings(v *OauthActivitySettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		OauthActivitySettingsConfig: v,
+	}
+}
+
+// ObjectStorageInputSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ObjectStorageInputSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func ObjectStorageInputSettingsConfigAsSecretProcessesorInputConfigSettings(v *ObjectStorageInputSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		ObjectStorageInputSettingsConfig: v,
 	}
 }
 
@@ -1070,6 +1078,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OauthActivitySettingsConfig = nil
 	}
 
+	// try to unmarshal data into ObjectStorageInputSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.ObjectStorageInputSettingsConfig)
+	if err == nil {
+		jsonObjectStorageInputSettingsConfig, _ := json.Marshal(dst.ObjectStorageInputSettingsConfig)
+		if string(jsonObjectStorageInputSettingsConfig) == "{}" { // empty struct
+			dst.ObjectStorageInputSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ObjectStorageInputSettingsConfig); err != nil {
+				dst.ObjectStorageInputSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ObjectStorageInputSettingsConfig = nil
+	}
+
 	// try to unmarshal data into RolesInfoSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.RolesInfoSettingsConfig)
 	if err == nil {
@@ -1414,6 +1439,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.LoginSessionsSettingsConfig = nil
 		dst.MonadLogSettingsConfig = nil
 		dst.OauthActivitySettingsConfig = nil
+		dst.ObjectStorageInputSettingsConfig = nil
 		dst.RolesInfoSettingsConfig = nil
 		dst.SemgrepDeploymentsSettingsConfig = nil
 		dst.SemgrepProjectDetailsSettingsConfig = nil
@@ -1585,6 +1611,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.OauthActivitySettingsConfig != nil {
 		return json.Marshal(&src.OauthActivitySettingsConfig)
+	}
+
+	if src.ObjectStorageInputSettingsConfig != nil {
+		return json.Marshal(&src.ObjectStorageInputSettingsConfig)
 	}
 
 	if src.RolesInfoSettingsConfig != nil {
@@ -1811,6 +1841,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.OauthActivitySettingsConfig
 	}
 
+	if obj.ObjectStorageInputSettingsConfig != nil {
+		return obj.ObjectStorageInputSettingsConfig
+	}
+
 	if obj.RolesInfoSettingsConfig != nil {
 		return obj.RolesInfoSettingsConfig
 	}
@@ -2031,6 +2065,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.OauthActivitySettingsConfig != nil {
 		return *obj.OauthActivitySettingsConfig
+	}
+
+	if obj.ObjectStorageInputSettingsConfig != nil {
+		return *obj.ObjectStorageInputSettingsConfig
 	}
 
 	if obj.RolesInfoSettingsConfig != nil {

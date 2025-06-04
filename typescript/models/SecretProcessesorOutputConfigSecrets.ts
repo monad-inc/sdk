@@ -15,6 +15,7 @@ import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { NextGenSiemSecretsConfig } from '../models/NextGenSiemSecretsConfig';
+import { ObjectStorageSecretsConfig } from '../models/ObjectStorageSecretsConfig';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
@@ -29,7 +30,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSecrets = BigquerySecretsConfig | CriblHttpSecretsConfig | ElasticsearchSecretsConfig | HttpSecretsConfig | NextGenSiemSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PostgresqlSecretsConfig | SentinelSecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | any | { [key: string]: any; };
+export type SecretProcessesorOutputConfigSecrets = BigquerySecretsConfig | CriblHttpSecretsConfig | ElasticsearchSecretsConfig | HttpSecretsConfig | NextGenSiemSecretsConfig | ObjectStorageSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PostgresqlSecretsConfig | SentinelSecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorOutputConfigSecretsClass
@@ -40,6 +41,7 @@ export class SecretProcessesorOutputConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

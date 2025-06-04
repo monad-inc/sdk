@@ -49,6 +49,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	LoginActivitySecretsConfig *LoginActivitySecretsConfig
 	LoginSessionsSecretsConfig *LoginSessionsSecretsConfig
 	OauthActivitySecretsConfig *OauthActivitySecretsConfig
+	ObjectStorageInputSecretsConfig *ObjectStorageInputSecretsConfig
 	RolesInfoSecretsConfig *RolesInfoSecretsConfig
 	SemgrepCodeFindingsSecretsConfig *SemgrepCodeFindingsSecretsConfig
 	SemgrepDeploymentsSecretsConfig *SemgrepDeploymentsSecretsConfig
@@ -282,6 +283,13 @@ func LoginSessionsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *LoginSes
 func OauthActivitySecretsConfigAsSecretProcessesorInputConfigSecrets(v *OauthActivitySecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		OauthActivitySecretsConfig: v,
+	}
+}
+
+// ObjectStorageInputSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ObjectStorageInputSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func ObjectStorageInputSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ObjectStorageInputSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		ObjectStorageInputSecretsConfig: v,
 	}
 }
 
@@ -968,6 +976,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.OauthActivitySecretsConfig = nil
 	}
 
+	// try to unmarshal data into ObjectStorageInputSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.ObjectStorageInputSecretsConfig)
+	if err == nil {
+		jsonObjectStorageInputSecretsConfig, _ := json.Marshal(dst.ObjectStorageInputSecretsConfig)
+		if string(jsonObjectStorageInputSecretsConfig) == "{}" { // empty struct
+			dst.ObjectStorageInputSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ObjectStorageInputSecretsConfig); err != nil {
+				dst.ObjectStorageInputSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ObjectStorageInputSecretsConfig = nil
+	}
+
 	// try to unmarshal data into RolesInfoSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.RolesInfoSecretsConfig)
 	if err == nil {
@@ -1408,6 +1433,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.LoginActivitySecretsConfig = nil
 		dst.LoginSessionsSecretsConfig = nil
 		dst.OauthActivitySecretsConfig = nil
+		dst.ObjectStorageInputSecretsConfig = nil
 		dst.RolesInfoSecretsConfig = nil
 		dst.SemgrepCodeFindingsSecretsConfig = nil
 		dst.SemgrepDeploymentsSecretsConfig = nil
@@ -1561,6 +1587,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.OauthActivitySecretsConfig != nil {
 		return json.Marshal(&src.OauthActivitySecretsConfig)
+	}
+
+	if src.ObjectStorageInputSecretsConfig != nil {
+		return json.Marshal(&src.ObjectStorageInputSecretsConfig)
 	}
 
 	if src.RolesInfoSecretsConfig != nil {
@@ -1787,6 +1817,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.OauthActivitySecretsConfig
 	}
 
+	if obj.ObjectStorageInputSecretsConfig != nil {
+		return obj.ObjectStorageInputSecretsConfig
+	}
+
 	if obj.RolesInfoSecretsConfig != nil {
 		return obj.RolesInfoSecretsConfig
 	}
@@ -2007,6 +2041,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.OauthActivitySecretsConfig != nil {
 		return *obj.OauthActivitySecretsConfig
+	}
+
+	if obj.ObjectStorageInputSecretsConfig != nil {
+		return *obj.ObjectStorageInputSecretsConfig
 	}
 
 	if obj.RolesInfoSecretsConfig != nil {

@@ -24,6 +24,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	ElasticsearchSettingsConfig *ElasticsearchSettingsConfig
 	HttpSettingsConfig *HttpSettingsConfig
 	NextGenSiemSettingsConfig *NextGenSiemSettingsConfig
+	ObjectStorageSettingsConfig *ObjectStorageSettingsConfig
 	OpensearchSettingsConfig *OpensearchSettingsConfig
 	PagerdutySettingsConfig *PagerdutySettingsConfig
 	PostgresqlSettingsConfig *PostgresqlSettingsConfig
@@ -68,6 +69,13 @@ func HttpSettingsConfigAsSecretProcessesorOutputConfigSettings(v *HttpSettingsCo
 func NextGenSiemSettingsConfigAsSecretProcessesorOutputConfigSettings(v *NextGenSiemSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		NextGenSiemSettingsConfig: v,
+	}
+}
+
+// ObjectStorageSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns ObjectStorageSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func ObjectStorageSettingsConfigAsSecretProcessesorOutputConfigSettings(v *ObjectStorageSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		ObjectStorageSettingsConfig: v,
 	}
 }
 
@@ -229,6 +237,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		}
 	} else {
 		dst.NextGenSiemSettingsConfig = nil
+	}
+
+	// try to unmarshal data into ObjectStorageSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.ObjectStorageSettingsConfig)
+	if err == nil {
+		jsonObjectStorageSettingsConfig, _ := json.Marshal(dst.ObjectStorageSettingsConfig)
+		if string(jsonObjectStorageSettingsConfig) == "{}" { // empty struct
+			dst.ObjectStorageSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ObjectStorageSettingsConfig); err != nil {
+				dst.ObjectStorageSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ObjectStorageSettingsConfig = nil
 	}
 
 	// try to unmarshal data into OpensearchSettingsConfig
@@ -408,6 +433,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.ElasticsearchSettingsConfig = nil
 		dst.HttpSettingsConfig = nil
 		dst.NextGenSiemSettingsConfig = nil
+		dst.ObjectStorageSettingsConfig = nil
 		dst.OpensearchSettingsConfig = nil
 		dst.PagerdutySettingsConfig = nil
 		dst.PostgresqlSettingsConfig = nil
@@ -447,6 +473,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.NextGenSiemSettingsConfig != nil {
 		return json.Marshal(&src.NextGenSiemSettingsConfig)
+	}
+
+	if src.ObjectStorageSettingsConfig != nil {
+		return json.Marshal(&src.ObjectStorageSettingsConfig)
 	}
 
 	if src.OpensearchSettingsConfig != nil {
@@ -517,6 +547,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.NextGenSiemSettingsConfig
 	}
 
+	if obj.ObjectStorageSettingsConfig != nil {
+		return obj.ObjectStorageSettingsConfig
+	}
+
 	if obj.OpensearchSettingsConfig != nil {
 		return obj.OpensearchSettingsConfig
 	}
@@ -581,6 +615,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.NextGenSiemSettingsConfig != nil {
 		return *obj.NextGenSiemSettingsConfig
+	}
+
+	if obj.ObjectStorageSettingsConfig != nil {
+		return *obj.ObjectStorageSettingsConfig
 	}
 
 	if obj.OpensearchSettingsConfig != nil {

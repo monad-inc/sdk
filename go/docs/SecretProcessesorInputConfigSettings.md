@@ -22,13 +22,13 @@ Name | Type | Description | Notes
 **Organization** | Pointer to **string** | Filter by organization name | [optional] 
 **Repository** | Pointer to **string** | Filter by repository (format: org-name/repo-name) | [optional] 
 **User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
-**Bucket** | Pointer to **string** | The name of the S3 bucket | [optional] 
-**Compression** | Pointer to **string** | Compression format of the S3 objects. | [optional] 
-**Format** | Pointer to **string** | File format of the S3 objects. | [optional] 
-**PartitionFormat** | Pointer to **string** | Specifies the partition format of your S3 bucket. Select the option that matches how your data is currently organized in S3. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. | [optional] 
-**Prefix** | Pointer to **string** | Prefix of the S3 object keys to read. | [optional] 
-**RecordLocation** | Pointer to **string** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. | [optional] 
-**Region** | Pointer to **string** | The region of the S3 bucket | [optional] 
+**Bucket** | Pointer to **string** | Name of the storage bucket | [optional] 
+**Compression** | Pointer to **string** | Compression format of the objects | [optional] 
+**Format** | Pointer to **string** | File format of the objects | [optional] 
+**PartitionFormat** | Pointer to **string** | Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. | [optional] 
+**Prefix** | Pointer to **string** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. | [optional] 
+**RecordLocation** | Pointer to **string** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. If the records are not nested in the JSON, you can use &#39;@this&#39; to indicate that the file contains the record at the root or an array of records. | [optional] 
+**Region** | Pointer to **string** | Optional region for the object storage service. This is often required for services like AWS S3. | [optional] 
 **RoleArn** | Pointer to **string** | The ARN of the role to assume to access the bucket | [optional] 
 **QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
 **CorrelationId** | Pointer to **string** | The correlation ID of the log | [optional] 
@@ -92,6 +92,9 @@ Name | Type | Description | Notes
 **StackLayers** | Pointer to **[]string** | @Description Filter Issues from specific stack layers | [optional] 
 **TenantDataCenter** | Pointer to **string** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact | [optional] 
 **LogType** | Pointer to **string** |  | [optional] 
+**Endpoint** | Pointer to **string** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | [optional] 
+**SkipSslVerification** | Pointer to **bool** | Skip SSL verification for self-signed certificates | [optional] 
+**UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
@@ -2322,6 +2325,81 @@ SetLogType sets LogType field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasLogType() bool`
 
 HasLogType returns a boolean if a field has been set.
+
+### GetEndpoint
+
+`func (o *SecretProcessesorInputConfigSettings) GetEndpoint() string`
+
+GetEndpoint returns the Endpoint field if non-nil, zero value otherwise.
+
+### GetEndpointOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetEndpointOk() (*string, bool)`
+
+GetEndpointOk returns a tuple with the Endpoint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEndpoint
+
+`func (o *SecretProcessesorInputConfigSettings) SetEndpoint(v string)`
+
+SetEndpoint sets Endpoint field to given value.
+
+### HasEndpoint
+
+`func (o *SecretProcessesorInputConfigSettings) HasEndpoint() bool`
+
+HasEndpoint returns a boolean if a field has been set.
+
+### GetSkipSslVerification
+
+`func (o *SecretProcessesorInputConfigSettings) GetSkipSslVerification() bool`
+
+GetSkipSslVerification returns the SkipSslVerification field if non-nil, zero value otherwise.
+
+### GetSkipSslVerificationOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetSkipSslVerificationOk() (*bool, bool)`
+
+GetSkipSslVerificationOk returns a tuple with the SkipSslVerification field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSkipSslVerification
+
+`func (o *SecretProcessesorInputConfigSettings) SetSkipSslVerification(v bool)`
+
+SetSkipSslVerification sets SkipSslVerification field to given value.
+
+### HasSkipSslVerification
+
+`func (o *SecretProcessesorInputConfigSettings) HasSkipSslVerification() bool`
+
+HasSkipSslVerification returns a boolean if a field has been set.
+
+### GetUsePathStyle
+
+`func (o *SecretProcessesorInputConfigSettings) GetUsePathStyle() bool`
+
+GetUsePathStyle returns the UsePathStyle field if non-nil, zero value otherwise.
+
+### GetUsePathStyleOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUsePathStyleOk() (*bool, bool)`
+
+GetUsePathStyleOk returns a tuple with the UsePathStyle field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsePathStyle
+
+`func (o *SecretProcessesorInputConfigSettings) SetUsePathStyle(v bool)`
+
+SetUsePathStyle sets UsePathStyle field to given value.
+
+### HasUsePathStyle
+
+`func (o *SecretProcessesorInputConfigSettings) HasUsePathStyle() bool`
+
+HasUsePathStyle returns a boolean if a field has been set.
 
 ### GetAccount
 

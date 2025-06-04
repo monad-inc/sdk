@@ -18,10 +18,10 @@
 |**enterpriseId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**awsAccessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**awsSecretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**accessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**token** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**password** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**privateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**accessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**customerId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**domain** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 

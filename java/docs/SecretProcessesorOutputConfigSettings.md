@@ -29,8 +29,16 @@
 |**rateLimit** | **Integer** | Maximum number of requests per second to send to the endpoint. |  [optional] |
 |**tlsSkipVerify** | **Boolean** | Skip TLS verification. |  [optional] |
 |**wrapperKey** | **String** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. |  [optional] |
-|**authMode** | **String** | The authentication mode (basic, aws_role) |  [optional] |
+|**batchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  |  [optional] |
+|**bucket** | **String** | The name of the S3 bucket where data will be stored |  [optional] |
+|**compression** | **String** | The compression method to be applied to the data before storing in S3 |  [optional] |
+|**formatConfig** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  |  [optional] |
+|**partitionFormat** | **String** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). |  [optional] |
+|**prefix** | **String** | An optional prefix for S3 object keys to organize data within the bucket |  [optional] |
 |**region** | **String** | The AWS region where the S3 bucket is located |  [optional] |
+|**skipSslVerification** | **Boolean** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) |  [optional] |
+|**usePathStyle** | **Boolean** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. |  [optional] |
+|**authMode** | **String** | The authentication mode (basic, aws_role) |  [optional] |
 |**roleArn** | **String** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket |  [optional] |
 |**alertsConfig** | [**PagerdutyAlertsConfig**](PagerdutyAlertsConfig.md) |  |  [optional] |
 |**defaultEventType** | **String** | EventType determines whether events are sent as &#39;change&#39; or &#39;alert&#39; events. We recommend reading the docs for this output before making this choice. |  [optional] |
@@ -39,12 +47,6 @@
 |**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
 |**host** | **String** | The host of the PostgreSQL database |  [optional] |
 |**user** | **String** | The username of the Snowflake account used to establish the connection. |  [optional] |
-|**batchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  |  [optional] |
-|**bucket** | **String** | The name of the S3 bucket where data will be stored |  [optional] |
-|**compression** | **String** | The compression method to be applied to the data before storing in S3 |  [optional] |
-|**formatConfig** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  |  [optional] |
-|**partitionFormat** | **String** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). |  [optional] |
-|**prefix** | **String** | An optional prefix for S3 object keys to organize data within the bucket |  [optional] |
 |**bucketName** | **String** | Bucket Name |  [optional] |
 |**bucketUrl** | **String** | The name of the S3 bucket where data will be stored |  [optional] |
 |**key** | **String** | S3 Key |  [optional] |

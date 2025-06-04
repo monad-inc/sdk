@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-06-03T21:26:43.741940288Z[Etc/UTC]
+  - Build date: 2025-06-04T18:05:02.328214947Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -396,6 +396,10 @@ Class | Method | HTTP request | Description
  - [NextGenSiemSettingsConfig](docs/NextGenSiemSettingsConfig.md)
  - [OauthActivitySecretsConfig](docs/OauthActivitySecretsConfig.md)
  - [OauthActivitySettingsConfig](docs/OauthActivitySettingsConfig.md)
+ - [ObjectStorageInputSecretsConfig](docs/ObjectStorageInputSecretsConfig.md)
+ - [ObjectStorageInputSettingsConfig](docs/ObjectStorageInputSettingsConfig.md)
+ - [ObjectStorageSecretsConfig](docs/ObjectStorageSecretsConfig.md)
+ - [ObjectStorageSettingsConfig](docs/ObjectStorageSettingsConfig.md)
  - [OpensearchSecretsConfig](docs/OpensearchSecretsConfig.md)
  - [OpensearchSettingsConfig](docs/OpensearchSettingsConfig.md)
  - [OperationInformation](docs/OperationInformation.md)

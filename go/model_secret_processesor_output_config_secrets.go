@@ -24,6 +24,7 @@ type SecretProcessesorOutputConfigSecrets struct {
 	ElasticsearchSecretsConfig *ElasticsearchSecretsConfig
 	HttpSecretsConfig *HttpSecretsConfig
 	NextGenSiemSecretsConfig *NextGenSiemSecretsConfig
+	ObjectStorageSecretsConfig *ObjectStorageSecretsConfig
 	OpensearchSecretsConfig *OpensearchSecretsConfig
 	PagerdutySecretsConfig *PagerdutySecretsConfig
 	PostgresqlSecretsConfig *PostgresqlSecretsConfig
@@ -66,6 +67,13 @@ func HttpSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *HttpSecretsConfi
 func NextGenSiemSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *NextGenSiemSecretsConfig) SecretProcessesorOutputConfigSecrets {
 	return SecretProcessesorOutputConfigSecrets{
 		NextGenSiemSecretsConfig: v,
+	}
+}
+
+// ObjectStorageSecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns ObjectStorageSecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
+func ObjectStorageSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *ObjectStorageSecretsConfig) SecretProcessesorOutputConfigSecrets {
+	return SecretProcessesorOutputConfigSecrets{
+		ObjectStorageSecretsConfig: v,
 	}
 }
 
@@ -215,6 +223,23 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.NextGenSiemSecretsConfig = nil
 	}
 
+	// try to unmarshal data into ObjectStorageSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.ObjectStorageSecretsConfig)
+	if err == nil {
+		jsonObjectStorageSecretsConfig, _ := json.Marshal(dst.ObjectStorageSecretsConfig)
+		if string(jsonObjectStorageSecretsConfig) == "{}" { // empty struct
+			dst.ObjectStorageSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ObjectStorageSecretsConfig); err != nil {
+				dst.ObjectStorageSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ObjectStorageSecretsConfig = nil
+	}
+
 	// try to unmarshal data into OpensearchSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.OpensearchSecretsConfig)
 	if err == nil {
@@ -358,6 +383,7 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.ElasticsearchSecretsConfig = nil
 		dst.HttpSecretsConfig = nil
 		dst.NextGenSiemSecretsConfig = nil
+		dst.ObjectStorageSecretsConfig = nil
 		dst.OpensearchSecretsConfig = nil
 		dst.PagerdutySecretsConfig = nil
 		dst.PostgresqlSecretsConfig = nil
@@ -395,6 +421,10 @@ func (src SecretProcessesorOutputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.NextGenSiemSecretsConfig != nil {
 		return json.Marshal(&src.NextGenSiemSecretsConfig)
+	}
+
+	if src.ObjectStorageSecretsConfig != nil {
+		return json.Marshal(&src.ObjectStorageSecretsConfig)
 	}
 
 	if src.OpensearchSecretsConfig != nil {
@@ -457,6 +487,10 @@ func (obj *SecretProcessesorOutputConfigSecrets) GetActualInstance() (interface{
 		return obj.NextGenSiemSecretsConfig
 	}
 
+	if obj.ObjectStorageSecretsConfig != nil {
+		return obj.ObjectStorageSecretsConfig
+	}
+
 	if obj.OpensearchSecretsConfig != nil {
 		return obj.OpensearchSecretsConfig
 	}
@@ -513,6 +547,10 @@ func (obj SecretProcessesorOutputConfigSecrets) GetActualInstanceValue() (interf
 
 	if obj.NextGenSiemSecretsConfig != nil {
 		return *obj.NextGenSiemSecretsConfig
+	}
+
+	if obj.ObjectStorageSecretsConfig != nil {
+		return *obj.ObjectStorageSecretsConfig
 	}
 
 	if obj.OpensearchSecretsConfig != nil {

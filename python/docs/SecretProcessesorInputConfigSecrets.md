@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **enterprise_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **aws_access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **aws_secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **customer_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **domain** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
