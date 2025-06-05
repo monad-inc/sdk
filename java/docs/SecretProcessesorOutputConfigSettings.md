@@ -7,6 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**messageGroupId** | **String** | The message group ID for FIFO queues. This is required for FIFO queues. |  [optional] |
+|**queueType** | **String** | The type of SQS queue to use. Can be either \&quot;standard\&quot; or \&quot;fifo\&quot;. |  [optional] |
+|**queueUrl** | **String** | The URL of the SQS queue to poll for messages. |  [optional] |
+|**region** | **String** | The AWS region where the S3 bucket is located |  [optional] |
+|**roleArn** | **String** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket |  [optional] |
 |**dataset** | **String** | The name of the BigQuery dataset where the table resides |  [optional] |
 |**projectId** | **String** | The Google Cloud Project ID where the BigQuery instance is located |  [optional] |
 |**table** | **String** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. |  [optional] |
@@ -35,11 +40,9 @@
 |**formatConfig** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  |  [optional] |
 |**partitionFormat** | **String** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). |  [optional] |
 |**prefix** | **String** | An optional prefix for S3 object keys to organize data within the bucket |  [optional] |
-|**region** | **String** | The AWS region where the S3 bucket is located |  [optional] |
 |**skipSslVerification** | **Boolean** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) |  [optional] |
 |**usePathStyle** | **Boolean** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. |  [optional] |
 |**authMode** | **String** | The authentication mode (basic, aws_role) |  [optional] |
-|**roleArn** | **String** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket |  [optional] |
 |**alertsConfig** | [**PagerdutyAlertsConfig**](PagerdutyAlertsConfig.md) |  |  [optional] |
 |**defaultEventType** | **String** | EventType determines whether events are sent as &#39;change&#39; or &#39;alert&#39; events. We recommend reading the docs for this output before making this choice. |  [optional] |
 |**summaryConfig** | [**PagerdutySummaryConfig**](PagerdutySummaryConfig.md) |  |  [optional] |

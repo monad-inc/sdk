@@ -14,6 +14,7 @@ export * from '../models/AuthLogsSettingsConfig';
 export * from '../models/AuthenticationtypesTokenResponse';
 export * from '../models/AwsS3SettingsConfig';
 export * from '../models/AwssqsSettingsConfig';
+export * from '../models/AwssqsoutputSettingsConfig';
 export * from '../models/AzureActivityLogsSecretsConfig';
 export * from '../models/AzureActivityLogsSettingsConfig';
 export * from '../models/BatchConfigBatchConfig';
@@ -316,6 +317,7 @@ import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AwssqsSettingsConfig } from '../models/AwssqsSettingsConfig';
+import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
@@ -643,6 +645,7 @@ let typeMap: {[index: string]: any} = {
     "AuthenticationtypesTokenResponse": AuthenticationtypesTokenResponse,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
     "AwssqsSettingsConfig": AwssqsSettingsConfig,
+    "AwssqsoutputSettingsConfig": AwssqsoutputSettingsConfig,
     "AzureActivityLogsSecretsConfig": AzureActivityLogsSecretsConfig,
     "AzureActivityLogsSettingsConfig": AzureActivityLogsSettingsConfig,
     "BatchConfigBatchConfig": BatchConfigBatchConfig,

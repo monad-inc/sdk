@@ -223,6 +223,7 @@ Class | Method | HTTP request | Description
  - [AuthenticationtypesTokenResponse](docs/AuthenticationtypesTokenResponse.md)
  - [AwsS3SettingsConfig](docs/AwsS3SettingsConfig.md)
  - [AwssqsSettingsConfig](docs/AwssqsSettingsConfig.md)
+ - [AwssqsoutputSettingsConfig](docs/AwssqsoutputSettingsConfig.md)
  - [AzureActivityLogsSecretsConfig](docs/AzureActivityLogsSecretsConfig.md)
  - [AzureActivityLogsSettingsConfig](docs/AzureActivityLogsSettingsConfig.md)
  - [BatchConfigBatchConfig](docs/BatchConfigBatchConfig.md)

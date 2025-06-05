@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';
 import { BigquerySettingsConfig } from '../models/BigquerySettingsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
@@ -32,7 +33,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSettings = BigquerySettingsConfig | CriblHttpSettingsConfig | ElasticsearchSettingsConfig | HttpSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PostgresqlSettingsConfig | S3SettingsConfig | SecurityLakeSettingsConfig | SentinelSettingsConfig | SnowflakeOutputSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | { [key: string]: any; };
+export type SecretProcessesorOutputConfigSettings = AwssqsoutputSettingsConfig | BigquerySettingsConfig | CriblHttpSettingsConfig | ElasticsearchSettingsConfig | HttpSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PostgresqlSettingsConfig | S3SettingsConfig | SecurityLakeSettingsConfig | SentinelSettingsConfig | SnowflakeOutputSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorOutputConfigSettingsClass
@@ -43,6 +44,7 @@ export class SecretProcessesorOutputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

@@ -4,6 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**MessageGroupId** | Pointer to **string** | The message group ID for FIFO queues. This is required for FIFO queues. | [optional] 
+**QueueType** | Pointer to **string** | The type of SQS queue to use. Can be either \&quot;standard\&quot; or \&quot;fifo\&quot;. | [optional] 
+**QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
+**Region** | Pointer to **string** | The AWS region where the S3 bucket is located | [optional] 
+**RoleArn** | Pointer to **string** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
 **Dataset** | Pointer to **string** | The name of the BigQuery dataset where the table resides | [optional] 
 **ProjectId** | Pointer to **string** | The Google Cloud Project ID where the BigQuery instance is located | [optional] 
 **Table** | Pointer to **string** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | [optional] 
@@ -32,11 +37,9 @@ Name | Type | Description | Notes
 **FormatConfig** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
 **PartitionFormat** | Pointer to **string** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). | [optional] 
 **Prefix** | Pointer to **string** | An optional prefix for S3 object keys to organize data within the bucket | [optional] 
-**Region** | Pointer to **string** | The AWS region where the S3 bucket is located | [optional] 
 **SkipSslVerification** | Pointer to **bool** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) | [optional] 
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
 **AuthMode** | Pointer to **string** | The authentication mode (basic, aws_role) | [optional] 
-**RoleArn** | Pointer to **string** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
 **AlertsConfig** | Pointer to [**PagerdutyAlertsConfig**](PagerdutyAlertsConfig.md) |  | [optional] 
 **DefaultEventType** | Pointer to **string** | EventType determines whether events are sent as &#39;change&#39; or &#39;alert&#39; events. We recommend reading the docs for this output before making this choice. | [optional] 
 **SummaryConfig** | Pointer to [**PagerdutySummaryConfig**](PagerdutySummaryConfig.md) |  | [optional] 
@@ -78,6 +81,131 @@ will change when the set of required properties is changed
 NewSecretProcessesorOutputConfigSettingsWithDefaults instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetMessageGroupId
+
+`func (o *SecretProcessesorOutputConfigSettings) GetMessageGroupId() string`
+
+GetMessageGroupId returns the MessageGroupId field if non-nil, zero value otherwise.
+
+### GetMessageGroupIdOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetMessageGroupIdOk() (*string, bool)`
+
+GetMessageGroupIdOk returns a tuple with the MessageGroupId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMessageGroupId
+
+`func (o *SecretProcessesorOutputConfigSettings) SetMessageGroupId(v string)`
+
+SetMessageGroupId sets MessageGroupId field to given value.
+
+### HasMessageGroupId
+
+`func (o *SecretProcessesorOutputConfigSettings) HasMessageGroupId() bool`
+
+HasMessageGroupId returns a boolean if a field has been set.
+
+### GetQueueType
+
+`func (o *SecretProcessesorOutputConfigSettings) GetQueueType() string`
+
+GetQueueType returns the QueueType field if non-nil, zero value otherwise.
+
+### GetQueueTypeOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetQueueTypeOk() (*string, bool)`
+
+GetQueueTypeOk returns a tuple with the QueueType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQueueType
+
+`func (o *SecretProcessesorOutputConfigSettings) SetQueueType(v string)`
+
+SetQueueType sets QueueType field to given value.
+
+### HasQueueType
+
+`func (o *SecretProcessesorOutputConfigSettings) HasQueueType() bool`
+
+HasQueueType returns a boolean if a field has been set.
+
+### GetQueueUrl
+
+`func (o *SecretProcessesorOutputConfigSettings) GetQueueUrl() string`
+
+GetQueueUrl returns the QueueUrl field if non-nil, zero value otherwise.
+
+### GetQueueUrlOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetQueueUrlOk() (*string, bool)`
+
+GetQueueUrlOk returns a tuple with the QueueUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQueueUrl
+
+`func (o *SecretProcessesorOutputConfigSettings) SetQueueUrl(v string)`
+
+SetQueueUrl sets QueueUrl field to given value.
+
+### HasQueueUrl
+
+`func (o *SecretProcessesorOutputConfigSettings) HasQueueUrl() bool`
+
+HasQueueUrl returns a boolean if a field has been set.
+
+### GetRegion
+
+`func (o *SecretProcessesorOutputConfigSettings) GetRegion() string`
+
+GetRegion returns the Region field if non-nil, zero value otherwise.
+
+### GetRegionOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetRegionOk() (*string, bool)`
+
+GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegion
+
+`func (o *SecretProcessesorOutputConfigSettings) SetRegion(v string)`
+
+SetRegion sets Region field to given value.
+
+### HasRegion
+
+`func (o *SecretProcessesorOutputConfigSettings) HasRegion() bool`
+
+HasRegion returns a boolean if a field has been set.
+
+### GetRoleArn
+
+`func (o *SecretProcessesorOutputConfigSettings) GetRoleArn() string`
+
+GetRoleArn returns the RoleArn field if non-nil, zero value otherwise.
+
+### GetRoleArnOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetRoleArnOk() (*string, bool)`
+
+GetRoleArnOk returns a tuple with the RoleArn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoleArn
+
+`func (o *SecretProcessesorOutputConfigSettings) SetRoleArn(v string)`
+
+SetRoleArn sets RoleArn field to given value.
+
+### HasRoleArn
+
+`func (o *SecretProcessesorOutputConfigSettings) HasRoleArn() bool`
+
+HasRoleArn returns a boolean if a field has been set.
 
 ### GetDataset
 
@@ -779,31 +907,6 @@ SetPrefix sets Prefix field to given value.
 
 HasPrefix returns a boolean if a field has been set.
 
-### GetRegion
-
-`func (o *SecretProcessesorOutputConfigSettings) GetRegion() string`
-
-GetRegion returns the Region field if non-nil, zero value otherwise.
-
-### GetRegionOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetRegionOk() (*string, bool)`
-
-GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRegion
-
-`func (o *SecretProcessesorOutputConfigSettings) SetRegion(v string)`
-
-SetRegion sets Region field to given value.
-
-### HasRegion
-
-`func (o *SecretProcessesorOutputConfigSettings) HasRegion() bool`
-
-HasRegion returns a boolean if a field has been set.
-
 ### GetSkipSslVerification
 
 `func (o *SecretProcessesorOutputConfigSettings) GetSkipSslVerification() bool`
@@ -878,31 +981,6 @@ SetAuthMode sets AuthMode field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasAuthMode() bool`
 
 HasAuthMode returns a boolean if a field has been set.
-
-### GetRoleArn
-
-`func (o *SecretProcessesorOutputConfigSettings) GetRoleArn() string`
-
-GetRoleArn returns the RoleArn field if non-nil, zero value otherwise.
-
-### GetRoleArnOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetRoleArnOk() (*string, bool)`
-
-GetRoleArnOk returns a tuple with the RoleArn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRoleArn
-
-`func (o *SecretProcessesorOutputConfigSettings) SetRoleArn(v string)`
-
-SetRoleArn sets RoleArn field to given value.
-
-### HasRoleArn
-
-`func (o *SecretProcessesorOutputConfigSettings) HasRoleArn() bool`
-
-HasRoleArn returns a boolean if a field has been set.
 
 ### GetAlertsConfig
 

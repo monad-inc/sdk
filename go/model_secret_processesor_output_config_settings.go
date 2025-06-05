@@ -19,6 +19,7 @@ import (
 
 // SecretProcessesorOutputConfigSettings - struct for SecretProcessesorOutputConfigSettings
 type SecretProcessesorOutputConfigSettings struct {
+	AwssqsoutputSettingsConfig *AwssqsoutputSettingsConfig
 	BigquerySettingsConfig *BigquerySettingsConfig
 	CriblHttpSettingsConfig *CriblHttpSettingsConfig
 	ElasticsearchSettingsConfig *ElasticsearchSettingsConfig
@@ -35,6 +36,13 @@ type SecretProcessesorOutputConfigSettings struct {
 	SplunkSettingsConfig *SplunkSettingsConfig
 	SumologicSettingsConfig *SumologicSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
+}
+
+// AwssqsoutputSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns AwssqsoutputSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func AwssqsoutputSettingsConfigAsSecretProcessesorOutputConfigSettings(v *AwssqsoutputSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		AwssqsoutputSettingsConfig: v,
+	}
 }
 
 // BigquerySettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns BigquerySettingsConfig wrapped in SecretProcessesorOutputConfigSettings
@@ -154,6 +162,23 @@ func MapmapOfStringAnyAsSecretProcessesorOutputConfigSettings(v *map[string]inte
 func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into AwssqsoutputSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AwssqsoutputSettingsConfig)
+	if err == nil {
+		jsonAwssqsoutputSettingsConfig, _ := json.Marshal(dst.AwssqsoutputSettingsConfig)
+		if string(jsonAwssqsoutputSettingsConfig) == "{}" { // empty struct
+			dst.AwssqsoutputSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AwssqsoutputSettingsConfig); err != nil {
+				dst.AwssqsoutputSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AwssqsoutputSettingsConfig = nil
+	}
+
 	// try to unmarshal data into BigquerySettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.BigquerySettingsConfig)
 	if err == nil {
@@ -428,6 +453,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.AwssqsoutputSettingsConfig = nil
 		dst.BigquerySettingsConfig = nil
 		dst.CriblHttpSettingsConfig = nil
 		dst.ElasticsearchSettingsConfig = nil
@@ -455,6 +481,10 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
+	if src.AwssqsoutputSettingsConfig != nil {
+		return json.Marshal(&src.AwssqsoutputSettingsConfig)
+	}
+
 	if src.BigquerySettingsConfig != nil {
 		return json.Marshal(&src.BigquerySettingsConfig)
 	}
@@ -527,6 +557,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 	if obj == nil {
 		return nil
 	}
+	if obj.AwssqsoutputSettingsConfig != nil {
+		return obj.AwssqsoutputSettingsConfig
+	}
+
 	if obj.BigquerySettingsConfig != nil {
 		return obj.BigquerySettingsConfig
 	}
@@ -597,6 +631,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 
 // Get the actual instance value
 func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (interface{}) {
+	if obj.AwssqsoutputSettingsConfig != nil {
+		return *obj.AwssqsoutputSettingsConfig
+	}
+
 	if obj.BigquerySettingsConfig != nil {
 		return *obj.BigquerySettingsConfig
 	}

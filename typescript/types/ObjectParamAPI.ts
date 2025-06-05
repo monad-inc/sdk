@@ -18,6 +18,7 @@ import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AwssqsSettingsConfig } from '../models/AwssqsSettingsConfig';
+import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';

@@ -41,38 +41,40 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
     """
     SecretProcessesorOutputConfigSecrets
     """
+    # data type: object
+    oneof_schema_1_validator: Optional[Dict[str, Any]] = Field(default=None, description="SQS Output Secrets")
     # data type: BigquerySecretsConfig
-    oneof_schema_1_validator: Optional[BigquerySecretsConfig] = None
+    oneof_schema_2_validator: Optional[BigquerySecretsConfig] = None
     # data type: CriblHttpSecretsConfig
-    oneof_schema_2_validator: Optional[CriblHttpSecretsConfig] = None
+    oneof_schema_3_validator: Optional[CriblHttpSecretsConfig] = None
     # data type: ElasticsearchSecretsConfig
-    oneof_schema_3_validator: Optional[ElasticsearchSecretsConfig] = None
+    oneof_schema_4_validator: Optional[ElasticsearchSecretsConfig] = None
     # data type: HttpSecretsConfig
-    oneof_schema_4_validator: Optional[HttpSecretsConfig] = None
+    oneof_schema_5_validator: Optional[HttpSecretsConfig] = None
     # data type: Dict[str, object]
-    oneof_schema_5_validator: Optional[Dict[str, Any]] = None
+    oneof_schema_6_validator: Optional[Dict[str, Any]] = None
     # data type: NextGenSiemSecretsConfig
-    oneof_schema_6_validator: Optional[NextGenSiemSecretsConfig] = None
+    oneof_schema_7_validator: Optional[NextGenSiemSecretsConfig] = None
     # data type: ObjectStorageSecretsConfig
-    oneof_schema_7_validator: Optional[ObjectStorageSecretsConfig] = None
+    oneof_schema_8_validator: Optional[ObjectStorageSecretsConfig] = None
     # data type: OpensearchSecretsConfig
-    oneof_schema_8_validator: Optional[OpensearchSecretsConfig] = None
+    oneof_schema_9_validator: Optional[OpensearchSecretsConfig] = None
     # data type: PagerdutySecretsConfig
-    oneof_schema_9_validator: Optional[PagerdutySecretsConfig] = None
+    oneof_schema_10_validator: Optional[PagerdutySecretsConfig] = None
     # data type: PostgresqlSecretsConfig
-    oneof_schema_10_validator: Optional[PostgresqlSecretsConfig] = None
+    oneof_schema_11_validator: Optional[PostgresqlSecretsConfig] = None
     # data type: object
-    oneof_schema_11_validator: Optional[Dict[str, Any]] = Field(default=None, description="S3 Output Secrets")
+    oneof_schema_12_validator: Optional[Dict[str, Any]] = Field(default=None, description="S3 Output Secrets")
     # data type: object
-    oneof_schema_12_validator: Optional[Dict[str, Any]] = Field(default=None, description="Security Lake Output Secrets")
+    oneof_schema_13_validator: Optional[Dict[str, Any]] = Field(default=None, description="Security Lake Output Secrets")
     # data type: SentinelSecretsConfig
-    oneof_schema_13_validator: Optional[SentinelSecretsConfig] = None
+    oneof_schema_14_validator: Optional[SentinelSecretsConfig] = None
     # data type: SnowflakeOutputSecretsConfig
-    oneof_schema_14_validator: Optional[SnowflakeOutputSecretsConfig] = None
+    oneof_schema_15_validator: Optional[SnowflakeOutputSecretsConfig] = None
     # data type: SplunkSecretsConfig
-    oneof_schema_15_validator: Optional[SplunkSecretsConfig] = None
+    oneof_schema_16_validator: Optional[SplunkSecretsConfig] = None
     # data type: SumologicSecretsConfig
-    oneof_schema_16_validator: Optional[SumologicSecretsConfig] = None
+    oneof_schema_17_validator: Optional[SumologicSecretsConfig] = None
     actual_instance: Optional[Union[BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]] = None
     one_of_schemas: Set[str] = { "BigquerySecretsConfig", "CriblHttpSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "HttpSecretsConfig", "NextGenSiemSecretsConfig", "ObjectStorageSecretsConfig", "OpensearchSecretsConfig", "PagerdutySecretsConfig", "PostgresqlSecretsConfig", "SentinelSecretsConfig", "SnowflakeOutputSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object" }
 
@@ -97,6 +99,12 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
         instance = SecretProcessesorOutputConfigSecrets.model_construct()
         error_messages = []
         match = 0
+        # validate data type: object
+        try:
+            instance.oneof_schema_1_validator = v
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # validate data type: BigquerySecretsConfig
         if not isinstance(v, BigquerySecretsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `BigquerySecretsConfig`")
@@ -119,7 +127,7 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
             match += 1
         # validate data type: Dict[str, object]
         try:
-            instance.oneof_schema_5_validator = v
+            instance.oneof_schema_6_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -150,13 +158,13 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
             match += 1
         # validate data type: object
         try:
-            instance.oneof_schema_11_validator = v
+            instance.oneof_schema_12_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
         # validate data type: object
         try:
-            instance.oneof_schema_12_validator = v
+            instance.oneof_schema_13_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -200,6 +208,15 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
         error_messages = []
         match = 0
 
+        # deserialize data into object
+        try:
+            # validation
+            instance.oneof_schema_1_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_1_validator
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into BigquerySecretsConfig
         try:
             instance.actual_instance = BigquerySecretsConfig.from_json(json_str)
@@ -227,9 +244,9 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
         # deserialize data into Dict[str, object]
         try:
             # validation
-            instance.oneof_schema_5_validator = json.loads(json_str)
+            instance.oneof_schema_6_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_5_validator
+            instance.actual_instance = instance.oneof_schema_6_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -266,18 +283,18 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_11_validator = json.loads(json_str)
+            instance.oneof_schema_12_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_11_validator
+            instance.actual_instance = instance.oneof_schema_12_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_12_validator = json.loads(json_str)
+            instance.oneof_schema_13_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_12_validator
+            instance.actual_instance = instance.oneof_schema_13_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
