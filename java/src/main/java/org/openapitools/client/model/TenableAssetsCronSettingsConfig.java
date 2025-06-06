@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Tenable assets settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-06T14:01:53.918025513Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-06T19:01:27.628276606Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class TenableAssetsCronSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)

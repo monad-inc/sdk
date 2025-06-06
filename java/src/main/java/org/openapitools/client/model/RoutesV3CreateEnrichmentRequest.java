@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3CreateEnrichmentRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-06T14:01:53.918025513Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-06T19:01:27.628276606Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RoutesV3CreateEnrichmentRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
