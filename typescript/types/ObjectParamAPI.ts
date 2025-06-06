@@ -1009,12 +1009,6 @@ import { ObservableConditionsApi } from "./ObservableAPI";
 import { ConditionsApiRequestFactory, ConditionsApiResponseProcessor} from "../apis/ConditionsApi";
 
 export interface ConditionsApiV2ConditionsGetRequest {
-    /**
-     * 
-     * @type any
-     * @memberof ConditionsApiv2ConditionsGet
-     */
-    body?: any
 }
 
 export class ObjectConditionsApi {
@@ -1030,7 +1024,7 @@ export class ObjectConditionsApi {
      * @param param the request object
      */
     public v2ConditionsGetWithHttpInfo(param: ConditionsApiV2ConditionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<ConditionInfo>>> {
-        return this.api.v2ConditionsGetWithHttpInfo(param.body,  options).toPromise();
+        return this.api.v2ConditionsGetWithHttpInfo( options).toPromise();
     }
 
     /**
@@ -1039,7 +1033,7 @@ export class ObjectConditionsApi {
      * @param param the request object
      */
     public v2ConditionsGet(param: ConditionsApiV2ConditionsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<ConditionInfo>> {
-        return this.api.v2ConditionsGet(param.body,  options).toPromise();
+        return this.api.v2ConditionsGet( options).toPromise();
     }
 
 }

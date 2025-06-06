@@ -74,7 +74,6 @@ public class ConditionsApi {
 
     /**
      * Build call for v2ConditionsGet
-     * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -85,7 +84,7 @@ public class ConditionsApi {
         <tr><td> 200 </td><td> Conditions information </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2ConditionsGetCall(@javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2ConditionsGetCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -99,7 +98,7 @@ public class ConditionsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/v2/conditions";
@@ -119,7 +118,6 @@ public class ConditionsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -131,15 +129,14 @@ public class ConditionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v2ConditionsGetValidateBeforeCall(@javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
-        return v2ConditionsGetCall(body, _callback);
+    private okhttp3.Call v2ConditionsGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return v2ConditionsGetCall(_callback);
 
     }
 
     /**
      * List conditions
      * List conditions
-     * @param body  (optional)
      * @return List&lt;ConditionInfo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -149,15 +146,14 @@ public class ConditionsApi {
         <tr><td> 200 </td><td> Conditions information </td><td>  -  </td></tr>
      </table>
      */
-    public List<ConditionInfo> v2ConditionsGet(@javax.annotation.Nullable Object body) throws ApiException {
-        ApiResponse<List<ConditionInfo>> localVarResp = v2ConditionsGetWithHttpInfo(body);
+    public List<ConditionInfo> v2ConditionsGet() throws ApiException {
+        ApiResponse<List<ConditionInfo>> localVarResp = v2ConditionsGetWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * List conditions
      * List conditions
-     * @param body  (optional)
      * @return ApiResponse&lt;List&lt;ConditionInfo&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -167,8 +163,8 @@ public class ConditionsApi {
         <tr><td> 200 </td><td> Conditions information </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ConditionInfo>> v2ConditionsGetWithHttpInfo(@javax.annotation.Nullable Object body) throws ApiException {
-        okhttp3.Call localVarCall = v2ConditionsGetValidateBeforeCall(body, null);
+    public ApiResponse<List<ConditionInfo>> v2ConditionsGetWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = v2ConditionsGetValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<List<ConditionInfo>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -176,7 +172,6 @@ public class ConditionsApi {
     /**
      * List conditions (asynchronously)
      * List conditions
-     * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -187,9 +182,9 @@ public class ConditionsApi {
         <tr><td> 200 </td><td> Conditions information </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2ConditionsGetAsync(@javax.annotation.Nullable Object body, final ApiCallback<List<ConditionInfo>> _callback) throws ApiException {
+    public okhttp3.Call v2ConditionsGetAsync(final ApiCallback<List<ConditionInfo>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v2ConditionsGetValidateBeforeCall(body, _callback);
+        okhttp3.Call localVarCall = v2ConditionsGetValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<List<ConditionInfo>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

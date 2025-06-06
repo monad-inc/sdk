@@ -17,15 +17,11 @@ List conditions
 
 ```typescript
 import { createConfiguration, ConditionsApi } from '';
-import type { ConditionsApiV2ConditionsGetRequest } from '';
 
 const configuration = createConfiguration();
 const apiInstance = new ConditionsApi(configuration);
 
-const request: ConditionsApiV2ConditionsGetRequest = {
-  
-  body: {},
-};
+const request = {};
 
 const data = await apiInstance.v2ConditionsGet(request);
 console.log('API called successfully. Returned data:', data);
@@ -33,10 +29,7 @@ console.log('API called successfully. Returned data:', data);
 
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -49,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **v2_conditions_get**
-> List[ConditionInfo] v2_conditions_get(body=body)
+> List[ConditionInfo] v2_conditions_get()
 
 List conditions
 
@@ -52,11 +52,10 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.ConditionsApi(api_client)
-    body = None # object |  (optional)
 
     try:
         # List conditions
-        api_response = api_instance.v2_conditions_get(body=body)
+        api_response = api_instance.v2_conditions_get()
         print("The response of ConditionsApi->v2_conditions_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -67,10 +66,7 @@ with monad.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **object**|  | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -82,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

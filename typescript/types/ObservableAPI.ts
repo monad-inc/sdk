@@ -1132,12 +1132,11 @@ export class ObservableConditionsApi {
     /**
      * List conditions
      * List conditions
-     * @param [body]
      */
-    public v2ConditionsGetWithHttpInfo(body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ConditionInfo>>> {
+    public v2ConditionsGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<Array<ConditionInfo>>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v2ConditionsGet(body, _config);
+        const requestContextPromise = this.requestFactory.v2ConditionsGet(_config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1157,10 +1156,9 @@ export class ObservableConditionsApi {
     /**
      * List conditions
      * List conditions
-     * @param [body]
      */
-    public v2ConditionsGet(body?: any, _options?: ConfigurationOptions): Observable<Array<ConditionInfo>> {
-        return this.v2ConditionsGetWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<Array<ConditionInfo>>) => apiResponse.data));
+    public v2ConditionsGet(_options?: ConfigurationOptions): Observable<Array<ConditionInfo>> {
+        return this.v2ConditionsGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<Array<ConditionInfo>>) => apiResponse.data));
     }
 
 }

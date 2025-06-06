@@ -880,22 +880,20 @@ export class PromiseConditionsApi {
     /**
      * List conditions
      * List conditions
-     * @param [body]
      */
-    public v2ConditionsGetWithHttpInfo(body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ConditionInfo>>> {
+    public v2ConditionsGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ConditionInfo>>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v2ConditionsGetWithHttpInfo(body, observableOptions);
+        const result = this.api.v2ConditionsGetWithHttpInfo(observableOptions);
         return result.toPromise();
     }
 
     /**
      * List conditions
      * List conditions
-     * @param [body]
      */
-    public v2ConditionsGet(body?: any, _options?: PromiseConfigurationOptions): Promise<Array<ConditionInfo>> {
+    public v2ConditionsGet(_options?: PromiseConfigurationOptions): Promise<Array<ConditionInfo>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v2ConditionsGet(body, observableOptions);
+        const result = this.api.v2ConditionsGet(observableOptions);
         return result.toPromise();
     }
 

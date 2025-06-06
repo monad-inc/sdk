@@ -9,7 +9,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="v2ConditionsGet"></a>
 # **v2ConditionsGet**
-> List&lt;ConditionInfo&gt; v2ConditionsGet(body)
+> List&lt;ConditionInfo&gt; v2ConditionsGet()
 
 List conditions
 
@@ -43,9 +43,8 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     ConditionsApi apiInstance = new ConditionsApi(defaultClient);
-    Object body = null; // Object | 
     try {
-      List<ConditionInfo> result = apiInstance.v2ConditionsGet(body);
+      List<ConditionInfo> result = apiInstance.v2ConditionsGet();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConditionsApi#v2ConditionsGet");
@@ -59,10 +58,7 @@ public class Example {
 ```
 
 ### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **body** | **Object**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -74,7 +70,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

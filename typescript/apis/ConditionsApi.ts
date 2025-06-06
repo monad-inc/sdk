@@ -18,11 +18,9 @@ export class ConditionsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * List conditions
      * List conditions
-     * @param body 
      */
-    public async v2ConditionsGet(body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async v2ConditionsGet(_options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
 
         // Path Params
         const localVarPath = '/v2/conditions';
@@ -31,17 +29,6 @@ export class ConditionsApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "any", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods

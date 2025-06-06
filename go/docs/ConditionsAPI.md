@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## V2ConditionsGet
 
-> []ConditionInfo V2ConditionsGet(ctx).Body(body).Execute()
+> []ConditionInfo V2ConditionsGet(ctx).Execute()
 
 List conditions
 
@@ -29,11 +29,10 @@ import (
 )
 
 func main() {
-	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConditionsAPI.V2ConditionsGet(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.ConditionsAPI.V2ConditionsGet(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConditionsAPI.V2ConditionsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -45,16 +44,12 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiV2ConditionsGetRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
 
 ### Return type
 
@@ -66,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

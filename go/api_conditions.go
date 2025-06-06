@@ -26,12 +26,6 @@ type ConditionsAPIService service
 type ApiV2ConditionsGetRequest struct {
 	ctx context.Context
 	ApiService *ConditionsAPIService
-	body *map[string]interface{}
-}
-
-func (r ApiV2ConditionsGetRequest) Body(body map[string]interface{}) ApiV2ConditionsGetRequest {
-	r.body = &body
-	return r
 }
 
 func (r ApiV2ConditionsGetRequest) Execute() ([]ConditionInfo, *http.Response, error) {
@@ -75,7 +69,7 @@ func (a *ConditionsAPIService) V2ConditionsGetExecute(r ApiV2ConditionsGetReques
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -91,8 +85,6 @@ func (a *ConditionsAPIService) V2ConditionsGetExecute(r ApiV2ConditionsGetReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
