@@ -238,6 +238,7 @@ import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputReque
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
@@ -1984,7 +1985,7 @@ export class ObservableOrganizationEnrichmentsApi {
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
      */
-    public v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(organizationId: string, enrichmentId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsEnrichment>> {
+    public v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(organizationId: string, enrichmentId: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3GetEnrichmentResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.v3OrganizationIdEnrichmentsEnrichmentIdGet(organizationId, enrichmentId, _config);
@@ -2010,8 +2011,8 @@ export class ObservableOrganizationEnrichmentsApi {
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
      */
-    public v3OrganizationIdEnrichmentsEnrichmentIdGet(organizationId: string, enrichmentId: string, _options?: ConfigurationOptions): Observable<ModelsEnrichment> {
-        return this.v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(organizationId, enrichmentId, _options).pipe(map((apiResponse: HttpInfo<ModelsEnrichment>) => apiResponse.data));
+    public v3OrganizationIdEnrichmentsEnrichmentIdGet(organizationId: string, enrichmentId: string, _options?: ConfigurationOptions): Observable<RoutesV3GetEnrichmentResponse> {
+        return this.v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(organizationId, enrichmentId, _options).pipe(map((apiResponse: HttpInfo<RoutesV3GetEnrichmentResponse>) => apiResponse.data));
     }
 
     /**

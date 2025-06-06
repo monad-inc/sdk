@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v3OrganizationIdEnrichmentsEnrichmentIdGet**
-> ModelsEnrichment v3OrganizationIdEnrichmentsEnrichmentIdGet()
+> RoutesV3GetEnrichmentResponse v3OrganizationIdEnrichmentsEnrichmentIdGet()
 
 Get an enrichment by ID
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ModelsEnrichment**
+**RoutesV3GetEnrichmentResponse**
 
 ### Authorization
 

@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ## V3OrganizationIdEnrichmentsEnrichmentIdGet
 
-> ModelsEnrichment V3OrganizationIdEnrichmentsEnrichmentIdGet(ctx, organizationId, enrichmentId).Execute()
+> RoutesV3GetEnrichmentResponse V3OrganizationIdEnrichmentsEnrichmentIdGet(ctx, organizationId, enrichmentId).Execute()
 
 Get enrichment
 
@@ -118,7 +118,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationEnrichmentsAPI.V3OrganizationIdEnrichmentsEnrichmentIdGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V3OrganizationIdEnrichmentsEnrichmentIdGet`: ModelsEnrichment
+	// response from `V3OrganizationIdEnrichmentsEnrichmentIdGet`: RoutesV3GetEnrichmentResponse
 	fmt.Fprintf(os.Stdout, "Response from `OrganizationEnrichmentsAPI.V3OrganizationIdEnrichmentsEnrichmentIdGet`: %v\n", resp)
 }
 ```
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsEnrichment**](ModelsEnrichment.md)
+[**RoutesV3GetEnrichmentResponse**](RoutesV3GetEnrichmentResponse.md)
 
 ### Authorization
 

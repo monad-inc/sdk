@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-06-06T13:21:59.876168814Z[Etc/UTC]
+  - Build date: 2025-06-06T14:01:53.918025513Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -472,6 +472,7 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdatePipelineRequest](docs/RoutesV2UpdatePipelineRequest.md)
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [RoutesV3CreateEnrichmentRequest](docs/RoutesV3CreateEnrichmentRequest.md)
+ - [RoutesV3GetEnrichmentResponse](docs/RoutesV3GetEnrichmentResponse.md)
  - [RoutesV3ImportTransformResponse](docs/RoutesV3ImportTransformResponse.md)
  - [RoutesV3PutEnrichmentRequest](docs/RoutesV3PutEnrichmentRequest.md)
  - [RoutesV3SuccessResponse](docs/RoutesV3SuccessResponse.md)

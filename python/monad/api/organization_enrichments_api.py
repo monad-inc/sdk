@@ -23,6 +23,7 @@ from typing_extensions import Annotated
 from monad.models.models_enrichment import ModelsEnrichment
 from monad.models.models_enrichment_list import ModelsEnrichmentList
 from monad.models.routes_v3_create_enrichment_request import RoutesV3CreateEnrichmentRequest
+from monad.models.routes_v3_get_enrichment_response import RoutesV3GetEnrichmentResponse
 from monad.models.routes_v3_put_enrichment_request import RoutesV3PutEnrichmentRequest
 from monad.models.routes_v3_success_response import RoutesV3SuccessResponse
 from monad.models.routes_v3_test_enrichment_connection_request import RoutesV3TestEnrichmentConnectionRequest
@@ -346,7 +347,7 @@ class OrganizationEnrichmentsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelsEnrichment:
+    ) -> RoutesV3GetEnrichmentResponse:
         """Get enrichment
 
         Get an enrichment by ID
@@ -387,7 +388,7 @@ class OrganizationEnrichmentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsEnrichment",
+            '200': "RoutesV3GetEnrichmentResponse",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -419,7 +420,7 @@ class OrganizationEnrichmentsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelsEnrichment]:
+    ) -> ApiResponse[RoutesV3GetEnrichmentResponse]:
         """Get enrichment
 
         Get an enrichment by ID
@@ -460,7 +461,7 @@ class OrganizationEnrichmentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsEnrichment",
+            '200': "RoutesV3GetEnrichmentResponse",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -533,7 +534,7 @@ class OrganizationEnrichmentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsEnrichment",
+            '200': "RoutesV3GetEnrichmentResponse",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }

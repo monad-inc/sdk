@@ -94,7 +94,7 @@ public class Example {
 
 <a id="v3OrganizationIdEnrichmentsEnrichmentIdGet"></a>
 # **v3OrganizationIdEnrichmentsEnrichmentIdGet**
-> ModelsEnrichment v3OrganizationIdEnrichmentsEnrichmentIdGet(organizationId, enrichmentId)
+> RoutesV3GetEnrichmentResponse v3OrganizationIdEnrichmentsEnrichmentIdGet(organizationId, enrichmentId)
 
 Get enrichment
 
@@ -131,7 +131,7 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     String enrichmentId = "enrichmentId_example"; // String | Enrichment ID
     try {
-      ModelsEnrichment result = apiInstance.v3OrganizationIdEnrichmentsEnrichmentIdGet(organizationId, enrichmentId);
+      RoutesV3GetEnrichmentResponse result = apiInstance.v3OrganizationIdEnrichmentsEnrichmentIdGet(organizationId, enrichmentId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationEnrichmentsApi#v3OrganizationIdEnrichmentsEnrichmentIdGet");
@@ -153,7 +153,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsEnrichment**](ModelsEnrichment.md)
+[**RoutesV3GetEnrichmentResponse**](RoutesV3GetEnrichmentResponse.md)
 
 ### Authorization
 

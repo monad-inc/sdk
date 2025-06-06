@@ -237,6 +237,7 @@ import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputReque
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
@@ -1954,7 +1955,7 @@ export class ObjectOrganizationEnrichmentsApi {
      * Get enrichment
      * @param param the request object
      */
-    public v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
+    public v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3GetEnrichmentResponse>> {
         return this.api.v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(param.organizationId, param.enrichmentId,  options).toPromise();
     }
 
@@ -1963,7 +1964,7 @@ export class ObjectOrganizationEnrichmentsApi {
      * Get enrichment
      * @param param the request object
      */
-    public v3OrganizationIdEnrichmentsEnrichmentIdGet(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest, options?: ConfigurationOptions): Promise<ModelsEnrichment> {
+    public v3OrganizationIdEnrichmentsEnrichmentIdGet(param: OrganizationEnrichmentsApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest, options?: ConfigurationOptions): Promise<RoutesV3GetEnrichmentResponse> {
         return this.api.v3OrganizationIdEnrichmentsEnrichmentIdGet(param.organizationId, param.enrichmentId,  options).toPromise();
     }
 

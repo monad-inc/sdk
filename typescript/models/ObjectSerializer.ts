@@ -233,6 +233,7 @@ export * from '../models/RoutesV2UpdateOutputRequest';
 export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/RoutesV2UpdateRoleV2Request';
 export * from '../models/RoutesV3CreateEnrichmentRequest';
+export * from '../models/RoutesV3GetEnrichmentResponse';
 export * from '../models/RoutesV3ImportTransformResponse';
 export * from '../models/RoutesV3PutEnrichmentRequest';
 export * from '../models/RoutesV3SuccessResponse';
@@ -536,6 +537,7 @@ import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputReque
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
@@ -864,6 +866,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdatePipelineRequest": RoutesV2UpdatePipelineRequest,
     "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
     "RoutesV3CreateEnrichmentRequest": RoutesV3CreateEnrichmentRequest,
+    "RoutesV3GetEnrichmentResponse": RoutesV3GetEnrichmentResponse,
     "RoutesV3ImportTransformResponse": RoutesV3ImportTransformResponse,
     "RoutesV3PutEnrichmentRequest": RoutesV3PutEnrichmentRequest,
     "RoutesV3SuccessResponse": RoutesV3SuccessResponse,

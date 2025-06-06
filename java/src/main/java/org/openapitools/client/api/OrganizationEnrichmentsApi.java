@@ -31,6 +31,7 @@ import org.openapitools.client.model.ModelsEnrichment;
 import org.openapitools.client.model.ModelsEnrichmentList;
 import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesV3CreateEnrichmentRequest;
+import org.openapitools.client.model.RoutesV3GetEnrichmentResponse;
 import org.openapitools.client.model.RoutesV3PutEnrichmentRequest;
 import org.openapitools.client.model.RoutesV3SuccessResponse;
 import org.openapitools.client.model.RoutesV3TestEnrichmentConnectionRequest;
@@ -307,7 +308,7 @@ public class OrganizationEnrichmentsApi {
      * Get an enrichment by ID
      * @param organizationId Organization ID (required)
      * @param enrichmentId Enrichment ID (required)
-     * @return ModelsEnrichment
+     * @return RoutesV3GetEnrichmentResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -318,8 +319,8 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsEnrichment v3OrganizationIdEnrichmentsEnrichmentIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId) throws ApiException {
-        ApiResponse<ModelsEnrichment> localVarResp = v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(organizationId, enrichmentId);
+    public RoutesV3GetEnrichmentResponse v3OrganizationIdEnrichmentsEnrichmentIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId) throws ApiException {
+        ApiResponse<RoutesV3GetEnrichmentResponse> localVarResp = v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(organizationId, enrichmentId);
         return localVarResp.getData();
     }
 
@@ -328,7 +329,7 @@ public class OrganizationEnrichmentsApi {
      * Get an enrichment by ID
      * @param organizationId Organization ID (required)
      * @param enrichmentId Enrichment ID (required)
-     * @return ApiResponse&lt;ModelsEnrichment&gt;
+     * @return ApiResponse&lt;RoutesV3GetEnrichmentResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -339,9 +340,9 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsEnrichment> v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId) throws ApiException {
+    public ApiResponse<RoutesV3GetEnrichmentResponse> v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId) throws ApiException {
         okhttp3.Call localVarCall = v3OrganizationIdEnrichmentsEnrichmentIdGetValidateBeforeCall(organizationId, enrichmentId, null);
-        Type localVarReturnType = new TypeToken<ModelsEnrichment>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3GetEnrichmentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -362,10 +363,10 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v3OrganizationIdEnrichmentsEnrichmentIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, final ApiCallback<ModelsEnrichment> _callback) throws ApiException {
+    public okhttp3.Call v3OrganizationIdEnrichmentsEnrichmentIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String enrichmentId, final ApiCallback<RoutesV3GetEnrichmentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v3OrganizationIdEnrichmentsEnrichmentIdGetValidateBeforeCall(organizationId, enrichmentId, _callback);
-        Type localVarReturnType = new TypeToken<ModelsEnrichment>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3GetEnrichmentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

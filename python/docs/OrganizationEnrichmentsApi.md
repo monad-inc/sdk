@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v3_organization_id_enrichments_enrichment_id_get**
-> ModelsEnrichment v3_organization_id_enrichments_enrichment_id_get(organization_id, enrichment_id)
+> RoutesV3GetEnrichmentResponse v3_organization_id_enrichments_enrichment_id_get(organization_id, enrichment_id)
 
 Get enrichment
 
@@ -117,7 +117,7 @@ Get an enrichment by ID
 
 ```python
 import monad
-from monad.models.models_enrichment import ModelsEnrichment
+from monad.models.routes_v3_get_enrichment_response import RoutesV3GetEnrichmentResponse
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsEnrichment**](ModelsEnrichment.md)
+[**RoutesV3GetEnrichmentResponse**](RoutesV3GetEnrichmentResponse.md)
 
 ### Authorization
 

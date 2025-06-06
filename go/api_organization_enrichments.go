@@ -187,7 +187,7 @@ type ApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest struct {
 	enrichmentId string
 }
 
-func (r ApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest) Execute() (*ModelsEnrichment, *http.Response, error) {
+func (r ApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest) Execute() (*RoutesV3GetEnrichmentResponse, *http.Response, error) {
 	return r.ApiService.V3OrganizationIdEnrichmentsEnrichmentIdGetExecute(r)
 }
 
@@ -211,13 +211,13 @@ func (a *OrganizationEnrichmentsAPIService) V3OrganizationIdEnrichmentsEnrichmen
 }
 
 // Execute executes the request
-//  @return ModelsEnrichment
-func (a *OrganizationEnrichmentsAPIService) V3OrganizationIdEnrichmentsEnrichmentIdGetExecute(r ApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest) (*ModelsEnrichment, *http.Response, error) {
+//  @return RoutesV3GetEnrichmentResponse
+func (a *OrganizationEnrichmentsAPIService) V3OrganizationIdEnrichmentsEnrichmentIdGetExecute(r ApiV3OrganizationIdEnrichmentsEnrichmentIdGetRequest) (*RoutesV3GetEnrichmentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsEnrichment
+		localVarReturnValue  *RoutesV3GetEnrichmentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationEnrichmentsAPIService.V3OrganizationIdEnrichmentsEnrichmentIdGet")

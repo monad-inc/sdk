@@ -237,6 +237,7 @@ import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputReque
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
@@ -1499,7 +1500,7 @@ export class PromiseOrganizationEnrichmentsApi {
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
      */
-    public v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(organizationId: string, enrichmentId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsEnrichment>> {
+    public v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(organizationId: string, enrichmentId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3GetEnrichmentResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v3OrganizationIdEnrichmentsEnrichmentIdGetWithHttpInfo(organizationId, enrichmentId, observableOptions);
         return result.toPromise();
@@ -1511,7 +1512,7 @@ export class PromiseOrganizationEnrichmentsApi {
      * @param organizationId Organization ID
      * @param enrichmentId Enrichment ID
      */
-    public v3OrganizationIdEnrichmentsEnrichmentIdGet(organizationId: string, enrichmentId: string, _options?: PromiseConfigurationOptions): Promise<ModelsEnrichment> {
+    public v3OrganizationIdEnrichmentsEnrichmentIdGet(organizationId: string, enrichmentId: string, _options?: PromiseConfigurationOptions): Promise<RoutesV3GetEnrichmentResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v3OrganizationIdEnrichmentsEnrichmentIdGet(organizationId, enrichmentId, observableOptions);
         return result.toPromise();
