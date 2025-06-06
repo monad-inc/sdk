@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * GitHub audit logs secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-05T21:58:33.861887478Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-06T13:21:59.876168814Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AuditLogsSecretsConfig {
   public static final String SERIALIZED_NAME_PERSONAL_ACCESS_TOKEN = "personal_access_token";
   @SerializedName(SERIALIZED_NAME_PERSONAL_ACCESS_TOKEN)
