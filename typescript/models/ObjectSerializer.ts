@@ -164,6 +164,8 @@ export * from '../models/ObjectStorageInputSecretsConfig';
 export * from '../models/ObjectStorageInputSettingsConfig';
 export * from '../models/ObjectStorageSecretsConfig';
 export * from '../models/ObjectStorageSettingsConfig';
+export * from '../models/OneloginEventsSecretsConfig';
+export * from '../models/OneloginEventsSettingsConfig';
 export * from '../models/OpensearchSecretsConfig';
 export * from '../models/OpensearchSettingsConfig';
 export * from '../models/OperationInformation';
@@ -470,6 +472,8 @@ import { ObjectStorageInputSecretsConfig } from '../models/ObjectStorageInputSec
 import { ObjectStorageInputSettingsConfig } from '../models/ObjectStorageInputSettingsConfig';
 import { ObjectStorageSecretsConfig } from '../models/ObjectStorageSecretsConfig';
 import { ObjectStorageSettingsConfig } from '../models/ObjectStorageSettingsConfig';
+import { OneloginEventsSecretsConfig } from '../models/OneloginEventsSecretsConfig';
+import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsConfig';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
@@ -801,6 +805,8 @@ let typeMap: {[index: string]: any} = {
     "ObjectStorageInputSettingsConfig": ObjectStorageInputSettingsConfig,
     "ObjectStorageSecretsConfig": ObjectStorageSecretsConfig,
     "ObjectStorageSettingsConfig": ObjectStorageSettingsConfig,
+    "OneloginEventsSecretsConfig": OneloginEventsSecretsConfig,
+    "OneloginEventsSettingsConfig": OneloginEventsSettingsConfig,
     "OpensearchSecretsConfig": OpensearchSecretsConfig,
     "OpensearchSettingsConfig": OpensearchSettingsConfig,
     "OperationInformation": OperationInformation,

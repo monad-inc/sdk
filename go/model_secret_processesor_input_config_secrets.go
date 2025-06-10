@@ -51,6 +51,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	LoginSessionsSecretsConfig *LoginSessionsSecretsConfig
 	OauthActivitySecretsConfig *OauthActivitySecretsConfig
 	ObjectStorageInputSecretsConfig *ObjectStorageInputSecretsConfig
+	OneloginEventsSecretsConfig *OneloginEventsSecretsConfig
 	RolesInfoSecretsConfig *RolesInfoSecretsConfig
 	SemgrepCodeFindingsSecretsConfig *SemgrepCodeFindingsSecretsConfig
 	SemgrepDeploymentsSecretsConfig *SemgrepDeploymentsSecretsConfig
@@ -298,6 +299,13 @@ func OauthActivitySecretsConfigAsSecretProcessesorInputConfigSecrets(v *OauthAct
 func ObjectStorageInputSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ObjectStorageInputSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		ObjectStorageInputSecretsConfig: v,
+	}
+}
+
+// OneloginEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns OneloginEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func OneloginEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OneloginEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		OneloginEventsSecretsConfig: v,
 	}
 }
 
@@ -1018,6 +1026,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.ObjectStorageInputSecretsConfig = nil
 	}
 
+	// try to unmarshal data into OneloginEventsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.OneloginEventsSecretsConfig)
+	if err == nil {
+		jsonOneloginEventsSecretsConfig, _ := json.Marshal(dst.OneloginEventsSecretsConfig)
+		if string(jsonOneloginEventsSecretsConfig) == "{}" { // empty struct
+			dst.OneloginEventsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.OneloginEventsSecretsConfig); err != nil {
+				dst.OneloginEventsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.OneloginEventsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into RolesInfoSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.RolesInfoSecretsConfig)
 	if err == nil {
@@ -1460,6 +1485,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.LoginSessionsSecretsConfig = nil
 		dst.OauthActivitySecretsConfig = nil
 		dst.ObjectStorageInputSecretsConfig = nil
+		dst.OneloginEventsSecretsConfig = nil
 		dst.RolesInfoSecretsConfig = nil
 		dst.SemgrepCodeFindingsSecretsConfig = nil
 		dst.SemgrepDeploymentsSecretsConfig = nil
@@ -1621,6 +1647,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.ObjectStorageInputSecretsConfig != nil {
 		return json.Marshal(&src.ObjectStorageInputSecretsConfig)
+	}
+
+	if src.OneloginEventsSecretsConfig != nil {
+		return json.Marshal(&src.OneloginEventsSecretsConfig)
 	}
 
 	if src.RolesInfoSecretsConfig != nil {
@@ -1855,6 +1885,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.ObjectStorageInputSecretsConfig
 	}
 
+	if obj.OneloginEventsSecretsConfig != nil {
+		return obj.OneloginEventsSecretsConfig
+	}
+
 	if obj.RolesInfoSecretsConfig != nil {
 		return obj.RolesInfoSecretsConfig
 	}
@@ -2083,6 +2117,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.ObjectStorageInputSecretsConfig != nil {
 		return *obj.ObjectStorageInputSecretsConfig
+	}
+
+	if obj.OneloginEventsSecretsConfig != nil {
+		return *obj.OneloginEventsSecretsConfig
 	}
 
 	if obj.RolesInfoSecretsConfig != nil {

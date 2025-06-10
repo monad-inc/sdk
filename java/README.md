@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-06-10T18:04:19.251533447Z[Etc/UTC]
+  - Build date: 2025-06-10T22:46:48.220391702Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -403,6 +403,8 @@ Class | Method | HTTP request | Description
  - [ObjectStorageInputSettingsConfig](docs/ObjectStorageInputSettingsConfig.md)
  - [ObjectStorageSecretsConfig](docs/ObjectStorageSecretsConfig.md)
  - [ObjectStorageSettingsConfig](docs/ObjectStorageSettingsConfig.md)
+ - [OneloginEventsSecretsConfig](docs/OneloginEventsSecretsConfig.md)
+ - [OneloginEventsSettingsConfig](docs/OneloginEventsSettingsConfig.md)
  - [OpensearchSecretsConfig](docs/OpensearchSecretsConfig.md)
  - [OpensearchSettingsConfig](docs/OpensearchSettingsConfig.md)
  - [OperationInformation](docs/OperationInformation.md)

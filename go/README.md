@@ -367,6 +367,8 @@ Class | Method | HTTP request | Description
  - [ObjectStorageInputSettingsConfig](docs/ObjectStorageInputSettingsConfig.md)
  - [ObjectStorageSecretsConfig](docs/ObjectStorageSecretsConfig.md)
  - [ObjectStorageSettingsConfig](docs/ObjectStorageSettingsConfig.md)
+ - [OneloginEventsSecretsConfig](docs/OneloginEventsSecretsConfig.md)
+ - [OneloginEventsSettingsConfig](docs/OneloginEventsSettingsConfig.md)
  - [OpensearchSecretsConfig](docs/OpensearchSecretsConfig.md)
  - [OpensearchSettingsConfig](docs/OpensearchSettingsConfig.md)
  - [OperationInformation](docs/OperationInformation.md)

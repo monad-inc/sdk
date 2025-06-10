@@ -97,6 +97,7 @@ Name | Type | Description | Notes
 **Endpoint** | Pointer to **string** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | [optional] 
 **SkipSslVerification** | Pointer to **bool** | Skip SSL verification for self-signed certificates | [optional] 
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
+**Subdomain** | Pointer to **string** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
@@ -2452,6 +2453,31 @@ SetUsePathStyle sets UsePathStyle field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasUsePathStyle() bool`
 
 HasUsePathStyle returns a boolean if a field has been set.
+
+### GetSubdomain
+
+`func (o *SecretProcessesorInputConfigSettings) GetSubdomain() string`
+
+GetSubdomain returns the Subdomain field if non-nil, zero value otherwise.
+
+### GetSubdomainOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetSubdomainOk() (*string, bool)`
+
+GetSubdomainOk returns a tuple with the Subdomain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubdomain
+
+`func (o *SecretProcessesorInputConfigSettings) SetSubdomain(v string)`
+
+SetSubdomain sets Subdomain field to given value.
+
+### HasSubdomain
+
+`func (o *SecretProcessesorInputConfigSettings) HasSubdomain() bool`
+
+HasSubdomain returns a boolean if a field has been set.
 
 ### GetAccount
 
