@@ -282,6 +282,8 @@ Class | Method | HTTP request | Description
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
+ - [GoogleCloudStorageSecretsConfig](docs/GoogleCloudStorageSecretsConfig.md)
+ - [GoogleCloudStorageSettingsConfig](docs/GoogleCloudStorageSettingsConfig.md)
  - [HttpSecretsConfig](docs/HttpSecretsConfig.md)
  - [HttpSettingsConfig](docs/HttpSettingsConfig.md)
  - [InputsConnectorMeta](docs/InputsConnectorMeta.md)

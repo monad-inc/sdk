@@ -44,6 +44,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	EventSecretsConfig *EventSecretsConfig
 	EventsLogsSecretsConfig *EventsLogsSecretsConfig
 	FullScansSecretsConfig *FullScansSecretsConfig
+	GoogleCloudStorageSecretsConfig *GoogleCloudStorageSecretsConfig
 	IssuesSecretsConfig *IssuesSecretsConfig
 	LogAnalyticsQuerySecretsConfig *LogAnalyticsQuerySecretsConfig
 	LoginActivitySecretsConfig *LoginActivitySecretsConfig
@@ -248,6 +249,13 @@ func EventsLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *EventsLogsS
 func FullScansSecretsConfigAsSecretProcessesorInputConfigSecrets(v *FullScansSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		FullScansSecretsConfig: v,
+	}
+}
+
+// GoogleCloudStorageSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns GoogleCloudStorageSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func GoogleCloudStorageSecretsConfigAsSecretProcessesorInputConfigSecrets(v *GoogleCloudStorageSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		GoogleCloudStorageSecretsConfig: v,
 	}
 }
 
@@ -891,6 +899,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.FullScansSecretsConfig = nil
 	}
 
+	// try to unmarshal data into GoogleCloudStorageSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.GoogleCloudStorageSecretsConfig)
+	if err == nil {
+		jsonGoogleCloudStorageSecretsConfig, _ := json.Marshal(dst.GoogleCloudStorageSecretsConfig)
+		if string(jsonGoogleCloudStorageSecretsConfig) == "{}" { // empty struct
+			dst.GoogleCloudStorageSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.GoogleCloudStorageSecretsConfig); err != nil {
+				dst.GoogleCloudStorageSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.GoogleCloudStorageSecretsConfig = nil
+	}
+
 	// try to unmarshal data into IssuesSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.IssuesSecretsConfig)
 	if err == nil {
@@ -1428,6 +1453,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.EventSecretsConfig = nil
 		dst.EventsLogsSecretsConfig = nil
 		dst.FullScansSecretsConfig = nil
+		dst.GoogleCloudStorageSecretsConfig = nil
 		dst.IssuesSecretsConfig = nil
 		dst.LogAnalyticsQuerySecretsConfig = nil
 		dst.LoginActivitySecretsConfig = nil
@@ -1567,6 +1593,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.FullScansSecretsConfig != nil {
 		return json.Marshal(&src.FullScansSecretsConfig)
+	}
+
+	if src.GoogleCloudStorageSecretsConfig != nil {
+		return json.Marshal(&src.GoogleCloudStorageSecretsConfig)
 	}
 
 	if src.IssuesSecretsConfig != nil {
@@ -1797,6 +1827,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.FullScansSecretsConfig
 	}
 
+	if obj.GoogleCloudStorageSecretsConfig != nil {
+		return obj.GoogleCloudStorageSecretsConfig
+	}
+
 	if obj.IssuesSecretsConfig != nil {
 		return obj.IssuesSecretsConfig
 	}
@@ -2021,6 +2055,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.FullScansSecretsConfig != nil {
 		return *obj.FullScansSecretsConfig
+	}
+
+	if obj.GoogleCloudStorageSecretsConfig != nil {
+		return *obj.GoogleCloudStorageSecretsConfig
 	}
 
 	if obj.IssuesSecretsConfig != nil {

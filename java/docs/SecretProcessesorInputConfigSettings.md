@@ -78,6 +78,8 @@
 |**tenantUrl** | **String** | Unique URL for your Tines instance |  [optional] |
 |**orgSlug** | **String** | Cron expression for scheduling the input |  [optional] |
 |**repo** | **String** | A repository slug to filter full-scans by. |  [optional] |
+|**bucketName** | **String** | The name of the Google Cloud Storage bucket to use |  [optional] |
+|**projectId** | **String** | The Google Cloud project ID to use |  [optional] |
 |**controlIds** | **List&lt;String&gt;** | @Description Filter Issues created by specific control IDs |  [optional] |
 |**hasNote** | **String** | @Description Filter Issues with or without a note |  [optional] |
 |**hasRemediation** | **String** | @Description Filter Issues with or without remediation |  [optional] |

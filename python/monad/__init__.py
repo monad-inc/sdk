@@ -141,6 +141,8 @@ from monad.models.flattenall_flatten_all import FlattenallFlattenAll
 from monad.models.formatter_format_config import FormatterFormatConfig
 from monad.models.full_scans_secrets_config import FullScansSecretsConfig
 from monad.models.full_scans_settings_config import FullScansSettingsConfig
+from monad.models.google_cloud_storage_secrets_config import GoogleCloudStorageSecretsConfig
+from monad.models.google_cloud_storage_settings_config import GoogleCloudStorageSettingsConfig
 from monad.models.http_secrets_config import HttpSecretsConfig
 from monad.models.http_settings_config import HttpSettingsConfig
 from monad.models.inputs_connector_meta import InputsConnectorMeta

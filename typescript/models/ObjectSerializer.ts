@@ -79,6 +79,8 @@ export * from '../models/FlattenallFlattenAll';
 export * from '../models/FormatterFormatConfig';
 export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
+export * from '../models/GoogleCloudStorageSecretsConfig';
+export * from '../models/GoogleCloudStorageSettingsConfig';
 export * from '../models/HttpSecretsConfig';
 export * from '../models/HttpSettingsConfig';
 export * from '../models/InputsConnectorMeta';
@@ -383,6 +385,8 @@ import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
+import { GoogleCloudStorageSecretsConfig } from '../models/GoogleCloudStorageSecretsConfig';
+import { GoogleCloudStorageSettingsConfig } from '../models/GoogleCloudStorageSettingsConfig';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
@@ -712,6 +716,8 @@ let typeMap: {[index: string]: any} = {
     "FormatterFormatConfig": FormatterFormatConfig,
     "FullScansSecretsConfig": FullScansSecretsConfig,
     "FullScansSettingsConfig": FullScansSettingsConfig,
+    "GoogleCloudStorageSecretsConfig": GoogleCloudStorageSecretsConfig,
+    "GoogleCloudStorageSettingsConfig": GoogleCloudStorageSettingsConfig,
     "HttpSecretsConfig": HttpSecretsConfig,
     "HttpSettingsConfig": HttpSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,

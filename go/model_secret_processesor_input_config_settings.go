@@ -49,6 +49,7 @@ type SecretProcessesorInputConfigSettings struct {
 	EventSettingsConfig *EventSettingsConfig
 	EventsLogsSettingsConfig *EventsLogsSettingsConfig
 	FullScansSettingsConfig *FullScansSettingsConfig
+	GoogleCloudStorageSettingsConfig *GoogleCloudStorageSettingsConfig
 	IssuesSettingsConfig *IssuesSettingsConfig
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
 	LoginActivitySettingsConfig *LoginActivitySettingsConfig
@@ -283,6 +284,13 @@ func EventsLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *EventsLog
 func FullScansSettingsConfigAsSecretProcessesorInputConfigSettings(v *FullScansSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		FullScansSettingsConfig: v,
+	}
+}
+
+// GoogleCloudStorageSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns GoogleCloudStorageSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func GoogleCloudStorageSettingsConfigAsSecretProcessesorInputConfigSettings(v *GoogleCloudStorageSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		GoogleCloudStorageSettingsConfig: v,
 	}
 }
 
@@ -976,6 +984,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.FullScansSettingsConfig = nil
 	}
 
+	// try to unmarshal data into GoogleCloudStorageSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.GoogleCloudStorageSettingsConfig)
+	if err == nil {
+		jsonGoogleCloudStorageSettingsConfig, _ := json.Marshal(dst.GoogleCloudStorageSettingsConfig)
+		if string(jsonGoogleCloudStorageSettingsConfig) == "{}" { // empty struct
+			dst.GoogleCloudStorageSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.GoogleCloudStorageSettingsConfig); err != nil {
+				dst.GoogleCloudStorageSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.GoogleCloudStorageSettingsConfig = nil
+	}
+
 	// try to unmarshal data into IssuesSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.IssuesSettingsConfig)
 	if err == nil {
@@ -1433,6 +1458,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.EventSettingsConfig = nil
 		dst.EventsLogsSettingsConfig = nil
 		dst.FullScansSettingsConfig = nil
+		dst.GoogleCloudStorageSettingsConfig = nil
 		dst.IssuesSettingsConfig = nil
 		dst.LogAnalyticsQuerySettingsConfig = nil
 		dst.LoginActivitySettingsConfig = nil
@@ -1587,6 +1613,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.FullScansSettingsConfig != nil {
 		return json.Marshal(&src.FullScansSettingsConfig)
+	}
+
+	if src.GoogleCloudStorageSettingsConfig != nil {
+		return json.Marshal(&src.GoogleCloudStorageSettingsConfig)
 	}
 
 	if src.IssuesSettingsConfig != nil {
@@ -1817,6 +1847,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.FullScansSettingsConfig
 	}
 
+	if obj.GoogleCloudStorageSettingsConfig != nil {
+		return obj.GoogleCloudStorageSettingsConfig
+	}
+
 	if obj.IssuesSettingsConfig != nil {
 		return obj.IssuesSettingsConfig
 	}
@@ -2041,6 +2075,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.FullScansSettingsConfig != nil {
 		return *obj.FullScansSettingsConfig
+	}
+
+	if obj.GoogleCloudStorageSettingsConfig != nil {
+		return *obj.GoogleCloudStorageSettingsConfig
 	}
 
 	if obj.IssuesSettingsConfig != nil {

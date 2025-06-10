@@ -75,6 +75,8 @@ Name | Type | Description | Notes
 **TenantUrl** | Pointer to **string** | Unique URL for your Tines instance | [optional] 
 **OrgSlug** | Pointer to **string** | Cron expression for scheduling the input | [optional] 
 **Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
+**BucketName** | Pointer to **string** | The name of the Google Cloud Storage bucket to use | [optional] 
+**ProjectId** | Pointer to **string** | The Google Cloud project ID to use | [optional] 
 **ControlIds** | Pointer to **[]string** | @Description Filter Issues created by specific control IDs | [optional] 
 **HasNote** | Pointer to **string** | @Description Filter Issues with or without a note | [optional] 
 **HasRemediation** | Pointer to **string** | @Description Filter Issues with or without remediation | [optional] 
@@ -1900,6 +1902,56 @@ SetRepo sets Repo field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasRepo() bool`
 
 HasRepo returns a boolean if a field has been set.
+
+### GetBucketName
+
+`func (o *SecretProcessesorInputConfigSettings) GetBucketName() string`
+
+GetBucketName returns the BucketName field if non-nil, zero value otherwise.
+
+### GetBucketNameOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetBucketNameOk() (*string, bool)`
+
+GetBucketNameOk returns a tuple with the BucketName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBucketName
+
+`func (o *SecretProcessesorInputConfigSettings) SetBucketName(v string)`
+
+SetBucketName sets BucketName field to given value.
+
+### HasBucketName
+
+`func (o *SecretProcessesorInputConfigSettings) HasBucketName() bool`
+
+HasBucketName returns a boolean if a field has been set.
+
+### GetProjectId
+
+`func (o *SecretProcessesorInputConfigSettings) GetProjectId() string`
+
+GetProjectId returns the ProjectId field if non-nil, zero value otherwise.
+
+### GetProjectIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetProjectIdOk() (*string, bool)`
+
+GetProjectIdOk returns a tuple with the ProjectId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProjectId
+
+`func (o *SecretProcessesorInputConfigSettings) SetProjectId(v string)`
+
+SetProjectId sets ProjectId field to given value.
+
+### HasProjectId
+
+`func (o *SecretProcessesorInputConfigSettings) HasProjectId() bool`
+
+HasProjectId returns a boolean if a field has been set.
 
 ### GetControlIds
 

@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-06-06T21:50:28.048520195Z[Etc/UTC]
+  - Build date: 2025-06-10T18:04:19.251533447Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -318,6 +318,8 @@ Class | Method | HTTP request | Description
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
+ - [GoogleCloudStorageSecretsConfig](docs/GoogleCloudStorageSecretsConfig.md)
+ - [GoogleCloudStorageSettingsConfig](docs/GoogleCloudStorageSettingsConfig.md)
  - [HttpSecretsConfig](docs/HttpSecretsConfig.md)
  - [HttpSettingsConfig](docs/HttpSettingsConfig.md)
  - [InputsConnectorMeta](docs/InputsConnectorMeta.md)
