@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **auth_headers** | [**Dict[str, ModelsSecret]**](ModelsSecret.md) | Authentication headers | [optional] 
 **access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

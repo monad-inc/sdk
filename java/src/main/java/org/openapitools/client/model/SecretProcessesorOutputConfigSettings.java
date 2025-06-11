@@ -31,6 +31,7 @@ import org.openapitools.client.model.BigquerySettingsConfig;
 import org.openapitools.client.model.CriblHttpSettingsConfig;
 import org.openapitools.client.model.ElasticsearchSettingsConfig;
 import org.openapitools.client.model.FormatterFormatConfig;
+import org.openapitools.client.model.GoogleCloudStorageOutputSettingsConfig;
 import org.openapitools.client.model.HttpSettingsConfig;
 import org.openapitools.client.model.NextGenSiemSettingsConfig;
 import org.openapitools.client.model.ObjectStorageSettingsConfig;
@@ -83,7 +84,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-11T18:00:51.126379750Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-11T19:23:37.886354332Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorOutputConfigSettings.class.getName());
 
@@ -99,6 +100,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
             final TypeAdapter<BigquerySettingsConfig> adapterBigquerySettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(BigquerySettingsConfig.class));
             final TypeAdapter<CriblHttpSettingsConfig> adapterCriblHttpSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(CriblHttpSettingsConfig.class));
             final TypeAdapter<ElasticsearchSettingsConfig> adapterElasticsearchSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(ElasticsearchSettingsConfig.class));
+            final TypeAdapter<GoogleCloudStorageOutputSettingsConfig> adapterGoogleCloudStorageOutputSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(GoogleCloudStorageOutputSettingsConfig.class));
             final TypeAdapter<HttpSettingsConfig> adapterHttpSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(HttpSettingsConfig.class));
             final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
             final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
@@ -143,6 +145,12 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
                     // check if the actual instance is of the type `ElasticsearchSettingsConfig`
                     if (value.getActualInstance() instanceof ElasticsearchSettingsConfig) {
                         JsonElement element = adapterElasticsearchSettingsConfig.toJsonTree((ElasticsearchSettingsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `GoogleCloudStorageOutputSettingsConfig`
+                    if (value.getActualInstance() instanceof GoogleCloudStorageOutputSettingsConfig) {
+                        JsonElement element = adapterGoogleCloudStorageOutputSettingsConfig.toJsonTree((GoogleCloudStorageOutputSettingsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -224,7 +232,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AwssqsoutputSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PostgresqlSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AwssqsoutputSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PostgresqlSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig");
                 }
 
                 @Override
@@ -283,6 +291,18 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
                         // deserialization failed, continue
                         errorMessages.add(String.format("Deserialization for ElasticsearchSettingsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ElasticsearchSettingsConfig'", e);
+                    }
+                    // deserialize GoogleCloudStorageOutputSettingsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GoogleCloudStorageOutputSettingsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterGoogleCloudStorageOutputSettingsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GoogleCloudStorageOutputSettingsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GoogleCloudStorageOutputSettingsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'GoogleCloudStorageOutputSettingsConfig'", e);
                     }
                     // deserialize HttpSettingsConfig
                     try {
@@ -473,6 +493,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
         schemas.put("BigquerySettingsConfig", BigquerySettingsConfig.class);
         schemas.put("CriblHttpSettingsConfig", CriblHttpSettingsConfig.class);
         schemas.put("ElasticsearchSettingsConfig", ElasticsearchSettingsConfig.class);
+        schemas.put("GoogleCloudStorageOutputSettingsConfig", GoogleCloudStorageOutputSettingsConfig.class);
         schemas.put("HttpSettingsConfig", HttpSettingsConfig.class);
         schemas.put("Map<String, Object>", Map.class);
         schemas.put("NextGenSiemSettingsConfig", NextGenSiemSettingsConfig.class);
@@ -496,7 +517,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AwssqsoutputSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PostgresqlSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
+     * AwssqsoutputSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PostgresqlSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -518,6 +539,11 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
         }
 
         if (instance instanceof ElasticsearchSettingsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GoogleCloudStorageOutputSettingsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -587,14 +613,14 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be AwssqsoutputSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PostgresqlSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig");
+        throw new RuntimeException("Invalid instance type. Must be AwssqsoutputSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PostgresqlSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AwssqsoutputSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PostgresqlSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
+     * AwssqsoutputSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PostgresqlSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig
      *
-     * @return The actual instance (AwssqsoutputSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PostgresqlSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig)
+     * @return The actual instance (AwssqsoutputSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PostgresqlSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -644,6 +670,17 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
      */
     public ElasticsearchSettingsConfig getElasticsearchSettingsConfig() throws ClassCastException {
         return (ElasticsearchSettingsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GoogleCloudStorageOutputSettingsConfig`. If the actual instance is not `GoogleCloudStorageOutputSettingsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GoogleCloudStorageOutputSettingsConfig`
+     * @throws ClassCastException if the instance is not `GoogleCloudStorageOutputSettingsConfig`
+     */
+    public GoogleCloudStorageOutputSettingsConfig getGoogleCloudStorageOutputSettingsConfig() throws ClassCastException {
+        return (GoogleCloudStorageOutputSettingsConfig)super.getActualInstance();
     }
 
     /**
@@ -831,6 +868,14 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
             errorMessages.add(String.format("Deserialization for ElasticsearchSettingsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with GoogleCloudStorageOutputSettingsConfig
+        try {
+            GoogleCloudStorageOutputSettingsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for GoogleCloudStorageOutputSettingsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with HttpSettingsConfig
         try {
             HttpSettingsConfig.validateJsonElement(jsonElement);
@@ -939,7 +984,7 @@ public class SecretProcessesorOutputConfigSettings extends AbstractOpenApiSchema
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for SecretProcessesorOutputConfigSettings with oneOf schemas: AwssqsoutputSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PostgresqlSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format("The JSON string is invalid for SecretProcessesorOutputConfigSettings with oneOf schemas: AwssqsoutputSettingsConfig, BigquerySettingsConfig, CriblHttpSettingsConfig, ElasticsearchSettingsConfig, GoogleCloudStorageOutputSettingsConfig, HttpSettingsConfig, Map<String, Object>, NextGenSiemSettingsConfig, ObjectStorageSettingsConfig, OpensearchSettingsConfig, PagerdutySettingsConfig, PostgresqlSettingsConfig, S3SettingsConfig, SecurityLakeSettingsConfig, SentinelSettingsConfig, SnowflakeOutputSettingsConfig, SplunkSettingsConfig, SumologicSettingsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

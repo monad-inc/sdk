@@ -23,6 +23,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	BigquerySettingsConfig *BigquerySettingsConfig
 	CriblHttpSettingsConfig *CriblHttpSettingsConfig
 	ElasticsearchSettingsConfig *ElasticsearchSettingsConfig
+	GoogleCloudStorageOutputSettingsConfig *GoogleCloudStorageOutputSettingsConfig
 	HttpSettingsConfig *HttpSettingsConfig
 	NextGenSiemSettingsConfig *NextGenSiemSettingsConfig
 	ObjectStorageSettingsConfig *ObjectStorageSettingsConfig
@@ -63,6 +64,13 @@ func CriblHttpSettingsConfigAsSecretProcessesorOutputConfigSettings(v *CriblHttp
 func ElasticsearchSettingsConfigAsSecretProcessesorOutputConfigSettings(v *ElasticsearchSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		ElasticsearchSettingsConfig: v,
+	}
+}
+
+// GoogleCloudStorageOutputSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns GoogleCloudStorageOutputSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func GoogleCloudStorageOutputSettingsConfigAsSecretProcessesorOutputConfigSettings(v *GoogleCloudStorageOutputSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		GoogleCloudStorageOutputSettingsConfig: v,
 	}
 }
 
@@ -228,6 +236,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		}
 	} else {
 		dst.ElasticsearchSettingsConfig = nil
+	}
+
+	// try to unmarshal data into GoogleCloudStorageOutputSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.GoogleCloudStorageOutputSettingsConfig)
+	if err == nil {
+		jsonGoogleCloudStorageOutputSettingsConfig, _ := json.Marshal(dst.GoogleCloudStorageOutputSettingsConfig)
+		if string(jsonGoogleCloudStorageOutputSettingsConfig) == "{}" { // empty struct
+			dst.GoogleCloudStorageOutputSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.GoogleCloudStorageOutputSettingsConfig); err != nil {
+				dst.GoogleCloudStorageOutputSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.GoogleCloudStorageOutputSettingsConfig = nil
 	}
 
 	// try to unmarshal data into HttpSettingsConfig
@@ -457,6 +482,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.BigquerySettingsConfig = nil
 		dst.CriblHttpSettingsConfig = nil
 		dst.ElasticsearchSettingsConfig = nil
+		dst.GoogleCloudStorageOutputSettingsConfig = nil
 		dst.HttpSettingsConfig = nil
 		dst.NextGenSiemSettingsConfig = nil
 		dst.ObjectStorageSettingsConfig = nil
@@ -495,6 +521,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.ElasticsearchSettingsConfig != nil {
 		return json.Marshal(&src.ElasticsearchSettingsConfig)
+	}
+
+	if src.GoogleCloudStorageOutputSettingsConfig != nil {
+		return json.Marshal(&src.GoogleCloudStorageOutputSettingsConfig)
 	}
 
 	if src.HttpSettingsConfig != nil {
@@ -573,6 +603,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.ElasticsearchSettingsConfig
 	}
 
+	if obj.GoogleCloudStorageOutputSettingsConfig != nil {
+		return obj.GoogleCloudStorageOutputSettingsConfig
+	}
+
 	if obj.HttpSettingsConfig != nil {
 		return obj.HttpSettingsConfig
 	}
@@ -645,6 +679,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.ElasticsearchSettingsConfig != nil {
 		return *obj.ElasticsearchSettingsConfig
+	}
+
+	if obj.GoogleCloudStorageOutputSettingsConfig != nil {
+		return *obj.GoogleCloudStorageOutputSettingsConfig
 	}
 
 	if obj.HttpSettingsConfig != nil {

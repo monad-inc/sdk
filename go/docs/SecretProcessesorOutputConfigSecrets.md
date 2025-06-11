@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **AuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**CredentialsJson** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AuthHeaders** | Pointer to [**map[string]ModelsSecret**](ModelsSecret.md) | Authentication headers | [optional] 
 **AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -138,6 +139,31 @@ SetPassword sets Password field to given value.
 `func (o *SecretProcessesorOutputConfigSecrets) HasPassword() bool`
 
 HasPassword returns a boolean if a field has been set.
+
+### GetCredentialsJson
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetCredentialsJson() ModelsSecret`
+
+GetCredentialsJson returns the CredentialsJson field if non-nil, zero value otherwise.
+
+### GetCredentialsJsonOk
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetCredentialsJsonOk() (*ModelsSecret, bool)`
+
+GetCredentialsJsonOk returns a tuple with the CredentialsJson field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCredentialsJson
+
+`func (o *SecretProcessesorOutputConfigSecrets) SetCredentialsJson(v ModelsSecret)`
+
+SetCredentialsJson sets CredentialsJson field to given value.
+
+### HasCredentialsJson
+
+`func (o *SecretProcessesorOutputConfigSecrets) HasCredentialsJson() bool`
+
+HasCredentialsJson returns a boolean if a field has been set.
 
 ### GetAuthHeaders
 

@@ -22,6 +22,12 @@ Name | Type | Description | Notes
 **InsecureSkipVerify** | Pointer to **bool** | Whether to skip TLS certificate verification (not recommended for production). | [optional] 
 **Url** | Pointer to **string** | The URL of the Sumo Logic instance. | [optional] 
 **Username** | Pointer to **string** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. | [optional] 
+**BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
+**Bucket** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
+**Compression** | Pointer to **string** | The compression method to be applied to the data before storing in S3 | [optional] 
+**Format** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
+**PartitionFormat** | Pointer to **string** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). | [optional] 
+**Prefix** | Pointer to **string** | An optional prefix for S3 object keys to organize data within the bucket | [optional] 
 **Endpoint** | Pointer to **string** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | [optional] 
 **Headers** | Pointer to **map[string]string** | Non secret headers | [optional] 
 **MaxBatchDataSize** | Pointer to **int32** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. | [optional] 
@@ -31,12 +37,7 @@ Name | Type | Description | Notes
 **RateLimit** | Pointer to **int32** | Maximum number of requests per second to send to the endpoint. | [optional] 
 **TlsSkipVerify** | Pointer to **bool** | Skip TLS verification. | [optional] 
 **WrapperKey** | Pointer to **string** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. | [optional] 
-**BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
-**Bucket** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
-**Compression** | Pointer to **string** | The compression method to be applied to the data before storing in S3 | [optional] 
 **FormatConfig** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
-**PartitionFormat** | Pointer to **string** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). | [optional] 
-**Prefix** | Pointer to **string** | An optional prefix for S3 object keys to organize data within the bucket | [optional] 
 **SkipSslVerification** | Pointer to **bool** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) | [optional] 
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
 **AuthMode** | Pointer to **string** | The authentication mode (basic, aws_role) | [optional] 
@@ -532,6 +533,156 @@ SetUsername sets Username field to given value.
 
 HasUsername returns a boolean if a field has been set.
 
+### GetBatchConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) GetBatchConfig() BatchConfigBatchConfig`
+
+GetBatchConfig returns the BatchConfig field if non-nil, zero value otherwise.
+
+### GetBatchConfigOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetBatchConfigOk() (*BatchConfigBatchConfig, bool)`
+
+GetBatchConfigOk returns a tuple with the BatchConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBatchConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) SetBatchConfig(v BatchConfigBatchConfig)`
+
+SetBatchConfig sets BatchConfig field to given value.
+
+### HasBatchConfig
+
+`func (o *SecretProcessesorOutputConfigSettings) HasBatchConfig() bool`
+
+HasBatchConfig returns a boolean if a field has been set.
+
+### GetBucket
+
+`func (o *SecretProcessesorOutputConfigSettings) GetBucket() string`
+
+GetBucket returns the Bucket field if non-nil, zero value otherwise.
+
+### GetBucketOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetBucketOk() (*string, bool)`
+
+GetBucketOk returns a tuple with the Bucket field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBucket
+
+`func (o *SecretProcessesorOutputConfigSettings) SetBucket(v string)`
+
+SetBucket sets Bucket field to given value.
+
+### HasBucket
+
+`func (o *SecretProcessesorOutputConfigSettings) HasBucket() bool`
+
+HasBucket returns a boolean if a field has been set.
+
+### GetCompression
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCompression() string`
+
+GetCompression returns the Compression field if non-nil, zero value otherwise.
+
+### GetCompressionOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCompressionOk() (*string, bool)`
+
+GetCompressionOk returns a tuple with the Compression field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompression
+
+`func (o *SecretProcessesorOutputConfigSettings) SetCompression(v string)`
+
+SetCompression sets Compression field to given value.
+
+### HasCompression
+
+`func (o *SecretProcessesorOutputConfigSettings) HasCompression() bool`
+
+HasCompression returns a boolean if a field has been set.
+
+### GetFormat
+
+`func (o *SecretProcessesorOutputConfigSettings) GetFormat() FormatterFormatConfig`
+
+GetFormat returns the Format field if non-nil, zero value otherwise.
+
+### GetFormatOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetFormatOk() (*FormatterFormatConfig, bool)`
+
+GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormat
+
+`func (o *SecretProcessesorOutputConfigSettings) SetFormat(v FormatterFormatConfig)`
+
+SetFormat sets Format field to given value.
+
+### HasFormat
+
+`func (o *SecretProcessesorOutputConfigSettings) HasFormat() bool`
+
+HasFormat returns a boolean if a field has been set.
+
+### GetPartitionFormat
+
+`func (o *SecretProcessesorOutputConfigSettings) GetPartitionFormat() string`
+
+GetPartitionFormat returns the PartitionFormat field if non-nil, zero value otherwise.
+
+### GetPartitionFormatOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetPartitionFormatOk() (*string, bool)`
+
+GetPartitionFormatOk returns a tuple with the PartitionFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartitionFormat
+
+`func (o *SecretProcessesorOutputConfigSettings) SetPartitionFormat(v string)`
+
+SetPartitionFormat sets PartitionFormat field to given value.
+
+### HasPartitionFormat
+
+`func (o *SecretProcessesorOutputConfigSettings) HasPartitionFormat() bool`
+
+HasPartitionFormat returns a boolean if a field has been set.
+
+### GetPrefix
+
+`func (o *SecretProcessesorOutputConfigSettings) GetPrefix() string`
+
+GetPrefix returns the Prefix field if non-nil, zero value otherwise.
+
+### GetPrefixOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetPrefixOk() (*string, bool)`
+
+GetPrefixOk returns a tuple with the Prefix field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrefix
+
+`func (o *SecretProcessesorOutputConfigSettings) SetPrefix(v string)`
+
+SetPrefix sets Prefix field to given value.
+
+### HasPrefix
+
+`func (o *SecretProcessesorOutputConfigSettings) HasPrefix() bool`
+
+HasPrefix returns a boolean if a field has been set.
+
 ### GetEndpoint
 
 `func (o *SecretProcessesorOutputConfigSettings) GetEndpoint() string`
@@ -757,81 +908,6 @@ SetWrapperKey sets WrapperKey field to given value.
 
 HasWrapperKey returns a boolean if a field has been set.
 
-### GetBatchConfig
-
-`func (o *SecretProcessesorOutputConfigSettings) GetBatchConfig() BatchConfigBatchConfig`
-
-GetBatchConfig returns the BatchConfig field if non-nil, zero value otherwise.
-
-### GetBatchConfigOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetBatchConfigOk() (*BatchConfigBatchConfig, bool)`
-
-GetBatchConfigOk returns a tuple with the BatchConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBatchConfig
-
-`func (o *SecretProcessesorOutputConfigSettings) SetBatchConfig(v BatchConfigBatchConfig)`
-
-SetBatchConfig sets BatchConfig field to given value.
-
-### HasBatchConfig
-
-`func (o *SecretProcessesorOutputConfigSettings) HasBatchConfig() bool`
-
-HasBatchConfig returns a boolean if a field has been set.
-
-### GetBucket
-
-`func (o *SecretProcessesorOutputConfigSettings) GetBucket() string`
-
-GetBucket returns the Bucket field if non-nil, zero value otherwise.
-
-### GetBucketOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetBucketOk() (*string, bool)`
-
-GetBucketOk returns a tuple with the Bucket field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBucket
-
-`func (o *SecretProcessesorOutputConfigSettings) SetBucket(v string)`
-
-SetBucket sets Bucket field to given value.
-
-### HasBucket
-
-`func (o *SecretProcessesorOutputConfigSettings) HasBucket() bool`
-
-HasBucket returns a boolean if a field has been set.
-
-### GetCompression
-
-`func (o *SecretProcessesorOutputConfigSettings) GetCompression() string`
-
-GetCompression returns the Compression field if non-nil, zero value otherwise.
-
-### GetCompressionOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetCompressionOk() (*string, bool)`
-
-GetCompressionOk returns a tuple with the Compression field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCompression
-
-`func (o *SecretProcessesorOutputConfigSettings) SetCompression(v string)`
-
-SetCompression sets Compression field to given value.
-
-### HasCompression
-
-`func (o *SecretProcessesorOutputConfigSettings) HasCompression() bool`
-
-HasCompression returns a boolean if a field has been set.
-
 ### GetFormatConfig
 
 `func (o *SecretProcessesorOutputConfigSettings) GetFormatConfig() FormatterFormatConfig`
@@ -856,56 +932,6 @@ SetFormatConfig sets FormatConfig field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasFormatConfig() bool`
 
 HasFormatConfig returns a boolean if a field has been set.
-
-### GetPartitionFormat
-
-`func (o *SecretProcessesorOutputConfigSettings) GetPartitionFormat() string`
-
-GetPartitionFormat returns the PartitionFormat field if non-nil, zero value otherwise.
-
-### GetPartitionFormatOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetPartitionFormatOk() (*string, bool)`
-
-GetPartitionFormatOk returns a tuple with the PartitionFormat field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPartitionFormat
-
-`func (o *SecretProcessesorOutputConfigSettings) SetPartitionFormat(v string)`
-
-SetPartitionFormat sets PartitionFormat field to given value.
-
-### HasPartitionFormat
-
-`func (o *SecretProcessesorOutputConfigSettings) HasPartitionFormat() bool`
-
-HasPartitionFormat returns a boolean if a field has been set.
-
-### GetPrefix
-
-`func (o *SecretProcessesorOutputConfigSettings) GetPrefix() string`
-
-GetPrefix returns the Prefix field if non-nil, zero value otherwise.
-
-### GetPrefixOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetPrefixOk() (*string, bool)`
-
-GetPrefixOk returns a tuple with the Prefix field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPrefix
-
-`func (o *SecretProcessesorOutputConfigSettings) SetPrefix(v string)`
-
-SetPrefix sets Prefix field to given value.
-
-### HasPrefix
-
-`func (o *SecretProcessesorOutputConfigSettings) HasPrefix() bool`
-
-HasPrefix returns a boolean if a field has been set.
 
 ### GetSkipSslVerification
 
