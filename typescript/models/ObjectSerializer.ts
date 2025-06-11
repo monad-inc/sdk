@@ -17,6 +17,8 @@ export * from '../models/AwssqsSettingsConfig';
 export * from '../models/AwssqsoutputSettingsConfig';
 export * from '../models/AzureActivityLogsSecretsConfig';
 export * from '../models/AzureActivityLogsSettingsConfig';
+export * from '../models/AzureBlobStorageSecretsConfig';
+export * from '../models/AzureBlobStorageSettingsConfig';
 export * from '../models/BatchConfigBatchConfig';
 export * from '../models/BigqueryInputSecretsConfig';
 export * from '../models/BigqueryInputSettingsConfig';
@@ -327,6 +329,8 @@ import { AwssqsSettingsConfig } from '../models/AwssqsSettingsConfig';
 import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
+import { AzureBlobStorageSecretsConfig } from '../models/AzureBlobStorageSecretsConfig';
+import { AzureBlobStorageSettingsConfig } from '../models/AzureBlobStorageSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig';
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
@@ -662,6 +666,8 @@ let typeMap: {[index: string]: any} = {
     "AwssqsoutputSettingsConfig": AwssqsoutputSettingsConfig,
     "AzureActivityLogsSecretsConfig": AzureActivityLogsSecretsConfig,
     "AzureActivityLogsSettingsConfig": AzureActivityLogsSettingsConfig,
+    "AzureBlobStorageSecretsConfig": AzureBlobStorageSecretsConfig,
+    "AzureBlobStorageSettingsConfig": AzureBlobStorageSettingsConfig,
     "BatchConfigBatchConfig": BatchConfigBatchConfig,
     "BigqueryInputSecretsConfig": BigqueryInputSecretsConfig,
     "BigqueryInputSettingsConfig": BigqueryInputSettingsConfig,

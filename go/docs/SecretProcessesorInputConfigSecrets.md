@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **IntegrationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**TenantId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **EnterpriseId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AwsAccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AwsSecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -230,6 +231,31 @@ SetPersonalAccessToken sets PersonalAccessToken field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasPersonalAccessToken() bool`
 
 HasPersonalAccessToken returns a boolean if a field has been set.
+
+### GetTenantId
+
+`func (o *SecretProcessesorInputConfigSecrets) GetTenantId() ModelsSecret`
+
+GetTenantId returns the TenantId field if non-nil, zero value otherwise.
+
+### GetTenantIdOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetTenantIdOk() (*ModelsSecret, bool)`
+
+GetTenantIdOk returns a tuple with the TenantId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenantId
+
+`func (o *SecretProcessesorInputConfigSecrets) SetTenantId(v ModelsSecret)`
+
+SetTenantId sets TenantId field to given value.
+
+### HasTenantId
+
+`func (o *SecretProcessesorInputConfigSecrets) HasTenantId() bool`
+
+HasTenantId returns a boolean if a field has been set.
 
 ### GetEnterpriseId
 

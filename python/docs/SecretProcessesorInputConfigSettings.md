@@ -38,6 +38,8 @@ Name | Type | Description | Notes
 **resource_uri** | **str** | The URI of the resource | [optional] 
 **subscription_id** | **str** | The subscription ID of the Azure subscription | [optional] 
 **tenant_id** | **str** | The tenant ID of the Azure AD application | [optional] 
+**account_url** | **str** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
+**container** | **str** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
 **dataset** | **str** | The BigQuery dataset ID containing the table | [optional] 
 **project** | **str** | The GCP project ID containing the BigQuery dataset | [optional] 
 **query** | **str** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 

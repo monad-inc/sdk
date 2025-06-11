@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-06-11T19:23:37.886354332Z[Etc/UTC]
+  - Build date: 2025-06-11T20:00:26.201281238Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -256,6 +256,8 @@ Class | Method | HTTP request | Description
  - [AwssqsoutputSettingsConfig](docs/AwssqsoutputSettingsConfig.md)
  - [AzureActivityLogsSecretsConfig](docs/AzureActivityLogsSecretsConfig.md)
  - [AzureActivityLogsSettingsConfig](docs/AzureActivityLogsSettingsConfig.md)
+ - [AzureBlobStorageSecretsConfig](docs/AzureBlobStorageSecretsConfig.md)
+ - [AzureBlobStorageSettingsConfig](docs/AzureBlobStorageSettingsConfig.md)
  - [BatchConfigBatchConfig](docs/BatchConfigBatchConfig.md)
  - [BigqueryInputSecretsConfig](docs/BigqueryInputSecretsConfig.md)
  - [BigqueryInputSettingsConfig](docs/BigqueryInputSettingsConfig.md)

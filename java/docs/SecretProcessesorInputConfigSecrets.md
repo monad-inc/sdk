@@ -15,6 +15,7 @@
 |**integrationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**personalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**tenantId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**enterpriseId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**awsAccessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**awsSecretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

@@ -226,6 +226,8 @@ Class | Method | HTTP request | Description
  - [AwssqsoutputSettingsConfig](docs/AwssqsoutputSettingsConfig.md)
  - [AzureActivityLogsSecretsConfig](docs/AzureActivityLogsSecretsConfig.md)
  - [AzureActivityLogsSettingsConfig](docs/AzureActivityLogsSettingsConfig.md)
+ - [AzureBlobStorageSecretsConfig](docs/AzureBlobStorageSecretsConfig.md)
+ - [AzureBlobStorageSettingsConfig](docs/AzureBlobStorageSettingsConfig.md)
  - [BatchConfigBatchConfig](docs/BatchConfigBatchConfig.md)
  - [BigqueryInputSecretsConfig](docs/BigqueryInputSecretsConfig.md)
  - [BigqueryInputSettingsConfig](docs/BigqueryInputSettingsConfig.md)

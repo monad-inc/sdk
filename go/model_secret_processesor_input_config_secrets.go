@@ -26,6 +26,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	AuditLogsSecretsConfig *AuditLogsSecretsConfig
 	AuthLogsSecretsConfig *AuthLogsSecretsConfig
 	AzureActivityLogsSecretsConfig *AzureActivityLogsSecretsConfig
+	AzureBlobStorageSecretsConfig *AzureBlobStorageSecretsConfig
 	BigqueryInputSecretsConfig *BigqueryInputSecretsConfig
 	BoxEventsSecretsConfig *BoxEventsSecretsConfig
 	BoxUsersSecretsConfig *BoxUsersSecretsConfig
@@ -124,6 +125,13 @@ func AuthLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AuthLogsSecre
 func AzureActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AzureActivityLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		AzureActivityLogsSecretsConfig: v,
+	}
+}
+
+// AzureBlobStorageSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AzureBlobStorageSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func AzureBlobStorageSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AzureBlobStorageSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		AzureBlobStorageSecretsConfig: v,
 	}
 }
 
@@ -599,6 +607,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.AzureActivityLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into AzureBlobStorageSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.AzureBlobStorageSecretsConfig)
+	if err == nil {
+		jsonAzureBlobStorageSecretsConfig, _ := json.Marshal(dst.AzureBlobStorageSecretsConfig)
+		if string(jsonAzureBlobStorageSecretsConfig) == "{}" { // empty struct
+			dst.AzureBlobStorageSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AzureBlobStorageSecretsConfig); err != nil {
+				dst.AzureBlobStorageSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AzureBlobStorageSecretsConfig = nil
 	}
 
 	// try to unmarshal data into BigqueryInputSecretsConfig
@@ -1460,6 +1485,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.AuditLogsSecretsConfig = nil
 		dst.AuthLogsSecretsConfig = nil
 		dst.AzureActivityLogsSecretsConfig = nil
+		dst.AzureBlobStorageSecretsConfig = nil
 		dst.BigqueryInputSecretsConfig = nil
 		dst.BoxEventsSecretsConfig = nil
 		dst.BoxUsersSecretsConfig = nil
@@ -1547,6 +1573,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.AzureActivityLogsSecretsConfig != nil {
 		return json.Marshal(&src.AzureActivityLogsSecretsConfig)
+	}
+
+	if src.AzureBlobStorageSecretsConfig != nil {
+		return json.Marshal(&src.AzureBlobStorageSecretsConfig)
 	}
 
 	if src.BigqueryInputSecretsConfig != nil {
@@ -1785,6 +1815,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.AzureActivityLogsSecretsConfig
 	}
 
+	if obj.AzureBlobStorageSecretsConfig != nil {
+		return obj.AzureBlobStorageSecretsConfig
+	}
+
 	if obj.BigqueryInputSecretsConfig != nil {
 		return obj.BigqueryInputSecretsConfig
 	}
@@ -2017,6 +2051,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.AzureActivityLogsSecretsConfig != nil {
 		return *obj.AzureActivityLogsSecretsConfig
+	}
+
+	if obj.AzureBlobStorageSecretsConfig != nil {
+		return *obj.AzureBlobStorageSecretsConfig
 	}
 
 	if obj.BigqueryInputSecretsConfig != nil {

@@ -22,6 +22,8 @@ import { AwssqsSettingsConfig } from '../models/AwssqsSettingsConfig';
 import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
+import { AzureBlobStorageSecretsConfig } from '../models/AzureBlobStorageSecretsConfig';
+import { AzureBlobStorageSettingsConfig } from '../models/AzureBlobStorageSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig';
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';

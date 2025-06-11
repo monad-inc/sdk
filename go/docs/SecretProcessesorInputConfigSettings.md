@@ -37,6 +37,8 @@ Name | Type | Description | Notes
 **ResourceUri** | Pointer to **string** | The URI of the resource | [optional] 
 **SubscriptionId** | Pointer to **string** | The subscription ID of the Azure subscription | [optional] 
 **TenantId** | Pointer to **string** | The tenant ID of the Azure AD application | [optional] 
+**AccountUrl** | Pointer to **string** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
+**Container** | Pointer to **string** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
 **Dataset** | Pointer to **string** | The BigQuery dataset ID containing the table | [optional] 
 **Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
 **Query** | Pointer to **string** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
@@ -953,6 +955,56 @@ SetTenantId sets TenantId field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasTenantId() bool`
 
 HasTenantId returns a boolean if a field has been set.
+
+### GetAccountUrl
+
+`func (o *SecretProcessesorInputConfigSettings) GetAccountUrl() string`
+
+GetAccountUrl returns the AccountUrl field if non-nil, zero value otherwise.
+
+### GetAccountUrlOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetAccountUrlOk() (*string, bool)`
+
+GetAccountUrlOk returns a tuple with the AccountUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountUrl
+
+`func (o *SecretProcessesorInputConfigSettings) SetAccountUrl(v string)`
+
+SetAccountUrl sets AccountUrl field to given value.
+
+### HasAccountUrl
+
+`func (o *SecretProcessesorInputConfigSettings) HasAccountUrl() bool`
+
+HasAccountUrl returns a boolean if a field has been set.
+
+### GetContainer
+
+`func (o *SecretProcessesorInputConfigSettings) GetContainer() string`
+
+GetContainer returns the Container field if non-nil, zero value otherwise.
+
+### GetContainerOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetContainerOk() (*string, bool)`
+
+GetContainerOk returns a tuple with the Container field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContainer
+
+`func (o *SecretProcessesorInputConfigSettings) SetContainer(v string)`
+
+SetContainer sets Container field to given value.
+
+### HasContainer
+
+`func (o *SecretProcessesorInputConfigSettings) HasContainer() bool`
+
+HasContainer returns a boolean if a field has been set.
 
 ### GetDataset
 
