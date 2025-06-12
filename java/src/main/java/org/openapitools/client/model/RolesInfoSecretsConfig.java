@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR roles info secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-12T15:37:21.360296726Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-12T20:47:11.231120115Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RolesInfoSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
