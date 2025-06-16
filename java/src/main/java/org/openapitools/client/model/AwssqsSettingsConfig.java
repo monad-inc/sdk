@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS SQS settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-13T16:45:34.107653604Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-16T18:44:54.158597893Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AwssqsSettingsConfig {
   public static final String SERIALIZED_NAME_QUEUE_URL = "queue_url";
   @SerializedName(SERIALIZED_NAME_QUEUE_URL)
