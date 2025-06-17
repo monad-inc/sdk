@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T06:20:51.579147660Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T09:33:57.049269550Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
