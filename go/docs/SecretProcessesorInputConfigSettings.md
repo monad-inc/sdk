@@ -77,8 +77,13 @@ Name | Type | Description | Notes
 **TenantUrl** | Pointer to **string** | Unique URL for your Tines instance | [optional] 
 **OrgSlug** | Pointer to **string** | Cron expression for scheduling the input | [optional] 
 **Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
-**BucketName** | Pointer to **string** | The name of the Google Cloud Storage bucket to use | [optional] 
+**Confidential** | Pointer to **bool** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. | [optional] 
+**GitlabUrl** | Pointer to **string** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | [optional] 
+**IssueType** | Pointer to **string** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 
 **ProjectId** | Pointer to **string** | The Google Cloud project ID to use | [optional] 
+**State** | Pointer to **string** | State to filter issues by e.g. opened, closed | [optional] 
+**WithLabelDetails** | Pointer to **bool** | Include label details in the response | [optional] 
+**BucketName** | Pointer to **string** | The name of the Google Cloud Storage bucket to use | [optional] 
 **ControlIds** | Pointer to **[]string** | @Description Filter Issues created by specific control IDs | [optional] 
 **HasNote** | Pointer to **string** | @Description Filter Issues with or without a note | [optional] 
 **HasRemediation** | Pointer to **string** | @Description Filter Issues with or without remediation | [optional] 
@@ -1956,30 +1961,80 @@ SetRepo sets Repo field to given value.
 
 HasRepo returns a boolean if a field has been set.
 
-### GetBucketName
+### GetConfidential
 
-`func (o *SecretProcessesorInputConfigSettings) GetBucketName() string`
+`func (o *SecretProcessesorInputConfigSettings) GetConfidential() bool`
 
-GetBucketName returns the BucketName field if non-nil, zero value otherwise.
+GetConfidential returns the Confidential field if non-nil, zero value otherwise.
 
-### GetBucketNameOk
+### GetConfidentialOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetBucketNameOk() (*string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetConfidentialOk() (*bool, bool)`
 
-GetBucketNameOk returns a tuple with the BucketName field if it's non-nil, zero value otherwise
+GetConfidentialOk returns a tuple with the Confidential field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBucketName
+### SetConfidential
 
-`func (o *SecretProcessesorInputConfigSettings) SetBucketName(v string)`
+`func (o *SecretProcessesorInputConfigSettings) SetConfidential(v bool)`
 
-SetBucketName sets BucketName field to given value.
+SetConfidential sets Confidential field to given value.
 
-### HasBucketName
+### HasConfidential
 
-`func (o *SecretProcessesorInputConfigSettings) HasBucketName() bool`
+`func (o *SecretProcessesorInputConfigSettings) HasConfidential() bool`
 
-HasBucketName returns a boolean if a field has been set.
+HasConfidential returns a boolean if a field has been set.
+
+### GetGitlabUrl
+
+`func (o *SecretProcessesorInputConfigSettings) GetGitlabUrl() string`
+
+GetGitlabUrl returns the GitlabUrl field if non-nil, zero value otherwise.
+
+### GetGitlabUrlOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetGitlabUrlOk() (*string, bool)`
+
+GetGitlabUrlOk returns a tuple with the GitlabUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGitlabUrl
+
+`func (o *SecretProcessesorInputConfigSettings) SetGitlabUrl(v string)`
+
+SetGitlabUrl sets GitlabUrl field to given value.
+
+### HasGitlabUrl
+
+`func (o *SecretProcessesorInputConfigSettings) HasGitlabUrl() bool`
+
+HasGitlabUrl returns a boolean if a field has been set.
+
+### GetIssueType
+
+`func (o *SecretProcessesorInputConfigSettings) GetIssueType() string`
+
+GetIssueType returns the IssueType field if non-nil, zero value otherwise.
+
+### GetIssueTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetIssueTypeOk() (*string, bool)`
+
+GetIssueTypeOk returns a tuple with the IssueType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssueType
+
+`func (o *SecretProcessesorInputConfigSettings) SetIssueType(v string)`
+
+SetIssueType sets IssueType field to given value.
+
+### HasIssueType
+
+`func (o *SecretProcessesorInputConfigSettings) HasIssueType() bool`
+
+HasIssueType returns a boolean if a field has been set.
 
 ### GetProjectId
 
@@ -2005,6 +2060,81 @@ SetProjectId sets ProjectId field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasProjectId() bool`
 
 HasProjectId returns a boolean if a field has been set.
+
+### GetState
+
+`func (o *SecretProcessesorInputConfigSettings) GetState() string`
+
+GetState returns the State field if non-nil, zero value otherwise.
+
+### GetStateOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetStateOk() (*string, bool)`
+
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetState
+
+`func (o *SecretProcessesorInputConfigSettings) SetState(v string)`
+
+SetState sets State field to given value.
+
+### HasState
+
+`func (o *SecretProcessesorInputConfigSettings) HasState() bool`
+
+HasState returns a boolean if a field has been set.
+
+### GetWithLabelDetails
+
+`func (o *SecretProcessesorInputConfigSettings) GetWithLabelDetails() bool`
+
+GetWithLabelDetails returns the WithLabelDetails field if non-nil, zero value otherwise.
+
+### GetWithLabelDetailsOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetWithLabelDetailsOk() (*bool, bool)`
+
+GetWithLabelDetailsOk returns a tuple with the WithLabelDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWithLabelDetails
+
+`func (o *SecretProcessesorInputConfigSettings) SetWithLabelDetails(v bool)`
+
+SetWithLabelDetails sets WithLabelDetails field to given value.
+
+### HasWithLabelDetails
+
+`func (o *SecretProcessesorInputConfigSettings) HasWithLabelDetails() bool`
+
+HasWithLabelDetails returns a boolean if a field has been set.
+
+### GetBucketName
+
+`func (o *SecretProcessesorInputConfigSettings) GetBucketName() string`
+
+GetBucketName returns the BucketName field if non-nil, zero value otherwise.
+
+### GetBucketNameOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetBucketNameOk() (*string, bool)`
+
+GetBucketNameOk returns a tuple with the BucketName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBucketName
+
+`func (o *SecretProcessesorInputConfigSettings) SetBucketName(v string)`
+
+SetBucketName sets BucketName field to given value.
+
+### HasBucketName
+
+`func (o *SecretProcessesorInputConfigSettings) HasBucketName() bool`
+
+HasBucketName returns a boolean if a field has been set.
 
 ### GetControlIds
 

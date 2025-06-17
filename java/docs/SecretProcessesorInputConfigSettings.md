@@ -80,8 +80,13 @@
 |**tenantUrl** | **String** | Unique URL for your Tines instance |  [optional] |
 |**orgSlug** | **String** | Cron expression for scheduling the input |  [optional] |
 |**repo** | **String** | A repository slug to filter full-scans by. |  [optional] |
-|**bucketName** | **String** | The name of the Google Cloud Storage bucket to use |  [optional] |
+|**confidential** | **Boolean** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. |  [optional] |
+|**gitlabUrl** | **String** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) |  [optional] |
+|**issueType** | **String** | IssueType to filter issues by type e.g. issue, incident, etc. |  [optional] |
 |**projectId** | **String** | The Google Cloud project ID to use |  [optional] |
+|**state** | **String** | State to filter issues by e.g. opened, closed |  [optional] |
+|**withLabelDetails** | **Boolean** | Include label details in the response |  [optional] |
+|**bucketName** | **String** | The name of the Google Cloud Storage bucket to use |  [optional] |
 |**controlIds** | **List&lt;String&gt;** | @Description Filter Issues created by specific control IDs |  [optional] |
 |**hasNote** | **String** | @Description Filter Issues with or without a note |  [optional] |
 |**hasRemediation** | **String** | @Description Filter Issues with or without remediation |  [optional] |

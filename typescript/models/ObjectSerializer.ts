@@ -81,6 +81,8 @@ export * from '../models/FlattenallFlattenAll';
 export * from '../models/FormatterFormatConfig';
 export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
+export * from '../models/GitlabIssuesSecretsConfig';
+export * from '../models/GitlabIssuesSettingsConfig';
 export * from '../models/GoogleCloudStorageOutputSecretsConfig';
 export * from '../models/GoogleCloudStorageOutputSettingsConfig';
 export * from '../models/GoogleCloudStorageSecretsConfig';
@@ -393,6 +395,8 @@ import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
+import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
+import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
 import { GoogleCloudStorageOutputSettingsConfig } from '../models/GoogleCloudStorageOutputSettingsConfig';
 import { GoogleCloudStorageSecretsConfig } from '../models/GoogleCloudStorageSecretsConfig';
@@ -730,6 +734,8 @@ let typeMap: {[index: string]: any} = {
     "FormatterFormatConfig": FormatterFormatConfig,
     "FullScansSecretsConfig": FullScansSecretsConfig,
     "FullScansSettingsConfig": FullScansSettingsConfig,
+    "GitlabIssuesSecretsConfig": GitlabIssuesSecretsConfig,
+    "GitlabIssuesSettingsConfig": GitlabIssuesSettingsConfig,
     "GoogleCloudStorageOutputSecretsConfig": GoogleCloudStorageOutputSecretsConfig,
     "GoogleCloudStorageOutputSettingsConfig": GoogleCloudStorageOutputSettingsConfig,
     "GoogleCloudStorageSecretsConfig": GoogleCloudStorageSecretsConfig,
