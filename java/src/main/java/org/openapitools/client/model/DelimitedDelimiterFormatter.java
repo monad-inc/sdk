@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * DelimitedDelimiterFormatter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T21:03:46.012398015Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T21:17:37.997866441Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class DelimitedDelimiterFormatter {
   public static final String SERIALIZED_NAME_DELIMITER = "delimiter";
   @SerializedName(SERIALIZED_NAME_DELIMITER)
