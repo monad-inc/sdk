@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * CommunityTransformsInternalTransformMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T01:14:26.255295999Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T01:35:48.589281739Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CommunityTransformsInternalTransformMetadata {
   public static final String SERIALIZED_NAME_AUTHOR = "author";
   @SerializedName(SERIALIZED_NAME_AUTHOR)

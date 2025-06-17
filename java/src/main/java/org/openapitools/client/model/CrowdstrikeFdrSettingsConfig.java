@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Crowdstrike Falcon Data Replicator settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T01:14:26.255295999Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T01:35:48.589281739Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CrowdstrikeFdrSettingsConfig {
   public static final String SERIALIZED_NAME_AWS_QUEUE_URL = "aws_queue_url";
   @SerializedName(SERIALIZED_NAME_AWS_QUEUE_URL)
