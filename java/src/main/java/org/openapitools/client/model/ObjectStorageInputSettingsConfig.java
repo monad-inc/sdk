@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Object storage settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T14:35:05.265189424Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T15:42:53.412493088Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ObjectStorageInputSettingsConfig {
   public static final String SERIALIZED_NAME_BUCKET = "bucket";
   @SerializedName(SERIALIZED_NAME_BUCKET)
