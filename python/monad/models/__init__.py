@@ -15,6 +15,8 @@
 
 
 # import models into model package
+from monad.models.abs_secrets_config import AbsSecretsConfig
+from monad.models.abs_settings_config import AbsSettingsConfig
 from monad.models.activity_logs_secrets_config import ActivityLogsSecretsConfig
 from monad.models.activity_logs_settings_config import ActivityLogsSettingsConfig
 from monad.models.actors_info_secrets_config import ActorsInfoSecretsConfig
@@ -45,6 +47,7 @@ from monad.models.box_events_secrets_config import BoxEventsSecretsConfig
 from monad.models.box_events_settings_config import BoxEventsSettingsConfig
 from monad.models.box_users_secrets_config import BoxUsersSecretsConfig
 from monad.models.box_users_settings_config import BoxUsersSettingsConfig
+from monad.models.certificate_manager_settings_config import CertificateManagerSettingsConfig
 from monad.models.cloud_asset_inventory_secrets_config import CloudAssetInventorySecretsConfig
 from monad.models.cloud_asset_inventory_settings_config import CloudAssetInventorySettingsConfig
 from monad.models.cloud_configuration_findings_secrets_config import CloudConfigurationFindingsSecretsConfig
@@ -278,6 +281,8 @@ from monad.models.secret_processesor_input_config_settings import SecretProcesse
 from monad.models.secret_processesor_output_config import SecretProcessesorOutputConfig
 from monad.models.secret_processesor_output_config_secrets import SecretProcessesorOutputConfigSecrets
 from monad.models.secret_processesor_output_config_settings import SecretProcessesorOutputConfigSettings
+from monad.models.security_groups_filter_config import SecurityGroupsFilterConfig
+from monad.models.security_groups_settings_config import SecurityGroupsSettingsConfig
 from monad.models.security_lake_settings_config import SecurityLakeSettingsConfig
 from monad.models.security_lake_source_account_details import SecurityLakeSourceAccountDetails
 from monad.models.semgrep_code_findings_secrets_config import SemgrepCodeFindingsSecretsConfig

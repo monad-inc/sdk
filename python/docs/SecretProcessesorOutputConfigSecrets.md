@@ -5,6 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**tenant_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **credentials** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -15,9 +18,6 @@ Name | Type | Description | Notes
 **secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **routing_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **connection_string** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**client_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**tenant_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **access_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

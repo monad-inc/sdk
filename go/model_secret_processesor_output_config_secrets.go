@@ -19,6 +19,7 @@ import (
 
 // SecretProcessesorOutputConfigSecrets - struct for SecretProcessesorOutputConfigSecrets
 type SecretProcessesorOutputConfigSecrets struct {
+	AbsSecretsConfig *AbsSecretsConfig
 	BigquerySecretsConfig *BigquerySecretsConfig
 	CriblHttpSecretsConfig *CriblHttpSecretsConfig
 	ElasticsearchSecretsConfig *ElasticsearchSecretsConfig
@@ -34,6 +35,13 @@ type SecretProcessesorOutputConfigSecrets struct {
 	SplunkSecretsConfig *SplunkSecretsConfig
 	SumologicSecretsConfig *SumologicSecretsConfig
 	MapmapOfStringAny *map[string]interface{}
+}
+
+// AbsSecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns AbsSecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
+func AbsSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *AbsSecretsConfig) SecretProcessesorOutputConfigSecrets {
+	return SecretProcessesorOutputConfigSecrets{
+		AbsSecretsConfig: v,
+	}
 }
 
 // BigquerySecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns BigquerySecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
@@ -146,6 +154,23 @@ func MapmapOfStringAnyAsSecretProcessesorOutputConfigSecrets(v *map[string]inter
 func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into AbsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.AbsSecretsConfig)
+	if err == nil {
+		jsonAbsSecretsConfig, _ := json.Marshal(dst.AbsSecretsConfig)
+		if string(jsonAbsSecretsConfig) == "{}" { // empty struct
+			dst.AbsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AbsSecretsConfig); err != nil {
+				dst.AbsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AbsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into BigquerySecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.BigquerySecretsConfig)
 	if err == nil {
@@ -403,6 +428,7 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.AbsSecretsConfig = nil
 		dst.BigquerySecretsConfig = nil
 		dst.CriblHttpSecretsConfig = nil
 		dst.ElasticsearchSecretsConfig = nil
@@ -429,6 +455,10 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src SecretProcessesorOutputConfigSecrets) MarshalJSON() ([]byte, error) {
+	if src.AbsSecretsConfig != nil {
+		return json.Marshal(&src.AbsSecretsConfig)
+	}
+
 	if src.BigquerySecretsConfig != nil {
 		return json.Marshal(&src.BigquerySecretsConfig)
 	}
@@ -497,6 +527,10 @@ func (obj *SecretProcessesorOutputConfigSecrets) GetActualInstance() (interface{
 	if obj == nil {
 		return nil
 	}
+	if obj.AbsSecretsConfig != nil {
+		return obj.AbsSecretsConfig
+	}
+
 	if obj.BigquerySecretsConfig != nil {
 		return obj.BigquerySecretsConfig
 	}
@@ -563,6 +597,10 @@ func (obj *SecretProcessesorOutputConfigSecrets) GetActualInstance() (interface{
 
 // Get the actual instance value
 func (obj SecretProcessesorOutputConfigSecrets) GetActualInstanceValue() (interface{}) {
+	if obj.AbsSecretsConfig != nil {
+		return *obj.AbsSecretsConfig
+	}
+
 	if obj.BigquerySecretsConfig != nil {
 		return *obj.BigquerySecretsConfig
 	}

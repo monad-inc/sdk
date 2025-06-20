@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Cloud Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T16:14:47.529250767Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-20T18:56:49.922231974Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CloudLogsSettingsConfig {
   public static final String SERIALIZED_NAME_ENABLE_PROTO_PAYLOAD_PARSING = "enable_proto_payload_parsing";
   @SerializedName(SERIALIZED_NAME_ENABLE_PROTO_PAYLOAD_PARSING)

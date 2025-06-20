@@ -2,6 +2,8 @@ import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/htt
 import { Configuration, ConfigurationOptions } from '../configuration'
 import type { Middleware } from '../middleware';
 
+import { AbsSecretsConfig } from '../models/AbsSecretsConfig';
+import { AbsSettingsConfig } from '../models/AbsSettingsConfig';
 import { ActivityLogsSecretsConfig } from '../models/ActivityLogsSecretsConfig';
 import { ActivityLogsSettingsConfig } from '../models/ActivityLogsSettingsConfig';
 import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
@@ -32,6 +34,7 @@ import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
+import { CertificateManagerSettingsConfig } from '../models/CertificateManagerSettingsConfig';
 import { CloudAssetInventorySecretsConfig } from '../models/CloudAssetInventorySecretsConfig';
 import { CloudAssetInventorySettingsConfig } from '../models/CloudAssetInventorySettingsConfig';
 import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigurationFindingsSecretsConfig';
@@ -265,6 +268,8 @@ import { SecretProcessesorInputConfigSettings } from '../models/SecretProcesseso
 import { SecretProcessesorOutputConfig } from '../models/SecretProcessesorOutputConfig';
 import { SecretProcessesorOutputConfigSecrets } from '../models/SecretProcessesorOutputConfigSecrets';
 import { SecretProcessesorOutputConfigSettings } from '../models/SecretProcessesorOutputConfigSettings';
+import { SecurityGroupsFilterConfig } from '../models/SecurityGroupsFilterConfig';
+import { SecurityGroupsSettingsConfig } from '../models/SecurityGroupsSettingsConfig';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';

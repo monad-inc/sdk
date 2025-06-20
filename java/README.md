@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-06-18T16:14:47.529250767Z[Etc/UTC]
+  - Build date: 2025-06-20T18:56:49.922231974Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -237,6 +237,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [AbsSecretsConfig](docs/AbsSecretsConfig.md)
+ - [AbsSettingsConfig](docs/AbsSettingsConfig.md)
  - [ActivityLogsSecretsConfig](docs/ActivityLogsSecretsConfig.md)
  - [ActivityLogsSettingsConfig](docs/ActivityLogsSettingsConfig.md)
  - [ActorsInfoSecretsConfig](docs/ActorsInfoSecretsConfig.md)
@@ -267,6 +269,7 @@ Class | Method | HTTP request | Description
  - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
  - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
  - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
+ - [CertificateManagerSettingsConfig](docs/CertificateManagerSettingsConfig.md)
  - [CloudAssetInventorySecretsConfig](docs/CloudAssetInventorySecretsConfig.md)
  - [CloudAssetInventorySettingsConfig](docs/CloudAssetInventorySettingsConfig.md)
  - [CloudConfigurationFindingsSecretsConfig](docs/CloudConfigurationFindingsSecretsConfig.md)
@@ -500,6 +503,8 @@ Class | Method | HTTP request | Description
  - [SecretProcessesorOutputConfig](docs/SecretProcessesorOutputConfig.md)
  - [SecretProcessesorOutputConfigSecrets](docs/SecretProcessesorOutputConfigSecrets.md)
  - [SecretProcessesorOutputConfigSettings](docs/SecretProcessesorOutputConfigSettings.md)
+ - [SecurityGroupsFilterConfig](docs/SecurityGroupsFilterConfig.md)
+ - [SecurityGroupsSettingsConfig](docs/SecurityGroupsSettingsConfig.md)
  - [SecurityLakeSettingsConfig](docs/SecurityLakeSettingsConfig.md)
  - [SecurityLakeSourceAccountDetails](docs/SecurityLakeSourceAccountDetails.md)
  - [SemgrepCodeFindingsSecretsConfig](docs/SemgrepCodeFindingsSecretsConfig.md)

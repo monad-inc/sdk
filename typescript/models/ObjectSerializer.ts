@@ -1,3 +1,5 @@
+export * from '../models/AbsSecretsConfig';
+export * from '../models/AbsSettingsConfig';
 export * from '../models/ActivityLogsSecretsConfig';
 export * from '../models/ActivityLogsSettingsConfig';
 export * from '../models/ActorsInfoSecretsConfig';
@@ -28,6 +30,7 @@ export * from '../models/BoxEventsSecretsConfig';
 export * from '../models/BoxEventsSettingsConfig';
 export * from '../models/BoxUsersSecretsConfig';
 export * from '../models/BoxUsersSettingsConfig';
+export * from '../models/CertificateManagerSettingsConfig';
 export * from '../models/CloudAssetInventorySecretsConfig';
 export * from '../models/CloudAssetInventorySettingsConfig';
 export * from '../models/CloudConfigurationFindingsSecretsConfig';
@@ -261,6 +264,8 @@ export * from '../models/SecretProcessesorInputConfigSettings';
 export * from '../models/SecretProcessesorOutputConfig';
 export * from '../models/SecretProcessesorOutputConfigSecrets';
 export * from '../models/SecretProcessesorOutputConfigSettings';
+export * from '../models/SecurityGroupsFilterConfig';
+export * from '../models/SecurityGroupsSettingsConfig';
 export * from '../models/SecurityLakeSettingsConfig';
 export * from '../models/SecurityLakeSourceAccountDetails';
 export * from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -312,6 +317,8 @@ export * from '../models/VulnerabilitiesSettingsConfig';
 export * from '../models/VulnerabilityFindingsSecretsConfig';
 export * from '../models/VulnerabilityFindingsSettingsConfig';
 
+import { AbsSecretsConfig } from '../models/AbsSecretsConfig';
+import { AbsSettingsConfig } from '../models/AbsSettingsConfig';
 import { ActivityLogsSecretsConfig } from '../models/ActivityLogsSecretsConfig';
 import { ActivityLogsSettingsConfig } from '../models/ActivityLogsSettingsConfig';
 import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
@@ -342,6 +349,7 @@ import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
+import { CertificateManagerSettingsConfig, CertificateManagerSettingsConfigCertificateStatusesEnum   , CertificateManagerSettingsConfigExtendedKeyUsageEnum  , CertificateManagerSettingsConfigKeyTypesEnum  , CertificateManagerSettingsConfigKeyUsageEnum  , CertificateManagerSettingsConfigManagedByEnum  , CertificateManagerSettingsConfigRegionsEnum    } from '../models/CertificateManagerSettingsConfig';
 import { CloudAssetInventorySecretsConfig } from '../models/CloudAssetInventorySecretsConfig';
 import { CloudAssetInventorySettingsConfig } from '../models/CloudAssetInventorySettingsConfig';
 import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigurationFindingsSecretsConfig';
@@ -575,6 +583,8 @@ import { SecretProcessesorInputConfigSettingsClass } from '../models/SecretProce
 import { SecretProcessesorOutputConfig } from '../models/SecretProcessesorOutputConfig';
 import { SecretProcessesorOutputConfigSecretsClass } from '../models/SecretProcessesorOutputConfigSecrets';
 import { SecretProcessesorOutputConfigSettingsClass } from '../models/SecretProcessesorOutputConfigSettings';
+import { SecurityGroupsFilterConfig } from '../models/SecurityGroupsFilterConfig';
+import { SecurityGroupsSettingsConfig } from '../models/SecurityGroupsSettingsConfig';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -639,11 +649,23 @@ let primitives = [
                  ];
 
 let enumsMap: Set<string> = new Set<string>([
+    "CertificateManagerSettingsConfigCertificateStatusesEnum",
+    "CertificateManagerSettingsConfigExtendedKeyUsageEnum",
+    "CertificateManagerSettingsConfigKeyTypesEnum",
+    "CertificateManagerSettingsConfigKeyUsageEnum",
+    "CertificateManagerSettingsConfigManagedByEnum",
+    "CertificateManagerSettingsConfigRegionsEnum",
     "IssuesSettingsConfigIssueTypesEnum",
     "IssuesSettingsConfigResolutionReasonsEnum",
     "IssuesSettingsConfigSeveritiesEnum",
     "IssuesSettingsConfigStackLayersEnum",
     "IssuesSettingsConfigStatusEnum",
+    "SecretProcessesorInputConfigSettingsCertificateStatusesEnum",
+    "SecretProcessesorInputConfigSettingsExtendedKeyUsageEnum",
+    "SecretProcessesorInputConfigSettingsKeyTypesEnum",
+    "SecretProcessesorInputConfigSettingsKeyUsageEnum",
+    "SecretProcessesorInputConfigSettingsManagedByEnum",
+    "SecretProcessesorInputConfigSettingsRegionsEnum",
     "SecretProcessesorInputConfigSettingsIssueTypesEnum",
     "SecretProcessesorInputConfigSettingsResolutionReasonsEnum",
     "SecretProcessesorInputConfigSettingsSeveritiesEnum",
@@ -651,6 +673,8 @@ let enumsMap: Set<string> = new Set<string>([
 ]);
 
 let typeMap: {[index: string]: any} = {
+    "AbsSecretsConfig": AbsSecretsConfig,
+    "AbsSettingsConfig": AbsSettingsConfig,
     "ActivityLogsSecretsConfig": ActivityLogsSecretsConfig,
     "ActivityLogsSettingsConfig": ActivityLogsSettingsConfig,
     "ActorsInfoSecretsConfig": ActorsInfoSecretsConfig,
@@ -681,6 +705,7 @@ let typeMap: {[index: string]: any} = {
     "BoxEventsSettingsConfig": BoxEventsSettingsConfig,
     "BoxUsersSecretsConfig": BoxUsersSecretsConfig,
     "BoxUsersSettingsConfig": BoxUsersSettingsConfig,
+    "CertificateManagerSettingsConfig": CertificateManagerSettingsConfig,
     "CloudAssetInventorySecretsConfig": CloudAssetInventorySecretsConfig,
     "CloudAssetInventorySettingsConfig": CloudAssetInventorySettingsConfig,
     "CloudConfigurationFindingsSecretsConfig": CloudConfigurationFindingsSecretsConfig,
@@ -914,6 +939,8 @@ let typeMap: {[index: string]: any} = {
     "SecretProcessesorOutputConfig": SecretProcessesorOutputConfig,
     "SecretProcessesorOutputConfigSecrets": SecretProcessesorOutputConfigSecretsClass,
     "SecretProcessesorOutputConfigSettings": SecretProcessesorOutputConfigSettingsClass,
+    "SecurityGroupsFilterConfig": SecurityGroupsFilterConfig,
+    "SecurityGroupsSettingsConfig": SecurityGroupsSettingsConfig,
     "SecurityLakeSettingsConfig": SecurityLakeSettingsConfig,
     "SecurityLakeSourceAccountDetails": SecurityLakeSourceAccountDetails,
     "SemgrepCodeFindingsSecretsConfig": SemgrepCodeFindingsSecretsConfig,

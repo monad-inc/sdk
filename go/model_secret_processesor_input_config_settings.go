@@ -32,6 +32,7 @@ type SecretProcessesorInputConfigSettings struct {
 	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BoxEventsSettingsConfig *BoxEventsSettingsConfig
 	BoxUsersSettingsConfig *BoxUsersSettingsConfig
+	CertificateManagerSettingsConfig *CertificateManagerSettingsConfig
 	CloudAssetInventorySettingsConfig *CloudAssetInventorySettingsConfig
 	CloudConfigurationFindingsSettingsConfig *CloudConfigurationFindingsSettingsConfig
 	CloudLogsSettingsConfig *CloudLogsSettingsConfig
@@ -61,6 +62,7 @@ type SecretProcessesorInputConfigSettings struct {
 	ObjectStorageInputSettingsConfig *ObjectStorageInputSettingsConfig
 	OneloginEventsSettingsConfig *OneloginEventsSettingsConfig
 	RolesInfoSettingsConfig *RolesInfoSettingsConfig
+	SecurityGroupsSettingsConfig *SecurityGroupsSettingsConfig
 	SemgrepDeploymentsSettingsConfig *SemgrepDeploymentsSettingsConfig
 	SemgrepProjectDetailsSettingsConfig *SemgrepProjectDetailsSettingsConfig
 	SemgrepProjectsSettingsConfig *SemgrepProjectsSettingsConfig
@@ -168,6 +170,13 @@ func BoxEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *BoxEventsS
 func BoxUsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *BoxUsersSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		BoxUsersSettingsConfig: v,
+	}
+}
+
+// CertificateManagerSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CertificateManagerSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CertificateManagerSettingsConfigAsSecretProcessesorInputConfigSettings(v *CertificateManagerSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CertificateManagerSettingsConfig: v,
 	}
 }
 
@@ -371,6 +380,13 @@ func OneloginEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Onelo
 func RolesInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *RolesInfoSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		RolesInfoSettingsConfig: v,
+	}
+}
+
+// SecurityGroupsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SecurityGroupsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func SecurityGroupsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SecurityGroupsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		SecurityGroupsSettingsConfig: v,
 	}
 }
 
@@ -717,6 +733,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.BoxUsersSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CertificateManagerSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CertificateManagerSettingsConfig)
+	if err == nil {
+		jsonCertificateManagerSettingsConfig, _ := json.Marshal(dst.CertificateManagerSettingsConfig)
+		if string(jsonCertificateManagerSettingsConfig) == "{}" { // empty struct
+			dst.CertificateManagerSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CertificateManagerSettingsConfig); err != nil {
+				dst.CertificateManagerSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CertificateManagerSettingsConfig = nil
 	}
 
 	// try to unmarshal data into CloudAssetInventorySettingsConfig
@@ -1212,6 +1245,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.RolesInfoSettingsConfig = nil
 	}
 
+	// try to unmarshal data into SecurityGroupsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SecurityGroupsSettingsConfig)
+	if err == nil {
+		jsonSecurityGroupsSettingsConfig, _ := json.Marshal(dst.SecurityGroupsSettingsConfig)
+		if string(jsonSecurityGroupsSettingsConfig) == "{}" { // empty struct
+			dst.SecurityGroupsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SecurityGroupsSettingsConfig); err != nil {
+				dst.SecurityGroupsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SecurityGroupsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into SemgrepDeploymentsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.SemgrepDeploymentsSettingsConfig)
 	if err == nil {
@@ -1516,6 +1566,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.BigqueryInputSettingsConfig = nil
 		dst.BoxEventsSettingsConfig = nil
 		dst.BoxUsersSettingsConfig = nil
+		dst.CertificateManagerSettingsConfig = nil
 		dst.CloudAssetInventorySettingsConfig = nil
 		dst.CloudConfigurationFindingsSettingsConfig = nil
 		dst.CloudLogsSettingsConfig = nil
@@ -1545,6 +1596,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.ObjectStorageInputSettingsConfig = nil
 		dst.OneloginEventsSettingsConfig = nil
 		dst.RolesInfoSettingsConfig = nil
+		dst.SecurityGroupsSettingsConfig = nil
 		dst.SemgrepDeploymentsSettingsConfig = nil
 		dst.SemgrepProjectDetailsSettingsConfig = nil
 		dst.SemgrepProjectsSettingsConfig = nil
@@ -1623,6 +1675,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.BoxUsersSettingsConfig != nil {
 		return json.Marshal(&src.BoxUsersSettingsConfig)
+	}
+
+	if src.CertificateManagerSettingsConfig != nil {
+		return json.Marshal(&src.CertificateManagerSettingsConfig)
 	}
 
 	if src.CloudAssetInventorySettingsConfig != nil {
@@ -1739,6 +1795,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.RolesInfoSettingsConfig != nil {
 		return json.Marshal(&src.RolesInfoSettingsConfig)
+	}
+
+	if src.SecurityGroupsSettingsConfig != nil {
+		return json.Marshal(&src.SecurityGroupsSettingsConfig)
 	}
 
 	if src.SemgrepDeploymentsSettingsConfig != nil {
@@ -1869,6 +1929,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.BoxUsersSettingsConfig
 	}
 
+	if obj.CertificateManagerSettingsConfig != nil {
+		return obj.CertificateManagerSettingsConfig
+	}
+
 	if obj.CloudAssetInventorySettingsConfig != nil {
 		return obj.CloudAssetInventorySettingsConfig
 	}
@@ -1983,6 +2047,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.RolesInfoSettingsConfig != nil {
 		return obj.RolesInfoSettingsConfig
+	}
+
+	if obj.SecurityGroupsSettingsConfig != nil {
+		return obj.SecurityGroupsSettingsConfig
 	}
 
 	if obj.SemgrepDeploymentsSettingsConfig != nil {
@@ -2111,6 +2179,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.BoxUsersSettingsConfig
 	}
 
+	if obj.CertificateManagerSettingsConfig != nil {
+		return *obj.CertificateManagerSettingsConfig
+	}
+
 	if obj.CloudAssetInventorySettingsConfig != nil {
 		return *obj.CloudAssetInventorySettingsConfig
 	}
@@ -2225,6 +2297,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.RolesInfoSettingsConfig != nil {
 		return *obj.RolesInfoSettingsConfig
+	}
+
+	if obj.SecurityGroupsSettingsConfig != nil {
+		return *obj.SecurityGroupsSettingsConfig
 	}
 
 	if obj.SemgrepDeploymentsSettingsConfig != nil {

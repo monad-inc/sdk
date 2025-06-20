@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import org.openapitools.client.model.AbsSecretsConfig;
 import org.openapitools.client.model.BigquerySecretsConfig;
 import org.openapitools.client.model.CriblHttpSecretsConfig;
 import org.openapitools.client.model.ElasticsearchSecretsConfig;
@@ -74,7 +75,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T16:14:47.529250767Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-20T18:56:49.922231974Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorOutputConfigSecrets.class.getName());
 
@@ -86,6 +87,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                 return null; // this class only serializes 'SecretProcessesorOutputConfigSecrets' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<AbsSecretsConfig> adapterAbsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(AbsSecretsConfig.class));
             final TypeAdapter<Object> adapterObject = gson.getDelegateAdapter(this, TypeToken.get(Object.class));
             final TypeAdapter<BigquerySecretsConfig> adapterBigquerySecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BigquerySecretsConfig.class));
             final TypeAdapter<CriblHttpSecretsConfig> adapterCriblHttpSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CriblHttpSecretsConfig.class));
@@ -112,6 +114,12 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         return;
                     }
 
+                    // check if the actual instance is of the type `AbsSecretsConfig`
+                    if (value.getActualInstance() instanceof AbsSecretsConfig) {
+                        JsonElement element = adapterAbsSecretsConfig.toJsonTree((AbsSecretsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `Object`
                     if (value.getActualInstance() instanceof Object) {
                         JsonPrimitive primitive = adapterObject.toJsonTree((Object)value.getActualInstance()).getAsJsonPrimitive();
@@ -208,7 +216,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig");
                 }
 
                 @Override
@@ -220,6 +228,18 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                     ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
+                    // deserialize AbsSecretsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AbsSecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAbsSecretsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AbsSecretsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for AbsSecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AbsSecretsConfig'", e);
+                    }
                     // deserialize Object
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -443,6 +463,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
     }
 
     static {
+        schemas.put("AbsSecretsConfig", AbsSecretsConfig.class);
         schemas.put("Object", Object.class);
         schemas.put("BigquerySecretsConfig", BigquerySecretsConfig.class);
         schemas.put("CriblHttpSecretsConfig", CriblHttpSecretsConfig.class);
@@ -469,12 +490,17 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
+     * AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
     @Override
     public void setActualInstance(Object instance) {
+        if (instance instanceof AbsSecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof Object) {
             super.setActualInstance(instance);
             return;
@@ -555,19 +581,30 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig");
+        throw new RuntimeException("Invalid instance type. Must be AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
+     * AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
      *
-     * @return The actual instance (BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig)
+     * @return The actual instance (AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AbsSecretsConfig`. If the actual instance is not `AbsSecretsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AbsSecretsConfig`
+     * @throws ClassCastException if the instance is not `AbsSecretsConfig`
+     */
+    public AbsSecretsConfig getAbsSecretsConfig() throws ClassCastException {
+        return (AbsSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -756,6 +793,14 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
         // validate oneOf schemas one by one
         int validCount = 0;
         ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with AbsSecretsConfig
+        try {
+            AbsSecretsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for AbsSecretsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with Object
         try {
             if (!jsonElement.getAsJsonPrimitive().isNumber()) {
@@ -890,7 +935,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for SecretProcessesorOutputConfigSecrets with oneOf schemas: BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format("The JSON string is invalid for SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

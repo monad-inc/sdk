@@ -7,6 +7,13 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**accountUrl** | **String** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. |  [optional] |
+|**batchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  |  [optional] |
+|**compression** | **String** | The compression method to be applied to the data before storing in S3 |  [optional] |
+|**container** | **String** | A container organizes a set of blobs, similar to a directory in a file system. |  [optional] |
+|**formatConfig** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  |  [optional] |
+|**partitionFormat** | **String** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). |  [optional] |
+|**prefix** | **String** | An optional prefix for S3 object keys to organize data within the bucket |  [optional] |
 |**messageGroupId** | **String** | The message group ID for FIFO queues. This is required for FIFO queues. |  [optional] |
 |**queueType** | **String** | The type of SQS queue to use. Can be either \&quot;standard\&quot; or \&quot;fifo\&quot;. |  [optional] |
 |**queueUrl** | **String** | The URL of the SQS queue to poll for messages. |  [optional] |
@@ -25,12 +32,8 @@
 |**insecureSkipVerify** | **Boolean** | Whether to skip TLS certificate verification (not recommended for production). |  [optional] |
 |**url** | **String** | The URL of the Sumo Logic instance. |  [optional] |
 |**username** | **String** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. |  [optional] |
-|**batchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  |  [optional] |
 |**bucket** | **String** | The name of the S3 bucket where data will be stored |  [optional] |
-|**compression** | **String** | The compression method to be applied to the data before storing in S3 |  [optional] |
 |**format** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  |  [optional] |
-|**partitionFormat** | **String** | Specifies the format for organizing data into partitions within your S3 bucket. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). |  [optional] |
-|**prefix** | **String** | An optional prefix for S3 object keys to organize data within the bucket |  [optional] |
 |**endpoint** | **String** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. |  [optional] |
 |**headers** | **Map&lt;String, String&gt;** | Non secret headers |  [optional] |
 |**maxBatchDataSize** | **Integer** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. |  [optional] |
@@ -40,7 +43,6 @@
 |**rateLimit** | **Integer** | Maximum number of requests per second to send to the endpoint. |  [optional] |
 |**tlsSkipVerify** | **Boolean** | Skip TLS verification. |  [optional] |
 |**wrapperKey** | **String** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. |  [optional] |
-|**formatConfig** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  |  [optional] |
 |**skipSslVerification** | **Boolean** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) |  [optional] |
 |**usePathStyle** | **Boolean** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. |  [optional] |
 |**authMode** | **String** | The authentication mode (basic, aws_role) |  [optional] |

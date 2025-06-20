@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Tines Events Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T16:14:47.529250767Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-20T18:56:49.922231974Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EventsLogsSettingsConfig {
   public static final String SERIALIZED_NAME_STORY_ID = "story_id";
   @SerializedName(SERIALIZED_NAME_STORY_ID)

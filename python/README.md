@@ -207,6 +207,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AbsSecretsConfig](docs/AbsSecretsConfig.md)
+ - [AbsSettingsConfig](docs/AbsSettingsConfig.md)
  - [ActivityLogsSecretsConfig](docs/ActivityLogsSecretsConfig.md)
  - [ActivityLogsSettingsConfig](docs/ActivityLogsSettingsConfig.md)
  - [ActorsInfoSecretsConfig](docs/ActorsInfoSecretsConfig.md)
@@ -237,6 +239,7 @@ Class | Method | HTTP request | Description
  - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
  - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
  - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
+ - [CertificateManagerSettingsConfig](docs/CertificateManagerSettingsConfig.md)
  - [CloudAssetInventorySecretsConfig](docs/CloudAssetInventorySecretsConfig.md)
  - [CloudAssetInventorySettingsConfig](docs/CloudAssetInventorySettingsConfig.md)
  - [CloudConfigurationFindingsSecretsConfig](docs/CloudConfigurationFindingsSecretsConfig.md)
@@ -470,6 +473,8 @@ Class | Method | HTTP request | Description
  - [SecretProcessesorOutputConfig](docs/SecretProcessesorOutputConfig.md)
  - [SecretProcessesorOutputConfigSecrets](docs/SecretProcessesorOutputConfigSecrets.md)
  - [SecretProcessesorOutputConfigSettings](docs/SecretProcessesorOutputConfigSettings.md)
+ - [SecurityGroupsFilterConfig](docs/SecurityGroupsFilterConfig.md)
+ - [SecurityGroupsSettingsConfig](docs/SecurityGroupsSettingsConfig.md)
  - [SecurityLakeSettingsConfig](docs/SecurityLakeSettingsConfig.md)
  - [SecurityLakeSourceAccountDetails](docs/SecurityLakeSourceAccountDetails.md)
  - [SemgrepCodeFindingsSecretsConfig](docs/SemgrepCodeFindingsSecretsConfig.md)

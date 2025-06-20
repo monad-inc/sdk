@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { AbsSecretsConfig } from '../models/AbsSecretsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
@@ -31,7 +32,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSecrets = BigquerySecretsConfig | CriblHttpSecretsConfig | ElasticsearchSecretsConfig | GoogleCloudStorageOutputSecretsConfig | HttpSecretsConfig | NextGenSiemSecretsConfig | ObjectStorageSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PostgresqlSecretsConfig | SentinelSecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | any | { [key: string]: any; };
+export type SecretProcessesorOutputConfigSecrets = AbsSecretsConfig | BigquerySecretsConfig | CriblHttpSecretsConfig | ElasticsearchSecretsConfig | GoogleCloudStorageOutputSecretsConfig | HttpSecretsConfig | NextGenSiemSecretsConfig | ObjectStorageSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PostgresqlSecretsConfig | SentinelSecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorOutputConfigSecretsClass
@@ -42,6 +43,7 @@ export class SecretProcessesorOutputConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 
