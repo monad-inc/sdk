@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3TransformConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T21:48:09.028412410Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T23:23:48.366001088Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RoutesV3TransformConfig {
   public static final String SERIALIZED_NAME_OPERATIONS = "operations";
   @SerializedName(SERIALIZED_NAME_OPERATIONS)
