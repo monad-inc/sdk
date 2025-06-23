@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Sentinel Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T14:34:53.167730722Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T14:56:19.320991346Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AbsSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
