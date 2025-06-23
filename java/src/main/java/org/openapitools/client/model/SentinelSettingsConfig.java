@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Sentinel Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T17:36:56.154970348Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T17:56:53.634319679Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SentinelSettingsConfig {
   public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
   @SerializedName(SERIALIZED_NAME_ENDPOINT)

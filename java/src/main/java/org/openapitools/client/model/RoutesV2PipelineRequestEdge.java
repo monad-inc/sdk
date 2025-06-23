@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineRequestEdge
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T17:36:56.154970348Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T17:56:53.634319679Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RoutesV2PipelineRequestEdge {
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
