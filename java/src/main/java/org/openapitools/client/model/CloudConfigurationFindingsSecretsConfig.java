@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Wiz cloud configuration findings secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T16:36:31.392414198Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T16:48:57.476235269Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CloudConfigurationFindingsSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
