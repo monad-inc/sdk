@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Workspace Drive Activity secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T16:48:57.476235269Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T17:36:56.154970348Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class DriveActivitySecretsConfig {
   public static final String SERIALIZED_NAME_CREDENTIALS_JSON = "credentials_json";
   @SerializedName(SERIALIZED_NAME_CREDENTIALS_JSON)
