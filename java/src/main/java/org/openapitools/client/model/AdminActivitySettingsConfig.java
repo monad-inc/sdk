@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Workspace Admin Activity settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T21:26:01.471853089Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T21:48:09.028412410Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AdminActivitySettingsConfig {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
