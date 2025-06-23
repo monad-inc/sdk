@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertificateStatuses** | Pointer to **[]string** |  | [optional] 
+**CertificateStatuses** | Pointer to **[]string** | Filter the certificate list by status value. | [optional] 
 **Cron** | Pointer to **string** | Cron expression for scheduling the input | [optional] 
-**ExtendedKeyUsage** | Pointer to **[]string** | includes struct | [optional] 
-**KeyTypes** | Pointer to **[]string** |  | [optional] 
-**KeyUsage** | Pointer to **[]string** |  | [optional] 
-**ManagedBy** | Pointer to **string** |  | [optional] 
+**ExtendedKeyUsage** | Pointer to **[]string** | The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key is used. This is in addition or in place of Key Usage. | [optional] 
+**KeyTypes** | Pointer to **[]string** | Specify one or more algorithms that is used to generate key pairs.\\n\\n | [optional] 
+**KeyUsage** | Pointer to **[]string** | The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate. | [optional] 
+**ManagedBy** | Pointer to **string** | Identifies the AWS service that manages the certificate issued by ACM. | [optional] 
 **Regions** | Pointer to **[]string** |  | [optional] 
 **RoleArn** | Pointer to **string** | The ARN of the role to assume to access the bucket | [optional] 
 

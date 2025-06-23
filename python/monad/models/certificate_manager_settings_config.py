@@ -25,14 +25,14 @@ from typing_extensions import Self
 
 class CertificateManagerSettingsConfig(BaseModel):
     """
-    Aws Certificate Manager settings
+    AWS Certificate Manager settings
     """ # noqa: E501
-    certificate_statuses: Optional[List[StrictStr]] = None
+    certificate_statuses: Optional[List[StrictStr]] = Field(default=None, description="Filter the certificate list by status value.")
     cron: Optional[StrictStr] = Field(default=None, description="Cron expression for scheduling the input")
-    extended_key_usage: Optional[List[StrictStr]] = Field(default=None, description="includes struct")
-    key_types: Optional[List[StrictStr]] = None
-    key_usage: Optional[List[StrictStr]] = None
-    managed_by: Optional[StrictStr] = None
+    extended_key_usage: Optional[List[StrictStr]] = Field(default=None, description="The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key is used. This is in addition or in place of Key Usage.")
+    key_types: Optional[List[StrictStr]] = Field(default=None, description="Specify one or more algorithms that is used to generate key pairs.\\n\\n")
+    key_usage: Optional[List[StrictStr]] = Field(default=None, description="The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.")
+    managed_by: Optional[StrictStr] = Field(default=None, description="Identifies the AWS service that manages the certificate issued by ACM.")
     regions: Optional[List[StrictStr]] = None
     role_arn: Optional[StrictStr] = Field(default=None, description="The ARN of the role to assume to access the bucket")
     __properties: ClassVar[List[str]] = ["certificate_statuses", "cron", "extended_key_usage", "key_types", "key_usage", "managed_by", "regions", "role_arn"]

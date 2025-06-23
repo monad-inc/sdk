@@ -18,15 +18,19 @@ import (
 // checks if the CertificateManagerSettingsConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CertificateManagerSettingsConfig{}
 
-// CertificateManagerSettingsConfig Aws Certificate Manager settings
+// CertificateManagerSettingsConfig AWS Certificate Manager settings
 type CertificateManagerSettingsConfig struct {
+	// Filter the certificate list by status value.
 	CertificateStatuses []string `json:"certificate_statuses,omitempty"`
 	// Cron expression for scheduling the input
 	Cron *string `json:"cron,omitempty"`
-	// includes struct
+	// The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key is used. This is in addition or in place of Key Usage.
 	ExtendedKeyUsage []string `json:"extended_key_usage,omitempty"`
+	// Specify one or more algorithms that is used to generate key pairs.\\n\\n
 	KeyTypes []string `json:"key_types,omitempty"`
+	// The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.
 	KeyUsage []string `json:"key_usage,omitempty"`
+	// Identifies the AWS service that manages the certificate issued by ACM.
 	ManagedBy *string `json:"managed_by,omitempty"`
 	Regions []string `json:"regions,omitempty"`
 	// The ARN of the role to assume to access the bucket

@@ -48,9 +48,9 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Aws Certificate Manager settings
+ * AWS Certificate Manager settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T20:29:22.715563832Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T21:26:01.471853089Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CertificateManagerSettingsConfig {
   /**
    * Gets or Sets certificateStatuses
@@ -344,7 +344,7 @@ public class CertificateManagerSettingsConfig {
   private List<KeyUsageEnum> keyUsage = new ArrayList<>();
 
   /**
-   * Gets or Sets managedBy
+   * Identifies the AWS service that manages the certificate issued by ACM.
    */
   @JsonAdapter(ManagedByEnum.Adapter.class)
   public enum ManagedByEnum {
@@ -523,7 +523,7 @@ public class CertificateManagerSettingsConfig {
   }
 
   /**
-   * Get certificateStatuses
+   * Filter the certificate list by status value.
    * @return certificateStatuses
    */
   @javax.annotation.Nullable
@@ -569,7 +569,7 @@ public class CertificateManagerSettingsConfig {
   }
 
   /**
-   * includes struct
+   * The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key is used. This is in addition or in place of Key Usage.
    * @return extendedKeyUsage
    */
   @javax.annotation.Nullable
@@ -596,7 +596,7 @@ public class CertificateManagerSettingsConfig {
   }
 
   /**
-   * Get keyTypes
+   * Specify one or more algorithms that is used to generate key pairs.\\n\\n
    * @return keyTypes
    */
   @javax.annotation.Nullable
@@ -623,7 +623,7 @@ public class CertificateManagerSettingsConfig {
   }
 
   /**
-   * Get keyUsage
+   * The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.
    * @return keyUsage
    */
   @javax.annotation.Nullable
@@ -642,7 +642,7 @@ public class CertificateManagerSettingsConfig {
   }
 
   /**
-   * Get managedBy
+   * Identifies the AWS service that manages the certificate issued by ACM.
    * @return managedBy
    */
   @javax.annotation.Nullable

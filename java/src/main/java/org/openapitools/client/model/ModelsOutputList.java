@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOutputList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T20:29:22.715563832Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T21:26:01.471853089Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ModelsOutputList {
   public static final String SERIALIZED_NAME_OUTPUTS = "outputs";
   @SerializedName(SERIALIZED_NAME_OUTPUTS)

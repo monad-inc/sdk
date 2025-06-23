@@ -269,8 +269,6 @@ import { SecretProcessesorInputConfigSettings } from '../models/SecretProcesseso
 import { SecretProcessesorOutputConfig } from '../models/SecretProcessesorOutputConfig';
 import { SecretProcessesorOutputConfigSecrets } from '../models/SecretProcessesorOutputConfigSecrets';
 import { SecretProcessesorOutputConfigSettings } from '../models/SecretProcessesorOutputConfigSettings';
-import { SecurityGroupsFilterConfig } from '../models/SecurityGroupsFilterConfig';
-import { SecurityGroupsSettingsConfig } from '../models/SecurityGroupsSettingsConfig';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';

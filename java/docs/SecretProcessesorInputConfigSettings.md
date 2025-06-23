@@ -31,8 +31,8 @@
 |**partitionFormat** | **String** | Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. |  [optional] |
 |**prefix** | **String** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. |  [optional] |
 |**recordLocation** | **String** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. If the records are not nested in the JSON, you can use &#39;@this&#39; to indicate that the file contains the record at the root or an array of records. |  [optional] |
-|**region** | **String** | The AWS region where the security groups that are being fetched are located. |  [optional] |
-|**roleArn** | **String** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. |  [optional] |
+|**region** | **String** | Optional region for the object storage service. This is often required for services like AWS S3. |  [optional] |
+|**roleArn** | **String** | The ARN of the role to assume to access the bucket |  [optional] |
 |**queueUrl** | **String** | The URL of the SQS queue to poll for messages. |  [optional] |
 |**correlationId** | **String** | The correlation ID of the log |  [optional] |
 |**resourceGroupName** | **String** | The name of the resource group |  [optional] |
@@ -49,11 +49,11 @@
 |**timestampColumn** | **String** | The column containing timestamp values used for incremental loading |  [optional] |
 |**eventType** | **List&lt;String&gt;** | A list of event types to filter by. |  [optional] |
 |**filterTerm** | **String** | Limits the results to only users who&#39;s name or login start with the search term. |  [optional] |
-|**certificateStatuses** | [**List&lt;CertificateStatusesEnum&gt;**](#List&lt;CertificateStatusesEnum&gt;) |  |  [optional] |
-|**extendedKeyUsage** | [**List&lt;ExtendedKeyUsageEnum&gt;**](#List&lt;ExtendedKeyUsageEnum&gt;) | includes struct |  [optional] |
-|**keyTypes** | [**List&lt;KeyTypesEnum&gt;**](#List&lt;KeyTypesEnum&gt;) |  |  [optional] |
-|**keyUsage** | [**List&lt;KeyUsageEnum&gt;**](#List&lt;KeyUsageEnum&gt;) |  |  [optional] |
-|**managedBy** | [**ManagedByEnum**](#ManagedByEnum) |  |  [optional] |
+|**certificateStatuses** | [**List&lt;CertificateStatusesEnum&gt;**](#List&lt;CertificateStatusesEnum&gt;) | Filter the certificate list by status value. |  [optional] |
+|**extendedKeyUsage** | [**List&lt;ExtendedKeyUsageEnum&gt;**](#List&lt;ExtendedKeyUsageEnum&gt;) | The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key is used. This is in addition or in place of Key Usage. |  [optional] |
+|**keyTypes** | [**List&lt;KeyTypesEnum&gt;**](#List&lt;KeyTypesEnum&gt;) | Specify one or more algorithms that is used to generate key pairs.\\n\\n |  [optional] |
+|**keyUsage** | [**List&lt;KeyUsageEnum&gt;**](#List&lt;KeyUsageEnum&gt;) | The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate. |  [optional] |
+|**managedBy** | [**ManagedByEnum**](#ManagedByEnum) | Identifies the AWS service that manages the certificate issued by ACM. |  [optional] |
 |**regions** | [**List&lt;RegionsEnum&gt;**](#List&lt;RegionsEnum&gt;) |  |  [optional] |
 |**assetTypes** | **List&lt;String&gt;** | The type of assets to scan for.  If left empty, will scan all assets |  [optional] |
 |**resourceNames** | **List&lt;String&gt;** | The resources to query logs from. |  [optional] |
@@ -114,7 +114,6 @@
 |**skipSslVerification** | **Boolean** | Skip SSL verification for self-signed certificates |  [optional] |
 |**usePathStyle** | **Boolean** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. |  [optional] |
 |**subdomain** | **String** | SubDomain is a placeholder that represents your specific OneLogin subdomain. |  [optional] |
-|**filters** | [**List&lt;SecurityGroupsFilterConfig&gt;**](SecurityGroupsFilterConfig.md) | Filters for the security groups |  [optional] |
 |**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  [optional] |
 |**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
 |**role** | **String** | The name of the Role your service account was granted which can access your resources. |  [optional] |

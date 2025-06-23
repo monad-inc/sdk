@@ -62,7 +62,6 @@ type SecretProcessesorInputConfigSettings struct {
 	ObjectStorageInputSettingsConfig *ObjectStorageInputSettingsConfig
 	OneloginEventsSettingsConfig *OneloginEventsSettingsConfig
 	RolesInfoSettingsConfig *RolesInfoSettingsConfig
-	SecurityGroupsSettingsConfig *SecurityGroupsSettingsConfig
 	SemgrepDeploymentsSettingsConfig *SemgrepDeploymentsSettingsConfig
 	SemgrepProjectDetailsSettingsConfig *SemgrepProjectDetailsSettingsConfig
 	SemgrepProjectsSettingsConfig *SemgrepProjectsSettingsConfig
@@ -380,13 +379,6 @@ func OneloginEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Onelo
 func RolesInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *RolesInfoSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		RolesInfoSettingsConfig: v,
-	}
-}
-
-// SecurityGroupsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SecurityGroupsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func SecurityGroupsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SecurityGroupsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		SecurityGroupsSettingsConfig: v,
 	}
 }
 
@@ -1245,23 +1237,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.RolesInfoSettingsConfig = nil
 	}
 
-	// try to unmarshal data into SecurityGroupsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.SecurityGroupsSettingsConfig)
-	if err == nil {
-		jsonSecurityGroupsSettingsConfig, _ := json.Marshal(dst.SecurityGroupsSettingsConfig)
-		if string(jsonSecurityGroupsSettingsConfig) == "{}" { // empty struct
-			dst.SecurityGroupsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SecurityGroupsSettingsConfig); err != nil {
-				dst.SecurityGroupsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SecurityGroupsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into SemgrepDeploymentsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.SemgrepDeploymentsSettingsConfig)
 	if err == nil {
@@ -1596,7 +1571,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.ObjectStorageInputSettingsConfig = nil
 		dst.OneloginEventsSettingsConfig = nil
 		dst.RolesInfoSettingsConfig = nil
-		dst.SecurityGroupsSettingsConfig = nil
 		dst.SemgrepDeploymentsSettingsConfig = nil
 		dst.SemgrepProjectDetailsSettingsConfig = nil
 		dst.SemgrepProjectsSettingsConfig = nil
@@ -1795,10 +1769,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.RolesInfoSettingsConfig != nil {
 		return json.Marshal(&src.RolesInfoSettingsConfig)
-	}
-
-	if src.SecurityGroupsSettingsConfig != nil {
-		return json.Marshal(&src.SecurityGroupsSettingsConfig)
 	}
 
 	if src.SemgrepDeploymentsSettingsConfig != nil {
@@ -2049,10 +2019,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.RolesInfoSettingsConfig
 	}
 
-	if obj.SecurityGroupsSettingsConfig != nil {
-		return obj.SecurityGroupsSettingsConfig
-	}
-
 	if obj.SemgrepDeploymentsSettingsConfig != nil {
 		return obj.SemgrepDeploymentsSettingsConfig
 	}
@@ -2297,10 +2263,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.RolesInfoSettingsConfig != nil {
 		return *obj.RolesInfoSettingsConfig
-	}
-
-	if obj.SecurityGroupsSettingsConfig != nil {
-		return *obj.SecurityGroupsSettingsConfig
 	}
 
 	if obj.SemgrepDeploymentsSettingsConfig != nil {

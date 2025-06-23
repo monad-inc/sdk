@@ -13,20 +13,32 @@
 import { HttpFile } from '../http/http';
 
 /**
-* Aws Certificate Manager settings
+* AWS Certificate Manager settings
 */
 export class CertificateManagerSettingsConfig {
+    /**
+    * Filter the certificate list by status value.
+    */
     'certificateStatuses'?: Array<CertificateManagerSettingsConfigCertificateStatusesEnum>;
     /**
     * Cron expression for scheduling the input
     */
     'cron'?: string;
     /**
-    * includes struct
+    * The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key is used. This is in addition or in place of Key Usage.
     */
     'extendedKeyUsage'?: Array<CertificateManagerSettingsConfigExtendedKeyUsageEnum>;
+    /**
+    * Specify one or more algorithms that is used to generate key pairs.\\n\\n
+    */
     'keyTypes'?: Array<CertificateManagerSettingsConfigKeyTypesEnum>;
+    /**
+    * The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.
+    */
     'keyUsage'?: Array<CertificateManagerSettingsConfigKeyUsageEnum>;
+    /**
+    * Identifies the AWS service that manages the certificate issued by ACM.
+    */
     'managedBy'?: CertificateManagerSettingsConfigManagedByEnum;
     'regions'?: Array<CertificateManagerSettingsConfigRegionsEnum>;
     /**

@@ -264,8 +264,6 @@ export * from '../models/SecretProcessesorInputConfigSettings';
 export * from '../models/SecretProcessesorOutputConfig';
 export * from '../models/SecretProcessesorOutputConfigSecrets';
 export * from '../models/SecretProcessesorOutputConfigSettings';
-export * from '../models/SecurityGroupsFilterConfig';
-export * from '../models/SecurityGroupsSettingsConfig';
 export * from '../models/SecurityLakeSettingsConfig';
 export * from '../models/SecurityLakeSourceAccountDetails';
 export * from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -583,8 +581,6 @@ import { SecretProcessesorInputConfigSettingsClass } from '../models/SecretProce
 import { SecretProcessesorOutputConfig } from '../models/SecretProcessesorOutputConfig';
 import { SecretProcessesorOutputConfigSecretsClass } from '../models/SecretProcessesorOutputConfigSecrets';
 import { SecretProcessesorOutputConfigSettingsClass } from '../models/SecretProcessesorOutputConfigSettings';
-import { SecurityGroupsFilterConfig } from '../models/SecurityGroupsFilterConfig';
-import { SecurityGroupsSettingsConfig } from '../models/SecurityGroupsSettingsConfig';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -939,8 +935,6 @@ let typeMap: {[index: string]: any} = {
     "SecretProcessesorOutputConfig": SecretProcessesorOutputConfig,
     "SecretProcessesorOutputConfigSecrets": SecretProcessesorOutputConfigSecretsClass,
     "SecretProcessesorOutputConfigSettings": SecretProcessesorOutputConfigSettingsClass,
-    "SecurityGroupsFilterConfig": SecurityGroupsFilterConfig,
-    "SecurityGroupsSettingsConfig": SecurityGroupsSettingsConfig,
     "SecurityLakeSettingsConfig": SecurityLakeSettingsConfig,
     "SecurityLakeSourceAccountDetails": SecurityLakeSourceAccountDetails,
     "SemgrepCodeFindingsSecretsConfig": SemgrepCodeFindingsSecretsConfig,

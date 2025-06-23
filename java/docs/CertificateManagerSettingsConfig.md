@@ -2,18 +2,18 @@
 
 # CertificateManagerSettingsConfig
 
-Aws Certificate Manager settings
+AWS Certificate Manager settings
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**certificateStatuses** | [**List&lt;CertificateStatusesEnum&gt;**](#List&lt;CertificateStatusesEnum&gt;) |  |  [optional] |
+|**certificateStatuses** | [**List&lt;CertificateStatusesEnum&gt;**](#List&lt;CertificateStatusesEnum&gt;) | Filter the certificate list by status value. |  [optional] |
 |**cron** | **String** | Cron expression for scheduling the input |  [optional] |
-|**extendedKeyUsage** | [**List&lt;ExtendedKeyUsageEnum&gt;**](#List&lt;ExtendedKeyUsageEnum&gt;) | includes struct |  [optional] |
-|**keyTypes** | [**List&lt;KeyTypesEnum&gt;**](#List&lt;KeyTypesEnum&gt;) |  |  [optional] |
-|**keyUsage** | [**List&lt;KeyUsageEnum&gt;**](#List&lt;KeyUsageEnum&gt;) |  |  [optional] |
-|**managedBy** | [**ManagedByEnum**](#ManagedByEnum) |  |  [optional] |
+|**extendedKeyUsage** | [**List&lt;ExtendedKeyUsageEnum&gt;**](#List&lt;ExtendedKeyUsageEnum&gt;) | The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key is used. This is in addition or in place of Key Usage. |  [optional] |
+|**keyTypes** | [**List&lt;KeyTypesEnum&gt;**](#List&lt;KeyTypesEnum&gt;) | Specify one or more algorithms that is used to generate key pairs.\\n\\n |  [optional] |
+|**keyUsage** | [**List&lt;KeyUsageEnum&gt;**](#List&lt;KeyUsageEnum&gt;) | The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate. |  [optional] |
+|**managedBy** | [**ManagedByEnum**](#ManagedByEnum) | Identifies the AWS service that manages the certificate issued by ACM. |  [optional] |
 |**regions** | [**List&lt;RegionsEnum&gt;**](#List&lt;RegionsEnum&gt;) |  |  [optional] |
 |**roleArn** | **String** | The ARN of the role to assume to access the bucket |  [optional] |
 

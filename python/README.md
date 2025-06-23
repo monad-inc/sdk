@@ -473,8 +473,6 @@ Class | Method | HTTP request | Description
  - [SecretProcessesorOutputConfig](docs/SecretProcessesorOutputConfig.md)
  - [SecretProcessesorOutputConfigSecrets](docs/SecretProcessesorOutputConfigSecrets.md)
  - [SecretProcessesorOutputConfigSettings](docs/SecretProcessesorOutputConfigSettings.md)
- - [SecurityGroupsFilterConfig](docs/SecurityGroupsFilterConfig.md)
- - [SecurityGroupsSettingsConfig](docs/SecurityGroupsSettingsConfig.md)
  - [SecurityLakeSettingsConfig](docs/SecurityLakeSettingsConfig.md)
  - [SecurityLakeSourceAccountDetails](docs/SecurityLakeSourceAccountDetails.md)
  - [SemgrepCodeFindingsSecretsConfig](docs/SemgrepCodeFindingsSecretsConfig.md)
