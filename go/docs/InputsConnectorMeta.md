@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **BillingType** | Pointer to **int32** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **interface{}** |  | [optional] 
-**DedicatedEndpoint** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **House** | Pointer to **string** |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
@@ -147,31 +146,6 @@ HasConfig returns a boolean if a field has been set.
 `func (o *InputsConnectorMeta) UnsetConfig()`
 
 UnsetConfig ensures that no value is present for Config, not even an explicit nil
-### GetDedicatedEndpoint
-
-`func (o *InputsConnectorMeta) GetDedicatedEndpoint() bool`
-
-GetDedicatedEndpoint returns the DedicatedEndpoint field if non-nil, zero value otherwise.
-
-### GetDedicatedEndpointOk
-
-`func (o *InputsConnectorMeta) GetDedicatedEndpointOk() (*bool, bool)`
-
-GetDedicatedEndpointOk returns a tuple with the DedicatedEndpoint field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDedicatedEndpoint
-
-`func (o *InputsConnectorMeta) SetDedicatedEndpoint(v bool)`
-
-SetDedicatedEndpoint sets DedicatedEndpoint field to given value.
-
-### HasDedicatedEndpoint
-
-`func (o *InputsConnectorMeta) HasDedicatedEndpoint() bool`
-
-HasDedicatedEndpoint returns a boolean if a field has been set.
-
 ### GetDescription
 
 `func (o *InputsConnectorMeta) GetDescription() string`

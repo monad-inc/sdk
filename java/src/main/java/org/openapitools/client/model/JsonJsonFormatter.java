@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * JsonJsonFormatter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T15:08:09.707342761Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T16:36:31.392414198Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class JsonJsonFormatter {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)

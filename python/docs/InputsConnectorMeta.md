@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **billing_type** | **int** |  | [optional] 
 **category** | **str** |  | [optional] 
 **config** | **object** |  | [optional] 
-**dedicated_endpoint** | **bool** |  | [optional] 
 **description** | **str** |  | [optional] 
 **house** | **str** |  | [optional] 
 **internal** | **bool** |  | [optional] 

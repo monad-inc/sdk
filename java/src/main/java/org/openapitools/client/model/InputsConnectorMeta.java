@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * InputsConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T15:08:09.707342761Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T16:36:31.392414198Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class InputsConnectorMeta {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
@@ -70,11 +70,6 @@ public class InputsConnectorMeta {
   @SerializedName(SERIALIZED_NAME_CONFIG)
   @javax.annotation.Nullable
   private Object config = null;
-
-  public static final String SERIALIZED_NAME_DEDICATED_ENDPOINT = "dedicated_endpoint";
-  @SerializedName(SERIALIZED_NAME_DEDICATED_ENDPOINT)
-  @javax.annotation.Nullable
-  private Boolean dedicatedEndpoint;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -192,25 +187,6 @@ public class InputsConnectorMeta {
 
   public void setConfig(@javax.annotation.Nullable Object config) {
     this.config = config;
-  }
-
-
-  public InputsConnectorMeta dedicatedEndpoint(@javax.annotation.Nullable Boolean dedicatedEndpoint) {
-    this.dedicatedEndpoint = dedicatedEndpoint;
-    return this;
-  }
-
-  /**
-   * Get dedicatedEndpoint
-   * @return dedicatedEndpoint
-   */
-  @javax.annotation.Nullable
-  public Boolean getDedicatedEndpoint() {
-    return dedicatedEndpoint;
-  }
-
-  public void setDedicatedEndpoint(@javax.annotation.Nullable Boolean dedicatedEndpoint) {
-    this.dedicatedEndpoint = dedicatedEndpoint;
   }
 
 
@@ -380,7 +356,6 @@ public class InputsConnectorMeta {
         Objects.equals(this.billingType, inputsConnectorMeta.billingType) &&
         Objects.equals(this.category, inputsConnectorMeta.category) &&
         Objects.equals(this.config, inputsConnectorMeta.config) &&
-        Objects.equals(this.dedicatedEndpoint, inputsConnectorMeta.dedicatedEndpoint) &&
         Objects.equals(this.description, inputsConnectorMeta.description) &&
         Objects.equals(this.house, inputsConnectorMeta.house) &&
         Objects.equals(this.internal, inputsConnectorMeta.internal) &&
@@ -397,7 +372,7 @@ public class InputsConnectorMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, billingType, category, config, dedicatedEndpoint, description, house, internal, isCron, logoKey, name, tier, typeId);
+    return Objects.hash(authType, billingType, category, config, description, house, internal, isCron, logoKey, name, tier, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -415,7 +390,6 @@ public class InputsConnectorMeta {
     sb.append("    billingType: ").append(toIndentedString(billingType)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
-    sb.append("    dedicatedEndpoint: ").append(toIndentedString(dedicatedEndpoint)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    house: ").append(toIndentedString(house)).append("\n");
     sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
@@ -450,7 +424,6 @@ public class InputsConnectorMeta {
     openapiFields.add("billing_type");
     openapiFields.add("category");
     openapiFields.add("config");
-    openapiFields.add("dedicated_endpoint");
     openapiFields.add("description");
     openapiFields.add("house");
     openapiFields.add("internal");
