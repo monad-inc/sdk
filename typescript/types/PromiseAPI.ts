@@ -83,6 +83,7 @@ import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
+import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
@@ -251,6 +252,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
+import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
@@ -1015,6 +1017,45 @@ export class PromiseEnrichmentsApi {
     public v3OrganizationIdEnrichmentsMetaGet(organizationId: string, _options?: PromiseConfigurationOptions): Promise<Array<EnrichmentConnectorMeta>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v3OrganizationIdEnrichmentsMetaGet(organizationId, observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableFeatureFlagsApi } from './ObservableAPI';
+
+import { FeatureFlagsApiRequestFactory, FeatureFlagsApiResponseProcessor} from "../apis/FeatureFlagsApi";
+export class PromiseFeatureFlagsApi {
+    private api: ObservableFeatureFlagsApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: FeatureFlagsApiRequestFactory,
+        responseProcessor?: FeatureFlagsApiResponseProcessor
+    ) {
+        this.api = new ObservableFeatureFlagsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Get feature flags for the authenticated user
+     * Get feature flags
+     */
+    public v3FeatureFlagsGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3GetFeatureFlagResponse>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3FeatureFlagsGetWithHttpInfo(observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get feature flags for the authenticated user
+     * Get feature flags
+     */
+    public v3FeatureFlagsGet(_options?: PromiseConfigurationOptions): Promise<RoutesV3GetFeatureFlagResponse> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3FeatureFlagsGet(observableOptions);
         return result.toPromise();
     }
 

@@ -104,6 +104,7 @@ Class | Method | HTTP request | Description
 *DataAPI* | [**V1OrganizationIdDataNodeIdGet**](docs/DataAPI.md#v1organizationiddatanodeidget) | **Get** /v1/{organization_id}/data/{node_id} | Stream node data
 *EnrichmentsAPI* | [**V3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet**](docs/EnrichmentsAPI.md#v3organizationidenrichmentsmetaenrichmenttypeidget) | **Get** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta
 *EnrichmentsAPI* | [**V3OrganizationIdEnrichmentsMetaGet**](docs/EnrichmentsAPI.md#v3organizationidenrichmentsmetaget) | **Get** /v3/{organization_id}/enrichments_meta | List enrichments
+*FeatureFlagsAPI* | [**V3FeatureFlagsGet**](docs/FeatureFlagsAPI.md#v3featureflagsget) | **Get** /v3/feature_flags | Get feature flags
 *InputsAPI* | [**V1InputsGet**](docs/InputsAPI.md#v1inputsget) | **Get** /v1/inputs | List inputs
 *InputsAPI* | [**V1InputsInputTypeIdGet**](docs/InputsAPI.md#v1inputsinputtypeidget) | **Get** /v1/inputs/{input_type_id} | Get input config meta
 *LogsAPI* | [**V1OrganizationIdLogsApiGet**](docs/LogsAPI.md#v1organizationidlogsapiget) | **Get** /v1/{organization_id}/logs/api | Stream organization api logs
@@ -282,6 +283,7 @@ Class | Method | HTTP request | Description
  - [EventSettingsConfig](docs/EventSettingsConfig.md)
  - [EventsLogsSecretsConfig](docs/EventsLogsSecretsConfig.md)
  - [EventsLogsSettingsConfig](docs/EventsLogsSettingsConfig.md)
+ - [FlagsmithFlag](docs/FlagsmithFlag.md)
  - [FlattenFlatten](docs/FlattenFlatten.md)
  - [FlattenallFlattenAll](docs/FlattenallFlattenAll.md)
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
@@ -450,6 +452,7 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [RoutesV3CreateEnrichmentRequest](docs/RoutesV3CreateEnrichmentRequest.md)
  - [RoutesV3GetEnrichmentResponse](docs/RoutesV3GetEnrichmentResponse.md)
+ - [RoutesV3GetFeatureFlagResponse](docs/RoutesV3GetFeatureFlagResponse.md)
  - [RoutesV3ImportTransformResponse](docs/RoutesV3ImportTransformResponse.md)
  - [RoutesV3PutEnrichmentRequest](docs/RoutesV3PutEnrichmentRequest.md)
  - [RoutesV3SuccessResponse](docs/RoutesV3SuccessResponse.md)

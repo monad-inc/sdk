@@ -79,6 +79,7 @@ export * from '../models/EventSecretsConfig';
 export * from '../models/EventSettingsConfig';
 export * from '../models/EventsLogsSecretsConfig';
 export * from '../models/EventsLogsSettingsConfig';
+export * from '../models/FlagsmithFlag';
 export * from '../models/FlattenFlatten';
 export * from '../models/FlattenallFlattenAll';
 export * from '../models/FormatterFormatConfig';
@@ -247,6 +248,7 @@ export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/RoutesV2UpdateRoleV2Request';
 export * from '../models/RoutesV3CreateEnrichmentRequest';
 export * from '../models/RoutesV3GetEnrichmentResponse';
+export * from '../models/RoutesV3GetFeatureFlagResponse';
 export * from '../models/RoutesV3ImportTransformResponse';
 export * from '../models/RoutesV3PutEnrichmentRequest';
 export * from '../models/RoutesV3SuccessResponse';
@@ -396,6 +398,7 @@ import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
+import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
@@ -564,6 +567,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
+import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
@@ -750,6 +754,7 @@ let typeMap: {[index: string]: any} = {
     "EventSettingsConfig": EventSettingsConfig,
     "EventsLogsSecretsConfig": EventsLogsSecretsConfig,
     "EventsLogsSettingsConfig": EventsLogsSettingsConfig,
+    "FlagsmithFlag": FlagsmithFlag,
     "FlattenFlatten": FlattenFlatten,
     "FlattenallFlattenAll": FlattenallFlattenAll,
     "FormatterFormatConfig": FormatterFormatConfig,
@@ -918,6 +923,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
     "RoutesV3CreateEnrichmentRequest": RoutesV3CreateEnrichmentRequest,
     "RoutesV3GetEnrichmentResponse": RoutesV3GetEnrichmentResponse,
+    "RoutesV3GetFeatureFlagResponse": RoutesV3GetFeatureFlagResponse,
     "RoutesV3ImportTransformResponse": RoutesV3ImportTransformResponse,
     "RoutesV3PutEnrichmentRequest": RoutesV3PutEnrichmentRequest,
     "RoutesV3SuccessResponse": RoutesV3SuccessResponse,

@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-06-23T23:23:48.366001088Z[Etc/UTC]
+  - Build date: 2025-06-24T13:19:51.855698190Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -140,6 +140,7 @@ Class | Method | HTTP request | Description
 *DataApi* | [**v1OrganizationIdDataNodeIdGet**](docs/DataApi.md#v1OrganizationIdDataNodeIdGet) | **GET** /v1/{organization_id}/data/{node_id} | Stream node data
 *EnrichmentsApi* | [**v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet**](docs/EnrichmentsApi.md#v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet) | **GET** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta
 *EnrichmentsApi* | [**v3OrganizationIdEnrichmentsMetaGet**](docs/EnrichmentsApi.md#v3OrganizationIdEnrichmentsMetaGet) | **GET** /v3/{organization_id}/enrichments_meta | List enrichments
+*FeatureFlagsApi* | [**v3FeatureFlagsGet**](docs/FeatureFlagsApi.md#v3FeatureFlagsGet) | **GET** /v3/feature_flags | Get feature flags
 *InputsApi* | [**v1InputsGet**](docs/InputsApi.md#v1InputsGet) | **GET** /v1/inputs | List inputs
 *InputsApi* | [**v1InputsInputTypeIdGet**](docs/InputsApi.md#v1InputsInputTypeIdGet) | **GET** /v1/inputs/{input_type_id} | Get input config meta
 *LogsApi* | [**v1OrganizationIdLogsApiGet**](docs/LogsApi.md#v1OrganizationIdLogsApiGet) | **GET** /v1/{organization_id}/logs/api | Stream organization api logs
@@ -318,6 +319,7 @@ Class | Method | HTTP request | Description
  - [EventSettingsConfig](docs/EventSettingsConfig.md)
  - [EventsLogsSecretsConfig](docs/EventsLogsSecretsConfig.md)
  - [EventsLogsSettingsConfig](docs/EventsLogsSettingsConfig.md)
+ - [FlagsmithFlag](docs/FlagsmithFlag.md)
  - [FlattenFlatten](docs/FlattenFlatten.md)
  - [FlattenallFlattenAll](docs/FlattenallFlattenAll.md)
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
@@ -486,6 +488,7 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [RoutesV3CreateEnrichmentRequest](docs/RoutesV3CreateEnrichmentRequest.md)
  - [RoutesV3GetEnrichmentResponse](docs/RoutesV3GetEnrichmentResponse.md)
+ - [RoutesV3GetFeatureFlagResponse](docs/RoutesV3GetFeatureFlagResponse.md)
  - [RoutesV3ImportTransformResponse](docs/RoutesV3ImportTransformResponse.md)
  - [RoutesV3PutEnrichmentRequest](docs/RoutesV3PutEnrichmentRequest.md)
  - [RoutesV3SuccessResponse](docs/RoutesV3SuccessResponse.md)

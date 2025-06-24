@@ -84,6 +84,7 @@ import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
+import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
@@ -252,6 +253,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
+import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
@@ -1314,6 +1316,56 @@ export class ObservableEnrichmentsApi {
      */
     public v3OrganizationIdEnrichmentsMetaGet(organizationId: string, _options?: ConfigurationOptions): Observable<Array<EnrichmentConnectorMeta>> {
         return this.v3OrganizationIdEnrichmentsMetaGetWithHttpInfo(organizationId, _options).pipe(map((apiResponse: HttpInfo<Array<EnrichmentConnectorMeta>>) => apiResponse.data));
+    }
+
+}
+
+import { FeatureFlagsApiRequestFactory, FeatureFlagsApiResponseProcessor} from "../apis/FeatureFlagsApi";
+export class ObservableFeatureFlagsApi {
+    private requestFactory: FeatureFlagsApiRequestFactory;
+    private responseProcessor: FeatureFlagsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: FeatureFlagsApiRequestFactory,
+        responseProcessor?: FeatureFlagsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new FeatureFlagsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new FeatureFlagsApiResponseProcessor();
+    }
+
+    /**
+     * Get feature flags for the authenticated user
+     * Get feature flags
+     */
+    public v3FeatureFlagsGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3GetFeatureFlagResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3FeatureFlagsGet(_config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3FeatureFlagsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get feature flags for the authenticated user
+     * Get feature flags
+     */
+    public v3FeatureFlagsGet(_options?: ConfigurationOptions): Observable<RoutesV3GetFeatureFlagResponse> {
+        return this.v3FeatureFlagsGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<RoutesV3GetFeatureFlagResponse>) => apiResponse.data));
     }
 
 }
