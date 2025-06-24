@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-06-24T16:59:36.016313525Z[Etc/UTC]
+  - Build date: 2025-06-24T19:53:15.077060469Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -325,6 +325,7 @@ Class | Method | HTTP request | Description
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
+ - [GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter](docs/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.md)
  - [GitlabIssuesSecretsConfig](docs/GitlabIssuesSecretsConfig.md)
  - [GitlabIssuesSettingsConfig](docs/GitlabIssuesSettingsConfig.md)
  - [GoogleCloudStorageOutputSecretsConfig](docs/GoogleCloudStorageOutputSecretsConfig.md)
@@ -506,6 +507,7 @@ Class | Method | HTTP request | Description
  - [SecretProcessesorOutputConfig](docs/SecretProcessesorOutputConfig.md)
  - [SecretProcessesorOutputConfigSecrets](docs/SecretProcessesorOutputConfigSecrets.md)
  - [SecretProcessesorOutputConfigSettings](docs/SecretProcessesorOutputConfigSettings.md)
+ - [SecretsmanagerSettingsConfig](docs/SecretsmanagerSettingsConfig.md)
  - [SecurityLakeSettingsConfig](docs/SecurityLakeSettingsConfig.md)
  - [SecurityLakeSourceAccountDetails](docs/SecurityLakeSourceAccountDetails.md)
  - [SemgrepCodeFindingsSecretsConfig](docs/SemgrepCodeFindingsSecretsConfig.md)
@@ -544,6 +546,7 @@ Class | Method | HTTP request | Description
  - [TenableVulnerabilitiesCronSecretsConfig](docs/TenableVulnerabilitiesCronSecretsConfig.md)
  - [TenableVulnerabilitiesCronSettingsConfig](docs/TenableVulnerabilitiesCronSettingsConfig.md)
  - [TenableVulnerabilitiesSecretsConfig](docs/TenableVulnerabilitiesSecretsConfig.md)
+ - [TypesFilterNameStringType](docs/TypesFilterNameStringType.md)
  - [UsersInfoSecretsConfig](docs/UsersInfoSecretsConfig.md)
  - [UsersInfoSettingsConfig](docs/UsersInfoSettingsConfig.md)
  - [UsersSecretsConfig](docs/UsersSecretsConfig.md)

@@ -31,8 +31,8 @@
 |**partitionFormat** | **String** | Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. |  [optional] |
 |**prefix** | **String** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. |  [optional] |
 |**recordLocation** | **String** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. If the records are not nested in the JSON, you can use &#39;@this&#39; to indicate that the file contains the record at the root or an array of records. |  [optional] |
-|**region** | **String** | Optional region for the object storage service. This is often required for services like AWS S3. |  [optional] |
-|**roleArn** | **String** | The ARN of the role to assume to access the bucket |  [optional] |
+|**region** | **String** | URL of the organization |  [optional] |
+|**roleArn** | **String** | The ID of the secret to describe |  [optional] |
 |**queueUrl** | **String** | The URL of the SQS queue to poll for messages. |  [optional] |
 |**correlationId** | **String** | The correlation ID of the log |  [optional] |
 |**resourceGroupName** | **String** | The name of the resource group |  [optional] |
@@ -114,6 +114,8 @@
 |**skipSslVerification** | **Boolean** | Skip SSL verification for self-signed certificates |  [optional] |
 |**usePathStyle** | **Boolean** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. |  [optional] |
 |**subdomain** | **String** | SubDomain is a placeholder that represents your specific OneLogin subdomain. |  [optional] |
+|**filters** | [**List&lt;GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter&gt;**](GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.md) | Filters for returned secrets |  [optional] |
+|**includePlannedDeletion** | **Boolean** | Whether or not to include secrets scheduled for deletion |  [optional] |
 |**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  [optional] |
 |**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
 |**role** | **String** | The name of the Role your service account was granted which can access your resources. |  [optional] |
