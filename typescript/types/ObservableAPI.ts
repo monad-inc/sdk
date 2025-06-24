@@ -19,6 +19,7 @@ import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
+import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AwssqsSettingsConfig } from '../models/AwssqsSettingsConfig';
 import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';

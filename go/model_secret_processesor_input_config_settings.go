@@ -25,6 +25,7 @@ type SecretProcessesorInputConfigSettings struct {
 	AdminLogsSettingsConfig *AdminLogsSettingsConfig
 	AuditLogsSettingsConfig *AuditLogsSettingsConfig
 	AuthLogsSettingsConfig *AuthLogsSettingsConfig
+	AwsGuarddutySettingsConfig *AwsGuarddutySettingsConfig
 	AwsS3SettingsConfig *AwsS3SettingsConfig
 	AwssqsSettingsConfig *AwssqsSettingsConfig
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
@@ -120,6 +121,13 @@ func AuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AuditLogsS
 func AuthLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AuthLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		AuthLogsSettingsConfig: v,
+	}
+}
+
+// AwsGuarddutySettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AwsGuarddutySettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func AwsGuarddutySettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsGuarddutySettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		AwsGuarddutySettingsConfig: v,
 	}
 }
 
@@ -606,6 +614,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.AuthLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into AwsGuarddutySettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AwsGuarddutySettingsConfig)
+	if err == nil {
+		jsonAwsGuarddutySettingsConfig, _ := json.Marshal(dst.AwsGuarddutySettingsConfig)
+		if string(jsonAwsGuarddutySettingsConfig) == "{}" { // empty struct
+			dst.AwsGuarddutySettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AwsGuarddutySettingsConfig); err != nil {
+				dst.AwsGuarddutySettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AwsGuarddutySettingsConfig = nil
 	}
 
 	// try to unmarshal data into AwsS3SettingsConfig
@@ -1534,6 +1559,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AdminLogsSettingsConfig = nil
 		dst.AuditLogsSettingsConfig = nil
 		dst.AuthLogsSettingsConfig = nil
+		dst.AwsGuarddutySettingsConfig = nil
 		dst.AwsS3SettingsConfig = nil
 		dst.AwssqsSettingsConfig = nil
 		dst.AzureActivityLogsSettingsConfig = nil
@@ -1621,6 +1647,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.AuthLogsSettingsConfig != nil {
 		return json.Marshal(&src.AuthLogsSettingsConfig)
+	}
+
+	if src.AwsGuarddutySettingsConfig != nil {
+		return json.Marshal(&src.AwsGuarddutySettingsConfig)
 	}
 
 	if src.AwsS3SettingsConfig != nil {
@@ -1871,6 +1901,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.AuthLogsSettingsConfig
 	}
 
+	if obj.AwsGuarddutySettingsConfig != nil {
+		return obj.AwsGuarddutySettingsConfig
+	}
+
 	if obj.AwsS3SettingsConfig != nil {
 		return obj.AwsS3SettingsConfig
 	}
@@ -2115,6 +2149,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.AuthLogsSettingsConfig != nil {
 		return *obj.AuthLogsSettingsConfig
+	}
+
+	if obj.AwsGuarddutySettingsConfig != nil {
+		return *obj.AwsGuarddutySettingsConfig
 	}
 
 	if obj.AwsS3SettingsConfig != nil {
