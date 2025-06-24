@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Cloud Storage settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-24T19:53:15.077060469Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-24T22:19:30.398609283Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class GoogleCloudStorageSettingsConfig {
   public static final String SERIALIZED_NAME_BUCKET_NAME = "bucket_name";
   @SerializedName(SERIALIZED_NAME_BUCKET_NAME)

@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3GetFeatureFlagResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-24T19:53:15.077060469Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-24T22:19:30.398609283Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RoutesV3GetFeatureFlagResponse {
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Onelogin Events settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-24T19:53:15.077060469Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-24T22:19:30.398609283Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class OneloginEventsSettingsConfig {
   public static final String SERIALIZED_NAME_SUBDOMAIN = "subdomain";
   @SerializedName(SERIALIZED_NAME_SUBDOMAIN)
