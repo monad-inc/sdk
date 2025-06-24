@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-06-24T16:29:24.390793574Z[Etc/UTC]
+  - Build date: 2025-06-24T16:59:36.016313525Z[Etc/UTC]
   - Generator version: 7.13.0
 
 This is the monad API
@@ -254,7 +254,6 @@ Class | Method | HTTP request | Description
  - [AuthLogsSecretsConfig](docs/AuthLogsSecretsConfig.md)
  - [AuthLogsSettingsConfig](docs/AuthLogsSettingsConfig.md)
  - [AuthenticationtypesTokenResponse](docs/AuthenticationtypesTokenResponse.md)
- - [AwsGuarddutySettingsConfig](docs/AwsGuarddutySettingsConfig.md)
  - [AwsS3SettingsConfig](docs/AwsS3SettingsConfig.md)
  - [AwssqsSettingsConfig](docs/AwssqsSettingsConfig.md)
  - [AwssqsoutputSettingsConfig](docs/AwssqsoutputSettingsConfig.md)

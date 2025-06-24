@@ -77,7 +77,6 @@ from monad.models.audit_logs_settings_config import AuditLogsSettingsConfig
 from monad.models.auth_logs_secrets_config import AuthLogsSecretsConfig
 from monad.models.auth_logs_settings_config import AuthLogsSettingsConfig
 from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse
-from monad.models.aws_guardduty_settings_config import AwsGuarddutySettingsConfig
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig
 from monad.models.awssqs_settings_config import AwssqsSettingsConfig
 from monad.models.awssqsoutput_settings_config import AwssqsoutputSettingsConfig

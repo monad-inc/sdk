@@ -14,7 +14,6 @@ export * from '../models/AuditLogsSettingsConfig';
 export * from '../models/AuthLogsSecretsConfig';
 export * from '../models/AuthLogsSettingsConfig';
 export * from '../models/AuthenticationtypesTokenResponse';
-export * from '../models/AwsGuarddutySettingsConfig';
 export * from '../models/AwsS3SettingsConfig';
 export * from '../models/AwssqsSettingsConfig';
 export * from '../models/AwssqsoutputSettingsConfig';
@@ -334,7 +333,6 @@ import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
-import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AwssqsSettingsConfig } from '../models/AwssqsSettingsConfig';
 import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';
@@ -691,7 +689,6 @@ let typeMap: {[index: string]: any} = {
     "AuthLogsSecretsConfig": AuthLogsSecretsConfig,
     "AuthLogsSettingsConfig": AuthLogsSettingsConfig,
     "AuthenticationtypesTokenResponse": AuthenticationtypesTokenResponse,
-    "AwsGuarddutySettingsConfig": AwsGuarddutySettingsConfig,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
     "AwssqsSettingsConfig": AwssqsSettingsConfig,
     "AwssqsoutputSettingsConfig": AwssqsoutputSettingsConfig,

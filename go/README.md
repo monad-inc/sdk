@@ -218,7 +218,6 @@ Class | Method | HTTP request | Description
  - [AuthLogsSecretsConfig](docs/AuthLogsSecretsConfig.md)
  - [AuthLogsSettingsConfig](docs/AuthLogsSettingsConfig.md)
  - [AuthenticationtypesTokenResponse](docs/AuthenticationtypesTokenResponse.md)
- - [AwsGuarddutySettingsConfig](docs/AwsGuarddutySettingsConfig.md)
  - [AwsS3SettingsConfig](docs/AwsS3SettingsConfig.md)
  - [AwssqsSettingsConfig](docs/AwssqsSettingsConfig.md)
  - [AwssqsoutputSettingsConfig](docs/AwssqsoutputSettingsConfig.md)
