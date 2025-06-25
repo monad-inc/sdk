@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2OrganizationOverview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-24T22:19:30.398609283Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T00:32:25.916469165Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RoutesV2OrganizationOverview {
   public static final String SERIALIZED_NAME_DISABLED = "disabled";
   @SerializedName(SERIALIZED_NAME_DISABLED)

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Socket Full Scans settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-24T22:19:30.398609283Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T00:32:25.916469165Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FullScansSettingsConfig {
   public static final String SERIALIZED_NAME_ORG_SLUG = "org_slug";
   @SerializedName(SERIALIZED_NAME_ORG_SLUG)
