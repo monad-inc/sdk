@@ -85,7 +85,6 @@ export * from '../models/FlattenallFlattenAll';
 export * from '../models/FormatterFormatConfig';
 export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
-export * from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
 export * from '../models/GitlabIssuesSecretsConfig';
 export * from '../models/GitlabIssuesSettingsConfig';
 export * from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -267,7 +266,6 @@ export * from '../models/SecretProcessesorInputConfigSettings';
 export * from '../models/SecretProcessesorOutputConfig';
 export * from '../models/SecretProcessesorOutputConfigSecrets';
 export * from '../models/SecretProcessesorOutputConfigSettings';
-export * from '../models/SecretsmanagerSettingsConfig';
 export * from '../models/SecurityLakeSettingsConfig';
 export * from '../models/SecurityLakeSourceAccountDetails';
 export * from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -306,7 +304,6 @@ export * from '../models/TenableAssetsSecretsConfig';
 export * from '../models/TenableVulnerabilitiesCronSecretsConfig';
 export * from '../models/TenableVulnerabilitiesCronSettingsConfig';
 export * from '../models/TenableVulnerabilitiesSecretsConfig';
-export * from '../models/TypesFilterNameStringType';
 export * from '../models/UsersInfoSecretsConfig';
 export * from '../models/UsersInfoSettingsConfig';
 export * from '../models/UsersSecretsConfig';
@@ -407,7 +404,6 @@ import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
-import { GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter   } from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
 import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
 import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -589,7 +585,6 @@ import { SecretProcessesorInputConfigSettingsClass } from '../models/SecretProce
 import { SecretProcessesorOutputConfig } from '../models/SecretProcessesorOutputConfig';
 import { SecretProcessesorOutputConfigSecretsClass } from '../models/SecretProcessesorOutputConfigSecrets';
 import { SecretProcessesorOutputConfigSettingsClass } from '../models/SecretProcessesorOutputConfigSettings';
-import { SecretsmanagerSettingsConfig } from '../models/SecretsmanagerSettingsConfig';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -628,7 +623,6 @@ import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig
 import { TenableVulnerabilitiesCronSecretsConfig } from '../models/TenableVulnerabilitiesCronSecretsConfig';
 import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
-import { TypesFilterNameStringType } from '../models/TypesFilterNameStringType';
 import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
 import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
@@ -676,7 +670,6 @@ let enumsMap: Set<string> = new Set<string>([
     "SecretProcessesorInputConfigSettingsResolutionReasonsEnum",
     "SecretProcessesorInputConfigSettingsSeveritiesEnum",
     "SecretProcessesorInputConfigSettingsStackLayersEnum",
-    "TypesFilterNameStringType",
 ]);
 
 let typeMap: {[index: string]: any} = {
@@ -767,7 +760,6 @@ let typeMap: {[index: string]: any} = {
     "FormatterFormatConfig": FormatterFormatConfig,
     "FullScansSecretsConfig": FullScansSecretsConfig,
     "FullScansSettingsConfig": FullScansSettingsConfig,
-    "GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter": GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter,
     "GitlabIssuesSecretsConfig": GitlabIssuesSecretsConfig,
     "GitlabIssuesSettingsConfig": GitlabIssuesSettingsConfig,
     "GoogleCloudStorageOutputSecretsConfig": GoogleCloudStorageOutputSecretsConfig,
@@ -949,7 +941,6 @@ let typeMap: {[index: string]: any} = {
     "SecretProcessesorOutputConfig": SecretProcessesorOutputConfig,
     "SecretProcessesorOutputConfigSecrets": SecretProcessesorOutputConfigSecretsClass,
     "SecretProcessesorOutputConfigSettings": SecretProcessesorOutputConfigSettingsClass,
-    "SecretsmanagerSettingsConfig": SecretsmanagerSettingsConfig,
     "SecurityLakeSettingsConfig": SecurityLakeSettingsConfig,
     "SecurityLakeSourceAccountDetails": SecurityLakeSourceAccountDetails,
     "SemgrepCodeFindingsSecretsConfig": SemgrepCodeFindingsSecretsConfig,

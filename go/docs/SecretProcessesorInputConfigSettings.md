@@ -28,8 +28,8 @@ Name | Type | Description | Notes
 **PartitionFormat** | Pointer to **string** | Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. | [optional] 
 **Prefix** | Pointer to **string** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. | [optional] 
 **RecordLocation** | Pointer to **string** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. If the records are not nested in the JSON, you can use &#39;@this&#39; to indicate that the file contains the record at the root or an array of records. | [optional] 
-**Region** | Pointer to **string** | URL of the organization | [optional] 
-**RoleArn** | Pointer to **string** | The ID of the secret to describe | [optional] 
+**Region** | Pointer to **string** | Optional region for the object storage service. This is often required for services like AWS S3. | [optional] 
+**RoleArn** | Pointer to **string** | The ARN of the role to assume to access the bucket | [optional] 
 **QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
 **CorrelationId** | Pointer to **string** | The correlation ID of the log | [optional] 
 **ResourceGroupName** | Pointer to **string** | The name of the resource group | [optional] 
@@ -111,8 +111,6 @@ Name | Type | Description | Notes
 **SkipSslVerification** | Pointer to **bool** | Skip SSL verification for self-signed certificates | [optional] 
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
 **Subdomain** | Pointer to **string** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | [optional] 
-**Filters** | Pointer to [**[]GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter**](GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.md) | Filters for returned secrets | [optional] 
-**IncludePlannedDeletion** | Pointer to **bool** | Whether or not to include secrets scheduled for deletion | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
@@ -2818,56 +2816,6 @@ SetSubdomain sets Subdomain field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasSubdomain() bool`
 
 HasSubdomain returns a boolean if a field has been set.
-
-### GetFilters
-
-`func (o *SecretProcessesorInputConfigSettings) GetFilters() []GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter`
-
-GetFilters returns the Filters field if non-nil, zero value otherwise.
-
-### GetFiltersOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetFiltersOk() (*[]GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter, bool)`
-
-GetFiltersOk returns a tuple with the Filters field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFilters
-
-`func (o *SecretProcessesorInputConfigSettings) SetFilters(v []GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter)`
-
-SetFilters sets Filters field to given value.
-
-### HasFilters
-
-`func (o *SecretProcessesorInputConfigSettings) HasFilters() bool`
-
-HasFilters returns a boolean if a field has been set.
-
-### GetIncludePlannedDeletion
-
-`func (o *SecretProcessesorInputConfigSettings) GetIncludePlannedDeletion() bool`
-
-GetIncludePlannedDeletion returns the IncludePlannedDeletion field if non-nil, zero value otherwise.
-
-### GetIncludePlannedDeletionOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetIncludePlannedDeletionOk() (*bool, bool)`
-
-GetIncludePlannedDeletionOk returns a tuple with the IncludePlannedDeletion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludePlannedDeletion
-
-`func (o *SecretProcessesorInputConfigSettings) SetIncludePlannedDeletion(v bool)`
-
-SetIncludePlannedDeletion sets IncludePlannedDeletion field to given value.
-
-### HasIncludePlannedDeletion
-
-`func (o *SecretProcessesorInputConfigSettings) HasIncludePlannedDeletion() bool`
-
-HasIncludePlannedDeletion returns a boolean if a field has been set.
 
 ### GetAccount
 
