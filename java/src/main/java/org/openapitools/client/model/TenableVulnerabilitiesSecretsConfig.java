@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Tenable assets secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T00:32:25.916469165Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T13:01:55.675257003Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class TenableVulnerabilitiesSecretsConfig {
   public static final String SERIALIZED_NAME_ACCESS_KEY = "access_key";
   @SerializedName(SERIALIZED_NAME_ACCESS_KEY)
