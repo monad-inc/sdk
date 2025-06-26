@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**organizations** | **Dict[str, List[FlagsmithFlag]]** |  | [optional] 
 **user** | [**List[FlagsmithFlag]**](FlagsmithFlag.md) |  | [optional] 
 
 ## Example

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Organizations** | Pointer to [**map[string][]FlagsmithFlag**](array.md) |  | [optional] 
 **User** | Pointer to [**[]FlagsmithFlag**](FlagsmithFlag.md) |  | [optional] 
 
 ## Methods
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewRoutesV3GetFeatureFlagResponseWithDefaults instantiates a new RoutesV3GetFeatureFlagResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetOrganizations
+
+`func (o *RoutesV3GetFeatureFlagResponse) GetOrganizations() map[string][]FlagsmithFlag`
+
+GetOrganizations returns the Organizations field if non-nil, zero value otherwise.
+
+### GetOrganizationsOk
+
+`func (o *RoutesV3GetFeatureFlagResponse) GetOrganizationsOk() (*map[string][]FlagsmithFlag, bool)`
+
+GetOrganizationsOk returns a tuple with the Organizations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrganizations
+
+`func (o *RoutesV3GetFeatureFlagResponse) SetOrganizations(v map[string][]FlagsmithFlag)`
+
+SetOrganizations sets Organizations field to given value.
+
+### HasOrganizations
+
+`func (o *RoutesV3GetFeatureFlagResponse) HasOrganizations() bool`
+
+HasOrganizations returns a boolean if a field has been set.
 
 ### GetUser
 

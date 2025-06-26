@@ -14,6 +14,7 @@ import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3GetFeatureFlagResponse {
+    'organizations'?: { [key: string]: Array<FlagsmithFlag>; };
     'user'?: Array<FlagsmithFlag>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -21,6 +22,12 @@ export class RoutesV3GetFeatureFlagResponse {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "organizations",
+            "baseName": "organizations",
+            "type": "{ [key: string]: Array<FlagsmithFlag>; }",
+            "format": ""
+        },
         {
             "name": "user",
             "baseName": "user",

@@ -28,8 +28,9 @@ class RoutesV3GetFeatureFlagResponse(BaseModel):
     """
     RoutesV3GetFeatureFlagResponse
     """ # noqa: E501
+    organizations: Optional[Dict[str, List[FlagsmithFlag]]] = None
     user: Optional[List[FlagsmithFlag]] = None
-    __properties: ClassVar[List[str]] = ["user"]
+    __properties: ClassVar[List[str]] = ["organizations", "user"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,6 +71,15 @@ class RoutesV3GetFeatureFlagResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each value in organizations (dict of array)
+        _field_dict_of_array = {}
+        if self.organizations:
+            for _key_organizations in self.organizations:
+                if self.organizations[_key_organizations] is not None:
+                    _field_dict_of_array[_key_organizations] = [
+                        _item.to_dict() for _item in self.organizations[_key_organizations]
+                    ]
+            _dict['organizations'] = _field_dict_of_array
         # override the default output from pydantic by calling `to_dict()` of each item in user (list)
         _items = []
         if self.user:
@@ -89,6 +99,14 @@ class RoutesV3GetFeatureFlagResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "organizations": dict(
+                (_k,
+                        [FlagsmithFlag.from_dict(_item) for _item in _v]
+                        if _v is not None
+                        else None
+                )
+                for _k, _v in obj.get("organizations", {}).items()
+            ),
             "user": [FlagsmithFlag.from_dict(_item) for _item in obj["user"]] if obj.get("user") is not None else None
         })
         return _obj

@@ -20,6 +20,7 @@ var _ MappedNullable = &RoutesV3GetFeatureFlagResponse{}
 
 // RoutesV3GetFeatureFlagResponse struct for RoutesV3GetFeatureFlagResponse
 type RoutesV3GetFeatureFlagResponse struct {
+	Organizations map[string][]FlagsmithFlag `json:"organizations,omitempty"`
 	User []FlagsmithFlag `json:"user,omitempty"`
 }
 
@@ -38,6 +39,38 @@ func NewRoutesV3GetFeatureFlagResponse() *RoutesV3GetFeatureFlagResponse {
 func NewRoutesV3GetFeatureFlagResponseWithDefaults() *RoutesV3GetFeatureFlagResponse {
 	this := RoutesV3GetFeatureFlagResponse{}
 	return &this
+}
+
+// GetOrganizations returns the Organizations field value if set, zero value otherwise.
+func (o *RoutesV3GetFeatureFlagResponse) GetOrganizations() map[string][]FlagsmithFlag {
+	if o == nil || IsNil(o.Organizations) {
+		var ret map[string][]FlagsmithFlag
+		return ret
+	}
+	return o.Organizations
+}
+
+// GetOrganizationsOk returns a tuple with the Organizations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV3GetFeatureFlagResponse) GetOrganizationsOk() (map[string][]FlagsmithFlag, bool) {
+	if o == nil || IsNil(o.Organizations) {
+		return map[string][]FlagsmithFlag{}, false
+	}
+	return o.Organizations, true
+}
+
+// HasOrganizations returns a boolean if a field has been set.
+func (o *RoutesV3GetFeatureFlagResponse) HasOrganizations() bool {
+	if o != nil && !IsNil(o.Organizations) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrganizations gets a reference to the given map[string][]FlagsmithFlag and assigns it to the Organizations field.
+func (o *RoutesV3GetFeatureFlagResponse) SetOrganizations(v map[string][]FlagsmithFlag) {
+	o.Organizations = v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -82,6 +115,9 @@ func (o RoutesV3GetFeatureFlagResponse) MarshalJSON() ([]byte, error) {
 
 func (o RoutesV3GetFeatureFlagResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Organizations) {
+		toSerialize["organizations"] = o.Organizations
+	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}

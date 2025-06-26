@@ -22,7 +22,9 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.client.model.FlagsmithFlag;
 
 import com.google.gson.Gson;
@@ -51,8 +53,13 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3GetFeatureFlagResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T16:20:04.269656400Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T16:43:45.186553191Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV3GetFeatureFlagResponse {
+  public static final String SERIALIZED_NAME_ORGANIZATIONS = "organizations";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATIONS)
+  @javax.annotation.Nullable
+  private Map<String, List<FlagsmithFlag>> organizations = new HashMap<>();
+
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
   @javax.annotation.Nullable
@@ -60,6 +67,33 @@ public class RoutesV3GetFeatureFlagResponse {
 
   public RoutesV3GetFeatureFlagResponse() {
   }
+
+  public RoutesV3GetFeatureFlagResponse organizations(@javax.annotation.Nullable Map<String, List<FlagsmithFlag>> organizations) {
+    this.organizations = organizations;
+    return this;
+  }
+
+  public RoutesV3GetFeatureFlagResponse putOrganizationsItem(String key, List<FlagsmithFlag> organizationsItem) {
+    if (this.organizations == null) {
+      this.organizations = new HashMap<>();
+    }
+    this.organizations.put(key, organizationsItem);
+    return this;
+  }
+
+  /**
+   * Get organizations
+   * @return organizations
+   */
+  @javax.annotation.Nullable
+  public Map<String, List<FlagsmithFlag>> getOrganizations() {
+    return organizations;
+  }
+
+  public void setOrganizations(@javax.annotation.Nullable Map<String, List<FlagsmithFlag>> organizations) {
+    this.organizations = organizations;
+  }
+
 
   public RoutesV3GetFeatureFlagResponse user(@javax.annotation.Nullable List<FlagsmithFlag> user) {
     this.user = user;
@@ -98,18 +132,20 @@ public class RoutesV3GetFeatureFlagResponse {
       return false;
     }
     RoutesV3GetFeatureFlagResponse routesV3GetFeatureFlagResponse = (RoutesV3GetFeatureFlagResponse) o;
-    return Objects.equals(this.user, routesV3GetFeatureFlagResponse.user);
+    return Objects.equals(this.organizations, routesV3GetFeatureFlagResponse.organizations) &&
+        Objects.equals(this.user, routesV3GetFeatureFlagResponse.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user);
+    return Objects.hash(organizations, user);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV3GetFeatureFlagResponse {\n");
+    sb.append("    organizations: ").append(toIndentedString(organizations)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -132,7 +168,7 @@ public class RoutesV3GetFeatureFlagResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("user"));
+    openapiFields = new HashSet<String>(Arrays.asList("organizations", "user"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
