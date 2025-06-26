@@ -22,14 +22,15 @@ Name | Type | Description | Notes
 **Organization** | Pointer to **string** | Filter by organization name | [optional] 
 **Repository** | Pointer to **string** | Filter by repository (format: org-name/repo-name) | [optional] 
 **User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
+**Region** | Pointer to **string** | Optional region for the object storage service. This is often required for services like AWS S3. | [optional] 
+**RoleArn** | Pointer to **string** | The ARN of the role to assume to access the bucket | [optional] 
+**Severity** | Pointer to **string** |  | [optional] 
 **Bucket** | Pointer to **string** | Name of the storage bucket | [optional] 
 **Compression** | Pointer to **string** | Compression format of the objects | [optional] 
 **Format** | Pointer to **string** | File format of the objects | [optional] 
 **PartitionFormat** | Pointer to **string** | Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. | [optional] 
 **Prefix** | Pointer to **string** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. | [optional] 
 **RecordLocation** | Pointer to **string** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. If the records are not nested in the JSON, you can use &#39;@this&#39; to indicate that the file contains the record at the root or an array of records. | [optional] 
-**Region** | Pointer to **string** | Optional region for the object storage service. This is often required for services like AWS S3. | [optional] 
-**RoleArn** | Pointer to **string** | The ARN of the role to assume to access the bucket | [optional] 
 **QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
 **CorrelationId** | Pointer to **string** | The correlation ID of the log | [optional] 
 **ResourceGroupName** | Pointer to **string** | The name of the resource group | [optional] 
@@ -56,7 +57,6 @@ Name | Type | Description | Notes
 **ResourceNames** | Pointer to **[]string** | The resources to query logs from. | [optional] 
 **EndpointUrl** | Pointer to **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. | [optional] 
 **Result** | Pointer to **[]string** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. | [optional] 
-**Severity** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **[]string** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. | [optional] 
 **EnableProtoPayloadParsing** | Pointer to **bool** | Enables automatic parsing of embedded protocol buffer payloads within the input. | [optional] 
 **Filter** | Pointer to **string** | The filter to apply to the logs. | [optional] 
@@ -592,6 +592,81 @@ SetUser sets User field to given value.
 
 HasUser returns a boolean if a field has been set.
 
+### GetRegion
+
+`func (o *SecretProcessesorInputConfigSettings) GetRegion() string`
+
+GetRegion returns the Region field if non-nil, zero value otherwise.
+
+### GetRegionOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetRegionOk() (*string, bool)`
+
+GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegion
+
+`func (o *SecretProcessesorInputConfigSettings) SetRegion(v string)`
+
+SetRegion sets Region field to given value.
+
+### HasRegion
+
+`func (o *SecretProcessesorInputConfigSettings) HasRegion() bool`
+
+HasRegion returns a boolean if a field has been set.
+
+### GetRoleArn
+
+`func (o *SecretProcessesorInputConfigSettings) GetRoleArn() string`
+
+GetRoleArn returns the RoleArn field if non-nil, zero value otherwise.
+
+### GetRoleArnOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetRoleArnOk() (*string, bool)`
+
+GetRoleArnOk returns a tuple with the RoleArn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoleArn
+
+`func (o *SecretProcessesorInputConfigSettings) SetRoleArn(v string)`
+
+SetRoleArn sets RoleArn field to given value.
+
+### HasRoleArn
+
+`func (o *SecretProcessesorInputConfigSettings) HasRoleArn() bool`
+
+HasRoleArn returns a boolean if a field has been set.
+
+### GetSeverity
+
+`func (o *SecretProcessesorInputConfigSettings) GetSeverity() string`
+
+GetSeverity returns the Severity field if non-nil, zero value otherwise.
+
+### GetSeverityOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetSeverityOk() (*string, bool)`
+
+GetSeverityOk returns a tuple with the Severity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSeverity
+
+`func (o *SecretProcessesorInputConfigSettings) SetSeverity(v string)`
+
+SetSeverity sets Severity field to given value.
+
+### HasSeverity
+
+`func (o *SecretProcessesorInputConfigSettings) HasSeverity() bool`
+
+HasSeverity returns a boolean if a field has been set.
+
 ### GetBucket
 
 `func (o *SecretProcessesorInputConfigSettings) GetBucket() string`
@@ -741,56 +816,6 @@ SetRecordLocation sets RecordLocation field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasRecordLocation() bool`
 
 HasRecordLocation returns a boolean if a field has been set.
-
-### GetRegion
-
-`func (o *SecretProcessesorInputConfigSettings) GetRegion() string`
-
-GetRegion returns the Region field if non-nil, zero value otherwise.
-
-### GetRegionOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetRegionOk() (*string, bool)`
-
-GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRegion
-
-`func (o *SecretProcessesorInputConfigSettings) SetRegion(v string)`
-
-SetRegion sets Region field to given value.
-
-### HasRegion
-
-`func (o *SecretProcessesorInputConfigSettings) HasRegion() bool`
-
-HasRegion returns a boolean if a field has been set.
-
-### GetRoleArn
-
-`func (o *SecretProcessesorInputConfigSettings) GetRoleArn() string`
-
-GetRoleArn returns the RoleArn field if non-nil, zero value otherwise.
-
-### GetRoleArnOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetRoleArnOk() (*string, bool)`
-
-GetRoleArnOk returns a tuple with the RoleArn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRoleArn
-
-`func (o *SecretProcessesorInputConfigSettings) SetRoleArn(v string)`
-
-SetRoleArn sets RoleArn field to given value.
-
-### HasRoleArn
-
-`func (o *SecretProcessesorInputConfigSettings) HasRoleArn() bool`
-
-HasRoleArn returns a boolean if a field has been set.
 
 ### GetQueueUrl
 
@@ -1441,31 +1466,6 @@ SetResult sets Result field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasResult() bool`
 
 HasResult returns a boolean if a field has been set.
-
-### GetSeverity
-
-`func (o *SecretProcessesorInputConfigSettings) GetSeverity() string`
-
-GetSeverity returns the Severity field if non-nil, zero value otherwise.
-
-### GetSeverityOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetSeverityOk() (*string, bool)`
-
-GetSeverityOk returns a tuple with the Severity field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSeverity
-
-`func (o *SecretProcessesorInputConfigSettings) SetSeverity(v string)`
-
-SetSeverity sets Severity field to given value.
-
-### HasSeverity
-
-`func (o *SecretProcessesorInputConfigSettings) HasSeverity() bool`
-
-HasSeverity returns a boolean if a field has been set.
 
 ### GetStatus
 

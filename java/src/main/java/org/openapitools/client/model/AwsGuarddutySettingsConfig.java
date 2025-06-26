@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS Guardduty settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-24T16:29:24.390793574Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T16:20:04.269656400Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AwsGuarddutySettingsConfig {
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
@@ -173,13 +173,10 @@ public class AwsGuarddutySettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("region");
-    openapiFields.add("role_arn");
-    openapiFields.add("severity");
+    openapiFields = new HashSet<String>(Arrays.asList("region", "role_arn", "severity"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

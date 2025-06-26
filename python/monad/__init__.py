@@ -74,6 +74,7 @@ __all__ = [
     "AuthLogsSecretsConfig",
     "AuthLogsSettingsConfig",
     "AuthenticationtypesTokenResponse",
+    "AwsGuarddutySettingsConfig",
     "AwsS3SettingsConfig",
     "AwssqsSettingsConfig",
     "AwssqsoutputSettingsConfig",
@@ -437,6 +438,7 @@ from monad.models.audit_logs_settings_config import AuditLogsSettingsConfig as A
 from monad.models.auth_logs_secrets_config import AuthLogsSecretsConfig as AuthLogsSecretsConfig
 from monad.models.auth_logs_settings_config import AuthLogsSettingsConfig as AuthLogsSettingsConfig
 from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse as AuthenticationtypesTokenResponse
+from monad.models.aws_guardduty_settings_config import AwsGuarddutySettingsConfig as AwsGuarddutySettingsConfig
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig as AwsS3SettingsConfig
 from monad.models.awssqs_settings_config import AwssqsSettingsConfig as AwssqsSettingsConfig
 from monad.models.awssqsoutput_settings_config import AwssqsoutputSettingsConfig as AwssqsoutputSettingsConfig
