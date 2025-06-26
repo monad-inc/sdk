@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsQuota
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsQuota {
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
@@ -485,25 +485,10 @@ public class ModelsQuota {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("action");
-    openapiFields.add("billing_account_id");
-    openapiFields.add("created_at");
-    openapiFields.add("current_usage");
-    openapiFields.add("current_usage_updated_at");
-    openapiFields.add("end_at");
-    openapiFields.add("id");
-    openapiFields.add("limit_amount");
-    openapiFields.add("limit_type");
-    openapiFields.add("limit_unit");
-    openapiFields.add("name");
-    openapiFields.add("organization_id");
-    openapiFields.add("start_at");
-    openapiFields.add("timeframe");
-    openapiFields.add("updated_at");
+    openapiFields = new HashSet<String>(Arrays.asList("action", "billing_account_id", "created_at", "current_usage", "current_usage_updated_at", "end_at", "id", "limit_amount", "limit_type", "limit_unit", "name", "organization_id", "start_at", "timeframe", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

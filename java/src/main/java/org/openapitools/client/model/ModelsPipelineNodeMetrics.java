@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNodeMetrics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsPipelineNodeMetrics {
   public static final String SERIALIZED_NAME_METRIC = "metric";
   @SerializedName(SERIALIZED_NAME_METRIC)
@@ -236,15 +236,10 @@ public class ModelsPipelineNodeMetrics {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("metric");
-    openapiFields.add("node_id");
-    openapiFields.add("node_slug");
-    openapiFields.add("pipeline_id");
-    openapiFields.add("values");
+    openapiFields = new HashSet<String>(Arrays.asList("metric", "node_id", "node_slug", "pipeline_id", "values"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

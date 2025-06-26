@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Wiz Issues settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class IssuesSettingsConfig {
   public static final String SERIALIZED_NAME_CONTROL_IDS = "control_ids";
   @SerializedName(SERIALIZED_NAME_CONTROL_IDS)
@@ -913,27 +913,10 @@ public class IssuesSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("control_ids");
-    openapiFields.add("has_note");
-    openapiFields.add("has_remediation");
-    openapiFields.add("has_service_ticket");
-    openapiFields.add("issue_ids");
-    openapiFields.add("issue_types");
-    openapiFields.add("project_ids");
-    openapiFields.add("related_entity_id");
-    openapiFields.add("resolution_reasons");
-    openapiFields.add("risk_equals_all");
-    openapiFields.add("risk_equals_any");
-    openapiFields.add("search_query");
-    openapiFields.add("security_scan");
-    openapiFields.add("severities");
-    openapiFields.add("stack_layers");
-    openapiFields.add("status");
-    openapiFields.add("tenant_data_center");
+    openapiFields = new HashSet<String>(Arrays.asList("control_ids", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

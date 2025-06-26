@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganizationUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsOrganizationUser {
   public static final String SERIALIZED_NAME_AUTH_ID = "auth_id";
   @SerializedName(SERIALIZED_NAME_AUTH_ID)
@@ -277,17 +277,10 @@ public class ModelsOrganizationUser {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("auth_id");
-    openapiFields.add("created_at");
-    openapiFields.add("email");
-    openapiFields.add("id");
-    openapiFields.add("role_id");
-    openapiFields.add("updated_at");
-    openapiFields.add("username");
+    openapiFields = new HashSet<String>(Arrays.asList("auth_id", "created_at", "email", "id", "role_id", "updated_at", "username"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * AbsSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AbsSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT_URL = "account_url";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_URL)
@@ -279,17 +279,10 @@ public class AbsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("account_url");
-    openapiFields.add("batch_config");
-    openapiFields.add("compression");
-    openapiFields.add("container");
-    openapiFields.add("format_config");
-    openapiFields.add("partition_format");
-    openapiFields.add("prefix");
+    openapiFields = new HashSet<String>(Arrays.asList("account_url", "batch_config", "compression", "container", "format_config", "partition_format", "prefix"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

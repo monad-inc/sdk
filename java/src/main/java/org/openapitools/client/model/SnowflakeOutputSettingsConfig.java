@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Snowflake Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class SnowflakeOutputSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
@@ -382,21 +382,10 @@ public class SnowflakeOutputSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("account");
-    openapiFields.add("auth_type");
-    openapiFields.add("batch_config");
-    openapiFields.add("case_insensitivity");
-    openapiFields.add("database");
-    openapiFields.add("role");
-    openapiFields.add("schema");
-    openapiFields.add("stage");
-    openapiFields.add("table");
-    openapiFields.add("user");
-    openapiFields.add("warehouse");
+    openapiFields = new HashSet<String>(Arrays.asList("account", "auth_type", "batch_config", "case_insensitivity", "database", "role", "schema", "stage", "table", "user", "warehouse"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

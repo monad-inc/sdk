@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR actors info settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ActorsInfoSettingsConfig {
   public static final String SERIALIZED_NAME_ACTOR_TYPE = "actor_type";
   @SerializedName(SERIALIZED_NAME_ACTOR_TYPE)
@@ -225,15 +225,10 @@ public class ActorsInfoSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("actor_type");
-    openapiFields.add("cloud_type");
-    openapiFields.add("cron");
-    openapiFields.add("sort");
-    openapiFields.add("target_industries");
+    openapiFields = new HashSet<String>(Arrays.asList("actor_type", "cloud_type", "cron", "sort", "target_industries"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

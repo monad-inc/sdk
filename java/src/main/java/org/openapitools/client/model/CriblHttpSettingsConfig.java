@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Cribl HTTP Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class CriblHttpSettingsConfig {
   public static final String SERIALIZED_NAME_INGRESS_ADDRESS = "ingress_address";
   @SerializedName(SERIALIZED_NAME_INGRESS_ADDRESS)
@@ -173,13 +173,10 @@ public class CriblHttpSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("ingress_address");
-    openapiFields.add("path");
-    openapiFields.add("port");
+    openapiFields = new HashSet<String>(Arrays.asList("ingress_address", "path", "port"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

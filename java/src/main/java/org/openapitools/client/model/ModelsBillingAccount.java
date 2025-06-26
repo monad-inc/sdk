@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingAccount
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsBillingAccount {
   public static final String SERIALIZED_NAME_BILLING_EMAIL = "billing_email";
   @SerializedName(SERIALIZED_NAME_BILLING_EMAIL)
@@ -538,27 +538,10 @@ public class ModelsBillingAccount {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("billing_email");
-    openapiFields.add("created_at");
-    openapiFields.add("current_billing_cycle_end");
-    openapiFields.add("current_billing_cycle_start");
-    openapiFields.add("deleted_at");
-    openapiFields.add("description");
-    openapiFields.add("has_payment_method");
-    openapiFields.add("id");
-    openapiFields.add("name");
-    openapiFields.add("next_product");
-    openapiFields.add("next_product_id");
-    openapiFields.add("product");
-    openapiFields.add("product_change_after");
-    openapiFields.add("product_id");
-    openapiFields.add("status");
-    openapiFields.add("suspend_on");
-    openapiFields.add("updated_at");
+    openapiFields = new HashSet<String>(Arrays.asList("billing_email", "created_at", "current_billing_cycle_end", "current_billing_cycle_start", "deleted_at", "description", "has_payment_method", "id", "name", "next_product", "next_product_id", "product", "product_change_after", "product_id", "status", "suspend_on", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineRequestEdge
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV2PipelineRequestEdge {
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
@@ -226,17 +226,10 @@ public class RoutesV2PipelineRequestEdge {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("conditions");
-    openapiFields.add("description");
-    openapiFields.add("from_node_instance_id");
-    openapiFields.add("name");
-    openapiFields.add("to_node_instance_id");
+    openapiFields = new HashSet<String>(Arrays.asList("conditions", "description", "from_node_instance_id", "name", "to_node_instance_id"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("from_node_instance_id");
-    openapiRequiredFields.add("to_node_instance_id");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("from_node_instance_id", "to_node_instance_id"));
   }
 
   /**

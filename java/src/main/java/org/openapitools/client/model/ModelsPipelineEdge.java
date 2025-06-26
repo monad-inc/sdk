@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineEdge
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsPipelineEdge {
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
@@ -330,19 +330,10 @@ public class ModelsPipelineEdge {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("conditions");
-    openapiFields.add("created_at");
-    openapiFields.add("description");
-    openapiFields.add("from_node_instance_id");
-    openapiFields.add("id");
-    openapiFields.add("name");
-    openapiFields.add("organization_id");
-    openapiFields.add("pipeline_id");
-    openapiFields.add("to_node_instance_id");
+    openapiFields = new HashSet<String>(Arrays.asList("conditions", "created_at", "description", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "to_node_instance_id"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

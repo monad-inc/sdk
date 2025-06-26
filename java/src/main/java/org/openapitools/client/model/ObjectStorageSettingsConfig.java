@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Object Storage Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ObjectStorageSettingsConfig {
   public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
   @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
@@ -357,20 +357,10 @@ public class ObjectStorageSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("batch_config");
-    openapiFields.add("bucket");
-    openapiFields.add("compression");
-    openapiFields.add("endpoint");
-    openapiFields.add("format_config");
-    openapiFields.add("partition_format");
-    openapiFields.add("prefix");
-    openapiFields.add("region");
-    openapiFields.add("skip_ssl_verification");
-    openapiFields.add("use_path_style");
+    openapiFields = new HashSet<String>(Arrays.asList("batch_config", "bucket", "compression", "endpoint", "format_config", "partition_format", "prefix", "region", "skip_ssl_verification", "use_path_style"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

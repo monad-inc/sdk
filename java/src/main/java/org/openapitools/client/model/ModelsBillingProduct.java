@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingProduct
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsBillingProduct {
   public static final String SERIALIZED_NAME_CONTACT_EMAIL = "contact_email";
   @SerializedName(SERIALIZED_NAME_CONTACT_EMAIL)
@@ -469,24 +469,10 @@ public class ModelsBillingProduct {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("contact_email");
-    openapiFields.add("created_at");
-    openapiFields.add("description");
-    openapiFields.add("features");
-    openapiFields.add("id");
-    openapiFields.add("is_default");
-    openapiFields.add("name");
-    openapiFields.add("product_type");
-    openapiFields.add("recurring_cost_cents");
-    openapiFields.add("recurring_frequency");
-    openapiFields.add("slug");
-    openapiFields.add("updated_at");
-    openapiFields.add("usage_unit");
-    openapiFields.add("usage_unit_cost_cents");
+    openapiFields = new HashSet<String>(Arrays.asList("contact_email", "created_at", "description", "features", "id", "is_default", "name", "product_type", "recurring_cost_cents", "recurring_frequency", "slug", "updated_at", "usage_unit", "usage_unit_cost_cents"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

@@ -309,7 +309,6 @@ export * from '../models/UsersInfoSettingsConfig';
 export * from '../models/UsersSecretsConfig';
 export * from '../models/UsersSettingsConfig';
 export * from '../models/UtcTimestampTimestamp';
-export * from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
 export * from '../models/VulnerabilitiesCronSecretsConfig';
 export * from '../models/VulnerabilitiesCronSettingsConfig';
 export * from '../models/VulnerabilitiesSecretsConfig';
@@ -628,7 +627,6 @@ import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
 import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
 import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
 import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
-import { V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500ResponseClass } from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
 import { VulnerabilitiesCronSecretsConfig } from '../models/VulnerabilitiesCronSecretsConfig';
 import { VulnerabilitiesCronSettingsConfig } from '../models/VulnerabilitiesCronSettingsConfig';
 import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
@@ -984,7 +982,6 @@ let typeMap: {[index: string]: any} = {
     "UsersSecretsConfig": UsersSecretsConfig,
     "UsersSettingsConfig": UsersSettingsConfig,
     "UtcTimestampTimestamp": UtcTimestampTimestamp,
-    "V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response": V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500ResponseClass,
     "VulnerabilitiesCronSecretsConfig": VulnerabilitiesCronSecretsConfig,
     "VulnerabilitiesCronSettingsConfig": VulnerabilitiesCronSettingsConfig,
     "VulnerabilitiesSecretsConfig": VulnerabilitiesSecretsConfig,

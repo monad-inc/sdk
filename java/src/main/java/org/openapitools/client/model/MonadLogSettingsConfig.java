@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Monad Log settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class MonadLogSettingsConfig {
   public static final String SERIALIZED_NAME_LOG_TYPE = "log_type";
   @SerializedName(SERIALIZED_NAME_LOG_TYPE)
@@ -121,11 +121,10 @@ public class MonadLogSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("log_type");
+    openapiFields = new HashSet<String>(Arrays.asList("log_type"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

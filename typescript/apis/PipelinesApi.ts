@@ -20,7 +20,6 @@ import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrg
 import { RoutesV2MetricsResponse } from '../models/RoutesV2MetricsResponse';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
-import { V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response } from '../models/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response';
 
 /**
  * no description
@@ -1357,11 +1356,11 @@ export class PipelinesApiResponseProcessor {
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
-            const body: V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response = ObjectSerializer.deserialize(
+            const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response", ""
-            ) as V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response;
-            throw new ApiException<V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response>(response.httpStatusCode, "Failed to get node", body, response.headers);
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Failed to get node", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml

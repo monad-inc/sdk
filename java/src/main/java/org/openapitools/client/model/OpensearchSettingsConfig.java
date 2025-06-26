@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * OpenSearch Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class OpensearchSettingsConfig {
   public static final String SERIALIZED_NAME_AUTH_MODE = "auth_mode";
   @SerializedName(SERIALIZED_NAME_AUTH_MODE)
@@ -277,17 +277,10 @@ public class OpensearchSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("auth_mode");
-    openapiFields.add("index");
-    openapiFields.add("insecure_skip_verify");
-    openapiFields.add("region");
-    openapiFields.add("role_arn");
-    openapiFields.add("url");
-    openapiFields.add("username");
+    openapiFields = new HashSet<String>(Arrays.asList("auth_mode", "index", "insecure_skip_verify", "region", "role_arn", "url", "username"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

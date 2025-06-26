@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipeline
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsPipeline {
   public static final String SERIALIZED_NAME_COMPONENT_TIER = "component_tier";
   @SerializedName(SERIALIZED_NAME_COMPONENT_TIER)
@@ -355,20 +355,10 @@ public class ModelsPipeline {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("component_tier");
-    openapiFields.add("created_at");
-    openapiFields.add("cron_schedule");
-    openapiFields.add("description");
-    openapiFields.add("enabled");
-    openapiFields.add("id");
-    openapiFields.add("input_id");
-    openapiFields.add("name");
-    openapiFields.add("organization_id");
-    openapiFields.add("updated_at");
+    openapiFields = new HashSet<String>(Arrays.asList("component_tier", "created_at", "cron_schedule", "description", "enabled", "id", "input_id", "name", "organization_id", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

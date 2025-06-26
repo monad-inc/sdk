@@ -2,8 +2,8 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-06-25T22:24:46.058212951Z[Etc/UTC]
-  - Generator version: 7.13.0
+  - Build date: 2025-06-26T13:36:17.927409396Z[Etc/UTC]
+  - Generator version: 7.14.0
 
 This is the monad API
 
@@ -549,7 +549,6 @@ Class | Method | HTTP request | Description
  - [UsersSecretsConfig](docs/UsersSecretsConfig.md)
  - [UsersSettingsConfig](docs/UsersSettingsConfig.md)
  - [UtcTimestampTimestamp](docs/UtcTimestampTimestamp.md)
- - [V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response](docs/V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response.md)
  - [VulnerabilitiesCronSecretsConfig](docs/VulnerabilitiesCronSecretsConfig.md)
  - [VulnerabilitiesCronSettingsConfig](docs/VulnerabilitiesCronSettingsConfig.md)
  - [VulnerabilitiesSecretsConfig](docs/VulnerabilitiesSecretsConfig.md)

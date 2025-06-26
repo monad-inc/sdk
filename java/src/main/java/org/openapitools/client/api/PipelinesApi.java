@@ -39,7 +39,6 @@ import org.openapitools.client.model.RoutesV2GetOrganizationSummaryResponse;
 import org.openapitools.client.model.RoutesV2MetricsResponse;
 import org.openapitools.client.model.RoutesV2PipelineWithStatus;
 import org.openapitools.client.model.RoutesV2UpdatePipelineRequest;
-import org.openapitools.client.model.V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

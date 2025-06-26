@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * SQS Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AwssqsoutputSettingsConfig {
   public static final String SERIALIZED_NAME_MESSAGE_GROUP_ID = "message_group_id";
   @SerializedName(SERIALIZED_NAME_MESSAGE_GROUP_ID)
@@ -225,15 +225,10 @@ public class AwssqsoutputSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("message_group_id");
-    openapiFields.add("queue_type");
-    openapiFields.add("queue_url");
-    openapiFields.add("region");
-    openapiFields.add("role_arn");
+    openapiFields = new HashSet<String>(Arrays.asList("message_group_id", "queue_type", "queue_url", "region", "role_arn"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

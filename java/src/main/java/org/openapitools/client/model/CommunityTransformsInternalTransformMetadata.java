@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * CommunityTransformsInternalTransformMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class CommunityTransformsInternalTransformMetadata {
   public static final String SERIALIZED_NAME_AUTHOR = "author";
   @SerializedName(SERIALIZED_NAME_AUTHOR)
@@ -355,19 +355,10 @@ public class CommunityTransformsInternalTransformMetadata {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("author");
-    openapiFields.add("contributors");
-    openapiFields.add("created_at");
-    openapiFields.add("description");
-    openapiFields.add("inputs");
-    openapiFields.add("last_modified");
-    openapiFields.add("name");
-    openapiFields.add("path");
-    openapiFields.add("tags");
+    openapiFields = new HashSet<String>(Arrays.asList("author", "contributors", "created_at", "description", "inputs", "last_modified", "name", "path", "tags"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingAccountRole
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsBillingAccountRole {
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billing_account_id";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
@@ -322,18 +322,10 @@ public class ModelsBillingAccountRole {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("billing_account_id");
-    openapiFields.add("created_at");
-    openapiFields.add("description");
-    openapiFields.add("id");
-    openapiFields.add("name");
-    openapiFields.add("permissions");
-    openapiFields.add("updated_at");
-    openapiFields.add("users");
+    openapiFields = new HashSet<String>(Arrays.asList("billing_account_id", "created_at", "description", "id", "name", "permissions", "updated_at", "users"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

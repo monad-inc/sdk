@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2CreateAPIKeyRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV2CreateAPIKeyRequest {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -199,17 +199,10 @@ public class RoutesV2CreateAPIKeyRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("description");
-    openapiFields.add("expiration_time");
-    openapiFields.add("name");
-    openapiFields.add("role_id");
+    openapiFields = new HashSet<String>(Arrays.asList("description", "expiration_time", "name", "role_id"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("expiration_time");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("role_id");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("expiration_time", "name", "role_id"));
   }
 
   /**

@@ -1617,7 +1617,7 @@ func (a *PipelinesAPIService) V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGe
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
-			var v V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet500Response
+			var v string
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

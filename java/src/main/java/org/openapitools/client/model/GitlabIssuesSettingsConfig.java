@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Gitlab Issues settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class GitlabIssuesSettingsConfig {
   public static final String SERIALIZED_NAME_CONFIDENTIAL = "confidential";
   @SerializedName(SERIALIZED_NAME_CONFIDENTIAL)
@@ -251,16 +251,10 @@ public class GitlabIssuesSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("confidential");
-    openapiFields.add("gitlab_url");
-    openapiFields.add("issue_type");
-    openapiFields.add("project_id");
-    openapiFields.add("state");
-    openapiFields.add("with_label_details");
+    openapiFields = new HashSet<String>(Arrays.asList("confidential", "gitlab_url", "issue_type", "project_id", "state", "with_label_details"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

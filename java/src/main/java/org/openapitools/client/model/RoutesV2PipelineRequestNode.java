@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineRequestNode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV2PipelineRequestNode {
   public static final String SERIALIZED_NAME_COMPONENT_ID = "component_id";
   @SerializedName(SERIALIZED_NAME_COMPONENT_ID)
@@ -225,18 +225,10 @@ public class RoutesV2PipelineRequestNode {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("component_id");
-    openapiFields.add("component_type");
-    openapiFields.add("enabled");
-    openapiFields.add("id");
-    openapiFields.add("slug");
+    openapiFields = new HashSet<String>(Arrays.asList("component_id", "component_type", "enabled", "id", "slug"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("component_id");
-    openapiRequiredFields.add("component_type");
-    openapiRequiredFields.add("enabled");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("component_id", "component_type", "enabled"));
   }
 
   /**

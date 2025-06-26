@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2OrganizationOverview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV2OrganizationOverview {
   public static final String SERIALIZED_NAME_DISABLED = "disabled";
   @SerializedName(SERIALIZED_NAME_DISABLED)
@@ -226,18 +226,10 @@ public class RoutesV2OrganizationOverview {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("disabled");
-    openapiFields.add("egress");
-    openapiFields.add("healthy");
-    openapiFields.add("ingress");
-    openapiFields.add("unhealthy");
+    openapiFields = new HashSet<String>(Arrays.asList("disabled", "egress", "healthy", "ingress", "unhealthy"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("disabled");
-    openapiRequiredFields.add("healthy");
-    openapiRequiredFields.add("unhealthy");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("disabled", "healthy", "unhealthy"));
   }
 
   /**

@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * Security Lake Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T22:24:46.058212951Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T13:36:17.927409396Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class SecurityLakeSettingsConfig {
   public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
   @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
@@ -280,17 +280,10 @@ public class SecurityLakeSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("batch_config");
-    openapiFields.add("bucketName");
-    openapiFields.add("bucket_url");
-    openapiFields.add("key");
-    openapiFields.add("parquet_format");
-    openapiFields.add("role_arn");
-    openapiFields.add("source_account_details");
+    openapiFields = new HashSet<String>(Arrays.asList("batch_config", "bucketName", "bucket_url", "key", "parquet_format", "role_arn", "source_account_details"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
