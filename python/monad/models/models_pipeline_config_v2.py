@@ -39,12 +39,13 @@ class ModelsPipelineConfigV2(BaseModel):
     enabled: Optional[StrictBool] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
+    next_cron_run_at: Optional[StrictStr] = None
     nodes: Optional[List[ModelsPipelineNode]] = None
     organization_id: Optional[StrictStr] = Field(default=None, alias="organizationId")
     organization_name: Optional[StrictStr] = Field(default=None, alias="organizationName")
     retention_policy: Optional[ModelsPipelineRetentionPolicy] = None
     updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
-    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "name", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"]
+    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -123,6 +124,7 @@ class ModelsPipelineConfigV2(BaseModel):
             "enabled": obj.get("enabled"),
             "id": obj.get("id"),
             "name": obj.get("name"),
+            "next_cron_run_at": obj.get("next_cron_run_at"),
             "nodes": [ModelsPipelineNode.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None,
             "organizationId": obj.get("organizationId"),
             "organizationName": obj.get("organizationName"),

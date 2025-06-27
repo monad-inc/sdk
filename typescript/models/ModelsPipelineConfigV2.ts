@@ -25,6 +25,7 @@ export class ModelsPipelineConfigV2 {
     'enabled'?: boolean;
     'id'?: string;
     'name'?: string;
+    'nextCronRunAt'?: string;
     'nodes'?: Array<ModelsPipelineNode>;
     'organizationId'?: string;
     'organizationName'?: string;
@@ -87,6 +88,12 @@ export class ModelsPipelineConfigV2 {
         {
             "name": "name",
             "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "nextCronRunAt",
+            "baseName": "next_cron_run_at",
             "type": "string",
             "format": ""
         },

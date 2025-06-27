@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineConfigV2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-27T21:32:01.141499608Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-27T22:09:38.969138166Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsPipelineConfigV2 {
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billingAccountId";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
@@ -99,6 +99,11 @@ public class ModelsPipelineConfigV2 {
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
+
+  public static final String SERIALIZED_NAME_NEXT_CRON_RUN_AT = "next_cron_run_at";
+  @SerializedName(SERIALIZED_NAME_NEXT_CRON_RUN_AT)
+  @javax.annotation.Nullable
+  private String nextCronRunAt;
 
   public static final String SERIALIZED_NAME_NODES = "nodes";
   @SerializedName(SERIALIZED_NAME_NODES)
@@ -307,6 +312,25 @@ public class ModelsPipelineConfigV2 {
   }
 
 
+  public ModelsPipelineConfigV2 nextCronRunAt(@javax.annotation.Nullable String nextCronRunAt) {
+    this.nextCronRunAt = nextCronRunAt;
+    return this;
+  }
+
+  /**
+   * Get nextCronRunAt
+   * @return nextCronRunAt
+   */
+  @javax.annotation.Nullable
+  public String getNextCronRunAt() {
+    return nextCronRunAt;
+  }
+
+  public void setNextCronRunAt(@javax.annotation.Nullable String nextCronRunAt) {
+    this.nextCronRunAt = nextCronRunAt;
+  }
+
+
   public ModelsPipelineConfigV2 nodes(@javax.annotation.Nullable List<ModelsPipelineNode> nodes) {
     this.nodes = nodes;
     return this;
@@ -429,6 +453,7 @@ public class ModelsPipelineConfigV2 {
         Objects.equals(this.enabled, modelsPipelineConfigV2.enabled) &&
         Objects.equals(this.id, modelsPipelineConfigV2.id) &&
         Objects.equals(this.name, modelsPipelineConfigV2.name) &&
+        Objects.equals(this.nextCronRunAt, modelsPipelineConfigV2.nextCronRunAt) &&
         Objects.equals(this.nodes, modelsPipelineConfigV2.nodes) &&
         Objects.equals(this.organizationId, modelsPipelineConfigV2.organizationId) &&
         Objects.equals(this.organizationName, modelsPipelineConfigV2.organizationName) &&
@@ -438,7 +463,7 @@ public class ModelsPipelineConfigV2 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, name, nodes, organizationId, organizationName, retentionPolicy, updatedAt);
+    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, name, nextCronRunAt, nodes, organizationId, organizationName, retentionPolicy, updatedAt);
   }
 
   @Override
@@ -454,6 +479,7 @@ public class ModelsPipelineConfigV2 {
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    nextCronRunAt: ").append(toIndentedString(nextCronRunAt)).append("\n");
     sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    organizationName: ").append(toIndentedString(organizationName)).append("\n");
@@ -480,7 +506,7 @@ public class ModelsPipelineConfigV2 {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "name", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -538,6 +564,9 @@ public class ModelsPipelineConfigV2 {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("next_cron_run_at") != null && !jsonObj.get("next_cron_run_at").isJsonNull()) && !jsonObj.get("next_cron_run_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `next_cron_run_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next_cron_run_at").toString()));
       }
       if (jsonObj.get("nodes") != null && !jsonObj.get("nodes").isJsonNull()) {
         JsonArray jsonArraynodes = jsonObj.getAsJsonArray("nodes");

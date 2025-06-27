@@ -16,6 +16,7 @@
 |**enabled** | **Boolean** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
+|**nextCronRunAt** | **String** |  |  [optional] |
 |**nodes** | [**List&lt;ModelsPipelineNode&gt;**](ModelsPipelineNode.md) |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**organizationName** | **String** |  |  [optional] |

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **enabled** | **bool** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**next_cron_run_at** | **str** |  | [optional] 
 **nodes** | [**List[ModelsPipelineNode]**](ModelsPipelineNode.md) |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **organization_name** | **str** |  | [optional] 

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**NextCronRunAt** | Pointer to **string** |  | [optional] 
 **Nodes** | Pointer to [**[]ModelsPipelineNode**](ModelsPipelineNode.md) |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **OrganizationName** | Pointer to **string** |  | [optional] 
@@ -262,6 +263,31 @@ SetName sets Name field to given value.
 `func (o *ModelsPipelineConfigV2) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetNextCronRunAt
+
+`func (o *ModelsPipelineConfigV2) GetNextCronRunAt() string`
+
+GetNextCronRunAt returns the NextCronRunAt field if non-nil, zero value otherwise.
+
+### GetNextCronRunAtOk
+
+`func (o *ModelsPipelineConfigV2) GetNextCronRunAtOk() (*string, bool)`
+
+GetNextCronRunAtOk returns a tuple with the NextCronRunAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNextCronRunAt
+
+`func (o *ModelsPipelineConfigV2) SetNextCronRunAt(v string)`
+
+SetNextCronRunAt sets NextCronRunAt field to given value.
+
+### HasNextCronRunAt
+
+`func (o *ModelsPipelineConfigV2) HasNextCronRunAt() bool`
+
+HasNextCronRunAt returns a boolean if a field has been set.
 
 ### GetNodes
 

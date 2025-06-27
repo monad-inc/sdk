@@ -29,6 +29,7 @@ type ModelsPipelineConfigV2 struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	NextCronRunAt *string `json:"next_cron_run_at,omitempty"`
 	Nodes []ModelsPipelineNode `json:"nodes,omitempty"`
 	OrganizationId *string `json:"organizationId,omitempty"`
 	OrganizationName *string `json:"organizationName,omitempty"`
@@ -341,6 +342,38 @@ func (o *ModelsPipelineConfigV2) SetName(v string) {
 	o.Name = &v
 }
 
+// GetNextCronRunAt returns the NextCronRunAt field value if set, zero value otherwise.
+func (o *ModelsPipelineConfigV2) GetNextCronRunAt() string {
+	if o == nil || IsNil(o.NextCronRunAt) {
+		var ret string
+		return ret
+	}
+	return *o.NextCronRunAt
+}
+
+// GetNextCronRunAtOk returns a tuple with the NextCronRunAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineConfigV2) GetNextCronRunAtOk() (*string, bool) {
+	if o == nil || IsNil(o.NextCronRunAt) {
+		return nil, false
+	}
+	return o.NextCronRunAt, true
+}
+
+// HasNextCronRunAt returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasNextCronRunAt() bool {
+	if o != nil && !IsNil(o.NextCronRunAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetNextCronRunAt gets a reference to the given string and assigns it to the NextCronRunAt field.
+func (o *ModelsPipelineConfigV2) SetNextCronRunAt(v string) {
+	o.NextCronRunAt = &v
+}
+
 // GetNodes returns the Nodes field value if set, zero value otherwise.
 func (o *ModelsPipelineConfigV2) GetNodes() []ModelsPipelineNode {
 	if o == nil || IsNil(o.Nodes) {
@@ -537,6 +570,9 @@ func (o ModelsPipelineConfigV2) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.NextCronRunAt) {
+		toSerialize["next_cron_run_at"] = o.NextCronRunAt
 	}
 	if !IsNil(o.Nodes) {
 		toSerialize["nodes"] = o.Nodes
