@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Socket Full Scans secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T15:21:58.572705533Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T16:15:25.634936480Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class FullScansSecretsConfig {
   public static final String SERIALIZED_NAME_API_KEY = "api_key";
   @SerializedName(SERIALIZED_NAME_API_KEY)
