@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { SecurityGroupsFilterConfig } from '../models/SecurityGroupsFilterConfig';
+import { SecurityGroupsFilter } from '../models/SecurityGroupsFilter';
 import { HttpFile } from '../http/http';
 
 export class SecurityGroupsSettingsConfig {
@@ -21,7 +21,7 @@ export class SecurityGroupsSettingsConfig {
     /**
     * Filters for the security groups
     */
-    'filters'?: Array<SecurityGroupsFilterConfig>;
+    'filters'?: Array<SecurityGroupsFilter>;
     /**
     * The AWS region where the security groups that are being fetched are located.
     */
@@ -45,7 +45,7 @@ export class SecurityGroupsSettingsConfig {
         {
             "name": "filters",
             "baseName": "filters",
-            "type": "Array<SecurityGroupsFilterConfig>",
+            "type": "Array<SecurityGroupsFilter>",
             "format": ""
         },
         {

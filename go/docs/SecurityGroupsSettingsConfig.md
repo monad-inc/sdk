@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
-**Filters** | Pointer to [**[]SecurityGroupsFilterConfig**](SecurityGroupsFilterConfig.md) | Filters for the security groups | [optional] 
+**Filters** | Pointer to [**[]SecurityGroupsFilter**](SecurityGroupsFilter.md) | Filters for the security groups | [optional] 
 **Region** | Pointer to **string** | The AWS region where the security groups that are being fetched are located. | [optional] 
 **RoleArn** | Pointer to **string** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. | [optional] 
 
@@ -55,20 +55,20 @@ HasCron returns a boolean if a field has been set.
 
 ### GetFilters
 
-`func (o *SecurityGroupsSettingsConfig) GetFilters() []SecurityGroupsFilterConfig`
+`func (o *SecurityGroupsSettingsConfig) GetFilters() []SecurityGroupsFilter`
 
 GetFilters returns the Filters field if non-nil, zero value otherwise.
 
 ### GetFiltersOk
 
-`func (o *SecurityGroupsSettingsConfig) GetFiltersOk() (*[]SecurityGroupsFilterConfig, bool)`
+`func (o *SecurityGroupsSettingsConfig) GetFiltersOk() (*[]SecurityGroupsFilter, bool)`
 
 GetFiltersOk returns a tuple with the Filters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFilters
 
-`func (o *SecurityGroupsSettingsConfig) SetFilters(v []SecurityGroupsFilterConfig)`
+`func (o *SecurityGroupsSettingsConfig) SetFilters(v []SecurityGroupsFilter)`
 
 SetFilters sets Filters field to given value.
 

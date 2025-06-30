@@ -23,7 +23,7 @@ type SecurityGroupsSettingsConfig struct {
 	// Cron string for scheduling the ingest of your input
 	Cron *string `json:"cron,omitempty"`
 	// Filters for the security groups
-	Filters []SecurityGroupsFilterConfig `json:"filters,omitempty"`
+	Filters []SecurityGroupsFilter `json:"filters,omitempty"`
 	// The AWS region where the security groups that are being fetched are located.
 	Region *string `json:"region,omitempty"`
 	// RoleArn is the ARN of the IAM role to assume for accessing AWS security groups.
@@ -80,9 +80,9 @@ func (o *SecurityGroupsSettingsConfig) SetCron(v string) {
 }
 
 // GetFilters returns the Filters field value if set, zero value otherwise.
-func (o *SecurityGroupsSettingsConfig) GetFilters() []SecurityGroupsFilterConfig {
+func (o *SecurityGroupsSettingsConfig) GetFilters() []SecurityGroupsFilter {
 	if o == nil || IsNil(o.Filters) {
-		var ret []SecurityGroupsFilterConfig
+		var ret []SecurityGroupsFilter
 		return ret
 	}
 	return o.Filters
@@ -90,7 +90,7 @@ func (o *SecurityGroupsSettingsConfig) GetFilters() []SecurityGroupsFilterConfig
 
 // GetFiltersOk returns a tuple with the Filters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SecurityGroupsSettingsConfig) GetFiltersOk() ([]SecurityGroupsFilterConfig, bool) {
+func (o *SecurityGroupsSettingsConfig) GetFiltersOk() ([]SecurityGroupsFilter, bool) {
 	if o == nil || IsNil(o.Filters) {
 		return nil, false
 	}
@@ -106,8 +106,8 @@ func (o *SecurityGroupsSettingsConfig) HasFilters() bool {
 	return false
 }
 
-// SetFilters gets a reference to the given []SecurityGroupsFilterConfig and assigns it to the Filters field.
-func (o *SecurityGroupsSettingsConfig) SetFilters(v []SecurityGroupsFilterConfig) {
+// SetFilters gets a reference to the given []SecurityGroupsFilter and assigns it to the Filters field.
+func (o *SecurityGroupsSettingsConfig) SetFilters(v []SecurityGroupsFilter) {
 	o.Filters = v
 }
 

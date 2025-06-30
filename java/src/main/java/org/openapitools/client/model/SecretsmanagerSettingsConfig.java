@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * SecretsmanagerSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T15:47:53.270336101Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T15:21:58.572705533Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class SecretsmanagerSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
@@ -236,15 +236,10 @@ public class SecretsmanagerSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("cron");
-    openapiFields.add("filters");
-    openapiFields.add("include_planned_deletion");
-    openapiFields.add("region");
-    openapiFields.add("role_arn");
+    openapiFields = new HashSet<String>(Arrays.asList("cron", "filters", "include_planned_deletion", "region", "role_arn"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

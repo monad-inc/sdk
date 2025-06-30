@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cron** | **str** | Cron string for scheduling the ingest of your input | [optional] 
-**filters** | [**List[SecurityGroupsFilterConfig]**](SecurityGroupsFilterConfig.md) | Filters for the security groups | [optional] 
+**filters** | [**List[SecurityGroupsFilter]**](SecurityGroupsFilter.md) | Filters for the security groups | [optional] 
 **region** | **str** | The AWS region where the security groups that are being fetched are located. | [optional] 
 **role_arn** | **str** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. | [optional] 
 

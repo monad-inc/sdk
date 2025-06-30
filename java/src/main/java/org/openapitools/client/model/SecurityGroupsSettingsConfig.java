@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.SecurityGroupsFilterConfig;
+import org.openapitools.client.model.SecurityGroupsFilter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * SecurityGroupsSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T20:29:22.715563832Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T15:21:58.572705533Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class SecurityGroupsSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
@@ -61,7 +61,7 @@ public class SecurityGroupsSettingsConfig {
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
   @javax.annotation.Nullable
-  private List<SecurityGroupsFilterConfig> filters = new ArrayList<>();
+  private List<SecurityGroupsFilter> filters = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
@@ -95,12 +95,12 @@ public class SecurityGroupsSettingsConfig {
   }
 
 
-  public SecurityGroupsSettingsConfig filters(@javax.annotation.Nullable List<SecurityGroupsFilterConfig> filters) {
+  public SecurityGroupsSettingsConfig filters(@javax.annotation.Nullable List<SecurityGroupsFilter> filters) {
     this.filters = filters;
     return this;
   }
 
-  public SecurityGroupsSettingsConfig addFiltersItem(SecurityGroupsFilterConfig filtersItem) {
+  public SecurityGroupsSettingsConfig addFiltersItem(SecurityGroupsFilter filtersItem) {
     if (this.filters == null) {
       this.filters = new ArrayList<>();
     }
@@ -113,11 +113,11 @@ public class SecurityGroupsSettingsConfig {
    * @return filters
    */
   @javax.annotation.Nullable
-  public List<SecurityGroupsFilterConfig> getFilters() {
+  public List<SecurityGroupsFilter> getFilters() {
     return filters;
   }
 
-  public void setFilters(@javax.annotation.Nullable List<SecurityGroupsFilterConfig> filters) {
+  public void setFilters(@javax.annotation.Nullable List<SecurityGroupsFilter> filters) {
     this.filters = filters;
   }
 
@@ -210,14 +210,10 @@ public class SecurityGroupsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("cron");
-    openapiFields.add("filters");
-    openapiFields.add("region");
-    openapiFields.add("role_arn");
+    openapiFields = new HashSet<String>(Arrays.asList("cron", "filters", "region", "role_arn"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -254,7 +250,7 @@ public class SecurityGroupsSettingsConfig {
 
           // validate the optional field `filters` (array)
           for (int i = 0; i < jsonArrayfilters.size(); i++) {
-            SecurityGroupsFilterConfig.validateJsonElement(jsonArrayfilters.get(i));
+            SecurityGroupsFilter.validateJsonElement(jsonArrayfilters.get(i));
           };
         }
       }

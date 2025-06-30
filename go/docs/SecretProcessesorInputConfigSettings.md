@@ -22,8 +22,8 @@ Name | Type | Description | Notes
 **Organization** | Pointer to **string** | Filter by organization name | [optional] 
 **Repository** | Pointer to **string** | Filter by repository (format: org-name/repo-name) | [optional] 
 **User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
-**Region** | Pointer to **string** | Optional region for the object storage service. This is often required for services like AWS S3. | [optional] 
-**RoleArn** | Pointer to **string** | The ARN of the role to assume to access the bucket | [optional] 
+**Region** | Pointer to **string** | The AWS region where the security groups that are being fetched are located. | [optional] 
+**RoleArn** | Pointer to **string** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
 **Bucket** | Pointer to **string** | Name of the storage bucket | [optional] 
 **Compression** | Pointer to **string** | Compression format of the objects | [optional] 
@@ -111,6 +111,8 @@ Name | Type | Description | Notes
 **SkipSslVerification** | Pointer to **bool** | Skip SSL verification for self-signed certificates | [optional] 
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
 **Subdomain** | Pointer to **string** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | [optional] 
+**Filters** | Pointer to [**[]SecurityGroupsFilter**](SecurityGroupsFilter.md) | Filters for the security groups | [optional] 
+**IncludePlannedDeletion** | Pointer to **bool** | Whether or not to include secrets scheduled for deletion | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
@@ -2816,6 +2818,56 @@ SetSubdomain sets Subdomain field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasSubdomain() bool`
 
 HasSubdomain returns a boolean if a field has been set.
+
+### GetFilters
+
+`func (o *SecretProcessesorInputConfigSettings) GetFilters() []SecurityGroupsFilter`
+
+GetFilters returns the Filters field if non-nil, zero value otherwise.
+
+### GetFiltersOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetFiltersOk() (*[]SecurityGroupsFilter, bool)`
+
+GetFiltersOk returns a tuple with the Filters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFilters
+
+`func (o *SecretProcessesorInputConfigSettings) SetFilters(v []SecurityGroupsFilter)`
+
+SetFilters sets Filters field to given value.
+
+### HasFilters
+
+`func (o *SecretProcessesorInputConfigSettings) HasFilters() bool`
+
+HasFilters returns a boolean if a field has been set.
+
+### GetIncludePlannedDeletion
+
+`func (o *SecretProcessesorInputConfigSettings) GetIncludePlannedDeletion() bool`
+
+GetIncludePlannedDeletion returns the IncludePlannedDeletion field if non-nil, zero value otherwise.
+
+### GetIncludePlannedDeletionOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetIncludePlannedDeletionOk() (*bool, bool)`
+
+GetIncludePlannedDeletionOk returns a tuple with the IncludePlannedDeletion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludePlannedDeletion
+
+`func (o *SecretProcessesorInputConfigSettings) SetIncludePlannedDeletion(v bool)`
+
+SetIncludePlannedDeletion sets IncludePlannedDeletion field to given value.
+
+### HasIncludePlannedDeletion
+
+`func (o *SecretProcessesorInputConfigSettings) HasIncludePlannedDeletion() bool`
+
+HasIncludePlannedDeletion returns a boolean if a field has been set.
 
 ### GetAccount
 

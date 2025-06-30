@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T15:47:53.270336101Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-30T15:21:58.572705533Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -158,12 +158,10 @@ public class GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("values");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "values"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
