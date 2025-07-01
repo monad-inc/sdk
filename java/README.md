@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-07-01T14:26:25.582968458Z[Etc/UTC]
+  - Build date: 2025-07-01T15:16:07.033031533Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -208,6 +208,7 @@ Class | Method | HTTP request | Description
 *PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdPatch**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdPatch) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 *PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdStatusGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdStatusGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status | Get pipeline status
 *PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
+*PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdTriggerPost**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdTriggerPost) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 *PipelinesApi* | [**v2OrganizationIdPipelinesPost**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPost) | **POST** /v2/{organization_id}/pipelines | Create pipeline
 *PipelinesApi* | [**v2OrganizationIdPipelinesStatusesGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesStatusesGet) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
 *QuotasApi* | [**v2QuotasGet**](docs/QuotasApi.md#v2QuotasGet) | **GET** /v2/quotas | List quotas

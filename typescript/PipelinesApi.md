@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**v2OrganizationIdPipelinesPipelineIdPatch**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdPatch) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**v2OrganizationIdPipelinesPipelineIdStatusGet**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdStatusGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status | Get pipeline status
 [**v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
+[**v2OrganizationIdPipelinesPipelineIdTriggerPost**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdTriggerPost) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 [**v2OrganizationIdPipelinesPost**](PipelinesApi.md#v2OrganizationIdPipelinesPost) | **POST** /v2/{organization_id}/pipelines | Create pipeline
 [**v2OrganizationIdPipelinesStatusesGet**](PipelinesApi.md#v2OrganizationIdPipelinesStatusesGet) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
 
@@ -858,6 +859,66 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Pipeline Node status |  -  |
 **500** | Failed to get pipeline node status |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v2OrganizationIdPipelinesPipelineIdTriggerPost**
+> string v2OrganizationIdPipelinesPipelineIdTriggerPost()
+
+Manually trigger a cron-scheduled pipeline to run
+
+### Example
+
+
+```typescript
+import { createConfiguration, PipelinesApi } from '';
+import type { PipelinesApiV2OrganizationIdPipelinesPipelineIdTriggerPostRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new PipelinesApi(configuration);
+
+const request: PipelinesApiV2OrganizationIdPipelinesPipelineIdTriggerPostRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Pipeline ID
+  pipelineId: "pipeline_id_example",
+};
+
+const data = await apiInstance.v2OrganizationIdPipelinesPipelineIdTriggerPost(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
+
+
+### Return type
+
+**string**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Pipeline triggered successfully |  -  |
+**400** | Invalid request or pipeline not cron-based |  -  |
+**403** | Insufficient permissions |  -  |
+**404** | Pipeline not found |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

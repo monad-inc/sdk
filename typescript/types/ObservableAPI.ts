@@ -4140,6 +4140,42 @@ export class ObservablePipelinesApi {
     }
 
     /**
+     * Manually trigger a cron-scheduled pipeline to run
+     * Trigger pipeline manually
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     */
+    public v2OrganizationIdPipelinesPipelineIdTriggerPostWithHttpInfo(organizationId: string, pipelineId: string, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdPipelinesPipelineIdTriggerPost(organizationId, pipelineId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdPipelinesPipelineIdTriggerPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Manually trigger a cron-scheduled pipeline to run
+     * Trigger pipeline manually
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     */
+    public v2OrganizationIdPipelinesPipelineIdTriggerPost(organizationId: string, pipelineId: string, _options?: ConfigurationOptions): Observable<string> {
+        return this.v2OrganizationIdPipelinesPipelineIdTriggerPostWithHttpInfo(organizationId, pipelineId, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+    /**
      * Create a new pipeline with specified configuration
      * Create pipeline
      * @param organizationId Organization ID

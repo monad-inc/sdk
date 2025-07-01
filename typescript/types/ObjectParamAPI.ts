@@ -3765,6 +3765,23 @@ export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusNodeIdGetR
     end?: string
 }
 
+export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdTriggerPostRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdTriggerPost
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdTriggerPost
+     */
+    pipelineId: string
+}
+
 export interface PipelinesApiV2OrganizationIdPipelinesPostRequest {
     /**
      * Organization ID
@@ -4058,6 +4075,24 @@ export class ObjectPipelinesApi {
      */
     public v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdStatusNodeIdGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineNodeStatus> {
         return this.api.v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet(param.organizationId, param.pipelineId, param.nodeId, param.metrics, param.start, param.end,  options).toPromise();
+    }
+
+    /**
+     * Manually trigger a cron-scheduled pipeline to run
+     * Trigger pipeline manually
+     * @param param the request object
+     */
+    public v2OrganizationIdPipelinesPipelineIdTriggerPostWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdTriggerPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.v2OrganizationIdPipelinesPipelineIdTriggerPostWithHttpInfo(param.organizationId, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Manually trigger a cron-scheduled pipeline to run
+     * Trigger pipeline manually
+     * @param param the request object
+     */
+    public v2OrganizationIdPipelinesPipelineIdTriggerPost(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdTriggerPostRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.v2OrganizationIdPipelinesPipelineIdTriggerPost(param.organizationId, param.pipelineId,  options).toPromise();
     }
 
     /**

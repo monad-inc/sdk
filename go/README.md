@@ -172,6 +172,7 @@ Class | Method | HTTP request | Description
 *PipelinesAPI* | [**V2OrganizationIdPipelinesPipelineIdPatch**](docs/PipelinesAPI.md#v2organizationidpipelinespipelineidpatch) | **Patch** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 *PipelinesAPI* | [**V2OrganizationIdPipelinesPipelineIdStatusGet**](docs/PipelinesAPI.md#v2organizationidpipelinespipelineidstatusget) | **Get** /v2/{organization_id}/pipelines/{pipeline_id}/status | Get pipeline status
 *PipelinesAPI* | [**V2OrganizationIdPipelinesPipelineIdStatusNodeIdGet**](docs/PipelinesAPI.md#v2organizationidpipelinespipelineidstatusnodeidget) | **Get** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
+*PipelinesAPI* | [**V2OrganizationIdPipelinesPipelineIdTriggerPost**](docs/PipelinesAPI.md#v2organizationidpipelinespipelineidtriggerpost) | **Post** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 *PipelinesAPI* | [**V2OrganizationIdPipelinesPost**](docs/PipelinesAPI.md#v2organizationidpipelinespost) | **Post** /v2/{organization_id}/pipelines | Create pipeline
 *PipelinesAPI* | [**V2OrganizationIdPipelinesStatusesGet**](docs/PipelinesAPI.md#v2organizationidpipelinesstatusesget) | **Get** /v2/{organization_id}/pipelines/statuses | Get pipeline status
 *QuotasAPI* | [**V2QuotasGet**](docs/QuotasAPI.md#v2quotasget) | **Get** /v2/quotas | List quotas

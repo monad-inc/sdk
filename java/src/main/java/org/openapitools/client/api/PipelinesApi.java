@@ -2091,6 +2091,159 @@ public class PipelinesApi {
         return localVarCall;
     }
     /**
+     * Build call for v2OrganizationIdPipelinesPipelineIdTriggerPost
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline triggered successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request or pipeline not cron-based </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Insufficient permissions </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdTriggerPostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/pipelines/{pipeline_id}/trigger"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "pipeline_id" + "}", localVarApiClient.escapeString(pipelineId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdTriggerPostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelinesPipelineIdTriggerPost(Async)");
+        }
+
+        // verify the required parameter 'pipelineId' is set
+        if (pipelineId == null) {
+            throw new ApiException("Missing the required parameter 'pipelineId' when calling v2OrganizationIdPipelinesPipelineIdTriggerPost(Async)");
+        }
+
+        return v2OrganizationIdPipelinesPipelineIdTriggerPostCall(organizationId, pipelineId, _callback);
+
+    }
+
+    /**
+     * Trigger pipeline manually
+     * Manually trigger a cron-scheduled pipeline to run
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @return String
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline triggered successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request or pipeline not cron-based </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Insufficient permissions </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public String v2OrganizationIdPipelinesPipelineIdTriggerPost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId) throws ApiException {
+        ApiResponse<String> localVarResp = v2OrganizationIdPipelinesPipelineIdTriggerPostWithHttpInfo(organizationId, pipelineId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Trigger pipeline manually
+     * Manually trigger a cron-scheduled pipeline to run
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @return ApiResponse&lt;String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline triggered successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request or pipeline not cron-based </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Insufficient permissions </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<String> v2OrganizationIdPipelinesPipelineIdTriggerPostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdTriggerPostValidateBeforeCall(organizationId, pipelineId, null);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Trigger pipeline manually (asynchronously)
+     * Manually trigger a cron-scheduled pipeline to run
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline triggered successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request or pipeline not cron-based </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Insufficient permissions </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdTriggerPostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, final ApiCallback<String> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdTriggerPostValidateBeforeCall(organizationId, pipelineId, _callback);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for v2OrganizationIdPipelinesPost
      * @param organizationId Organization ID (required)
      * @param routesV2CreatePipelineRequest Request body for creating a pipeline (required)

@@ -3042,6 +3042,30 @@ export class PromisePipelinesApi {
     }
 
     /**
+     * Manually trigger a cron-scheduled pipeline to run
+     * Trigger pipeline manually
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     */
+    public v2OrganizationIdPipelinesPipelineIdTriggerPostWithHttpInfo(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdTriggerPostWithHttpInfo(organizationId, pipelineId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Manually trigger a cron-scheduled pipeline to run
+     * Trigger pipeline manually
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     */
+    public v2OrganizationIdPipelinesPipelineIdTriggerPost(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<string> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdTriggerPost(organizationId, pipelineId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
      * Create a new pipeline with specified configuration
      * Create pipeline
      * @param organizationId Organization ID

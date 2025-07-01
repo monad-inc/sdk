@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Slack Groups settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-01T14:26:25.582968458Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-01T15:16:07.033031533Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class SlackgroupsSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)

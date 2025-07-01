@@ -17,6 +17,7 @@ All URIs are relative to *https://monad.com/api*
 | [**v2OrganizationIdPipelinesPipelineIdPatch**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdPatch) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline |
 | [**v2OrganizationIdPipelinesPipelineIdStatusGet**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdStatusGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status | Get pipeline status |
 | [**v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdStatusNodeIdGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status |
+| [**v2OrganizationIdPipelinesPipelineIdTriggerPost**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdTriggerPost) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually |
 | [**v2OrganizationIdPipelinesPost**](PipelinesApi.md#v2OrganizationIdPipelinesPost) | **POST** /v2/{organization_id}/pipelines | Create pipeline |
 | [**v2OrganizationIdPipelinesStatusesGet**](PipelinesApi.md#v2OrganizationIdPipelinesStatusesGet) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status |
 
@@ -1075,6 +1076,87 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Pipeline Node status |  -  |
 | **500** | Failed to get pipeline node status |  -  |
+
+<a id="v2OrganizationIdPipelinesPipelineIdTriggerPost"></a>
+# **v2OrganizationIdPipelinesPipelineIdTriggerPost**
+> String v2OrganizationIdPipelinesPipelineIdTriggerPost(organizationId, pipelineId)
+
+Trigger pipeline manually
+
+Manually trigger a cron-scheduled pipeline to run
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.PipelinesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    PipelinesApi apiInstance = new PipelinesApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    String pipelineId = "pipelineId_example"; // String | Pipeline ID
+    try {
+      String result = apiInstance.v2OrganizationIdPipelinesPipelineIdTriggerPost(organizationId, pipelineId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PipelinesApi#v2OrganizationIdPipelinesPipelineIdTriggerPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **pipelineId** | **String**| Pipeline ID | |
+
+### Return type
+
+**String**
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Pipeline triggered successfully |  -  |
+| **400** | Invalid request or pipeline not cron-based |  -  |
+| **403** | Insufficient permissions |  -  |
+| **404** | Pipeline not found |  -  |
+| **500** | Internal server error |  -  |
 
 <a id="v2OrganizationIdPipelinesPost"></a>
 # **v2OrganizationIdPipelinesPost**

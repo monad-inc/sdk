@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**V2OrganizationIdPipelinesPipelineIdPatch**](PipelinesAPI.md#V2OrganizationIdPipelinesPipelineIdPatch) | **Patch** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
 [**V2OrganizationIdPipelinesPipelineIdStatusGet**](PipelinesAPI.md#V2OrganizationIdPipelinesPipelineIdStatusGet) | **Get** /v2/{organization_id}/pipelines/{pipeline_id}/status | Get pipeline status
 [**V2OrganizationIdPipelinesPipelineIdStatusNodeIdGet**](PipelinesAPI.md#V2OrganizationIdPipelinesPipelineIdStatusNodeIdGet) | **Get** /v2/{organization_id}/pipelines/{pipeline_id}/status/{node_id} | Get pipeline node status
+[**V2OrganizationIdPipelinesPipelineIdTriggerPost**](PipelinesAPI.md#V2OrganizationIdPipelinesPipelineIdTriggerPost) | **Post** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 [**V2OrganizationIdPipelinesPost**](PipelinesAPI.md#V2OrganizationIdPipelinesPost) | **Post** /v2/{organization_id}/pipelines | Create pipeline
 [**V2OrganizationIdPipelinesStatusesGet**](PipelinesAPI.md#V2OrganizationIdPipelinesStatusesGet) | **Get** /v2/{organization_id}/pipelines/statuses | Get pipeline status
 
@@ -990,6 +991,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ModelsPipelineNodeStatus**](ModelsPipelineNodeStatus.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V2OrganizationIdPipelinesPipelineIdTriggerPost
+
+> string V2OrganizationIdPipelinesPipelineIdTriggerPost(ctx, organizationId, pipelineId).Execute()
+
+Trigger pipeline manually
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	pipelineId := "pipelineId_example" // string | Pipeline ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PipelinesAPI.V2OrganizationIdPipelinesPipelineIdTriggerPost(context.Background(), organizationId, pipelineId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.V2OrganizationIdPipelinesPipelineIdTriggerPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V2OrganizationIdPipelinesPipelineIdTriggerPost`: string
+	fmt.Fprintf(os.Stdout, "Response from `PipelinesAPI.V2OrganizationIdPipelinesPipelineIdTriggerPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**pipelineId** | **string** | Pipeline ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV2OrganizationIdPipelinesPipelineIdTriggerPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+**string**
 
 ### Authorization
 
