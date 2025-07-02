@@ -205,6 +205,8 @@ Class | Method | HTTP request | Description
 *TransformsRepositoryApi* | [**v3_transforms_repository_transform_id_get**](docs/TransformsRepositoryApi.md#v3_transforms_repository_transform_id_get) | **GET** /v3/transforms/repository/{transform_id} | Get transform details
 *UsersApi* | [**v1_users_get**](docs/UsersApi.md#v1_users_get) | **GET** /v1/users | Get your current user
 *UsersApi* | [**v1_users_post**](docs/UsersApi.md#v1_users_post) | **POST** /v1/users | Create user
+*UsersApi* | [**v3_users_mfa_get**](docs/UsersApi.md#v3_users_mfa_get) | **GET** /v3/users/mfa | Get MFA status
+*UsersApi* | [**v3_users_mfa_post**](docs/UsersApi.md#v3_users_mfa_post) | **POST** /v3/users/mfa | Enable MFA
 
 
 ## Documentation For Models
@@ -224,6 +226,8 @@ Class | Method | HTTP request | Description
  - [AuditLogsSettingsConfig](docs/AuditLogsSettingsConfig.md)
  - [AuthLogsSecretsConfig](docs/AuthLogsSecretsConfig.md)
  - [AuthLogsSettingsConfig](docs/AuthLogsSettingsConfig.md)
+ - [AuthenticationtypesAuthenticationMethod](docs/AuthenticationtypesAuthenticationMethod.md)
+ - [AuthenticationtypesMFAEnrollmentTicket](docs/AuthenticationtypesMFAEnrollmentTicket.md)
  - [AuthenticationtypesTokenResponse](docs/AuthenticationtypesTokenResponse.md)
  - [AwsGuarddutySettingsConfig](docs/AwsGuarddutySettingsConfig.md)
  - [AwsS3SettingsConfig](docs/AwsS3SettingsConfig.md)
@@ -463,6 +467,7 @@ Class | Method | HTTP request | Description
  - [RoutesV3GetEnrichmentResponse](docs/RoutesV3GetEnrichmentResponse.md)
  - [RoutesV3GetFeatureFlagResponse](docs/RoutesV3GetFeatureFlagResponse.md)
  - [RoutesV3ImportTransformResponse](docs/RoutesV3ImportTransformResponse.md)
+ - [RoutesV3MFAStatusResponse](docs/RoutesV3MFAStatusResponse.md)
  - [RoutesV3PutEnrichmentRequest](docs/RoutesV3PutEnrichmentRequest.md)
  - [RoutesV3SuccessResponse](docs/RoutesV3SuccessResponse.md)
  - [RoutesV3TestEnrichmentConnectionRequest](docs/RoutesV3TestEnrichmentConnectionRequest.md)

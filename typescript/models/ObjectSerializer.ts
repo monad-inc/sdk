@@ -13,6 +13,8 @@ export * from '../models/AuditLogsSecretsConfig';
 export * from '../models/AuditLogsSettingsConfig';
 export * from '../models/AuthLogsSecretsConfig';
 export * from '../models/AuthLogsSettingsConfig';
+export * from '../models/AuthenticationtypesAuthenticationMethod';
+export * from '../models/AuthenticationtypesMFAEnrollmentTicket';
 export * from '../models/AuthenticationtypesTokenResponse';
 export * from '../models/AwsGuarddutySettingsConfig';
 export * from '../models/AwsS3SettingsConfig';
@@ -252,6 +254,7 @@ export * from '../models/RoutesV3CreateEnrichmentRequest';
 export * from '../models/RoutesV3GetEnrichmentResponse';
 export * from '../models/RoutesV3GetFeatureFlagResponse';
 export * from '../models/RoutesV3ImportTransformResponse';
+export * from '../models/RoutesV3MFAStatusResponse';
 export * from '../models/RoutesV3PutEnrichmentRequest';
 export * from '../models/RoutesV3SuccessResponse';
 export * from '../models/RoutesV3TestEnrichmentConnectionRequest';
@@ -337,6 +340,8 @@ import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
+import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
+import { AuthenticationtypesMFAEnrollmentTicket } from '../models/AuthenticationtypesMFAEnrollmentTicket';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
@@ -576,6 +581,7 @@ import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichm
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
+import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
@@ -699,6 +705,8 @@ let typeMap: {[index: string]: any} = {
     "AuditLogsSettingsConfig": AuditLogsSettingsConfig,
     "AuthLogsSecretsConfig": AuthLogsSecretsConfig,
     "AuthLogsSettingsConfig": AuthLogsSettingsConfig,
+    "AuthenticationtypesAuthenticationMethod": AuthenticationtypesAuthenticationMethod,
+    "AuthenticationtypesMFAEnrollmentTicket": AuthenticationtypesMFAEnrollmentTicket,
     "AuthenticationtypesTokenResponse": AuthenticationtypesTokenResponse,
     "AwsGuarddutySettingsConfig": AwsGuarddutySettingsConfig,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
@@ -938,6 +946,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3GetEnrichmentResponse": RoutesV3GetEnrichmentResponse,
     "RoutesV3GetFeatureFlagResponse": RoutesV3GetFeatureFlagResponse,
     "RoutesV3ImportTransformResponse": RoutesV3ImportTransformResponse,
+    "RoutesV3MFAStatusResponse": RoutesV3MFAStatusResponse,
     "RoutesV3PutEnrichmentRequest": RoutesV3PutEnrichmentRequest,
     "RoutesV3SuccessResponse": RoutesV3SuccessResponse,
     "RoutesV3TestEnrichmentConnectionRequest": RoutesV3TestEnrichmentConnectionRequest,

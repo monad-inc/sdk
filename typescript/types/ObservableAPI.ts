@@ -18,6 +18,8 @@ import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
+import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
+import { AuthenticationtypesMFAEnrollmentTicket } from '../models/AuthenticationtypesMFAEnrollmentTicket';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
@@ -257,6 +259,7 @@ import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichm
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
+import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
@@ -5229,6 +5232,70 @@ export class ObservableUsersApi {
      */
     public v1UsersPost(body?: any, _options?: ConfigurationOptions): Observable<ModelsUser> {
         return this.v1UsersPostWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<ModelsUser>) => apiResponse.data));
+    }
+
+    /**
+     * Get MFA enrollment status and methods for a user
+     * Get MFA status
+     */
+    public v3UsersMfaGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3MFAStatusResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3UsersMfaGet(_config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3UsersMfaGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get MFA enrollment status and methods for a user
+     * Get MFA status
+     */
+    public v3UsersMfaGet(_options?: ConfigurationOptions): Observable<RoutesV3MFAStatusResponse> {
+        return this.v3UsersMfaGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<RoutesV3MFAStatusResponse>) => apiResponse.data));
+    }
+
+    /**
+     * Enable MFA for a user and create enrollment ticket (OTP only)
+     * Enable MFA
+     */
+    public v3UsersMfaPostWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<AuthenticationtypesMFAEnrollmentTicket>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3UsersMfaPost(_config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3UsersMfaPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Enable MFA for a user and create enrollment ticket (OTP only)
+     * Enable MFA
+     */
+    public v3UsersMfaPost(_options?: ConfigurationOptions): Observable<AuthenticationtypesMFAEnrollmentTicket> {
+        return this.v3UsersMfaPostWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<AuthenticationtypesMFAEnrollmentTicket>) => apiResponse.data));
     }
 
 }

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Snyk organizations secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-01T16:45:29.188460902Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-02T17:19:59.013580581Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class SnykOrganizationsSecretsConfig {
   public static final String SERIALIZED_NAME_API_KEY = "api_key";
   @SerializedName(SERIALIZED_NAME_API_KEY)

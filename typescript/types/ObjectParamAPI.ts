@@ -17,6 +17,8 @@ import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
+import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
+import { AuthenticationtypesMFAEnrollmentTicket } from '../models/AuthenticationtypesMFAEnrollmentTicket';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
@@ -256,6 +258,7 @@ import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichm
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
+import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
@@ -4957,6 +4960,12 @@ export interface UsersApiV1UsersPostRequest {
     body?: any
 }
 
+export interface UsersApiV3UsersMfaGetRequest {
+}
+
+export interface UsersApiV3UsersMfaPostRequest {
+}
+
 export class ObjectUsersApi {
     private api: ObservableUsersApi
 
@@ -4998,6 +5007,42 @@ export class ObjectUsersApi {
      */
     public v1UsersPost(param: UsersApiV1UsersPostRequest = {}, options?: ConfigurationOptions): Promise<ModelsUser> {
         return this.api.v1UsersPost(param.body,  options).toPromise();
+    }
+
+    /**
+     * Get MFA enrollment status and methods for a user
+     * Get MFA status
+     * @param param the request object
+     */
+    public v3UsersMfaGetWithHttpInfo(param: UsersApiV3UsersMfaGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3MFAStatusResponse>> {
+        return this.api.v3UsersMfaGetWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * Get MFA enrollment status and methods for a user
+     * Get MFA status
+     * @param param the request object
+     */
+    public v3UsersMfaGet(param: UsersApiV3UsersMfaGetRequest = {}, options?: ConfigurationOptions): Promise<RoutesV3MFAStatusResponse> {
+        return this.api.v3UsersMfaGet( options).toPromise();
+    }
+
+    /**
+     * Enable MFA for a user and create enrollment ticket (OTP only)
+     * Enable MFA
+     * @param param the request object
+     */
+    public v3UsersMfaPostWithHttpInfo(param: UsersApiV3UsersMfaPostRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<AuthenticationtypesMFAEnrollmentTicket>> {
+        return this.api.v3UsersMfaPostWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * Enable MFA for a user and create enrollment ticket (OTP only)
+     * Enable MFA
+     * @param param the request object
+     */
+    public v3UsersMfaPost(param: UsersApiV3UsersMfaPostRequest = {}, options?: ConfigurationOptions): Promise<AuthenticationtypesMFAEnrollmentTicket> {
+        return this.api.v3UsersMfaPost( options).toPromise();
     }
 
 }

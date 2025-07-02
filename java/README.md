@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-07-01T16:45:29.188460902Z[Etc/UTC]
+  - Build date: 2025-07-02T17:19:59.013580581Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -235,6 +235,8 @@ Class | Method | HTTP request | Description
 *TransformsRepositoryApi* | [**v3TransformsRepositoryTransformIdGet**](docs/TransformsRepositoryApi.md#v3TransformsRepositoryTransformIdGet) | **GET** /v3/transforms/repository/{transform_id} | Get transform details
 *UsersApi* | [**v1UsersGet**](docs/UsersApi.md#v1UsersGet) | **GET** /v1/users | Get your current user
 *UsersApi* | [**v1UsersPost**](docs/UsersApi.md#v1UsersPost) | **POST** /v1/users | Create user
+*UsersApi* | [**v3UsersMfaGet**](docs/UsersApi.md#v3UsersMfaGet) | **GET** /v3/users/mfa | Get MFA status
+*UsersApi* | [**v3UsersMfaPost**](docs/UsersApi.md#v3UsersMfaPost) | **POST** /v3/users/mfa | Enable MFA
 
 
 ## Documentation for Models
@@ -254,6 +256,8 @@ Class | Method | HTTP request | Description
  - [AuditLogsSettingsConfig](docs/AuditLogsSettingsConfig.md)
  - [AuthLogsSecretsConfig](docs/AuthLogsSecretsConfig.md)
  - [AuthLogsSettingsConfig](docs/AuthLogsSettingsConfig.md)
+ - [AuthenticationtypesAuthenticationMethod](docs/AuthenticationtypesAuthenticationMethod.md)
+ - [AuthenticationtypesMFAEnrollmentTicket](docs/AuthenticationtypesMFAEnrollmentTicket.md)
  - [AuthenticationtypesTokenResponse](docs/AuthenticationtypesTokenResponse.md)
  - [AwsGuarddutySettingsConfig](docs/AwsGuarddutySettingsConfig.md)
  - [AwsS3SettingsConfig](docs/AwsS3SettingsConfig.md)
@@ -493,6 +497,7 @@ Class | Method | HTTP request | Description
  - [RoutesV3GetEnrichmentResponse](docs/RoutesV3GetEnrichmentResponse.md)
  - [RoutesV3GetFeatureFlagResponse](docs/RoutesV3GetFeatureFlagResponse.md)
  - [RoutesV3ImportTransformResponse](docs/RoutesV3ImportTransformResponse.md)
+ - [RoutesV3MFAStatusResponse](docs/RoutesV3MFAStatusResponse.md)
  - [RoutesV3PutEnrichmentRequest](docs/RoutesV3PutEnrichmentRequest.md)
  - [RoutesV3SuccessResponse](docs/RoutesV3SuccessResponse.md)
  - [RoutesV3TestEnrichmentConnectionRequest](docs/RoutesV3TestEnrichmentConnectionRequest.md)
