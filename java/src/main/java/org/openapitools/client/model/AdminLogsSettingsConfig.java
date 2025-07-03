@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AdminLogsSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-03T20:18:16.662571752Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-03T20:44:43.851864063Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AdminLogsSettingsConfig {
   public static final String SERIALIZED_NAME_HOST = "host";
   @SerializedName(SERIALIZED_NAME_HOST)
