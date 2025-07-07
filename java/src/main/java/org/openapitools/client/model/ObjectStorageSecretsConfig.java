@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Object Storage Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-07T14:45:35.178357174Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-07T16:46:52.666604641Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ObjectStorageSecretsConfig {
   public static final String SERIALIZED_NAME_ACCESS_KEY = "access_key";
   @SerializedName(SERIALIZED_NAME_ACCESS_KEY)
