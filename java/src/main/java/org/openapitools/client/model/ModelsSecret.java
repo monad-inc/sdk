@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * APIKey for GreyNoise Community API
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-07T16:46:52.666604641Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-07T18:25:21.864084250Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsSecret {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
