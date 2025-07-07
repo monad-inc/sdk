@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * AuthLogsSecretsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-07T18:25:21.864084250Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-07T20:11:05.790623892Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AuthLogsSecretsConfig {
   public static final String SERIALIZED_NAME_INTEGRATION_KEY = "integration_key";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_KEY)
