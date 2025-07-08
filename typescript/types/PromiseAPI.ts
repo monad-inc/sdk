@@ -149,9 +149,9 @@ import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
 import { ModelsPipelineEdgeCondition } from '../models/ModelsPipelineEdgeCondition';
 import { ModelsPipelineEdgeConditions } from '../models/ModelsPipelineEdgeConditions';
 import { ModelsPipelineList } from '../models/ModelsPipelineList';
+import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
+import { ModelsPipelineMetricsValue } from '../models/ModelsPipelineMetricsValue';
 import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
-import { ModelsPipelineNodeMetrics } from '../models/ModelsPipelineNodeMetrics';
-import { ModelsPipelineNodeMetricsValue } from '../models/ModelsPipelineNodeMetricsValue';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
@@ -2571,6 +2571,36 @@ export class PromiseOrganizationsApi {
         return result.toPromise();
     }
 
+    /**
+     * Get time series metrics for an organization
+     * Get organization metrics
+     * @param organizationId Organization ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     */
+    public v2OrganizationIdMetricsGetWithHttpInfo(organizationId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdMetricsGetWithHttpInfo(organizationId, metric, start, end, resolution, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get time series metrics for an organization
+     * Get organization metrics
+     * @param organizationId Organization ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     */
+    public v2OrganizationIdMetricsGet(organizationId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineMetrics> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdMetricsGet(organizationId, metric, start, end, resolution, observableOptions);
+        return result.toPromise();
+    }
+
 
 }
 
@@ -2797,6 +2827,72 @@ export class PromisePipelinesApi {
     }
 
     /**
+     * Get time series metrics for a pipeline
+     * Get pipeline metrics
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     */
+    public v2OrganizationIdMetricsPipelinesPipelineIdGetWithHttpInfo(organizationId: string, pipelineId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdMetricsPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, metric, start, end, resolution, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get time series metrics for a pipeline
+     * Get pipeline metrics
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     */
+    public v2OrganizationIdMetricsPipelinesPipelineIdGet(organizationId: string, pipelineId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineMetrics> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdMetricsPipelinesPipelineIdGet(organizationId, pipelineId, metric, start, end, resolution, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get pipeline node metrics
+     * Get pipeline node metrics
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     */
+    public v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetWithHttpInfo(organizationId, pipelineId, nodeId, metric, start, end, resolution, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get pipeline node metrics
+     * Get pipeline node metrics
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     */
+    public v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineMetrics> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(organizationId, pipelineId, nodeId, metric, start, end, resolution, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
      * Get status of all pipelines for an organization
      * Get status of all pipelines for an organization
      * @param organizationId Organization ID
@@ -2928,12 +3024,12 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      * @param nodeId Node ID
-     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
      * @param [start] ISO3339 start time, default 6 hours ago
      * @param [end] ISO3339 end time, default now
-     * @param [resolution] Resolution of the data, default 15m
+     * @param [resolution] Resolution of the data, default determined by time window
      */
-    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineNodeMetrics>> {
+    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId, pipelineId, nodeId, metric, start, end, resolution, observableOptions);
         return result.toPromise();
@@ -2945,12 +3041,12 @@ export class PromisePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      * @param nodeId Node ID
-     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
      * @param [start] ISO3339 start time, default 6 hours ago
      * @param [end] ISO3339 end time, default now
-     * @param [resolution] Resolution of the data, default 15m
+     * @param [resolution] Resolution of the data, default determined by time window
      */
-    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineNodeMetrics> {
+    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<ModelsPipelineMetrics> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId, pipelineId, nodeId, metric, start, end, resolution, observableOptions);
         return result.toPromise();

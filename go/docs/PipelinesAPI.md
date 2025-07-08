@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**V1OrganizationIdPipelinesPipelineIdDelete**](PipelinesAPI.md#V1OrganizationIdPipelinesPipelineIdDelete) | **Delete** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 [**V1OrganizationIdPipelinesPipelineIdGet**](PipelinesAPI.md#V1OrganizationIdPipelinesPipelineIdGet) | **Get** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline
 [**V1OrganizationIdPipelinesPipelineIdPatch**](PipelinesAPI.md#V1OrganizationIdPipelinesPipelineIdPatch) | **Patch** /v1/{organization_id}/pipelines/{pipeline_id} | Update pipeline
+[**V2OrganizationIdMetricsPipelinesPipelineIdGet**](PipelinesAPI.md#V2OrganizationIdMetricsPipelinesPipelineIdGet) | **Get** /v2/{organization_id}/metrics/pipelines/{pipeline_id} | Get pipeline metrics
+[**V2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet**](PipelinesAPI.md#V2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet) | **Get** /v2/{organization_id}/metrics/pipelines/{pipeline_id}/{node_id} | Get pipeline node metrics
 [**V2OrganizationIdPipelineSummaryGet**](PipelinesAPI.md#V2OrganizationIdPipelineSummaryGet) | **Get** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 [**V2OrganizationIdPipelinesGet**](PipelinesAPI.md#V2OrganizationIdPipelinesGet) | **Get** /v2/{organization_id}/pipelines | List pipelines
 [**V2OrganizationIdPipelinesMetricsGet**](PipelinesAPI.md#V2OrganizationIdPipelinesMetricsGet) | **Get** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
@@ -311,6 +313,171 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V2OrganizationIdMetricsPipelinesPipelineIdGet
+
+> ModelsPipelineMetrics V2OrganizationIdMetricsPipelinesPipelineIdGet(ctx, organizationId, pipelineId).Metric(metric).Start(start).End(end).Resolution(resolution).Execute()
+
+Get pipeline metrics
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	pipelineId := "pipelineId_example" // string | Pipeline ID
+	metric := "metric_example" // string | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+	start := "start_example" // string | ISO3339 start time, default 6 hours ago (optional)
+	end := "end_example" // string | ISO3339 end time, default now (optional)
+	resolution := "resolution_example" // string | Resolution of the data, default determined by time window (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PipelinesAPI.V2OrganizationIdMetricsPipelinesPipelineIdGet(context.Background(), organizationId, pipelineId).Metric(metric).Start(start).End(end).Resolution(resolution).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.V2OrganizationIdMetricsPipelinesPipelineIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V2OrganizationIdMetricsPipelinesPipelineIdGet`: ModelsPipelineMetrics
+	fmt.Fprintf(os.Stdout, "Response from `PipelinesAPI.V2OrganizationIdMetricsPipelinesPipelineIdGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**pipelineId** | **string** | Pipeline ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **metric** | **string** | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | 
+ **start** | **string** | ISO3339 start time, default 6 hours ago | 
+ **end** | **string** | ISO3339 end time, default now | 
+ **resolution** | **string** | Resolution of the data, default determined by time window | 
+
+### Return type
+
+[**ModelsPipelineMetrics**](ModelsPipelineMetrics.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
+
+> ModelsPipelineMetrics V2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(ctx, organizationId, pipelineId, nodeId).Metric(metric).Start(start).End(end).Resolution(resolution).Execute()
+
+Get pipeline node metrics
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	pipelineId := "pipelineId_example" // string | Pipeline ID
+	nodeId := "nodeId_example" // string | Node ID
+	metric := "metric_example" // string | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+	start := "start_example" // string | ISO3339 start time, default 6 hours ago (optional)
+	end := "end_example" // string | ISO3339 end time, default now (optional)
+	resolution := "resolution_example" // string | Resolution of the data, default determined by time window (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PipelinesAPI.V2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(context.Background(), organizationId, pipelineId, nodeId).Metric(metric).Start(start).End(end).Resolution(resolution).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.V2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet`: ModelsPipelineMetrics
+	fmt.Fprintf(os.Stdout, "Response from `PipelinesAPI.V2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**pipelineId** | **string** | Pipeline ID | 
+**nodeId** | **string** | Node ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **metric** | **string** | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | 
+ **start** | **string** | ISO3339 start time, default 6 hours ago | 
+ **end** | **string** | ISO3339 end time, default now | 
+ **resolution** | **string** | Resolution of the data, default determined by time window | 
+
+### Return type
+
+[**ModelsPipelineMetrics**](ModelsPipelineMetrics.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -688,7 +855,7 @@ Name | Type | Description  | Notes
 
 ## V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
 
-> ModelsPipelineNodeMetrics V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(ctx, organizationId, pipelineId, nodeId).Metric(metric).Start(start).End(end).Resolution(resolution).Execute()
+> ModelsPipelineMetrics V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(ctx, organizationId, pipelineId, nodeId).Metric(metric).Start(start).End(end).Resolution(resolution).Execute()
 
 Get pipeline node metrics
 
@@ -710,10 +877,10 @@ func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	pipelineId := "pipelineId_example" // string | Pipeline ID
 	nodeId := "nodeId_example" // string | Node ID
-	metric := "metric_example" // string | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records)
+	metric := "metric_example" // string | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
 	start := "start_example" // string | ISO3339 start time, default 6 hours ago (optional)
 	end := "end_example" // string | ISO3339 end time, default now (optional)
-	resolution := "resolution_example" // string | Resolution of the data, default 15m (optional)
+	resolution := "resolution_example" // string | Resolution of the data, default determined by time window (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -722,7 +889,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet`: ModelsPipelineNodeMetrics
+	// response from `V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet`: ModelsPipelineMetrics
 	fmt.Fprintf(os.Stdout, "Response from `PipelinesAPI.V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet`: %v\n", resp)
 }
 ```
@@ -747,14 +914,14 @@ Name | Type | Description  | Notes
 
 
 
- **metric** | **string** | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records) | 
+ **metric** | **string** | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | 
  **start** | **string** | ISO3339 start time, default 6 hours ago | 
  **end** | **string** | ISO3339 end time, default now | 
- **resolution** | **string** | Resolution of the data, default 15m | 
+ **resolution** | **string** | Resolution of the data, default determined by time window | 
 
 ### Return type
 
-[**ModelsPipelineNodeMetrics**](ModelsPipelineNodeMetrics.md)
+[**ModelsPipelineMetrics**](ModelsPipelineMetrics.md)
 
 ### Authorization
 

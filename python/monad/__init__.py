@@ -205,9 +205,9 @@ __all__ = [
     "ModelsPipelineEdgeCondition",
     "ModelsPipelineEdgeConditions",
     "ModelsPipelineList",
+    "ModelsPipelineMetrics",
+    "ModelsPipelineMetricsValue",
     "ModelsPipelineNode",
-    "ModelsPipelineNodeMetrics",
-    "ModelsPipelineNodeMetricsValue",
     "ModelsPipelineNodeStatus",
     "ModelsPipelineRetentionPolicy",
     "ModelsPipelineStatus",
@@ -577,9 +577,9 @@ from monad.models.models_pipeline_edge import ModelsPipelineEdge as ModelsPipeli
 from monad.models.models_pipeline_edge_condition import ModelsPipelineEdgeCondition as ModelsPipelineEdgeCondition
 from monad.models.models_pipeline_edge_conditions import ModelsPipelineEdgeConditions as ModelsPipelineEdgeConditions
 from monad.models.models_pipeline_list import ModelsPipelineList as ModelsPipelineList
+from monad.models.models_pipeline_metrics import ModelsPipelineMetrics as ModelsPipelineMetrics
+from monad.models.models_pipeline_metrics_value import ModelsPipelineMetricsValue as ModelsPipelineMetricsValue
 from monad.models.models_pipeline_node import ModelsPipelineNode as ModelsPipelineNode
-from monad.models.models_pipeline_node_metrics import ModelsPipelineNodeMetrics as ModelsPipelineNodeMetrics
-from monad.models.models_pipeline_node_metrics_value import ModelsPipelineNodeMetricsValue as ModelsPipelineNodeMetricsValue
 from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus as ModelsPipelineNodeStatus
 from monad.models.models_pipeline_retention_policy import ModelsPipelineRetentionPolicy as ModelsPipelineRetentionPolicy
 from monad.models.models_pipeline_status import ModelsPipelineStatus as ModelsPipelineStatus

@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**v1OrganizationIdPipelinesPipelineIdDelete**](PipelinesApi.md#v1OrganizationIdPipelinesPipelineIdDelete) | **DELETE** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 [**v1OrganizationIdPipelinesPipelineIdGet**](PipelinesApi.md#v1OrganizationIdPipelinesPipelineIdGet) | **GET** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline
 [**v1OrganizationIdPipelinesPipelineIdPatch**](PipelinesApi.md#v1OrganizationIdPipelinesPipelineIdPatch) | **PATCH** /v1/{organization_id}/pipelines/{pipeline_id} | Update pipeline
+[**v2OrganizationIdMetricsPipelinesPipelineIdGet**](PipelinesApi.md#v2OrganizationIdMetricsPipelinesPipelineIdGet) | **GET** /v2/{organization_id}/metrics/pipelines/{pipeline_id} | Get pipeline metrics
+[**v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet**](PipelinesApi.md#v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet) | **GET** /v2/{organization_id}/metrics/pipelines/{pipeline_id}/{node_id} | Get pipeline node metrics
 [**v2OrganizationIdPipelineSummaryGet**](PipelinesApi.md#v2OrganizationIdPipelineSummaryGet) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 [**v2OrganizationIdPipelinesGet**](PipelinesApi.md#v2OrganizationIdPipelinesGet) | **GET** /v2/{organization_id}/pipelines | List pipelines
 [**v2OrganizationIdPipelinesMetricsGet**](PipelinesApi.md#v2OrganizationIdPipelinesMetricsGet) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
@@ -259,6 +261,151 @@ Name | Type | Description  | Notes
 **200** | Response body for updating a pipeline |  -  |
 **400** | Invalid JSON request body |  -  |
 **500** | Failed to update pipeline |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v2OrganizationIdMetricsPipelinesPipelineIdGet**
+> ModelsPipelineMetrics v2OrganizationIdMetricsPipelinesPipelineIdGet()
+
+Get time series metrics for a pipeline
+
+### Example
+
+
+```typescript
+import { createConfiguration, PipelinesApi } from '';
+import type { PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new PipelinesApi(configuration);
+
+const request: PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Pipeline ID
+  pipelineId: "pipeline_id_example",
+    // Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+  metric: "metric_example",
+    // ISO3339 start time, default 6 hours ago (optional)
+  start: "start_example",
+    // ISO3339 end time, default now (optional)
+  end: "end_example",
+    // Resolution of the data, default determined by time window (optional)
+  resolution: "resolution_example",
+};
+
+const data = await apiInstance.v2OrganizationIdMetricsPipelinesPipelineIdGet(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
+ **metric** | [**string**] | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | defaults to undefined
+ **start** | [**string**] | ISO3339 start time, default 6 hours ago | (optional) defaults to undefined
+ **end** | [**string**] | ISO3339 end time, default now | (optional) defaults to undefined
+ **resolution** | [**string**] | Resolution of the data, default determined by time window | (optional) defaults to undefined
+
+
+### Return type
+
+**ModelsPipelineMetrics**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Pipeline metrics |  -  |
+**400** | Bad request |  -  |
+**404** | Pipeline not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet**
+> ModelsPipelineMetrics v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet()
+
+Get pipeline node metrics
+
+### Example
+
+
+```typescript
+import { createConfiguration, PipelinesApi } from '';
+import type { PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new PipelinesApi(configuration);
+
+const request: PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Pipeline ID
+  pipelineId: "pipeline_id_example",
+    // Node ID
+  nodeId: "node_id_example",
+    // Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+  metric: "metric_example",
+    // ISO3339 start time, default 6 hours ago (optional)
+  start: "start_example",
+    // ISO3339 end time, default now (optional)
+  end: "end_example",
+    // Resolution of the data, default determined by time window (optional)
+  resolution: "resolution_example",
+};
+
+const data = await apiInstance.v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
+ **nodeId** | [**string**] | Node ID | defaults to undefined
+ **metric** | [**string**] | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | defaults to undefined
+ **start** | [**string**] | ISO3339 start time, default 6 hours ago | (optional) defaults to undefined
+ **end** | [**string**] | ISO3339 end time, default now | (optional) defaults to undefined
+ **resolution** | [**string**] | Resolution of the data, default determined by time window | (optional) defaults to undefined
+
+
+### Return type
+
+**ModelsPipelineMetrics**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Pipeline node metrics |  -  |
+**400** | Bad request |  -  |
+**404** | Pipeline or node not found |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -559,7 +706,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet**
-> ModelsPipelineNodeMetrics v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet()
+> ModelsPipelineMetrics v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet()
 
 Get pipeline node metrics
 
@@ -580,13 +727,13 @@ const request: PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRe
   pipelineId: "pipeline_id_example",
     // Node ID
   nodeId: "node_id_example",
-    // Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records)
+    // Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
   metric: "metric_example",
     // ISO3339 start time, default 6 hours ago (optional)
   start: "start_example",
     // ISO3339 end time, default now (optional)
   end: "end_example",
-    // Resolution of the data, default 15m (optional)
+    // Resolution of the data, default determined by time window (optional)
   resolution: "resolution_example",
 };
 
@@ -602,15 +749,15 @@ Name | Type | Description  | Notes
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
  **nodeId** | [**string**] | Node ID | defaults to undefined
- **metric** | [**string**] | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records) | defaults to undefined
+ **metric** | [**string**] | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | defaults to undefined
  **start** | [**string**] | ISO3339 start time, default 6 hours ago | (optional) defaults to undefined
  **end** | [**string**] | ISO3339 end time, default now | (optional) defaults to undefined
- **resolution** | [**string**] | Resolution of the data, default 15m | (optional) defaults to undefined
+ **resolution** | [**string**] | Resolution of the data, default determined by time window | (optional) defaults to undefined
 
 
 ### Return type
 
-**ModelsPipelineNodeMetrics**
+**ModelsPipelineMetrics**
 
 ### Authorization
 
@@ -626,7 +773,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Pipeline node metrics |  -  |
-**500** | Failed to get node |  -  |
+**400** | Bad request |  -  |
+**404** | Pipeline or node not found |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

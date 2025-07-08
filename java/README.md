@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-07-07T20:11:05.790623892Z[Etc/UTC]
+  - Build date: 2025-07-08T13:53:51.064534885Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -192,6 +192,7 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**v1OrganizationsOrganizationIdDelete**](docs/OrganizationsApi.md#v1OrganizationsOrganizationIdDelete) | **DELETE** /v1/organizations/{organization_id} | Delete organization
 *OrganizationsApi* | [**v1OrganizationsOrganizationIdPatch**](docs/OrganizationsApi.md#v1OrganizationsOrganizationIdPatch) | **PATCH** /v1/organizations/{organization_id} | Update organization
 *OrganizationsApi* | [**v1OrganizationsPost**](docs/OrganizationsApi.md#v1OrganizationsPost) | **POST** /v1/organizations | Create organization
+*OrganizationsApi* | [**v2OrganizationIdMetricsGet**](docs/OrganizationsApi.md#v2OrganizationIdMetricsGet) | **GET** /v2/{organization_id}/metrics | Get organization metrics
 *OutputsApi* | [**v1OutputsGet**](docs/OutputsApi.md#v1OutputsGet) | **GET** /v1/outputs | List outputs
 *OutputsApi* | [**v1OutputsOutputTypeIdGet**](docs/OutputsApi.md#v1OutputsOutputTypeIdGet) | **GET** /v1/outputs/{output_type_id} | Get output config meta
 *PermissionsApi* | [**v2OrganizationIdRolesPermissionsGet**](docs/PermissionsApi.md#v2OrganizationIdRolesPermissionsGet) | **GET** /v2/{organization_id}/roles/permissions | List permissions
@@ -199,6 +200,8 @@ Class | Method | HTTP request | Description
 *PipelinesApi* | [**v1OrganizationIdPipelinesPipelineIdDelete**](docs/PipelinesApi.md#v1OrganizationIdPipelinesPipelineIdDelete) | **DELETE** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 *PipelinesApi* | [**v1OrganizationIdPipelinesPipelineIdGet**](docs/PipelinesApi.md#v1OrganizationIdPipelinesPipelineIdGet) | **GET** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline
 *PipelinesApi* | [**v1OrganizationIdPipelinesPipelineIdPatch**](docs/PipelinesApi.md#v1OrganizationIdPipelinesPipelineIdPatch) | **PATCH** /v1/{organization_id}/pipelines/{pipeline_id} | Update pipeline
+*PipelinesApi* | [**v2OrganizationIdMetricsPipelinesPipelineIdGet**](docs/PipelinesApi.md#v2OrganizationIdMetricsPipelinesPipelineIdGet) | **GET** /v2/{organization_id}/metrics/pipelines/{pipeline_id} | Get pipeline metrics
+*PipelinesApi* | [**v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet**](docs/PipelinesApi.md#v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet) | **GET** /v2/{organization_id}/metrics/pipelines/{pipeline_id}/{node_id} | Get pipeline node metrics
 *PipelinesApi* | [**v2OrganizationIdPipelineSummaryGet**](docs/PipelinesApi.md#v2OrganizationIdPipelineSummaryGet) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 *PipelinesApi* | [**v2OrganizationIdPipelinesGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesGet) | **GET** /v2/{organization_id}/pipelines | List pipelines
 *PipelinesApi* | [**v2OrganizationIdPipelinesMetricsGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesMetricsGet) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
@@ -388,9 +391,9 @@ Class | Method | HTTP request | Description
  - [ModelsPipelineEdgeCondition](docs/ModelsPipelineEdgeCondition.md)
  - [ModelsPipelineEdgeConditions](docs/ModelsPipelineEdgeConditions.md)
  - [ModelsPipelineList](docs/ModelsPipelineList.md)
+ - [ModelsPipelineMetrics](docs/ModelsPipelineMetrics.md)
+ - [ModelsPipelineMetricsValue](docs/ModelsPipelineMetricsValue.md)
  - [ModelsPipelineNode](docs/ModelsPipelineNode.md)
- - [ModelsPipelineNodeMetrics](docs/ModelsPipelineNodeMetrics.md)
- - [ModelsPipelineNodeMetricsValue](docs/ModelsPipelineNodeMetricsValue.md)
  - [ModelsPipelineNodeStatus](docs/ModelsPipelineNodeStatus.md)
  - [ModelsPipelineRetentionPolicy](docs/ModelsPipelineRetentionPolicy.md)
  - [ModelsPipelineStatus](docs/ModelsPipelineStatus.md)

@@ -145,9 +145,9 @@ export * from '../models/ModelsPipelineEdge';
 export * from '../models/ModelsPipelineEdgeCondition';
 export * from '../models/ModelsPipelineEdgeConditions';
 export * from '../models/ModelsPipelineList';
+export * from '../models/ModelsPipelineMetrics';
+export * from '../models/ModelsPipelineMetricsValue';
 export * from '../models/ModelsPipelineNode';
-export * from '../models/ModelsPipelineNodeMetrics';
-export * from '../models/ModelsPipelineNodeMetricsValue';
 export * from '../models/ModelsPipelineNodeStatus';
 export * from '../models/ModelsPipelineRetentionPolicy';
 export * from '../models/ModelsPipelineStatus';
@@ -472,9 +472,9 @@ import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
 import { ModelsPipelineEdgeCondition } from '../models/ModelsPipelineEdgeCondition';
 import { ModelsPipelineEdgeConditions } from '../models/ModelsPipelineEdgeConditions';
 import { ModelsPipelineList } from '../models/ModelsPipelineList';
+import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
+import { ModelsPipelineMetricsValue } from '../models/ModelsPipelineMetricsValue';
 import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
-import { ModelsPipelineNodeMetrics } from '../models/ModelsPipelineNodeMetrics';
-import { ModelsPipelineNodeMetricsValue } from '../models/ModelsPipelineNodeMetricsValue';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
@@ -837,9 +837,9 @@ let typeMap: {[index: string]: any} = {
     "ModelsPipelineEdgeCondition": ModelsPipelineEdgeCondition,
     "ModelsPipelineEdgeConditions": ModelsPipelineEdgeConditions,
     "ModelsPipelineList": ModelsPipelineList,
+    "ModelsPipelineMetrics": ModelsPipelineMetrics,
+    "ModelsPipelineMetricsValue": ModelsPipelineMetricsValue,
     "ModelsPipelineNode": ModelsPipelineNode,
-    "ModelsPipelineNodeMetrics": ModelsPipelineNodeMetrics,
-    "ModelsPipelineNodeMetricsValue": ModelsPipelineNodeMetricsValue,
     "ModelsPipelineNodeStatus": ModelsPipelineNodeStatus,
     "ModelsPipelineRetentionPolicy": ModelsPipelineRetentionPolicy,
     "ModelsPipelineStatus": ModelsPipelineStatus,

@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**v1_organization_id_pipelines_pipeline_id_delete**](PipelinesApi.md#v1_organization_id_pipelines_pipeline_id_delete) | **DELETE** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 [**v1_organization_id_pipelines_pipeline_id_get**](PipelinesApi.md#v1_organization_id_pipelines_pipeline_id_get) | **GET** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline
 [**v1_organization_id_pipelines_pipeline_id_patch**](PipelinesApi.md#v1_organization_id_pipelines_pipeline_id_patch) | **PATCH** /v1/{organization_id}/pipelines/{pipeline_id} | Update pipeline
+[**v2_organization_id_metrics_pipelines_pipeline_id_get**](PipelinesApi.md#v2_organization_id_metrics_pipelines_pipeline_id_get) | **GET** /v2/{organization_id}/metrics/pipelines/{pipeline_id} | Get pipeline metrics
+[**v2_organization_id_metrics_pipelines_pipeline_id_node_id_get**](PipelinesApi.md#v2_organization_id_metrics_pipelines_pipeline_id_node_id_get) | **GET** /v2/{organization_id}/metrics/pipelines/{pipeline_id}/{node_id} | Get pipeline node metrics
 [**v2_organization_id_pipeline_summary_get**](PipelinesApi.md#v2_organization_id_pipeline_summary_get) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 [**v2_organization_id_pipelines_get**](PipelinesApi.md#v2_organization_id_pipelines_get) | **GET** /v2/{organization_id}/pipelines | List pipelines
 [**v2_organization_id_pipelines_metrics_get**](PipelinesApi.md#v2_organization_id_pipelines_metrics_get) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
@@ -381,6 +383,206 @@ Name | Type | Description  | Notes
 **200** | Response body for updating a pipeline |  -  |
 **400** | Invalid JSON request body |  -  |
 **500** | Failed to update pipeline |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v2_organization_id_metrics_pipelines_pipeline_id_get**
+> ModelsPipelineMetrics v2_organization_id_metrics_pipelines_pipeline_id_get(organization_id, pipeline_id, metric, start=start, end=end, resolution=resolution)
+
+Get pipeline metrics
+
+Get time series metrics for a pipeline
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.models_pipeline_metrics import ModelsPipelineMetrics
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    pipeline_id = 'pipeline_id_example' # str | Pipeline ID
+    metric = 'metric_example' # str | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+    start = 'start_example' # str | ISO3339 start time, default 6 hours ago (optional)
+    end = 'end_example' # str | ISO3339 end time, default now (optional)
+    resolution = 'resolution_example' # str | Resolution of the data, default determined by time window (optional)
+
+    try:
+        # Get pipeline metrics
+        api_response = api_instance.v2_organization_id_metrics_pipelines_pipeline_id_get(organization_id, pipeline_id, metric, start=start, end=end, resolution=resolution)
+        print("The response of PipelinesApi->v2_organization_id_metrics_pipelines_pipeline_id_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->v2_organization_id_metrics_pipelines_pipeline_id_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **pipeline_id** | **str**| Pipeline ID | 
+ **metric** | **str**| Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | 
+ **start** | **str**| ISO3339 start time, default 6 hours ago | [optional] 
+ **end** | **str**| ISO3339 end time, default now | [optional] 
+ **resolution** | **str**| Resolution of the data, default determined by time window | [optional] 
+
+### Return type
+
+[**ModelsPipelineMetrics**](ModelsPipelineMetrics.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Pipeline metrics |  -  |
+**400** | Bad request |  -  |
+**404** | Pipeline not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v2_organization_id_metrics_pipelines_pipeline_id_node_id_get**
+> ModelsPipelineMetrics v2_organization_id_metrics_pipelines_pipeline_id_node_id_get(organization_id, pipeline_id, node_id, metric, start=start, end=end, resolution=resolution)
+
+Get pipeline node metrics
+
+Get pipeline node metrics
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.models_pipeline_metrics import ModelsPipelineMetrics
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    pipeline_id = 'pipeline_id_example' # str | Pipeline ID
+    node_id = 'node_id_example' # str | Node ID
+    metric = 'metric_example' # str | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+    start = 'start_example' # str | ISO3339 start time, default 6 hours ago (optional)
+    end = 'end_example' # str | ISO3339 end time, default now (optional)
+    resolution = 'resolution_example' # str | Resolution of the data, default determined by time window (optional)
+
+    try:
+        # Get pipeline node metrics
+        api_response = api_instance.v2_organization_id_metrics_pipelines_pipeline_id_node_id_get(organization_id, pipeline_id, node_id, metric, start=start, end=end, resolution=resolution)
+        print("The response of PipelinesApi->v2_organization_id_metrics_pipelines_pipeline_id_node_id_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->v2_organization_id_metrics_pipelines_pipeline_id_node_id_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **pipeline_id** | **str**| Pipeline ID | 
+ **node_id** | **str**| Node ID | 
+ **metric** | **str**| Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | 
+ **start** | **str**| ISO3339 start time, default 6 hours ago | [optional] 
+ **end** | **str**| ISO3339 end time, default now | [optional] 
+ **resolution** | **str**| Resolution of the data, default determined by time window | [optional] 
+
+### Return type
+
+[**ModelsPipelineMetrics**](ModelsPipelineMetrics.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Pipeline node metrics |  -  |
+**400** | Bad request |  -  |
+**404** | Pipeline or node not found |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -837,7 +1039,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v2_organization_id_pipelines_pipeline_id_node_id_metrics_get**
-> ModelsPipelineNodeMetrics v2_organization_id_pipelines_pipeline_id_node_id_metrics_get(organization_id, pipeline_id, node_id, metric, start=start, end=end, resolution=resolution)
+> ModelsPipelineMetrics v2_organization_id_pipelines_pipeline_id_node_id_metrics_get(organization_id, pipeline_id, node_id, metric, start=start, end=end, resolution=resolution)
 
 Get pipeline node metrics
 
@@ -850,7 +1052,7 @@ Get pipeline node metrics
 
 ```python
 import monad
-from monad.models.models_pipeline_node_metrics import ModelsPipelineNodeMetrics
+from monad.models.models_pipeline_metrics import ModelsPipelineMetrics
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -884,10 +1086,10 @@ with monad.ApiClient(configuration) as api_client:
     organization_id = 'organization_id_example' # str | Organization ID
     pipeline_id = 'pipeline_id_example' # str | Pipeline ID
     node_id = 'node_id_example' # str | Node ID
-    metric = 'metric_example' # str | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records)
+    metric = 'metric_example' # str | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
     start = 'start_example' # str | ISO3339 start time, default 6 hours ago (optional)
     end = 'end_example' # str | ISO3339 end time, default now (optional)
-    resolution = 'resolution_example' # str | Resolution of the data, default 15m (optional)
+    resolution = 'resolution_example' # str | Resolution of the data, default determined by time window (optional)
 
     try:
         # Get pipeline node metrics
@@ -908,14 +1110,14 @@ Name | Type | Description  | Notes
  **organization_id** | **str**| Organization ID | 
  **pipeline_id** | **str**| Pipeline ID | 
  **node_id** | **str**| Node ID | 
- **metric** | **str**| Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records) | 
+ **metric** | **str**| Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | 
  **start** | **str**| ISO3339 start time, default 6 hours ago | [optional] 
  **end** | **str**| ISO3339 end time, default now | [optional] 
- **resolution** | **str**| Resolution of the data, default 15m | [optional] 
+ **resolution** | **str**| Resolution of the data, default determined by time window | [optional] 
 
 ### Return type
 
-[**ModelsPipelineNodeMetrics**](ModelsPipelineNodeMetrics.md)
+[**ModelsPipelineMetrics**](ModelsPipelineMetrics.md)
 
 ### Authorization
 
@@ -931,7 +1133,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Pipeline node metrics |  -  |
-**500** | Failed to get node |  -  |
+**400** | Bad request |  -  |
+**404** | Pipeline or node not found |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

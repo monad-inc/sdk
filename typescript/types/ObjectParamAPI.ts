@@ -149,9 +149,9 @@ import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
 import { ModelsPipelineEdgeCondition } from '../models/ModelsPipelineEdgeCondition';
 import { ModelsPipelineEdgeConditions } from '../models/ModelsPipelineEdgeConditions';
 import { ModelsPipelineList } from '../models/ModelsPipelineList';
+import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
+import { ModelsPipelineMetricsValue } from '../models/ModelsPipelineMetricsValue';
 import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
-import { ModelsPipelineNodeMetrics } from '../models/ModelsPipelineNodeMetrics';
-import { ModelsPipelineNodeMetricsValue } from '../models/ModelsPipelineNodeMetricsValue';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
@@ -3224,6 +3224,44 @@ export interface OrganizationsApiV1OrganizationsPostRequest {
     routesCreateOrganizationRequest: RoutesCreateOrganizationRequest
 }
 
+export interface OrganizationsApiV2OrganizationIdMetricsGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsGet
+     */
+    organizationId: string
+    /**
+     * Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsGet
+     */
+    metric: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsGet
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsGet
+     */
+    end?: string
+    /**
+     * Resolution of the data, default determined by time window
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsGet
+     */
+    resolution?: string
+}
+
 export class ObjectOrganizationsApi {
     private api: ObservableOrganizationsApi
 
@@ -3301,6 +3339,24 @@ export class ObjectOrganizationsApi {
      */
     public v1OrganizationsPost(param: OrganizationsApiV1OrganizationsPostRequest, options?: ConfigurationOptions): Promise<ModelsOrganization> {
         return this.api.v1OrganizationsPost(param.routesCreateOrganizationRequest,  options).toPromise();
+    }
+
+    /**
+     * Get time series metrics for an organization
+     * Get organization metrics
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdMetricsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
+        return this.api.v2OrganizationIdMetricsGetWithHttpInfo(param.organizationId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get time series metrics for an organization
+     * Get organization metrics
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsGet(param: OrganizationsApiV2OrganizationIdMetricsGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineMetrics> {
+        return this.api.v2OrganizationIdMetricsGet(param.organizationId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
     }
 
 }
@@ -3504,6 +3560,103 @@ export interface PipelinesApiV1OrganizationIdPipelinesPipelineIdPatchRequest {
     routesUpdatePipelineRequest: RoutesUpdatePipelineRequest
 }
 
+export interface PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdGet
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdGet
+     */
+    pipelineId: string
+    /**
+     * Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdGet
+     */
+    metric: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdGet
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdGet
+     */
+    end?: string
+    /**
+     * Resolution of the data, default determined by time window
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdGet
+     */
+    resolution?: string
+}
+
+export interface PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
+     */
+    pipelineId: string
+    /**
+     * Node ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
+     */
+    nodeId: string
+    /**
+     * Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
+     */
+    metric: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
+     */
+    end?: string
+    /**
+     * Resolution of the data, default determined by time window
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
+     */
+    resolution?: string
+}
+
 export interface PipelinesApiV2OrganizationIdPipelineSummaryGetRequest {
     /**
      * Organization ID
@@ -3633,7 +3786,7 @@ export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
      */
     nodeId: string
     /**
-     * Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
      * Defaults to: undefined
      * @type string
      * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
@@ -3654,7 +3807,7 @@ export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
      */
     end?: string
     /**
-     * Resolution of the data, default 15m
+     * Resolution of the data, default determined by time window
      * Defaults to: undefined
      * @type string
      * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
@@ -3919,6 +4072,42 @@ export class ObjectPipelinesApi {
     }
 
     /**
+     * Get time series metrics for a pipeline
+     * Get pipeline metrics
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsPipelinesPipelineIdGetWithHttpInfo(param: PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
+        return this.api.v2OrganizationIdMetricsPipelinesPipelineIdGetWithHttpInfo(param.organizationId, param.pipelineId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get time series metrics for a pipeline
+     * Get pipeline metrics
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsPipelinesPipelineIdGet(param: PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineMetrics> {
+        return this.api.v2OrganizationIdMetricsPipelinesPipelineIdGet(param.organizationId, param.pipelineId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get pipeline node metrics
+     * Get pipeline node metrics
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetWithHttpInfo(param: PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
+        return this.api.v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get pipeline node metrics
+     * Get pipeline node metrics
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(param: PipelinesApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineMetrics> {
+        return this.api.v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    }
+
+    /**
      * Get status of all pipelines for an organization
      * Get status of all pipelines for an organization
      * @param param the request object
@@ -4013,7 +4202,7 @@ export class ObjectPipelinesApi {
      * Get pipeline node metrics
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineNodeMetrics>> {
+    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsPipelineMetrics>> {
         return this.api.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
     }
 
@@ -4022,7 +4211,7 @@ export class ObjectPipelinesApi {
      * Get pipeline node metrics
      * @param param the request object
      */
-    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineNodeMetrics> {
+    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineMetrics> {
         return this.api.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(param.organizationId, param.pipelineId, param.nodeId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
     }
 

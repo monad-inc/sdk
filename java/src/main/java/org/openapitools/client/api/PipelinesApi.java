@@ -30,7 +30,7 @@ import java.io.IOException;
 import org.openapitools.client.model.ModelsPipeline;
 import org.openapitools.client.model.ModelsPipelineConfigV2;
 import org.openapitools.client.model.ModelsPipelineList;
-import org.openapitools.client.model.ModelsPipelineNodeMetrics;
+import org.openapitools.client.model.ModelsPipelineMetrics;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
 import org.openapitools.client.model.ModelsPipelineStatus;
 import org.openapitools.client.model.RoutesUpdatePipelineRequest;
@@ -668,6 +668,388 @@ public class PipelinesApi {
 
         okhttp3.Call localVarCall = v1OrganizationIdPipelinesPipelineIdPatchValidateBeforeCall(organizationId, pipelineId, routesUpdatePipelineRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipeline>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdMetricsPipelinesPipelineIdGet
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline metrics </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsPipelinesPipelineIdGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/metrics/pipelines/{pipeline_id}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "pipeline_id" + "}", localVarApiClient.escapeString(pipelineId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (metric != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("metric", metric));
+        }
+
+        if (start != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("start", start));
+        }
+
+        if (end != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("end", end));
+        }
+
+        if (resolution != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("resolution", resolution));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdMetricsPipelinesPipelineIdGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdMetricsPipelinesPipelineIdGet(Async)");
+        }
+
+        // verify the required parameter 'pipelineId' is set
+        if (pipelineId == null) {
+            throw new ApiException("Missing the required parameter 'pipelineId' when calling v2OrganizationIdMetricsPipelinesPipelineIdGet(Async)");
+        }
+
+        // verify the required parameter 'metric' is set
+        if (metric == null) {
+            throw new ApiException("Missing the required parameter 'metric' when calling v2OrganizationIdMetricsPipelinesPipelineIdGet(Async)");
+        }
+
+        return v2OrganizationIdMetricsPipelinesPipelineIdGetCall(organizationId, pipelineId, metric, start, end, resolution, _callback);
+
+    }
+
+    /**
+     * Get pipeline metrics
+     * Get time series metrics for a pipeline
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @return ModelsPipelineMetrics
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline metrics </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsPipelineMetrics v2OrganizationIdMetricsPipelinesPipelineIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution) throws ApiException {
+        ApiResponse<ModelsPipelineMetrics> localVarResp = v2OrganizationIdMetricsPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, metric, start, end, resolution);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get pipeline metrics
+     * Get time series metrics for a pipeline
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @return ApiResponse&lt;ModelsPipelineMetrics&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline metrics </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsPipelineMetrics> v2OrganizationIdMetricsPipelinesPipelineIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsPipelinesPipelineIdGetValidateBeforeCall(organizationId, pipelineId, metric, start, end, resolution, null);
+        Type localVarReturnType = new TypeToken<ModelsPipelineMetrics>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get pipeline metrics (asynchronously)
+     * Get time series metrics for a pipeline
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline metrics </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsPipelinesPipelineIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, final ApiCallback<ModelsPipelineMetrics> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsPipelinesPipelineIdGetValidateBeforeCall(organizationId, pipelineId, metric, start, end, resolution, _callback);
+        Type localVarReturnType = new TypeToken<ModelsPipelineMetrics>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param nodeId Node ID (required)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline node metrics </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline or node not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/metrics/pipelines/{pipeline_id}/{node_id}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "pipeline_id" + "}", localVarApiClient.escapeString(pipelineId.toString()))
+            .replace("{" + "node_id" + "}", localVarApiClient.escapeString(nodeId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (metric != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("metric", metric));
+        }
+
+        if (start != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("start", start));
+        }
+
+        if (end != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("end", end));
+        }
+
+        if (resolution != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("resolution", resolution));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(Async)");
+        }
+
+        // verify the required parameter 'pipelineId' is set
+        if (pipelineId == null) {
+            throw new ApiException("Missing the required parameter 'pipelineId' when calling v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(Async)");
+        }
+
+        // verify the required parameter 'nodeId' is set
+        if (nodeId == null) {
+            throw new ApiException("Missing the required parameter 'nodeId' when calling v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(Async)");
+        }
+
+        // verify the required parameter 'metric' is set
+        if (metric == null) {
+            throw new ApiException("Missing the required parameter 'metric' when calling v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(Async)");
+        }
+
+        return v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetCall(organizationId, pipelineId, nodeId, metric, start, end, resolution, _callback);
+
+    }
+
+    /**
+     * Get pipeline node metrics
+     * Get pipeline node metrics
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param nodeId Node ID (required)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @return ModelsPipelineMetrics
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline node metrics </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline or node not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsPipelineMetrics v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution) throws ApiException {
+        ApiResponse<ModelsPipelineMetrics> localVarResp = v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetWithHttpInfo(organizationId, pipelineId, nodeId, metric, start, end, resolution);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get pipeline node metrics
+     * Get pipeline node metrics
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param nodeId Node ID (required)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @return ApiResponse&lt;ModelsPipelineMetrics&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline node metrics </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline or node not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsPipelineMetrics> v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetValidateBeforeCall(organizationId, pipelineId, nodeId, metric, start, end, resolution, null);
+        Type localVarReturnType = new TypeToken<ModelsPipelineMetrics>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get pipeline node metrics (asynchronously)
+     * Get pipeline node metrics
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param nodeId Node ID (required)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Pipeline node metrics </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline or node not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, final ApiCallback<ModelsPipelineMetrics> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetValidateBeforeCall(organizationId, pipelineId, nodeId, metric, start, end, resolution, _callback);
+        Type localVarReturnType = new TypeToken<ModelsPipelineMetrics>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1412,10 +1794,10 @@ public class PipelinesApi {
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
      * @param nodeId Node ID (required)
-     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records) (required)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
      * @param start ISO3339 start time, default 6 hours ago (optional)
      * @param end ISO3339 end time, default now (optional)
-     * @param resolution Resolution of the data, default 15m (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1424,9 +1806,13 @@ public class PipelinesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline node metrics </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Failed to get node </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline or node not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -1490,6 +1876,7 @@ public class PipelinesApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
@@ -1522,22 +1909,26 @@ public class PipelinesApi {
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
      * @param nodeId Node ID (required)
-     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records) (required)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
      * @param start ISO3339 start time, default 6 hours ago (optional)
      * @param end ISO3339 end time, default now (optional)
-     * @param resolution Resolution of the data, default 15m (optional)
-     * @return ModelsPipelineNodeMetrics
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @return ModelsPipelineMetrics
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline node metrics </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Failed to get node </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline or node not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
-    public ModelsPipelineNodeMetrics v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution) throws ApiException {
-        ApiResponse<ModelsPipelineNodeMetrics> localVarResp = v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId, pipelineId, nodeId, metric, start, end, resolution);
+    @Deprecated
+    public ModelsPipelineMetrics v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution) throws ApiException {
+        ApiResponse<ModelsPipelineMetrics> localVarResp = v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId, pipelineId, nodeId, metric, start, end, resolution);
         return localVarResp.getData();
     }
 
@@ -1547,23 +1938,27 @@ public class PipelinesApi {
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
      * @param nodeId Node ID (required)
-     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records) (required)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
      * @param start ISO3339 start time, default 6 hours ago (optional)
      * @param end ISO3339 end time, default now (optional)
-     * @param resolution Resolution of the data, default 15m (optional)
-     * @return ApiResponse&lt;ModelsPipelineNodeMetrics&gt;
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @return ApiResponse&lt;ModelsPipelineMetrics&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline node metrics </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Failed to get node </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline or node not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
-    public ApiResponse<ModelsPipelineNodeMetrics> v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution) throws ApiException {
+    @Deprecated
+    public ApiResponse<ModelsPipelineMetrics> v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution) throws ApiException {
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetValidateBeforeCall(organizationId, pipelineId, nodeId, metric, start, end, resolution, null);
-        Type localVarReturnType = new TypeToken<ModelsPipelineNodeMetrics>(){}.getType();
+        Type localVarReturnType = new TypeToken<ModelsPipelineMetrics>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1573,10 +1968,10 @@ public class PipelinesApi {
      * @param organizationId Organization ID (required)
      * @param pipelineId Pipeline ID (required)
      * @param nodeId Node ID (required)
-     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records) (required)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
      * @param start ISO3339 start time, default 6 hours ago (optional)
      * @param end ISO3339 end time, default now (optional)
-     * @param resolution Resolution of the data, default 15m (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1585,13 +1980,17 @@ public class PipelinesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pipeline node metrics </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Failed to get node </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Pipeline or node not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
-    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, final ApiCallback<ModelsPipelineNodeMetrics> _callback) throws ApiException {
+    @Deprecated
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String nodeId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, final ApiCallback<ModelsPipelineMetrics> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetValidateBeforeCall(organizationId, pipelineId, nodeId, metric, start, end, resolution, _callback);
-        Type localVarReturnType = new TypeToken<ModelsPipelineNodeMetrics>(){}.getType();
+        Type localVarReturnType = new TypeToken<ModelsPipelineMetrics>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

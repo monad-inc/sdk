@@ -8,6 +8,8 @@ All URIs are relative to *https://monad.com/api*
 | [**v1OrganizationIdPipelinesPipelineIdDelete**](PipelinesApi.md#v1OrganizationIdPipelinesPipelineIdDelete) | **DELETE** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline |
 | [**v1OrganizationIdPipelinesPipelineIdGet**](PipelinesApi.md#v1OrganizationIdPipelinesPipelineIdGet) | **GET** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline |
 | [**v1OrganizationIdPipelinesPipelineIdPatch**](PipelinesApi.md#v1OrganizationIdPipelinesPipelineIdPatch) | **PATCH** /v1/{organization_id}/pipelines/{pipeline_id} | Update pipeline |
+| [**v2OrganizationIdMetricsPipelinesPipelineIdGet**](PipelinesApi.md#v2OrganizationIdMetricsPipelinesPipelineIdGet) | **GET** /v2/{organization_id}/metrics/pipelines/{pipeline_id} | Get pipeline metrics |
+| [**v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet**](PipelinesApi.md#v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet) | **GET** /v2/{organization_id}/metrics/pipelines/{pipeline_id}/{node_id} | Get pipeline node metrics |
 | [**v2OrganizationIdPipelineSummaryGet**](PipelinesApi.md#v2OrganizationIdPipelineSummaryGet) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization |
 | [**v2OrganizationIdPipelinesGet**](PipelinesApi.md#v2OrganizationIdPipelinesGet) | **GET** /v2/{organization_id}/pipelines | List pipelines |
 | [**v2OrganizationIdPipelinesMetricsGet**](PipelinesApi.md#v2OrganizationIdPipelinesMetricsGet) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines |
@@ -339,6 +341,184 @@ public class Example {
 | **200** | Response body for updating a pipeline |  -  |
 | **400** | Invalid JSON request body |  -  |
 | **500** | Failed to update pipeline |  -  |
+
+<a id="v2OrganizationIdMetricsPipelinesPipelineIdGet"></a>
+# **v2OrganizationIdMetricsPipelinesPipelineIdGet**
+> ModelsPipelineMetrics v2OrganizationIdMetricsPipelinesPipelineIdGet(organizationId, pipelineId, metric, start, end, resolution)
+
+Get pipeline metrics
+
+Get time series metrics for a pipeline
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.PipelinesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    PipelinesApi apiInstance = new PipelinesApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    String pipelineId = "pipelineId_example"; // String | Pipeline ID
+    String metric = "metric_example"; // String | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+    String start = "start_example"; // String | ISO3339 start time, default 6 hours ago
+    String end = "end_example"; // String | ISO3339 end time, default now
+    String resolution = "resolution_example"; // String | Resolution of the data, default determined by time window
+    try {
+      ModelsPipelineMetrics result = apiInstance.v2OrganizationIdMetricsPipelinesPipelineIdGet(organizationId, pipelineId, metric, start, end, resolution);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PipelinesApi#v2OrganizationIdMetricsPipelinesPipelineIdGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **pipelineId** | **String**| Pipeline ID | |
+| **metric** | **String**| Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | |
+| **start** | **String**| ISO3339 start time, default 6 hours ago | [optional] |
+| **end** | **String**| ISO3339 end time, default now | [optional] |
+| **resolution** | **String**| Resolution of the data, default determined by time window | [optional] |
+
+### Return type
+
+[**ModelsPipelineMetrics**](ModelsPipelineMetrics.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Pipeline metrics |  -  |
+| **400** | Bad request |  -  |
+| **404** | Pipeline not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet"></a>
+# **v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet**
+> ModelsPipelineMetrics v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(organizationId, pipelineId, nodeId, metric, start, end, resolution)
+
+Get pipeline node metrics
+
+Get pipeline node metrics
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.PipelinesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    PipelinesApi apiInstance = new PipelinesApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    String pipelineId = "pipelineId_example"; // String | Pipeline ID
+    String nodeId = "nodeId_example"; // String | Node ID
+    String metric = "metric_example"; // String | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+    String start = "start_example"; // String | ISO3339 start time, default 6 hours ago
+    String end = "end_example"; // String | ISO3339 end time, default now
+    String resolution = "resolution_example"; // String | Resolution of the data, default determined by time window
+    try {
+      ModelsPipelineMetrics result = apiInstance.v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(organizationId, pipelineId, nodeId, metric, start, end, resolution);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PipelinesApi#v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **pipelineId** | **String**| Pipeline ID | |
+| **nodeId** | **String**| Node ID | |
+| **metric** | **String**| Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | |
+| **start** | **String**| ISO3339 start time, default 6 hours ago | [optional] |
+| **end** | **String**| ISO3339 end time, default now | [optional] |
+| **resolution** | **String**| Resolution of the data, default determined by time window | [optional] |
+
+### Return type
+
+[**ModelsPipelineMetrics**](ModelsPipelineMetrics.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Pipeline node metrics |  -  |
+| **400** | Bad request |  -  |
+| **404** | Pipeline or node not found |  -  |
+| **500** | Internal server error |  -  |
 
 <a id="v2OrganizationIdPipelineSummaryGet"></a>
 # **v2OrganizationIdPipelineSummaryGet**
@@ -740,7 +920,7 @@ public class Example {
 
 <a id="v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet"></a>
 # **v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet**
-> ModelsPipelineNodeMetrics v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId, pipelineId, nodeId, metric, start, end, resolution)
+> ModelsPipelineMetrics v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId, pipelineId, nodeId, metric, start, end, resolution)
 
 Get pipeline node metrics
 
@@ -777,12 +957,12 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     String pipelineId = "pipelineId_example"; // String | Pipeline ID
     String nodeId = "nodeId_example"; // String | Node ID
-    String metric = "metric_example"; // String | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records)
+    String metric = "metric_example"; // String | Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
     String start = "start_example"; // String | ISO3339 start time, default 6 hours ago
     String end = "end_example"; // String | ISO3339 end time, default now
-    String resolution = "resolution_example"; // String | Resolution of the data, default 15m
+    String resolution = "resolution_example"; // String | Resolution of the data, default determined by time window
     try {
-      ModelsPipelineNodeMetrics result = apiInstance.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId, pipelineId, nodeId, metric, start, end, resolution);
+      ModelsPipelineMetrics result = apiInstance.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId, pipelineId, nodeId, metric, start, end, resolution);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PipelinesApi#v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet");
@@ -802,14 +982,14 @@ public class Example {
 | **organizationId** | **String**| Organization ID | |
 | **pipelineId** | **String**| Pipeline ID | |
 | **nodeId** | **String**| Node ID | |
-| **metric** | **String**| Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records) | |
+| **metric** | **String**| Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) | |
 | **start** | **String**| ISO3339 start time, default 6 hours ago | [optional] |
 | **end** | **String**| ISO3339 end time, default now | [optional] |
-| **resolution** | **String**| Resolution of the data, default 15m | [optional] |
+| **resolution** | **String**| Resolution of the data, default determined by time window | [optional] |
 
 ### Return type
 
-[**ModelsPipelineNodeMetrics**](ModelsPipelineNodeMetrics.md)
+[**ModelsPipelineMetrics**](ModelsPipelineMetrics.md)
 
 ### Authorization
 
@@ -824,7 +1004,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Pipeline node metrics |  -  |
-| **500** | Failed to get node |  -  |
+| **400** | Bad request |  -  |
+| **404** | Pipeline or node not found |  -  |
+| **500** | Internal server error |  -  |
 
 <a id="v2OrganizationIdPipelinesPipelineIdPatch"></a>
 # **v2OrganizationIdPipelinesPipelineIdPatch**

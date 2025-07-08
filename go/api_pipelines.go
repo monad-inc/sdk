@@ -655,6 +655,426 @@ func (a *PipelinesAPIService) V1OrganizationIdPipelinesPipelineIdPatchExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest struct {
+	ctx context.Context
+	ApiService *PipelinesAPIService
+	organizationId string
+	pipelineId string
+	metric *string
+	start *string
+	end *string
+	resolution *string
+}
+
+// Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+func (r ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest) Metric(metric string) ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest {
+	r.metric = &metric
+	return r
+}
+
+// ISO3339 start time, default 6 hours ago
+func (r ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest) Start(start string) ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest {
+	r.start = &start
+	return r
+}
+
+// ISO3339 end time, default now
+func (r ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest) End(end string) ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest {
+	r.end = &end
+	return r
+}
+
+// Resolution of the data, default determined by time window
+func (r ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest) Resolution(resolution string) ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest {
+	r.resolution = &resolution
+	return r
+}
+
+func (r ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest) Execute() (*ModelsPipelineMetrics, *http.Response, error) {
+	return r.ApiService.V2OrganizationIdMetricsPipelinesPipelineIdGetExecute(r)
+}
+
+/*
+V2OrganizationIdMetricsPipelinesPipelineIdGet Get pipeline metrics
+
+Get time series metrics for a pipeline
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
+ @param pipelineId Pipeline ID
+ @return ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest
+*/
+func (a *PipelinesAPIService) V2OrganizationIdMetricsPipelinesPipelineIdGet(ctx context.Context, organizationId string, pipelineId string) ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest {
+	return ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+		pipelineId: pipelineId,
+	}
+}
+
+// Execute executes the request
+//  @return ModelsPipelineMetrics
+func (a *PipelinesAPIService) V2OrganizationIdMetricsPipelinesPipelineIdGetExecute(r ApiV2OrganizationIdMetricsPipelinesPipelineIdGetRequest) (*ModelsPipelineMetrics, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ModelsPipelineMetrics
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PipelinesAPIService.V2OrganizationIdMetricsPipelinesPipelineIdGet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v2/{organization_id}/metrics/pipelines/{pipeline_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipeline_id"+"}", url.PathEscape(parameterValueToString(r.pipelineId, "pipelineId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.metric == nil {
+		return localVarReturnValue, nil, reportError("metric is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "metric", r.metric, "form", "")
+	if r.start != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "form", "")
+	}
+	if r.end != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "form", "")
+	}
+	if r.resolution != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "resolution", r.resolution, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest struct {
+	ctx context.Context
+	ApiService *PipelinesAPIService
+	organizationId string
+	pipelineId string
+	nodeId string
+	metric *string
+	start *string
+	end *string
+	resolution *string
+}
+
+// Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+func (r ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest) Metric(metric string) ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest {
+	r.metric = &metric
+	return r
+}
+
+// ISO3339 start time, default 6 hours ago
+func (r ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest) Start(start string) ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest {
+	r.start = &start
+	return r
+}
+
+// ISO3339 end time, default now
+func (r ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest) End(end string) ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest {
+	r.end = &end
+	return r
+}
+
+// Resolution of the data, default determined by time window
+func (r ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest) Resolution(resolution string) ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest {
+	r.resolution = &resolution
+	return r
+}
+
+func (r ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest) Execute() (*ModelsPipelineMetrics, *http.Response, error) {
+	return r.ApiService.V2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetExecute(r)
+}
+
+/*
+V2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet Get pipeline node metrics
+
+Get pipeline node metrics
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
+ @param pipelineId Pipeline ID
+ @param nodeId Node ID
+ @return ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest
+*/
+func (a *PipelinesAPIService) V2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(ctx context.Context, organizationId string, pipelineId string, nodeId string) ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest {
+	return ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+		pipelineId: pipelineId,
+		nodeId: nodeId,
+	}
+}
+
+// Execute executes the request
+//  @return ModelsPipelineMetrics
+func (a *PipelinesAPIService) V2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetExecute(r ApiV2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetRequest) (*ModelsPipelineMetrics, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ModelsPipelineMetrics
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PipelinesAPIService.V2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v2/{organization_id}/metrics/pipelines/{pipeline_id}/{node_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipeline_id"+"}", url.PathEscape(parameterValueToString(r.pipelineId, "pipelineId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"node_id"+"}", url.PathEscape(parameterValueToString(r.nodeId, "nodeId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.metric == nil {
+		return localVarReturnValue, nil, reportError("metric is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "metric", r.metric, "form", "")
+	if r.start != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "form", "")
+	}
+	if r.end != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "form", "")
+	}
+	if r.resolution != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "resolution", r.resolution, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiV2OrganizationIdPipelineSummaryGetRequest struct {
 	ctx context.Context
 	ApiService *PipelinesAPIService
@@ -1463,7 +1883,7 @@ type ApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest struct {
 	resolution *string
 }
 
-// Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records)
+// Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
 func (r ApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest) Metric(metric string) ApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest {
 	r.metric = &metric
 	return r
@@ -1481,13 +1901,13 @@ func (r ApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest) End(end s
 	return r
 }
 
-// Resolution of the data, default 15m
+// Resolution of the data, default determined by time window
 func (r ApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest) Resolution(resolution string) ApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r ApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest) Execute() (*ModelsPipelineNodeMetrics, *http.Response, error) {
+func (r ApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest) Execute() (*ModelsPipelineMetrics, *http.Response, error) {
 	return r.ApiService.V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetExecute(r)
 }
 
@@ -1501,6 +1921,8 @@ Get pipeline node metrics
  @param pipelineId Pipeline ID
  @param nodeId Node ID
  @return ApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest
+
+Deprecated
 */
 func (a *PipelinesAPIService) V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(ctx context.Context, organizationId string, pipelineId string, nodeId string) ApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest {
 	return ApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest{
@@ -1513,13 +1935,14 @@ func (a *PipelinesAPIService) V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGe
 }
 
 // Execute executes the request
-//  @return ModelsPipelineNodeMetrics
-func (a *PipelinesAPIService) V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetExecute(r ApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest) (*ModelsPipelineNodeMetrics, *http.Response, error) {
+//  @return ModelsPipelineMetrics
+// Deprecated
+func (a *PipelinesAPIService) V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetExecute(r ApiV2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetRequest) (*ModelsPipelineMetrics, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsPipelineNodeMetrics
+		localVarReturnValue  *ModelsPipelineMetrics
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PipelinesAPIService.V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet")
@@ -1615,6 +2038,28 @@ func (a *PipelinesAPIService) V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGe
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
 			var v string

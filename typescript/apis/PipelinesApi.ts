@@ -11,7 +11,7 @@ import {SecurityAuthentication} from '../auth/auth';
 import { ModelsPipeline } from '../models/ModelsPipeline';
 import { ModelsPipelineConfigV2 } from '../models/ModelsPipelineConfigV2';
 import { ModelsPipelineList } from '../models/ModelsPipelineList';
-import { ModelsPipelineNodeMetrics } from '../models/ModelsPipelineNodeMetrics';
+import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { RoutesUpdatePipelineRequest } from '../models/RoutesUpdatePipelineRequest';
@@ -233,6 +233,182 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
             contentType
         );
         requestContext.setBody(serializedBody);
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Get time series metrics for a pipeline
+     * Get pipeline metrics
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param start ISO3339 start time, default 6 hours ago
+     * @param end ISO3339 end time, default now
+     * @param resolution Resolution of the data, default determined by time window
+     */
+    public async v2OrganizationIdMetricsPipelinesPipelineIdGet(organizationId: string, pipelineId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdGet", "organizationId");
+        }
+
+
+        // verify required parameter 'pipelineId' is not null or undefined
+        if (pipelineId === null || pipelineId === undefined) {
+            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdGet", "pipelineId");
+        }
+
+
+        // verify required parameter 'metric' is not null or undefined
+        if (metric === null || metric === undefined) {
+            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdGet", "metric");
+        }
+
+
+
+
+
+        // Path Params
+        const localVarPath = '/v2/{organization_id}/metrics/pipelines/{pipeline_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (metric !== undefined) {
+            requestContext.setQueryParam("metric", ObjectSerializer.serialize(metric, "string", ""));
+        }
+
+        // Query Params
+        if (start !== undefined) {
+            requestContext.setQueryParam("start", ObjectSerializer.serialize(start, "string", ""));
+        }
+
+        // Query Params
+        if (end !== undefined) {
+            requestContext.setQueryParam("end", ObjectSerializer.serialize(end, "string", ""));
+        }
+
+        // Query Params
+        if (resolution !== undefined) {
+            requestContext.setQueryParam("resolution", ObjectSerializer.serialize(resolution, "string", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Get pipeline node metrics
+     * Get pipeline node metrics
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param start ISO3339 start time, default 6 hours ago
+     * @param end ISO3339 end time, default now
+     * @param resolution Resolution of the data, default determined by time window
+     */
+    public async v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet", "organizationId");
+        }
+
+
+        // verify required parameter 'pipelineId' is not null or undefined
+        if (pipelineId === null || pipelineId === undefined) {
+            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet", "pipelineId");
+        }
+
+
+        // verify required parameter 'nodeId' is not null or undefined
+        if (nodeId === null || nodeId === undefined) {
+            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet", "nodeId");
+        }
+
+
+        // verify required parameter 'metric' is not null or undefined
+        if (metric === null || metric === undefined) {
+            throw new RequiredError("PipelinesApi", "v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet", "metric");
+        }
+
+
+
+
+
+        // Path Params
+        const localVarPath = '/v2/{organization_id}/metrics/pipelines/{pipeline_id}/{node_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'pipeline_id' + '}', encodeURIComponent(String(pipelineId)))
+            .replace('{' + 'node_id' + '}', encodeURIComponent(String(nodeId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (metric !== undefined) {
+            requestContext.setQueryParam("metric", ObjectSerializer.serialize(metric, "string", ""));
+        }
+
+        // Query Params
+        if (start !== undefined) {
+            requestContext.setQueryParam("start", ObjectSerializer.serialize(start, "string", ""));
+        }
+
+        // Query Params
+        if (end !== undefined) {
+            requestContext.setQueryParam("end", ObjectSerializer.serialize(end, "string", ""));
+        }
+
+        // Query Params
+        if (resolution !== undefined) {
+            requestContext.setQueryParam("resolution", ObjectSerializer.serialize(resolution, "string", ""));
+        }
+
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -538,10 +714,10 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      * @param nodeId Node ID
-     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
      * @param start ISO3339 start time, default 6 hours ago
      * @param end ISO3339 end time, default now
-     * @param resolution Resolution of the data, default 15m
+     * @param resolution Resolution of the data, default determined by time window
      */
     public async v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -1200,6 +1376,106 @@ export class PipelinesApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
+     * @params response Response returned by the server for a request to v2OrganizationIdMetricsPipelinesPipelineIdGet
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async v2OrganizationIdMetricsPipelinesPipelineIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineMetrics >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ModelsPipelineMetrics = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsPipelineMetrics", ""
+            ) as ModelsPipelineMetrics;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Bad request", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Pipeline not found", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ModelsPipelineMetrics = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsPipelineMetrics", ""
+            ) as ModelsPipelineMetrics;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineMetrics >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ModelsPipelineMetrics = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsPipelineMetrics", ""
+            ) as ModelsPipelineMetrics;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Bad request", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Pipeline or node not found", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ModelsPipelineMetrics = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ModelsPipelineMetrics", ""
+            ) as ModelsPipelineMetrics;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
      * @params response Response returned by the server for a request to v2OrganizationIdPipelineSummaryGet
      * @throws ApiException if the response code was not in [200, 299]
      */
@@ -1397,29 +1673,43 @@ export class PipelinesApiResponseProcessor {
      * @params response Response returned by the server for a request to v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineNodeMetrics >> {
+     public async v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsPipelineMetrics >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsPipelineNodeMetrics = ObjectSerializer.deserialize(
+            const body: ModelsPipelineMetrics = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineNodeMetrics", ""
-            ) as ModelsPipelineNodeMetrics;
+                "ModelsPipelineMetrics", ""
+            ) as ModelsPipelineMetrics;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Bad request", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Pipeline or node not found", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
             ) as string;
-            throw new ApiException<string>(response.httpStatusCode, "Failed to get node", body, response.headers);
+            throw new ApiException<string>(response.httpStatusCode, "Internal server error", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsPipelineNodeMetrics = ObjectSerializer.deserialize(
+            const body: ModelsPipelineMetrics = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsPipelineNodeMetrics", ""
-            ) as ModelsPipelineNodeMetrics;
+                "ModelsPipelineMetrics", ""
+            ) as ModelsPipelineMetrics;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

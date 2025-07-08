@@ -22,6 +22,7 @@ from typing import Any, Dict, Optional
 from typing_extensions import Annotated
 from monad.models.models_organization import ModelsOrganization
 from monad.models.models_organization_list import ModelsOrganizationList
+from monad.models.models_pipeline_metrics import ModelsPipelineMetrics
 from monad.models.routes_create_organization_request import RoutesCreateOrganizationRequest
 from monad.models.routes_update_organization_request import RoutesUpdateOrganizationRequest
 
@@ -1136,6 +1137,345 @@ class OrganizationsApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/v1/organizations',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def v2_organization_id_metrics_get(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        metric: Annotated[StrictStr, Field(description="Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)")],
+        start: Annotated[Optional[StrictStr], Field(description="ISO3339 start time, default 6 hours ago")] = None,
+        end: Annotated[Optional[StrictStr], Field(description="ISO3339 end time, default now")] = None,
+        resolution: Annotated[Optional[StrictStr], Field(description="Resolution of the data, default determined by time window")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ModelsPipelineMetrics:
+        """Get organization metrics
+
+        Get time series metrics for an organization
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param metric: Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
+        :type metric: str
+        :param start: ISO3339 start time, default 6 hours ago
+        :type start: str
+        :param end: ISO3339 end time, default now
+        :type end: str
+        :param resolution: Resolution of the data, default determined by time window
+        :type resolution: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._v2_organization_id_metrics_get_serialize(
+            organization_id=organization_id,
+            metric=metric,
+            start=start,
+            end=end,
+            resolution=resolution,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsPipelineMetrics",
+            '400': "str",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def v2_organization_id_metrics_get_with_http_info(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        metric: Annotated[StrictStr, Field(description="Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)")],
+        start: Annotated[Optional[StrictStr], Field(description="ISO3339 start time, default 6 hours ago")] = None,
+        end: Annotated[Optional[StrictStr], Field(description="ISO3339 end time, default now")] = None,
+        resolution: Annotated[Optional[StrictStr], Field(description="Resolution of the data, default determined by time window")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ModelsPipelineMetrics]:
+        """Get organization metrics
+
+        Get time series metrics for an organization
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param metric: Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
+        :type metric: str
+        :param start: ISO3339 start time, default 6 hours ago
+        :type start: str
+        :param end: ISO3339 end time, default now
+        :type end: str
+        :param resolution: Resolution of the data, default determined by time window
+        :type resolution: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._v2_organization_id_metrics_get_serialize(
+            organization_id=organization_id,
+            metric=metric,
+            start=start,
+            end=end,
+            resolution=resolution,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsPipelineMetrics",
+            '400': "str",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def v2_organization_id_metrics_get_without_preload_content(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        metric: Annotated[StrictStr, Field(description="Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)")],
+        start: Annotated[Optional[StrictStr], Field(description="ISO3339 start time, default 6 hours ago")] = None,
+        end: Annotated[Optional[StrictStr], Field(description="ISO3339 end time, default now")] = None,
+        resolution: Annotated[Optional[StrictStr], Field(description="Resolution of the data, default determined by time window")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get organization metrics
+
+        Get time series metrics for an organization
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param metric: Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors) (required)
+        :type metric: str
+        :param start: ISO3339 start time, default 6 hours ago
+        :type start: str
+        :param end: ISO3339 end time, default now
+        :type end: str
+        :param resolution: Resolution of the data, default determined by time window
+        :type resolution: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._v2_organization_id_metrics_get_serialize(
+            organization_id=organization_id,
+            metric=metric,
+            start=start,
+            end=end,
+            resolution=resolution,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelsPipelineMetrics",
+            '400': "str",
+            '404': "str",
+            '500': "str",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _v2_organization_id_metrics_get_serialize(
+        self,
+        organization_id,
+        metric,
+        start,
+        end,
+        resolution,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if organization_id is not None:
+            _path_params['organization_id'] = organization_id
+        # process the query parameters
+        if metric is not None:
+            
+            _query_params.append(('metric', metric))
+            
+        if start is not None:
+            
+            _query_params.append(('start', start))
+            
+        if end is not None:
+            
+            _query_params.append(('end', end))
+            
+        if resolution is not None:
+            
+            _query_params.append(('resolution', resolution))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'ApiKeyAuth', 
+            'Bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v2/{organization_id}/metrics',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

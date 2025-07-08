@@ -150,9 +150,9 @@ import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
 import { ModelsPipelineEdgeCondition } from '../models/ModelsPipelineEdgeCondition';
 import { ModelsPipelineEdgeConditions } from '../models/ModelsPipelineEdgeConditions';
 import { ModelsPipelineList } from '../models/ModelsPipelineList';
+import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
+import { ModelsPipelineMetricsValue } from '../models/ModelsPipelineMetricsValue';
 import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
-import { ModelsPipelineNodeMetrics } from '../models/ModelsPipelineNodeMetrics';
-import { ModelsPipelineNodeMetricsValue } from '../models/ModelsPipelineNodeMetricsValue';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
@@ -3480,6 +3480,48 @@ export class ObservableOrganizationsApi {
         return this.v1OrganizationsPostWithHttpInfo(routesCreateOrganizationRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsOrganization>) => apiResponse.data));
     }
 
+    /**
+     * Get time series metrics for an organization
+     * Get organization metrics
+     * @param organizationId Organization ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     */
+    public v2OrganizationIdMetricsGetWithHttpInfo(organizationId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineMetrics>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdMetricsGet(organizationId, metric, start, end, resolution, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdMetricsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get time series metrics for an organization
+     * Get organization metrics
+     * @param organizationId Organization ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     */
+    public v2OrganizationIdMetricsGet(organizationId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: ConfigurationOptions): Observable<ModelsPipelineMetrics> {
+        return this.v2OrganizationIdMetricsGetWithHttpInfo(organizationId, metric, start, end, resolution, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineMetrics>) => apiResponse.data));
+    }
+
 }
 
 import { OutputsApiRequestFactory, OutputsApiResponseProcessor} from "../apis/OutputsApi";
@@ -3787,6 +3829,96 @@ export class ObservablePipelinesApi {
     }
 
     /**
+     * Get time series metrics for a pipeline
+     * Get pipeline metrics
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     */
+    public v2OrganizationIdMetricsPipelinesPipelineIdGetWithHttpInfo(organizationId: string, pipelineId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineMetrics>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdMetricsPipelinesPipelineIdGet(organizationId, pipelineId, metric, start, end, resolution, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdMetricsPipelinesPipelineIdGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get time series metrics for a pipeline
+     * Get pipeline metrics
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     */
+    public v2OrganizationIdMetricsPipelinesPipelineIdGet(organizationId: string, pipelineId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: ConfigurationOptions): Observable<ModelsPipelineMetrics> {
+        return this.v2OrganizationIdMetricsPipelinesPipelineIdGetWithHttpInfo(organizationId, pipelineId, metric, start, end, resolution, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineMetrics>) => apiResponse.data));
+    }
+
+    /**
+     * Get pipeline node metrics
+     * Get pipeline node metrics
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     */
+    public v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineMetrics>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(organizationId, pipelineId, nodeId, metric, start, end, resolution, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get pipeline node metrics
+     * Get pipeline node metrics
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     */
+    public v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGet(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: ConfigurationOptions): Observable<ModelsPipelineMetrics> {
+        return this.v2OrganizationIdMetricsPipelinesPipelineIdNodeIdGetWithHttpInfo(organizationId, pipelineId, nodeId, metric, start, end, resolution, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineMetrics>) => apiResponse.data));
+    }
+
+    /**
      * Get status of all pipelines for an organization
      * Get status of all pipelines for an organization
      * @param organizationId Organization ID
@@ -3978,12 +4110,12 @@ export class ObservablePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      * @param nodeId Node ID
-     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
      * @param [start] ISO3339 start time, default 6 hours ago
      * @param [end] ISO3339 end time, default now
-     * @param [resolution] Resolution of the data, default 15m
+     * @param [resolution] Resolution of the data, default determined by time window
      */
-    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineNodeMetrics>> {
+    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineMetrics>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId, pipelineId, nodeId, metric, start, end, resolution, _config);
@@ -4009,13 +4141,13 @@ export class ObservablePipelinesApi {
      * @param organizationId Organization ID
      * @param pipelineId Pipeline ID
      * @param nodeId Node ID
-     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records)
+     * @param metric Metric to retrieve (ingress_bytes|egress_bytes|ingress_records|egress_records|errors)
      * @param [start] ISO3339 start time, default 6 hours ago
      * @param [end] ISO3339 end time, default now
-     * @param [resolution] Resolution of the data, default 15m
+     * @param [resolution] Resolution of the data, default determined by time window
      */
-    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: ConfigurationOptions): Observable<ModelsPipelineNodeMetrics> {
-        return this.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId, pipelineId, nodeId, metric, start, end, resolution, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineNodeMetrics>) => apiResponse.data));
+    public v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet(organizationId: string, pipelineId: string, nodeId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: ConfigurationOptions): Observable<ModelsPipelineMetrics> {
+        return this.v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGetWithHttpInfo(organizationId, pipelineId, nodeId, metric, start, end, resolution, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineMetrics>) => apiResponse.data));
     }
 
     /**
