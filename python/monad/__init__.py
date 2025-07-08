@@ -255,6 +255,7 @@ __all__ = [
     "PostgresqlSettingsConfig",
     "RenameKeyRenameKey",
     "RenameKeyWhereValueEqRenameKeyWhereValueEq",
+    "ResourceEvaluationsSettingsConfig",
     "ResponderErrorResponse",
     "RolesInfoSecretsConfig",
     "RolesInfoSettingsConfig",
@@ -629,6 +630,7 @@ from monad.models.postgresql_secrets_config import PostgresqlSecretsConfig as Po
 from monad.models.postgresql_settings_config import PostgresqlSettingsConfig as PostgresqlSettingsConfig
 from monad.models.rename_key_rename_key import RenameKeyRenameKey as RenameKeyRenameKey
 from monad.models.rename_key_where_value_eq_rename_key_where_value_eq import RenameKeyWhereValueEqRenameKeyWhereValueEq as RenameKeyWhereValueEqRenameKeyWhereValueEq
+from monad.models.resource_evaluations_settings_config import ResourceEvaluationsSettingsConfig as ResourceEvaluationsSettingsConfig
 from monad.models.responder_error_response import ResponderErrorResponse as ResponderErrorResponse
 from monad.models.roles_info_secrets_config import RolesInfoSecretsConfig as RolesInfoSecretsConfig
 from monad.models.roles_info_settings_config import RolesInfoSettingsConfig as RolesInfoSettingsConfig

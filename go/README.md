@@ -405,6 +405,7 @@ Class | Method | HTTP request | Description
  - [PostgresqlSettingsConfig](docs/PostgresqlSettingsConfig.md)
  - [RenameKeyRenameKey](docs/RenameKeyRenameKey.md)
  - [RenameKeyWhereValueEqRenameKeyWhereValueEq](docs/RenameKeyWhereValueEqRenameKeyWhereValueEq.md)
+ - [ResourceEvaluationsSettingsConfig](docs/ResourceEvaluationsSettingsConfig.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
  - [RolesInfoSecretsConfig](docs/RolesInfoSecretsConfig.md)
  - [RolesInfoSettingsConfig](docs/RolesInfoSettingsConfig.md)

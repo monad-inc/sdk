@@ -113,6 +113,7 @@ Name | Type | Description | Notes
 **SkipSslVerification** | Pointer to **bool** | Skip SSL verification for self-signed certificates | [optional] 
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
 **Subdomain** | Pointer to **string** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | [optional] 
+**EvaluationContextIdentifier** | Pointer to **string** | Filters proactive resource evaluations for a given infrastructure deployment. | [optional] 
 **Filters** | Pointer to [**[]SecurityGroupsFilter**](SecurityGroupsFilter.md) | Filters for the security groups | [optional] 
 **IncludePlannedDeletion** | Pointer to **bool** | Whether or not to include secrets scheduled for deletion | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
@@ -2870,6 +2871,31 @@ SetSubdomain sets Subdomain field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasSubdomain() bool`
 
 HasSubdomain returns a boolean if a field has been set.
+
+### GetEvaluationContextIdentifier
+
+`func (o *SecretProcessesorInputConfigSettings) GetEvaluationContextIdentifier() string`
+
+GetEvaluationContextIdentifier returns the EvaluationContextIdentifier field if non-nil, zero value otherwise.
+
+### GetEvaluationContextIdentifierOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetEvaluationContextIdentifierOk() (*string, bool)`
+
+GetEvaluationContextIdentifierOk returns a tuple with the EvaluationContextIdentifier field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEvaluationContextIdentifier
+
+`func (o *SecretProcessesorInputConfigSettings) SetEvaluationContextIdentifier(v string)`
+
+SetEvaluationContextIdentifier sets EvaluationContextIdentifier field to given value.
+
+### HasEvaluationContextIdentifier
+
+`func (o *SecretProcessesorInputConfigSettings) HasEvaluationContextIdentifier() bool`
+
+HasEvaluationContextIdentifier returns a boolean if a field has been set.
 
 ### GetFilters
 

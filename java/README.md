@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-07-08T14:23:26.855392149Z[Etc/UTC]
+  - Build date: 2025-07-08T16:38:18.001304814Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -441,6 +441,7 @@ Class | Method | HTTP request | Description
  - [PostgresqlSettingsConfig](docs/PostgresqlSettingsConfig.md)
  - [RenameKeyRenameKey](docs/RenameKeyRenameKey.md)
  - [RenameKeyWhereValueEqRenameKeyWhereValueEq](docs/RenameKeyWhereValueEqRenameKeyWhereValueEq.md)
+ - [ResourceEvaluationsSettingsConfig](docs/ResourceEvaluationsSettingsConfig.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
  - [RolesInfoSecretsConfig](docs/RolesInfoSecretsConfig.md)
  - [RolesInfoSettingsConfig](docs/RolesInfoSettingsConfig.md)
