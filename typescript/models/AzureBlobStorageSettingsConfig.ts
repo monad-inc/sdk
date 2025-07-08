@@ -37,6 +37,10 @@ export class AzureBlobStorageSettingsConfig {
     * An optional prefix for Azure object keys to organize data within the container
     */
     'prefix'?: string;
+    /**
+    * Location of the record in the JSON object. Applies only if the format is JSON.
+    */
+    'recordLocation'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -76,6 +80,12 @@ export class AzureBlobStorageSettingsConfig {
         {
             "name": "prefix",
             "baseName": "prefix",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "recordLocation",
+            "baseName": "record_location",
             "type": "string",
             "format": ""
         }    ];

@@ -36,13 +36,15 @@
 |**recordLocation** | **String** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. If the records are not nested in the JSON, you can use &#39;@this&#39; to indicate that the file contains the record at the root or an array of records. |  [optional] |
 |**queueUrl** | **String** | The URL of the SQS queue to poll for messages. |  [optional] |
 |**correlationId** | **String** | The correlation ID of the log |  [optional] |
-|**resourceGroupName** | **String** | The name of the resource group |  [optional] |
+|**resourceGroupName** | **String** | The name of the resource group containing the virtual network |  [optional] |
 |**resourceProvider** | **String** | The provider of the resource |  [optional] |
 |**resourceUri** | **String** | The URI of the resource |  [optional] |
-|**subscriptionId** | **String** | The subscription ID of the Azure subscription |  [optional] |
+|**subscriptionId** | **String** | The Azure subscription ID where the virtual network and storage account are located |  [optional] |
 |**tenantId** | **String** | The tenant ID of the Azure AD application |  [optional] |
 |**accountUrl** | **String** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. |  [optional] |
 |**container** | **String** | A container organizes a set of blobs, similar to a directory in a file system. |  [optional] |
+|**storageAccountUrl** | **String** | The Azure storage account URL where flow logs are stored |  [optional] |
+|**virtualNetworkName** | **String** | The name of the virtual network for which flow logs are being collected |  [optional] |
 |**dataset** | **String** | The BigQuery dataset ID containing the table |  [optional] |
 |**project** | **String** | The GCP project ID containing the BigQuery dataset |  [optional] |
 |**query** | **String** | Optional custom query to use instead of table (must include timestamp_column) |  [optional] |

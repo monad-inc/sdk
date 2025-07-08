@@ -24,6 +24,8 @@ export * from '../models/AzureActivityLogsSecretsConfig';
 export * from '../models/AzureActivityLogsSettingsConfig';
 export * from '../models/AzureBlobStorageSecretsConfig';
 export * from '../models/AzureBlobStorageSettingsConfig';
+export * from '../models/AzureVnetFlowLogsSecretsConfig';
+export * from '../models/AzureVnetFlowLogsSettingsConfig';
 export * from '../models/BatchConfigBatchConfig';
 export * from '../models/BigqueryInputSecretsConfig';
 export * from '../models/BigqueryInputSettingsConfig';
@@ -351,6 +353,8 @@ import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecre
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
 import { AzureBlobStorageSecretsConfig } from '../models/AzureBlobStorageSecretsConfig';
 import { AzureBlobStorageSettingsConfig } from '../models/AzureBlobStorageSettingsConfig';
+import { AzureVnetFlowLogsSecretsConfig } from '../models/AzureVnetFlowLogsSecretsConfig';
+import { AzureVnetFlowLogsSettingsConfig } from '../models/AzureVnetFlowLogsSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig';
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
@@ -716,6 +720,8 @@ let typeMap: {[index: string]: any} = {
     "AzureActivityLogsSettingsConfig": AzureActivityLogsSettingsConfig,
     "AzureBlobStorageSecretsConfig": AzureBlobStorageSecretsConfig,
     "AzureBlobStorageSettingsConfig": AzureBlobStorageSettingsConfig,
+    "AzureVnetFlowLogsSecretsConfig": AzureVnetFlowLogsSecretsConfig,
+    "AzureVnetFlowLogsSettingsConfig": AzureVnetFlowLogsSettingsConfig,
     "BatchConfigBatchConfig": BatchConfigBatchConfig,
     "BigqueryInputSecretsConfig": BigqueryInputSecretsConfig,
     "BigqueryInputSettingsConfig": BigqueryInputSettingsConfig,

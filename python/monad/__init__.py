@@ -84,6 +84,8 @@ __all__ = [
     "AzureActivityLogsSettingsConfig",
     "AzureBlobStorageSecretsConfig",
     "AzureBlobStorageSettingsConfig",
+    "AzureVnetFlowLogsSecretsConfig",
+    "AzureVnetFlowLogsSettingsConfig",
     "BatchConfigBatchConfig",
     "BigqueryInputSecretsConfig",
     "BigqueryInputSettingsConfig",
@@ -456,6 +458,8 @@ from monad.models.azure_activity_logs_secrets_config import AzureActivityLogsSec
 from monad.models.azure_activity_logs_settings_config import AzureActivityLogsSettingsConfig as AzureActivityLogsSettingsConfig
 from monad.models.azure_blob_storage_secrets_config import AzureBlobStorageSecretsConfig as AzureBlobStorageSecretsConfig
 from monad.models.azure_blob_storage_settings_config import AzureBlobStorageSettingsConfig as AzureBlobStorageSettingsConfig
+from monad.models.azure_vnet_flow_logs_secrets_config import AzureVnetFlowLogsSecretsConfig as AzureVnetFlowLogsSecretsConfig
+from monad.models.azure_vnet_flow_logs_settings_config import AzureVnetFlowLogsSettingsConfig as AzureVnetFlowLogsSettingsConfig
 from monad.models.batch_config_batch_config import BatchConfigBatchConfig as BatchConfigBatchConfig
 from monad.models.bigquery_input_secrets_config import BigqueryInputSecretsConfig as BigqueryInputSecretsConfig
 from monad.models.bigquery_input_settings_config import BigqueryInputSettingsConfig as BigqueryInputSettingsConfig

@@ -33,13 +33,15 @@ Name | Type | Description | Notes
 **RecordLocation** | Pointer to **string** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. If the records are not nested in the JSON, you can use &#39;@this&#39; to indicate that the file contains the record at the root or an array of records. | [optional] 
 **QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
 **CorrelationId** | Pointer to **string** | The correlation ID of the log | [optional] 
-**ResourceGroupName** | Pointer to **string** | The name of the resource group | [optional] 
+**ResourceGroupName** | Pointer to **string** | The name of the resource group containing the virtual network | [optional] 
 **ResourceProvider** | Pointer to **string** | The provider of the resource | [optional] 
 **ResourceUri** | Pointer to **string** | The URI of the resource | [optional] 
-**SubscriptionId** | Pointer to **string** | The subscription ID of the Azure subscription | [optional] 
+**SubscriptionId** | Pointer to **string** | The Azure subscription ID where the virtual network and storage account are located | [optional] 
 **TenantId** | Pointer to **string** | The tenant ID of the Azure AD application | [optional] 
 **AccountUrl** | Pointer to **string** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
 **Container** | Pointer to **string** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
+**StorageAccountUrl** | Pointer to **string** | The Azure storage account URL where flow logs are stored | [optional] 
+**VirtualNetworkName** | Pointer to **string** | The name of the virtual network for which flow logs are being collected | [optional] 
 **Dataset** | Pointer to **string** | The BigQuery dataset ID containing the table | [optional] 
 **Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
 **Query** | Pointer to **string** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
@@ -1043,6 +1045,56 @@ SetContainer sets Container field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasContainer() bool`
 
 HasContainer returns a boolean if a field has been set.
+
+### GetStorageAccountUrl
+
+`func (o *SecretProcessesorInputConfigSettings) GetStorageAccountUrl() string`
+
+GetStorageAccountUrl returns the StorageAccountUrl field if non-nil, zero value otherwise.
+
+### GetStorageAccountUrlOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetStorageAccountUrlOk() (*string, bool)`
+
+GetStorageAccountUrlOk returns a tuple with the StorageAccountUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStorageAccountUrl
+
+`func (o *SecretProcessesorInputConfigSettings) SetStorageAccountUrl(v string)`
+
+SetStorageAccountUrl sets StorageAccountUrl field to given value.
+
+### HasStorageAccountUrl
+
+`func (o *SecretProcessesorInputConfigSettings) HasStorageAccountUrl() bool`
+
+HasStorageAccountUrl returns a boolean if a field has been set.
+
+### GetVirtualNetworkName
+
+`func (o *SecretProcessesorInputConfigSettings) GetVirtualNetworkName() string`
+
+GetVirtualNetworkName returns the VirtualNetworkName field if non-nil, zero value otherwise.
+
+### GetVirtualNetworkNameOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetVirtualNetworkNameOk() (*string, bool)`
+
+GetVirtualNetworkNameOk returns a tuple with the VirtualNetworkName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVirtualNetworkName
+
+`func (o *SecretProcessesorInputConfigSettings) SetVirtualNetworkName(v string)`
+
+SetVirtualNetworkName sets VirtualNetworkName field to given value.
+
+### HasVirtualNetworkName
+
+`func (o *SecretProcessesorInputConfigSettings) HasVirtualNetworkName() bool`
+
+HasVirtualNetworkName returns a boolean if a field has been set.
 
 ### GetDataset
 

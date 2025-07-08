@@ -32,6 +32,8 @@ type AzureBlobStorageSettingsConfig struct {
 	PartitionFormat *string `json:"partition_format,omitempty"`
 	// An optional prefix for Azure object keys to organize data within the container
 	Prefix *string `json:"prefix,omitempty"`
+	// Location of the record in the JSON object. Applies only if the format is JSON.
+	RecordLocation *string `json:"record_location,omitempty"`
 }
 
 // NewAzureBlobStorageSettingsConfig instantiates a new AzureBlobStorageSettingsConfig object
@@ -243,6 +245,38 @@ func (o *AzureBlobStorageSettingsConfig) SetPrefix(v string) {
 	o.Prefix = &v
 }
 
+// GetRecordLocation returns the RecordLocation field value if set, zero value otherwise.
+func (o *AzureBlobStorageSettingsConfig) GetRecordLocation() string {
+	if o == nil || IsNil(o.RecordLocation) {
+		var ret string
+		return ret
+	}
+	return *o.RecordLocation
+}
+
+// GetRecordLocationOk returns a tuple with the RecordLocation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AzureBlobStorageSettingsConfig) GetRecordLocationOk() (*string, bool) {
+	if o == nil || IsNil(o.RecordLocation) {
+		return nil, false
+	}
+	return o.RecordLocation, true
+}
+
+// HasRecordLocation returns a boolean if a field has been set.
+func (o *AzureBlobStorageSettingsConfig) HasRecordLocation() bool {
+	if o != nil && !IsNil(o.RecordLocation) {
+		return true
+	}
+
+	return false
+}
+
+// SetRecordLocation gets a reference to the given string and assigns it to the RecordLocation field.
+func (o *AzureBlobStorageSettingsConfig) SetRecordLocation(v string) {
+	o.RecordLocation = &v
+}
+
 func (o AzureBlobStorageSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -270,6 +304,9 @@ func (o AzureBlobStorageSettingsConfig) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.Prefix) {
 		toSerialize["prefix"] = o.Prefix
+	}
+	if !IsNil(o.RecordLocation) {
+		toSerialize["record_location"] = o.RecordLocation
 	}
 	return toSerialize, nil
 }

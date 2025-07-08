@@ -30,6 +30,7 @@ type SecretProcessesorInputConfigSettings struct {
 	AwssqsSettingsConfig *AwssqsSettingsConfig
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
 	AzureBlobStorageSettingsConfig *AzureBlobStorageSettingsConfig
+	AzureVnetFlowLogsSettingsConfig *AzureVnetFlowLogsSettingsConfig
 	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BoxEventsSettingsConfig *BoxEventsSettingsConfig
 	BoxUsersSettingsConfig *BoxUsersSettingsConfig
@@ -158,6 +159,13 @@ func AzureActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Az
 func AzureBlobStorageSettingsConfigAsSecretProcessesorInputConfigSettings(v *AzureBlobStorageSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		AzureBlobStorageSettingsConfig: v,
+	}
+}
+
+// AzureVnetFlowLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AzureVnetFlowLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func AzureVnetFlowLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AzureVnetFlowLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		AzureVnetFlowLogsSettingsConfig: v,
 	}
 }
 
@@ -715,6 +723,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.AzureBlobStorageSettingsConfig = nil
+	}
+
+	// try to unmarshal data into AzureVnetFlowLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AzureVnetFlowLogsSettingsConfig)
+	if err == nil {
+		jsonAzureVnetFlowLogsSettingsConfig, _ := json.Marshal(dst.AzureVnetFlowLogsSettingsConfig)
+		if string(jsonAzureVnetFlowLogsSettingsConfig) == "{}" { // empty struct
+			dst.AzureVnetFlowLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AzureVnetFlowLogsSettingsConfig); err != nil {
+				dst.AzureVnetFlowLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AzureVnetFlowLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into BigqueryInputSettingsConfig
@@ -1614,6 +1639,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AwssqsSettingsConfig = nil
 		dst.AzureActivityLogsSettingsConfig = nil
 		dst.AzureBlobStorageSettingsConfig = nil
+		dst.AzureVnetFlowLogsSettingsConfig = nil
 		dst.BigqueryInputSettingsConfig = nil
 		dst.BoxEventsSettingsConfig = nil
 		dst.BoxUsersSettingsConfig = nil
@@ -1719,6 +1745,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.AzureBlobStorageSettingsConfig != nil {
 		return json.Marshal(&src.AzureBlobStorageSettingsConfig)
+	}
+
+	if src.AzureVnetFlowLogsSettingsConfig != nil {
+		return json.Marshal(&src.AzureVnetFlowLogsSettingsConfig)
 	}
 
 	if src.BigqueryInputSettingsConfig != nil {
@@ -1981,6 +2011,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.AzureBlobStorageSettingsConfig
 	}
 
+	if obj.AzureVnetFlowLogsSettingsConfig != nil {
+		return obj.AzureVnetFlowLogsSettingsConfig
+	}
+
 	if obj.BigqueryInputSettingsConfig != nil {
 		return obj.BigqueryInputSettingsConfig
 	}
@@ -2237,6 +2271,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.AzureBlobStorageSettingsConfig != nil {
 		return *obj.AzureBlobStorageSettingsConfig
+	}
+
+	if obj.AzureVnetFlowLogsSettingsConfig != nil {
+		return *obj.AzureVnetFlowLogsSettingsConfig
 	}
 
 	if obj.BigqueryInputSettingsConfig != nil {

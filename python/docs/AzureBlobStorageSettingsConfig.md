@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **format** | **str** | File format of the Blob storage objects in Azure. | [optional] 
 **partition_format** | **str** | Specifies the format for organizing data into partitions within your Azure container. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). | [optional] 
 **prefix** | **str** | An optional prefix for Azure object keys to organize data within the container | [optional] 
+**record_location** | **str** | Location of the record in the JSON object. Applies only if the format is JSON. | [optional] 
 
 ## Example
 
