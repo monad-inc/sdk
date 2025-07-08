@@ -24,6 +24,7 @@ export * from '../models/AzureActivityLogsSecretsConfig';
 export * from '../models/AzureActivityLogsSettingsConfig';
 export * from '../models/AzureBlobStorageSecretsConfig';
 export * from '../models/AzureBlobStorageSettingsConfig';
+export * from '../models/AzureVirtualMachineSettingsConfig';
 export * from '../models/AzureVnetFlowLogsSecretsConfig';
 export * from '../models/AzureVnetFlowLogsSettingsConfig';
 export * from '../models/BatchConfigBatchConfig';
@@ -354,6 +355,7 @@ import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecre
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
 import { AzureBlobStorageSecretsConfig } from '../models/AzureBlobStorageSecretsConfig';
 import { AzureBlobStorageSettingsConfig } from '../models/AzureBlobStorageSettingsConfig';
+import { AzureVirtualMachineSettingsConfig } from '../models/AzureVirtualMachineSettingsConfig';
 import { AzureVnetFlowLogsSecretsConfig } from '../models/AzureVnetFlowLogsSecretsConfig';
 import { AzureVnetFlowLogsSettingsConfig } from '../models/AzureVnetFlowLogsSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
@@ -722,6 +724,7 @@ let typeMap: {[index: string]: any} = {
     "AzureActivityLogsSettingsConfig": AzureActivityLogsSettingsConfig,
     "AzureBlobStorageSecretsConfig": AzureBlobStorageSecretsConfig,
     "AzureBlobStorageSettingsConfig": AzureBlobStorageSettingsConfig,
+    "AzureVirtualMachineSettingsConfig": AzureVirtualMachineSettingsConfig,
     "AzureVnetFlowLogsSecretsConfig": AzureVnetFlowLogsSecretsConfig,
     "AzureVnetFlowLogsSettingsConfig": AzureVnetFlowLogsSettingsConfig,
     "BatchConfigBatchConfig": BatchConfigBatchConfig,

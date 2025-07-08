@@ -234,6 +234,7 @@ Class | Method | HTTP request | Description
  - [AzureActivityLogsSettingsConfig](docs/AzureActivityLogsSettingsConfig.md)
  - [AzureBlobStorageSecretsConfig](docs/AzureBlobStorageSecretsConfig.md)
  - [AzureBlobStorageSettingsConfig](docs/AzureBlobStorageSettingsConfig.md)
+ - [AzureVirtualMachineSettingsConfig](docs/AzureVirtualMachineSettingsConfig.md)
  - [AzureVnetFlowLogsSecretsConfig](docs/AzureVnetFlowLogsSecretsConfig.md)
  - [AzureVnetFlowLogsSettingsConfig](docs/AzureVnetFlowLogsSettingsConfig.md)
  - [BatchConfigBatchConfig](docs/BatchConfigBatchConfig.md)

@@ -29,6 +29,7 @@ import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecre
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
 import { AzureBlobStorageSecretsConfig } from '../models/AzureBlobStorageSecretsConfig';
 import { AzureBlobStorageSettingsConfig } from '../models/AzureBlobStorageSettingsConfig';
+import { AzureVirtualMachineSettingsConfig } from '../models/AzureVirtualMachineSettingsConfig';
 import { AzureVnetFlowLogsSecretsConfig } from '../models/AzureVnetFlowLogsSecretsConfig';
 import { AzureVnetFlowLogsSettingsConfig } from '../models/AzureVnetFlowLogsSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
