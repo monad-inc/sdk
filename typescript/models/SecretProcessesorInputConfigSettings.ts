@@ -26,7 +26,6 @@ import { AzureVnetFlowLogsSettingsConfig } from '../models/AzureVnetFlowLogsSett
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
-import { CertificateManagerSettingsConfig } from '../models/CertificateManagerSettingsConfig';
 import { CloudAssetInventorySettingsConfig } from '../models/CloudAssetInventorySettingsConfig';
 import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';
 import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
@@ -57,8 +56,6 @@ import { ObjectStorageInputSettingsConfig } from '../models/ObjectStorageInputSe
 import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsConfig';
 import { ResourceEvaluationsSettingsConfig } from '../models/ResourceEvaluationsSettingsConfig';
 import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
-import { SecretsmanagerSettingsConfig } from '../models/SecretsmanagerSettingsConfig';
-import { SecurityGroupsSettingsConfig } from '../models/SecurityGroupsSettingsConfig';
 import { SemgrepDeploymentsSettingsConfig } from '../models/SemgrepDeploymentsSettingsConfig';
 import { SemgrepProjectDetailsSettingsConfig } from '../models/SemgrepProjectDetailsSettingsConfig';
 import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettingsConfig';
@@ -82,7 +79,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorInputConfigSettings = ActivityLogsSettingsConfig | ActorsInfoSettingsConfig | AdminActivitySettingsConfig | AdminLogsSettingsConfig | AuditLogsSettingsConfig | AuthLogsSettingsConfig | AwsGuarddutySettingsConfig | AwsS3SettingsConfig | AwssqsSettingsConfig | AzureActivityLogsSettingsConfig | AzureBlobStorageSettingsConfig | AzureVirtualMachineSettingsConfig | AzureVnetFlowLogsSettingsConfig | BigqueryInputSettingsConfig | BoxEventsSettingsConfig | BoxUsersSettingsConfig | CertificateManagerSettingsConfig | CloudAssetInventorySettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudtrailSettingsConfig | CrowdstrikeFdrSettingsConfig | DefenderForEndpointAlertsSettingsConfig | DemoCustomSettingsConfig | DemoSettingsConfig | DetectSummariesSettingsConfig | DeviceActivitySettingsConfig | DeviceDetailsSettingsConfig | DevicesSettingsConfig | DriveActivitySettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | EventsLogsSettingsConfig | FullScansSettingsConfig | GitlabIssuesSettingsConfig | GoogleCloudStorageSettingsConfig | IssuesSettingsConfig | LogAnalyticsQuerySettingsConfig | LoginActivitySettingsConfig | LoginSessionsSettingsConfig | MonadLogSettingsConfig | OauthActivitySettingsConfig | ObjectStorageInputSettingsConfig | OneloginEventsSettingsConfig | ResourceEvaluationsSettingsConfig | RolesInfoSettingsConfig | SecretsmanagerSettingsConfig | SecurityGroupsSettingsConfig | SemgrepDeploymentsSettingsConfig | SemgrepProjectDetailsSettingsConfig | SemgrepProjectsSettingsConfig | SlackUsersSettingsConfig | SlackgroupsSettingsConfig | SnowflakeInputSettingsConfig | SnykOrganizationsSettingsConfig | SnykProjectsSettingsConfig | TailscaleUsersSettingsConfig | TenableAssetsCronSettingsConfig | TenableVulnerabilitiesCronSettingsConfig | UsersInfoSettingsConfig | UsersSettingsConfig | VulnerabilitiesCronSettingsConfig | VulnerabilitiesSettingsConfig | VulnerabilityFindingsSettingsConfig | any | { [key: string]: any; };
+export type SecretProcessesorInputConfigSettings = ActivityLogsSettingsConfig | ActorsInfoSettingsConfig | AdminActivitySettingsConfig | AdminLogsSettingsConfig | AuditLogsSettingsConfig | AuthLogsSettingsConfig | AwsGuarddutySettingsConfig | AwsS3SettingsConfig | AwssqsSettingsConfig | AzureActivityLogsSettingsConfig | AzureBlobStorageSettingsConfig | AzureVirtualMachineSettingsConfig | AzureVnetFlowLogsSettingsConfig | BigqueryInputSettingsConfig | BoxEventsSettingsConfig | BoxUsersSettingsConfig | CloudAssetInventorySettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudtrailSettingsConfig | CrowdstrikeFdrSettingsConfig | DefenderForEndpointAlertsSettingsConfig | DemoCustomSettingsConfig | DemoSettingsConfig | DetectSummariesSettingsConfig | DeviceActivitySettingsConfig | DeviceDetailsSettingsConfig | DevicesSettingsConfig | DriveActivitySettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | EventsLogsSettingsConfig | FullScansSettingsConfig | GitlabIssuesSettingsConfig | GoogleCloudStorageSettingsConfig | IssuesSettingsConfig | LogAnalyticsQuerySettingsConfig | LoginActivitySettingsConfig | LoginSessionsSettingsConfig | MonadLogSettingsConfig | OauthActivitySettingsConfig | ObjectStorageInputSettingsConfig | OneloginEventsSettingsConfig | ResourceEvaluationsSettingsConfig | RolesInfoSettingsConfig | SemgrepDeploymentsSettingsConfig | SemgrepProjectDetailsSettingsConfig | SemgrepProjectsSettingsConfig | SlackUsersSettingsConfig | SlackgroupsSettingsConfig | SnowflakeInputSettingsConfig | SnykOrganizationsSettingsConfig | SnykProjectsSettingsConfig | TailscaleUsersSettingsConfig | TenableAssetsCronSettingsConfig | TenableVulnerabilitiesCronSettingsConfig | UsersInfoSettingsConfig | UsersSettingsConfig | VulnerabilitiesCronSettingsConfig | VulnerabilitiesSettingsConfig | VulnerabilityFindingsSettingsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorInputConfigSettingsClass
@@ -93,9 +90,6 @@ export class SecretProcessesorInputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
-
-
-
 
 
 

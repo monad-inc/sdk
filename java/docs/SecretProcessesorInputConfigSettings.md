@@ -25,8 +25,8 @@
 |**organization** | **String** | Filter by organization name |  [optional] |
 |**repository** | **String** | Filter by repository (format: org-name/repo-name) |  [optional] |
 |**user** | **String** | The username of the Snowflake account used to establish the connection. |  [optional] |
-|**region** | **String** | The AWS region where the security groups that are being fetched are located. |  [optional] |
-|**roleArn** | **String** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. |  [optional] |
+|**region** | **String** | The Region that you would receieve findings for |  [optional] |
+|**roleArn** | **String** | The ARN of the role to assume to access the bucket |  [optional] |
 |**severity** | **String** |  |  [optional] |
 |**bucket** | **String** | Name of the storage bucket |  [optional] |
 |**compression** | **String** | Compression format of the objects |  [optional] |
@@ -52,12 +52,6 @@
 |**timestampColumn** | **String** | The column containing timestamp values used for incremental loading |  [optional] |
 |**eventType** | **List&lt;String&gt;** | A list of event types to filter by. |  [optional] |
 |**filterTerm** | **String** | Limits the results to only users who&#39;s name or login start with the search term. |  [optional] |
-|**certificateStatuses** | [**List&lt;CertificateStatusesEnum&gt;**](#List&lt;CertificateStatusesEnum&gt;) | Filter the certificate list by status value. |  [optional] |
-|**extendedKeyUsage** | [**List&lt;ExtendedKeyUsageEnum&gt;**](#List&lt;ExtendedKeyUsageEnum&gt;) | The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key is used. This is in addition or in place of Key Usage. |  [optional] |
-|**keyTypes** | [**List&lt;KeyTypesEnum&gt;**](#List&lt;KeyTypesEnum&gt;) | Specify one or more algorithms that is used to generate key pairs.\\n\\n |  [optional] |
-|**keyUsage** | [**List&lt;KeyUsageEnum&gt;**](#List&lt;KeyUsageEnum&gt;) | The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate. |  [optional] |
-|**managedBy** | [**ManagedByEnum**](#ManagedByEnum) | Identifies the AWS service that manages the certificate issued by ACM. |  [optional] |
-|**regions** | [**List&lt;RegionsEnum&gt;**](#List&lt;RegionsEnum&gt;) |  |  [optional] |
 |**assetTypes** | **List&lt;String&gt;** | The type of assets to scan for.  If left empty, will scan all assets |  [optional] |
 |**resourceNames** | **List&lt;String&gt;** | The resources to query logs from. |  [optional] |
 |**endpointUrl** | **String** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. |  [optional] |
@@ -117,8 +111,6 @@
 |**usePathStyle** | **Boolean** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. |  [optional] |
 |**subdomain** | **String** | SubDomain is a placeholder that represents your specific OneLogin subdomain. |  [optional] |
 |**evaluationContextIdentifier** | **String** | Filters proactive resource evaluations for a given infrastructure deployment. |  [optional] |
-|**filters** | [**List&lt;SecurityGroupsFilter&gt;**](SecurityGroupsFilter.md) | Filters for the security groups |  [optional] |
-|**includePlannedDeletion** | **Boolean** | Whether or not to include secrets scheduled for deletion |  [optional] |
 |**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  [optional] |
 |**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
 |**role** | **String** | The name of the Role your service account was granted which can access your resources. |  [optional] |
@@ -130,111 +122,6 @@
 |**assetType** | **String** | Asset types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. |  [optional] |
 |**detectionMethod** | **List&lt;String&gt;** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. |  [optional] |
 |**vendorSeverity** | **List&lt;String&gt;** | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. |  [optional] |
-
-
-
-## Enum: List&lt;CertificateStatusesEnum&gt;
-
-| Name | Value |
-|---- | -----|
-| PENDING_VALIDATION | &quot;PENDING_VALIDATION&quot; |
-| ISSUED | &quot;ISSUED&quot; |
-| INACTIVE | &quot;INACTIVE&quot; |
-| EXPIRED | &quot;EXPIRED&quot; |
-| VALIDATION_TIMED_OUT | &quot;VALIDATION_TIMED_OUT&quot; |
-| REVOKED | &quot;REVOKED&quot; |
-| FAILED | &quot;FAILED&quot; |
-
-
-
-## Enum: List&lt;ExtendedKeyUsageEnum&gt;
-
-| Name | Value |
-|---- | -----|
-| TLS_WEB_SERVER_AUTHENTICATION | &quot;TLS_WEB_SERVER_AUTHENTICATION&quot; |
-| TLS_WEB_CLIENT_AUTHENTICATION | &quot;TLS_WEB_CLIENT_AUTHENTICATION&quot; |
-| CODE_SIGNING | &quot;CODE_SIGNING&quot; |
-| EMAIL_PROTECTION | &quot;EMAIL_PROTECTION&quot; |
-| TIME_STAMPING | &quot;TIME_STAMPING&quot; |
-| OCSP_SIGNING | &quot;OCSP_SIGNING&quot; |
-| IPSEC_END_SYSTEM | &quot;IPSEC_END_SYSTEM&quot; |
-| IPSEC_TUNNEL | &quot;IPSEC_TUNNEL&quot; |
-| IPSEC_USER | &quot;IPSEC_USER&quot; |
-| ANY | &quot;ANY&quot; |
-| NONE | &quot;NONE&quot; |
-| CUSTOM | &quot;CUSTOM&quot; |
-
-
-
-## Enum: List&lt;KeyTypesEnum&gt;
-
-| Name | Value |
-|---- | -----|
-| RSA_1024 | &quot;RSA_1024&quot; |
-| RSA_2048 | &quot;RSA_2048&quot; |
-| RSA_3072 | &quot;RSA_3072&quot; |
-| RSA_4096 | &quot;RSA_4096&quot; |
-| EC_PRIME256V1 | &quot;EC_prime256v1&quot; |
-| EC_SECP384R1 | &quot;EC_secp384r1&quot; |
-| EC_SECP521R1 | &quot;EC_secp521r1&quot; |
-
-
-
-## Enum: List&lt;KeyUsageEnum&gt;
-
-| Name | Value |
-|---- | -----|
-| DIGITAL_SIGNATURE | &quot;DIGITAL_SIGNATURE&quot; |
-| NON_REPUDIATION | &quot;NON_REPUDIATION&quot; |
-| KEY_ENCIPHERMENT | &quot;KEY_ENCIPHERMENT&quot; |
-| DATA_ENCIPHERMENT | &quot;DATA_ENCIPHERMENT&quot; |
-| KEY_AGREEMENT | &quot;KEY_AGREEMENT&quot; |
-| CERTIFICATE_SIGNING | &quot;CERTIFICATE_SIGNING&quot; |
-| CRL_SIGNING | &quot;CRL_SIGNING&quot; |
-| ENCIPHER_ONLY | &quot;ENCIPHER_ONLY&quot; |
-| DECIPHER_ONLY | &quot;DECIPHER_ONLY&quot; |
-| ANY | &quot;ANY&quot; |
-| CUSTOM | &quot;CUSTOM&quot; |
-
-
-
-## Enum: ManagedByEnum
-
-| Name | Value |
-|---- | -----|
-| CLOUDFRONT | &quot;CLOUDFRONT&quot; |
-
-
-
-## Enum: List&lt;RegionsEnum&gt;
-
-| Name | Value |
-|---- | -----|
-| US_EAST_1 | &quot;us-east-1&quot; |
-| US_EAST_2 | &quot;us-east-2&quot; |
-| US_WEST_1 | &quot;us-west-1&quot; |
-| US_WEST_2 | &quot;us-west-2&quot; |
-| AF_SOUTH_1 | &quot;af-south-1&quot; |
-| AP_EAST_1 | &quot;ap-east-1&quot; |
-| AP_SOUTH_1 | &quot;ap-south-1&quot; |
-| AP_NORTHEAST_1 | &quot;ap-northeast-1&quot; |
-| AP_NORTHEAST_2 | &quot;ap-northeast-2&quot; |
-| AP_NORTHEAST_3 | &quot;ap-northeast-3&quot; |
-| AP_SOUTHEAST_1 | &quot;ap-southeast-1&quot; |
-| AP_SOUTHEAST_2 | &quot;ap-southeast-2&quot; |
-| CA_CENTRAL_1 | &quot;ca-central-1&quot; |
-| CN_NORTH_1 | &quot;cn-north-1&quot; |
-| CN_NORTHWEST_1 | &quot;cn-northwest-1&quot; |
-| EU_CENTRAL_1 | &quot;eu-central-1&quot; |
-| EU_WEST_1 | &quot;eu-west-1&quot; |
-| EU_WEST_2 | &quot;eu-west-2&quot; |
-| EU_WEST_3 | &quot;eu-west-3&quot; |
-| EU_NORTH_1 | &quot;eu-north-1&quot; |
-| EU_SOUTH_1 | &quot;eu-south-1&quot; |
-| ME_SOUTH_1 | &quot;me-south-1&quot; |
-| SA_EAST_1 | &quot;sa-east-1&quot; |
-| US_GOV_EAST_1 | &quot;us-gov-east-1&quot; |
-| US_GOV_WEST_1 | &quot;us-gov-west-1&quot; |
 
 
 

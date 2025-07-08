@@ -36,7 +36,6 @@ export * from '../models/BoxEventsSecretsConfig';
 export * from '../models/BoxEventsSettingsConfig';
 export * from '../models/BoxUsersSecretsConfig';
 export * from '../models/BoxUsersSettingsConfig';
-export * from '../models/CertificateManagerSettingsConfig';
 export * from '../models/CloudAssetInventorySecretsConfig';
 export * from '../models/CloudAssetInventorySettingsConfig';
 export * from '../models/CloudConfigurationFindingsSecretsConfig';
@@ -91,7 +90,6 @@ export * from '../models/FlattenallFlattenAll';
 export * from '../models/FormatterFormatConfig';
 export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
-export * from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
 export * from '../models/GitlabIssuesSecretsConfig';
 export * from '../models/GitlabIssuesSettingsConfig';
 export * from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -275,9 +273,6 @@ export * from '../models/SecretProcessesorInputConfigSettings';
 export * from '../models/SecretProcessesorOutputConfig';
 export * from '../models/SecretProcessesorOutputConfigSecrets';
 export * from '../models/SecretProcessesorOutputConfigSettings';
-export * from '../models/SecretsmanagerSettingsConfig';
-export * from '../models/SecurityGroupsFilter';
-export * from '../models/SecurityGroupsSettingsConfig';
 export * from '../models/SecurityLakeSettingsConfig';
 export * from '../models/SecurityLakeSourceAccountDetails';
 export * from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -316,7 +311,6 @@ export * from '../models/TenableAssetsSecretsConfig';
 export * from '../models/TenableVulnerabilitiesCronSecretsConfig';
 export * from '../models/TenableVulnerabilitiesCronSettingsConfig';
 export * from '../models/TenableVulnerabilitiesSecretsConfig';
-export * from '../models/TypesFilterNameStringType';
 export * from '../models/UsersInfoSecretsConfig';
 export * from '../models/UsersInfoSettingsConfig';
 export * from '../models/UsersSecretsConfig';
@@ -367,7 +361,6 @@ import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
-import { CertificateManagerSettingsConfig, CertificateManagerSettingsConfigCertificateStatusesEnum   , CertificateManagerSettingsConfigExtendedKeyUsageEnum  , CertificateManagerSettingsConfigKeyTypesEnum  , CertificateManagerSettingsConfigKeyUsageEnum  , CertificateManagerSettingsConfigManagedByEnum  , CertificateManagerSettingsConfigRegionsEnum    } from '../models/CertificateManagerSettingsConfig';
 import { CloudAssetInventorySecretsConfig } from '../models/CloudAssetInventorySecretsConfig';
 import { CloudAssetInventorySettingsConfig } from '../models/CloudAssetInventorySettingsConfig';
 import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigurationFindingsSecretsConfig';
@@ -422,7 +415,6 @@ import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
-import { GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter   } from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
 import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
 import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -606,9 +598,6 @@ import { SecretProcessesorInputConfigSettingsClass } from '../models/SecretProce
 import { SecretProcessesorOutputConfig } from '../models/SecretProcessesorOutputConfig';
 import { SecretProcessesorOutputConfigSecretsClass } from '../models/SecretProcessesorOutputConfigSecrets';
 import { SecretProcessesorOutputConfigSettingsClass } from '../models/SecretProcessesorOutputConfigSettings';
-import { SecretsmanagerSettingsConfig } from '../models/SecretsmanagerSettingsConfig';
-import { SecurityGroupsFilter } from '../models/SecurityGroupsFilter';
-import { SecurityGroupsSettingsConfig } from '../models/SecurityGroupsSettingsConfig';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -647,7 +636,6 @@ import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig
 import { TenableVulnerabilitiesCronSecretsConfig } from '../models/TenableVulnerabilitiesCronSecretsConfig';
 import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
-import { TypesFilterNameStringType } from '../models/TypesFilterNameStringType';
 import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
 import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
@@ -673,28 +661,15 @@ let primitives = [
                  ];
 
 let enumsMap: Set<string> = new Set<string>([
-    "CertificateManagerSettingsConfigCertificateStatusesEnum",
-    "CertificateManagerSettingsConfigExtendedKeyUsageEnum",
-    "CertificateManagerSettingsConfigKeyTypesEnum",
-    "CertificateManagerSettingsConfigKeyUsageEnum",
-    "CertificateManagerSettingsConfigManagedByEnum",
-    "CertificateManagerSettingsConfigRegionsEnum",
     "IssuesSettingsConfigIssueTypesEnum",
     "IssuesSettingsConfigResolutionReasonsEnum",
     "IssuesSettingsConfigSeveritiesEnum",
     "IssuesSettingsConfigStackLayersEnum",
     "IssuesSettingsConfigStatusEnum",
-    "SecretProcessesorInputConfigSettingsCertificateStatusesEnum",
-    "SecretProcessesorInputConfigSettingsExtendedKeyUsageEnum",
-    "SecretProcessesorInputConfigSettingsKeyTypesEnum",
-    "SecretProcessesorInputConfigSettingsKeyUsageEnum",
-    "SecretProcessesorInputConfigSettingsManagedByEnum",
-    "SecretProcessesorInputConfigSettingsRegionsEnum",
     "SecretProcessesorInputConfigSettingsIssueTypesEnum",
     "SecretProcessesorInputConfigSettingsResolutionReasonsEnum",
     "SecretProcessesorInputConfigSettingsSeveritiesEnum",
     "SecretProcessesorInputConfigSettingsStackLayersEnum",
-    "TypesFilterNameStringType",
 ]);
 
 let typeMap: {[index: string]: any} = {
@@ -736,7 +711,6 @@ let typeMap: {[index: string]: any} = {
     "BoxEventsSettingsConfig": BoxEventsSettingsConfig,
     "BoxUsersSecretsConfig": BoxUsersSecretsConfig,
     "BoxUsersSettingsConfig": BoxUsersSettingsConfig,
-    "CertificateManagerSettingsConfig": CertificateManagerSettingsConfig,
     "CloudAssetInventorySecretsConfig": CloudAssetInventorySecretsConfig,
     "CloudAssetInventorySettingsConfig": CloudAssetInventorySettingsConfig,
     "CloudConfigurationFindingsSecretsConfig": CloudConfigurationFindingsSecretsConfig,
@@ -791,7 +765,6 @@ let typeMap: {[index: string]: any} = {
     "FormatterFormatConfig": FormatterFormatConfig,
     "FullScansSecretsConfig": FullScansSecretsConfig,
     "FullScansSettingsConfig": FullScansSettingsConfig,
-    "GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter": GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter,
     "GitlabIssuesSecretsConfig": GitlabIssuesSecretsConfig,
     "GitlabIssuesSettingsConfig": GitlabIssuesSettingsConfig,
     "GoogleCloudStorageOutputSecretsConfig": GoogleCloudStorageOutputSecretsConfig,
@@ -975,9 +948,6 @@ let typeMap: {[index: string]: any} = {
     "SecretProcessesorOutputConfig": SecretProcessesorOutputConfig,
     "SecretProcessesorOutputConfigSecrets": SecretProcessesorOutputConfigSecretsClass,
     "SecretProcessesorOutputConfigSettings": SecretProcessesorOutputConfigSettingsClass,
-    "SecretsmanagerSettingsConfig": SecretsmanagerSettingsConfig,
-    "SecurityGroupsFilter": SecurityGroupsFilter,
-    "SecurityGroupsSettingsConfig": SecurityGroupsSettingsConfig,
     "SecurityLakeSettingsConfig": SecurityLakeSettingsConfig,
     "SecurityLakeSourceAccountDetails": SecurityLakeSourceAccountDetails,
     "SemgrepCodeFindingsSecretsConfig": SemgrepCodeFindingsSecretsConfig,

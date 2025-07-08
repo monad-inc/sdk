@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-07-08T19:37:13.436889974Z[Etc/UTC]
+  - Build date: 2025-07-08T20:54:33.388154656Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -282,7 +282,6 @@ Class | Method | HTTP request | Description
  - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
  - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
  - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
- - [CertificateManagerSettingsConfig](docs/CertificateManagerSettingsConfig.md)
  - [CloudAssetInventorySecretsConfig](docs/CloudAssetInventorySecretsConfig.md)
  - [CloudAssetInventorySettingsConfig](docs/CloudAssetInventorySettingsConfig.md)
  - [CloudConfigurationFindingsSecretsConfig](docs/CloudConfigurationFindingsSecretsConfig.md)
@@ -337,7 +336,6 @@ Class | Method | HTTP request | Description
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
- - [GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter](docs/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.md)
  - [GitlabIssuesSecretsConfig](docs/GitlabIssuesSecretsConfig.md)
  - [GitlabIssuesSettingsConfig](docs/GitlabIssuesSettingsConfig.md)
  - [GoogleCloudStorageOutputSecretsConfig](docs/GoogleCloudStorageOutputSecretsConfig.md)
@@ -521,9 +519,6 @@ Class | Method | HTTP request | Description
  - [SecretProcessesorOutputConfig](docs/SecretProcessesorOutputConfig.md)
  - [SecretProcessesorOutputConfigSecrets](docs/SecretProcessesorOutputConfigSecrets.md)
  - [SecretProcessesorOutputConfigSettings](docs/SecretProcessesorOutputConfigSettings.md)
- - [SecretsmanagerSettingsConfig](docs/SecretsmanagerSettingsConfig.md)
- - [SecurityGroupsFilter](docs/SecurityGroupsFilter.md)
- - [SecurityGroupsSettingsConfig](docs/SecurityGroupsSettingsConfig.md)
  - [SecurityLakeSettingsConfig](docs/SecurityLakeSettingsConfig.md)
  - [SecurityLakeSourceAccountDetails](docs/SecurityLakeSourceAccountDetails.md)
  - [SemgrepCodeFindingsSecretsConfig](docs/SemgrepCodeFindingsSecretsConfig.md)
@@ -562,7 +557,6 @@ Class | Method | HTTP request | Description
  - [TenableVulnerabilitiesCronSecretsConfig](docs/TenableVulnerabilitiesCronSecretsConfig.md)
  - [TenableVulnerabilitiesCronSettingsConfig](docs/TenableVulnerabilitiesCronSettingsConfig.md)
  - [TenableVulnerabilitiesSecretsConfig](docs/TenableVulnerabilitiesSecretsConfig.md)
- - [TypesFilterNameStringType](docs/TypesFilterNameStringType.md)
  - [UsersInfoSecretsConfig](docs/UsersInfoSecretsConfig.md)
  - [UsersInfoSettingsConfig](docs/UsersInfoSettingsConfig.md)
  - [UsersSecretsConfig](docs/UsersSecretsConfig.md)

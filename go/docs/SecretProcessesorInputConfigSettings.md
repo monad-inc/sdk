@@ -22,8 +22,8 @@ Name | Type | Description | Notes
 **Organization** | Pointer to **string** | Filter by organization name | [optional] 
 **Repository** | Pointer to **string** | Filter by repository (format: org-name/repo-name) | [optional] 
 **User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
-**Region** | Pointer to **string** | The AWS region where the security groups that are being fetched are located. | [optional] 
-**RoleArn** | Pointer to **string** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. | [optional] 
+**Region** | Pointer to **string** | The Region that you would receieve findings for | [optional] 
+**RoleArn** | Pointer to **string** | The ARN of the role to assume to access the bucket | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
 **Bucket** | Pointer to **string** | Name of the storage bucket | [optional] 
 **Compression** | Pointer to **string** | Compression format of the objects | [optional] 
@@ -49,12 +49,6 @@ Name | Type | Description | Notes
 **TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
 **EventType** | Pointer to **[]string** | A list of event types to filter by. | [optional] 
 **FilterTerm** | Pointer to **string** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
-**CertificateStatuses** | Pointer to **[]string** | Filter the certificate list by status value. | [optional] 
-**ExtendedKeyUsage** | Pointer to **[]string** | The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key is used. This is in addition or in place of Key Usage. | [optional] 
-**KeyTypes** | Pointer to **[]string** | Specify one or more algorithms that is used to generate key pairs.\\n\\n | [optional] 
-**KeyUsage** | Pointer to **[]string** | The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate. | [optional] 
-**ManagedBy** | Pointer to **string** | Identifies the AWS service that manages the certificate issued by ACM. | [optional] 
-**Regions** | Pointer to **[]string** |  | [optional] 
 **AssetTypes** | Pointer to **[]string** | The type of assets to scan for.  If left empty, will scan all assets | [optional] 
 **ResourceNames** | Pointer to **[]string** | The resources to query logs from. | [optional] 
 **EndpointUrl** | Pointer to **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. | [optional] 
@@ -114,8 +108,6 @@ Name | Type | Description | Notes
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
 **Subdomain** | Pointer to **string** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | [optional] 
 **EvaluationContextIdentifier** | Pointer to **string** | Filters proactive resource evaluations for a given infrastructure deployment. | [optional] 
-**Filters** | Pointer to [**[]SecurityGroupsFilter**](SecurityGroupsFilter.md) | Filters for the security groups | [optional] 
-**IncludePlannedDeletion** | Pointer to **bool** | Whether or not to include secrets scheduled for deletion | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
@@ -1271,156 +1263,6 @@ SetFilterTerm sets FilterTerm field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasFilterTerm() bool`
 
 HasFilterTerm returns a boolean if a field has been set.
-
-### GetCertificateStatuses
-
-`func (o *SecretProcessesorInputConfigSettings) GetCertificateStatuses() []string`
-
-GetCertificateStatuses returns the CertificateStatuses field if non-nil, zero value otherwise.
-
-### GetCertificateStatusesOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetCertificateStatusesOk() (*[]string, bool)`
-
-GetCertificateStatusesOk returns a tuple with the CertificateStatuses field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCertificateStatuses
-
-`func (o *SecretProcessesorInputConfigSettings) SetCertificateStatuses(v []string)`
-
-SetCertificateStatuses sets CertificateStatuses field to given value.
-
-### HasCertificateStatuses
-
-`func (o *SecretProcessesorInputConfigSettings) HasCertificateStatuses() bool`
-
-HasCertificateStatuses returns a boolean if a field has been set.
-
-### GetExtendedKeyUsage
-
-`func (o *SecretProcessesorInputConfigSettings) GetExtendedKeyUsage() []string`
-
-GetExtendedKeyUsage returns the ExtendedKeyUsage field if non-nil, zero value otherwise.
-
-### GetExtendedKeyUsageOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetExtendedKeyUsageOk() (*[]string, bool)`
-
-GetExtendedKeyUsageOk returns a tuple with the ExtendedKeyUsage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExtendedKeyUsage
-
-`func (o *SecretProcessesorInputConfigSettings) SetExtendedKeyUsage(v []string)`
-
-SetExtendedKeyUsage sets ExtendedKeyUsage field to given value.
-
-### HasExtendedKeyUsage
-
-`func (o *SecretProcessesorInputConfigSettings) HasExtendedKeyUsage() bool`
-
-HasExtendedKeyUsage returns a boolean if a field has been set.
-
-### GetKeyTypes
-
-`func (o *SecretProcessesorInputConfigSettings) GetKeyTypes() []string`
-
-GetKeyTypes returns the KeyTypes field if non-nil, zero value otherwise.
-
-### GetKeyTypesOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetKeyTypesOk() (*[]string, bool)`
-
-GetKeyTypesOk returns a tuple with the KeyTypes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKeyTypes
-
-`func (o *SecretProcessesorInputConfigSettings) SetKeyTypes(v []string)`
-
-SetKeyTypes sets KeyTypes field to given value.
-
-### HasKeyTypes
-
-`func (o *SecretProcessesorInputConfigSettings) HasKeyTypes() bool`
-
-HasKeyTypes returns a boolean if a field has been set.
-
-### GetKeyUsage
-
-`func (o *SecretProcessesorInputConfigSettings) GetKeyUsage() []string`
-
-GetKeyUsage returns the KeyUsage field if non-nil, zero value otherwise.
-
-### GetKeyUsageOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetKeyUsageOk() (*[]string, bool)`
-
-GetKeyUsageOk returns a tuple with the KeyUsage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKeyUsage
-
-`func (o *SecretProcessesorInputConfigSettings) SetKeyUsage(v []string)`
-
-SetKeyUsage sets KeyUsage field to given value.
-
-### HasKeyUsage
-
-`func (o *SecretProcessesorInputConfigSettings) HasKeyUsage() bool`
-
-HasKeyUsage returns a boolean if a field has been set.
-
-### GetManagedBy
-
-`func (o *SecretProcessesorInputConfigSettings) GetManagedBy() string`
-
-GetManagedBy returns the ManagedBy field if non-nil, zero value otherwise.
-
-### GetManagedByOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetManagedByOk() (*string, bool)`
-
-GetManagedByOk returns a tuple with the ManagedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetManagedBy
-
-`func (o *SecretProcessesorInputConfigSettings) SetManagedBy(v string)`
-
-SetManagedBy sets ManagedBy field to given value.
-
-### HasManagedBy
-
-`func (o *SecretProcessesorInputConfigSettings) HasManagedBy() bool`
-
-HasManagedBy returns a boolean if a field has been set.
-
-### GetRegions
-
-`func (o *SecretProcessesorInputConfigSettings) GetRegions() []string`
-
-GetRegions returns the Regions field if non-nil, zero value otherwise.
-
-### GetRegionsOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetRegionsOk() (*[]string, bool)`
-
-GetRegionsOk returns a tuple with the Regions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRegions
-
-`func (o *SecretProcessesorInputConfigSettings) SetRegions(v []string)`
-
-SetRegions sets Regions field to given value.
-
-### HasRegions
-
-`func (o *SecretProcessesorInputConfigSettings) HasRegions() bool`
-
-HasRegions returns a boolean if a field has been set.
 
 ### GetAssetTypes
 
@@ -2896,56 +2738,6 @@ SetEvaluationContextIdentifier sets EvaluationContextIdentifier field to given v
 `func (o *SecretProcessesorInputConfigSettings) HasEvaluationContextIdentifier() bool`
 
 HasEvaluationContextIdentifier returns a boolean if a field has been set.
-
-### GetFilters
-
-`func (o *SecretProcessesorInputConfigSettings) GetFilters() []SecurityGroupsFilter`
-
-GetFilters returns the Filters field if non-nil, zero value otherwise.
-
-### GetFiltersOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetFiltersOk() (*[]SecurityGroupsFilter, bool)`
-
-GetFiltersOk returns a tuple with the Filters field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFilters
-
-`func (o *SecretProcessesorInputConfigSettings) SetFilters(v []SecurityGroupsFilter)`
-
-SetFilters sets Filters field to given value.
-
-### HasFilters
-
-`func (o *SecretProcessesorInputConfigSettings) HasFilters() bool`
-
-HasFilters returns a boolean if a field has been set.
-
-### GetIncludePlannedDeletion
-
-`func (o *SecretProcessesorInputConfigSettings) GetIncludePlannedDeletion() bool`
-
-GetIncludePlannedDeletion returns the IncludePlannedDeletion field if non-nil, zero value otherwise.
-
-### GetIncludePlannedDeletionOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetIncludePlannedDeletionOk() (*bool, bool)`
-
-GetIncludePlannedDeletionOk returns a tuple with the IncludePlannedDeletion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludePlannedDeletion
-
-`func (o *SecretProcessesorInputConfigSettings) SetIncludePlannedDeletion(v bool)`
-
-SetIncludePlannedDeletion sets IncludePlannedDeletion field to given value.
-
-### HasIncludePlannedDeletion
-
-`func (o *SecretProcessesorInputConfigSettings) HasIncludePlannedDeletion() bool`
-
-HasIncludePlannedDeletion returns a boolean if a field has been set.
 
 ### GetAccount
 
