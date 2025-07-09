@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **bucket** | **str** | The name of the S3 bucket where data will be stored | [optional] 
 **format** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
 **endpoint** | **str** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | [optional] 
-**headers** | **Dict[str, str]** | Non secret headers | [optional] 
+**headers** | [**List[HttpHeaders]**](HttpHeaders.md) | Non secret headers | [optional] 
 **max_batch_data_size** | **int** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. | [optional] 
 **max_batch_record_count** | **int** | The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request. | [optional] 
 **method** | **str** | The HTTP method to use for requests (GET, POST, PUT, PATCH, or DELETE). | [optional] 

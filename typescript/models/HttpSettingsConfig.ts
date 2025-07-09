@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { HttpHeaders } from '../models/HttpHeaders';
 import { HttpFile } from '../http/http';
 
 /**
@@ -23,7 +24,7 @@ export class HttpSettingsConfig {
     /**
     * Non secret headers
     */
-    'headers'?: { [key: string]: string; };
+    'headers'?: Array<HttpHeaders>;
     /**
     * The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure.
     */
@@ -67,7 +68,7 @@ export class HttpSettingsConfig {
         {
             "name": "headers",
             "baseName": "headers",
-            "type": "{ [key: string]: string; }",
+            "type": "Array<HttpHeaders>",
             "format": ""
         },
         {

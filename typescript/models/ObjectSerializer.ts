@@ -96,6 +96,7 @@ export * from '../models/GoogleCloudStorageOutputSecretsConfig';
 export * from '../models/GoogleCloudStorageOutputSettingsConfig';
 export * from '../models/GoogleCloudStorageSecretsConfig';
 export * from '../models/GoogleCloudStorageSettingsConfig';
+export * from '../models/HttpHeaders';
 export * from '../models/HttpSecretsConfig';
 export * from '../models/HttpSettingsConfig';
 export * from '../models/InputsConnectorMeta';
@@ -421,6 +422,7 @@ import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStor
 import { GoogleCloudStorageOutputSettingsConfig } from '../models/GoogleCloudStorageOutputSettingsConfig';
 import { GoogleCloudStorageSecretsConfig } from '../models/GoogleCloudStorageSecretsConfig';
 import { GoogleCloudStorageSettingsConfig } from '../models/GoogleCloudStorageSettingsConfig';
+import { HttpHeaders } from '../models/HttpHeaders';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
@@ -771,6 +773,7 @@ let typeMap: {[index: string]: any} = {
     "GoogleCloudStorageOutputSettingsConfig": GoogleCloudStorageOutputSettingsConfig,
     "GoogleCloudStorageSecretsConfig": GoogleCloudStorageSecretsConfig,
     "GoogleCloudStorageSettingsConfig": GoogleCloudStorageSettingsConfig,
+    "HttpHeaders": HttpHeaders,
     "HttpSecretsConfig": HttpSecretsConfig,
     "HttpSettingsConfig": HttpSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,

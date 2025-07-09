@@ -23,7 +23,7 @@ type HttpSettingsConfig struct {
 	// The full URL of the HTTP endpoint to send data to. Must include the scheme (http or https).
 	Endpoint *string `json:"endpoint,omitempty"`
 	// Non secret headers
-	Headers map[string]string `json:"headers,omitempty"`
+	Headers []HttpHeaders `json:"headers,omitempty"`
 	// The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure.
 	MaxBatchDataSize *int32 `json:"max_batch_data_size,omitempty"`
 	// The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request.
@@ -90,9 +90,9 @@ func (o *HttpSettingsConfig) SetEndpoint(v string) {
 }
 
 // GetHeaders returns the Headers field value if set, zero value otherwise.
-func (o *HttpSettingsConfig) GetHeaders() map[string]string {
+func (o *HttpSettingsConfig) GetHeaders() []HttpHeaders {
 	if o == nil || IsNil(o.Headers) {
-		var ret map[string]string
+		var ret []HttpHeaders
 		return ret
 	}
 	return o.Headers
@@ -100,9 +100,9 @@ func (o *HttpSettingsConfig) GetHeaders() map[string]string {
 
 // GetHeadersOk returns a tuple with the Headers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HttpSettingsConfig) GetHeadersOk() (map[string]string, bool) {
+func (o *HttpSettingsConfig) GetHeadersOk() ([]HttpHeaders, bool) {
 	if o == nil || IsNil(o.Headers) {
-		return map[string]string{}, false
+		return nil, false
 	}
 	return o.Headers, true
 }
@@ -116,8 +116,8 @@ func (o *HttpSettingsConfig) HasHeaders() bool {
 	return false
 }
 
-// SetHeaders gets a reference to the given map[string]string and assigns it to the Headers field.
-func (o *HttpSettingsConfig) SetHeaders(v map[string]string) {
+// SetHeaders gets a reference to the given []HttpHeaders and assigns it to the Headers field.
+func (o *HttpSettingsConfig) SetHeaders(v []HttpHeaders) {
 	o.Headers = v
 }
 

@@ -156,6 +156,7 @@ __all__ = [
     "GoogleCloudStorageOutputSettingsConfig",
     "GoogleCloudStorageSecretsConfig",
     "GoogleCloudStorageSettingsConfig",
+    "HttpHeaders",
     "HttpSecretsConfig",
     "HttpSettingsConfig",
     "InputsConnectorMeta",
@@ -526,6 +527,7 @@ from monad.models.google_cloud_storage_output_secrets_config import GoogleCloudS
 from monad.models.google_cloud_storage_output_settings_config import GoogleCloudStorageOutputSettingsConfig as GoogleCloudStorageOutputSettingsConfig
 from monad.models.google_cloud_storage_secrets_config import GoogleCloudStorageSecretsConfig as GoogleCloudStorageSecretsConfig
 from monad.models.google_cloud_storage_settings_config import GoogleCloudStorageSettingsConfig as GoogleCloudStorageSettingsConfig
+from monad.models.http_headers import HttpHeaders as HttpHeaders
 from monad.models.http_secrets_config import HttpSecretsConfig as HttpSecretsConfig
 from monad.models.http_settings_config import HttpSettingsConfig as HttpSettingsConfig
 from monad.models.inputs_connector_meta import InputsConnectorMeta as InputsConnectorMeta

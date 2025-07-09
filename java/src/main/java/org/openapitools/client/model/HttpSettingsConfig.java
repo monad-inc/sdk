@@ -20,9 +20,10 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
+import org.openapitools.client.model.HttpHeaders;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * HTTP Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-08T20:54:33.388154656Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T19:15:01.051915579Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class HttpSettingsConfig {
   public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
   @SerializedName(SERIALIZED_NAME_ENDPOINT)
@@ -60,7 +61,7 @@ public class HttpSettingsConfig {
   public static final String SERIALIZED_NAME_HEADERS = "headers";
   @SerializedName(SERIALIZED_NAME_HEADERS)
   @javax.annotation.Nullable
-  private Map<String, String> headers = new HashMap<>();
+  private List<HttpHeaders> headers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MAX_BATCH_DATA_SIZE = "max_batch_data_size";
   @SerializedName(SERIALIZED_NAME_MAX_BATCH_DATA_SIZE)
@@ -119,16 +120,16 @@ public class HttpSettingsConfig {
   }
 
 
-  public HttpSettingsConfig headers(@javax.annotation.Nullable Map<String, String> headers) {
+  public HttpSettingsConfig headers(@javax.annotation.Nullable List<HttpHeaders> headers) {
     this.headers = headers;
     return this;
   }
 
-  public HttpSettingsConfig putHeadersItem(String key, String headersItem) {
+  public HttpSettingsConfig addHeadersItem(HttpHeaders headersItem) {
     if (this.headers == null) {
-      this.headers = new HashMap<>();
+      this.headers = new ArrayList<>();
     }
-    this.headers.put(key, headersItem);
+    this.headers.add(headersItem);
     return this;
   }
 
@@ -137,11 +138,11 @@ public class HttpSettingsConfig {
    * @return headers
    */
   @javax.annotation.Nullable
-  public Map<String, String> getHeaders() {
+  public List<HttpHeaders> getHeaders() {
     return headers;
   }
 
-  public void setHeaders(@javax.annotation.Nullable Map<String, String> headers) {
+  public void setHeaders(@javax.annotation.Nullable List<HttpHeaders> headers) {
     this.headers = headers;
   }
 
@@ -368,6 +369,20 @@ public class HttpSettingsConfig {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("endpoint") != null && !jsonObj.get("endpoint").isJsonNull()) && !jsonObj.get("endpoint").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `endpoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint").toString()));
+      }
+      if (jsonObj.get("headers") != null && !jsonObj.get("headers").isJsonNull()) {
+        JsonArray jsonArrayheaders = jsonObj.getAsJsonArray("headers");
+        if (jsonArrayheaders != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("headers").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `headers` to be an array in the JSON string but got `%s`", jsonObj.get("headers").toString()));
+          }
+
+          // validate the optional field `headers` (array)
+          for (int i = 0; i < jsonArrayheaders.size(); i++) {
+            HttpHeaders.validateJsonElement(jsonArrayheaders.get(i));
+          };
+        }
       }
       if ((jsonObj.get("method") != null && !jsonObj.get("method").isJsonNull()) && !jsonObj.get("method").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("method").toString()));

@@ -113,6 +113,7 @@ from monad.models.google_cloud_storage_output_secrets_config import GoogleCloudS
 from monad.models.google_cloud_storage_output_settings_config import GoogleCloudStorageOutputSettingsConfig
 from monad.models.google_cloud_storage_secrets_config import GoogleCloudStorageSecretsConfig
 from monad.models.google_cloud_storage_settings_config import GoogleCloudStorageSettingsConfig
+from monad.models.http_headers import HttpHeaders
 from monad.models.http_secrets_config import HttpSecretsConfig
 from monad.models.http_settings_config import HttpSettingsConfig
 from monad.models.inputs_connector_meta import InputsConnectorMeta

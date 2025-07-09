@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Endpoint** | Pointer to **string** | The full URL of the HTTP endpoint to send data to. Must include the scheme (http or https). | [optional] 
-**Headers** | Pointer to **map[string]string** | Non secret headers | [optional] 
+**Headers** | Pointer to [**[]HttpHeaders**](HttpHeaders.md) | Non secret headers | [optional] 
 **MaxBatchDataSize** | Pointer to **int32** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. | [optional] 
 **MaxBatchRecordCount** | Pointer to **int32** | The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request. | [optional] 
 **Method** | Pointer to **string** | The HTTP method to use for requests (GET, POST, PUT, PATCH, or DELETE). | [optional] 
@@ -60,20 +60,20 @@ HasEndpoint returns a boolean if a field has been set.
 
 ### GetHeaders
 
-`func (o *HttpSettingsConfig) GetHeaders() map[string]string`
+`func (o *HttpSettingsConfig) GetHeaders() []HttpHeaders`
 
 GetHeaders returns the Headers field if non-nil, zero value otherwise.
 
 ### GetHeadersOk
 
-`func (o *HttpSettingsConfig) GetHeadersOk() (*map[string]string, bool)`
+`func (o *HttpSettingsConfig) GetHeadersOk() (*[]HttpHeaders, bool)`
 
 GetHeadersOk returns a tuple with the Headers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHeaders
 
-`func (o *HttpSettingsConfig) SetHeaders(v map[string]string)`
+`func (o *HttpSettingsConfig) SetHeaders(v []HttpHeaders)`
 
 SetHeaders sets Headers field to given value.
 

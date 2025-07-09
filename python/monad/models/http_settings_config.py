@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.http_headers import HttpHeaders
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class HttpSettingsConfig(BaseModel):
     HTTP Output Settings
     """ # noqa: E501
     endpoint: Optional[StrictStr] = Field(default=None, description="The full URL of the HTTP endpoint to send data to. Must include the scheme (http or https).")
-    headers: Optional[Dict[str, StrictStr]] = Field(default=None, description="Non secret headers")
+    headers: Optional[List[HttpHeaders]] = Field(default=None, description="Non secret headers")
     max_batch_data_size: Optional[StrictInt] = Field(default=None, description="The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure.")
     max_batch_record_count: Optional[StrictInt] = Field(default=None, description="The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request.")
     method: Optional[StrictStr] = Field(default=None, description="The HTTP method to use for requests (GET, POST, PUT, PATCH, or DELETE).")
@@ -77,6 +78,13 @@ class HttpSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in headers (list)
+        _items = []
+        if self.headers:
+            for _item_headers in self.headers:
+                if _item_headers:
+                    _items.append(_item_headers.to_dict())
+            _dict['headers'] = _items
         return _dict
 
     @classmethod
@@ -90,7 +98,7 @@ class HttpSettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "endpoint": obj.get("endpoint"),
-            "headers": obj.get("headers"),
+            "headers": [HttpHeaders.from_dict(_item) for _item in obj["headers"]] if obj.get("headers") is not None else None,
             "max_batch_data_size": obj.get("max_batch_data_size"),
             "max_batch_record_count": obj.get("max_batch_record_count"),
             "method": obj.get("method"),

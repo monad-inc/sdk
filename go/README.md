@@ -306,6 +306,7 @@ Class | Method | HTTP request | Description
  - [GoogleCloudStorageOutputSettingsConfig](docs/GoogleCloudStorageOutputSettingsConfig.md)
  - [GoogleCloudStorageSecretsConfig](docs/GoogleCloudStorageSecretsConfig.md)
  - [GoogleCloudStorageSettingsConfig](docs/GoogleCloudStorageSettingsConfig.md)
+ - [HttpHeaders](docs/HttpHeaders.md)
  - [HttpSecretsConfig](docs/HttpSecretsConfig.md)
  - [HttpSettingsConfig](docs/HttpSettingsConfig.md)
  - [InputsConnectorMeta](docs/InputsConnectorMeta.md)
