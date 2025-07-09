@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * FlagsmithFlag
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T19:44:28.272838845Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T19:54:12.926349512Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class FlagsmithFlag {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
