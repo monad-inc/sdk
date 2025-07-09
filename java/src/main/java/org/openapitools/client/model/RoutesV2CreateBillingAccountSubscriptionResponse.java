@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2CreateBillingAccountSubscriptionResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T22:18:38.655316319Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T23:42:09.808742590Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV2CreateBillingAccountSubscriptionResponse {
   public static final String SERIALIZED_NAME_CHECKOUT_URL = "checkout_url";
   @SerializedName(SERIALIZED_NAME_CHECKOUT_URL)
