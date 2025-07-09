@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **disabled** | **int** |  | 
 **egress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
+**errors** | **int** |  | [optional] 
 **healthy** | **int** |  | 
 **ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **unhealthy** | **int** |  | 

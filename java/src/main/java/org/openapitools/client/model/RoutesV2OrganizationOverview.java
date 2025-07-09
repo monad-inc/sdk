@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2OrganizationOverview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T19:15:01.051915579Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T19:44:28.272838845Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV2OrganizationOverview {
   public static final String SERIALIZED_NAME_DISABLED = "disabled";
   @SerializedName(SERIALIZED_NAME_DISABLED)
@@ -60,6 +60,11 @@ public class RoutesV2OrganizationOverview {
   @SerializedName(SERIALIZED_NAME_EGRESS)
   @javax.annotation.Nullable
   private ModelsDataUsage egress;
+
+  public static final String SERIALIZED_NAME_ERRORS = "errors";
+  @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nullable
+  private Integer errors;
 
   public static final String SERIALIZED_NAME_HEALTHY = "healthy";
   @SerializedName(SERIALIZED_NAME_HEALTHY)
@@ -114,6 +119,25 @@ public class RoutesV2OrganizationOverview {
 
   public void setEgress(@javax.annotation.Nullable ModelsDataUsage egress) {
     this.egress = egress;
+  }
+
+
+  public RoutesV2OrganizationOverview errors(@javax.annotation.Nullable Integer errors) {
+    this.errors = errors;
+    return this;
+  }
+
+  /**
+   * Get errors
+   * @return errors
+   */
+  @javax.annotation.Nullable
+  public Integer getErrors() {
+    return errors;
+  }
+
+  public void setErrors(@javax.annotation.Nullable Integer errors) {
+    this.errors = errors;
   }
 
 
@@ -186,6 +210,7 @@ public class RoutesV2OrganizationOverview {
     RoutesV2OrganizationOverview routesV2OrganizationOverview = (RoutesV2OrganizationOverview) o;
     return Objects.equals(this.disabled, routesV2OrganizationOverview.disabled) &&
         Objects.equals(this.egress, routesV2OrganizationOverview.egress) &&
+        Objects.equals(this.errors, routesV2OrganizationOverview.errors) &&
         Objects.equals(this.healthy, routesV2OrganizationOverview.healthy) &&
         Objects.equals(this.ingress, routesV2OrganizationOverview.ingress) &&
         Objects.equals(this.unhealthy, routesV2OrganizationOverview.unhealthy);
@@ -193,7 +218,7 @@ public class RoutesV2OrganizationOverview {
 
   @Override
   public int hashCode() {
-    return Objects.hash(disabled, egress, healthy, ingress, unhealthy);
+    return Objects.hash(disabled, egress, errors, healthy, ingress, unhealthy);
   }
 
   @Override
@@ -202,6 +227,7 @@ public class RoutesV2OrganizationOverview {
     sb.append("class RoutesV2OrganizationOverview {\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    egress: ").append(toIndentedString(egress)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    healthy: ").append(toIndentedString(healthy)).append("\n");
     sb.append("    ingress: ").append(toIndentedString(ingress)).append("\n");
     sb.append("    unhealthy: ").append(toIndentedString(unhealthy)).append("\n");
@@ -226,7 +252,7 @@ public class RoutesV2OrganizationOverview {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("disabled", "egress", "healthy", "ingress", "unhealthy"));
+    openapiFields = new HashSet<String>(Arrays.asList("disabled", "egress", "errors", "healthy", "ingress", "unhealthy"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("disabled", "healthy", "unhealthy"));

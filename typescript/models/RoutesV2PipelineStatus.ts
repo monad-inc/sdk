@@ -15,6 +15,7 @@ import { HttpFile } from '../http/http';
 
 export class RoutesV2PipelineStatus {
     'egress'?: ModelsDataUsage;
+    'errors'?: number;
     'ingress'?: ModelsDataUsage;
     'pipelineId': string;
     'pipelineName': string;
@@ -29,6 +30,12 @@ export class RoutesV2PipelineStatus {
             "name": "egress",
             "baseName": "egress",
             "type": "ModelsDataUsage",
+            "format": ""
+        },
+        {
+            "name": "errors",
+            "baseName": "errors",
+            "type": "number",
             "format": ""
         },
         {

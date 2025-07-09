@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_data_usage import ModelsDataUsage
 from typing import Optional, Set
@@ -29,11 +29,12 @@ class RoutesV2PipelineStatus(BaseModel):
     RoutesV2PipelineStatus
     """ # noqa: E501
     egress: Optional[ModelsDataUsage] = None
+    errors: Optional[StrictInt] = None
     ingress: Optional[ModelsDataUsage] = None
     pipeline_id: StrictStr
     pipeline_name: StrictStr
     status: StrictStr
-    __properties: ClassVar[List[str]] = ["egress", "ingress", "pipeline_id", "pipeline_name", "status"]
+    __properties: ClassVar[List[str]] = ["egress", "errors", "ingress", "pipeline_id", "pipeline_name", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,7 @@ class RoutesV2PipelineStatus(BaseModel):
 
         _obj = cls.model_validate({
             "egress": ModelsDataUsage.from_dict(obj["egress"]) if obj.get("egress") is not None else None,
+            "errors": obj.get("errors"),
             "ingress": ModelsDataUsage.from_dict(obj["ingress"]) if obj.get("ingress") is not None else None,
             "pipeline_id": obj.get("pipeline_id"),
             "pipeline_name": obj.get("pipeline_name"),

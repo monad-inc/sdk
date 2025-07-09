@@ -49,12 +49,17 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T19:15:01.051915579Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T19:44:28.272838845Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV2PipelineStatus {
   public static final String SERIALIZED_NAME_EGRESS = "egress";
   @SerializedName(SERIALIZED_NAME_EGRESS)
   @javax.annotation.Nullable
   private ModelsDataUsage egress;
+
+  public static final String SERIALIZED_NAME_ERRORS = "errors";
+  @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nullable
+  private Integer errors;
 
   public static final String SERIALIZED_NAME_INGRESS = "ingress";
   @SerializedName(SERIALIZED_NAME_INGRESS)
@@ -95,6 +100,25 @@ public class RoutesV2PipelineStatus {
 
   public void setEgress(@javax.annotation.Nullable ModelsDataUsage egress) {
     this.egress = egress;
+  }
+
+
+  public RoutesV2PipelineStatus errors(@javax.annotation.Nullable Integer errors) {
+    this.errors = errors;
+    return this;
+  }
+
+  /**
+   * Get errors
+   * @return errors
+   */
+  @javax.annotation.Nullable
+  public Integer getErrors() {
+    return errors;
+  }
+
+  public void setErrors(@javax.annotation.Nullable Integer errors) {
+    this.errors = errors;
   }
 
 
@@ -185,6 +209,7 @@ public class RoutesV2PipelineStatus {
     }
     RoutesV2PipelineStatus routesV2PipelineStatus = (RoutesV2PipelineStatus) o;
     return Objects.equals(this.egress, routesV2PipelineStatus.egress) &&
+        Objects.equals(this.errors, routesV2PipelineStatus.errors) &&
         Objects.equals(this.ingress, routesV2PipelineStatus.ingress) &&
         Objects.equals(this.pipelineId, routesV2PipelineStatus.pipelineId) &&
         Objects.equals(this.pipelineName, routesV2PipelineStatus.pipelineName) &&
@@ -193,7 +218,7 @@ public class RoutesV2PipelineStatus {
 
   @Override
   public int hashCode() {
-    return Objects.hash(egress, ingress, pipelineId, pipelineName, status);
+    return Objects.hash(egress, errors, ingress, pipelineId, pipelineName, status);
   }
 
   @Override
@@ -201,6 +226,7 @@ public class RoutesV2PipelineStatus {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV2PipelineStatus {\n");
     sb.append("    egress: ").append(toIndentedString(egress)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    ingress: ").append(toIndentedString(ingress)).append("\n");
     sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
     sb.append("    pipelineName: ").append(toIndentedString(pipelineName)).append("\n");
@@ -226,7 +252,7 @@ public class RoutesV2PipelineStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("egress", "ingress", "pipeline_id", "pipeline_name", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("egress", "errors", "ingress", "pipeline_id", "pipeline_name", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("pipeline_id", "pipeline_name", "status"));

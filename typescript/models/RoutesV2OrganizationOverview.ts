@@ -16,6 +16,7 @@ import { HttpFile } from '../http/http';
 export class RoutesV2OrganizationOverview {
     'disabled': number;
     'egress'?: ModelsDataUsage;
+    'errors'?: number;
     'healthy': number;
     'ingress'?: ModelsDataUsage;
     'unhealthy': number;
@@ -35,6 +36,12 @@ export class RoutesV2OrganizationOverview {
             "name": "egress",
             "baseName": "egress",
             "type": "ModelsDataUsage",
+            "format": ""
+        },
+        {
+            "name": "errors",
+            "baseName": "errors",
+            "type": "number",
             "format": ""
         },
         {

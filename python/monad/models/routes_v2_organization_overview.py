@@ -30,10 +30,11 @@ class RoutesV2OrganizationOverview(BaseModel):
     """ # noqa: E501
     disabled: StrictInt
     egress: Optional[ModelsDataUsage] = None
+    errors: Optional[StrictInt] = None
     healthy: StrictInt
     ingress: Optional[ModelsDataUsage] = None
     unhealthy: StrictInt
-    __properties: ClassVar[List[str]] = ["disabled", "egress", "healthy", "ingress", "unhealthy"]
+    __properties: ClassVar[List[str]] = ["disabled", "egress", "errors", "healthy", "ingress", "unhealthy"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +95,7 @@ class RoutesV2OrganizationOverview(BaseModel):
         _obj = cls.model_validate({
             "disabled": obj.get("disabled"),
             "egress": ModelsDataUsage.from_dict(obj["egress"]) if obj.get("egress") is not None else None,
+            "errors": obj.get("errors"),
             "healthy": obj.get("healthy"),
             "ingress": ModelsDataUsage.from_dict(obj["ingress"]) if obj.get("ingress") is not None else None,
             "unhealthy": obj.get("unhealthy")

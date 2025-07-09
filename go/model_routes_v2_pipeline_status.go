@@ -23,6 +23,7 @@ var _ MappedNullable = &RoutesV2PipelineStatus{}
 // RoutesV2PipelineStatus struct for RoutesV2PipelineStatus
 type RoutesV2PipelineStatus struct {
 	Egress *ModelsDataUsage `json:"egress,omitempty"`
+	Errors *int32 `json:"errors,omitempty"`
 	Ingress *ModelsDataUsage `json:"ingress,omitempty"`
 	PipelineId string `json:"pipeline_id"`
 	PipelineName string `json:"pipeline_name"`
@@ -81,6 +82,38 @@ func (o *RoutesV2PipelineStatus) HasEgress() bool {
 // SetEgress gets a reference to the given ModelsDataUsage and assigns it to the Egress field.
 func (o *RoutesV2PipelineStatus) SetEgress(v ModelsDataUsage) {
 	o.Egress = &v
+}
+
+// GetErrors returns the Errors field value if set, zero value otherwise.
+func (o *RoutesV2PipelineStatus) GetErrors() int32 {
+	if o == nil || IsNil(o.Errors) {
+		var ret int32
+		return ret
+	}
+	return *o.Errors
+}
+
+// GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2PipelineStatus) GetErrorsOk() (*int32, bool) {
+	if o == nil || IsNil(o.Errors) {
+		return nil, false
+	}
+	return o.Errors, true
+}
+
+// HasErrors returns a boolean if a field has been set.
+func (o *RoutesV2PipelineStatus) HasErrors() bool {
+	if o != nil && !IsNil(o.Errors) {
+		return true
+	}
+
+	return false
+}
+
+// SetErrors gets a reference to the given int32 and assigns it to the Errors field.
+func (o *RoutesV2PipelineStatus) SetErrors(v int32) {
+	o.Errors = &v
 }
 
 // GetIngress returns the Ingress field value if set, zero value otherwise.
@@ -199,6 +232,9 @@ func (o RoutesV2PipelineStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Egress) {
 		toSerialize["egress"] = o.Egress
+	}
+	if !IsNil(o.Errors) {
+		toSerialize["errors"] = o.Errors
 	}
 	if !IsNil(o.Ingress) {
 		toSerialize["ingress"] = o.Ingress

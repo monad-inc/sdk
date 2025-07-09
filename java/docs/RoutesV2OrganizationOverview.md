@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**disabled** | **Integer** |  |  |
 |**egress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  |  [optional] |
+|**errors** | **Integer** |  |  [optional] |
 |**healthy** | **Integer** |  |  |
 |**ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  |  [optional] |
 |**unhealthy** | **Integer** |  |  |
