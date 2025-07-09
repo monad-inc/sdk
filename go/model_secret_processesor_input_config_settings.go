@@ -40,6 +40,7 @@ type SecretProcessesorInputConfigSettings struct {
 	CloudLogsSettingsConfig *CloudLogsSettingsConfig
 	CloudResourceInventorySettingsConfig *CloudResourceInventorySettingsConfig
 	CloudtrailSettingsConfig *CloudtrailSettingsConfig
+	CognitoUsersSettingsConfig *CognitoUsersSettingsConfig
 	CrowdstrikeFdrSettingsConfig *CrowdstrikeFdrSettingsConfig
 	DefenderForEndpointAlertsSettingsConfig *DefenderForEndpointAlertsSettingsConfig
 	DemoCustomSettingsConfig *DemoCustomSettingsConfig
@@ -55,6 +56,7 @@ type SecretProcessesorInputConfigSettings struct {
 	FullScansSettingsConfig *FullScansSettingsConfig
 	GitlabIssuesSettingsConfig *GitlabIssuesSettingsConfig
 	GoogleCloudStorageSettingsConfig *GoogleCloudStorageSettingsConfig
+	IamAccessAnalyzerSettingsConfig *IamAccessAnalyzerSettingsConfig
 	IssuesSettingsConfig *IssuesSettingsConfig
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
 	LoginActivitySettingsConfig *LoginActivitySettingsConfig
@@ -65,6 +67,8 @@ type SecretProcessesorInputConfigSettings struct {
 	OneloginEventsSettingsConfig *OneloginEventsSettingsConfig
 	ResourceEvaluationsSettingsConfig *ResourceEvaluationsSettingsConfig
 	RolesInfoSettingsConfig *RolesInfoSettingsConfig
+	SecretsmanagerSettingsConfig *SecretsmanagerSettingsConfig
+	SecurityGroupsSettingsConfig *SecurityGroupsSettingsConfig
 	SemgrepDeploymentsSettingsConfig *SemgrepDeploymentsSettingsConfig
 	SemgrepProjectDetailsSettingsConfig *SemgrepProjectDetailsSettingsConfig
 	SemgrepProjectsSettingsConfig *SemgrepProjectsSettingsConfig
@@ -231,6 +235,13 @@ func CloudtrailSettingsConfigAsSecretProcessesorInputConfigSettings(v *Cloudtrai
 	}
 }
 
+// CognitoUsersSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CognitoUsersSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CognitoUsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *CognitoUsersSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CognitoUsersSettingsConfig: v,
+	}
+}
+
 // CrowdstrikeFdrSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CrowdstrikeFdrSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func CrowdstrikeFdrSettingsConfigAsSecretProcessesorInputConfigSettings(v *CrowdstrikeFdrSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -336,6 +347,13 @@ func GoogleCloudStorageSettingsConfigAsSecretProcessesorInputConfigSettings(v *G
 	}
 }
 
+// IamAccessAnalyzerSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns IamAccessAnalyzerSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func IamAccessAnalyzerSettingsConfigAsSecretProcessesorInputConfigSettings(v *IamAccessAnalyzerSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		IamAccessAnalyzerSettingsConfig: v,
+	}
+}
+
 // IssuesSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns IssuesSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func IssuesSettingsConfigAsSecretProcessesorInputConfigSettings(v *IssuesSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -403,6 +421,20 @@ func ResourceEvaluationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *
 func RolesInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *RolesInfoSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		RolesInfoSettingsConfig: v,
+	}
+}
+
+// SecretsmanagerSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SecretsmanagerSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func SecretsmanagerSettingsConfigAsSecretProcessesorInputConfigSettings(v *SecretsmanagerSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		SecretsmanagerSettingsConfig: v,
+	}
+}
+
+// SecurityGroupsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SecurityGroupsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func SecurityGroupsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SecurityGroupsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		SecurityGroupsSettingsConfig: v,
 	}
 }
 
@@ -887,6 +919,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CloudtrailSettingsConfig = nil
 	}
 
+	// try to unmarshal data into CognitoUsersSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CognitoUsersSettingsConfig)
+	if err == nil {
+		jsonCognitoUsersSettingsConfig, _ := json.Marshal(dst.CognitoUsersSettingsConfig)
+		if string(jsonCognitoUsersSettingsConfig) == "{}" { // empty struct
+			dst.CognitoUsersSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CognitoUsersSettingsConfig); err != nil {
+				dst.CognitoUsersSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CognitoUsersSettingsConfig = nil
+	}
+
 	// try to unmarshal data into CrowdstrikeFdrSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.CrowdstrikeFdrSettingsConfig)
 	if err == nil {
@@ -1142,6 +1191,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.GoogleCloudStorageSettingsConfig = nil
 	}
 
+	// try to unmarshal data into IamAccessAnalyzerSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.IamAccessAnalyzerSettingsConfig)
+	if err == nil {
+		jsonIamAccessAnalyzerSettingsConfig, _ := json.Marshal(dst.IamAccessAnalyzerSettingsConfig)
+		if string(jsonIamAccessAnalyzerSettingsConfig) == "{}" { // empty struct
+			dst.IamAccessAnalyzerSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.IamAccessAnalyzerSettingsConfig); err != nil {
+				dst.IamAccessAnalyzerSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.IamAccessAnalyzerSettingsConfig = nil
+	}
+
 	// try to unmarshal data into IssuesSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.IssuesSettingsConfig)
 	if err == nil {
@@ -1310,6 +1376,40 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.RolesInfoSettingsConfig = nil
+	}
+
+	// try to unmarshal data into SecretsmanagerSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SecretsmanagerSettingsConfig)
+	if err == nil {
+		jsonSecretsmanagerSettingsConfig, _ := json.Marshal(dst.SecretsmanagerSettingsConfig)
+		if string(jsonSecretsmanagerSettingsConfig) == "{}" { // empty struct
+			dst.SecretsmanagerSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SecretsmanagerSettingsConfig); err != nil {
+				dst.SecretsmanagerSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SecretsmanagerSettingsConfig = nil
+	}
+
+	// try to unmarshal data into SecurityGroupsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SecurityGroupsSettingsConfig)
+	if err == nil {
+		jsonSecurityGroupsSettingsConfig, _ := json.Marshal(dst.SecurityGroupsSettingsConfig)
+		if string(jsonSecurityGroupsSettingsConfig) == "{}" { // empty struct
+			dst.SecurityGroupsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SecurityGroupsSettingsConfig); err != nil {
+				dst.SecurityGroupsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SecurityGroupsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into SemgrepDeploymentsSettingsConfig
@@ -1624,6 +1724,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CloudLogsSettingsConfig = nil
 		dst.CloudResourceInventorySettingsConfig = nil
 		dst.CloudtrailSettingsConfig = nil
+		dst.CognitoUsersSettingsConfig = nil
 		dst.CrowdstrikeFdrSettingsConfig = nil
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
 		dst.DemoCustomSettingsConfig = nil
@@ -1639,6 +1740,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.FullScansSettingsConfig = nil
 		dst.GitlabIssuesSettingsConfig = nil
 		dst.GoogleCloudStorageSettingsConfig = nil
+		dst.IamAccessAnalyzerSettingsConfig = nil
 		dst.IssuesSettingsConfig = nil
 		dst.LogAnalyticsQuerySettingsConfig = nil
 		dst.LoginActivitySettingsConfig = nil
@@ -1649,6 +1751,8 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OneloginEventsSettingsConfig = nil
 		dst.ResourceEvaluationsSettingsConfig = nil
 		dst.RolesInfoSettingsConfig = nil
+		dst.SecretsmanagerSettingsConfig = nil
+		dst.SecurityGroupsSettingsConfig = nil
 		dst.SemgrepDeploymentsSettingsConfig = nil
 		dst.SemgrepProjectDetailsSettingsConfig = nil
 		dst.SemgrepProjectsSettingsConfig = nil
@@ -1761,6 +1865,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CloudtrailSettingsConfig)
 	}
 
+	if src.CognitoUsersSettingsConfig != nil {
+		return json.Marshal(&src.CognitoUsersSettingsConfig)
+	}
+
 	if src.CrowdstrikeFdrSettingsConfig != nil {
 		return json.Marshal(&src.CrowdstrikeFdrSettingsConfig)
 	}
@@ -1821,6 +1929,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.GoogleCloudStorageSettingsConfig)
 	}
 
+	if src.IamAccessAnalyzerSettingsConfig != nil {
+		return json.Marshal(&src.IamAccessAnalyzerSettingsConfig)
+	}
+
 	if src.IssuesSettingsConfig != nil {
 		return json.Marshal(&src.IssuesSettingsConfig)
 	}
@@ -1859,6 +1971,14 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.RolesInfoSettingsConfig != nil {
 		return json.Marshal(&src.RolesInfoSettingsConfig)
+	}
+
+	if src.SecretsmanagerSettingsConfig != nil {
+		return json.Marshal(&src.SecretsmanagerSettingsConfig)
+	}
+
+	if src.SecurityGroupsSettingsConfig != nil {
+		return json.Marshal(&src.SecurityGroupsSettingsConfig)
 	}
 
 	if src.SemgrepDeploymentsSettingsConfig != nil {
@@ -2021,6 +2141,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.CloudtrailSettingsConfig
 	}
 
+	if obj.CognitoUsersSettingsConfig != nil {
+		return obj.CognitoUsersSettingsConfig
+	}
+
 	if obj.CrowdstrikeFdrSettingsConfig != nil {
 		return obj.CrowdstrikeFdrSettingsConfig
 	}
@@ -2081,6 +2205,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.GoogleCloudStorageSettingsConfig
 	}
 
+	if obj.IamAccessAnalyzerSettingsConfig != nil {
+		return obj.IamAccessAnalyzerSettingsConfig
+	}
+
 	if obj.IssuesSettingsConfig != nil {
 		return obj.IssuesSettingsConfig
 	}
@@ -2119,6 +2247,14 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.RolesInfoSettingsConfig != nil {
 		return obj.RolesInfoSettingsConfig
+	}
+
+	if obj.SecretsmanagerSettingsConfig != nil {
+		return obj.SecretsmanagerSettingsConfig
+	}
+
+	if obj.SecurityGroupsSettingsConfig != nil {
+		return obj.SecurityGroupsSettingsConfig
 	}
 
 	if obj.SemgrepDeploymentsSettingsConfig != nil {
@@ -2279,6 +2415,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.CloudtrailSettingsConfig
 	}
 
+	if obj.CognitoUsersSettingsConfig != nil {
+		return *obj.CognitoUsersSettingsConfig
+	}
+
 	if obj.CrowdstrikeFdrSettingsConfig != nil {
 		return *obj.CrowdstrikeFdrSettingsConfig
 	}
@@ -2339,6 +2479,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.GoogleCloudStorageSettingsConfig
 	}
 
+	if obj.IamAccessAnalyzerSettingsConfig != nil {
+		return *obj.IamAccessAnalyzerSettingsConfig
+	}
+
 	if obj.IssuesSettingsConfig != nil {
 		return *obj.IssuesSettingsConfig
 	}
@@ -2377,6 +2521,14 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.RolesInfoSettingsConfig != nil {
 		return *obj.RolesInfoSettingsConfig
+	}
+
+	if obj.SecretsmanagerSettingsConfig != nil {
+		return *obj.SecretsmanagerSettingsConfig
+	}
+
+	if obj.SecurityGroupsSettingsConfig != nil {
+		return *obj.SecurityGroupsSettingsConfig
 	}
 
 	if obj.SemgrepDeploymentsSettingsConfig != nil {

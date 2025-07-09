@@ -45,6 +45,8 @@ export * from '../models/CloudLogsSettingsConfig';
 export * from '../models/CloudResourceInventorySecretsConfig';
 export * from '../models/CloudResourceInventorySettingsConfig';
 export * from '../models/CloudtrailSettingsConfig';
+export * from '../models/CognitoUsersFilter';
+export * from '../models/CognitoUsersSettingsConfig';
 export * from '../models/CommunityEditionSecretsConfig';
 export * from '../models/CommunityEditionSettingsConfig';
 export * from '../models/CommunityTransformsInternalTransformConfig';
@@ -90,6 +92,7 @@ export * from '../models/FlattenallFlattenAll';
 export * from '../models/FormatterFormatConfig';
 export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
+export * from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
 export * from '../models/GitlabIssuesSecretsConfig';
 export * from '../models/GitlabIssuesSettingsConfig';
 export * from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -99,6 +102,9 @@ export * from '../models/GoogleCloudStorageSettingsConfig';
 export * from '../models/HttpHeaders';
 export * from '../models/HttpSecretsConfig';
 export * from '../models/HttpSettingsConfig';
+export * from '../models/IamAccessAnalyzerCriterion';
+export * from '../models/IamAccessAnalyzerFilter';
+export * from '../models/IamAccessAnalyzerSettingsConfig';
 export * from '../models/InputsConnectorMeta';
 export * from '../models/IssuesSecretsConfig';
 export * from '../models/IssuesSettingsConfig';
@@ -274,6 +280,9 @@ export * from '../models/SecretProcessesorInputConfigSettings';
 export * from '../models/SecretProcessesorOutputConfig';
 export * from '../models/SecretProcessesorOutputConfigSecrets';
 export * from '../models/SecretProcessesorOutputConfigSettings';
+export * from '../models/SecretsmanagerSettingsConfig';
+export * from '../models/SecurityGroupsFilter';
+export * from '../models/SecurityGroupsSettingsConfig';
 export * from '../models/SecurityLakeSettingsConfig';
 export * from '../models/SecurityLakeSourceAccountDetails';
 export * from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -312,6 +321,7 @@ export * from '../models/TenableAssetsSecretsConfig';
 export * from '../models/TenableVulnerabilitiesCronSecretsConfig';
 export * from '../models/TenableVulnerabilitiesCronSettingsConfig';
 export * from '../models/TenableVulnerabilitiesSecretsConfig';
+export * from '../models/TypesFilterNameStringType';
 export * from '../models/UsersInfoSecretsConfig';
 export * from '../models/UsersInfoSettingsConfig';
 export * from '../models/UsersSecretsConfig';
@@ -371,6 +381,8 @@ import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
 import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
+import { CognitoUsersFilter } from '../models/CognitoUsersFilter';
+import { CognitoUsersSettingsConfig } from '../models/CognitoUsersSettingsConfig';
 import { CommunityEditionSecretsConfig } from '../models/CommunityEditionSecretsConfig';
 import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettingsConfig';
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
@@ -416,6 +428,7 @@ import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
+import { GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter   } from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
 import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
 import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -425,6 +438,9 @@ import { GoogleCloudStorageSettingsConfig } from '../models/GoogleCloudStorageSe
 import { HttpHeaders } from '../models/HttpHeaders';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
+import { IamAccessAnalyzerCriterion } from '../models/IamAccessAnalyzerCriterion';
+import { IamAccessAnalyzerFilter } from '../models/IamAccessAnalyzerFilter';
+import { IamAccessAnalyzerSettingsConfig } from '../models/IamAccessAnalyzerSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig     , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum    } from '../models/IssuesSettingsConfig';
@@ -600,6 +616,9 @@ import { SecretProcessesorInputConfigSettingsClass } from '../models/SecretProce
 import { SecretProcessesorOutputConfig } from '../models/SecretProcessesorOutputConfig';
 import { SecretProcessesorOutputConfigSecretsClass } from '../models/SecretProcessesorOutputConfigSecrets';
 import { SecretProcessesorOutputConfigSettingsClass } from '../models/SecretProcessesorOutputConfigSettings';
+import { SecretsmanagerSettingsConfig } from '../models/SecretsmanagerSettingsConfig';
+import { SecurityGroupsFilter } from '../models/SecurityGroupsFilter';
+import { SecurityGroupsSettingsConfig } from '../models/SecurityGroupsSettingsConfig';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
@@ -638,6 +657,7 @@ import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig
 import { TenableVulnerabilitiesCronSecretsConfig } from '../models/TenableVulnerabilitiesCronSecretsConfig';
 import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
+import { TypesFilterNameStringType } from '../models/TypesFilterNameStringType';
 import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
 import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
@@ -672,6 +692,7 @@ let enumsMap: Set<string> = new Set<string>([
     "SecretProcessesorInputConfigSettingsResolutionReasonsEnum",
     "SecretProcessesorInputConfigSettingsSeveritiesEnum",
     "SecretProcessesorInputConfigSettingsStackLayersEnum",
+    "TypesFilterNameStringType",
 ]);
 
 let typeMap: {[index: string]: any} = {
@@ -722,6 +743,8 @@ let typeMap: {[index: string]: any} = {
     "CloudResourceInventorySecretsConfig": CloudResourceInventorySecretsConfig,
     "CloudResourceInventorySettingsConfig": CloudResourceInventorySettingsConfig,
     "CloudtrailSettingsConfig": CloudtrailSettingsConfig,
+    "CognitoUsersFilter": CognitoUsersFilter,
+    "CognitoUsersSettingsConfig": CognitoUsersSettingsConfig,
     "CommunityEditionSecretsConfig": CommunityEditionSecretsConfig,
     "CommunityEditionSettingsConfig": CommunityEditionSettingsConfig,
     "CommunityTransformsInternalTransformConfig": CommunityTransformsInternalTransformConfig,
@@ -767,6 +790,7 @@ let typeMap: {[index: string]: any} = {
     "FormatterFormatConfig": FormatterFormatConfig,
     "FullScansSecretsConfig": FullScansSecretsConfig,
     "FullScansSettingsConfig": FullScansSettingsConfig,
+    "GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter": GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter,
     "GitlabIssuesSecretsConfig": GitlabIssuesSecretsConfig,
     "GitlabIssuesSettingsConfig": GitlabIssuesSettingsConfig,
     "GoogleCloudStorageOutputSecretsConfig": GoogleCloudStorageOutputSecretsConfig,
@@ -776,6 +800,9 @@ let typeMap: {[index: string]: any} = {
     "HttpHeaders": HttpHeaders,
     "HttpSecretsConfig": HttpSecretsConfig,
     "HttpSettingsConfig": HttpSettingsConfig,
+    "IamAccessAnalyzerCriterion": IamAccessAnalyzerCriterion,
+    "IamAccessAnalyzerFilter": IamAccessAnalyzerFilter,
+    "IamAccessAnalyzerSettingsConfig": IamAccessAnalyzerSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,
     "IssuesSecretsConfig": IssuesSecretsConfig,
     "IssuesSettingsConfig": IssuesSettingsConfig,
@@ -951,6 +978,9 @@ let typeMap: {[index: string]: any} = {
     "SecretProcessesorOutputConfig": SecretProcessesorOutputConfig,
     "SecretProcessesorOutputConfigSecrets": SecretProcessesorOutputConfigSecretsClass,
     "SecretProcessesorOutputConfigSettings": SecretProcessesorOutputConfigSettingsClass,
+    "SecretsmanagerSettingsConfig": SecretsmanagerSettingsConfig,
+    "SecurityGroupsFilter": SecurityGroupsFilter,
+    "SecurityGroupsSettingsConfig": SecurityGroupsSettingsConfig,
     "SecurityLakeSettingsConfig": SecurityLakeSettingsConfig,
     "SecurityLakeSourceAccountDetails": SecurityLakeSourceAccountDetails,
     "SemgrepCodeFindingsSecretsConfig": SemgrepCodeFindingsSecretsConfig,

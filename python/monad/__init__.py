@@ -105,6 +105,8 @@ __all__ = [
     "CloudResourceInventorySecretsConfig",
     "CloudResourceInventorySettingsConfig",
     "CloudtrailSettingsConfig",
+    "CognitoUsersFilter",
+    "CognitoUsersSettingsConfig",
     "CommunityEditionSecretsConfig",
     "CommunityEditionSettingsConfig",
     "CommunityTransformsInternalTransformConfig",
@@ -150,6 +152,7 @@ __all__ = [
     "FormatterFormatConfig",
     "FullScansSecretsConfig",
     "FullScansSettingsConfig",
+    "GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter",
     "GitlabIssuesSecretsConfig",
     "GitlabIssuesSettingsConfig",
     "GoogleCloudStorageOutputSecretsConfig",
@@ -159,6 +162,9 @@ __all__ = [
     "HttpHeaders",
     "HttpSecretsConfig",
     "HttpSettingsConfig",
+    "IamAccessAnalyzerCriterion",
+    "IamAccessAnalyzerFilter",
+    "IamAccessAnalyzerSettingsConfig",
     "InputsConnectorMeta",
     "IssuesSecretsConfig",
     "IssuesSettingsConfig",
@@ -334,6 +340,9 @@ __all__ = [
     "SecretProcessesorOutputConfig",
     "SecretProcessesorOutputConfigSecrets",
     "SecretProcessesorOutputConfigSettings",
+    "SecretsmanagerSettingsConfig",
+    "SecurityGroupsFilter",
+    "SecurityGroupsSettingsConfig",
     "SecurityLakeSettingsConfig",
     "SecurityLakeSourceAccountDetails",
     "SemgrepCodeFindingsSecretsConfig",
@@ -372,6 +381,7 @@ __all__ = [
     "TenableVulnerabilitiesCronSecretsConfig",
     "TenableVulnerabilitiesCronSettingsConfig",
     "TenableVulnerabilitiesSecretsConfig",
+    "TypesFilterNameStringType",
     "UsersInfoSecretsConfig",
     "UsersInfoSettingsConfig",
     "UsersSecretsConfig",
@@ -476,6 +486,8 @@ from monad.models.cloud_logs_settings_config import CloudLogsSettingsConfig as C
 from monad.models.cloud_resource_inventory_secrets_config import CloudResourceInventorySecretsConfig as CloudResourceInventorySecretsConfig
 from monad.models.cloud_resource_inventory_settings_config import CloudResourceInventorySettingsConfig as CloudResourceInventorySettingsConfig
 from monad.models.cloudtrail_settings_config import CloudtrailSettingsConfig as CloudtrailSettingsConfig
+from monad.models.cognito_users_filter import CognitoUsersFilter as CognitoUsersFilter
+from monad.models.cognito_users_settings_config import CognitoUsersSettingsConfig as CognitoUsersSettingsConfig
 from monad.models.community_edition_secrets_config import CommunityEditionSecretsConfig as CommunityEditionSecretsConfig
 from monad.models.community_edition_settings_config import CommunityEditionSettingsConfig as CommunityEditionSettingsConfig
 from monad.models.community_transforms_internal_transform_config import CommunityTransformsInternalTransformConfig as CommunityTransformsInternalTransformConfig
@@ -521,6 +533,7 @@ from monad.models.flattenall_flatten_all import FlattenallFlattenAll as Flattena
 from monad.models.formatter_format_config import FormatterFormatConfig as FormatterFormatConfig
 from monad.models.full_scans_secrets_config import FullScansSecretsConfig as FullScansSecretsConfig
 from monad.models.full_scans_settings_config import FullScansSettingsConfig as FullScansSettingsConfig
+from monad.models.github_com_aws_aws_sdk_go_v2_service_secretsmanager_types_filter import GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter as GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter
 from monad.models.gitlab_issues_secrets_config import GitlabIssuesSecretsConfig as GitlabIssuesSecretsConfig
 from monad.models.gitlab_issues_settings_config import GitlabIssuesSettingsConfig as GitlabIssuesSettingsConfig
 from monad.models.google_cloud_storage_output_secrets_config import GoogleCloudStorageOutputSecretsConfig as GoogleCloudStorageOutputSecretsConfig
@@ -530,6 +543,9 @@ from monad.models.google_cloud_storage_settings_config import GoogleCloudStorage
 from monad.models.http_headers import HttpHeaders as HttpHeaders
 from monad.models.http_secrets_config import HttpSecretsConfig as HttpSecretsConfig
 from monad.models.http_settings_config import HttpSettingsConfig as HttpSettingsConfig
+from monad.models.iam_access_analyzer_criterion import IamAccessAnalyzerCriterion as IamAccessAnalyzerCriterion
+from monad.models.iam_access_analyzer_filter import IamAccessAnalyzerFilter as IamAccessAnalyzerFilter
+from monad.models.iam_access_analyzer_settings_config import IamAccessAnalyzerSettingsConfig as IamAccessAnalyzerSettingsConfig
 from monad.models.inputs_connector_meta import InputsConnectorMeta as InputsConnectorMeta
 from monad.models.issues_secrets_config import IssuesSecretsConfig as IssuesSecretsConfig
 from monad.models.issues_settings_config import IssuesSettingsConfig as IssuesSettingsConfig
@@ -705,6 +721,9 @@ from monad.models.secret_processesor_input_config_settings import SecretProcesse
 from monad.models.secret_processesor_output_config import SecretProcessesorOutputConfig as SecretProcessesorOutputConfig
 from monad.models.secret_processesor_output_config_secrets import SecretProcessesorOutputConfigSecrets as SecretProcessesorOutputConfigSecrets
 from monad.models.secret_processesor_output_config_settings import SecretProcessesorOutputConfigSettings as SecretProcessesorOutputConfigSettings
+from monad.models.secretsmanager_settings_config import SecretsmanagerSettingsConfig as SecretsmanagerSettingsConfig
+from monad.models.security_groups_filter import SecurityGroupsFilter as SecurityGroupsFilter
+from monad.models.security_groups_settings_config import SecurityGroupsSettingsConfig as SecurityGroupsSettingsConfig
 from monad.models.security_lake_settings_config import SecurityLakeSettingsConfig as SecurityLakeSettingsConfig
 from monad.models.security_lake_source_account_details import SecurityLakeSourceAccountDetails as SecurityLakeSourceAccountDetails
 from monad.models.semgrep_code_findings_secrets_config import SemgrepCodeFindingsSecretsConfig as SemgrepCodeFindingsSecretsConfig
@@ -743,6 +762,7 @@ from monad.models.tenable_assets_secrets_config import TenableAssetsSecretsConfi
 from monad.models.tenable_vulnerabilities_cron_secrets_config import TenableVulnerabilitiesCronSecretsConfig as TenableVulnerabilitiesCronSecretsConfig
 from monad.models.tenable_vulnerabilities_cron_settings_config import TenableVulnerabilitiesCronSettingsConfig as TenableVulnerabilitiesCronSettingsConfig
 from monad.models.tenable_vulnerabilities_secrets_config import TenableVulnerabilitiesSecretsConfig as TenableVulnerabilitiesSecretsConfig
+from monad.models.types_filter_name_string_type import TypesFilterNameStringType as TypesFilterNameStringType
 from monad.models.users_info_secrets_config import UsersInfoSecretsConfig as UsersInfoSecretsConfig
 from monad.models.users_info_settings_config import UsersInfoSettingsConfig as UsersInfoSettingsConfig
 from monad.models.users_secrets_config import UsersSecretsConfig as UsersSecretsConfig

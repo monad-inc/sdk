@@ -25,8 +25,8 @@
 |**organization** | **String** | Filter by organization name |  [optional] |
 |**repository** | **String** | Filter by repository (format: org-name/repo-name) |  [optional] |
 |**user** | **String** | The username of the Snowflake account used to establish the connection. |  [optional] |
-|**region** | **String** | The Region that you would receieve findings for |  [optional] |
-|**roleArn** | **String** | The ARN of the role to assume to access the bucket |  [optional] |
+|**region** | **String** | The AWS region where the security groups that are being fetched are located. |  [optional] |
+|**roleArn** | **String** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. |  [optional] |
 |**severity** | **String** |  |  [optional] |
 |**bucket** | **String** | Name of the storage bucket |  [optional] |
 |**compression** | **String** | Compression format of the objects |  [optional] |
@@ -58,11 +58,12 @@
 |**result** | **List&lt;String&gt;** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. |  [optional] |
 |**status** | **List&lt;String&gt;** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. |  [optional] |
 |**enableProtoPayloadParsing** | **Boolean** | Enables automatic parsing of embedded protocol buffer payloads within the input. |  [optional] |
-|**filter** | **String** | The filter to apply to the logs. |  [optional] |
+|**filter** | [**CognitoUsersFilter**](CognitoUsersFilter.md) |  |  [optional] |
 |**cloudPlatform** | **List&lt;String&gt;** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. |  [optional] |
 |**entityType** | **List&lt;String&gt;** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. |  [optional] |
 |**fullSnapshot** | **Boolean** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. |  [optional] |
 |**interval** | **Integer** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. |  [optional] |
+|**userPoolId** | **String** | User Pool ID to extract users from |  [optional] |
 |**awsQueueUrl** | **String** | AWS SQS queue URL provided to you by the CrowdStrike Falcon console |  [optional] |
 |**awsRegionName** | **String** | Name of the region where the queue resides |  [optional] |
 |**awsS3Url** | **String** | The URL of the S3 bucket |  [optional] |
@@ -89,6 +90,8 @@
 |**state** | **String** | State to filter issues by e.g. opened, closed |  [optional] |
 |**withLabelDetails** | **Boolean** | Include label details in the response |  [optional] |
 |**bucketName** | **String** | The name of the Google Cloud Storage bucket to use |  [optional] |
+|**analyzerArn** | **String** | The [ARN of the analyzer] to retrieve findings from. |  [optional] |
+|**filters** | [**List&lt;SecurityGroupsFilter&gt;**](SecurityGroupsFilter.md) | Filters for the security groups |  [optional] |
 |**controlIds** | **List&lt;String&gt;** | @Description Filter Issues created by specific control IDs |  [optional] |
 |**hasNote** | **String** | @Description Filter Issues with or without a note |  [optional] |
 |**hasRemediation** | **String** | @Description Filter Issues with or without remediation |  [optional] |
@@ -111,6 +114,7 @@
 |**usePathStyle** | **Boolean** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. |  [optional] |
 |**subdomain** | **String** | SubDomain is a placeholder that represents your specific OneLogin subdomain. |  [optional] |
 |**evaluationContextIdentifier** | **String** | Filters proactive resource evaluations for a given infrastructure deployment. |  [optional] |
+|**includePlannedDeletion** | **Boolean** | Whether or not to include secrets scheduled for deletion |  [optional] |
 |**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  [optional] |
 |**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
 |**role** | **String** | The name of the Role your service account was granted which can access your resources. |  [optional] |

@@ -22,8 +22,8 @@ Name | Type | Description | Notes
 **Organization** | Pointer to **string** | Filter by organization name | [optional] 
 **Repository** | Pointer to **string** | Filter by repository (format: org-name/repo-name) | [optional] 
 **User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
-**Region** | Pointer to **string** | The Region that you would receieve findings for | [optional] 
-**RoleArn** | Pointer to **string** | The ARN of the role to assume to access the bucket | [optional] 
+**Region** | Pointer to **string** | The AWS region where the security groups that are being fetched are located. | [optional] 
+**RoleArn** | Pointer to **string** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
 **Bucket** | Pointer to **string** | Name of the storage bucket | [optional] 
 **Compression** | Pointer to **string** | Compression format of the objects | [optional] 
@@ -55,11 +55,12 @@ Name | Type | Description | Notes
 **Result** | Pointer to **[]string** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. | [optional] 
 **Status** | Pointer to **[]string** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. | [optional] 
 **EnableProtoPayloadParsing** | Pointer to **bool** | Enables automatic parsing of embedded protocol buffer payloads within the input. | [optional] 
-**Filter** | Pointer to **string** | The filter to apply to the logs. | [optional] 
+**Filter** | Pointer to [**CognitoUsersFilter**](CognitoUsersFilter.md) |  | [optional] 
 **CloudPlatform** | Pointer to **[]string** | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **EntityType** | Pointer to **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
 **FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
+**UserPoolId** | Pointer to **string** | User Pool ID to extract users from | [optional] 
 **AwsQueueUrl** | Pointer to **string** | AWS SQS queue URL provided to you by the CrowdStrike Falcon console | [optional] 
 **AwsRegionName** | Pointer to **string** | Name of the region where the queue resides | [optional] 
 **AwsS3Url** | Pointer to **string** | The URL of the S3 bucket | [optional] 
@@ -86,6 +87,8 @@ Name | Type | Description | Notes
 **State** | Pointer to **string** | State to filter issues by e.g. opened, closed | [optional] 
 **WithLabelDetails** | Pointer to **bool** | Include label details in the response | [optional] 
 **BucketName** | Pointer to **string** | The name of the Google Cloud Storage bucket to use | [optional] 
+**AnalyzerArn** | Pointer to **string** | The [ARN of the analyzer] to retrieve findings from. | [optional] 
+**Filters** | Pointer to [**[]SecurityGroupsFilter**](SecurityGroupsFilter.md) | Filters for the security groups | [optional] 
 **ControlIds** | Pointer to **[]string** | @Description Filter Issues created by specific control IDs | [optional] 
 **HasNote** | Pointer to **string** | @Description Filter Issues with or without a note | [optional] 
 **HasRemediation** | Pointer to **string** | @Description Filter Issues with or without remediation | [optional] 
@@ -108,6 +111,7 @@ Name | Type | Description | Notes
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
 **Subdomain** | Pointer to **string** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | [optional] 
 **EvaluationContextIdentifier** | Pointer to **string** | Filters proactive resource evaluations for a given infrastructure deployment. | [optional] 
+**IncludePlannedDeletion** | Pointer to **bool** | Whether or not to include secrets scheduled for deletion | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
@@ -1416,20 +1420,20 @@ HasEnableProtoPayloadParsing returns a boolean if a field has been set.
 
 ### GetFilter
 
-`func (o *SecretProcessesorInputConfigSettings) GetFilter() string`
+`func (o *SecretProcessesorInputConfigSettings) GetFilter() CognitoUsersFilter`
 
 GetFilter returns the Filter field if non-nil, zero value otherwise.
 
 ### GetFilterOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetFilterOk() (*string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetFilterOk() (*CognitoUsersFilter, bool)`
 
 GetFilterOk returns a tuple with the Filter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFilter
 
-`func (o *SecretProcessesorInputConfigSettings) SetFilter(v string)`
+`func (o *SecretProcessesorInputConfigSettings) SetFilter(v CognitoUsersFilter)`
 
 SetFilter sets Filter field to given value.
 
@@ -1538,6 +1542,31 @@ SetInterval sets Interval field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasInterval() bool`
 
 HasInterval returns a boolean if a field has been set.
+
+### GetUserPoolId
+
+`func (o *SecretProcessesorInputConfigSettings) GetUserPoolId() string`
+
+GetUserPoolId returns the UserPoolId field if non-nil, zero value otherwise.
+
+### GetUserPoolIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUserPoolIdOk() (*string, bool)`
+
+GetUserPoolIdOk returns a tuple with the UserPoolId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserPoolId
+
+`func (o *SecretProcessesorInputConfigSettings) SetUserPoolId(v string)`
+
+SetUserPoolId sets UserPoolId field to given value.
+
+### HasUserPoolId
+
+`func (o *SecretProcessesorInputConfigSettings) HasUserPoolId() bool`
+
+HasUserPoolId returns a boolean if a field has been set.
 
 ### GetAwsQueueUrl
 
@@ -2189,6 +2218,56 @@ SetBucketName sets BucketName field to given value.
 
 HasBucketName returns a boolean if a field has been set.
 
+### GetAnalyzerArn
+
+`func (o *SecretProcessesorInputConfigSettings) GetAnalyzerArn() string`
+
+GetAnalyzerArn returns the AnalyzerArn field if non-nil, zero value otherwise.
+
+### GetAnalyzerArnOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetAnalyzerArnOk() (*string, bool)`
+
+GetAnalyzerArnOk returns a tuple with the AnalyzerArn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnalyzerArn
+
+`func (o *SecretProcessesorInputConfigSettings) SetAnalyzerArn(v string)`
+
+SetAnalyzerArn sets AnalyzerArn field to given value.
+
+### HasAnalyzerArn
+
+`func (o *SecretProcessesorInputConfigSettings) HasAnalyzerArn() bool`
+
+HasAnalyzerArn returns a boolean if a field has been set.
+
+### GetFilters
+
+`func (o *SecretProcessesorInputConfigSettings) GetFilters() []SecurityGroupsFilter`
+
+GetFilters returns the Filters field if non-nil, zero value otherwise.
+
+### GetFiltersOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetFiltersOk() (*[]SecurityGroupsFilter, bool)`
+
+GetFiltersOk returns a tuple with the Filters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFilters
+
+`func (o *SecretProcessesorInputConfigSettings) SetFilters(v []SecurityGroupsFilter)`
+
+SetFilters sets Filters field to given value.
+
+### HasFilters
+
+`func (o *SecretProcessesorInputConfigSettings) HasFilters() bool`
+
+HasFilters returns a boolean if a field has been set.
+
 ### GetControlIds
 
 `func (o *SecretProcessesorInputConfigSettings) GetControlIds() []string`
@@ -2738,6 +2817,31 @@ SetEvaluationContextIdentifier sets EvaluationContextIdentifier field to given v
 `func (o *SecretProcessesorInputConfigSettings) HasEvaluationContextIdentifier() bool`
 
 HasEvaluationContextIdentifier returns a boolean if a field has been set.
+
+### GetIncludePlannedDeletion
+
+`func (o *SecretProcessesorInputConfigSettings) GetIncludePlannedDeletion() bool`
+
+GetIncludePlannedDeletion returns the IncludePlannedDeletion field if non-nil, zero value otherwise.
+
+### GetIncludePlannedDeletionOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetIncludePlannedDeletionOk() (*bool, bool)`
+
+GetIncludePlannedDeletionOk returns a tuple with the IncludePlannedDeletion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludePlannedDeletion
+
+`func (o *SecretProcessesorInputConfigSettings) SetIncludePlannedDeletion(v bool)`
+
+SetIncludePlannedDeletion sets IncludePlannedDeletion field to given value.
+
+### HasIncludePlannedDeletion
+
+`func (o *SecretProcessesorInputConfigSettings) HasIncludePlannedDeletion() bool`
+
+HasIncludePlannedDeletion returns a boolean if a field has been set.
 
 ### GetAccount
 

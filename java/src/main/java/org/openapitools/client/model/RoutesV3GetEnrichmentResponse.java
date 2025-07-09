@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3GetEnrichmentResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T21:23:39.968492760Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-09T22:18:38.655316319Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV3GetEnrichmentResponse {
   public static final String SERIALIZED_NAME_COMPONENT_OF = "component_of";
   @SerializedName(SERIALIZED_NAME_COMPONENT_OF)
