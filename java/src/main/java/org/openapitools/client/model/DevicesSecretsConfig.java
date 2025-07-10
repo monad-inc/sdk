@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Tailscale Devices secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-10T15:34:32.307940180Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-10T16:43:41.826791519Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DevicesSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
