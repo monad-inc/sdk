@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-07-09T23:42:09.808742590Z[Etc/UTC]
+  - Build date: 2025-07-10T00:21:57.480866050Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
