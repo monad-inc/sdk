@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * OpenSearch Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-10T16:43:41.826791519Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-11T17:39:21.622221567Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class OpensearchSettingsConfig {
   public static final String SERIALIZED_NAME_AUTH_MODE = "auth_mode";
   @SerializedName(SERIALIZED_NAME_AUTH_MODE)
