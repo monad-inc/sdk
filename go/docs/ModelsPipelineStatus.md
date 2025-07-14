@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Egress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **Errors** | Pointer to **int32** |  | [optional] 
+**ExpiredMessages** | Pointer to **int32** |  | [optional] 
 **Ingress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **Nodes** | Pointer to [**[]ModelsPipelineNodeStatus**](ModelsPipelineNodeStatus.md) |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
@@ -80,6 +81,31 @@ SetErrors sets Errors field to given value.
 `func (o *ModelsPipelineStatus) HasErrors() bool`
 
 HasErrors returns a boolean if a field has been set.
+
+### GetExpiredMessages
+
+`func (o *ModelsPipelineStatus) GetExpiredMessages() int32`
+
+GetExpiredMessages returns the ExpiredMessages field if non-nil, zero value otherwise.
+
+### GetExpiredMessagesOk
+
+`func (o *ModelsPipelineStatus) GetExpiredMessagesOk() (*int32, bool)`
+
+GetExpiredMessagesOk returns a tuple with the ExpiredMessages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpiredMessages
+
+`func (o *ModelsPipelineStatus) SetExpiredMessages(v int32)`
+
+SetExpiredMessages sets ExpiredMessages field to given value.
+
+### HasExpiredMessages
+
+`func (o *ModelsPipelineStatus) HasExpiredMessages() bool`
+
+HasExpiredMessages returns a boolean if a field has been set.
 
 ### GetIngress
 

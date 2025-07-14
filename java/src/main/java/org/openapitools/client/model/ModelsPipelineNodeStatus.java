@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNodeStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-11T17:39:21.622221567Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-14T20:58:07.229654789Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsPipelineNodeStatus {
   public static final String SERIALIZED_NAME_EGRESS = "egress";
   @SerializedName(SERIALIZED_NAME_EGRESS)
@@ -60,6 +60,11 @@ public class ModelsPipelineNodeStatus {
   @SerializedName(SERIALIZED_NAME_ERRORS)
   @javax.annotation.Nullable
   private Integer errors;
+
+  public static final String SERIALIZED_NAME_EXPIRED_MESSAGES = "expired_messages";
+  @SerializedName(SERIALIZED_NAME_EXPIRED_MESSAGES)
+  @javax.annotation.Nullable
+  private Integer expiredMessages;
 
   public static final String SERIALIZED_NAME_INGRESS = "ingress";
   @SerializedName(SERIALIZED_NAME_INGRESS)
@@ -119,6 +124,25 @@ public class ModelsPipelineNodeStatus {
 
   public void setErrors(@javax.annotation.Nullable Integer errors) {
     this.errors = errors;
+  }
+
+
+  public ModelsPipelineNodeStatus expiredMessages(@javax.annotation.Nullable Integer expiredMessages) {
+    this.expiredMessages = expiredMessages;
+    return this;
+  }
+
+  /**
+   * Get expiredMessages
+   * @return expiredMessages
+   */
+  @javax.annotation.Nullable
+  public Integer getExpiredMessages() {
+    return expiredMessages;
+  }
+
+  public void setExpiredMessages(@javax.annotation.Nullable Integer expiredMessages) {
+    this.expiredMessages = expiredMessages;
   }
 
 
@@ -210,6 +234,7 @@ public class ModelsPipelineNodeStatus {
     ModelsPipelineNodeStatus modelsPipelineNodeStatus = (ModelsPipelineNodeStatus) o;
     return Objects.equals(this.egress, modelsPipelineNodeStatus.egress) &&
         Objects.equals(this.errors, modelsPipelineNodeStatus.errors) &&
+        Objects.equals(this.expiredMessages, modelsPipelineNodeStatus.expiredMessages) &&
         Objects.equals(this.ingress, modelsPipelineNodeStatus.ingress) &&
         Objects.equals(this.nodeId, modelsPipelineNodeStatus.nodeId) &&
         Objects.equals(this.nodeSlug, modelsPipelineNodeStatus.nodeSlug) &&
@@ -218,7 +243,7 @@ public class ModelsPipelineNodeStatus {
 
   @Override
   public int hashCode() {
-    return Objects.hash(egress, errors, ingress, nodeId, nodeSlug, status);
+    return Objects.hash(egress, errors, expiredMessages, ingress, nodeId, nodeSlug, status);
   }
 
   @Override
@@ -227,6 +252,7 @@ public class ModelsPipelineNodeStatus {
     sb.append("class ModelsPipelineNodeStatus {\n");
     sb.append("    egress: ").append(toIndentedString(egress)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    expiredMessages: ").append(toIndentedString(expiredMessages)).append("\n");
     sb.append("    ingress: ").append(toIndentedString(ingress)).append("\n");
     sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
     sb.append("    nodeSlug: ").append(toIndentedString(nodeSlug)).append("\n");
@@ -252,7 +278,7 @@ public class ModelsPipelineNodeStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("egress", "errors", "ingress", "node_id", "node_slug", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("egress", "errors", "expired_messages", "ingress", "node_id", "node_slug", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

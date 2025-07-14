@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesUpdatePipelineRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-11T17:39:21.622221567Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-14T20:58:07.229654789Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesUpdatePipelineRequest {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)

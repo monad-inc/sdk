@@ -31,12 +31,13 @@ class ModelsPipelineStatus(BaseModel):
     """ # noqa: E501
     egress: Optional[ModelsDataUsage] = None
     errors: Optional[StrictInt] = None
+    expired_messages: Optional[StrictInt] = None
     ingress: Optional[ModelsDataUsage] = None
     nodes: Optional[List[ModelsPipelineNodeStatus]] = None
     organization_id: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["egress", "errors", "ingress", "nodes", "organization_id", "pipeline_id", "status"]
+    __properties: ClassVar[List[str]] = ["egress", "errors", "expired_messages", "ingress", "nodes", "organization_id", "pipeline_id", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,6 +105,7 @@ class ModelsPipelineStatus(BaseModel):
         _obj = cls.model_validate({
             "egress": ModelsDataUsage.from_dict(obj["egress"]) if obj.get("egress") is not None else None,
             "errors": obj.get("errors"),
+            "expired_messages": obj.get("expired_messages"),
             "ingress": ModelsDataUsage.from_dict(obj["ingress"]) if obj.get("ingress") is not None else None,
             "nodes": [ModelsPipelineNodeStatus.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None,
             "organization_id": obj.get("organization_id"),

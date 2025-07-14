@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **egress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **errors** | **int** |  | [optional] 
+**expired_messages** | **int** |  | [optional] 
 **ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **nodes** | [**List[ModelsPipelineNodeStatus]**](ModelsPipelineNodeStatus.md) |  | [optional] 
 **organization_id** | **str** |  | [optional] 

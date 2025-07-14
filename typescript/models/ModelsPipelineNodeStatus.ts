@@ -16,6 +16,7 @@ import { HttpFile } from '../http/http';
 export class ModelsPipelineNodeStatus {
     'egress'?: ModelsDataUsage;
     'errors'?: number;
+    'expiredMessages'?: number;
     'ingress'?: ModelsDataUsage;
     'nodeId'?: string;
     'nodeSlug'?: string;
@@ -35,6 +36,12 @@ export class ModelsPipelineNodeStatus {
         {
             "name": "errors",
             "baseName": "errors",
+            "type": "number",
+            "format": ""
+        },
+        {
+            "name": "expiredMessages",
+            "baseName": "expired_messages",
             "type": "number",
             "format": ""
         },
