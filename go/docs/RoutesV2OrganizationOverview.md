@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Disabled** | **int32** |  | 
 **Egress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **Errors** | Pointer to **int32** |  | [optional] 
+**ExpiredMessages** | Pointer to **int32** |  | [optional] 
 **Healthy** | **int32** |  | 
 **Ingress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **Unhealthy** | **int32** |  | 
@@ -99,6 +100,31 @@ SetErrors sets Errors field to given value.
 `func (o *RoutesV2OrganizationOverview) HasErrors() bool`
 
 HasErrors returns a boolean if a field has been set.
+
+### GetExpiredMessages
+
+`func (o *RoutesV2OrganizationOverview) GetExpiredMessages() int32`
+
+GetExpiredMessages returns the ExpiredMessages field if non-nil, zero value otherwise.
+
+### GetExpiredMessagesOk
+
+`func (o *RoutesV2OrganizationOverview) GetExpiredMessagesOk() (*int32, bool)`
+
+GetExpiredMessagesOk returns a tuple with the ExpiredMessages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpiredMessages
+
+`func (o *RoutesV2OrganizationOverview) SetExpiredMessages(v int32)`
+
+SetExpiredMessages sets ExpiredMessages field to given value.
+
+### HasExpiredMessages
+
+`func (o *RoutesV2OrganizationOverview) HasExpiredMessages() bool`
+
+HasExpiredMessages returns a boolean if a field has been set.
 
 ### GetHealthy
 

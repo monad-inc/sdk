@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2OrganizationOverview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-14T21:13:19.126736632Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-15T15:46:13.034865935Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV2OrganizationOverview {
   public static final String SERIALIZED_NAME_DISABLED = "disabled";
   @SerializedName(SERIALIZED_NAME_DISABLED)
@@ -65,6 +65,11 @@ public class RoutesV2OrganizationOverview {
   @SerializedName(SERIALIZED_NAME_ERRORS)
   @javax.annotation.Nullable
   private Integer errors;
+
+  public static final String SERIALIZED_NAME_EXPIRED_MESSAGES = "expired_messages";
+  @SerializedName(SERIALIZED_NAME_EXPIRED_MESSAGES)
+  @javax.annotation.Nullable
+  private Integer expiredMessages;
 
   public static final String SERIALIZED_NAME_HEALTHY = "healthy";
   @SerializedName(SERIALIZED_NAME_HEALTHY)
@@ -141,6 +146,25 @@ public class RoutesV2OrganizationOverview {
   }
 
 
+  public RoutesV2OrganizationOverview expiredMessages(@javax.annotation.Nullable Integer expiredMessages) {
+    this.expiredMessages = expiredMessages;
+    return this;
+  }
+
+  /**
+   * Get expiredMessages
+   * @return expiredMessages
+   */
+  @javax.annotation.Nullable
+  public Integer getExpiredMessages() {
+    return expiredMessages;
+  }
+
+  public void setExpiredMessages(@javax.annotation.Nullable Integer expiredMessages) {
+    this.expiredMessages = expiredMessages;
+  }
+
+
   public RoutesV2OrganizationOverview healthy(@javax.annotation.Nonnull Integer healthy) {
     this.healthy = healthy;
     return this;
@@ -211,6 +235,7 @@ public class RoutesV2OrganizationOverview {
     return Objects.equals(this.disabled, routesV2OrganizationOverview.disabled) &&
         Objects.equals(this.egress, routesV2OrganizationOverview.egress) &&
         Objects.equals(this.errors, routesV2OrganizationOverview.errors) &&
+        Objects.equals(this.expiredMessages, routesV2OrganizationOverview.expiredMessages) &&
         Objects.equals(this.healthy, routesV2OrganizationOverview.healthy) &&
         Objects.equals(this.ingress, routesV2OrganizationOverview.ingress) &&
         Objects.equals(this.unhealthy, routesV2OrganizationOverview.unhealthy);
@@ -218,7 +243,7 @@ public class RoutesV2OrganizationOverview {
 
   @Override
   public int hashCode() {
-    return Objects.hash(disabled, egress, errors, healthy, ingress, unhealthy);
+    return Objects.hash(disabled, egress, errors, expiredMessages, healthy, ingress, unhealthy);
   }
 
   @Override
@@ -228,6 +253,7 @@ public class RoutesV2OrganizationOverview {
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    egress: ").append(toIndentedString(egress)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    expiredMessages: ").append(toIndentedString(expiredMessages)).append("\n");
     sb.append("    healthy: ").append(toIndentedString(healthy)).append("\n");
     sb.append("    ingress: ").append(toIndentedString(ingress)).append("\n");
     sb.append("    unhealthy: ").append(toIndentedString(unhealthy)).append("\n");
@@ -252,7 +278,7 @@ public class RoutesV2OrganizationOverview {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("disabled", "egress", "errors", "healthy", "ingress", "unhealthy"));
+    openapiFields = new HashSet<String>(Arrays.asList("disabled", "egress", "errors", "expired_messages", "healthy", "ingress", "unhealthy"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("disabled", "healthy", "unhealthy"));

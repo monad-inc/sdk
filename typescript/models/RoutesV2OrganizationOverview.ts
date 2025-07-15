@@ -17,6 +17,7 @@ export class RoutesV2OrganizationOverview {
     'disabled': number;
     'egress'?: ModelsDataUsage;
     'errors'?: number;
+    'expiredMessages'?: number;
     'healthy': number;
     'ingress'?: ModelsDataUsage;
     'unhealthy': number;
@@ -41,6 +42,12 @@ export class RoutesV2OrganizationOverview {
         {
             "name": "errors",
             "baseName": "errors",
+            "type": "number",
+            "format": ""
+        },
+        {
+            "name": "expiredMessages",
+            "baseName": "expired_messages",
             "type": "number",
             "format": ""
         },

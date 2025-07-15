@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **disabled** | **int** |  | 
 **egress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **errors** | **int** |  | [optional] 
+**expired_messages** | **int** |  | [optional] 
 **healthy** | **int** |  | 
 **ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **unhealthy** | **int** |  | 

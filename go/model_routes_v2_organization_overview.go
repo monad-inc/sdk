@@ -25,6 +25,7 @@ type RoutesV2OrganizationOverview struct {
 	Disabled int32 `json:"disabled"`
 	Egress *ModelsDataUsage `json:"egress,omitempty"`
 	Errors *int32 `json:"errors,omitempty"`
+	ExpiredMessages *int32 `json:"expired_messages,omitempty"`
 	Healthy int32 `json:"healthy"`
 	Ingress *ModelsDataUsage `json:"ingress,omitempty"`
 	Unhealthy int32 `json:"unhealthy"`
@@ -140,6 +141,38 @@ func (o *RoutesV2OrganizationOverview) SetErrors(v int32) {
 	o.Errors = &v
 }
 
+// GetExpiredMessages returns the ExpiredMessages field value if set, zero value otherwise.
+func (o *RoutesV2OrganizationOverview) GetExpiredMessages() int32 {
+	if o == nil || IsNil(o.ExpiredMessages) {
+		var ret int32
+		return ret
+	}
+	return *o.ExpiredMessages
+}
+
+// GetExpiredMessagesOk returns a tuple with the ExpiredMessages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2OrganizationOverview) GetExpiredMessagesOk() (*int32, bool) {
+	if o == nil || IsNil(o.ExpiredMessages) {
+		return nil, false
+	}
+	return o.ExpiredMessages, true
+}
+
+// HasExpiredMessages returns a boolean if a field has been set.
+func (o *RoutesV2OrganizationOverview) HasExpiredMessages() bool {
+	if o != nil && !IsNil(o.ExpiredMessages) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpiredMessages gets a reference to the given int32 and assigns it to the ExpiredMessages field.
+func (o *RoutesV2OrganizationOverview) SetExpiredMessages(v int32) {
+	o.ExpiredMessages = &v
+}
+
 // GetHealthy returns the Healthy field value
 func (o *RoutesV2OrganizationOverview) GetHealthy() int32 {
 	if o == nil {
@@ -236,6 +269,9 @@ func (o RoutesV2OrganizationOverview) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Errors) {
 		toSerialize["errors"] = o.Errors
+	}
+	if !IsNil(o.ExpiredMessages) {
+		toSerialize["expired_messages"] = o.ExpiredMessages
 	}
 	toSerialize["healthy"] = o.Healthy
 	if !IsNil(o.Ingress) {
