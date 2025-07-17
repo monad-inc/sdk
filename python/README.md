@@ -407,6 +407,7 @@ Class | Method | HTTP request | Description
  - [OpensearchSecretsConfig](docs/OpensearchSecretsConfig.md)
  - [OpensearchSettingsConfig](docs/OpensearchSettingsConfig.md)
  - [OperationInformation](docs/OperationInformation.md)
+ - [OrganizationsSettingsConfig](docs/OrganizationsSettingsConfig.md)
  - [OutputsConnectorMeta](docs/OutputsConnectorMeta.md)
  - [PagerdutyAlertsConfig](docs/PagerdutyAlertsConfig.md)
  - [PagerdutySecretsConfig](docs/PagerdutySecretsConfig.md)

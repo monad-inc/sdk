@@ -191,6 +191,7 @@ export * from '../models/OneloginEventsSettingsConfig';
 export * from '../models/OpensearchSecretsConfig';
 export * from '../models/OpensearchSettingsConfig';
 export * from '../models/OperationInformation';
+export * from '../models/OrganizationsSettingsConfig';
 export * from '../models/OutputsConnectorMeta';
 export * from '../models/PagerdutyAlertsConfig';
 export * from '../models/PagerdutySecretsConfig';
@@ -529,6 +530,7 @@ import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsCo
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
+import { OrganizationsSettingsConfig } from '../models/OrganizationsSettingsConfig';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
@@ -893,6 +895,7 @@ let typeMap: {[index: string]: any} = {
     "OpensearchSecretsConfig": OpensearchSecretsConfig,
     "OpensearchSettingsConfig": OpensearchSettingsConfig,
     "OperationInformation": OperationInformation,
+    "OrganizationsSettingsConfig": OrganizationsSettingsConfig,
     "OutputsConnectorMeta": OutputsConnectorMeta,
     "PagerdutyAlertsConfig": PagerdutyAlertsConfig,
     "PagerdutySecretsConfig": PagerdutySecretsConfig,

@@ -186,60 +186,62 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
     oneof_schema_48_validator: Optional[ObjectStorageInputSecretsConfig] = None
     # data type: OneloginEventsSecretsConfig
     oneof_schema_49_validator: Optional[OneloginEventsSecretsConfig] = None
+    # data type: object
+    oneof_schema_50_validator: Optional[Dict[str, Any]] = None
     # data type: PaloAltoDataSecurityAlertsSecretsConfig
-    oneof_schema_50_validator: Optional[PaloAltoDataSecurityAlertsSecretsConfig] = None
+    oneof_schema_51_validator: Optional[PaloAltoDataSecurityAlertsSecretsConfig] = None
     # data type: object
-    oneof_schema_51_validator: Optional[Dict[str, Any]] = None
+    oneof_schema_52_validator: Optional[Dict[str, Any]] = None
     # data type: RolesInfoSecretsConfig
-    oneof_schema_52_validator: Optional[RolesInfoSecretsConfig] = None
-    # data type: object
-    oneof_schema_53_validator: Optional[Dict[str, Any]] = None
+    oneof_schema_53_validator: Optional[RolesInfoSecretsConfig] = None
     # data type: object
     oneof_schema_54_validator: Optional[Dict[str, Any]] = None
+    # data type: object
+    oneof_schema_55_validator: Optional[Dict[str, Any]] = None
     # data type: SemgrepCodeFindingsSecretsConfig
-    oneof_schema_55_validator: Optional[SemgrepCodeFindingsSecretsConfig] = None
+    oneof_schema_56_validator: Optional[SemgrepCodeFindingsSecretsConfig] = None
     # data type: SemgrepDeploymentsSecretsConfig
-    oneof_schema_56_validator: Optional[SemgrepDeploymentsSecretsConfig] = None
+    oneof_schema_57_validator: Optional[SemgrepDeploymentsSecretsConfig] = None
     # data type: SemgrepProjectDetailsSecretsConfig
-    oneof_schema_57_validator: Optional[SemgrepProjectDetailsSecretsConfig] = None
+    oneof_schema_58_validator: Optional[SemgrepProjectDetailsSecretsConfig] = None
     # data type: SemgrepProjectsSecretsConfig
-    oneof_schema_58_validator: Optional[SemgrepProjectsSecretsConfig] = None
+    oneof_schema_59_validator: Optional[SemgrepProjectsSecretsConfig] = None
     # data type: SemgrepSupplyChainFindingsSecretsConfig
-    oneof_schema_59_validator: Optional[SemgrepSupplyChainFindingsSecretsConfig] = None
+    oneof_schema_60_validator: Optional[SemgrepSupplyChainFindingsSecretsConfig] = None
     # data type: SlackUsersSecretsConfig
-    oneof_schema_60_validator: Optional[SlackUsersSecretsConfig] = None
+    oneof_schema_61_validator: Optional[SlackUsersSecretsConfig] = None
     # data type: SlackgroupsSecretsConfig
-    oneof_schema_61_validator: Optional[SlackgroupsSecretsConfig] = None
+    oneof_schema_62_validator: Optional[SlackgroupsSecretsConfig] = None
     # data type: SnowflakeInputSecretsConfig
-    oneof_schema_62_validator: Optional[SnowflakeInputSecretsConfig] = None
+    oneof_schema_63_validator: Optional[SnowflakeInputSecretsConfig] = None
     # data type: SnykIssuesSecretsConfig
-    oneof_schema_63_validator: Optional[SnykIssuesSecretsConfig] = None
+    oneof_schema_64_validator: Optional[SnykIssuesSecretsConfig] = None
     # data type: SnykOrganizationsSecretsConfig
-    oneof_schema_64_validator: Optional[SnykOrganizationsSecretsConfig] = None
+    oneof_schema_65_validator: Optional[SnykOrganizationsSecretsConfig] = None
     # data type: SnykProjectsSecretsConfig
-    oneof_schema_65_validator: Optional[SnykProjectsSecretsConfig] = None
+    oneof_schema_66_validator: Optional[SnykProjectsSecretsConfig] = None
     # data type: SnykTargetsSecretsConfig
-    oneof_schema_66_validator: Optional[SnykTargetsSecretsConfig] = None
+    oneof_schema_67_validator: Optional[SnykTargetsSecretsConfig] = None
     # data type: TailscaleUsersSecretsConfig
-    oneof_schema_67_validator: Optional[TailscaleUsersSecretsConfig] = None
+    oneof_schema_68_validator: Optional[TailscaleUsersSecretsConfig] = None
     # data type: TenableAssetsSecretsConfig
-    oneof_schema_68_validator: Optional[TenableAssetsSecretsConfig] = None
+    oneof_schema_69_validator: Optional[TenableAssetsSecretsConfig] = None
     # data type: TenableAssetsCronSecretsConfig
-    oneof_schema_69_validator: Optional[TenableAssetsCronSecretsConfig] = None
+    oneof_schema_70_validator: Optional[TenableAssetsCronSecretsConfig] = None
     # data type: TenableVulnerabilitiesSecretsConfig
-    oneof_schema_70_validator: Optional[TenableVulnerabilitiesSecretsConfig] = None
+    oneof_schema_71_validator: Optional[TenableVulnerabilitiesSecretsConfig] = None
     # data type: TenableVulnerabilitiesCronSecretsConfig
-    oneof_schema_71_validator: Optional[TenableVulnerabilitiesCronSecretsConfig] = None
+    oneof_schema_72_validator: Optional[TenableVulnerabilitiesCronSecretsConfig] = None
     # data type: UsersSecretsConfig
-    oneof_schema_72_validator: Optional[UsersSecretsConfig] = None
+    oneof_schema_73_validator: Optional[UsersSecretsConfig] = None
     # data type: UsersInfoSecretsConfig
-    oneof_schema_73_validator: Optional[UsersInfoSecretsConfig] = None
+    oneof_schema_74_validator: Optional[UsersInfoSecretsConfig] = None
     # data type: VulnerabilitiesSecretsConfig
-    oneof_schema_74_validator: Optional[VulnerabilitiesSecretsConfig] = None
+    oneof_schema_75_validator: Optional[VulnerabilitiesSecretsConfig] = None
     # data type: VulnerabilitiesCronSecretsConfig
-    oneof_schema_75_validator: Optional[VulnerabilitiesCronSecretsConfig] = None
+    oneof_schema_76_validator: Optional[VulnerabilitiesCronSecretsConfig] = None
     # data type: VulnerabilityFindingsSecretsConfig
-    oneof_schema_76_validator: Optional[VulnerabilityFindingsSecretsConfig] = None
+    oneof_schema_77_validator: Optional[VulnerabilityFindingsSecretsConfig] = None
     actual_instance: Optional[Union[ActivityLogsSecretsConfig, ActorsInfoSecretsConfig, AdminActivitySecretsConfig, AdminLogsSecretsConfig, AuditLogsSecretsConfig, AuthLogsSecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureVnetFlowLogsSecretsConfig, BigqueryInputSecretsConfig, BoxEventsSecretsConfig, BoxUsersSecretsConfig, CloudAssetInventorySecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CrowdstrikeFdrSecretsConfig, DefenderForEndpointAlertsSecretsConfig, DetectSummariesSecretsConfig, DeviceActivitySecretsConfig, DeviceDetailsSecretsConfig, DevicesSecretsConfig, Dict[str, object], DriveActivitySecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, EventsLogsSecretsConfig, FullScansSecretsConfig, GitlabIssuesSecretsConfig, GoogleCloudStorageSecretsConfig, IssuesSecretsConfig, LogAnalyticsQuerySecretsConfig, LoginActivitySecretsConfig, LoginSessionsSecretsConfig, OauthActivitySecretsConfig, ObjectStorageInputSecretsConfig, OneloginEventsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, RolesInfoSecretsConfig, SemgrepCodeFindingsSecretsConfig, SemgrepDeploymentsSecretsConfig, SemgrepProjectDetailsSecretsConfig, SemgrepProjectsSecretsConfig, SemgrepSupplyChainFindingsSecretsConfig, SlackUsersSecretsConfig, SlackgroupsSecretsConfig, SnowflakeInputSecretsConfig, SnykIssuesSecretsConfig, SnykOrganizationsSecretsConfig, SnykProjectsSecretsConfig, SnykTargetsSecretsConfig, TailscaleUsersSecretsConfig, TenableAssetsCronSecretsConfig, TenableAssetsSecretsConfig, TenableVulnerabilitiesCronSecretsConfig, TenableVulnerabilitiesSecretsConfig, UsersInfoSecretsConfig, UsersSecretsConfig, VulnerabilitiesCronSecretsConfig, VulnerabilitiesSecretsConfig, VulnerabilityFindingsSecretsConfig, object]] = None
     one_of_schemas: Set[str] = { "ActivityLogsSecretsConfig", "ActorsInfoSecretsConfig", "AdminActivitySecretsConfig", "AdminLogsSecretsConfig", "AuditLogsSecretsConfig", "AuthLogsSecretsConfig", "AzureActivityLogsSecretsConfig", "AzureBlobStorageSecretsConfig", "AzureVnetFlowLogsSecretsConfig", "BigqueryInputSecretsConfig", "BoxEventsSecretsConfig", "BoxUsersSecretsConfig", "CloudAssetInventorySecretsConfig", "CloudConfigurationFindingsSecretsConfig", "CloudLogsSecretsConfig", "CloudResourceInventorySecretsConfig", "CrowdstrikeFdrSecretsConfig", "DefenderForEndpointAlertsSecretsConfig", "DetectSummariesSecretsConfig", "DeviceActivitySecretsConfig", "DeviceDetailsSecretsConfig", "DevicesSecretsConfig", "Dict[str, object]", "DriveActivitySecretsConfig", "EntraIdSecretsConfig", "EventSecretsConfig", "EventsLogsSecretsConfig", "FullScansSecretsConfig", "GitlabIssuesSecretsConfig", "GoogleCloudStorageSecretsConfig", "IssuesSecretsConfig", "LogAnalyticsQuerySecretsConfig", "LoginActivitySecretsConfig", "LoginSessionsSecretsConfig", "OauthActivitySecretsConfig", "ObjectStorageInputSecretsConfig", "OneloginEventsSecretsConfig", "PaloAltoDataSecurityAlertsSecretsConfig", "RolesInfoSecretsConfig", "SemgrepCodeFindingsSecretsConfig", "SemgrepDeploymentsSecretsConfig", "SemgrepProjectDetailsSecretsConfig", "SemgrepProjectsSecretsConfig", "SemgrepSupplyChainFindingsSecretsConfig", "SlackUsersSecretsConfig", "SlackgroupsSecretsConfig", "SnowflakeInputSecretsConfig", "SnykIssuesSecretsConfig", "SnykOrganizationsSecretsConfig", "SnykProjectsSecretsConfig", "SnykTargetsSecretsConfig", "TailscaleUsersSecretsConfig", "TenableAssetsCronSecretsConfig", "TenableAssetsSecretsConfig", "TenableVulnerabilitiesCronSecretsConfig", "TenableVulnerabilitiesSecretsConfig", "UsersInfoSecretsConfig", "UsersSecretsConfig", "VulnerabilitiesCronSecretsConfig", "VulnerabilitiesSecretsConfig", "VulnerabilityFindingsSecretsConfig", "object" }
 
@@ -522,6 +524,12 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `OneloginEventsSecretsConfig`")
         else:
             match += 1
+        # validate data type: object
+        try:
+            instance.oneof_schema_50_validator = v
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # validate data type: PaloAltoDataSecurityAlertsSecretsConfig
         if not isinstance(v, PaloAltoDataSecurityAlertsSecretsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `PaloAltoDataSecurityAlertsSecretsConfig`")
@@ -529,7 +537,7 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
             match += 1
         # validate data type: object
         try:
-            instance.oneof_schema_51_validator = v
+            instance.oneof_schema_52_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -540,13 +548,13 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
             match += 1
         # validate data type: object
         try:
-            instance.oneof_schema_53_validator = v
+            instance.oneof_schema_54_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
         # validate data type: object
         try:
-            instance.oneof_schema_54_validator = v
+            instance.oneof_schema_55_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -1013,6 +1021,15 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into object
+        try:
+            # validation
+            instance.oneof_schema_50_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_50_validator
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into PaloAltoDataSecurityAlertsSecretsConfig
         try:
             instance.actual_instance = PaloAltoDataSecurityAlertsSecretsConfig.from_json(json_str)
@@ -1022,9 +1039,9 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_51_validator = json.loads(json_str)
+            instance.oneof_schema_52_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_51_validator
+            instance.actual_instance = instance.oneof_schema_52_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -1037,18 +1054,18 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_53_validator = json.loads(json_str)
+            instance.oneof_schema_54_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_53_validator
+            instance.actual_instance = instance.oneof_schema_54_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_54_validator = json.loads(json_str)
+            instance.oneof_schema_55_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_54_validator
+            instance.actual_instance = instance.oneof_schema_55_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))

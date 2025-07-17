@@ -113,6 +113,8 @@
 |**skipSslVerification** | **Boolean** | Skip SSL verification for self-signed certificates |  [optional] |
 |**usePathStyle** | **Boolean** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. |  [optional] |
 |**subdomain** | **String** | SubDomain is a placeholder that represents your specific OneLogin subdomain. |  [optional] |
+|**childType** | **String** | Specifies whether to list AWS accounts or organizational units (OUs) as children of the parent entity. |  [optional] |
+|**parentId** | **String** | Parent ID to list children for |  [optional] |
 |**baseUrl** | **String** | URL of the organization |  [optional] |
 |**evaluationContextIdentifier** | **String** | Filters proactive resource evaluations for a given infrastructure deployment. |  [optional] |
 |**includePlannedDeletion** | **Boolean** | Whether or not to include secrets scheduled for deletion |  [optional] |

@@ -110,6 +110,8 @@ Name | Type | Description | Notes
 **SkipSslVerification** | Pointer to **bool** | Skip SSL verification for self-signed certificates | [optional] 
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
 **Subdomain** | Pointer to **string** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | [optional] 
+**ChildType** | Pointer to **string** | Specifies whether to list AWS accounts or organizational units (OUs) as children of the parent entity. | [optional] 
+**ParentId** | Pointer to **string** | Parent ID to list children for | [optional] 
 **BaseUrl** | Pointer to **string** | URL of the organization | [optional] 
 **EvaluationContextIdentifier** | Pointer to **string** | Filters proactive resource evaluations for a given infrastructure deployment. | [optional] 
 **IncludePlannedDeletion** | Pointer to **bool** | Whether or not to include secrets scheduled for deletion | [optional] 
@@ -2793,6 +2795,56 @@ SetSubdomain sets Subdomain field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasSubdomain() bool`
 
 HasSubdomain returns a boolean if a field has been set.
+
+### GetChildType
+
+`func (o *SecretProcessesorInputConfigSettings) GetChildType() string`
+
+GetChildType returns the ChildType field if non-nil, zero value otherwise.
+
+### GetChildTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetChildTypeOk() (*string, bool)`
+
+GetChildTypeOk returns a tuple with the ChildType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChildType
+
+`func (o *SecretProcessesorInputConfigSettings) SetChildType(v string)`
+
+SetChildType sets ChildType field to given value.
+
+### HasChildType
+
+`func (o *SecretProcessesorInputConfigSettings) HasChildType() bool`
+
+HasChildType returns a boolean if a field has been set.
+
+### GetParentId
+
+`func (o *SecretProcessesorInputConfigSettings) GetParentId() string`
+
+GetParentId returns the ParentId field if non-nil, zero value otherwise.
+
+### GetParentIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetParentIdOk() (*string, bool)`
+
+GetParentIdOk returns a tuple with the ParentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentId
+
+`func (o *SecretProcessesorInputConfigSettings) SetParentId(v string)`
+
+SetParentId sets ParentId field to given value.
+
+### HasParentId
+
+`func (o *SecretProcessesorInputConfigSettings) HasParentId() bool`
+
+HasParentId returns a boolean if a field has been set.
 
 ### GetBaseUrl
 

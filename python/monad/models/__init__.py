@@ -208,6 +208,7 @@ from monad.models.onelogin_events_settings_config import OneloginEventsSettingsC
 from monad.models.opensearch_secrets_config import OpensearchSecretsConfig
 from monad.models.opensearch_settings_config import OpensearchSettingsConfig
 from monad.models.operation_information import OperationInformation
+from monad.models.organizations_settings_config import OrganizationsSettingsConfig
 from monad.models.outputs_connector_meta import OutputsConnectorMeta
 from monad.models.pagerduty_alerts_config import PagerdutyAlertsConfig
 from monad.models.pagerduty_secrets_config import PagerdutySecretsConfig

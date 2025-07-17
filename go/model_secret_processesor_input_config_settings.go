@@ -65,6 +65,7 @@ type SecretProcessesorInputConfigSettings struct {
 	OauthActivitySettingsConfig *OauthActivitySettingsConfig
 	ObjectStorageInputSettingsConfig *ObjectStorageInputSettingsConfig
 	OneloginEventsSettingsConfig *OneloginEventsSettingsConfig
+	OrganizationsSettingsConfig *OrganizationsSettingsConfig
 	PaloAltoDataSecurityAlertsSettingsConfig *PaloAltoDataSecurityAlertsSettingsConfig
 	ResourceEvaluationsSettingsConfig *ResourceEvaluationsSettingsConfig
 	RolesInfoSettingsConfig *RolesInfoSettingsConfig
@@ -408,6 +409,13 @@ func ObjectStorageInputSettingsConfigAsSecretProcessesorInputConfigSettings(v *O
 func OneloginEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OneloginEventsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		OneloginEventsSettingsConfig: v,
+	}
+}
+
+// OrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OrganizationsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func OrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OrganizationsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		OrganizationsSettingsConfig: v,
 	}
 }
 
@@ -1352,6 +1360,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OneloginEventsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into OrganizationsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.OrganizationsSettingsConfig)
+	if err == nil {
+		jsonOrganizationsSettingsConfig, _ := json.Marshal(dst.OrganizationsSettingsConfig)
+		if string(jsonOrganizationsSettingsConfig) == "{}" { // empty struct
+			dst.OrganizationsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.OrganizationsSettingsConfig); err != nil {
+				dst.OrganizationsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.OrganizationsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into PaloAltoDataSecurityAlertsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.PaloAltoDataSecurityAlertsSettingsConfig)
 	if err == nil {
@@ -1774,6 +1799,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OauthActivitySettingsConfig = nil
 		dst.ObjectStorageInputSettingsConfig = nil
 		dst.OneloginEventsSettingsConfig = nil
+		dst.OrganizationsSettingsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
 		dst.ResourceEvaluationsSettingsConfig = nil
 		dst.RolesInfoSettingsConfig = nil
@@ -1989,6 +2015,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.OneloginEventsSettingsConfig != nil {
 		return json.Marshal(&src.OneloginEventsSettingsConfig)
+	}
+
+	if src.OrganizationsSettingsConfig != nil {
+		return json.Marshal(&src.OrganizationsSettingsConfig)
 	}
 
 	if src.PaloAltoDataSecurityAlertsSettingsConfig != nil {
@@ -2271,6 +2301,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.OneloginEventsSettingsConfig
 	}
 
+	if obj.OrganizationsSettingsConfig != nil {
+		return obj.OrganizationsSettingsConfig
+	}
+
 	if obj.PaloAltoDataSecurityAlertsSettingsConfig != nil {
 		return obj.PaloAltoDataSecurityAlertsSettingsConfig
 	}
@@ -2547,6 +2581,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.OneloginEventsSettingsConfig != nil {
 		return *obj.OneloginEventsSettingsConfig
+	}
+
+	if obj.OrganizationsSettingsConfig != nil {
+		return *obj.OrganizationsSettingsConfig
 	}
 
 	if obj.PaloAltoDataSecurityAlertsSettingsConfig != nil {

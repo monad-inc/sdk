@@ -251,6 +251,7 @@ __all__ = [
     "OpensearchSecretsConfig",
     "OpensearchSettingsConfig",
     "OperationInformation",
+    "OrganizationsSettingsConfig",
     "OutputsConnectorMeta",
     "PagerdutyAlertsConfig",
     "PagerdutySecretsConfig",
@@ -634,6 +635,7 @@ from monad.models.onelogin_events_settings_config import OneloginEventsSettingsC
 from monad.models.opensearch_secrets_config import OpensearchSecretsConfig as OpensearchSecretsConfig
 from monad.models.opensearch_settings_config import OpensearchSettingsConfig as OpensearchSettingsConfig
 from monad.models.operation_information import OperationInformation as OperationInformation
+from monad.models.organizations_settings_config import OrganizationsSettingsConfig as OrganizationsSettingsConfig
 from monad.models.outputs_connector_meta import OutputsConnectorMeta as OutputsConnectorMeta
 from monad.models.pagerduty_alerts_config import PagerdutyAlertsConfig as PagerdutyAlertsConfig
 from monad.models.pagerduty_secrets_config import PagerdutySecretsConfig as PagerdutySecretsConfig

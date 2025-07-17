@@ -196,6 +196,7 @@ import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsCo
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
+import { OrganizationsSettingsConfig } from '../models/OrganizationsSettingsConfig';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
