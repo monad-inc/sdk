@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Fleet DM secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-15T23:00:16.441942898Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-17T06:50:35.721936655Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ActivityLogsSecretsConfig {
   public static final String SERIALIZED_NAME_API_KEY = "api_key";
   @SerializedName(SERIALIZED_NAME_API_KEY)

@@ -65,6 +65,7 @@ type SecretProcessesorInputConfigSettings struct {
 	OauthActivitySettingsConfig *OauthActivitySettingsConfig
 	ObjectStorageInputSettingsConfig *ObjectStorageInputSettingsConfig
 	OneloginEventsSettingsConfig *OneloginEventsSettingsConfig
+	PaloAltoDataSecurityAlertsSettingsConfig *PaloAltoDataSecurityAlertsSettingsConfig
 	ResourceEvaluationsSettingsConfig *ResourceEvaluationsSettingsConfig
 	RolesInfoSettingsConfig *RolesInfoSettingsConfig
 	SecretsmanagerSettingsConfig *SecretsmanagerSettingsConfig
@@ -407,6 +408,13 @@ func ObjectStorageInputSettingsConfigAsSecretProcessesorInputConfigSettings(v *O
 func OneloginEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OneloginEventsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		OneloginEventsSettingsConfig: v,
+	}
+}
+
+// PaloAltoDataSecurityAlertsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PaloAltoDataSecurityAlertsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func PaloAltoDataSecurityAlertsSettingsConfigAsSecretProcessesorInputConfigSettings(v *PaloAltoDataSecurityAlertsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		PaloAltoDataSecurityAlertsSettingsConfig: v,
 	}
 }
 
@@ -1344,6 +1352,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OneloginEventsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into PaloAltoDataSecurityAlertsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.PaloAltoDataSecurityAlertsSettingsConfig)
+	if err == nil {
+		jsonPaloAltoDataSecurityAlertsSettingsConfig, _ := json.Marshal(dst.PaloAltoDataSecurityAlertsSettingsConfig)
+		if string(jsonPaloAltoDataSecurityAlertsSettingsConfig) == "{}" { // empty struct
+			dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PaloAltoDataSecurityAlertsSettingsConfig); err != nil {
+				dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into ResourceEvaluationsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.ResourceEvaluationsSettingsConfig)
 	if err == nil {
@@ -1749,6 +1774,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OauthActivitySettingsConfig = nil
 		dst.ObjectStorageInputSettingsConfig = nil
 		dst.OneloginEventsSettingsConfig = nil
+		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
 		dst.ResourceEvaluationsSettingsConfig = nil
 		dst.RolesInfoSettingsConfig = nil
 		dst.SecretsmanagerSettingsConfig = nil
@@ -1963,6 +1989,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.OneloginEventsSettingsConfig != nil {
 		return json.Marshal(&src.OneloginEventsSettingsConfig)
+	}
+
+	if src.PaloAltoDataSecurityAlertsSettingsConfig != nil {
+		return json.Marshal(&src.PaloAltoDataSecurityAlertsSettingsConfig)
 	}
 
 	if src.ResourceEvaluationsSettingsConfig != nil {
@@ -2241,6 +2271,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.OneloginEventsSettingsConfig
 	}
 
+	if obj.PaloAltoDataSecurityAlertsSettingsConfig != nil {
+		return obj.PaloAltoDataSecurityAlertsSettingsConfig
+	}
+
 	if obj.ResourceEvaluationsSettingsConfig != nil {
 		return obj.ResourceEvaluationsSettingsConfig
 	}
@@ -2513,6 +2547,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.OneloginEventsSettingsConfig != nil {
 		return *obj.OneloginEventsSettingsConfig
+	}
+
+	if obj.PaloAltoDataSecurityAlertsSettingsConfig != nil {
+		return *obj.PaloAltoDataSecurityAlertsSettingsConfig
 	}
 
 	if obj.ResourceEvaluationsSettingsConfig != nil {

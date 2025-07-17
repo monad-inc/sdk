@@ -256,6 +256,8 @@ __all__ = [
     "PagerdutySecretsConfig",
     "PagerdutySettingsConfig",
     "PagerdutySummaryConfig",
+    "PaloAltoDataSecurityAlertsSecretsConfig",
+    "PaloAltoDataSecurityAlertsSettingsConfig",
     "ParquetParquetFormatter",
     "PostgresqlSecretsConfig",
     "PostgresqlSettingsConfig",
@@ -637,6 +639,8 @@ from monad.models.pagerduty_alerts_config import PagerdutyAlertsConfig as Pagerd
 from monad.models.pagerduty_secrets_config import PagerdutySecretsConfig as PagerdutySecretsConfig
 from monad.models.pagerduty_settings_config import PagerdutySettingsConfig as PagerdutySettingsConfig
 from monad.models.pagerduty_summary_config import PagerdutySummaryConfig as PagerdutySummaryConfig
+from monad.models.palo_alto_data_security_alerts_secrets_config import PaloAltoDataSecurityAlertsSecretsConfig as PaloAltoDataSecurityAlertsSecretsConfig
+from monad.models.palo_alto_data_security_alerts_settings_config import PaloAltoDataSecurityAlertsSettingsConfig as PaloAltoDataSecurityAlertsSettingsConfig
 from monad.models.parquet_parquet_formatter import ParquetParquetFormatter as ParquetParquetFormatter
 from monad.models.postgresql_secrets_config import PostgresqlSecretsConfig as PostgresqlSecretsConfig
 from monad.models.postgresql_settings_config import PostgresqlSettingsConfig as PostgresqlSettingsConfig
