@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Cloud Asset Inventory settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-17T17:15:08.359304907Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-17T17:28:24.378562175Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class CloudAssetInventorySettingsConfig {
   public static final String SERIALIZED_NAME_ASSET_TYPES = "asset_types";
   @SerializedName(SERIALIZED_NAME_ASSET_TYPES)
