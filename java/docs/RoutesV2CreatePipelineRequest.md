@@ -7,7 +7,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**cronSchedule** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**edges** | [**List&lt;RoutesV2PipelineRequestEdge&gt;**](RoutesV2PipelineRequestEdge.md) |  |  |
 |**enabled** | **Boolean** |  |  |

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CronSchedule** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Edges** | [**[]RoutesV2PipelineRequestEdge**](RoutesV2PipelineRequestEdge.md) |  | 
 **Enabled** | **bool** |  | 
@@ -29,31 +28,6 @@ will change when the set of required properties is changed
 NewRoutesV2CreatePipelineRequestWithDefaults instantiates a new RoutesV2CreatePipelineRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCronSchedule
-
-`func (o *RoutesV2CreatePipelineRequest) GetCronSchedule() string`
-
-GetCronSchedule returns the CronSchedule field if non-nil, zero value otherwise.
-
-### GetCronScheduleOk
-
-`func (o *RoutesV2CreatePipelineRequest) GetCronScheduleOk() (*string, bool)`
-
-GetCronScheduleOk returns a tuple with the CronSchedule field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCronSchedule
-
-`func (o *RoutesV2CreatePipelineRequest) SetCronSchedule(v string)`
-
-SetCronSchedule sets CronSchedule field to given value.
-
-### HasCronSchedule
-
-`func (o *RoutesV2CreatePipelineRequest) HasCronSchedule() bool`
-
-HasCronSchedule returns a boolean if a field has been set.
 
 ### GetDescription
 

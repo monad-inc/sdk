@@ -29,13 +29,12 @@ class RoutesV2CreatePipelineRequest(BaseModel):
     """
     RoutesV2CreatePipelineRequest
     """ # noqa: E501
-    cron_schedule: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     edges: List[RoutesV2PipelineRequestEdge]
     enabled: StrictBool
     name: StrictStr
     nodes: List[RoutesV2PipelineRequestNode]
-    __properties: ClassVar[List[str]] = ["cron_schedule", "description", "edges", "enabled", "name", "nodes"]
+    __properties: ClassVar[List[str]] = ["description", "edges", "enabled", "name", "nodes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -102,7 +101,6 @@ class RoutesV2CreatePipelineRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "cron_schedule": obj.get("cron_schedule"),
             "description": obj.get("description"),
             "edges": [RoutesV2PipelineRequestEdge.from_dict(_item) for _item in obj["edges"]] if obj.get("edges") is not None else None,
             "enabled": obj.get("enabled"),

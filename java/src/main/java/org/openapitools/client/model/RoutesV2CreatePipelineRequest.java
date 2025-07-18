@@ -52,13 +52,8 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2CreatePipelineRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-18T17:28:47.160686375Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-18T21:38:47.772289300Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV2CreatePipelineRequest {
-  public static final String SERIALIZED_NAME_CRON_SCHEDULE = "cron_schedule";
-  @SerializedName(SERIALIZED_NAME_CRON_SCHEDULE)
-  @javax.annotation.Nullable
-  private String cronSchedule;
-
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
@@ -86,25 +81,6 @@ public class RoutesV2CreatePipelineRequest {
 
   public RoutesV2CreatePipelineRequest() {
   }
-
-  public RoutesV2CreatePipelineRequest cronSchedule(@javax.annotation.Nullable String cronSchedule) {
-    this.cronSchedule = cronSchedule;
-    return this;
-  }
-
-  /**
-   * Get cronSchedule
-   * @return cronSchedule
-   */
-  @javax.annotation.Nullable
-  public String getCronSchedule() {
-    return cronSchedule;
-  }
-
-  public void setCronSchedule(@javax.annotation.Nullable String cronSchedule) {
-    this.cronSchedule = cronSchedule;
-  }
-
 
   public RoutesV2CreatePipelineRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
@@ -227,8 +203,7 @@ public class RoutesV2CreatePipelineRequest {
       return false;
     }
     RoutesV2CreatePipelineRequest routesV2CreatePipelineRequest = (RoutesV2CreatePipelineRequest) o;
-    return Objects.equals(this.cronSchedule, routesV2CreatePipelineRequest.cronSchedule) &&
-        Objects.equals(this.description, routesV2CreatePipelineRequest.description) &&
+    return Objects.equals(this.description, routesV2CreatePipelineRequest.description) &&
         Objects.equals(this.edges, routesV2CreatePipelineRequest.edges) &&
         Objects.equals(this.enabled, routesV2CreatePipelineRequest.enabled) &&
         Objects.equals(this.name, routesV2CreatePipelineRequest.name) &&
@@ -237,14 +212,13 @@ public class RoutesV2CreatePipelineRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cronSchedule, description, edges, enabled, name, nodes);
+    return Objects.hash(description, edges, enabled, name, nodes);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV2CreatePipelineRequest {\n");
-    sb.append("    cronSchedule: ").append(toIndentedString(cronSchedule)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    edges: ").append(toIndentedString(edges)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
@@ -271,7 +245,7 @@ public class RoutesV2CreatePipelineRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cron_schedule", "description", "edges", "enabled", "name", "nodes"));
+    openapiFields = new HashSet<String>(Arrays.asList("description", "edges", "enabled", "name", "nodes"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("edges", "enabled", "name", "nodes"));
@@ -305,9 +279,6 @@ public class RoutesV2CreatePipelineRequest {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("cron_schedule") != null && !jsonObj.get("cron_schedule").isJsonNull()) && !jsonObj.get("cron_schedule").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cron_schedule` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cron_schedule").toString()));
-      }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
