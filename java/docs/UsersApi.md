@@ -79,7 +79,7 @@ This endpoint does not need any parameter.
 
 <a id="v1UsersPost"></a>
 # **v1UsersPost**
-> ModelsUser v1UsersPost(body)
+> GithubComMonadIncCorePkgTypesModelsUser v1UsersPost(body)
 
 Create user
 
@@ -115,7 +115,7 @@ public class Example {
     UsersApi apiInstance = new UsersApi(defaultClient);
     Object body = null; // Object | 
     try {
-      ModelsUser result = apiInstance.v1UsersPost(body);
+      GithubComMonadIncCorePkgTypesModelsUser result = apiInstance.v1UsersPost(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#v1UsersPost");
@@ -136,7 +136,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsUser**](ModelsUser.md)
+[**GithubComMonadIncCorePkgTypesModelsUser**](GithubComMonadIncCorePkgTypesModelsUser.md)
 
 ### Authorization
 

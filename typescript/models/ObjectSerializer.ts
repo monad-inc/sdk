@@ -93,6 +93,10 @@ export * from '../models/FormatterFormatConfig';
 export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
 export * from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
+export * from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
+export * from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
+export * from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
+export * from '../models/GithubComMonadIncCorePkgTypesModelsUser';
 export * from '../models/GitlabIssuesSecretsConfig';
 export * from '../models/GitlabIssuesSettingsConfig';
 export * from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -137,7 +141,6 @@ export * from '../models/ModelsInput';
 export * from '../models/ModelsInputConfig';
 export * from '../models/ModelsInputList';
 export * from '../models/ModelsNodeComponent';
-export * from '../models/ModelsOrganization';
 export * from '../models/ModelsOrganizationList';
 export * from '../models/ModelsOrganizationUser';
 export * from '../models/ModelsOrganizationUserList';
@@ -145,7 +148,6 @@ export * from '../models/ModelsOutput';
 export * from '../models/ModelsOutputConfig';
 export * from '../models/ModelsOutputList';
 export * from '../models/ModelsPagination';
-export * from '../models/ModelsPermission';
 export * from '../models/ModelsPermissionList';
 export * from '../models/ModelsPipeline';
 export * from '../models/ModelsPipelineConfigV2';
@@ -159,7 +161,6 @@ export * from '../models/ModelsPipelineNode';
 export * from '../models/ModelsPipelineNodeStatus';
 export * from '../models/ModelsPipelineRetentionPolicy';
 export * from '../models/ModelsPipelineStatus';
-export * from '../models/ModelsQuota';
 export * from '../models/ModelsQuotaList';
 export * from '../models/ModelsRoleWithPermissions';
 export * from '../models/ModelsRoleWithPermissionsList';
@@ -172,7 +173,6 @@ export * from '../models/ModelsTransformList';
 export * from '../models/ModelsTransformOperation';
 export * from '../models/ModelsTransformsRepositoryList';
 export * from '../models/ModelsTransformsRepositoryTransform';
-export * from '../models/ModelsUser';
 export * from '../models/ModelsUserRoleWithPermissions';
 export * from '../models/MonadLogSettingsConfig';
 export * from '../models/MutateTypeMutateType';
@@ -432,6 +432,10 @@ import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
 import { GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter   } from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
+import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
+import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
+import { GithubComMonadIncCorePkgTypesModelsQuota } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
+import { GithubComMonadIncCorePkgTypesModelsUser } from '../models/GithubComMonadIncCorePkgTypesModelsUser';
 import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
 import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -476,7 +480,6 @@ import { ModelsInput } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputList } from '../models/ModelsInputList';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
-import { ModelsOrganization } from '../models/ModelsOrganization';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
@@ -484,7 +487,6 @@ import { ModelsOutput } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
-import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline } from '../models/ModelsPipeline';
 import { ModelsPipelineConfigV2 } from '../models/ModelsPipelineConfigV2';
@@ -498,7 +500,6 @@ import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
-import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
@@ -511,7 +512,6 @@ import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
-import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
@@ -797,6 +797,10 @@ let typeMap: {[index: string]: any} = {
     "FullScansSecretsConfig": FullScansSecretsConfig,
     "FullScansSettingsConfig": FullScansSettingsConfig,
     "GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter": GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter,
+    "GithubComMonadIncCorePkgTypesModelsOrganization": GithubComMonadIncCorePkgTypesModelsOrganization,
+    "GithubComMonadIncCorePkgTypesModelsPermission": GithubComMonadIncCorePkgTypesModelsPermission,
+    "GithubComMonadIncCorePkgTypesModelsQuota": GithubComMonadIncCorePkgTypesModelsQuota,
+    "GithubComMonadIncCorePkgTypesModelsUser": GithubComMonadIncCorePkgTypesModelsUser,
     "GitlabIssuesSecretsConfig": GitlabIssuesSecretsConfig,
     "GitlabIssuesSettingsConfig": GitlabIssuesSettingsConfig,
     "GoogleCloudStorageOutputSecretsConfig": GoogleCloudStorageOutputSecretsConfig,
@@ -841,7 +845,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsInputConfig": ModelsInputConfig,
     "ModelsInputList": ModelsInputList,
     "ModelsNodeComponent": ModelsNodeComponent,
-    "ModelsOrganization": ModelsOrganization,
     "ModelsOrganizationList": ModelsOrganizationList,
     "ModelsOrganizationUser": ModelsOrganizationUser,
     "ModelsOrganizationUserList": ModelsOrganizationUserList,
@@ -849,7 +852,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsOutputConfig": ModelsOutputConfig,
     "ModelsOutputList": ModelsOutputList,
     "ModelsPagination": ModelsPagination,
-    "ModelsPermission": ModelsPermission,
     "ModelsPermissionList": ModelsPermissionList,
     "ModelsPipeline": ModelsPipeline,
     "ModelsPipelineConfigV2": ModelsPipelineConfigV2,
@@ -863,7 +865,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsPipelineNodeStatus": ModelsPipelineNodeStatus,
     "ModelsPipelineRetentionPolicy": ModelsPipelineRetentionPolicy,
     "ModelsPipelineStatus": ModelsPipelineStatus,
-    "ModelsQuota": ModelsQuota,
     "ModelsQuotaList": ModelsQuotaList,
     "ModelsRoleWithPermissions": ModelsRoleWithPermissions,
     "ModelsRoleWithPermissionsList": ModelsRoleWithPermissionsList,
@@ -876,7 +877,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsTransformOperation": ModelsTransformOperation,
     "ModelsTransformsRepositoryList": ModelsTransformsRepositoryList,
     "ModelsTransformsRepositoryTransform": ModelsTransformsRepositoryTransform,
-    "ModelsUser": ModelsUser,
     "ModelsUserRoleWithPermissions": ModelsUserRoleWithPermissions,
     "MonadLogSettingsConfig": MonadLogSettingsConfig,
     "MutateTypeMutateType": MutateTypeMutateType,

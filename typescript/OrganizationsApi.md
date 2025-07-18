@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1OrganizationsOrganizationIdPatch**
-> ModelsOrganization v1OrganizationsOrganizationIdPatch(routesUpdateOrganizationRequest)
+> GithubComMonadIncCorePkgTypesModelsOrganization v1OrganizationsOrganizationIdPatch(routesUpdateOrganizationRequest)
 
 Update organization
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ModelsOrganization**
+**GithubComMonadIncCorePkgTypesModelsOrganization**
 
 ### Authorization
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1OrganizationsPost**
-> ModelsOrganization v1OrganizationsPost(routesCreateOrganizationRequest)
+> GithubComMonadIncCorePkgTypesModelsOrganization v1OrganizationsPost(routesCreateOrganizationRequest)
 
 Create organization
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ModelsOrganization**
+**GithubComMonadIncCorePkgTypesModelsOrganization**
 
 ### Authorization
 

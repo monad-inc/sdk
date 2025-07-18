@@ -98,6 +98,10 @@ import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
 import { GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter } from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
+import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
+import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
+import { GithubComMonadIncCorePkgTypesModelsQuota } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
+import { GithubComMonadIncCorePkgTypesModelsUser } from '../models/GithubComMonadIncCorePkgTypesModelsUser';
 import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
 import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -142,7 +146,6 @@ import { ModelsInput } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputList } from '../models/ModelsInputList';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
-import { ModelsOrganization } from '../models/ModelsOrganization';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
@@ -150,7 +153,6 @@ import { ModelsOutput } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
-import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline } from '../models/ModelsPipeline';
 import { ModelsPipelineConfigV2 } from '../models/ModelsPipelineConfigV2';
@@ -164,7 +166,6 @@ import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
-import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
@@ -177,7 +178,6 @@ import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
-import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
@@ -3428,7 +3428,7 @@ export class ObservableOrganizationsApi {
      * @param organizationId Organization ID
      * @param routesUpdateOrganizationRequest Request body for updating an organization
      */
-    public v1OrganizationsOrganizationIdPatchWithHttpInfo(organizationId: string, routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOrganization>> {
+    public v1OrganizationsOrganizationIdPatchWithHttpInfo(organizationId: string, routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.v1OrganizationsOrganizationIdPatch(organizationId, routesUpdateOrganizationRequest, _config);
@@ -3454,8 +3454,8 @@ export class ObservableOrganizationsApi {
      * @param organizationId Organization ID
      * @param routesUpdateOrganizationRequest Request body for updating an organization
      */
-    public v1OrganizationsOrganizationIdPatch(organizationId: string, routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest, _options?: ConfigurationOptions): Observable<ModelsOrganization> {
-        return this.v1OrganizationsOrganizationIdPatchWithHttpInfo(organizationId, routesUpdateOrganizationRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsOrganization>) => apiResponse.data));
+    public v1OrganizationsOrganizationIdPatch(organizationId: string, routesUpdateOrganizationRequest: RoutesUpdateOrganizationRequest, _options?: ConfigurationOptions): Observable<GithubComMonadIncCorePkgTypesModelsOrganization> {
+        return this.v1OrganizationsOrganizationIdPatchWithHttpInfo(organizationId, routesUpdateOrganizationRequest, _options).pipe(map((apiResponse: HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>) => apiResponse.data));
     }
 
     /**
@@ -3463,7 +3463,7 @@ export class ObservableOrganizationsApi {
      * Create organization
      * @param routesCreateOrganizationRequest Request body for creating an organization
      */
-    public v1OrganizationsPostWithHttpInfo(routesCreateOrganizationRequest: RoutesCreateOrganizationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOrganization>> {
+    public v1OrganizationsPostWithHttpInfo(routesCreateOrganizationRequest: RoutesCreateOrganizationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.v1OrganizationsPost(routesCreateOrganizationRequest, _config);
@@ -3488,8 +3488,8 @@ export class ObservableOrganizationsApi {
      * Create organization
      * @param routesCreateOrganizationRequest Request body for creating an organization
      */
-    public v1OrganizationsPost(routesCreateOrganizationRequest: RoutesCreateOrganizationRequest, _options?: ConfigurationOptions): Observable<ModelsOrganization> {
-        return this.v1OrganizationsPostWithHttpInfo(routesCreateOrganizationRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsOrganization>) => apiResponse.data));
+    public v1OrganizationsPost(routesCreateOrganizationRequest: RoutesCreateOrganizationRequest, _options?: ConfigurationOptions): Observable<GithubComMonadIncCorePkgTypesModelsOrganization> {
+        return this.v1OrganizationsPostWithHttpInfo(routesCreateOrganizationRequest, _options).pipe(map((apiResponse: HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>) => apiResponse.data));
     }
 
     /**
@@ -5349,7 +5349,7 @@ export class ObservableUsersApi {
      * Create user
      * @param [body]
      */
-    public v1UsersPostWithHttpInfo(body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsUser>> {
+    public v1UsersPostWithHttpInfo(body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<GithubComMonadIncCorePkgTypesModelsUser>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.v1UsersPost(body, _config);
@@ -5374,8 +5374,8 @@ export class ObservableUsersApi {
      * Create user
      * @param [body]
      */
-    public v1UsersPost(body?: any, _options?: ConfigurationOptions): Observable<ModelsUser> {
-        return this.v1UsersPostWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<ModelsUser>) => apiResponse.data));
+    public v1UsersPost(body?: any, _options?: ConfigurationOptions): Observable<GithubComMonadIncCorePkgTypesModelsUser> {
+        return this.v1UsersPostWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<GithubComMonadIncCorePkgTypesModelsUser>) => apiResponse.data));
     }
 
     /**

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **organization_id** | **str** |  | [optional] 
-**permissions** | [**List[ModelsPermission]**](ModelsPermission.md) |  | [optional] 
+**permissions** | [**List[GithubComMonadIncCorePkgTypesModelsPermission]**](GithubComMonadIncCorePkgTypesModelsPermission.md) |  | [optional] 
 **role_id** | **str** |  | [optional] 
 **role_name** | **str** |  | [optional] 
 

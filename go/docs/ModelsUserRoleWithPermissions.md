@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **OrganizationId** | Pointer to **string** |  | [optional] 
-**Permissions** | Pointer to [**[]ModelsPermission**](ModelsPermission.md) |  | [optional] 
+**Permissions** | Pointer to [**[]GithubComMonadIncCorePkgTypesModelsPermission**](GithubComMonadIncCorePkgTypesModelsPermission.md) |  | [optional] 
 **RoleId** | Pointer to **string** |  | [optional] 
 **RoleName** | Pointer to **string** |  | [optional] 
 
@@ -55,20 +55,20 @@ HasOrganizationId returns a boolean if a field has been set.
 
 ### GetPermissions
 
-`func (o *ModelsUserRoleWithPermissions) GetPermissions() []ModelsPermission`
+`func (o *ModelsUserRoleWithPermissions) GetPermissions() []GithubComMonadIncCorePkgTypesModelsPermission`
 
 GetPermissions returns the Permissions field if non-nil, zero value otherwise.
 
 ### GetPermissionsOk
 
-`func (o *ModelsUserRoleWithPermissions) GetPermissionsOk() (*[]ModelsPermission, bool)`
+`func (o *ModelsUserRoleWithPermissions) GetPermissionsOk() (*[]GithubComMonadIncCorePkgTypesModelsPermission, bool)`
 
 GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPermissions
 
-`func (o *ModelsUserRoleWithPermissions) SetPermissions(v []ModelsPermission)`
+`func (o *ModelsUserRoleWithPermissions) SetPermissions(v []GithubComMonadIncCorePkgTypesModelsPermission)`
 
 SetPermissions sets Permissions field to given value.
 

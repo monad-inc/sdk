@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_permission import ModelsPermission
+from monad.models.github_com_monad_inc_core_pkg_types_models_permission import GithubComMonadIncCorePkgTypesModelsPermission
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,7 +33,7 @@ class ModelsRoleWithPermissions(BaseModel):
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
-    permissions: Optional[List[ModelsPermission]] = None
+    permissions: Optional[List[GithubComMonadIncCorePkgTypesModelsPermission]] = None
     protected: Optional[StrictBool] = None
     updated_at: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["created_at", "description", "id", "name", "organization_id", "permissions", "protected", "updated_at"]
@@ -101,7 +101,7 @@ class ModelsRoleWithPermissions(BaseModel):
             "id": obj.get("id"),
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
-            "permissions": [ModelsPermission.from_dict(_item) for _item in obj["permissions"]] if obj.get("permissions") is not None else None,
+            "permissions": [GithubComMonadIncCorePkgTypesModelsPermission.from_dict(_item) for _item in obj["permissions"]] if obj.get("permissions") is not None else None,
             "protected": obj.get("protected"),
             "updated_at": obj.get("updated_at")
         })

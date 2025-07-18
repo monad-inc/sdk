@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Pagination** | Pointer to [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
-**Permissions** | Pointer to [**[]ModelsPermission**](ModelsPermission.md) |  | [optional] 
+**Permissions** | Pointer to [**[]GithubComMonadIncCorePkgTypesModelsPermission**](GithubComMonadIncCorePkgTypesModelsPermission.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasPagination returns a boolean if a field has been set.
 
 ### GetPermissions
 
-`func (o *ModelsPermissionList) GetPermissions() []ModelsPermission`
+`func (o *ModelsPermissionList) GetPermissions() []GithubComMonadIncCorePkgTypesModelsPermission`
 
 GetPermissions returns the Permissions field if non-nil, zero value otherwise.
 
 ### GetPermissionsOk
 
-`func (o *ModelsPermissionList) GetPermissionsOk() (*[]ModelsPermission, bool)`
+`func (o *ModelsPermissionList) GetPermissionsOk() (*[]GithubComMonadIncCorePkgTypesModelsPermission, bool)`
 
 GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPermissions
 
-`func (o *ModelsPermissionList) SetPermissions(v []ModelsPermission)`
+`func (o *ModelsPermissionList) SetPermissions(v []GithubComMonadIncCorePkgTypesModelsPermission)`
 
 SetPermissions sets Permissions field to given value.
 

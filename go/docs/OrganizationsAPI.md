@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## V1OrganizationsOrganizationIdPatch
 
-> ModelsOrganization V1OrganizationsOrganizationIdPatch(ctx, organizationId).RoutesUpdateOrganizationRequest(routesUpdateOrganizationRequest).Execute()
+> GithubComMonadIncCorePkgTypesModelsOrganization V1OrganizationsOrganizationIdPatch(ctx, organizationId).RoutesUpdateOrganizationRequest(routesUpdateOrganizationRequest).Execute()
 
 Update organization
 
@@ -181,7 +181,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.V1OrganizationsOrganizationIdPatch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1OrganizationsOrganizationIdPatch`: ModelsOrganization
+	// response from `V1OrganizationsOrganizationIdPatch`: GithubComMonadIncCorePkgTypesModelsOrganization
 	fmt.Fprintf(os.Stdout, "Response from `OrganizationsAPI.V1OrganizationsOrganizationIdPatch`: %v\n", resp)
 }
 ```
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsOrganization**](ModelsOrganization.md)
+[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ## V1OrganizationsPost
 
-> ModelsOrganization V1OrganizationsPost(ctx).RoutesCreateOrganizationRequest(routesCreateOrganizationRequest).Execute()
+> GithubComMonadIncCorePkgTypesModelsOrganization V1OrganizationsPost(ctx).RoutesCreateOrganizationRequest(routesCreateOrganizationRequest).Execute()
 
 Create organization
 
@@ -252,7 +252,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.V1OrganizationsPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1OrganizationsPost`: ModelsOrganization
+	// response from `V1OrganizationsPost`: GithubComMonadIncCorePkgTypesModelsOrganization
 	fmt.Fprintf(os.Stdout, "Response from `OrganizationsAPI.V1OrganizationsPost`: %v\n", resp)
 }
 ```
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsOrganization**](ModelsOrganization.md)
+[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
 
 ### Authorization
 

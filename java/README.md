@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-07-17T18:28:25.736811588Z[Etc/UTC]
+  - Build date: 2025-07-18T07:32:10.757872978Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -339,6 +339,10 @@ Class | Method | HTTP request | Description
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
  - [GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter](docs/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.md)
+ - [GithubComMonadIncCorePkgTypesModelsOrganization](docs/GithubComMonadIncCorePkgTypesModelsOrganization.md)
+ - [GithubComMonadIncCorePkgTypesModelsPermission](docs/GithubComMonadIncCorePkgTypesModelsPermission.md)
+ - [GithubComMonadIncCorePkgTypesModelsQuota](docs/GithubComMonadIncCorePkgTypesModelsQuota.md)
+ - [GithubComMonadIncCorePkgTypesModelsUser](docs/GithubComMonadIncCorePkgTypesModelsUser.md)
  - [GitlabIssuesSecretsConfig](docs/GitlabIssuesSecretsConfig.md)
  - [GitlabIssuesSettingsConfig](docs/GitlabIssuesSettingsConfig.md)
  - [GoogleCloudStorageOutputSecretsConfig](docs/GoogleCloudStorageOutputSecretsConfig.md)
@@ -383,7 +387,6 @@ Class | Method | HTTP request | Description
  - [ModelsInputConfig](docs/ModelsInputConfig.md)
  - [ModelsInputList](docs/ModelsInputList.md)
  - [ModelsNodeComponent](docs/ModelsNodeComponent.md)
- - [ModelsOrganization](docs/ModelsOrganization.md)
  - [ModelsOrganizationList](docs/ModelsOrganizationList.md)
  - [ModelsOrganizationUser](docs/ModelsOrganizationUser.md)
  - [ModelsOrganizationUserList](docs/ModelsOrganizationUserList.md)
@@ -391,7 +394,6 @@ Class | Method | HTTP request | Description
  - [ModelsOutputConfig](docs/ModelsOutputConfig.md)
  - [ModelsOutputList](docs/ModelsOutputList.md)
  - [ModelsPagination](docs/ModelsPagination.md)
- - [ModelsPermission](docs/ModelsPermission.md)
  - [ModelsPermissionList](docs/ModelsPermissionList.md)
  - [ModelsPipeline](docs/ModelsPipeline.md)
  - [ModelsPipelineConfigV2](docs/ModelsPipelineConfigV2.md)
@@ -405,7 +407,6 @@ Class | Method | HTTP request | Description
  - [ModelsPipelineNodeStatus](docs/ModelsPipelineNodeStatus.md)
  - [ModelsPipelineRetentionPolicy](docs/ModelsPipelineRetentionPolicy.md)
  - [ModelsPipelineStatus](docs/ModelsPipelineStatus.md)
- - [ModelsQuota](docs/ModelsQuota.md)
  - [ModelsQuotaList](docs/ModelsQuotaList.md)
  - [ModelsRoleWithPermissions](docs/ModelsRoleWithPermissions.md)
  - [ModelsRoleWithPermissionsList](docs/ModelsRoleWithPermissionsList.md)
@@ -418,7 +419,6 @@ Class | Method | HTTP request | Description
  - [ModelsTransformOperation](docs/ModelsTransformOperation.md)
  - [ModelsTransformsRepositoryList](docs/ModelsTransformsRepositoryList.md)
  - [ModelsTransformsRepositoryTransform](docs/ModelsTransformsRepositoryTransform.md)
- - [ModelsUser](docs/ModelsUser.md)
  - [ModelsUserRoleWithPermissions](docs/ModelsUserRoleWithPermissions.md)
  - [MonadLogSettingsConfig](docs/MonadLogSettingsConfig.md)
  - [MutateTypeMutateType](docs/MutateTypeMutateType.md)

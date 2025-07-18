@@ -21,7 +21,7 @@ var _ MappedNullable = &ModelsPermissionList{}
 // ModelsPermissionList struct for ModelsPermissionList
 type ModelsPermissionList struct {
 	Pagination *ModelsPagination `json:"pagination,omitempty"`
-	Permissions []ModelsPermission `json:"permissions,omitempty"`
+	Permissions []GithubComMonadIncCorePkgTypesModelsPermission `json:"permissions,omitempty"`
 }
 
 // NewModelsPermissionList instantiates a new ModelsPermissionList object
@@ -74,9 +74,9 @@ func (o *ModelsPermissionList) SetPagination(v ModelsPagination) {
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *ModelsPermissionList) GetPermissions() []ModelsPermission {
+func (o *ModelsPermissionList) GetPermissions() []GithubComMonadIncCorePkgTypesModelsPermission {
 	if o == nil || IsNil(o.Permissions) {
-		var ret []ModelsPermission
+		var ret []GithubComMonadIncCorePkgTypesModelsPermission
 		return ret
 	}
 	return o.Permissions
@@ -84,7 +84,7 @@ func (o *ModelsPermissionList) GetPermissions() []ModelsPermission {
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPermissionList) GetPermissionsOk() ([]ModelsPermission, bool) {
+func (o *ModelsPermissionList) GetPermissionsOk() ([]GithubComMonadIncCorePkgTypesModelsPermission, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *ModelsPermissionList) HasPermissions() bool {
 	return false
 }
 
-// SetPermissions gets a reference to the given []ModelsPermission and assigns it to the Permissions field.
-func (o *ModelsPermissionList) SetPermissions(v []ModelsPermission) {
+// SetPermissions gets a reference to the given []GithubComMonadIncCorePkgTypesModelsPermission and assigns it to the Permissions field.
+func (o *ModelsPermissionList) SetPermissions(v []GithubComMonadIncCorePkgTypesModelsPermission) {
 	o.Permissions = v
 }
 

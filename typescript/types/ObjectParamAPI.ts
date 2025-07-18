@@ -97,6 +97,10 @@ import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
 import { GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter } from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
+import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
+import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
+import { GithubComMonadIncCorePkgTypesModelsQuota } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
+import { GithubComMonadIncCorePkgTypesModelsUser } from '../models/GithubComMonadIncCorePkgTypesModelsUser';
 import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
 import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -141,7 +145,6 @@ import { ModelsInput } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputList } from '../models/ModelsInputList';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
-import { ModelsOrganization } from '../models/ModelsOrganization';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
@@ -149,7 +152,6 @@ import { ModelsOutput } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
-import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline } from '../models/ModelsPipeline';
 import { ModelsPipelineConfigV2 } from '../models/ModelsPipelineConfigV2';
@@ -163,7 +165,6 @@ import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
-import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
@@ -176,7 +177,6 @@ import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
-import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
@@ -3322,7 +3322,7 @@ export class ObjectOrganizationsApi {
      * Update organization
      * @param param the request object
      */
-    public v1OrganizationsOrganizationIdPatchWithHttpInfo(param: OrganizationsApiV1OrganizationsOrganizationIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganization>> {
+    public v1OrganizationsOrganizationIdPatchWithHttpInfo(param: OrganizationsApiV1OrganizationsOrganizationIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
         return this.api.v1OrganizationsOrganizationIdPatchWithHttpInfo(param.organizationId, param.routesUpdateOrganizationRequest,  options).toPromise();
     }
 
@@ -3331,7 +3331,7 @@ export class ObjectOrganizationsApi {
      * Update organization
      * @param param the request object
      */
-    public v1OrganizationsOrganizationIdPatch(param: OrganizationsApiV1OrganizationsOrganizationIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsOrganization> {
+    public v1OrganizationsOrganizationIdPatch(param: OrganizationsApiV1OrganizationsOrganizationIdPatchRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
         return this.api.v1OrganizationsOrganizationIdPatch(param.organizationId, param.routesUpdateOrganizationRequest,  options).toPromise();
     }
 
@@ -3340,7 +3340,7 @@ export class ObjectOrganizationsApi {
      * Create organization
      * @param param the request object
      */
-    public v1OrganizationsPostWithHttpInfo(param: OrganizationsApiV1OrganizationsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganization>> {
+    public v1OrganizationsPostWithHttpInfo(param: OrganizationsApiV1OrganizationsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
         return this.api.v1OrganizationsPostWithHttpInfo(param.routesCreateOrganizationRequest,  options).toPromise();
     }
 
@@ -3349,7 +3349,7 @@ export class ObjectOrganizationsApi {
      * Create organization
      * @param param the request object
      */
-    public v1OrganizationsPost(param: OrganizationsApiV1OrganizationsPostRequest, options?: ConfigurationOptions): Promise<ModelsOrganization> {
+    public v1OrganizationsPost(param: OrganizationsApiV1OrganizationsPostRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
         return this.api.v1OrganizationsPost(param.routesCreateOrganizationRequest,  options).toPromise();
     }
 
@@ -5197,7 +5197,7 @@ export class ObjectUsersApi {
      * Create user
      * @param param the request object
      */
-    public v1UsersPostWithHttpInfo(param: UsersApiV1UsersPostRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsUser>> {
+    public v1UsersPostWithHttpInfo(param: UsersApiV1UsersPostRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsUser>> {
         return this.api.v1UsersPostWithHttpInfo(param.body,  options).toPromise();
     }
 
@@ -5206,7 +5206,7 @@ export class ObjectUsersApi {
      * Create user
      * @param param the request object
      */
-    public v1UsersPost(param: UsersApiV1UsersPostRequest = {}, options?: ConfigurationOptions): Promise<ModelsUser> {
+    public v1UsersPost(param: UsersApiV1UsersPostRequest = {}, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsUser> {
         return this.api.v1UsersPost(param.body,  options).toPromise();
     }
 
