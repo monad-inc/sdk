@@ -22,6 +22,7 @@ var _ MappedNullable = &RoutesV2CreatePipelineRequest{}
 
 // RoutesV2CreatePipelineRequest struct for RoutesV2CreatePipelineRequest
 type RoutesV2CreatePipelineRequest struct {
+	CronSchedule *string `json:"cron_schedule,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Edges []RoutesV2PipelineRequestEdge `json:"edges"`
 	Enabled bool `json:"enabled"`
@@ -50,6 +51,38 @@ func NewRoutesV2CreatePipelineRequest(edges []RoutesV2PipelineRequestEdge, enabl
 func NewRoutesV2CreatePipelineRequestWithDefaults() *RoutesV2CreatePipelineRequest {
 	this := RoutesV2CreatePipelineRequest{}
 	return &this
+}
+
+// GetCronSchedule returns the CronSchedule field value if set, zero value otherwise.
+func (o *RoutesV2CreatePipelineRequest) GetCronSchedule() string {
+	if o == nil || IsNil(o.CronSchedule) {
+		var ret string
+		return ret
+	}
+	return *o.CronSchedule
+}
+
+// GetCronScheduleOk returns a tuple with the CronSchedule field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2CreatePipelineRequest) GetCronScheduleOk() (*string, bool) {
+	if o == nil || IsNil(o.CronSchedule) {
+		return nil, false
+	}
+	return o.CronSchedule, true
+}
+
+// HasCronSchedule returns a boolean if a field has been set.
+func (o *RoutesV2CreatePipelineRequest) HasCronSchedule() bool {
+	if o != nil && !IsNil(o.CronSchedule) {
+		return true
+	}
+
+	return false
+}
+
+// SetCronSchedule gets a reference to the given string and assigns it to the CronSchedule field.
+func (o *RoutesV2CreatePipelineRequest) SetCronSchedule(v string) {
+	o.CronSchedule = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -190,6 +223,9 @@ func (o RoutesV2CreatePipelineRequest) MarshalJSON() ([]byte, error) {
 
 func (o RoutesV2CreatePipelineRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.CronSchedule) {
+		toSerialize["cron_schedule"] = o.CronSchedule
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}

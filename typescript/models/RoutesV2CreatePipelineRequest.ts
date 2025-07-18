@@ -15,6 +15,7 @@ import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNo
 import { HttpFile } from '../http/http';
 
 export class RoutesV2CreatePipelineRequest {
+    'cronSchedule'?: string;
     'description'?: string;
     'edges': Array<RoutesV2PipelineRequestEdge>;
     'enabled': boolean;
@@ -26,6 +27,12 @@ export class RoutesV2CreatePipelineRequest {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "cronSchedule",
+            "baseName": "cron_schedule",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "description",
             "baseName": "description",

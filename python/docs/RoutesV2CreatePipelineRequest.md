@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**cron_schedule** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **edges** | [**List[RoutesV2PipelineRequestEdge]**](RoutesV2PipelineRequestEdge.md) |  | 
 **enabled** | **bool** |  | 

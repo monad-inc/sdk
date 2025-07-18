@@ -1091,6 +1091,7 @@ const request: PipelinesApiV2OrganizationIdPipelinesPostRequest = {
   organizationId: "organization_id_example",
     // Request body for creating a pipeline
   routesV2CreatePipelineRequest: {
+    cronSchedule: "cronSchedule_example",
     description: "description_example",
     edges: [
       {
