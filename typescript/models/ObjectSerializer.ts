@@ -86,6 +86,8 @@ export * from '../models/EventSecretsConfig';
 export * from '../models/EventSettingsConfig';
 export * from '../models/EventsLogsSecretsConfig';
 export * from '../models/EventsLogsSettingsConfig';
+export * from '../models/EventsSecretsConfig';
+export * from '../models/EventsSettingsConfig';
 export * from '../models/FlagsmithFlag';
 export * from '../models/FlattenFlatten';
 export * from '../models/FlattenallFlattenAll';
@@ -426,6 +428,8 @@ import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
+import { EventsSecretsConfig } from '../models/EventsSecretsConfig';
+import { EventsSettingsConfig } from '../models/EventsSettingsConfig';
 import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
@@ -792,6 +796,8 @@ let typeMap: {[index: string]: any} = {
     "EventSettingsConfig": EventSettingsConfig,
     "EventsLogsSecretsConfig": EventsLogsSecretsConfig,
     "EventsLogsSettingsConfig": EventsLogsSettingsConfig,
+    "EventsSecretsConfig": EventsSecretsConfig,
+    "EventsSettingsConfig": EventsSettingsConfig,
     "FlagsmithFlag": FlagsmithFlag,
     "FlattenFlatten": FlattenFlatten,
     "FlattenallFlattenAll": FlattenallFlattenAll,

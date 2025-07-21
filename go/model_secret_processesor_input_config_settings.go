@@ -53,6 +53,7 @@ type SecretProcessesorInputConfigSettings struct {
 	EntraIdSettingsConfig *EntraIdSettingsConfig
 	EventSettingsConfig *EventSettingsConfig
 	EventsLogsSettingsConfig *EventsLogsSettingsConfig
+	EventsSettingsConfig *EventsSettingsConfig
 	FullScansSettingsConfig *FullScansSettingsConfig
 	GitlabIssuesSettingsConfig *GitlabIssuesSettingsConfig
 	GoogleCloudStorageSettingsConfig *GoogleCloudStorageSettingsConfig
@@ -326,6 +327,13 @@ func EventSettingsConfigAsSecretProcessesorInputConfigSettings(v *EventSettingsC
 func EventsLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *EventsLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		EventsLogsSettingsConfig: v,
+	}
+}
+
+// EventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns EventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func EventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *EventsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		EventsSettingsConfig: v,
 	}
 }
 
@@ -1164,6 +1172,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.EventsLogsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into EventsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.EventsSettingsConfig)
+	if err == nil {
+		jsonEventsSettingsConfig, _ := json.Marshal(dst.EventsSettingsConfig)
+		if string(jsonEventsSettingsConfig) == "{}" { // empty struct
+			dst.EventsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.EventsSettingsConfig); err != nil {
+				dst.EventsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.EventsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into FullScansSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.FullScansSettingsConfig)
 	if err == nil {
@@ -1812,6 +1837,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.EntraIdSettingsConfig = nil
 		dst.EventSettingsConfig = nil
 		dst.EventsLogsSettingsConfig = nil
+		dst.EventsSettingsConfig = nil
 		dst.FullScansSettingsConfig = nil
 		dst.GitlabIssuesSettingsConfig = nil
 		dst.GoogleCloudStorageSettingsConfig = nil
@@ -1993,6 +2019,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.EventsLogsSettingsConfig != nil {
 		return json.Marshal(&src.EventsLogsSettingsConfig)
+	}
+
+	if src.EventsSettingsConfig != nil {
+		return json.Marshal(&src.EventsSettingsConfig)
 	}
 
 	if src.FullScansSettingsConfig != nil {
@@ -2283,6 +2313,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.EventsLogsSettingsConfig
 	}
 
+	if obj.EventsSettingsConfig != nil {
+		return obj.EventsSettingsConfig
+	}
+
 	if obj.FullScansSettingsConfig != nil {
 		return obj.FullScansSettingsConfig
 	}
@@ -2567,6 +2601,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.EventsLogsSettingsConfig != nil {
 		return *obj.EventsLogsSettingsConfig
+	}
+
+	if obj.EventsSettingsConfig != nil {
+		return *obj.EventsSettingsConfig
 	}
 
 	if obj.FullScansSettingsConfig != nil {

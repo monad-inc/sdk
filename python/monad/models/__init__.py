@@ -103,6 +103,8 @@ from monad.models.event_secrets_config import EventSecretsConfig
 from monad.models.event_settings_config import EventSettingsConfig
 from monad.models.events_logs_secrets_config import EventsLogsSecretsConfig
 from monad.models.events_logs_settings_config import EventsLogsSettingsConfig
+from monad.models.events_secrets_config import EventsSecretsConfig
+from monad.models.events_settings_config import EventsSettingsConfig
 from monad.models.flagsmith_flag import FlagsmithFlag
 from monad.models.flatten_flatten import FlattenFlatten
 from monad.models.flattenall_flatten_all import FlattenallFlattenAll

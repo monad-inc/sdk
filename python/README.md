@@ -302,6 +302,8 @@ Class | Method | HTTP request | Description
  - [EventSettingsConfig](docs/EventSettingsConfig.md)
  - [EventsLogsSecretsConfig](docs/EventsLogsSecretsConfig.md)
  - [EventsLogsSettingsConfig](docs/EventsLogsSettingsConfig.md)
+ - [EventsSecretsConfig](docs/EventsSecretsConfig.md)
+ - [EventsSettingsConfig](docs/EventsSettingsConfig.md)
  - [FlagsmithFlag](docs/FlagsmithFlag.md)
  - [FlattenFlatten](docs/FlattenFlatten.md)
  - [FlattenallFlattenAll](docs/FlattenallFlattenAll.md)

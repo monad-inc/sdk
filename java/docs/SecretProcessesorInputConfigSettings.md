@@ -50,7 +50,7 @@
 |**query** | **String** | Optional custom query to use instead of table (must include timestamp_column) |  [optional] |
 |**table** | **String** | The name of the table in Snowflake to query data from. |  [optional] |
 |**timestampColumn** | **String** | The column containing timestamp values used for incremental loading |  [optional] |
-|**eventType** | **List&lt;String&gt;** | A list of event types to filter by. |  [optional] |
+|**eventType** | **String** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types |  [optional] |
 |**filterTerm** | **String** | Limits the results to only users who&#39;s name or login start with the search term. |  [optional] |
 |**assetTypes** | **List&lt;String&gt;** | The type of assets to scan for.  If left empty, will scan all assets |  [optional] |
 |**resourceNames** | **List&lt;String&gt;** | The resources to query logs from. |  [optional] |
@@ -78,6 +78,9 @@
 |**appName** | **String** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. |  [optional] |
 |**cloud** | **String** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. |  [optional] |
 |**memberCid** | **String** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. |  [optional] |
+|**actorSid** | **String** | Only includes events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials. |  [optional] |
+|**replicationStartTime** | **String** | Only include events after this time for the initial sync. If not specified, returns all events from the start. Must be a valid ISO 8601 formatted datetime string: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; |  [optional] |
+|**resourceSid** | **String** | Only include events that refer to this resource. Useful for discovering the history of a specific resource. |  [optional] |
 |**storyId** | **String** | Filter by the given story. |  [optional] |
 |**teamId** | **String** | Team ID to filter user results by |  [optional] |
 |**tenantUrl** | **String** | Unique URL for your Tines instance |  [optional] |

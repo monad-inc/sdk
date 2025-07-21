@@ -90,6 +90,8 @@ import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
 import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
+import { EventsSecretsConfig } from '../models/EventsSecretsConfig';
+import { EventsSettingsConfig } from '../models/EventsSettingsConfig';
 import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';

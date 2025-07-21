@@ -47,7 +47,7 @@ Name | Type | Description | Notes
 **Query** | Pointer to **string** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
 **Table** | Pointer to **string** | The name of the table in Snowflake to query data from. | [optional] 
 **TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
-**EventType** | Pointer to **[]string** | A list of event types to filter by. | [optional] 
+**EventType** | Pointer to **string** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **FilterTerm** | Pointer to **string** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
 **AssetTypes** | Pointer to **[]string** | The type of assets to scan for.  If left empty, will scan all assets | [optional] 
 **ResourceNames** | Pointer to **[]string** | The resources to query logs from. | [optional] 
@@ -75,6 +75,9 @@ Name | Type | Description | Notes
 **AppName** | Pointer to **string** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
 **Cloud** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **MemberCid** | Pointer to **string** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 
+**ActorSid** | Pointer to **string** | Only includes events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials. | [optional] 
+**ReplicationStartTime** | Pointer to **string** | Only include events after this time for the initial sync. If not specified, returns all events from the start. Must be a valid ISO 8601 formatted datetime string: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; | [optional] 
+**ResourceSid** | Pointer to **string** | Only include events that refer to this resource. Useful for discovering the history of a specific resource. | [optional] 
 **StoryId** | Pointer to **string** | Filter by the given story. | [optional] 
 **TeamId** | Pointer to **string** | Team ID to filter user results by | [optional] 
 **TenantUrl** | Pointer to **string** | Unique URL for your Tines instance | [optional] 
@@ -1224,20 +1227,20 @@ HasTimestampColumn returns a boolean if a field has been set.
 
 ### GetEventType
 
-`func (o *SecretProcessesorInputConfigSettings) GetEventType() []string`
+`func (o *SecretProcessesorInputConfigSettings) GetEventType() string`
 
 GetEventType returns the EventType field if non-nil, zero value otherwise.
 
 ### GetEventTypeOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetEventTypeOk() (*[]string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetEventTypeOk() (*string, bool)`
 
 GetEventTypeOk returns a tuple with the EventType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventType
 
-`func (o *SecretProcessesorInputConfigSettings) SetEventType(v []string)`
+`func (o *SecretProcessesorInputConfigSettings) SetEventType(v string)`
 
 SetEventType sets EventType field to given value.
 
@@ -1921,6 +1924,81 @@ SetMemberCid sets MemberCid field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasMemberCid() bool`
 
 HasMemberCid returns a boolean if a field has been set.
+
+### GetActorSid
+
+`func (o *SecretProcessesorInputConfigSettings) GetActorSid() string`
+
+GetActorSid returns the ActorSid field if non-nil, zero value otherwise.
+
+### GetActorSidOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetActorSidOk() (*string, bool)`
+
+GetActorSidOk returns a tuple with the ActorSid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActorSid
+
+`func (o *SecretProcessesorInputConfigSettings) SetActorSid(v string)`
+
+SetActorSid sets ActorSid field to given value.
+
+### HasActorSid
+
+`func (o *SecretProcessesorInputConfigSettings) HasActorSid() bool`
+
+HasActorSid returns a boolean if a field has been set.
+
+### GetReplicationStartTime
+
+`func (o *SecretProcessesorInputConfigSettings) GetReplicationStartTime() string`
+
+GetReplicationStartTime returns the ReplicationStartTime field if non-nil, zero value otherwise.
+
+### GetReplicationStartTimeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetReplicationStartTimeOk() (*string, bool)`
+
+GetReplicationStartTimeOk returns a tuple with the ReplicationStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplicationStartTime
+
+`func (o *SecretProcessesorInputConfigSettings) SetReplicationStartTime(v string)`
+
+SetReplicationStartTime sets ReplicationStartTime field to given value.
+
+### HasReplicationStartTime
+
+`func (o *SecretProcessesorInputConfigSettings) HasReplicationStartTime() bool`
+
+HasReplicationStartTime returns a boolean if a field has been set.
+
+### GetResourceSid
+
+`func (o *SecretProcessesorInputConfigSettings) GetResourceSid() string`
+
+GetResourceSid returns the ResourceSid field if non-nil, zero value otherwise.
+
+### GetResourceSidOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetResourceSidOk() (*string, bool)`
+
+GetResourceSidOk returns a tuple with the ResourceSid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceSid
+
+`func (o *SecretProcessesorInputConfigSettings) SetResourceSid(v string)`
+
+SetResourceSid sets ResourceSid field to given value.
+
+### HasResourceSid
+
+`func (o *SecretProcessesorInputConfigSettings) HasResourceSid() bool`
+
+HasResourceSid returns a boolean if a field has been set.
 
 ### GetStoryId
 

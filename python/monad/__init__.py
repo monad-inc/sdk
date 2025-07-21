@@ -146,6 +146,8 @@ __all__ = [
     "EventSettingsConfig",
     "EventsLogsSecretsConfig",
     "EventsLogsSettingsConfig",
+    "EventsSecretsConfig",
+    "EventsSettingsConfig",
     "FlagsmithFlag",
     "FlattenFlatten",
     "FlattenallFlattenAll",
@@ -531,6 +533,8 @@ from monad.models.event_secrets_config import EventSecretsConfig as EventSecrets
 from monad.models.event_settings_config import EventSettingsConfig as EventSettingsConfig
 from monad.models.events_logs_secrets_config import EventsLogsSecretsConfig as EventsLogsSecretsConfig
 from monad.models.events_logs_settings_config import EventsLogsSettingsConfig as EventsLogsSettingsConfig
+from monad.models.events_secrets_config import EventsSecretsConfig as EventsSecretsConfig
+from monad.models.events_settings_config import EventsSettingsConfig as EventsSettingsConfig
 from monad.models.flagsmith_flag import FlagsmithFlag as FlagsmithFlag
 from monad.models.flatten_flatten import FlattenFlatten as FlattenFlatten
 from monad.models.flattenall_flatten_all import FlattenallFlattenAll as FlattenallFlattenAll
