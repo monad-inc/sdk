@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsAPIKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-21T15:51:26.596553453Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-21T17:03:55.432837449Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsAPIKey {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
