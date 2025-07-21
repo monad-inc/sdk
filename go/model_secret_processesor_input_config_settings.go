@@ -58,6 +58,7 @@ type SecretProcessesorInputConfigSettings struct {
 	GoogleCloudStorageSettingsConfig *GoogleCloudStorageSettingsConfig
 	IamAccessAnalyzerSettingsConfig *IamAccessAnalyzerSettingsConfig
 	IssuesSettingsConfig *IssuesSettingsConfig
+	KmsSettingsConfig *KmsSettingsConfig
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
 	LoginActivitySettingsConfig *LoginActivitySettingsConfig
 	LoginSessionsSettingsConfig *LoginSessionsSettingsConfig
@@ -360,6 +361,13 @@ func IamAccessAnalyzerSettingsConfigAsSecretProcessesorInputConfigSettings(v *Ia
 func IssuesSettingsConfigAsSecretProcessesorInputConfigSettings(v *IssuesSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		IssuesSettingsConfig: v,
+	}
+}
+
+// KmsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns KmsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func KmsSettingsConfigAsSecretProcessesorInputConfigSettings(v *KmsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		KmsSettingsConfig: v,
 	}
 }
 
@@ -1241,6 +1249,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.IssuesSettingsConfig = nil
 	}
 
+	// try to unmarshal data into KmsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.KmsSettingsConfig)
+	if err == nil {
+		jsonKmsSettingsConfig, _ := json.Marshal(dst.KmsSettingsConfig)
+		if string(jsonKmsSettingsConfig) == "{}" { // empty struct
+			dst.KmsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.KmsSettingsConfig); err != nil {
+				dst.KmsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.KmsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into LogAnalyticsQuerySettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.LogAnalyticsQuerySettingsConfig)
 	if err == nil {
@@ -1792,6 +1817,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.GoogleCloudStorageSettingsConfig = nil
 		dst.IamAccessAnalyzerSettingsConfig = nil
 		dst.IssuesSettingsConfig = nil
+		dst.KmsSettingsConfig = nil
 		dst.LogAnalyticsQuerySettingsConfig = nil
 		dst.LoginActivitySettingsConfig = nil
 		dst.LoginSessionsSettingsConfig = nil
@@ -1987,6 +2013,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.IssuesSettingsConfig != nil {
 		return json.Marshal(&src.IssuesSettingsConfig)
+	}
+
+	if src.KmsSettingsConfig != nil {
+		return json.Marshal(&src.KmsSettingsConfig)
 	}
 
 	if src.LogAnalyticsQuerySettingsConfig != nil {
@@ -2273,6 +2303,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.IssuesSettingsConfig
 	}
 
+	if obj.KmsSettingsConfig != nil {
+		return obj.KmsSettingsConfig
+	}
+
 	if obj.LogAnalyticsQuerySettingsConfig != nil {
 		return obj.LogAnalyticsQuerySettingsConfig
 	}
@@ -2553,6 +2587,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.IssuesSettingsConfig != nil {
 		return *obj.IssuesSettingsConfig
+	}
+
+	if obj.KmsSettingsConfig != nil {
+		return *obj.KmsSettingsConfig
 	}
 
 	if obj.LogAnalyticsQuerySettingsConfig != nil {

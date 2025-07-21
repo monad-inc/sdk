@@ -119,6 +119,7 @@ import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig } from '../models/IssuesSettingsConfig';
 import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
+import { KmsSettingsConfig } from '../models/KmsSettingsConfig';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
 import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig';

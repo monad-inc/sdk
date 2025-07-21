@@ -108,6 +108,7 @@
 |**severities** | [**List&lt;SeveritiesEnum&gt;**](#List&lt;SeveritiesEnum&gt;) | @Description Filter Issues according to Control severity |  [optional] |
 |**stackLayers** | [**List&lt;StackLayersEnum&gt;**](#List&lt;StackLayersEnum&gt;) | @Description Filter Issues from specific stack layers |  [optional] |
 |**tenantDataCenter** | **String** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact |  [optional] |
+|**kmsType** | **String** | Type of KMS resources to list |  [optional] |
 |**logType** | **String** |  |  [optional] |
 |**endpoint** | **String** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) |  [optional] |
 |**skipSslVerification** | **Boolean** | Skip SSL verification for self-signed certificates |  [optional] |

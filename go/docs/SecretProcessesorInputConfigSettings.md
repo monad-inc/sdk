@@ -105,6 +105,7 @@ Name | Type | Description | Notes
 **Severities** | Pointer to **[]string** | @Description Filter Issues according to Control severity | [optional] 
 **StackLayers** | Pointer to **[]string** | @Description Filter Issues from specific stack layers | [optional] 
 **TenantDataCenter** | Pointer to **string** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact | [optional] 
+**KmsType** | Pointer to **string** | Type of KMS resources to list | [optional] 
 **LogType** | Pointer to **string** |  | [optional] 
 **Endpoint** | Pointer to **string** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | [optional] 
 **SkipSslVerification** | Pointer to **bool** | Skip SSL verification for self-signed certificates | [optional] 
@@ -2670,6 +2671,31 @@ SetTenantDataCenter sets TenantDataCenter field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasTenantDataCenter() bool`
 
 HasTenantDataCenter returns a boolean if a field has been set.
+
+### GetKmsType
+
+`func (o *SecretProcessesorInputConfigSettings) GetKmsType() string`
+
+GetKmsType returns the KmsType field if non-nil, zero value otherwise.
+
+### GetKmsTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetKmsTypeOk() (*string, bool)`
+
+GetKmsTypeOk returns a tuple with the KmsType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKmsType
+
+`func (o *SecretProcessesorInputConfigSettings) SetKmsType(v string)`
+
+SetKmsType sets KmsType field to given value.
+
+### HasKmsType
+
+`func (o *SecretProcessesorInputConfigSettings) HasKmsType() bool`
+
+HasKmsType returns a boolean if a field has been set.
 
 ### GetLogType
 

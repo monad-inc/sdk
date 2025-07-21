@@ -114,6 +114,7 @@ export * from '../models/IssuesSecretsConfig';
 export * from '../models/IssuesSettingsConfig';
 export * from '../models/JqJQ';
 export * from '../models/JsonJsonFormatter';
+export * from '../models/KmsSettingsConfig';
 export * from '../models/LogAnalyticsQuerySecretsConfig';
 export * from '../models/LogAnalyticsQuerySettingsConfig';
 export * from '../models/LoginActivitySecretsConfig';
@@ -453,6 +454,7 @@ import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig     , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum    } from '../models/IssuesSettingsConfig';
 import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
+import { KmsSettingsConfig } from '../models/KmsSettingsConfig';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
 import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig';
@@ -818,6 +820,7 @@ let typeMap: {[index: string]: any} = {
     "IssuesSettingsConfig": IssuesSettingsConfig,
     "JqJQ": JqJQ,
     "JsonJsonFormatter": JsonJsonFormatter,
+    "KmsSettingsConfig": KmsSettingsConfig,
     "LogAnalyticsQuerySecretsConfig": LogAnalyticsQuerySecretsConfig,
     "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,
     "LoginActivitySecretsConfig": LoginActivitySecretsConfig,

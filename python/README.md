@@ -330,6 +330,7 @@ Class | Method | HTTP request | Description
  - [IssuesSettingsConfig](docs/IssuesSettingsConfig.md)
  - [JqJQ](docs/JqJQ.md)
  - [JsonJsonFormatter](docs/JsonJsonFormatter.md)
+ - [KmsSettingsConfig](docs/KmsSettingsConfig.md)
  - [LogAnalyticsQuerySecretsConfig](docs/LogAnalyticsQuerySecretsConfig.md)
  - [LogAnalyticsQuerySettingsConfig](docs/LogAnalyticsQuerySettingsConfig.md)
  - [LoginActivitySecretsConfig](docs/LoginActivitySecretsConfig.md)

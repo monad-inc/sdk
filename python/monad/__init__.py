@@ -174,6 +174,7 @@ __all__ = [
     "IssuesSettingsConfig",
     "JqJQ",
     "JsonJsonFormatter",
+    "KmsSettingsConfig",
     "LogAnalyticsQuerySecretsConfig",
     "LogAnalyticsQuerySettingsConfig",
     "LoginActivitySecretsConfig",
@@ -558,6 +559,7 @@ from monad.models.issues_secrets_config import IssuesSecretsConfig as IssuesSecr
 from monad.models.issues_settings_config import IssuesSettingsConfig as IssuesSettingsConfig
 from monad.models.jq_jq import JqJQ as JqJQ
 from monad.models.json_json_formatter import JsonJsonFormatter as JsonJsonFormatter
+from monad.models.kms_settings_config import KmsSettingsConfig as KmsSettingsConfig
 from monad.models.log_analytics_query_secrets_config import LogAnalyticsQuerySecretsConfig as LogAnalyticsQuerySecretsConfig
 from monad.models.log_analytics_query_settings_config import LogAnalyticsQuerySettingsConfig as LogAnalyticsQuerySettingsConfig
 from monad.models.login_activity_secrets_config import LoginActivitySecretsConfig as LoginActivitySecretsConfig

@@ -106,6 +106,7 @@ Name | Type | Description | Notes
 **severities** | **List[str]** | @Description Filter Issues according to Control severity | [optional] 
 **stack_layers** | **List[str]** | @Description Filter Issues from specific stack layers | [optional] 
 **tenant_data_center** | **str** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact | [optional] 
+**kms_type** | **str** | Type of KMS resources to list | [optional] 
 **log_type** | **str** |  | [optional] 
 **endpoint** | **str** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | [optional] 
 **skip_ssl_verification** | **bool** | Skip SSL verification for self-signed certificates | [optional] 

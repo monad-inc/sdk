@@ -131,6 +131,7 @@ from monad.models.issues_secrets_config import IssuesSecretsConfig
 from monad.models.issues_settings_config import IssuesSettingsConfig
 from monad.models.jq_jq import JqJQ
 from monad.models.json_json_formatter import JsonJsonFormatter
+from monad.models.kms_settings_config import KmsSettingsConfig
 from monad.models.log_analytics_query_secrets_config import LogAnalyticsQuerySecretsConfig
 from monad.models.log_analytics_query_settings_config import LogAnalyticsQuerySettingsConfig
 from monad.models.login_activity_secrets_config import LoginActivitySecretsConfig
