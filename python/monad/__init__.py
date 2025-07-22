@@ -361,6 +361,8 @@ __all__ = [
     "SemgrepSupplyChainFindingsSecretsConfig",
     "SentinelSecretsConfig",
     "SentinelSettingsConfig",
+    "SentryOrgAuditLogsSecretsConfig",
+    "SentryOrgAuditLogsSettingsConfig",
     "SlackUsersSecretsConfig",
     "SlackUsersSettingsConfig",
     "SlackgroupsSecretsConfig",
@@ -748,6 +750,8 @@ from monad.models.semgrep_projects_settings_config import SemgrepProjectsSetting
 from monad.models.semgrep_supply_chain_findings_secrets_config import SemgrepSupplyChainFindingsSecretsConfig as SemgrepSupplyChainFindingsSecretsConfig
 from monad.models.sentinel_secrets_config import SentinelSecretsConfig as SentinelSecretsConfig
 from monad.models.sentinel_settings_config import SentinelSettingsConfig as SentinelSettingsConfig
+from monad.models.sentry_org_audit_logs_secrets_config import SentryOrgAuditLogsSecretsConfig as SentryOrgAuditLogsSecretsConfig
+from monad.models.sentry_org_audit_logs_settings_config import SentryOrgAuditLogsSettingsConfig as SentryOrgAuditLogsSettingsConfig
 from monad.models.slack_users_secrets_config import SlackUsersSecretsConfig as SlackUsersSecretsConfig
 from monad.models.slack_users_settings_config import SlackUsersSettingsConfig as SlackUsersSettingsConfig
 from monad.models.slackgroups_secrets_config import SlackgroupsSecretsConfig as SlackgroupsSecretsConfig

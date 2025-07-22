@@ -54,6 +54,7 @@ import { SemgrepDeploymentsSecretsConfig } from '../models/SemgrepDeploymentsSec
 import { SemgrepProjectDetailsSecretsConfig } from '../models/SemgrepProjectDetailsSecretsConfig';
 import { SemgrepProjectsSecretsConfig } from '../models/SemgrepProjectsSecretsConfig';
 import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
+import { SentryOrgAuditLogsSecretsConfig } from '../models/SentryOrgAuditLogsSecretsConfig';
 import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
 import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
 import { SnowflakeInputSecretsConfig } from '../models/SnowflakeInputSecretsConfig';
@@ -78,7 +79,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorInputConfigSecrets = ActivityLogsSecretsConfig | ActorsInfoSecretsConfig | AdminActivitySecretsConfig | AdminLogsSecretsConfig | AuditLogsSecretsConfig | AuthLogsSecretsConfig | AzureActivityLogsSecretsConfig | AzureBlobStorageSecretsConfig | AzureVnetFlowLogsSecretsConfig | BigqueryInputSecretsConfig | BoxEventsSecretsConfig | BoxUsersSecretsConfig | CloudAssetInventorySecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventorySecretsConfig | CrowdstrikeFdrSecretsConfig | DefenderForEndpointAlertsSecretsConfig | DetectSummariesSecretsConfig | DeviceActivitySecretsConfig | DeviceDetailsSecretsConfig | DevicesSecretsConfig | DriveActivitySecretsConfig | EntraIdSecretsConfig | EventSecretsConfig | EventsLogsSecretsConfig | EventsSecretsConfig | FullScansSecretsConfig | GitlabIssuesSecretsConfig | GoogleCloudStorageSecretsConfig | IssuesSecretsConfig | LogAnalyticsQuerySecretsConfig | LoginActivitySecretsConfig | LoginSessionsSecretsConfig | OauthActivitySecretsConfig | ObjectStorageInputSecretsConfig | OneloginEventsSecretsConfig | PaloAltoDataSecurityAlertsSecretsConfig | RolesInfoSecretsConfig | SemgrepCodeFindingsSecretsConfig | SemgrepDeploymentsSecretsConfig | SemgrepProjectDetailsSecretsConfig | SemgrepProjectsSecretsConfig | SemgrepSupplyChainFindingsSecretsConfig | SlackUsersSecretsConfig | SlackgroupsSecretsConfig | SnowflakeInputSecretsConfig | SnykIssuesSecretsConfig | SnykOrganizationsSecretsConfig | SnykProjectsSecretsConfig | SnykTargetsSecretsConfig | TailscaleUsersSecretsConfig | TenableAssetsCronSecretsConfig | TenableAssetsSecretsConfig | TenableVulnerabilitiesCronSecretsConfig | TenableVulnerabilitiesSecretsConfig | UsersInfoSecretsConfig | UsersSecretsConfig | VulnerabilitiesCronSecretsConfig | VulnerabilitiesSecretsConfig | VulnerabilityFindingsSecretsConfig | any | { [key: string]: any; };
+export type SecretProcessesorInputConfigSecrets = ActivityLogsSecretsConfig | ActorsInfoSecretsConfig | AdminActivitySecretsConfig | AdminLogsSecretsConfig | AuditLogsSecretsConfig | AuthLogsSecretsConfig | AzureActivityLogsSecretsConfig | AzureBlobStorageSecretsConfig | AzureVnetFlowLogsSecretsConfig | BigqueryInputSecretsConfig | BoxEventsSecretsConfig | BoxUsersSecretsConfig | CloudAssetInventorySecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventorySecretsConfig | CrowdstrikeFdrSecretsConfig | DefenderForEndpointAlertsSecretsConfig | DetectSummariesSecretsConfig | DeviceActivitySecretsConfig | DeviceDetailsSecretsConfig | DevicesSecretsConfig | DriveActivitySecretsConfig | EntraIdSecretsConfig | EventSecretsConfig | EventsLogsSecretsConfig | EventsSecretsConfig | FullScansSecretsConfig | GitlabIssuesSecretsConfig | GoogleCloudStorageSecretsConfig | IssuesSecretsConfig | LogAnalyticsQuerySecretsConfig | LoginActivitySecretsConfig | LoginSessionsSecretsConfig | OauthActivitySecretsConfig | ObjectStorageInputSecretsConfig | OneloginEventsSecretsConfig | PaloAltoDataSecurityAlertsSecretsConfig | RolesInfoSecretsConfig | SemgrepCodeFindingsSecretsConfig | SemgrepDeploymentsSecretsConfig | SemgrepProjectDetailsSecretsConfig | SemgrepProjectsSecretsConfig | SemgrepSupplyChainFindingsSecretsConfig | SentryOrgAuditLogsSecretsConfig | SlackUsersSecretsConfig | SlackgroupsSecretsConfig | SnowflakeInputSecretsConfig | SnykIssuesSecretsConfig | SnykOrganizationsSecretsConfig | SnykProjectsSecretsConfig | SnykTargetsSecretsConfig | TailscaleUsersSecretsConfig | TenableAssetsCronSecretsConfig | TenableAssetsSecretsConfig | TenableVulnerabilitiesCronSecretsConfig | TenableVulnerabilitiesSecretsConfig | UsersInfoSecretsConfig | UsersSecretsConfig | VulnerabilitiesCronSecretsConfig | VulnerabilitiesSecretsConfig | VulnerabilityFindingsSecretsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorInputConfigSecretsClass
@@ -89,6 +90,7 @@ export class SecretProcessesorInputConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

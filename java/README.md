@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-07-22T16:12:41.591348279Z[Etc/UTC]
+  - Build date: 2025-07-22T18:54:24.976945067Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -547,6 +547,8 @@ Class | Method | HTTP request | Description
  - [SemgrepSupplyChainFindingsSecretsConfig](docs/SemgrepSupplyChainFindingsSecretsConfig.md)
  - [SentinelSecretsConfig](docs/SentinelSecretsConfig.md)
  - [SentinelSettingsConfig](docs/SentinelSettingsConfig.md)
+ - [SentryOrgAuditLogsSecretsConfig](docs/SentryOrgAuditLogsSecretsConfig.md)
+ - [SentryOrgAuditLogsSettingsConfig](docs/SentryOrgAuditLogsSettingsConfig.md)
  - [SlackUsersSecretsConfig](docs/SlackUsersSecretsConfig.md)
  - [SlackUsersSettingsConfig](docs/SlackUsersSettingsConfig.md)
  - [SlackgroupsSecretsConfig](docs/SlackgroupsSecretsConfig.md)

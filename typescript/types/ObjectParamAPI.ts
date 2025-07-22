@@ -305,6 +305,8 @@ import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettings
 import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
+import { SentryOrgAuditLogsSecretsConfig } from '../models/SentryOrgAuditLogsSecretsConfig';
+import { SentryOrgAuditLogsSettingsConfig } from '../models/SentryOrgAuditLogsSettingsConfig';
 import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
 import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
 import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';

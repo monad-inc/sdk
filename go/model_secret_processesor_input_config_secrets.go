@@ -63,6 +63,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	SemgrepProjectDetailsSecretsConfig *SemgrepProjectDetailsSecretsConfig
 	SemgrepProjectsSecretsConfig *SemgrepProjectsSecretsConfig
 	SemgrepSupplyChainFindingsSecretsConfig *SemgrepSupplyChainFindingsSecretsConfig
+	SentryOrgAuditLogsSecretsConfig *SentryOrgAuditLogsSecretsConfig
 	SlackUsersSecretsConfig *SlackUsersSecretsConfig
 	SlackgroupsSecretsConfig *SlackgroupsSecretsConfig
 	SnowflakeInputSecretsConfig *SnowflakeInputSecretsConfig
@@ -388,6 +389,13 @@ func SemgrepProjectsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Semgre
 func SemgrepSupplyChainFindingsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SemgrepSupplyChainFindingsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		SemgrepSupplyChainFindingsSecretsConfig: v,
+	}
+}
+
+// SentryOrgAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SentryOrgAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func SentryOrgAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SentryOrgAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		SentryOrgAuditLogsSecretsConfig: v,
 	}
 }
 
@@ -1270,6 +1278,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.SemgrepSupplyChainFindingsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into SentryOrgAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.SentryOrgAuditLogsSecretsConfig)
+	if err == nil {
+		jsonSentryOrgAuditLogsSecretsConfig, _ := json.Marshal(dst.SentryOrgAuditLogsSecretsConfig)
+		if string(jsonSentryOrgAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.SentryOrgAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SentryOrgAuditLogsSecretsConfig); err != nil {
+				dst.SentryOrgAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SentryOrgAuditLogsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into SlackUsersSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.SlackUsersSecretsConfig)
 	if err == nil {
@@ -1622,6 +1647,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.SemgrepProjectDetailsSecretsConfig = nil
 		dst.SemgrepProjectsSecretsConfig = nil
 		dst.SemgrepSupplyChainFindingsSecretsConfig = nil
+		dst.SentryOrgAuditLogsSecretsConfig = nil
 		dst.SlackUsersSecretsConfig = nil
 		dst.SlackgroupsSecretsConfig = nil
 		dst.SnowflakeInputSecretsConfig = nil
@@ -1825,6 +1851,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.SemgrepSupplyChainFindingsSecretsConfig != nil {
 		return json.Marshal(&src.SemgrepSupplyChainFindingsSecretsConfig)
+	}
+
+	if src.SentryOrgAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.SentryOrgAuditLogsSecretsConfig)
 	}
 
 	if src.SlackUsersSecretsConfig != nil {
@@ -2083,6 +2113,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.SemgrepSupplyChainFindingsSecretsConfig
 	}
 
+	if obj.SentryOrgAuditLogsSecretsConfig != nil {
+		return obj.SentryOrgAuditLogsSecretsConfig
+	}
+
 	if obj.SlackUsersSecretsConfig != nil {
 		return obj.SlackUsersSecretsConfig
 	}
@@ -2335,6 +2369,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.SemgrepSupplyChainFindingsSecretsConfig != nil {
 		return *obj.SemgrepSupplyChainFindingsSecretsConfig
+	}
+
+	if obj.SentryOrgAuditLogsSecretsConfig != nil {
+		return *obj.SentryOrgAuditLogsSecretsConfig
 	}
 
 	if obj.SlackUsersSecretsConfig != nil {

@@ -301,6 +301,8 @@ export * from '../models/SemgrepProjectsSettingsConfig';
 export * from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 export * from '../models/SentinelSecretsConfig';
 export * from '../models/SentinelSettingsConfig';
+export * from '../models/SentryOrgAuditLogsSecretsConfig';
+export * from '../models/SentryOrgAuditLogsSettingsConfig';
 export * from '../models/SlackUsersSecretsConfig';
 export * from '../models/SlackUsersSettingsConfig';
 export * from '../models/SlackgroupsSecretsConfig';
@@ -643,6 +645,8 @@ import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettings
 import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
+import { SentryOrgAuditLogsSecretsConfig } from '../models/SentryOrgAuditLogsSecretsConfig';
+import { SentryOrgAuditLogsSettingsConfig } from '../models/SentryOrgAuditLogsSettingsConfig';
 import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
 import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
 import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
@@ -1011,6 +1015,8 @@ let typeMap: {[index: string]: any} = {
     "SemgrepSupplyChainFindingsSecretsConfig": SemgrepSupplyChainFindingsSecretsConfig,
     "SentinelSecretsConfig": SentinelSecretsConfig,
     "SentinelSettingsConfig": SentinelSettingsConfig,
+    "SentryOrgAuditLogsSecretsConfig": SentryOrgAuditLogsSecretsConfig,
+    "SentryOrgAuditLogsSettingsConfig": SentryOrgAuditLogsSettingsConfig,
     "SlackUsersSecretsConfig": SlackUsersSecretsConfig,
     "SlackUsersSettingsConfig": SlackUsersSettingsConfig,
     "SlackgroupsSecretsConfig": SlackgroupsSecretsConfig,

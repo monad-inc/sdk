@@ -81,7 +81,7 @@ Name | Type | Description | Notes
 **StoryId** | Pointer to **string** | Filter by the given story. | [optional] 
 **TeamId** | Pointer to **string** | Team ID to filter user results by | [optional] 
 **TenantUrl** | Pointer to **string** | Unique URL for your Tines instance | [optional] 
-**OrgSlug** | Pointer to **string** | Cron expression for scheduling the input | [optional] 
+**OrgSlug** | Pointer to **string** | The ID or slug of the organization | [optional] 
 **Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
 **Confidential** | Pointer to **bool** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. | [optional] 
 **GitlabUrl** | Pointer to **string** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | [optional] 
@@ -119,6 +119,7 @@ Name | Type | Description | Notes
 **BaseUrl** | Pointer to **string** | URL of the organization | [optional] 
 **EvaluationContextIdentifier** | Pointer to **string** | Filters proactive resource evaluations for a given infrastructure deployment. | [optional] 
 **IncludePlannedDeletion** | Pointer to **bool** | Whether or not to include secrets scheduled for deletion | [optional] 
+**HostName** | Pointer to **string** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
@@ -3024,6 +3025,31 @@ SetIncludePlannedDeletion sets IncludePlannedDeletion field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasIncludePlannedDeletion() bool`
 
 HasIncludePlannedDeletion returns a boolean if a field has been set.
+
+### GetHostName
+
+`func (o *SecretProcessesorInputConfigSettings) GetHostName() string`
+
+GetHostName returns the HostName field if non-nil, zero value otherwise.
+
+### GetHostNameOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetHostNameOk() (*string, bool)`
+
+GetHostNameOk returns a tuple with the HostName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHostName
+
+`func (o *SecretProcessesorInputConfigSettings) SetHostName(v string)`
+
+SetHostName sets HostName field to given value.
+
+### HasHostName
+
+`func (o *SecretProcessesorInputConfigSettings) HasHostName() bool`
+
+HasHostName returns a boolean if a field has been set.
 
 ### GetAccount
 

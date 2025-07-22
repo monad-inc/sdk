@@ -399,6 +399,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SemgrepSupplyChainFindingsSecretsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SentinelSecretsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SentinelSettingsConfig.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SentryOrgAuditLogsSecretsConfig.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SentryOrgAuditLogsSettingsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SlackUsersSecretsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SlackUsersSettingsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SlackgroupsSecretsConfig.CustomTypeAdapterFactory());

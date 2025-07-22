@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **twilio_account_sid** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **twilio_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

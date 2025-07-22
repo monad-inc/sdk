@@ -511,6 +511,8 @@ Class | Method | HTTP request | Description
  - [SemgrepSupplyChainFindingsSecretsConfig](docs/SemgrepSupplyChainFindingsSecretsConfig.md)
  - [SentinelSecretsConfig](docs/SentinelSecretsConfig.md)
  - [SentinelSettingsConfig](docs/SentinelSettingsConfig.md)
+ - [SentryOrgAuditLogsSecretsConfig](docs/SentryOrgAuditLogsSecretsConfig.md)
+ - [SentryOrgAuditLogsSettingsConfig](docs/SentryOrgAuditLogsSettingsConfig.md)
  - [SlackUsersSecretsConfig](docs/SlackUsersSecretsConfig.md)
  - [SlackUsersSettingsConfig](docs/SlackUsersSettingsConfig.md)
  - [SlackgroupsSecretsConfig](docs/SlackgroupsSecretsConfig.md)

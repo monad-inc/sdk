@@ -84,7 +84,7 @@
 |**storyId** | **String** | Filter by the given story. |  [optional] |
 |**teamId** | **String** | Team ID to filter user results by |  [optional] |
 |**tenantUrl** | **String** | Unique URL for your Tines instance |  [optional] |
-|**orgSlug** | **String** | Cron expression for scheduling the input |  [optional] |
+|**orgSlug** | **String** | The ID or slug of the organization |  [optional] |
 |**repo** | **String** | A repository slug to filter full-scans by. |  [optional] |
 |**confidential** | **Boolean** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. |  [optional] |
 |**gitlabUrl** | **String** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) |  [optional] |
@@ -122,6 +122,7 @@
 |**baseUrl** | **String** | URL of the organization |  [optional] |
 |**evaluationContextIdentifier** | **String** | Filters proactive resource evaluations for a given infrastructure deployment. |  [optional] |
 |**includePlannedDeletion** | **Boolean** | Whether or not to include secrets scheduled for deletion |  [optional] |
+|**hostName** | **String** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. |  [optional] |
 |**account** | **String** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. |  [optional] |
 |**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
 |**role** | **String** | The name of the Role your service account was granted which can access your resources. |  [optional] |
