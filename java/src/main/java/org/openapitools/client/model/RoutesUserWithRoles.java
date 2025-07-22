@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesUserWithRoles
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-21T17:03:55.432837449Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-22T15:42:57.006465912Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesUserWithRoles {
   public static final String SERIALIZED_NAME_AUTH_ID = "auth_id";
   @SerializedName(SERIALIZED_NAME_AUTH_ID)
