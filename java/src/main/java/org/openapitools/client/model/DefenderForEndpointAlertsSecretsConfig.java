@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * DefenderForEndpointAlertsSecretsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-23T18:47:34.460389776Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-23T20:28:54.182190833Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DefenderForEndpointAlertsSecretsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
