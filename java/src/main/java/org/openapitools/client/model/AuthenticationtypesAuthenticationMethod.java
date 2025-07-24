@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AuthenticationtypesAuthenticationMethod
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-24T18:19:33.920766792Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-24T20:52:45.962412083Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AuthenticationtypesAuthenticationMethod {
   public static final String SERIALIZED_NAME_CONFIRMED = "confirmed";
   @SerializedName(SERIALIZED_NAME_CONFIRMED)
