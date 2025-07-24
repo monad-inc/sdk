@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Palo Alto Data Security Alerts settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-23T20:54:32.139477643Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-24T16:16:43.627458312Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class PaloAltoDataSecurityAlertsSettingsConfig {
   public static final String SERIALIZED_NAME_BASE_URL = "base_url";
   @SerializedName(SERIALIZED_NAME_BASE_URL)
