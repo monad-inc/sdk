@@ -82,6 +82,7 @@ type SecretProcessesorInputConfigSettings struct {
 	SnowflakeInputSettingsConfig *SnowflakeInputSettingsConfig
 	SnykOrganizationsSettingsConfig *SnykOrganizationsSettingsConfig
 	SnykProjectsSettingsConfig *SnykProjectsSettingsConfig
+	SystemlogSettingsConfig *SystemlogSettingsConfig
 	TailscaleUsersSettingsConfig *TailscaleUsersSettingsConfig
 	TenableAssetsCronSettingsConfig *TenableAssetsCronSettingsConfig
 	TenableVulnerabilitiesCronSettingsConfig *TenableVulnerabilitiesCronSettingsConfig
@@ -531,6 +532,13 @@ func SnykOrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Sn
 func SnykProjectsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SnykProjectsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		SnykProjectsSettingsConfig: v,
+	}
+}
+
+// SystemlogSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SystemlogSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func SystemlogSettingsConfigAsSecretProcessesorInputConfigSettings(v *SystemlogSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		SystemlogSettingsConfig: v,
 	}
 }
 
@@ -1673,6 +1681,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.SnykProjectsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into SystemlogSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SystemlogSettingsConfig)
+	if err == nil {
+		jsonSystemlogSettingsConfig, _ := json.Marshal(dst.SystemlogSettingsConfig)
+		if string(jsonSystemlogSettingsConfig) == "{}" { // empty struct
+			dst.SystemlogSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SystemlogSettingsConfig); err != nil {
+				dst.SystemlogSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SystemlogSettingsConfig = nil
+	}
+
 	// try to unmarshal data into TailscaleUsersSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.TailscaleUsersSettingsConfig)
 	if err == nil {
@@ -1891,6 +1916,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.SnowflakeInputSettingsConfig = nil
 		dst.SnykOrganizationsSettingsConfig = nil
 		dst.SnykProjectsSettingsConfig = nil
+		dst.SystemlogSettingsConfig = nil
 		dst.TailscaleUsersSettingsConfig = nil
 		dst.TenableAssetsCronSettingsConfig = nil
 		dst.TenableVulnerabilitiesCronSettingsConfig = nil
@@ -2161,6 +2187,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.SnykProjectsSettingsConfig != nil {
 		return json.Marshal(&src.SnykProjectsSettingsConfig)
+	}
+
+	if src.SystemlogSettingsConfig != nil {
+		return json.Marshal(&src.SystemlogSettingsConfig)
 	}
 
 	if src.TailscaleUsersSettingsConfig != nil {
@@ -2459,6 +2489,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.SnykProjectsSettingsConfig
 	}
 
+	if obj.SystemlogSettingsConfig != nil {
+		return obj.SystemlogSettingsConfig
+	}
+
 	if obj.TailscaleUsersSettingsConfig != nil {
 		return obj.TailscaleUsersSettingsConfig
 	}
@@ -2751,6 +2785,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.SnykProjectsSettingsConfig != nil {
 		return *obj.SnykProjectsSettingsConfig
+	}
+
+	if obj.SystemlogSettingsConfig != nil {
+		return *obj.SystemlogSettingsConfig
 	}
 
 	if obj.TailscaleUsersSettingsConfig != nil {

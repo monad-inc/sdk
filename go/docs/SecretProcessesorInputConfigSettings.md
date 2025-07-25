@@ -125,6 +125,7 @@ Name | Type | Description | Notes
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
 **Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
+**OrgUrl** | Pointer to **string** | The URL of the Okta organization | [optional] 
 **UserRoleOption** | Pointer to **string** | Allows for filtering the output by user role. | [optional] 
 **UserTypeOption** | Pointer to **string** | Allows for filtering the output by user type. | [optional] 
 **AssetStatus** | Pointer to **[]string** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
@@ -3175,6 +3176,31 @@ SetWarehouse sets Warehouse field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasWarehouse() bool`
 
 HasWarehouse returns a boolean if a field has been set.
+
+### GetOrgUrl
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrgUrl() string`
+
+GetOrgUrl returns the OrgUrl field if non-nil, zero value otherwise.
+
+### GetOrgUrlOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrgUrlOk() (*string, bool)`
+
+GetOrgUrlOk returns a tuple with the OrgUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrgUrl
+
+`func (o *SecretProcessesorInputConfigSettings) SetOrgUrl(v string)`
+
+SetOrgUrl sets OrgUrl field to given value.
+
+### HasOrgUrl
+
+`func (o *SecretProcessesorInputConfigSettings) HasOrgUrl() bool`
+
+HasOrgUrl returns a boolean if a field has been set.
 
 ### GetUserRoleOption
 

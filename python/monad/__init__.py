@@ -381,6 +381,8 @@ __all__ = [
     "SplunkSettingsConfig",
     "SumologicSecretsConfig",
     "SumologicSettingsConfig",
+    "SystemlogSecretsConfig",
+    "SystemlogSettingsConfig",
     "TailscaleUsersSecretsConfig",
     "TailscaleUsersSettingsConfig",
     "TenableAssetsCronSecretsConfig",
@@ -770,6 +772,8 @@ from monad.models.splunk_secrets_config import SplunkSecretsConfig as SplunkSecr
 from monad.models.splunk_settings_config import SplunkSettingsConfig as SplunkSettingsConfig
 from monad.models.sumologic_secrets_config import SumologicSecretsConfig as SumologicSecretsConfig
 from monad.models.sumologic_settings_config import SumologicSettingsConfig as SumologicSettingsConfig
+from monad.models.systemlog_secrets_config import SystemlogSecretsConfig as SystemlogSecretsConfig
+from monad.models.systemlog_settings_config import SystemlogSettingsConfig as SystemlogSettingsConfig
 from monad.models.tailscale_users_secrets_config import TailscaleUsersSecretsConfig as TailscaleUsersSecretsConfig
 from monad.models.tailscale_users_settings_config import TailscaleUsersSettingsConfig as TailscaleUsersSettingsConfig
 from monad.models.tenable_assets_cron_secrets_config import TenableAssetsCronSecretsConfig as TenableAssetsCronSecretsConfig

@@ -537,6 +537,8 @@ Class | Method | HTTP request | Description
  - [SplunkSettingsConfig](docs/SplunkSettingsConfig.md)
  - [SumologicSecretsConfig](docs/SumologicSecretsConfig.md)
  - [SumologicSettingsConfig](docs/SumologicSettingsConfig.md)
+ - [SystemlogSecretsConfig](docs/SystemlogSecretsConfig.md)
+ - [SystemlogSettingsConfig](docs/SystemlogSettingsConfig.md)
  - [TailscaleUsersSecretsConfig](docs/TailscaleUsersSecretsConfig.md)
  - [TailscaleUsersSettingsConfig](docs/TailscaleUsersSettingsConfig.md)
  - [TenableAssetsCronSecretsConfig](docs/TenableAssetsCronSecretsConfig.md)

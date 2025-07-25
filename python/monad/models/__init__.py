@@ -338,6 +338,8 @@ from monad.models.splunk_secrets_config import SplunkSecretsConfig
 from monad.models.splunk_settings_config import SplunkSettingsConfig
 from monad.models.sumologic_secrets_config import SumologicSecretsConfig
 from monad.models.sumologic_settings_config import SumologicSettingsConfig
+from monad.models.systemlog_secrets_config import SystemlogSecretsConfig
+from monad.models.systemlog_settings_config import SystemlogSettingsConfig
 from monad.models.tailscale_users_secrets_config import TailscaleUsersSecretsConfig
 from monad.models.tailscale_users_settings_config import TailscaleUsersSettingsConfig
 from monad.models.tenable_assets_cron_secrets_config import TenableAssetsCronSecretsConfig

@@ -126,6 +126,7 @@ Name | Type | Description | Notes
 **role** | **str** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **var_schema** | **str** | The schema within the Snowflake database where the target table resides. | [optional] 
 **warehouse** | **str** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
+**org_url** | **str** | The URL of the Okta organization | [optional] 
 **user_role_option** | **str** | Allows for filtering the output by user role. | [optional] 
 **user_type_option** | **str** | Allows for filtering the output by user type. | [optional] 
 **asset_status** | **List[str]** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 

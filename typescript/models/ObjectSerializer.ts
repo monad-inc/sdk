@@ -321,6 +321,8 @@ export * from '../models/SplunkSecretsConfig';
 export * from '../models/SplunkSettingsConfig';
 export * from '../models/SumologicSecretsConfig';
 export * from '../models/SumologicSettingsConfig';
+export * from '../models/SystemlogSecretsConfig';
+export * from '../models/SystemlogSettingsConfig';
 export * from '../models/TailscaleUsersSecretsConfig';
 export * from '../models/TailscaleUsersSettingsConfig';
 export * from '../models/TenableAssetsCronSecretsConfig';
@@ -665,6 +667,8 @@ import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
 import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
 import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
 import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
+import { SystemlogSecretsConfig } from '../models/SystemlogSecretsConfig';
+import { SystemlogSettingsConfig } from '../models/SystemlogSettingsConfig';
 import { TailscaleUsersSecretsConfig } from '../models/TailscaleUsersSecretsConfig';
 import { TailscaleUsersSettingsConfig } from '../models/TailscaleUsersSettingsConfig';
 import { TenableAssetsCronSecretsConfig } from '../models/TenableAssetsCronSecretsConfig';
@@ -1035,6 +1039,8 @@ let typeMap: {[index: string]: any} = {
     "SplunkSettingsConfig": SplunkSettingsConfig,
     "SumologicSecretsConfig": SumologicSecretsConfig,
     "SumologicSettingsConfig": SumologicSettingsConfig,
+    "SystemlogSecretsConfig": SystemlogSecretsConfig,
+    "SystemlogSettingsConfig": SystemlogSettingsConfig,
     "TailscaleUsersSecretsConfig": TailscaleUsersSecretsConfig,
     "TailscaleUsersSettingsConfig": TailscaleUsersSettingsConfig,
     "TenableAssetsCronSecretsConfig": TenableAssetsCronSecretsConfig,
