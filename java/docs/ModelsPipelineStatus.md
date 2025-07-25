@@ -13,7 +13,9 @@
 |**ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  |  [optional] |
 |**nodes** | [**List&lt;ModelsPipelineNodeStatus&gt;**](ModelsPipelineNodeStatus.md) |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
+|**organizationName** | **String** |  |  [optional] |
 |**pipelineId** | **String** |  |  [optional] |
+|**pipelineName** | **String** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
 
 

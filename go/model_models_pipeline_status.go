@@ -26,7 +26,9 @@ type ModelsPipelineStatus struct {
 	Ingress *ModelsDataUsage `json:"ingress,omitempty"`
 	Nodes []ModelsPipelineNodeStatus `json:"nodes,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
+	OrganizationName *string `json:"organization_name,omitempty"`
 	PipelineId *string `json:"pipeline_id,omitempty"`
+	PipelineName *string `json:"pipeline_name,omitempty"`
 	Status *string `json:"status,omitempty"`
 }
 
@@ -239,6 +241,38 @@ func (o *ModelsPipelineStatus) SetOrganizationId(v string) {
 	o.OrganizationId = &v
 }
 
+// GetOrganizationName returns the OrganizationName field value if set, zero value otherwise.
+func (o *ModelsPipelineStatus) GetOrganizationName() string {
+	if o == nil || IsNil(o.OrganizationName) {
+		var ret string
+		return ret
+	}
+	return *o.OrganizationName
+}
+
+// GetOrganizationNameOk returns a tuple with the OrganizationName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineStatus) GetOrganizationNameOk() (*string, bool) {
+	if o == nil || IsNil(o.OrganizationName) {
+		return nil, false
+	}
+	return o.OrganizationName, true
+}
+
+// HasOrganizationName returns a boolean if a field has been set.
+func (o *ModelsPipelineStatus) HasOrganizationName() bool {
+	if o != nil && !IsNil(o.OrganizationName) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrganizationName gets a reference to the given string and assigns it to the OrganizationName field.
+func (o *ModelsPipelineStatus) SetOrganizationName(v string) {
+	o.OrganizationName = &v
+}
+
 // GetPipelineId returns the PipelineId field value if set, zero value otherwise.
 func (o *ModelsPipelineStatus) GetPipelineId() string {
 	if o == nil || IsNil(o.PipelineId) {
@@ -269,6 +303,38 @@ func (o *ModelsPipelineStatus) HasPipelineId() bool {
 // SetPipelineId gets a reference to the given string and assigns it to the PipelineId field.
 func (o *ModelsPipelineStatus) SetPipelineId(v string) {
 	o.PipelineId = &v
+}
+
+// GetPipelineName returns the PipelineName field value if set, zero value otherwise.
+func (o *ModelsPipelineStatus) GetPipelineName() string {
+	if o == nil || IsNil(o.PipelineName) {
+		var ret string
+		return ret
+	}
+	return *o.PipelineName
+}
+
+// GetPipelineNameOk returns a tuple with the PipelineName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineStatus) GetPipelineNameOk() (*string, bool) {
+	if o == nil || IsNil(o.PipelineName) {
+		return nil, false
+	}
+	return o.PipelineName, true
+}
+
+// HasPipelineName returns a boolean if a field has been set.
+func (o *ModelsPipelineStatus) HasPipelineName() bool {
+	if o != nil && !IsNil(o.PipelineName) {
+		return true
+	}
+
+	return false
+}
+
+// SetPipelineName gets a reference to the given string and assigns it to the PipelineName field.
+func (o *ModelsPipelineStatus) SetPipelineName(v string) {
+	o.PipelineName = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -331,8 +397,14 @@ func (o ModelsPipelineStatus) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OrganizationId) {
 		toSerialize["organization_id"] = o.OrganizationId
 	}
+	if !IsNil(o.OrganizationName) {
+		toSerialize["organization_name"] = o.OrganizationName
+	}
 	if !IsNil(o.PipelineId) {
 		toSerialize["pipeline_id"] = o.PipelineId
+	}
+	if !IsNil(o.PipelineName) {
+		toSerialize["pipeline_name"] = o.PipelineName
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

@@ -10,7 +10,9 @@ Name | Type | Description | Notes
 **Ingress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **Nodes** | Pointer to [**[]ModelsPipelineNodeStatus**](ModelsPipelineNodeStatus.md) |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
+**OrganizationName** | Pointer to **string** |  | [optional] 
 **PipelineId** | Pointer to **string** |  | [optional] 
+**PipelineName** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -182,6 +184,31 @@ SetOrganizationId sets OrganizationId field to given value.
 
 HasOrganizationId returns a boolean if a field has been set.
 
+### GetOrganizationName
+
+`func (o *ModelsPipelineStatus) GetOrganizationName() string`
+
+GetOrganizationName returns the OrganizationName field if non-nil, zero value otherwise.
+
+### GetOrganizationNameOk
+
+`func (o *ModelsPipelineStatus) GetOrganizationNameOk() (*string, bool)`
+
+GetOrganizationNameOk returns a tuple with the OrganizationName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrganizationName
+
+`func (o *ModelsPipelineStatus) SetOrganizationName(v string)`
+
+SetOrganizationName sets OrganizationName field to given value.
+
+### HasOrganizationName
+
+`func (o *ModelsPipelineStatus) HasOrganizationName() bool`
+
+HasOrganizationName returns a boolean if a field has been set.
+
 ### GetPipelineId
 
 `func (o *ModelsPipelineStatus) GetPipelineId() string`
@@ -206,6 +233,31 @@ SetPipelineId sets PipelineId field to given value.
 `func (o *ModelsPipelineStatus) HasPipelineId() bool`
 
 HasPipelineId returns a boolean if a field has been set.
+
+### GetPipelineName
+
+`func (o *ModelsPipelineStatus) GetPipelineName() string`
+
+GetPipelineName returns the PipelineName field if non-nil, zero value otherwise.
+
+### GetPipelineNameOk
+
+`func (o *ModelsPipelineStatus) GetPipelineNameOk() (*string, bool)`
+
+GetPipelineNameOk returns a tuple with the PipelineName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPipelineName
+
+`func (o *ModelsPipelineStatus) SetPipelineName(v string)`
+
+SetPipelineName sets PipelineName field to given value.
+
+### HasPipelineName
+
+`func (o *ModelsPipelineStatus) HasPipelineName() bool`
+
+HasPipelineName returns a boolean if a field has been set.
 
 ### GetStatus
 

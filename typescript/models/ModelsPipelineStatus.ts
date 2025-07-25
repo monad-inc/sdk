@@ -21,7 +21,9 @@ export class ModelsPipelineStatus {
     'ingress'?: ModelsDataUsage;
     'nodes'?: Array<ModelsPipelineNodeStatus>;
     'organizationId'?: string;
+    'organizationName'?: string;
     'pipelineId'?: string;
+    'pipelineName'?: string;
     'status'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -66,8 +68,20 @@ export class ModelsPipelineStatus {
             "format": ""
         },
         {
+            "name": "organizationName",
+            "baseName": "organization_name",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "pipelineId",
             "baseName": "pipeline_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "pipelineName",
+            "baseName": "pipeline_name",
             "type": "string",
             "format": ""
         },

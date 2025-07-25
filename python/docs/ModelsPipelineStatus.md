@@ -11,7 +11,9 @@ Name | Type | Description | Notes
 **ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **nodes** | [**List[ModelsPipelineNodeStatus]**](ModelsPipelineNodeStatus.md) |  | [optional] 
 **organization_id** | **str** |  | [optional] 
+**organization_name** | **str** |  | [optional] 
 **pipeline_id** | **str** |  | [optional] 
+**pipeline_name** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 
 ## Example

@@ -35,9 +35,11 @@ class ModelsPipelineStatus(BaseModel):
     ingress: Optional[ModelsDataUsage] = None
     nodes: Optional[List[ModelsPipelineNodeStatus]] = None
     organization_id: Optional[StrictStr] = None
+    organization_name: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None
+    pipeline_name: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["egress", "errors", "expired_messages", "ingress", "nodes", "organization_id", "pipeline_id", "status"]
+    __properties: ClassVar[List[str]] = ["egress", "errors", "expired_messages", "ingress", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -109,7 +111,9 @@ class ModelsPipelineStatus(BaseModel):
             "ingress": ModelsDataUsage.from_dict(obj["ingress"]) if obj.get("ingress") is not None else None,
             "nodes": [ModelsPipelineNodeStatus.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None,
             "organization_id": obj.get("organization_id"),
+            "organization_name": obj.get("organization_name"),
             "pipeline_id": obj.get("pipeline_id"),
+            "pipeline_name": obj.get("pipeline_name"),
             "status": obj.get("status")
         })
         return _obj

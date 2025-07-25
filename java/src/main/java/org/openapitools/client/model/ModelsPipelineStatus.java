@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-24T23:30:42.382161755Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-25T16:19:03.379168363Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsPipelineStatus {
   public static final String SERIALIZED_NAME_EGRESS = "egress";
   @SerializedName(SERIALIZED_NAME_EGRESS)
@@ -84,10 +84,20 @@ public class ModelsPipelineStatus {
   @javax.annotation.Nullable
   private String organizationId;
 
+  public static final String SERIALIZED_NAME_ORGANIZATION_NAME = "organization_name";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_NAME)
+  @javax.annotation.Nullable
+  private String organizationName;
+
   public static final String SERIALIZED_NAME_PIPELINE_ID = "pipeline_id";
   @SerializedName(SERIALIZED_NAME_PIPELINE_ID)
   @javax.annotation.Nullable
   private String pipelineId;
+
+  public static final String SERIALIZED_NAME_PIPELINE_NAME = "pipeline_name";
+  @SerializedName(SERIALIZED_NAME_PIPELINE_NAME)
+  @javax.annotation.Nullable
+  private String pipelineName;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -219,6 +229,25 @@ public class ModelsPipelineStatus {
   }
 
 
+  public ModelsPipelineStatus organizationName(@javax.annotation.Nullable String organizationName) {
+    this.organizationName = organizationName;
+    return this;
+  }
+
+  /**
+   * Get organizationName
+   * @return organizationName
+   */
+  @javax.annotation.Nullable
+  public String getOrganizationName() {
+    return organizationName;
+  }
+
+  public void setOrganizationName(@javax.annotation.Nullable String organizationName) {
+    this.organizationName = organizationName;
+  }
+
+
   public ModelsPipelineStatus pipelineId(@javax.annotation.Nullable String pipelineId) {
     this.pipelineId = pipelineId;
     return this;
@@ -235,6 +264,25 @@ public class ModelsPipelineStatus {
 
   public void setPipelineId(@javax.annotation.Nullable String pipelineId) {
     this.pipelineId = pipelineId;
+  }
+
+
+  public ModelsPipelineStatus pipelineName(@javax.annotation.Nullable String pipelineName) {
+    this.pipelineName = pipelineName;
+    return this;
+  }
+
+  /**
+   * Get pipelineName
+   * @return pipelineName
+   */
+  @javax.annotation.Nullable
+  public String getPipelineName() {
+    return pipelineName;
+  }
+
+  public void setPipelineName(@javax.annotation.Nullable String pipelineName) {
+    this.pipelineName = pipelineName;
   }
 
 
@@ -273,13 +321,15 @@ public class ModelsPipelineStatus {
         Objects.equals(this.ingress, modelsPipelineStatus.ingress) &&
         Objects.equals(this.nodes, modelsPipelineStatus.nodes) &&
         Objects.equals(this.organizationId, modelsPipelineStatus.organizationId) &&
+        Objects.equals(this.organizationName, modelsPipelineStatus.organizationName) &&
         Objects.equals(this.pipelineId, modelsPipelineStatus.pipelineId) &&
+        Objects.equals(this.pipelineName, modelsPipelineStatus.pipelineName) &&
         Objects.equals(this.status, modelsPipelineStatus.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(egress, errors, expiredMessages, ingress, nodes, organizationId, pipelineId, status);
+    return Objects.hash(egress, errors, expiredMessages, ingress, nodes, organizationId, organizationName, pipelineId, pipelineName, status);
   }
 
   @Override
@@ -292,7 +342,9 @@ public class ModelsPipelineStatus {
     sb.append("    ingress: ").append(toIndentedString(ingress)).append("\n");
     sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    organizationName: ").append(toIndentedString(organizationName)).append("\n");
     sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
+    sb.append("    pipelineName: ").append(toIndentedString(pipelineName)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -315,7 +367,7 @@ public class ModelsPipelineStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("egress", "errors", "expired_messages", "ingress", "nodes", "organization_id", "pipeline_id", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("egress", "errors", "expired_messages", "ingress", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -367,8 +419,14 @@ public class ModelsPipelineStatus {
       if ((jsonObj.get("organization_id") != null && !jsonObj.get("organization_id").isJsonNull()) && !jsonObj.get("organization_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
       }
+      if ((jsonObj.get("organization_name") != null && !jsonObj.get("organization_name").isJsonNull()) && !jsonObj.get("organization_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `organization_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_name").toString()));
+      }
       if ((jsonObj.get("pipeline_id") != null && !jsonObj.get("pipeline_id").isJsonNull()) && !jsonObj.get("pipeline_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `pipeline_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_id").toString()));
+      }
+      if ((jsonObj.get("pipeline_name") != null && !jsonObj.get("pipeline_name").isJsonNull()) && !jsonObj.get("pipeline_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `pipeline_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_name").toString()));
       }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
