@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * PagerDuty Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:36:30.704218134Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T18:26:28.090863405Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class PagerdutySettingsConfig {
   public static final String SERIALIZED_NAME_ALERTS_CONFIG = "alerts_config";
   @SerializedName(SERIALIZED_NAME_ALERTS_CONFIG)
