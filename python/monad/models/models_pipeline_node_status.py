@@ -28,6 +28,8 @@ class ModelsPipelineNodeStatus(BaseModel):
     """
     ModelsPipelineNodeStatus
     """ # noqa: E501
+    component_type: Optional[StrictStr] = None
+    component_type_id: Optional[StrictStr] = None
     egress: Optional[ModelsDataUsage] = None
     errors: Optional[StrictInt] = None
     expired_messages: Optional[StrictInt] = None
@@ -35,7 +37,7 @@ class ModelsPipelineNodeStatus(BaseModel):
     node_id: Optional[StrictStr] = None
     node_slug: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["egress", "errors", "expired_messages", "ingress", "node_id", "node_slug", "status"]
+    __properties: ClassVar[List[str]] = ["component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "node_id", "node_slug", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +96,8 @@ class ModelsPipelineNodeStatus(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "component_type": obj.get("component_type"),
+            "component_type_id": obj.get("component_type_id"),
             "egress": ModelsDataUsage.from_dict(obj["egress"]) if obj.get("egress") is not None else None,
             "errors": obj.get("errors"),
             "expired_messages": obj.get("expired_messages"),

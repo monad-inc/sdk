@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**component_type** | **str** |  | [optional] 
+**component_type_id** | **str** |  | [optional] 
 **egress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **errors** | **int** |  | [optional] 
 **expired_messages** | **int** |  | [optional] 

@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ComponentType** | Pointer to **string** |  | [optional] 
+**ComponentTypeId** | Pointer to **string** |  | [optional] 
 **Egress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **Errors** | Pointer to **int32** |  | [optional] 
 **ExpiredMessages** | Pointer to **int32** |  | [optional] 
@@ -30,6 +32,56 @@ will change when the set of required properties is changed
 NewModelsPipelineNodeStatusWithDefaults instantiates a new ModelsPipelineNodeStatus object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetComponentType
+
+`func (o *ModelsPipelineNodeStatus) GetComponentType() string`
+
+GetComponentType returns the ComponentType field if non-nil, zero value otherwise.
+
+### GetComponentTypeOk
+
+`func (o *ModelsPipelineNodeStatus) GetComponentTypeOk() (*string, bool)`
+
+GetComponentTypeOk returns a tuple with the ComponentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComponentType
+
+`func (o *ModelsPipelineNodeStatus) SetComponentType(v string)`
+
+SetComponentType sets ComponentType field to given value.
+
+### HasComponentType
+
+`func (o *ModelsPipelineNodeStatus) HasComponentType() bool`
+
+HasComponentType returns a boolean if a field has been set.
+
+### GetComponentTypeId
+
+`func (o *ModelsPipelineNodeStatus) GetComponentTypeId() string`
+
+GetComponentTypeId returns the ComponentTypeId field if non-nil, zero value otherwise.
+
+### GetComponentTypeIdOk
+
+`func (o *ModelsPipelineNodeStatus) GetComponentTypeIdOk() (*string, bool)`
+
+GetComponentTypeIdOk returns a tuple with the ComponentTypeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComponentTypeId
+
+`func (o *ModelsPipelineNodeStatus) SetComponentTypeId(v string)`
+
+SetComponentTypeId sets ComponentTypeId field to given value.
+
+### HasComponentTypeId
+
+`func (o *ModelsPipelineNodeStatus) HasComponentTypeId() bool`
+
+HasComponentTypeId returns a boolean if a field has been set.
 
 ### GetEgress
 

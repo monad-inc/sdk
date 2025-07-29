@@ -20,6 +20,8 @@ var _ MappedNullable = &ModelsPipelineNodeStatus{}
 
 // ModelsPipelineNodeStatus struct for ModelsPipelineNodeStatus
 type ModelsPipelineNodeStatus struct {
+	ComponentType *string `json:"component_type,omitempty"`
+	ComponentTypeId *string `json:"component_type_id,omitempty"`
 	Egress *ModelsDataUsage `json:"egress,omitempty"`
 	Errors *int32 `json:"errors,omitempty"`
 	ExpiredMessages *int32 `json:"expired_messages,omitempty"`
@@ -44,6 +46,70 @@ func NewModelsPipelineNodeStatus() *ModelsPipelineNodeStatus {
 func NewModelsPipelineNodeStatusWithDefaults() *ModelsPipelineNodeStatus {
 	this := ModelsPipelineNodeStatus{}
 	return &this
+}
+
+// GetComponentType returns the ComponentType field value if set, zero value otherwise.
+func (o *ModelsPipelineNodeStatus) GetComponentType() string {
+	if o == nil || IsNil(o.ComponentType) {
+		var ret string
+		return ret
+	}
+	return *o.ComponentType
+}
+
+// GetComponentTypeOk returns a tuple with the ComponentType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineNodeStatus) GetComponentTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.ComponentType) {
+		return nil, false
+	}
+	return o.ComponentType, true
+}
+
+// HasComponentType returns a boolean if a field has been set.
+func (o *ModelsPipelineNodeStatus) HasComponentType() bool {
+	if o != nil && !IsNil(o.ComponentType) {
+		return true
+	}
+
+	return false
+}
+
+// SetComponentType gets a reference to the given string and assigns it to the ComponentType field.
+func (o *ModelsPipelineNodeStatus) SetComponentType(v string) {
+	o.ComponentType = &v
+}
+
+// GetComponentTypeId returns the ComponentTypeId field value if set, zero value otherwise.
+func (o *ModelsPipelineNodeStatus) GetComponentTypeId() string {
+	if o == nil || IsNil(o.ComponentTypeId) {
+		var ret string
+		return ret
+	}
+	return *o.ComponentTypeId
+}
+
+// GetComponentTypeIdOk returns a tuple with the ComponentTypeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineNodeStatus) GetComponentTypeIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ComponentTypeId) {
+		return nil, false
+	}
+	return o.ComponentTypeId, true
+}
+
+// HasComponentTypeId returns a boolean if a field has been set.
+func (o *ModelsPipelineNodeStatus) HasComponentTypeId() bool {
+	if o != nil && !IsNil(o.ComponentTypeId) {
+		return true
+	}
+
+	return false
+}
+
+// SetComponentTypeId gets a reference to the given string and assigns it to the ComponentTypeId field.
+func (o *ModelsPipelineNodeStatus) SetComponentTypeId(v string) {
+	o.ComponentTypeId = &v
 }
 
 // GetEgress returns the Egress field value if set, zero value otherwise.
@@ -280,6 +346,12 @@ func (o ModelsPipelineNodeStatus) MarshalJSON() ([]byte, error) {
 
 func (o ModelsPipelineNodeStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ComponentType) {
+		toSerialize["component_type"] = o.ComponentType
+	}
+	if !IsNil(o.ComponentTypeId) {
+		toSerialize["component_type_id"] = o.ComponentTypeId
+	}
 	if !IsNil(o.Egress) {
 		toSerialize["egress"] = o.Egress
 	}

@@ -49,8 +49,18 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNodeStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T18:26:28.090863405Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T22:33:49.124530228Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsPipelineNodeStatus {
+  public static final String SERIALIZED_NAME_COMPONENT_TYPE = "component_type";
+  @SerializedName(SERIALIZED_NAME_COMPONENT_TYPE)
+  @javax.annotation.Nullable
+  private String componentType;
+
+  public static final String SERIALIZED_NAME_COMPONENT_TYPE_ID = "component_type_id";
+  @SerializedName(SERIALIZED_NAME_COMPONENT_TYPE_ID)
+  @javax.annotation.Nullable
+  private String componentTypeId;
+
   public static final String SERIALIZED_NAME_EGRESS = "egress";
   @SerializedName(SERIALIZED_NAME_EGRESS)
   @javax.annotation.Nullable
@@ -88,6 +98,44 @@ public class ModelsPipelineNodeStatus {
 
   public ModelsPipelineNodeStatus() {
   }
+
+  public ModelsPipelineNodeStatus componentType(@javax.annotation.Nullable String componentType) {
+    this.componentType = componentType;
+    return this;
+  }
+
+  /**
+   * Get componentType
+   * @return componentType
+   */
+  @javax.annotation.Nullable
+  public String getComponentType() {
+    return componentType;
+  }
+
+  public void setComponentType(@javax.annotation.Nullable String componentType) {
+    this.componentType = componentType;
+  }
+
+
+  public ModelsPipelineNodeStatus componentTypeId(@javax.annotation.Nullable String componentTypeId) {
+    this.componentTypeId = componentTypeId;
+    return this;
+  }
+
+  /**
+   * Get componentTypeId
+   * @return componentTypeId
+   */
+  @javax.annotation.Nullable
+  public String getComponentTypeId() {
+    return componentTypeId;
+  }
+
+  public void setComponentTypeId(@javax.annotation.Nullable String componentTypeId) {
+    this.componentTypeId = componentTypeId;
+  }
+
 
   public ModelsPipelineNodeStatus egress(@javax.annotation.Nullable ModelsDataUsage egress) {
     this.egress = egress;
@@ -232,7 +280,9 @@ public class ModelsPipelineNodeStatus {
       return false;
     }
     ModelsPipelineNodeStatus modelsPipelineNodeStatus = (ModelsPipelineNodeStatus) o;
-    return Objects.equals(this.egress, modelsPipelineNodeStatus.egress) &&
+    return Objects.equals(this.componentType, modelsPipelineNodeStatus.componentType) &&
+        Objects.equals(this.componentTypeId, modelsPipelineNodeStatus.componentTypeId) &&
+        Objects.equals(this.egress, modelsPipelineNodeStatus.egress) &&
         Objects.equals(this.errors, modelsPipelineNodeStatus.errors) &&
         Objects.equals(this.expiredMessages, modelsPipelineNodeStatus.expiredMessages) &&
         Objects.equals(this.ingress, modelsPipelineNodeStatus.ingress) &&
@@ -243,13 +293,15 @@ public class ModelsPipelineNodeStatus {
 
   @Override
   public int hashCode() {
-    return Objects.hash(egress, errors, expiredMessages, ingress, nodeId, nodeSlug, status);
+    return Objects.hash(componentType, componentTypeId, egress, errors, expiredMessages, ingress, nodeId, nodeSlug, status);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsPipelineNodeStatus {\n");
+    sb.append("    componentType: ").append(toIndentedString(componentType)).append("\n");
+    sb.append("    componentTypeId: ").append(toIndentedString(componentTypeId)).append("\n");
     sb.append("    egress: ").append(toIndentedString(egress)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    expiredMessages: ").append(toIndentedString(expiredMessages)).append("\n");
@@ -278,7 +330,7 @@ public class ModelsPipelineNodeStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("egress", "errors", "expired_messages", "ingress", "node_id", "node_slug", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "node_id", "node_slug", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -305,6 +357,12 @@ public class ModelsPipelineNodeStatus {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("component_type") != null && !jsonObj.get("component_type").isJsonNull()) && !jsonObj.get("component_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `component_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("component_type").toString()));
+      }
+      if ((jsonObj.get("component_type_id") != null && !jsonObj.get("component_type_id").isJsonNull()) && !jsonObj.get("component_type_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `component_type_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("component_type_id").toString()));
+      }
       // validate the optional field `egress`
       if (jsonObj.get("egress") != null && !jsonObj.get("egress").isJsonNull()) {
         ModelsDataUsage.validateJsonElement(jsonObj.get("egress"));

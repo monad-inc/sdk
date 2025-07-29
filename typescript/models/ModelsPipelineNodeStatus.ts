@@ -14,6 +14,8 @@ import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineNodeStatus {
+    'componentType'?: string;
+    'componentTypeId'?: string;
     'egress'?: ModelsDataUsage;
     'errors'?: number;
     'expiredMessages'?: number;
@@ -27,6 +29,18 @@ export class ModelsPipelineNodeStatus {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "componentType",
+            "baseName": "component_type",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "componentTypeId",
+            "baseName": "component_type_id",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "egress",
             "baseName": "egress",

@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * Security Lake Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T18:26:28.090863405Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T22:33:49.124530228Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class SecurityLakeSettingsConfig {
   public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
   @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
