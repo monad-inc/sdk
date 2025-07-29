@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -44,7 +44,8 @@ class IssuesSettingsConfig(BaseModel):
     stack_layers: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter Issues from specific stack layers")
     status: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter by Issue handling status @Description Default: OPEN")
     tenant_data_center: Optional[StrictStr] = Field(default=None, description="DataCenter represents the tenant's data center location @Description Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\" @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact")
-    __properties: ClassVar[List[str]] = ["control_ids", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["control_ids", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"]
 
     @field_validator('issue_types')
     def issue_types_validate_enum(cls, value):
@@ -168,7 +169,8 @@ class IssuesSettingsConfig(BaseModel):
             "severities": obj.get("severities"),
             "stack_layers": obj.get("stack_layers"),
             "status": obj.get("status"),
-            "tenant_data_center": obj.get("tenant_data_center")
+            "tenant_data_center": obj.get("tenant_data_center"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

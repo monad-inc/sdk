@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,8 @@ class FullScansSettingsConfig(BaseModel):
     """ # noqa: E501
     org_slug: Optional[StrictStr] = Field(default=None, description="Cron expression for scheduling the input")
     repo: Optional[StrictStr] = Field(default=None, description="A repository slug to filter full-scans by.")
-    __properties: ClassVar[List[str]] = ["org_slug", "repo"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["org_slug", "repo", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,7 +84,8 @@ class FullScansSettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "org_slug": obj.get("org_slug"),
-            "repo": obj.get("repo")
+            "repo": obj.get("repo"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

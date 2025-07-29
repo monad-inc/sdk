@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR event stream settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class EventSettingsConfig {
   public static final String SERIALIZED_NAME_APP_NAME = "app_name";
   @SerializedName(SERIALIZED_NAME_APP_NAME)
@@ -64,6 +64,11 @@ public class EventSettingsConfig {
   @SerializedName(SERIALIZED_NAME_MEMBER_CID)
   @javax.annotation.Nullable
   private String memberCid;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public EventSettingsConfig() {
   }
@@ -125,6 +130,25 @@ public class EventSettingsConfig {
   }
 
 
+  public EventSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -137,12 +161,13 @@ public class EventSettingsConfig {
     EventSettingsConfig eventSettingsConfig = (EventSettingsConfig) o;
     return Objects.equals(this.appName, eventSettingsConfig.appName) &&
         Objects.equals(this.cloud, eventSettingsConfig.cloud) &&
-        Objects.equals(this.memberCid, eventSettingsConfig.memberCid);
+        Objects.equals(this.memberCid, eventSettingsConfig.memberCid) &&
+        Objects.equals(this.useSyntheticData, eventSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(appName, cloud, memberCid);
+    return Objects.hash(appName, cloud, memberCid, useSyntheticData);
   }
 
   @Override
@@ -152,6 +177,7 @@ public class EventSettingsConfig {
     sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
     sb.append("    cloud: ").append(toIndentedString(cloud)).append("\n");
     sb.append("    memberCid: ").append(toIndentedString(memberCid)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -173,7 +199,7 @@ public class EventSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("app_name", "cloud", "member_cid"));
+    openapiFields = new HashSet<String>(Arrays.asList("app_name", "cloud", "member_cid", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

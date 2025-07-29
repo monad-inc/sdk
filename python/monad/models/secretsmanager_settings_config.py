@@ -33,7 +33,8 @@ class SecretsmanagerSettingsConfig(BaseModel):
     include_planned_deletion: Optional[StrictBool] = Field(default=None, description="Whether or not to include secrets scheduled for deletion")
     region: Optional[StrictStr] = Field(default=None, description="URL of the organization")
     role_arn: Optional[StrictStr] = Field(default=None, description="The ID of the secret to describe")
-    __properties: ClassVar[List[str]] = ["cron", "filters", "include_planned_deletion", "region", "role_arn"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["cron", "filters", "include_planned_deletion", "region", "role_arn", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,7 +98,8 @@ class SecretsmanagerSettingsConfig(BaseModel):
             "filters": [GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.from_dict(_item) for _item in obj["filters"]] if obj.get("filters") is not None else None,
             "include_planned_deletion": obj.get("include_planned_deletion"),
             "region": obj.get("region"),
-            "role_arn": obj.get("role_arn")
+            "role_arn": obj.get("role_arn"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

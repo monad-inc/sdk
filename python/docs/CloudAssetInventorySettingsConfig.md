@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **asset_types** | **List[str]** | The type of assets to scan for.  If left empty, will scan all assets | [optional] 
 **cron** | **str** | Cron expression for scheduling the input | [optional] 
 **resource_names** | **List[str]** | The names of the resources to scan. can be organizations, projects or folders. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

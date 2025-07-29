@@ -10,12 +10,12 @@
  * Do not edit the class manually.
  */
 
-import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
+import { ModelsPermission } from '../models/ModelsPermission';
 import { HttpFile } from '../http/http';
 
 export class ModelsUserRoleWithPermissions {
     'organizationId'?: string;
-    'permissions'?: Array<GithubComMonadIncCorePkgTypesModelsPermission>;
+    'permissions'?: Array<ModelsPermission>;
     'roleId'?: string;
     'roleName'?: string;
 
@@ -33,7 +33,7 @@ export class ModelsUserRoleWithPermissions {
         {
             "name": "permissions",
             "baseName": "permissions",
-            "type": "Array<GithubComMonadIncCorePkgTypesModelsPermission>",
+            "type": "Array<ModelsPermission>",
             "format": ""
         },
         {

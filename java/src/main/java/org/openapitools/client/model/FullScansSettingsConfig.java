@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Socket Full Scans settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class FullScansSettingsConfig {
   public static final String SERIALIZED_NAME_ORG_SLUG = "org_slug";
   @SerializedName(SERIALIZED_NAME_ORG_SLUG)
@@ -59,6 +59,11 @@ public class FullScansSettingsConfig {
   @SerializedName(SERIALIZED_NAME_REPO)
   @javax.annotation.Nullable
   private String repo;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public FullScansSettingsConfig() {
   }
@@ -101,6 +106,25 @@ public class FullScansSettingsConfig {
   }
 
 
+  public FullScansSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -112,12 +136,13 @@ public class FullScansSettingsConfig {
     }
     FullScansSettingsConfig fullScansSettingsConfig = (FullScansSettingsConfig) o;
     return Objects.equals(this.orgSlug, fullScansSettingsConfig.orgSlug) &&
-        Objects.equals(this.repo, fullScansSettingsConfig.repo);
+        Objects.equals(this.repo, fullScansSettingsConfig.repo) &&
+        Objects.equals(this.useSyntheticData, fullScansSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(orgSlug, repo);
+    return Objects.hash(orgSlug, repo, useSyntheticData);
   }
 
   @Override
@@ -126,6 +151,7 @@ public class FullScansSettingsConfig {
     sb.append("class FullScansSettingsConfig {\n");
     sb.append("    orgSlug: ").append(toIndentedString(orgSlug)).append("\n");
     sb.append("    repo: ").append(toIndentedString(repo)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -147,7 +173,7 @@ public class FullScansSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("org_slug", "repo"));
+    openapiFields = new HashSet<String>(Arrays.asList("org_slug", "repo", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

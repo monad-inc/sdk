@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **story_id** | **str** | Filter by the given story. | [optional] 
 **team_id** | **str** | Filter by the given team. | [optional] 
 **tenant_url** | **str** | Unique URL for your Tines instance | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

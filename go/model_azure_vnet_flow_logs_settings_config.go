@@ -31,6 +31,8 @@ type AzureVnetFlowLogsSettingsConfig struct {
 	SubscriptionId *string `json:"subscription_id,omitempty"`
 	// The Azure Entra ID tenant (directory) ID.
 	TenantId *string `json:"tenant_id,omitempty"`
+	// Generate synthetic demo data instead of connecting to the real data source.
+	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 	// The name of the virtual network for which flow logs are being collected
 	VirtualNetworkName *string `json:"virtual_network_name,omitempty"`
 }
@@ -244,6 +246,38 @@ func (o *AzureVnetFlowLogsSettingsConfig) SetTenantId(v string) {
 	o.TenantId = &v
 }
 
+// GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
+func (o *AzureVnetFlowLogsSettingsConfig) GetUseSyntheticData() bool {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		var ret bool
+		return ret
+	}
+	return *o.UseSyntheticData
+}
+
+// GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AzureVnetFlowLogsSettingsConfig) GetUseSyntheticDataOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		return nil, false
+	}
+	return o.UseSyntheticData, true
+}
+
+// HasUseSyntheticData returns a boolean if a field has been set.
+func (o *AzureVnetFlowLogsSettingsConfig) HasUseSyntheticData() bool {
+	if o != nil && !IsNil(o.UseSyntheticData) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseSyntheticData gets a reference to the given bool and assigns it to the UseSyntheticData field.
+func (o *AzureVnetFlowLogsSettingsConfig) SetUseSyntheticData(v bool) {
+	o.UseSyntheticData = &v
+}
+
 // GetVirtualNetworkName returns the VirtualNetworkName field value if set, zero value otherwise.
 func (o *AzureVnetFlowLogsSettingsConfig) GetVirtualNetworkName() string {
 	if o == nil || IsNil(o.VirtualNetworkName) {
@@ -303,6 +337,9 @@ func (o AzureVnetFlowLogsSettingsConfig) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.TenantId) {
 		toSerialize["tenant_id"] = o.TenantId
+	}
+	if !IsNil(o.UseSyntheticData) {
+		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	if !IsNil(o.VirtualNetworkName) {
 		toSerialize["virtual_network_name"] = o.VirtualNetworkName

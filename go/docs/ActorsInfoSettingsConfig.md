@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
 **Sort** | Pointer to **string** | Order fields in ascending or descending order. Ex: &#39;created_date|asc&#39;, &#39;created_date|desc&#39;. | [optional] 
 **TargetIndustries** | Pointer to **string** | Industries targeted by the actor. Ex: &#39;Financial&#39;, &#39;Healthcare&#39;, &#39;Energy&#39;, &#39;Government&#39;, &#39;Manufacturing&#39;, &#39;Technology&#39;, etc. Select &#39;None&#39; for no preference. | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetTargetIndustries sets TargetIndustries field to given value.
 `func (o *ActorsInfoSettingsConfig) HasTargetIndustries() bool`
 
 HasTargetIndustries returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *ActorsInfoSettingsConfig) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *ActorsInfoSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *ActorsInfoSettingsConfig) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *ActorsInfoSettingsConfig) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

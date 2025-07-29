@@ -30,6 +30,8 @@ type GitlabIssuesSettingsConfig struct {
 	ProjectId *string `json:"project_id,omitempty"`
 	// State to filter issues by e.g. opened, closed
 	State *string `json:"state,omitempty"`
+	// Generate synthetic demo data instead of connecting to the real data source.
+	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 	// Include label details in the response
 	WithLabelDetails *bool `json:"with_label_details,omitempty"`
 }
@@ -211,6 +213,38 @@ func (o *GitlabIssuesSettingsConfig) SetState(v string) {
 	o.State = &v
 }
 
+// GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
+func (o *GitlabIssuesSettingsConfig) GetUseSyntheticData() bool {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		var ret bool
+		return ret
+	}
+	return *o.UseSyntheticData
+}
+
+// GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GitlabIssuesSettingsConfig) GetUseSyntheticDataOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		return nil, false
+	}
+	return o.UseSyntheticData, true
+}
+
+// HasUseSyntheticData returns a boolean if a field has been set.
+func (o *GitlabIssuesSettingsConfig) HasUseSyntheticData() bool {
+	if o != nil && !IsNil(o.UseSyntheticData) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseSyntheticData gets a reference to the given bool and assigns it to the UseSyntheticData field.
+func (o *GitlabIssuesSettingsConfig) SetUseSyntheticData(v bool) {
+	o.UseSyntheticData = &v
+}
+
 // GetWithLabelDetails returns the WithLabelDetails field value if set, zero value otherwise.
 func (o *GitlabIssuesSettingsConfig) GetWithLabelDetails() bool {
 	if o == nil || IsNil(o.WithLabelDetails) {
@@ -267,6 +301,9 @@ func (o GitlabIssuesSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.State) {
 		toSerialize["state"] = o.State
+	}
+	if !IsNil(o.UseSyntheticData) {
+		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	if !IsNil(o.WithLabelDetails) {
 		toSerialize["with_label_details"] = o.WithLabelDetails

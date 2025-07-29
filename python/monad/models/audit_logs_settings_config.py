@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,8 +35,9 @@ class AuditLogsSettingsConfig(BaseModel):
     include: Optional[StrictStr] = Field(default=None, description="Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both.")
     organization: Optional[StrictStr] = Field(default=None, description="Filter by organization name")
     repository: Optional[StrictStr] = Field(default=None, description="Filter by repository (format: org-name/repo-name)")
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     user: Optional[StrictStr] = Field(default=None, description="Filter by the username that was affected by the action")
-    __properties: ClassVar[List[str]] = ["actions", "actor", "country", "created_after", "enterprise", "include", "organization", "repository", "user"]
+    __properties: ClassVar[List[str]] = ["actions", "actor", "country", "created_after", "enterprise", "include", "organization", "repository", "use_synthetic_data", "user"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,6 +98,7 @@ class AuditLogsSettingsConfig(BaseModel):
             "include": obj.get("include"),
             "organization": obj.get("organization"),
             "repository": obj.get("repository"),
+            "use_synthetic_data": obj.get("use_synthetic_data"),
             "user": obj.get("user")
         })
         return _obj

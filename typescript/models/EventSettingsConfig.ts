@@ -28,6 +28,10 @@ export class EventSettingsConfig {
     * In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer\'s environment. This is crucial for scenarios where operational isolation between different clients\' data and configurations is necessary.
     */
     'memberCid'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -50,6 +54,12 @@ export class EventSettingsConfig {
             "name": "memberCid",
             "baseName": "member_cid",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

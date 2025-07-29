@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **cron** | **str** | Cron expression for scheduling the input | [optional] 
 **field_option** | **str** |  | [optional] 
 **organization_id** | **str** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

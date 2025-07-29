@@ -20,8 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.github_com_monad_inc_core_pkg_types_models_quota import GithubComMonadIncCorePkgTypesModelsQuota
 from monad.models.models_pagination import ModelsPagination
+from monad.models.models_quota import ModelsQuota
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class ModelsQuotaList(BaseModel):
     ModelsQuotaList
     """ # noqa: E501
     pagination: Optional[ModelsPagination] = None
-    quotas: Optional[List[GithubComMonadIncCorePkgTypesModelsQuota]] = None
+    quotas: Optional[List[ModelsQuota]] = None
     __properties: ClassVar[List[str]] = ["pagination", "quotas"]
 
     model_config = ConfigDict(
@@ -95,7 +95,7 @@ class ModelsQuotaList(BaseModel):
 
         _obj = cls.model_validate({
             "pagination": ModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
-            "quotas": [GithubComMonadIncCorePkgTypesModelsQuota.from_dict(_item) for _item in obj["quotas"]] if obj.get("quotas") is not None else None
+            "quotas": [ModelsQuota.from_dict(_item) for _item in obj["quotas"]] if obj.get("quotas") is not None else None
         })
         return _obj
 

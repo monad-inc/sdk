@@ -24,6 +24,10 @@ export class FullScansSettingsConfig {
     * A repository slug to filter full-scans by.
     */
     'repo'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -40,6 +44,12 @@ export class FullScansSettingsConfig {
             "name": "repo",
             "baseName": "repo",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

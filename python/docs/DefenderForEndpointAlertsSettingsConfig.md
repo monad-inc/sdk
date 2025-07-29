@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **category** | **str** |  | [optional] 
 **severity** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

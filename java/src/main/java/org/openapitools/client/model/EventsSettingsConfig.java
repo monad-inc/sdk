@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Twilio Events settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class EventsSettingsConfig {
   public static final String SERIALIZED_NAME_ACTOR_SID = "actor_sid";
   @SerializedName(SERIALIZED_NAME_ACTOR_SID)
@@ -69,6 +69,11 @@ public class EventsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_RESOURCE_SID)
   @javax.annotation.Nullable
   private String resourceSid;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public EventsSettingsConfig() {
   }
@@ -149,6 +154,25 @@ public class EventsSettingsConfig {
   }
 
 
+  public EventsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -162,12 +186,13 @@ public class EventsSettingsConfig {
     return Objects.equals(this.actorSid, eventsSettingsConfig.actorSid) &&
         Objects.equals(this.eventType, eventsSettingsConfig.eventType) &&
         Objects.equals(this.replicationStartTime, eventsSettingsConfig.replicationStartTime) &&
-        Objects.equals(this.resourceSid, eventsSettingsConfig.resourceSid);
+        Objects.equals(this.resourceSid, eventsSettingsConfig.resourceSid) &&
+        Objects.equals(this.useSyntheticData, eventsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actorSid, eventType, replicationStartTime, resourceSid);
+    return Objects.hash(actorSid, eventType, replicationStartTime, resourceSid, useSyntheticData);
   }
 
   @Override
@@ -178,6 +203,7 @@ public class EventsSettingsConfig {
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    replicationStartTime: ").append(toIndentedString(replicationStartTime)).append("\n");
     sb.append("    resourceSid: ").append(toIndentedString(resourceSid)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -199,7 +225,7 @@ public class EventsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("actor_sid", "event_type", "replication_start_time", "resource_sid"));
+    openapiFields = new HashSet<String>(Arrays.asList("actor_sid", "event_type", "replication_start_time", "resource_sid", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

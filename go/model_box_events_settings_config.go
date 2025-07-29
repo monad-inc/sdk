@@ -22,6 +22,8 @@ var _ MappedNullable = &BoxEventsSettingsConfig{}
 type BoxEventsSettingsConfig struct {
 	// A list of event types to filter by.
 	EventType []string `json:"event_type,omitempty"`
+	// Generate synthetic demo data instead of connecting to the real data source.
+	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
 
 // NewBoxEventsSettingsConfig instantiates a new BoxEventsSettingsConfig object
@@ -73,6 +75,38 @@ func (o *BoxEventsSettingsConfig) SetEventType(v []string) {
 	o.EventType = v
 }
 
+// GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
+func (o *BoxEventsSettingsConfig) GetUseSyntheticData() bool {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		var ret bool
+		return ret
+	}
+	return *o.UseSyntheticData
+}
+
+// GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BoxEventsSettingsConfig) GetUseSyntheticDataOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		return nil, false
+	}
+	return o.UseSyntheticData, true
+}
+
+// HasUseSyntheticData returns a boolean if a field has been set.
+func (o *BoxEventsSettingsConfig) HasUseSyntheticData() bool {
+	if o != nil && !IsNil(o.UseSyntheticData) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseSyntheticData gets a reference to the given bool and assigns it to the UseSyntheticData field.
+func (o *BoxEventsSettingsConfig) SetUseSyntheticData(v bool) {
+	o.UseSyntheticData = &v
+}
+
 func (o BoxEventsSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -85,6 +119,9 @@ func (o BoxEventsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.EventType) {
 		toSerialize["event_type"] = o.EventType
+	}
+	if !IsNil(o.UseSyntheticData) {
+		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
 }

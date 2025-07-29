@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
-**quotas** | [**List[GithubComMonadIncCorePkgTypesModelsQuota]**](GithubComMonadIncCorePkgTypesModelsQuota.md) |  | [optional] 
+**quotas** | [**List[ModelsQuota]**](ModelsQuota.md) |  | [optional] 
 
 ## Example
 

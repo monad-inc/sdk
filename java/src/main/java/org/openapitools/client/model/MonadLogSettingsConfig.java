@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * Monad Log settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class MonadLogSettingsConfig {
   public static final String SERIALIZED_NAME_LOG_TYPE = "log_type";
   @SerializedName(SERIALIZED_NAME_LOG_TYPE)
   @javax.annotation.Nullable
   private String logType;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public MonadLogSettingsConfig() {
   }
@@ -77,6 +82,25 @@ public class MonadLogSettingsConfig {
   }
 
 
+  public MonadLogSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -87,12 +111,13 @@ public class MonadLogSettingsConfig {
       return false;
     }
     MonadLogSettingsConfig monadLogSettingsConfig = (MonadLogSettingsConfig) o;
-    return Objects.equals(this.logType, monadLogSettingsConfig.logType);
+    return Objects.equals(this.logType, monadLogSettingsConfig.logType) &&
+        Objects.equals(this.useSyntheticData, monadLogSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(logType);
+    return Objects.hash(logType, useSyntheticData);
   }
 
   @Override
@@ -100,6 +125,7 @@ public class MonadLogSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class MonadLogSettingsConfig {\n");
     sb.append("    logType: ").append(toIndentedString(logType)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -121,7 +147,7 @@ public class MonadLogSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("log_type"));
+    openapiFields = new HashSet<String>(Arrays.asList("log_type", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

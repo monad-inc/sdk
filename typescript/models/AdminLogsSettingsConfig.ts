@@ -14,6 +14,10 @@ import { HttpFile } from '../http/http';
 
 export class AdminLogsSettingsConfig {
     'host'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -24,6 +28,12 @@ export class AdminLogsSettingsConfig {
             "name": "host",
             "baseName": "host",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

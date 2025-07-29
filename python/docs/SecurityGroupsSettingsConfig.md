@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **filters** | [**List[SecurityGroupsFilter]**](SecurityGroupsFilter.md) | Filters for the security groups | [optional] 
 **region** | **str** | The AWS region where the security groups that are being fetched are located. | [optional] 
 **role_arn** | **str** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

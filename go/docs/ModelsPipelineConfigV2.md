@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Edges** | Pointer to [**[]ModelsPipelineEdge**](ModelsPipelineEdge.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**IsSynthetic** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **NextCronRunAt** | Pointer to **string** |  | [optional] 
 **Nodes** | Pointer to [**[]ModelsPipelineNode**](ModelsPipelineNode.md) |  | [optional] 
@@ -238,6 +239,31 @@ SetId sets Id field to given value.
 `func (o *ModelsPipelineConfigV2) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetIsSynthetic
+
+`func (o *ModelsPipelineConfigV2) GetIsSynthetic() bool`
+
+GetIsSynthetic returns the IsSynthetic field if non-nil, zero value otherwise.
+
+### GetIsSyntheticOk
+
+`func (o *ModelsPipelineConfigV2) GetIsSyntheticOk() (*bool, bool)`
+
+GetIsSyntheticOk returns a tuple with the IsSynthetic field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsSynthetic
+
+`func (o *ModelsPipelineConfigV2) SetIsSynthetic(v bool)`
+
+SetIsSynthetic sets IsSynthetic field to given value.
+
+### HasIsSynthetic
+
+`func (o *ModelsPipelineConfigV2) HasIsSynthetic() bool`
+
+HasIsSynthetic returns a boolean if a field has been set.
 
 ### GetName
 

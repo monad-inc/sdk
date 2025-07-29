@@ -30,7 +30,8 @@ class CloudLogsSettingsConfig(BaseModel):
     enable_proto_payload_parsing: Optional[StrictBool] = Field(default=None, description="Enables automatic parsing of embedded protocol buffer payloads within the input.")
     filter: Optional[StrictStr] = Field(default=None, description="The filter to apply to the logs.")
     resource_names: Optional[List[StrictStr]] = Field(default=None, description="The resources to query logs from.")
-    __properties: ClassVar[List[str]] = ["enable_proto_payload_parsing", "filter", "resource_names"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["enable_proto_payload_parsing", "filter", "resource_names", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,7 +86,8 @@ class CloudLogsSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "enable_proto_payload_parsing": obj.get("enable_proto_payload_parsing"),
             "filter": obj.get("filter"),
-            "resource_names": obj.get("resource_names")
+            "resource_names": obj.get("resource_names"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

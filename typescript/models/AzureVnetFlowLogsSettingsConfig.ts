@@ -38,6 +38,10 @@ export class AzureVnetFlowLogsSettingsConfig {
     */
     'tenantId'?: string;
     /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
+    /**
     * The name of the virtual network for which flow logs are being collected
     */
     'virtualNetworkName'?: string;
@@ -81,6 +85,12 @@ export class AzureVnetFlowLogsSettingsConfig {
             "name": "tenantId",
             "baseName": "tenant_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         },
         {

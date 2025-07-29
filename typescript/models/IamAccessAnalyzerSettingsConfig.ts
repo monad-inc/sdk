@@ -37,6 +37,10 @@ export class IamAccessAnalyzerSettingsConfig {
     * The ARN of the role to assume to access the bucket
     */
     'roleArn'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -71,6 +75,12 @@ export class IamAccessAnalyzerSettingsConfig {
             "name": "roleArn",
             "baseName": "role_arn",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

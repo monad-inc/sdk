@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,8 +29,9 @@ class EntraIdSettingsConfig(BaseModel):
     """ # noqa: E501
     category: Optional[StrictStr] = Field(default=None, description="The Category of logs to query")
     tenant_id: Optional[StrictStr] = Field(default=None, description="The tenant ID of the Azure AD application")
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     workspace_id: Optional[StrictStr] = Field(default=None, description="The workspace ID of the Log Analytics workspace")
-    __properties: ClassVar[List[str]] = ["category", "tenant_id", "workspace_id"]
+    __properties: ClassVar[List[str]] = ["category", "tenant_id", "use_synthetic_data", "workspace_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,6 +86,7 @@ class EntraIdSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "category": obj.get("category"),
             "tenant_id": obj.get("tenant_id"),
+            "use_synthetic_data": obj.get("use_synthetic_data"),
             "workspace_id": obj.get("workspace_id")
         })
         return _obj

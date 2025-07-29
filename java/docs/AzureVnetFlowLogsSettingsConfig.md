@@ -14,6 +14,7 @@ Microsoft Azure Vnet Flow Logs settings
 |**storageAccountUrl** | **String** | The Azure storage account URL where flow logs are stored |  [optional] |
 |**subscriptionId** | **String** | The Azure subscription ID where the virtual network and storage account are located |  [optional] |
 |**tenantId** | **String** | The Azure Entra ID tenant (directory) ID. |  [optional] |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 |**virtualNetworkName** | **String** | The name of the virtual network for which flow logs are being collected |  [optional] |
 
 

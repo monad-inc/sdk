@@ -16,6 +16,10 @@ export class DefenderForEndpointAlertsSettingsConfig {
     'category'?: string;
     'severity'?: string;
     'tenantId'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -38,6 +42,12 @@ export class DefenderForEndpointAlertsSettingsConfig {
             "name": "tenantId",
             "baseName": "tenant_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

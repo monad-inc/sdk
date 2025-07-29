@@ -28,6 +28,7 @@ type ModelsPipelineConfigV2 struct {
 	Edges []ModelsPipelineEdge `json:"edges,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	Id *string `json:"id,omitempty"`
+	IsSynthetic *bool `json:"is_synthetic,omitempty"`
 	Name *string `json:"name,omitempty"`
 	NextCronRunAt *string `json:"next_cron_run_at,omitempty"`
 	Nodes []ModelsPipelineNode `json:"nodes,omitempty"`
@@ -310,6 +311,38 @@ func (o *ModelsPipelineConfigV2) SetId(v string) {
 	o.Id = &v
 }
 
+// GetIsSynthetic returns the IsSynthetic field value if set, zero value otherwise.
+func (o *ModelsPipelineConfigV2) GetIsSynthetic() bool {
+	if o == nil || IsNil(o.IsSynthetic) {
+		var ret bool
+		return ret
+	}
+	return *o.IsSynthetic
+}
+
+// GetIsSyntheticOk returns a tuple with the IsSynthetic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineConfigV2) GetIsSyntheticOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsSynthetic) {
+		return nil, false
+	}
+	return o.IsSynthetic, true
+}
+
+// HasIsSynthetic returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasIsSynthetic() bool {
+	if o != nil && !IsNil(o.IsSynthetic) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsSynthetic gets a reference to the given bool and assigns it to the IsSynthetic field.
+func (o *ModelsPipelineConfigV2) SetIsSynthetic(v bool) {
+	o.IsSynthetic = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *ModelsPipelineConfigV2) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -567,6 +600,9 @@ func (o ModelsPipelineConfigV2) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.IsSynthetic) {
+		toSerialize["is_synthetic"] = o.IsSynthetic
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

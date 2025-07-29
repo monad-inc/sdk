@@ -16,6 +16,7 @@ GitHub audit logs settings
 |**include** | **String** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. |  [optional] |
 |**organization** | **String** | Filter by organization name |  [optional] |
 |**repository** | **String** | Filter by repository (format: org-name/repo-name) |  [optional] |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 |**user** | **String** | Filter by the username that was affected by the action |  [optional] |
 
 

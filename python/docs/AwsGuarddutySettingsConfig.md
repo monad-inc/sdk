@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **region** | **str** | The AWS region where GuardDuty is enabled. | [optional] 
 **role_arn** | **str** | The ARN of the IAM role to assume for accessing GuardDuty. | [optional] 
 **severity** | **str** | Filter findings by severity levels. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

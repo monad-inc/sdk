@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Cron** | Pointer to **string** | Cron expression for scheduling the input | [optional] 
 **FieldOption** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetOrganizationId sets OrganizationId field to given value.
 `func (o *DevicesSettingsConfig) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *DevicesSettingsConfig) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *DevicesSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *DevicesSettingsConfig) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *DevicesSettingsConfig) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

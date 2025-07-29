@@ -84,6 +84,10 @@ export class IssuesSettingsConfig {
     * DataCenter represents the tenant\'s data center location @Description Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\" @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact
     */
     'tenantDataCenter'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -190,6 +194,12 @@ export class IssuesSettingsConfig {
             "name": "tenantDataCenter",
             "baseName": "tenant_data_center",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

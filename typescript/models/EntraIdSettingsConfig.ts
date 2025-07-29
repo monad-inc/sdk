@@ -25,6 +25,10 @@ export class EntraIdSettingsConfig {
     */
     'tenantId'?: string;
     /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
+    /**
     * The workspace ID of the Log Analytics workspace
     */
     'workspaceId'?: string;
@@ -44,6 +48,12 @@ export class EntraIdSettingsConfig {
             "name": "tenantId",
             "baseName": "tenant_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         },
         {

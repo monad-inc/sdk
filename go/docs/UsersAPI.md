@@ -74,7 +74,7 @@ Other parameters are passed through a pointer to a apiV1UsersGetRequest struct v
 
 ## V1UsersPost
 
-> GithubComMonadIncCorePkgTypesModelsUser V1UsersPost(ctx).Body(body).Execute()
+> ModelsUser V1UsersPost(ctx).Body(body).Execute()
 
 Create user
 
@@ -102,7 +102,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.V1UsersPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1UsersPost`: GithubComMonadIncCorePkgTypesModelsUser
+	// response from `V1UsersPost`: ModelsUser
 	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.V1UsersPost`: %v\n", resp)
 }
 ```
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsUser**](GithubComMonadIncCorePkgTypesModelsUser.md)
+[**ModelsUser**](ModelsUser.md)
 
 ### Authorization
 

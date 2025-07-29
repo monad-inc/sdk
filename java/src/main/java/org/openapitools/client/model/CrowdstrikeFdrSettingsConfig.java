@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Crowdstrike Falcon Data Replicator settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class CrowdstrikeFdrSettingsConfig {
   public static final String SERIALIZED_NAME_AWS_QUEUE_URL = "aws_queue_url";
   @SerializedName(SERIALIZED_NAME_AWS_QUEUE_URL)
@@ -69,6 +69,11 @@ public class CrowdstrikeFdrSettingsConfig {
   @SerializedName(SERIALIZED_NAME_CRON)
   @javax.annotation.Nullable
   private String cron;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public static final String SERIALIZED_NAME_VISIBILITY_TIMEOUT = "visibility_timeout";
   @SerializedName(SERIALIZED_NAME_VISIBILITY_TIMEOUT)
@@ -154,6 +159,25 @@ public class CrowdstrikeFdrSettingsConfig {
   }
 
 
+  public CrowdstrikeFdrSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
   public CrowdstrikeFdrSettingsConfig visibilityTimeout(@javax.annotation.Nullable Integer visibilityTimeout) {
     this.visibilityTimeout = visibilityTimeout;
     return this;
@@ -187,12 +211,13 @@ public class CrowdstrikeFdrSettingsConfig {
         Objects.equals(this.awsRegionName, crowdstrikeFdrSettingsConfig.awsRegionName) &&
         Objects.equals(this.awsS3Url, crowdstrikeFdrSettingsConfig.awsS3Url) &&
         Objects.equals(this.cron, crowdstrikeFdrSettingsConfig.cron) &&
+        Objects.equals(this.useSyntheticData, crowdstrikeFdrSettingsConfig.useSyntheticData) &&
         Objects.equals(this.visibilityTimeout, crowdstrikeFdrSettingsConfig.visibilityTimeout);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(awsQueueUrl, awsRegionName, awsS3Url, cron, visibilityTimeout);
+    return Objects.hash(awsQueueUrl, awsRegionName, awsS3Url, cron, useSyntheticData, visibilityTimeout);
   }
 
   @Override
@@ -203,6 +228,7 @@ public class CrowdstrikeFdrSettingsConfig {
     sb.append("    awsRegionName: ").append(toIndentedString(awsRegionName)).append("\n");
     sb.append("    awsS3Url: ").append(toIndentedString(awsS3Url)).append("\n");
     sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("    visibilityTimeout: ").append(toIndentedString(visibilityTimeout)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -225,7 +251,7 @@ public class CrowdstrikeFdrSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("aws_queue_url", "aws_region_name", "aws_s3_url", "cron", "visibility_timeout"));
+    openapiFields = new HashSet<String>(Arrays.asList("aws_queue_url", "aws_region_name", "aws_s3_url", "cron", "use_synthetic_data", "visibility_timeout"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

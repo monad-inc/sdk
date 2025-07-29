@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **StorageAccountUrl** | Pointer to **string** | The Azure storage account URL where flow logs are stored | [optional] 
 **SubscriptionId** | Pointer to **string** | The Azure subscription ID where the virtual network and storage account are located | [optional] 
 **TenantId** | Pointer to **string** | The Azure Entra ID tenant (directory) ID. | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **VirtualNetworkName** | Pointer to **string** | The name of the virtual network for which flow logs are being collected | [optional] 
 
 ## Methods
@@ -180,6 +181,31 @@ SetTenantId sets TenantId field to given value.
 `func (o *AzureVnetFlowLogsSettingsConfig) HasTenantId() bool`
 
 HasTenantId returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *AzureVnetFlowLogsSettingsConfig) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *AzureVnetFlowLogsSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *AzureVnetFlowLogsSettingsConfig) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *AzureVnetFlowLogsSettingsConfig) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 ### GetVirtualNetworkName
 

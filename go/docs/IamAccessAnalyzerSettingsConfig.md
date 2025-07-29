@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Filters** | Pointer to [**[]IamAccessAnalyzerFilter**](IamAccessAnalyzerFilter.md) | A filter to match for the findings to return. | [optional] 
 **Region** | Pointer to **string** | The Region that you would receieve findings for | [optional] 
 **RoleArn** | Pointer to **string** | The ARN of the role to assume to access the bucket | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetRoleArn sets RoleArn field to given value.
 `func (o *IamAccessAnalyzerSettingsConfig) HasRoleArn() bool`
 
 HasRoleArn returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *IamAccessAnalyzerSettingsConfig) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *IamAccessAnalyzerSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *IamAccessAnalyzerSettingsConfig) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *IamAccessAnalyzerSettingsConfig) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

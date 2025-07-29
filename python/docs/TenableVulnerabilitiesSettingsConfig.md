@@ -6,8 +6,7 @@ Tenable assets settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cron** | **str** | Cron expression to schedule the data collection. | [optional] 
-**full_sync** | **bool** | Boolean to control weather the input performs full syncs or incremental syncs | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

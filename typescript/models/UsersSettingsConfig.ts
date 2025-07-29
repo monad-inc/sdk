@@ -28,6 +28,10 @@ export class UsersSettingsConfig {
     * Email address to use to authenticate with Google Cloud (required for service_account auth).
     */
     'email'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -50,6 +54,12 @@ export class UsersSettingsConfig {
             "name": "email",
             "baseName": "email",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

@@ -32,6 +32,10 @@ export class CloudConfigurationFindingsSettingsConfig {
     * Status types for Wiz. Ex: \'OPEN\', \'RESOLVED\'.
     */
     'status'?: Array<string>;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -60,6 +64,12 @@ export class CloudConfigurationFindingsSettingsConfig {
             "name": "status",
             "baseName": "status",
             "type": "Array<string>",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Wiz cloud resource inventory settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class CloudResourceInventorySettingsConfig {
   public static final String SERIALIZED_NAME_CLOUD_PLATFORM = "cloudPlatform";
   @SerializedName(SERIALIZED_NAME_CLOUD_PLATFORM)
@@ -76,6 +76,11 @@ public class CloudResourceInventorySettingsConfig {
   @SerializedName(SERIALIZED_NAME_INTERVAL)
   @javax.annotation.Nullable
   private Integer interval;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public CloudResourceInventorySettingsConfig() {
   }
@@ -191,6 +196,25 @@ public class CloudResourceInventorySettingsConfig {
   }
 
 
+  public CloudResourceInventorySettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -205,12 +229,13 @@ public class CloudResourceInventorySettingsConfig {
         Objects.equals(this.endpointUrl, cloudResourceInventorySettingsConfig.endpointUrl) &&
         Objects.equals(this.entityType, cloudResourceInventorySettingsConfig.entityType) &&
         Objects.equals(this.fullSnapshot, cloudResourceInventorySettingsConfig.fullSnapshot) &&
-        Objects.equals(this.interval, cloudResourceInventorySettingsConfig.interval);
+        Objects.equals(this.interval, cloudResourceInventorySettingsConfig.interval) &&
+        Objects.equals(this.useSyntheticData, cloudResourceInventorySettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cloudPlatform, endpointUrl, entityType, fullSnapshot, interval);
+    return Objects.hash(cloudPlatform, endpointUrl, entityType, fullSnapshot, interval, useSyntheticData);
   }
 
   @Override
@@ -222,6 +247,7 @@ public class CloudResourceInventorySettingsConfig {
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    fullSnapshot: ").append(toIndentedString(fullSnapshot)).append("\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -243,7 +269,7 @@ public class CloudResourceInventorySettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cloudPlatform", "endpoint_url", "entityType", "full_snapshot", "interval"));
+    openapiFields = new HashSet<String>(Arrays.asList("cloudPlatform", "endpoint_url", "entityType", "full_snapshot", "interval", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

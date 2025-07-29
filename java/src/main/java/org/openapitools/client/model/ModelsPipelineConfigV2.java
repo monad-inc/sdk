@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineConfigV2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsPipelineConfigV2 {
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billingAccountId";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
@@ -94,6 +94,11 @@ public class ModelsPipelineConfigV2 {
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
   private String id;
+
+  public static final String SERIALIZED_NAME_IS_SYNTHETIC = "is_synthetic";
+  @SerializedName(SERIALIZED_NAME_IS_SYNTHETIC)
+  @javax.annotation.Nullable
+  private Boolean isSynthetic;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -293,6 +298,25 @@ public class ModelsPipelineConfigV2 {
   }
 
 
+  public ModelsPipelineConfigV2 isSynthetic(@javax.annotation.Nullable Boolean isSynthetic) {
+    this.isSynthetic = isSynthetic;
+    return this;
+  }
+
+  /**
+   * Get isSynthetic
+   * @return isSynthetic
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsSynthetic() {
+    return isSynthetic;
+  }
+
+  public void setIsSynthetic(@javax.annotation.Nullable Boolean isSynthetic) {
+    this.isSynthetic = isSynthetic;
+  }
+
+
   public ModelsPipelineConfigV2 name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
@@ -452,6 +476,7 @@ public class ModelsPipelineConfigV2 {
         Objects.equals(this.edges, modelsPipelineConfigV2.edges) &&
         Objects.equals(this.enabled, modelsPipelineConfigV2.enabled) &&
         Objects.equals(this.id, modelsPipelineConfigV2.id) &&
+        Objects.equals(this.isSynthetic, modelsPipelineConfigV2.isSynthetic) &&
         Objects.equals(this.name, modelsPipelineConfigV2.name) &&
         Objects.equals(this.nextCronRunAt, modelsPipelineConfigV2.nextCronRunAt) &&
         Objects.equals(this.nodes, modelsPipelineConfigV2.nodes) &&
@@ -463,7 +488,7 @@ public class ModelsPipelineConfigV2 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, name, nextCronRunAt, nodes, organizationId, organizationName, retentionPolicy, updatedAt);
+    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, isSynthetic, name, nextCronRunAt, nodes, organizationId, organizationName, retentionPolicy, updatedAt);
   }
 
   @Override
@@ -478,6 +503,7 @@ public class ModelsPipelineConfigV2 {
     sb.append("    edges: ").append(toIndentedString(edges)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    isSynthetic: ").append(toIndentedString(isSynthetic)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    nextCronRunAt: ").append(toIndentedString(nextCronRunAt)).append("\n");
     sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
@@ -506,7 +532,7 @@ public class ModelsPipelineConfigV2 {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

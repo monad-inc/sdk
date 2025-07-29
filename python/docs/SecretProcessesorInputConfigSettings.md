@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fleet_url** | **str** | URL of the Fleet DM instance | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **actor_type** | **str** | Type of actor. Ex: &#39;APT&#39;, &#39;eCrime&#39;, &#39;Hacktivist&#39;, &#39;Insider Threat&#39;, &#39;Nation-State&#39;, &#39;Unknown&#39;, &#39;Other&#39;, etc. Select &#39;None&#39; for no preference. | [optional] 
 **cloud_type** | **str** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **cron** | **str** | Cron expression to schedule the data collection. | [optional] 
@@ -67,9 +68,6 @@ Name | Type | Description | Notes
 **aws_s3_url** | **str** | The URL of the S3 bucket | [optional] 
 **visibility_timeout** | **int** | Time in seconds before a message is returned back to the SQS queue | [optional] 
 **category** | **str** | The Category of logs to query | [optional] 
-**rate** | **int** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
-**record_type** | **str** | The type of record to generate | [optional] 
-**custom_template** | **str** | A custom template using the functions we provide to generate demo data | [optional] 
 **field_option** | **str** |  | [optional] 
 **organization_id** | **str** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
 **workspace_id** | **str** | The workspace ID of the Log Analytics workspace | [optional] 
@@ -126,6 +124,9 @@ Name | Type | Description | Notes
 **role** | **str** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **var_schema** | **str** | The schema within the Snowflake database where the target table resides. | [optional] 
 **warehouse** | **str** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
+**rate** | **int** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
+**record_type** | **str** | The type of record to generate | [optional] 
+**custom_template** | **str** | A custom template using the functions we provide to generate demo data | [optional] 
 **org_url** | **str** | The URL of the Okta organization | [optional] 
 **user_role_option** | **str** | Allows for filtering the output by user role. | [optional] 
 **user_type_option** | **str** | Allows for filtering the output by user type. | [optional] 

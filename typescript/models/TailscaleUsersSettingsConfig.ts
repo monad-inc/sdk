@@ -25,6 +25,10 @@ export class TailscaleUsersSettingsConfig {
     */
     'organizationId'?: string;
     /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
+    /**
     * Allows for filtering the output by user role.
     */
     'userRoleOption'?: string;
@@ -48,6 +52,12 @@ export class TailscaleUsersSettingsConfig {
             "name": "organizationId",
             "baseName": "organization_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         },
         {

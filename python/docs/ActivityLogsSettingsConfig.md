@@ -7,6 +7,7 @@ Fleet DM settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fleet_url** | **str** | URL of the Fleet DM instance | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

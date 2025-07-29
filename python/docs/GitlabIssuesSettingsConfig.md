@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **issue_type** | **str** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 
 **project_id** | **str** | Project ID to get issues for | [optional] 
 **state** | **str** | State to filter issues by e.g. opened, closed | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **with_label_details** | **bool** | Include label details in the response | [optional] 
 
 ## Example

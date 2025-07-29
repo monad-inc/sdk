@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +31,8 @@ class EventsSettingsConfig(BaseModel):
     event_type: Optional[StrictStr] = Field(default=None, description="Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types")
     replication_start_time: Optional[StrictStr] = Field(default=None, description="Only include events after this time for the initial sync. If not specified, returns all events from the start. Must be a valid ISO 8601 formatted datetime string: yyyy-MM-dd'T'HH:mm:ss'Z'")
     resource_sid: Optional[StrictStr] = Field(default=None, description="Only include events that refer to this resource. Useful for discovering the history of a specific resource.")
-    __properties: ClassVar[List[str]] = ["actor_sid", "event_type", "replication_start_time", "resource_sid"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["actor_sid", "event_type", "replication_start_time", "resource_sid", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,7 +88,8 @@ class EventsSettingsConfig(BaseModel):
             "actor_sid": obj.get("actor_sid"),
             "event_type": obj.get("event_type"),
             "replication_start_time": obj.get("replication_start_time"),
-            "resource_sid": obj.get("resource_sid")
+            "resource_sid": obj.get("resource_sid"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

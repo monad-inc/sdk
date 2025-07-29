@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Cloud Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class CloudLogsSettingsConfig {
   public static final String SERIALIZED_NAME_ENABLE_PROTO_PAYLOAD_PARSING = "enable_proto_payload_parsing";
   @SerializedName(SERIALIZED_NAME_ENABLE_PROTO_PAYLOAD_PARSING)
@@ -66,6 +66,11 @@ public class CloudLogsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_RESOURCE_NAMES)
   @javax.annotation.Nullable
   private List<String> resourceNames = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public CloudLogsSettingsConfig() {
   }
@@ -135,6 +140,25 @@ public class CloudLogsSettingsConfig {
   }
 
 
+  public CloudLogsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -147,12 +171,13 @@ public class CloudLogsSettingsConfig {
     CloudLogsSettingsConfig cloudLogsSettingsConfig = (CloudLogsSettingsConfig) o;
     return Objects.equals(this.enableProtoPayloadParsing, cloudLogsSettingsConfig.enableProtoPayloadParsing) &&
         Objects.equals(this.filter, cloudLogsSettingsConfig.filter) &&
-        Objects.equals(this.resourceNames, cloudLogsSettingsConfig.resourceNames);
+        Objects.equals(this.resourceNames, cloudLogsSettingsConfig.resourceNames) &&
+        Objects.equals(this.useSyntheticData, cloudLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableProtoPayloadParsing, filter, resourceNames);
+    return Objects.hash(enableProtoPayloadParsing, filter, resourceNames, useSyntheticData);
   }
 
   @Override
@@ -162,6 +187,7 @@ public class CloudLogsSettingsConfig {
     sb.append("    enableProtoPayloadParsing: ").append(toIndentedString(enableProtoPayloadParsing)).append("\n");
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    resourceNames: ").append(toIndentedString(resourceNames)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -183,7 +209,7 @@ public class CloudLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("enable_proto_payload_parsing", "filter", "resource_names"));
+    openapiFields = new HashSet<String>(Arrays.asList("enable_proto_payload_parsing", "filter", "resource_names", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **resource_uri** | **str** | The URI of the resource | [optional] 
 **subscription_id** | **str** | The subscription ID of the Azure subscription | [optional] 
 **tenant_id** | **str** | The tenant ID of the Azure AD application | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

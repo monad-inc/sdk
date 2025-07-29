@@ -33,6 +33,10 @@ export class CrowdstrikeFdrSettingsConfig {
     */
     'cron'?: string;
     /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
+    /**
     * Time in seconds before a message is returned back to the SQS queue
     */
     'visibilityTimeout'?: number;
@@ -64,6 +68,12 @@ export class CrowdstrikeFdrSettingsConfig {
             "name": "cron",
             "baseName": "cron",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         },
         {

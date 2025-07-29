@@ -24,6 +24,8 @@ type DriveActivitySettingsConfig struct {
 	AuthType *string `json:"auth_type,omitempty"`
 	// Email address to use for authenticating with Google Cloud (required for service_account auth).
 	Email *string `json:"email,omitempty"`
+	// Generate synthetic demo data instead of connecting to the real data source.
+	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
 
 // NewDriveActivitySettingsConfig instantiates a new DriveActivitySettingsConfig object
@@ -107,6 +109,38 @@ func (o *DriveActivitySettingsConfig) SetEmail(v string) {
 	o.Email = &v
 }
 
+// GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
+func (o *DriveActivitySettingsConfig) GetUseSyntheticData() bool {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		var ret bool
+		return ret
+	}
+	return *o.UseSyntheticData
+}
+
+// GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DriveActivitySettingsConfig) GetUseSyntheticDataOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		return nil, false
+	}
+	return o.UseSyntheticData, true
+}
+
+// HasUseSyntheticData returns a boolean if a field has been set.
+func (o *DriveActivitySettingsConfig) HasUseSyntheticData() bool {
+	if o != nil && !IsNil(o.UseSyntheticData) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseSyntheticData gets a reference to the given bool and assigns it to the UseSyntheticData field.
+func (o *DriveActivitySettingsConfig) SetUseSyntheticData(v bool) {
+	o.UseSyntheticData = &v
+}
+
 func (o DriveActivitySettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -122,6 +156,9 @@ func (o DriveActivitySettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Email) {
 		toSerialize["email"] = o.Email
+	}
+	if !IsNil(o.UseSyntheticData) {
+		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
 }

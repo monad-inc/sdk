@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * AdminLogsSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AdminLogsSettingsConfig {
   public static final String SERIALIZED_NAME_HOST = "host";
   @SerializedName(SERIALIZED_NAME_HOST)
   @javax.annotation.Nullable
   private String host;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public AdminLogsSettingsConfig() {
   }
@@ -77,6 +82,25 @@ public class AdminLogsSettingsConfig {
   }
 
 
+  public AdminLogsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -87,12 +111,13 @@ public class AdminLogsSettingsConfig {
       return false;
     }
     AdminLogsSettingsConfig adminLogsSettingsConfig = (AdminLogsSettingsConfig) o;
-    return Objects.equals(this.host, adminLogsSettingsConfig.host);
+    return Objects.equals(this.host, adminLogsSettingsConfig.host) &&
+        Objects.equals(this.useSyntheticData, adminLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(host);
+    return Objects.hash(host, useSyntheticData);
   }
 
   @Override
@@ -100,6 +125,7 @@ public class AdminLogsSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class AdminLogsSettingsConfig {\n");
     sb.append("    host: ").append(toIndentedString(host)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -121,7 +147,7 @@ public class AdminLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("host"));
+    openapiFields = new HashSet<String>(Arrays.asList("host", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

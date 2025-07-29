@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **AwsRegionName** | Pointer to **string** | Name of the region where the queue resides | [optional] 
 **AwsS3Url** | Pointer to **string** | The URL of the S3 bucket | [optional] 
 **Cron** | Pointer to **string** | The time in seconds to wait before each check of the queue for more messages | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **VisibilityTimeout** | Pointer to **int32** | Time in seconds before a message is returned back to the SQS queue | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetCron sets Cron field to given value.
 `func (o *CrowdstrikeFdrSettingsConfig) HasCron() bool`
 
 HasCron returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *CrowdstrikeFdrSettingsConfig) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *CrowdstrikeFdrSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *CrowdstrikeFdrSettingsConfig) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *CrowdstrikeFdrSettingsConfig) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 ### GetVisibilityTimeout
 

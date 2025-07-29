@@ -13,6 +13,7 @@ Gitlab Issues settings
 |**issueType** | **String** | IssueType to filter issues by type e.g. issue, incident, etc. |  [optional] |
 |**projectId** | **String** | Project ID to get issues for |  [optional] |
 |**state** | **String** | State to filter issues by e.g. opened, closed |  [optional] |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 |**withLabelDetails** | **Boolean** | Include label details in the response |  [optional] |
 
 

@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * Onelogin Events settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class OneloginEventsSettingsConfig {
   public static final String SERIALIZED_NAME_SUBDOMAIN = "subdomain";
   @SerializedName(SERIALIZED_NAME_SUBDOMAIN)
   @javax.annotation.Nullable
   private String subdomain;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public OneloginEventsSettingsConfig() {
   }
@@ -77,6 +82,25 @@ public class OneloginEventsSettingsConfig {
   }
 
 
+  public OneloginEventsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -87,12 +111,13 @@ public class OneloginEventsSettingsConfig {
       return false;
     }
     OneloginEventsSettingsConfig oneloginEventsSettingsConfig = (OneloginEventsSettingsConfig) o;
-    return Objects.equals(this.subdomain, oneloginEventsSettingsConfig.subdomain);
+    return Objects.equals(this.subdomain, oneloginEventsSettingsConfig.subdomain) &&
+        Objects.equals(this.useSyntheticData, oneloginEventsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(subdomain);
+    return Objects.hash(subdomain, useSyntheticData);
   }
 
   @Override
@@ -100,6 +125,7 @@ public class OneloginEventsSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class OneloginEventsSettingsConfig {\n");
     sb.append("    subdomain: ").append(toIndentedString(subdomain)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -121,7 +147,7 @@ public class OneloginEventsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("subdomain"));
+    openapiFields = new HashSet<String>(Arrays.asList("subdomain", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

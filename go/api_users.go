@@ -168,7 +168,7 @@ func (r ApiV1UsersPostRequest) Body(body map[string]interface{}) ApiV1UsersPostR
 	return r
 }
 
-func (r ApiV1UsersPostRequest) Execute() (*GithubComMonadIncCorePkgTypesModelsUser, *http.Response, error) {
+func (r ApiV1UsersPostRequest) Execute() (*ModelsUser, *http.Response, error) {
 	return r.ApiService.V1UsersPostExecute(r)
 }
 
@@ -188,13 +188,13 @@ func (a *UsersAPIService) V1UsersPost(ctx context.Context) ApiV1UsersPostRequest
 }
 
 // Execute executes the request
-//  @return GithubComMonadIncCorePkgTypesModelsUser
-func (a *UsersAPIService) V1UsersPostExecute(r ApiV1UsersPostRequest) (*GithubComMonadIncCorePkgTypesModelsUser, *http.Response, error) {
+//  @return ModelsUser
+func (a *UsersAPIService) V1UsersPostExecute(r ApiV1UsersPostRequest) (*ModelsUser, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GithubComMonadIncCorePkgTypesModelsUser
+		localVarReturnValue  *ModelsUser
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.V1UsersPost")

@@ -12,6 +12,7 @@
 |**includePlannedDeletion** | **Boolean** | Whether or not to include secrets scheduled for deletion |  [optional] |
 |**region** | **String** | URL of the organization |  [optional] |
 |**roleArn** | **String** | The ID of the secret to describe |  [optional] |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 
 
 

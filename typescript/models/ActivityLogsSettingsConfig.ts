@@ -20,6 +20,10 @@ export class ActivityLogsSettingsConfig {
     * URL of the Fleet DM instance
     */
     'fleetUrl'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,6 +34,12 @@ export class ActivityLogsSettingsConfig {
             "name": "fleetUrl",
             "baseName": "fleet_url",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

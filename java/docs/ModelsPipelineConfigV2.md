@@ -15,6 +15,7 @@
 |**edges** | [**List&lt;ModelsPipelineEdge&gt;**](ModelsPipelineEdge.md) |  |  [optional] |
 |**enabled** | **Boolean** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
+|**isSynthetic** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**nextCronRunAt** | **String** |  |  [optional] |
 |**nodes** | [**List&lt;ModelsPipelineNode&gt;**](ModelsPipelineNode.md) |  |  [optional] |

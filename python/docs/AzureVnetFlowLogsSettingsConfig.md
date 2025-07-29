@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **storage_account_url** | **str** | The Azure storage account URL where flow logs are stored | [optional] 
 **subscription_id** | **str** | The Azure subscription ID where the virtual network and storage account are located | [optional] 
 **tenant_id** | **str** | The Azure Entra ID tenant (directory) ID. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **virtual_network_name** | **str** | The name of the virtual network for which flow logs are being collected | [optional] 
 
 ## Example

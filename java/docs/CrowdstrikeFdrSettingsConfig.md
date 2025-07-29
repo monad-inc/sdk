@@ -12,6 +12,7 @@ Crowdstrike Falcon Data Replicator settings
 |**awsRegionName** | **String** | Name of the region where the queue resides |  [optional] |
 |**awsS3Url** | **String** | The URL of the S3 bucket |  [optional] |
 |**cron** | **String** | The time in seconds to wait before each check of the queue for more messages |  [optional] |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 |**visibilityTimeout** | **Integer** | Time in seconds before a message is returned back to the SQS queue |  [optional] |
 
 

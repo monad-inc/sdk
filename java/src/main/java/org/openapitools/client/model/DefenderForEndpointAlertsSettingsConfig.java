@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * DefenderForEndpointAlertsSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DefenderForEndpointAlertsSettingsConfig {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
@@ -64,6 +64,11 @@ public class DefenderForEndpointAlertsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_TENANT_ID)
   @javax.annotation.Nullable
   private String tenantId;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public DefenderForEndpointAlertsSettingsConfig() {
   }
@@ -125,6 +130,25 @@ public class DefenderForEndpointAlertsSettingsConfig {
   }
 
 
+  public DefenderForEndpointAlertsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -137,12 +161,13 @@ public class DefenderForEndpointAlertsSettingsConfig {
     DefenderForEndpointAlertsSettingsConfig defenderForEndpointAlertsSettingsConfig = (DefenderForEndpointAlertsSettingsConfig) o;
     return Objects.equals(this.category, defenderForEndpointAlertsSettingsConfig.category) &&
         Objects.equals(this.severity, defenderForEndpointAlertsSettingsConfig.severity) &&
-        Objects.equals(this.tenantId, defenderForEndpointAlertsSettingsConfig.tenantId);
+        Objects.equals(this.tenantId, defenderForEndpointAlertsSettingsConfig.tenantId) &&
+        Objects.equals(this.useSyntheticData, defenderForEndpointAlertsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(category, severity, tenantId);
+    return Objects.hash(category, severity, tenantId, useSyntheticData);
   }
 
   @Override
@@ -152,6 +177,7 @@ public class DefenderForEndpointAlertsSettingsConfig {
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
     sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -173,7 +199,7 @@ public class DefenderForEndpointAlertsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("category", "severity", "tenant_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("category", "severity", "tenant_id", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

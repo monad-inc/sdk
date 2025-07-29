@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +31,8 @@ class CloudtrailSettingsConfig(BaseModel):
     prefix: Optional[StrictStr] = Field(default=None, description="Prefix of the S3 object keys to read.")
     region: Optional[StrictStr] = Field(default=None, description="The region of the S3 bucket")
     role_arn: Optional[StrictStr] = Field(default=None, description="The ARN of the role to assume to access the bucket")
-    __properties: ClassVar[List[str]] = ["bucket", "prefix", "region", "role_arn"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["bucket", "prefix", "region", "role_arn", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,7 +88,8 @@ class CloudtrailSettingsConfig(BaseModel):
             "bucket": obj.get("bucket"),
             "prefix": obj.get("prefix"),
             "region": obj.get("region"),
-            "role_arn": obj.get("role_arn")
+            "role_arn": obj.get("role_arn"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

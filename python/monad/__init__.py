@@ -84,7 +84,6 @@ __all__ = [
     "AzureActivityLogsSettingsConfig",
     "AzureBlobStorageSecretsConfig",
     "AzureBlobStorageSettingsConfig",
-    "AzureVirtualMachineSettingsConfig",
     "AzureVnetFlowLogsSecretsConfig",
     "AzureVnetFlowLogsSettingsConfig",
     "BatchConfigBatchConfig",
@@ -96,6 +95,7 @@ __all__ = [
     "BoxEventsSettingsConfig",
     "BoxUsersSecretsConfig",
     "BoxUsersSettingsConfig",
+    "CisaUserSettingsConfig",
     "CloudAssetInventorySecretsConfig",
     "CloudAssetInventorySettingsConfig",
     "CloudConfigurationFindingsSecretsConfig",
@@ -121,8 +121,6 @@ __all__ = [
     "DefenderForEndpointAlertsSecretsConfig",
     "DefenderForEndpointAlertsSettingsConfig",
     "DelimitedDelimiterFormatter",
-    "DemoCustomSettingsConfig",
-    "DemoSettingsConfig",
     "DetectSummariesSecretsConfig",
     "DetectSummariesSettingsConfig",
     "DeviceActivitySecretsConfig",
@@ -155,10 +153,6 @@ __all__ = [
     "FullScansSecretsConfig",
     "FullScansSettingsConfig",
     "GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter",
-    "GithubComMonadIncCorePkgTypesModelsOrganization",
-    "GithubComMonadIncCorePkgTypesModelsPermission",
-    "GithubComMonadIncCorePkgTypesModelsQuota",
-    "GithubComMonadIncCorePkgTypesModelsUser",
     "GitlabIssuesSecretsConfig",
     "GitlabIssuesSettingsConfig",
     "GoogleCloudStorageOutputSecretsConfig",
@@ -204,6 +198,7 @@ __all__ = [
     "ModelsInputConfig",
     "ModelsInputList",
     "ModelsNodeComponent",
+    "ModelsOrganization",
     "ModelsOrganizationList",
     "ModelsOrganizationUser",
     "ModelsOrganizationUserList",
@@ -211,6 +206,7 @@ __all__ = [
     "ModelsOutputConfig",
     "ModelsOutputList",
     "ModelsPagination",
+    "ModelsPermission",
     "ModelsPermissionList",
     "ModelsPipeline",
     "ModelsPipelineConfigV2",
@@ -224,6 +220,7 @@ __all__ = [
     "ModelsPipelineNodeStatus",
     "ModelsPipelineRetentionPolicy",
     "ModelsPipelineStatus",
+    "ModelsQuota",
     "ModelsQuotaList",
     "ModelsRoleWithPermissions",
     "ModelsRoleWithPermissionsList",
@@ -236,6 +233,7 @@ __all__ = [
     "ModelsTransformOperation",
     "ModelsTransformsRepositoryList",
     "ModelsTransformsRepositoryTransform",
+    "ModelsUser",
     "ModelsUserRoleWithPermissions",
     "MonadLogSettingsConfig",
     "MutateTypeMutateType",
@@ -352,13 +350,13 @@ __all__ = [
     "SecurityLakeSettingsConfig",
     "SecurityLakeSourceAccountDetails",
     "SemgrepCodeFindingsSecretsConfig",
+    "SemgrepCodeFindingsSettingsConfig",
     "SemgrepDeploymentsSecretsConfig",
     "SemgrepDeploymentsSettingsConfig",
     "SemgrepProjectDetailsSecretsConfig",
     "SemgrepProjectDetailsSettingsConfig",
     "SemgrepProjectsSecretsConfig",
     "SemgrepProjectsSettingsConfig",
-    "SemgrepSupplyChainFindingsSecretsConfig",
     "SentinelSecretsConfig",
     "SentinelSettingsConfig",
     "SentryOrgAuditLogsSecretsConfig",
@@ -372,15 +370,19 @@ __all__ = [
     "SnowflakeOutputSecretsConfig",
     "SnowflakeOutputSettingsConfig",
     "SnykIssuesSecretsConfig",
+    "SnykIssuesSettingsConfig",
     "SnykOrganizationsSecretsConfig",
     "SnykOrganizationsSettingsConfig",
     "SnykProjectsSecretsConfig",
     "SnykProjectsSettingsConfig",
     "SnykTargetsSecretsConfig",
+    "SnykTargetsSettingsConfig",
     "SplunkSecretsConfig",
     "SplunkSettingsConfig",
     "SumologicSecretsConfig",
     "SumologicSettingsConfig",
+    "SyntheticDataCustomSettingsConfig",
+    "SyntheticDataSettingsConfig",
     "SystemlogSecretsConfig",
     "SystemlogSettingsConfig",
     "TailscaleUsersSecretsConfig",
@@ -388,9 +390,11 @@ __all__ = [
     "TenableAssetsCronSecretsConfig",
     "TenableAssetsCronSettingsConfig",
     "TenableAssetsSecretsConfig",
+    "TenableAssetsSettingsConfig",
     "TenableVulnerabilitiesCronSecretsConfig",
     "TenableVulnerabilitiesCronSettingsConfig",
     "TenableVulnerabilitiesSecretsConfig",
+    "TenableVulnerabilitiesSettingsConfig",
     "TypesFilterNameStringType",
     "UsersInfoSecretsConfig",
     "UsersInfoSettingsConfig",
@@ -475,7 +479,6 @@ from monad.models.azure_activity_logs_secrets_config import AzureActivityLogsSec
 from monad.models.azure_activity_logs_settings_config import AzureActivityLogsSettingsConfig as AzureActivityLogsSettingsConfig
 from monad.models.azure_blob_storage_secrets_config import AzureBlobStorageSecretsConfig as AzureBlobStorageSecretsConfig
 from monad.models.azure_blob_storage_settings_config import AzureBlobStorageSettingsConfig as AzureBlobStorageSettingsConfig
-from monad.models.azure_virtual_machine_settings_config import AzureVirtualMachineSettingsConfig as AzureVirtualMachineSettingsConfig
 from monad.models.azure_vnet_flow_logs_secrets_config import AzureVnetFlowLogsSecretsConfig as AzureVnetFlowLogsSecretsConfig
 from monad.models.azure_vnet_flow_logs_settings_config import AzureVnetFlowLogsSettingsConfig as AzureVnetFlowLogsSettingsConfig
 from monad.models.batch_config_batch_config import BatchConfigBatchConfig as BatchConfigBatchConfig
@@ -487,6 +490,7 @@ from monad.models.box_events_secrets_config import BoxEventsSecretsConfig as Box
 from monad.models.box_events_settings_config import BoxEventsSettingsConfig as BoxEventsSettingsConfig
 from monad.models.box_users_secrets_config import BoxUsersSecretsConfig as BoxUsersSecretsConfig
 from monad.models.box_users_settings_config import BoxUsersSettingsConfig as BoxUsersSettingsConfig
+from monad.models.cisa_user_settings_config import CisaUserSettingsConfig as CisaUserSettingsConfig
 from monad.models.cloud_asset_inventory_secrets_config import CloudAssetInventorySecretsConfig as CloudAssetInventorySecretsConfig
 from monad.models.cloud_asset_inventory_settings_config import CloudAssetInventorySettingsConfig as CloudAssetInventorySettingsConfig
 from monad.models.cloud_configuration_findings_secrets_config import CloudConfigurationFindingsSecretsConfig as CloudConfigurationFindingsSecretsConfig
@@ -512,8 +516,6 @@ from monad.models.crowdstrike_fdr_settings_config import CrowdstrikeFdrSettingsC
 from monad.models.defender_for_endpoint_alerts_secrets_config import DefenderForEndpointAlertsSecretsConfig as DefenderForEndpointAlertsSecretsConfig
 from monad.models.defender_for_endpoint_alerts_settings_config import DefenderForEndpointAlertsSettingsConfig as DefenderForEndpointAlertsSettingsConfig
 from monad.models.delimited_delimiter_formatter import DelimitedDelimiterFormatter as DelimitedDelimiterFormatter
-from monad.models.demo_custom_settings_config import DemoCustomSettingsConfig as DemoCustomSettingsConfig
-from monad.models.demo_settings_config import DemoSettingsConfig as DemoSettingsConfig
 from monad.models.detect_summaries_secrets_config import DetectSummariesSecretsConfig as DetectSummariesSecretsConfig
 from monad.models.detect_summaries_settings_config import DetectSummariesSettingsConfig as DetectSummariesSettingsConfig
 from monad.models.device_activity_secrets_config import DeviceActivitySecretsConfig as DeviceActivitySecretsConfig
@@ -546,10 +548,6 @@ from monad.models.formatter_format_config import FormatterFormatConfig as Format
 from monad.models.full_scans_secrets_config import FullScansSecretsConfig as FullScansSecretsConfig
 from monad.models.full_scans_settings_config import FullScansSettingsConfig as FullScansSettingsConfig
 from monad.models.github_com_aws_aws_sdk_go_v2_service_secretsmanager_types_filter import GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter as GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter
-from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization as GithubComMonadIncCorePkgTypesModelsOrganization
-from monad.models.github_com_monad_inc_core_pkg_types_models_permission import GithubComMonadIncCorePkgTypesModelsPermission as GithubComMonadIncCorePkgTypesModelsPermission
-from monad.models.github_com_monad_inc_core_pkg_types_models_quota import GithubComMonadIncCorePkgTypesModelsQuota as GithubComMonadIncCorePkgTypesModelsQuota
-from monad.models.github_com_monad_inc_core_pkg_types_models_user import GithubComMonadIncCorePkgTypesModelsUser as GithubComMonadIncCorePkgTypesModelsUser
 from monad.models.gitlab_issues_secrets_config import GitlabIssuesSecretsConfig as GitlabIssuesSecretsConfig
 from monad.models.gitlab_issues_settings_config import GitlabIssuesSettingsConfig as GitlabIssuesSettingsConfig
 from monad.models.google_cloud_storage_output_secrets_config import GoogleCloudStorageOutputSecretsConfig as GoogleCloudStorageOutputSecretsConfig
@@ -595,6 +593,7 @@ from monad.models.models_input import ModelsInput as ModelsInput
 from monad.models.models_input_config import ModelsInputConfig as ModelsInputConfig
 from monad.models.models_input_list import ModelsInputList as ModelsInputList
 from monad.models.models_node_component import ModelsNodeComponent as ModelsNodeComponent
+from monad.models.models_organization import ModelsOrganization as ModelsOrganization
 from monad.models.models_organization_list import ModelsOrganizationList as ModelsOrganizationList
 from monad.models.models_organization_user import ModelsOrganizationUser as ModelsOrganizationUser
 from monad.models.models_organization_user_list import ModelsOrganizationUserList as ModelsOrganizationUserList
@@ -602,6 +601,7 @@ from monad.models.models_output import ModelsOutput as ModelsOutput
 from monad.models.models_output_config import ModelsOutputConfig as ModelsOutputConfig
 from monad.models.models_output_list import ModelsOutputList as ModelsOutputList
 from monad.models.models_pagination import ModelsPagination as ModelsPagination
+from monad.models.models_permission import ModelsPermission as ModelsPermission
 from monad.models.models_permission_list import ModelsPermissionList as ModelsPermissionList
 from monad.models.models_pipeline import ModelsPipeline as ModelsPipeline
 from monad.models.models_pipeline_config_v2 import ModelsPipelineConfigV2 as ModelsPipelineConfigV2
@@ -615,6 +615,7 @@ from monad.models.models_pipeline_node import ModelsPipelineNode as ModelsPipeli
 from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus as ModelsPipelineNodeStatus
 from monad.models.models_pipeline_retention_policy import ModelsPipelineRetentionPolicy as ModelsPipelineRetentionPolicy
 from monad.models.models_pipeline_status import ModelsPipelineStatus as ModelsPipelineStatus
+from monad.models.models_quota import ModelsQuota as ModelsQuota
 from monad.models.models_quota_list import ModelsQuotaList as ModelsQuotaList
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions as ModelsRoleWithPermissions
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList as ModelsRoleWithPermissionsList
@@ -627,6 +628,7 @@ from monad.models.models_transform_list import ModelsTransformList as ModelsTran
 from monad.models.models_transform_operation import ModelsTransformOperation as ModelsTransformOperation
 from monad.models.models_transforms_repository_list import ModelsTransformsRepositoryList as ModelsTransformsRepositoryList
 from monad.models.models_transforms_repository_transform import ModelsTransformsRepositoryTransform as ModelsTransformsRepositoryTransform
+from monad.models.models_user import ModelsUser as ModelsUser
 from monad.models.models_user_role_with_permissions import ModelsUserRoleWithPermissions as ModelsUserRoleWithPermissions
 from monad.models.monad_log_settings_config import MonadLogSettingsConfig as MonadLogSettingsConfig
 from monad.models.mutate_type_mutate_type import MutateTypeMutateType as MutateTypeMutateType
@@ -743,13 +745,13 @@ from monad.models.security_groups_settings_config import SecurityGroupsSettingsC
 from monad.models.security_lake_settings_config import SecurityLakeSettingsConfig as SecurityLakeSettingsConfig
 from monad.models.security_lake_source_account_details import SecurityLakeSourceAccountDetails as SecurityLakeSourceAccountDetails
 from monad.models.semgrep_code_findings_secrets_config import SemgrepCodeFindingsSecretsConfig as SemgrepCodeFindingsSecretsConfig
+from monad.models.semgrep_code_findings_settings_config import SemgrepCodeFindingsSettingsConfig as SemgrepCodeFindingsSettingsConfig
 from monad.models.semgrep_deployments_secrets_config import SemgrepDeploymentsSecretsConfig as SemgrepDeploymentsSecretsConfig
 from monad.models.semgrep_deployments_settings_config import SemgrepDeploymentsSettingsConfig as SemgrepDeploymentsSettingsConfig
 from monad.models.semgrep_project_details_secrets_config import SemgrepProjectDetailsSecretsConfig as SemgrepProjectDetailsSecretsConfig
 from monad.models.semgrep_project_details_settings_config import SemgrepProjectDetailsSettingsConfig as SemgrepProjectDetailsSettingsConfig
 from monad.models.semgrep_projects_secrets_config import SemgrepProjectsSecretsConfig as SemgrepProjectsSecretsConfig
 from monad.models.semgrep_projects_settings_config import SemgrepProjectsSettingsConfig as SemgrepProjectsSettingsConfig
-from monad.models.semgrep_supply_chain_findings_secrets_config import SemgrepSupplyChainFindingsSecretsConfig as SemgrepSupplyChainFindingsSecretsConfig
 from monad.models.sentinel_secrets_config import SentinelSecretsConfig as SentinelSecretsConfig
 from monad.models.sentinel_settings_config import SentinelSettingsConfig as SentinelSettingsConfig
 from monad.models.sentry_org_audit_logs_secrets_config import SentryOrgAuditLogsSecretsConfig as SentryOrgAuditLogsSecretsConfig
@@ -763,15 +765,19 @@ from monad.models.snowflake_input_settings_config import SnowflakeInputSettingsC
 from monad.models.snowflake_output_secrets_config import SnowflakeOutputSecretsConfig as SnowflakeOutputSecretsConfig
 from monad.models.snowflake_output_settings_config import SnowflakeOutputSettingsConfig as SnowflakeOutputSettingsConfig
 from monad.models.snyk_issues_secrets_config import SnykIssuesSecretsConfig as SnykIssuesSecretsConfig
+from monad.models.snyk_issues_settings_config import SnykIssuesSettingsConfig as SnykIssuesSettingsConfig
 from monad.models.snyk_organizations_secrets_config import SnykOrganizationsSecretsConfig as SnykOrganizationsSecretsConfig
 from monad.models.snyk_organizations_settings_config import SnykOrganizationsSettingsConfig as SnykOrganizationsSettingsConfig
 from monad.models.snyk_projects_secrets_config import SnykProjectsSecretsConfig as SnykProjectsSecretsConfig
 from monad.models.snyk_projects_settings_config import SnykProjectsSettingsConfig as SnykProjectsSettingsConfig
 from monad.models.snyk_targets_secrets_config import SnykTargetsSecretsConfig as SnykTargetsSecretsConfig
+from monad.models.snyk_targets_settings_config import SnykTargetsSettingsConfig as SnykTargetsSettingsConfig
 from monad.models.splunk_secrets_config import SplunkSecretsConfig as SplunkSecretsConfig
 from monad.models.splunk_settings_config import SplunkSettingsConfig as SplunkSettingsConfig
 from monad.models.sumologic_secrets_config import SumologicSecretsConfig as SumologicSecretsConfig
 from monad.models.sumologic_settings_config import SumologicSettingsConfig as SumologicSettingsConfig
+from monad.models.synthetic_data_custom_settings_config import SyntheticDataCustomSettingsConfig as SyntheticDataCustomSettingsConfig
+from monad.models.synthetic_data_settings_config import SyntheticDataSettingsConfig as SyntheticDataSettingsConfig
 from monad.models.systemlog_secrets_config import SystemlogSecretsConfig as SystemlogSecretsConfig
 from monad.models.systemlog_settings_config import SystemlogSettingsConfig as SystemlogSettingsConfig
 from monad.models.tailscale_users_secrets_config import TailscaleUsersSecretsConfig as TailscaleUsersSecretsConfig
@@ -779,9 +785,11 @@ from monad.models.tailscale_users_settings_config import TailscaleUsersSettingsC
 from monad.models.tenable_assets_cron_secrets_config import TenableAssetsCronSecretsConfig as TenableAssetsCronSecretsConfig
 from monad.models.tenable_assets_cron_settings_config import TenableAssetsCronSettingsConfig as TenableAssetsCronSettingsConfig
 from monad.models.tenable_assets_secrets_config import TenableAssetsSecretsConfig as TenableAssetsSecretsConfig
+from monad.models.tenable_assets_settings_config import TenableAssetsSettingsConfig as TenableAssetsSettingsConfig
 from monad.models.tenable_vulnerabilities_cron_secrets_config import TenableVulnerabilitiesCronSecretsConfig as TenableVulnerabilitiesCronSecretsConfig
 from monad.models.tenable_vulnerabilities_cron_settings_config import TenableVulnerabilitiesCronSettingsConfig as TenableVulnerabilitiesCronSettingsConfig
 from monad.models.tenable_vulnerabilities_secrets_config import TenableVulnerabilitiesSecretsConfig as TenableVulnerabilitiesSecretsConfig
+from monad.models.tenable_vulnerabilities_settings_config import TenableVulnerabilitiesSettingsConfig as TenableVulnerabilitiesSettingsConfig
 from monad.models.types_filter_name_string_type import TypesFilterNameStringType as TypesFilterNameStringType
 from monad.models.users_info_secrets_config import UsersInfoSecretsConfig as UsersInfoSecretsConfig
 from monad.models.users_info_settings_config import UsersInfoSettingsConfig as UsersInfoSettingsConfig

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR actors info settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ActorsInfoSettingsConfig {
   public static final String SERIALIZED_NAME_ACTOR_TYPE = "actor_type";
   @SerializedName(SERIALIZED_NAME_ACTOR_TYPE)
@@ -74,6 +74,11 @@ public class ActorsInfoSettingsConfig {
   @SerializedName(SERIALIZED_NAME_TARGET_INDUSTRIES)
   @javax.annotation.Nullable
   private String targetIndustries;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public ActorsInfoSettingsConfig() {
   }
@@ -173,6 +178,25 @@ public class ActorsInfoSettingsConfig {
   }
 
 
+  public ActorsInfoSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -187,12 +211,13 @@ public class ActorsInfoSettingsConfig {
         Objects.equals(this.cloudType, actorsInfoSettingsConfig.cloudType) &&
         Objects.equals(this.cron, actorsInfoSettingsConfig.cron) &&
         Objects.equals(this.sort, actorsInfoSettingsConfig.sort) &&
-        Objects.equals(this.targetIndustries, actorsInfoSettingsConfig.targetIndustries);
+        Objects.equals(this.targetIndustries, actorsInfoSettingsConfig.targetIndustries) &&
+        Objects.equals(this.useSyntheticData, actorsInfoSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actorType, cloudType, cron, sort, targetIndustries);
+    return Objects.hash(actorType, cloudType, cron, sort, targetIndustries, useSyntheticData);
   }
 
   @Override
@@ -204,6 +229,7 @@ public class ActorsInfoSettingsConfig {
     sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
     sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("    targetIndustries: ").append(toIndentedString(targetIndustries)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -225,7 +251,7 @@ public class ActorsInfoSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("actor_type", "cloud_type", "cron", "sort", "target_industries"));
+    openapiFields = new HashSet<String>(Arrays.asList("actor_type", "cloud_type", "cron", "sort", "target_industries", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

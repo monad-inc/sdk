@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **auth_type** | **str** | Authentication type (service_account or oauth) | [optional] 
 **email** | **str** | Email address to use for authenticating with Google Cloud. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

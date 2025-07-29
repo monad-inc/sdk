@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * GitHub audit logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AuditLogsSettingsConfig {
   public static final String SERIALIZED_NAME_ACTIONS = "actions";
   @SerializedName(SERIALIZED_NAME_ACTIONS)
@@ -91,6 +91,11 @@ public class AuditLogsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_REPOSITORY)
   @javax.annotation.Nullable
   private String repository;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
@@ -260,6 +265,25 @@ public class AuditLogsSettingsConfig {
   }
 
 
+  public AuditLogsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
   public AuditLogsSettingsConfig user(@javax.annotation.Nullable String user) {
     this.user = user;
     return this;
@@ -297,12 +321,13 @@ public class AuditLogsSettingsConfig {
         Objects.equals(this.include, auditLogsSettingsConfig.include) &&
         Objects.equals(this.organization, auditLogsSettingsConfig.organization) &&
         Objects.equals(this.repository, auditLogsSettingsConfig.repository) &&
+        Objects.equals(this.useSyntheticData, auditLogsSettingsConfig.useSyntheticData) &&
         Objects.equals(this.user, auditLogsSettingsConfig.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actions, actor, country, createdAfter, enterprise, include, organization, repository, user);
+    return Objects.hash(actions, actor, country, createdAfter, enterprise, include, organization, repository, useSyntheticData, user);
   }
 
   @Override
@@ -317,6 +342,7 @@ public class AuditLogsSettingsConfig {
     sb.append("    include: ").append(toIndentedString(include)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("    repository: ").append(toIndentedString(repository)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -339,7 +365,7 @@ public class AuditLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("actions", "actor", "country", "created_after", "enterprise", "include", "organization", "repository", "user"));
+    openapiFields = new HashSet<String>(Arrays.asList("actions", "actor", "country", "created_after", "enterprise", "include", "organization", "repository", "use_synthetic_data", "user"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

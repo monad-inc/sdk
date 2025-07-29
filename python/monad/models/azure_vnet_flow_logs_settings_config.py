@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,8 +33,9 @@ class AzureVnetFlowLogsSettingsConfig(BaseModel):
     storage_account_url: Optional[StrictStr] = Field(default=None, description="The Azure storage account URL where flow logs are stored")
     subscription_id: Optional[StrictStr] = Field(default=None, description="The Azure subscription ID where the virtual network and storage account are located")
     tenant_id: Optional[StrictStr] = Field(default=None, description="The Azure Entra ID tenant (directory) ID.")
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     virtual_network_name: Optional[StrictStr] = Field(default=None, description="The name of the virtual network for which flow logs are being collected")
-    __properties: ClassVar[List[str]] = ["prefix", "region", "resource_group_name", "storage_account_url", "subscription_id", "tenant_id", "virtual_network_name"]
+    __properties: ClassVar[List[str]] = ["prefix", "region", "resource_group_name", "storage_account_url", "subscription_id", "tenant_id", "use_synthetic_data", "virtual_network_name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,7 @@ class AzureVnetFlowLogsSettingsConfig(BaseModel):
             "storage_account_url": obj.get("storage_account_url"),
             "subscription_id": obj.get("subscription_id"),
             "tenant_id": obj.get("tenant_id"),
+            "use_synthetic_data": obj.get("use_synthetic_data"),
             "virtual_network_name": obj.get("virtual_network_name")
         })
         return _obj

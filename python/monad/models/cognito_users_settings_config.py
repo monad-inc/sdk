@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.cognito_users_filter import CognitoUsersFilter
 from typing import Optional, Set
@@ -32,8 +32,9 @@ class CognitoUsersSettingsConfig(BaseModel):
     filter: Optional[CognitoUsersFilter] = None
     region: Optional[StrictStr] = Field(default=None, description="The Region that you would receieve findings for")
     role_arn: Optional[StrictStr] = Field(default=None, description="The ARN of the role to assume to access the bucket")
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     user_pool_id: Optional[StrictStr] = Field(default=None, description="User Pool ID to extract users from")
-    __properties: ClassVar[List[str]] = ["cron", "filter", "region", "role_arn", "user_pool_id"]
+    __properties: ClassVar[List[str]] = ["cron", "filter", "region", "role_arn", "use_synthetic_data", "user_pool_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,7 @@ class CognitoUsersSettingsConfig(BaseModel):
             "filter": CognitoUsersFilter.from_dict(obj["filter"]) if obj.get("filter") is not None else None,
             "region": obj.get("region"),
             "role_arn": obj.get("role_arn"),
+            "use_synthetic_data": obj.get("use_synthetic_data"),
             "user_pool_id": obj.get("user_pool_id")
         })
         return _obj

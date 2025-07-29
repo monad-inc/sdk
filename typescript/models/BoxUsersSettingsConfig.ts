@@ -24,6 +24,10 @@ export class BoxUsersSettingsConfig {
     * Limits the results to only users who\'s name or login start with the search term.
     */
     'filterTerm'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -40,6 +44,12 @@ export class BoxUsersSettingsConfig {
             "name": "filterTerm",
             "baseName": "filter_term",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

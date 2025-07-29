@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **stack_layers** | **List[str]** | @Description Filter Issues from specific stack layers | [optional] 
 **status** | **List[str]** | @Description Filter by Issue handling status @Description Default: OPEN | [optional] 
 **tenant_data_center** | **str** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

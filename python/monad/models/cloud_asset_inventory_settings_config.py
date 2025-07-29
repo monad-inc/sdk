@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,8 @@ class CloudAssetInventorySettingsConfig(BaseModel):
     asset_types: Optional[List[StrictStr]] = Field(default=None, description="The type of assets to scan for.  If left empty, will scan all assets")
     cron: Optional[StrictStr] = Field(default=None, description="Cron expression for scheduling the input")
     resource_names: Optional[List[StrictStr]] = Field(default=None, description="The names of the resources to scan. can be organizations, projects or folders.")
-    __properties: ClassVar[List[str]] = ["asset_types", "cron", "resource_names"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["asset_types", "cron", "resource_names", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,7 +86,8 @@ class CloudAssetInventorySettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "asset_types": obj.get("asset_types"),
             "cron": obj.get("cron"),
-            "resource_names": obj.get("resource_names")
+            "resource_names": obj.get("resource_names"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

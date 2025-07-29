@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Include** | Pointer to **string** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
 **Organization** | Pointer to **string** | Filter by organization name | [optional] 
 **Repository** | Pointer to **string** | Filter by repository (format: org-name/repo-name) | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **User** | Pointer to **string** | Filter by the username that was affected by the action | [optional] 
 
 ## Methods
@@ -232,6 +233,31 @@ SetRepository sets Repository field to given value.
 `func (o *AuditLogsSettingsConfig) HasRepository() bool`
 
 HasRepository returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *AuditLogsSettingsConfig) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *AuditLogsSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *AuditLogsSettingsConfig) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *AuditLogsSettingsConfig) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 ### GetUser
 

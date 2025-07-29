@@ -37,6 +37,10 @@ export class GitlabIssuesSettingsConfig {
     */
     'state'?: string;
     /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
+    /**
     * Include label details in the response
     */
     'withLabelDetails'?: boolean;
@@ -74,6 +78,12 @@ export class GitlabIssuesSettingsConfig {
             "name": "state",
             "baseName": "state",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         },
         {

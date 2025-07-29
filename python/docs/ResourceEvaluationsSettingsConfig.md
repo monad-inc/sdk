@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **evaluation_context_identifier** | **str** | Filters proactive resource evaluations for a given infrastructure deployment. | [optional] 
 **region** | **str** | The Region that you would receieve findings for | [optional] 
 **role_arn** | **str** | The ARN of the role to assume to access the bucket | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

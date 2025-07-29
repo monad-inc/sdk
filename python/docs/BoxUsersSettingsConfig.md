@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cron** | **str** | Cron string for scheduling the ingest of your input | [optional] 
 **filter_term** | **str** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

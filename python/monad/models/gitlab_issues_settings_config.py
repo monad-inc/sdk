@@ -32,8 +32,9 @@ class GitlabIssuesSettingsConfig(BaseModel):
     issue_type: Optional[StrictStr] = Field(default=None, description="IssueType to filter issues by type e.g. issue, incident, etc.")
     project_id: Optional[StrictStr] = Field(default=None, description="Project ID to get issues for")
     state: Optional[StrictStr] = Field(default=None, description="State to filter issues by e.g. opened, closed")
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     with_label_details: Optional[StrictBool] = Field(default=None, description="Include label details in the response")
-    __properties: ClassVar[List[str]] = ["confidential", "gitlab_url", "issue_type", "project_id", "state", "with_label_details"]
+    __properties: ClassVar[List[str]] = ["confidential", "gitlab_url", "issue_type", "project_id", "state", "use_synthetic_data", "with_label_details"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +92,7 @@ class GitlabIssuesSettingsConfig(BaseModel):
             "issue_type": obj.get("issue_type"),
             "project_id": obj.get("project_id"),
             "state": obj.get("state"),
+            "use_synthetic_data": obj.get("use_synthetic_data"),
             "with_label_details": obj.get("with_label_details")
         })
         return _obj

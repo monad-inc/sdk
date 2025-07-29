@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **edges** | [**List[ModelsPipelineEdge]**](ModelsPipelineEdge.md) |  | [optional] 
 **enabled** | **bool** |  | [optional] 
 **id** | **str** |  | [optional] 
+**is_synthetic** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **next_cron_run_at** | **str** |  | [optional] 
 **nodes** | [**List[ModelsPipelineNode]**](ModelsPipelineNode.md) |  | [optional] 

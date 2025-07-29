@@ -24,6 +24,8 @@ type EntraIdSettingsConfig struct {
 	Category *string `json:"category,omitempty"`
 	// The tenant ID of the Azure AD application
 	TenantId *string `json:"tenant_id,omitempty"`
+	// Generate synthetic demo data instead of connecting to the real data source.
+	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 	// The workspace ID of the Log Analytics workspace
 	WorkspaceId *string `json:"workspace_id,omitempty"`
 }
@@ -109,6 +111,38 @@ func (o *EntraIdSettingsConfig) SetTenantId(v string) {
 	o.TenantId = &v
 }
 
+// GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
+func (o *EntraIdSettingsConfig) GetUseSyntheticData() bool {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		var ret bool
+		return ret
+	}
+	return *o.UseSyntheticData
+}
+
+// GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntraIdSettingsConfig) GetUseSyntheticDataOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		return nil, false
+	}
+	return o.UseSyntheticData, true
+}
+
+// HasUseSyntheticData returns a boolean if a field has been set.
+func (o *EntraIdSettingsConfig) HasUseSyntheticData() bool {
+	if o != nil && !IsNil(o.UseSyntheticData) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseSyntheticData gets a reference to the given bool and assigns it to the UseSyntheticData field.
+func (o *EntraIdSettingsConfig) SetUseSyntheticData(v bool) {
+	o.UseSyntheticData = &v
+}
+
 // GetWorkspaceId returns the WorkspaceId field value if set, zero value otherwise.
 func (o *EntraIdSettingsConfig) GetWorkspaceId() string {
 	if o == nil || IsNil(o.WorkspaceId) {
@@ -156,6 +190,9 @@ func (o EntraIdSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TenantId) {
 		toSerialize["tenant_id"] = o.TenantId
+	}
+	if !IsNil(o.UseSyntheticData) {
+		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	if !IsNil(o.WorkspaceId) {
 		toSerialize["workspace_id"] = o.WorkspaceId

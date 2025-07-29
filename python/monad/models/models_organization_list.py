@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
+from monad.models.models_organization import ModelsOrganization
 from monad.models.models_pagination import ModelsPagination
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class ModelsOrganizationList(BaseModel):
     """
     ModelsOrganizationList
     """ # noqa: E501
-    organizations: Optional[List[GithubComMonadIncCorePkgTypesModelsOrganization]] = None
+    organizations: Optional[List[ModelsOrganization]] = None
     pagination: Optional[ModelsPagination] = None
     __properties: ClassVar[List[str]] = ["organizations", "pagination"]
 
@@ -94,7 +94,7 @@ class ModelsOrganizationList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "organizations": [GithubComMonadIncCorePkgTypesModelsOrganization.from_dict(_item) for _item in obj["organizations"]] if obj.get("organizations") is not None else None,
+            "organizations": [ModelsOrganization.from_dict(_item) for _item in obj["organizations"]] if obj.get("organizations") is not None else None,
             "pagination": ModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None
         })
         return _obj

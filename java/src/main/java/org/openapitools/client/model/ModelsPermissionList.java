@@ -23,8 +23,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsPermission;
 import org.openapitools.client.model.ModelsPagination;
+import org.openapitools.client.model.ModelsPermission;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPermissionList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsPermissionList {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
@@ -62,7 +62,7 @@ public class ModelsPermissionList {
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
   @javax.annotation.Nullable
-  private List<GithubComMonadIncCorePkgTypesModelsPermission> permissions = new ArrayList<>();
+  private List<ModelsPermission> permissions = new ArrayList<>();
 
   public ModelsPermissionList() {
   }
@@ -86,12 +86,12 @@ public class ModelsPermissionList {
   }
 
 
-  public ModelsPermissionList permissions(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsPermission> permissions) {
+  public ModelsPermissionList permissions(@javax.annotation.Nullable List<ModelsPermission> permissions) {
     this.permissions = permissions;
     return this;
   }
 
-  public ModelsPermissionList addPermissionsItem(GithubComMonadIncCorePkgTypesModelsPermission permissionsItem) {
+  public ModelsPermissionList addPermissionsItem(ModelsPermission permissionsItem) {
     if (this.permissions == null) {
       this.permissions = new ArrayList<>();
     }
@@ -104,11 +104,11 @@ public class ModelsPermissionList {
    * @return permissions
    */
   @javax.annotation.Nullable
-  public List<GithubComMonadIncCorePkgTypesModelsPermission> getPermissions() {
+  public List<ModelsPermission> getPermissions() {
     return permissions;
   }
 
-  public void setPermissions(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsPermission> permissions) {
+  public void setPermissions(@javax.annotation.Nullable List<ModelsPermission> permissions) {
     this.permissions = permissions;
   }
 
@@ -200,7 +200,7 @@ public class ModelsPermissionList {
 
           // validate the optional field `permissions` (array)
           for (int i = 0; i < jsonArraypermissions.size(); i++) {
-            GithubComMonadIncCorePkgTypesModelsPermission.validateJsonElement(jsonArraypermissions.get(i));
+            ModelsPermission.validateJsonElement(jsonArraypermissions.get(i));
           };
         }
       }

@@ -24,6 +24,8 @@ type TailscaleUsersSettingsConfig struct {
 	Cron *string `json:"cron,omitempty"`
 	// The tailnet organization name. Defaults to \"-\" to reference the default organization.
 	OrganizationId *string `json:"organization_id,omitempty"`
+	// Generate synthetic demo data instead of connecting to the real data source.
+	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 	// Allows for filtering the output by user role.
 	UserRoleOption *string `json:"user_role_option,omitempty"`
 	// Allows for filtering the output by user type.
@@ -111,6 +113,38 @@ func (o *TailscaleUsersSettingsConfig) SetOrganizationId(v string) {
 	o.OrganizationId = &v
 }
 
+// GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
+func (o *TailscaleUsersSettingsConfig) GetUseSyntheticData() bool {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		var ret bool
+		return ret
+	}
+	return *o.UseSyntheticData
+}
+
+// GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TailscaleUsersSettingsConfig) GetUseSyntheticDataOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		return nil, false
+	}
+	return o.UseSyntheticData, true
+}
+
+// HasUseSyntheticData returns a boolean if a field has been set.
+func (o *TailscaleUsersSettingsConfig) HasUseSyntheticData() bool {
+	if o != nil && !IsNil(o.UseSyntheticData) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseSyntheticData gets a reference to the given bool and assigns it to the UseSyntheticData field.
+func (o *TailscaleUsersSettingsConfig) SetUseSyntheticData(v bool) {
+	o.UseSyntheticData = &v
+}
+
 // GetUserRoleOption returns the UserRoleOption field value if set, zero value otherwise.
 func (o *TailscaleUsersSettingsConfig) GetUserRoleOption() string {
 	if o == nil || IsNil(o.UserRoleOption) {
@@ -190,6 +224,9 @@ func (o TailscaleUsersSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.OrganizationId) {
 		toSerialize["organization_id"] = o.OrganizationId
+	}
+	if !IsNil(o.UseSyntheticData) {
+		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	if !IsNil(o.UserRoleOption) {
 		toSerialize["user_role_option"] = o.UserRoleOption

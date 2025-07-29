@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cron** | **str** | Cron expression for scheduling the input | [optional] 
 **organization_id** | **str** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **user_role_option** | **str** | Allows for filtering the output by user role. | [optional] 
 **user_type_option** | **str** | Allows for filtering the output by user type. | [optional] 
 

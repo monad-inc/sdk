@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.security_groups_filter import SecurityGroupsFilter
 from typing import Optional, Set
@@ -32,7 +32,8 @@ class SecurityGroupsSettingsConfig(BaseModel):
     filters: Optional[List[SecurityGroupsFilter]] = Field(default=None, description="Filters for the security groups")
     region: Optional[StrictStr] = Field(default=None, description="The AWS region where the security groups that are being fetched are located.")
     role_arn: Optional[StrictStr] = Field(default=None, description="RoleArn is the ARN of the IAM role to assume for accessing AWS security groups.")
-    __properties: ClassVar[List[str]] = ["cron", "filters", "region", "role_arn"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["cron", "filters", "region", "role_arn", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,7 +96,8 @@ class SecurityGroupsSettingsConfig(BaseModel):
             "cron": obj.get("cron"),
             "filters": [SecurityGroupsFilter.from_dict(_item) for _item in obj["filters"]] if obj.get("filters") is not None else None,
             "region": obj.get("region"),
-            "role_arn": obj.get("role_arn")
+            "role_arn": obj.get("role_arn"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

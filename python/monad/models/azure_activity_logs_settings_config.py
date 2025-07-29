@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,7 +33,8 @@ class AzureActivityLogsSettingsConfig(BaseModel):
     resource_uri: Optional[StrictStr] = Field(default=None, description="The URI of the resource")
     subscription_id: Optional[StrictStr] = Field(default=None, description="The subscription ID of the Azure subscription")
     tenant_id: Optional[StrictStr] = Field(default=None, description="The tenant ID of the Azure AD application")
-    __properties: ClassVar[List[str]] = ["correlation_id", "resource_group_name", "resource_provider", "resource_uri", "subscription_id", "tenant_id"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["correlation_id", "resource_group_name", "resource_provider", "resource_uri", "subscription_id", "tenant_id", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,7 +92,8 @@ class AzureActivityLogsSettingsConfig(BaseModel):
             "resource_provider": obj.get("resource_provider"),
             "resource_uri": obj.get("resource_uri"),
             "subscription_id": obj.get("subscription_id"),
-            "tenant_id": obj.get("tenant_id")
+            "tenant_id": obj.get("tenant_id"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

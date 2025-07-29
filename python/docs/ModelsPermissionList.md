@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
-**permissions** | [**List[GithubComMonadIncCorePkgTypesModelsPermission]**](GithubComMonadIncCorePkgTypesModelsPermission.md) |  | [optional] 
+**permissions** | [**List[ModelsPermission]**](ModelsPermission.md) |  | [optional] 
 
 ## Example
 

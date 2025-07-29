@@ -12,6 +12,7 @@ AWS Cognito Users settings
 |**filter** | [**CognitoUsersFilter**](CognitoUsersFilter.md) |  |  [optional] |
 |**region** | **String** | The Region that you would receieve findings for |  [optional] |
 |**roleArn** | **String** | The ARN of the role to assume to access the bucket |  [optional] |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 |**userPoolId** | **String** | User Pool ID to extract users from |  [optional] |
 
 

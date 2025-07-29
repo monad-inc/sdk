@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,8 @@ class PaloAltoDataSecurityAlertsSettingsConfig(BaseModel):
     Palo Alto Data Security Alerts settings
     """ # noqa: E501
     base_url: Optional[StrictStr] = Field(default=None, description="URL of the organization")
-    __properties: ClassVar[List[str]] = ["base_url"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["base_url", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,7 +82,8 @@ class PaloAltoDataSecurityAlertsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "base_url": obj.get("base_url")
+            "base_url": obj.get("base_url"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

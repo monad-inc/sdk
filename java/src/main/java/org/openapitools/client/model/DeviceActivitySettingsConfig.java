@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Workspace Device Activity settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DeviceActivitySettingsConfig {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
@@ -59,6 +59,11 @@ public class DeviceActivitySettingsConfig {
   @SerializedName(SERIALIZED_NAME_EMAIL)
   @javax.annotation.Nullable
   private String email;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public DeviceActivitySettingsConfig() {
   }
@@ -101,6 +106,25 @@ public class DeviceActivitySettingsConfig {
   }
 
 
+  public DeviceActivitySettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -112,12 +136,13 @@ public class DeviceActivitySettingsConfig {
     }
     DeviceActivitySettingsConfig deviceActivitySettingsConfig = (DeviceActivitySettingsConfig) o;
     return Objects.equals(this.authType, deviceActivitySettingsConfig.authType) &&
-        Objects.equals(this.email, deviceActivitySettingsConfig.email);
+        Objects.equals(this.email, deviceActivitySettingsConfig.email) &&
+        Objects.equals(this.useSyntheticData, deviceActivitySettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, email);
+    return Objects.hash(authType, email, useSyntheticData);
   }
 
   @Override
@@ -126,6 +151,7 @@ public class DeviceActivitySettingsConfig {
     sb.append("class DeviceActivitySettingsConfig {\n");
     sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -147,7 +173,7 @@ public class DeviceActivitySettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "email"));
+    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "email", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

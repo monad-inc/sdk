@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **prefix** | **str** | Prefix of the S3 object keys to read. | [optional] 
 **region** | **str** | The region of the S3 bucket | [optional] 
 **role_arn** | **str** | The ARN of the role to assume to access the bucket | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

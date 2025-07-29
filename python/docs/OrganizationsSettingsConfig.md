@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **parent_id** | **str** | Parent ID to list children for | [optional] 
 **region** | **str** | AWS region to use | [optional] 
 **role_arn** | **str** | Role ARN to assume | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

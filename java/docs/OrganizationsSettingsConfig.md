@@ -12,6 +12,7 @@
 |**parentId** | **String** | Parent ID to list children for |  [optional] |
 |**region** | **String** | AWS region to use |  [optional] |
 |**roleArn** | **String** | Role ARN to assume |  [optional] |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 
 
 

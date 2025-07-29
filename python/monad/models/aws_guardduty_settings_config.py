@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,8 @@ class AwsGuarddutySettingsConfig(BaseModel):
     region: Optional[StrictStr] = Field(default=None, description="The AWS region where GuardDuty is enabled.")
     role_arn: Optional[StrictStr] = Field(default=None, description="The ARN of the IAM role to assume for accessing GuardDuty.")
     severity: Optional[StrictStr] = Field(default=None, description="Filter findings by severity levels.")
-    __properties: ClassVar[List[str]] = ["region", "role_arn", "severity"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["region", "role_arn", "severity", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,7 +86,8 @@ class AwsGuarddutySettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "region": obj.get("region"),
             "role_arn": obj.get("role_arn"),
-            "severity": obj.get("severity")
+            "severity": obj.get("severity"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

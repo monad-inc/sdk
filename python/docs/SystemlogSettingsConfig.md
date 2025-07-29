@@ -7,6 +7,7 @@ Okta system log settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **org_url** | **str** | The URL of the Okta organization | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,8 @@ class OneloginEventsSettingsConfig(BaseModel):
     Onelogin Events settings
     """ # noqa: E501
     subdomain: Optional[StrictStr] = Field(default=None, description="SubDomain is a placeholder that represents your specific OneLogin subdomain.")
-    __properties: ClassVar[List[str]] = ["subdomain"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["subdomain", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,7 +82,8 @@ class OneloginEventsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "subdomain": obj.get("subdomain")
+            "subdomain": obj.get("subdomain"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

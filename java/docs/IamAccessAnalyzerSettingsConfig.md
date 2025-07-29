@@ -13,6 +13,7 @@ AWS IAM Access Analyzer settings
 |**filters** | [**List&lt;IamAccessAnalyzerFilter&gt;**](IamAccessAnalyzerFilter.md) | A filter to match for the findings to return. |  [optional] |
 |**region** | **String** | The Region that you would receieve findings for |  [optional] |
 |**roleArn** | **String** | The ARN of the role to assume to access the bucket |  [optional] |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 
 
 

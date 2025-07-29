@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **FleetUrl** | Pointer to **string** | URL of the Fleet DM instance | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **ActorType** | Pointer to **string** | Type of actor. Ex: &#39;APT&#39;, &#39;eCrime&#39;, &#39;Hacktivist&#39;, &#39;Insider Threat&#39;, &#39;Nation-State&#39;, &#39;Unknown&#39;, &#39;Other&#39;, etc. Select &#39;None&#39; for no preference. | [optional] 
 **CloudType** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **Cron** | Pointer to **string** | Cron expression to schedule the data collection. | [optional] 
@@ -66,9 +67,6 @@ Name | Type | Description | Notes
 **AwsS3Url** | Pointer to **string** | The URL of the S3 bucket | [optional] 
 **VisibilityTimeout** | Pointer to **int32** | Time in seconds before a message is returned back to the SQS queue | [optional] 
 **Category** | Pointer to **string** | The Category of logs to query | [optional] 
-**Rate** | Pointer to **int32** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
-**RecordType** | Pointer to **string** | The type of record to generate | [optional] 
-**CustomTemplate** | Pointer to **string** | A custom template using the functions we provide to generate demo data | [optional] 
 **FieldOption** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
 **WorkspaceId** | Pointer to **string** | The workspace ID of the Log Analytics workspace | [optional] 
@@ -125,6 +123,9 @@ Name | Type | Description | Notes
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
 **Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
+**Rate** | Pointer to **int32** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
+**RecordType** | Pointer to **string** | The type of record to generate | [optional] 
+**CustomTemplate** | Pointer to **string** | A custom template using the functions we provide to generate demo data | [optional] 
 **OrgUrl** | Pointer to **string** | The URL of the Okta organization | [optional] 
 **UserRoleOption** | Pointer to **string** | Allows for filtering the output by user role. | [optional] 
 **UserTypeOption** | Pointer to **string** | Allows for filtering the output by user type. | [optional] 
@@ -176,6 +177,31 @@ SetFleetUrl sets FleetUrl field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasFleetUrl() bool`
 
 HasFleetUrl returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 ### GetActorType
 
@@ -1702,81 +1728,6 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
-### GetRate
-
-`func (o *SecretProcessesorInputConfigSettings) GetRate() int32`
-
-GetRate returns the Rate field if non-nil, zero value otherwise.
-
-### GetRateOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetRateOk() (*int32, bool)`
-
-GetRateOk returns a tuple with the Rate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRate
-
-`func (o *SecretProcessesorInputConfigSettings) SetRate(v int32)`
-
-SetRate sets Rate field to given value.
-
-### HasRate
-
-`func (o *SecretProcessesorInputConfigSettings) HasRate() bool`
-
-HasRate returns a boolean if a field has been set.
-
-### GetRecordType
-
-`func (o *SecretProcessesorInputConfigSettings) GetRecordType() string`
-
-GetRecordType returns the RecordType field if non-nil, zero value otherwise.
-
-### GetRecordTypeOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetRecordTypeOk() (*string, bool)`
-
-GetRecordTypeOk returns a tuple with the RecordType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRecordType
-
-`func (o *SecretProcessesorInputConfigSettings) SetRecordType(v string)`
-
-SetRecordType sets RecordType field to given value.
-
-### HasRecordType
-
-`func (o *SecretProcessesorInputConfigSettings) HasRecordType() bool`
-
-HasRecordType returns a boolean if a field has been set.
-
-### GetCustomTemplate
-
-`func (o *SecretProcessesorInputConfigSettings) GetCustomTemplate() string`
-
-GetCustomTemplate returns the CustomTemplate field if non-nil, zero value otherwise.
-
-### GetCustomTemplateOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetCustomTemplateOk() (*string, bool)`
-
-GetCustomTemplateOk returns a tuple with the CustomTemplate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomTemplate
-
-`func (o *SecretProcessesorInputConfigSettings) SetCustomTemplate(v string)`
-
-SetCustomTemplate sets CustomTemplate field to given value.
-
-### HasCustomTemplate
-
-`func (o *SecretProcessesorInputConfigSettings) HasCustomTemplate() bool`
-
-HasCustomTemplate returns a boolean if a field has been set.
-
 ### GetFieldOption
 
 `func (o *SecretProcessesorInputConfigSettings) GetFieldOption() string`
@@ -3176,6 +3127,81 @@ SetWarehouse sets Warehouse field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasWarehouse() bool`
 
 HasWarehouse returns a boolean if a field has been set.
+
+### GetRate
+
+`func (o *SecretProcessesorInputConfigSettings) GetRate() int32`
+
+GetRate returns the Rate field if non-nil, zero value otherwise.
+
+### GetRateOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetRateOk() (*int32, bool)`
+
+GetRateOk returns a tuple with the Rate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRate
+
+`func (o *SecretProcessesorInputConfigSettings) SetRate(v int32)`
+
+SetRate sets Rate field to given value.
+
+### HasRate
+
+`func (o *SecretProcessesorInputConfigSettings) HasRate() bool`
+
+HasRate returns a boolean if a field has been set.
+
+### GetRecordType
+
+`func (o *SecretProcessesorInputConfigSettings) GetRecordType() string`
+
+GetRecordType returns the RecordType field if non-nil, zero value otherwise.
+
+### GetRecordTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetRecordTypeOk() (*string, bool)`
+
+GetRecordTypeOk returns a tuple with the RecordType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecordType
+
+`func (o *SecretProcessesorInputConfigSettings) SetRecordType(v string)`
+
+SetRecordType sets RecordType field to given value.
+
+### HasRecordType
+
+`func (o *SecretProcessesorInputConfigSettings) HasRecordType() bool`
+
+HasRecordType returns a boolean if a field has been set.
+
+### GetCustomTemplate
+
+`func (o *SecretProcessesorInputConfigSettings) GetCustomTemplate() string`
+
+GetCustomTemplate returns the CustomTemplate field if non-nil, zero value otherwise.
+
+### GetCustomTemplateOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetCustomTemplateOk() (*string, bool)`
+
+GetCustomTemplateOk returns a tuple with the CustomTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomTemplate
+
+`func (o *SecretProcessesorInputConfigSettings) SetCustomTemplate(v string)`
+
+SetCustomTemplate sets CustomTemplate field to given value.
+
+### HasCustomTemplate
+
+`func (o *SecretProcessesorInputConfigSettings) HasCustomTemplate() bool`
+
+HasCustomTemplate returns a boolean if a field has been set.
 
 ### GetOrgUrl
 

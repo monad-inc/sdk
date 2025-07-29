@@ -24,6 +24,10 @@ export class SlackUsersSettingsConfig {
     * Team ID to filter user results by
     */
     'teamId'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -40,6 +44,12 @@ export class SlackUsersSettingsConfig {
             "name": "teamId",
             "baseName": "team_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,9 +29,10 @@ class TailscaleUsersSettingsConfig(BaseModel):
     """ # noqa: E501
     cron: Optional[StrictStr] = Field(default=None, description="Cron expression for scheduling the input")
     organization_id: Optional[StrictStr] = Field(default=None, description="The tailnet organization name. Defaults to \"-\" to reference the default organization.")
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     user_role_option: Optional[StrictStr] = Field(default=None, description="Allows for filtering the output by user role.")
     user_type_option: Optional[StrictStr] = Field(default=None, description="Allows for filtering the output by user type.")
-    __properties: ClassVar[List[str]] = ["cron", "organization_id", "user_role_option", "user_type_option"]
+    __properties: ClassVar[List[str]] = ["cron", "organization_id", "use_synthetic_data", "user_role_option", "user_type_option"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +87,7 @@ class TailscaleUsersSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "cron": obj.get("cron"),
             "organization_id": obj.get("organization_id"),
+            "use_synthetic_data": obj.get("use_synthetic_data"),
             "user_role_option": obj.get("user_role_option"),
             "user_type_option": obj.get("user_type_option")
         })

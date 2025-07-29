@@ -7,6 +7,7 @@ Onelogin Events settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **subdomain** | **str** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

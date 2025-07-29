@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**fleetUrl** | **String** | URL of the Fleet DM instance |  [optional] |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 |**actorType** | **String** | Type of actor. Ex: &#39;APT&#39;, &#39;eCrime&#39;, &#39;Hacktivist&#39;, &#39;Insider Threat&#39;, &#39;Nation-State&#39;, &#39;Unknown&#39;, &#39;Other&#39;, etc. Select &#39;None&#39; for no preference. |  [optional] |
 |**cloudType** | **String** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. |  [optional] |
 |**cron** | **String** | Cron expression to schedule the data collection. |  [optional] |
@@ -69,9 +70,6 @@
 |**awsS3Url** | **String** | The URL of the S3 bucket |  [optional] |
 |**visibilityTimeout** | **Integer** | Time in seconds before a message is returned back to the SQS queue |  [optional] |
 |**category** | **String** | The Category of logs to query |  [optional] |
-|**rate** | **Integer** | The rate at which to generate records (between 1 and 1000) per second |  [optional] |
-|**recordType** | **String** | The type of record to generate |  [optional] |
-|**customTemplate** | **String** | A custom template using the functions we provide to generate demo data |  [optional] |
 |**fieldOption** | **String** |  |  [optional] |
 |**organizationId** | **String** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. |  [optional] |
 |**workspaceId** | **String** | The workspace ID of the Log Analytics workspace |  [optional] |
@@ -128,6 +126,9 @@
 |**role** | **String** | The name of the Role your service account was granted which can access your resources. |  [optional] |
 |**schema** | **String** | The schema within the Snowflake database where the target table resides. |  [optional] |
 |**warehouse** | **String** | The Snowflake virtual warehouse to use for executing queries and processing data. |  [optional] |
+|**rate** | **Integer** | The rate at which to generate records (between 1 and 1000) per second |  [optional] |
+|**recordType** | **String** | The type of record to generate |  [optional] |
+|**customTemplate** | **String** | A custom template using the functions we provide to generate demo data |  [optional] |
 |**orgUrl** | **String** | The URL of the Okta organization |  [optional] |
 |**userRoleOption** | **String** | Allows for filtering the output by user role. |  [optional] |
 |**userTypeOption** | **String** | Allows for filtering the output by user type. |  [optional] |

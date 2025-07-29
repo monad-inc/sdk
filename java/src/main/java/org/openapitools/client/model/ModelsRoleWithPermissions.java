@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsPermission;
+import org.openapitools.client.model.ModelsPermission;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsRoleWithPermissions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsRoleWithPermissions {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -81,7 +81,7 @@ public class ModelsRoleWithPermissions {
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
   @javax.annotation.Nullable
-  private List<GithubComMonadIncCorePkgTypesModelsPermission> permissions = new ArrayList<>();
+  private List<ModelsPermission> permissions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PROTECTED = "protected";
   @SerializedName(SERIALIZED_NAME_PROTECTED)
@@ -191,12 +191,12 @@ public class ModelsRoleWithPermissions {
   }
 
 
-  public ModelsRoleWithPermissions permissions(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsPermission> permissions) {
+  public ModelsRoleWithPermissions permissions(@javax.annotation.Nullable List<ModelsPermission> permissions) {
     this.permissions = permissions;
     return this;
   }
 
-  public ModelsRoleWithPermissions addPermissionsItem(GithubComMonadIncCorePkgTypesModelsPermission permissionsItem) {
+  public ModelsRoleWithPermissions addPermissionsItem(ModelsPermission permissionsItem) {
     if (this.permissions == null) {
       this.permissions = new ArrayList<>();
     }
@@ -209,11 +209,11 @@ public class ModelsRoleWithPermissions {
    * @return permissions
    */
   @javax.annotation.Nullable
-  public List<GithubComMonadIncCorePkgTypesModelsPermission> getPermissions() {
+  public List<ModelsPermission> getPermissions() {
     return permissions;
   }
 
-  public void setPermissions(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsPermission> permissions) {
+  public void setPermissions(@javax.annotation.Nullable List<ModelsPermission> permissions) {
     this.permissions = permissions;
   }
 
@@ -366,7 +366,7 @@ public class ModelsRoleWithPermissions {
 
           // validate the optional field `permissions` (array)
           for (int i = 0; i < jsonArraypermissions.size(); i++) {
-            GithubComMonadIncCorePkgTypesModelsPermission.validateJsonElement(jsonArraypermissions.get(i));
+            ModelsPermission.validateJsonElement(jsonArraypermissions.get(i));
           };
         }
       }

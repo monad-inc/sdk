@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **auth_type** | **str** | Authentication type (service_account or oauth) | [optional] 
 **cron** | **str** | Cron expression to schedule the data collection. | [optional] 
 **email** | **str** | Email address to use to authenticate with Google Cloud (required for service_account auth). | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

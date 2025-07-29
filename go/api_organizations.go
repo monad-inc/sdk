@@ -315,7 +315,7 @@ func (r ApiV1OrganizationsOrganizationIdPatchRequest) RoutesUpdateOrganizationRe
 	return r
 }
 
-func (r ApiV1OrganizationsOrganizationIdPatchRequest) Execute() (*GithubComMonadIncCorePkgTypesModelsOrganization, *http.Response, error) {
+func (r ApiV1OrganizationsOrganizationIdPatchRequest) Execute() (*ModelsOrganization, *http.Response, error) {
 	return r.ApiService.V1OrganizationsOrganizationIdPatchExecute(r)
 }
 
@@ -337,13 +337,13 @@ func (a *OrganizationsAPIService) V1OrganizationsOrganizationIdPatch(ctx context
 }
 
 // Execute executes the request
-//  @return GithubComMonadIncCorePkgTypesModelsOrganization
-func (a *OrganizationsAPIService) V1OrganizationsOrganizationIdPatchExecute(r ApiV1OrganizationsOrganizationIdPatchRequest) (*GithubComMonadIncCorePkgTypesModelsOrganization, *http.Response, error) {
+//  @return ModelsOrganization
+func (a *OrganizationsAPIService) V1OrganizationsOrganizationIdPatchExecute(r ApiV1OrganizationsOrganizationIdPatchRequest) (*ModelsOrganization, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GithubComMonadIncCorePkgTypesModelsOrganization
+		localVarReturnValue  *ModelsOrganization
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.V1OrganizationsOrganizationIdPatch")
@@ -457,7 +457,7 @@ func (r ApiV1OrganizationsPostRequest) RoutesCreateOrganizationRequest(routesCre
 	return r
 }
 
-func (r ApiV1OrganizationsPostRequest) Execute() (*GithubComMonadIncCorePkgTypesModelsOrganization, *http.Response, error) {
+func (r ApiV1OrganizationsPostRequest) Execute() (*ModelsOrganization, *http.Response, error) {
 	return r.ApiService.V1OrganizationsPostExecute(r)
 }
 
@@ -477,13 +477,13 @@ func (a *OrganizationsAPIService) V1OrganizationsPost(ctx context.Context) ApiV1
 }
 
 // Execute executes the request
-//  @return GithubComMonadIncCorePkgTypesModelsOrganization
-func (a *OrganizationsAPIService) V1OrganizationsPostExecute(r ApiV1OrganizationsPostRequest) (*GithubComMonadIncCorePkgTypesModelsOrganization, *http.Response, error) {
+//  @return ModelsOrganization
+func (a *OrganizationsAPIService) V1OrganizationsPostExecute(r ApiV1OrganizationsPostRequest) (*ModelsOrganization, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GithubComMonadIncCorePkgTypesModelsOrganization
+		localVarReturnValue  *ModelsOrganization
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.V1OrganizationsPost")

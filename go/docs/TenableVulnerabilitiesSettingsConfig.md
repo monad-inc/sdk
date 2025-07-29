@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Cron** | Pointer to **string** | Cron expression to schedule the data collection. | [optional] 
-**FullSync** | Pointer to **bool** | Boolean to control weather the input performs full syncs or incremental syncs | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
@@ -26,55 +25,30 @@ NewTenableVulnerabilitiesSettingsConfigWithDefaults instantiates a new TenableVu
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCron
+### GetUseSyntheticData
 
-`func (o *TenableVulnerabilitiesSettingsConfig) GetCron() string`
+`func (o *TenableVulnerabilitiesSettingsConfig) GetUseSyntheticData() bool`
 
-GetCron returns the Cron field if non-nil, zero value otherwise.
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
 
-### GetCronOk
+### GetUseSyntheticDataOk
 
-`func (o *TenableVulnerabilitiesSettingsConfig) GetCronOk() (*string, bool)`
+`func (o *TenableVulnerabilitiesSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
 
-GetCronOk returns a tuple with the Cron field if it's non-nil, zero value otherwise
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCron
+### SetUseSyntheticData
 
-`func (o *TenableVulnerabilitiesSettingsConfig) SetCron(v string)`
+`func (o *TenableVulnerabilitiesSettingsConfig) SetUseSyntheticData(v bool)`
 
-SetCron sets Cron field to given value.
+SetUseSyntheticData sets UseSyntheticData field to given value.
 
-### HasCron
+### HasUseSyntheticData
 
-`func (o *TenableVulnerabilitiesSettingsConfig) HasCron() bool`
+`func (o *TenableVulnerabilitiesSettingsConfig) HasUseSyntheticData() bool`
 
-HasCron returns a boolean if a field has been set.
-
-### GetFullSync
-
-`func (o *TenableVulnerabilitiesSettingsConfig) GetFullSync() bool`
-
-GetFullSync returns the FullSync field if non-nil, zero value otherwise.
-
-### GetFullSyncOk
-
-`func (o *TenableVulnerabilitiesSettingsConfig) GetFullSyncOk() (*bool, bool)`
-
-GetFullSyncOk returns a tuple with the FullSync field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFullSync
-
-`func (o *TenableVulnerabilitiesSettingsConfig) SetFullSync(v bool)`
-
-SetFullSync sets FullSync field to given value.
-
-### HasFullSync
-
-`func (o *TenableVulnerabilitiesSettingsConfig) HasFullSync() bool`
-
-HasFullSync returns a boolean if a field has been set.
+HasUseSyntheticData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

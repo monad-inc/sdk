@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **include** | **str** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
 **organization** | **str** | Filter by organization name | [optional] 
 **repository** | **str** | Filter by repository (format: org-name/repo-name) | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **user** | **str** | Filter by the username that was affected by the action | [optional] 
 
 ## Example

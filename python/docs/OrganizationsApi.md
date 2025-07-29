@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_organizations_organization_id_patch**
-> GithubComMonadIncCorePkgTypesModelsOrganization v1_organizations_organization_id_patch(organization_id, routes_update_organization_request)
+> ModelsOrganization v1_organizations_organization_id_patch(organization_id, routes_update_organization_request)
 
 Update organization
 
@@ -198,7 +198,7 @@ Update organization
 
 ```python
 import monad
-from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
+from monad.models.models_organization import ModelsOrganization
 from monad.models.routes_update_organization_request import RoutesUpdateOrganizationRequest
 from monad.rest import ApiException
 from pprint import pprint
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_organizations_post**
-> GithubComMonadIncCorePkgTypesModelsOrganization v1_organizations_post(routes_create_organization_request)
+> ModelsOrganization v1_organizations_post(routes_create_organization_request)
 
 Create organization
 
@@ -287,7 +287,7 @@ Create organization
 
 ```python
 import monad
-from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
+from monad.models.models_organization import ModelsOrganization
 from monad.models.routes_create_organization_request import RoutesCreateOrganizationRequest
 from monad.rest import ApiException
 from pprint import pprint
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+[**ModelsOrganization**](ModelsOrganization.md)
 
 ### Authorization
 

@@ -32,6 +32,10 @@ export class EventsSettingsConfig {
     * Only include events that refer to this resource. Useful for discovering the history of a specific resource.
     */
     'resourceSid'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -60,6 +64,12 @@ export class EventsSettingsConfig {
             "name": "resourceSid",
             "baseName": "resource_sid",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

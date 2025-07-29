@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,8 +31,9 @@ class CrowdstrikeFdrSettingsConfig(BaseModel):
     aws_region_name: Optional[StrictStr] = Field(default=None, description="Name of the region where the queue resides")
     aws_s3_url: Optional[StrictStr] = Field(default=None, description="The URL of the S3 bucket")
     cron: Optional[StrictStr] = Field(default=None, description="The time in seconds to wait before each check of the queue for more messages")
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     visibility_timeout: Optional[StrictInt] = Field(default=None, description="Time in seconds before a message is returned back to the SQS queue")
-    __properties: ClassVar[List[str]] = ["aws_queue_url", "aws_region_name", "aws_s3_url", "cron", "visibility_timeout"]
+    __properties: ClassVar[List[str]] = ["aws_queue_url", "aws_region_name", "aws_s3_url", "cron", "use_synthetic_data", "visibility_timeout"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +90,7 @@ class CrowdstrikeFdrSettingsConfig(BaseModel):
             "aws_region_name": obj.get("aws_region_name"),
             "aws_s3_url": obj.get("aws_s3_url"),
             "cron": obj.get("cron"),
+            "use_synthetic_data": obj.get("use_synthetic_data"),
             "visibility_timeout": obj.get("visibility_timeout")
         })
         return _obj

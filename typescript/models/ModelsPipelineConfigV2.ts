@@ -24,6 +24,7 @@ export class ModelsPipelineConfigV2 {
     'edges'?: Array<ModelsPipelineEdge>;
     'enabled'?: boolean;
     'id'?: string;
+    'isSynthetic'?: boolean;
     'name'?: string;
     'nextCronRunAt'?: string;
     'nodes'?: Array<ModelsPipelineNode>;
@@ -83,6 +84,12 @@ export class ModelsPipelineConfigV2 {
             "name": "id",
             "baseName": "id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "isSynthetic",
+            "baseName": "is_synthetic",
+            "type": "boolean",
             "format": ""
         },
         {

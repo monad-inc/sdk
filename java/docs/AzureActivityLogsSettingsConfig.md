@@ -14,6 +14,7 @@ Microsoft Azure Activity Logs settings
 |**resourceUri** | **String** | The URI of the resource |  [optional] |
 |**subscriptionId** | **String** | The subscription ID of the Azure subscription |  [optional] |
 |**tenantId** | **String** | The tenant ID of the Azure AD application |  [optional] |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 
 
 

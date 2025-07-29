@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * SecretsmanagerSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class SecretsmanagerSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
@@ -77,6 +77,11 @@ public class SecretsmanagerSettingsConfig {
   @SerializedName(SERIALIZED_NAME_ROLE_ARN)
   @javax.annotation.Nullable
   private String roleArn;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public SecretsmanagerSettingsConfig() {
   }
@@ -184,6 +189,25 @@ public class SecretsmanagerSettingsConfig {
   }
 
 
+  public SecretsmanagerSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -198,12 +222,13 @@ public class SecretsmanagerSettingsConfig {
         Objects.equals(this.filters, secretsmanagerSettingsConfig.filters) &&
         Objects.equals(this.includePlannedDeletion, secretsmanagerSettingsConfig.includePlannedDeletion) &&
         Objects.equals(this.region, secretsmanagerSettingsConfig.region) &&
-        Objects.equals(this.roleArn, secretsmanagerSettingsConfig.roleArn);
+        Objects.equals(this.roleArn, secretsmanagerSettingsConfig.roleArn) &&
+        Objects.equals(this.useSyntheticData, secretsmanagerSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cron, filters, includePlannedDeletion, region, roleArn);
+    return Objects.hash(cron, filters, includePlannedDeletion, region, roleArn, useSyntheticData);
   }
 
   @Override
@@ -215,6 +240,7 @@ public class SecretsmanagerSettingsConfig {
     sb.append("    includePlannedDeletion: ").append(toIndentedString(includePlannedDeletion)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -236,7 +262,7 @@ public class SecretsmanagerSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cron", "filters", "include_planned_deletion", "region", "role_arn"));
+    openapiFields = new HashSet<String>(Arrays.asList("cron", "filters", "include_planned_deletion", "region", "role_arn", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

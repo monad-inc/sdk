@@ -28,6 +28,10 @@ export class AwsGuarddutySettingsConfig {
     * Filter findings by severity levels.
     */
     'severity'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -50,6 +54,12 @@ export class AwsGuarddutySettingsConfig {
             "name": "severity",
             "baseName": "severity",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

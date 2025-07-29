@@ -20,6 +20,10 @@ export class DetectSummariesSettingsConfig {
     * Your cloud type for CrowdStrike. Ex: \'autodiscover\', \'us-1\', \'us-2\', \'eu-1\', \'us-gov-1\'.
     */
     'cloudType'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,6 +34,12 @@ export class DetectSummariesSettingsConfig {
             "name": "cloudType",
             "baseName": "cloud_type",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

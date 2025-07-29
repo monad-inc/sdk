@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Tines Events Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class EventsLogsSettingsConfig {
   public static final String SERIALIZED_NAME_STORY_ID = "story_id";
   @SerializedName(SERIALIZED_NAME_STORY_ID)
@@ -64,6 +64,11 @@ public class EventsLogsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_TENANT_URL)
   @javax.annotation.Nullable
   private String tenantUrl;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public EventsLogsSettingsConfig() {
   }
@@ -125,6 +130,25 @@ public class EventsLogsSettingsConfig {
   }
 
 
+  public EventsLogsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -137,12 +161,13 @@ public class EventsLogsSettingsConfig {
     EventsLogsSettingsConfig eventsLogsSettingsConfig = (EventsLogsSettingsConfig) o;
     return Objects.equals(this.storyId, eventsLogsSettingsConfig.storyId) &&
         Objects.equals(this.teamId, eventsLogsSettingsConfig.teamId) &&
-        Objects.equals(this.tenantUrl, eventsLogsSettingsConfig.tenantUrl);
+        Objects.equals(this.tenantUrl, eventsLogsSettingsConfig.tenantUrl) &&
+        Objects.equals(this.useSyntheticData, eventsLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(storyId, teamId, tenantUrl);
+    return Objects.hash(storyId, teamId, tenantUrl, useSyntheticData);
   }
 
   @Override
@@ -152,6 +177,7 @@ public class EventsLogsSettingsConfig {
     sb.append("    storyId: ").append(toIndentedString(storyId)).append("\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    tenantUrl: ").append(toIndentedString(tenantUrl)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -173,7 +199,7 @@ public class EventsLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("story_id", "team_id", "tenant_url"));
+    openapiFields = new HashSet<String>(Arrays.asList("story_id", "team_id", "tenant_url", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

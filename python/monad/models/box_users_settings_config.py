@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,8 @@ class BoxUsersSettingsConfig(BaseModel):
     """ # noqa: E501
     cron: Optional[StrictStr] = Field(default=None, description="Cron string for scheduling the ingest of your input")
     filter_term: Optional[StrictStr] = Field(default=None, description="Limits the results to only users who's name or login start with the search term.")
-    __properties: ClassVar[List[str]] = ["cron", "filter_term"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["cron", "filter_term", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,7 +84,8 @@ class BoxUsersSettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "cron": obj.get("cron"),
-            "filter_term": obj.get("filter_term")
+            "filter_term": obj.get("filter_term"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

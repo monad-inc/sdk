@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS Guardduty settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AwsGuarddutySettingsConfig {
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
@@ -64,6 +64,11 @@ public class AwsGuarddutySettingsConfig {
   @SerializedName(SERIALIZED_NAME_SEVERITY)
   @javax.annotation.Nullable
   private String severity;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public AwsGuarddutySettingsConfig() {
   }
@@ -125,6 +130,25 @@ public class AwsGuarddutySettingsConfig {
   }
 
 
+  public AwsGuarddutySettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -137,12 +161,13 @@ public class AwsGuarddutySettingsConfig {
     AwsGuarddutySettingsConfig awsGuarddutySettingsConfig = (AwsGuarddutySettingsConfig) o;
     return Objects.equals(this.region, awsGuarddutySettingsConfig.region) &&
         Objects.equals(this.roleArn, awsGuarddutySettingsConfig.roleArn) &&
-        Objects.equals(this.severity, awsGuarddutySettingsConfig.severity);
+        Objects.equals(this.severity, awsGuarddutySettingsConfig.severity) &&
+        Objects.equals(this.useSyntheticData, awsGuarddutySettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(region, roleArn, severity);
+    return Objects.hash(region, roleArn, severity, useSyntheticData);
   }
 
   @Override
@@ -152,6 +177,7 @@ public class AwsGuarddutySettingsConfig {
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
     sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -173,7 +199,7 @@ public class AwsGuarddutySettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("region", "role_arn", "severity"));
+    openapiFields = new HashSet<String>(Arrays.asList("region", "role_arn", "severity", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

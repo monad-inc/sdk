@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,8 @@ class BoxEventsSettingsConfig(BaseModel):
     Box Events secrets
     """ # noqa: E501
     event_type: Optional[List[StrictStr]] = Field(default=None, description="A list of event types to filter by.")
-    __properties: ClassVar[List[str]] = ["event_type"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["event_type", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,7 +82,8 @@ class BoxEventsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "event_type": obj.get("event_type")
+            "event_type": obj.get("event_type"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

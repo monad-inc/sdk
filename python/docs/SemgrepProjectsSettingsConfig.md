@@ -7,6 +7,7 @@ Semgrep projects settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cron** | **str** | Cron string for scheduling the ingest of your input. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

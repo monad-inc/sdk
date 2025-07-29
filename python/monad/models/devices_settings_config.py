@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,8 @@ class DevicesSettingsConfig(BaseModel):
     cron: Optional[StrictStr] = Field(default=None, description="Cron expression for scheduling the input")
     field_option: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = Field(default=None, description="The tailnet organization name. Defaults to \"-\" to reference the default organization.")
-    __properties: ClassVar[List[str]] = ["cron", "field_option", "organization_id"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["cron", "field_option", "organization_id", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,7 +86,8 @@ class DevicesSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "cron": obj.get("cron"),
             "field_option": obj.get("field_option"),
-            "organization_id": obj.get("organization_id")
+            "organization_id": obj.get("organization_id"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

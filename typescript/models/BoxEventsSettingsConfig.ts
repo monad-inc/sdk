@@ -20,6 +20,10 @@ export class BoxEventsSettingsConfig {
     * A list of event types to filter by.
     */
     'eventType'?: Array<string>;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,6 +34,12 @@ export class BoxEventsSettingsConfig {
             "name": "eventType",
             "baseName": "event_type",
             "type": "Array<string>",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

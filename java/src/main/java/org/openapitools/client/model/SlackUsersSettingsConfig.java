@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Slack Users settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class SlackUsersSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
@@ -59,6 +59,11 @@ public class SlackUsersSettingsConfig {
   @SerializedName(SERIALIZED_NAME_TEAM_ID)
   @javax.annotation.Nullable
   private String teamId;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public SlackUsersSettingsConfig() {
   }
@@ -101,6 +106,25 @@ public class SlackUsersSettingsConfig {
   }
 
 
+  public SlackUsersSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -112,12 +136,13 @@ public class SlackUsersSettingsConfig {
     }
     SlackUsersSettingsConfig slackUsersSettingsConfig = (SlackUsersSettingsConfig) o;
     return Objects.equals(this.cron, slackUsersSettingsConfig.cron) &&
-        Objects.equals(this.teamId, slackUsersSettingsConfig.teamId);
+        Objects.equals(this.teamId, slackUsersSettingsConfig.teamId) &&
+        Objects.equals(this.useSyntheticData, slackUsersSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cron, teamId);
+    return Objects.hash(cron, teamId, useSyntheticData);
   }
 
   @Override
@@ -126,6 +151,7 @@ public class SlackUsersSettingsConfig {
     sb.append("class SlackUsersSettingsConfig {\n");
     sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -147,7 +173,7 @@ public class SlackUsersSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cron", "team_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("cron", "team_id", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

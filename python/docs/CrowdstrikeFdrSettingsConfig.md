@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **aws_region_name** | **str** | Name of the region where the queue resides | [optional] 
 **aws_s3_url** | **str** | The URL of the S3 bucket | [optional] 
 **cron** | **str** | The time in seconds to wait before each check of the queue for more messages | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **visibility_timeout** | **int** | Time in seconds before a message is returned back to the SQS queue | [optional] 
 
 ## Example

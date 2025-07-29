@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Gitlab Issues settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class GitlabIssuesSettingsConfig {
   public static final String SERIALIZED_NAME_CONFIDENTIAL = "confidential";
   @SerializedName(SERIALIZED_NAME_CONFIDENTIAL)
@@ -74,6 +74,11 @@ public class GitlabIssuesSettingsConfig {
   @SerializedName(SERIALIZED_NAME_STATE)
   @javax.annotation.Nullable
   private String state;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public static final String SERIALIZED_NAME_WITH_LABEL_DETAILS = "with_label_details";
   @SerializedName(SERIALIZED_NAME_WITH_LABEL_DETAILS)
@@ -178,6 +183,25 @@ public class GitlabIssuesSettingsConfig {
   }
 
 
+  public GitlabIssuesSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
   public GitlabIssuesSettingsConfig withLabelDetails(@javax.annotation.Nullable Boolean withLabelDetails) {
     this.withLabelDetails = withLabelDetails;
     return this;
@@ -212,12 +236,13 @@ public class GitlabIssuesSettingsConfig {
         Objects.equals(this.issueType, gitlabIssuesSettingsConfig.issueType) &&
         Objects.equals(this.projectId, gitlabIssuesSettingsConfig.projectId) &&
         Objects.equals(this.state, gitlabIssuesSettingsConfig.state) &&
+        Objects.equals(this.useSyntheticData, gitlabIssuesSettingsConfig.useSyntheticData) &&
         Objects.equals(this.withLabelDetails, gitlabIssuesSettingsConfig.withLabelDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(confidential, gitlabUrl, issueType, projectId, state, withLabelDetails);
+    return Objects.hash(confidential, gitlabUrl, issueType, projectId, state, useSyntheticData, withLabelDetails);
   }
 
   @Override
@@ -229,6 +254,7 @@ public class GitlabIssuesSettingsConfig {
     sb.append("    issueType: ").append(toIndentedString(issueType)).append("\n");
     sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("    withLabelDetails: ").append(toIndentedString(withLabelDetails)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -251,7 +277,7 @@ public class GitlabIssuesSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("confidential", "gitlab_url", "issue_type", "project_id", "state", "with_label_details"));
+    openapiFields = new HashSet<String>(Arrays.asList("confidential", "gitlab_url", "issue_type", "project_id", "state", "use_synthetic_data", "with_label_details"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

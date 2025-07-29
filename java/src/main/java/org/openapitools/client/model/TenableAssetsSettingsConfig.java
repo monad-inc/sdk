@@ -48,56 +48,32 @@ import org.openapitools.client.JSON;
 /**
  * Tenable assets settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T22:04:32.898934686Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class TenableAssetsSettingsConfig {
-  public static final String SERIALIZED_NAME_CRON = "cron";
-  @SerializedName(SERIALIZED_NAME_CRON)
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
   @javax.annotation.Nullable
-  private String cron;
-
-  public static final String SERIALIZED_NAME_FULL_SYNC = "full_sync";
-  @SerializedName(SERIALIZED_NAME_FULL_SYNC)
-  @javax.annotation.Nullable
-  private Boolean fullSync;
+  private Boolean useSyntheticData;
 
   public TenableAssetsSettingsConfig() {
   }
 
-  public TenableAssetsSettingsConfig cron(@javax.annotation.Nullable String cron) {
-    this.cron = cron;
+  public TenableAssetsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
     return this;
   }
 
   /**
-   * Cron expression to schedule the data collection.
-   * @return cron
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
    */
   @javax.annotation.Nullable
-  public String getCron() {
-    return cron;
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
   }
 
-  public void setCron(@javax.annotation.Nullable String cron) {
-    this.cron = cron;
-  }
-
-
-  public TenableAssetsSettingsConfig fullSync(@javax.annotation.Nullable Boolean fullSync) {
-    this.fullSync = fullSync;
-    return this;
-  }
-
-  /**
-   * Boolean to control weather the input performs full syncs or incremental syncs
-   * @return fullSync
-   */
-  @javax.annotation.Nullable
-  public Boolean getFullSync() {
-    return fullSync;
-  }
-
-  public void setFullSync(@javax.annotation.Nullable Boolean fullSync) {
-    this.fullSync = fullSync;
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
   }
 
 
@@ -111,21 +87,19 @@ public class TenableAssetsSettingsConfig {
       return false;
     }
     TenableAssetsSettingsConfig tenableAssetsSettingsConfig = (TenableAssetsSettingsConfig) o;
-    return Objects.equals(this.cron, tenableAssetsSettingsConfig.cron) &&
-        Objects.equals(this.fullSync, tenableAssetsSettingsConfig.fullSync);
+    return Objects.equals(this.useSyntheticData, tenableAssetsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cron, fullSync);
+    return Objects.hash(useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TenableAssetsSettingsConfig {\n");
-    sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
-    sb.append("    fullSync: ").append(toIndentedString(fullSync)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -147,12 +121,10 @@ public class TenableAssetsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("cron");
-    openapiFields.add("full_sync");
+    openapiFields = new HashSet<String>(Arrays.asList("use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -176,9 +148,6 @@ public class TenableAssetsSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("cron") != null && !jsonObj.get("cron").isJsonNull()) && !jsonObj.get("cron").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cron` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cron").toString()));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

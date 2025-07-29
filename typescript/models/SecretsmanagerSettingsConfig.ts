@@ -34,6 +34,10 @@ export class SecretsmanagerSettingsConfig {
     * The ID of the secret to describe
     */
     'roleArn'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -68,6 +72,12 @@ export class SecretsmanagerSettingsConfig {
             "name": "roleArn",
             "baseName": "role_arn",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

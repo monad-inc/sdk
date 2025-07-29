@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS Resource Evaluations settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ResourceEvaluationsSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
@@ -69,6 +69,11 @@ public class ResourceEvaluationsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_ROLE_ARN)
   @javax.annotation.Nullable
   private String roleArn;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public ResourceEvaluationsSettingsConfig() {
   }
@@ -149,6 +154,25 @@ public class ResourceEvaluationsSettingsConfig {
   }
 
 
+  public ResourceEvaluationsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -162,12 +186,13 @@ public class ResourceEvaluationsSettingsConfig {
     return Objects.equals(this.cron, resourceEvaluationsSettingsConfig.cron) &&
         Objects.equals(this.evaluationContextIdentifier, resourceEvaluationsSettingsConfig.evaluationContextIdentifier) &&
         Objects.equals(this.region, resourceEvaluationsSettingsConfig.region) &&
-        Objects.equals(this.roleArn, resourceEvaluationsSettingsConfig.roleArn);
+        Objects.equals(this.roleArn, resourceEvaluationsSettingsConfig.roleArn) &&
+        Objects.equals(this.useSyntheticData, resourceEvaluationsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cron, evaluationContextIdentifier, region, roleArn);
+    return Objects.hash(cron, evaluationContextIdentifier, region, roleArn, useSyntheticData);
   }
 
   @Override
@@ -178,6 +203,7 @@ public class ResourceEvaluationsSettingsConfig {
     sb.append("    evaluationContextIdentifier: ").append(toIndentedString(evaluationContextIdentifier)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -199,7 +225,7 @@ public class ResourceEvaluationsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cron", "evaluation_context_identifier", "region", "role_arn"));
+    openapiFields = new HashSet<String>(Arrays.asList("cron", "evaluation_context_identifier", "region", "role_arn", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

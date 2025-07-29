@@ -38,6 +38,7 @@ class ModelsPipelineConfigV2(BaseModel):
     edges: Optional[List[ModelsPipelineEdge]] = None
     enabled: Optional[StrictBool] = None
     id: Optional[StrictStr] = None
+    is_synthetic: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
     next_cron_run_at: Optional[StrictStr] = None
     nodes: Optional[List[ModelsPipelineNode]] = None
@@ -45,7 +46,7 @@ class ModelsPipelineConfigV2(BaseModel):
     organization_name: Optional[StrictStr] = Field(default=None, alias="organizationName")
     retention_policy: Optional[ModelsPipelineRetentionPolicy] = None
     updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
-    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"]
+    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "updatedAt"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -123,6 +124,7 @@ class ModelsPipelineConfigV2(BaseModel):
             "edges": [ModelsPipelineEdge.from_dict(_item) for _item in obj["edges"]] if obj.get("edges") is not None else None,
             "enabled": obj.get("enabled"),
             "id": obj.get("id"),
+            "is_synthetic": obj.get("is_synthetic"),
             "name": obj.get("name"),
             "next_cron_run_at": obj.get("next_cron_run_at"),
             "nodes": [ModelsPipelineNode.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None,

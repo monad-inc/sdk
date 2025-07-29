@@ -20,6 +20,10 @@ export class SystemlogSettingsConfig {
     * The URL of the Okta organization
     */
     'orgUrl'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,6 +34,12 @@ export class SystemlogSettingsConfig {
             "name": "orgUrl",
             "baseName": "org_url",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

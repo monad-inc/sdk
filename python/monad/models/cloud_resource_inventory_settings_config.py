@@ -32,7 +32,8 @@ class CloudResourceInventorySettingsConfig(BaseModel):
     entity_type: Optional[List[StrictStr]] = Field(default=None, description="Entity types for Wiz. Ex: 'ACCOUNT', 'REGION', 'VPC', 'SUBNET', 'INSTANCE'.", alias="entityType")
     full_snapshot: Optional[StrictBool] = Field(default=None, description="FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.")
     interval: Optional[StrictInt] = Field(default=None, description="Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.")
-    __properties: ClassVar[List[str]] = ["cloudPlatform", "endpoint_url", "entityType", "full_snapshot", "interval"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["cloudPlatform", "endpoint_url", "entityType", "full_snapshot", "interval", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,7 +90,8 @@ class CloudResourceInventorySettingsConfig(BaseModel):
             "endpoint_url": obj.get("endpoint_url"),
             "entityType": obj.get("entityType"),
             "full_snapshot": obj.get("full_snapshot"),
-            "interval": obj.get("interval")
+            "interval": obj.get("interval"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

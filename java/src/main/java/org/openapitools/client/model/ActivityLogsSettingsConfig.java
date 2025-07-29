@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * Fleet DM settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ActivityLogsSettingsConfig {
   public static final String SERIALIZED_NAME_FLEET_URL = "fleet_url";
   @SerializedName(SERIALIZED_NAME_FLEET_URL)
   @javax.annotation.Nullable
   private String fleetUrl;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public ActivityLogsSettingsConfig() {
   }
@@ -77,6 +82,25 @@ public class ActivityLogsSettingsConfig {
   }
 
 
+  public ActivityLogsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -87,12 +111,13 @@ public class ActivityLogsSettingsConfig {
       return false;
     }
     ActivityLogsSettingsConfig activityLogsSettingsConfig = (ActivityLogsSettingsConfig) o;
-    return Objects.equals(this.fleetUrl, activityLogsSettingsConfig.fleetUrl);
+    return Objects.equals(this.fleetUrl, activityLogsSettingsConfig.fleetUrl) &&
+        Objects.equals(this.useSyntheticData, activityLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fleetUrl);
+    return Objects.hash(fleetUrl, useSyntheticData);
   }
 
   @Override
@@ -100,6 +125,7 @@ public class ActivityLogsSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class ActivityLogsSettingsConfig {\n");
     sb.append("    fleetUrl: ").append(toIndentedString(fleetUrl)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -121,7 +147,7 @@ public class ActivityLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("fleet_url"));
+    openapiFields = new HashSet<String>(Arrays.asList("fleet_url", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

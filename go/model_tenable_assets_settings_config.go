@@ -20,10 +20,8 @@ var _ MappedNullable = &TenableAssetsSettingsConfig{}
 
 // TenableAssetsSettingsConfig Tenable assets settings
 type TenableAssetsSettingsConfig struct {
-	// Cron expression to schedule the data collection.
-	Cron *string `json:"cron,omitempty"`
-	// Boolean to control weather the input performs full syncs or incremental syncs
-	FullSync *bool `json:"full_sync,omitempty"`
+	// Generate synthetic demo data instead of connecting to the real data source.
+	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
 
 // NewTenableAssetsSettingsConfig instantiates a new TenableAssetsSettingsConfig object
@@ -43,68 +41,36 @@ func NewTenableAssetsSettingsConfigWithDefaults() *TenableAssetsSettingsConfig {
 	return &this
 }
 
-// GetCron returns the Cron field value if set, zero value otherwise.
-func (o *TenableAssetsSettingsConfig) GetCron() string {
-	if o == nil || IsNil(o.Cron) {
-		var ret string
-		return ret
-	}
-	return *o.Cron
-}
-
-// GetCronOk returns a tuple with the Cron field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TenableAssetsSettingsConfig) GetCronOk() (*string, bool) {
-	if o == nil || IsNil(o.Cron) {
-		return nil, false
-	}
-	return o.Cron, true
-}
-
-// HasCron returns a boolean if a field has been set.
-func (o *TenableAssetsSettingsConfig) HasCron() bool {
-	if o != nil && !IsNil(o.Cron) {
-		return true
-	}
-
-	return false
-}
-
-// SetCron gets a reference to the given string and assigns it to the Cron field.
-func (o *TenableAssetsSettingsConfig) SetCron(v string) {
-	o.Cron = &v
-}
-
-// GetFullSync returns the FullSync field value if set, zero value otherwise.
-func (o *TenableAssetsSettingsConfig) GetFullSync() bool {
-	if o == nil || IsNil(o.FullSync) {
+// GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
+func (o *TenableAssetsSettingsConfig) GetUseSyntheticData() bool {
+	if o == nil || IsNil(o.UseSyntheticData) {
 		var ret bool
 		return ret
 	}
-	return *o.FullSync
+	return *o.UseSyntheticData
 }
 
-// GetFullSyncOk returns a tuple with the FullSync field value if set, nil otherwise
+// GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TenableAssetsSettingsConfig) GetFullSyncOk() (*bool, bool) {
-	if o == nil || IsNil(o.FullSync) {
+func (o *TenableAssetsSettingsConfig) GetUseSyntheticDataOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseSyntheticData) {
 		return nil, false
 	}
-	return o.FullSync, true
+	return o.UseSyntheticData, true
 }
 
-// HasFullSync returns a boolean if a field has been set.
-func (o *TenableAssetsSettingsConfig) HasFullSync() bool {
-	if o != nil && !IsNil(o.FullSync) {
+// HasUseSyntheticData returns a boolean if a field has been set.
+func (o *TenableAssetsSettingsConfig) HasUseSyntheticData() bool {
+	if o != nil && !IsNil(o.UseSyntheticData) {
 		return true
 	}
 
 	return false
 }
 
-// SetFullSync gets a reference to the given bool and assigns it to the FullSync field.
-func (o *TenableAssetsSettingsConfig) SetFullSync(v bool) {
-	o.FullSync = &v
+// SetUseSyntheticData gets a reference to the given bool and assigns it to the UseSyntheticData field.
+func (o *TenableAssetsSettingsConfig) SetUseSyntheticData(v bool) {
+	o.UseSyntheticData = &v
 }
 
 func (o TenableAssetsSettingsConfig) MarshalJSON() ([]byte, error) {
@@ -117,11 +83,8 @@ func (o TenableAssetsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o TenableAssetsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Cron) {
-		toSerialize["cron"] = o.Cron
-	}
-	if !IsNil(o.FullSync) {
-		toSerialize["full_sync"] = o.FullSync
+	if !IsNil(o.UseSyntheticData) {
+		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
 }

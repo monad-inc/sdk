@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
-**permissions** | [**List[GithubComMonadIncCorePkgTypesModelsPermission]**](GithubComMonadIncCorePkgTypesModelsPermission.md) |  | [optional] 
+**permissions** | [**List[ModelsPermission]**](ModelsPermission.md) |  | [optional] 
 **protected** | **bool** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Cloud Asset Inventory settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class CloudAssetInventorySettingsConfig {
   public static final String SERIALIZED_NAME_ASSET_TYPES = "asset_types";
   @SerializedName(SERIALIZED_NAME_ASSET_TYPES)
@@ -66,6 +66,11 @@ public class CloudAssetInventorySettingsConfig {
   @SerializedName(SERIALIZED_NAME_RESOURCE_NAMES)
   @javax.annotation.Nullable
   private List<String> resourceNames = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public CloudAssetInventorySettingsConfig() {
   }
@@ -143,6 +148,25 @@ public class CloudAssetInventorySettingsConfig {
   }
 
 
+  public CloudAssetInventorySettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -155,12 +179,13 @@ public class CloudAssetInventorySettingsConfig {
     CloudAssetInventorySettingsConfig cloudAssetInventorySettingsConfig = (CloudAssetInventorySettingsConfig) o;
     return Objects.equals(this.assetTypes, cloudAssetInventorySettingsConfig.assetTypes) &&
         Objects.equals(this.cron, cloudAssetInventorySettingsConfig.cron) &&
-        Objects.equals(this.resourceNames, cloudAssetInventorySettingsConfig.resourceNames);
+        Objects.equals(this.resourceNames, cloudAssetInventorySettingsConfig.resourceNames) &&
+        Objects.equals(this.useSyntheticData, cloudAssetInventorySettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetTypes, cron, resourceNames);
+    return Objects.hash(assetTypes, cron, resourceNames, useSyntheticData);
   }
 
   @Override
@@ -170,6 +195,7 @@ public class CloudAssetInventorySettingsConfig {
     sb.append("    assetTypes: ").append(toIndentedString(assetTypes)).append("\n");
     sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
     sb.append("    resourceNames: ").append(toIndentedString(resourceNames)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -191,7 +217,7 @@ public class CloudAssetInventorySettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("asset_types", "cron", "resource_names"));
+    openapiFields = new HashSet<String>(Arrays.asList("asset_types", "cron", "resource_names", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

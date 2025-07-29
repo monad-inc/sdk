@@ -30,11 +30,11 @@ type SecretProcessesorInputConfigSettings struct {
 	AwssqsSettingsConfig *AwssqsSettingsConfig
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
 	AzureBlobStorageSettingsConfig *AzureBlobStorageSettingsConfig
-	AzureVirtualMachineSettingsConfig *AzureVirtualMachineSettingsConfig
 	AzureVnetFlowLogsSettingsConfig *AzureVnetFlowLogsSettingsConfig
 	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BoxEventsSettingsConfig *BoxEventsSettingsConfig
 	BoxUsersSettingsConfig *BoxUsersSettingsConfig
+	CisaUserSettingsConfig *CisaUserSettingsConfig
 	CloudAssetInventorySettingsConfig *CloudAssetInventorySettingsConfig
 	CloudConfigurationFindingsSettingsConfig *CloudConfigurationFindingsSettingsConfig
 	CloudLogsSettingsConfig *CloudLogsSettingsConfig
@@ -43,8 +43,6 @@ type SecretProcessesorInputConfigSettings struct {
 	CognitoUsersSettingsConfig *CognitoUsersSettingsConfig
 	CrowdstrikeFdrSettingsConfig *CrowdstrikeFdrSettingsConfig
 	DefenderForEndpointAlertsSettingsConfig *DefenderForEndpointAlertsSettingsConfig
-	DemoCustomSettingsConfig *DemoCustomSettingsConfig
-	DemoSettingsConfig *DemoSettingsConfig
 	DetectSummariesSettingsConfig *DetectSummariesSettingsConfig
 	DeviceActivitySettingsConfig *DeviceActivitySettingsConfig
 	DeviceDetailsSettingsConfig *DeviceDetailsSettingsConfig
@@ -73,6 +71,7 @@ type SecretProcessesorInputConfigSettings struct {
 	RolesInfoSettingsConfig *RolesInfoSettingsConfig
 	SecretsmanagerSettingsConfig *SecretsmanagerSettingsConfig
 	SecurityGroupsSettingsConfig *SecurityGroupsSettingsConfig
+	SemgrepCodeFindingsSettingsConfig *SemgrepCodeFindingsSettingsConfig
 	SemgrepDeploymentsSettingsConfig *SemgrepDeploymentsSettingsConfig
 	SemgrepProjectDetailsSettingsConfig *SemgrepProjectDetailsSettingsConfig
 	SemgrepProjectsSettingsConfig *SemgrepProjectsSettingsConfig
@@ -80,12 +79,18 @@ type SecretProcessesorInputConfigSettings struct {
 	SlackUsersSettingsConfig *SlackUsersSettingsConfig
 	SlackgroupsSettingsConfig *SlackgroupsSettingsConfig
 	SnowflakeInputSettingsConfig *SnowflakeInputSettingsConfig
+	SnykIssuesSettingsConfig *SnykIssuesSettingsConfig
 	SnykOrganizationsSettingsConfig *SnykOrganizationsSettingsConfig
 	SnykProjectsSettingsConfig *SnykProjectsSettingsConfig
+	SnykTargetsSettingsConfig *SnykTargetsSettingsConfig
+	SyntheticDataCustomSettingsConfig *SyntheticDataCustomSettingsConfig
+	SyntheticDataSettingsConfig *SyntheticDataSettingsConfig
 	SystemlogSettingsConfig *SystemlogSettingsConfig
 	TailscaleUsersSettingsConfig *TailscaleUsersSettingsConfig
 	TenableAssetsCronSettingsConfig *TenableAssetsCronSettingsConfig
+	TenableAssetsSettingsConfig *TenableAssetsSettingsConfig
 	TenableVulnerabilitiesCronSettingsConfig *TenableVulnerabilitiesCronSettingsConfig
+	TenableVulnerabilitiesSettingsConfig *TenableVulnerabilitiesSettingsConfig
 	UsersInfoSettingsConfig *UsersInfoSettingsConfig
 	UsersSettingsConfig *UsersSettingsConfig
 	VulnerabilitiesCronSettingsConfig *VulnerabilitiesCronSettingsConfig
@@ -171,13 +176,6 @@ func AzureBlobStorageSettingsConfigAsSecretProcessesorInputConfigSettings(v *Azu
 	}
 }
 
-// AzureVirtualMachineSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AzureVirtualMachineSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func AzureVirtualMachineSettingsConfigAsSecretProcessesorInputConfigSettings(v *AzureVirtualMachineSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		AzureVirtualMachineSettingsConfig: v,
-	}
-}
-
 // AzureVnetFlowLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AzureVnetFlowLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func AzureVnetFlowLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AzureVnetFlowLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -203,6 +201,13 @@ func BoxEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *BoxEventsS
 func BoxUsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *BoxUsersSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		BoxUsersSettingsConfig: v,
+	}
+}
+
+// CisaUserSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CisaUserSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CisaUserSettingsConfigAsSecretProcessesorInputConfigSettings(v *CisaUserSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CisaUserSettingsConfig: v,
 	}
 }
 
@@ -259,20 +264,6 @@ func CrowdstrikeFdrSettingsConfigAsSecretProcessesorInputConfigSettings(v *Crowd
 func DefenderForEndpointAlertsSettingsConfigAsSecretProcessesorInputConfigSettings(v *DefenderForEndpointAlertsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		DefenderForEndpointAlertsSettingsConfig: v,
-	}
-}
-
-// DemoCustomSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns DemoCustomSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func DemoCustomSettingsConfigAsSecretProcessesorInputConfigSettings(v *DemoCustomSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		DemoCustomSettingsConfig: v,
-	}
-}
-
-// DemoSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns DemoSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func DemoSettingsConfigAsSecretProcessesorInputConfigSettings(v *DemoSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		DemoSettingsConfig: v,
 	}
 }
 
@@ -472,6 +463,13 @@ func SecurityGroupsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Secur
 	}
 }
 
+// SemgrepCodeFindingsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SemgrepCodeFindingsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func SemgrepCodeFindingsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SemgrepCodeFindingsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		SemgrepCodeFindingsSettingsConfig: v,
+	}
+}
+
 // SemgrepDeploymentsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SemgrepDeploymentsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func SemgrepDeploymentsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SemgrepDeploymentsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -521,6 +519,13 @@ func SnowflakeInputSettingsConfigAsSecretProcessesorInputConfigSettings(v *Snowf
 	}
 }
 
+// SnykIssuesSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SnykIssuesSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func SnykIssuesSettingsConfigAsSecretProcessesorInputConfigSettings(v *SnykIssuesSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		SnykIssuesSettingsConfig: v,
+	}
+}
+
 // SnykOrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SnykOrganizationsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func SnykOrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SnykOrganizationsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -532,6 +537,27 @@ func SnykOrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Sn
 func SnykProjectsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SnykProjectsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		SnykProjectsSettingsConfig: v,
+	}
+}
+
+// SnykTargetsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SnykTargetsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func SnykTargetsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SnykTargetsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		SnykTargetsSettingsConfig: v,
+	}
+}
+
+// SyntheticDataCustomSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SyntheticDataCustomSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func SyntheticDataCustomSettingsConfigAsSecretProcessesorInputConfigSettings(v *SyntheticDataCustomSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		SyntheticDataCustomSettingsConfig: v,
+	}
+}
+
+// SyntheticDataSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SyntheticDataSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func SyntheticDataSettingsConfigAsSecretProcessesorInputConfigSettings(v *SyntheticDataSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		SyntheticDataSettingsConfig: v,
 	}
 }
 
@@ -556,10 +582,24 @@ func TenableAssetsCronSettingsConfigAsSecretProcessesorInputConfigSettings(v *Te
 	}
 }
 
+// TenableAssetsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TenableAssetsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func TenableAssetsSettingsConfigAsSecretProcessesorInputConfigSettings(v *TenableAssetsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		TenableAssetsSettingsConfig: v,
+	}
+}
+
 // TenableVulnerabilitiesCronSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TenableVulnerabilitiesCronSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func TenableVulnerabilitiesCronSettingsConfigAsSecretProcessesorInputConfigSettings(v *TenableVulnerabilitiesCronSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		TenableVulnerabilitiesCronSettingsConfig: v,
+	}
+}
+
+// TenableVulnerabilitiesSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TenableVulnerabilitiesSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func TenableVulnerabilitiesSettingsConfigAsSecretProcessesorInputConfigSettings(v *TenableVulnerabilitiesSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		TenableVulnerabilitiesSettingsConfig: v,
 	}
 }
 
@@ -797,23 +837,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AzureBlobStorageSettingsConfig = nil
 	}
 
-	// try to unmarshal data into AzureVirtualMachineSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.AzureVirtualMachineSettingsConfig)
-	if err == nil {
-		jsonAzureVirtualMachineSettingsConfig, _ := json.Marshal(dst.AzureVirtualMachineSettingsConfig)
-		if string(jsonAzureVirtualMachineSettingsConfig) == "{}" { // empty struct
-			dst.AzureVirtualMachineSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AzureVirtualMachineSettingsConfig); err != nil {
-				dst.AzureVirtualMachineSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AzureVirtualMachineSettingsConfig = nil
-	}
-
 	// try to unmarshal data into AzureVnetFlowLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.AzureVnetFlowLogsSettingsConfig)
 	if err == nil {
@@ -880,6 +903,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.BoxUsersSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CisaUserSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CisaUserSettingsConfig)
+	if err == nil {
+		jsonCisaUserSettingsConfig, _ := json.Marshal(dst.CisaUserSettingsConfig)
+		if string(jsonCisaUserSettingsConfig) == "{}" { // empty struct
+			dst.CisaUserSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CisaUserSettingsConfig); err != nil {
+				dst.CisaUserSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CisaUserSettingsConfig = nil
 	}
 
 	// try to unmarshal data into CloudAssetInventorySettingsConfig
@@ -1016,40 +1056,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into DemoCustomSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.DemoCustomSettingsConfig)
-	if err == nil {
-		jsonDemoCustomSettingsConfig, _ := json.Marshal(dst.DemoCustomSettingsConfig)
-		if string(jsonDemoCustomSettingsConfig) == "{}" { // empty struct
-			dst.DemoCustomSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.DemoCustomSettingsConfig); err != nil {
-				dst.DemoCustomSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.DemoCustomSettingsConfig = nil
-	}
-
-	// try to unmarshal data into DemoSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.DemoSettingsConfig)
-	if err == nil {
-		jsonDemoSettingsConfig, _ := json.Marshal(dst.DemoSettingsConfig)
-		if string(jsonDemoSettingsConfig) == "{}" { // empty struct
-			dst.DemoSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.DemoSettingsConfig); err != nil {
-				dst.DemoSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.DemoSettingsConfig = nil
 	}
 
 	// try to unmarshal data into DetectSummariesSettingsConfig
@@ -1528,6 +1534,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.SecurityGroupsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into SemgrepCodeFindingsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SemgrepCodeFindingsSettingsConfig)
+	if err == nil {
+		jsonSemgrepCodeFindingsSettingsConfig, _ := json.Marshal(dst.SemgrepCodeFindingsSettingsConfig)
+		if string(jsonSemgrepCodeFindingsSettingsConfig) == "{}" { // empty struct
+			dst.SemgrepCodeFindingsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SemgrepCodeFindingsSettingsConfig); err != nil {
+				dst.SemgrepCodeFindingsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SemgrepCodeFindingsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into SemgrepDeploymentsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.SemgrepDeploymentsSettingsConfig)
 	if err == nil {
@@ -1647,6 +1670,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.SnowflakeInputSettingsConfig = nil
 	}
 
+	// try to unmarshal data into SnykIssuesSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SnykIssuesSettingsConfig)
+	if err == nil {
+		jsonSnykIssuesSettingsConfig, _ := json.Marshal(dst.SnykIssuesSettingsConfig)
+		if string(jsonSnykIssuesSettingsConfig) == "{}" { // empty struct
+			dst.SnykIssuesSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SnykIssuesSettingsConfig); err != nil {
+				dst.SnykIssuesSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SnykIssuesSettingsConfig = nil
+	}
+
 	// try to unmarshal data into SnykOrganizationsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.SnykOrganizationsSettingsConfig)
 	if err == nil {
@@ -1679,6 +1719,57 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.SnykProjectsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into SnykTargetsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SnykTargetsSettingsConfig)
+	if err == nil {
+		jsonSnykTargetsSettingsConfig, _ := json.Marshal(dst.SnykTargetsSettingsConfig)
+		if string(jsonSnykTargetsSettingsConfig) == "{}" { // empty struct
+			dst.SnykTargetsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SnykTargetsSettingsConfig); err != nil {
+				dst.SnykTargetsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SnykTargetsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into SyntheticDataCustomSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SyntheticDataCustomSettingsConfig)
+	if err == nil {
+		jsonSyntheticDataCustomSettingsConfig, _ := json.Marshal(dst.SyntheticDataCustomSettingsConfig)
+		if string(jsonSyntheticDataCustomSettingsConfig) == "{}" { // empty struct
+			dst.SyntheticDataCustomSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SyntheticDataCustomSettingsConfig); err != nil {
+				dst.SyntheticDataCustomSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SyntheticDataCustomSettingsConfig = nil
+	}
+
+	// try to unmarshal data into SyntheticDataSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SyntheticDataSettingsConfig)
+	if err == nil {
+		jsonSyntheticDataSettingsConfig, _ := json.Marshal(dst.SyntheticDataSettingsConfig)
+		if string(jsonSyntheticDataSettingsConfig) == "{}" { // empty struct
+			dst.SyntheticDataSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SyntheticDataSettingsConfig); err != nil {
+				dst.SyntheticDataSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SyntheticDataSettingsConfig = nil
 	}
 
 	// try to unmarshal data into SystemlogSettingsConfig
@@ -1732,6 +1823,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.TenableAssetsCronSettingsConfig = nil
 	}
 
+	// try to unmarshal data into TenableAssetsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TenableAssetsSettingsConfig)
+	if err == nil {
+		jsonTenableAssetsSettingsConfig, _ := json.Marshal(dst.TenableAssetsSettingsConfig)
+		if string(jsonTenableAssetsSettingsConfig) == "{}" { // empty struct
+			dst.TenableAssetsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TenableAssetsSettingsConfig); err != nil {
+				dst.TenableAssetsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TenableAssetsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into TenableVulnerabilitiesCronSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.TenableVulnerabilitiesCronSettingsConfig)
 	if err == nil {
@@ -1747,6 +1855,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.TenableVulnerabilitiesCronSettingsConfig = nil
+	}
+
+	// try to unmarshal data into TenableVulnerabilitiesSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TenableVulnerabilitiesSettingsConfig)
+	if err == nil {
+		jsonTenableVulnerabilitiesSettingsConfig, _ := json.Marshal(dst.TenableVulnerabilitiesSettingsConfig)
+		if string(jsonTenableVulnerabilitiesSettingsConfig) == "{}" { // empty struct
+			dst.TenableVulnerabilitiesSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TenableVulnerabilitiesSettingsConfig); err != nil {
+				dst.TenableVulnerabilitiesSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TenableVulnerabilitiesSettingsConfig = nil
 	}
 
 	// try to unmarshal data into UsersInfoSettingsConfig
@@ -1864,11 +1989,11 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AwssqsSettingsConfig = nil
 		dst.AzureActivityLogsSettingsConfig = nil
 		dst.AzureBlobStorageSettingsConfig = nil
-		dst.AzureVirtualMachineSettingsConfig = nil
 		dst.AzureVnetFlowLogsSettingsConfig = nil
 		dst.BigqueryInputSettingsConfig = nil
 		dst.BoxEventsSettingsConfig = nil
 		dst.BoxUsersSettingsConfig = nil
+		dst.CisaUserSettingsConfig = nil
 		dst.CloudAssetInventorySettingsConfig = nil
 		dst.CloudConfigurationFindingsSettingsConfig = nil
 		dst.CloudLogsSettingsConfig = nil
@@ -1877,8 +2002,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CognitoUsersSettingsConfig = nil
 		dst.CrowdstrikeFdrSettingsConfig = nil
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
-		dst.DemoCustomSettingsConfig = nil
-		dst.DemoSettingsConfig = nil
 		dst.DetectSummariesSettingsConfig = nil
 		dst.DeviceActivitySettingsConfig = nil
 		dst.DeviceDetailsSettingsConfig = nil
@@ -1907,6 +2030,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.RolesInfoSettingsConfig = nil
 		dst.SecretsmanagerSettingsConfig = nil
 		dst.SecurityGroupsSettingsConfig = nil
+		dst.SemgrepCodeFindingsSettingsConfig = nil
 		dst.SemgrepDeploymentsSettingsConfig = nil
 		dst.SemgrepProjectDetailsSettingsConfig = nil
 		dst.SemgrepProjectsSettingsConfig = nil
@@ -1914,12 +2038,18 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.SlackUsersSettingsConfig = nil
 		dst.SlackgroupsSettingsConfig = nil
 		dst.SnowflakeInputSettingsConfig = nil
+		dst.SnykIssuesSettingsConfig = nil
 		dst.SnykOrganizationsSettingsConfig = nil
 		dst.SnykProjectsSettingsConfig = nil
+		dst.SnykTargetsSettingsConfig = nil
+		dst.SyntheticDataCustomSettingsConfig = nil
+		dst.SyntheticDataSettingsConfig = nil
 		dst.SystemlogSettingsConfig = nil
 		dst.TailscaleUsersSettingsConfig = nil
 		dst.TenableAssetsCronSettingsConfig = nil
+		dst.TenableAssetsSettingsConfig = nil
 		dst.TenableVulnerabilitiesCronSettingsConfig = nil
+		dst.TenableVulnerabilitiesSettingsConfig = nil
 		dst.UsersInfoSettingsConfig = nil
 		dst.UsersSettingsConfig = nil
 		dst.VulnerabilitiesCronSettingsConfig = nil
@@ -1981,10 +2111,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AzureBlobStorageSettingsConfig)
 	}
 
-	if src.AzureVirtualMachineSettingsConfig != nil {
-		return json.Marshal(&src.AzureVirtualMachineSettingsConfig)
-	}
-
 	if src.AzureVnetFlowLogsSettingsConfig != nil {
 		return json.Marshal(&src.AzureVnetFlowLogsSettingsConfig)
 	}
@@ -1999,6 +2125,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.BoxUsersSettingsConfig != nil {
 		return json.Marshal(&src.BoxUsersSettingsConfig)
+	}
+
+	if src.CisaUserSettingsConfig != nil {
+		return json.Marshal(&src.CisaUserSettingsConfig)
 	}
 
 	if src.CloudAssetInventorySettingsConfig != nil {
@@ -2031,14 +2161,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.DefenderForEndpointAlertsSettingsConfig != nil {
 		return json.Marshal(&src.DefenderForEndpointAlertsSettingsConfig)
-	}
-
-	if src.DemoCustomSettingsConfig != nil {
-		return json.Marshal(&src.DemoCustomSettingsConfig)
-	}
-
-	if src.DemoSettingsConfig != nil {
-		return json.Marshal(&src.DemoSettingsConfig)
 	}
 
 	if src.DetectSummariesSettingsConfig != nil {
@@ -2153,6 +2275,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.SecurityGroupsSettingsConfig)
 	}
 
+	if src.SemgrepCodeFindingsSettingsConfig != nil {
+		return json.Marshal(&src.SemgrepCodeFindingsSettingsConfig)
+	}
+
 	if src.SemgrepDeploymentsSettingsConfig != nil {
 		return json.Marshal(&src.SemgrepDeploymentsSettingsConfig)
 	}
@@ -2181,12 +2307,28 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.SnowflakeInputSettingsConfig)
 	}
 
+	if src.SnykIssuesSettingsConfig != nil {
+		return json.Marshal(&src.SnykIssuesSettingsConfig)
+	}
+
 	if src.SnykOrganizationsSettingsConfig != nil {
 		return json.Marshal(&src.SnykOrganizationsSettingsConfig)
 	}
 
 	if src.SnykProjectsSettingsConfig != nil {
 		return json.Marshal(&src.SnykProjectsSettingsConfig)
+	}
+
+	if src.SnykTargetsSettingsConfig != nil {
+		return json.Marshal(&src.SnykTargetsSettingsConfig)
+	}
+
+	if src.SyntheticDataCustomSettingsConfig != nil {
+		return json.Marshal(&src.SyntheticDataCustomSettingsConfig)
+	}
+
+	if src.SyntheticDataSettingsConfig != nil {
+		return json.Marshal(&src.SyntheticDataSettingsConfig)
 	}
 
 	if src.SystemlogSettingsConfig != nil {
@@ -2201,8 +2343,16 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.TenableAssetsCronSettingsConfig)
 	}
 
+	if src.TenableAssetsSettingsConfig != nil {
+		return json.Marshal(&src.TenableAssetsSettingsConfig)
+	}
+
 	if src.TenableVulnerabilitiesCronSettingsConfig != nil {
 		return json.Marshal(&src.TenableVulnerabilitiesCronSettingsConfig)
+	}
+
+	if src.TenableVulnerabilitiesSettingsConfig != nil {
+		return json.Marshal(&src.TenableVulnerabilitiesSettingsConfig)
 	}
 
 	if src.UsersInfoSettingsConfig != nil {
@@ -2281,10 +2431,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.AzureBlobStorageSettingsConfig
 	}
 
-	if obj.AzureVirtualMachineSettingsConfig != nil {
-		return obj.AzureVirtualMachineSettingsConfig
-	}
-
 	if obj.AzureVnetFlowLogsSettingsConfig != nil {
 		return obj.AzureVnetFlowLogsSettingsConfig
 	}
@@ -2299,6 +2445,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.BoxUsersSettingsConfig != nil {
 		return obj.BoxUsersSettingsConfig
+	}
+
+	if obj.CisaUserSettingsConfig != nil {
+		return obj.CisaUserSettingsConfig
 	}
 
 	if obj.CloudAssetInventorySettingsConfig != nil {
@@ -2331,14 +2481,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.DefenderForEndpointAlertsSettingsConfig != nil {
 		return obj.DefenderForEndpointAlertsSettingsConfig
-	}
-
-	if obj.DemoCustomSettingsConfig != nil {
-		return obj.DemoCustomSettingsConfig
-	}
-
-	if obj.DemoSettingsConfig != nil {
-		return obj.DemoSettingsConfig
 	}
 
 	if obj.DetectSummariesSettingsConfig != nil {
@@ -2453,6 +2595,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.SecurityGroupsSettingsConfig
 	}
 
+	if obj.SemgrepCodeFindingsSettingsConfig != nil {
+		return obj.SemgrepCodeFindingsSettingsConfig
+	}
+
 	if obj.SemgrepDeploymentsSettingsConfig != nil {
 		return obj.SemgrepDeploymentsSettingsConfig
 	}
@@ -2481,12 +2627,28 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.SnowflakeInputSettingsConfig
 	}
 
+	if obj.SnykIssuesSettingsConfig != nil {
+		return obj.SnykIssuesSettingsConfig
+	}
+
 	if obj.SnykOrganizationsSettingsConfig != nil {
 		return obj.SnykOrganizationsSettingsConfig
 	}
 
 	if obj.SnykProjectsSettingsConfig != nil {
 		return obj.SnykProjectsSettingsConfig
+	}
+
+	if obj.SnykTargetsSettingsConfig != nil {
+		return obj.SnykTargetsSettingsConfig
+	}
+
+	if obj.SyntheticDataCustomSettingsConfig != nil {
+		return obj.SyntheticDataCustomSettingsConfig
+	}
+
+	if obj.SyntheticDataSettingsConfig != nil {
+		return obj.SyntheticDataSettingsConfig
 	}
 
 	if obj.SystemlogSettingsConfig != nil {
@@ -2501,8 +2663,16 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.TenableAssetsCronSettingsConfig
 	}
 
+	if obj.TenableAssetsSettingsConfig != nil {
+		return obj.TenableAssetsSettingsConfig
+	}
+
 	if obj.TenableVulnerabilitiesCronSettingsConfig != nil {
 		return obj.TenableVulnerabilitiesCronSettingsConfig
+	}
+
+	if obj.TenableVulnerabilitiesSettingsConfig != nil {
+		return obj.TenableVulnerabilitiesSettingsConfig
 	}
 
 	if obj.UsersInfoSettingsConfig != nil {
@@ -2579,10 +2749,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.AzureBlobStorageSettingsConfig
 	}
 
-	if obj.AzureVirtualMachineSettingsConfig != nil {
-		return *obj.AzureVirtualMachineSettingsConfig
-	}
-
 	if obj.AzureVnetFlowLogsSettingsConfig != nil {
 		return *obj.AzureVnetFlowLogsSettingsConfig
 	}
@@ -2597,6 +2763,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.BoxUsersSettingsConfig != nil {
 		return *obj.BoxUsersSettingsConfig
+	}
+
+	if obj.CisaUserSettingsConfig != nil {
+		return *obj.CisaUserSettingsConfig
 	}
 
 	if obj.CloudAssetInventorySettingsConfig != nil {
@@ -2629,14 +2799,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.DefenderForEndpointAlertsSettingsConfig != nil {
 		return *obj.DefenderForEndpointAlertsSettingsConfig
-	}
-
-	if obj.DemoCustomSettingsConfig != nil {
-		return *obj.DemoCustomSettingsConfig
-	}
-
-	if obj.DemoSettingsConfig != nil {
-		return *obj.DemoSettingsConfig
 	}
 
 	if obj.DetectSummariesSettingsConfig != nil {
@@ -2751,6 +2913,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.SecurityGroupsSettingsConfig
 	}
 
+	if obj.SemgrepCodeFindingsSettingsConfig != nil {
+		return *obj.SemgrepCodeFindingsSettingsConfig
+	}
+
 	if obj.SemgrepDeploymentsSettingsConfig != nil {
 		return *obj.SemgrepDeploymentsSettingsConfig
 	}
@@ -2779,12 +2945,28 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.SnowflakeInputSettingsConfig
 	}
 
+	if obj.SnykIssuesSettingsConfig != nil {
+		return *obj.SnykIssuesSettingsConfig
+	}
+
 	if obj.SnykOrganizationsSettingsConfig != nil {
 		return *obj.SnykOrganizationsSettingsConfig
 	}
 
 	if obj.SnykProjectsSettingsConfig != nil {
 		return *obj.SnykProjectsSettingsConfig
+	}
+
+	if obj.SnykTargetsSettingsConfig != nil {
+		return *obj.SnykTargetsSettingsConfig
+	}
+
+	if obj.SyntheticDataCustomSettingsConfig != nil {
+		return *obj.SyntheticDataCustomSettingsConfig
+	}
+
+	if obj.SyntheticDataSettingsConfig != nil {
+		return *obj.SyntheticDataSettingsConfig
 	}
 
 	if obj.SystemlogSettingsConfig != nil {
@@ -2799,8 +2981,16 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.TenableAssetsCronSettingsConfig
 	}
 
+	if obj.TenableAssetsSettingsConfig != nil {
+		return *obj.TenableAssetsSettingsConfig
+	}
+
 	if obj.TenableVulnerabilitiesCronSettingsConfig != nil {
 		return *obj.TenableVulnerabilitiesCronSettingsConfig
+	}
+
+	if obj.TenableVulnerabilitiesSettingsConfig != nil {
+		return *obj.TenableVulnerabilitiesSettingsConfig
 	}
 
 	if obj.UsersInfoSettingsConfig != nil {

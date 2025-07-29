@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * OrganizationsSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class OrganizationsSettingsConfig {
   public static final String SERIALIZED_NAME_CHILD_TYPE = "child_type";
   @SerializedName(SERIALIZED_NAME_CHILD_TYPE)
@@ -74,6 +74,11 @@ public class OrganizationsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_ROLE_ARN)
   @javax.annotation.Nullable
   private String roleArn;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public OrganizationsSettingsConfig() {
   }
@@ -173,6 +178,25 @@ public class OrganizationsSettingsConfig {
   }
 
 
+  public OrganizationsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -187,12 +211,13 @@ public class OrganizationsSettingsConfig {
         Objects.equals(this.cron, organizationsSettingsConfig.cron) &&
         Objects.equals(this.parentId, organizationsSettingsConfig.parentId) &&
         Objects.equals(this.region, organizationsSettingsConfig.region) &&
-        Objects.equals(this.roleArn, organizationsSettingsConfig.roleArn);
+        Objects.equals(this.roleArn, organizationsSettingsConfig.roleArn) &&
+        Objects.equals(this.useSyntheticData, organizationsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(childType, cron, parentId, region, roleArn);
+    return Objects.hash(childType, cron, parentId, region, roleArn, useSyntheticData);
   }
 
   @Override
@@ -204,6 +229,7 @@ public class OrganizationsSettingsConfig {
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -225,7 +251,7 @@ public class OrganizationsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("child_type", "cron", "parent_id", "region", "role_arn"));
+    openapiFields = new HashSet<String>(Arrays.asList("child_type", "cron", "parent_id", "region", "role_arn", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

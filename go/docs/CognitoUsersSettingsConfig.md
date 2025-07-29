@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Filter** | Pointer to [**CognitoUsersFilter**](CognitoUsersFilter.md) |  | [optional] 
 **Region** | Pointer to **string** | The Region that you would receieve findings for | [optional] 
 **RoleArn** | Pointer to **string** | The ARN of the role to assume to access the bucket | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **UserPoolId** | Pointer to **string** | User Pool ID to extract users from | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetRoleArn sets RoleArn field to given value.
 `func (o *CognitoUsersSettingsConfig) HasRoleArn() bool`
 
 HasRoleArn returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *CognitoUsersSettingsConfig) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *CognitoUsersSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *CognitoUsersSettingsConfig) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *CognitoUsersSettingsConfig) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 ### GetUserPoolId
 

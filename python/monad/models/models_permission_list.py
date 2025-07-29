@@ -20,8 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.github_com_monad_inc_core_pkg_types_models_permission import GithubComMonadIncCorePkgTypesModelsPermission
 from monad.models.models_pagination import ModelsPagination
+from monad.models.models_permission import ModelsPermission
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class ModelsPermissionList(BaseModel):
     ModelsPermissionList
     """ # noqa: E501
     pagination: Optional[ModelsPagination] = None
-    permissions: Optional[List[GithubComMonadIncCorePkgTypesModelsPermission]] = None
+    permissions: Optional[List[ModelsPermission]] = None
     __properties: ClassVar[List[str]] = ["pagination", "permissions"]
 
     model_config = ConfigDict(
@@ -95,7 +95,7 @@ class ModelsPermissionList(BaseModel):
 
         _obj = cls.model_validate({
             "pagination": ModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
-            "permissions": [GithubComMonadIncCorePkgTypesModelsPermission.from_dict(_item) for _item in obj["permissions"]] if obj.get("permissions") is not None else None
+            "permissions": [ModelsPermission.from_dict(_item) for _item in obj["permissions"]] if obj.get("permissions") is not None else None
         })
         return _obj
 

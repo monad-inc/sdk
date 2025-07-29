@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1UsersPost**
-> GithubComMonadIncCorePkgTypesModelsUser v1UsersPost()
+> ModelsUser v1UsersPost()
 
 Create user
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**GithubComMonadIncCorePkgTypesModelsUser**
+**ModelsUser**
 
 ### Authorization
 

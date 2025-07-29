@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **include_planned_deletion** | **bool** | Whether or not to include secrets scheduled for deletion | [optional] 
 **region** | **str** | URL of the organization | [optional] 
 **role_arn** | **str** | The ID of the secret to describe | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

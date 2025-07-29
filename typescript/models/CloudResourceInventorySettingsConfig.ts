@@ -36,6 +36,10 @@ export class CloudResourceInventorySettingsConfig {
     * Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.
     */
     'interval'?: number;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -70,6 +74,12 @@ export class CloudResourceInventorySettingsConfig {
             "name": "interval",
             "baseName": "interval",
             "type": "number",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

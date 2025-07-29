@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **org_slug** | **str** | Cron expression for scheduling the input | [optional] 
 **repo** | **str** | A repository slug to filter full-scans by. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

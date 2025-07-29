@@ -19,7 +19,7 @@ from typing_extensions import Annotated
 
 from typing import Any, Dict, Optional
 from monad.models.authenticationtypes_mfa_enrollment_ticket import AuthenticationtypesMFAEnrollmentTicket
-from monad.models.github_com_monad_inc_core_pkg_types_models_user import GithubComMonadIncCorePkgTypesModelsUser
+from monad.models.models_user import ModelsUser
 from monad.models.routes_user_with_roles import RoutesUserWithRoles
 from monad.models.routes_v3_mfa_status_response import RoutesV3MFAStatusResponse
 
@@ -309,7 +309,7 @@ class UsersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> GithubComMonadIncCorePkgTypesModelsUser:
+    ) -> ModelsUser:
         """Create user
 
         Create user
@@ -347,7 +347,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsUser",
+            '200': "ModelsUser",
             '400': "str",
             '500': "str",
         }
@@ -378,7 +378,7 @@ class UsersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[GithubComMonadIncCorePkgTypesModelsUser]:
+    ) -> ApiResponse[ModelsUser]:
         """Create user
 
         Create user
@@ -416,7 +416,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsUser",
+            '200': "ModelsUser",
             '400': "str",
             '500': "str",
         }
@@ -485,7 +485,7 @@ class UsersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "GithubComMonadIncCorePkgTypesModelsUser",
+            '200': "ModelsUser",
             '400': "str",
             '500': "str",
         }

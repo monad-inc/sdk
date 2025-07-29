@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,8 @@ class SentryOrgAuditLogsSettingsConfig(BaseModel):
     """ # noqa: E501
     host_name: Optional[StrictStr] = Field(default=None, description="For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io.")
     org_slug: Optional[StrictStr] = Field(default=None, description="The ID or slug of the organization")
-    __properties: ClassVar[List[str]] = ["host_name", "org_slug"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["host_name", "org_slug", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,7 +84,8 @@ class SentryOrgAuditLogsSettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "host_name": obj.get("host_name"),
-            "org_slug": obj.get("org_slug")
+            "org_slug": obj.get("org_slug"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

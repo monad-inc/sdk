@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,8 @@ class UsersSettingsConfig(BaseModel):
     auth_type: Optional[StrictStr] = Field(default=None, description="Authentication type (service_account or oauth)")
     cron: Optional[StrictStr] = Field(default=None, description="Cron expression to schedule the data collection.")
     email: Optional[StrictStr] = Field(default=None, description="Email address to use to authenticate with Google Cloud (required for service_account auth).")
-    __properties: ClassVar[List[str]] = ["auth_type", "cron", "email"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["auth_type", "cron", "email", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,7 +86,8 @@ class UsersSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "auth_type": obj.get("auth_type"),
             "cron": obj.get("cron"),
-            "email": obj.get("email")
+            "email": obj.get("email"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

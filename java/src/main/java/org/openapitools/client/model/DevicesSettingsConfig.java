@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Tailscale Devices settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DevicesSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
@@ -64,6 +64,11 @@ public class DevicesSettingsConfig {
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
   @javax.annotation.Nullable
   private String organizationId;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public DevicesSettingsConfig() {
   }
@@ -125,6 +130,25 @@ public class DevicesSettingsConfig {
   }
 
 
+  public DevicesSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -137,12 +161,13 @@ public class DevicesSettingsConfig {
     DevicesSettingsConfig devicesSettingsConfig = (DevicesSettingsConfig) o;
     return Objects.equals(this.cron, devicesSettingsConfig.cron) &&
         Objects.equals(this.fieldOption, devicesSettingsConfig.fieldOption) &&
-        Objects.equals(this.organizationId, devicesSettingsConfig.organizationId);
+        Objects.equals(this.organizationId, devicesSettingsConfig.organizationId) &&
+        Objects.equals(this.useSyntheticData, devicesSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cron, fieldOption, organizationId);
+    return Objects.hash(cron, fieldOption, organizationId, useSyntheticData);
   }
 
   @Override
@@ -152,6 +177,7 @@ public class DevicesSettingsConfig {
     sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
     sb.append("    fieldOption: ").append(toIndentedString(fieldOption)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -173,7 +199,7 @@ public class DevicesSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cron", "field_option", "organization_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("cron", "field_option", "organization_id", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

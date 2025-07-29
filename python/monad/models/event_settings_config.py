@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,8 @@ class EventSettingsConfig(BaseModel):
     app_name: Optional[StrictStr] = Field(default=None, description="The application name monad uses to connect to the CrowdStrike data stream. It's important that this name is unique to avoid conflicts with other applications connecting to the same stream. You're advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named 'monad'.")
     cloud: Optional[StrictStr] = Field(default=None, description="Your cloud type for CrowdStrike. Ex: 'autodiscover', 'us-1', 'us-2', 'eu-1', 'us-gov-1'.")
     member_cid: Optional[StrictStr] = Field(default=None, description="In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer's environment. This is crucial for scenarios where operational isolation between different clients' data and configurations is necessary.")
-    __properties: ClassVar[List[str]] = ["app_name", "cloud", "member_cid"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["app_name", "cloud", "member_cid", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,7 +86,8 @@ class EventSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "app_name": obj.get("app_name"),
             "cloud": obj.get("cloud"),
-            "member_cid": obj.get("member_cid")
+            "member_cid": obj.get("member_cid"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

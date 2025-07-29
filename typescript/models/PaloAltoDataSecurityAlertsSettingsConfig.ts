@@ -20,6 +20,10 @@ export class PaloAltoDataSecurityAlertsSettingsConfig {
     * URL of the organization
     */
     'baseUrl'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,6 +34,12 @@ export class PaloAltoDataSecurityAlertsSettingsConfig {
             "name": "baseUrl",
             "baseName": "base_url",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

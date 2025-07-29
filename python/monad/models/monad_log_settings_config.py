@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,8 @@ class MonadLogSettingsConfig(BaseModel):
     Monad Log settings
     """ # noqa: E501
     log_type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["log_type"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["log_type", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,7 +82,8 @@ class MonadLogSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "log_type": obj.get("log_type")
+            "log_type": obj.get("log_type"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

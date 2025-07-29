@@ -36,6 +36,10 @@ export class ActorsInfoSettingsConfig {
     * Industries targeted by the actor. Ex: \'Financial\', \'Healthcare\', \'Energy\', \'Government\', \'Manufacturing\', \'Technology\', etc. Select \'None\' for no preference.
     */
     'targetIndustries'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -70,6 +74,12 @@ export class ActorsInfoSettingsConfig {
             "name": "targetIndustries",
             "baseName": "target_industries",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

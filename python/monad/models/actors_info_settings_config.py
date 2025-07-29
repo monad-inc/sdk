@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,7 +32,8 @@ class ActorsInfoSettingsConfig(BaseModel):
     cron: Optional[StrictStr] = Field(default=None, description="Cron string for scheduling the ingest of your input")
     sort: Optional[StrictStr] = Field(default=None, description="Order fields in ascending or descending order. Ex: 'created_date|asc', 'created_date|desc'.")
     target_industries: Optional[StrictStr] = Field(default=None, description="Industries targeted by the actor. Ex: 'Financial', 'Healthcare', 'Energy', 'Government', 'Manufacturing', 'Technology', etc. Select 'None' for no preference.")
-    __properties: ClassVar[List[str]] = ["actor_type", "cloud_type", "cron", "sort", "target_industries"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["actor_type", "cloud_type", "cron", "sort", "target_industries", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,7 +90,8 @@ class ActorsInfoSettingsConfig(BaseModel):
             "cloud_type": obj.get("cloud_type"),
             "cron": obj.get("cron"),
             "sort": obj.get("sort"),
-            "target_industries": obj.get("target_industries")
+            "target_industries": obj.get("target_industries"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

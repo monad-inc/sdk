@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.github_com_monad_inc_core_pkg_types_models_permission import GithubComMonadIncCorePkgTypesModelsPermission
+from monad.models.models_permission import ModelsPermission
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class ModelsUserRoleWithPermissions(BaseModel):
     ModelsUserRoleWithPermissions
     """ # noqa: E501
     organization_id: Optional[StrictStr] = None
-    permissions: Optional[List[GithubComMonadIncCorePkgTypesModelsPermission]] = None
+    permissions: Optional[List[ModelsPermission]] = None
     role_id: Optional[StrictStr] = None
     role_name: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["organization_id", "permissions", "role_id", "role_name"]
@@ -93,7 +93,7 @@ class ModelsUserRoleWithPermissions(BaseModel):
 
         _obj = cls.model_validate({
             "organization_id": obj.get("organization_id"),
-            "permissions": [GithubComMonadIncCorePkgTypesModelsPermission.from_dict(_item) for _item in obj["permissions"]] if obj.get("permissions") is not None else None,
+            "permissions": [ModelsPermission.from_dict(_item) for _item in obj["permissions"]] if obj.get("permissions") is not None else None,
             "role_id": obj.get("role_id"),
             "role_name": obj.get("role_name")
         })

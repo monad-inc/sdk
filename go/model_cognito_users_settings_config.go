@@ -27,6 +27,8 @@ type CognitoUsersSettingsConfig struct {
 	Region *string `json:"region,omitempty"`
 	// The ARN of the role to assume to access the bucket
 	RoleArn *string `json:"role_arn,omitempty"`
+	// Generate synthetic demo data instead of connecting to the real data source.
+	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 	// User Pool ID to extract users from
 	UserPoolId *string `json:"user_pool_id,omitempty"`
 }
@@ -176,6 +178,38 @@ func (o *CognitoUsersSettingsConfig) SetRoleArn(v string) {
 	o.RoleArn = &v
 }
 
+// GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
+func (o *CognitoUsersSettingsConfig) GetUseSyntheticData() bool {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		var ret bool
+		return ret
+	}
+	return *o.UseSyntheticData
+}
+
+// GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CognitoUsersSettingsConfig) GetUseSyntheticDataOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		return nil, false
+	}
+	return o.UseSyntheticData, true
+}
+
+// HasUseSyntheticData returns a boolean if a field has been set.
+func (o *CognitoUsersSettingsConfig) HasUseSyntheticData() bool {
+	if o != nil && !IsNil(o.UseSyntheticData) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseSyntheticData gets a reference to the given bool and assigns it to the UseSyntheticData field.
+func (o *CognitoUsersSettingsConfig) SetUseSyntheticData(v bool) {
+	o.UseSyntheticData = &v
+}
+
 // GetUserPoolId returns the UserPoolId field value if set, zero value otherwise.
 func (o *CognitoUsersSettingsConfig) GetUserPoolId() string {
 	if o == nil || IsNil(o.UserPoolId) {
@@ -229,6 +263,9 @@ func (o CognitoUsersSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RoleArn) {
 		toSerialize["role_arn"] = o.RoleArn
+	}
+	if !IsNil(o.UseSyntheticData) {
+		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	if !IsNil(o.UserPoolId) {
 		toSerialize["user_pool_id"] = o.UserPoolId

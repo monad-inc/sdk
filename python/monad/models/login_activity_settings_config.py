@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,8 @@ class LoginActivitySettingsConfig(BaseModel):
     """ # noqa: E501
     auth_type: Optional[StrictStr] = Field(default=None, description="Authentication type (service_account or oauth)")
     email: Optional[StrictStr] = Field(default=None, description="Email address to use for authenticating with Google Cloud (required for service_account auth).")
-    __properties: ClassVar[List[str]] = ["auth_type", "email"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["auth_type", "email", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,7 +84,8 @@ class LoginActivitySettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "auth_type": obj.get("auth_type"),
-            "email": obj.get("email")
+            "email": obj.get("email"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

@@ -11,6 +11,7 @@ Tailscale Devices settings
 |**cron** | **String** | Cron expression for scheduling the input |  [optional] |
 |**fieldOption** | **String** |  |  [optional] |
 |**organizationId** | **String** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. |  [optional] |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 
 
 

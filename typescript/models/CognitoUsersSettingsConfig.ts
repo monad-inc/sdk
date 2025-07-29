@@ -31,6 +31,10 @@ export class CognitoUsersSettingsConfig {
     */
     'roleArn'?: string;
     /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
+    /**
     * User Pool ID to extract users from
     */
     'userPoolId'?: string;
@@ -62,6 +66,12 @@ export class CognitoUsersSettingsConfig {
             "name": "roleArn",
             "baseName": "role_arn",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         },
         {

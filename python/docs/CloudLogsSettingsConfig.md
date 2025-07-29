@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **enable_proto_payload_parsing** | **bool** | Enables automatic parsing of embedded protocol buffer payloads within the input. | [optional] 
 **filter** | **str** | The filter to apply to the logs. | [optional] 
 **resource_names** | **List[str]** | The resources to query logs from. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

@@ -7,6 +7,7 @@ Box Events secrets
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **event_type** | **List[str]** | A list of event types to filter by. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

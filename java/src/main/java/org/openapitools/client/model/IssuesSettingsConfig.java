@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Wiz Issues settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class IssuesSettingsConfig {
   public static final String SERIALIZED_NAME_CONTROL_IDS = "control_ids";
   @SerializedName(SERIALIZED_NAME_CONTROL_IDS)
@@ -430,6 +430,11 @@ public class IssuesSettingsConfig {
   @SerializedName(SERIALIZED_NAME_TENANT_DATA_CENTER)
   @javax.annotation.Nullable
   private String tenantDataCenter;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public IssuesSettingsConfig() {
   }
@@ -837,6 +842,25 @@ public class IssuesSettingsConfig {
   }
 
 
+  public IssuesSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -863,12 +887,13 @@ public class IssuesSettingsConfig {
         Objects.equals(this.severities, issuesSettingsConfig.severities) &&
         Objects.equals(this.stackLayers, issuesSettingsConfig.stackLayers) &&
         Objects.equals(this.status, issuesSettingsConfig.status) &&
-        Objects.equals(this.tenantDataCenter, issuesSettingsConfig.tenantDataCenter);
+        Objects.equals(this.tenantDataCenter, issuesSettingsConfig.tenantDataCenter) &&
+        Objects.equals(this.useSyntheticData, issuesSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(controlIds, hasNote, hasRemediation, hasServiceTicket, issueIds, issueTypes, projectIds, relatedEntityId, resolutionReasons, riskEqualsAll, riskEqualsAny, searchQuery, securityScan, severities, stackLayers, status, tenantDataCenter);
+    return Objects.hash(controlIds, hasNote, hasRemediation, hasServiceTicket, issueIds, issueTypes, projectIds, relatedEntityId, resolutionReasons, riskEqualsAll, riskEqualsAny, searchQuery, securityScan, severities, stackLayers, status, tenantDataCenter, useSyntheticData);
   }
 
   @Override
@@ -892,6 +917,7 @@ public class IssuesSettingsConfig {
     sb.append("    stackLayers: ").append(toIndentedString(stackLayers)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    tenantDataCenter: ").append(toIndentedString(tenantDataCenter)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -913,7 +939,7 @@ public class IssuesSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("control_ids", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center"));
+    openapiFields = new HashSet<String>(Arrays.asList("control_ids", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

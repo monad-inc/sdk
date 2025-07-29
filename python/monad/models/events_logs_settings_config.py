@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,8 @@ class EventsLogsSettingsConfig(BaseModel):
     story_id: Optional[StrictStr] = Field(default=None, description="Filter by the given story.")
     team_id: Optional[StrictStr] = Field(default=None, description="Filter by the given team.")
     tenant_url: Optional[StrictStr] = Field(default=None, description="Unique URL for your Tines instance")
-    __properties: ClassVar[List[str]] = ["story_id", "team_id", "tenant_url"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["story_id", "team_id", "tenant_url", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,7 +86,8 @@ class EventsLogsSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "story_id": obj.get("story_id"),
             "team_id": obj.get("team_id"),
-            "tenant_url": obj.get("tenant_url")
+            "tenant_url": obj.get("tenant_url"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

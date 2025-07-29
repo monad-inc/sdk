@@ -17,13 +17,9 @@ import { HttpFile } from '../http/http';
 */
 export class TenableVulnerabilitiesSettingsConfig {
     /**
-    * Cron expression to schedule the data collection.
+    * Generate synthetic demo data instead of connecting to the real data source.
     */
-    'cron'?: string;
-    /**
-    * Boolean to control weather the input performs full syncs or incremental syncs
-    */
-    'fullSync'?: boolean;
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -31,14 +27,8 @@ export class TenableVulnerabilitiesSettingsConfig {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "cron",
-            "baseName": "cron",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "fullSync",
-            "baseName": "full_sync",
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
             "type": "boolean",
             "format": ""
         }    ];

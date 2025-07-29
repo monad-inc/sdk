@@ -30,6 +30,10 @@ export class SecurityGroupsSettingsConfig {
     * RoleArn is the ARN of the IAM role to assume for accessing AWS security groups.
     */
     'roleArn'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -58,6 +62,12 @@ export class SecurityGroupsSettingsConfig {
             "name": "roleArn",
             "baseName": "role_arn",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

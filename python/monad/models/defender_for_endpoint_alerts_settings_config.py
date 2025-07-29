@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,8 @@ class DefenderForEndpointAlertsSettingsConfig(BaseModel):
     category: Optional[StrictStr] = None
     severity: Optional[StrictStr] = None
     tenant_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["category", "severity", "tenant_id"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["category", "severity", "tenant_id", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,7 +86,8 @@ class DefenderForEndpointAlertsSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "category": obj.get("category"),
             "severity": obj.get("severity"),
-            "tenant_id": obj.get("tenant_id")
+            "tenant_id": obj.get("tenant_id"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

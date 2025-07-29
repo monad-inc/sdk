@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **IssueType** | Pointer to **string** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 
 **ProjectId** | Pointer to **string** | Project ID to get issues for | [optional] 
 **State** | Pointer to **string** | State to filter issues by e.g. opened, closed | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **WithLabelDetails** | Pointer to **bool** | Include label details in the response | [optional] 
 
 ## Methods
@@ -154,6 +155,31 @@ SetState sets State field to given value.
 `func (o *GitlabIssuesSettingsConfig) HasState() bool`
 
 HasState returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *GitlabIssuesSettingsConfig) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *GitlabIssuesSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *GitlabIssuesSettingsConfig) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *GitlabIssuesSettingsConfig) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 ### GetWithLabelDetails
 

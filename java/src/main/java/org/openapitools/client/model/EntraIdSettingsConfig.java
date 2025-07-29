@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Entra ID settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class EntraIdSettingsConfig {
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
@@ -59,6 +59,11 @@ public class EntraIdSettingsConfig {
   @SerializedName(SERIALIZED_NAME_TENANT_ID)
   @javax.annotation.Nullable
   private String tenantId;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public static final String SERIALIZED_NAME_WORKSPACE_ID = "workspace_id";
   @SerializedName(SERIALIZED_NAME_WORKSPACE_ID)
@@ -106,6 +111,25 @@ public class EntraIdSettingsConfig {
   }
 
 
+  public EntraIdSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
   public EntraIdSettingsConfig workspaceId(@javax.annotation.Nullable String workspaceId) {
     this.workspaceId = workspaceId;
     return this;
@@ -137,12 +161,13 @@ public class EntraIdSettingsConfig {
     EntraIdSettingsConfig entraIdSettingsConfig = (EntraIdSettingsConfig) o;
     return Objects.equals(this.category, entraIdSettingsConfig.category) &&
         Objects.equals(this.tenantId, entraIdSettingsConfig.tenantId) &&
+        Objects.equals(this.useSyntheticData, entraIdSettingsConfig.useSyntheticData) &&
         Objects.equals(this.workspaceId, entraIdSettingsConfig.workspaceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(category, tenantId, workspaceId);
+    return Objects.hash(category, tenantId, useSyntheticData, workspaceId);
   }
 
   @Override
@@ -151,6 +176,7 @@ public class EntraIdSettingsConfig {
     sb.append("class EntraIdSettingsConfig {\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -173,7 +199,7 @@ public class EntraIdSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("category", "tenant_id", "workspace_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("category", "tenant_id", "use_synthetic_data", "workspace_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

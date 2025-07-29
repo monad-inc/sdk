@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * Okta system log settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class SystemlogSettingsConfig {
   public static final String SERIALIZED_NAME_ORG_URL = "org_url";
   @SerializedName(SERIALIZED_NAME_ORG_URL)
   @javax.annotation.Nullable
   private String orgUrl;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public SystemlogSettingsConfig() {
   }
@@ -77,6 +82,25 @@ public class SystemlogSettingsConfig {
   }
 
 
+  public SystemlogSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -87,12 +111,13 @@ public class SystemlogSettingsConfig {
       return false;
     }
     SystemlogSettingsConfig systemlogSettingsConfig = (SystemlogSettingsConfig) o;
-    return Objects.equals(this.orgUrl, systemlogSettingsConfig.orgUrl);
+    return Objects.equals(this.orgUrl, systemlogSettingsConfig.orgUrl) &&
+        Objects.equals(this.useSyntheticData, systemlogSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(orgUrl);
+    return Objects.hash(orgUrl, useSyntheticData);
   }
 
   @Override
@@ -100,6 +125,7 @@ public class SystemlogSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class SystemlogSettingsConfig {\n");
     sb.append("    orgUrl: ").append(toIndentedString(orgUrl)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -121,7 +147,7 @@ public class SystemlogSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("org_url"));
+    openapiFields = new HashSet<String>(Arrays.asList("org_url", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

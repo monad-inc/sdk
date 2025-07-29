@@ -11,6 +11,7 @@ Google Workspace Users settings
 |**authType** | **String** | Authentication type (service_account or oauth) |  [optional] |
 |**cron** | **String** | Cron expression to schedule the data collection. |  [optional] |
 |**email** | **String** | Email address to use to authenticate with Google Cloud (required for service_account auth). |  [optional] |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 
 
 

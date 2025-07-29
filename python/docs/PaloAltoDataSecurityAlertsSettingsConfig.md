@@ -7,6 +7,7 @@ Palo Alto Data Security Alerts settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **base_url** | **str** | URL of the organization | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

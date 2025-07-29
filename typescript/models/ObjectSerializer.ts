@@ -24,7 +24,6 @@ export * from '../models/AzureActivityLogsSecretsConfig';
 export * from '../models/AzureActivityLogsSettingsConfig';
 export * from '../models/AzureBlobStorageSecretsConfig';
 export * from '../models/AzureBlobStorageSettingsConfig';
-export * from '../models/AzureVirtualMachineSettingsConfig';
 export * from '../models/AzureVnetFlowLogsSecretsConfig';
 export * from '../models/AzureVnetFlowLogsSettingsConfig';
 export * from '../models/BatchConfigBatchConfig';
@@ -36,6 +35,7 @@ export * from '../models/BoxEventsSecretsConfig';
 export * from '../models/BoxEventsSettingsConfig';
 export * from '../models/BoxUsersSecretsConfig';
 export * from '../models/BoxUsersSettingsConfig';
+export * from '../models/CisaUserSettingsConfig';
 export * from '../models/CloudAssetInventorySecretsConfig';
 export * from '../models/CloudAssetInventorySettingsConfig';
 export * from '../models/CloudConfigurationFindingsSecretsConfig';
@@ -61,8 +61,6 @@ export * from '../models/CrowdstrikeFdrSettingsConfig';
 export * from '../models/DefenderForEndpointAlertsSecretsConfig';
 export * from '../models/DefenderForEndpointAlertsSettingsConfig';
 export * from '../models/DelimitedDelimiterFormatter';
-export * from '../models/DemoCustomSettingsConfig';
-export * from '../models/DemoSettingsConfig';
 export * from '../models/DetectSummariesSecretsConfig';
 export * from '../models/DetectSummariesSettingsConfig';
 export * from '../models/DeviceActivitySecretsConfig';
@@ -95,10 +93,6 @@ export * from '../models/FormatterFormatConfig';
 export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
 export * from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsUser';
 export * from '../models/GitlabIssuesSecretsConfig';
 export * from '../models/GitlabIssuesSettingsConfig';
 export * from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -144,6 +138,7 @@ export * from '../models/ModelsInput';
 export * from '../models/ModelsInputConfig';
 export * from '../models/ModelsInputList';
 export * from '../models/ModelsNodeComponent';
+export * from '../models/ModelsOrganization';
 export * from '../models/ModelsOrganizationList';
 export * from '../models/ModelsOrganizationUser';
 export * from '../models/ModelsOrganizationUserList';
@@ -151,6 +146,7 @@ export * from '../models/ModelsOutput';
 export * from '../models/ModelsOutputConfig';
 export * from '../models/ModelsOutputList';
 export * from '../models/ModelsPagination';
+export * from '../models/ModelsPermission';
 export * from '../models/ModelsPermissionList';
 export * from '../models/ModelsPipeline';
 export * from '../models/ModelsPipelineConfigV2';
@@ -164,6 +160,7 @@ export * from '../models/ModelsPipelineNode';
 export * from '../models/ModelsPipelineNodeStatus';
 export * from '../models/ModelsPipelineRetentionPolicy';
 export * from '../models/ModelsPipelineStatus';
+export * from '../models/ModelsQuota';
 export * from '../models/ModelsQuotaList';
 export * from '../models/ModelsRoleWithPermissions';
 export * from '../models/ModelsRoleWithPermissionsList';
@@ -176,6 +173,7 @@ export * from '../models/ModelsTransformList';
 export * from '../models/ModelsTransformOperation';
 export * from '../models/ModelsTransformsRepositoryList';
 export * from '../models/ModelsTransformsRepositoryTransform';
+export * from '../models/ModelsUser';
 export * from '../models/ModelsUserRoleWithPermissions';
 export * from '../models/MonadLogSettingsConfig';
 export * from '../models/MutateTypeMutateType';
@@ -292,13 +290,13 @@ export * from '../models/SecurityGroupsSettingsConfig';
 export * from '../models/SecurityLakeSettingsConfig';
 export * from '../models/SecurityLakeSourceAccountDetails';
 export * from '../models/SemgrepCodeFindingsSecretsConfig';
+export * from '../models/SemgrepCodeFindingsSettingsConfig';
 export * from '../models/SemgrepDeploymentsSecretsConfig';
 export * from '../models/SemgrepDeploymentsSettingsConfig';
 export * from '../models/SemgrepProjectDetailsSecretsConfig';
 export * from '../models/SemgrepProjectDetailsSettingsConfig';
 export * from '../models/SemgrepProjectsSecretsConfig';
 export * from '../models/SemgrepProjectsSettingsConfig';
-export * from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 export * from '../models/SentinelSecretsConfig';
 export * from '../models/SentinelSettingsConfig';
 export * from '../models/SentryOrgAuditLogsSecretsConfig';
@@ -312,15 +310,19 @@ export * from '../models/SnowflakeInputSettingsConfig';
 export * from '../models/SnowflakeOutputSecretsConfig';
 export * from '../models/SnowflakeOutputSettingsConfig';
 export * from '../models/SnykIssuesSecretsConfig';
+export * from '../models/SnykIssuesSettingsConfig';
 export * from '../models/SnykOrganizationsSecretsConfig';
 export * from '../models/SnykOrganizationsSettingsConfig';
 export * from '../models/SnykProjectsSecretsConfig';
 export * from '../models/SnykProjectsSettingsConfig';
 export * from '../models/SnykTargetsSecretsConfig';
+export * from '../models/SnykTargetsSettingsConfig';
 export * from '../models/SplunkSecretsConfig';
 export * from '../models/SplunkSettingsConfig';
 export * from '../models/SumologicSecretsConfig';
 export * from '../models/SumologicSettingsConfig';
+export * from '../models/SyntheticDataCustomSettingsConfig';
+export * from '../models/SyntheticDataSettingsConfig';
 export * from '../models/SystemlogSecretsConfig';
 export * from '../models/SystemlogSettingsConfig';
 export * from '../models/TailscaleUsersSecretsConfig';
@@ -328,9 +330,11 @@ export * from '../models/TailscaleUsersSettingsConfig';
 export * from '../models/TenableAssetsCronSecretsConfig';
 export * from '../models/TenableAssetsCronSettingsConfig';
 export * from '../models/TenableAssetsSecretsConfig';
+export * from '../models/TenableAssetsSettingsConfig';
 export * from '../models/TenableVulnerabilitiesCronSecretsConfig';
 export * from '../models/TenableVulnerabilitiesCronSettingsConfig';
 export * from '../models/TenableVulnerabilitiesSecretsConfig';
+export * from '../models/TenableVulnerabilitiesSettingsConfig';
 export * from '../models/TypesFilterNameStringType';
 export * from '../models/UsersInfoSecretsConfig';
 export * from '../models/UsersInfoSettingsConfig';
@@ -370,7 +374,6 @@ import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecre
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
 import { AzureBlobStorageSecretsConfig } from '../models/AzureBlobStorageSecretsConfig';
 import { AzureBlobStorageSettingsConfig } from '../models/AzureBlobStorageSettingsConfig';
-import { AzureVirtualMachineSettingsConfig } from '../models/AzureVirtualMachineSettingsConfig';
 import { AzureVnetFlowLogsSecretsConfig } from '../models/AzureVnetFlowLogsSecretsConfig';
 import { AzureVnetFlowLogsSettingsConfig } from '../models/AzureVnetFlowLogsSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
@@ -382,6 +385,7 @@ import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
+import { CisaUserSettingsConfig } from '../models/CisaUserSettingsConfig';
 import { CloudAssetInventorySecretsConfig } from '../models/CloudAssetInventorySecretsConfig';
 import { CloudAssetInventorySettingsConfig } from '../models/CloudAssetInventorySettingsConfig';
 import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigurationFindingsSecretsConfig';
@@ -407,8 +411,6 @@ import { CrowdstrikeFdrSettingsConfig } from '../models/CrowdstrikeFdrSettingsCo
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
 import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
 import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
-import { DemoCustomSettingsConfig } from '../models/DemoCustomSettingsConfig';
-import { DemoSettingsConfig } from '../models/DemoSettingsConfig';
 import { DetectSummariesSecretsConfig } from '../models/DetectSummariesSecretsConfig';
 import { DetectSummariesSettingsConfig } from '../models/DetectSummariesSettingsConfig';
 import { DeviceActivitySecretsConfig } from '../models/DeviceActivitySecretsConfig';
@@ -441,10 +443,6 @@ import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
 import { GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter   } from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
-import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
-import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
-import { GithubComMonadIncCorePkgTypesModelsQuota } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
-import { GithubComMonadIncCorePkgTypesModelsUser } from '../models/GithubComMonadIncCorePkgTypesModelsUser';
 import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
 import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -459,7 +457,7 @@ import { IamAccessAnalyzerFilter } from '../models/IamAccessAnalyzerFilter';
 import { IamAccessAnalyzerSettingsConfig } from '../models/IamAccessAnalyzerSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
-import { IssuesSettingsConfig     , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum    } from '../models/IssuesSettingsConfig';
+import { IssuesSettingsConfig     , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum     } from '../models/IssuesSettingsConfig';
 import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
 import { KmsSettingsConfig } from '../models/KmsSettingsConfig';
@@ -490,6 +488,7 @@ import { ModelsInput } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputList } from '../models/ModelsInputList';
 import { ModelsNodeComponent } from '../models/ModelsNodeComponent';
+import { ModelsOrganization } from '../models/ModelsOrganization';
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
@@ -497,6 +496,7 @@ import { ModelsOutput } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
+import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline } from '../models/ModelsPipeline';
 import { ModelsPipelineConfigV2 } from '../models/ModelsPipelineConfigV2';
@@ -510,6 +510,7 @@ import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
+import { ModelsQuota } from '../models/ModelsQuota';
 import { ModelsQuotaList } from '../models/ModelsQuotaList';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
@@ -522,6 +523,7 @@ import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
+import { ModelsUser } from '../models/ModelsUser';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
@@ -638,13 +640,13 @@ import { SecurityGroupsSettingsConfig } from '../models/SecurityGroupsSettingsCo
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
 import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
+import { SemgrepCodeFindingsSettingsConfig } from '../models/SemgrepCodeFindingsSettingsConfig';
 import { SemgrepDeploymentsSecretsConfig } from '../models/SemgrepDeploymentsSecretsConfig';
 import { SemgrepDeploymentsSettingsConfig } from '../models/SemgrepDeploymentsSettingsConfig';
 import { SemgrepProjectDetailsSecretsConfig } from '../models/SemgrepProjectDetailsSecretsConfig';
 import { SemgrepProjectDetailsSettingsConfig } from '../models/SemgrepProjectDetailsSettingsConfig';
 import { SemgrepProjectsSecretsConfig } from '../models/SemgrepProjectsSecretsConfig';
 import { SemgrepProjectsSettingsConfig } from '../models/SemgrepProjectsSettingsConfig';
-import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
 import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
 import { SentryOrgAuditLogsSecretsConfig } from '../models/SentryOrgAuditLogsSecretsConfig';
@@ -658,15 +660,19 @@ import { SnowflakeInputSettingsConfig } from '../models/SnowflakeInputSettingsCo
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
 import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
+import { SnykIssuesSettingsConfig } from '../models/SnykIssuesSettingsConfig';
 import { SnykOrganizationsSecretsConfig } from '../models/SnykOrganizationsSecretsConfig';
 import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
 import { SnykProjectsSecretsConfig } from '../models/SnykProjectsSecretsConfig';
 import { SnykProjectsSettingsConfig } from '../models/SnykProjectsSettingsConfig';
 import { SnykTargetsSecretsConfig } from '../models/SnykTargetsSecretsConfig';
+import { SnykTargetsSettingsConfig } from '../models/SnykTargetsSettingsConfig';
 import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
 import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
 import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
 import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
+import { SyntheticDataCustomSettingsConfig } from '../models/SyntheticDataCustomSettingsConfig';
+import { SyntheticDataSettingsConfig } from '../models/SyntheticDataSettingsConfig';
 import { SystemlogSecretsConfig } from '../models/SystemlogSecretsConfig';
 import { SystemlogSettingsConfig } from '../models/SystemlogSettingsConfig';
 import { TailscaleUsersSecretsConfig } from '../models/TailscaleUsersSecretsConfig';
@@ -674,9 +680,11 @@ import { TailscaleUsersSettingsConfig } from '../models/TailscaleUsersSettingsCo
 import { TenableAssetsCronSecretsConfig } from '../models/TenableAssetsCronSecretsConfig';
 import { TenableAssetsCronSettingsConfig } from '../models/TenableAssetsCronSettingsConfig';
 import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
+import { TenableAssetsSettingsConfig } from '../models/TenableAssetsSettingsConfig';
 import { TenableVulnerabilitiesCronSecretsConfig } from '../models/TenableVulnerabilitiesCronSecretsConfig';
 import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
+import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
 import { TypesFilterNameStringType } from '../models/TypesFilterNameStringType';
 import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
@@ -742,7 +750,6 @@ let typeMap: {[index: string]: any} = {
     "AzureActivityLogsSettingsConfig": AzureActivityLogsSettingsConfig,
     "AzureBlobStorageSecretsConfig": AzureBlobStorageSecretsConfig,
     "AzureBlobStorageSettingsConfig": AzureBlobStorageSettingsConfig,
-    "AzureVirtualMachineSettingsConfig": AzureVirtualMachineSettingsConfig,
     "AzureVnetFlowLogsSecretsConfig": AzureVnetFlowLogsSecretsConfig,
     "AzureVnetFlowLogsSettingsConfig": AzureVnetFlowLogsSettingsConfig,
     "BatchConfigBatchConfig": BatchConfigBatchConfig,
@@ -754,6 +761,7 @@ let typeMap: {[index: string]: any} = {
     "BoxEventsSettingsConfig": BoxEventsSettingsConfig,
     "BoxUsersSecretsConfig": BoxUsersSecretsConfig,
     "BoxUsersSettingsConfig": BoxUsersSettingsConfig,
+    "CisaUserSettingsConfig": CisaUserSettingsConfig,
     "CloudAssetInventorySecretsConfig": CloudAssetInventorySecretsConfig,
     "CloudAssetInventorySettingsConfig": CloudAssetInventorySettingsConfig,
     "CloudConfigurationFindingsSecretsConfig": CloudConfigurationFindingsSecretsConfig,
@@ -779,8 +787,6 @@ let typeMap: {[index: string]: any} = {
     "DefenderForEndpointAlertsSecretsConfig": DefenderForEndpointAlertsSecretsConfig,
     "DefenderForEndpointAlertsSettingsConfig": DefenderForEndpointAlertsSettingsConfig,
     "DelimitedDelimiterFormatter": DelimitedDelimiterFormatter,
-    "DemoCustomSettingsConfig": DemoCustomSettingsConfig,
-    "DemoSettingsConfig": DemoSettingsConfig,
     "DetectSummariesSecretsConfig": DetectSummariesSecretsConfig,
     "DetectSummariesSettingsConfig": DetectSummariesSettingsConfig,
     "DeviceActivitySecretsConfig": DeviceActivitySecretsConfig,
@@ -813,10 +819,6 @@ let typeMap: {[index: string]: any} = {
     "FullScansSecretsConfig": FullScansSecretsConfig,
     "FullScansSettingsConfig": FullScansSettingsConfig,
     "GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter": GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter,
-    "GithubComMonadIncCorePkgTypesModelsOrganization": GithubComMonadIncCorePkgTypesModelsOrganization,
-    "GithubComMonadIncCorePkgTypesModelsPermission": GithubComMonadIncCorePkgTypesModelsPermission,
-    "GithubComMonadIncCorePkgTypesModelsQuota": GithubComMonadIncCorePkgTypesModelsQuota,
-    "GithubComMonadIncCorePkgTypesModelsUser": GithubComMonadIncCorePkgTypesModelsUser,
     "GitlabIssuesSecretsConfig": GitlabIssuesSecretsConfig,
     "GitlabIssuesSettingsConfig": GitlabIssuesSettingsConfig,
     "GoogleCloudStorageOutputSecretsConfig": GoogleCloudStorageOutputSecretsConfig,
@@ -862,6 +864,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsInputConfig": ModelsInputConfig,
     "ModelsInputList": ModelsInputList,
     "ModelsNodeComponent": ModelsNodeComponent,
+    "ModelsOrganization": ModelsOrganization,
     "ModelsOrganizationList": ModelsOrganizationList,
     "ModelsOrganizationUser": ModelsOrganizationUser,
     "ModelsOrganizationUserList": ModelsOrganizationUserList,
@@ -869,6 +872,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsOutputConfig": ModelsOutputConfig,
     "ModelsOutputList": ModelsOutputList,
     "ModelsPagination": ModelsPagination,
+    "ModelsPermission": ModelsPermission,
     "ModelsPermissionList": ModelsPermissionList,
     "ModelsPipeline": ModelsPipeline,
     "ModelsPipelineConfigV2": ModelsPipelineConfigV2,
@@ -882,6 +886,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsPipelineNodeStatus": ModelsPipelineNodeStatus,
     "ModelsPipelineRetentionPolicy": ModelsPipelineRetentionPolicy,
     "ModelsPipelineStatus": ModelsPipelineStatus,
+    "ModelsQuota": ModelsQuota,
     "ModelsQuotaList": ModelsQuotaList,
     "ModelsRoleWithPermissions": ModelsRoleWithPermissions,
     "ModelsRoleWithPermissionsList": ModelsRoleWithPermissionsList,
@@ -894,6 +899,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsTransformOperation": ModelsTransformOperation,
     "ModelsTransformsRepositoryList": ModelsTransformsRepositoryList,
     "ModelsTransformsRepositoryTransform": ModelsTransformsRepositoryTransform,
+    "ModelsUser": ModelsUser,
     "ModelsUserRoleWithPermissions": ModelsUserRoleWithPermissions,
     "MonadLogSettingsConfig": MonadLogSettingsConfig,
     "MutateTypeMutateType": MutateTypeMutateType,
@@ -1010,13 +1016,13 @@ let typeMap: {[index: string]: any} = {
     "SecurityLakeSettingsConfig": SecurityLakeSettingsConfig,
     "SecurityLakeSourceAccountDetails": SecurityLakeSourceAccountDetails,
     "SemgrepCodeFindingsSecretsConfig": SemgrepCodeFindingsSecretsConfig,
+    "SemgrepCodeFindingsSettingsConfig": SemgrepCodeFindingsSettingsConfig,
     "SemgrepDeploymentsSecretsConfig": SemgrepDeploymentsSecretsConfig,
     "SemgrepDeploymentsSettingsConfig": SemgrepDeploymentsSettingsConfig,
     "SemgrepProjectDetailsSecretsConfig": SemgrepProjectDetailsSecretsConfig,
     "SemgrepProjectDetailsSettingsConfig": SemgrepProjectDetailsSettingsConfig,
     "SemgrepProjectsSecretsConfig": SemgrepProjectsSecretsConfig,
     "SemgrepProjectsSettingsConfig": SemgrepProjectsSettingsConfig,
-    "SemgrepSupplyChainFindingsSecretsConfig": SemgrepSupplyChainFindingsSecretsConfig,
     "SentinelSecretsConfig": SentinelSecretsConfig,
     "SentinelSettingsConfig": SentinelSettingsConfig,
     "SentryOrgAuditLogsSecretsConfig": SentryOrgAuditLogsSecretsConfig,
@@ -1030,15 +1036,19 @@ let typeMap: {[index: string]: any} = {
     "SnowflakeOutputSecretsConfig": SnowflakeOutputSecretsConfig,
     "SnowflakeOutputSettingsConfig": SnowflakeOutputSettingsConfig,
     "SnykIssuesSecretsConfig": SnykIssuesSecretsConfig,
+    "SnykIssuesSettingsConfig": SnykIssuesSettingsConfig,
     "SnykOrganizationsSecretsConfig": SnykOrganizationsSecretsConfig,
     "SnykOrganizationsSettingsConfig": SnykOrganizationsSettingsConfig,
     "SnykProjectsSecretsConfig": SnykProjectsSecretsConfig,
     "SnykProjectsSettingsConfig": SnykProjectsSettingsConfig,
     "SnykTargetsSecretsConfig": SnykTargetsSecretsConfig,
+    "SnykTargetsSettingsConfig": SnykTargetsSettingsConfig,
     "SplunkSecretsConfig": SplunkSecretsConfig,
     "SplunkSettingsConfig": SplunkSettingsConfig,
     "SumologicSecretsConfig": SumologicSecretsConfig,
     "SumologicSettingsConfig": SumologicSettingsConfig,
+    "SyntheticDataCustomSettingsConfig": SyntheticDataCustomSettingsConfig,
+    "SyntheticDataSettingsConfig": SyntheticDataSettingsConfig,
     "SystemlogSecretsConfig": SystemlogSecretsConfig,
     "SystemlogSettingsConfig": SystemlogSettingsConfig,
     "TailscaleUsersSecretsConfig": TailscaleUsersSecretsConfig,
@@ -1046,9 +1056,11 @@ let typeMap: {[index: string]: any} = {
     "TenableAssetsCronSecretsConfig": TenableAssetsCronSecretsConfig,
     "TenableAssetsCronSettingsConfig": TenableAssetsCronSettingsConfig,
     "TenableAssetsSecretsConfig": TenableAssetsSecretsConfig,
+    "TenableAssetsSettingsConfig": TenableAssetsSettingsConfig,
     "TenableVulnerabilitiesCronSecretsConfig": TenableVulnerabilitiesCronSecretsConfig,
     "TenableVulnerabilitiesCronSettingsConfig": TenableVulnerabilitiesCronSettingsConfig,
     "TenableVulnerabilitiesSecretsConfig": TenableVulnerabilitiesSecretsConfig,
+    "TenableVulnerabilitiesSettingsConfig": TenableVulnerabilitiesSettingsConfig,
     "UsersInfoSecretsConfig": UsersInfoSecretsConfig,
     "UsersInfoSettingsConfig": UsersInfoSettingsConfig,
     "UsersSecretsConfig": UsersSecretsConfig,

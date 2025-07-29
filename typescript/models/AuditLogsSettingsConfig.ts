@@ -49,6 +49,10 @@ export class AuditLogsSettingsConfig {
     */
     'repository'?: string;
     /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
+    /**
     * Filter by the username that was affected by the action
     */
     'user'?: string;
@@ -104,6 +108,12 @@ export class AuditLogsSettingsConfig {
             "name": "repository",
             "baseName": "repository",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         },
         {

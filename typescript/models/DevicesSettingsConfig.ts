@@ -25,6 +25,10 @@ export class DevicesSettingsConfig {
     * The tailnet organization name. Defaults to \"-\" to reference the default organization.
     */
     'organizationId'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -47,6 +51,12 @@ export class DevicesSettingsConfig {
             "name": "organizationId",
             "baseName": "organization_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,7 +32,8 @@ class OrganizationsSettingsConfig(BaseModel):
     parent_id: Optional[StrictStr] = Field(default=None, description="Parent ID to list children for")
     region: Optional[StrictStr] = Field(default=None, description="AWS region to use")
     role_arn: Optional[StrictStr] = Field(default=None, description="Role ARN to assume")
-    __properties: ClassVar[List[str]] = ["child_type", "cron", "parent_id", "region", "role_arn"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["child_type", "cron", "parent_id", "region", "role_arn", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,7 +90,8 @@ class OrganizationsSettingsConfig(BaseModel):
             "cron": obj.get("cron"),
             "parent_id": obj.get("parent_id"),
             "region": obj.get("region"),
-            "role_arn": obj.get("role_arn")
+            "role_arn": obj.get("role_arn"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

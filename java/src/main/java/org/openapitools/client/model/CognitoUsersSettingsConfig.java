@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS Cognito Users settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T17:08:43.016598559Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class CognitoUsersSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
@@ -70,6 +70,11 @@ public class CognitoUsersSettingsConfig {
   @SerializedName(SERIALIZED_NAME_ROLE_ARN)
   @javax.annotation.Nullable
   private String roleArn;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public static final String SERIALIZED_NAME_USER_POOL_ID = "user_pool_id";
   @SerializedName(SERIALIZED_NAME_USER_POOL_ID)
@@ -155,6 +160,25 @@ public class CognitoUsersSettingsConfig {
   }
 
 
+  public CognitoUsersSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
   public CognitoUsersSettingsConfig userPoolId(@javax.annotation.Nullable String userPoolId) {
     this.userPoolId = userPoolId;
     return this;
@@ -188,12 +212,13 @@ public class CognitoUsersSettingsConfig {
         Objects.equals(this.filter, cognitoUsersSettingsConfig.filter) &&
         Objects.equals(this.region, cognitoUsersSettingsConfig.region) &&
         Objects.equals(this.roleArn, cognitoUsersSettingsConfig.roleArn) &&
+        Objects.equals(this.useSyntheticData, cognitoUsersSettingsConfig.useSyntheticData) &&
         Objects.equals(this.userPoolId, cognitoUsersSettingsConfig.userPoolId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cron, filter, region, roleArn, userPoolId);
+    return Objects.hash(cron, filter, region, roleArn, useSyntheticData, userPoolId);
   }
 
   @Override
@@ -204,6 +229,7 @@ public class CognitoUsersSettingsConfig {
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("    userPoolId: ").append(toIndentedString(userPoolId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -226,7 +252,7 @@ public class CognitoUsersSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cron", "filter", "region", "role_arn", "user_pool_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("cron", "filter", "region", "role_arn", "use_synthetic_data", "user_pool_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
