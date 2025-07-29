@@ -92,6 +92,7 @@ export * from '../models/FlattenallFlattenAll';
 export * from '../models/FormatterFormatConfig';
 export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
+export * from '../models/GithubAdvisoryUserSettingsConfig';
 export * from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
 export * from '../models/GitlabIssuesSecretsConfig';
 export * from '../models/GitlabIssuesSettingsConfig';
@@ -442,6 +443,7 @@ import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
+import { GithubAdvisoryUserSettingsConfig } from '../models/GithubAdvisoryUserSettingsConfig';
 import { GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter   } from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
 import { GitlabIssuesSecretsConfig } from '../models/GitlabIssuesSecretsConfig';
 import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
@@ -818,6 +820,7 @@ let typeMap: {[index: string]: any} = {
     "FormatterFormatConfig": FormatterFormatConfig,
     "FullScansSecretsConfig": FullScansSecretsConfig,
     "FullScansSettingsConfig": FullScansSettingsConfig,
+    "GithubAdvisoryUserSettingsConfig": GithubAdvisoryUserSettingsConfig,
     "GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter": GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter,
     "GitlabIssuesSecretsConfig": GitlabIssuesSecretsConfig,
     "GitlabIssuesSettingsConfig": GitlabIssuesSettingsConfig,

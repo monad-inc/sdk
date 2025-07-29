@@ -308,6 +308,7 @@ Class | Method | HTTP request | Description
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
+ - [GithubAdvisoryUserSettingsConfig](docs/GithubAdvisoryUserSettingsConfig.md)
  - [GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter](docs/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.md)
  - [GitlabIssuesSecretsConfig](docs/GitlabIssuesSecretsConfig.md)
  - [GitlabIssuesSettingsConfig](docs/GitlabIssuesSettingsConfig.md)

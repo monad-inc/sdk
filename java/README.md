@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-07-29T23:01:52.778397948Z[Etc/UTC]
+  - Build date: 2025-07-29T23:18:04.745866179Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -338,6 +338,7 @@ Class | Method | HTTP request | Description
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
+ - [GithubAdvisoryUserSettingsConfig](docs/GithubAdvisoryUserSettingsConfig.md)
  - [GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter](docs/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.md)
  - [GitlabIssuesSecretsConfig](docs/GitlabIssuesSecretsConfig.md)
  - [GitlabIssuesSettingsConfig](docs/GitlabIssuesSettingsConfig.md)

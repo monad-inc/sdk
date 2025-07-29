@@ -152,6 +152,7 @@ __all__ = [
     "FormatterFormatConfig",
     "FullScansSecretsConfig",
     "FullScansSettingsConfig",
+    "GithubAdvisoryUserSettingsConfig",
     "GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter",
     "GitlabIssuesSecretsConfig",
     "GitlabIssuesSettingsConfig",
@@ -547,6 +548,7 @@ from monad.models.flattenall_flatten_all import FlattenallFlattenAll as Flattena
 from monad.models.formatter_format_config import FormatterFormatConfig as FormatterFormatConfig
 from monad.models.full_scans_secrets_config import FullScansSecretsConfig as FullScansSecretsConfig
 from monad.models.full_scans_settings_config import FullScansSettingsConfig as FullScansSettingsConfig
+from monad.models.github_advisory_user_settings_config import GithubAdvisoryUserSettingsConfig as GithubAdvisoryUserSettingsConfig
 from monad.models.github_com_aws_aws_sdk_go_v2_service_secretsmanager_types_filter import GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter as GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter
 from monad.models.gitlab_issues_secrets_config import GitlabIssuesSecretsConfig as GitlabIssuesSecretsConfig
 from monad.models.gitlab_issues_settings_config import GitlabIssuesSettingsConfig as GitlabIssuesSettingsConfig
