@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T23:18:04.745866179Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T14:46:40.490883554Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsConnectorMeta {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
