@@ -25,7 +25,7 @@ type ModelsRoleWithPermissions struct {
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
-	Permissions []ModelsPermission `json:"permissions,omitempty"`
+	Permissions []GithubComMonadIncCorePkgTypesModelsPermission `json:"permissions,omitempty"`
 	Protected *bool `json:"protected,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
@@ -208,9 +208,9 @@ func (o *ModelsRoleWithPermissions) SetOrganizationId(v string) {
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *ModelsRoleWithPermissions) GetPermissions() []ModelsPermission {
+func (o *ModelsRoleWithPermissions) GetPermissions() []GithubComMonadIncCorePkgTypesModelsPermission {
 	if o == nil || IsNil(o.Permissions) {
-		var ret []ModelsPermission
+		var ret []GithubComMonadIncCorePkgTypesModelsPermission
 		return ret
 	}
 	return o.Permissions
@@ -218,7 +218,7 @@ func (o *ModelsRoleWithPermissions) GetPermissions() []ModelsPermission {
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsRoleWithPermissions) GetPermissionsOk() ([]ModelsPermission, bool) {
+func (o *ModelsRoleWithPermissions) GetPermissionsOk() ([]GithubComMonadIncCorePkgTypesModelsPermission, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -234,8 +234,8 @@ func (o *ModelsRoleWithPermissions) HasPermissions() bool {
 	return false
 }
 
-// SetPermissions gets a reference to the given []ModelsPermission and assigns it to the Permissions field.
-func (o *ModelsRoleWithPermissions) SetPermissions(v []ModelsPermission) {
+// SetPermissions gets a reference to the given []GithubComMonadIncCorePkgTypesModelsPermission and assigns it to the Permissions field.
+func (o *ModelsRoleWithPermissions) SetPermissions(v []GithubComMonadIncCorePkgTypesModelsPermission) {
 	o.Permissions = v
 }
 

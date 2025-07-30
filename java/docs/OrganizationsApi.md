@@ -165,7 +165,7 @@ public class Example {
 
 <a id="v1OrganizationsOrganizationIdPatch"></a>
 # **v1OrganizationsOrganizationIdPatch**
-> ModelsOrganization v1OrganizationsOrganizationIdPatch(organizationId, routesUpdateOrganizationRequest)
+> GithubComMonadIncCorePkgTypesModelsOrganization v1OrganizationsOrganizationIdPatch(organizationId, routesUpdateOrganizationRequest)
 
 Update organization
 
@@ -202,7 +202,7 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     RoutesUpdateOrganizationRequest routesUpdateOrganizationRequest = new RoutesUpdateOrganizationRequest(); // RoutesUpdateOrganizationRequest | Request body for updating an organization
     try {
-      ModelsOrganization result = apiInstance.v1OrganizationsOrganizationIdPatch(organizationId, routesUpdateOrganizationRequest);
+      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.v1OrganizationsOrganizationIdPatch(organizationId, routesUpdateOrganizationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#v1OrganizationsOrganizationIdPatch");
@@ -224,7 +224,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsOrganization**](ModelsOrganization.md)
+[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
 
 ### Authorization
 
@@ -242,7 +242,7 @@ public class Example {
 
 <a id="v1OrganizationsPost"></a>
 # **v1OrganizationsPost**
-> ModelsOrganization v1OrganizationsPost(routesCreateOrganizationRequest)
+> GithubComMonadIncCorePkgTypesModelsOrganization v1OrganizationsPost(routesCreateOrganizationRequest)
 
 Create organization
 
@@ -278,7 +278,7 @@ public class Example {
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     RoutesCreateOrganizationRequest routesCreateOrganizationRequest = new RoutesCreateOrganizationRequest(); // RoutesCreateOrganizationRequest | Request body for creating an organization
     try {
-      ModelsOrganization result = apiInstance.v1OrganizationsPost(routesCreateOrganizationRequest);
+      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.v1OrganizationsPost(routesCreateOrganizationRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#v1OrganizationsPost");
@@ -299,7 +299,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsOrganization**](ModelsOrganization.md)
+[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
 
 ### Authorization
 

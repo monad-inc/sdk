@@ -23,8 +23,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsQuota;
 import org.openapitools.client.model.ModelsPagination;
-import org.openapitools.client.model.ModelsQuota;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsQuotaList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T16:12:35.852277958Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T18:20:51.891132562Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsQuotaList {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
@@ -62,7 +62,7 @@ public class ModelsQuotaList {
   public static final String SERIALIZED_NAME_QUOTAS = "quotas";
   @SerializedName(SERIALIZED_NAME_QUOTAS)
   @javax.annotation.Nullable
-  private List<ModelsQuota> quotas = new ArrayList<>();
+  private List<GithubComMonadIncCorePkgTypesModelsQuota> quotas = new ArrayList<>();
 
   public ModelsQuotaList() {
   }
@@ -86,12 +86,12 @@ public class ModelsQuotaList {
   }
 
 
-  public ModelsQuotaList quotas(@javax.annotation.Nullable List<ModelsQuota> quotas) {
+  public ModelsQuotaList quotas(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsQuota> quotas) {
     this.quotas = quotas;
     return this;
   }
 
-  public ModelsQuotaList addQuotasItem(ModelsQuota quotasItem) {
+  public ModelsQuotaList addQuotasItem(GithubComMonadIncCorePkgTypesModelsQuota quotasItem) {
     if (this.quotas == null) {
       this.quotas = new ArrayList<>();
     }
@@ -104,11 +104,11 @@ public class ModelsQuotaList {
    * @return quotas
    */
   @javax.annotation.Nullable
-  public List<ModelsQuota> getQuotas() {
+  public List<GithubComMonadIncCorePkgTypesModelsQuota> getQuotas() {
     return quotas;
   }
 
-  public void setQuotas(@javax.annotation.Nullable List<ModelsQuota> quotas) {
+  public void setQuotas(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsQuota> quotas) {
     this.quotas = quotas;
   }
 
@@ -200,7 +200,7 @@ public class ModelsQuotaList {
 
           // validate the optional field `quotas` (array)
           for (int i = 0; i < jsonArrayquotas.size(); i++) {
-            ModelsQuota.validateJsonElement(jsonArrayquotas.get(i));
+            GithubComMonadIncCorePkgTypesModelsQuota.validateJsonElement(jsonArrayquotas.get(i));
           };
         }
       }

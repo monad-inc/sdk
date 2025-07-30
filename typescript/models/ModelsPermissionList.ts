@@ -10,13 +10,13 @@
  * Do not edit the class manually.
  */
 
+import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
 import { ModelsPagination } from '../models/ModelsPagination';
-import { ModelsPermission } from '../models/ModelsPermission';
 import { HttpFile } from '../http/http';
 
 export class ModelsPermissionList {
     'pagination'?: ModelsPagination;
-    'permissions'?: Array<ModelsPermission>;
+    'permissions'?: Array<GithubComMonadIncCorePkgTypesModelsPermission>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -32,7 +32,7 @@ export class ModelsPermissionList {
         {
             "name": "permissions",
             "baseName": "permissions",
-            "type": "Array<ModelsPermission>",
+            "type": "Array<GithubComMonadIncCorePkgTypesModelsPermission>",
             "format": ""
         }    ];
 

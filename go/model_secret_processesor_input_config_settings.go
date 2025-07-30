@@ -30,6 +30,7 @@ type SecretProcessesorInputConfigSettings struct {
 	AwssqsSettingsConfig *AwssqsSettingsConfig
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
 	AzureBlobStorageSettingsConfig *AzureBlobStorageSettingsConfig
+	AzureVirtualMachineSettingsConfig *AzureVirtualMachineSettingsConfig
 	AzureVnetFlowLogsSettingsConfig *AzureVnetFlowLogsSettingsConfig
 	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BoxEventsSettingsConfig *BoxEventsSettingsConfig
@@ -66,6 +67,7 @@ type SecretProcessesorInputConfigSettings struct {
 	OauthActivitySettingsConfig *OauthActivitySettingsConfig
 	ObjectStorageInputSettingsConfig *ObjectStorageInputSettingsConfig
 	OneloginEventsSettingsConfig *OneloginEventsSettingsConfig
+	OpenaiSettingsConfig *OpenaiSettingsConfig
 	OrganizationsSettingsConfig *OrganizationsSettingsConfig
 	PaloAltoDataSecurityAlertsSettingsConfig *PaloAltoDataSecurityAlertsSettingsConfig
 	ResourceEvaluationsSettingsConfig *ResourceEvaluationsSettingsConfig
@@ -76,6 +78,7 @@ type SecretProcessesorInputConfigSettings struct {
 	SemgrepDeploymentsSettingsConfig *SemgrepDeploymentsSettingsConfig
 	SemgrepProjectDetailsSettingsConfig *SemgrepProjectDetailsSettingsConfig
 	SemgrepProjectsSettingsConfig *SemgrepProjectsSettingsConfig
+	SemgrepSupplyChainFindingsSettingsConfig *SemgrepSupplyChainFindingsSettingsConfig
 	SentryOrgAuditLogsSettingsConfig *SentryOrgAuditLogsSettingsConfig
 	SlackUsersSettingsConfig *SlackUsersSettingsConfig
 	SlackgroupsSettingsConfig *SlackgroupsSettingsConfig
@@ -174,6 +177,13 @@ func AzureActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Az
 func AzureBlobStorageSettingsConfigAsSecretProcessesorInputConfigSettings(v *AzureBlobStorageSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		AzureBlobStorageSettingsConfig: v,
+	}
+}
+
+// AzureVirtualMachineSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AzureVirtualMachineSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func AzureVirtualMachineSettingsConfigAsSecretProcessesorInputConfigSettings(v *AzureVirtualMachineSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		AzureVirtualMachineSettingsConfig: v,
 	}
 }
 
@@ -429,6 +439,13 @@ func OneloginEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Onelo
 	}
 }
 
+// OpenaiSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OpenaiSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func OpenaiSettingsConfigAsSecretProcessesorInputConfigSettings(v *OpenaiSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		OpenaiSettingsConfig: v,
+	}
+}
+
 // OrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OrganizationsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func OrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OrganizationsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -496,6 +513,13 @@ func SemgrepProjectDetailsSettingsConfigAsSecretProcessesorInputConfigSettings(v
 func SemgrepProjectsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SemgrepProjectsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		SemgrepProjectsSettingsConfig: v,
+	}
+}
+
+// SemgrepSupplyChainFindingsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SemgrepSupplyChainFindingsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func SemgrepSupplyChainFindingsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SemgrepSupplyChainFindingsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		SemgrepSupplyChainFindingsSettingsConfig: v,
 	}
 }
 
@@ -843,6 +867,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.AzureBlobStorageSettingsConfig = nil
+	}
+
+	// try to unmarshal data into AzureVirtualMachineSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AzureVirtualMachineSettingsConfig)
+	if err == nil {
+		jsonAzureVirtualMachineSettingsConfig, _ := json.Marshal(dst.AzureVirtualMachineSettingsConfig)
+		if string(jsonAzureVirtualMachineSettingsConfig) == "{}" { // empty struct
+			dst.AzureVirtualMachineSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AzureVirtualMachineSettingsConfig); err != nil {
+				dst.AzureVirtualMachineSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AzureVirtualMachineSettingsConfig = nil
 	}
 
 	// try to unmarshal data into AzureVnetFlowLogsSettingsConfig
@@ -1457,6 +1498,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OneloginEventsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into OpenaiSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.OpenaiSettingsConfig)
+	if err == nil {
+		jsonOpenaiSettingsConfig, _ := json.Marshal(dst.OpenaiSettingsConfig)
+		if string(jsonOpenaiSettingsConfig) == "{}" { // empty struct
+			dst.OpenaiSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.OpenaiSettingsConfig); err != nil {
+				dst.OpenaiSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.OpenaiSettingsConfig = nil
+	}
+
 	// try to unmarshal data into OrganizationsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.OrganizationsSettingsConfig)
 	if err == nil {
@@ -1625,6 +1683,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.SemgrepProjectsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into SemgrepSupplyChainFindingsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SemgrepSupplyChainFindingsSettingsConfig)
+	if err == nil {
+		jsonSemgrepSupplyChainFindingsSettingsConfig, _ := json.Marshal(dst.SemgrepSupplyChainFindingsSettingsConfig)
+		if string(jsonSemgrepSupplyChainFindingsSettingsConfig) == "{}" { // empty struct
+			dst.SemgrepSupplyChainFindingsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SemgrepSupplyChainFindingsSettingsConfig); err != nil {
+				dst.SemgrepSupplyChainFindingsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SemgrepSupplyChainFindingsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into SentryOrgAuditLogsSettingsConfig
@@ -2014,6 +2089,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AwssqsSettingsConfig = nil
 		dst.AzureActivityLogsSettingsConfig = nil
 		dst.AzureBlobStorageSettingsConfig = nil
+		dst.AzureVirtualMachineSettingsConfig = nil
 		dst.AzureVnetFlowLogsSettingsConfig = nil
 		dst.BigqueryInputSettingsConfig = nil
 		dst.BoxEventsSettingsConfig = nil
@@ -2050,6 +2126,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OauthActivitySettingsConfig = nil
 		dst.ObjectStorageInputSettingsConfig = nil
 		dst.OneloginEventsSettingsConfig = nil
+		dst.OpenaiSettingsConfig = nil
 		dst.OrganizationsSettingsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
 		dst.ResourceEvaluationsSettingsConfig = nil
@@ -2060,6 +2137,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.SemgrepDeploymentsSettingsConfig = nil
 		dst.SemgrepProjectDetailsSettingsConfig = nil
 		dst.SemgrepProjectsSettingsConfig = nil
+		dst.SemgrepSupplyChainFindingsSettingsConfig = nil
 		dst.SentryOrgAuditLogsSettingsConfig = nil
 		dst.SlackUsersSettingsConfig = nil
 		dst.SlackgroupsSettingsConfig = nil
@@ -2135,6 +2213,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.AzureBlobStorageSettingsConfig != nil {
 		return json.Marshal(&src.AzureBlobStorageSettingsConfig)
+	}
+
+	if src.AzureVirtualMachineSettingsConfig != nil {
+		return json.Marshal(&src.AzureVirtualMachineSettingsConfig)
 	}
 
 	if src.AzureVnetFlowLogsSettingsConfig != nil {
@@ -2281,6 +2363,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.OneloginEventsSettingsConfig)
 	}
 
+	if src.OpenaiSettingsConfig != nil {
+		return json.Marshal(&src.OpenaiSettingsConfig)
+	}
+
 	if src.OrganizationsSettingsConfig != nil {
 		return json.Marshal(&src.OrganizationsSettingsConfig)
 	}
@@ -2319,6 +2405,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.SemgrepProjectsSettingsConfig != nil {
 		return json.Marshal(&src.SemgrepProjectsSettingsConfig)
+	}
+
+	if src.SemgrepSupplyChainFindingsSettingsConfig != nil {
+		return json.Marshal(&src.SemgrepSupplyChainFindingsSettingsConfig)
 	}
 
 	if src.SentryOrgAuditLogsSettingsConfig != nil {
@@ -2459,6 +2549,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.AzureBlobStorageSettingsConfig != nil {
 		return obj.AzureBlobStorageSettingsConfig
+	}
+
+	if obj.AzureVirtualMachineSettingsConfig != nil {
+		return obj.AzureVirtualMachineSettingsConfig
 	}
 
 	if obj.AzureVnetFlowLogsSettingsConfig != nil {
@@ -2605,6 +2699,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.OneloginEventsSettingsConfig
 	}
 
+	if obj.OpenaiSettingsConfig != nil {
+		return obj.OpenaiSettingsConfig
+	}
+
 	if obj.OrganizationsSettingsConfig != nil {
 		return obj.OrganizationsSettingsConfig
 	}
@@ -2643,6 +2741,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.SemgrepProjectsSettingsConfig != nil {
 		return obj.SemgrepProjectsSettingsConfig
+	}
+
+	if obj.SemgrepSupplyChainFindingsSettingsConfig != nil {
+		return obj.SemgrepSupplyChainFindingsSettingsConfig
 	}
 
 	if obj.SentryOrgAuditLogsSettingsConfig != nil {
@@ -2781,6 +2883,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.AzureBlobStorageSettingsConfig != nil {
 		return *obj.AzureBlobStorageSettingsConfig
+	}
+
+	if obj.AzureVirtualMachineSettingsConfig != nil {
+		return *obj.AzureVirtualMachineSettingsConfig
 	}
 
 	if obj.AzureVnetFlowLogsSettingsConfig != nil {
@@ -2927,6 +3033,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.OneloginEventsSettingsConfig
 	}
 
+	if obj.OpenaiSettingsConfig != nil {
+		return *obj.OpenaiSettingsConfig
+	}
+
 	if obj.OrganizationsSettingsConfig != nil {
 		return *obj.OrganizationsSettingsConfig
 	}
@@ -2965,6 +3075,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.SemgrepProjectsSettingsConfig != nil {
 		return *obj.SemgrepProjectsSettingsConfig
+	}
+
+	if obj.SemgrepSupplyChainFindingsSettingsConfig != nil {
+		return *obj.SemgrepSupplyChainFindingsSettingsConfig
 	}
 
 	if obj.SentryOrgAuditLogsSettingsConfig != nil {

@@ -21,7 +21,7 @@ var _ MappedNullable = &ModelsUserRoleWithPermissions{}
 // ModelsUserRoleWithPermissions struct for ModelsUserRoleWithPermissions
 type ModelsUserRoleWithPermissions struct {
 	OrganizationId *string `json:"organization_id,omitempty"`
-	Permissions []ModelsPermission `json:"permissions,omitempty"`
+	Permissions []GithubComMonadIncCorePkgTypesModelsPermission `json:"permissions,omitempty"`
 	RoleId *string `json:"role_id,omitempty"`
 	RoleName *string `json:"role_name,omitempty"`
 }
@@ -76,9 +76,9 @@ func (o *ModelsUserRoleWithPermissions) SetOrganizationId(v string) {
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *ModelsUserRoleWithPermissions) GetPermissions() []ModelsPermission {
+func (o *ModelsUserRoleWithPermissions) GetPermissions() []GithubComMonadIncCorePkgTypesModelsPermission {
 	if o == nil || IsNil(o.Permissions) {
-		var ret []ModelsPermission
+		var ret []GithubComMonadIncCorePkgTypesModelsPermission
 		return ret
 	}
 	return o.Permissions
@@ -86,7 +86,7 @@ func (o *ModelsUserRoleWithPermissions) GetPermissions() []ModelsPermission {
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsUserRoleWithPermissions) GetPermissionsOk() ([]ModelsPermission, bool) {
+func (o *ModelsUserRoleWithPermissions) GetPermissionsOk() ([]GithubComMonadIncCorePkgTypesModelsPermission, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *ModelsUserRoleWithPermissions) HasPermissions() bool {
 	return false
 }
 
-// SetPermissions gets a reference to the given []ModelsPermission and assigns it to the Permissions field.
-func (o *ModelsUserRoleWithPermissions) SetPermissions(v []ModelsPermission) {
+// SetPermissions gets a reference to the given []GithubComMonadIncCorePkgTypesModelsPermission and assigns it to the Permissions field.
+func (o *ModelsUserRoleWithPermissions) SetPermissions(v []GithubComMonadIncCorePkgTypesModelsPermission) {
 	o.Permissions = v
 }
 

@@ -35,6 +35,7 @@ import org.openapitools.client.model.AwsS3SettingsConfig;
 import org.openapitools.client.model.AwssqsSettingsConfig;
 import org.openapitools.client.model.AzureActivityLogsSettingsConfig;
 import org.openapitools.client.model.AzureBlobStorageSettingsConfig;
+import org.openapitools.client.model.AzureVirtualMachineSettingsConfig;
 import org.openapitools.client.model.AzureVnetFlowLogsSettingsConfig;
 import org.openapitools.client.model.BigqueryInputSettingsConfig;
 import org.openapitools.client.model.BoxEventsSettingsConfig;
@@ -72,6 +73,7 @@ import org.openapitools.client.model.MonadLogSettingsConfig;
 import org.openapitools.client.model.OauthActivitySettingsConfig;
 import org.openapitools.client.model.ObjectStorageInputSettingsConfig;
 import org.openapitools.client.model.OneloginEventsSettingsConfig;
+import org.openapitools.client.model.OpenaiSettingsConfig;
 import org.openapitools.client.model.OrganizationsSettingsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSettingsConfig;
 import org.openapitools.client.model.ResourceEvaluationsSettingsConfig;
@@ -83,6 +85,7 @@ import org.openapitools.client.model.SemgrepCodeFindingsSettingsConfig;
 import org.openapitools.client.model.SemgrepDeploymentsSettingsConfig;
 import org.openapitools.client.model.SemgrepProjectDetailsSettingsConfig;
 import org.openapitools.client.model.SemgrepProjectsSettingsConfig;
+import org.openapitools.client.model.SemgrepSupplyChainFindingsSettingsConfig;
 import org.openapitools.client.model.SentryOrgAuditLogsSettingsConfig;
 import org.openapitools.client.model.SlackUsersSettingsConfig;
 import org.openapitools.client.model.SlackgroupsSettingsConfig;
@@ -140,7 +143,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T16:12:35.852277958Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T18:20:51.891132562Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorInputConfigSettings.class.getName());
 
@@ -163,6 +166,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             final TypeAdapter<AwssqsSettingsConfig> adapterAwssqsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(AwssqsSettingsConfig.class));
             final TypeAdapter<AzureActivityLogsSettingsConfig> adapterAzureActivityLogsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(AzureActivityLogsSettingsConfig.class));
             final TypeAdapter<AzureBlobStorageSettingsConfig> adapterAzureBlobStorageSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(AzureBlobStorageSettingsConfig.class));
+            final TypeAdapter<AzureVirtualMachineSettingsConfig> adapterAzureVirtualMachineSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(AzureVirtualMachineSettingsConfig.class));
             final TypeAdapter<AzureVnetFlowLogsSettingsConfig> adapterAzureVnetFlowLogsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(AzureVnetFlowLogsSettingsConfig.class));
             final TypeAdapter<BigqueryInputSettingsConfig> adapterBigqueryInputSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(BigqueryInputSettingsConfig.class));
             final TypeAdapter<BoxEventsSettingsConfig> adapterBoxEventsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(BoxEventsSettingsConfig.class));
@@ -202,6 +206,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             final TypeAdapter<OauthActivitySettingsConfig> adapterOauthActivitySettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(OauthActivitySettingsConfig.class));
             final TypeAdapter<ObjectStorageInputSettingsConfig> adapterObjectStorageInputSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(ObjectStorageInputSettingsConfig.class));
             final TypeAdapter<OneloginEventsSettingsConfig> adapterOneloginEventsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(OneloginEventsSettingsConfig.class));
+            final TypeAdapter<OpenaiSettingsConfig> adapterOpenaiSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(OpenaiSettingsConfig.class));
             final TypeAdapter<OrganizationsSettingsConfig> adapterOrganizationsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(OrganizationsSettingsConfig.class));
             final TypeAdapter<PaloAltoDataSecurityAlertsSettingsConfig> adapterPaloAltoDataSecurityAlertsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(PaloAltoDataSecurityAlertsSettingsConfig.class));
             final TypeAdapter<ResourceEvaluationsSettingsConfig> adapterResourceEvaluationsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(ResourceEvaluationsSettingsConfig.class));
@@ -212,6 +217,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             final TypeAdapter<SemgrepDeploymentsSettingsConfig> adapterSemgrepDeploymentsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SemgrepDeploymentsSettingsConfig.class));
             final TypeAdapter<SemgrepProjectDetailsSettingsConfig> adapterSemgrepProjectDetailsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SemgrepProjectDetailsSettingsConfig.class));
             final TypeAdapter<SemgrepProjectsSettingsConfig> adapterSemgrepProjectsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SemgrepProjectsSettingsConfig.class));
+            final TypeAdapter<SemgrepSupplyChainFindingsSettingsConfig> adapterSemgrepSupplyChainFindingsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SemgrepSupplyChainFindingsSettingsConfig.class));
             final TypeAdapter<SentryOrgAuditLogsSettingsConfig> adapterSentryOrgAuditLogsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SentryOrgAuditLogsSettingsConfig.class));
             final TypeAdapter<SlackUsersSettingsConfig> adapterSlackUsersSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SlackUsersSettingsConfig.class));
             final TypeAdapter<SlackgroupsSettingsConfig> adapterSlackgroupsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SlackgroupsSettingsConfig.class));
@@ -305,6 +311,12 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                     // check if the actual instance is of the type `AzureBlobStorageSettingsConfig`
                     if (value.getActualInstance() instanceof AzureBlobStorageSettingsConfig) {
                         JsonElement element = adapterAzureBlobStorageSettingsConfig.toJsonTree((AzureBlobStorageSettingsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `AzureVirtualMachineSettingsConfig`
+                    if (value.getActualInstance() instanceof AzureVirtualMachineSettingsConfig) {
+                        JsonElement element = adapterAzureVirtualMachineSettingsConfig.toJsonTree((AzureVirtualMachineSettingsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -536,6 +548,12 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                         elementAdapter.write(out, element);
                         return;
                     }
+                    // check if the actual instance is of the type `OpenaiSettingsConfig`
+                    if (value.getActualInstance() instanceof OpenaiSettingsConfig) {
+                        JsonElement element = adapterOpenaiSettingsConfig.toJsonTree((OpenaiSettingsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `OrganizationsSettingsConfig`
                     if (value.getActualInstance() instanceof OrganizationsSettingsConfig) {
                         JsonElement element = adapterOrganizationsSettingsConfig.toJsonTree((OrganizationsSettingsConfig)value.getActualInstance());
@@ -593,6 +611,12 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                     // check if the actual instance is of the type `SemgrepProjectsSettingsConfig`
                     if (value.getActualInstance() instanceof SemgrepProjectsSettingsConfig) {
                         JsonElement element = adapterSemgrepProjectsSettingsConfig.toJsonTree((SemgrepProjectsSettingsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `SemgrepSupplyChainFindingsSettingsConfig`
+                    if (value.getActualInstance() instanceof SemgrepSupplyChainFindingsSettingsConfig) {
+                        JsonElement element = adapterSemgrepSupplyChainFindingsSettingsConfig.toJsonTree((SemgrepSupplyChainFindingsSettingsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -722,7 +746,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, Map<String, Object>, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, Map<String, Object>, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig");
                 }
 
                 @Override
@@ -865,6 +889,18 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                         // deserialization failed, continue
                         errorMessages.add(String.format("Deserialization for AzureBlobStorageSettingsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'AzureBlobStorageSettingsConfig'", e);
+                    }
+                    // deserialize AzureVirtualMachineSettingsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AzureVirtualMachineSettingsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAzureVirtualMachineSettingsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AzureVirtualMachineSettingsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for AzureVirtualMachineSettingsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AzureVirtualMachineSettingsConfig'", e);
                     }
                     // deserialize AzureVnetFlowLogsSettingsConfig
                     try {
@@ -1327,6 +1363,18 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                         errorMessages.add(String.format("Deserialization for OneloginEventsSettingsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'OneloginEventsSettingsConfig'", e);
                     }
+                    // deserialize OpenaiSettingsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        OpenaiSettingsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterOpenaiSettingsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'OpenaiSettingsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for OpenaiSettingsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'OpenaiSettingsConfig'", e);
+                    }
                     // deserialize OrganizationsSettingsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -1446,6 +1494,18 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                         // deserialization failed, continue
                         errorMessages.add(String.format("Deserialization for SemgrepProjectsSettingsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SemgrepProjectsSettingsConfig'", e);
+                    }
+                    // deserialize SemgrepSupplyChainFindingsSettingsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        SemgrepSupplyChainFindingsSettingsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterSemgrepSupplyChainFindingsSettingsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'SemgrepSupplyChainFindingsSettingsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for SemgrepSupplyChainFindingsSettingsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'SemgrepSupplyChainFindingsSettingsConfig'", e);
                     }
                     // deserialize SentryOrgAuditLogsSettingsConfig
                     try {
@@ -1736,6 +1796,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
         schemas.put("AwssqsSettingsConfig", AwssqsSettingsConfig.class);
         schemas.put("AzureActivityLogsSettingsConfig", AzureActivityLogsSettingsConfig.class);
         schemas.put("AzureBlobStorageSettingsConfig", AzureBlobStorageSettingsConfig.class);
+        schemas.put("AzureVirtualMachineSettingsConfig", AzureVirtualMachineSettingsConfig.class);
         schemas.put("AzureVnetFlowLogsSettingsConfig", AzureVnetFlowLogsSettingsConfig.class);
         schemas.put("BigqueryInputSettingsConfig", BigqueryInputSettingsConfig.class);
         schemas.put("BoxEventsSettingsConfig", BoxEventsSettingsConfig.class);
@@ -1774,6 +1835,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
         schemas.put("OauthActivitySettingsConfig", OauthActivitySettingsConfig.class);
         schemas.put("ObjectStorageInputSettingsConfig", ObjectStorageInputSettingsConfig.class);
         schemas.put("OneloginEventsSettingsConfig", OneloginEventsSettingsConfig.class);
+        schemas.put("OpenaiSettingsConfig", OpenaiSettingsConfig.class);
         schemas.put("OrganizationsSettingsConfig", OrganizationsSettingsConfig.class);
         schemas.put("PaloAltoDataSecurityAlertsSettingsConfig", PaloAltoDataSecurityAlertsSettingsConfig.class);
         schemas.put("ResourceEvaluationsSettingsConfig", ResourceEvaluationsSettingsConfig.class);
@@ -1784,6 +1846,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
         schemas.put("SemgrepDeploymentsSettingsConfig", SemgrepDeploymentsSettingsConfig.class);
         schemas.put("SemgrepProjectDetailsSettingsConfig", SemgrepProjectDetailsSettingsConfig.class);
         schemas.put("SemgrepProjectsSettingsConfig", SemgrepProjectsSettingsConfig.class);
+        schemas.put("SemgrepSupplyChainFindingsSettingsConfig", SemgrepSupplyChainFindingsSettingsConfig.class);
         schemas.put("SentryOrgAuditLogsSettingsConfig", SentryOrgAuditLogsSettingsConfig.class);
         schemas.put("SlackUsersSettingsConfig", SlackUsersSettingsConfig.class);
         schemas.put("SlackgroupsSettingsConfig", SlackgroupsSettingsConfig.class);
@@ -1815,7 +1878,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, Map<String, Object>, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig
+     * ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, Map<String, Object>, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -1872,6 +1935,11 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
         }
 
         if (instance instanceof AzureBlobStorageSettingsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof AzureVirtualMachineSettingsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -2066,6 +2134,11 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             return;
         }
 
+        if (instance instanceof OpenaiSettingsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof OrganizationsSettingsConfig) {
             super.setActualInstance(instance);
             return;
@@ -2112,6 +2185,11 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
         }
 
         if (instance instanceof SemgrepProjectsSettingsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof SemgrepSupplyChainFindingsSettingsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -2221,14 +2299,14 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, Map<String, Object>, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig");
+        throw new RuntimeException("Invalid instance type. Must be ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, Map<String, Object>, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, Map<String, Object>, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig
+     * ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, Map<String, Object>, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig
      *
-     * @return The actual instance (ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, Map<String, Object>, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig)
+     * @return The actual instance (ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, Map<String, Object>, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -2355,6 +2433,17 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      */
     public AzureBlobStorageSettingsConfig getAzureBlobStorageSettingsConfig() throws ClassCastException {
         return (AzureBlobStorageSettingsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AzureVirtualMachineSettingsConfig`. If the actual instance is not `AzureVirtualMachineSettingsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AzureVirtualMachineSettingsConfig`
+     * @throws ClassCastException if the instance is not `AzureVirtualMachineSettingsConfig`
+     */
+    public AzureVirtualMachineSettingsConfig getAzureVirtualMachineSettingsConfig() throws ClassCastException {
+        return (AzureVirtualMachineSettingsConfig)super.getActualInstance();
     }
 
     /**
@@ -2776,6 +2865,17 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
     }
 
     /**
+     * Get the actual instance of `OpenaiSettingsConfig`. If the actual instance is not `OpenaiSettingsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `OpenaiSettingsConfig`
+     * @throws ClassCastException if the instance is not `OpenaiSettingsConfig`
+     */
+    public OpenaiSettingsConfig getOpenaiSettingsConfig() throws ClassCastException {
+        return (OpenaiSettingsConfig)super.getActualInstance();
+    }
+
+    /**
      * Get the actual instance of `OrganizationsSettingsConfig`. If the actual instance is not `OrganizationsSettingsConfig`,
      * the ClassCastException will be thrown.
      *
@@ -2883,6 +2983,17 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
      */
     public SemgrepProjectsSettingsConfig getSemgrepProjectsSettingsConfig() throws ClassCastException {
         return (SemgrepProjectsSettingsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `SemgrepSupplyChainFindingsSettingsConfig`. If the actual instance is not `SemgrepSupplyChainFindingsSettingsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `SemgrepSupplyChainFindingsSettingsConfig`
+     * @throws ClassCastException if the instance is not `SemgrepSupplyChainFindingsSettingsConfig`
+     */
+    public SemgrepSupplyChainFindingsSettingsConfig getSemgrepSupplyChainFindingsSettingsConfig() throws ClassCastException {
+        return (SemgrepSupplyChainFindingsSettingsConfig)super.getActualInstance();
     }
 
     /**
@@ -3214,6 +3325,14 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             errorMessages.add(String.format("Deserialization for AzureBlobStorageSettingsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with AzureVirtualMachineSettingsConfig
+        try {
+            AzureVirtualMachineSettingsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for AzureVirtualMachineSettingsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with AzureVnetFlowLogsSettingsConfig
         try {
             AzureVnetFlowLogsSettingsConfig.validateJsonElement(jsonElement);
@@ -3523,6 +3642,14 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             errorMessages.add(String.format("Deserialization for OneloginEventsSettingsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with OpenaiSettingsConfig
+        try {
+            OpenaiSettingsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for OpenaiSettingsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with OrganizationsSettingsConfig
         try {
             OrganizationsSettingsConfig.validateJsonElement(jsonElement);
@@ -3601,6 +3728,14 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             validCount++;
         } catch (Exception e) {
             errorMessages.add(String.format("Deserialization for SemgrepProjectsSettingsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with SemgrepSupplyChainFindingsSettingsConfig
+        try {
+            SemgrepSupplyChainFindingsSettingsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for SemgrepSupplyChainFindingsSettingsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with SentryOrgAuditLogsSettingsConfig
@@ -3772,7 +3907,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for SecretProcessesorInputConfigSettings with oneOf schemas: ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, Map<String, Object>, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format("The JSON string is invalid for SecretProcessesorInputConfigSettings with oneOf schemas: ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, Map<String, Object>, MonadLogSettingsConfig, OauthActivitySettingsConfig, Object, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

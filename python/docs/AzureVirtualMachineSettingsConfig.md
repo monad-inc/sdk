@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **cron** | **str** | Cron expression for scheduling the input | [optional] 
 **subscription_id** | **str** | The subscription ID of Azure subscription | [optional] 
 **tenant_id** | **str** | Tenant ID of the registered application on Azure Entra ID | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

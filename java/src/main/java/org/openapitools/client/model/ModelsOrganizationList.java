@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.ModelsOrganization;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsOrganization;
 import org.openapitools.client.model.ModelsPagination;
 
 import com.google.gson.Gson;
@@ -52,12 +52,12 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganizationList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T16:12:35.852277958Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T18:20:51.891132562Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsOrganizationList {
   public static final String SERIALIZED_NAME_ORGANIZATIONS = "organizations";
   @SerializedName(SERIALIZED_NAME_ORGANIZATIONS)
   @javax.annotation.Nullable
-  private List<ModelsOrganization> organizations = new ArrayList<>();
+  private List<GithubComMonadIncCorePkgTypesModelsOrganization> organizations = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
@@ -67,12 +67,12 @@ public class ModelsOrganizationList {
   public ModelsOrganizationList() {
   }
 
-  public ModelsOrganizationList organizations(@javax.annotation.Nullable List<ModelsOrganization> organizations) {
+  public ModelsOrganizationList organizations(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsOrganization> organizations) {
     this.organizations = organizations;
     return this;
   }
 
-  public ModelsOrganizationList addOrganizationsItem(ModelsOrganization organizationsItem) {
+  public ModelsOrganizationList addOrganizationsItem(GithubComMonadIncCorePkgTypesModelsOrganization organizationsItem) {
     if (this.organizations == null) {
       this.organizations = new ArrayList<>();
     }
@@ -85,11 +85,11 @@ public class ModelsOrganizationList {
    * @return organizations
    */
   @javax.annotation.Nullable
-  public List<ModelsOrganization> getOrganizations() {
+  public List<GithubComMonadIncCorePkgTypesModelsOrganization> getOrganizations() {
     return organizations;
   }
 
-  public void setOrganizations(@javax.annotation.Nullable List<ModelsOrganization> organizations) {
+  public void setOrganizations(@javax.annotation.Nullable List<GithubComMonadIncCorePkgTypesModelsOrganization> organizations) {
     this.organizations = organizations;
   }
 
@@ -196,7 +196,7 @@ public class ModelsOrganizationList {
 
           // validate the optional field `organizations` (array)
           for (int i = 0; i < jsonArrayorganizations.size(); i++) {
-            ModelsOrganization.validateJsonElement(jsonArrayorganizations.get(i));
+            GithubComMonadIncCorePkgTypesModelsOrganization.validateJsonElement(jsonArrayorganizations.get(i));
           };
         }
       }

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Azure Virtual Machine settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T18:20:51.891132562Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AzureVirtualMachineSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
@@ -64,6 +64,11 @@ public class AzureVirtualMachineSettingsConfig {
   @SerializedName(SERIALIZED_NAME_TENANT_ID)
   @javax.annotation.Nullable
   private String tenantId;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public AzureVirtualMachineSettingsConfig() {
   }
@@ -125,6 +130,25 @@ public class AzureVirtualMachineSettingsConfig {
   }
 
 
+  public AzureVirtualMachineSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -137,12 +161,13 @@ public class AzureVirtualMachineSettingsConfig {
     AzureVirtualMachineSettingsConfig azureVirtualMachineSettingsConfig = (AzureVirtualMachineSettingsConfig) o;
     return Objects.equals(this.cron, azureVirtualMachineSettingsConfig.cron) &&
         Objects.equals(this.subscriptionId, azureVirtualMachineSettingsConfig.subscriptionId) &&
-        Objects.equals(this.tenantId, azureVirtualMachineSettingsConfig.tenantId);
+        Objects.equals(this.tenantId, azureVirtualMachineSettingsConfig.tenantId) &&
+        Objects.equals(this.useSyntheticData, azureVirtualMachineSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cron, subscriptionId, tenantId);
+    return Objects.hash(cron, subscriptionId, tenantId, useSyntheticData);
   }
 
   @Override
@@ -152,6 +177,7 @@ public class AzureVirtualMachineSettingsConfig {
     sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
     sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
     sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -173,7 +199,7 @@ public class AzureVirtualMachineSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cron", "subscription_id", "tenant_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("cron", "subscription_id", "tenant_id", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

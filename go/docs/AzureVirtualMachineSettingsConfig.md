@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Cron** | Pointer to **string** | Cron expression for scheduling the input | [optional] 
 **SubscriptionId** | Pointer to **string** | The subscription ID of Azure subscription | [optional] 
 **TenantId** | Pointer to **string** | Tenant ID of the registered application on Azure Entra ID | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetTenantId sets TenantId field to given value.
 `func (o *AzureVirtualMachineSettingsConfig) HasTenantId() bool`
 
 HasTenantId returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *AzureVirtualMachineSettingsConfig) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *AzureVirtualMachineSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *AzureVirtualMachineSettingsConfig) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *AzureVirtualMachineSettingsConfig) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

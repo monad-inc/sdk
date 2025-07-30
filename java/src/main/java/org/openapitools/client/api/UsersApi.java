@@ -28,7 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.AuthenticationtypesMFAEnrollmentTicket;
-import org.openapitools.client.model.ModelsUser;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsUser;
 import org.openapitools.client.model.RoutesUserWithRoles;
 import org.openapitools.client.model.RoutesV3MFAStatusResponse;
 
@@ -270,7 +270,7 @@ public class UsersApi {
      * Create user
      * Create user
      * @param body  (optional)
-     * @return ModelsUser
+     * @return GithubComMonadIncCorePkgTypesModelsUser
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -281,8 +281,8 @@ public class UsersApi {
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsUser v1UsersPost(@javax.annotation.Nullable Object body) throws ApiException {
-        ApiResponse<ModelsUser> localVarResp = v1UsersPostWithHttpInfo(body);
+    public GithubComMonadIncCorePkgTypesModelsUser v1UsersPost(@javax.annotation.Nullable Object body) throws ApiException {
+        ApiResponse<GithubComMonadIncCorePkgTypesModelsUser> localVarResp = v1UsersPostWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -290,7 +290,7 @@ public class UsersApi {
      * Create user
      * Create user
      * @param body  (optional)
-     * @return ApiResponse&lt;ModelsUser&gt;
+     * @return ApiResponse&lt;GithubComMonadIncCorePkgTypesModelsUser&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -301,9 +301,9 @@ public class UsersApi {
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsUser> v1UsersPostWithHttpInfo(@javax.annotation.Nullable Object body) throws ApiException {
+    public ApiResponse<GithubComMonadIncCorePkgTypesModelsUser> v1UsersPostWithHttpInfo(@javax.annotation.Nullable Object body) throws ApiException {
         okhttp3.Call localVarCall = v1UsersPostValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<ModelsUser>(){}.getType();
+        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsUser>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -323,10 +323,10 @@ public class UsersApi {
         <tr><td> 500 </td><td> Error creating user </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1UsersPostAsync(@javax.annotation.Nullable Object body, final ApiCallback<ModelsUser> _callback) throws ApiException {
+    public okhttp3.Call v1UsersPostAsync(@javax.annotation.Nullable Object body, final ApiCallback<GithubComMonadIncCorePkgTypesModelsUser> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1UsersPostValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<ModelsUser>(){}.getType();
+        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsUser>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

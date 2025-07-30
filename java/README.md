@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-07-30T16:12:35.852277958Z[Etc/UTC]
+  - Build date: 2025-07-30T18:20:51.891132562Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -270,6 +270,7 @@ Class | Method | HTTP request | Description
  - [AzureActivityLogsSettingsConfig](docs/AzureActivityLogsSettingsConfig.md)
  - [AzureBlobStorageSecretsConfig](docs/AzureBlobStorageSecretsConfig.md)
  - [AzureBlobStorageSettingsConfig](docs/AzureBlobStorageSettingsConfig.md)
+ - [AzureVirtualMachineSettingsConfig](docs/AzureVirtualMachineSettingsConfig.md)
  - [AzureVnetFlowLogsSecretsConfig](docs/AzureVnetFlowLogsSecretsConfig.md)
  - [AzureVnetFlowLogsSettingsConfig](docs/AzureVnetFlowLogsSettingsConfig.md)
  - [BatchConfigBatchConfig](docs/BatchConfigBatchConfig.md)
@@ -340,6 +341,10 @@ Class | Method | HTTP request | Description
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
  - [GithubAdvisoryUserSettingsConfig](docs/GithubAdvisoryUserSettingsConfig.md)
  - [GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter](docs/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.md)
+ - [GithubComMonadIncCorePkgTypesModelsOrganization](docs/GithubComMonadIncCorePkgTypesModelsOrganization.md)
+ - [GithubComMonadIncCorePkgTypesModelsPermission](docs/GithubComMonadIncCorePkgTypesModelsPermission.md)
+ - [GithubComMonadIncCorePkgTypesModelsQuota](docs/GithubComMonadIncCorePkgTypesModelsQuota.md)
+ - [GithubComMonadIncCorePkgTypesModelsUser](docs/GithubComMonadIncCorePkgTypesModelsUser.md)
  - [GitlabIssuesSecretsConfig](docs/GitlabIssuesSecretsConfig.md)
  - [GitlabIssuesSettingsConfig](docs/GitlabIssuesSettingsConfig.md)
  - [GoogleCloudStorageOutputSecretsConfig](docs/GoogleCloudStorageOutputSecretsConfig.md)
@@ -385,7 +390,6 @@ Class | Method | HTTP request | Description
  - [ModelsInputConfig](docs/ModelsInputConfig.md)
  - [ModelsInputList](docs/ModelsInputList.md)
  - [ModelsNodeComponent](docs/ModelsNodeComponent.md)
- - [ModelsOrganization](docs/ModelsOrganization.md)
  - [ModelsOrganizationList](docs/ModelsOrganizationList.md)
  - [ModelsOrganizationUser](docs/ModelsOrganizationUser.md)
  - [ModelsOrganizationUserList](docs/ModelsOrganizationUserList.md)
@@ -393,7 +397,6 @@ Class | Method | HTTP request | Description
  - [ModelsOutputConfig](docs/ModelsOutputConfig.md)
  - [ModelsOutputList](docs/ModelsOutputList.md)
  - [ModelsPagination](docs/ModelsPagination.md)
- - [ModelsPermission](docs/ModelsPermission.md)
  - [ModelsPermissionList](docs/ModelsPermissionList.md)
  - [ModelsPipeline](docs/ModelsPipeline.md)
  - [ModelsPipelineConfigV2](docs/ModelsPipelineConfigV2.md)
@@ -407,7 +410,6 @@ Class | Method | HTTP request | Description
  - [ModelsPipelineNodeStatus](docs/ModelsPipelineNodeStatus.md)
  - [ModelsPipelineRetentionPolicy](docs/ModelsPipelineRetentionPolicy.md)
  - [ModelsPipelineStatus](docs/ModelsPipelineStatus.md)
- - [ModelsQuota](docs/ModelsQuota.md)
  - [ModelsQuotaList](docs/ModelsQuotaList.md)
  - [ModelsRoleWithPermissions](docs/ModelsRoleWithPermissions.md)
  - [ModelsRoleWithPermissionsList](docs/ModelsRoleWithPermissionsList.md)
@@ -420,7 +422,6 @@ Class | Method | HTTP request | Description
  - [ModelsTransformOperation](docs/ModelsTransformOperation.md)
  - [ModelsTransformsRepositoryList](docs/ModelsTransformsRepositoryList.md)
  - [ModelsTransformsRepositoryTransform](docs/ModelsTransformsRepositoryTransform.md)
- - [ModelsUser](docs/ModelsUser.md)
  - [ModelsUserRoleWithPermissions](docs/ModelsUserRoleWithPermissions.md)
  - [MonadLogSettingsConfig](docs/MonadLogSettingsConfig.md)
  - [MutateTypeMutateType](docs/MutateTypeMutateType.md)
@@ -436,6 +437,7 @@ Class | Method | HTTP request | Description
  - [ObjectStorageSettingsConfig](docs/ObjectStorageSettingsConfig.md)
  - [OneloginEventsSecretsConfig](docs/OneloginEventsSecretsConfig.md)
  - [OneloginEventsSettingsConfig](docs/OneloginEventsSettingsConfig.md)
+ - [OpenaiSettingsConfig](docs/OpenaiSettingsConfig.md)
  - [OpensearchSecretsConfig](docs/OpensearchSecretsConfig.md)
  - [OpensearchSettingsConfig](docs/OpensearchSettingsConfig.md)
  - [OperationInformation](docs/OperationInformation.md)
@@ -544,6 +546,8 @@ Class | Method | HTTP request | Description
  - [SemgrepProjectDetailsSettingsConfig](docs/SemgrepProjectDetailsSettingsConfig.md)
  - [SemgrepProjectsSecretsConfig](docs/SemgrepProjectsSecretsConfig.md)
  - [SemgrepProjectsSettingsConfig](docs/SemgrepProjectsSettingsConfig.md)
+ - [SemgrepSupplyChainFindingsSecretsConfig](docs/SemgrepSupplyChainFindingsSecretsConfig.md)
+ - [SemgrepSupplyChainFindingsSettingsConfig](docs/SemgrepSupplyChainFindingsSettingsConfig.md)
  - [SentinelSecretsConfig](docs/SentinelSecretsConfig.md)
  - [SentinelSettingsConfig](docs/SentinelSettingsConfig.md)
  - [SentryOrgAuditLogsSecretsConfig](docs/SentryOrgAuditLogsSecretsConfig.md)

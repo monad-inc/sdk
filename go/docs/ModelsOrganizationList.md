@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Organizations** | Pointer to [**[]ModelsOrganization**](ModelsOrganization.md) |  | [optional] 
+**Organizations** | Pointer to [**[]GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md) |  | [optional] 
 **Pagination** | Pointer to [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOrganizations
 
-`func (o *ModelsOrganizationList) GetOrganizations() []ModelsOrganization`
+`func (o *ModelsOrganizationList) GetOrganizations() []GithubComMonadIncCorePkgTypesModelsOrganization`
 
 GetOrganizations returns the Organizations field if non-nil, zero value otherwise.
 
 ### GetOrganizationsOk
 
-`func (o *ModelsOrganizationList) GetOrganizationsOk() (*[]ModelsOrganization, bool)`
+`func (o *ModelsOrganizationList) GetOrganizationsOk() (*[]GithubComMonadIncCorePkgTypesModelsOrganization, bool)`
 
 GetOrganizationsOk returns a tuple with the Organizations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganizations
 
-`func (o *ModelsOrganizationList) SetOrganizations(v []ModelsOrganization)`
+`func (o *ModelsOrganizationList) SetOrganizations(v []GithubComMonadIncCorePkgTypesModelsOrganization)`
 
 SetOrganizations sets Organizations field to given value.
 

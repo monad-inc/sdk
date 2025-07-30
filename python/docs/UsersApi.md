@@ -88,7 +88,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_users_post**
-> ModelsUser v1_users_post(body=body)
+> GithubComMonadIncCorePkgTypesModelsUser v1_users_post(body=body)
 
 Create user
 
@@ -101,7 +101,7 @@ Create user
 
 ```python
 import monad
-from monad.models.models_user import ModelsUser
+from monad.models.github_com_monad_inc_core_pkg_types_models_user import GithubComMonadIncCorePkgTypesModelsUser
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsUser**](ModelsUser.md)
+[**GithubComMonadIncCorePkgTypesModelsUser**](GithubComMonadIncCorePkgTypesModelsUser.md)
 
 ### Authorization
 

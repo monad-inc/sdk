@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * GithubComMonadIncCorePkgTypesModelsOrganization
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-29T15:08:28.936977482Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T18:20:51.891132562Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class GithubComMonadIncCorePkgTypesModelsOrganization {
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billing_account_id";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)

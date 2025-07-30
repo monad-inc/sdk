@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,8 @@ class AzureVirtualMachineSettingsConfig(BaseModel):
     cron: Optional[StrictStr] = Field(default=None, description="Cron expression for scheduling the input")
     subscription_id: Optional[StrictStr] = Field(default=None, description="The subscription ID of Azure subscription")
     tenant_id: Optional[StrictStr] = Field(default=None, description="Tenant ID of the registered application on Azure Entra ID")
-    __properties: ClassVar[List[str]] = ["cron", "subscription_id", "tenant_id"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["cron", "subscription_id", "tenant_id", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,7 +86,8 @@ class AzureVirtualMachineSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "cron": obj.get("cron"),
             "subscription_id": obj.get("subscription_id"),
-            "tenant_id": obj.get("tenant_id")
+            "tenant_id": obj.get("tenant_id"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 
