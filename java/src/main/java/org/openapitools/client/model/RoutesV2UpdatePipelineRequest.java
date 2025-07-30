@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2UpdatePipelineRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T15:44:01.025999041Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T15:56:17.715999287Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV2UpdatePipelineRequest {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
