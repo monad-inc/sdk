@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * NextGenSiemSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T18:49:31.195718626Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T19:48:55.971303395Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class NextGenSiemSettingsConfig {
   public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
   @SerializedName(SERIALIZED_NAME_ENDPOINT)

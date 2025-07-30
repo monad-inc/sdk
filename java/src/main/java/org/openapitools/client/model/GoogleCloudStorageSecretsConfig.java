@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Cloud Storage secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T18:49:31.195718626Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T19:48:55.971303395Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class GoogleCloudStorageSecretsConfig {
   public static final String SERIALIZED_NAME_CREDENTIALS_JSON = "credentials_json";
   @SerializedName(SERIALIZED_NAME_CREDENTIALS_JSON)

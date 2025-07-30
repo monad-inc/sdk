@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Sentry Organization Audit Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T18:49:31.195718626Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-30T19:48:55.971303395Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class SentryOrgAuditLogsSettingsConfig {
   public static final String SERIALIZED_NAME_HOST_NAME = "host_name";
   @SerializedName(SERIALIZED_NAME_HOST_NAME)
