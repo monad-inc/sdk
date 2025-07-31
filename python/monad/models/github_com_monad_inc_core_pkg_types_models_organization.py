@@ -28,12 +28,13 @@ class GithubComMonadIncCorePkgTypesModelsOrganization(BaseModel):
     GithubComMonadIncCorePkgTypesModelsOrganization
     """ # noqa: E501
     billing_account_id: Optional[StrictStr] = None
+    connection_id: Optional[StrictStr] = None
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["billing_account_id", "created_at", "description", "id", "name", "updated_at"]
+    __properties: ClassVar[List[str]] = ["billing_account_id", "connection_id", "created_at", "description", "id", "name", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,6 +88,7 @@ class GithubComMonadIncCorePkgTypesModelsOrganization(BaseModel):
 
         _obj = cls.model_validate({
             "billing_account_id": obj.get("billing_account_id"),
+            "connection_id": obj.get("connection_id"),
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
             "id": obj.get("id"),

@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * GithubComMonadIncCorePkgTypesModelsOrganization
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-31T16:25:59.788257522Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-31T19:36:22.007325133Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class GithubComMonadIncCorePkgTypesModelsOrganization {
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billing_account_id";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
   @javax.annotation.Nullable
   private String billingAccountId;
+
+  public static final String SERIALIZED_NAME_CONNECTION_ID = "connection_id";
+  @SerializedName(SERIALIZED_NAME_CONNECTION_ID)
+  @javax.annotation.Nullable
+  private String connectionId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -99,6 +104,25 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
 
   public void setBillingAccountId(@javax.annotation.Nullable String billingAccountId) {
     this.billingAccountId = billingAccountId;
+  }
+
+
+  public GithubComMonadIncCorePkgTypesModelsOrganization connectionId(@javax.annotation.Nullable String connectionId) {
+    this.connectionId = connectionId;
+    return this;
+  }
+
+  /**
+   * Get connectionId
+   * @return connectionId
+   */
+  @javax.annotation.Nullable
+  public String getConnectionId() {
+    return connectionId;
+  }
+
+  public void setConnectionId(@javax.annotation.Nullable String connectionId) {
+    this.connectionId = connectionId;
   }
 
 
@@ -208,6 +232,7 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
     }
     GithubComMonadIncCorePkgTypesModelsOrganization githubComMonadIncCorePkgTypesModelsOrganization = (GithubComMonadIncCorePkgTypesModelsOrganization) o;
     return Objects.equals(this.billingAccountId, githubComMonadIncCorePkgTypesModelsOrganization.billingAccountId) &&
+        Objects.equals(this.connectionId, githubComMonadIncCorePkgTypesModelsOrganization.connectionId) &&
         Objects.equals(this.createdAt, githubComMonadIncCorePkgTypesModelsOrganization.createdAt) &&
         Objects.equals(this.description, githubComMonadIncCorePkgTypesModelsOrganization.description) &&
         Objects.equals(this.id, githubComMonadIncCorePkgTypesModelsOrganization.id) &&
@@ -217,7 +242,7 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, createdAt, description, id, name, updatedAt);
+    return Objects.hash(billingAccountId, connectionId, createdAt, description, id, name, updatedAt);
   }
 
   @Override
@@ -225,6 +250,7 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
     StringBuilder sb = new StringBuilder();
     sb.append("class GithubComMonadIncCorePkgTypesModelsOrganization {\n");
     sb.append("    billingAccountId: ").append(toIndentedString(billingAccountId)).append("\n");
+    sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -251,7 +277,7 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("billing_account_id", "created_at", "description", "id", "name", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("billing_account_id", "connection_id", "created_at", "description", "id", "name", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -280,6 +306,9 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("billing_account_id") != null && !jsonObj.get("billing_account_id").isJsonNull()) && !jsonObj.get("billing_account_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `billing_account_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("billing_account_id").toString()));
+      }
+      if ((jsonObj.get("connection_id") != null && !jsonObj.get("connection_id").isJsonNull()) && !jsonObj.get("connection_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `connection_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connection_id").toString()));
       }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuthId** | Pointer to **string** |  | [optional] 
+**ConnectionId** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -55,6 +56,31 @@ SetAuthId sets AuthId field to given value.
 `func (o *ModelsOrganizationUser) HasAuthId() bool`
 
 HasAuthId returns a boolean if a field has been set.
+
+### GetConnectionId
+
+`func (o *ModelsOrganizationUser) GetConnectionId() string`
+
+GetConnectionId returns the ConnectionId field if non-nil, zero value otherwise.
+
+### GetConnectionIdOk
+
+`func (o *ModelsOrganizationUser) GetConnectionIdOk() (*string, bool)`
+
+GetConnectionIdOk returns a tuple with the ConnectionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionId
+
+`func (o *ModelsOrganizationUser) SetConnectionId(v string)`
+
+SetConnectionId sets ConnectionId field to given value.
+
+### HasConnectionId
+
+`func (o *ModelsOrganizationUser) HasConnectionId() bool`
+
+HasConnectionId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BillingAccountId** | Pointer to **string** |  | [optional] 
+**ConnectionId** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -54,6 +55,31 @@ SetBillingAccountId sets BillingAccountId field to given value.
 `func (o *GithubComMonadIncCorePkgTypesModelsOrganization) HasBillingAccountId() bool`
 
 HasBillingAccountId returns a boolean if a field has been set.
+
+### GetConnectionId
+
+`func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetConnectionId() string`
+
+GetConnectionId returns the ConnectionId field if non-nil, zero value otherwise.
+
+### GetConnectionIdOk
+
+`func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetConnectionIdOk() (*string, bool)`
+
+GetConnectionIdOk returns a tuple with the ConnectionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionId
+
+`func (o *GithubComMonadIncCorePkgTypesModelsOrganization) SetConnectionId(v string)`
+
+SetConnectionId sets ConnectionId field to given value.
+
+### HasConnectionId
+
+`func (o *GithubComMonadIncCorePkgTypesModelsOrganization) HasConnectionId() bool`
+
+HasConnectionId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

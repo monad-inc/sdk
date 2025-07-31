@@ -14,6 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class GithubComMonadIncCorePkgTypesModelsOrganization {
     'billingAccountId'?: string;
+    'connectionId'?: string;
     'createdAt'?: string;
     'description'?: string;
     'id'?: string;
@@ -28,6 +29,12 @@ export class GithubComMonadIncCorePkgTypesModelsOrganization {
         {
             "name": "billingAccountId",
             "baseName": "billing_account_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "connectionId",
+            "baseName": "connection_id",
             "type": "string",
             "format": ""
         },

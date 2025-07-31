@@ -28,13 +28,14 @@ class ModelsOrganizationUser(BaseModel):
     ModelsOrganizationUser
     """ # noqa: E501
     auth_id: Optional[StrictStr] = None
+    connection_id: Optional[StrictStr] = None
     created_at: Optional[StrictStr] = None
     email: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     role_id: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_id", "created_at", "email", "id", "role_id", "updated_at", "username"]
+    __properties: ClassVar[List[str]] = ["auth_id", "connection_id", "created_at", "email", "id", "role_id", "updated_at", "username"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,6 +89,7 @@ class ModelsOrganizationUser(BaseModel):
 
         _obj = cls.model_validate({
             "auth_id": obj.get("auth_id"),
+            "connection_id": obj.get("connection_id"),
             "created_at": obj.get("created_at"),
             "email": obj.get("email"),
             "id": obj.get("id"),

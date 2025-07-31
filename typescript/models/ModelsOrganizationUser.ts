@@ -14,6 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class ModelsOrganizationUser {
     'authId'?: string;
+    'connectionId'?: string;
     'createdAt'?: string;
     'email'?: string;
     'id'?: string;
@@ -29,6 +30,12 @@ export class ModelsOrganizationUser {
         {
             "name": "authId",
             "baseName": "auth_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "connectionId",
+            "baseName": "connection_id",
             "type": "string",
             "format": ""
         },

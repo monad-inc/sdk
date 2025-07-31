@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganizationUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-31T16:25:59.788257522Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-31T19:36:22.007325133Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsOrganizationUser {
   public static final String SERIALIZED_NAME_AUTH_ID = "auth_id";
   @SerializedName(SERIALIZED_NAME_AUTH_ID)
   @javax.annotation.Nullable
   private String authId;
+
+  public static final String SERIALIZED_NAME_CONNECTION_ID = "connection_id";
+  @SerializedName(SERIALIZED_NAME_CONNECTION_ID)
+  @javax.annotation.Nullable
+  private String connectionId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -104,6 +109,25 @@ public class ModelsOrganizationUser {
 
   public void setAuthId(@javax.annotation.Nullable String authId) {
     this.authId = authId;
+  }
+
+
+  public ModelsOrganizationUser connectionId(@javax.annotation.Nullable String connectionId) {
+    this.connectionId = connectionId;
+    return this;
+  }
+
+  /**
+   * Get connectionId
+   * @return connectionId
+   */
+  @javax.annotation.Nullable
+  public String getConnectionId() {
+    return connectionId;
+  }
+
+  public void setConnectionId(@javax.annotation.Nullable String connectionId) {
+    this.connectionId = connectionId;
   }
 
 
@@ -232,6 +256,7 @@ public class ModelsOrganizationUser {
     }
     ModelsOrganizationUser modelsOrganizationUser = (ModelsOrganizationUser) o;
     return Objects.equals(this.authId, modelsOrganizationUser.authId) &&
+        Objects.equals(this.connectionId, modelsOrganizationUser.connectionId) &&
         Objects.equals(this.createdAt, modelsOrganizationUser.createdAt) &&
         Objects.equals(this.email, modelsOrganizationUser.email) &&
         Objects.equals(this.id, modelsOrganizationUser.id) &&
@@ -242,7 +267,7 @@ public class ModelsOrganizationUser {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authId, createdAt, email, id, roleId, updatedAt, username);
+    return Objects.hash(authId, connectionId, createdAt, email, id, roleId, updatedAt, username);
   }
 
   @Override
@@ -250,6 +275,7 @@ public class ModelsOrganizationUser {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsOrganizationUser {\n");
     sb.append("    authId: ").append(toIndentedString(authId)).append("\n");
+    sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -277,7 +303,7 @@ public class ModelsOrganizationUser {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_id", "created_at", "email", "id", "role_id", "updated_at", "username"));
+    openapiFields = new HashSet<String>(Arrays.asList("auth_id", "connection_id", "created_at", "email", "id", "role_id", "updated_at", "username"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -306,6 +332,9 @@ public class ModelsOrganizationUser {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("auth_id") != null && !jsonObj.get("auth_id").isJsonNull()) && !jsonObj.get("auth_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `auth_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_id").toString()));
+      }
+      if ((jsonObj.get("connection_id") != null && !jsonObj.get("connection_id").isJsonNull()) && !jsonObj.get("connection_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `connection_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connection_id").toString()));
       }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

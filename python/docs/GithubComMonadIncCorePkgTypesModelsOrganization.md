@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **billing_account_id** | **str** |  | [optional] 
+**connection_id** | **str** |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 

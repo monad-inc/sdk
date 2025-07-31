@@ -21,6 +21,7 @@ var _ MappedNullable = &GithubComMonadIncCorePkgTypesModelsOrganization{}
 // GithubComMonadIncCorePkgTypesModelsOrganization struct for GithubComMonadIncCorePkgTypesModelsOrganization
 type GithubComMonadIncCorePkgTypesModelsOrganization struct {
 	BillingAccountId *string `json:"billing_account_id,omitempty"`
+	ConnectionId *string `json:"connection_id,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -75,6 +76,38 @@ func (o *GithubComMonadIncCorePkgTypesModelsOrganization) HasBillingAccountId() 
 // SetBillingAccountId gets a reference to the given string and assigns it to the BillingAccountId field.
 func (o *GithubComMonadIncCorePkgTypesModelsOrganization) SetBillingAccountId(v string) {
 	o.BillingAccountId = &v
+}
+
+// GetConnectionId returns the ConnectionId field value if set, zero value otherwise.
+func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetConnectionId() string {
+	if o == nil || IsNil(o.ConnectionId) {
+		var ret string
+		return ret
+	}
+	return *o.ConnectionId
+}
+
+// GetConnectionIdOk returns a tuple with the ConnectionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetConnectionIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ConnectionId) {
+		return nil, false
+	}
+	return o.ConnectionId, true
+}
+
+// HasConnectionId returns a boolean if a field has been set.
+func (o *GithubComMonadIncCorePkgTypesModelsOrganization) HasConnectionId() bool {
+	if o != nil && !IsNil(o.ConnectionId) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionId gets a reference to the given string and assigns it to the ConnectionId field.
+func (o *GithubComMonadIncCorePkgTypesModelsOrganization) SetConnectionId(v string) {
+	o.ConnectionId = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -249,6 +282,9 @@ func (o GithubComMonadIncCorePkgTypesModelsOrganization) ToMap() (map[string]int
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.BillingAccountId) {
 		toSerialize["billing_account_id"] = o.BillingAccountId
+	}
+	if !IsNil(o.ConnectionId) {
+		toSerialize["connection_id"] = o.ConnectionId
 	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
