@@ -60,6 +60,10 @@ type APIClient struct {
 
 	ConditionsAPI *ConditionsAPIService
 
+	ConnectionsAPI *ConnectionsAPIService
+
+	ConnectionsRbacAPI *ConnectionsRbacAPIService
+
 	DataAPI *DataAPIService
 
 	EnrichmentsAPI *EnrichmentsAPIService
@@ -132,6 +136,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.BillingAccountsRbacAPI = (*BillingAccountsRbacAPIService)(&c.common)
 	c.BillingProductsAPI = (*BillingProductsAPIService)(&c.common)
 	c.ConditionsAPI = (*ConditionsAPIService)(&c.common)
+	c.ConnectionsAPI = (*ConnectionsAPIService)(&c.common)
+	c.ConnectionsRbacAPI = (*ConnectionsRbacAPIService)(&c.common)
 	c.DataAPI = (*DataAPIService)(&c.common)
 	c.EnrichmentsAPI = (*EnrichmentsAPIService)(&c.common)
 	c.FeatureFlagsAPI = (*FeatureFlagsAPIService)(&c.common)

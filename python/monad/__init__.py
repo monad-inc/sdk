@@ -24,6 +24,8 @@ __all__ = [
     "BillingAccountsRbacApi",
     "BillingProductsApi",
     "ConditionsApi",
+    "ConnectionsApi",
+    "ConnectionsRbacApi",
     "DataApi",
     "EnrichmentsApi",
     "FeatureFlagsApi",
@@ -73,8 +75,11 @@ __all__ = [
     "AuditLogsSettingsConfig",
     "AuthLogsSecretsConfig",
     "AuthLogsSettingsConfig",
+    "AuthenticationtypesAuth0",
     "AuthenticationtypesAuthenticationMethod",
+    "AuthenticationtypesConnectionConfig",
     "AuthenticationtypesMFAEnrollmentTicket",
+    "AuthenticationtypesOkta",
     "AuthenticationtypesTokenResponse",
     "AwsGuarddutySettingsConfig",
     "AwsS3SettingsConfig",
@@ -195,6 +200,11 @@ __all__ = [
     "ModelsBillingProduct",
     "ModelsBillingProductList",
     "ModelsComponentReference",
+    "ModelsConnection",
+    "ModelsConnectionMetadata",
+    "ModelsConnectionPermission",
+    "ModelsConnectionRole",
+    "ModelsConnectionRoleUser",
     "ModelsConnectorMeta",
     "ModelsDataUsage",
     "ModelsEnrichment",
@@ -326,6 +336,9 @@ __all__ = [
     "RoutesV2UpdateOutputRequest",
     "RoutesV2UpdatePipelineRequest",
     "RoutesV2UpdateRoleV2Request",
+    "RoutesV3CreateConnectionRequest",
+    "RoutesV3CreateConnectionRoleRequest",
+    "RoutesV3CreateConnectionUserRoleRequest",
     "RoutesV3CreateEnrichmentRequest",
     "RoutesV3GetEnrichmentResponse",
     "RoutesV3GetFeatureFlagResponse",
@@ -336,6 +349,8 @@ __all__ = [
     "RoutesV3TestEnrichmentConnectionRequest",
     "RoutesV3TransformConfig",
     "RoutesV3TransformOperation",
+    "RoutesV3UpdateConnectionRequest",
+    "RoutesV3UpdateConnectionRoleRequest",
     "RoutesV3UpdateEnrichmentRequest",
     "S3SettingsConfig",
     "SecretProcessesorEnrichmentConfig",
@@ -420,6 +435,8 @@ from monad.api.billing_accounts_api import BillingAccountsApi as BillingAccounts
 from monad.api.billing_accounts_rbac_api import BillingAccountsRbacApi as BillingAccountsRbacApi
 from monad.api.billing_products_api import BillingProductsApi as BillingProductsApi
 from monad.api.conditions_api import ConditionsApi as ConditionsApi
+from monad.api.connections_api import ConnectionsApi as ConnectionsApi
+from monad.api.connections_rbac_api import ConnectionsRbacApi as ConnectionsRbacApi
 from monad.api.data_api import DataApi as DataApi
 from monad.api.enrichments_api import EnrichmentsApi as EnrichmentsApi
 from monad.api.feature_flags_api import FeatureFlagsApi as FeatureFlagsApi
@@ -473,8 +490,11 @@ from monad.models.audit_logs_secrets_config import AuditLogsSecretsConfig as Aud
 from monad.models.audit_logs_settings_config import AuditLogsSettingsConfig as AuditLogsSettingsConfig
 from monad.models.auth_logs_secrets_config import AuthLogsSecretsConfig as AuthLogsSecretsConfig
 from monad.models.auth_logs_settings_config import AuthLogsSettingsConfig as AuthLogsSettingsConfig
+from monad.models.authenticationtypes_auth0 import AuthenticationtypesAuth0 as AuthenticationtypesAuth0
 from monad.models.authenticationtypes_authentication_method import AuthenticationtypesAuthenticationMethod as AuthenticationtypesAuthenticationMethod
+from monad.models.authenticationtypes_connection_config import AuthenticationtypesConnectionConfig as AuthenticationtypesConnectionConfig
 from monad.models.authenticationtypes_mfa_enrollment_ticket import AuthenticationtypesMFAEnrollmentTicket as AuthenticationtypesMFAEnrollmentTicket
+from monad.models.authenticationtypes_okta import AuthenticationtypesOkta as AuthenticationtypesOkta
 from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse as AuthenticationtypesTokenResponse
 from monad.models.aws_guardduty_settings_config import AwsGuarddutySettingsConfig as AwsGuarddutySettingsConfig
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig as AwsS3SettingsConfig
@@ -595,6 +615,11 @@ from monad.models.models_billing_account_role_user import ModelsBillingAccountRo
 from monad.models.models_billing_product import ModelsBillingProduct as ModelsBillingProduct
 from monad.models.models_billing_product_list import ModelsBillingProductList as ModelsBillingProductList
 from monad.models.models_component_reference import ModelsComponentReference as ModelsComponentReference
+from monad.models.models_connection import ModelsConnection as ModelsConnection
+from monad.models.models_connection_metadata import ModelsConnectionMetadata as ModelsConnectionMetadata
+from monad.models.models_connection_permission import ModelsConnectionPermission as ModelsConnectionPermission
+from monad.models.models_connection_role import ModelsConnectionRole as ModelsConnectionRole
+from monad.models.models_connection_role_user import ModelsConnectionRoleUser as ModelsConnectionRoleUser
 from monad.models.models_connector_meta import ModelsConnectorMeta as ModelsConnectorMeta
 from monad.models.models_data_usage import ModelsDataUsage as ModelsDataUsage
 from monad.models.models_enrichment import ModelsEnrichment as ModelsEnrichment
@@ -726,6 +751,9 @@ from monad.models.routes_v2_update_input_request import RoutesV2UpdateInputReque
 from monad.models.routes_v2_update_output_request import RoutesV2UpdateOutputRequest as RoutesV2UpdateOutputRequest
 from monad.models.routes_v2_update_pipeline_request import RoutesV2UpdatePipelineRequest as RoutesV2UpdatePipelineRequest
 from monad.models.routes_v2_update_role_v2_request import RoutesV2UpdateRoleV2Request as RoutesV2UpdateRoleV2Request
+from monad.models.routes_v3_create_connection_request import RoutesV3CreateConnectionRequest as RoutesV3CreateConnectionRequest
+from monad.models.routes_v3_create_connection_role_request import RoutesV3CreateConnectionRoleRequest as RoutesV3CreateConnectionRoleRequest
+from monad.models.routes_v3_create_connection_user_role_request import RoutesV3CreateConnectionUserRoleRequest as RoutesV3CreateConnectionUserRoleRequest
 from monad.models.routes_v3_create_enrichment_request import RoutesV3CreateEnrichmentRequest as RoutesV3CreateEnrichmentRequest
 from monad.models.routes_v3_get_enrichment_response import RoutesV3GetEnrichmentResponse as RoutesV3GetEnrichmentResponse
 from monad.models.routes_v3_get_feature_flag_response import RoutesV3GetFeatureFlagResponse as RoutesV3GetFeatureFlagResponse
@@ -736,6 +764,8 @@ from monad.models.routes_v3_success_response import RoutesV3SuccessResponse as R
 from monad.models.routes_v3_test_enrichment_connection_request import RoutesV3TestEnrichmentConnectionRequest as RoutesV3TestEnrichmentConnectionRequest
 from monad.models.routes_v3_transform_config import RoutesV3TransformConfig as RoutesV3TransformConfig
 from monad.models.routes_v3_transform_operation import RoutesV3TransformOperation as RoutesV3TransformOperation
+from monad.models.routes_v3_update_connection_request import RoutesV3UpdateConnectionRequest as RoutesV3UpdateConnectionRequest
+from monad.models.routes_v3_update_connection_role_request import RoutesV3UpdateConnectionRoleRequest as RoutesV3UpdateConnectionRoleRequest
 from monad.models.routes_v3_update_enrichment_request import RoutesV3UpdateEnrichmentRequest as RoutesV3UpdateEnrichmentRequest
 from monad.models.s3_settings_config import S3SettingsConfig as S3SettingsConfig
 from monad.models.secret_processesor_enrichment_config import SecretProcessesorEnrichmentConfig as SecretProcessesorEnrichmentConfig

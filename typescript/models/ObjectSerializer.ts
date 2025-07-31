@@ -13,8 +13,11 @@ export * from '../models/AuditLogsSecretsConfig';
 export * from '../models/AuditLogsSettingsConfig';
 export * from '../models/AuthLogsSecretsConfig';
 export * from '../models/AuthLogsSettingsConfig';
+export * from '../models/AuthenticationtypesAuth0';
 export * from '../models/AuthenticationtypesAuthenticationMethod';
+export * from '../models/AuthenticationtypesConnectionConfig';
 export * from '../models/AuthenticationtypesMFAEnrollmentTicket';
+export * from '../models/AuthenticationtypesOkta';
 export * from '../models/AuthenticationtypesTokenResponse';
 export * from '../models/AwsGuarddutySettingsConfig';
 export * from '../models/AwsS3SettingsConfig';
@@ -135,6 +138,11 @@ export * from '../models/ModelsBillingAccountRoleUser';
 export * from '../models/ModelsBillingProduct';
 export * from '../models/ModelsBillingProductList';
 export * from '../models/ModelsComponentReference';
+export * from '../models/ModelsConnection';
+export * from '../models/ModelsConnectionMetadata';
+export * from '../models/ModelsConnectionPermission';
+export * from '../models/ModelsConnectionRole';
+export * from '../models/ModelsConnectionRoleUser';
 export * from '../models/ModelsConnectorMeta';
 export * from '../models/ModelsDataUsage';
 export * from '../models/ModelsEnrichment';
@@ -266,6 +274,9 @@ export * from '../models/RoutesV2UpdateInputRequest';
 export * from '../models/RoutesV2UpdateOutputRequest';
 export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/RoutesV2UpdateRoleV2Request';
+export * from '../models/RoutesV3CreateConnectionRequest';
+export * from '../models/RoutesV3CreateConnectionRoleRequest';
+export * from '../models/RoutesV3CreateConnectionUserRoleRequest';
 export * from '../models/RoutesV3CreateEnrichmentRequest';
 export * from '../models/RoutesV3GetEnrichmentResponse';
 export * from '../models/RoutesV3GetFeatureFlagResponse';
@@ -276,6 +287,8 @@ export * from '../models/RoutesV3SuccessResponse';
 export * from '../models/RoutesV3TestEnrichmentConnectionRequest';
 export * from '../models/RoutesV3TransformConfig';
 export * from '../models/RoutesV3TransformOperation';
+export * from '../models/RoutesV3UpdateConnectionRequest';
+export * from '../models/RoutesV3UpdateConnectionRoleRequest';
 export * from '../models/RoutesV3UpdateEnrichmentRequest';
 export * from '../models/S3SettingsConfig';
 export * from '../models/SecretProcessesorEnrichmentConfig';
@@ -368,8 +381,11 @@ import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
+import { AuthenticationtypesAuth0 } from '../models/AuthenticationtypesAuth0';
 import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
+import { AuthenticationtypesConnectionConfig } from '../models/AuthenticationtypesConnectionConfig';
 import { AuthenticationtypesMFAEnrollmentTicket } from '../models/AuthenticationtypesMFAEnrollmentTicket';
+import { AuthenticationtypesOkta } from '../models/AuthenticationtypesOkta';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
@@ -490,6 +506,11 @@ import { ModelsBillingAccountRoleUser } from '../models/ModelsBillingAccountRole
 import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
+import { ModelsConnection } from '../models/ModelsConnection';
+import { ModelsConnectionMetadata } from '../models/ModelsConnectionMetadata';
+import { ModelsConnectionPermission } from '../models/ModelsConnectionPermission';
+import { ModelsConnectionRole } from '../models/ModelsConnectionRole';
+import { ModelsConnectionRoleUser } from '../models/ModelsConnectionRoleUser';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
@@ -621,6 +642,9 @@ import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
+import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
+import { RoutesV3CreateConnectionRoleRequest } from '../models/RoutesV3CreateConnectionRoleRequest';
+import { RoutesV3CreateConnectionUserRoleRequest } from '../models/RoutesV3CreateConnectionUserRoleRequest';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
@@ -631,6 +655,8 @@ import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
 import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation';
+import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
+import { RoutesV3UpdateConnectionRoleRequest } from '../models/RoutesV3UpdateConnectionRoleRequest';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
@@ -749,8 +775,11 @@ let typeMap: {[index: string]: any} = {
     "AuditLogsSettingsConfig": AuditLogsSettingsConfig,
     "AuthLogsSecretsConfig": AuthLogsSecretsConfig,
     "AuthLogsSettingsConfig": AuthLogsSettingsConfig,
+    "AuthenticationtypesAuth0": AuthenticationtypesAuth0,
     "AuthenticationtypesAuthenticationMethod": AuthenticationtypesAuthenticationMethod,
+    "AuthenticationtypesConnectionConfig": AuthenticationtypesConnectionConfig,
     "AuthenticationtypesMFAEnrollmentTicket": AuthenticationtypesMFAEnrollmentTicket,
+    "AuthenticationtypesOkta": AuthenticationtypesOkta,
     "AuthenticationtypesTokenResponse": AuthenticationtypesTokenResponse,
     "AwsGuarddutySettingsConfig": AwsGuarddutySettingsConfig,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
@@ -871,6 +900,11 @@ let typeMap: {[index: string]: any} = {
     "ModelsBillingProduct": ModelsBillingProduct,
     "ModelsBillingProductList": ModelsBillingProductList,
     "ModelsComponentReference": ModelsComponentReference,
+    "ModelsConnection": ModelsConnection,
+    "ModelsConnectionMetadata": ModelsConnectionMetadata,
+    "ModelsConnectionPermission": ModelsConnectionPermission,
+    "ModelsConnectionRole": ModelsConnectionRole,
+    "ModelsConnectionRoleUser": ModelsConnectionRoleUser,
     "ModelsConnectorMeta": ModelsConnectorMeta,
     "ModelsDataUsage": ModelsDataUsage,
     "ModelsEnrichment": ModelsEnrichment,
@@ -1002,6 +1036,9 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdateOutputRequest": RoutesV2UpdateOutputRequest,
     "RoutesV2UpdatePipelineRequest": RoutesV2UpdatePipelineRequest,
     "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
+    "RoutesV3CreateConnectionRequest": RoutesV3CreateConnectionRequest,
+    "RoutesV3CreateConnectionRoleRequest": RoutesV3CreateConnectionRoleRequest,
+    "RoutesV3CreateConnectionUserRoleRequest": RoutesV3CreateConnectionUserRoleRequest,
     "RoutesV3CreateEnrichmentRequest": RoutesV3CreateEnrichmentRequest,
     "RoutesV3GetEnrichmentResponse": RoutesV3GetEnrichmentResponse,
     "RoutesV3GetFeatureFlagResponse": RoutesV3GetFeatureFlagResponse,
@@ -1012,6 +1049,8 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3TestEnrichmentConnectionRequest": RoutesV3TestEnrichmentConnectionRequest,
     "RoutesV3TransformConfig": RoutesV3TransformConfig,
     "RoutesV3TransformOperation": RoutesV3TransformOperation,
+    "RoutesV3UpdateConnectionRequest": RoutesV3UpdateConnectionRequest,
+    "RoutesV3UpdateConnectionRoleRequest": RoutesV3UpdateConnectionRoleRequest,
     "RoutesV3UpdateEnrichmentRequest": RoutesV3UpdateEnrichmentRequest,
     "S3SettingsConfig": S3SettingsConfig,
     "SecretProcessesorEnrichmentConfig": SecretProcessesorEnrichmentConfig,

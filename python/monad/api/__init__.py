@@ -6,6 +6,8 @@ from monad.api.billing_accounts_api import BillingAccountsApi
 from monad.api.billing_accounts_rbac_api import BillingAccountsRbacApi
 from monad.api.billing_products_api import BillingProductsApi
 from monad.api.conditions_api import ConditionsApi
+from monad.api.connections_api import ConnectionsApi
+from monad.api.connections_rbac_api import ConnectionsRbacApi
 from monad.api.data_api import DataApi
 from monad.api.enrichments_api import EnrichmentsApi
 from monad.api.feature_flags_api import FeatureFlagsApi

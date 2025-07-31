@@ -107,6 +107,19 @@ Class | Method | HTTP request | Description
 *BillingProductsApi* | [**v2_billing_accounts_billing_account_id_subscription_post**](docs/BillingProductsApi.md#v2_billing_accounts_billing_account_id_subscription_post) | **POST** /v2/billing/accounts/{billing_account_id}/subscription | Create Billing Account Subscription
 *BillingProductsApi* | [**v2_billing_products_get**](docs/BillingProductsApi.md#v2_billing_products_get) | **GET** /v2/billing/products | List Billing Products
 *ConditionsApi* | [**v2_conditions_get**](docs/ConditionsApi.md#v2_conditions_get) | **GET** /v2/conditions | List conditions
+*ConnectionsApi* | [**v3_connections_connection_id_delete**](docs/ConnectionsApi.md#v3_connections_connection_id_delete) | **DELETE** /v3/connections/{connection_id} | Delete connection
+*ConnectionsApi* | [**v3_connections_connection_id_get**](docs/ConnectionsApi.md#v3_connections_connection_id_get) | **GET** /v3/connections/{connection_id} | Get connection by ID
+*ConnectionsApi* | [**v3_connections_connection_id_patch**](docs/ConnectionsApi.md#v3_connections_connection_id_patch) | **PATCH** /v3/connections/{connection_id} | Update connection
+*ConnectionsApi* | [**v3_connections_get**](docs/ConnectionsApi.md#v3_connections_get) | **GET** /v3/connections | Get all connections
+*ConnectionsApi* | [**v3_connections_post**](docs/ConnectionsApi.md#v3_connections_post) | **POST** /v3/connections | Create a new connection
+*ConnectionsRbacApi* | [**v3_connections_connection_id_roles_get**](docs/ConnectionsRbacApi.md#v3_connections_connection_id_roles_get) | **GET** /v3/connections/{connection_id}/roles | Get Connection Roles
+*ConnectionsRbacApi* | [**v3_connections_connection_id_roles_post**](docs/ConnectionsRbacApi.md#v3_connections_connection_id_roles_post) | **POST** /v3/connections/{connection_id}/roles | Create Connection Role
+*ConnectionsRbacApi* | [**v3_connections_connection_id_roles_role_id_delete**](docs/ConnectionsRbacApi.md#v3_connections_connection_id_roles_role_id_delete) | **DELETE** /v3/connections/{connection_id}/roles/{role_id} | Delete Connection Role
+*ConnectionsRbacApi* | [**v3_connections_connection_id_roles_role_id_get**](docs/ConnectionsRbacApi.md#v3_connections_connection_id_roles_role_id_get) | **GET** /v3/connections/{connection_id}/roles/{role_id} | Get Connection Role
+*ConnectionsRbacApi* | [**v3_connections_connection_id_roles_role_id_patch**](docs/ConnectionsRbacApi.md#v3_connections_connection_id_roles_role_id_patch) | **PATCH** /v3/connections/{connection_id}/roles/{role_id} | Update Connection Role
+*ConnectionsRbacApi* | [**v3_connections_connection_id_roles_role_id_users_post**](docs/ConnectionsRbacApi.md#v3_connections_connection_id_roles_role_id_users_post) | **POST** /v3/connections/{connection_id}/roles/{role_id}/users | Create Connection User Role
+*ConnectionsRbacApi* | [**v3_connections_connection_id_roles_role_id_users_user_id_delete**](docs/ConnectionsRbacApi.md#v3_connections_connection_id_roles_role_id_users_user_id_delete) | **DELETE** /v3/connections/{connection_id}/roles/{role_id}/users/{user_id} | Delete Connection User Role
+*ConnectionsRbacApi* | [**v3_connections_permissions_get**](docs/ConnectionsRbacApi.md#v3_connections_permissions_get) | **GET** /v3/connections/permissions | Get Connection Permissions
 *DataApi* | [**v1_organization_id_data_node_id_get**](docs/DataApi.md#v1_organization_id_data_node_id_get) | **GET** /v1/{organization_id}/data/{node_id} | Stream node data
 *EnrichmentsApi* | [**v3_organization_id_enrichments_meta_enrichment_type_id_get**](docs/EnrichmentsApi.md#v3_organization_id_enrichments_meta_enrichment_type_id_get) | **GET** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta
 *EnrichmentsApi* | [**v3_organization_id_enrichments_meta_get**](docs/EnrichmentsApi.md#v3_organization_id_enrichments_meta_get) | **GET** /v3/{organization_id}/enrichments_meta | List enrichments
@@ -229,8 +242,11 @@ Class | Method | HTTP request | Description
  - [AuditLogsSettingsConfig](docs/AuditLogsSettingsConfig.md)
  - [AuthLogsSecretsConfig](docs/AuthLogsSecretsConfig.md)
  - [AuthLogsSettingsConfig](docs/AuthLogsSettingsConfig.md)
+ - [AuthenticationtypesAuth0](docs/AuthenticationtypesAuth0.md)
  - [AuthenticationtypesAuthenticationMethod](docs/AuthenticationtypesAuthenticationMethod.md)
+ - [AuthenticationtypesConnectionConfig](docs/AuthenticationtypesConnectionConfig.md)
  - [AuthenticationtypesMFAEnrollmentTicket](docs/AuthenticationtypesMFAEnrollmentTicket.md)
+ - [AuthenticationtypesOkta](docs/AuthenticationtypesOkta.md)
  - [AuthenticationtypesTokenResponse](docs/AuthenticationtypesTokenResponse.md)
  - [AwsGuarddutySettingsConfig](docs/AwsGuarddutySettingsConfig.md)
  - [AwsS3SettingsConfig](docs/AwsS3SettingsConfig.md)
@@ -351,6 +367,11 @@ Class | Method | HTTP request | Description
  - [ModelsBillingProduct](docs/ModelsBillingProduct.md)
  - [ModelsBillingProductList](docs/ModelsBillingProductList.md)
  - [ModelsComponentReference](docs/ModelsComponentReference.md)
+ - [ModelsConnection](docs/ModelsConnection.md)
+ - [ModelsConnectionMetadata](docs/ModelsConnectionMetadata.md)
+ - [ModelsConnectionPermission](docs/ModelsConnectionPermission.md)
+ - [ModelsConnectionRole](docs/ModelsConnectionRole.md)
+ - [ModelsConnectionRoleUser](docs/ModelsConnectionRoleUser.md)
  - [ModelsConnectorMeta](docs/ModelsConnectorMeta.md)
  - [ModelsDataUsage](docs/ModelsDataUsage.md)
  - [ModelsEnrichment](docs/ModelsEnrichment.md)
@@ -482,6 +503,9 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdateOutputRequest](docs/RoutesV2UpdateOutputRequest.md)
  - [RoutesV2UpdatePipelineRequest](docs/RoutesV2UpdatePipelineRequest.md)
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
+ - [RoutesV3CreateConnectionRequest](docs/RoutesV3CreateConnectionRequest.md)
+ - [RoutesV3CreateConnectionRoleRequest](docs/RoutesV3CreateConnectionRoleRequest.md)
+ - [RoutesV3CreateConnectionUserRoleRequest](docs/RoutesV3CreateConnectionUserRoleRequest.md)
  - [RoutesV3CreateEnrichmentRequest](docs/RoutesV3CreateEnrichmentRequest.md)
  - [RoutesV3GetEnrichmentResponse](docs/RoutesV3GetEnrichmentResponse.md)
  - [RoutesV3GetFeatureFlagResponse](docs/RoutesV3GetFeatureFlagResponse.md)
@@ -492,6 +516,8 @@ Class | Method | HTTP request | Description
  - [RoutesV3TestEnrichmentConnectionRequest](docs/RoutesV3TestEnrichmentConnectionRequest.md)
  - [RoutesV3TransformConfig](docs/RoutesV3TransformConfig.md)
  - [RoutesV3TransformOperation](docs/RoutesV3TransformOperation.md)
+ - [RoutesV3UpdateConnectionRequest](docs/RoutesV3UpdateConnectionRequest.md)
+ - [RoutesV3UpdateConnectionRoleRequest](docs/RoutesV3UpdateConnectionRoleRequest.md)
  - [RoutesV3UpdateEnrichmentRequest](docs/RoutesV3UpdateEnrichmentRequest.md)
  - [S3SettingsConfig](docs/S3SettingsConfig.md)
  - [SecretProcessesorEnrichmentConfig](docs/SecretProcessesorEnrichmentConfig.md)

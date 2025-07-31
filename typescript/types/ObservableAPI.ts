@@ -18,8 +18,11 @@ import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
+import { AuthenticationtypesAuth0 } from '../models/AuthenticationtypesAuth0';
 import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
+import { AuthenticationtypesConnectionConfig } from '../models/AuthenticationtypesConnectionConfig';
 import { AuthenticationtypesMFAEnrollmentTicket } from '../models/AuthenticationtypesMFAEnrollmentTicket';
+import { AuthenticationtypesOkta } from '../models/AuthenticationtypesOkta';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
@@ -140,6 +143,11 @@ import { ModelsBillingAccountRoleUser } from '../models/ModelsBillingAccountRole
 import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
+import { ModelsConnection } from '../models/ModelsConnection';
+import { ModelsConnectionMetadata } from '../models/ModelsConnectionMetadata';
+import { ModelsConnectionPermission } from '../models/ModelsConnectionPermission';
+import { ModelsConnectionRole } from '../models/ModelsConnectionRole';
+import { ModelsConnectionRoleUser } from '../models/ModelsConnectionRoleUser';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
@@ -271,6 +279,9 @@ import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
+import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
+import { RoutesV3CreateConnectionRoleRequest } from '../models/RoutesV3CreateConnectionRoleRequest';
+import { RoutesV3CreateConnectionUserRoleRequest } from '../models/RoutesV3CreateConnectionUserRoleRequest';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
@@ -281,6 +292,8 @@ import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
 import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation';
+import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
+import { RoutesV3UpdateConnectionRoleRequest } from '../models/RoutesV3UpdateConnectionRoleRequest';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
@@ -1210,6 +1223,510 @@ export class ObservableConditionsApi {
      */
     public v2ConditionsGet(_options?: ConfigurationOptions): Observable<Array<ConditionInfo>> {
         return this.v2ConditionsGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<Array<ConditionInfo>>) => apiResponse.data));
+    }
+
+}
+
+import { ConnectionsApiRequestFactory, ConnectionsApiResponseProcessor} from "../apis/ConnectionsApi";
+export class ObservableConnectionsApi {
+    private requestFactory: ConnectionsApiRequestFactory;
+    private responseProcessor: ConnectionsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: ConnectionsApiRequestFactory,
+        responseProcessor?: ConnectionsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new ConnectionsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new ConnectionsApiResponseProcessor();
+    }
+
+    /**
+     * Delete an existing connection
+     * Delete connection
+     * @param connectionId Connection ID to delete
+     * @param [body]
+     */
+    public v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdDelete(connectionId, body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Delete an existing connection
+     * Delete connection
+     * @param connectionId Connection ID to delete
+     * @param [body]
+     */
+    public v3ConnectionsConnectionIdDelete(connectionId: string, body?: any, _options?: ConfigurationOptions): Observable<void> {
+        return this.v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId, body, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    }
+
+    /**
+     * Retrieve a connection by its ID
+     * Get connection by ID
+     * @param connectionId Connection ID to retrieve
+     * @param [body]
+     */
+    public v3ConnectionsConnectionIdGetWithHttpInfo(connectionId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdGet(connectionId, body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Retrieve a connection by its ID
+     * Get connection by ID
+     * @param connectionId Connection ID to retrieve
+     * @param [body]
+     */
+    public v3ConnectionsConnectionIdGet(connectionId: string, body?: any, _options?: ConfigurationOptions): Observable<ModelsConnection> {
+        return this.v3ConnectionsConnectionIdGetWithHttpInfo(connectionId, body, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
+    }
+
+    /**
+     * Update an existing connection
+     * Update connection
+     * @param connectionId Connection ID to update
+     * @param routesV3UpdateConnectionRequest Request body for updating a connection
+     */
+    public v3ConnectionsConnectionIdPatchWithHttpInfo(connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdPatch(connectionId, routesV3UpdateConnectionRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdPatchWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Update an existing connection
+     * Update connection
+     * @param connectionId Connection ID to update
+     * @param routesV3UpdateConnectionRequest Request body for updating a connection
+     */
+    public v3ConnectionsConnectionIdPatch(connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: ConfigurationOptions): Observable<ModelsConnection> {
+        return this.v3ConnectionsConnectionIdPatchWithHttpInfo(connectionId, routesV3UpdateConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
+    }
+
+    /**
+     * Retrieve all connections
+     * Get all connections
+     * @param [limit] Limit
+     * @param [offset] Offset
+     * @param [body]
+     */
+    public v3ConnectionsGetWithHttpInfo(limit?: number, offset?: number, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsConnection>>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3ConnectionsGet(limit, offset, body, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Retrieve all connections
+     * Get all connections
+     * @param [limit] Limit
+     * @param [offset] Offset
+     * @param [body]
+     */
+    public v3ConnectionsGet(limit?: number, offset?: number, body?: any, _options?: ConfigurationOptions): Observable<Array<ModelsConnection>> {
+        return this.v3ConnectionsGetWithHttpInfo(limit, offset, body, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsConnection>>) => apiResponse.data));
+    }
+
+    /**
+     * Create a new connection with the provided details
+     * Create a new connection
+     * @param routesV3CreateConnectionRequest Request body for creating a connection
+     */
+    public v3ConnectionsPostWithHttpInfo(routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3ConnectionsPost(routesV3CreateConnectionRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Create a new connection with the provided details
+     * Create a new connection
+     * @param routesV3CreateConnectionRequest Request body for creating a connection
+     */
+    public v3ConnectionsPost(routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: ConfigurationOptions): Observable<ModelsConnection> {
+        return this.v3ConnectionsPostWithHttpInfo(routesV3CreateConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
+    }
+
+}
+
+import { ConnectionsRbacApiRequestFactory, ConnectionsRbacApiResponseProcessor} from "../apis/ConnectionsRbacApi";
+export class ObservableConnectionsRbacApi {
+    private requestFactory: ConnectionsRbacApiRequestFactory;
+    private responseProcessor: ConnectionsRbacApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: ConnectionsRbacApiRequestFactory,
+        responseProcessor?: ConnectionsRbacApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new ConnectionsRbacApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new ConnectionsRbacApiResponseProcessor();
+    }
+
+    /**
+     * Get Connection Roles
+     * Get Connection Roles
+     * @param connectionId Connection ID
+     */
+    public v3ConnectionsConnectionIdRolesGetWithHttpInfo(connectionId: string, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsConnectionRole>>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesGet(connectionId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get Connection Roles
+     * Get Connection Roles
+     * @param connectionId Connection ID
+     */
+    public v3ConnectionsConnectionIdRolesGet(connectionId: string, _options?: ConfigurationOptions): Observable<Array<ModelsConnectionRole>> {
+        return this.v3ConnectionsConnectionIdRolesGetWithHttpInfo(connectionId, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsConnectionRole>>) => apiResponse.data));
+    }
+
+    /**
+     * Create Connection Role
+     * Create Connection Role
+     * @param connectionId Connection ID
+     * @param routesV3CreateConnectionRoleRequest Create Connection Role Request
+     */
+    public v3ConnectionsConnectionIdRolesPostWithHttpInfo(connectionId: string, routesV3CreateConnectionRoleRequest: RoutesV3CreateConnectionRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnectionRole>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesPost(connectionId, routesV3CreateConnectionRoleRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Create Connection Role
+     * Create Connection Role
+     * @param connectionId Connection ID
+     * @param routesV3CreateConnectionRoleRequest Create Connection Role Request
+     */
+    public v3ConnectionsConnectionIdRolesPost(connectionId: string, routesV3CreateConnectionRoleRequest: RoutesV3CreateConnectionRoleRequest, _options?: ConfigurationOptions): Observable<ModelsConnectionRole> {
+        return this.v3ConnectionsConnectionIdRolesPostWithHttpInfo(connectionId, routesV3CreateConnectionRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnectionRole>) => apiResponse.data));
+    }
+
+    /**
+     * Delete Connection Role
+     * Delete Connection Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdDeleteWithHttpInfo(connectionId: string, roleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesRoleIdDelete(connectionId, roleId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesRoleIdDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Delete Connection Role
+     * Delete Connection Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdDelete(connectionId: string, roleId: string, _options?: ConfigurationOptions): Observable<string> {
+        return this.v3ConnectionsConnectionIdRolesRoleIdDeleteWithHttpInfo(connectionId, roleId, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+    /**
+     * Get Connection Role
+     * Get Connection Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdGetWithHttpInfo(connectionId: string, roleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnectionRole>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesRoleIdGet(connectionId, roleId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesRoleIdGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get Connection Role
+     * Get Connection Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdGet(connectionId: string, roleId: string, _options?: ConfigurationOptions): Observable<ModelsConnectionRole> {
+        return this.v3ConnectionsConnectionIdRolesRoleIdGetWithHttpInfo(connectionId, roleId, _options).pipe(map((apiResponse: HttpInfo<ModelsConnectionRole>) => apiResponse.data));
+    }
+
+    /**
+     * Update Connection Role
+     * Update Connection Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     * @param routesV3UpdateConnectionRoleRequest Update Connection Role Request
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdPatchWithHttpInfo(connectionId: string, roleId: string, routesV3UpdateConnectionRoleRequest: RoutesV3UpdateConnectionRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnectionRole>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesRoleIdPatch(connectionId, roleId, routesV3UpdateConnectionRoleRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesRoleIdPatchWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Update Connection Role
+     * Update Connection Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     * @param routesV3UpdateConnectionRoleRequest Update Connection Role Request
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdPatch(connectionId: string, roleId: string, routesV3UpdateConnectionRoleRequest: RoutesV3UpdateConnectionRoleRequest, _options?: ConfigurationOptions): Observable<ModelsConnectionRole> {
+        return this.v3ConnectionsConnectionIdRolesRoleIdPatchWithHttpInfo(connectionId, roleId, routesV3UpdateConnectionRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnectionRole>) => apiResponse.data));
+    }
+
+    /**
+     * Add a user to a connection role
+     * Create Connection User Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     * @param routesV3CreateConnectionUserRoleRequest Create Connection User Role Request
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdUsersPostWithHttpInfo(connectionId: string, roleId: string, routesV3CreateConnectionUserRoleRequest: RoutesV3CreateConnectionUserRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesRoleIdUsersPost(connectionId, roleId, routesV3CreateConnectionUserRoleRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesRoleIdUsersPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Add a user to a connection role
+     * Create Connection User Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     * @param routesV3CreateConnectionUserRoleRequest Create Connection User Role Request
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdUsersPost(connectionId: string, roleId: string, routesV3CreateConnectionUserRoleRequest: RoutesV3CreateConnectionUserRoleRequest, _options?: ConfigurationOptions): Observable<string> {
+        return this.v3ConnectionsConnectionIdRolesRoleIdUsersPostWithHttpInfo(connectionId, roleId, routesV3CreateConnectionUserRoleRequest, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+    /**
+     * Remove a user to a connection role
+     * Delete Connection User Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     * @param userId User ID
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(connectionId: string, roleId: string, userId: string, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDelete(connectionId, roleId, userId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Remove a user to a connection role
+     * Delete Connection User Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     * @param userId User ID
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDelete(connectionId: string, roleId: string, userId: string, _options?: ConfigurationOptions): Observable<string> {
+        return this.v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(connectionId, roleId, userId, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+    /**
+     * Get Connection Permissions
+     * Get Connection Permissions
+     */
+    public v3ConnectionsPermissionsGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsConnectionPermission>>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3ConnectionsPermissionsGet(_config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsPermissionsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get Connection Permissions
+     * Get Connection Permissions
+     */
+    public v3ConnectionsPermissionsGet(_options?: ConfigurationOptions): Observable<Array<ModelsConnectionPermission>> {
+        return this.v3ConnectionsPermissionsGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<Array<ModelsConnectionPermission>>) => apiResponse.data));
     }
 
 }

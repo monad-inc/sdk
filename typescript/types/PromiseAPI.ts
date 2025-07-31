@@ -17,8 +17,11 @@ import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
+import { AuthenticationtypesAuth0 } from '../models/AuthenticationtypesAuth0';
 import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
+import { AuthenticationtypesConnectionConfig } from '../models/AuthenticationtypesConnectionConfig';
 import { AuthenticationtypesMFAEnrollmentTicket } from '../models/AuthenticationtypesMFAEnrollmentTicket';
+import { AuthenticationtypesOkta } from '../models/AuthenticationtypesOkta';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
@@ -139,6 +142,11 @@ import { ModelsBillingAccountRoleUser } from '../models/ModelsBillingAccountRole
 import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
+import { ModelsConnection } from '../models/ModelsConnection';
+import { ModelsConnectionMetadata } from '../models/ModelsConnectionMetadata';
+import { ModelsConnectionPermission } from '../models/ModelsConnectionPermission';
+import { ModelsConnectionRole } from '../models/ModelsConnectionRole';
+import { ModelsConnectionRoleUser } from '../models/ModelsConnectionRoleUser';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
@@ -270,6 +278,9 @@ import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
+import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
+import { RoutesV3CreateConnectionRoleRequest } from '../models/RoutesV3CreateConnectionRoleRequest';
+import { RoutesV3CreateConnectionUserRoleRequest } from '../models/RoutesV3CreateConnectionUserRoleRequest';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
@@ -280,6 +291,8 @@ import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
 import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation';
+import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
+import { RoutesV3UpdateConnectionRoleRequest } from '../models/RoutesV3UpdateConnectionRoleRequest';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
@@ -945,6 +958,356 @@ export class PromiseConditionsApi {
     public v2ConditionsGet(_options?: PromiseConfigurationOptions): Promise<Array<ConditionInfo>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v2ConditionsGet(observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableConnectionsApi } from './ObservableAPI';
+
+import { ConnectionsApiRequestFactory, ConnectionsApiResponseProcessor} from "../apis/ConnectionsApi";
+export class PromiseConnectionsApi {
+    private api: ObservableConnectionsApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: ConnectionsApiRequestFactory,
+        responseProcessor?: ConnectionsApiResponseProcessor
+    ) {
+        this.api = new ObservableConnectionsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Delete an existing connection
+     * Delete connection
+     * @param connectionId Connection ID to delete
+     * @param [body]
+     */
+    public v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Delete an existing connection
+     * Delete connection
+     * @param connectionId Connection ID to delete
+     * @param [body]
+     */
+    public v3ConnectionsConnectionIdDelete(connectionId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<void> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdDelete(connectionId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Retrieve a connection by its ID
+     * Get connection by ID
+     * @param connectionId Connection ID to retrieve
+     * @param [body]
+     */
+    public v3ConnectionsConnectionIdGetWithHttpInfo(connectionId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdGetWithHttpInfo(connectionId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Retrieve a connection by its ID
+     * Get connection by ID
+     * @param connectionId Connection ID to retrieve
+     * @param [body]
+     */
+    public v3ConnectionsConnectionIdGet(connectionId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<ModelsConnection> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdGet(connectionId, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update an existing connection
+     * Update connection
+     * @param connectionId Connection ID to update
+     * @param routesV3UpdateConnectionRequest Request body for updating a connection
+     */
+    public v3ConnectionsConnectionIdPatchWithHttpInfo(connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdPatchWithHttpInfo(connectionId, routesV3UpdateConnectionRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update an existing connection
+     * Update connection
+     * @param connectionId Connection ID to update
+     * @param routesV3UpdateConnectionRequest Request body for updating a connection
+     */
+    public v3ConnectionsConnectionIdPatch(connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: PromiseConfigurationOptions): Promise<ModelsConnection> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdPatch(connectionId, routesV3UpdateConnectionRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Retrieve all connections
+     * Get all connections
+     * @param [limit] Limit
+     * @param [offset] Offset
+     * @param [body]
+     */
+    public v3ConnectionsGetWithHttpInfo(limit?: number, offset?: number, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsConnection>>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsGetWithHttpInfo(limit, offset, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Retrieve all connections
+     * Get all connections
+     * @param [limit] Limit
+     * @param [offset] Offset
+     * @param [body]
+     */
+    public v3ConnectionsGet(limit?: number, offset?: number, body?: any, _options?: PromiseConfigurationOptions): Promise<Array<ModelsConnection>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsGet(limit, offset, body, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create a new connection with the provided details
+     * Create a new connection
+     * @param routesV3CreateConnectionRequest Request body for creating a connection
+     */
+    public v3ConnectionsPostWithHttpInfo(routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsPostWithHttpInfo(routesV3CreateConnectionRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create a new connection with the provided details
+     * Create a new connection
+     * @param routesV3CreateConnectionRequest Request body for creating a connection
+     */
+    public v3ConnectionsPost(routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: PromiseConfigurationOptions): Promise<ModelsConnection> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsPost(routesV3CreateConnectionRequest, observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableConnectionsRbacApi } from './ObservableAPI';
+
+import { ConnectionsRbacApiRequestFactory, ConnectionsRbacApiResponseProcessor} from "../apis/ConnectionsRbacApi";
+export class PromiseConnectionsRbacApi {
+    private api: ObservableConnectionsRbacApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: ConnectionsRbacApiRequestFactory,
+        responseProcessor?: ConnectionsRbacApiResponseProcessor
+    ) {
+        this.api = new ObservableConnectionsRbacApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Get Connection Roles
+     * Get Connection Roles
+     * @param connectionId Connection ID
+     */
+    public v3ConnectionsConnectionIdRolesGetWithHttpInfo(connectionId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsConnectionRole>>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesGetWithHttpInfo(connectionId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Connection Roles
+     * Get Connection Roles
+     * @param connectionId Connection ID
+     */
+    public v3ConnectionsConnectionIdRolesGet(connectionId: string, _options?: PromiseConfigurationOptions): Promise<Array<ModelsConnectionRole>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesGet(connectionId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create Connection Role
+     * Create Connection Role
+     * @param connectionId Connection ID
+     * @param routesV3CreateConnectionRoleRequest Create Connection Role Request
+     */
+    public v3ConnectionsConnectionIdRolesPostWithHttpInfo(connectionId: string, routesV3CreateConnectionRoleRequest: RoutesV3CreateConnectionRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnectionRole>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesPostWithHttpInfo(connectionId, routesV3CreateConnectionRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Create Connection Role
+     * Create Connection Role
+     * @param connectionId Connection ID
+     * @param routesV3CreateConnectionRoleRequest Create Connection Role Request
+     */
+    public v3ConnectionsConnectionIdRolesPost(connectionId: string, routesV3CreateConnectionRoleRequest: RoutesV3CreateConnectionRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsConnectionRole> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesPost(connectionId, routesV3CreateConnectionRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Delete Connection Role
+     * Delete Connection Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdDeleteWithHttpInfo(connectionId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesRoleIdDeleteWithHttpInfo(connectionId, roleId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Delete Connection Role
+     * Delete Connection Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdDelete(connectionId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<string> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesRoleIdDelete(connectionId, roleId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Connection Role
+     * Get Connection Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdGetWithHttpInfo(connectionId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnectionRole>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesRoleIdGetWithHttpInfo(connectionId, roleId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Connection Role
+     * Get Connection Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdGet(connectionId: string, roleId: string, _options?: PromiseConfigurationOptions): Promise<ModelsConnectionRole> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesRoleIdGet(connectionId, roleId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update Connection Role
+     * Update Connection Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     * @param routesV3UpdateConnectionRoleRequest Update Connection Role Request
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdPatchWithHttpInfo(connectionId: string, roleId: string, routesV3UpdateConnectionRoleRequest: RoutesV3UpdateConnectionRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnectionRole>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesRoleIdPatchWithHttpInfo(connectionId, roleId, routesV3UpdateConnectionRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update Connection Role
+     * Update Connection Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     * @param routesV3UpdateConnectionRoleRequest Update Connection Role Request
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdPatch(connectionId: string, roleId: string, routesV3UpdateConnectionRoleRequest: RoutesV3UpdateConnectionRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsConnectionRole> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesRoleIdPatch(connectionId, roleId, routesV3UpdateConnectionRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Add a user to a connection role
+     * Create Connection User Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     * @param routesV3CreateConnectionUserRoleRequest Create Connection User Role Request
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdUsersPostWithHttpInfo(connectionId: string, roleId: string, routesV3CreateConnectionUserRoleRequest: RoutesV3CreateConnectionUserRoleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesRoleIdUsersPostWithHttpInfo(connectionId, roleId, routesV3CreateConnectionUserRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Add a user to a connection role
+     * Create Connection User Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     * @param routesV3CreateConnectionUserRoleRequest Create Connection User Role Request
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdUsersPost(connectionId: string, roleId: string, routesV3CreateConnectionUserRoleRequest: RoutesV3CreateConnectionUserRoleRequest, _options?: PromiseConfigurationOptions): Promise<string> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesRoleIdUsersPost(connectionId, roleId, routesV3CreateConnectionUserRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Remove a user to a connection role
+     * Delete Connection User Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     * @param userId User ID
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(connectionId: string, roleId: string, userId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(connectionId, roleId, userId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Remove a user to a connection role
+     * Delete Connection User Role
+     * @param connectionId Connection ID
+     * @param roleId Role ID
+     * @param userId User ID
+     */
+    public v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDelete(connectionId: string, roleId: string, userId: string, _options?: PromiseConfigurationOptions): Promise<string> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDelete(connectionId, roleId, userId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Connection Permissions
+     * Get Connection Permissions
+     */
+    public v3ConnectionsPermissionsGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsConnectionPermission>>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsPermissionsGetWithHttpInfo(observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get Connection Permissions
+     * Get Connection Permissions
+     */
+    public v3ConnectionsPermissionsGet(_options?: PromiseConfigurationOptions): Promise<Array<ModelsConnectionPermission>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3ConnectionsPermissionsGet(observableOptions);
         return result.toPromise();
     }
 
