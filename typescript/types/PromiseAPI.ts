@@ -143,6 +143,7 @@ import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnection } from '../models/ModelsConnection';
+import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectionMetadata } from '../models/ModelsConnectionMetadata';
 import { ModelsConnectionPermission } from '../models/ModelsConnectionPermission';
 import { ModelsConnectionRole } from '../models/ModelsConnectionRole';
@@ -984,11 +985,10 @@ export class PromiseConnectionsApi {
      * Delete an existing connection
      * Delete connection
      * @param connectionId Connection ID to delete
-     * @param [body]
      */
-    public v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
+    public v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId, body, observableOptions);
+        const result = this.api.v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId, observableOptions);
         return result.toPromise();
     }
 
@@ -996,11 +996,10 @@ export class PromiseConnectionsApi {
      * Delete an existing connection
      * Delete connection
      * @param connectionId Connection ID to delete
-     * @param [body]
      */
-    public v3ConnectionsConnectionIdDelete(connectionId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<void> {
+    public v3ConnectionsConnectionIdDelete(connectionId: string, _options?: PromiseConfigurationOptions): Promise<void> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v3ConnectionsConnectionIdDelete(connectionId, body, observableOptions);
+        const result = this.api.v3ConnectionsConnectionIdDelete(connectionId, observableOptions);
         return result.toPromise();
     }
 
@@ -1008,11 +1007,10 @@ export class PromiseConnectionsApi {
      * Retrieve a connection by its ID
      * Get connection by ID
      * @param connectionId Connection ID to retrieve
-     * @param [body]
      */
-    public v3ConnectionsConnectionIdGetWithHttpInfo(connectionId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
+    public v3ConnectionsConnectionIdGetWithHttpInfo(connectionId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v3ConnectionsConnectionIdGetWithHttpInfo(connectionId, body, observableOptions);
+        const result = this.api.v3ConnectionsConnectionIdGetWithHttpInfo(connectionId, observableOptions);
         return result.toPromise();
     }
 
@@ -1020,11 +1018,10 @@ export class PromiseConnectionsApi {
      * Retrieve a connection by its ID
      * Get connection by ID
      * @param connectionId Connection ID to retrieve
-     * @param [body]
      */
-    public v3ConnectionsConnectionIdGet(connectionId: string, body?: any, _options?: PromiseConfigurationOptions): Promise<ModelsConnection> {
+    public v3ConnectionsConnectionIdGet(connectionId: string, _options?: PromiseConfigurationOptions): Promise<ModelsConnection> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v3ConnectionsConnectionIdGet(connectionId, body, observableOptions);
+        const result = this.api.v3ConnectionsConnectionIdGet(connectionId, observableOptions);
         return result.toPromise();
     }
 
@@ -1057,11 +1054,10 @@ export class PromiseConnectionsApi {
      * Get all connections
      * @param [limit] Limit
      * @param [offset] Offset
-     * @param [body]
      */
-    public v3ConnectionsGetWithHttpInfo(limit?: number, offset?: number, body?: any, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsConnection>>> {
+    public v3ConnectionsGetWithHttpInfo(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsConnectionList>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v3ConnectionsGetWithHttpInfo(limit, offset, body, observableOptions);
+        const result = this.api.v3ConnectionsGetWithHttpInfo(limit, offset, observableOptions);
         return result.toPromise();
     }
 
@@ -1070,11 +1066,10 @@ export class PromiseConnectionsApi {
      * Get all connections
      * @param [limit] Limit
      * @param [offset] Offset
-     * @param [body]
      */
-    public v3ConnectionsGet(limit?: number, offset?: number, body?: any, _options?: PromiseConfigurationOptions): Promise<Array<ModelsConnection>> {
+    public v3ConnectionsGet(limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsConnectionList> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v3ConnectionsGet(limit, offset, body, observableOptions);
+        const result = this.api.v3ConnectionsGet(limit, offset, observableOptions);
         return result.toPromise();
     }
 

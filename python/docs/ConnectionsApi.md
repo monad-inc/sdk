@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **v3_connections_connection_id_delete**
-> v3_connections_connection_id_delete(connection_id, body=body)
+> v3_connections_connection_id_delete(connection_id)
 
 Delete connection
 
@@ -49,11 +49,10 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.ConnectionsApi(api_client)
     connection_id = 'connection_id_example' # str | Connection ID to delete
-    body = None # object |  (optional)
 
     try:
         # Delete connection
-        api_instance.v3_connections_connection_id_delete(connection_id, body=body)
+        api_instance.v3_connections_connection_id_delete(connection_id)
     except Exception as e:
         print("Exception when calling ConnectionsApi->v3_connections_connection_id_delete: %s\n" % e)
 ```
@@ -66,7 +65,6 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **connection_id** | **str**| Connection ID to delete | 
- **body** | **object**|  | [optional] 
 
 ### Return type
 
@@ -78,7 +76,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -92,7 +90,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v3_connections_connection_id_get**
-> ModelsConnection v3_connections_connection_id_get(connection_id, body=body)
+> ModelsConnection v3_connections_connection_id_get(connection_id)
 
 Get connection by ID
 
@@ -130,11 +128,10 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.ConnectionsApi(api_client)
     connection_id = 'connection_id_example' # str | Connection ID to retrieve
-    body = None # object |  (optional)
 
     try:
         # Get connection by ID
-        api_response = api_instance.v3_connections_connection_id_get(connection_id, body=body)
+        api_response = api_instance.v3_connections_connection_id_get(connection_id)
         print("The response of ConnectionsApi->v3_connections_connection_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -149,7 +146,6 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **connection_id** | **str**| Connection ID to retrieve | 
- **body** | **object**|  | [optional] 
 
 ### Return type
 
@@ -161,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -260,7 +256,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v3_connections_get**
-> List[ModelsConnection] v3_connections_get(limit=limit, offset=offset, body=body)
+> ModelsConnectionList v3_connections_get(limit=limit, offset=offset)
 
 Get all connections
 
@@ -272,7 +268,7 @@ Retrieve all connections
 
 ```python
 import monad
-from monad.models.models_connection import ModelsConnection
+from monad.models.models_connection_list import ModelsConnectionList
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -299,11 +295,10 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.ConnectionsApi(api_client)
     limit = 56 # int | Limit (optional)
     offset = 56 # int | Offset (optional)
-    body = None # object |  (optional)
 
     try:
         # Get all connections
-        api_response = api_instance.v3_connections_get(limit=limit, offset=offset, body=body)
+        api_response = api_instance.v3_connections_get(limit=limit, offset=offset)
         print("The response of ConnectionsApi->v3_connections_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -319,11 +314,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Limit | [optional] 
  **offset** | **int**| Offset | [optional] 
- **body** | **object**|  | [optional] 
 
 ### Return type
 
-[**List[ModelsConnection]**](ModelsConnection.md)
+[**ModelsConnectionList**](ModelsConnectionList.md)
 
 ### Authorization
 
@@ -331,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

@@ -156,6 +156,7 @@ from monad.models.models_billing_product import ModelsBillingProduct
 from monad.models.models_billing_product_list import ModelsBillingProductList
 from monad.models.models_component_reference import ModelsComponentReference
 from monad.models.models_connection import ModelsConnection
+from monad.models.models_connection_list import ModelsConnectionList
 from monad.models.models_connection_metadata import ModelsConnectionMetadata
 from monad.models.models_connection_permission import ModelsConnectionPermission
 from monad.models.models_connection_role import ModelsConnectionRole

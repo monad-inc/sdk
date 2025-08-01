@@ -143,6 +143,7 @@ import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnection } from '../models/ModelsConnection';
+import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectionMetadata } from '../models/ModelsConnectionMetadata';
 import { ModelsConnectionPermission } from '../models/ModelsConnectionPermission';
 import { ModelsConnectionRole } from '../models/ModelsConnectionRole';
@@ -1113,12 +1114,6 @@ export interface ConnectionsApiV3ConnectionsConnectionIdDeleteRequest {
      * @memberof ConnectionsApiv3ConnectionsConnectionIdDelete
      */
     connectionId: string
-    /**
-     * 
-     * @type any
-     * @memberof ConnectionsApiv3ConnectionsConnectionIdDelete
-     */
-    body?: any
 }
 
 export interface ConnectionsApiV3ConnectionsConnectionIdGetRequest {
@@ -1129,12 +1124,6 @@ export interface ConnectionsApiV3ConnectionsConnectionIdGetRequest {
      * @memberof ConnectionsApiv3ConnectionsConnectionIdGet
      */
     connectionId: string
-    /**
-     * 
-     * @type any
-     * @memberof ConnectionsApiv3ConnectionsConnectionIdGet
-     */
-    body?: any
 }
 
 export interface ConnectionsApiV3ConnectionsConnectionIdPatchRequest {
@@ -1168,12 +1157,6 @@ export interface ConnectionsApiV3ConnectionsGetRequest {
      * @memberof ConnectionsApiv3ConnectionsGet
      */
     offset?: number
-    /**
-     * 
-     * @type any
-     * @memberof ConnectionsApiv3ConnectionsGet
-     */
-    body?: any
 }
 
 export interface ConnectionsApiV3ConnectionsPostRequest {
@@ -1198,7 +1181,7 @@ export class ObjectConnectionsApi {
      * @param param the request object
      */
     public v3ConnectionsConnectionIdDeleteWithHttpInfo(param: ConnectionsApiV3ConnectionsConnectionIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
-        return this.api.v3ConnectionsConnectionIdDeleteWithHttpInfo(param.connectionId, param.body,  options).toPromise();
+        return this.api.v3ConnectionsConnectionIdDeleteWithHttpInfo(param.connectionId,  options).toPromise();
     }
 
     /**
@@ -1207,7 +1190,7 @@ export class ObjectConnectionsApi {
      * @param param the request object
      */
     public v3ConnectionsConnectionIdDelete(param: ConnectionsApiV3ConnectionsConnectionIdDeleteRequest, options?: ConfigurationOptions): Promise<void> {
-        return this.api.v3ConnectionsConnectionIdDelete(param.connectionId, param.body,  options).toPromise();
+        return this.api.v3ConnectionsConnectionIdDelete(param.connectionId,  options).toPromise();
     }
 
     /**
@@ -1216,7 +1199,7 @@ export class ObjectConnectionsApi {
      * @param param the request object
      */
     public v3ConnectionsConnectionIdGetWithHttpInfo(param: ConnectionsApiV3ConnectionsConnectionIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
-        return this.api.v3ConnectionsConnectionIdGetWithHttpInfo(param.connectionId, param.body,  options).toPromise();
+        return this.api.v3ConnectionsConnectionIdGetWithHttpInfo(param.connectionId,  options).toPromise();
     }
 
     /**
@@ -1225,7 +1208,7 @@ export class ObjectConnectionsApi {
      * @param param the request object
      */
     public v3ConnectionsConnectionIdGet(param: ConnectionsApiV3ConnectionsConnectionIdGetRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
-        return this.api.v3ConnectionsConnectionIdGet(param.connectionId, param.body,  options).toPromise();
+        return this.api.v3ConnectionsConnectionIdGet(param.connectionId,  options).toPromise();
     }
 
     /**
@@ -1251,8 +1234,8 @@ export class ObjectConnectionsApi {
      * Get all connections
      * @param param the request object
      */
-    public v3ConnectionsGetWithHttpInfo(param: ConnectionsApiV3ConnectionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsConnection>>> {
-        return this.api.v3ConnectionsGetWithHttpInfo(param.limit, param.offset, param.body,  options).toPromise();
+    public v3ConnectionsGetWithHttpInfo(param: ConnectionsApiV3ConnectionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectionList>> {
+        return this.api.v3ConnectionsGetWithHttpInfo(param.limit, param.offset,  options).toPromise();
     }
 
     /**
@@ -1260,8 +1243,8 @@ export class ObjectConnectionsApi {
      * Get all connections
      * @param param the request object
      */
-    public v3ConnectionsGet(param: ConnectionsApiV3ConnectionsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<ModelsConnection>> {
-        return this.api.v3ConnectionsGet(param.limit, param.offset, param.body,  options).toPromise();
+    public v3ConnectionsGet(param: ConnectionsApiV3ConnectionsGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsConnectionList> {
+        return this.api.v3ConnectionsGet(param.limit, param.offset,  options).toPromise();
     }
 
     /**

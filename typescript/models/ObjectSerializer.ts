@@ -139,6 +139,7 @@ export * from '../models/ModelsBillingProduct';
 export * from '../models/ModelsBillingProductList';
 export * from '../models/ModelsComponentReference';
 export * from '../models/ModelsConnection';
+export * from '../models/ModelsConnectionList';
 export * from '../models/ModelsConnectionMetadata';
 export * from '../models/ModelsConnectionPermission';
 export * from '../models/ModelsConnectionRole';
@@ -507,6 +508,7 @@ import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnection } from '../models/ModelsConnection';
+import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectionMetadata } from '../models/ModelsConnectionMetadata';
 import { ModelsConnectionPermission } from '../models/ModelsConnectionPermission';
 import { ModelsConnectionRole } from '../models/ModelsConnectionRole';
@@ -901,6 +903,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsBillingProductList": ModelsBillingProductList,
     "ModelsComponentReference": ModelsComponentReference,
     "ModelsConnection": ModelsConnection,
+    "ModelsConnectionList": ModelsConnectionList,
     "ModelsConnectionMetadata": ModelsConnectionMetadata,
     "ModelsConnectionPermission": ModelsConnectionPermission,
     "ModelsConnectionRole": ModelsConnectionRole,

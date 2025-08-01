@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## V3ConnectionsConnectionIdDelete
 
-> V3ConnectionsConnectionIdDelete(ctx, connectionId).Body(body).Execute()
+> V3ConnectionsConnectionIdDelete(ctx, connectionId).Execute()
 
 Delete connection
 
@@ -34,11 +34,10 @@ import (
 
 func main() {
 	connectionId := "connectionId_example" // string | Connection ID to delete
-	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ConnectionsAPI.V3ConnectionsConnectionIdDelete(context.Background(), connectionId).Body(body).Execute()
+	r, err := apiClient.ConnectionsAPI.V3ConnectionsConnectionIdDelete(context.Background(), connectionId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.V3ConnectionsConnectionIdDelete``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -62,7 +61,6 @@ Other parameters are passed through a pointer to a apiV3ConnectionsConnectionIdD
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | **map[string]interface{}** |  | 
 
 ### Return type
 
@@ -74,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -84,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## V3ConnectionsConnectionIdGet
 
-> ModelsConnection V3ConnectionsConnectionIdGet(ctx, connectionId).Body(body).Execute()
+> ModelsConnection V3ConnectionsConnectionIdGet(ctx, connectionId).Execute()
 
 Get connection by ID
 
@@ -104,11 +102,10 @@ import (
 
 func main() {
 	connectionId := "connectionId_example" // string | Connection ID to retrieve
-	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.V3ConnectionsConnectionIdGet(context.Background(), connectionId).Body(body).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.V3ConnectionsConnectionIdGet(context.Background(), connectionId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.V3ConnectionsConnectionIdGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -134,7 +131,6 @@ Other parameters are passed through a pointer to a apiV3ConnectionsConnectionIdG
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | **map[string]interface{}** |  | 
 
 ### Return type
 
@@ -146,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -228,7 +224,7 @@ Name | Type | Description  | Notes
 
 ## V3ConnectionsGet
 
-> []ModelsConnection V3ConnectionsGet(ctx).Limit(limit).Offset(offset).Body(body).Execute()
+> ModelsConnectionList V3ConnectionsGet(ctx).Limit(limit).Offset(offset).Execute()
 
 Get all connections
 
@@ -249,16 +245,15 @@ import (
 func main() {
 	limit := int32(56) // int32 | Limit (optional)
 	offset := int32(56) // int32 | Offset (optional)
-	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectionsAPI.V3ConnectionsGet(context.Background()).Limit(limit).Offset(offset).Body(body).Execute()
+	resp, r, err := apiClient.ConnectionsAPI.V3ConnectionsGet(context.Background()).Limit(limit).Offset(offset).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConnectionsAPI.V3ConnectionsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V3ConnectionsGet`: []ModelsConnection
+	// response from `V3ConnectionsGet`: ModelsConnectionList
 	fmt.Fprintf(os.Stdout, "Response from `ConnectionsAPI.V3ConnectionsGet`: %v\n", resp)
 }
 ```
@@ -276,11 +271,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int32** | Limit | 
  **offset** | **int32** | Offset | 
- **body** | **map[string]interface{}** |  | 
 
 ### Return type
 
-[**[]ModelsConnection**](ModelsConnection.md)
+[**ModelsConnectionList**](ModelsConnectionList.md)
 
 ### Authorization
 
@@ -288,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -13,7 +13,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="v3ConnectionsConnectionIdDelete"></a>
 # **v3ConnectionsConnectionIdDelete**
-> v3ConnectionsConnectionIdDelete(connectionId, body)
+> v3ConnectionsConnectionIdDelete(connectionId)
 
 Delete connection
 
@@ -42,9 +42,8 @@ public class Example {
 
     ConnectionsApi apiInstance = new ConnectionsApi(defaultClient);
     String connectionId = "connectionId_example"; // String | Connection ID to delete
-    Object body = null; // Object | 
     try {
-      apiInstance.v3ConnectionsConnectionIdDelete(connectionId, body);
+      apiInstance.v3ConnectionsConnectionIdDelete(connectionId);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConnectionsApi#v3ConnectionsConnectionIdDelete");
       System.err.println("Status code: " + e.getCode());
@@ -61,7 +60,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **connectionId** | **String**| Connection ID to delete | |
-| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -73,7 +71,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -85,7 +83,7 @@ null (empty response body)
 
 <a id="v3ConnectionsConnectionIdGet"></a>
 # **v3ConnectionsConnectionIdGet**
-> ModelsConnection v3ConnectionsConnectionIdGet(connectionId, body)
+> ModelsConnection v3ConnectionsConnectionIdGet(connectionId)
 
 Get connection by ID
 
@@ -114,9 +112,8 @@ public class Example {
 
     ConnectionsApi apiInstance = new ConnectionsApi(defaultClient);
     String connectionId = "connectionId_example"; // String | Connection ID to retrieve
-    Object body = null; // Object | 
     try {
-      ModelsConnection result = apiInstance.v3ConnectionsConnectionIdGet(connectionId, body);
+      ModelsConnection result = apiInstance.v3ConnectionsConnectionIdGet(connectionId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConnectionsApi#v3ConnectionsConnectionIdGet");
@@ -134,7 +131,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **connectionId** | **String**| Connection ID to retrieve | |
-| **body** | **Object**|  | [optional] |
 
 ### Return type
 
@@ -146,7 +142,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -232,7 +228,7 @@ public class Example {
 
 <a id="v3ConnectionsGet"></a>
 # **v3ConnectionsGet**
-> List&lt;ModelsConnection&gt; v3ConnectionsGet(limit, offset, body)
+> ModelsConnectionList v3ConnectionsGet(limit, offset)
 
 Get all connections
 
@@ -262,9 +258,8 @@ public class Example {
     ConnectionsApi apiInstance = new ConnectionsApi(defaultClient);
     Integer limit = 56; // Integer | Limit
     Integer offset = 56; // Integer | Offset
-    Object body = null; // Object | 
     try {
-      List<ModelsConnection> result = apiInstance.v3ConnectionsGet(limit, offset, body);
+      ModelsConnectionList result = apiInstance.v3ConnectionsGet(limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConnectionsApi#v3ConnectionsGet");
@@ -283,11 +278,10 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **limit** | **Integer**| Limit | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
-| **body** | **Object**|  | [optional] |
 
 ### Return type
 
-[**List&lt;ModelsConnection&gt;**](ModelsConnection.md)
+[**ModelsConnectionList**](ModelsConnectionList.md)
 
 ### Authorization
 
@@ -295,7 +289,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

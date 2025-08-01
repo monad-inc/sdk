@@ -29,8 +29,6 @@ const apiInstance = new ConnectionsApi(configuration);
 const request: ConnectionsApiV3ConnectionsConnectionIdDeleteRequest = {
     // Connection ID to delete
   connectionId: "connection_id_example",
-  
-  body: {},
 };
 
 const data = await apiInstance.v3ConnectionsConnectionIdDelete(request);
@@ -42,7 +40,6 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
  **connectionId** | [**string**] | Connection ID to delete | defaults to undefined
 
 
@@ -56,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -87,8 +84,6 @@ const apiInstance = new ConnectionsApi(configuration);
 const request: ConnectionsApiV3ConnectionsConnectionIdGetRequest = {
     // Connection ID to retrieve
   connectionId: "connection_id_example",
-  
-  body: {},
 };
 
 const data = await apiInstance.v3ConnectionsConnectionIdGet(request);
@@ -100,7 +95,6 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
  **connectionId** | [**string**] | Connection ID to retrieve | defaults to undefined
 
 
@@ -114,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -199,7 +193,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v3ConnectionsGet**
-> Array<ModelsConnection> v3ConnectionsGet()
+> ModelsConnectionList v3ConnectionsGet()
 
 Retrieve all connections
 
@@ -218,8 +212,6 @@ const request: ConnectionsApiV3ConnectionsGetRequest = {
   limit: 1,
     // Offset (optional)
   offset: 1,
-  
-  body: {},
 };
 
 const data = await apiInstance.v3ConnectionsGet(request);
@@ -231,14 +223,13 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **any**|  |
  **limit** | [**number**] | Limit | (optional) defaults to undefined
  **offset** | [**number**] | Offset | (optional) defaults to undefined
 
 
 ### Return type
 
-**Array<ModelsConnection>**
+**ModelsConnectionList**
 
 ### Authorization
 
@@ -246,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

@@ -368,6 +368,7 @@ Class | Method | HTTP request | Description
  - [ModelsBillingProductList](docs/ModelsBillingProductList.md)
  - [ModelsComponentReference](docs/ModelsComponentReference.md)
  - [ModelsConnection](docs/ModelsConnection.md)
+ - [ModelsConnectionList](docs/ModelsConnectionList.md)
  - [ModelsConnectionMetadata](docs/ModelsConnectionMetadata.md)
  - [ModelsConnectionPermission](docs/ModelsConnectionPermission.md)
  - [ModelsConnectionRole](docs/ModelsConnectionRole.md)

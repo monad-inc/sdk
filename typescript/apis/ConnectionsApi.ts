@@ -9,6 +9,7 @@ import {SecurityAuthentication} from '../auth/auth';
 
 
 import { ModelsConnection } from '../models/ModelsConnection';
+import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
 import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
@@ -22,16 +23,14 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
      * Delete an existing connection
      * Delete connection
      * @param connectionId Connection ID to delete
-     * @param body 
      */
-    public async v3ConnectionsConnectionIdDelete(connectionId: string, body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async v3ConnectionsConnectionIdDelete(connectionId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'connectionId' is not null or undefined
         if (connectionId === null || connectionId === undefined) {
             throw new RequiredError("ConnectionsApi", "v3ConnectionsConnectionIdDelete", "connectionId");
         }
-
 
 
         // Path Params
@@ -42,17 +41,6 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "any", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -73,16 +61,14 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
      * Retrieve a connection by its ID
      * Get connection by ID
      * @param connectionId Connection ID to retrieve
-     * @param body 
      */
-    public async v3ConnectionsConnectionIdGet(connectionId: string, body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async v3ConnectionsConnectionIdGet(connectionId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'connectionId' is not null or undefined
         if (connectionId === null || connectionId === undefined) {
             throw new RequiredError("ConnectionsApi", "v3ConnectionsConnectionIdGet", "connectionId");
         }
-
 
 
         // Path Params
@@ -93,17 +79,6 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "any", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -181,11 +156,9 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
      * Get all connections
      * @param limit Limit
      * @param offset Offset
-     * @param body 
      */
-    public async v3ConnectionsGet(limit?: number, offset?: number, body?: any, _options?: Configuration): Promise<RequestContext> {
+    public async v3ConnectionsGet(limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
-
 
 
 
@@ -206,17 +179,6 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
             requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
         }
 
-
-        // Body Params
-        const contentType = ObjectSerializer.getPreferredMediaType([
-            "application/json"
-        ]);
-        requestContext.setHeaderParam("Content-Type", contentType);
-        const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(body, "any", ""),
-            contentType
-        );
-        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -424,13 +386,13 @@ export class ConnectionsApiResponseProcessor {
      * @params response Response returned by the server for a request to v3ConnectionsGet
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3ConnectionsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<ModelsConnection> >> {
+     public async v3ConnectionsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsConnectionList >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: Array<ModelsConnection> = ObjectSerializer.deserialize(
+            const body: ModelsConnectionList = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<ModelsConnection>", ""
-            ) as Array<ModelsConnection>;
+                "ModelsConnectionList", ""
+            ) as ModelsConnectionList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
@@ -443,10 +405,10 @@ export class ConnectionsApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: Array<ModelsConnection> = ObjectSerializer.deserialize(
+            const body: ModelsConnectionList = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<ModelsConnection>", ""
-            ) as Array<ModelsConnection>;
+                "ModelsConnectionList", ""
+            ) as ModelsConnectionList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

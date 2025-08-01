@@ -28,12 +28,6 @@ type ApiV3ConnectionsConnectionIdDeleteRequest struct {
 	ctx context.Context
 	ApiService *ConnectionsAPIService
 	connectionId string
-	body *map[string]interface{}
-}
-
-func (r ApiV3ConnectionsConnectionIdDeleteRequest) Body(body map[string]interface{}) ApiV3ConnectionsConnectionIdDeleteRequest {
-	r.body = &body
-	return r
 }
 
 func (r ApiV3ConnectionsConnectionIdDeleteRequest) Execute() (*http.Response, error) {
@@ -78,7 +72,7 @@ func (a *ConnectionsAPIService) V3ConnectionsConnectionIdDeleteExecute(r ApiV3Co
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -94,8 +88,6 @@ func (a *ConnectionsAPIService) V3ConnectionsConnectionIdDeleteExecute(r ApiV3Co
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -163,12 +155,6 @@ type ApiV3ConnectionsConnectionIdGetRequest struct {
 	ctx context.Context
 	ApiService *ConnectionsAPIService
 	connectionId string
-	body *map[string]interface{}
-}
-
-func (r ApiV3ConnectionsConnectionIdGetRequest) Body(body map[string]interface{}) ApiV3ConnectionsConnectionIdGetRequest {
-	r.body = &body
-	return r
 }
 
 func (r ApiV3ConnectionsConnectionIdGetRequest) Execute() (*ModelsConnection, *http.Response, error) {
@@ -215,7 +201,7 @@ func (a *ConnectionsAPIService) V3ConnectionsConnectionIdGetExecute(r ApiV3Conne
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -231,8 +217,6 @@ func (a *ConnectionsAPIService) V3ConnectionsConnectionIdGetExecute(r ApiV3Conne
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -471,7 +455,6 @@ type ApiV3ConnectionsGetRequest struct {
 	ApiService *ConnectionsAPIService
 	limit *int32
 	offset *int32
-	body *map[string]interface{}
 }
 
 // Limit
@@ -486,12 +469,7 @@ func (r ApiV3ConnectionsGetRequest) Offset(offset int32) ApiV3ConnectionsGetRequ
 	return r
 }
 
-func (r ApiV3ConnectionsGetRequest) Body(body map[string]interface{}) ApiV3ConnectionsGetRequest {
-	r.body = &body
-	return r
-}
-
-func (r ApiV3ConnectionsGetRequest) Execute() ([]ModelsConnection, *http.Response, error) {
+func (r ApiV3ConnectionsGetRequest) Execute() (*ModelsConnectionList, *http.Response, error) {
 	return r.ApiService.V3ConnectionsGetExecute(r)
 }
 
@@ -511,13 +489,13 @@ func (a *ConnectionsAPIService) V3ConnectionsGet(ctx context.Context) ApiV3Conne
 }
 
 // Execute executes the request
-//  @return []ModelsConnection
-func (a *ConnectionsAPIService) V3ConnectionsGetExecute(r ApiV3ConnectionsGetRequest) ([]ModelsConnection, *http.Response, error) {
+//  @return ModelsConnectionList
+func (a *ConnectionsAPIService) V3ConnectionsGetExecute(r ApiV3ConnectionsGetRequest) (*ModelsConnectionList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ModelsConnection
+		localVarReturnValue  *ModelsConnectionList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionsAPIService.V3ConnectionsGet")
@@ -538,7 +516,7 @@ func (a *ConnectionsAPIService) V3ConnectionsGetExecute(r ApiV3ConnectionsGetReq
 		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
 	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -554,8 +532,6 @@ func (a *ConnectionsAPIService) V3ConnectionsGetExecute(r ApiV3ConnectionsGetReq
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

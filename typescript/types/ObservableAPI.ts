@@ -144,6 +144,7 @@ import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnection } from '../models/ModelsConnection';
+import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectionMetadata } from '../models/ModelsConnectionMetadata';
 import { ModelsConnectionPermission } from '../models/ModelsConnectionPermission';
 import { ModelsConnectionRole } from '../models/ModelsConnectionRole';
@@ -1247,12 +1248,11 @@ export class ObservableConnectionsApi {
      * Delete an existing connection
      * Delete connection
      * @param connectionId Connection ID to delete
-     * @param [body]
      */
-    public v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+    public v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdDelete(connectionId, body, _config);
+        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdDelete(connectionId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1273,22 +1273,20 @@ export class ObservableConnectionsApi {
      * Delete an existing connection
      * Delete connection
      * @param connectionId Connection ID to delete
-     * @param [body]
      */
-    public v3ConnectionsConnectionIdDelete(connectionId: string, body?: any, _options?: ConfigurationOptions): Observable<void> {
-        return this.v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId, body, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    public v3ConnectionsConnectionIdDelete(connectionId: string, _options?: ConfigurationOptions): Observable<void> {
+        return this.v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
     }
 
     /**
      * Retrieve a connection by its ID
      * Get connection by ID
      * @param connectionId Connection ID to retrieve
-     * @param [body]
      */
-    public v3ConnectionsConnectionIdGetWithHttpInfo(connectionId: string, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
+    public v3ConnectionsConnectionIdGetWithHttpInfo(connectionId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdGet(connectionId, body, _config);
+        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdGet(connectionId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1309,10 +1307,9 @@ export class ObservableConnectionsApi {
      * Retrieve a connection by its ID
      * Get connection by ID
      * @param connectionId Connection ID to retrieve
-     * @param [body]
      */
-    public v3ConnectionsConnectionIdGet(connectionId: string, body?: any, _options?: ConfigurationOptions): Observable<ModelsConnection> {
-        return this.v3ConnectionsConnectionIdGetWithHttpInfo(connectionId, body, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
+    public v3ConnectionsConnectionIdGet(connectionId: string, _options?: ConfigurationOptions): Observable<ModelsConnection> {
+        return this.v3ConnectionsConnectionIdGetWithHttpInfo(connectionId, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
     }
 
     /**
@@ -1356,12 +1353,11 @@ export class ObservableConnectionsApi {
      * Get all connections
      * @param [limit] Limit
      * @param [offset] Offset
-     * @param [body]
      */
-    public v3ConnectionsGetWithHttpInfo(limit?: number, offset?: number, body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsConnection>>> {
+    public v3ConnectionsGetWithHttpInfo(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnectionList>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v3ConnectionsGet(limit, offset, body, _config);
+        const requestContextPromise = this.requestFactory.v3ConnectionsGet(limit, offset, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1383,10 +1379,9 @@ export class ObservableConnectionsApi {
      * Get all connections
      * @param [limit] Limit
      * @param [offset] Offset
-     * @param [body]
      */
-    public v3ConnectionsGet(limit?: number, offset?: number, body?: any, _options?: ConfigurationOptions): Observable<Array<ModelsConnection>> {
-        return this.v3ConnectionsGetWithHttpInfo(limit, offset, body, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsConnection>>) => apiResponse.data));
+    public v3ConnectionsGet(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsConnectionList> {
+        return this.v3ConnectionsGetWithHttpInfo(limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsConnectionList>) => apiResponse.data));
     }
 
     /**

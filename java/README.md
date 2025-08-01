@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-07-31T20:46:09.552309278Z[Etc/UTC]
+  - Build date: 2025-08-01T19:39:45.785495936Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -398,6 +398,7 @@ Class | Method | HTTP request | Description
  - [ModelsBillingProductList](docs/ModelsBillingProductList.md)
  - [ModelsComponentReference](docs/ModelsComponentReference.md)
  - [ModelsConnection](docs/ModelsConnection.md)
+ - [ModelsConnectionList](docs/ModelsConnectionList.md)
  - [ModelsConnectionMetadata](docs/ModelsConnectionMetadata.md)
  - [ModelsConnectionPermission](docs/ModelsConnectionPermission.md)
  - [ModelsConnectionRole](docs/ModelsConnectionRole.md)

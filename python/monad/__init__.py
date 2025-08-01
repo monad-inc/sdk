@@ -201,6 +201,7 @@ __all__ = [
     "ModelsBillingProductList",
     "ModelsComponentReference",
     "ModelsConnection",
+    "ModelsConnectionList",
     "ModelsConnectionMetadata",
     "ModelsConnectionPermission",
     "ModelsConnectionRole",
@@ -616,6 +617,7 @@ from monad.models.models_billing_product import ModelsBillingProduct as ModelsBi
 from monad.models.models_billing_product_list import ModelsBillingProductList as ModelsBillingProductList
 from monad.models.models_component_reference import ModelsComponentReference as ModelsComponentReference
 from monad.models.models_connection import ModelsConnection as ModelsConnection
+from monad.models.models_connection_list import ModelsConnectionList as ModelsConnectionList
 from monad.models.models_connection_metadata import ModelsConnectionMetadata as ModelsConnectionMetadata
 from monad.models.models_connection_permission import ModelsConnectionPermission as ModelsConnectionPermission
 from monad.models.models_connection_role import ModelsConnectionRole as ModelsConnectionRole

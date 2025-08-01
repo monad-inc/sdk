@@ -18,9 +18,10 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictInt, StrictStr
-from typing import Any, Dict, List, Optional
+from typing import Optional
 from typing_extensions import Annotated
 from monad.models.models_connection import ModelsConnection
+from monad.models.models_connection_list import ModelsConnectionList
 from monad.models.routes_v3_create_connection_request import RoutesV3CreateConnectionRequest
 from monad.models.routes_v3_update_connection_request import RoutesV3UpdateConnectionRequest
 
@@ -46,7 +47,6 @@ class ConnectionsApi:
     def v3_connections_connection_id_delete(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection ID to delete")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -66,8 +66,6 @@ class ConnectionsApi:
 
         :param connection_id: Connection ID to delete (required)
         :type connection_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -92,7 +90,6 @@ class ConnectionsApi:
 
         _param = self._v3_connections_connection_id_delete_serialize(
             connection_id=connection_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -119,7 +116,6 @@ class ConnectionsApi:
     def v3_connections_connection_id_delete_with_http_info(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection ID to delete")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -139,8 +135,6 @@ class ConnectionsApi:
 
         :param connection_id: Connection ID to delete (required)
         :type connection_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -165,7 +159,6 @@ class ConnectionsApi:
 
         _param = self._v3_connections_connection_id_delete_serialize(
             connection_id=connection_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -192,7 +185,6 @@ class ConnectionsApi:
     def v3_connections_connection_id_delete_without_preload_content(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection ID to delete")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -212,8 +204,6 @@ class ConnectionsApi:
 
         :param connection_id: Connection ID to delete (required)
         :type connection_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -238,7 +228,6 @@ class ConnectionsApi:
 
         _param = self._v3_connections_connection_id_delete_serialize(
             connection_id=connection_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -260,7 +249,6 @@ class ConnectionsApi:
     def _v3_connections_connection_id_delete_serialize(
         self,
         connection_id,
-        body,
         _request_auth,
         _content_type,
         _headers,
@@ -288,8 +276,6 @@ class ConnectionsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if body is not None:
-            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -300,19 +286,6 @@ class ConnectionsApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
@@ -341,7 +314,6 @@ class ConnectionsApi:
     def v3_connections_connection_id_get(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection ID to retrieve")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -361,8 +333,6 @@ class ConnectionsApi:
 
         :param connection_id: Connection ID to retrieve (required)
         :type connection_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -387,7 +357,6 @@ class ConnectionsApi:
 
         _param = self._v3_connections_connection_id_get_serialize(
             connection_id=connection_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -415,7 +384,6 @@ class ConnectionsApi:
     def v3_connections_connection_id_get_with_http_info(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection ID to retrieve")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -435,8 +403,6 @@ class ConnectionsApi:
 
         :param connection_id: Connection ID to retrieve (required)
         :type connection_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -461,7 +427,6 @@ class ConnectionsApi:
 
         _param = self._v3_connections_connection_id_get_serialize(
             connection_id=connection_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -489,7 +454,6 @@ class ConnectionsApi:
     def v3_connections_connection_id_get_without_preload_content(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection ID to retrieve")],
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -509,8 +473,6 @@ class ConnectionsApi:
 
         :param connection_id: Connection ID to retrieve (required)
         :type connection_id: str
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -535,7 +497,6 @@ class ConnectionsApi:
 
         _param = self._v3_connections_connection_id_get_serialize(
             connection_id=connection_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -558,7 +519,6 @@ class ConnectionsApi:
     def _v3_connections_connection_id_get_serialize(
         self,
         connection_id,
-        body,
         _request_auth,
         _content_type,
         _headers,
@@ -586,8 +546,6 @@ class ConnectionsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if body is not None:
-            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -598,19 +556,6 @@ class ConnectionsApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
@@ -935,7 +880,6 @@ class ConnectionsApi:
         self,
         limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -948,7 +892,7 @@ class ConnectionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[ModelsConnection]:
+    ) -> ModelsConnectionList:
         """Get all connections
 
         Retrieve all connections
@@ -957,8 +901,6 @@ class ConnectionsApi:
         :type limit: int
         :param offset: Offset
         :type offset: int
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -984,7 +926,6 @@ class ConnectionsApi:
         _param = self._v3_connections_get_serialize(
             limit=limit,
             offset=offset,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -992,7 +933,7 @@ class ConnectionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ModelsConnection]",
+            '200': "ModelsConnectionList",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1011,7 +952,6 @@ class ConnectionsApi:
         self,
         limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1024,7 +964,7 @@ class ConnectionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[ModelsConnection]]:
+    ) -> ApiResponse[ModelsConnectionList]:
         """Get all connections
 
         Retrieve all connections
@@ -1033,8 +973,6 @@ class ConnectionsApi:
         :type limit: int
         :param offset: Offset
         :type offset: int
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1060,7 +998,6 @@ class ConnectionsApi:
         _param = self._v3_connections_get_serialize(
             limit=limit,
             offset=offset,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1068,7 +1005,7 @@ class ConnectionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ModelsConnection]",
+            '200': "ModelsConnectionList",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1087,7 +1024,6 @@ class ConnectionsApi:
         self,
         limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1109,8 +1045,6 @@ class ConnectionsApi:
         :type limit: int
         :param offset: Offset
         :type offset: int
-        :param body:
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1136,7 +1070,6 @@ class ConnectionsApi:
         _param = self._v3_connections_get_serialize(
             limit=limit,
             offset=offset,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1144,7 +1077,7 @@ class ConnectionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ModelsConnection]",
+            '200': "ModelsConnectionList",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1158,7 +1091,6 @@ class ConnectionsApi:
         self,
         limit,
         offset,
-        body,
         _request_auth,
         _content_type,
         _headers,
@@ -1192,8 +1124,6 @@ class ConnectionsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if body is not None:
-            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -1204,19 +1134,6 @@ class ConnectionsApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [

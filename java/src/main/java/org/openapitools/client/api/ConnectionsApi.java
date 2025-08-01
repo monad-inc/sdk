@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.ModelsConnection;
+import org.openapitools.client.model.ModelsConnectionList;
 import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesV3CreateConnectionRequest;
 import org.openapitools.client.model.RoutesV3UpdateConnectionRequest;
@@ -78,7 +79,6 @@ public class ConnectionsApi {
     /**
      * Build call for v3ConnectionsConnectionIdDelete
      * @param connectionId Connection ID to delete (required)
-     * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -91,7 +91,7 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v3ConnectionsConnectionIdDeleteCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v3ConnectionsConnectionIdDeleteCall(@javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -105,7 +105,7 @@ public class ConnectionsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/v3/connections/{connection_id}"
@@ -126,7 +126,6 @@ public class ConnectionsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -138,13 +137,13 @@ public class ConnectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v3ConnectionsConnectionIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v3ConnectionsConnectionIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling v3ConnectionsConnectionIdDelete(Async)");
         }
 
-        return v3ConnectionsConnectionIdDeleteCall(connectionId, body, _callback);
+        return v3ConnectionsConnectionIdDeleteCall(connectionId, _callback);
 
     }
 
@@ -152,7 +151,6 @@ public class ConnectionsApi {
      * Delete connection
      * Delete an existing connection
      * @param connectionId Connection ID to delete (required)
-     * @param body  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -163,15 +161,14 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public void v3ConnectionsConnectionIdDelete(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Object body) throws ApiException {
-        v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId, body);
+    public void v3ConnectionsConnectionIdDelete(@javax.annotation.Nonnull String connectionId) throws ApiException {
+        v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId);
     }
 
     /**
      * Delete connection
      * Delete an existing connection
      * @param connectionId Connection ID to delete (required)
-     * @param body  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -183,8 +180,8 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v3ConnectionsConnectionIdDeleteWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Object body) throws ApiException {
-        okhttp3.Call localVarCall = v3ConnectionsConnectionIdDeleteValidateBeforeCall(connectionId, body, null);
+    public ApiResponse<Void> v3ConnectionsConnectionIdDeleteWithHttpInfo(@javax.annotation.Nonnull String connectionId) throws ApiException {
+        okhttp3.Call localVarCall = v3ConnectionsConnectionIdDeleteValidateBeforeCall(connectionId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -192,7 +189,6 @@ public class ConnectionsApi {
      * Delete connection (asynchronously)
      * Delete an existing connection
      * @param connectionId Connection ID to delete (required)
-     * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -205,16 +201,15 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v3ConnectionsConnectionIdDeleteAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Object body, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v3ConnectionsConnectionIdDeleteAsync(@javax.annotation.Nonnull String connectionId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v3ConnectionsConnectionIdDeleteValidateBeforeCall(connectionId, body, _callback);
+        okhttp3.Call localVarCall = v3ConnectionsConnectionIdDeleteValidateBeforeCall(connectionId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for v3ConnectionsConnectionIdGet
      * @param connectionId Connection ID to retrieve (required)
-     * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -228,7 +223,7 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v3ConnectionsConnectionIdGetCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v3ConnectionsConnectionIdGetCall(@javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -242,7 +237,7 @@ public class ConnectionsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/v3/connections/{connection_id}"
@@ -263,7 +258,6 @@ public class ConnectionsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -275,13 +269,13 @@ public class ConnectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v3ConnectionsConnectionIdGetValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v3ConnectionsConnectionIdGetValidateBeforeCall(@javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling v3ConnectionsConnectionIdGet(Async)");
         }
 
-        return v3ConnectionsConnectionIdGetCall(connectionId, body, _callback);
+        return v3ConnectionsConnectionIdGetCall(connectionId, _callback);
 
     }
 
@@ -289,7 +283,6 @@ public class ConnectionsApi {
      * Get connection by ID
      * Retrieve a connection by its ID
      * @param connectionId Connection ID to retrieve (required)
-     * @param body  (optional)
      * @return ModelsConnection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -302,8 +295,8 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsConnection v3ConnectionsConnectionIdGet(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Object body) throws ApiException {
-        ApiResponse<ModelsConnection> localVarResp = v3ConnectionsConnectionIdGetWithHttpInfo(connectionId, body);
+    public ModelsConnection v3ConnectionsConnectionIdGet(@javax.annotation.Nonnull String connectionId) throws ApiException {
+        ApiResponse<ModelsConnection> localVarResp = v3ConnectionsConnectionIdGetWithHttpInfo(connectionId);
         return localVarResp.getData();
     }
 
@@ -311,7 +304,6 @@ public class ConnectionsApi {
      * Get connection by ID
      * Retrieve a connection by its ID
      * @param connectionId Connection ID to retrieve (required)
-     * @param body  (optional)
      * @return ApiResponse&lt;ModelsConnection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -324,8 +316,8 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsConnection> v3ConnectionsConnectionIdGetWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Object body) throws ApiException {
-        okhttp3.Call localVarCall = v3ConnectionsConnectionIdGetValidateBeforeCall(connectionId, body, null);
+    public ApiResponse<ModelsConnection> v3ConnectionsConnectionIdGetWithHttpInfo(@javax.annotation.Nonnull String connectionId) throws ApiException {
+        okhttp3.Call localVarCall = v3ConnectionsConnectionIdGetValidateBeforeCall(connectionId, null);
         Type localVarReturnType = new TypeToken<ModelsConnection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -334,7 +326,6 @@ public class ConnectionsApi {
      * Get connection by ID (asynchronously)
      * Retrieve a connection by its ID
      * @param connectionId Connection ID to retrieve (required)
-     * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -348,9 +339,9 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v3ConnectionsConnectionIdGetAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Object body, final ApiCallback<ModelsConnection> _callback) throws ApiException {
+    public okhttp3.Call v3ConnectionsConnectionIdGetAsync(@javax.annotation.Nonnull String connectionId, final ApiCallback<ModelsConnection> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v3ConnectionsConnectionIdGetValidateBeforeCall(connectionId, body, _callback);
+        okhttp3.Call localVarCall = v3ConnectionsConnectionIdGetValidateBeforeCall(connectionId, _callback);
         Type localVarReturnType = new TypeToken<ModelsConnection>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -504,7 +495,6 @@ public class ConnectionsApi {
      * Build call for v3ConnectionsGet
      * @param limit Limit (optional)
      * @param offset Offset (optional)
-     * @param body  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -516,7 +506,7 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v3ConnectionsGetCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v3ConnectionsGetCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -530,7 +520,7 @@ public class ConnectionsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/v3/connections";
@@ -558,7 +548,6 @@ public class ConnectionsApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -570,8 +559,8 @@ public class ConnectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v3ConnectionsGetValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body, final ApiCallback _callback) throws ApiException {
-        return v3ConnectionsGetCall(limit, offset, body, _callback);
+    private okhttp3.Call v3ConnectionsGetValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+        return v3ConnectionsGetCall(limit, offset, _callback);
 
     }
 
@@ -580,8 +569,7 @@ public class ConnectionsApi {
      * Retrieve all connections
      * @param limit Limit (optional)
      * @param offset Offset (optional)
-     * @param body  (optional)
-     * @return List&lt;ModelsConnection&gt;
+     * @return ModelsConnectionList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -591,8 +579,8 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public List<ModelsConnection> v3ConnectionsGet(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body) throws ApiException {
-        ApiResponse<List<ModelsConnection>> localVarResp = v3ConnectionsGetWithHttpInfo(limit, offset, body);
+    public ModelsConnectionList v3ConnectionsGet(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        ApiResponse<ModelsConnectionList> localVarResp = v3ConnectionsGetWithHttpInfo(limit, offset);
         return localVarResp.getData();
     }
 
@@ -601,8 +589,7 @@ public class ConnectionsApi {
      * Retrieve all connections
      * @param limit Limit (optional)
      * @param offset Offset (optional)
-     * @param body  (optional)
-     * @return ApiResponse&lt;List&lt;ModelsConnection&gt;&gt;
+     * @return ApiResponse&lt;ModelsConnectionList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -612,9 +599,9 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ModelsConnection>> v3ConnectionsGetWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body) throws ApiException {
-        okhttp3.Call localVarCall = v3ConnectionsGetValidateBeforeCall(limit, offset, body, null);
-        Type localVarReturnType = new TypeToken<List<ModelsConnection>>(){}.getType();
+    public ApiResponse<ModelsConnectionList> v3ConnectionsGetWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = v3ConnectionsGetValidateBeforeCall(limit, offset, null);
+        Type localVarReturnType = new TypeToken<ModelsConnectionList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -623,7 +610,6 @@ public class ConnectionsApi {
      * Retrieve all connections
      * @param limit Limit (optional)
      * @param offset Offset (optional)
-     * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -635,10 +621,10 @@ public class ConnectionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v3ConnectionsGetAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Object body, final ApiCallback<List<ModelsConnection>> _callback) throws ApiException {
+    public okhttp3.Call v3ConnectionsGetAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsConnectionList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v3ConnectionsGetValidateBeforeCall(limit, offset, body, _callback);
-        Type localVarReturnType = new TypeToken<List<ModelsConnection>>(){}.getType();
+        okhttp3.Call localVarCall = v3ConnectionsGetValidateBeforeCall(limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<ModelsConnectionList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
