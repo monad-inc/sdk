@@ -32,6 +32,8 @@ import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigu
 import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
+import { ClumioAuditLogsSettingsConfig } from '../models/ClumioAuditLogsSettingsConfig';
+import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
 import { CognitoUsersSettingsConfig } from '../models/CognitoUsersSettingsConfig';
 import { CrowdstrikeFdrSettingsConfig } from '../models/CrowdstrikeFdrSettingsConfig';
 import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
@@ -49,6 +51,7 @@ import { GithubAdvisoryUserSettingsConfig } from '../models/GithubAdvisoryUserSe
 import { GitlabIssuesSettingsConfig } from '../models/GitlabIssuesSettingsConfig';
 import { GoogleCloudStorageSettingsConfig } from '../models/GoogleCloudStorageSettingsConfig';
 import { IamAccessAnalyzerSettingsConfig } from '../models/IamAccessAnalyzerSettingsConfig';
+import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
 import { IssuesSettingsConfig } from '../models/IssuesSettingsConfig';
 import { KmsSettingsConfig } from '../models/KmsSettingsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
@@ -98,7 +101,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorInputConfigSettings = ActivityLogsSettingsConfig | ActorsInfoSettingsConfig | AdminActivitySettingsConfig | AdminLogsSettingsConfig | AuditLogsSettingsConfig | AuthLogsSettingsConfig | AwsGuarddutySettingsConfig | AwsS3SettingsConfig | AwssqsSettingsConfig | AzureActivityLogsSettingsConfig | AzureBlobStorageSettingsConfig | AzureVirtualMachineSettingsConfig | AzureVnetFlowLogsSettingsConfig | BigqueryInputSettingsConfig | BoxEventsSettingsConfig | BoxUsersSettingsConfig | CisaUserSettingsConfig | CloudAssetInventorySettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudtrailSettingsConfig | CognitoUsersSettingsConfig | CrowdstrikeFdrSettingsConfig | DefenderForEndpointAlertsSettingsConfig | DetectSummariesSettingsConfig | DeviceActivitySettingsConfig | DeviceDetailsSettingsConfig | DevicesSettingsConfig | DriveActivitySettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | EventsLogsSettingsConfig | EventsSettingsConfig | FullScansSettingsConfig | GithubAdvisoryUserSettingsConfig | GitlabIssuesSettingsConfig | GoogleCloudStorageSettingsConfig | IamAccessAnalyzerSettingsConfig | IssuesSettingsConfig | KmsSettingsConfig | LogAnalyticsQuerySettingsConfig | LoginActivitySettingsConfig | LoginSessionsSettingsConfig | MonadLogSettingsConfig | OauthActivitySettingsConfig | ObjectStorageInputSettingsConfig | OneloginEventsSettingsConfig | OpenaiSettingsConfig | OrganizationsSettingsConfig | PaloAltoDataSecurityAlertsSettingsConfig | ResourceEvaluationsSettingsConfig | RolesInfoSettingsConfig | SecretsmanagerSettingsConfig | SecurityGroupsSettingsConfig | SemgrepCodeFindingsSettingsConfig | SemgrepDeploymentsSettingsConfig | SemgrepProjectDetailsSettingsConfig | SemgrepProjectsSettingsConfig | SemgrepSupplyChainFindingsSettingsConfig | SentryOrgAuditLogsSettingsConfig | SlackUsersSettingsConfig | SlackgroupsSettingsConfig | SnowflakeInputSettingsConfig | SnykIssuesSettingsConfig | SnykOrganizationsSettingsConfig | SnykProjectsSettingsConfig | SnykTargetsSettingsConfig | SyntheticDataCustomSettingsConfig | SyntheticDataSettingsConfig | SystemlogSettingsConfig | TailscaleUsersSettingsConfig | TenableAssetsCronSettingsConfig | TenableAssetsSettingsConfig | TenableVulnerabilitiesCronSettingsConfig | TenableVulnerabilitiesSettingsConfig | UsersInfoSettingsConfig | UsersSettingsConfig | VulnerabilitiesCronSettingsConfig | VulnerabilitiesSettingsConfig | VulnerabilityFindingsSettingsConfig | any | { [key: string]: any; };
+export type SecretProcessesorInputConfigSettings = ActivityLogsSettingsConfig | ActorsInfoSettingsConfig | AdminActivitySettingsConfig | AdminLogsSettingsConfig | AuditLogsSettingsConfig | AuthLogsSettingsConfig | AwsGuarddutySettingsConfig | AwsS3SettingsConfig | AwssqsSettingsConfig | AzureActivityLogsSettingsConfig | AzureBlobStorageSettingsConfig | AzureVirtualMachineSettingsConfig | AzureVnetFlowLogsSettingsConfig | BigqueryInputSettingsConfig | BoxEventsSettingsConfig | BoxUsersSettingsConfig | CisaUserSettingsConfig | CloudAssetInventorySettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudtrailSettingsConfig | ClumioAuditLogsSettingsConfig | ClumioConsolidatedAlertsSettingsConfig | CognitoUsersSettingsConfig | CrowdstrikeFdrSettingsConfig | DefenderForEndpointAlertsSettingsConfig | DetectSummariesSettingsConfig | DeviceActivitySettingsConfig | DeviceDetailsSettingsConfig | DevicesSettingsConfig | DriveActivitySettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | EventsLogsSettingsConfig | EventsSettingsConfig | FullScansSettingsConfig | GithubAdvisoryUserSettingsConfig | GitlabIssuesSettingsConfig | GoogleCloudStorageSettingsConfig | IamAccessAnalyzerSettingsConfig | IndividualAlertsSettingsConfig | IssuesSettingsConfig | KmsSettingsConfig | LogAnalyticsQuerySettingsConfig | LoginActivitySettingsConfig | LoginSessionsSettingsConfig | MonadLogSettingsConfig | OauthActivitySettingsConfig | ObjectStorageInputSettingsConfig | OneloginEventsSettingsConfig | OpenaiSettingsConfig | OrganizationsSettingsConfig | PaloAltoDataSecurityAlertsSettingsConfig | ResourceEvaluationsSettingsConfig | RolesInfoSettingsConfig | SecretsmanagerSettingsConfig | SecurityGroupsSettingsConfig | SemgrepCodeFindingsSettingsConfig | SemgrepDeploymentsSettingsConfig | SemgrepProjectDetailsSettingsConfig | SemgrepProjectsSettingsConfig | SemgrepSupplyChainFindingsSettingsConfig | SentryOrgAuditLogsSettingsConfig | SlackUsersSettingsConfig | SlackgroupsSettingsConfig | SnowflakeInputSettingsConfig | SnykIssuesSettingsConfig | SnykOrganizationsSettingsConfig | SnykProjectsSettingsConfig | SnykTargetsSettingsConfig | SyntheticDataCustomSettingsConfig | SyntheticDataSettingsConfig | SystemlogSettingsConfig | TailscaleUsersSettingsConfig | TenableAssetsCronSettingsConfig | TenableAssetsSettingsConfig | TenableVulnerabilitiesCronSettingsConfig | TenableVulnerabilitiesSettingsConfig | UsersInfoSettingsConfig | UsersSettingsConfig | VulnerabilitiesCronSettingsConfig | VulnerabilitiesSettingsConfig | VulnerabilityFindingsSettingsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorInputConfigSettingsClass
@@ -109,6 +112,9 @@ export class SecretProcessesorInputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
+
+
 
 
 

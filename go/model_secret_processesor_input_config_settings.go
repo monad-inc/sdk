@@ -41,6 +41,8 @@ type SecretProcessesorInputConfigSettings struct {
 	CloudLogsSettingsConfig *CloudLogsSettingsConfig
 	CloudResourceInventorySettingsConfig *CloudResourceInventorySettingsConfig
 	CloudtrailSettingsConfig *CloudtrailSettingsConfig
+	ClumioAuditLogsSettingsConfig *ClumioAuditLogsSettingsConfig
+	ClumioConsolidatedAlertsSettingsConfig *ClumioConsolidatedAlertsSettingsConfig
 	CognitoUsersSettingsConfig *CognitoUsersSettingsConfig
 	CrowdstrikeFdrSettingsConfig *CrowdstrikeFdrSettingsConfig
 	DefenderForEndpointAlertsSettingsConfig *DefenderForEndpointAlertsSettingsConfig
@@ -58,6 +60,7 @@ type SecretProcessesorInputConfigSettings struct {
 	GitlabIssuesSettingsConfig *GitlabIssuesSettingsConfig
 	GoogleCloudStorageSettingsConfig *GoogleCloudStorageSettingsConfig
 	IamAccessAnalyzerSettingsConfig *IamAccessAnalyzerSettingsConfig
+	IndividualAlertsSettingsConfig *IndividualAlertsSettingsConfig
 	IssuesSettingsConfig *IssuesSettingsConfig
 	KmsSettingsConfig *KmsSettingsConfig
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
@@ -257,6 +260,20 @@ func CloudtrailSettingsConfigAsSecretProcessesorInputConfigSettings(v *Cloudtrai
 	}
 }
 
+// ClumioAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ClumioAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func ClumioAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ClumioAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		ClumioAuditLogsSettingsConfig: v,
+	}
+}
+
+// ClumioConsolidatedAlertsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ClumioConsolidatedAlertsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func ClumioConsolidatedAlertsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ClumioConsolidatedAlertsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		ClumioConsolidatedAlertsSettingsConfig: v,
+	}
+}
+
 // CognitoUsersSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CognitoUsersSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func CognitoUsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *CognitoUsersSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -373,6 +390,13 @@ func GoogleCloudStorageSettingsConfigAsSecretProcessesorInputConfigSettings(v *G
 func IamAccessAnalyzerSettingsConfigAsSecretProcessesorInputConfigSettings(v *IamAccessAnalyzerSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		IamAccessAnalyzerSettingsConfig: v,
+	}
+}
+
+// IndividualAlertsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns IndividualAlertsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func IndividualAlertsSettingsConfigAsSecretProcessesorInputConfigSettings(v *IndividualAlertsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		IndividualAlertsSettingsConfig: v,
 	}
 }
 
@@ -1056,6 +1080,40 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CloudtrailSettingsConfig = nil
 	}
 
+	// try to unmarshal data into ClumioAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.ClumioAuditLogsSettingsConfig)
+	if err == nil {
+		jsonClumioAuditLogsSettingsConfig, _ := json.Marshal(dst.ClumioAuditLogsSettingsConfig)
+		if string(jsonClumioAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.ClumioAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ClumioAuditLogsSettingsConfig); err != nil {
+				dst.ClumioAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ClumioAuditLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into ClumioConsolidatedAlertsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.ClumioConsolidatedAlertsSettingsConfig)
+	if err == nil {
+		jsonClumioConsolidatedAlertsSettingsConfig, _ := json.Marshal(dst.ClumioConsolidatedAlertsSettingsConfig)
+		if string(jsonClumioConsolidatedAlertsSettingsConfig) == "{}" { // empty struct
+			dst.ClumioConsolidatedAlertsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ClumioConsolidatedAlertsSettingsConfig); err != nil {
+				dst.ClumioConsolidatedAlertsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ClumioConsolidatedAlertsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into CognitoUsersSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.CognitoUsersSettingsConfig)
 	if err == nil {
@@ -1343,6 +1401,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.IamAccessAnalyzerSettingsConfig = nil
+	}
+
+	// try to unmarshal data into IndividualAlertsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.IndividualAlertsSettingsConfig)
+	if err == nil {
+		jsonIndividualAlertsSettingsConfig, _ := json.Marshal(dst.IndividualAlertsSettingsConfig)
+		if string(jsonIndividualAlertsSettingsConfig) == "{}" { // empty struct
+			dst.IndividualAlertsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.IndividualAlertsSettingsConfig); err != nil {
+				dst.IndividualAlertsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.IndividualAlertsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into IssuesSettingsConfig
@@ -2100,6 +2175,8 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CloudLogsSettingsConfig = nil
 		dst.CloudResourceInventorySettingsConfig = nil
 		dst.CloudtrailSettingsConfig = nil
+		dst.ClumioAuditLogsSettingsConfig = nil
+		dst.ClumioConsolidatedAlertsSettingsConfig = nil
 		dst.CognitoUsersSettingsConfig = nil
 		dst.CrowdstrikeFdrSettingsConfig = nil
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
@@ -2117,6 +2194,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.GitlabIssuesSettingsConfig = nil
 		dst.GoogleCloudStorageSettingsConfig = nil
 		dst.IamAccessAnalyzerSettingsConfig = nil
+		dst.IndividualAlertsSettingsConfig = nil
 		dst.IssuesSettingsConfig = nil
 		dst.KmsSettingsConfig = nil
 		dst.LogAnalyticsQuerySettingsConfig = nil
@@ -2259,6 +2337,14 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CloudtrailSettingsConfig)
 	}
 
+	if src.ClumioAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.ClumioAuditLogsSettingsConfig)
+	}
+
+	if src.ClumioConsolidatedAlertsSettingsConfig != nil {
+		return json.Marshal(&src.ClumioConsolidatedAlertsSettingsConfig)
+	}
+
 	if src.CognitoUsersSettingsConfig != nil {
 		return json.Marshal(&src.CognitoUsersSettingsConfig)
 	}
@@ -2325,6 +2411,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.IamAccessAnalyzerSettingsConfig != nil {
 		return json.Marshal(&src.IamAccessAnalyzerSettingsConfig)
+	}
+
+	if src.IndividualAlertsSettingsConfig != nil {
+		return json.Marshal(&src.IndividualAlertsSettingsConfig)
 	}
 
 	if src.IssuesSettingsConfig != nil {
@@ -2595,6 +2685,14 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.CloudtrailSettingsConfig
 	}
 
+	if obj.ClumioAuditLogsSettingsConfig != nil {
+		return obj.ClumioAuditLogsSettingsConfig
+	}
+
+	if obj.ClumioConsolidatedAlertsSettingsConfig != nil {
+		return obj.ClumioConsolidatedAlertsSettingsConfig
+	}
+
 	if obj.CognitoUsersSettingsConfig != nil {
 		return obj.CognitoUsersSettingsConfig
 	}
@@ -2661,6 +2759,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.IamAccessAnalyzerSettingsConfig != nil {
 		return obj.IamAccessAnalyzerSettingsConfig
+	}
+
+	if obj.IndividualAlertsSettingsConfig != nil {
+		return obj.IndividualAlertsSettingsConfig
 	}
 
 	if obj.IssuesSettingsConfig != nil {
@@ -2929,6 +3031,14 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.CloudtrailSettingsConfig
 	}
 
+	if obj.ClumioAuditLogsSettingsConfig != nil {
+		return *obj.ClumioAuditLogsSettingsConfig
+	}
+
+	if obj.ClumioConsolidatedAlertsSettingsConfig != nil {
+		return *obj.ClumioConsolidatedAlertsSettingsConfig
+	}
+
 	if obj.CognitoUsersSettingsConfig != nil {
 		return *obj.CognitoUsersSettingsConfig
 	}
@@ -2995,6 +3105,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.IamAccessAnalyzerSettingsConfig != nil {
 		return *obj.IamAccessAnalyzerSettingsConfig
+	}
+
+	if obj.IndividualAlertsSettingsConfig != nil {
+		return *obj.IndividualAlertsSettingsConfig
 	}
 
 	if obj.IssuesSettingsConfig != nil {

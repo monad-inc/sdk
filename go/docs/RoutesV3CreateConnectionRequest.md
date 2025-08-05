@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Config** | Pointer to [**AuthenticationtypesConnectionConfig**](AuthenticationtypesConnectionConfig.md) |  | [optional] 
 **Description** | Pointer to **string** | Description of the connection | [optional] 
 **Name** | Pointer to **string** | Name of the connection | [optional] 
+**Saml** | Pointer to [**RoutesV3CreateConnectionRequestSaml**](RoutesV3CreateConnectionRequestSaml.md) |  | [optional] 
 
 ## Methods
 
@@ -26,31 +26,6 @@ will change when the set of required properties is changed
 NewRoutesV3CreateConnectionRequestWithDefaults instantiates a new RoutesV3CreateConnectionRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetConfig
-
-`func (o *RoutesV3CreateConnectionRequest) GetConfig() AuthenticationtypesConnectionConfig`
-
-GetConfig returns the Config field if non-nil, zero value otherwise.
-
-### GetConfigOk
-
-`func (o *RoutesV3CreateConnectionRequest) GetConfigOk() (*AuthenticationtypesConnectionConfig, bool)`
-
-GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfig
-
-`func (o *RoutesV3CreateConnectionRequest) SetConfig(v AuthenticationtypesConnectionConfig)`
-
-SetConfig sets Config field to given value.
-
-### HasConfig
-
-`func (o *RoutesV3CreateConnectionRequest) HasConfig() bool`
-
-HasConfig returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -101,6 +76,31 @@ SetName sets Name field to given value.
 `func (o *RoutesV3CreateConnectionRequest) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetSaml
+
+`func (o *RoutesV3CreateConnectionRequest) GetSaml() RoutesV3CreateConnectionRequestSaml`
+
+GetSaml returns the Saml field if non-nil, zero value otherwise.
+
+### GetSamlOk
+
+`func (o *RoutesV3CreateConnectionRequest) GetSamlOk() (*RoutesV3CreateConnectionRequestSaml, bool)`
+
+GetSamlOk returns a tuple with the Saml field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSaml
+
+`func (o *RoutesV3CreateConnectionRequest) SetSaml(v RoutesV3CreateConnectionRequestSaml)`
+
+SetSaml sets Saml field to given value.
+
+### HasSaml
+
+`func (o *RoutesV3CreateConnectionRequest) HasSaml() bool`
+
+HasSaml returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-08-04T17:06:39.899064382Z[Etc/UTC]
+  - Build date: 2025-08-05T01:43:38.637231304Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -272,11 +272,8 @@ Class | Method | HTTP request | Description
  - [AuditLogsSettingsConfig](docs/AuditLogsSettingsConfig.md)
  - [AuthLogsSecretsConfig](docs/AuthLogsSecretsConfig.md)
  - [AuthLogsSettingsConfig](docs/AuthLogsSettingsConfig.md)
- - [AuthenticationtypesAuth0](docs/AuthenticationtypesAuth0.md)
  - [AuthenticationtypesAuthenticationMethod](docs/AuthenticationtypesAuthenticationMethod.md)
- - [AuthenticationtypesConnectionConfig](docs/AuthenticationtypesConnectionConfig.md)
  - [AuthenticationtypesMFAEnrollmentTicket](docs/AuthenticationtypesMFAEnrollmentTicket.md)
- - [AuthenticationtypesOkta](docs/AuthenticationtypesOkta.md)
  - [AuthenticationtypesTokenResponse](docs/AuthenticationtypesTokenResponse.md)
  - [AwsGuarddutySettingsConfig](docs/AwsGuarddutySettingsConfig.md)
  - [AwsS3SettingsConfig](docs/AwsS3SettingsConfig.md)
@@ -308,6 +305,10 @@ Class | Method | HTTP request | Description
  - [CloudResourceInventorySecretsConfig](docs/CloudResourceInventorySecretsConfig.md)
  - [CloudResourceInventorySettingsConfig](docs/CloudResourceInventorySettingsConfig.md)
  - [CloudtrailSettingsConfig](docs/CloudtrailSettingsConfig.md)
+ - [ClumioAuditLogsSecretsConfig](docs/ClumioAuditLogsSecretsConfig.md)
+ - [ClumioAuditLogsSettingsConfig](docs/ClumioAuditLogsSettingsConfig.md)
+ - [ClumioConsolidatedAlertsSecretsConfig](docs/ClumioConsolidatedAlertsSecretsConfig.md)
+ - [ClumioConsolidatedAlertsSettingsConfig](docs/ClumioConsolidatedAlertsSettingsConfig.md)
  - [CognitoUsersFilter](docs/CognitoUsersFilter.md)
  - [CognitoUsersSettingsConfig](docs/CognitoUsersSettingsConfig.md)
  - [CommunityEditionSecretsConfig](docs/CommunityEditionSecretsConfig.md)
@@ -373,6 +374,8 @@ Class | Method | HTTP request | Description
  - [IamAccessAnalyzerCriterion](docs/IamAccessAnalyzerCriterion.md)
  - [IamAccessAnalyzerFilter](docs/IamAccessAnalyzerFilter.md)
  - [IamAccessAnalyzerSettingsConfig](docs/IamAccessAnalyzerSettingsConfig.md)
+ - [IndividualAlertsSecretsConfig](docs/IndividualAlertsSecretsConfig.md)
+ - [IndividualAlertsSettingsConfig](docs/IndividualAlertsSettingsConfig.md)
  - [InputsConnectorMeta](docs/InputsConnectorMeta.md)
  - [IssuesSecretsConfig](docs/IssuesSecretsConfig.md)
  - [IssuesSettingsConfig](docs/IssuesSettingsConfig.md)
@@ -399,7 +402,6 @@ Class | Method | HTTP request | Description
  - [ModelsComponentReference](docs/ModelsComponentReference.md)
  - [ModelsConnection](docs/ModelsConnection.md)
  - [ModelsConnectionList](docs/ModelsConnectionList.md)
- - [ModelsConnectionMetadata](docs/ModelsConnectionMetadata.md)
  - [ModelsConnectionPermission](docs/ModelsConnectionPermission.md)
  - [ModelsConnectionRole](docs/ModelsConnectionRole.md)
  - [ModelsConnectionRoleUser](docs/ModelsConnectionRoleUser.md)
@@ -535,6 +537,7 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdatePipelineRequest](docs/RoutesV2UpdatePipelineRequest.md)
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [RoutesV3CreateConnectionRequest](docs/RoutesV3CreateConnectionRequest.md)
+ - [RoutesV3CreateConnectionRequestSaml](docs/RoutesV3CreateConnectionRequestSaml.md)
  - [RoutesV3CreateConnectionRoleRequest](docs/RoutesV3CreateConnectionRoleRequest.md)
  - [RoutesV3CreateConnectionUserRoleRequest](docs/RoutesV3CreateConnectionUserRoleRequest.md)
  - [RoutesV3CreateEnrichmentRequest](docs/RoutesV3CreateEnrichmentRequest.md)

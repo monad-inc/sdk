@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.AuthenticationtypesConnectionConfig;
+import org.openapitools.client.model.RoutesV3CreateConnectionRequestSaml;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,13 +49,8 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3CreateConnectionRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-04T17:06:39.899064382Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T01:43:38.637231304Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV3CreateConnectionRequest {
-  public static final String SERIALIZED_NAME_CONFIG = "config";
-  @SerializedName(SERIALIZED_NAME_CONFIG)
-  @javax.annotation.Nullable
-  private AuthenticationtypesConnectionConfig config;
-
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
@@ -66,27 +61,13 @@ public class RoutesV3CreateConnectionRequest {
   @javax.annotation.Nullable
   private String name;
 
+  public static final String SERIALIZED_NAME_SAML = "saml";
+  @SerializedName(SERIALIZED_NAME_SAML)
+  @javax.annotation.Nullable
+  private RoutesV3CreateConnectionRequestSaml saml;
+
   public RoutesV3CreateConnectionRequest() {
   }
-
-  public RoutesV3CreateConnectionRequest config(@javax.annotation.Nullable AuthenticationtypesConnectionConfig config) {
-    this.config = config;
-    return this;
-  }
-
-  /**
-   * Get config
-   * @return config
-   */
-  @javax.annotation.Nullable
-  public AuthenticationtypesConnectionConfig getConfig() {
-    return config;
-  }
-
-  public void setConfig(@javax.annotation.Nullable AuthenticationtypesConnectionConfig config) {
-    this.config = config;
-  }
-
 
   public RoutesV3CreateConnectionRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
@@ -126,6 +107,25 @@ public class RoutesV3CreateConnectionRequest {
   }
 
 
+  public RoutesV3CreateConnectionRequest saml(@javax.annotation.Nullable RoutesV3CreateConnectionRequestSaml saml) {
+    this.saml = saml;
+    return this;
+  }
+
+  /**
+   * Get saml
+   * @return saml
+   */
+  @javax.annotation.Nullable
+  public RoutesV3CreateConnectionRequestSaml getSaml() {
+    return saml;
+  }
+
+  public void setSaml(@javax.annotation.Nullable RoutesV3CreateConnectionRequestSaml saml) {
+    this.saml = saml;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -136,23 +136,23 @@ public class RoutesV3CreateConnectionRequest {
       return false;
     }
     RoutesV3CreateConnectionRequest routesV3CreateConnectionRequest = (RoutesV3CreateConnectionRequest) o;
-    return Objects.equals(this.config, routesV3CreateConnectionRequest.config) &&
-        Objects.equals(this.description, routesV3CreateConnectionRequest.description) &&
-        Objects.equals(this.name, routesV3CreateConnectionRequest.name);
+    return Objects.equals(this.description, routesV3CreateConnectionRequest.description) &&
+        Objects.equals(this.name, routesV3CreateConnectionRequest.name) &&
+        Objects.equals(this.saml, routesV3CreateConnectionRequest.saml);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, description, name);
+    return Objects.hash(description, name, saml);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV3CreateConnectionRequest {\n");
-    sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    saml: ").append(toIndentedString(saml)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -174,7 +174,7 @@ public class RoutesV3CreateConnectionRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name"));
+    openapiFields = new HashSet<String>(Arrays.asList("description", "name", "saml"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -201,15 +201,15 @@ public class RoutesV3CreateConnectionRequest {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `config`
-      if (jsonObj.get("config") != null && !jsonObj.get("config").isJsonNull()) {
-        AuthenticationtypesConnectionConfig.validateJsonElement(jsonObj.get("config"));
-      }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      // validate the optional field `saml`
+      if (jsonObj.get("saml") != null && !jsonObj.get("saml").isJsonNull()) {
+        RoutesV3CreateConnectionRequestSaml.validateJsonElement(jsonObj.get("saml"));
       }
   }
 

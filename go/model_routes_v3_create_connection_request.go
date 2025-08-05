@@ -20,11 +20,11 @@ var _ MappedNullable = &RoutesV3CreateConnectionRequest{}
 
 // RoutesV3CreateConnectionRequest struct for RoutesV3CreateConnectionRequest
 type RoutesV3CreateConnectionRequest struct {
-	Config *AuthenticationtypesConnectionConfig `json:"config,omitempty"`
 	// Description of the connection
 	Description *string `json:"description,omitempty"`
 	// Name of the connection
 	Name *string `json:"name,omitempty"`
+	Saml *RoutesV3CreateConnectionRequestSaml `json:"saml,omitempty"`
 }
 
 // NewRoutesV3CreateConnectionRequest instantiates a new RoutesV3CreateConnectionRequest object
@@ -42,38 +42,6 @@ func NewRoutesV3CreateConnectionRequest() *RoutesV3CreateConnectionRequest {
 func NewRoutesV3CreateConnectionRequestWithDefaults() *RoutesV3CreateConnectionRequest {
 	this := RoutesV3CreateConnectionRequest{}
 	return &this
-}
-
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *RoutesV3CreateConnectionRequest) GetConfig() AuthenticationtypesConnectionConfig {
-	if o == nil || IsNil(o.Config) {
-		var ret AuthenticationtypesConnectionConfig
-		return ret
-	}
-	return *o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RoutesV3CreateConnectionRequest) GetConfigOk() (*AuthenticationtypesConnectionConfig, bool) {
-	if o == nil || IsNil(o.Config) {
-		return nil, false
-	}
-	return o.Config, true
-}
-
-// HasConfig returns a boolean if a field has been set.
-func (o *RoutesV3CreateConnectionRequest) HasConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
-// SetConfig gets a reference to the given AuthenticationtypesConnectionConfig and assigns it to the Config field.
-func (o *RoutesV3CreateConnectionRequest) SetConfig(v AuthenticationtypesConnectionConfig) {
-	o.Config = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -140,6 +108,38 @@ func (o *RoutesV3CreateConnectionRequest) SetName(v string) {
 	o.Name = &v
 }
 
+// GetSaml returns the Saml field value if set, zero value otherwise.
+func (o *RoutesV3CreateConnectionRequest) GetSaml() RoutesV3CreateConnectionRequestSaml {
+	if o == nil || IsNil(o.Saml) {
+		var ret RoutesV3CreateConnectionRequestSaml
+		return ret
+	}
+	return *o.Saml
+}
+
+// GetSamlOk returns a tuple with the Saml field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV3CreateConnectionRequest) GetSamlOk() (*RoutesV3CreateConnectionRequestSaml, bool) {
+	if o == nil || IsNil(o.Saml) {
+		return nil, false
+	}
+	return o.Saml, true
+}
+
+// HasSaml returns a boolean if a field has been set.
+func (o *RoutesV3CreateConnectionRequest) HasSaml() bool {
+	if o != nil && !IsNil(o.Saml) {
+		return true
+	}
+
+	return false
+}
+
+// SetSaml gets a reference to the given RoutesV3CreateConnectionRequestSaml and assigns it to the Saml field.
+func (o *RoutesV3CreateConnectionRequest) SetSaml(v RoutesV3CreateConnectionRequestSaml) {
+	o.Saml = &v
+}
+
 func (o RoutesV3CreateConnectionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -150,14 +150,14 @@ func (o RoutesV3CreateConnectionRequest) MarshalJSON() ([]byte, error) {
 
 func (o RoutesV3CreateConnectionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Config) {
-		toSerialize["config"] = o.Config
-	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Saml) {
+		toSerialize["saml"] = o.Saml
 	}
 	return toSerialize, nil
 }

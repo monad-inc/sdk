@@ -20,7 +20,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.authenticationtypes_connection_config import AuthenticationtypesConnectionConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,10 +27,9 @@ class RoutesV3UpdateConnectionRequest(BaseModel):
     """
     RoutesV3UpdateConnectionRequest
     """ # noqa: E501
-    config: Optional[AuthenticationtypesConnectionConfig] = None
     description: Optional[StrictStr] = Field(default=None, description="Connection Description to be updated")
     name: Optional[StrictStr] = Field(default=None, description="Connection Name to be updated")
-    __properties: ClassVar[List[str]] = ["config", "description", "name"]
+    __properties: ClassVar[List[str]] = ["description", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,9 +70,6 @@ class RoutesV3UpdateConnectionRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of config
-        if self.config:
-            _dict['config'] = self.config.to_dict()
         return _dict
 
     @classmethod
@@ -87,7 +82,6 @@ class RoutesV3UpdateConnectionRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "config": AuthenticationtypesConnectionConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
             "description": obj.get("description"),
             "name": obj.get("name")
         })

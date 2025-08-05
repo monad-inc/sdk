@@ -20,7 +20,6 @@ var _ MappedNullable = &RoutesV3UpdateConnectionRequest{}
 
 // RoutesV3UpdateConnectionRequest struct for RoutesV3UpdateConnectionRequest
 type RoutesV3UpdateConnectionRequest struct {
-	Config *AuthenticationtypesConnectionConfig `json:"config,omitempty"`
 	// Connection Description to be updated
 	Description *string `json:"description,omitempty"`
 	// Connection Name to be updated
@@ -42,38 +41,6 @@ func NewRoutesV3UpdateConnectionRequest() *RoutesV3UpdateConnectionRequest {
 func NewRoutesV3UpdateConnectionRequestWithDefaults() *RoutesV3UpdateConnectionRequest {
 	this := RoutesV3UpdateConnectionRequest{}
 	return &this
-}
-
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *RoutesV3UpdateConnectionRequest) GetConfig() AuthenticationtypesConnectionConfig {
-	if o == nil || IsNil(o.Config) {
-		var ret AuthenticationtypesConnectionConfig
-		return ret
-	}
-	return *o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RoutesV3UpdateConnectionRequest) GetConfigOk() (*AuthenticationtypesConnectionConfig, bool) {
-	if o == nil || IsNil(o.Config) {
-		return nil, false
-	}
-	return o.Config, true
-}
-
-// HasConfig returns a boolean if a field has been set.
-func (o *RoutesV3UpdateConnectionRequest) HasConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
-// SetConfig gets a reference to the given AuthenticationtypesConnectionConfig and assigns it to the Config field.
-func (o *RoutesV3UpdateConnectionRequest) SetConfig(v AuthenticationtypesConnectionConfig) {
-	o.Config = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -150,9 +117,6 @@ func (o RoutesV3UpdateConnectionRequest) MarshalJSON() ([]byte, error) {
 
 func (o RoutesV3UpdateConnectionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Config) {
-		toSerialize["config"] = o.Config
-	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}

@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**AuthenticationtypesConnectionConfig**](AuthenticationtypesConnectionConfig.md) |  | [optional] 
 **description** | **str** | Connection Description to be updated | [optional] 
 **name** | **str** | Connection Name to be updated | [optional] 
 

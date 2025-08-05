@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.authenticationtypes_connection_config import AuthenticationtypesConnectionConfig
+from monad.models.routes_v3_create_connection_request_saml import RoutesV3CreateConnectionRequestSaml
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,10 +28,10 @@ class RoutesV3CreateConnectionRequest(BaseModel):
     """
     RoutesV3CreateConnectionRequest
     """ # noqa: E501
-    config: Optional[AuthenticationtypesConnectionConfig] = None
     description: Optional[StrictStr] = Field(default=None, description="Description of the connection")
     name: Optional[StrictStr] = Field(default=None, description="Name of the connection")
-    __properties: ClassVar[List[str]] = ["config", "description", "name"]
+    saml: Optional[RoutesV3CreateConnectionRequestSaml] = None
+    __properties: ClassVar[List[str]] = ["description", "name", "saml"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,9 +72,9 @@ class RoutesV3CreateConnectionRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of config
-        if self.config:
-            _dict['config'] = self.config.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of saml
+        if self.saml:
+            _dict['saml'] = self.saml.to_dict()
         return _dict
 
     @classmethod
@@ -87,9 +87,9 @@ class RoutesV3CreateConnectionRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "config": AuthenticationtypesConnectionConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
             "description": obj.get("description"),
-            "name": obj.get("name")
+            "name": obj.get("name"),
+            "saml": RoutesV3CreateConnectionRequestSaml.from_dict(obj["saml"]) if obj.get("saml") is not None else None
         })
         return _obj
 

@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.AuthenticationtypesConnectionConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,13 +48,8 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3UpdateConnectionRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-04T17:06:39.899064382Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T01:43:38.637231304Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesV3UpdateConnectionRequest {
-  public static final String SERIALIZED_NAME_CONFIG = "config";
-  @SerializedName(SERIALIZED_NAME_CONFIG)
-  @javax.annotation.Nullable
-  private AuthenticationtypesConnectionConfig config;
-
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
@@ -68,25 +62,6 @@ public class RoutesV3UpdateConnectionRequest {
 
   public RoutesV3UpdateConnectionRequest() {
   }
-
-  public RoutesV3UpdateConnectionRequest config(@javax.annotation.Nullable AuthenticationtypesConnectionConfig config) {
-    this.config = config;
-    return this;
-  }
-
-  /**
-   * Get config
-   * @return config
-   */
-  @javax.annotation.Nullable
-  public AuthenticationtypesConnectionConfig getConfig() {
-    return config;
-  }
-
-  public void setConfig(@javax.annotation.Nullable AuthenticationtypesConnectionConfig config) {
-    this.config = config;
-  }
-
 
   public RoutesV3UpdateConnectionRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
@@ -136,21 +111,19 @@ public class RoutesV3UpdateConnectionRequest {
       return false;
     }
     RoutesV3UpdateConnectionRequest routesV3UpdateConnectionRequest = (RoutesV3UpdateConnectionRequest) o;
-    return Objects.equals(this.config, routesV3UpdateConnectionRequest.config) &&
-        Objects.equals(this.description, routesV3UpdateConnectionRequest.description) &&
+    return Objects.equals(this.description, routesV3UpdateConnectionRequest.description) &&
         Objects.equals(this.name, routesV3UpdateConnectionRequest.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, description, name);
+    return Objects.hash(description, name);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV3UpdateConnectionRequest {\n");
-    sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
@@ -174,7 +147,7 @@ public class RoutesV3UpdateConnectionRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name"));
+    openapiFields = new HashSet<String>(Arrays.asList("description", "name"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -201,10 +174,6 @@ public class RoutesV3UpdateConnectionRequest {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `config`
-      if (jsonObj.get("config") != null && !jsonObj.get("config").isJsonNull()) {
-        AuthenticationtypesConnectionConfig.validateJsonElement(jsonObj.get("config"));
-      }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }

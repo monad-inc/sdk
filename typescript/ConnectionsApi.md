@@ -142,15 +142,6 @@ const request: ConnectionsApiV3ConnectionsConnectionIdPatchRequest = {
   connectionId: "connection_id_example",
     // Request body for updating a connection
   routesV3UpdateConnectionRequest: {
-    config: {
-      auth0: {
-        okta: {
-          clientId: "clientId_example",
-          clientSecret: "clientSecret_example",
-          domain: "domain_example",
-        },
-      },
-    },
     description: "description_example",
     name: "name_example",
   },
@@ -267,17 +258,12 @@ const apiInstance = new ConnectionsApi(configuration);
 const request: ConnectionsApiV3ConnectionsPostRequest = {
     // Request body for creating a connection
   routesV3CreateConnectionRequest: {
-    config: {
-      auth0: {
-        okta: {
-          clientId: "clientId_example",
-          clientSecret: "clientSecret_example",
-          domain: "domain_example",
-        },
-      },
-    },
     description: "description_example",
     name: "name_example",
+    saml: {
+      entityId: "entityId_example",
+      metadataUrl: "metadataUrl_example",
+    },
   },
 };
 

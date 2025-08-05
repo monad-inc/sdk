@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **tenant_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **enterprise_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **aws_access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **aws_secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **twilio_account_sid** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

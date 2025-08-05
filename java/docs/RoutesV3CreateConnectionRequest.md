@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**config** | [**AuthenticationtypesConnectionConfig**](AuthenticationtypesConnectionConfig.md) |  |  [optional] |
 |**description** | **String** | Description of the connection |  [optional] |
 |**name** | **String** | Name of the connection |  [optional] |
+|**saml** | [**RoutesV3CreateConnectionRequestSaml**](RoutesV3CreateConnectionRequestSaml.md) |  |  [optional] |
 
 
 

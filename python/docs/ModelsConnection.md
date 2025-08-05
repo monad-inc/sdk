@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **created_at** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
-**metadata** | [**ModelsConnectionMetadata**](ModelsConnectionMetadata.md) |  | [optional] 
 **name** | **str** |  | [optional] 
-**third_party_id** | **str** |  | [optional] 
+**saml_entity_id** | **str** |  | [optional] 
+**saml_metadata_url** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 

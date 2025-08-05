@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Config** | Pointer to [**AuthenticationtypesConnectionConfig**](AuthenticationtypesConnectionConfig.md) |  | [optional] 
 **Description** | Pointer to **string** | Connection Description to be updated | [optional] 
 **Name** | Pointer to **string** | Connection Name to be updated | [optional] 
 
@@ -26,31 +25,6 @@ will change when the set of required properties is changed
 NewRoutesV3UpdateConnectionRequestWithDefaults instantiates a new RoutesV3UpdateConnectionRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetConfig
-
-`func (o *RoutesV3UpdateConnectionRequest) GetConfig() AuthenticationtypesConnectionConfig`
-
-GetConfig returns the Config field if non-nil, zero value otherwise.
-
-### GetConfigOk
-
-`func (o *RoutesV3UpdateConnectionRequest) GetConfigOk() (*AuthenticationtypesConnectionConfig, bool)`
-
-GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfig
-
-`func (o *RoutesV3UpdateConnectionRequest) SetConfig(v AuthenticationtypesConnectionConfig)`
-
-SetConfig sets Config field to given value.
-
-### HasConfig
-
-`func (o *RoutesV3UpdateConnectionRequest) HasConfig() bool`
-
-HasConfig returns a boolean if a field has been set.
 
 ### GetDescription
 

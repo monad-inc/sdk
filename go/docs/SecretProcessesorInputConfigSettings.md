@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
 **Region** | Pointer to **string** | The AWS region where the security groups that are being fetched are located. | [optional] 
 **RoleArn** | Pointer to **string** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. | [optional] 
-**Severity** | Pointer to **string** |  | [optional] 
+**Severity** | Pointer to **string** | Filter by alert severity (error, warning) | [optional] 
 **Bucket** | Pointer to **string** | Name of the storage bucket | [optional] 
 **Compression** | Pointer to **string** | Compression format of the objects | [optional] 
 **Format** | Pointer to **string** | File format of the objects | [optional] 
@@ -61,6 +61,11 @@ Name | Type | Description | Notes
 **EntityType** | Pointer to **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
 **FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
+**BucketRegion** | Pointer to **string** | Filter by bucket region | [optional] 
+**ParentProtectionGroupBackupId** | Pointer to **string** | Filter by parent protection group backup ID | [optional] 
+**ProtectionGroupS3AssetId** | Pointer to **string** | Filter by protection group S3 asset ID | [optional] 
+**ParentEntityId** | Pointer to **string** | The system-generated ID of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
+**ParentEntityType** | Pointer to **string** | The system-generated name of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **UserPoolId** | Pointer to **string** | User Pool ID to extract users from | [optional] 
 **AwsQueueUrl** | Pointer to **string** | AWS SQS queue URL provided to you by the CrowdStrike Falcon console | [optional] 
 **AwsRegionName** | Pointer to **string** | Name of the region where the queue resides | [optional] 
@@ -90,6 +95,10 @@ Name | Type | Description | Notes
 **BucketName** | Pointer to **string** | The name of the Google Cloud Storage bucket to use | [optional] 
 **AnalyzerArn** | Pointer to **string** | The [ARN of the analyzer] to retrieve findings from. | [optional] 
 **Filters** | Pointer to [**[]SecurityGroupsFilter**](SecurityGroupsFilter.md) | Filters for the security groups | [optional] 
+**AlertType** | Pointer to **string** | Filter by alert type (e.g., policy_violated, tag_conflict) | [optional] 
+**Embed** | Pointer to **string** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
+**PrimaryEntityType** | Pointer to **string** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) | [optional] 
+**PrimaryEntityValue** | Pointer to **string** | Filter by primary entity value (contains search) | [optional] 
 **ControlIds** | Pointer to **[]string** | @Description Filter Issues created by specific control IDs | [optional] 
 **HasNote** | Pointer to **string** | @Description Filter Issues with or without a note | [optional] 
 **HasRemediation** | Pointer to **string** | @Description Filter Issues with or without remediation | [optional] 
@@ -1578,6 +1587,131 @@ SetInterval sets Interval field to given value.
 
 HasInterval returns a boolean if a field has been set.
 
+### GetBucketRegion
+
+`func (o *SecretProcessesorInputConfigSettings) GetBucketRegion() string`
+
+GetBucketRegion returns the BucketRegion field if non-nil, zero value otherwise.
+
+### GetBucketRegionOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetBucketRegionOk() (*string, bool)`
+
+GetBucketRegionOk returns a tuple with the BucketRegion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBucketRegion
+
+`func (o *SecretProcessesorInputConfigSettings) SetBucketRegion(v string)`
+
+SetBucketRegion sets BucketRegion field to given value.
+
+### HasBucketRegion
+
+`func (o *SecretProcessesorInputConfigSettings) HasBucketRegion() bool`
+
+HasBucketRegion returns a boolean if a field has been set.
+
+### GetParentProtectionGroupBackupId
+
+`func (o *SecretProcessesorInputConfigSettings) GetParentProtectionGroupBackupId() string`
+
+GetParentProtectionGroupBackupId returns the ParentProtectionGroupBackupId field if non-nil, zero value otherwise.
+
+### GetParentProtectionGroupBackupIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetParentProtectionGroupBackupIdOk() (*string, bool)`
+
+GetParentProtectionGroupBackupIdOk returns a tuple with the ParentProtectionGroupBackupId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentProtectionGroupBackupId
+
+`func (o *SecretProcessesorInputConfigSettings) SetParentProtectionGroupBackupId(v string)`
+
+SetParentProtectionGroupBackupId sets ParentProtectionGroupBackupId field to given value.
+
+### HasParentProtectionGroupBackupId
+
+`func (o *SecretProcessesorInputConfigSettings) HasParentProtectionGroupBackupId() bool`
+
+HasParentProtectionGroupBackupId returns a boolean if a field has been set.
+
+### GetProtectionGroupS3AssetId
+
+`func (o *SecretProcessesorInputConfigSettings) GetProtectionGroupS3AssetId() string`
+
+GetProtectionGroupS3AssetId returns the ProtectionGroupS3AssetId field if non-nil, zero value otherwise.
+
+### GetProtectionGroupS3AssetIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetProtectionGroupS3AssetIdOk() (*string, bool)`
+
+GetProtectionGroupS3AssetIdOk returns a tuple with the ProtectionGroupS3AssetId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProtectionGroupS3AssetId
+
+`func (o *SecretProcessesorInputConfigSettings) SetProtectionGroupS3AssetId(v string)`
+
+SetProtectionGroupS3AssetId sets ProtectionGroupS3AssetId field to given value.
+
+### HasProtectionGroupS3AssetId
+
+`func (o *SecretProcessesorInputConfigSettings) HasProtectionGroupS3AssetId() bool`
+
+HasProtectionGroupS3AssetId returns a boolean if a field has been set.
+
+### GetParentEntityId
+
+`func (o *SecretProcessesorInputConfigSettings) GetParentEntityId() string`
+
+GetParentEntityId returns the ParentEntityId field if non-nil, zero value otherwise.
+
+### GetParentEntityIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetParentEntityIdOk() (*string, bool)`
+
+GetParentEntityIdOk returns a tuple with the ParentEntityId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentEntityId
+
+`func (o *SecretProcessesorInputConfigSettings) SetParentEntityId(v string)`
+
+SetParentEntityId sets ParentEntityId field to given value.
+
+### HasParentEntityId
+
+`func (o *SecretProcessesorInputConfigSettings) HasParentEntityId() bool`
+
+HasParentEntityId returns a boolean if a field has been set.
+
+### GetParentEntityType
+
+`func (o *SecretProcessesorInputConfigSettings) GetParentEntityType() string`
+
+GetParentEntityType returns the ParentEntityType field if non-nil, zero value otherwise.
+
+### GetParentEntityTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetParentEntityTypeOk() (*string, bool)`
+
+GetParentEntityTypeOk returns a tuple with the ParentEntityType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentEntityType
+
+`func (o *SecretProcessesorInputConfigSettings) SetParentEntityType(v string)`
+
+SetParentEntityType sets ParentEntityType field to given value.
+
+### HasParentEntityType
+
+`func (o *SecretProcessesorInputConfigSettings) HasParentEntityType() bool`
+
+HasParentEntityType returns a boolean if a field has been set.
+
 ### GetUserPoolId
 
 `func (o *SecretProcessesorInputConfigSettings) GetUserPoolId() string`
@@ -2302,6 +2436,106 @@ SetFilters sets Filters field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasFilters() bool`
 
 HasFilters returns a boolean if a field has been set.
+
+### GetAlertType
+
+`func (o *SecretProcessesorInputConfigSettings) GetAlertType() string`
+
+GetAlertType returns the AlertType field if non-nil, zero value otherwise.
+
+### GetAlertTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetAlertTypeOk() (*string, bool)`
+
+GetAlertTypeOk returns a tuple with the AlertType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlertType
+
+`func (o *SecretProcessesorInputConfigSettings) SetAlertType(v string)`
+
+SetAlertType sets AlertType field to given value.
+
+### HasAlertType
+
+`func (o *SecretProcessesorInputConfigSettings) HasAlertType() bool`
+
+HasAlertType returns a boolean if a field has been set.
+
+### GetEmbed
+
+`func (o *SecretProcessesorInputConfigSettings) GetEmbed() string`
+
+GetEmbed returns the Embed field if non-nil, zero value otherwise.
+
+### GetEmbedOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetEmbedOk() (*string, bool)`
+
+GetEmbedOk returns a tuple with the Embed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmbed
+
+`func (o *SecretProcessesorInputConfigSettings) SetEmbed(v string)`
+
+SetEmbed sets Embed field to given value.
+
+### HasEmbed
+
+`func (o *SecretProcessesorInputConfigSettings) HasEmbed() bool`
+
+HasEmbed returns a boolean if a field has been set.
+
+### GetPrimaryEntityType
+
+`func (o *SecretProcessesorInputConfigSettings) GetPrimaryEntityType() string`
+
+GetPrimaryEntityType returns the PrimaryEntityType field if non-nil, zero value otherwise.
+
+### GetPrimaryEntityTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetPrimaryEntityTypeOk() (*string, bool)`
+
+GetPrimaryEntityTypeOk returns a tuple with the PrimaryEntityType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrimaryEntityType
+
+`func (o *SecretProcessesorInputConfigSettings) SetPrimaryEntityType(v string)`
+
+SetPrimaryEntityType sets PrimaryEntityType field to given value.
+
+### HasPrimaryEntityType
+
+`func (o *SecretProcessesorInputConfigSettings) HasPrimaryEntityType() bool`
+
+HasPrimaryEntityType returns a boolean if a field has been set.
+
+### GetPrimaryEntityValue
+
+`func (o *SecretProcessesorInputConfigSettings) GetPrimaryEntityValue() string`
+
+GetPrimaryEntityValue returns the PrimaryEntityValue field if non-nil, zero value otherwise.
+
+### GetPrimaryEntityValueOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetPrimaryEntityValueOk() (*string, bool)`
+
+GetPrimaryEntityValueOk returns a tuple with the PrimaryEntityValue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrimaryEntityValue
+
+`func (o *SecretProcessesorInputConfigSettings) SetPrimaryEntityValue(v string)`
+
+SetPrimaryEntityValue sets PrimaryEntityValue field to given value.
+
+### HasPrimaryEntityValue
+
+`func (o *SecretProcessesorInputConfigSettings) HasPrimaryEntityValue() bool`
+
+HasPrimaryEntityValue returns a boolean if a field has been set.
 
 ### GetControlIds
 

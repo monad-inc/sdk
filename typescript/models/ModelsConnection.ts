@@ -10,16 +10,15 @@
  * Do not edit the class manually.
  */
 
-import { ModelsConnectionMetadata } from '../models/ModelsConnectionMetadata';
 import { HttpFile } from '../http/http';
 
 export class ModelsConnection {
     'createdAt'?: string;
     'description'?: string;
     'id'?: string;
-    'metadata'?: ModelsConnectionMetadata;
     'name'?: string;
-    'thirdPartyId'?: string;
+    'samlEntityId'?: string;
+    'samlMetadataUrl'?: string;
     'type'?: string;
     'updatedAt'?: string;
 
@@ -47,20 +46,20 @@ export class ModelsConnection {
             "format": ""
         },
         {
-            "name": "metadata",
-            "baseName": "metadata",
-            "type": "ModelsConnectionMetadata",
-            "format": ""
-        },
-        {
             "name": "name",
             "baseName": "name",
             "type": "string",
             "format": ""
         },
         {
-            "name": "thirdPartyId",
-            "baseName": "third_party_id",
+            "name": "samlEntityId",
+            "baseName": "saml_entity_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "samlMetadataUrl",
+            "baseName": "saml_metadata_url",
             "type": "string",
             "format": ""
         },

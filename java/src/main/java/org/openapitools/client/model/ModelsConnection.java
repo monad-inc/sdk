@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsConnectionMetadata;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsConnection
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-04T17:06:39.899064382Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T01:43:38.637231304Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsConnection {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -66,20 +65,20 @@ public class ModelsConnection {
   @javax.annotation.Nullable
   private String id;
 
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
-  @javax.annotation.Nullable
-  private ModelsConnectionMetadata metadata;
-
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
 
-  public static final String SERIALIZED_NAME_THIRD_PARTY_ID = "third_party_id";
-  @SerializedName(SERIALIZED_NAME_THIRD_PARTY_ID)
+  public static final String SERIALIZED_NAME_SAML_ENTITY_ID = "saml_entity_id";
+  @SerializedName(SERIALIZED_NAME_SAML_ENTITY_ID)
   @javax.annotation.Nullable
-  private String thirdPartyId;
+  private String samlEntityId;
+
+  public static final String SERIALIZED_NAME_SAML_METADATA_URL = "saml_metadata_url";
+  @SerializedName(SERIALIZED_NAME_SAML_METADATA_URL)
+  @javax.annotation.Nullable
+  private String samlMetadataUrl;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -151,25 +150,6 @@ public class ModelsConnection {
   }
 
 
-  public ModelsConnection metadata(@javax.annotation.Nullable ModelsConnectionMetadata metadata) {
-    this.metadata = metadata;
-    return this;
-  }
-
-  /**
-   * Get metadata
-   * @return metadata
-   */
-  @javax.annotation.Nullable
-  public ModelsConnectionMetadata getMetadata() {
-    return metadata;
-  }
-
-  public void setMetadata(@javax.annotation.Nullable ModelsConnectionMetadata metadata) {
-    this.metadata = metadata;
-  }
-
-
   public ModelsConnection name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
@@ -189,22 +169,41 @@ public class ModelsConnection {
   }
 
 
-  public ModelsConnection thirdPartyId(@javax.annotation.Nullable String thirdPartyId) {
-    this.thirdPartyId = thirdPartyId;
+  public ModelsConnection samlEntityId(@javax.annotation.Nullable String samlEntityId) {
+    this.samlEntityId = samlEntityId;
     return this;
   }
 
   /**
-   * Get thirdPartyId
-   * @return thirdPartyId
+   * Get samlEntityId
+   * @return samlEntityId
    */
   @javax.annotation.Nullable
-  public String getThirdPartyId() {
-    return thirdPartyId;
+  public String getSamlEntityId() {
+    return samlEntityId;
   }
 
-  public void setThirdPartyId(@javax.annotation.Nullable String thirdPartyId) {
-    this.thirdPartyId = thirdPartyId;
+  public void setSamlEntityId(@javax.annotation.Nullable String samlEntityId) {
+    this.samlEntityId = samlEntityId;
+  }
+
+
+  public ModelsConnection samlMetadataUrl(@javax.annotation.Nullable String samlMetadataUrl) {
+    this.samlMetadataUrl = samlMetadataUrl;
+    return this;
+  }
+
+  /**
+   * Get samlMetadataUrl
+   * @return samlMetadataUrl
+   */
+  @javax.annotation.Nullable
+  public String getSamlMetadataUrl() {
+    return samlMetadataUrl;
+  }
+
+  public void setSamlMetadataUrl(@javax.annotation.Nullable String samlMetadataUrl) {
+    this.samlMetadataUrl = samlMetadataUrl;
   }
 
 
@@ -259,16 +258,16 @@ public class ModelsConnection {
     return Objects.equals(this.createdAt, modelsConnection.createdAt) &&
         Objects.equals(this.description, modelsConnection.description) &&
         Objects.equals(this.id, modelsConnection.id) &&
-        Objects.equals(this.metadata, modelsConnection.metadata) &&
         Objects.equals(this.name, modelsConnection.name) &&
-        Objects.equals(this.thirdPartyId, modelsConnection.thirdPartyId) &&
+        Objects.equals(this.samlEntityId, modelsConnection.samlEntityId) &&
+        Objects.equals(this.samlMetadataUrl, modelsConnection.samlMetadataUrl) &&
         Objects.equals(this.type, modelsConnection.type) &&
         Objects.equals(this.updatedAt, modelsConnection.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, id, metadata, name, thirdPartyId, type, updatedAt);
+    return Objects.hash(createdAt, description, id, name, samlEntityId, samlMetadataUrl, type, updatedAt);
   }
 
   @Override
@@ -278,9 +277,9 @@ public class ModelsConnection {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    thirdPartyId: ").append(toIndentedString(thirdPartyId)).append("\n");
+    sb.append("    samlEntityId: ").append(toIndentedString(samlEntityId)).append("\n");
+    sb.append("    samlMetadataUrl: ").append(toIndentedString(samlMetadataUrl)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -304,7 +303,7 @@ public class ModelsConnection {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "id", "metadata", "name", "third_party_id", "type", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "id", "name", "saml_entity_id", "saml_metadata_url", "type", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -340,15 +339,14 @@ public class ModelsConnection {
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      // validate the optional field `metadata`
-      if (jsonObj.get("metadata") != null && !jsonObj.get("metadata").isJsonNull()) {
-        ModelsConnectionMetadata.validateJsonElement(jsonObj.get("metadata"));
-      }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("third_party_id") != null && !jsonObj.get("third_party_id").isJsonNull()) && !jsonObj.get("third_party_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `third_party_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("third_party_id").toString()));
+      if ((jsonObj.get("saml_entity_id") != null && !jsonObj.get("saml_entity_id").isJsonNull()) && !jsonObj.get("saml_entity_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `saml_entity_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("saml_entity_id").toString()));
+      }
+      if ((jsonObj.get("saml_metadata_url") != null && !jsonObj.get("saml_metadata_url").isJsonNull()) && !jsonObj.get("saml_metadata_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `saml_metadata_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("saml_metadata_url").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

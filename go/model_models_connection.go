@@ -23,9 +23,9 @@ type ModelsConnection struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
-	Metadata *ModelsConnectionMetadata `json:"metadata,omitempty"`
 	Name *string `json:"name,omitempty"`
-	ThirdPartyId *string `json:"third_party_id,omitempty"`
+	SamlEntityId *string `json:"saml_entity_id,omitempty"`
+	SamlMetadataUrl *string `json:"saml_metadata_url,omitempty"`
 	Type *string `json:"type,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
@@ -143,38 +143,6 @@ func (o *ModelsConnection) SetId(v string) {
 	o.Id = &v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *ModelsConnection) GetMetadata() ModelsConnectionMetadata {
-	if o == nil || IsNil(o.Metadata) {
-		var ret ModelsConnectionMetadata
-		return ret
-	}
-	return *o.Metadata
-}
-
-// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ModelsConnection) GetMetadataOk() (*ModelsConnectionMetadata, bool) {
-	if o == nil || IsNil(o.Metadata) {
-		return nil, false
-	}
-	return o.Metadata, true
-}
-
-// HasMetadata returns a boolean if a field has been set.
-func (o *ModelsConnection) HasMetadata() bool {
-	if o != nil && !IsNil(o.Metadata) {
-		return true
-	}
-
-	return false
-}
-
-// SetMetadata gets a reference to the given ModelsConnectionMetadata and assigns it to the Metadata field.
-func (o *ModelsConnection) SetMetadata(v ModelsConnectionMetadata) {
-	o.Metadata = &v
-}
-
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *ModelsConnection) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -207,36 +175,68 @@ func (o *ModelsConnection) SetName(v string) {
 	o.Name = &v
 }
 
-// GetThirdPartyId returns the ThirdPartyId field value if set, zero value otherwise.
-func (o *ModelsConnection) GetThirdPartyId() string {
-	if o == nil || IsNil(o.ThirdPartyId) {
+// GetSamlEntityId returns the SamlEntityId field value if set, zero value otherwise.
+func (o *ModelsConnection) GetSamlEntityId() string {
+	if o == nil || IsNil(o.SamlEntityId) {
 		var ret string
 		return ret
 	}
-	return *o.ThirdPartyId
+	return *o.SamlEntityId
 }
 
-// GetThirdPartyIdOk returns a tuple with the ThirdPartyId field value if set, nil otherwise
+// GetSamlEntityIdOk returns a tuple with the SamlEntityId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsConnection) GetThirdPartyIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ThirdPartyId) {
+func (o *ModelsConnection) GetSamlEntityIdOk() (*string, bool) {
+	if o == nil || IsNil(o.SamlEntityId) {
 		return nil, false
 	}
-	return o.ThirdPartyId, true
+	return o.SamlEntityId, true
 }
 
-// HasThirdPartyId returns a boolean if a field has been set.
-func (o *ModelsConnection) HasThirdPartyId() bool {
-	if o != nil && !IsNil(o.ThirdPartyId) {
+// HasSamlEntityId returns a boolean if a field has been set.
+func (o *ModelsConnection) HasSamlEntityId() bool {
+	if o != nil && !IsNil(o.SamlEntityId) {
 		return true
 	}
 
 	return false
 }
 
-// SetThirdPartyId gets a reference to the given string and assigns it to the ThirdPartyId field.
-func (o *ModelsConnection) SetThirdPartyId(v string) {
-	o.ThirdPartyId = &v
+// SetSamlEntityId gets a reference to the given string and assigns it to the SamlEntityId field.
+func (o *ModelsConnection) SetSamlEntityId(v string) {
+	o.SamlEntityId = &v
+}
+
+// GetSamlMetadataUrl returns the SamlMetadataUrl field value if set, zero value otherwise.
+func (o *ModelsConnection) GetSamlMetadataUrl() string {
+	if o == nil || IsNil(o.SamlMetadataUrl) {
+		var ret string
+		return ret
+	}
+	return *o.SamlMetadataUrl
+}
+
+// GetSamlMetadataUrlOk returns a tuple with the SamlMetadataUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsConnection) GetSamlMetadataUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.SamlMetadataUrl) {
+		return nil, false
+	}
+	return o.SamlMetadataUrl, true
+}
+
+// HasSamlMetadataUrl returns a boolean if a field has been set.
+func (o *ModelsConnection) HasSamlMetadataUrl() bool {
+	if o != nil && !IsNil(o.SamlMetadataUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetSamlMetadataUrl gets a reference to the given string and assigns it to the SamlMetadataUrl field.
+func (o *ModelsConnection) SetSamlMetadataUrl(v string) {
+	o.SamlMetadataUrl = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -322,14 +322,14 @@ func (o ModelsConnection) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Metadata) {
-		toSerialize["metadata"] = o.Metadata
-	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.ThirdPartyId) {
-		toSerialize["third_party_id"] = o.ThirdPartyId
+	if !IsNil(o.SamlEntityId) {
+		toSerialize["saml_entity_id"] = o.SamlEntityId
+	}
+	if !IsNil(o.SamlMetadataUrl) {
+		toSerialize["saml_metadata_url"] = o.SamlMetadataUrl
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

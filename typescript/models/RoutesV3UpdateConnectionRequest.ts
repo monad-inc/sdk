@@ -10,11 +10,9 @@
  * Do not edit the class manually.
  */
 
-import { AuthenticationtypesConnectionConfig } from '../models/AuthenticationtypesConnectionConfig';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3UpdateConnectionRequest {
-    'config'?: AuthenticationtypesConnectionConfig;
     /**
     * Connection Description to be updated
     */
@@ -29,12 +27,6 @@ export class RoutesV3UpdateConnectionRequest {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "config",
-            "baseName": "config",
-            "type": "AuthenticationtypesConnectionConfig",
-            "format": ""
-        },
         {
             "name": "description",
             "baseName": "description",

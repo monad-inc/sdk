@@ -17,6 +17,7 @@
 |**personalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**tenantId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**enterpriseId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**awsAccessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**awsSecretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**twilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**Metadata** | Pointer to [**ModelsConnectionMetadata**](ModelsConnectionMetadata.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**ThirdPartyId** | Pointer to **string** |  | [optional] 
+**SamlEntityId** | Pointer to **string** |  | [optional] 
+**SamlMetadataUrl** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
@@ -107,31 +107,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetMetadata
-
-`func (o *ModelsConnection) GetMetadata() ModelsConnectionMetadata`
-
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
-
-### GetMetadataOk
-
-`func (o *ModelsConnection) GetMetadataOk() (*ModelsConnectionMetadata, bool)`
-
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMetadata
-
-`func (o *ModelsConnection) SetMetadata(v ModelsConnectionMetadata)`
-
-SetMetadata sets Metadata field to given value.
-
-### HasMetadata
-
-`func (o *ModelsConnection) HasMetadata() bool`
-
-HasMetadata returns a boolean if a field has been set.
-
 ### GetName
 
 `func (o *ModelsConnection) GetName() string`
@@ -157,30 +132,55 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetThirdPartyId
+### GetSamlEntityId
 
-`func (o *ModelsConnection) GetThirdPartyId() string`
+`func (o *ModelsConnection) GetSamlEntityId() string`
 
-GetThirdPartyId returns the ThirdPartyId field if non-nil, zero value otherwise.
+GetSamlEntityId returns the SamlEntityId field if non-nil, zero value otherwise.
 
-### GetThirdPartyIdOk
+### GetSamlEntityIdOk
 
-`func (o *ModelsConnection) GetThirdPartyIdOk() (*string, bool)`
+`func (o *ModelsConnection) GetSamlEntityIdOk() (*string, bool)`
 
-GetThirdPartyIdOk returns a tuple with the ThirdPartyId field if it's non-nil, zero value otherwise
+GetSamlEntityIdOk returns a tuple with the SamlEntityId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetThirdPartyId
+### SetSamlEntityId
 
-`func (o *ModelsConnection) SetThirdPartyId(v string)`
+`func (o *ModelsConnection) SetSamlEntityId(v string)`
 
-SetThirdPartyId sets ThirdPartyId field to given value.
+SetSamlEntityId sets SamlEntityId field to given value.
 
-### HasThirdPartyId
+### HasSamlEntityId
 
-`func (o *ModelsConnection) HasThirdPartyId() bool`
+`func (o *ModelsConnection) HasSamlEntityId() bool`
 
-HasThirdPartyId returns a boolean if a field has been set.
+HasSamlEntityId returns a boolean if a field has been set.
+
+### GetSamlMetadataUrl
+
+`func (o *ModelsConnection) GetSamlMetadataUrl() string`
+
+GetSamlMetadataUrl returns the SamlMetadataUrl field if non-nil, zero value otherwise.
+
+### GetSamlMetadataUrlOk
+
+`func (o *ModelsConnection) GetSamlMetadataUrlOk() (*string, bool)`
+
+GetSamlMetadataUrlOk returns a tuple with the SamlMetadataUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSamlMetadataUrl
+
+`func (o *ModelsConnection) SetSamlMetadataUrl(v string)`
+
+SetSamlMetadataUrl sets SamlMetadataUrl field to given value.
+
+### HasSamlMetadataUrl
+
+`func (o *ModelsConnection) HasSamlMetadataUrl() bool`
+
+HasSamlMetadataUrl returns a boolean if a field has been set.
 
 ### GetType
 

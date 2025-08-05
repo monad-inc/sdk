@@ -35,6 +35,8 @@ type SecretProcessesorInputConfigSecrets struct {
 	CloudConfigurationFindingsSecretsConfig *CloudConfigurationFindingsSecretsConfig
 	CloudLogsSecretsConfig *CloudLogsSecretsConfig
 	CloudResourceInventorySecretsConfig *CloudResourceInventorySecretsConfig
+	ClumioAuditLogsSecretsConfig *ClumioAuditLogsSecretsConfig
+	ClumioConsolidatedAlertsSecretsConfig *ClumioConsolidatedAlertsSecretsConfig
 	CrowdstrikeFdrSecretsConfig *CrowdstrikeFdrSecretsConfig
 	DefenderForEndpointAlertsSecretsConfig *DefenderForEndpointAlertsSecretsConfig
 	DetectSummariesSecretsConfig *DetectSummariesSecretsConfig
@@ -49,6 +51,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	FullScansSecretsConfig *FullScansSecretsConfig
 	GitlabIssuesSecretsConfig *GitlabIssuesSecretsConfig
 	GoogleCloudStorageSecretsConfig *GoogleCloudStorageSecretsConfig
+	IndividualAlertsSecretsConfig *IndividualAlertsSecretsConfig
 	IssuesSecretsConfig *IssuesSecretsConfig
 	LogAnalyticsQuerySecretsConfig *LogAnalyticsQuerySecretsConfig
 	LoginActivitySecretsConfig *LoginActivitySecretsConfig
@@ -197,6 +200,20 @@ func CloudResourceInventorySecretsConfigAsSecretProcessesorInputConfigSecrets(v 
 	}
 }
 
+// ClumioAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ClumioAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func ClumioAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ClumioAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		ClumioAuditLogsSecretsConfig: v,
+	}
+}
+
+// ClumioConsolidatedAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ClumioConsolidatedAlertsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func ClumioConsolidatedAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ClumioConsolidatedAlertsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		ClumioConsolidatedAlertsSecretsConfig: v,
+	}
+}
+
 // CrowdstrikeFdrSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CrowdstrikeFdrSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func CrowdstrikeFdrSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CrowdstrikeFdrSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -292,6 +309,13 @@ func GitlabIssuesSecretsConfigAsSecretProcessesorInputConfigSecrets(v *GitlabIss
 func GoogleCloudStorageSecretsConfigAsSecretProcessesorInputConfigSecrets(v *GoogleCloudStorageSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		GoogleCloudStorageSecretsConfig: v,
+	}
+}
+
+// IndividualAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns IndividualAlertsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func IndividualAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *IndividualAlertsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		IndividualAlertsSecretsConfig: v,
 	}
 }
 
@@ -810,6 +834,40 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.CloudResourceInventorySecretsConfig = nil
 	}
 
+	// try to unmarshal data into ClumioAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.ClumioAuditLogsSecretsConfig)
+	if err == nil {
+		jsonClumioAuditLogsSecretsConfig, _ := json.Marshal(dst.ClumioAuditLogsSecretsConfig)
+		if string(jsonClumioAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.ClumioAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ClumioAuditLogsSecretsConfig); err != nil {
+				dst.ClumioAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ClumioAuditLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into ClumioConsolidatedAlertsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.ClumioConsolidatedAlertsSecretsConfig)
+	if err == nil {
+		jsonClumioConsolidatedAlertsSecretsConfig, _ := json.Marshal(dst.ClumioConsolidatedAlertsSecretsConfig)
+		if string(jsonClumioConsolidatedAlertsSecretsConfig) == "{}" { // empty struct
+			dst.ClumioConsolidatedAlertsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ClumioConsolidatedAlertsSecretsConfig); err != nil {
+				dst.ClumioConsolidatedAlertsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ClumioConsolidatedAlertsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into CrowdstrikeFdrSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.CrowdstrikeFdrSecretsConfig)
 	if err == nil {
@@ -1046,6 +1104,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.GoogleCloudStorageSecretsConfig = nil
+	}
+
+	// try to unmarshal data into IndividualAlertsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.IndividualAlertsSecretsConfig)
+	if err == nil {
+		jsonIndividualAlertsSecretsConfig, _ := json.Marshal(dst.IndividualAlertsSecretsConfig)
+		if string(jsonIndividualAlertsSecretsConfig) == "{}" { // empty struct
+			dst.IndividualAlertsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.IndividualAlertsSecretsConfig); err != nil {
+				dst.IndividualAlertsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.IndividualAlertsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into IssuesSecretsConfig
@@ -1644,6 +1719,8 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.CloudConfigurationFindingsSecretsConfig = nil
 		dst.CloudLogsSecretsConfig = nil
 		dst.CloudResourceInventorySecretsConfig = nil
+		dst.ClumioAuditLogsSecretsConfig = nil
+		dst.ClumioConsolidatedAlertsSecretsConfig = nil
 		dst.CrowdstrikeFdrSecretsConfig = nil
 		dst.DefenderForEndpointAlertsSecretsConfig = nil
 		dst.DetectSummariesSecretsConfig = nil
@@ -1658,6 +1735,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.FullScansSecretsConfig = nil
 		dst.GitlabIssuesSecretsConfig = nil
 		dst.GoogleCloudStorageSecretsConfig = nil
+		dst.IndividualAlertsSecretsConfig = nil
 		dst.IssuesSecretsConfig = nil
 		dst.LogAnalyticsQuerySecretsConfig = nil
 		dst.LoginActivitySecretsConfig = nil
@@ -1767,6 +1845,14 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CloudResourceInventorySecretsConfig)
 	}
 
+	if src.ClumioAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.ClumioAuditLogsSecretsConfig)
+	}
+
+	if src.ClumioConsolidatedAlertsSecretsConfig != nil {
+		return json.Marshal(&src.ClumioConsolidatedAlertsSecretsConfig)
+	}
+
 	if src.CrowdstrikeFdrSecretsConfig != nil {
 		return json.Marshal(&src.CrowdstrikeFdrSecretsConfig)
 	}
@@ -1821,6 +1907,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.GoogleCloudStorageSecretsConfig != nil {
 		return json.Marshal(&src.GoogleCloudStorageSecretsConfig)
+	}
+
+	if src.IndividualAlertsSecretsConfig != nil {
+		return json.Marshal(&src.IndividualAlertsSecretsConfig)
 	}
 
 	if src.IssuesSecretsConfig != nil {
@@ -2031,6 +2121,14 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.CloudResourceInventorySecretsConfig
 	}
 
+	if obj.ClumioAuditLogsSecretsConfig != nil {
+		return obj.ClumioAuditLogsSecretsConfig
+	}
+
+	if obj.ClumioConsolidatedAlertsSecretsConfig != nil {
+		return obj.ClumioConsolidatedAlertsSecretsConfig
+	}
+
 	if obj.CrowdstrikeFdrSecretsConfig != nil {
 		return obj.CrowdstrikeFdrSecretsConfig
 	}
@@ -2085,6 +2183,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 	if obj.GoogleCloudStorageSecretsConfig != nil {
 		return obj.GoogleCloudStorageSecretsConfig
+	}
+
+	if obj.IndividualAlertsSecretsConfig != nil {
+		return obj.IndividualAlertsSecretsConfig
 	}
 
 	if obj.IssuesSecretsConfig != nil {
@@ -2293,6 +2395,14 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.CloudResourceInventorySecretsConfig
 	}
 
+	if obj.ClumioAuditLogsSecretsConfig != nil {
+		return *obj.ClumioAuditLogsSecretsConfig
+	}
+
+	if obj.ClumioConsolidatedAlertsSecretsConfig != nil {
+		return *obj.ClumioConsolidatedAlertsSecretsConfig
+	}
+
 	if obj.CrowdstrikeFdrSecretsConfig != nil {
 		return *obj.CrowdstrikeFdrSecretsConfig
 	}
@@ -2347,6 +2457,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.GoogleCloudStorageSecretsConfig != nil {
 		return *obj.GoogleCloudStorageSecretsConfig
+	}
+
+	if obj.IndividualAlertsSecretsConfig != nil {
+		return *obj.IndividualAlertsSecretsConfig
 	}
 
 	if obj.IssuesSecretsConfig != nil {

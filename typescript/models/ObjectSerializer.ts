@@ -13,11 +13,8 @@ export * from '../models/AuditLogsSecretsConfig';
 export * from '../models/AuditLogsSettingsConfig';
 export * from '../models/AuthLogsSecretsConfig';
 export * from '../models/AuthLogsSettingsConfig';
-export * from '../models/AuthenticationtypesAuth0';
 export * from '../models/AuthenticationtypesAuthenticationMethod';
-export * from '../models/AuthenticationtypesConnectionConfig';
 export * from '../models/AuthenticationtypesMFAEnrollmentTicket';
-export * from '../models/AuthenticationtypesOkta';
 export * from '../models/AuthenticationtypesTokenResponse';
 export * from '../models/AwsGuarddutySettingsConfig';
 export * from '../models/AwsS3SettingsConfig';
@@ -49,6 +46,10 @@ export * from '../models/CloudLogsSettingsConfig';
 export * from '../models/CloudResourceInventorySecretsConfig';
 export * from '../models/CloudResourceInventorySettingsConfig';
 export * from '../models/CloudtrailSettingsConfig';
+export * from '../models/ClumioAuditLogsSecretsConfig';
+export * from '../models/ClumioAuditLogsSettingsConfig';
+export * from '../models/ClumioConsolidatedAlertsSecretsConfig';
+export * from '../models/ClumioConsolidatedAlertsSettingsConfig';
 export * from '../models/CognitoUsersFilter';
 export * from '../models/CognitoUsersSettingsConfig';
 export * from '../models/CommunityEditionSecretsConfig';
@@ -114,6 +115,8 @@ export * from '../models/HttpSettingsConfig';
 export * from '../models/IamAccessAnalyzerCriterion';
 export * from '../models/IamAccessAnalyzerFilter';
 export * from '../models/IamAccessAnalyzerSettingsConfig';
+export * from '../models/IndividualAlertsSecretsConfig';
+export * from '../models/IndividualAlertsSettingsConfig';
 export * from '../models/InputsConnectorMeta';
 export * from '../models/IssuesSecretsConfig';
 export * from '../models/IssuesSettingsConfig';
@@ -140,7 +143,6 @@ export * from '../models/ModelsBillingProductList';
 export * from '../models/ModelsComponentReference';
 export * from '../models/ModelsConnection';
 export * from '../models/ModelsConnectionList';
-export * from '../models/ModelsConnectionMetadata';
 export * from '../models/ModelsConnectionPermission';
 export * from '../models/ModelsConnectionRole';
 export * from '../models/ModelsConnectionRoleUser';
@@ -276,6 +278,7 @@ export * from '../models/RoutesV2UpdateOutputRequest';
 export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/RoutesV2UpdateRoleV2Request';
 export * from '../models/RoutesV3CreateConnectionRequest';
+export * from '../models/RoutesV3CreateConnectionRequestSaml';
 export * from '../models/RoutesV3CreateConnectionRoleRequest';
 export * from '../models/RoutesV3CreateConnectionUserRoleRequest';
 export * from '../models/RoutesV3CreateEnrichmentRequest';
@@ -382,11 +385,8 @@ import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
 import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
-import { AuthenticationtypesAuth0 } from '../models/AuthenticationtypesAuth0';
 import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
-import { AuthenticationtypesConnectionConfig } from '../models/AuthenticationtypesConnectionConfig';
 import { AuthenticationtypesMFAEnrollmentTicket } from '../models/AuthenticationtypesMFAEnrollmentTicket';
-import { AuthenticationtypesOkta } from '../models/AuthenticationtypesOkta';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
@@ -418,6 +418,10 @@ import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
 import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
+import { ClumioAuditLogsSecretsConfig } from '../models/ClumioAuditLogsSecretsConfig';
+import { ClumioAuditLogsSettingsConfig } from '../models/ClumioAuditLogsSettingsConfig';
+import { ClumioConsolidatedAlertsSecretsConfig } from '../models/ClumioConsolidatedAlertsSecretsConfig';
+import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
 import { CognitoUsersFilter } from '../models/CognitoUsersFilter';
 import { CognitoUsersSettingsConfig } from '../models/CognitoUsersSettingsConfig';
 import { CommunityEditionSecretsConfig } from '../models/CommunityEditionSecretsConfig';
@@ -483,6 +487,8 @@ import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { IamAccessAnalyzerCriterion } from '../models/IamAccessAnalyzerCriterion';
 import { IamAccessAnalyzerFilter } from '../models/IamAccessAnalyzerFilter';
 import { IamAccessAnalyzerSettingsConfig } from '../models/IamAccessAnalyzerSettingsConfig';
+import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
+import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig     , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum     } from '../models/IssuesSettingsConfig';
@@ -509,7 +515,6 @@ import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
-import { ModelsConnectionMetadata } from '../models/ModelsConnectionMetadata';
 import { ModelsConnectionPermission } from '../models/ModelsConnectionPermission';
 import { ModelsConnectionRole } from '../models/ModelsConnectionRole';
 import { ModelsConnectionRoleUser } from '../models/ModelsConnectionRoleUser';
@@ -645,6 +650,7 @@ import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputReque
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
+import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateConnectionRequestSaml';
 import { RoutesV3CreateConnectionRoleRequest } from '../models/RoutesV3CreateConnectionRoleRequest';
 import { RoutesV3CreateConnectionUserRoleRequest } from '../models/RoutesV3CreateConnectionUserRoleRequest';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
@@ -777,11 +783,8 @@ let typeMap: {[index: string]: any} = {
     "AuditLogsSettingsConfig": AuditLogsSettingsConfig,
     "AuthLogsSecretsConfig": AuthLogsSecretsConfig,
     "AuthLogsSettingsConfig": AuthLogsSettingsConfig,
-    "AuthenticationtypesAuth0": AuthenticationtypesAuth0,
     "AuthenticationtypesAuthenticationMethod": AuthenticationtypesAuthenticationMethod,
-    "AuthenticationtypesConnectionConfig": AuthenticationtypesConnectionConfig,
     "AuthenticationtypesMFAEnrollmentTicket": AuthenticationtypesMFAEnrollmentTicket,
-    "AuthenticationtypesOkta": AuthenticationtypesOkta,
     "AuthenticationtypesTokenResponse": AuthenticationtypesTokenResponse,
     "AwsGuarddutySettingsConfig": AwsGuarddutySettingsConfig,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
@@ -813,6 +816,10 @@ let typeMap: {[index: string]: any} = {
     "CloudResourceInventorySecretsConfig": CloudResourceInventorySecretsConfig,
     "CloudResourceInventorySettingsConfig": CloudResourceInventorySettingsConfig,
     "CloudtrailSettingsConfig": CloudtrailSettingsConfig,
+    "ClumioAuditLogsSecretsConfig": ClumioAuditLogsSecretsConfig,
+    "ClumioAuditLogsSettingsConfig": ClumioAuditLogsSettingsConfig,
+    "ClumioConsolidatedAlertsSecretsConfig": ClumioConsolidatedAlertsSecretsConfig,
+    "ClumioConsolidatedAlertsSettingsConfig": ClumioConsolidatedAlertsSettingsConfig,
     "CognitoUsersFilter": CognitoUsersFilter,
     "CognitoUsersSettingsConfig": CognitoUsersSettingsConfig,
     "CommunityEditionSecretsConfig": CommunityEditionSecretsConfig,
@@ -878,6 +885,8 @@ let typeMap: {[index: string]: any} = {
     "IamAccessAnalyzerCriterion": IamAccessAnalyzerCriterion,
     "IamAccessAnalyzerFilter": IamAccessAnalyzerFilter,
     "IamAccessAnalyzerSettingsConfig": IamAccessAnalyzerSettingsConfig,
+    "IndividualAlertsSecretsConfig": IndividualAlertsSecretsConfig,
+    "IndividualAlertsSettingsConfig": IndividualAlertsSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,
     "IssuesSecretsConfig": IssuesSecretsConfig,
     "IssuesSettingsConfig": IssuesSettingsConfig,
@@ -904,7 +913,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsComponentReference": ModelsComponentReference,
     "ModelsConnection": ModelsConnection,
     "ModelsConnectionList": ModelsConnectionList,
-    "ModelsConnectionMetadata": ModelsConnectionMetadata,
     "ModelsConnectionPermission": ModelsConnectionPermission,
     "ModelsConnectionRole": ModelsConnectionRole,
     "ModelsConnectionRoleUser": ModelsConnectionRoleUser,
@@ -1040,6 +1048,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdatePipelineRequest": RoutesV2UpdatePipelineRequest,
     "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
     "RoutesV3CreateConnectionRequest": RoutesV3CreateConnectionRequest,
+    "RoutesV3CreateConnectionRequestSaml": RoutesV3CreateConnectionRequestSaml,
     "RoutesV3CreateConnectionRoleRequest": RoutesV3CreateConnectionRoleRequest,
     "RoutesV3CreateConnectionUserRoleRequest": RoutesV3CreateConnectionUserRoleRequest,
     "RoutesV3CreateEnrichmentRequest": RoutesV3CreateEnrichmentRequest,

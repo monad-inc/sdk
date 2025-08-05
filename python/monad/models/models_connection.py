@@ -20,7 +20,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_connection_metadata import ModelsConnectionMetadata
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,12 +30,12 @@ class ModelsConnection(BaseModel):
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    metadata: Optional[ModelsConnectionMetadata] = None
     name: Optional[StrictStr] = None
-    third_party_id: Optional[StrictStr] = None
+    saml_entity_id: Optional[StrictStr] = None
+    saml_metadata_url: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "metadata", "name", "third_party_id", "type", "updated_at"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "name", "saml_entity_id", "saml_metadata_url", "type", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,9 +76,6 @@ class ModelsConnection(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of metadata
-        if self.metadata:
-            _dict['metadata'] = self.metadata.to_dict()
         return _dict
 
     @classmethod
@@ -95,9 +91,9 @@ class ModelsConnection(BaseModel):
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
             "id": obj.get("id"),
-            "metadata": ModelsConnectionMetadata.from_dict(obj["metadata"]) if obj.get("metadata") is not None else None,
             "name": obj.get("name"),
-            "third_party_id": obj.get("third_party_id"),
+            "saml_entity_id": obj.get("saml_entity_id"),
+            "saml_metadata_url": obj.get("saml_metadata_url"),
             "type": obj.get("type"),
             "updated_at": obj.get("updated_at")
         })

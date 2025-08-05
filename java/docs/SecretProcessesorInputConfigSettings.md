@@ -28,7 +28,7 @@
 |**user** | **String** | The username of the Snowflake account used to establish the connection. |  [optional] |
 |**region** | **String** | The AWS region where the security groups that are being fetched are located. |  [optional] |
 |**roleArn** | **String** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. |  [optional] |
-|**severity** | **String** |  |  [optional] |
+|**severity** | **String** | Filter by alert severity (error, warning) |  [optional] |
 |**bucket** | **String** | Name of the storage bucket |  [optional] |
 |**compression** | **String** | Compression format of the objects |  [optional] |
 |**format** | **String** | File format of the objects |  [optional] |
@@ -64,6 +64,11 @@
 |**entityType** | **List&lt;String&gt;** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. |  [optional] |
 |**fullSnapshot** | **Boolean** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. |  [optional] |
 |**interval** | **Integer** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. |  [optional] |
+|**bucketRegion** | **String** | Filter by bucket region |  [optional] |
+|**parentProtectionGroupBackupId** | **String** | Filter by parent protection group backup ID |  [optional] |
+|**protectionGroupS3AssetId** | **String** | Filter by protection group S3 asset ID |  [optional] |
+|**parentEntityId** | **String** | The system-generated ID of the parent entity that is associated with the primary entity affected by the alert. |  [optional] |
+|**parentEntityType** | **String** | The system-generated name of the parent entity that is associated with the primary entity affected by the alert. |  [optional] |
 |**userPoolId** | **String** | User Pool ID to extract users from |  [optional] |
 |**awsQueueUrl** | **String** | AWS SQS queue URL provided to you by the CrowdStrike Falcon console |  [optional] |
 |**awsRegionName** | **String** | Name of the region where the queue resides |  [optional] |
@@ -93,6 +98,10 @@
 |**bucketName** | **String** | The name of the Google Cloud Storage bucket to use |  [optional] |
 |**analyzerArn** | **String** | The [ARN of the analyzer] to retrieve findings from. |  [optional] |
 |**filters** | [**List&lt;SecurityGroupsFilter&gt;**](SecurityGroupsFilter.md) | Filters for the security groups |  [optional] |
+|**alertType** | **String** | Filter by alert type (e.g., policy_violated, tag_conflict) |  [optional] |
+|**embed** | **String** | Embed related resources in the data returned (e.g., read-consolidated-alert) |  [optional] |
+|**primaryEntityType** | **String** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) |  [optional] |
+|**primaryEntityValue** | **String** | Filter by primary entity value (contains search) |  [optional] |
 |**controlIds** | **List&lt;String&gt;** | @Description Filter Issues created by specific control IDs |  [optional] |
 |**hasNote** | **String** | @Description Filter Issues with or without a note |  [optional] |
 |**hasRemediation** | **String** | @Description Filter Issues with or without remediation |  [optional] |

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **TenantId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **EnterpriseId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**AccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AwsAccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AwsSecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **TwilioAccountSid** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -284,6 +285,31 @@ SetEnterpriseId sets EnterpriseId field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasEnterpriseId() bool`
 
 HasEnterpriseId returns a boolean if a field has been set.
+
+### GetAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) GetAccessToken() ModelsSecret`
+
+GetAccessToken returns the AccessToken field if non-nil, zero value otherwise.
+
+### GetAccessTokenOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetAccessTokenOk() (*ModelsSecret, bool)`
+
+GetAccessTokenOk returns a tuple with the AccessToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) SetAccessToken(v ModelsSecret)`
+
+SetAccessToken sets AccessToken field to given value.
+
+### HasAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) HasAccessToken() bool`
+
+HasAccessToken returns a boolean if a field has been set.
 
 ### GetAwsAccessKey
 

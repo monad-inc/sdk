@@ -10,11 +10,10 @@
  * Do not edit the class manually.
  */
 
-import { AuthenticationtypesConnectionConfig } from '../models/AuthenticationtypesConnectionConfig';
+import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateConnectionRequestSaml';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3CreateConnectionRequest {
-    'config'?: AuthenticationtypesConnectionConfig;
     /**
     * Description of the connection
     */
@@ -23,18 +22,13 @@ export class RoutesV3CreateConnectionRequest {
     * Name of the connection
     */
     'name'?: string;
+    'saml'?: RoutesV3CreateConnectionRequestSaml;
 
     static readonly discriminator: string | undefined = undefined;
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "config",
-            "baseName": "config",
-            "type": "AuthenticationtypesConnectionConfig",
-            "format": ""
-        },
         {
             "name": "description",
             "baseName": "description",
@@ -45,6 +39,12 @@ export class RoutesV3CreateConnectionRequest {
             "name": "name",
             "baseName": "name",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "saml",
+            "baseName": "saml",
+            "type": "RoutesV3CreateConnectionRequestSaml",
             "format": ""
         }    ];
 

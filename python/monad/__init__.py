@@ -75,11 +75,8 @@ __all__ = [
     "AuditLogsSettingsConfig",
     "AuthLogsSecretsConfig",
     "AuthLogsSettingsConfig",
-    "AuthenticationtypesAuth0",
     "AuthenticationtypesAuthenticationMethod",
-    "AuthenticationtypesConnectionConfig",
     "AuthenticationtypesMFAEnrollmentTicket",
-    "AuthenticationtypesOkta",
     "AuthenticationtypesTokenResponse",
     "AwsGuarddutySettingsConfig",
     "AwsS3SettingsConfig",
@@ -111,6 +108,10 @@ __all__ = [
     "CloudResourceInventorySecretsConfig",
     "CloudResourceInventorySettingsConfig",
     "CloudtrailSettingsConfig",
+    "ClumioAuditLogsSecretsConfig",
+    "ClumioAuditLogsSettingsConfig",
+    "ClumioConsolidatedAlertsSecretsConfig",
+    "ClumioConsolidatedAlertsSettingsConfig",
     "CognitoUsersFilter",
     "CognitoUsersSettingsConfig",
     "CommunityEditionSecretsConfig",
@@ -176,6 +177,8 @@ __all__ = [
     "IamAccessAnalyzerCriterion",
     "IamAccessAnalyzerFilter",
     "IamAccessAnalyzerSettingsConfig",
+    "IndividualAlertsSecretsConfig",
+    "IndividualAlertsSettingsConfig",
     "InputsConnectorMeta",
     "IssuesSecretsConfig",
     "IssuesSettingsConfig",
@@ -202,7 +205,6 @@ __all__ = [
     "ModelsComponentReference",
     "ModelsConnection",
     "ModelsConnectionList",
-    "ModelsConnectionMetadata",
     "ModelsConnectionPermission",
     "ModelsConnectionRole",
     "ModelsConnectionRoleUser",
@@ -338,6 +340,7 @@ __all__ = [
     "RoutesV2UpdatePipelineRequest",
     "RoutesV2UpdateRoleV2Request",
     "RoutesV3CreateConnectionRequest",
+    "RoutesV3CreateConnectionRequestSaml",
     "RoutesV3CreateConnectionRoleRequest",
     "RoutesV3CreateConnectionUserRoleRequest",
     "RoutesV3CreateEnrichmentRequest",
@@ -491,11 +494,8 @@ from monad.models.audit_logs_secrets_config import AuditLogsSecretsConfig as Aud
 from monad.models.audit_logs_settings_config import AuditLogsSettingsConfig as AuditLogsSettingsConfig
 from monad.models.auth_logs_secrets_config import AuthLogsSecretsConfig as AuthLogsSecretsConfig
 from monad.models.auth_logs_settings_config import AuthLogsSettingsConfig as AuthLogsSettingsConfig
-from monad.models.authenticationtypes_auth0 import AuthenticationtypesAuth0 as AuthenticationtypesAuth0
 from monad.models.authenticationtypes_authentication_method import AuthenticationtypesAuthenticationMethod as AuthenticationtypesAuthenticationMethod
-from monad.models.authenticationtypes_connection_config import AuthenticationtypesConnectionConfig as AuthenticationtypesConnectionConfig
 from monad.models.authenticationtypes_mfa_enrollment_ticket import AuthenticationtypesMFAEnrollmentTicket as AuthenticationtypesMFAEnrollmentTicket
-from monad.models.authenticationtypes_okta import AuthenticationtypesOkta as AuthenticationtypesOkta
 from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse as AuthenticationtypesTokenResponse
 from monad.models.aws_guardduty_settings_config import AwsGuarddutySettingsConfig as AwsGuarddutySettingsConfig
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig as AwsS3SettingsConfig
@@ -527,6 +527,10 @@ from monad.models.cloud_logs_settings_config import CloudLogsSettingsConfig as C
 from monad.models.cloud_resource_inventory_secrets_config import CloudResourceInventorySecretsConfig as CloudResourceInventorySecretsConfig
 from monad.models.cloud_resource_inventory_settings_config import CloudResourceInventorySettingsConfig as CloudResourceInventorySettingsConfig
 from monad.models.cloudtrail_settings_config import CloudtrailSettingsConfig as CloudtrailSettingsConfig
+from monad.models.clumio_audit_logs_secrets_config import ClumioAuditLogsSecretsConfig as ClumioAuditLogsSecretsConfig
+from monad.models.clumio_audit_logs_settings_config import ClumioAuditLogsSettingsConfig as ClumioAuditLogsSettingsConfig
+from monad.models.clumio_consolidated_alerts_secrets_config import ClumioConsolidatedAlertsSecretsConfig as ClumioConsolidatedAlertsSecretsConfig
+from monad.models.clumio_consolidated_alerts_settings_config import ClumioConsolidatedAlertsSettingsConfig as ClumioConsolidatedAlertsSettingsConfig
 from monad.models.cognito_users_filter import CognitoUsersFilter as CognitoUsersFilter
 from monad.models.cognito_users_settings_config import CognitoUsersSettingsConfig as CognitoUsersSettingsConfig
 from monad.models.community_edition_secrets_config import CommunityEditionSecretsConfig as CommunityEditionSecretsConfig
@@ -592,6 +596,8 @@ from monad.models.http_settings_config import HttpSettingsConfig as HttpSettings
 from monad.models.iam_access_analyzer_criterion import IamAccessAnalyzerCriterion as IamAccessAnalyzerCriterion
 from monad.models.iam_access_analyzer_filter import IamAccessAnalyzerFilter as IamAccessAnalyzerFilter
 from monad.models.iam_access_analyzer_settings_config import IamAccessAnalyzerSettingsConfig as IamAccessAnalyzerSettingsConfig
+from monad.models.individual_alerts_secrets_config import IndividualAlertsSecretsConfig as IndividualAlertsSecretsConfig
+from monad.models.individual_alerts_settings_config import IndividualAlertsSettingsConfig as IndividualAlertsSettingsConfig
 from monad.models.inputs_connector_meta import InputsConnectorMeta as InputsConnectorMeta
 from monad.models.issues_secrets_config import IssuesSecretsConfig as IssuesSecretsConfig
 from monad.models.issues_settings_config import IssuesSettingsConfig as IssuesSettingsConfig
@@ -618,7 +624,6 @@ from monad.models.models_billing_product_list import ModelsBillingProductList as
 from monad.models.models_component_reference import ModelsComponentReference as ModelsComponentReference
 from monad.models.models_connection import ModelsConnection as ModelsConnection
 from monad.models.models_connection_list import ModelsConnectionList as ModelsConnectionList
-from monad.models.models_connection_metadata import ModelsConnectionMetadata as ModelsConnectionMetadata
 from monad.models.models_connection_permission import ModelsConnectionPermission as ModelsConnectionPermission
 from monad.models.models_connection_role import ModelsConnectionRole as ModelsConnectionRole
 from monad.models.models_connection_role_user import ModelsConnectionRoleUser as ModelsConnectionRoleUser
@@ -754,6 +759,7 @@ from monad.models.routes_v2_update_output_request import RoutesV2UpdateOutputReq
 from monad.models.routes_v2_update_pipeline_request import RoutesV2UpdatePipelineRequest as RoutesV2UpdatePipelineRequest
 from monad.models.routes_v2_update_role_v2_request import RoutesV2UpdateRoleV2Request as RoutesV2UpdateRoleV2Request
 from monad.models.routes_v3_create_connection_request import RoutesV3CreateConnectionRequest as RoutesV3CreateConnectionRequest
+from monad.models.routes_v3_create_connection_request_saml import RoutesV3CreateConnectionRequestSaml as RoutesV3CreateConnectionRequestSaml
 from monad.models.routes_v3_create_connection_role_request import RoutesV3CreateConnectionRoleRequest as RoutesV3CreateConnectionRoleRequest
 from monad.models.routes_v3_create_connection_user_role_request import RoutesV3CreateConnectionUserRoleRequest as RoutesV3CreateConnectionUserRoleRequest
 from monad.models.routes_v3_create_enrichment_request import RoutesV3CreateEnrichmentRequest as RoutesV3CreateEnrichmentRequest
