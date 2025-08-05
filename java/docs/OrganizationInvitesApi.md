@@ -84,5 +84,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | User added to organization |  -  |
 | **400** | Bad request |  -  |
+| **429** | Too Many Requests |  -  |
 | **500** | Internal Server Error |  -  |
 

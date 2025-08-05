@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Twilio Events settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T18:48:00.383779800Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T20:10:07.260252409Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class EventsSettingsConfig {
   public static final String SERIALIZED_NAME_ACTOR_SID = "actor_sid";
   @SerializedName(SERIALIZED_NAME_ACTOR_SID)

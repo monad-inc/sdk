@@ -103,6 +103,13 @@ export class OrganizationInvitesApiResponseProcessor {
             ) as string;
             throw new ApiException<string>(response.httpStatusCode, "Bad request", body, response.headers);
         }
+        if (isCodeInRange("429", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Too Many Requests", body, response.headers);
+        }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),

@@ -99,6 +99,7 @@ class OrganizationInvitesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "str",
             '400': "str",
+            '429': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -172,6 +173,7 @@ class OrganizationInvitesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "str",
             '400': "str",
+            '429': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -245,6 +247,7 @@ class OrganizationInvitesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "str",
             '400': "str",
+            '429': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
