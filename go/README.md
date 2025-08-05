@@ -437,6 +437,8 @@ Class | Method | HTTP request | Description
  - [PagerdutySummaryConfig](docs/PagerdutySummaryConfig.md)
  - [PaloAltoDataSecurityAlertsSecretsConfig](docs/PaloAltoDataSecurityAlertsSecretsConfig.md)
  - [PaloAltoDataSecurityAlertsSettingsConfig](docs/PaloAltoDataSecurityAlertsSettingsConfig.md)
+ - [PantherSecretsConfig](docs/PantherSecretsConfig.md)
+ - [PantherSettingsConfig](docs/PantherSettingsConfig.md)
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
  - [PostgresqlSecretsConfig](docs/PostgresqlSecretsConfig.md)
  - [PostgresqlSettingsConfig](docs/PostgresqlSettingsConfig.md)

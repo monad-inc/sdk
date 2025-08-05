@@ -30,6 +30,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	ObjectStorageSettingsConfig *ObjectStorageSettingsConfig
 	OpensearchSettingsConfig *OpensearchSettingsConfig
 	PagerdutySettingsConfig *PagerdutySettingsConfig
+	PantherSettingsConfig *PantherSettingsConfig
 	PostgresqlSettingsConfig *PostgresqlSettingsConfig
 	S3SettingsConfig *S3SettingsConfig
 	SecurityLakeSettingsConfig *SecurityLakeSettingsConfig
@@ -114,6 +115,13 @@ func OpensearchSettingsConfigAsSecretProcessesorOutputConfigSettings(v *Opensear
 func PagerdutySettingsConfigAsSecretProcessesorOutputConfigSettings(v *PagerdutySettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		PagerdutySettingsConfig: v,
+	}
+}
+
+// PantherSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns PantherSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func PantherSettingsConfigAsSecretProcessesorOutputConfigSettings(v *PantherSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		PantherSettingsConfig: v,
 	}
 }
 
@@ -365,6 +373,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.PagerdutySettingsConfig = nil
 	}
 
+	// try to unmarshal data into PantherSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.PantherSettingsConfig)
+	if err == nil {
+		jsonPantherSettingsConfig, _ := json.Marshal(dst.PantherSettingsConfig)
+		if string(jsonPantherSettingsConfig) == "{}" { // empty struct
+			dst.PantherSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PantherSettingsConfig); err != nil {
+				dst.PantherSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PantherSettingsConfig = nil
+	}
+
 	// try to unmarshal data into PostgresqlSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.PostgresqlSettingsConfig)
 	if err == nil {
@@ -514,6 +539,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.ObjectStorageSettingsConfig = nil
 		dst.OpensearchSettingsConfig = nil
 		dst.PagerdutySettingsConfig = nil
+		dst.PantherSettingsConfig = nil
 		dst.PostgresqlSettingsConfig = nil
 		dst.S3SettingsConfig = nil
 		dst.SecurityLakeSettingsConfig = nil
@@ -575,6 +601,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.PagerdutySettingsConfig != nil {
 		return json.Marshal(&src.PagerdutySettingsConfig)
+	}
+
+	if src.PantherSettingsConfig != nil {
+		return json.Marshal(&src.PantherSettingsConfig)
 	}
 
 	if src.PostgresqlSettingsConfig != nil {
@@ -661,6 +691,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.PagerdutySettingsConfig
 	}
 
+	if obj.PantherSettingsConfig != nil {
+		return obj.PantherSettingsConfig
+	}
+
 	if obj.PostgresqlSettingsConfig != nil {
 		return obj.PostgresqlSettingsConfig
 	}
@@ -741,6 +775,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.PagerdutySettingsConfig != nil {
 		return *obj.PagerdutySettingsConfig
+	}
+
+	if obj.PantherSettingsConfig != nil {
+		return *obj.PantherSettingsConfig
 	}
 
 	if obj.PostgresqlSettingsConfig != nil {

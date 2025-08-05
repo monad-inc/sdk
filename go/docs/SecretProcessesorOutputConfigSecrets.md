@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **RoutingKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**BearerToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ConnectionString** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **PrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -339,6 +340,31 @@ SetRoutingKey sets RoutingKey field to given value.
 `func (o *SecretProcessesorOutputConfigSecrets) HasRoutingKey() bool`
 
 HasRoutingKey returns a boolean if a field has been set.
+
+### GetBearerToken
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetBearerToken() ModelsSecret`
+
+GetBearerToken returns the BearerToken field if non-nil, zero value otherwise.
+
+### GetBearerTokenOk
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetBearerTokenOk() (*ModelsSecret, bool)`
+
+GetBearerTokenOk returns a tuple with the BearerToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBearerToken
+
+`func (o *SecretProcessesorOutputConfigSecrets) SetBearerToken(v ModelsSecret)`
+
+SetBearerToken sets BearerToken field to given value.
+
+### HasBearerToken
+
+`func (o *SecretProcessesorOutputConfigSecrets) HasBearerToken() bool`
+
+HasBearerToken returns a boolean if a field has been set.
 
 ### GetConnectionString
 

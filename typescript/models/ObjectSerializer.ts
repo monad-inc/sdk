@@ -214,6 +214,8 @@ export * from '../models/PagerdutySettingsConfig';
 export * from '../models/PagerdutySummaryConfig';
 export * from '../models/PaloAltoDataSecurityAlertsSecretsConfig';
 export * from '../models/PaloAltoDataSecurityAlertsSettingsConfig';
+export * from '../models/PantherSecretsConfig';
+export * from '../models/PantherSettingsConfig';
 export * from '../models/ParquetParquetFormatter';
 export * from '../models/PostgresqlSecretsConfig';
 export * from '../models/PostgresqlSettingsConfig';
@@ -586,6 +588,8 @@ import { PagerdutySettingsConfig } from '../models/PagerdutySettingsConfig';
 import { PagerdutySummaryConfig } from '../models/PagerdutySummaryConfig';
 import { PaloAltoDataSecurityAlertsSecretsConfig } from '../models/PaloAltoDataSecurityAlertsSecretsConfig';
 import { PaloAltoDataSecurityAlertsSettingsConfig } from '../models/PaloAltoDataSecurityAlertsSettingsConfig';
+import { PantherSecretsConfig } from '../models/PantherSecretsConfig';
+import { PantherSettingsConfig } from '../models/PantherSettingsConfig';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
@@ -984,6 +988,8 @@ let typeMap: {[index: string]: any} = {
     "PagerdutySummaryConfig": PagerdutySummaryConfig,
     "PaloAltoDataSecurityAlertsSecretsConfig": PaloAltoDataSecurityAlertsSecretsConfig,
     "PaloAltoDataSecurityAlertsSettingsConfig": PaloAltoDataSecurityAlertsSettingsConfig,
+    "PantherSecretsConfig": PantherSecretsConfig,
+    "PantherSettingsConfig": PantherSettingsConfig,
     "ParquetParquetFormatter": ParquetParquetFormatter,
     "PostgresqlSecretsConfig": PostgresqlSecretsConfig,
     "PostgresqlSettingsConfig": PostgresqlSettingsConfig,

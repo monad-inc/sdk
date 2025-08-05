@@ -29,6 +29,7 @@ type SecretProcessesorOutputConfigSecrets struct {
 	ObjectStorageSecretsConfig *ObjectStorageSecretsConfig
 	OpensearchSecretsConfig *OpensearchSecretsConfig
 	PagerdutySecretsConfig *PagerdutySecretsConfig
+	PantherSecretsConfig *PantherSecretsConfig
 	PostgresqlSecretsConfig *PostgresqlSecretsConfig
 	SentinelSecretsConfig *SentinelSecretsConfig
 	SnowflakeOutputSecretsConfig *SnowflakeOutputSecretsConfig
@@ -104,6 +105,13 @@ func OpensearchSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *Opensearch
 func PagerdutySecretsConfigAsSecretProcessesorOutputConfigSecrets(v *PagerdutySecretsConfig) SecretProcessesorOutputConfigSecrets {
 	return SecretProcessesorOutputConfigSecrets{
 		PagerdutySecretsConfig: v,
+	}
+}
+
+// PantherSecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns PantherSecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
+func PantherSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *PantherSecretsConfig) SecretProcessesorOutputConfigSecrets {
+	return SecretProcessesorOutputConfigSecrets{
+		PantherSecretsConfig: v,
 	}
 }
 
@@ -324,6 +332,23 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.PagerdutySecretsConfig = nil
 	}
 
+	// try to unmarshal data into PantherSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.PantherSecretsConfig)
+	if err == nil {
+		jsonPantherSecretsConfig, _ := json.Marshal(dst.PantherSecretsConfig)
+		if string(jsonPantherSecretsConfig) == "{}" { // empty struct
+			dst.PantherSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PantherSecretsConfig); err != nil {
+				dst.PantherSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PantherSecretsConfig = nil
+	}
+
 	// try to unmarshal data into PostgresqlSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.PostgresqlSecretsConfig)
 	if err == nil {
@@ -438,6 +463,7 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.ObjectStorageSecretsConfig = nil
 		dst.OpensearchSecretsConfig = nil
 		dst.PagerdutySecretsConfig = nil
+		dst.PantherSecretsConfig = nil
 		dst.PostgresqlSecretsConfig = nil
 		dst.SentinelSecretsConfig = nil
 		dst.SnowflakeOutputSecretsConfig = nil
@@ -493,6 +519,10 @@ func (src SecretProcessesorOutputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.PagerdutySecretsConfig != nil {
 		return json.Marshal(&src.PagerdutySecretsConfig)
+	}
+
+	if src.PantherSecretsConfig != nil {
+		return json.Marshal(&src.PantherSecretsConfig)
 	}
 
 	if src.PostgresqlSecretsConfig != nil {
@@ -567,6 +597,10 @@ func (obj *SecretProcessesorOutputConfigSecrets) GetActualInstance() (interface{
 		return obj.PagerdutySecretsConfig
 	}
 
+	if obj.PantherSecretsConfig != nil {
+		return obj.PantherSecretsConfig
+	}
+
 	if obj.PostgresqlSecretsConfig != nil {
 		return obj.PostgresqlSecretsConfig
 	}
@@ -635,6 +669,10 @@ func (obj SecretProcessesorOutputConfigSecrets) GetActualInstanceValue() (interf
 
 	if obj.PagerdutySecretsConfig != nil {
 		return *obj.PagerdutySecretsConfig
+	}
+
+	if obj.PantherSecretsConfig != nil {
+		return *obj.PantherSecretsConfig
 	}
 
 	if obj.PostgresqlSecretsConfig != nil {

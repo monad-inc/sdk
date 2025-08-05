@@ -46,6 +46,7 @@ Name | Type | Description | Notes
 **AlertsConfig** | Pointer to [**PagerdutyAlertsConfig**](PagerdutyAlertsConfig.md) |  | [optional] 
 **DefaultEventType** | Pointer to **string** | EventType determines whether events are sent as &#39;change&#39; or &#39;alert&#39; events. We recommend reading the docs for this output before making this choice. | [optional] 
 **SummaryConfig** | Pointer to [**PagerdutySummaryConfig**](PagerdutySummaryConfig.md) |  | [optional] 
+**HttpIngestUrl** | Pointer to **string** |  | [optional] 
 **ColumnNames** | Pointer to **[]string** | The column names to write data to, must match the root fields of the data If not provided all root fields will be used | [optional] 
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Host** | Pointer to **string** | The host of the PostgreSQL database | [optional] 
@@ -1134,6 +1135,31 @@ SetSummaryConfig sets SummaryConfig field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasSummaryConfig() bool`
 
 HasSummaryConfig returns a boolean if a field has been set.
+
+### GetHttpIngestUrl
+
+`func (o *SecretProcessesorOutputConfigSettings) GetHttpIngestUrl() string`
+
+GetHttpIngestUrl returns the HttpIngestUrl field if non-nil, zero value otherwise.
+
+### GetHttpIngestUrlOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetHttpIngestUrlOk() (*string, bool)`
+
+GetHttpIngestUrlOk returns a tuple with the HttpIngestUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpIngestUrl
+
+`func (o *SecretProcessesorOutputConfigSettings) SetHttpIngestUrl(v string)`
+
+SetHttpIngestUrl sets HttpIngestUrl field to given value.
+
+### HasHttpIngestUrl
+
+`func (o *SecretProcessesorOutputConfigSettings) HasHttpIngestUrl() bool`
+
+HasHttpIngestUrl returns a boolean if a field has been set.
 
 ### GetColumnNames
 

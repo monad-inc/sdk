@@ -49,6 +49,7 @@
 |**alertsConfig** | [**PagerdutyAlertsConfig**](PagerdutyAlertsConfig.md) |  |  [optional] |
 |**defaultEventType** | **String** | EventType determines whether events are sent as &#39;change&#39; or &#39;alert&#39; events. We recommend reading the docs for this output before making this choice. |  [optional] |
 |**summaryConfig** | [**PagerdutySummaryConfig**](PagerdutySummaryConfig.md) |  |  [optional] |
+|**httpIngestUrl** | **String** |  |  [optional] |
 |**columnNames** | **List&lt;String&gt;** | The column names to write data to, must match the root fields of the data If not provided all root fields will be used |  [optional] |
 |**database** | **String** | The name of the Snowflake database to connect to and perform operations on |  [optional] |
 |**host** | **String** | The host of the PostgreSQL database |  [optional] |

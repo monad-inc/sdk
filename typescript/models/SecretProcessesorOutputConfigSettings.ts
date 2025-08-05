@@ -21,6 +21,7 @@ import { NextGenSiemSettingsConfig } from '../models/NextGenSiemSettingsConfig';
 import { ObjectStorageSettingsConfig } from '../models/ObjectStorageSettingsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { PagerdutySettingsConfig } from '../models/PagerdutySettingsConfig';
+import { PantherSettingsConfig } from '../models/PantherSettingsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
@@ -35,7 +36,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSettings = AbsSettingsConfig | AwssqsoutputSettingsConfig | BigquerySettingsConfig | CriblHttpSettingsConfig | ElasticsearchSettingsConfig | GoogleCloudStorageOutputSettingsConfig | HttpSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PostgresqlSettingsConfig | S3SettingsConfig | SecurityLakeSettingsConfig | SentinelSettingsConfig | SnowflakeOutputSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | { [key: string]: any; };
+export type SecretProcessesorOutputConfigSettings = AbsSettingsConfig | AwssqsoutputSettingsConfig | BigquerySettingsConfig | CriblHttpSettingsConfig | ElasticsearchSettingsConfig | GoogleCloudStorageOutputSettingsConfig | HttpSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PantherSettingsConfig | PostgresqlSettingsConfig | S3SettingsConfig | SecurityLakeSettingsConfig | SentinelSettingsConfig | SnowflakeOutputSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorOutputConfigSettingsClass
@@ -46,6 +47,7 @@ export class SecretProcessesorOutputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

@@ -19,6 +19,7 @@
 |**accessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**routingKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**bearerToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**connectionString** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**privateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**token** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

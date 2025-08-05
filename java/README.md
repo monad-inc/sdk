@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-08-05T20:10:07.260252409Z[Etc/UTC]
+  - Build date: 2025-08-05T22:36:20.739733386Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -473,6 +473,8 @@ Class | Method | HTTP request | Description
  - [PagerdutySummaryConfig](docs/PagerdutySummaryConfig.md)
  - [PaloAltoDataSecurityAlertsSecretsConfig](docs/PaloAltoDataSecurityAlertsSecretsConfig.md)
  - [PaloAltoDataSecurityAlertsSettingsConfig](docs/PaloAltoDataSecurityAlertsSettingsConfig.md)
+ - [PantherSecretsConfig](docs/PantherSecretsConfig.md)
+ - [PantherSettingsConfig](docs/PantherSettingsConfig.md)
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
  - [PostgresqlSecretsConfig](docs/PostgresqlSecretsConfig.md)
  - [PostgresqlSettingsConfig](docs/PostgresqlSettingsConfig.md)

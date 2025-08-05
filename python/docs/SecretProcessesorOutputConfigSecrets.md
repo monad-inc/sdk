@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **routing_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**bearer_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **connection_string** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
