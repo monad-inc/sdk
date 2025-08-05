@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Clumio Alerts settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T01:43:38.637231304Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T18:48:00.383779800Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class IndividualAlertsSettingsConfig {
   public static final String SERIALIZED_NAME_ALERT_TYPE = "alert_type";
   @SerializedName(SERIALIZED_NAME_ALERT_TYPE)
@@ -84,6 +84,11 @@ public class IndividualAlertsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
   private String status;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public IndividualAlertsSettingsConfig() {
   }
@@ -221,6 +226,25 @@ public class IndividualAlertsSettingsConfig {
   }
 
 
+  public IndividualAlertsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -237,12 +261,13 @@ public class IndividualAlertsSettingsConfig {
         Objects.equals(this.primaryEntityValue, individualAlertsSettingsConfig.primaryEntityValue) &&
         Objects.equals(this.region, individualAlertsSettingsConfig.region) &&
         Objects.equals(this.severity, individualAlertsSettingsConfig.severity) &&
-        Objects.equals(this.status, individualAlertsSettingsConfig.status);
+        Objects.equals(this.status, individualAlertsSettingsConfig.status) &&
+        Objects.equals(this.useSyntheticData, individualAlertsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(alertType, embed, primaryEntityType, primaryEntityValue, region, severity, status);
+    return Objects.hash(alertType, embed, primaryEntityType, primaryEntityValue, region, severity, status, useSyntheticData);
   }
 
   @Override
@@ -256,6 +281,7 @@ public class IndividualAlertsSettingsConfig {
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -277,7 +303,7 @@ public class IndividualAlertsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("alert_type", "embed", "primary_entity_type", "primary_entity_value", "region", "severity", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("alert_type", "embed", "primary_entity_type", "primary_entity_value", "region", "severity", "status", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

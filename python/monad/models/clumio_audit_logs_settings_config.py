@@ -27,12 +27,9 @@ class ClumioAuditLogsSettingsConfig(BaseModel):
     """
     Clumio Audit Trails settings
     """ # noqa: E501
-    bucket_region: Optional[StrictStr] = Field(default=None, description="Filter by bucket region")
-    parent_protection_group_backup_id: Optional[StrictStr] = Field(default=None, description="Filter by parent protection group backup ID")
-    protection_group_s3_asset_id: Optional[StrictStr] = Field(default=None, description="Filter by protection group S3 asset ID")
     region: Optional[StrictStr] = Field(default=None, description="The region associated with your Clumio account")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["bucket_region", "parent_protection_group_backup_id", "protection_group_s3_asset_id", "region", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["region", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,9 +82,6 @@ class ClumioAuditLogsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "bucket_region": obj.get("bucket_region"),
-            "parent_protection_group_backup_id": obj.get("parent_protection_group_backup_id"),
-            "protection_group_s3_asset_id": obj.get("protection_group_s3_asset_id"),
             "region": obj.get("region"),
             "use_synthetic_data": obj.get("use_synthetic_data")
         })

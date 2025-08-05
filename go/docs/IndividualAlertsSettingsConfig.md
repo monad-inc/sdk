@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Region** | Pointer to **string** | The region associated with your Clumio account | [optional] 
 **Severity** | Pointer to **string** | Filter by alert severity (error, warning) | [optional] 
 **Status** | Pointer to **string** | Filter by alert status (active, cleared) | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
@@ -205,6 +206,31 @@ SetStatus sets Status field to given value.
 `func (o *IndividualAlertsSettingsConfig) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *IndividualAlertsSettingsConfig) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *IndividualAlertsSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *IndividualAlertsSettingsConfig) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *IndividualAlertsSettingsConfig) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

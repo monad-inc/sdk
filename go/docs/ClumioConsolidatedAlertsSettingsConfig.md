@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ParentEntityId** | Pointer to **string** | The system-generated ID of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **ParentEntityType** | Pointer to **string** | The system-generated name of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **Region** | Pointer to **string** | The region associated with your Clumio account | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetRegion sets Region field to given value.
 `func (o *ClumioConsolidatedAlertsSettingsConfig) HasRegion() bool`
 
 HasRegion returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *ClumioConsolidatedAlertsSettingsConfig) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *ClumioConsolidatedAlertsSettingsConfig) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *ClumioConsolidatedAlertsSettingsConfig) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *ClumioConsolidatedAlertsSettingsConfig) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

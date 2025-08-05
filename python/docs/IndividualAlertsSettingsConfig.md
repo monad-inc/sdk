@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **region** | **str** | The region associated with your Clumio account | [optional] 
 **severity** | **str** | Filter by alert severity (error, warning) | [optional] 
 **status** | **str** | Filter by alert status (active, cleared) | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

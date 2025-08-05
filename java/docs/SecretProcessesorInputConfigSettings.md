@@ -64,9 +64,6 @@
 |**entityType** | **List&lt;String&gt;** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. |  [optional] |
 |**fullSnapshot** | **Boolean** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. |  [optional] |
 |**interval** | **Integer** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. |  [optional] |
-|**bucketRegion** | **String** | Filter by bucket region |  [optional] |
-|**parentProtectionGroupBackupId** | **String** | Filter by parent protection group backup ID |  [optional] |
-|**protectionGroupS3AssetId** | **String** | Filter by protection group S3 asset ID |  [optional] |
 |**parentEntityId** | **String** | The system-generated ID of the parent entity that is associated with the primary entity affected by the alert. |  [optional] |
 |**parentEntityType** | **String** | The system-generated name of the parent entity that is associated with the primary entity affected by the alert. |  [optional] |
 |**userPoolId** | **String** | User Pool ID to extract users from |  [optional] |

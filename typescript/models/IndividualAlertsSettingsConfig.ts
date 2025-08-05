@@ -44,6 +44,10 @@ export class IndividualAlertsSettingsConfig {
     * Filter by alert status (active, cleared)
     */
     'status'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -90,6 +94,12 @@ export class IndividualAlertsSettingsConfig {
             "name": "status",
             "baseName": "status",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

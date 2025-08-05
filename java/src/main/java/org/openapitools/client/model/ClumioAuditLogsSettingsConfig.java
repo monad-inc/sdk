@@ -48,23 +48,8 @@ import org.openapitools.client.JSON;
 /**
  * Clumio Audit Trails settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T01:43:38.637231304Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T18:48:00.383779800Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ClumioAuditLogsSettingsConfig {
-  public static final String SERIALIZED_NAME_BUCKET_REGION = "bucket_region";
-  @SerializedName(SERIALIZED_NAME_BUCKET_REGION)
-  @javax.annotation.Nullable
-  private String bucketRegion;
-
-  public static final String SERIALIZED_NAME_PARENT_PROTECTION_GROUP_BACKUP_ID = "parent_protection_group_backup_id";
-  @SerializedName(SERIALIZED_NAME_PARENT_PROTECTION_GROUP_BACKUP_ID)
-  @javax.annotation.Nullable
-  private String parentProtectionGroupBackupId;
-
-  public static final String SERIALIZED_NAME_PROTECTION_GROUP_S3_ASSET_ID = "protection_group_s3_asset_id";
-  @SerializedName(SERIALIZED_NAME_PROTECTION_GROUP_S3_ASSET_ID)
-  @javax.annotation.Nullable
-  private String protectionGroupS3AssetId;
-
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
   @javax.annotation.Nullable
@@ -77,63 +62,6 @@ public class ClumioAuditLogsSettingsConfig {
 
   public ClumioAuditLogsSettingsConfig() {
   }
-
-  public ClumioAuditLogsSettingsConfig bucketRegion(@javax.annotation.Nullable String bucketRegion) {
-    this.bucketRegion = bucketRegion;
-    return this;
-  }
-
-  /**
-   * Filter by bucket region
-   * @return bucketRegion
-   */
-  @javax.annotation.Nullable
-  public String getBucketRegion() {
-    return bucketRegion;
-  }
-
-  public void setBucketRegion(@javax.annotation.Nullable String bucketRegion) {
-    this.bucketRegion = bucketRegion;
-  }
-
-
-  public ClumioAuditLogsSettingsConfig parentProtectionGroupBackupId(@javax.annotation.Nullable String parentProtectionGroupBackupId) {
-    this.parentProtectionGroupBackupId = parentProtectionGroupBackupId;
-    return this;
-  }
-
-  /**
-   * Filter by parent protection group backup ID
-   * @return parentProtectionGroupBackupId
-   */
-  @javax.annotation.Nullable
-  public String getParentProtectionGroupBackupId() {
-    return parentProtectionGroupBackupId;
-  }
-
-  public void setParentProtectionGroupBackupId(@javax.annotation.Nullable String parentProtectionGroupBackupId) {
-    this.parentProtectionGroupBackupId = parentProtectionGroupBackupId;
-  }
-
-
-  public ClumioAuditLogsSettingsConfig protectionGroupS3AssetId(@javax.annotation.Nullable String protectionGroupS3AssetId) {
-    this.protectionGroupS3AssetId = protectionGroupS3AssetId;
-    return this;
-  }
-
-  /**
-   * Filter by protection group S3 asset ID
-   * @return protectionGroupS3AssetId
-   */
-  @javax.annotation.Nullable
-  public String getProtectionGroupS3AssetId() {
-    return protectionGroupS3AssetId;
-  }
-
-  public void setProtectionGroupS3AssetId(@javax.annotation.Nullable String protectionGroupS3AssetId) {
-    this.protectionGroupS3AssetId = protectionGroupS3AssetId;
-  }
-
 
   public ClumioAuditLogsSettingsConfig region(@javax.annotation.Nullable String region) {
     this.region = region;
@@ -183,25 +111,19 @@ public class ClumioAuditLogsSettingsConfig {
       return false;
     }
     ClumioAuditLogsSettingsConfig clumioAuditLogsSettingsConfig = (ClumioAuditLogsSettingsConfig) o;
-    return Objects.equals(this.bucketRegion, clumioAuditLogsSettingsConfig.bucketRegion) &&
-        Objects.equals(this.parentProtectionGroupBackupId, clumioAuditLogsSettingsConfig.parentProtectionGroupBackupId) &&
-        Objects.equals(this.protectionGroupS3AssetId, clumioAuditLogsSettingsConfig.protectionGroupS3AssetId) &&
-        Objects.equals(this.region, clumioAuditLogsSettingsConfig.region) &&
+    return Objects.equals(this.region, clumioAuditLogsSettingsConfig.region) &&
         Objects.equals(this.useSyntheticData, clumioAuditLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bucketRegion, parentProtectionGroupBackupId, protectionGroupS3AssetId, region, useSyntheticData);
+    return Objects.hash(region, useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ClumioAuditLogsSettingsConfig {\n");
-    sb.append("    bucketRegion: ").append(toIndentedString(bucketRegion)).append("\n");
-    sb.append("    parentProtectionGroupBackupId: ").append(toIndentedString(parentProtectionGroupBackupId)).append("\n");
-    sb.append("    protectionGroupS3AssetId: ").append(toIndentedString(protectionGroupS3AssetId)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
@@ -225,7 +147,7 @@ public class ClumioAuditLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("bucket_region", "parent_protection_group_backup_id", "protection_group_s3_asset_id", "region", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("region", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -252,15 +174,6 @@ public class ClumioAuditLogsSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("bucket_region") != null && !jsonObj.get("bucket_region").isJsonNull()) && !jsonObj.get("bucket_region").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bucket_region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucket_region").toString()));
-      }
-      if ((jsonObj.get("parent_protection_group_backup_id") != null && !jsonObj.get("parent_protection_group_backup_id").isJsonNull()) && !jsonObj.get("parent_protection_group_backup_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `parent_protection_group_backup_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parent_protection_group_backup_id").toString()));
-      }
-      if ((jsonObj.get("protection_group_s3_asset_id") != null && !jsonObj.get("protection_group_s3_asset_id").isJsonNull()) && !jsonObj.get("protection_group_s3_asset_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `protection_group_s3_asset_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("protection_group_s3_asset_id").toString()));
-      }
       if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }

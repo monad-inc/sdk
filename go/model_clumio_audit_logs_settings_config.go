@@ -20,12 +20,6 @@ var _ MappedNullable = &ClumioAuditLogsSettingsConfig{}
 
 // ClumioAuditLogsSettingsConfig Clumio Audit Trails settings
 type ClumioAuditLogsSettingsConfig struct {
-	// Filter by bucket region
-	BucketRegion *string `json:"bucket_region,omitempty"`
-	// Filter by parent protection group backup ID
-	ParentProtectionGroupBackupId *string `json:"parent_protection_group_backup_id,omitempty"`
-	// Filter by protection group S3 asset ID
-	ProtectionGroupS3AssetId *string `json:"protection_group_s3_asset_id,omitempty"`
 	// The region associated with your Clumio account
 	Region *string `json:"region,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -47,102 +41,6 @@ func NewClumioAuditLogsSettingsConfig() *ClumioAuditLogsSettingsConfig {
 func NewClumioAuditLogsSettingsConfigWithDefaults() *ClumioAuditLogsSettingsConfig {
 	this := ClumioAuditLogsSettingsConfig{}
 	return &this
-}
-
-// GetBucketRegion returns the BucketRegion field value if set, zero value otherwise.
-func (o *ClumioAuditLogsSettingsConfig) GetBucketRegion() string {
-	if o == nil || IsNil(o.BucketRegion) {
-		var ret string
-		return ret
-	}
-	return *o.BucketRegion
-}
-
-// GetBucketRegionOk returns a tuple with the BucketRegion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClumioAuditLogsSettingsConfig) GetBucketRegionOk() (*string, bool) {
-	if o == nil || IsNil(o.BucketRegion) {
-		return nil, false
-	}
-	return o.BucketRegion, true
-}
-
-// HasBucketRegion returns a boolean if a field has been set.
-func (o *ClumioAuditLogsSettingsConfig) HasBucketRegion() bool {
-	if o != nil && !IsNil(o.BucketRegion) {
-		return true
-	}
-
-	return false
-}
-
-// SetBucketRegion gets a reference to the given string and assigns it to the BucketRegion field.
-func (o *ClumioAuditLogsSettingsConfig) SetBucketRegion(v string) {
-	o.BucketRegion = &v
-}
-
-// GetParentProtectionGroupBackupId returns the ParentProtectionGroupBackupId field value if set, zero value otherwise.
-func (o *ClumioAuditLogsSettingsConfig) GetParentProtectionGroupBackupId() string {
-	if o == nil || IsNil(o.ParentProtectionGroupBackupId) {
-		var ret string
-		return ret
-	}
-	return *o.ParentProtectionGroupBackupId
-}
-
-// GetParentProtectionGroupBackupIdOk returns a tuple with the ParentProtectionGroupBackupId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClumioAuditLogsSettingsConfig) GetParentProtectionGroupBackupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ParentProtectionGroupBackupId) {
-		return nil, false
-	}
-	return o.ParentProtectionGroupBackupId, true
-}
-
-// HasParentProtectionGroupBackupId returns a boolean if a field has been set.
-func (o *ClumioAuditLogsSettingsConfig) HasParentProtectionGroupBackupId() bool {
-	if o != nil && !IsNil(o.ParentProtectionGroupBackupId) {
-		return true
-	}
-
-	return false
-}
-
-// SetParentProtectionGroupBackupId gets a reference to the given string and assigns it to the ParentProtectionGroupBackupId field.
-func (o *ClumioAuditLogsSettingsConfig) SetParentProtectionGroupBackupId(v string) {
-	o.ParentProtectionGroupBackupId = &v
-}
-
-// GetProtectionGroupS3AssetId returns the ProtectionGroupS3AssetId field value if set, zero value otherwise.
-func (o *ClumioAuditLogsSettingsConfig) GetProtectionGroupS3AssetId() string {
-	if o == nil || IsNil(o.ProtectionGroupS3AssetId) {
-		var ret string
-		return ret
-	}
-	return *o.ProtectionGroupS3AssetId
-}
-
-// GetProtectionGroupS3AssetIdOk returns a tuple with the ProtectionGroupS3AssetId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClumioAuditLogsSettingsConfig) GetProtectionGroupS3AssetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProtectionGroupS3AssetId) {
-		return nil, false
-	}
-	return o.ProtectionGroupS3AssetId, true
-}
-
-// HasProtectionGroupS3AssetId returns a boolean if a field has been set.
-func (o *ClumioAuditLogsSettingsConfig) HasProtectionGroupS3AssetId() bool {
-	if o != nil && !IsNil(o.ProtectionGroupS3AssetId) {
-		return true
-	}
-
-	return false
-}
-
-// SetProtectionGroupS3AssetId gets a reference to the given string and assigns it to the ProtectionGroupS3AssetId field.
-func (o *ClumioAuditLogsSettingsConfig) SetProtectionGroupS3AssetId(v string) {
-	o.ProtectionGroupS3AssetId = &v
 }
 
 // GetRegion returns the Region field value if set, zero value otherwise.
@@ -219,15 +117,6 @@ func (o ClumioAuditLogsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o ClumioAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BucketRegion) {
-		toSerialize["bucket_region"] = o.BucketRegion
-	}
-	if !IsNil(o.ParentProtectionGroupBackupId) {
-		toSerialize["parent_protection_group_backup_id"] = o.ParentProtectionGroupBackupId
-	}
-	if !IsNil(o.ProtectionGroupS3AssetId) {
-		toSerialize["protection_group_s3_asset_id"] = o.ProtectionGroupS3AssetId
-	}
 	if !IsNil(o.Region) {
 		toSerialize["region"] = o.Region
 	}

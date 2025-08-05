@@ -61,9 +61,6 @@ Name | Type | Description | Notes
 **EntityType** | Pointer to **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
 **FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
-**BucketRegion** | Pointer to **string** | Filter by bucket region | [optional] 
-**ParentProtectionGroupBackupId** | Pointer to **string** | Filter by parent protection group backup ID | [optional] 
-**ProtectionGroupS3AssetId** | Pointer to **string** | Filter by protection group S3 asset ID | [optional] 
 **ParentEntityId** | Pointer to **string** | The system-generated ID of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **ParentEntityType** | Pointer to **string** | The system-generated name of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **UserPoolId** | Pointer to **string** | User Pool ID to extract users from | [optional] 
@@ -1586,81 +1583,6 @@ SetInterval sets Interval field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasInterval() bool`
 
 HasInterval returns a boolean if a field has been set.
-
-### GetBucketRegion
-
-`func (o *SecretProcessesorInputConfigSettings) GetBucketRegion() string`
-
-GetBucketRegion returns the BucketRegion field if non-nil, zero value otherwise.
-
-### GetBucketRegionOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetBucketRegionOk() (*string, bool)`
-
-GetBucketRegionOk returns a tuple with the BucketRegion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBucketRegion
-
-`func (o *SecretProcessesorInputConfigSettings) SetBucketRegion(v string)`
-
-SetBucketRegion sets BucketRegion field to given value.
-
-### HasBucketRegion
-
-`func (o *SecretProcessesorInputConfigSettings) HasBucketRegion() bool`
-
-HasBucketRegion returns a boolean if a field has been set.
-
-### GetParentProtectionGroupBackupId
-
-`func (o *SecretProcessesorInputConfigSettings) GetParentProtectionGroupBackupId() string`
-
-GetParentProtectionGroupBackupId returns the ParentProtectionGroupBackupId field if non-nil, zero value otherwise.
-
-### GetParentProtectionGroupBackupIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetParentProtectionGroupBackupIdOk() (*string, bool)`
-
-GetParentProtectionGroupBackupIdOk returns a tuple with the ParentProtectionGroupBackupId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParentProtectionGroupBackupId
-
-`func (o *SecretProcessesorInputConfigSettings) SetParentProtectionGroupBackupId(v string)`
-
-SetParentProtectionGroupBackupId sets ParentProtectionGroupBackupId field to given value.
-
-### HasParentProtectionGroupBackupId
-
-`func (o *SecretProcessesorInputConfigSettings) HasParentProtectionGroupBackupId() bool`
-
-HasParentProtectionGroupBackupId returns a boolean if a field has been set.
-
-### GetProtectionGroupS3AssetId
-
-`func (o *SecretProcessesorInputConfigSettings) GetProtectionGroupS3AssetId() string`
-
-GetProtectionGroupS3AssetId returns the ProtectionGroupS3AssetId field if non-nil, zero value otherwise.
-
-### GetProtectionGroupS3AssetIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetProtectionGroupS3AssetIdOk() (*string, bool)`
-
-GetProtectionGroupS3AssetIdOk returns a tuple with the ProtectionGroupS3AssetId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProtectionGroupS3AssetId
-
-`func (o *SecretProcessesorInputConfigSettings) SetProtectionGroupS3AssetId(v string)`
-
-SetProtectionGroupS3AssetId sets ProtectionGroupS3AssetId field to given value.
-
-### HasProtectionGroupS3AssetId
-
-`func (o *SecretProcessesorInputConfigSettings) HasProtectionGroupS3AssetId() bool`
-
-HasProtectionGroupS3AssetId returns a boolean if a field has been set.
 
 ### GetParentEntityId
 

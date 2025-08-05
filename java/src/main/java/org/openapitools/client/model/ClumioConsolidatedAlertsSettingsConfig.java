@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Clumio Alerts settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T01:43:38.637231304Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-05T18:48:00.383779800Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ClumioConsolidatedAlertsSettingsConfig {
   public static final String SERIALIZED_NAME_PARENT_ENTITY_ID = "parent_entity_id";
   @SerializedName(SERIALIZED_NAME_PARENT_ENTITY_ID)
@@ -64,6 +64,11 @@ public class ClumioConsolidatedAlertsSettingsConfig {
   @SerializedName(SERIALIZED_NAME_REGION)
   @javax.annotation.Nullable
   private String region;
+
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
 
   public ClumioConsolidatedAlertsSettingsConfig() {
   }
@@ -125,6 +130,25 @@ public class ClumioConsolidatedAlertsSettingsConfig {
   }
 
 
+  public ClumioConsolidatedAlertsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic demo data instead of connecting to the real data source.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -137,12 +161,13 @@ public class ClumioConsolidatedAlertsSettingsConfig {
     ClumioConsolidatedAlertsSettingsConfig clumioConsolidatedAlertsSettingsConfig = (ClumioConsolidatedAlertsSettingsConfig) o;
     return Objects.equals(this.parentEntityId, clumioConsolidatedAlertsSettingsConfig.parentEntityId) &&
         Objects.equals(this.parentEntityType, clumioConsolidatedAlertsSettingsConfig.parentEntityType) &&
-        Objects.equals(this.region, clumioConsolidatedAlertsSettingsConfig.region);
+        Objects.equals(this.region, clumioConsolidatedAlertsSettingsConfig.region) &&
+        Objects.equals(this.useSyntheticData, clumioConsolidatedAlertsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(parentEntityId, parentEntityType, region);
+    return Objects.hash(parentEntityId, parentEntityType, region, useSyntheticData);
   }
 
   @Override
@@ -152,6 +177,7 @@ public class ClumioConsolidatedAlertsSettingsConfig {
     sb.append("    parentEntityId: ").append(toIndentedString(parentEntityId)).append("\n");
     sb.append("    parentEntityType: ").append(toIndentedString(parentEntityType)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -173,7 +199,7 @@ public class ClumioConsolidatedAlertsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("parent_entity_id", "parent_entity_type", "region"));
+    openapiFields = new HashSet<String>(Arrays.asList("parent_entity_id", "parent_entity_type", "region", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

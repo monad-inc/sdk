@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **parent_entity_id** | **str** | The system-generated ID of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **parent_entity_type** | **str** | The system-generated name of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **region** | **str** | The region associated with your Clumio account | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example
 

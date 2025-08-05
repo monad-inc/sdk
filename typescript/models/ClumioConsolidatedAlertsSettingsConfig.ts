@@ -28,6 +28,10 @@ export class ClumioConsolidatedAlertsSettingsConfig {
     * The region associated with your Clumio account
     */
     'region'?: string;
+    /**
+    * Generate synthetic demo data instead of connecting to the real data source.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -50,6 +54,12 @@ export class ClumioConsolidatedAlertsSettingsConfig {
             "name": "region",
             "baseName": "region",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

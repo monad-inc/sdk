@@ -17,18 +17,6 @@ import { HttpFile } from '../http/http';
 */
 export class ClumioAuditLogsSettingsConfig {
     /**
-    * Filter by bucket region
-    */
-    'bucketRegion'?: string;
-    /**
-    * Filter by parent protection group backup ID
-    */
-    'parentProtectionGroupBackupId'?: string;
-    /**
-    * Filter by protection group S3 asset ID
-    */
-    'protectionGroupS3AssetId'?: string;
-    /**
     * The region associated with your Clumio account
     */
     'region'?: string;
@@ -42,24 +30,6 @@ export class ClumioAuditLogsSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "bucketRegion",
-            "baseName": "bucket_region",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "parentProtectionGroupBackupId",
-            "baseName": "parent_protection_group_backup_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "protectionGroupS3AssetId",
-            "baseName": "protection_group_s3_asset_id",
-            "type": "string",
-            "format": ""
-        },
         {
             "name": "region",
             "baseName": "region",

@@ -26,6 +26,8 @@ type ClumioConsolidatedAlertsSettingsConfig struct {
 	ParentEntityType *string `json:"parent_entity_type,omitempty"`
 	// The region associated with your Clumio account
 	Region *string `json:"region,omitempty"`
+	// Generate synthetic demo data instead of connecting to the real data source.
+	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
 
 // NewClumioConsolidatedAlertsSettingsConfig instantiates a new ClumioConsolidatedAlertsSettingsConfig object
@@ -141,6 +143,38 @@ func (o *ClumioConsolidatedAlertsSettingsConfig) SetRegion(v string) {
 	o.Region = &v
 }
 
+// GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
+func (o *ClumioConsolidatedAlertsSettingsConfig) GetUseSyntheticData() bool {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		var ret bool
+		return ret
+	}
+	return *o.UseSyntheticData
+}
+
+// GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClumioConsolidatedAlertsSettingsConfig) GetUseSyntheticDataOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseSyntheticData) {
+		return nil, false
+	}
+	return o.UseSyntheticData, true
+}
+
+// HasUseSyntheticData returns a boolean if a field has been set.
+func (o *ClumioConsolidatedAlertsSettingsConfig) HasUseSyntheticData() bool {
+	if o != nil && !IsNil(o.UseSyntheticData) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseSyntheticData gets a reference to the given bool and assigns it to the UseSyntheticData field.
+func (o *ClumioConsolidatedAlertsSettingsConfig) SetUseSyntheticData(v bool) {
+	o.UseSyntheticData = &v
+}
+
 func (o ClumioConsolidatedAlertsSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -159,6 +193,9 @@ func (o ClumioConsolidatedAlertsSettingsConfig) ToMap() (map[string]interface{},
 	}
 	if !IsNil(o.Region) {
 		toSerialize["region"] = o.Region
+	}
+	if !IsNil(o.UseSyntheticData) {
+		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}
 	return toSerialize, nil
 }

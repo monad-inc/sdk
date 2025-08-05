@@ -6,9 +6,6 @@ Clumio Audit Trails settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bucket_region** | **str** | Filter by bucket region | [optional] 
-**parent_protection_group_backup_id** | **str** | Filter by parent protection group backup ID | [optional] 
-**protection_group_s3_asset_id** | **str** | Filter by protection group S3 asset ID | [optional] 
 **region** | **str** | The region associated with your Clumio account | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 

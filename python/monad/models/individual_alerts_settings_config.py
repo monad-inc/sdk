@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,7 +34,8 @@ class IndividualAlertsSettingsConfig(BaseModel):
     region: Optional[StrictStr] = Field(default=None, description="The region associated with your Clumio account")
     severity: Optional[StrictStr] = Field(default=None, description="Filter by alert severity (error, warning)")
     status: Optional[StrictStr] = Field(default=None, description="Filter by alert status (active, cleared)")
-    __properties: ClassVar[List[str]] = ["alert_type", "embed", "primary_entity_type", "primary_entity_value", "region", "severity", "status"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["alert_type", "embed", "primary_entity_type", "primary_entity_value", "region", "severity", "status", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,7 +94,8 @@ class IndividualAlertsSettingsConfig(BaseModel):
             "primary_entity_value": obj.get("primary_entity_value"),
             "region": obj.get("region"),
             "severity": obj.get("severity"),
-            "status": obj.get("status")
+            "status": obj.get("status"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

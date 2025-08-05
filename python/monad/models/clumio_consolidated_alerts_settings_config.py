@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,8 @@ class ClumioConsolidatedAlertsSettingsConfig(BaseModel):
     parent_entity_id: Optional[StrictStr] = Field(default=None, description="The system-generated ID of the parent entity that is associated with the primary entity affected by the alert.")
     parent_entity_type: Optional[StrictStr] = Field(default=None, description="The system-generated name of the parent entity that is associated with the primary entity affected by the alert.")
     region: Optional[StrictStr] = Field(default=None, description="The region associated with your Clumio account")
-    __properties: ClassVar[List[str]] = ["parent_entity_id", "parent_entity_type", "region"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
+    __properties: ClassVar[List[str]] = ["parent_entity_id", "parent_entity_type", "region", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,7 +86,8 @@ class ClumioConsolidatedAlertsSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "parent_entity_id": obj.get("parent_entity_id"),
             "parent_entity_type": obj.get("parent_entity_type"),
-            "region": obj.get("region")
+            "region": obj.get("region"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 
