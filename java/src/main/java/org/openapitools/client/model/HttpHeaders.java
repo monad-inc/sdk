@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * HttpHeaders
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-06T22:40:14.655547816Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-06T23:32:29.239235574Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class HttpHeaders {
   public static final String SERIALIZED_NAME_HEADER_KEY = "header_key";
   @SerializedName(SERIALIZED_NAME_HEADER_KEY)
