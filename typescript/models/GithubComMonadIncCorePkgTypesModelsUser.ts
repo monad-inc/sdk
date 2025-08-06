@@ -10,10 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { ModelsUserAuthProvider } from '../models/ModelsUserAuthProvider';
 import { HttpFile } from '../http/http';
 
 export class GithubComMonadIncCorePkgTypesModelsUser {
-    'authId'?: string;
+    'authProviders'?: Array<ModelsUserAuthProvider>;
     'createdAt'?: string;
     'email'?: string;
     'id'?: string;
@@ -26,9 +27,9 @@ export class GithubComMonadIncCorePkgTypesModelsUser {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "authId",
-            "baseName": "auth_id",
-            "type": "string",
+            "name": "authProviders",
+            "baseName": "auth_providers",
+            "type": "Array<ModelsUserAuthProvider>",
             "format": ""
         },
         {

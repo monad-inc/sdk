@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auth_id** | **str** |  | [optional] 
+**auth_providers** | [**List[ModelsUserAuthProvider]**](ModelsUserAuthProvider.md) |  | [optional] 
 **connection_id** | **str** |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 

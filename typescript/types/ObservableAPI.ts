@@ -192,6 +192,7 @@ import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
+import { ModelsUserAuthProvider } from '../models/ModelsUserAuthProvider';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
@@ -245,6 +246,7 @@ import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizat
 import { RoutesUpdatePipelineRequest } from '../models/RoutesUpdatePipelineRequest';
 import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformRequest';
 import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUserInOrganizationRequest';
+import { RoutesUserAuthProvider } from '../models/RoutesUserAuthProvider';
 import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';

@@ -20,10 +20,13 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.openapitools.client.model.ModelsUserRoleWithPermissions;
+import org.openapitools.client.model.RoutesUserAuthProvider;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,12 +54,12 @@ import org.openapitools.client.JSON;
 /**
  * RoutesUserWithRoles
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-06T20:46:53.463936844Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-06T21:50:04.115934806Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class RoutesUserWithRoles {
-  public static final String SERIALIZED_NAME_AUTH_ID = "auth_id";
-  @SerializedName(SERIALIZED_NAME_AUTH_ID)
+  public static final String SERIALIZED_NAME_AUTH_PROVIDERS = "auth_providers";
+  @SerializedName(SERIALIZED_NAME_AUTH_PROVIDERS)
   @javax.annotation.Nullable
-  private String authId;
+  private List<RoutesUserAuthProvider> authProviders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -91,22 +94,30 @@ public class RoutesUserWithRoles {
   public RoutesUserWithRoles() {
   }
 
-  public RoutesUserWithRoles authId(@javax.annotation.Nullable String authId) {
-    this.authId = authId;
+  public RoutesUserWithRoles authProviders(@javax.annotation.Nullable List<RoutesUserAuthProvider> authProviders) {
+    this.authProviders = authProviders;
+    return this;
+  }
+
+  public RoutesUserWithRoles addAuthProvidersItem(RoutesUserAuthProvider authProvidersItem) {
+    if (this.authProviders == null) {
+      this.authProviders = new ArrayList<>();
+    }
+    this.authProviders.add(authProvidersItem);
     return this;
   }
 
   /**
-   * Get authId
-   * @return authId
+   * Get authProviders
+   * @return authProviders
    */
   @javax.annotation.Nullable
-  public String getAuthId() {
-    return authId;
+  public List<RoutesUserAuthProvider> getAuthProviders() {
+    return authProviders;
   }
 
-  public void setAuthId(@javax.annotation.Nullable String authId) {
-    this.authId = authId;
+  public void setAuthProviders(@javax.annotation.Nullable List<RoutesUserAuthProvider> authProviders) {
+    this.authProviders = authProviders;
   }
 
 
@@ -242,7 +253,7 @@ public class RoutesUserWithRoles {
       return false;
     }
     RoutesUserWithRoles routesUserWithRoles = (RoutesUserWithRoles) o;
-    return Objects.equals(this.authId, routesUserWithRoles.authId) &&
+    return Objects.equals(this.authProviders, routesUserWithRoles.authProviders) &&
         Objects.equals(this.createdAt, routesUserWithRoles.createdAt) &&
         Objects.equals(this.email, routesUserWithRoles.email) &&
         Objects.equals(this.id, routesUserWithRoles.id) &&
@@ -253,14 +264,14 @@ public class RoutesUserWithRoles {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authId, createdAt, email, id, organizationRoles, updatedAt, username);
+    return Objects.hash(authProviders, createdAt, email, id, organizationRoles, updatedAt, username);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesUserWithRoles {\n");
-    sb.append("    authId: ").append(toIndentedString(authId)).append("\n");
+    sb.append("    authProviders: ").append(toIndentedString(authProviders)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -288,7 +299,7 @@ public class RoutesUserWithRoles {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_id", "created_at", "email", "id", "organization_roles", "updated_at", "username"));
+    openapiFields = new HashSet<String>(Arrays.asList("auth_providers", "created_at", "email", "id", "organization_roles", "updated_at", "username"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -315,8 +326,19 @@ public class RoutesUserWithRoles {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("auth_id") != null && !jsonObj.get("auth_id").isJsonNull()) && !jsonObj.get("auth_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `auth_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_id").toString()));
+      if (jsonObj.get("auth_providers") != null && !jsonObj.get("auth_providers").isJsonNull()) {
+        JsonArray jsonArrayauthProviders = jsonObj.getAsJsonArray("auth_providers");
+        if (jsonArrayauthProviders != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("auth_providers").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `auth_providers` to be an array in the JSON string but got `%s`", jsonObj.get("auth_providers").toString()));
+          }
+
+          // validate the optional field `auth_providers` (array)
+          for (int i = 0; i < jsonArrayauthProviders.size(); i++) {
+            RoutesUserAuthProvider.validateJsonElement(jsonArrayauthProviders.get(i));
+          };
+        }
       }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

@@ -20,7 +20,10 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.openapitools.client.model.ModelsUserAuthProvider;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,12 +51,12 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganizationUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-06T20:46:53.463936844Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-06T21:50:04.115934806Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsOrganizationUser {
-  public static final String SERIALIZED_NAME_AUTH_ID = "auth_id";
-  @SerializedName(SERIALIZED_NAME_AUTH_ID)
+  public static final String SERIALIZED_NAME_AUTH_PROVIDERS = "auth_providers";
+  @SerializedName(SERIALIZED_NAME_AUTH_PROVIDERS)
   @javax.annotation.Nullable
-  private String authId;
+  private List<ModelsUserAuthProvider> authProviders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONNECTION_ID = "connection_id";
   @SerializedName(SERIALIZED_NAME_CONNECTION_ID)
@@ -93,22 +96,30 @@ public class ModelsOrganizationUser {
   public ModelsOrganizationUser() {
   }
 
-  public ModelsOrganizationUser authId(@javax.annotation.Nullable String authId) {
-    this.authId = authId;
+  public ModelsOrganizationUser authProviders(@javax.annotation.Nullable List<ModelsUserAuthProvider> authProviders) {
+    this.authProviders = authProviders;
+    return this;
+  }
+
+  public ModelsOrganizationUser addAuthProvidersItem(ModelsUserAuthProvider authProvidersItem) {
+    if (this.authProviders == null) {
+      this.authProviders = new ArrayList<>();
+    }
+    this.authProviders.add(authProvidersItem);
     return this;
   }
 
   /**
-   * Get authId
-   * @return authId
+   * Get authProviders
+   * @return authProviders
    */
   @javax.annotation.Nullable
-  public String getAuthId() {
-    return authId;
+  public List<ModelsUserAuthProvider> getAuthProviders() {
+    return authProviders;
   }
 
-  public void setAuthId(@javax.annotation.Nullable String authId) {
-    this.authId = authId;
+  public void setAuthProviders(@javax.annotation.Nullable List<ModelsUserAuthProvider> authProviders) {
+    this.authProviders = authProviders;
   }
 
 
@@ -255,7 +266,7 @@ public class ModelsOrganizationUser {
       return false;
     }
     ModelsOrganizationUser modelsOrganizationUser = (ModelsOrganizationUser) o;
-    return Objects.equals(this.authId, modelsOrganizationUser.authId) &&
+    return Objects.equals(this.authProviders, modelsOrganizationUser.authProviders) &&
         Objects.equals(this.connectionId, modelsOrganizationUser.connectionId) &&
         Objects.equals(this.createdAt, modelsOrganizationUser.createdAt) &&
         Objects.equals(this.email, modelsOrganizationUser.email) &&
@@ -267,14 +278,14 @@ public class ModelsOrganizationUser {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authId, connectionId, createdAt, email, id, roleId, updatedAt, username);
+    return Objects.hash(authProviders, connectionId, createdAt, email, id, roleId, updatedAt, username);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsOrganizationUser {\n");
-    sb.append("    authId: ").append(toIndentedString(authId)).append("\n");
+    sb.append("    authProviders: ").append(toIndentedString(authProviders)).append("\n");
     sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
@@ -303,7 +314,7 @@ public class ModelsOrganizationUser {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_id", "connection_id", "created_at", "email", "id", "role_id", "updated_at", "username"));
+    openapiFields = new HashSet<String>(Arrays.asList("auth_providers", "connection_id", "created_at", "email", "id", "role_id", "updated_at", "username"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -330,8 +341,19 @@ public class ModelsOrganizationUser {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("auth_id") != null && !jsonObj.get("auth_id").isJsonNull()) && !jsonObj.get("auth_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `auth_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_id").toString()));
+      if (jsonObj.get("auth_providers") != null && !jsonObj.get("auth_providers").isJsonNull()) {
+        JsonArray jsonArrayauthProviders = jsonObj.getAsJsonArray("auth_providers");
+        if (jsonArrayauthProviders != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("auth_providers").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `auth_providers` to be an array in the JSON string but got `%s`", jsonObj.get("auth_providers").toString()));
+          }
+
+          // validate the optional field `auth_providers` (array)
+          for (int i = 0; i < jsonArrayauthProviders.size(); i++) {
+            ModelsUserAuthProvider.validateJsonElement(jsonArrayauthProviders.get(i));
+          };
+        }
       }
       if ((jsonObj.get("connection_id") != null && !jsonObj.get("connection_id").isJsonNull()) && !jsonObj.get("connection_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `connection_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connection_id").toString()));

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthId** | Pointer to **string** |  | [optional] 
+**AuthProviders** | Pointer to [**[]ModelsUserAuthProvider**](ModelsUserAuthProvider.md) |  | [optional] 
 **ConnectionId** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
@@ -32,30 +32,30 @@ NewModelsOrganizationUserWithDefaults instantiates a new ModelsOrganizationUser 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAuthId
+### GetAuthProviders
 
-`func (o *ModelsOrganizationUser) GetAuthId() string`
+`func (o *ModelsOrganizationUser) GetAuthProviders() []ModelsUserAuthProvider`
 
-GetAuthId returns the AuthId field if non-nil, zero value otherwise.
+GetAuthProviders returns the AuthProviders field if non-nil, zero value otherwise.
 
-### GetAuthIdOk
+### GetAuthProvidersOk
 
-`func (o *ModelsOrganizationUser) GetAuthIdOk() (*string, bool)`
+`func (o *ModelsOrganizationUser) GetAuthProvidersOk() (*[]ModelsUserAuthProvider, bool)`
 
-GetAuthIdOk returns a tuple with the AuthId field if it's non-nil, zero value otherwise
+GetAuthProvidersOk returns a tuple with the AuthProviders field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAuthId
+### SetAuthProviders
 
-`func (o *ModelsOrganizationUser) SetAuthId(v string)`
+`func (o *ModelsOrganizationUser) SetAuthProviders(v []ModelsUserAuthProvider)`
 
-SetAuthId sets AuthId field to given value.
+SetAuthProviders sets AuthProviders field to given value.
 
-### HasAuthId
+### HasAuthProviders
 
-`func (o *ModelsOrganizationUser) HasAuthId() bool`
+`func (o *ModelsOrganizationUser) HasAuthProviders() bool`
 
-HasAuthId returns a boolean if a field has been set.
+HasAuthProviders returns a boolean if a field has been set.
 
 ### GetConnectionId
 

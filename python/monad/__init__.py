@@ -249,6 +249,7 @@ __all__ = [
     "ModelsTransformOperation",
     "ModelsTransformsRepositoryList",
     "ModelsTransformsRepositoryTransform",
+    "ModelsUserAuthProvider",
     "ModelsUserRoleWithPermissions",
     "MonadLogSettingsConfig",
     "MutateTypeMutateType",
@@ -302,6 +303,7 @@ __all__ = [
     "RoutesUpdatePipelineRequest",
     "RoutesUpdateTransformRequest",
     "RoutesUpdateUserInOrganizationRequest",
+    "RoutesUserAuthProvider",
     "RoutesUserWithRoles",
     "RoutesV2ApplyTransformationRequest",
     "RoutesV2ApplyTransformationResponse",
@@ -672,6 +674,7 @@ from monad.models.models_transform_list import ModelsTransformList as ModelsTran
 from monad.models.models_transform_operation import ModelsTransformOperation as ModelsTransformOperation
 from monad.models.models_transforms_repository_list import ModelsTransformsRepositoryList as ModelsTransformsRepositoryList
 from monad.models.models_transforms_repository_transform import ModelsTransformsRepositoryTransform as ModelsTransformsRepositoryTransform
+from monad.models.models_user_auth_provider import ModelsUserAuthProvider as ModelsUserAuthProvider
 from monad.models.models_user_role_with_permissions import ModelsUserRoleWithPermissions as ModelsUserRoleWithPermissions
 from monad.models.monad_log_settings_config import MonadLogSettingsConfig as MonadLogSettingsConfig
 from monad.models.mutate_type_mutate_type import MutateTypeMutateType as MutateTypeMutateType
@@ -725,6 +728,7 @@ from monad.models.routes_update_organization_request import RoutesUpdateOrganiza
 from monad.models.routes_update_pipeline_request import RoutesUpdatePipelineRequest as RoutesUpdatePipelineRequest
 from monad.models.routes_update_transform_request import RoutesUpdateTransformRequest as RoutesUpdateTransformRequest
 from monad.models.routes_update_user_in_organization_request import RoutesUpdateUserInOrganizationRequest as RoutesUpdateUserInOrganizationRequest
+from monad.models.routes_user_auth_provider import RoutesUserAuthProvider as RoutesUserAuthProvider
 from monad.models.routes_user_with_roles import RoutesUserWithRoles as RoutesUserWithRoles
 from monad.models.routes_v2_apply_transformation_request import RoutesV2ApplyTransformationRequest as RoutesV2ApplyTransformationRequest
 from monad.models.routes_v2_apply_transformation_response import RoutesV2ApplyTransformationResponse as RoutesV2ApplyTransformationResponse

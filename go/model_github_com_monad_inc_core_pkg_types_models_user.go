@@ -20,7 +20,7 @@ var _ MappedNullable = &GithubComMonadIncCorePkgTypesModelsUser{}
 
 // GithubComMonadIncCorePkgTypesModelsUser struct for GithubComMonadIncCorePkgTypesModelsUser
 type GithubComMonadIncCorePkgTypesModelsUser struct {
-	AuthId *string `json:"auth_id,omitempty"`
+	AuthProviders []ModelsUserAuthProvider `json:"auth_providers,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Email *string `json:"email,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -45,36 +45,36 @@ func NewGithubComMonadIncCorePkgTypesModelsUserWithDefaults() *GithubComMonadInc
 	return &this
 }
 
-// GetAuthId returns the AuthId field value if set, zero value otherwise.
-func (o *GithubComMonadIncCorePkgTypesModelsUser) GetAuthId() string {
-	if o == nil || IsNil(o.AuthId) {
-		var ret string
+// GetAuthProviders returns the AuthProviders field value if set, zero value otherwise.
+func (o *GithubComMonadIncCorePkgTypesModelsUser) GetAuthProviders() []ModelsUserAuthProvider {
+	if o == nil || IsNil(o.AuthProviders) {
+		var ret []ModelsUserAuthProvider
 		return ret
 	}
-	return *o.AuthId
+	return o.AuthProviders
 }
 
-// GetAuthIdOk returns a tuple with the AuthId field value if set, nil otherwise
+// GetAuthProvidersOk returns a tuple with the AuthProviders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComMonadIncCorePkgTypesModelsUser) GetAuthIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthId) {
+func (o *GithubComMonadIncCorePkgTypesModelsUser) GetAuthProvidersOk() ([]ModelsUserAuthProvider, bool) {
+	if o == nil || IsNil(o.AuthProviders) {
 		return nil, false
 	}
-	return o.AuthId, true
+	return o.AuthProviders, true
 }
 
-// HasAuthId returns a boolean if a field has been set.
-func (o *GithubComMonadIncCorePkgTypesModelsUser) HasAuthId() bool {
-	if o != nil && !IsNil(o.AuthId) {
+// HasAuthProviders returns a boolean if a field has been set.
+func (o *GithubComMonadIncCorePkgTypesModelsUser) HasAuthProviders() bool {
+	if o != nil && !IsNil(o.AuthProviders) {
 		return true
 	}
 
 	return false
 }
 
-// SetAuthId gets a reference to the given string and assigns it to the AuthId field.
-func (o *GithubComMonadIncCorePkgTypesModelsUser) SetAuthId(v string) {
-	o.AuthId = &v
+// SetAuthProviders gets a reference to the given []ModelsUserAuthProvider and assigns it to the AuthProviders field.
+func (o *GithubComMonadIncCorePkgTypesModelsUser) SetAuthProviders(v []ModelsUserAuthProvider) {
+	o.AuthProviders = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -247,8 +247,8 @@ func (o GithubComMonadIncCorePkgTypesModelsUser) MarshalJSON() ([]byte, error) {
 
 func (o GithubComMonadIncCorePkgTypesModelsUser) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthId) {
-		toSerialize["auth_id"] = o.AuthId
+	if !IsNil(o.AuthProviders) {
+		toSerialize["auth_providers"] = o.AuthProviders
 	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt

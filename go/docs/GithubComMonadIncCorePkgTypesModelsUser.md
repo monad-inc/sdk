@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthId** | Pointer to **string** |  | [optional] 
+**AuthProviders** | Pointer to [**[]ModelsUserAuthProvider**](ModelsUserAuthProvider.md) |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -30,30 +30,30 @@ NewGithubComMonadIncCorePkgTypesModelsUserWithDefaults instantiates a new Github
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAuthId
+### GetAuthProviders
 
-`func (o *GithubComMonadIncCorePkgTypesModelsUser) GetAuthId() string`
+`func (o *GithubComMonadIncCorePkgTypesModelsUser) GetAuthProviders() []ModelsUserAuthProvider`
 
-GetAuthId returns the AuthId field if non-nil, zero value otherwise.
+GetAuthProviders returns the AuthProviders field if non-nil, zero value otherwise.
 
-### GetAuthIdOk
+### GetAuthProvidersOk
 
-`func (o *GithubComMonadIncCorePkgTypesModelsUser) GetAuthIdOk() (*string, bool)`
+`func (o *GithubComMonadIncCorePkgTypesModelsUser) GetAuthProvidersOk() (*[]ModelsUserAuthProvider, bool)`
 
-GetAuthIdOk returns a tuple with the AuthId field if it's non-nil, zero value otherwise
+GetAuthProvidersOk returns a tuple with the AuthProviders field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAuthId
+### SetAuthProviders
 
-`func (o *GithubComMonadIncCorePkgTypesModelsUser) SetAuthId(v string)`
+`func (o *GithubComMonadIncCorePkgTypesModelsUser) SetAuthProviders(v []ModelsUserAuthProvider)`
 
-SetAuthId sets AuthId field to given value.
+SetAuthProviders sets AuthProviders field to given value.
 
-### HasAuthId
+### HasAuthProviders
 
-`func (o *GithubComMonadIncCorePkgTypesModelsUser) HasAuthId() bool`
+`func (o *GithubComMonadIncCorePkgTypesModelsUser) HasAuthProviders() bool`
 
-HasAuthId returns a boolean if a field has been set.
+HasAuthProviders returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

@@ -187,6 +187,7 @@ export * from '../models/ModelsTransformList';
 export * from '../models/ModelsTransformOperation';
 export * from '../models/ModelsTransformsRepositoryList';
 export * from '../models/ModelsTransformsRepositoryTransform';
+export * from '../models/ModelsUserAuthProvider';
 export * from '../models/ModelsUserRoleWithPermissions';
 export * from '../models/MonadLogSettingsConfig';
 export * from '../models/MutateTypeMutateType';
@@ -240,6 +241,7 @@ export * from '../models/RoutesUpdateOrganizationRequest';
 export * from '../models/RoutesUpdatePipelineRequest';
 export * from '../models/RoutesUpdateTransformRequest';
 export * from '../models/RoutesUpdateUserInOrganizationRequest';
+export * from '../models/RoutesUserAuthProvider';
 export * from '../models/RoutesUserWithRoles';
 export * from '../models/RoutesV2ApplyTransformationRequest';
 export * from '../models/RoutesV2ApplyTransformationResponse';
@@ -563,6 +565,7 @@ import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
+import { ModelsUserAuthProvider } from '../models/ModelsUserAuthProvider';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
@@ -616,6 +619,7 @@ import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizat
 import { RoutesUpdatePipelineRequest } from '../models/RoutesUpdatePipelineRequest';
 import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformRequest';
 import { RoutesUpdateUserInOrganizationRequest } from '../models/RoutesUpdateUserInOrganizationRequest';
+import { RoutesUserAuthProvider } from '../models/RoutesUserAuthProvider';
 import { RoutesUserWithRoles } from '../models/RoutesUserWithRoles';
 import { RoutesV2ApplyTransformationRequest } from '../models/RoutesV2ApplyTransformationRequest';
 import { RoutesV2ApplyTransformationResponse } from '../models/RoutesV2ApplyTransformationResponse';
@@ -965,6 +969,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsTransformOperation": ModelsTransformOperation,
     "ModelsTransformsRepositoryList": ModelsTransformsRepositoryList,
     "ModelsTransformsRepositoryTransform": ModelsTransformsRepositoryTransform,
+    "ModelsUserAuthProvider": ModelsUserAuthProvider,
     "ModelsUserRoleWithPermissions": ModelsUserRoleWithPermissions,
     "MonadLogSettingsConfig": MonadLogSettingsConfig,
     "MutateTypeMutateType": MutateTypeMutateType,
@@ -1018,6 +1023,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesUpdatePipelineRequest": RoutesUpdatePipelineRequest,
     "RoutesUpdateTransformRequest": RoutesUpdateTransformRequest,
     "RoutesUpdateUserInOrganizationRequest": RoutesUpdateUserInOrganizationRequest,
+    "RoutesUserAuthProvider": RoutesUserAuthProvider,
     "RoutesUserWithRoles": RoutesUserWithRoles,
     "RoutesV2ApplyTransformationRequest": RoutesV2ApplyTransformationRequest,
     "RoutesV2ApplyTransformationResponse": RoutesV2ApplyTransformationResponse,

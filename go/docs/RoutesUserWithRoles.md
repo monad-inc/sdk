@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthId** | Pointer to **string** |  | [optional] 
+**AuthProviders** | Pointer to [**[]RoutesUserAuthProvider**](RoutesUserAuthProvider.md) |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -31,30 +31,30 @@ NewRoutesUserWithRolesWithDefaults instantiates a new RoutesUserWithRoles object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAuthId
+### GetAuthProviders
 
-`func (o *RoutesUserWithRoles) GetAuthId() string`
+`func (o *RoutesUserWithRoles) GetAuthProviders() []RoutesUserAuthProvider`
 
-GetAuthId returns the AuthId field if non-nil, zero value otherwise.
+GetAuthProviders returns the AuthProviders field if non-nil, zero value otherwise.
 
-### GetAuthIdOk
+### GetAuthProvidersOk
 
-`func (o *RoutesUserWithRoles) GetAuthIdOk() (*string, bool)`
+`func (o *RoutesUserWithRoles) GetAuthProvidersOk() (*[]RoutesUserAuthProvider, bool)`
 
-GetAuthIdOk returns a tuple with the AuthId field if it's non-nil, zero value otherwise
+GetAuthProvidersOk returns a tuple with the AuthProviders field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAuthId
+### SetAuthProviders
 
-`func (o *RoutesUserWithRoles) SetAuthId(v string)`
+`func (o *RoutesUserWithRoles) SetAuthProviders(v []RoutesUserAuthProvider)`
 
-SetAuthId sets AuthId field to given value.
+SetAuthProviders sets AuthProviders field to given value.
 
-### HasAuthId
+### HasAuthProviders
 
-`func (o *RoutesUserWithRoles) HasAuthId() bool`
+`func (o *RoutesUserWithRoles) HasAuthProviders() bool`
 
-HasAuthId returns a boolean if a field has been set.
+HasAuthProviders returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

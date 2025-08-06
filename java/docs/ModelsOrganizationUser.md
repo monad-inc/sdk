@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**authId** | **String** |  |  [optional] |
+|**authProviders** | [**List&lt;ModelsUserAuthProvider&gt;**](ModelsUserAuthProvider.md) |  |  [optional] |
 |**connectionId** | **String** |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
 |**email** | **String** |  |  [optional] |

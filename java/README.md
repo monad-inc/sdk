@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-08-06T20:46:53.463936844Z[Etc/UTC]
+  - Build date: 2025-08-06T21:50:04.115934806Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -446,6 +446,7 @@ Class | Method | HTTP request | Description
  - [ModelsTransformOperation](docs/ModelsTransformOperation.md)
  - [ModelsTransformsRepositoryList](docs/ModelsTransformsRepositoryList.md)
  - [ModelsTransformsRepositoryTransform](docs/ModelsTransformsRepositoryTransform.md)
+ - [ModelsUserAuthProvider](docs/ModelsUserAuthProvider.md)
  - [ModelsUserRoleWithPermissions](docs/ModelsUserRoleWithPermissions.md)
  - [MonadLogSettingsConfig](docs/MonadLogSettingsConfig.md)
  - [MutateTypeMutateType](docs/MutateTypeMutateType.md)
@@ -499,6 +500,7 @@ Class | Method | HTTP request | Description
  - [RoutesUpdatePipelineRequest](docs/RoutesUpdatePipelineRequest.md)
  - [RoutesUpdateTransformRequest](docs/RoutesUpdateTransformRequest.md)
  - [RoutesUpdateUserInOrganizationRequest](docs/RoutesUpdateUserInOrganizationRequest.md)
+ - [RoutesUserAuthProvider](docs/RoutesUserAuthProvider.md)
  - [RoutesUserWithRoles](docs/RoutesUserWithRoles.md)
  - [RoutesV2ApplyTransformationRequest](docs/RoutesV2ApplyTransformationRequest.md)
  - [RoutesV2ApplyTransformationResponse](docs/RoutesV2ApplyTransformationResponse.md)

@@ -11,10 +11,11 @@
  */
 
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
+import { RoutesUserAuthProvider } from '../models/RoutesUserAuthProvider';
 import { HttpFile } from '../http/http';
 
 export class RoutesUserWithRoles {
-    'authId'?: string;
+    'authProviders'?: Array<RoutesUserAuthProvider>;
     'createdAt'?: string;
     'email'?: string;
     'id'?: string;
@@ -28,9 +29,9 @@ export class RoutesUserWithRoles {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "authId",
-            "baseName": "auth_id",
-            "type": "string",
+            "name": "authProviders",
+            "baseName": "auth_providers",
+            "type": "Array<RoutesUserAuthProvider>",
             "format": ""
         },
         {
