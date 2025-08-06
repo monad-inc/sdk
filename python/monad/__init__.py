@@ -427,6 +427,8 @@ __all__ = [
     "UsersSecretsConfig",
     "UsersSettingsConfig",
     "UtcTimestampTimestamp",
+    "VercelUserEventsSecretsConfig",
+    "VercelUserEventsSettingsConfig",
     "VulnerabilitiesCronSecretsConfig",
     "VulnerabilitiesCronSettingsConfig",
     "VulnerabilitiesSecretsConfig",
@@ -848,6 +850,8 @@ from monad.models.users_info_settings_config import UsersInfoSettingsConfig as U
 from monad.models.users_secrets_config import UsersSecretsConfig as UsersSecretsConfig
 from monad.models.users_settings_config import UsersSettingsConfig as UsersSettingsConfig
 from monad.models.utc_timestamp_timestamp import UtcTimestampTimestamp as UtcTimestampTimestamp
+from monad.models.vercel_user_events_secrets_config import VercelUserEventsSecretsConfig as VercelUserEventsSecretsConfig
+from monad.models.vercel_user_events_settings_config import VercelUserEventsSettingsConfig as VercelUserEventsSettingsConfig
 from monad.models.vulnerabilities_cron_secrets_config import VulnerabilitiesCronSecretsConfig as VulnerabilitiesCronSecretsConfig
 from monad.models.vulnerabilities_cron_settings_config import VulnerabilitiesCronSettingsConfig as VulnerabilitiesCronSettingsConfig
 from monad.models.vulnerabilities_secrets_config import VulnerabilitiesSecretsConfig as VulnerabilitiesSecretsConfig

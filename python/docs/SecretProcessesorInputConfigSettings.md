@@ -136,6 +136,8 @@ Name | Type | Description | Notes
 **org_url** | **str** | The URL of the Okta organization | [optional] 
 **user_role_option** | **str** | Allows for filtering the output by user role. | [optional] 
 **user_type_option** | **str** | Allows for filtering the output by user type. | [optional] 
+**lookback_hours** | **int** |  | [optional] 
+**with_payload** | **bool** |  | [optional] 
 **asset_status** | **List[str]** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
 **asset_type** | **str** | Asset types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **detection_method** | **List[str]** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 

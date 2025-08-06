@@ -100,6 +100,7 @@ type SecretProcessesorInputConfigSettings struct {
 	TenableVulnerabilitiesSettingsConfig *TenableVulnerabilitiesSettingsConfig
 	UsersInfoSettingsConfig *UsersInfoSettingsConfig
 	UsersSettingsConfig *UsersSettingsConfig
+	VercelUserEventsSettingsConfig *VercelUserEventsSettingsConfig
 	VulnerabilitiesCronSettingsConfig *VulnerabilitiesCronSettingsConfig
 	VulnerabilitiesSettingsConfig *VulnerabilitiesSettingsConfig
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
@@ -670,6 +671,13 @@ func UsersInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *UsersInfoS
 func UsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *UsersSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		UsersSettingsConfig: v,
+	}
+}
+
+// VercelUserEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns VercelUserEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func VercelUserEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *VercelUserEventsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		VercelUserEventsSettingsConfig: v,
 	}
 }
 
@@ -2083,6 +2091,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.UsersSettingsConfig = nil
 	}
 
+	// try to unmarshal data into VercelUserEventsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.VercelUserEventsSettingsConfig)
+	if err == nil {
+		jsonVercelUserEventsSettingsConfig, _ := json.Marshal(dst.VercelUserEventsSettingsConfig)
+		if string(jsonVercelUserEventsSettingsConfig) == "{}" { // empty struct
+			dst.VercelUserEventsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.VercelUserEventsSettingsConfig); err != nil {
+				dst.VercelUserEventsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.VercelUserEventsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into VulnerabilitiesCronSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.VulnerabilitiesCronSettingsConfig)
 	if err == nil {
@@ -2234,6 +2259,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.TenableVulnerabilitiesSettingsConfig = nil
 		dst.UsersInfoSettingsConfig = nil
 		dst.UsersSettingsConfig = nil
+		dst.VercelUserEventsSettingsConfig = nil
 		dst.VulnerabilitiesCronSettingsConfig = nil
 		dst.VulnerabilitiesSettingsConfig = nil
 		dst.VulnerabilityFindingsSettingsConfig = nil
@@ -2571,6 +2597,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.UsersSettingsConfig != nil {
 		return json.Marshal(&src.UsersSettingsConfig)
+	}
+
+	if src.VercelUserEventsSettingsConfig != nil {
+		return json.Marshal(&src.VercelUserEventsSettingsConfig)
 	}
 
 	if src.VulnerabilitiesCronSettingsConfig != nil {
@@ -2921,6 +2951,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.UsersSettingsConfig
 	}
 
+	if obj.VercelUserEventsSettingsConfig != nil {
+		return obj.VercelUserEventsSettingsConfig
+	}
+
 	if obj.VulnerabilitiesCronSettingsConfig != nil {
 		return obj.VulnerabilitiesCronSettingsConfig
 	}
@@ -3265,6 +3299,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.UsersSettingsConfig != nil {
 		return *obj.UsersSettingsConfig
+	}
+
+	if obj.VercelUserEventsSettingsConfig != nil {
+		return *obj.VercelUserEventsSettingsConfig
 	}
 
 	if obj.VulnerabilitiesCronSettingsConfig != nil {

@@ -365,6 +365,8 @@ export * from '../models/UsersInfoSettingsConfig';
 export * from '../models/UsersSecretsConfig';
 export * from '../models/UsersSettingsConfig';
 export * from '../models/UtcTimestampTimestamp';
+export * from '../models/VercelUserEventsSecretsConfig';
+export * from '../models/VercelUserEventsSettingsConfig';
 export * from '../models/VulnerabilitiesCronSecretsConfig';
 export * from '../models/VulnerabilitiesCronSettingsConfig';
 export * from '../models/VulnerabilitiesSecretsConfig';
@@ -739,6 +741,8 @@ import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
 import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
 import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
 import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
+import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
+import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettingsConfig';
 import { VulnerabilitiesCronSecretsConfig } from '../models/VulnerabilitiesCronSecretsConfig';
 import { VulnerabilitiesCronSettingsConfig } from '../models/VulnerabilitiesCronSettingsConfig';
 import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
@@ -1138,6 +1142,8 @@ let typeMap: {[index: string]: any} = {
     "UsersSecretsConfig": UsersSecretsConfig,
     "UsersSettingsConfig": UsersSettingsConfig,
     "UtcTimestampTimestamp": UtcTimestampTimestamp,
+    "VercelUserEventsSecretsConfig": VercelUserEventsSecretsConfig,
+    "VercelUserEventsSettingsConfig": VercelUserEventsSettingsConfig,
     "VulnerabilitiesCronSecretsConfig": VulnerabilitiesCronSecretsConfig,
     "VulnerabilitiesCronSettingsConfig": VulnerabilitiesCronSettingsConfig,
     "VulnerabilitiesSecretsConfig": VulnerabilitiesSecretsConfig,

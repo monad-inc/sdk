@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-08-05T22:36:20.739733386Z[Etc/UTC]
+  - Build date: 2025-08-06T20:23:46.300522105Z[Etc/UTC]
   - Generator version: 7.14.0
 
 This is the monad API
@@ -624,6 +624,8 @@ Class | Method | HTTP request | Description
  - [UsersSecretsConfig](docs/UsersSecretsConfig.md)
  - [UsersSettingsConfig](docs/UsersSettingsConfig.md)
  - [UtcTimestampTimestamp](docs/UtcTimestampTimestamp.md)
+ - [VercelUserEventsSecretsConfig](docs/VercelUserEventsSecretsConfig.md)
+ - [VercelUserEventsSettingsConfig](docs/VercelUserEventsSettingsConfig.md)
  - [VulnerabilitiesCronSecretsConfig](docs/VulnerabilitiesCronSecretsConfig.md)
  - [VulnerabilitiesCronSettingsConfig](docs/VulnerabilitiesCronSettingsConfig.md)
  - [VulnerabilitiesSecretsConfig](docs/VulnerabilitiesSecretsConfig.md)

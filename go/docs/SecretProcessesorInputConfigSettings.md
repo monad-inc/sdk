@@ -135,6 +135,8 @@ Name | Type | Description | Notes
 **OrgUrl** | Pointer to **string** | The URL of the Okta organization | [optional] 
 **UserRoleOption** | Pointer to **string** | Allows for filtering the output by user role. | [optional] 
 **UserTypeOption** | Pointer to **string** | Allows for filtering the output by user type. | [optional] 
+**LookbackHours** | Pointer to **int32** |  | [optional] 
+**WithPayload** | Pointer to **bool** |  | [optional] 
 **AssetStatus** | Pointer to **[]string** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
 **AssetType** | Pointer to **string** | Asset types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **DetectionMethod** | Pointer to **[]string** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 
@@ -3433,6 +3435,56 @@ SetUserTypeOption sets UserTypeOption field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasUserTypeOption() bool`
 
 HasUserTypeOption returns a boolean if a field has been set.
+
+### GetLookbackHours
+
+`func (o *SecretProcessesorInputConfigSettings) GetLookbackHours() int32`
+
+GetLookbackHours returns the LookbackHours field if non-nil, zero value otherwise.
+
+### GetLookbackHoursOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetLookbackHoursOk() (*int32, bool)`
+
+GetLookbackHoursOk returns a tuple with the LookbackHours field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLookbackHours
+
+`func (o *SecretProcessesorInputConfigSettings) SetLookbackHours(v int32)`
+
+SetLookbackHours sets LookbackHours field to given value.
+
+### HasLookbackHours
+
+`func (o *SecretProcessesorInputConfigSettings) HasLookbackHours() bool`
+
+HasLookbackHours returns a boolean if a field has been set.
+
+### GetWithPayload
+
+`func (o *SecretProcessesorInputConfigSettings) GetWithPayload() bool`
+
+GetWithPayload returns the WithPayload field if non-nil, zero value otherwise.
+
+### GetWithPayloadOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetWithPayloadOk() (*bool, bool)`
+
+GetWithPayloadOk returns a tuple with the WithPayload field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWithPayload
+
+`func (o *SecretProcessesorInputConfigSettings) SetWithPayload(v bool)`
+
+SetWithPayload sets WithPayload field to given value.
+
+### HasWithPayload
+
+`func (o *SecretProcessesorInputConfigSettings) HasWithPayload() bool`
+
+HasWithPayload returns a boolean if a field has been set.
 
 ### GetAssetStatus
 

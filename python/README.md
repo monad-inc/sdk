@@ -594,6 +594,8 @@ Class | Method | HTTP request | Description
  - [UsersSecretsConfig](docs/UsersSecretsConfig.md)
  - [UsersSettingsConfig](docs/UsersSettingsConfig.md)
  - [UtcTimestampTimestamp](docs/UtcTimestampTimestamp.md)
+ - [VercelUserEventsSecretsConfig](docs/VercelUserEventsSecretsConfig.md)
+ - [VercelUserEventsSettingsConfig](docs/VercelUserEventsSettingsConfig.md)
  - [VulnerabilitiesCronSecretsConfig](docs/VulnerabilitiesCronSecretsConfig.md)
  - [VulnerabilitiesCronSettingsConfig](docs/VulnerabilitiesCronSettingsConfig.md)
  - [VulnerabilitiesSecretsConfig](docs/VulnerabilitiesSecretsConfig.md)
