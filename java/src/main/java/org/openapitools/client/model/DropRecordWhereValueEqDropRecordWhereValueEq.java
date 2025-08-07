@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * DropRecordWhereValueEqDropRecordWhereValueEq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-06T23:51:18.793540025Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T01:38:10.438214203Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DropRecordWhereValueEqDropRecordWhereValueEq {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
