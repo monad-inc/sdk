@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * CrowdStrike EDR detect summaries settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T15:51:16.608488448Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T16:20:10.611835407Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DetectSummariesSettingsConfig {
   public static final String SERIALIZED_NAME_CLOUD_TYPE = "cloud_type";
   @SerializedName(SERIALIZED_NAME_CLOUD_TYPE)
