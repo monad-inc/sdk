@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Tailscale Devices settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T01:38:10.438214203Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T02:03:05.682497263Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class DevicesSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)
