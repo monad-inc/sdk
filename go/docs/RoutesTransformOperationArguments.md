@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Key** | Pointer to **string** | The key to store the timestamp in | [optional] 
 **Value** | Pointer to **interface{}** |  | [optional] 
+**Type** | Pointer to **string** | The new type of the key | [optional] 
 **KeyToWatch** | Pointer to **string** | The key to watch for | [optional] 
 **ValueToWatch** | Pointer to **interface{}** |  | [optional] 
 **NewKey** | Pointer to **string** | The new key to rename to | [optional] 
 **Delimiter** | Pointer to **string** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 | [optional] 
 **Query** | Pointer to **string** | The JQ query to apply to the record | [optional] 
-**Type** | Pointer to **string** | The new type of the key | [optional] 
 **ValueToSet** | Pointer to **interface{}** |  | [optional] 
 **Format** | Pointer to **string** | The format of the timestamp | [optional] 
 
@@ -94,6 +94,31 @@ HasValue returns a boolean if a field has been set.
 `func (o *RoutesTransformOperationArguments) UnsetValue()`
 
 UnsetValue ensures that no value is present for Value, not even an explicit nil
+### GetType
+
+`func (o *RoutesTransformOperationArguments) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *RoutesTransformOperationArguments) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *RoutesTransformOperationArguments) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *RoutesTransformOperationArguments) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
 ### GetKeyToWatch
 
 `func (o *RoutesTransformOperationArguments) GetKeyToWatch() string`
@@ -228,31 +253,6 @@ SetQuery sets Query field to given value.
 `func (o *RoutesTransformOperationArguments) HasQuery() bool`
 
 HasQuery returns a boolean if a field has been set.
-
-### GetType
-
-`func (o *RoutesTransformOperationArguments) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *RoutesTransformOperationArguments) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *RoutesTransformOperationArguments) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *RoutesTransformOperationArguments) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetValueToSet
 

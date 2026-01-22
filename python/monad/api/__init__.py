@@ -1,13 +1,14 @@
 # flake8: noqa
 
 # import apis into api package
+from monad.api.alert_rules_api import AlertRulesApi
+from monad.api.alerts_api import AlertsApi
 from monad.api.authentication_api import AuthenticationApi
 from monad.api.billing_accounts_api import BillingAccountsApi
 from monad.api.billing_accounts_rbac_api import BillingAccountsRbacApi
 from monad.api.billing_products_api import BillingProductsApi
 from monad.api.conditions_api import ConditionsApi
 from monad.api.connections_api import ConnectionsApi
-from monad.api.connections_rbac_api import ConnectionsRbacApi
 from monad.api.data_api import DataApi
 from monad.api.enrichments_api import EnrichmentsApi
 from monad.api.feature_flags_api import FeatureFlagsApi
@@ -31,6 +32,7 @@ from monad.api.roles_api import RolesApi
 from monad.api.sandbox_api import SandboxApi
 from monad.api.secrets_api import SecretsApi
 from monad.api.transforms_api import TransformsApi
+from monad.api.transforms_recommendations_api import TransformsRecommendationsApi
 from monad.api.transforms_repository_api import TransformsRepositoryApi
 from monad.api.users_api import UsersApi
 

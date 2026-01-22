@@ -171,7 +171,7 @@ public class Example {
 
 <a id="v1OrganizationIdUsersUserIdDelete"></a>
 # **v1OrganizationIdUsersUserIdDelete**
-> Object v1OrganizationIdUsersUserIdDelete(organizationId, userId)
+> Object v1OrganizationIdUsersUserIdDelete(organizationId, userId, userAuthProviderId)
 
 Remove user from organization
 
@@ -207,8 +207,9 @@ public class Example {
     OrganizationUsersApi apiInstance = new OrganizationUsersApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String userId = "userId_example"; // String | User ID
+    String userAuthProviderId = "userAuthProviderId_example"; // String | User Auth Provider ID
     try {
-      Object result = apiInstance.v1OrganizationIdUsersUserIdDelete(organizationId, userId);
+      Object result = apiInstance.v1OrganizationIdUsersUserIdDelete(organizationId, userId, userAuthProviderId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationUsersApi#v1OrganizationIdUsersUserIdDelete");
@@ -227,6 +228,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **userId** | **String**| User ID | |
+| **userAuthProviderId** | **String**| User Auth Provider ID | |
 
 ### Return type
 

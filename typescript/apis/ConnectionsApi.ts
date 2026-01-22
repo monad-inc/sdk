@@ -22,19 +22,27 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Delete an existing connection
      * Delete connection
+     * @param organizationId Organization ID
      * @param connectionId Connection ID to delete
      */
-    public async v3ConnectionsConnectionIdDelete(connectionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async v3OrganizationIdConnectionsConnectionIdDelete(organizationId: string, connectionId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("ConnectionsApi", "v3OrganizationIdConnectionsConnectionIdDelete", "organizationId");
+        }
+
 
         // verify required parameter 'connectionId' is not null or undefined
         if (connectionId === null || connectionId === undefined) {
-            throw new RequiredError("ConnectionsApi", "v3ConnectionsConnectionIdDelete", "connectionId");
+            throw new RequiredError("ConnectionsApi", "v3OrganizationIdConnectionsConnectionIdDelete", "connectionId");
         }
 
 
         // Path Params
-        const localVarPath = '/v3/connections/{connection_id}'
+        const localVarPath = '/v3/{organization_id}/connections/{connection_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
             .replace('{' + 'connection_id' + '}', encodeURIComponent(String(connectionId)));
 
         // Make Request Context
@@ -60,19 +68,27 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Retrieve a connection by its ID
      * Get connection by ID
+     * @param organizationId Organization ID
      * @param connectionId Connection ID to retrieve
      */
-    public async v3ConnectionsConnectionIdGet(connectionId: string, _options?: Configuration): Promise<RequestContext> {
+    public async v3OrganizationIdConnectionsConnectionIdGet(organizationId: string, connectionId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("ConnectionsApi", "v3OrganizationIdConnectionsConnectionIdGet", "organizationId");
+        }
+
 
         // verify required parameter 'connectionId' is not null or undefined
         if (connectionId === null || connectionId === undefined) {
-            throw new RequiredError("ConnectionsApi", "v3ConnectionsConnectionIdGet", "connectionId");
+            throw new RequiredError("ConnectionsApi", "v3OrganizationIdConnectionsConnectionIdGet", "connectionId");
         }
 
 
         // Path Params
-        const localVarPath = '/v3/connections/{connection_id}'
+        const localVarPath = '/v3/{organization_id}/connections/{connection_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
             .replace('{' + 'connection_id' + '}', encodeURIComponent(String(connectionId)));
 
         // Make Request Context
@@ -98,26 +114,34 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Update an existing connection
      * Update connection
+     * @param organizationId Organization ID
      * @param connectionId Connection ID to update
      * @param routesV3UpdateConnectionRequest Request body for updating a connection
      */
-    public async v3ConnectionsConnectionIdPatch(connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: Configuration): Promise<RequestContext> {
+    public async v3OrganizationIdConnectionsConnectionIdPatch(organizationId: string, connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("ConnectionsApi", "v3OrganizationIdConnectionsConnectionIdPatch", "organizationId");
+        }
+
 
         // verify required parameter 'connectionId' is not null or undefined
         if (connectionId === null || connectionId === undefined) {
-            throw new RequiredError("ConnectionsApi", "v3ConnectionsConnectionIdPatch", "connectionId");
+            throw new RequiredError("ConnectionsApi", "v3OrganizationIdConnectionsConnectionIdPatch", "connectionId");
         }
 
 
         // verify required parameter 'routesV3UpdateConnectionRequest' is not null or undefined
         if (routesV3UpdateConnectionRequest === null || routesV3UpdateConnectionRequest === undefined) {
-            throw new RequiredError("ConnectionsApi", "v3ConnectionsConnectionIdPatch", "routesV3UpdateConnectionRequest");
+            throw new RequiredError("ConnectionsApi", "v3OrganizationIdConnectionsConnectionIdPatch", "routesV3UpdateConnectionRequest");
         }
 
 
         // Path Params
-        const localVarPath = '/v3/connections/{connection_id}'
+        const localVarPath = '/v3/{organization_id}/connections/{connection_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
             .replace('{' + 'connection_id' + '}', encodeURIComponent(String(connectionId)));
 
         // Make Request Context
@@ -154,16 +178,24 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Retrieve all connections
      * Get all connections
+     * @param organizationId Organization ID
      * @param limit Limit
      * @param offset Offset
      */
-    public async v3ConnectionsGet(limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+    public async v3OrganizationIdConnectionsGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("ConnectionsApi", "v3OrganizationIdConnectionsGet", "organizationId");
+        }
+
 
 
 
         // Path Params
-        const localVarPath = '/v3/connections';
+        const localVarPath = '/v3/{organization_id}/connections'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -198,19 +230,27 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Create a new connection with the provided details
      * Create a new connection
+     * @param organizationId Organization ID
      * @param routesV3CreateConnectionRequest Request body for creating a connection
      */
-    public async v3ConnectionsPost(routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: Configuration): Promise<RequestContext> {
+    public async v3OrganizationIdConnectionsPost(organizationId: string, routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("ConnectionsApi", "v3OrganizationIdConnectionsPost", "organizationId");
+        }
+
 
         // verify required parameter 'routesV3CreateConnectionRequest' is not null or undefined
         if (routesV3CreateConnectionRequest === null || routesV3CreateConnectionRequest === undefined) {
-            throw new RequiredError("ConnectionsApi", "v3ConnectionsPost", "routesV3CreateConnectionRequest");
+            throw new RequiredError("ConnectionsApi", "v3OrganizationIdConnectionsPost", "routesV3CreateConnectionRequest");
         }
 
 
         // Path Params
-        const localVarPath = '/v3/connections';
+        const localVarPath = '/v3/{organization_id}/connections'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
@@ -251,10 +291,10 @@ export class ConnectionsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3ConnectionsConnectionIdDelete
+     * @params response Response returned by the server for a request to v3OrganizationIdConnectionsConnectionIdDelete
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3ConnectionsConnectionIdDeleteWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void >> {
+     public async v3OrganizationIdConnectionsConnectionIdDeleteWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("204", response.httpStatusCode)) {
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, undefined);
@@ -290,10 +330,10 @@ export class ConnectionsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3ConnectionsConnectionIdGet
+     * @params response Response returned by the server for a request to v3OrganizationIdConnectionsConnectionIdGet
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3ConnectionsConnectionIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsConnection >> {
+     public async v3OrganizationIdConnectionsConnectionIdGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsConnection >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsConnection = ObjectSerializer.deserialize(
@@ -340,10 +380,10 @@ export class ConnectionsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3ConnectionsConnectionIdPatch
+     * @params response Response returned by the server for a request to v3OrganizationIdConnectionsConnectionIdPatch
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3ConnectionsConnectionIdPatchWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsConnection >> {
+     public async v3OrganizationIdConnectionsConnectionIdPatchWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsConnection >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsConnection = ObjectSerializer.deserialize(
@@ -383,10 +423,10 @@ export class ConnectionsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3ConnectionsGet
+     * @params response Response returned by the server for a request to v3OrganizationIdConnectionsGet
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3ConnectionsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsConnectionList >> {
+     public async v3OrganizationIdConnectionsGetWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsConnectionList >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsConnectionList = ObjectSerializer.deserialize(
@@ -419,10 +459,10 @@ export class ConnectionsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to v3ConnectionsPost
+     * @params response Response returned by the server for a request to v3OrganizationIdConnectionsPost
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v3ConnectionsPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsConnection >> {
+     public async v3OrganizationIdConnectionsPostWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsConnection >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: ModelsConnection = ObjectSerializer.deserialize(

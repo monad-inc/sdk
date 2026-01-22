@@ -48,8 +48,13 @@ import org.openapitools.client.JSON;
 /**
  * Socket Full Scans settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class FullScansSettingsConfig {
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
+
   public static final String SERIALIZED_NAME_ORG_SLUG = "org_slug";
   @SerializedName(SERIALIZED_NAME_ORG_SLUG)
   @javax.annotation.Nullable
@@ -67,6 +72,25 @@ public class FullScansSettingsConfig {
 
   public FullScansSettingsConfig() {
   }
+
+  public FullScansSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+  }
+
 
   public FullScansSettingsConfig orgSlug(@javax.annotation.Nullable String orgSlug) {
     this.orgSlug = orgSlug;
@@ -135,20 +159,22 @@ public class FullScansSettingsConfig {
       return false;
     }
     FullScansSettingsConfig fullScansSettingsConfig = (FullScansSettingsConfig) o;
-    return Objects.equals(this.orgSlug, fullScansSettingsConfig.orgSlug) &&
+    return Objects.equals(this.backfillStartTime, fullScansSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.orgSlug, fullScansSettingsConfig.orgSlug) &&
         Objects.equals(this.repo, fullScansSettingsConfig.repo) &&
         Objects.equals(this.useSyntheticData, fullScansSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(orgSlug, repo, useSyntheticData);
+    return Objects.hash(backfillStartTime, orgSlug, repo, useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class FullScansSettingsConfig {\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    orgSlug: ").append(toIndentedString(orgSlug)).append("\n");
     sb.append("    repo: ").append(toIndentedString(repo)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
@@ -173,7 +199,7 @@ public class FullScansSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("org_slug", "repo", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "org_slug", "repo", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -188,7 +214,7 @@ public class FullScansSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FullScansSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FullScansSettingsConfig is not found in the empty JSON string", FullScansSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in FullScansSettingsConfig is not found in the empty JSON string", FullScansSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -196,15 +222,18 @@ public class FullScansSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!FullScansSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `FullScansSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `FullScansSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
       if ((jsonObj.get("org_slug") != null && !jsonObj.get("org_slug").isJsonNull()) && !jsonObj.get("org_slug").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `org_slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("org_slug").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `org_slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("org_slug").toString()));
       }
       if ((jsonObj.get("repo") != null && !jsonObj.get("repo").isJsonNull()) && !jsonObj.get("repo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `repo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("repo").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `repo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("repo").toString()));
       }
   }
 

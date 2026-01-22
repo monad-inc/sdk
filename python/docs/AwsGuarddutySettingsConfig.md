@@ -6,6 +6,7 @@ AWS Guardduty settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**backfill_start_time** | **str** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **region** | **str** | The AWS region where GuardDuty is enabled. | [optional] 
 **role_arn** | **str** | The ARN of the IAM role to assume for accessing GuardDuty. | [optional] 
 **severity** | **str** | Filter findings by severity levels. | [optional] 

@@ -50,8 +50,13 @@ import org.openapitools.client.JSON;
 /**
  * Wiz Issues settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class IssuesSettingsConfig {
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
+
   public static final String SERIALIZED_NAME_CONTROL_IDS = "control_ids";
   @SerializedName(SERIALIZED_NAME_CONTROL_IDS)
   @javax.annotation.Nullable
@@ -438,6 +443,25 @@ public class IssuesSettingsConfig {
 
   public IssuesSettingsConfig() {
   }
+
+  public IssuesSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+  }
+
 
   public IssuesSettingsConfig controlIds(@javax.annotation.Nullable List<String> controlIds) {
     this.controlIds = controlIds;
@@ -871,7 +895,8 @@ public class IssuesSettingsConfig {
       return false;
     }
     IssuesSettingsConfig issuesSettingsConfig = (IssuesSettingsConfig) o;
-    return Objects.equals(this.controlIds, issuesSettingsConfig.controlIds) &&
+    return Objects.equals(this.backfillStartTime, issuesSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.controlIds, issuesSettingsConfig.controlIds) &&
         Objects.equals(this.hasNote, issuesSettingsConfig.hasNote) &&
         Objects.equals(this.hasRemediation, issuesSettingsConfig.hasRemediation) &&
         Objects.equals(this.hasServiceTicket, issuesSettingsConfig.hasServiceTicket) &&
@@ -893,13 +918,14 @@ public class IssuesSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(controlIds, hasNote, hasRemediation, hasServiceTicket, issueIds, issueTypes, projectIds, relatedEntityId, resolutionReasons, riskEqualsAll, riskEqualsAny, searchQuery, securityScan, severities, stackLayers, status, tenantDataCenter, useSyntheticData);
+    return Objects.hash(backfillStartTime, controlIds, hasNote, hasRemediation, hasServiceTicket, issueIds, issueTypes, projectIds, relatedEntityId, resolutionReasons, riskEqualsAll, riskEqualsAny, searchQuery, securityScan, severities, stackLayers, status, tenantDataCenter, useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IssuesSettingsConfig {\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    controlIds: ").append(toIndentedString(controlIds)).append("\n");
     sb.append("    hasNote: ").append(toIndentedString(hasNote)).append("\n");
     sb.append("    hasRemediation: ").append(toIndentedString(hasRemediation)).append("\n");
@@ -939,7 +965,7 @@ public class IssuesSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("control_ids", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "control_ids", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -954,7 +980,7 @@ public class IssuesSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IssuesSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IssuesSettingsConfig is not found in the empty JSON string", IssuesSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in IssuesSettingsConfig is not found in the empty JSON string", IssuesSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -962,70 +988,73 @@ public class IssuesSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!IssuesSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `IssuesSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `IssuesSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("control_ids") != null && !jsonObj.get("control_ids").isJsonNull() && !jsonObj.get("control_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `control_ids` to be an array in the JSON string but got `%s`", jsonObj.get("control_ids").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `control_ids` to be an array in the JSON string but got `%s`", jsonObj.get("control_ids").toString()));
       }
       if ((jsonObj.get("has_note") != null && !jsonObj.get("has_note").isJsonNull()) && !jsonObj.get("has_note").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `has_note` to be a primitive type in the JSON string but got `%s`", jsonObj.get("has_note").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `has_note` to be a primitive type in the JSON string but got `%s`", jsonObj.get("has_note").toString()));
       }
       if ((jsonObj.get("has_remediation") != null && !jsonObj.get("has_remediation").isJsonNull()) && !jsonObj.get("has_remediation").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `has_remediation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("has_remediation").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `has_remediation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("has_remediation").toString()));
       }
       if ((jsonObj.get("has_service_ticket") != null && !jsonObj.get("has_service_ticket").isJsonNull()) && !jsonObj.get("has_service_ticket").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `has_service_ticket` to be a primitive type in the JSON string but got `%s`", jsonObj.get("has_service_ticket").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `has_service_ticket` to be a primitive type in the JSON string but got `%s`", jsonObj.get("has_service_ticket").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("issue_ids") != null && !jsonObj.get("issue_ids").isJsonNull() && !jsonObj.get("issue_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `issue_ids` to be an array in the JSON string but got `%s`", jsonObj.get("issue_ids").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `issue_ids` to be an array in the JSON string but got `%s`", jsonObj.get("issue_ids").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("issue_types") != null && !jsonObj.get("issue_types").isJsonNull() && !jsonObj.get("issue_types").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `issue_types` to be an array in the JSON string but got `%s`", jsonObj.get("issue_types").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `issue_types` to be an array in the JSON string but got `%s`", jsonObj.get("issue_types").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("project_ids") != null && !jsonObj.get("project_ids").isJsonNull() && !jsonObj.get("project_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `project_ids` to be an array in the JSON string but got `%s`", jsonObj.get("project_ids").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `project_ids` to be an array in the JSON string but got `%s`", jsonObj.get("project_ids").toString()));
       }
       if ((jsonObj.get("related_entity_id") != null && !jsonObj.get("related_entity_id").isJsonNull()) && !jsonObj.get("related_entity_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `related_entity_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("related_entity_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `related_entity_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("related_entity_id").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("resolution_reasons") != null && !jsonObj.get("resolution_reasons").isJsonNull() && !jsonObj.get("resolution_reasons").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resolution_reasons` to be an array in the JSON string but got `%s`", jsonObj.get("resolution_reasons").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `resolution_reasons` to be an array in the JSON string but got `%s`", jsonObj.get("resolution_reasons").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("risk_equals_all") != null && !jsonObj.get("risk_equals_all").isJsonNull() && !jsonObj.get("risk_equals_all").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `risk_equals_all` to be an array in the JSON string but got `%s`", jsonObj.get("risk_equals_all").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `risk_equals_all` to be an array in the JSON string but got `%s`", jsonObj.get("risk_equals_all").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("risk_equals_any") != null && !jsonObj.get("risk_equals_any").isJsonNull() && !jsonObj.get("risk_equals_any").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `risk_equals_any` to be an array in the JSON string but got `%s`", jsonObj.get("risk_equals_any").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `risk_equals_any` to be an array in the JSON string but got `%s`", jsonObj.get("risk_equals_any").toString()));
       }
       if ((jsonObj.get("search_query") != null && !jsonObj.get("search_query").isJsonNull()) && !jsonObj.get("search_query").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `search_query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("search_query").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `search_query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("search_query").toString()));
       }
       if ((jsonObj.get("security_scan") != null && !jsonObj.get("security_scan").isJsonNull()) && !jsonObj.get("security_scan").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `security_scan` to be a primitive type in the JSON string but got `%s`", jsonObj.get("security_scan").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `security_scan` to be a primitive type in the JSON string but got `%s`", jsonObj.get("security_scan").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("severities") != null && !jsonObj.get("severities").isJsonNull() && !jsonObj.get("severities").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `severities` to be an array in the JSON string but got `%s`", jsonObj.get("severities").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `severities` to be an array in the JSON string but got `%s`", jsonObj.get("severities").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("stack_layers") != null && !jsonObj.get("stack_layers").isJsonNull() && !jsonObj.get("stack_layers").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stack_layers` to be an array in the JSON string but got `%s`", jsonObj.get("stack_layers").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `stack_layers` to be an array in the JSON string but got `%s`", jsonObj.get("stack_layers").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull() && !jsonObj.get("status").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be an array in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be an array in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       if ((jsonObj.get("tenant_data_center") != null && !jsonObj.get("tenant_data_center").isJsonNull()) && !jsonObj.get("tenant_data_center").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tenant_data_center` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_data_center").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_data_center` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_data_center").toString()));
       }
   }
 

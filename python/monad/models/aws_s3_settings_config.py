@@ -27,6 +27,7 @@ class AwsS3SettingsConfig(BaseModel):
     """
     AWS S3 settings
     """ # noqa: E501
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental.")
     bucket: Optional[StrictStr] = Field(default=None, description="Name of the S3 bucket.")
     compression: Optional[StrictStr] = Field(default=None, description="Compression format of the S3 objects.")
     format: Optional[StrictStr] = Field(default=None, description="File format of the S3 objects.")
@@ -35,7 +36,7 @@ class AwsS3SettingsConfig(BaseModel):
     record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the JSON object. This can be ignored if the record is not in JSON format.")
     region: Optional[StrictStr] = Field(default=None, description="AWS Region of your bucket.")
     role_arn: Optional[StrictStr] = Field(default=None, description="Role ARN to assume when reading from S3.")
-    __properties: ClassVar[List[str]] = ["bucket", "compression", "format", "partition_format", "prefix", "record_location", "region", "role_arn"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "bucket", "compression", "format", "partition_format", "prefix", "record_location", "region", "role_arn"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,6 +89,7 @@ class AwsS3SettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "bucket": obj.get("bucket"),
             "compression": obj.get("compression"),
             "format": obj.get("format"),

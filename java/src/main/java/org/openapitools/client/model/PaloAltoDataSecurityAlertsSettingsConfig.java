@@ -48,8 +48,13 @@ import org.openapitools.client.JSON;
 /**
  * Palo Alto Data Security Alerts settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class PaloAltoDataSecurityAlertsSettingsConfig {
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
+
   public static final String SERIALIZED_NAME_BASE_URL = "base_url";
   @SerializedName(SERIALIZED_NAME_BASE_URL)
   @javax.annotation.Nullable
@@ -62,6 +67,25 @@ public class PaloAltoDataSecurityAlertsSettingsConfig {
 
   public PaloAltoDataSecurityAlertsSettingsConfig() {
   }
+
+  public PaloAltoDataSecurityAlertsSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+  }
+
 
   public PaloAltoDataSecurityAlertsSettingsConfig baseUrl(@javax.annotation.Nullable String baseUrl) {
     this.baseUrl = baseUrl;
@@ -111,19 +135,21 @@ public class PaloAltoDataSecurityAlertsSettingsConfig {
       return false;
     }
     PaloAltoDataSecurityAlertsSettingsConfig paloAltoDataSecurityAlertsSettingsConfig = (PaloAltoDataSecurityAlertsSettingsConfig) o;
-    return Objects.equals(this.baseUrl, paloAltoDataSecurityAlertsSettingsConfig.baseUrl) &&
+    return Objects.equals(this.backfillStartTime, paloAltoDataSecurityAlertsSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.baseUrl, paloAltoDataSecurityAlertsSettingsConfig.baseUrl) &&
         Objects.equals(this.useSyntheticData, paloAltoDataSecurityAlertsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseUrl, useSyntheticData);
+    return Objects.hash(backfillStartTime, baseUrl, useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaloAltoDataSecurityAlertsSettingsConfig {\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    baseUrl: ").append(toIndentedString(baseUrl)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
@@ -147,7 +173,7 @@ public class PaloAltoDataSecurityAlertsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("base_url", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "base_url", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -162,7 +188,7 @@ public class PaloAltoDataSecurityAlertsSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PaloAltoDataSecurityAlertsSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PaloAltoDataSecurityAlertsSettingsConfig is not found in the empty JSON string", PaloAltoDataSecurityAlertsSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in PaloAltoDataSecurityAlertsSettingsConfig is not found in the empty JSON string", PaloAltoDataSecurityAlertsSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -170,12 +196,15 @@ public class PaloAltoDataSecurityAlertsSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!PaloAltoDataSecurityAlertsSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PaloAltoDataSecurityAlertsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PaloAltoDataSecurityAlertsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
       if ((jsonObj.get("base_url") != null && !jsonObj.get("base_url").isJsonNull()) && !jsonObj.get("base_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `base_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("base_url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `base_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("base_url").toString()));
       }
   }
 

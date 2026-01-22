@@ -27,11 +27,12 @@ class ClumioConsolidatedAlertsSettingsConfig(BaseModel):
     """
     Clumio Alerts settings
     """ # noqa: E501
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     parent_entity_id: Optional[StrictStr] = Field(default=None, description="The system-generated ID of the parent entity that is associated with the primary entity affected by the alert.")
     parent_entity_type: Optional[StrictStr] = Field(default=None, description="The system-generated name of the parent entity that is associated with the primary entity affected by the alert.")
     region: Optional[StrictStr] = Field(default=None, description="The region associated with your Clumio account")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["parent_entity_id", "parent_entity_type", "region", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "parent_entity_id", "parent_entity_type", "region", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,6 +85,7 @@ class ClumioConsolidatedAlertsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "parent_entity_id": obj.get("parent_entity_id"),
             "parent_entity_type": obj.get("parent_entity_type"),
             "region": obj.get("region"),

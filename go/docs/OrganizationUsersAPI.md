@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## V1OrganizationIdUsersUserIdDelete
 
-> map[string]interface{} V1OrganizationIdUsersUserIdDelete(ctx, organizationId, userId).Execute()
+> map[string]interface{} V1OrganizationIdUsersUserIdDelete(ctx, organizationId, userId).UserAuthProviderId(userAuthProviderId).Execute()
 
 Remove user from organization
 
@@ -180,10 +180,11 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	userId := "userId_example" // string | User ID
+	userAuthProviderId := "userAuthProviderId_example" // string | User Auth Provider ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationUsersAPI.V1OrganizationIdUsersUserIdDelete(context.Background(), organizationId, userId).Execute()
+	resp, r, err := apiClient.OrganizationUsersAPI.V1OrganizationIdUsersUserIdDelete(context.Background(), organizationId, userId).UserAuthProviderId(userAuthProviderId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationUsersAPI.V1OrganizationIdUsersUserIdDelete``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -211,6 +212,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **userAuthProviderId** | **string** | User Auth Provider ID | 
 
 ### Return type
 

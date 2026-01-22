@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOutputList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsOutputList {
   public static final String SERIALIZED_NAME_OUTPUTS = "outputs";
   @SerializedName(SERIALIZED_NAME_OUTPUTS)
@@ -174,7 +174,7 @@ public class ModelsOutputList {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelsOutputList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ModelsOutputList is not found in the empty JSON string", ModelsOutputList.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsOutputList is not found in the empty JSON string", ModelsOutputList.openapiRequiredFields.toString()));
         }
       }
 
@@ -182,7 +182,7 @@ public class ModelsOutputList {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ModelsOutputList.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ModelsOutputList` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsOutputList` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -191,7 +191,7 @@ public class ModelsOutputList {
         if (jsonArrayoutputs != null) {
           // ensure the json data is an array
           if (!jsonObj.get("outputs").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `outputs` to be an array in the JSON string but got `%s`", jsonObj.get("outputs").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `outputs` to be an array in the JSON string but got `%s`", jsonObj.get("outputs").toString()));
           }
 
           // validate the optional field `outputs` (array)

@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
 import org.openapitools.client.model.AddAdd;
+import org.openapitools.client.model.AddIdAddIdentifier;
 import org.openapitools.client.model.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue;
 import org.openapitools.client.model.DropKeyDropKey;
 import org.openapitools.client.model.DropKeyWhereValueEqDropKeyWhereValueEq;
@@ -75,7 +76,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesTransformOperationArguments.class.getName());
 
@@ -88,6 +89,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
             final TypeAdapter<AddAdd> adapterAddAdd = gson.getDelegateAdapter(this, TypeToken.get(AddAdd.class));
+            final TypeAdapter<AddIdAddIdentifier> adapterAddIdAddIdentifier = gson.getDelegateAdapter(this, TypeToken.get(AddIdAddIdentifier.class));
             final TypeAdapter<CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue> adapterCreateKeyValueIfKeyValueCreateKeyValueIfKeyValue = gson.getDelegateAdapter(this, TypeToken.get(CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.class));
             final TypeAdapter<DropKeyDropKey> adapterDropKeyDropKey = gson.getDelegateAdapter(this, TypeToken.get(DropKeyDropKey.class));
             final TypeAdapter<DropKeyWhereValueEqDropKeyWhereValueEq> adapterDropKeyWhereValueEqDropKeyWhereValueEq = gson.getDelegateAdapter(this, TypeToken.get(DropKeyWhereValueEqDropKeyWhereValueEq.class));
@@ -117,6 +119,12 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `AddAdd`
                     if (value.getActualInstance() instanceof AddAdd) {
                         JsonElement element = adapterAddAdd.toJsonTree((AddAdd)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `AddIdAddIdentifier`
+                    if (value.getActualInstance() instanceof AddIdAddIdentifier) {
+                        JsonElement element = adapterAddIdAddIdentifier.toJsonTree((AddIdAddIdentifier)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -216,7 +224,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AddAdd, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AddAdd, AddIdAddIdentifier, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp");
                 }
 
                 @Override
@@ -237,8 +245,20 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'AddAdd'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for AddAdd failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddAdd failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'AddAdd'", e);
+                    }
+                    // deserialize AddIdAddIdentifier
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AddIdAddIdentifier.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAddIdAddIdentifier;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AddIdAddIdentifier'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddIdAddIdentifier failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AddIdAddIdentifier'", e);
                     }
                     // deserialize CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
                     try {
@@ -249,7 +269,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue'", e);
                     }
                     // deserialize DropKeyDropKey
@@ -261,7 +281,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DropKeyDropKey'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DropKeyDropKey failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropKeyDropKey failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DropKeyDropKey'", e);
                     }
                     // deserialize DropKeyWhereValueEqDropKeyWhereValueEq
@@ -273,7 +293,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DropKeyWhereValueEqDropKeyWhereValueEq'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DropKeyWhereValueEqDropKeyWhereValueEq failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropKeyWhereValueEqDropKeyWhereValueEq failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DropKeyWhereValueEqDropKeyWhereValueEq'", e);
                     }
                     // deserialize DropRecordWhereValueEqDropRecordWhereValueEq
@@ -285,7 +305,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DropRecordWhereValueEqDropRecordWhereValueEq'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DropRecordWhereValueEqDropRecordWhereValueEq failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropRecordWhereValueEqDropRecordWhereValueEq failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DropRecordWhereValueEqDropRecordWhereValueEq'", e);
                     }
                     // deserialize DuplicateKeyValueToKeyDuplicateKeyValueToKey
@@ -297,7 +317,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DuplicateKeyValueToKeyDuplicateKeyValueToKey'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for DuplicateKeyValueToKeyDuplicateKeyValueToKey failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DuplicateKeyValueToKeyDuplicateKeyValueToKey failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DuplicateKeyValueToKeyDuplicateKeyValueToKey'", e);
                     }
                     // deserialize FlattenFlatten
@@ -309,7 +329,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'FlattenFlatten'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for FlattenFlatten failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FlattenFlatten failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'FlattenFlatten'", e);
                     }
                     // deserialize FlattenallFlattenAll
@@ -321,7 +341,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'FlattenallFlattenAll'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for FlattenallFlattenAll failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FlattenallFlattenAll failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'FlattenallFlattenAll'", e);
                     }
                     // deserialize JqJQ
@@ -333,7 +353,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'JqJQ'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for JqJQ failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for JqJQ failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'JqJQ'", e);
                     }
                     // deserialize MathMultiplyWithValueMathMultiplyWithValue
@@ -345,14 +365,14 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'MathMultiplyWithValueMathMultiplyWithValue'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for MathMultiplyWithValueMathMultiplyWithValue failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MathMultiplyWithValueMathMultiplyWithValue failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'MathMultiplyWithValueMathMultiplyWithValue'", e);
                     }
                     // deserialize Map<String, Object>
                     try {
                         // validate the JSON object to see if any exception is thrown
                         if (!jsonElement.isJsonObject()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
+                            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
                         }
 
                         actualAdapter = adapterMapStringObject;
@@ -360,7 +380,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'Map<String, Object>'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'Map<String, Object>'", e);
                     }
                     // deserialize MutateTypeMutateType
@@ -372,7 +392,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'MutateTypeMutateType'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for MutateTypeMutateType failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateTypeMutateType failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'MutateTypeMutateType'", e);
                     }
                     // deserialize MutateValueWhereKeyEqMutateValueWhereKeyEq
@@ -384,7 +404,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'MutateValueWhereKeyEqMutateValueWhereKeyEq'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for MutateValueWhereKeyEqMutateValueWhereKeyEq failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateValueWhereKeyEqMutateValueWhereKeyEq failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'MutateValueWhereKeyEqMutateValueWhereKeyEq'", e);
                     }
                     // deserialize MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq
@@ -396,7 +416,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq'", e);
                     }
                     // deserialize RenameKeyRenameKey
@@ -408,7 +428,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'RenameKeyRenameKey'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for RenameKeyRenameKey failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RenameKeyRenameKey failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'RenameKeyRenameKey'", e);
                     }
                     // deserialize RenameKeyWhereValueEqRenameKeyWhereValueEq
@@ -420,7 +440,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'RenameKeyWhereValueEqRenameKeyWhereValueEq'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for RenameKeyWhereValueEqRenameKeyWhereValueEq failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RenameKeyWhereValueEqRenameKeyWhereValueEq failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'RenameKeyWhereValueEqRenameKeyWhereValueEq'", e);
                     }
                     // deserialize UtcTimestampTimestamp
@@ -432,7 +452,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'UtcTimestampTimestamp'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for UtcTimestampTimestamp failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for UtcTimestampTimestamp failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'UtcTimestampTimestamp'", e);
                     }
 
@@ -442,7 +462,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for RoutesTransformOperationArguments: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(java.util.Locale.ROOT, "Failed deserialization for RoutesTransformOperationArguments: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -462,6 +482,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
 
     static {
         schemas.put("AddAdd", AddAdd.class);
+        schemas.put("AddIdAddIdentifier", AddIdAddIdentifier.class);
         schemas.put("CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue", CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.class);
         schemas.put("DropKeyDropKey", DropKeyDropKey.class);
         schemas.put("DropKeyWhereValueEqDropKeyWhereValueEq", DropKeyWhereValueEqDropKeyWhereValueEq.class);
@@ -488,13 +509,18 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AddAdd, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp
+     * AddAdd, AddIdAddIdentifier, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp
      *
      * It could be an instance of the 'oneOf' schemas.
      */
     @Override
     public void setActualInstance(Object instance) {
         if (instance instanceof AddAdd) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof AddIdAddIdentifier) {
             super.setActualInstance(instance);
             return;
         }
@@ -579,14 +605,14 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be AddAdd, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp");
+        throw new RuntimeException("Invalid instance type. Must be AddAdd, AddIdAddIdentifier, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AddAdd, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp
+     * AddAdd, AddIdAddIdentifier, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp
      *
-     * @return The actual instance (AddAdd, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp)
+     * @return The actual instance (AddAdd, AddIdAddIdentifier, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -603,6 +629,17 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      */
     public AddAdd getAddAdd() throws ClassCastException {
         return (AddAdd)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AddIdAddIdentifier`. If the actual instance is not `AddIdAddIdentifier`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AddIdAddIdentifier`
+     * @throws ClassCastException if the instance is not `AddIdAddIdentifier`
+     */
+    public AddIdAddIdentifier getAddIdAddIdentifier() throws ClassCastException {
+        return (AddIdAddIdentifier)super.getActualInstance();
     }
 
     /**
@@ -796,7 +833,15 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             AddAdd.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for AddAdd failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddAdd failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with AddIdAddIdentifier
+        try {
+            AddIdAddIdentifier.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddIdAddIdentifier failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
@@ -804,7 +849,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with DropKeyDropKey
@@ -812,7 +857,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             DropKeyDropKey.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DropKeyDropKey failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropKeyDropKey failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with DropKeyWhereValueEqDropKeyWhereValueEq
@@ -820,7 +865,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             DropKeyWhereValueEqDropKeyWhereValueEq.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DropKeyWhereValueEqDropKeyWhereValueEq failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropKeyWhereValueEqDropKeyWhereValueEq failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with DropRecordWhereValueEqDropRecordWhereValueEq
@@ -828,7 +873,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             DropRecordWhereValueEqDropRecordWhereValueEq.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DropRecordWhereValueEqDropRecordWhereValueEq failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropRecordWhereValueEqDropRecordWhereValueEq failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with DuplicateKeyValueToKeyDuplicateKeyValueToKey
@@ -836,7 +881,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             DuplicateKeyValueToKeyDuplicateKeyValueToKey.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for DuplicateKeyValueToKeyDuplicateKeyValueToKey failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DuplicateKeyValueToKeyDuplicateKeyValueToKey failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with FlattenFlatten
@@ -844,7 +889,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             FlattenFlatten.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for FlattenFlatten failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FlattenFlatten failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with FlattenallFlattenAll
@@ -852,7 +897,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             FlattenallFlattenAll.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for FlattenallFlattenAll failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FlattenallFlattenAll failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with JqJQ
@@ -860,7 +905,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             JqJQ.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for JqJQ failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for JqJQ failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with MathMultiplyWithValueMathMultiplyWithValue
@@ -868,18 +913,18 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             MathMultiplyWithValueMathMultiplyWithValue.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for MathMultiplyWithValueMathMultiplyWithValue failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MathMultiplyWithValueMathMultiplyWithValue failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with Map<String, Object>
         try {
             if (!jsonElement.isJsonObject()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
+                throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
             }
 
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with MutateTypeMutateType
@@ -887,7 +932,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             MutateTypeMutateType.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for MutateTypeMutateType failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateTypeMutateType failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with MutateValueWhereKeyEqMutateValueWhereKeyEq
@@ -895,7 +940,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             MutateValueWhereKeyEqMutateValueWhereKeyEq.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for MutateValueWhereKeyEqMutateValueWhereKeyEq failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateValueWhereKeyEqMutateValueWhereKeyEq failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq
@@ -903,7 +948,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with RenameKeyRenameKey
@@ -911,7 +956,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             RenameKeyRenameKey.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for RenameKeyRenameKey failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RenameKeyRenameKey failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with RenameKeyWhereValueEqRenameKeyWhereValueEq
@@ -919,7 +964,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             RenameKeyWhereValueEqRenameKeyWhereValueEq.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for RenameKeyWhereValueEqRenameKeyWhereValueEq failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RenameKeyWhereValueEqRenameKeyWhereValueEq failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with UtcTimestampTimestamp
@@ -927,11 +972,11 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             UtcTimestampTimestamp.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for UtcTimestampTimestamp failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for UtcTimestampTimestamp failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for RoutesTransformOperationArguments with oneOf schemas: AddAdd, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for RoutesTransformOperationArguments with oneOf schemas: AddAdd, AddIdAddIdentifier, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

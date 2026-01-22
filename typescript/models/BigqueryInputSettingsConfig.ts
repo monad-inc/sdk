@@ -17,10 +17,6 @@ import { HttpFile } from '../http/http';
 */
 export class BigqueryInputSettingsConfig {
     /**
-    * Cron string for scheduling the ingest of your input
-    */
-    'cron'?: string;
-    /**
     * The BigQuery dataset ID containing the table
     */
     'dataset'?: string;
@@ -46,12 +42,6 @@ export class BigqueryInputSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "cron",
-            "baseName": "cron",
-            "type": "string",
-            "format": ""
-        },
         {
             "name": "dataset",
             "baseName": "dataset",

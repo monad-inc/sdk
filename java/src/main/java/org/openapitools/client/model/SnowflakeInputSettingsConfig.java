@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Snowflake Input Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SnowflakeInputSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
@@ -396,7 +396,7 @@ public class SnowflakeInputSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SnowflakeInputSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SnowflakeInputSettingsConfig is not found in the empty JSON string", SnowflakeInputSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SnowflakeInputSettingsConfig is not found in the empty JSON string", SnowflakeInputSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -404,42 +404,42 @@ public class SnowflakeInputSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!SnowflakeInputSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SnowflakeInputSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SnowflakeInputSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) && !jsonObj.get("account").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `account` to be a primitive type in the JSON string but got `%s`", jsonObj.get("account").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `account` to be a primitive type in the JSON string but got `%s`", jsonObj.get("account").toString()));
       }
       if ((jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) && !jsonObj.get("auth_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
       }
       if ((jsonObj.get("cron") != null && !jsonObj.get("cron").isJsonNull()) && !jsonObj.get("cron").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cron` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cron").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `cron` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cron").toString()));
       }
       if ((jsonObj.get("database") != null && !jsonObj.get("database").isJsonNull()) && !jsonObj.get("database").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `database` to be a primitive type in the JSON string but got `%s`", jsonObj.get("database").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `database` to be a primitive type in the JSON string but got `%s`", jsonObj.get("database").toString()));
       }
       if ((jsonObj.get("query") != null && !jsonObj.get("query").isJsonNull()) && !jsonObj.get("query").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
       }
       if ((jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) && !jsonObj.get("role").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
       }
       if ((jsonObj.get("schema") != null && !jsonObj.get("schema").isJsonNull()) && !jsonObj.get("schema").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `schema` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `schema` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema").toString()));
       }
       if ((jsonObj.get("table") != null && !jsonObj.get("table").isJsonNull()) && !jsonObj.get("table").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `table` to be a primitive type in the JSON string but got `%s`", jsonObj.get("table").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `table` to be a primitive type in the JSON string but got `%s`", jsonObj.get("table").toString()));
       }
       if ((jsonObj.get("timestamp_column") != null && !jsonObj.get("timestamp_column").isJsonNull()) && !jsonObj.get("timestamp_column").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `timestamp_column` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timestamp_column").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `timestamp_column` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timestamp_column").toString()));
       }
       if ((jsonObj.get("user") != null && !jsonObj.get("user").isJsonNull()) && !jsonObj.get("user").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `user` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user").toString()));
       }
       if ((jsonObj.get("warehouse") != null && !jsonObj.get("warehouse").isJsonNull()) && !jsonObj.get("warehouse").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `warehouse` to be a primitive type in the JSON string but got `%s`", jsonObj.get("warehouse").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `warehouse` to be a primitive type in the JSON string but got `%s`", jsonObj.get("warehouse").toString()));
       }
   }
 

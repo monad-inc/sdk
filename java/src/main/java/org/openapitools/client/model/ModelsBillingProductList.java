@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsBillingProductList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsBillingProductList {
   public static final String SERIALIZED_NAME_BILLING_PRODUCTS = "billing_products";
   @SerializedName(SERIALIZED_NAME_BILLING_PRODUCTS)
@@ -174,7 +174,7 @@ public class ModelsBillingProductList {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelsBillingProductList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ModelsBillingProductList is not found in the empty JSON string", ModelsBillingProductList.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsBillingProductList is not found in the empty JSON string", ModelsBillingProductList.openapiRequiredFields.toString()));
         }
       }
 
@@ -182,7 +182,7 @@ public class ModelsBillingProductList {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ModelsBillingProductList.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ModelsBillingProductList` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsBillingProductList` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -191,7 +191,7 @@ public class ModelsBillingProductList {
         if (jsonArraybillingProducts != null) {
           // ensure the json data is an array
           if (!jsonObj.get("billing_products").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `billing_products` to be an array in the JSON string but got `%s`", jsonObj.get("billing_products").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `billing_products` to be an array in the JSON string but got `%s`", jsonObj.get("billing_products").toString()));
           }
 
           // validate the optional field `billing_products` (array)

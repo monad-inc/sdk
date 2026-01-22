@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * GitHub audit logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class AuditLogsSettingsConfig {
   public static final String SERIALIZED_NAME_ACTIONS = "actions";
   @SerializedName(SERIALIZED_NAME_ACTIONS)
@@ -62,15 +62,15 @@ public class AuditLogsSettingsConfig {
   @javax.annotation.Nullable
   private String actor;
 
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
+
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
   @javax.annotation.Nullable
   private String country;
-
-  public static final String SERIALIZED_NAME_CREATED_AFTER = "created_after";
-  @SerializedName(SERIALIZED_NAME_CREATED_AFTER)
-  @javax.annotation.Nullable
-  private String createdAfter;
 
   public static final String SERIALIZED_NAME_ENTERPRISE = "enterprise";
   @SerializedName(SERIALIZED_NAME_ENTERPRISE)
@@ -151,6 +151,25 @@ public class AuditLogsSettingsConfig {
   }
 
 
+  public AuditLogsSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+  }
+
+
   public AuditLogsSettingsConfig country(@javax.annotation.Nullable String country) {
     this.country = country;
     return this;
@@ -167,25 +186,6 @@ public class AuditLogsSettingsConfig {
 
   public void setCountry(@javax.annotation.Nullable String country) {
     this.country = country;
-  }
-
-
-  public AuditLogsSettingsConfig createdAfter(@javax.annotation.Nullable String createdAfter) {
-    this.createdAfter = createdAfter;
-    return this;
-  }
-
-  /**
-   * Only return audit log entries after this RFC3339 formatted time stamp
-   * @return createdAfter
-   */
-  @javax.annotation.Nullable
-  public String getCreatedAfter() {
-    return createdAfter;
-  }
-
-  public void setCreatedAfter(@javax.annotation.Nullable String createdAfter) {
-    this.createdAfter = createdAfter;
   }
 
 
@@ -315,8 +315,8 @@ public class AuditLogsSettingsConfig {
     AuditLogsSettingsConfig auditLogsSettingsConfig = (AuditLogsSettingsConfig) o;
     return Objects.equals(this.actions, auditLogsSettingsConfig.actions) &&
         Objects.equals(this.actor, auditLogsSettingsConfig.actor) &&
+        Objects.equals(this.backfillStartTime, auditLogsSettingsConfig.backfillStartTime) &&
         Objects.equals(this.country, auditLogsSettingsConfig.country) &&
-        Objects.equals(this.createdAfter, auditLogsSettingsConfig.createdAfter) &&
         Objects.equals(this.enterprise, auditLogsSettingsConfig.enterprise) &&
         Objects.equals(this.include, auditLogsSettingsConfig.include) &&
         Objects.equals(this.organization, auditLogsSettingsConfig.organization) &&
@@ -327,7 +327,7 @@ public class AuditLogsSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actions, actor, country, createdAfter, enterprise, include, organization, repository, useSyntheticData, user);
+    return Objects.hash(actions, actor, backfillStartTime, country, enterprise, include, organization, repository, useSyntheticData, user);
   }
 
   @Override
@@ -336,8 +336,8 @@ public class AuditLogsSettingsConfig {
     sb.append("class AuditLogsSettingsConfig {\n");
     sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
     sb.append("    actor: ").append(toIndentedString(actor)).append("\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    createdAfter: ").append(toIndentedString(createdAfter)).append("\n");
     sb.append("    enterprise: ").append(toIndentedString(enterprise)).append("\n");
     sb.append("    include: ").append(toIndentedString(include)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
@@ -365,7 +365,7 @@ public class AuditLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("actions", "actor", "country", "created_after", "enterprise", "include", "organization", "repository", "use_synthetic_data", "user"));
+    openapiFields = new HashSet<String>(Arrays.asList("actions", "actor", "backfill_start_time", "country", "enterprise", "include", "organization", "repository", "use_synthetic_data", "user"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -380,7 +380,7 @@ public class AuditLogsSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AuditLogsSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AuditLogsSettingsConfig is not found in the empty JSON string", AuditLogsSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in AuditLogsSettingsConfig is not found in the empty JSON string", AuditLogsSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -388,37 +388,37 @@ public class AuditLogsSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!AuditLogsSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AuditLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AuditLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("actions") != null && !jsonObj.get("actions").isJsonNull() && !jsonObj.get("actions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `actions` to be an array in the JSON string but got `%s`", jsonObj.get("actions").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `actions` to be an array in the JSON string but got `%s`", jsonObj.get("actions").toString()));
       }
       if ((jsonObj.get("actor") != null && !jsonObj.get("actor").isJsonNull()) && !jsonObj.get("actor").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `actor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("actor").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `actor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("actor").toString()));
+      }
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
       if ((jsonObj.get("country") != null && !jsonObj.get("country").isJsonNull()) && !jsonObj.get("country").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("country").toString()));
-      }
-      if ((jsonObj.get("created_after") != null && !jsonObj.get("created_after").isJsonNull()) && !jsonObj.get("created_after").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `created_after` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_after").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("country").toString()));
       }
       if ((jsonObj.get("enterprise") != null && !jsonObj.get("enterprise").isJsonNull()) && !jsonObj.get("enterprise").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `enterprise` to be a primitive type in the JSON string but got `%s`", jsonObj.get("enterprise").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `enterprise` to be a primitive type in the JSON string but got `%s`", jsonObj.get("enterprise").toString()));
       }
       if ((jsonObj.get("include") != null && !jsonObj.get("include").isJsonNull()) && !jsonObj.get("include").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `include` to be a primitive type in the JSON string but got `%s`", jsonObj.get("include").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `include` to be a primitive type in the JSON string but got `%s`", jsonObj.get("include").toString()));
       }
       if ((jsonObj.get("organization") != null && !jsonObj.get("organization").isJsonNull()) && !jsonObj.get("organization").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `organization` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization").toString()));
       }
       if ((jsonObj.get("repository") != null && !jsonObj.get("repository").isJsonNull()) && !jsonObj.get("repository").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `repository` to be a primitive type in the JSON string but got `%s`", jsonObj.get("repository").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `repository` to be a primitive type in the JSON string but got `%s`", jsonObj.get("repository").toString()));
       }
       if ((jsonObj.get("user") != null && !jsonObj.get("user").isJsonNull()) && !jsonObj.get("user").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `user` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user").toString()));
       }
   }
 

@@ -13,11 +13,13 @@
 import { HttpFile } from '../http/http';
 
 export class EnrichmentConnectorMeta {
+    'authType'?: string;
     'config'?: any | null;
+    'connectorCategory'?: string;
     'description'?: string;
     'house'?: string;
+    'inBeta'?: boolean;
     'internal'?: boolean;
-    'logoKey'?: string;
     'name'?: string;
     'tier'?: number;
     'typeId'?: string;
@@ -28,9 +30,21 @@ export class EnrichmentConnectorMeta {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
+            "name": "authType",
+            "baseName": "auth_type",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "config",
             "baseName": "config",
             "type": "any",
+            "format": ""
+        },
+        {
+            "name": "connectorCategory",
+            "baseName": "connector_category",
+            "type": "string",
             "format": ""
         },
         {
@@ -46,15 +60,15 @@ export class EnrichmentConnectorMeta {
             "format": ""
         },
         {
-            "name": "internal",
-            "baseName": "internal",
+            "name": "inBeta",
+            "baseName": "in_beta",
             "type": "boolean",
             "format": ""
         },
         {
-            "name": "logoKey",
-            "baseName": "logo_key",
-            "type": "string",
+            "name": "internal",
+            "baseName": "internal",
+            "type": "boolean",
             "format": ""
         },
         {

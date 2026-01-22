@@ -20,6 +20,8 @@ var _ MappedNullable = &CloudtrailSettingsConfig{}
 
 // CloudtrailSettingsConfig AWS Cloudtrail settings
 type CloudtrailSettingsConfig struct {
+	// Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// The name of the S3 bucket
 	Bucket *string `json:"bucket,omitempty"`
 	// Prefix of the S3 object keys to read.
@@ -47,6 +49,38 @@ func NewCloudtrailSettingsConfig() *CloudtrailSettingsConfig {
 func NewCloudtrailSettingsConfigWithDefaults() *CloudtrailSettingsConfig {
 	this := CloudtrailSettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *CloudtrailSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudtrailSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *CloudtrailSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *CloudtrailSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetBucket returns the Bucket field value if set, zero value otherwise.
@@ -219,6 +253,9 @@ func (o CloudtrailSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o CloudtrailSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.Bucket) {
 		toSerialize["bucket"] = o.Bucket
 	}

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AlertType** | Pointer to **string** | Filter by alert type (e.g., policy_violated, tag_conflict) | [optional] 
+**BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **Embed** | Pointer to **string** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
 **PrimaryEntityType** | Pointer to **string** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) | [optional] 
 **PrimaryEntityValue** | Pointer to **string** | Filter by primary entity value (contains search) | [optional] 
@@ -56,6 +57,31 @@ SetAlertType sets AlertType field to given value.
 `func (o *IndividualAlertsSettingsConfig) HasAlertType() bool`
 
 HasAlertType returns a boolean if a field has been set.
+
+### GetBackfillStartTime
+
+`func (o *IndividualAlertsSettingsConfig) GetBackfillStartTime() string`
+
+GetBackfillStartTime returns the BackfillStartTime field if non-nil, zero value otherwise.
+
+### GetBackfillStartTimeOk
+
+`func (o *IndividualAlertsSettingsConfig) GetBackfillStartTimeOk() (*string, bool)`
+
+GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackfillStartTime
+
+`func (o *IndividualAlertsSettingsConfig) SetBackfillStartTime(v string)`
+
+SetBackfillStartTime sets BackfillStartTime field to given value.
+
+### HasBackfillStartTime
+
+`func (o *IndividualAlertsSettingsConfig) HasBackfillStartTime() bool`
+
+HasBackfillStartTime returns a boolean if a field has been set.
 
 ### GetEmbed
 

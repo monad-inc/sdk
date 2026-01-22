@@ -2,8 +2,8 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2025-08-07T23:56:12.911465570Z[Etc/UTC]
-  - Generator version: 7.14.0
+  - Build date: 2026-01-22T22:30:04.879766461Z[Etc/UTC]
+  - Generator version: 7.19.0
 
 This is the monad API
 
@@ -85,20 +85,34 @@ Please follow the [installation](#installation) instruction and execute the foll
 import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
 import org.openapitools.client.model.*;
-import org.openapitools.client.api.AuthenticationApi;
+import org.openapitools.client.api.AlertRulesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
 
-    AuthenticationApi apiInstance = new AuthenticationApi(defaultClient);
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    AlertRulesApi apiInstance = new AlertRulesApi(defaultClient);
+    String alertRuleTypeId = "alertRuleTypeId_example"; // String | Alert Rule Type ID
     try {
-      String result = apiInstance.v1LoginCallbackGet();
+      AlertsAlertMeta result = apiInstance.v3AlertRulesAlertRuleTypeIdGet(alertRuleTypeId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AuthenticationApi#v1LoginCallbackGet");
+      System.err.println("Exception when calling AlertRulesApi#v3AlertRulesAlertRuleTypeIdGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -115,6 +129,15 @@ All URIs are relative to *https://monad.com/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AlertRulesApi* | [**v3AlertRulesAlertRuleTypeIdGet**](docs/AlertRulesApi.md#v3AlertRulesAlertRuleTypeIdGet) | **GET** /v3/alert_rules/{alert_rule_type_id} | Get alert rule type config metadata
+*AlertRulesApi* | [**v3AlertRulesGet**](docs/AlertRulesApi.md#v3AlertRulesGet) | **GET** /v3/alert_rules | List alert rule types
+*AlertRulesApi* | [**v3OrganizationIdAlertRulesAlertRuleIdDelete**](docs/AlertRulesApi.md#v3OrganizationIdAlertRulesAlertRuleIdDelete) | **DELETE** /v3/{organization_id}/alert_rules/{alert_rule_id} | Delete alert rule
+*AlertRulesApi* | [**v3OrganizationIdAlertRulesAlertRuleIdGet**](docs/AlertRulesApi.md#v3OrganizationIdAlertRulesAlertRuleIdGet) | **GET** /v3/{organization_id}/alert_rules/{alert_rule_id} | Get alert rule by ID
+*AlertRulesApi* | [**v3OrganizationIdAlertRulesAlertRuleIdPut**](docs/AlertRulesApi.md#v3OrganizationIdAlertRulesAlertRuleIdPut) | **PUT** /v3/{organization_id}/alert_rules/{alert_rule_id} | Update alert rule
+*AlertRulesApi* | [**v3OrganizationIdAlertRulesGet**](docs/AlertRulesApi.md#v3OrganizationIdAlertRulesGet) | **GET** /v3/{organization_id}/alert_rules | Get all alert rules
+*AlertRulesApi* | [**v3OrganizationIdAlertRulesPost**](docs/AlertRulesApi.md#v3OrganizationIdAlertRulesPost) | **POST** /v3/{organization_id}/alert_rules | Create a new alert rule
+*AlertsApi* | [**v3OrganizationIdAlertsGet**](docs/AlertsApi.md#v3OrganizationIdAlertsGet) | **GET** /v3/{organization_id}/alerts | List alerts with pagination
+*AlertsApi* | [**v3OrganizationIdAlertsStreamGet**](docs/AlertsApi.md#v3OrganizationIdAlertsStreamGet) | **GET** /v3/{organization_id}/alerts/stream | Stream alerts in real-time
 *AuthenticationApi* | [**v1LoginCallbackGet**](docs/AuthenticationApi.md#v1LoginCallbackGet) | **GET** /v1/login/callback | Handle login callback
 *AuthenticationApi* | [**v1LoginGet**](docs/AuthenticationApi.md#v1LoginGet) | **GET** /v1/login | Initiate login - This is a development endpoint that is not used by the frontend. You can use this endpoint to initiate the login process and get an access token for swagger.
 *AuthenticationApi* | [**v1LoginResendVerificationPost**](docs/AuthenticationApi.md#v1LoginResendVerificationPost) | **POST** /v1/login/resend-verification | Resend email verification
@@ -137,19 +160,11 @@ Class | Method | HTTP request | Description
 *BillingProductsApi* | [**v2BillingAccountsBillingAccountIdSubscriptionPost**](docs/BillingProductsApi.md#v2BillingAccountsBillingAccountIdSubscriptionPost) | **POST** /v2/billing/accounts/{billing_account_id}/subscription | Create Billing Account Subscription
 *BillingProductsApi* | [**v2BillingProductsGet**](docs/BillingProductsApi.md#v2BillingProductsGet) | **GET** /v2/billing/products | List Billing Products
 *ConditionsApi* | [**v2ConditionsGet**](docs/ConditionsApi.md#v2ConditionsGet) | **GET** /v2/conditions | List conditions
-*ConnectionsApi* | [**v3ConnectionsConnectionIdDelete**](docs/ConnectionsApi.md#v3ConnectionsConnectionIdDelete) | **DELETE** /v3/connections/{connection_id} | Delete connection
-*ConnectionsApi* | [**v3ConnectionsConnectionIdGet**](docs/ConnectionsApi.md#v3ConnectionsConnectionIdGet) | **GET** /v3/connections/{connection_id} | Get connection by ID
-*ConnectionsApi* | [**v3ConnectionsConnectionIdPatch**](docs/ConnectionsApi.md#v3ConnectionsConnectionIdPatch) | **PATCH** /v3/connections/{connection_id} | Update connection
-*ConnectionsApi* | [**v3ConnectionsGet**](docs/ConnectionsApi.md#v3ConnectionsGet) | **GET** /v3/connections | Get all connections
-*ConnectionsApi* | [**v3ConnectionsPost**](docs/ConnectionsApi.md#v3ConnectionsPost) | **POST** /v3/connections | Create a new connection
-*ConnectionsRbacApi* | [**v3ConnectionsConnectionIdRolesGet**](docs/ConnectionsRbacApi.md#v3ConnectionsConnectionIdRolesGet) | **GET** /v3/connections/{connection_id}/roles | Get Connection Roles
-*ConnectionsRbacApi* | [**v3ConnectionsConnectionIdRolesPost**](docs/ConnectionsRbacApi.md#v3ConnectionsConnectionIdRolesPost) | **POST** /v3/connections/{connection_id}/roles | Create Connection Role
-*ConnectionsRbacApi* | [**v3ConnectionsConnectionIdRolesRoleIdDelete**](docs/ConnectionsRbacApi.md#v3ConnectionsConnectionIdRolesRoleIdDelete) | **DELETE** /v3/connections/{connection_id}/roles/{role_id} | Delete Connection Role
-*ConnectionsRbacApi* | [**v3ConnectionsConnectionIdRolesRoleIdGet**](docs/ConnectionsRbacApi.md#v3ConnectionsConnectionIdRolesRoleIdGet) | **GET** /v3/connections/{connection_id}/roles/{role_id} | Get Connection Role
-*ConnectionsRbacApi* | [**v3ConnectionsConnectionIdRolesRoleIdPatch**](docs/ConnectionsRbacApi.md#v3ConnectionsConnectionIdRolesRoleIdPatch) | **PATCH** /v3/connections/{connection_id}/roles/{role_id} | Update Connection Role
-*ConnectionsRbacApi* | [**v3ConnectionsConnectionIdRolesRoleIdUsersPost**](docs/ConnectionsRbacApi.md#v3ConnectionsConnectionIdRolesRoleIdUsersPost) | **POST** /v3/connections/{connection_id}/roles/{role_id}/users | Create Connection User Role
-*ConnectionsRbacApi* | [**v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDelete**](docs/ConnectionsRbacApi.md#v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDelete) | **DELETE** /v3/connections/{connection_id}/roles/{role_id}/users/{user_id} | Delete Connection User Role
-*ConnectionsRbacApi* | [**v3ConnectionsPermissionsGet**](docs/ConnectionsRbacApi.md#v3ConnectionsPermissionsGet) | **GET** /v3/connections/permissions | Get Connection Permissions
+*ConnectionsApi* | [**v3OrganizationIdConnectionsConnectionIdDelete**](docs/ConnectionsApi.md#v3OrganizationIdConnectionsConnectionIdDelete) | **DELETE** /v3/{organization_id}/connections/{connection_id} | Delete connection
+*ConnectionsApi* | [**v3OrganizationIdConnectionsConnectionIdGet**](docs/ConnectionsApi.md#v3OrganizationIdConnectionsConnectionIdGet) | **GET** /v3/{organization_id}/connections/{connection_id} | Get connection by ID
+*ConnectionsApi* | [**v3OrganizationIdConnectionsConnectionIdPatch**](docs/ConnectionsApi.md#v3OrganizationIdConnectionsConnectionIdPatch) | **PATCH** /v3/{organization_id}/connections/{connection_id} | Update connection
+*ConnectionsApi* | [**v3OrganizationIdConnectionsGet**](docs/ConnectionsApi.md#v3OrganizationIdConnectionsGet) | **GET** /v3/{organization_id}/connections | Get all connections
+*ConnectionsApi* | [**v3OrganizationIdConnectionsPost**](docs/ConnectionsApi.md#v3OrganizationIdConnectionsPost) | **POST** /v3/{organization_id}/connections | Create a new connection
 *DataApi* | [**v1OrganizationIdDataNodeIdGet**](docs/DataApi.md#v1OrganizationIdDataNodeIdGet) | **GET** /v1/{organization_id}/data/{node_id} | Stream node data
 *EnrichmentsApi* | [**v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet**](docs/EnrichmentsApi.md#v3OrganizationIdEnrichmentsMetaEnrichmentTypeIdGet) | **GET** /v3/{organization_id}/enrichments_meta/{enrichment_type_id} | Get enrichment config meta
 *EnrichmentsApi* | [**v3OrganizationIdEnrichmentsMetaGet**](docs/EnrichmentsApi.md#v3OrganizationIdEnrichmentsMetaGet) | **GET** /v3/{organization_id}/enrichments_meta | List enrichments
@@ -206,6 +221,13 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**v1OrganizationsOrganizationIdPatch**](docs/OrganizationsApi.md#v1OrganizationsOrganizationIdPatch) | **PATCH** /v1/organizations/{organization_id} | Update organization
 *OrganizationsApi* | [**v1OrganizationsPost**](docs/OrganizationsApi.md#v1OrganizationsPost) | **POST** /v1/organizations | Create organization
 *OrganizationsApi* | [**v2OrganizationIdMetricsGet**](docs/OrganizationsApi.md#v2OrganizationIdMetricsGet) | **GET** /v2/{organization_id}/metrics | Get organization metrics
+*OrganizationsApi* | [**v2OrganizationIdMetricsStorageTypesDetailsGet**](docs/OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesDetailsGet) | **GET** /v2/{organization_id}/metrics/storage-types/details | Get storage type output details
+*OrganizationsApi* | [**v2OrganizationIdMetricsStorageTypesGet**](docs/OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesGet) | **GET** /v2/{organization_id}/metrics/storage-types | Get storage type metrics
+*OrganizationsApi* | [**v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet**](docs/OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/details | Get storage type output details by type
+*OrganizationsApi* | [**v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet**](docs/OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/summary | Get storage type cost summary by type
+*OrganizationsApi* | [**v2OrganizationIdMetricsStorageTypesSummaryGet**](docs/OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesSummaryGet) | **GET** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary
+*OrganizationsApi* | [**v2OrganizationIdStorageTypeCostGet**](docs/OrganizationsApi.md#v2OrganizationIdStorageTypeCostGet) | **GET** /v2/{organization_id}/storage-type-cost | Get storage type cost
+*OrganizationsApi* | [**v2OrganizationIdStorageTypeCostPut**](docs/OrganizationsApi.md#v2OrganizationIdStorageTypeCostPut) | **PUT** /v2/{organization_id}/storage-type-cost | Set storage type cost
 *OutputsApi* | [**v1OutputsGet**](docs/OutputsApi.md#v1OutputsGet) | **GET** /v1/outputs | List outputs
 *OutputsApi* | [**v1OutputsOutputTypeIdGet**](docs/OutputsApi.md#v1OutputsOutputTypeIdGet) | **GET** /v1/outputs/{output_type_id} | Get output config meta
 *PermissionsApi* | [**v2OrganizationIdRolesPermissionsGet**](docs/PermissionsApi.md#v2OrganizationIdRolesPermissionsGet) | **GET** /v2/{organization_id}/roles/permissions | List permissions
@@ -227,6 +249,8 @@ Class | Method | HTTP request | Description
 *PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdTriggerPost**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdTriggerPost) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 *PipelinesApi* | [**v2OrganizationIdPipelinesPost**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPost) | **POST** /v2/{organization_id}/pipelines | Create pipeline
 *PipelinesApi* | [**v2OrganizationIdPipelinesStatusesGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesStatusesGet) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
+*PipelinesApi* | [**v3PipelineEdgesEdgeConditionOperatorTypesGet**](docs/PipelinesApi.md#v3PipelineEdgesEdgeConditionOperatorTypesGet) | **GET** /v3/pipeline_edges/edge_condition_operator_types | Conditional types for edge conditions
+*PipelinesApi* | [**v3PipelineEdgesEdgeConditionRulesGet**](docs/PipelinesApi.md#v3PipelineEdgesEdgeConditionRulesGet) | **GET** /v3/pipeline_edges/edge_condition_rules | Rules for edge conditions
 *QuotasApi* | [**v2QuotasGet**](docs/QuotasApi.md#v2QuotasGet) | **GET** /v2/quotas | List quotas
 *RolesApi* | [**v2OrganizationIdRolesGet**](docs/RolesApi.md#v2OrganizationIdRolesGet) | **GET** /v2/{organization_id}/roles | List roles
 *RolesApi* | [**v2OrganizationIdRolesPost**](docs/RolesApi.md#v2OrganizationIdRolesPost) | **POST** /v2/{organization_id}/roles | Create role
@@ -236,6 +260,7 @@ Class | Method | HTTP request | Description
 *SandboxApi* | [**v2SandboxTemplateGet**](docs/SandboxApi.md#v2SandboxTemplateGet) | **GET** /v2/sandbox/template | List available templates
 *SandboxApi* | [**v2SandboxTemplatePost**](docs/SandboxApi.md#v2SandboxTemplatePost) | **POST** /v2/sandbox/template | Generate sample record
 *SandboxApi* | [**v2SandboxTransformPost**](docs/SandboxApi.md#v2SandboxTransformPost) | **POST** /v2/sandbox/transform | Apply transformation to record
+*SandboxApi* | [**v3OrganizationIdEnrichmentsSandboxPost**](docs/SandboxApi.md#v3OrganizationIdEnrichmentsSandboxPost) | **POST** /v3/{organization_id}/enrichments/sandbox | Apply enrichment to record
 *SecretsApi* | [**v2OrganizationIdSecretsGet**](docs/SecretsApi.md#v2OrganizationIdSecretsGet) | **GET** /v2/{organization_id}/secrets | List secrets with components
 *SecretsApi* | [**v2OrganizationIdSecretsPost**](docs/SecretsApi.md#v2OrganizationIdSecretsPost) | **POST** /v2/{organization_id}/secrets | Create secret
 *SecretsApi* | [**v2OrganizationIdSecretsSecretIdDelete**](docs/SecretsApi.md#v2OrganizationIdSecretsSecretIdDelete) | **DELETE** /v2/{organization_id}/secrets/{secret_id} | Delete secret
@@ -243,6 +268,8 @@ Class | Method | HTTP request | Description
 *SecretsApi* | [**v2OrganizationIdSecretsSecretIdPatch**](docs/SecretsApi.md#v2OrganizationIdSecretsSecretIdPatch) | **PATCH** /v2/{organization_id}/secrets/{secret_id} | Update secret
 *TransformsApi* | [**v1TransformsGet**](docs/TransformsApi.md#v1TransformsGet) | **GET** /v1/transforms | List transforms
 *TransformsApi* | [**v1TransformsTransformTypeIdGet**](docs/TransformsApi.md#v1TransformsTransformTypeIdGet) | **GET** /v1/transforms/{transform_type_id} | Get transform metadata
+*TransformsRecommendationsApi* | [**v3OrganizationIdTransformRecommendationsOptimizersGet**](docs/TransformsRecommendationsApi.md#v3OrganizationIdTransformRecommendationsOptimizersGet) | **GET** /v3/{organization_id}/transform_recommendations/optimizers | List available transform optimizers
+*TransformsRecommendationsApi* | [**v3OrganizationIdTransformRecommendationsPost**](docs/TransformsRecommendationsApi.md#v3OrganizationIdTransformRecommendationsPost) | **POST** /v3/{organization_id}/transform_recommendations | Create transform recommendation
 *TransformsRepositoryApi* | [**v2TransformsRepositoryGet**](docs/TransformsRepositoryApi.md#v2TransformsRepositoryGet) | **GET** /v2/transforms/repository | List transforms
 *TransformsRepositoryApi* | [**v2TransformsRepositoryTransformIdGet**](docs/TransformsRepositoryApi.md#v2TransformsRepositoryTransformIdGet) | **GET** /v2/transforms/repository/{transform_id} | Get transform details
 *TransformsRepositoryApi* | [**v3TransformsRepositoryExportPost**](docs/TransformsRepositoryApi.md#v3TransformsRepositoryExportPost) | **POST** /v3/transforms/repository/export | Export transform to YAML
@@ -261,13 +288,19 @@ Class | Method | HTTP request | Description
  - [AbsSettingsConfig](docs/AbsSettingsConfig.md)
  - [ActivityLogsSecretsConfig](docs/ActivityLogsSecretsConfig.md)
  - [ActivityLogsSettingsConfig](docs/ActivityLogsSettingsConfig.md)
+ - [ActivitylogsSecretsConfig](docs/ActivitylogsSecretsConfig.md)
+ - [ActivitylogsSettingsConfig](docs/ActivitylogsSettingsConfig.md)
  - [ActorsInfoSecretsConfig](docs/ActorsInfoSecretsConfig.md)
  - [ActorsInfoSettingsConfig](docs/ActorsInfoSettingsConfig.md)
  - [AddAdd](docs/AddAdd.md)
- - [AdminActivitySecretsConfig](docs/AdminActivitySecretsConfig.md)
- - [AdminActivitySettingsConfig](docs/AdminActivitySettingsConfig.md)
+ - [AddIdAddIdentifier](docs/AddIdAddIdentifier.md)
  - [AdminLogsSecretsConfig](docs/AdminLogsSecretsConfig.md)
  - [AdminLogsSettingsConfig](docs/AdminLogsSettingsConfig.md)
+ - [AlertCenterSecretsConfig](docs/AlertCenterSecretsConfig.md)
+ - [AlertCenterSettingsConfig](docs/AlertCenterSettingsConfig.md)
+ - [AlertsAlertMeta](docs/AlertsAlertMeta.md)
+ - [ArizeAuditLogsSecretsConfig](docs/ArizeAuditLogsSecretsConfig.md)
+ - [ArizeAuditLogsSettingsConfig](docs/ArizeAuditLogsSettingsConfig.md)
  - [AuditLogsSecretsConfig](docs/AuditLogsSecretsConfig.md)
  - [AuditLogsSettingsConfig](docs/AuditLogsSettingsConfig.md)
  - [AuthLogsSecretsConfig](docs/AuthLogsSecretsConfig.md)
@@ -275,18 +308,32 @@ Class | Method | HTTP request | Description
  - [AuthenticationtypesAuthenticationMethod](docs/AuthenticationtypesAuthenticationMethod.md)
  - [AuthenticationtypesMFAEnrollmentTicket](docs/AuthenticationtypesMFAEnrollmentTicket.md)
  - [AuthenticationtypesTokenResponse](docs/AuthenticationtypesTokenResponse.md)
+ - [AwsGuarddutySecretsConfig](docs/AwsGuarddutySecretsConfig.md)
  - [AwsGuarddutySettingsConfig](docs/AwsGuarddutySettingsConfig.md)
+ - [AwsS3SecretsConfig](docs/AwsS3SecretsConfig.md)
  - [AwsS3SettingsConfig](docs/AwsS3SettingsConfig.md)
- - [AwssqsSettingsConfig](docs/AwssqsSettingsConfig.md)
+ - [AwssecurityhubSecretsConfig](docs/AwssecurityhubSecretsConfig.md)
+ - [AwssecurityhubSettingsConfig](docs/AwssecurityhubSettingsConfig.md)
  - [AwssqsoutputSettingsConfig](docs/AwssqsoutputSettingsConfig.md)
+ - [Awssqss3SettingsConfig](docs/Awssqss3SettingsConfig.md)
+ - [AxiomSecretsConfig](docs/AxiomSecretsConfig.md)
+ - [AxiomSettingsConfig](docs/AxiomSettingsConfig.md)
  - [AzureActivityLogsSecretsConfig](docs/AzureActivityLogsSecretsConfig.md)
  - [AzureActivityLogsSettingsConfig](docs/AzureActivityLogsSettingsConfig.md)
  - [AzureBlobStorageSecretsConfig](docs/AzureBlobStorageSecretsConfig.md)
  - [AzureBlobStorageSettingsConfig](docs/AzureBlobStorageSettingsConfig.md)
+ - [AzureEventHubsSecretsConfig](docs/AzureEventHubsSecretsConfig.md)
+ - [AzureEventHubsSettingsConfig](docs/AzureEventHubsSettingsConfig.md)
  - [AzureVirtualMachineSettingsConfig](docs/AzureVirtualMachineSettingsConfig.md)
  - [AzureVnetFlowLogsSecretsConfig](docs/AzureVnetFlowLogsSecretsConfig.md)
  - [AzureVnetFlowLogsSettingsConfig](docs/AzureVnetFlowLogsSettingsConfig.md)
+ - [BackblazeB2SecretsConfig](docs/BackblazeB2SecretsConfig.md)
+ - [BackblazeB2SettingsConfig](docs/BackblazeB2SettingsConfig.md)
+ - [BackblazeSecretsConfig](docs/BackblazeSecretsConfig.md)
+ - [BackblazeSettingsConfig](docs/BackblazeSettingsConfig.md)
  - [BatchConfigBatchConfig](docs/BatchConfigBatchConfig.md)
+ - [BigqueryCronSecretsConfig](docs/BigqueryCronSecretsConfig.md)
+ - [BigqueryCronSettingsConfig](docs/BigqueryCronSettingsConfig.md)
  - [BigqueryInputSecretsConfig](docs/BigqueryInputSecretsConfig.md)
  - [BigqueryInputSettingsConfig](docs/BigqueryInputSettingsConfig.md)
  - [BigquerySecretsConfig](docs/BigquerySecretsConfig.md)
@@ -295,6 +342,10 @@ Class | Method | HTTP request | Description
  - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
  - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
  - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
+ - [BuildkiteAuditLogsSecretsConfig](docs/BuildkiteAuditLogsSecretsConfig.md)
+ - [BuildkiteAuditLogsSettingsConfig](docs/BuildkiteAuditLogsSettingsConfig.md)
+ - [BuildkiteGraphqlInputSecretsConfig](docs/BuildkiteGraphqlInputSecretsConfig.md)
+ - [BuildkiteGraphqlInputSettingsConfig](docs/BuildkiteGraphqlInputSettingsConfig.md)
  - [CisaUserSettingsConfig](docs/CisaUserSettingsConfig.md)
  - [CloudAssetInventorySecretsConfig](docs/CloudAssetInventorySecretsConfig.md)
  - [CloudAssetInventorySettingsConfig](docs/CloudAssetInventorySettingsConfig.md)
@@ -302,13 +353,37 @@ Class | Method | HTTP request | Description
  - [CloudConfigurationFindingsSettingsConfig](docs/CloudConfigurationFindingsSettingsConfig.md)
  - [CloudLogsSecretsConfig](docs/CloudLogsSecretsConfig.md)
  - [CloudLogsSettingsConfig](docs/CloudLogsSettingsConfig.md)
+ - [CloudResourceInventoryReportsSecretsConfig](docs/CloudResourceInventoryReportsSecretsConfig.md)
+ - [CloudResourceInventoryReportsSettingsConfig](docs/CloudResourceInventoryReportsSettingsConfig.md)
  - [CloudResourceInventorySecretsConfig](docs/CloudResourceInventorySecretsConfig.md)
  - [CloudResourceInventorySettingsConfig](docs/CloudResourceInventorySettingsConfig.md)
+ - [CloudflareAuditLogsSecretsConfig](docs/CloudflareAuditLogsSecretsConfig.md)
+ - [CloudflareAuditLogsSettingsConfig](docs/CloudflareAuditLogsSettingsConfig.md)
+ - [CloudflareDnsRecordsSecretsConfig](docs/CloudflareDnsRecordsSecretsConfig.md)
+ - [CloudflareDnsRecordsSettingsConfig](docs/CloudflareDnsRecordsSettingsConfig.md)
+ - [CloudflareFirewallEventsSecretsConfig](docs/CloudflareFirewallEventsSecretsConfig.md)
+ - [CloudflareFirewallEventsSettingsConfig](docs/CloudflareFirewallEventsSettingsConfig.md)
+ - [CloudflarePageShieldConnectionsSecretsConfig](docs/CloudflarePageShieldConnectionsSecretsConfig.md)
+ - [CloudflarePageShieldConnectionsSettingsConfig](docs/CloudflarePageShieldConnectionsSettingsConfig.md)
+ - [CloudflareRulesetsSecretsConfig](docs/CloudflareRulesetsSecretsConfig.md)
+ - [CloudflareRulesetsSettingsConfig](docs/CloudflareRulesetsSettingsConfig.md)
+ - [CloudflareSecurityInsightsSecretsConfig](docs/CloudflareSecurityInsightsSecretsConfig.md)
+ - [CloudflareSecurityInsightsSettingsConfig](docs/CloudflareSecurityInsightsSettingsConfig.md)
+ - [CloudflareUrlScannerSecretsConfig](docs/CloudflareUrlScannerSecretsConfig.md)
+ - [CloudflareUrlScannerSettingsConfig](docs/CloudflareUrlScannerSettingsConfig.md)
+ - [CloudflareUsersSecretsConfig](docs/CloudflareUsersSecretsConfig.md)
+ - [CloudflareUsersSettingsConfig](docs/CloudflareUsersSettingsConfig.md)
+ - [CloudflareZeroTrustAccessRequestsSecretsConfig](docs/CloudflareZeroTrustAccessRequestsSecretsConfig.md)
+ - [CloudflareZeroTrustAccessRequestsSettingsConfig](docs/CloudflareZeroTrustAccessRequestsSettingsConfig.md)
+ - [CloudflareZonesSecretsConfig](docs/CloudflareZonesSecretsConfig.md)
+ - [CloudflareZonesSettingsConfig](docs/CloudflareZonesSettingsConfig.md)
  - [CloudtrailSettingsConfig](docs/CloudtrailSettingsConfig.md)
  - [ClumioAuditLogsSecretsConfig](docs/ClumioAuditLogsSecretsConfig.md)
  - [ClumioAuditLogsSettingsConfig](docs/ClumioAuditLogsSettingsConfig.md)
  - [ClumioConsolidatedAlertsSecretsConfig](docs/ClumioConsolidatedAlertsSecretsConfig.md)
  - [ClumioConsolidatedAlertsSettingsConfig](docs/ClumioConsolidatedAlertsSettingsConfig.md)
+ - [CodaAuditEventsSecretsConfig](docs/CodaAuditEventsSecretsConfig.md)
+ - [CodaAuditEventsSettingsConfig](docs/CodaAuditEventsSettingsConfig.md)
  - [CognitoUsersFilter](docs/CognitoUsersFilter.md)
  - [CognitoUsersSettingsConfig](docs/CognitoUsersSettingsConfig.md)
  - [CommunityEditionSecretsConfig](docs/CommunityEditionSecretsConfig.md)
@@ -317,47 +392,49 @@ Class | Method | HTTP request | Description
  - [CommunityTransformsInternalTransformMetadata](docs/CommunityTransformsInternalTransformMetadata.md)
  - [CommunityTransformsInternalTransformsIndex](docs/CommunityTransformsInternalTransformsIndex.md)
  - [ConditionInfo](docs/ConditionInfo.md)
+ - [CortexXsoarManagementLogsSecretsConfig](docs/CortexXsoarManagementLogsSecretsConfig.md)
+ - [CortexXsoarManagementLogsSettingsConfig](docs/CortexXsoarManagementLogsSettingsConfig.md)
  - [CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue](docs/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.md)
  - [CriblHttpSecretsConfig](docs/CriblHttpSecretsConfig.md)
  - [CriblHttpSettingsConfig](docs/CriblHttpSettingsConfig.md)
  - [CrowdstrikeFdrSecretsConfig](docs/CrowdstrikeFdrSecretsConfig.md)
  - [CrowdstrikeFdrSettingsConfig](docs/CrowdstrikeFdrSettingsConfig.md)
+ - [CustomerEventDataSecretsConfig](docs/CustomerEventDataSecretsConfig.md)
+ - [CustomerEventDataSettingsConfig](docs/CustomerEventDataSettingsConfig.md)
+ - [DatadogSecretsConfig](docs/DatadogSecretsConfig.md)
+ - [DatadogSettingsConfig](docs/DatadogSettingsConfig.md)
  - [DefenderForEndpointAlertsSecretsConfig](docs/DefenderForEndpointAlertsSecretsConfig.md)
  - [DefenderForEndpointAlertsSettingsConfig](docs/DefenderForEndpointAlertsSettingsConfig.md)
  - [DelimitedDelimiterFormatter](docs/DelimitedDelimiterFormatter.md)
- - [DetectSummariesSecretsConfig](docs/DetectSummariesSecretsConfig.md)
- - [DetectSummariesSettingsConfig](docs/DetectSummariesSettingsConfig.md)
- - [DeviceActivitySecretsConfig](docs/DeviceActivitySecretsConfig.md)
- - [DeviceActivitySettingsConfig](docs/DeviceActivitySettingsConfig.md)
  - [DeviceDetailsSecretsConfig](docs/DeviceDetailsSecretsConfig.md)
  - [DeviceDetailsSettingsConfig](docs/DeviceDetailsSettingsConfig.md)
  - [DevicesSecretsConfig](docs/DevicesSecretsConfig.md)
  - [DevicesSettingsConfig](docs/DevicesSettingsConfig.md)
- - [DriveActivitySecretsConfig](docs/DriveActivitySecretsConfig.md)
- - [DriveActivitySettingsConfig](docs/DriveActivitySettingsConfig.md)
  - [DropKeyDropKey](docs/DropKeyDropKey.md)
  - [DropKeyWhereValueEqDropKeyWhereValueEq](docs/DropKeyWhereValueEqDropKeyWhereValueEq.md)
  - [DropRecordWhereValueEqDropRecordWhereValueEq](docs/DropRecordWhereValueEqDropRecordWhereValueEq.md)
  - [DuplicateKeyValueToKeyDuplicateKeyValueToKey](docs/DuplicateKeyValueToKeyDuplicateKeyValueToKey.md)
  - [ElasticsearchSecretsConfig](docs/ElasticsearchSecretsConfig.md)
  - [ElasticsearchSettingsConfig](docs/ElasticsearchSettingsConfig.md)
+ - [EndorLabsAuditLogsSecretsConfig](docs/EndorLabsAuditLogsSecretsConfig.md)
+ - [EndorLabsAuditLogsSettingsConfig](docs/EndorLabsAuditLogsSettingsConfig.md)
  - [EnrichmentConnectorMeta](docs/EnrichmentConnectorMeta.md)
  - [EntraIdSecretsConfig](docs/EntraIdSecretsConfig.md)
  - [EntraIdSettingsConfig](docs/EntraIdSettingsConfig.md)
  - [EventSecretsConfig](docs/EventSecretsConfig.md)
  - [EventSettingsConfig](docs/EventSettingsConfig.md)
- - [EventsLogsSecretsConfig](docs/EventsLogsSecretsConfig.md)
- - [EventsLogsSettingsConfig](docs/EventsLogsSettingsConfig.md)
- - [EventsSecretsConfig](docs/EventsSecretsConfig.md)
- - [EventsSettingsConfig](docs/EventsSettingsConfig.md)
  - [FlagsmithFlag](docs/FlagsmithFlag.md)
  - [FlattenFlatten](docs/FlattenFlatten.md)
  - [FlattenallFlattenAll](docs/FlattenallFlattenAll.md)
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
+ - [GeolocusSettingsConfig](docs/GeolocusSettingsConfig.md)
  - [GithubAdvisoryUserSettingsConfig](docs/GithubAdvisoryUserSettingsConfig.md)
  - [GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter](docs/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.md)
+ - [GithubComMonadIncAlertsModelsAlert](docs/GithubComMonadIncAlertsModelsAlert.md)
+ - [GithubComMonadIncAlertsModelsAlertStatus](docs/GithubComMonadIncAlertsModelsAlertStatus.md)
+ - [GithubComMonadIncAlertsModelsResourceReference](docs/GithubComMonadIncAlertsModelsResourceReference.md)
  - [GithubComMonadIncCorePkgTypesModelsOrganization](docs/GithubComMonadIncCorePkgTypesModelsOrganization.md)
  - [GithubComMonadIncCorePkgTypesModelsPermission](docs/GithubComMonadIncCorePkgTypesModelsPermission.md)
  - [GithubComMonadIncCorePkgTypesModelsQuota](docs/GithubComMonadIncCorePkgTypesModelsQuota.md)
@@ -368,6 +445,8 @@ Class | Method | HTTP request | Description
  - [GoogleCloudStorageOutputSettingsConfig](docs/GoogleCloudStorageOutputSettingsConfig.md)
  - [GoogleCloudStorageSecretsConfig](docs/GoogleCloudStorageSecretsConfig.md)
  - [GoogleCloudStorageSettingsConfig](docs/GoogleCloudStorageSettingsConfig.md)
+ - [GreenhouseAuditLogsSecretsConfig](docs/GreenhouseAuditLogsSecretsConfig.md)
+ - [GreenhouseAuditLogsSettingsConfig](docs/GreenhouseAuditLogsSettingsConfig.md)
  - [HttpHeaders](docs/HttpHeaders.md)
  - [HttpSecretsConfig](docs/HttpSecretsConfig.md)
  - [HttpSettingsConfig](docs/HttpSettingsConfig.md)
@@ -377,21 +456,33 @@ Class | Method | HTTP request | Description
  - [IndividualAlertsSecretsConfig](docs/IndividualAlertsSecretsConfig.md)
  - [IndividualAlertsSettingsConfig](docs/IndividualAlertsSettingsConfig.md)
  - [InputsConnectorMeta](docs/InputsConnectorMeta.md)
+ - [InspectorSecretsConfig](docs/InspectorSecretsConfig.md)
+ - [InspectorSettingsConfig](docs/InspectorSettingsConfig.md)
+ - [IssuesReportSecretsConfig](docs/IssuesReportSecretsConfig.md)
+ - [IssuesReportSettingsConfig](docs/IssuesReportSettingsConfig.md)
  - [IssuesSecretsConfig](docs/IssuesSecretsConfig.md)
  - [IssuesSettingsConfig](docs/IssuesSettingsConfig.md)
  - [JqJQ](docs/JqJQ.md)
  - [JsonJsonFormatter](docs/JsonJsonFormatter.md)
  - [KmsSettingsConfig](docs/KmsSettingsConfig.md)
+ - [KoiAuditLogsSecretsConfig](docs/KoiAuditLogsSecretsConfig.md)
+ - [KoiAuditLogsSettingsConfig](docs/KoiAuditLogsSettingsConfig.md)
+ - [KvLookupOutputSettingsConfig](docs/KvLookupOutputSettingsConfig.md)
+ - [KvLookupSettingsConfig](docs/KvLookupSettingsConfig.md)
  - [LogAnalyticsQuerySecretsConfig](docs/LogAnalyticsQuerySecretsConfig.md)
  - [LogAnalyticsQuerySettingsConfig](docs/LogAnalyticsQuerySettingsConfig.md)
- - [LoginActivitySecretsConfig](docs/LoginActivitySecretsConfig.md)
- - [LoginActivitySettingsConfig](docs/LoginActivitySettingsConfig.md)
  - [LoginSessionsSecretsConfig](docs/LoginSessionsSecretsConfig.md)
  - [LoginSessionsSettingsConfig](docs/LoginSessionsSettingsConfig.md)
  - [MathMultiplyWithValueMathMultiplyWithValue](docs/MathMultiplyWithValueMathMultiplyWithValue.md)
+ - [MerakiConfigLogsSecretsConfig](docs/MerakiConfigLogsSecretsConfig.md)
+ - [MerakiConfigLogsSettingsConfig](docs/MerakiConfigLogsSettingsConfig.md)
+ - [Microsoft365GenericSecretsConfig](docs/Microsoft365GenericSecretsConfig.md)
+ - [Microsoft365GenericSettingsConfig](docs/Microsoft365GenericSettingsConfig.md)
  - [ModelsAPIKey](docs/ModelsAPIKey.md)
  - [ModelsAPIKeyList](docs/ModelsAPIKeyList.md)
  - [ModelsAPIKeyWithToken](docs/ModelsAPIKeyWithToken.md)
+ - [ModelsAlertRule](docs/ModelsAlertRule.md)
+ - [ModelsAlertRuleList](docs/ModelsAlertRuleList.md)
  - [ModelsBillingAccount](docs/ModelsBillingAccount.md)
  - [ModelsBillingAccountList](docs/ModelsBillingAccountList.md)
  - [ModelsBillingAccountPermission](docs/ModelsBillingAccountPermission.md)
@@ -402,9 +493,6 @@ Class | Method | HTTP request | Description
  - [ModelsComponentReference](docs/ModelsComponentReference.md)
  - [ModelsConnection](docs/ModelsConnection.md)
  - [ModelsConnectionList](docs/ModelsConnectionList.md)
- - [ModelsConnectionPermission](docs/ModelsConnectionPermission.md)
- - [ModelsConnectionRole](docs/ModelsConnectionRole.md)
- - [ModelsConnectionRoleUser](docs/ModelsConnectionRoleUser.md)
  - [ModelsConnectorMeta](docs/ModelsConnectorMeta.md)
  - [ModelsDataUsage](docs/ModelsDataUsage.md)
  - [ModelsEnrichment](docs/ModelsEnrichment.md)
@@ -440,6 +528,13 @@ Class | Method | HTTP request | Description
  - [ModelsSecret](docs/ModelsSecret.md)
  - [ModelsSecretWithComponents](docs/ModelsSecretWithComponents.md)
  - [ModelsSecretWithComponentsList](docs/ModelsSecretWithComponentsList.md)
+ - [ModelsStorageTypeCostConfig](docs/ModelsStorageTypeCostConfig.md)
+ - [ModelsStorageTypeCostEntry](docs/ModelsStorageTypeCostEntry.md)
+ - [ModelsStorageTypeCostSummary](docs/ModelsStorageTypeCostSummary.md)
+ - [ModelsStorageTypeOutputDetail](docs/ModelsStorageTypeOutputDetail.md)
+ - [ModelsStorageTypeSummaryResponse](docs/ModelsStorageTypeSummaryResponse.md)
+ - [ModelsStorageTypeTimeSeries](docs/ModelsStorageTypeTimeSeries.md)
+ - [ModelsStorageTypeTimeSeriesResponse](docs/ModelsStorageTypeTimeSeriesResponse.md)
  - [ModelsTransform](docs/ModelsTransform.md)
  - [ModelsTransformConfig](docs/ModelsTransformConfig.md)
  - [ModelsTransformList](docs/ModelsTransformList.md)
@@ -448,27 +543,35 @@ Class | Method | HTTP request | Description
  - [ModelsTransformsRepositoryTransform](docs/ModelsTransformsRepositoryTransform.md)
  - [ModelsUserAuthProvider](docs/ModelsUserAuthProvider.md)
  - [ModelsUserRoleWithPermissions](docs/ModelsUserRoleWithPermissions.md)
+ - [MonadGraphqlInputVariable](docs/MonadGraphqlInputVariable.md)
  - [MonadLogSettingsConfig](docs/MonadLogSettingsConfig.md)
  - [MutateTypeMutateType](docs/MutateTypeMutateType.md)
  - [MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq](docs/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq.md)
  - [MutateValueWhereKeyEqMutateValueWhereKeyEq](docs/MutateValueWhereKeyEqMutateValueWhereKeyEq.md)
  - [NextGenSiemSecretsConfig](docs/NextGenSiemSecretsConfig.md)
  - [NextGenSiemSettingsConfig](docs/NextGenSiemSettingsConfig.md)
- - [OauthActivitySecretsConfig](docs/OauthActivitySecretsConfig.md)
- - [OauthActivitySettingsConfig](docs/OauthActivitySettingsConfig.md)
  - [ObjectStorageInputSecretsConfig](docs/ObjectStorageInputSecretsConfig.md)
  - [ObjectStorageInputSettingsConfig](docs/ObjectStorageInputSettingsConfig.md)
  - [ObjectStorageSecretsConfig](docs/ObjectStorageSecretsConfig.md)
  - [ObjectStorageSettingsConfig](docs/ObjectStorageSettingsConfig.md)
+ - [OfflineenrollmentlogsSecretsConfig](docs/OfflineenrollmentlogsSecretsConfig.md)
+ - [OfflineenrollmentlogsSettingsConfig](docs/OfflineenrollmentlogsSettingsConfig.md)
  - [OneloginEventsSecretsConfig](docs/OneloginEventsSecretsConfig.md)
  - [OneloginEventsSettingsConfig](docs/OneloginEventsSettingsConfig.md)
  - [OpenaiSettingsConfig](docs/OpenaiSettingsConfig.md)
  - [OpensearchSecretsConfig](docs/OpensearchSecretsConfig.md)
  - [OpensearchSettingsConfig](docs/OpensearchSettingsConfig.md)
  - [OperationInformation](docs/OperationInformation.md)
+ - [OperationLogsSecretsConfig](docs/OperationLogsSecretsConfig.md)
+ - [OperationLogsSettingsConfig](docs/OperationLogsSettingsConfig.md)
+ - [OracleSettingsConfig](docs/OracleSettingsConfig.md)
+ - [OrgAuditLogsSecretsConfig](docs/OrgAuditLogsSecretsConfig.md)
+ - [OrgAuditLogsSettingsConfig](docs/OrgAuditLogsSettingsConfig.md)
  - [OrganizationsSettingsConfig](docs/OrganizationsSettingsConfig.md)
  - [OutputsConnectorMeta](docs/OutputsConnectorMeta.md)
  - [PagerdutyAlertsConfig](docs/PagerdutyAlertsConfig.md)
+ - [PagerdutyAuditRecordsSecretsConfig](docs/PagerdutyAuditRecordsSecretsConfig.md)
+ - [PagerdutyAuditRecordsSettingsConfig](docs/PagerdutyAuditRecordsSettingsConfig.md)
  - [PagerdutySecretsConfig](docs/PagerdutySecretsConfig.md)
  - [PagerdutySettingsConfig](docs/PagerdutySettingsConfig.md)
  - [PagerdutySummaryConfig](docs/PagerdutySummaryConfig.md)
@@ -477,14 +580,24 @@ Class | Method | HTTP request | Description
  - [PantherSecretsConfig](docs/PantherSecretsConfig.md)
  - [PantherSettingsConfig](docs/PantherSettingsConfig.md)
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
+ - [PipelineNodeStatusProgressTimestamp](docs/PipelineNodeStatusProgressTimestamp.md)
+ - [PipelineNodeStatusProgressTimestamps](docs/PipelineNodeStatusProgressTimestamps.md)
+ - [PolymerSecretsConfig](docs/PolymerSecretsConfig.md)
+ - [PolymerSettingsConfig](docs/PolymerSettingsConfig.md)
  - [PostgresqlSecretsConfig](docs/PostgresqlSecretsConfig.md)
  - [PostgresqlSettingsConfig](docs/PostgresqlSettingsConfig.md)
+ - [PostmanAuditLogsSecretsConfig](docs/PostmanAuditLogsSecretsConfig.md)
+ - [PostmanAuditLogsSettingsConfig](docs/PostmanAuditLogsSettingsConfig.md)
+ - [PubsubSecretsConfig](docs/PubsubSecretsConfig.md)
+ - [PubsubSettingsConfig](docs/PubsubSettingsConfig.md)
  - [RenameKeyRenameKey](docs/RenameKeyRenameKey.md)
  - [RenameKeyWhereValueEqRenameKeyWhereValueEq](docs/RenameKeyWhereValueEqRenameKeyWhereValueEq.md)
  - [ResourceEvaluationsSettingsConfig](docs/ResourceEvaluationsSettingsConfig.md)
  - [ResponderErrorResponse](docs/ResponderErrorResponse.md)
  - [RolesInfoSecretsConfig](docs/RolesInfoSecretsConfig.md)
  - [RolesInfoSettingsConfig](docs/RolesInfoSettingsConfig.md)
+ - [RootlyAuditLogsSecretsConfig](docs/RootlyAuditLogsSecretsConfig.md)
+ - [RootlyAuditLogsSettingsConfig](docs/RootlyAuditLogsSettingsConfig.md)
  - [RoutesAddUserToOrganizationRequest](docs/RoutesAddUserToOrganizationRequest.md)
  - [RoutesCreateOrganizationRequest](docs/RoutesCreateOrganizationRequest.md)
  - [RoutesCreateTransformRequest](docs/RoutesCreateTransformRequest.md)
@@ -530,6 +643,10 @@ Class | Method | HTTP request | Description
  - [RoutesV2PutInputRequest](docs/RoutesV2PutInputRequest.md)
  - [RoutesV2PutOutputRequest](docs/RoutesV2PutOutputRequest.md)
  - [RoutesV2SecretResponse](docs/RoutesV2SecretResponse.md)
+ - [RoutesV2SetStorageTypeCostEntry](docs/RoutesV2SetStorageTypeCostEntry.md)
+ - [RoutesV2SetStorageTypeCostRequest](docs/RoutesV2SetStorageTypeCostRequest.md)
+ - [RoutesV2StorageTypeDetailsResponse](docs/RoutesV2StorageTypeDetailsResponse.md)
+ - [RoutesV2StorageTypeOutputDetailResponse](docs/RoutesV2StorageTypeOutputDetailResponse.md)
  - [RoutesV2SuccessResponse](docs/RoutesV2SuccessResponse.md)
  - [RoutesV2TestInputConnectionRequest](docs/RoutesV2TestInputConnectionRequest.md)
  - [RoutesV2TestOutputConnectionRequest](docs/RoutesV2TestOutputConnectionRequest.md)
@@ -540,24 +657,35 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdateOutputRequest](docs/RoutesV2UpdateOutputRequest.md)
  - [RoutesV2UpdatePipelineRequest](docs/RoutesV2UpdatePipelineRequest.md)
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
+ - [RoutesV3AlertList](docs/RoutesV3AlertList.md)
+ - [RoutesV3CreateAlertRuleRequest](docs/RoutesV3CreateAlertRuleRequest.md)
  - [RoutesV3CreateConnectionRequest](docs/RoutesV3CreateConnectionRequest.md)
  - [RoutesV3CreateConnectionRequestSaml](docs/RoutesV3CreateConnectionRequestSaml.md)
- - [RoutesV3CreateConnectionRoleRequest](docs/RoutesV3CreateConnectionRoleRequest.md)
- - [RoutesV3CreateConnectionUserRoleRequest](docs/RoutesV3CreateConnectionUserRoleRequest.md)
  - [RoutesV3CreateEnrichmentRequest](docs/RoutesV3CreateEnrichmentRequest.md)
+ - [RoutesV3EnrichmentSandboxRequest](docs/RoutesV3EnrichmentSandboxRequest.md)
+ - [RoutesV3EnrichmentSandboxResponse](docs/RoutesV3EnrichmentSandboxResponse.md)
+ - [RoutesV3FieldUpdation](docs/RoutesV3FieldUpdation.md)
  - [RoutesV3GetEnrichmentResponse](docs/RoutesV3GetEnrichmentResponse.md)
  - [RoutesV3GetFeatureFlagResponse](docs/RoutesV3GetFeatureFlagResponse.md)
  - [RoutesV3ImportTransformResponse](docs/RoutesV3ImportTransformResponse.md)
  - [RoutesV3MFAStatusResponse](docs/RoutesV3MFAStatusResponse.md)
+ - [RoutesV3OptimizerType](docs/RoutesV3OptimizerType.md)
  - [RoutesV3PutEnrichmentRequest](docs/RoutesV3PutEnrichmentRequest.md)
+ - [RoutesV3SecurityDataAnalysis](docs/RoutesV3SecurityDataAnalysis.md)
  - [RoutesV3SuccessResponse](docs/RoutesV3SuccessResponse.md)
+ - [RoutesV3Summary](docs/RoutesV3Summary.md)
  - [RoutesV3TestEnrichmentConnectionRequest](docs/RoutesV3TestEnrichmentConnectionRequest.md)
  - [RoutesV3TransformConfig](docs/RoutesV3TransformConfig.md)
  - [RoutesV3TransformOperation](docs/RoutesV3TransformOperation.md)
+ - [RoutesV3TransformOperationWithRationale](docs/RoutesV3TransformOperationWithRationale.md)
+ - [RoutesV3TransformRecommendationRequest](docs/RoutesV3TransformRecommendationRequest.md)
+ - [RoutesV3UpdateAlertRuleRequest](docs/RoutesV3UpdateAlertRuleRequest.md)
  - [RoutesV3UpdateConnectionRequest](docs/RoutesV3UpdateConnectionRequest.md)
- - [RoutesV3UpdateConnectionRoleRequest](docs/RoutesV3UpdateConnectionRoleRequest.md)
  - [RoutesV3UpdateEnrichmentRequest](docs/RoutesV3UpdateEnrichmentRequest.md)
+ - [S3SecretsConfig](docs/S3SecretsConfig.md)
  - [S3SettingsConfig](docs/S3SettingsConfig.md)
+ - [SalesforceUsersSecretsConfig](docs/SalesforceUsersSecretsConfig.md)
+ - [SalesforceUsersSettingsConfig](docs/SalesforceUsersSettingsConfig.md)
  - [SecretProcessesorEnrichmentConfig](docs/SecretProcessesorEnrichmentConfig.md)
  - [SecretProcessesorEnrichmentConfigSecrets](docs/SecretProcessesorEnrichmentConfigSecrets.md)
  - [SecretProcessesorEnrichmentConfigSettings](docs/SecretProcessesorEnrichmentConfigSettings.md)
@@ -567,6 +695,7 @@ Class | Method | HTTP request | Description
  - [SecretProcessesorOutputConfig](docs/SecretProcessesorOutputConfig.md)
  - [SecretProcessesorOutputConfigSecrets](docs/SecretProcessesorOutputConfigSecrets.md)
  - [SecretProcessesorOutputConfigSettings](docs/SecretProcessesorOutputConfigSettings.md)
+ - [SecretsmanagerSecretsConfig](docs/SecretsmanagerSecretsConfig.md)
  - [SecretsmanagerSettingsConfig](docs/SecretsmanagerSettingsConfig.md)
  - [SecurityGroupsFilter](docs/SecurityGroupsFilter.md)
  - [SecurityGroupsSettingsConfig](docs/SecurityGroupsSettingsConfig.md)
@@ -586,6 +715,8 @@ Class | Method | HTTP request | Description
  - [SentinelSettingsConfig](docs/SentinelSettingsConfig.md)
  - [SentryOrgAuditLogsSecretsConfig](docs/SentryOrgAuditLogsSecretsConfig.md)
  - [SentryOrgAuditLogsSettingsConfig](docs/SentryOrgAuditLogsSettingsConfig.md)
+ - [SlackEnterpriseAuditLogsSecretsConfig](docs/SlackEnterpriseAuditLogsSecretsConfig.md)
+ - [SlackEnterpriseAuditLogsSettingsConfig](docs/SlackEnterpriseAuditLogsSettingsConfig.md)
  - [SlackUsersSecretsConfig](docs/SlackUsersSecretsConfig.md)
  - [SlackUsersSettingsConfig](docs/SlackUsersSettingsConfig.md)
  - [SlackgroupsSecretsConfig](docs/SlackgroupsSecretsConfig.md)
@@ -606,12 +737,22 @@ Class | Method | HTTP request | Description
  - [SplunkSettingsConfig](docs/SplunkSettingsConfig.md)
  - [SumologicSecretsConfig](docs/SumologicSecretsConfig.md)
  - [SumologicSettingsConfig](docs/SumologicSettingsConfig.md)
+ - [SumologicSourceMetadata](docs/SumologicSourceMetadata.md)
+ - [SumologicSumoField](docs/SumologicSumoField.md)
  - [SyntheticDataCustomSettingsConfig](docs/SyntheticDataCustomSettingsConfig.md)
  - [SyntheticDataSettingsConfig](docs/SyntheticDataSettingsConfig.md)
  - [SystemlogSecretsConfig](docs/SystemlogSecretsConfig.md)
  - [SystemlogSettingsConfig](docs/SystemlogSettingsConfig.md)
  - [TailscaleUsersSecretsConfig](docs/TailscaleUsersSecretsConfig.md)
  - [TailscaleUsersSettingsConfig](docs/TailscaleUsersSettingsConfig.md)
+ - [TaniumGraphqlInputSecretsConfig](docs/TaniumGraphqlInputSecretsConfig.md)
+ - [TaniumGraphqlInputSettingsConfig](docs/TaniumGraphqlInputSettingsConfig.md)
+ - [TeamAccessLogsSecretsConfig](docs/TeamAccessLogsSecretsConfig.md)
+ - [TeamAccessLogsSettingsConfig](docs/TeamAccessLogsSettingsConfig.md)
+ - [TeamIntegrationLogsSecretsConfig](docs/TeamIntegrationLogsSecretsConfig.md)
+ - [TeamIntegrationLogsSettingsConfig](docs/TeamIntegrationLogsSettingsConfig.md)
+ - [TelephonyLogsSecretsConfig](docs/TelephonyLogsSecretsConfig.md)
+ - [TelephonyLogsSettingsConfig](docs/TelephonyLogsSettingsConfig.md)
  - [TenableAssetsCronSecretsConfig](docs/TenableAssetsCronSecretsConfig.md)
  - [TenableAssetsCronSettingsConfig](docs/TenableAssetsCronSettingsConfig.md)
  - [TenableAssetsSecretsConfig](docs/TenableAssetsSecretsConfig.md)
@@ -620,7 +761,19 @@ Class | Method | HTTP request | Description
  - [TenableVulnerabilitiesCronSettingsConfig](docs/TenableVulnerabilitiesCronSettingsConfig.md)
  - [TenableVulnerabilitiesSecretsConfig](docs/TenableVulnerabilitiesSecretsConfig.md)
  - [TenableVulnerabilitiesSettingsConfig](docs/TenableVulnerabilitiesSettingsConfig.md)
+ - [TinesAuditLogsSecretsConfig](docs/TinesAuditLogsSecretsConfig.md)
+ - [TinesAuditLogsSettingsConfig](docs/TinesAuditLogsSettingsConfig.md)
+ - [TinesEventsLogsSecretsConfig](docs/TinesEventsLogsSecretsConfig.md)
+ - [TinesEventsLogsSettingsConfig](docs/TinesEventsLogsSettingsConfig.md)
+ - [TwilioEventsSecretsConfig](docs/TwilioEventsSecretsConfig.md)
+ - [TwilioEventsSettingsConfig](docs/TwilioEventsSettingsConfig.md)
+ - [TwilioSendgridEmailActivitySecretsConfig](docs/TwilioSendgridEmailActivitySecretsConfig.md)
+ - [TwilioSendgridEmailActivitySettingsConfig](docs/TwilioSendgridEmailActivitySettingsConfig.md)
  - [TypesFilterNameStringType](docs/TypesFilterNameStringType.md)
+ - [TypesStringComparison](docs/TypesStringComparison.md)
+ - [TypesStringFilter](docs/TypesStringFilter.md)
+ - [UniversalSecretsConfig](docs/UniversalSecretsConfig.md)
+ - [UniversalSettingsConfig](docs/UniversalSettingsConfig.md)
  - [UsersInfoSecretsConfig](docs/UsersInfoSecretsConfig.md)
  - [UsersInfoSettingsConfig](docs/UsersInfoSettingsConfig.md)
  - [UsersSecretsConfig](docs/UsersSecretsConfig.md)
@@ -632,8 +785,18 @@ Class | Method | HTTP request | Description
  - [VulnerabilitiesCronSettingsConfig](docs/VulnerabilitiesCronSettingsConfig.md)
  - [VulnerabilitiesSecretsConfig](docs/VulnerabilitiesSecretsConfig.md)
  - [VulnerabilitiesSettingsConfig](docs/VulnerabilitiesSettingsConfig.md)
+ - [VulnerabilityFindingsReportSecretsConfig](docs/VulnerabilityFindingsReportSecretsConfig.md)
+ - [VulnerabilityFindingsReportSettingsConfig](docs/VulnerabilityFindingsReportSettingsConfig.md)
  - [VulnerabilityFindingsSecretsConfig](docs/VulnerabilityFindingsSecretsConfig.md)
  - [VulnerabilityFindingsSettingsConfig](docs/VulnerabilityFindingsSettingsConfig.md)
+ - [WizAuditLogsSecretsConfig](docs/WizAuditLogsSecretsConfig.md)
+ - [WizAuditLogsSettingsConfig](docs/WizAuditLogsSettingsConfig.md)
+ - [ZendeskAuditLogsSecretsConfig](docs/ZendeskAuditLogsSecretsConfig.md)
+ - [ZendeskAuditLogsSettingsConfig](docs/ZendeskAuditLogsSettingsConfig.md)
+ - [ZoomActivityLogsSecretsConfig](docs/ZoomActivityLogsSecretsConfig.md)
+ - [ZoomActivityLogsSettingsConfig](docs/ZoomActivityLogsSettingsConfig.md)
+ - [ZoomMeetingActivityLogsSecretsConfig](docs/ZoomMeetingActivityLogsSecretsConfig.md)
+ - [ZoomMeetingActivityLogsSettingsConfig](docs/ZoomMeetingActivityLogsSettingsConfig.md)
 
 
 <a id="documentation-for-authorization"></a>

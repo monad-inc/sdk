@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LookbackHours** | Pointer to **int32** |  | [optional] 
-**UseSyntheticData** | Pointer to **bool** |  | [optional] 
-**WithPayload** | Pointer to **bool** |  | [optional] 
+**BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic data for testing, instead of connecting to a real data source. Defaults to an hourly cron schedule for cron-based inputs. | [optional] 
+**WithPayload** | Pointer to **bool** | Whether to include detailed payload information in the events. | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewVercelUserEventsSettingsConfigWithDefaults instantiates a new VercelUserEvent
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetLookbackHours
+### GetBackfillStartTime
 
-`func (o *VercelUserEventsSettingsConfig) GetLookbackHours() int32`
+`func (o *VercelUserEventsSettingsConfig) GetBackfillStartTime() string`
 
-GetLookbackHours returns the LookbackHours field if non-nil, zero value otherwise.
+GetBackfillStartTime returns the BackfillStartTime field if non-nil, zero value otherwise.
 
-### GetLookbackHoursOk
+### GetBackfillStartTimeOk
 
-`func (o *VercelUserEventsSettingsConfig) GetLookbackHoursOk() (*int32, bool)`
+`func (o *VercelUserEventsSettingsConfig) GetBackfillStartTimeOk() (*string, bool)`
 
-GetLookbackHoursOk returns a tuple with the LookbackHours field if it's non-nil, zero value otherwise
+GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLookbackHours
+### SetBackfillStartTime
 
-`func (o *VercelUserEventsSettingsConfig) SetLookbackHours(v int32)`
+`func (o *VercelUserEventsSettingsConfig) SetBackfillStartTime(v string)`
 
-SetLookbackHours sets LookbackHours field to given value.
+SetBackfillStartTime sets BackfillStartTime field to given value.
 
-### HasLookbackHours
+### HasBackfillStartTime
 
-`func (o *VercelUserEventsSettingsConfig) HasLookbackHours() bool`
+`func (o *VercelUserEventsSettingsConfig) HasBackfillStartTime() bool`
 
-HasLookbackHours returns a boolean if a field has been set.
+HasBackfillStartTime returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

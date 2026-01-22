@@ -27,9 +27,10 @@ class ClumioAuditLogsSettingsConfig(BaseModel):
     """
     Clumio Audit Trails settings
     """ # noqa: E501
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     region: Optional[StrictStr] = Field(default=None, description="The region associated with your Clumio account")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["region", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "region", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +83,7 @@ class ClumioAuditLogsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "region": obj.get("region"),
             "use_synthetic_data": obj.get("use_synthetic_data")
         })

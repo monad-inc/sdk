@@ -10,9 +10,10 @@ Name | Type | Description | Notes
 **Config** | Pointer to **interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **House** | Pointer to **string** |  | [optional] 
+**InBeta** | Pointer to **bool** |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
 **IsCron** | Pointer to **bool** |  | [optional] 
-**LogoKey** | Pointer to **string** |  | [optional] 
+**IsDefault** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Tier** | Pointer to **int32** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
@@ -196,6 +197,31 @@ SetHouse sets House field to given value.
 
 HasHouse returns a boolean if a field has been set.
 
+### GetInBeta
+
+`func (o *InputsConnectorMeta) GetInBeta() bool`
+
+GetInBeta returns the InBeta field if non-nil, zero value otherwise.
+
+### GetInBetaOk
+
+`func (o *InputsConnectorMeta) GetInBetaOk() (*bool, bool)`
+
+GetInBetaOk returns a tuple with the InBeta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInBeta
+
+`func (o *InputsConnectorMeta) SetInBeta(v bool)`
+
+SetInBeta sets InBeta field to given value.
+
+### HasInBeta
+
+`func (o *InputsConnectorMeta) HasInBeta() bool`
+
+HasInBeta returns a boolean if a field has been set.
+
 ### GetInternal
 
 `func (o *InputsConnectorMeta) GetInternal() bool`
@@ -246,30 +272,30 @@ SetIsCron sets IsCron field to given value.
 
 HasIsCron returns a boolean if a field has been set.
 
-### GetLogoKey
+### GetIsDefault
 
-`func (o *InputsConnectorMeta) GetLogoKey() string`
+`func (o *InputsConnectorMeta) GetIsDefault() bool`
 
-GetLogoKey returns the LogoKey field if non-nil, zero value otherwise.
+GetIsDefault returns the IsDefault field if non-nil, zero value otherwise.
 
-### GetLogoKeyOk
+### GetIsDefaultOk
 
-`func (o *InputsConnectorMeta) GetLogoKeyOk() (*string, bool)`
+`func (o *InputsConnectorMeta) GetIsDefaultOk() (*bool, bool)`
 
-GetLogoKeyOk returns a tuple with the LogoKey field if it's non-nil, zero value otherwise
+GetIsDefaultOk returns a tuple with the IsDefault field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLogoKey
+### SetIsDefault
 
-`func (o *InputsConnectorMeta) SetLogoKey(v string)`
+`func (o *InputsConnectorMeta) SetIsDefault(v bool)`
 
-SetLogoKey sets LogoKey field to given value.
+SetIsDefault sets IsDefault field to given value.
 
-### HasLogoKey
+### HasIsDefault
 
-`func (o *InputsConnectorMeta) HasLogoKey() bool`
+`func (o *InputsConnectorMeta) HasIsDefault() bool`
 
-HasLogoKey returns a boolean if a field has been set.
+HasIsDefault returns a boolean if a field has been set.
 
 ### GetName
 

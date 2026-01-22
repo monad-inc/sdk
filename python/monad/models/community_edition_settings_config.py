@@ -29,10 +29,10 @@ class CommunityEditionSettingsConfig(BaseModel):
     """ # noqa: E501
     destination_path: Optional[StrictStr] = Field(default=None, description="DestinationPath is the path where the GreyNoise data will be stored")
     error_on_rate_limit: Optional[StrictBool] = Field(default=None, description="ErrorOnRateLimit determines if rate limiting should cause an error (true) or return custom response (false)")
-    ip_field_path: Optional[StrictStr] = Field(default=None, description="IPFieldPath is the path to the IP address field in the record")
+    ip_address_path: Optional[StrictStr] = Field(default=None, description="IPAddressPath is the path to a field containing an IP address to look up")
     no_match_response: Optional[StrictStr] = Field(default=None, description="NoMatchResponse is the value to add when no match is found")
     rate_limit_response: Optional[StrictStr] = Field(default=None, description="RateLimitResponse is the value to add when rate limited")
-    __properties: ClassVar[List[str]] = ["destination_path", "error_on_rate_limit", "ip_field_path", "no_match_response", "rate_limit_response"]
+    __properties: ClassVar[List[str]] = ["destination_path", "error_on_rate_limit", "ip_address_path", "no_match_response", "rate_limit_response"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,7 +87,7 @@ class CommunityEditionSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "destination_path": obj.get("destination_path"),
             "error_on_rate_limit": obj.get("error_on_rate_limit"),
-            "ip_field_path": obj.get("ip_field_path"),
+            "ip_address_path": obj.get("ip_address_path"),
             "no_match_response": obj.get("no_match_response"),
             "rate_limit_response": obj.get("rate_limit_response")
         })

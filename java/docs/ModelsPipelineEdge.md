@@ -10,6 +10,7 @@
 |**conditions** | [**ModelsPipelineEdgeConditions**](ModelsPipelineEdgeConditions.md) |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
+|**disabled** | **Boolean** |  |  [optional] |
 |**fromNodeInstanceId** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |

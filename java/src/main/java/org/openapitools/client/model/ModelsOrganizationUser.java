@@ -20,9 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.openapitools.client.model.ModelsUserAuthProvider;
 
 import com.google.gson.Gson;
@@ -51,12 +49,12 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganizationUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsOrganizationUser {
-  public static final String SERIALIZED_NAME_AUTH_PROVIDERS = "auth_providers";
-  @SerializedName(SERIALIZED_NAME_AUTH_PROVIDERS)
+  public static final String SERIALIZED_NAME_AUTH_PROVIDER = "auth_provider";
+  @SerializedName(SERIALIZED_NAME_AUTH_PROVIDER)
   @javax.annotation.Nullable
-  private List<ModelsUserAuthProvider> authProviders = new ArrayList<>();
+  private ModelsUserAuthProvider authProvider;
 
   public static final String SERIALIZED_NAME_CONNECTION_ID = "connection_id";
   @SerializedName(SERIALIZED_NAME_CONNECTION_ID)
@@ -96,30 +94,22 @@ public class ModelsOrganizationUser {
   public ModelsOrganizationUser() {
   }
 
-  public ModelsOrganizationUser authProviders(@javax.annotation.Nullable List<ModelsUserAuthProvider> authProviders) {
-    this.authProviders = authProviders;
-    return this;
-  }
-
-  public ModelsOrganizationUser addAuthProvidersItem(ModelsUserAuthProvider authProvidersItem) {
-    if (this.authProviders == null) {
-      this.authProviders = new ArrayList<>();
-    }
-    this.authProviders.add(authProvidersItem);
+  public ModelsOrganizationUser authProvider(@javax.annotation.Nullable ModelsUserAuthProvider authProvider) {
+    this.authProvider = authProvider;
     return this;
   }
 
   /**
-   * Get authProviders
-   * @return authProviders
+   * Get authProvider
+   * @return authProvider
    */
   @javax.annotation.Nullable
-  public List<ModelsUserAuthProvider> getAuthProviders() {
-    return authProviders;
+  public ModelsUserAuthProvider getAuthProvider() {
+    return authProvider;
   }
 
-  public void setAuthProviders(@javax.annotation.Nullable List<ModelsUserAuthProvider> authProviders) {
-    this.authProviders = authProviders;
+  public void setAuthProvider(@javax.annotation.Nullable ModelsUserAuthProvider authProvider) {
+    this.authProvider = authProvider;
   }
 
 
@@ -266,7 +256,7 @@ public class ModelsOrganizationUser {
       return false;
     }
     ModelsOrganizationUser modelsOrganizationUser = (ModelsOrganizationUser) o;
-    return Objects.equals(this.authProviders, modelsOrganizationUser.authProviders) &&
+    return Objects.equals(this.authProvider, modelsOrganizationUser.authProvider) &&
         Objects.equals(this.connectionId, modelsOrganizationUser.connectionId) &&
         Objects.equals(this.createdAt, modelsOrganizationUser.createdAt) &&
         Objects.equals(this.email, modelsOrganizationUser.email) &&
@@ -278,14 +268,14 @@ public class ModelsOrganizationUser {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authProviders, connectionId, createdAt, email, id, roleId, updatedAt, username);
+    return Objects.hash(authProvider, connectionId, createdAt, email, id, roleId, updatedAt, username);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsOrganizationUser {\n");
-    sb.append("    authProviders: ").append(toIndentedString(authProviders)).append("\n");
+    sb.append("    authProvider: ").append(toIndentedString(authProvider)).append("\n");
     sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
@@ -314,7 +304,7 @@ public class ModelsOrganizationUser {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_providers", "connection_id", "created_at", "email", "id", "role_id", "updated_at", "username"));
+    openapiFields = new HashSet<String>(Arrays.asList("auth_provider", "connection_id", "created_at", "email", "id", "role_id", "updated_at", "username"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -329,7 +319,7 @@ public class ModelsOrganizationUser {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelsOrganizationUser.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ModelsOrganizationUser is not found in the empty JSON string", ModelsOrganizationUser.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsOrganizationUser is not found in the empty JSON string", ModelsOrganizationUser.openapiRequiredFields.toString()));
         }
       }
 
@@ -337,44 +327,34 @@ public class ModelsOrganizationUser {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ModelsOrganizationUser.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ModelsOrganizationUser` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsOrganizationUser` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (jsonObj.get("auth_providers") != null && !jsonObj.get("auth_providers").isJsonNull()) {
-        JsonArray jsonArrayauthProviders = jsonObj.getAsJsonArray("auth_providers");
-        if (jsonArrayauthProviders != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("auth_providers").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `auth_providers` to be an array in the JSON string but got `%s`", jsonObj.get("auth_providers").toString()));
-          }
-
-          // validate the optional field `auth_providers` (array)
-          for (int i = 0; i < jsonArrayauthProviders.size(); i++) {
-            ModelsUserAuthProvider.validateJsonElement(jsonArrayauthProviders.get(i));
-          };
-        }
+      // validate the optional field `auth_provider`
+      if (jsonObj.get("auth_provider") != null && !jsonObj.get("auth_provider").isJsonNull()) {
+        ModelsUserAuthProvider.validateJsonElement(jsonObj.get("auth_provider"));
       }
       if ((jsonObj.get("connection_id") != null && !jsonObj.get("connection_id").isJsonNull()) && !jsonObj.get("connection_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `connection_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connection_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `connection_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connection_id").toString()));
       }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
       }
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if ((jsonObj.get("role_id") != null && !jsonObj.get("role_id").isJsonNull()) && !jsonObj.get("role_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `role_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `role_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_id").toString()));
       }
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
       }
       if ((jsonObj.get("username") != null && !jsonObj.get("username").isJsonNull()) && !jsonObj.get("username").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `username` to be a primitive type in the JSON string but got `%s`", jsonObj.get("username").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `username` to be a primitive type in the JSON string but got `%s`", jsonObj.get("username").toString()));
       }
   }
 

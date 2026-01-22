@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * Clumio Alerts settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class IndividualAlertsSettingsConfig {
   public static final String SERIALIZED_NAME_ALERT_TYPE = "alert_type";
   @SerializedName(SERIALIZED_NAME_ALERT_TYPE)
   @javax.annotation.Nullable
   private String alertType;
+
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
 
   public static final String SERIALIZED_NAME_EMBED = "embed";
   @SerializedName(SERIALIZED_NAME_EMBED)
@@ -109,6 +114,25 @@ public class IndividualAlertsSettingsConfig {
 
   public void setAlertType(@javax.annotation.Nullable String alertType) {
     this.alertType = alertType;
+  }
+
+
+  public IndividualAlertsSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
   }
 
 
@@ -256,6 +280,7 @@ public class IndividualAlertsSettingsConfig {
     }
     IndividualAlertsSettingsConfig individualAlertsSettingsConfig = (IndividualAlertsSettingsConfig) o;
     return Objects.equals(this.alertType, individualAlertsSettingsConfig.alertType) &&
+        Objects.equals(this.backfillStartTime, individualAlertsSettingsConfig.backfillStartTime) &&
         Objects.equals(this.embed, individualAlertsSettingsConfig.embed) &&
         Objects.equals(this.primaryEntityType, individualAlertsSettingsConfig.primaryEntityType) &&
         Objects.equals(this.primaryEntityValue, individualAlertsSettingsConfig.primaryEntityValue) &&
@@ -267,7 +292,7 @@ public class IndividualAlertsSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(alertType, embed, primaryEntityType, primaryEntityValue, region, severity, status, useSyntheticData);
+    return Objects.hash(alertType, backfillStartTime, embed, primaryEntityType, primaryEntityValue, region, severity, status, useSyntheticData);
   }
 
   @Override
@@ -275,6 +300,7 @@ public class IndividualAlertsSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class IndividualAlertsSettingsConfig {\n");
     sb.append("    alertType: ").append(toIndentedString(alertType)).append("\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    embed: ").append(toIndentedString(embed)).append("\n");
     sb.append("    primaryEntityType: ").append(toIndentedString(primaryEntityType)).append("\n");
     sb.append("    primaryEntityValue: ").append(toIndentedString(primaryEntityValue)).append("\n");
@@ -303,7 +329,7 @@ public class IndividualAlertsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("alert_type", "embed", "primary_entity_type", "primary_entity_value", "region", "severity", "status", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("alert_type", "backfill_start_time", "embed", "primary_entity_type", "primary_entity_value", "region", "severity", "status", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -318,7 +344,7 @@ public class IndividualAlertsSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IndividualAlertsSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IndividualAlertsSettingsConfig is not found in the empty JSON string", IndividualAlertsSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in IndividualAlertsSettingsConfig is not found in the empty JSON string", IndividualAlertsSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -326,30 +352,33 @@ public class IndividualAlertsSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!IndividualAlertsSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `IndividualAlertsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `IndividualAlertsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("alert_type") != null && !jsonObj.get("alert_type").isJsonNull()) && !jsonObj.get("alert_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `alert_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_type").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `alert_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_type").toString()));
+      }
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
       if ((jsonObj.get("embed") != null && !jsonObj.get("embed").isJsonNull()) && !jsonObj.get("embed").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `embed` to be a primitive type in the JSON string but got `%s`", jsonObj.get("embed").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `embed` to be a primitive type in the JSON string but got `%s`", jsonObj.get("embed").toString()));
       }
       if ((jsonObj.get("primary_entity_type") != null && !jsonObj.get("primary_entity_type").isJsonNull()) && !jsonObj.get("primary_entity_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `primary_entity_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primary_entity_type").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `primary_entity_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primary_entity_type").toString()));
       }
       if ((jsonObj.get("primary_entity_value") != null && !jsonObj.get("primary_entity_value").isJsonNull()) && !jsonObj.get("primary_entity_value").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `primary_entity_value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primary_entity_value").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `primary_entity_value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primary_entity_value").toString()));
       }
       if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }
       if ((jsonObj.get("severity") != null && !jsonObj.get("severity").isJsonNull()) && !jsonObj.get("severity").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
       }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
   }
 

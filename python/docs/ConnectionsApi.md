@@ -4,15 +4,15 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v3_connections_connection_id_delete**](ConnectionsApi.md#v3_connections_connection_id_delete) | **DELETE** /v3/connections/{connection_id} | Delete connection
-[**v3_connections_connection_id_get**](ConnectionsApi.md#v3_connections_connection_id_get) | **GET** /v3/connections/{connection_id} | Get connection by ID
-[**v3_connections_connection_id_patch**](ConnectionsApi.md#v3_connections_connection_id_patch) | **PATCH** /v3/connections/{connection_id} | Update connection
-[**v3_connections_get**](ConnectionsApi.md#v3_connections_get) | **GET** /v3/connections | Get all connections
-[**v3_connections_post**](ConnectionsApi.md#v3_connections_post) | **POST** /v3/connections | Create a new connection
+[**v3_organization_id_connections_connection_id_delete**](ConnectionsApi.md#v3_organization_id_connections_connection_id_delete) | **DELETE** /v3/{organization_id}/connections/{connection_id} | Delete connection
+[**v3_organization_id_connections_connection_id_get**](ConnectionsApi.md#v3_organization_id_connections_connection_id_get) | **GET** /v3/{organization_id}/connections/{connection_id} | Get connection by ID
+[**v3_organization_id_connections_connection_id_patch**](ConnectionsApi.md#v3_organization_id_connections_connection_id_patch) | **PATCH** /v3/{organization_id}/connections/{connection_id} | Update connection
+[**v3_organization_id_connections_get**](ConnectionsApi.md#v3_organization_id_connections_get) | **GET** /v3/{organization_id}/connections | Get all connections
+[**v3_organization_id_connections_post**](ConnectionsApi.md#v3_organization_id_connections_post) | **POST** /v3/{organization_id}/connections | Create a new connection
 
 
-# **v3_connections_connection_id_delete**
-> v3_connections_connection_id_delete(connection_id)
+# **v3_organization_id_connections_connection_id_delete**
+> v3_organization_id_connections_connection_id_delete(organization_id, connection_id)
 
 Delete connection
 
@@ -48,13 +48,14 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.ConnectionsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
     connection_id = 'connection_id_example' # str | Connection ID to delete
 
     try:
         # Delete connection
-        api_instance.v3_connections_connection_id_delete(connection_id)
+        api_instance.v3_organization_id_connections_connection_id_delete(organization_id, connection_id)
     except Exception as e:
-        print("Exception when calling ConnectionsApi->v3_connections_connection_id_delete: %s\n" % e)
+        print("Exception when calling ConnectionsApi->v3_organization_id_connections_connection_id_delete: %s\n" % e)
 ```
 
 
@@ -64,6 +65,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
  **connection_id** | **str**| Connection ID to delete | 
 
 ### Return type
@@ -89,8 +91,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v3_connections_connection_id_get**
-> ModelsConnection v3_connections_connection_id_get(connection_id)
+# **v3_organization_id_connections_connection_id_get**
+> ModelsConnection v3_organization_id_connections_connection_id_get(organization_id, connection_id)
 
 Get connection by ID
 
@@ -127,15 +129,16 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.ConnectionsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
     connection_id = 'connection_id_example' # str | Connection ID to retrieve
 
     try:
         # Get connection by ID
-        api_response = api_instance.v3_connections_connection_id_get(connection_id)
-        print("The response of ConnectionsApi->v3_connections_connection_id_get:\n")
+        api_response = api_instance.v3_organization_id_connections_connection_id_get(organization_id, connection_id)
+        print("The response of ConnectionsApi->v3_organization_id_connections_connection_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConnectionsApi->v3_connections_connection_id_get: %s\n" % e)
+        print("Exception when calling ConnectionsApi->v3_organization_id_connections_connection_id_get: %s\n" % e)
 ```
 
 
@@ -145,6 +148,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
  **connection_id** | **str**| Connection ID to retrieve | 
 
 ### Return type
@@ -171,8 +175,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v3_connections_connection_id_patch**
-> ModelsConnection v3_connections_connection_id_patch(connection_id, routes_v3_update_connection_request)
+# **v3_organization_id_connections_connection_id_patch**
+> ModelsConnection v3_organization_id_connections_connection_id_patch(organization_id, connection_id, routes_v3_update_connection_request)
 
 Update connection
 
@@ -210,16 +214,17 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.ConnectionsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
     connection_id = 'connection_id_example' # str | Connection ID to update
     routes_v3_update_connection_request = monad.RoutesV3UpdateConnectionRequest() # RoutesV3UpdateConnectionRequest | Request body for updating a connection
 
     try:
         # Update connection
-        api_response = api_instance.v3_connections_connection_id_patch(connection_id, routes_v3_update_connection_request)
-        print("The response of ConnectionsApi->v3_connections_connection_id_patch:\n")
+        api_response = api_instance.v3_organization_id_connections_connection_id_patch(organization_id, connection_id, routes_v3_update_connection_request)
+        print("The response of ConnectionsApi->v3_organization_id_connections_connection_id_patch:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConnectionsApi->v3_connections_connection_id_patch: %s\n" % e)
+        print("Exception when calling ConnectionsApi->v3_organization_id_connections_connection_id_patch: %s\n" % e)
 ```
 
 
@@ -229,6 +234,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
  **connection_id** | **str**| Connection ID to update | 
  **routes_v3_update_connection_request** | [**RoutesV3UpdateConnectionRequest**](RoutesV3UpdateConnectionRequest.md)| Request body for updating a connection | 
 
@@ -255,8 +261,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v3_connections_get**
-> ModelsConnectionList v3_connections_get(limit=limit, offset=offset)
+# **v3_organization_id_connections_get**
+> ModelsConnectionList v3_organization_id_connections_get(organization_id, limit=limit, offset=offset)
 
 Get all connections
 
@@ -293,16 +299,17 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.ConnectionsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
     limit = 56 # int | Limit (optional)
     offset = 56 # int | Offset (optional)
 
     try:
         # Get all connections
-        api_response = api_instance.v3_connections_get(limit=limit, offset=offset)
-        print("The response of ConnectionsApi->v3_connections_get:\n")
+        api_response = api_instance.v3_organization_id_connections_get(organization_id, limit=limit, offset=offset)
+        print("The response of ConnectionsApi->v3_organization_id_connections_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConnectionsApi->v3_connections_get: %s\n" % e)
+        print("Exception when calling ConnectionsApi->v3_organization_id_connections_get: %s\n" % e)
 ```
 
 
@@ -312,6 +319,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
  **limit** | **int**| Limit | [optional] 
  **offset** | **int**| Offset | [optional] 
 
@@ -337,8 +345,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v3_connections_post**
-> ModelsConnection v3_connections_post(routes_v3_create_connection_request)
+# **v3_organization_id_connections_post**
+> ModelsConnection v3_organization_id_connections_post(organization_id, routes_v3_create_connection_request)
 
 Create a new connection
 
@@ -376,15 +384,16 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.ConnectionsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
     routes_v3_create_connection_request = monad.RoutesV3CreateConnectionRequest() # RoutesV3CreateConnectionRequest | Request body for creating a connection
 
     try:
         # Create a new connection
-        api_response = api_instance.v3_connections_post(routes_v3_create_connection_request)
-        print("The response of ConnectionsApi->v3_connections_post:\n")
+        api_response = api_instance.v3_organization_id_connections_post(organization_id, routes_v3_create_connection_request)
+        print("The response of ConnectionsApi->v3_organization_id_connections_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConnectionsApi->v3_connections_post: %s\n" % e)
+        print("Exception when calling ConnectionsApi->v3_organization_id_connections_post: %s\n" % e)
 ```
 
 
@@ -394,6 +403,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
  **routes_v3_create_connection_request** | [**RoutesV3CreateConnectionRequest**](RoutesV3CreateConnectionRequest.md)| Request body for creating a connection | 
 
 ### Return type

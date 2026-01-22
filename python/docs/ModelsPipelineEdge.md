@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **conditions** | [**ModelsPipelineEdgeConditions**](ModelsPipelineEdgeConditions.md) |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**disabled** | **bool** |  | [optional] 
 **from_node_instance_id** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 

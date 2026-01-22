@@ -10,12 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { SumologicSourceMetadata } from '../models/SumologicSourceMetadata';
 import { HttpFile } from '../http/http';
 
 /**
 * Sumo Logic Output Settings
 */
 export class SumologicSettingsConfig {
+    'sourceMetadata'?: SumologicSourceMetadata;
     /**
     * The URL of the Sumo Logic instance.
     */
@@ -26,6 +28,12 @@ export class SumologicSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "sourceMetadata",
+            "baseName": "source_metadata",
+            "type": "SumologicSourceMetadata",
+            "format": ""
+        },
         {
             "name": "url",
             "baseName": "url",

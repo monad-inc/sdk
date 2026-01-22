@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Actions** | Pointer to **[]string** | Filter by specific actions. Use wildcards for broader matches (e.g., repo.*) | [optional] 
 **Actor** | Pointer to **string** | Filter by the username that initiated the action | [optional] 
+**BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **Country** | Pointer to **string** | Filter by actor&#39;s country code (e.g., US) | [optional] 
-**CreatedAfter** | Pointer to **string** | Only return audit log entries after this RFC3339 formatted time stamp | [optional] 
 **Enterprise** | Pointer to **string** | Your GitHub enterprise slug or ID | [optional] 
 **Include** | Pointer to **string** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
 **Organization** | Pointer to **string** | Filter by organization name | [optional] 
@@ -84,6 +84,31 @@ SetActor sets Actor field to given value.
 
 HasActor returns a boolean if a field has been set.
 
+### GetBackfillStartTime
+
+`func (o *AuditLogsSettingsConfig) GetBackfillStartTime() string`
+
+GetBackfillStartTime returns the BackfillStartTime field if non-nil, zero value otherwise.
+
+### GetBackfillStartTimeOk
+
+`func (o *AuditLogsSettingsConfig) GetBackfillStartTimeOk() (*string, bool)`
+
+GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackfillStartTime
+
+`func (o *AuditLogsSettingsConfig) SetBackfillStartTime(v string)`
+
+SetBackfillStartTime sets BackfillStartTime field to given value.
+
+### HasBackfillStartTime
+
+`func (o *AuditLogsSettingsConfig) HasBackfillStartTime() bool`
+
+HasBackfillStartTime returns a boolean if a field has been set.
+
 ### GetCountry
 
 `func (o *AuditLogsSettingsConfig) GetCountry() string`
@@ -108,31 +133,6 @@ SetCountry sets Country field to given value.
 `func (o *AuditLogsSettingsConfig) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
-
-### GetCreatedAfter
-
-`func (o *AuditLogsSettingsConfig) GetCreatedAfter() string`
-
-GetCreatedAfter returns the CreatedAfter field if non-nil, zero value otherwise.
-
-### GetCreatedAfterOk
-
-`func (o *AuditLogsSettingsConfig) GetCreatedAfterOk() (*string, bool)`
-
-GetCreatedAfterOk returns a tuple with the CreatedAfter field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAfter
-
-`func (o *AuditLogsSettingsConfig) SetCreatedAfter(v string)`
-
-SetCreatedAfter sets CreatedAfter field to given value.
-
-### HasCreatedAfter
-
-`func (o *AuditLogsSettingsConfig) HasCreatedAfter() bool`
-
-HasCreatedAfter returns a boolean if a field has been set.
 
 ### GetEnterprise
 

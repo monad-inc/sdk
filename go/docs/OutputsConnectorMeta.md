@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **Config** | Pointer to **interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **House** | Pointer to **string** |  | [optional] 
+**InBeta** | Pointer to **bool** |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
-**LogoKey** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Tier** | Pointer to **int32** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
@@ -195,6 +195,31 @@ SetHouse sets House field to given value.
 
 HasHouse returns a boolean if a field has been set.
 
+### GetInBeta
+
+`func (o *OutputsConnectorMeta) GetInBeta() bool`
+
+GetInBeta returns the InBeta field if non-nil, zero value otherwise.
+
+### GetInBetaOk
+
+`func (o *OutputsConnectorMeta) GetInBetaOk() (*bool, bool)`
+
+GetInBetaOk returns a tuple with the InBeta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInBeta
+
+`func (o *OutputsConnectorMeta) SetInBeta(v bool)`
+
+SetInBeta sets InBeta field to given value.
+
+### HasInBeta
+
+`func (o *OutputsConnectorMeta) HasInBeta() bool`
+
+HasInBeta returns a boolean if a field has been set.
+
 ### GetInternal
 
 `func (o *OutputsConnectorMeta) GetInternal() bool`
@@ -219,31 +244,6 @@ SetInternal sets Internal field to given value.
 `func (o *OutputsConnectorMeta) HasInternal() bool`
 
 HasInternal returns a boolean if a field has been set.
-
-### GetLogoKey
-
-`func (o *OutputsConnectorMeta) GetLogoKey() string`
-
-GetLogoKey returns the LogoKey field if non-nil, zero value otherwise.
-
-### GetLogoKeyOk
-
-`func (o *OutputsConnectorMeta) GetLogoKeyOk() (*string, bool)`
-
-GetLogoKeyOk returns a tuple with the LogoKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLogoKey
-
-`func (o *OutputsConnectorMeta) SetLogoKey(v string)`
-
-SetLogoKey sets LogoKey field to given value.
-
-### HasLogoKey
-
-`func (o *OutputsConnectorMeta) HasLogoKey() bool`
-
-HasLogoKey returns a boolean if a field has been set.
 
 ### GetName
 

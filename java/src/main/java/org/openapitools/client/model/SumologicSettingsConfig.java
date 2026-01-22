@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.SumologicSourceMetadata;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,8 +49,13 @@ import org.openapitools.client.JSON;
 /**
  * Sumo Logic Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SumologicSettingsConfig {
+  public static final String SERIALIZED_NAME_SOURCE_METADATA = "source_metadata";
+  @SerializedName(SERIALIZED_NAME_SOURCE_METADATA)
+  @javax.annotation.Nullable
+  private SumologicSourceMetadata sourceMetadata;
+
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
   @javax.annotation.Nullable
@@ -57,6 +63,25 @@ public class SumologicSettingsConfig {
 
   public SumologicSettingsConfig() {
   }
+
+  public SumologicSettingsConfig sourceMetadata(@javax.annotation.Nullable SumologicSourceMetadata sourceMetadata) {
+    this.sourceMetadata = sourceMetadata;
+    return this;
+  }
+
+  /**
+   * Get sourceMetadata
+   * @return sourceMetadata
+   */
+  @javax.annotation.Nullable
+  public SumologicSourceMetadata getSourceMetadata() {
+    return sourceMetadata;
+  }
+
+  public void setSourceMetadata(@javax.annotation.Nullable SumologicSourceMetadata sourceMetadata) {
+    this.sourceMetadata = sourceMetadata;
+  }
+
 
   public SumologicSettingsConfig url(@javax.annotation.Nullable String url) {
     this.url = url;
@@ -87,18 +112,20 @@ public class SumologicSettingsConfig {
       return false;
     }
     SumologicSettingsConfig sumologicSettingsConfig = (SumologicSettingsConfig) o;
-    return Objects.equals(this.url, sumologicSettingsConfig.url);
+    return Objects.equals(this.sourceMetadata, sumologicSettingsConfig.sourceMetadata) &&
+        Objects.equals(this.url, sumologicSettingsConfig.url);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url);
+    return Objects.hash(sourceMetadata, url);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SumologicSettingsConfig {\n");
+    sb.append("    sourceMetadata: ").append(toIndentedString(sourceMetadata)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -121,7 +148,7 @@ public class SumologicSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("url"));
+    openapiFields = new HashSet<String>(Arrays.asList("source_metadata", "url"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -136,7 +163,7 @@ public class SumologicSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SumologicSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SumologicSettingsConfig is not found in the empty JSON string", SumologicSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SumologicSettingsConfig is not found in the empty JSON string", SumologicSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -144,12 +171,16 @@ public class SumologicSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!SumologicSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SumologicSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SumologicSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `source_metadata`
+      if (jsonObj.get("source_metadata") != null && !jsonObj.get("source_metadata").isJsonNull()) {
+        SumologicSourceMetadata.validateJsonElement(jsonObj.get("source_metadata"));
+      }
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
   }
 

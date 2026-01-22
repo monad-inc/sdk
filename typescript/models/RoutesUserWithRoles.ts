@@ -15,7 +15,7 @@ import { RoutesUserAuthProvider } from '../models/RoutesUserAuthProvider';
 import { HttpFile } from '../http/http';
 
 export class RoutesUserWithRoles {
-    'authProviders'?: Array<RoutesUserAuthProvider>;
+    'authProvider'?: RoutesUserAuthProvider;
     'createdAt'?: string;
     'email'?: string;
     'id'?: string;
@@ -29,9 +29,9 @@ export class RoutesUserWithRoles {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "authProviders",
-            "baseName": "auth_providers",
-            "type": "Array<RoutesUserAuthProvider>",
+            "name": "authProvider",
+            "baseName": "auth_provider",
+            "type": "RoutesUserAuthProvider",
             "format": ""
         },
         {

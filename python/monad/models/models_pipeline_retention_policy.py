@@ -28,9 +28,8 @@ class ModelsPipelineRetentionPolicy(BaseModel):
     ModelsPipelineRetentionPolicy
     """ # noqa: E501
     stream_age_limit: Optional[StrictInt] = None
-    stream_replicas: Optional[StrictInt] = None
     stream_size_limit: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["stream_age_limit", "stream_replicas", "stream_size_limit"]
+    __properties: ClassVar[List[str]] = ["stream_age_limit", "stream_size_limit"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,7 +83,6 @@ class ModelsPipelineRetentionPolicy(BaseModel):
 
         _obj = cls.model_validate({
             "stream_age_limit": obj.get("stream_age_limit"),
-            "stream_replicas": obj.get("stream_replicas"),
             "stream_size_limit": obj.get("stream_size_limit")
         })
         return _obj

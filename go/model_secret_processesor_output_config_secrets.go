@@ -20,8 +20,11 @@ import (
 // SecretProcessesorOutputConfigSecrets - struct for SecretProcessesorOutputConfigSecrets
 type SecretProcessesorOutputConfigSecrets struct {
 	AbsSecretsConfig *AbsSecretsConfig
+	AxiomSecretsConfig *AxiomSecretsConfig
+	BackblazeSecretsConfig *BackblazeSecretsConfig
 	BigquerySecretsConfig *BigquerySecretsConfig
 	CriblHttpSecretsConfig *CriblHttpSecretsConfig
+	DatadogSecretsConfig *DatadogSecretsConfig
 	ElasticsearchSecretsConfig *ElasticsearchSecretsConfig
 	GoogleCloudStorageOutputSecretsConfig *GoogleCloudStorageOutputSecretsConfig
 	HttpSecretsConfig *HttpSecretsConfig
@@ -31,6 +34,7 @@ type SecretProcessesorOutputConfigSecrets struct {
 	PagerdutySecretsConfig *PagerdutySecretsConfig
 	PantherSecretsConfig *PantherSecretsConfig
 	PostgresqlSecretsConfig *PostgresqlSecretsConfig
+	S3SecretsConfig *S3SecretsConfig
 	SentinelSecretsConfig *SentinelSecretsConfig
 	SnowflakeOutputSecretsConfig *SnowflakeOutputSecretsConfig
 	SplunkSecretsConfig *SplunkSecretsConfig
@@ -45,6 +49,20 @@ func AbsSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *AbsSecretsConfig)
 	}
 }
 
+// AxiomSecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns AxiomSecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
+func AxiomSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *AxiomSecretsConfig) SecretProcessesorOutputConfigSecrets {
+	return SecretProcessesorOutputConfigSecrets{
+		AxiomSecretsConfig: v,
+	}
+}
+
+// BackblazeSecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns BackblazeSecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
+func BackblazeSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *BackblazeSecretsConfig) SecretProcessesorOutputConfigSecrets {
+	return SecretProcessesorOutputConfigSecrets{
+		BackblazeSecretsConfig: v,
+	}
+}
+
 // BigquerySecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns BigquerySecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
 func BigquerySecretsConfigAsSecretProcessesorOutputConfigSecrets(v *BigquerySecretsConfig) SecretProcessesorOutputConfigSecrets {
 	return SecretProcessesorOutputConfigSecrets{
@@ -56,6 +74,13 @@ func BigquerySecretsConfigAsSecretProcessesorOutputConfigSecrets(v *BigquerySecr
 func CriblHttpSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *CriblHttpSecretsConfig) SecretProcessesorOutputConfigSecrets {
 	return SecretProcessesorOutputConfigSecrets{
 		CriblHttpSecretsConfig: v,
+	}
+}
+
+// DatadogSecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns DatadogSecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
+func DatadogSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *DatadogSecretsConfig) SecretProcessesorOutputConfigSecrets {
+	return SecretProcessesorOutputConfigSecrets{
+		DatadogSecretsConfig: v,
 	}
 }
 
@@ -122,6 +147,13 @@ func PostgresqlSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *Postgresql
 	}
 }
 
+// S3SecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns S3SecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
+func S3SecretsConfigAsSecretProcessesorOutputConfigSecrets(v *S3SecretsConfig) SecretProcessesorOutputConfigSecrets {
+	return SecretProcessesorOutputConfigSecrets{
+		S3SecretsConfig: v,
+	}
+}
+
 // SentinelSecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns SentinelSecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
 func SentinelSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *SentinelSecretsConfig) SecretProcessesorOutputConfigSecrets {
 	return SecretProcessesorOutputConfigSecrets{
@@ -179,6 +211,40 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.AbsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into AxiomSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.AxiomSecretsConfig)
+	if err == nil {
+		jsonAxiomSecretsConfig, _ := json.Marshal(dst.AxiomSecretsConfig)
+		if string(jsonAxiomSecretsConfig) == "{}" { // empty struct
+			dst.AxiomSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AxiomSecretsConfig); err != nil {
+				dst.AxiomSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AxiomSecretsConfig = nil
+	}
+
+	// try to unmarshal data into BackblazeSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.BackblazeSecretsConfig)
+	if err == nil {
+		jsonBackblazeSecretsConfig, _ := json.Marshal(dst.BackblazeSecretsConfig)
+		if string(jsonBackblazeSecretsConfig) == "{}" { // empty struct
+			dst.BackblazeSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BackblazeSecretsConfig); err != nil {
+				dst.BackblazeSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BackblazeSecretsConfig = nil
+	}
+
 	// try to unmarshal data into BigquerySecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.BigquerySecretsConfig)
 	if err == nil {
@@ -211,6 +277,23 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.CriblHttpSecretsConfig = nil
+	}
+
+	// try to unmarshal data into DatadogSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.DatadogSecretsConfig)
+	if err == nil {
+		jsonDatadogSecretsConfig, _ := json.Marshal(dst.DatadogSecretsConfig)
+		if string(jsonDatadogSecretsConfig) == "{}" { // empty struct
+			dst.DatadogSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.DatadogSecretsConfig); err != nil {
+				dst.DatadogSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.DatadogSecretsConfig = nil
 	}
 
 	// try to unmarshal data into ElasticsearchSecretsConfig
@@ -366,6 +449,23 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.PostgresqlSecretsConfig = nil
 	}
 
+	// try to unmarshal data into S3SecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.S3SecretsConfig)
+	if err == nil {
+		jsonS3SecretsConfig, _ := json.Marshal(dst.S3SecretsConfig)
+		if string(jsonS3SecretsConfig) == "{}" { // empty struct
+			dst.S3SecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.S3SecretsConfig); err != nil {
+				dst.S3SecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.S3SecretsConfig = nil
+	}
+
 	// try to unmarshal data into SentinelSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.SentinelSecretsConfig)
 	if err == nil {
@@ -454,8 +554,11 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AbsSecretsConfig = nil
+		dst.AxiomSecretsConfig = nil
+		dst.BackblazeSecretsConfig = nil
 		dst.BigquerySecretsConfig = nil
 		dst.CriblHttpSecretsConfig = nil
+		dst.DatadogSecretsConfig = nil
 		dst.ElasticsearchSecretsConfig = nil
 		dst.GoogleCloudStorageOutputSecretsConfig = nil
 		dst.HttpSecretsConfig = nil
@@ -465,6 +568,7 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.PagerdutySecretsConfig = nil
 		dst.PantherSecretsConfig = nil
 		dst.PostgresqlSecretsConfig = nil
+		dst.S3SecretsConfig = nil
 		dst.SentinelSecretsConfig = nil
 		dst.SnowflakeOutputSecretsConfig = nil
 		dst.SplunkSecretsConfig = nil
@@ -485,12 +589,24 @@ func (src SecretProcessesorOutputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AbsSecretsConfig)
 	}
 
+	if src.AxiomSecretsConfig != nil {
+		return json.Marshal(&src.AxiomSecretsConfig)
+	}
+
+	if src.BackblazeSecretsConfig != nil {
+		return json.Marshal(&src.BackblazeSecretsConfig)
+	}
+
 	if src.BigquerySecretsConfig != nil {
 		return json.Marshal(&src.BigquerySecretsConfig)
 	}
 
 	if src.CriblHttpSecretsConfig != nil {
 		return json.Marshal(&src.CriblHttpSecretsConfig)
+	}
+
+	if src.DatadogSecretsConfig != nil {
+		return json.Marshal(&src.DatadogSecretsConfig)
 	}
 
 	if src.ElasticsearchSecretsConfig != nil {
@@ -529,6 +645,10 @@ func (src SecretProcessesorOutputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.PostgresqlSecretsConfig)
 	}
 
+	if src.S3SecretsConfig != nil {
+		return json.Marshal(&src.S3SecretsConfig)
+	}
+
 	if src.SentinelSecretsConfig != nil {
 		return json.Marshal(&src.SentinelSecretsConfig)
 	}
@@ -561,12 +681,24 @@ func (obj *SecretProcessesorOutputConfigSecrets) GetActualInstance() (interface{
 		return obj.AbsSecretsConfig
 	}
 
+	if obj.AxiomSecretsConfig != nil {
+		return obj.AxiomSecretsConfig
+	}
+
+	if obj.BackblazeSecretsConfig != nil {
+		return obj.BackblazeSecretsConfig
+	}
+
 	if obj.BigquerySecretsConfig != nil {
 		return obj.BigquerySecretsConfig
 	}
 
 	if obj.CriblHttpSecretsConfig != nil {
 		return obj.CriblHttpSecretsConfig
+	}
+
+	if obj.DatadogSecretsConfig != nil {
+		return obj.DatadogSecretsConfig
 	}
 
 	if obj.ElasticsearchSecretsConfig != nil {
@@ -605,6 +737,10 @@ func (obj *SecretProcessesorOutputConfigSecrets) GetActualInstance() (interface{
 		return obj.PostgresqlSecretsConfig
 	}
 
+	if obj.S3SecretsConfig != nil {
+		return obj.S3SecretsConfig
+	}
+
 	if obj.SentinelSecretsConfig != nil {
 		return obj.SentinelSecretsConfig
 	}
@@ -635,12 +771,24 @@ func (obj SecretProcessesorOutputConfigSecrets) GetActualInstanceValue() (interf
 		return *obj.AbsSecretsConfig
 	}
 
+	if obj.AxiomSecretsConfig != nil {
+		return *obj.AxiomSecretsConfig
+	}
+
+	if obj.BackblazeSecretsConfig != nil {
+		return *obj.BackblazeSecretsConfig
+	}
+
 	if obj.BigquerySecretsConfig != nil {
 		return *obj.BigquerySecretsConfig
 	}
 
 	if obj.CriblHttpSecretsConfig != nil {
 		return *obj.CriblHttpSecretsConfig
+	}
+
+	if obj.DatadogSecretsConfig != nil {
+		return *obj.DatadogSecretsConfig
 	}
 
 	if obj.ElasticsearchSecretsConfig != nil {
@@ -677,6 +825,10 @@ func (obj SecretProcessesorOutputConfigSecrets) GetActualInstanceValue() (interf
 
 	if obj.PostgresqlSecretsConfig != nil {
 		return *obj.PostgresqlSecretsConfig
+	}
+
+	if obj.S3SecretsConfig != nil {
+		return *obj.S3SecretsConfig
 	}
 
 	if obj.SentinelSecretsConfig != nil {

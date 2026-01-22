@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * AzureBlobStorageSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class AzureBlobStorageSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT_URL = "account_url";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_URL)
   @javax.annotation.Nullable
   private String accountUrl;
+
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
 
   public static final String SERIALIZED_NAME_COMPRESSION = "compression";
   @SerializedName(SERIALIZED_NAME_COMPRESSION)
@@ -104,6 +109,25 @@ public class AzureBlobStorageSettingsConfig {
 
   public void setAccountUrl(@javax.annotation.Nullable String accountUrl) {
     this.accountUrl = accountUrl;
+  }
+
+
+  public AzureBlobStorageSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * Starting timestamp for initial data sync. Only processes blobs with a last modified time after this timestamp on the initial sync. If not specified, all available data from the specified prefix will be processed. Incremental syncs automatically continue from the last processed timestamp, scanning from the previous day&#39;s partition forward to catch late-arriving data. Files updated in partitions older than the current state&#39;s previous prefix will not be detected.
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
   }
 
 
@@ -232,6 +256,7 @@ public class AzureBlobStorageSettingsConfig {
     }
     AzureBlobStorageSettingsConfig azureBlobStorageSettingsConfig = (AzureBlobStorageSettingsConfig) o;
     return Objects.equals(this.accountUrl, azureBlobStorageSettingsConfig.accountUrl) &&
+        Objects.equals(this.backfillStartTime, azureBlobStorageSettingsConfig.backfillStartTime) &&
         Objects.equals(this.compression, azureBlobStorageSettingsConfig.compression) &&
         Objects.equals(this.container, azureBlobStorageSettingsConfig.container) &&
         Objects.equals(this.format, azureBlobStorageSettingsConfig.format) &&
@@ -242,7 +267,7 @@ public class AzureBlobStorageSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountUrl, compression, container, format, partitionFormat, prefix, recordLocation);
+    return Objects.hash(accountUrl, backfillStartTime, compression, container, format, partitionFormat, prefix, recordLocation);
   }
 
   @Override
@@ -250,6 +275,7 @@ public class AzureBlobStorageSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class AzureBlobStorageSettingsConfig {\n");
     sb.append("    accountUrl: ").append(toIndentedString(accountUrl)).append("\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    compression: ").append(toIndentedString(compression)).append("\n");
     sb.append("    container: ").append(toIndentedString(container)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
@@ -277,7 +303,7 @@ public class AzureBlobStorageSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("account_url", "compression", "container", "format", "partition_format", "prefix", "record_location"));
+    openapiFields = new HashSet<String>(Arrays.asList("account_url", "backfill_start_time", "compression", "container", "format", "partition_format", "prefix", "record_location"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -292,7 +318,7 @@ public class AzureBlobStorageSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AzureBlobStorageSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AzureBlobStorageSettingsConfig is not found in the empty JSON string", AzureBlobStorageSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in AzureBlobStorageSettingsConfig is not found in the empty JSON string", AzureBlobStorageSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -300,30 +326,33 @@ public class AzureBlobStorageSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!AzureBlobStorageSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AzureBlobStorageSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AzureBlobStorageSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("account_url") != null && !jsonObj.get("account_url").isJsonNull()) && !jsonObj.get("account_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `account_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("account_url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `account_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("account_url").toString()));
+      }
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
       if ((jsonObj.get("compression") != null && !jsonObj.get("compression").isJsonNull()) && !jsonObj.get("compression").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `compression` to be a primitive type in the JSON string but got `%s`", jsonObj.get("compression").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `compression` to be a primitive type in the JSON string but got `%s`", jsonObj.get("compression").toString()));
       }
       if ((jsonObj.get("container") != null && !jsonObj.get("container").isJsonNull()) && !jsonObj.get("container").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `container` to be a primitive type in the JSON string but got `%s`", jsonObj.get("container").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `container` to be a primitive type in the JSON string but got `%s`", jsonObj.get("container").toString()));
       }
       if ((jsonObj.get("format") != null && !jsonObj.get("format").isJsonNull()) && !jsonObj.get("format").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
       }
       if ((jsonObj.get("partition_format") != null && !jsonObj.get("partition_format").isJsonNull()) && !jsonObj.get("partition_format").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `partition_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partition_format").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `partition_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partition_format").toString()));
       }
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
       }
       if ((jsonObj.get("record_location") != null && !jsonObj.get("record_location").isJsonNull()) && !jsonObj.get("record_location").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `record_location` to be a primitive type in the JSON string but got `%s`", jsonObj.get("record_location").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `record_location` to be a primitive type in the JSON string but got `%s`", jsonObj.get("record_location").toString()));
       }
   }
 

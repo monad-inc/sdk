@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class ClumioConsolidatedAlertsSettingsConfig {
     /**
+    * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+    */
+    'backfillStartTime'?: string;
+    /**
     * The system-generated ID of the parent entity that is associated with the primary entity affected by the alert.
     */
     'parentEntityId'?: string;
@@ -38,6 +42,12 @@ export class ClumioConsolidatedAlertsSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "parentEntityId",
             "baseName": "parent_entity_id",

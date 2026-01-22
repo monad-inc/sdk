@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DestinationKey** | Pointer to **string** | DestinationKey the path where the result will be stored in the record. Use &#39;.&#39; for the root object, &#39;field.subfield&#39; for nested properties, &#39;array[0]&#39; for array elements, or combined paths like &#39;users[0].name&#39;. | [optional] 
-**ErrorOnMissingKey** | Pointer to **bool** | ErrorOnMissingKey if true, will throw an error if the key is not found in the KV lookup output | [optional] 
-**JoinKey** | Pointer to **string** | JoinKey is the key in the record whose value will be used to join with the KV lookup output | [optional] 
-**KvLookupOutputId** | Pointer to **string** | KVLookupOutputID is the ID of the KV lookup output to join with | [optional] 
+**DestinationKey** | Pointer to **string** | DestinationKey is the path where the result will be stored in the record | [optional] 
+**ErrorOnMissingKey** | Pointer to **bool** | ErrorOnMissingKey If true, throw an error when key is not found in the KV store | [optional] 
+**JoinPath** | Pointer to **string** | JoinPath is the path to a field whose values will be used as the lookup keys | [optional] 
+**KvLookupOutputId** | Pointer to **string** | KVLookupOutputID is the id of the KV lookup output to join with | [optional] 
+**NoMatchResponse** | Pointer to **string** | NoMatchResponse is the value to add to the record when no match is found | [optional] 
 
 ## Methods
 
@@ -78,30 +79,30 @@ SetErrorOnMissingKey sets ErrorOnMissingKey field to given value.
 
 HasErrorOnMissingKey returns a boolean if a field has been set.
 
-### GetJoinKey
+### GetJoinPath
 
-`func (o *KvLookupSettingsConfig) GetJoinKey() string`
+`func (o *KvLookupSettingsConfig) GetJoinPath() string`
 
-GetJoinKey returns the JoinKey field if non-nil, zero value otherwise.
+GetJoinPath returns the JoinPath field if non-nil, zero value otherwise.
 
-### GetJoinKeyOk
+### GetJoinPathOk
 
-`func (o *KvLookupSettingsConfig) GetJoinKeyOk() (*string, bool)`
+`func (o *KvLookupSettingsConfig) GetJoinPathOk() (*string, bool)`
 
-GetJoinKeyOk returns a tuple with the JoinKey field if it's non-nil, zero value otherwise
+GetJoinPathOk returns a tuple with the JoinPath field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetJoinKey
+### SetJoinPath
 
-`func (o *KvLookupSettingsConfig) SetJoinKey(v string)`
+`func (o *KvLookupSettingsConfig) SetJoinPath(v string)`
 
-SetJoinKey sets JoinKey field to given value.
+SetJoinPath sets JoinPath field to given value.
 
-### HasJoinKey
+### HasJoinPath
 
-`func (o *KvLookupSettingsConfig) HasJoinKey() bool`
+`func (o *KvLookupSettingsConfig) HasJoinPath() bool`
 
-HasJoinKey returns a boolean if a field has been set.
+HasJoinPath returns a boolean if a field has been set.
 
 ### GetKvLookupOutputId
 
@@ -127,6 +128,31 @@ SetKvLookupOutputId sets KvLookupOutputId field to given value.
 `func (o *KvLookupSettingsConfig) HasKvLookupOutputId() bool`
 
 HasKvLookupOutputId returns a boolean if a field has been set.
+
+### GetNoMatchResponse
+
+`func (o *KvLookupSettingsConfig) GetNoMatchResponse() string`
+
+GetNoMatchResponse returns the NoMatchResponse field if non-nil, zero value otherwise.
+
+### GetNoMatchResponseOk
+
+`func (o *KvLookupSettingsConfig) GetNoMatchResponseOk() (*string, bool)`
+
+GetNoMatchResponseOk returns a tuple with the NoMatchResponse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNoMatchResponse
+
+`func (o *KvLookupSettingsConfig) SetNoMatchResponse(v string)`
+
+SetNoMatchResponse sets NoMatchResponse field to given value.
+
+### HasNoMatchResponse
+
+`func (o *KvLookupSettingsConfig) HasNoMatchResponse() bool`
+
+HasNoMatchResponse returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

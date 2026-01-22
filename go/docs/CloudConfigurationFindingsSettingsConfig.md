@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **EndpointUrl** | Pointer to **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/cloud-configuration-findings&#39;. | [optional] 
 **Result** | Pointer to **[]string** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. | [optional] 
 **Severity** | Pointer to **[]string** | Severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. | [optional] 
@@ -28,6 +29,31 @@ will change when the set of required properties is changed
 NewCloudConfigurationFindingsSettingsConfigWithDefaults instantiates a new CloudConfigurationFindingsSettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBackfillStartTime
+
+`func (o *CloudConfigurationFindingsSettingsConfig) GetBackfillStartTime() string`
+
+GetBackfillStartTime returns the BackfillStartTime field if non-nil, zero value otherwise.
+
+### GetBackfillStartTimeOk
+
+`func (o *CloudConfigurationFindingsSettingsConfig) GetBackfillStartTimeOk() (*string, bool)`
+
+GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackfillStartTime
+
+`func (o *CloudConfigurationFindingsSettingsConfig) SetBackfillStartTime(v string)`
+
+SetBackfillStartTime sets BackfillStartTime field to given value.
+
+### HasBackfillStartTime
+
+`func (o *CloudConfigurationFindingsSettingsConfig) HasBackfillStartTime() bool`
+
+HasBackfillStartTime returns a boolean if a field has been set.
 
 ### GetEndpointUrl
 

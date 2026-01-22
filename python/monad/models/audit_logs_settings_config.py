@@ -29,15 +29,15 @@ class AuditLogsSettingsConfig(BaseModel):
     """ # noqa: E501
     actions: Optional[List[StrictStr]] = Field(default=None, description="Filter by specific actions. Use wildcards for broader matches (e.g., repo.*)")
     actor: Optional[StrictStr] = Field(default=None, description="Filter by the username that initiated the action")
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     country: Optional[StrictStr] = Field(default=None, description="Filter by actor's country code (e.g., US)")
-    created_after: Optional[StrictStr] = Field(default=None, description="Only return audit log entries after this RFC3339 formatted time stamp")
     enterprise: Optional[StrictStr] = Field(default=None, description="Your GitHub enterprise slug or ID")
     include: Optional[StrictStr] = Field(default=None, description="Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both.")
     organization: Optional[StrictStr] = Field(default=None, description="Filter by organization name")
     repository: Optional[StrictStr] = Field(default=None, description="Filter by repository (format: org-name/repo-name)")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     user: Optional[StrictStr] = Field(default=None, description="Filter by the username that was affected by the action")
-    __properties: ClassVar[List[str]] = ["actions", "actor", "country", "created_after", "enterprise", "include", "organization", "repository", "use_synthetic_data", "user"]
+    __properties: ClassVar[List[str]] = ["actions", "actor", "backfill_start_time", "country", "enterprise", "include", "organization", "repository", "use_synthetic_data", "user"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,8 +92,8 @@ class AuditLogsSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "actions": obj.get("actions"),
             "actor": obj.get("actor"),
+            "backfill_start_time": obj.get("backfill_start_time"),
             "country": obj.get("country"),
-            "created_after": obj.get("created_after"),
             "enterprise": obj.get("enterprise"),
             "include": obj.get("include"),
             "organization": obj.get("organization"),

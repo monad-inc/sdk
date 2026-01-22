@@ -31,11 +31,12 @@ class ModelsConnection(BaseModel):
     description: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
+    organization_id: Optional[StrictStr] = None
     saml_entity_id: Optional[StrictStr] = None
     saml_metadata_url: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "name", "saml_entity_id", "saml_metadata_url", "type", "updated_at"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "name", "organization_id", "saml_entity_id", "saml_metadata_url", "type", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,6 +93,7 @@ class ModelsConnection(BaseModel):
             "description": obj.get("description"),
             "id": obj.get("id"),
             "name": obj.get("name"),
+            "organization_id": obj.get("organization_id"),
             "saml_entity_id": obj.get("saml_entity_id"),
             "saml_metadata_url": obj.get("saml_metadata_url"),
             "type": obj.get("type"),

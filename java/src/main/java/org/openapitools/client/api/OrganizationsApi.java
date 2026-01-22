@@ -30,8 +30,13 @@ import java.io.IOException;
 import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsOrganization;
 import org.openapitools.client.model.ModelsOrganizationList;
 import org.openapitools.client.model.ModelsPipelineMetrics;
+import org.openapitools.client.model.ModelsStorageTypeCostConfig;
+import org.openapitools.client.model.ModelsStorageTypeSummaryResponse;
+import org.openapitools.client.model.ModelsStorageTypeTimeSeriesResponse;
 import org.openapitools.client.model.RoutesCreateOrganizationRequest;
 import org.openapitools.client.model.RoutesUpdateOrganizationRequest;
+import org.openapitools.client.model.RoutesV2SetStorageTypeCostRequest;
+import org.openapitools.client.model.RoutesV2StorageTypeDetailsResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -773,6 +778,1186 @@ public class OrganizationsApi {
 
         okhttp3.Call localVarCall = v2OrganizationIdMetricsGetValidateBeforeCall(organizationId, metric, start, end, resolution, _callback);
         Type localVarReturnType = new TypeToken<ModelsPipelineMetrics>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdMetricsStorageTypesDetailsGet
+     * @param organizationId Organization ID (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type output details </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsStorageTypesDetailsGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/metrics/storage-types/details"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (start != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("start", start));
+        }
+
+        if (end != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("end", end));
+        }
+
+        if (billingType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("billing_type", billingType));
+        }
+
+        if (pipelineId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("pipeline_id", pipelineId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdMetricsStorageTypesDetailsGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdMetricsStorageTypesDetailsGet(Async)");
+        }
+
+        return v2OrganizationIdMetricsStorageTypesDetailsGetCall(organizationId, start, end, billingType, pipelineId, _callback);
+
+    }
+
+    /**
+     * Get storage type output details
+     * Get detailed metrics for each individual output, including egress and associated input
+     * @param organizationId Organization ID (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @return RoutesV2StorageTypeDetailsResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type output details </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public RoutesV2StorageTypeDetailsResponse v2OrganizationIdMetricsStorageTypesDetailsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId) throws ApiException {
+        ApiResponse<RoutesV2StorageTypeDetailsResponse> localVarResp = v2OrganizationIdMetricsStorageTypesDetailsGetWithHttpInfo(organizationId, start, end, billingType, pipelineId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get storage type output details
+     * Get detailed metrics for each individual output, including egress and associated input
+     * @param organizationId Organization ID (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @return ApiResponse&lt;RoutesV2StorageTypeDetailsResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type output details </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<RoutesV2StorageTypeDetailsResponse> v2OrganizationIdMetricsStorageTypesDetailsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsStorageTypesDetailsGetValidateBeforeCall(organizationId, start, end, billingType, pipelineId, null);
+        Type localVarReturnType = new TypeToken<RoutesV2StorageTypeDetailsResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get storage type output details (asynchronously)
+     * Get detailed metrics for each individual output, including egress and associated input
+     * @param organizationId Organization ID (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type output details </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsStorageTypesDetailsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback<RoutesV2StorageTypeDetailsResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsStorageTypesDetailsGetValidateBeforeCall(organizationId, start, end, billingType, pipelineId, _callback);
+        Type localVarReturnType = new TypeToken<RoutesV2StorageTypeDetailsResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdMetricsStorageTypesGet
+     * @param organizationId Organization ID (required)
+     * @param metric Metric to retrieve (egress_bytes|egress_records|errors) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type metrics </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsStorageTypesGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/metrics/storage-types"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (metric != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("metric", metric));
+        }
+
+        if (start != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("start", start));
+        }
+
+        if (end != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("end", end));
+        }
+
+        if (resolution != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("resolution", resolution));
+        }
+
+        if (billingType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("billing_type", billingType));
+        }
+
+        if (pipelineId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("pipeline_id", pipelineId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdMetricsStorageTypesGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdMetricsStorageTypesGet(Async)");
+        }
+
+        // verify the required parameter 'metric' is set
+        if (metric == null) {
+            throw new ApiException("Missing the required parameter 'metric' when calling v2OrganizationIdMetricsStorageTypesGet(Async)");
+        }
+
+        return v2OrganizationIdMetricsStorageTypesGetCall(organizationId, metric, start, end, resolution, billingType, pipelineId, _callback);
+
+    }
+
+    /**
+     * Get storage type metrics
+     * Get time series metrics grouped by storage type for an organization
+     * @param organizationId Organization ID (required)
+     * @param metric Metric to retrieve (egress_bytes|egress_records|errors) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @return ModelsStorageTypeTimeSeriesResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type metrics </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsStorageTypeTimeSeriesResponse v2OrganizationIdMetricsStorageTypesGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId) throws ApiException {
+        ApiResponse<ModelsStorageTypeTimeSeriesResponse> localVarResp = v2OrganizationIdMetricsStorageTypesGetWithHttpInfo(organizationId, metric, start, end, resolution, billingType, pipelineId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get storage type metrics
+     * Get time series metrics grouped by storage type for an organization
+     * @param organizationId Organization ID (required)
+     * @param metric Metric to retrieve (egress_bytes|egress_records|errors) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @return ApiResponse&lt;ModelsStorageTypeTimeSeriesResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type metrics </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsStorageTypeTimeSeriesResponse> v2OrganizationIdMetricsStorageTypesGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsStorageTypesGetValidateBeforeCall(organizationId, metric, start, end, resolution, billingType, pipelineId, null);
+        Type localVarReturnType = new TypeToken<ModelsStorageTypeTimeSeriesResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get storage type metrics (asynchronously)
+     * Get time series metrics grouped by storage type for an organization
+     * @param organizationId Organization ID (required)
+     * @param metric Metric to retrieve (egress_bytes|egress_records|errors) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param resolution Resolution of the data, default determined by time window (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type metrics </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsStorageTypesGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String metric, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String resolution, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback<ModelsStorageTypeTimeSeriesResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsStorageTypesGetValidateBeforeCall(organizationId, metric, start, end, resolution, billingType, pipelineId, _callback);
+        Type localVarReturnType = new TypeToken<ModelsStorageTypeTimeSeriesResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
+     * @param organizationId Organization ID (required)
+     * @param storageType Storage type (e.g., s3, dev-null, bigquery) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type output details </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization or storage type not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String storageType, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/metrics/storage-types/{storage_type}/details"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "storage_type" + "}", localVarApiClient.escapeString(storageType.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (start != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("start", start));
+        }
+
+        if (end != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("end", end));
+        }
+
+        if (billingType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("billing_type", billingType));
+        }
+
+        if (pipelineId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("pipeline_id", pipelineId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String storageType, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet(Async)");
+        }
+
+        // verify the required parameter 'storageType' is set
+        if (storageType == null) {
+            throw new ApiException("Missing the required parameter 'storageType' when calling v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet(Async)");
+        }
+
+        return v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetCall(organizationId, storageType, start, end, billingType, pipelineId, _callback);
+
+    }
+
+    /**
+     * Get storage type output details by type
+     * Get detailed metrics for each individual output of a specific storage type
+     * @param organizationId Organization ID (required)
+     * @param storageType Storage type (e.g., s3, dev-null, bigquery) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @return RoutesV2StorageTypeDetailsResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type output details </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization or storage type not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public RoutesV2StorageTypeDetailsResponse v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String storageType, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId) throws ApiException {
+        ApiResponse<RoutesV2StorageTypeDetailsResponse> localVarResp = v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetWithHttpInfo(organizationId, storageType, start, end, billingType, pipelineId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get storage type output details by type
+     * Get detailed metrics for each individual output of a specific storage type
+     * @param organizationId Organization ID (required)
+     * @param storageType Storage type (e.g., s3, dev-null, bigquery) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @return ApiResponse&lt;RoutesV2StorageTypeDetailsResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type output details </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization or storage type not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<RoutesV2StorageTypeDetailsResponse> v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String storageType, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetValidateBeforeCall(organizationId, storageType, start, end, billingType, pipelineId, null);
+        Type localVarReturnType = new TypeToken<RoutesV2StorageTypeDetailsResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get storage type output details by type (asynchronously)
+     * Get detailed metrics for each individual output of a specific storage type
+     * @param organizationId Organization ID (required)
+     * @param storageType Storage type (e.g., s3, dev-null, bigquery) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type output details </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization or storage type not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String storageType, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback<RoutesV2StorageTypeDetailsResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetValidateBeforeCall(organizationId, storageType, start, end, billingType, pipelineId, _callback);
+        Type localVarReturnType = new TypeToken<RoutesV2StorageTypeDetailsResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet
+     * @param organizationId Organization ID (required)
+     * @param storageType Storage type (e.g., s3, dev-null, bigquery) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type cost summary </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization or storage type not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String storageType, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/metrics/storage-types/{storage_type}/summary"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "storage_type" + "}", localVarApiClient.escapeString(storageType.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (start != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("start", start));
+        }
+
+        if (end != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("end", end));
+        }
+
+        if (billingType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("billing_type", billingType));
+        }
+
+        if (pipelineId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("pipeline_id", pipelineId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String storageType, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet(Async)");
+        }
+
+        // verify the required parameter 'storageType' is set
+        if (storageType == null) {
+            throw new ApiException("Missing the required parameter 'storageType' when calling v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet(Async)");
+        }
+
+        return v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetCall(organizationId, storageType, start, end, billingType, pipelineId, _callback);
+
+    }
+
+    /**
+     * Get storage type cost summary by type
+     * Get aggregated cost and usage summary for a specific storage type
+     * @param organizationId Organization ID (required)
+     * @param storageType Storage type (e.g., s3, dev-null, bigquery) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @return ModelsStorageTypeSummaryResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type cost summary </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization or storage type not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsStorageTypeSummaryResponse v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String storageType, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId) throws ApiException {
+        ApiResponse<ModelsStorageTypeSummaryResponse> localVarResp = v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetWithHttpInfo(organizationId, storageType, start, end, billingType, pipelineId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get storage type cost summary by type
+     * Get aggregated cost and usage summary for a specific storage type
+     * @param organizationId Organization ID (required)
+     * @param storageType Storage type (e.g., s3, dev-null, bigquery) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @return ApiResponse&lt;ModelsStorageTypeSummaryResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type cost summary </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization or storage type not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsStorageTypeSummaryResponse> v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String storageType, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetValidateBeforeCall(organizationId, storageType, start, end, billingType, pipelineId, null);
+        Type localVarReturnType = new TypeToken<ModelsStorageTypeSummaryResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get storage type cost summary by type (asynchronously)
+     * Get aggregated cost and usage summary for a specific storage type
+     * @param organizationId Organization ID (required)
+     * @param storageType Storage type (e.g., s3, dev-null, bigquery) (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type cost summary </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization or storage type not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String storageType, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback<ModelsStorageTypeSummaryResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetValidateBeforeCall(organizationId, storageType, start, end, billingType, pipelineId, _callback);
+        Type localVarReturnType = new TypeToken<ModelsStorageTypeSummaryResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdMetricsStorageTypesSummaryGet
+     * @param organizationId Organization ID (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type cost summary </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsStorageTypesSummaryGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/metrics/storage-types/summary"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (start != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("start", start));
+        }
+
+        if (end != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("end", end));
+        }
+
+        if (billingType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("billing_type", billingType));
+        }
+
+        if (pipelineId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("pipeline_id", pipelineId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdMetricsStorageTypesSummaryGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdMetricsStorageTypesSummaryGet(Async)");
+        }
+
+        return v2OrganizationIdMetricsStorageTypesSummaryGetCall(organizationId, start, end, billingType, pipelineId, _callback);
+
+    }
+
+    /**
+     * Get storage type cost summary
+     * Get aggregated cost and usage summary by storage type
+     * @param organizationId Organization ID (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @return ModelsStorageTypeSummaryResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type cost summary </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsStorageTypeSummaryResponse v2OrganizationIdMetricsStorageTypesSummaryGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId) throws ApiException {
+        ApiResponse<ModelsStorageTypeSummaryResponse> localVarResp = v2OrganizationIdMetricsStorageTypesSummaryGetWithHttpInfo(organizationId, start, end, billingType, pipelineId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get storage type cost summary
+     * Get aggregated cost and usage summary by storage type
+     * @param organizationId Organization ID (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @return ApiResponse&lt;ModelsStorageTypeSummaryResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type cost summary </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsStorageTypeSummaryResponse> v2OrganizationIdMetricsStorageTypesSummaryGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsStorageTypesSummaryGetValidateBeforeCall(organizationId, start, end, billingType, pipelineId, null);
+        Type localVarReturnType = new TypeToken<ModelsStorageTypeSummaryResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get storage type cost summary (asynchronously)
+     * Get aggregated cost and usage summary by storage type
+     * @param organizationId Organization ID (required)
+     * @param start ISO3339 start time, default 6 hours ago (optional)
+     * @param end ISO3339 end time, default now (optional)
+     * @param billingType Filter by billing type (billable|non_billable) (optional)
+     * @param pipelineId Filter to specific pipeline (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type cost summary </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdMetricsStorageTypesSummaryGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String start, @javax.annotation.Nullable String end, @javax.annotation.Nullable String billingType, @javax.annotation.Nullable String pipelineId, final ApiCallback<ModelsStorageTypeSummaryResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdMetricsStorageTypesSummaryGetValidateBeforeCall(organizationId, start, end, billingType, pipelineId, _callback);
+        Type localVarReturnType = new TypeToken<ModelsStorageTypeSummaryResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdStorageTypeCostGet
+     * @param organizationId Organization ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type cost </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdStorageTypeCostGetCall(@javax.annotation.Nonnull String organizationId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/storage-type-cost"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdStorageTypeCostGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdStorageTypeCostGet(Async)");
+        }
+
+        return v2OrganizationIdStorageTypeCostGetCall(organizationId, _callback);
+
+    }
+
+    /**
+     * Get storage type cost
+     * Get per-organization cost configuration for storage types
+     * @param organizationId Organization ID (required)
+     * @return ModelsStorageTypeCostConfig
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type cost </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsStorageTypeCostConfig v2OrganizationIdStorageTypeCostGet(@javax.annotation.Nonnull String organizationId) throws ApiException {
+        ApiResponse<ModelsStorageTypeCostConfig> localVarResp = v2OrganizationIdStorageTypeCostGetWithHttpInfo(organizationId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get storage type cost
+     * Get per-organization cost configuration for storage types
+     * @param organizationId Organization ID (required)
+     * @return ApiResponse&lt;ModelsStorageTypeCostConfig&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type cost </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsStorageTypeCostConfig> v2OrganizationIdStorageTypeCostGetWithHttpInfo(@javax.annotation.Nonnull String organizationId) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdStorageTypeCostGetValidateBeforeCall(organizationId, null);
+        Type localVarReturnType = new TypeToken<ModelsStorageTypeCostConfig>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get storage type cost (asynchronously)
+     * Get per-organization cost configuration for storage types
+     * @param organizationId Organization ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Storage type cost </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdStorageTypeCostGetAsync(@javax.annotation.Nonnull String organizationId, final ApiCallback<ModelsStorageTypeCostConfig> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdStorageTypeCostGetValidateBeforeCall(organizationId, _callback);
+        Type localVarReturnType = new TypeToken<ModelsStorageTypeCostConfig>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdStorageTypeCostPut
+     * @param organizationId Organization ID (required)
+     * @param routesV2SetStorageTypeCostRequest Cost configuration (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Updated storage type cost </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdStorageTypeCostPutCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2SetStorageTypeCostRequest routesV2SetStorageTypeCostRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = routesV2SetStorageTypeCostRequest;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/storage-type-cost"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdStorageTypeCostPutValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2SetStorageTypeCostRequest routesV2SetStorageTypeCostRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdStorageTypeCostPut(Async)");
+        }
+
+        // verify the required parameter 'routesV2SetStorageTypeCostRequest' is set
+        if (routesV2SetStorageTypeCostRequest == null) {
+            throw new ApiException("Missing the required parameter 'routesV2SetStorageTypeCostRequest' when calling v2OrganizationIdStorageTypeCostPut(Async)");
+        }
+
+        return v2OrganizationIdStorageTypeCostPutCall(organizationId, routesV2SetStorageTypeCostRequest, _callback);
+
+    }
+
+    /**
+     * Set storage type cost
+     * Update per-organization cost configuration for storage types
+     * @param organizationId Organization ID (required)
+     * @param routesV2SetStorageTypeCostRequest Cost configuration (required)
+     * @return ModelsStorageTypeCostConfig
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Updated storage type cost </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsStorageTypeCostConfig v2OrganizationIdStorageTypeCostPut(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2SetStorageTypeCostRequest routesV2SetStorageTypeCostRequest) throws ApiException {
+        ApiResponse<ModelsStorageTypeCostConfig> localVarResp = v2OrganizationIdStorageTypeCostPutWithHttpInfo(organizationId, routesV2SetStorageTypeCostRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Set storage type cost
+     * Update per-organization cost configuration for storage types
+     * @param organizationId Organization ID (required)
+     * @param routesV2SetStorageTypeCostRequest Cost configuration (required)
+     * @return ApiResponse&lt;ModelsStorageTypeCostConfig&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Updated storage type cost </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsStorageTypeCostConfig> v2OrganizationIdStorageTypeCostPutWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2SetStorageTypeCostRequest routesV2SetStorageTypeCostRequest) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdStorageTypeCostPutValidateBeforeCall(organizationId, routesV2SetStorageTypeCostRequest, null);
+        Type localVarReturnType = new TypeToken<ModelsStorageTypeCostConfig>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Set storage type cost (asynchronously)
+     * Update per-organization cost configuration for storage types
+     * @param organizationId Organization ID (required)
+     * @param routesV2SetStorageTypeCostRequest Cost configuration (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Updated storage type cost </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdStorageTypeCostPutAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV2SetStorageTypeCostRequest routesV2SetStorageTypeCostRequest, final ApiCallback<ModelsStorageTypeCostConfig> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdStorageTypeCostPutValidateBeforeCall(organizationId, routesV2SetStorageTypeCostRequest, _callback);
+        Type localVarReturnType = new TypeToken<ModelsStorageTypeCostConfig>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

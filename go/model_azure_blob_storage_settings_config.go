@@ -22,6 +22,8 @@ var _ MappedNullable = &AzureBlobStorageSettingsConfig{}
 type AzureBlobStorageSettingsConfig struct {
 	// Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net.
 	AccountUrl *string `json:"account_url,omitempty"`
+	// Starting timestamp for initial data sync. Only processes blobs with a last modified time after this timestamp on the initial sync. If not specified, all available data from the specified prefix will be processed. Incremental syncs automatically continue from the last processed timestamp, scanning from the previous day's partition forward to catch late-arriving data. Files updated in partitions older than the current state's previous prefix will not be detected.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// The compression format of objects in the Azure container
 	Compression *string `json:"compression,omitempty"`
 	// A container organizes a set of blobs, similar to a directory in a file system.
@@ -83,6 +85,38 @@ func (o *AzureBlobStorageSettingsConfig) HasAccountUrl() bool {
 // SetAccountUrl gets a reference to the given string and assigns it to the AccountUrl field.
 func (o *AzureBlobStorageSettingsConfig) SetAccountUrl(v string) {
 	o.AccountUrl = &v
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *AzureBlobStorageSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AzureBlobStorageSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *AzureBlobStorageSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *AzureBlobStorageSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetCompression returns the Compression field value if set, zero value otherwise.
@@ -289,6 +323,9 @@ func (o AzureBlobStorageSettingsConfig) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.AccountUrl) {
 		toSerialize["account_url"] = o.AccountUrl
+	}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
 	if !IsNil(o.Compression) {
 		toSerialize["compression"] = o.Compression

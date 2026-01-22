@@ -28,6 +28,7 @@ type ModelsPipelineNodeStatus struct {
 	Ingress *ModelsDataUsage `json:"ingress,omitempty"`
 	NodeId *string `json:"node_id,omitempty"`
 	NodeSlug *string `json:"node_slug,omitempty"`
+	ProgressTimestamps *PipelineNodeStatusProgressTimestamps `json:"progress_timestamps,omitempty"`
 	Status *string `json:"status,omitempty"`
 }
 
@@ -304,6 +305,38 @@ func (o *ModelsPipelineNodeStatus) SetNodeSlug(v string) {
 	o.NodeSlug = &v
 }
 
+// GetProgressTimestamps returns the ProgressTimestamps field value if set, zero value otherwise.
+func (o *ModelsPipelineNodeStatus) GetProgressTimestamps() PipelineNodeStatusProgressTimestamps {
+	if o == nil || IsNil(o.ProgressTimestamps) {
+		var ret PipelineNodeStatusProgressTimestamps
+		return ret
+	}
+	return *o.ProgressTimestamps
+}
+
+// GetProgressTimestampsOk returns a tuple with the ProgressTimestamps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineNodeStatus) GetProgressTimestampsOk() (*PipelineNodeStatusProgressTimestamps, bool) {
+	if o == nil || IsNil(o.ProgressTimestamps) {
+		return nil, false
+	}
+	return o.ProgressTimestamps, true
+}
+
+// HasProgressTimestamps returns a boolean if a field has been set.
+func (o *ModelsPipelineNodeStatus) HasProgressTimestamps() bool {
+	if o != nil && !IsNil(o.ProgressTimestamps) {
+		return true
+	}
+
+	return false
+}
+
+// SetProgressTimestamps gets a reference to the given PipelineNodeStatusProgressTimestamps and assigns it to the ProgressTimestamps field.
+func (o *ModelsPipelineNodeStatus) SetProgressTimestamps(v PipelineNodeStatusProgressTimestamps) {
+	o.ProgressTimestamps = &v
+}
+
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *ModelsPipelineNodeStatus) GetStatus() string {
 	if o == nil || IsNil(o.Status) {
@@ -369,6 +402,9 @@ func (o ModelsPipelineNodeStatus) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.NodeSlug) {
 		toSerialize["node_slug"] = o.NodeSlug
+	}
+	if !IsNil(o.ProgressTimestamps) {
+		toSerialize["progress_timestamps"] = o.ProgressTimestamps
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

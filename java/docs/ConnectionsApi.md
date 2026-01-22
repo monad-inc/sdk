@@ -4,16 +4,16 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v3ConnectionsConnectionIdDelete**](ConnectionsApi.md#v3ConnectionsConnectionIdDelete) | **DELETE** /v3/connections/{connection_id} | Delete connection |
-| [**v3ConnectionsConnectionIdGet**](ConnectionsApi.md#v3ConnectionsConnectionIdGet) | **GET** /v3/connections/{connection_id} | Get connection by ID |
-| [**v3ConnectionsConnectionIdPatch**](ConnectionsApi.md#v3ConnectionsConnectionIdPatch) | **PATCH** /v3/connections/{connection_id} | Update connection |
-| [**v3ConnectionsGet**](ConnectionsApi.md#v3ConnectionsGet) | **GET** /v3/connections | Get all connections |
-| [**v3ConnectionsPost**](ConnectionsApi.md#v3ConnectionsPost) | **POST** /v3/connections | Create a new connection |
+| [**v3OrganizationIdConnectionsConnectionIdDelete**](ConnectionsApi.md#v3OrganizationIdConnectionsConnectionIdDelete) | **DELETE** /v3/{organization_id}/connections/{connection_id} | Delete connection |
+| [**v3OrganizationIdConnectionsConnectionIdGet**](ConnectionsApi.md#v3OrganizationIdConnectionsConnectionIdGet) | **GET** /v3/{organization_id}/connections/{connection_id} | Get connection by ID |
+| [**v3OrganizationIdConnectionsConnectionIdPatch**](ConnectionsApi.md#v3OrganizationIdConnectionsConnectionIdPatch) | **PATCH** /v3/{organization_id}/connections/{connection_id} | Update connection |
+| [**v3OrganizationIdConnectionsGet**](ConnectionsApi.md#v3OrganizationIdConnectionsGet) | **GET** /v3/{organization_id}/connections | Get all connections |
+| [**v3OrganizationIdConnectionsPost**](ConnectionsApi.md#v3OrganizationIdConnectionsPost) | **POST** /v3/{organization_id}/connections | Create a new connection |
 
 
-<a id="v3ConnectionsConnectionIdDelete"></a>
-# **v3ConnectionsConnectionIdDelete**
-> v3ConnectionsConnectionIdDelete(connectionId)
+<a id="v3OrganizationIdConnectionsConnectionIdDelete"></a>
+# **v3OrganizationIdConnectionsConnectionIdDelete**
+> v3OrganizationIdConnectionsConnectionIdDelete(organizationId, connectionId)
 
 Delete connection
 
@@ -41,11 +41,12 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     ConnectionsApi apiInstance = new ConnectionsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
     String connectionId = "connectionId_example"; // String | Connection ID to delete
     try {
-      apiInstance.v3ConnectionsConnectionIdDelete(connectionId);
+      apiInstance.v3OrganizationIdConnectionsConnectionIdDelete(organizationId, connectionId);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ConnectionsApi#v3ConnectionsConnectionIdDelete");
+      System.err.println("Exception when calling ConnectionsApi#v3OrganizationIdConnectionsConnectionIdDelete");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -59,6 +60,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
 | **connectionId** | **String**| Connection ID to delete | |
 
 ### Return type
@@ -81,9 +83,9 @@ null (empty response body)
 | **400** | Invalid request |  -  |
 | **500** | Internal server error |  -  |
 
-<a id="v3ConnectionsConnectionIdGet"></a>
-# **v3ConnectionsConnectionIdGet**
-> ModelsConnection v3ConnectionsConnectionIdGet(connectionId)
+<a id="v3OrganizationIdConnectionsConnectionIdGet"></a>
+# **v3OrganizationIdConnectionsConnectionIdGet**
+> ModelsConnection v3OrganizationIdConnectionsConnectionIdGet(organizationId, connectionId)
 
 Get connection by ID
 
@@ -111,12 +113,13 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     ConnectionsApi apiInstance = new ConnectionsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
     String connectionId = "connectionId_example"; // String | Connection ID to retrieve
     try {
-      ModelsConnection result = apiInstance.v3ConnectionsConnectionIdGet(connectionId);
+      ModelsConnection result = apiInstance.v3OrganizationIdConnectionsConnectionIdGet(organizationId, connectionId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ConnectionsApi#v3ConnectionsConnectionIdGet");
+      System.err.println("Exception when calling ConnectionsApi#v3OrganizationIdConnectionsConnectionIdGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -130,6 +133,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
 | **connectionId** | **String**| Connection ID to retrieve | |
 
 ### Return type
@@ -153,9 +157,9 @@ public class Example {
 | **404** | Connection not found |  -  |
 | **500** | Internal server error |  -  |
 
-<a id="v3ConnectionsConnectionIdPatch"></a>
-# **v3ConnectionsConnectionIdPatch**
-> ModelsConnection v3ConnectionsConnectionIdPatch(connectionId, routesV3UpdateConnectionRequest)
+<a id="v3OrganizationIdConnectionsConnectionIdPatch"></a>
+# **v3OrganizationIdConnectionsConnectionIdPatch**
+> ModelsConnection v3OrganizationIdConnectionsConnectionIdPatch(organizationId, connectionId, routesV3UpdateConnectionRequest)
 
 Update connection
 
@@ -183,13 +187,14 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     ConnectionsApi apiInstance = new ConnectionsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
     String connectionId = "connectionId_example"; // String | Connection ID to update
     RoutesV3UpdateConnectionRequest routesV3UpdateConnectionRequest = new RoutesV3UpdateConnectionRequest(); // RoutesV3UpdateConnectionRequest | Request body for updating a connection
     try {
-      ModelsConnection result = apiInstance.v3ConnectionsConnectionIdPatch(connectionId, routesV3UpdateConnectionRequest);
+      ModelsConnection result = apiInstance.v3OrganizationIdConnectionsConnectionIdPatch(organizationId, connectionId, routesV3UpdateConnectionRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ConnectionsApi#v3ConnectionsConnectionIdPatch");
+      System.err.println("Exception when calling ConnectionsApi#v3OrganizationIdConnectionsConnectionIdPatch");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -203,6 +208,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
 | **connectionId** | **String**| Connection ID to update | |
 | **routesV3UpdateConnectionRequest** | [**RoutesV3UpdateConnectionRequest**](RoutesV3UpdateConnectionRequest.md)| Request body for updating a connection | |
 
@@ -226,9 +232,9 @@ public class Example {
 | **400** | Invalid request body |  -  |
 | **500** | Internal server error |  -  |
 
-<a id="v3ConnectionsGet"></a>
-# **v3ConnectionsGet**
-> ModelsConnectionList v3ConnectionsGet(limit, offset)
+<a id="v3OrganizationIdConnectionsGet"></a>
+# **v3OrganizationIdConnectionsGet**
+> ModelsConnectionList v3OrganizationIdConnectionsGet(organizationId, limit, offset)
 
 Get all connections
 
@@ -256,13 +262,14 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     ConnectionsApi apiInstance = new ConnectionsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
     Integer limit = 56; // Integer | Limit
     Integer offset = 56; // Integer | Offset
     try {
-      ModelsConnectionList result = apiInstance.v3ConnectionsGet(limit, offset);
+      ModelsConnectionList result = apiInstance.v3OrganizationIdConnectionsGet(organizationId, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ConnectionsApi#v3ConnectionsGet");
+      System.err.println("Exception when calling ConnectionsApi#v3OrganizationIdConnectionsGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -276,6 +283,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
 | **limit** | **Integer**| Limit | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
 
@@ -298,9 +306,9 @@ public class Example {
 | **200** | List of connections retrieved successfully |  -  |
 | **500** | Internal server error |  -  |
 
-<a id="v3ConnectionsPost"></a>
-# **v3ConnectionsPost**
-> ModelsConnection v3ConnectionsPost(routesV3CreateConnectionRequest)
+<a id="v3OrganizationIdConnectionsPost"></a>
+# **v3OrganizationIdConnectionsPost**
+> ModelsConnection v3OrganizationIdConnectionsPost(organizationId, routesV3CreateConnectionRequest)
 
 Create a new connection
 
@@ -328,12 +336,13 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     ConnectionsApi apiInstance = new ConnectionsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
     RoutesV3CreateConnectionRequest routesV3CreateConnectionRequest = new RoutesV3CreateConnectionRequest(); // RoutesV3CreateConnectionRequest | Request body for creating a connection
     try {
-      ModelsConnection result = apiInstance.v3ConnectionsPost(routesV3CreateConnectionRequest);
+      ModelsConnection result = apiInstance.v3OrganizationIdConnectionsPost(organizationId, routesV3CreateConnectionRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ConnectionsApi#v3ConnectionsPost");
+      System.err.println("Exception when calling ConnectionsApi#v3OrganizationIdConnectionsPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -347,6 +356,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
 | **routesV3CreateConnectionRequest** | [**RoutesV3CreateConnectionRequest**](RoutesV3CreateConnectionRequest.md)| Request body for creating a connection | |
 
 ### Return type

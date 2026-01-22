@@ -48,17 +48,12 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineRetentionPolicy
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsPipelineRetentionPolicy {
   public static final String SERIALIZED_NAME_STREAM_AGE_LIMIT = "stream_age_limit";
   @SerializedName(SERIALIZED_NAME_STREAM_AGE_LIMIT)
   @javax.annotation.Nullable
   private Integer streamAgeLimit;
-
-  public static final String SERIALIZED_NAME_STREAM_REPLICAS = "stream_replicas";
-  @SerializedName(SERIALIZED_NAME_STREAM_REPLICAS)
-  @javax.annotation.Nullable
-  private Integer streamReplicas;
 
   public static final String SERIALIZED_NAME_STREAM_SIZE_LIMIT = "stream_size_limit";
   @SerializedName(SERIALIZED_NAME_STREAM_SIZE_LIMIT)
@@ -84,25 +79,6 @@ public class ModelsPipelineRetentionPolicy {
 
   public void setStreamAgeLimit(@javax.annotation.Nullable Integer streamAgeLimit) {
     this.streamAgeLimit = streamAgeLimit;
-  }
-
-
-  public ModelsPipelineRetentionPolicy streamReplicas(@javax.annotation.Nullable Integer streamReplicas) {
-    this.streamReplicas = streamReplicas;
-    return this;
-  }
-
-  /**
-   * Get streamReplicas
-   * @return streamReplicas
-   */
-  @javax.annotation.Nullable
-  public Integer getStreamReplicas() {
-    return streamReplicas;
-  }
-
-  public void setStreamReplicas(@javax.annotation.Nullable Integer streamReplicas) {
-    this.streamReplicas = streamReplicas;
   }
 
 
@@ -136,13 +112,12 @@ public class ModelsPipelineRetentionPolicy {
     }
     ModelsPipelineRetentionPolicy modelsPipelineRetentionPolicy = (ModelsPipelineRetentionPolicy) o;
     return Objects.equals(this.streamAgeLimit, modelsPipelineRetentionPolicy.streamAgeLimit) &&
-        Objects.equals(this.streamReplicas, modelsPipelineRetentionPolicy.streamReplicas) &&
         Objects.equals(this.streamSizeLimit, modelsPipelineRetentionPolicy.streamSizeLimit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(streamAgeLimit, streamReplicas, streamSizeLimit);
+    return Objects.hash(streamAgeLimit, streamSizeLimit);
   }
 
   @Override
@@ -150,7 +125,6 @@ public class ModelsPipelineRetentionPolicy {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsPipelineRetentionPolicy {\n");
     sb.append("    streamAgeLimit: ").append(toIndentedString(streamAgeLimit)).append("\n");
-    sb.append("    streamReplicas: ").append(toIndentedString(streamReplicas)).append("\n");
     sb.append("    streamSizeLimit: ").append(toIndentedString(streamSizeLimit)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -173,7 +147,7 @@ public class ModelsPipelineRetentionPolicy {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("stream_age_limit", "stream_replicas", "stream_size_limit"));
+    openapiFields = new HashSet<String>(Arrays.asList("stream_age_limit", "stream_size_limit"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -188,7 +162,7 @@ public class ModelsPipelineRetentionPolicy {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelsPipelineRetentionPolicy.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ModelsPipelineRetentionPolicy is not found in the empty JSON string", ModelsPipelineRetentionPolicy.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsPipelineRetentionPolicy is not found in the empty JSON string", ModelsPipelineRetentionPolicy.openapiRequiredFields.toString()));
         }
       }
 
@@ -196,12 +170,12 @@ public class ModelsPipelineRetentionPolicy {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ModelsPipelineRetentionPolicy.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ModelsPipelineRetentionPolicy` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsPipelineRetentionPolicy` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("stream_size_limit") != null && !jsonObj.get("stream_size_limit").isJsonNull()) && !jsonObj.get("stream_size_limit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stream_size_limit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stream_size_limit").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `stream_size_limit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stream_size_limit").toString()));
       }
   }
 

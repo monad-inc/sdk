@@ -50,12 +50,17 @@ import org.openapitools.client.JSON;
 /**
  * ModelsTransformOperation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsTransformOperation {
   public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
   @SerializedName(SERIALIZED_NAME_ARGUMENTS)
   @javax.annotation.Nullable
   private Map<String, Object> arguments = new HashMap<>();
+
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
+  private String description;
 
   public static final String SERIALIZED_NAME_OPERATION = "operation";
   @SerializedName(SERIALIZED_NAME_OPERATION)
@@ -92,6 +97,25 @@ public class ModelsTransformOperation {
   }
 
 
+  public ModelsTransformOperation description(@javax.annotation.Nullable String description) {
+    this.description = description;
+    return this;
+  }
+
+  /**
+   * Get description
+   * @return description
+   */
+  @javax.annotation.Nullable
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(@javax.annotation.Nullable String description) {
+    this.description = description;
+  }
+
+
   public ModelsTransformOperation operation(@javax.annotation.Nullable String operation) {
     this.operation = operation;
     return this;
@@ -122,12 +146,13 @@ public class ModelsTransformOperation {
     }
     ModelsTransformOperation modelsTransformOperation = (ModelsTransformOperation) o;
     return Objects.equals(this.arguments, modelsTransformOperation.arguments) &&
+        Objects.equals(this.description, modelsTransformOperation.description) &&
         Objects.equals(this.operation, modelsTransformOperation.operation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(arguments, operation);
+    return Objects.hash(arguments, description, operation);
   }
 
   @Override
@@ -135,6 +160,7 @@ public class ModelsTransformOperation {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsTransformOperation {\n");
     sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -157,7 +183,7 @@ public class ModelsTransformOperation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("arguments", "operation"));
+    openapiFields = new HashSet<String>(Arrays.asList("arguments", "description", "operation"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -172,7 +198,7 @@ public class ModelsTransformOperation {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelsTransformOperation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ModelsTransformOperation is not found in the empty JSON string", ModelsTransformOperation.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsTransformOperation is not found in the empty JSON string", ModelsTransformOperation.openapiRequiredFields.toString()));
         }
       }
 
@@ -180,12 +206,15 @@ public class ModelsTransformOperation {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ModelsTransformOperation.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ModelsTransformOperation` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsTransformOperation` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
       if ((jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) && !jsonObj.get("operation").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `operation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operation").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `operation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operation").toString()));
       }
   }
 

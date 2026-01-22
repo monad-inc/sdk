@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesUserWithRoles{}
 
 // RoutesUserWithRoles struct for RoutesUserWithRoles
 type RoutesUserWithRoles struct {
-	AuthProviders []RoutesUserAuthProvider `json:"auth_providers,omitempty"`
+	AuthProvider *RoutesUserAuthProvider `json:"auth_provider,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Email *string `json:"email,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -46,36 +46,36 @@ func NewRoutesUserWithRolesWithDefaults() *RoutesUserWithRoles {
 	return &this
 }
 
-// GetAuthProviders returns the AuthProviders field value if set, zero value otherwise.
-func (o *RoutesUserWithRoles) GetAuthProviders() []RoutesUserAuthProvider {
-	if o == nil || IsNil(o.AuthProviders) {
-		var ret []RoutesUserAuthProvider
+// GetAuthProvider returns the AuthProvider field value if set, zero value otherwise.
+func (o *RoutesUserWithRoles) GetAuthProvider() RoutesUserAuthProvider {
+	if o == nil || IsNil(o.AuthProvider) {
+		var ret RoutesUserAuthProvider
 		return ret
 	}
-	return o.AuthProviders
+	return *o.AuthProvider
 }
 
-// GetAuthProvidersOk returns a tuple with the AuthProviders field value if set, nil otherwise
+// GetAuthProviderOk returns a tuple with the AuthProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesUserWithRoles) GetAuthProvidersOk() ([]RoutesUserAuthProvider, bool) {
-	if o == nil || IsNil(o.AuthProviders) {
+func (o *RoutesUserWithRoles) GetAuthProviderOk() (*RoutesUserAuthProvider, bool) {
+	if o == nil || IsNil(o.AuthProvider) {
 		return nil, false
 	}
-	return o.AuthProviders, true
+	return o.AuthProvider, true
 }
 
-// HasAuthProviders returns a boolean if a field has been set.
-func (o *RoutesUserWithRoles) HasAuthProviders() bool {
-	if o != nil && !IsNil(o.AuthProviders) {
+// HasAuthProvider returns a boolean if a field has been set.
+func (o *RoutesUserWithRoles) HasAuthProvider() bool {
+	if o != nil && !IsNil(o.AuthProvider) {
 		return true
 	}
 
 	return false
 }
 
-// SetAuthProviders gets a reference to the given []RoutesUserAuthProvider and assigns it to the AuthProviders field.
-func (o *RoutesUserWithRoles) SetAuthProviders(v []RoutesUserAuthProvider) {
-	o.AuthProviders = v
+// SetAuthProvider gets a reference to the given RoutesUserAuthProvider and assigns it to the AuthProvider field.
+func (o *RoutesUserWithRoles) SetAuthProvider(v RoutesUserAuthProvider) {
+	o.AuthProvider = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -280,8 +280,8 @@ func (o RoutesUserWithRoles) MarshalJSON() ([]byte, error) {
 
 func (o RoutesUserWithRoles) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthProviders) {
-		toSerialize["auth_providers"] = o.AuthProviders
+	if !IsNil(o.AuthProvider) {
+		toSerialize["auth_provider"] = o.AuthProvider
 	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt

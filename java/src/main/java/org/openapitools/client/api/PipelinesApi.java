@@ -2954,4 +2954,238 @@ public class PipelinesApi {
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+    /**
+     * Build call for v3PipelineEdgesEdgeConditionOperatorTypesGet
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Conditions returned succesfully </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3PipelineEdgesEdgeConditionOperatorTypesGetCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/pipeline_edges/edge_condition_operator_types";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v3PipelineEdgesEdgeConditionOperatorTypesGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return v3PipelineEdgesEdgeConditionOperatorTypesGetCall(_callback);
+
+    }
+
+    /**
+     * Conditional types for edge conditions
+     * Returns the conditional types for edge conditions
+     * @return String
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Conditions returned succesfully </td><td>  -  </td></tr>
+     </table>
+     */
+    public String v3PipelineEdgesEdgeConditionOperatorTypesGet() throws ApiException {
+        ApiResponse<String> localVarResp = v3PipelineEdgesEdgeConditionOperatorTypesGetWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Conditional types for edge conditions
+     * Returns the conditional types for edge conditions
+     * @return ApiResponse&lt;String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Conditions returned succesfully </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<String> v3PipelineEdgesEdgeConditionOperatorTypesGetWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = v3PipelineEdgesEdgeConditionOperatorTypesGetValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Conditional types for edge conditions (asynchronously)
+     * Returns the conditional types for edge conditions
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Conditions returned succesfully </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3PipelineEdgesEdgeConditionOperatorTypesGetAsync(final ApiCallback<String> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v3PipelineEdgesEdgeConditionOperatorTypesGetValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v3PipelineEdgesEdgeConditionRulesGet
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Rules returned succesfully </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3PipelineEdgesEdgeConditionRulesGetCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/pipeline_edges/edge_condition_rules";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v3PipelineEdgesEdgeConditionRulesGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return v3PipelineEdgesEdgeConditionRulesGetCall(_callback);
+
+    }
+
+    /**
+     * Rules for edge conditions
+     * Returns the rules for edge conditions
+     * @return String
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Rules returned succesfully </td><td>  -  </td></tr>
+     </table>
+     */
+    public String v3PipelineEdgesEdgeConditionRulesGet() throws ApiException {
+        ApiResponse<String> localVarResp = v3PipelineEdgesEdgeConditionRulesGetWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Rules for edge conditions
+     * Returns the rules for edge conditions
+     * @return ApiResponse&lt;String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Rules returned succesfully </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<String> v3PipelineEdgesEdgeConditionRulesGetWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = v3PipelineEdgesEdgeConditionRulesGetValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Rules for edge conditions (asynchronously)
+     * Returns the rules for edge conditions
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Rules returned succesfully </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3PipelineEdgesEdgeConditionRulesGetAsync(final ApiCallback<String> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v3PipelineEdgesEdgeConditionRulesGetValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
 }

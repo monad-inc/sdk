@@ -48,13 +48,8 @@ import org.openapitools.client.JSON;
 /**
  * BigQuery Input Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class BigqueryInputSettingsConfig {
-  public static final String SERIALIZED_NAME_CRON = "cron";
-  @SerializedName(SERIALIZED_NAME_CRON)
-  @javax.annotation.Nullable
-  private String cron;
-
   public static final String SERIALIZED_NAME_DATASET = "dataset";
   @SerializedName(SERIALIZED_NAME_DATASET)
   @javax.annotation.Nullable
@@ -82,25 +77,6 @@ public class BigqueryInputSettingsConfig {
 
   public BigqueryInputSettingsConfig() {
   }
-
-  public BigqueryInputSettingsConfig cron(@javax.annotation.Nullable String cron) {
-    this.cron = cron;
-    return this;
-  }
-
-  /**
-   * Cron string for scheduling the ingest of your input
-   * @return cron
-   */
-  @javax.annotation.Nullable
-  public String getCron() {
-    return cron;
-  }
-
-  public void setCron(@javax.annotation.Nullable String cron) {
-    this.cron = cron;
-  }
-
 
   public BigqueryInputSettingsConfig dataset(@javax.annotation.Nullable String dataset) {
     this.dataset = dataset;
@@ -207,8 +183,7 @@ public class BigqueryInputSettingsConfig {
       return false;
     }
     BigqueryInputSettingsConfig bigqueryInputSettingsConfig = (BigqueryInputSettingsConfig) o;
-    return Objects.equals(this.cron, bigqueryInputSettingsConfig.cron) &&
-        Objects.equals(this.dataset, bigqueryInputSettingsConfig.dataset) &&
+    return Objects.equals(this.dataset, bigqueryInputSettingsConfig.dataset) &&
         Objects.equals(this.project, bigqueryInputSettingsConfig.project) &&
         Objects.equals(this.query, bigqueryInputSettingsConfig.query) &&
         Objects.equals(this.table, bigqueryInputSettingsConfig.table) &&
@@ -217,14 +192,13 @@ public class BigqueryInputSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cron, dataset, project, query, table, timestampColumn);
+    return Objects.hash(dataset, project, query, table, timestampColumn);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class BigqueryInputSettingsConfig {\n");
-    sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
     sb.append("    dataset: ").append(toIndentedString(dataset)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
@@ -251,7 +225,7 @@ public class BigqueryInputSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cron", "dataset", "project", "query", "table", "timestamp_column"));
+    openapiFields = new HashSet<String>(Arrays.asList("dataset", "project", "query", "table", "timestamp_column"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -266,7 +240,7 @@ public class BigqueryInputSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BigqueryInputSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BigqueryInputSettingsConfig is not found in the empty JSON string", BigqueryInputSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in BigqueryInputSettingsConfig is not found in the empty JSON string", BigqueryInputSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -274,27 +248,24 @@ public class BigqueryInputSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!BigqueryInputSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `BigqueryInputSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `BigqueryInputSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("cron") != null && !jsonObj.get("cron").isJsonNull()) && !jsonObj.get("cron").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cron` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cron").toString()));
-      }
       if ((jsonObj.get("dataset") != null && !jsonObj.get("dataset").isJsonNull()) && !jsonObj.get("dataset").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `dataset` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dataset").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `dataset` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dataset").toString()));
       }
       if ((jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) && !jsonObj.get("project").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `project` to be a primitive type in the JSON string but got `%s`", jsonObj.get("project").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `project` to be a primitive type in the JSON string but got `%s`", jsonObj.get("project").toString()));
       }
       if ((jsonObj.get("query") != null && !jsonObj.get("query").isJsonNull()) && !jsonObj.get("query").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
       }
       if ((jsonObj.get("table") != null && !jsonObj.get("table").isJsonNull()) && !jsonObj.get("table").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `table` to be a primitive type in the JSON string but got `%s`", jsonObj.get("table").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `table` to be a primitive type in the JSON string but got `%s`", jsonObj.get("table").toString()));
       }
       if ((jsonObj.get("timestamp_column") != null && !jsonObj.get("timestamp_column").isJsonNull()) && !jsonObj.get("timestamp_column").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `timestamp_column` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timestamp_column").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `timestamp_column` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timestamp_column").toString()));
       }
   }
 

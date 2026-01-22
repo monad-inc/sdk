@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Component** | Pointer to [**ModelsNodeComponent**](ModelsNodeComponent.md) |  | [optional] 
+**ComponentHouse** | Pointer to **string** |  | [optional] 
 **ComponentId** | Pointer to **string** |  | [optional] 
 **ComponentSubType** | Pointer to **string** |  | [optional] 
 **ComponentType** | Pointer to **string** |  | [optional] 
@@ -58,6 +59,31 @@ SetComponent sets Component field to given value.
 `func (o *ModelsPipelineNode) HasComponent() bool`
 
 HasComponent returns a boolean if a field has been set.
+
+### GetComponentHouse
+
+`func (o *ModelsPipelineNode) GetComponentHouse() string`
+
+GetComponentHouse returns the ComponentHouse field if non-nil, zero value otherwise.
+
+### GetComponentHouseOk
+
+`func (o *ModelsPipelineNode) GetComponentHouseOk() (*string, bool)`
+
+GetComponentHouseOk returns a tuple with the ComponentHouse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComponentHouse
+
+`func (o *ModelsPipelineNode) SetComponentHouse(v string)`
+
+SetComponentHouse sets ComponentHouse field to given value.
+
+### HasComponentHouse
+
+`func (o *ModelsPipelineNode) HasComponentHouse() bool`
+
+HasComponentHouse returns a boolean if a field has been set.
 
 ### GetComponentId
 

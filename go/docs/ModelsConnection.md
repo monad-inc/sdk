@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**OrganizationId** | Pointer to **string** |  | [optional] 
 **SamlEntityId** | Pointer to **string** |  | [optional] 
 **SamlMetadataUrl** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
@@ -131,6 +132,31 @@ SetName sets Name field to given value.
 `func (o *ModelsConnection) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetOrganizationId
+
+`func (o *ModelsConnection) GetOrganizationId() string`
+
+GetOrganizationId returns the OrganizationId field if non-nil, zero value otherwise.
+
+### GetOrganizationIdOk
+
+`func (o *ModelsConnection) GetOrganizationIdOk() (*string, bool)`
+
+GetOrganizationIdOk returns a tuple with the OrganizationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrganizationId
+
+`func (o *ModelsConnection) SetOrganizationId(v string)`
+
+SetOrganizationId sets OrganizationId field to given value.
+
+### HasOrganizationId
+
+`func (o *ModelsConnection) HasOrganizationId() bool`
+
+HasOrganizationId returns a boolean if a field has been set.
 
 ### GetSamlEntityId
 

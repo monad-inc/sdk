@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**component** | [**ModelsNodeComponent**](ModelsNodeComponent.md) |  |  [optional] |
+|**componentHouse** | **String** |  |  [optional] |
 |**componentId** | **String** |  |  [optional] |
 |**componentSubType** | **String** |  |  [optional] |
 |**componentType** | **String** |  |  [optional] |

@@ -48,8 +48,13 @@ import org.openapitools.client.JSON;
 /**
  * Clumio Alerts settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ClumioConsolidatedAlertsSettingsConfig {
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
+
   public static final String SERIALIZED_NAME_PARENT_ENTITY_ID = "parent_entity_id";
   @SerializedName(SERIALIZED_NAME_PARENT_ENTITY_ID)
   @javax.annotation.Nullable
@@ -72,6 +77,25 @@ public class ClumioConsolidatedAlertsSettingsConfig {
 
   public ClumioConsolidatedAlertsSettingsConfig() {
   }
+
+  public ClumioConsolidatedAlertsSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+  }
+
 
   public ClumioConsolidatedAlertsSettingsConfig parentEntityId(@javax.annotation.Nullable String parentEntityId) {
     this.parentEntityId = parentEntityId;
@@ -159,7 +183,8 @@ public class ClumioConsolidatedAlertsSettingsConfig {
       return false;
     }
     ClumioConsolidatedAlertsSettingsConfig clumioConsolidatedAlertsSettingsConfig = (ClumioConsolidatedAlertsSettingsConfig) o;
-    return Objects.equals(this.parentEntityId, clumioConsolidatedAlertsSettingsConfig.parentEntityId) &&
+    return Objects.equals(this.backfillStartTime, clumioConsolidatedAlertsSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.parentEntityId, clumioConsolidatedAlertsSettingsConfig.parentEntityId) &&
         Objects.equals(this.parentEntityType, clumioConsolidatedAlertsSettingsConfig.parentEntityType) &&
         Objects.equals(this.region, clumioConsolidatedAlertsSettingsConfig.region) &&
         Objects.equals(this.useSyntheticData, clumioConsolidatedAlertsSettingsConfig.useSyntheticData);
@@ -167,13 +192,14 @@ public class ClumioConsolidatedAlertsSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(parentEntityId, parentEntityType, region, useSyntheticData);
+    return Objects.hash(backfillStartTime, parentEntityId, parentEntityType, region, useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ClumioConsolidatedAlertsSettingsConfig {\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    parentEntityId: ").append(toIndentedString(parentEntityId)).append("\n");
     sb.append("    parentEntityType: ").append(toIndentedString(parentEntityType)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
@@ -199,7 +225,7 @@ public class ClumioConsolidatedAlertsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("parent_entity_id", "parent_entity_type", "region", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "parent_entity_id", "parent_entity_type", "region", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -214,7 +240,7 @@ public class ClumioConsolidatedAlertsSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ClumioConsolidatedAlertsSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ClumioConsolidatedAlertsSettingsConfig is not found in the empty JSON string", ClumioConsolidatedAlertsSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ClumioConsolidatedAlertsSettingsConfig is not found in the empty JSON string", ClumioConsolidatedAlertsSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -222,18 +248,21 @@ public class ClumioConsolidatedAlertsSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ClumioConsolidatedAlertsSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ClumioConsolidatedAlertsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ClumioConsolidatedAlertsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
       if ((jsonObj.get("parent_entity_id") != null && !jsonObj.get("parent_entity_id").isJsonNull()) && !jsonObj.get("parent_entity_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `parent_entity_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parent_entity_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `parent_entity_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parent_entity_id").toString()));
       }
       if ((jsonObj.get("parent_entity_type") != null && !jsonObj.get("parent_entity_type").isJsonNull()) && !jsonObj.get("parent_entity_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `parent_entity_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parent_entity_type").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `parent_entity_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parent_entity_type").toString()));
       }
       if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }
   }
 

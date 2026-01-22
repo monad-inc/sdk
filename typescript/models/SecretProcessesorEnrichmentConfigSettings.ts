@@ -11,6 +11,8 @@
  */
 
 import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettingsConfig';
+import { GeolocusSettingsConfig } from '../models/GeolocusSettingsConfig';
+import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
 import { HttpFile } from '../http/http';
 
 /**
@@ -18,7 +20,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorEnrichmentConfigSettings = CommunityEditionSettingsConfig | { [key: string]: any; };
+export type SecretProcessesorEnrichmentConfigSettings = CommunityEditionSettingsConfig | GeolocusSettingsConfig | KvLookupSettingsConfig | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorEnrichmentConfigSettingsClass
@@ -29,4 +31,6 @@ export class SecretProcessesorEnrichmentConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
+
 

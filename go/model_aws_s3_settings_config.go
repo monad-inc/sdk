@@ -20,6 +20,8 @@ var _ MappedNullable = &AwsS3SettingsConfig{}
 
 // AwsS3SettingsConfig AWS S3 settings
 type AwsS3SettingsConfig struct {
+	// Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Name of the S3 bucket.
 	Bucket *string `json:"bucket,omitempty"`
 	// Compression format of the S3 objects.
@@ -53,6 +55,38 @@ func NewAwsS3SettingsConfig() *AwsS3SettingsConfig {
 func NewAwsS3SettingsConfigWithDefaults() *AwsS3SettingsConfig {
 	this := AwsS3SettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *AwsS3SettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AwsS3SettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *AwsS3SettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *AwsS3SettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetBucket returns the Bucket field value if set, zero value otherwise.
@@ -321,6 +355,9 @@ func (o AwsS3SettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o AwsS3SettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.Bucket) {
 		toSerialize["bucket"] = o.Bucket
 	}

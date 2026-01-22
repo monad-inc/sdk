@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class VulnerabilitiesSettingsConfig {
     /**
+    * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+    */
+    'backfillStartTime'?: string;
+    /**
     * Your cloud type for CrowdStrike. Ex: \'autodiscover\', \'us-1\', \'us-2\', \'eu-1\', \'us-gov-1\'.
     */
     'cloudType'?: string;
@@ -30,6 +34,12 @@ export class VulnerabilitiesSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "cloudType",
             "baseName": "cloud_type",

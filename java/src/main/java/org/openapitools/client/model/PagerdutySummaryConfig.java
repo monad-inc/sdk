@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * SummaryConfig allows customization of event summary messages displayed in PagerDuty
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class PagerdutySummaryConfig {
   public static final String SERIALIZED_NAME_ALERT_SOURCE = "alert_source";
   @SerializedName(SERIALIZED_NAME_ALERT_SOURCE)
@@ -214,7 +214,7 @@ public class PagerdutySummaryConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PagerdutySummaryConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PagerdutySummaryConfig is not found in the empty JSON string", PagerdutySummaryConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in PagerdutySummaryConfig is not found in the empty JSON string", PagerdutySummaryConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -222,21 +222,21 @@ public class PagerdutySummaryConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!PagerdutySummaryConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PagerdutySummaryConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PagerdutySummaryConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("alert_source") != null && !jsonObj.get("alert_source").isJsonNull()) && !jsonObj.get("alert_source").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `alert_source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_source").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `alert_source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_source").toString()));
       }
       if ((jsonObj.get("alert_summary") != null && !jsonObj.get("alert_summary").isJsonNull()) && !jsonObj.get("alert_summary").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `alert_summary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_summary").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `alert_summary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_summary").toString()));
       }
       if ((jsonObj.get("change_source") != null && !jsonObj.get("change_source").isJsonNull()) && !jsonObj.get("change_source").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `change_source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("change_source").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `change_source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("change_source").toString()));
       }
       if ((jsonObj.get("change_summary") != null && !jsonObj.get("change_summary").isJsonNull()) && !jsonObj.get("change_summary").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `change_summary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("change_summary").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `change_summary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("change_summary").toString()));
       }
   }
 

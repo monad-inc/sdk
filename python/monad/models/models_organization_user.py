@@ -28,7 +28,7 @@ class ModelsOrganizationUser(BaseModel):
     """
     ModelsOrganizationUser
     """ # noqa: E501
-    auth_providers: Optional[List[ModelsUserAuthProvider]] = None
+    auth_provider: Optional[ModelsUserAuthProvider] = None
     connection_id: Optional[StrictStr] = None
     created_at: Optional[StrictStr] = None
     email: Optional[StrictStr] = None
@@ -36,7 +36,7 @@ class ModelsOrganizationUser(BaseModel):
     role_id: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_providers", "connection_id", "created_at", "email", "id", "role_id", "updated_at", "username"]
+    __properties: ClassVar[List[str]] = ["auth_provider", "connection_id", "created_at", "email", "id", "role_id", "updated_at", "username"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,13 +77,9 @@ class ModelsOrganizationUser(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in auth_providers (list)
-        _items = []
-        if self.auth_providers:
-            for _item_auth_providers in self.auth_providers:
-                if _item_auth_providers:
-                    _items.append(_item_auth_providers.to_dict())
-            _dict['auth_providers'] = _items
+        # override the default output from pydantic by calling `to_dict()` of auth_provider
+        if self.auth_provider:
+            _dict['auth_provider'] = self.auth_provider.to_dict()
         return _dict
 
     @classmethod
@@ -96,7 +92,7 @@ class ModelsOrganizationUser(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "auth_providers": [ModelsUserAuthProvider.from_dict(_item) for _item in obj["auth_providers"]] if obj.get("auth_providers") is not None else None,
+            "auth_provider": ModelsUserAuthProvider.from_dict(obj["auth_provider"]) if obj.get("auth_provider") is not None else None,
             "connection_id": obj.get("connection_id"),
             "created_at": obj.get("created_at"),
             "email": obj.get("email"),

@@ -22,6 +22,8 @@ All URIs are relative to *https://monad.com/api*
 | [**v2OrganizationIdPipelinesPipelineIdTriggerPost**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdTriggerPost) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually |
 | [**v2OrganizationIdPipelinesPost**](PipelinesApi.md#v2OrganizationIdPipelinesPost) | **POST** /v2/{organization_id}/pipelines | Create pipeline |
 | [**v2OrganizationIdPipelinesStatusesGet**](PipelinesApi.md#v2OrganizationIdPipelinesStatusesGet) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status |
+| [**v3PipelineEdgesEdgeConditionOperatorTypesGet**](PipelinesApi.md#v3PipelineEdgesEdgeConditionOperatorTypesGet) | **GET** /v3/pipeline_edges/edge_condition_operator_types | Conditional types for edge conditions |
+| [**v3PipelineEdgesEdgeConditionRulesGet**](PipelinesApi.md#v3PipelineEdgesEdgeConditionRulesGet) | **GET** /v3/pipeline_edges/edge_condition_rules | Rules for edge conditions |
 
 
 <a id="v1OrganizationIdPipelinesGet"></a>
@@ -1503,4 +1505,146 @@ public class Example {
 | **200** | List of pipelines with status |  -  |
 | **400** | Invalid query parameters or time range |  -  |
 | **500** | Failed to retrieve pipeline status |  -  |
+
+<a id="v3PipelineEdgesEdgeConditionOperatorTypesGet"></a>
+# **v3PipelineEdgesEdgeConditionOperatorTypesGet**
+> String v3PipelineEdgesEdgeConditionOperatorTypesGet()
+
+Conditional types for edge conditions
+
+Returns the conditional types for edge conditions
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.PipelinesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    PipelinesApi apiInstance = new PipelinesApi(defaultClient);
+    try {
+      String result = apiInstance.v3PipelineEdgesEdgeConditionOperatorTypesGet();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PipelinesApi#v3PipelineEdgesEdgeConditionOperatorTypesGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**String**
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Conditions returned succesfully |  -  |
+
+<a id="v3PipelineEdgesEdgeConditionRulesGet"></a>
+# **v3PipelineEdgesEdgeConditionRulesGet**
+> String v3PipelineEdgesEdgeConditionRulesGet()
+
+Rules for edge conditions
+
+Returns the rules for edge conditions
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.PipelinesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    PipelinesApi apiInstance = new PipelinesApi(defaultClient);
+    try {
+      String result = apiInstance.v3PipelineEdgesEdgeConditionRulesGet();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PipelinesApi#v3PipelineEdgesEdgeConditionRulesGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**String**
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Rules returned succesfully |  -  |
 

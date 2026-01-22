@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Azure Activity Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class AzureActivityLogsSettingsConfig {
   public static final String SERIALIZED_NAME_CORRELATION_ID = "correlation_id";
   @SerializedName(SERIALIZED_NAME_CORRELATION_ID)
@@ -292,7 +292,7 @@ public class AzureActivityLogsSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AzureActivityLogsSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AzureActivityLogsSettingsConfig is not found in the empty JSON string", AzureActivityLogsSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in AzureActivityLogsSettingsConfig is not found in the empty JSON string", AzureActivityLogsSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -300,27 +300,27 @@ public class AzureActivityLogsSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!AzureActivityLogsSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AzureActivityLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AzureActivityLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("correlation_id") != null && !jsonObj.get("correlation_id").isJsonNull()) && !jsonObj.get("correlation_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `correlation_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("correlation_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `correlation_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("correlation_id").toString()));
       }
       if ((jsonObj.get("resource_group_name") != null && !jsonObj.get("resource_group_name").isJsonNull()) && !jsonObj.get("resource_group_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resource_group_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_group_name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `resource_group_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_group_name").toString()));
       }
       if ((jsonObj.get("resource_provider") != null && !jsonObj.get("resource_provider").isJsonNull()) && !jsonObj.get("resource_provider").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resource_provider` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_provider").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `resource_provider` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_provider").toString()));
       }
       if ((jsonObj.get("resource_uri") != null && !jsonObj.get("resource_uri").isJsonNull()) && !jsonObj.get("resource_uri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resource_uri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_uri").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `resource_uri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_uri").toString()));
       }
       if ((jsonObj.get("subscription_id") != null && !jsonObj.get("subscription_id").isJsonNull()) && !jsonObj.get("subscription_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `subscription_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subscription_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `subscription_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subscription_id").toString()));
       }
       if ((jsonObj.get("tenant_id") != null && !jsonObj.get("tenant_id").isJsonNull()) && !jsonObj.get("tenant_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tenant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_id").toString()));
       }
   }
 

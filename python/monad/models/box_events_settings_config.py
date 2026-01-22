@@ -27,9 +27,10 @@ class BoxEventsSettingsConfig(BaseModel):
     """
     Box Events secrets
     """ # noqa: E501
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, data from 1 year ago upto now from box is fetched on the first sync. All syncs thereafter will be incremental.")
     event_type: Optional[List[StrictStr]] = Field(default=None, description="A list of event types to filter by.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["event_type", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "event_type", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +83,7 @@ class BoxEventsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "event_type": obj.get("event_type"),
             "use_synthetic_data": obj.get("use_synthetic_data")
         })

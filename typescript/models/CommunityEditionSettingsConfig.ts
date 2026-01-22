@@ -25,9 +25,9 @@ export class CommunityEditionSettingsConfig {
     */
     'errorOnRateLimit'?: boolean;
     /**
-    * IPFieldPath is the path to the IP address field in the record
+    * IPAddressPath is the path to a field containing an IP address to look up
     */
-    'ipFieldPath'?: string;
+    'ipAddressPath'?: string;
     /**
     * NoMatchResponse is the value to add when no match is found
     */
@@ -55,8 +55,8 @@ export class CommunityEditionSettingsConfig {
             "format": ""
         },
         {
-            "name": "ipFieldPath",
-            "baseName": "ip_field_path",
+            "name": "ipAddressPath",
+            "baseName": "ip_address_path",
             "type": "string",
             "format": ""
         },

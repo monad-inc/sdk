@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class VercelUserEventsSecretsConfig(BaseModel):
     """
-    Vercel User Events secrets
+    VercelUserEventsSecretsConfig
     """ # noqa: E501
     access_token: Optional[ModelsSecret] = None
     __properties: ClassVar[List[str]] = ["access_token"]

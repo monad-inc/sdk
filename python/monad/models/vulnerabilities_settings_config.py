@@ -27,9 +27,10 @@ class VulnerabilitiesSettingsConfig(BaseModel):
     """
     CrowdStrike EDR vulnerabilities settings
     """ # noqa: E501
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     cloud_type: Optional[StrictStr] = Field(default=None, description="Your cloud type for CrowdStrike. Ex: 'autodiscover', 'us-1', 'us-2', 'eu-1', 'us-gov-1'.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["cloud_type", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "cloud_type", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +83,7 @@ class VulnerabilitiesSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "cloud_type": obj.get("cloud_type"),
             "use_synthetic_data": obj.get("use_synthetic_data")
         })

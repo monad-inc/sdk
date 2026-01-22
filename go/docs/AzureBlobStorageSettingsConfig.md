@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountUrl** | Pointer to **string** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
+**BackfillStartTime** | Pointer to **string** | Starting timestamp for initial data sync. Only processes blobs with a last modified time after this timestamp on the initial sync. If not specified, all available data from the specified prefix will be processed. Incremental syncs automatically continue from the last processed timestamp, scanning from the previous day&#39;s partition forward to catch late-arriving data. Files updated in partitions older than the current state&#39;s previous prefix will not be detected. | [optional] 
 **Compression** | Pointer to **string** | The compression format of objects in the Azure container | [optional] 
 **Container** | Pointer to **string** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
 **Format** | Pointer to **string** | File format of the Blob storage objects in Azure. | [optional] 
@@ -55,6 +56,31 @@ SetAccountUrl sets AccountUrl field to given value.
 `func (o *AzureBlobStorageSettingsConfig) HasAccountUrl() bool`
 
 HasAccountUrl returns a boolean if a field has been set.
+
+### GetBackfillStartTime
+
+`func (o *AzureBlobStorageSettingsConfig) GetBackfillStartTime() string`
+
+GetBackfillStartTime returns the BackfillStartTime field if non-nil, zero value otherwise.
+
+### GetBackfillStartTimeOk
+
+`func (o *AzureBlobStorageSettingsConfig) GetBackfillStartTimeOk() (*string, bool)`
+
+GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackfillStartTime
+
+`func (o *AzureBlobStorageSettingsConfig) SetBackfillStartTime(v string)`
+
+SetBackfillStartTime sets BackfillStartTime field to given value.
+
+### HasBackfillStartTime
+
+`func (o *AzureBlobStorageSettingsConfig) HasBackfillStartTime() bool`
+
+HasBackfillStartTime returns a boolean if a field has been set.
 
 ### GetCompression
 

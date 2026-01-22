@@ -643,6 +643,7 @@ class OrganizationUsersApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         user_id: Annotated[StrictStr, Field(description="User ID")],
+        user_auth_provider_id: Annotated[StrictStr, Field(description="User Auth Provider ID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -664,6 +665,8 @@ class OrganizationUsersApi:
         :type organization_id: str
         :param user_id: User ID (required)
         :type user_id: str
+        :param user_auth_provider_id: User Auth Provider ID (required)
+        :type user_auth_provider_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -689,6 +692,7 @@ class OrganizationUsersApi:
         _param = self._v1_organization_id_users_user_id_delete_serialize(
             organization_id=organization_id,
             user_id=user_id,
+            user_auth_provider_id=user_auth_provider_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -715,6 +719,7 @@ class OrganizationUsersApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         user_id: Annotated[StrictStr, Field(description="User ID")],
+        user_auth_provider_id: Annotated[StrictStr, Field(description="User Auth Provider ID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -736,6 +741,8 @@ class OrganizationUsersApi:
         :type organization_id: str
         :param user_id: User ID (required)
         :type user_id: str
+        :param user_auth_provider_id: User Auth Provider ID (required)
+        :type user_auth_provider_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -761,6 +768,7 @@ class OrganizationUsersApi:
         _param = self._v1_organization_id_users_user_id_delete_serialize(
             organization_id=organization_id,
             user_id=user_id,
+            user_auth_provider_id=user_auth_provider_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -787,6 +795,7 @@ class OrganizationUsersApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         user_id: Annotated[StrictStr, Field(description="User ID")],
+        user_auth_provider_id: Annotated[StrictStr, Field(description="User Auth Provider ID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -808,6 +817,8 @@ class OrganizationUsersApi:
         :type organization_id: str
         :param user_id: User ID (required)
         :type user_id: str
+        :param user_auth_provider_id: User Auth Provider ID (required)
+        :type user_auth_provider_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -833,6 +844,7 @@ class OrganizationUsersApi:
         _param = self._v1_organization_id_users_user_id_delete_serialize(
             organization_id=organization_id,
             user_id=user_id,
+            user_auth_provider_id=user_auth_provider_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -854,6 +866,7 @@ class OrganizationUsersApi:
         self,
         organization_id,
         user_id,
+        user_auth_provider_id,
         _request_auth,
         _content_type,
         _headers,
@@ -880,6 +893,10 @@ class OrganizationUsersApi:
         if user_id is not None:
             _path_params['user_id'] = user_id
         # process the query parameters
+        if user_auth_provider_id is not None:
+            
+            _query_params.append(('user_auth_provider_id', user_auth_provider_id))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

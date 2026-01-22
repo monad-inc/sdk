@@ -17,21 +17,25 @@ import { HttpFile } from '../http/http';
 */
 export class KvLookupSettingsConfig {
     /**
-    * DestinationKey the path where the result will be stored in the record. Use \'.\' for the root object, \'field.subfield\' for nested properties, \'array[0]\' for array elements, or combined paths like \'users[0].name\'.
+    * DestinationKey is the path where the result will be stored in the record
     */
     'destinationKey'?: string;
     /**
-    * ErrorOnMissingKey if true, will throw an error if the key is not found in the KV lookup output
+    * ErrorOnMissingKey If true, throw an error when key is not found in the KV store
     */
     'errorOnMissingKey'?: boolean;
     /**
-    * JoinKey is the key in the record whose value will be used to join with the KV lookup output
+    * JoinPath is the path to a field whose values will be used as the lookup keys
     */
-    'joinKey'?: string;
+    'joinPath'?: string;
     /**
-    * KVLookupOutputID is the ID of the KV lookup output to join with
+    * KVLookupOutputID is the id of the KV lookup output to join with
     */
     'kvLookupOutputId'?: string;
+    /**
+    * NoMatchResponse is the value to add to the record when no match is found
+    */
+    'noMatchResponse'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -51,14 +55,20 @@ export class KvLookupSettingsConfig {
             "format": ""
         },
         {
-            "name": "joinKey",
-            "baseName": "join_key",
+            "name": "joinPath",
+            "baseName": "join_path",
             "type": "string",
             "format": ""
         },
         {
             "name": "kvLookupOutputId",
             "baseName": "kv_lookup_output_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "noMatchResponse",
+            "baseName": "no_match_response",
             "type": "string",
             "format": ""
         }    ];

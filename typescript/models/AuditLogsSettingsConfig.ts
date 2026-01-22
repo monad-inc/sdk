@@ -25,13 +25,13 @@ export class AuditLogsSettingsConfig {
     */
     'actor'?: string;
     /**
+    * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+    */
+    'backfillStartTime'?: string;
+    /**
     * Filter by actor\'s country code (e.g., US)
     */
     'country'?: string;
-    /**
-    * Only return audit log entries after this RFC3339 formatted time stamp
-    */
-    'createdAfter'?: string;
     /**
     * Your GitHub enterprise slug or ID
     */
@@ -75,14 +75,14 @@ export class AuditLogsSettingsConfig {
             "format": ""
         },
         {
-            "name": "country",
-            "baseName": "country",
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
             "type": "string",
             "format": ""
         },
         {
-            "name": "createdAfter",
-            "baseName": "created_after",
+            "name": "country",
+            "baseName": "country",
             "type": "string",
             "format": ""
         },

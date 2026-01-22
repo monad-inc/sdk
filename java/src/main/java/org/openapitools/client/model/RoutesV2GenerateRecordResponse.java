@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2GenerateRecordResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV2GenerateRecordResponse {
   public static final String SERIALIZED_NAME_RECORD = "record";
   @SerializedName(SERIALIZED_NAME_RECORD)
@@ -146,7 +146,7 @@ public class RoutesV2GenerateRecordResponse {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RoutesV2GenerateRecordResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RoutesV2GenerateRecordResponse is not found in the empty JSON string", RoutesV2GenerateRecordResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV2GenerateRecordResponse is not found in the empty JSON string", RoutesV2GenerateRecordResponse.openapiRequiredFields.toString()));
         }
       }
 
@@ -154,13 +154,13 @@ public class RoutesV2GenerateRecordResponse {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!RoutesV2GenerateRecordResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RoutesV2GenerateRecordResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV2GenerateRecordResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("record") != null && !jsonObj.get("record").isJsonNull() && !jsonObj.get("record").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `record` to be an array in the JSON string but got `%s`", jsonObj.get("record").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `record` to be an array in the JSON string but got `%s`", jsonObj.get("record").toString()));
       }
   }
 

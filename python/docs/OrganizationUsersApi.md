@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_organization_id_users_user_id_delete**
-> object v1_organization_id_users_user_id_delete(organization_id, user_id)
+> object v1_organization_id_users_user_id_delete(organization_id, user_id, user_auth_provider_id)
 
 Remove user from organization
 
@@ -238,10 +238,11 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationUsersApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     user_id = 'user_id_example' # str | User ID
+    user_auth_provider_id = 'user_auth_provider_id_example' # str | User Auth Provider ID
 
     try:
         # Remove user from organization
-        api_response = api_instance.v1_organization_id_users_user_id_delete(organization_id, user_id)
+        api_response = api_instance.v1_organization_id_users_user_id_delete(organization_id, user_id, user_auth_provider_id)
         print("The response of OrganizationUsersApi->v1_organization_id_users_user_id_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -257,6 +258,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **user_id** | **str**| User ID | 
+ **user_auth_provider_id** | **str**| User Auth Provider ID | 
 
 ### Return type
 

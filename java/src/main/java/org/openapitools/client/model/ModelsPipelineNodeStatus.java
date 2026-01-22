@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.ModelsDataUsage;
+import org.openapitools.client.model.PipelineNodeStatusProgressTimestamps;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNodeStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsPipelineNodeStatus {
   public static final String SERIALIZED_NAME_COMPONENT_TYPE = "component_type";
   @SerializedName(SERIALIZED_NAME_COMPONENT_TYPE)
@@ -90,6 +91,11 @@ public class ModelsPipelineNodeStatus {
   @SerializedName(SERIALIZED_NAME_NODE_SLUG)
   @javax.annotation.Nullable
   private String nodeSlug;
+
+  public static final String SERIALIZED_NAME_PROGRESS_TIMESTAMPS = "progress_timestamps";
+  @SerializedName(SERIALIZED_NAME_PROGRESS_TIMESTAMPS)
+  @javax.annotation.Nullable
+  private PipelineNodeStatusProgressTimestamps progressTimestamps;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -251,6 +257,25 @@ public class ModelsPipelineNodeStatus {
   }
 
 
+  public ModelsPipelineNodeStatus progressTimestamps(@javax.annotation.Nullable PipelineNodeStatusProgressTimestamps progressTimestamps) {
+    this.progressTimestamps = progressTimestamps;
+    return this;
+  }
+
+  /**
+   * Get progressTimestamps
+   * @return progressTimestamps
+   */
+  @javax.annotation.Nullable
+  public PipelineNodeStatusProgressTimestamps getProgressTimestamps() {
+    return progressTimestamps;
+  }
+
+  public void setProgressTimestamps(@javax.annotation.Nullable PipelineNodeStatusProgressTimestamps progressTimestamps) {
+    this.progressTimestamps = progressTimestamps;
+  }
+
+
   public ModelsPipelineNodeStatus status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
@@ -288,12 +313,13 @@ public class ModelsPipelineNodeStatus {
         Objects.equals(this.ingress, modelsPipelineNodeStatus.ingress) &&
         Objects.equals(this.nodeId, modelsPipelineNodeStatus.nodeId) &&
         Objects.equals(this.nodeSlug, modelsPipelineNodeStatus.nodeSlug) &&
+        Objects.equals(this.progressTimestamps, modelsPipelineNodeStatus.progressTimestamps) &&
         Objects.equals(this.status, modelsPipelineNodeStatus.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(componentType, componentTypeId, egress, errors, expiredMessages, ingress, nodeId, nodeSlug, status);
+    return Objects.hash(componentType, componentTypeId, egress, errors, expiredMessages, ingress, nodeId, nodeSlug, progressTimestamps, status);
   }
 
   @Override
@@ -308,6 +334,7 @@ public class ModelsPipelineNodeStatus {
     sb.append("    ingress: ").append(toIndentedString(ingress)).append("\n");
     sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
     sb.append("    nodeSlug: ").append(toIndentedString(nodeSlug)).append("\n");
+    sb.append("    progressTimestamps: ").append(toIndentedString(progressTimestamps)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -330,7 +357,7 @@ public class ModelsPipelineNodeStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "node_id", "node_slug", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "node_id", "node_slug", "progress_timestamps", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -345,7 +372,7 @@ public class ModelsPipelineNodeStatus {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelsPipelineNodeStatus.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ModelsPipelineNodeStatus is not found in the empty JSON string", ModelsPipelineNodeStatus.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsPipelineNodeStatus is not found in the empty JSON string", ModelsPipelineNodeStatus.openapiRequiredFields.toString()));
         }
       }
 
@@ -353,15 +380,15 @@ public class ModelsPipelineNodeStatus {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ModelsPipelineNodeStatus.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ModelsPipelineNodeStatus` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsPipelineNodeStatus` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("component_type") != null && !jsonObj.get("component_type").isJsonNull()) && !jsonObj.get("component_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `component_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("component_type").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `component_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("component_type").toString()));
       }
       if ((jsonObj.get("component_type_id") != null && !jsonObj.get("component_type_id").isJsonNull()) && !jsonObj.get("component_type_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `component_type_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("component_type_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `component_type_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("component_type_id").toString()));
       }
       // validate the optional field `egress`
       if (jsonObj.get("egress") != null && !jsonObj.get("egress").isJsonNull()) {
@@ -372,13 +399,17 @@ public class ModelsPipelineNodeStatus {
         ModelsDataUsage.validateJsonElement(jsonObj.get("ingress"));
       }
       if ((jsonObj.get("node_id") != null && !jsonObj.get("node_id").isJsonNull()) && !jsonObj.get("node_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `node_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("node_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `node_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("node_id").toString()));
       }
       if ((jsonObj.get("node_slug") != null && !jsonObj.get("node_slug").isJsonNull()) && !jsonObj.get("node_slug").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `node_slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("node_slug").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `node_slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("node_slug").toString()));
+      }
+      // validate the optional field `progress_timestamps`
+      if (jsonObj.get("progress_timestamps") != null && !jsonObj.get("progress_timestamps").isJsonNull()) {
+        PipelineNodeStatusProgressTimestamps.validateJsonElement(jsonObj.get("progress_timestamps"));
       }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
   }
 

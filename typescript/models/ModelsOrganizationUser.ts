@@ -14,7 +14,7 @@ import { ModelsUserAuthProvider } from '../models/ModelsUserAuthProvider';
 import { HttpFile } from '../http/http';
 
 export class ModelsOrganizationUser {
-    'authProviders'?: Array<ModelsUserAuthProvider>;
+    'authProvider'?: ModelsUserAuthProvider;
     'connectionId'?: string;
     'createdAt'?: string;
     'email'?: string;
@@ -29,9 +29,9 @@ export class ModelsOrganizationUser {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "authProviders",
-            "baseName": "auth_providers",
-            "type": "Array<ModelsUserAuthProvider>",
+            "name": "authProvider",
+            "baseName": "auth_provider",
+            "type": "ModelsUserAuthProvider",
             "format": ""
         },
         {

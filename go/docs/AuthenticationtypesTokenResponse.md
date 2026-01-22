@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccessToken** | Pointer to **string** |  | [optional] 
+**Email** | Pointer to **string** |  | [optional] 
 **ExpiresIn** | Pointer to **int32** |  | [optional] 
 **IdToken** | Pointer to **string** |  | [optional] 
 **RefreshToken** | Pointer to **string** |  | [optional] 
@@ -53,6 +54,31 @@ SetAccessToken sets AccessToken field to given value.
 `func (o *AuthenticationtypesTokenResponse) HasAccessToken() bool`
 
 HasAccessToken returns a boolean if a field has been set.
+
+### GetEmail
+
+`func (o *AuthenticationtypesTokenResponse) GetEmail() string`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *AuthenticationtypesTokenResponse) GetEmailOk() (*string, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *AuthenticationtypesTokenResponse) SetEmail(v string)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *AuthenticationtypesTokenResponse) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
 
 ### GetExpiresIn
 

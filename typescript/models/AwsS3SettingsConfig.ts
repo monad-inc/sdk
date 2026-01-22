@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class AwsS3SettingsConfig {
     /**
+    * Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental.
+    */
+    'backfillStartTime'?: string;
+    /**
     * Name of the S3 bucket.
     */
     'bucket'?: string;
@@ -54,6 +58,12 @@ export class AwsS3SettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "bucket",
             "baseName": "bucket",

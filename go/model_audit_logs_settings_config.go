@@ -24,10 +24,10 @@ type AuditLogsSettingsConfig struct {
 	Actions []string `json:"actions,omitempty"`
 	// Filter by the username that initiated the action
 	Actor *string `json:"actor,omitempty"`
+	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Filter by actor's country code (e.g., US)
 	Country *string `json:"country,omitempty"`
-	// Only return audit log entries after this RFC3339 formatted time stamp
-	CreatedAfter *string `json:"created_after,omitempty"`
 	// Your GitHub enterprise slug or ID
 	Enterprise *string `json:"enterprise,omitempty"`
 	// Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both.
@@ -123,6 +123,38 @@ func (o *AuditLogsSettingsConfig) SetActor(v string) {
 	o.Actor = &v
 }
 
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *AuditLogsSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuditLogsSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *AuditLogsSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *AuditLogsSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
+}
+
 // GetCountry returns the Country field value if set, zero value otherwise.
 func (o *AuditLogsSettingsConfig) GetCountry() string {
 	if o == nil || IsNil(o.Country) {
@@ -153,38 +185,6 @@ func (o *AuditLogsSettingsConfig) HasCountry() bool {
 // SetCountry gets a reference to the given string and assigns it to the Country field.
 func (o *AuditLogsSettingsConfig) SetCountry(v string) {
 	o.Country = &v
-}
-
-// GetCreatedAfter returns the CreatedAfter field value if set, zero value otherwise.
-func (o *AuditLogsSettingsConfig) GetCreatedAfter() string {
-	if o == nil || IsNil(o.CreatedAfter) {
-		var ret string
-		return ret
-	}
-	return *o.CreatedAfter
-}
-
-// GetCreatedAfterOk returns a tuple with the CreatedAfter field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AuditLogsSettingsConfig) GetCreatedAfterOk() (*string, bool) {
-	if o == nil || IsNil(o.CreatedAfter) {
-		return nil, false
-	}
-	return o.CreatedAfter, true
-}
-
-// HasCreatedAfter returns a boolean if a field has been set.
-func (o *AuditLogsSettingsConfig) HasCreatedAfter() bool {
-	if o != nil && !IsNil(o.CreatedAfter) {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedAfter gets a reference to the given string and assigns it to the CreatedAfter field.
-func (o *AuditLogsSettingsConfig) SetCreatedAfter(v string) {
-	o.CreatedAfter = &v
 }
 
 // GetEnterprise returns the Enterprise field value if set, zero value otherwise.
@@ -395,11 +395,11 @@ func (o AuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Actor) {
 		toSerialize["actor"] = o.Actor
 	}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.Country) {
 		toSerialize["country"] = o.Country
-	}
-	if !IsNil(o.CreatedAfter) {
-		toSerialize["created_after"] = o.CreatedAfter
 	}
 	if !IsNil(o.Enterprise) {
 		toSerialize["enterprise"] = o.Enterprise

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ConfigMeta** | Pointer to **interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**TypeID** | Pointer to **string** |  | [optional] 
+**TypeId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -113,30 +113,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetTypeID
+### GetTypeId
 
-`func (o *ConditionInfo) GetTypeID() string`
+`func (o *ConditionInfo) GetTypeId() string`
 
-GetTypeID returns the TypeID field if non-nil, zero value otherwise.
+GetTypeId returns the TypeId field if non-nil, zero value otherwise.
 
-### GetTypeIDOk
+### GetTypeIdOk
 
-`func (o *ConditionInfo) GetTypeIDOk() (*string, bool)`
+`func (o *ConditionInfo) GetTypeIdOk() (*string, bool)`
 
-GetTypeIDOk returns a tuple with the TypeID field if it's non-nil, zero value otherwise
+GetTypeIdOk returns a tuple with the TypeId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTypeID
+### SetTypeId
 
-`func (o *ConditionInfo) SetTypeID(v string)`
+`func (o *ConditionInfo) SetTypeId(v string)`
 
-SetTypeID sets TypeID field to given value.
+SetTypeId sets TypeId field to given value.
 
-### HasTypeID
+### HasTypeId
 
-`func (o *ConditionInfo) HasTypeID() bool`
+`func (o *ConditionInfo) HasTypeId() bool`
 
-HasTypeID returns a boolean if a field has been set.
+HasTypeId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

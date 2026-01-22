@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **node_id** | **str** |  | [optional] 
 **node_slug** | **str** |  | [optional] 
+**progress_timestamps** | [**PipelineNodeStatusProgressTimestamps**](PipelineNodeStatusProgressTimestamps.md) |  | [optional] 
 **status** | **str** |  | [optional] 
 
 ## Example

@@ -21,11 +21,15 @@ import (
 type SecretProcessesorOutputConfigSettings struct {
 	AbsSettingsConfig *AbsSettingsConfig
 	AwssqsoutputSettingsConfig *AwssqsoutputSettingsConfig
+	AxiomSettingsConfig *AxiomSettingsConfig
+	BackblazeSettingsConfig *BackblazeSettingsConfig
 	BigquerySettingsConfig *BigquerySettingsConfig
 	CriblHttpSettingsConfig *CriblHttpSettingsConfig
+	DatadogSettingsConfig *DatadogSettingsConfig
 	ElasticsearchSettingsConfig *ElasticsearchSettingsConfig
 	GoogleCloudStorageOutputSettingsConfig *GoogleCloudStorageOutputSettingsConfig
 	HttpSettingsConfig *HttpSettingsConfig
+	KvLookupOutputSettingsConfig *KvLookupOutputSettingsConfig
 	NextGenSiemSettingsConfig *NextGenSiemSettingsConfig
 	ObjectStorageSettingsConfig *ObjectStorageSettingsConfig
 	OpensearchSettingsConfig *OpensearchSettingsConfig
@@ -55,6 +59,20 @@ func AwssqsoutputSettingsConfigAsSecretProcessesorOutputConfigSettings(v *Awssqs
 	}
 }
 
+// AxiomSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns AxiomSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func AxiomSettingsConfigAsSecretProcessesorOutputConfigSettings(v *AxiomSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		AxiomSettingsConfig: v,
+	}
+}
+
+// BackblazeSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns BackblazeSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func BackblazeSettingsConfigAsSecretProcessesorOutputConfigSettings(v *BackblazeSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		BackblazeSettingsConfig: v,
+	}
+}
+
 // BigquerySettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns BigquerySettingsConfig wrapped in SecretProcessesorOutputConfigSettings
 func BigquerySettingsConfigAsSecretProcessesorOutputConfigSettings(v *BigquerySettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
@@ -66,6 +84,13 @@ func BigquerySettingsConfigAsSecretProcessesorOutputConfigSettings(v *BigquerySe
 func CriblHttpSettingsConfigAsSecretProcessesorOutputConfigSettings(v *CriblHttpSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		CriblHttpSettingsConfig: v,
+	}
+}
+
+// DatadogSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns DatadogSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func DatadogSettingsConfigAsSecretProcessesorOutputConfigSettings(v *DatadogSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		DatadogSettingsConfig: v,
 	}
 }
 
@@ -87,6 +112,13 @@ func GoogleCloudStorageOutputSettingsConfigAsSecretProcessesorOutputConfigSettin
 func HttpSettingsConfigAsSecretProcessesorOutputConfigSettings(v *HttpSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		HttpSettingsConfig: v,
+	}
+}
+
+// KvLookupOutputSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns KvLookupOutputSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func KvLookupOutputSettingsConfigAsSecretProcessesorOutputConfigSettings(v *KvLookupOutputSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		KvLookupOutputSettingsConfig: v,
 	}
 }
 
@@ -220,6 +252,40 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.AwssqsoutputSettingsConfig = nil
 	}
 
+	// try to unmarshal data into AxiomSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AxiomSettingsConfig)
+	if err == nil {
+		jsonAxiomSettingsConfig, _ := json.Marshal(dst.AxiomSettingsConfig)
+		if string(jsonAxiomSettingsConfig) == "{}" { // empty struct
+			dst.AxiomSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AxiomSettingsConfig); err != nil {
+				dst.AxiomSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AxiomSettingsConfig = nil
+	}
+
+	// try to unmarshal data into BackblazeSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.BackblazeSettingsConfig)
+	if err == nil {
+		jsonBackblazeSettingsConfig, _ := json.Marshal(dst.BackblazeSettingsConfig)
+		if string(jsonBackblazeSettingsConfig) == "{}" { // empty struct
+			dst.BackblazeSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BackblazeSettingsConfig); err != nil {
+				dst.BackblazeSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BackblazeSettingsConfig = nil
+	}
+
 	// try to unmarshal data into BigquerySettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.BigquerySettingsConfig)
 	if err == nil {
@@ -252,6 +318,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		}
 	} else {
 		dst.CriblHttpSettingsConfig = nil
+	}
+
+	// try to unmarshal data into DatadogSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.DatadogSettingsConfig)
+	if err == nil {
+		jsonDatadogSettingsConfig, _ := json.Marshal(dst.DatadogSettingsConfig)
+		if string(jsonDatadogSettingsConfig) == "{}" { // empty struct
+			dst.DatadogSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.DatadogSettingsConfig); err != nil {
+				dst.DatadogSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.DatadogSettingsConfig = nil
 	}
 
 	// try to unmarshal data into ElasticsearchSettingsConfig
@@ -303,6 +386,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		}
 	} else {
 		dst.HttpSettingsConfig = nil
+	}
+
+	// try to unmarshal data into KvLookupOutputSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.KvLookupOutputSettingsConfig)
+	if err == nil {
+		jsonKvLookupOutputSettingsConfig, _ := json.Marshal(dst.KvLookupOutputSettingsConfig)
+		if string(jsonKvLookupOutputSettingsConfig) == "{}" { // empty struct
+			dst.KvLookupOutputSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.KvLookupOutputSettingsConfig); err != nil {
+				dst.KvLookupOutputSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.KvLookupOutputSettingsConfig = nil
 	}
 
 	// try to unmarshal data into NextGenSiemSettingsConfig
@@ -530,11 +630,15 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		// reset to nil
 		dst.AbsSettingsConfig = nil
 		dst.AwssqsoutputSettingsConfig = nil
+		dst.AxiomSettingsConfig = nil
+		dst.BackblazeSettingsConfig = nil
 		dst.BigquerySettingsConfig = nil
 		dst.CriblHttpSettingsConfig = nil
+		dst.DatadogSettingsConfig = nil
 		dst.ElasticsearchSettingsConfig = nil
 		dst.GoogleCloudStorageOutputSettingsConfig = nil
 		dst.HttpSettingsConfig = nil
+		dst.KvLookupOutputSettingsConfig = nil
 		dst.NextGenSiemSettingsConfig = nil
 		dst.ObjectStorageSettingsConfig = nil
 		dst.OpensearchSettingsConfig = nil
@@ -567,12 +671,24 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AwssqsoutputSettingsConfig)
 	}
 
+	if src.AxiomSettingsConfig != nil {
+		return json.Marshal(&src.AxiomSettingsConfig)
+	}
+
+	if src.BackblazeSettingsConfig != nil {
+		return json.Marshal(&src.BackblazeSettingsConfig)
+	}
+
 	if src.BigquerySettingsConfig != nil {
 		return json.Marshal(&src.BigquerySettingsConfig)
 	}
 
 	if src.CriblHttpSettingsConfig != nil {
 		return json.Marshal(&src.CriblHttpSettingsConfig)
+	}
+
+	if src.DatadogSettingsConfig != nil {
+		return json.Marshal(&src.DatadogSettingsConfig)
 	}
 
 	if src.ElasticsearchSettingsConfig != nil {
@@ -585,6 +701,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.HttpSettingsConfig != nil {
 		return json.Marshal(&src.HttpSettingsConfig)
+	}
+
+	if src.KvLookupOutputSettingsConfig != nil {
+		return json.Marshal(&src.KvLookupOutputSettingsConfig)
 	}
 
 	if src.NextGenSiemSettingsConfig != nil {
@@ -655,12 +775,24 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.AwssqsoutputSettingsConfig
 	}
 
+	if obj.AxiomSettingsConfig != nil {
+		return obj.AxiomSettingsConfig
+	}
+
+	if obj.BackblazeSettingsConfig != nil {
+		return obj.BackblazeSettingsConfig
+	}
+
 	if obj.BigquerySettingsConfig != nil {
 		return obj.BigquerySettingsConfig
 	}
 
 	if obj.CriblHttpSettingsConfig != nil {
 		return obj.CriblHttpSettingsConfig
+	}
+
+	if obj.DatadogSettingsConfig != nil {
+		return obj.DatadogSettingsConfig
 	}
 
 	if obj.ElasticsearchSettingsConfig != nil {
@@ -673,6 +805,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 
 	if obj.HttpSettingsConfig != nil {
 		return obj.HttpSettingsConfig
+	}
+
+	if obj.KvLookupOutputSettingsConfig != nil {
+		return obj.KvLookupOutputSettingsConfig
 	}
 
 	if obj.NextGenSiemSettingsConfig != nil {
@@ -741,12 +877,24 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 		return *obj.AwssqsoutputSettingsConfig
 	}
 
+	if obj.AxiomSettingsConfig != nil {
+		return *obj.AxiomSettingsConfig
+	}
+
+	if obj.BackblazeSettingsConfig != nil {
+		return *obj.BackblazeSettingsConfig
+	}
+
 	if obj.BigquerySettingsConfig != nil {
 		return *obj.BigquerySettingsConfig
 	}
 
 	if obj.CriblHttpSettingsConfig != nil {
 		return *obj.CriblHttpSettingsConfig
+	}
+
+	if obj.DatadogSettingsConfig != nil {
+		return *obj.DatadogSettingsConfig
 	}
 
 	if obj.ElasticsearchSettingsConfig != nil {
@@ -759,6 +907,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.HttpSettingsConfig != nil {
 		return *obj.HttpSettingsConfig
+	}
+
+	if obj.KvLookupOutputSettingsConfig != nil {
+		return *obj.KvLookupOutputSettingsConfig
 	}
 
 	if obj.NextGenSiemSettingsConfig != nil {

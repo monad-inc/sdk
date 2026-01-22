@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * RoutesUpdateUserInOrganizationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesUpdateUserInOrganizationRequest {
   public static final String SERIALIZED_NAME_ROLE_ID = "role_id";
   @SerializedName(SERIALIZED_NAME_ROLE_ID)
   @javax.annotation.Nullable
   private String roleId;
+
+  public static final String SERIALIZED_NAME_USER_AUTH_PROVIDER_ID = "user_auth_provider_id";
+  @SerializedName(SERIALIZED_NAME_USER_AUTH_PROVIDER_ID)
+  @javax.annotation.Nullable
+  private String userAuthProviderId;
 
   public RoutesUpdateUserInOrganizationRequest() {
   }
@@ -77,6 +82,25 @@ public class RoutesUpdateUserInOrganizationRequest {
   }
 
 
+  public RoutesUpdateUserInOrganizationRequest userAuthProviderId(@javax.annotation.Nullable String userAuthProviderId) {
+    this.userAuthProviderId = userAuthProviderId;
+    return this;
+  }
+
+  /**
+   * Get userAuthProviderId
+   * @return userAuthProviderId
+   */
+  @javax.annotation.Nullable
+  public String getUserAuthProviderId() {
+    return userAuthProviderId;
+  }
+
+  public void setUserAuthProviderId(@javax.annotation.Nullable String userAuthProviderId) {
+    this.userAuthProviderId = userAuthProviderId;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -87,12 +111,13 @@ public class RoutesUpdateUserInOrganizationRequest {
       return false;
     }
     RoutesUpdateUserInOrganizationRequest routesUpdateUserInOrganizationRequest = (RoutesUpdateUserInOrganizationRequest) o;
-    return Objects.equals(this.roleId, routesUpdateUserInOrganizationRequest.roleId);
+    return Objects.equals(this.roleId, routesUpdateUserInOrganizationRequest.roleId) &&
+        Objects.equals(this.userAuthProviderId, routesUpdateUserInOrganizationRequest.userAuthProviderId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(roleId);
+    return Objects.hash(roleId, userAuthProviderId);
   }
 
   @Override
@@ -100,6 +125,7 @@ public class RoutesUpdateUserInOrganizationRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesUpdateUserInOrganizationRequest {\n");
     sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
+    sb.append("    userAuthProviderId: ").append(toIndentedString(userAuthProviderId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -121,7 +147,7 @@ public class RoutesUpdateUserInOrganizationRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("role_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("role_id", "user_auth_provider_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -136,7 +162,7 @@ public class RoutesUpdateUserInOrganizationRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RoutesUpdateUserInOrganizationRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RoutesUpdateUserInOrganizationRequest is not found in the empty JSON string", RoutesUpdateUserInOrganizationRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesUpdateUserInOrganizationRequest is not found in the empty JSON string", RoutesUpdateUserInOrganizationRequest.openapiRequiredFields.toString()));
         }
       }
 
@@ -144,12 +170,15 @@ public class RoutesUpdateUserInOrganizationRequest {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!RoutesUpdateUserInOrganizationRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RoutesUpdateUserInOrganizationRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesUpdateUserInOrganizationRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("role_id") != null && !jsonObj.get("role_id").isJsonNull()) && !jsonObj.get("role_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `role_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `role_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_id").toString()));
+      }
+      if ((jsonObj.get("user_auth_provider_id") != null && !jsonObj.get("user_auth_provider_id").isJsonNull()) && !jsonObj.get("user_auth_provider_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `user_auth_provider_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_auth_provider_id").toString()));
       }
   }
 

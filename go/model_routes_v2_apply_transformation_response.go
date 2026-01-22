@@ -20,6 +20,9 @@ var _ MappedNullable = &RoutesV2ApplyTransformationResponse{}
 
 // RoutesV2ApplyTransformationResponse struct for RoutesV2ApplyTransformationResponse
 type RoutesV2ApplyTransformationResponse struct {
+	BytesAfter *int32 `json:"bytes_after,omitempty"`
+	BytesBefore *int32 `json:"bytes_before,omitempty"`
+	PercentageChange *float32 `json:"percentage_change,omitempty"`
 	Records [][]int32 `json:"records,omitempty"`
 }
 
@@ -38,6 +41,102 @@ func NewRoutesV2ApplyTransformationResponse() *RoutesV2ApplyTransformationRespon
 func NewRoutesV2ApplyTransformationResponseWithDefaults() *RoutesV2ApplyTransformationResponse {
 	this := RoutesV2ApplyTransformationResponse{}
 	return &this
+}
+
+// GetBytesAfter returns the BytesAfter field value if set, zero value otherwise.
+func (o *RoutesV2ApplyTransformationResponse) GetBytesAfter() int32 {
+	if o == nil || IsNil(o.BytesAfter) {
+		var ret int32
+		return ret
+	}
+	return *o.BytesAfter
+}
+
+// GetBytesAfterOk returns a tuple with the BytesAfter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2ApplyTransformationResponse) GetBytesAfterOk() (*int32, bool) {
+	if o == nil || IsNil(o.BytesAfter) {
+		return nil, false
+	}
+	return o.BytesAfter, true
+}
+
+// HasBytesAfter returns a boolean if a field has been set.
+func (o *RoutesV2ApplyTransformationResponse) HasBytesAfter() bool {
+	if o != nil && !IsNil(o.BytesAfter) {
+		return true
+	}
+
+	return false
+}
+
+// SetBytesAfter gets a reference to the given int32 and assigns it to the BytesAfter field.
+func (o *RoutesV2ApplyTransformationResponse) SetBytesAfter(v int32) {
+	o.BytesAfter = &v
+}
+
+// GetBytesBefore returns the BytesBefore field value if set, zero value otherwise.
+func (o *RoutesV2ApplyTransformationResponse) GetBytesBefore() int32 {
+	if o == nil || IsNil(o.BytesBefore) {
+		var ret int32
+		return ret
+	}
+	return *o.BytesBefore
+}
+
+// GetBytesBeforeOk returns a tuple with the BytesBefore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2ApplyTransformationResponse) GetBytesBeforeOk() (*int32, bool) {
+	if o == nil || IsNil(o.BytesBefore) {
+		return nil, false
+	}
+	return o.BytesBefore, true
+}
+
+// HasBytesBefore returns a boolean if a field has been set.
+func (o *RoutesV2ApplyTransformationResponse) HasBytesBefore() bool {
+	if o != nil && !IsNil(o.BytesBefore) {
+		return true
+	}
+
+	return false
+}
+
+// SetBytesBefore gets a reference to the given int32 and assigns it to the BytesBefore field.
+func (o *RoutesV2ApplyTransformationResponse) SetBytesBefore(v int32) {
+	o.BytesBefore = &v
+}
+
+// GetPercentageChange returns the PercentageChange field value if set, zero value otherwise.
+func (o *RoutesV2ApplyTransformationResponse) GetPercentageChange() float32 {
+	if o == nil || IsNil(o.PercentageChange) {
+		var ret float32
+		return ret
+	}
+	return *o.PercentageChange
+}
+
+// GetPercentageChangeOk returns a tuple with the PercentageChange field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2ApplyTransformationResponse) GetPercentageChangeOk() (*float32, bool) {
+	if o == nil || IsNil(o.PercentageChange) {
+		return nil, false
+	}
+	return o.PercentageChange, true
+}
+
+// HasPercentageChange returns a boolean if a field has been set.
+func (o *RoutesV2ApplyTransformationResponse) HasPercentageChange() bool {
+	if o != nil && !IsNil(o.PercentageChange) {
+		return true
+	}
+
+	return false
+}
+
+// SetPercentageChange gets a reference to the given float32 and assigns it to the PercentageChange field.
+func (o *RoutesV2ApplyTransformationResponse) SetPercentageChange(v float32) {
+	o.PercentageChange = &v
 }
 
 // GetRecords returns the Records field value if set, zero value otherwise.
@@ -82,6 +181,15 @@ func (o RoutesV2ApplyTransformationResponse) MarshalJSON() ([]byte, error) {
 
 func (o RoutesV2ApplyTransformationResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BytesAfter) {
+		toSerialize["bytes_after"] = o.BytesAfter
+	}
+	if !IsNil(o.BytesBefore) {
+		toSerialize["bytes_before"] = o.BytesBefore
+	}
+	if !IsNil(o.PercentageChange) {
+		toSerialize["percentage_change"] = o.PercentageChange
+	}
 	if !IsNil(o.Records) {
 		toSerialize["records"] = o.Records
 	}

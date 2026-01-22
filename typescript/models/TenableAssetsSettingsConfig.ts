@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class TenableAssetsSettingsConfig {
     /**
+    * Date to start fetching assets from. If not specified, a full sync of assets is fetched on the first sync. All syncs thereafter will have incremental data.
+    */
+    'backfillStartTime'?: string;
+    /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
     'useSyntheticData'?: boolean;
@@ -26,6 +30,12 @@ export class TenableAssetsSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "useSyntheticData",
             "baseName": "use_synthetic_data",

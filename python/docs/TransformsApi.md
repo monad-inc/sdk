@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **v1_transforms_get**
-> OperationInformation v1_transforms_get(body=body)
+> List[OperationInformation] v1_transforms_get(body=body)
 
 List transforms
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationInformation**](OperationInformation.md)
+[**List[OperationInformation]**](OperationInformation.md)
 
 ### Authorization
 

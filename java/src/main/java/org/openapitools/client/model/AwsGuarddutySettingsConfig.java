@@ -48,8 +48,13 @@ import org.openapitools.client.JSON;
 /**
  * AWS Guardduty settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class AwsGuarddutySettingsConfig {
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
+
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
   @javax.annotation.Nullable
@@ -72,6 +77,25 @@ public class AwsGuarddutySettingsConfig {
 
   public AwsGuarddutySettingsConfig() {
   }
+
+  public AwsGuarddutySettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+  }
+
 
   public AwsGuarddutySettingsConfig region(@javax.annotation.Nullable String region) {
     this.region = region;
@@ -159,7 +183,8 @@ public class AwsGuarddutySettingsConfig {
       return false;
     }
     AwsGuarddutySettingsConfig awsGuarddutySettingsConfig = (AwsGuarddutySettingsConfig) o;
-    return Objects.equals(this.region, awsGuarddutySettingsConfig.region) &&
+    return Objects.equals(this.backfillStartTime, awsGuarddutySettingsConfig.backfillStartTime) &&
+        Objects.equals(this.region, awsGuarddutySettingsConfig.region) &&
         Objects.equals(this.roleArn, awsGuarddutySettingsConfig.roleArn) &&
         Objects.equals(this.severity, awsGuarddutySettingsConfig.severity) &&
         Objects.equals(this.useSyntheticData, awsGuarddutySettingsConfig.useSyntheticData);
@@ -167,13 +192,14 @@ public class AwsGuarddutySettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(region, roleArn, severity, useSyntheticData);
+    return Objects.hash(backfillStartTime, region, roleArn, severity, useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AwsGuarddutySettingsConfig {\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
     sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
@@ -199,7 +225,7 @@ public class AwsGuarddutySettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("region", "role_arn", "severity", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "region", "role_arn", "severity", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -214,7 +240,7 @@ public class AwsGuarddutySettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AwsGuarddutySettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AwsGuarddutySettingsConfig is not found in the empty JSON string", AwsGuarddutySettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in AwsGuarddutySettingsConfig is not found in the empty JSON string", AwsGuarddutySettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -222,18 +248,21 @@ public class AwsGuarddutySettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!AwsGuarddutySettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AwsGuarddutySettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AwsGuarddutySettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
       if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }
       if ((jsonObj.get("role_arn") != null && !jsonObj.get("role_arn").isJsonNull()) && !jsonObj.get("role_arn").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `role_arn` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_arn").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `role_arn` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_arn").toString()));
       }
       if ((jsonObj.get("severity") != null && !jsonObj.get("severity").isJsonNull()) && !jsonObj.get("severity").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
       }
   }
 

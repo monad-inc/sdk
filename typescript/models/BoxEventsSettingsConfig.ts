@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class BoxEventsSettingsConfig {
     /**
+    * Date to start fetching data from. If not specified, data from 1 year ago upto now from box is fetched on the first sync. All syncs thereafter will be incremental.
+    */
+    'backfillStartTime'?: string;
+    /**
     * A list of event types to filter by.
     */
     'eventType'?: Array<string>;
@@ -30,6 +34,12 @@ export class BoxEventsSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "eventType",
             "baseName": "event_type",

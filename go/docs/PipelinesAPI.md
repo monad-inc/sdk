@@ -22,6 +22,8 @@ Method | HTTP request | Description
 [**V2OrganizationIdPipelinesPipelineIdTriggerPost**](PipelinesAPI.md#V2OrganizationIdPipelinesPipelineIdTriggerPost) | **Post** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 [**V2OrganizationIdPipelinesPost**](PipelinesAPI.md#V2OrganizationIdPipelinesPost) | **Post** /v2/{organization_id}/pipelines | Create pipeline
 [**V2OrganizationIdPipelinesStatusesGet**](PipelinesAPI.md#V2OrganizationIdPipelinesStatusesGet) | **Get** /v2/{organization_id}/pipelines/statuses | Get pipeline status
+[**V3PipelineEdgesEdgeConditionOperatorTypesGet**](PipelinesAPI.md#V3PipelineEdgesEdgeConditionOperatorTypesGet) | **Get** /v3/pipeline_edges/edge_condition_operator_types | Conditional types for edge conditions
+[**V3PipelineEdgesEdgeConditionRulesGet**](PipelinesAPI.md#V3PipelineEdgesEdgeConditionRulesGet) | **Get** /v3/pipeline_edges/edge_condition_rules | Rules for edge conditions
 
 
 
@@ -1381,6 +1383,128 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]RoutesV2PipelineWithStatus**](RoutesV2PipelineWithStatus.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V3PipelineEdgesEdgeConditionOperatorTypesGet
+
+> string V3PipelineEdgesEdgeConditionOperatorTypesGet(ctx).Execute()
+
+Conditional types for edge conditions
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PipelinesAPI.V3PipelineEdgesEdgeConditionOperatorTypesGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.V3PipelineEdgesEdgeConditionOperatorTypesGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V3PipelineEdgesEdgeConditionOperatorTypesGet`: string
+	fmt.Fprintf(os.Stdout, "Response from `PipelinesAPI.V3PipelineEdgesEdgeConditionOperatorTypesGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV3PipelineEdgesEdgeConditionOperatorTypesGetRequest struct via the builder pattern
+
+
+### Return type
+
+**string**
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V3PipelineEdgesEdgeConditionRulesGet
+
+> string V3PipelineEdgesEdgeConditionRulesGet(ctx).Execute()
+
+Rules for edge conditions
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PipelinesAPI.V3PipelineEdgesEdgeConditionRulesGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.V3PipelineEdgesEdgeConditionRulesGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V3PipelineEdgesEdgeConditionRulesGet`: string
+	fmt.Fprintf(os.Stdout, "Response from `PipelinesAPI.V3PipelineEdgesEdgeConditionRulesGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV3PipelineEdgesEdgeConditionRulesGetRequest struct via the builder pattern
+
+
+### Return type
+
+**string**
 
 ### Authorization
 

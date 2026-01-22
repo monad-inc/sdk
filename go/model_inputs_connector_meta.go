@@ -26,9 +26,10 @@ type InputsConnectorMeta struct {
 	Config interface{} `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	House *string `json:"house,omitempty"`
+	InBeta *bool `json:"in_beta,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
 	IsCron *bool `json:"is_cron,omitempty"`
-	LogoKey *string `json:"logo_key,omitempty"`
+	IsDefault *bool `json:"is_default,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Tier *int32 `json:"tier,omitempty"`
 	TypeId *string `json:"type_id,omitempty"`
@@ -244,6 +245,38 @@ func (o *InputsConnectorMeta) SetHouse(v string) {
 	o.House = &v
 }
 
+// GetInBeta returns the InBeta field value if set, zero value otherwise.
+func (o *InputsConnectorMeta) GetInBeta() bool {
+	if o == nil || IsNil(o.InBeta) {
+		var ret bool
+		return ret
+	}
+	return *o.InBeta
+}
+
+// GetInBetaOk returns a tuple with the InBeta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InputsConnectorMeta) GetInBetaOk() (*bool, bool) {
+	if o == nil || IsNil(o.InBeta) {
+		return nil, false
+	}
+	return o.InBeta, true
+}
+
+// HasInBeta returns a boolean if a field has been set.
+func (o *InputsConnectorMeta) HasInBeta() bool {
+	if o != nil && !IsNil(o.InBeta) {
+		return true
+	}
+
+	return false
+}
+
+// SetInBeta gets a reference to the given bool and assigns it to the InBeta field.
+func (o *InputsConnectorMeta) SetInBeta(v bool) {
+	o.InBeta = &v
+}
+
 // GetInternal returns the Internal field value if set, zero value otherwise.
 func (o *InputsConnectorMeta) GetInternal() bool {
 	if o == nil || IsNil(o.Internal) {
@@ -308,36 +341,36 @@ func (o *InputsConnectorMeta) SetIsCron(v bool) {
 	o.IsCron = &v
 }
 
-// GetLogoKey returns the LogoKey field value if set, zero value otherwise.
-func (o *InputsConnectorMeta) GetLogoKey() string {
-	if o == nil || IsNil(o.LogoKey) {
-		var ret string
+// GetIsDefault returns the IsDefault field value if set, zero value otherwise.
+func (o *InputsConnectorMeta) GetIsDefault() bool {
+	if o == nil || IsNil(o.IsDefault) {
+		var ret bool
 		return ret
 	}
-	return *o.LogoKey
+	return *o.IsDefault
 }
 
-// GetLogoKeyOk returns a tuple with the LogoKey field value if set, nil otherwise
+// GetIsDefaultOk returns a tuple with the IsDefault field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InputsConnectorMeta) GetLogoKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.LogoKey) {
+func (o *InputsConnectorMeta) GetIsDefaultOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsDefault) {
 		return nil, false
 	}
-	return o.LogoKey, true
+	return o.IsDefault, true
 }
 
-// HasLogoKey returns a boolean if a field has been set.
-func (o *InputsConnectorMeta) HasLogoKey() bool {
-	if o != nil && !IsNil(o.LogoKey) {
+// HasIsDefault returns a boolean if a field has been set.
+func (o *InputsConnectorMeta) HasIsDefault() bool {
+	if o != nil && !IsNil(o.IsDefault) {
 		return true
 	}
 
 	return false
 }
 
-// SetLogoKey gets a reference to the given string and assigns it to the LogoKey field.
-func (o *InputsConnectorMeta) SetLogoKey(v string) {
-	o.LogoKey = &v
+// SetIsDefault gets a reference to the given bool and assigns it to the IsDefault field.
+func (o *InputsConnectorMeta) SetIsDefault(v bool) {
+	o.IsDefault = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -464,14 +497,17 @@ func (o InputsConnectorMeta) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.House) {
 		toSerialize["house"] = o.House
 	}
+	if !IsNil(o.InBeta) {
+		toSerialize["in_beta"] = o.InBeta
+	}
 	if !IsNil(o.Internal) {
 		toSerialize["internal"] = o.Internal
 	}
 	if !IsNil(o.IsCron) {
 		toSerialize["is_cron"] = o.IsCron
 	}
-	if !IsNil(o.LogoKey) {
-		toSerialize["logo_key"] = o.LogoKey
+	if !IsNil(o.IsDefault) {
+		toSerialize["is_default"] = o.IsDefault
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

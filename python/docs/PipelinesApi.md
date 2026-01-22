@@ -22,6 +22,8 @@ Method | HTTP request | Description
 [**v2_organization_id_pipelines_pipeline_id_trigger_post**](PipelinesApi.md#v2_organization_id_pipelines_pipeline_id_trigger_post) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/trigger | Trigger pipeline manually
 [**v2_organization_id_pipelines_post**](PipelinesApi.md#v2_organization_id_pipelines_post) | **POST** /v2/{organization_id}/pipelines | Create pipeline
 [**v2_organization_id_pipelines_statuses_get**](PipelinesApi.md#v2_organization_id_pipelines_statuses_get) | **GET** /v2/{organization_id}/pipelines/statuses | Get pipeline status
+[**v3_pipeline_edges_edge_condition_operator_types_get**](PipelinesApi.md#v3_pipeline_edges_edge_condition_operator_types_get) | **GET** /v3/pipeline_edges/edge_condition_operator_types | Conditional types for edge conditions
+[**v3_pipeline_edges_edge_condition_rules_get**](PipelinesApi.md#v3_pipeline_edges_edge_condition_rules_get) | **GET** /v3/pipeline_edges/edge_condition_rules | Rules for edge conditions
 
 
 # **v1_organization_id_pipelines_get**
@@ -1699,6 +1701,168 @@ Name | Type | Description  | Notes
 **200** | List of pipelines with status |  -  |
 **400** | Invalid query parameters or time range |  -  |
 **500** | Failed to retrieve pipeline status |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v3_pipeline_edges_edge_condition_operator_types_get**
+> str v3_pipeline_edges_edge_condition_operator_types_get()
+
+Conditional types for edge conditions
+
+Returns the conditional types for edge conditions
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+
+    try:
+        # Conditional types for edge conditions
+        api_response = api_instance.v3_pipeline_edges_edge_condition_operator_types_get()
+        print("The response of PipelinesApi->v3_pipeline_edges_edge_condition_operator_types_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->v3_pipeline_edges_edge_condition_operator_types_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**str**
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Conditions returned succesfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v3_pipeline_edges_edge_condition_rules_get**
+> str v3_pipeline_edges_edge_condition_rules_get()
+
+Rules for edge conditions
+
+Returns the rules for edge conditions
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+
+    try:
+        # Rules for edge conditions
+        api_response = api_instance.v3_pipeline_edges_edge_condition_rules_get()
+        print("The response of PipelinesApi->v3_pipeline_edges_edge_condition_rules_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->v3_pipeline_edges_edge_condition_rules_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**str**
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Rules returned succesfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

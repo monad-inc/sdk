@@ -18,7 +18,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorEnrichmentConfigSecrets = CommunityEditionSecretsConfig | { [key: string]: any; };
+export type SecretProcessesorEnrichmentConfigSecrets = CommunityEditionSecretsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorEnrichmentConfigSecretsClass
@@ -29,4 +29,5 @@ export class SecretProcessesorEnrichmentConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 

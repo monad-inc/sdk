@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**organization_id** | **str** |  | [optional] 
 **saml_entity_id** | **str** |  | [optional] 
 **saml_metadata_url** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 

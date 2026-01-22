@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **StreamAgeLimit** | Pointer to **int32** |  | [optional] 
-**StreamReplicas** | Pointer to **int32** |  | [optional] 
 **StreamSizeLimit** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -51,31 +50,6 @@ SetStreamAgeLimit sets StreamAgeLimit field to given value.
 `func (o *ModelsPipelineRetentionPolicy) HasStreamAgeLimit() bool`
 
 HasStreamAgeLimit returns a boolean if a field has been set.
-
-### GetStreamReplicas
-
-`func (o *ModelsPipelineRetentionPolicy) GetStreamReplicas() int32`
-
-GetStreamReplicas returns the StreamReplicas field if non-nil, zero value otherwise.
-
-### GetStreamReplicasOk
-
-`func (o *ModelsPipelineRetentionPolicy) GetStreamReplicasOk() (*int32, bool)`
-
-GetStreamReplicasOk returns a tuple with the StreamReplicas field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStreamReplicas
-
-`func (o *ModelsPipelineRetentionPolicy) SetStreamReplicas(v int32)`
-
-SetStreamReplicas sets StreamReplicas field to given value.
-
-### HasStreamReplicas
-
-`func (o *ModelsPipelineRetentionPolicy) HasStreamReplicas() bool`
-
-HasStreamReplicas returns a boolean if a field has been set.
 
 ### GetStreamSizeLimit
 

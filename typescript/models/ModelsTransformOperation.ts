@@ -14,6 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class ModelsTransformOperation {
     'arguments'?: { [key: string]: any; };
+    'description'?: string;
     'operation'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -25,6 +26,12 @@ export class ModelsTransformOperation {
             "name": "arguments",
             "baseName": "arguments",
             "type": "{ [key: string]: any; }",
+            "format": ""
+        },
+        {
+            "name": "description",
+            "baseName": "description",
+            "type": "string",
             "format": ""
         },
         {

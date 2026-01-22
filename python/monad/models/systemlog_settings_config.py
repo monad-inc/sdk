@@ -27,9 +27,10 @@ class SystemlogSettingsConfig(BaseModel):
     """
     Okta system log settings
     """ # noqa: E501
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync (90 days) of data is fetched on the first sync. All syncs thereafter will be incremental.")
     org_url: Optional[StrictStr] = Field(default=None, description="The URL of the Okta organization")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["org_url", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "org_url", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +83,7 @@ class SystemlogSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "org_url": obj.get("org_url"),
             "use_synthetic_data": obj.get("use_synthetic_data")
         })

@@ -20,6 +20,8 @@ var _ MappedNullable = &ClumioConsolidatedAlertsSettingsConfig{}
 
 // ClumioConsolidatedAlertsSettingsConfig Clumio Alerts settings
 type ClumioConsolidatedAlertsSettingsConfig struct {
+	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// The system-generated ID of the parent entity that is associated with the primary entity affected by the alert.
 	ParentEntityId *string `json:"parent_entity_id,omitempty"`
 	// The system-generated name of the parent entity that is associated with the primary entity affected by the alert.
@@ -45,6 +47,38 @@ func NewClumioConsolidatedAlertsSettingsConfig() *ClumioConsolidatedAlertsSettin
 func NewClumioConsolidatedAlertsSettingsConfigWithDefaults() *ClumioConsolidatedAlertsSettingsConfig {
 	this := ClumioConsolidatedAlertsSettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *ClumioConsolidatedAlertsSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClumioConsolidatedAlertsSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *ClumioConsolidatedAlertsSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *ClumioConsolidatedAlertsSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetParentEntityId returns the ParentEntityId field value if set, zero value otherwise.
@@ -185,6 +219,9 @@ func (o ClumioConsolidatedAlertsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o ClumioConsolidatedAlertsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.ParentEntityId) {
 		toSerialize["parent_entity_id"] = o.ParentEntityId
 	}

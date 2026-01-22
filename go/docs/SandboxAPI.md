@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**V2SandboxTemplateGet**](SandboxAPI.md#V2SandboxTemplateGet) | **Get** /v2/sandbox/template | List available templates
 [**V2SandboxTemplatePost**](SandboxAPI.md#V2SandboxTemplatePost) | **Post** /v2/sandbox/template | Generate sample record
 [**V2SandboxTransformPost**](SandboxAPI.md#V2SandboxTransformPost) | **Post** /v2/sandbox/transform | Apply transformation to record
+[**V3OrganizationIdEnrichmentsSandboxPost**](SandboxAPI.md#V3OrganizationIdEnrichmentsSandboxPost) | **Post** /v3/{organization_id}/enrichments/sandbox | Apply enrichment to record
 
 
 
@@ -193,6 +194,78 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RoutesV2ApplyTransformationResponse**](RoutesV2ApplyTransformationResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V3OrganizationIdEnrichmentsSandboxPost
+
+> RoutesV3EnrichmentSandboxResponse V3OrganizationIdEnrichmentsSandboxPost(ctx, organizationId).RoutesV3EnrichmentSandboxRequest(routesV3EnrichmentSandboxRequest).Execute()
+
+Apply enrichment to record
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	routesV3EnrichmentSandboxRequest := *openapiclient.NewRoutesV3EnrichmentSandboxRequest() // RoutesV3EnrichmentSandboxRequest | Enrichment configuration and record
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SandboxAPI.V3OrganizationIdEnrichmentsSandboxPost(context.Background(), organizationId).RoutesV3EnrichmentSandboxRequest(routesV3EnrichmentSandboxRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SandboxAPI.V3OrganizationIdEnrichmentsSandboxPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V3OrganizationIdEnrichmentsSandboxPost`: RoutesV3EnrichmentSandboxResponse
+	fmt.Fprintf(os.Stdout, "Response from `SandboxAPI.V3OrganizationIdEnrichmentsSandboxPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV3OrganizationIdEnrichmentsSandboxPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **routesV3EnrichmentSandboxRequest** | [**RoutesV3EnrichmentSandboxRequest**](RoutesV3EnrichmentSandboxRequest.md) | Enrichment configuration and record | 
+
+### Return type
+
+[**RoutesV3EnrichmentSandboxResponse**](RoutesV3EnrichmentSandboxResponse.md)
 
 ### Authorization
 

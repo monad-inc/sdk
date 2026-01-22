@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_token** | **str** |  | [optional] 
+**email** | **str** |  | [optional] 
 **expires_in** | **int** |  | [optional] 
 **id_token** | **str** |  | [optional] 
 **refresh_token** | **str** |  | [optional] 

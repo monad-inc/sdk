@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * KVLookup enrichment settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-20T16:38:57.184638103Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class KvLookupSettingsConfig {
   public static final String SERIALIZED_NAME_DESTINATION_KEY = "destination_key";
   @SerializedName(SERIALIZED_NAME_DESTINATION_KEY)
@@ -60,15 +60,20 @@ public class KvLookupSettingsConfig {
   @javax.annotation.Nullable
   private Boolean errorOnMissingKey;
 
-  public static final String SERIALIZED_NAME_JOIN_KEY = "join_key";
-  @SerializedName(SERIALIZED_NAME_JOIN_KEY)
+  public static final String SERIALIZED_NAME_JOIN_PATH = "join_path";
+  @SerializedName(SERIALIZED_NAME_JOIN_PATH)
   @javax.annotation.Nullable
-  private String joinKey;
+  private String joinPath;
 
   public static final String SERIALIZED_NAME_KV_LOOKUP_OUTPUT_ID = "kv_lookup_output_id";
   @SerializedName(SERIALIZED_NAME_KV_LOOKUP_OUTPUT_ID)
   @javax.annotation.Nullable
   private String kvLookupOutputId;
+
+  public static final String SERIALIZED_NAME_NO_MATCH_RESPONSE = "no_match_response";
+  @SerializedName(SERIALIZED_NAME_NO_MATCH_RESPONSE)
+  @javax.annotation.Nullable
+  private String noMatchResponse;
 
   public KvLookupSettingsConfig() {
   }
@@ -79,7 +84,7 @@ public class KvLookupSettingsConfig {
   }
 
   /**
-   * DestinationKey the path where the result will be stored in the record. Use &#39;.&#39; for the root object, &#39;field.subfield&#39; for nested properties, &#39;array[0]&#39; for array elements, or combined paths like &#39;users[0].name&#39;.
+   * DestinationKey is the path where the result will be stored in the record
    * @return destinationKey
    */
   @javax.annotation.Nullable
@@ -98,7 +103,7 @@ public class KvLookupSettingsConfig {
   }
 
   /**
-   * ErrorOnMissingKey if true, will throw an error if the key is not found in the KV lookup output
+   * ErrorOnMissingKey If true, throw an error when key is not found in the KV store
    * @return errorOnMissingKey
    */
   @javax.annotation.Nullable
@@ -111,22 +116,22 @@ public class KvLookupSettingsConfig {
   }
 
 
-  public KvLookupSettingsConfig joinKey(@javax.annotation.Nullable String joinKey) {
-    this.joinKey = joinKey;
+  public KvLookupSettingsConfig joinPath(@javax.annotation.Nullable String joinPath) {
+    this.joinPath = joinPath;
     return this;
   }
 
   /**
-   * JoinKey is the key in the record whose value will be used to join with the KV lookup output
-   * @return joinKey
+   * JoinPath is the path to a field whose values will be used as the lookup keys
+   * @return joinPath
    */
   @javax.annotation.Nullable
-  public String getJoinKey() {
-    return joinKey;
+  public String getJoinPath() {
+    return joinPath;
   }
 
-  public void setJoinKey(@javax.annotation.Nullable String joinKey) {
-    this.joinKey = joinKey;
+  public void setJoinPath(@javax.annotation.Nullable String joinPath) {
+    this.joinPath = joinPath;
   }
 
 
@@ -136,7 +141,7 @@ public class KvLookupSettingsConfig {
   }
 
   /**
-   * KVLookupOutputID is the ID of the KV lookup output to join with
+   * KVLookupOutputID is the id of the KV lookup output to join with
    * @return kvLookupOutputId
    */
   @javax.annotation.Nullable
@@ -146,6 +151,25 @@ public class KvLookupSettingsConfig {
 
   public void setKvLookupOutputId(@javax.annotation.Nullable String kvLookupOutputId) {
     this.kvLookupOutputId = kvLookupOutputId;
+  }
+
+
+  public KvLookupSettingsConfig noMatchResponse(@javax.annotation.Nullable String noMatchResponse) {
+    this.noMatchResponse = noMatchResponse;
+    return this;
+  }
+
+  /**
+   * NoMatchResponse is the value to add to the record when no match is found
+   * @return noMatchResponse
+   */
+  @javax.annotation.Nullable
+  public String getNoMatchResponse() {
+    return noMatchResponse;
+  }
+
+  public void setNoMatchResponse(@javax.annotation.Nullable String noMatchResponse) {
+    this.noMatchResponse = noMatchResponse;
   }
 
 
@@ -161,13 +185,14 @@ public class KvLookupSettingsConfig {
     KvLookupSettingsConfig kvLookupSettingsConfig = (KvLookupSettingsConfig) o;
     return Objects.equals(this.destinationKey, kvLookupSettingsConfig.destinationKey) &&
         Objects.equals(this.errorOnMissingKey, kvLookupSettingsConfig.errorOnMissingKey) &&
-        Objects.equals(this.joinKey, kvLookupSettingsConfig.joinKey) &&
-        Objects.equals(this.kvLookupOutputId, kvLookupSettingsConfig.kvLookupOutputId);
+        Objects.equals(this.joinPath, kvLookupSettingsConfig.joinPath) &&
+        Objects.equals(this.kvLookupOutputId, kvLookupSettingsConfig.kvLookupOutputId) &&
+        Objects.equals(this.noMatchResponse, kvLookupSettingsConfig.noMatchResponse);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(destinationKey, errorOnMissingKey, joinKey, kvLookupOutputId);
+    return Objects.hash(destinationKey, errorOnMissingKey, joinPath, kvLookupOutputId, noMatchResponse);
   }
 
   @Override
@@ -176,8 +201,9 @@ public class KvLookupSettingsConfig {
     sb.append("class KvLookupSettingsConfig {\n");
     sb.append("    destinationKey: ").append(toIndentedString(destinationKey)).append("\n");
     sb.append("    errorOnMissingKey: ").append(toIndentedString(errorOnMissingKey)).append("\n");
-    sb.append("    joinKey: ").append(toIndentedString(joinKey)).append("\n");
+    sb.append("    joinPath: ").append(toIndentedString(joinPath)).append("\n");
     sb.append("    kvLookupOutputId: ").append(toIndentedString(kvLookupOutputId)).append("\n");
+    sb.append("    noMatchResponse: ").append(toIndentedString(noMatchResponse)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -199,14 +225,10 @@ public class KvLookupSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("destination_key");
-    openapiFields.add("error_on_missing_key");
-    openapiFields.add("join_key");
-    openapiFields.add("kv_lookup_output_id");
+    openapiFields = new HashSet<String>(Arrays.asList("destination_key", "error_on_missing_key", "join_path", "kv_lookup_output_id", "no_match_response"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -218,7 +240,7 @@ public class KvLookupSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!KvLookupSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in KvLookupSettingsConfig is not found in the empty JSON string", KvLookupSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in KvLookupSettingsConfig is not found in the empty JSON string", KvLookupSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -226,18 +248,21 @@ public class KvLookupSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!KvLookupSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `KvLookupSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `KvLookupSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("destination_key") != null && !jsonObj.get("destination_key").isJsonNull()) && !jsonObj.get("destination_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `destination_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("destination_key").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `destination_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("destination_key").toString()));
       }
-      if ((jsonObj.get("join_key") != null && !jsonObj.get("join_key").isJsonNull()) && !jsonObj.get("join_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `join_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("join_key").toString()));
+      if ((jsonObj.get("join_path") != null && !jsonObj.get("join_path").isJsonNull()) && !jsonObj.get("join_path").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `join_path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("join_path").toString()));
       }
       if ((jsonObj.get("kv_lookup_output_id") != null && !jsonObj.get("kv_lookup_output_id").isJsonNull()) && !jsonObj.get("kv_lookup_output_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kv_lookup_output_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kv_lookup_output_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `kv_lookup_output_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kv_lookup_output_id").toString()));
+      }
+      if ((jsonObj.get("no_match_response") != null && !jsonObj.get("no_match_response").isJsonNull()) && !jsonObj.get("no_match_response").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `no_match_response` to be a primitive type in the JSON string but got `%s`", jsonObj.get("no_match_response").toString()));
       }
   }
 

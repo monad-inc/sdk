@@ -20,6 +20,7 @@ var _ MappedNullable = &SumologicSettingsConfig{}
 
 // SumologicSettingsConfig Sumo Logic Output Settings
 type SumologicSettingsConfig struct {
+	SourceMetadata *SumologicSourceMetadata `json:"source_metadata,omitempty"`
 	// The URL of the Sumo Logic instance.
 	Url *string `json:"url,omitempty"`
 }
@@ -39,6 +40,38 @@ func NewSumologicSettingsConfig() *SumologicSettingsConfig {
 func NewSumologicSettingsConfigWithDefaults() *SumologicSettingsConfig {
 	this := SumologicSettingsConfig{}
 	return &this
+}
+
+// GetSourceMetadata returns the SourceMetadata field value if set, zero value otherwise.
+func (o *SumologicSettingsConfig) GetSourceMetadata() SumologicSourceMetadata {
+	if o == nil || IsNil(o.SourceMetadata) {
+		var ret SumologicSourceMetadata
+		return ret
+	}
+	return *o.SourceMetadata
+}
+
+// GetSourceMetadataOk returns a tuple with the SourceMetadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SumologicSettingsConfig) GetSourceMetadataOk() (*SumologicSourceMetadata, bool) {
+	if o == nil || IsNil(o.SourceMetadata) {
+		return nil, false
+	}
+	return o.SourceMetadata, true
+}
+
+// HasSourceMetadata returns a boolean if a field has been set.
+func (o *SumologicSettingsConfig) HasSourceMetadata() bool {
+	if o != nil && !IsNil(o.SourceMetadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceMetadata gets a reference to the given SumologicSourceMetadata and assigns it to the SourceMetadata field.
+func (o *SumologicSettingsConfig) SetSourceMetadata(v SumologicSourceMetadata) {
+	o.SourceMetadata = &v
 }
 
 // GetUrl returns the Url field value if set, zero value otherwise.
@@ -83,6 +116,9 @@ func (o SumologicSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o SumologicSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.SourceMetadata) {
+		toSerialize["source_metadata"] = o.SourceMetadata
+	}
 	if !IsNil(o.Url) {
 		toSerialize["url"] = o.Url
 	}

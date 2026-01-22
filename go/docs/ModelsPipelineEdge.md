@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Conditions** | Pointer to [**ModelsPipelineEdgeConditions**](ModelsPipelineEdgeConditions.md) |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Disabled** | Pointer to **bool** |  | [optional] 
 **FromNodeInstanceId** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -107,6 +108,31 @@ SetDescription sets Description field to given value.
 `func (o *ModelsPipelineEdge) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetDisabled
+
+`func (o *ModelsPipelineEdge) GetDisabled() bool`
+
+GetDisabled returns the Disabled field if non-nil, zero value otherwise.
+
+### GetDisabledOk
+
+`func (o *ModelsPipelineEdge) GetDisabledOk() (*bool, bool)`
+
+GetDisabledOk returns a tuple with the Disabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisabled
+
+`func (o *ModelsPipelineEdge) SetDisabled(v bool)`
+
+SetDisabled sets Disabled field to given value.
+
+### HasDisabled
+
+`func (o *ModelsPipelineEdge) HasDisabled() bool`
+
+HasDisabled returns a boolean if a field has been set.
 
 ### GetFromNodeInstanceId
 

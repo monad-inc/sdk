@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * OutputsConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class OutputsConnectorMeta {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
@@ -81,15 +81,15 @@ public class OutputsConnectorMeta {
   @javax.annotation.Nullable
   private String house;
 
+  public static final String SERIALIZED_NAME_IN_BETA = "in_beta";
+  @SerializedName(SERIALIZED_NAME_IN_BETA)
+  @javax.annotation.Nullable
+  private Boolean inBeta;
+
   public static final String SERIALIZED_NAME_INTERNAL = "internal";
   @SerializedName(SERIALIZED_NAME_INTERNAL)
   @javax.annotation.Nullable
   private Boolean internal;
-
-  public static final String SERIALIZED_NAME_LOGO_KEY = "logo_key";
-  @SerializedName(SERIALIZED_NAME_LOGO_KEY)
-  @javax.annotation.Nullable
-  private String logoKey;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -223,6 +223,25 @@ public class OutputsConnectorMeta {
   }
 
 
+  public OutputsConnectorMeta inBeta(@javax.annotation.Nullable Boolean inBeta) {
+    this.inBeta = inBeta;
+    return this;
+  }
+
+  /**
+   * Get inBeta
+   * @return inBeta
+   */
+  @javax.annotation.Nullable
+  public Boolean getInBeta() {
+    return inBeta;
+  }
+
+  public void setInBeta(@javax.annotation.Nullable Boolean inBeta) {
+    this.inBeta = inBeta;
+  }
+
+
   public OutputsConnectorMeta internal(@javax.annotation.Nullable Boolean internal) {
     this.internal = internal;
     return this;
@@ -239,25 +258,6 @@ public class OutputsConnectorMeta {
 
   public void setInternal(@javax.annotation.Nullable Boolean internal) {
     this.internal = internal;
-  }
-
-
-  public OutputsConnectorMeta logoKey(@javax.annotation.Nullable String logoKey) {
-    this.logoKey = logoKey;
-    return this;
-  }
-
-  /**
-   * Get logoKey
-   * @return logoKey
-   */
-  @javax.annotation.Nullable
-  public String getLogoKey() {
-    return logoKey;
-  }
-
-  public void setLogoKey(@javax.annotation.Nullable String logoKey) {
-    this.logoKey = logoKey;
   }
 
 
@@ -334,8 +334,8 @@ public class OutputsConnectorMeta {
         Objects.equals(this.config, outputsConnectorMeta.config) &&
         Objects.equals(this.description, outputsConnectorMeta.description) &&
         Objects.equals(this.house, outputsConnectorMeta.house) &&
+        Objects.equals(this.inBeta, outputsConnectorMeta.inBeta) &&
         Objects.equals(this.internal, outputsConnectorMeta.internal) &&
-        Objects.equals(this.logoKey, outputsConnectorMeta.logoKey) &&
         Objects.equals(this.name, outputsConnectorMeta.name) &&
         Objects.equals(this.tier, outputsConnectorMeta.tier) &&
         Objects.equals(this.typeId, outputsConnectorMeta.typeId);
@@ -347,7 +347,7 @@ public class OutputsConnectorMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, billingType, category, config, description, house, internal, logoKey, name, tier, typeId);
+    return Objects.hash(authType, billingType, category, config, description, house, inBeta, internal, name, tier, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -367,8 +367,8 @@ public class OutputsConnectorMeta {
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    house: ").append(toIndentedString(house)).append("\n");
+    sb.append("    inBeta: ").append(toIndentedString(inBeta)).append("\n");
     sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
-    sb.append("    logoKey: ").append(toIndentedString(logoKey)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
     sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
@@ -393,7 +393,7 @@ public class OutputsConnectorMeta {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "billing_type", "category", "config", "description", "house", "internal", "logo_key", "name", "tier", "type_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "name", "tier", "type_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -408,7 +408,7 @@ public class OutputsConnectorMeta {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!OutputsConnectorMeta.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in OutputsConnectorMeta is not found in the empty JSON string", OutputsConnectorMeta.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in OutputsConnectorMeta is not found in the empty JSON string", OutputsConnectorMeta.openapiRequiredFields.toString()));
         }
       }
 
@@ -416,30 +416,27 @@ public class OutputsConnectorMeta {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!OutputsConnectorMeta.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OutputsConnectorMeta` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `OutputsConnectorMeta` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("auth_type") != null && !jsonObj.get("auth_type").isJsonNull()) && !jsonObj.get("auth_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `auth_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auth_type").toString()));
       }
       if ((jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) && !jsonObj.get("category").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("house") != null && !jsonObj.get("house").isJsonNull()) && !jsonObj.get("house").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `house` to be a primitive type in the JSON string but got `%s`", jsonObj.get("house").toString()));
-      }
-      if ((jsonObj.get("logo_key") != null && !jsonObj.get("logo_key").isJsonNull()) && !jsonObj.get("logo_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `logo_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("logo_key").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `house` to be a primitive type in the JSON string but got `%s`", jsonObj.get("house").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("type_id") != null && !jsonObj.get("type_id").isJsonNull()) && !jsonObj.get("type_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type_id").toString()));
       }
   }
 

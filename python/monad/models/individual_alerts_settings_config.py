@@ -28,6 +28,7 @@ class IndividualAlertsSettingsConfig(BaseModel):
     Clumio Alerts settings
     """ # noqa: E501
     alert_type: Optional[StrictStr] = Field(default=None, description="Filter by alert type (e.g., policy_violated, tag_conflict)")
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     embed: Optional[StrictStr] = Field(default=None, description="Embed related resources in the data returned (e.g., read-consolidated-alert)")
     primary_entity_type: Optional[StrictStr] = Field(default=None, description="Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm)")
     primary_entity_value: Optional[StrictStr] = Field(default=None, description="Filter by primary entity value (contains search)")
@@ -35,7 +36,7 @@ class IndividualAlertsSettingsConfig(BaseModel):
     severity: Optional[StrictStr] = Field(default=None, description="Filter by alert severity (error, warning)")
     status: Optional[StrictStr] = Field(default=None, description="Filter by alert status (active, cleared)")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["alert_type", "embed", "primary_entity_type", "primary_entity_value", "region", "severity", "status", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["alert_type", "backfill_start_time", "embed", "primary_entity_type", "primary_entity_value", "region", "severity", "status", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +90,7 @@ class IndividualAlertsSettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "alert_type": obj.get("alert_type"),
+            "backfill_start_time": obj.get("backfill_start_time"),
             "embed": obj.get("embed"),
             "primary_entity_type": obj.get("primary_entity_type"),
             "primary_entity_value": obj.get("primary_entity_value"),

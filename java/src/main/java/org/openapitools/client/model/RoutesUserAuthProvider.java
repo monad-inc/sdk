@@ -48,8 +48,13 @@ import org.openapitools.client.JSON;
 /**
  * RoutesUserAuthProvider
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesUserAuthProvider {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
+  private String id;
+
   public static final String SERIALIZED_NAME_PROVIDER = "provider";
   @SerializedName(SERIALIZED_NAME_PROVIDER)
   @javax.annotation.Nullable
@@ -62,6 +67,25 @@ public class RoutesUserAuthProvider {
 
   public RoutesUserAuthProvider() {
   }
+
+  public RoutesUserAuthProvider id(@javax.annotation.Nullable String id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Get id
+   * @return id
+   */
+  @javax.annotation.Nullable
+  public String getId() {
+    return id;
+  }
+
+  public void setId(@javax.annotation.Nullable String id) {
+    this.id = id;
+  }
+
 
   public RoutesUserAuthProvider provider(@javax.annotation.Nullable String provider) {
     this.provider = provider;
@@ -111,19 +135,21 @@ public class RoutesUserAuthProvider {
       return false;
     }
     RoutesUserAuthProvider routesUserAuthProvider = (RoutesUserAuthProvider) o;
-    return Objects.equals(this.provider, routesUserAuthProvider.provider) &&
+    return Objects.equals(this.id, routesUserAuthProvider.id) &&
+        Objects.equals(this.provider, routesUserAuthProvider.provider) &&
         Objects.equals(this.providerId, routesUserAuthProvider.providerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(provider, providerId);
+    return Objects.hash(id, provider, providerId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesUserAuthProvider {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    providerId: ").append(toIndentedString(providerId)).append("\n");
     sb.append("}");
@@ -147,7 +173,7 @@ public class RoutesUserAuthProvider {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("provider", "provider_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "provider", "provider_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -162,7 +188,7 @@ public class RoutesUserAuthProvider {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RoutesUserAuthProvider.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RoutesUserAuthProvider is not found in the empty JSON string", RoutesUserAuthProvider.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesUserAuthProvider is not found in the empty JSON string", RoutesUserAuthProvider.openapiRequiredFields.toString()));
         }
       }
 
@@ -170,15 +196,18 @@ public class RoutesUserAuthProvider {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!RoutesUserAuthProvider.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RoutesUserAuthProvider` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesUserAuthProvider` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
       if ((jsonObj.get("provider") != null && !jsonObj.get("provider").isJsonNull()) && !jsonObj.get("provider").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `provider` to be a primitive type in the JSON string but got `%s`", jsonObj.get("provider").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `provider` to be a primitive type in the JSON string but got `%s`", jsonObj.get("provider").toString()));
       }
       if ((jsonObj.get("provider_id") != null && !jsonObj.get("provider_id").isJsonNull()) && !jsonObj.get("provider_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `provider_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("provider_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `provider_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("provider_id").toString()));
       }
   }
 

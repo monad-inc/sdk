@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class CloudConfigurationFindingsSettingsConfig {
     /**
+    * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+    */
+    'backfillStartTime'?: string;
+    /**
     * Endpoint URL for the Wiz API. Ex: \'https://api.wiz.io/v1/cloud-configuration-findings\'.
     */
     'endpointUrl'?: string;
@@ -42,6 +46,12 @@ export class CloudConfigurationFindingsSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "endpointUrl",
             "baseName": "endpoint_url",

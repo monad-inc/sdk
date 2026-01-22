@@ -20,10 +20,10 @@ var _ MappedNullable = &ConditionInfo{}
 
 // ConditionInfo struct for ConditionInfo
 type ConditionInfo struct {
-	ConfigMeta interface{} `json:"configMeta,omitempty"`
+	ConfigMeta interface{} `json:"config_meta,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Name *string `json:"name,omitempty"`
-	TypeID *string `json:"typeID,omitempty"`
+	TypeId *string `json:"type_id,omitempty"`
 }
 
 // NewConditionInfo instantiates a new ConditionInfo object
@@ -140,36 +140,36 @@ func (o *ConditionInfo) SetName(v string) {
 	o.Name = &v
 }
 
-// GetTypeID returns the TypeID field value if set, zero value otherwise.
-func (o *ConditionInfo) GetTypeID() string {
-	if o == nil || IsNil(o.TypeID) {
+// GetTypeId returns the TypeId field value if set, zero value otherwise.
+func (o *ConditionInfo) GetTypeId() string {
+	if o == nil || IsNil(o.TypeId) {
 		var ret string
 		return ret
 	}
-	return *o.TypeID
+	return *o.TypeId
 }
 
-// GetTypeIDOk returns a tuple with the TypeID field value if set, nil otherwise
+// GetTypeIdOk returns a tuple with the TypeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConditionInfo) GetTypeIDOk() (*string, bool) {
-	if o == nil || IsNil(o.TypeID) {
+func (o *ConditionInfo) GetTypeIdOk() (*string, bool) {
+	if o == nil || IsNil(o.TypeId) {
 		return nil, false
 	}
-	return o.TypeID, true
+	return o.TypeId, true
 }
 
-// HasTypeID returns a boolean if a field has been set.
-func (o *ConditionInfo) HasTypeID() bool {
-	if o != nil && !IsNil(o.TypeID) {
+// HasTypeId returns a boolean if a field has been set.
+func (o *ConditionInfo) HasTypeId() bool {
+	if o != nil && !IsNil(o.TypeId) {
 		return true
 	}
 
 	return false
 }
 
-// SetTypeID gets a reference to the given string and assigns it to the TypeID field.
-func (o *ConditionInfo) SetTypeID(v string) {
-	o.TypeID = &v
+// SetTypeId gets a reference to the given string and assigns it to the TypeId field.
+func (o *ConditionInfo) SetTypeId(v string) {
+	o.TypeId = &v
 }
 
 func (o ConditionInfo) MarshalJSON() ([]byte, error) {
@@ -183,7 +183,7 @@ func (o ConditionInfo) MarshalJSON() ([]byte, error) {
 func (o ConditionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.ConfigMeta != nil {
-		toSerialize["configMeta"] = o.ConfigMeta
+		toSerialize["config_meta"] = o.ConfigMeta
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -191,8 +191,8 @@ func (o ConditionInfo) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.TypeID) {
-		toSerialize["typeID"] = o.TypeID
+	if !IsNil(o.TypeId) {
+		toSerialize["type_id"] = o.TypeId
 	}
 	return toSerialize, nil
 }

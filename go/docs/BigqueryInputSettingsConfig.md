@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
 **Dataset** | Pointer to **string** | The BigQuery dataset ID containing the table | [optional] 
 **Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
 **Query** | Pointer to **string** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
@@ -29,31 +28,6 @@ will change when the set of required properties is changed
 NewBigqueryInputSettingsConfigWithDefaults instantiates a new BigqueryInputSettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCron
-
-`func (o *BigqueryInputSettingsConfig) GetCron() string`
-
-GetCron returns the Cron field if non-nil, zero value otherwise.
-
-### GetCronOk
-
-`func (o *BigqueryInputSettingsConfig) GetCronOk() (*string, bool)`
-
-GetCronOk returns a tuple with the Cron field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCron
-
-`func (o *BigqueryInputSettingsConfig) SetCron(v string)`
-
-SetCron sets Cron field to given value.
-
-### HasCron
-
-`func (o *BigqueryInputSettingsConfig) HasCron() bool`
-
-HasCron returns a boolean if a field has been set.
 
 ### GetDataset
 

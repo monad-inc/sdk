@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Demo Custom settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SyntheticDataCustomSettingsConfig {
   public static final String SERIALIZED_NAME_CUSTOM_TEMPLATE = "custom_template";
   @SerializedName(SERIALIZED_NAME_CUSTOM_TEMPLATE)
@@ -162,7 +162,7 @@ public class SyntheticDataCustomSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SyntheticDataCustomSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SyntheticDataCustomSettingsConfig is not found in the empty JSON string", SyntheticDataCustomSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SyntheticDataCustomSettingsConfig is not found in the empty JSON string", SyntheticDataCustomSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -170,12 +170,12 @@ public class SyntheticDataCustomSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!SyntheticDataCustomSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SyntheticDataCustomSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SyntheticDataCustomSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("custom_template") != null && !jsonObj.get("custom_template").isJsonNull()) && !jsonObj.get("custom_template").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom_template` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_template").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `custom_template` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_template").toString()));
       }
   }
 

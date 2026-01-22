@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Details about the source AWS account and region for Security Lake
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SecurityLakeSourceAccountDetails {
   public static final String SERIALIZED_NAME_SOURCE_ACCOUNT_ID = "source_account_id";
   @SerializedName(SERIALIZED_NAME_SOURCE_ACCOUNT_ID)
@@ -162,7 +162,7 @@ public class SecurityLakeSourceAccountDetails {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SecurityLakeSourceAccountDetails.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SecurityLakeSourceAccountDetails is not found in the empty JSON string", SecurityLakeSourceAccountDetails.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SecurityLakeSourceAccountDetails is not found in the empty JSON string", SecurityLakeSourceAccountDetails.openapiRequiredFields.toString()));
         }
       }
 
@@ -170,15 +170,15 @@ public class SecurityLakeSourceAccountDetails {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!SecurityLakeSourceAccountDetails.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SecurityLakeSourceAccountDetails` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SecurityLakeSourceAccountDetails` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("source_account_id") != null && !jsonObj.get("source_account_id").isJsonNull()) && !jsonObj.get("source_account_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `source_account_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_account_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `source_account_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_account_id").toString()));
       }
       if ((jsonObj.get("source_region") != null && !jsonObj.get("source_region").isJsonNull()) && !jsonObj.get("source_region").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `source_region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_region").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `source_region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_region").toString()));
       }
   }
 

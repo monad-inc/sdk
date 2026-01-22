@@ -1,6 +1,5 @@
 # VercelUserEventsSecretsConfig
 
-Vercel User Events secrets
 
 ## Properties
 

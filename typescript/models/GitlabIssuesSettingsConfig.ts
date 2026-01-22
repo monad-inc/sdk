@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class GitlabIssuesSettingsConfig {
     /**
+    * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+    */
+    'backfillStartTime'?: string;
+    /**
     * Confidential to filter issues by confidentiality status. Confidential = true means only show confidential issues.
     */
     'confidential'?: boolean;
@@ -50,6 +54,12 @@ export class GitlabIssuesSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "confidential",
             "baseName": "confidential",

@@ -20,6 +20,8 @@ var _ MappedNullable = &FullScansSettingsConfig{}
 
 // FullScansSettingsConfig Socket Full Scans settings
 type FullScansSettingsConfig struct {
+	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Cron expression for scheduling the input
 	OrgSlug *string `json:"org_slug,omitempty"`
 	// A repository slug to filter full-scans by.
@@ -43,6 +45,38 @@ func NewFullScansSettingsConfig() *FullScansSettingsConfig {
 func NewFullScansSettingsConfigWithDefaults() *FullScansSettingsConfig {
 	this := FullScansSettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *FullScansSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FullScansSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *FullScansSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *FullScansSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetOrgSlug returns the OrgSlug field value if set, zero value otherwise.
@@ -151,6 +185,9 @@ func (o FullScansSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o FullScansSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.OrgSlug) {
 		toSerialize["org_slug"] = o.OrgSlug
 	}

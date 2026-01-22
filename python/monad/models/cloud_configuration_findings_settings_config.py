@@ -27,12 +27,13 @@ class CloudConfigurationFindingsSettingsConfig(BaseModel):
     """
     Wiz cloud configuration findings settings
     """ # noqa: E501
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     endpoint_url: Optional[StrictStr] = Field(default=None, description="Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-configuration-findings'.")
     result: Optional[List[StrictStr]] = Field(default=None, description="Result types for Wiz. Ex: 'PASSED', 'FAILED'.")
     severity: Optional[List[StrictStr]] = Field(default=None, description="Severity types for Wiz. Ex: 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'INFO'.")
     status: Optional[List[StrictStr]] = Field(default=None, description="Status types for Wiz. Ex: 'OPEN', 'RESOLVED'.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["endpoint_url", "result", "severity", "status", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "endpoint_url", "result", "severity", "status", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,6 +86,7 @@ class CloudConfigurationFindingsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "endpoint_url": obj.get("endpoint_url"),
             "result": obj.get("result"),
             "severity": obj.get("severity"),

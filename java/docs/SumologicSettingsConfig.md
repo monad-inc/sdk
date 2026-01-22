@@ -8,6 +8,7 @@ Sumo Logic Output Settings
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**sourceMetadata** | [**SumologicSourceMetadata**](SumologicSourceMetadata.md) |  |  [optional] |
 |**url** | **String** | The URL of the Sumo Logic instance. |  [optional] |
 
 

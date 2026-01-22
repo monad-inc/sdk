@@ -50,8 +50,13 @@ import org.openapitools.client.JSON;
 /**
  * Box Events secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class BoxEventsSettingsConfig {
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
+
   public static final String SERIALIZED_NAME_EVENT_TYPE = "event_type";
   @SerializedName(SERIALIZED_NAME_EVENT_TYPE)
   @javax.annotation.Nullable
@@ -64,6 +69,25 @@ public class BoxEventsSettingsConfig {
 
   public BoxEventsSettingsConfig() {
   }
+
+  public BoxEventsSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * Date to start fetching data from. If not specified, data from 1 year ago upto now from box is fetched on the first sync. All syncs thereafter will be incremental.
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+  }
+
 
   public BoxEventsSettingsConfig eventType(@javax.annotation.Nullable List<String> eventType) {
     this.eventType = eventType;
@@ -121,19 +145,21 @@ public class BoxEventsSettingsConfig {
       return false;
     }
     BoxEventsSettingsConfig boxEventsSettingsConfig = (BoxEventsSettingsConfig) o;
-    return Objects.equals(this.eventType, boxEventsSettingsConfig.eventType) &&
+    return Objects.equals(this.backfillStartTime, boxEventsSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.eventType, boxEventsSettingsConfig.eventType) &&
         Objects.equals(this.useSyntheticData, boxEventsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventType, useSyntheticData);
+    return Objects.hash(backfillStartTime, eventType, useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class BoxEventsSettingsConfig {\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
@@ -157,7 +183,7 @@ public class BoxEventsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("event_type", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "event_type", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -172,7 +198,7 @@ public class BoxEventsSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BoxEventsSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BoxEventsSettingsConfig is not found in the empty JSON string", BoxEventsSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in BoxEventsSettingsConfig is not found in the empty JSON string", BoxEventsSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -180,13 +206,16 @@ public class BoxEventsSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!BoxEventsSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `BoxEventsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `BoxEventsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("event_type") != null && !jsonObj.get("event_type").isJsonNull() && !jsonObj.get("event_type").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `event_type` to be an array in the JSON string but got `%s`", jsonObj.get("event_type").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `event_type` to be an array in the JSON string but got `%s`", jsonObj.get("event_type").toString()));
       }
   }
 

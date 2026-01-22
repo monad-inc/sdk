@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Microsoft Azure Vnet Flow Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class AzureVnetFlowLogsSettingsConfig {
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
   @SerializedName(SERIALIZED_NAME_PREFIX)
@@ -318,7 +318,7 @@ public class AzureVnetFlowLogsSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AzureVnetFlowLogsSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AzureVnetFlowLogsSettingsConfig is not found in the empty JSON string", AzureVnetFlowLogsSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in AzureVnetFlowLogsSettingsConfig is not found in the empty JSON string", AzureVnetFlowLogsSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -326,30 +326,30 @@ public class AzureVnetFlowLogsSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!AzureVnetFlowLogsSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AzureVnetFlowLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AzureVnetFlowLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
       }
       if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }
       if ((jsonObj.get("resource_group_name") != null && !jsonObj.get("resource_group_name").isJsonNull()) && !jsonObj.get("resource_group_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resource_group_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_group_name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `resource_group_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_group_name").toString()));
       }
       if ((jsonObj.get("storage_account_url") != null && !jsonObj.get("storage_account_url").isJsonNull()) && !jsonObj.get("storage_account_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `storage_account_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("storage_account_url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `storage_account_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("storage_account_url").toString()));
       }
       if ((jsonObj.get("subscription_id") != null && !jsonObj.get("subscription_id").isJsonNull()) && !jsonObj.get("subscription_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `subscription_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subscription_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `subscription_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subscription_id").toString()));
       }
       if ((jsonObj.get("tenant_id") != null && !jsonObj.get("tenant_id").isJsonNull()) && !jsonObj.get("tenant_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tenant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tenant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tenant_id").toString()));
       }
       if ((jsonObj.get("virtual_network_name") != null && !jsonObj.get("virtual_network_name").isJsonNull()) && !jsonObj.get("virtual_network_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `virtual_network_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("virtual_network_name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `virtual_network_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("virtual_network_name").toString()));
       }
   }
 

@@ -19,61 +19,93 @@ import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, Dict, List, Optional
 from monad.models.activity_logs_settings_config import ActivityLogsSettingsConfig
+from monad.models.activitylogs_settings_config import ActivitylogsSettingsConfig
 from monad.models.actors_info_settings_config import ActorsInfoSettingsConfig
-from monad.models.admin_activity_settings_config import AdminActivitySettingsConfig
 from monad.models.admin_logs_settings_config import AdminLogsSettingsConfig
+from monad.models.alert_center_settings_config import AlertCenterSettingsConfig
+from monad.models.arize_audit_logs_settings_config import ArizeAuditLogsSettingsConfig
 from monad.models.audit_logs_settings_config import AuditLogsSettingsConfig
 from monad.models.auth_logs_settings_config import AuthLogsSettingsConfig
 from monad.models.aws_guardduty_settings_config import AwsGuarddutySettingsConfig
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig
-from monad.models.awssqs_settings_config import AwssqsSettingsConfig
+from monad.models.awssecurityhub_settings_config import AwssecurityhubSettingsConfig
+from monad.models.awssqss3_settings_config import Awssqss3SettingsConfig
 from monad.models.azure_activity_logs_settings_config import AzureActivityLogsSettingsConfig
 from monad.models.azure_blob_storage_settings_config import AzureBlobStorageSettingsConfig
+from monad.models.azure_event_hubs_settings_config import AzureEventHubsSettingsConfig
 from monad.models.azure_virtual_machine_settings_config import AzureVirtualMachineSettingsConfig
 from monad.models.azure_vnet_flow_logs_settings_config import AzureVnetFlowLogsSettingsConfig
+from monad.models.backblaze_b2_settings_config import BackblazeB2SettingsConfig
+from monad.models.bigquery_cron_settings_config import BigqueryCronSettingsConfig
 from monad.models.bigquery_input_settings_config import BigqueryInputSettingsConfig
 from monad.models.box_events_settings_config import BoxEventsSettingsConfig
 from monad.models.box_users_settings_config import BoxUsersSettingsConfig
+from monad.models.buildkite_audit_logs_settings_config import BuildkiteAuditLogsSettingsConfig
+from monad.models.buildkite_graphql_input_settings_config import BuildkiteGraphqlInputSettingsConfig
 from monad.models.cisa_user_settings_config import CisaUserSettingsConfig
 from monad.models.cloud_asset_inventory_settings_config import CloudAssetInventorySettingsConfig
 from monad.models.cloud_configuration_findings_settings_config import CloudConfigurationFindingsSettingsConfig
 from monad.models.cloud_logs_settings_config import CloudLogsSettingsConfig
+from monad.models.cloud_resource_inventory_reports_settings_config import CloudResourceInventoryReportsSettingsConfig
 from monad.models.cloud_resource_inventory_settings_config import CloudResourceInventorySettingsConfig
+from monad.models.cloudflare_audit_logs_settings_config import CloudflareAuditLogsSettingsConfig
+from monad.models.cloudflare_dns_records_settings_config import CloudflareDnsRecordsSettingsConfig
+from monad.models.cloudflare_firewall_events_settings_config import CloudflareFirewallEventsSettingsConfig
+from monad.models.cloudflare_page_shield_connections_settings_config import CloudflarePageShieldConnectionsSettingsConfig
+from monad.models.cloudflare_rulesets_settings_config import CloudflareRulesetsSettingsConfig
+from monad.models.cloudflare_security_insights_settings_config import CloudflareSecurityInsightsSettingsConfig
+from monad.models.cloudflare_url_scanner_settings_config import CloudflareUrlScannerSettingsConfig
+from monad.models.cloudflare_users_settings_config import CloudflareUsersSettingsConfig
+from monad.models.cloudflare_zero_trust_access_requests_settings_config import CloudflareZeroTrustAccessRequestsSettingsConfig
+from monad.models.cloudflare_zones_settings_config import CloudflareZonesSettingsConfig
 from monad.models.cloudtrail_settings_config import CloudtrailSettingsConfig
 from monad.models.clumio_audit_logs_settings_config import ClumioAuditLogsSettingsConfig
 from monad.models.clumio_consolidated_alerts_settings_config import ClumioConsolidatedAlertsSettingsConfig
+from monad.models.coda_audit_events_settings_config import CodaAuditEventsSettingsConfig
 from monad.models.cognito_users_settings_config import CognitoUsersSettingsConfig
+from monad.models.cortex_xsoar_management_logs_settings_config import CortexXsoarManagementLogsSettingsConfig
 from monad.models.crowdstrike_fdr_settings_config import CrowdstrikeFdrSettingsConfig
+from monad.models.customer_event_data_settings_config import CustomerEventDataSettingsConfig
 from monad.models.defender_for_endpoint_alerts_settings_config import DefenderForEndpointAlertsSettingsConfig
-from monad.models.detect_summaries_settings_config import DetectSummariesSettingsConfig
-from monad.models.device_activity_settings_config import DeviceActivitySettingsConfig
 from monad.models.device_details_settings_config import DeviceDetailsSettingsConfig
 from monad.models.devices_settings_config import DevicesSettingsConfig
-from monad.models.drive_activity_settings_config import DriveActivitySettingsConfig
+from monad.models.endor_labs_audit_logs_settings_config import EndorLabsAuditLogsSettingsConfig
 from monad.models.entra_id_settings_config import EntraIdSettingsConfig
 from monad.models.event_settings_config import EventSettingsConfig
-from monad.models.events_logs_settings_config import EventsLogsSettingsConfig
-from monad.models.events_settings_config import EventsSettingsConfig
 from monad.models.full_scans_settings_config import FullScansSettingsConfig
 from monad.models.github_advisory_user_settings_config import GithubAdvisoryUserSettingsConfig
 from monad.models.gitlab_issues_settings_config import GitlabIssuesSettingsConfig
 from monad.models.google_cloud_storage_settings_config import GoogleCloudStorageSettingsConfig
+from monad.models.greenhouse_audit_logs_settings_config import GreenhouseAuditLogsSettingsConfig
 from monad.models.iam_access_analyzer_settings_config import IamAccessAnalyzerSettingsConfig
 from monad.models.individual_alerts_settings_config import IndividualAlertsSettingsConfig
+from monad.models.inspector_settings_config import InspectorSettingsConfig
+from monad.models.issues_report_settings_config import IssuesReportSettingsConfig
 from monad.models.issues_settings_config import IssuesSettingsConfig
 from monad.models.kms_settings_config import KmsSettingsConfig
+from monad.models.koi_audit_logs_settings_config import KoiAuditLogsSettingsConfig
 from monad.models.log_analytics_query_settings_config import LogAnalyticsQuerySettingsConfig
-from monad.models.login_activity_settings_config import LoginActivitySettingsConfig
 from monad.models.login_sessions_settings_config import LoginSessionsSettingsConfig
+from monad.models.meraki_config_logs_settings_config import MerakiConfigLogsSettingsConfig
+from monad.models.microsoft365_generic_settings_config import Microsoft365GenericSettingsConfig
 from monad.models.monad_log_settings_config import MonadLogSettingsConfig
-from monad.models.oauth_activity_settings_config import OauthActivitySettingsConfig
 from monad.models.object_storage_input_settings_config import ObjectStorageInputSettingsConfig
+from monad.models.offlineenrollmentlogs_settings_config import OfflineenrollmentlogsSettingsConfig
 from monad.models.onelogin_events_settings_config import OneloginEventsSettingsConfig
 from monad.models.openai_settings_config import OpenaiSettingsConfig
+from monad.models.operation_logs_settings_config import OperationLogsSettingsConfig
+from monad.models.oracle_settings_config import OracleSettingsConfig
+from monad.models.org_audit_logs_settings_config import OrgAuditLogsSettingsConfig
 from monad.models.organizations_settings_config import OrganizationsSettingsConfig
+from monad.models.pagerduty_audit_records_settings_config import PagerdutyAuditRecordsSettingsConfig
 from monad.models.palo_alto_data_security_alerts_settings_config import PaloAltoDataSecurityAlertsSettingsConfig
+from monad.models.polymer_settings_config import PolymerSettingsConfig
+from monad.models.postman_audit_logs_settings_config import PostmanAuditLogsSettingsConfig
+from monad.models.pubsub_settings_config import PubsubSettingsConfig
 from monad.models.resource_evaluations_settings_config import ResourceEvaluationsSettingsConfig
 from monad.models.roles_info_settings_config import RolesInfoSettingsConfig
+from monad.models.rootly_audit_logs_settings_config import RootlyAuditLogsSettingsConfig
+from monad.models.salesforce_users_settings_config import SalesforceUsersSettingsConfig
 from monad.models.secretsmanager_settings_config import SecretsmanagerSettingsConfig
 from monad.models.security_groups_settings_config import SecurityGroupsSettingsConfig
 from monad.models.semgrep_code_findings_settings_config import SemgrepCodeFindingsSettingsConfig
@@ -82,6 +114,7 @@ from monad.models.semgrep_project_details_settings_config import SemgrepProjectD
 from monad.models.semgrep_projects_settings_config import SemgrepProjectsSettingsConfig
 from monad.models.semgrep_supply_chain_findings_settings_config import SemgrepSupplyChainFindingsSettingsConfig
 from monad.models.sentry_org_audit_logs_settings_config import SentryOrgAuditLogsSettingsConfig
+from monad.models.slack_enterprise_audit_logs_settings_config import SlackEnterpriseAuditLogsSettingsConfig
 from monad.models.slack_users_settings_config import SlackUsersSettingsConfig
 from monad.models.slackgroups_settings_config import SlackgroupsSettingsConfig
 from monad.models.snowflake_input_settings_config import SnowflakeInputSettingsConfig
@@ -93,21 +126,35 @@ from monad.models.synthetic_data_custom_settings_config import SyntheticDataCust
 from monad.models.synthetic_data_settings_config import SyntheticDataSettingsConfig
 from monad.models.systemlog_settings_config import SystemlogSettingsConfig
 from monad.models.tailscale_users_settings_config import TailscaleUsersSettingsConfig
+from monad.models.tanium_graphql_input_settings_config import TaniumGraphqlInputSettingsConfig
+from monad.models.team_access_logs_settings_config import TeamAccessLogsSettingsConfig
+from monad.models.team_integration_logs_settings_config import TeamIntegrationLogsSettingsConfig
+from monad.models.telephony_logs_settings_config import TelephonyLogsSettingsConfig
 from monad.models.tenable_assets_cron_settings_config import TenableAssetsCronSettingsConfig
 from monad.models.tenable_assets_settings_config import TenableAssetsSettingsConfig
 from monad.models.tenable_vulnerabilities_cron_settings_config import TenableVulnerabilitiesCronSettingsConfig
 from monad.models.tenable_vulnerabilities_settings_config import TenableVulnerabilitiesSettingsConfig
+from monad.models.tines_audit_logs_settings_config import TinesAuditLogsSettingsConfig
+from monad.models.tines_events_logs_settings_config import TinesEventsLogsSettingsConfig
+from monad.models.twilio_events_settings_config import TwilioEventsSettingsConfig
+from monad.models.twilio_sendgrid_email_activity_settings_config import TwilioSendgridEmailActivitySettingsConfig
+from monad.models.universal_settings_config import UniversalSettingsConfig
 from monad.models.users_info_settings_config import UsersInfoSettingsConfig
 from monad.models.users_settings_config import UsersSettingsConfig
 from monad.models.vercel_user_events_settings_config import VercelUserEventsSettingsConfig
 from monad.models.vulnerabilities_cron_settings_config import VulnerabilitiesCronSettingsConfig
 from monad.models.vulnerabilities_settings_config import VulnerabilitiesSettingsConfig
+from monad.models.vulnerability_findings_report_settings_config import VulnerabilityFindingsReportSettingsConfig
 from monad.models.vulnerability_findings_settings_config import VulnerabilityFindingsSettingsConfig
+from monad.models.wiz_audit_logs_settings_config import WizAuditLogsSettingsConfig
+from monad.models.zendesk_audit_logs_settings_config import ZendeskAuditLogsSettingsConfig
+from monad.models.zoom_activity_logs_settings_config import ZoomActivityLogsSettingsConfig
+from monad.models.zoom_meeting_activity_logs_settings_config import ZoomMeetingActivityLogsSettingsConfig
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-SECRETPROCESSESORINPUTCONFIGSETTINGS_ONE_OF_SCHEMAS = ["ActivityLogsSettingsConfig", "ActorsInfoSettingsConfig", "AdminActivitySettingsConfig", "AdminLogsSettingsConfig", "AuditLogsSettingsConfig", "AuthLogsSettingsConfig", "AwsGuarddutySettingsConfig", "AwsS3SettingsConfig", "AwssqsSettingsConfig", "AzureActivityLogsSettingsConfig", "AzureBlobStorageSettingsConfig", "AzureVirtualMachineSettingsConfig", "AzureVnetFlowLogsSettingsConfig", "BigqueryInputSettingsConfig", "BoxEventsSettingsConfig", "BoxUsersSettingsConfig", "CisaUserSettingsConfig", "CloudAssetInventorySettingsConfig", "CloudConfigurationFindingsSettingsConfig", "CloudLogsSettingsConfig", "CloudResourceInventorySettingsConfig", "CloudtrailSettingsConfig", "ClumioAuditLogsSettingsConfig", "ClumioConsolidatedAlertsSettingsConfig", "CognitoUsersSettingsConfig", "CrowdstrikeFdrSettingsConfig", "DefenderForEndpointAlertsSettingsConfig", "DetectSummariesSettingsConfig", "DeviceActivitySettingsConfig", "DeviceDetailsSettingsConfig", "DevicesSettingsConfig", "Dict[str, object]", "DriveActivitySettingsConfig", "EntraIdSettingsConfig", "EventSettingsConfig", "EventsLogsSettingsConfig", "EventsSettingsConfig", "FullScansSettingsConfig", "GithubAdvisoryUserSettingsConfig", "GitlabIssuesSettingsConfig", "GoogleCloudStorageSettingsConfig", "IamAccessAnalyzerSettingsConfig", "IndividualAlertsSettingsConfig", "IssuesSettingsConfig", "KmsSettingsConfig", "LogAnalyticsQuerySettingsConfig", "LoginActivitySettingsConfig", "LoginSessionsSettingsConfig", "MonadLogSettingsConfig", "OauthActivitySettingsConfig", "ObjectStorageInputSettingsConfig", "OneloginEventsSettingsConfig", "OpenaiSettingsConfig", "OrganizationsSettingsConfig", "PaloAltoDataSecurityAlertsSettingsConfig", "ResourceEvaluationsSettingsConfig", "RolesInfoSettingsConfig", "SecretsmanagerSettingsConfig", "SecurityGroupsSettingsConfig", "SemgrepCodeFindingsSettingsConfig", "SemgrepDeploymentsSettingsConfig", "SemgrepProjectDetailsSettingsConfig", "SemgrepProjectsSettingsConfig", "SemgrepSupplyChainFindingsSettingsConfig", "SentryOrgAuditLogsSettingsConfig", "SlackUsersSettingsConfig", "SlackgroupsSettingsConfig", "SnowflakeInputSettingsConfig", "SnykIssuesSettingsConfig", "SnykOrganizationsSettingsConfig", "SnykProjectsSettingsConfig", "SnykTargetsSettingsConfig", "SyntheticDataCustomSettingsConfig", "SyntheticDataSettingsConfig", "SystemlogSettingsConfig", "TailscaleUsersSettingsConfig", "TenableAssetsCronSettingsConfig", "TenableAssetsSettingsConfig", "TenableVulnerabilitiesCronSettingsConfig", "TenableVulnerabilitiesSettingsConfig", "UsersInfoSettingsConfig", "UsersSettingsConfig", "VercelUserEventsSettingsConfig", "VulnerabilitiesCronSettingsConfig", "VulnerabilitiesSettingsConfig", "VulnerabilityFindingsSettingsConfig", "object"]
+SECRETPROCESSESORINPUTCONFIGSETTINGS_ONE_OF_SCHEMAS = ["ActivityLogsSettingsConfig", "ActivitylogsSettingsConfig", "ActorsInfoSettingsConfig", "AdminLogsSettingsConfig", "AlertCenterSettingsConfig", "ArizeAuditLogsSettingsConfig", "AuditLogsSettingsConfig", "AuthLogsSettingsConfig", "AwsGuarddutySettingsConfig", "AwsS3SettingsConfig", "AwssecurityhubSettingsConfig", "Awssqss3SettingsConfig", "AzureActivityLogsSettingsConfig", "AzureBlobStorageSettingsConfig", "AzureEventHubsSettingsConfig", "AzureVirtualMachineSettingsConfig", "AzureVnetFlowLogsSettingsConfig", "BackblazeB2SettingsConfig", "BigqueryCronSettingsConfig", "BigqueryInputSettingsConfig", "BoxEventsSettingsConfig", "BoxUsersSettingsConfig", "BuildkiteAuditLogsSettingsConfig", "BuildkiteGraphqlInputSettingsConfig", "CisaUserSettingsConfig", "CloudAssetInventorySettingsConfig", "CloudConfigurationFindingsSettingsConfig", "CloudLogsSettingsConfig", "CloudResourceInventoryReportsSettingsConfig", "CloudResourceInventorySettingsConfig", "CloudflareAuditLogsSettingsConfig", "CloudflareDnsRecordsSettingsConfig", "CloudflareFirewallEventsSettingsConfig", "CloudflarePageShieldConnectionsSettingsConfig", "CloudflareRulesetsSettingsConfig", "CloudflareSecurityInsightsSettingsConfig", "CloudflareUrlScannerSettingsConfig", "CloudflareUsersSettingsConfig", "CloudflareZeroTrustAccessRequestsSettingsConfig", "CloudflareZonesSettingsConfig", "CloudtrailSettingsConfig", "ClumioAuditLogsSettingsConfig", "ClumioConsolidatedAlertsSettingsConfig", "CodaAuditEventsSettingsConfig", "CognitoUsersSettingsConfig", "CortexXsoarManagementLogsSettingsConfig", "CrowdstrikeFdrSettingsConfig", "CustomerEventDataSettingsConfig", "DefenderForEndpointAlertsSettingsConfig", "DeviceDetailsSettingsConfig", "DevicesSettingsConfig", "Dict[str, object]", "EndorLabsAuditLogsSettingsConfig", "EntraIdSettingsConfig", "EventSettingsConfig", "FullScansSettingsConfig", "GithubAdvisoryUserSettingsConfig", "GitlabIssuesSettingsConfig", "GoogleCloudStorageSettingsConfig", "GreenhouseAuditLogsSettingsConfig", "IamAccessAnalyzerSettingsConfig", "IndividualAlertsSettingsConfig", "InspectorSettingsConfig", "IssuesReportSettingsConfig", "IssuesSettingsConfig", "KmsSettingsConfig", "KoiAuditLogsSettingsConfig", "LogAnalyticsQuerySettingsConfig", "LoginSessionsSettingsConfig", "MerakiConfigLogsSettingsConfig", "Microsoft365GenericSettingsConfig", "MonadLogSettingsConfig", "ObjectStorageInputSettingsConfig", "OfflineenrollmentlogsSettingsConfig", "OneloginEventsSettingsConfig", "OpenaiSettingsConfig", "OperationLogsSettingsConfig", "OracleSettingsConfig", "OrgAuditLogsSettingsConfig", "OrganizationsSettingsConfig", "PagerdutyAuditRecordsSettingsConfig", "PaloAltoDataSecurityAlertsSettingsConfig", "PolymerSettingsConfig", "PostmanAuditLogsSettingsConfig", "PubsubSettingsConfig", "ResourceEvaluationsSettingsConfig", "RolesInfoSettingsConfig", "RootlyAuditLogsSettingsConfig", "SalesforceUsersSettingsConfig", "SecretsmanagerSettingsConfig", "SecurityGroupsSettingsConfig", "SemgrepCodeFindingsSettingsConfig", "SemgrepDeploymentsSettingsConfig", "SemgrepProjectDetailsSettingsConfig", "SemgrepProjectsSettingsConfig", "SemgrepSupplyChainFindingsSettingsConfig", "SentryOrgAuditLogsSettingsConfig", "SlackEnterpriseAuditLogsSettingsConfig", "SlackUsersSettingsConfig", "SlackgroupsSettingsConfig", "SnowflakeInputSettingsConfig", "SnykIssuesSettingsConfig", "SnykOrganizationsSettingsConfig", "SnykProjectsSettingsConfig", "SnykTargetsSettingsConfig", "SyntheticDataCustomSettingsConfig", "SyntheticDataSettingsConfig", "SystemlogSettingsConfig", "TailscaleUsersSettingsConfig", "TaniumGraphqlInputSettingsConfig", "TeamAccessLogsSettingsConfig", "TeamIntegrationLogsSettingsConfig", "TelephonyLogsSettingsConfig", "TenableAssetsCronSettingsConfig", "TenableAssetsSettingsConfig", "TenableVulnerabilitiesCronSettingsConfig", "TenableVulnerabilitiesSettingsConfig", "TinesAuditLogsSettingsConfig", "TinesEventsLogsSettingsConfig", "TwilioEventsSettingsConfig", "TwilioSendgridEmailActivitySettingsConfig", "UniversalSettingsConfig", "UsersInfoSettingsConfig", "UsersSettingsConfig", "VercelUserEventsSettingsConfig", "VulnerabilitiesCronSettingsConfig", "VulnerabilitiesSettingsConfig", "VulnerabilityFindingsReportSettingsConfig", "VulnerabilityFindingsSettingsConfig", "WizAuditLogsSettingsConfig", "ZendeskAuditLogsSettingsConfig", "ZoomActivityLogsSettingsConfig", "ZoomMeetingActivityLogsSettingsConfig", "object"]
 
 class SecretProcessesorInputConfigSettings(BaseModel):
     """
@@ -115,180 +162,274 @@ class SecretProcessesorInputConfigSettings(BaseModel):
     """
     # data type: ActivityLogsSettingsConfig
     oneof_schema_1_validator: Optional[ActivityLogsSettingsConfig] = None
+    # data type: ActivitylogsSettingsConfig
+    oneof_schema_2_validator: Optional[ActivitylogsSettingsConfig] = None
     # data type: ActorsInfoSettingsConfig
-    oneof_schema_2_validator: Optional[ActorsInfoSettingsConfig] = None
-    # data type: AdminActivitySettingsConfig
-    oneof_schema_3_validator: Optional[AdminActivitySettingsConfig] = None
+    oneof_schema_3_validator: Optional[ActorsInfoSettingsConfig] = None
     # data type: AdminLogsSettingsConfig
     oneof_schema_4_validator: Optional[AdminLogsSettingsConfig] = None
+    # data type: AlertCenterSettingsConfig
+    oneof_schema_5_validator: Optional[AlertCenterSettingsConfig] = None
+    # data type: ArizeAuditLogsSettingsConfig
+    oneof_schema_6_validator: Optional[ArizeAuditLogsSettingsConfig] = None
     # data type: AuditLogsSettingsConfig
-    oneof_schema_5_validator: Optional[AuditLogsSettingsConfig] = None
+    oneof_schema_7_validator: Optional[AuditLogsSettingsConfig] = None
     # data type: AuthLogsSettingsConfig
-    oneof_schema_6_validator: Optional[AuthLogsSettingsConfig] = None
+    oneof_schema_8_validator: Optional[AuthLogsSettingsConfig] = None
     # data type: AwsGuarddutySettingsConfig
-    oneof_schema_7_validator: Optional[AwsGuarddutySettingsConfig] = None
+    oneof_schema_9_validator: Optional[AwsGuarddutySettingsConfig] = None
     # data type: AwsS3SettingsConfig
-    oneof_schema_8_validator: Optional[AwsS3SettingsConfig] = None
-    # data type: AwssqsSettingsConfig
-    oneof_schema_9_validator: Optional[AwssqsSettingsConfig] = None
+    oneof_schema_10_validator: Optional[AwsS3SettingsConfig] = None
+    # data type: AwssecurityhubSettingsConfig
+    oneof_schema_11_validator: Optional[AwssecurityhubSettingsConfig] = None
+    # data type: Awssqss3SettingsConfig
+    oneof_schema_12_validator: Optional[Awssqss3SettingsConfig] = None
     # data type: AzureActivityLogsSettingsConfig
-    oneof_schema_10_validator: Optional[AzureActivityLogsSettingsConfig] = None
+    oneof_schema_13_validator: Optional[AzureActivityLogsSettingsConfig] = None
     # data type: AzureBlobStorageSettingsConfig
-    oneof_schema_11_validator: Optional[AzureBlobStorageSettingsConfig] = None
+    oneof_schema_14_validator: Optional[AzureBlobStorageSettingsConfig] = None
+    # data type: AzureEventHubsSettingsConfig
+    oneof_schema_15_validator: Optional[AzureEventHubsSettingsConfig] = None
     # data type: AzureVirtualMachineSettingsConfig
-    oneof_schema_12_validator: Optional[AzureVirtualMachineSettingsConfig] = None
+    oneof_schema_16_validator: Optional[AzureVirtualMachineSettingsConfig] = None
     # data type: AzureVnetFlowLogsSettingsConfig
-    oneof_schema_13_validator: Optional[AzureVnetFlowLogsSettingsConfig] = None
+    oneof_schema_17_validator: Optional[AzureVnetFlowLogsSettingsConfig] = None
+    # data type: BackblazeB2SettingsConfig
+    oneof_schema_18_validator: Optional[BackblazeB2SettingsConfig] = None
+    # data type: BigqueryCronSettingsConfig
+    oneof_schema_19_validator: Optional[BigqueryCronSettingsConfig] = None
     # data type: BigqueryInputSettingsConfig
-    oneof_schema_14_validator: Optional[BigqueryInputSettingsConfig] = None
+    oneof_schema_20_validator: Optional[BigqueryInputSettingsConfig] = None
     # data type: BoxEventsSettingsConfig
-    oneof_schema_15_validator: Optional[BoxEventsSettingsConfig] = None
+    oneof_schema_21_validator: Optional[BoxEventsSettingsConfig] = None
     # data type: BoxUsersSettingsConfig
-    oneof_schema_16_validator: Optional[BoxUsersSettingsConfig] = None
+    oneof_schema_22_validator: Optional[BoxUsersSettingsConfig] = None
+    # data type: BuildkiteAuditLogsSettingsConfig
+    oneof_schema_23_validator: Optional[BuildkiteAuditLogsSettingsConfig] = None
+    # data type: BuildkiteGraphqlInputSettingsConfig
+    oneof_schema_24_validator: Optional[BuildkiteGraphqlInputSettingsConfig] = None
     # data type: CisaUserSettingsConfig
-    oneof_schema_17_validator: Optional[CisaUserSettingsConfig] = None
+    oneof_schema_25_validator: Optional[CisaUserSettingsConfig] = None
     # data type: CloudAssetInventorySettingsConfig
-    oneof_schema_18_validator: Optional[CloudAssetInventorySettingsConfig] = None
+    oneof_schema_26_validator: Optional[CloudAssetInventorySettingsConfig] = None
     # data type: CloudConfigurationFindingsSettingsConfig
-    oneof_schema_19_validator: Optional[CloudConfigurationFindingsSettingsConfig] = None
+    oneof_schema_27_validator: Optional[CloudConfigurationFindingsSettingsConfig] = None
     # data type: CloudLogsSettingsConfig
-    oneof_schema_20_validator: Optional[CloudLogsSettingsConfig] = None
+    oneof_schema_28_validator: Optional[CloudLogsSettingsConfig] = None
     # data type: CloudResourceInventorySettingsConfig
-    oneof_schema_21_validator: Optional[CloudResourceInventorySettingsConfig] = None
+    oneof_schema_29_validator: Optional[CloudResourceInventorySettingsConfig] = None
+    # data type: CloudResourceInventoryReportsSettingsConfig
+    oneof_schema_30_validator: Optional[CloudResourceInventoryReportsSettingsConfig] = None
+    # data type: CloudflareAuditLogsSettingsConfig
+    oneof_schema_31_validator: Optional[CloudflareAuditLogsSettingsConfig] = None
+    # data type: CloudflareDnsRecordsSettingsConfig
+    oneof_schema_32_validator: Optional[CloudflareDnsRecordsSettingsConfig] = None
+    # data type: CloudflareFirewallEventsSettingsConfig
+    oneof_schema_33_validator: Optional[CloudflareFirewallEventsSettingsConfig] = None
+    # data type: CloudflarePageShieldConnectionsSettingsConfig
+    oneof_schema_34_validator: Optional[CloudflarePageShieldConnectionsSettingsConfig] = None
+    # data type: CloudflareRulesetsSettingsConfig
+    oneof_schema_35_validator: Optional[CloudflareRulesetsSettingsConfig] = None
+    # data type: CloudflareSecurityInsightsSettingsConfig
+    oneof_schema_36_validator: Optional[CloudflareSecurityInsightsSettingsConfig] = None
+    # data type: CloudflareUrlScannerSettingsConfig
+    oneof_schema_37_validator: Optional[CloudflareUrlScannerSettingsConfig] = None
+    # data type: CloudflareUsersSettingsConfig
+    oneof_schema_38_validator: Optional[CloudflareUsersSettingsConfig] = None
+    # data type: CloudflareZeroTrustAccessRequestsSettingsConfig
+    oneof_schema_39_validator: Optional[CloudflareZeroTrustAccessRequestsSettingsConfig] = None
+    # data type: CloudflareZonesSettingsConfig
+    oneof_schema_40_validator: Optional[CloudflareZonesSettingsConfig] = None
     # data type: CloudtrailSettingsConfig
-    oneof_schema_22_validator: Optional[CloudtrailSettingsConfig] = None
+    oneof_schema_41_validator: Optional[CloudtrailSettingsConfig] = None
     # data type: ClumioAuditLogsSettingsConfig
-    oneof_schema_23_validator: Optional[ClumioAuditLogsSettingsConfig] = None
+    oneof_schema_42_validator: Optional[ClumioAuditLogsSettingsConfig] = None
     # data type: ClumioConsolidatedAlertsSettingsConfig
-    oneof_schema_24_validator: Optional[ClumioConsolidatedAlertsSettingsConfig] = None
+    oneof_schema_43_validator: Optional[ClumioConsolidatedAlertsSettingsConfig] = None
+    # data type: CodaAuditEventsSettingsConfig
+    oneof_schema_44_validator: Optional[CodaAuditEventsSettingsConfig] = None
     # data type: CognitoUsersSettingsConfig
-    oneof_schema_25_validator: Optional[CognitoUsersSettingsConfig] = None
+    oneof_schema_45_validator: Optional[CognitoUsersSettingsConfig] = None
+    # data type: CortexXsoarManagementLogsSettingsConfig
+    oneof_schema_46_validator: Optional[CortexXsoarManagementLogsSettingsConfig] = None
     # data type: CrowdstrikeFdrSettingsConfig
-    oneof_schema_26_validator: Optional[CrowdstrikeFdrSettingsConfig] = None
+    oneof_schema_47_validator: Optional[CrowdstrikeFdrSettingsConfig] = None
+    # data type: CustomerEventDataSettingsConfig
+    oneof_schema_48_validator: Optional[CustomerEventDataSettingsConfig] = None
     # data type: DefenderForEndpointAlertsSettingsConfig
-    oneof_schema_27_validator: Optional[DefenderForEndpointAlertsSettingsConfig] = None
-    # data type: DetectSummariesSettingsConfig
-    oneof_schema_28_validator: Optional[DetectSummariesSettingsConfig] = None
-    # data type: DeviceActivitySettingsConfig
-    oneof_schema_29_validator: Optional[DeviceActivitySettingsConfig] = None
+    oneof_schema_49_validator: Optional[DefenderForEndpointAlertsSettingsConfig] = None
     # data type: DeviceDetailsSettingsConfig
-    oneof_schema_30_validator: Optional[DeviceDetailsSettingsConfig] = None
+    oneof_schema_50_validator: Optional[DeviceDetailsSettingsConfig] = None
     # data type: DevicesSettingsConfig
-    oneof_schema_31_validator: Optional[DevicesSettingsConfig] = None
-    # data type: DriveActivitySettingsConfig
-    oneof_schema_32_validator: Optional[DriveActivitySettingsConfig] = None
+    oneof_schema_51_validator: Optional[DevicesSettingsConfig] = None
+    # data type: EndorLabsAuditLogsSettingsConfig
+    oneof_schema_52_validator: Optional[EndorLabsAuditLogsSettingsConfig] = None
     # data type: EntraIdSettingsConfig
-    oneof_schema_33_validator: Optional[EntraIdSettingsConfig] = None
+    oneof_schema_53_validator: Optional[EntraIdSettingsConfig] = None
     # data type: EventSettingsConfig
-    oneof_schema_34_validator: Optional[EventSettingsConfig] = None
-    # data type: EventsSettingsConfig
-    oneof_schema_35_validator: Optional[EventsSettingsConfig] = None
-    # data type: EventsLogsSettingsConfig
-    oneof_schema_36_validator: Optional[EventsLogsSettingsConfig] = None
+    oneof_schema_54_validator: Optional[EventSettingsConfig] = None
     # data type: FullScansSettingsConfig
-    oneof_schema_37_validator: Optional[FullScansSettingsConfig] = None
-    # data type: GithubAdvisoryUserSettingsConfig
-    oneof_schema_38_validator: Optional[GithubAdvisoryUserSettingsConfig] = None
-    # data type: GitlabIssuesSettingsConfig
-    oneof_schema_39_validator: Optional[GitlabIssuesSettingsConfig] = None
-    # data type: GoogleCloudStorageSettingsConfig
-    oneof_schema_40_validator: Optional[GoogleCloudStorageSettingsConfig] = None
-    # data type: IamAccessAnalyzerSettingsConfig
-    oneof_schema_41_validator: Optional[IamAccessAnalyzerSettingsConfig] = None
-    # data type: IndividualAlertsSettingsConfig
-    oneof_schema_42_validator: Optional[IndividualAlertsSettingsConfig] = None
-    # data type: IssuesSettingsConfig
-    oneof_schema_43_validator: Optional[IssuesSettingsConfig] = None
-    # data type: KmsSettingsConfig
-    oneof_schema_44_validator: Optional[KmsSettingsConfig] = None
-    # data type: LogAnalyticsQuerySettingsConfig
-    oneof_schema_45_validator: Optional[LogAnalyticsQuerySettingsConfig] = None
-    # data type: LoginActivitySettingsConfig
-    oneof_schema_46_validator: Optional[LoginActivitySettingsConfig] = None
-    # data type: LoginSessionsSettingsConfig
-    oneof_schema_47_validator: Optional[LoginSessionsSettingsConfig] = None
-    # data type: Dict[str, object]
-    oneof_schema_48_validator: Optional[Dict[str, Any]] = None
+    oneof_schema_55_validator: Optional[FullScansSettingsConfig] = None
     # data type: object
-    oneof_schema_49_validator: Optional[Dict[str, Any]] = Field(default=None, description="Monad HTTP settings")
+    oneof_schema_56_validator: Optional[Dict[str, Any]] = Field(default=None, description="Monad HTTP settings")
+    # data type: GithubAdvisoryUserSettingsConfig
+    oneof_schema_57_validator: Optional[GithubAdvisoryUserSettingsConfig] = None
+    # data type: GitlabIssuesSettingsConfig
+    oneof_schema_58_validator: Optional[GitlabIssuesSettingsConfig] = None
+    # data type: GoogleCloudStorageSettingsConfig
+    oneof_schema_59_validator: Optional[GoogleCloudStorageSettingsConfig] = None
+    # data type: GreenhouseAuditLogsSettingsConfig
+    oneof_schema_60_validator: Optional[GreenhouseAuditLogsSettingsConfig] = None
+    # data type: IamAccessAnalyzerSettingsConfig
+    oneof_schema_61_validator: Optional[IamAccessAnalyzerSettingsConfig] = None
+    # data type: IndividualAlertsSettingsConfig
+    oneof_schema_62_validator: Optional[IndividualAlertsSettingsConfig] = None
+    # data type: InspectorSettingsConfig
+    oneof_schema_63_validator: Optional[InspectorSettingsConfig] = None
+    # data type: IssuesSettingsConfig
+    oneof_schema_64_validator: Optional[IssuesSettingsConfig] = None
+    # data type: IssuesReportSettingsConfig
+    oneof_schema_65_validator: Optional[IssuesReportSettingsConfig] = None
+    # data type: KmsSettingsConfig
+    oneof_schema_66_validator: Optional[KmsSettingsConfig] = None
+    # data type: KoiAuditLogsSettingsConfig
+    oneof_schema_67_validator: Optional[KoiAuditLogsSettingsConfig] = None
+    # data type: LogAnalyticsQuerySettingsConfig
+    oneof_schema_68_validator: Optional[LogAnalyticsQuerySettingsConfig] = None
+    # data type: LoginSessionsSettingsConfig
+    oneof_schema_69_validator: Optional[LoginSessionsSettingsConfig] = None
+    # data type: MerakiConfigLogsSettingsConfig
+    oneof_schema_70_validator: Optional[MerakiConfigLogsSettingsConfig] = None
+    # data type: Microsoft365GenericSettingsConfig
+    oneof_schema_71_validator: Optional[Microsoft365GenericSettingsConfig] = None
+    # data type: Dict[str, object]
+    oneof_schema_72_validator: Optional[Dict[str, Any]] = None
     # data type: MonadLogSettingsConfig
-    oneof_schema_50_validator: Optional[MonadLogSettingsConfig] = None
-    # data type: OauthActivitySettingsConfig
-    oneof_schema_51_validator: Optional[OauthActivitySettingsConfig] = None
+    oneof_schema_73_validator: Optional[MonadLogSettingsConfig] = None
     # data type: ObjectStorageInputSettingsConfig
-    oneof_schema_52_validator: Optional[ObjectStorageInputSettingsConfig] = None
+    oneof_schema_74_validator: Optional[ObjectStorageInputSettingsConfig] = None
+    # data type: OfflineenrollmentlogsSettingsConfig
+    oneof_schema_75_validator: Optional[OfflineenrollmentlogsSettingsConfig] = None
     # data type: OneloginEventsSettingsConfig
-    oneof_schema_53_validator: Optional[OneloginEventsSettingsConfig] = None
+    oneof_schema_76_validator: Optional[OneloginEventsSettingsConfig] = None
     # data type: OpenaiSettingsConfig
-    oneof_schema_54_validator: Optional[OpenaiSettingsConfig] = None
+    oneof_schema_77_validator: Optional[OpenaiSettingsConfig] = None
+    # data type: OperationLogsSettingsConfig
+    oneof_schema_78_validator: Optional[OperationLogsSettingsConfig] = None
+    # data type: OracleSettingsConfig
+    oneof_schema_79_validator: Optional[OracleSettingsConfig] = None
+    # data type: OrgAuditLogsSettingsConfig
+    oneof_schema_80_validator: Optional[OrgAuditLogsSettingsConfig] = None
     # data type: OrganizationsSettingsConfig
-    oneof_schema_55_validator: Optional[OrganizationsSettingsConfig] = None
+    oneof_schema_81_validator: Optional[OrganizationsSettingsConfig] = None
+    # data type: PagerdutyAuditRecordsSettingsConfig
+    oneof_schema_82_validator: Optional[PagerdutyAuditRecordsSettingsConfig] = None
     # data type: PaloAltoDataSecurityAlertsSettingsConfig
-    oneof_schema_56_validator: Optional[PaloAltoDataSecurityAlertsSettingsConfig] = None
+    oneof_schema_83_validator: Optional[PaloAltoDataSecurityAlertsSettingsConfig] = None
+    # data type: PolymerSettingsConfig
+    oneof_schema_84_validator: Optional[PolymerSettingsConfig] = None
+    # data type: PostmanAuditLogsSettingsConfig
+    oneof_schema_85_validator: Optional[PostmanAuditLogsSettingsConfig] = None
+    # data type: PubsubSettingsConfig
+    oneof_schema_86_validator: Optional[PubsubSettingsConfig] = None
     # data type: ResourceEvaluationsSettingsConfig
-    oneof_schema_57_validator: Optional[ResourceEvaluationsSettingsConfig] = None
+    oneof_schema_87_validator: Optional[ResourceEvaluationsSettingsConfig] = None
     # data type: RolesInfoSettingsConfig
-    oneof_schema_58_validator: Optional[RolesInfoSettingsConfig] = None
+    oneof_schema_88_validator: Optional[RolesInfoSettingsConfig] = None
+    # data type: RootlyAuditLogsSettingsConfig
+    oneof_schema_89_validator: Optional[RootlyAuditLogsSettingsConfig] = None
+    # data type: SalesforceUsersSettingsConfig
+    oneof_schema_90_validator: Optional[SalesforceUsersSettingsConfig] = None
     # data type: SecretsmanagerSettingsConfig
-    oneof_schema_59_validator: Optional[SecretsmanagerSettingsConfig] = None
+    oneof_schema_91_validator: Optional[SecretsmanagerSettingsConfig] = None
     # data type: SecurityGroupsSettingsConfig
-    oneof_schema_60_validator: Optional[SecurityGroupsSettingsConfig] = None
+    oneof_schema_92_validator: Optional[SecurityGroupsSettingsConfig] = None
     # data type: SemgrepCodeFindingsSettingsConfig
-    oneof_schema_61_validator: Optional[SemgrepCodeFindingsSettingsConfig] = None
+    oneof_schema_93_validator: Optional[SemgrepCodeFindingsSettingsConfig] = None
     # data type: SemgrepDeploymentsSettingsConfig
-    oneof_schema_62_validator: Optional[SemgrepDeploymentsSettingsConfig] = None
+    oneof_schema_94_validator: Optional[SemgrepDeploymentsSettingsConfig] = None
     # data type: SemgrepProjectDetailsSettingsConfig
-    oneof_schema_63_validator: Optional[SemgrepProjectDetailsSettingsConfig] = None
+    oneof_schema_95_validator: Optional[SemgrepProjectDetailsSettingsConfig] = None
     # data type: SemgrepProjectsSettingsConfig
-    oneof_schema_64_validator: Optional[SemgrepProjectsSettingsConfig] = None
+    oneof_schema_96_validator: Optional[SemgrepProjectsSettingsConfig] = None
     # data type: SemgrepSupplyChainFindingsSettingsConfig
-    oneof_schema_65_validator: Optional[SemgrepSupplyChainFindingsSettingsConfig] = None
+    oneof_schema_97_validator: Optional[SemgrepSupplyChainFindingsSettingsConfig] = None
     # data type: SentryOrgAuditLogsSettingsConfig
-    oneof_schema_66_validator: Optional[SentryOrgAuditLogsSettingsConfig] = None
+    oneof_schema_98_validator: Optional[SentryOrgAuditLogsSettingsConfig] = None
+    # data type: SlackEnterpriseAuditLogsSettingsConfig
+    oneof_schema_99_validator: Optional[SlackEnterpriseAuditLogsSettingsConfig] = None
     # data type: SlackUsersSettingsConfig
-    oneof_schema_67_validator: Optional[SlackUsersSettingsConfig] = None
+    oneof_schema_100_validator: Optional[SlackUsersSettingsConfig] = None
     # data type: SlackgroupsSettingsConfig
-    oneof_schema_68_validator: Optional[SlackgroupsSettingsConfig] = None
+    oneof_schema_101_validator: Optional[SlackgroupsSettingsConfig] = None
     # data type: SnowflakeInputSettingsConfig
-    oneof_schema_69_validator: Optional[SnowflakeInputSettingsConfig] = None
+    oneof_schema_102_validator: Optional[SnowflakeInputSettingsConfig] = None
     # data type: SnykIssuesSettingsConfig
-    oneof_schema_70_validator: Optional[SnykIssuesSettingsConfig] = None
+    oneof_schema_103_validator: Optional[SnykIssuesSettingsConfig] = None
     # data type: SnykOrganizationsSettingsConfig
-    oneof_schema_71_validator: Optional[SnykOrganizationsSettingsConfig] = None
+    oneof_schema_104_validator: Optional[SnykOrganizationsSettingsConfig] = None
     # data type: SnykProjectsSettingsConfig
-    oneof_schema_72_validator: Optional[SnykProjectsSettingsConfig] = None
+    oneof_schema_105_validator: Optional[SnykProjectsSettingsConfig] = None
     # data type: SnykTargetsSettingsConfig
-    oneof_schema_73_validator: Optional[SnykTargetsSettingsConfig] = None
+    oneof_schema_106_validator: Optional[SnykTargetsSettingsConfig] = None
     # data type: SyntheticDataSettingsConfig
-    oneof_schema_74_validator: Optional[SyntheticDataSettingsConfig] = None
+    oneof_schema_107_validator: Optional[SyntheticDataSettingsConfig] = None
     # data type: SyntheticDataCustomSettingsConfig
-    oneof_schema_75_validator: Optional[SyntheticDataCustomSettingsConfig] = None
+    oneof_schema_108_validator: Optional[SyntheticDataCustomSettingsConfig] = None
     # data type: SystemlogSettingsConfig
-    oneof_schema_76_validator: Optional[SystemlogSettingsConfig] = None
+    oneof_schema_109_validator: Optional[SystemlogSettingsConfig] = None
     # data type: TailscaleUsersSettingsConfig
-    oneof_schema_77_validator: Optional[TailscaleUsersSettingsConfig] = None
+    oneof_schema_110_validator: Optional[TailscaleUsersSettingsConfig] = None
+    # data type: TaniumGraphqlInputSettingsConfig
+    oneof_schema_111_validator: Optional[TaniumGraphqlInputSettingsConfig] = None
+    # data type: TeamAccessLogsSettingsConfig
+    oneof_schema_112_validator: Optional[TeamAccessLogsSettingsConfig] = None
+    # data type: TeamIntegrationLogsSettingsConfig
+    oneof_schema_113_validator: Optional[TeamIntegrationLogsSettingsConfig] = None
+    # data type: TelephonyLogsSettingsConfig
+    oneof_schema_114_validator: Optional[TelephonyLogsSettingsConfig] = None
     # data type: TenableAssetsSettingsConfig
-    oneof_schema_78_validator: Optional[TenableAssetsSettingsConfig] = None
+    oneof_schema_115_validator: Optional[TenableAssetsSettingsConfig] = None
     # data type: TenableAssetsCronSettingsConfig
-    oneof_schema_79_validator: Optional[TenableAssetsCronSettingsConfig] = None
+    oneof_schema_116_validator: Optional[TenableAssetsCronSettingsConfig] = None
     # data type: TenableVulnerabilitiesSettingsConfig
-    oneof_schema_80_validator: Optional[TenableVulnerabilitiesSettingsConfig] = None
+    oneof_schema_117_validator: Optional[TenableVulnerabilitiesSettingsConfig] = None
     # data type: TenableVulnerabilitiesCronSettingsConfig
-    oneof_schema_81_validator: Optional[TenableVulnerabilitiesCronSettingsConfig] = None
+    oneof_schema_118_validator: Optional[TenableVulnerabilitiesCronSettingsConfig] = None
+    # data type: TinesAuditLogsSettingsConfig
+    oneof_schema_119_validator: Optional[TinesAuditLogsSettingsConfig] = None
+    # data type: TinesEventsLogsSettingsConfig
+    oneof_schema_120_validator: Optional[TinesEventsLogsSettingsConfig] = None
+    # data type: TwilioEventsSettingsConfig
+    oneof_schema_121_validator: Optional[TwilioEventsSettingsConfig] = None
+    # data type: TwilioSendgridEmailActivitySettingsConfig
+    oneof_schema_122_validator: Optional[TwilioSendgridEmailActivitySettingsConfig] = None
+    # data type: UniversalSettingsConfig
+    oneof_schema_123_validator: Optional[UniversalSettingsConfig] = None
     # data type: UsersSettingsConfig
-    oneof_schema_82_validator: Optional[UsersSettingsConfig] = None
+    oneof_schema_124_validator: Optional[UsersSettingsConfig] = None
     # data type: UsersInfoSettingsConfig
-    oneof_schema_83_validator: Optional[UsersInfoSettingsConfig] = None
+    oneof_schema_125_validator: Optional[UsersInfoSettingsConfig] = None
     # data type: VercelUserEventsSettingsConfig
-    oneof_schema_84_validator: Optional[VercelUserEventsSettingsConfig] = None
+    oneof_schema_126_validator: Optional[VercelUserEventsSettingsConfig] = None
     # data type: VulnerabilitiesSettingsConfig
-    oneof_schema_85_validator: Optional[VulnerabilitiesSettingsConfig] = None
+    oneof_schema_127_validator: Optional[VulnerabilitiesSettingsConfig] = None
     # data type: VulnerabilitiesCronSettingsConfig
-    oneof_schema_86_validator: Optional[VulnerabilitiesCronSettingsConfig] = None
+    oneof_schema_128_validator: Optional[VulnerabilitiesCronSettingsConfig] = None
     # data type: VulnerabilityFindingsSettingsConfig
-    oneof_schema_87_validator: Optional[VulnerabilityFindingsSettingsConfig] = None
-    actual_instance: Optional[Union[ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, Dict[str, object], DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IndividualAlertsSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VercelUserEventsSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object]] = None
-    one_of_schemas: Set[str] = { "ActivityLogsSettingsConfig", "ActorsInfoSettingsConfig", "AdminActivitySettingsConfig", "AdminLogsSettingsConfig", "AuditLogsSettingsConfig", "AuthLogsSettingsConfig", "AwsGuarddutySettingsConfig", "AwsS3SettingsConfig", "AwssqsSettingsConfig", "AzureActivityLogsSettingsConfig", "AzureBlobStorageSettingsConfig", "AzureVirtualMachineSettingsConfig", "AzureVnetFlowLogsSettingsConfig", "BigqueryInputSettingsConfig", "BoxEventsSettingsConfig", "BoxUsersSettingsConfig", "CisaUserSettingsConfig", "CloudAssetInventorySettingsConfig", "CloudConfigurationFindingsSettingsConfig", "CloudLogsSettingsConfig", "CloudResourceInventorySettingsConfig", "CloudtrailSettingsConfig", "ClumioAuditLogsSettingsConfig", "ClumioConsolidatedAlertsSettingsConfig", "CognitoUsersSettingsConfig", "CrowdstrikeFdrSettingsConfig", "DefenderForEndpointAlertsSettingsConfig", "DetectSummariesSettingsConfig", "DeviceActivitySettingsConfig", "DeviceDetailsSettingsConfig", "DevicesSettingsConfig", "Dict[str, object]", "DriveActivitySettingsConfig", "EntraIdSettingsConfig", "EventSettingsConfig", "EventsLogsSettingsConfig", "EventsSettingsConfig", "FullScansSettingsConfig", "GithubAdvisoryUserSettingsConfig", "GitlabIssuesSettingsConfig", "GoogleCloudStorageSettingsConfig", "IamAccessAnalyzerSettingsConfig", "IndividualAlertsSettingsConfig", "IssuesSettingsConfig", "KmsSettingsConfig", "LogAnalyticsQuerySettingsConfig", "LoginActivitySettingsConfig", "LoginSessionsSettingsConfig", "MonadLogSettingsConfig", "OauthActivitySettingsConfig", "ObjectStorageInputSettingsConfig", "OneloginEventsSettingsConfig", "OpenaiSettingsConfig", "OrganizationsSettingsConfig", "PaloAltoDataSecurityAlertsSettingsConfig", "ResourceEvaluationsSettingsConfig", "RolesInfoSettingsConfig", "SecretsmanagerSettingsConfig", "SecurityGroupsSettingsConfig", "SemgrepCodeFindingsSettingsConfig", "SemgrepDeploymentsSettingsConfig", "SemgrepProjectDetailsSettingsConfig", "SemgrepProjectsSettingsConfig", "SemgrepSupplyChainFindingsSettingsConfig", "SentryOrgAuditLogsSettingsConfig", "SlackUsersSettingsConfig", "SlackgroupsSettingsConfig", "SnowflakeInputSettingsConfig", "SnykIssuesSettingsConfig", "SnykOrganizationsSettingsConfig", "SnykProjectsSettingsConfig", "SnykTargetsSettingsConfig", "SyntheticDataCustomSettingsConfig", "SyntheticDataSettingsConfig", "SystemlogSettingsConfig", "TailscaleUsersSettingsConfig", "TenableAssetsCronSettingsConfig", "TenableAssetsSettingsConfig", "TenableVulnerabilitiesCronSettingsConfig", "TenableVulnerabilitiesSettingsConfig", "UsersInfoSettingsConfig", "UsersSettingsConfig", "VercelUserEventsSettingsConfig", "VulnerabilitiesCronSettingsConfig", "VulnerabilitiesSettingsConfig", "VulnerabilityFindingsSettingsConfig", "object" }
+    oneof_schema_129_validator: Optional[VulnerabilityFindingsSettingsConfig] = None
+    # data type: VulnerabilityFindingsReportSettingsConfig
+    oneof_schema_130_validator: Optional[VulnerabilityFindingsReportSettingsConfig] = None
+    # data type: WizAuditLogsSettingsConfig
+    oneof_schema_131_validator: Optional[WizAuditLogsSettingsConfig] = None
+    # data type: ZendeskAuditLogsSettingsConfig
+    oneof_schema_132_validator: Optional[ZendeskAuditLogsSettingsConfig] = None
+    # data type: ZoomActivityLogsSettingsConfig
+    oneof_schema_133_validator: Optional[ZoomActivityLogsSettingsConfig] = None
+    # data type: ZoomMeetingActivityLogsSettingsConfig
+    oneof_schema_134_validator: Optional[ZoomMeetingActivityLogsSettingsConfig] = None
+    actual_instance: Optional[Union[ActivityLogsSettingsConfig, ActivitylogsSettingsConfig, ActorsInfoSettingsConfig, AdminLogsSettingsConfig, AlertCenterSettingsConfig, ArizeAuditLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssecurityhubSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryCronSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventoryReportsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareAuditLogsSettingsConfig, CloudflareDnsRecordsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflarePageShieldConnectionsSettingsConfig, CloudflareRulesetsSettingsConfig, CloudflareSecurityInsightsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareUsersSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudflareZonesSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CodaAuditEventsSettingsConfig, CognitoUsersSettingsConfig, CortexXsoarManagementLogsSettingsConfig, CrowdstrikeFdrSettingsConfig, CustomerEventDataSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, Dict[str, object], EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, GreenhouseAuditLogsSettingsConfig, IamAccessAnalyzerSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesReportSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginSessionsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OperationLogsSettingsConfig, OracleSettingsConfig, OrgAuditLogsSettingsConfig, OrganizationsSettingsConfig, PagerdutyAuditRecordsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PolymerSettingsConfig, PostmanAuditLogsSettingsConfig, PubsubSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, RootlyAuditLogsSettingsConfig, SalesforceUsersSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, UniversalSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VercelUserEventsSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsReportSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig, ZendeskAuditLogsSettingsConfig, ZoomActivityLogsSettingsConfig, ZoomMeetingActivityLogsSettingsConfig, object]] = None
+    one_of_schemas: Set[str] = { "ActivityLogsSettingsConfig", "ActivitylogsSettingsConfig", "ActorsInfoSettingsConfig", "AdminLogsSettingsConfig", "AlertCenterSettingsConfig", "ArizeAuditLogsSettingsConfig", "AuditLogsSettingsConfig", "AuthLogsSettingsConfig", "AwsGuarddutySettingsConfig", "AwsS3SettingsConfig", "AwssecurityhubSettingsConfig", "Awssqss3SettingsConfig", "AzureActivityLogsSettingsConfig", "AzureBlobStorageSettingsConfig", "AzureEventHubsSettingsConfig", "AzureVirtualMachineSettingsConfig", "AzureVnetFlowLogsSettingsConfig", "BackblazeB2SettingsConfig", "BigqueryCronSettingsConfig", "BigqueryInputSettingsConfig", "BoxEventsSettingsConfig", "BoxUsersSettingsConfig", "BuildkiteAuditLogsSettingsConfig", "BuildkiteGraphqlInputSettingsConfig", "CisaUserSettingsConfig", "CloudAssetInventorySettingsConfig", "CloudConfigurationFindingsSettingsConfig", "CloudLogsSettingsConfig", "CloudResourceInventoryReportsSettingsConfig", "CloudResourceInventorySettingsConfig", "CloudflareAuditLogsSettingsConfig", "CloudflareDnsRecordsSettingsConfig", "CloudflareFirewallEventsSettingsConfig", "CloudflarePageShieldConnectionsSettingsConfig", "CloudflareRulesetsSettingsConfig", "CloudflareSecurityInsightsSettingsConfig", "CloudflareUrlScannerSettingsConfig", "CloudflareUsersSettingsConfig", "CloudflareZeroTrustAccessRequestsSettingsConfig", "CloudflareZonesSettingsConfig", "CloudtrailSettingsConfig", "ClumioAuditLogsSettingsConfig", "ClumioConsolidatedAlertsSettingsConfig", "CodaAuditEventsSettingsConfig", "CognitoUsersSettingsConfig", "CortexXsoarManagementLogsSettingsConfig", "CrowdstrikeFdrSettingsConfig", "CustomerEventDataSettingsConfig", "DefenderForEndpointAlertsSettingsConfig", "DeviceDetailsSettingsConfig", "DevicesSettingsConfig", "Dict[str, object]", "EndorLabsAuditLogsSettingsConfig", "EntraIdSettingsConfig", "EventSettingsConfig", "FullScansSettingsConfig", "GithubAdvisoryUserSettingsConfig", "GitlabIssuesSettingsConfig", "GoogleCloudStorageSettingsConfig", "GreenhouseAuditLogsSettingsConfig", "IamAccessAnalyzerSettingsConfig", "IndividualAlertsSettingsConfig", "InspectorSettingsConfig", "IssuesReportSettingsConfig", "IssuesSettingsConfig", "KmsSettingsConfig", "KoiAuditLogsSettingsConfig", "LogAnalyticsQuerySettingsConfig", "LoginSessionsSettingsConfig", "MerakiConfigLogsSettingsConfig", "Microsoft365GenericSettingsConfig", "MonadLogSettingsConfig", "ObjectStorageInputSettingsConfig", "OfflineenrollmentlogsSettingsConfig", "OneloginEventsSettingsConfig", "OpenaiSettingsConfig", "OperationLogsSettingsConfig", "OracleSettingsConfig", "OrgAuditLogsSettingsConfig", "OrganizationsSettingsConfig", "PagerdutyAuditRecordsSettingsConfig", "PaloAltoDataSecurityAlertsSettingsConfig", "PolymerSettingsConfig", "PostmanAuditLogsSettingsConfig", "PubsubSettingsConfig", "ResourceEvaluationsSettingsConfig", "RolesInfoSettingsConfig", "RootlyAuditLogsSettingsConfig", "SalesforceUsersSettingsConfig", "SecretsmanagerSettingsConfig", "SecurityGroupsSettingsConfig", "SemgrepCodeFindingsSettingsConfig", "SemgrepDeploymentsSettingsConfig", "SemgrepProjectDetailsSettingsConfig", "SemgrepProjectsSettingsConfig", "SemgrepSupplyChainFindingsSettingsConfig", "SentryOrgAuditLogsSettingsConfig", "SlackEnterpriseAuditLogsSettingsConfig", "SlackUsersSettingsConfig", "SlackgroupsSettingsConfig", "SnowflakeInputSettingsConfig", "SnykIssuesSettingsConfig", "SnykOrganizationsSettingsConfig", "SnykProjectsSettingsConfig", "SnykTargetsSettingsConfig", "SyntheticDataCustomSettingsConfig", "SyntheticDataSettingsConfig", "SystemlogSettingsConfig", "TailscaleUsersSettingsConfig", "TaniumGraphqlInputSettingsConfig", "TeamAccessLogsSettingsConfig", "TeamIntegrationLogsSettingsConfig", "TelephonyLogsSettingsConfig", "TenableAssetsCronSettingsConfig", "TenableAssetsSettingsConfig", "TenableVulnerabilitiesCronSettingsConfig", "TenableVulnerabilitiesSettingsConfig", "TinesAuditLogsSettingsConfig", "TinesEventsLogsSettingsConfig", "TwilioEventsSettingsConfig", "TwilioSendgridEmailActivitySettingsConfig", "UniversalSettingsConfig", "UsersInfoSettingsConfig", "UsersSettingsConfig", "VercelUserEventsSettingsConfig", "VulnerabilitiesCronSettingsConfig", "VulnerabilitiesSettingsConfig", "VulnerabilityFindingsReportSettingsConfig", "VulnerabilityFindingsSettingsConfig", "WizAuditLogsSettingsConfig", "ZendeskAuditLogsSettingsConfig", "ZoomActivityLogsSettingsConfig", "ZoomMeetingActivityLogsSettingsConfig", "object" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -316,19 +457,29 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `ActivityLogsSettingsConfig`")
         else:
             match += 1
+        # validate data type: ActivitylogsSettingsConfig
+        if not isinstance(v, ActivitylogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ActivitylogsSettingsConfig`")
+        else:
+            match += 1
         # validate data type: ActorsInfoSettingsConfig
         if not isinstance(v, ActorsInfoSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `ActorsInfoSettingsConfig`")
         else:
             match += 1
-        # validate data type: AdminActivitySettingsConfig
-        if not isinstance(v, AdminActivitySettingsConfig):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `AdminActivitySettingsConfig`")
-        else:
-            match += 1
         # validate data type: AdminLogsSettingsConfig
         if not isinstance(v, AdminLogsSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `AdminLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: AlertCenterSettingsConfig
+        if not isinstance(v, AlertCenterSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `AlertCenterSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: ArizeAuditLogsSettingsConfig
+        if not isinstance(v, ArizeAuditLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ArizeAuditLogsSettingsConfig`")
         else:
             match += 1
         # validate data type: AuditLogsSettingsConfig
@@ -351,9 +502,14 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `AwsS3SettingsConfig`")
         else:
             match += 1
-        # validate data type: AwssqsSettingsConfig
-        if not isinstance(v, AwssqsSettingsConfig):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `AwssqsSettingsConfig`")
+        # validate data type: AwssecurityhubSettingsConfig
+        if not isinstance(v, AwssecurityhubSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `AwssecurityhubSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: Awssqss3SettingsConfig
+        if not isinstance(v, Awssqss3SettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `Awssqss3SettingsConfig`")
         else:
             match += 1
         # validate data type: AzureActivityLogsSettingsConfig
@@ -366,6 +522,11 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `AzureBlobStorageSettingsConfig`")
         else:
             match += 1
+        # validate data type: AzureEventHubsSettingsConfig
+        if not isinstance(v, AzureEventHubsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `AzureEventHubsSettingsConfig`")
+        else:
+            match += 1
         # validate data type: AzureVirtualMachineSettingsConfig
         if not isinstance(v, AzureVirtualMachineSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `AzureVirtualMachineSettingsConfig`")
@@ -374,6 +535,16 @@ class SecretProcessesorInputConfigSettings(BaseModel):
         # validate data type: AzureVnetFlowLogsSettingsConfig
         if not isinstance(v, AzureVnetFlowLogsSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `AzureVnetFlowLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: BackblazeB2SettingsConfig
+        if not isinstance(v, BackblazeB2SettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `BackblazeB2SettingsConfig`")
+        else:
+            match += 1
+        # validate data type: BigqueryCronSettingsConfig
+        if not isinstance(v, BigqueryCronSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `BigqueryCronSettingsConfig`")
         else:
             match += 1
         # validate data type: BigqueryInputSettingsConfig
@@ -389,6 +560,16 @@ class SecretProcessesorInputConfigSettings(BaseModel):
         # validate data type: BoxUsersSettingsConfig
         if not isinstance(v, BoxUsersSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `BoxUsersSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: BuildkiteAuditLogsSettingsConfig
+        if not isinstance(v, BuildkiteAuditLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `BuildkiteAuditLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: BuildkiteGraphqlInputSettingsConfig
+        if not isinstance(v, BuildkiteGraphqlInputSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `BuildkiteGraphqlInputSettingsConfig`")
         else:
             match += 1
         # validate data type: CisaUserSettingsConfig
@@ -416,6 +597,61 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `CloudResourceInventorySettingsConfig`")
         else:
             match += 1
+        # validate data type: CloudResourceInventoryReportsSettingsConfig
+        if not isinstance(v, CloudResourceInventoryReportsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CloudResourceInventoryReportsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: CloudflareAuditLogsSettingsConfig
+        if not isinstance(v, CloudflareAuditLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CloudflareAuditLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: CloudflareDnsRecordsSettingsConfig
+        if not isinstance(v, CloudflareDnsRecordsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CloudflareDnsRecordsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: CloudflareFirewallEventsSettingsConfig
+        if not isinstance(v, CloudflareFirewallEventsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CloudflareFirewallEventsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: CloudflarePageShieldConnectionsSettingsConfig
+        if not isinstance(v, CloudflarePageShieldConnectionsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CloudflarePageShieldConnectionsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: CloudflareRulesetsSettingsConfig
+        if not isinstance(v, CloudflareRulesetsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CloudflareRulesetsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: CloudflareSecurityInsightsSettingsConfig
+        if not isinstance(v, CloudflareSecurityInsightsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CloudflareSecurityInsightsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: CloudflareUrlScannerSettingsConfig
+        if not isinstance(v, CloudflareUrlScannerSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CloudflareUrlScannerSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: CloudflareUsersSettingsConfig
+        if not isinstance(v, CloudflareUsersSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CloudflareUsersSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: CloudflareZeroTrustAccessRequestsSettingsConfig
+        if not isinstance(v, CloudflareZeroTrustAccessRequestsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CloudflareZeroTrustAccessRequestsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: CloudflareZonesSettingsConfig
+        if not isinstance(v, CloudflareZonesSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CloudflareZonesSettingsConfig`")
+        else:
+            match += 1
         # validate data type: CloudtrailSettingsConfig
         if not isinstance(v, CloudtrailSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `CloudtrailSettingsConfig`")
@@ -431,9 +667,19 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `ClumioConsolidatedAlertsSettingsConfig`")
         else:
             match += 1
+        # validate data type: CodaAuditEventsSettingsConfig
+        if not isinstance(v, CodaAuditEventsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CodaAuditEventsSettingsConfig`")
+        else:
+            match += 1
         # validate data type: CognitoUsersSettingsConfig
         if not isinstance(v, CognitoUsersSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `CognitoUsersSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: CortexXsoarManagementLogsSettingsConfig
+        if not isinstance(v, CortexXsoarManagementLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CortexXsoarManagementLogsSettingsConfig`")
         else:
             match += 1
         # validate data type: CrowdstrikeFdrSettingsConfig
@@ -441,19 +687,14 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `CrowdstrikeFdrSettingsConfig`")
         else:
             match += 1
+        # validate data type: CustomerEventDataSettingsConfig
+        if not isinstance(v, CustomerEventDataSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `CustomerEventDataSettingsConfig`")
+        else:
+            match += 1
         # validate data type: DefenderForEndpointAlertsSettingsConfig
         if not isinstance(v, DefenderForEndpointAlertsSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `DefenderForEndpointAlertsSettingsConfig`")
-        else:
-            match += 1
-        # validate data type: DetectSummariesSettingsConfig
-        if not isinstance(v, DetectSummariesSettingsConfig):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `DetectSummariesSettingsConfig`")
-        else:
-            match += 1
-        # validate data type: DeviceActivitySettingsConfig
-        if not isinstance(v, DeviceActivitySettingsConfig):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `DeviceActivitySettingsConfig`")
         else:
             match += 1
         # validate data type: DeviceDetailsSettingsConfig
@@ -466,9 +707,9 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `DevicesSettingsConfig`")
         else:
             match += 1
-        # validate data type: DriveActivitySettingsConfig
-        if not isinstance(v, DriveActivitySettingsConfig):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `DriveActivitySettingsConfig`")
+        # validate data type: EndorLabsAuditLogsSettingsConfig
+        if not isinstance(v, EndorLabsAuditLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `EndorLabsAuditLogsSettingsConfig`")
         else:
             match += 1
         # validate data type: EntraIdSettingsConfig
@@ -481,21 +722,17 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `EventSettingsConfig`")
         else:
             match += 1
-        # validate data type: EventsSettingsConfig
-        if not isinstance(v, EventsSettingsConfig):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `EventsSettingsConfig`")
-        else:
-            match += 1
-        # validate data type: EventsLogsSettingsConfig
-        if not isinstance(v, EventsLogsSettingsConfig):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `EventsLogsSettingsConfig`")
-        else:
-            match += 1
         # validate data type: FullScansSettingsConfig
         if not isinstance(v, FullScansSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `FullScansSettingsConfig`")
         else:
             match += 1
+        # validate data type: object
+        try:
+            instance.oneof_schema_56_validator = v
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # validate data type: GithubAdvisoryUserSettingsConfig
         if not isinstance(v, GithubAdvisoryUserSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `GithubAdvisoryUserSettingsConfig`")
@@ -511,6 +748,11 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `GoogleCloudStorageSettingsConfig`")
         else:
             match += 1
+        # validate data type: GreenhouseAuditLogsSettingsConfig
+        if not isinstance(v, GreenhouseAuditLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `GreenhouseAuditLogsSettingsConfig`")
+        else:
+            match += 1
         # validate data type: IamAccessAnalyzerSettingsConfig
         if not isinstance(v, IamAccessAnalyzerSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `IamAccessAnalyzerSettingsConfig`")
@@ -521,9 +763,19 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `IndividualAlertsSettingsConfig`")
         else:
             match += 1
+        # validate data type: InspectorSettingsConfig
+        if not isinstance(v, InspectorSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `InspectorSettingsConfig`")
+        else:
+            match += 1
         # validate data type: IssuesSettingsConfig
         if not isinstance(v, IssuesSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `IssuesSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: IssuesReportSettingsConfig
+        if not isinstance(v, IssuesReportSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `IssuesReportSettingsConfig`")
         else:
             match += 1
         # validate data type: KmsSettingsConfig
@@ -531,14 +783,14 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `KmsSettingsConfig`")
         else:
             match += 1
+        # validate data type: KoiAuditLogsSettingsConfig
+        if not isinstance(v, KoiAuditLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `KoiAuditLogsSettingsConfig`")
+        else:
+            match += 1
         # validate data type: LogAnalyticsQuerySettingsConfig
         if not isinstance(v, LogAnalyticsQuerySettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `LogAnalyticsQuerySettingsConfig`")
-        else:
-            match += 1
-        # validate data type: LoginActivitySettingsConfig
-        if not isinstance(v, LoginActivitySettingsConfig):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `LoginActivitySettingsConfig`")
         else:
             match += 1
         # validate data type: LoginSessionsSettingsConfig
@@ -546,15 +798,19 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `LoginSessionsSettingsConfig`")
         else:
             match += 1
+        # validate data type: MerakiConfigLogsSettingsConfig
+        if not isinstance(v, MerakiConfigLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `MerakiConfigLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: Microsoft365GenericSettingsConfig
+        if not isinstance(v, Microsoft365GenericSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `Microsoft365GenericSettingsConfig`")
+        else:
+            match += 1
         # validate data type: Dict[str, object]
         try:
-            instance.oneof_schema_48_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # validate data type: object
-        try:
-            instance.oneof_schema_49_validator = v
+            instance.oneof_schema_72_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -563,14 +819,14 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `MonadLogSettingsConfig`")
         else:
             match += 1
-        # validate data type: OauthActivitySettingsConfig
-        if not isinstance(v, OauthActivitySettingsConfig):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `OauthActivitySettingsConfig`")
-        else:
-            match += 1
         # validate data type: ObjectStorageInputSettingsConfig
         if not isinstance(v, ObjectStorageInputSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `ObjectStorageInputSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: OfflineenrollmentlogsSettingsConfig
+        if not isinstance(v, OfflineenrollmentlogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `OfflineenrollmentlogsSettingsConfig`")
         else:
             match += 1
         # validate data type: OneloginEventsSettingsConfig
@@ -583,14 +839,49 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `OpenaiSettingsConfig`")
         else:
             match += 1
+        # validate data type: OperationLogsSettingsConfig
+        if not isinstance(v, OperationLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `OperationLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: OracleSettingsConfig
+        if not isinstance(v, OracleSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `OracleSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: OrgAuditLogsSettingsConfig
+        if not isinstance(v, OrgAuditLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `OrgAuditLogsSettingsConfig`")
+        else:
+            match += 1
         # validate data type: OrganizationsSettingsConfig
         if not isinstance(v, OrganizationsSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `OrganizationsSettingsConfig`")
         else:
             match += 1
+        # validate data type: PagerdutyAuditRecordsSettingsConfig
+        if not isinstance(v, PagerdutyAuditRecordsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `PagerdutyAuditRecordsSettingsConfig`")
+        else:
+            match += 1
         # validate data type: PaloAltoDataSecurityAlertsSettingsConfig
         if not isinstance(v, PaloAltoDataSecurityAlertsSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `PaloAltoDataSecurityAlertsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: PolymerSettingsConfig
+        if not isinstance(v, PolymerSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `PolymerSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: PostmanAuditLogsSettingsConfig
+        if not isinstance(v, PostmanAuditLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `PostmanAuditLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: PubsubSettingsConfig
+        if not isinstance(v, PubsubSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `PubsubSettingsConfig`")
         else:
             match += 1
         # validate data type: ResourceEvaluationsSettingsConfig
@@ -601,6 +892,16 @@ class SecretProcessesorInputConfigSettings(BaseModel):
         # validate data type: RolesInfoSettingsConfig
         if not isinstance(v, RolesInfoSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `RolesInfoSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: RootlyAuditLogsSettingsConfig
+        if not isinstance(v, RootlyAuditLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `RootlyAuditLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: SalesforceUsersSettingsConfig
+        if not isinstance(v, SalesforceUsersSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `SalesforceUsersSettingsConfig`")
         else:
             match += 1
         # validate data type: SecretsmanagerSettingsConfig
@@ -641,6 +942,11 @@ class SecretProcessesorInputConfigSettings(BaseModel):
         # validate data type: SentryOrgAuditLogsSettingsConfig
         if not isinstance(v, SentryOrgAuditLogsSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `SentryOrgAuditLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: SlackEnterpriseAuditLogsSettingsConfig
+        if not isinstance(v, SlackEnterpriseAuditLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `SlackEnterpriseAuditLogsSettingsConfig`")
         else:
             match += 1
         # validate data type: SlackUsersSettingsConfig
@@ -698,6 +1004,26 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `TailscaleUsersSettingsConfig`")
         else:
             match += 1
+        # validate data type: TaniumGraphqlInputSettingsConfig
+        if not isinstance(v, TaniumGraphqlInputSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TaniumGraphqlInputSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: TeamAccessLogsSettingsConfig
+        if not isinstance(v, TeamAccessLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TeamAccessLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: TeamIntegrationLogsSettingsConfig
+        if not isinstance(v, TeamIntegrationLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TeamIntegrationLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: TelephonyLogsSettingsConfig
+        if not isinstance(v, TelephonyLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TelephonyLogsSettingsConfig`")
+        else:
+            match += 1
         # validate data type: TenableAssetsSettingsConfig
         if not isinstance(v, TenableAssetsSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `TenableAssetsSettingsConfig`")
@@ -716,6 +1042,31 @@ class SecretProcessesorInputConfigSettings(BaseModel):
         # validate data type: TenableVulnerabilitiesCronSettingsConfig
         if not isinstance(v, TenableVulnerabilitiesCronSettingsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `TenableVulnerabilitiesCronSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: TinesAuditLogsSettingsConfig
+        if not isinstance(v, TinesAuditLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TinesAuditLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: TinesEventsLogsSettingsConfig
+        if not isinstance(v, TinesEventsLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TinesEventsLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: TwilioEventsSettingsConfig
+        if not isinstance(v, TwilioEventsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TwilioEventsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: TwilioSendgridEmailActivitySettingsConfig
+        if not isinstance(v, TwilioSendgridEmailActivitySettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TwilioSendgridEmailActivitySettingsConfig`")
+        else:
+            match += 1
+        # validate data type: UniversalSettingsConfig
+        if not isinstance(v, UniversalSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `UniversalSettingsConfig`")
         else:
             match += 1
         # validate data type: UsersSettingsConfig
@@ -748,12 +1099,37 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `VulnerabilityFindingsSettingsConfig`")
         else:
             match += 1
+        # validate data type: VulnerabilityFindingsReportSettingsConfig
+        if not isinstance(v, VulnerabilityFindingsReportSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `VulnerabilityFindingsReportSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: WizAuditLogsSettingsConfig
+        if not isinstance(v, WizAuditLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `WizAuditLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: ZendeskAuditLogsSettingsConfig
+        if not isinstance(v, ZendeskAuditLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ZendeskAuditLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: ZoomActivityLogsSettingsConfig
+        if not isinstance(v, ZoomActivityLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ZoomActivityLogsSettingsConfig`")
+        else:
+            match += 1
+        # validate data type: ZoomMeetingActivityLogsSettingsConfig
+        if not isinstance(v, ZoomMeetingActivityLogsSettingsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ZoomMeetingActivityLogsSettingsConfig`")
+        else:
+            match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorInputConfigSettings with oneOf schemas: ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, Dict[str, object], DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IndividualAlertsSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VercelUserEventsSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorInputConfigSettings with oneOf schemas: ActivityLogsSettingsConfig, ActivitylogsSettingsConfig, ActorsInfoSettingsConfig, AdminLogsSettingsConfig, AlertCenterSettingsConfig, ArizeAuditLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssecurityhubSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryCronSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventoryReportsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareAuditLogsSettingsConfig, CloudflareDnsRecordsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflarePageShieldConnectionsSettingsConfig, CloudflareRulesetsSettingsConfig, CloudflareSecurityInsightsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareUsersSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudflareZonesSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CodaAuditEventsSettingsConfig, CognitoUsersSettingsConfig, CortexXsoarManagementLogsSettingsConfig, CrowdstrikeFdrSettingsConfig, CustomerEventDataSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, Dict[str, object], EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, GreenhouseAuditLogsSettingsConfig, IamAccessAnalyzerSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesReportSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginSessionsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OperationLogsSettingsConfig, OracleSettingsConfig, OrgAuditLogsSettingsConfig, OrganizationsSettingsConfig, PagerdutyAuditRecordsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PolymerSettingsConfig, PostmanAuditLogsSettingsConfig, PubsubSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, RootlyAuditLogsSettingsConfig, SalesforceUsersSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, UniversalSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VercelUserEventsSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsReportSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig, ZendeskAuditLogsSettingsConfig, ZoomActivityLogsSettingsConfig, ZoomMeetingActivityLogsSettingsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorInputConfigSettings with oneOf schemas: ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, Dict[str, object], DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IndividualAlertsSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VercelUserEventsSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorInputConfigSettings with oneOf schemas: ActivityLogsSettingsConfig, ActivitylogsSettingsConfig, ActorsInfoSettingsConfig, AdminLogsSettingsConfig, AlertCenterSettingsConfig, ArizeAuditLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssecurityhubSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryCronSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventoryReportsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareAuditLogsSettingsConfig, CloudflareDnsRecordsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflarePageShieldConnectionsSettingsConfig, CloudflareRulesetsSettingsConfig, CloudflareSecurityInsightsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareUsersSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudflareZonesSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CodaAuditEventsSettingsConfig, CognitoUsersSettingsConfig, CortexXsoarManagementLogsSettingsConfig, CrowdstrikeFdrSettingsConfig, CustomerEventDataSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, Dict[str, object], EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, GreenhouseAuditLogsSettingsConfig, IamAccessAnalyzerSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesReportSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginSessionsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OperationLogsSettingsConfig, OracleSettingsConfig, OrgAuditLogsSettingsConfig, OrganizationsSettingsConfig, PagerdutyAuditRecordsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PolymerSettingsConfig, PostmanAuditLogsSettingsConfig, PubsubSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, RootlyAuditLogsSettingsConfig, SalesforceUsersSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, UniversalSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VercelUserEventsSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsReportSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig, ZendeskAuditLogsSettingsConfig, ZoomActivityLogsSettingsConfig, ZoomMeetingActivityLogsSettingsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -774,21 +1150,33 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into ActivitylogsSettingsConfig
+        try:
+            instance.actual_instance = ActivitylogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into ActorsInfoSettingsConfig
         try:
             instance.actual_instance = ActorsInfoSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into AdminActivitySettingsConfig
-        try:
-            instance.actual_instance = AdminActivitySettingsConfig.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
         # deserialize data into AdminLogsSettingsConfig
         try:
             instance.actual_instance = AdminLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into AlertCenterSettingsConfig
+        try:
+            instance.actual_instance = AlertCenterSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into ArizeAuditLogsSettingsConfig
+        try:
+            instance.actual_instance = ArizeAuditLogsSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -816,9 +1204,15 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into AwssqsSettingsConfig
+        # deserialize data into AwssecurityhubSettingsConfig
         try:
-            instance.actual_instance = AwssqsSettingsConfig.from_json(json_str)
+            instance.actual_instance = AwssecurityhubSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into Awssqss3SettingsConfig
+        try:
+            instance.actual_instance = Awssqss3SettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -834,6 +1228,12 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into AzureEventHubsSettingsConfig
+        try:
+            instance.actual_instance = AzureEventHubsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into AzureVirtualMachineSettingsConfig
         try:
             instance.actual_instance = AzureVirtualMachineSettingsConfig.from_json(json_str)
@@ -843,6 +1243,18 @@ class SecretProcessesorInputConfigSettings(BaseModel):
         # deserialize data into AzureVnetFlowLogsSettingsConfig
         try:
             instance.actual_instance = AzureVnetFlowLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into BackblazeB2SettingsConfig
+        try:
+            instance.actual_instance = BackblazeB2SettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into BigqueryCronSettingsConfig
+        try:
+            instance.actual_instance = BigqueryCronSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -861,6 +1273,18 @@ class SecretProcessesorInputConfigSettings(BaseModel):
         # deserialize data into BoxUsersSettingsConfig
         try:
             instance.actual_instance = BoxUsersSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into BuildkiteAuditLogsSettingsConfig
+        try:
+            instance.actual_instance = BuildkiteAuditLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into BuildkiteGraphqlInputSettingsConfig
+        try:
+            instance.actual_instance = BuildkiteGraphqlInputSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -894,6 +1318,72 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into CloudResourceInventoryReportsSettingsConfig
+        try:
+            instance.actual_instance = CloudResourceInventoryReportsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into CloudflareAuditLogsSettingsConfig
+        try:
+            instance.actual_instance = CloudflareAuditLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into CloudflareDnsRecordsSettingsConfig
+        try:
+            instance.actual_instance = CloudflareDnsRecordsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into CloudflareFirewallEventsSettingsConfig
+        try:
+            instance.actual_instance = CloudflareFirewallEventsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into CloudflarePageShieldConnectionsSettingsConfig
+        try:
+            instance.actual_instance = CloudflarePageShieldConnectionsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into CloudflareRulesetsSettingsConfig
+        try:
+            instance.actual_instance = CloudflareRulesetsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into CloudflareSecurityInsightsSettingsConfig
+        try:
+            instance.actual_instance = CloudflareSecurityInsightsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into CloudflareUrlScannerSettingsConfig
+        try:
+            instance.actual_instance = CloudflareUrlScannerSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into CloudflareUsersSettingsConfig
+        try:
+            instance.actual_instance = CloudflareUsersSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into CloudflareZeroTrustAccessRequestsSettingsConfig
+        try:
+            instance.actual_instance = CloudflareZeroTrustAccessRequestsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into CloudflareZonesSettingsConfig
+        try:
+            instance.actual_instance = CloudflareZonesSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into CloudtrailSettingsConfig
         try:
             instance.actual_instance = CloudtrailSettingsConfig.from_json(json_str)
@@ -912,9 +1402,21 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into CodaAuditEventsSettingsConfig
+        try:
+            instance.actual_instance = CodaAuditEventsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into CognitoUsersSettingsConfig
         try:
             instance.actual_instance = CognitoUsersSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into CortexXsoarManagementLogsSettingsConfig
+        try:
+            instance.actual_instance = CortexXsoarManagementLogsSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -924,21 +1426,15 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into CustomerEventDataSettingsConfig
+        try:
+            instance.actual_instance = CustomerEventDataSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into DefenderForEndpointAlertsSettingsConfig
         try:
             instance.actual_instance = DefenderForEndpointAlertsSettingsConfig.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # deserialize data into DetectSummariesSettingsConfig
-        try:
-            instance.actual_instance = DetectSummariesSettingsConfig.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # deserialize data into DeviceActivitySettingsConfig
-        try:
-            instance.actual_instance = DeviceActivitySettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -954,9 +1450,9 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into DriveActivitySettingsConfig
+        # deserialize data into EndorLabsAuditLogsSettingsConfig
         try:
-            instance.actual_instance = DriveActivitySettingsConfig.from_json(json_str)
+            instance.actual_instance = EndorLabsAuditLogsSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -972,21 +1468,18 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into EventsSettingsConfig
-        try:
-            instance.actual_instance = EventsSettingsConfig.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # deserialize data into EventsLogsSettingsConfig
-        try:
-            instance.actual_instance = EventsLogsSettingsConfig.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
         # deserialize data into FullScansSettingsConfig
         try:
             instance.actual_instance = FullScansSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into object
+        try:
+            # validation
+            instance.oneof_schema_56_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_56_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -1008,6 +1501,12 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into GreenhouseAuditLogsSettingsConfig
+        try:
+            instance.actual_instance = GreenhouseAuditLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into IamAccessAnalyzerSettingsConfig
         try:
             instance.actual_instance = IamAccessAnalyzerSettingsConfig.from_json(json_str)
@@ -1020,9 +1519,21 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into InspectorSettingsConfig
+        try:
+            instance.actual_instance = InspectorSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into IssuesSettingsConfig
         try:
             instance.actual_instance = IssuesSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into IssuesReportSettingsConfig
+        try:
+            instance.actual_instance = IssuesReportSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -1032,15 +1543,15 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into LogAnalyticsQuerySettingsConfig
+        # deserialize data into KoiAuditLogsSettingsConfig
         try:
-            instance.actual_instance = LogAnalyticsQuerySettingsConfig.from_json(json_str)
+            instance.actual_instance = KoiAuditLogsSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into LoginActivitySettingsConfig
+        # deserialize data into LogAnalyticsQuerySettingsConfig
         try:
-            instance.actual_instance = LoginActivitySettingsConfig.from_json(json_str)
+            instance.actual_instance = LogAnalyticsQuerySettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -1050,21 +1561,24 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into Dict[str, object]
+        # deserialize data into MerakiConfigLogsSettingsConfig
         try:
-            # validation
-            instance.oneof_schema_48_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_48_validator
+            instance.actual_instance = MerakiConfigLogsSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into object
+        # deserialize data into Microsoft365GenericSettingsConfig
+        try:
+            instance.actual_instance = Microsoft365GenericSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into Dict[str, object]
         try:
             # validation
-            instance.oneof_schema_49_validator = json.loads(json_str)
+            instance.oneof_schema_72_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_49_validator
+            instance.actual_instance = instance.oneof_schema_72_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -1074,15 +1588,15 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into OauthActivitySettingsConfig
-        try:
-            instance.actual_instance = OauthActivitySettingsConfig.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
         # deserialize data into ObjectStorageInputSettingsConfig
         try:
             instance.actual_instance = ObjectStorageInputSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into OfflineenrollmentlogsSettingsConfig
+        try:
+            instance.actual_instance = OfflineenrollmentlogsSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -1098,15 +1612,57 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into OperationLogsSettingsConfig
+        try:
+            instance.actual_instance = OperationLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into OracleSettingsConfig
+        try:
+            instance.actual_instance = OracleSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into OrgAuditLogsSettingsConfig
+        try:
+            instance.actual_instance = OrgAuditLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into OrganizationsSettingsConfig
         try:
             instance.actual_instance = OrganizationsSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into PagerdutyAuditRecordsSettingsConfig
+        try:
+            instance.actual_instance = PagerdutyAuditRecordsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into PaloAltoDataSecurityAlertsSettingsConfig
         try:
             instance.actual_instance = PaloAltoDataSecurityAlertsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into PolymerSettingsConfig
+        try:
+            instance.actual_instance = PolymerSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into PostmanAuditLogsSettingsConfig
+        try:
+            instance.actual_instance = PostmanAuditLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into PubsubSettingsConfig
+        try:
+            instance.actual_instance = PubsubSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -1119,6 +1675,18 @@ class SecretProcessesorInputConfigSettings(BaseModel):
         # deserialize data into RolesInfoSettingsConfig
         try:
             instance.actual_instance = RolesInfoSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into RootlyAuditLogsSettingsConfig
+        try:
+            instance.actual_instance = RootlyAuditLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into SalesforceUsersSettingsConfig
+        try:
+            instance.actual_instance = SalesforceUsersSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -1167,6 +1735,12 @@ class SecretProcessesorInputConfigSettings(BaseModel):
         # deserialize data into SentryOrgAuditLogsSettingsConfig
         try:
             instance.actual_instance = SentryOrgAuditLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into SlackEnterpriseAuditLogsSettingsConfig
+        try:
+            instance.actual_instance = SlackEnterpriseAuditLogsSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -1236,6 +1810,30 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into TaniumGraphqlInputSettingsConfig
+        try:
+            instance.actual_instance = TaniumGraphqlInputSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into TeamAccessLogsSettingsConfig
+        try:
+            instance.actual_instance = TeamAccessLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into TeamIntegrationLogsSettingsConfig
+        try:
+            instance.actual_instance = TeamIntegrationLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into TelephonyLogsSettingsConfig
+        try:
+            instance.actual_instance = TelephonyLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into TenableAssetsSettingsConfig
         try:
             instance.actual_instance = TenableAssetsSettingsConfig.from_json(json_str)
@@ -1257,6 +1855,36 @@ class SecretProcessesorInputConfigSettings(BaseModel):
         # deserialize data into TenableVulnerabilitiesCronSettingsConfig
         try:
             instance.actual_instance = TenableVulnerabilitiesCronSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into TinesAuditLogsSettingsConfig
+        try:
+            instance.actual_instance = TinesAuditLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into TinesEventsLogsSettingsConfig
+        try:
+            instance.actual_instance = TinesEventsLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into TwilioEventsSettingsConfig
+        try:
+            instance.actual_instance = TwilioEventsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into TwilioSendgridEmailActivitySettingsConfig
+        try:
+            instance.actual_instance = TwilioSendgridEmailActivitySettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into UniversalSettingsConfig
+        try:
+            instance.actual_instance = UniversalSettingsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -1296,13 +1924,43 @@ class SecretProcessesorInputConfigSettings(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into VulnerabilityFindingsReportSettingsConfig
+        try:
+            instance.actual_instance = VulnerabilityFindingsReportSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into WizAuditLogsSettingsConfig
+        try:
+            instance.actual_instance = WizAuditLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into ZendeskAuditLogsSettingsConfig
+        try:
+            instance.actual_instance = ZendeskAuditLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into ZoomActivityLogsSettingsConfig
+        try:
+            instance.actual_instance = ZoomActivityLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into ZoomMeetingActivityLogsSettingsConfig
+        try:
+            instance.actual_instance = ZoomMeetingActivityLogsSettingsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorInputConfigSettings with oneOf schemas: ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, Dict[str, object], DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IndividualAlertsSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VercelUserEventsSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorInputConfigSettings with oneOf schemas: ActivityLogsSettingsConfig, ActivitylogsSettingsConfig, ActorsInfoSettingsConfig, AdminLogsSettingsConfig, AlertCenterSettingsConfig, ArizeAuditLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssecurityhubSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryCronSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventoryReportsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareAuditLogsSettingsConfig, CloudflareDnsRecordsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflarePageShieldConnectionsSettingsConfig, CloudflareRulesetsSettingsConfig, CloudflareSecurityInsightsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareUsersSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudflareZonesSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CodaAuditEventsSettingsConfig, CognitoUsersSettingsConfig, CortexXsoarManagementLogsSettingsConfig, CrowdstrikeFdrSettingsConfig, CustomerEventDataSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, Dict[str, object], EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, GreenhouseAuditLogsSettingsConfig, IamAccessAnalyzerSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesReportSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginSessionsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OperationLogsSettingsConfig, OracleSettingsConfig, OrgAuditLogsSettingsConfig, OrganizationsSettingsConfig, PagerdutyAuditRecordsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PolymerSettingsConfig, PostmanAuditLogsSettingsConfig, PubsubSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, RootlyAuditLogsSettingsConfig, SalesforceUsersSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, UniversalSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VercelUserEventsSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsReportSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig, ZendeskAuditLogsSettingsConfig, ZoomActivityLogsSettingsConfig, ZoomMeetingActivityLogsSettingsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorInputConfigSettings with oneOf schemas: ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, Dict[str, object], DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IndividualAlertsSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VercelUserEventsSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorInputConfigSettings with oneOf schemas: ActivityLogsSettingsConfig, ActivitylogsSettingsConfig, ActorsInfoSettingsConfig, AdminLogsSettingsConfig, AlertCenterSettingsConfig, ArizeAuditLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssecurityhubSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryCronSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventoryReportsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareAuditLogsSettingsConfig, CloudflareDnsRecordsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflarePageShieldConnectionsSettingsConfig, CloudflareRulesetsSettingsConfig, CloudflareSecurityInsightsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareUsersSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudflareZonesSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CodaAuditEventsSettingsConfig, CognitoUsersSettingsConfig, CortexXsoarManagementLogsSettingsConfig, CrowdstrikeFdrSettingsConfig, CustomerEventDataSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, Dict[str, object], EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, GreenhouseAuditLogsSettingsConfig, IamAccessAnalyzerSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesReportSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginSessionsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OperationLogsSettingsConfig, OracleSettingsConfig, OrgAuditLogsSettingsConfig, OrganizationsSettingsConfig, PagerdutyAuditRecordsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PolymerSettingsConfig, PostmanAuditLogsSettingsConfig, PubsubSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, RootlyAuditLogsSettingsConfig, SalesforceUsersSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, UniversalSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VercelUserEventsSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsReportSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig, ZendeskAuditLogsSettingsConfig, ZoomActivityLogsSettingsConfig, ZoomMeetingActivityLogsSettingsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -1316,7 +1974,7 @@ class SecretProcessesorInputConfigSettings(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], ActivityLogsSettingsConfig, ActorsInfoSettingsConfig, AdminActivitySettingsConfig, AdminLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssqsSettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CognitoUsersSettingsConfig, CrowdstrikeFdrSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DetectSummariesSettingsConfig, DeviceActivitySettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, Dict[str, object], DriveActivitySettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, EventsLogsSettingsConfig, EventsSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, IamAccessAnalyzerSettingsConfig, IndividualAlertsSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginActivitySettingsConfig, LoginSessionsSettingsConfig, MonadLogSettingsConfig, OauthActivitySettingsConfig, ObjectStorageInputSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OrganizationsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VercelUserEventsSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsSettingsConfig, object]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], ActivityLogsSettingsConfig, ActivitylogsSettingsConfig, ActorsInfoSettingsConfig, AdminLogsSettingsConfig, AlertCenterSettingsConfig, ArizeAuditLogsSettingsConfig, AuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwssecurityhubSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVirtualMachineSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryCronSettingsConfig, BigqueryInputSettingsConfig, BoxEventsSettingsConfig, BoxUsersSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudAssetInventorySettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventoryReportsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareAuditLogsSettingsConfig, CloudflareDnsRecordsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflarePageShieldConnectionsSettingsConfig, CloudflareRulesetsSettingsConfig, CloudflareSecurityInsightsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareUsersSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudflareZonesSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CodaAuditEventsSettingsConfig, CognitoUsersSettingsConfig, CortexXsoarManagementLogsSettingsConfig, CrowdstrikeFdrSettingsConfig, CustomerEventDataSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DeviceDetailsSettingsConfig, DevicesSettingsConfig, Dict[str, object], EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubAdvisoryUserSettingsConfig, GitlabIssuesSettingsConfig, GoogleCloudStorageSettingsConfig, GreenhouseAuditLogsSettingsConfig, IamAccessAnalyzerSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesReportSettingsConfig, IssuesSettingsConfig, KmsSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LoginSessionsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OneloginEventsSettingsConfig, OpenaiSettingsConfig, OperationLogsSettingsConfig, OracleSettingsConfig, OrgAuditLogsSettingsConfig, OrganizationsSettingsConfig, PagerdutyAuditRecordsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PolymerSettingsConfig, PostmanAuditLogsSettingsConfig, PubsubSettingsConfig, ResourceEvaluationsSettingsConfig, RolesInfoSettingsConfig, RootlyAuditLogsSettingsConfig, SalesforceUsersSettingsConfig, SecretsmanagerSettingsConfig, SecurityGroupsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepDeploymentsSettingsConfig, SemgrepProjectDetailsSettingsConfig, SemgrepProjectsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SentryOrgAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SlackUsersSettingsConfig, SlackgroupsSettingsConfig, SnowflakeInputSettingsConfig, SnykIssuesSettingsConfig, SnykOrganizationsSettingsConfig, SnykProjectsSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, SystemlogSettingsConfig, TailscaleUsersSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TenableAssetsCronSettingsConfig, TenableAssetsSettingsConfig, TenableVulnerabilitiesCronSettingsConfig, TenableVulnerabilitiesSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, UniversalSettingsConfig, UsersInfoSettingsConfig, UsersSettingsConfig, VercelUserEventsSettingsConfig, VulnerabilitiesCronSettingsConfig, VulnerabilitiesSettingsConfig, VulnerabilityFindingsReportSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig, ZendeskAuditLogsSettingsConfig, ZoomActivityLogsSettingsConfig, ZoomMeetingActivityLogsSettingsConfig, object]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

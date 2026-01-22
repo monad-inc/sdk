@@ -20,6 +20,8 @@ var _ MappedNullable = &CloudConfigurationFindingsSettingsConfig{}
 
 // CloudConfigurationFindingsSettingsConfig Wiz cloud configuration findings settings
 type CloudConfigurationFindingsSettingsConfig struct {
+	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-configuration-findings'.
 	EndpointUrl *string `json:"endpoint_url,omitempty"`
 	// Result types for Wiz. Ex: 'PASSED', 'FAILED'.
@@ -47,6 +49,38 @@ func NewCloudConfigurationFindingsSettingsConfig() *CloudConfigurationFindingsSe
 func NewCloudConfigurationFindingsSettingsConfigWithDefaults() *CloudConfigurationFindingsSettingsConfig {
 	this := CloudConfigurationFindingsSettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *CloudConfigurationFindingsSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudConfigurationFindingsSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *CloudConfigurationFindingsSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *CloudConfigurationFindingsSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetEndpointUrl returns the EndpointUrl field value if set, zero value otherwise.
@@ -219,6 +253,9 @@ func (o CloudConfigurationFindingsSettingsConfig) MarshalJSON() ([]byte, error) 
 
 func (o CloudConfigurationFindingsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.EndpointUrl) {
 		toSerialize["endpoint_url"] = o.EndpointUrl
 	}

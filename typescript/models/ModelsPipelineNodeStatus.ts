@@ -11,6 +11,7 @@
  */
 
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
+import { PipelineNodeStatusProgressTimestamps } from '../models/PipelineNodeStatusProgressTimestamps';
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineNodeStatus {
@@ -22,6 +23,7 @@ export class ModelsPipelineNodeStatus {
     'ingress'?: ModelsDataUsage;
     'nodeId'?: string;
     'nodeSlug'?: string;
+    'progressTimestamps'?: PipelineNodeStatusProgressTimestamps;
     'status'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -75,6 +77,12 @@ export class ModelsPipelineNodeStatus {
             "name": "nodeSlug",
             "baseName": "node_slug",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "progressTimestamps",
+            "baseName": "progress_timestamps",
+            "type": "PipelineNodeStatusProgressTimestamps",
             "format": ""
         },
         {

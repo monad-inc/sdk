@@ -13,6 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class RoutesUserAuthProvider {
+    'id'?: string;
     'provider'?: string;
     'providerId'?: string;
 
@@ -21,6 +22,12 @@ export class RoutesUserAuthProvider {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "id",
+            "baseName": "id",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "provider",
             "baseName": "provider",

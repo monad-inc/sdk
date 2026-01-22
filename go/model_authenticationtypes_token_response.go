@@ -21,6 +21,7 @@ var _ MappedNullable = &AuthenticationtypesTokenResponse{}
 // AuthenticationtypesTokenResponse struct for AuthenticationtypesTokenResponse
 type AuthenticationtypesTokenResponse struct {
 	AccessToken *string `json:"access_token,omitempty"`
+	Email *string `json:"email,omitempty"`
 	ExpiresIn *int32 `json:"expires_in,omitempty"`
 	IdToken *string `json:"id_token,omitempty"`
 	RefreshToken *string `json:"refresh_token,omitempty"`
@@ -74,6 +75,38 @@ func (o *AuthenticationtypesTokenResponse) HasAccessToken() bool {
 // SetAccessToken gets a reference to the given string and assigns it to the AccessToken field.
 func (o *AuthenticationtypesTokenResponse) SetAccessToken(v string) {
 	o.AccessToken = &v
+}
+
+// GetEmail returns the Email field value if set, zero value otherwise.
+func (o *AuthenticationtypesTokenResponse) GetEmail() string {
+	if o == nil || IsNil(o.Email) {
+		var ret string
+		return ret
+	}
+	return *o.Email
+}
+
+// GetEmailOk returns a tuple with the Email field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthenticationtypesTokenResponse) GetEmailOk() (*string, bool) {
+	if o == nil || IsNil(o.Email) {
+		return nil, false
+	}
+	return o.Email, true
+}
+
+// HasEmail returns a boolean if a field has been set.
+func (o *AuthenticationtypesTokenResponse) HasEmail() bool {
+	if o != nil && !IsNil(o.Email) {
+		return true
+	}
+
+	return false
+}
+
+// SetEmail gets a reference to the given string and assigns it to the Email field.
+func (o *AuthenticationtypesTokenResponse) SetEmail(v string) {
+	o.Email = &v
 }
 
 // GetExpiresIn returns the ExpiresIn field value if set, zero value otherwise.
@@ -216,6 +249,9 @@ func (o AuthenticationtypesTokenResponse) ToMap() (map[string]interface{}, error
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.AccessToken) {
 		toSerialize["access_token"] = o.AccessToken
+	}
+	if !IsNil(o.Email) {
+		toSerialize["email"] = o.Email
 	}
 	if !IsNil(o.ExpiresIn) {
 		toSerialize["expires_in"] = o.ExpiresIn

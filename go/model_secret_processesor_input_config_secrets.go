@@ -20,53 +20,88 @@ import (
 // SecretProcessesorInputConfigSecrets - struct for SecretProcessesorInputConfigSecrets
 type SecretProcessesorInputConfigSecrets struct {
 	ActivityLogsSecretsConfig *ActivityLogsSecretsConfig
+	ActivitylogsSecretsConfig *ActivitylogsSecretsConfig
 	ActorsInfoSecretsConfig *ActorsInfoSecretsConfig
-	AdminActivitySecretsConfig *AdminActivitySecretsConfig
 	AdminLogsSecretsConfig *AdminLogsSecretsConfig
+	AlertCenterSecretsConfig *AlertCenterSecretsConfig
+	ArizeAuditLogsSecretsConfig *ArizeAuditLogsSecretsConfig
 	AuditLogsSecretsConfig *AuditLogsSecretsConfig
 	AuthLogsSecretsConfig *AuthLogsSecretsConfig
+	AwsGuarddutySecretsConfig *AwsGuarddutySecretsConfig
+	AwsS3SecretsConfig *AwsS3SecretsConfig
+	AwssecurityhubSecretsConfig *AwssecurityhubSecretsConfig
 	AzureActivityLogsSecretsConfig *AzureActivityLogsSecretsConfig
 	AzureBlobStorageSecretsConfig *AzureBlobStorageSecretsConfig
+	AzureEventHubsSecretsConfig *AzureEventHubsSecretsConfig
 	AzureVnetFlowLogsSecretsConfig *AzureVnetFlowLogsSecretsConfig
+	BackblazeB2SecretsConfig *BackblazeB2SecretsConfig
+	BigqueryCronSecretsConfig *BigqueryCronSecretsConfig
 	BigqueryInputSecretsConfig *BigqueryInputSecretsConfig
 	BoxEventsSecretsConfig *BoxEventsSecretsConfig
 	BoxUsersSecretsConfig *BoxUsersSecretsConfig
+	BuildkiteAuditLogsSecretsConfig *BuildkiteAuditLogsSecretsConfig
+	BuildkiteGraphqlInputSecretsConfig *BuildkiteGraphqlInputSecretsConfig
 	CloudAssetInventorySecretsConfig *CloudAssetInventorySecretsConfig
 	CloudConfigurationFindingsSecretsConfig *CloudConfigurationFindingsSecretsConfig
 	CloudLogsSecretsConfig *CloudLogsSecretsConfig
+	CloudResourceInventoryReportsSecretsConfig *CloudResourceInventoryReportsSecretsConfig
 	CloudResourceInventorySecretsConfig *CloudResourceInventorySecretsConfig
+	CloudflareAuditLogsSecretsConfig *CloudflareAuditLogsSecretsConfig
+	CloudflareDnsRecordsSecretsConfig *CloudflareDnsRecordsSecretsConfig
+	CloudflareFirewallEventsSecretsConfig *CloudflareFirewallEventsSecretsConfig
+	CloudflarePageShieldConnectionsSecretsConfig *CloudflarePageShieldConnectionsSecretsConfig
+	CloudflareRulesetsSecretsConfig *CloudflareRulesetsSecretsConfig
+	CloudflareSecurityInsightsSecretsConfig *CloudflareSecurityInsightsSecretsConfig
+	CloudflareUrlScannerSecretsConfig *CloudflareUrlScannerSecretsConfig
+	CloudflareUsersSecretsConfig *CloudflareUsersSecretsConfig
+	CloudflareZeroTrustAccessRequestsSecretsConfig *CloudflareZeroTrustAccessRequestsSecretsConfig
+	CloudflareZonesSecretsConfig *CloudflareZonesSecretsConfig
 	ClumioAuditLogsSecretsConfig *ClumioAuditLogsSecretsConfig
 	ClumioConsolidatedAlertsSecretsConfig *ClumioConsolidatedAlertsSecretsConfig
+	CodaAuditEventsSecretsConfig *CodaAuditEventsSecretsConfig
+	CortexXsoarManagementLogsSecretsConfig *CortexXsoarManagementLogsSecretsConfig
 	CrowdstrikeFdrSecretsConfig *CrowdstrikeFdrSecretsConfig
+	CustomerEventDataSecretsConfig *CustomerEventDataSecretsConfig
 	DefenderForEndpointAlertsSecretsConfig *DefenderForEndpointAlertsSecretsConfig
-	DetectSummariesSecretsConfig *DetectSummariesSecretsConfig
-	DeviceActivitySecretsConfig *DeviceActivitySecretsConfig
 	DeviceDetailsSecretsConfig *DeviceDetailsSecretsConfig
 	DevicesSecretsConfig *DevicesSecretsConfig
-	DriveActivitySecretsConfig *DriveActivitySecretsConfig
+	EndorLabsAuditLogsSecretsConfig *EndorLabsAuditLogsSecretsConfig
 	EntraIdSecretsConfig *EntraIdSecretsConfig
 	EventSecretsConfig *EventSecretsConfig
-	EventsLogsSecretsConfig *EventsLogsSecretsConfig
-	EventsSecretsConfig *EventsSecretsConfig
 	FullScansSecretsConfig *FullScansSecretsConfig
 	GitlabIssuesSecretsConfig *GitlabIssuesSecretsConfig
 	GoogleCloudStorageSecretsConfig *GoogleCloudStorageSecretsConfig
+	GreenhouseAuditLogsSecretsConfig *GreenhouseAuditLogsSecretsConfig
 	IndividualAlertsSecretsConfig *IndividualAlertsSecretsConfig
+	InspectorSecretsConfig *InspectorSecretsConfig
+	IssuesReportSecretsConfig *IssuesReportSecretsConfig
 	IssuesSecretsConfig *IssuesSecretsConfig
+	KoiAuditLogsSecretsConfig *KoiAuditLogsSecretsConfig
 	LogAnalyticsQuerySecretsConfig *LogAnalyticsQuerySecretsConfig
-	LoginActivitySecretsConfig *LoginActivitySecretsConfig
 	LoginSessionsSecretsConfig *LoginSessionsSecretsConfig
-	OauthActivitySecretsConfig *OauthActivitySecretsConfig
+	MerakiConfigLogsSecretsConfig *MerakiConfigLogsSecretsConfig
+	Microsoft365GenericSecretsConfig *Microsoft365GenericSecretsConfig
 	ObjectStorageInputSecretsConfig *ObjectStorageInputSecretsConfig
+	OfflineenrollmentlogsSecretsConfig *OfflineenrollmentlogsSecretsConfig
 	OneloginEventsSecretsConfig *OneloginEventsSecretsConfig
+	OperationLogsSecretsConfig *OperationLogsSecretsConfig
+	OrgAuditLogsSecretsConfig *OrgAuditLogsSecretsConfig
+	PagerdutyAuditRecordsSecretsConfig *PagerdutyAuditRecordsSecretsConfig
 	PaloAltoDataSecurityAlertsSecretsConfig *PaloAltoDataSecurityAlertsSecretsConfig
+	PolymerSecretsConfig *PolymerSecretsConfig
+	PostmanAuditLogsSecretsConfig *PostmanAuditLogsSecretsConfig
+	PubsubSecretsConfig *PubsubSecretsConfig
 	RolesInfoSecretsConfig *RolesInfoSecretsConfig
+	RootlyAuditLogsSecretsConfig *RootlyAuditLogsSecretsConfig
+	SalesforceUsersSecretsConfig *SalesforceUsersSecretsConfig
+	SecretsmanagerSecretsConfig *SecretsmanagerSecretsConfig
 	SemgrepCodeFindingsSecretsConfig *SemgrepCodeFindingsSecretsConfig
 	SemgrepDeploymentsSecretsConfig *SemgrepDeploymentsSecretsConfig
 	SemgrepProjectDetailsSecretsConfig *SemgrepProjectDetailsSecretsConfig
 	SemgrepProjectsSecretsConfig *SemgrepProjectsSecretsConfig
 	SemgrepSupplyChainFindingsSecretsConfig *SemgrepSupplyChainFindingsSecretsConfig
 	SentryOrgAuditLogsSecretsConfig *SentryOrgAuditLogsSecretsConfig
+	SlackEnterpriseAuditLogsSecretsConfig *SlackEnterpriseAuditLogsSecretsConfig
 	SlackUsersSecretsConfig *SlackUsersSecretsConfig
 	SlackgroupsSecretsConfig *SlackgroupsSecretsConfig
 	SnowflakeInputSecretsConfig *SnowflakeInputSecretsConfig
@@ -76,16 +111,30 @@ type SecretProcessesorInputConfigSecrets struct {
 	SnykTargetsSecretsConfig *SnykTargetsSecretsConfig
 	SystemlogSecretsConfig *SystemlogSecretsConfig
 	TailscaleUsersSecretsConfig *TailscaleUsersSecretsConfig
+	TaniumGraphqlInputSecretsConfig *TaniumGraphqlInputSecretsConfig
+	TeamAccessLogsSecretsConfig *TeamAccessLogsSecretsConfig
+	TeamIntegrationLogsSecretsConfig *TeamIntegrationLogsSecretsConfig
+	TelephonyLogsSecretsConfig *TelephonyLogsSecretsConfig
 	TenableAssetsCronSecretsConfig *TenableAssetsCronSecretsConfig
 	TenableAssetsSecretsConfig *TenableAssetsSecretsConfig
 	TenableVulnerabilitiesCronSecretsConfig *TenableVulnerabilitiesCronSecretsConfig
 	TenableVulnerabilitiesSecretsConfig *TenableVulnerabilitiesSecretsConfig
+	TinesAuditLogsSecretsConfig *TinesAuditLogsSecretsConfig
+	TinesEventsLogsSecretsConfig *TinesEventsLogsSecretsConfig
+	TwilioEventsSecretsConfig *TwilioEventsSecretsConfig
+	TwilioSendgridEmailActivitySecretsConfig *TwilioSendgridEmailActivitySecretsConfig
+	UniversalSecretsConfig *UniversalSecretsConfig
 	UsersInfoSecretsConfig *UsersInfoSecretsConfig
 	UsersSecretsConfig *UsersSecretsConfig
 	VercelUserEventsSecretsConfig *VercelUserEventsSecretsConfig
 	VulnerabilitiesCronSecretsConfig *VulnerabilitiesCronSecretsConfig
 	VulnerabilitiesSecretsConfig *VulnerabilitiesSecretsConfig
+	VulnerabilityFindingsReportSecretsConfig *VulnerabilityFindingsReportSecretsConfig
 	VulnerabilityFindingsSecretsConfig *VulnerabilityFindingsSecretsConfig
+	WizAuditLogsSecretsConfig *WizAuditLogsSecretsConfig
+	ZendeskAuditLogsSecretsConfig *ZendeskAuditLogsSecretsConfig
+	ZoomActivityLogsSecretsConfig *ZoomActivityLogsSecretsConfig
+	ZoomMeetingActivityLogsSecretsConfig *ZoomMeetingActivityLogsSecretsConfig
 	MapmapOfStringAny *map[string]interface{}
 }
 
@@ -96,6 +145,13 @@ func ActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ActivityL
 	}
 }
 
+// ActivitylogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ActivitylogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func ActivitylogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ActivitylogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		ActivitylogsSecretsConfig: v,
+	}
+}
+
 // ActorsInfoSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ActorsInfoSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func ActorsInfoSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ActorsInfoSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -103,17 +159,24 @@ func ActorsInfoSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ActorsInfoS
 	}
 }
 
-// AdminActivitySecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AdminActivitySecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func AdminActivitySecretsConfigAsSecretProcessesorInputConfigSecrets(v *AdminActivitySecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		AdminActivitySecretsConfig: v,
-	}
-}
-
 // AdminLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AdminLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func AdminLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AdminLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		AdminLogsSecretsConfig: v,
+	}
+}
+
+// AlertCenterSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AlertCenterSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func AlertCenterSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AlertCenterSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		AlertCenterSecretsConfig: v,
+	}
+}
+
+// ArizeAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ArizeAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func ArizeAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ArizeAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		ArizeAuditLogsSecretsConfig: v,
 	}
 }
 
@@ -131,6 +194,27 @@ func AuthLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AuthLogsSecre
 	}
 }
 
+// AwsGuarddutySecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AwsGuarddutySecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func AwsGuarddutySecretsConfigAsSecretProcessesorInputConfigSecrets(v *AwsGuarddutySecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		AwsGuarddutySecretsConfig: v,
+	}
+}
+
+// AwsS3SecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AwsS3SecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func AwsS3SecretsConfigAsSecretProcessesorInputConfigSecrets(v *AwsS3SecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		AwsS3SecretsConfig: v,
+	}
+}
+
+// AwssecurityhubSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AwssecurityhubSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func AwssecurityhubSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AwssecurityhubSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		AwssecurityhubSecretsConfig: v,
+	}
+}
+
 // AzureActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AzureActivityLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func AzureActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AzureActivityLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -145,10 +229,31 @@ func AzureBlobStorageSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Azure
 	}
 }
 
+// AzureEventHubsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AzureEventHubsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func AzureEventHubsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AzureEventHubsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		AzureEventHubsSecretsConfig: v,
+	}
+}
+
 // AzureVnetFlowLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AzureVnetFlowLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func AzureVnetFlowLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AzureVnetFlowLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		AzureVnetFlowLogsSecretsConfig: v,
+	}
+}
+
+// BackblazeB2SecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns BackblazeB2SecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func BackblazeB2SecretsConfigAsSecretProcessesorInputConfigSecrets(v *BackblazeB2SecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		BackblazeB2SecretsConfig: v,
+	}
+}
+
+// BigqueryCronSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns BigqueryCronSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func BigqueryCronSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BigqueryCronSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		BigqueryCronSecretsConfig: v,
 	}
 }
 
@@ -173,6 +278,20 @@ func BoxUsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BoxUsersSecre
 	}
 }
 
+// BuildkiteAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns BuildkiteAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func BuildkiteAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BuildkiteAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		BuildkiteAuditLogsSecretsConfig: v,
+	}
+}
+
+// BuildkiteGraphqlInputSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns BuildkiteGraphqlInputSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func BuildkiteGraphqlInputSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BuildkiteGraphqlInputSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		BuildkiteGraphqlInputSecretsConfig: v,
+	}
+}
+
 // CloudAssetInventorySecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudAssetInventorySecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func CloudAssetInventorySecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudAssetInventorySecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -194,10 +313,87 @@ func CloudLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudLogsSec
 	}
 }
 
+// CloudResourceInventoryReportsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudResourceInventoryReportsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CloudResourceInventoryReportsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudResourceInventoryReportsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CloudResourceInventoryReportsSecretsConfig: v,
+	}
+}
+
 // CloudResourceInventorySecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudResourceInventorySecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func CloudResourceInventorySecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudResourceInventorySecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		CloudResourceInventorySecretsConfig: v,
+	}
+}
+
+// CloudflareAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CloudflareAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CloudflareAuditLogsSecretsConfig: v,
+	}
+}
+
+// CloudflareDnsRecordsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareDnsRecordsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CloudflareDnsRecordsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareDnsRecordsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CloudflareDnsRecordsSecretsConfig: v,
+	}
+}
+
+// CloudflareFirewallEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareFirewallEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CloudflareFirewallEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareFirewallEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CloudflareFirewallEventsSecretsConfig: v,
+	}
+}
+
+// CloudflarePageShieldConnectionsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflarePageShieldConnectionsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CloudflarePageShieldConnectionsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflarePageShieldConnectionsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CloudflarePageShieldConnectionsSecretsConfig: v,
+	}
+}
+
+// CloudflareRulesetsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareRulesetsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CloudflareRulesetsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareRulesetsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CloudflareRulesetsSecretsConfig: v,
+	}
+}
+
+// CloudflareSecurityInsightsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareSecurityInsightsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CloudflareSecurityInsightsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareSecurityInsightsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CloudflareSecurityInsightsSecretsConfig: v,
+	}
+}
+
+// CloudflareUrlScannerSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareUrlScannerSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CloudflareUrlScannerSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareUrlScannerSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CloudflareUrlScannerSecretsConfig: v,
+	}
+}
+
+// CloudflareUsersSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareUsersSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CloudflareUsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareUsersSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CloudflareUsersSecretsConfig: v,
+	}
+}
+
+// CloudflareZeroTrustAccessRequestsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareZeroTrustAccessRequestsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CloudflareZeroTrustAccessRequestsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareZeroTrustAccessRequestsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CloudflareZeroTrustAccessRequestsSecretsConfig: v,
+	}
+}
+
+// CloudflareZonesSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CloudflareZonesSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CloudflareZonesSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CloudflareZonesSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CloudflareZonesSecretsConfig: v,
 	}
 }
 
@@ -215,6 +411,20 @@ func ClumioConsolidatedAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets(
 	}
 }
 
+// CodaAuditEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CodaAuditEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CodaAuditEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CodaAuditEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CodaAuditEventsSecretsConfig: v,
+	}
+}
+
+// CortexXsoarManagementLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CortexXsoarManagementLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CortexXsoarManagementLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CortexXsoarManagementLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CortexXsoarManagementLogsSecretsConfig: v,
+	}
+}
+
 // CrowdstrikeFdrSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CrowdstrikeFdrSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func CrowdstrikeFdrSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CrowdstrikeFdrSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -222,24 +432,17 @@ func CrowdstrikeFdrSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Crowdst
 	}
 }
 
+// CustomerEventDataSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns CustomerEventDataSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func CustomerEventDataSecretsConfigAsSecretProcessesorInputConfigSecrets(v *CustomerEventDataSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		CustomerEventDataSecretsConfig: v,
+	}
+}
+
 // DefenderForEndpointAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns DefenderForEndpointAlertsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func DefenderForEndpointAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *DefenderForEndpointAlertsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		DefenderForEndpointAlertsSecretsConfig: v,
-	}
-}
-
-// DetectSummariesSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns DetectSummariesSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func DetectSummariesSecretsConfigAsSecretProcessesorInputConfigSecrets(v *DetectSummariesSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		DetectSummariesSecretsConfig: v,
-	}
-}
-
-// DeviceActivitySecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns DeviceActivitySecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func DeviceActivitySecretsConfigAsSecretProcessesorInputConfigSecrets(v *DeviceActivitySecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		DeviceActivitySecretsConfig: v,
 	}
 }
 
@@ -257,10 +460,10 @@ func DevicesSecretsConfigAsSecretProcessesorInputConfigSecrets(v *DevicesSecrets
 	}
 }
 
-// DriveActivitySecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns DriveActivitySecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func DriveActivitySecretsConfigAsSecretProcessesorInputConfigSecrets(v *DriveActivitySecretsConfig) SecretProcessesorInputConfigSecrets {
+// EndorLabsAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns EndorLabsAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func EndorLabsAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *EndorLabsAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
-		DriveActivitySecretsConfig: v,
+		EndorLabsAuditLogsSecretsConfig: v,
 	}
 }
 
@@ -275,20 +478,6 @@ func EntraIdSecretsConfigAsSecretProcessesorInputConfigSecrets(v *EntraIdSecrets
 func EventSecretsConfigAsSecretProcessesorInputConfigSecrets(v *EventSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		EventSecretsConfig: v,
-	}
-}
-
-// EventsLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns EventsLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func EventsLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *EventsLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		EventsLogsSecretsConfig: v,
-	}
-}
-
-// EventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns EventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func EventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *EventsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		EventsSecretsConfig: v,
 	}
 }
 
@@ -313,10 +502,31 @@ func GoogleCloudStorageSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Goo
 	}
 }
 
+// GreenhouseAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns GreenhouseAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func GreenhouseAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *GreenhouseAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		GreenhouseAuditLogsSecretsConfig: v,
+	}
+}
+
 // IndividualAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns IndividualAlertsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func IndividualAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *IndividualAlertsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		IndividualAlertsSecretsConfig: v,
+	}
+}
+
+// InspectorSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns InspectorSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func InspectorSecretsConfigAsSecretProcessesorInputConfigSecrets(v *InspectorSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		InspectorSecretsConfig: v,
+	}
+}
+
+// IssuesReportSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns IssuesReportSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func IssuesReportSecretsConfigAsSecretProcessesorInputConfigSecrets(v *IssuesReportSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		IssuesReportSecretsConfig: v,
 	}
 }
 
@@ -327,17 +537,17 @@ func IssuesSecretsConfigAsSecretProcessesorInputConfigSecrets(v *IssuesSecretsCo
 	}
 }
 
+// KoiAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns KoiAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func KoiAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *KoiAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		KoiAuditLogsSecretsConfig: v,
+	}
+}
+
 // LogAnalyticsQuerySecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns LogAnalyticsQuerySecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func LogAnalyticsQuerySecretsConfigAsSecretProcessesorInputConfigSecrets(v *LogAnalyticsQuerySecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		LogAnalyticsQuerySecretsConfig: v,
-	}
-}
-
-// LoginActivitySecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns LoginActivitySecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func LoginActivitySecretsConfigAsSecretProcessesorInputConfigSecrets(v *LoginActivitySecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		LoginActivitySecretsConfig: v,
 	}
 }
 
@@ -348,10 +558,17 @@ func LoginSessionsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *LoginSes
 	}
 }
 
-// OauthActivitySecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns OauthActivitySecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func OauthActivitySecretsConfigAsSecretProcessesorInputConfigSecrets(v *OauthActivitySecretsConfig) SecretProcessesorInputConfigSecrets {
+// MerakiConfigLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns MerakiConfigLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func MerakiConfigLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *MerakiConfigLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
-		OauthActivitySecretsConfig: v,
+		MerakiConfigLogsSecretsConfig: v,
+	}
+}
+
+// Microsoft365GenericSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns Microsoft365GenericSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func Microsoft365GenericSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Microsoft365GenericSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		Microsoft365GenericSecretsConfig: v,
 	}
 }
 
@@ -362,10 +579,38 @@ func ObjectStorageInputSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Obj
 	}
 }
 
+// OfflineenrollmentlogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns OfflineenrollmentlogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func OfflineenrollmentlogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OfflineenrollmentlogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		OfflineenrollmentlogsSecretsConfig: v,
+	}
+}
+
 // OneloginEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns OneloginEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func OneloginEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OneloginEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		OneloginEventsSecretsConfig: v,
+	}
+}
+
+// OperationLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns OperationLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func OperationLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OperationLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		OperationLogsSecretsConfig: v,
+	}
+}
+
+// OrgAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns OrgAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func OrgAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OrgAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		OrgAuditLogsSecretsConfig: v,
+	}
+}
+
+// PagerdutyAuditRecordsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns PagerdutyAuditRecordsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func PagerdutyAuditRecordsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *PagerdutyAuditRecordsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		PagerdutyAuditRecordsSecretsConfig: v,
 	}
 }
 
@@ -376,10 +621,52 @@ func PaloAltoDataSecurityAlertsSecretsConfigAsSecretProcessesorInputConfigSecret
 	}
 }
 
+// PolymerSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns PolymerSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func PolymerSecretsConfigAsSecretProcessesorInputConfigSecrets(v *PolymerSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		PolymerSecretsConfig: v,
+	}
+}
+
+// PostmanAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns PostmanAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func PostmanAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *PostmanAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		PostmanAuditLogsSecretsConfig: v,
+	}
+}
+
+// PubsubSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns PubsubSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func PubsubSecretsConfigAsSecretProcessesorInputConfigSecrets(v *PubsubSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		PubsubSecretsConfig: v,
+	}
+}
+
 // RolesInfoSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns RolesInfoSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func RolesInfoSecretsConfigAsSecretProcessesorInputConfigSecrets(v *RolesInfoSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		RolesInfoSecretsConfig: v,
+	}
+}
+
+// RootlyAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns RootlyAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func RootlyAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *RootlyAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		RootlyAuditLogsSecretsConfig: v,
+	}
+}
+
+// SalesforceUsersSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SalesforceUsersSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func SalesforceUsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SalesforceUsersSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		SalesforceUsersSecretsConfig: v,
+	}
+}
+
+// SecretsmanagerSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SecretsmanagerSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func SecretsmanagerSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SecretsmanagerSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		SecretsmanagerSecretsConfig: v,
 	}
 }
 
@@ -422,6 +709,13 @@ func SemgrepSupplyChainFindingsSecretsConfigAsSecretProcessesorInputConfigSecret
 func SentryOrgAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SentryOrgAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		SentryOrgAuditLogsSecretsConfig: v,
+	}
+}
+
+// SlackEnterpriseAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SlackEnterpriseAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func SlackEnterpriseAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SlackEnterpriseAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		SlackEnterpriseAuditLogsSecretsConfig: v,
 	}
 }
 
@@ -488,6 +782,34 @@ func TailscaleUsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Tailsca
 	}
 }
 
+// TaniumGraphqlInputSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TaniumGraphqlInputSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func TaniumGraphqlInputSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TaniumGraphqlInputSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		TaniumGraphqlInputSecretsConfig: v,
+	}
+}
+
+// TeamAccessLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TeamAccessLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func TeamAccessLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TeamAccessLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		TeamAccessLogsSecretsConfig: v,
+	}
+}
+
+// TeamIntegrationLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TeamIntegrationLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func TeamIntegrationLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TeamIntegrationLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		TeamIntegrationLogsSecretsConfig: v,
+	}
+}
+
+// TelephonyLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TelephonyLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func TelephonyLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TelephonyLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		TelephonyLogsSecretsConfig: v,
+	}
+}
+
 // TenableAssetsCronSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TenableAssetsCronSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func TenableAssetsCronSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TenableAssetsCronSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -513,6 +835,41 @@ func TenableVulnerabilitiesCronSecretsConfigAsSecretProcessesorInputConfigSecret
 func TenableVulnerabilitiesSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TenableVulnerabilitiesSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		TenableVulnerabilitiesSecretsConfig: v,
+	}
+}
+
+// TinesAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TinesAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func TinesAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TinesAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		TinesAuditLogsSecretsConfig: v,
+	}
+}
+
+// TinesEventsLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TinesEventsLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func TinesEventsLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TinesEventsLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		TinesEventsLogsSecretsConfig: v,
+	}
+}
+
+// TwilioEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TwilioEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func TwilioEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TwilioEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		TwilioEventsSecretsConfig: v,
+	}
+}
+
+// TwilioSendgridEmailActivitySecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TwilioSendgridEmailActivitySecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func TwilioSendgridEmailActivitySecretsConfigAsSecretProcessesorInputConfigSecrets(v *TwilioSendgridEmailActivitySecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		TwilioSendgridEmailActivitySecretsConfig: v,
+	}
+}
+
+// UniversalSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns UniversalSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func UniversalSecretsConfigAsSecretProcessesorInputConfigSecrets(v *UniversalSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		UniversalSecretsConfig: v,
 	}
 }
 
@@ -551,10 +908,45 @@ func VulnerabilitiesSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Vulner
 	}
 }
 
+// VulnerabilityFindingsReportSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns VulnerabilityFindingsReportSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func VulnerabilityFindingsReportSecretsConfigAsSecretProcessesorInputConfigSecrets(v *VulnerabilityFindingsReportSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		VulnerabilityFindingsReportSecretsConfig: v,
+	}
+}
+
 // VulnerabilityFindingsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns VulnerabilityFindingsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func VulnerabilityFindingsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *VulnerabilityFindingsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		VulnerabilityFindingsSecretsConfig: v,
+	}
+}
+
+// WizAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns WizAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func WizAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *WizAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		WizAuditLogsSecretsConfig: v,
+	}
+}
+
+// ZendeskAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ZendeskAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func ZendeskAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ZendeskAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		ZendeskAuditLogsSecretsConfig: v,
+	}
+}
+
+// ZoomActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ZoomActivityLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func ZoomActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ZoomActivityLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		ZoomActivityLogsSecretsConfig: v,
+	}
+}
+
+// ZoomMeetingActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ZoomMeetingActivityLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func ZoomMeetingActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ZoomMeetingActivityLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		ZoomMeetingActivityLogsSecretsConfig: v,
 	}
 }
 
@@ -587,6 +979,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.ActivityLogsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into ActivitylogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.ActivitylogsSecretsConfig)
+	if err == nil {
+		jsonActivitylogsSecretsConfig, _ := json.Marshal(dst.ActivitylogsSecretsConfig)
+		if string(jsonActivitylogsSecretsConfig) == "{}" { // empty struct
+			dst.ActivitylogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ActivitylogsSecretsConfig); err != nil {
+				dst.ActivitylogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ActivitylogsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into ActorsInfoSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.ActorsInfoSecretsConfig)
 	if err == nil {
@@ -604,23 +1013,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.ActorsInfoSecretsConfig = nil
 	}
 
-	// try to unmarshal data into AdminActivitySecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.AdminActivitySecretsConfig)
-	if err == nil {
-		jsonAdminActivitySecretsConfig, _ := json.Marshal(dst.AdminActivitySecretsConfig)
-		if string(jsonAdminActivitySecretsConfig) == "{}" { // empty struct
-			dst.AdminActivitySecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AdminActivitySecretsConfig); err != nil {
-				dst.AdminActivitySecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AdminActivitySecretsConfig = nil
-	}
-
 	// try to unmarshal data into AdminLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.AdminLogsSecretsConfig)
 	if err == nil {
@@ -636,6 +1028,40 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.AdminLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into AlertCenterSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.AlertCenterSecretsConfig)
+	if err == nil {
+		jsonAlertCenterSecretsConfig, _ := json.Marshal(dst.AlertCenterSecretsConfig)
+		if string(jsonAlertCenterSecretsConfig) == "{}" { // empty struct
+			dst.AlertCenterSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AlertCenterSecretsConfig); err != nil {
+				dst.AlertCenterSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AlertCenterSecretsConfig = nil
+	}
+
+	// try to unmarshal data into ArizeAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.ArizeAuditLogsSecretsConfig)
+	if err == nil {
+		jsonArizeAuditLogsSecretsConfig, _ := json.Marshal(dst.ArizeAuditLogsSecretsConfig)
+		if string(jsonArizeAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.ArizeAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ArizeAuditLogsSecretsConfig); err != nil {
+				dst.ArizeAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ArizeAuditLogsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into AuditLogsSecretsConfig
@@ -672,6 +1098,57 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.AuthLogsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into AwsGuarddutySecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.AwsGuarddutySecretsConfig)
+	if err == nil {
+		jsonAwsGuarddutySecretsConfig, _ := json.Marshal(dst.AwsGuarddutySecretsConfig)
+		if string(jsonAwsGuarddutySecretsConfig) == "{}" { // empty struct
+			dst.AwsGuarddutySecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AwsGuarddutySecretsConfig); err != nil {
+				dst.AwsGuarddutySecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AwsGuarddutySecretsConfig = nil
+	}
+
+	// try to unmarshal data into AwsS3SecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.AwsS3SecretsConfig)
+	if err == nil {
+		jsonAwsS3SecretsConfig, _ := json.Marshal(dst.AwsS3SecretsConfig)
+		if string(jsonAwsS3SecretsConfig) == "{}" { // empty struct
+			dst.AwsS3SecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AwsS3SecretsConfig); err != nil {
+				dst.AwsS3SecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AwsS3SecretsConfig = nil
+	}
+
+	// try to unmarshal data into AwssecurityhubSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.AwssecurityhubSecretsConfig)
+	if err == nil {
+		jsonAwssecurityhubSecretsConfig, _ := json.Marshal(dst.AwssecurityhubSecretsConfig)
+		if string(jsonAwssecurityhubSecretsConfig) == "{}" { // empty struct
+			dst.AwssecurityhubSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AwssecurityhubSecretsConfig); err != nil {
+				dst.AwssecurityhubSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AwssecurityhubSecretsConfig = nil
+	}
+
 	// try to unmarshal data into AzureActivityLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.AzureActivityLogsSecretsConfig)
 	if err == nil {
@@ -706,6 +1183,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.AzureBlobStorageSecretsConfig = nil
 	}
 
+	// try to unmarshal data into AzureEventHubsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.AzureEventHubsSecretsConfig)
+	if err == nil {
+		jsonAzureEventHubsSecretsConfig, _ := json.Marshal(dst.AzureEventHubsSecretsConfig)
+		if string(jsonAzureEventHubsSecretsConfig) == "{}" { // empty struct
+			dst.AzureEventHubsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AzureEventHubsSecretsConfig); err != nil {
+				dst.AzureEventHubsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AzureEventHubsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into AzureVnetFlowLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.AzureVnetFlowLogsSecretsConfig)
 	if err == nil {
@@ -721,6 +1215,40 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.AzureVnetFlowLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into BackblazeB2SecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.BackblazeB2SecretsConfig)
+	if err == nil {
+		jsonBackblazeB2SecretsConfig, _ := json.Marshal(dst.BackblazeB2SecretsConfig)
+		if string(jsonBackblazeB2SecretsConfig) == "{}" { // empty struct
+			dst.BackblazeB2SecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BackblazeB2SecretsConfig); err != nil {
+				dst.BackblazeB2SecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BackblazeB2SecretsConfig = nil
+	}
+
+	// try to unmarshal data into BigqueryCronSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.BigqueryCronSecretsConfig)
+	if err == nil {
+		jsonBigqueryCronSecretsConfig, _ := json.Marshal(dst.BigqueryCronSecretsConfig)
+		if string(jsonBigqueryCronSecretsConfig) == "{}" { // empty struct
+			dst.BigqueryCronSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BigqueryCronSecretsConfig); err != nil {
+				dst.BigqueryCronSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BigqueryCronSecretsConfig = nil
 	}
 
 	// try to unmarshal data into BigqueryInputSecretsConfig
@@ -774,6 +1302,40 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.BoxUsersSecretsConfig = nil
 	}
 
+	// try to unmarshal data into BuildkiteAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.BuildkiteAuditLogsSecretsConfig)
+	if err == nil {
+		jsonBuildkiteAuditLogsSecretsConfig, _ := json.Marshal(dst.BuildkiteAuditLogsSecretsConfig)
+		if string(jsonBuildkiteAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.BuildkiteAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BuildkiteAuditLogsSecretsConfig); err != nil {
+				dst.BuildkiteAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BuildkiteAuditLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into BuildkiteGraphqlInputSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.BuildkiteGraphqlInputSecretsConfig)
+	if err == nil {
+		jsonBuildkiteGraphqlInputSecretsConfig, _ := json.Marshal(dst.BuildkiteGraphqlInputSecretsConfig)
+		if string(jsonBuildkiteGraphqlInputSecretsConfig) == "{}" { // empty struct
+			dst.BuildkiteGraphqlInputSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BuildkiteGraphqlInputSecretsConfig); err != nil {
+				dst.BuildkiteGraphqlInputSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BuildkiteGraphqlInputSecretsConfig = nil
+	}
+
 	// try to unmarshal data into CloudAssetInventorySecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.CloudAssetInventorySecretsConfig)
 	if err == nil {
@@ -825,6 +1387,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.CloudLogsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into CloudResourceInventoryReportsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudResourceInventoryReportsSecretsConfig)
+	if err == nil {
+		jsonCloudResourceInventoryReportsSecretsConfig, _ := json.Marshal(dst.CloudResourceInventoryReportsSecretsConfig)
+		if string(jsonCloudResourceInventoryReportsSecretsConfig) == "{}" { // empty struct
+			dst.CloudResourceInventoryReportsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudResourceInventoryReportsSecretsConfig); err != nil {
+				dst.CloudResourceInventoryReportsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudResourceInventoryReportsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into CloudResourceInventorySecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.CloudResourceInventorySecretsConfig)
 	if err == nil {
@@ -840,6 +1419,176 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.CloudResourceInventorySecretsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareAuditLogsSecretsConfig)
+	if err == nil {
+		jsonCloudflareAuditLogsSecretsConfig, _ := json.Marshal(dst.CloudflareAuditLogsSecretsConfig)
+		if string(jsonCloudflareAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.CloudflareAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareAuditLogsSecretsConfig); err != nil {
+				dst.CloudflareAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareAuditLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareDnsRecordsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareDnsRecordsSecretsConfig)
+	if err == nil {
+		jsonCloudflareDnsRecordsSecretsConfig, _ := json.Marshal(dst.CloudflareDnsRecordsSecretsConfig)
+		if string(jsonCloudflareDnsRecordsSecretsConfig) == "{}" { // empty struct
+			dst.CloudflareDnsRecordsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareDnsRecordsSecretsConfig); err != nil {
+				dst.CloudflareDnsRecordsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareDnsRecordsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareFirewallEventsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareFirewallEventsSecretsConfig)
+	if err == nil {
+		jsonCloudflareFirewallEventsSecretsConfig, _ := json.Marshal(dst.CloudflareFirewallEventsSecretsConfig)
+		if string(jsonCloudflareFirewallEventsSecretsConfig) == "{}" { // empty struct
+			dst.CloudflareFirewallEventsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareFirewallEventsSecretsConfig); err != nil {
+				dst.CloudflareFirewallEventsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareFirewallEventsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflarePageShieldConnectionsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflarePageShieldConnectionsSecretsConfig)
+	if err == nil {
+		jsonCloudflarePageShieldConnectionsSecretsConfig, _ := json.Marshal(dst.CloudflarePageShieldConnectionsSecretsConfig)
+		if string(jsonCloudflarePageShieldConnectionsSecretsConfig) == "{}" { // empty struct
+			dst.CloudflarePageShieldConnectionsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflarePageShieldConnectionsSecretsConfig); err != nil {
+				dst.CloudflarePageShieldConnectionsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflarePageShieldConnectionsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareRulesetsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareRulesetsSecretsConfig)
+	if err == nil {
+		jsonCloudflareRulesetsSecretsConfig, _ := json.Marshal(dst.CloudflareRulesetsSecretsConfig)
+		if string(jsonCloudflareRulesetsSecretsConfig) == "{}" { // empty struct
+			dst.CloudflareRulesetsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareRulesetsSecretsConfig); err != nil {
+				dst.CloudflareRulesetsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareRulesetsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareSecurityInsightsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareSecurityInsightsSecretsConfig)
+	if err == nil {
+		jsonCloudflareSecurityInsightsSecretsConfig, _ := json.Marshal(dst.CloudflareSecurityInsightsSecretsConfig)
+		if string(jsonCloudflareSecurityInsightsSecretsConfig) == "{}" { // empty struct
+			dst.CloudflareSecurityInsightsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareSecurityInsightsSecretsConfig); err != nil {
+				dst.CloudflareSecurityInsightsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareSecurityInsightsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareUrlScannerSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareUrlScannerSecretsConfig)
+	if err == nil {
+		jsonCloudflareUrlScannerSecretsConfig, _ := json.Marshal(dst.CloudflareUrlScannerSecretsConfig)
+		if string(jsonCloudflareUrlScannerSecretsConfig) == "{}" { // empty struct
+			dst.CloudflareUrlScannerSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareUrlScannerSecretsConfig); err != nil {
+				dst.CloudflareUrlScannerSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareUrlScannerSecretsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareUsersSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareUsersSecretsConfig)
+	if err == nil {
+		jsonCloudflareUsersSecretsConfig, _ := json.Marshal(dst.CloudflareUsersSecretsConfig)
+		if string(jsonCloudflareUsersSecretsConfig) == "{}" { // empty struct
+			dst.CloudflareUsersSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareUsersSecretsConfig); err != nil {
+				dst.CloudflareUsersSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareUsersSecretsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareZeroTrustAccessRequestsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareZeroTrustAccessRequestsSecretsConfig)
+	if err == nil {
+		jsonCloudflareZeroTrustAccessRequestsSecretsConfig, _ := json.Marshal(dst.CloudflareZeroTrustAccessRequestsSecretsConfig)
+		if string(jsonCloudflareZeroTrustAccessRequestsSecretsConfig) == "{}" { // empty struct
+			dst.CloudflareZeroTrustAccessRequestsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareZeroTrustAccessRequestsSecretsConfig); err != nil {
+				dst.CloudflareZeroTrustAccessRequestsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareZeroTrustAccessRequestsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareZonesSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareZonesSecretsConfig)
+	if err == nil {
+		jsonCloudflareZonesSecretsConfig, _ := json.Marshal(dst.CloudflareZonesSecretsConfig)
+		if string(jsonCloudflareZonesSecretsConfig) == "{}" { // empty struct
+			dst.CloudflareZonesSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareZonesSecretsConfig); err != nil {
+				dst.CloudflareZonesSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareZonesSecretsConfig = nil
 	}
 
 	// try to unmarshal data into ClumioAuditLogsSecretsConfig
@@ -876,6 +1625,40 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.ClumioConsolidatedAlertsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into CodaAuditEventsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CodaAuditEventsSecretsConfig)
+	if err == nil {
+		jsonCodaAuditEventsSecretsConfig, _ := json.Marshal(dst.CodaAuditEventsSecretsConfig)
+		if string(jsonCodaAuditEventsSecretsConfig) == "{}" { // empty struct
+			dst.CodaAuditEventsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CodaAuditEventsSecretsConfig); err != nil {
+				dst.CodaAuditEventsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CodaAuditEventsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into CortexXsoarManagementLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CortexXsoarManagementLogsSecretsConfig)
+	if err == nil {
+		jsonCortexXsoarManagementLogsSecretsConfig, _ := json.Marshal(dst.CortexXsoarManagementLogsSecretsConfig)
+		if string(jsonCortexXsoarManagementLogsSecretsConfig) == "{}" { // empty struct
+			dst.CortexXsoarManagementLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CortexXsoarManagementLogsSecretsConfig); err != nil {
+				dst.CortexXsoarManagementLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CortexXsoarManagementLogsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into CrowdstrikeFdrSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.CrowdstrikeFdrSecretsConfig)
 	if err == nil {
@@ -893,6 +1676,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.CrowdstrikeFdrSecretsConfig = nil
 	}
 
+	// try to unmarshal data into CustomerEventDataSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.CustomerEventDataSecretsConfig)
+	if err == nil {
+		jsonCustomerEventDataSecretsConfig, _ := json.Marshal(dst.CustomerEventDataSecretsConfig)
+		if string(jsonCustomerEventDataSecretsConfig) == "{}" { // empty struct
+			dst.CustomerEventDataSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CustomerEventDataSecretsConfig); err != nil {
+				dst.CustomerEventDataSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CustomerEventDataSecretsConfig = nil
+	}
+
 	// try to unmarshal data into DefenderForEndpointAlertsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.DefenderForEndpointAlertsSecretsConfig)
 	if err == nil {
@@ -908,40 +1708,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.DefenderForEndpointAlertsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into DetectSummariesSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.DetectSummariesSecretsConfig)
-	if err == nil {
-		jsonDetectSummariesSecretsConfig, _ := json.Marshal(dst.DetectSummariesSecretsConfig)
-		if string(jsonDetectSummariesSecretsConfig) == "{}" { // empty struct
-			dst.DetectSummariesSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.DetectSummariesSecretsConfig); err != nil {
-				dst.DetectSummariesSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.DetectSummariesSecretsConfig = nil
-	}
-
-	// try to unmarshal data into DeviceActivitySecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.DeviceActivitySecretsConfig)
-	if err == nil {
-		jsonDeviceActivitySecretsConfig, _ := json.Marshal(dst.DeviceActivitySecretsConfig)
-		if string(jsonDeviceActivitySecretsConfig) == "{}" { // empty struct
-			dst.DeviceActivitySecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.DeviceActivitySecretsConfig); err != nil {
-				dst.DeviceActivitySecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.DeviceActivitySecretsConfig = nil
 	}
 
 	// try to unmarshal data into DeviceDetailsSecretsConfig
@@ -978,21 +1744,21 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.DevicesSecretsConfig = nil
 	}
 
-	// try to unmarshal data into DriveActivitySecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.DriveActivitySecretsConfig)
+	// try to unmarshal data into EndorLabsAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.EndorLabsAuditLogsSecretsConfig)
 	if err == nil {
-		jsonDriveActivitySecretsConfig, _ := json.Marshal(dst.DriveActivitySecretsConfig)
-		if string(jsonDriveActivitySecretsConfig) == "{}" { // empty struct
-			dst.DriveActivitySecretsConfig = nil
+		jsonEndorLabsAuditLogsSecretsConfig, _ := json.Marshal(dst.EndorLabsAuditLogsSecretsConfig)
+		if string(jsonEndorLabsAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.EndorLabsAuditLogsSecretsConfig = nil
 		} else {
-			if err = validator.Validate(dst.DriveActivitySecretsConfig); err != nil {
-				dst.DriveActivitySecretsConfig = nil
+			if err = validator.Validate(dst.EndorLabsAuditLogsSecretsConfig); err != nil {
+				dst.EndorLabsAuditLogsSecretsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.DriveActivitySecretsConfig = nil
+		dst.EndorLabsAuditLogsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into EntraIdSecretsConfig
@@ -1027,40 +1793,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.EventSecretsConfig = nil
-	}
-
-	// try to unmarshal data into EventsLogsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.EventsLogsSecretsConfig)
-	if err == nil {
-		jsonEventsLogsSecretsConfig, _ := json.Marshal(dst.EventsLogsSecretsConfig)
-		if string(jsonEventsLogsSecretsConfig) == "{}" { // empty struct
-			dst.EventsLogsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.EventsLogsSecretsConfig); err != nil {
-				dst.EventsLogsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.EventsLogsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into EventsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.EventsSecretsConfig)
-	if err == nil {
-		jsonEventsSecretsConfig, _ := json.Marshal(dst.EventsSecretsConfig)
-		if string(jsonEventsSecretsConfig) == "{}" { // empty struct
-			dst.EventsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.EventsSecretsConfig); err != nil {
-				dst.EventsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.EventsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into FullScansSecretsConfig
@@ -1114,6 +1846,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.GoogleCloudStorageSecretsConfig = nil
 	}
 
+	// try to unmarshal data into GreenhouseAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.GreenhouseAuditLogsSecretsConfig)
+	if err == nil {
+		jsonGreenhouseAuditLogsSecretsConfig, _ := json.Marshal(dst.GreenhouseAuditLogsSecretsConfig)
+		if string(jsonGreenhouseAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.GreenhouseAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.GreenhouseAuditLogsSecretsConfig); err != nil {
+				dst.GreenhouseAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.GreenhouseAuditLogsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into IndividualAlertsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.IndividualAlertsSecretsConfig)
 	if err == nil {
@@ -1129,6 +1878,40 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.IndividualAlertsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into InspectorSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.InspectorSecretsConfig)
+	if err == nil {
+		jsonInspectorSecretsConfig, _ := json.Marshal(dst.InspectorSecretsConfig)
+		if string(jsonInspectorSecretsConfig) == "{}" { // empty struct
+			dst.InspectorSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.InspectorSecretsConfig); err != nil {
+				dst.InspectorSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.InspectorSecretsConfig = nil
+	}
+
+	// try to unmarshal data into IssuesReportSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.IssuesReportSecretsConfig)
+	if err == nil {
+		jsonIssuesReportSecretsConfig, _ := json.Marshal(dst.IssuesReportSecretsConfig)
+		if string(jsonIssuesReportSecretsConfig) == "{}" { // empty struct
+			dst.IssuesReportSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.IssuesReportSecretsConfig); err != nil {
+				dst.IssuesReportSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.IssuesReportSecretsConfig = nil
 	}
 
 	// try to unmarshal data into IssuesSecretsConfig
@@ -1148,6 +1931,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.IssuesSecretsConfig = nil
 	}
 
+	// try to unmarshal data into KoiAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.KoiAuditLogsSecretsConfig)
+	if err == nil {
+		jsonKoiAuditLogsSecretsConfig, _ := json.Marshal(dst.KoiAuditLogsSecretsConfig)
+		if string(jsonKoiAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.KoiAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.KoiAuditLogsSecretsConfig); err != nil {
+				dst.KoiAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.KoiAuditLogsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into LogAnalyticsQuerySecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.LogAnalyticsQuerySecretsConfig)
 	if err == nil {
@@ -1163,23 +1963,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.LogAnalyticsQuerySecretsConfig = nil
-	}
-
-	// try to unmarshal data into LoginActivitySecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.LoginActivitySecretsConfig)
-	if err == nil {
-		jsonLoginActivitySecretsConfig, _ := json.Marshal(dst.LoginActivitySecretsConfig)
-		if string(jsonLoginActivitySecretsConfig) == "{}" { // empty struct
-			dst.LoginActivitySecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.LoginActivitySecretsConfig); err != nil {
-				dst.LoginActivitySecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.LoginActivitySecretsConfig = nil
 	}
 
 	// try to unmarshal data into LoginSessionsSecretsConfig
@@ -1199,21 +1982,38 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.LoginSessionsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into OauthActivitySecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.OauthActivitySecretsConfig)
+	// try to unmarshal data into MerakiConfigLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.MerakiConfigLogsSecretsConfig)
 	if err == nil {
-		jsonOauthActivitySecretsConfig, _ := json.Marshal(dst.OauthActivitySecretsConfig)
-		if string(jsonOauthActivitySecretsConfig) == "{}" { // empty struct
-			dst.OauthActivitySecretsConfig = nil
+		jsonMerakiConfigLogsSecretsConfig, _ := json.Marshal(dst.MerakiConfigLogsSecretsConfig)
+		if string(jsonMerakiConfigLogsSecretsConfig) == "{}" { // empty struct
+			dst.MerakiConfigLogsSecretsConfig = nil
 		} else {
-			if err = validator.Validate(dst.OauthActivitySecretsConfig); err != nil {
-				dst.OauthActivitySecretsConfig = nil
+			if err = validator.Validate(dst.MerakiConfigLogsSecretsConfig); err != nil {
+				dst.MerakiConfigLogsSecretsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.OauthActivitySecretsConfig = nil
+		dst.MerakiConfigLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into Microsoft365GenericSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.Microsoft365GenericSecretsConfig)
+	if err == nil {
+		jsonMicrosoft365GenericSecretsConfig, _ := json.Marshal(dst.Microsoft365GenericSecretsConfig)
+		if string(jsonMicrosoft365GenericSecretsConfig) == "{}" { // empty struct
+			dst.Microsoft365GenericSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.Microsoft365GenericSecretsConfig); err != nil {
+				dst.Microsoft365GenericSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.Microsoft365GenericSecretsConfig = nil
 	}
 
 	// try to unmarshal data into ObjectStorageInputSecretsConfig
@@ -1233,6 +2033,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.ObjectStorageInputSecretsConfig = nil
 	}
 
+	// try to unmarshal data into OfflineenrollmentlogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.OfflineenrollmentlogsSecretsConfig)
+	if err == nil {
+		jsonOfflineenrollmentlogsSecretsConfig, _ := json.Marshal(dst.OfflineenrollmentlogsSecretsConfig)
+		if string(jsonOfflineenrollmentlogsSecretsConfig) == "{}" { // empty struct
+			dst.OfflineenrollmentlogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.OfflineenrollmentlogsSecretsConfig); err != nil {
+				dst.OfflineenrollmentlogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.OfflineenrollmentlogsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into OneloginEventsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.OneloginEventsSecretsConfig)
 	if err == nil {
@@ -1248,6 +2065,57 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.OneloginEventsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into OperationLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.OperationLogsSecretsConfig)
+	if err == nil {
+		jsonOperationLogsSecretsConfig, _ := json.Marshal(dst.OperationLogsSecretsConfig)
+		if string(jsonOperationLogsSecretsConfig) == "{}" { // empty struct
+			dst.OperationLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.OperationLogsSecretsConfig); err != nil {
+				dst.OperationLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.OperationLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into OrgAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.OrgAuditLogsSecretsConfig)
+	if err == nil {
+		jsonOrgAuditLogsSecretsConfig, _ := json.Marshal(dst.OrgAuditLogsSecretsConfig)
+		if string(jsonOrgAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.OrgAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.OrgAuditLogsSecretsConfig); err != nil {
+				dst.OrgAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.OrgAuditLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into PagerdutyAuditRecordsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.PagerdutyAuditRecordsSecretsConfig)
+	if err == nil {
+		jsonPagerdutyAuditRecordsSecretsConfig, _ := json.Marshal(dst.PagerdutyAuditRecordsSecretsConfig)
+		if string(jsonPagerdutyAuditRecordsSecretsConfig) == "{}" { // empty struct
+			dst.PagerdutyAuditRecordsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PagerdutyAuditRecordsSecretsConfig); err != nil {
+				dst.PagerdutyAuditRecordsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PagerdutyAuditRecordsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into PaloAltoDataSecurityAlertsSecretsConfig
@@ -1267,6 +2135,57 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.PaloAltoDataSecurityAlertsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into PolymerSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.PolymerSecretsConfig)
+	if err == nil {
+		jsonPolymerSecretsConfig, _ := json.Marshal(dst.PolymerSecretsConfig)
+		if string(jsonPolymerSecretsConfig) == "{}" { // empty struct
+			dst.PolymerSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PolymerSecretsConfig); err != nil {
+				dst.PolymerSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PolymerSecretsConfig = nil
+	}
+
+	// try to unmarshal data into PostmanAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.PostmanAuditLogsSecretsConfig)
+	if err == nil {
+		jsonPostmanAuditLogsSecretsConfig, _ := json.Marshal(dst.PostmanAuditLogsSecretsConfig)
+		if string(jsonPostmanAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.PostmanAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PostmanAuditLogsSecretsConfig); err != nil {
+				dst.PostmanAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PostmanAuditLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into PubsubSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.PubsubSecretsConfig)
+	if err == nil {
+		jsonPubsubSecretsConfig, _ := json.Marshal(dst.PubsubSecretsConfig)
+		if string(jsonPubsubSecretsConfig) == "{}" { // empty struct
+			dst.PubsubSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PubsubSecretsConfig); err != nil {
+				dst.PubsubSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PubsubSecretsConfig = nil
+	}
+
 	// try to unmarshal data into RolesInfoSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.RolesInfoSecretsConfig)
 	if err == nil {
@@ -1282,6 +2201,57 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.RolesInfoSecretsConfig = nil
+	}
+
+	// try to unmarshal data into RootlyAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.RootlyAuditLogsSecretsConfig)
+	if err == nil {
+		jsonRootlyAuditLogsSecretsConfig, _ := json.Marshal(dst.RootlyAuditLogsSecretsConfig)
+		if string(jsonRootlyAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.RootlyAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.RootlyAuditLogsSecretsConfig); err != nil {
+				dst.RootlyAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.RootlyAuditLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into SalesforceUsersSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.SalesforceUsersSecretsConfig)
+	if err == nil {
+		jsonSalesforceUsersSecretsConfig, _ := json.Marshal(dst.SalesforceUsersSecretsConfig)
+		if string(jsonSalesforceUsersSecretsConfig) == "{}" { // empty struct
+			dst.SalesforceUsersSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SalesforceUsersSecretsConfig); err != nil {
+				dst.SalesforceUsersSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SalesforceUsersSecretsConfig = nil
+	}
+
+	// try to unmarshal data into SecretsmanagerSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.SecretsmanagerSecretsConfig)
+	if err == nil {
+		jsonSecretsmanagerSecretsConfig, _ := json.Marshal(dst.SecretsmanagerSecretsConfig)
+		if string(jsonSecretsmanagerSecretsConfig) == "{}" { // empty struct
+			dst.SecretsmanagerSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SecretsmanagerSecretsConfig); err != nil {
+				dst.SecretsmanagerSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SecretsmanagerSecretsConfig = nil
 	}
 
 	// try to unmarshal data into SemgrepCodeFindingsSecretsConfig
@@ -1384,6 +2354,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.SentryOrgAuditLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into SlackEnterpriseAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.SlackEnterpriseAuditLogsSecretsConfig)
+	if err == nil {
+		jsonSlackEnterpriseAuditLogsSecretsConfig, _ := json.Marshal(dst.SlackEnterpriseAuditLogsSecretsConfig)
+		if string(jsonSlackEnterpriseAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.SlackEnterpriseAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SlackEnterpriseAuditLogsSecretsConfig); err != nil {
+				dst.SlackEnterpriseAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SlackEnterpriseAuditLogsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into SlackUsersSecretsConfig
@@ -1539,6 +2526,74 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.TailscaleUsersSecretsConfig = nil
 	}
 
+	// try to unmarshal data into TaniumGraphqlInputSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.TaniumGraphqlInputSecretsConfig)
+	if err == nil {
+		jsonTaniumGraphqlInputSecretsConfig, _ := json.Marshal(dst.TaniumGraphqlInputSecretsConfig)
+		if string(jsonTaniumGraphqlInputSecretsConfig) == "{}" { // empty struct
+			dst.TaniumGraphqlInputSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TaniumGraphqlInputSecretsConfig); err != nil {
+				dst.TaniumGraphqlInputSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TaniumGraphqlInputSecretsConfig = nil
+	}
+
+	// try to unmarshal data into TeamAccessLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.TeamAccessLogsSecretsConfig)
+	if err == nil {
+		jsonTeamAccessLogsSecretsConfig, _ := json.Marshal(dst.TeamAccessLogsSecretsConfig)
+		if string(jsonTeamAccessLogsSecretsConfig) == "{}" { // empty struct
+			dst.TeamAccessLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TeamAccessLogsSecretsConfig); err != nil {
+				dst.TeamAccessLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TeamAccessLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into TeamIntegrationLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.TeamIntegrationLogsSecretsConfig)
+	if err == nil {
+		jsonTeamIntegrationLogsSecretsConfig, _ := json.Marshal(dst.TeamIntegrationLogsSecretsConfig)
+		if string(jsonTeamIntegrationLogsSecretsConfig) == "{}" { // empty struct
+			dst.TeamIntegrationLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TeamIntegrationLogsSecretsConfig); err != nil {
+				dst.TeamIntegrationLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TeamIntegrationLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into TelephonyLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.TelephonyLogsSecretsConfig)
+	if err == nil {
+		jsonTelephonyLogsSecretsConfig, _ := json.Marshal(dst.TelephonyLogsSecretsConfig)
+		if string(jsonTelephonyLogsSecretsConfig) == "{}" { // empty struct
+			dst.TelephonyLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TelephonyLogsSecretsConfig); err != nil {
+				dst.TelephonyLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TelephonyLogsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into TenableAssetsCronSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.TenableAssetsCronSecretsConfig)
 	if err == nil {
@@ -1605,6 +2660,91 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.TenableVulnerabilitiesSecretsConfig = nil
+	}
+
+	// try to unmarshal data into TinesAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.TinesAuditLogsSecretsConfig)
+	if err == nil {
+		jsonTinesAuditLogsSecretsConfig, _ := json.Marshal(dst.TinesAuditLogsSecretsConfig)
+		if string(jsonTinesAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.TinesAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TinesAuditLogsSecretsConfig); err != nil {
+				dst.TinesAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TinesAuditLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into TinesEventsLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.TinesEventsLogsSecretsConfig)
+	if err == nil {
+		jsonTinesEventsLogsSecretsConfig, _ := json.Marshal(dst.TinesEventsLogsSecretsConfig)
+		if string(jsonTinesEventsLogsSecretsConfig) == "{}" { // empty struct
+			dst.TinesEventsLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TinesEventsLogsSecretsConfig); err != nil {
+				dst.TinesEventsLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TinesEventsLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into TwilioEventsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.TwilioEventsSecretsConfig)
+	if err == nil {
+		jsonTwilioEventsSecretsConfig, _ := json.Marshal(dst.TwilioEventsSecretsConfig)
+		if string(jsonTwilioEventsSecretsConfig) == "{}" { // empty struct
+			dst.TwilioEventsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TwilioEventsSecretsConfig); err != nil {
+				dst.TwilioEventsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TwilioEventsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into TwilioSendgridEmailActivitySecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.TwilioSendgridEmailActivitySecretsConfig)
+	if err == nil {
+		jsonTwilioSendgridEmailActivitySecretsConfig, _ := json.Marshal(dst.TwilioSendgridEmailActivitySecretsConfig)
+		if string(jsonTwilioSendgridEmailActivitySecretsConfig) == "{}" { // empty struct
+			dst.TwilioSendgridEmailActivitySecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TwilioSendgridEmailActivitySecretsConfig); err != nil {
+				dst.TwilioSendgridEmailActivitySecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TwilioSendgridEmailActivitySecretsConfig = nil
+	}
+
+	// try to unmarshal data into UniversalSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.UniversalSecretsConfig)
+	if err == nil {
+		jsonUniversalSecretsConfig, _ := json.Marshal(dst.UniversalSecretsConfig)
+		if string(jsonUniversalSecretsConfig) == "{}" { // empty struct
+			dst.UniversalSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.UniversalSecretsConfig); err != nil {
+				dst.UniversalSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.UniversalSecretsConfig = nil
 	}
 
 	// try to unmarshal data into UsersInfoSecretsConfig
@@ -1692,6 +2832,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.VulnerabilitiesSecretsConfig = nil
 	}
 
+	// try to unmarshal data into VulnerabilityFindingsReportSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.VulnerabilityFindingsReportSecretsConfig)
+	if err == nil {
+		jsonVulnerabilityFindingsReportSecretsConfig, _ := json.Marshal(dst.VulnerabilityFindingsReportSecretsConfig)
+		if string(jsonVulnerabilityFindingsReportSecretsConfig) == "{}" { // empty struct
+			dst.VulnerabilityFindingsReportSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.VulnerabilityFindingsReportSecretsConfig); err != nil {
+				dst.VulnerabilityFindingsReportSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.VulnerabilityFindingsReportSecretsConfig = nil
+	}
+
 	// try to unmarshal data into VulnerabilityFindingsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.VulnerabilityFindingsSecretsConfig)
 	if err == nil {
@@ -1707,6 +2864,74 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.VulnerabilityFindingsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into WizAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.WizAuditLogsSecretsConfig)
+	if err == nil {
+		jsonWizAuditLogsSecretsConfig, _ := json.Marshal(dst.WizAuditLogsSecretsConfig)
+		if string(jsonWizAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.WizAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.WizAuditLogsSecretsConfig); err != nil {
+				dst.WizAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.WizAuditLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into ZendeskAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.ZendeskAuditLogsSecretsConfig)
+	if err == nil {
+		jsonZendeskAuditLogsSecretsConfig, _ := json.Marshal(dst.ZendeskAuditLogsSecretsConfig)
+		if string(jsonZendeskAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.ZendeskAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ZendeskAuditLogsSecretsConfig); err != nil {
+				dst.ZendeskAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ZendeskAuditLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into ZoomActivityLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.ZoomActivityLogsSecretsConfig)
+	if err == nil {
+		jsonZoomActivityLogsSecretsConfig, _ := json.Marshal(dst.ZoomActivityLogsSecretsConfig)
+		if string(jsonZoomActivityLogsSecretsConfig) == "{}" { // empty struct
+			dst.ZoomActivityLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ZoomActivityLogsSecretsConfig); err != nil {
+				dst.ZoomActivityLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ZoomActivityLogsSecretsConfig = nil
+	}
+
+	// try to unmarshal data into ZoomMeetingActivityLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.ZoomMeetingActivityLogsSecretsConfig)
+	if err == nil {
+		jsonZoomMeetingActivityLogsSecretsConfig, _ := json.Marshal(dst.ZoomMeetingActivityLogsSecretsConfig)
+		if string(jsonZoomMeetingActivityLogsSecretsConfig) == "{}" { // empty struct
+			dst.ZoomMeetingActivityLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ZoomMeetingActivityLogsSecretsConfig); err != nil {
+				dst.ZoomMeetingActivityLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ZoomMeetingActivityLogsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into MapmapOfStringAny
@@ -1729,53 +2954,88 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.ActivityLogsSecretsConfig = nil
+		dst.ActivitylogsSecretsConfig = nil
 		dst.ActorsInfoSecretsConfig = nil
-		dst.AdminActivitySecretsConfig = nil
 		dst.AdminLogsSecretsConfig = nil
+		dst.AlertCenterSecretsConfig = nil
+		dst.ArizeAuditLogsSecretsConfig = nil
 		dst.AuditLogsSecretsConfig = nil
 		dst.AuthLogsSecretsConfig = nil
+		dst.AwsGuarddutySecretsConfig = nil
+		dst.AwsS3SecretsConfig = nil
+		dst.AwssecurityhubSecretsConfig = nil
 		dst.AzureActivityLogsSecretsConfig = nil
 		dst.AzureBlobStorageSecretsConfig = nil
+		dst.AzureEventHubsSecretsConfig = nil
 		dst.AzureVnetFlowLogsSecretsConfig = nil
+		dst.BackblazeB2SecretsConfig = nil
+		dst.BigqueryCronSecretsConfig = nil
 		dst.BigqueryInputSecretsConfig = nil
 		dst.BoxEventsSecretsConfig = nil
 		dst.BoxUsersSecretsConfig = nil
+		dst.BuildkiteAuditLogsSecretsConfig = nil
+		dst.BuildkiteGraphqlInputSecretsConfig = nil
 		dst.CloudAssetInventorySecretsConfig = nil
 		dst.CloudConfigurationFindingsSecretsConfig = nil
 		dst.CloudLogsSecretsConfig = nil
+		dst.CloudResourceInventoryReportsSecretsConfig = nil
 		dst.CloudResourceInventorySecretsConfig = nil
+		dst.CloudflareAuditLogsSecretsConfig = nil
+		dst.CloudflareDnsRecordsSecretsConfig = nil
+		dst.CloudflareFirewallEventsSecretsConfig = nil
+		dst.CloudflarePageShieldConnectionsSecretsConfig = nil
+		dst.CloudflareRulesetsSecretsConfig = nil
+		dst.CloudflareSecurityInsightsSecretsConfig = nil
+		dst.CloudflareUrlScannerSecretsConfig = nil
+		dst.CloudflareUsersSecretsConfig = nil
+		dst.CloudflareZeroTrustAccessRequestsSecretsConfig = nil
+		dst.CloudflareZonesSecretsConfig = nil
 		dst.ClumioAuditLogsSecretsConfig = nil
 		dst.ClumioConsolidatedAlertsSecretsConfig = nil
+		dst.CodaAuditEventsSecretsConfig = nil
+		dst.CortexXsoarManagementLogsSecretsConfig = nil
 		dst.CrowdstrikeFdrSecretsConfig = nil
+		dst.CustomerEventDataSecretsConfig = nil
 		dst.DefenderForEndpointAlertsSecretsConfig = nil
-		dst.DetectSummariesSecretsConfig = nil
-		dst.DeviceActivitySecretsConfig = nil
 		dst.DeviceDetailsSecretsConfig = nil
 		dst.DevicesSecretsConfig = nil
-		dst.DriveActivitySecretsConfig = nil
+		dst.EndorLabsAuditLogsSecretsConfig = nil
 		dst.EntraIdSecretsConfig = nil
 		dst.EventSecretsConfig = nil
-		dst.EventsLogsSecretsConfig = nil
-		dst.EventsSecretsConfig = nil
 		dst.FullScansSecretsConfig = nil
 		dst.GitlabIssuesSecretsConfig = nil
 		dst.GoogleCloudStorageSecretsConfig = nil
+		dst.GreenhouseAuditLogsSecretsConfig = nil
 		dst.IndividualAlertsSecretsConfig = nil
+		dst.InspectorSecretsConfig = nil
+		dst.IssuesReportSecretsConfig = nil
 		dst.IssuesSecretsConfig = nil
+		dst.KoiAuditLogsSecretsConfig = nil
 		dst.LogAnalyticsQuerySecretsConfig = nil
-		dst.LoginActivitySecretsConfig = nil
 		dst.LoginSessionsSecretsConfig = nil
-		dst.OauthActivitySecretsConfig = nil
+		dst.MerakiConfigLogsSecretsConfig = nil
+		dst.Microsoft365GenericSecretsConfig = nil
 		dst.ObjectStorageInputSecretsConfig = nil
+		dst.OfflineenrollmentlogsSecretsConfig = nil
 		dst.OneloginEventsSecretsConfig = nil
+		dst.OperationLogsSecretsConfig = nil
+		dst.OrgAuditLogsSecretsConfig = nil
+		dst.PagerdutyAuditRecordsSecretsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSecretsConfig = nil
+		dst.PolymerSecretsConfig = nil
+		dst.PostmanAuditLogsSecretsConfig = nil
+		dst.PubsubSecretsConfig = nil
 		dst.RolesInfoSecretsConfig = nil
+		dst.RootlyAuditLogsSecretsConfig = nil
+		dst.SalesforceUsersSecretsConfig = nil
+		dst.SecretsmanagerSecretsConfig = nil
 		dst.SemgrepCodeFindingsSecretsConfig = nil
 		dst.SemgrepDeploymentsSecretsConfig = nil
 		dst.SemgrepProjectDetailsSecretsConfig = nil
 		dst.SemgrepProjectsSecretsConfig = nil
 		dst.SemgrepSupplyChainFindingsSecretsConfig = nil
 		dst.SentryOrgAuditLogsSecretsConfig = nil
+		dst.SlackEnterpriseAuditLogsSecretsConfig = nil
 		dst.SlackUsersSecretsConfig = nil
 		dst.SlackgroupsSecretsConfig = nil
 		dst.SnowflakeInputSecretsConfig = nil
@@ -1785,16 +3045,30 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.SnykTargetsSecretsConfig = nil
 		dst.SystemlogSecretsConfig = nil
 		dst.TailscaleUsersSecretsConfig = nil
+		dst.TaniumGraphqlInputSecretsConfig = nil
+		dst.TeamAccessLogsSecretsConfig = nil
+		dst.TeamIntegrationLogsSecretsConfig = nil
+		dst.TelephonyLogsSecretsConfig = nil
 		dst.TenableAssetsCronSecretsConfig = nil
 		dst.TenableAssetsSecretsConfig = nil
 		dst.TenableVulnerabilitiesCronSecretsConfig = nil
 		dst.TenableVulnerabilitiesSecretsConfig = nil
+		dst.TinesAuditLogsSecretsConfig = nil
+		dst.TinesEventsLogsSecretsConfig = nil
+		dst.TwilioEventsSecretsConfig = nil
+		dst.TwilioSendgridEmailActivitySecretsConfig = nil
+		dst.UniversalSecretsConfig = nil
 		dst.UsersInfoSecretsConfig = nil
 		dst.UsersSecretsConfig = nil
 		dst.VercelUserEventsSecretsConfig = nil
 		dst.VulnerabilitiesCronSecretsConfig = nil
 		dst.VulnerabilitiesSecretsConfig = nil
+		dst.VulnerabilityFindingsReportSecretsConfig = nil
 		dst.VulnerabilityFindingsSecretsConfig = nil
+		dst.WizAuditLogsSecretsConfig = nil
+		dst.ZendeskAuditLogsSecretsConfig = nil
+		dst.ZoomActivityLogsSecretsConfig = nil
+		dst.ZoomMeetingActivityLogsSecretsConfig = nil
 		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(SecretProcessesorInputConfigSecrets)")
@@ -1811,16 +3085,24 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ActivityLogsSecretsConfig)
 	}
 
+	if src.ActivitylogsSecretsConfig != nil {
+		return json.Marshal(&src.ActivitylogsSecretsConfig)
+	}
+
 	if src.ActorsInfoSecretsConfig != nil {
 		return json.Marshal(&src.ActorsInfoSecretsConfig)
 	}
 
-	if src.AdminActivitySecretsConfig != nil {
-		return json.Marshal(&src.AdminActivitySecretsConfig)
-	}
-
 	if src.AdminLogsSecretsConfig != nil {
 		return json.Marshal(&src.AdminLogsSecretsConfig)
+	}
+
+	if src.AlertCenterSecretsConfig != nil {
+		return json.Marshal(&src.AlertCenterSecretsConfig)
+	}
+
+	if src.ArizeAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.ArizeAuditLogsSecretsConfig)
 	}
 
 	if src.AuditLogsSecretsConfig != nil {
@@ -1831,6 +3113,18 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AuthLogsSecretsConfig)
 	}
 
+	if src.AwsGuarddutySecretsConfig != nil {
+		return json.Marshal(&src.AwsGuarddutySecretsConfig)
+	}
+
+	if src.AwsS3SecretsConfig != nil {
+		return json.Marshal(&src.AwsS3SecretsConfig)
+	}
+
+	if src.AwssecurityhubSecretsConfig != nil {
+		return json.Marshal(&src.AwssecurityhubSecretsConfig)
+	}
+
 	if src.AzureActivityLogsSecretsConfig != nil {
 		return json.Marshal(&src.AzureActivityLogsSecretsConfig)
 	}
@@ -1839,8 +3133,20 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AzureBlobStorageSecretsConfig)
 	}
 
+	if src.AzureEventHubsSecretsConfig != nil {
+		return json.Marshal(&src.AzureEventHubsSecretsConfig)
+	}
+
 	if src.AzureVnetFlowLogsSecretsConfig != nil {
 		return json.Marshal(&src.AzureVnetFlowLogsSecretsConfig)
+	}
+
+	if src.BackblazeB2SecretsConfig != nil {
+		return json.Marshal(&src.BackblazeB2SecretsConfig)
+	}
+
+	if src.BigqueryCronSecretsConfig != nil {
+		return json.Marshal(&src.BigqueryCronSecretsConfig)
 	}
 
 	if src.BigqueryInputSecretsConfig != nil {
@@ -1855,6 +3161,14 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.BoxUsersSecretsConfig)
 	}
 
+	if src.BuildkiteAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.BuildkiteAuditLogsSecretsConfig)
+	}
+
+	if src.BuildkiteGraphqlInputSecretsConfig != nil {
+		return json.Marshal(&src.BuildkiteGraphqlInputSecretsConfig)
+	}
+
 	if src.CloudAssetInventorySecretsConfig != nil {
 		return json.Marshal(&src.CloudAssetInventorySecretsConfig)
 	}
@@ -1867,8 +3181,52 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CloudLogsSecretsConfig)
 	}
 
+	if src.CloudResourceInventoryReportsSecretsConfig != nil {
+		return json.Marshal(&src.CloudResourceInventoryReportsSecretsConfig)
+	}
+
 	if src.CloudResourceInventorySecretsConfig != nil {
 		return json.Marshal(&src.CloudResourceInventorySecretsConfig)
+	}
+
+	if src.CloudflareAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.CloudflareAuditLogsSecretsConfig)
+	}
+
+	if src.CloudflareDnsRecordsSecretsConfig != nil {
+		return json.Marshal(&src.CloudflareDnsRecordsSecretsConfig)
+	}
+
+	if src.CloudflareFirewallEventsSecretsConfig != nil {
+		return json.Marshal(&src.CloudflareFirewallEventsSecretsConfig)
+	}
+
+	if src.CloudflarePageShieldConnectionsSecretsConfig != nil {
+		return json.Marshal(&src.CloudflarePageShieldConnectionsSecretsConfig)
+	}
+
+	if src.CloudflareRulesetsSecretsConfig != nil {
+		return json.Marshal(&src.CloudflareRulesetsSecretsConfig)
+	}
+
+	if src.CloudflareSecurityInsightsSecretsConfig != nil {
+		return json.Marshal(&src.CloudflareSecurityInsightsSecretsConfig)
+	}
+
+	if src.CloudflareUrlScannerSecretsConfig != nil {
+		return json.Marshal(&src.CloudflareUrlScannerSecretsConfig)
+	}
+
+	if src.CloudflareUsersSecretsConfig != nil {
+		return json.Marshal(&src.CloudflareUsersSecretsConfig)
+	}
+
+	if src.CloudflareZeroTrustAccessRequestsSecretsConfig != nil {
+		return json.Marshal(&src.CloudflareZeroTrustAccessRequestsSecretsConfig)
+	}
+
+	if src.CloudflareZonesSecretsConfig != nil {
+		return json.Marshal(&src.CloudflareZonesSecretsConfig)
 	}
 
 	if src.ClumioAuditLogsSecretsConfig != nil {
@@ -1879,20 +3237,24 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ClumioConsolidatedAlertsSecretsConfig)
 	}
 
+	if src.CodaAuditEventsSecretsConfig != nil {
+		return json.Marshal(&src.CodaAuditEventsSecretsConfig)
+	}
+
+	if src.CortexXsoarManagementLogsSecretsConfig != nil {
+		return json.Marshal(&src.CortexXsoarManagementLogsSecretsConfig)
+	}
+
 	if src.CrowdstrikeFdrSecretsConfig != nil {
 		return json.Marshal(&src.CrowdstrikeFdrSecretsConfig)
 	}
 
+	if src.CustomerEventDataSecretsConfig != nil {
+		return json.Marshal(&src.CustomerEventDataSecretsConfig)
+	}
+
 	if src.DefenderForEndpointAlertsSecretsConfig != nil {
 		return json.Marshal(&src.DefenderForEndpointAlertsSecretsConfig)
-	}
-
-	if src.DetectSummariesSecretsConfig != nil {
-		return json.Marshal(&src.DetectSummariesSecretsConfig)
-	}
-
-	if src.DeviceActivitySecretsConfig != nil {
-		return json.Marshal(&src.DeviceActivitySecretsConfig)
 	}
 
 	if src.DeviceDetailsSecretsConfig != nil {
@@ -1903,8 +3265,8 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.DevicesSecretsConfig)
 	}
 
-	if src.DriveActivitySecretsConfig != nil {
-		return json.Marshal(&src.DriveActivitySecretsConfig)
+	if src.EndorLabsAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.EndorLabsAuditLogsSecretsConfig)
 	}
 
 	if src.EntraIdSecretsConfig != nil {
@@ -1913,14 +3275,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.EventSecretsConfig != nil {
 		return json.Marshal(&src.EventSecretsConfig)
-	}
-
-	if src.EventsLogsSecretsConfig != nil {
-		return json.Marshal(&src.EventsLogsSecretsConfig)
-	}
-
-	if src.EventsSecretsConfig != nil {
-		return json.Marshal(&src.EventsSecretsConfig)
 	}
 
 	if src.FullScansSecretsConfig != nil {
@@ -1935,44 +3289,100 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.GoogleCloudStorageSecretsConfig)
 	}
 
+	if src.GreenhouseAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.GreenhouseAuditLogsSecretsConfig)
+	}
+
 	if src.IndividualAlertsSecretsConfig != nil {
 		return json.Marshal(&src.IndividualAlertsSecretsConfig)
+	}
+
+	if src.InspectorSecretsConfig != nil {
+		return json.Marshal(&src.InspectorSecretsConfig)
+	}
+
+	if src.IssuesReportSecretsConfig != nil {
+		return json.Marshal(&src.IssuesReportSecretsConfig)
 	}
 
 	if src.IssuesSecretsConfig != nil {
 		return json.Marshal(&src.IssuesSecretsConfig)
 	}
 
-	if src.LogAnalyticsQuerySecretsConfig != nil {
-		return json.Marshal(&src.LogAnalyticsQuerySecretsConfig)
+	if src.KoiAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.KoiAuditLogsSecretsConfig)
 	}
 
-	if src.LoginActivitySecretsConfig != nil {
-		return json.Marshal(&src.LoginActivitySecretsConfig)
+	if src.LogAnalyticsQuerySecretsConfig != nil {
+		return json.Marshal(&src.LogAnalyticsQuerySecretsConfig)
 	}
 
 	if src.LoginSessionsSecretsConfig != nil {
 		return json.Marshal(&src.LoginSessionsSecretsConfig)
 	}
 
-	if src.OauthActivitySecretsConfig != nil {
-		return json.Marshal(&src.OauthActivitySecretsConfig)
+	if src.MerakiConfigLogsSecretsConfig != nil {
+		return json.Marshal(&src.MerakiConfigLogsSecretsConfig)
+	}
+
+	if src.Microsoft365GenericSecretsConfig != nil {
+		return json.Marshal(&src.Microsoft365GenericSecretsConfig)
 	}
 
 	if src.ObjectStorageInputSecretsConfig != nil {
 		return json.Marshal(&src.ObjectStorageInputSecretsConfig)
 	}
 
+	if src.OfflineenrollmentlogsSecretsConfig != nil {
+		return json.Marshal(&src.OfflineenrollmentlogsSecretsConfig)
+	}
+
 	if src.OneloginEventsSecretsConfig != nil {
 		return json.Marshal(&src.OneloginEventsSecretsConfig)
+	}
+
+	if src.OperationLogsSecretsConfig != nil {
+		return json.Marshal(&src.OperationLogsSecretsConfig)
+	}
+
+	if src.OrgAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.OrgAuditLogsSecretsConfig)
+	}
+
+	if src.PagerdutyAuditRecordsSecretsConfig != nil {
+		return json.Marshal(&src.PagerdutyAuditRecordsSecretsConfig)
 	}
 
 	if src.PaloAltoDataSecurityAlertsSecretsConfig != nil {
 		return json.Marshal(&src.PaloAltoDataSecurityAlertsSecretsConfig)
 	}
 
+	if src.PolymerSecretsConfig != nil {
+		return json.Marshal(&src.PolymerSecretsConfig)
+	}
+
+	if src.PostmanAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.PostmanAuditLogsSecretsConfig)
+	}
+
+	if src.PubsubSecretsConfig != nil {
+		return json.Marshal(&src.PubsubSecretsConfig)
+	}
+
 	if src.RolesInfoSecretsConfig != nil {
 		return json.Marshal(&src.RolesInfoSecretsConfig)
+	}
+
+	if src.RootlyAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.RootlyAuditLogsSecretsConfig)
+	}
+
+	if src.SalesforceUsersSecretsConfig != nil {
+		return json.Marshal(&src.SalesforceUsersSecretsConfig)
+	}
+
+	if src.SecretsmanagerSecretsConfig != nil {
+		return json.Marshal(&src.SecretsmanagerSecretsConfig)
 	}
 
 	if src.SemgrepCodeFindingsSecretsConfig != nil {
@@ -1997,6 +3407,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.SentryOrgAuditLogsSecretsConfig != nil {
 		return json.Marshal(&src.SentryOrgAuditLogsSecretsConfig)
+	}
+
+	if src.SlackEnterpriseAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.SlackEnterpriseAuditLogsSecretsConfig)
 	}
 
 	if src.SlackUsersSecretsConfig != nil {
@@ -2035,6 +3449,22 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.TailscaleUsersSecretsConfig)
 	}
 
+	if src.TaniumGraphqlInputSecretsConfig != nil {
+		return json.Marshal(&src.TaniumGraphqlInputSecretsConfig)
+	}
+
+	if src.TeamAccessLogsSecretsConfig != nil {
+		return json.Marshal(&src.TeamAccessLogsSecretsConfig)
+	}
+
+	if src.TeamIntegrationLogsSecretsConfig != nil {
+		return json.Marshal(&src.TeamIntegrationLogsSecretsConfig)
+	}
+
+	if src.TelephonyLogsSecretsConfig != nil {
+		return json.Marshal(&src.TelephonyLogsSecretsConfig)
+	}
+
 	if src.TenableAssetsCronSecretsConfig != nil {
 		return json.Marshal(&src.TenableAssetsCronSecretsConfig)
 	}
@@ -2049,6 +3479,26 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.TenableVulnerabilitiesSecretsConfig != nil {
 		return json.Marshal(&src.TenableVulnerabilitiesSecretsConfig)
+	}
+
+	if src.TinesAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.TinesAuditLogsSecretsConfig)
+	}
+
+	if src.TinesEventsLogsSecretsConfig != nil {
+		return json.Marshal(&src.TinesEventsLogsSecretsConfig)
+	}
+
+	if src.TwilioEventsSecretsConfig != nil {
+		return json.Marshal(&src.TwilioEventsSecretsConfig)
+	}
+
+	if src.TwilioSendgridEmailActivitySecretsConfig != nil {
+		return json.Marshal(&src.TwilioSendgridEmailActivitySecretsConfig)
+	}
+
+	if src.UniversalSecretsConfig != nil {
+		return json.Marshal(&src.UniversalSecretsConfig)
 	}
 
 	if src.UsersInfoSecretsConfig != nil {
@@ -2071,8 +3521,28 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.VulnerabilitiesSecretsConfig)
 	}
 
+	if src.VulnerabilityFindingsReportSecretsConfig != nil {
+		return json.Marshal(&src.VulnerabilityFindingsReportSecretsConfig)
+	}
+
 	if src.VulnerabilityFindingsSecretsConfig != nil {
 		return json.Marshal(&src.VulnerabilityFindingsSecretsConfig)
+	}
+
+	if src.WizAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.WizAuditLogsSecretsConfig)
+	}
+
+	if src.ZendeskAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.ZendeskAuditLogsSecretsConfig)
+	}
+
+	if src.ZoomActivityLogsSecretsConfig != nil {
+		return json.Marshal(&src.ZoomActivityLogsSecretsConfig)
+	}
+
+	if src.ZoomMeetingActivityLogsSecretsConfig != nil {
+		return json.Marshal(&src.ZoomMeetingActivityLogsSecretsConfig)
 	}
 
 	if src.MapmapOfStringAny != nil {
@@ -2091,16 +3561,24 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.ActivityLogsSecretsConfig
 	}
 
+	if obj.ActivitylogsSecretsConfig != nil {
+		return obj.ActivitylogsSecretsConfig
+	}
+
 	if obj.ActorsInfoSecretsConfig != nil {
 		return obj.ActorsInfoSecretsConfig
 	}
 
-	if obj.AdminActivitySecretsConfig != nil {
-		return obj.AdminActivitySecretsConfig
-	}
-
 	if obj.AdminLogsSecretsConfig != nil {
 		return obj.AdminLogsSecretsConfig
+	}
+
+	if obj.AlertCenterSecretsConfig != nil {
+		return obj.AlertCenterSecretsConfig
+	}
+
+	if obj.ArizeAuditLogsSecretsConfig != nil {
+		return obj.ArizeAuditLogsSecretsConfig
 	}
 
 	if obj.AuditLogsSecretsConfig != nil {
@@ -2111,6 +3589,18 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.AuthLogsSecretsConfig
 	}
 
+	if obj.AwsGuarddutySecretsConfig != nil {
+		return obj.AwsGuarddutySecretsConfig
+	}
+
+	if obj.AwsS3SecretsConfig != nil {
+		return obj.AwsS3SecretsConfig
+	}
+
+	if obj.AwssecurityhubSecretsConfig != nil {
+		return obj.AwssecurityhubSecretsConfig
+	}
+
 	if obj.AzureActivityLogsSecretsConfig != nil {
 		return obj.AzureActivityLogsSecretsConfig
 	}
@@ -2119,8 +3609,20 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.AzureBlobStorageSecretsConfig
 	}
 
+	if obj.AzureEventHubsSecretsConfig != nil {
+		return obj.AzureEventHubsSecretsConfig
+	}
+
 	if obj.AzureVnetFlowLogsSecretsConfig != nil {
 		return obj.AzureVnetFlowLogsSecretsConfig
+	}
+
+	if obj.BackblazeB2SecretsConfig != nil {
+		return obj.BackblazeB2SecretsConfig
+	}
+
+	if obj.BigqueryCronSecretsConfig != nil {
+		return obj.BigqueryCronSecretsConfig
 	}
 
 	if obj.BigqueryInputSecretsConfig != nil {
@@ -2135,6 +3637,14 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.BoxUsersSecretsConfig
 	}
 
+	if obj.BuildkiteAuditLogsSecretsConfig != nil {
+		return obj.BuildkiteAuditLogsSecretsConfig
+	}
+
+	if obj.BuildkiteGraphqlInputSecretsConfig != nil {
+		return obj.BuildkiteGraphqlInputSecretsConfig
+	}
+
 	if obj.CloudAssetInventorySecretsConfig != nil {
 		return obj.CloudAssetInventorySecretsConfig
 	}
@@ -2147,8 +3657,52 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.CloudLogsSecretsConfig
 	}
 
+	if obj.CloudResourceInventoryReportsSecretsConfig != nil {
+		return obj.CloudResourceInventoryReportsSecretsConfig
+	}
+
 	if obj.CloudResourceInventorySecretsConfig != nil {
 		return obj.CloudResourceInventorySecretsConfig
+	}
+
+	if obj.CloudflareAuditLogsSecretsConfig != nil {
+		return obj.CloudflareAuditLogsSecretsConfig
+	}
+
+	if obj.CloudflareDnsRecordsSecretsConfig != nil {
+		return obj.CloudflareDnsRecordsSecretsConfig
+	}
+
+	if obj.CloudflareFirewallEventsSecretsConfig != nil {
+		return obj.CloudflareFirewallEventsSecretsConfig
+	}
+
+	if obj.CloudflarePageShieldConnectionsSecretsConfig != nil {
+		return obj.CloudflarePageShieldConnectionsSecretsConfig
+	}
+
+	if obj.CloudflareRulesetsSecretsConfig != nil {
+		return obj.CloudflareRulesetsSecretsConfig
+	}
+
+	if obj.CloudflareSecurityInsightsSecretsConfig != nil {
+		return obj.CloudflareSecurityInsightsSecretsConfig
+	}
+
+	if obj.CloudflareUrlScannerSecretsConfig != nil {
+		return obj.CloudflareUrlScannerSecretsConfig
+	}
+
+	if obj.CloudflareUsersSecretsConfig != nil {
+		return obj.CloudflareUsersSecretsConfig
+	}
+
+	if obj.CloudflareZeroTrustAccessRequestsSecretsConfig != nil {
+		return obj.CloudflareZeroTrustAccessRequestsSecretsConfig
+	}
+
+	if obj.CloudflareZonesSecretsConfig != nil {
+		return obj.CloudflareZonesSecretsConfig
 	}
 
 	if obj.ClumioAuditLogsSecretsConfig != nil {
@@ -2159,20 +3713,24 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.ClumioConsolidatedAlertsSecretsConfig
 	}
 
+	if obj.CodaAuditEventsSecretsConfig != nil {
+		return obj.CodaAuditEventsSecretsConfig
+	}
+
+	if obj.CortexXsoarManagementLogsSecretsConfig != nil {
+		return obj.CortexXsoarManagementLogsSecretsConfig
+	}
+
 	if obj.CrowdstrikeFdrSecretsConfig != nil {
 		return obj.CrowdstrikeFdrSecretsConfig
 	}
 
+	if obj.CustomerEventDataSecretsConfig != nil {
+		return obj.CustomerEventDataSecretsConfig
+	}
+
 	if obj.DefenderForEndpointAlertsSecretsConfig != nil {
 		return obj.DefenderForEndpointAlertsSecretsConfig
-	}
-
-	if obj.DetectSummariesSecretsConfig != nil {
-		return obj.DetectSummariesSecretsConfig
-	}
-
-	if obj.DeviceActivitySecretsConfig != nil {
-		return obj.DeviceActivitySecretsConfig
 	}
 
 	if obj.DeviceDetailsSecretsConfig != nil {
@@ -2183,8 +3741,8 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.DevicesSecretsConfig
 	}
 
-	if obj.DriveActivitySecretsConfig != nil {
-		return obj.DriveActivitySecretsConfig
+	if obj.EndorLabsAuditLogsSecretsConfig != nil {
+		return obj.EndorLabsAuditLogsSecretsConfig
 	}
 
 	if obj.EntraIdSecretsConfig != nil {
@@ -2193,14 +3751,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 	if obj.EventSecretsConfig != nil {
 		return obj.EventSecretsConfig
-	}
-
-	if obj.EventsLogsSecretsConfig != nil {
-		return obj.EventsLogsSecretsConfig
-	}
-
-	if obj.EventsSecretsConfig != nil {
-		return obj.EventsSecretsConfig
 	}
 
 	if obj.FullScansSecretsConfig != nil {
@@ -2215,44 +3765,100 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.GoogleCloudStorageSecretsConfig
 	}
 
+	if obj.GreenhouseAuditLogsSecretsConfig != nil {
+		return obj.GreenhouseAuditLogsSecretsConfig
+	}
+
 	if obj.IndividualAlertsSecretsConfig != nil {
 		return obj.IndividualAlertsSecretsConfig
+	}
+
+	if obj.InspectorSecretsConfig != nil {
+		return obj.InspectorSecretsConfig
+	}
+
+	if obj.IssuesReportSecretsConfig != nil {
+		return obj.IssuesReportSecretsConfig
 	}
 
 	if obj.IssuesSecretsConfig != nil {
 		return obj.IssuesSecretsConfig
 	}
 
-	if obj.LogAnalyticsQuerySecretsConfig != nil {
-		return obj.LogAnalyticsQuerySecretsConfig
+	if obj.KoiAuditLogsSecretsConfig != nil {
+		return obj.KoiAuditLogsSecretsConfig
 	}
 
-	if obj.LoginActivitySecretsConfig != nil {
-		return obj.LoginActivitySecretsConfig
+	if obj.LogAnalyticsQuerySecretsConfig != nil {
+		return obj.LogAnalyticsQuerySecretsConfig
 	}
 
 	if obj.LoginSessionsSecretsConfig != nil {
 		return obj.LoginSessionsSecretsConfig
 	}
 
-	if obj.OauthActivitySecretsConfig != nil {
-		return obj.OauthActivitySecretsConfig
+	if obj.MerakiConfigLogsSecretsConfig != nil {
+		return obj.MerakiConfigLogsSecretsConfig
+	}
+
+	if obj.Microsoft365GenericSecretsConfig != nil {
+		return obj.Microsoft365GenericSecretsConfig
 	}
 
 	if obj.ObjectStorageInputSecretsConfig != nil {
 		return obj.ObjectStorageInputSecretsConfig
 	}
 
+	if obj.OfflineenrollmentlogsSecretsConfig != nil {
+		return obj.OfflineenrollmentlogsSecretsConfig
+	}
+
 	if obj.OneloginEventsSecretsConfig != nil {
 		return obj.OneloginEventsSecretsConfig
+	}
+
+	if obj.OperationLogsSecretsConfig != nil {
+		return obj.OperationLogsSecretsConfig
+	}
+
+	if obj.OrgAuditLogsSecretsConfig != nil {
+		return obj.OrgAuditLogsSecretsConfig
+	}
+
+	if obj.PagerdutyAuditRecordsSecretsConfig != nil {
+		return obj.PagerdutyAuditRecordsSecretsConfig
 	}
 
 	if obj.PaloAltoDataSecurityAlertsSecretsConfig != nil {
 		return obj.PaloAltoDataSecurityAlertsSecretsConfig
 	}
 
+	if obj.PolymerSecretsConfig != nil {
+		return obj.PolymerSecretsConfig
+	}
+
+	if obj.PostmanAuditLogsSecretsConfig != nil {
+		return obj.PostmanAuditLogsSecretsConfig
+	}
+
+	if obj.PubsubSecretsConfig != nil {
+		return obj.PubsubSecretsConfig
+	}
+
 	if obj.RolesInfoSecretsConfig != nil {
 		return obj.RolesInfoSecretsConfig
+	}
+
+	if obj.RootlyAuditLogsSecretsConfig != nil {
+		return obj.RootlyAuditLogsSecretsConfig
+	}
+
+	if obj.SalesforceUsersSecretsConfig != nil {
+		return obj.SalesforceUsersSecretsConfig
+	}
+
+	if obj.SecretsmanagerSecretsConfig != nil {
+		return obj.SecretsmanagerSecretsConfig
 	}
 
 	if obj.SemgrepCodeFindingsSecretsConfig != nil {
@@ -2277,6 +3883,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 	if obj.SentryOrgAuditLogsSecretsConfig != nil {
 		return obj.SentryOrgAuditLogsSecretsConfig
+	}
+
+	if obj.SlackEnterpriseAuditLogsSecretsConfig != nil {
+		return obj.SlackEnterpriseAuditLogsSecretsConfig
 	}
 
 	if obj.SlackUsersSecretsConfig != nil {
@@ -2315,6 +3925,22 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.TailscaleUsersSecretsConfig
 	}
 
+	if obj.TaniumGraphqlInputSecretsConfig != nil {
+		return obj.TaniumGraphqlInputSecretsConfig
+	}
+
+	if obj.TeamAccessLogsSecretsConfig != nil {
+		return obj.TeamAccessLogsSecretsConfig
+	}
+
+	if obj.TeamIntegrationLogsSecretsConfig != nil {
+		return obj.TeamIntegrationLogsSecretsConfig
+	}
+
+	if obj.TelephonyLogsSecretsConfig != nil {
+		return obj.TelephonyLogsSecretsConfig
+	}
+
 	if obj.TenableAssetsCronSecretsConfig != nil {
 		return obj.TenableAssetsCronSecretsConfig
 	}
@@ -2329,6 +3955,26 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 	if obj.TenableVulnerabilitiesSecretsConfig != nil {
 		return obj.TenableVulnerabilitiesSecretsConfig
+	}
+
+	if obj.TinesAuditLogsSecretsConfig != nil {
+		return obj.TinesAuditLogsSecretsConfig
+	}
+
+	if obj.TinesEventsLogsSecretsConfig != nil {
+		return obj.TinesEventsLogsSecretsConfig
+	}
+
+	if obj.TwilioEventsSecretsConfig != nil {
+		return obj.TwilioEventsSecretsConfig
+	}
+
+	if obj.TwilioSendgridEmailActivitySecretsConfig != nil {
+		return obj.TwilioSendgridEmailActivitySecretsConfig
+	}
+
+	if obj.UniversalSecretsConfig != nil {
+		return obj.UniversalSecretsConfig
 	}
 
 	if obj.UsersInfoSecretsConfig != nil {
@@ -2351,8 +3997,28 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.VulnerabilitiesSecretsConfig
 	}
 
+	if obj.VulnerabilityFindingsReportSecretsConfig != nil {
+		return obj.VulnerabilityFindingsReportSecretsConfig
+	}
+
 	if obj.VulnerabilityFindingsSecretsConfig != nil {
 		return obj.VulnerabilityFindingsSecretsConfig
+	}
+
+	if obj.WizAuditLogsSecretsConfig != nil {
+		return obj.WizAuditLogsSecretsConfig
+	}
+
+	if obj.ZendeskAuditLogsSecretsConfig != nil {
+		return obj.ZendeskAuditLogsSecretsConfig
+	}
+
+	if obj.ZoomActivityLogsSecretsConfig != nil {
+		return obj.ZoomActivityLogsSecretsConfig
+	}
+
+	if obj.ZoomMeetingActivityLogsSecretsConfig != nil {
+		return obj.ZoomMeetingActivityLogsSecretsConfig
 	}
 
 	if obj.MapmapOfStringAny != nil {
@@ -2369,16 +4035,24 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.ActivityLogsSecretsConfig
 	}
 
+	if obj.ActivitylogsSecretsConfig != nil {
+		return *obj.ActivitylogsSecretsConfig
+	}
+
 	if obj.ActorsInfoSecretsConfig != nil {
 		return *obj.ActorsInfoSecretsConfig
 	}
 
-	if obj.AdminActivitySecretsConfig != nil {
-		return *obj.AdminActivitySecretsConfig
-	}
-
 	if obj.AdminLogsSecretsConfig != nil {
 		return *obj.AdminLogsSecretsConfig
+	}
+
+	if obj.AlertCenterSecretsConfig != nil {
+		return *obj.AlertCenterSecretsConfig
+	}
+
+	if obj.ArizeAuditLogsSecretsConfig != nil {
+		return *obj.ArizeAuditLogsSecretsConfig
 	}
 
 	if obj.AuditLogsSecretsConfig != nil {
@@ -2389,6 +4063,18 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.AuthLogsSecretsConfig
 	}
 
+	if obj.AwsGuarddutySecretsConfig != nil {
+		return *obj.AwsGuarddutySecretsConfig
+	}
+
+	if obj.AwsS3SecretsConfig != nil {
+		return *obj.AwsS3SecretsConfig
+	}
+
+	if obj.AwssecurityhubSecretsConfig != nil {
+		return *obj.AwssecurityhubSecretsConfig
+	}
+
 	if obj.AzureActivityLogsSecretsConfig != nil {
 		return *obj.AzureActivityLogsSecretsConfig
 	}
@@ -2397,8 +4083,20 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.AzureBlobStorageSecretsConfig
 	}
 
+	if obj.AzureEventHubsSecretsConfig != nil {
+		return *obj.AzureEventHubsSecretsConfig
+	}
+
 	if obj.AzureVnetFlowLogsSecretsConfig != nil {
 		return *obj.AzureVnetFlowLogsSecretsConfig
+	}
+
+	if obj.BackblazeB2SecretsConfig != nil {
+		return *obj.BackblazeB2SecretsConfig
+	}
+
+	if obj.BigqueryCronSecretsConfig != nil {
+		return *obj.BigqueryCronSecretsConfig
 	}
 
 	if obj.BigqueryInputSecretsConfig != nil {
@@ -2413,6 +4111,14 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.BoxUsersSecretsConfig
 	}
 
+	if obj.BuildkiteAuditLogsSecretsConfig != nil {
+		return *obj.BuildkiteAuditLogsSecretsConfig
+	}
+
+	if obj.BuildkiteGraphqlInputSecretsConfig != nil {
+		return *obj.BuildkiteGraphqlInputSecretsConfig
+	}
+
 	if obj.CloudAssetInventorySecretsConfig != nil {
 		return *obj.CloudAssetInventorySecretsConfig
 	}
@@ -2425,8 +4131,52 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.CloudLogsSecretsConfig
 	}
 
+	if obj.CloudResourceInventoryReportsSecretsConfig != nil {
+		return *obj.CloudResourceInventoryReportsSecretsConfig
+	}
+
 	if obj.CloudResourceInventorySecretsConfig != nil {
 		return *obj.CloudResourceInventorySecretsConfig
+	}
+
+	if obj.CloudflareAuditLogsSecretsConfig != nil {
+		return *obj.CloudflareAuditLogsSecretsConfig
+	}
+
+	if obj.CloudflareDnsRecordsSecretsConfig != nil {
+		return *obj.CloudflareDnsRecordsSecretsConfig
+	}
+
+	if obj.CloudflareFirewallEventsSecretsConfig != nil {
+		return *obj.CloudflareFirewallEventsSecretsConfig
+	}
+
+	if obj.CloudflarePageShieldConnectionsSecretsConfig != nil {
+		return *obj.CloudflarePageShieldConnectionsSecretsConfig
+	}
+
+	if obj.CloudflareRulesetsSecretsConfig != nil {
+		return *obj.CloudflareRulesetsSecretsConfig
+	}
+
+	if obj.CloudflareSecurityInsightsSecretsConfig != nil {
+		return *obj.CloudflareSecurityInsightsSecretsConfig
+	}
+
+	if obj.CloudflareUrlScannerSecretsConfig != nil {
+		return *obj.CloudflareUrlScannerSecretsConfig
+	}
+
+	if obj.CloudflareUsersSecretsConfig != nil {
+		return *obj.CloudflareUsersSecretsConfig
+	}
+
+	if obj.CloudflareZeroTrustAccessRequestsSecretsConfig != nil {
+		return *obj.CloudflareZeroTrustAccessRequestsSecretsConfig
+	}
+
+	if obj.CloudflareZonesSecretsConfig != nil {
+		return *obj.CloudflareZonesSecretsConfig
 	}
 
 	if obj.ClumioAuditLogsSecretsConfig != nil {
@@ -2437,20 +4187,24 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.ClumioConsolidatedAlertsSecretsConfig
 	}
 
+	if obj.CodaAuditEventsSecretsConfig != nil {
+		return *obj.CodaAuditEventsSecretsConfig
+	}
+
+	if obj.CortexXsoarManagementLogsSecretsConfig != nil {
+		return *obj.CortexXsoarManagementLogsSecretsConfig
+	}
+
 	if obj.CrowdstrikeFdrSecretsConfig != nil {
 		return *obj.CrowdstrikeFdrSecretsConfig
 	}
 
+	if obj.CustomerEventDataSecretsConfig != nil {
+		return *obj.CustomerEventDataSecretsConfig
+	}
+
 	if obj.DefenderForEndpointAlertsSecretsConfig != nil {
 		return *obj.DefenderForEndpointAlertsSecretsConfig
-	}
-
-	if obj.DetectSummariesSecretsConfig != nil {
-		return *obj.DetectSummariesSecretsConfig
-	}
-
-	if obj.DeviceActivitySecretsConfig != nil {
-		return *obj.DeviceActivitySecretsConfig
 	}
 
 	if obj.DeviceDetailsSecretsConfig != nil {
@@ -2461,8 +4215,8 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.DevicesSecretsConfig
 	}
 
-	if obj.DriveActivitySecretsConfig != nil {
-		return *obj.DriveActivitySecretsConfig
+	if obj.EndorLabsAuditLogsSecretsConfig != nil {
+		return *obj.EndorLabsAuditLogsSecretsConfig
 	}
 
 	if obj.EntraIdSecretsConfig != nil {
@@ -2471,14 +4225,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.EventSecretsConfig != nil {
 		return *obj.EventSecretsConfig
-	}
-
-	if obj.EventsLogsSecretsConfig != nil {
-		return *obj.EventsLogsSecretsConfig
-	}
-
-	if obj.EventsSecretsConfig != nil {
-		return *obj.EventsSecretsConfig
 	}
 
 	if obj.FullScansSecretsConfig != nil {
@@ -2493,44 +4239,100 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.GoogleCloudStorageSecretsConfig
 	}
 
+	if obj.GreenhouseAuditLogsSecretsConfig != nil {
+		return *obj.GreenhouseAuditLogsSecretsConfig
+	}
+
 	if obj.IndividualAlertsSecretsConfig != nil {
 		return *obj.IndividualAlertsSecretsConfig
+	}
+
+	if obj.InspectorSecretsConfig != nil {
+		return *obj.InspectorSecretsConfig
+	}
+
+	if obj.IssuesReportSecretsConfig != nil {
+		return *obj.IssuesReportSecretsConfig
 	}
 
 	if obj.IssuesSecretsConfig != nil {
 		return *obj.IssuesSecretsConfig
 	}
 
-	if obj.LogAnalyticsQuerySecretsConfig != nil {
-		return *obj.LogAnalyticsQuerySecretsConfig
+	if obj.KoiAuditLogsSecretsConfig != nil {
+		return *obj.KoiAuditLogsSecretsConfig
 	}
 
-	if obj.LoginActivitySecretsConfig != nil {
-		return *obj.LoginActivitySecretsConfig
+	if obj.LogAnalyticsQuerySecretsConfig != nil {
+		return *obj.LogAnalyticsQuerySecretsConfig
 	}
 
 	if obj.LoginSessionsSecretsConfig != nil {
 		return *obj.LoginSessionsSecretsConfig
 	}
 
-	if obj.OauthActivitySecretsConfig != nil {
-		return *obj.OauthActivitySecretsConfig
+	if obj.MerakiConfigLogsSecretsConfig != nil {
+		return *obj.MerakiConfigLogsSecretsConfig
+	}
+
+	if obj.Microsoft365GenericSecretsConfig != nil {
+		return *obj.Microsoft365GenericSecretsConfig
 	}
 
 	if obj.ObjectStorageInputSecretsConfig != nil {
 		return *obj.ObjectStorageInputSecretsConfig
 	}
 
+	if obj.OfflineenrollmentlogsSecretsConfig != nil {
+		return *obj.OfflineenrollmentlogsSecretsConfig
+	}
+
 	if obj.OneloginEventsSecretsConfig != nil {
 		return *obj.OneloginEventsSecretsConfig
+	}
+
+	if obj.OperationLogsSecretsConfig != nil {
+		return *obj.OperationLogsSecretsConfig
+	}
+
+	if obj.OrgAuditLogsSecretsConfig != nil {
+		return *obj.OrgAuditLogsSecretsConfig
+	}
+
+	if obj.PagerdutyAuditRecordsSecretsConfig != nil {
+		return *obj.PagerdutyAuditRecordsSecretsConfig
 	}
 
 	if obj.PaloAltoDataSecurityAlertsSecretsConfig != nil {
 		return *obj.PaloAltoDataSecurityAlertsSecretsConfig
 	}
 
+	if obj.PolymerSecretsConfig != nil {
+		return *obj.PolymerSecretsConfig
+	}
+
+	if obj.PostmanAuditLogsSecretsConfig != nil {
+		return *obj.PostmanAuditLogsSecretsConfig
+	}
+
+	if obj.PubsubSecretsConfig != nil {
+		return *obj.PubsubSecretsConfig
+	}
+
 	if obj.RolesInfoSecretsConfig != nil {
 		return *obj.RolesInfoSecretsConfig
+	}
+
+	if obj.RootlyAuditLogsSecretsConfig != nil {
+		return *obj.RootlyAuditLogsSecretsConfig
+	}
+
+	if obj.SalesforceUsersSecretsConfig != nil {
+		return *obj.SalesforceUsersSecretsConfig
+	}
+
+	if obj.SecretsmanagerSecretsConfig != nil {
+		return *obj.SecretsmanagerSecretsConfig
 	}
 
 	if obj.SemgrepCodeFindingsSecretsConfig != nil {
@@ -2555,6 +4357,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.SentryOrgAuditLogsSecretsConfig != nil {
 		return *obj.SentryOrgAuditLogsSecretsConfig
+	}
+
+	if obj.SlackEnterpriseAuditLogsSecretsConfig != nil {
+		return *obj.SlackEnterpriseAuditLogsSecretsConfig
 	}
 
 	if obj.SlackUsersSecretsConfig != nil {
@@ -2593,6 +4399,22 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.TailscaleUsersSecretsConfig
 	}
 
+	if obj.TaniumGraphqlInputSecretsConfig != nil {
+		return *obj.TaniumGraphqlInputSecretsConfig
+	}
+
+	if obj.TeamAccessLogsSecretsConfig != nil {
+		return *obj.TeamAccessLogsSecretsConfig
+	}
+
+	if obj.TeamIntegrationLogsSecretsConfig != nil {
+		return *obj.TeamIntegrationLogsSecretsConfig
+	}
+
+	if obj.TelephonyLogsSecretsConfig != nil {
+		return *obj.TelephonyLogsSecretsConfig
+	}
+
 	if obj.TenableAssetsCronSecretsConfig != nil {
 		return *obj.TenableAssetsCronSecretsConfig
 	}
@@ -2607,6 +4429,26 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.TenableVulnerabilitiesSecretsConfig != nil {
 		return *obj.TenableVulnerabilitiesSecretsConfig
+	}
+
+	if obj.TinesAuditLogsSecretsConfig != nil {
+		return *obj.TinesAuditLogsSecretsConfig
+	}
+
+	if obj.TinesEventsLogsSecretsConfig != nil {
+		return *obj.TinesEventsLogsSecretsConfig
+	}
+
+	if obj.TwilioEventsSecretsConfig != nil {
+		return *obj.TwilioEventsSecretsConfig
+	}
+
+	if obj.TwilioSendgridEmailActivitySecretsConfig != nil {
+		return *obj.TwilioSendgridEmailActivitySecretsConfig
+	}
+
+	if obj.UniversalSecretsConfig != nil {
+		return *obj.UniversalSecretsConfig
 	}
 
 	if obj.UsersInfoSecretsConfig != nil {
@@ -2629,8 +4471,28 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.VulnerabilitiesSecretsConfig
 	}
 
+	if obj.VulnerabilityFindingsReportSecretsConfig != nil {
+		return *obj.VulnerabilityFindingsReportSecretsConfig
+	}
+
 	if obj.VulnerabilityFindingsSecretsConfig != nil {
 		return *obj.VulnerabilityFindingsSecretsConfig
+	}
+
+	if obj.WizAuditLogsSecretsConfig != nil {
+		return *obj.WizAuditLogsSecretsConfig
+	}
+
+	if obj.ZendeskAuditLogsSecretsConfig != nil {
+		return *obj.ZendeskAuditLogsSecretsConfig
+	}
+
+	if obj.ZoomActivityLogsSecretsConfig != nil {
+		return *obj.ZoomActivityLogsSecretsConfig
+	}
+
+	if obj.ZoomMeetingActivityLogsSecretsConfig != nil {
+		return *obj.ZoomMeetingActivityLogsSecretsConfig
 	}
 
 	if obj.MapmapOfStringAny != nil {

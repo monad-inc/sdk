@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**accountUrl** | **String** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. |  [optional] |
+|**backfillStartTime** | **String** | Starting timestamp for initial data sync. Only processes blobs with a last modified time after this timestamp on the initial sync. If not specified, all available data from the specified prefix will be processed. Incremental syncs automatically continue from the last processed timestamp, scanning from the previous day&#39;s partition forward to catch late-arriving data. Files updated in partitions older than the current state&#39;s previous prefix will not be detected. |  [optional] |
 |**compression** | **String** | The compression format of objects in the Azure container |  [optional] |
 |**container** | **String** | A container organizes a set of blobs, similar to a directory in a file system. |  [optional] |
 |**format** | **String** | File format of the Blob storage objects in Azure. |  [optional] |

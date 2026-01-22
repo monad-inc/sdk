@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Demo settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SyntheticDataSettingsConfig {
   public static final String SERIALIZED_NAME_RATE = "rate";
   @SerializedName(SERIALIZED_NAME_RATE)
@@ -162,7 +162,7 @@ public class SyntheticDataSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SyntheticDataSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SyntheticDataSettingsConfig is not found in the empty JSON string", SyntheticDataSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SyntheticDataSettingsConfig is not found in the empty JSON string", SyntheticDataSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -170,12 +170,12 @@ public class SyntheticDataSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!SyntheticDataSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SyntheticDataSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SyntheticDataSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("record_type") != null && !jsonObj.get("record_type").isJsonNull()) && !jsonObj.get("record_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `record_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("record_type").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `record_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("record_type").toString()));
       }
   }
 

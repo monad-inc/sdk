@@ -12,12 +12,18 @@
 
 import { HttpFile } from '../http/http';
 
-/**
-* Vercel User Events settings
-*/
 export class VercelUserEventsSettingsConfig {
-    'lookbackHours'?: number;
+    /**
+    * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+    */
+    'backfillStartTime'?: string;
+    /**
+    * Generate synthetic data for testing, instead of connecting to a real data source. Defaults to an hourly cron schedule for cron-based inputs.
+    */
     'useSyntheticData'?: boolean;
+    /**
+    * Whether to include detailed payload information in the events.
+    */
     'withPayload'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
@@ -26,9 +32,9 @@ export class VercelUserEventsSettingsConfig {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "lookbackHours",
-            "baseName": "lookback_hours",
-            "type": "number",
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
             "format": ""
         },
         {

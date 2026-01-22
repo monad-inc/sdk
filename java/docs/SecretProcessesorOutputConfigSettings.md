@@ -20,11 +20,17 @@
 |**region** | **String** | The AWS region where the S3 bucket is located |  [optional] |
 |**roleArn** | **String** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket |  [optional] |
 |**dataset** | **String** | The name of the BigQuery dataset where the table resides |  [optional] |
+|**bucket** | **String** | The name of the S3 bucket where data will be stored |  [optional] |
 |**projectId** | **String** | The Google Cloud Project ID where the BigQuery instance is located |  [optional] |
 |**table** | **String** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. |  [optional] |
 |**ingressAddress** | **String** | Your group&#39;s ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible. |  [optional] |
 |**path** | **String** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. |  [optional] |
 |**port** | **String** | The port of the Splunk instance. |  [optional] |
+|**ddsource** | **String** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. |  [optional] |
+|**ddtags** | **List&lt;String&gt;** | Tags associated with your logs. |  [optional] |
+|**domainUrl** | **String** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs |  [optional] |
+|**hostname** | **String** | The name of the originating host of the log. |  [optional] |
+|**service** | **String** | The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. |  [optional] |
 |**authType** | **String** |  |  [optional] |
 |**cloudId** | **String** | The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to &#39;cloud_id&#39;. |  [optional] |
 |**connectionType** | **String** | The type of connection to use with Elasticsearch. Choose between &#39;cloud_id&#39; for Elastic Cloud or &#39;url&#39; for direct connection. |  [optional] |
@@ -32,7 +38,6 @@
 |**insecureSkipVerify** | **Boolean** | Whether to skip TLS certificate verification (not recommended for production). |  [optional] |
 |**url** | **String** | The URL of the Sumo Logic instance. |  [optional] |
 |**username** | **String** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. |  [optional] |
-|**bucket** | **String** | The name of the S3 bucket where data will be stored |  [optional] |
 |**format** | [**FormatterFormatConfig**](FormatterFormatConfig.md) |  |  [optional] |
 |**endpoint** | **String** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. |  [optional] |
 |**headers** | [**List&lt;HttpHeaders&gt;**](HttpHeaders.md) | Non secret headers |  [optional] |
@@ -43,6 +48,9 @@
 |**rateLimit** | **Integer** | Maximum number of requests per second to send to the endpoint. |  [optional] |
 |**tlsSkipVerify** | **Boolean** | Skip TLS verification. |  [optional] |
 |**wrapperKey** | **String** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. |  [optional] |
+|**keyField** | **String** | The field in the incoming record to use as the key |  [optional] |
+|**ttl** | **Integer** | Time-to-live in hours for stored key-value pairs (0 means no expiration) |  [optional] |
+|**valueField** | **String** | The field in the incoming record to use as the value |  [optional] |
 |**skipSslVerification** | **Boolean** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) |  [optional] |
 |**usePathStyle** | **Boolean** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. |  [optional] |
 |**authMode** | **String** | The authentication mode (basic, aws_role) |  [optional] |
@@ -69,6 +77,7 @@
 |**warehouse** | **String** | The Snowflake virtual warehouse to use for executing queries and processing data. |  [optional] |
 |**allowInsecure** | **Boolean** | Whether to allow insecure connections (not recommended for production). |  [optional] |
 |**toCreate** | **Boolean** | Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. |  [optional] |
+|**sourceMetadata** | [**SumologicSourceMetadata**](SumologicSourceMetadata.md) |  |  [optional] |
 
 
 

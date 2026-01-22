@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_pipeline_edge_conditions import ModelsPipelineEdgeConditions
 from typing import Optional, Set
@@ -31,13 +31,14 @@ class ModelsPipelineEdge(BaseModel):
     conditions: Optional[ModelsPipelineEdgeConditions] = None
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
+    disabled: Optional[StrictBool] = None
     from_node_instance_id: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None
     to_node_instance_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["conditions", "created_at", "description", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "to_node_instance_id"]
+    __properties: ClassVar[List[str]] = ["conditions", "created_at", "description", "disabled", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "to_node_instance_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,6 +97,7 @@ class ModelsPipelineEdge(BaseModel):
             "conditions": ModelsPipelineEdgeConditions.from_dict(obj["conditions"]) if obj.get("conditions") is not None else None,
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
+            "disabled": obj.get("disabled"),
             "from_node_instance_id": obj.get("from_node_instance_id"),
             "id": obj.get("id"),
             "name": obj.get("name"),

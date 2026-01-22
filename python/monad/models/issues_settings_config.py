@@ -27,6 +27,7 @@ class IssuesSettingsConfig(BaseModel):
     """
     Wiz Issues settings
     """ # noqa: E501
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.")
     control_ids: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter Issues created by specific control IDs")
     has_note: Optional[StrictStr] = Field(default=None, description="@Description Filter Issues with or without a note")
     has_remediation: Optional[StrictStr] = Field(default=None, description="@Description Filter Issues with or without remediation")
@@ -45,7 +46,7 @@ class IssuesSettingsConfig(BaseModel):
     status: Optional[List[StrictStr]] = Field(default=None, description="@Description Filter by Issue handling status @Description Default: OPEN")
     tenant_data_center: Optional[StrictStr] = Field(default=None, description="DataCenter represents the tenant's data center location @Description Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\" @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["control_ids", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "control_ids", "has_note", "has_remediation", "has_service_ticket", "issue_ids", "issue_types", "project_ids", "related_entity_id", "resolution_reasons", "risk_equals_all", "risk_equals_any", "search_query", "security_scan", "severities", "stack_layers", "status", "tenant_data_center", "use_synthetic_data"]
 
     @field_validator('issue_types')
     def issue_types_validate_enum(cls, value):
@@ -153,6 +154,7 @@ class IssuesSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "control_ids": obj.get("control_ids"),
             "has_note": obj.get("has_note"),
             "has_remediation": obj.get("has_remediation"),

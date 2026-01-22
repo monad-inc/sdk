@@ -6,6 +6,7 @@ Okta system log settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**backfill_start_time** | **str** | Date to start fetching data from. If not specified, a full sync (90 days) of data is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **org_url** | **str** | The URL of the Okta organization | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 

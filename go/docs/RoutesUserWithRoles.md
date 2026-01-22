@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthProviders** | Pointer to [**[]RoutesUserAuthProvider**](RoutesUserAuthProvider.md) |  | [optional] 
+**AuthProvider** | Pointer to [**RoutesUserAuthProvider**](RoutesUserAuthProvider.md) |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -31,30 +31,30 @@ NewRoutesUserWithRolesWithDefaults instantiates a new RoutesUserWithRoles object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAuthProviders
+### GetAuthProvider
 
-`func (o *RoutesUserWithRoles) GetAuthProviders() []RoutesUserAuthProvider`
+`func (o *RoutesUserWithRoles) GetAuthProvider() RoutesUserAuthProvider`
 
-GetAuthProviders returns the AuthProviders field if non-nil, zero value otherwise.
+GetAuthProvider returns the AuthProvider field if non-nil, zero value otherwise.
 
-### GetAuthProvidersOk
+### GetAuthProviderOk
 
-`func (o *RoutesUserWithRoles) GetAuthProvidersOk() (*[]RoutesUserAuthProvider, bool)`
+`func (o *RoutesUserWithRoles) GetAuthProviderOk() (*RoutesUserAuthProvider, bool)`
 
-GetAuthProvidersOk returns a tuple with the AuthProviders field if it's non-nil, zero value otherwise
+GetAuthProviderOk returns a tuple with the AuthProvider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAuthProviders
+### SetAuthProvider
 
-`func (o *RoutesUserWithRoles) SetAuthProviders(v []RoutesUserAuthProvider)`
+`func (o *RoutesUserWithRoles) SetAuthProvider(v RoutesUserAuthProvider)`
 
-SetAuthProviders sets AuthProviders field to given value.
+SetAuthProvider sets AuthProvider field to given value.
 
-### HasAuthProviders
+### HasAuthProvider
 
-`func (o *RoutesUserWithRoles) HasAuthProviders() bool`
+`func (o *RoutesUserWithRoles) HasAuthProvider() bool`
 
-HasAuthProviders returns a boolean if a field has been set.
+HasAuthProvider returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

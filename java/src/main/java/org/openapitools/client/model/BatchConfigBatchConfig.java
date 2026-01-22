@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * controls when a batch of records is sent by limiting the number of records, total size, and maximum time elapsed
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class BatchConfigBatchConfig {
   public static final String SERIALIZED_NAME_BATCH_DATA_SIZE = "batch_data_size";
   @SerializedName(SERIALIZED_NAME_BATCH_DATA_SIZE)
@@ -188,7 +188,7 @@ public class BatchConfigBatchConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BatchConfigBatchConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BatchConfigBatchConfig is not found in the empty JSON string", BatchConfigBatchConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in BatchConfigBatchConfig is not found in the empty JSON string", BatchConfigBatchConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -196,7 +196,7 @@ public class BatchConfigBatchConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!BatchConfigBatchConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `BatchConfigBatchConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `BatchConfigBatchConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();

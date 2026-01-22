@@ -10,7 +10,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="v1TransformsGet"></a>
 # **v1TransformsGet**
-> OperationInformation v1TransformsGet(body)
+> List&lt;OperationInformation&gt; v1TransformsGet(body)
 
 List transforms
 
@@ -46,7 +46,7 @@ public class Example {
     TransformsApi apiInstance = new TransformsApi(defaultClient);
     Object body = null; // Object | 
     try {
-      OperationInformation result = apiInstance.v1TransformsGet(body);
+      List<OperationInformation> result = apiInstance.v1TransformsGet(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransformsApi#v1TransformsGet");
@@ -67,7 +67,7 @@ public class Example {
 
 ### Return type
 
-[**OperationInformation**](OperationInformation.md)
+[**List&lt;OperationInformation&gt;**](OperationInformation.md)
 
 ### Authorization
 

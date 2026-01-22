@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Ingress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **NodeSlug** | Pointer to **string** |  | [optional] 
+**ProgressTimestamps** | Pointer to [**PipelineNodeStatusProgressTimestamps**](PipelineNodeStatusProgressTimestamps.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -232,6 +233,31 @@ SetNodeSlug sets NodeSlug field to given value.
 `func (o *ModelsPipelineNodeStatus) HasNodeSlug() bool`
 
 HasNodeSlug returns a boolean if a field has been set.
+
+### GetProgressTimestamps
+
+`func (o *ModelsPipelineNodeStatus) GetProgressTimestamps() PipelineNodeStatusProgressTimestamps`
+
+GetProgressTimestamps returns the ProgressTimestamps field if non-nil, zero value otherwise.
+
+### GetProgressTimestampsOk
+
+`func (o *ModelsPipelineNodeStatus) GetProgressTimestampsOk() (*PipelineNodeStatusProgressTimestamps, bool)`
+
+GetProgressTimestampsOk returns a tuple with the ProgressTimestamps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProgressTimestamps
+
+`func (o *ModelsPipelineNodeStatus) SetProgressTimestamps(v PipelineNodeStatusProgressTimestamps)`
+
+SetProgressTimestamps sets ProgressTimestamps field to given value.
+
+### HasProgressTimestamps
+
+`func (o *ModelsPipelineNodeStatus) HasProgressTimestamps() bool`
+
+HasProgressTimestamps returns a boolean if a field has been set.
 
 ### GetStatus
 

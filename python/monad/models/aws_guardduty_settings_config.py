@@ -27,11 +27,12 @@ class AwsGuarddutySettingsConfig(BaseModel):
     """
     AWS Guardduty settings
     """ # noqa: E501
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     region: Optional[StrictStr] = Field(default=None, description="The AWS region where GuardDuty is enabled.")
     role_arn: Optional[StrictStr] = Field(default=None, description="The ARN of the IAM role to assume for accessing GuardDuty.")
     severity: Optional[StrictStr] = Field(default=None, description="Filter findings by severity levels.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["region", "role_arn", "severity", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "region", "role_arn", "severity", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,6 +85,7 @@ class AwsGuarddutySettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "region": obj.get("region"),
             "role_arn": obj.get("role_arn"),
             "severity": obj.get("severity"),

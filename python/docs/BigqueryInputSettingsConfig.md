@@ -6,7 +6,6 @@ BigQuery Input Settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cron** | **str** | Cron string for scheduling the ingest of your input | [optional] 
 **dataset** | **str** | The BigQuery dataset ID containing the table | [optional] 
 **project** | **str** | The GCP project ID containing the BigQuery dataset | [optional] 
 **query** | **str** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 

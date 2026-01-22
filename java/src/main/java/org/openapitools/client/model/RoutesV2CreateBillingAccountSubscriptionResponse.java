@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2CreateBillingAccountSubscriptionResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV2CreateBillingAccountSubscriptionResponse {
   public static final String SERIALIZED_NAME_CHECKOUT_URL = "checkout_url";
   @SerializedName(SERIALIZED_NAME_CHECKOUT_URL)
@@ -136,7 +136,7 @@ public class RoutesV2CreateBillingAccountSubscriptionResponse {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RoutesV2CreateBillingAccountSubscriptionResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RoutesV2CreateBillingAccountSubscriptionResponse is not found in the empty JSON string", RoutesV2CreateBillingAccountSubscriptionResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV2CreateBillingAccountSubscriptionResponse is not found in the empty JSON string", RoutesV2CreateBillingAccountSubscriptionResponse.openapiRequiredFields.toString()));
         }
       }
 
@@ -144,12 +144,12 @@ public class RoutesV2CreateBillingAccountSubscriptionResponse {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!RoutesV2CreateBillingAccountSubscriptionResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RoutesV2CreateBillingAccountSubscriptionResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV2CreateBillingAccountSubscriptionResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("checkout_url") != null && !jsonObj.get("checkout_url").isJsonNull()) && !jsonObj.get("checkout_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `checkout_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("checkout_url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `checkout_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("checkout_url").toString()));
       }
   }
 

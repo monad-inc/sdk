@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **OrgSlug** | Pointer to **string** | Cron expression for scheduling the input | [optional] 
 **Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
@@ -26,6 +27,31 @@ will change when the set of required properties is changed
 NewFullScansSettingsConfigWithDefaults instantiates a new FullScansSettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBackfillStartTime
+
+`func (o *FullScansSettingsConfig) GetBackfillStartTime() string`
+
+GetBackfillStartTime returns the BackfillStartTime field if non-nil, zero value otherwise.
+
+### GetBackfillStartTimeOk
+
+`func (o *FullScansSettingsConfig) GetBackfillStartTimeOk() (*string, bool)`
+
+GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackfillStartTime
+
+`func (o *FullScansSettingsConfig) SetBackfillStartTime(v string)`
+
+SetBackfillStartTime sets BackfillStartTime field to given value.
+
+### HasBackfillStartTime
+
+`func (o *FullScansSettingsConfig) HasBackfillStartTime() bool`
+
+HasBackfillStartTime returns a boolean if a field has been set.
 
 ### GetOrgSlug
 

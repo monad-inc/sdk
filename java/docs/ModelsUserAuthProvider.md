@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**connectionId** | **String** |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**provider** | **String** |  |  [optional] |

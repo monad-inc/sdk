@@ -24,47 +24,51 @@ import (
 // ConnectionsAPIService ConnectionsAPI service
 type ConnectionsAPIService service
 
-type ApiV3ConnectionsConnectionIdDeleteRequest struct {
+type ApiV3OrganizationIdConnectionsConnectionIdDeleteRequest struct {
 	ctx context.Context
 	ApiService *ConnectionsAPIService
+	organizationId string
 	connectionId string
 }
 
-func (r ApiV3ConnectionsConnectionIdDeleteRequest) Execute() (*http.Response, error) {
-	return r.ApiService.V3ConnectionsConnectionIdDeleteExecute(r)
+func (r ApiV3OrganizationIdConnectionsConnectionIdDeleteRequest) Execute() (*http.Response, error) {
+	return r.ApiService.V3OrganizationIdConnectionsConnectionIdDeleteExecute(r)
 }
 
 /*
-V3ConnectionsConnectionIdDelete Delete connection
+V3OrganizationIdConnectionsConnectionIdDelete Delete connection
 
 Delete an existing connection
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
  @param connectionId Connection ID to delete
- @return ApiV3ConnectionsConnectionIdDeleteRequest
+ @return ApiV3OrganizationIdConnectionsConnectionIdDeleteRequest
 */
-func (a *ConnectionsAPIService) V3ConnectionsConnectionIdDelete(ctx context.Context, connectionId string) ApiV3ConnectionsConnectionIdDeleteRequest {
-	return ApiV3ConnectionsConnectionIdDeleteRequest{
+func (a *ConnectionsAPIService) V3OrganizationIdConnectionsConnectionIdDelete(ctx context.Context, organizationId string, connectionId string) ApiV3OrganizationIdConnectionsConnectionIdDeleteRequest {
+	return ApiV3OrganizationIdConnectionsConnectionIdDeleteRequest{
 		ApiService: a,
 		ctx: ctx,
+		organizationId: organizationId,
 		connectionId: connectionId,
 	}
 }
 
 // Execute executes the request
-func (a *ConnectionsAPIService) V3ConnectionsConnectionIdDeleteExecute(r ApiV3ConnectionsConnectionIdDeleteRequest) (*http.Response, error) {
+func (a *ConnectionsAPIService) V3OrganizationIdConnectionsConnectionIdDeleteExecute(r ApiV3OrganizationIdConnectionsConnectionIdDeleteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionsAPIService.V3ConnectionsConnectionIdDelete")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionsAPIService.V3OrganizationIdConnectionsConnectionIdDelete")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v3/connections/{connection_id}"
+	localVarPath := localBasePath + "/v3/{organization_id}/connections/{connection_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"connection_id"+"}", url.PathEscape(parameterValueToString(r.connectionId, "connectionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -151,36 +155,39 @@ func (a *ConnectionsAPIService) V3ConnectionsConnectionIdDeleteExecute(r ApiV3Co
 	return localVarHTTPResponse, nil
 }
 
-type ApiV3ConnectionsConnectionIdGetRequest struct {
+type ApiV3OrganizationIdConnectionsConnectionIdGetRequest struct {
 	ctx context.Context
 	ApiService *ConnectionsAPIService
+	organizationId string
 	connectionId string
 }
 
-func (r ApiV3ConnectionsConnectionIdGetRequest) Execute() (*ModelsConnection, *http.Response, error) {
-	return r.ApiService.V3ConnectionsConnectionIdGetExecute(r)
+func (r ApiV3OrganizationIdConnectionsConnectionIdGetRequest) Execute() (*ModelsConnection, *http.Response, error) {
+	return r.ApiService.V3OrganizationIdConnectionsConnectionIdGetExecute(r)
 }
 
 /*
-V3ConnectionsConnectionIdGet Get connection by ID
+V3OrganizationIdConnectionsConnectionIdGet Get connection by ID
 
 Retrieve a connection by its ID
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
  @param connectionId Connection ID to retrieve
- @return ApiV3ConnectionsConnectionIdGetRequest
+ @return ApiV3OrganizationIdConnectionsConnectionIdGetRequest
 */
-func (a *ConnectionsAPIService) V3ConnectionsConnectionIdGet(ctx context.Context, connectionId string) ApiV3ConnectionsConnectionIdGetRequest {
-	return ApiV3ConnectionsConnectionIdGetRequest{
+func (a *ConnectionsAPIService) V3OrganizationIdConnectionsConnectionIdGet(ctx context.Context, organizationId string, connectionId string) ApiV3OrganizationIdConnectionsConnectionIdGetRequest {
+	return ApiV3OrganizationIdConnectionsConnectionIdGetRequest{
 		ApiService: a,
 		ctx: ctx,
+		organizationId: organizationId,
 		connectionId: connectionId,
 	}
 }
 
 // Execute executes the request
 //  @return ModelsConnection
-func (a *ConnectionsAPIService) V3ConnectionsConnectionIdGetExecute(r ApiV3ConnectionsConnectionIdGetRequest) (*ModelsConnection, *http.Response, error) {
+func (a *ConnectionsAPIService) V3OrganizationIdConnectionsConnectionIdGetExecute(r ApiV3OrganizationIdConnectionsConnectionIdGetRequest) (*ModelsConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -188,12 +195,13 @@ func (a *ConnectionsAPIService) V3ConnectionsConnectionIdGetExecute(r ApiV3Conne
 		localVarReturnValue  *ModelsConnection
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionsAPIService.V3ConnectionsConnectionIdGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionsAPIService.V3OrganizationIdConnectionsConnectionIdGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v3/connections/{connection_id}"
+	localVarPath := localBasePath + "/v3/{organization_id}/connections/{connection_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"connection_id"+"}", url.PathEscape(parameterValueToString(r.connectionId, "connectionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -300,43 +308,46 @@ func (a *ConnectionsAPIService) V3ConnectionsConnectionIdGetExecute(r ApiV3Conne
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiV3ConnectionsConnectionIdPatchRequest struct {
+type ApiV3OrganizationIdConnectionsConnectionIdPatchRequest struct {
 	ctx context.Context
 	ApiService *ConnectionsAPIService
+	organizationId string
 	connectionId string
 	routesV3UpdateConnectionRequest *RoutesV3UpdateConnectionRequest
 }
 
 // Request body for updating a connection
-func (r ApiV3ConnectionsConnectionIdPatchRequest) RoutesV3UpdateConnectionRequest(routesV3UpdateConnectionRequest RoutesV3UpdateConnectionRequest) ApiV3ConnectionsConnectionIdPatchRequest {
+func (r ApiV3OrganizationIdConnectionsConnectionIdPatchRequest) RoutesV3UpdateConnectionRequest(routesV3UpdateConnectionRequest RoutesV3UpdateConnectionRequest) ApiV3OrganizationIdConnectionsConnectionIdPatchRequest {
 	r.routesV3UpdateConnectionRequest = &routesV3UpdateConnectionRequest
 	return r
 }
 
-func (r ApiV3ConnectionsConnectionIdPatchRequest) Execute() (*ModelsConnection, *http.Response, error) {
-	return r.ApiService.V3ConnectionsConnectionIdPatchExecute(r)
+func (r ApiV3OrganizationIdConnectionsConnectionIdPatchRequest) Execute() (*ModelsConnection, *http.Response, error) {
+	return r.ApiService.V3OrganizationIdConnectionsConnectionIdPatchExecute(r)
 }
 
 /*
-V3ConnectionsConnectionIdPatch Update connection
+V3OrganizationIdConnectionsConnectionIdPatch Update connection
 
 Update an existing connection
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
  @param connectionId Connection ID to update
- @return ApiV3ConnectionsConnectionIdPatchRequest
+ @return ApiV3OrganizationIdConnectionsConnectionIdPatchRequest
 */
-func (a *ConnectionsAPIService) V3ConnectionsConnectionIdPatch(ctx context.Context, connectionId string) ApiV3ConnectionsConnectionIdPatchRequest {
-	return ApiV3ConnectionsConnectionIdPatchRequest{
+func (a *ConnectionsAPIService) V3OrganizationIdConnectionsConnectionIdPatch(ctx context.Context, organizationId string, connectionId string) ApiV3OrganizationIdConnectionsConnectionIdPatchRequest {
+	return ApiV3OrganizationIdConnectionsConnectionIdPatchRequest{
 		ApiService: a,
 		ctx: ctx,
+		organizationId: organizationId,
 		connectionId: connectionId,
 	}
 }
 
 // Execute executes the request
 //  @return ModelsConnection
-func (a *ConnectionsAPIService) V3ConnectionsConnectionIdPatchExecute(r ApiV3ConnectionsConnectionIdPatchRequest) (*ModelsConnection, *http.Response, error) {
+func (a *ConnectionsAPIService) V3OrganizationIdConnectionsConnectionIdPatchExecute(r ApiV3OrganizationIdConnectionsConnectionIdPatchRequest) (*ModelsConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -344,12 +355,13 @@ func (a *ConnectionsAPIService) V3ConnectionsConnectionIdPatchExecute(r ApiV3Con
 		localVarReturnValue  *ModelsConnection
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionsAPIService.V3ConnectionsConnectionIdPatch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionsAPIService.V3OrganizationIdConnectionsConnectionIdPatch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v3/connections/{connection_id}"
+	localVarPath := localBasePath + "/v3/{organization_id}/connections/{connection_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"connection_id"+"}", url.PathEscape(parameterValueToString(r.connectionId, "connectionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -450,47 +462,50 @@ func (a *ConnectionsAPIService) V3ConnectionsConnectionIdPatchExecute(r ApiV3Con
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiV3ConnectionsGetRequest struct {
+type ApiV3OrganizationIdConnectionsGetRequest struct {
 	ctx context.Context
 	ApiService *ConnectionsAPIService
+	organizationId string
 	limit *int32
 	offset *int32
 }
 
 // Limit
-func (r ApiV3ConnectionsGetRequest) Limit(limit int32) ApiV3ConnectionsGetRequest {
+func (r ApiV3OrganizationIdConnectionsGetRequest) Limit(limit int32) ApiV3OrganizationIdConnectionsGetRequest {
 	r.limit = &limit
 	return r
 }
 
 // Offset
-func (r ApiV3ConnectionsGetRequest) Offset(offset int32) ApiV3ConnectionsGetRequest {
+func (r ApiV3OrganizationIdConnectionsGetRequest) Offset(offset int32) ApiV3OrganizationIdConnectionsGetRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiV3ConnectionsGetRequest) Execute() (*ModelsConnectionList, *http.Response, error) {
-	return r.ApiService.V3ConnectionsGetExecute(r)
+func (r ApiV3OrganizationIdConnectionsGetRequest) Execute() (*ModelsConnectionList, *http.Response, error) {
+	return r.ApiService.V3OrganizationIdConnectionsGetExecute(r)
 }
 
 /*
-V3ConnectionsGet Get all connections
+V3OrganizationIdConnectionsGet Get all connections
 
 Retrieve all connections
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiV3ConnectionsGetRequest
+ @param organizationId Organization ID
+ @return ApiV3OrganizationIdConnectionsGetRequest
 */
-func (a *ConnectionsAPIService) V3ConnectionsGet(ctx context.Context) ApiV3ConnectionsGetRequest {
-	return ApiV3ConnectionsGetRequest{
+func (a *ConnectionsAPIService) V3OrganizationIdConnectionsGet(ctx context.Context, organizationId string) ApiV3OrganizationIdConnectionsGetRequest {
+	return ApiV3OrganizationIdConnectionsGetRequest{
 		ApiService: a,
 		ctx: ctx,
+		organizationId: organizationId,
 	}
 }
 
 // Execute executes the request
 //  @return ModelsConnectionList
-func (a *ConnectionsAPIService) V3ConnectionsGetExecute(r ApiV3ConnectionsGetRequest) (*ModelsConnectionList, *http.Response, error) {
+func (a *ConnectionsAPIService) V3OrganizationIdConnectionsGetExecute(r ApiV3OrganizationIdConnectionsGetRequest) (*ModelsConnectionList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -498,12 +513,13 @@ func (a *ConnectionsAPIService) V3ConnectionsGetExecute(r ApiV3ConnectionsGetReq
 		localVarReturnValue  *ModelsConnectionList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionsAPIService.V3ConnectionsGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionsAPIService.V3OrganizationIdConnectionsGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v3/connections"
+	localVarPath := localBasePath + "/v3/{organization_id}/connections"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -593,40 +609,43 @@ func (a *ConnectionsAPIService) V3ConnectionsGetExecute(r ApiV3ConnectionsGetReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiV3ConnectionsPostRequest struct {
+type ApiV3OrganizationIdConnectionsPostRequest struct {
 	ctx context.Context
 	ApiService *ConnectionsAPIService
+	organizationId string
 	routesV3CreateConnectionRequest *RoutesV3CreateConnectionRequest
 }
 
 // Request body for creating a connection
-func (r ApiV3ConnectionsPostRequest) RoutesV3CreateConnectionRequest(routesV3CreateConnectionRequest RoutesV3CreateConnectionRequest) ApiV3ConnectionsPostRequest {
+func (r ApiV3OrganizationIdConnectionsPostRequest) RoutesV3CreateConnectionRequest(routesV3CreateConnectionRequest RoutesV3CreateConnectionRequest) ApiV3OrganizationIdConnectionsPostRequest {
 	r.routesV3CreateConnectionRequest = &routesV3CreateConnectionRequest
 	return r
 }
 
-func (r ApiV3ConnectionsPostRequest) Execute() (*ModelsConnection, *http.Response, error) {
-	return r.ApiService.V3ConnectionsPostExecute(r)
+func (r ApiV3OrganizationIdConnectionsPostRequest) Execute() (*ModelsConnection, *http.Response, error) {
+	return r.ApiService.V3OrganizationIdConnectionsPostExecute(r)
 }
 
 /*
-V3ConnectionsPost Create a new connection
+V3OrganizationIdConnectionsPost Create a new connection
 
 Create a new connection with the provided details
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiV3ConnectionsPostRequest
+ @param organizationId Organization ID
+ @return ApiV3OrganizationIdConnectionsPostRequest
 */
-func (a *ConnectionsAPIService) V3ConnectionsPost(ctx context.Context) ApiV3ConnectionsPostRequest {
-	return ApiV3ConnectionsPostRequest{
+func (a *ConnectionsAPIService) V3OrganizationIdConnectionsPost(ctx context.Context, organizationId string) ApiV3OrganizationIdConnectionsPostRequest {
+	return ApiV3OrganizationIdConnectionsPostRequest{
 		ApiService: a,
 		ctx: ctx,
+		organizationId: organizationId,
 	}
 }
 
 // Execute executes the request
 //  @return ModelsConnection
-func (a *ConnectionsAPIService) V3ConnectionsPostExecute(r ApiV3ConnectionsPostRequest) (*ModelsConnection, *http.Response, error) {
+func (a *ConnectionsAPIService) V3OrganizationIdConnectionsPostExecute(r ApiV3OrganizationIdConnectionsPostRequest) (*ModelsConnection, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -634,12 +653,13 @@ func (a *ConnectionsAPIService) V3ConnectionsPostExecute(r ApiV3ConnectionsPostR
 		localVarReturnValue  *ModelsConnection
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionsAPIService.V3ConnectionsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionsAPIService.V3OrganizationIdConnectionsPost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v3/connections"
+	localVarPath := localBasePath + "/v3/{organization_id}/connections"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

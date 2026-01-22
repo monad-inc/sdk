@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_data_usage import ModelsDataUsage
+from monad.models.pipeline_node_status_progress_timestamps import PipelineNodeStatusProgressTimestamps
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,8 +37,9 @@ class ModelsPipelineNodeStatus(BaseModel):
     ingress: Optional[ModelsDataUsage] = None
     node_id: Optional[StrictStr] = None
     node_slug: Optional[StrictStr] = None
+    progress_timestamps: Optional[PipelineNodeStatusProgressTimestamps] = None
     status: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "node_id", "node_slug", "status"]
+    __properties: ClassVar[List[str]] = ["component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "node_id", "node_slug", "progress_timestamps", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,6 +86,9 @@ class ModelsPipelineNodeStatus(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of ingress
         if self.ingress:
             _dict['ingress'] = self.ingress.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of progress_timestamps
+        if self.progress_timestamps:
+            _dict['progress_timestamps'] = self.progress_timestamps.to_dict()
         return _dict
 
     @classmethod
@@ -104,6 +109,7 @@ class ModelsPipelineNodeStatus(BaseModel):
             "ingress": ModelsDataUsage.from_dict(obj["ingress"]) if obj.get("ingress") is not None else None,
             "node_id": obj.get("node_id"),
             "node_slug": obj.get("node_slug"),
+            "progress_timestamps": PipelineNodeStatusProgressTimestamps.from_dict(obj["progress_timestamps"]) if obj.get("progress_timestamps") is not None else None,
             "status": obj.get("status")
         })
         return _obj

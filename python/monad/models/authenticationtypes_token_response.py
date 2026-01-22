@@ -28,11 +28,12 @@ class AuthenticationtypesTokenResponse(BaseModel):
     AuthenticationtypesTokenResponse
     """ # noqa: E501
     access_token: Optional[StrictStr] = None
+    email: Optional[StrictStr] = None
     expires_in: Optional[StrictInt] = None
     id_token: Optional[StrictStr] = None
     refresh_token: Optional[StrictStr] = None
     token_type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["access_token", "expires_in", "id_token", "refresh_token", "token_type"]
+    __properties: ClassVar[List[str]] = ["access_token", "email", "expires_in", "id_token", "refresh_token", "token_type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +87,7 @@ class AuthenticationtypesTokenResponse(BaseModel):
 
         _obj = cls.model_validate({
             "access_token": obj.get("access_token"),
+            "email": obj.get("email"),
             "expires_in": obj.get("expires_in"),
             "id_token": obj.get("id_token"),
             "refresh_token": obj.get("refresh_token"),

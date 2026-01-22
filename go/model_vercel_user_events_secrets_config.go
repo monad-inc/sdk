@@ -18,7 +18,7 @@ import (
 // checks if the VercelUserEventsSecretsConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &VercelUserEventsSecretsConfig{}
 
-// VercelUserEventsSecretsConfig Vercel User Events secrets
+// VercelUserEventsSecretsConfig struct for VercelUserEventsSecretsConfig
 type VercelUserEventsSecretsConfig struct {
 	AccessToken *ModelsSecret `json:"access_token,omitempty"`
 }

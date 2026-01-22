@@ -27,12 +27,13 @@ class CloudtrailSettingsConfig(BaseModel):
     """
     AWS Cloudtrail settings
     """ # noqa: E501
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental.")
     bucket: Optional[StrictStr] = Field(default=None, description="The name of the S3 bucket")
     prefix: Optional[StrictStr] = Field(default=None, description="Prefix of the S3 object keys to read.")
     region: Optional[StrictStr] = Field(default=None, description="The region of the S3 bucket")
     role_arn: Optional[StrictStr] = Field(default=None, description="The ARN of the role to assume to access the bucket")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["bucket", "prefix", "region", "role_arn", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "bucket", "prefix", "region", "role_arn", "use_synthetic_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,6 +86,7 @@ class CloudtrailSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "bucket": obj.get("bucket"),
             "prefix": obj.get("prefix"),
             "region": obj.get("region"),

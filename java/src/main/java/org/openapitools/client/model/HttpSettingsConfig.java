@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * HTTP Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class HttpSettingsConfig {
   public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
   @SerializedName(SERIALIZED_NAME_ENDPOINT)
@@ -355,7 +355,7 @@ public class HttpSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!HttpSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in HttpSettingsConfig is not found in the empty JSON string", HttpSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in HttpSettingsConfig is not found in the empty JSON string", HttpSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -363,19 +363,19 @@ public class HttpSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!HttpSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `HttpSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `HttpSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("endpoint") != null && !jsonObj.get("endpoint").isJsonNull()) && !jsonObj.get("endpoint").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `endpoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `endpoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint").toString()));
       }
       if (jsonObj.get("headers") != null && !jsonObj.get("headers").isJsonNull()) {
         JsonArray jsonArrayheaders = jsonObj.getAsJsonArray("headers");
         if (jsonArrayheaders != null) {
           // ensure the json data is an array
           if (!jsonObj.get("headers").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `headers` to be an array in the JSON string but got `%s`", jsonObj.get("headers").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `headers` to be an array in the JSON string but got `%s`", jsonObj.get("headers").toString()));
           }
 
           // validate the optional field `headers` (array)
@@ -385,13 +385,13 @@ public class HttpSettingsConfig {
         }
       }
       if ((jsonObj.get("method") != null && !jsonObj.get("method").isJsonNull()) && !jsonObj.get("method").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("method").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("method").toString()));
       }
       if ((jsonObj.get("payload_structure") != null && !jsonObj.get("payload_structure").isJsonNull()) && !jsonObj.get("payload_structure").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `payload_structure` to be a primitive type in the JSON string but got `%s`", jsonObj.get("payload_structure").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `payload_structure` to be a primitive type in the JSON string but got `%s`", jsonObj.get("payload_structure").toString()));
       }
       if ((jsonObj.get("wrapper_key") != null && !jsonObj.get("wrapper_key").isJsonNull()) && !jsonObj.get("wrapper_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `wrapper_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("wrapper_key").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `wrapper_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("wrapper_key").toString()));
       }
   }
 

@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * AuthenticationtypesTokenResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class AuthenticationtypesTokenResponse {
   public static final String SERIALIZED_NAME_ACCESS_TOKEN = "access_token";
   @SerializedName(SERIALIZED_NAME_ACCESS_TOKEN)
   @javax.annotation.Nullable
   private String accessToken;
+
+  public static final String SERIALIZED_NAME_EMAIL = "email";
+  @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
+  private String email;
 
   public static final String SERIALIZED_NAME_EXPIRES_IN = "expires_in";
   @SerializedName(SERIALIZED_NAME_EXPIRES_IN)
@@ -94,6 +99,25 @@ public class AuthenticationtypesTokenResponse {
 
   public void setAccessToken(@javax.annotation.Nullable String accessToken) {
     this.accessToken = accessToken;
+  }
+
+
+  public AuthenticationtypesTokenResponse email(@javax.annotation.Nullable String email) {
+    this.email = email;
+    return this;
+  }
+
+  /**
+   * Get email
+   * @return email
+   */
+  @javax.annotation.Nullable
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(@javax.annotation.Nullable String email) {
+    this.email = email;
   }
 
 
@@ -184,6 +208,7 @@ public class AuthenticationtypesTokenResponse {
     }
     AuthenticationtypesTokenResponse authenticationtypesTokenResponse = (AuthenticationtypesTokenResponse) o;
     return Objects.equals(this.accessToken, authenticationtypesTokenResponse.accessToken) &&
+        Objects.equals(this.email, authenticationtypesTokenResponse.email) &&
         Objects.equals(this.expiresIn, authenticationtypesTokenResponse.expiresIn) &&
         Objects.equals(this.idToken, authenticationtypesTokenResponse.idToken) &&
         Objects.equals(this.refreshToken, authenticationtypesTokenResponse.refreshToken) &&
@@ -192,7 +217,7 @@ public class AuthenticationtypesTokenResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessToken, expiresIn, idToken, refreshToken, tokenType);
+    return Objects.hash(accessToken, email, expiresIn, idToken, refreshToken, tokenType);
   }
 
   @Override
@@ -200,6 +225,7 @@ public class AuthenticationtypesTokenResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class AuthenticationtypesTokenResponse {\n");
     sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    expiresIn: ").append(toIndentedString(expiresIn)).append("\n");
     sb.append("    idToken: ").append(toIndentedString(idToken)).append("\n");
     sb.append("    refreshToken: ").append(toIndentedString(refreshToken)).append("\n");
@@ -225,7 +251,7 @@ public class AuthenticationtypesTokenResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("access_token", "expires_in", "id_token", "refresh_token", "token_type"));
+    openapiFields = new HashSet<String>(Arrays.asList("access_token", "email", "expires_in", "id_token", "refresh_token", "token_type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -240,7 +266,7 @@ public class AuthenticationtypesTokenResponse {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AuthenticationtypesTokenResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AuthenticationtypesTokenResponse is not found in the empty JSON string", AuthenticationtypesTokenResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in AuthenticationtypesTokenResponse is not found in the empty JSON string", AuthenticationtypesTokenResponse.openapiRequiredFields.toString()));
         }
       }
 
@@ -248,21 +274,24 @@ public class AuthenticationtypesTokenResponse {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!AuthenticationtypesTokenResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AuthenticationtypesTokenResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AuthenticationtypesTokenResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("access_token") != null && !jsonObj.get("access_token").isJsonNull()) && !jsonObj.get("access_token").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `access_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("access_token").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `access_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("access_token").toString()));
+      }
+      if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
       if ((jsonObj.get("id_token") != null && !jsonObj.get("id_token").isJsonNull()) && !jsonObj.get("id_token").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id_token").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id_token").toString()));
       }
       if ((jsonObj.get("refresh_token") != null && !jsonObj.get("refresh_token").isJsonNull()) && !jsonObj.get("refresh_token").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `refresh_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("refresh_token").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `refresh_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("refresh_token").toString()));
       }
       if ((jsonObj.get("token_type") != null && !jsonObj.get("token_type").isJsonNull()) && !jsonObj.get("token_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `token_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("token_type").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `token_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("token_type").toString()));
       }
   }
 

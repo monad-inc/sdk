@@ -44,8 +44,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_connection_id_delete(
+    def v3_organization_id_connections_connection_id_delete(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         connection_id: Annotated[StrictStr, Field(description="Connection ID to delete")],
         _request_timeout: Union[
             None,
@@ -64,6 +65,8 @@ class ConnectionsApi:
 
         Delete an existing connection
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param connection_id: Connection ID to delete (required)
         :type connection_id: str
         :param _request_timeout: timeout setting for this request. If one
@@ -88,7 +91,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_connection_id_delete_serialize(
+        _param = self._v3_organization_id_connections_connection_id_delete_serialize(
+            organization_id=organization_id,
             connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -113,8 +117,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_connection_id_delete_with_http_info(
+    def v3_organization_id_connections_connection_id_delete_with_http_info(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         connection_id: Annotated[StrictStr, Field(description="Connection ID to delete")],
         _request_timeout: Union[
             None,
@@ -133,6 +138,8 @@ class ConnectionsApi:
 
         Delete an existing connection
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param connection_id: Connection ID to delete (required)
         :type connection_id: str
         :param _request_timeout: timeout setting for this request. If one
@@ -157,7 +164,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_connection_id_delete_serialize(
+        _param = self._v3_organization_id_connections_connection_id_delete_serialize(
+            organization_id=organization_id,
             connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -182,8 +190,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_connection_id_delete_without_preload_content(
+    def v3_organization_id_connections_connection_id_delete_without_preload_content(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         connection_id: Annotated[StrictStr, Field(description="Connection ID to delete")],
         _request_timeout: Union[
             None,
@@ -202,6 +211,8 @@ class ConnectionsApi:
 
         Delete an existing connection
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param connection_id: Connection ID to delete (required)
         :type connection_id: str
         :param _request_timeout: timeout setting for this request. If one
@@ -226,7 +237,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_connection_id_delete_serialize(
+        _param = self._v3_organization_id_connections_connection_id_delete_serialize(
+            organization_id=organization_id,
             connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -246,8 +258,9 @@ class ConnectionsApi:
         return response_data.response
 
 
-    def _v3_connections_connection_id_delete_serialize(
+    def _v3_organization_id_connections_connection_id_delete_serialize(
         self,
+        organization_id,
         connection_id,
         _request_auth,
         _content_type,
@@ -270,6 +283,8 @@ class ConnectionsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if organization_id is not None:
+            _path_params['organization_id'] = organization_id
         if connection_id is not None:
             _path_params['connection_id'] = connection_id
         # process the query parameters
@@ -294,7 +309,7 @@ class ConnectionsApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/v3/connections/{connection_id}',
+            resource_path='/v3/{organization_id}/connections/{connection_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -311,8 +326,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_connection_id_get(
+    def v3_organization_id_connections_connection_id_get(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         connection_id: Annotated[StrictStr, Field(description="Connection ID to retrieve")],
         _request_timeout: Union[
             None,
@@ -331,6 +347,8 @@ class ConnectionsApi:
 
         Retrieve a connection by its ID
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param connection_id: Connection ID to retrieve (required)
         :type connection_id: str
         :param _request_timeout: timeout setting for this request. If one
@@ -355,7 +373,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_connection_id_get_serialize(
+        _param = self._v3_organization_id_connections_connection_id_get_serialize(
+            organization_id=organization_id,
             connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -381,8 +400,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_connection_id_get_with_http_info(
+    def v3_organization_id_connections_connection_id_get_with_http_info(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         connection_id: Annotated[StrictStr, Field(description="Connection ID to retrieve")],
         _request_timeout: Union[
             None,
@@ -401,6 +421,8 @@ class ConnectionsApi:
 
         Retrieve a connection by its ID
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param connection_id: Connection ID to retrieve (required)
         :type connection_id: str
         :param _request_timeout: timeout setting for this request. If one
@@ -425,7 +447,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_connection_id_get_serialize(
+        _param = self._v3_organization_id_connections_connection_id_get_serialize(
+            organization_id=organization_id,
             connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -451,8 +474,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_connection_id_get_without_preload_content(
+    def v3_organization_id_connections_connection_id_get_without_preload_content(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         connection_id: Annotated[StrictStr, Field(description="Connection ID to retrieve")],
         _request_timeout: Union[
             None,
@@ -471,6 +495,8 @@ class ConnectionsApi:
 
         Retrieve a connection by its ID
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param connection_id: Connection ID to retrieve (required)
         :type connection_id: str
         :param _request_timeout: timeout setting for this request. If one
@@ -495,7 +521,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_connection_id_get_serialize(
+        _param = self._v3_organization_id_connections_connection_id_get_serialize(
+            organization_id=organization_id,
             connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -516,8 +543,9 @@ class ConnectionsApi:
         return response_data.response
 
 
-    def _v3_connections_connection_id_get_serialize(
+    def _v3_organization_id_connections_connection_id_get_serialize(
         self,
+        organization_id,
         connection_id,
         _request_auth,
         _content_type,
@@ -540,6 +568,8 @@ class ConnectionsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if organization_id is not None:
+            _path_params['organization_id'] = organization_id
         if connection_id is not None:
             _path_params['connection_id'] = connection_id
         # process the query parameters
@@ -564,7 +594,7 @@ class ConnectionsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v3/connections/{connection_id}',
+            resource_path='/v3/{organization_id}/connections/{connection_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -581,8 +611,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_connection_id_patch(
+    def v3_organization_id_connections_connection_id_patch(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         connection_id: Annotated[StrictStr, Field(description="Connection ID to update")],
         routes_v3_update_connection_request: Annotated[RoutesV3UpdateConnectionRequest, Field(description="Request body for updating a connection")],
         _request_timeout: Union[
@@ -602,6 +633,8 @@ class ConnectionsApi:
 
         Update an existing connection
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param connection_id: Connection ID to update (required)
         :type connection_id: str
         :param routes_v3_update_connection_request: Request body for updating a connection (required)
@@ -628,7 +661,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_connection_id_patch_serialize(
+        _param = self._v3_organization_id_connections_connection_id_patch_serialize(
+            organization_id=organization_id,
             connection_id=connection_id,
             routes_v3_update_connection_request=routes_v3_update_connection_request,
             _request_auth=_request_auth,
@@ -654,8 +688,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_connection_id_patch_with_http_info(
+    def v3_organization_id_connections_connection_id_patch_with_http_info(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         connection_id: Annotated[StrictStr, Field(description="Connection ID to update")],
         routes_v3_update_connection_request: Annotated[RoutesV3UpdateConnectionRequest, Field(description="Request body for updating a connection")],
         _request_timeout: Union[
@@ -675,6 +710,8 @@ class ConnectionsApi:
 
         Update an existing connection
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param connection_id: Connection ID to update (required)
         :type connection_id: str
         :param routes_v3_update_connection_request: Request body for updating a connection (required)
@@ -701,7 +738,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_connection_id_patch_serialize(
+        _param = self._v3_organization_id_connections_connection_id_patch_serialize(
+            organization_id=organization_id,
             connection_id=connection_id,
             routes_v3_update_connection_request=routes_v3_update_connection_request,
             _request_auth=_request_auth,
@@ -727,8 +765,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_connection_id_patch_without_preload_content(
+    def v3_organization_id_connections_connection_id_patch_without_preload_content(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         connection_id: Annotated[StrictStr, Field(description="Connection ID to update")],
         routes_v3_update_connection_request: Annotated[RoutesV3UpdateConnectionRequest, Field(description="Request body for updating a connection")],
         _request_timeout: Union[
@@ -748,6 +787,8 @@ class ConnectionsApi:
 
         Update an existing connection
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param connection_id: Connection ID to update (required)
         :type connection_id: str
         :param routes_v3_update_connection_request: Request body for updating a connection (required)
@@ -774,7 +815,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_connection_id_patch_serialize(
+        _param = self._v3_organization_id_connections_connection_id_patch_serialize(
+            organization_id=organization_id,
             connection_id=connection_id,
             routes_v3_update_connection_request=routes_v3_update_connection_request,
             _request_auth=_request_auth,
@@ -795,8 +837,9 @@ class ConnectionsApi:
         return response_data.response
 
 
-    def _v3_connections_connection_id_patch_serialize(
+    def _v3_organization_id_connections_connection_id_patch_serialize(
         self,
+        organization_id,
         connection_id,
         routes_v3_update_connection_request,
         _request_auth,
@@ -820,6 +863,8 @@ class ConnectionsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if organization_id is not None:
+            _path_params['organization_id'] = organization_id
         if connection_id is not None:
             _path_params['connection_id'] = connection_id
         # process the query parameters
@@ -859,7 +904,7 @@ class ConnectionsApi:
 
         return self.api_client.param_serialize(
             method='PATCH',
-            resource_path='/v3/connections/{connection_id}',
+            resource_path='/v3/{organization_id}/connections/{connection_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -876,8 +921,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_get(
+    def v3_organization_id_connections_get(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
@@ -897,6 +943,8 @@ class ConnectionsApi:
 
         Retrieve all connections
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param limit: Limit
         :type limit: int
         :param offset: Offset
@@ -923,7 +971,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_get_serialize(
+        _param = self._v3_organization_id_connections_get_serialize(
+            organization_id=organization_id,
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -948,8 +997,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_get_with_http_info(
+    def v3_organization_id_connections_get_with_http_info(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
@@ -969,6 +1019,8 @@ class ConnectionsApi:
 
         Retrieve all connections
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param limit: Limit
         :type limit: int
         :param offset: Offset
@@ -995,7 +1047,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_get_serialize(
+        _param = self._v3_organization_id_connections_get_serialize(
+            organization_id=organization_id,
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -1020,8 +1073,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_get_without_preload_content(
+    def v3_organization_id_connections_get_without_preload_content(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
@@ -1041,6 +1095,8 @@ class ConnectionsApi:
 
         Retrieve all connections
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param limit: Limit
         :type limit: int
         :param offset: Offset
@@ -1067,7 +1123,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_get_serialize(
+        _param = self._v3_organization_id_connections_get_serialize(
+            organization_id=organization_id,
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -1087,8 +1144,9 @@ class ConnectionsApi:
         return response_data.response
 
 
-    def _v3_connections_get_serialize(
+    def _v3_organization_id_connections_get_serialize(
         self,
+        organization_id,
         limit,
         offset,
         _request_auth,
@@ -1112,6 +1170,8 @@ class ConnectionsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if organization_id is not None:
+            _path_params['organization_id'] = organization_id
         # process the query parameters
         if limit is not None:
             
@@ -1142,7 +1202,7 @@ class ConnectionsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v3/connections',
+            resource_path='/v3/{organization_id}/connections',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1159,8 +1219,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_post(
+    def v3_organization_id_connections_post(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_v3_create_connection_request: Annotated[RoutesV3CreateConnectionRequest, Field(description="Request body for creating a connection")],
         _request_timeout: Union[
             None,
@@ -1179,6 +1240,8 @@ class ConnectionsApi:
 
         Create a new connection with the provided details
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param routes_v3_create_connection_request: Request body for creating a connection (required)
         :type routes_v3_create_connection_request: RoutesV3CreateConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -1203,7 +1266,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_post_serialize(
+        _param = self._v3_organization_id_connections_post_serialize(
+            organization_id=organization_id,
             routes_v3_create_connection_request=routes_v3_create_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1228,8 +1292,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_post_with_http_info(
+    def v3_organization_id_connections_post_with_http_info(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_v3_create_connection_request: Annotated[RoutesV3CreateConnectionRequest, Field(description="Request body for creating a connection")],
         _request_timeout: Union[
             None,
@@ -1248,6 +1313,8 @@ class ConnectionsApi:
 
         Create a new connection with the provided details
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param routes_v3_create_connection_request: Request body for creating a connection (required)
         :type routes_v3_create_connection_request: RoutesV3CreateConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -1272,7 +1339,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_post_serialize(
+        _param = self._v3_organization_id_connections_post_serialize(
+            organization_id=organization_id,
             routes_v3_create_connection_request=routes_v3_create_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1297,8 +1365,9 @@ class ConnectionsApi:
 
 
     @validate_call
-    def v3_connections_post_without_preload_content(
+    def v3_organization_id_connections_post_without_preload_content(
         self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         routes_v3_create_connection_request: Annotated[RoutesV3CreateConnectionRequest, Field(description="Request body for creating a connection")],
         _request_timeout: Union[
             None,
@@ -1317,6 +1386,8 @@ class ConnectionsApi:
 
         Create a new connection with the provided details
 
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
         :param routes_v3_create_connection_request: Request body for creating a connection (required)
         :type routes_v3_create_connection_request: RoutesV3CreateConnectionRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -1341,7 +1412,8 @@ class ConnectionsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v3_connections_post_serialize(
+        _param = self._v3_organization_id_connections_post_serialize(
+            organization_id=organization_id,
             routes_v3_create_connection_request=routes_v3_create_connection_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1361,8 +1433,9 @@ class ConnectionsApi:
         return response_data.response
 
 
-    def _v3_connections_post_serialize(
+    def _v3_organization_id_connections_post_serialize(
         self,
+        organization_id,
         routes_v3_create_connection_request,
         _request_auth,
         _content_type,
@@ -1385,6 +1458,8 @@ class ConnectionsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if organization_id is not None:
+            _path_params['organization_id'] = organization_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -1422,7 +1497,7 @@ class ConnectionsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v3/connections',
+            resource_path='/v3/{organization_id}/connections',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

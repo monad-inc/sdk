@@ -29,6 +29,7 @@ class ModelsPipelineNode(BaseModel):
     ModelsPipelineNode
     """ # noqa: E501
     component: Optional[ModelsNodeComponent] = None
+    component_house: Optional[StrictStr] = None
     component_id: Optional[StrictStr] = None
     component_sub_type: Optional[StrictStr] = None
     component_type: Optional[StrictStr] = None
@@ -38,7 +39,7 @@ class ModelsPipelineNode(BaseModel):
     organization_id: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None
     slug: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["component", "component_id", "component_sub_type", "component_type", "created_at", "enabled", "id", "organization_id", "pipeline_id", "slug"]
+    __properties: ClassVar[List[str]] = ["component", "component_house", "component_id", "component_sub_type", "component_type", "created_at", "enabled", "id", "organization_id", "pipeline_id", "slug"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +96,7 @@ class ModelsPipelineNode(BaseModel):
 
         _obj = cls.model_validate({
             "component": ModelsNodeComponent.from_dict(obj["component"]) if obj.get("component") is not None else None,
+            "component_house": obj.get("component_house"),
             "component_id": obj.get("component_id"),
             "component_sub_type": obj.get("component_sub_type"),
             "component_type": obj.get("component_type"),

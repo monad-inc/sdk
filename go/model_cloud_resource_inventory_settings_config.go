@@ -20,6 +20,8 @@ var _ MappedNullable = &CloudResourceInventorySettingsConfig{}
 
 // CloudResourceInventorySettingsConfig Wiz cloud resource inventory settings
 type CloudResourceInventorySettingsConfig struct {
+	// Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Cloud Platform types for Wiz. Ex: 'AWS', 'AZURE', 'GCP'.
 	CloudPlatform []string `json:"cloudPlatform,omitempty"`
 	// Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-resource-inventory'.
@@ -49,6 +51,38 @@ func NewCloudResourceInventorySettingsConfig() *CloudResourceInventorySettingsCo
 func NewCloudResourceInventorySettingsConfigWithDefaults() *CloudResourceInventorySettingsConfig {
 	this := CloudResourceInventorySettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *CloudResourceInventorySettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudResourceInventorySettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *CloudResourceInventorySettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *CloudResourceInventorySettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetCloudPlatform returns the CloudPlatform field value if set, zero value otherwise.
@@ -253,6 +287,9 @@ func (o CloudResourceInventorySettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o CloudResourceInventorySettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.CloudPlatform) {
 		toSerialize["cloudPlatform"] = o.CloudPlatform
 	}

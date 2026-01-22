@@ -15,6 +15,7 @@ import { HttpFile } from '../http/http';
 
 export class RoutesTransformOperation {
     'arguments'?: RoutesTransformOperationArguments;
+    'description'?: string;
     'operation'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -26,6 +27,12 @@ export class RoutesTransformOperation {
             "name": "arguments",
             "baseName": "arguments",
             "type": "RoutesTransformOperationArguments",
+            "format": ""
+        },
+        {
+            "name": "description",
+            "baseName": "description",
+            "type": "string",
             "format": ""
         },
         {

@@ -21,6 +21,7 @@ var _ MappedNullable = &RoutesTransformOperation{}
 // RoutesTransformOperation struct for RoutesTransformOperation
 type RoutesTransformOperation struct {
 	Arguments *RoutesTransformOperationArguments `json:"arguments,omitempty"`
+	Description *string `json:"description,omitempty"`
 	Operation *string `json:"operation,omitempty"`
 }
 
@@ -73,6 +74,38 @@ func (o *RoutesTransformOperation) SetArguments(v RoutesTransformOperationArgume
 	o.Arguments = &v
 }
 
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *RoutesTransformOperation) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesTransformOperation) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *RoutesTransformOperation) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *RoutesTransformOperation) SetDescription(v string) {
+	o.Description = &v
+}
+
 // GetOperation returns the Operation field value if set, zero value otherwise.
 func (o *RoutesTransformOperation) GetOperation() string {
 	if o == nil || IsNil(o.Operation) {
@@ -117,6 +150,9 @@ func (o RoutesTransformOperation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Arguments) {
 		toSerialize["arguments"] = o.Arguments
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
 	}
 	if !IsNil(o.Operation) {
 		toSerialize["operation"] = o.Operation

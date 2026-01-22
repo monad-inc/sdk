@@ -49,9 +49,9 @@ import org.openapitools.client.JSON;
 /**
  * ConditionInfo
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ConditionInfo {
-  public static final String SERIALIZED_NAME_CONFIG_META = "configMeta";
+  public static final String SERIALIZED_NAME_CONFIG_META = "config_meta";
   @SerializedName(SERIALIZED_NAME_CONFIG_META)
   @javax.annotation.Nullable
   private Object configMeta = null;
@@ -66,10 +66,10 @@ public class ConditionInfo {
   @javax.annotation.Nullable
   private String name;
 
-  public static final String SERIALIZED_NAME_TYPE_I_D = "typeID";
-  @SerializedName(SERIALIZED_NAME_TYPE_I_D)
+  public static final String SERIALIZED_NAME_TYPE_ID = "type_id";
+  @SerializedName(SERIALIZED_NAME_TYPE_ID)
   @javax.annotation.Nullable
-  private String typeID;
+  private String typeId;
 
   public ConditionInfo() {
   }
@@ -131,22 +131,22 @@ public class ConditionInfo {
   }
 
 
-  public ConditionInfo typeID(@javax.annotation.Nullable String typeID) {
-    this.typeID = typeID;
+  public ConditionInfo typeId(@javax.annotation.Nullable String typeId) {
+    this.typeId = typeId;
     return this;
   }
 
   /**
-   * Get typeID
-   * @return typeID
+   * Get typeId
+   * @return typeId
    */
   @javax.annotation.Nullable
-  public String getTypeID() {
-    return typeID;
+  public String getTypeId() {
+    return typeId;
   }
 
-  public void setTypeID(@javax.annotation.Nullable String typeID) {
-    this.typeID = typeID;
+  public void setTypeId(@javax.annotation.Nullable String typeId) {
+    this.typeId = typeId;
   }
 
 
@@ -163,7 +163,7 @@ public class ConditionInfo {
     return Objects.equals(this.configMeta, conditionInfo.configMeta) &&
         Objects.equals(this.description, conditionInfo.description) &&
         Objects.equals(this.name, conditionInfo.name) &&
-        Objects.equals(this.typeID, conditionInfo.typeID);
+        Objects.equals(this.typeId, conditionInfo.typeId);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -172,7 +172,7 @@ public class ConditionInfo {
 
   @Override
   public int hashCode() {
-    return Objects.hash(configMeta, description, name, typeID);
+    return Objects.hash(configMeta, description, name, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -189,7 +189,7 @@ public class ConditionInfo {
     sb.append("    configMeta: ").append(toIndentedString(configMeta)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    typeID: ").append(toIndentedString(typeID)).append("\n");
+    sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -211,7 +211,7 @@ public class ConditionInfo {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("configMeta", "description", "name", "typeID"));
+    openapiFields = new HashSet<String>(Arrays.asList("config_meta", "description", "name", "type_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -226,7 +226,7 @@ public class ConditionInfo {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ConditionInfo.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ConditionInfo is not found in the empty JSON string", ConditionInfo.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ConditionInfo is not found in the empty JSON string", ConditionInfo.openapiRequiredFields.toString()));
         }
       }
 
@@ -234,18 +234,18 @@ public class ConditionInfo {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ConditionInfo.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ConditionInfo` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ConditionInfo` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("typeID") != null && !jsonObj.get("typeID").isJsonNull()) && !jsonObj.get("typeID").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `typeID` to be a primitive type in the JSON string but got `%s`", jsonObj.get("typeID").toString()));
+      if ((jsonObj.get("type_id") != null && !jsonObj.get("type_id").isJsonNull()) && !jsonObj.get("type_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type_id").toString()));
       }
   }
 

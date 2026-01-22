@@ -6,13 +6,19 @@ import { AbsSecretsConfig } from '../models/AbsSecretsConfig';
 import { AbsSettingsConfig } from '../models/AbsSettingsConfig';
 import { ActivityLogsSecretsConfig } from '../models/ActivityLogsSecretsConfig';
 import { ActivityLogsSettingsConfig } from '../models/ActivityLogsSettingsConfig';
+import { ActivitylogsSecretsConfig } from '../models/ActivitylogsSecretsConfig';
+import { ActivitylogsSettingsConfig } from '../models/ActivitylogsSettingsConfig';
 import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddAdd } from '../models/AddAdd';
-import { AdminActivitySecretsConfig } from '../models/AdminActivitySecretsConfig';
-import { AdminActivitySettingsConfig } from '../models/AdminActivitySettingsConfig';
+import { AddIdAddIdentifier } from '../models/AddIdAddIdentifier';
 import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
+import { AlertCenterSecretsConfig } from '../models/AlertCenterSecretsConfig';
+import { AlertCenterSettingsConfig } from '../models/AlertCenterSettingsConfig';
+import { AlertsAlertMeta } from '../models/AlertsAlertMeta';
+import { ArizeAuditLogsSecretsConfig } from '../models/ArizeAuditLogsSecretsConfig';
+import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsConfig';
 import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
@@ -20,18 +26,32 @@ import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
 import { AuthenticationtypesMFAEnrollmentTicket } from '../models/AuthenticationtypesMFAEnrollmentTicket';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
+import { AwsGuarddutySecretsConfig } from '../models/AwsGuarddutySecretsConfig';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
+import { AwsS3SecretsConfig } from '../models/AwsS3SecretsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
-import { AwssqsSettingsConfig } from '../models/AwssqsSettingsConfig';
+import { AwssecurityhubSecretsConfig } from '../models/AwssecurityhubSecretsConfig';
+import { AwssecurityhubSettingsConfig } from '../models/AwssecurityhubSettingsConfig';
 import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';
+import { Awssqss3SettingsConfig } from '../models/Awssqss3SettingsConfig';
+import { AxiomSecretsConfig } from '../models/AxiomSecretsConfig';
+import { AxiomSettingsConfig } from '../models/AxiomSettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
 import { AzureBlobStorageSecretsConfig } from '../models/AzureBlobStorageSecretsConfig';
 import { AzureBlobStorageSettingsConfig } from '../models/AzureBlobStorageSettingsConfig';
+import { AzureEventHubsSecretsConfig } from '../models/AzureEventHubsSecretsConfig';
+import { AzureEventHubsSettingsConfig } from '../models/AzureEventHubsSettingsConfig';
 import { AzureVirtualMachineSettingsConfig } from '../models/AzureVirtualMachineSettingsConfig';
 import { AzureVnetFlowLogsSecretsConfig } from '../models/AzureVnetFlowLogsSecretsConfig';
 import { AzureVnetFlowLogsSettingsConfig } from '../models/AzureVnetFlowLogsSettingsConfig';
+import { BackblazeB2SecretsConfig } from '../models/BackblazeB2SecretsConfig';
+import { BackblazeB2SettingsConfig } from '../models/BackblazeB2SettingsConfig';
+import { BackblazeSecretsConfig } from '../models/BackblazeSecretsConfig';
+import { BackblazeSettingsConfig } from '../models/BackblazeSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
+import { BigqueryCronSecretsConfig } from '../models/BigqueryCronSecretsConfig';
+import { BigqueryCronSettingsConfig } from '../models/BigqueryCronSettingsConfig';
 import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig';
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
@@ -40,6 +60,10 @@ import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
+import { BuildkiteAuditLogsSecretsConfig } from '../models/BuildkiteAuditLogsSecretsConfig';
+import { BuildkiteAuditLogsSettingsConfig } from '../models/BuildkiteAuditLogsSettingsConfig';
+import { BuildkiteGraphqlInputSecretsConfig } from '../models/BuildkiteGraphqlInputSecretsConfig';
+import { BuildkiteGraphqlInputSettingsConfig } from '../models/BuildkiteGraphqlInputSettingsConfig';
 import { CisaUserSettingsConfig } from '../models/CisaUserSettingsConfig';
 import { CloudAssetInventorySecretsConfig } from '../models/CloudAssetInventorySecretsConfig';
 import { CloudAssetInventorySettingsConfig } from '../models/CloudAssetInventorySettingsConfig';
@@ -47,13 +71,37 @@ import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigur
 import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';
 import { CloudLogsSecretsConfig } from '../models/CloudLogsSecretsConfig';
 import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
+import { CloudResourceInventoryReportsSecretsConfig } from '../models/CloudResourceInventoryReportsSecretsConfig';
+import { CloudResourceInventoryReportsSettingsConfig } from '../models/CloudResourceInventoryReportsSettingsConfig';
 import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
+import { CloudflareAuditLogsSecretsConfig } from '../models/CloudflareAuditLogsSecretsConfig';
+import { CloudflareAuditLogsSettingsConfig } from '../models/CloudflareAuditLogsSettingsConfig';
+import { CloudflareDnsRecordsSecretsConfig } from '../models/CloudflareDnsRecordsSecretsConfig';
+import { CloudflareDnsRecordsSettingsConfig } from '../models/CloudflareDnsRecordsSettingsConfig';
+import { CloudflareFirewallEventsSecretsConfig } from '../models/CloudflareFirewallEventsSecretsConfig';
+import { CloudflareFirewallEventsSettingsConfig } from '../models/CloudflareFirewallEventsSettingsConfig';
+import { CloudflarePageShieldConnectionsSecretsConfig } from '../models/CloudflarePageShieldConnectionsSecretsConfig';
+import { CloudflarePageShieldConnectionsSettingsConfig } from '../models/CloudflarePageShieldConnectionsSettingsConfig';
+import { CloudflareRulesetsSecretsConfig } from '../models/CloudflareRulesetsSecretsConfig';
+import { CloudflareRulesetsSettingsConfig } from '../models/CloudflareRulesetsSettingsConfig';
+import { CloudflareSecurityInsightsSecretsConfig } from '../models/CloudflareSecurityInsightsSecretsConfig';
+import { CloudflareSecurityInsightsSettingsConfig } from '../models/CloudflareSecurityInsightsSettingsConfig';
+import { CloudflareUrlScannerSecretsConfig } from '../models/CloudflareUrlScannerSecretsConfig';
+import { CloudflareUrlScannerSettingsConfig } from '../models/CloudflareUrlScannerSettingsConfig';
+import { CloudflareUsersSecretsConfig } from '../models/CloudflareUsersSecretsConfig';
+import { CloudflareUsersSettingsConfig } from '../models/CloudflareUsersSettingsConfig';
+import { CloudflareZeroTrustAccessRequestsSecretsConfig } from '../models/CloudflareZeroTrustAccessRequestsSecretsConfig';
+import { CloudflareZeroTrustAccessRequestsSettingsConfig } from '../models/CloudflareZeroTrustAccessRequestsSettingsConfig';
+import { CloudflareZonesSecretsConfig } from '../models/CloudflareZonesSecretsConfig';
+import { CloudflareZonesSettingsConfig } from '../models/CloudflareZonesSettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
 import { ClumioAuditLogsSecretsConfig } from '../models/ClumioAuditLogsSecretsConfig';
 import { ClumioAuditLogsSettingsConfig } from '../models/ClumioAuditLogsSettingsConfig';
 import { ClumioConsolidatedAlertsSecretsConfig } from '../models/ClumioConsolidatedAlertsSecretsConfig';
 import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
+import { CodaAuditEventsSecretsConfig } from '../models/CodaAuditEventsSecretsConfig';
+import { CodaAuditEventsSettingsConfig } from '../models/CodaAuditEventsSettingsConfig';
 import { CognitoUsersFilter } from '../models/CognitoUsersFilter';
 import { CognitoUsersSettingsConfig } from '../models/CognitoUsersSettingsConfig';
 import { CommunityEditionSecretsConfig } from '../models/CommunityEditionSecretsConfig';
@@ -62,47 +110,49 @@ import { CommunityTransformsInternalTransformConfig } from '../models/CommunityT
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
 import { ConditionInfo } from '../models/ConditionInfo';
+import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
+import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { CrowdstrikeFdrSecretsConfig } from '../models/CrowdstrikeFdrSecretsConfig';
 import { CrowdstrikeFdrSettingsConfig } from '../models/CrowdstrikeFdrSettingsConfig';
+import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
+import { CustomerEventDataSettingsConfig } from '../models/CustomerEventDataSettingsConfig';
+import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
+import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
 import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
 import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
-import { DetectSummariesSecretsConfig } from '../models/DetectSummariesSecretsConfig';
-import { DetectSummariesSettingsConfig } from '../models/DetectSummariesSettingsConfig';
-import { DeviceActivitySecretsConfig } from '../models/DeviceActivitySecretsConfig';
-import { DeviceActivitySettingsConfig } from '../models/DeviceActivitySettingsConfig';
 import { DeviceDetailsSecretsConfig } from '../models/DeviceDetailsSecretsConfig';
 import { DeviceDetailsSettingsConfig } from '../models/DeviceDetailsSettingsConfig';
 import { DevicesSecretsConfig } from '../models/DevicesSecretsConfig';
 import { DevicesSettingsConfig } from '../models/DevicesSettingsConfig';
-import { DriveActivitySecretsConfig } from '../models/DriveActivitySecretsConfig';
-import { DriveActivitySettingsConfig } from '../models/DriveActivitySettingsConfig';
 import { DropKeyDropKey } from '../models/DropKeyDropKey';
 import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
 import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
 import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
+import { EndorLabsAuditLogsSecretsConfig } from '../models/EndorLabsAuditLogsSecretsConfig';
+import { EndorLabsAuditLogsSettingsConfig } from '../models/EndorLabsAuditLogsSettingsConfig';
 import { EnrichmentConnectorMeta } from '../models/EnrichmentConnectorMeta';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
-import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
-import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
-import { EventsSecretsConfig } from '../models/EventsSecretsConfig';
-import { EventsSettingsConfig } from '../models/EventsSettingsConfig';
 import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
+import { GeolocusSettingsConfig } from '../models/GeolocusSettingsConfig';
 import { GithubAdvisoryUserSettingsConfig } from '../models/GithubAdvisoryUserSettingsConfig';
 import { GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter } from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
+import { GithubComMonadIncAlertsModelsAlert } from '../models/GithubComMonadIncAlertsModelsAlert';
+import { GithubComMonadIncAlertsModelsAlertStatus } from '../models/GithubComMonadIncAlertsModelsAlertStatus';
+import { GithubComMonadIncAlertsModelsResourceReference } from '../models/GithubComMonadIncAlertsModelsResourceReference';
 import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
 import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
 import { GithubComMonadIncCorePkgTypesModelsQuota } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
@@ -113,6 +163,8 @@ import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStor
 import { GoogleCloudStorageOutputSettingsConfig } from '../models/GoogleCloudStorageOutputSettingsConfig';
 import { GoogleCloudStorageSecretsConfig } from '../models/GoogleCloudStorageSecretsConfig';
 import { GoogleCloudStorageSettingsConfig } from '../models/GoogleCloudStorageSettingsConfig';
+import { GreenhouseAuditLogsSecretsConfig } from '../models/GreenhouseAuditLogsSecretsConfig';
+import { GreenhouseAuditLogsSettingsConfig } from '../models/GreenhouseAuditLogsSettingsConfig';
 import { HttpHeaders } from '../models/HttpHeaders';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
@@ -122,21 +174,33 @@ import { IamAccessAnalyzerSettingsConfig } from '../models/IamAccessAnalyzerSett
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
+import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
+import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
+import { IssuesReportSecretsConfig } from '../models/IssuesReportSecretsConfig';
+import { IssuesReportSettingsConfig } from '../models/IssuesReportSettingsConfig';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig } from '../models/IssuesSettingsConfig';
 import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
 import { KmsSettingsConfig } from '../models/KmsSettingsConfig';
+import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
+import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
+import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
+import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
-import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig';
-import { LoginActivitySettingsConfig } from '../models/LoginActivitySettingsConfig';
 import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
 import { LoginSessionsSettingsConfig } from '../models/LoginSessionsSettingsConfig';
 import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultiplyWithValueMathMultiplyWithValue';
+import { MerakiConfigLogsSecretsConfig } from '../models/MerakiConfigLogsSecretsConfig';
+import { MerakiConfigLogsSettingsConfig } from '../models/MerakiConfigLogsSettingsConfig';
+import { Microsoft365GenericSecretsConfig } from '../models/Microsoft365GenericSecretsConfig';
+import { Microsoft365GenericSettingsConfig } from '../models/Microsoft365GenericSettingsConfig';
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
+import { ModelsAlertRule } from '../models/ModelsAlertRule';
+import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
@@ -147,9 +211,6 @@ import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
-import { ModelsConnectionPermission } from '../models/ModelsConnectionPermission';
-import { ModelsConnectionRole } from '../models/ModelsConnectionRole';
-import { ModelsConnectionRoleUser } from '../models/ModelsConnectionRoleUser';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
@@ -185,6 +246,13 @@ import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissio
 import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
+import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
+import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
+import { ModelsStorageTypeCostSummary } from '../models/ModelsStorageTypeCostSummary';
+import { ModelsStorageTypeOutputDetail } from '../models/ModelsStorageTypeOutputDetail';
+import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSummaryResponse';
+import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
+import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
 import { ModelsTransform } from '../models/ModelsTransform';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
@@ -193,27 +261,35 @@ import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsReposi
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
 import { ModelsUserAuthProvider } from '../models/ModelsUserAuthProvider';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
+import { MonadGraphqlInputVariable } from '../models/MonadGraphqlInputVariable';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
 import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
 import { NextGenSiemSecretsConfig } from '../models/NextGenSiemSecretsConfig';
 import { NextGenSiemSettingsConfig } from '../models/NextGenSiemSettingsConfig';
-import { OauthActivitySecretsConfig } from '../models/OauthActivitySecretsConfig';
-import { OauthActivitySettingsConfig } from '../models/OauthActivitySettingsConfig';
 import { ObjectStorageInputSecretsConfig } from '../models/ObjectStorageInputSecretsConfig';
 import { ObjectStorageInputSettingsConfig } from '../models/ObjectStorageInputSettingsConfig';
 import { ObjectStorageSecretsConfig } from '../models/ObjectStorageSecretsConfig';
 import { ObjectStorageSettingsConfig } from '../models/ObjectStorageSettingsConfig';
+import { OfflineenrollmentlogsSecretsConfig } from '../models/OfflineenrollmentlogsSecretsConfig';
+import { OfflineenrollmentlogsSettingsConfig } from '../models/OfflineenrollmentlogsSettingsConfig';
 import { OneloginEventsSecretsConfig } from '../models/OneloginEventsSecretsConfig';
 import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsConfig';
 import { OpenaiSettingsConfig } from '../models/OpenaiSettingsConfig';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
+import { OperationLogsSecretsConfig } from '../models/OperationLogsSecretsConfig';
+import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConfig';
+import { OracleSettingsConfig } from '../models/OracleSettingsConfig';
+import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
+import { OrgAuditLogsSettingsConfig } from '../models/OrgAuditLogsSettingsConfig';
 import { OrganizationsSettingsConfig } from '../models/OrganizationsSettingsConfig';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
+import { PagerdutyAuditRecordsSecretsConfig } from '../models/PagerdutyAuditRecordsSecretsConfig';
+import { PagerdutyAuditRecordsSettingsConfig } from '../models/PagerdutyAuditRecordsSettingsConfig';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
 import { PagerdutySettingsConfig } from '../models/PagerdutySettingsConfig';
 import { PagerdutySummaryConfig } from '../models/PagerdutySummaryConfig';
@@ -222,14 +298,24 @@ import { PaloAltoDataSecurityAlertsSettingsConfig } from '../models/PaloAltoData
 import { PantherSecretsConfig } from '../models/PantherSecretsConfig';
 import { PantherSettingsConfig } from '../models/PantherSettingsConfig';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
+import { PipelineNodeStatusProgressTimestamp } from '../models/PipelineNodeStatusProgressTimestamp';
+import { PipelineNodeStatusProgressTimestamps } from '../models/PipelineNodeStatusProgressTimestamps';
+import { PolymerSecretsConfig } from '../models/PolymerSecretsConfig';
+import { PolymerSettingsConfig } from '../models/PolymerSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
+import { PostmanAuditLogsSecretsConfig } from '../models/PostmanAuditLogsSecretsConfig';
+import { PostmanAuditLogsSettingsConfig } from '../models/PostmanAuditLogsSettingsConfig';
+import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
+import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResourceEvaluationsSettingsConfig } from '../models/ResourceEvaluationsSettingsConfig';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
 import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
+import { RootlyAuditLogsSecretsConfig } from '../models/RootlyAuditLogsSecretsConfig';
+import { RootlyAuditLogsSettingsConfig } from '../models/RootlyAuditLogsSettingsConfig';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
@@ -275,6 +361,10 @@ import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus
 import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
 import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
+import { RoutesV2SetStorageTypeCostEntry } from '../models/RoutesV2SetStorageTypeCostEntry';
+import { RoutesV2SetStorageTypeCostRequest } from '../models/RoutesV2SetStorageTypeCostRequest';
+import { RoutesV2StorageTypeDetailsResponse } from '../models/RoutesV2StorageTypeDetailsResponse';
+import { RoutesV2StorageTypeOutputDetailResponse } from '../models/RoutesV2StorageTypeOutputDetailResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
 import { RoutesV2TestOutputConnectionRequest } from '../models/RoutesV2TestOutputConnectionRequest';
@@ -285,24 +375,35 @@ import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
+import { RoutesV3AlertList } from '../models/RoutesV3AlertList';
+import { RoutesV3CreateAlertRuleRequest } from '../models/RoutesV3CreateAlertRuleRequest';
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
 import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateConnectionRequestSaml';
-import { RoutesV3CreateConnectionRoleRequest } from '../models/RoutesV3CreateConnectionRoleRequest';
-import { RoutesV3CreateConnectionUserRoleRequest } from '../models/RoutesV3CreateConnectionUserRoleRequest';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
+import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
+import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
+import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
+import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
+import { RoutesV3Summary } from '../models/RoutesV3Summary';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
 import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation';
+import { RoutesV3TransformOperationWithRationale } from '../models/RoutesV3TransformOperationWithRationale';
+import { RoutesV3TransformRecommendationRequest } from '../models/RoutesV3TransformRecommendationRequest';
+import { RoutesV3UpdateAlertRuleRequest } from '../models/RoutesV3UpdateAlertRuleRequest';
 import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
-import { RoutesV3UpdateConnectionRoleRequest } from '../models/RoutesV3UpdateConnectionRoleRequest';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
+import { S3SecretsConfig } from '../models/S3SecretsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
+import { SalesforceUsersSecretsConfig } from '../models/SalesforceUsersSecretsConfig';
+import { SalesforceUsersSettingsConfig } from '../models/SalesforceUsersSettingsConfig';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
 import { SecretProcessesorEnrichmentConfigSecrets } from '../models/SecretProcessesorEnrichmentConfigSecrets';
 import { SecretProcessesorEnrichmentConfigSettings } from '../models/SecretProcessesorEnrichmentConfigSettings';
@@ -312,6 +413,7 @@ import { SecretProcessesorInputConfigSettings } from '../models/SecretProcesseso
 import { SecretProcessesorOutputConfig } from '../models/SecretProcessesorOutputConfig';
 import { SecretProcessesorOutputConfigSecrets } from '../models/SecretProcessesorOutputConfigSecrets';
 import { SecretProcessesorOutputConfigSettings } from '../models/SecretProcessesorOutputConfigSettings';
+import { SecretsmanagerSecretsConfig } from '../models/SecretsmanagerSecretsConfig';
 import { SecretsmanagerSettingsConfig } from '../models/SecretsmanagerSettingsConfig';
 import { SecurityGroupsFilter } from '../models/SecurityGroupsFilter';
 import { SecurityGroupsSettingsConfig } from '../models/SecurityGroupsSettingsConfig';
@@ -331,6 +433,8 @@ import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
 import { SentryOrgAuditLogsSecretsConfig } from '../models/SentryOrgAuditLogsSecretsConfig';
 import { SentryOrgAuditLogsSettingsConfig } from '../models/SentryOrgAuditLogsSettingsConfig';
+import { SlackEnterpriseAuditLogsSecretsConfig } from '../models/SlackEnterpriseAuditLogsSecretsConfig';
+import { SlackEnterpriseAuditLogsSettingsConfig } from '../models/SlackEnterpriseAuditLogsSettingsConfig';
 import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
 import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
 import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
@@ -351,12 +455,22 @@ import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
 import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
 import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
 import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
+import { SumologicSourceMetadata } from '../models/SumologicSourceMetadata';
+import { SumologicSumoField } from '../models/SumologicSumoField';
 import { SyntheticDataCustomSettingsConfig } from '../models/SyntheticDataCustomSettingsConfig';
 import { SyntheticDataSettingsConfig } from '../models/SyntheticDataSettingsConfig';
 import { SystemlogSecretsConfig } from '../models/SystemlogSecretsConfig';
 import { SystemlogSettingsConfig } from '../models/SystemlogSettingsConfig';
 import { TailscaleUsersSecretsConfig } from '../models/TailscaleUsersSecretsConfig';
 import { TailscaleUsersSettingsConfig } from '../models/TailscaleUsersSettingsConfig';
+import { TaniumGraphqlInputSecretsConfig } from '../models/TaniumGraphqlInputSecretsConfig';
+import { TaniumGraphqlInputSettingsConfig } from '../models/TaniumGraphqlInputSettingsConfig';
+import { TeamAccessLogsSecretsConfig } from '../models/TeamAccessLogsSecretsConfig';
+import { TeamAccessLogsSettingsConfig } from '../models/TeamAccessLogsSettingsConfig';
+import { TeamIntegrationLogsSecretsConfig } from '../models/TeamIntegrationLogsSecretsConfig';
+import { TeamIntegrationLogsSettingsConfig } from '../models/TeamIntegrationLogsSettingsConfig';
+import { TelephonyLogsSecretsConfig } from '../models/TelephonyLogsSecretsConfig';
+import { TelephonyLogsSettingsConfig } from '../models/TelephonyLogsSettingsConfig';
 import { TenableAssetsCronSecretsConfig } from '../models/TenableAssetsCronSecretsConfig';
 import { TenableAssetsCronSettingsConfig } from '../models/TenableAssetsCronSettingsConfig';
 import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
@@ -365,7 +479,19 @@ import { TenableVulnerabilitiesCronSecretsConfig } from '../models/TenableVulner
 import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
 import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
+import { TinesAuditLogsSecretsConfig } from '../models/TinesAuditLogsSecretsConfig';
+import { TinesAuditLogsSettingsConfig } from '../models/TinesAuditLogsSettingsConfig';
+import { TinesEventsLogsSecretsConfig } from '../models/TinesEventsLogsSecretsConfig';
+import { TinesEventsLogsSettingsConfig } from '../models/TinesEventsLogsSettingsConfig';
+import { TwilioEventsSecretsConfig } from '../models/TwilioEventsSecretsConfig';
+import { TwilioEventsSettingsConfig } from '../models/TwilioEventsSettingsConfig';
+import { TwilioSendgridEmailActivitySecretsConfig } from '../models/TwilioSendgridEmailActivitySecretsConfig';
+import { TwilioSendgridEmailActivitySettingsConfig } from '../models/TwilioSendgridEmailActivitySettingsConfig';
 import { TypesFilterNameStringType } from '../models/TypesFilterNameStringType';
+import { TypesStringComparison } from '../models/TypesStringComparison';
+import { TypesStringFilter } from '../models/TypesStringFilter';
+import { UniversalSecretsConfig } from '../models/UniversalSecretsConfig';
+import { UniversalSettingsConfig } from '../models/UniversalSettingsConfig';
 import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
 import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
@@ -377,8 +503,425 @@ import { VulnerabilitiesCronSecretsConfig } from '../models/VulnerabilitiesCronS
 import { VulnerabilitiesCronSettingsConfig } from '../models/VulnerabilitiesCronSettingsConfig';
 import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
 import { VulnerabilitiesSettingsConfig } from '../models/VulnerabilitiesSettingsConfig';
+import { VulnerabilityFindingsReportSecretsConfig } from '../models/VulnerabilityFindingsReportSecretsConfig';
+import { VulnerabilityFindingsReportSettingsConfig } from '../models/VulnerabilityFindingsReportSettingsConfig';
 import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
+import { WizAuditLogsSecretsConfig } from '../models/WizAuditLogsSecretsConfig';
+import { WizAuditLogsSettingsConfig } from '../models/WizAuditLogsSettingsConfig';
+import { ZendeskAuditLogsSecretsConfig } from '../models/ZendeskAuditLogsSecretsConfig';
+import { ZendeskAuditLogsSettingsConfig } from '../models/ZendeskAuditLogsSettingsConfig';
+import { ZoomActivityLogsSecretsConfig } from '../models/ZoomActivityLogsSecretsConfig';
+import { ZoomActivityLogsSettingsConfig } from '../models/ZoomActivityLogsSettingsConfig';
+import { ZoomMeetingActivityLogsSecretsConfig } from '../models/ZoomMeetingActivityLogsSecretsConfig';
+import { ZoomMeetingActivityLogsSettingsConfig } from '../models/ZoomMeetingActivityLogsSettingsConfig';
+
+import { ObservableAlertRulesApi } from "./ObservableAPI";
+import { AlertRulesApiRequestFactory, AlertRulesApiResponseProcessor} from "../apis/AlertRulesApi";
+
+export interface AlertRulesApiV3AlertRulesAlertRuleTypeIdGetRequest {
+    /**
+     * Alert Rule Type ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertRulesApiv3AlertRulesAlertRuleTypeIdGet
+     */
+    alertRuleTypeId: string
+}
+
+export interface AlertRulesApiV3AlertRulesGetRequest {
+}
+
+export interface AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdDeleteRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdDelete
+     */
+    organizationId: string
+    /**
+     * Alert Rule ID to delete
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdDelete
+     */
+    alertRuleId: string
+}
+
+export interface AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdGet
+     */
+    organizationId: string
+    /**
+     * Alert Rule ID to retrieve
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdGet
+     */
+    alertRuleId: string
+}
+
+export interface AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdPutRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdPut
+     */
+    organizationId: string
+    /**
+     * Alert Rule ID to update
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdPut
+     */
+    alertRuleId: string
+    /**
+     * Request body for updating an alert rule
+     * @type RoutesV3UpdateAlertRuleRequest
+     * @memberof AlertRulesApiv3OrganizationIdAlertRulesAlertRuleIdPut
+     */
+    routesV3UpdateAlertRuleRequest: RoutesV3UpdateAlertRuleRequest
+}
+
+export interface AlertRulesApiV3OrganizationIdAlertRulesGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertRulesApiv3OrganizationIdAlertRulesGet
+     */
+    organizationId: string
+    /**
+     * Limit
+     * Defaults to: undefined
+     * @type number
+     * @memberof AlertRulesApiv3OrganizationIdAlertRulesGet
+     */
+    limit?: number
+    /**
+     * Offset
+     * Defaults to: undefined
+     * @type number
+     * @memberof AlertRulesApiv3OrganizationIdAlertRulesGet
+     */
+    offset?: number
+}
+
+export interface AlertRulesApiV3OrganizationIdAlertRulesPostRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertRulesApiv3OrganizationIdAlertRulesPost
+     */
+    organizationId: string
+    /**
+     * Request body for creating an alert rule
+     * @type RoutesV3CreateAlertRuleRequest
+     * @memberof AlertRulesApiv3OrganizationIdAlertRulesPost
+     */
+    routesV3CreateAlertRuleRequest: RoutesV3CreateAlertRuleRequest
+}
+
+export class ObjectAlertRulesApi {
+    private api: ObservableAlertRulesApi
+
+    public constructor(configuration: Configuration, requestFactory?: AlertRulesApiRequestFactory, responseProcessor?: AlertRulesApiResponseProcessor) {
+        this.api = new ObservableAlertRulesApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Get configuration metadata for a specific alert rule type by its type ID
+     * Get alert rule type config metadata
+     * @param param the request object
+     */
+    public v3AlertRulesAlertRuleTypeIdGetWithHttpInfo(param: AlertRulesApiV3AlertRulesAlertRuleTypeIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<AlertsAlertMeta>> {
+        return this.api.v3AlertRulesAlertRuleTypeIdGetWithHttpInfo(param.alertRuleTypeId,  options).toPromise();
+    }
+
+    /**
+     * Get configuration metadata for a specific alert rule type by its type ID
+     * Get alert rule type config metadata
+     * @param param the request object
+     */
+    public v3AlertRulesAlertRuleTypeIdGet(param: AlertRulesApiV3AlertRulesAlertRuleTypeIdGetRequest, options?: ConfigurationOptions): Promise<AlertsAlertMeta> {
+        return this.api.v3AlertRulesAlertRuleTypeIdGet(param.alertRuleTypeId,  options).toPromise();
+    }
+
+    /**
+     * List all available alert rule types with their configuration metadata
+     * List alert rule types
+     * @param param the request object
+     */
+    public v3AlertRulesGetWithHttpInfo(param: AlertRulesApiV3AlertRulesGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<AlertsAlertMeta>>> {
+        return this.api.v3AlertRulesGetWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * List all available alert rule types with their configuration metadata
+     * List alert rule types
+     * @param param the request object
+     */
+    public v3AlertRulesGet(param: AlertRulesApiV3AlertRulesGetRequest = {}, options?: ConfigurationOptions): Promise<Array<AlertsAlertMeta>> {
+        return this.api.v3AlertRulesGet( options).toPromise();
+    }
+
+    /**
+     * Delete an existing alert rule
+     * Delete alert rule
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertRulesAlertRuleIdDeleteWithHttpInfo(param: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.v3OrganizationIdAlertRulesAlertRuleIdDeleteWithHttpInfo(param.organizationId, param.alertRuleId,  options).toPromise();
+    }
+
+    /**
+     * Delete an existing alert rule
+     * Delete alert rule
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertRulesAlertRuleIdDelete(param: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdDeleteRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.v3OrganizationIdAlertRulesAlertRuleIdDelete(param.organizationId, param.alertRuleId,  options).toPromise();
+    }
+
+    /**
+     * Retrieve an alert rule by its ID
+     * Get alert rule by ID
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertRulesAlertRuleIdGetWithHttpInfo(param: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
+        return this.api.v3OrganizationIdAlertRulesAlertRuleIdGetWithHttpInfo(param.organizationId, param.alertRuleId,  options).toPromise();
+    }
+
+    /**
+     * Retrieve an alert rule by its ID
+     * Get alert rule by ID
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertRulesAlertRuleIdGet(param: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdGetRequest, options?: ConfigurationOptions): Promise<ModelsAlertRule> {
+        return this.api.v3OrganizationIdAlertRulesAlertRuleIdGet(param.organizationId, param.alertRuleId,  options).toPromise();
+    }
+
+    /**
+     * Update an existing alert rule
+     * Update alert rule
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertRulesAlertRuleIdPutWithHttpInfo(param: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdPutRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
+        return this.api.v3OrganizationIdAlertRulesAlertRuleIdPutWithHttpInfo(param.organizationId, param.alertRuleId, param.routesV3UpdateAlertRuleRequest,  options).toPromise();
+    }
+
+    /**
+     * Update an existing alert rule
+     * Update alert rule
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertRulesAlertRuleIdPut(param: AlertRulesApiV3OrganizationIdAlertRulesAlertRuleIdPutRequest, options?: ConfigurationOptions): Promise<ModelsAlertRule> {
+        return this.api.v3OrganizationIdAlertRulesAlertRuleIdPut(param.organizationId, param.alertRuleId, param.routesV3UpdateAlertRuleRequest,  options).toPromise();
+    }
+
+    /**
+     * Retrieve all alert rules for an organization
+     * Get all alert rules
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertRulesGetWithHttpInfo(param: AlertRulesApiV3OrganizationIdAlertRulesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRuleList>> {
+        return this.api.v3OrganizationIdAlertRulesGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Retrieve all alert rules for an organization
+     * Get all alert rules
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertRulesGet(param: AlertRulesApiV3OrganizationIdAlertRulesGetRequest, options?: ConfigurationOptions): Promise<ModelsAlertRuleList> {
+        return this.api.v3OrganizationIdAlertRulesGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Create a new alert rule with the provided details
+     * Create a new alert rule
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertRulesPostWithHttpInfo(param: AlertRulesApiV3OrganizationIdAlertRulesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
+        return this.api.v3OrganizationIdAlertRulesPostWithHttpInfo(param.organizationId, param.routesV3CreateAlertRuleRequest,  options).toPromise();
+    }
+
+    /**
+     * Create a new alert rule with the provided details
+     * Create a new alert rule
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertRulesPost(param: AlertRulesApiV3OrganizationIdAlertRulesPostRequest, options?: ConfigurationOptions): Promise<ModelsAlertRule> {
+        return this.api.v3OrganizationIdAlertRulesPost(param.organizationId, param.routesV3CreateAlertRuleRequest,  options).toPromise();
+    }
+
+}
+
+import { ObservableAlertsApi } from "./ObservableAPI";
+import { AlertsApiRequestFactory, AlertsApiResponseProcessor} from "../apis/AlertsApi";
+
+export interface AlertsApiV3OrganizationIdAlertsGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     */
+    organizationId: string
+    /**
+     * Comma-separated alert rule IDs
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     */
+    ruleIds?: string
+    /**
+     * Comma-separated severity levels
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     */
+    severities?: string
+    /**
+     * Comma-separated pipeline IDs
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     */
+    pipelineIds?: string
+    /**
+     * Resource type filter
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     */
+    resourceType?: string
+    /**
+     * Specific resource ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     */
+    resourceId?: string
+    /**
+     * RFC3339 timestamp for start time
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     */
+    since?: string
+    /**
+     * RFC3339 timestamp for end time
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsGet
+     */
+    until?: string
+}
+
+export interface AlertsApiV3OrganizationIdAlertsStreamGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     */
+    organizationId: string
+    /**
+     * RFC3339 timestamp to start streaming from
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     */
+    since?: string
+    /**
+     * Duration to start streaming from (e.g., \&#39;5m\&#39;, \&#39;1h\&#39;, \&#39;24h\&#39;)
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     */
+    last?: string
+    /**
+     * Comma-separated alert rule IDs
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     */
+    ruleIds?: string
+    /**
+     * Comma-separated severity levels
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     */
+    severities?: string
+    /**
+     * Comma-separated resource IDs
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     */
+    resourceIds?: string
+    /**
+     * Resource type filter
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApiv3OrganizationIdAlertsStreamGet
+     */
+    resourceType?: string
+}
+
+export class ObjectAlertsApi {
+    private api: ObservableAlertsApi
+
+    public constructor(configuration: Configuration, requestFactory?: AlertsApiRequestFactory, responseProcessor?: AlertsApiResponseProcessor) {
+        this.api = new ObservableAlertsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Get list of recent historical alerts for an organization
+     * List alerts with pagination
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertsGetWithHttpInfo(param: AlertsApiV3OrganizationIdAlertsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3AlertList>> {
+        return this.api.v3OrganizationIdAlertsGetWithHttpInfo(param.organizationId, param.ruleIds, param.severities, param.pipelineIds, param.resourceType, param.resourceId, param.since, param.until,  options).toPromise();
+    }
+
+    /**
+     * Get list of recent historical alerts for an organization
+     * List alerts with pagination
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertsGet(param: AlertsApiV3OrganizationIdAlertsGetRequest, options?: ConfigurationOptions): Promise<RoutesV3AlertList> {
+        return this.api.v3OrganizationIdAlertsGet(param.organizationId, param.ruleIds, param.severities, param.pipelineIds, param.resourceType, param.resourceId, param.since, param.until,  options).toPromise();
+    }
+
+    /**
+     * Stream alerts for an organization using Server-Sent Events
+     * Stream alerts in real-time
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertsStreamGetWithHttpInfo(param: AlertsApiV3OrganizationIdAlertsStreamGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.v3OrganizationIdAlertsStreamGetWithHttpInfo(param.organizationId, param.since, param.last, param.ruleIds, param.severities, param.resourceIds, param.resourceType,  options).toPromise();
+    }
+
+    /**
+     * Stream alerts for an organization using Server-Sent Events
+     * Stream alerts in real-time
+     * @param param the request object
+     */
+    public v3OrganizationIdAlertsStreamGet(param: AlertsApiV3OrganizationIdAlertsStreamGetRequest, options?: ConfigurationOptions): Promise<string> {
+        return this.api.v3OrganizationIdAlertsStreamGet(param.organizationId, param.since, param.last, param.ruleIds, param.severities, param.resourceIds, param.resourceType,  options).toPromise();
+    }
+
+}
 
 import { ObservableAuthenticationApi } from "./ObservableAPI";
 import { AuthenticationApiRequestFactory, AuthenticationApiResponseProcessor} from "../apis/AuthenticationApi";
@@ -1115,64 +1658,99 @@ export class ObjectConditionsApi {
 import { ObservableConnectionsApi } from "./ObservableAPI";
 import { ConnectionsApiRequestFactory, ConnectionsApiResponseProcessor} from "../apis/ConnectionsApi";
 
-export interface ConnectionsApiV3ConnectionsConnectionIdDeleteRequest {
+export interface ConnectionsApiV3OrganizationIdConnectionsConnectionIdDeleteRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdDelete
+     */
+    organizationId: string
     /**
      * Connection ID to delete
      * Defaults to: undefined
      * @type string
-     * @memberof ConnectionsApiv3ConnectionsConnectionIdDelete
+     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdDelete
      */
     connectionId: string
 }
 
-export interface ConnectionsApiV3ConnectionsConnectionIdGetRequest {
+export interface ConnectionsApiV3OrganizationIdConnectionsConnectionIdGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdGet
+     */
+    organizationId: string
     /**
      * Connection ID to retrieve
      * Defaults to: undefined
      * @type string
-     * @memberof ConnectionsApiv3ConnectionsConnectionIdGet
+     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdGet
      */
     connectionId: string
 }
 
-export interface ConnectionsApiV3ConnectionsConnectionIdPatchRequest {
+export interface ConnectionsApiV3OrganizationIdConnectionsConnectionIdPatchRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdPatch
+     */
+    organizationId: string
     /**
      * Connection ID to update
      * Defaults to: undefined
      * @type string
-     * @memberof ConnectionsApiv3ConnectionsConnectionIdPatch
+     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdPatch
      */
     connectionId: string
     /**
      * Request body for updating a connection
      * @type RoutesV3UpdateConnectionRequest
-     * @memberof ConnectionsApiv3ConnectionsConnectionIdPatch
+     * @memberof ConnectionsApiv3OrganizationIdConnectionsConnectionIdPatch
      */
     routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest
 }
 
-export interface ConnectionsApiV3ConnectionsGetRequest {
+export interface ConnectionsApiV3OrganizationIdConnectionsGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ConnectionsApiv3OrganizationIdConnectionsGet
+     */
+    organizationId: string
     /**
      * Limit
      * Defaults to: undefined
      * @type number
-     * @memberof ConnectionsApiv3ConnectionsGet
+     * @memberof ConnectionsApiv3OrganizationIdConnectionsGet
      */
     limit?: number
     /**
      * Offset
      * Defaults to: undefined
      * @type number
-     * @memberof ConnectionsApiv3ConnectionsGet
+     * @memberof ConnectionsApiv3OrganizationIdConnectionsGet
      */
     offset?: number
 }
 
-export interface ConnectionsApiV3ConnectionsPostRequest {
+export interface ConnectionsApiV3OrganizationIdConnectionsPostRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof ConnectionsApiv3OrganizationIdConnectionsPost
+     */
+    organizationId: string
     /**
      * Request body for creating a connection
      * @type RoutesV3CreateConnectionRequest
-     * @memberof ConnectionsApiv3ConnectionsPost
+     * @memberof ConnectionsApiv3OrganizationIdConnectionsPost
      */
     routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest
 }
@@ -1189,8 +1767,8 @@ export class ObjectConnectionsApi {
      * Delete connection
      * @param param the request object
      */
-    public v3ConnectionsConnectionIdDeleteWithHttpInfo(param: ConnectionsApiV3ConnectionsConnectionIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
-        return this.api.v3ConnectionsConnectionIdDeleteWithHttpInfo(param.connectionId,  options).toPromise();
+    public v3OrganizationIdConnectionsConnectionIdDeleteWithHttpInfo(param: ConnectionsApiV3OrganizationIdConnectionsConnectionIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.v3OrganizationIdConnectionsConnectionIdDeleteWithHttpInfo(param.organizationId, param.connectionId,  options).toPromise();
     }
 
     /**
@@ -1198,8 +1776,8 @@ export class ObjectConnectionsApi {
      * Delete connection
      * @param param the request object
      */
-    public v3ConnectionsConnectionIdDelete(param: ConnectionsApiV3ConnectionsConnectionIdDeleteRequest, options?: ConfigurationOptions): Promise<void> {
-        return this.api.v3ConnectionsConnectionIdDelete(param.connectionId,  options).toPromise();
+    public v3OrganizationIdConnectionsConnectionIdDelete(param: ConnectionsApiV3OrganizationIdConnectionsConnectionIdDeleteRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.v3OrganizationIdConnectionsConnectionIdDelete(param.organizationId, param.connectionId,  options).toPromise();
     }
 
     /**
@@ -1207,8 +1785,8 @@ export class ObjectConnectionsApi {
      * Get connection by ID
      * @param param the request object
      */
-    public v3ConnectionsConnectionIdGetWithHttpInfo(param: ConnectionsApiV3ConnectionsConnectionIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
-        return this.api.v3ConnectionsConnectionIdGetWithHttpInfo(param.connectionId,  options).toPromise();
+    public v3OrganizationIdConnectionsConnectionIdGetWithHttpInfo(param: ConnectionsApiV3OrganizationIdConnectionsConnectionIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
+        return this.api.v3OrganizationIdConnectionsConnectionIdGetWithHttpInfo(param.organizationId, param.connectionId,  options).toPromise();
     }
 
     /**
@@ -1216,8 +1794,8 @@ export class ObjectConnectionsApi {
      * Get connection by ID
      * @param param the request object
      */
-    public v3ConnectionsConnectionIdGet(param: ConnectionsApiV3ConnectionsConnectionIdGetRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
-        return this.api.v3ConnectionsConnectionIdGet(param.connectionId,  options).toPromise();
+    public v3OrganizationIdConnectionsConnectionIdGet(param: ConnectionsApiV3OrganizationIdConnectionsConnectionIdGetRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
+        return this.api.v3OrganizationIdConnectionsConnectionIdGet(param.organizationId, param.connectionId,  options).toPromise();
     }
 
     /**
@@ -1225,8 +1803,8 @@ export class ObjectConnectionsApi {
      * Update connection
      * @param param the request object
      */
-    public v3ConnectionsConnectionIdPatchWithHttpInfo(param: ConnectionsApiV3ConnectionsConnectionIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
-        return this.api.v3ConnectionsConnectionIdPatchWithHttpInfo(param.connectionId, param.routesV3UpdateConnectionRequest,  options).toPromise();
+    public v3OrganizationIdConnectionsConnectionIdPatchWithHttpInfo(param: ConnectionsApiV3OrganizationIdConnectionsConnectionIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
+        return this.api.v3OrganizationIdConnectionsConnectionIdPatchWithHttpInfo(param.organizationId, param.connectionId, param.routesV3UpdateConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -1234,8 +1812,8 @@ export class ObjectConnectionsApi {
      * Update connection
      * @param param the request object
      */
-    public v3ConnectionsConnectionIdPatch(param: ConnectionsApiV3ConnectionsConnectionIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
-        return this.api.v3ConnectionsConnectionIdPatch(param.connectionId, param.routesV3UpdateConnectionRequest,  options).toPromise();
+    public v3OrganizationIdConnectionsConnectionIdPatch(param: ConnectionsApiV3OrganizationIdConnectionsConnectionIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
+        return this.api.v3OrganizationIdConnectionsConnectionIdPatch(param.organizationId, param.connectionId, param.routesV3UpdateConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -1243,8 +1821,8 @@ export class ObjectConnectionsApi {
      * Get all connections
      * @param param the request object
      */
-    public v3ConnectionsGetWithHttpInfo(param: ConnectionsApiV3ConnectionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectionList>> {
-        return this.api.v3ConnectionsGetWithHttpInfo(param.limit, param.offset,  options).toPromise();
+    public v3OrganizationIdConnectionsGetWithHttpInfo(param: ConnectionsApiV3OrganizationIdConnectionsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectionList>> {
+        return this.api.v3OrganizationIdConnectionsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
     /**
@@ -1252,8 +1830,8 @@ export class ObjectConnectionsApi {
      * Get all connections
      * @param param the request object
      */
-    public v3ConnectionsGet(param: ConnectionsApiV3ConnectionsGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsConnectionList> {
-        return this.api.v3ConnectionsGet(param.limit, param.offset,  options).toPromise();
+    public v3OrganizationIdConnectionsGet(param: ConnectionsApiV3OrganizationIdConnectionsGetRequest, options?: ConfigurationOptions): Promise<ModelsConnectionList> {
+        return this.api.v3OrganizationIdConnectionsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
     /**
@@ -1261,8 +1839,8 @@ export class ObjectConnectionsApi {
      * Create a new connection
      * @param param the request object
      */
-    public v3ConnectionsPostWithHttpInfo(param: ConnectionsApiV3ConnectionsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
-        return this.api.v3ConnectionsPostWithHttpInfo(param.routesV3CreateConnectionRequest,  options).toPromise();
+    public v3OrganizationIdConnectionsPostWithHttpInfo(param: ConnectionsApiV3OrganizationIdConnectionsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnection>> {
+        return this.api.v3OrganizationIdConnectionsPostWithHttpInfo(param.organizationId, param.routesV3CreateConnectionRequest,  options).toPromise();
     }
 
     /**
@@ -1270,297 +1848,8 @@ export class ObjectConnectionsApi {
      * Create a new connection
      * @param param the request object
      */
-    public v3ConnectionsPost(param: ConnectionsApiV3ConnectionsPostRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
-        return this.api.v3ConnectionsPost(param.routesV3CreateConnectionRequest,  options).toPromise();
-    }
-
-}
-
-import { ObservableConnectionsRbacApi } from "./ObservableAPI";
-import { ConnectionsRbacApiRequestFactory, ConnectionsRbacApiResponseProcessor} from "../apis/ConnectionsRbacApi";
-
-export interface ConnectionsRbacApiV3ConnectionsConnectionIdRolesGetRequest {
-    /**
-     * Connection ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesGet
-     */
-    connectionId: string
-}
-
-export interface ConnectionsRbacApiV3ConnectionsConnectionIdRolesPostRequest {
-    /**
-     * Connection ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesPost
-     */
-    connectionId: string
-    /**
-     * Create Connection Role Request
-     * @type RoutesV3CreateConnectionRoleRequest
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesPost
-     */
-    routesV3CreateConnectionRoleRequest: RoutesV3CreateConnectionRoleRequest
-}
-
-export interface ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdDeleteRequest {
-    /**
-     * Connection ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesRoleIdDelete
-     */
-    connectionId: string
-    /**
-     * Role ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesRoleIdDelete
-     */
-    roleId: string
-}
-
-export interface ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdGetRequest {
-    /**
-     * Connection ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesRoleIdGet
-     */
-    connectionId: string
-    /**
-     * Role ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesRoleIdGet
-     */
-    roleId: string
-}
-
-export interface ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdPatchRequest {
-    /**
-     * Connection ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesRoleIdPatch
-     */
-    connectionId: string
-    /**
-     * Role ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesRoleIdPatch
-     */
-    roleId: string
-    /**
-     * Update Connection Role Request
-     * @type RoutesV3UpdateConnectionRoleRequest
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesRoleIdPatch
-     */
-    routesV3UpdateConnectionRoleRequest: RoutesV3UpdateConnectionRoleRequest
-}
-
-export interface ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdUsersPostRequest {
-    /**
-     * Connection ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesRoleIdUsersPost
-     */
-    connectionId: string
-    /**
-     * Role ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesRoleIdUsersPost
-     */
-    roleId: string
-    /**
-     * Create Connection User Role Request
-     * @type RoutesV3CreateConnectionUserRoleRequest
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesRoleIdUsersPost
-     */
-    routesV3CreateConnectionUserRoleRequest: RoutesV3CreateConnectionUserRoleRequest
-}
-
-export interface ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdUsersUserIdDeleteRequest {
-    /**
-     * Connection ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesRoleIdUsersUserIdDelete
-     */
-    connectionId: string
-    /**
-     * Role ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesRoleIdUsersUserIdDelete
-     */
-    roleId: string
-    /**
-     * User ID
-     * Defaults to: undefined
-     * @type string
-     * @memberof ConnectionsRbacApiv3ConnectionsConnectionIdRolesRoleIdUsersUserIdDelete
-     */
-    userId: string
-}
-
-export interface ConnectionsRbacApiV3ConnectionsPermissionsGetRequest {
-}
-
-export class ObjectConnectionsRbacApi {
-    private api: ObservableConnectionsRbacApi
-
-    public constructor(configuration: Configuration, requestFactory?: ConnectionsRbacApiRequestFactory, responseProcessor?: ConnectionsRbacApiResponseProcessor) {
-        this.api = new ObservableConnectionsRbacApi(configuration, requestFactory, responseProcessor);
-    }
-
-    /**
-     * Get Connection Roles
-     * Get Connection Roles
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesGetWithHttpInfo(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsConnectionRole>>> {
-        return this.api.v3ConnectionsConnectionIdRolesGetWithHttpInfo(param.connectionId,  options).toPromise();
-    }
-
-    /**
-     * Get Connection Roles
-     * Get Connection Roles
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesGet(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesGetRequest, options?: ConfigurationOptions): Promise<Array<ModelsConnectionRole>> {
-        return this.api.v3ConnectionsConnectionIdRolesGet(param.connectionId,  options).toPromise();
-    }
-
-    /**
-     * Create Connection Role
-     * Create Connection Role
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesPostWithHttpInfo(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectionRole>> {
-        return this.api.v3ConnectionsConnectionIdRolesPostWithHttpInfo(param.connectionId, param.routesV3CreateConnectionRoleRequest,  options).toPromise();
-    }
-
-    /**
-     * Create Connection Role
-     * Create Connection Role
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesPost(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesPostRequest, options?: ConfigurationOptions): Promise<ModelsConnectionRole> {
-        return this.api.v3ConnectionsConnectionIdRolesPost(param.connectionId, param.routesV3CreateConnectionRoleRequest,  options).toPromise();
-    }
-
-    /**
-     * Delete Connection Role
-     * Delete Connection Role
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdDeleteWithHttpInfo(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v3ConnectionsConnectionIdRolesRoleIdDeleteWithHttpInfo(param.connectionId, param.roleId,  options).toPromise();
-    }
-
-    /**
-     * Delete Connection Role
-     * Delete Connection Role
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdDelete(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v3ConnectionsConnectionIdRolesRoleIdDelete(param.connectionId, param.roleId,  options).toPromise();
-    }
-
-    /**
-     * Get Connection Role
-     * Get Connection Role
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdGetWithHttpInfo(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectionRole>> {
-        return this.api.v3ConnectionsConnectionIdRolesRoleIdGetWithHttpInfo(param.connectionId, param.roleId,  options).toPromise();
-    }
-
-    /**
-     * Get Connection Role
-     * Get Connection Role
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdGet(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdGetRequest, options?: ConfigurationOptions): Promise<ModelsConnectionRole> {
-        return this.api.v3ConnectionsConnectionIdRolesRoleIdGet(param.connectionId, param.roleId,  options).toPromise();
-    }
-
-    /**
-     * Update Connection Role
-     * Update Connection Role
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdPatchWithHttpInfo(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsConnectionRole>> {
-        return this.api.v3ConnectionsConnectionIdRolesRoleIdPatchWithHttpInfo(param.connectionId, param.roleId, param.routesV3UpdateConnectionRoleRequest,  options).toPromise();
-    }
-
-    /**
-     * Update Connection Role
-     * Update Connection Role
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdPatch(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdPatchRequest, options?: ConfigurationOptions): Promise<ModelsConnectionRole> {
-        return this.api.v3ConnectionsConnectionIdRolesRoleIdPatch(param.connectionId, param.roleId, param.routesV3UpdateConnectionRoleRequest,  options).toPromise();
-    }
-
-    /**
-     * Add a user to a connection role
-     * Create Connection User Role
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdUsersPostWithHttpInfo(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdUsersPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v3ConnectionsConnectionIdRolesRoleIdUsersPostWithHttpInfo(param.connectionId, param.roleId, param.routesV3CreateConnectionUserRoleRequest,  options).toPromise();
-    }
-
-    /**
-     * Add a user to a connection role
-     * Create Connection User Role
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdUsersPost(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdUsersPostRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v3ConnectionsConnectionIdRolesRoleIdUsersPost(param.connectionId, param.roleId, param.routesV3CreateConnectionUserRoleRequest,  options).toPromise();
-    }
-
-    /**
-     * Remove a user to a connection role
-     * Delete Connection User Role
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(param.connectionId, param.roleId, param.userId,  options).toPromise();
-    }
-
-    /**
-     * Remove a user to a connection role
-     * Delete Connection User Role
-     * @param param the request object
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDelete(param: ConnectionsRbacApiV3ConnectionsConnectionIdRolesRoleIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDelete(param.connectionId, param.roleId, param.userId,  options).toPromise();
-    }
-
-    /**
-     * Get Connection Permissions
-     * Get Connection Permissions
-     * @param param the request object
-     */
-    public v3ConnectionsPermissionsGetWithHttpInfo(param: ConnectionsRbacApiV3ConnectionsPermissionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<ModelsConnectionPermission>>> {
-        return this.api.v3ConnectionsPermissionsGetWithHttpInfo( options).toPromise();
-    }
-
-    /**
-     * Get Connection Permissions
-     * Get Connection Permissions
-     * @param param the request object
-     */
-    public v3ConnectionsPermissionsGet(param: ConnectionsRbacApiV3ConnectionsPermissionsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<ModelsConnectionPermission>> {
-        return this.api.v3ConnectionsPermissionsGet( options).toPromise();
+    public v3OrganizationIdConnectionsPost(param: ConnectionsApiV3OrganizationIdConnectionsPostRequest, options?: ConfigurationOptions): Promise<ModelsConnection> {
+        return this.api.v3OrganizationIdConnectionsPost(param.organizationId, param.routesV3CreateConnectionRequest,  options).toPromise();
     }
 
 }
@@ -3567,6 +3856,13 @@ export interface OrganizationUsersApiV1OrganizationIdUsersUserIdDeleteRequest {
      * @memberof OrganizationUsersApiv1OrganizationIdUsersUserIdDelete
      */
     userId: string
+    /**
+     * User Auth Provider ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationUsersApiv1OrganizationIdUsersUserIdDelete
+     */
+    userAuthProviderId: string
 }
 
 export interface OrganizationUsersApiV1OrganizationIdUsersUserIdPatchRequest {
@@ -3641,7 +3937,7 @@ export class ObjectOrganizationUsersApi {
      * @param param the request object
      */
     public v1OrganizationIdUsersUserIdDeleteWithHttpInfo(param: OrganizationUsersApiV1OrganizationIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<any>> {
-        return this.api.v1OrganizationIdUsersUserIdDeleteWithHttpInfo(param.organizationId, param.userId,  options).toPromise();
+        return this.api.v1OrganizationIdUsersUserIdDeleteWithHttpInfo(param.organizationId, param.userId, param.userAuthProviderId,  options).toPromise();
     }
 
     /**
@@ -3650,7 +3946,7 @@ export class ObjectOrganizationUsersApi {
      * @param param the request object
      */
     public v1OrganizationIdUsersUserIdDelete(param: OrganizationUsersApiV1OrganizationIdUsersUserIdDeleteRequest, options?: ConfigurationOptions): Promise<any> {
-        return this.api.v1OrganizationIdUsersUserIdDelete(param.organizationId, param.userId,  options).toPromise();
+        return this.api.v1OrganizationIdUsersUserIdDelete(param.organizationId, param.userId, param.userAuthProviderId,  options).toPromise();
     }
 
     /**
@@ -3766,6 +4062,250 @@ export interface OrganizationsApiV2OrganizationIdMetricsGetRequest {
     resolution?: string
 }
 
+export interface OrganizationsApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesDetailsGet
+     */
+    organizationId: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesDetailsGet
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesDetailsGet
+     */
+    end?: string
+    /**
+     * Filter by billing type (billable|non_billable)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesDetailsGet
+     */
+    billingType?: string
+    /**
+     * Filter to specific pipeline
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesDetailsGet
+     */
+    pipelineId?: string
+}
+
+export interface OrganizationsApiV2OrganizationIdMetricsStorageTypesGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
+     */
+    organizationId: string
+    /**
+     * Metric to retrieve (egress_bytes|egress_records|errors)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
+     */
+    metric: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
+     */
+    end?: string
+    /**
+     * Resolution of the data, default determined by time window
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
+     */
+    resolution?: string
+    /**
+     * Filter by billing type (billable|non_billable)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
+     */
+    billingType?: string
+    /**
+     * Filter to specific pipeline
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesGet
+     */
+    pipelineId?: string
+}
+
+export interface OrganizationsApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
+     */
+    organizationId: string
+    /**
+     * Storage type (e.g., s3, dev-null, bigquery)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
+     */
+    storageType: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
+     */
+    end?: string
+    /**
+     * Filter by billing type (billable|non_billable)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
+     */
+    billingType?: string
+    /**
+     * Filter to specific pipeline
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet
+     */
+    pipelineId?: string
+}
+
+export interface OrganizationsApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet
+     */
+    organizationId: string
+    /**
+     * Storage type (e.g., s3, dev-null, bigquery)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet
+     */
+    storageType: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet
+     */
+    end?: string
+    /**
+     * Filter by billing type (billable|non_billable)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet
+     */
+    billingType?: string
+    /**
+     * Filter to specific pipeline
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet
+     */
+    pipelineId?: string
+}
+
+export interface OrganizationsApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesSummaryGet
+     */
+    organizationId: string
+    /**
+     * ISO3339 start time, default 6 hours ago
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesSummaryGet
+     */
+    start?: string
+    /**
+     * ISO3339 end time, default now
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesSummaryGet
+     */
+    end?: string
+    /**
+     * Filter by billing type (billable|non_billable)
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesSummaryGet
+     */
+    billingType?: string
+    /**
+     * Filter to specific pipeline
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdMetricsStorageTypesSummaryGet
+     */
+    pipelineId?: string
+}
+
+export interface OrganizationsApiV2OrganizationIdStorageTypeCostGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdStorageTypeCostGet
+     */
+    organizationId: string
+}
+
+export interface OrganizationsApiV2OrganizationIdStorageTypeCostPutRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv2OrganizationIdStorageTypeCostPut
+     */
+    organizationId: string
+    /**
+     * Cost configuration
+     * @type RoutesV2SetStorageTypeCostRequest
+     * @memberof OrganizationsApiv2OrganizationIdStorageTypeCostPut
+     */
+    routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest
+}
+
 export class ObjectOrganizationsApi {
     private api: ObservableOrganizationsApi
 
@@ -3861,6 +4401,132 @@ export class ObjectOrganizationsApi {
      */
     public v2OrganizationIdMetricsGet(param: OrganizationsApiV2OrganizationIdMetricsGetRequest, options?: ConfigurationOptions): Promise<ModelsPipelineMetrics> {
         return this.api.v2OrganizationIdMetricsGet(param.organizationId, param.metric, param.start, param.end, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Get detailed metrics for each individual output, including egress and associated input
+     * Get storage type output details
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsStorageTypesDetailsGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2StorageTypeDetailsResponse>> {
+        return this.api.v2OrganizationIdMetricsStorageTypesDetailsGetWithHttpInfo(param.organizationId, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get detailed metrics for each individual output, including egress and associated input
+     * Get storage type output details
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsStorageTypesDetailsGet(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest, options?: ConfigurationOptions): Promise<RoutesV2StorageTypeDetailsResponse> {
+        return this.api.v2OrganizationIdMetricsStorageTypesDetailsGet(param.organizationId, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get time series metrics grouped by storage type for an organization
+     * Get storage type metrics
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsStorageTypesGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeTimeSeriesResponse>> {
+        return this.api.v2OrganizationIdMetricsStorageTypesGetWithHttpInfo(param.organizationId, param.metric, param.start, param.end, param.resolution, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get time series metrics grouped by storage type for an organization
+     * Get storage type metrics
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsStorageTypesGet(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesGetRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeTimeSeriesResponse> {
+        return this.api.v2OrganizationIdMetricsStorageTypesGet(param.organizationId, param.metric, param.start, param.end, param.resolution, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get detailed metrics for each individual output of a specific storage type
+     * Get storage type output details by type
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2StorageTypeDetailsResponse>> {
+        return this.api.v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetWithHttpInfo(param.organizationId, param.storageType, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get detailed metrics for each individual output of a specific storage type
+     * Get storage type output details by type
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest, options?: ConfigurationOptions): Promise<RoutesV2StorageTypeDetailsResponse> {
+        return this.api.v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet(param.organizationId, param.storageType, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get aggregated cost and usage summary for a specific storage type
+     * Get storage type cost summary by type
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeSummaryResponse>> {
+        return this.api.v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetWithHttpInfo(param.organizationId, param.storageType, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get aggregated cost and usage summary for a specific storage type
+     * Get storage type cost summary by type
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeSummaryResponse> {
+        return this.api.v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet(param.organizationId, param.storageType, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get aggregated cost and usage summary by storage type
+     * Get storage type cost summary
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsStorageTypesSummaryGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeSummaryResponse>> {
+        return this.api.v2OrganizationIdMetricsStorageTypesSummaryGetWithHttpInfo(param.organizationId, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get aggregated cost and usage summary by storage type
+     * Get storage type cost summary
+     * @param param the request object
+     */
+    public v2OrganizationIdMetricsStorageTypesSummaryGet(param: OrganizationsApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeSummaryResponse> {
+        return this.api.v2OrganizationIdMetricsStorageTypesSummaryGet(param.organizationId, param.start, param.end, param.billingType, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Get per-organization cost configuration for storage types
+     * Get storage type cost
+     * @param param the request object
+     */
+    public v2OrganizationIdStorageTypeCostGetWithHttpInfo(param: OrganizationsApiV2OrganizationIdStorageTypeCostGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeCostConfig>> {
+        return this.api.v2OrganizationIdStorageTypeCostGetWithHttpInfo(param.organizationId,  options).toPromise();
+    }
+
+    /**
+     * Get per-organization cost configuration for storage types
+     * Get storage type cost
+     * @param param the request object
+     */
+    public v2OrganizationIdStorageTypeCostGet(param: OrganizationsApiV2OrganizationIdStorageTypeCostGetRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeCostConfig> {
+        return this.api.v2OrganizationIdStorageTypeCostGet(param.organizationId,  options).toPromise();
+    }
+
+    /**
+     * Update per-organization cost configuration for storage types
+     * Set storage type cost
+     * @param param the request object
+     */
+    public v2OrganizationIdStorageTypeCostPutWithHttpInfo(param: OrganizationsApiV2OrganizationIdStorageTypeCostPutRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsStorageTypeCostConfig>> {
+        return this.api.v2OrganizationIdStorageTypeCostPutWithHttpInfo(param.organizationId, param.routesV2SetStorageTypeCostRequest,  options).toPromise();
+    }
+
+    /**
+     * Update per-organization cost configuration for storage types
+     * Set storage type cost
+     * @param param the request object
+     */
+    public v2OrganizationIdStorageTypeCostPut(param: OrganizationsApiV2OrganizationIdStorageTypeCostPutRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeCostConfig> {
+        return this.api.v2OrganizationIdStorageTypeCostPut(param.organizationId, param.routesV2SetStorageTypeCostRequest,  options).toPromise();
     }
 
 }
@@ -4496,6 +5162,12 @@ export interface PipelinesApiV2OrganizationIdPipelinesStatusesGetRequest {
     end?: string
 }
 
+export interface PipelinesApiV3PipelineEdgesEdgeConditionOperatorTypesGetRequest {
+}
+
+export interface PipelinesApiV3PipelineEdgesEdgeConditionRulesGetRequest {
+}
+
 export class ObjectPipelinesApi {
     private api: ObservablePipelinesApi
 
@@ -4827,6 +5499,42 @@ export class ObjectPipelinesApi {
         return this.api.v2OrganizationIdPipelinesStatusesGet(param.organizationId, param.limit, param.offset, param.start, param.end,  options).toPromise();
     }
 
+    /**
+     * Returns the conditional types for edge conditions
+     * Conditional types for edge conditions
+     * @param param the request object
+     */
+    public v3PipelineEdgesEdgeConditionOperatorTypesGetWithHttpInfo(param: PipelinesApiV3PipelineEdgesEdgeConditionOperatorTypesGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.v3PipelineEdgesEdgeConditionOperatorTypesGetWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * Returns the conditional types for edge conditions
+     * Conditional types for edge conditions
+     * @param param the request object
+     */
+    public v3PipelineEdgesEdgeConditionOperatorTypesGet(param: PipelinesApiV3PipelineEdgesEdgeConditionOperatorTypesGetRequest = {}, options?: ConfigurationOptions): Promise<string> {
+        return this.api.v3PipelineEdgesEdgeConditionOperatorTypesGet( options).toPromise();
+    }
+
+    /**
+     * Returns the rules for edge conditions
+     * Rules for edge conditions
+     * @param param the request object
+     */
+    public v3PipelineEdgesEdgeConditionRulesGetWithHttpInfo(param: PipelinesApiV3PipelineEdgesEdgeConditionRulesGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
+        return this.api.v3PipelineEdgesEdgeConditionRulesGetWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * Returns the rules for edge conditions
+     * Rules for edge conditions
+     * @param param the request object
+     */
+    public v3PipelineEdgesEdgeConditionRulesGet(param: PipelinesApiV3PipelineEdgesEdgeConditionRulesGetRequest = {}, options?: ConfigurationOptions): Promise<string> {
+        return this.api.v3PipelineEdgesEdgeConditionRulesGet( options).toPromise();
+    }
+
 }
 
 import { ObservableQuotasApi } from "./ObservableAPI";
@@ -5125,6 +5833,22 @@ export interface SandboxApiV2SandboxTransformPostRequest {
     routesV2ApplyTransformationRequest: RoutesV2ApplyTransformationRequest
 }
 
+export interface SandboxApiV3OrganizationIdEnrichmentsSandboxPostRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof SandboxApiv3OrganizationIdEnrichmentsSandboxPost
+     */
+    organizationId: string
+    /**
+     * Enrichment configuration and record
+     * @type RoutesV3EnrichmentSandboxRequest
+     * @memberof SandboxApiv3OrganizationIdEnrichmentsSandboxPost
+     */
+    routesV3EnrichmentSandboxRequest: RoutesV3EnrichmentSandboxRequest
+}
+
 export class ObjectSandboxApi {
     private api: ObservableSandboxApi
 
@@ -5184,6 +5908,24 @@ export class ObjectSandboxApi {
      */
     public v2SandboxTransformPost(param: SandboxApiV2SandboxTransformPostRequest, options?: ConfigurationOptions): Promise<RoutesV2ApplyTransformationResponse> {
         return this.api.v2SandboxTransformPost(param.routesV2ApplyTransformationRequest,  options).toPromise();
+    }
+
+    /**
+     * Apply a enrichment configuration to a JSON record
+     * Apply enrichment to record
+     * @param param the request object
+     */
+    public v3OrganizationIdEnrichmentsSandboxPostWithHttpInfo(param: SandboxApiV3OrganizationIdEnrichmentsSandboxPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3EnrichmentSandboxResponse>> {
+        return this.api.v3OrganizationIdEnrichmentsSandboxPostWithHttpInfo(param.organizationId, param.routesV3EnrichmentSandboxRequest,  options).toPromise();
+    }
+
+    /**
+     * Apply a enrichment configuration to a JSON record
+     * Apply enrichment to record
+     * @param param the request object
+     */
+    public v3OrganizationIdEnrichmentsSandboxPost(param: SandboxApiV3OrganizationIdEnrichmentsSandboxPostRequest, options?: ConfigurationOptions): Promise<RoutesV3EnrichmentSandboxResponse> {
+        return this.api.v3OrganizationIdEnrichmentsSandboxPost(param.organizationId, param.routesV3EnrichmentSandboxRequest,  options).toPromise();
     }
 
 }
@@ -5427,7 +6169,7 @@ export class ObjectTransformsApi {
      * List transforms
      * @param param the request object
      */
-    public v1TransformsGetWithHttpInfo(param: TransformsApiV1TransformsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<OperationInformation>> {
+    public v1TransformsGetWithHttpInfo(param: TransformsApiV1TransformsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<OperationInformation>>> {
         return this.api.v1TransformsGetWithHttpInfo(param.body,  options).toPromise();
     }
 
@@ -5436,7 +6178,7 @@ export class ObjectTransformsApi {
      * List transforms
      * @param param the request object
      */
-    public v1TransformsGet(param: TransformsApiV1TransformsGetRequest = {}, options?: ConfigurationOptions): Promise<OperationInformation> {
+    public v1TransformsGet(param: TransformsApiV1TransformsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<OperationInformation>> {
         return this.api.v1TransformsGet(param.body,  options).toPromise();
     }
 
@@ -5456,6 +6198,80 @@ export class ObjectTransformsApi {
      */
     public v1TransformsTransformTypeIdGet(param: TransformsApiV1TransformsTransformTypeIdGetRequest, options?: ConfigurationOptions): Promise<any> {
         return this.api.v1TransformsTransformTypeIdGet(param.transformTypeId, param.body,  options).toPromise();
+    }
+
+}
+
+import { ObservableTransformsRecommendationsApi } from "./ObservableAPI";
+import { TransformsRecommendationsApiRequestFactory, TransformsRecommendationsApiResponseProcessor} from "../apis/TransformsRecommendationsApi";
+
+export interface TransformsRecommendationsApiV3OrganizationIdTransformRecommendationsOptimizersGetRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TransformsRecommendationsApiv3OrganizationIdTransformRecommendationsOptimizersGet
+     */
+    organizationId: string
+}
+
+export interface TransformsRecommendationsApiV3OrganizationIdTransformRecommendationsPostRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TransformsRecommendationsApiv3OrganizationIdTransformRecommendationsPost
+     */
+    organizationId: string
+    /**
+     * Security data to analyze
+     * @type RoutesV3TransformRecommendationRequest
+     * @memberof TransformsRecommendationsApiv3OrganizationIdTransformRecommendationsPost
+     */
+    routesV3TransformRecommendationRequest: RoutesV3TransformRecommendationRequest
+}
+
+export class ObjectTransformsRecommendationsApi {
+    private api: ObservableTransformsRecommendationsApi
+
+    public constructor(configuration: Configuration, requestFactory?: TransformsRecommendationsApiRequestFactory, responseProcessor?: TransformsRecommendationsApiResponseProcessor) {
+        this.api = new ObservableTransformsRecommendationsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * List available transform optimizers
+     * List available transform optimizers
+     * @param param the request object
+     */
+    public v3OrganizationIdTransformRecommendationsOptimizersGetWithHttpInfo(param: TransformsRecommendationsApiV3OrganizationIdTransformRecommendationsOptimizersGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<RoutesV3OptimizerType>>> {
+        return this.api.v3OrganizationIdTransformRecommendationsOptimizersGetWithHttpInfo(param.organizationId,  options).toPromise();
+    }
+
+    /**
+     * List available transform optimizers
+     * List available transform optimizers
+     * @param param the request object
+     */
+    public v3OrganizationIdTransformRecommendationsOptimizersGet(param: TransformsRecommendationsApiV3OrganizationIdTransformRecommendationsOptimizersGetRequest, options?: ConfigurationOptions): Promise<Array<RoutesV3OptimizerType>> {
+        return this.api.v3OrganizationIdTransformRecommendationsOptimizersGet(param.organizationId,  options).toPromise();
+    }
+
+    /**
+     * Analyze security data and provide transformation recommendations
+     * Create transform recommendation
+     * @param param the request object
+     */
+    public v3OrganizationIdTransformRecommendationsPostWithHttpInfo(param: TransformsRecommendationsApiV3OrganizationIdTransformRecommendationsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3SecurityDataAnalysis>> {
+        return this.api.v3OrganizationIdTransformRecommendationsPostWithHttpInfo(param.organizationId, param.routesV3TransformRecommendationRequest,  options).toPromise();
+    }
+
+    /**
+     * Analyze security data and provide transformation recommendations
+     * Create transform recommendation
+     * @param param the request object
+     */
+    public v3OrganizationIdTransformRecommendationsPost(param: TransformsRecommendationsApiV3OrganizationIdTransformRecommendationsPostRequest, options?: ConfigurationOptions): Promise<RoutesV3SecurityDataAnalysis> {
+        return this.api.v3OrganizationIdTransformRecommendationsPost(param.organizationId, param.routesV3TransformRecommendationRequest,  options).toPromise();
     }
 
 }

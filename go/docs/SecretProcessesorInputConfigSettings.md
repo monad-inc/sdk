@@ -6,21 +6,22 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **FleetUrl** | Pointer to **string** | URL of the Fleet DM instance | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
+**Host** | Pointer to **string** | The API hostname for your Duo Security integration. | [optional] 
 **ActorType** | Pointer to **string** | Type of actor. Ex: &#39;APT&#39;, &#39;eCrime&#39;, &#39;Hacktivist&#39;, &#39;Insider Threat&#39;, &#39;Nation-State&#39;, &#39;Unknown&#39;, &#39;Other&#39;, etc. Select &#39;None&#39; for no preference. | [optional] 
 **CloudType** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
-**Cron** | Pointer to **string** | Cron expression to schedule the data collection. | [optional] 
+**Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
 **Sort** | Pointer to **string** | Order fields in ascending or descending order. Ex: &#39;created_date|asc&#39;, &#39;created_date|desc&#39;. | [optional] 
 **TargetIndustries** | Pointer to **string** | Industries targeted by the actor. Ex: &#39;Financial&#39;, &#39;Healthcare&#39;, &#39;Energy&#39;, &#39;Government&#39;, &#39;Manufacturing&#39;, &#39;Technology&#39;, etc. Select &#39;None&#39; for no preference. | [optional] 
-**AuthType** | Pointer to **string** | Authentication type (service_account or oauth) | [optional] 
+**AuthType** | Pointer to **string** | AuthType is the type of authentication used for the input | [optional] 
+**BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, data from 6 months ago up till now from zoom is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **Email** | Pointer to **string** | Email address to use to authenticate with Google Cloud (required for service_account auth). | [optional] 
-**Host** | Pointer to **string** |  | [optional] 
+**IntervalSeconds** | Pointer to **int32** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
 **Actions** | Pointer to **[]string** | Filter by specific actions. Use wildcards for broader matches (e.g., repo.*) | [optional] 
 **Actor** | Pointer to **string** | Filter by the username that initiated the action | [optional] 
 **Country** | Pointer to **string** | Filter by actor&#39;s country code (e.g., US) | [optional] 
-**CreatedAfter** | Pointer to **string** | Only return audit log entries after this RFC3339 formatted time stamp | [optional] 
 **Enterprise** | Pointer to **string** | Your GitHub enterprise slug or ID | [optional] 
 **Include** | Pointer to **string** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
-**Organization** | Pointer to **string** | Filter by organization name | [optional] 
+**Organization** | Pointer to **string** | Your GitHub organization name | [optional] 
 **Repository** | Pointer to **string** | Filter by repository (format: org-name/repo-name) | [optional] 
 **User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
 **Region** | Pointer to **string** | The AWS region where the security groups that are being fetched are located. | [optional] 
@@ -31,16 +32,21 @@ Name | Type | Description | Notes
 **Format** | Pointer to **string** | File format of the objects | [optional] 
 **PartitionFormat** | Pointer to **string** | Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. | [optional] 
 **Prefix** | Pointer to **string** | Prefix that leads to the start of the expected partition. For example: \&quot;/foobar/year&#x3D;2024/month&#x3D;01/day&#x3D;01/\&quot;. The prefix is &#x60;foobar&#x60;. | [optional] 
-**RecordLocation** | Pointer to **string** | Location of the record in the JSON object. This can be ignored if the record is not in JSON format. If the records are not nested in the JSON, you can use &#39;@this&#39; to indicate that the file contains the record at the root or an array of records. | [optional] 
+**RecordLocation** | Pointer to **string** | JSONPath location of the records array in the GraphQL response | [optional] 
 **QueueUrl** | Pointer to **string** | The URL of the SQS queue to poll for messages. | [optional] 
+**WithMetadata** | Pointer to **bool** | Whether to include S3 object metadata in the output. | [optional] 
 **CorrelationId** | Pointer to **string** | The correlation ID of the log | [optional] 
 **ResourceGroupName** | Pointer to **string** | The name of the resource group containing the virtual network | [optional] 
 **ResourceProvider** | Pointer to **string** | The provider of the resource | [optional] 
 **ResourceUri** | Pointer to **string** | The URI of the resource | [optional] 
 **SubscriptionId** | Pointer to **string** | The Azure subscription ID where the virtual network and storage account are located | [optional] 
-**TenantId** | Pointer to **string** | The tenant ID of the Azure AD application | [optional] 
+**TenantId** | Pointer to **string** | The Azure Entra ID tenant (directory) ID | [optional] 
 **AccountUrl** | Pointer to **string** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
 **Container** | Pointer to **string** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
+**ConsumerGroup** | Pointer to **string** | The consumer group name for reading events (default: &#x60;$Default&#x60;) | [optional] 
+**EventHubName** | Pointer to **string** | The name of the specific Event Hub to consume from | [optional] 
+**EventHubNamespace** | Pointer to **string** | The fully qualified namespace URL (e.g., &#x60;your-namespace.servicebus.windows.net&#x60;) | [optional] 
+**LookbackDuration** | Pointer to **string** | Initial lookback duration for first sync (e.g., \&quot;24h\&quot;, \&quot;7d\&quot;). Respects API retention limits. | [optional] 
 **StorageAccountUrl** | Pointer to **string** | The Azure storage account URL where flow logs are stored | [optional] 
 **VirtualNetworkName** | Pointer to **string** | The name of the virtual network for which flow logs are being collected | [optional] 
 **Dataset** | Pointer to **string** | The BigQuery dataset ID containing the table | [optional] 
@@ -50,7 +56,13 @@ Name | Type | Description | Notes
 **TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
 **EventType** | Pointer to **string** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **FilterTerm** | Pointer to **string** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
-**AssetTypes** | Pointer to **[]string** | The type of assets to scan for.  If left empty, will scan all assets | [optional] 
+**OrgSlug** | Pointer to **string** | The ID or slug of the organization | [optional] 
+**EnablePagination** | Pointer to **bool** | Enable pagination support | [optional] 
+**GraphqlQuery** | Pointer to **string** | The GraphQL query to execute against the endpoint to fetch data | [optional] 
+**HasNextPagePath** | Pointer to **string** | JSONPath location to check if there are more pages | [optional] 
+**PaginationCursorPath** | Pointer to **string** | JSONPath location for pagination cursor/token | [optional] 
+**Variables** | Pointer to [**[]MonadGraphqlInputVariable**](MonadGraphqlInputVariable.md) | GraphQL query variables to pass with each request | [optional] 
+**AssetTypes** | Pointer to **[]string** | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. | [optional] 
 **ResourceNames** | Pointer to **[]string** | The resources to query logs from. | [optional] 
 **EndpointUrl** | Pointer to **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. | [optional] 
 **Result** | Pointer to **[]string** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;. | [optional] 
@@ -61,31 +73,38 @@ Name | Type | Description | Notes
 **EntityType** | Pointer to **[]string** | Entity types for Wiz. Ex: &#39;ACCOUNT&#39;, &#39;REGION&#39;, &#39;VPC&#39;, &#39;SUBNET&#39;, &#39;INSTANCE&#39;. | [optional] 
 **FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
+**AccountId** | Pointer to **string** | Account ID for the input | [optional] 
+**ZoneIds** | Pointer to **[]string** | List of zone IDs (for zone-level rulesets). If empty and AccountID is not specified, fetches from all zones. | [optional] 
+**IncludeBotFields** | Pointer to **bool** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) | [optional] 
+**ZoneId** | Pointer to **string** | Cloudflare Zone ID | [optional] 
+**ExcludeCdnCgi** | Pointer to **bool** | Exclude connections to Cloudflare /cdn-cgi paths. Default: true | [optional] 
+**ExcludeIssueType** | Pointer to **[]string** | Filter to exclude specific issue types. Applied after the include filter. | [optional] 
+**ExcludeSeverity** | Pointer to **[]string** | Filter to exclude specific severity levels. Applied after the include filter. | [optional] 
+**IssueType** | Pointer to **string** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 
+**FilterMyScans** | Pointer to **bool** | Filter to only show scans created by the current API token | [optional] 
 **ParentEntityId** | Pointer to **string** | The system-generated ID of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
 **ParentEntityType** | Pointer to **string** | The system-generated name of the parent entity that is associated with the primary entity affected by the alert. | [optional] 
+**OrgId** | Pointer to **string** | URL of the organization | [optional] 
 **UserPoolId** | Pointer to **string** | User Pool ID to extract users from | [optional] 
+**ApiKeyId** | Pointer to **string** | API Key ID for authentication | [optional] 
+**DomainName** | Pointer to **string** | TODO: Name of domain added on Polymer Hub portal | [optional] 
 **AwsQueueUrl** | Pointer to **string** | AWS SQS queue URL provided to you by the CrowdStrike Falcon console | [optional] 
 **AwsRegionName** | Pointer to **string** | Name of the region where the queue resides | [optional] 
 **AwsS3Url** | Pointer to **string** | The URL of the S3 bucket | [optional] 
 **VisibilityTimeout** | Pointer to **int32** | Time in seconds before a message is returned back to the SQS queue | [optional] 
+**Environment** | Pointer to **string** | Determines the URI {environment}.docusign.com | [optional] 
+**UserId** | Pointer to **string** | ID of the user to harvest audit logs for | [optional] 
 **Category** | Pointer to **string** | The Category of logs to query | [optional] 
 **FieldOption** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
+**Namespace** | Pointer to **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | [optional] 
 **WorkspaceId** | Pointer to **string** | The workspace ID of the Log Analytics workspace | [optional] 
 **AppName** | Pointer to **string** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
 **Cloud** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **MemberCid** | Pointer to **string** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 
-**ActorSid** | Pointer to **string** | Only includes events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials. | [optional] 
-**ReplicationStartTime** | Pointer to **string** | Only include events after this time for the initial sync. If not specified, returns all events from the start. Must be a valid ISO 8601 formatted datetime string: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; | [optional] 
-**ResourceSid** | Pointer to **string** | Only include events that refer to this resource. Useful for discovering the history of a specific resource. | [optional] 
-**StoryId** | Pointer to **string** | Filter by the given story. | [optional] 
-**TeamId** | Pointer to **string** | Team ID to filter user results by | [optional] 
-**TenantUrl** | Pointer to **string** | Unique URL for your Tines instance | [optional] 
-**OrgSlug** | Pointer to **string** | The ID or slug of the organization | [optional] 
 **Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
 **Confidential** | Pointer to **bool** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. | [optional] 
 **GitlabUrl** | Pointer to **string** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | [optional] 
-**IssueType** | Pointer to **string** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 
 **ProjectId** | Pointer to **string** | The Google Cloud project ID to use | [optional] 
 **State** | Pointer to **string** | State to filter issues by e.g. opened, closed | [optional] 
 **WithLabelDetails** | Pointer to **bool** | Include label details in the response | [optional] 
@@ -96,6 +115,8 @@ Name | Type | Description | Notes
 **Embed** | Pointer to **string** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
 **PrimaryEntityType** | Pointer to **string** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) | [optional] 
 **PrimaryEntityValue** | Pointer to **string** | Filter by primary entity value (contains search) | [optional] 
+**Severities** | Pointer to **[]string** | @Description Filter Issues according to Control severity | [optional] 
+**SeverityFilter** | Pointer to [**[]TypesStringFilter**](TypesStringFilter.md) |  | [optional] 
 **ControlIds** | Pointer to **[]string** | @Description Filter Issues created by specific control IDs | [optional] 
 **HasNote** | Pointer to **string** | @Description Filter Issues with or without a note | [optional] 
 **HasRemediation** | Pointer to **string** | @Description Filter Issues with or without remediation | [optional] 
@@ -109,21 +130,30 @@ Name | Type | Description | Notes
 **RiskEqualsAny** | Pointer to **[]string** | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name | [optional] 
 **SearchQuery** | Pointer to **string** | @Description Free text search on Issue title or object name @Description Returns NULL if no match is found | [optional] 
 **SecurityScan** | Pointer to **string** | @Description Filter by security scan source | [optional] 
-**Severities** | Pointer to **[]string** | @Description Filter Issues according to Control severity | [optional] 
 **StackLayers** | Pointer to **[]string** | @Description Filter Issues from specific stack layers | [optional] 
-**TenantDataCenter** | Pointer to **string** | DataCenter represents the tenant&#39;s data center location @Description Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; @Description Find your tenant data center on the Tenant Info page in Wiz, or request it from your Wiz customer contact | [optional] 
+**TenantDataCenter** | Pointer to **string** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | [optional] 
 **KmsType** | Pointer to **string** | Type of KMS resources to list | [optional] 
+**AuditLogTypes** | Pointer to **[]string** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
+**BaseUrl** | Pointer to **string** | The base URL of your GraphQL endpoint including the path | [optional] 
 **LogType** | Pointer to **string** |  | [optional] 
 **Endpoint** | Pointer to **string** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | [optional] 
 **SkipSslVerification** | Pointer to **bool** | Skip SSL verification for self-signed certificates | [optional] 
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
 **Subdomain** | Pointer to **string** | SubDomain is a placeholder that represents your specific OneLogin subdomain. | [optional] 
+**CategoryType** | Pointer to **string** | The category of logs to pull | [optional] 
+**Domain** | Pointer to **string** | Domain name for the Oracle Cloud service | [optional] 
+**Username** | Pointer to **string** | Username of Oracle Cloud service user with permissions to access the resource | [optional] 
+**GithubAppInstallationId** | Pointer to **string** | GitHub App Installation ID (required when using GitHub App authentication) | [optional] 
+**GithubClientId** | Pointer to **string** | GitHub Client ID (alternative to personal access token) | [optional] 
 **ChildType** | Pointer to **string** | Specifies whether to list AWS accounts or organizational units (OUs) as children of the parent entity. | [optional] 
 **ParentId** | Pointer to **string** | Parent ID to list children for | [optional] 
-**BaseUrl** | Pointer to **string** | URL of the organization | [optional] 
+**DomainUrl** | Pointer to **string** | Domain URL for the Salesforce instance | [optional] 
+**Topic** | Pointer to **string** | Pub/Sub topic to subscribe to | [optional] 
 **EvaluationContextIdentifier** | Pointer to **string** | Filters proactive resource evaluations for a given infrastructure deployment. | [optional] 
+**IncludeInactive** | Pointer to **bool** | Include inactive users in the results | [optional] 
 **IncludePlannedDeletion** | Pointer to **bool** | Whether or not to include secrets scheduled for deletion | [optional] 
 **HostName** | Pointer to **string** | For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io. | [optional] 
+**TeamId** | Pointer to **string** | Filter by the given team. | [optional] 
 **Account** | Pointer to **string** | The unique identifier for your Snowflake account, typically in the form of &#39;organization-account_name&#39;. | [optional] 
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
@@ -135,12 +165,22 @@ Name | Type | Description | Notes
 **OrgUrl** | Pointer to **string** | The URL of the Okta organization | [optional] 
 **UserRoleOption** | Pointer to **string** | Allows for filtering the output by user role. | [optional] 
 **UserTypeOption** | Pointer to **string** | Allows for filtering the output by user type. | [optional] 
-**LookbackHours** | Pointer to **int32** |  | [optional] 
-**WithPayload** | Pointer to **bool** |  | [optional] 
+**OperationNames** | Pointer to **[]string** | Filter by specific operation names (optional) | [optional] 
+**TenantDomain** | Pointer to **string** | The Tines tenant domain (e.g., your-org.tines.com) | [optional] 
+**UserIds** | Pointer to **[]string** | Filter by specific user IDs (optional) | [optional] 
+**StoryId** | Pointer to **string** | Filter by the given story. | [optional] 
+**TenantUrl** | Pointer to **string** | Unique URL for your Tines instance | [optional] 
+**ActorSid** | Pointer to **string** | Only includes events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials. | [optional] 
+**ReplicationStartTime** | Pointer to **string** | Only include events after this time for the initial sync. If not specified, returns all events from the start. Must be a valid ISO 8601 formatted datetime string: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; | [optional] 
+**ResourceSid** | Pointer to **string** | Only include events that refer to this resource. Useful for discovering the history of a specific resource. | [optional] 
+**InstanceName** | Pointer to **string** | Name of the ServiceNow instance | [optional] 
+**Streams** | Pointer to **[]string** | ServiceNow streams to fetch data from | [optional] 
+**WithPayload** | Pointer to **bool** | Whether to include detailed payload information in the events. | [optional] 
 **AssetStatus** | Pointer to **[]string** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
-**AssetType** | Pointer to **string** | Asset types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **DetectionMethod** | Pointer to **[]string** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 
 **VendorSeverity** | Pointer to **[]string** | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. | [optional] 
+**EmailAddress** | Pointer to **string** | This is the email address registered with your Zendesk account | [optional] 
+**SubDomain** | Pointer to **string** | This is the subdomain found in your Zendesk account URL For example, if the URL is https://demo.zendesk.com then the subdomain will be demo | [optional] 
 
 ## Methods
 
@@ -210,6 +250,31 @@ SetUseSyntheticData sets UseSyntheticData field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasUseSyntheticData() bool`
 
 HasUseSyntheticData returns a boolean if a field has been set.
+
+### GetHost
+
+`func (o *SecretProcessesorInputConfigSettings) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHost
+
+`func (o *SecretProcessesorInputConfigSettings) SetHost(v string)`
+
+SetHost sets Host field to given value.
+
+### HasHost
+
+`func (o *SecretProcessesorInputConfigSettings) HasHost() bool`
+
+HasHost returns a boolean if a field has been set.
 
 ### GetActorType
 
@@ -361,6 +426,31 @@ SetAuthType sets AuthType field to given value.
 
 HasAuthType returns a boolean if a field has been set.
 
+### GetBackfillStartTime
+
+`func (o *SecretProcessesorInputConfigSettings) GetBackfillStartTime() string`
+
+GetBackfillStartTime returns the BackfillStartTime field if non-nil, zero value otherwise.
+
+### GetBackfillStartTimeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetBackfillStartTimeOk() (*string, bool)`
+
+GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackfillStartTime
+
+`func (o *SecretProcessesorInputConfigSettings) SetBackfillStartTime(v string)`
+
+SetBackfillStartTime sets BackfillStartTime field to given value.
+
+### HasBackfillStartTime
+
+`func (o *SecretProcessesorInputConfigSettings) HasBackfillStartTime() bool`
+
+HasBackfillStartTime returns a boolean if a field has been set.
+
 ### GetEmail
 
 `func (o *SecretProcessesorInputConfigSettings) GetEmail() string`
@@ -386,30 +476,30 @@ SetEmail sets Email field to given value.
 
 HasEmail returns a boolean if a field has been set.
 
-### GetHost
+### GetIntervalSeconds
 
-`func (o *SecretProcessesorInputConfigSettings) GetHost() string`
+`func (o *SecretProcessesorInputConfigSettings) GetIntervalSeconds() int32`
 
-GetHost returns the Host field if non-nil, zero value otherwise.
+GetIntervalSeconds returns the IntervalSeconds field if non-nil, zero value otherwise.
 
-### GetHostOk
+### GetIntervalSecondsOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetHostOk() (*string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetIntervalSecondsOk() (*int32, bool)`
 
-GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
+GetIntervalSecondsOk returns a tuple with the IntervalSeconds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHost
+### SetIntervalSeconds
 
-`func (o *SecretProcessesorInputConfigSettings) SetHost(v string)`
+`func (o *SecretProcessesorInputConfigSettings) SetIntervalSeconds(v int32)`
 
-SetHost sets Host field to given value.
+SetIntervalSeconds sets IntervalSeconds field to given value.
 
-### HasHost
+### HasIntervalSeconds
 
-`func (o *SecretProcessesorInputConfigSettings) HasHost() bool`
+`func (o *SecretProcessesorInputConfigSettings) HasIntervalSeconds() bool`
 
-HasHost returns a boolean if a field has been set.
+HasIntervalSeconds returns a boolean if a field has been set.
 
 ### GetActions
 
@@ -485,31 +575,6 @@ SetCountry sets Country field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
-
-### GetCreatedAfter
-
-`func (o *SecretProcessesorInputConfigSettings) GetCreatedAfter() string`
-
-GetCreatedAfter returns the CreatedAfter field if non-nil, zero value otherwise.
-
-### GetCreatedAfterOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetCreatedAfterOk() (*string, bool)`
-
-GetCreatedAfterOk returns a tuple with the CreatedAfter field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAfter
-
-`func (o *SecretProcessesorInputConfigSettings) SetCreatedAfter(v string)`
-
-SetCreatedAfter sets CreatedAfter field to given value.
-
-### HasCreatedAfter
-
-`func (o *SecretProcessesorInputConfigSettings) HasCreatedAfter() bool`
-
-HasCreatedAfter returns a boolean if a field has been set.
 
 ### GetEnterprise
 
@@ -886,6 +951,31 @@ SetQueueUrl sets QueueUrl field to given value.
 
 HasQueueUrl returns a boolean if a field has been set.
 
+### GetWithMetadata
+
+`func (o *SecretProcessesorInputConfigSettings) GetWithMetadata() bool`
+
+GetWithMetadata returns the WithMetadata field if non-nil, zero value otherwise.
+
+### GetWithMetadataOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetWithMetadataOk() (*bool, bool)`
+
+GetWithMetadataOk returns a tuple with the WithMetadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWithMetadata
+
+`func (o *SecretProcessesorInputConfigSettings) SetWithMetadata(v bool)`
+
+SetWithMetadata sets WithMetadata field to given value.
+
+### HasWithMetadata
+
+`func (o *SecretProcessesorInputConfigSettings) HasWithMetadata() bool`
+
+HasWithMetadata returns a boolean if a field has been set.
+
 ### GetCorrelationId
 
 `func (o *SecretProcessesorInputConfigSettings) GetCorrelationId() string`
@@ -1085,6 +1175,106 @@ SetContainer sets Container field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasContainer() bool`
 
 HasContainer returns a boolean if a field has been set.
+
+### GetConsumerGroup
+
+`func (o *SecretProcessesorInputConfigSettings) GetConsumerGroup() string`
+
+GetConsumerGroup returns the ConsumerGroup field if non-nil, zero value otherwise.
+
+### GetConsumerGroupOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetConsumerGroupOk() (*string, bool)`
+
+GetConsumerGroupOk returns a tuple with the ConsumerGroup field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConsumerGroup
+
+`func (o *SecretProcessesorInputConfigSettings) SetConsumerGroup(v string)`
+
+SetConsumerGroup sets ConsumerGroup field to given value.
+
+### HasConsumerGroup
+
+`func (o *SecretProcessesorInputConfigSettings) HasConsumerGroup() bool`
+
+HasConsumerGroup returns a boolean if a field has been set.
+
+### GetEventHubName
+
+`func (o *SecretProcessesorInputConfigSettings) GetEventHubName() string`
+
+GetEventHubName returns the EventHubName field if non-nil, zero value otherwise.
+
+### GetEventHubNameOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetEventHubNameOk() (*string, bool)`
+
+GetEventHubNameOk returns a tuple with the EventHubName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEventHubName
+
+`func (o *SecretProcessesorInputConfigSettings) SetEventHubName(v string)`
+
+SetEventHubName sets EventHubName field to given value.
+
+### HasEventHubName
+
+`func (o *SecretProcessesorInputConfigSettings) HasEventHubName() bool`
+
+HasEventHubName returns a boolean if a field has been set.
+
+### GetEventHubNamespace
+
+`func (o *SecretProcessesorInputConfigSettings) GetEventHubNamespace() string`
+
+GetEventHubNamespace returns the EventHubNamespace field if non-nil, zero value otherwise.
+
+### GetEventHubNamespaceOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetEventHubNamespaceOk() (*string, bool)`
+
+GetEventHubNamespaceOk returns a tuple with the EventHubNamespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEventHubNamespace
+
+`func (o *SecretProcessesorInputConfigSettings) SetEventHubNamespace(v string)`
+
+SetEventHubNamespace sets EventHubNamespace field to given value.
+
+### HasEventHubNamespace
+
+`func (o *SecretProcessesorInputConfigSettings) HasEventHubNamespace() bool`
+
+HasEventHubNamespace returns a boolean if a field has been set.
+
+### GetLookbackDuration
+
+`func (o *SecretProcessesorInputConfigSettings) GetLookbackDuration() string`
+
+GetLookbackDuration returns the LookbackDuration field if non-nil, zero value otherwise.
+
+### GetLookbackDurationOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetLookbackDurationOk() (*string, bool)`
+
+GetLookbackDurationOk returns a tuple with the LookbackDuration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLookbackDuration
+
+`func (o *SecretProcessesorInputConfigSettings) SetLookbackDuration(v string)`
+
+SetLookbackDuration sets LookbackDuration field to given value.
+
+### HasLookbackDuration
+
+`func (o *SecretProcessesorInputConfigSettings) HasLookbackDuration() bool`
+
+HasLookbackDuration returns a boolean if a field has been set.
 
 ### GetStorageAccountUrl
 
@@ -1310,6 +1500,156 @@ SetFilterTerm sets FilterTerm field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasFilterTerm() bool`
 
 HasFilterTerm returns a boolean if a field has been set.
+
+### GetOrgSlug
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrgSlug() string`
+
+GetOrgSlug returns the OrgSlug field if non-nil, zero value otherwise.
+
+### GetOrgSlugOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrgSlugOk() (*string, bool)`
+
+GetOrgSlugOk returns a tuple with the OrgSlug field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrgSlug
+
+`func (o *SecretProcessesorInputConfigSettings) SetOrgSlug(v string)`
+
+SetOrgSlug sets OrgSlug field to given value.
+
+### HasOrgSlug
+
+`func (o *SecretProcessesorInputConfigSettings) HasOrgSlug() bool`
+
+HasOrgSlug returns a boolean if a field has been set.
+
+### GetEnablePagination
+
+`func (o *SecretProcessesorInputConfigSettings) GetEnablePagination() bool`
+
+GetEnablePagination returns the EnablePagination field if non-nil, zero value otherwise.
+
+### GetEnablePaginationOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetEnablePaginationOk() (*bool, bool)`
+
+GetEnablePaginationOk returns a tuple with the EnablePagination field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnablePagination
+
+`func (o *SecretProcessesorInputConfigSettings) SetEnablePagination(v bool)`
+
+SetEnablePagination sets EnablePagination field to given value.
+
+### HasEnablePagination
+
+`func (o *SecretProcessesorInputConfigSettings) HasEnablePagination() bool`
+
+HasEnablePagination returns a boolean if a field has been set.
+
+### GetGraphqlQuery
+
+`func (o *SecretProcessesorInputConfigSettings) GetGraphqlQuery() string`
+
+GetGraphqlQuery returns the GraphqlQuery field if non-nil, zero value otherwise.
+
+### GetGraphqlQueryOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetGraphqlQueryOk() (*string, bool)`
+
+GetGraphqlQueryOk returns a tuple with the GraphqlQuery field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGraphqlQuery
+
+`func (o *SecretProcessesorInputConfigSettings) SetGraphqlQuery(v string)`
+
+SetGraphqlQuery sets GraphqlQuery field to given value.
+
+### HasGraphqlQuery
+
+`func (o *SecretProcessesorInputConfigSettings) HasGraphqlQuery() bool`
+
+HasGraphqlQuery returns a boolean if a field has been set.
+
+### GetHasNextPagePath
+
+`func (o *SecretProcessesorInputConfigSettings) GetHasNextPagePath() string`
+
+GetHasNextPagePath returns the HasNextPagePath field if non-nil, zero value otherwise.
+
+### GetHasNextPagePathOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetHasNextPagePathOk() (*string, bool)`
+
+GetHasNextPagePathOk returns a tuple with the HasNextPagePath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasNextPagePath
+
+`func (o *SecretProcessesorInputConfigSettings) SetHasNextPagePath(v string)`
+
+SetHasNextPagePath sets HasNextPagePath field to given value.
+
+### HasHasNextPagePath
+
+`func (o *SecretProcessesorInputConfigSettings) HasHasNextPagePath() bool`
+
+HasHasNextPagePath returns a boolean if a field has been set.
+
+### GetPaginationCursorPath
+
+`func (o *SecretProcessesorInputConfigSettings) GetPaginationCursorPath() string`
+
+GetPaginationCursorPath returns the PaginationCursorPath field if non-nil, zero value otherwise.
+
+### GetPaginationCursorPathOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetPaginationCursorPathOk() (*string, bool)`
+
+GetPaginationCursorPathOk returns a tuple with the PaginationCursorPath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaginationCursorPath
+
+`func (o *SecretProcessesorInputConfigSettings) SetPaginationCursorPath(v string)`
+
+SetPaginationCursorPath sets PaginationCursorPath field to given value.
+
+### HasPaginationCursorPath
+
+`func (o *SecretProcessesorInputConfigSettings) HasPaginationCursorPath() bool`
+
+HasPaginationCursorPath returns a boolean if a field has been set.
+
+### GetVariables
+
+`func (o *SecretProcessesorInputConfigSettings) GetVariables() []MonadGraphqlInputVariable`
+
+GetVariables returns the Variables field if non-nil, zero value otherwise.
+
+### GetVariablesOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetVariablesOk() (*[]MonadGraphqlInputVariable, bool)`
+
+GetVariablesOk returns a tuple with the Variables field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVariables
+
+`func (o *SecretProcessesorInputConfigSettings) SetVariables(v []MonadGraphqlInputVariable)`
+
+SetVariables sets Variables field to given value.
+
+### HasVariables
+
+`func (o *SecretProcessesorInputConfigSettings) HasVariables() bool`
+
+HasVariables returns a boolean if a field has been set.
 
 ### GetAssetTypes
 
@@ -1586,6 +1926,231 @@ SetInterval sets Interval field to given value.
 
 HasInterval returns a boolean if a field has been set.
 
+### GetAccountId
+
+`func (o *SecretProcessesorInputConfigSettings) GetAccountId() string`
+
+GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+
+### GetAccountIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetAccountIdOk() (*string, bool)`
+
+GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountId
+
+`func (o *SecretProcessesorInputConfigSettings) SetAccountId(v string)`
+
+SetAccountId sets AccountId field to given value.
+
+### HasAccountId
+
+`func (o *SecretProcessesorInputConfigSettings) HasAccountId() bool`
+
+HasAccountId returns a boolean if a field has been set.
+
+### GetZoneIds
+
+`func (o *SecretProcessesorInputConfigSettings) GetZoneIds() []string`
+
+GetZoneIds returns the ZoneIds field if non-nil, zero value otherwise.
+
+### GetZoneIdsOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetZoneIdsOk() (*[]string, bool)`
+
+GetZoneIdsOk returns a tuple with the ZoneIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZoneIds
+
+`func (o *SecretProcessesorInputConfigSettings) SetZoneIds(v []string)`
+
+SetZoneIds sets ZoneIds field to given value.
+
+### HasZoneIds
+
+`func (o *SecretProcessesorInputConfigSettings) HasZoneIds() bool`
+
+HasZoneIds returns a boolean if a field has been set.
+
+### GetIncludeBotFields
+
+`func (o *SecretProcessesorInputConfigSettings) GetIncludeBotFields() bool`
+
+GetIncludeBotFields returns the IncludeBotFields field if non-nil, zero value otherwise.
+
+### GetIncludeBotFieldsOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetIncludeBotFieldsOk() (*bool, bool)`
+
+GetIncludeBotFieldsOk returns a tuple with the IncludeBotFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeBotFields
+
+`func (o *SecretProcessesorInputConfigSettings) SetIncludeBotFields(v bool)`
+
+SetIncludeBotFields sets IncludeBotFields field to given value.
+
+### HasIncludeBotFields
+
+`func (o *SecretProcessesorInputConfigSettings) HasIncludeBotFields() bool`
+
+HasIncludeBotFields returns a boolean if a field has been set.
+
+### GetZoneId
+
+`func (o *SecretProcessesorInputConfigSettings) GetZoneId() string`
+
+GetZoneId returns the ZoneId field if non-nil, zero value otherwise.
+
+### GetZoneIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetZoneIdOk() (*string, bool)`
+
+GetZoneIdOk returns a tuple with the ZoneId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZoneId
+
+`func (o *SecretProcessesorInputConfigSettings) SetZoneId(v string)`
+
+SetZoneId sets ZoneId field to given value.
+
+### HasZoneId
+
+`func (o *SecretProcessesorInputConfigSettings) HasZoneId() bool`
+
+HasZoneId returns a boolean if a field has been set.
+
+### GetExcludeCdnCgi
+
+`func (o *SecretProcessesorInputConfigSettings) GetExcludeCdnCgi() bool`
+
+GetExcludeCdnCgi returns the ExcludeCdnCgi field if non-nil, zero value otherwise.
+
+### GetExcludeCdnCgiOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetExcludeCdnCgiOk() (*bool, bool)`
+
+GetExcludeCdnCgiOk returns a tuple with the ExcludeCdnCgi field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeCdnCgi
+
+`func (o *SecretProcessesorInputConfigSettings) SetExcludeCdnCgi(v bool)`
+
+SetExcludeCdnCgi sets ExcludeCdnCgi field to given value.
+
+### HasExcludeCdnCgi
+
+`func (o *SecretProcessesorInputConfigSettings) HasExcludeCdnCgi() bool`
+
+HasExcludeCdnCgi returns a boolean if a field has been set.
+
+### GetExcludeIssueType
+
+`func (o *SecretProcessesorInputConfigSettings) GetExcludeIssueType() []string`
+
+GetExcludeIssueType returns the ExcludeIssueType field if non-nil, zero value otherwise.
+
+### GetExcludeIssueTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetExcludeIssueTypeOk() (*[]string, bool)`
+
+GetExcludeIssueTypeOk returns a tuple with the ExcludeIssueType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeIssueType
+
+`func (o *SecretProcessesorInputConfigSettings) SetExcludeIssueType(v []string)`
+
+SetExcludeIssueType sets ExcludeIssueType field to given value.
+
+### HasExcludeIssueType
+
+`func (o *SecretProcessesorInputConfigSettings) HasExcludeIssueType() bool`
+
+HasExcludeIssueType returns a boolean if a field has been set.
+
+### GetExcludeSeverity
+
+`func (o *SecretProcessesorInputConfigSettings) GetExcludeSeverity() []string`
+
+GetExcludeSeverity returns the ExcludeSeverity field if non-nil, zero value otherwise.
+
+### GetExcludeSeverityOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetExcludeSeverityOk() (*[]string, bool)`
+
+GetExcludeSeverityOk returns a tuple with the ExcludeSeverity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeSeverity
+
+`func (o *SecretProcessesorInputConfigSettings) SetExcludeSeverity(v []string)`
+
+SetExcludeSeverity sets ExcludeSeverity field to given value.
+
+### HasExcludeSeverity
+
+`func (o *SecretProcessesorInputConfigSettings) HasExcludeSeverity() bool`
+
+HasExcludeSeverity returns a boolean if a field has been set.
+
+### GetIssueType
+
+`func (o *SecretProcessesorInputConfigSettings) GetIssueType() string`
+
+GetIssueType returns the IssueType field if non-nil, zero value otherwise.
+
+### GetIssueTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetIssueTypeOk() (*string, bool)`
+
+GetIssueTypeOk returns a tuple with the IssueType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssueType
+
+`func (o *SecretProcessesorInputConfigSettings) SetIssueType(v string)`
+
+SetIssueType sets IssueType field to given value.
+
+### HasIssueType
+
+`func (o *SecretProcessesorInputConfigSettings) HasIssueType() bool`
+
+HasIssueType returns a boolean if a field has been set.
+
+### GetFilterMyScans
+
+`func (o *SecretProcessesorInputConfigSettings) GetFilterMyScans() bool`
+
+GetFilterMyScans returns the FilterMyScans field if non-nil, zero value otherwise.
+
+### GetFilterMyScansOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetFilterMyScansOk() (*bool, bool)`
+
+GetFilterMyScansOk returns a tuple with the FilterMyScans field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFilterMyScans
+
+`func (o *SecretProcessesorInputConfigSettings) SetFilterMyScans(v bool)`
+
+SetFilterMyScans sets FilterMyScans field to given value.
+
+### HasFilterMyScans
+
+`func (o *SecretProcessesorInputConfigSettings) HasFilterMyScans() bool`
+
+HasFilterMyScans returns a boolean if a field has been set.
+
 ### GetParentEntityId
 
 `func (o *SecretProcessesorInputConfigSettings) GetParentEntityId() string`
@@ -1636,6 +2201,31 @@ SetParentEntityType sets ParentEntityType field to given value.
 
 HasParentEntityType returns a boolean if a field has been set.
 
+### GetOrgId
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrgId() string`
+
+GetOrgId returns the OrgId field if non-nil, zero value otherwise.
+
+### GetOrgIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrgIdOk() (*string, bool)`
+
+GetOrgIdOk returns a tuple with the OrgId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrgId
+
+`func (o *SecretProcessesorInputConfigSettings) SetOrgId(v string)`
+
+SetOrgId sets OrgId field to given value.
+
+### HasOrgId
+
+`func (o *SecretProcessesorInputConfigSettings) HasOrgId() bool`
+
+HasOrgId returns a boolean if a field has been set.
+
 ### GetUserPoolId
 
 `func (o *SecretProcessesorInputConfigSettings) GetUserPoolId() string`
@@ -1660,6 +2250,56 @@ SetUserPoolId sets UserPoolId field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasUserPoolId() bool`
 
 HasUserPoolId returns a boolean if a field has been set.
+
+### GetApiKeyId
+
+`func (o *SecretProcessesorInputConfigSettings) GetApiKeyId() string`
+
+GetApiKeyId returns the ApiKeyId field if non-nil, zero value otherwise.
+
+### GetApiKeyIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetApiKeyIdOk() (*string, bool)`
+
+GetApiKeyIdOk returns a tuple with the ApiKeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiKeyId
+
+`func (o *SecretProcessesorInputConfigSettings) SetApiKeyId(v string)`
+
+SetApiKeyId sets ApiKeyId field to given value.
+
+### HasApiKeyId
+
+`func (o *SecretProcessesorInputConfigSettings) HasApiKeyId() bool`
+
+HasApiKeyId returns a boolean if a field has been set.
+
+### GetDomainName
+
+`func (o *SecretProcessesorInputConfigSettings) GetDomainName() string`
+
+GetDomainName returns the DomainName field if non-nil, zero value otherwise.
+
+### GetDomainNameOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetDomainNameOk() (*string, bool)`
+
+GetDomainNameOk returns a tuple with the DomainName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDomainName
+
+`func (o *SecretProcessesorInputConfigSettings) SetDomainName(v string)`
+
+SetDomainName sets DomainName field to given value.
+
+### HasDomainName
+
+`func (o *SecretProcessesorInputConfigSettings) HasDomainName() bool`
+
+HasDomainName returns a boolean if a field has been set.
 
 ### GetAwsQueueUrl
 
@@ -1761,6 +2401,56 @@ SetVisibilityTimeout sets VisibilityTimeout field to given value.
 
 HasVisibilityTimeout returns a boolean if a field has been set.
 
+### GetEnvironment
+
+`func (o *SecretProcessesorInputConfigSettings) GetEnvironment() string`
+
+GetEnvironment returns the Environment field if non-nil, zero value otherwise.
+
+### GetEnvironmentOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetEnvironmentOk() (*string, bool)`
+
+GetEnvironmentOk returns a tuple with the Environment field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnvironment
+
+`func (o *SecretProcessesorInputConfigSettings) SetEnvironment(v string)`
+
+SetEnvironment sets Environment field to given value.
+
+### HasEnvironment
+
+`func (o *SecretProcessesorInputConfigSettings) HasEnvironment() bool`
+
+HasEnvironment returns a boolean if a field has been set.
+
+### GetUserId
+
+`func (o *SecretProcessesorInputConfigSettings) GetUserId() string`
+
+GetUserId returns the UserId field if non-nil, zero value otherwise.
+
+### GetUserIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUserIdOk() (*string, bool)`
+
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserId
+
+`func (o *SecretProcessesorInputConfigSettings) SetUserId(v string)`
+
+SetUserId sets UserId field to given value.
+
+### HasUserId
+
+`func (o *SecretProcessesorInputConfigSettings) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
+
 ### GetCategory
 
 `func (o *SecretProcessesorInputConfigSettings) GetCategory() string`
@@ -1835,6 +2525,31 @@ SetOrganizationId sets OrganizationId field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
+
+### GetNamespace
+
+`func (o *SecretProcessesorInputConfigSettings) GetNamespace() string`
+
+GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+
+### GetNamespaceOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetNamespaceOk() (*string, bool)`
+
+GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNamespace
+
+`func (o *SecretProcessesorInputConfigSettings) SetNamespace(v string)`
+
+SetNamespace sets Namespace field to given value.
+
+### HasNamespace
+
+`func (o *SecretProcessesorInputConfigSettings) HasNamespace() bool`
+
+HasNamespace returns a boolean if a field has been set.
 
 ### GetWorkspaceId
 
@@ -1936,181 +2651,6 @@ SetMemberCid sets MemberCid field to given value.
 
 HasMemberCid returns a boolean if a field has been set.
 
-### GetActorSid
-
-`func (o *SecretProcessesorInputConfigSettings) GetActorSid() string`
-
-GetActorSid returns the ActorSid field if non-nil, zero value otherwise.
-
-### GetActorSidOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetActorSidOk() (*string, bool)`
-
-GetActorSidOk returns a tuple with the ActorSid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActorSid
-
-`func (o *SecretProcessesorInputConfigSettings) SetActorSid(v string)`
-
-SetActorSid sets ActorSid field to given value.
-
-### HasActorSid
-
-`func (o *SecretProcessesorInputConfigSettings) HasActorSid() bool`
-
-HasActorSid returns a boolean if a field has been set.
-
-### GetReplicationStartTime
-
-`func (o *SecretProcessesorInputConfigSettings) GetReplicationStartTime() string`
-
-GetReplicationStartTime returns the ReplicationStartTime field if non-nil, zero value otherwise.
-
-### GetReplicationStartTimeOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetReplicationStartTimeOk() (*string, bool)`
-
-GetReplicationStartTimeOk returns a tuple with the ReplicationStartTime field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReplicationStartTime
-
-`func (o *SecretProcessesorInputConfigSettings) SetReplicationStartTime(v string)`
-
-SetReplicationStartTime sets ReplicationStartTime field to given value.
-
-### HasReplicationStartTime
-
-`func (o *SecretProcessesorInputConfigSettings) HasReplicationStartTime() bool`
-
-HasReplicationStartTime returns a boolean if a field has been set.
-
-### GetResourceSid
-
-`func (o *SecretProcessesorInputConfigSettings) GetResourceSid() string`
-
-GetResourceSid returns the ResourceSid field if non-nil, zero value otherwise.
-
-### GetResourceSidOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetResourceSidOk() (*string, bool)`
-
-GetResourceSidOk returns a tuple with the ResourceSid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourceSid
-
-`func (o *SecretProcessesorInputConfigSettings) SetResourceSid(v string)`
-
-SetResourceSid sets ResourceSid field to given value.
-
-### HasResourceSid
-
-`func (o *SecretProcessesorInputConfigSettings) HasResourceSid() bool`
-
-HasResourceSid returns a boolean if a field has been set.
-
-### GetStoryId
-
-`func (o *SecretProcessesorInputConfigSettings) GetStoryId() string`
-
-GetStoryId returns the StoryId field if non-nil, zero value otherwise.
-
-### GetStoryIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetStoryIdOk() (*string, bool)`
-
-GetStoryIdOk returns a tuple with the StoryId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStoryId
-
-`func (o *SecretProcessesorInputConfigSettings) SetStoryId(v string)`
-
-SetStoryId sets StoryId field to given value.
-
-### HasStoryId
-
-`func (o *SecretProcessesorInputConfigSettings) HasStoryId() bool`
-
-HasStoryId returns a boolean if a field has been set.
-
-### GetTeamId
-
-`func (o *SecretProcessesorInputConfigSettings) GetTeamId() string`
-
-GetTeamId returns the TeamId field if non-nil, zero value otherwise.
-
-### GetTeamIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetTeamIdOk() (*string, bool)`
-
-GetTeamIdOk returns a tuple with the TeamId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTeamId
-
-`func (o *SecretProcessesorInputConfigSettings) SetTeamId(v string)`
-
-SetTeamId sets TeamId field to given value.
-
-### HasTeamId
-
-`func (o *SecretProcessesorInputConfigSettings) HasTeamId() bool`
-
-HasTeamId returns a boolean if a field has been set.
-
-### GetTenantUrl
-
-`func (o *SecretProcessesorInputConfigSettings) GetTenantUrl() string`
-
-GetTenantUrl returns the TenantUrl field if non-nil, zero value otherwise.
-
-### GetTenantUrlOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetTenantUrlOk() (*string, bool)`
-
-GetTenantUrlOk returns a tuple with the TenantUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTenantUrl
-
-`func (o *SecretProcessesorInputConfigSettings) SetTenantUrl(v string)`
-
-SetTenantUrl sets TenantUrl field to given value.
-
-### HasTenantUrl
-
-`func (o *SecretProcessesorInputConfigSettings) HasTenantUrl() bool`
-
-HasTenantUrl returns a boolean if a field has been set.
-
-### GetOrgSlug
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrgSlug() string`
-
-GetOrgSlug returns the OrgSlug field if non-nil, zero value otherwise.
-
-### GetOrgSlugOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrgSlugOk() (*string, bool)`
-
-GetOrgSlugOk returns a tuple with the OrgSlug field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOrgSlug
-
-`func (o *SecretProcessesorInputConfigSettings) SetOrgSlug(v string)`
-
-SetOrgSlug sets OrgSlug field to given value.
-
-### HasOrgSlug
-
-`func (o *SecretProcessesorInputConfigSettings) HasOrgSlug() bool`
-
-HasOrgSlug returns a boolean if a field has been set.
-
 ### GetRepo
 
 `func (o *SecretProcessesorInputConfigSettings) GetRepo() string`
@@ -2185,31 +2725,6 @@ SetGitlabUrl sets GitlabUrl field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasGitlabUrl() bool`
 
 HasGitlabUrl returns a boolean if a field has been set.
-
-### GetIssueType
-
-`func (o *SecretProcessesorInputConfigSettings) GetIssueType() string`
-
-GetIssueType returns the IssueType field if non-nil, zero value otherwise.
-
-### GetIssueTypeOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetIssueTypeOk() (*string, bool)`
-
-GetIssueTypeOk returns a tuple with the IssueType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIssueType
-
-`func (o *SecretProcessesorInputConfigSettings) SetIssueType(v string)`
-
-SetIssueType sets IssueType field to given value.
-
-### HasIssueType
-
-`func (o *SecretProcessesorInputConfigSettings) HasIssueType() bool`
-
-HasIssueType returns a boolean if a field has been set.
 
 ### GetProjectId
 
@@ -2460,6 +2975,56 @@ SetPrimaryEntityValue sets PrimaryEntityValue field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasPrimaryEntityValue() bool`
 
 HasPrimaryEntityValue returns a boolean if a field has been set.
+
+### GetSeverities
+
+`func (o *SecretProcessesorInputConfigSettings) GetSeverities() []string`
+
+GetSeverities returns the Severities field if non-nil, zero value otherwise.
+
+### GetSeveritiesOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetSeveritiesOk() (*[]string, bool)`
+
+GetSeveritiesOk returns a tuple with the Severities field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSeverities
+
+`func (o *SecretProcessesorInputConfigSettings) SetSeverities(v []string)`
+
+SetSeverities sets Severities field to given value.
+
+### HasSeverities
+
+`func (o *SecretProcessesorInputConfigSettings) HasSeverities() bool`
+
+HasSeverities returns a boolean if a field has been set.
+
+### GetSeverityFilter
+
+`func (o *SecretProcessesorInputConfigSettings) GetSeverityFilter() []TypesStringFilter`
+
+GetSeverityFilter returns the SeverityFilter field if non-nil, zero value otherwise.
+
+### GetSeverityFilterOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetSeverityFilterOk() (*[]TypesStringFilter, bool)`
+
+GetSeverityFilterOk returns a tuple with the SeverityFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSeverityFilter
+
+`func (o *SecretProcessesorInputConfigSettings) SetSeverityFilter(v []TypesStringFilter)`
+
+SetSeverityFilter sets SeverityFilter field to given value.
+
+### HasSeverityFilter
+
+`func (o *SecretProcessesorInputConfigSettings) HasSeverityFilter() bool`
+
+HasSeverityFilter returns a boolean if a field has been set.
 
 ### GetControlIds
 
@@ -2786,31 +3351,6 @@ SetSecurityScan sets SecurityScan field to given value.
 
 HasSecurityScan returns a boolean if a field has been set.
 
-### GetSeverities
-
-`func (o *SecretProcessesorInputConfigSettings) GetSeverities() []string`
-
-GetSeverities returns the Severities field if non-nil, zero value otherwise.
-
-### GetSeveritiesOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetSeveritiesOk() (*[]string, bool)`
-
-GetSeveritiesOk returns a tuple with the Severities field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSeverities
-
-`func (o *SecretProcessesorInputConfigSettings) SetSeverities(v []string)`
-
-SetSeverities sets Severities field to given value.
-
-### HasSeverities
-
-`func (o *SecretProcessesorInputConfigSettings) HasSeverities() bool`
-
-HasSeverities returns a boolean if a field has been set.
-
 ### GetStackLayers
 
 `func (o *SecretProcessesorInputConfigSettings) GetStackLayers() []string`
@@ -2885,6 +3425,56 @@ SetKmsType sets KmsType field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasKmsType() bool`
 
 HasKmsType returns a boolean if a field has been set.
+
+### GetAuditLogTypes
+
+`func (o *SecretProcessesorInputConfigSettings) GetAuditLogTypes() []string`
+
+GetAuditLogTypes returns the AuditLogTypes field if non-nil, zero value otherwise.
+
+### GetAuditLogTypesOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetAuditLogTypesOk() (*[]string, bool)`
+
+GetAuditLogTypesOk returns a tuple with the AuditLogTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuditLogTypes
+
+`func (o *SecretProcessesorInputConfigSettings) SetAuditLogTypes(v []string)`
+
+SetAuditLogTypes sets AuditLogTypes field to given value.
+
+### HasAuditLogTypes
+
+`func (o *SecretProcessesorInputConfigSettings) HasAuditLogTypes() bool`
+
+HasAuditLogTypes returns a boolean if a field has been set.
+
+### GetBaseUrl
+
+`func (o *SecretProcessesorInputConfigSettings) GetBaseUrl() string`
+
+GetBaseUrl returns the BaseUrl field if non-nil, zero value otherwise.
+
+### GetBaseUrlOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetBaseUrlOk() (*string, bool)`
+
+GetBaseUrlOk returns a tuple with the BaseUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBaseUrl
+
+`func (o *SecretProcessesorInputConfigSettings) SetBaseUrl(v string)`
+
+SetBaseUrl sets BaseUrl field to given value.
+
+### HasBaseUrl
+
+`func (o *SecretProcessesorInputConfigSettings) HasBaseUrl() bool`
+
+HasBaseUrl returns a boolean if a field has been set.
 
 ### GetLogType
 
@@ -3011,6 +3601,131 @@ SetSubdomain sets Subdomain field to given value.
 
 HasSubdomain returns a boolean if a field has been set.
 
+### GetCategoryType
+
+`func (o *SecretProcessesorInputConfigSettings) GetCategoryType() string`
+
+GetCategoryType returns the CategoryType field if non-nil, zero value otherwise.
+
+### GetCategoryTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetCategoryTypeOk() (*string, bool)`
+
+GetCategoryTypeOk returns a tuple with the CategoryType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCategoryType
+
+`func (o *SecretProcessesorInputConfigSettings) SetCategoryType(v string)`
+
+SetCategoryType sets CategoryType field to given value.
+
+### HasCategoryType
+
+`func (o *SecretProcessesorInputConfigSettings) HasCategoryType() bool`
+
+HasCategoryType returns a boolean if a field has been set.
+
+### GetDomain
+
+`func (o *SecretProcessesorInputConfigSettings) GetDomain() string`
+
+GetDomain returns the Domain field if non-nil, zero value otherwise.
+
+### GetDomainOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetDomainOk() (*string, bool)`
+
+GetDomainOk returns a tuple with the Domain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDomain
+
+`func (o *SecretProcessesorInputConfigSettings) SetDomain(v string)`
+
+SetDomain sets Domain field to given value.
+
+### HasDomain
+
+`func (o *SecretProcessesorInputConfigSettings) HasDomain() bool`
+
+HasDomain returns a boolean if a field has been set.
+
+### GetUsername
+
+`func (o *SecretProcessesorInputConfigSettings) GetUsername() string`
+
+GetUsername returns the Username field if non-nil, zero value otherwise.
+
+### GetUsernameOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUsernameOk() (*string, bool)`
+
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsername
+
+`func (o *SecretProcessesorInputConfigSettings) SetUsername(v string)`
+
+SetUsername sets Username field to given value.
+
+### HasUsername
+
+`func (o *SecretProcessesorInputConfigSettings) HasUsername() bool`
+
+HasUsername returns a boolean if a field has been set.
+
+### GetGithubAppInstallationId
+
+`func (o *SecretProcessesorInputConfigSettings) GetGithubAppInstallationId() string`
+
+GetGithubAppInstallationId returns the GithubAppInstallationId field if non-nil, zero value otherwise.
+
+### GetGithubAppInstallationIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetGithubAppInstallationIdOk() (*string, bool)`
+
+GetGithubAppInstallationIdOk returns a tuple with the GithubAppInstallationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGithubAppInstallationId
+
+`func (o *SecretProcessesorInputConfigSettings) SetGithubAppInstallationId(v string)`
+
+SetGithubAppInstallationId sets GithubAppInstallationId field to given value.
+
+### HasGithubAppInstallationId
+
+`func (o *SecretProcessesorInputConfigSettings) HasGithubAppInstallationId() bool`
+
+HasGithubAppInstallationId returns a boolean if a field has been set.
+
+### GetGithubClientId
+
+`func (o *SecretProcessesorInputConfigSettings) GetGithubClientId() string`
+
+GetGithubClientId returns the GithubClientId field if non-nil, zero value otherwise.
+
+### GetGithubClientIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetGithubClientIdOk() (*string, bool)`
+
+GetGithubClientIdOk returns a tuple with the GithubClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGithubClientId
+
+`func (o *SecretProcessesorInputConfigSettings) SetGithubClientId(v string)`
+
+SetGithubClientId sets GithubClientId field to given value.
+
+### HasGithubClientId
+
+`func (o *SecretProcessesorInputConfigSettings) HasGithubClientId() bool`
+
+HasGithubClientId returns a boolean if a field has been set.
+
 ### GetChildType
 
 `func (o *SecretProcessesorInputConfigSettings) GetChildType() string`
@@ -3061,30 +3776,55 @@ SetParentId sets ParentId field to given value.
 
 HasParentId returns a boolean if a field has been set.
 
-### GetBaseUrl
+### GetDomainUrl
 
-`func (o *SecretProcessesorInputConfigSettings) GetBaseUrl() string`
+`func (o *SecretProcessesorInputConfigSettings) GetDomainUrl() string`
 
-GetBaseUrl returns the BaseUrl field if non-nil, zero value otherwise.
+GetDomainUrl returns the DomainUrl field if non-nil, zero value otherwise.
 
-### GetBaseUrlOk
+### GetDomainUrlOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetBaseUrlOk() (*string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetDomainUrlOk() (*string, bool)`
 
-GetBaseUrlOk returns a tuple with the BaseUrl field if it's non-nil, zero value otherwise
+GetDomainUrlOk returns a tuple with the DomainUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBaseUrl
+### SetDomainUrl
 
-`func (o *SecretProcessesorInputConfigSettings) SetBaseUrl(v string)`
+`func (o *SecretProcessesorInputConfigSettings) SetDomainUrl(v string)`
 
-SetBaseUrl sets BaseUrl field to given value.
+SetDomainUrl sets DomainUrl field to given value.
 
-### HasBaseUrl
+### HasDomainUrl
 
-`func (o *SecretProcessesorInputConfigSettings) HasBaseUrl() bool`
+`func (o *SecretProcessesorInputConfigSettings) HasDomainUrl() bool`
 
-HasBaseUrl returns a boolean if a field has been set.
+HasDomainUrl returns a boolean if a field has been set.
+
+### GetTopic
+
+`func (o *SecretProcessesorInputConfigSettings) GetTopic() string`
+
+GetTopic returns the Topic field if non-nil, zero value otherwise.
+
+### GetTopicOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetTopicOk() (*string, bool)`
+
+GetTopicOk returns a tuple with the Topic field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTopic
+
+`func (o *SecretProcessesorInputConfigSettings) SetTopic(v string)`
+
+SetTopic sets Topic field to given value.
+
+### HasTopic
+
+`func (o *SecretProcessesorInputConfigSettings) HasTopic() bool`
+
+HasTopic returns a boolean if a field has been set.
 
 ### GetEvaluationContextIdentifier
 
@@ -3110,6 +3850,31 @@ SetEvaluationContextIdentifier sets EvaluationContextIdentifier field to given v
 `func (o *SecretProcessesorInputConfigSettings) HasEvaluationContextIdentifier() bool`
 
 HasEvaluationContextIdentifier returns a boolean if a field has been set.
+
+### GetIncludeInactive
+
+`func (o *SecretProcessesorInputConfigSettings) GetIncludeInactive() bool`
+
+GetIncludeInactive returns the IncludeInactive field if non-nil, zero value otherwise.
+
+### GetIncludeInactiveOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetIncludeInactiveOk() (*bool, bool)`
+
+GetIncludeInactiveOk returns a tuple with the IncludeInactive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeInactive
+
+`func (o *SecretProcessesorInputConfigSettings) SetIncludeInactive(v bool)`
+
+SetIncludeInactive sets IncludeInactive field to given value.
+
+### HasIncludeInactive
+
+`func (o *SecretProcessesorInputConfigSettings) HasIncludeInactive() bool`
+
+HasIncludeInactive returns a boolean if a field has been set.
 
 ### GetIncludePlannedDeletion
 
@@ -3160,6 +3925,31 @@ SetHostName sets HostName field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasHostName() bool`
 
 HasHostName returns a boolean if a field has been set.
+
+### GetTeamId
+
+`func (o *SecretProcessesorInputConfigSettings) GetTeamId() string`
+
+GetTeamId returns the TeamId field if non-nil, zero value otherwise.
+
+### GetTeamIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetTeamIdOk() (*string, bool)`
+
+GetTeamIdOk returns a tuple with the TeamId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTeamId
+
+`func (o *SecretProcessesorInputConfigSettings) SetTeamId(v string)`
+
+SetTeamId sets TeamId field to given value.
+
+### HasTeamId
+
+`func (o *SecretProcessesorInputConfigSettings) HasTeamId() bool`
+
+HasTeamId returns a boolean if a field has been set.
 
 ### GetAccount
 
@@ -3436,30 +4226,255 @@ SetUserTypeOption sets UserTypeOption field to given value.
 
 HasUserTypeOption returns a boolean if a field has been set.
 
-### GetLookbackHours
+### GetOperationNames
 
-`func (o *SecretProcessesorInputConfigSettings) GetLookbackHours() int32`
+`func (o *SecretProcessesorInputConfigSettings) GetOperationNames() []string`
 
-GetLookbackHours returns the LookbackHours field if non-nil, zero value otherwise.
+GetOperationNames returns the OperationNames field if non-nil, zero value otherwise.
 
-### GetLookbackHoursOk
+### GetOperationNamesOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetLookbackHoursOk() (*int32, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetOperationNamesOk() (*[]string, bool)`
 
-GetLookbackHoursOk returns a tuple with the LookbackHours field if it's non-nil, zero value otherwise
+GetOperationNamesOk returns a tuple with the OperationNames field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLookbackHours
+### SetOperationNames
 
-`func (o *SecretProcessesorInputConfigSettings) SetLookbackHours(v int32)`
+`func (o *SecretProcessesorInputConfigSettings) SetOperationNames(v []string)`
 
-SetLookbackHours sets LookbackHours field to given value.
+SetOperationNames sets OperationNames field to given value.
 
-### HasLookbackHours
+### HasOperationNames
 
-`func (o *SecretProcessesorInputConfigSettings) HasLookbackHours() bool`
+`func (o *SecretProcessesorInputConfigSettings) HasOperationNames() bool`
 
-HasLookbackHours returns a boolean if a field has been set.
+HasOperationNames returns a boolean if a field has been set.
+
+### GetTenantDomain
+
+`func (o *SecretProcessesorInputConfigSettings) GetTenantDomain() string`
+
+GetTenantDomain returns the TenantDomain field if non-nil, zero value otherwise.
+
+### GetTenantDomainOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetTenantDomainOk() (*string, bool)`
+
+GetTenantDomainOk returns a tuple with the TenantDomain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenantDomain
+
+`func (o *SecretProcessesorInputConfigSettings) SetTenantDomain(v string)`
+
+SetTenantDomain sets TenantDomain field to given value.
+
+### HasTenantDomain
+
+`func (o *SecretProcessesorInputConfigSettings) HasTenantDomain() bool`
+
+HasTenantDomain returns a boolean if a field has been set.
+
+### GetUserIds
+
+`func (o *SecretProcessesorInputConfigSettings) GetUserIds() []string`
+
+GetUserIds returns the UserIds field if non-nil, zero value otherwise.
+
+### GetUserIdsOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUserIdsOk() (*[]string, bool)`
+
+GetUserIdsOk returns a tuple with the UserIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserIds
+
+`func (o *SecretProcessesorInputConfigSettings) SetUserIds(v []string)`
+
+SetUserIds sets UserIds field to given value.
+
+### HasUserIds
+
+`func (o *SecretProcessesorInputConfigSettings) HasUserIds() bool`
+
+HasUserIds returns a boolean if a field has been set.
+
+### GetStoryId
+
+`func (o *SecretProcessesorInputConfigSettings) GetStoryId() string`
+
+GetStoryId returns the StoryId field if non-nil, zero value otherwise.
+
+### GetStoryIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetStoryIdOk() (*string, bool)`
+
+GetStoryIdOk returns a tuple with the StoryId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStoryId
+
+`func (o *SecretProcessesorInputConfigSettings) SetStoryId(v string)`
+
+SetStoryId sets StoryId field to given value.
+
+### HasStoryId
+
+`func (o *SecretProcessesorInputConfigSettings) HasStoryId() bool`
+
+HasStoryId returns a boolean if a field has been set.
+
+### GetTenantUrl
+
+`func (o *SecretProcessesorInputConfigSettings) GetTenantUrl() string`
+
+GetTenantUrl returns the TenantUrl field if non-nil, zero value otherwise.
+
+### GetTenantUrlOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetTenantUrlOk() (*string, bool)`
+
+GetTenantUrlOk returns a tuple with the TenantUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenantUrl
+
+`func (o *SecretProcessesorInputConfigSettings) SetTenantUrl(v string)`
+
+SetTenantUrl sets TenantUrl field to given value.
+
+### HasTenantUrl
+
+`func (o *SecretProcessesorInputConfigSettings) HasTenantUrl() bool`
+
+HasTenantUrl returns a boolean if a field has been set.
+
+### GetActorSid
+
+`func (o *SecretProcessesorInputConfigSettings) GetActorSid() string`
+
+GetActorSid returns the ActorSid field if non-nil, zero value otherwise.
+
+### GetActorSidOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetActorSidOk() (*string, bool)`
+
+GetActorSidOk returns a tuple with the ActorSid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActorSid
+
+`func (o *SecretProcessesorInputConfigSettings) SetActorSid(v string)`
+
+SetActorSid sets ActorSid field to given value.
+
+### HasActorSid
+
+`func (o *SecretProcessesorInputConfigSettings) HasActorSid() bool`
+
+HasActorSid returns a boolean if a field has been set.
+
+### GetReplicationStartTime
+
+`func (o *SecretProcessesorInputConfigSettings) GetReplicationStartTime() string`
+
+GetReplicationStartTime returns the ReplicationStartTime field if non-nil, zero value otherwise.
+
+### GetReplicationStartTimeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetReplicationStartTimeOk() (*string, bool)`
+
+GetReplicationStartTimeOk returns a tuple with the ReplicationStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplicationStartTime
+
+`func (o *SecretProcessesorInputConfigSettings) SetReplicationStartTime(v string)`
+
+SetReplicationStartTime sets ReplicationStartTime field to given value.
+
+### HasReplicationStartTime
+
+`func (o *SecretProcessesorInputConfigSettings) HasReplicationStartTime() bool`
+
+HasReplicationStartTime returns a boolean if a field has been set.
+
+### GetResourceSid
+
+`func (o *SecretProcessesorInputConfigSettings) GetResourceSid() string`
+
+GetResourceSid returns the ResourceSid field if non-nil, zero value otherwise.
+
+### GetResourceSidOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetResourceSidOk() (*string, bool)`
+
+GetResourceSidOk returns a tuple with the ResourceSid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceSid
+
+`func (o *SecretProcessesorInputConfigSettings) SetResourceSid(v string)`
+
+SetResourceSid sets ResourceSid field to given value.
+
+### HasResourceSid
+
+`func (o *SecretProcessesorInputConfigSettings) HasResourceSid() bool`
+
+HasResourceSid returns a boolean if a field has been set.
+
+### GetInstanceName
+
+`func (o *SecretProcessesorInputConfigSettings) GetInstanceName() string`
+
+GetInstanceName returns the InstanceName field if non-nil, zero value otherwise.
+
+### GetInstanceNameOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetInstanceNameOk() (*string, bool)`
+
+GetInstanceNameOk returns a tuple with the InstanceName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstanceName
+
+`func (o *SecretProcessesorInputConfigSettings) SetInstanceName(v string)`
+
+SetInstanceName sets InstanceName field to given value.
+
+### HasInstanceName
+
+`func (o *SecretProcessesorInputConfigSettings) HasInstanceName() bool`
+
+HasInstanceName returns a boolean if a field has been set.
+
+### GetStreams
+
+`func (o *SecretProcessesorInputConfigSettings) GetStreams() []string`
+
+GetStreams returns the Streams field if non-nil, zero value otherwise.
+
+### GetStreamsOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetStreamsOk() (*[]string, bool)`
+
+GetStreamsOk returns a tuple with the Streams field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStreams
+
+`func (o *SecretProcessesorInputConfigSettings) SetStreams(v []string)`
+
+SetStreams sets Streams field to given value.
+
+### HasStreams
+
+`func (o *SecretProcessesorInputConfigSettings) HasStreams() bool`
+
+HasStreams returns a boolean if a field has been set.
 
 ### GetWithPayload
 
@@ -3511,31 +4526,6 @@ SetAssetStatus sets AssetStatus field to given value.
 
 HasAssetStatus returns a boolean if a field has been set.
 
-### GetAssetType
-
-`func (o *SecretProcessesorInputConfigSettings) GetAssetType() string`
-
-GetAssetType returns the AssetType field if non-nil, zero value otherwise.
-
-### GetAssetTypeOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetAssetTypeOk() (*string, bool)`
-
-GetAssetTypeOk returns a tuple with the AssetType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAssetType
-
-`func (o *SecretProcessesorInputConfigSettings) SetAssetType(v string)`
-
-SetAssetType sets AssetType field to given value.
-
-### HasAssetType
-
-`func (o *SecretProcessesorInputConfigSettings) HasAssetType() bool`
-
-HasAssetType returns a boolean if a field has been set.
-
 ### GetDetectionMethod
 
 `func (o *SecretProcessesorInputConfigSettings) GetDetectionMethod() []string`
@@ -3585,6 +4575,56 @@ SetVendorSeverity sets VendorSeverity field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasVendorSeverity() bool`
 
 HasVendorSeverity returns a boolean if a field has been set.
+
+### GetEmailAddress
+
+`func (o *SecretProcessesorInputConfigSettings) GetEmailAddress() string`
+
+GetEmailAddress returns the EmailAddress field if non-nil, zero value otherwise.
+
+### GetEmailAddressOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetEmailAddressOk() (*string, bool)`
+
+GetEmailAddressOk returns a tuple with the EmailAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailAddress
+
+`func (o *SecretProcessesorInputConfigSettings) SetEmailAddress(v string)`
+
+SetEmailAddress sets EmailAddress field to given value.
+
+### HasEmailAddress
+
+`func (o *SecretProcessesorInputConfigSettings) HasEmailAddress() bool`
+
+HasEmailAddress returns a boolean if a field has been set.
+
+### GetSubDomain
+
+`func (o *SecretProcessesorInputConfigSettings) GetSubDomain() string`
+
+GetSubDomain returns the SubDomain field if non-nil, zero value otherwise.
+
+### GetSubDomainOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetSubDomainOk() (*string, bool)`
+
+GetSubDomainOk returns a tuple with the SubDomain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubDomain
+
+`func (o *SecretProcessesorInputConfigSettings) SetSubDomain(v string)`
+
+SetSubDomain sets SubDomain field to given value.
+
+### HasSubDomain
+
+`func (o *SecretProcessesorInputConfigSettings) HasSubDomain() bool`
+
+HasSubDomain returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

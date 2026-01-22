@@ -16,7 +16,7 @@ export class ConditionInfo {
     'configMeta'?: any | null;
     'description'?: string;
     'name'?: string;
-    'typeID'?: string;
+    'typeId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -25,7 +25,7 @@ export class ConditionInfo {
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
             "name": "configMeta",
-            "baseName": "configMeta",
+            "baseName": "config_meta",
             "type": "any",
             "format": ""
         },
@@ -42,8 +42,8 @@ export class ConditionInfo {
             "format": ""
         },
         {
-            "name": "typeID",
-            "baseName": "typeID",
+            "name": "typeId",
+            "baseName": "type_id",
             "type": "string",
             "format": ""
         }    ];

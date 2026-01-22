@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **role_id** | **str** |  | [optional] 
+**user_auth_provider_id** | **str** |  | [optional] 
 
 ## Example
 

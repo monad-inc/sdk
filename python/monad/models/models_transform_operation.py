@@ -28,8 +28,9 @@ class ModelsTransformOperation(BaseModel):
     ModelsTransformOperation
     """ # noqa: E501
     arguments: Optional[Dict[str, Any]] = None
+    description: Optional[StrictStr] = None
     operation: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["arguments", "operation"]
+    __properties: ClassVar[List[str]] = ["arguments", "description", "operation"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,6 +84,7 @@ class ModelsTransformOperation(BaseModel):
 
         _obj = cls.model_validate({
             "arguments": obj.get("arguments"),
+            "description": obj.get("description"),
             "operation": obj.get("operation")
         })
         return _obj

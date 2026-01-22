@@ -4,11 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AuthType** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **interface{}** |  | [optional] 
+**ConnectorCategory** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **House** | Pointer to **string** |  | [optional] 
+**InBeta** | Pointer to **bool** |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
-**LogoKey** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Tier** | Pointer to **int32** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
@@ -31,6 +33,31 @@ will change when the set of required properties is changed
 NewEnrichmentConnectorMetaWithDefaults instantiates a new EnrichmentConnectorMeta object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAuthType
+
+`func (o *EnrichmentConnectorMeta) GetAuthType() string`
+
+GetAuthType returns the AuthType field if non-nil, zero value otherwise.
+
+### GetAuthTypeOk
+
+`func (o *EnrichmentConnectorMeta) GetAuthTypeOk() (*string, bool)`
+
+GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthType
+
+`func (o *EnrichmentConnectorMeta) SetAuthType(v string)`
+
+SetAuthType sets AuthType field to given value.
+
+### HasAuthType
+
+`func (o *EnrichmentConnectorMeta) HasAuthType() bool`
+
+HasAuthType returns a boolean if a field has been set.
 
 ### GetConfig
 
@@ -67,6 +94,31 @@ HasConfig returns a boolean if a field has been set.
 `func (o *EnrichmentConnectorMeta) UnsetConfig()`
 
 UnsetConfig ensures that no value is present for Config, not even an explicit nil
+### GetConnectorCategory
+
+`func (o *EnrichmentConnectorMeta) GetConnectorCategory() string`
+
+GetConnectorCategory returns the ConnectorCategory field if non-nil, zero value otherwise.
+
+### GetConnectorCategoryOk
+
+`func (o *EnrichmentConnectorMeta) GetConnectorCategoryOk() (*string, bool)`
+
+GetConnectorCategoryOk returns a tuple with the ConnectorCategory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectorCategory
+
+`func (o *EnrichmentConnectorMeta) SetConnectorCategory(v string)`
+
+SetConnectorCategory sets ConnectorCategory field to given value.
+
+### HasConnectorCategory
+
+`func (o *EnrichmentConnectorMeta) HasConnectorCategory() bool`
+
+HasConnectorCategory returns a boolean if a field has been set.
+
 ### GetDescription
 
 `func (o *EnrichmentConnectorMeta) GetDescription() string`
@@ -117,6 +169,31 @@ SetHouse sets House field to given value.
 
 HasHouse returns a boolean if a field has been set.
 
+### GetInBeta
+
+`func (o *EnrichmentConnectorMeta) GetInBeta() bool`
+
+GetInBeta returns the InBeta field if non-nil, zero value otherwise.
+
+### GetInBetaOk
+
+`func (o *EnrichmentConnectorMeta) GetInBetaOk() (*bool, bool)`
+
+GetInBetaOk returns a tuple with the InBeta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInBeta
+
+`func (o *EnrichmentConnectorMeta) SetInBeta(v bool)`
+
+SetInBeta sets InBeta field to given value.
+
+### HasInBeta
+
+`func (o *EnrichmentConnectorMeta) HasInBeta() bool`
+
+HasInBeta returns a boolean if a field has been set.
+
 ### GetInternal
 
 `func (o *EnrichmentConnectorMeta) GetInternal() bool`
@@ -141,31 +218,6 @@ SetInternal sets Internal field to given value.
 `func (o *EnrichmentConnectorMeta) HasInternal() bool`
 
 HasInternal returns a boolean if a field has been set.
-
-### GetLogoKey
-
-`func (o *EnrichmentConnectorMeta) GetLogoKey() string`
-
-GetLogoKey returns the LogoKey field if non-nil, zero value otherwise.
-
-### GetLogoKeyOk
-
-`func (o *EnrichmentConnectorMeta) GetLogoKeyOk() (*string, bool)`
-
-GetLogoKeyOk returns a tuple with the LogoKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLogoKey
-
-`func (o *EnrichmentConnectorMeta) SetLogoKey(v string)`
-
-SetLogoKey sets LogoKey field to given value.
-
-### HasLogoKey
-
-`func (o *EnrichmentConnectorMeta) HasLogoKey() bool`
-
-HasLogoKey returns a boolean if a field has been set.
 
 ### GetName
 

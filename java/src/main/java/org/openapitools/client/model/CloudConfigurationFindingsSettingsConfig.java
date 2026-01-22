@@ -50,8 +50,13 @@ import org.openapitools.client.JSON;
 /**
  * Wiz cloud configuration findings settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class CloudConfigurationFindingsSettingsConfig {
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
+
   public static final String SERIALIZED_NAME_ENDPOINT_URL = "endpoint_url";
   @SerializedName(SERIALIZED_NAME_ENDPOINT_URL)
   @javax.annotation.Nullable
@@ -79,6 +84,25 @@ public class CloudConfigurationFindingsSettingsConfig {
 
   public CloudConfigurationFindingsSettingsConfig() {
   }
+
+  public CloudConfigurationFindingsSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+  }
+
 
   public CloudConfigurationFindingsSettingsConfig endpointUrl(@javax.annotation.Nullable String endpointUrl) {
     this.endpointUrl = endpointUrl;
@@ -209,7 +233,8 @@ public class CloudConfigurationFindingsSettingsConfig {
       return false;
     }
     CloudConfigurationFindingsSettingsConfig cloudConfigurationFindingsSettingsConfig = (CloudConfigurationFindingsSettingsConfig) o;
-    return Objects.equals(this.endpointUrl, cloudConfigurationFindingsSettingsConfig.endpointUrl) &&
+    return Objects.equals(this.backfillStartTime, cloudConfigurationFindingsSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.endpointUrl, cloudConfigurationFindingsSettingsConfig.endpointUrl) &&
         Objects.equals(this.result, cloudConfigurationFindingsSettingsConfig.result) &&
         Objects.equals(this.severity, cloudConfigurationFindingsSettingsConfig.severity) &&
         Objects.equals(this.status, cloudConfigurationFindingsSettingsConfig.status) &&
@@ -218,13 +243,14 @@ public class CloudConfigurationFindingsSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(endpointUrl, result, severity, status, useSyntheticData);
+    return Objects.hash(backfillStartTime, endpointUrl, result, severity, status, useSyntheticData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CloudConfigurationFindingsSettingsConfig {\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    endpointUrl: ").append(toIndentedString(endpointUrl)).append("\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
@@ -251,7 +277,7 @@ public class CloudConfigurationFindingsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("endpoint_url", "result", "severity", "status", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "endpoint_url", "result", "severity", "status", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -266,7 +292,7 @@ public class CloudConfigurationFindingsSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CloudConfigurationFindingsSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CloudConfigurationFindingsSettingsConfig is not found in the empty JSON string", CloudConfigurationFindingsSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in CloudConfigurationFindingsSettingsConfig is not found in the empty JSON string", CloudConfigurationFindingsSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -274,24 +300,27 @@ public class CloudConfigurationFindingsSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!CloudConfigurationFindingsSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CloudConfigurationFindingsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `CloudConfigurationFindingsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
       if ((jsonObj.get("endpoint_url") != null && !jsonObj.get("endpoint_url").isJsonNull()) && !jsonObj.get("endpoint_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `endpoint_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint_url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `endpoint_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint_url").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("result") != null && !jsonObj.get("result").isJsonNull() && !jsonObj.get("result").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `result` to be an array in the JSON string but got `%s`", jsonObj.get("result").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `result` to be an array in the JSON string but got `%s`", jsonObj.get("result").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("severity") != null && !jsonObj.get("severity").isJsonNull() && !jsonObj.get("severity").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `severity` to be an array in the JSON string but got `%s`", jsonObj.get("severity").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `severity` to be an array in the JSON string but got `%s`", jsonObj.get("severity").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull() && !jsonObj.get("status").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be an array in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be an array in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
   }
 

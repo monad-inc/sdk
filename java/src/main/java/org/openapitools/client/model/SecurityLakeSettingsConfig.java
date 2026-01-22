@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * Security Lake Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SecurityLakeSettingsConfig {
   public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
   @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
@@ -295,7 +295,7 @@ public class SecurityLakeSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SecurityLakeSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SecurityLakeSettingsConfig is not found in the empty JSON string", SecurityLakeSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SecurityLakeSettingsConfig is not found in the empty JSON string", SecurityLakeSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -303,7 +303,7 @@ public class SecurityLakeSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!SecurityLakeSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SecurityLakeSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SecurityLakeSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -312,20 +312,20 @@ public class SecurityLakeSettingsConfig {
         BatchConfigBatchConfig.validateJsonElement(jsonObj.get("batch_config"));
       }
       if ((jsonObj.get("bucketName") != null && !jsonObj.get("bucketName").isJsonNull()) && !jsonObj.get("bucketName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bucketName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucketName").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bucketName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucketName").toString()));
       }
       if ((jsonObj.get("bucket_url") != null && !jsonObj.get("bucket_url").isJsonNull()) && !jsonObj.get("bucket_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bucket_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucket_url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bucket_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucket_url").toString()));
       }
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       // validate the optional field `parquet_format`
       if (jsonObj.get("parquet_format") != null && !jsonObj.get("parquet_format").isJsonNull()) {
         ParquetParquetFormatter.validateJsonElement(jsonObj.get("parquet_format"));
       }
       if ((jsonObj.get("role_arn") != null && !jsonObj.get("role_arn").isJsonNull()) && !jsonObj.get("role_arn").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `role_arn` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_arn").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `role_arn` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_arn").toString()));
       }
       // validate the optional field `source_account_details`
       if (jsonObj.get("source_account_details") != null && !jsonObj.get("source_account_details").isJsonNull()) {

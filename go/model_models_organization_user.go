@@ -20,7 +20,7 @@ var _ MappedNullable = &ModelsOrganizationUser{}
 
 // ModelsOrganizationUser struct for ModelsOrganizationUser
 type ModelsOrganizationUser struct {
-	AuthProviders []ModelsUserAuthProvider `json:"auth_providers,omitempty"`
+	AuthProvider *ModelsUserAuthProvider `json:"auth_provider,omitempty"`
 	ConnectionId *string `json:"connection_id,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Email *string `json:"email,omitempty"`
@@ -47,36 +47,36 @@ func NewModelsOrganizationUserWithDefaults() *ModelsOrganizationUser {
 	return &this
 }
 
-// GetAuthProviders returns the AuthProviders field value if set, zero value otherwise.
-func (o *ModelsOrganizationUser) GetAuthProviders() []ModelsUserAuthProvider {
-	if o == nil || IsNil(o.AuthProviders) {
-		var ret []ModelsUserAuthProvider
+// GetAuthProvider returns the AuthProvider field value if set, zero value otherwise.
+func (o *ModelsOrganizationUser) GetAuthProvider() ModelsUserAuthProvider {
+	if o == nil || IsNil(o.AuthProvider) {
+		var ret ModelsUserAuthProvider
 		return ret
 	}
-	return o.AuthProviders
+	return *o.AuthProvider
 }
 
-// GetAuthProvidersOk returns a tuple with the AuthProviders field value if set, nil otherwise
+// GetAuthProviderOk returns a tuple with the AuthProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsOrganizationUser) GetAuthProvidersOk() ([]ModelsUserAuthProvider, bool) {
-	if o == nil || IsNil(o.AuthProviders) {
+func (o *ModelsOrganizationUser) GetAuthProviderOk() (*ModelsUserAuthProvider, bool) {
+	if o == nil || IsNil(o.AuthProvider) {
 		return nil, false
 	}
-	return o.AuthProviders, true
+	return o.AuthProvider, true
 }
 
-// HasAuthProviders returns a boolean if a field has been set.
-func (o *ModelsOrganizationUser) HasAuthProviders() bool {
-	if o != nil && !IsNil(o.AuthProviders) {
+// HasAuthProvider returns a boolean if a field has been set.
+func (o *ModelsOrganizationUser) HasAuthProvider() bool {
+	if o != nil && !IsNil(o.AuthProvider) {
 		return true
 	}
 
 	return false
 }
 
-// SetAuthProviders gets a reference to the given []ModelsUserAuthProvider and assigns it to the AuthProviders field.
-func (o *ModelsOrganizationUser) SetAuthProviders(v []ModelsUserAuthProvider) {
-	o.AuthProviders = v
+// SetAuthProvider gets a reference to the given ModelsUserAuthProvider and assigns it to the AuthProvider field.
+func (o *ModelsOrganizationUser) SetAuthProvider(v ModelsUserAuthProvider) {
+	o.AuthProvider = &v
 }
 
 // GetConnectionId returns the ConnectionId field value if set, zero value otherwise.
@@ -313,8 +313,8 @@ func (o ModelsOrganizationUser) MarshalJSON() ([]byte, error) {
 
 func (o ModelsOrganizationUser) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthProviders) {
-		toSerialize["auth_providers"] = o.AuthProviders
+	if !IsNil(o.AuthProvider) {
+		toSerialize["auth_provider"] = o.AuthProvider
 	}
 	if !IsNil(o.ConnectionId) {
 		toSerialize["connection_id"] = o.ConnectionId

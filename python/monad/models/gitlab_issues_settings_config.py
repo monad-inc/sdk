@@ -27,6 +27,7 @@ class GitlabIssuesSettingsConfig(BaseModel):
     """
     Gitlab Issues settings
     """ # noqa: E501
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
     confidential: Optional[StrictBool] = Field(default=None, description="Confidential to filter issues by confidentiality status. Confidential = true means only show confidential issues.")
     gitlab_url: Optional[StrictStr] = Field(default=None, description="GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.)")
     issue_type: Optional[StrictStr] = Field(default=None, description="IssueType to filter issues by type e.g. issue, incident, etc.")
@@ -34,7 +35,7 @@ class GitlabIssuesSettingsConfig(BaseModel):
     state: Optional[StrictStr] = Field(default=None, description="State to filter issues by e.g. opened, closed")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     with_label_details: Optional[StrictBool] = Field(default=None, description="Include label details in the response")
-    __properties: ClassVar[List[str]] = ["confidential", "gitlab_url", "issue_type", "project_id", "state", "use_synthetic_data", "with_label_details"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "confidential", "gitlab_url", "issue_type", "project_id", "state", "use_synthetic_data", "with_label_details"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,6 +88,7 @@ class GitlabIssuesSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "confidential": obj.get("confidential"),
             "gitlab_url": obj.get("gitlab_url"),
             "issue_type": obj.get("issue_type"),

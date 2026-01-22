@@ -5,11 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**auth_type** | **str** |  | [optional] 
 **config** | **object** |  | [optional] 
+**connector_category** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **house** | **str** |  | [optional] 
+**in_beta** | **bool** |  | [optional] 
 **internal** | **bool** |  | [optional] 
-**logo_key** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **tier** | **int** |  | [optional] 
 **type_id** | **str** |  | [optional] 

@@ -13,6 +13,9 @@
 import { HttpFile } from '../http/http';
 
 export class RoutesV2ApplyTransformationResponse {
+    'bytesAfter'?: number;
+    'bytesBefore'?: number;
+    'percentageChange'?: number;
     'records'?: Array<Array<number>>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -20,6 +23,24 @@ export class RoutesV2ApplyTransformationResponse {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "bytesAfter",
+            "baseName": "bytes_after",
+            "type": "number",
+            "format": ""
+        },
+        {
+            "name": "bytesBefore",
+            "baseName": "bytes_before",
+            "type": "number",
+            "format": ""
+        },
+        {
+            "name": "percentageChange",
+            "baseName": "percentage_change",
+            "type": "number",
+            "format": ""
+        },
         {
             "name": "records",
             "baseName": "records",

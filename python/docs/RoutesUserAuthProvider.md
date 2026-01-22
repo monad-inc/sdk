@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** |  | [optional] 
 **provider** | **str** |  | [optional] 
 **provider_id** | **str** |  | [optional] 
 

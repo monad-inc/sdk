@@ -24,8 +24,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import org.openapitools.client.model.AbsSecretsConfig;
+import org.openapitools.client.model.AxiomSecretsConfig;
+import org.openapitools.client.model.BackblazeSecretsConfig;
 import org.openapitools.client.model.BigquerySecretsConfig;
 import org.openapitools.client.model.CriblHttpSecretsConfig;
+import org.openapitools.client.model.DatadogSecretsConfig;
 import org.openapitools.client.model.ElasticsearchSecretsConfig;
 import org.openapitools.client.model.GoogleCloudStorageOutputSecretsConfig;
 import org.openapitools.client.model.HttpSecretsConfig;
@@ -36,6 +39,7 @@ import org.openapitools.client.model.OpensearchSecretsConfig;
 import org.openapitools.client.model.PagerdutySecretsConfig;
 import org.openapitools.client.model.PantherSecretsConfig;
 import org.openapitools.client.model.PostgresqlSecretsConfig;
+import org.openapitools.client.model.S3SecretsConfig;
 import org.openapitools.client.model.SentinelSecretsConfig;
 import org.openapitools.client.model.SnowflakeOutputSecretsConfig;
 import org.openapitools.client.model.SplunkSecretsConfig;
@@ -76,7 +80,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorOutputConfigSecrets.class.getName());
 
@@ -89,12 +93,15 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
             final TypeAdapter<AbsSecretsConfig> adapterAbsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(AbsSecretsConfig.class));
-            final TypeAdapter<Object> adapterObject = gson.getDelegateAdapter(this, TypeToken.get(Object.class));
+            final TypeAdapter<AxiomSecretsConfig> adapterAxiomSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(AxiomSecretsConfig.class));
+            final TypeAdapter<BackblazeSecretsConfig> adapterBackblazeSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BackblazeSecretsConfig.class));
             final TypeAdapter<BigquerySecretsConfig> adapterBigquerySecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(BigquerySecretsConfig.class));
             final TypeAdapter<CriblHttpSecretsConfig> adapterCriblHttpSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(CriblHttpSecretsConfig.class));
+            final TypeAdapter<DatadogSecretsConfig> adapterDatadogSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(DatadogSecretsConfig.class));
             final TypeAdapter<ElasticsearchSecretsConfig> adapterElasticsearchSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(ElasticsearchSecretsConfig.class));
             final TypeAdapter<GoogleCloudStorageOutputSecretsConfig> adapterGoogleCloudStorageOutputSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(GoogleCloudStorageOutputSecretsConfig.class));
             final TypeAdapter<HttpSecretsConfig> adapterHttpSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(HttpSecretsConfig.class));
+            final TypeAdapter<Object> adapterObject = gson.getDelegateAdapter(this, TypeToken.get(Object.class));
             final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
             final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
             final TypeAdapter<NextGenSiemSecretsConfig> adapterNextGenSiemSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(NextGenSiemSecretsConfig.class));
@@ -103,6 +110,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             final TypeAdapter<PagerdutySecretsConfig> adapterPagerdutySecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(PagerdutySecretsConfig.class));
             final TypeAdapter<PantherSecretsConfig> adapterPantherSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(PantherSecretsConfig.class));
             final TypeAdapter<PostgresqlSecretsConfig> adapterPostgresqlSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(PostgresqlSecretsConfig.class));
+            final TypeAdapter<S3SecretsConfig> adapterS3SecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(S3SecretsConfig.class));
             final TypeAdapter<SentinelSecretsConfig> adapterSentinelSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SentinelSecretsConfig.class));
             final TypeAdapter<SnowflakeOutputSecretsConfig> adapterSnowflakeOutputSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnowflakeOutputSecretsConfig.class));
             final TypeAdapter<SplunkSecretsConfig> adapterSplunkSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(SplunkSecretsConfig.class));
@@ -122,10 +130,16 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `Object`
-                    if (value.getActualInstance() instanceof Object) {
-                        JsonPrimitive primitive = adapterObject.toJsonTree((Object)value.getActualInstance()).getAsJsonPrimitive();
-                        elementAdapter.write(out, primitive);
+                    // check if the actual instance is of the type `AxiomSecretsConfig`
+                    if (value.getActualInstance() instanceof AxiomSecretsConfig) {
+                        JsonElement element = adapterAxiomSecretsConfig.toJsonTree((AxiomSecretsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `BackblazeSecretsConfig`
+                    if (value.getActualInstance() instanceof BackblazeSecretsConfig) {
+                        JsonElement element = adapterBackblazeSecretsConfig.toJsonTree((BackblazeSecretsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
                     // check if the actual instance is of the type `BigquerySecretsConfig`
@@ -137,6 +151,12 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                     // check if the actual instance is of the type `CriblHttpSecretsConfig`
                     if (value.getActualInstance() instanceof CriblHttpSecretsConfig) {
                         JsonElement element = adapterCriblHttpSecretsConfig.toJsonTree((CriblHttpSecretsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `DatadogSecretsConfig`
+                    if (value.getActualInstance() instanceof DatadogSecretsConfig) {
+                        JsonElement element = adapterDatadogSecretsConfig.toJsonTree((DatadogSecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -156,6 +176,12 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                     if (value.getActualInstance() instanceof HttpSecretsConfig) {
                         JsonElement element = adapterHttpSecretsConfig.toJsonTree((HttpSecretsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `Object`
+                    if (value.getActualInstance() instanceof Object) {
+                        JsonPrimitive primitive = adapterObject.toJsonTree((Object)value.getActualInstance()).getAsJsonPrimitive();
+                        elementAdapter.write(out, primitive);
                         return;
                     }
                     // check if the actual instance is of the type `Map<String, Object>`
@@ -200,6 +226,12 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         elementAdapter.write(out, element);
                         return;
                     }
+                    // check if the actual instance is of the type `S3SecretsConfig`
+                    if (value.getActualInstance() instanceof S3SecretsConfig) {
+                        JsonElement element = adapterS3SecretsConfig.toJsonTree((S3SecretsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `SentinelSecretsConfig`
                     if (value.getActualInstance() instanceof SentinelSecretsConfig) {
                         JsonElement element = adapterSentinelSecretsConfig.toJsonTree((SentinelSecretsConfig)value.getActualInstance());
@@ -224,7 +256,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig");
                 }
 
                 @Override
@@ -245,22 +277,32 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'AbsSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for AbsSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AbsSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'AbsSecretsConfig'", e);
                     }
-                    // deserialize Object
+                    // deserialize AxiomSecretsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
-                        }
-                        actualAdapter = adapterObject;
+                        AxiomSecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAxiomSecretsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'Object'");
+                        log.log(Level.FINER, "Input data matches schema 'AxiomSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for Object failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'Object'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AxiomSecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AxiomSecretsConfig'", e);
+                    }
+                    // deserialize BackblazeSecretsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        BackblazeSecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterBackblazeSecretsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'BackblazeSecretsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BackblazeSecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'BackblazeSecretsConfig'", e);
                     }
                     // deserialize BigquerySecretsConfig
                     try {
@@ -271,7 +313,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'BigquerySecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for BigquerySecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BigquerySecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'BigquerySecretsConfig'", e);
                     }
                     // deserialize CriblHttpSecretsConfig
@@ -283,8 +325,20 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'CriblHttpSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for CriblHttpSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CriblHttpSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'CriblHttpSecretsConfig'", e);
+                    }
+                    // deserialize DatadogSecretsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        DatadogSecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDatadogSecretsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'DatadogSecretsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DatadogSecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DatadogSecretsConfig'", e);
                     }
                     // deserialize ElasticsearchSecretsConfig
                     try {
@@ -295,7 +349,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'ElasticsearchSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for ElasticsearchSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ElasticsearchSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ElasticsearchSecretsConfig'", e);
                     }
                     // deserialize GoogleCloudStorageOutputSecretsConfig
@@ -307,7 +361,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'GoogleCloudStorageOutputSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for GoogleCloudStorageOutputSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for GoogleCloudStorageOutputSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GoogleCloudStorageOutputSecretsConfig'", e);
                     }
                     // deserialize HttpSecretsConfig
@@ -319,14 +373,28 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'HttpSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for HttpSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for HttpSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'HttpSecretsConfig'", e);
+                    }
+                    // deserialize Object
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        if (!jsonElement.getAsJsonPrimitive().isNumber()) {
+                            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
+                        }
+                        actualAdapter = adapterObject;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'Object'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Object failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'Object'", e);
                     }
                     // deserialize Map<String, Object>
                     try {
                         // validate the JSON object to see if any exception is thrown
                         if (!jsonElement.isJsonObject()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
+                            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
                         }
 
                         actualAdapter = adapterMapStringObject;
@@ -334,7 +402,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'Map<String, Object>'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'Map<String, Object>'", e);
                     }
                     // deserialize NextGenSiemSecretsConfig
@@ -346,7 +414,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'NextGenSiemSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for NextGenSiemSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for NextGenSiemSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'NextGenSiemSecretsConfig'", e);
                     }
                     // deserialize ObjectStorageSecretsConfig
@@ -358,7 +426,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'ObjectStorageSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for ObjectStorageSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ObjectStorageSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ObjectStorageSecretsConfig'", e);
                     }
                     // deserialize OpensearchSecretsConfig
@@ -370,7 +438,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'OpensearchSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for OpensearchSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for OpensearchSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'OpensearchSecretsConfig'", e);
                     }
                     // deserialize PagerdutySecretsConfig
@@ -382,7 +450,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'PagerdutySecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for PagerdutySecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PagerdutySecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'PagerdutySecretsConfig'", e);
                     }
                     // deserialize PantherSecretsConfig
@@ -394,7 +462,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'PantherSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for PantherSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PantherSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'PantherSecretsConfig'", e);
                     }
                     // deserialize PostgresqlSecretsConfig
@@ -406,8 +474,20 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'PostgresqlSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for PostgresqlSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PostgresqlSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'PostgresqlSecretsConfig'", e);
+                    }
+                    // deserialize S3SecretsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        S3SecretsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterS3SecretsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'S3SecretsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for S3SecretsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'S3SecretsConfig'", e);
                     }
                     // deserialize SentinelSecretsConfig
                     try {
@@ -418,7 +498,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'SentinelSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for SentinelSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SentinelSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SentinelSecretsConfig'", e);
                     }
                     // deserialize SnowflakeOutputSecretsConfig
@@ -430,7 +510,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'SnowflakeOutputSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for SnowflakeOutputSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SnowflakeOutputSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SnowflakeOutputSecretsConfig'", e);
                     }
                     // deserialize SplunkSecretsConfig
@@ -442,7 +522,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'SplunkSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for SplunkSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SplunkSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SplunkSecretsConfig'", e);
                     }
                     // deserialize SumologicSecretsConfig
@@ -454,7 +534,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         log.log(Level.FINER, "Input data matches schema 'SumologicSecretsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for SumologicSecretsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SumologicSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SumologicSecretsConfig'", e);
                     }
 
@@ -464,7 +544,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for SecretProcessesorOutputConfigSecrets: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(java.util.Locale.ROOT, "Failed deserialization for SecretProcessesorOutputConfigSecrets: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -484,12 +564,15 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
 
     static {
         schemas.put("AbsSecretsConfig", AbsSecretsConfig.class);
-        schemas.put("Object", Object.class);
+        schemas.put("AxiomSecretsConfig", AxiomSecretsConfig.class);
+        schemas.put("BackblazeSecretsConfig", BackblazeSecretsConfig.class);
         schemas.put("BigquerySecretsConfig", BigquerySecretsConfig.class);
         schemas.put("CriblHttpSecretsConfig", CriblHttpSecretsConfig.class);
+        schemas.put("DatadogSecretsConfig", DatadogSecretsConfig.class);
         schemas.put("ElasticsearchSecretsConfig", ElasticsearchSecretsConfig.class);
         schemas.put("GoogleCloudStorageOutputSecretsConfig", GoogleCloudStorageOutputSecretsConfig.class);
         schemas.put("HttpSecretsConfig", HttpSecretsConfig.class);
+        schemas.put("Object", Object.class);
         schemas.put("Map<String, Object>", Map.class);
         schemas.put("NextGenSiemSecretsConfig", NextGenSiemSecretsConfig.class);
         schemas.put("ObjectStorageSecretsConfig", ObjectStorageSecretsConfig.class);
@@ -497,6 +580,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
         schemas.put("PagerdutySecretsConfig", PagerdutySecretsConfig.class);
         schemas.put("PantherSecretsConfig", PantherSecretsConfig.class);
         schemas.put("PostgresqlSecretsConfig", PostgresqlSecretsConfig.class);
+        schemas.put("S3SecretsConfig", S3SecretsConfig.class);
         schemas.put("SentinelSecretsConfig", SentinelSecretsConfig.class);
         schemas.put("SnowflakeOutputSecretsConfig", SnowflakeOutputSecretsConfig.class);
         schemas.put("SplunkSecretsConfig", SplunkSecretsConfig.class);
@@ -511,7 +595,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
+     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -522,7 +606,12 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             return;
         }
 
-        if (instance instanceof Object) {
+        if (instance instanceof AxiomSecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof BackblazeSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -533,6 +622,11 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
         }
 
         if (instance instanceof CriblHttpSecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof DatadogSecretsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -548,6 +642,11 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
         }
 
         if (instance instanceof HttpSecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof Object) {
             super.setActualInstance(instance);
             return;
         }
@@ -587,6 +686,11 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             return;
         }
 
+        if (instance instanceof S3SecretsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof SentinelSecretsConfig) {
             super.setActualInstance(instance);
             return;
@@ -607,14 +711,14 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig");
+        throw new RuntimeException("Invalid instance type. Must be AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
+     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig
      *
-     * @return The actual instance (AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig)
+     * @return The actual instance (AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -634,14 +738,25 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
     }
 
     /**
-     * Get the actual instance of `Object`. If the actual instance is not `Object`,
+     * Get the actual instance of `AxiomSecretsConfig`. If the actual instance is not `AxiomSecretsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `Object`
-     * @throws ClassCastException if the instance is not `Object`
+     * @return The actual instance of `AxiomSecretsConfig`
+     * @throws ClassCastException if the instance is not `AxiomSecretsConfig`
      */
-    public Object getObject() throws ClassCastException {
-        return (Object)super.getActualInstance();
+    public AxiomSecretsConfig getAxiomSecretsConfig() throws ClassCastException {
+        return (AxiomSecretsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `BackblazeSecretsConfig`. If the actual instance is not `BackblazeSecretsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `BackblazeSecretsConfig`
+     * @throws ClassCastException if the instance is not `BackblazeSecretsConfig`
+     */
+    public BackblazeSecretsConfig getBackblazeSecretsConfig() throws ClassCastException {
+        return (BackblazeSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -664,6 +779,17 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      */
     public CriblHttpSecretsConfig getCriblHttpSecretsConfig() throws ClassCastException {
         return (CriblHttpSecretsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `DatadogSecretsConfig`. If the actual instance is not `DatadogSecretsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `DatadogSecretsConfig`
+     * @throws ClassCastException if the instance is not `DatadogSecretsConfig`
+     */
+    public DatadogSecretsConfig getDatadogSecretsConfig() throws ClassCastException {
+        return (DatadogSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -697,6 +823,17 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
      */
     public HttpSecretsConfig getHttpSecretsConfig() throws ClassCastException {
         return (HttpSecretsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `Object`. If the actual instance is not `Object`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `Object`
+     * @throws ClassCastException if the instance is not `Object`
+     */
+    public Object getObject() throws ClassCastException {
+        return (Object)super.getActualInstance();
     }
 
     /**
@@ -777,6 +914,17 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
     }
 
     /**
+     * Get the actual instance of `S3SecretsConfig`. If the actual instance is not `S3SecretsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `S3SecretsConfig`
+     * @throws ClassCastException if the instance is not `S3SecretsConfig`
+     */
+    public S3SecretsConfig getS3SecretsConfig() throws ClassCastException {
+        return (S3SecretsConfig)super.getActualInstance();
+    }
+
+    /**
      * Get the actual instance of `SentinelSecretsConfig`. If the actual instance is not `SentinelSecretsConfig`,
      * the ClassCastException will be thrown.
      *
@@ -835,17 +983,23 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             AbsSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for AbsSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AbsSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with Object
+        // validate the json string with AxiomSecretsConfig
         try {
-            if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
-            }
+            AxiomSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for Object failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AxiomSecretsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with BackblazeSecretsConfig
+        try {
+            BackblazeSecretsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BackblazeSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with BigquerySecretsConfig
@@ -853,7 +1007,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             BigquerySecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for BigquerySecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BigquerySecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with CriblHttpSecretsConfig
@@ -861,7 +1015,15 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             CriblHttpSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for CriblHttpSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CriblHttpSecretsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with DatadogSecretsConfig
+        try {
+            DatadogSecretsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DatadogSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with ElasticsearchSecretsConfig
@@ -869,7 +1031,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             ElasticsearchSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for ElasticsearchSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ElasticsearchSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with GoogleCloudStorageOutputSecretsConfig
@@ -877,7 +1039,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             GoogleCloudStorageOutputSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for GoogleCloudStorageOutputSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for GoogleCloudStorageOutputSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with HttpSecretsConfig
@@ -885,18 +1047,28 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             HttpSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for HttpSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for HttpSecretsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with Object
+        try {
+            if (!jsonElement.getAsJsonPrimitive().isNumber()) {
+                throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
+            }
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Object failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with Map<String, Object>
         try {
             if (!jsonElement.isJsonObject()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
+                throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
             }
 
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with NextGenSiemSecretsConfig
@@ -904,7 +1076,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             NextGenSiemSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for NextGenSiemSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for NextGenSiemSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with ObjectStorageSecretsConfig
@@ -912,7 +1084,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             ObjectStorageSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for ObjectStorageSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ObjectStorageSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with OpensearchSecretsConfig
@@ -920,7 +1092,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             OpensearchSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for OpensearchSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for OpensearchSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with PagerdutySecretsConfig
@@ -928,7 +1100,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             PagerdutySecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for PagerdutySecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PagerdutySecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with PantherSecretsConfig
@@ -936,7 +1108,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             PantherSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for PantherSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PantherSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with PostgresqlSecretsConfig
@@ -944,7 +1116,15 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             PostgresqlSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for PostgresqlSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PostgresqlSecretsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with S3SecretsConfig
+        try {
+            S3SecretsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for S3SecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with SentinelSecretsConfig
@@ -952,7 +1132,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             SentinelSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for SentinelSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SentinelSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with SnowflakeOutputSecretsConfig
@@ -960,7 +1140,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             SnowflakeOutputSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for SnowflakeOutputSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SnowflakeOutputSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with SplunkSecretsConfig
@@ -968,7 +1148,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             SplunkSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for SplunkSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SplunkSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with SumologicSecretsConfig
@@ -976,11 +1156,11 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             SumologicSecretsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for SumologicSecretsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SumologicSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
 import org.openapitools.client.model.CommunityEditionSettingsConfig;
+import org.openapitools.client.model.GeolocusSettingsConfig;
+import org.openapitools.client.model.KvLookupSettingsConfig;
 
 
 
@@ -59,7 +61,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorEnrichmentConfigSettings.class.getName());
 
@@ -72,6 +74,8 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
             final TypeAdapter<CommunityEditionSettingsConfig> adapterCommunityEditionSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(CommunityEditionSettingsConfig.class));
+            final TypeAdapter<GeolocusSettingsConfig> adapterGeolocusSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(GeolocusSettingsConfig.class));
+            final TypeAdapter<KvLookupSettingsConfig> adapterKvLookupSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(KvLookupSettingsConfig.class));
             final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
             final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
 
@@ -89,13 +93,25 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
                         elementAdapter.write(out, element);
                         return;
                     }
+                    // check if the actual instance is of the type `GeolocusSettingsConfig`
+                    if (value.getActualInstance() instanceof GeolocusSettingsConfig) {
+                        JsonElement element = adapterGeolocusSettingsConfig.toJsonTree((GeolocusSettingsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `KvLookupSettingsConfig`
+                    if (value.getActualInstance() instanceof KvLookupSettingsConfig) {
+                        JsonElement element = adapterKvLookupSettingsConfig.toJsonTree((KvLookupSettingsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `Map<String, Object>`
                     if (value.getActualInstance() instanceof Map<?, ?>) {
                         JsonObject object = adapterMapStringObject.toJsonTree((Map<String, Object>)value.getActualInstance()).getAsJsonObject();
                         elementAdapter.write(out, object);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: CommunityEditionSettingsConfig, Map<String, Object>");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig, Map<String, Object>");
                 }
 
                 @Override
@@ -116,14 +132,38 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
                         log.log(Level.FINER, "Input data matches schema 'CommunityEditionSettingsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for CommunityEditionSettingsConfig failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CommunityEditionSettingsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'CommunityEditionSettingsConfig'", e);
+                    }
+                    // deserialize GeolocusSettingsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GeolocusSettingsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterGeolocusSettingsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GeolocusSettingsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for GeolocusSettingsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'GeolocusSettingsConfig'", e);
+                    }
+                    // deserialize KvLookupSettingsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        KvLookupSettingsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterKvLookupSettingsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'KvLookupSettingsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for KvLookupSettingsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'KvLookupSettingsConfig'", e);
                     }
                     // deserialize Map<String, Object>
                     try {
                         // validate the JSON object to see if any exception is thrown
                         if (!jsonElement.isJsonObject()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
+                            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
                         }
 
                         actualAdapter = adapterMapStringObject;
@@ -131,7 +171,7 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
                         log.log(Level.FINER, "Input data matches schema 'Map<String, Object>'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'Map<String, Object>'", e);
                     }
 
@@ -141,7 +181,7 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for SecretProcessesorEnrichmentConfigSettings: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(java.util.Locale.ROOT, "Failed deserialization for SecretProcessesorEnrichmentConfigSettings: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -161,6 +201,8 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
 
     static {
         schemas.put("CommunityEditionSettingsConfig", CommunityEditionSettingsConfig.class);
+        schemas.put("GeolocusSettingsConfig", GeolocusSettingsConfig.class);
+        schemas.put("KvLookupSettingsConfig", KvLookupSettingsConfig.class);
         schemas.put("Map<String, Object>", Map.class);
     }
 
@@ -172,7 +214,7 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * CommunityEditionSettingsConfig, Map<String, Object>
+     * CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig, Map<String, Object>
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -183,19 +225,29 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
             return;
         }
 
+        if (instance instanceof GeolocusSettingsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof KvLookupSettingsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof Map<?, ?>) {
             super.setActualInstance(instance);
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be CommunityEditionSettingsConfig, Map<String, Object>");
+        throw new RuntimeException("Invalid instance type. Must be CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig, Map<String, Object>");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * CommunityEditionSettingsConfig, Map<String, Object>
+     * CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig, Map<String, Object>
      *
-     * @return The actual instance (CommunityEditionSettingsConfig, Map<String, Object>)
+     * @return The actual instance (CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig, Map<String, Object>)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -212,6 +264,28 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
      */
     public CommunityEditionSettingsConfig getCommunityEditionSettingsConfig() throws ClassCastException {
         return (CommunityEditionSettingsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GeolocusSettingsConfig`. If the actual instance is not `GeolocusSettingsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GeolocusSettingsConfig`
+     * @throws ClassCastException if the instance is not `GeolocusSettingsConfig`
+     */
+    public GeolocusSettingsConfig getGeolocusSettingsConfig() throws ClassCastException {
+        return (GeolocusSettingsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `KvLookupSettingsConfig`. If the actual instance is not `KvLookupSettingsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `KvLookupSettingsConfig`
+     * @throws ClassCastException if the instance is not `KvLookupSettingsConfig`
+     */
+    public KvLookupSettingsConfig getKvLookupSettingsConfig() throws ClassCastException {
+        return (KvLookupSettingsConfig)super.getActualInstance();
     }
 
     /**
@@ -240,22 +314,38 @@ public class SecretProcessesorEnrichmentConfigSettings extends AbstractOpenApiSc
             CommunityEditionSettingsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for CommunityEditionSettingsConfig failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CommunityEditionSettingsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with GeolocusSettingsConfig
+        try {
+            GeolocusSettingsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for GeolocusSettingsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with KvLookupSettingsConfig
+        try {
+            KvLookupSettingsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for KvLookupSettingsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with Map<String, Object>
         try {
             if (!jsonElement.isJsonObject()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
+                throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
             }
 
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for SecretProcessesorEnrichmentConfigSettings with oneOf schemas: CommunityEditionSettingsConfig, Map<String, Object>. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorEnrichmentConfigSettings with oneOf schemas: CommunityEditionSettingsConfig, GeolocusSettingsConfig, KvLookupSettingsConfig, Map<String, Object>. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

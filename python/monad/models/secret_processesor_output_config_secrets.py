@@ -19,8 +19,11 @@ import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, Dict, List, Optional
 from monad.models.abs_secrets_config import AbsSecretsConfig
+from monad.models.axiom_secrets_config import AxiomSecretsConfig
+from monad.models.backblaze_secrets_config import BackblazeSecretsConfig
 from monad.models.bigquery_secrets_config import BigquerySecretsConfig
 from monad.models.cribl_http_secrets_config import CriblHttpSecretsConfig
+from monad.models.datadog_secrets_config import DatadogSecretsConfig
 from monad.models.elasticsearch_secrets_config import ElasticsearchSecretsConfig
 from monad.models.google_cloud_storage_output_secrets_config import GoogleCloudStorageOutputSecretsConfig
 from monad.models.http_secrets_config import HttpSecretsConfig
@@ -30,6 +33,7 @@ from monad.models.opensearch_secrets_config import OpensearchSecretsConfig
 from monad.models.pagerduty_secrets_config import PagerdutySecretsConfig
 from monad.models.panther_secrets_config import PantherSecretsConfig
 from monad.models.postgresql_secrets_config import PostgresqlSecretsConfig
+from monad.models.s3_secrets_config import S3SecretsConfig
 from monad.models.sentinel_secrets_config import SentinelSecretsConfig
 from monad.models.snowflake_output_secrets_config import SnowflakeOutputSecretsConfig
 from monad.models.splunk_secrets_config import SplunkSecretsConfig
@@ -38,7 +42,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-SECRETPROCESSESOROUTPUTCONFIGSECRETS_ONE_OF_SCHEMAS = ["AbsSecretsConfig", "BigquerySecretsConfig", "CriblHttpSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "GoogleCloudStorageOutputSecretsConfig", "HttpSecretsConfig", "NextGenSiemSecretsConfig", "ObjectStorageSecretsConfig", "OpensearchSecretsConfig", "PagerdutySecretsConfig", "PantherSecretsConfig", "PostgresqlSecretsConfig", "SentinelSecretsConfig", "SnowflakeOutputSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object"]
+SECRETPROCESSESOROUTPUTCONFIGSECRETS_ONE_OF_SCHEMAS = ["AbsSecretsConfig", "AxiomSecretsConfig", "BackblazeSecretsConfig", "BigquerySecretsConfig", "CriblHttpSecretsConfig", "DatadogSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "GoogleCloudStorageOutputSecretsConfig", "HttpSecretsConfig", "NextGenSiemSecretsConfig", "ObjectStorageSecretsConfig", "OpensearchSecretsConfig", "PagerdutySecretsConfig", "PantherSecretsConfig", "PostgresqlSecretsConfig", "S3SecretsConfig", "SentinelSecretsConfig", "SnowflakeOutputSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object"]
 
 class SecretProcessesorOutputConfigSecrets(BaseModel):
     """
@@ -46,46 +50,50 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
     """
     # data type: AbsSecretsConfig
     oneof_schema_1_validator: Optional[AbsSecretsConfig] = None
-    # data type: object
-    oneof_schema_2_validator: Optional[Dict[str, Any]] = Field(default=None, description="SQS Output Secrets")
+    # data type: AxiomSecretsConfig
+    oneof_schema_2_validator: Optional[AxiomSecretsConfig] = None
+    # data type: BackblazeSecretsConfig
+    oneof_schema_3_validator: Optional[BackblazeSecretsConfig] = None
     # data type: BigquerySecretsConfig
-    oneof_schema_3_validator: Optional[BigquerySecretsConfig] = None
+    oneof_schema_4_validator: Optional[BigquerySecretsConfig] = None
     # data type: CriblHttpSecretsConfig
-    oneof_schema_4_validator: Optional[CriblHttpSecretsConfig] = None
+    oneof_schema_5_validator: Optional[CriblHttpSecretsConfig] = None
+    # data type: DatadogSecretsConfig
+    oneof_schema_6_validator: Optional[DatadogSecretsConfig] = None
     # data type: ElasticsearchSecretsConfig
-    oneof_schema_5_validator: Optional[ElasticsearchSecretsConfig] = None
+    oneof_schema_7_validator: Optional[ElasticsearchSecretsConfig] = None
     # data type: GoogleCloudStorageOutputSecretsConfig
-    oneof_schema_6_validator: Optional[GoogleCloudStorageOutputSecretsConfig] = None
+    oneof_schema_8_validator: Optional[GoogleCloudStorageOutputSecretsConfig] = None
     # data type: HttpSecretsConfig
-    oneof_schema_7_validator: Optional[HttpSecretsConfig] = None
+    oneof_schema_9_validator: Optional[HttpSecretsConfig] = None
+    # data type: object
+    oneof_schema_10_validator: Optional[Dict[str, Any]] = Field(default=None, description="KV Lookup Output Secrets")
     # data type: Dict[str, object]
-    oneof_schema_8_validator: Optional[Dict[str, Any]] = None
+    oneof_schema_11_validator: Optional[Dict[str, Any]] = None
     # data type: NextGenSiemSecretsConfig
-    oneof_schema_9_validator: Optional[NextGenSiemSecretsConfig] = None
+    oneof_schema_12_validator: Optional[NextGenSiemSecretsConfig] = None
     # data type: ObjectStorageSecretsConfig
-    oneof_schema_10_validator: Optional[ObjectStorageSecretsConfig] = None
+    oneof_schema_13_validator: Optional[ObjectStorageSecretsConfig] = None
     # data type: OpensearchSecretsConfig
-    oneof_schema_11_validator: Optional[OpensearchSecretsConfig] = None
+    oneof_schema_14_validator: Optional[OpensearchSecretsConfig] = None
     # data type: PagerdutySecretsConfig
-    oneof_schema_12_validator: Optional[PagerdutySecretsConfig] = None
+    oneof_schema_15_validator: Optional[PagerdutySecretsConfig] = None
     # data type: PantherSecretsConfig
-    oneof_schema_13_validator: Optional[PantherSecretsConfig] = None
+    oneof_schema_16_validator: Optional[PantherSecretsConfig] = None
     # data type: PostgresqlSecretsConfig
-    oneof_schema_14_validator: Optional[PostgresqlSecretsConfig] = None
-    # data type: object
-    oneof_schema_15_validator: Optional[Dict[str, Any]] = Field(default=None, description="S3 Output Secrets")
-    # data type: object
-    oneof_schema_16_validator: Optional[Dict[str, Any]] = Field(default=None, description="Security Lake Output Secrets")
+    oneof_schema_17_validator: Optional[PostgresqlSecretsConfig] = None
+    # data type: S3SecretsConfig
+    oneof_schema_18_validator: Optional[S3SecretsConfig] = None
     # data type: SentinelSecretsConfig
-    oneof_schema_17_validator: Optional[SentinelSecretsConfig] = None
+    oneof_schema_19_validator: Optional[SentinelSecretsConfig] = None
     # data type: SnowflakeOutputSecretsConfig
-    oneof_schema_18_validator: Optional[SnowflakeOutputSecretsConfig] = None
+    oneof_schema_20_validator: Optional[SnowflakeOutputSecretsConfig] = None
     # data type: SplunkSecretsConfig
-    oneof_schema_19_validator: Optional[SplunkSecretsConfig] = None
+    oneof_schema_21_validator: Optional[SplunkSecretsConfig] = None
     # data type: SumologicSecretsConfig
-    oneof_schema_20_validator: Optional[SumologicSecretsConfig] = None
-    actual_instance: Optional[Union[AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]] = None
-    one_of_schemas: Set[str] = { "AbsSecretsConfig", "BigquerySecretsConfig", "CriblHttpSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "GoogleCloudStorageOutputSecretsConfig", "HttpSecretsConfig", "NextGenSiemSecretsConfig", "ObjectStorageSecretsConfig", "OpensearchSecretsConfig", "PagerdutySecretsConfig", "PantherSecretsConfig", "PostgresqlSecretsConfig", "SentinelSecretsConfig", "SnowflakeOutputSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object" }
+    oneof_schema_22_validator: Optional[SumologicSecretsConfig] = None
+    actual_instance: Optional[Union[AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]] = None
+    one_of_schemas: Set[str] = { "AbsSecretsConfig", "AxiomSecretsConfig", "BackblazeSecretsConfig", "BigquerySecretsConfig", "CriblHttpSecretsConfig", "DatadogSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "GoogleCloudStorageOutputSecretsConfig", "HttpSecretsConfig", "NextGenSiemSecretsConfig", "ObjectStorageSecretsConfig", "OpensearchSecretsConfig", "PagerdutySecretsConfig", "PantherSecretsConfig", "PostgresqlSecretsConfig", "S3SecretsConfig", "SentinelSecretsConfig", "SnowflakeOutputSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "object" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -113,12 +121,16 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `AbsSecretsConfig`")
         else:
             match += 1
-        # validate data type: object
-        try:
-            instance.oneof_schema_2_validator = v
+        # validate data type: AxiomSecretsConfig
+        if not isinstance(v, AxiomSecretsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `AxiomSecretsConfig`")
+        else:
             match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
+        # validate data type: BackblazeSecretsConfig
+        if not isinstance(v, BackblazeSecretsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `BackblazeSecretsConfig`")
+        else:
+            match += 1
         # validate data type: BigquerySecretsConfig
         if not isinstance(v, BigquerySecretsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `BigquerySecretsConfig`")
@@ -127,6 +139,11 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
         # validate data type: CriblHttpSecretsConfig
         if not isinstance(v, CriblHttpSecretsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `CriblHttpSecretsConfig`")
+        else:
+            match += 1
+        # validate data type: DatadogSecretsConfig
+        if not isinstance(v, DatadogSecretsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `DatadogSecretsConfig`")
         else:
             match += 1
         # validate data type: ElasticsearchSecretsConfig
@@ -144,9 +161,15 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `HttpSecretsConfig`")
         else:
             match += 1
+        # validate data type: object
+        try:
+            instance.oneof_schema_10_validator = v
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # validate data type: Dict[str, object]
         try:
-            instance.oneof_schema_8_validator = v
+            instance.oneof_schema_11_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -180,18 +203,11 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `PostgresqlSecretsConfig`")
         else:
             match += 1
-        # validate data type: object
-        try:
-            instance.oneof_schema_15_validator = v
+        # validate data type: S3SecretsConfig
+        if not isinstance(v, S3SecretsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `S3SecretsConfig`")
+        else:
             match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # validate data type: object
-        try:
-            instance.oneof_schema_16_validator = v
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
         # validate data type: SentinelSecretsConfig
         if not isinstance(v, SentinelSecretsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `SentinelSecretsConfig`")
@@ -214,10 +230,10 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -238,12 +254,15 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into object
+        # deserialize data into AxiomSecretsConfig
         try:
-            # validation
-            instance.oneof_schema_2_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_2_validator
+            instance.actual_instance = AxiomSecretsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into BackblazeSecretsConfig
+        try:
+            instance.actual_instance = BackblazeSecretsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -256,6 +275,12 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
         # deserialize data into CriblHttpSecretsConfig
         try:
             instance.actual_instance = CriblHttpSecretsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into DatadogSecretsConfig
+        try:
+            instance.actual_instance = DatadogSecretsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -277,12 +302,21 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into object
+        try:
+            # validation
+            instance.oneof_schema_10_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_10_validator
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into Dict[str, object]
         try:
             # validation
-            instance.oneof_schema_8_validator = json.loads(json_str)
+            instance.oneof_schema_11_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_8_validator
+            instance.actual_instance = instance.oneof_schema_11_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -322,21 +356,9 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into object
+        # deserialize data into S3SecretsConfig
         try:
-            # validation
-            instance.oneof_schema_15_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_15_validator
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # deserialize data into object
-        try:
-            # validation
-            instance.oneof_schema_16_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_16_validator
+            instance.actual_instance = S3SecretsConfig.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -367,10 +389,10 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -384,7 +406,7 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], AbsSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, SentinelSecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, object]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

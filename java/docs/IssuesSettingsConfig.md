@@ -8,6 +8,7 @@ Wiz Issues settings
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**backfillStartTime** | **String** | Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data. |  [optional] |
 |**controlIds** | **List&lt;String&gt;** | @Description Filter Issues created by specific control IDs |  [optional] |
 |**hasNote** | **String** | @Description Filter Issues with or without a note |  [optional] |
 |**hasRemediation** | **String** | @Description Filter Issues with or without remediation |  [optional] |

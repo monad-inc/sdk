@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * SecurityGroupsFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SecurityGroupsFilter {
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -172,7 +172,7 @@ public class SecurityGroupsFilter {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SecurityGroupsFilter.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SecurityGroupsFilter is not found in the empty JSON string", SecurityGroupsFilter.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SecurityGroupsFilter is not found in the empty JSON string", SecurityGroupsFilter.openapiRequiredFields.toString()));
         }
       }
 
@@ -180,16 +180,16 @@ public class SecurityGroupsFilter {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!SecurityGroupsFilter.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SecurityGroupsFilter` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SecurityGroupsFilter` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("Name") != null && !jsonObj.get("Name").isJsonNull()) && !jsonObj.get("Name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `Name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `Name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Name").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("Values") != null && !jsonObj.get("Values").isJsonNull() && !jsonObj.get("Values").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `Values` to be an array in the JSON string but got `%s`", jsonObj.get("Values").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `Values` to be an array in the JSON string but got `%s`", jsonObj.get("Values").toString()));
       }
   }
 

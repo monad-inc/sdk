@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * GreyNoise Community Edition settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class CommunityEditionSettingsConfig {
   public static final String SERIALIZED_NAME_DESTINATION_PATH = "destination_path";
   @SerializedName(SERIALIZED_NAME_DESTINATION_PATH)
@@ -60,10 +60,10 @@ public class CommunityEditionSettingsConfig {
   @javax.annotation.Nullable
   private Boolean errorOnRateLimit;
 
-  public static final String SERIALIZED_NAME_IP_FIELD_PATH = "ip_field_path";
-  @SerializedName(SERIALIZED_NAME_IP_FIELD_PATH)
+  public static final String SERIALIZED_NAME_IP_ADDRESS_PATH = "ip_address_path";
+  @SerializedName(SERIALIZED_NAME_IP_ADDRESS_PATH)
   @javax.annotation.Nullable
-  private String ipFieldPath;
+  private String ipAddressPath;
 
   public static final String SERIALIZED_NAME_NO_MATCH_RESPONSE = "no_match_response";
   @SerializedName(SERIALIZED_NAME_NO_MATCH_RESPONSE)
@@ -116,22 +116,22 @@ public class CommunityEditionSettingsConfig {
   }
 
 
-  public CommunityEditionSettingsConfig ipFieldPath(@javax.annotation.Nullable String ipFieldPath) {
-    this.ipFieldPath = ipFieldPath;
+  public CommunityEditionSettingsConfig ipAddressPath(@javax.annotation.Nullable String ipAddressPath) {
+    this.ipAddressPath = ipAddressPath;
     return this;
   }
 
   /**
-   * IPFieldPath is the path to the IP address field in the record
-   * @return ipFieldPath
+   * IPAddressPath is the path to a field containing an IP address to look up
+   * @return ipAddressPath
    */
   @javax.annotation.Nullable
-  public String getIpFieldPath() {
-    return ipFieldPath;
+  public String getIpAddressPath() {
+    return ipAddressPath;
   }
 
-  public void setIpFieldPath(@javax.annotation.Nullable String ipFieldPath) {
-    this.ipFieldPath = ipFieldPath;
+  public void setIpAddressPath(@javax.annotation.Nullable String ipAddressPath) {
+    this.ipAddressPath = ipAddressPath;
   }
 
 
@@ -185,14 +185,14 @@ public class CommunityEditionSettingsConfig {
     CommunityEditionSettingsConfig communityEditionSettingsConfig = (CommunityEditionSettingsConfig) o;
     return Objects.equals(this.destinationPath, communityEditionSettingsConfig.destinationPath) &&
         Objects.equals(this.errorOnRateLimit, communityEditionSettingsConfig.errorOnRateLimit) &&
-        Objects.equals(this.ipFieldPath, communityEditionSettingsConfig.ipFieldPath) &&
+        Objects.equals(this.ipAddressPath, communityEditionSettingsConfig.ipAddressPath) &&
         Objects.equals(this.noMatchResponse, communityEditionSettingsConfig.noMatchResponse) &&
         Objects.equals(this.rateLimitResponse, communityEditionSettingsConfig.rateLimitResponse);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(destinationPath, errorOnRateLimit, ipFieldPath, noMatchResponse, rateLimitResponse);
+    return Objects.hash(destinationPath, errorOnRateLimit, ipAddressPath, noMatchResponse, rateLimitResponse);
   }
 
   @Override
@@ -201,7 +201,7 @@ public class CommunityEditionSettingsConfig {
     sb.append("class CommunityEditionSettingsConfig {\n");
     sb.append("    destinationPath: ").append(toIndentedString(destinationPath)).append("\n");
     sb.append("    errorOnRateLimit: ").append(toIndentedString(errorOnRateLimit)).append("\n");
-    sb.append("    ipFieldPath: ").append(toIndentedString(ipFieldPath)).append("\n");
+    sb.append("    ipAddressPath: ").append(toIndentedString(ipAddressPath)).append("\n");
     sb.append("    noMatchResponse: ").append(toIndentedString(noMatchResponse)).append("\n");
     sb.append("    rateLimitResponse: ").append(toIndentedString(rateLimitResponse)).append("\n");
     sb.append("}");
@@ -225,7 +225,7 @@ public class CommunityEditionSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("destination_path", "error_on_rate_limit", "ip_field_path", "no_match_response", "rate_limit_response"));
+    openapiFields = new HashSet<String>(Arrays.asList("destination_path", "error_on_rate_limit", "ip_address_path", "no_match_response", "rate_limit_response"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -240,7 +240,7 @@ public class CommunityEditionSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CommunityEditionSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CommunityEditionSettingsConfig is not found in the empty JSON string", CommunityEditionSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in CommunityEditionSettingsConfig is not found in the empty JSON string", CommunityEditionSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -248,21 +248,21 @@ public class CommunityEditionSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!CommunityEditionSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CommunityEditionSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `CommunityEditionSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("destination_path") != null && !jsonObj.get("destination_path").isJsonNull()) && !jsonObj.get("destination_path").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `destination_path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("destination_path").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `destination_path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("destination_path").toString()));
       }
-      if ((jsonObj.get("ip_field_path") != null && !jsonObj.get("ip_field_path").isJsonNull()) && !jsonObj.get("ip_field_path").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ip_field_path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ip_field_path").toString()));
+      if ((jsonObj.get("ip_address_path") != null && !jsonObj.get("ip_address_path").isJsonNull()) && !jsonObj.get("ip_address_path").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `ip_address_path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ip_address_path").toString()));
       }
       if ((jsonObj.get("no_match_response") != null && !jsonObj.get("no_match_response").isJsonNull()) && !jsonObj.get("no_match_response").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `no_match_response` to be a primitive type in the JSON string but got `%s`", jsonObj.get("no_match_response").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `no_match_response` to be a primitive type in the JSON string but got `%s`", jsonObj.get("no_match_response").toString()));
       }
       if ((jsonObj.get("rate_limit_response") != null && !jsonObj.get("rate_limit_response").isJsonNull()) && !jsonObj.get("rate_limit_response").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `rate_limit_response` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rate_limit_response").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rate_limit_response` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rate_limit_response").toString()));
       }
   }
 

@@ -15,6 +15,7 @@ import { HttpFile } from '../http/http';
 
 export class ModelsPipelineNode {
     'component'?: ModelsNodeComponent;
+    'componentHouse'?: string;
     'componentId'?: string;
     'componentSubType'?: string;
     'componentType'?: string;
@@ -34,6 +35,12 @@ export class ModelsPipelineNode {
             "name": "component",
             "baseName": "component",
             "type": "ModelsNodeComponent",
+            "format": ""
+        },
+        {
+            "name": "componentHouse",
+            "baseName": "component_house",
+            "type": "string",
             "format": ""
         },
         {

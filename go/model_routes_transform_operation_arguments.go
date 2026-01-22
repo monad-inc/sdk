@@ -20,6 +20,7 @@ import (
 // RoutesTransformOperationArguments - struct for RoutesTransformOperationArguments
 type RoutesTransformOperationArguments struct {
 	AddAdd *AddAdd
+	AddIdAddIdentifier *AddIdAddIdentifier
 	CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
 	DropKeyDropKey *DropKeyDropKey
 	DropKeyWhereValueEqDropKeyWhereValueEq *DropKeyWhereValueEqDropKeyWhereValueEq
@@ -42,6 +43,13 @@ type RoutesTransformOperationArguments struct {
 func AddAddAsRoutesTransformOperationArguments(v *AddAdd) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
 		AddAdd: v,
+	}
+}
+
+// AddIdAddIdentifierAsRoutesTransformOperationArguments is a convenience function that returns AddIdAddIdentifier wrapped in RoutesTransformOperationArguments
+func AddIdAddIdentifierAsRoutesTransformOperationArguments(v *AddIdAddIdentifier) RoutesTransformOperationArguments {
+	return RoutesTransformOperationArguments{
+		AddIdAddIdentifier: v,
 	}
 }
 
@@ -177,6 +185,23 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AddAdd = nil
+	}
+
+	// try to unmarshal data into AddIdAddIdentifier
+	err = newStrictDecoder(data).Decode(&dst.AddIdAddIdentifier)
+	if err == nil {
+		jsonAddIdAddIdentifier, _ := json.Marshal(dst.AddIdAddIdentifier)
+		if string(jsonAddIdAddIdentifier) == "{}" { // empty struct
+			dst.AddIdAddIdentifier = nil
+		} else {
+			if err = validator.Validate(dst.AddIdAddIdentifier); err != nil {
+				dst.AddIdAddIdentifier = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AddIdAddIdentifier = nil
 	}
 
 	// try to unmarshal data into CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
@@ -454,6 +479,7 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AddAdd = nil
+		dst.AddIdAddIdentifier = nil
 		dst.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue = nil
 		dst.DropKeyDropKey = nil
 		dst.DropKeyWhereValueEqDropKeyWhereValueEq = nil
@@ -483,6 +509,10 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 func (src RoutesTransformOperationArguments) MarshalJSON() ([]byte, error) {
 	if src.AddAdd != nil {
 		return json.Marshal(&src.AddAdd)
+	}
+
+	if src.AddIdAddIdentifier != nil {
+		return json.Marshal(&src.AddIdAddIdentifier)
 	}
 
 	if src.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue != nil {
@@ -561,6 +591,10 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 		return obj.AddAdd
 	}
 
+	if obj.AddIdAddIdentifier != nil {
+		return obj.AddIdAddIdentifier
+	}
+
 	if obj.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue != nil {
 		return obj.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
 	}
@@ -633,6 +667,10 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 func (obj RoutesTransformOperationArguments) GetActualInstanceValue() (interface{}) {
 	if obj.AddAdd != nil {
 		return *obj.AddAdd
+	}
+
+	if obj.AddIdAddIdentifier != nil {
+		return *obj.AddIdAddIdentifier
 	}
 
 	if obj.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue != nil {

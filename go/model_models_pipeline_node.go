@@ -21,6 +21,7 @@ var _ MappedNullable = &ModelsPipelineNode{}
 // ModelsPipelineNode struct for ModelsPipelineNode
 type ModelsPipelineNode struct {
 	Component *ModelsNodeComponent `json:"component,omitempty"`
+	ComponentHouse *string `json:"component_house,omitempty"`
 	ComponentId *string `json:"component_id,omitempty"`
 	ComponentSubType *string `json:"component_sub_type,omitempty"`
 	ComponentType *string `json:"component_type,omitempty"`
@@ -79,6 +80,38 @@ func (o *ModelsPipelineNode) HasComponent() bool {
 // SetComponent gets a reference to the given ModelsNodeComponent and assigns it to the Component field.
 func (o *ModelsPipelineNode) SetComponent(v ModelsNodeComponent) {
 	o.Component = &v
+}
+
+// GetComponentHouse returns the ComponentHouse field value if set, zero value otherwise.
+func (o *ModelsPipelineNode) GetComponentHouse() string {
+	if o == nil || IsNil(o.ComponentHouse) {
+		var ret string
+		return ret
+	}
+	return *o.ComponentHouse
+}
+
+// GetComponentHouseOk returns a tuple with the ComponentHouse field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineNode) GetComponentHouseOk() (*string, bool) {
+	if o == nil || IsNil(o.ComponentHouse) {
+		return nil, false
+	}
+	return o.ComponentHouse, true
+}
+
+// HasComponentHouse returns a boolean if a field has been set.
+func (o *ModelsPipelineNode) HasComponentHouse() bool {
+	if o != nil && !IsNil(o.ComponentHouse) {
+		return true
+	}
+
+	return false
+}
+
+// SetComponentHouse gets a reference to the given string and assigns it to the ComponentHouse field.
+func (o *ModelsPipelineNode) SetComponentHouse(v string) {
+	o.ComponentHouse = &v
 }
 
 // GetComponentId returns the ComponentId field value if set, zero value otherwise.
@@ -381,6 +414,9 @@ func (o ModelsPipelineNode) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Component) {
 		toSerialize["component"] = o.Component
+	}
+	if !IsNil(o.ComponentHouse) {
+		toSerialize["component_house"] = o.ComponentHouse
 	}
 	if !IsNil(o.ComponentId) {
 		toSerialize["component_id"] = o.ComponentId

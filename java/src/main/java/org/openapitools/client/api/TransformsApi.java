@@ -140,7 +140,7 @@ public class TransformsApi {
      * List transforms
      * List transforms
      * @param body  (optional)
-     * @return OperationInformation
+     * @return List&lt;OperationInformation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -149,8 +149,8 @@ public class TransformsApi {
         <tr><td> 200 </td><td> Operation information </td><td>  -  </td></tr>
      </table>
      */
-    public OperationInformation v1TransformsGet(@javax.annotation.Nullable Object body) throws ApiException {
-        ApiResponse<OperationInformation> localVarResp = v1TransformsGetWithHttpInfo(body);
+    public List<OperationInformation> v1TransformsGet(@javax.annotation.Nullable Object body) throws ApiException {
+        ApiResponse<List<OperationInformation>> localVarResp = v1TransformsGetWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -158,7 +158,7 @@ public class TransformsApi {
      * List transforms
      * List transforms
      * @param body  (optional)
-     * @return ApiResponse&lt;OperationInformation&gt;
+     * @return ApiResponse&lt;List&lt;OperationInformation&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -167,9 +167,9 @@ public class TransformsApi {
         <tr><td> 200 </td><td> Operation information </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OperationInformation> v1TransformsGetWithHttpInfo(@javax.annotation.Nullable Object body) throws ApiException {
+    public ApiResponse<List<OperationInformation>> v1TransformsGetWithHttpInfo(@javax.annotation.Nullable Object body) throws ApiException {
         okhttp3.Call localVarCall = v1TransformsGetValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<OperationInformation>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OperationInformation>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -187,10 +187,10 @@ public class TransformsApi {
         <tr><td> 200 </td><td> Operation information </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1TransformsGetAsync(@javax.annotation.Nullable Object body, final ApiCallback<OperationInformation> _callback) throws ApiException {
+    public okhttp3.Call v1TransformsGetAsync(@javax.annotation.Nullable Object body, final ApiCallback<List<OperationInformation>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1TransformsGetValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<OperationInformation>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OperationInformation>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

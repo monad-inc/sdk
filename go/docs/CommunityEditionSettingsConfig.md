@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DestinationPath** | Pointer to **string** | DestinationPath is the path where the GreyNoise data will be stored | [optional] 
 **ErrorOnRateLimit** | Pointer to **bool** | ErrorOnRateLimit determines if rate limiting should cause an error (true) or return custom response (false) | [optional] 
-**IpFieldPath** | Pointer to **string** | IPFieldPath is the path to the IP address field in the record | [optional] 
+**IpAddressPath** | Pointer to **string** | IPAddressPath is the path to a field containing an IP address to look up | [optional] 
 **NoMatchResponse** | Pointer to **string** | NoMatchResponse is the value to add when no match is found | [optional] 
 **RateLimitResponse** | Pointer to **string** | RateLimitResponse is the value to add when rate limited | [optional] 
 
@@ -79,30 +79,30 @@ SetErrorOnRateLimit sets ErrorOnRateLimit field to given value.
 
 HasErrorOnRateLimit returns a boolean if a field has been set.
 
-### GetIpFieldPath
+### GetIpAddressPath
 
-`func (o *CommunityEditionSettingsConfig) GetIpFieldPath() string`
+`func (o *CommunityEditionSettingsConfig) GetIpAddressPath() string`
 
-GetIpFieldPath returns the IpFieldPath field if non-nil, zero value otherwise.
+GetIpAddressPath returns the IpAddressPath field if non-nil, zero value otherwise.
 
-### GetIpFieldPathOk
+### GetIpAddressPathOk
 
-`func (o *CommunityEditionSettingsConfig) GetIpFieldPathOk() (*string, bool)`
+`func (o *CommunityEditionSettingsConfig) GetIpAddressPathOk() (*string, bool)`
 
-GetIpFieldPathOk returns a tuple with the IpFieldPath field if it's non-nil, zero value otherwise
+GetIpAddressPathOk returns a tuple with the IpAddressPath field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIpFieldPath
+### SetIpAddressPath
 
-`func (o *CommunityEditionSettingsConfig) SetIpFieldPath(v string)`
+`func (o *CommunityEditionSettingsConfig) SetIpAddressPath(v string)`
 
-SetIpFieldPath sets IpFieldPath field to given value.
+SetIpAddressPath sets IpAddressPath field to given value.
 
-### HasIpFieldPath
+### HasIpAddressPath
 
-`func (o *CommunityEditionSettingsConfig) HasIpFieldPath() bool`
+`func (o *CommunityEditionSettingsConfig) HasIpAddressPath() bool`
 
-HasIpFieldPath returns a boolean if a field has been set.
+HasIpAddressPath returns a boolean if a field has been set.
 
 ### GetNoMatchResponse
 

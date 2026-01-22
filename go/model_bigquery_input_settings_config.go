@@ -20,8 +20,6 @@ var _ MappedNullable = &BigqueryInputSettingsConfig{}
 
 // BigqueryInputSettingsConfig BigQuery Input Settings
 type BigqueryInputSettingsConfig struct {
-	// Cron string for scheduling the ingest of your input
-	Cron *string `json:"cron,omitempty"`
 	// The BigQuery dataset ID containing the table
 	Dataset *string `json:"dataset,omitempty"`
 	// The GCP project ID containing the BigQuery dataset
@@ -49,38 +47,6 @@ func NewBigqueryInputSettingsConfig() *BigqueryInputSettingsConfig {
 func NewBigqueryInputSettingsConfigWithDefaults() *BigqueryInputSettingsConfig {
 	this := BigqueryInputSettingsConfig{}
 	return &this
-}
-
-// GetCron returns the Cron field value if set, zero value otherwise.
-func (o *BigqueryInputSettingsConfig) GetCron() string {
-	if o == nil || IsNil(o.Cron) {
-		var ret string
-		return ret
-	}
-	return *o.Cron
-}
-
-// GetCronOk returns a tuple with the Cron field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BigqueryInputSettingsConfig) GetCronOk() (*string, bool) {
-	if o == nil || IsNil(o.Cron) {
-		return nil, false
-	}
-	return o.Cron, true
-}
-
-// HasCron returns a boolean if a field has been set.
-func (o *BigqueryInputSettingsConfig) HasCron() bool {
-	if o != nil && !IsNil(o.Cron) {
-		return true
-	}
-
-	return false
-}
-
-// SetCron gets a reference to the given string and assigns it to the Cron field.
-func (o *BigqueryInputSettingsConfig) SetCron(v string) {
-	o.Cron = &v
 }
 
 // GetDataset returns the Dataset field value if set, zero value otherwise.
@@ -253,9 +219,6 @@ func (o BigqueryInputSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o BigqueryInputSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Cron) {
-		toSerialize["cron"] = o.Cron
-	}
 	if !IsNil(o.Dataset) {
 		toSerialize["dataset"] = o.Dataset
 	}

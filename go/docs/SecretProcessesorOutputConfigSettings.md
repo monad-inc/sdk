@@ -17,11 +17,17 @@ Name | Type | Description | Notes
 **Region** | Pointer to **string** | The AWS region where the S3 bucket is located | [optional] 
 **RoleArn** | Pointer to **string** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
 **Dataset** | Pointer to **string** | The name of the BigQuery dataset where the table resides | [optional] 
+**Bucket** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
 **ProjectId** | Pointer to **string** | The Google Cloud Project ID where the BigQuery instance is located | [optional] 
 **Table** | Pointer to **string** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | [optional] 
 **IngressAddress** | Pointer to **string** | Your group&#39;s ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible. | [optional] 
 **Path** | Pointer to **string** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. | [optional] 
 **Port** | Pointer to **string** | The port of the Splunk instance. | [optional] 
+**Ddsource** | Pointer to **string** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. | [optional] 
+**Ddtags** | Pointer to **[]string** | Tags associated with your logs. | [optional] 
+**DomainUrl** | Pointer to **string** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs | [optional] 
+**Hostname** | Pointer to **string** | The name of the originating host of the log. | [optional] 
+**Service** | Pointer to **string** | The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. | [optional] 
 **AuthType** | Pointer to **string** |  | [optional] 
 **CloudId** | Pointer to **string** | The Cloud ID for connecting to an Elastic Cloud deployment. Required when connection_type is set to &#39;cloud_id&#39;. | [optional] 
 **ConnectionType** | Pointer to **string** | The type of connection to use with Elasticsearch. Choose between &#39;cloud_id&#39; for Elastic Cloud or &#39;url&#39; for direct connection. | [optional] 
@@ -29,7 +35,6 @@ Name | Type | Description | Notes
 **InsecureSkipVerify** | Pointer to **bool** | Whether to skip TLS certificate verification (not recommended for production). | [optional] 
 **Url** | Pointer to **string** | The URL of the Sumo Logic instance. | [optional] 
 **Username** | Pointer to **string** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. | [optional] 
-**Bucket** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
 **Format** | Pointer to [**FormatterFormatConfig**](FormatterFormatConfig.md) |  | [optional] 
 **Endpoint** | Pointer to **string** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | [optional] 
 **Headers** | Pointer to [**[]HttpHeaders**](HttpHeaders.md) | Non secret headers | [optional] 
@@ -40,6 +45,9 @@ Name | Type | Description | Notes
 **RateLimit** | Pointer to **int32** | Maximum number of requests per second to send to the endpoint. | [optional] 
 **TlsSkipVerify** | Pointer to **bool** | Skip TLS verification. | [optional] 
 **WrapperKey** | Pointer to **string** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. | [optional] 
+**KeyField** | Pointer to **string** | The field in the incoming record to use as the key | [optional] 
+**Ttl** | Pointer to **int32** | Time-to-live in hours for stored key-value pairs (0 means no expiration) | [optional] 
+**ValueField** | Pointer to **string** | The field in the incoming record to use as the value | [optional] 
 **SkipSslVerification** | Pointer to **bool** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) | [optional] 
 **UsePathStyle** | Pointer to **bool** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. | [optional] 
 **AuthMode** | Pointer to **string** | The authentication mode (basic, aws_role) | [optional] 
@@ -66,6 +74,7 @@ Name | Type | Description | Notes
 **Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
 **AllowInsecure** | Pointer to **bool** | Whether to allow insecure connections (not recommended for production). | [optional] 
 **ToCreate** | Pointer to **bool** | Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
+**SourceMetadata** | Pointer to [**SumologicSourceMetadata**](SumologicSourceMetadata.md) |  | [optional] 
 
 ## Methods
 
@@ -411,6 +420,31 @@ SetDataset sets Dataset field to given value.
 
 HasDataset returns a boolean if a field has been set.
 
+### GetBucket
+
+`func (o *SecretProcessesorOutputConfigSettings) GetBucket() string`
+
+GetBucket returns the Bucket field if non-nil, zero value otherwise.
+
+### GetBucketOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetBucketOk() (*string, bool)`
+
+GetBucketOk returns a tuple with the Bucket field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBucket
+
+`func (o *SecretProcessesorOutputConfigSettings) SetBucket(v string)`
+
+SetBucket sets Bucket field to given value.
+
+### HasBucket
+
+`func (o *SecretProcessesorOutputConfigSettings) HasBucket() bool`
+
+HasBucket returns a boolean if a field has been set.
+
 ### GetProjectId
 
 `func (o *SecretProcessesorOutputConfigSettings) GetProjectId() string`
@@ -535,6 +569,131 @@ SetPort sets Port field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasPort() bool`
 
 HasPort returns a boolean if a field has been set.
+
+### GetDdsource
+
+`func (o *SecretProcessesorOutputConfigSettings) GetDdsource() string`
+
+GetDdsource returns the Ddsource field if non-nil, zero value otherwise.
+
+### GetDdsourceOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetDdsourceOk() (*string, bool)`
+
+GetDdsourceOk returns a tuple with the Ddsource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdsource
+
+`func (o *SecretProcessesorOutputConfigSettings) SetDdsource(v string)`
+
+SetDdsource sets Ddsource field to given value.
+
+### HasDdsource
+
+`func (o *SecretProcessesorOutputConfigSettings) HasDdsource() bool`
+
+HasDdsource returns a boolean if a field has been set.
+
+### GetDdtags
+
+`func (o *SecretProcessesorOutputConfigSettings) GetDdtags() []string`
+
+GetDdtags returns the Ddtags field if non-nil, zero value otherwise.
+
+### GetDdtagsOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetDdtagsOk() (*[]string, bool)`
+
+GetDdtagsOk returns a tuple with the Ddtags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdtags
+
+`func (o *SecretProcessesorOutputConfigSettings) SetDdtags(v []string)`
+
+SetDdtags sets Ddtags field to given value.
+
+### HasDdtags
+
+`func (o *SecretProcessesorOutputConfigSettings) HasDdtags() bool`
+
+HasDdtags returns a boolean if a field has been set.
+
+### GetDomainUrl
+
+`func (o *SecretProcessesorOutputConfigSettings) GetDomainUrl() string`
+
+GetDomainUrl returns the DomainUrl field if non-nil, zero value otherwise.
+
+### GetDomainUrlOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetDomainUrlOk() (*string, bool)`
+
+GetDomainUrlOk returns a tuple with the DomainUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDomainUrl
+
+`func (o *SecretProcessesorOutputConfigSettings) SetDomainUrl(v string)`
+
+SetDomainUrl sets DomainUrl field to given value.
+
+### HasDomainUrl
+
+`func (o *SecretProcessesorOutputConfigSettings) HasDomainUrl() bool`
+
+HasDomainUrl returns a boolean if a field has been set.
+
+### GetHostname
+
+`func (o *SecretProcessesorOutputConfigSettings) GetHostname() string`
+
+GetHostname returns the Hostname field if non-nil, zero value otherwise.
+
+### GetHostnameOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetHostnameOk() (*string, bool)`
+
+GetHostnameOk returns a tuple with the Hostname field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHostname
+
+`func (o *SecretProcessesorOutputConfigSettings) SetHostname(v string)`
+
+SetHostname sets Hostname field to given value.
+
+### HasHostname
+
+`func (o *SecretProcessesorOutputConfigSettings) HasHostname() bool`
+
+HasHostname returns a boolean if a field has been set.
+
+### GetService
+
+`func (o *SecretProcessesorOutputConfigSettings) GetService() string`
+
+GetService returns the Service field if non-nil, zero value otherwise.
+
+### GetServiceOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetServiceOk() (*string, bool)`
+
+GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetService
+
+`func (o *SecretProcessesorOutputConfigSettings) SetService(v string)`
+
+SetService sets Service field to given value.
+
+### HasService
+
+`func (o *SecretProcessesorOutputConfigSettings) HasService() bool`
+
+HasService returns a boolean if a field has been set.
 
 ### GetAuthType
 
@@ -710,31 +869,6 @@ SetUsername sets Username field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasUsername() bool`
 
 HasUsername returns a boolean if a field has been set.
-
-### GetBucket
-
-`func (o *SecretProcessesorOutputConfigSettings) GetBucket() string`
-
-GetBucket returns the Bucket field if non-nil, zero value otherwise.
-
-### GetBucketOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetBucketOk() (*string, bool)`
-
-GetBucketOk returns a tuple with the Bucket field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBucket
-
-`func (o *SecretProcessesorOutputConfigSettings) SetBucket(v string)`
-
-SetBucket sets Bucket field to given value.
-
-### HasBucket
-
-`func (o *SecretProcessesorOutputConfigSettings) HasBucket() bool`
-
-HasBucket returns a boolean if a field has been set.
 
 ### GetFormat
 
@@ -985,6 +1119,81 @@ SetWrapperKey sets WrapperKey field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasWrapperKey() bool`
 
 HasWrapperKey returns a boolean if a field has been set.
+
+### GetKeyField
+
+`func (o *SecretProcessesorOutputConfigSettings) GetKeyField() string`
+
+GetKeyField returns the KeyField field if non-nil, zero value otherwise.
+
+### GetKeyFieldOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetKeyFieldOk() (*string, bool)`
+
+GetKeyFieldOk returns a tuple with the KeyField field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeyField
+
+`func (o *SecretProcessesorOutputConfigSettings) SetKeyField(v string)`
+
+SetKeyField sets KeyField field to given value.
+
+### HasKeyField
+
+`func (o *SecretProcessesorOutputConfigSettings) HasKeyField() bool`
+
+HasKeyField returns a boolean if a field has been set.
+
+### GetTtl
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTtl() int32`
+
+GetTtl returns the Ttl field if non-nil, zero value otherwise.
+
+### GetTtlOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTtlOk() (*int32, bool)`
+
+GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTtl
+
+`func (o *SecretProcessesorOutputConfigSettings) SetTtl(v int32)`
+
+SetTtl sets Ttl field to given value.
+
+### HasTtl
+
+`func (o *SecretProcessesorOutputConfigSettings) HasTtl() bool`
+
+HasTtl returns a boolean if a field has been set.
+
+### GetValueField
+
+`func (o *SecretProcessesorOutputConfigSettings) GetValueField() string`
+
+GetValueField returns the ValueField field if non-nil, zero value otherwise.
+
+### GetValueFieldOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetValueFieldOk() (*string, bool)`
+
+GetValueFieldOk returns a tuple with the ValueField field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValueField
+
+`func (o *SecretProcessesorOutputConfigSettings) SetValueField(v string)`
+
+SetValueField sets ValueField field to given value.
+
+### HasValueField
+
+`func (o *SecretProcessesorOutputConfigSettings) HasValueField() bool`
+
+HasValueField returns a boolean if a field has been set.
 
 ### GetSkipSslVerification
 
@@ -1635,6 +1844,31 @@ SetToCreate sets ToCreate field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasToCreate() bool`
 
 HasToCreate returns a boolean if a field has been set.
+
+### GetSourceMetadata
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSourceMetadata() SumologicSourceMetadata`
+
+GetSourceMetadata returns the SourceMetadata field if non-nil, zero value otherwise.
+
+### GetSourceMetadataOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSourceMetadataOk() (*SumologicSourceMetadata, bool)`
+
+GetSourceMetadataOk returns a tuple with the SourceMetadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceMetadata
+
+`func (o *SecretProcessesorOutputConfigSettings) SetSourceMetadata(v SumologicSourceMetadata)`
+
+SetSourceMetadata sets SourceMetadata field to given value.
+
+### HasSourceMetadata
+
+`func (o *SecretProcessesorOutputConfigSettings) HasSourceMetadata() bool`
+
+HasSourceMetadata returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

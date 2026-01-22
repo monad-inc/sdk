@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **arguments** | [**RoutesTransformOperationArguments**](RoutesTransformOperationArguments.md) |  | [optional] 
+**description** | **str** |  | [optional] 
 **operation** | **str** |  | [optional] 
 
 ## Example

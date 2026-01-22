@@ -17,6 +17,7 @@ export class ModelsConnection {
     'description'?: string;
     'id'?: string;
     'name'?: string;
+    'organizationId'?: string;
     'samlEntityId'?: string;
     'samlMetadataUrl'?: string;
     'type'?: string;
@@ -48,6 +49,12 @@ export class ModelsConnection {
         {
             "name": "name",
             "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "organizationId",
+            "baseName": "organization_id",
             "type": "string",
             "format": ""
         },

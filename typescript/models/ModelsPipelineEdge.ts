@@ -17,6 +17,7 @@ export class ModelsPipelineEdge {
     'conditions'?: ModelsPipelineEdgeConditions;
     'createdAt'?: string;
     'description'?: string;
+    'disabled'?: boolean;
     'fromNodeInstanceId'?: string;
     'id'?: string;
     'name'?: string;
@@ -45,6 +46,12 @@ export class ModelsPipelineEdge {
             "name": "description",
             "baseName": "description",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "disabled",
+            "baseName": "disabled",
+            "type": "boolean",
             "format": ""
         },
         {

@@ -14,7 +14,6 @@ import { HttpFile } from '../http/http';
 
 export class ModelsPipelineRetentionPolicy {
     'streamAgeLimit'?: number;
-    'streamReplicas'?: number;
     'streamSizeLimit'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -25,12 +24,6 @@ export class ModelsPipelineRetentionPolicy {
         {
             "name": "streamAgeLimit",
             "baseName": "stream_age_limit",
-            "type": "number",
-            "format": ""
-        },
-        {
-            "name": "streamReplicas",
-            "baseName": "stream_replicas",
             "type": "number",
             "format": ""
         },

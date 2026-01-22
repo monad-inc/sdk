@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -50,8 +51,23 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2ApplyTransformationResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV2ApplyTransformationResponse {
+  public static final String SERIALIZED_NAME_BYTES_AFTER = "bytes_after";
+  @SerializedName(SERIALIZED_NAME_BYTES_AFTER)
+  @javax.annotation.Nullable
+  private Integer bytesAfter;
+
+  public static final String SERIALIZED_NAME_BYTES_BEFORE = "bytes_before";
+  @SerializedName(SERIALIZED_NAME_BYTES_BEFORE)
+  @javax.annotation.Nullable
+  private Integer bytesBefore;
+
+  public static final String SERIALIZED_NAME_PERCENTAGE_CHANGE = "percentage_change";
+  @SerializedName(SERIALIZED_NAME_PERCENTAGE_CHANGE)
+  @javax.annotation.Nullable
+  private BigDecimal percentageChange;
+
   public static final String SERIALIZED_NAME_RECORDS = "records";
   @SerializedName(SERIALIZED_NAME_RECORDS)
   @javax.annotation.Nullable
@@ -59,6 +75,63 @@ public class RoutesV2ApplyTransformationResponse {
 
   public RoutesV2ApplyTransformationResponse() {
   }
+
+  public RoutesV2ApplyTransformationResponse bytesAfter(@javax.annotation.Nullable Integer bytesAfter) {
+    this.bytesAfter = bytesAfter;
+    return this;
+  }
+
+  /**
+   * Get bytesAfter
+   * @return bytesAfter
+   */
+  @javax.annotation.Nullable
+  public Integer getBytesAfter() {
+    return bytesAfter;
+  }
+
+  public void setBytesAfter(@javax.annotation.Nullable Integer bytesAfter) {
+    this.bytesAfter = bytesAfter;
+  }
+
+
+  public RoutesV2ApplyTransformationResponse bytesBefore(@javax.annotation.Nullable Integer bytesBefore) {
+    this.bytesBefore = bytesBefore;
+    return this;
+  }
+
+  /**
+   * Get bytesBefore
+   * @return bytesBefore
+   */
+  @javax.annotation.Nullable
+  public Integer getBytesBefore() {
+    return bytesBefore;
+  }
+
+  public void setBytesBefore(@javax.annotation.Nullable Integer bytesBefore) {
+    this.bytesBefore = bytesBefore;
+  }
+
+
+  public RoutesV2ApplyTransformationResponse percentageChange(@javax.annotation.Nullable BigDecimal percentageChange) {
+    this.percentageChange = percentageChange;
+    return this;
+  }
+
+  /**
+   * Get percentageChange
+   * @return percentageChange
+   */
+  @javax.annotation.Nullable
+  public BigDecimal getPercentageChange() {
+    return percentageChange;
+  }
+
+  public void setPercentageChange(@javax.annotation.Nullable BigDecimal percentageChange) {
+    this.percentageChange = percentageChange;
+  }
+
 
   public RoutesV2ApplyTransformationResponse records(@javax.annotation.Nullable List<List<Integer>> records) {
     this.records = records;
@@ -97,18 +170,24 @@ public class RoutesV2ApplyTransformationResponse {
       return false;
     }
     RoutesV2ApplyTransformationResponse routesV2ApplyTransformationResponse = (RoutesV2ApplyTransformationResponse) o;
-    return Objects.equals(this.records, routesV2ApplyTransformationResponse.records);
+    return Objects.equals(this.bytesAfter, routesV2ApplyTransformationResponse.bytesAfter) &&
+        Objects.equals(this.bytesBefore, routesV2ApplyTransformationResponse.bytesBefore) &&
+        Objects.equals(this.percentageChange, routesV2ApplyTransformationResponse.percentageChange) &&
+        Objects.equals(this.records, routesV2ApplyTransformationResponse.records);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(records);
+    return Objects.hash(bytesAfter, bytesBefore, percentageChange, records);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV2ApplyTransformationResponse {\n");
+    sb.append("    bytesAfter: ").append(toIndentedString(bytesAfter)).append("\n");
+    sb.append("    bytesBefore: ").append(toIndentedString(bytesBefore)).append("\n");
+    sb.append("    percentageChange: ").append(toIndentedString(percentageChange)).append("\n");
     sb.append("    records: ").append(toIndentedString(records)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -131,7 +210,7 @@ public class RoutesV2ApplyTransformationResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("records"));
+    openapiFields = new HashSet<String>(Arrays.asList("bytes_after", "bytes_before", "percentage_change", "records"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -146,7 +225,7 @@ public class RoutesV2ApplyTransformationResponse {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RoutesV2ApplyTransformationResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RoutesV2ApplyTransformationResponse is not found in the empty JSON string", RoutesV2ApplyTransformationResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV2ApplyTransformationResponse is not found in the empty JSON string", RoutesV2ApplyTransformationResponse.openapiRequiredFields.toString()));
         }
       }
 
@@ -154,13 +233,13 @@ public class RoutesV2ApplyTransformationResponse {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!RoutesV2ApplyTransformationResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RoutesV2ApplyTransformationResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV2ApplyTransformationResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("records") != null && !jsonObj.get("records").isJsonNull() && !jsonObj.get("records").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `records` to be an array in the JSON string but got `%s`", jsonObj.get("records").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `records` to be an array in the JSON string but got `%s`", jsonObj.get("records").toString()));
       }
   }
 

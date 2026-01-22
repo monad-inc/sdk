@@ -24,8 +24,8 @@ type CommunityEditionSettingsConfig struct {
 	DestinationPath *string `json:"destination_path,omitempty"`
 	// ErrorOnRateLimit determines if rate limiting should cause an error (true) or return custom response (false)
 	ErrorOnRateLimit *bool `json:"error_on_rate_limit,omitempty"`
-	// IPFieldPath is the path to the IP address field in the record
-	IpFieldPath *string `json:"ip_field_path,omitempty"`
+	// IPAddressPath is the path to a field containing an IP address to look up
+	IpAddressPath *string `json:"ip_address_path,omitempty"`
 	// NoMatchResponse is the value to add when no match is found
 	NoMatchResponse *string `json:"no_match_response,omitempty"`
 	// RateLimitResponse is the value to add when rate limited
@@ -113,36 +113,36 @@ func (o *CommunityEditionSettingsConfig) SetErrorOnRateLimit(v bool) {
 	o.ErrorOnRateLimit = &v
 }
 
-// GetIpFieldPath returns the IpFieldPath field value if set, zero value otherwise.
-func (o *CommunityEditionSettingsConfig) GetIpFieldPath() string {
-	if o == nil || IsNil(o.IpFieldPath) {
+// GetIpAddressPath returns the IpAddressPath field value if set, zero value otherwise.
+func (o *CommunityEditionSettingsConfig) GetIpAddressPath() string {
+	if o == nil || IsNil(o.IpAddressPath) {
 		var ret string
 		return ret
 	}
-	return *o.IpFieldPath
+	return *o.IpAddressPath
 }
 
-// GetIpFieldPathOk returns a tuple with the IpFieldPath field value if set, nil otherwise
+// GetIpAddressPathOk returns a tuple with the IpAddressPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CommunityEditionSettingsConfig) GetIpFieldPathOk() (*string, bool) {
-	if o == nil || IsNil(o.IpFieldPath) {
+func (o *CommunityEditionSettingsConfig) GetIpAddressPathOk() (*string, bool) {
+	if o == nil || IsNil(o.IpAddressPath) {
 		return nil, false
 	}
-	return o.IpFieldPath, true
+	return o.IpAddressPath, true
 }
 
-// HasIpFieldPath returns a boolean if a field has been set.
-func (o *CommunityEditionSettingsConfig) HasIpFieldPath() bool {
-	if o != nil && !IsNil(o.IpFieldPath) {
+// HasIpAddressPath returns a boolean if a field has been set.
+func (o *CommunityEditionSettingsConfig) HasIpAddressPath() bool {
+	if o != nil && !IsNil(o.IpAddressPath) {
 		return true
 	}
 
 	return false
 }
 
-// SetIpFieldPath gets a reference to the given string and assigns it to the IpFieldPath field.
-func (o *CommunityEditionSettingsConfig) SetIpFieldPath(v string) {
-	o.IpFieldPath = &v
+// SetIpAddressPath gets a reference to the given string and assigns it to the IpAddressPath field.
+func (o *CommunityEditionSettingsConfig) SetIpAddressPath(v string) {
+	o.IpAddressPath = &v
 }
 
 // GetNoMatchResponse returns the NoMatchResponse field value if set, zero value otherwise.
@@ -225,8 +225,8 @@ func (o CommunityEditionSettingsConfig) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.ErrorOnRateLimit) {
 		toSerialize["error_on_rate_limit"] = o.ErrorOnRateLimit
 	}
-	if !IsNil(o.IpFieldPath) {
-		toSerialize["ip_field_path"] = o.IpFieldPath
+	if !IsNil(o.IpAddressPath) {
+		toSerialize["ip_address_path"] = o.IpAddressPath
 	}
 	if !IsNil(o.NoMatchResponse) {
 		toSerialize["no_match_response"] = o.NoMatchResponse

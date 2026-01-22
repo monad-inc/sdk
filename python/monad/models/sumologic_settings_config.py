@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.sumologic_source_metadata import SumologicSourceMetadata
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +28,9 @@ class SumologicSettingsConfig(BaseModel):
     """
     Sumo Logic Output Settings
     """ # noqa: E501
+    source_metadata: Optional[SumologicSourceMetadata] = None
     url: Optional[StrictStr] = Field(default=None, description="The URL of the Sumo Logic instance.")
-    __properties: ClassVar[List[str]] = ["url"]
+    __properties: ClassVar[List[str]] = ["source_metadata", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -69,6 +71,9 @@ class SumologicSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of source_metadata
+        if self.source_metadata:
+            _dict['source_metadata'] = self.source_metadata.to_dict()
         return _dict
 
     @classmethod
@@ -81,6 +86,7 @@ class SumologicSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "source_metadata": SumologicSourceMetadata.from_dict(obj["source_metadata"]) if obj.get("source_metadata") is not None else None,
             "url": obj.get("url")
         })
         return _obj

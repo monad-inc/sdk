@@ -22,6 +22,8 @@ var _ MappedNullable = &IndividualAlertsSettingsConfig{}
 type IndividualAlertsSettingsConfig struct {
 	// Filter by alert type (e.g., policy_violated, tag_conflict)
 	AlertType *string `json:"alert_type,omitempty"`
+	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Embed related resources in the data returned (e.g., read-consolidated-alert)
 	Embed *string `json:"embed,omitempty"`
 	// Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm)
@@ -85,6 +87,38 @@ func (o *IndividualAlertsSettingsConfig) HasAlertType() bool {
 // SetAlertType gets a reference to the given string and assigns it to the AlertType field.
 func (o *IndividualAlertsSettingsConfig) SetAlertType(v string) {
 	o.AlertType = &v
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *IndividualAlertsSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IndividualAlertsSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *IndividualAlertsSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *IndividualAlertsSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetEmbed returns the Embed field value if set, zero value otherwise.
@@ -323,6 +357,9 @@ func (o IndividualAlertsSettingsConfig) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.AlertType) {
 		toSerialize["alert_type"] = o.AlertType
+	}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
 	if !IsNil(o.Embed) {
 		toSerialize["embed"] = o.Embed

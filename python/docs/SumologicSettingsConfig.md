@@ -6,6 +6,7 @@ Sumo Logic Output Settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**source_metadata** | [**SumologicSourceMetadata**](SumologicSourceMetadata.md) |  | [optional] 
 **url** | **str** | The URL of the Sumo Logic instance. | [optional] 
 
 ## Example

@@ -27,12 +27,13 @@ class ModelsUserAuthProvider(BaseModel):
     """
     ModelsUserAuthProvider
     """ # noqa: E501
+    connection_id: Optional[StrictStr] = None
     created_at: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     provider: Optional[StrictStr] = None
     provider_id: Optional[StrictStr] = None
     user_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["created_at", "id", "provider", "provider_id", "user_id"]
+    __properties: ClassVar[List[str]] = ["connection_id", "created_at", "id", "provider", "provider_id", "user_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,6 +86,7 @@ class ModelsUserAuthProvider(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "connection_id": obj.get("connection_id"),
             "created_at": obj.get("created_at"),
             "id": obj.get("id"),
             "provider": obj.get("provider"),

@@ -18,10 +18,13 @@ import (
 // checks if the VercelUserEventsSettingsConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &VercelUserEventsSettingsConfig{}
 
-// VercelUserEventsSettingsConfig Vercel User Events settings
+// VercelUserEventsSettingsConfig struct for VercelUserEventsSettingsConfig
 type VercelUserEventsSettingsConfig struct {
-	LookbackHours *int32 `json:"lookback_hours,omitempty"`
+	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
+	// Generate synthetic data for testing, instead of connecting to a real data source. Defaults to an hourly cron schedule for cron-based inputs.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
+	// Whether to include detailed payload information in the events.
 	WithPayload *bool `json:"with_payload,omitempty"`
 }
 
@@ -42,36 +45,36 @@ func NewVercelUserEventsSettingsConfigWithDefaults() *VercelUserEventsSettingsCo
 	return &this
 }
 
-// GetLookbackHours returns the LookbackHours field value if set, zero value otherwise.
-func (o *VercelUserEventsSettingsConfig) GetLookbackHours() int32 {
-	if o == nil || IsNil(o.LookbackHours) {
-		var ret int32
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *VercelUserEventsSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
 		return ret
 	}
-	return *o.LookbackHours
+	return *o.BackfillStartTime
 }
 
-// GetLookbackHoursOk returns a tuple with the LookbackHours field value if set, nil otherwise
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VercelUserEventsSettingsConfig) GetLookbackHoursOk() (*int32, bool) {
-	if o == nil || IsNil(o.LookbackHours) {
+func (o *VercelUserEventsSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
 		return nil, false
 	}
-	return o.LookbackHours, true
+	return o.BackfillStartTime, true
 }
 
-// HasLookbackHours returns a boolean if a field has been set.
-func (o *VercelUserEventsSettingsConfig) HasLookbackHours() bool {
-	if o != nil && !IsNil(o.LookbackHours) {
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *VercelUserEventsSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
 		return true
 	}
 
 	return false
 }
 
-// SetLookbackHours gets a reference to the given int32 and assigns it to the LookbackHours field.
-func (o *VercelUserEventsSettingsConfig) SetLookbackHours(v int32) {
-	o.LookbackHours = &v
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *VercelUserEventsSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -148,8 +151,8 @@ func (o VercelUserEventsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o VercelUserEventsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LookbackHours) {
-		toSerialize["lookback_hours"] = o.LookbackHours
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData

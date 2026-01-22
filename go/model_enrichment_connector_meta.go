@@ -20,11 +20,13 @@ var _ MappedNullable = &EnrichmentConnectorMeta{}
 
 // EnrichmentConnectorMeta struct for EnrichmentConnectorMeta
 type EnrichmentConnectorMeta struct {
+	AuthType *string `json:"auth_type,omitempty"`
 	Config interface{} `json:"config,omitempty"`
+	ConnectorCategory *string `json:"connector_category,omitempty"`
 	Description *string `json:"description,omitempty"`
 	House *string `json:"house,omitempty"`
+	InBeta *bool `json:"in_beta,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
-	LogoKey *string `json:"logo_key,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Tier *int32 `json:"tier,omitempty"`
 	TypeId *string `json:"type_id,omitempty"`
@@ -45,6 +47,38 @@ func NewEnrichmentConnectorMeta() *EnrichmentConnectorMeta {
 func NewEnrichmentConnectorMetaWithDefaults() *EnrichmentConnectorMeta {
 	this := EnrichmentConnectorMeta{}
 	return &this
+}
+
+// GetAuthType returns the AuthType field value if set, zero value otherwise.
+func (o *EnrichmentConnectorMeta) GetAuthType() string {
+	if o == nil || IsNil(o.AuthType) {
+		var ret string
+		return ret
+	}
+	return *o.AuthType
+}
+
+// GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EnrichmentConnectorMeta) GetAuthTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.AuthType) {
+		return nil, false
+	}
+	return o.AuthType, true
+}
+
+// HasAuthType returns a boolean if a field has been set.
+func (o *EnrichmentConnectorMeta) HasAuthType() bool {
+	if o != nil && !IsNil(o.AuthType) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
+func (o *EnrichmentConnectorMeta) SetAuthType(v string) {
+	o.AuthType = &v
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -78,6 +112,38 @@ func (o *EnrichmentConnectorMeta) HasConfig() bool {
 // SetConfig gets a reference to the given interface{} and assigns it to the Config field.
 func (o *EnrichmentConnectorMeta) SetConfig(v interface{}) {
 	o.Config = v
+}
+
+// GetConnectorCategory returns the ConnectorCategory field value if set, zero value otherwise.
+func (o *EnrichmentConnectorMeta) GetConnectorCategory() string {
+	if o == nil || IsNil(o.ConnectorCategory) {
+		var ret string
+		return ret
+	}
+	return *o.ConnectorCategory
+}
+
+// GetConnectorCategoryOk returns a tuple with the ConnectorCategory field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EnrichmentConnectorMeta) GetConnectorCategoryOk() (*string, bool) {
+	if o == nil || IsNil(o.ConnectorCategory) {
+		return nil, false
+	}
+	return o.ConnectorCategory, true
+}
+
+// HasConnectorCategory returns a boolean if a field has been set.
+func (o *EnrichmentConnectorMeta) HasConnectorCategory() bool {
+	if o != nil && !IsNil(o.ConnectorCategory) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectorCategory gets a reference to the given string and assigns it to the ConnectorCategory field.
+func (o *EnrichmentConnectorMeta) SetConnectorCategory(v string) {
+	o.ConnectorCategory = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -144,6 +210,38 @@ func (o *EnrichmentConnectorMeta) SetHouse(v string) {
 	o.House = &v
 }
 
+// GetInBeta returns the InBeta field value if set, zero value otherwise.
+func (o *EnrichmentConnectorMeta) GetInBeta() bool {
+	if o == nil || IsNil(o.InBeta) {
+		var ret bool
+		return ret
+	}
+	return *o.InBeta
+}
+
+// GetInBetaOk returns a tuple with the InBeta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EnrichmentConnectorMeta) GetInBetaOk() (*bool, bool) {
+	if o == nil || IsNil(o.InBeta) {
+		return nil, false
+	}
+	return o.InBeta, true
+}
+
+// HasInBeta returns a boolean if a field has been set.
+func (o *EnrichmentConnectorMeta) HasInBeta() bool {
+	if o != nil && !IsNil(o.InBeta) {
+		return true
+	}
+
+	return false
+}
+
+// SetInBeta gets a reference to the given bool and assigns it to the InBeta field.
+func (o *EnrichmentConnectorMeta) SetInBeta(v bool) {
+	o.InBeta = &v
+}
+
 // GetInternal returns the Internal field value if set, zero value otherwise.
 func (o *EnrichmentConnectorMeta) GetInternal() bool {
 	if o == nil || IsNil(o.Internal) {
@@ -174,38 +272,6 @@ func (o *EnrichmentConnectorMeta) HasInternal() bool {
 // SetInternal gets a reference to the given bool and assigns it to the Internal field.
 func (o *EnrichmentConnectorMeta) SetInternal(v bool) {
 	o.Internal = &v
-}
-
-// GetLogoKey returns the LogoKey field value if set, zero value otherwise.
-func (o *EnrichmentConnectorMeta) GetLogoKey() string {
-	if o == nil || IsNil(o.LogoKey) {
-		var ret string
-		return ret
-	}
-	return *o.LogoKey
-}
-
-// GetLogoKeyOk returns a tuple with the LogoKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EnrichmentConnectorMeta) GetLogoKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.LogoKey) {
-		return nil, false
-	}
-	return o.LogoKey, true
-}
-
-// HasLogoKey returns a boolean if a field has been set.
-func (o *EnrichmentConnectorMeta) HasLogoKey() bool {
-	if o != nil && !IsNil(o.LogoKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetLogoKey gets a reference to the given string and assigns it to the LogoKey field.
-func (o *EnrichmentConnectorMeta) SetLogoKey(v string) {
-	o.LogoKey = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -314,8 +380,14 @@ func (o EnrichmentConnectorMeta) MarshalJSON() ([]byte, error) {
 
 func (o EnrichmentConnectorMeta) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AuthType) {
+		toSerialize["auth_type"] = o.AuthType
+	}
 	if o.Config != nil {
 		toSerialize["config"] = o.Config
+	}
+	if !IsNil(o.ConnectorCategory) {
+		toSerialize["connector_category"] = o.ConnectorCategory
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -323,11 +395,11 @@ func (o EnrichmentConnectorMeta) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.House) {
 		toSerialize["house"] = o.House
 	}
+	if !IsNil(o.InBeta) {
+		toSerialize["in_beta"] = o.InBeta
+	}
 	if !IsNil(o.Internal) {
 		toSerialize["internal"] = o.Internal
-	}
-	if !IsNil(o.LogoKey) {
-		toSerialize["logo_key"] = o.LogoKey
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

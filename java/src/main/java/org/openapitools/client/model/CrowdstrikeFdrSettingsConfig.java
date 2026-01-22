@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Crowdstrike Falcon Data Replicator settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class CrowdstrikeFdrSettingsConfig {
   public static final String SERIALIZED_NAME_AWS_QUEUE_URL = "aws_queue_url";
   @SerializedName(SERIALIZED_NAME_AWS_QUEUE_URL)
@@ -266,7 +266,7 @@ public class CrowdstrikeFdrSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CrowdstrikeFdrSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CrowdstrikeFdrSettingsConfig is not found in the empty JSON string", CrowdstrikeFdrSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in CrowdstrikeFdrSettingsConfig is not found in the empty JSON string", CrowdstrikeFdrSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -274,21 +274,21 @@ public class CrowdstrikeFdrSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!CrowdstrikeFdrSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CrowdstrikeFdrSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `CrowdstrikeFdrSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("aws_queue_url") != null && !jsonObj.get("aws_queue_url").isJsonNull()) && !jsonObj.get("aws_queue_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `aws_queue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aws_queue_url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `aws_queue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aws_queue_url").toString()));
       }
       if ((jsonObj.get("aws_region_name") != null && !jsonObj.get("aws_region_name").isJsonNull()) && !jsonObj.get("aws_region_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `aws_region_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aws_region_name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `aws_region_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aws_region_name").toString()));
       }
       if ((jsonObj.get("aws_s3_url") != null && !jsonObj.get("aws_s3_url").isJsonNull()) && !jsonObj.get("aws_s3_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `aws_s3_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aws_s3_url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `aws_s3_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aws_s3_url").toString()));
       }
       if ((jsonObj.get("cron") != null && !jsonObj.get("cron").isJsonNull()) && !jsonObj.get("cron").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cron` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cron").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `cron` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cron").toString()));
       }
   }
 

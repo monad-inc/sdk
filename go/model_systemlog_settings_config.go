@@ -20,6 +20,8 @@ var _ MappedNullable = &SystemlogSettingsConfig{}
 
 // SystemlogSettingsConfig Okta system log settings
 type SystemlogSettingsConfig struct {
+	// Date to start fetching data from. If not specified, a full sync (90 days) of data is fetched on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// The URL of the Okta organization
 	OrgUrl *string `json:"org_url,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -41,6 +43,38 @@ func NewSystemlogSettingsConfig() *SystemlogSettingsConfig {
 func NewSystemlogSettingsConfigWithDefaults() *SystemlogSettingsConfig {
 	this := SystemlogSettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *SystemlogSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SystemlogSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *SystemlogSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *SystemlogSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetOrgUrl returns the OrgUrl field value if set, zero value otherwise.
@@ -117,6 +151,9 @@ func (o SystemlogSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o SystemlogSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.OrgUrl) {
 		toSerialize["org_url"] = o.OrgUrl
 	}

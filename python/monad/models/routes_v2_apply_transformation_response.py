@@ -18,8 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +27,11 @@ class RoutesV2ApplyTransformationResponse(BaseModel):
     """
     RoutesV2ApplyTransformationResponse
     """ # noqa: E501
+    bytes_after: Optional[StrictInt] = None
+    bytes_before: Optional[StrictInt] = None
+    percentage_change: Optional[Union[StrictFloat, StrictInt]] = None
     records: Optional[List[List[StrictInt]]] = None
-    __properties: ClassVar[List[str]] = ["records"]
+    __properties: ClassVar[List[str]] = ["bytes_after", "bytes_before", "percentage_change", "records"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,6 +84,9 @@ class RoutesV2ApplyTransformationResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "bytes_after": obj.get("bytes_after"),
+            "bytes_before": obj.get("bytes_before"),
+            "percentage_change": obj.get("percentage_change"),
             "records": obj.get("records")
         })
         return _obj

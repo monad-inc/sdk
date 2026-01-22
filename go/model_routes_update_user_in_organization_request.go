@@ -21,6 +21,7 @@ var _ MappedNullable = &RoutesUpdateUserInOrganizationRequest{}
 // RoutesUpdateUserInOrganizationRequest struct for RoutesUpdateUserInOrganizationRequest
 type RoutesUpdateUserInOrganizationRequest struct {
 	RoleId *string `json:"role_id,omitempty"`
+	UserAuthProviderId *string `json:"user_auth_provider_id,omitempty"`
 }
 
 // NewRoutesUpdateUserInOrganizationRequest instantiates a new RoutesUpdateUserInOrganizationRequest object
@@ -72,6 +73,38 @@ func (o *RoutesUpdateUserInOrganizationRequest) SetRoleId(v string) {
 	o.RoleId = &v
 }
 
+// GetUserAuthProviderId returns the UserAuthProviderId field value if set, zero value otherwise.
+func (o *RoutesUpdateUserInOrganizationRequest) GetUserAuthProviderId() string {
+	if o == nil || IsNil(o.UserAuthProviderId) {
+		var ret string
+		return ret
+	}
+	return *o.UserAuthProviderId
+}
+
+// GetUserAuthProviderIdOk returns a tuple with the UserAuthProviderId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesUpdateUserInOrganizationRequest) GetUserAuthProviderIdOk() (*string, bool) {
+	if o == nil || IsNil(o.UserAuthProviderId) {
+		return nil, false
+	}
+	return o.UserAuthProviderId, true
+}
+
+// HasUserAuthProviderId returns a boolean if a field has been set.
+func (o *RoutesUpdateUserInOrganizationRequest) HasUserAuthProviderId() bool {
+	if o != nil && !IsNil(o.UserAuthProviderId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserAuthProviderId gets a reference to the given string and assigns it to the UserAuthProviderId field.
+func (o *RoutesUpdateUserInOrganizationRequest) SetUserAuthProviderId(v string) {
+	o.UserAuthProviderId = &v
+}
+
 func (o RoutesUpdateUserInOrganizationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -84,6 +117,9 @@ func (o RoutesUpdateUserInOrganizationRequest) ToMap() (map[string]interface{}, 
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.RoleId) {
 		toSerialize["role_id"] = o.RoleId
+	}
+	if !IsNil(o.UserAuthProviderId) {
+		toSerialize["user_auth_provider_id"] = o.UserAuthProviderId
 	}
 	return toSerialize, nil
 }

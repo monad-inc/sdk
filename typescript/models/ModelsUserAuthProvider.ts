@@ -13,6 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class ModelsUserAuthProvider {
+    'connectionId'?: string;
     'createdAt'?: string;
     'id'?: string;
     'provider'?: string;
@@ -24,6 +25,12 @@ export class ModelsUserAuthProvider {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "connectionId",
+            "baseName": "connection_id",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "createdAt",
             "baseName": "created_at",

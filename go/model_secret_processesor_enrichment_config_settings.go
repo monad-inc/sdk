@@ -20,6 +20,8 @@ import (
 // SecretProcessesorEnrichmentConfigSettings - struct for SecretProcessesorEnrichmentConfigSettings
 type SecretProcessesorEnrichmentConfigSettings struct {
 	CommunityEditionSettingsConfig *CommunityEditionSettingsConfig
+	GeolocusSettingsConfig *GeolocusSettingsConfig
+	KvLookupSettingsConfig *KvLookupSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
 }
 
@@ -27,6 +29,20 @@ type SecretProcessesorEnrichmentConfigSettings struct {
 func CommunityEditionSettingsConfigAsSecretProcessesorEnrichmentConfigSettings(v *CommunityEditionSettingsConfig) SecretProcessesorEnrichmentConfigSettings {
 	return SecretProcessesorEnrichmentConfigSettings{
 		CommunityEditionSettingsConfig: v,
+	}
+}
+
+// GeolocusSettingsConfigAsSecretProcessesorEnrichmentConfigSettings is a convenience function that returns GeolocusSettingsConfig wrapped in SecretProcessesorEnrichmentConfigSettings
+func GeolocusSettingsConfigAsSecretProcessesorEnrichmentConfigSettings(v *GeolocusSettingsConfig) SecretProcessesorEnrichmentConfigSettings {
+	return SecretProcessesorEnrichmentConfigSettings{
+		GeolocusSettingsConfig: v,
+	}
+}
+
+// KvLookupSettingsConfigAsSecretProcessesorEnrichmentConfigSettings is a convenience function that returns KvLookupSettingsConfig wrapped in SecretProcessesorEnrichmentConfigSettings
+func KvLookupSettingsConfigAsSecretProcessesorEnrichmentConfigSettings(v *KvLookupSettingsConfig) SecretProcessesorEnrichmentConfigSettings {
+	return SecretProcessesorEnrichmentConfigSettings{
+		KvLookupSettingsConfig: v,
 	}
 }
 
@@ -59,6 +75,40 @@ func (dst *SecretProcessesorEnrichmentConfigSettings) UnmarshalJSON(data []byte)
 		dst.CommunityEditionSettingsConfig = nil
 	}
 
+	// try to unmarshal data into GeolocusSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.GeolocusSettingsConfig)
+	if err == nil {
+		jsonGeolocusSettingsConfig, _ := json.Marshal(dst.GeolocusSettingsConfig)
+		if string(jsonGeolocusSettingsConfig) == "{}" { // empty struct
+			dst.GeolocusSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.GeolocusSettingsConfig); err != nil {
+				dst.GeolocusSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.GeolocusSettingsConfig = nil
+	}
+
+	// try to unmarshal data into KvLookupSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.KvLookupSettingsConfig)
+	if err == nil {
+		jsonKvLookupSettingsConfig, _ := json.Marshal(dst.KvLookupSettingsConfig)
+		if string(jsonKvLookupSettingsConfig) == "{}" { // empty struct
+			dst.KvLookupSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.KvLookupSettingsConfig); err != nil {
+				dst.KvLookupSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.KvLookupSettingsConfig = nil
+	}
+
 	// try to unmarshal data into MapmapOfStringAny
 	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
 	if err == nil {
@@ -79,6 +129,8 @@ func (dst *SecretProcessesorEnrichmentConfigSettings) UnmarshalJSON(data []byte)
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.CommunityEditionSettingsConfig = nil
+		dst.GeolocusSettingsConfig = nil
+		dst.KvLookupSettingsConfig = nil
 		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(SecretProcessesorEnrichmentConfigSettings)")
@@ -93,6 +145,14 @@ func (dst *SecretProcessesorEnrichmentConfigSettings) UnmarshalJSON(data []byte)
 func (src SecretProcessesorEnrichmentConfigSettings) MarshalJSON() ([]byte, error) {
 	if src.CommunityEditionSettingsConfig != nil {
 		return json.Marshal(&src.CommunityEditionSettingsConfig)
+	}
+
+	if src.GeolocusSettingsConfig != nil {
+		return json.Marshal(&src.GeolocusSettingsConfig)
+	}
+
+	if src.KvLookupSettingsConfig != nil {
+		return json.Marshal(&src.KvLookupSettingsConfig)
 	}
 
 	if src.MapmapOfStringAny != nil {
@@ -111,6 +171,14 @@ func (obj *SecretProcessesorEnrichmentConfigSettings) GetActualInstance() (inter
 		return obj.CommunityEditionSettingsConfig
 	}
 
+	if obj.GeolocusSettingsConfig != nil {
+		return obj.GeolocusSettingsConfig
+	}
+
+	if obj.KvLookupSettingsConfig != nil {
+		return obj.KvLookupSettingsConfig
+	}
+
 	if obj.MapmapOfStringAny != nil {
 		return obj.MapmapOfStringAny
 	}
@@ -123,6 +191,14 @@ func (obj *SecretProcessesorEnrichmentConfigSettings) GetActualInstance() (inter
 func (obj SecretProcessesorEnrichmentConfigSettings) GetActualInstanceValue() (interface{}) {
 	if obj.CommunityEditionSettingsConfig != nil {
 		return *obj.CommunityEditionSettingsConfig
+	}
+
+	if obj.GeolocusSettingsConfig != nil {
+		return *obj.GeolocusSettingsConfig
+	}
+
+	if obj.KvLookupSettingsConfig != nil {
+		return *obj.KvLookupSettingsConfig
 	}
 
 	if obj.MapmapOfStringAny != nil {

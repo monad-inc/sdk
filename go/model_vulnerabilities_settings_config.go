@@ -20,6 +20,8 @@ var _ MappedNullable = &VulnerabilitiesSettingsConfig{}
 
 // VulnerabilitiesSettingsConfig CrowdStrike EDR vulnerabilities settings
 type VulnerabilitiesSettingsConfig struct {
+	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Your cloud type for CrowdStrike. Ex: 'autodiscover', 'us-1', 'us-2', 'eu-1', 'us-gov-1'.
 	CloudType *string `json:"cloud_type,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -41,6 +43,38 @@ func NewVulnerabilitiesSettingsConfig() *VulnerabilitiesSettingsConfig {
 func NewVulnerabilitiesSettingsConfigWithDefaults() *VulnerabilitiesSettingsConfig {
 	this := VulnerabilitiesSettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *VulnerabilitiesSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VulnerabilitiesSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *VulnerabilitiesSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *VulnerabilitiesSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetCloudType returns the CloudType field value if set, zero value otherwise.
@@ -117,6 +151,9 @@ func (o VulnerabilitiesSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o VulnerabilitiesSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.CloudType) {
 		toSerialize["cloud_type"] = o.CloudType
 	}

@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class SystemlogSettingsConfig {
     /**
+    * Date to start fetching data from. If not specified, a full sync (90 days) of data is fetched on the first sync. All syncs thereafter will be incremental.
+    */
+    'backfillStartTime'?: string;
+    /**
     * The URL of the Okta organization
     */
     'orgUrl'?: string;
@@ -30,6 +34,12 @@ export class SystemlogSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "orgUrl",
             "baseName": "org_url",

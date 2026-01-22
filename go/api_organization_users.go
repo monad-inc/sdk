@@ -354,6 +354,13 @@ type ApiV1OrganizationIdUsersUserIdDeleteRequest struct {
 	ApiService *OrganizationUsersAPIService
 	organizationId string
 	userId string
+	userAuthProviderId *string
+}
+
+// User Auth Provider ID
+func (r ApiV1OrganizationIdUsersUserIdDeleteRequest) UserAuthProviderId(userAuthProviderId string) ApiV1OrganizationIdUsersUserIdDeleteRequest {
+	r.userAuthProviderId = &userAuthProviderId
+	return r
 }
 
 func (r ApiV1OrganizationIdUsersUserIdDeleteRequest) Execute() (map[string]interface{}, *http.Response, error) {
@@ -401,7 +408,11 @@ func (a *OrganizationUsersAPIService) V1OrganizationIdUsersUserIdDeleteExecute(r
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.userAuthProviderId == nil {
+		return localVarReturnValue, nil, reportError("userAuthProviderId is required and must be specified")
+	}
 
+	parameterAddToHeaderOrQuery(localVarQueryParams, "user_auth_provider_id", r.userAuthProviderId, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

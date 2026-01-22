@@ -48,8 +48,13 @@ import org.openapitools.client.JSON;
 /**
  * Gitlab Issues settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class GitlabIssuesSettingsConfig {
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
+
   public static final String SERIALIZED_NAME_CONFIDENTIAL = "confidential";
   @SerializedName(SERIALIZED_NAME_CONFIDENTIAL)
   @javax.annotation.Nullable
@@ -87,6 +92,25 @@ public class GitlabIssuesSettingsConfig {
 
   public GitlabIssuesSettingsConfig() {
   }
+
+  public GitlabIssuesSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+  }
+
 
   public GitlabIssuesSettingsConfig confidential(@javax.annotation.Nullable Boolean confidential) {
     this.confidential = confidential;
@@ -231,7 +255,8 @@ public class GitlabIssuesSettingsConfig {
       return false;
     }
     GitlabIssuesSettingsConfig gitlabIssuesSettingsConfig = (GitlabIssuesSettingsConfig) o;
-    return Objects.equals(this.confidential, gitlabIssuesSettingsConfig.confidential) &&
+    return Objects.equals(this.backfillStartTime, gitlabIssuesSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.confidential, gitlabIssuesSettingsConfig.confidential) &&
         Objects.equals(this.gitlabUrl, gitlabIssuesSettingsConfig.gitlabUrl) &&
         Objects.equals(this.issueType, gitlabIssuesSettingsConfig.issueType) &&
         Objects.equals(this.projectId, gitlabIssuesSettingsConfig.projectId) &&
@@ -242,13 +267,14 @@ public class GitlabIssuesSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(confidential, gitlabUrl, issueType, projectId, state, useSyntheticData, withLabelDetails);
+    return Objects.hash(backfillStartTime, confidential, gitlabUrl, issueType, projectId, state, useSyntheticData, withLabelDetails);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GitlabIssuesSettingsConfig {\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    confidential: ").append(toIndentedString(confidential)).append("\n");
     sb.append("    gitlabUrl: ").append(toIndentedString(gitlabUrl)).append("\n");
     sb.append("    issueType: ").append(toIndentedString(issueType)).append("\n");
@@ -277,7 +303,7 @@ public class GitlabIssuesSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("confidential", "gitlab_url", "issue_type", "project_id", "state", "use_synthetic_data", "with_label_details"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "confidential", "gitlab_url", "issue_type", "project_id", "state", "use_synthetic_data", "with_label_details"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -292,7 +318,7 @@ public class GitlabIssuesSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GitlabIssuesSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GitlabIssuesSettingsConfig is not found in the empty JSON string", GitlabIssuesSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GitlabIssuesSettingsConfig is not found in the empty JSON string", GitlabIssuesSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -300,21 +326,24 @@ public class GitlabIssuesSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!GitlabIssuesSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GitlabIssuesSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GitlabIssuesSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
       if ((jsonObj.get("gitlab_url") != null && !jsonObj.get("gitlab_url").isJsonNull()) && !jsonObj.get("gitlab_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `gitlab_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gitlab_url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `gitlab_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gitlab_url").toString()));
       }
       if ((jsonObj.get("issue_type") != null && !jsonObj.get("issue_type").isJsonNull()) && !jsonObj.get("issue_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `issue_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issue_type").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `issue_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issue_type").toString()));
       }
       if ((jsonObj.get("project_id") != null && !jsonObj.get("project_id").isJsonNull()) && !jsonObj.get("project_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `project_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("project_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `project_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("project_id").toString()));
       }
       if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
       }
   }
 

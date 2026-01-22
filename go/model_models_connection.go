@@ -24,6 +24,7 @@ type ModelsConnection struct {
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	OrganizationId *string `json:"organization_id,omitempty"`
 	SamlEntityId *string `json:"saml_entity_id,omitempty"`
 	SamlMetadataUrl *string `json:"saml_metadata_url,omitempty"`
 	Type *string `json:"type,omitempty"`
@@ -175,6 +176,38 @@ func (o *ModelsConnection) SetName(v string) {
 	o.Name = &v
 }
 
+// GetOrganizationId returns the OrganizationId field value if set, zero value otherwise.
+func (o *ModelsConnection) GetOrganizationId() string {
+	if o == nil || IsNil(o.OrganizationId) {
+		var ret string
+		return ret
+	}
+	return *o.OrganizationId
+}
+
+// GetOrganizationIdOk returns a tuple with the OrganizationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsConnection) GetOrganizationIdOk() (*string, bool) {
+	if o == nil || IsNil(o.OrganizationId) {
+		return nil, false
+	}
+	return o.OrganizationId, true
+}
+
+// HasOrganizationId returns a boolean if a field has been set.
+func (o *ModelsConnection) HasOrganizationId() bool {
+	if o != nil && !IsNil(o.OrganizationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrganizationId gets a reference to the given string and assigns it to the OrganizationId field.
+func (o *ModelsConnection) SetOrganizationId(v string) {
+	o.OrganizationId = &v
+}
+
 // GetSamlEntityId returns the SamlEntityId field value if set, zero value otherwise.
 func (o *ModelsConnection) GetSamlEntityId() string {
 	if o == nil || IsNil(o.SamlEntityId) {
@@ -324,6 +357,9 @@ func (o ModelsConnection) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.OrganizationId) {
+		toSerialize["organization_id"] = o.OrganizationId
 	}
 	if !IsNil(o.SamlEntityId) {
 		toSerialize["saml_entity_id"] = o.SamlEntityId

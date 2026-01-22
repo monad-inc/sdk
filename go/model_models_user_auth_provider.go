@@ -20,6 +20,7 @@ var _ MappedNullable = &ModelsUserAuthProvider{}
 
 // ModelsUserAuthProvider struct for ModelsUserAuthProvider
 type ModelsUserAuthProvider struct {
+	ConnectionId *string `json:"connection_id,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Provider *string `json:"provider,omitempty"`
@@ -42,6 +43,38 @@ func NewModelsUserAuthProvider() *ModelsUserAuthProvider {
 func NewModelsUserAuthProviderWithDefaults() *ModelsUserAuthProvider {
 	this := ModelsUserAuthProvider{}
 	return &this
+}
+
+// GetConnectionId returns the ConnectionId field value if set, zero value otherwise.
+func (o *ModelsUserAuthProvider) GetConnectionId() string {
+	if o == nil || IsNil(o.ConnectionId) {
+		var ret string
+		return ret
+	}
+	return *o.ConnectionId
+}
+
+// GetConnectionIdOk returns a tuple with the ConnectionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsUserAuthProvider) GetConnectionIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ConnectionId) {
+		return nil, false
+	}
+	return o.ConnectionId, true
+}
+
+// HasConnectionId returns a boolean if a field has been set.
+func (o *ModelsUserAuthProvider) HasConnectionId() bool {
+	if o != nil && !IsNil(o.ConnectionId) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionId gets a reference to the given string and assigns it to the ConnectionId field.
+func (o *ModelsUserAuthProvider) SetConnectionId(v string) {
+	o.ConnectionId = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -214,6 +247,9 @@ func (o ModelsUserAuthProvider) MarshalJSON() ([]byte, error) {
 
 func (o ModelsUserAuthProvider) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ConnectionId) {
+		toSerialize["connection_id"] = o.ConnectionId
+	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
 	}

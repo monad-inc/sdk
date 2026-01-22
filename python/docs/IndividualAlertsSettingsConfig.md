@@ -7,6 +7,7 @@ Clumio Alerts settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **alert_type** | **str** | Filter by alert type (e.g., policy_violated, tag_conflict) | [optional] 
+**backfill_start_time** | **str** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **embed** | **str** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
 **primary_entity_type** | **str** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) | [optional] 
 **primary_entity_value** | **str** | Filter by primary entity value (contains search) | [optional] 

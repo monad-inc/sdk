@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -173,7 +173,7 @@ public class GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter is not found in the empty JSON string", GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter is not found in the empty JSON string", GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.openapiRequiredFields.toString()));
         }
       }
 
@@ -181,7 +181,7 @@ public class GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -191,7 +191,7 @@ public class GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("values") != null && !jsonObj.get("values").isJsonNull() && !jsonObj.get("values").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
       }
   }
 

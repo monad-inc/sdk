@@ -20,6 +20,8 @@ var _ MappedNullable = &SnykTargetsSettingsConfig{}
 
 // SnykTargetsSettingsConfig Snyk targets settings
 type SnykTargetsSettingsConfig struct {
+	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
@@ -39,6 +41,38 @@ func NewSnykTargetsSettingsConfig() *SnykTargetsSettingsConfig {
 func NewSnykTargetsSettingsConfigWithDefaults() *SnykTargetsSettingsConfig {
 	this := SnykTargetsSettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *SnykTargetsSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnykTargetsSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *SnykTargetsSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *SnykTargetsSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
@@ -83,6 +117,9 @@ func (o SnykTargetsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o SnykTargetsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
 	}

@@ -21,6 +21,10 @@ export class IndividualAlertsSettingsConfig {
     */
     'alertType'?: string;
     /**
+    * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+    */
+    'backfillStartTime'?: string;
+    /**
     * Embed related resources in the data returned (e.g., read-consolidated-alert)
     */
     'embed'?: string;
@@ -57,6 +61,12 @@ export class IndividualAlertsSettingsConfig {
         {
             "name": "alertType",
             "baseName": "alert_type",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
             "type": "string",
             "format": ""
         },

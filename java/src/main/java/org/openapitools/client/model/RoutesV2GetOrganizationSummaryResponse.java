@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2GetOrganizationSummaryResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV2GetOrganizationSummaryResponse {
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
@@ -200,7 +200,7 @@ public class RoutesV2GetOrganizationSummaryResponse {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RoutesV2GetOrganizationSummaryResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RoutesV2GetOrganizationSummaryResponse is not found in the empty JSON string", RoutesV2GetOrganizationSummaryResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV2GetOrganizationSummaryResponse is not found in the empty JSON string", RoutesV2GetOrganizationSummaryResponse.openapiRequiredFields.toString()));
         }
       }
 
@@ -208,26 +208,26 @@ public class RoutesV2GetOrganizationSummaryResponse {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!RoutesV2GetOrganizationSummaryResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RoutesV2GetOrganizationSummaryResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV2GetOrganizationSummaryResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : RoutesV2GetOrganizationSummaryResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("organization_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
       }
       if (jsonObj.get("pipelines") != null && !jsonObj.get("pipelines").isJsonNull()) {
         JsonArray jsonArraypipelines = jsonObj.getAsJsonArray("pipelines");
         if (jsonArraypipelines != null) {
           // ensure the json data is an array
           if (!jsonObj.get("pipelines").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `pipelines` to be an array in the JSON string but got `%s`", jsonObj.get("pipelines").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pipelines` to be an array in the JSON string but got `%s`", jsonObj.get("pipelines").toString()));
           }
 
           // validate the optional field `pipelines` (array)

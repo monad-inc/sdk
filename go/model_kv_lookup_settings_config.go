@@ -20,14 +20,16 @@ var _ MappedNullable = &KvLookupSettingsConfig{}
 
 // KvLookupSettingsConfig KVLookup enrichment settings
 type KvLookupSettingsConfig struct {
-	// DestinationKey the path where the result will be stored in the record. Use '.' for the root object, 'field.subfield' for nested properties, 'array[0]' for array elements, or combined paths like 'users[0].name'.
+	// DestinationKey is the path where the result will be stored in the record
 	DestinationKey *string `json:"destination_key,omitempty"`
-	// ErrorOnMissingKey if true, will throw an error if the key is not found in the KV lookup output
+	// ErrorOnMissingKey If true, throw an error when key is not found in the KV store
 	ErrorOnMissingKey *bool `json:"error_on_missing_key,omitempty"`
-	// JoinKey is the key in the record whose value will be used to join with the KV lookup output
-	JoinKey *string `json:"join_key,omitempty"`
-	// KVLookupOutputID is the ID of the KV lookup output to join with
+	// JoinPath is the path to a field whose values will be used as the lookup keys
+	JoinPath *string `json:"join_path,omitempty"`
+	// KVLookupOutputID is the id of the KV lookup output to join with
 	KvLookupOutputId *string `json:"kv_lookup_output_id,omitempty"`
+	// NoMatchResponse is the value to add to the record when no match is found
+	NoMatchResponse *string `json:"no_match_response,omitempty"`
 }
 
 // NewKvLookupSettingsConfig instantiates a new KvLookupSettingsConfig object
@@ -111,36 +113,36 @@ func (o *KvLookupSettingsConfig) SetErrorOnMissingKey(v bool) {
 	o.ErrorOnMissingKey = &v
 }
 
-// GetJoinKey returns the JoinKey field value if set, zero value otherwise.
-func (o *KvLookupSettingsConfig) GetJoinKey() string {
-	if o == nil || IsNil(o.JoinKey) {
+// GetJoinPath returns the JoinPath field value if set, zero value otherwise.
+func (o *KvLookupSettingsConfig) GetJoinPath() string {
+	if o == nil || IsNil(o.JoinPath) {
 		var ret string
 		return ret
 	}
-	return *o.JoinKey
+	return *o.JoinPath
 }
 
-// GetJoinKeyOk returns a tuple with the JoinKey field value if set, nil otherwise
+// GetJoinPathOk returns a tuple with the JoinPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KvLookupSettingsConfig) GetJoinKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.JoinKey) {
+func (o *KvLookupSettingsConfig) GetJoinPathOk() (*string, bool) {
+	if o == nil || IsNil(o.JoinPath) {
 		return nil, false
 	}
-	return o.JoinKey, true
+	return o.JoinPath, true
 }
 
-// HasJoinKey returns a boolean if a field has been set.
-func (o *KvLookupSettingsConfig) HasJoinKey() bool {
-	if o != nil && !IsNil(o.JoinKey) {
+// HasJoinPath returns a boolean if a field has been set.
+func (o *KvLookupSettingsConfig) HasJoinPath() bool {
+	if o != nil && !IsNil(o.JoinPath) {
 		return true
 	}
 
 	return false
 }
 
-// SetJoinKey gets a reference to the given string and assigns it to the JoinKey field.
-func (o *KvLookupSettingsConfig) SetJoinKey(v string) {
-	o.JoinKey = &v
+// SetJoinPath gets a reference to the given string and assigns it to the JoinPath field.
+func (o *KvLookupSettingsConfig) SetJoinPath(v string) {
+	o.JoinPath = &v
 }
 
 // GetKvLookupOutputId returns the KvLookupOutputId field value if set, zero value otherwise.
@@ -175,6 +177,38 @@ func (o *KvLookupSettingsConfig) SetKvLookupOutputId(v string) {
 	o.KvLookupOutputId = &v
 }
 
+// GetNoMatchResponse returns the NoMatchResponse field value if set, zero value otherwise.
+func (o *KvLookupSettingsConfig) GetNoMatchResponse() string {
+	if o == nil || IsNil(o.NoMatchResponse) {
+		var ret string
+		return ret
+	}
+	return *o.NoMatchResponse
+}
+
+// GetNoMatchResponseOk returns a tuple with the NoMatchResponse field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KvLookupSettingsConfig) GetNoMatchResponseOk() (*string, bool) {
+	if o == nil || IsNil(o.NoMatchResponse) {
+		return nil, false
+	}
+	return o.NoMatchResponse, true
+}
+
+// HasNoMatchResponse returns a boolean if a field has been set.
+func (o *KvLookupSettingsConfig) HasNoMatchResponse() bool {
+	if o != nil && !IsNil(o.NoMatchResponse) {
+		return true
+	}
+
+	return false
+}
+
+// SetNoMatchResponse gets a reference to the given string and assigns it to the NoMatchResponse field.
+func (o *KvLookupSettingsConfig) SetNoMatchResponse(v string) {
+	o.NoMatchResponse = &v
+}
+
 func (o KvLookupSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -191,11 +225,14 @@ func (o KvLookupSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ErrorOnMissingKey) {
 		toSerialize["error_on_missing_key"] = o.ErrorOnMissingKey
 	}
-	if !IsNil(o.JoinKey) {
-		toSerialize["join_key"] = o.JoinKey
+	if !IsNil(o.JoinPath) {
+		toSerialize["join_path"] = o.JoinPath
 	}
 	if !IsNil(o.KvLookupOutputId) {
 		toSerialize["kv_lookup_output_id"] = o.KvLookupOutputId
+	}
+	if !IsNil(o.NoMatchResponse) {
+		toSerialize["no_match_response"] = o.NoMatchResponse
 	}
 	return toSerialize, nil
 }

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * SAML is the configuration for SAML connections
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV3CreateConnectionRequestSaml {
   public static final String SERIALIZED_NAME_ENTITY_ID = "entity_id";
   @SerializedName(SERIALIZED_NAME_ENTITY_ID)
@@ -162,7 +162,7 @@ public class RoutesV3CreateConnectionRequestSaml {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RoutesV3CreateConnectionRequestSaml.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RoutesV3CreateConnectionRequestSaml is not found in the empty JSON string", RoutesV3CreateConnectionRequestSaml.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV3CreateConnectionRequestSaml is not found in the empty JSON string", RoutesV3CreateConnectionRequestSaml.openapiRequiredFields.toString()));
         }
       }
 
@@ -170,15 +170,15 @@ public class RoutesV3CreateConnectionRequestSaml {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!RoutesV3CreateConnectionRequestSaml.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RoutesV3CreateConnectionRequestSaml` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV3CreateConnectionRequestSaml` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("entity_id") != null && !jsonObj.get("entity_id").isJsonNull()) && !jsonObj.get("entity_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `entity_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("entity_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `entity_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("entity_id").toString()));
       }
       if ((jsonObj.get("metadata_url") != null && !jsonObj.get("metadata_url").isJsonNull()) && !jsonObj.get("metadata_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metadata_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metadata_url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `metadata_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metadata_url").toString()));
       }
   }
 

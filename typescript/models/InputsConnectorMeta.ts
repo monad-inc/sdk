@@ -19,9 +19,10 @@ export class InputsConnectorMeta {
     'config'?: any | null;
     'description'?: string;
     'house'?: string;
+    'inBeta'?: boolean;
     'internal'?: boolean;
     'isCron'?: boolean;
-    'logoKey'?: string;
+    'isDefault'?: boolean;
     'name'?: string;
     'tier'?: number;
     'typeId'?: string;
@@ -68,6 +69,12 @@ export class InputsConnectorMeta {
             "format": ""
         },
         {
+            "name": "inBeta",
+            "baseName": "in_beta",
+            "type": "boolean",
+            "format": ""
+        },
+        {
             "name": "internal",
             "baseName": "internal",
             "type": "boolean",
@@ -80,9 +87,9 @@ export class InputsConnectorMeta {
             "format": ""
         },
         {
-            "name": "logoKey",
-            "baseName": "logo_key",
-            "type": "string",
+            "name": "isDefault",
+            "baseName": "is_default",
+            "type": "boolean",
             "format": ""
         },
         {

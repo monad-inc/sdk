@@ -27,13 +27,12 @@ class BigqueryInputSettingsConfig(BaseModel):
     """
     BigQuery Input Settings
     """ # noqa: E501
-    cron: Optional[StrictStr] = Field(default=None, description="Cron string for scheduling the ingest of your input")
     dataset: Optional[StrictStr] = Field(default=None, description="The BigQuery dataset ID containing the table")
     project: Optional[StrictStr] = Field(default=None, description="The GCP project ID containing the BigQuery dataset")
     query: Optional[StrictStr] = Field(default=None, description="Optional custom query to use instead of table (must include timestamp_column)")
     table: Optional[StrictStr] = Field(default=None, description="The BigQuery table ID to query data from")
     timestamp_column: Optional[StrictStr] = Field(default=None, description="The column containing timestamp values used for incremental loading")
-    __properties: ClassVar[List[str]] = ["cron", "dataset", "project", "query", "table", "timestamp_column"]
+    __properties: ClassVar[List[str]] = ["dataset", "project", "query", "table", "timestamp_column"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,7 +85,6 @@ class BigqueryInputSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "cron": obj.get("cron"),
             "dataset": obj.get("dataset"),
             "project": obj.get("project"),
             "query": obj.get("query"),

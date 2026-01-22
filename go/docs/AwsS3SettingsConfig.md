@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental. | [optional] 
 **Bucket** | Pointer to **string** | Name of the S3 bucket. | [optional] 
 **Compression** | Pointer to **string** | Compression format of the S3 objects. | [optional] 
 **Format** | Pointer to **string** | File format of the S3 objects. | [optional] 
@@ -31,6 +32,31 @@ will change when the set of required properties is changed
 NewAwsS3SettingsConfigWithDefaults instantiates a new AwsS3SettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBackfillStartTime
+
+`func (o *AwsS3SettingsConfig) GetBackfillStartTime() string`
+
+GetBackfillStartTime returns the BackfillStartTime field if non-nil, zero value otherwise.
+
+### GetBackfillStartTimeOk
+
+`func (o *AwsS3SettingsConfig) GetBackfillStartTimeOk() (*string, bool)`
+
+GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackfillStartTime
+
+`func (o *AwsS3SettingsConfig) SetBackfillStartTime(v string)`
+
+SetBackfillStartTime sets BackfillStartTime field to given value.
+
+### HasBackfillStartTime
+
+`func (o *AwsS3SettingsConfig) HasBackfillStartTime() bool`
+
+HasBackfillStartTime returns a boolean if a field has been set.
 
 ### GetBucket
 

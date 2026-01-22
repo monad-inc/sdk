@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **component** | [**ModelsNodeComponent**](ModelsNodeComponent.md) |  | [optional] 
+**component_house** | **str** |  | [optional] 
 **component_id** | **str** |  | [optional] 
 **component_sub_type** | **str** |  | [optional] 
 **component_type** | **str** |  | [optional] 

@@ -18,6 +18,10 @@ export class AzureBlobStorageSettingsConfig {
     */
     'accountUrl'?: string;
     /**
+    * Starting timestamp for initial data sync. Only processes blobs with a last modified time after this timestamp on the initial sync. If not specified, all available data from the specified prefix will be processed. Incremental syncs automatically continue from the last processed timestamp, scanning from the previous day\'s partition forward to catch late-arriving data. Files updated in partitions older than the current state\'s previous prefix will not be detected.
+    */
+    'backfillStartTime'?: string;
+    /**
     * The compression format of objects in the Azure container
     */
     'compression'?: string;
@@ -50,6 +54,12 @@ export class AzureBlobStorageSettingsConfig {
         {
             "name": "accountUrl",
             "baseName": "account_url",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
             "type": "string",
             "format": ""
         },

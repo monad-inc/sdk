@@ -18,19 +18,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
 class VercelUserEventsSettingsConfig(BaseModel):
     """
-    Vercel User Events settings
+    VercelUserEventsSettingsConfig
     """ # noqa: E501
-    lookback_hours: Optional[StrictInt] = None
-    use_synthetic_data: Optional[StrictBool] = None
-    with_payload: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["lookback_hours", "use_synthetic_data", "with_payload"]
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.")
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic data for testing, instead of connecting to a real data source. Defaults to an hourly cron schedule for cron-based inputs.")
+    with_payload: Optional[StrictBool] = Field(default=None, description="Whether to include detailed payload information in the events.")
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "use_synthetic_data", "with_payload"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,7 +83,7 @@ class VercelUserEventsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "lookback_hours": obj.get("lookback_hours"),
+            "backfill_start_time": obj.get("backfill_start_time"),
             "use_synthetic_data": obj.get("use_synthetic_data"),
             "with_payload": obj.get("with_payload")
         })

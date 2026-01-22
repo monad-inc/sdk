@@ -13,9 +13,10 @@
 |**config** | **Object** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**house** | **String** |  |  [optional] |
+|**inBeta** | **Boolean** |  |  [optional] |
 |**internal** | **Boolean** |  |  [optional] |
 |**isCron** | **Boolean** |  |  [optional] |
-|**logoKey** | **String** |  |  [optional] |
+|**isDefault** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**tier** | **Integer** |  |  [optional] |
 |**typeId** | **String** |  |  [optional] |

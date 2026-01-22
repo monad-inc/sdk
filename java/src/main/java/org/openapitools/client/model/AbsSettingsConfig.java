@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * AbsSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class AbsSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT_URL = "account_url";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_URL)
@@ -294,7 +294,7 @@ public class AbsSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AbsSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AbsSettingsConfig is not found in the empty JSON string", AbsSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in AbsSettingsConfig is not found in the empty JSON string", AbsSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -302,32 +302,32 @@ public class AbsSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!AbsSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AbsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AbsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("account_url") != null && !jsonObj.get("account_url").isJsonNull()) && !jsonObj.get("account_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `account_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("account_url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `account_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("account_url").toString()));
       }
       // validate the optional field `batch_config`
       if (jsonObj.get("batch_config") != null && !jsonObj.get("batch_config").isJsonNull()) {
         BatchConfigBatchConfig.validateJsonElement(jsonObj.get("batch_config"));
       }
       if ((jsonObj.get("compression") != null && !jsonObj.get("compression").isJsonNull()) && !jsonObj.get("compression").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `compression` to be a primitive type in the JSON string but got `%s`", jsonObj.get("compression").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `compression` to be a primitive type in the JSON string but got `%s`", jsonObj.get("compression").toString()));
       }
       if ((jsonObj.get("container") != null && !jsonObj.get("container").isJsonNull()) && !jsonObj.get("container").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `container` to be a primitive type in the JSON string but got `%s`", jsonObj.get("container").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `container` to be a primitive type in the JSON string but got `%s`", jsonObj.get("container").toString()));
       }
       // validate the optional field `format_config`
       if (jsonObj.get("format_config") != null && !jsonObj.get("format_config").isJsonNull()) {
         FormatterFormatConfig.validateJsonElement(jsonObj.get("format_config"));
       }
       if ((jsonObj.get("partition_format") != null && !jsonObj.get("partition_format").isJsonNull()) && !jsonObj.get("partition_format").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `partition_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partition_format").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `partition_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partition_format").toString()));
       }
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
       }
   }
 

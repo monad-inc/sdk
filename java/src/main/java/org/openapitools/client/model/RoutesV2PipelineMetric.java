@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineMetric
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV2PipelineMetric {
   public static final String SERIALIZED_NAME_PIPELINE_ID = "pipeline_id";
   @SerializedName(SERIALIZED_NAME_PIPELINE_ID)
@@ -225,7 +225,7 @@ public class RoutesV2PipelineMetric {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RoutesV2PipelineMetric.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RoutesV2PipelineMetric is not found in the empty JSON string", RoutesV2PipelineMetric.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV2PipelineMetric is not found in the empty JSON string", RoutesV2PipelineMetric.openapiRequiredFields.toString()));
         }
       }
 
@@ -233,22 +233,22 @@ public class RoutesV2PipelineMetric {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!RoutesV2PipelineMetric.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RoutesV2PipelineMetric` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV2PipelineMetric` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("pipeline_id") != null && !jsonObj.get("pipeline_id").isJsonNull()) && !jsonObj.get("pipeline_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `pipeline_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pipeline_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_id").toString()));
       }
       if ((jsonObj.get("pipeline_name") != null && !jsonObj.get("pipeline_name").isJsonNull()) && !jsonObj.get("pipeline_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `pipeline_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pipeline_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_name").toString()));
       }
       if (jsonObj.get("values") != null && !jsonObj.get("values").isJsonNull()) {
         JsonArray jsonArrayvalues = jsonObj.getAsJsonArray("values");
         if (jsonArrayvalues != null) {
           // ensure the json data is an array
           if (!jsonObj.get("values").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
           }
 
           // validate the optional field `values` (array)

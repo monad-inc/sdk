@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auth_providers** | [**List[RoutesUserAuthProvider]**](RoutesUserAuthProvider.md) |  | [optional] 
+**auth_provider** | [**RoutesUserAuthProvider**](RoutesUserAuthProvider.md) |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 

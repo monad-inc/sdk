@@ -28,13 +28,14 @@ class AzureBlobStorageSettingsConfig(BaseModel):
     AzureBlobStorageSettingsConfig
     """ # noqa: E501
     account_url: Optional[StrictStr] = Field(default=None, description="Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net.")
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Starting timestamp for initial data sync. Only processes blobs with a last modified time after this timestamp on the initial sync. If not specified, all available data from the specified prefix will be processed. Incremental syncs automatically continue from the last processed timestamp, scanning from the previous day's partition forward to catch late-arriving data. Files updated in partitions older than the current state's previous prefix will not be detected.")
     compression: Optional[StrictStr] = Field(default=None, description="The compression format of objects in the Azure container")
     container: Optional[StrictStr] = Field(default=None, description="A container organizes a set of blobs, similar to a directory in a file system.")
     format: Optional[StrictStr] = Field(default=None, description="File format of the Blob storage objects in Azure.")
     partition_format: Optional[StrictStr] = Field(default=None, description="Specifies the format for organizing data into partitions within your Azure container. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., 'year=2024/month=01/day=01') and simple date-based formats (e.g., '2024/01/01').")
     prefix: Optional[StrictStr] = Field(default=None, description="An optional prefix for Azure object keys to organize data within the container")
     record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the JSON object. Applies only if the format is JSON.")
-    __properties: ClassVar[List[str]] = ["account_url", "compression", "container", "format", "partition_format", "prefix", "record_location"]
+    __properties: ClassVar[List[str]] = ["account_url", "backfill_start_time", "compression", "container", "format", "partition_format", "prefix", "record_location"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,6 +89,7 @@ class AzureBlobStorageSettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "account_url": obj.get("account_url"),
+            "backfill_start_time": obj.get("backfill_start_time"),
             "compression": obj.get("compression"),
             "container": obj.get("container"),
             "format": obj.get("format"),

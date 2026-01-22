@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthProviders** | Pointer to [**[]ModelsUserAuthProvider**](ModelsUserAuthProvider.md) |  | [optional] 
+**AuthProvider** | Pointer to [**ModelsUserAuthProvider**](ModelsUserAuthProvider.md) |  | [optional] 
 **ConnectionId** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
@@ -32,30 +32,30 @@ NewModelsOrganizationUserWithDefaults instantiates a new ModelsOrganizationUser 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAuthProviders
+### GetAuthProvider
 
-`func (o *ModelsOrganizationUser) GetAuthProviders() []ModelsUserAuthProvider`
+`func (o *ModelsOrganizationUser) GetAuthProvider() ModelsUserAuthProvider`
 
-GetAuthProviders returns the AuthProviders field if non-nil, zero value otherwise.
+GetAuthProvider returns the AuthProvider field if non-nil, zero value otherwise.
 
-### GetAuthProvidersOk
+### GetAuthProviderOk
 
-`func (o *ModelsOrganizationUser) GetAuthProvidersOk() (*[]ModelsUserAuthProvider, bool)`
+`func (o *ModelsOrganizationUser) GetAuthProviderOk() (*ModelsUserAuthProvider, bool)`
 
-GetAuthProvidersOk returns a tuple with the AuthProviders field if it's non-nil, zero value otherwise
+GetAuthProviderOk returns a tuple with the AuthProvider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAuthProviders
+### SetAuthProvider
 
-`func (o *ModelsOrganizationUser) SetAuthProviders(v []ModelsUserAuthProvider)`
+`func (o *ModelsOrganizationUser) SetAuthProvider(v ModelsUserAuthProvider)`
 
-SetAuthProviders sets AuthProviders field to given value.
+SetAuthProvider sets AuthProvider field to given value.
 
-### HasAuthProviders
+### HasAuthProvider
 
-`func (o *ModelsOrganizationUser) HasAuthProviders() bool`
+`func (o *ModelsOrganizationUser) HasAuthProvider() bool`
 
-HasAuthProviders returns a boolean if a field has been set.
+HasAuthProvider returns a boolean if a field has been set.
 
 ### GetConnectionId
 

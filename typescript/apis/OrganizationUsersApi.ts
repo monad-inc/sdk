@@ -141,8 +141,9 @@ export class OrganizationUsersApiRequestFactory extends BaseAPIRequestFactory {
      * Remove user from organization
      * @param organizationId Organization ID
      * @param userId User ID
+     * @param userAuthProviderId User Auth Provider ID
      */
-    public async v1OrganizationIdUsersUserIdDelete(organizationId: string, userId: string, _options?: Configuration): Promise<RequestContext> {
+    public async v1OrganizationIdUsersUserIdDelete(organizationId: string, userId: string, userAuthProviderId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -157,6 +158,12 @@ export class OrganizationUsersApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
+        // verify required parameter 'userAuthProviderId' is not null or undefined
+        if (userAuthProviderId === null || userAuthProviderId === undefined) {
+            throw new RequiredError("OrganizationUsersApi", "v1OrganizationIdUsersUserIdDelete", "userAuthProviderId");
+        }
+
+
         // Path Params
         const localVarPath = '/v1/{organization_id}/users/{user_id}'
             .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
@@ -165,6 +172,11 @@ export class OrganizationUsersApiRequestFactory extends BaseAPIRequestFactory {
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (userAuthProviderId !== undefined) {
+            requestContext.setQueryParam("user_auth_provider_id", ObjectSerializer.serialize(userAuthProviderId, "string", ""));
+        }
 
 
         let authMethod: SecurityAuthentication | undefined;

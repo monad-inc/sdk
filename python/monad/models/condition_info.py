@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,11 +27,11 @@ class ConditionInfo(BaseModel):
     """
     ConditionInfo
     """ # noqa: E501
-    config_meta: Optional[Any] = Field(default=None, alias="configMeta")
+    config_meta: Optional[Any] = None
     description: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
-    type_id: Optional[StrictStr] = Field(default=None, alias="typeID")
-    __properties: ClassVar[List[str]] = ["configMeta", "description", "name", "typeID"]
+    type_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["config_meta", "description", "name", "type_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -75,7 +75,7 @@ class ConditionInfo(BaseModel):
         # set to None if config_meta (nullable) is None
         # and model_fields_set contains the field
         if self.config_meta is None and "config_meta" in self.model_fields_set:
-            _dict['configMeta'] = None
+            _dict['config_meta'] = None
 
         return _dict
 
@@ -89,10 +89,10 @@ class ConditionInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "configMeta": obj.get("configMeta"),
+            "config_meta": obj.get("config_meta"),
             "description": obj.get("description"),
             "name": obj.get("name"),
-            "typeID": obj.get("typeID")
+            "type_id": obj.get("type_id")
         })
         return _obj
 

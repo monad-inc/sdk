@@ -19,8 +19,8 @@ export class OutputsConnectorMeta {
     'config'?: any | null;
     'description'?: string;
     'house'?: string;
+    'inBeta'?: boolean;
     'internal'?: boolean;
-    'logoKey'?: string;
     'name'?: string;
     'tier'?: number;
     'typeId'?: string;
@@ -67,15 +67,15 @@ export class OutputsConnectorMeta {
             "format": ""
         },
         {
-            "name": "internal",
-            "baseName": "internal",
+            "name": "inBeta",
+            "baseName": "in_beta",
             "type": "boolean",
             "format": ""
         },
         {
-            "name": "logoKey",
-            "baseName": "logo_key",
-            "type": "string",
+            "name": "internal",
+            "baseName": "internal",
+            "type": "boolean",
             "format": ""
         },
         {

@@ -20,61 +20,93 @@ import (
 // SecretProcessesorInputConfigSettings - struct for SecretProcessesorInputConfigSettings
 type SecretProcessesorInputConfigSettings struct {
 	ActivityLogsSettingsConfig *ActivityLogsSettingsConfig
+	ActivitylogsSettingsConfig *ActivitylogsSettingsConfig
 	ActorsInfoSettingsConfig *ActorsInfoSettingsConfig
-	AdminActivitySettingsConfig *AdminActivitySettingsConfig
 	AdminLogsSettingsConfig *AdminLogsSettingsConfig
+	AlertCenterSettingsConfig *AlertCenterSettingsConfig
+	ArizeAuditLogsSettingsConfig *ArizeAuditLogsSettingsConfig
 	AuditLogsSettingsConfig *AuditLogsSettingsConfig
 	AuthLogsSettingsConfig *AuthLogsSettingsConfig
 	AwsGuarddutySettingsConfig *AwsGuarddutySettingsConfig
 	AwsS3SettingsConfig *AwsS3SettingsConfig
-	AwssqsSettingsConfig *AwssqsSettingsConfig
+	AwssecurityhubSettingsConfig *AwssecurityhubSettingsConfig
+	Awssqss3SettingsConfig *Awssqss3SettingsConfig
 	AzureActivityLogsSettingsConfig *AzureActivityLogsSettingsConfig
 	AzureBlobStorageSettingsConfig *AzureBlobStorageSettingsConfig
+	AzureEventHubsSettingsConfig *AzureEventHubsSettingsConfig
 	AzureVirtualMachineSettingsConfig *AzureVirtualMachineSettingsConfig
 	AzureVnetFlowLogsSettingsConfig *AzureVnetFlowLogsSettingsConfig
+	BackblazeB2SettingsConfig *BackblazeB2SettingsConfig
+	BigqueryCronSettingsConfig *BigqueryCronSettingsConfig
 	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BoxEventsSettingsConfig *BoxEventsSettingsConfig
 	BoxUsersSettingsConfig *BoxUsersSettingsConfig
+	BuildkiteAuditLogsSettingsConfig *BuildkiteAuditLogsSettingsConfig
+	BuildkiteGraphqlInputSettingsConfig *BuildkiteGraphqlInputSettingsConfig
 	CisaUserSettingsConfig *CisaUserSettingsConfig
 	CloudAssetInventorySettingsConfig *CloudAssetInventorySettingsConfig
 	CloudConfigurationFindingsSettingsConfig *CloudConfigurationFindingsSettingsConfig
 	CloudLogsSettingsConfig *CloudLogsSettingsConfig
+	CloudResourceInventoryReportsSettingsConfig *CloudResourceInventoryReportsSettingsConfig
 	CloudResourceInventorySettingsConfig *CloudResourceInventorySettingsConfig
+	CloudflareAuditLogsSettingsConfig *CloudflareAuditLogsSettingsConfig
+	CloudflareDnsRecordsSettingsConfig *CloudflareDnsRecordsSettingsConfig
+	CloudflareFirewallEventsSettingsConfig *CloudflareFirewallEventsSettingsConfig
+	CloudflarePageShieldConnectionsSettingsConfig *CloudflarePageShieldConnectionsSettingsConfig
+	CloudflareRulesetsSettingsConfig *CloudflareRulesetsSettingsConfig
+	CloudflareSecurityInsightsSettingsConfig *CloudflareSecurityInsightsSettingsConfig
+	CloudflareUrlScannerSettingsConfig *CloudflareUrlScannerSettingsConfig
+	CloudflareUsersSettingsConfig *CloudflareUsersSettingsConfig
+	CloudflareZeroTrustAccessRequestsSettingsConfig *CloudflareZeroTrustAccessRequestsSettingsConfig
+	CloudflareZonesSettingsConfig *CloudflareZonesSettingsConfig
 	CloudtrailSettingsConfig *CloudtrailSettingsConfig
 	ClumioAuditLogsSettingsConfig *ClumioAuditLogsSettingsConfig
 	ClumioConsolidatedAlertsSettingsConfig *ClumioConsolidatedAlertsSettingsConfig
+	CodaAuditEventsSettingsConfig *CodaAuditEventsSettingsConfig
 	CognitoUsersSettingsConfig *CognitoUsersSettingsConfig
+	CortexXsoarManagementLogsSettingsConfig *CortexXsoarManagementLogsSettingsConfig
 	CrowdstrikeFdrSettingsConfig *CrowdstrikeFdrSettingsConfig
+	CustomerEventDataSettingsConfig *CustomerEventDataSettingsConfig
 	DefenderForEndpointAlertsSettingsConfig *DefenderForEndpointAlertsSettingsConfig
-	DetectSummariesSettingsConfig *DetectSummariesSettingsConfig
-	DeviceActivitySettingsConfig *DeviceActivitySettingsConfig
 	DeviceDetailsSettingsConfig *DeviceDetailsSettingsConfig
 	DevicesSettingsConfig *DevicesSettingsConfig
-	DriveActivitySettingsConfig *DriveActivitySettingsConfig
+	EndorLabsAuditLogsSettingsConfig *EndorLabsAuditLogsSettingsConfig
 	EntraIdSettingsConfig *EntraIdSettingsConfig
 	EventSettingsConfig *EventSettingsConfig
-	EventsLogsSettingsConfig *EventsLogsSettingsConfig
-	EventsSettingsConfig *EventsSettingsConfig
 	FullScansSettingsConfig *FullScansSettingsConfig
 	GithubAdvisoryUserSettingsConfig *GithubAdvisoryUserSettingsConfig
 	GitlabIssuesSettingsConfig *GitlabIssuesSettingsConfig
 	GoogleCloudStorageSettingsConfig *GoogleCloudStorageSettingsConfig
+	GreenhouseAuditLogsSettingsConfig *GreenhouseAuditLogsSettingsConfig
 	IamAccessAnalyzerSettingsConfig *IamAccessAnalyzerSettingsConfig
 	IndividualAlertsSettingsConfig *IndividualAlertsSettingsConfig
+	InspectorSettingsConfig *InspectorSettingsConfig
+	IssuesReportSettingsConfig *IssuesReportSettingsConfig
 	IssuesSettingsConfig *IssuesSettingsConfig
 	KmsSettingsConfig *KmsSettingsConfig
+	KoiAuditLogsSettingsConfig *KoiAuditLogsSettingsConfig
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
-	LoginActivitySettingsConfig *LoginActivitySettingsConfig
 	LoginSessionsSettingsConfig *LoginSessionsSettingsConfig
+	MerakiConfigLogsSettingsConfig *MerakiConfigLogsSettingsConfig
+	Microsoft365GenericSettingsConfig *Microsoft365GenericSettingsConfig
 	MonadLogSettingsConfig *MonadLogSettingsConfig
-	OauthActivitySettingsConfig *OauthActivitySettingsConfig
 	ObjectStorageInputSettingsConfig *ObjectStorageInputSettingsConfig
+	OfflineenrollmentlogsSettingsConfig *OfflineenrollmentlogsSettingsConfig
 	OneloginEventsSettingsConfig *OneloginEventsSettingsConfig
 	OpenaiSettingsConfig *OpenaiSettingsConfig
+	OperationLogsSettingsConfig *OperationLogsSettingsConfig
+	OracleSettingsConfig *OracleSettingsConfig
+	OrgAuditLogsSettingsConfig *OrgAuditLogsSettingsConfig
 	OrganizationsSettingsConfig *OrganizationsSettingsConfig
+	PagerdutyAuditRecordsSettingsConfig *PagerdutyAuditRecordsSettingsConfig
 	PaloAltoDataSecurityAlertsSettingsConfig *PaloAltoDataSecurityAlertsSettingsConfig
+	PolymerSettingsConfig *PolymerSettingsConfig
+	PostmanAuditLogsSettingsConfig *PostmanAuditLogsSettingsConfig
+	PubsubSettingsConfig *PubsubSettingsConfig
 	ResourceEvaluationsSettingsConfig *ResourceEvaluationsSettingsConfig
 	RolesInfoSettingsConfig *RolesInfoSettingsConfig
+	RootlyAuditLogsSettingsConfig *RootlyAuditLogsSettingsConfig
+	SalesforceUsersSettingsConfig *SalesforceUsersSettingsConfig
 	SecretsmanagerSettingsConfig *SecretsmanagerSettingsConfig
 	SecurityGroupsSettingsConfig *SecurityGroupsSettingsConfig
 	SemgrepCodeFindingsSettingsConfig *SemgrepCodeFindingsSettingsConfig
@@ -83,6 +115,7 @@ type SecretProcessesorInputConfigSettings struct {
 	SemgrepProjectsSettingsConfig *SemgrepProjectsSettingsConfig
 	SemgrepSupplyChainFindingsSettingsConfig *SemgrepSupplyChainFindingsSettingsConfig
 	SentryOrgAuditLogsSettingsConfig *SentryOrgAuditLogsSettingsConfig
+	SlackEnterpriseAuditLogsSettingsConfig *SlackEnterpriseAuditLogsSettingsConfig
 	SlackUsersSettingsConfig *SlackUsersSettingsConfig
 	SlackgroupsSettingsConfig *SlackgroupsSettingsConfig
 	SnowflakeInputSettingsConfig *SnowflakeInputSettingsConfig
@@ -94,16 +127,30 @@ type SecretProcessesorInputConfigSettings struct {
 	SyntheticDataSettingsConfig *SyntheticDataSettingsConfig
 	SystemlogSettingsConfig *SystemlogSettingsConfig
 	TailscaleUsersSettingsConfig *TailscaleUsersSettingsConfig
+	TaniumGraphqlInputSettingsConfig *TaniumGraphqlInputSettingsConfig
+	TeamAccessLogsSettingsConfig *TeamAccessLogsSettingsConfig
+	TeamIntegrationLogsSettingsConfig *TeamIntegrationLogsSettingsConfig
+	TelephonyLogsSettingsConfig *TelephonyLogsSettingsConfig
 	TenableAssetsCronSettingsConfig *TenableAssetsCronSettingsConfig
 	TenableAssetsSettingsConfig *TenableAssetsSettingsConfig
 	TenableVulnerabilitiesCronSettingsConfig *TenableVulnerabilitiesCronSettingsConfig
 	TenableVulnerabilitiesSettingsConfig *TenableVulnerabilitiesSettingsConfig
+	TinesAuditLogsSettingsConfig *TinesAuditLogsSettingsConfig
+	TinesEventsLogsSettingsConfig *TinesEventsLogsSettingsConfig
+	TwilioEventsSettingsConfig *TwilioEventsSettingsConfig
+	TwilioSendgridEmailActivitySettingsConfig *TwilioSendgridEmailActivitySettingsConfig
+	UniversalSettingsConfig *UniversalSettingsConfig
 	UsersInfoSettingsConfig *UsersInfoSettingsConfig
 	UsersSettingsConfig *UsersSettingsConfig
 	VercelUserEventsSettingsConfig *VercelUserEventsSettingsConfig
 	VulnerabilitiesCronSettingsConfig *VulnerabilitiesCronSettingsConfig
 	VulnerabilitiesSettingsConfig *VulnerabilitiesSettingsConfig
+	VulnerabilityFindingsReportSettingsConfig *VulnerabilityFindingsReportSettingsConfig
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
+	WizAuditLogsSettingsConfig *WizAuditLogsSettingsConfig
+	ZendeskAuditLogsSettingsConfig *ZendeskAuditLogsSettingsConfig
+	ZoomActivityLogsSettingsConfig *ZoomActivityLogsSettingsConfig
+	ZoomMeetingActivityLogsSettingsConfig *ZoomMeetingActivityLogsSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
 }
 
@@ -114,6 +161,13 @@ func ActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Activit
 	}
 }
 
+// ActivitylogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ActivitylogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func ActivitylogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ActivitylogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		ActivitylogsSettingsConfig: v,
+	}
+}
+
 // ActorsInfoSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ActorsInfoSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func ActorsInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *ActorsInfoSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -121,17 +175,24 @@ func ActorsInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *ActorsInf
 	}
 }
 
-// AdminActivitySettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AdminActivitySettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func AdminActivitySettingsConfigAsSecretProcessesorInputConfigSettings(v *AdminActivitySettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		AdminActivitySettingsConfig: v,
-	}
-}
-
 // AdminLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AdminLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func AdminLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AdminLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		AdminLogsSettingsConfig: v,
+	}
+}
+
+// AlertCenterSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AlertCenterSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func AlertCenterSettingsConfigAsSecretProcessesorInputConfigSettings(v *AlertCenterSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		AlertCenterSettingsConfig: v,
+	}
+}
+
+// ArizeAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ArizeAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func ArizeAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ArizeAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		ArizeAuditLogsSettingsConfig: v,
 	}
 }
 
@@ -163,10 +224,17 @@ func AwsS3SettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsS3SettingsC
 	}
 }
 
-// AwssqsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AwssqsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func AwssqsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AwssqsSettingsConfig) SecretProcessesorInputConfigSettings {
+// AwssecurityhubSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AwssecurityhubSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func AwssecurityhubSettingsConfigAsSecretProcessesorInputConfigSettings(v *AwssecurityhubSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
-		AwssqsSettingsConfig: v,
+		AwssecurityhubSettingsConfig: v,
+	}
+}
+
+// Awssqss3SettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns Awssqss3SettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func Awssqss3SettingsConfigAsSecretProcessesorInputConfigSettings(v *Awssqss3SettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		Awssqss3SettingsConfig: v,
 	}
 }
 
@@ -184,6 +252,13 @@ func AzureBlobStorageSettingsConfigAsSecretProcessesorInputConfigSettings(v *Azu
 	}
 }
 
+// AzureEventHubsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AzureEventHubsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func AzureEventHubsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AzureEventHubsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		AzureEventHubsSettingsConfig: v,
+	}
+}
+
 // AzureVirtualMachineSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AzureVirtualMachineSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func AzureVirtualMachineSettingsConfigAsSecretProcessesorInputConfigSettings(v *AzureVirtualMachineSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -195,6 +270,20 @@ func AzureVirtualMachineSettingsConfigAsSecretProcessesorInputConfigSettings(v *
 func AzureVnetFlowLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AzureVnetFlowLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		AzureVnetFlowLogsSettingsConfig: v,
+	}
+}
+
+// BackblazeB2SettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns BackblazeB2SettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func BackblazeB2SettingsConfigAsSecretProcessesorInputConfigSettings(v *BackblazeB2SettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		BackblazeB2SettingsConfig: v,
+	}
+}
+
+// BigqueryCronSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns BigqueryCronSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func BigqueryCronSettingsConfigAsSecretProcessesorInputConfigSettings(v *BigqueryCronSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		BigqueryCronSettingsConfig: v,
 	}
 }
 
@@ -216,6 +305,20 @@ func BoxEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *BoxEventsS
 func BoxUsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *BoxUsersSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		BoxUsersSettingsConfig: v,
+	}
+}
+
+// BuildkiteAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns BuildkiteAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func BuildkiteAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *BuildkiteAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		BuildkiteAuditLogsSettingsConfig: v,
+	}
+}
+
+// BuildkiteGraphqlInputSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns BuildkiteGraphqlInputSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func BuildkiteGraphqlInputSettingsConfigAsSecretProcessesorInputConfigSettings(v *BuildkiteGraphqlInputSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		BuildkiteGraphqlInputSettingsConfig: v,
 	}
 }
 
@@ -247,10 +350,87 @@ func CloudLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudLogsS
 	}
 }
 
+// CloudResourceInventoryReportsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudResourceInventoryReportsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CloudResourceInventoryReportsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudResourceInventoryReportsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CloudResourceInventoryReportsSettingsConfig: v,
+	}
+}
+
 // CloudResourceInventorySettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudResourceInventorySettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func CloudResourceInventorySettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudResourceInventorySettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		CloudResourceInventorySettingsConfig: v,
+	}
+}
+
+// CloudflareAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudflareAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CloudflareAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflareAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CloudflareAuditLogsSettingsConfig: v,
+	}
+}
+
+// CloudflareDnsRecordsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudflareDnsRecordsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CloudflareDnsRecordsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflareDnsRecordsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CloudflareDnsRecordsSettingsConfig: v,
+	}
+}
+
+// CloudflareFirewallEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudflareFirewallEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CloudflareFirewallEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflareFirewallEventsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CloudflareFirewallEventsSettingsConfig: v,
+	}
+}
+
+// CloudflarePageShieldConnectionsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudflarePageShieldConnectionsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CloudflarePageShieldConnectionsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflarePageShieldConnectionsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CloudflarePageShieldConnectionsSettingsConfig: v,
+	}
+}
+
+// CloudflareRulesetsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudflareRulesetsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CloudflareRulesetsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflareRulesetsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CloudflareRulesetsSettingsConfig: v,
+	}
+}
+
+// CloudflareSecurityInsightsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudflareSecurityInsightsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CloudflareSecurityInsightsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflareSecurityInsightsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CloudflareSecurityInsightsSettingsConfig: v,
+	}
+}
+
+// CloudflareUrlScannerSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudflareUrlScannerSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CloudflareUrlScannerSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflareUrlScannerSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CloudflareUrlScannerSettingsConfig: v,
+	}
+}
+
+// CloudflareUsersSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudflareUsersSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CloudflareUsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflareUsersSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CloudflareUsersSettingsConfig: v,
+	}
+}
+
+// CloudflareZeroTrustAccessRequestsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudflareZeroTrustAccessRequestsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CloudflareZeroTrustAccessRequestsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflareZeroTrustAccessRequestsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CloudflareZeroTrustAccessRequestsSettingsConfig: v,
+	}
+}
+
+// CloudflareZonesSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudflareZonesSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CloudflareZonesSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflareZonesSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CloudflareZonesSettingsConfig: v,
 	}
 }
 
@@ -275,10 +455,24 @@ func ClumioConsolidatedAlertsSettingsConfigAsSecretProcessesorInputConfigSetting
 	}
 }
 
+// CodaAuditEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CodaAuditEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CodaAuditEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CodaAuditEventsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CodaAuditEventsSettingsConfig: v,
+	}
+}
+
 // CognitoUsersSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CognitoUsersSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func CognitoUsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *CognitoUsersSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		CognitoUsersSettingsConfig: v,
+	}
+}
+
+// CortexXsoarManagementLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CortexXsoarManagementLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CortexXsoarManagementLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CortexXsoarManagementLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CortexXsoarManagementLogsSettingsConfig: v,
 	}
 }
 
@@ -289,24 +483,17 @@ func CrowdstrikeFdrSettingsConfigAsSecretProcessesorInputConfigSettings(v *Crowd
 	}
 }
 
+// CustomerEventDataSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CustomerEventDataSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CustomerEventDataSettingsConfigAsSecretProcessesorInputConfigSettings(v *CustomerEventDataSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CustomerEventDataSettingsConfig: v,
+	}
+}
+
 // DefenderForEndpointAlertsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns DefenderForEndpointAlertsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func DefenderForEndpointAlertsSettingsConfigAsSecretProcessesorInputConfigSettings(v *DefenderForEndpointAlertsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		DefenderForEndpointAlertsSettingsConfig: v,
-	}
-}
-
-// DetectSummariesSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns DetectSummariesSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func DetectSummariesSettingsConfigAsSecretProcessesorInputConfigSettings(v *DetectSummariesSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		DetectSummariesSettingsConfig: v,
-	}
-}
-
-// DeviceActivitySettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns DeviceActivitySettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func DeviceActivitySettingsConfigAsSecretProcessesorInputConfigSettings(v *DeviceActivitySettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		DeviceActivitySettingsConfig: v,
 	}
 }
 
@@ -324,10 +511,10 @@ func DevicesSettingsConfigAsSecretProcessesorInputConfigSettings(v *DevicesSetti
 	}
 }
 
-// DriveActivitySettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns DriveActivitySettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func DriveActivitySettingsConfigAsSecretProcessesorInputConfigSettings(v *DriveActivitySettingsConfig) SecretProcessesorInputConfigSettings {
+// EndorLabsAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns EndorLabsAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func EndorLabsAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *EndorLabsAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
-		DriveActivitySettingsConfig: v,
+		EndorLabsAuditLogsSettingsConfig: v,
 	}
 }
 
@@ -342,20 +529,6 @@ func EntraIdSettingsConfigAsSecretProcessesorInputConfigSettings(v *EntraIdSetti
 func EventSettingsConfigAsSecretProcessesorInputConfigSettings(v *EventSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		EventSettingsConfig: v,
-	}
-}
-
-// EventsLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns EventsLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func EventsLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *EventsLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		EventsLogsSettingsConfig: v,
-	}
-}
-
-// EventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns EventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func EventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *EventsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		EventsSettingsConfig: v,
 	}
 }
 
@@ -387,6 +560,13 @@ func GoogleCloudStorageSettingsConfigAsSecretProcessesorInputConfigSettings(v *G
 	}
 }
 
+// GreenhouseAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns GreenhouseAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func GreenhouseAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *GreenhouseAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		GreenhouseAuditLogsSettingsConfig: v,
+	}
+}
+
 // IamAccessAnalyzerSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns IamAccessAnalyzerSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func IamAccessAnalyzerSettingsConfigAsSecretProcessesorInputConfigSettings(v *IamAccessAnalyzerSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -398,6 +578,20 @@ func IamAccessAnalyzerSettingsConfigAsSecretProcessesorInputConfigSettings(v *Ia
 func IndividualAlertsSettingsConfigAsSecretProcessesorInputConfigSettings(v *IndividualAlertsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		IndividualAlertsSettingsConfig: v,
+	}
+}
+
+// InspectorSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns InspectorSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func InspectorSettingsConfigAsSecretProcessesorInputConfigSettings(v *InspectorSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		InspectorSettingsConfig: v,
+	}
+}
+
+// IssuesReportSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns IssuesReportSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func IssuesReportSettingsConfigAsSecretProcessesorInputConfigSettings(v *IssuesReportSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		IssuesReportSettingsConfig: v,
 	}
 }
 
@@ -415,17 +609,17 @@ func KmsSettingsConfigAsSecretProcessesorInputConfigSettings(v *KmsSettingsConfi
 	}
 }
 
+// KoiAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns KoiAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func KoiAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *KoiAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		KoiAuditLogsSettingsConfig: v,
+	}
+}
+
 // LogAnalyticsQuerySettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns LogAnalyticsQuerySettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func LogAnalyticsQuerySettingsConfigAsSecretProcessesorInputConfigSettings(v *LogAnalyticsQuerySettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		LogAnalyticsQuerySettingsConfig: v,
-	}
-}
-
-// LoginActivitySettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns LoginActivitySettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func LoginActivitySettingsConfigAsSecretProcessesorInputConfigSettings(v *LoginActivitySettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		LoginActivitySettingsConfig: v,
 	}
 }
 
@@ -436,6 +630,20 @@ func LoginSessionsSettingsConfigAsSecretProcessesorInputConfigSettings(v *LoginS
 	}
 }
 
+// MerakiConfigLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns MerakiConfigLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func MerakiConfigLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *MerakiConfigLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		MerakiConfigLogsSettingsConfig: v,
+	}
+}
+
+// Microsoft365GenericSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns Microsoft365GenericSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func Microsoft365GenericSettingsConfigAsSecretProcessesorInputConfigSettings(v *Microsoft365GenericSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		Microsoft365GenericSettingsConfig: v,
+	}
+}
+
 // MonadLogSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns MonadLogSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func MonadLogSettingsConfigAsSecretProcessesorInputConfigSettings(v *MonadLogSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -443,17 +651,17 @@ func MonadLogSettingsConfigAsSecretProcessesorInputConfigSettings(v *MonadLogSet
 	}
 }
 
-// OauthActivitySettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OauthActivitySettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func OauthActivitySettingsConfigAsSecretProcessesorInputConfigSettings(v *OauthActivitySettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		OauthActivitySettingsConfig: v,
-	}
-}
-
 // ObjectStorageInputSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ObjectStorageInputSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func ObjectStorageInputSettingsConfigAsSecretProcessesorInputConfigSettings(v *ObjectStorageInputSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		ObjectStorageInputSettingsConfig: v,
+	}
+}
+
+// OfflineenrollmentlogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OfflineenrollmentlogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func OfflineenrollmentlogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OfflineenrollmentlogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		OfflineenrollmentlogsSettingsConfig: v,
 	}
 }
 
@@ -471,6 +679,27 @@ func OpenaiSettingsConfigAsSecretProcessesorInputConfigSettings(v *OpenaiSetting
 	}
 }
 
+// OperationLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OperationLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func OperationLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OperationLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		OperationLogsSettingsConfig: v,
+	}
+}
+
+// OracleSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OracleSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func OracleSettingsConfigAsSecretProcessesorInputConfigSettings(v *OracleSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		OracleSettingsConfig: v,
+	}
+}
+
+// OrgAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OrgAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func OrgAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OrgAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		OrgAuditLogsSettingsConfig: v,
+	}
+}
+
 // OrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OrganizationsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func OrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OrganizationsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -478,10 +707,38 @@ func OrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Organi
 	}
 }
 
+// PagerdutyAuditRecordsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PagerdutyAuditRecordsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func PagerdutyAuditRecordsSettingsConfigAsSecretProcessesorInputConfigSettings(v *PagerdutyAuditRecordsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		PagerdutyAuditRecordsSettingsConfig: v,
+	}
+}
+
 // PaloAltoDataSecurityAlertsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PaloAltoDataSecurityAlertsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func PaloAltoDataSecurityAlertsSettingsConfigAsSecretProcessesorInputConfigSettings(v *PaloAltoDataSecurityAlertsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		PaloAltoDataSecurityAlertsSettingsConfig: v,
+	}
+}
+
+// PolymerSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PolymerSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func PolymerSettingsConfigAsSecretProcessesorInputConfigSettings(v *PolymerSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		PolymerSettingsConfig: v,
+	}
+}
+
+// PostmanAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PostmanAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func PostmanAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *PostmanAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		PostmanAuditLogsSettingsConfig: v,
+	}
+}
+
+// PubsubSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PubsubSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func PubsubSettingsConfigAsSecretProcessesorInputConfigSettings(v *PubsubSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		PubsubSettingsConfig: v,
 	}
 }
 
@@ -496,6 +753,20 @@ func ResourceEvaluationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *
 func RolesInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *RolesInfoSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		RolesInfoSettingsConfig: v,
+	}
+}
+
+// RootlyAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns RootlyAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func RootlyAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *RootlyAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		RootlyAuditLogsSettingsConfig: v,
+	}
+}
+
+// SalesforceUsersSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SalesforceUsersSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func SalesforceUsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *SalesforceUsersSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		SalesforceUsersSettingsConfig: v,
 	}
 }
 
@@ -552,6 +823,13 @@ func SemgrepSupplyChainFindingsSettingsConfigAsSecretProcessesorInputConfigSetti
 func SentryOrgAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SentryOrgAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		SentryOrgAuditLogsSettingsConfig: v,
+	}
+}
+
+// SlackEnterpriseAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SlackEnterpriseAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func SlackEnterpriseAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SlackEnterpriseAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		SlackEnterpriseAuditLogsSettingsConfig: v,
 	}
 }
 
@@ -632,6 +910,34 @@ func TailscaleUsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *Tails
 	}
 }
 
+// TaniumGraphqlInputSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TaniumGraphqlInputSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func TaniumGraphqlInputSettingsConfigAsSecretProcessesorInputConfigSettings(v *TaniumGraphqlInputSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		TaniumGraphqlInputSettingsConfig: v,
+	}
+}
+
+// TeamAccessLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TeamAccessLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func TeamAccessLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *TeamAccessLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		TeamAccessLogsSettingsConfig: v,
+	}
+}
+
+// TeamIntegrationLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TeamIntegrationLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func TeamIntegrationLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *TeamIntegrationLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		TeamIntegrationLogsSettingsConfig: v,
+	}
+}
+
+// TelephonyLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TelephonyLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func TelephonyLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *TelephonyLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		TelephonyLogsSettingsConfig: v,
+	}
+}
+
 // TenableAssetsCronSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TenableAssetsCronSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func TenableAssetsCronSettingsConfigAsSecretProcessesorInputConfigSettings(v *TenableAssetsCronSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -657,6 +963,41 @@ func TenableVulnerabilitiesCronSettingsConfigAsSecretProcessesorInputConfigSetti
 func TenableVulnerabilitiesSettingsConfigAsSecretProcessesorInputConfigSettings(v *TenableVulnerabilitiesSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		TenableVulnerabilitiesSettingsConfig: v,
+	}
+}
+
+// TinesAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TinesAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func TinesAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *TinesAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		TinesAuditLogsSettingsConfig: v,
+	}
+}
+
+// TinesEventsLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TinesEventsLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func TinesEventsLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *TinesEventsLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		TinesEventsLogsSettingsConfig: v,
+	}
+}
+
+// TwilioEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TwilioEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func TwilioEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *TwilioEventsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		TwilioEventsSettingsConfig: v,
+	}
+}
+
+// TwilioSendgridEmailActivitySettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns TwilioSendgridEmailActivitySettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func TwilioSendgridEmailActivitySettingsConfigAsSecretProcessesorInputConfigSettings(v *TwilioSendgridEmailActivitySettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		TwilioSendgridEmailActivitySettingsConfig: v,
+	}
+}
+
+// UniversalSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns UniversalSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func UniversalSettingsConfigAsSecretProcessesorInputConfigSettings(v *UniversalSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		UniversalSettingsConfig: v,
 	}
 }
 
@@ -695,10 +1036,45 @@ func VulnerabilitiesSettingsConfigAsSecretProcessesorInputConfigSettings(v *Vuln
 	}
 }
 
+// VulnerabilityFindingsReportSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns VulnerabilityFindingsReportSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func VulnerabilityFindingsReportSettingsConfigAsSecretProcessesorInputConfigSettings(v *VulnerabilityFindingsReportSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		VulnerabilityFindingsReportSettingsConfig: v,
+	}
+}
+
 // VulnerabilityFindingsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns VulnerabilityFindingsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func VulnerabilityFindingsSettingsConfigAsSecretProcessesorInputConfigSettings(v *VulnerabilityFindingsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		VulnerabilityFindingsSettingsConfig: v,
+	}
+}
+
+// WizAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns WizAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func WizAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *WizAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		WizAuditLogsSettingsConfig: v,
+	}
+}
+
+// ZendeskAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ZendeskAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func ZendeskAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ZendeskAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		ZendeskAuditLogsSettingsConfig: v,
+	}
+}
+
+// ZoomActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ZoomActivityLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func ZoomActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ZoomActivityLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		ZoomActivityLogsSettingsConfig: v,
+	}
+}
+
+// ZoomMeetingActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ZoomMeetingActivityLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func ZoomMeetingActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ZoomMeetingActivityLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		ZoomMeetingActivityLogsSettingsConfig: v,
 	}
 }
 
@@ -731,6 +1107,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.ActivityLogsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into ActivitylogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.ActivitylogsSettingsConfig)
+	if err == nil {
+		jsonActivitylogsSettingsConfig, _ := json.Marshal(dst.ActivitylogsSettingsConfig)
+		if string(jsonActivitylogsSettingsConfig) == "{}" { // empty struct
+			dst.ActivitylogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ActivitylogsSettingsConfig); err != nil {
+				dst.ActivitylogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ActivitylogsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into ActorsInfoSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.ActorsInfoSettingsConfig)
 	if err == nil {
@@ -748,23 +1141,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.ActorsInfoSettingsConfig = nil
 	}
 
-	// try to unmarshal data into AdminActivitySettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.AdminActivitySettingsConfig)
-	if err == nil {
-		jsonAdminActivitySettingsConfig, _ := json.Marshal(dst.AdminActivitySettingsConfig)
-		if string(jsonAdminActivitySettingsConfig) == "{}" { // empty struct
-			dst.AdminActivitySettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AdminActivitySettingsConfig); err != nil {
-				dst.AdminActivitySettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AdminActivitySettingsConfig = nil
-	}
-
 	// try to unmarshal data into AdminLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.AdminLogsSettingsConfig)
 	if err == nil {
@@ -780,6 +1156,40 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.AdminLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into AlertCenterSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AlertCenterSettingsConfig)
+	if err == nil {
+		jsonAlertCenterSettingsConfig, _ := json.Marshal(dst.AlertCenterSettingsConfig)
+		if string(jsonAlertCenterSettingsConfig) == "{}" { // empty struct
+			dst.AlertCenterSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AlertCenterSettingsConfig); err != nil {
+				dst.AlertCenterSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AlertCenterSettingsConfig = nil
+	}
+
+	// try to unmarshal data into ArizeAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.ArizeAuditLogsSettingsConfig)
+	if err == nil {
+		jsonArizeAuditLogsSettingsConfig, _ := json.Marshal(dst.ArizeAuditLogsSettingsConfig)
+		if string(jsonArizeAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.ArizeAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ArizeAuditLogsSettingsConfig); err != nil {
+				dst.ArizeAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ArizeAuditLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into AuditLogsSettingsConfig
@@ -850,21 +1260,38 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AwsS3SettingsConfig = nil
 	}
 
-	// try to unmarshal data into AwssqsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.AwssqsSettingsConfig)
+	// try to unmarshal data into AwssecurityhubSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AwssecurityhubSettingsConfig)
 	if err == nil {
-		jsonAwssqsSettingsConfig, _ := json.Marshal(dst.AwssqsSettingsConfig)
-		if string(jsonAwssqsSettingsConfig) == "{}" { // empty struct
-			dst.AwssqsSettingsConfig = nil
+		jsonAwssecurityhubSettingsConfig, _ := json.Marshal(dst.AwssecurityhubSettingsConfig)
+		if string(jsonAwssecurityhubSettingsConfig) == "{}" { // empty struct
+			dst.AwssecurityhubSettingsConfig = nil
 		} else {
-			if err = validator.Validate(dst.AwssqsSettingsConfig); err != nil {
-				dst.AwssqsSettingsConfig = nil
+			if err = validator.Validate(dst.AwssecurityhubSettingsConfig); err != nil {
+				dst.AwssecurityhubSettingsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.AwssqsSettingsConfig = nil
+		dst.AwssecurityhubSettingsConfig = nil
+	}
+
+	// try to unmarshal data into Awssqss3SettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.Awssqss3SettingsConfig)
+	if err == nil {
+		jsonAwssqss3SettingsConfig, _ := json.Marshal(dst.Awssqss3SettingsConfig)
+		if string(jsonAwssqss3SettingsConfig) == "{}" { // empty struct
+			dst.Awssqss3SettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.Awssqss3SettingsConfig); err != nil {
+				dst.Awssqss3SettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.Awssqss3SettingsConfig = nil
 	}
 
 	// try to unmarshal data into AzureActivityLogsSettingsConfig
@@ -901,6 +1328,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AzureBlobStorageSettingsConfig = nil
 	}
 
+	// try to unmarshal data into AzureEventHubsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AzureEventHubsSettingsConfig)
+	if err == nil {
+		jsonAzureEventHubsSettingsConfig, _ := json.Marshal(dst.AzureEventHubsSettingsConfig)
+		if string(jsonAzureEventHubsSettingsConfig) == "{}" { // empty struct
+			dst.AzureEventHubsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AzureEventHubsSettingsConfig); err != nil {
+				dst.AzureEventHubsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AzureEventHubsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into AzureVirtualMachineSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.AzureVirtualMachineSettingsConfig)
 	if err == nil {
@@ -933,6 +1377,40 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.AzureVnetFlowLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into BackblazeB2SettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.BackblazeB2SettingsConfig)
+	if err == nil {
+		jsonBackblazeB2SettingsConfig, _ := json.Marshal(dst.BackblazeB2SettingsConfig)
+		if string(jsonBackblazeB2SettingsConfig) == "{}" { // empty struct
+			dst.BackblazeB2SettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BackblazeB2SettingsConfig); err != nil {
+				dst.BackblazeB2SettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BackblazeB2SettingsConfig = nil
+	}
+
+	// try to unmarshal data into BigqueryCronSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.BigqueryCronSettingsConfig)
+	if err == nil {
+		jsonBigqueryCronSettingsConfig, _ := json.Marshal(dst.BigqueryCronSettingsConfig)
+		if string(jsonBigqueryCronSettingsConfig) == "{}" { // empty struct
+			dst.BigqueryCronSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BigqueryCronSettingsConfig); err != nil {
+				dst.BigqueryCronSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BigqueryCronSettingsConfig = nil
 	}
 
 	// try to unmarshal data into BigqueryInputSettingsConfig
@@ -984,6 +1462,40 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.BoxUsersSettingsConfig = nil
+	}
+
+	// try to unmarshal data into BuildkiteAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.BuildkiteAuditLogsSettingsConfig)
+	if err == nil {
+		jsonBuildkiteAuditLogsSettingsConfig, _ := json.Marshal(dst.BuildkiteAuditLogsSettingsConfig)
+		if string(jsonBuildkiteAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.BuildkiteAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BuildkiteAuditLogsSettingsConfig); err != nil {
+				dst.BuildkiteAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BuildkiteAuditLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into BuildkiteGraphqlInputSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.BuildkiteGraphqlInputSettingsConfig)
+	if err == nil {
+		jsonBuildkiteGraphqlInputSettingsConfig, _ := json.Marshal(dst.BuildkiteGraphqlInputSettingsConfig)
+		if string(jsonBuildkiteGraphqlInputSettingsConfig) == "{}" { // empty struct
+			dst.BuildkiteGraphqlInputSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BuildkiteGraphqlInputSettingsConfig); err != nil {
+				dst.BuildkiteGraphqlInputSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BuildkiteGraphqlInputSettingsConfig = nil
 	}
 
 	// try to unmarshal data into CisaUserSettingsConfig
@@ -1054,6 +1566,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CloudLogsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into CloudResourceInventoryReportsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudResourceInventoryReportsSettingsConfig)
+	if err == nil {
+		jsonCloudResourceInventoryReportsSettingsConfig, _ := json.Marshal(dst.CloudResourceInventoryReportsSettingsConfig)
+		if string(jsonCloudResourceInventoryReportsSettingsConfig) == "{}" { // empty struct
+			dst.CloudResourceInventoryReportsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudResourceInventoryReportsSettingsConfig); err != nil {
+				dst.CloudResourceInventoryReportsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudResourceInventoryReportsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into CloudResourceInventorySettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.CloudResourceInventorySettingsConfig)
 	if err == nil {
@@ -1069,6 +1598,176 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.CloudResourceInventorySettingsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareAuditLogsSettingsConfig)
+	if err == nil {
+		jsonCloudflareAuditLogsSettingsConfig, _ := json.Marshal(dst.CloudflareAuditLogsSettingsConfig)
+		if string(jsonCloudflareAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.CloudflareAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareAuditLogsSettingsConfig); err != nil {
+				dst.CloudflareAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareAuditLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareDnsRecordsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareDnsRecordsSettingsConfig)
+	if err == nil {
+		jsonCloudflareDnsRecordsSettingsConfig, _ := json.Marshal(dst.CloudflareDnsRecordsSettingsConfig)
+		if string(jsonCloudflareDnsRecordsSettingsConfig) == "{}" { // empty struct
+			dst.CloudflareDnsRecordsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareDnsRecordsSettingsConfig); err != nil {
+				dst.CloudflareDnsRecordsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareDnsRecordsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareFirewallEventsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareFirewallEventsSettingsConfig)
+	if err == nil {
+		jsonCloudflareFirewallEventsSettingsConfig, _ := json.Marshal(dst.CloudflareFirewallEventsSettingsConfig)
+		if string(jsonCloudflareFirewallEventsSettingsConfig) == "{}" { // empty struct
+			dst.CloudflareFirewallEventsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareFirewallEventsSettingsConfig); err != nil {
+				dst.CloudflareFirewallEventsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareFirewallEventsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflarePageShieldConnectionsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflarePageShieldConnectionsSettingsConfig)
+	if err == nil {
+		jsonCloudflarePageShieldConnectionsSettingsConfig, _ := json.Marshal(dst.CloudflarePageShieldConnectionsSettingsConfig)
+		if string(jsonCloudflarePageShieldConnectionsSettingsConfig) == "{}" { // empty struct
+			dst.CloudflarePageShieldConnectionsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflarePageShieldConnectionsSettingsConfig); err != nil {
+				dst.CloudflarePageShieldConnectionsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflarePageShieldConnectionsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareRulesetsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareRulesetsSettingsConfig)
+	if err == nil {
+		jsonCloudflareRulesetsSettingsConfig, _ := json.Marshal(dst.CloudflareRulesetsSettingsConfig)
+		if string(jsonCloudflareRulesetsSettingsConfig) == "{}" { // empty struct
+			dst.CloudflareRulesetsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareRulesetsSettingsConfig); err != nil {
+				dst.CloudflareRulesetsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareRulesetsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareSecurityInsightsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareSecurityInsightsSettingsConfig)
+	if err == nil {
+		jsonCloudflareSecurityInsightsSettingsConfig, _ := json.Marshal(dst.CloudflareSecurityInsightsSettingsConfig)
+		if string(jsonCloudflareSecurityInsightsSettingsConfig) == "{}" { // empty struct
+			dst.CloudflareSecurityInsightsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareSecurityInsightsSettingsConfig); err != nil {
+				dst.CloudflareSecurityInsightsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareSecurityInsightsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareUrlScannerSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareUrlScannerSettingsConfig)
+	if err == nil {
+		jsonCloudflareUrlScannerSettingsConfig, _ := json.Marshal(dst.CloudflareUrlScannerSettingsConfig)
+		if string(jsonCloudflareUrlScannerSettingsConfig) == "{}" { // empty struct
+			dst.CloudflareUrlScannerSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareUrlScannerSettingsConfig); err != nil {
+				dst.CloudflareUrlScannerSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareUrlScannerSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareUsersSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareUsersSettingsConfig)
+	if err == nil {
+		jsonCloudflareUsersSettingsConfig, _ := json.Marshal(dst.CloudflareUsersSettingsConfig)
+		if string(jsonCloudflareUsersSettingsConfig) == "{}" { // empty struct
+			dst.CloudflareUsersSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareUsersSettingsConfig); err != nil {
+				dst.CloudflareUsersSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareUsersSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareZeroTrustAccessRequestsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareZeroTrustAccessRequestsSettingsConfig)
+	if err == nil {
+		jsonCloudflareZeroTrustAccessRequestsSettingsConfig, _ := json.Marshal(dst.CloudflareZeroTrustAccessRequestsSettingsConfig)
+		if string(jsonCloudflareZeroTrustAccessRequestsSettingsConfig) == "{}" { // empty struct
+			dst.CloudflareZeroTrustAccessRequestsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareZeroTrustAccessRequestsSettingsConfig); err != nil {
+				dst.CloudflareZeroTrustAccessRequestsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareZeroTrustAccessRequestsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareZonesSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareZonesSettingsConfig)
+	if err == nil {
+		jsonCloudflareZonesSettingsConfig, _ := json.Marshal(dst.CloudflareZonesSettingsConfig)
+		if string(jsonCloudflareZonesSettingsConfig) == "{}" { // empty struct
+			dst.CloudflareZonesSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareZonesSettingsConfig); err != nil {
+				dst.CloudflareZonesSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareZonesSettingsConfig = nil
 	}
 
 	// try to unmarshal data into CloudtrailSettingsConfig
@@ -1122,6 +1821,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.ClumioConsolidatedAlertsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into CodaAuditEventsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CodaAuditEventsSettingsConfig)
+	if err == nil {
+		jsonCodaAuditEventsSettingsConfig, _ := json.Marshal(dst.CodaAuditEventsSettingsConfig)
+		if string(jsonCodaAuditEventsSettingsConfig) == "{}" { // empty struct
+			dst.CodaAuditEventsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CodaAuditEventsSettingsConfig); err != nil {
+				dst.CodaAuditEventsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CodaAuditEventsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into CognitoUsersSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.CognitoUsersSettingsConfig)
 	if err == nil {
@@ -1137,6 +1853,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.CognitoUsersSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CortexXsoarManagementLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CortexXsoarManagementLogsSettingsConfig)
+	if err == nil {
+		jsonCortexXsoarManagementLogsSettingsConfig, _ := json.Marshal(dst.CortexXsoarManagementLogsSettingsConfig)
+		if string(jsonCortexXsoarManagementLogsSettingsConfig) == "{}" { // empty struct
+			dst.CortexXsoarManagementLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CortexXsoarManagementLogsSettingsConfig); err != nil {
+				dst.CortexXsoarManagementLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CortexXsoarManagementLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into CrowdstrikeFdrSettingsConfig
@@ -1156,6 +1889,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CrowdstrikeFdrSettingsConfig = nil
 	}
 
+	// try to unmarshal data into CustomerEventDataSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CustomerEventDataSettingsConfig)
+	if err == nil {
+		jsonCustomerEventDataSettingsConfig, _ := json.Marshal(dst.CustomerEventDataSettingsConfig)
+		if string(jsonCustomerEventDataSettingsConfig) == "{}" { // empty struct
+			dst.CustomerEventDataSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CustomerEventDataSettingsConfig); err != nil {
+				dst.CustomerEventDataSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CustomerEventDataSettingsConfig = nil
+	}
+
 	// try to unmarshal data into DefenderForEndpointAlertsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.DefenderForEndpointAlertsSettingsConfig)
 	if err == nil {
@@ -1171,40 +1921,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into DetectSummariesSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.DetectSummariesSettingsConfig)
-	if err == nil {
-		jsonDetectSummariesSettingsConfig, _ := json.Marshal(dst.DetectSummariesSettingsConfig)
-		if string(jsonDetectSummariesSettingsConfig) == "{}" { // empty struct
-			dst.DetectSummariesSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.DetectSummariesSettingsConfig); err != nil {
-				dst.DetectSummariesSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.DetectSummariesSettingsConfig = nil
-	}
-
-	// try to unmarshal data into DeviceActivitySettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.DeviceActivitySettingsConfig)
-	if err == nil {
-		jsonDeviceActivitySettingsConfig, _ := json.Marshal(dst.DeviceActivitySettingsConfig)
-		if string(jsonDeviceActivitySettingsConfig) == "{}" { // empty struct
-			dst.DeviceActivitySettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.DeviceActivitySettingsConfig); err != nil {
-				dst.DeviceActivitySettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.DeviceActivitySettingsConfig = nil
 	}
 
 	// try to unmarshal data into DeviceDetailsSettingsConfig
@@ -1241,21 +1957,21 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.DevicesSettingsConfig = nil
 	}
 
-	// try to unmarshal data into DriveActivitySettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.DriveActivitySettingsConfig)
+	// try to unmarshal data into EndorLabsAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.EndorLabsAuditLogsSettingsConfig)
 	if err == nil {
-		jsonDriveActivitySettingsConfig, _ := json.Marshal(dst.DriveActivitySettingsConfig)
-		if string(jsonDriveActivitySettingsConfig) == "{}" { // empty struct
-			dst.DriveActivitySettingsConfig = nil
+		jsonEndorLabsAuditLogsSettingsConfig, _ := json.Marshal(dst.EndorLabsAuditLogsSettingsConfig)
+		if string(jsonEndorLabsAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.EndorLabsAuditLogsSettingsConfig = nil
 		} else {
-			if err = validator.Validate(dst.DriveActivitySettingsConfig); err != nil {
-				dst.DriveActivitySettingsConfig = nil
+			if err = validator.Validate(dst.EndorLabsAuditLogsSettingsConfig); err != nil {
+				dst.EndorLabsAuditLogsSettingsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.DriveActivitySettingsConfig = nil
+		dst.EndorLabsAuditLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into EntraIdSettingsConfig
@@ -1290,40 +2006,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.EventSettingsConfig = nil
-	}
-
-	// try to unmarshal data into EventsLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.EventsLogsSettingsConfig)
-	if err == nil {
-		jsonEventsLogsSettingsConfig, _ := json.Marshal(dst.EventsLogsSettingsConfig)
-		if string(jsonEventsLogsSettingsConfig) == "{}" { // empty struct
-			dst.EventsLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.EventsLogsSettingsConfig); err != nil {
-				dst.EventsLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.EventsLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into EventsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.EventsSettingsConfig)
-	if err == nil {
-		jsonEventsSettingsConfig, _ := json.Marshal(dst.EventsSettingsConfig)
-		if string(jsonEventsSettingsConfig) == "{}" { // empty struct
-			dst.EventsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.EventsSettingsConfig); err != nil {
-				dst.EventsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.EventsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into FullScansSettingsConfig
@@ -1394,6 +2076,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.GoogleCloudStorageSettingsConfig = nil
 	}
 
+	// try to unmarshal data into GreenhouseAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.GreenhouseAuditLogsSettingsConfig)
+	if err == nil {
+		jsonGreenhouseAuditLogsSettingsConfig, _ := json.Marshal(dst.GreenhouseAuditLogsSettingsConfig)
+		if string(jsonGreenhouseAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.GreenhouseAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.GreenhouseAuditLogsSettingsConfig); err != nil {
+				dst.GreenhouseAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.GreenhouseAuditLogsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into IamAccessAnalyzerSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.IamAccessAnalyzerSettingsConfig)
 	if err == nil {
@@ -1426,6 +2125,40 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.IndividualAlertsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into InspectorSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.InspectorSettingsConfig)
+	if err == nil {
+		jsonInspectorSettingsConfig, _ := json.Marshal(dst.InspectorSettingsConfig)
+		if string(jsonInspectorSettingsConfig) == "{}" { // empty struct
+			dst.InspectorSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.InspectorSettingsConfig); err != nil {
+				dst.InspectorSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.InspectorSettingsConfig = nil
+	}
+
+	// try to unmarshal data into IssuesReportSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.IssuesReportSettingsConfig)
+	if err == nil {
+		jsonIssuesReportSettingsConfig, _ := json.Marshal(dst.IssuesReportSettingsConfig)
+		if string(jsonIssuesReportSettingsConfig) == "{}" { // empty struct
+			dst.IssuesReportSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.IssuesReportSettingsConfig); err != nil {
+				dst.IssuesReportSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.IssuesReportSettingsConfig = nil
 	}
 
 	// try to unmarshal data into IssuesSettingsConfig
@@ -1462,6 +2195,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.KmsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into KoiAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.KoiAuditLogsSettingsConfig)
+	if err == nil {
+		jsonKoiAuditLogsSettingsConfig, _ := json.Marshal(dst.KoiAuditLogsSettingsConfig)
+		if string(jsonKoiAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.KoiAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.KoiAuditLogsSettingsConfig); err != nil {
+				dst.KoiAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.KoiAuditLogsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into LogAnalyticsQuerySettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.LogAnalyticsQuerySettingsConfig)
 	if err == nil {
@@ -1477,23 +2227,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.LogAnalyticsQuerySettingsConfig = nil
-	}
-
-	// try to unmarshal data into LoginActivitySettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.LoginActivitySettingsConfig)
-	if err == nil {
-		jsonLoginActivitySettingsConfig, _ := json.Marshal(dst.LoginActivitySettingsConfig)
-		if string(jsonLoginActivitySettingsConfig) == "{}" { // empty struct
-			dst.LoginActivitySettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.LoginActivitySettingsConfig); err != nil {
-				dst.LoginActivitySettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.LoginActivitySettingsConfig = nil
 	}
 
 	// try to unmarshal data into LoginSessionsSettingsConfig
@@ -1513,6 +2246,40 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.LoginSessionsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into MerakiConfigLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.MerakiConfigLogsSettingsConfig)
+	if err == nil {
+		jsonMerakiConfigLogsSettingsConfig, _ := json.Marshal(dst.MerakiConfigLogsSettingsConfig)
+		if string(jsonMerakiConfigLogsSettingsConfig) == "{}" { // empty struct
+			dst.MerakiConfigLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.MerakiConfigLogsSettingsConfig); err != nil {
+				dst.MerakiConfigLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.MerakiConfigLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into Microsoft365GenericSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.Microsoft365GenericSettingsConfig)
+	if err == nil {
+		jsonMicrosoft365GenericSettingsConfig, _ := json.Marshal(dst.Microsoft365GenericSettingsConfig)
+		if string(jsonMicrosoft365GenericSettingsConfig) == "{}" { // empty struct
+			dst.Microsoft365GenericSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.Microsoft365GenericSettingsConfig); err != nil {
+				dst.Microsoft365GenericSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.Microsoft365GenericSettingsConfig = nil
+	}
+
 	// try to unmarshal data into MonadLogSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.MonadLogSettingsConfig)
 	if err == nil {
@@ -1530,23 +2297,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.MonadLogSettingsConfig = nil
 	}
 
-	// try to unmarshal data into OauthActivitySettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.OauthActivitySettingsConfig)
-	if err == nil {
-		jsonOauthActivitySettingsConfig, _ := json.Marshal(dst.OauthActivitySettingsConfig)
-		if string(jsonOauthActivitySettingsConfig) == "{}" { // empty struct
-			dst.OauthActivitySettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.OauthActivitySettingsConfig); err != nil {
-				dst.OauthActivitySettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.OauthActivitySettingsConfig = nil
-	}
-
 	// try to unmarshal data into ObjectStorageInputSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.ObjectStorageInputSettingsConfig)
 	if err == nil {
@@ -1562,6 +2312,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.ObjectStorageInputSettingsConfig = nil
+	}
+
+	// try to unmarshal data into OfflineenrollmentlogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.OfflineenrollmentlogsSettingsConfig)
+	if err == nil {
+		jsonOfflineenrollmentlogsSettingsConfig, _ := json.Marshal(dst.OfflineenrollmentlogsSettingsConfig)
+		if string(jsonOfflineenrollmentlogsSettingsConfig) == "{}" { // empty struct
+			dst.OfflineenrollmentlogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.OfflineenrollmentlogsSettingsConfig); err != nil {
+				dst.OfflineenrollmentlogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.OfflineenrollmentlogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into OneloginEventsSettingsConfig
@@ -1598,6 +2365,57 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OpenaiSettingsConfig = nil
 	}
 
+	// try to unmarshal data into OperationLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.OperationLogsSettingsConfig)
+	if err == nil {
+		jsonOperationLogsSettingsConfig, _ := json.Marshal(dst.OperationLogsSettingsConfig)
+		if string(jsonOperationLogsSettingsConfig) == "{}" { // empty struct
+			dst.OperationLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.OperationLogsSettingsConfig); err != nil {
+				dst.OperationLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.OperationLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into OracleSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.OracleSettingsConfig)
+	if err == nil {
+		jsonOracleSettingsConfig, _ := json.Marshal(dst.OracleSettingsConfig)
+		if string(jsonOracleSettingsConfig) == "{}" { // empty struct
+			dst.OracleSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.OracleSettingsConfig); err != nil {
+				dst.OracleSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.OracleSettingsConfig = nil
+	}
+
+	// try to unmarshal data into OrgAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.OrgAuditLogsSettingsConfig)
+	if err == nil {
+		jsonOrgAuditLogsSettingsConfig, _ := json.Marshal(dst.OrgAuditLogsSettingsConfig)
+		if string(jsonOrgAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.OrgAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.OrgAuditLogsSettingsConfig); err != nil {
+				dst.OrgAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.OrgAuditLogsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into OrganizationsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.OrganizationsSettingsConfig)
 	if err == nil {
@@ -1615,6 +2433,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OrganizationsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into PagerdutyAuditRecordsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.PagerdutyAuditRecordsSettingsConfig)
+	if err == nil {
+		jsonPagerdutyAuditRecordsSettingsConfig, _ := json.Marshal(dst.PagerdutyAuditRecordsSettingsConfig)
+		if string(jsonPagerdutyAuditRecordsSettingsConfig) == "{}" { // empty struct
+			dst.PagerdutyAuditRecordsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PagerdutyAuditRecordsSettingsConfig); err != nil {
+				dst.PagerdutyAuditRecordsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PagerdutyAuditRecordsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into PaloAltoDataSecurityAlertsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.PaloAltoDataSecurityAlertsSettingsConfig)
 	if err == nil {
@@ -1630,6 +2465,57 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into PolymerSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.PolymerSettingsConfig)
+	if err == nil {
+		jsonPolymerSettingsConfig, _ := json.Marshal(dst.PolymerSettingsConfig)
+		if string(jsonPolymerSettingsConfig) == "{}" { // empty struct
+			dst.PolymerSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PolymerSettingsConfig); err != nil {
+				dst.PolymerSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PolymerSettingsConfig = nil
+	}
+
+	// try to unmarshal data into PostmanAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.PostmanAuditLogsSettingsConfig)
+	if err == nil {
+		jsonPostmanAuditLogsSettingsConfig, _ := json.Marshal(dst.PostmanAuditLogsSettingsConfig)
+		if string(jsonPostmanAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.PostmanAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PostmanAuditLogsSettingsConfig); err != nil {
+				dst.PostmanAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PostmanAuditLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into PubsubSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.PubsubSettingsConfig)
+	if err == nil {
+		jsonPubsubSettingsConfig, _ := json.Marshal(dst.PubsubSettingsConfig)
+		if string(jsonPubsubSettingsConfig) == "{}" { // empty struct
+			dst.PubsubSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.PubsubSettingsConfig); err != nil {
+				dst.PubsubSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.PubsubSettingsConfig = nil
 	}
 
 	// try to unmarshal data into ResourceEvaluationsSettingsConfig
@@ -1664,6 +2550,40 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.RolesInfoSettingsConfig = nil
+	}
+
+	// try to unmarshal data into RootlyAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.RootlyAuditLogsSettingsConfig)
+	if err == nil {
+		jsonRootlyAuditLogsSettingsConfig, _ := json.Marshal(dst.RootlyAuditLogsSettingsConfig)
+		if string(jsonRootlyAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.RootlyAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.RootlyAuditLogsSettingsConfig); err != nil {
+				dst.RootlyAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.RootlyAuditLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into SalesforceUsersSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SalesforceUsersSettingsConfig)
+	if err == nil {
+		jsonSalesforceUsersSettingsConfig, _ := json.Marshal(dst.SalesforceUsersSettingsConfig)
+		if string(jsonSalesforceUsersSettingsConfig) == "{}" { // empty struct
+			dst.SalesforceUsersSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SalesforceUsersSettingsConfig); err != nil {
+				dst.SalesforceUsersSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SalesforceUsersSettingsConfig = nil
 	}
 
 	// try to unmarshal data into SecretsmanagerSettingsConfig
@@ -1800,6 +2720,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.SentryOrgAuditLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into SlackEnterpriseAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SlackEnterpriseAuditLogsSettingsConfig)
+	if err == nil {
+		jsonSlackEnterpriseAuditLogsSettingsConfig, _ := json.Marshal(dst.SlackEnterpriseAuditLogsSettingsConfig)
+		if string(jsonSlackEnterpriseAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.SlackEnterpriseAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SlackEnterpriseAuditLogsSettingsConfig); err != nil {
+				dst.SlackEnterpriseAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SlackEnterpriseAuditLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into SlackUsersSettingsConfig
@@ -1989,6 +2926,74 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.TailscaleUsersSettingsConfig = nil
 	}
 
+	// try to unmarshal data into TaniumGraphqlInputSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TaniumGraphqlInputSettingsConfig)
+	if err == nil {
+		jsonTaniumGraphqlInputSettingsConfig, _ := json.Marshal(dst.TaniumGraphqlInputSettingsConfig)
+		if string(jsonTaniumGraphqlInputSettingsConfig) == "{}" { // empty struct
+			dst.TaniumGraphqlInputSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TaniumGraphqlInputSettingsConfig); err != nil {
+				dst.TaniumGraphqlInputSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TaniumGraphqlInputSettingsConfig = nil
+	}
+
+	// try to unmarshal data into TeamAccessLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TeamAccessLogsSettingsConfig)
+	if err == nil {
+		jsonTeamAccessLogsSettingsConfig, _ := json.Marshal(dst.TeamAccessLogsSettingsConfig)
+		if string(jsonTeamAccessLogsSettingsConfig) == "{}" { // empty struct
+			dst.TeamAccessLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TeamAccessLogsSettingsConfig); err != nil {
+				dst.TeamAccessLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TeamAccessLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into TeamIntegrationLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TeamIntegrationLogsSettingsConfig)
+	if err == nil {
+		jsonTeamIntegrationLogsSettingsConfig, _ := json.Marshal(dst.TeamIntegrationLogsSettingsConfig)
+		if string(jsonTeamIntegrationLogsSettingsConfig) == "{}" { // empty struct
+			dst.TeamIntegrationLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TeamIntegrationLogsSettingsConfig); err != nil {
+				dst.TeamIntegrationLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TeamIntegrationLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into TelephonyLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TelephonyLogsSettingsConfig)
+	if err == nil {
+		jsonTelephonyLogsSettingsConfig, _ := json.Marshal(dst.TelephonyLogsSettingsConfig)
+		if string(jsonTelephonyLogsSettingsConfig) == "{}" { // empty struct
+			dst.TelephonyLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TelephonyLogsSettingsConfig); err != nil {
+				dst.TelephonyLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TelephonyLogsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into TenableAssetsCronSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.TenableAssetsCronSettingsConfig)
 	if err == nil {
@@ -2055,6 +3060,91 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.TenableVulnerabilitiesSettingsConfig = nil
+	}
+
+	// try to unmarshal data into TinesAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TinesAuditLogsSettingsConfig)
+	if err == nil {
+		jsonTinesAuditLogsSettingsConfig, _ := json.Marshal(dst.TinesAuditLogsSettingsConfig)
+		if string(jsonTinesAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.TinesAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TinesAuditLogsSettingsConfig); err != nil {
+				dst.TinesAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TinesAuditLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into TinesEventsLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TinesEventsLogsSettingsConfig)
+	if err == nil {
+		jsonTinesEventsLogsSettingsConfig, _ := json.Marshal(dst.TinesEventsLogsSettingsConfig)
+		if string(jsonTinesEventsLogsSettingsConfig) == "{}" { // empty struct
+			dst.TinesEventsLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TinesEventsLogsSettingsConfig); err != nil {
+				dst.TinesEventsLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TinesEventsLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into TwilioEventsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TwilioEventsSettingsConfig)
+	if err == nil {
+		jsonTwilioEventsSettingsConfig, _ := json.Marshal(dst.TwilioEventsSettingsConfig)
+		if string(jsonTwilioEventsSettingsConfig) == "{}" { // empty struct
+			dst.TwilioEventsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TwilioEventsSettingsConfig); err != nil {
+				dst.TwilioEventsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TwilioEventsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into TwilioSendgridEmailActivitySettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TwilioSendgridEmailActivitySettingsConfig)
+	if err == nil {
+		jsonTwilioSendgridEmailActivitySettingsConfig, _ := json.Marshal(dst.TwilioSendgridEmailActivitySettingsConfig)
+		if string(jsonTwilioSendgridEmailActivitySettingsConfig) == "{}" { // empty struct
+			dst.TwilioSendgridEmailActivitySettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TwilioSendgridEmailActivitySettingsConfig); err != nil {
+				dst.TwilioSendgridEmailActivitySettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TwilioSendgridEmailActivitySettingsConfig = nil
+	}
+
+	// try to unmarshal data into UniversalSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.UniversalSettingsConfig)
+	if err == nil {
+		jsonUniversalSettingsConfig, _ := json.Marshal(dst.UniversalSettingsConfig)
+		if string(jsonUniversalSettingsConfig) == "{}" { // empty struct
+			dst.UniversalSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.UniversalSettingsConfig); err != nil {
+				dst.UniversalSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.UniversalSettingsConfig = nil
 	}
 
 	// try to unmarshal data into UsersInfoSettingsConfig
@@ -2142,6 +3232,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.VulnerabilitiesSettingsConfig = nil
 	}
 
+	// try to unmarshal data into VulnerabilityFindingsReportSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.VulnerabilityFindingsReportSettingsConfig)
+	if err == nil {
+		jsonVulnerabilityFindingsReportSettingsConfig, _ := json.Marshal(dst.VulnerabilityFindingsReportSettingsConfig)
+		if string(jsonVulnerabilityFindingsReportSettingsConfig) == "{}" { // empty struct
+			dst.VulnerabilityFindingsReportSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.VulnerabilityFindingsReportSettingsConfig); err != nil {
+				dst.VulnerabilityFindingsReportSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.VulnerabilityFindingsReportSettingsConfig = nil
+	}
+
 	// try to unmarshal data into VulnerabilityFindingsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.VulnerabilityFindingsSettingsConfig)
 	if err == nil {
@@ -2157,6 +3264,74 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.VulnerabilityFindingsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into WizAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.WizAuditLogsSettingsConfig)
+	if err == nil {
+		jsonWizAuditLogsSettingsConfig, _ := json.Marshal(dst.WizAuditLogsSettingsConfig)
+		if string(jsonWizAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.WizAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.WizAuditLogsSettingsConfig); err != nil {
+				dst.WizAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.WizAuditLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into ZendeskAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.ZendeskAuditLogsSettingsConfig)
+	if err == nil {
+		jsonZendeskAuditLogsSettingsConfig, _ := json.Marshal(dst.ZendeskAuditLogsSettingsConfig)
+		if string(jsonZendeskAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.ZendeskAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ZendeskAuditLogsSettingsConfig); err != nil {
+				dst.ZendeskAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ZendeskAuditLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into ZoomActivityLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.ZoomActivityLogsSettingsConfig)
+	if err == nil {
+		jsonZoomActivityLogsSettingsConfig, _ := json.Marshal(dst.ZoomActivityLogsSettingsConfig)
+		if string(jsonZoomActivityLogsSettingsConfig) == "{}" { // empty struct
+			dst.ZoomActivityLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ZoomActivityLogsSettingsConfig); err != nil {
+				dst.ZoomActivityLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ZoomActivityLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into ZoomMeetingActivityLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.ZoomMeetingActivityLogsSettingsConfig)
+	if err == nil {
+		jsonZoomMeetingActivityLogsSettingsConfig, _ := json.Marshal(dst.ZoomMeetingActivityLogsSettingsConfig)
+		if string(jsonZoomMeetingActivityLogsSettingsConfig) == "{}" { // empty struct
+			dst.ZoomMeetingActivityLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ZoomMeetingActivityLogsSettingsConfig); err != nil {
+				dst.ZoomMeetingActivityLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ZoomMeetingActivityLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into MapmapOfStringAny
@@ -2179,61 +3354,93 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.ActivityLogsSettingsConfig = nil
+		dst.ActivitylogsSettingsConfig = nil
 		dst.ActorsInfoSettingsConfig = nil
-		dst.AdminActivitySettingsConfig = nil
 		dst.AdminLogsSettingsConfig = nil
+		dst.AlertCenterSettingsConfig = nil
+		dst.ArizeAuditLogsSettingsConfig = nil
 		dst.AuditLogsSettingsConfig = nil
 		dst.AuthLogsSettingsConfig = nil
 		dst.AwsGuarddutySettingsConfig = nil
 		dst.AwsS3SettingsConfig = nil
-		dst.AwssqsSettingsConfig = nil
+		dst.AwssecurityhubSettingsConfig = nil
+		dst.Awssqss3SettingsConfig = nil
 		dst.AzureActivityLogsSettingsConfig = nil
 		dst.AzureBlobStorageSettingsConfig = nil
+		dst.AzureEventHubsSettingsConfig = nil
 		dst.AzureVirtualMachineSettingsConfig = nil
 		dst.AzureVnetFlowLogsSettingsConfig = nil
+		dst.BackblazeB2SettingsConfig = nil
+		dst.BigqueryCronSettingsConfig = nil
 		dst.BigqueryInputSettingsConfig = nil
 		dst.BoxEventsSettingsConfig = nil
 		dst.BoxUsersSettingsConfig = nil
+		dst.BuildkiteAuditLogsSettingsConfig = nil
+		dst.BuildkiteGraphqlInputSettingsConfig = nil
 		dst.CisaUserSettingsConfig = nil
 		dst.CloudAssetInventorySettingsConfig = nil
 		dst.CloudConfigurationFindingsSettingsConfig = nil
 		dst.CloudLogsSettingsConfig = nil
+		dst.CloudResourceInventoryReportsSettingsConfig = nil
 		dst.CloudResourceInventorySettingsConfig = nil
+		dst.CloudflareAuditLogsSettingsConfig = nil
+		dst.CloudflareDnsRecordsSettingsConfig = nil
+		dst.CloudflareFirewallEventsSettingsConfig = nil
+		dst.CloudflarePageShieldConnectionsSettingsConfig = nil
+		dst.CloudflareRulesetsSettingsConfig = nil
+		dst.CloudflareSecurityInsightsSettingsConfig = nil
+		dst.CloudflareUrlScannerSettingsConfig = nil
+		dst.CloudflareUsersSettingsConfig = nil
+		dst.CloudflareZeroTrustAccessRequestsSettingsConfig = nil
+		dst.CloudflareZonesSettingsConfig = nil
 		dst.CloudtrailSettingsConfig = nil
 		dst.ClumioAuditLogsSettingsConfig = nil
 		dst.ClumioConsolidatedAlertsSettingsConfig = nil
+		dst.CodaAuditEventsSettingsConfig = nil
 		dst.CognitoUsersSettingsConfig = nil
+		dst.CortexXsoarManagementLogsSettingsConfig = nil
 		dst.CrowdstrikeFdrSettingsConfig = nil
+		dst.CustomerEventDataSettingsConfig = nil
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
-		dst.DetectSummariesSettingsConfig = nil
-		dst.DeviceActivitySettingsConfig = nil
 		dst.DeviceDetailsSettingsConfig = nil
 		dst.DevicesSettingsConfig = nil
-		dst.DriveActivitySettingsConfig = nil
+		dst.EndorLabsAuditLogsSettingsConfig = nil
 		dst.EntraIdSettingsConfig = nil
 		dst.EventSettingsConfig = nil
-		dst.EventsLogsSettingsConfig = nil
-		dst.EventsSettingsConfig = nil
 		dst.FullScansSettingsConfig = nil
 		dst.GithubAdvisoryUserSettingsConfig = nil
 		dst.GitlabIssuesSettingsConfig = nil
 		dst.GoogleCloudStorageSettingsConfig = nil
+		dst.GreenhouseAuditLogsSettingsConfig = nil
 		dst.IamAccessAnalyzerSettingsConfig = nil
 		dst.IndividualAlertsSettingsConfig = nil
+		dst.InspectorSettingsConfig = nil
+		dst.IssuesReportSettingsConfig = nil
 		dst.IssuesSettingsConfig = nil
 		dst.KmsSettingsConfig = nil
+		dst.KoiAuditLogsSettingsConfig = nil
 		dst.LogAnalyticsQuerySettingsConfig = nil
-		dst.LoginActivitySettingsConfig = nil
 		dst.LoginSessionsSettingsConfig = nil
+		dst.MerakiConfigLogsSettingsConfig = nil
+		dst.Microsoft365GenericSettingsConfig = nil
 		dst.MonadLogSettingsConfig = nil
-		dst.OauthActivitySettingsConfig = nil
 		dst.ObjectStorageInputSettingsConfig = nil
+		dst.OfflineenrollmentlogsSettingsConfig = nil
 		dst.OneloginEventsSettingsConfig = nil
 		dst.OpenaiSettingsConfig = nil
+		dst.OperationLogsSettingsConfig = nil
+		dst.OracleSettingsConfig = nil
+		dst.OrgAuditLogsSettingsConfig = nil
 		dst.OrganizationsSettingsConfig = nil
+		dst.PagerdutyAuditRecordsSettingsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
+		dst.PolymerSettingsConfig = nil
+		dst.PostmanAuditLogsSettingsConfig = nil
+		dst.PubsubSettingsConfig = nil
 		dst.ResourceEvaluationsSettingsConfig = nil
 		dst.RolesInfoSettingsConfig = nil
+		dst.RootlyAuditLogsSettingsConfig = nil
+		dst.SalesforceUsersSettingsConfig = nil
 		dst.SecretsmanagerSettingsConfig = nil
 		dst.SecurityGroupsSettingsConfig = nil
 		dst.SemgrepCodeFindingsSettingsConfig = nil
@@ -2242,6 +3449,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.SemgrepProjectsSettingsConfig = nil
 		dst.SemgrepSupplyChainFindingsSettingsConfig = nil
 		dst.SentryOrgAuditLogsSettingsConfig = nil
+		dst.SlackEnterpriseAuditLogsSettingsConfig = nil
 		dst.SlackUsersSettingsConfig = nil
 		dst.SlackgroupsSettingsConfig = nil
 		dst.SnowflakeInputSettingsConfig = nil
@@ -2253,16 +3461,30 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.SyntheticDataSettingsConfig = nil
 		dst.SystemlogSettingsConfig = nil
 		dst.TailscaleUsersSettingsConfig = nil
+		dst.TaniumGraphqlInputSettingsConfig = nil
+		dst.TeamAccessLogsSettingsConfig = nil
+		dst.TeamIntegrationLogsSettingsConfig = nil
+		dst.TelephonyLogsSettingsConfig = nil
 		dst.TenableAssetsCronSettingsConfig = nil
 		dst.TenableAssetsSettingsConfig = nil
 		dst.TenableVulnerabilitiesCronSettingsConfig = nil
 		dst.TenableVulnerabilitiesSettingsConfig = nil
+		dst.TinesAuditLogsSettingsConfig = nil
+		dst.TinesEventsLogsSettingsConfig = nil
+		dst.TwilioEventsSettingsConfig = nil
+		dst.TwilioSendgridEmailActivitySettingsConfig = nil
+		dst.UniversalSettingsConfig = nil
 		dst.UsersInfoSettingsConfig = nil
 		dst.UsersSettingsConfig = nil
 		dst.VercelUserEventsSettingsConfig = nil
 		dst.VulnerabilitiesCronSettingsConfig = nil
 		dst.VulnerabilitiesSettingsConfig = nil
+		dst.VulnerabilityFindingsReportSettingsConfig = nil
 		dst.VulnerabilityFindingsSettingsConfig = nil
+		dst.WizAuditLogsSettingsConfig = nil
+		dst.ZendeskAuditLogsSettingsConfig = nil
+		dst.ZoomActivityLogsSettingsConfig = nil
+		dst.ZoomMeetingActivityLogsSettingsConfig = nil
 		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(SecretProcessesorInputConfigSettings)")
@@ -2279,16 +3501,24 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ActivityLogsSettingsConfig)
 	}
 
+	if src.ActivitylogsSettingsConfig != nil {
+		return json.Marshal(&src.ActivitylogsSettingsConfig)
+	}
+
 	if src.ActorsInfoSettingsConfig != nil {
 		return json.Marshal(&src.ActorsInfoSettingsConfig)
 	}
 
-	if src.AdminActivitySettingsConfig != nil {
-		return json.Marshal(&src.AdminActivitySettingsConfig)
-	}
-
 	if src.AdminLogsSettingsConfig != nil {
 		return json.Marshal(&src.AdminLogsSettingsConfig)
+	}
+
+	if src.AlertCenterSettingsConfig != nil {
+		return json.Marshal(&src.AlertCenterSettingsConfig)
+	}
+
+	if src.ArizeAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.ArizeAuditLogsSettingsConfig)
 	}
 
 	if src.AuditLogsSettingsConfig != nil {
@@ -2307,8 +3537,12 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AwsS3SettingsConfig)
 	}
 
-	if src.AwssqsSettingsConfig != nil {
-		return json.Marshal(&src.AwssqsSettingsConfig)
+	if src.AwssecurityhubSettingsConfig != nil {
+		return json.Marshal(&src.AwssecurityhubSettingsConfig)
+	}
+
+	if src.Awssqss3SettingsConfig != nil {
+		return json.Marshal(&src.Awssqss3SettingsConfig)
 	}
 
 	if src.AzureActivityLogsSettingsConfig != nil {
@@ -2319,12 +3553,24 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AzureBlobStorageSettingsConfig)
 	}
 
+	if src.AzureEventHubsSettingsConfig != nil {
+		return json.Marshal(&src.AzureEventHubsSettingsConfig)
+	}
+
 	if src.AzureVirtualMachineSettingsConfig != nil {
 		return json.Marshal(&src.AzureVirtualMachineSettingsConfig)
 	}
 
 	if src.AzureVnetFlowLogsSettingsConfig != nil {
 		return json.Marshal(&src.AzureVnetFlowLogsSettingsConfig)
+	}
+
+	if src.BackblazeB2SettingsConfig != nil {
+		return json.Marshal(&src.BackblazeB2SettingsConfig)
+	}
+
+	if src.BigqueryCronSettingsConfig != nil {
+		return json.Marshal(&src.BigqueryCronSettingsConfig)
 	}
 
 	if src.BigqueryInputSettingsConfig != nil {
@@ -2337,6 +3583,14 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.BoxUsersSettingsConfig != nil {
 		return json.Marshal(&src.BoxUsersSettingsConfig)
+	}
+
+	if src.BuildkiteAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.BuildkiteAuditLogsSettingsConfig)
+	}
+
+	if src.BuildkiteGraphqlInputSettingsConfig != nil {
+		return json.Marshal(&src.BuildkiteGraphqlInputSettingsConfig)
 	}
 
 	if src.CisaUserSettingsConfig != nil {
@@ -2355,8 +3609,52 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CloudLogsSettingsConfig)
 	}
 
+	if src.CloudResourceInventoryReportsSettingsConfig != nil {
+		return json.Marshal(&src.CloudResourceInventoryReportsSettingsConfig)
+	}
+
 	if src.CloudResourceInventorySettingsConfig != nil {
 		return json.Marshal(&src.CloudResourceInventorySettingsConfig)
+	}
+
+	if src.CloudflareAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.CloudflareAuditLogsSettingsConfig)
+	}
+
+	if src.CloudflareDnsRecordsSettingsConfig != nil {
+		return json.Marshal(&src.CloudflareDnsRecordsSettingsConfig)
+	}
+
+	if src.CloudflareFirewallEventsSettingsConfig != nil {
+		return json.Marshal(&src.CloudflareFirewallEventsSettingsConfig)
+	}
+
+	if src.CloudflarePageShieldConnectionsSettingsConfig != nil {
+		return json.Marshal(&src.CloudflarePageShieldConnectionsSettingsConfig)
+	}
+
+	if src.CloudflareRulesetsSettingsConfig != nil {
+		return json.Marshal(&src.CloudflareRulesetsSettingsConfig)
+	}
+
+	if src.CloudflareSecurityInsightsSettingsConfig != nil {
+		return json.Marshal(&src.CloudflareSecurityInsightsSettingsConfig)
+	}
+
+	if src.CloudflareUrlScannerSettingsConfig != nil {
+		return json.Marshal(&src.CloudflareUrlScannerSettingsConfig)
+	}
+
+	if src.CloudflareUsersSettingsConfig != nil {
+		return json.Marshal(&src.CloudflareUsersSettingsConfig)
+	}
+
+	if src.CloudflareZeroTrustAccessRequestsSettingsConfig != nil {
+		return json.Marshal(&src.CloudflareZeroTrustAccessRequestsSettingsConfig)
+	}
+
+	if src.CloudflareZonesSettingsConfig != nil {
+		return json.Marshal(&src.CloudflareZonesSettingsConfig)
 	}
 
 	if src.CloudtrailSettingsConfig != nil {
@@ -2371,24 +3669,28 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ClumioConsolidatedAlertsSettingsConfig)
 	}
 
+	if src.CodaAuditEventsSettingsConfig != nil {
+		return json.Marshal(&src.CodaAuditEventsSettingsConfig)
+	}
+
 	if src.CognitoUsersSettingsConfig != nil {
 		return json.Marshal(&src.CognitoUsersSettingsConfig)
+	}
+
+	if src.CortexXsoarManagementLogsSettingsConfig != nil {
+		return json.Marshal(&src.CortexXsoarManagementLogsSettingsConfig)
 	}
 
 	if src.CrowdstrikeFdrSettingsConfig != nil {
 		return json.Marshal(&src.CrowdstrikeFdrSettingsConfig)
 	}
 
+	if src.CustomerEventDataSettingsConfig != nil {
+		return json.Marshal(&src.CustomerEventDataSettingsConfig)
+	}
+
 	if src.DefenderForEndpointAlertsSettingsConfig != nil {
 		return json.Marshal(&src.DefenderForEndpointAlertsSettingsConfig)
-	}
-
-	if src.DetectSummariesSettingsConfig != nil {
-		return json.Marshal(&src.DetectSummariesSettingsConfig)
-	}
-
-	if src.DeviceActivitySettingsConfig != nil {
-		return json.Marshal(&src.DeviceActivitySettingsConfig)
 	}
 
 	if src.DeviceDetailsSettingsConfig != nil {
@@ -2399,8 +3701,8 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.DevicesSettingsConfig)
 	}
 
-	if src.DriveActivitySettingsConfig != nil {
-		return json.Marshal(&src.DriveActivitySettingsConfig)
+	if src.EndorLabsAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.EndorLabsAuditLogsSettingsConfig)
 	}
 
 	if src.EntraIdSettingsConfig != nil {
@@ -2409,14 +3711,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.EventSettingsConfig != nil {
 		return json.Marshal(&src.EventSettingsConfig)
-	}
-
-	if src.EventsLogsSettingsConfig != nil {
-		return json.Marshal(&src.EventsLogsSettingsConfig)
-	}
-
-	if src.EventsSettingsConfig != nil {
-		return json.Marshal(&src.EventsSettingsConfig)
 	}
 
 	if src.FullScansSettingsConfig != nil {
@@ -2435,12 +3729,24 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.GoogleCloudStorageSettingsConfig)
 	}
 
+	if src.GreenhouseAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.GreenhouseAuditLogsSettingsConfig)
+	}
+
 	if src.IamAccessAnalyzerSettingsConfig != nil {
 		return json.Marshal(&src.IamAccessAnalyzerSettingsConfig)
 	}
 
 	if src.IndividualAlertsSettingsConfig != nil {
 		return json.Marshal(&src.IndividualAlertsSettingsConfig)
+	}
+
+	if src.InspectorSettingsConfig != nil {
+		return json.Marshal(&src.InspectorSettingsConfig)
+	}
+
+	if src.IssuesReportSettingsConfig != nil {
+		return json.Marshal(&src.IssuesReportSettingsConfig)
 	}
 
 	if src.IssuesSettingsConfig != nil {
@@ -2451,28 +3757,36 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.KmsSettingsConfig)
 	}
 
-	if src.LogAnalyticsQuerySettingsConfig != nil {
-		return json.Marshal(&src.LogAnalyticsQuerySettingsConfig)
+	if src.KoiAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.KoiAuditLogsSettingsConfig)
 	}
 
-	if src.LoginActivitySettingsConfig != nil {
-		return json.Marshal(&src.LoginActivitySettingsConfig)
+	if src.LogAnalyticsQuerySettingsConfig != nil {
+		return json.Marshal(&src.LogAnalyticsQuerySettingsConfig)
 	}
 
 	if src.LoginSessionsSettingsConfig != nil {
 		return json.Marshal(&src.LoginSessionsSettingsConfig)
 	}
 
+	if src.MerakiConfigLogsSettingsConfig != nil {
+		return json.Marshal(&src.MerakiConfigLogsSettingsConfig)
+	}
+
+	if src.Microsoft365GenericSettingsConfig != nil {
+		return json.Marshal(&src.Microsoft365GenericSettingsConfig)
+	}
+
 	if src.MonadLogSettingsConfig != nil {
 		return json.Marshal(&src.MonadLogSettingsConfig)
 	}
 
-	if src.OauthActivitySettingsConfig != nil {
-		return json.Marshal(&src.OauthActivitySettingsConfig)
-	}
-
 	if src.ObjectStorageInputSettingsConfig != nil {
 		return json.Marshal(&src.ObjectStorageInputSettingsConfig)
+	}
+
+	if src.OfflineenrollmentlogsSettingsConfig != nil {
+		return json.Marshal(&src.OfflineenrollmentlogsSettingsConfig)
 	}
 
 	if src.OneloginEventsSettingsConfig != nil {
@@ -2483,12 +3797,40 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.OpenaiSettingsConfig)
 	}
 
+	if src.OperationLogsSettingsConfig != nil {
+		return json.Marshal(&src.OperationLogsSettingsConfig)
+	}
+
+	if src.OracleSettingsConfig != nil {
+		return json.Marshal(&src.OracleSettingsConfig)
+	}
+
+	if src.OrgAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.OrgAuditLogsSettingsConfig)
+	}
+
 	if src.OrganizationsSettingsConfig != nil {
 		return json.Marshal(&src.OrganizationsSettingsConfig)
 	}
 
+	if src.PagerdutyAuditRecordsSettingsConfig != nil {
+		return json.Marshal(&src.PagerdutyAuditRecordsSettingsConfig)
+	}
+
 	if src.PaloAltoDataSecurityAlertsSettingsConfig != nil {
 		return json.Marshal(&src.PaloAltoDataSecurityAlertsSettingsConfig)
+	}
+
+	if src.PolymerSettingsConfig != nil {
+		return json.Marshal(&src.PolymerSettingsConfig)
+	}
+
+	if src.PostmanAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.PostmanAuditLogsSettingsConfig)
+	}
+
+	if src.PubsubSettingsConfig != nil {
+		return json.Marshal(&src.PubsubSettingsConfig)
 	}
 
 	if src.ResourceEvaluationsSettingsConfig != nil {
@@ -2497,6 +3839,14 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.RolesInfoSettingsConfig != nil {
 		return json.Marshal(&src.RolesInfoSettingsConfig)
+	}
+
+	if src.RootlyAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.RootlyAuditLogsSettingsConfig)
+	}
+
+	if src.SalesforceUsersSettingsConfig != nil {
+		return json.Marshal(&src.SalesforceUsersSettingsConfig)
 	}
 
 	if src.SecretsmanagerSettingsConfig != nil {
@@ -2529,6 +3879,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.SentryOrgAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.SentryOrgAuditLogsSettingsConfig)
+	}
+
+	if src.SlackEnterpriseAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.SlackEnterpriseAuditLogsSettingsConfig)
 	}
 
 	if src.SlackUsersSettingsConfig != nil {
@@ -2575,6 +3929,22 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.TailscaleUsersSettingsConfig)
 	}
 
+	if src.TaniumGraphqlInputSettingsConfig != nil {
+		return json.Marshal(&src.TaniumGraphqlInputSettingsConfig)
+	}
+
+	if src.TeamAccessLogsSettingsConfig != nil {
+		return json.Marshal(&src.TeamAccessLogsSettingsConfig)
+	}
+
+	if src.TeamIntegrationLogsSettingsConfig != nil {
+		return json.Marshal(&src.TeamIntegrationLogsSettingsConfig)
+	}
+
+	if src.TelephonyLogsSettingsConfig != nil {
+		return json.Marshal(&src.TelephonyLogsSettingsConfig)
+	}
+
 	if src.TenableAssetsCronSettingsConfig != nil {
 		return json.Marshal(&src.TenableAssetsCronSettingsConfig)
 	}
@@ -2589,6 +3959,26 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.TenableVulnerabilitiesSettingsConfig != nil {
 		return json.Marshal(&src.TenableVulnerabilitiesSettingsConfig)
+	}
+
+	if src.TinesAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.TinesAuditLogsSettingsConfig)
+	}
+
+	if src.TinesEventsLogsSettingsConfig != nil {
+		return json.Marshal(&src.TinesEventsLogsSettingsConfig)
+	}
+
+	if src.TwilioEventsSettingsConfig != nil {
+		return json.Marshal(&src.TwilioEventsSettingsConfig)
+	}
+
+	if src.TwilioSendgridEmailActivitySettingsConfig != nil {
+		return json.Marshal(&src.TwilioSendgridEmailActivitySettingsConfig)
+	}
+
+	if src.UniversalSettingsConfig != nil {
+		return json.Marshal(&src.UniversalSettingsConfig)
 	}
 
 	if src.UsersInfoSettingsConfig != nil {
@@ -2611,8 +4001,28 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.VulnerabilitiesSettingsConfig)
 	}
 
+	if src.VulnerabilityFindingsReportSettingsConfig != nil {
+		return json.Marshal(&src.VulnerabilityFindingsReportSettingsConfig)
+	}
+
 	if src.VulnerabilityFindingsSettingsConfig != nil {
 		return json.Marshal(&src.VulnerabilityFindingsSettingsConfig)
+	}
+
+	if src.WizAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.WizAuditLogsSettingsConfig)
+	}
+
+	if src.ZendeskAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.ZendeskAuditLogsSettingsConfig)
+	}
+
+	if src.ZoomActivityLogsSettingsConfig != nil {
+		return json.Marshal(&src.ZoomActivityLogsSettingsConfig)
+	}
+
+	if src.ZoomMeetingActivityLogsSettingsConfig != nil {
+		return json.Marshal(&src.ZoomMeetingActivityLogsSettingsConfig)
 	}
 
 	if src.MapmapOfStringAny != nil {
@@ -2631,16 +4041,24 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.ActivityLogsSettingsConfig
 	}
 
+	if obj.ActivitylogsSettingsConfig != nil {
+		return obj.ActivitylogsSettingsConfig
+	}
+
 	if obj.ActorsInfoSettingsConfig != nil {
 		return obj.ActorsInfoSettingsConfig
 	}
 
-	if obj.AdminActivitySettingsConfig != nil {
-		return obj.AdminActivitySettingsConfig
-	}
-
 	if obj.AdminLogsSettingsConfig != nil {
 		return obj.AdminLogsSettingsConfig
+	}
+
+	if obj.AlertCenterSettingsConfig != nil {
+		return obj.AlertCenterSettingsConfig
+	}
+
+	if obj.ArizeAuditLogsSettingsConfig != nil {
+		return obj.ArizeAuditLogsSettingsConfig
 	}
 
 	if obj.AuditLogsSettingsConfig != nil {
@@ -2659,8 +4077,12 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.AwsS3SettingsConfig
 	}
 
-	if obj.AwssqsSettingsConfig != nil {
-		return obj.AwssqsSettingsConfig
+	if obj.AwssecurityhubSettingsConfig != nil {
+		return obj.AwssecurityhubSettingsConfig
+	}
+
+	if obj.Awssqss3SettingsConfig != nil {
+		return obj.Awssqss3SettingsConfig
 	}
 
 	if obj.AzureActivityLogsSettingsConfig != nil {
@@ -2671,12 +4093,24 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.AzureBlobStorageSettingsConfig
 	}
 
+	if obj.AzureEventHubsSettingsConfig != nil {
+		return obj.AzureEventHubsSettingsConfig
+	}
+
 	if obj.AzureVirtualMachineSettingsConfig != nil {
 		return obj.AzureVirtualMachineSettingsConfig
 	}
 
 	if obj.AzureVnetFlowLogsSettingsConfig != nil {
 		return obj.AzureVnetFlowLogsSettingsConfig
+	}
+
+	if obj.BackblazeB2SettingsConfig != nil {
+		return obj.BackblazeB2SettingsConfig
+	}
+
+	if obj.BigqueryCronSettingsConfig != nil {
+		return obj.BigqueryCronSettingsConfig
 	}
 
 	if obj.BigqueryInputSettingsConfig != nil {
@@ -2689,6 +4123,14 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.BoxUsersSettingsConfig != nil {
 		return obj.BoxUsersSettingsConfig
+	}
+
+	if obj.BuildkiteAuditLogsSettingsConfig != nil {
+		return obj.BuildkiteAuditLogsSettingsConfig
+	}
+
+	if obj.BuildkiteGraphqlInputSettingsConfig != nil {
+		return obj.BuildkiteGraphqlInputSettingsConfig
 	}
 
 	if obj.CisaUserSettingsConfig != nil {
@@ -2707,8 +4149,52 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.CloudLogsSettingsConfig
 	}
 
+	if obj.CloudResourceInventoryReportsSettingsConfig != nil {
+		return obj.CloudResourceInventoryReportsSettingsConfig
+	}
+
 	if obj.CloudResourceInventorySettingsConfig != nil {
 		return obj.CloudResourceInventorySettingsConfig
+	}
+
+	if obj.CloudflareAuditLogsSettingsConfig != nil {
+		return obj.CloudflareAuditLogsSettingsConfig
+	}
+
+	if obj.CloudflareDnsRecordsSettingsConfig != nil {
+		return obj.CloudflareDnsRecordsSettingsConfig
+	}
+
+	if obj.CloudflareFirewallEventsSettingsConfig != nil {
+		return obj.CloudflareFirewallEventsSettingsConfig
+	}
+
+	if obj.CloudflarePageShieldConnectionsSettingsConfig != nil {
+		return obj.CloudflarePageShieldConnectionsSettingsConfig
+	}
+
+	if obj.CloudflareRulesetsSettingsConfig != nil {
+		return obj.CloudflareRulesetsSettingsConfig
+	}
+
+	if obj.CloudflareSecurityInsightsSettingsConfig != nil {
+		return obj.CloudflareSecurityInsightsSettingsConfig
+	}
+
+	if obj.CloudflareUrlScannerSettingsConfig != nil {
+		return obj.CloudflareUrlScannerSettingsConfig
+	}
+
+	if obj.CloudflareUsersSettingsConfig != nil {
+		return obj.CloudflareUsersSettingsConfig
+	}
+
+	if obj.CloudflareZeroTrustAccessRequestsSettingsConfig != nil {
+		return obj.CloudflareZeroTrustAccessRequestsSettingsConfig
+	}
+
+	if obj.CloudflareZonesSettingsConfig != nil {
+		return obj.CloudflareZonesSettingsConfig
 	}
 
 	if obj.CloudtrailSettingsConfig != nil {
@@ -2723,24 +4209,28 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.ClumioConsolidatedAlertsSettingsConfig
 	}
 
+	if obj.CodaAuditEventsSettingsConfig != nil {
+		return obj.CodaAuditEventsSettingsConfig
+	}
+
 	if obj.CognitoUsersSettingsConfig != nil {
 		return obj.CognitoUsersSettingsConfig
+	}
+
+	if obj.CortexXsoarManagementLogsSettingsConfig != nil {
+		return obj.CortexXsoarManagementLogsSettingsConfig
 	}
 
 	if obj.CrowdstrikeFdrSettingsConfig != nil {
 		return obj.CrowdstrikeFdrSettingsConfig
 	}
 
+	if obj.CustomerEventDataSettingsConfig != nil {
+		return obj.CustomerEventDataSettingsConfig
+	}
+
 	if obj.DefenderForEndpointAlertsSettingsConfig != nil {
 		return obj.DefenderForEndpointAlertsSettingsConfig
-	}
-
-	if obj.DetectSummariesSettingsConfig != nil {
-		return obj.DetectSummariesSettingsConfig
-	}
-
-	if obj.DeviceActivitySettingsConfig != nil {
-		return obj.DeviceActivitySettingsConfig
 	}
 
 	if obj.DeviceDetailsSettingsConfig != nil {
@@ -2751,8 +4241,8 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.DevicesSettingsConfig
 	}
 
-	if obj.DriveActivitySettingsConfig != nil {
-		return obj.DriveActivitySettingsConfig
+	if obj.EndorLabsAuditLogsSettingsConfig != nil {
+		return obj.EndorLabsAuditLogsSettingsConfig
 	}
 
 	if obj.EntraIdSettingsConfig != nil {
@@ -2761,14 +4251,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.EventSettingsConfig != nil {
 		return obj.EventSettingsConfig
-	}
-
-	if obj.EventsLogsSettingsConfig != nil {
-		return obj.EventsLogsSettingsConfig
-	}
-
-	if obj.EventsSettingsConfig != nil {
-		return obj.EventsSettingsConfig
 	}
 
 	if obj.FullScansSettingsConfig != nil {
@@ -2787,12 +4269,24 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.GoogleCloudStorageSettingsConfig
 	}
 
+	if obj.GreenhouseAuditLogsSettingsConfig != nil {
+		return obj.GreenhouseAuditLogsSettingsConfig
+	}
+
 	if obj.IamAccessAnalyzerSettingsConfig != nil {
 		return obj.IamAccessAnalyzerSettingsConfig
 	}
 
 	if obj.IndividualAlertsSettingsConfig != nil {
 		return obj.IndividualAlertsSettingsConfig
+	}
+
+	if obj.InspectorSettingsConfig != nil {
+		return obj.InspectorSettingsConfig
+	}
+
+	if obj.IssuesReportSettingsConfig != nil {
+		return obj.IssuesReportSettingsConfig
 	}
 
 	if obj.IssuesSettingsConfig != nil {
@@ -2803,28 +4297,36 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.KmsSettingsConfig
 	}
 
-	if obj.LogAnalyticsQuerySettingsConfig != nil {
-		return obj.LogAnalyticsQuerySettingsConfig
+	if obj.KoiAuditLogsSettingsConfig != nil {
+		return obj.KoiAuditLogsSettingsConfig
 	}
 
-	if obj.LoginActivitySettingsConfig != nil {
-		return obj.LoginActivitySettingsConfig
+	if obj.LogAnalyticsQuerySettingsConfig != nil {
+		return obj.LogAnalyticsQuerySettingsConfig
 	}
 
 	if obj.LoginSessionsSettingsConfig != nil {
 		return obj.LoginSessionsSettingsConfig
 	}
 
+	if obj.MerakiConfigLogsSettingsConfig != nil {
+		return obj.MerakiConfigLogsSettingsConfig
+	}
+
+	if obj.Microsoft365GenericSettingsConfig != nil {
+		return obj.Microsoft365GenericSettingsConfig
+	}
+
 	if obj.MonadLogSettingsConfig != nil {
 		return obj.MonadLogSettingsConfig
 	}
 
-	if obj.OauthActivitySettingsConfig != nil {
-		return obj.OauthActivitySettingsConfig
-	}
-
 	if obj.ObjectStorageInputSettingsConfig != nil {
 		return obj.ObjectStorageInputSettingsConfig
+	}
+
+	if obj.OfflineenrollmentlogsSettingsConfig != nil {
+		return obj.OfflineenrollmentlogsSettingsConfig
 	}
 
 	if obj.OneloginEventsSettingsConfig != nil {
@@ -2835,12 +4337,40 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.OpenaiSettingsConfig
 	}
 
+	if obj.OperationLogsSettingsConfig != nil {
+		return obj.OperationLogsSettingsConfig
+	}
+
+	if obj.OracleSettingsConfig != nil {
+		return obj.OracleSettingsConfig
+	}
+
+	if obj.OrgAuditLogsSettingsConfig != nil {
+		return obj.OrgAuditLogsSettingsConfig
+	}
+
 	if obj.OrganizationsSettingsConfig != nil {
 		return obj.OrganizationsSettingsConfig
 	}
 
+	if obj.PagerdutyAuditRecordsSettingsConfig != nil {
+		return obj.PagerdutyAuditRecordsSettingsConfig
+	}
+
 	if obj.PaloAltoDataSecurityAlertsSettingsConfig != nil {
 		return obj.PaloAltoDataSecurityAlertsSettingsConfig
+	}
+
+	if obj.PolymerSettingsConfig != nil {
+		return obj.PolymerSettingsConfig
+	}
+
+	if obj.PostmanAuditLogsSettingsConfig != nil {
+		return obj.PostmanAuditLogsSettingsConfig
+	}
+
+	if obj.PubsubSettingsConfig != nil {
+		return obj.PubsubSettingsConfig
 	}
 
 	if obj.ResourceEvaluationsSettingsConfig != nil {
@@ -2849,6 +4379,14 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.RolesInfoSettingsConfig != nil {
 		return obj.RolesInfoSettingsConfig
+	}
+
+	if obj.RootlyAuditLogsSettingsConfig != nil {
+		return obj.RootlyAuditLogsSettingsConfig
+	}
+
+	if obj.SalesforceUsersSettingsConfig != nil {
+		return obj.SalesforceUsersSettingsConfig
 	}
 
 	if obj.SecretsmanagerSettingsConfig != nil {
@@ -2881,6 +4419,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.SentryOrgAuditLogsSettingsConfig != nil {
 		return obj.SentryOrgAuditLogsSettingsConfig
+	}
+
+	if obj.SlackEnterpriseAuditLogsSettingsConfig != nil {
+		return obj.SlackEnterpriseAuditLogsSettingsConfig
 	}
 
 	if obj.SlackUsersSettingsConfig != nil {
@@ -2927,6 +4469,22 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.TailscaleUsersSettingsConfig
 	}
 
+	if obj.TaniumGraphqlInputSettingsConfig != nil {
+		return obj.TaniumGraphqlInputSettingsConfig
+	}
+
+	if obj.TeamAccessLogsSettingsConfig != nil {
+		return obj.TeamAccessLogsSettingsConfig
+	}
+
+	if obj.TeamIntegrationLogsSettingsConfig != nil {
+		return obj.TeamIntegrationLogsSettingsConfig
+	}
+
+	if obj.TelephonyLogsSettingsConfig != nil {
+		return obj.TelephonyLogsSettingsConfig
+	}
+
 	if obj.TenableAssetsCronSettingsConfig != nil {
 		return obj.TenableAssetsCronSettingsConfig
 	}
@@ -2941,6 +4499,26 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.TenableVulnerabilitiesSettingsConfig != nil {
 		return obj.TenableVulnerabilitiesSettingsConfig
+	}
+
+	if obj.TinesAuditLogsSettingsConfig != nil {
+		return obj.TinesAuditLogsSettingsConfig
+	}
+
+	if obj.TinesEventsLogsSettingsConfig != nil {
+		return obj.TinesEventsLogsSettingsConfig
+	}
+
+	if obj.TwilioEventsSettingsConfig != nil {
+		return obj.TwilioEventsSettingsConfig
+	}
+
+	if obj.TwilioSendgridEmailActivitySettingsConfig != nil {
+		return obj.TwilioSendgridEmailActivitySettingsConfig
+	}
+
+	if obj.UniversalSettingsConfig != nil {
+		return obj.UniversalSettingsConfig
 	}
 
 	if obj.UsersInfoSettingsConfig != nil {
@@ -2963,8 +4541,28 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.VulnerabilitiesSettingsConfig
 	}
 
+	if obj.VulnerabilityFindingsReportSettingsConfig != nil {
+		return obj.VulnerabilityFindingsReportSettingsConfig
+	}
+
 	if obj.VulnerabilityFindingsSettingsConfig != nil {
 		return obj.VulnerabilityFindingsSettingsConfig
+	}
+
+	if obj.WizAuditLogsSettingsConfig != nil {
+		return obj.WizAuditLogsSettingsConfig
+	}
+
+	if obj.ZendeskAuditLogsSettingsConfig != nil {
+		return obj.ZendeskAuditLogsSettingsConfig
+	}
+
+	if obj.ZoomActivityLogsSettingsConfig != nil {
+		return obj.ZoomActivityLogsSettingsConfig
+	}
+
+	if obj.ZoomMeetingActivityLogsSettingsConfig != nil {
+		return obj.ZoomMeetingActivityLogsSettingsConfig
 	}
 
 	if obj.MapmapOfStringAny != nil {
@@ -2981,16 +4579,24 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.ActivityLogsSettingsConfig
 	}
 
+	if obj.ActivitylogsSettingsConfig != nil {
+		return *obj.ActivitylogsSettingsConfig
+	}
+
 	if obj.ActorsInfoSettingsConfig != nil {
 		return *obj.ActorsInfoSettingsConfig
 	}
 
-	if obj.AdminActivitySettingsConfig != nil {
-		return *obj.AdminActivitySettingsConfig
-	}
-
 	if obj.AdminLogsSettingsConfig != nil {
 		return *obj.AdminLogsSettingsConfig
+	}
+
+	if obj.AlertCenterSettingsConfig != nil {
+		return *obj.AlertCenterSettingsConfig
+	}
+
+	if obj.ArizeAuditLogsSettingsConfig != nil {
+		return *obj.ArizeAuditLogsSettingsConfig
 	}
 
 	if obj.AuditLogsSettingsConfig != nil {
@@ -3009,8 +4615,12 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.AwsS3SettingsConfig
 	}
 
-	if obj.AwssqsSettingsConfig != nil {
-		return *obj.AwssqsSettingsConfig
+	if obj.AwssecurityhubSettingsConfig != nil {
+		return *obj.AwssecurityhubSettingsConfig
+	}
+
+	if obj.Awssqss3SettingsConfig != nil {
+		return *obj.Awssqss3SettingsConfig
 	}
 
 	if obj.AzureActivityLogsSettingsConfig != nil {
@@ -3021,12 +4631,24 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.AzureBlobStorageSettingsConfig
 	}
 
+	if obj.AzureEventHubsSettingsConfig != nil {
+		return *obj.AzureEventHubsSettingsConfig
+	}
+
 	if obj.AzureVirtualMachineSettingsConfig != nil {
 		return *obj.AzureVirtualMachineSettingsConfig
 	}
 
 	if obj.AzureVnetFlowLogsSettingsConfig != nil {
 		return *obj.AzureVnetFlowLogsSettingsConfig
+	}
+
+	if obj.BackblazeB2SettingsConfig != nil {
+		return *obj.BackblazeB2SettingsConfig
+	}
+
+	if obj.BigqueryCronSettingsConfig != nil {
+		return *obj.BigqueryCronSettingsConfig
 	}
 
 	if obj.BigqueryInputSettingsConfig != nil {
@@ -3039,6 +4661,14 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.BoxUsersSettingsConfig != nil {
 		return *obj.BoxUsersSettingsConfig
+	}
+
+	if obj.BuildkiteAuditLogsSettingsConfig != nil {
+		return *obj.BuildkiteAuditLogsSettingsConfig
+	}
+
+	if obj.BuildkiteGraphqlInputSettingsConfig != nil {
+		return *obj.BuildkiteGraphqlInputSettingsConfig
 	}
 
 	if obj.CisaUserSettingsConfig != nil {
@@ -3057,8 +4687,52 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.CloudLogsSettingsConfig
 	}
 
+	if obj.CloudResourceInventoryReportsSettingsConfig != nil {
+		return *obj.CloudResourceInventoryReportsSettingsConfig
+	}
+
 	if obj.CloudResourceInventorySettingsConfig != nil {
 		return *obj.CloudResourceInventorySettingsConfig
+	}
+
+	if obj.CloudflareAuditLogsSettingsConfig != nil {
+		return *obj.CloudflareAuditLogsSettingsConfig
+	}
+
+	if obj.CloudflareDnsRecordsSettingsConfig != nil {
+		return *obj.CloudflareDnsRecordsSettingsConfig
+	}
+
+	if obj.CloudflareFirewallEventsSettingsConfig != nil {
+		return *obj.CloudflareFirewallEventsSettingsConfig
+	}
+
+	if obj.CloudflarePageShieldConnectionsSettingsConfig != nil {
+		return *obj.CloudflarePageShieldConnectionsSettingsConfig
+	}
+
+	if obj.CloudflareRulesetsSettingsConfig != nil {
+		return *obj.CloudflareRulesetsSettingsConfig
+	}
+
+	if obj.CloudflareSecurityInsightsSettingsConfig != nil {
+		return *obj.CloudflareSecurityInsightsSettingsConfig
+	}
+
+	if obj.CloudflareUrlScannerSettingsConfig != nil {
+		return *obj.CloudflareUrlScannerSettingsConfig
+	}
+
+	if obj.CloudflareUsersSettingsConfig != nil {
+		return *obj.CloudflareUsersSettingsConfig
+	}
+
+	if obj.CloudflareZeroTrustAccessRequestsSettingsConfig != nil {
+		return *obj.CloudflareZeroTrustAccessRequestsSettingsConfig
+	}
+
+	if obj.CloudflareZonesSettingsConfig != nil {
+		return *obj.CloudflareZonesSettingsConfig
 	}
 
 	if obj.CloudtrailSettingsConfig != nil {
@@ -3073,24 +4747,28 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.ClumioConsolidatedAlertsSettingsConfig
 	}
 
+	if obj.CodaAuditEventsSettingsConfig != nil {
+		return *obj.CodaAuditEventsSettingsConfig
+	}
+
 	if obj.CognitoUsersSettingsConfig != nil {
 		return *obj.CognitoUsersSettingsConfig
+	}
+
+	if obj.CortexXsoarManagementLogsSettingsConfig != nil {
+		return *obj.CortexXsoarManagementLogsSettingsConfig
 	}
 
 	if obj.CrowdstrikeFdrSettingsConfig != nil {
 		return *obj.CrowdstrikeFdrSettingsConfig
 	}
 
+	if obj.CustomerEventDataSettingsConfig != nil {
+		return *obj.CustomerEventDataSettingsConfig
+	}
+
 	if obj.DefenderForEndpointAlertsSettingsConfig != nil {
 		return *obj.DefenderForEndpointAlertsSettingsConfig
-	}
-
-	if obj.DetectSummariesSettingsConfig != nil {
-		return *obj.DetectSummariesSettingsConfig
-	}
-
-	if obj.DeviceActivitySettingsConfig != nil {
-		return *obj.DeviceActivitySettingsConfig
 	}
 
 	if obj.DeviceDetailsSettingsConfig != nil {
@@ -3101,8 +4779,8 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.DevicesSettingsConfig
 	}
 
-	if obj.DriveActivitySettingsConfig != nil {
-		return *obj.DriveActivitySettingsConfig
+	if obj.EndorLabsAuditLogsSettingsConfig != nil {
+		return *obj.EndorLabsAuditLogsSettingsConfig
 	}
 
 	if obj.EntraIdSettingsConfig != nil {
@@ -3111,14 +4789,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.EventSettingsConfig != nil {
 		return *obj.EventSettingsConfig
-	}
-
-	if obj.EventsLogsSettingsConfig != nil {
-		return *obj.EventsLogsSettingsConfig
-	}
-
-	if obj.EventsSettingsConfig != nil {
-		return *obj.EventsSettingsConfig
 	}
 
 	if obj.FullScansSettingsConfig != nil {
@@ -3137,12 +4807,24 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.GoogleCloudStorageSettingsConfig
 	}
 
+	if obj.GreenhouseAuditLogsSettingsConfig != nil {
+		return *obj.GreenhouseAuditLogsSettingsConfig
+	}
+
 	if obj.IamAccessAnalyzerSettingsConfig != nil {
 		return *obj.IamAccessAnalyzerSettingsConfig
 	}
 
 	if obj.IndividualAlertsSettingsConfig != nil {
 		return *obj.IndividualAlertsSettingsConfig
+	}
+
+	if obj.InspectorSettingsConfig != nil {
+		return *obj.InspectorSettingsConfig
+	}
+
+	if obj.IssuesReportSettingsConfig != nil {
+		return *obj.IssuesReportSettingsConfig
 	}
 
 	if obj.IssuesSettingsConfig != nil {
@@ -3153,28 +4835,36 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.KmsSettingsConfig
 	}
 
-	if obj.LogAnalyticsQuerySettingsConfig != nil {
-		return *obj.LogAnalyticsQuerySettingsConfig
+	if obj.KoiAuditLogsSettingsConfig != nil {
+		return *obj.KoiAuditLogsSettingsConfig
 	}
 
-	if obj.LoginActivitySettingsConfig != nil {
-		return *obj.LoginActivitySettingsConfig
+	if obj.LogAnalyticsQuerySettingsConfig != nil {
+		return *obj.LogAnalyticsQuerySettingsConfig
 	}
 
 	if obj.LoginSessionsSettingsConfig != nil {
 		return *obj.LoginSessionsSettingsConfig
 	}
 
+	if obj.MerakiConfigLogsSettingsConfig != nil {
+		return *obj.MerakiConfigLogsSettingsConfig
+	}
+
+	if obj.Microsoft365GenericSettingsConfig != nil {
+		return *obj.Microsoft365GenericSettingsConfig
+	}
+
 	if obj.MonadLogSettingsConfig != nil {
 		return *obj.MonadLogSettingsConfig
 	}
 
-	if obj.OauthActivitySettingsConfig != nil {
-		return *obj.OauthActivitySettingsConfig
-	}
-
 	if obj.ObjectStorageInputSettingsConfig != nil {
 		return *obj.ObjectStorageInputSettingsConfig
+	}
+
+	if obj.OfflineenrollmentlogsSettingsConfig != nil {
+		return *obj.OfflineenrollmentlogsSettingsConfig
 	}
 
 	if obj.OneloginEventsSettingsConfig != nil {
@@ -3185,12 +4875,40 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.OpenaiSettingsConfig
 	}
 
+	if obj.OperationLogsSettingsConfig != nil {
+		return *obj.OperationLogsSettingsConfig
+	}
+
+	if obj.OracleSettingsConfig != nil {
+		return *obj.OracleSettingsConfig
+	}
+
+	if obj.OrgAuditLogsSettingsConfig != nil {
+		return *obj.OrgAuditLogsSettingsConfig
+	}
+
 	if obj.OrganizationsSettingsConfig != nil {
 		return *obj.OrganizationsSettingsConfig
 	}
 
+	if obj.PagerdutyAuditRecordsSettingsConfig != nil {
+		return *obj.PagerdutyAuditRecordsSettingsConfig
+	}
+
 	if obj.PaloAltoDataSecurityAlertsSettingsConfig != nil {
 		return *obj.PaloAltoDataSecurityAlertsSettingsConfig
+	}
+
+	if obj.PolymerSettingsConfig != nil {
+		return *obj.PolymerSettingsConfig
+	}
+
+	if obj.PostmanAuditLogsSettingsConfig != nil {
+		return *obj.PostmanAuditLogsSettingsConfig
+	}
+
+	if obj.PubsubSettingsConfig != nil {
+		return *obj.PubsubSettingsConfig
 	}
 
 	if obj.ResourceEvaluationsSettingsConfig != nil {
@@ -3199,6 +4917,14 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.RolesInfoSettingsConfig != nil {
 		return *obj.RolesInfoSettingsConfig
+	}
+
+	if obj.RootlyAuditLogsSettingsConfig != nil {
+		return *obj.RootlyAuditLogsSettingsConfig
+	}
+
+	if obj.SalesforceUsersSettingsConfig != nil {
+		return *obj.SalesforceUsersSettingsConfig
 	}
 
 	if obj.SecretsmanagerSettingsConfig != nil {
@@ -3231,6 +4957,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.SentryOrgAuditLogsSettingsConfig != nil {
 		return *obj.SentryOrgAuditLogsSettingsConfig
+	}
+
+	if obj.SlackEnterpriseAuditLogsSettingsConfig != nil {
+		return *obj.SlackEnterpriseAuditLogsSettingsConfig
 	}
 
 	if obj.SlackUsersSettingsConfig != nil {
@@ -3277,6 +5007,22 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.TailscaleUsersSettingsConfig
 	}
 
+	if obj.TaniumGraphqlInputSettingsConfig != nil {
+		return *obj.TaniumGraphqlInputSettingsConfig
+	}
+
+	if obj.TeamAccessLogsSettingsConfig != nil {
+		return *obj.TeamAccessLogsSettingsConfig
+	}
+
+	if obj.TeamIntegrationLogsSettingsConfig != nil {
+		return *obj.TeamIntegrationLogsSettingsConfig
+	}
+
+	if obj.TelephonyLogsSettingsConfig != nil {
+		return *obj.TelephonyLogsSettingsConfig
+	}
+
 	if obj.TenableAssetsCronSettingsConfig != nil {
 		return *obj.TenableAssetsCronSettingsConfig
 	}
@@ -3291,6 +5037,26 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.TenableVulnerabilitiesSettingsConfig != nil {
 		return *obj.TenableVulnerabilitiesSettingsConfig
+	}
+
+	if obj.TinesAuditLogsSettingsConfig != nil {
+		return *obj.TinesAuditLogsSettingsConfig
+	}
+
+	if obj.TinesEventsLogsSettingsConfig != nil {
+		return *obj.TinesEventsLogsSettingsConfig
+	}
+
+	if obj.TwilioEventsSettingsConfig != nil {
+		return *obj.TwilioEventsSettingsConfig
+	}
+
+	if obj.TwilioSendgridEmailActivitySettingsConfig != nil {
+		return *obj.TwilioSendgridEmailActivitySettingsConfig
+	}
+
+	if obj.UniversalSettingsConfig != nil {
+		return *obj.UniversalSettingsConfig
 	}
 
 	if obj.UsersInfoSettingsConfig != nil {
@@ -3313,8 +5079,28 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.VulnerabilitiesSettingsConfig
 	}
 
+	if obj.VulnerabilityFindingsReportSettingsConfig != nil {
+		return *obj.VulnerabilityFindingsReportSettingsConfig
+	}
+
 	if obj.VulnerabilityFindingsSettingsConfig != nil {
 		return *obj.VulnerabilityFindingsSettingsConfig
+	}
+
+	if obj.WizAuditLogsSettingsConfig != nil {
+		return *obj.WizAuditLogsSettingsConfig
+	}
+
+	if obj.ZendeskAuditLogsSettingsConfig != nil {
+		return *obj.ZendeskAuditLogsSettingsConfig
+	}
+
+	if obj.ZoomActivityLogsSettingsConfig != nil {
+		return *obj.ZoomActivityLogsSettingsConfig
+	}
+
+	if obj.ZoomMeetingActivityLogsSettingsConfig != nil {
+		return *obj.ZoomMeetingActivityLogsSettingsConfig
 	}
 
 	if obj.MapmapOfStringAny != nil {

@@ -20,6 +20,8 @@ var _ MappedNullable = &BoxEventsSettingsConfig{}
 
 // BoxEventsSettingsConfig Box Events secrets
 type BoxEventsSettingsConfig struct {
+	// Date to start fetching data from. If not specified, data from 1 year ago upto now from box is fetched on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// A list of event types to filter by.
 	EventType []string `json:"event_type,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -41,6 +43,38 @@ func NewBoxEventsSettingsConfig() *BoxEventsSettingsConfig {
 func NewBoxEventsSettingsConfigWithDefaults() *BoxEventsSettingsConfig {
 	this := BoxEventsSettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *BoxEventsSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BoxEventsSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *BoxEventsSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *BoxEventsSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetEventType returns the EventType field value if set, zero value otherwise.
@@ -117,6 +151,9 @@ func (o BoxEventsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o BoxEventsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.EventType) {
 		toSerialize["event_type"] = o.EventType
 	}

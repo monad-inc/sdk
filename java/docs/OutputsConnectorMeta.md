@@ -13,8 +13,8 @@
 |**config** | **Object** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**house** | **String** |  |  [optional] |
+|**inBeta** | **Boolean** |  |  [optional] |
 |**internal** | **Boolean** |  |  [optional] |
-|**logoKey** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**tier** | **Integer** |  |  [optional] |
 |**typeId** | **String** |  |  [optional] |

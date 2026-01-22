@@ -46,14 +46,14 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Vercel User Events settings
+ * VercelUserEventsSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class VercelUserEventsSettingsConfig {
-  public static final String SERIALIZED_NAME_LOOKBACK_HOURS = "lookback_hours";
-  @SerializedName(SERIALIZED_NAME_LOOKBACK_HOURS)
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
   @javax.annotation.Nullable
-  private Integer lookbackHours;
+  private String backfillStartTime;
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
@@ -68,22 +68,22 @@ public class VercelUserEventsSettingsConfig {
   public VercelUserEventsSettingsConfig() {
   }
 
-  public VercelUserEventsSettingsConfig lookbackHours(@javax.annotation.Nullable Integer lookbackHours) {
-    this.lookbackHours = lookbackHours;
+  public VercelUserEventsSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
     return this;
   }
 
   /**
-   * Get lookbackHours
-   * @return lookbackHours
+   * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+   * @return backfillStartTime
    */
   @javax.annotation.Nullable
-  public Integer getLookbackHours() {
-    return lookbackHours;
+  public String getBackfillStartTime() {
+    return backfillStartTime;
   }
 
-  public void setLookbackHours(@javax.annotation.Nullable Integer lookbackHours) {
-    this.lookbackHours = lookbackHours;
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
   }
 
 
@@ -93,7 +93,7 @@ public class VercelUserEventsSettingsConfig {
   }
 
   /**
-   * Get useSyntheticData
+   * Generate synthetic data for testing, instead of connecting to a real data source. Defaults to an hourly cron schedule for cron-based inputs.
    * @return useSyntheticData
    */
   @javax.annotation.Nullable
@@ -112,7 +112,7 @@ public class VercelUserEventsSettingsConfig {
   }
 
   /**
-   * Get withPayload
+   * Whether to include detailed payload information in the events.
    * @return withPayload
    */
   @javax.annotation.Nullable
@@ -135,21 +135,21 @@ public class VercelUserEventsSettingsConfig {
       return false;
     }
     VercelUserEventsSettingsConfig vercelUserEventsSettingsConfig = (VercelUserEventsSettingsConfig) o;
-    return Objects.equals(this.lookbackHours, vercelUserEventsSettingsConfig.lookbackHours) &&
+    return Objects.equals(this.backfillStartTime, vercelUserEventsSettingsConfig.backfillStartTime) &&
         Objects.equals(this.useSyntheticData, vercelUserEventsSettingsConfig.useSyntheticData) &&
         Objects.equals(this.withPayload, vercelUserEventsSettingsConfig.withPayload);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(lookbackHours, useSyntheticData, withPayload);
+    return Objects.hash(backfillStartTime, useSyntheticData, withPayload);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class VercelUserEventsSettingsConfig {\n");
-    sb.append("    lookbackHours: ").append(toIndentedString(lookbackHours)).append("\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("    withPayload: ").append(toIndentedString(withPayload)).append("\n");
     sb.append("}");
@@ -173,7 +173,7 @@ public class VercelUserEventsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("lookback_hours", "use_synthetic_data", "with_payload"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "use_synthetic_data", "with_payload"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -188,7 +188,7 @@ public class VercelUserEventsSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!VercelUserEventsSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in VercelUserEventsSettingsConfig is not found in the empty JSON string", VercelUserEventsSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in VercelUserEventsSettingsConfig is not found in the empty JSON string", VercelUserEventsSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -196,10 +196,13 @@ public class VercelUserEventsSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!VercelUserEventsSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `VercelUserEventsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `VercelUserEventsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

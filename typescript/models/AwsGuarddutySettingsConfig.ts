@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class AwsGuarddutySettingsConfig {
     /**
+    * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+    */
+    'backfillStartTime'?: string;
+    /**
     * The AWS region where GuardDuty is enabled.
     */
     'region'?: string;
@@ -38,6 +42,12 @@ export class AwsGuarddutySettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "region",
             "baseName": "region",

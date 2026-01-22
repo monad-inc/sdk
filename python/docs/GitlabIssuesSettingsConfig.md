@@ -6,6 +6,7 @@ Gitlab Issues settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**backfill_start_time** | **str** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **confidential** | **bool** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. | [optional] 
 **gitlab_url** | **str** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | [optional] 
 **issue_type** | **str** | IssueType to filter issues by type e.g. issue, incident, etc. | [optional] 

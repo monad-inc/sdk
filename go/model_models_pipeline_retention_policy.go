@@ -21,7 +21,6 @@ var _ MappedNullable = &ModelsPipelineRetentionPolicy{}
 // ModelsPipelineRetentionPolicy struct for ModelsPipelineRetentionPolicy
 type ModelsPipelineRetentionPolicy struct {
 	StreamAgeLimit *int32 `json:"stream_age_limit,omitempty"`
-	StreamReplicas *int32 `json:"stream_replicas,omitempty"`
 	StreamSizeLimit *string `json:"stream_size_limit,omitempty"`
 }
 
@@ -74,38 +73,6 @@ func (o *ModelsPipelineRetentionPolicy) SetStreamAgeLimit(v int32) {
 	o.StreamAgeLimit = &v
 }
 
-// GetStreamReplicas returns the StreamReplicas field value if set, zero value otherwise.
-func (o *ModelsPipelineRetentionPolicy) GetStreamReplicas() int32 {
-	if o == nil || IsNil(o.StreamReplicas) {
-		var ret int32
-		return ret
-	}
-	return *o.StreamReplicas
-}
-
-// GetStreamReplicasOk returns a tuple with the StreamReplicas field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ModelsPipelineRetentionPolicy) GetStreamReplicasOk() (*int32, bool) {
-	if o == nil || IsNil(o.StreamReplicas) {
-		return nil, false
-	}
-	return o.StreamReplicas, true
-}
-
-// HasStreamReplicas returns a boolean if a field has been set.
-func (o *ModelsPipelineRetentionPolicy) HasStreamReplicas() bool {
-	if o != nil && !IsNil(o.StreamReplicas) {
-		return true
-	}
-
-	return false
-}
-
-// SetStreamReplicas gets a reference to the given int32 and assigns it to the StreamReplicas field.
-func (o *ModelsPipelineRetentionPolicy) SetStreamReplicas(v int32) {
-	o.StreamReplicas = &v
-}
-
 // GetStreamSizeLimit returns the StreamSizeLimit field value if set, zero value otherwise.
 func (o *ModelsPipelineRetentionPolicy) GetStreamSizeLimit() string {
 	if o == nil || IsNil(o.StreamSizeLimit) {
@@ -150,9 +117,6 @@ func (o ModelsPipelineRetentionPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.StreamAgeLimit) {
 		toSerialize["stream_age_limit"] = o.StreamAgeLimit
-	}
-	if !IsNil(o.StreamReplicas) {
-		toSerialize["stream_replicas"] = o.StreamReplicas
 	}
 	if !IsNil(o.StreamSizeLimit) {
 		toSerialize["stream_size_limit"] = o.StreamSizeLimit

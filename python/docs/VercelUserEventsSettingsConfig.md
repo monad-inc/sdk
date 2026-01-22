@@ -1,14 +1,13 @@
 # VercelUserEventsSettingsConfig
 
-Vercel User Events settings
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lookback_hours** | **int** |  | [optional] 
-**use_synthetic_data** | **bool** |  | [optional] 
-**with_payload** | **bool** |  | [optional] 
+**backfill_start_time** | **str** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic data for testing, instead of connecting to a real data source. Defaults to an hourly cron schedule for cron-based inputs. | [optional] 
+**with_payload** | **bool** | Whether to include detailed payload information in the events. | [optional] 
 
 ## Example
 

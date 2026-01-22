@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **key** | **str** | The key to store the timestamp in | [optional] 
 **value** | **object** |  | [optional] 
+**type** | **str** | The new type of the key | [optional] 
 **key_to_watch** | **str** | The key to watch for | [optional] 
 **value_to_watch** | **object** |  | [optional] 
 **new_key** | **str** | The new key to rename to | [optional] 
 **delimiter** | **str** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 | [optional] 
 **query** | **str** | The JQ query to apply to the record | [optional] 
-**type** | **str** | The new type of the key | [optional] 
 **value_to_set** | **object** |  | [optional] 
 **format** | **str** | The format of the timestamp | [optional] 
 

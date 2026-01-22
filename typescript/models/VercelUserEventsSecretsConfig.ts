@@ -13,9 +13,6 @@
 import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
-/**
-* Vercel User Events secrets
-*/
 export class VercelUserEventsSecretsConfig {
     'accessToken'?: ModelsSecret;
 

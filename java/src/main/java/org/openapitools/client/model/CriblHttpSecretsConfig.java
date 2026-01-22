@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Cribl HTTP Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class CriblHttpSecretsConfig {
   public static final String SERIALIZED_NAME_AUTH_TOKEN = "auth_token";
   @SerializedName(SERIALIZED_NAME_AUTH_TOKEN)
@@ -137,7 +137,7 @@ public class CriblHttpSecretsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CriblHttpSecretsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CriblHttpSecretsConfig is not found in the empty JSON string", CriblHttpSecretsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in CriblHttpSecretsConfig is not found in the empty JSON string", CriblHttpSecretsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -145,7 +145,7 @@ public class CriblHttpSecretsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!CriblHttpSecretsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CriblHttpSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `CriblHttpSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();

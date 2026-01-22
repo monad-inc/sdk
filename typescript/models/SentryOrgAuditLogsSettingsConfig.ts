@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class SentryOrgAuditLogsSettingsConfig {
     /**
+    * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+    */
+    'backfillStartTime'?: string;
+    /**
     * For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io.
     */
     'hostName'?: string;
@@ -34,6 +38,12 @@ export class SentryOrgAuditLogsSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "hostName",
             "baseName": "host_name",

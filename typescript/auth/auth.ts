@@ -61,7 +61,6 @@ export class BearerAuthentication implements SecurityAuthentication {
     }
 }
 
-
 export type AuthMethods = {
     "default"?: SecurityAuthentication,
     "ApiKeyAuth"?: SecurityAuthentication,

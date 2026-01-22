@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsQuotaList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsQuotaList {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
@@ -174,7 +174,7 @@ public class ModelsQuotaList {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelsQuotaList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ModelsQuotaList is not found in the empty JSON string", ModelsQuotaList.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsQuotaList is not found in the empty JSON string", ModelsQuotaList.openapiRequiredFields.toString()));
         }
       }
 
@@ -182,7 +182,7 @@ public class ModelsQuotaList {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ModelsQuotaList.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ModelsQuotaList` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsQuotaList` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -195,7 +195,7 @@ public class ModelsQuotaList {
         if (jsonArrayquotas != null) {
           // ensure the json data is an array
           if (!jsonObj.get("quotas").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `quotas` to be an array in the JSON string but got `%s`", jsonObj.get("quotas").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `quotas` to be an array in the JSON string but got `%s`", jsonObj.get("quotas").toString()));
           }
 
           // validate the optional field `quotas` (array)

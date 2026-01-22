@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Google Cloud Storage settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class GoogleCloudStorageSettingsConfig {
   public static final String SERIALIZED_NAME_BUCKET_NAME = "bucket_name";
   @SerializedName(SERIALIZED_NAME_BUCKET_NAME)
@@ -292,7 +292,7 @@ public class GoogleCloudStorageSettingsConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GoogleCloudStorageSettingsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GoogleCloudStorageSettingsConfig is not found in the empty JSON string", GoogleCloudStorageSettingsConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GoogleCloudStorageSettingsConfig is not found in the empty JSON string", GoogleCloudStorageSettingsConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -300,30 +300,30 @@ public class GoogleCloudStorageSettingsConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!GoogleCloudStorageSettingsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GoogleCloudStorageSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GoogleCloudStorageSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("bucket_name") != null && !jsonObj.get("bucket_name").isJsonNull()) && !jsonObj.get("bucket_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bucket_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucket_name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bucket_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucket_name").toString()));
       }
       if ((jsonObj.get("compression") != null && !jsonObj.get("compression").isJsonNull()) && !jsonObj.get("compression").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `compression` to be a primitive type in the JSON string but got `%s`", jsonObj.get("compression").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `compression` to be a primitive type in the JSON string but got `%s`", jsonObj.get("compression").toString()));
       }
       if ((jsonObj.get("format") != null && !jsonObj.get("format").isJsonNull()) && !jsonObj.get("format").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
       }
       if ((jsonObj.get("partition_format") != null && !jsonObj.get("partition_format").isJsonNull()) && !jsonObj.get("partition_format").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `partition_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partition_format").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `partition_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partition_format").toString()));
       }
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
       }
       if ((jsonObj.get("project_id") != null && !jsonObj.get("project_id").isJsonNull()) && !jsonObj.get("project_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `project_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("project_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `project_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("project_id").toString()));
       }
       if ((jsonObj.get("record_location") != null && !jsonObj.get("record_location").isJsonNull()) && !jsonObj.get("record_location").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `record_location` to be a primitive type in the JSON string but got `%s`", jsonObj.get("record_location").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `record_location` to be a primitive type in the JSON string but got `%s`", jsonObj.get("record_location").toString()));
       }
   }
 

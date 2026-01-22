@@ -14,6 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class AuthenticationtypesTokenResponse {
     'accessToken'?: string;
+    'email'?: string;
     'expiresIn'?: number;
     'idToken'?: string;
     'refreshToken'?: string;
@@ -27,6 +28,12 @@ export class AuthenticationtypesTokenResponse {
         {
             "name": "accessToken",
             "baseName": "access_token",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "email",
+            "baseName": "email",
             "type": "string",
             "format": ""
         },

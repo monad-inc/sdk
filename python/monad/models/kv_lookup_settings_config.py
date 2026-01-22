@@ -27,11 +27,12 @@ class KvLookupSettingsConfig(BaseModel):
     """
     KVLookup enrichment settings
     """ # noqa: E501
-    destination_key: Optional[StrictStr] = Field(default=None, description="DestinationKey the path where the result will be stored in the record. Use '.' for the root object, 'field.subfield' for nested properties, 'array[0]' for array elements, or combined paths like 'users[0].name'.")
-    error_on_missing_key: Optional[StrictBool] = Field(default=None, description="ErrorOnMissingKey if true, will throw an error if the key is not found in the KV lookup output")
-    join_key: Optional[StrictStr] = Field(default=None, description="JoinKey is the key in the record whose value will be used to join with the KV lookup output")
-    kv_lookup_output_id: Optional[StrictStr] = Field(default=None, description="KVLookupOutputID is the ID of the KV lookup output to join with")
-    __properties: ClassVar[List[str]] = ["destination_key", "error_on_missing_key", "join_key", "kv_lookup_output_id"]
+    destination_key: Optional[StrictStr] = Field(default=None, description="DestinationKey is the path where the result will be stored in the record")
+    error_on_missing_key: Optional[StrictBool] = Field(default=None, description="ErrorOnMissingKey If true, throw an error when key is not found in the KV store")
+    join_path: Optional[StrictStr] = Field(default=None, description="JoinPath is the path to a field whose values will be used as the lookup keys")
+    kv_lookup_output_id: Optional[StrictStr] = Field(default=None, description="KVLookupOutputID is the id of the KV lookup output to join with")
+    no_match_response: Optional[StrictStr] = Field(default=None, description="NoMatchResponse is the value to add to the record when no match is found")
+    __properties: ClassVar[List[str]] = ["destination_key", "error_on_missing_key", "join_path", "kv_lookup_output_id", "no_match_response"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,8 +87,9 @@ class KvLookupSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "destination_key": obj.get("destination_key"),
             "error_on_missing_key": obj.get("error_on_missing_key"),
-            "join_key": obj.get("join_key"),
-            "kv_lookup_output_id": obj.get("kv_lookup_output_id")
+            "join_path": obj.get("join_path"),
+            "kv_lookup_output_id": obj.get("kv_lookup_output_id"),
+            "no_match_response": obj.get("no_match_response")
         })
         return _obj
 

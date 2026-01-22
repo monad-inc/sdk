@@ -20,6 +20,8 @@ var _ MappedNullable = &IssuesSettingsConfig{}
 
 // IssuesSettingsConfig Wiz Issues settings
 type IssuesSettingsConfig struct {
+	// Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// @Description Filter Issues created by specific control IDs
 	ControlIds []string `json:"control_ids,omitempty"`
 	// @Description Filter Issues with or without a note
@@ -73,6 +75,38 @@ func NewIssuesSettingsConfig() *IssuesSettingsConfig {
 func NewIssuesSettingsConfigWithDefaults() *IssuesSettingsConfig {
 	this := IssuesSettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *IssuesSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IssuesSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *IssuesSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *IssuesSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetControlIds returns the ControlIds field value if set, zero value otherwise.
@@ -661,6 +695,9 @@ func (o IssuesSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o IssuesSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.ControlIds) {
 		toSerialize["control_ids"] = o.ControlIds
 	}

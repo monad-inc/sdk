@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3TransformConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV3TransformConfig {
   public static final String SERIALIZED_NAME_OPERATIONS = "operations";
   @SerializedName(SERIALIZED_NAME_OPERATIONS)
@@ -147,7 +147,7 @@ public class RoutesV3TransformConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RoutesV3TransformConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RoutesV3TransformConfig is not found in the empty JSON string", RoutesV3TransformConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV3TransformConfig is not found in the empty JSON string", RoutesV3TransformConfig.openapiRequiredFields.toString()));
         }
       }
 
@@ -155,7 +155,7 @@ public class RoutesV3TransformConfig {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!RoutesV3TransformConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RoutesV3TransformConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV3TransformConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -164,7 +164,7 @@ public class RoutesV3TransformConfig {
         if (jsonArrayoperations != null) {
           // ensure the json data is an array
           if (!jsonObj.get("operations").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `operations` to be an array in the JSON string but got `%s`", jsonObj.get("operations").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `operations` to be an array in the JSON string but got `%s`", jsonObj.get("operations").toString()));
           }
 
           // validate the optional field `operations` (array)

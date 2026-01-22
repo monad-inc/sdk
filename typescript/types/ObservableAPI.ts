@@ -7,13 +7,19 @@ import { AbsSecretsConfig } from '../models/AbsSecretsConfig';
 import { AbsSettingsConfig } from '../models/AbsSettingsConfig';
 import { ActivityLogsSecretsConfig } from '../models/ActivityLogsSecretsConfig';
 import { ActivityLogsSettingsConfig } from '../models/ActivityLogsSettingsConfig';
+import { ActivitylogsSecretsConfig } from '../models/ActivitylogsSecretsConfig';
+import { ActivitylogsSettingsConfig } from '../models/ActivitylogsSettingsConfig';
 import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddAdd } from '../models/AddAdd';
-import { AdminActivitySecretsConfig } from '../models/AdminActivitySecretsConfig';
-import { AdminActivitySettingsConfig } from '../models/AdminActivitySettingsConfig';
+import { AddIdAddIdentifier } from '../models/AddIdAddIdentifier';
 import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
+import { AlertCenterSecretsConfig } from '../models/AlertCenterSecretsConfig';
+import { AlertCenterSettingsConfig } from '../models/AlertCenterSettingsConfig';
+import { AlertsAlertMeta } from '../models/AlertsAlertMeta';
+import { ArizeAuditLogsSecretsConfig } from '../models/ArizeAuditLogsSecretsConfig';
+import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsConfig';
 import { AuditLogsSecretsConfig } from '../models/AuditLogsSecretsConfig';
 import { AuditLogsSettingsConfig } from '../models/AuditLogsSettingsConfig';
 import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
@@ -21,18 +27,32 @@ import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
 import { AuthenticationtypesMFAEnrollmentTicket } from '../models/AuthenticationtypesMFAEnrollmentTicket';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
+import { AwsGuarddutySecretsConfig } from '../models/AwsGuarddutySecretsConfig';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
+import { AwsS3SecretsConfig } from '../models/AwsS3SecretsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
-import { AwssqsSettingsConfig } from '../models/AwssqsSettingsConfig';
+import { AwssecurityhubSecretsConfig } from '../models/AwssecurityhubSecretsConfig';
+import { AwssecurityhubSettingsConfig } from '../models/AwssecurityhubSettingsConfig';
 import { AwssqsoutputSettingsConfig } from '../models/AwssqsoutputSettingsConfig';
+import { Awssqss3SettingsConfig } from '../models/Awssqss3SettingsConfig';
+import { AxiomSecretsConfig } from '../models/AxiomSecretsConfig';
+import { AxiomSettingsConfig } from '../models/AxiomSettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
 import { AzureActivityLogsSettingsConfig } from '../models/AzureActivityLogsSettingsConfig';
 import { AzureBlobStorageSecretsConfig } from '../models/AzureBlobStorageSecretsConfig';
 import { AzureBlobStorageSettingsConfig } from '../models/AzureBlobStorageSettingsConfig';
+import { AzureEventHubsSecretsConfig } from '../models/AzureEventHubsSecretsConfig';
+import { AzureEventHubsSettingsConfig } from '../models/AzureEventHubsSettingsConfig';
 import { AzureVirtualMachineSettingsConfig } from '../models/AzureVirtualMachineSettingsConfig';
 import { AzureVnetFlowLogsSecretsConfig } from '../models/AzureVnetFlowLogsSecretsConfig';
 import { AzureVnetFlowLogsSettingsConfig } from '../models/AzureVnetFlowLogsSettingsConfig';
+import { BackblazeB2SecretsConfig } from '../models/BackblazeB2SecretsConfig';
+import { BackblazeB2SettingsConfig } from '../models/BackblazeB2SettingsConfig';
+import { BackblazeSecretsConfig } from '../models/BackblazeSecretsConfig';
+import { BackblazeSettingsConfig } from '../models/BackblazeSettingsConfig';
 import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
+import { BigqueryCronSecretsConfig } from '../models/BigqueryCronSecretsConfig';
+import { BigqueryCronSettingsConfig } from '../models/BigqueryCronSettingsConfig';
 import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig';
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
@@ -41,6 +61,10 @@ import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
+import { BuildkiteAuditLogsSecretsConfig } from '../models/BuildkiteAuditLogsSecretsConfig';
+import { BuildkiteAuditLogsSettingsConfig } from '../models/BuildkiteAuditLogsSettingsConfig';
+import { BuildkiteGraphqlInputSecretsConfig } from '../models/BuildkiteGraphqlInputSecretsConfig';
+import { BuildkiteGraphqlInputSettingsConfig } from '../models/BuildkiteGraphqlInputSettingsConfig';
 import { CisaUserSettingsConfig } from '../models/CisaUserSettingsConfig';
 import { CloudAssetInventorySecretsConfig } from '../models/CloudAssetInventorySecretsConfig';
 import { CloudAssetInventorySettingsConfig } from '../models/CloudAssetInventorySettingsConfig';
@@ -48,13 +72,37 @@ import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigur
 import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';
 import { CloudLogsSecretsConfig } from '../models/CloudLogsSecretsConfig';
 import { CloudLogsSettingsConfig } from '../models/CloudLogsSettingsConfig';
+import { CloudResourceInventoryReportsSecretsConfig } from '../models/CloudResourceInventoryReportsSecretsConfig';
+import { CloudResourceInventoryReportsSettingsConfig } from '../models/CloudResourceInventoryReportsSettingsConfig';
 import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
+import { CloudflareAuditLogsSecretsConfig } from '../models/CloudflareAuditLogsSecretsConfig';
+import { CloudflareAuditLogsSettingsConfig } from '../models/CloudflareAuditLogsSettingsConfig';
+import { CloudflareDnsRecordsSecretsConfig } from '../models/CloudflareDnsRecordsSecretsConfig';
+import { CloudflareDnsRecordsSettingsConfig } from '../models/CloudflareDnsRecordsSettingsConfig';
+import { CloudflareFirewallEventsSecretsConfig } from '../models/CloudflareFirewallEventsSecretsConfig';
+import { CloudflareFirewallEventsSettingsConfig } from '../models/CloudflareFirewallEventsSettingsConfig';
+import { CloudflarePageShieldConnectionsSecretsConfig } from '../models/CloudflarePageShieldConnectionsSecretsConfig';
+import { CloudflarePageShieldConnectionsSettingsConfig } from '../models/CloudflarePageShieldConnectionsSettingsConfig';
+import { CloudflareRulesetsSecretsConfig } from '../models/CloudflareRulesetsSecretsConfig';
+import { CloudflareRulesetsSettingsConfig } from '../models/CloudflareRulesetsSettingsConfig';
+import { CloudflareSecurityInsightsSecretsConfig } from '../models/CloudflareSecurityInsightsSecretsConfig';
+import { CloudflareSecurityInsightsSettingsConfig } from '../models/CloudflareSecurityInsightsSettingsConfig';
+import { CloudflareUrlScannerSecretsConfig } from '../models/CloudflareUrlScannerSecretsConfig';
+import { CloudflareUrlScannerSettingsConfig } from '../models/CloudflareUrlScannerSettingsConfig';
+import { CloudflareUsersSecretsConfig } from '../models/CloudflareUsersSecretsConfig';
+import { CloudflareUsersSettingsConfig } from '../models/CloudflareUsersSettingsConfig';
+import { CloudflareZeroTrustAccessRequestsSecretsConfig } from '../models/CloudflareZeroTrustAccessRequestsSecretsConfig';
+import { CloudflareZeroTrustAccessRequestsSettingsConfig } from '../models/CloudflareZeroTrustAccessRequestsSettingsConfig';
+import { CloudflareZonesSecretsConfig } from '../models/CloudflareZonesSecretsConfig';
+import { CloudflareZonesSettingsConfig } from '../models/CloudflareZonesSettingsConfig';
 import { CloudtrailSettingsConfig } from '../models/CloudtrailSettingsConfig';
 import { ClumioAuditLogsSecretsConfig } from '../models/ClumioAuditLogsSecretsConfig';
 import { ClumioAuditLogsSettingsConfig } from '../models/ClumioAuditLogsSettingsConfig';
 import { ClumioConsolidatedAlertsSecretsConfig } from '../models/ClumioConsolidatedAlertsSecretsConfig';
 import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
+import { CodaAuditEventsSecretsConfig } from '../models/CodaAuditEventsSecretsConfig';
+import { CodaAuditEventsSettingsConfig } from '../models/CodaAuditEventsSettingsConfig';
 import { CognitoUsersFilter } from '../models/CognitoUsersFilter';
 import { CognitoUsersSettingsConfig } from '../models/CognitoUsersSettingsConfig';
 import { CommunityEditionSecretsConfig } from '../models/CommunityEditionSecretsConfig';
@@ -63,47 +111,49 @@ import { CommunityTransformsInternalTransformConfig } from '../models/CommunityT
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
 import { ConditionInfo } from '../models/ConditionInfo';
+import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
+import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
 import { CrowdstrikeFdrSecretsConfig } from '../models/CrowdstrikeFdrSecretsConfig';
 import { CrowdstrikeFdrSettingsConfig } from '../models/CrowdstrikeFdrSettingsConfig';
+import { CustomerEventDataSecretsConfig } from '../models/CustomerEventDataSecretsConfig';
+import { CustomerEventDataSettingsConfig } from '../models/CustomerEventDataSettingsConfig';
+import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
+import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
 import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
 import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
-import { DetectSummariesSecretsConfig } from '../models/DetectSummariesSecretsConfig';
-import { DetectSummariesSettingsConfig } from '../models/DetectSummariesSettingsConfig';
-import { DeviceActivitySecretsConfig } from '../models/DeviceActivitySecretsConfig';
-import { DeviceActivitySettingsConfig } from '../models/DeviceActivitySettingsConfig';
 import { DeviceDetailsSecretsConfig } from '../models/DeviceDetailsSecretsConfig';
 import { DeviceDetailsSettingsConfig } from '../models/DeviceDetailsSettingsConfig';
 import { DevicesSecretsConfig } from '../models/DevicesSecretsConfig';
 import { DevicesSettingsConfig } from '../models/DevicesSettingsConfig';
-import { DriveActivitySecretsConfig } from '../models/DriveActivitySecretsConfig';
-import { DriveActivitySettingsConfig } from '../models/DriveActivitySettingsConfig';
 import { DropKeyDropKey } from '../models/DropKeyDropKey';
 import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
 import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
 import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
+import { EndorLabsAuditLogsSecretsConfig } from '../models/EndorLabsAuditLogsSecretsConfig';
+import { EndorLabsAuditLogsSettingsConfig } from '../models/EndorLabsAuditLogsSettingsConfig';
 import { EnrichmentConnectorMeta } from '../models/EnrichmentConnectorMeta';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
-import { EventsLogsSecretsConfig } from '../models/EventsLogsSecretsConfig';
-import { EventsLogsSettingsConfig } from '../models/EventsLogsSettingsConfig';
-import { EventsSecretsConfig } from '../models/EventsSecretsConfig';
-import { EventsSettingsConfig } from '../models/EventsSettingsConfig';
 import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenFlatten } from '../models/FlattenFlatten';
 import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
+import { GeolocusSettingsConfig } from '../models/GeolocusSettingsConfig';
 import { GithubAdvisoryUserSettingsConfig } from '../models/GithubAdvisoryUserSettingsConfig';
 import { GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter } from '../models/GithubComAwsAwsSdkGoV2ServiceSecretsmanagerTypesFilter';
+import { GithubComMonadIncAlertsModelsAlert } from '../models/GithubComMonadIncAlertsModelsAlert';
+import { GithubComMonadIncAlertsModelsAlertStatus } from '../models/GithubComMonadIncAlertsModelsAlertStatus';
+import { GithubComMonadIncAlertsModelsResourceReference } from '../models/GithubComMonadIncAlertsModelsResourceReference';
 import { GithubComMonadIncCorePkgTypesModelsOrganization } from '../models/GithubComMonadIncCorePkgTypesModelsOrganization';
 import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubComMonadIncCorePkgTypesModelsPermission';
 import { GithubComMonadIncCorePkgTypesModelsQuota } from '../models/GithubComMonadIncCorePkgTypesModelsQuota';
@@ -114,6 +164,8 @@ import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStor
 import { GoogleCloudStorageOutputSettingsConfig } from '../models/GoogleCloudStorageOutputSettingsConfig';
 import { GoogleCloudStorageSecretsConfig } from '../models/GoogleCloudStorageSecretsConfig';
 import { GoogleCloudStorageSettingsConfig } from '../models/GoogleCloudStorageSettingsConfig';
+import { GreenhouseAuditLogsSecretsConfig } from '../models/GreenhouseAuditLogsSecretsConfig';
+import { GreenhouseAuditLogsSettingsConfig } from '../models/GreenhouseAuditLogsSettingsConfig';
 import { HttpHeaders } from '../models/HttpHeaders';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
@@ -123,21 +175,33 @@ import { IamAccessAnalyzerSettingsConfig } from '../models/IamAccessAnalyzerSett
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
 import { InputsConnectorMeta } from '../models/InputsConnectorMeta';
+import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
+import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
+import { IssuesReportSecretsConfig } from '../models/IssuesReportSecretsConfig';
+import { IssuesReportSettingsConfig } from '../models/IssuesReportSettingsConfig';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig } from '../models/IssuesSettingsConfig';
 import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
 import { KmsSettingsConfig } from '../models/KmsSettingsConfig';
+import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
+import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
+import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
+import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
-import { LoginActivitySecretsConfig } from '../models/LoginActivitySecretsConfig';
-import { LoginActivitySettingsConfig } from '../models/LoginActivitySettingsConfig';
 import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
 import { LoginSessionsSettingsConfig } from '../models/LoginSessionsSettingsConfig';
 import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultiplyWithValueMathMultiplyWithValue';
+import { MerakiConfigLogsSecretsConfig } from '../models/MerakiConfigLogsSecretsConfig';
+import { MerakiConfigLogsSettingsConfig } from '../models/MerakiConfigLogsSettingsConfig';
+import { Microsoft365GenericSecretsConfig } from '../models/Microsoft365GenericSecretsConfig';
+import { Microsoft365GenericSettingsConfig } from '../models/Microsoft365GenericSettingsConfig';
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
+import { ModelsAlertRule } from '../models/ModelsAlertRule';
+import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
 import { ModelsBillingAccount } from '../models/ModelsBillingAccount';
 import { ModelsBillingAccountList } from '../models/ModelsBillingAccountList';
 import { ModelsBillingAccountPermission } from '../models/ModelsBillingAccountPermission';
@@ -148,9 +212,6 @@ import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
 import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
-import { ModelsConnectionPermission } from '../models/ModelsConnectionPermission';
-import { ModelsConnectionRole } from '../models/ModelsConnectionRole';
-import { ModelsConnectionRoleUser } from '../models/ModelsConnectionRoleUser';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
@@ -186,6 +247,13 @@ import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissio
 import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
 import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
+import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
+import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
+import { ModelsStorageTypeCostSummary } from '../models/ModelsStorageTypeCostSummary';
+import { ModelsStorageTypeOutputDetail } from '../models/ModelsStorageTypeOutputDetail';
+import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSummaryResponse';
+import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
+import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
 import { ModelsTransform } from '../models/ModelsTransform';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
@@ -194,27 +262,35 @@ import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsReposi
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
 import { ModelsUserAuthProvider } from '../models/ModelsUserAuthProvider';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
+import { MonadGraphqlInputVariable } from '../models/MonadGraphqlInputVariable';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
 import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
 import { NextGenSiemSecretsConfig } from '../models/NextGenSiemSecretsConfig';
 import { NextGenSiemSettingsConfig } from '../models/NextGenSiemSettingsConfig';
-import { OauthActivitySecretsConfig } from '../models/OauthActivitySecretsConfig';
-import { OauthActivitySettingsConfig } from '../models/OauthActivitySettingsConfig';
 import { ObjectStorageInputSecretsConfig } from '../models/ObjectStorageInputSecretsConfig';
 import { ObjectStorageInputSettingsConfig } from '../models/ObjectStorageInputSettingsConfig';
 import { ObjectStorageSecretsConfig } from '../models/ObjectStorageSecretsConfig';
 import { ObjectStorageSettingsConfig } from '../models/ObjectStorageSettingsConfig';
+import { OfflineenrollmentlogsSecretsConfig } from '../models/OfflineenrollmentlogsSecretsConfig';
+import { OfflineenrollmentlogsSettingsConfig } from '../models/OfflineenrollmentlogsSettingsConfig';
 import { OneloginEventsSecretsConfig } from '../models/OneloginEventsSecretsConfig';
 import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsConfig';
 import { OpenaiSettingsConfig } from '../models/OpenaiSettingsConfig';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';
 import { OperationInformation } from '../models/OperationInformation';
+import { OperationLogsSecretsConfig } from '../models/OperationLogsSecretsConfig';
+import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConfig';
+import { OracleSettingsConfig } from '../models/OracleSettingsConfig';
+import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
+import { OrgAuditLogsSettingsConfig } from '../models/OrgAuditLogsSettingsConfig';
 import { OrganizationsSettingsConfig } from '../models/OrganizationsSettingsConfig';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
+import { PagerdutyAuditRecordsSecretsConfig } from '../models/PagerdutyAuditRecordsSecretsConfig';
+import { PagerdutyAuditRecordsSettingsConfig } from '../models/PagerdutyAuditRecordsSettingsConfig';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
 import { PagerdutySettingsConfig } from '../models/PagerdutySettingsConfig';
 import { PagerdutySummaryConfig } from '../models/PagerdutySummaryConfig';
@@ -223,14 +299,24 @@ import { PaloAltoDataSecurityAlertsSettingsConfig } from '../models/PaloAltoData
 import { PantherSecretsConfig } from '../models/PantherSecretsConfig';
 import { PantherSettingsConfig } from '../models/PantherSettingsConfig';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
+import { PipelineNodeStatusProgressTimestamp } from '../models/PipelineNodeStatusProgressTimestamp';
+import { PipelineNodeStatusProgressTimestamps } from '../models/PipelineNodeStatusProgressTimestamps';
+import { PolymerSecretsConfig } from '../models/PolymerSecretsConfig';
+import { PolymerSettingsConfig } from '../models/PolymerSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
+import { PostmanAuditLogsSecretsConfig } from '../models/PostmanAuditLogsSecretsConfig';
+import { PostmanAuditLogsSettingsConfig } from '../models/PostmanAuditLogsSettingsConfig';
+import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
+import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResourceEvaluationsSettingsConfig } from '../models/ResourceEvaluationsSettingsConfig';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RolesInfoSecretsConfig } from '../models/RolesInfoSecretsConfig';
 import { RolesInfoSettingsConfig } from '../models/RolesInfoSettingsConfig';
+import { RootlyAuditLogsSecretsConfig } from '../models/RootlyAuditLogsSecretsConfig';
+import { RootlyAuditLogsSettingsConfig } from '../models/RootlyAuditLogsSettingsConfig';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
@@ -276,6 +362,10 @@ import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus
 import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
 import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
+import { RoutesV2SetStorageTypeCostEntry } from '../models/RoutesV2SetStorageTypeCostEntry';
+import { RoutesV2SetStorageTypeCostRequest } from '../models/RoutesV2SetStorageTypeCostRequest';
+import { RoutesV2StorageTypeDetailsResponse } from '../models/RoutesV2StorageTypeDetailsResponse';
+import { RoutesV2StorageTypeOutputDetailResponse } from '../models/RoutesV2StorageTypeOutputDetailResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { RoutesV2TestInputConnectionRequest } from '../models/RoutesV2TestInputConnectionRequest';
 import { RoutesV2TestOutputConnectionRequest } from '../models/RoutesV2TestOutputConnectionRequest';
@@ -286,24 +376,35 @@ import { RoutesV2UpdateInputRequest } from '../models/RoutesV2UpdateInputRequest
 import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputRequest';
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
+import { RoutesV3AlertList } from '../models/RoutesV3AlertList';
+import { RoutesV3CreateAlertRuleRequest } from '../models/RoutesV3CreateAlertRuleRequest';
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
 import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateConnectionRequestSaml';
-import { RoutesV3CreateConnectionRoleRequest } from '../models/RoutesV3CreateConnectionRoleRequest';
-import { RoutesV3CreateConnectionUserRoleRequest } from '../models/RoutesV3CreateConnectionUserRoleRequest';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
+import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
+import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
+import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
+import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
+import { RoutesV3SecurityDataAnalysis } from '../models/RoutesV3SecurityDataAnalysis';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
+import { RoutesV3Summary } from '../models/RoutesV3Summary';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
 import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation';
+import { RoutesV3TransformOperationWithRationale } from '../models/RoutesV3TransformOperationWithRationale';
+import { RoutesV3TransformRecommendationRequest } from '../models/RoutesV3TransformRecommendationRequest';
+import { RoutesV3UpdateAlertRuleRequest } from '../models/RoutesV3UpdateAlertRuleRequest';
 import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
-import { RoutesV3UpdateConnectionRoleRequest } from '../models/RoutesV3UpdateConnectionRoleRequest';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
+import { S3SecretsConfig } from '../models/S3SecretsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
+import { SalesforceUsersSecretsConfig } from '../models/SalesforceUsersSecretsConfig';
+import { SalesforceUsersSettingsConfig } from '../models/SalesforceUsersSettingsConfig';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
 import { SecretProcessesorEnrichmentConfigSecrets } from '../models/SecretProcessesorEnrichmentConfigSecrets';
 import { SecretProcessesorEnrichmentConfigSettings } from '../models/SecretProcessesorEnrichmentConfigSettings';
@@ -313,6 +414,7 @@ import { SecretProcessesorInputConfigSettings } from '../models/SecretProcesseso
 import { SecretProcessesorOutputConfig } from '../models/SecretProcessesorOutputConfig';
 import { SecretProcessesorOutputConfigSecrets } from '../models/SecretProcessesorOutputConfigSecrets';
 import { SecretProcessesorOutputConfigSettings } from '../models/SecretProcessesorOutputConfigSettings';
+import { SecretsmanagerSecretsConfig } from '../models/SecretsmanagerSecretsConfig';
 import { SecretsmanagerSettingsConfig } from '../models/SecretsmanagerSettingsConfig';
 import { SecurityGroupsFilter } from '../models/SecurityGroupsFilter';
 import { SecurityGroupsSettingsConfig } from '../models/SecurityGroupsSettingsConfig';
@@ -332,6 +434,8 @@ import { SentinelSecretsConfig } from '../models/SentinelSecretsConfig';
 import { SentinelSettingsConfig } from '../models/SentinelSettingsConfig';
 import { SentryOrgAuditLogsSecretsConfig } from '../models/SentryOrgAuditLogsSecretsConfig';
 import { SentryOrgAuditLogsSettingsConfig } from '../models/SentryOrgAuditLogsSettingsConfig';
+import { SlackEnterpriseAuditLogsSecretsConfig } from '../models/SlackEnterpriseAuditLogsSecretsConfig';
+import { SlackEnterpriseAuditLogsSettingsConfig } from '../models/SlackEnterpriseAuditLogsSettingsConfig';
 import { SlackUsersSecretsConfig } from '../models/SlackUsersSecretsConfig';
 import { SlackUsersSettingsConfig } from '../models/SlackUsersSettingsConfig';
 import { SlackgroupsSecretsConfig } from '../models/SlackgroupsSecretsConfig';
@@ -352,12 +456,22 @@ import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
 import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
 import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
 import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
+import { SumologicSourceMetadata } from '../models/SumologicSourceMetadata';
+import { SumologicSumoField } from '../models/SumologicSumoField';
 import { SyntheticDataCustomSettingsConfig } from '../models/SyntheticDataCustomSettingsConfig';
 import { SyntheticDataSettingsConfig } from '../models/SyntheticDataSettingsConfig';
 import { SystemlogSecretsConfig } from '../models/SystemlogSecretsConfig';
 import { SystemlogSettingsConfig } from '../models/SystemlogSettingsConfig';
 import { TailscaleUsersSecretsConfig } from '../models/TailscaleUsersSecretsConfig';
 import { TailscaleUsersSettingsConfig } from '../models/TailscaleUsersSettingsConfig';
+import { TaniumGraphqlInputSecretsConfig } from '../models/TaniumGraphqlInputSecretsConfig';
+import { TaniumGraphqlInputSettingsConfig } from '../models/TaniumGraphqlInputSettingsConfig';
+import { TeamAccessLogsSecretsConfig } from '../models/TeamAccessLogsSecretsConfig';
+import { TeamAccessLogsSettingsConfig } from '../models/TeamAccessLogsSettingsConfig';
+import { TeamIntegrationLogsSecretsConfig } from '../models/TeamIntegrationLogsSecretsConfig';
+import { TeamIntegrationLogsSettingsConfig } from '../models/TeamIntegrationLogsSettingsConfig';
+import { TelephonyLogsSecretsConfig } from '../models/TelephonyLogsSecretsConfig';
+import { TelephonyLogsSettingsConfig } from '../models/TelephonyLogsSettingsConfig';
 import { TenableAssetsCronSecretsConfig } from '../models/TenableAssetsCronSecretsConfig';
 import { TenableAssetsCronSettingsConfig } from '../models/TenableAssetsCronSettingsConfig';
 import { TenableAssetsSecretsConfig } from '../models/TenableAssetsSecretsConfig';
@@ -366,7 +480,19 @@ import { TenableVulnerabilitiesCronSecretsConfig } from '../models/TenableVulner
 import { TenableVulnerabilitiesCronSettingsConfig } from '../models/TenableVulnerabilitiesCronSettingsConfig';
 import { TenableVulnerabilitiesSecretsConfig } from '../models/TenableVulnerabilitiesSecretsConfig';
 import { TenableVulnerabilitiesSettingsConfig } from '../models/TenableVulnerabilitiesSettingsConfig';
+import { TinesAuditLogsSecretsConfig } from '../models/TinesAuditLogsSecretsConfig';
+import { TinesAuditLogsSettingsConfig } from '../models/TinesAuditLogsSettingsConfig';
+import { TinesEventsLogsSecretsConfig } from '../models/TinesEventsLogsSecretsConfig';
+import { TinesEventsLogsSettingsConfig } from '../models/TinesEventsLogsSettingsConfig';
+import { TwilioEventsSecretsConfig } from '../models/TwilioEventsSecretsConfig';
+import { TwilioEventsSettingsConfig } from '../models/TwilioEventsSettingsConfig';
+import { TwilioSendgridEmailActivitySecretsConfig } from '../models/TwilioSendgridEmailActivitySecretsConfig';
+import { TwilioSendgridEmailActivitySettingsConfig } from '../models/TwilioSendgridEmailActivitySettingsConfig';
 import { TypesFilterNameStringType } from '../models/TypesFilterNameStringType';
+import { TypesStringComparison } from '../models/TypesStringComparison';
+import { TypesStringFilter } from '../models/TypesStringFilter';
+import { UniversalSecretsConfig } from '../models/UniversalSecretsConfig';
+import { UniversalSettingsConfig } from '../models/UniversalSettingsConfig';
 import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
 import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
@@ -378,8 +504,398 @@ import { VulnerabilitiesCronSecretsConfig } from '../models/VulnerabilitiesCronS
 import { VulnerabilitiesCronSettingsConfig } from '../models/VulnerabilitiesCronSettingsConfig';
 import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';
 import { VulnerabilitiesSettingsConfig } from '../models/VulnerabilitiesSettingsConfig';
+import { VulnerabilityFindingsReportSecretsConfig } from '../models/VulnerabilityFindingsReportSecretsConfig';
+import { VulnerabilityFindingsReportSettingsConfig } from '../models/VulnerabilityFindingsReportSettingsConfig';
 import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
 import { VulnerabilityFindingsSettingsConfig } from '../models/VulnerabilityFindingsSettingsConfig';
+import { WizAuditLogsSecretsConfig } from '../models/WizAuditLogsSecretsConfig';
+import { WizAuditLogsSettingsConfig } from '../models/WizAuditLogsSettingsConfig';
+import { ZendeskAuditLogsSecretsConfig } from '../models/ZendeskAuditLogsSecretsConfig';
+import { ZendeskAuditLogsSettingsConfig } from '../models/ZendeskAuditLogsSettingsConfig';
+import { ZoomActivityLogsSecretsConfig } from '../models/ZoomActivityLogsSecretsConfig';
+import { ZoomActivityLogsSettingsConfig } from '../models/ZoomActivityLogsSettingsConfig';
+import { ZoomMeetingActivityLogsSecretsConfig } from '../models/ZoomMeetingActivityLogsSecretsConfig';
+import { ZoomMeetingActivityLogsSettingsConfig } from '../models/ZoomMeetingActivityLogsSettingsConfig';
+
+import { AlertRulesApiRequestFactory, AlertRulesApiResponseProcessor} from "../apis/AlertRulesApi";
+export class ObservableAlertRulesApi {
+    private requestFactory: AlertRulesApiRequestFactory;
+    private responseProcessor: AlertRulesApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: AlertRulesApiRequestFactory,
+        responseProcessor?: AlertRulesApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new AlertRulesApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new AlertRulesApiResponseProcessor();
+    }
+
+    /**
+     * Get configuration metadata for a specific alert rule type by its type ID
+     * Get alert rule type config metadata
+     * @param alertRuleTypeId Alert Rule Type ID
+     */
+    public v3AlertRulesAlertRuleTypeIdGetWithHttpInfo(alertRuleTypeId: string, _options?: ConfigurationOptions): Observable<HttpInfo<AlertsAlertMeta>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3AlertRulesAlertRuleTypeIdGet(alertRuleTypeId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3AlertRulesAlertRuleTypeIdGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get configuration metadata for a specific alert rule type by its type ID
+     * Get alert rule type config metadata
+     * @param alertRuleTypeId Alert Rule Type ID
+     */
+    public v3AlertRulesAlertRuleTypeIdGet(alertRuleTypeId: string, _options?: ConfigurationOptions): Observable<AlertsAlertMeta> {
+        return this.v3AlertRulesAlertRuleTypeIdGetWithHttpInfo(alertRuleTypeId, _options).pipe(map((apiResponse: HttpInfo<AlertsAlertMeta>) => apiResponse.data));
+    }
+
+    /**
+     * List all available alert rule types with their configuration metadata
+     * List alert rule types
+     */
+    public v3AlertRulesGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<Array<AlertsAlertMeta>>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3AlertRulesGet(_config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3AlertRulesGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List all available alert rule types with their configuration metadata
+     * List alert rule types
+     */
+    public v3AlertRulesGet(_options?: ConfigurationOptions): Observable<Array<AlertsAlertMeta>> {
+        return this.v3AlertRulesGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<Array<AlertsAlertMeta>>) => apiResponse.data));
+    }
+
+    /**
+     * Delete an existing alert rule
+     * Delete alert rule
+     * @param organizationId Organization ID
+     * @param alertRuleId Alert Rule ID to delete
+     */
+    public v3OrganizationIdAlertRulesAlertRuleIdDeleteWithHttpInfo(organizationId: string, alertRuleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdAlertRulesAlertRuleIdDelete(organizationId, alertRuleId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdAlertRulesAlertRuleIdDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Delete an existing alert rule
+     * Delete alert rule
+     * @param organizationId Organization ID
+     * @param alertRuleId Alert Rule ID to delete
+     */
+    public v3OrganizationIdAlertRulesAlertRuleIdDelete(organizationId: string, alertRuleId: string, _options?: ConfigurationOptions): Observable<void> {
+        return this.v3OrganizationIdAlertRulesAlertRuleIdDeleteWithHttpInfo(organizationId, alertRuleId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    }
+
+    /**
+     * Retrieve an alert rule by its ID
+     * Get alert rule by ID
+     * @param organizationId Organization ID
+     * @param alertRuleId Alert Rule ID to retrieve
+     */
+    public v3OrganizationIdAlertRulesAlertRuleIdGetWithHttpInfo(organizationId: string, alertRuleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAlertRule>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdAlertRulesAlertRuleIdGet(organizationId, alertRuleId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdAlertRulesAlertRuleIdGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Retrieve an alert rule by its ID
+     * Get alert rule by ID
+     * @param organizationId Organization ID
+     * @param alertRuleId Alert Rule ID to retrieve
+     */
+    public v3OrganizationIdAlertRulesAlertRuleIdGet(organizationId: string, alertRuleId: string, _options?: ConfigurationOptions): Observable<ModelsAlertRule> {
+        return this.v3OrganizationIdAlertRulesAlertRuleIdGetWithHttpInfo(organizationId, alertRuleId, _options).pipe(map((apiResponse: HttpInfo<ModelsAlertRule>) => apiResponse.data));
+    }
+
+    /**
+     * Update an existing alert rule
+     * Update alert rule
+     * @param organizationId Organization ID
+     * @param alertRuleId Alert Rule ID to update
+     * @param routesV3UpdateAlertRuleRequest Request body for updating an alert rule
+     */
+    public v3OrganizationIdAlertRulesAlertRuleIdPutWithHttpInfo(organizationId: string, alertRuleId: string, routesV3UpdateAlertRuleRequest: RoutesV3UpdateAlertRuleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAlertRule>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdAlertRulesAlertRuleIdPut(organizationId, alertRuleId, routesV3UpdateAlertRuleRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdAlertRulesAlertRuleIdPutWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Update an existing alert rule
+     * Update alert rule
+     * @param organizationId Organization ID
+     * @param alertRuleId Alert Rule ID to update
+     * @param routesV3UpdateAlertRuleRequest Request body for updating an alert rule
+     */
+    public v3OrganizationIdAlertRulesAlertRuleIdPut(organizationId: string, alertRuleId: string, routesV3UpdateAlertRuleRequest: RoutesV3UpdateAlertRuleRequest, _options?: ConfigurationOptions): Observable<ModelsAlertRule> {
+        return this.v3OrganizationIdAlertRulesAlertRuleIdPutWithHttpInfo(organizationId, alertRuleId, routesV3UpdateAlertRuleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsAlertRule>) => apiResponse.data));
+    }
+
+    /**
+     * Retrieve all alert rules for an organization
+     * Get all alert rules
+     * @param organizationId Organization ID
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public v3OrganizationIdAlertRulesGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAlertRuleList>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdAlertRulesGet(organizationId, limit, offset, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdAlertRulesGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Retrieve all alert rules for an organization
+     * Get all alert rules
+     * @param organizationId Organization ID
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public v3OrganizationIdAlertRulesGet(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsAlertRuleList> {
+        return this.v3OrganizationIdAlertRulesGetWithHttpInfo(organizationId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsAlertRuleList>) => apiResponse.data));
+    }
+
+    /**
+     * Create a new alert rule with the provided details
+     * Create a new alert rule
+     * @param organizationId Organization ID
+     * @param routesV3CreateAlertRuleRequest Request body for creating an alert rule
+     */
+    public v3OrganizationIdAlertRulesPostWithHttpInfo(organizationId: string, routesV3CreateAlertRuleRequest: RoutesV3CreateAlertRuleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAlertRule>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdAlertRulesPost(organizationId, routesV3CreateAlertRuleRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdAlertRulesPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Create a new alert rule with the provided details
+     * Create a new alert rule
+     * @param organizationId Organization ID
+     * @param routesV3CreateAlertRuleRequest Request body for creating an alert rule
+     */
+    public v3OrganizationIdAlertRulesPost(organizationId: string, routesV3CreateAlertRuleRequest: RoutesV3CreateAlertRuleRequest, _options?: ConfigurationOptions): Observable<ModelsAlertRule> {
+        return this.v3OrganizationIdAlertRulesPostWithHttpInfo(organizationId, routesV3CreateAlertRuleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsAlertRule>) => apiResponse.data));
+    }
+
+}
+
+import { AlertsApiRequestFactory, AlertsApiResponseProcessor} from "../apis/AlertsApi";
+export class ObservableAlertsApi {
+    private requestFactory: AlertsApiRequestFactory;
+    private responseProcessor: AlertsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: AlertsApiRequestFactory,
+        responseProcessor?: AlertsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new AlertsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new AlertsApiResponseProcessor();
+    }
+
+    /**
+     * Get list of recent historical alerts for an organization
+     * List alerts with pagination
+     * @param organizationId Organization ID
+     * @param [ruleIds] Comma-separated alert rule IDs
+     * @param [severities] Comma-separated severity levels
+     * @param [pipelineIds] Comma-separated pipeline IDs
+     * @param [resourceType] Resource type filter
+     * @param [resourceId] Specific resource ID
+     * @param [since] RFC3339 timestamp for start time
+     * @param [until] RFC3339 timestamp for end time
+     */
+    public v3OrganizationIdAlertsGetWithHttpInfo(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceId?: string, since?: string, until?: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3AlertList>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdAlertsGet(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdAlertsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get list of recent historical alerts for an organization
+     * List alerts with pagination
+     * @param organizationId Organization ID
+     * @param [ruleIds] Comma-separated alert rule IDs
+     * @param [severities] Comma-separated severity levels
+     * @param [pipelineIds] Comma-separated pipeline IDs
+     * @param [resourceType] Resource type filter
+     * @param [resourceId] Specific resource ID
+     * @param [since] RFC3339 timestamp for start time
+     * @param [until] RFC3339 timestamp for end time
+     */
+    public v3OrganizationIdAlertsGet(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceId?: string, since?: string, until?: string, _options?: ConfigurationOptions): Observable<RoutesV3AlertList> {
+        return this.v3OrganizationIdAlertsGetWithHttpInfo(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until, _options).pipe(map((apiResponse: HttpInfo<RoutesV3AlertList>) => apiResponse.data));
+    }
+
+    /**
+     * Stream alerts for an organization using Server-Sent Events
+     * Stream alerts in real-time
+     * @param organizationId Organization ID
+     * @param [since] RFC3339 timestamp to start streaming from
+     * @param [last] Duration to start streaming from (e.g., \&#39;5m\&#39;, \&#39;1h\&#39;, \&#39;24h\&#39;)
+     * @param [ruleIds] Comma-separated alert rule IDs
+     * @param [severities] Comma-separated severity levels
+     * @param [resourceIds] Comma-separated resource IDs
+     * @param [resourceType] Resource type filter
+     */
+    public v3OrganizationIdAlertsStreamGetWithHttpInfo(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, resourceIds?: string, resourceType?: string, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdAlertsStreamGet(organizationId, since, last, ruleIds, severities, resourceIds, resourceType, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdAlertsStreamGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Stream alerts for an organization using Server-Sent Events
+     * Stream alerts in real-time
+     * @param organizationId Organization ID
+     * @param [since] RFC3339 timestamp to start streaming from
+     * @param [last] Duration to start streaming from (e.g., \&#39;5m\&#39;, \&#39;1h\&#39;, \&#39;24h\&#39;)
+     * @param [ruleIds] Comma-separated alert rule IDs
+     * @param [severities] Comma-separated severity levels
+     * @param [resourceIds] Comma-separated resource IDs
+     * @param [resourceType] Resource type filter
+     */
+    public v3OrganizationIdAlertsStreamGet(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, resourceIds?: string, resourceType?: string, _options?: ConfigurationOptions): Observable<string> {
+        return this.v3OrganizationIdAlertsStreamGetWithHttpInfo(organizationId, since, last, ruleIds, severities, resourceIds, resourceType, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+}
 
 import { AuthenticationApiRequestFactory, AuthenticationApiResponseProcessor} from "../apis/AuthenticationApi";
 export class ObservableAuthenticationApi {
@@ -1256,12 +1772,13 @@ export class ObservableConnectionsApi {
     /**
      * Delete an existing connection
      * Delete connection
+     * @param organizationId Organization ID
      * @param connectionId Connection ID to delete
      */
-    public v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+    public v3OrganizationIdConnectionsConnectionIdDeleteWithHttpInfo(organizationId: string, connectionId: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdDelete(connectionId, _config);
+        const requestContextPromise = this.requestFactory.v3OrganizationIdConnectionsConnectionIdDelete(organizationId, connectionId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1274,28 +1791,30 @@ export class ObservableConnectionsApi {
                 for (const middleware of _config.middleware.reverse()) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdDeleteWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdConnectionsConnectionIdDeleteWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Delete an existing connection
      * Delete connection
+     * @param organizationId Organization ID
      * @param connectionId Connection ID to delete
      */
-    public v3ConnectionsConnectionIdDelete(connectionId: string, _options?: ConfigurationOptions): Observable<void> {
-        return this.v3ConnectionsConnectionIdDeleteWithHttpInfo(connectionId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    public v3OrganizationIdConnectionsConnectionIdDelete(organizationId: string, connectionId: string, _options?: ConfigurationOptions): Observable<void> {
+        return this.v3OrganizationIdConnectionsConnectionIdDeleteWithHttpInfo(organizationId, connectionId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
     }
 
     /**
      * Retrieve a connection by its ID
      * Get connection by ID
+     * @param organizationId Organization ID
      * @param connectionId Connection ID to retrieve
      */
-    public v3ConnectionsConnectionIdGetWithHttpInfo(connectionId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
+    public v3OrganizationIdConnectionsConnectionIdGetWithHttpInfo(organizationId: string, connectionId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdGet(connectionId, _config);
+        const requestContextPromise = this.requestFactory.v3OrganizationIdConnectionsConnectionIdGet(organizationId, connectionId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1308,29 +1827,31 @@ export class ObservableConnectionsApi {
                 for (const middleware of _config.middleware.reverse()) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdGetWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdConnectionsConnectionIdGetWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Retrieve a connection by its ID
      * Get connection by ID
+     * @param organizationId Organization ID
      * @param connectionId Connection ID to retrieve
      */
-    public v3ConnectionsConnectionIdGet(connectionId: string, _options?: ConfigurationOptions): Observable<ModelsConnection> {
-        return this.v3ConnectionsConnectionIdGetWithHttpInfo(connectionId, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
+    public v3OrganizationIdConnectionsConnectionIdGet(organizationId: string, connectionId: string, _options?: ConfigurationOptions): Observable<ModelsConnection> {
+        return this.v3OrganizationIdConnectionsConnectionIdGetWithHttpInfo(organizationId, connectionId, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
     }
 
     /**
      * Update an existing connection
      * Update connection
+     * @param organizationId Organization ID
      * @param connectionId Connection ID to update
      * @param routesV3UpdateConnectionRequest Request body for updating a connection
      */
-    public v3ConnectionsConnectionIdPatchWithHttpInfo(connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
+    public v3OrganizationIdConnectionsConnectionIdPatchWithHttpInfo(organizationId: string, connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdPatch(connectionId, routesV3UpdateConnectionRequest, _config);
+        const requestContextPromise = this.requestFactory.v3OrganizationIdConnectionsConnectionIdPatch(organizationId, connectionId, routesV3UpdateConnectionRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1343,30 +1864,32 @@ export class ObservableConnectionsApi {
                 for (const middleware of _config.middleware.reverse()) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdPatchWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdConnectionsConnectionIdPatchWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Update an existing connection
      * Update connection
+     * @param organizationId Organization ID
      * @param connectionId Connection ID to update
      * @param routesV3UpdateConnectionRequest Request body for updating a connection
      */
-    public v3ConnectionsConnectionIdPatch(connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: ConfigurationOptions): Observable<ModelsConnection> {
-        return this.v3ConnectionsConnectionIdPatchWithHttpInfo(connectionId, routesV3UpdateConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
+    public v3OrganizationIdConnectionsConnectionIdPatch(organizationId: string, connectionId: string, routesV3UpdateConnectionRequest: RoutesV3UpdateConnectionRequest, _options?: ConfigurationOptions): Observable<ModelsConnection> {
+        return this.v3OrganizationIdConnectionsConnectionIdPatchWithHttpInfo(organizationId, connectionId, routesV3UpdateConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
     }
 
     /**
      * Retrieve all connections
      * Get all connections
+     * @param organizationId Organization ID
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v3ConnectionsGetWithHttpInfo(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnectionList>> {
+    public v3OrganizationIdConnectionsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnectionList>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v3ConnectionsGet(limit, offset, _config);
+        const requestContextPromise = this.requestFactory.v3OrganizationIdConnectionsGet(organizationId, limit, offset, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1379,29 +1902,31 @@ export class ObservableConnectionsApi {
                 for (const middleware of _config.middleware.reverse()) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsGetWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdConnectionsGetWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Retrieve all connections
      * Get all connections
+     * @param organizationId Organization ID
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public v3ConnectionsGet(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsConnectionList> {
-        return this.v3ConnectionsGetWithHttpInfo(limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsConnectionList>) => apiResponse.data));
+    public v3OrganizationIdConnectionsGet(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsConnectionList> {
+        return this.v3OrganizationIdConnectionsGetWithHttpInfo(organizationId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsConnectionList>) => apiResponse.data));
     }
 
     /**
      * Create a new connection with the provided details
      * Create a new connection
+     * @param organizationId Organization ID
      * @param routesV3CreateConnectionRequest Request body for creating a connection
      */
-    public v3ConnectionsPostWithHttpInfo(routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
+    public v3OrganizationIdConnectionsPostWithHttpInfo(organizationId: string, routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnection>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v3ConnectionsPost(routesV3CreateConnectionRequest, _config);
+        const requestContextPromise = this.requestFactory.v3OrganizationIdConnectionsPost(organizationId, routesV3CreateConnectionRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1414,323 +1939,18 @@ export class ObservableConnectionsApi {
                 for (const middleware of _config.middleware.reverse()) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsPostWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdConnectionsPostWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Create a new connection with the provided details
      * Create a new connection
+     * @param organizationId Organization ID
      * @param routesV3CreateConnectionRequest Request body for creating a connection
      */
-    public v3ConnectionsPost(routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: ConfigurationOptions): Observable<ModelsConnection> {
-        return this.v3ConnectionsPostWithHttpInfo(routesV3CreateConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
-    }
-
-}
-
-import { ConnectionsRbacApiRequestFactory, ConnectionsRbacApiResponseProcessor} from "../apis/ConnectionsRbacApi";
-export class ObservableConnectionsRbacApi {
-    private requestFactory: ConnectionsRbacApiRequestFactory;
-    private responseProcessor: ConnectionsRbacApiResponseProcessor;
-    private configuration: Configuration;
-
-    public constructor(
-        configuration: Configuration,
-        requestFactory?: ConnectionsRbacApiRequestFactory,
-        responseProcessor?: ConnectionsRbacApiResponseProcessor
-    ) {
-        this.configuration = configuration;
-        this.requestFactory = requestFactory || new ConnectionsRbacApiRequestFactory(configuration);
-        this.responseProcessor = responseProcessor || new ConnectionsRbacApiResponseProcessor();
-    }
-
-    /**
-     * Get Connection Roles
-     * Get Connection Roles
-     * @param connectionId Connection ID
-     */
-    public v3ConnectionsConnectionIdRolesGetWithHttpInfo(connectionId: string, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsConnectionRole>>> {
-        const _config = mergeConfiguration(this.configuration, _options);
-
-        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesGet(connectionId, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of _config.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of _config.middleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesGetWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Get Connection Roles
-     * Get Connection Roles
-     * @param connectionId Connection ID
-     */
-    public v3ConnectionsConnectionIdRolesGet(connectionId: string, _options?: ConfigurationOptions): Observable<Array<ModelsConnectionRole>> {
-        return this.v3ConnectionsConnectionIdRolesGetWithHttpInfo(connectionId, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsConnectionRole>>) => apiResponse.data));
-    }
-
-    /**
-     * Create Connection Role
-     * Create Connection Role
-     * @param connectionId Connection ID
-     * @param routesV3CreateConnectionRoleRequest Create Connection Role Request
-     */
-    public v3ConnectionsConnectionIdRolesPostWithHttpInfo(connectionId: string, routesV3CreateConnectionRoleRequest: RoutesV3CreateConnectionRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnectionRole>> {
-        const _config = mergeConfiguration(this.configuration, _options);
-
-        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesPost(connectionId, routesV3CreateConnectionRoleRequest, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of _config.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of _config.middleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesPostWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Create Connection Role
-     * Create Connection Role
-     * @param connectionId Connection ID
-     * @param routesV3CreateConnectionRoleRequest Create Connection Role Request
-     */
-    public v3ConnectionsConnectionIdRolesPost(connectionId: string, routesV3CreateConnectionRoleRequest: RoutesV3CreateConnectionRoleRequest, _options?: ConfigurationOptions): Observable<ModelsConnectionRole> {
-        return this.v3ConnectionsConnectionIdRolesPostWithHttpInfo(connectionId, routesV3CreateConnectionRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnectionRole>) => apiResponse.data));
-    }
-
-    /**
-     * Delete Connection Role
-     * Delete Connection Role
-     * @param connectionId Connection ID
-     * @param roleId Role ID
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdDeleteWithHttpInfo(connectionId: string, roleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
-        const _config = mergeConfiguration(this.configuration, _options);
-
-        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesRoleIdDelete(connectionId, roleId, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of _config.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of _config.middleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesRoleIdDeleteWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Delete Connection Role
-     * Delete Connection Role
-     * @param connectionId Connection ID
-     * @param roleId Role ID
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdDelete(connectionId: string, roleId: string, _options?: ConfigurationOptions): Observable<string> {
-        return this.v3ConnectionsConnectionIdRolesRoleIdDeleteWithHttpInfo(connectionId, roleId, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
-    }
-
-    /**
-     * Get Connection Role
-     * Get Connection Role
-     * @param connectionId Connection ID
-     * @param roleId Role ID
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdGetWithHttpInfo(connectionId: string, roleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnectionRole>> {
-        const _config = mergeConfiguration(this.configuration, _options);
-
-        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesRoleIdGet(connectionId, roleId, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of _config.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of _config.middleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesRoleIdGetWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Get Connection Role
-     * Get Connection Role
-     * @param connectionId Connection ID
-     * @param roleId Role ID
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdGet(connectionId: string, roleId: string, _options?: ConfigurationOptions): Observable<ModelsConnectionRole> {
-        return this.v3ConnectionsConnectionIdRolesRoleIdGetWithHttpInfo(connectionId, roleId, _options).pipe(map((apiResponse: HttpInfo<ModelsConnectionRole>) => apiResponse.data));
-    }
-
-    /**
-     * Update Connection Role
-     * Update Connection Role
-     * @param connectionId Connection ID
-     * @param roleId Role ID
-     * @param routesV3UpdateConnectionRoleRequest Update Connection Role Request
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdPatchWithHttpInfo(connectionId: string, roleId: string, routesV3UpdateConnectionRoleRequest: RoutesV3UpdateConnectionRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnectionRole>> {
-        const _config = mergeConfiguration(this.configuration, _options);
-
-        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesRoleIdPatch(connectionId, roleId, routesV3UpdateConnectionRoleRequest, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of _config.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of _config.middleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesRoleIdPatchWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Update Connection Role
-     * Update Connection Role
-     * @param connectionId Connection ID
-     * @param roleId Role ID
-     * @param routesV3UpdateConnectionRoleRequest Update Connection Role Request
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdPatch(connectionId: string, roleId: string, routesV3UpdateConnectionRoleRequest: RoutesV3UpdateConnectionRoleRequest, _options?: ConfigurationOptions): Observable<ModelsConnectionRole> {
-        return this.v3ConnectionsConnectionIdRolesRoleIdPatchWithHttpInfo(connectionId, roleId, routesV3UpdateConnectionRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnectionRole>) => apiResponse.data));
-    }
-
-    /**
-     * Add a user to a connection role
-     * Create Connection User Role
-     * @param connectionId Connection ID
-     * @param roleId Role ID
-     * @param routesV3CreateConnectionUserRoleRequest Create Connection User Role Request
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdUsersPostWithHttpInfo(connectionId: string, roleId: string, routesV3CreateConnectionUserRoleRequest: RoutesV3CreateConnectionUserRoleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
-        const _config = mergeConfiguration(this.configuration, _options);
-
-        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesRoleIdUsersPost(connectionId, roleId, routesV3CreateConnectionUserRoleRequest, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of _config.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of _config.middleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesRoleIdUsersPostWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Add a user to a connection role
-     * Create Connection User Role
-     * @param connectionId Connection ID
-     * @param roleId Role ID
-     * @param routesV3CreateConnectionUserRoleRequest Create Connection User Role Request
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdUsersPost(connectionId: string, roleId: string, routesV3CreateConnectionUserRoleRequest: RoutesV3CreateConnectionUserRoleRequest, _options?: ConfigurationOptions): Observable<string> {
-        return this.v3ConnectionsConnectionIdRolesRoleIdUsersPostWithHttpInfo(connectionId, roleId, routesV3CreateConnectionUserRoleRequest, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
-    }
-
-    /**
-     * Remove a user to a connection role
-     * Delete Connection User Role
-     * @param connectionId Connection ID
-     * @param roleId Role ID
-     * @param userId User ID
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(connectionId: string, roleId: string, userId: string, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
-        const _config = mergeConfiguration(this.configuration, _options);
-
-        const requestContextPromise = this.requestFactory.v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDelete(connectionId, roleId, userId, _config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of _config.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of _config.middleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Remove a user to a connection role
-     * Delete Connection User Role
-     * @param connectionId Connection ID
-     * @param roleId Role ID
-     * @param userId User ID
-     */
-    public v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDelete(connectionId: string, roleId: string, userId: string, _options?: ConfigurationOptions): Observable<string> {
-        return this.v3ConnectionsConnectionIdRolesRoleIdUsersUserIdDeleteWithHttpInfo(connectionId, roleId, userId, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
-    }
-
-    /**
-     * Get Connection Permissions
-     * Get Connection Permissions
-     */
-    public v3ConnectionsPermissionsGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsConnectionPermission>>> {
-        const _config = mergeConfiguration(this.configuration, _options);
-
-        const requestContextPromise = this.requestFactory.v3ConnectionsPermissionsGet(_config);
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (const middleware of _config.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (const middleware of _config.middleware.reverse()) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3ConnectionsPermissionsGetWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Get Connection Permissions
-     * Get Connection Permissions
-     */
-    public v3ConnectionsPermissionsGet(_options?: ConfigurationOptions): Observable<Array<ModelsConnectionPermission>> {
-        return this.v3ConnectionsPermissionsGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<Array<ModelsConnectionPermission>>) => apiResponse.data));
+    public v3OrganizationIdConnectionsPost(organizationId: string, routesV3CreateConnectionRequest: RoutesV3CreateConnectionRequest, _options?: ConfigurationOptions): Observable<ModelsConnection> {
+        return this.v3OrganizationIdConnectionsPostWithHttpInfo(organizationId, routesV3CreateConnectionRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsConnection>) => apiResponse.data));
     }
 
 }
@@ -3802,11 +4022,12 @@ export class ObservableOrganizationUsersApi {
      * Remove user from organization
      * @param organizationId Organization ID
      * @param userId User ID
+     * @param userAuthProviderId User Auth Provider ID
      */
-    public v1OrganizationIdUsersUserIdDeleteWithHttpInfo(organizationId: string, userId: string, _options?: ConfigurationOptions): Observable<HttpInfo<any>> {
+    public v1OrganizationIdUsersUserIdDeleteWithHttpInfo(organizationId: string, userId: string, userAuthProviderId: string, _options?: ConfigurationOptions): Observable<HttpInfo<any>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v1OrganizationIdUsersUserIdDelete(organizationId, userId, _config);
+        const requestContextPromise = this.requestFactory.v1OrganizationIdUsersUserIdDelete(organizationId, userId, userAuthProviderId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -3828,9 +4049,10 @@ export class ObservableOrganizationUsersApi {
      * Remove user from organization
      * @param organizationId Organization ID
      * @param userId User ID
+     * @param userAuthProviderId User Auth Provider ID
      */
-    public v1OrganizationIdUsersUserIdDelete(organizationId: string, userId: string, _options?: ConfigurationOptions): Observable<any> {
-        return this.v1OrganizationIdUsersUserIdDeleteWithHttpInfo(organizationId, userId, _options).pipe(map((apiResponse: HttpInfo<any>) => apiResponse.data));
+    public v1OrganizationIdUsersUserIdDelete(organizationId: string, userId: string, userAuthProviderId: string, _options?: ConfigurationOptions): Observable<any> {
+        return this.v1OrganizationIdUsersUserIdDeleteWithHttpInfo(organizationId, userId, userAuthProviderId, _options).pipe(map((apiResponse: HttpInfo<any>) => apiResponse.data));
     }
 
     /**
@@ -4069,6 +4291,294 @@ export class ObservableOrganizationsApi {
      */
     public v2OrganizationIdMetricsGet(organizationId: string, metric: string, start?: string, end?: string, resolution?: string, _options?: ConfigurationOptions): Observable<ModelsPipelineMetrics> {
         return this.v2OrganizationIdMetricsGetWithHttpInfo(organizationId, metric, start, end, resolution, _options).pipe(map((apiResponse: HttpInfo<ModelsPipelineMetrics>) => apiResponse.data));
+    }
+
+    /**
+     * Get detailed metrics for each individual output, including egress and associated input
+     * Get storage type output details
+     * @param organizationId Organization ID
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [billingType] Filter by billing type (billable|non_billable)
+     * @param [pipelineId] Filter to specific pipeline
+     */
+    public v2OrganizationIdMetricsStorageTypesDetailsGetWithHttpInfo(organizationId: string, start?: string, end?: string, billingType?: string, pipelineId?: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2StorageTypeDetailsResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdMetricsStorageTypesDetailsGet(organizationId, start, end, billingType, pipelineId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdMetricsStorageTypesDetailsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get detailed metrics for each individual output, including egress and associated input
+     * Get storage type output details
+     * @param organizationId Organization ID
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [billingType] Filter by billing type (billable|non_billable)
+     * @param [pipelineId] Filter to specific pipeline
+     */
+    public v2OrganizationIdMetricsStorageTypesDetailsGet(organizationId: string, start?: string, end?: string, billingType?: string, pipelineId?: string, _options?: ConfigurationOptions): Observable<RoutesV2StorageTypeDetailsResponse> {
+        return this.v2OrganizationIdMetricsStorageTypesDetailsGetWithHttpInfo(organizationId, start, end, billingType, pipelineId, _options).pipe(map((apiResponse: HttpInfo<RoutesV2StorageTypeDetailsResponse>) => apiResponse.data));
+    }
+
+    /**
+     * Get time series metrics grouped by storage type for an organization
+     * Get storage type metrics
+     * @param organizationId Organization ID
+     * @param metric Metric to retrieve (egress_bytes|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     * @param [billingType] Filter by billing type (billable|non_billable)
+     * @param [pipelineId] Filter to specific pipeline
+     */
+    public v2OrganizationIdMetricsStorageTypesGetWithHttpInfo(organizationId: string, metric: string, start?: string, end?: string, resolution?: string, billingType?: string, pipelineId?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsStorageTypeTimeSeriesResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdMetricsStorageTypesGet(organizationId, metric, start, end, resolution, billingType, pipelineId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdMetricsStorageTypesGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get time series metrics grouped by storage type for an organization
+     * Get storage type metrics
+     * @param organizationId Organization ID
+     * @param metric Metric to retrieve (egress_bytes|egress_records|errors)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [resolution] Resolution of the data, default determined by time window
+     * @param [billingType] Filter by billing type (billable|non_billable)
+     * @param [pipelineId] Filter to specific pipeline
+     */
+    public v2OrganizationIdMetricsStorageTypesGet(organizationId: string, metric: string, start?: string, end?: string, resolution?: string, billingType?: string, pipelineId?: string, _options?: ConfigurationOptions): Observable<ModelsStorageTypeTimeSeriesResponse> {
+        return this.v2OrganizationIdMetricsStorageTypesGetWithHttpInfo(organizationId, metric, start, end, resolution, billingType, pipelineId, _options).pipe(map((apiResponse: HttpInfo<ModelsStorageTypeTimeSeriesResponse>) => apiResponse.data));
+    }
+
+    /**
+     * Get detailed metrics for each individual output of a specific storage type
+     * Get storage type output details by type
+     * @param organizationId Organization ID
+     * @param storageType Storage type (e.g., s3, dev-null, bigquery)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [billingType] Filter by billing type (billable|non_billable)
+     * @param [pipelineId] Filter to specific pipeline
+     */
+    public v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetWithHttpInfo(organizationId: string, storageType: string, start?: string, end?: string, billingType?: string, pipelineId?: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2StorageTypeDetailsResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet(organizationId, storageType, start, end, billingType, pipelineId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get detailed metrics for each individual output of a specific storage type
+     * Get storage type output details by type
+     * @param organizationId Organization ID
+     * @param storageType Storage type (e.g., s3, dev-null, bigquery)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [billingType] Filter by billing type (billable|non_billable)
+     * @param [pipelineId] Filter to specific pipeline
+     */
+    public v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet(organizationId: string, storageType: string, start?: string, end?: string, billingType?: string, pipelineId?: string, _options?: ConfigurationOptions): Observable<RoutesV2StorageTypeDetailsResponse> {
+        return this.v2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetWithHttpInfo(organizationId, storageType, start, end, billingType, pipelineId, _options).pipe(map((apiResponse: HttpInfo<RoutesV2StorageTypeDetailsResponse>) => apiResponse.data));
+    }
+
+    /**
+     * Get aggregated cost and usage summary for a specific storage type
+     * Get storage type cost summary by type
+     * @param organizationId Organization ID
+     * @param storageType Storage type (e.g., s3, dev-null, bigquery)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [billingType] Filter by billing type (billable|non_billable)
+     * @param [pipelineId] Filter to specific pipeline
+     */
+    public v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetWithHttpInfo(organizationId: string, storageType: string, start?: string, end?: string, billingType?: string, pipelineId?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsStorageTypeSummaryResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet(organizationId, storageType, start, end, billingType, pipelineId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get aggregated cost and usage summary for a specific storage type
+     * Get storage type cost summary by type
+     * @param organizationId Organization ID
+     * @param storageType Storage type (e.g., s3, dev-null, bigquery)
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [billingType] Filter by billing type (billable|non_billable)
+     * @param [pipelineId] Filter to specific pipeline
+     */
+    public v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet(organizationId: string, storageType: string, start?: string, end?: string, billingType?: string, pipelineId?: string, _options?: ConfigurationOptions): Observable<ModelsStorageTypeSummaryResponse> {
+        return this.v2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetWithHttpInfo(organizationId, storageType, start, end, billingType, pipelineId, _options).pipe(map((apiResponse: HttpInfo<ModelsStorageTypeSummaryResponse>) => apiResponse.data));
+    }
+
+    /**
+     * Get aggregated cost and usage summary by storage type
+     * Get storage type cost summary
+     * @param organizationId Organization ID
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [billingType] Filter by billing type (billable|non_billable)
+     * @param [pipelineId] Filter to specific pipeline
+     */
+    public v2OrganizationIdMetricsStorageTypesSummaryGetWithHttpInfo(organizationId: string, start?: string, end?: string, billingType?: string, pipelineId?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsStorageTypeSummaryResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdMetricsStorageTypesSummaryGet(organizationId, start, end, billingType, pipelineId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdMetricsStorageTypesSummaryGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get aggregated cost and usage summary by storage type
+     * Get storage type cost summary
+     * @param organizationId Organization ID
+     * @param [start] ISO3339 start time, default 6 hours ago
+     * @param [end] ISO3339 end time, default now
+     * @param [billingType] Filter by billing type (billable|non_billable)
+     * @param [pipelineId] Filter to specific pipeline
+     */
+    public v2OrganizationIdMetricsStorageTypesSummaryGet(organizationId: string, start?: string, end?: string, billingType?: string, pipelineId?: string, _options?: ConfigurationOptions): Observable<ModelsStorageTypeSummaryResponse> {
+        return this.v2OrganizationIdMetricsStorageTypesSummaryGetWithHttpInfo(organizationId, start, end, billingType, pipelineId, _options).pipe(map((apiResponse: HttpInfo<ModelsStorageTypeSummaryResponse>) => apiResponse.data));
+    }
+
+    /**
+     * Get per-organization cost configuration for storage types
+     * Get storage type cost
+     * @param organizationId Organization ID
+     */
+    public v2OrganizationIdStorageTypeCostGetWithHttpInfo(organizationId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsStorageTypeCostConfig>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdStorageTypeCostGet(organizationId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdStorageTypeCostGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get per-organization cost configuration for storage types
+     * Get storage type cost
+     * @param organizationId Organization ID
+     */
+    public v2OrganizationIdStorageTypeCostGet(organizationId: string, _options?: ConfigurationOptions): Observable<ModelsStorageTypeCostConfig> {
+        return this.v2OrganizationIdStorageTypeCostGetWithHttpInfo(organizationId, _options).pipe(map((apiResponse: HttpInfo<ModelsStorageTypeCostConfig>) => apiResponse.data));
+    }
+
+    /**
+     * Update per-organization cost configuration for storage types
+     * Set storage type cost
+     * @param organizationId Organization ID
+     * @param routesV2SetStorageTypeCostRequest Cost configuration
+     */
+    public v2OrganizationIdStorageTypeCostPutWithHttpInfo(organizationId: string, routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsStorageTypeCostConfig>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdStorageTypeCostPut(organizationId, routesV2SetStorageTypeCostRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdStorageTypeCostPutWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Update per-organization cost configuration for storage types
+     * Set storage type cost
+     * @param organizationId Organization ID
+     * @param routesV2SetStorageTypeCostRequest Cost configuration
+     */
+    public v2OrganizationIdStorageTypeCostPut(organizationId: string, routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest, _options?: ConfigurationOptions): Observable<ModelsStorageTypeCostConfig> {
+        return this.v2OrganizationIdStorageTypeCostPutWithHttpInfo(organizationId, routesV2SetStorageTypeCostRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsStorageTypeCostConfig>) => apiResponse.data));
     }
 
 }
@@ -4937,6 +5447,70 @@ export class ObservablePipelinesApi {
         return this.v2OrganizationIdPipelinesStatusesGetWithHttpInfo(organizationId, limit, offset, start, end, _options).pipe(map((apiResponse: HttpInfo<Array<RoutesV2PipelineWithStatus>>) => apiResponse.data));
     }
 
+    /**
+     * Returns the conditional types for edge conditions
+     * Conditional types for edge conditions
+     */
+    public v3PipelineEdgesEdgeConditionOperatorTypesGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3PipelineEdgesEdgeConditionOperatorTypesGet(_config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3PipelineEdgesEdgeConditionOperatorTypesGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Returns the conditional types for edge conditions
+     * Conditional types for edge conditions
+     */
+    public v3PipelineEdgesEdgeConditionOperatorTypesGet(_options?: ConfigurationOptions): Observable<string> {
+        return this.v3PipelineEdgesEdgeConditionOperatorTypesGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+    /**
+     * Returns the rules for edge conditions
+     * Rules for edge conditions
+     */
+    public v3PipelineEdgesEdgeConditionRulesGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3PipelineEdgesEdgeConditionRulesGet(_config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3PipelineEdgesEdgeConditionRulesGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Returns the rules for edge conditions
+     * Rules for edge conditions
+     */
+    public v3PipelineEdgesEdgeConditionRulesGet(_options?: ConfigurationOptions): Observable<string> {
+        return this.v3PipelineEdgesEdgeConditionRulesGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
 }
 
 import { QuotasApiRequestFactory, QuotasApiResponseProcessor} from "../apis/QuotasApi";
@@ -5319,6 +5893,42 @@ export class ObservableSandboxApi {
         return this.v2SandboxTransformPostWithHttpInfo(routesV2ApplyTransformationRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2ApplyTransformationResponse>) => apiResponse.data));
     }
 
+    /**
+     * Apply a enrichment configuration to a JSON record
+     * Apply enrichment to record
+     * @param organizationId Organization ID
+     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record
+     */
+    public v3OrganizationIdEnrichmentsSandboxPostWithHttpInfo(organizationId: string, routesV3EnrichmentSandboxRequest: RoutesV3EnrichmentSandboxRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3EnrichmentSandboxResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdEnrichmentsSandboxPost(organizationId, routesV3EnrichmentSandboxRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdEnrichmentsSandboxPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Apply a enrichment configuration to a JSON record
+     * Apply enrichment to record
+     * @param organizationId Organization ID
+     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record
+     */
+    public v3OrganizationIdEnrichmentsSandboxPost(organizationId: string, routesV3EnrichmentSandboxRequest: RoutesV3EnrichmentSandboxRequest, _options?: ConfigurationOptions): Observable<RoutesV3EnrichmentSandboxResponse> {
+        return this.v3OrganizationIdEnrichmentsSandboxPostWithHttpInfo(organizationId, routesV3EnrichmentSandboxRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3EnrichmentSandboxResponse>) => apiResponse.data));
+    }
+
 }
 
 import { SecretsApiRequestFactory, SecretsApiResponseProcessor} from "../apis/SecretsApi";
@@ -5544,7 +6154,7 @@ export class ObservableTransformsApi {
      * List transforms
      * @param [body]
      */
-    public v1TransformsGetWithHttpInfo(body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<OperationInformation>> {
+    public v1TransformsGetWithHttpInfo(body?: any, _options?: ConfigurationOptions): Observable<HttpInfo<Array<OperationInformation>>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.v1TransformsGet(body, _config);
@@ -5569,8 +6179,8 @@ export class ObservableTransformsApi {
      * List transforms
      * @param [body]
      */
-    public v1TransformsGet(body?: any, _options?: ConfigurationOptions): Observable<OperationInformation> {
-        return this.v1TransformsGetWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<OperationInformation>) => apiResponse.data));
+    public v1TransformsGet(body?: any, _options?: ConfigurationOptions): Observable<Array<OperationInformation>> {
+        return this.v1TransformsGetWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<Array<OperationInformation>>) => apiResponse.data));
     }
 
     /**
@@ -5607,6 +6217,94 @@ export class ObservableTransformsApi {
      */
     public v1TransformsTransformTypeIdGet(transformTypeId: string, body?: any, _options?: ConfigurationOptions): Observable<any> {
         return this.v1TransformsTransformTypeIdGetWithHttpInfo(transformTypeId, body, _options).pipe(map((apiResponse: HttpInfo<any>) => apiResponse.data));
+    }
+
+}
+
+import { TransformsRecommendationsApiRequestFactory, TransformsRecommendationsApiResponseProcessor} from "../apis/TransformsRecommendationsApi";
+export class ObservableTransformsRecommendationsApi {
+    private requestFactory: TransformsRecommendationsApiRequestFactory;
+    private responseProcessor: TransformsRecommendationsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: TransformsRecommendationsApiRequestFactory,
+        responseProcessor?: TransformsRecommendationsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new TransformsRecommendationsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new TransformsRecommendationsApiResponseProcessor();
+    }
+
+    /**
+     * List available transform optimizers
+     * List available transform optimizers
+     * @param organizationId Organization ID
+     */
+    public v3OrganizationIdTransformRecommendationsOptimizersGetWithHttpInfo(organizationId: string, _options?: ConfigurationOptions): Observable<HttpInfo<Array<RoutesV3OptimizerType>>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdTransformRecommendationsOptimizersGet(organizationId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdTransformRecommendationsOptimizersGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List available transform optimizers
+     * List available transform optimizers
+     * @param organizationId Organization ID
+     */
+    public v3OrganizationIdTransformRecommendationsOptimizersGet(organizationId: string, _options?: ConfigurationOptions): Observable<Array<RoutesV3OptimizerType>> {
+        return this.v3OrganizationIdTransformRecommendationsOptimizersGetWithHttpInfo(organizationId, _options).pipe(map((apiResponse: HttpInfo<Array<RoutesV3OptimizerType>>) => apiResponse.data));
+    }
+
+    /**
+     * Analyze security data and provide transformation recommendations
+     * Create transform recommendation
+     * @param organizationId Organization ID
+     * @param routesV3TransformRecommendationRequest Security data to analyze
+     */
+    public v3OrganizationIdTransformRecommendationsPostWithHttpInfo(organizationId: string, routesV3TransformRecommendationRequest: RoutesV3TransformRecommendationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3SecurityDataAnalysis>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdTransformRecommendationsPost(organizationId, routesV3TransformRecommendationRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdTransformRecommendationsPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Analyze security data and provide transformation recommendations
+     * Create transform recommendation
+     * @param organizationId Organization ID
+     * @param routesV3TransformRecommendationRequest Security data to analyze
+     */
+    public v3OrganizationIdTransformRecommendationsPost(organizationId: string, routesV3TransformRecommendationRequest: RoutesV3TransformRecommendationRequest, _options?: ConfigurationOptions): Observable<RoutesV3SecurityDataAnalysis> {
+        return this.v3OrganizationIdTransformRecommendationsPostWithHttpInfo(organizationId, routesV3TransformRecommendationRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3SecurityDataAnalysis>) => apiResponse.data));
     }
 
 }

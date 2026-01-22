@@ -28,7 +28,8 @@ class RoutesUpdateUserInOrganizationRequest(BaseModel):
     RoutesUpdateUserInOrganizationRequest
     """ # noqa: E501
     role_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["role_id"]
+    user_auth_provider_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["role_id", "user_auth_provider_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,7 +82,8 @@ class RoutesUpdateUserInOrganizationRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "role_id": obj.get("role_id")
+            "role_id": obj.get("role_id"),
+            "user_auth_provider_id": obj.get("user_auth_provider_id")
         })
         return _obj
 

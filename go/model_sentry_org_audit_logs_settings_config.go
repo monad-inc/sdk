@@ -20,6 +20,8 @@ var _ MappedNullable = &SentryOrgAuditLogsSettingsConfig{}
 
 // SentryOrgAuditLogsSettingsConfig Sentry Organization Audit Logs settings
 type SentryOrgAuditLogsSettingsConfig struct {
+	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// For self-hosted, specify your host name here. Otherwise, leave it default as sentry.io.
 	HostName *string `json:"host_name,omitempty"`
 	// The ID or slug of the organization
@@ -43,6 +45,38 @@ func NewSentryOrgAuditLogsSettingsConfig() *SentryOrgAuditLogsSettingsConfig {
 func NewSentryOrgAuditLogsSettingsConfigWithDefaults() *SentryOrgAuditLogsSettingsConfig {
 	this := SentryOrgAuditLogsSettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *SentryOrgAuditLogsSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SentryOrgAuditLogsSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *SentryOrgAuditLogsSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *SentryOrgAuditLogsSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetHostName returns the HostName field value if set, zero value otherwise.
@@ -151,6 +185,9 @@ func (o SentryOrgAuditLogsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o SentryOrgAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.HostName) {
 		toSerialize["host_name"] = o.HostName
 	}

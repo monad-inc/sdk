@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Arguments** | Pointer to [**RoutesTransformOperationArguments**](RoutesTransformOperationArguments.md) |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 **Operation** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetArguments sets Arguments field to given value.
 `func (o *RoutesTransformOperation) HasArguments() bool`
 
 HasArguments returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *RoutesTransformOperation) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *RoutesTransformOperation) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *RoutesTransformOperation) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *RoutesTransformOperation) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetOperation
 

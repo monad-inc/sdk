@@ -14,6 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class RoutesUpdateUserInOrganizationRequest {
     'roleId'?: string;
+    'userAuthProviderId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -23,6 +24,12 @@ export class RoutesUpdateUserInOrganizationRequest {
         {
             "name": "roleId",
             "baseName": "role_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "userAuthProviderId",
+            "baseName": "user_auth_provider_id",
             "type": "string",
             "format": ""
         }    ];

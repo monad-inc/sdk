@@ -35,7 +35,7 @@ func (r ApiV1TransformsGetRequest) Body(body map[string]interface{}) ApiV1Transf
 	return r
 }
 
-func (r ApiV1TransformsGetRequest) Execute() (*OperationInformation, *http.Response, error) {
+func (r ApiV1TransformsGetRequest) Execute() ([]OperationInformation, *http.Response, error) {
 	return r.ApiService.V1TransformsGetExecute(r)
 }
 
@@ -55,13 +55,13 @@ func (a *TransformsAPIService) V1TransformsGet(ctx context.Context) ApiV1Transfo
 }
 
 // Execute executes the request
-//  @return OperationInformation
-func (a *TransformsAPIService) V1TransformsGetExecute(r ApiV1TransformsGetRequest) (*OperationInformation, *http.Response, error) {
+//  @return []OperationInformation
+func (a *TransformsAPIService) V1TransformsGetExecute(r ApiV1TransformsGetRequest) ([]OperationInformation, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationInformation
+		localVarReturnValue  []OperationInformation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransformsAPIService.V1TransformsGet")

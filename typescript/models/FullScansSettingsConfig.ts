@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class FullScansSettingsConfig {
     /**
+    * Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+    */
+    'backfillStartTime'?: string;
+    /**
     * Cron expression for scheduling the input
     */
     'orgSlug'?: string;
@@ -34,6 +38,12 @@ export class FullScansSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "orgSlug",
             "baseName": "org_slug",

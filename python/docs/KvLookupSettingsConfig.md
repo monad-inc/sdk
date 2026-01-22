@@ -6,10 +6,11 @@ KVLookup enrichment settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**destination_key** | **str** | DestinationKey the path where the result will be stored in the record. Use &#39;.&#39; for the root object, &#39;field.subfield&#39; for nested properties, &#39;array[0]&#39; for array elements, or combined paths like &#39;users[0].name&#39;. | [optional] 
-**error_on_missing_key** | **bool** | ErrorOnMissingKey if true, will throw an error if the key is not found in the KV lookup output | [optional] 
-**join_key** | **str** | JoinKey is the key in the record whose value will be used to join with the KV lookup output | [optional] 
-**kv_lookup_output_id** | **str** | KVLookupOutputID is the ID of the KV lookup output to join with | [optional] 
+**destination_key** | **str** | DestinationKey is the path where the result will be stored in the record | [optional] 
+**error_on_missing_key** | **bool** | ErrorOnMissingKey If true, throw an error when key is not found in the KV store | [optional] 
+**join_path** | **str** | JoinPath is the path to a field whose values will be used as the lookup keys | [optional] 
+**kv_lookup_output_id** | **str** | KVLookupOutputID is the id of the KV lookup output to join with | [optional] 
+**no_match_response** | **str** | NoMatchResponse is the value to add to the record when no match is found | [optional] 
 
 ## Example
 

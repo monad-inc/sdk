@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**connection_id** | **str** |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **provider** | **str** |  | [optional] 

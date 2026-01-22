@@ -20,6 +20,8 @@ var _ MappedNullable = &PaloAltoDataSecurityAlertsSettingsConfig{}
 
 // PaloAltoDataSecurityAlertsSettingsConfig Palo Alto Data Security Alerts settings
 type PaloAltoDataSecurityAlertsSettingsConfig struct {
+	// Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// URL of the organization
 	BaseUrl *string `json:"base_url,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
@@ -41,6 +43,38 @@ func NewPaloAltoDataSecurityAlertsSettingsConfig() *PaloAltoDataSecurityAlertsSe
 func NewPaloAltoDataSecurityAlertsSettingsConfigWithDefaults() *PaloAltoDataSecurityAlertsSettingsConfig {
 	this := PaloAltoDataSecurityAlertsSettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *PaloAltoDataSecurityAlertsSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PaloAltoDataSecurityAlertsSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *PaloAltoDataSecurityAlertsSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *PaloAltoDataSecurityAlertsSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetBaseUrl returns the BaseUrl field value if set, zero value otherwise.
@@ -117,6 +151,9 @@ func (o PaloAltoDataSecurityAlertsSettingsConfig) MarshalJSON() ([]byte, error) 
 
 func (o PaloAltoDataSecurityAlertsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.BaseUrl) {
 		toSerialize["base_url"] = o.BaseUrl
 	}

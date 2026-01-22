@@ -7,6 +7,9 @@ Name | Type | Description | Notes
 **ClientId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ClientSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **TenantId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ApiToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ApplicationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ApplicationKeyId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Credentials** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -115,6 +118,81 @@ SetTenantId sets TenantId field to given value.
 `func (o *SecretProcessesorOutputConfigSecrets) HasTenantId() bool`
 
 HasTenantId returns a boolean if a field has been set.
+
+### GetApiToken
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetApiToken() ModelsSecret`
+
+GetApiToken returns the ApiToken field if non-nil, zero value otherwise.
+
+### GetApiTokenOk
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetApiTokenOk() (*ModelsSecret, bool)`
+
+GetApiTokenOk returns a tuple with the ApiToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiToken
+
+`func (o *SecretProcessesorOutputConfigSecrets) SetApiToken(v ModelsSecret)`
+
+SetApiToken sets ApiToken field to given value.
+
+### HasApiToken
+
+`func (o *SecretProcessesorOutputConfigSecrets) HasApiToken() bool`
+
+HasApiToken returns a boolean if a field has been set.
+
+### GetApplicationKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetApplicationKey() ModelsSecret`
+
+GetApplicationKey returns the ApplicationKey field if non-nil, zero value otherwise.
+
+### GetApplicationKeyOk
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetApplicationKeyOk() (*ModelsSecret, bool)`
+
+GetApplicationKeyOk returns a tuple with the ApplicationKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplicationKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) SetApplicationKey(v ModelsSecret)`
+
+SetApplicationKey sets ApplicationKey field to given value.
+
+### HasApplicationKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) HasApplicationKey() bool`
+
+HasApplicationKey returns a boolean if a field has been set.
+
+### GetApplicationKeyId
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetApplicationKeyId() ModelsSecret`
+
+GetApplicationKeyId returns the ApplicationKeyId field if non-nil, zero value otherwise.
+
+### GetApplicationKeyIdOk
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetApplicationKeyIdOk() (*ModelsSecret, bool)`
+
+GetApplicationKeyIdOk returns a tuple with the ApplicationKeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplicationKeyId
+
+`func (o *SecretProcessesorOutputConfigSecrets) SetApplicationKeyId(v ModelsSecret)`
+
+SetApplicationKeyId sets ApplicationKeyId field to given value.
+
+### HasApplicationKeyId
+
+`func (o *SecretProcessesorOutputConfigSecrets) HasApplicationKeyId() bool`
+
+HasApplicationKeyId returns a boolean if a field has been set.
 
 ### GetCredentials
 

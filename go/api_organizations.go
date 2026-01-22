@@ -787,3 +787,1374 @@ func (a *OrganizationsAPIService) V2OrganizationIdMetricsGetExecute(r ApiV2Organ
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
+type ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest struct {
+	ctx context.Context
+	ApiService *OrganizationsAPIService
+	organizationId string
+	start *string
+	end *string
+	billingType *string
+	pipelineId *string
+}
+
+// ISO3339 start time, default 6 hours ago
+func (r ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest) Start(start string) ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest {
+	r.start = &start
+	return r
+}
+
+// ISO3339 end time, default now
+func (r ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest) End(end string) ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest {
+	r.end = &end
+	return r
+}
+
+// Filter by billing type (billable|non_billable)
+func (r ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest) BillingType(billingType string) ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest {
+	r.billingType = &billingType
+	return r
+}
+
+// Filter to specific pipeline
+func (r ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest) PipelineId(pipelineId string) ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest {
+	r.pipelineId = &pipelineId
+	return r
+}
+
+func (r ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest) Execute() (*RoutesV2StorageTypeDetailsResponse, *http.Response, error) {
+	return r.ApiService.V2OrganizationIdMetricsStorageTypesDetailsGetExecute(r)
+}
+
+/*
+V2OrganizationIdMetricsStorageTypesDetailsGet Get storage type output details
+
+Get detailed metrics for each individual output, including egress and associated input
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
+ @return ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest
+*/
+func (a *OrganizationsAPIService) V2OrganizationIdMetricsStorageTypesDetailsGet(ctx context.Context, organizationId string) ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest {
+	return ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+	}
+}
+
+// Execute executes the request
+//  @return RoutesV2StorageTypeDetailsResponse
+func (a *OrganizationsAPIService) V2OrganizationIdMetricsStorageTypesDetailsGetExecute(r ApiV2OrganizationIdMetricsStorageTypesDetailsGetRequest) (*RoutesV2StorageTypeDetailsResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *RoutesV2StorageTypeDetailsResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.V2OrganizationIdMetricsStorageTypesDetailsGet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v2/{organization_id}/metrics/storage-types/details"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.start != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "form", "")
+	}
+	if r.end != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "form", "")
+	}
+	if r.billingType != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "billing_type", r.billingType, "form", "")
+	}
+	if r.pipelineId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pipeline_id", r.pipelineId, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiV2OrganizationIdMetricsStorageTypesGetRequest struct {
+	ctx context.Context
+	ApiService *OrganizationsAPIService
+	organizationId string
+	metric *string
+	start *string
+	end *string
+	resolution *string
+	billingType *string
+	pipelineId *string
+}
+
+// Metric to retrieve (egress_bytes|egress_records|errors)
+func (r ApiV2OrganizationIdMetricsStorageTypesGetRequest) Metric(metric string) ApiV2OrganizationIdMetricsStorageTypesGetRequest {
+	r.metric = &metric
+	return r
+}
+
+// ISO3339 start time, default 6 hours ago
+func (r ApiV2OrganizationIdMetricsStorageTypesGetRequest) Start(start string) ApiV2OrganizationIdMetricsStorageTypesGetRequest {
+	r.start = &start
+	return r
+}
+
+// ISO3339 end time, default now
+func (r ApiV2OrganizationIdMetricsStorageTypesGetRequest) End(end string) ApiV2OrganizationIdMetricsStorageTypesGetRequest {
+	r.end = &end
+	return r
+}
+
+// Resolution of the data, default determined by time window
+func (r ApiV2OrganizationIdMetricsStorageTypesGetRequest) Resolution(resolution string) ApiV2OrganizationIdMetricsStorageTypesGetRequest {
+	r.resolution = &resolution
+	return r
+}
+
+// Filter by billing type (billable|non_billable)
+func (r ApiV2OrganizationIdMetricsStorageTypesGetRequest) BillingType(billingType string) ApiV2OrganizationIdMetricsStorageTypesGetRequest {
+	r.billingType = &billingType
+	return r
+}
+
+// Filter to specific pipeline
+func (r ApiV2OrganizationIdMetricsStorageTypesGetRequest) PipelineId(pipelineId string) ApiV2OrganizationIdMetricsStorageTypesGetRequest {
+	r.pipelineId = &pipelineId
+	return r
+}
+
+func (r ApiV2OrganizationIdMetricsStorageTypesGetRequest) Execute() (*ModelsStorageTypeTimeSeriesResponse, *http.Response, error) {
+	return r.ApiService.V2OrganizationIdMetricsStorageTypesGetExecute(r)
+}
+
+/*
+V2OrganizationIdMetricsStorageTypesGet Get storage type metrics
+
+Get time series metrics grouped by storage type for an organization
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
+ @return ApiV2OrganizationIdMetricsStorageTypesGetRequest
+*/
+func (a *OrganizationsAPIService) V2OrganizationIdMetricsStorageTypesGet(ctx context.Context, organizationId string) ApiV2OrganizationIdMetricsStorageTypesGetRequest {
+	return ApiV2OrganizationIdMetricsStorageTypesGetRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+	}
+}
+
+// Execute executes the request
+//  @return ModelsStorageTypeTimeSeriesResponse
+func (a *OrganizationsAPIService) V2OrganizationIdMetricsStorageTypesGetExecute(r ApiV2OrganizationIdMetricsStorageTypesGetRequest) (*ModelsStorageTypeTimeSeriesResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ModelsStorageTypeTimeSeriesResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.V2OrganizationIdMetricsStorageTypesGet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v2/{organization_id}/metrics/storage-types"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.metric == nil {
+		return localVarReturnValue, nil, reportError("metric is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "metric", r.metric, "form", "")
+	if r.start != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "form", "")
+	}
+	if r.end != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "form", "")
+	}
+	if r.resolution != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "resolution", r.resolution, "form", "")
+	}
+	if r.billingType != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "billing_type", r.billingType, "form", "")
+	}
+	if r.pipelineId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pipeline_id", r.pipelineId, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest struct {
+	ctx context.Context
+	ApiService *OrganizationsAPIService
+	organizationId string
+	storageType string
+	start *string
+	end *string
+	billingType *string
+	pipelineId *string
+}
+
+// ISO3339 start time, default 6 hours ago
+func (r ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest) Start(start string) ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest {
+	r.start = &start
+	return r
+}
+
+// ISO3339 end time, default now
+func (r ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest) End(end string) ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest {
+	r.end = &end
+	return r
+}
+
+// Filter by billing type (billable|non_billable)
+func (r ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest) BillingType(billingType string) ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest {
+	r.billingType = &billingType
+	return r
+}
+
+// Filter to specific pipeline
+func (r ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest) PipelineId(pipelineId string) ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest {
+	r.pipelineId = &pipelineId
+	return r
+}
+
+func (r ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest) Execute() (*RoutesV2StorageTypeDetailsResponse, *http.Response, error) {
+	return r.ApiService.V2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetExecute(r)
+}
+
+/*
+V2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet Get storage type output details by type
+
+Get detailed metrics for each individual output of a specific storage type
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
+ @param storageType Storage type (e.g., s3, dev-null, bigquery)
+ @return ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest
+*/
+func (a *OrganizationsAPIService) V2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet(ctx context.Context, organizationId string, storageType string) ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest {
+	return ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+		storageType: storageType,
+	}
+}
+
+// Execute executes the request
+//  @return RoutesV2StorageTypeDetailsResponse
+func (a *OrganizationsAPIService) V2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetExecute(r ApiV2OrganizationIdMetricsStorageTypesStorageTypeDetailsGetRequest) (*RoutesV2StorageTypeDetailsResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *RoutesV2StorageTypeDetailsResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.V2OrganizationIdMetricsStorageTypesStorageTypeDetailsGet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v2/{organization_id}/metrics/storage-types/{storage_type}/details"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"storage_type"+"}", url.PathEscape(parameterValueToString(r.storageType, "storageType")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.start != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "form", "")
+	}
+	if r.end != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "form", "")
+	}
+	if r.billingType != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "billing_type", r.billingType, "form", "")
+	}
+	if r.pipelineId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pipeline_id", r.pipelineId, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest struct {
+	ctx context.Context
+	ApiService *OrganizationsAPIService
+	organizationId string
+	storageType string
+	start *string
+	end *string
+	billingType *string
+	pipelineId *string
+}
+
+// ISO3339 start time, default 6 hours ago
+func (r ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest) Start(start string) ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest {
+	r.start = &start
+	return r
+}
+
+// ISO3339 end time, default now
+func (r ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest) End(end string) ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest {
+	r.end = &end
+	return r
+}
+
+// Filter by billing type (billable|non_billable)
+func (r ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest) BillingType(billingType string) ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest {
+	r.billingType = &billingType
+	return r
+}
+
+// Filter to specific pipeline
+func (r ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest) PipelineId(pipelineId string) ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest {
+	r.pipelineId = &pipelineId
+	return r
+}
+
+func (r ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest) Execute() (*ModelsStorageTypeSummaryResponse, *http.Response, error) {
+	return r.ApiService.V2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetExecute(r)
+}
+
+/*
+V2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet Get storage type cost summary by type
+
+Get aggregated cost and usage summary for a specific storage type
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
+ @param storageType Storage type (e.g., s3, dev-null, bigquery)
+ @return ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest
+*/
+func (a *OrganizationsAPIService) V2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet(ctx context.Context, organizationId string, storageType string) ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest {
+	return ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+		storageType: storageType,
+	}
+}
+
+// Execute executes the request
+//  @return ModelsStorageTypeSummaryResponse
+func (a *OrganizationsAPIService) V2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetExecute(r ApiV2OrganizationIdMetricsStorageTypesStorageTypeSummaryGetRequest) (*ModelsStorageTypeSummaryResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ModelsStorageTypeSummaryResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.V2OrganizationIdMetricsStorageTypesStorageTypeSummaryGet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v2/{organization_id}/metrics/storage-types/{storage_type}/summary"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"storage_type"+"}", url.PathEscape(parameterValueToString(r.storageType, "storageType")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.start != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "form", "")
+	}
+	if r.end != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "form", "")
+	}
+	if r.billingType != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "billing_type", r.billingType, "form", "")
+	}
+	if r.pipelineId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pipeline_id", r.pipelineId, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest struct {
+	ctx context.Context
+	ApiService *OrganizationsAPIService
+	organizationId string
+	start *string
+	end *string
+	billingType *string
+	pipelineId *string
+}
+
+// ISO3339 start time, default 6 hours ago
+func (r ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest) Start(start string) ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest {
+	r.start = &start
+	return r
+}
+
+// ISO3339 end time, default now
+func (r ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest) End(end string) ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest {
+	r.end = &end
+	return r
+}
+
+// Filter by billing type (billable|non_billable)
+func (r ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest) BillingType(billingType string) ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest {
+	r.billingType = &billingType
+	return r
+}
+
+// Filter to specific pipeline
+func (r ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest) PipelineId(pipelineId string) ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest {
+	r.pipelineId = &pipelineId
+	return r
+}
+
+func (r ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest) Execute() (*ModelsStorageTypeSummaryResponse, *http.Response, error) {
+	return r.ApiService.V2OrganizationIdMetricsStorageTypesSummaryGetExecute(r)
+}
+
+/*
+V2OrganizationIdMetricsStorageTypesSummaryGet Get storage type cost summary
+
+Get aggregated cost and usage summary by storage type
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
+ @return ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest
+*/
+func (a *OrganizationsAPIService) V2OrganizationIdMetricsStorageTypesSummaryGet(ctx context.Context, organizationId string) ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest {
+	return ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+	}
+}
+
+// Execute executes the request
+//  @return ModelsStorageTypeSummaryResponse
+func (a *OrganizationsAPIService) V2OrganizationIdMetricsStorageTypesSummaryGetExecute(r ApiV2OrganizationIdMetricsStorageTypesSummaryGetRequest) (*ModelsStorageTypeSummaryResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ModelsStorageTypeSummaryResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.V2OrganizationIdMetricsStorageTypesSummaryGet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v2/{organization_id}/metrics/storage-types/summary"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.start != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "form", "")
+	}
+	if r.end != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "form", "")
+	}
+	if r.billingType != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "billing_type", r.billingType, "form", "")
+	}
+	if r.pipelineId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pipeline_id", r.pipelineId, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiV2OrganizationIdStorageTypeCostGetRequest struct {
+	ctx context.Context
+	ApiService *OrganizationsAPIService
+	organizationId string
+}
+
+func (r ApiV2OrganizationIdStorageTypeCostGetRequest) Execute() (*ModelsStorageTypeCostConfig, *http.Response, error) {
+	return r.ApiService.V2OrganizationIdStorageTypeCostGetExecute(r)
+}
+
+/*
+V2OrganizationIdStorageTypeCostGet Get storage type cost
+
+Get per-organization cost configuration for storage types
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
+ @return ApiV2OrganizationIdStorageTypeCostGetRequest
+*/
+func (a *OrganizationsAPIService) V2OrganizationIdStorageTypeCostGet(ctx context.Context, organizationId string) ApiV2OrganizationIdStorageTypeCostGetRequest {
+	return ApiV2OrganizationIdStorageTypeCostGetRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+	}
+}
+
+// Execute executes the request
+//  @return ModelsStorageTypeCostConfig
+func (a *OrganizationsAPIService) V2OrganizationIdStorageTypeCostGetExecute(r ApiV2OrganizationIdStorageTypeCostGetRequest) (*ModelsStorageTypeCostConfig, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ModelsStorageTypeCostConfig
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.V2OrganizationIdStorageTypeCostGet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v2/{organization_id}/storage-type-cost"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiV2OrganizationIdStorageTypeCostPutRequest struct {
+	ctx context.Context
+	ApiService *OrganizationsAPIService
+	organizationId string
+	routesV2SetStorageTypeCostRequest *RoutesV2SetStorageTypeCostRequest
+}
+
+// Cost configuration
+func (r ApiV2OrganizationIdStorageTypeCostPutRequest) RoutesV2SetStorageTypeCostRequest(routesV2SetStorageTypeCostRequest RoutesV2SetStorageTypeCostRequest) ApiV2OrganizationIdStorageTypeCostPutRequest {
+	r.routesV2SetStorageTypeCostRequest = &routesV2SetStorageTypeCostRequest
+	return r
+}
+
+func (r ApiV2OrganizationIdStorageTypeCostPutRequest) Execute() (*ModelsStorageTypeCostConfig, *http.Response, error) {
+	return r.ApiService.V2OrganizationIdStorageTypeCostPutExecute(r)
+}
+
+/*
+V2OrganizationIdStorageTypeCostPut Set storage type cost
+
+Update per-organization cost configuration for storage types
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
+ @return ApiV2OrganizationIdStorageTypeCostPutRequest
+*/
+func (a *OrganizationsAPIService) V2OrganizationIdStorageTypeCostPut(ctx context.Context, organizationId string) ApiV2OrganizationIdStorageTypeCostPutRequest {
+	return ApiV2OrganizationIdStorageTypeCostPutRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+	}
+}
+
+// Execute executes the request
+//  @return ModelsStorageTypeCostConfig
+func (a *OrganizationsAPIService) V2OrganizationIdStorageTypeCostPutExecute(r ApiV2OrganizationIdStorageTypeCostPutRequest) (*ModelsStorageTypeCostConfig, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ModelsStorageTypeCostConfig
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.V2OrganizationIdStorageTypeCostPut")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v2/{organization_id}/storage-type-cost"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.routesV2SetStorageTypeCostRequest == nil {
+		return localVarReturnValue, nil, reportError("routesV2SetStorageTypeCostRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.routesV2SetStorageTypeCostRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}

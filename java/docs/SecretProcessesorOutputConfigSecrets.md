@@ -10,6 +10,9 @@
 |**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**tenantId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**apiToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**applicationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**applicationKeyId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**credentials** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**authToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

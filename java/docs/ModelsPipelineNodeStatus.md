@@ -15,6 +15,7 @@
 |**ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  |  [optional] |
 |**nodeId** | **String** |  |  [optional] |
 |**nodeSlug** | **String** |  |  [optional] |
+|**progressTimestamps** | [**PipelineNodeStatusProgressTimestamps**](PipelineNodeStatusProgressTimestamps.md) |  |  [optional] |
 |**status** | **String** |  |  [optional] |
 
 

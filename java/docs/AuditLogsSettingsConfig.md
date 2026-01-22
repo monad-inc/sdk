@@ -10,8 +10,8 @@ GitHub audit logs settings
 |------------ | ------------- | ------------- | -------------|
 |**actions** | **List&lt;String&gt;** | Filter by specific actions. Use wildcards for broader matches (e.g., repo.*) |  [optional] |
 |**actor** | **String** | Filter by the username that initiated the action |  [optional] |
+|**backfillStartTime** | **String** | Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental. |  [optional] |
 |**country** | **String** | Filter by actor&#39;s country code (e.g., US) |  [optional] |
-|**createdAfter** | **String** | Only return audit log entries after this RFC3339 formatted time stamp |  [optional] |
 |**enterprise** | **String** | Your GitHub enterprise slug or ID |  [optional] |
 |**include** | **String** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. |  [optional] |
 |**organization** | **String** | Filter by organization name |  [optional] |

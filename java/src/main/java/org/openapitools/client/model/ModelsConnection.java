@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsConnection
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsConnection {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -69,6 +69,11 @@ public class ModelsConnection {
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
+
+  public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
+  @javax.annotation.Nullable
+  private String organizationId;
 
   public static final String SERIALIZED_NAME_SAML_ENTITY_ID = "saml_entity_id";
   @SerializedName(SERIALIZED_NAME_SAML_ENTITY_ID)
@@ -169,6 +174,25 @@ public class ModelsConnection {
   }
 
 
+  public ModelsConnection organizationId(@javax.annotation.Nullable String organizationId) {
+    this.organizationId = organizationId;
+    return this;
+  }
+
+  /**
+   * Get organizationId
+   * @return organizationId
+   */
+  @javax.annotation.Nullable
+  public String getOrganizationId() {
+    return organizationId;
+  }
+
+  public void setOrganizationId(@javax.annotation.Nullable String organizationId) {
+    this.organizationId = organizationId;
+  }
+
+
   public ModelsConnection samlEntityId(@javax.annotation.Nullable String samlEntityId) {
     this.samlEntityId = samlEntityId;
     return this;
@@ -259,6 +283,7 @@ public class ModelsConnection {
         Objects.equals(this.description, modelsConnection.description) &&
         Objects.equals(this.id, modelsConnection.id) &&
         Objects.equals(this.name, modelsConnection.name) &&
+        Objects.equals(this.organizationId, modelsConnection.organizationId) &&
         Objects.equals(this.samlEntityId, modelsConnection.samlEntityId) &&
         Objects.equals(this.samlMetadataUrl, modelsConnection.samlMetadataUrl) &&
         Objects.equals(this.type, modelsConnection.type) &&
@@ -267,7 +292,7 @@ public class ModelsConnection {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, id, name, samlEntityId, samlMetadataUrl, type, updatedAt);
+    return Objects.hash(createdAt, description, id, name, organizationId, samlEntityId, samlMetadataUrl, type, updatedAt);
   }
 
   @Override
@@ -278,6 +303,7 @@ public class ModelsConnection {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    samlEntityId: ").append(toIndentedString(samlEntityId)).append("\n");
     sb.append("    samlMetadataUrl: ").append(toIndentedString(samlMetadataUrl)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -303,7 +329,7 @@ public class ModelsConnection {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "id", "name", "saml_entity_id", "saml_metadata_url", "type", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "id", "name", "organization_id", "saml_entity_id", "saml_metadata_url", "type", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -318,7 +344,7 @@ public class ModelsConnection {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelsConnection.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ModelsConnection is not found in the empty JSON string", ModelsConnection.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsConnection is not found in the empty JSON string", ModelsConnection.openapiRequiredFields.toString()));
         }
       }
 
@@ -326,33 +352,36 @@ public class ModelsConnection {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ModelsConnection.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ModelsConnection` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsConnection` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("organization_id") != null && !jsonObj.get("organization_id").isJsonNull()) && !jsonObj.get("organization_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
       }
       if ((jsonObj.get("saml_entity_id") != null && !jsonObj.get("saml_entity_id").isJsonNull()) && !jsonObj.get("saml_entity_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `saml_entity_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("saml_entity_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `saml_entity_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("saml_entity_id").toString()));
       }
       if ((jsonObj.get("saml_metadata_url") != null && !jsonObj.get("saml_metadata_url").isJsonNull()) && !jsonObj.get("saml_metadata_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `saml_metadata_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("saml_metadata_url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `saml_metadata_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("saml_metadata_url").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
       }
   }
 

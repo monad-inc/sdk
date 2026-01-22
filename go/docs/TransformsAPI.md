@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## V1TransformsGet
 
-> OperationInformation V1TransformsGet(ctx).Body(body).Execute()
+> []OperationInformation V1TransformsGet(ctx).Body(body).Execute()
 
 List transforms
 
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `TransformsAPI.V1TransformsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1TransformsGet`: OperationInformation
+	// response from `V1TransformsGet`: []OperationInformation
 	fmt.Fprintf(os.Stdout, "Response from `TransformsAPI.V1TransformsGet`: %v\n", resp)
 }
 ```
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationInformation**](OperationInformation.md)
+[**[]OperationInformation**](OperationInformation.md)
 
 ### Authorization
 

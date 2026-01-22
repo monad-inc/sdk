@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineEdge
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsPipelineEdge {
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
@@ -65,6 +65,11 @@ public class ModelsPipelineEdge {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
   private String description;
+
+  public static final String SERIALIZED_NAME_DISABLED = "disabled";
+  @SerializedName(SERIALIZED_NAME_DISABLED)
+  @javax.annotation.Nullable
+  private Boolean disabled;
 
   public static final String SERIALIZED_NAME_FROM_NODE_INSTANCE_ID = "from_node_instance_id";
   @SerializedName(SERIALIZED_NAME_FROM_NODE_INSTANCE_ID)
@@ -153,6 +158,25 @@ public class ModelsPipelineEdge {
 
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public ModelsPipelineEdge disabled(@javax.annotation.Nullable Boolean disabled) {
+    this.disabled = disabled;
+    return this;
+  }
+
+  /**
+   * Get disabled
+   * @return disabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getDisabled() {
+    return disabled;
+  }
+
+  public void setDisabled(@javax.annotation.Nullable Boolean disabled) {
+    this.disabled = disabled;
   }
 
 
@@ -283,6 +307,7 @@ public class ModelsPipelineEdge {
     return Objects.equals(this.conditions, modelsPipelineEdge.conditions) &&
         Objects.equals(this.createdAt, modelsPipelineEdge.createdAt) &&
         Objects.equals(this.description, modelsPipelineEdge.description) &&
+        Objects.equals(this.disabled, modelsPipelineEdge.disabled) &&
         Objects.equals(this.fromNodeInstanceId, modelsPipelineEdge.fromNodeInstanceId) &&
         Objects.equals(this.id, modelsPipelineEdge.id) &&
         Objects.equals(this.name, modelsPipelineEdge.name) &&
@@ -293,7 +318,7 @@ public class ModelsPipelineEdge {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditions, createdAt, description, fromNodeInstanceId, id, name, organizationId, pipelineId, toNodeInstanceId);
+    return Objects.hash(conditions, createdAt, description, disabled, fromNodeInstanceId, id, name, organizationId, pipelineId, toNodeInstanceId);
   }
 
   @Override
@@ -303,6 +328,7 @@ public class ModelsPipelineEdge {
     sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    fromNodeInstanceId: ").append(toIndentedString(fromNodeInstanceId)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -330,7 +356,7 @@ public class ModelsPipelineEdge {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("conditions", "created_at", "description", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "to_node_instance_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("conditions", "created_at", "description", "disabled", "from_node_instance_id", "id", "name", "organization_id", "pipeline_id", "to_node_instance_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -345,7 +371,7 @@ public class ModelsPipelineEdge {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelsPipelineEdge.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ModelsPipelineEdge is not found in the empty JSON string", ModelsPipelineEdge.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsPipelineEdge is not found in the empty JSON string", ModelsPipelineEdge.openapiRequiredFields.toString()));
         }
       }
 
@@ -353,7 +379,7 @@ public class ModelsPipelineEdge {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ModelsPipelineEdge.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ModelsPipelineEdge` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsPipelineEdge` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -362,28 +388,28 @@ public class ModelsPipelineEdge {
         ModelsPipelineEdgeConditions.validateJsonElement(jsonObj.get("conditions"));
       }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("from_node_instance_id") != null && !jsonObj.get("from_node_instance_id").isJsonNull()) && !jsonObj.get("from_node_instance_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `from_node_instance_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from_node_instance_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `from_node_instance_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from_node_instance_id").toString()));
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("organization_id") != null && !jsonObj.get("organization_id").isJsonNull()) && !jsonObj.get("organization_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
       }
       if ((jsonObj.get("pipeline_id") != null && !jsonObj.get("pipeline_id").isJsonNull()) && !jsonObj.get("pipeline_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `pipeline_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pipeline_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_id").toString()));
       }
       if ((jsonObj.get("to_node_instance_id") != null && !jsonObj.get("to_node_instance_id").isJsonNull()) && !jsonObj.get("to_node_instance_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `to_node_instance_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("to_node_instance_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `to_node_instance_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("to_node_instance_id").toString()));
       }
   }
 

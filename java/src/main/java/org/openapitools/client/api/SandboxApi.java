@@ -33,6 +33,8 @@ import org.openapitools.client.model.RoutesV2ApplyTransformationResponse;
 import org.openapitools.client.model.RoutesV2GenerateRecordRequest;
 import org.openapitools.client.model.RoutesV2GenerateRecordResponse;
 import org.openapitools.client.model.RoutesV2ListTemplatesResponse;
+import org.openapitools.client.model.RoutesV3EnrichmentSandboxRequest;
+import org.openapitools.client.model.RoutesV3EnrichmentSandboxResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -462,6 +464,151 @@ public class SandboxApi {
 
         okhttp3.Call localVarCall = v2SandboxTransformPostValidateBeforeCall(routesV2ApplyTransformationRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV2ApplyTransformationResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v3OrganizationIdEnrichmentsSandboxPost
+     * @param organizationId Organization ID (required)
+     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request parameters </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3OrganizationIdEnrichmentsSandboxPostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3EnrichmentSandboxRequest routesV3EnrichmentSandboxRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = routesV3EnrichmentSandboxRequest;
+
+        // create path and map variables
+        String localVarPath = "/v3/{organization_id}/enrichments/sandbox"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v3OrganizationIdEnrichmentsSandboxPostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3EnrichmentSandboxRequest routesV3EnrichmentSandboxRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v3OrganizationIdEnrichmentsSandboxPost(Async)");
+        }
+
+        // verify the required parameter 'routesV3EnrichmentSandboxRequest' is set
+        if (routesV3EnrichmentSandboxRequest == null) {
+            throw new ApiException("Missing the required parameter 'routesV3EnrichmentSandboxRequest' when calling v3OrganizationIdEnrichmentsSandboxPost(Async)");
+        }
+
+        return v3OrganizationIdEnrichmentsSandboxPostCall(organizationId, routesV3EnrichmentSandboxRequest, _callback);
+
+    }
+
+    /**
+     * Apply enrichment to record
+     * Apply a enrichment configuration to a JSON record
+     * @param organizationId Organization ID (required)
+     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record (required)
+     * @return RoutesV3EnrichmentSandboxResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request parameters </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public RoutesV3EnrichmentSandboxResponse v3OrganizationIdEnrichmentsSandboxPost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3EnrichmentSandboxRequest routesV3EnrichmentSandboxRequest) throws ApiException {
+        ApiResponse<RoutesV3EnrichmentSandboxResponse> localVarResp = v3OrganizationIdEnrichmentsSandboxPostWithHttpInfo(organizationId, routesV3EnrichmentSandboxRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Apply enrichment to record
+     * Apply a enrichment configuration to a JSON record
+     * @param organizationId Organization ID (required)
+     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record (required)
+     * @return ApiResponse&lt;RoutesV3EnrichmentSandboxResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request parameters </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<RoutesV3EnrichmentSandboxResponse> v3OrganizationIdEnrichmentsSandboxPostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3EnrichmentSandboxRequest routesV3EnrichmentSandboxRequest) throws ApiException {
+        okhttp3.Call localVarCall = v3OrganizationIdEnrichmentsSandboxPostValidateBeforeCall(organizationId, routesV3EnrichmentSandboxRequest, null);
+        Type localVarReturnType = new TypeToken<RoutesV3EnrichmentSandboxResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Apply enrichment to record (asynchronously)
+     * Apply a enrichment configuration to a JSON record
+     * @param organizationId Organization ID (required)
+     * @param routesV3EnrichmentSandboxRequest Enrichment configuration and record (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request parameters </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3OrganizationIdEnrichmentsSandboxPostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3EnrichmentSandboxRequest routesV3EnrichmentSandboxRequest, final ApiCallback<RoutesV3EnrichmentSandboxResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v3OrganizationIdEnrichmentsSandboxPostValidateBeforeCall(organizationId, routesV3EnrichmentSandboxRequest, _callback);
+        Type localVarReturnType = new TypeToken<RoutesV3EnrichmentSandboxResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

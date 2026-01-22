@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineRequestEdge
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-07T23:56:12.911465570Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T22:30:04.879766461Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV2PipelineRequestEdge {
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
@@ -241,7 +241,7 @@ public class RoutesV2PipelineRequestEdge {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RoutesV2PipelineRequestEdge.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RoutesV2PipelineRequestEdge is not found in the empty JSON string", RoutesV2PipelineRequestEdge.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV2PipelineRequestEdge is not found in the empty JSON string", RoutesV2PipelineRequestEdge.openapiRequiredFields.toString()));
         }
       }
 
@@ -249,14 +249,14 @@ public class RoutesV2PipelineRequestEdge {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!RoutesV2PipelineRequestEdge.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RoutesV2PipelineRequestEdge` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV2PipelineRequestEdge` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : RoutesV2PipelineRequestEdge.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -265,16 +265,16 @@ public class RoutesV2PipelineRequestEdge {
         ModelsPipelineEdgeConditions.validateJsonElement(jsonObj.get("conditions"));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("from_node_instance_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `from_node_instance_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from_node_instance_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `from_node_instance_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from_node_instance_id").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("to_node_instance_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `to_node_instance_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("to_node_instance_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `to_node_instance_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("to_node_instance_id").toString()));
       }
   }
 

@@ -371,6 +371,7 @@ public class OrganizationUsersApi {
      * Build call for v1OrganizationIdUsersUserIdDelete
      * @param organizationId Organization ID (required)
      * @param userId User ID (required)
+     * @param userAuthProviderId User Auth Provider ID (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -382,7 +383,7 @@ public class OrganizationUsersApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdUsersUserIdDeleteCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdUsersUserIdDeleteCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String userAuthProviderId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -409,6 +410,10 @@ public class OrganizationUsersApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (userAuthProviderId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("user_auth_provider_id", userAuthProviderId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -429,7 +434,7 @@ public class OrganizationUsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationIdUsersUserIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OrganizationIdUsersUserIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String userAuthProviderId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v1OrganizationIdUsersUserIdDelete(Async)");
@@ -440,7 +445,12 @@ public class OrganizationUsersApi {
             throw new ApiException("Missing the required parameter 'userId' when calling v1OrganizationIdUsersUserIdDelete(Async)");
         }
 
-        return v1OrganizationIdUsersUserIdDeleteCall(organizationId, userId, _callback);
+        // verify the required parameter 'userAuthProviderId' is set
+        if (userAuthProviderId == null) {
+            throw new ApiException("Missing the required parameter 'userAuthProviderId' when calling v1OrganizationIdUsersUserIdDelete(Async)");
+        }
+
+        return v1OrganizationIdUsersUserIdDeleteCall(organizationId, userId, userAuthProviderId, _callback);
 
     }
 
@@ -449,6 +459,7 @@ public class OrganizationUsersApi {
      * Remove user from organization
      * @param organizationId Organization ID (required)
      * @param userId User ID (required)
+     * @param userAuthProviderId User Auth Provider ID (required)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -459,8 +470,8 @@ public class OrganizationUsersApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object v1OrganizationIdUsersUserIdDelete(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String userId) throws ApiException {
-        ApiResponse<Object> localVarResp = v1OrganizationIdUsersUserIdDeleteWithHttpInfo(organizationId, userId);
+    public Object v1OrganizationIdUsersUserIdDelete(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String userAuthProviderId) throws ApiException {
+        ApiResponse<Object> localVarResp = v1OrganizationIdUsersUserIdDeleteWithHttpInfo(organizationId, userId, userAuthProviderId);
         return localVarResp.getData();
     }
 
@@ -469,6 +480,7 @@ public class OrganizationUsersApi {
      * Remove user from organization
      * @param organizationId Organization ID (required)
      * @param userId User ID (required)
+     * @param userAuthProviderId User Auth Provider ID (required)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -479,8 +491,8 @@ public class OrganizationUsersApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> v1OrganizationIdUsersUserIdDeleteWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String userId) throws ApiException {
-        okhttp3.Call localVarCall = v1OrganizationIdUsersUserIdDeleteValidateBeforeCall(organizationId, userId, null);
+    public ApiResponse<Object> v1OrganizationIdUsersUserIdDeleteWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String userAuthProviderId) throws ApiException {
+        okhttp3.Call localVarCall = v1OrganizationIdUsersUserIdDeleteValidateBeforeCall(organizationId, userId, userAuthProviderId, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -490,6 +502,7 @@ public class OrganizationUsersApi {
      * Remove user from organization
      * @param organizationId Organization ID (required)
      * @param userId User ID (required)
+     * @param userAuthProviderId User Auth Provider ID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -501,9 +514,9 @@ public class OrganizationUsersApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationIdUsersUserIdDeleteAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String userId, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationIdUsersUserIdDeleteAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull String userAuthProviderId, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1OrganizationIdUsersUserIdDeleteValidateBeforeCall(organizationId, userId, _callback);
+        okhttp3.Call localVarCall = v1OrganizationIdUsersUserIdDeleteValidateBeforeCall(organizationId, userId, userAuthProviderId, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
