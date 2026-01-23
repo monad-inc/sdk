@@ -77,6 +77,8 @@ export * from '../models/CloudflareDnsRecordsSecretsConfig';
 export * from '../models/CloudflareDnsRecordsSettingsConfig';
 export * from '../models/CloudflareFirewallEventsSecretsConfig';
 export * from '../models/CloudflareFirewallEventsSettingsConfig';
+export * from '../models/CloudflareHttpRequestsSecretsConfig';
+export * from '../models/CloudflareHttpRequestsSettingsConfig';
 export * from '../models/CloudflarePageShieldConnectionsSecretsConfig';
 export * from '../models/CloudflarePageShieldConnectionsSettingsConfig';
 export * from '../models/CloudflareRulesetsSecretsConfig';
@@ -591,6 +593,8 @@ import { CloudflareDnsRecordsSecretsConfig } from '../models/CloudflareDnsRecord
 import { CloudflareDnsRecordsSettingsConfig } from '../models/CloudflareDnsRecordsSettingsConfig';
 import { CloudflareFirewallEventsSecretsConfig } from '../models/CloudflareFirewallEventsSecretsConfig';
 import { CloudflareFirewallEventsSettingsConfig } from '../models/CloudflareFirewallEventsSettingsConfig';
+import { CloudflareHttpRequestsSecretsConfig } from '../models/CloudflareHttpRequestsSecretsConfig';
+import { CloudflareHttpRequestsSettingsConfig } from '../models/CloudflareHttpRequestsSettingsConfig';
 import { CloudflarePageShieldConnectionsSecretsConfig } from '../models/CloudflarePageShieldConnectionsSecretsConfig';
 import { CloudflarePageShieldConnectionsSettingsConfig } from '../models/CloudflarePageShieldConnectionsSettingsConfig';
 import { CloudflareRulesetsSecretsConfig } from '../models/CloudflareRulesetsSecretsConfig';
@@ -1137,6 +1141,8 @@ let typeMap: {[index: string]: any} = {
     "CloudflareDnsRecordsSettingsConfig": CloudflareDnsRecordsSettingsConfig,
     "CloudflareFirewallEventsSecretsConfig": CloudflareFirewallEventsSecretsConfig,
     "CloudflareFirewallEventsSettingsConfig": CloudflareFirewallEventsSettingsConfig,
+    "CloudflareHttpRequestsSecretsConfig": CloudflareHttpRequestsSecretsConfig,
+    "CloudflareHttpRequestsSettingsConfig": CloudflareHttpRequestsSettingsConfig,
     "CloudflarePageShieldConnectionsSecretsConfig": CloudflarePageShieldConnectionsSecretsConfig,
     "CloudflarePageShieldConnectionsSettingsConfig": CloudflarePageShieldConnectionsSettingsConfig,
     "CloudflareRulesetsSecretsConfig": CloudflareRulesetsSecretsConfig,

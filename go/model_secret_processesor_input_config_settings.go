@@ -52,6 +52,7 @@ type SecretProcessesorInputConfigSettings struct {
 	CloudflareAuditLogsSettingsConfig *CloudflareAuditLogsSettingsConfig
 	CloudflareDnsRecordsSettingsConfig *CloudflareDnsRecordsSettingsConfig
 	CloudflareFirewallEventsSettingsConfig *CloudflareFirewallEventsSettingsConfig
+	CloudflareHttpRequestsSettingsConfig *CloudflareHttpRequestsSettingsConfig
 	CloudflarePageShieldConnectionsSettingsConfig *CloudflarePageShieldConnectionsSettingsConfig
 	CloudflareRulesetsSettingsConfig *CloudflareRulesetsSettingsConfig
 	CloudflareSecurityInsightsSettingsConfig *CloudflareSecurityInsightsSettingsConfig
@@ -382,6 +383,13 @@ func CloudflareDnsRecordsSettingsConfigAsSecretProcessesorInputConfigSettings(v 
 func CloudflareFirewallEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflareFirewallEventsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		CloudflareFirewallEventsSettingsConfig: v,
+	}
+}
+
+// CloudflareHttpRequestsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudflareHttpRequestsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CloudflareHttpRequestsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflareHttpRequestsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CloudflareHttpRequestsSettingsConfig: v,
 	}
 }
 
@@ -1649,6 +1657,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.CloudflareFirewallEventsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareHttpRequestsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareHttpRequestsSettingsConfig)
+	if err == nil {
+		jsonCloudflareHttpRequestsSettingsConfig, _ := json.Marshal(dst.CloudflareHttpRequestsSettingsConfig)
+		if string(jsonCloudflareHttpRequestsSettingsConfig) == "{}" { // empty struct
+			dst.CloudflareHttpRequestsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareHttpRequestsSettingsConfig); err != nil {
+				dst.CloudflareHttpRequestsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareHttpRequestsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into CloudflarePageShieldConnectionsSettingsConfig
@@ -3386,6 +3411,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CloudflareAuditLogsSettingsConfig = nil
 		dst.CloudflareDnsRecordsSettingsConfig = nil
 		dst.CloudflareFirewallEventsSettingsConfig = nil
+		dst.CloudflareHttpRequestsSettingsConfig = nil
 		dst.CloudflarePageShieldConnectionsSettingsConfig = nil
 		dst.CloudflareRulesetsSettingsConfig = nil
 		dst.CloudflareSecurityInsightsSettingsConfig = nil
@@ -3627,6 +3653,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.CloudflareFirewallEventsSettingsConfig != nil {
 		return json.Marshal(&src.CloudflareFirewallEventsSettingsConfig)
+	}
+
+	if src.CloudflareHttpRequestsSettingsConfig != nil {
+		return json.Marshal(&src.CloudflareHttpRequestsSettingsConfig)
 	}
 
 	if src.CloudflarePageShieldConnectionsSettingsConfig != nil {
@@ -4169,6 +4199,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.CloudflareFirewallEventsSettingsConfig
 	}
 
+	if obj.CloudflareHttpRequestsSettingsConfig != nil {
+		return obj.CloudflareHttpRequestsSettingsConfig
+	}
+
 	if obj.CloudflarePageShieldConnectionsSettingsConfig != nil {
 		return obj.CloudflarePageShieldConnectionsSettingsConfig
 	}
@@ -4705,6 +4739,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.CloudflareFirewallEventsSettingsConfig != nil {
 		return *obj.CloudflareFirewallEventsSettingsConfig
+	}
+
+	if obj.CloudflareHttpRequestsSettingsConfig != nil {
+		return *obj.CloudflareHttpRequestsSettingsConfig
 	}
 
 	if obj.CloudflarePageShieldConnectionsSettingsConfig != nil {

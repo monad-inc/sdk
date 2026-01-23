@@ -80,6 +80,7 @@
 |**zoneIds** | **List&lt;String&gt;** | List of zone IDs (for zone-level rulesets). If empty and AccountID is not specified, fetches from all zones. |  [optional] |
 |**includeBotFields** | **Boolean** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) |  [optional] |
 |**zoneId** | **String** | Cloudflare Zone ID |  [optional] |
+|**fields** | **List&lt;String&gt;** | Fields to include in the query. Leave empty to use default curated list. Only fields available to your account will be included (validated against API). Maximum 50 fields due to API constraints. |  [optional] |
 |**excludeCdnCgi** | **Boolean** | Exclude connections to Cloudflare /cdn-cgi paths. Default: true |  [optional] |
 |**excludeIssueType** | **List&lt;String&gt;** | Filter to exclude specific issue types. Applied after the include filter. |  [optional] |
 |**excludeSeverity** | **List&lt;String&gt;** | Filter to exclude specific severity levels. Applied after the include filter. |  [optional] |

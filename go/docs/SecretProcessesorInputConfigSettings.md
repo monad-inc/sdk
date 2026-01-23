@@ -77,6 +77,7 @@ Name | Type | Description | Notes
 **ZoneIds** | Pointer to **[]string** | List of zone IDs (for zone-level rulesets). If empty and AccountID is not specified, fetches from all zones. | [optional] 
 **IncludeBotFields** | Pointer to **bool** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) | [optional] 
 **ZoneId** | Pointer to **string** | Cloudflare Zone ID | [optional] 
+**Fields** | Pointer to **[]string** | Fields to include in the query. Leave empty to use default curated list. Only fields available to your account will be included (validated against API). Maximum 50 fields due to API constraints. | [optional] 
 **ExcludeCdnCgi** | Pointer to **bool** | Exclude connections to Cloudflare /cdn-cgi paths. Default: true | [optional] 
 **ExcludeIssueType** | Pointer to **[]string** | Filter to exclude specific issue types. Applied after the include filter. | [optional] 
 **ExcludeSeverity** | Pointer to **[]string** | Filter to exclude specific severity levels. Applied after the include filter. | [optional] 
@@ -2025,6 +2026,31 @@ SetZoneId sets ZoneId field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasZoneId() bool`
 
 HasZoneId returns a boolean if a field has been set.
+
+### GetFields
+
+`func (o *SecretProcessesorInputConfigSettings) GetFields() []string`
+
+GetFields returns the Fields field if non-nil, zero value otherwise.
+
+### GetFieldsOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetFieldsOk() (*[]string, bool)`
+
+GetFieldsOk returns a tuple with the Fields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFields
+
+`func (o *SecretProcessesorInputConfigSettings) SetFields(v []string)`
+
+SetFields sets Fields field to given value.
+
+### HasFields
+
+`func (o *SecretProcessesorInputConfigSettings) HasFields() bool`
+
+HasFields returns a boolean if a field has been set.
 
 ### GetExcludeCdnCgi
 

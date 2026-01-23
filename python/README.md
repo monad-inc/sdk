@@ -336,6 +336,8 @@ Class | Method | HTTP request | Description
  - [CloudflareDnsRecordsSettingsConfig](docs/CloudflareDnsRecordsSettingsConfig.md)
  - [CloudflareFirewallEventsSecretsConfig](docs/CloudflareFirewallEventsSecretsConfig.md)
  - [CloudflareFirewallEventsSettingsConfig](docs/CloudflareFirewallEventsSettingsConfig.md)
+ - [CloudflareHttpRequestsSecretsConfig](docs/CloudflareHttpRequestsSecretsConfig.md)
+ - [CloudflareHttpRequestsSettingsConfig](docs/CloudflareHttpRequestsSettingsConfig.md)
  - [CloudflarePageShieldConnectionsSecretsConfig](docs/CloudflarePageShieldConnectionsSecretsConfig.md)
  - [CloudflarePageShieldConnectionsSettingsConfig](docs/CloudflarePageShieldConnectionsSettingsConfig.md)
  - [CloudflareRulesetsSecretsConfig](docs/CloudflareRulesetsSecretsConfig.md)

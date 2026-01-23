@@ -141,6 +141,8 @@ __all__ = [
     "CloudflareDnsRecordsSettingsConfig",
     "CloudflareFirewallEventsSecretsConfig",
     "CloudflareFirewallEventsSettingsConfig",
+    "CloudflareHttpRequestsSecretsConfig",
+    "CloudflareHttpRequestsSettingsConfig",
     "CloudflarePageShieldConnectionsSecretsConfig",
     "CloudflarePageShieldConnectionsSettingsConfig",
     "CloudflareRulesetsSecretsConfig",
@@ -704,6 +706,8 @@ from monad.models.cloudflare_dns_records_secrets_config import CloudflareDnsReco
 from monad.models.cloudflare_dns_records_settings_config import CloudflareDnsRecordsSettingsConfig as CloudflareDnsRecordsSettingsConfig
 from monad.models.cloudflare_firewall_events_secrets_config import CloudflareFirewallEventsSecretsConfig as CloudflareFirewallEventsSecretsConfig
 from monad.models.cloudflare_firewall_events_settings_config import CloudflareFirewallEventsSettingsConfig as CloudflareFirewallEventsSettingsConfig
+from monad.models.cloudflare_http_requests_secrets_config import CloudflareHttpRequestsSecretsConfig as CloudflareHttpRequestsSecretsConfig
+from monad.models.cloudflare_http_requests_settings_config import CloudflareHttpRequestsSettingsConfig as CloudflareHttpRequestsSettingsConfig
 from monad.models.cloudflare_page_shield_connections_secrets_config import CloudflarePageShieldConnectionsSecretsConfig as CloudflarePageShieldConnectionsSecretsConfig
 from monad.models.cloudflare_page_shield_connections_settings_config import CloudflarePageShieldConnectionsSettingsConfig as CloudflarePageShieldConnectionsSettingsConfig
 from monad.models.cloudflare_rulesets_secrets_config import CloudflareRulesetsSecretsConfig as CloudflareRulesetsSecretsConfig
