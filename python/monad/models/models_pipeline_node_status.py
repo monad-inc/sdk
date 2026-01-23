@@ -35,11 +35,12 @@ class ModelsPipelineNodeStatus(BaseModel):
     errors: Optional[StrictInt] = None
     expired_messages: Optional[StrictInt] = None
     ingress: Optional[ModelsDataUsage] = None
+    last_ingested_time: Optional[StrictStr] = None
     node_id: Optional[StrictStr] = None
     node_slug: Optional[StrictStr] = None
     progress_timestamps: Optional[PipelineNodeStatusProgressTimestamps] = None
     status: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "node_id", "node_slug", "progress_timestamps", "status"]
+    __properties: ClassVar[List[str]] = ["component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "last_ingested_time", "node_id", "node_slug", "progress_timestamps", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,6 +108,7 @@ class ModelsPipelineNodeStatus(BaseModel):
             "errors": obj.get("errors"),
             "expired_messages": obj.get("expired_messages"),
             "ingress": ModelsDataUsage.from_dict(obj["ingress"]) if obj.get("ingress") is not None else None,
+            "last_ingested_time": obj.get("last_ingested_time"),
             "node_id": obj.get("node_id"),
             "node_slug": obj.get("node_slug"),
             "progress_timestamps": PipelineNodeStatusProgressTimestamps.from_dict(obj["progress_timestamps"]) if obj.get("progress_timestamps") is not None else None,

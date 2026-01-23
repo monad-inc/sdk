@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **errors** | **int** |  | [optional] 
 **expired_messages** | **int** |  | [optional] 
 **ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
+**last_ingested_time** | **str** |  | [optional] 
 **node_id** | **str** |  | [optional] 
 **node_slug** | **str** |  | [optional] 
 **progress_timestamps** | [**PipelineNodeStatusProgressTimestamps**](PipelineNodeStatusProgressTimestamps.md) |  | [optional] 

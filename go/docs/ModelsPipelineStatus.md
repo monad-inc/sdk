@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Errors** | Pointer to **int32** |  | [optional] 
 **ExpiredMessages** | Pointer to **int32** |  | [optional] 
 **Ingress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
+**LastIngestedTime** | Pointer to **string** |  | [optional] 
 **Nodes** | Pointer to [**[]ModelsPipelineNodeStatus**](ModelsPipelineNodeStatus.md) |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **OrganizationName** | Pointer to **string** |  | [optional] 
@@ -133,6 +134,31 @@ SetIngress sets Ingress field to given value.
 `func (o *ModelsPipelineStatus) HasIngress() bool`
 
 HasIngress returns a boolean if a field has been set.
+
+### GetLastIngestedTime
+
+`func (o *ModelsPipelineStatus) GetLastIngestedTime() string`
+
+GetLastIngestedTime returns the LastIngestedTime field if non-nil, zero value otherwise.
+
+### GetLastIngestedTimeOk
+
+`func (o *ModelsPipelineStatus) GetLastIngestedTimeOk() (*string, bool)`
+
+GetLastIngestedTimeOk returns a tuple with the LastIngestedTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastIngestedTime
+
+`func (o *ModelsPipelineStatus) SetLastIngestedTime(v string)`
+
+SetLastIngestedTime sets LastIngestedTime field to given value.
+
+### HasLastIngestedTime
+
+`func (o *ModelsPipelineStatus) HasLastIngestedTime() bool`
+
+HasLastIngestedTime returns a boolean if a field has been set.
 
 ### GetNodes
 

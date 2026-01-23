@@ -24,6 +24,7 @@ type ModelsPipelineStatus struct {
 	Errors *int32 `json:"errors,omitempty"`
 	ExpiredMessages *int32 `json:"expired_messages,omitempty"`
 	Ingress *ModelsDataUsage `json:"ingress,omitempty"`
+	LastIngestedTime *string `json:"last_ingested_time,omitempty"`
 	Nodes []ModelsPipelineNodeStatus `json:"nodes,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	OrganizationName *string `json:"organization_name,omitempty"`
@@ -175,6 +176,38 @@ func (o *ModelsPipelineStatus) HasIngress() bool {
 // SetIngress gets a reference to the given ModelsDataUsage and assigns it to the Ingress field.
 func (o *ModelsPipelineStatus) SetIngress(v ModelsDataUsage) {
 	o.Ingress = &v
+}
+
+// GetLastIngestedTime returns the LastIngestedTime field value if set, zero value otherwise.
+func (o *ModelsPipelineStatus) GetLastIngestedTime() string {
+	if o == nil || IsNil(o.LastIngestedTime) {
+		var ret string
+		return ret
+	}
+	return *o.LastIngestedTime
+}
+
+// GetLastIngestedTimeOk returns a tuple with the LastIngestedTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineStatus) GetLastIngestedTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.LastIngestedTime) {
+		return nil, false
+	}
+	return o.LastIngestedTime, true
+}
+
+// HasLastIngestedTime returns a boolean if a field has been set.
+func (o *ModelsPipelineStatus) HasLastIngestedTime() bool {
+	if o != nil && !IsNil(o.LastIngestedTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastIngestedTime gets a reference to the given string and assigns it to the LastIngestedTime field.
+func (o *ModelsPipelineStatus) SetLastIngestedTime(v string) {
+	o.LastIngestedTime = &v
 }
 
 // GetNodes returns the Nodes field value if set, zero value otherwise.
@@ -390,6 +423,9 @@ func (o ModelsPipelineStatus) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Ingress) {
 		toSerialize["ingress"] = o.Ingress
+	}
+	if !IsNil(o.LastIngestedTime) {
+		toSerialize["last_ingested_time"] = o.LastIngestedTime
 	}
 	if !IsNil(o.Nodes) {
 		toSerialize["nodes"] = o.Nodes

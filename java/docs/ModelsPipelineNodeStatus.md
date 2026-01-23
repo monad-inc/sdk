@@ -13,6 +13,7 @@
 |**errors** | **Integer** |  |  [optional] |
 |**expiredMessages** | **Integer** |  |  [optional] |
 |**ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  |  [optional] |
+|**lastIngestedTime** | **String** |  |  [optional] |
 |**nodeId** | **String** |  |  [optional] |
 |**nodeSlug** | **String** |  |  [optional] |
 |**progressTimestamps** | [**PipelineNodeStatusProgressTimestamps**](PipelineNodeStatusProgressTimestamps.md) |  |  [optional] |

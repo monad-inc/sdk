@@ -21,6 +21,7 @@ export class ModelsPipelineNodeStatus {
     'errors'?: number;
     'expiredMessages'?: number;
     'ingress'?: ModelsDataUsage;
+    'lastIngestedTime'?: string;
     'nodeId'?: string;
     'nodeSlug'?: string;
     'progressTimestamps'?: PipelineNodeStatusProgressTimestamps;
@@ -65,6 +66,12 @@ export class ModelsPipelineNodeStatus {
             "name": "ingress",
             "baseName": "ingress",
             "type": "ModelsDataUsage",
+            "format": ""
+        },
+        {
+            "name": "lastIngestedTime",
+            "baseName": "last_ingested_time",
+            "type": "string",
             "format": ""
         },
         {

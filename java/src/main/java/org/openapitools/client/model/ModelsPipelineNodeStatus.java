@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNodeStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-23T06:42:12.632444934Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-23T21:18:28.790284982Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsPipelineNodeStatus {
   public static final String SERIALIZED_NAME_COMPONENT_TYPE = "component_type";
   @SerializedName(SERIALIZED_NAME_COMPONENT_TYPE)
@@ -81,6 +81,11 @@ public class ModelsPipelineNodeStatus {
   @SerializedName(SERIALIZED_NAME_INGRESS)
   @javax.annotation.Nullable
   private ModelsDataUsage ingress;
+
+  public static final String SERIALIZED_NAME_LAST_INGESTED_TIME = "last_ingested_time";
+  @SerializedName(SERIALIZED_NAME_LAST_INGESTED_TIME)
+  @javax.annotation.Nullable
+  private String lastIngestedTime;
 
   public static final String SERIALIZED_NAME_NODE_ID = "node_id";
   @SerializedName(SERIALIZED_NAME_NODE_ID)
@@ -219,6 +224,25 @@ public class ModelsPipelineNodeStatus {
   }
 
 
+  public ModelsPipelineNodeStatus lastIngestedTime(@javax.annotation.Nullable String lastIngestedTime) {
+    this.lastIngestedTime = lastIngestedTime;
+    return this;
+  }
+
+  /**
+   * Get lastIngestedTime
+   * @return lastIngestedTime
+   */
+  @javax.annotation.Nullable
+  public String getLastIngestedTime() {
+    return lastIngestedTime;
+  }
+
+  public void setLastIngestedTime(@javax.annotation.Nullable String lastIngestedTime) {
+    this.lastIngestedTime = lastIngestedTime;
+  }
+
+
   public ModelsPipelineNodeStatus nodeId(@javax.annotation.Nullable String nodeId) {
     this.nodeId = nodeId;
     return this;
@@ -311,6 +335,7 @@ public class ModelsPipelineNodeStatus {
         Objects.equals(this.errors, modelsPipelineNodeStatus.errors) &&
         Objects.equals(this.expiredMessages, modelsPipelineNodeStatus.expiredMessages) &&
         Objects.equals(this.ingress, modelsPipelineNodeStatus.ingress) &&
+        Objects.equals(this.lastIngestedTime, modelsPipelineNodeStatus.lastIngestedTime) &&
         Objects.equals(this.nodeId, modelsPipelineNodeStatus.nodeId) &&
         Objects.equals(this.nodeSlug, modelsPipelineNodeStatus.nodeSlug) &&
         Objects.equals(this.progressTimestamps, modelsPipelineNodeStatus.progressTimestamps) &&
@@ -319,7 +344,7 @@ public class ModelsPipelineNodeStatus {
 
   @Override
   public int hashCode() {
-    return Objects.hash(componentType, componentTypeId, egress, errors, expiredMessages, ingress, nodeId, nodeSlug, progressTimestamps, status);
+    return Objects.hash(componentType, componentTypeId, egress, errors, expiredMessages, ingress, lastIngestedTime, nodeId, nodeSlug, progressTimestamps, status);
   }
 
   @Override
@@ -332,6 +357,7 @@ public class ModelsPipelineNodeStatus {
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    expiredMessages: ").append(toIndentedString(expiredMessages)).append("\n");
     sb.append("    ingress: ").append(toIndentedString(ingress)).append("\n");
+    sb.append("    lastIngestedTime: ").append(toIndentedString(lastIngestedTime)).append("\n");
     sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
     sb.append("    nodeSlug: ").append(toIndentedString(nodeSlug)).append("\n");
     sb.append("    progressTimestamps: ").append(toIndentedString(progressTimestamps)).append("\n");
@@ -357,7 +383,7 @@ public class ModelsPipelineNodeStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "node_id", "node_slug", "progress_timestamps", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "last_ingested_time", "node_id", "node_slug", "progress_timestamps", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -397,6 +423,9 @@ public class ModelsPipelineNodeStatus {
       // validate the optional field `ingress`
       if (jsonObj.get("ingress") != null && !jsonObj.get("ingress").isJsonNull()) {
         ModelsDataUsage.validateJsonElement(jsonObj.get("ingress"));
+      }
+      if ((jsonObj.get("last_ingested_time") != null && !jsonObj.get("last_ingested_time").isJsonNull()) && !jsonObj.get("last_ingested_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `last_ingested_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_ingested_time").toString()));
       }
       if ((jsonObj.get("node_id") != null && !jsonObj.get("node_id").isJsonNull()) && !jsonObj.get("node_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `node_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("node_id").toString()));

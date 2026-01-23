@@ -26,6 +26,7 @@ type ModelsPipelineNodeStatus struct {
 	Errors *int32 `json:"errors,omitempty"`
 	ExpiredMessages *int32 `json:"expired_messages,omitempty"`
 	Ingress *ModelsDataUsage `json:"ingress,omitempty"`
+	LastIngestedTime *string `json:"last_ingested_time,omitempty"`
 	NodeId *string `json:"node_id,omitempty"`
 	NodeSlug *string `json:"node_slug,omitempty"`
 	ProgressTimestamps *PipelineNodeStatusProgressTimestamps `json:"progress_timestamps,omitempty"`
@@ -241,6 +242,38 @@ func (o *ModelsPipelineNodeStatus) SetIngress(v ModelsDataUsage) {
 	o.Ingress = &v
 }
 
+// GetLastIngestedTime returns the LastIngestedTime field value if set, zero value otherwise.
+func (o *ModelsPipelineNodeStatus) GetLastIngestedTime() string {
+	if o == nil || IsNil(o.LastIngestedTime) {
+		var ret string
+		return ret
+	}
+	return *o.LastIngestedTime
+}
+
+// GetLastIngestedTimeOk returns a tuple with the LastIngestedTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineNodeStatus) GetLastIngestedTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.LastIngestedTime) {
+		return nil, false
+	}
+	return o.LastIngestedTime, true
+}
+
+// HasLastIngestedTime returns a boolean if a field has been set.
+func (o *ModelsPipelineNodeStatus) HasLastIngestedTime() bool {
+	if o != nil && !IsNil(o.LastIngestedTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastIngestedTime gets a reference to the given string and assigns it to the LastIngestedTime field.
+func (o *ModelsPipelineNodeStatus) SetLastIngestedTime(v string) {
+	o.LastIngestedTime = &v
+}
+
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
 func (o *ModelsPipelineNodeStatus) GetNodeId() string {
 	if o == nil || IsNil(o.NodeId) {
@@ -396,6 +429,9 @@ func (o ModelsPipelineNodeStatus) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Ingress) {
 		toSerialize["ingress"] = o.Ingress
+	}
+	if !IsNil(o.LastIngestedTime) {
+		toSerialize["last_ingested_time"] = o.LastIngestedTime
 	}
 	if !IsNil(o.NodeId) {
 		toSerialize["node_id"] = o.NodeId

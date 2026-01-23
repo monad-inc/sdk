@@ -33,13 +33,14 @@ class ModelsPipelineStatus(BaseModel):
     errors: Optional[StrictInt] = None
     expired_messages: Optional[StrictInt] = None
     ingress: Optional[ModelsDataUsage] = None
+    last_ingested_time: Optional[StrictStr] = None
     nodes: Optional[List[ModelsPipelineNodeStatus]] = None
     organization_id: Optional[StrictStr] = None
     organization_name: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None
     pipeline_name: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["egress", "errors", "expired_messages", "ingress", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "status"]
+    __properties: ClassVar[List[str]] = ["egress", "errors", "expired_messages", "ingress", "last_ingested_time", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -109,6 +110,7 @@ class ModelsPipelineStatus(BaseModel):
             "errors": obj.get("errors"),
             "expired_messages": obj.get("expired_messages"),
             "ingress": ModelsDataUsage.from_dict(obj["ingress"]) if obj.get("ingress") is not None else None,
+            "last_ingested_time": obj.get("last_ingested_time"),
             "nodes": [ModelsPipelineNodeStatus.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None,
             "organization_id": obj.get("organization_id"),
             "organization_name": obj.get("organization_name"),

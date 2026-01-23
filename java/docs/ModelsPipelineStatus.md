@@ -11,6 +11,7 @@
 |**errors** | **Integer** |  |  [optional] |
 |**expiredMessages** | **Integer** |  |  [optional] |
 |**ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  |  [optional] |
+|**lastIngestedTime** | **String** |  |  [optional] |
 |**nodes** | [**List&lt;ModelsPipelineNodeStatus&gt;**](ModelsPipelineNodeStatus.md) |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**organizationName** | **String** |  |  [optional] |
