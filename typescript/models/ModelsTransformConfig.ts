@@ -10,10 +10,12 @@
  * Do not edit the class manually.
  */
 
+import { ModelsTransformConditions } from '../models/ModelsTransformConditions';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { HttpFile } from '../http/http';
 
 export class ModelsTransformConfig {
+    'conditions'?: ModelsTransformConditions;
     'operations'?: Array<ModelsTransformOperation>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -21,6 +23,12 @@ export class ModelsTransformConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "conditions",
+            "baseName": "conditions",
+            "type": "ModelsTransformConditions",
+            "format": ""
+        },
         {
             "name": "operations",
             "baseName": "operations",

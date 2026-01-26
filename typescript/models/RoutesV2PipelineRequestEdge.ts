@@ -10,11 +10,11 @@
  * Do not edit the class manually.
  */
 
-import { ModelsPipelineEdgeConditions } from '../models/ModelsPipelineEdgeConditions';
+import { ModelsConditionEvaluatable } from '../models/ModelsConditionEvaluatable';
 import { HttpFile } from '../http/http';
 
 export class RoutesV2PipelineRequestEdge {
-    'conditions'?: ModelsPipelineEdgeConditions;
+    'conditions'?: ModelsConditionEvaluatable;
     'description'?: string;
     'fromNodeInstanceId': string;
     'name'?: string;
@@ -28,7 +28,7 @@ export class RoutesV2PipelineRequestEdge {
         {
             "name": "conditions",
             "baseName": "conditions",
-            "type": "ModelsPipelineEdgeConditions",
+            "type": "ModelsConditionEvaluatable",
             "format": ""
         },
         {

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**conditions** | [**ModelsPipelineEdgeConditions**](ModelsPipelineEdgeConditions.md) |  | [optional] 
+**conditions** | [**ModelsConditionEvaluatable**](ModelsConditionEvaluatable.md) |  | [optional] 
 **description** | **str** |  | [optional] 
 **from_node_instance_id** | **str** |  | 
 **name** | **str** |  | [optional] 

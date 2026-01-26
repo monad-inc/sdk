@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Conditions** | Pointer to [**ModelsPipelineEdgeConditions**](ModelsPipelineEdgeConditions.md) |  | [optional] 
+**Conditions** | Pointer to [**ModelsConditionEvaluatable**](ModelsConditionEvaluatable.md) |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Disabled** | Pointer to **bool** |  | [optional] 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetConditions
 
-`func (o *ModelsPipelineEdge) GetConditions() ModelsPipelineEdgeConditions`
+`func (o *ModelsPipelineEdge) GetConditions() ModelsConditionEvaluatable`
 
 GetConditions returns the Conditions field if non-nil, zero value otherwise.
 
 ### GetConditionsOk
 
-`func (o *ModelsPipelineEdge) GetConditionsOk() (*ModelsPipelineEdgeConditions, bool)`
+`func (o *ModelsPipelineEdge) GetConditionsOk() (*ModelsConditionEvaluatable, bool)`
 
 GetConditionsOk returns a tuple with the Conditions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConditions
 
-`func (o *ModelsPipelineEdge) SetConditions(v ModelsPipelineEdgeConditions)`
+`func (o *ModelsPipelineEdge) SetConditions(v ModelsConditionEvaluatable)`
 
 SetConditions sets Conditions field to given value.
 

@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**conditions** | [**ModelsPipelineEdgeConditions**](ModelsPipelineEdgeConditions.md) |  |  [optional] |
+|**conditions** | [**ModelsConditionEvaluatable**](ModelsConditionEvaluatable.md) |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**disabled** | **Boolean** |  |  [optional] |

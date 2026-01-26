@@ -209,6 +209,7 @@ export * from '../models/ModelsBillingAccountRoleUser';
 export * from '../models/ModelsBillingProduct';
 export * from '../models/ModelsBillingProductList';
 export * from '../models/ModelsComponentReference';
+export * from '../models/ModelsConditionEvaluatable';
 export * from '../models/ModelsConnection';
 export * from '../models/ModelsConnectionList';
 export * from '../models/ModelsConnectorMeta';
@@ -231,8 +232,6 @@ export * from '../models/ModelsPermissionList';
 export * from '../models/ModelsPipeline';
 export * from '../models/ModelsPipelineConfigV2';
 export * from '../models/ModelsPipelineEdge';
-export * from '../models/ModelsPipelineEdgeCondition';
-export * from '../models/ModelsPipelineEdgeConditions';
 export * from '../models/ModelsPipelineList';
 export * from '../models/ModelsPipelineMetrics';
 export * from '../models/ModelsPipelineMetricsValue';
@@ -254,6 +253,7 @@ export * from '../models/ModelsStorageTypeSummaryResponse';
 export * from '../models/ModelsStorageTypeTimeSeries';
 export * from '../models/ModelsStorageTypeTimeSeriesResponse';
 export * from '../models/ModelsTransform';
+export * from '../models/ModelsTransformConditions';
 export * from '../models/ModelsTransformConfig';
 export * from '../models/ModelsTransformList';
 export * from '../models/ModelsTransformOperation';
@@ -727,6 +727,7 @@ import { ModelsBillingAccountRoleUser } from '../models/ModelsBillingAccountRole
 import { ModelsBillingProduct } from '../models/ModelsBillingProduct';
 import { ModelsBillingProductList } from '../models/ModelsBillingProductList';
 import { ModelsComponentReference } from '../models/ModelsComponentReference';
+import { ModelsConditionEvaluatable } from '../models/ModelsConditionEvaluatable';
 import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectorMeta } from '../models/ModelsConnectorMeta';
@@ -749,8 +750,6 @@ import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline } from '../models/ModelsPipeline';
 import { ModelsPipelineConfigV2 } from '../models/ModelsPipelineConfigV2';
 import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
-import { ModelsPipelineEdgeCondition } from '../models/ModelsPipelineEdgeCondition';
-import { ModelsPipelineEdgeConditions } from '../models/ModelsPipelineEdgeConditions';
 import { ModelsPipelineList } from '../models/ModelsPipelineList';
 import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
 import { ModelsPipelineMetricsValue } from '../models/ModelsPipelineMetricsValue';
@@ -772,6 +771,7 @@ import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSum
 import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
 import { ModelsTransform } from '../models/ModelsTransform';
+import { ModelsTransformConditions } from '../models/ModelsTransformConditions';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
@@ -1277,6 +1277,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsBillingProduct": ModelsBillingProduct,
     "ModelsBillingProductList": ModelsBillingProductList,
     "ModelsComponentReference": ModelsComponentReference,
+    "ModelsConditionEvaluatable": ModelsConditionEvaluatable,
     "ModelsConnection": ModelsConnection,
     "ModelsConnectionList": ModelsConnectionList,
     "ModelsConnectorMeta": ModelsConnectorMeta,
@@ -1299,8 +1300,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsPipeline": ModelsPipeline,
     "ModelsPipelineConfigV2": ModelsPipelineConfigV2,
     "ModelsPipelineEdge": ModelsPipelineEdge,
-    "ModelsPipelineEdgeCondition": ModelsPipelineEdgeCondition,
-    "ModelsPipelineEdgeConditions": ModelsPipelineEdgeConditions,
     "ModelsPipelineList": ModelsPipelineList,
     "ModelsPipelineMetrics": ModelsPipelineMetrics,
     "ModelsPipelineMetricsValue": ModelsPipelineMetricsValue,
@@ -1322,6 +1321,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsStorageTypeTimeSeries": ModelsStorageTypeTimeSeries,
     "ModelsStorageTypeTimeSeriesResponse": ModelsStorageTypeTimeSeriesResponse,
     "ModelsTransform": ModelsTransform,
+    "ModelsTransformConditions": ModelsTransformConditions,
     "ModelsTransformConfig": ModelsTransformConfig,
     "ModelsTransformList": ModelsTransformList,
     "ModelsTransformOperation": ModelsTransformOperation,

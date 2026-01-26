@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**conditions** | [**ModelsTransformConditions**](ModelsTransformConditions.md) |  | [optional] 
 **operations** | [**List[ModelsTransformOperation]**](ModelsTransformOperation.md) |  | [optional] 
 
 ## Example

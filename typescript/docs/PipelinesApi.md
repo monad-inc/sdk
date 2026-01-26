@@ -808,14 +808,13 @@ const request: PipelinesApiV2OrganizationIdPipelinesPipelineIdPatchRequest = {
       {
         conditions: {
           conditions: [
-            {
-              config: {
-                "key": null,
-              },
-              typeId: "typeId_example",
-            },
+            ,
           ],
+          config: {
+            "key": null,
+          },
           operator: "operator_example",
+          typeId: "typeId_example",
         },
         description: "description_example",
         fromNodeInstanceId: "fromNodeInstanceId_example",
@@ -1098,14 +1097,13 @@ const request: PipelinesApiV2OrganizationIdPipelinesPostRequest = {
       {
         conditions: {
           conditions: [
-            {
-              config: {
-                "key": null,
-              },
-              typeId: "typeId_example",
-            },
+            ,
           ],
+          config: {
+            "key": null,
+          },
           operator: "operator_example",
+          typeId: "typeId_example",
         },
         description: "description_example",
         fromNodeInstanceId: "fromNodeInstanceId_example",

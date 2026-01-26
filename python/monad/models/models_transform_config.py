@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_transform_conditions import ModelsTransformConditions
 from monad.models.models_transform_operation import ModelsTransformOperation
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +29,9 @@ class ModelsTransformConfig(BaseModel):
     """
     ModelsTransformConfig
     """ # noqa: E501
+    conditions: Optional[ModelsTransformConditions] = None
     operations: Optional[List[ModelsTransformOperation]] = None
-    __properties: ClassVar[List[str]] = ["operations"]
+    __properties: ClassVar[List[str]] = ["conditions", "operations"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,6 +72,9 @@ class ModelsTransformConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of conditions
+        if self.conditions:
+            _dict['conditions'] = self.conditions.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in operations (list)
         _items = []
         if self.operations:
@@ -89,6 +94,7 @@ class ModelsTransformConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "conditions": ModelsTransformConditions.from_dict(obj["conditions"]) if obj.get("conditions") is not None else None,
             "operations": [ModelsTransformOperation.from_dict(_item) for _item in obj["operations"]] if obj.get("operations") is not None else None
         })
         return _obj

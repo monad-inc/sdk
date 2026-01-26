@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * PantherSecretsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-26T06:51:02.626668493Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-26T21:35:12.114974568Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class PantherSecretsConfig {
   public static final String SERIALIZED_NAME_BEARER_TOKEN = "bearer_token";
   @SerializedName(SERIALIZED_NAME_BEARER_TOKEN)

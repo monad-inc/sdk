@@ -20,7 +20,7 @@ var _ MappedNullable = &ModelsPipelineEdge{}
 
 // ModelsPipelineEdge struct for ModelsPipelineEdge
 type ModelsPipelineEdge struct {
-	Conditions *ModelsPipelineEdgeConditions `json:"conditions,omitempty"`
+	Conditions *ModelsConditionEvaluatable `json:"conditions,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Disabled *bool `json:"disabled,omitempty"`
@@ -50,9 +50,9 @@ func NewModelsPipelineEdgeWithDefaults() *ModelsPipelineEdge {
 }
 
 // GetConditions returns the Conditions field value if set, zero value otherwise.
-func (o *ModelsPipelineEdge) GetConditions() ModelsPipelineEdgeConditions {
+func (o *ModelsPipelineEdge) GetConditions() ModelsConditionEvaluatable {
 	if o == nil || IsNil(o.Conditions) {
-		var ret ModelsPipelineEdgeConditions
+		var ret ModelsConditionEvaluatable
 		return ret
 	}
 	return *o.Conditions
@@ -60,7 +60,7 @@ func (o *ModelsPipelineEdge) GetConditions() ModelsPipelineEdgeConditions {
 
 // GetConditionsOk returns a tuple with the Conditions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPipelineEdge) GetConditionsOk() (*ModelsPipelineEdgeConditions, bool) {
+func (o *ModelsPipelineEdge) GetConditionsOk() (*ModelsConditionEvaluatable, bool) {
 	if o == nil || IsNil(o.Conditions) {
 		return nil, false
 	}
@@ -76,8 +76,8 @@ func (o *ModelsPipelineEdge) HasConditions() bool {
 	return false
 }
 
-// SetConditions gets a reference to the given ModelsPipelineEdgeConditions and assigns it to the Conditions field.
-func (o *ModelsPipelineEdge) SetConditions(v ModelsPipelineEdgeConditions) {
+// SetConditions gets a reference to the given ModelsConditionEvaluatable and assigns it to the Conditions field.
+func (o *ModelsPipelineEdge) SetConditions(v ModelsConditionEvaluatable) {
 	o.Conditions = &v
 }
 

@@ -138,6 +138,19 @@ const request: SandboxApiV2SandboxTransformPostRequest = {
     // Transform configuration and record
   routesV2ApplyTransformationRequest: {
     config: {
+      conditions: {
+        conditions: {
+          conditions: [
+            ,
+          ],
+          config: {
+            "key": null,
+          },
+          operator: "operator_example",
+          typeId: "typeId_example",
+        },
+        onFail: "onFail_example",
+      },
       operations: [
         {
           arguments: {

@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-01-26T06:51:02.626668493Z[Etc/UTC]
+  - Build date: 2026-01-26T21:35:12.114974568Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -495,6 +495,7 @@ Class | Method | HTTP request | Description
  - [ModelsBillingProduct](docs/ModelsBillingProduct.md)
  - [ModelsBillingProductList](docs/ModelsBillingProductList.md)
  - [ModelsComponentReference](docs/ModelsComponentReference.md)
+ - [ModelsConditionEvaluatable](docs/ModelsConditionEvaluatable.md)
  - [ModelsConnection](docs/ModelsConnection.md)
  - [ModelsConnectionList](docs/ModelsConnectionList.md)
  - [ModelsConnectorMeta](docs/ModelsConnectorMeta.md)
@@ -517,8 +518,6 @@ Class | Method | HTTP request | Description
  - [ModelsPipeline](docs/ModelsPipeline.md)
  - [ModelsPipelineConfigV2](docs/ModelsPipelineConfigV2.md)
  - [ModelsPipelineEdge](docs/ModelsPipelineEdge.md)
- - [ModelsPipelineEdgeCondition](docs/ModelsPipelineEdgeCondition.md)
- - [ModelsPipelineEdgeConditions](docs/ModelsPipelineEdgeConditions.md)
  - [ModelsPipelineList](docs/ModelsPipelineList.md)
  - [ModelsPipelineMetrics](docs/ModelsPipelineMetrics.md)
  - [ModelsPipelineMetricsValue](docs/ModelsPipelineMetricsValue.md)
@@ -540,6 +539,7 @@ Class | Method | HTTP request | Description
  - [ModelsStorageTypeTimeSeries](docs/ModelsStorageTypeTimeSeries.md)
  - [ModelsStorageTypeTimeSeriesResponse](docs/ModelsStorageTypeTimeSeriesResponse.md)
  - [ModelsTransform](docs/ModelsTransform.md)
+ - [ModelsTransformConditions](docs/ModelsTransformConditions.md)
  - [ModelsTransformConfig](docs/ModelsTransformConfig.md)
  - [ModelsTransformList](docs/ModelsTransformList.md)
  - [ModelsTransformOperation](docs/ModelsTransformOperation.md)

@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_pipeline_edge_conditions import ModelsPipelineEdgeConditions
+from monad.models.models_condition_evaluatable import ModelsConditionEvaluatable
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class RoutesV2PipelineRequestEdge(BaseModel):
     """
     RoutesV2PipelineRequestEdge
     """ # noqa: E501
-    conditions: Optional[ModelsPipelineEdgeConditions] = None
+    conditions: Optional[ModelsConditionEvaluatable] = None
     description: Optional[StrictStr] = None
     from_node_instance_id: StrictStr
     name: Optional[StrictStr] = None
@@ -89,7 +89,7 @@ class RoutesV2PipelineRequestEdge(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "conditions": ModelsPipelineEdgeConditions.from_dict(obj["conditions"]) if obj.get("conditions") is not None else None,
+            "conditions": ModelsConditionEvaluatable.from_dict(obj["conditions"]) if obj.get("conditions") is not None else None,
             "description": obj.get("description"),
             "from_node_instance_id": obj.get("from_node_instance_id"),
             "name": obj.get("name"),

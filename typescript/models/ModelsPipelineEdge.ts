@@ -10,11 +10,11 @@
  * Do not edit the class manually.
  */
 
-import { ModelsPipelineEdgeConditions } from '../models/ModelsPipelineEdgeConditions';
+import { ModelsConditionEvaluatable } from '../models/ModelsConditionEvaluatable';
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineEdge {
-    'conditions'?: ModelsPipelineEdgeConditions;
+    'conditions'?: ModelsConditionEvaluatable;
     'createdAt'?: string;
     'description'?: string;
     'disabled'?: boolean;
@@ -33,7 +33,7 @@ export class ModelsPipelineEdge {
         {
             "name": "conditions",
             "baseName": "conditions",
-            "type": "ModelsPipelineEdgeConditions",
+            "type": "ModelsConditionEvaluatable",
             "format": ""
         },
         {

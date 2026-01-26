@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsPipelineEdgeConditions;
+import org.openapitools.client.model.ModelsConditionEvaluatable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,12 +49,12 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineEdge
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-26T06:51:02.626668493Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-26T21:35:12.114974568Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsPipelineEdge {
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
   @javax.annotation.Nullable
-  private ModelsPipelineEdgeConditions conditions;
+  private ModelsConditionEvaluatable conditions;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -104,7 +104,7 @@ public class ModelsPipelineEdge {
   public ModelsPipelineEdge() {
   }
 
-  public ModelsPipelineEdge conditions(@javax.annotation.Nullable ModelsPipelineEdgeConditions conditions) {
+  public ModelsPipelineEdge conditions(@javax.annotation.Nullable ModelsConditionEvaluatable conditions) {
     this.conditions = conditions;
     return this;
   }
@@ -114,11 +114,11 @@ public class ModelsPipelineEdge {
    * @return conditions
    */
   @javax.annotation.Nullable
-  public ModelsPipelineEdgeConditions getConditions() {
+  public ModelsConditionEvaluatable getConditions() {
     return conditions;
   }
 
-  public void setConditions(@javax.annotation.Nullable ModelsPipelineEdgeConditions conditions) {
+  public void setConditions(@javax.annotation.Nullable ModelsConditionEvaluatable conditions) {
     this.conditions = conditions;
   }
 
@@ -385,7 +385,7 @@ public class ModelsPipelineEdge {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `conditions`
       if (jsonObj.get("conditions") != null && !jsonObj.get("conditions").isJsonNull()) {
-        ModelsPipelineEdgeConditions.validateJsonElement(jsonObj.get("conditions"));
+        ModelsConditionEvaluatable.validateJsonElement(jsonObj.get("conditions"));
       }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
