@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNodeStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-26T21:35:12.114974568Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-26T21:55:20.795157164Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsPipelineNodeStatus {
   public static final String SERIALIZED_NAME_COMPONENT_TYPE = "component_type";
   @SerializedName(SERIALIZED_NAME_COMPONENT_TYPE)

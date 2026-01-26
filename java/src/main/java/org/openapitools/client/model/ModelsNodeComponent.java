@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsNodeComponent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-26T21:35:12.114974568Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-26T21:55:20.795157164Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsNodeComponent {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
