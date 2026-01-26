@@ -57,6 +57,7 @@ Name | Type | Description | Notes
 **TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
 **EventType** | Pointer to **string** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **FilterTerm** | Pointer to **string** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
+**OrganizationId** | Pointer to **string** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
 **OrgSlug** | Pointer to **string** | The ID or slug of the organization | [optional] 
 **EnablePagination** | Pointer to **bool** | Enable pagination support | [optional] 
 **GraphqlQuery** | Pointer to **string** | The GraphQL query to execute against the endpoint to fetch data | [optional] 
@@ -98,7 +99,6 @@ Name | Type | Description | Notes
 **UserId** | Pointer to **string** | ID of the user to harvest audit logs for | [optional] 
 **Category** | Pointer to **string** | The Category of logs to query | [optional] 
 **FieldOption** | Pointer to **string** |  | [optional] 
-**OrganizationId** | Pointer to **string** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
 **Namespace** | Pointer to **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | [optional] 
 **WorkspaceId** | Pointer to **string** | The workspace ID of the Log Analytics workspace | [optional] 
 **AppName** | Pointer to **string** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
@@ -1528,6 +1528,31 @@ SetFilterTerm sets FilterTerm field to given value.
 
 HasFilterTerm returns a boolean if a field has been set.
 
+### GetOrganizationId
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrganizationId() string`
+
+GetOrganizationId returns the OrganizationId field if non-nil, zero value otherwise.
+
+### GetOrganizationIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrganizationIdOk() (*string, bool)`
+
+GetOrganizationIdOk returns a tuple with the OrganizationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrganizationId
+
+`func (o *SecretProcessesorInputConfigSettings) SetOrganizationId(v string)`
+
+SetOrganizationId sets OrganizationId field to given value.
+
+### HasOrganizationId
+
+`func (o *SecretProcessesorInputConfigSettings) HasOrganizationId() bool`
+
+HasOrganizationId returns a boolean if a field has been set.
+
 ### GetOrgSlug
 
 `func (o *SecretProcessesorInputConfigSettings) GetOrgSlug() string`
@@ -2552,31 +2577,6 @@ SetFieldOption sets FieldOption field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasFieldOption() bool`
 
 HasFieldOption returns a boolean if a field has been set.
-
-### GetOrganizationId
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrganizationId() string`
-
-GetOrganizationId returns the OrganizationId field if non-nil, zero value otherwise.
-
-### GetOrganizationIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrganizationIdOk() (*string, bool)`
-
-GetOrganizationIdOk returns a tuple with the OrganizationId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOrganizationId
-
-`func (o *SecretProcessesorInputConfigSettings) SetOrganizationId(v string)`
-
-SetOrganizationId sets OrganizationId field to given value.
-
-### HasOrganizationId
-
-`func (o *SecretProcessesorInputConfigSettings) HasOrganizationId() bool`
-
-HasOrganizationId returns a boolean if a field has been set.
 
 ### GetNamespace
 

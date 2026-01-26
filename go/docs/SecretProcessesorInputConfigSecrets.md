@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **ApplicationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApplicationKeyId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **EnterpriseId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**PersonalAuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AwsAccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -394,6 +395,31 @@ SetEnterpriseId sets EnterpriseId field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasEnterpriseId() bool`
 
 HasEnterpriseId returns a boolean if a field has been set.
+
+### GetPersonalAuthToken
+
+`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAuthToken() ModelsSecret`
+
+GetPersonalAuthToken returns the PersonalAuthToken field if non-nil, zero value otherwise.
+
+### GetPersonalAuthTokenOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAuthTokenOk() (*ModelsSecret, bool)`
+
+GetPersonalAuthTokenOk returns a tuple with the PersonalAuthToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPersonalAuthToken
+
+`func (o *SecretProcessesorInputConfigSecrets) SetPersonalAuthToken(v ModelsSecret)`
+
+SetPersonalAuthToken sets PersonalAuthToken field to given value.
+
+### HasPersonalAuthToken
+
+`func (o *SecretProcessesorInputConfigSecrets) HasPersonalAuthToken() bool`
+
+HasPersonalAuthToken returns a boolean if a field has been set.
 
 ### GetApiToken
 

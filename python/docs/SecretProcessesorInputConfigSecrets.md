@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **application_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **application_key_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **enterprise_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**personal_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **aws_access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-01-26T21:55:20.795157164Z[Etc/UTC]
+  - Build date: 2026-01-26T22:19:41.258564359Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -344,6 +344,8 @@ Class | Method | HTTP request | Description
  - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
  - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
  - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
+ - [BugsnagOrgEventsSecretsConfig](docs/BugsnagOrgEventsSecretsConfig.md)
+ - [BugsnagOrgEventsSettingsConfig](docs/BugsnagOrgEventsSettingsConfig.md)
  - [BuildkiteAuditLogsSecretsConfig](docs/BuildkiteAuditLogsSecretsConfig.md)
  - [BuildkiteAuditLogsSettingsConfig](docs/BuildkiteAuditLogsSettingsConfig.md)
  - [BuildkiteGraphqlInputSecretsConfig](docs/BuildkiteGraphqlInputSecretsConfig.md)

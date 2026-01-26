@@ -21,6 +21,7 @@
 |**applicationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**applicationKeyId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**enterpriseId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**personalAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**awsAccessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

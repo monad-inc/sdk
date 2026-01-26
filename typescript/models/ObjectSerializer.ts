@@ -58,6 +58,8 @@ export * from '../models/BoxEventsSecretsConfig';
 export * from '../models/BoxEventsSettingsConfig';
 export * from '../models/BoxUsersSecretsConfig';
 export * from '../models/BoxUsersSettingsConfig';
+export * from '../models/BugsnagOrgEventsSecretsConfig';
+export * from '../models/BugsnagOrgEventsSettingsConfig';
 export * from '../models/BuildkiteAuditLogsSecretsConfig';
 export * from '../models/BuildkiteAuditLogsSettingsConfig';
 export * from '../models/BuildkiteGraphqlInputSecretsConfig';
@@ -576,6 +578,8 @@ import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
+import { BugsnagOrgEventsSecretsConfig } from '../models/BugsnagOrgEventsSecretsConfig';
+import { BugsnagOrgEventsSettingsConfig } from '../models/BugsnagOrgEventsSettingsConfig';
 import { BuildkiteAuditLogsSecretsConfig } from '../models/BuildkiteAuditLogsSecretsConfig';
 import { BuildkiteAuditLogsSettingsConfig } from '../models/BuildkiteAuditLogsSettingsConfig';
 import { BuildkiteGraphqlInputSecretsConfig } from '../models/BuildkiteGraphqlInputSecretsConfig';
@@ -1126,6 +1130,8 @@ let typeMap: {[index: string]: any} = {
     "BoxEventsSettingsConfig": BoxEventsSettingsConfig,
     "BoxUsersSecretsConfig": BoxUsersSecretsConfig,
     "BoxUsersSettingsConfig": BoxUsersSettingsConfig,
+    "BugsnagOrgEventsSecretsConfig": BugsnagOrgEventsSecretsConfig,
+    "BugsnagOrgEventsSettingsConfig": BugsnagOrgEventsSettingsConfig,
     "BuildkiteAuditLogsSecretsConfig": BuildkiteAuditLogsSecretsConfig,
     "BuildkiteAuditLogsSettingsConfig": BuildkiteAuditLogsSettingsConfig,
     "BuildkiteGraphqlInputSecretsConfig": BuildkiteGraphqlInputSecretsConfig,

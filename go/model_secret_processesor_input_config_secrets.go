@@ -40,6 +40,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	BigqueryInputSecretsConfig *BigqueryInputSecretsConfig
 	BoxEventsSecretsConfig *BoxEventsSecretsConfig
 	BoxUsersSecretsConfig *BoxUsersSecretsConfig
+	BugsnagOrgEventsSecretsConfig *BugsnagOrgEventsSecretsConfig
 	BuildkiteAuditLogsSecretsConfig *BuildkiteAuditLogsSecretsConfig
 	BuildkiteGraphqlInputSecretsConfig *BuildkiteGraphqlInputSecretsConfig
 	CloudAssetInventorySecretsConfig *CloudAssetInventorySecretsConfig
@@ -284,6 +285,13 @@ func BoxEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BoxEventsSec
 func BoxUsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BoxUsersSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		BoxUsersSecretsConfig: v,
+	}
+}
+
+// BugsnagOrgEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns BugsnagOrgEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func BugsnagOrgEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BugsnagOrgEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		BugsnagOrgEventsSecretsConfig: v,
 	}
 }
 
@@ -1333,6 +1341,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.BoxUsersSecretsConfig = nil
+	}
+
+	// try to unmarshal data into BugsnagOrgEventsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.BugsnagOrgEventsSecretsConfig)
+	if err == nil {
+		jsonBugsnagOrgEventsSecretsConfig, _ := json.Marshal(dst.BugsnagOrgEventsSecretsConfig)
+		if string(jsonBugsnagOrgEventsSecretsConfig) == "{}" { // empty struct
+			dst.BugsnagOrgEventsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BugsnagOrgEventsSecretsConfig); err != nil {
+				dst.BugsnagOrgEventsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BugsnagOrgEventsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into BuildkiteAuditLogsSecretsConfig
@@ -3024,6 +3049,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.BigqueryInputSecretsConfig = nil
 		dst.BoxEventsSecretsConfig = nil
 		dst.BoxUsersSecretsConfig = nil
+		dst.BugsnagOrgEventsSecretsConfig = nil
 		dst.BuildkiteAuditLogsSecretsConfig = nil
 		dst.BuildkiteGraphqlInputSecretsConfig = nil
 		dst.CloudAssetInventorySecretsConfig = nil
@@ -3215,6 +3241,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.BoxUsersSecretsConfig != nil {
 		return json.Marshal(&src.BoxUsersSecretsConfig)
+	}
+
+	if src.BugsnagOrgEventsSecretsConfig != nil {
+		return json.Marshal(&src.BugsnagOrgEventsSecretsConfig)
 	}
 
 	if src.BuildkiteAuditLogsSecretsConfig != nil {
@@ -3701,6 +3731,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.BoxUsersSecretsConfig
 	}
 
+	if obj.BugsnagOrgEventsSecretsConfig != nil {
+		return obj.BugsnagOrgEventsSecretsConfig
+	}
+
 	if obj.BuildkiteAuditLogsSecretsConfig != nil {
 		return obj.BuildkiteAuditLogsSecretsConfig
 	}
@@ -4181,6 +4215,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.BoxUsersSecretsConfig != nil {
 		return *obj.BoxUsersSecretsConfig
+	}
+
+	if obj.BugsnagOrgEventsSecretsConfig != nil {
+		return *obj.BugsnagOrgEventsSecretsConfig
 	}
 
 	if obj.BuildkiteAuditLogsSecretsConfig != nil {

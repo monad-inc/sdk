@@ -60,6 +60,7 @@
 |**timestampColumn** | **String** | The column containing timestamp values used for incremental loading |  [optional] |
 |**eventType** | **String** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types |  [optional] |
 |**filterTerm** | **String** | Limits the results to only users who&#39;s name or login start with the search term. |  [optional] |
+|**organizationId** | **String** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. |  [optional] |
 |**orgSlug** | **String** | The ID or slug of the organization |  [optional] |
 |**enablePagination** | **Boolean** | Enable pagination support |  [optional] |
 |**graphqlQuery** | **String** | The GraphQL query to execute against the endpoint to fetch data |  [optional] |
@@ -101,7 +102,6 @@
 |**userId** | **String** | ID of the user to harvest audit logs for |  [optional] |
 |**category** | **String** | The Category of logs to query |  [optional] |
 |**fieldOption** | **String** |  |  [optional] |
-|**organizationId** | **String** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. |  [optional] |
 |**namespace** | **String** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) |  [optional] |
 |**workspaceId** | **String** | The workspace ID of the Log Analytics workspace |  [optional] |
 |**appName** | **String** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. |  [optional] |
