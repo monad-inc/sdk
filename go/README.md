@@ -246,6 +246,8 @@ Class | Method | HTTP request | Description
  - [AddIdAddIdentifier](docs/AddIdAddIdentifier.md)
  - [AdminLogsSecretsConfig](docs/AdminLogsSecretsConfig.md)
  - [AdminLogsSettingsConfig](docs/AdminLogsSettingsConfig.md)
+ - [AivenServiceLogsSecretsConfig](docs/AivenServiceLogsSecretsConfig.md)
+ - [AivenServiceLogsSettingsConfig](docs/AivenServiceLogsSettingsConfig.md)
  - [AlertCenterSecretsConfig](docs/AlertCenterSecretsConfig.md)
  - [AlertCenterSettingsConfig](docs/AlertCenterSettingsConfig.md)
  - [AlertsAlertMeta](docs/AlertsAlertMeta.md)

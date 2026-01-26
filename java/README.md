@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-01-23T22:33:07.486667628Z[Etc/UTC]
+  - Build date: 2026-01-26T06:51:02.626668493Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -296,6 +296,8 @@ Class | Method | HTTP request | Description
  - [AddIdAddIdentifier](docs/AddIdAddIdentifier.md)
  - [AdminLogsSecretsConfig](docs/AdminLogsSecretsConfig.md)
  - [AdminLogsSettingsConfig](docs/AdminLogsSettingsConfig.md)
+ - [AivenServiceLogsSecretsConfig](docs/AivenServiceLogsSecretsConfig.md)
+ - [AivenServiceLogsSettingsConfig](docs/AivenServiceLogsSettingsConfig.md)
  - [AlertCenterSecretsConfig](docs/AlertCenterSecretsConfig.md)
  - [AlertCenterSettingsConfig](docs/AlertCenterSettingsConfig.md)
  - [AlertsAlertMeta](docs/AlertsAlertMeta.md)

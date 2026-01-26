@@ -12,6 +12,7 @@
 |**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**authToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**oauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**personalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
@@ -28,7 +29,6 @@
 |**apiSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**harvestApiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**githubAppPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**authToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**userOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**token** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**password** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

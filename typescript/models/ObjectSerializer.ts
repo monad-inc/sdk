@@ -10,6 +10,8 @@ export * from '../models/AddAdd';
 export * from '../models/AddIdAddIdentifier';
 export * from '../models/AdminLogsSecretsConfig';
 export * from '../models/AdminLogsSettingsConfig';
+export * from '../models/AivenServiceLogsSecretsConfig';
+export * from '../models/AivenServiceLogsSettingsConfig';
 export * from '../models/AlertCenterSecretsConfig';
 export * from '../models/AlertCenterSettingsConfig';
 export * from '../models/AlertsAlertMeta';
@@ -526,6 +528,8 @@ import { AddAdd } from '../models/AddAdd';
 import { AddIdAddIdentifier } from '../models/AddIdAddIdentifier';
 import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
+import { AivenServiceLogsSecretsConfig } from '../models/AivenServiceLogsSecretsConfig';
+import { AivenServiceLogsSettingsConfig } from '../models/AivenServiceLogsSettingsConfig';
 import { AlertCenterSecretsConfig } from '../models/AlertCenterSecretsConfig';
 import { AlertCenterSettingsConfig } from '../models/AlertCenterSettingsConfig';
 import { AlertsAlertMeta } from '../models/AlertsAlertMeta';
@@ -1074,6 +1078,8 @@ let typeMap: {[index: string]: any} = {
     "AddIdAddIdentifier": AddIdAddIdentifier,
     "AdminLogsSecretsConfig": AdminLogsSecretsConfig,
     "AdminLogsSettingsConfig": AdminLogsSettingsConfig,
+    "AivenServiceLogsSecretsConfig": AivenServiceLogsSecretsConfig,
+    "AivenServiceLogsSettingsConfig": AivenServiceLogsSettingsConfig,
     "AlertCenterSecretsConfig": AlertCenterSecretsConfig,
     "AlertCenterSettingsConfig": AlertCenterSettingsConfig,
     "AlertsAlertMeta": AlertsAlertMeta,

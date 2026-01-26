@@ -74,6 +74,8 @@ __all__ = [
     "AddIdAddIdentifier",
     "AdminLogsSecretsConfig",
     "AdminLogsSettingsConfig",
+    "AivenServiceLogsSecretsConfig",
+    "AivenServiceLogsSettingsConfig",
     "AlertCenterSecretsConfig",
     "AlertCenterSettingsConfig",
     "AlertsAlertMeta",
@@ -639,6 +641,8 @@ from monad.models.add_add import AddAdd as AddAdd
 from monad.models.add_id_add_identifier import AddIdAddIdentifier as AddIdAddIdentifier
 from monad.models.admin_logs_secrets_config import AdminLogsSecretsConfig as AdminLogsSecretsConfig
 from monad.models.admin_logs_settings_config import AdminLogsSettingsConfig as AdminLogsSettingsConfig
+from monad.models.aiven_service_logs_secrets_config import AivenServiceLogsSecretsConfig as AivenServiceLogsSecretsConfig
+from monad.models.aiven_service_logs_settings_config import AivenServiceLogsSettingsConfig as AivenServiceLogsSettingsConfig
 from monad.models.alert_center_secrets_config import AlertCenterSecretsConfig as AlertCenterSecretsConfig
 from monad.models.alert_center_settings_config import AlertCenterSettingsConfig as AlertCenterSettingsConfig
 from monad.models.alerts_alert_meta import AlertsAlertMeta as AlertsAlertMeta

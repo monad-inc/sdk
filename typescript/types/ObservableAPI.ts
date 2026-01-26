@@ -15,6 +15,8 @@ import { AddAdd } from '../models/AddAdd';
 import { AddIdAddIdentifier } from '../models/AddIdAddIdentifier';
 import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
+import { AivenServiceLogsSecretsConfig } from '../models/AivenServiceLogsSecretsConfig';
+import { AivenServiceLogsSettingsConfig } from '../models/AivenServiceLogsSettingsConfig';
 import { AlertCenterSecretsConfig } from '../models/AlertCenterSecretsConfig';
 import { AlertCenterSettingsConfig } from '../models/AlertCenterSettingsConfig';
 import { AlertsAlertMeta } from '../models/AlertsAlertMeta';

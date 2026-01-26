@@ -23,6 +23,7 @@ type SecretProcessesorInputConfigSettings struct {
 	ActivitylogsSettingsConfig *ActivitylogsSettingsConfig
 	ActorsInfoSettingsConfig *ActorsInfoSettingsConfig
 	AdminLogsSettingsConfig *AdminLogsSettingsConfig
+	AivenServiceLogsSettingsConfig *AivenServiceLogsSettingsConfig
 	AlertCenterSettingsConfig *AlertCenterSettingsConfig
 	ArizeAuditLogsSettingsConfig *ArizeAuditLogsSettingsConfig
 	AuditLogsSettingsConfig *AuditLogsSettingsConfig
@@ -180,6 +181,13 @@ func ActorsInfoSettingsConfigAsSecretProcessesorInputConfigSettings(v *ActorsInf
 func AdminLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AdminLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		AdminLogsSettingsConfig: v,
+	}
+}
+
+// AivenServiceLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AivenServiceLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func AivenServiceLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AivenServiceLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		AivenServiceLogsSettingsConfig: v,
 	}
 }
 
@@ -1164,6 +1172,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.AdminLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into AivenServiceLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AivenServiceLogsSettingsConfig)
+	if err == nil {
+		jsonAivenServiceLogsSettingsConfig, _ := json.Marshal(dst.AivenServiceLogsSettingsConfig)
+		if string(jsonAivenServiceLogsSettingsConfig) == "{}" { // empty struct
+			dst.AivenServiceLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AivenServiceLogsSettingsConfig); err != nil {
+				dst.AivenServiceLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AivenServiceLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into AlertCenterSettingsConfig
@@ -3382,6 +3407,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.ActivitylogsSettingsConfig = nil
 		dst.ActorsInfoSettingsConfig = nil
 		dst.AdminLogsSettingsConfig = nil
+		dst.AivenServiceLogsSettingsConfig = nil
 		dst.AlertCenterSettingsConfig = nil
 		dst.ArizeAuditLogsSettingsConfig = nil
 		dst.AuditLogsSettingsConfig = nil
@@ -3537,6 +3563,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.AdminLogsSettingsConfig != nil {
 		return json.Marshal(&src.AdminLogsSettingsConfig)
+	}
+
+	if src.AivenServiceLogsSettingsConfig != nil {
+		return json.Marshal(&src.AivenServiceLogsSettingsConfig)
 	}
 
 	if src.AlertCenterSettingsConfig != nil {
@@ -4083,6 +4113,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.AdminLogsSettingsConfig
 	}
 
+	if obj.AivenServiceLogsSettingsConfig != nil {
+		return obj.AivenServiceLogsSettingsConfig
+	}
+
 	if obj.AlertCenterSettingsConfig != nil {
 		return obj.AlertCenterSettingsConfig
 	}
@@ -4623,6 +4657,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.AdminLogsSettingsConfig != nil {
 		return *obj.AdminLogsSettingsConfig
+	}
+
+	if obj.AivenServiceLogsSettingsConfig != nil {
+		return *obj.AivenServiceLogsSettingsConfig
 	}
 
 	if obj.AlertCenterSettingsConfig != nil {
