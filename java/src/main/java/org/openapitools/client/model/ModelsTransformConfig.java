@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.ModelsTransformConditions;
+import org.openapitools.client.model.ModelsTransformConditional;
 import org.openapitools.client.model.ModelsTransformOperation;
 
 import com.google.gson.Gson;
@@ -52,12 +52,12 @@ import org.openapitools.client.JSON;
 /**
  * ModelsTransformConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-27T02:35:47.299738478Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-27T19:14:02.597105567Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsTransformConfig {
-  public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
-  @SerializedName(SERIALIZED_NAME_CONDITIONS)
+  public static final String SERIALIZED_NAME_CONDITIONAL = "conditional";
+  @SerializedName(SERIALIZED_NAME_CONDITIONAL)
   @javax.annotation.Nullable
-  private ModelsTransformConditions conditions;
+  private ModelsTransformConditional conditional;
 
   public static final String SERIALIZED_NAME_OPERATIONS = "operations";
   @SerializedName(SERIALIZED_NAME_OPERATIONS)
@@ -67,22 +67,22 @@ public class ModelsTransformConfig {
   public ModelsTransformConfig() {
   }
 
-  public ModelsTransformConfig conditions(@javax.annotation.Nullable ModelsTransformConditions conditions) {
-    this.conditions = conditions;
+  public ModelsTransformConfig conditional(@javax.annotation.Nullable ModelsTransformConditional conditional) {
+    this.conditional = conditional;
     return this;
   }
 
   /**
-   * Get conditions
-   * @return conditions
+   * Get conditional
+   * @return conditional
    */
   @javax.annotation.Nullable
-  public ModelsTransformConditions getConditions() {
-    return conditions;
+  public ModelsTransformConditional getConditional() {
+    return conditional;
   }
 
-  public void setConditions(@javax.annotation.Nullable ModelsTransformConditions conditions) {
-    this.conditions = conditions;
+  public void setConditional(@javax.annotation.Nullable ModelsTransformConditional conditional) {
+    this.conditional = conditional;
   }
 
 
@@ -123,20 +123,20 @@ public class ModelsTransformConfig {
       return false;
     }
     ModelsTransformConfig modelsTransformConfig = (ModelsTransformConfig) o;
-    return Objects.equals(this.conditions, modelsTransformConfig.conditions) &&
+    return Objects.equals(this.conditional, modelsTransformConfig.conditional) &&
         Objects.equals(this.operations, modelsTransformConfig.operations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditions, operations);
+    return Objects.hash(conditional, operations);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsTransformConfig {\n");
-    sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+    sb.append("    conditional: ").append(toIndentedString(conditional)).append("\n");
     sb.append("    operations: ").append(toIndentedString(operations)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -159,7 +159,7 @@ public class ModelsTransformConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("conditions", "operations"));
+    openapiFields = new HashSet<String>(Arrays.asList("conditional", "operations"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -186,9 +186,9 @@ public class ModelsTransformConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `conditions`
-      if (jsonObj.get("conditions") != null && !jsonObj.get("conditions").isJsonNull()) {
-        ModelsTransformConditions.validateJsonElement(jsonObj.get("conditions"));
+      // validate the optional field `conditional`
+      if (jsonObj.get("conditional") != null && !jsonObj.get("conditional").isJsonNull()) {
+        ModelsTransformConditional.validateJsonElement(jsonObj.get("conditional"));
       }
       if (jsonObj.get("operations") != null && !jsonObj.get("operations").isJsonNull()) {
         JsonArray jsonArrayoperations = jsonObj.getAsJsonArray("operations");

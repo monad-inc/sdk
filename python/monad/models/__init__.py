@@ -271,7 +271,7 @@ from monad.models.models_storage_type_summary_response import ModelsStorageTypeS
 from monad.models.models_storage_type_time_series import ModelsStorageTypeTimeSeries
 from monad.models.models_storage_type_time_series_response import ModelsStorageTypeTimeSeriesResponse
 from monad.models.models_transform import ModelsTransform
-from monad.models.models_transform_conditions import ModelsTransformConditions
+from monad.models.models_transform_conditional import ModelsTransformConditional
 from monad.models.models_transform_config import ModelsTransformConfig
 from monad.models.models_transform_list import ModelsTransformList
 from monad.models.models_transform_operation import ModelsTransformOperation

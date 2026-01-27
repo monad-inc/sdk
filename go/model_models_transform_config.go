@@ -20,7 +20,7 @@ var _ MappedNullable = &ModelsTransformConfig{}
 
 // ModelsTransformConfig struct for ModelsTransformConfig
 type ModelsTransformConfig struct {
-	Conditions *ModelsTransformConditions `json:"conditions,omitempty"`
+	Conditional *ModelsTransformConditional `json:"conditional,omitempty"`
 	Operations []ModelsTransformOperation `json:"operations,omitempty"`
 }
 
@@ -41,36 +41,36 @@ func NewModelsTransformConfigWithDefaults() *ModelsTransformConfig {
 	return &this
 }
 
-// GetConditions returns the Conditions field value if set, zero value otherwise.
-func (o *ModelsTransformConfig) GetConditions() ModelsTransformConditions {
-	if o == nil || IsNil(o.Conditions) {
-		var ret ModelsTransformConditions
+// GetConditional returns the Conditional field value if set, zero value otherwise.
+func (o *ModelsTransformConfig) GetConditional() ModelsTransformConditional {
+	if o == nil || IsNil(o.Conditional) {
+		var ret ModelsTransformConditional
 		return ret
 	}
-	return *o.Conditions
+	return *o.Conditional
 }
 
-// GetConditionsOk returns a tuple with the Conditions field value if set, nil otherwise
+// GetConditionalOk returns a tuple with the Conditional field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTransformConfig) GetConditionsOk() (*ModelsTransformConditions, bool) {
-	if o == nil || IsNil(o.Conditions) {
+func (o *ModelsTransformConfig) GetConditionalOk() (*ModelsTransformConditional, bool) {
+	if o == nil || IsNil(o.Conditional) {
 		return nil, false
 	}
-	return o.Conditions, true
+	return o.Conditional, true
 }
 
-// HasConditions returns a boolean if a field has been set.
-func (o *ModelsTransformConfig) HasConditions() bool {
-	if o != nil && !IsNil(o.Conditions) {
+// HasConditional returns a boolean if a field has been set.
+func (o *ModelsTransformConfig) HasConditional() bool {
+	if o != nil && !IsNil(o.Conditional) {
 		return true
 	}
 
 	return false
 }
 
-// SetConditions gets a reference to the given ModelsTransformConditions and assigns it to the Conditions field.
-func (o *ModelsTransformConfig) SetConditions(v ModelsTransformConditions) {
-	o.Conditions = &v
+// SetConditional gets a reference to the given ModelsTransformConditional and assigns it to the Conditional field.
+func (o *ModelsTransformConfig) SetConditional(v ModelsTransformConditional) {
+	o.Conditional = &v
 }
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
@@ -115,8 +115,8 @@ func (o ModelsTransformConfig) MarshalJSON() ([]byte, error) {
 
 func (o ModelsTransformConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Conditions) {
-		toSerialize["conditions"] = o.Conditions
+	if !IsNil(o.Conditional) {
+		toSerialize["conditional"] = o.Conditional
 	}
 	if !IsNil(o.Operations) {
 		toSerialize["operations"] = o.Operations

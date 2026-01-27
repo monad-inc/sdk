@@ -138,7 +138,7 @@ const request: SandboxApiV2SandboxTransformPostRequest = {
     // Transform configuration and record
   routesV2ApplyTransformationRequest: {
     config: {
-      conditions: {
+      conditional: {
         conditions: {
           conditions: [
             ,
@@ -149,7 +149,7 @@ const request: SandboxApiV2SandboxTransformPostRequest = {
           operator: "operator_example",
           typeId: "typeId_example",
         },
-        onFail: "onFail_example",
+        _else: "_else_example",
       },
       operations: [
         {

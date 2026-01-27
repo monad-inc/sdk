@@ -260,7 +260,7 @@ import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSum
 import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
 import { ModelsTransform } from '../models/ModelsTransform';
-import { ModelsTransformConditions } from '../models/ModelsTransformConditions';
+import { ModelsTransformConditional } from '../models/ModelsTransformConditional';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';

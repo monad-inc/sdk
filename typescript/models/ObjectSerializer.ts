@@ -255,7 +255,7 @@ export * from '../models/ModelsStorageTypeSummaryResponse';
 export * from '../models/ModelsStorageTypeTimeSeries';
 export * from '../models/ModelsStorageTypeTimeSeriesResponse';
 export * from '../models/ModelsTransform';
-export * from '../models/ModelsTransformConditions';
+export * from '../models/ModelsTransformConditional';
 export * from '../models/ModelsTransformConfig';
 export * from '../models/ModelsTransformList';
 export * from '../models/ModelsTransformOperation';
@@ -775,7 +775,7 @@ import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSum
 import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
 import { ModelsTransform } from '../models/ModelsTransform';
-import { ModelsTransformConditions } from '../models/ModelsTransformConditions';
+import { ModelsTransformConditional } from '../models/ModelsTransformConditional';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
@@ -1327,7 +1327,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsStorageTypeTimeSeries": ModelsStorageTypeTimeSeries,
     "ModelsStorageTypeTimeSeriesResponse": ModelsStorageTypeTimeSeriesResponse,
     "ModelsTransform": ModelsTransform,
-    "ModelsTransformConditions": ModelsTransformConditions,
+    "ModelsTransformConditional": ModelsTransformConditional,
     "ModelsTransformConfig": ModelsTransformConfig,
     "ModelsTransformList": ModelsTransformList,
     "ModelsTransformOperation": ModelsTransformOperation,

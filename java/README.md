@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-01-27T02:35:47.299738478Z[Etc/UTC]
+  - Build date: 2026-01-27T19:14:02.597105567Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -541,7 +541,7 @@ Class | Method | HTTP request | Description
  - [ModelsStorageTypeTimeSeries](docs/ModelsStorageTypeTimeSeries.md)
  - [ModelsStorageTypeTimeSeriesResponse](docs/ModelsStorageTypeTimeSeriesResponse.md)
  - [ModelsTransform](docs/ModelsTransform.md)
- - [ModelsTransformConditions](docs/ModelsTransformConditions.md)
+ - [ModelsTransformConditional](docs/ModelsTransformConditional.md)
  - [ModelsTransformConfig](docs/ModelsTransformConfig.md)
  - [ModelsTransformList](docs/ModelsTransformList.md)
  - [ModelsTransformOperation](docs/ModelsTransformOperation.md)

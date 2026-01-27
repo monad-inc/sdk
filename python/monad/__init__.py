@@ -319,7 +319,7 @@ __all__ = [
     "ModelsStorageTypeTimeSeries",
     "ModelsStorageTypeTimeSeriesResponse",
     "ModelsTransform",
-    "ModelsTransformConditions",
+    "ModelsTransformConditional",
     "ModelsTransformConfig",
     "ModelsTransformList",
     "ModelsTransformOperation",
@@ -888,7 +888,7 @@ from monad.models.models_storage_type_summary_response import ModelsStorageTypeS
 from monad.models.models_storage_type_time_series import ModelsStorageTypeTimeSeries as ModelsStorageTypeTimeSeries
 from monad.models.models_storage_type_time_series_response import ModelsStorageTypeTimeSeriesResponse as ModelsStorageTypeTimeSeriesResponse
 from monad.models.models_transform import ModelsTransform as ModelsTransform
-from monad.models.models_transform_conditions import ModelsTransformConditions as ModelsTransformConditions
+from monad.models.models_transform_conditional import ModelsTransformConditional as ModelsTransformConditional
 from monad.models.models_transform_config import ModelsTransformConfig as ModelsTransformConfig
 from monad.models.models_transform_list import ModelsTransformList as ModelsTransformList
 from monad.models.models_transform_operation import ModelsTransformOperation as ModelsTransformOperation

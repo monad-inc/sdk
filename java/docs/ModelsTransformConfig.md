@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**conditions** | [**ModelsTransformConditions**](ModelsTransformConditions.md) |  |  [optional] |
+|**conditional** | [**ModelsTransformConditional**](ModelsTransformConditional.md) |  |  [optional] |
 |**operations** | [**List&lt;ModelsTransformOperation&gt;**](ModelsTransformOperation.md) |  |  [optional] |
 
 

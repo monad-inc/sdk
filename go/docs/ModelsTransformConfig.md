@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Conditions** | Pointer to [**ModelsTransformConditions**](ModelsTransformConditions.md) |  | [optional] 
+**Conditional** | Pointer to [**ModelsTransformConditional**](ModelsTransformConditional.md) |  | [optional] 
 **Operations** | Pointer to [**[]ModelsTransformOperation**](ModelsTransformOperation.md) |  | [optional] 
 
 ## Methods
@@ -26,30 +26,30 @@ NewModelsTransformConfigWithDefaults instantiates a new ModelsTransformConfig ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetConditions
+### GetConditional
 
-`func (o *ModelsTransformConfig) GetConditions() ModelsTransformConditions`
+`func (o *ModelsTransformConfig) GetConditional() ModelsTransformConditional`
 
-GetConditions returns the Conditions field if non-nil, zero value otherwise.
+GetConditional returns the Conditional field if non-nil, zero value otherwise.
 
-### GetConditionsOk
+### GetConditionalOk
 
-`func (o *ModelsTransformConfig) GetConditionsOk() (*ModelsTransformConditions, bool)`
+`func (o *ModelsTransformConfig) GetConditionalOk() (*ModelsTransformConditional, bool)`
 
-GetConditionsOk returns a tuple with the Conditions field if it's non-nil, zero value otherwise
+GetConditionalOk returns a tuple with the Conditional field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetConditions
+### SetConditional
 
-`func (o *ModelsTransformConfig) SetConditions(v ModelsTransformConditions)`
+`func (o *ModelsTransformConfig) SetConditional(v ModelsTransformConditional)`
 
-SetConditions sets Conditions field to given value.
+SetConditional sets Conditional field to given value.
 
-### HasConditions
+### HasConditional
 
-`func (o *ModelsTransformConfig) HasConditions() bool`
+`func (o *ModelsTransformConfig) HasConditional() bool`
 
-HasConditions returns a boolean if a field has been set.
+HasConditional returns a boolean if a field has been set.
 
 ### GetOperations
 

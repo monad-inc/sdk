@@ -491,7 +491,7 @@ Class | Method | HTTP request | Description
  - [ModelsStorageTypeTimeSeries](docs/ModelsStorageTypeTimeSeries.md)
  - [ModelsStorageTypeTimeSeriesResponse](docs/ModelsStorageTypeTimeSeriesResponse.md)
  - [ModelsTransform](docs/ModelsTransform.md)
- - [ModelsTransformConditions](docs/ModelsTransformConditions.md)
+ - [ModelsTransformConditional](docs/ModelsTransformConditional.md)
  - [ModelsTransformConfig](docs/ModelsTransformConfig.md)
  - [ModelsTransformList](docs/ModelsTransformList.md)
  - [ModelsTransformOperation](docs/ModelsTransformOperation.md)
