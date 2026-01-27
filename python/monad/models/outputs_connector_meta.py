@@ -36,10 +36,9 @@ class OutputsConnectorMeta(BaseModel):
     in_beta: Optional[StrictBool] = None
     internal: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
-    release_date: Optional[StrictStr] = None
     tier: Optional[StrictInt] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "name", "release_date", "tier", "type_id"]
+    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "name", "tier", "type_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,7 +105,6 @@ class OutputsConnectorMeta(BaseModel):
             "in_beta": obj.get("in_beta"),
             "internal": obj.get("internal"),
             "name": obj.get("name"),
-            "release_date": obj.get("release_date"),
             "tier": obj.get("tier"),
             "type_id": obj.get("type_id")
         })

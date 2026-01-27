@@ -15,10 +15,8 @@
 |**cron** | **String** | Cron string for scheduling the ingest of your input |  [optional] |
 |**sort** | **String** | Order fields in ascending or descending order. Ex: &#39;created_date|asc&#39;, &#39;created_date|desc&#39;. |  [optional] |
 |**targetIndustries** | **String** | Industries targeted by the actor. Ex: &#39;Financial&#39;, &#39;Healthcare&#39;, &#39;Energy&#39;, &#39;Government&#39;, &#39;Manufacturing&#39;, &#39;Technology&#39;, etc. Select &#39;None&#39; for no preference. |  [optional] |
-|**backfillStartTime** | **String** | Date to start fetching data from. If not specified, data from 6 months ago up till now from zoom is fetched on the first sync. All syncs thereafter will be incremental. |  [optional] |
-|**project** | **String** | The GCP project ID containing the BigQuery dataset |  [optional] |
-|**service** | **String** | The Aiven service name |  [optional] |
 |**authType** | **String** | AuthType is the type of authentication used for the input |  [optional] |
+|**backfillStartTime** | **String** | Date to start fetching data from. If not specified, data from 6 months ago up till now from zoom is fetched on the first sync. All syncs thereafter will be incremental. |  [optional] |
 |**email** | **String** | Email address to use to authenticate with Google Cloud (required for service_account auth). |  [optional] |
 |**intervalSeconds** | **Integer** | Time interval in seconds between consecutive GraphQL API calls |  [optional] |
 |**actions** | **List&lt;String&gt;** | Filter by specific actions. Use wildcards for broader matches (e.g., repo.*) |  [optional] |
@@ -55,12 +53,12 @@
 |**storageAccountUrl** | **String** | The Azure storage account URL where flow logs are stored |  [optional] |
 |**virtualNetworkName** | **String** | The name of the virtual network for which flow logs are being collected |  [optional] |
 |**dataset** | **String** | The BigQuery dataset ID containing the table |  [optional] |
+|**project** | **String** | The GCP project ID containing the BigQuery dataset |  [optional] |
 |**query** | **String** | Optional custom query to use instead of table (must include timestamp_column) |  [optional] |
 |**table** | **String** | The name of the table in Snowflake to query data from. |  [optional] |
 |**timestampColumn** | **String** | The column containing timestamp values used for incremental loading |  [optional] |
 |**eventType** | **String** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types |  [optional] |
 |**filterTerm** | **String** | Limits the results to only users who&#39;s name or login start with the search term. |  [optional] |
-|**organizationId** | **String** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. |  [optional] |
 |**orgSlug** | **String** | The ID or slug of the organization |  [optional] |
 |**enablePagination** | **Boolean** | Enable pagination support |  [optional] |
 |**graphqlQuery** | **String** | The GraphQL query to execute against the endpoint to fetch data |  [optional] |
@@ -102,6 +100,7 @@
 |**userId** | **String** | ID of the user to harvest audit logs for |  [optional] |
 |**category** | **String** | The Category of logs to query |  [optional] |
 |**fieldOption** | **String** |  |  [optional] |
+|**organizationId** | **String** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. |  [optional] |
 |**namespace** | **String** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) |  [optional] |
 |**workspaceId** | **String** | The workspace ID of the Log Analytics workspace |  [optional] |
 |**appName** | **String** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. |  [optional] |

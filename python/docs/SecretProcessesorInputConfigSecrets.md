@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -19,7 +18,6 @@ Name | Type | Description | Notes
 **application_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **application_key_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **enterprise_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**personal_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **aws_access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -28,6 +26,7 @@ Name | Type | Description | Notes
 **api_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **harvest_api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **github_app_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **user_oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

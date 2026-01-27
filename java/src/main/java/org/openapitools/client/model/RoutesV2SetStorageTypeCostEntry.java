@@ -49,13 +49,8 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2SetStorageTypeCostEntry
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-27T00:36:48.820716669Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-27T02:08:54.422571458Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV2SetStorageTypeCostEntry {
-  public static final String SERIALIZED_NAME_COST_PER_BYTE = "cost_per_byte";
-  @SerializedName(SERIALIZED_NAME_COST_PER_BYTE)
-  @javax.annotation.Nullable
-  private BigDecimal costPerByte;
-
   public static final String SERIALIZED_NAME_COST_PER_GB = "cost_per_gb";
   @SerializedName(SERIALIZED_NAME_COST_PER_GB)
   @javax.annotation.Nullable
@@ -63,25 +58,6 @@ public class RoutesV2SetStorageTypeCostEntry {
 
   public RoutesV2SetStorageTypeCostEntry() {
   }
-
-  public RoutesV2SetStorageTypeCostEntry costPerByte(@javax.annotation.Nullable BigDecimal costPerByte) {
-    this.costPerByte = costPerByte;
-    return this;
-  }
-
-  /**
-   * Get costPerByte
-   * @return costPerByte
-   */
-  @javax.annotation.Nullable
-  public BigDecimal getCostPerByte() {
-    return costPerByte;
-  }
-
-  public void setCostPerByte(@javax.annotation.Nullable BigDecimal costPerByte) {
-    this.costPerByte = costPerByte;
-  }
-
 
   public RoutesV2SetStorageTypeCostEntry costPerGb(@javax.annotation.Nullable BigDecimal costPerGb) {
     this.costPerGb = costPerGb;
@@ -112,20 +88,18 @@ public class RoutesV2SetStorageTypeCostEntry {
       return false;
     }
     RoutesV2SetStorageTypeCostEntry routesV2SetStorageTypeCostEntry = (RoutesV2SetStorageTypeCostEntry) o;
-    return Objects.equals(this.costPerByte, routesV2SetStorageTypeCostEntry.costPerByte) &&
-        Objects.equals(this.costPerGb, routesV2SetStorageTypeCostEntry.costPerGb);
+    return Objects.equals(this.costPerGb, routesV2SetStorageTypeCostEntry.costPerGb);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(costPerByte, costPerGb);
+    return Objects.hash(costPerGb);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV2SetStorageTypeCostEntry {\n");
-    sb.append("    costPerByte: ").append(toIndentedString(costPerByte)).append("\n");
     sb.append("    costPerGb: ").append(toIndentedString(costPerGb)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -148,7 +122,7 @@ public class RoutesV2SetStorageTypeCostEntry {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cost_per_byte", "cost_per_gb"));
+    openapiFields = new HashSet<String>(Arrays.asList("cost_per_gb"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

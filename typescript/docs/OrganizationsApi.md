@@ -740,7 +740,6 @@ const request: OrganizationsApiV2OrganizationIdStorageTypeCostPutRequest = {
   routesV2SetStorageTypeCostRequest: {
     costs: {
       "key": {
-        costPerByte: 3.14,
         costPerGb: 3.14,
       },
     },

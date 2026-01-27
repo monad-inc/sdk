@@ -27,9 +27,8 @@ class RoutesV2SetStorageTypeCostEntry(BaseModel):
     """
     RoutesV2SetStorageTypeCostEntry
     """ # noqa: E501
-    cost_per_byte: Optional[Union[StrictFloat, StrictInt]] = None
     cost_per_gb: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["cost_per_byte", "cost_per_gb"]
+    __properties: ClassVar[List[str]] = ["cost_per_gb"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,7 +81,6 @@ class RoutesV2SetStorageTypeCostEntry(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "cost_per_byte": obj.get("cost_per_byte"),
             "cost_per_gb": obj.get("cost_per_gb")
         })
         return _obj

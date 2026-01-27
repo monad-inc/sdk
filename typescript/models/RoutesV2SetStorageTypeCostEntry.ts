@@ -13,7 +13,6 @@
 import { HttpFile } from '../http/http';
 
 export class RoutesV2SetStorageTypeCostEntry {
-    'costPerByte'?: number;
     'costPerGb'?: number;
 
     static readonly discriminator: string | undefined = undefined;
@@ -21,12 +20,6 @@ export class RoutesV2SetStorageTypeCostEntry {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "costPerByte",
-            "baseName": "cost_per_byte",
-            "type": "number",
-            "format": ""
-        },
         {
             "name": "costPerGb",
             "baseName": "cost_per_gb",

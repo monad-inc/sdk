@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * InputsConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-27T00:36:48.820716669Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-27T02:08:54.422571458Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class InputsConnectorMeta {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
@@ -105,11 +105,6 @@ public class InputsConnectorMeta {
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
-
-  public static final String SERIALIZED_NAME_RELEASE_DATE = "release_date";
-  @SerializedName(SERIALIZED_NAME_RELEASE_DATE)
-  @javax.annotation.Nullable
-  private String releaseDate;
 
   public static final String SERIALIZED_NAME_TIER = "tier";
   @SerializedName(SERIALIZED_NAME_TIER)
@@ -333,25 +328,6 @@ public class InputsConnectorMeta {
   }
 
 
-  public InputsConnectorMeta releaseDate(@javax.annotation.Nullable String releaseDate) {
-    this.releaseDate = releaseDate;
-    return this;
-  }
-
-  /**
-   * Get releaseDate
-   * @return releaseDate
-   */
-  @javax.annotation.Nullable
-  public String getReleaseDate() {
-    return releaseDate;
-  }
-
-  public void setReleaseDate(@javax.annotation.Nullable String releaseDate) {
-    this.releaseDate = releaseDate;
-  }
-
-
   public InputsConnectorMeta tier(@javax.annotation.Nullable Integer tier) {
     this.tier = tier;
     return this;
@@ -411,7 +387,6 @@ public class InputsConnectorMeta {
         Objects.equals(this.isCron, inputsConnectorMeta.isCron) &&
         Objects.equals(this.isDefault, inputsConnectorMeta.isDefault) &&
         Objects.equals(this.name, inputsConnectorMeta.name) &&
-        Objects.equals(this.releaseDate, inputsConnectorMeta.releaseDate) &&
         Objects.equals(this.tier, inputsConnectorMeta.tier) &&
         Objects.equals(this.typeId, inputsConnectorMeta.typeId);
   }
@@ -422,7 +397,7 @@ public class InputsConnectorMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, billingType, category, config, description, house, inBeta, internal, isCron, isDefault, name, releaseDate, tier, typeId);
+    return Objects.hash(authType, billingType, category, config, description, house, inBeta, internal, isCron, isDefault, name, tier, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -447,7 +422,6 @@ public class InputsConnectorMeta {
     sb.append("    isCron: ").append(toIndentedString(isCron)).append("\n");
     sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
     sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
     sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
     sb.append("}");
@@ -471,7 +445,7 @@ public class InputsConnectorMeta {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "is_cron", "is_default", "name", "release_date", "tier", "type_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "is_cron", "is_default", "name", "tier", "type_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -512,9 +486,6 @@ public class InputsConnectorMeta {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("release_date") != null && !jsonObj.get("release_date").isJsonNull()) && !jsonObj.get("release_date").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `release_date` to be a primitive type in the JSON string but got `%s`", jsonObj.get("release_date").toString()));
       }
       if ((jsonObj.get("type_id") != null && !jsonObj.get("type_id").isJsonNull()) && !jsonObj.get("type_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type_id").toString()));

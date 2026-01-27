@@ -10,8 +10,6 @@ export * from '../models/AddAdd';
 export * from '../models/AddIdAddIdentifier';
 export * from '../models/AdminLogsSecretsConfig';
 export * from '../models/AdminLogsSettingsConfig';
-export * from '../models/AivenServiceLogsSecretsConfig';
-export * from '../models/AivenServiceLogsSettingsConfig';
 export * from '../models/AlertCenterSecretsConfig';
 export * from '../models/AlertCenterSettingsConfig';
 export * from '../models/AlertsAlertMeta';
@@ -58,8 +56,6 @@ export * from '../models/BoxEventsSecretsConfig';
 export * from '../models/BoxEventsSettingsConfig';
 export * from '../models/BoxUsersSecretsConfig';
 export * from '../models/BoxUsersSettingsConfig';
-export * from '../models/BugsnagOrgEventsSecretsConfig';
-export * from '../models/BugsnagOrgEventsSettingsConfig';
 export * from '../models/BuildkiteAuditLogsSecretsConfig';
 export * from '../models/BuildkiteAuditLogsSettingsConfig';
 export * from '../models/BuildkiteGraphqlInputSecretsConfig';
@@ -530,8 +526,6 @@ import { AddAdd } from '../models/AddAdd';
 import { AddIdAddIdentifier } from '../models/AddIdAddIdentifier';
 import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
-import { AivenServiceLogsSecretsConfig } from '../models/AivenServiceLogsSecretsConfig';
-import { AivenServiceLogsSettingsConfig } from '../models/AivenServiceLogsSettingsConfig';
 import { AlertCenterSecretsConfig } from '../models/AlertCenterSecretsConfig';
 import { AlertCenterSettingsConfig } from '../models/AlertCenterSettingsConfig';
 import { AlertsAlertMeta } from '../models/AlertsAlertMeta';
@@ -578,8 +572,6 @@ import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
 import { BoxUsersSettingsConfig } from '../models/BoxUsersSettingsConfig';
-import { BugsnagOrgEventsSecretsConfig } from '../models/BugsnagOrgEventsSecretsConfig';
-import { BugsnagOrgEventsSettingsConfig } from '../models/BugsnagOrgEventsSettingsConfig';
 import { BuildkiteAuditLogsSecretsConfig } from '../models/BuildkiteAuditLogsSecretsConfig';
 import { BuildkiteAuditLogsSettingsConfig } from '../models/BuildkiteAuditLogsSettingsConfig';
 import { BuildkiteGraphqlInputSecretsConfig } from '../models/BuildkiteGraphqlInputSecretsConfig';
@@ -1082,8 +1074,6 @@ let typeMap: {[index: string]: any} = {
     "AddIdAddIdentifier": AddIdAddIdentifier,
     "AdminLogsSecretsConfig": AdminLogsSecretsConfig,
     "AdminLogsSettingsConfig": AdminLogsSettingsConfig,
-    "AivenServiceLogsSecretsConfig": AivenServiceLogsSecretsConfig,
-    "AivenServiceLogsSettingsConfig": AivenServiceLogsSettingsConfig,
     "AlertCenterSecretsConfig": AlertCenterSecretsConfig,
     "AlertCenterSettingsConfig": AlertCenterSettingsConfig,
     "AlertsAlertMeta": AlertsAlertMeta,
@@ -1130,8 +1120,6 @@ let typeMap: {[index: string]: any} = {
     "BoxEventsSettingsConfig": BoxEventsSettingsConfig,
     "BoxUsersSecretsConfig": BoxUsersSecretsConfig,
     "BoxUsersSettingsConfig": BoxUsersSettingsConfig,
-    "BugsnagOrgEventsSecretsConfig": BugsnagOrgEventsSecretsConfig,
-    "BugsnagOrgEventsSettingsConfig": BugsnagOrgEventsSettingsConfig,
     "BuildkiteAuditLogsSecretsConfig": BuildkiteAuditLogsSecretsConfig,
     "BuildkiteAuditLogsSettingsConfig": BuildkiteAuditLogsSettingsConfig,
     "BuildkiteGraphqlInputSecretsConfig": BuildkiteGraphqlInputSecretsConfig,

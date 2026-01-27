@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **IsCron** | Pointer to **bool** |  | [optional] 
 **IsDefault** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**ReleaseDate** | Pointer to **string** |  | [optional] 
 **Tier** | Pointer to **int32** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
 
@@ -322,31 +321,6 @@ SetName sets Name field to given value.
 `func (o *InputsConnectorMeta) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetReleaseDate
-
-`func (o *InputsConnectorMeta) GetReleaseDate() string`
-
-GetReleaseDate returns the ReleaseDate field if non-nil, zero value otherwise.
-
-### GetReleaseDateOk
-
-`func (o *InputsConnectorMeta) GetReleaseDateOk() (*string, bool)`
-
-GetReleaseDateOk returns a tuple with the ReleaseDate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReleaseDate
-
-`func (o *InputsConnectorMeta) SetReleaseDate(v string)`
-
-SetReleaseDate sets ReleaseDate field to given value.
-
-### HasReleaseDate
-
-`func (o *InputsConnectorMeta) HasReleaseDate() bool`
-
-HasReleaseDate returns a boolean if a field has been set.
 
 ### GetTier
 

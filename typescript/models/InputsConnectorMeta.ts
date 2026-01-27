@@ -24,7 +24,6 @@ export class InputsConnectorMeta {
     'isCron'?: boolean;
     'isDefault'?: boolean;
     'name'?: string;
-    'releaseDate'?: string;
     'tier'?: number;
     'typeId'?: string;
 
@@ -96,12 +95,6 @@ export class InputsConnectorMeta {
         {
             "name": "name",
             "baseName": "name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "releaseDate",
-            "baseName": "release_date",
             "type": "string",
             "format": ""
         },

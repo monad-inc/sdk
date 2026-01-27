@@ -18,7 +18,6 @@
 |**isCron** | **Boolean** |  |  [optional] |
 |**isDefault** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**releaseDate** | **String** |  |  [optional] |
 |**tier** | **Integer** |  |  [optional] |
 |**typeId** | **String** |  |  [optional] |
 

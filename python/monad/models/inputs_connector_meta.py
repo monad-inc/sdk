@@ -38,10 +38,9 @@ class InputsConnectorMeta(BaseModel):
     is_cron: Optional[StrictBool] = None
     is_default: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
-    release_date: Optional[StrictStr] = None
     tier: Optional[StrictInt] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "is_cron", "is_default", "name", "release_date", "tier", "type_id"]
+    __properties: ClassVar[List[str]] = ["auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "is_cron", "is_default", "name", "tier", "type_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -110,7 +109,6 @@ class InputsConnectorMeta(BaseModel):
             "is_cron": obj.get("is_cron"),
             "is_default": obj.get("is_default"),
             "name": obj.get("name"),
-            "release_date": obj.get("release_date"),
             "tier": obj.get("tier"),
             "type_id": obj.get("type_id")
         })

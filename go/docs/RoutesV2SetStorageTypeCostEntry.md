@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CostPerByte** | Pointer to **float32** |  | [optional] 
 **CostPerGb** | Pointer to **float32** |  | [optional] 
 
 ## Methods
@@ -25,31 +24,6 @@ will change when the set of required properties is changed
 NewRoutesV2SetStorageTypeCostEntryWithDefaults instantiates a new RoutesV2SetStorageTypeCostEntry object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCostPerByte
-
-`func (o *RoutesV2SetStorageTypeCostEntry) GetCostPerByte() float32`
-
-GetCostPerByte returns the CostPerByte field if non-nil, zero value otherwise.
-
-### GetCostPerByteOk
-
-`func (o *RoutesV2SetStorageTypeCostEntry) GetCostPerByteOk() (*float32, bool)`
-
-GetCostPerByteOk returns a tuple with the CostPerByte field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCostPerByte
-
-`func (o *RoutesV2SetStorageTypeCostEntry) SetCostPerByte(v float32)`
-
-SetCostPerByte sets CostPerByte field to given value.
-
-### HasCostPerByte
-
-`func (o *RoutesV2SetStorageTypeCostEntry) HasCostPerByte() bool`
-
-HasCostPerByte returns a boolean if a field has been set.
 
 ### GetCostPerGb
 

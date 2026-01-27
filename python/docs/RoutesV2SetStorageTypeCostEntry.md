@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cost_per_byte** | **float** |  | [optional] 
 **cost_per_gb** | **float** |  | [optional] 
 
 ## Example

@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-01-27T00:36:48.820716669Z[Etc/UTC]
+  - Build date: 2026-01-27T02:08:54.422571458Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -296,8 +296,6 @@ Class | Method | HTTP request | Description
  - [AddIdAddIdentifier](docs/AddIdAddIdentifier.md)
  - [AdminLogsSecretsConfig](docs/AdminLogsSecretsConfig.md)
  - [AdminLogsSettingsConfig](docs/AdminLogsSettingsConfig.md)
- - [AivenServiceLogsSecretsConfig](docs/AivenServiceLogsSecretsConfig.md)
- - [AivenServiceLogsSettingsConfig](docs/AivenServiceLogsSettingsConfig.md)
  - [AlertCenterSecretsConfig](docs/AlertCenterSecretsConfig.md)
  - [AlertCenterSettingsConfig](docs/AlertCenterSettingsConfig.md)
  - [AlertsAlertMeta](docs/AlertsAlertMeta.md)
@@ -344,8 +342,6 @@ Class | Method | HTTP request | Description
  - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
  - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
  - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
- - [BugsnagOrgEventsSecretsConfig](docs/BugsnagOrgEventsSecretsConfig.md)
- - [BugsnagOrgEventsSettingsConfig](docs/BugsnagOrgEventsSettingsConfig.md)
  - [BuildkiteAuditLogsSecretsConfig](docs/BuildkiteAuditLogsSecretsConfig.md)
  - [BuildkiteAuditLogsSettingsConfig](docs/BuildkiteAuditLogsSettingsConfig.md)
  - [BuildkiteGraphqlInputSecretsConfig](docs/BuildkiteGraphqlInputSecretsConfig.md)

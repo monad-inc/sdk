@@ -12,10 +12,8 @@ Name | Type | Description | Notes
 **Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
 **Sort** | Pointer to **string** | Order fields in ascending or descending order. Ex: &#39;created_date|asc&#39;, &#39;created_date|desc&#39;. | [optional] 
 **TargetIndustries** | Pointer to **string** | Industries targeted by the actor. Ex: &#39;Financial&#39;, &#39;Healthcare&#39;, &#39;Energy&#39;, &#39;Government&#39;, &#39;Manufacturing&#39;, &#39;Technology&#39;, etc. Select &#39;None&#39; for no preference. | [optional] 
-**BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, data from 6 months ago up till now from zoom is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
-**Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
-**Service** | Pointer to **string** | The Aiven service name | [optional] 
 **AuthType** | Pointer to **string** | AuthType is the type of authentication used for the input | [optional] 
+**BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, data from 6 months ago up till now from zoom is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **Email** | Pointer to **string** | Email address to use to authenticate with Google Cloud (required for service_account auth). | [optional] 
 **IntervalSeconds** | Pointer to **int32** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
 **Actions** | Pointer to **[]string** | Filter by specific actions. Use wildcards for broader matches (e.g., repo.*) | [optional] 
@@ -52,12 +50,12 @@ Name | Type | Description | Notes
 **StorageAccountUrl** | Pointer to **string** | The Azure storage account URL where flow logs are stored | [optional] 
 **VirtualNetworkName** | Pointer to **string** | The name of the virtual network for which flow logs are being collected | [optional] 
 **Dataset** | Pointer to **string** | The BigQuery dataset ID containing the table | [optional] 
+**Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
 **Query** | Pointer to **string** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
 **Table** | Pointer to **string** | The name of the table in Snowflake to query data from. | [optional] 
 **TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
 **EventType** | Pointer to **string** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **FilterTerm** | Pointer to **string** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
-**OrganizationId** | Pointer to **string** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
 **OrgSlug** | Pointer to **string** | The ID or slug of the organization | [optional] 
 **EnablePagination** | Pointer to **bool** | Enable pagination support | [optional] 
 **GraphqlQuery** | Pointer to **string** | The GraphQL query to execute against the endpoint to fetch data | [optional] 
@@ -99,6 +97,7 @@ Name | Type | Description | Notes
 **UserId** | Pointer to **string** | ID of the user to harvest audit logs for | [optional] 
 **Category** | Pointer to **string** | The Category of logs to query | [optional] 
 **FieldOption** | Pointer to **string** |  | [optional] 
+**OrganizationId** | Pointer to **string** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
 **Namespace** | Pointer to **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | [optional] 
 **WorkspaceId** | Pointer to **string** | The workspace ID of the Log Analytics workspace | [optional] 
 **AppName** | Pointer to **string** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
@@ -403,81 +402,6 @@ SetTargetIndustries sets TargetIndustries field to given value.
 
 HasTargetIndustries returns a boolean if a field has been set.
 
-### GetBackfillStartTime
-
-`func (o *SecretProcessesorInputConfigSettings) GetBackfillStartTime() string`
-
-GetBackfillStartTime returns the BackfillStartTime field if non-nil, zero value otherwise.
-
-### GetBackfillStartTimeOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetBackfillStartTimeOk() (*string, bool)`
-
-GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBackfillStartTime
-
-`func (o *SecretProcessesorInputConfigSettings) SetBackfillStartTime(v string)`
-
-SetBackfillStartTime sets BackfillStartTime field to given value.
-
-### HasBackfillStartTime
-
-`func (o *SecretProcessesorInputConfigSettings) HasBackfillStartTime() bool`
-
-HasBackfillStartTime returns a boolean if a field has been set.
-
-### GetProject
-
-`func (o *SecretProcessesorInputConfigSettings) GetProject() string`
-
-GetProject returns the Project field if non-nil, zero value otherwise.
-
-### GetProjectOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetProjectOk() (*string, bool)`
-
-GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProject
-
-`func (o *SecretProcessesorInputConfigSettings) SetProject(v string)`
-
-SetProject sets Project field to given value.
-
-### HasProject
-
-`func (o *SecretProcessesorInputConfigSettings) HasProject() bool`
-
-HasProject returns a boolean if a field has been set.
-
-### GetService
-
-`func (o *SecretProcessesorInputConfigSettings) GetService() string`
-
-GetService returns the Service field if non-nil, zero value otherwise.
-
-### GetServiceOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetServiceOk() (*string, bool)`
-
-GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetService
-
-`func (o *SecretProcessesorInputConfigSettings) SetService(v string)`
-
-SetService sets Service field to given value.
-
-### HasService
-
-`func (o *SecretProcessesorInputConfigSettings) HasService() bool`
-
-HasService returns a boolean if a field has been set.
-
 ### GetAuthType
 
 `func (o *SecretProcessesorInputConfigSettings) GetAuthType() string`
@@ -502,6 +426,31 @@ SetAuthType sets AuthType field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasAuthType() bool`
 
 HasAuthType returns a boolean if a field has been set.
+
+### GetBackfillStartTime
+
+`func (o *SecretProcessesorInputConfigSettings) GetBackfillStartTime() string`
+
+GetBackfillStartTime returns the BackfillStartTime field if non-nil, zero value otherwise.
+
+### GetBackfillStartTimeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetBackfillStartTimeOk() (*string, bool)`
+
+GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackfillStartTime
+
+`func (o *SecretProcessesorInputConfigSettings) SetBackfillStartTime(v string)`
+
+SetBackfillStartTime sets BackfillStartTime field to given value.
+
+### HasBackfillStartTime
+
+`func (o *SecretProcessesorInputConfigSettings) HasBackfillStartTime() bool`
+
+HasBackfillStartTime returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -1403,6 +1352,31 @@ SetDataset sets Dataset field to given value.
 
 HasDataset returns a boolean if a field has been set.
 
+### GetProject
+
+`func (o *SecretProcessesorInputConfigSettings) GetProject() string`
+
+GetProject returns the Project field if non-nil, zero value otherwise.
+
+### GetProjectOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetProjectOk() (*string, bool)`
+
+GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProject
+
+`func (o *SecretProcessesorInputConfigSettings) SetProject(v string)`
+
+SetProject sets Project field to given value.
+
+### HasProject
+
+`func (o *SecretProcessesorInputConfigSettings) HasProject() bool`
+
+HasProject returns a boolean if a field has been set.
+
 ### GetQuery
 
 `func (o *SecretProcessesorInputConfigSettings) GetQuery() string`
@@ -1527,31 +1501,6 @@ SetFilterTerm sets FilterTerm field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasFilterTerm() bool`
 
 HasFilterTerm returns a boolean if a field has been set.
-
-### GetOrganizationId
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrganizationId() string`
-
-GetOrganizationId returns the OrganizationId field if non-nil, zero value otherwise.
-
-### GetOrganizationIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrganizationIdOk() (*string, bool)`
-
-GetOrganizationIdOk returns a tuple with the OrganizationId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOrganizationId
-
-`func (o *SecretProcessesorInputConfigSettings) SetOrganizationId(v string)`
-
-SetOrganizationId sets OrganizationId field to given value.
-
-### HasOrganizationId
-
-`func (o *SecretProcessesorInputConfigSettings) HasOrganizationId() bool`
-
-HasOrganizationId returns a boolean if a field has been set.
 
 ### GetOrgSlug
 
@@ -2577,6 +2526,31 @@ SetFieldOption sets FieldOption field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasFieldOption() bool`
 
 HasFieldOption returns a boolean if a field has been set.
+
+### GetOrganizationId
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrganizationId() string`
+
+GetOrganizationId returns the OrganizationId field if non-nil, zero value otherwise.
+
+### GetOrganizationIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrganizationIdOk() (*string, bool)`
+
+GetOrganizationIdOk returns a tuple with the OrganizationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrganizationId
+
+`func (o *SecretProcessesorInputConfigSettings) SetOrganizationId(v string)`
+
+SetOrganizationId sets OrganizationId field to given value.
+
+### HasOrganizationId
+
+`func (o *SecretProcessesorInputConfigSettings) HasOrganizationId() bool`
+
+HasOrganizationId returns a boolean if a field has been set.
 
 ### GetNamespace
 
