@@ -23,6 +23,7 @@ type SecretProcessesorInputConfigSettings struct {
 	ActivitylogsSettingsConfig *ActivitylogsSettingsConfig
 	ActorsInfoSettingsConfig *ActorsInfoSettingsConfig
 	AdminLogsSettingsConfig *AdminLogsSettingsConfig
+	AivenServiceLogsSettingsConfig *AivenServiceLogsSettingsConfig
 	AlertCenterSettingsConfig *AlertCenterSettingsConfig
 	ArizeAuditLogsSettingsConfig *ArizeAuditLogsSettingsConfig
 	AuditLogsSettingsConfig *AuditLogsSettingsConfig
@@ -41,6 +42,7 @@ type SecretProcessesorInputConfigSettings struct {
 	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BoxEventsSettingsConfig *BoxEventsSettingsConfig
 	BoxUsersSettingsConfig *BoxUsersSettingsConfig
+	BugsnagOrgEventsSettingsConfig *BugsnagOrgEventsSettingsConfig
 	BuildkiteAuditLogsSettingsConfig *BuildkiteAuditLogsSettingsConfig
 	BuildkiteGraphqlInputSettingsConfig *BuildkiteGraphqlInputSettingsConfig
 	CisaUserSettingsConfig *CisaUserSettingsConfig
@@ -183,6 +185,13 @@ func AdminLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AdminLogsS
 	}
 }
 
+// AivenServiceLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AivenServiceLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func AivenServiceLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AivenServiceLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		AivenServiceLogsSettingsConfig: v,
+	}
+}
+
 // AlertCenterSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AlertCenterSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func AlertCenterSettingsConfigAsSecretProcessesorInputConfigSettings(v *AlertCenterSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -306,6 +315,13 @@ func BoxEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *BoxEventsS
 func BoxUsersSettingsConfigAsSecretProcessesorInputConfigSettings(v *BoxUsersSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		BoxUsersSettingsConfig: v,
+	}
+}
+
+// BugsnagOrgEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns BugsnagOrgEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func BugsnagOrgEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *BugsnagOrgEventsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		BugsnagOrgEventsSettingsConfig: v,
 	}
 }
 
@@ -1166,6 +1182,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AdminLogsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into AivenServiceLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AivenServiceLogsSettingsConfig)
+	if err == nil {
+		jsonAivenServiceLogsSettingsConfig, _ := json.Marshal(dst.AivenServiceLogsSettingsConfig)
+		if string(jsonAivenServiceLogsSettingsConfig) == "{}" { // empty struct
+			dst.AivenServiceLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AivenServiceLogsSettingsConfig); err != nil {
+				dst.AivenServiceLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AivenServiceLogsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into AlertCenterSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.AlertCenterSettingsConfig)
 	if err == nil {
@@ -1470,6 +1503,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.BoxUsersSettingsConfig = nil
+	}
+
+	// try to unmarshal data into BugsnagOrgEventsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.BugsnagOrgEventsSettingsConfig)
+	if err == nil {
+		jsonBugsnagOrgEventsSettingsConfig, _ := json.Marshal(dst.BugsnagOrgEventsSettingsConfig)
+		if string(jsonBugsnagOrgEventsSettingsConfig) == "{}" { // empty struct
+			dst.BugsnagOrgEventsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BugsnagOrgEventsSettingsConfig); err != nil {
+				dst.BugsnagOrgEventsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BugsnagOrgEventsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into BuildkiteAuditLogsSettingsConfig
@@ -3382,6 +3432,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.ActivitylogsSettingsConfig = nil
 		dst.ActorsInfoSettingsConfig = nil
 		dst.AdminLogsSettingsConfig = nil
+		dst.AivenServiceLogsSettingsConfig = nil
 		dst.AlertCenterSettingsConfig = nil
 		dst.ArizeAuditLogsSettingsConfig = nil
 		dst.AuditLogsSettingsConfig = nil
@@ -3400,6 +3451,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.BigqueryInputSettingsConfig = nil
 		dst.BoxEventsSettingsConfig = nil
 		dst.BoxUsersSettingsConfig = nil
+		dst.BugsnagOrgEventsSettingsConfig = nil
 		dst.BuildkiteAuditLogsSettingsConfig = nil
 		dst.BuildkiteGraphqlInputSettingsConfig = nil
 		dst.CisaUserSettingsConfig = nil
@@ -3539,6 +3591,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AdminLogsSettingsConfig)
 	}
 
+	if src.AivenServiceLogsSettingsConfig != nil {
+		return json.Marshal(&src.AivenServiceLogsSettingsConfig)
+	}
+
 	if src.AlertCenterSettingsConfig != nil {
 		return json.Marshal(&src.AlertCenterSettingsConfig)
 	}
@@ -3609,6 +3665,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.BoxUsersSettingsConfig != nil {
 		return json.Marshal(&src.BoxUsersSettingsConfig)
+	}
+
+	if src.BugsnagOrgEventsSettingsConfig != nil {
+		return json.Marshal(&src.BugsnagOrgEventsSettingsConfig)
 	}
 
 	if src.BuildkiteAuditLogsSettingsConfig != nil {
@@ -4083,6 +4143,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.AdminLogsSettingsConfig
 	}
 
+	if obj.AivenServiceLogsSettingsConfig != nil {
+		return obj.AivenServiceLogsSettingsConfig
+	}
+
 	if obj.AlertCenterSettingsConfig != nil {
 		return obj.AlertCenterSettingsConfig
 	}
@@ -4153,6 +4217,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.BoxUsersSettingsConfig != nil {
 		return obj.BoxUsersSettingsConfig
+	}
+
+	if obj.BugsnagOrgEventsSettingsConfig != nil {
+		return obj.BugsnagOrgEventsSettingsConfig
 	}
 
 	if obj.BuildkiteAuditLogsSettingsConfig != nil {
@@ -4625,6 +4693,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.AdminLogsSettingsConfig
 	}
 
+	if obj.AivenServiceLogsSettingsConfig != nil {
+		return *obj.AivenServiceLogsSettingsConfig
+	}
+
 	if obj.AlertCenterSettingsConfig != nil {
 		return *obj.AlertCenterSettingsConfig
 	}
@@ -4695,6 +4767,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.BoxUsersSettingsConfig != nil {
 		return *obj.BoxUsersSettingsConfig
+	}
+
+	if obj.BugsnagOrgEventsSettingsConfig != nil {
+		return *obj.BugsnagOrgEventsSettingsConfig
 	}
 
 	if obj.BuildkiteAuditLogsSettingsConfig != nil {

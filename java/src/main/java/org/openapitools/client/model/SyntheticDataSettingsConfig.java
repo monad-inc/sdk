@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Demo settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-27T02:08:54.422571458Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-27T02:35:47.299738478Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SyntheticDataSettingsConfig {
   public static final String SERIALIZED_NAME_RATE = "rate";
   @SerializedName(SERIALIZED_NAME_RATE)

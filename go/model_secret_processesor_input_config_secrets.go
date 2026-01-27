@@ -23,6 +23,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	ActivitylogsSecretsConfig *ActivitylogsSecretsConfig
 	ActorsInfoSecretsConfig *ActorsInfoSecretsConfig
 	AdminLogsSecretsConfig *AdminLogsSecretsConfig
+	AivenServiceLogsSecretsConfig *AivenServiceLogsSecretsConfig
 	AlertCenterSecretsConfig *AlertCenterSecretsConfig
 	ArizeAuditLogsSecretsConfig *ArizeAuditLogsSecretsConfig
 	AuditLogsSecretsConfig *AuditLogsSecretsConfig
@@ -39,6 +40,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	BigqueryInputSecretsConfig *BigqueryInputSecretsConfig
 	BoxEventsSecretsConfig *BoxEventsSecretsConfig
 	BoxUsersSecretsConfig *BoxUsersSecretsConfig
+	BugsnagOrgEventsSecretsConfig *BugsnagOrgEventsSecretsConfig
 	BuildkiteAuditLogsSecretsConfig *BuildkiteAuditLogsSecretsConfig
 	BuildkiteGraphqlInputSecretsConfig *BuildkiteGraphqlInputSecretsConfig
 	CloudAssetInventorySecretsConfig *CloudAssetInventorySecretsConfig
@@ -167,6 +169,13 @@ func AdminLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AdminLogsSec
 	}
 }
 
+// AivenServiceLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AivenServiceLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func AivenServiceLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AivenServiceLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		AivenServiceLogsSecretsConfig: v,
+	}
+}
+
 // AlertCenterSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AlertCenterSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func AlertCenterSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AlertCenterSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -276,6 +285,13 @@ func BoxEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BoxEventsSec
 func BoxUsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BoxUsersSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		BoxUsersSecretsConfig: v,
+	}
+}
+
+// BugsnagOrgEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns BugsnagOrgEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func BugsnagOrgEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BugsnagOrgEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		BugsnagOrgEventsSecretsConfig: v,
 	}
 }
 
@@ -1038,6 +1054,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.AdminLogsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into AivenServiceLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.AivenServiceLogsSecretsConfig)
+	if err == nil {
+		jsonAivenServiceLogsSecretsConfig, _ := json.Marshal(dst.AivenServiceLogsSecretsConfig)
+		if string(jsonAivenServiceLogsSecretsConfig) == "{}" { // empty struct
+			dst.AivenServiceLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AivenServiceLogsSecretsConfig); err != nil {
+				dst.AivenServiceLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AivenServiceLogsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into AlertCenterSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.AlertCenterSecretsConfig)
 	if err == nil {
@@ -1308,6 +1341,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.BoxUsersSecretsConfig = nil
+	}
+
+	// try to unmarshal data into BugsnagOrgEventsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.BugsnagOrgEventsSecretsConfig)
+	if err == nil {
+		jsonBugsnagOrgEventsSecretsConfig, _ := json.Marshal(dst.BugsnagOrgEventsSecretsConfig)
+		if string(jsonBugsnagOrgEventsSecretsConfig) == "{}" { // empty struct
+			dst.BugsnagOrgEventsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BugsnagOrgEventsSecretsConfig); err != nil {
+				dst.BugsnagOrgEventsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BugsnagOrgEventsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into BuildkiteAuditLogsSecretsConfig
@@ -2982,6 +3032,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.ActivitylogsSecretsConfig = nil
 		dst.ActorsInfoSecretsConfig = nil
 		dst.AdminLogsSecretsConfig = nil
+		dst.AivenServiceLogsSecretsConfig = nil
 		dst.AlertCenterSecretsConfig = nil
 		dst.ArizeAuditLogsSecretsConfig = nil
 		dst.AuditLogsSecretsConfig = nil
@@ -2998,6 +3049,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.BigqueryInputSecretsConfig = nil
 		dst.BoxEventsSecretsConfig = nil
 		dst.BoxUsersSecretsConfig = nil
+		dst.BugsnagOrgEventsSecretsConfig = nil
 		dst.BuildkiteAuditLogsSecretsConfig = nil
 		dst.BuildkiteGraphqlInputSecretsConfig = nil
 		dst.CloudAssetInventorySecretsConfig = nil
@@ -3123,6 +3175,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AdminLogsSecretsConfig)
 	}
 
+	if src.AivenServiceLogsSecretsConfig != nil {
+		return json.Marshal(&src.AivenServiceLogsSecretsConfig)
+	}
+
 	if src.AlertCenterSecretsConfig != nil {
 		return json.Marshal(&src.AlertCenterSecretsConfig)
 	}
@@ -3185,6 +3241,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.BoxUsersSecretsConfig != nil {
 		return json.Marshal(&src.BoxUsersSecretsConfig)
+	}
+
+	if src.BugsnagOrgEventsSecretsConfig != nil {
+		return json.Marshal(&src.BugsnagOrgEventsSecretsConfig)
 	}
 
 	if src.BuildkiteAuditLogsSecretsConfig != nil {
@@ -3603,6 +3663,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.AdminLogsSecretsConfig
 	}
 
+	if obj.AivenServiceLogsSecretsConfig != nil {
+		return obj.AivenServiceLogsSecretsConfig
+	}
+
 	if obj.AlertCenterSecretsConfig != nil {
 		return obj.AlertCenterSecretsConfig
 	}
@@ -3665,6 +3729,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 	if obj.BoxUsersSecretsConfig != nil {
 		return obj.BoxUsersSecretsConfig
+	}
+
+	if obj.BugsnagOrgEventsSecretsConfig != nil {
+		return obj.BugsnagOrgEventsSecretsConfig
 	}
 
 	if obj.BuildkiteAuditLogsSecretsConfig != nil {
@@ -4081,6 +4149,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.AdminLogsSecretsConfig
 	}
 
+	if obj.AivenServiceLogsSecretsConfig != nil {
+		return *obj.AivenServiceLogsSecretsConfig
+	}
+
 	if obj.AlertCenterSecretsConfig != nil {
 		return *obj.AlertCenterSecretsConfig
 	}
@@ -4143,6 +4215,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.BoxUsersSecretsConfig != nil {
 		return *obj.BoxUsersSecretsConfig
+	}
+
+	if obj.BugsnagOrgEventsSecretsConfig != nil {
+		return *obj.BugsnagOrgEventsSecretsConfig
 	}
 
 	if obj.BuildkiteAuditLogsSecretsConfig != nil {

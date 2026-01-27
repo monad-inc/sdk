@@ -74,6 +74,8 @@ __all__ = [
     "AddIdAddIdentifier",
     "AdminLogsSecretsConfig",
     "AdminLogsSettingsConfig",
+    "AivenServiceLogsSecretsConfig",
+    "AivenServiceLogsSettingsConfig",
     "AlertCenterSecretsConfig",
     "AlertCenterSettingsConfig",
     "AlertsAlertMeta",
@@ -120,6 +122,8 @@ __all__ = [
     "BoxEventsSettingsConfig",
     "BoxUsersSecretsConfig",
     "BoxUsersSettingsConfig",
+    "BugsnagOrgEventsSecretsConfig",
+    "BugsnagOrgEventsSettingsConfig",
     "BuildkiteAuditLogsSecretsConfig",
     "BuildkiteAuditLogsSettingsConfig",
     "BuildkiteGraphqlInputSecretsConfig",
@@ -639,6 +643,8 @@ from monad.models.add_add import AddAdd as AddAdd
 from monad.models.add_id_add_identifier import AddIdAddIdentifier as AddIdAddIdentifier
 from monad.models.admin_logs_secrets_config import AdminLogsSecretsConfig as AdminLogsSecretsConfig
 from monad.models.admin_logs_settings_config import AdminLogsSettingsConfig as AdminLogsSettingsConfig
+from monad.models.aiven_service_logs_secrets_config import AivenServiceLogsSecretsConfig as AivenServiceLogsSecretsConfig
+from monad.models.aiven_service_logs_settings_config import AivenServiceLogsSettingsConfig as AivenServiceLogsSettingsConfig
 from monad.models.alert_center_secrets_config import AlertCenterSecretsConfig as AlertCenterSecretsConfig
 from monad.models.alert_center_settings_config import AlertCenterSettingsConfig as AlertCenterSettingsConfig
 from monad.models.alerts_alert_meta import AlertsAlertMeta as AlertsAlertMeta
@@ -685,6 +691,8 @@ from monad.models.box_events_secrets_config import BoxEventsSecretsConfig as Box
 from monad.models.box_events_settings_config import BoxEventsSettingsConfig as BoxEventsSettingsConfig
 from monad.models.box_users_secrets_config import BoxUsersSecretsConfig as BoxUsersSecretsConfig
 from monad.models.box_users_settings_config import BoxUsersSettingsConfig as BoxUsersSettingsConfig
+from monad.models.bugsnag_org_events_secrets_config import BugsnagOrgEventsSecretsConfig as BugsnagOrgEventsSecretsConfig
+from monad.models.bugsnag_org_events_settings_config import BugsnagOrgEventsSettingsConfig as BugsnagOrgEventsSettingsConfig
 from monad.models.buildkite_audit_logs_secrets_config import BuildkiteAuditLogsSecretsConfig as BuildkiteAuditLogsSecretsConfig
 from monad.models.buildkite_audit_logs_settings_config import BuildkiteAuditLogsSettingsConfig as BuildkiteAuditLogsSettingsConfig
 from monad.models.buildkite_graphql_input_secrets_config import BuildkiteGraphqlInputSecretsConfig as BuildkiteGraphqlInputSecretsConfig

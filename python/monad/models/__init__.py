@@ -26,6 +26,8 @@ from monad.models.add_add import AddAdd
 from monad.models.add_id_add_identifier import AddIdAddIdentifier
 from monad.models.admin_logs_secrets_config import AdminLogsSecretsConfig
 from monad.models.admin_logs_settings_config import AdminLogsSettingsConfig
+from monad.models.aiven_service_logs_secrets_config import AivenServiceLogsSecretsConfig
+from monad.models.aiven_service_logs_settings_config import AivenServiceLogsSettingsConfig
 from monad.models.alert_center_secrets_config import AlertCenterSecretsConfig
 from monad.models.alert_center_settings_config import AlertCenterSettingsConfig
 from monad.models.alerts_alert_meta import AlertsAlertMeta
@@ -72,6 +74,8 @@ from monad.models.box_events_secrets_config import BoxEventsSecretsConfig
 from monad.models.box_events_settings_config import BoxEventsSettingsConfig
 from monad.models.box_users_secrets_config import BoxUsersSecretsConfig
 from monad.models.box_users_settings_config import BoxUsersSettingsConfig
+from monad.models.bugsnag_org_events_secrets_config import BugsnagOrgEventsSecretsConfig
+from monad.models.bugsnag_org_events_settings_config import BugsnagOrgEventsSettingsConfig
 from monad.models.buildkite_audit_logs_secrets_config import BuildkiteAuditLogsSecretsConfig
 from monad.models.buildkite_audit_logs_settings_config import BuildkiteAuditLogsSettingsConfig
 from monad.models.buildkite_graphql_input_secrets_config import BuildkiteGraphqlInputSecretsConfig

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Cloudflare Zero Trust Access Requests settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-27T02:08:54.422571458Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-27T02:35:47.299738478Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class CloudflareZeroTrustAccessRequestsSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
