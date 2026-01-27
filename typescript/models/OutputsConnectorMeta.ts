@@ -22,6 +22,7 @@ export class OutputsConnectorMeta {
     'inBeta'?: boolean;
     'internal'?: boolean;
     'name'?: string;
+    'releaseDate'?: string;
     'tier'?: number;
     'typeId'?: string;
 
@@ -81,6 +82,12 @@ export class OutputsConnectorMeta {
         {
             "name": "name",
             "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "releaseDate",
+            "baseName": "release_date",
             "type": "string",
             "format": ""
         },

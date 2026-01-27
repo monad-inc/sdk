@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * BackblazeSecretsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-26T22:19:41.258564359Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-27T00:36:48.820716669Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class BackblazeSecretsConfig {
   public static final String SERIALIZED_NAME_APPLICATION_KEY = "application_key";
   @SerializedName(SERIALIZED_NAME_APPLICATION_KEY)

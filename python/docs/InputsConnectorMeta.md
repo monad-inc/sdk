@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **is_cron** | **bool** |  | [optional] 
 **is_default** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
+**release_date** | **str** |  | [optional] 
 **tier** | **int** |  | [optional] 
 **type_id** | **str** |  | [optional] 
 
