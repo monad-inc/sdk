@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-01-28T04:20:37.746249331Z[Etc/UTC]
+  - Build date: 2026-01-28T18:26:15.039314979Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -397,7 +397,6 @@ Class | Method | HTTP request | Description
  - [CommunityTransformsInternalTransformConfig](docs/CommunityTransformsInternalTransformConfig.md)
  - [CommunityTransformsInternalTransformMetadata](docs/CommunityTransformsInternalTransformMetadata.md)
  - [CommunityTransformsInternalTransformsIndex](docs/CommunityTransformsInternalTransformsIndex.md)
- - [ConditionInfo](docs/ConditionInfo.md)
  - [CortexXsoarManagementLogsSecretsConfig](docs/CortexXsoarManagementLogsSecretsConfig.md)
  - [CortexXsoarManagementLogsSettingsConfig](docs/CortexXsoarManagementLogsSettingsConfig.md)
  - [CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue](docs/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.md)
@@ -475,6 +474,7 @@ Class | Method | HTTP request | Description
  - [KoiAuditLogsSettingsConfig](docs/KoiAuditLogsSettingsConfig.md)
  - [KvLookupOutputSettingsConfig](docs/KvLookupOutputSettingsConfig.md)
  - [KvLookupSettingsConfig](docs/KvLookupSettingsConfig.md)
+ - [LeafconditionsInfo](docs/LeafconditionsInfo.md)
  - [LogAnalyticsQuerySecretsConfig](docs/LogAnalyticsQuerySecretsConfig.md)
  - [LogAnalyticsQuerySettingsConfig](docs/LogAnalyticsQuerySettingsConfig.md)
  - [LoginSessionsSecretsConfig](docs/LoginSessionsSecretsConfig.md)

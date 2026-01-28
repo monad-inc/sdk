@@ -116,7 +116,6 @@ import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettin
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
-import { ConditionInfo } from '../models/ConditionInfo';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
 import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
@@ -194,6 +193,7 @@ import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
 import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
+import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
 import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
@@ -1729,7 +1729,7 @@ export class ObservableConditionsApi {
      * List conditions
      * List conditions
      */
-    public v2ConditionsGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<Array<ConditionInfo>>> {
+    public v2ConditionsGetWithHttpInfo(_options?: ConfigurationOptions): Observable<HttpInfo<Array<LeafconditionsInfo>>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.v2ConditionsGet(_config);
@@ -1753,8 +1753,8 @@ export class ObservableConditionsApi {
      * List conditions
      * List conditions
      */
-    public v2ConditionsGet(_options?: ConfigurationOptions): Observable<Array<ConditionInfo>> {
-        return this.v2ConditionsGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<Array<ConditionInfo>>) => apiResponse.data));
+    public v2ConditionsGet(_options?: ConfigurationOptions): Observable<Array<LeafconditionsInfo>> {
+        return this.v2ConditionsGetWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<Array<LeafconditionsInfo>>) => apiResponse.data));
     }
 
 }

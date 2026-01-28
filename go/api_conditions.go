@@ -28,7 +28,7 @@ type ApiV2ConditionsGetRequest struct {
 	ApiService *ConditionsAPIService
 }
 
-func (r ApiV2ConditionsGetRequest) Execute() ([]ConditionInfo, *http.Response, error) {
+func (r ApiV2ConditionsGetRequest) Execute() ([]LeafconditionsInfo, *http.Response, error) {
 	return r.ApiService.V2ConditionsGetExecute(r)
 }
 
@@ -48,13 +48,13 @@ func (a *ConditionsAPIService) V2ConditionsGet(ctx context.Context) ApiV2Conditi
 }
 
 // Execute executes the request
-//  @return []ConditionInfo
-func (a *ConditionsAPIService) V2ConditionsGetExecute(r ApiV2ConditionsGetRequest) ([]ConditionInfo, *http.Response, error) {
+//  @return []LeafconditionsInfo
+func (a *ConditionsAPIService) V2ConditionsGetExecute(r ApiV2ConditionsGetRequest) ([]LeafconditionsInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ConditionInfo
+		localVarReturnValue  []LeafconditionsInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConditionsAPIService.V2ConditionsGet")

@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from typing import List
-from monad.models.condition_info import ConditionInfo
+from monad.models.leafconditions_info import LeafconditionsInfo
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -53,7 +53,7 @@ class ConditionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[ConditionInfo]:
+    ) -> List[LeafconditionsInfo]:
         """List conditions
 
         List conditions
@@ -88,7 +88,7 @@ class ConditionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ConditionInfo]",
+            '200': "List[LeafconditionsInfo]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -116,7 +116,7 @@ class ConditionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[ConditionInfo]]:
+    ) -> ApiResponse[List[LeafconditionsInfo]]:
         """List conditions
 
         List conditions
@@ -151,7 +151,7 @@ class ConditionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ConditionInfo]",
+            '200': "List[LeafconditionsInfo]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -214,7 +214,7 @@ class ConditionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ConditionInfo]",
+            '200': "List[LeafconditionsInfo]",
         }
         response_data = self.api_client.call_api(
             *_param,

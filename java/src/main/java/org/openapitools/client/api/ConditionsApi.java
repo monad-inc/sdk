@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.ConditionInfo;
+import org.openapitools.client.model.LeafconditionsInfo;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -137,7 +137,7 @@ public class ConditionsApi {
     /**
      * List conditions
      * List conditions
-     * @return List&lt;ConditionInfo&gt;
+     * @return List&lt;LeafconditionsInfo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -146,15 +146,15 @@ public class ConditionsApi {
         <tr><td> 200 </td><td> Conditions information </td><td>  -  </td></tr>
      </table>
      */
-    public List<ConditionInfo> v2ConditionsGet() throws ApiException {
-        ApiResponse<List<ConditionInfo>> localVarResp = v2ConditionsGetWithHttpInfo();
+    public List<LeafconditionsInfo> v2ConditionsGet() throws ApiException {
+        ApiResponse<List<LeafconditionsInfo>> localVarResp = v2ConditionsGetWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * List conditions
      * List conditions
-     * @return ApiResponse&lt;List&lt;ConditionInfo&gt;&gt;
+     * @return ApiResponse&lt;List&lt;LeafconditionsInfo&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -163,9 +163,9 @@ public class ConditionsApi {
         <tr><td> 200 </td><td> Conditions information </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ConditionInfo>> v2ConditionsGetWithHttpInfo() throws ApiException {
+    public ApiResponse<List<LeafconditionsInfo>> v2ConditionsGetWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = v2ConditionsGetValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<List<ConditionInfo>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<LeafconditionsInfo>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -182,10 +182,10 @@ public class ConditionsApi {
         <tr><td> 200 </td><td> Conditions information </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v2ConditionsGetAsync(final ApiCallback<List<ConditionInfo>> _callback) throws ApiException {
+    public okhttp3.Call v2ConditionsGetAsync(final ApiCallback<List<LeafconditionsInfo>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v2ConditionsGetValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<List<ConditionInfo>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<LeafconditionsInfo>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

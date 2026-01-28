@@ -111,7 +111,6 @@ export * from '../models/CommunityEditionSettingsConfig';
 export * from '../models/CommunityTransformsInternalTransformConfig';
 export * from '../models/CommunityTransformsInternalTransformMetadata';
 export * from '../models/CommunityTransformsInternalTransformsIndex';
-export * from '../models/ConditionInfo';
 export * from '../models/CortexXsoarManagementLogsSecretsConfig';
 export * from '../models/CortexXsoarManagementLogsSettingsConfig';
 export * from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
@@ -189,6 +188,7 @@ export * from '../models/KoiAuditLogsSecretsConfig';
 export * from '../models/KoiAuditLogsSettingsConfig';
 export * from '../models/KvLookupOutputSettingsConfig';
 export * from '../models/KvLookupSettingsConfig';
+export * from '../models/LeafconditionsInfo';
 export * from '../models/LogAnalyticsQuerySecretsConfig';
 export * from '../models/LogAnalyticsQuerySettingsConfig';
 export * from '../models/LoginSessionsSecretsConfig';
@@ -631,7 +631,6 @@ import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettin
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
-import { ConditionInfo } from '../models/ConditionInfo';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
 import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
@@ -709,6 +708,7 @@ import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
 import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
+import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
 import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
@@ -1183,7 +1183,6 @@ let typeMap: {[index: string]: any} = {
     "CommunityTransformsInternalTransformConfig": CommunityTransformsInternalTransformConfig,
     "CommunityTransformsInternalTransformMetadata": CommunityTransformsInternalTransformMetadata,
     "CommunityTransformsInternalTransformsIndex": CommunityTransformsInternalTransformsIndex,
-    "ConditionInfo": ConditionInfo,
     "CortexXsoarManagementLogsSecretsConfig": CortexXsoarManagementLogsSecretsConfig,
     "CortexXsoarManagementLogsSettingsConfig": CortexXsoarManagementLogsSettingsConfig,
     "CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue": CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue,
@@ -1261,6 +1260,7 @@ let typeMap: {[index: string]: any} = {
     "KoiAuditLogsSettingsConfig": KoiAuditLogsSettingsConfig,
     "KvLookupOutputSettingsConfig": KvLookupOutputSettingsConfig,
     "KvLookupSettingsConfig": KvLookupSettingsConfig,
+    "LeafconditionsInfo": LeafconditionsInfo,
     "LogAnalyticsQuerySecretsConfig": LogAnalyticsQuerySecretsConfig,
     "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,
     "LoginSessionsSecretsConfig": LoginSessionsSecretsConfig,

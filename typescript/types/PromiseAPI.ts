@@ -115,7 +115,6 @@ import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettin
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
-import { ConditionInfo } from '../models/ConditionInfo';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
 import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
@@ -193,6 +192,7 @@ import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
 import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
+import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
 import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
@@ -1371,7 +1371,7 @@ export class PromiseConditionsApi {
      * List conditions
      * List conditions
      */
-    public v2ConditionsGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ConditionInfo>>> {
+    public v2ConditionsGetWithHttpInfo(_options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<LeafconditionsInfo>>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v2ConditionsGetWithHttpInfo(observableOptions);
         return result.toPromise();
@@ -1381,7 +1381,7 @@ export class PromiseConditionsApi {
      * List conditions
      * List conditions
      */
-    public v2ConditionsGet(_options?: PromiseConfigurationOptions): Promise<Array<ConditionInfo>> {
+    public v2ConditionsGet(_options?: PromiseConfigurationOptions): Promise<Array<LeafconditionsInfo>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v2ConditionsGet(observableOptions);
         return result.toPromise();

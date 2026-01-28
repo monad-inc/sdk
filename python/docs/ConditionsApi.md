@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **v2_conditions_get**
-> List[ConditionInfo] v2_conditions_get()
+> List[LeafconditionsInfo] v2_conditions_get()
 
 List conditions
 
@@ -21,7 +21,7 @@ List conditions
 
 ```python
 import monad
-from monad.models.condition_info import ConditionInfo
+from monad.models.leafconditions_info import LeafconditionsInfo
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -70,7 +70,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[ConditionInfo]**](ConditionInfo.md)
+[**List[LeafconditionsInfo]**](LeafconditionsInfo.md)
 
 ### Authorization
 

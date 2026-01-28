@@ -115,7 +115,6 @@ import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettin
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
-import { ConditionInfo } from '../models/ConditionInfo';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
 import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
@@ -193,6 +192,7 @@ import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
 import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
+import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
 import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
@@ -1646,7 +1646,7 @@ export class ObjectConditionsApi {
      * List conditions
      * @param param the request object
      */
-    public v2ConditionsGetWithHttpInfo(param: ConditionsApiV2ConditionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<ConditionInfo>>> {
+    public v2ConditionsGetWithHttpInfo(param: ConditionsApiV2ConditionsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<Array<LeafconditionsInfo>>> {
         return this.api.v2ConditionsGetWithHttpInfo( options).toPromise();
     }
 
@@ -1655,7 +1655,7 @@ export class ObjectConditionsApi {
      * List conditions
      * @param param the request object
      */
-    public v2ConditionsGet(param: ConditionsApiV2ConditionsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<ConditionInfo>> {
+    public v2ConditionsGet(param: ConditionsApiV2ConditionsGetRequest = {}, options?: ConfigurationOptions): Promise<Array<LeafconditionsInfo>> {
         return this.api.v2ConditionsGet( options).toPromise();
     }
 

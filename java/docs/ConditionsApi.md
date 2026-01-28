@@ -9,7 +9,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="v2ConditionsGet"></a>
 # **v2ConditionsGet**
-> List&lt;ConditionInfo&gt; v2ConditionsGet()
+> List&lt;LeafconditionsInfo&gt; v2ConditionsGet()
 
 List conditions
 
@@ -44,7 +44,7 @@ public class Example {
 
     ConditionsApi apiInstance = new ConditionsApi(defaultClient);
     try {
-      List<ConditionInfo> result = apiInstance.v2ConditionsGet();
+      List<LeafconditionsInfo> result = apiInstance.v2ConditionsGet();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ConditionsApi#v2ConditionsGet");
@@ -62,7 +62,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;ConditionInfo&gt;**](ConditionInfo.md)
+[**List&lt;LeafconditionsInfo&gt;**](LeafconditionsInfo.md)
 
 ### Authorization
 

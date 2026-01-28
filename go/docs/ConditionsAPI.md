@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## V2ConditionsGet
 
-> []ConditionInfo V2ConditionsGet(ctx).Execute()
+> []LeafconditionsInfo V2ConditionsGet(ctx).Execute()
 
 List conditions
 
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConditionsAPI.V2ConditionsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2ConditionsGet`: []ConditionInfo
+	// response from `V2ConditionsGet`: []LeafconditionsInfo
 	fmt.Fprintf(os.Stdout, "Response from `ConditionsAPI.V2ConditionsGet`: %v\n", resp)
 }
 ```
@@ -53,7 +53,7 @@ Other parameters are passed through a pointer to a apiV2ConditionsGetRequest str
 
 ### Return type
 
-[**[]ConditionInfo**](ConditionInfo.md)
+[**[]LeafconditionsInfo**](LeafconditionsInfo.md)
 
 ### Authorization
 

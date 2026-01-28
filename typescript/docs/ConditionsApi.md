@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **v2ConditionsGet**
-> Array<ConditionInfo> v2ConditionsGet()
+> Array<LeafconditionsInfo> v2ConditionsGet()
 
 List conditions
 
@@ -34,7 +34,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Array<ConditionInfo>**
+**Array<LeafconditionsInfo>**
 
 ### Authorization
 
