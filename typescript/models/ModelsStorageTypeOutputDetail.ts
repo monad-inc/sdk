@@ -14,7 +14,6 @@ import { HttpFile } from '../http/http';
 
 export class ModelsStorageTypeOutputDetail {
     'costId'?: string;
-    'costPerByte'?: number;
     'costPerGb'?: number;
     'egressBytes'?: number;
     'egressBytesGb'?: number;
@@ -33,12 +32,6 @@ export class ModelsStorageTypeOutputDetail {
             "name": "costId",
             "baseName": "cost_id",
             "type": "string",
-            "format": ""
-        },
-        {
-            "name": "costPerByte",
-            "baseName": "cost_per_byte",
-            "type": "number",
             "format": ""
         },
         {

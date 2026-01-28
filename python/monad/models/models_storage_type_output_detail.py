@@ -28,7 +28,6 @@ class ModelsStorageTypeOutputDetail(BaseModel):
     ModelsStorageTypeOutputDetail
     """ # noqa: E501
     cost_id: Optional[StrictStr] = None
-    cost_per_byte: Optional[Union[StrictFloat, StrictInt]] = None
     cost_per_gb: Optional[Union[StrictFloat, StrictInt]] = None
     egress_bytes: Optional[StrictInt] = None
     egress_bytes_gb: Optional[Union[StrictFloat, StrictInt]] = None
@@ -37,7 +36,7 @@ class ModelsStorageTypeOutputDetail(BaseModel):
     pre_filter_bytes_gb: Optional[Union[StrictFloat, StrictInt]] = None
     total_cost_post_filter: Optional[Union[StrictFloat, StrictInt]] = None
     total_cost_pre_filter: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["cost_id", "cost_per_byte", "cost_per_gb", "egress_bytes", "egress_bytes_gb", "num_pipelines", "pre_filter_bytes", "pre_filter_bytes_gb", "total_cost_post_filter", "total_cost_pre_filter"]
+    __properties: ClassVar[List[str]] = ["cost_id", "cost_per_gb", "egress_bytes", "egress_bytes_gb", "num_pipelines", "pre_filter_bytes", "pre_filter_bytes_gb", "total_cost_post_filter", "total_cost_pre_filter"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,7 +90,6 @@ class ModelsStorageTypeOutputDetail(BaseModel):
 
         _obj = cls.model_validate({
             "cost_id": obj.get("cost_id"),
-            "cost_per_byte": obj.get("cost_per_byte"),
             "cost_per_gb": obj.get("cost_per_gb"),
             "egress_bytes": obj.get("egress_bytes"),
             "egress_bytes_gb": obj.get("egress_bytes_gb"),

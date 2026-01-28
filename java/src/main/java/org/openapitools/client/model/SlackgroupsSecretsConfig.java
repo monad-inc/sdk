@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Slack Groups secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T01:52:40.022639312Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T02:34:51.645071669Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SlackgroupsSecretsConfig {
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)

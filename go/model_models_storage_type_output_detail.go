@@ -21,7 +21,6 @@ var _ MappedNullable = &ModelsStorageTypeOutputDetail{}
 // ModelsStorageTypeOutputDetail struct for ModelsStorageTypeOutputDetail
 type ModelsStorageTypeOutputDetail struct {
 	CostId *string `json:"cost_id,omitempty"`
-	CostPerByte *float32 `json:"cost_per_byte,omitempty"`
 	CostPerGb *float32 `json:"cost_per_gb,omitempty"`
 	EgressBytes *int32 `json:"egress_bytes,omitempty"`
 	EgressBytesGb *float32 `json:"egress_bytes_gb,omitempty"`
@@ -79,38 +78,6 @@ func (o *ModelsStorageTypeOutputDetail) HasCostId() bool {
 // SetCostId gets a reference to the given string and assigns it to the CostId field.
 func (o *ModelsStorageTypeOutputDetail) SetCostId(v string) {
 	o.CostId = &v
-}
-
-// GetCostPerByte returns the CostPerByte field value if set, zero value otherwise.
-func (o *ModelsStorageTypeOutputDetail) GetCostPerByte() float32 {
-	if o == nil || IsNil(o.CostPerByte) {
-		var ret float32
-		return ret
-	}
-	return *o.CostPerByte
-}
-
-// GetCostPerByteOk returns a tuple with the CostPerByte field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ModelsStorageTypeOutputDetail) GetCostPerByteOk() (*float32, bool) {
-	if o == nil || IsNil(o.CostPerByte) {
-		return nil, false
-	}
-	return o.CostPerByte, true
-}
-
-// HasCostPerByte returns a boolean if a field has been set.
-func (o *ModelsStorageTypeOutputDetail) HasCostPerByte() bool {
-	if o != nil && !IsNil(o.CostPerByte) {
-		return true
-	}
-
-	return false
-}
-
-// SetCostPerByte gets a reference to the given float32 and assigns it to the CostPerByte field.
-func (o *ModelsStorageTypeOutputDetail) SetCostPerByte(v float32) {
-	o.CostPerByte = &v
 }
 
 // GetCostPerGb returns the CostPerGb field value if set, zero value otherwise.
@@ -381,9 +348,6 @@ func (o ModelsStorageTypeOutputDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CostId) {
 		toSerialize["cost_id"] = o.CostId
-	}
-	if !IsNil(o.CostPerByte) {
-		toSerialize["cost_per_byte"] = o.CostPerByte
 	}
 	if !IsNil(o.CostPerGb) {
 		toSerialize["cost_per_gb"] = o.CostPerGb

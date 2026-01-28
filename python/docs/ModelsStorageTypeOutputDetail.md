@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cost_id** | **str** |  | [optional] 
-**cost_per_byte** | **float** |  | [optional] 
 **cost_per_gb** | **float** |  | [optional] 
 **egress_bytes** | **int** |  | [optional] 
 **egress_bytes_gb** | **float** |  | [optional] 

@@ -13,7 +13,6 @@
 import { HttpFile } from '../http/http';
 
 export class ModelsStorageTypeCostEntry {
-    'costPerByte'?: number;
     'costPerGb'?: number;
     'id'?: string;
     'storageType'?: string;
@@ -23,12 +22,6 @@ export class ModelsStorageTypeCostEntry {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "costPerByte",
-            "baseName": "cost_per_byte",
-            "type": "number",
-            "format": ""
-        },
         {
             "name": "costPerGb",
             "baseName": "cost_per_gb",

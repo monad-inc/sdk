@@ -49,13 +49,8 @@ import org.openapitools.client.JSON;
 /**
  * ModelsStorageTypeCostEntry
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T01:52:40.022639312Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T02:34:51.645071669Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsStorageTypeCostEntry {
-  public static final String SERIALIZED_NAME_COST_PER_BYTE = "cost_per_byte";
-  @SerializedName(SERIALIZED_NAME_COST_PER_BYTE)
-  @javax.annotation.Nullable
-  private BigDecimal costPerByte;
-
   public static final String SERIALIZED_NAME_COST_PER_GB = "cost_per_gb";
   @SerializedName(SERIALIZED_NAME_COST_PER_GB)
   @javax.annotation.Nullable
@@ -73,25 +68,6 @@ public class ModelsStorageTypeCostEntry {
 
   public ModelsStorageTypeCostEntry() {
   }
-
-  public ModelsStorageTypeCostEntry costPerByte(@javax.annotation.Nullable BigDecimal costPerByte) {
-    this.costPerByte = costPerByte;
-    return this;
-  }
-
-  /**
-   * Get costPerByte
-   * @return costPerByte
-   */
-  @javax.annotation.Nullable
-  public BigDecimal getCostPerByte() {
-    return costPerByte;
-  }
-
-  public void setCostPerByte(@javax.annotation.Nullable BigDecimal costPerByte) {
-    this.costPerByte = costPerByte;
-  }
-
 
   public ModelsStorageTypeCostEntry costPerGb(@javax.annotation.Nullable BigDecimal costPerGb) {
     this.costPerGb = costPerGb;
@@ -160,22 +136,20 @@ public class ModelsStorageTypeCostEntry {
       return false;
     }
     ModelsStorageTypeCostEntry modelsStorageTypeCostEntry = (ModelsStorageTypeCostEntry) o;
-    return Objects.equals(this.costPerByte, modelsStorageTypeCostEntry.costPerByte) &&
-        Objects.equals(this.costPerGb, modelsStorageTypeCostEntry.costPerGb) &&
+    return Objects.equals(this.costPerGb, modelsStorageTypeCostEntry.costPerGb) &&
         Objects.equals(this.id, modelsStorageTypeCostEntry.id) &&
         Objects.equals(this.storageType, modelsStorageTypeCostEntry.storageType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(costPerByte, costPerGb, id, storageType);
+    return Objects.hash(costPerGb, id, storageType);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsStorageTypeCostEntry {\n");
-    sb.append("    costPerByte: ").append(toIndentedString(costPerByte)).append("\n");
     sb.append("    costPerGb: ").append(toIndentedString(costPerGb)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
@@ -200,7 +174,7 @@ public class ModelsStorageTypeCostEntry {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cost_per_byte", "cost_per_gb", "id", "storage_type"));
+    openapiFields = new HashSet<String>(Arrays.asList("cost_per_gb", "id", "storage_type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CostId** | Pointer to **string** |  | [optional] 
-**CostPerByte** | Pointer to **float32** |  | [optional] 
 **CostPerGb** | Pointer to **float32** |  | [optional] 
 **EgressBytes** | Pointer to **int32** |  | [optional] 
 **EgressBytesGb** | Pointer to **float32** |  | [optional] 
@@ -58,31 +57,6 @@ SetCostId sets CostId field to given value.
 `func (o *ModelsStorageTypeOutputDetail) HasCostId() bool`
 
 HasCostId returns a boolean if a field has been set.
-
-### GetCostPerByte
-
-`func (o *ModelsStorageTypeOutputDetail) GetCostPerByte() float32`
-
-GetCostPerByte returns the CostPerByte field if non-nil, zero value otherwise.
-
-### GetCostPerByteOk
-
-`func (o *ModelsStorageTypeOutputDetail) GetCostPerByteOk() (*float32, bool)`
-
-GetCostPerByteOk returns a tuple with the CostPerByte field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCostPerByte
-
-`func (o *ModelsStorageTypeOutputDetail) SetCostPerByte(v float32)`
-
-SetCostPerByte sets CostPerByte field to given value.
-
-### HasCostPerByte
-
-`func (o *ModelsStorageTypeOutputDetail) HasCostPerByte() bool`
-
-HasCostPerByte returns a boolean if a field has been set.
 
 ### GetCostPerGb
 

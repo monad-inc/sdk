@@ -8,7 +8,6 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**costId** | **String** |  |  [optional] |
-|**costPerByte** | **BigDecimal** |  |  [optional] |
 |**costPerGb** | **BigDecimal** |  |  [optional] |
 |**egressBytes** | **Integer** |  |  [optional] |
 |**egressBytesGb** | **BigDecimal** |  |  [optional] |

@@ -49,17 +49,12 @@ import org.openapitools.client.JSON;
 /**
  * ModelsStorageTypeOutputDetail
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T01:52:40.022639312Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T02:34:51.645071669Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsStorageTypeOutputDetail {
   public static final String SERIALIZED_NAME_COST_ID = "cost_id";
   @SerializedName(SERIALIZED_NAME_COST_ID)
   @javax.annotation.Nullable
   private String costId;
-
-  public static final String SERIALIZED_NAME_COST_PER_BYTE = "cost_per_byte";
-  @SerializedName(SERIALIZED_NAME_COST_PER_BYTE)
-  @javax.annotation.Nullable
-  private BigDecimal costPerByte;
 
   public static final String SERIALIZED_NAME_COST_PER_GB = "cost_per_gb";
   @SerializedName(SERIALIZED_NAME_COST_PER_GB)
@@ -120,25 +115,6 @@ public class ModelsStorageTypeOutputDetail {
 
   public void setCostId(@javax.annotation.Nullable String costId) {
     this.costId = costId;
-  }
-
-
-  public ModelsStorageTypeOutputDetail costPerByte(@javax.annotation.Nullable BigDecimal costPerByte) {
-    this.costPerByte = costPerByte;
-    return this;
-  }
-
-  /**
-   * Get costPerByte
-   * @return costPerByte
-   */
-  @javax.annotation.Nullable
-  public BigDecimal getCostPerByte() {
-    return costPerByte;
-  }
-
-  public void setCostPerByte(@javax.annotation.Nullable BigDecimal costPerByte) {
-    this.costPerByte = costPerByte;
   }
 
 
@@ -305,7 +281,6 @@ public class ModelsStorageTypeOutputDetail {
     }
     ModelsStorageTypeOutputDetail modelsStorageTypeOutputDetail = (ModelsStorageTypeOutputDetail) o;
     return Objects.equals(this.costId, modelsStorageTypeOutputDetail.costId) &&
-        Objects.equals(this.costPerByte, modelsStorageTypeOutputDetail.costPerByte) &&
         Objects.equals(this.costPerGb, modelsStorageTypeOutputDetail.costPerGb) &&
         Objects.equals(this.egressBytes, modelsStorageTypeOutputDetail.egressBytes) &&
         Objects.equals(this.egressBytesGb, modelsStorageTypeOutputDetail.egressBytesGb) &&
@@ -318,7 +293,7 @@ public class ModelsStorageTypeOutputDetail {
 
   @Override
   public int hashCode() {
-    return Objects.hash(costId, costPerByte, costPerGb, egressBytes, egressBytesGb, numPipelines, preFilterBytes, preFilterBytesGb, totalCostPostFilter, totalCostPreFilter);
+    return Objects.hash(costId, costPerGb, egressBytes, egressBytesGb, numPipelines, preFilterBytes, preFilterBytesGb, totalCostPostFilter, totalCostPreFilter);
   }
 
   @Override
@@ -326,7 +301,6 @@ public class ModelsStorageTypeOutputDetail {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsStorageTypeOutputDetail {\n");
     sb.append("    costId: ").append(toIndentedString(costId)).append("\n");
-    sb.append("    costPerByte: ").append(toIndentedString(costPerByte)).append("\n");
     sb.append("    costPerGb: ").append(toIndentedString(costPerGb)).append("\n");
     sb.append("    egressBytes: ").append(toIndentedString(egressBytes)).append("\n");
     sb.append("    egressBytesGb: ").append(toIndentedString(egressBytesGb)).append("\n");
@@ -356,7 +330,7 @@ public class ModelsStorageTypeOutputDetail {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cost_id", "cost_per_byte", "cost_per_gb", "egress_bytes", "egress_bytes_gb", "num_pipelines", "pre_filter_bytes", "pre_filter_bytes_gb", "total_cost_post_filter", "total_cost_pre_filter"));
+    openapiFields = new HashSet<String>(Arrays.asList("cost_id", "cost_per_gb", "egress_bytes", "egress_bytes_gb", "num_pipelines", "pre_filter_bytes", "pre_filter_bytes_gb", "total_cost_post_filter", "total_cost_pre_filter"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
