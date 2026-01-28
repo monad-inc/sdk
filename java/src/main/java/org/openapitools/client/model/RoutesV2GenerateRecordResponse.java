@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2GenerateRecordResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T19:32:47.564821760Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T22:24:58.950382167Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV2GenerateRecordResponse {
   public static final String SERIALIZED_NAME_RECORD = "record";
   @SerializedName(SERIALIZED_NAME_RECORD)
