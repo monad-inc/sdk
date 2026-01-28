@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Fleet DM settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T01:03:08.606895274Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T01:32:11.705321225Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ActivityLogsSettingsConfig {
   public static final String SERIALIZED_NAME_FLEET_URL = "fleet_url";
   @SerializedName(SERIALIZED_NAME_FLEET_URL)
