@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2StorageTypeDetailsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T01:32:11.705321225Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T01:52:40.022639312Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV2StorageTypeDetailsResponse {
   public static final String SERIALIZED_NAME_END_AT = "end_at";
   @SerializedName(SERIALIZED_NAME_END_AT)
