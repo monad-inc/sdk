@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3EnrichmentSandboxResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T02:58:28.269507952Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T04:20:37.746249331Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV3EnrichmentSandboxResponse {
   public static final String SERIALIZED_NAME_RECORD = "record";
   @SerializedName(SERIALIZED_NAME_RECORD)
