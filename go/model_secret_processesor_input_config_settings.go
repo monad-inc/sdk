@@ -52,6 +52,7 @@ type SecretProcessesorInputConfigSettings struct {
 	CloudResourceInventoryReportsSettingsConfig *CloudResourceInventoryReportsSettingsConfig
 	CloudResourceInventorySettingsConfig *CloudResourceInventorySettingsConfig
 	CloudflareAuditLogsSettingsConfig *CloudflareAuditLogsSettingsConfig
+	CloudflareDdosAttackAnalyticsSettingsConfig *CloudflareDdosAttackAnalyticsSettingsConfig
 	CloudflareDnsRecordsSettingsConfig *CloudflareDnsRecordsSettingsConfig
 	CloudflareFirewallEventsSettingsConfig *CloudflareFirewallEventsSettingsConfig
 	CloudflareHttpRequestsSettingsConfig *CloudflareHttpRequestsSettingsConfig
@@ -385,6 +386,13 @@ func CloudResourceInventorySettingsConfigAsSecretProcessesorInputConfigSettings(
 func CloudflareAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflareAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		CloudflareAuditLogsSettingsConfig: v,
+	}
+}
+
+// CloudflareDdosAttackAnalyticsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CloudflareDdosAttackAnalyticsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CloudflareDdosAttackAnalyticsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CloudflareDdosAttackAnalyticsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CloudflareDdosAttackAnalyticsSettingsConfig: v,
 	}
 }
 
@@ -1673,6 +1681,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.CloudflareAuditLogsSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CloudflareDdosAttackAnalyticsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CloudflareDdosAttackAnalyticsSettingsConfig)
+	if err == nil {
+		jsonCloudflareDdosAttackAnalyticsSettingsConfig, _ := json.Marshal(dst.CloudflareDdosAttackAnalyticsSettingsConfig)
+		if string(jsonCloudflareDdosAttackAnalyticsSettingsConfig) == "{}" { // empty struct
+			dst.CloudflareDdosAttackAnalyticsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CloudflareDdosAttackAnalyticsSettingsConfig); err != nil {
+				dst.CloudflareDdosAttackAnalyticsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CloudflareDdosAttackAnalyticsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into CloudflareDnsRecordsSettingsConfig
@@ -3461,6 +3486,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.CloudResourceInventoryReportsSettingsConfig = nil
 		dst.CloudResourceInventorySettingsConfig = nil
 		dst.CloudflareAuditLogsSettingsConfig = nil
+		dst.CloudflareDdosAttackAnalyticsSettingsConfig = nil
 		dst.CloudflareDnsRecordsSettingsConfig = nil
 		dst.CloudflareFirewallEventsSettingsConfig = nil
 		dst.CloudflareHttpRequestsSettingsConfig = nil
@@ -3705,6 +3731,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.CloudflareAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.CloudflareAuditLogsSettingsConfig)
+	}
+
+	if src.CloudflareDdosAttackAnalyticsSettingsConfig != nil {
+		return json.Marshal(&src.CloudflareDdosAttackAnalyticsSettingsConfig)
 	}
 
 	if src.CloudflareDnsRecordsSettingsConfig != nil {
@@ -4259,6 +4289,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.CloudflareAuditLogsSettingsConfig
 	}
 
+	if obj.CloudflareDdosAttackAnalyticsSettingsConfig != nil {
+		return obj.CloudflareDdosAttackAnalyticsSettingsConfig
+	}
+
 	if obj.CloudflareDnsRecordsSettingsConfig != nil {
 		return obj.CloudflareDnsRecordsSettingsConfig
 	}
@@ -4807,6 +4841,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.CloudflareAuditLogsSettingsConfig != nil {
 		return *obj.CloudflareAuditLogsSettingsConfig
+	}
+
+	if obj.CloudflareDdosAttackAnalyticsSettingsConfig != nil {
+		return *obj.CloudflareDdosAttackAnalyticsSettingsConfig
 	}
 
 	if obj.CloudflareDnsRecordsSettingsConfig != nil {

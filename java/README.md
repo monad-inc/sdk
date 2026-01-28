@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-01-28T18:26:15.039314979Z[Etc/UTC]
+  - Build date: 2026-01-28T19:08:59.727480792Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -363,6 +363,8 @@ Class | Method | HTTP request | Description
  - [CloudResourceInventorySettingsConfig](docs/CloudResourceInventorySettingsConfig.md)
  - [CloudflareAuditLogsSecretsConfig](docs/CloudflareAuditLogsSecretsConfig.md)
  - [CloudflareAuditLogsSettingsConfig](docs/CloudflareAuditLogsSettingsConfig.md)
+ - [CloudflareDdosAttackAnalyticsSecretsConfig](docs/CloudflareDdosAttackAnalyticsSecretsConfig.md)
+ - [CloudflareDdosAttackAnalyticsSettingsConfig](docs/CloudflareDdosAttackAnalyticsSettingsConfig.md)
  - [CloudflareDnsRecordsSecretsConfig](docs/CloudflareDnsRecordsSecretsConfig.md)
  - [CloudflareDnsRecordsSettingsConfig](docs/CloudflareDnsRecordsSettingsConfig.md)
  - [CloudflareFirewallEventsSecretsConfig](docs/CloudflareFirewallEventsSecretsConfig.md)

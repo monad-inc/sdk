@@ -77,6 +77,8 @@ export * from '../models/CloudResourceInventorySecretsConfig';
 export * from '../models/CloudResourceInventorySettingsConfig';
 export * from '../models/CloudflareAuditLogsSecretsConfig';
 export * from '../models/CloudflareAuditLogsSettingsConfig';
+export * from '../models/CloudflareDdosAttackAnalyticsSecretsConfig';
+export * from '../models/CloudflareDdosAttackAnalyticsSettingsConfig';
 export * from '../models/CloudflareDnsRecordsSecretsConfig';
 export * from '../models/CloudflareDnsRecordsSettingsConfig';
 export * from '../models/CloudflareFirewallEventsSecretsConfig';
@@ -597,6 +599,8 @@ import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInve
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudflareAuditLogsSecretsConfig } from '../models/CloudflareAuditLogsSecretsConfig';
 import { CloudflareAuditLogsSettingsConfig } from '../models/CloudflareAuditLogsSettingsConfig';
+import { CloudflareDdosAttackAnalyticsSecretsConfig } from '../models/CloudflareDdosAttackAnalyticsSecretsConfig';
+import { CloudflareDdosAttackAnalyticsSettingsConfig } from '../models/CloudflareDdosAttackAnalyticsSettingsConfig';
 import { CloudflareDnsRecordsSecretsConfig } from '../models/CloudflareDnsRecordsSecretsConfig';
 import { CloudflareDnsRecordsSettingsConfig } from '../models/CloudflareDnsRecordsSettingsConfig';
 import { CloudflareFirewallEventsSecretsConfig } from '../models/CloudflareFirewallEventsSecretsConfig';
@@ -1149,6 +1153,8 @@ let typeMap: {[index: string]: any} = {
     "CloudResourceInventorySettingsConfig": CloudResourceInventorySettingsConfig,
     "CloudflareAuditLogsSecretsConfig": CloudflareAuditLogsSecretsConfig,
     "CloudflareAuditLogsSettingsConfig": CloudflareAuditLogsSettingsConfig,
+    "CloudflareDdosAttackAnalyticsSecretsConfig": CloudflareDdosAttackAnalyticsSecretsConfig,
+    "CloudflareDdosAttackAnalyticsSettingsConfig": CloudflareDdosAttackAnalyticsSettingsConfig,
     "CloudflareDnsRecordsSecretsConfig": CloudflareDnsRecordsSecretsConfig,
     "CloudflareDnsRecordsSettingsConfig": CloudflareDnsRecordsSettingsConfig,
     "CloudflareFirewallEventsSecretsConfig": CloudflareFirewallEventsSecretsConfig,

@@ -82,6 +82,8 @@ import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInve
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
 import { CloudflareAuditLogsSecretsConfig } from '../models/CloudflareAuditLogsSecretsConfig';
 import { CloudflareAuditLogsSettingsConfig } from '../models/CloudflareAuditLogsSettingsConfig';
+import { CloudflareDdosAttackAnalyticsSecretsConfig } from '../models/CloudflareDdosAttackAnalyticsSecretsConfig';
+import { CloudflareDdosAttackAnalyticsSettingsConfig } from '../models/CloudflareDdosAttackAnalyticsSettingsConfig';
 import { CloudflareDnsRecordsSecretsConfig } from '../models/CloudflareDnsRecordsSecretsConfig';
 import { CloudflareDnsRecordsSettingsConfig } from '../models/CloudflareDnsRecordsSettingsConfig';
 import { CloudflareFirewallEventsSecretsConfig } from '../models/CloudflareFirewallEventsSecretsConfig';

@@ -141,6 +141,8 @@ __all__ = [
     "CloudResourceInventorySettingsConfig",
     "CloudflareAuditLogsSecretsConfig",
     "CloudflareAuditLogsSettingsConfig",
+    "CloudflareDdosAttackAnalyticsSecretsConfig",
+    "CloudflareDdosAttackAnalyticsSettingsConfig",
     "CloudflareDnsRecordsSecretsConfig",
     "CloudflareDnsRecordsSettingsConfig",
     "CloudflareFirewallEventsSecretsConfig",
@@ -710,6 +712,8 @@ from monad.models.cloud_resource_inventory_secrets_config import CloudResourceIn
 from monad.models.cloud_resource_inventory_settings_config import CloudResourceInventorySettingsConfig as CloudResourceInventorySettingsConfig
 from monad.models.cloudflare_audit_logs_secrets_config import CloudflareAuditLogsSecretsConfig as CloudflareAuditLogsSecretsConfig
 from monad.models.cloudflare_audit_logs_settings_config import CloudflareAuditLogsSettingsConfig as CloudflareAuditLogsSettingsConfig
+from monad.models.cloudflare_ddos_attack_analytics_secrets_config import CloudflareDdosAttackAnalyticsSecretsConfig as CloudflareDdosAttackAnalyticsSecretsConfig
+from monad.models.cloudflare_ddos_attack_analytics_settings_config import CloudflareDdosAttackAnalyticsSettingsConfig as CloudflareDdosAttackAnalyticsSettingsConfig
 from monad.models.cloudflare_dns_records_secrets_config import CloudflareDnsRecordsSecretsConfig as CloudflareDnsRecordsSecretsConfig
 from monad.models.cloudflare_dns_records_settings_config import CloudflareDnsRecordsSettingsConfig as CloudflareDnsRecordsSettingsConfig
 from monad.models.cloudflare_firewall_events_secrets_config import CloudflareFirewallEventsSecretsConfig as CloudflareFirewallEventsSecretsConfig
