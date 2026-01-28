@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsEnrichmentConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T19:08:59.727480792Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T19:32:47.564821760Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsEnrichmentConfig {
   public static final String SERIALIZED_NAME_SECRETS = "secrets";
   @SerializedName(SERIALIZED_NAME_SECRETS)
