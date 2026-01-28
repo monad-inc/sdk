@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * KmsSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-27T19:57:47.554092007Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T01:03:08.606895274Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class KmsSettingsConfig {
   public static final String SERIALIZED_NAME_CRON = "cron";
   @SerializedName(SERIALIZED_NAME_CRON)

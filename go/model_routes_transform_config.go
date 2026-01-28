@@ -20,6 +20,7 @@ var _ MappedNullable = &RoutesTransformConfig{}
 
 // RoutesTransformConfig struct for RoutesTransformConfig
 type RoutesTransformConfig struct {
+	Conditional *ModelsTransformConditional `json:"conditional,omitempty"`
 	Operations []RoutesTransformOperation `json:"operations,omitempty"`
 }
 
@@ -38,6 +39,38 @@ func NewRoutesTransformConfig() *RoutesTransformConfig {
 func NewRoutesTransformConfigWithDefaults() *RoutesTransformConfig {
 	this := RoutesTransformConfig{}
 	return &this
+}
+
+// GetConditional returns the Conditional field value if set, zero value otherwise.
+func (o *RoutesTransformConfig) GetConditional() ModelsTransformConditional {
+	if o == nil || IsNil(o.Conditional) {
+		var ret ModelsTransformConditional
+		return ret
+	}
+	return *o.Conditional
+}
+
+// GetConditionalOk returns a tuple with the Conditional field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesTransformConfig) GetConditionalOk() (*ModelsTransformConditional, bool) {
+	if o == nil || IsNil(o.Conditional) {
+		return nil, false
+	}
+	return o.Conditional, true
+}
+
+// HasConditional returns a boolean if a field has been set.
+func (o *RoutesTransformConfig) HasConditional() bool {
+	if o != nil && !IsNil(o.Conditional) {
+		return true
+	}
+
+	return false
+}
+
+// SetConditional gets a reference to the given ModelsTransformConditional and assigns it to the Conditional field.
+func (o *RoutesTransformConfig) SetConditional(v ModelsTransformConditional) {
+	o.Conditional = &v
 }
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
@@ -82,6 +115,9 @@ func (o RoutesTransformConfig) MarshalJSON() ([]byte, error) {
 
 func (o RoutesTransformConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Conditional) {
+		toSerialize["conditional"] = o.Conditional
+	}
 	if !IsNil(o.Operations) {
 		toSerialize["operations"] = o.Operations
 	}

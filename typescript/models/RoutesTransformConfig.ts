@@ -10,10 +10,12 @@
  * Do not edit the class manually.
  */
 
+import { ModelsTransformConditional } from '../models/ModelsTransformConditional';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { HttpFile } from '../http/http';
 
 export class RoutesTransformConfig {
+    'conditional'?: ModelsTransformConditional;
     'operations'?: Array<RoutesTransformOperation>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -21,6 +23,12 @@ export class RoutesTransformConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "conditional",
+            "baseName": "conditional",
+            "type": "ModelsTransformConditional",
+            "format": ""
+        },
         {
             "name": "operations",
             "baseName": "operations",

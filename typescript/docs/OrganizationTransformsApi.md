@@ -92,6 +92,19 @@ const request: OrganizationTransformsApiV1OrganizationIdTransformsPostRequest = 
     // Request body for creating a transform
   routesCreateTransformRequest: {
     config: {
+      conditional: {
+        conditions: {
+          conditions: [
+            ,
+          ],
+          config: {
+            "key": null,
+          },
+          operator: "operator_example",
+          typeId: "typeId_example",
+        },
+        _else: "_else_example",
+      },
       operations: [
         {
           arguments: 
@@ -280,6 +293,19 @@ const request: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdPat
     // Request body for updating a transform
   routesUpdateTransformRequest: {
     config: {
+      conditional: {
+        conditions: {
+          conditions: [
+            ,
+          ],
+          config: {
+            "key": null,
+          },
+          operator: "operator_example",
+          typeId: "typeId_example",
+        },
+        _else: "_else_example",
+      },
       operations: [
         {
           arguments: 
