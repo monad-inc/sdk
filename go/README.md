@@ -314,8 +314,6 @@ Class | Method | HTTP request | Description
  - [CloudResourceInventoryReportsSettingsConfig](docs/CloudResourceInventoryReportsSettingsConfig.md)
  - [CloudResourceInventorySecretsConfig](docs/CloudResourceInventorySecretsConfig.md)
  - [CloudResourceInventorySettingsConfig](docs/CloudResourceInventorySettingsConfig.md)
- - [CloudflareAuditLogsSecretsConfig](docs/CloudflareAuditLogsSecretsConfig.md)
- - [CloudflareAuditLogsSettingsConfig](docs/CloudflareAuditLogsSettingsConfig.md)
  - [CloudflareDdosAttackAnalyticsSecretsConfig](docs/CloudflareDdosAttackAnalyticsSecretsConfig.md)
  - [CloudflareDdosAttackAnalyticsSettingsConfig](docs/CloudflareDdosAttackAnalyticsSettingsConfig.md)
  - [CloudflareDnsRecordsSecretsConfig](docs/CloudflareDnsRecordsSecretsConfig.md)

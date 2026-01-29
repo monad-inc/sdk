@@ -78,8 +78,6 @@ export * from '../models/CloudResourceInventoryReportsSecretsConfig';
 export * from '../models/CloudResourceInventoryReportsSettingsConfig';
 export * from '../models/CloudResourceInventorySecretsConfig';
 export * from '../models/CloudResourceInventorySettingsConfig';
-export * from '../models/CloudflareAuditLogsSecretsConfig';
-export * from '../models/CloudflareAuditLogsSettingsConfig';
 export * from '../models/CloudflareDdosAttackAnalyticsSecretsConfig';
 export * from '../models/CloudflareDdosAttackAnalyticsSettingsConfig';
 export * from '../models/CloudflareDnsRecordsSecretsConfig';
@@ -604,8 +602,6 @@ import { CloudResourceInventoryReportsSecretsConfig } from '../models/CloudResou
 import { CloudResourceInventoryReportsSettingsConfig } from '../models/CloudResourceInventoryReportsSettingsConfig';
 import { CloudResourceInventorySecretsConfig } from '../models/CloudResourceInventorySecretsConfig';
 import { CloudResourceInventorySettingsConfig } from '../models/CloudResourceInventorySettingsConfig';
-import { CloudflareAuditLogsSecretsConfig } from '../models/CloudflareAuditLogsSecretsConfig';
-import { CloudflareAuditLogsSettingsConfig } from '../models/CloudflareAuditLogsSettingsConfig';
 import { CloudflareDdosAttackAnalyticsSecretsConfig } from '../models/CloudflareDdosAttackAnalyticsSecretsConfig';
 import { CloudflareDdosAttackAnalyticsSettingsConfig } from '../models/CloudflareDdosAttackAnalyticsSettingsConfig';
 import { CloudflareDnsRecordsSecretsConfig } from '../models/CloudflareDnsRecordsSecretsConfig';
@@ -1162,8 +1158,6 @@ let typeMap: {[index: string]: any} = {
     "CloudResourceInventoryReportsSettingsConfig": CloudResourceInventoryReportsSettingsConfig,
     "CloudResourceInventorySecretsConfig": CloudResourceInventorySecretsConfig,
     "CloudResourceInventorySettingsConfig": CloudResourceInventorySettingsConfig,
-    "CloudflareAuditLogsSecretsConfig": CloudflareAuditLogsSecretsConfig,
-    "CloudflareAuditLogsSettingsConfig": CloudflareAuditLogsSettingsConfig,
     "CloudflareDdosAttackAnalyticsSecretsConfig": CloudflareDdosAttackAnalyticsSecretsConfig,
     "CloudflareDdosAttackAnalyticsSettingsConfig": CloudflareDdosAttackAnalyticsSettingsConfig,
     "CloudflareDnsRecordsSecretsConfig": CloudflareDnsRecordsSecretsConfig,

@@ -142,8 +142,6 @@ __all__ = [
     "CloudResourceInventoryReportsSettingsConfig",
     "CloudResourceInventorySecretsConfig",
     "CloudResourceInventorySettingsConfig",
-    "CloudflareAuditLogsSecretsConfig",
-    "CloudflareAuditLogsSettingsConfig",
     "CloudflareDdosAttackAnalyticsSecretsConfig",
     "CloudflareDdosAttackAnalyticsSettingsConfig",
     "CloudflareDnsRecordsSecretsConfig",
@@ -717,8 +715,6 @@ from monad.models.cloud_resource_inventory_reports_secrets_config import CloudRe
 from monad.models.cloud_resource_inventory_reports_settings_config import CloudResourceInventoryReportsSettingsConfig as CloudResourceInventoryReportsSettingsConfig
 from monad.models.cloud_resource_inventory_secrets_config import CloudResourceInventorySecretsConfig as CloudResourceInventorySecretsConfig
 from monad.models.cloud_resource_inventory_settings_config import CloudResourceInventorySettingsConfig as CloudResourceInventorySettingsConfig
-from monad.models.cloudflare_audit_logs_secrets_config import CloudflareAuditLogsSecretsConfig as CloudflareAuditLogsSecretsConfig
-from monad.models.cloudflare_audit_logs_settings_config import CloudflareAuditLogsSettingsConfig as CloudflareAuditLogsSettingsConfig
 from monad.models.cloudflare_ddos_attack_analytics_secrets_config import CloudflareDdosAttackAnalyticsSecretsConfig as CloudflareDdosAttackAnalyticsSecretsConfig
 from monad.models.cloudflare_ddos_attack_analytics_settings_config import CloudflareDdosAttackAnalyticsSettingsConfig as CloudflareDdosAttackAnalyticsSettingsConfig
 from monad.models.cloudflare_dns_records_secrets_config import CloudflareDnsRecordsSecretsConfig as CloudflareDnsRecordsSecretsConfig

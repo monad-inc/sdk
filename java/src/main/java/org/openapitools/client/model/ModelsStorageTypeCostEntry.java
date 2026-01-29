@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsStorageTypeCostEntry
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-29T16:43:40.011627948Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-29T18:07:38.362554792Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsStorageTypeCostEntry {
   public static final String SERIALIZED_NAME_COST_PER_GB = "cost_per_gb";
   @SerializedName(SERIALIZED_NAME_COST_PER_GB)
