@@ -90,6 +90,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	OneloginEventsSecretsConfig *OneloginEventsSecretsConfig
 	OperationLogsSecretsConfig *OperationLogsSecretsConfig
 	OrgAuditLogsSecretsConfig *OrgAuditLogsSecretsConfig
+	OwnbackupAccountEventsSecretsConfig *OwnbackupAccountEventsSecretsConfig
 	PagerdutyAuditRecordsSecretsConfig *PagerdutyAuditRecordsSecretsConfig
 	PaloAltoDataSecurityAlertsSecretsConfig *PaloAltoDataSecurityAlertsSecretsConfig
 	PolymerSecretsConfig *PolymerSecretsConfig
@@ -636,6 +637,13 @@ func OperationLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Operatio
 func OrgAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OrgAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		OrgAuditLogsSecretsConfig: v,
+	}
+}
+
+// OwnbackupAccountEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns OwnbackupAccountEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func OwnbackupAccountEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OwnbackupAccountEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		OwnbackupAccountEventsSecretsConfig: v,
 	}
 }
 
@@ -2201,6 +2209,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.OrgAuditLogsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into OwnbackupAccountEventsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.OwnbackupAccountEventsSecretsConfig)
+	if err == nil {
+		jsonOwnbackupAccountEventsSecretsConfig, _ := json.Marshal(dst.OwnbackupAccountEventsSecretsConfig)
+		if string(jsonOwnbackupAccountEventsSecretsConfig) == "{}" { // empty struct
+			dst.OwnbackupAccountEventsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.OwnbackupAccountEventsSecretsConfig); err != nil {
+				dst.OwnbackupAccountEventsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.OwnbackupAccountEventsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into PagerdutyAuditRecordsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.PagerdutyAuditRecordsSecretsConfig)
 	if err == nil {
@@ -3124,6 +3149,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.OneloginEventsSecretsConfig = nil
 		dst.OperationLogsSecretsConfig = nil
 		dst.OrgAuditLogsSecretsConfig = nil
+		dst.OwnbackupAccountEventsSecretsConfig = nil
 		dst.PagerdutyAuditRecordsSecretsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSecretsConfig = nil
 		dst.PolymerSecretsConfig = nil
@@ -3467,6 +3493,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.OrgAuditLogsSecretsConfig != nil {
 		return json.Marshal(&src.OrgAuditLogsSecretsConfig)
+	}
+
+	if src.OwnbackupAccountEventsSecretsConfig != nil {
+		return json.Marshal(&src.OwnbackupAccountEventsSecretsConfig)
 	}
 
 	if src.PagerdutyAuditRecordsSecretsConfig != nil {
@@ -3961,6 +3991,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.OrgAuditLogsSecretsConfig
 	}
 
+	if obj.OwnbackupAccountEventsSecretsConfig != nil {
+		return obj.OwnbackupAccountEventsSecretsConfig
+	}
+
 	if obj.PagerdutyAuditRecordsSecretsConfig != nil {
 		return obj.PagerdutyAuditRecordsSecretsConfig
 	}
@@ -4449,6 +4483,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.OrgAuditLogsSecretsConfig != nil {
 		return *obj.OrgAuditLogsSecretsConfig
+	}
+
+	if obj.OwnbackupAccountEventsSecretsConfig != nil {
+		return *obj.OwnbackupAccountEventsSecretsConfig
 	}
 
 	if obj.PagerdutyAuditRecordsSecretsConfig != nil {

@@ -29,6 +29,8 @@ type SecretProcessesorInputConfigSettings struct {
 	AuditLogsSettingsConfig *AuditLogsSettingsConfig
 	AuthLogsSettingsConfig *AuthLogsSettingsConfig
 	AwsGuarddutySettingsConfig *AwsGuarddutySettingsConfig
+	AwsIamAliasesSettingsConfig *AwsIamAliasesSettingsConfig
+	AwsOrganizationsSettingsConfig *AwsOrganizationsSettingsConfig
 	AwsS3SettingsConfig *AwsS3SettingsConfig
 	AwssecurityhubSettingsConfig *AwssecurityhubSettingsConfig
 	Awssqss3SettingsConfig *Awssqss3SettingsConfig
@@ -101,7 +103,7 @@ type SecretProcessesorInputConfigSettings struct {
 	OperationLogsSettingsConfig *OperationLogsSettingsConfig
 	OracleSettingsConfig *OracleSettingsConfig
 	OrgAuditLogsSettingsConfig *OrgAuditLogsSettingsConfig
-	OrganizationsSettingsConfig *OrganizationsSettingsConfig
+	OwnbackupAccountEventsSettingsConfig *OwnbackupAccountEventsSettingsConfig
 	PagerdutyAuditRecordsSettingsConfig *PagerdutyAuditRecordsSettingsConfig
 	PaloAltoDataSecurityAlertsSettingsConfig *PaloAltoDataSecurityAlertsSettingsConfig
 	PolymerSettingsConfig *PolymerSettingsConfig
@@ -225,6 +227,20 @@ func AuthLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AuthLogsSet
 func AwsGuarddutySettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsGuarddutySettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		AwsGuarddutySettingsConfig: v,
+	}
+}
+
+// AwsIamAliasesSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AwsIamAliasesSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func AwsIamAliasesSettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsIamAliasesSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		AwsIamAliasesSettingsConfig: v,
+	}
+}
+
+// AwsOrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AwsOrganizationsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func AwsOrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsOrganizationsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		AwsOrganizationsSettingsConfig: v,
 	}
 }
 
@@ -732,10 +748,10 @@ func OrgAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OrgAudi
 	}
 }
 
-// OrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OrganizationsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func OrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OrganizationsSettingsConfig) SecretProcessesorInputConfigSettings {
+// OwnbackupAccountEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OwnbackupAccountEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func OwnbackupAccountEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OwnbackupAccountEventsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
-		OrganizationsSettingsConfig: v,
+		OwnbackupAccountEventsSettingsConfig: v,
 	}
 }
 
@@ -1290,6 +1306,40 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.AwsGuarddutySettingsConfig = nil
+	}
+
+	// try to unmarshal data into AwsIamAliasesSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AwsIamAliasesSettingsConfig)
+	if err == nil {
+		jsonAwsIamAliasesSettingsConfig, _ := json.Marshal(dst.AwsIamAliasesSettingsConfig)
+		if string(jsonAwsIamAliasesSettingsConfig) == "{}" { // empty struct
+			dst.AwsIamAliasesSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AwsIamAliasesSettingsConfig); err != nil {
+				dst.AwsIamAliasesSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AwsIamAliasesSettingsConfig = nil
+	}
+
+	// try to unmarshal data into AwsOrganizationsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AwsOrganizationsSettingsConfig)
+	if err == nil {
+		jsonAwsOrganizationsSettingsConfig, _ := json.Marshal(dst.AwsOrganizationsSettingsConfig)
+		if string(jsonAwsOrganizationsSettingsConfig) == "{}" { // empty struct
+			dst.AwsOrganizationsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AwsOrganizationsSettingsConfig); err != nil {
+				dst.AwsOrganizationsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AwsOrganizationsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into AwsS3SettingsConfig
@@ -2516,21 +2566,21 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OrgAuditLogsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into OrganizationsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.OrganizationsSettingsConfig)
+	// try to unmarshal data into OwnbackupAccountEventsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.OwnbackupAccountEventsSettingsConfig)
 	if err == nil {
-		jsonOrganizationsSettingsConfig, _ := json.Marshal(dst.OrganizationsSettingsConfig)
-		if string(jsonOrganizationsSettingsConfig) == "{}" { // empty struct
-			dst.OrganizationsSettingsConfig = nil
+		jsonOwnbackupAccountEventsSettingsConfig, _ := json.Marshal(dst.OwnbackupAccountEventsSettingsConfig)
+		if string(jsonOwnbackupAccountEventsSettingsConfig) == "{}" { // empty struct
+			dst.OwnbackupAccountEventsSettingsConfig = nil
 		} else {
-			if err = validator.Validate(dst.OrganizationsSettingsConfig); err != nil {
-				dst.OrganizationsSettingsConfig = nil
+			if err = validator.Validate(dst.OwnbackupAccountEventsSettingsConfig); err != nil {
+				dst.OwnbackupAccountEventsSettingsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.OrganizationsSettingsConfig = nil
+		dst.OwnbackupAccountEventsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into PagerdutyAuditRecordsSettingsConfig
@@ -3463,6 +3513,8 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.AuditLogsSettingsConfig = nil
 		dst.AuthLogsSettingsConfig = nil
 		dst.AwsGuarddutySettingsConfig = nil
+		dst.AwsIamAliasesSettingsConfig = nil
+		dst.AwsOrganizationsSettingsConfig = nil
 		dst.AwsS3SettingsConfig = nil
 		dst.AwssecurityhubSettingsConfig = nil
 		dst.Awssqss3SettingsConfig = nil
@@ -3535,7 +3587,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OperationLogsSettingsConfig = nil
 		dst.OracleSettingsConfig = nil
 		dst.OrgAuditLogsSettingsConfig = nil
-		dst.OrganizationsSettingsConfig = nil
+		dst.OwnbackupAccountEventsSettingsConfig = nil
 		dst.PagerdutyAuditRecordsSettingsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
 		dst.PolymerSettingsConfig = nil
@@ -3639,6 +3691,14 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.AwsGuarddutySettingsConfig != nil {
 		return json.Marshal(&src.AwsGuarddutySettingsConfig)
+	}
+
+	if src.AwsIamAliasesSettingsConfig != nil {
+		return json.Marshal(&src.AwsIamAliasesSettingsConfig)
+	}
+
+	if src.AwsOrganizationsSettingsConfig != nil {
+		return json.Marshal(&src.AwsOrganizationsSettingsConfig)
 	}
 
 	if src.AwsS3SettingsConfig != nil {
@@ -3929,8 +3989,8 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.OrgAuditLogsSettingsConfig)
 	}
 
-	if src.OrganizationsSettingsConfig != nil {
-		return json.Marshal(&src.OrganizationsSettingsConfig)
+	if src.OwnbackupAccountEventsSettingsConfig != nil {
+		return json.Marshal(&src.OwnbackupAccountEventsSettingsConfig)
 	}
 
 	if src.PagerdutyAuditRecordsSettingsConfig != nil {
@@ -4195,6 +4255,14 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.AwsGuarddutySettingsConfig != nil {
 		return obj.AwsGuarddutySettingsConfig
+	}
+
+	if obj.AwsIamAliasesSettingsConfig != nil {
+		return obj.AwsIamAliasesSettingsConfig
+	}
+
+	if obj.AwsOrganizationsSettingsConfig != nil {
+		return obj.AwsOrganizationsSettingsConfig
 	}
 
 	if obj.AwsS3SettingsConfig != nil {
@@ -4485,8 +4553,8 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.OrgAuditLogsSettingsConfig
 	}
 
-	if obj.OrganizationsSettingsConfig != nil {
-		return obj.OrganizationsSettingsConfig
+	if obj.OwnbackupAccountEventsSettingsConfig != nil {
+		return obj.OwnbackupAccountEventsSettingsConfig
 	}
 
 	if obj.PagerdutyAuditRecordsSettingsConfig != nil {
@@ -4749,6 +4817,14 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.AwsGuarddutySettingsConfig != nil {
 		return *obj.AwsGuarddutySettingsConfig
+	}
+
+	if obj.AwsIamAliasesSettingsConfig != nil {
+		return *obj.AwsIamAliasesSettingsConfig
+	}
+
+	if obj.AwsOrganizationsSettingsConfig != nil {
+		return *obj.AwsOrganizationsSettingsConfig
 	}
 
 	if obj.AwsS3SettingsConfig != nil {
@@ -5039,8 +5115,8 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.OrgAuditLogsSettingsConfig
 	}
 
-	if obj.OrganizationsSettingsConfig != nil {
-		return *obj.OrganizationsSettingsConfig
+	if obj.OwnbackupAccountEventsSettingsConfig != nil {
+		return *obj.OwnbackupAccountEventsSettingsConfig
 	}
 
 	if obj.PagerdutyAuditRecordsSettingsConfig != nil {

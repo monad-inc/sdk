@@ -32,6 +32,9 @@
 |**region** | **String** | The AWS region where the security groups that are being fetched are located. |  [optional] |
 |**roleArn** | **String** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. |  [optional] |
 |**severity** | **String** | Filter by alert severity (error, warning) |  [optional] |
+|**accounts** | [**List&lt;AwsIamAliasesAccount&gt;**](AwsIamAliasesAccount.md) | List of AWS accounts to fetch IAM aliases from |  [optional] |
+|**childType** | **String** | Specifies whether to list AWS accounts or organizational units (OUs) as children of the parent entity. |  [optional] |
+|**parentId** | **String** | Parent ID to list children for |  [optional] |
 |**bucket** | **String** | Name of the storage bucket |  [optional] |
 |**compression** | **String** | Compression format of the objects |  [optional] |
 |**format** | **String** | File format of the objects |  [optional] |
@@ -150,8 +153,6 @@
 |**username** | **String** | Username of Oracle Cloud service user with permissions to access the resource |  [optional] |
 |**githubAppInstallationId** | **String** | GitHub App Installation ID (required when using GitHub App authentication) |  [optional] |
 |**githubClientId** | **String** | GitHub Client ID (alternative to personal access token) |  [optional] |
-|**childType** | **String** | Specifies whether to list AWS accounts or organizational units (OUs) as children of the parent entity. |  [optional] |
-|**parentId** | **String** | Parent ID to list children for |  [optional] |
 |**domainUrl** | **String** | Domain URL for the Salesforce instance |  [optional] |
 |**topic** | **String** | Pub/Sub topic to subscribe to |  [optional] |
 |**evaluationContextIdentifier** | **String** | Filters proactive resource evaluations for a given infrastructure deployment. |  [optional] |

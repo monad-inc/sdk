@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **ApiSecret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **HarvestApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **GithubAppPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**RefreshToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **UserOauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Password** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -620,6 +621,31 @@ SetGithubAppPrivateKey sets GithubAppPrivateKey field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasGithubAppPrivateKey() bool`
 
 HasGithubAppPrivateKey returns a boolean if a field has been set.
+
+### GetRefreshToken
+
+`func (o *SecretProcessesorInputConfigSecrets) GetRefreshToken() ModelsSecret`
+
+GetRefreshToken returns the RefreshToken field if non-nil, zero value otherwise.
+
+### GetRefreshTokenOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetRefreshTokenOk() (*ModelsSecret, bool)`
+
+GetRefreshTokenOk returns a tuple with the RefreshToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRefreshToken
+
+`func (o *SecretProcessesorInputConfigSecrets) SetRefreshToken(v ModelsSecret)`
+
+SetRefreshToken sets RefreshToken field to given value.
+
+### HasRefreshToken
+
+`func (o *SecretProcessesorInputConfigSecrets) HasRefreshToken() bool`
+
+HasRefreshToken returns a boolean if a field has been set.
 
 ### GetUserOauthToken
 

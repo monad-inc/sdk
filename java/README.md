@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-01-29T01:59:20.527596221Z[Etc/UTC]
+  - Build date: 2026-01-29T16:43:40.011627948Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -312,6 +312,9 @@ Class | Method | HTTP request | Description
  - [AuthenticationtypesTokenResponse](docs/AuthenticationtypesTokenResponse.md)
  - [AwsGuarddutySecretsConfig](docs/AwsGuarddutySecretsConfig.md)
  - [AwsGuarddutySettingsConfig](docs/AwsGuarddutySettingsConfig.md)
+ - [AwsIamAliasesAccount](docs/AwsIamAliasesAccount.md)
+ - [AwsIamAliasesSettingsConfig](docs/AwsIamAliasesSettingsConfig.md)
+ - [AwsOrganizationsSettingsConfig](docs/AwsOrganizationsSettingsConfig.md)
  - [AwsS3SecretsConfig](docs/AwsS3SecretsConfig.md)
  - [AwsS3SettingsConfig](docs/AwsS3SettingsConfig.md)
  - [AwssecurityhubSecretsConfig](docs/AwssecurityhubSecretsConfig.md)
@@ -575,8 +578,9 @@ Class | Method | HTTP request | Description
  - [OracleSettingsConfig](docs/OracleSettingsConfig.md)
  - [OrgAuditLogsSecretsConfig](docs/OrgAuditLogsSecretsConfig.md)
  - [OrgAuditLogsSettingsConfig](docs/OrgAuditLogsSettingsConfig.md)
- - [OrganizationsSettingsConfig](docs/OrganizationsSettingsConfig.md)
  - [OutputsConnectorMeta](docs/OutputsConnectorMeta.md)
+ - [OwnbackupAccountEventsSecretsConfig](docs/OwnbackupAccountEventsSecretsConfig.md)
+ - [OwnbackupAccountEventsSettingsConfig](docs/OwnbackupAccountEventsSettingsConfig.md)
  - [PagerdutyAlertsConfig](docs/PagerdutyAlertsConfig.md)
  - [PagerdutyAuditRecordsSecretsConfig](docs/PagerdutyAuditRecordsSecretsConfig.md)
  - [PagerdutyAuditRecordsSettingsConfig](docs/PagerdutyAuditRecordsSettingsConfig.md)

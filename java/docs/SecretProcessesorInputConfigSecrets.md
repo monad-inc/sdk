@@ -30,6 +30,7 @@
 |**apiSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**harvestApiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**githubAppPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**refreshToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**userOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**token** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**password** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

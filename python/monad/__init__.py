@@ -90,6 +90,9 @@ __all__ = [
     "AuthenticationtypesTokenResponse",
     "AwsGuarddutySecretsConfig",
     "AwsGuarddutySettingsConfig",
+    "AwsIamAliasesAccount",
+    "AwsIamAliasesSettingsConfig",
+    "AwsOrganizationsSettingsConfig",
     "AwsS3SecretsConfig",
     "AwsS3SettingsConfig",
     "AwssecurityhubSecretsConfig",
@@ -353,8 +356,9 @@ __all__ = [
     "OracleSettingsConfig",
     "OrgAuditLogsSecretsConfig",
     "OrgAuditLogsSettingsConfig",
-    "OrganizationsSettingsConfig",
     "OutputsConnectorMeta",
+    "OwnbackupAccountEventsSecretsConfig",
+    "OwnbackupAccountEventsSettingsConfig",
     "PagerdutyAlertsConfig",
     "PagerdutyAuditRecordsSecretsConfig",
     "PagerdutyAuditRecordsSettingsConfig",
@@ -661,6 +665,9 @@ from monad.models.authenticationtypes_mfa_enrollment_ticket import Authenticatio
 from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse as AuthenticationtypesTokenResponse
 from monad.models.aws_guardduty_secrets_config import AwsGuarddutySecretsConfig as AwsGuarddutySecretsConfig
 from monad.models.aws_guardduty_settings_config import AwsGuarddutySettingsConfig as AwsGuarddutySettingsConfig
+from monad.models.aws_iam_aliases_account import AwsIamAliasesAccount as AwsIamAliasesAccount
+from monad.models.aws_iam_aliases_settings_config import AwsIamAliasesSettingsConfig as AwsIamAliasesSettingsConfig
+from monad.models.aws_organizations_settings_config import AwsOrganizationsSettingsConfig as AwsOrganizationsSettingsConfig
 from monad.models.aws_s3_secrets_config import AwsS3SecretsConfig as AwsS3SecretsConfig
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig as AwsS3SettingsConfig
 from monad.models.awssecurityhub_secrets_config import AwssecurityhubSecretsConfig as AwssecurityhubSecretsConfig
@@ -924,8 +931,9 @@ from monad.models.operation_logs_settings_config import OperationLogsSettingsCon
 from monad.models.oracle_settings_config import OracleSettingsConfig as OracleSettingsConfig
 from monad.models.org_audit_logs_secrets_config import OrgAuditLogsSecretsConfig as OrgAuditLogsSecretsConfig
 from monad.models.org_audit_logs_settings_config import OrgAuditLogsSettingsConfig as OrgAuditLogsSettingsConfig
-from monad.models.organizations_settings_config import OrganizationsSettingsConfig as OrganizationsSettingsConfig
 from monad.models.outputs_connector_meta import OutputsConnectorMeta as OutputsConnectorMeta
+from monad.models.ownbackup_account_events_secrets_config import OwnbackupAccountEventsSecretsConfig as OwnbackupAccountEventsSecretsConfig
+from monad.models.ownbackup_account_events_settings_config import OwnbackupAccountEventsSettingsConfig as OwnbackupAccountEventsSettingsConfig
 from monad.models.pagerduty_alerts_config import PagerdutyAlertsConfig as PagerdutyAlertsConfig
 from monad.models.pagerduty_audit_records_secrets_config import PagerdutyAuditRecordsSecretsConfig as PagerdutyAuditRecordsSecretsConfig
 from monad.models.pagerduty_audit_records_settings_config import PagerdutyAuditRecordsSettingsConfig as PagerdutyAuditRecordsSettingsConfig

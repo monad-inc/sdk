@@ -29,6 +29,9 @@ Name | Type | Description | Notes
 **Region** | Pointer to **string** | The AWS region where the security groups that are being fetched are located. | [optional] 
 **RoleArn** | Pointer to **string** | RoleArn is the ARN of the IAM role to assume for accessing AWS security groups. | [optional] 
 **Severity** | Pointer to **string** | Filter by alert severity (error, warning) | [optional] 
+**Accounts** | Pointer to [**[]AwsIamAliasesAccount**](AwsIamAliasesAccount.md) | List of AWS accounts to fetch IAM aliases from | [optional] 
+**ChildType** | Pointer to **string** | Specifies whether to list AWS accounts or organizational units (OUs) as children of the parent entity. | [optional] 
+**ParentId** | Pointer to **string** | Parent ID to list children for | [optional] 
 **Bucket** | Pointer to **string** | Name of the storage bucket | [optional] 
 **Compression** | Pointer to **string** | Compression format of the objects | [optional] 
 **Format** | Pointer to **string** | File format of the objects | [optional] 
@@ -147,8 +150,6 @@ Name | Type | Description | Notes
 **Username** | Pointer to **string** | Username of Oracle Cloud service user with permissions to access the resource | [optional] 
 **GithubAppInstallationId** | Pointer to **string** | GitHub App Installation ID (required when using GitHub App authentication) | [optional] 
 **GithubClientId** | Pointer to **string** | GitHub Client ID (alternative to personal access token) | [optional] 
-**ChildType** | Pointer to **string** | Specifies whether to list AWS accounts or organizational units (OUs) as children of the parent entity. | [optional] 
-**ParentId** | Pointer to **string** | Parent ID to list children for | [optional] 
 **DomainUrl** | Pointer to **string** | Domain URL for the Salesforce instance | [optional] 
 **Topic** | Pointer to **string** | Pub/Sub topic to subscribe to | [optional] 
 **EvaluationContextIdentifier** | Pointer to **string** | Filters proactive resource evaluations for a given infrastructure deployment. | [optional] 
@@ -827,6 +828,81 @@ SetSeverity sets Severity field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasSeverity() bool`
 
 HasSeverity returns a boolean if a field has been set.
+
+### GetAccounts
+
+`func (o *SecretProcessesorInputConfigSettings) GetAccounts() []AwsIamAliasesAccount`
+
+GetAccounts returns the Accounts field if non-nil, zero value otherwise.
+
+### GetAccountsOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetAccountsOk() (*[]AwsIamAliasesAccount, bool)`
+
+GetAccountsOk returns a tuple with the Accounts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccounts
+
+`func (o *SecretProcessesorInputConfigSettings) SetAccounts(v []AwsIamAliasesAccount)`
+
+SetAccounts sets Accounts field to given value.
+
+### HasAccounts
+
+`func (o *SecretProcessesorInputConfigSettings) HasAccounts() bool`
+
+HasAccounts returns a boolean if a field has been set.
+
+### GetChildType
+
+`func (o *SecretProcessesorInputConfigSettings) GetChildType() string`
+
+GetChildType returns the ChildType field if non-nil, zero value otherwise.
+
+### GetChildTypeOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetChildTypeOk() (*string, bool)`
+
+GetChildTypeOk returns a tuple with the ChildType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChildType
+
+`func (o *SecretProcessesorInputConfigSettings) SetChildType(v string)`
+
+SetChildType sets ChildType field to given value.
+
+### HasChildType
+
+`func (o *SecretProcessesorInputConfigSettings) HasChildType() bool`
+
+HasChildType returns a boolean if a field has been set.
+
+### GetParentId
+
+`func (o *SecretProcessesorInputConfigSettings) GetParentId() string`
+
+GetParentId returns the ParentId field if non-nil, zero value otherwise.
+
+### GetParentIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetParentIdOk() (*string, bool)`
+
+GetParentIdOk returns a tuple with the ParentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentId
+
+`func (o *SecretProcessesorInputConfigSettings) SetParentId(v string)`
+
+SetParentId sets ParentId field to given value.
+
+### HasParentId
+
+`func (o *SecretProcessesorInputConfigSettings) HasParentId() bool`
+
+HasParentId returns a boolean if a field has been set.
 
 ### GetBucket
 
@@ -3777,56 +3853,6 @@ SetGithubClientId sets GithubClientId field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasGithubClientId() bool`
 
 HasGithubClientId returns a boolean if a field has been set.
-
-### GetChildType
-
-`func (o *SecretProcessesorInputConfigSettings) GetChildType() string`
-
-GetChildType returns the ChildType field if non-nil, zero value otherwise.
-
-### GetChildTypeOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetChildTypeOk() (*string, bool)`
-
-GetChildTypeOk returns a tuple with the ChildType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetChildType
-
-`func (o *SecretProcessesorInputConfigSettings) SetChildType(v string)`
-
-SetChildType sets ChildType field to given value.
-
-### HasChildType
-
-`func (o *SecretProcessesorInputConfigSettings) HasChildType() bool`
-
-HasChildType returns a boolean if a field has been set.
-
-### GetParentId
-
-`func (o *SecretProcessesorInputConfigSettings) GetParentId() string`
-
-GetParentId returns the ParentId field if non-nil, zero value otherwise.
-
-### GetParentIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetParentIdOk() (*string, bool)`
-
-GetParentIdOk returns a tuple with the ParentId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParentId
-
-`func (o *SecretProcessesorInputConfigSettings) SetParentId(v string)`
-
-SetParentId sets ParentId field to given value.
-
-### HasParentId
-
-`func (o *SecretProcessesorInputConfigSettings) HasParentId() bool`
-
-HasParentId returns a boolean if a field has been set.
 
 ### GetDomainUrl
 

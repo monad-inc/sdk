@@ -26,6 +26,9 @@ export * from '../models/AuthenticationtypesMFAEnrollmentTicket';
 export * from '../models/AuthenticationtypesTokenResponse';
 export * from '../models/AwsGuarddutySecretsConfig';
 export * from '../models/AwsGuarddutySettingsConfig';
+export * from '../models/AwsIamAliasesAccount';
+export * from '../models/AwsIamAliasesSettingsConfig';
+export * from '../models/AwsOrganizationsSettingsConfig';
 export * from '../models/AwsS3SecretsConfig';
 export * from '../models/AwsS3SettingsConfig';
 export * from '../models/AwssecurityhubSecretsConfig';
@@ -289,8 +292,9 @@ export * from '../models/OperationLogsSettingsConfig';
 export * from '../models/OracleSettingsConfig';
 export * from '../models/OrgAuditLogsSecretsConfig';
 export * from '../models/OrgAuditLogsSettingsConfig';
-export * from '../models/OrganizationsSettingsConfig';
 export * from '../models/OutputsConnectorMeta';
+export * from '../models/OwnbackupAccountEventsSecretsConfig';
+export * from '../models/OwnbackupAccountEventsSettingsConfig';
 export * from '../models/PagerdutyAlertsConfig';
 export * from '../models/PagerdutyAuditRecordsSecretsConfig';
 export * from '../models/PagerdutyAuditRecordsSettingsConfig';
@@ -548,6 +552,9 @@ import { AuthenticationtypesMFAEnrollmentTicket } from '../models/Authentication
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
 import { AwsGuarddutySecretsConfig } from '../models/AwsGuarddutySecretsConfig';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
+import { AwsIamAliasesAccount } from '../models/AwsIamAliasesAccount';
+import { AwsIamAliasesSettingsConfig } from '../models/AwsIamAliasesSettingsConfig';
+import { AwsOrganizationsSettingsConfig } from '../models/AwsOrganizationsSettingsConfig';
 import { AwsS3SecretsConfig } from '../models/AwsS3SecretsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AwssecurityhubSecretsConfig } from '../models/AwssecurityhubSecretsConfig';
@@ -811,8 +818,9 @@ import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConf
 import { OracleSettingsConfig } from '../models/OracleSettingsConfig';
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
 import { OrgAuditLogsSettingsConfig } from '../models/OrgAuditLogsSettingsConfig';
-import { OrganizationsSettingsConfig } from '../models/OrganizationsSettingsConfig';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
+import { OwnbackupAccountEventsSecretsConfig } from '../models/OwnbackupAccountEventsSecretsConfig';
+import { OwnbackupAccountEventsSettingsConfig } from '../models/OwnbackupAccountEventsSettingsConfig';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
 import { PagerdutyAuditRecordsSecretsConfig } from '../models/PagerdutyAuditRecordsSecretsConfig';
 import { PagerdutyAuditRecordsSettingsConfig } from '../models/PagerdutyAuditRecordsSettingsConfig';
@@ -1102,6 +1110,9 @@ let typeMap: {[index: string]: any} = {
     "AuthenticationtypesTokenResponse": AuthenticationtypesTokenResponse,
     "AwsGuarddutySecretsConfig": AwsGuarddutySecretsConfig,
     "AwsGuarddutySettingsConfig": AwsGuarddutySettingsConfig,
+    "AwsIamAliasesAccount": AwsIamAliasesAccount,
+    "AwsIamAliasesSettingsConfig": AwsIamAliasesSettingsConfig,
+    "AwsOrganizationsSettingsConfig": AwsOrganizationsSettingsConfig,
     "AwsS3SecretsConfig": AwsS3SecretsConfig,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
     "AwssecurityhubSecretsConfig": AwssecurityhubSecretsConfig,
@@ -1365,8 +1376,9 @@ let typeMap: {[index: string]: any} = {
     "OracleSettingsConfig": OracleSettingsConfig,
     "OrgAuditLogsSecretsConfig": OrgAuditLogsSecretsConfig,
     "OrgAuditLogsSettingsConfig": OrgAuditLogsSettingsConfig,
-    "OrganizationsSettingsConfig": OrganizationsSettingsConfig,
     "OutputsConnectorMeta": OutputsConnectorMeta,
+    "OwnbackupAccountEventsSecretsConfig": OwnbackupAccountEventsSecretsConfig,
+    "OwnbackupAccountEventsSettingsConfig": OwnbackupAccountEventsSettingsConfig,
     "PagerdutyAlertsConfig": PagerdutyAlertsConfig,
     "PagerdutyAuditRecordsSecretsConfig": PagerdutyAuditRecordsSecretsConfig,
     "PagerdutyAuditRecordsSettingsConfig": PagerdutyAuditRecordsSettingsConfig,

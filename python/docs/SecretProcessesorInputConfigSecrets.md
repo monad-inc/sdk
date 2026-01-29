@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **api_secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **harvest_api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **github_app_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**refresh_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **user_oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
