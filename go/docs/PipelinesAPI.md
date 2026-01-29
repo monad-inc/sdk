@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**V2OrganizationIdPipelinesGet**](PipelinesAPI.md#V2OrganizationIdPipelinesGet) | **Get** /v2/{organization_id}/pipelines | List pipelines
 [**V2OrganizationIdPipelinesMetricsGet**](PipelinesAPI.md#V2OrganizationIdPipelinesMetricsGet) | **Get** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
 [**V2OrganizationIdPipelinesPipelineIdDelete**](PipelinesAPI.md#V2OrganizationIdPipelinesPipelineIdDelete) | **Delete** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
+[**V2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch**](PipelinesAPI.md#V2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch) | **Patch** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
 [**V2OrganizationIdPipelinesPipelineIdGet**](PipelinesAPI.md#V2OrganizationIdPipelinesPipelineIdGet) | **Get** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration
 [**V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet**](PipelinesAPI.md#V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet) | **Get** /v2/{organization_id}/pipelines/{pipeline_id}/{node_id}/metrics | Get pipeline node metrics
 [**V2OrganizationIdPipelinesPipelineIdPatch**](PipelinesAPI.md#V2OrganizationIdPipelinesPipelineIdPatch) | **Patch** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
@@ -775,6 +776,82 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch
+
+> V2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(ctx, organizationId, pipelineId, edgeId).RoutesV2PatchPipelineEdgeRequest(routesV2PatchPipelineEdgeRequest).Execute()
+
+Update pipeline edge
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	pipelineId := "pipelineId_example" // string | Pipeline ID
+	edgeId := "edgeId_example" // string | Edge ID
+	routesV2PatchPipelineEdgeRequest := *openapiclient.NewRoutesV2PatchPipelineEdgeRequest() // RoutesV2PatchPipelineEdgeRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.PipelinesAPI.V2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(context.Background(), organizationId, pipelineId, edgeId).RoutesV2PatchPipelineEdgeRequest(routesV2PatchPipelineEdgeRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.V2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**pipelineId** | **string** | Pipeline ID | 
+**edgeId** | **string** | Edge ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **routesV2PatchPipelineEdgeRequest** | [**RoutesV2PatchPipelineEdgeRequest**](RoutesV2PatchPipelineEdgeRequest.md) | Request body | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

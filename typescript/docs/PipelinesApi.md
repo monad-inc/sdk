@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**v2OrganizationIdPipelinesGet**](PipelinesApi.md#v2OrganizationIdPipelinesGet) | **GET** /v2/{organization_id}/pipelines | List pipelines
 [**v2OrganizationIdPipelinesMetricsGet**](PipelinesApi.md#v2OrganizationIdPipelinesMetricsGet) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
 [**v2OrganizationIdPipelinesPipelineIdDelete**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdDelete) | **DELETE** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
+[**v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
 [**v2OrganizationIdPipelinesPipelineIdGet**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration
 [**v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/{node_id}/metrics | Get pipeline node metrics
 [**v2OrganizationIdPipelinesPipelineIdPatch**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdPatch) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
@@ -650,6 +651,73 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch**
+> void v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(routesV2PatchPipelineEdgeRequest)
+
+Enable or disable a pipeline edge
+
+### Example
+
+
+```typescript
+import { createConfiguration, PipelinesApi } from '';
+import type { PipelinesApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new PipelinesApi(configuration);
+
+const request: PipelinesApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Pipeline ID
+  pipelineId: "pipeline_id_example",
+    // Edge ID
+  edgeId: "edge_id_example",
+    // Request body
+  routesV2PatchPipelineEdgeRequest: {
+    disabled: true,
+  },
+};
+
+const data = await apiInstance.v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **routesV2PatchPipelineEdgeRequest** | **RoutesV2PatchPipelineEdgeRequest**| Request body |
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **pipelineId** | [**string**] | Pipeline ID | defaults to undefined
+ **edgeId** | [**string**] | Edge ID | defaults to undefined
+
+
+### Return type
+
+**void**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Edge updated successfully |  -  |
+**400** | Invalid JSON request body |  -  |
+**404** | Edge not found in pipeline |  -  |
+**500** | Failed to update pipeline edge |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **v2OrganizationIdPipelinesPipelineIdGet**
 > ModelsPipelineConfigV2 v2OrganizationIdPipelinesPipelineIdGet()
 
@@ -817,6 +885,7 @@ const request: PipelinesApiV2OrganizationIdPipelinesPipelineIdPatchRequest = {
           typeId: "typeId_example",
         },
         description: "description_example",
+        disabled: true,
         fromNodeInstanceId: "fromNodeInstanceId_example",
         name: "name_example",
         toNodeInstanceId: "toNodeInstanceId_example",
@@ -1106,6 +1175,7 @@ const request: PipelinesApiV2OrganizationIdPipelinesPostRequest = {
           typeId: "typeId_example",
         },
         description: "description_example",
+        disabled: true,
         fromNodeInstanceId: "fromNodeInstanceId_example",
         name: "name_example",
         toNodeInstanceId: "toNodeInstanceId_example",

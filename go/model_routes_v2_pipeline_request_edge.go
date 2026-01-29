@@ -24,6 +24,7 @@ var _ MappedNullable = &RoutesV2PipelineRequestEdge{}
 type RoutesV2PipelineRequestEdge struct {
 	Conditions *ModelsConditionEvaluatable `json:"conditions,omitempty"`
 	Description *string `json:"description,omitempty"`
+	Disabled *bool `json:"disabled,omitempty"`
 	FromNodeInstanceId string `json:"from_node_instance_id"`
 	Name *string `json:"name,omitempty"`
 	ToNodeInstanceId string `json:"to_node_instance_id"`
@@ -112,6 +113,38 @@ func (o *RoutesV2PipelineRequestEdge) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *RoutesV2PipelineRequestEdge) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetDisabled returns the Disabled field value if set, zero value otherwise.
+func (o *RoutesV2PipelineRequestEdge) GetDisabled() bool {
+	if o == nil || IsNil(o.Disabled) {
+		var ret bool
+		return ret
+	}
+	return *o.Disabled
+}
+
+// GetDisabledOk returns a tuple with the Disabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2PipelineRequestEdge) GetDisabledOk() (*bool, bool) {
+	if o == nil || IsNil(o.Disabled) {
+		return nil, false
+	}
+	return o.Disabled, true
+}
+
+// HasDisabled returns a boolean if a field has been set.
+func (o *RoutesV2PipelineRequestEdge) HasDisabled() bool {
+	if o != nil && !IsNil(o.Disabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisabled gets a reference to the given bool and assigns it to the Disabled field.
+func (o *RoutesV2PipelineRequestEdge) SetDisabled(v bool) {
+	o.Disabled = &v
 }
 
 // GetFromNodeInstanceId returns the FromNodeInstanceId field value
@@ -209,6 +242,9 @@ func (o RoutesV2PipelineRequestEdge) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.Disabled) {
+		toSerialize["disabled"] = o.Disabled
 	}
 	toSerialize["from_node_instance_id"] = o.FromNodeInstanceId
 	if !IsNil(o.Name) {

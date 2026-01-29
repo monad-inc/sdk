@@ -363,6 +363,7 @@ import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesRe
 import { RoutesV2MetricsResponse } from '../models/RoutesV2MetricsResponse';
 import { RoutesV2MetricsValue } from '../models/RoutesV2MetricsValue';
 import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOverview';
+import { RoutesV2PatchPipelineEdgeRequest } from '../models/RoutesV2PatchPipelineEdgeRequest';
 import { RoutesV2PipelineMetric } from '../models/RoutesV2PipelineMetric';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
@@ -4926,6 +4927,36 @@ export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdDeleteRequest {
     pipelineId: string
 }
 
+export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch
+     */
+    pipelineId: string
+    /**
+     * Edge ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch
+     */
+    edgeId: string
+    /**
+     * Request body
+     * @type RoutesV2PatchPipelineEdgeRequest
+     * @memberof PipelinesApiv2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch
+     */
+    routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest
+}
+
 export interface PipelinesApiV2OrganizationIdPipelinesPipelineIdGetRequest {
     /**
      * Organization ID
@@ -5363,6 +5394,24 @@ export class ObjectPipelinesApi {
      */
     public v2OrganizationIdPipelinesPipelineIdDelete(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdDeleteRequest, options?: ConfigurationOptions): Promise<string> {
         return this.api.v2OrganizationIdPipelinesPipelineIdDelete(param.organizationId, param.pipelineId,  options).toPromise();
+    }
+
+    /**
+     * Enable or disable a pipeline edge
+     * Update pipeline edge
+     * @param param the request object
+     */
+    public v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchWithHttpInfo(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchWithHttpInfo(param.organizationId, param.pipelineId, param.edgeId, param.routesV2PatchPipelineEdgeRequest,  options).toPromise();
+    }
+
+    /**
+     * Enable or disable a pipeline edge
+     * Update pipeline edge
+     * @param param the request object
+     */
+    public v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(param: PipelinesApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(param.organizationId, param.pipelineId, param.edgeId, param.routesV2PatchPipelineEdgeRequest,  options).toPromise();
     }
 
     /**

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Conditions** | Pointer to [**ModelsConditionEvaluatable**](ModelsConditionEvaluatable.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Disabled** | Pointer to **bool** |  | [optional] 
 **FromNodeInstanceId** | **string** |  | 
 **Name** | Pointer to **string** |  | [optional] 
 **ToNodeInstanceId** | **string** |  | 
@@ -78,6 +79,31 @@ SetDescription sets Description field to given value.
 `func (o *RoutesV2PipelineRequestEdge) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetDisabled
+
+`func (o *RoutesV2PipelineRequestEdge) GetDisabled() bool`
+
+GetDisabled returns the Disabled field if non-nil, zero value otherwise.
+
+### GetDisabledOk
+
+`func (o *RoutesV2PipelineRequestEdge) GetDisabledOk() (*bool, bool)`
+
+GetDisabledOk returns a tuple with the Disabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisabled
+
+`func (o *RoutesV2PipelineRequestEdge) SetDisabled(v bool)`
+
+SetDisabled sets Disabled field to given value.
+
+### HasDisabled
+
+`func (o *RoutesV2PipelineRequestEdge) HasDisabled() bool`
+
+HasDisabled returns a boolean if a field has been set.
 
 ### GetFromNodeInstanceId
 

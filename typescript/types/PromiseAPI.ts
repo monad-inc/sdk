@@ -363,6 +363,7 @@ import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesRe
 import { RoutesV2MetricsResponse } from '../models/RoutesV2MetricsResponse';
 import { RoutesV2MetricsValue } from '../models/RoutesV2MetricsValue';
 import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOverview';
+import { RoutesV2PatchPipelineEdgeRequest } from '../models/RoutesV2PatchPipelineEdgeRequest';
 import { RoutesV2PipelineMetric } from '../models/RoutesV2PipelineMetric';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
@@ -3811,6 +3812,34 @@ export class PromisePipelinesApi {
     public v2OrganizationIdPipelinesPipelineIdDelete(organizationId: string, pipelineId: string, _options?: PromiseConfigurationOptions): Promise<string> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v2OrganizationIdPipelinesPipelineIdDelete(organizationId, pipelineId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Enable or disable a pipeline edge
+     * Update pipeline edge
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     * @param routesV2PatchPipelineEdgeRequest Request body
+     */
+    public v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchWithHttpInfo(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Enable or disable a pipeline edge
+     * Update pipeline edge
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     * @param routesV2PatchPipelineEdgeRequest Request body
+     */
+    public v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(organizationId: string, pipelineId: string, edgeId: string, routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest, _options?: PromiseConfigurationOptions): Promise<void> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, observableOptions);
         return result.toPromise();
     }
 

@@ -1726,6 +1726,178 @@ func (a *PipelinesAPIService) V2OrganizationIdPipelinesPipelineIdDeleteExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest struct {
+	ctx context.Context
+	ApiService *PipelinesAPIService
+	organizationId string
+	pipelineId string
+	edgeId string
+	routesV2PatchPipelineEdgeRequest *RoutesV2PatchPipelineEdgeRequest
+}
+
+// Request body
+func (r ApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest) RoutesV2PatchPipelineEdgeRequest(routesV2PatchPipelineEdgeRequest RoutesV2PatchPipelineEdgeRequest) ApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest {
+	r.routesV2PatchPipelineEdgeRequest = &routesV2PatchPipelineEdgeRequest
+	return r
+}
+
+func (r ApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest) Execute() (*http.Response, error) {
+	return r.ApiService.V2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchExecute(r)
+}
+
+/*
+V2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch Update pipeline edge
+
+Enable or disable a pipeline edge
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param organizationId Organization ID
+ @param pipelineId Pipeline ID
+ @param edgeId Edge ID
+ @return ApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest
+*/
+func (a *PipelinesAPIService) V2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(ctx context.Context, organizationId string, pipelineId string, edgeId string) ApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest {
+	return ApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest{
+		ApiService: a,
+		ctx: ctx,
+		organizationId: organizationId,
+		pipelineId: pipelineId,
+		edgeId: edgeId,
+	}
+}
+
+// Execute executes the request
+func (a *PipelinesAPIService) V2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchExecute(r ApiV2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PipelinesAPIService.V2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"organization_id"+"}", url.PathEscape(parameterValueToString(r.organizationId, "organizationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pipeline_id"+"}", url.PathEscape(parameterValueToString(r.pipelineId, "pipelineId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"edge_id"+"}", url.PathEscape(parameterValueToString(r.edgeId, "edgeId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.routesV2PatchPipelineEdgeRequest == nil {
+		return nil, reportError("routesV2PatchPipelineEdgeRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.routesV2PatchPipelineEdgeRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type ApiV2OrganizationIdPipelinesPipelineIdGetRequest struct {
 	ctx context.Context
 	ApiService *PipelinesAPIService

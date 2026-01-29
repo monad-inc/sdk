@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * VercelUserEventsSecretsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-29T20:54:50.008131581Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-29T21:42:56.166090599Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class VercelUserEventsSecretsConfig {
   public static final String SERIALIZED_NAME_ACCESS_TOKEN = "access_token";
   @SerializedName(SERIALIZED_NAME_ACCESS_TOKEN)

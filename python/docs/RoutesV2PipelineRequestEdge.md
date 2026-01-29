@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **conditions** | [**ModelsConditionEvaluatable**](ModelsConditionEvaluatable.md) |  | [optional] 
 **description** | **str** |  | [optional] 
+**disabled** | **bool** |  | [optional] 
 **from_node_instance_id** | **str** |  | 
 **name** | **str** |  | [optional] 
 **to_node_instance_id** | **str** |  | 

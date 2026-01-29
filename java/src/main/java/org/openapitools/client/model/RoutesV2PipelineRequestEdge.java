@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineRequestEdge
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-29T20:54:50.008131581Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-29T21:42:56.166090599Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV2PipelineRequestEdge {
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
@@ -60,6 +60,11 @@ public class RoutesV2PipelineRequestEdge {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
   private String description;
+
+  public static final String SERIALIZED_NAME_DISABLED = "disabled";
+  @SerializedName(SERIALIZED_NAME_DISABLED)
+  @javax.annotation.Nullable
+  private Boolean disabled;
 
   public static final String SERIALIZED_NAME_FROM_NODE_INSTANCE_ID = "from_node_instance_id";
   @SerializedName(SERIALIZED_NAME_FROM_NODE_INSTANCE_ID)
@@ -114,6 +119,25 @@ public class RoutesV2PipelineRequestEdge {
 
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public RoutesV2PipelineRequestEdge disabled(@javax.annotation.Nullable Boolean disabled) {
+    this.disabled = disabled;
+    return this;
+  }
+
+  /**
+   * Get disabled
+   * @return disabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getDisabled() {
+    return disabled;
+  }
+
+  public void setDisabled(@javax.annotation.Nullable Boolean disabled) {
+    this.disabled = disabled;
   }
 
 
@@ -186,6 +210,7 @@ public class RoutesV2PipelineRequestEdge {
     RoutesV2PipelineRequestEdge routesV2PipelineRequestEdge = (RoutesV2PipelineRequestEdge) o;
     return Objects.equals(this.conditions, routesV2PipelineRequestEdge.conditions) &&
         Objects.equals(this.description, routesV2PipelineRequestEdge.description) &&
+        Objects.equals(this.disabled, routesV2PipelineRequestEdge.disabled) &&
         Objects.equals(this.fromNodeInstanceId, routesV2PipelineRequestEdge.fromNodeInstanceId) &&
         Objects.equals(this.name, routesV2PipelineRequestEdge.name) &&
         Objects.equals(this.toNodeInstanceId, routesV2PipelineRequestEdge.toNodeInstanceId);
@@ -193,7 +218,7 @@ public class RoutesV2PipelineRequestEdge {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditions, description, fromNodeInstanceId, name, toNodeInstanceId);
+    return Objects.hash(conditions, description, disabled, fromNodeInstanceId, name, toNodeInstanceId);
   }
 
   @Override
@@ -202,6 +227,7 @@ public class RoutesV2PipelineRequestEdge {
     sb.append("class RoutesV2PipelineRequestEdge {\n");
     sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    fromNodeInstanceId: ").append(toIndentedString(fromNodeInstanceId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    toNodeInstanceId: ").append(toIndentedString(toNodeInstanceId)).append("\n");
@@ -226,7 +252,7 @@ public class RoutesV2PipelineRequestEdge {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("conditions", "description", "from_node_instance_id", "name", "to_node_instance_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("conditions", "description", "disabled", "from_node_instance_id", "name", "to_node_instance_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("from_node_instance_id", "to_node_instance_id"));

@@ -14,6 +14,7 @@ All URIs are relative to *https://monad.com/api*
 | [**v2OrganizationIdPipelinesGet**](PipelinesApi.md#v2OrganizationIdPipelinesGet) | **GET** /v2/{organization_id}/pipelines | List pipelines |
 | [**v2OrganizationIdPipelinesMetricsGet**](PipelinesApi.md#v2OrganizationIdPipelinesMetricsGet) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines |
 | [**v2OrganizationIdPipelinesPipelineIdDelete**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdDelete) | **DELETE** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline |
+| [**v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge |
 | [**v2OrganizationIdPipelinesPipelineIdGet**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration |
 | [**v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/{node_id}/metrics | Get pipeline node metrics |
 | [**v2OrganizationIdPipelinesPipelineIdPatch**](PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdPatch) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline |
@@ -841,6 +842,89 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Pipeline deleted successfully |  -  |
 | **500** | Failed to delete pipeline |  -  |
+
+<a id="v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch"></a>
+# **v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch**
+> v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest)
+
+Update pipeline edge
+
+Enable or disable a pipeline edge
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.PipelinesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    PipelinesApi apiInstance = new PipelinesApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    String pipelineId = "pipelineId_example"; // String | Pipeline ID
+    String edgeId = "edgeId_example"; // String | Edge ID
+    RoutesV2PatchPipelineEdgeRequest routesV2PatchPipelineEdgeRequest = new RoutesV2PatchPipelineEdgeRequest(); // RoutesV2PatchPipelineEdgeRequest | Request body
+    try {
+      apiInstance.v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PipelinesApi#v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **pipelineId** | **String**| Pipeline ID | |
+| **edgeId** | **String**| Edge ID | |
+| **routesV2PatchPipelineEdgeRequest** | [**RoutesV2PatchPipelineEdgeRequest**](RoutesV2PatchPipelineEdgeRequest.md)| Request body | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Edge updated successfully |  -  |
+| **400** | Invalid JSON request body |  -  |
+| **404** | Edge not found in pipeline |  -  |
+| **500** | Failed to update pipeline edge |  -  |
 
 <a id="v2OrganizationIdPipelinesPipelineIdGet"></a>
 # **v2OrganizationIdPipelinesPipelineIdGet**

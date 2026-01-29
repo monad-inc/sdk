@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-01-29T20:54:50.008131581Z[Etc/UTC]
+  - Build date: 2026-01-29T21:42:56.166090599Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -241,6 +241,7 @@ Class | Method | HTTP request | Description
 *PipelinesApi* | [**v2OrganizationIdPipelinesGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesGet) | **GET** /v2/{organization_id}/pipelines | List pipelines
 *PipelinesApi* | [**v2OrganizationIdPipelinesMetricsGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesMetricsGet) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
 *PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdDelete**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdDelete) | **DELETE** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
+*PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
 *PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration
 *PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/{node_id}/metrics | Get pipeline node metrics
 *PipelinesApi* | [**v2OrganizationIdPipelinesPipelineIdPatch**](docs/PipelinesApi.md#v2OrganizationIdPipelinesPipelineIdPatch) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
@@ -645,6 +646,7 @@ Class | Method | HTTP request | Description
  - [RoutesV2MetricsResponse](docs/RoutesV2MetricsResponse.md)
  - [RoutesV2MetricsValue](docs/RoutesV2MetricsValue.md)
  - [RoutesV2OrganizationOverview](docs/RoutesV2OrganizationOverview.md)
+ - [RoutesV2PatchPipelineEdgeRequest](docs/RoutesV2PatchPipelineEdgeRequest.md)
  - [RoutesV2PipelineMetric](docs/RoutesV2PipelineMetric.md)
  - [RoutesV2PipelineRequestEdge](docs/RoutesV2PipelineRequestEdge.md)
  - [RoutesV2PipelineRequestNode](docs/RoutesV2PipelineRequestNode.md)

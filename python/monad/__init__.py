@@ -423,6 +423,7 @@ __all__ = [
     "RoutesV2MetricsResponse",
     "RoutesV2MetricsValue",
     "RoutesV2OrganizationOverview",
+    "RoutesV2PatchPipelineEdgeRequest",
     "RoutesV2PipelineMetric",
     "RoutesV2PipelineRequestEdge",
     "RoutesV2PipelineRequestNode",
@@ -996,6 +997,7 @@ from monad.models.routes_v2_list_templates_response import RoutesV2ListTemplates
 from monad.models.routes_v2_metrics_response import RoutesV2MetricsResponse as RoutesV2MetricsResponse
 from monad.models.routes_v2_metrics_value import RoutesV2MetricsValue as RoutesV2MetricsValue
 from monad.models.routes_v2_organization_overview import RoutesV2OrganizationOverview as RoutesV2OrganizationOverview
+from monad.models.routes_v2_patch_pipeline_edge_request import RoutesV2PatchPipelineEdgeRequest as RoutesV2PatchPipelineEdgeRequest
 from monad.models.routes_v2_pipeline_metric import RoutesV2PipelineMetric as RoutesV2PipelineMetric
 from monad.models.routes_v2_pipeline_request_edge import RoutesV2PipelineRequestEdge as RoutesV2PipelineRequestEdge
 from monad.models.routes_v2_pipeline_request_node import RoutesV2PipelineRequestNode as RoutesV2PipelineRequestNode

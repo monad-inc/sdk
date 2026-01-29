@@ -37,6 +37,7 @@ import org.openapitools.client.model.RoutesUpdatePipelineRequest;
 import org.openapitools.client.model.RoutesV2CreatePipelineRequest;
 import org.openapitools.client.model.RoutesV2GetOrganizationSummaryResponse;
 import org.openapitools.client.model.RoutesV2MetricsResponse;
+import org.openapitools.client.model.RoutesV2PatchPipelineEdgeRequest;
 import org.openapitools.client.model.RoutesV2PipelineWithStatus;
 import org.openapitools.client.model.RoutesV2UpdatePipelineRequest;
 
@@ -1646,6 +1647,171 @@ public class PipelinesApi {
         okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdDeleteValidateBeforeCall(organizationId, pipelineId, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param edgeId Edge ID (required)
+     * @param routesV2PatchPipelineEdgeRequest Request body (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Edge updated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Edge not found in pipeline </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to update pipeline edge </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull RoutesV2PatchPipelineEdgeRequest routesV2PatchPipelineEdgeRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = routesV2PatchPipelineEdgeRequest;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "pipeline_id" + "}", localVarApiClient.escapeString(pipelineId.toString()))
+            .replace("{" + "edge_id" + "}", localVarApiClient.escapeString(edgeId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull RoutesV2PatchPipelineEdgeRequest routesV2PatchPipelineEdgeRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(Async)");
+        }
+
+        // verify the required parameter 'pipelineId' is set
+        if (pipelineId == null) {
+            throw new ApiException("Missing the required parameter 'pipelineId' when calling v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(Async)");
+        }
+
+        // verify the required parameter 'edgeId' is set
+        if (edgeId == null) {
+            throw new ApiException("Missing the required parameter 'edgeId' when calling v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(Async)");
+        }
+
+        // verify the required parameter 'routesV2PatchPipelineEdgeRequest' is set
+        if (routesV2PatchPipelineEdgeRequest == null) {
+            throw new ApiException("Missing the required parameter 'routesV2PatchPipelineEdgeRequest' when calling v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(Async)");
+        }
+
+        return v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchCall(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, _callback);
+
+    }
+
+    /**
+     * Update pipeline edge
+     * Enable or disable a pipeline edge
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param edgeId Edge ID (required)
+     * @param routesV2PatchPipelineEdgeRequest Request body (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Edge updated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Edge not found in pipeline </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to update pipeline edge </td><td>  -  </td></tr>
+     </table>
+     */
+    public void v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull RoutesV2PatchPipelineEdgeRequest routesV2PatchPipelineEdgeRequest) throws ApiException {
+        v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchWithHttpInfo(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest);
+    }
+
+    /**
+     * Update pipeline edge
+     * Enable or disable a pipeline edge
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param edgeId Edge ID (required)
+     * @param routesV2PatchPipelineEdgeRequest Request body (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Edge updated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Edge not found in pipeline </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to update pipeline edge </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull RoutesV2PatchPipelineEdgeRequest routesV2PatchPipelineEdgeRequest) throws ApiException {
+        okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchValidateBeforeCall(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Update pipeline edge (asynchronously)
+     * Enable or disable a pipeline edge
+     * @param organizationId Organization ID (required)
+     * @param pipelineId Pipeline ID (required)
+     * @param edgeId Edge ID (required)
+     * @param routesV2PatchPipelineEdgeRequest Request body (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Edge updated successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Edge not found in pipeline </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to update pipeline edge </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String pipelineId, @javax.annotation.Nonnull String edgeId, @javax.annotation.Nonnull RoutesV2PatchPipelineEdgeRequest routesV2PatchPipelineEdgeRequest, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchValidateBeforeCall(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**

@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**v2_organization_id_pipelines_get**](PipelinesApi.md#v2_organization_id_pipelines_get) | **GET** /v2/{organization_id}/pipelines | List pipelines
 [**v2_organization_id_pipelines_metrics_get**](PipelinesApi.md#v2_organization_id_pipelines_metrics_get) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
 [**v2_organization_id_pipelines_pipeline_id_delete**](PipelinesApi.md#v2_organization_id_pipelines_pipeline_id_delete) | **DELETE** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
+[**v2_organization_id_pipelines_pipeline_id_edges_edge_id_patch**](PipelinesApi.md#v2_organization_id_pipelines_pipeline_id_edges_edge_id_patch) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
 [**v2_organization_id_pipelines_pipeline_id_get**](PipelinesApi.md#v2_organization_id_pipelines_pipeline_id_get) | **GET** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration
 [**v2_organization_id_pipelines_pipeline_id_node_id_metrics_get**](PipelinesApi.md#v2_organization_id_pipelines_pipeline_id_node_id_metrics_get) | **GET** /v2/{organization_id}/pipelines/{pipeline_id}/{node_id}/metrics | Get pipeline node metrics
 [**v2_organization_id_pipelines_pipeline_id_patch**](PipelinesApi.md#v2_organization_id_pipelines_pipeline_id_patch) | **PATCH** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
@@ -948,6 +949,99 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Pipeline deleted successfully |  -  |
 **500** | Failed to delete pipeline |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v2_organization_id_pipelines_pipeline_id_edges_edge_id_patch**
+> v2_organization_id_pipelines_pipeline_id_edges_edge_id_patch(organization_id, pipeline_id, edge_id, routes_v2_patch_pipeline_edge_request)
+
+Update pipeline edge
+
+Enable or disable a pipeline edge
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.routes_v2_patch_pipeline_edge_request import RoutesV2PatchPipelineEdgeRequest
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    pipeline_id = 'pipeline_id_example' # str | Pipeline ID
+    edge_id = 'edge_id_example' # str | Edge ID
+    routes_v2_patch_pipeline_edge_request = monad.RoutesV2PatchPipelineEdgeRequest() # RoutesV2PatchPipelineEdgeRequest | Request body
+
+    try:
+        # Update pipeline edge
+        api_instance.v2_organization_id_pipelines_pipeline_id_edges_edge_id_patch(organization_id, pipeline_id, edge_id, routes_v2_patch_pipeline_edge_request)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->v2_organization_id_pipelines_pipeline_id_edges_edge_id_patch: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **pipeline_id** | **str**| Pipeline ID | 
+ **edge_id** | **str**| Edge ID | 
+ **routes_v2_patch_pipeline_edge_request** | [**RoutesV2PatchPipelineEdgeRequest**](RoutesV2PatchPipelineEdgeRequest.md)| Request body | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Edge updated successfully |  -  |
+**400** | Invalid JSON request body |  -  |
+**404** | Edge not found in pipeline |  -  |
+**500** | Failed to update pipeline edge |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

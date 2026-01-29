@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_condition_evaluatable import ModelsConditionEvaluatable
 from typing import Optional, Set
@@ -30,10 +30,11 @@ class RoutesV2PipelineRequestEdge(BaseModel):
     """ # noqa: E501
     conditions: Optional[ModelsConditionEvaluatable] = None
     description: Optional[StrictStr] = None
+    disabled: Optional[StrictBool] = None
     from_node_instance_id: StrictStr
     name: Optional[StrictStr] = None
     to_node_instance_id: StrictStr
-    __properties: ClassVar[List[str]] = ["conditions", "description", "from_node_instance_id", "name", "to_node_instance_id"]
+    __properties: ClassVar[List[str]] = ["conditions", "description", "disabled", "from_node_instance_id", "name", "to_node_instance_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +92,7 @@ class RoutesV2PipelineRequestEdge(BaseModel):
         _obj = cls.model_validate({
             "conditions": ModelsConditionEvaluatable.from_dict(obj["conditions"]) if obj.get("conditions") is not None else None,
             "description": obj.get("description"),
+            "disabled": obj.get("disabled"),
             "from_node_instance_id": obj.get("from_node_instance_id"),
             "name": obj.get("name"),
             "to_node_instance_id": obj.get("to_node_instance_id")

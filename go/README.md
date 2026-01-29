@@ -191,6 +191,7 @@ Class | Method | HTTP request | Description
 *PipelinesAPI* | [**V2OrganizationIdPipelinesGet**](docs/PipelinesAPI.md#v2organizationidpipelinesget) | **Get** /v2/{organization_id}/pipelines | List pipelines
 *PipelinesAPI* | [**V2OrganizationIdPipelinesMetricsGet**](docs/PipelinesAPI.md#v2organizationidpipelinesmetricsget) | **Get** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
 *PipelinesAPI* | [**V2OrganizationIdPipelinesPipelineIdDelete**](docs/PipelinesAPI.md#v2organizationidpipelinespipelineiddelete) | **Delete** /v2/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
+*PipelinesAPI* | [**V2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch**](docs/PipelinesAPI.md#v2organizationidpipelinespipelineidedgesedgeidpatch) | **Patch** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id} | Update pipeline edge
 *PipelinesAPI* | [**V2OrganizationIdPipelinesPipelineIdGet**](docs/PipelinesAPI.md#v2organizationidpipelinespipelineidget) | **Get** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration
 *PipelinesAPI* | [**V2OrganizationIdPipelinesPipelineIdNodeIdMetricsGet**](docs/PipelinesAPI.md#v2organizationidpipelinespipelineidnodeidmetricsget) | **Get** /v2/{organization_id}/pipelines/{pipeline_id}/{node_id}/metrics | Get pipeline node metrics
 *PipelinesAPI* | [**V2OrganizationIdPipelinesPipelineIdPatch**](docs/PipelinesAPI.md#v2organizationidpipelinespipelineidpatch) | **Patch** /v2/{organization_id}/pipelines/{pipeline_id} | Update pipeline
@@ -595,6 +596,7 @@ Class | Method | HTTP request | Description
  - [RoutesV2MetricsResponse](docs/RoutesV2MetricsResponse.md)
  - [RoutesV2MetricsValue](docs/RoutesV2MetricsValue.md)
  - [RoutesV2OrganizationOverview](docs/RoutesV2OrganizationOverview.md)
+ - [RoutesV2PatchPipelineEdgeRequest](docs/RoutesV2PatchPipelineEdgeRequest.md)
  - [RoutesV2PipelineMetric](docs/RoutesV2PipelineMetric.md)
  - [RoutesV2PipelineRequestEdge](docs/RoutesV2PipelineRequestEdge.md)
  - [RoutesV2PipelineRequestNode](docs/RoutesV2PipelineRequestNode.md)

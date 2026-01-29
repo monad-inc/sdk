@@ -16,6 +16,7 @@ import { HttpFile } from '../http/http';
 export class RoutesV2PipelineRequestEdge {
     'conditions'?: ModelsConditionEvaluatable;
     'description'?: string;
+    'disabled'?: boolean;
     'fromNodeInstanceId': string;
     'name'?: string;
     'toNodeInstanceId': string;
@@ -35,6 +36,12 @@ export class RoutesV2PipelineRequestEdge {
             "name": "description",
             "baseName": "description",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "disabled",
+            "baseName": "disabled",
+            "type": "boolean",
             "format": ""
         },
         {

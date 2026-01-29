@@ -359,6 +359,7 @@ export * from '../models/RoutesV2ListTemplatesResponse';
 export * from '../models/RoutesV2MetricsResponse';
 export * from '../models/RoutesV2MetricsValue';
 export * from '../models/RoutesV2OrganizationOverview';
+export * from '../models/RoutesV2PatchPipelineEdgeRequest';
 export * from '../models/RoutesV2PipelineMetric';
 export * from '../models/RoutesV2PipelineRequestEdge';
 export * from '../models/RoutesV2PipelineRequestNode';
@@ -883,6 +884,7 @@ import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesRe
 import { RoutesV2MetricsResponse } from '../models/RoutesV2MetricsResponse';
 import { RoutesV2MetricsValue } from '../models/RoutesV2MetricsValue';
 import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOverview';
+import { RoutesV2PatchPipelineEdgeRequest } from '../models/RoutesV2PatchPipelineEdgeRequest';
 import { RoutesV2PipelineMetric } from '../models/RoutesV2PipelineMetric';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
@@ -1439,6 +1441,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2MetricsResponse": RoutesV2MetricsResponse,
     "RoutesV2MetricsValue": RoutesV2MetricsValue,
     "RoutesV2OrganizationOverview": RoutesV2OrganizationOverview,
+    "RoutesV2PatchPipelineEdgeRequest": RoutesV2PatchPipelineEdgeRequest,
     "RoutesV2PipelineMetric": RoutesV2PipelineMetric,
     "RoutesV2PipelineRequestEdge": RoutesV2PipelineRequestEdge,
     "RoutesV2PipelineRequestNode": RoutesV2PipelineRequestNode,

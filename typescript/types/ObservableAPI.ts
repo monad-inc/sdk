@@ -364,6 +364,7 @@ import { RoutesV2ListTemplatesResponse } from '../models/RoutesV2ListTemplatesRe
 import { RoutesV2MetricsResponse } from '../models/RoutesV2MetricsResponse';
 import { RoutesV2MetricsValue } from '../models/RoutesV2MetricsValue';
 import { RoutesV2OrganizationOverview } from '../models/RoutesV2OrganizationOverview';
+import { RoutesV2PatchPipelineEdgeRequest } from '../models/RoutesV2PatchPipelineEdgeRequest';
 import { RoutesV2PipelineMetric } from '../models/RoutesV2PipelineMetric';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
@@ -5135,6 +5136,46 @@ export class ObservablePipelinesApi {
      */
     public v2OrganizationIdPipelinesPipelineIdDelete(organizationId: string, pipelineId: string, _options?: ConfigurationOptions): Observable<string> {
         return this.v2OrganizationIdPipelinesPipelineIdDeleteWithHttpInfo(organizationId, pipelineId, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    }
+
+    /**
+     * Enable or disable a pipeline edge
+     * Update pipeline edge
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     * @param routesV2PatchPipelineEdgeRequest Request body
+     */
+    public v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchWithHttpInfo(organizationId: string, pipelineId: string, edgeId: string, routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Enable or disable a pipeline edge
+     * Update pipeline edge
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param edgeId Edge ID
+     * @param routesV2PatchPipelineEdgeRequest Request body
+     */
+    public v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatch(organizationId: string, pipelineId: string, edgeId: string, routesV2PatchPipelineEdgeRequest: RoutesV2PatchPipelineEdgeRequest, _options?: ConfigurationOptions): Observable<void> {
+        return this.v2OrganizationIdPipelinesPipelineIdEdgesEdgeIdPatchWithHttpInfo(organizationId, pipelineId, edgeId, routesV2PatchPipelineEdgeRequest, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
     }
 
     /**
