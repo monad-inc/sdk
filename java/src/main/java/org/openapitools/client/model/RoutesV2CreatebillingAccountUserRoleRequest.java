@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2CreatebillingAccountUserRoleRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-28T22:24:58.950382167Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-29T01:11:20.163449772Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV2CreatebillingAccountUserRoleRequest {
   public static final String SERIALIZED_NAME_USER_EMAIL = "user_email";
   @SerializedName(SERIALIZED_NAME_USER_EMAIL)
