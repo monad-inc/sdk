@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Snyk issues settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T22:22:42.810361748Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-30T22:41:31.476560128Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SnykIssuesSettingsConfig {
   public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
   @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
