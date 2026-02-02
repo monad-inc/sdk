@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * PantherSettingsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-02T16:03:36.682689105Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-02T18:23:21.506957864Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class PantherSettingsConfig {
   public static final String SERIALIZED_NAME_HTTP_INGEST_URL = "http_ingest_url";
   @SerializedName(SERIALIZED_NAME_HTTP_INGEST_URL)
