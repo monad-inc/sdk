@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS IAM Access Analyzer settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-02T18:59:53.376949456Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-02T19:24:40.963637014Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class IamAccessAnalyzerSettingsConfig {
   public static final String SERIALIZED_NAME_ANALYZER_ARN = "analyzer_arn";
   @SerializedName(SERIALIZED_NAME_ANALYZER_ARN)

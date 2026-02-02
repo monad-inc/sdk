@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Sumo Logic Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-02T18:59:53.376949456Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-02T19:24:40.963637014Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SumologicSettingsConfig {
   public static final String SERIALIZED_NAME_SOURCE_METADATA = "source_metadata";
   @SerializedName(SERIALIZED_NAME_SOURCE_METADATA)
