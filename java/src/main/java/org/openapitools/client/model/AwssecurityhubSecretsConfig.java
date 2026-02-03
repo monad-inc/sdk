@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Aws Security Hub Findings secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T17:09:31.232316726Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T17:32:17.315060616Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class AwssecurityhubSecretsConfig {
   public static final String SERIALIZED_NAME_ACCESS_KEY = "access_key";
   @SerializedName(SERIALIZED_NAME_ACCESS_KEY)
