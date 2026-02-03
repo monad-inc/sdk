@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TaniumGraphqlInputSecretsConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:04:15.791943471Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T17:09:31.232316726Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class TaniumGraphqlInputSecretsConfig {
   public static final String SERIALIZED_NAME_API_TOKEN = "api_token";
   @SerializedName(SERIALIZED_NAME_API_TOKEN)
