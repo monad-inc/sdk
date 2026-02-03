@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Github Advisory Database settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T17:32:17.315060616Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T17:58:50.593122744Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class GithubAdvisoryUserSettingsConfig {
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
