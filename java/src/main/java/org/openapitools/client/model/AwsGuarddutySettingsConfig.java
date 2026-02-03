@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS Guardduty settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T17:58:50.593122744Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T22:26:35.716486089Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class AwsGuarddutySettingsConfig {
   public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
   @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
