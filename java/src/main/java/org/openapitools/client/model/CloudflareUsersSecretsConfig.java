@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Cloudflare Users secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T22:26:35.716486089Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T22:50:42.654651726Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class CloudflareUsersSecretsConfig {
   public static final String SERIALIZED_NAME_API_TOKEN = "api_token";
   @SerializedName(SERIALIZED_NAME_API_TOKEN)
