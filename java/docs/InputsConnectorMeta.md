@@ -15,7 +15,6 @@
 |**house** | **String** |  |  [optional] |
 |**inBeta** | **Boolean** |  |  [optional] |
 |**internal** | **Boolean** |  |  [optional] |
-|**isCron** | **Boolean** |  |  [optional] |
 |**isDefault** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**releaseDate** | **String** |  |  [optional] |

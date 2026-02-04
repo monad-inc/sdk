@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * InputsConnectorMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-04T20:46:24.497123692Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-04T22:44:09.738406281Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class InputsConnectorMeta {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
@@ -90,11 +90,6 @@ public class InputsConnectorMeta {
   @SerializedName(SERIALIZED_NAME_INTERNAL)
   @javax.annotation.Nullable
   private Boolean internal;
-
-  public static final String SERIALIZED_NAME_IS_CRON = "is_cron";
-  @SerializedName(SERIALIZED_NAME_IS_CRON)
-  @javax.annotation.Nullable
-  private Boolean isCron;
 
   public static final String SERIALIZED_NAME_IS_DEFAULT = "is_default";
   @SerializedName(SERIALIZED_NAME_IS_DEFAULT)
@@ -276,25 +271,6 @@ public class InputsConnectorMeta {
   }
 
 
-  public InputsConnectorMeta isCron(@javax.annotation.Nullable Boolean isCron) {
-    this.isCron = isCron;
-    return this;
-  }
-
-  /**
-   * Get isCron
-   * @return isCron
-   */
-  @javax.annotation.Nullable
-  public Boolean getIsCron() {
-    return isCron;
-  }
-
-  public void setIsCron(@javax.annotation.Nullable Boolean isCron) {
-    this.isCron = isCron;
-  }
-
-
   public InputsConnectorMeta isDefault(@javax.annotation.Nullable Boolean isDefault) {
     this.isDefault = isDefault;
     return this;
@@ -408,7 +384,6 @@ public class InputsConnectorMeta {
         Objects.equals(this.house, inputsConnectorMeta.house) &&
         Objects.equals(this.inBeta, inputsConnectorMeta.inBeta) &&
         Objects.equals(this.internal, inputsConnectorMeta.internal) &&
-        Objects.equals(this.isCron, inputsConnectorMeta.isCron) &&
         Objects.equals(this.isDefault, inputsConnectorMeta.isDefault) &&
         Objects.equals(this.name, inputsConnectorMeta.name) &&
         Objects.equals(this.releaseDate, inputsConnectorMeta.releaseDate) &&
@@ -422,7 +397,7 @@ public class InputsConnectorMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, billingType, category, config, description, house, inBeta, internal, isCron, isDefault, name, releaseDate, tier, typeId);
+    return Objects.hash(authType, billingType, category, config, description, house, inBeta, internal, isDefault, name, releaseDate, tier, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -444,7 +419,6 @@ public class InputsConnectorMeta {
     sb.append("    house: ").append(toIndentedString(house)).append("\n");
     sb.append("    inBeta: ").append(toIndentedString(inBeta)).append("\n");
     sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
-    sb.append("    isCron: ").append(toIndentedString(isCron)).append("\n");
     sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
@@ -471,7 +445,7 @@ public class InputsConnectorMeta {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "is_cron", "is_default", "name", "release_date", "tier", "type_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("auth_type", "billing_type", "category", "config", "description", "house", "in_beta", "internal", "is_default", "name", "release_date", "tier", "type_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **house** | **str** |  | [optional] 
 **in_beta** | **bool** |  | [optional] 
 **internal** | **bool** |  | [optional] 
-**is_cron** | **bool** |  | [optional] 
 **is_default** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **release_date** | **str** |  | [optional] 
