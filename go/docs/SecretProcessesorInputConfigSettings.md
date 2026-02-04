@@ -139,7 +139,7 @@ Name | Type | Description | Notes
 **TenantDataCenter** | Pointer to **string** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | [optional] 
 **KmsType** | Pointer to **string** | Type of KMS resources to list | [optional] 
 **AuditLogTypes** | Pointer to **[]string** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
-**BaseUrl** | Pointer to **string** | The base URL of your GraphQL endpoint including the path | [optional] 
+**BaseUrl** | Pointer to **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | [optional] 
 **LogType** | Pointer to **string** |  | [optional] 
 **Endpoint** | Pointer to **string** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | [optional] 
 **SkipSslVerification** | Pointer to **bool** | Skip SSL verification for self-signed certificates | [optional] 
@@ -179,6 +179,7 @@ Name | Type | Description | Notes
 **InstanceName** | Pointer to **string** | Name of the ServiceNow instance | [optional] 
 **Streams** | Pointer to **[]string** | ServiceNow streams to fetch data from | [optional] 
 **WithPayload** | Pointer to **bool** | Whether to include detailed payload information in the events. | [optional] 
+**CustomerId** | Pointer to **string** | Optional: Filter audit logs by specific customer ID | [optional] 
 **AssetStatus** | Pointer to **[]string** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
 **DetectionMethod** | Pointer to **[]string** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. | [optional] 
 **VendorSeverity** | Pointer to **[]string** | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. | [optional] 
@@ -4578,6 +4579,31 @@ SetWithPayload sets WithPayload field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasWithPayload() bool`
 
 HasWithPayload returns a boolean if a field has been set.
+
+### GetCustomerId
+
+`func (o *SecretProcessesorInputConfigSettings) GetCustomerId() string`
+
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
+
+### GetCustomerIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetCustomerIdOk() (*string, bool)`
+
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomerId
+
+`func (o *SecretProcessesorInputConfigSettings) SetCustomerId(v string)`
+
+SetCustomerId sets CustomerId field to given value.
+
+### HasCustomerId
+
+`func (o *SecretProcessesorInputConfigSettings) HasCustomerId() bool`
+
+HasCustomerId returns a boolean if a field has been set.
 
 ### GetAssetStatus
 

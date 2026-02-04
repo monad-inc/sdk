@@ -511,6 +511,8 @@ import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
 import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
 import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettingsConfig';
+import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
+import { VoltioAuditLogsSettingsConfig } from '../models/VoltioAuditLogsSettingsConfig';
 import { VulnerabilitiesCronSecretsConfig } from '../models/VulnerabilitiesCronSecretsConfig';
 import { VulnerabilitiesCronSettingsConfig } from '../models/VulnerabilitiesCronSettingsConfig';
 import { VulnerabilitiesSecretsConfig } from '../models/VulnerabilitiesSecretsConfig';

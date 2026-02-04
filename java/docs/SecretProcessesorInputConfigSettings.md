@@ -142,7 +142,7 @@
 |**tenantDataCenter** | **String** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; |  [optional] |
 |**kmsType** | **String** | Type of KMS resources to list |  [optional] |
 |**auditLogTypes** | **List&lt;String&gt;** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. |  [optional] |
-|**baseUrl** | **String** | The base URL of your GraphQL endpoint including the path |  [optional] |
+|**baseUrl** | **String** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) |  [optional] |
 |**logType** | **String** |  |  [optional] |
 |**endpoint** | **String** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) |  [optional] |
 |**skipSslVerification** | **Boolean** | Skip SSL verification for self-signed certificates |  [optional] |
@@ -182,6 +182,7 @@
 |**instanceName** | **String** | Name of the ServiceNow instance |  [optional] |
 |**streams** | **List&lt;String&gt;** | ServiceNow streams to fetch data from |  [optional] |
 |**withPayload** | **Boolean** | Whether to include detailed payload information in the events. |  [optional] |
+|**customerId** | **String** | Optional: Filter audit logs by specific customer ID |  [optional] |
 |**assetStatus** | **List&lt;String&gt;** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. |  [optional] |
 |**detectionMethod** | **List&lt;String&gt;** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. |  [optional] |
 |**vendorSeverity** | **List&lt;String&gt;** | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39;, &#39;INFO&#39;. |  [optional] |

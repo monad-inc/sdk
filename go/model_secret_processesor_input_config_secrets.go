@@ -131,6 +131,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	UsersInfoSecretsConfig *UsersInfoSecretsConfig
 	UsersSecretsConfig *UsersSecretsConfig
 	VercelUserEventsSecretsConfig *VercelUserEventsSecretsConfig
+	VoltioAuditLogsSecretsConfig *VoltioAuditLogsSecretsConfig
 	VulnerabilitiesCronSecretsConfig *VulnerabilitiesCronSecretsConfig
 	VulnerabilitiesSecretsConfig *VulnerabilitiesSecretsConfig
 	VulnerabilityFindingsReportSecretsConfig *VulnerabilityFindingsReportSecretsConfig
@@ -923,6 +924,13 @@ func UsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *UsersSecretsConf
 func VercelUserEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *VercelUserEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		VercelUserEventsSecretsConfig: v,
+	}
+}
+
+// VoltioAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns VoltioAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func VoltioAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *VoltioAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		VoltioAuditLogsSecretsConfig: v,
 	}
 }
 
@@ -2898,6 +2906,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.VercelUserEventsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into VoltioAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.VoltioAuditLogsSecretsConfig)
+	if err == nil {
+		jsonVoltioAuditLogsSecretsConfig, _ := json.Marshal(dst.VoltioAuditLogsSecretsConfig)
+		if string(jsonVoltioAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.VoltioAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.VoltioAuditLogsSecretsConfig); err != nil {
+				dst.VoltioAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.VoltioAuditLogsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into VulnerabilitiesCronSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.VulnerabilitiesCronSecretsConfig)
 	if err == nil {
@@ -3165,6 +3190,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.UsersInfoSecretsConfig = nil
 		dst.UsersSecretsConfig = nil
 		dst.VercelUserEventsSecretsConfig = nil
+		dst.VoltioAuditLogsSecretsConfig = nil
 		dst.VulnerabilitiesCronSecretsConfig = nil
 		dst.VulnerabilitiesSecretsConfig = nil
 		dst.VulnerabilityFindingsReportSecretsConfig = nil
@@ -3631,6 +3657,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.VercelUserEventsSecretsConfig != nil {
 		return json.Marshal(&src.VercelUserEventsSecretsConfig)
+	}
+
+	if src.VoltioAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.VoltioAuditLogsSecretsConfig)
 	}
 
 	if src.VulnerabilitiesCronSecretsConfig != nil {
@@ -4125,6 +4155,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.VercelUserEventsSecretsConfig
 	}
 
+	if obj.VoltioAuditLogsSecretsConfig != nil {
+		return obj.VoltioAuditLogsSecretsConfig
+	}
+
 	if obj.VulnerabilitiesCronSecretsConfig != nil {
 		return obj.VulnerabilitiesCronSecretsConfig
 	}
@@ -4613,6 +4647,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.VercelUserEventsSecretsConfig != nil {
 		return *obj.VercelUserEventsSecretsConfig
+	}
+
+	if obj.VoltioAuditLogsSecretsConfig != nil {
+		return *obj.VoltioAuditLogsSecretsConfig
 	}
 
 	if obj.VulnerabilitiesCronSecretsConfig != nil {

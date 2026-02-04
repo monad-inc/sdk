@@ -743,6 +743,8 @@ Class | Method | HTTP request | Description
  - [UtcTimestampTimestamp](docs/UtcTimestampTimestamp.md)
  - [VercelUserEventsSecretsConfig](docs/VercelUserEventsSecretsConfig.md)
  - [VercelUserEventsSettingsConfig](docs/VercelUserEventsSettingsConfig.md)
+ - [VoltioAuditLogsSecretsConfig](docs/VoltioAuditLogsSecretsConfig.md)
+ - [VoltioAuditLogsSettingsConfig](docs/VoltioAuditLogsSettingsConfig.md)
  - [VulnerabilitiesCronSecretsConfig](docs/VulnerabilitiesCronSecretsConfig.md)
  - [VulnerabilitiesCronSettingsConfig](docs/VulnerabilitiesCronSettingsConfig.md)
  - [VulnerabilitiesSecretsConfig](docs/VulnerabilitiesSecretsConfig.md)
