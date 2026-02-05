@@ -87,6 +87,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	ObjectStorageInputSecretsConfig *ObjectStorageInputSecretsConfig
 	OfflineenrollmentlogsSecretsConfig *OfflineenrollmentlogsSecretsConfig
 	OneloginEventsSecretsConfig *OneloginEventsSecretsConfig
+	OpalEventsSecretsConfig *OpalEventsSecretsConfig
 	OperationLogsSecretsConfig *OperationLogsSecretsConfig
 	OrgAuditLogsSecretsConfig *OrgAuditLogsSecretsConfig
 	OwnbackupAccountEventsSecretsConfig *OwnbackupAccountEventsSecretsConfig
@@ -616,6 +617,13 @@ func OfflineenrollmentlogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *
 func OneloginEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OneloginEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		OneloginEventsSecretsConfig: v,
+	}
+}
+
+// OpalEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns OpalEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func OpalEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OpalEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		OpalEventsSecretsConfig: v,
 	}
 }
 
@@ -2158,6 +2166,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.OneloginEventsSecretsConfig = nil
 	}
 
+	// try to unmarshal data into OpalEventsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.OpalEventsSecretsConfig)
+	if err == nil {
+		jsonOpalEventsSecretsConfig, _ := json.Marshal(dst.OpalEventsSecretsConfig)
+		if string(jsonOpalEventsSecretsConfig) == "{}" { // empty struct
+			dst.OpalEventsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.OpalEventsSecretsConfig); err != nil {
+				dst.OpalEventsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.OpalEventsSecretsConfig = nil
+	}
+
 	// try to unmarshal data into OperationLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.OperationLogsSecretsConfig)
 	if err == nil {
@@ -3146,6 +3171,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.ObjectStorageInputSecretsConfig = nil
 		dst.OfflineenrollmentlogsSecretsConfig = nil
 		dst.OneloginEventsSecretsConfig = nil
+		dst.OpalEventsSecretsConfig = nil
 		dst.OperationLogsSecretsConfig = nil
 		dst.OrgAuditLogsSecretsConfig = nil
 		dst.OwnbackupAccountEventsSecretsConfig = nil
@@ -3481,6 +3507,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.OneloginEventsSecretsConfig != nil {
 		return json.Marshal(&src.OneloginEventsSecretsConfig)
+	}
+
+	if src.OpalEventsSecretsConfig != nil {
+		return json.Marshal(&src.OpalEventsSecretsConfig)
 	}
 
 	if src.OperationLogsSecretsConfig != nil {
@@ -3979,6 +4009,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.OneloginEventsSecretsConfig
 	}
 
+	if obj.OpalEventsSecretsConfig != nil {
+		return obj.OpalEventsSecretsConfig
+	}
+
 	if obj.OperationLogsSecretsConfig != nil {
 		return obj.OperationLogsSecretsConfig
 	}
@@ -4471,6 +4505,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.OneloginEventsSecretsConfig != nil {
 		return *obj.OneloginEventsSecretsConfig
+	}
+
+	if obj.OpalEventsSecretsConfig != nil {
+		return *obj.OpalEventsSecretsConfig
 	}
 
 	if obj.OperationLogsSecretsConfig != nil {

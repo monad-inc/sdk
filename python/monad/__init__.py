@@ -345,6 +345,8 @@ __all__ = [
     "OfflineenrollmentlogsSettingsConfig",
     "OneloginEventsSecretsConfig",
     "OneloginEventsSettingsConfig",
+    "OpalEventsSecretsConfig",
+    "OpalEventsSettingsConfig",
     "OpenaiSettingsConfig",
     "OpensearchSecretsConfig",
     "OpensearchSettingsConfig",
@@ -921,6 +923,8 @@ from monad.models.offlineenrollmentlogs_secrets_config import Offlineenrollmentl
 from monad.models.offlineenrollmentlogs_settings_config import OfflineenrollmentlogsSettingsConfig as OfflineenrollmentlogsSettingsConfig
 from monad.models.onelogin_events_secrets_config import OneloginEventsSecretsConfig as OneloginEventsSecretsConfig
 from monad.models.onelogin_events_settings_config import OneloginEventsSettingsConfig as OneloginEventsSettingsConfig
+from monad.models.opal_events_secrets_config import OpalEventsSecretsConfig as OpalEventsSecretsConfig
+from monad.models.opal_events_settings_config import OpalEventsSettingsConfig as OpalEventsSettingsConfig
 from monad.models.openai_settings_config import OpenaiSettingsConfig as OpenaiSettingsConfig
 from monad.models.opensearch_secrets_config import OpensearchSecretsConfig as OpensearchSecretsConfig
 from monad.models.opensearch_settings_config import OpensearchSettingsConfig as OpensearchSettingsConfig

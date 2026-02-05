@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-02-04T22:44:09.738406281Z[Etc/UTC]
+  - Build date: 2026-02-05T09:35:21.009843282Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -568,6 +568,8 @@ Class | Method | HTTP request | Description
  - [OfflineenrollmentlogsSettingsConfig](docs/OfflineenrollmentlogsSettingsConfig.md)
  - [OneloginEventsSecretsConfig](docs/OneloginEventsSecretsConfig.md)
  - [OneloginEventsSettingsConfig](docs/OneloginEventsSettingsConfig.md)
+ - [OpalEventsSecretsConfig](docs/OpalEventsSecretsConfig.md)
+ - [OpalEventsSettingsConfig](docs/OpalEventsSettingsConfig.md)
  - [OpenaiSettingsConfig](docs/OpenaiSettingsConfig.md)
  - [OpensearchSecretsConfig](docs/OpensearchSecretsConfig.md)
  - [OpensearchSettingsConfig](docs/OpensearchSettingsConfig.md)

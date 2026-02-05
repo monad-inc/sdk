@@ -285,6 +285,8 @@ import { OfflineenrollmentlogsSecretsConfig } from '../models/Offlineenrollmentl
 import { OfflineenrollmentlogsSettingsConfig } from '../models/OfflineenrollmentlogsSettingsConfig';
 import { OneloginEventsSecretsConfig } from '../models/OneloginEventsSecretsConfig';
 import { OneloginEventsSettingsConfig } from '../models/OneloginEventsSettingsConfig';
+import { OpalEventsSecretsConfig } from '../models/OpalEventsSecretsConfig';
+import { OpalEventsSettingsConfig } from '../models/OpalEventsSettingsConfig';
 import { OpenaiSettingsConfig } from '../models/OpenaiSettingsConfig';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig } from '../models/OpensearchSettingsConfig';

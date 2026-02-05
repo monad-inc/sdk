@@ -98,6 +98,7 @@ type SecretProcessesorInputConfigSettings struct {
 	ObjectStorageInputSettingsConfig *ObjectStorageInputSettingsConfig
 	OfflineenrollmentlogsSettingsConfig *OfflineenrollmentlogsSettingsConfig
 	OneloginEventsSettingsConfig *OneloginEventsSettingsConfig
+	OpalEventsSettingsConfig *OpalEventsSettingsConfig
 	OpenaiSettingsConfig *OpenaiSettingsConfig
 	OperationLogsSettingsConfig *OperationLogsSettingsConfig
 	OracleSettingsConfig *OracleSettingsConfig
@@ -710,6 +711,13 @@ func OfflineenrollmentlogsSettingsConfigAsSecretProcessesorInputConfigSettings(v
 func OneloginEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OneloginEventsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		OneloginEventsSettingsConfig: v,
+	}
+}
+
+// OpalEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OpalEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func OpalEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OpalEventsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		OpalEventsSettingsConfig: v,
 	}
 }
 
@@ -2481,6 +2489,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OneloginEventsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into OpalEventsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.OpalEventsSettingsConfig)
+	if err == nil {
+		jsonOpalEventsSettingsConfig, _ := json.Marshal(dst.OpalEventsSettingsConfig)
+		if string(jsonOpalEventsSettingsConfig) == "{}" { // empty struct
+			dst.OpalEventsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.OpalEventsSettingsConfig); err != nil {
+				dst.OpalEventsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.OpalEventsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into OpenaiSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.OpenaiSettingsConfig)
 	if err == nil {
@@ -3582,6 +3607,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.ObjectStorageInputSettingsConfig = nil
 		dst.OfflineenrollmentlogsSettingsConfig = nil
 		dst.OneloginEventsSettingsConfig = nil
+		dst.OpalEventsSettingsConfig = nil
 		dst.OpenaiSettingsConfig = nil
 		dst.OperationLogsSettingsConfig = nil
 		dst.OracleSettingsConfig = nil
@@ -3967,6 +3993,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.OneloginEventsSettingsConfig != nil {
 		return json.Marshal(&src.OneloginEventsSettingsConfig)
+	}
+
+	if src.OpalEventsSettingsConfig != nil {
+		return json.Marshal(&src.OpalEventsSettingsConfig)
 	}
 
 	if src.OpenaiSettingsConfig != nil {
@@ -4533,6 +4563,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.OneloginEventsSettingsConfig
 	}
 
+	if obj.OpalEventsSettingsConfig != nil {
+		return obj.OpalEventsSettingsConfig
+	}
+
 	if obj.OpenaiSettingsConfig != nil {
 		return obj.OpenaiSettingsConfig
 	}
@@ -5093,6 +5127,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.OneloginEventsSettingsConfig != nil {
 		return *obj.OneloginEventsSettingsConfig
+	}
+
+	if obj.OpalEventsSettingsConfig != nil {
+		return *obj.OpalEventsSettingsConfig
 	}
 
 	if obj.OpenaiSettingsConfig != nil {

@@ -518,6 +518,8 @@ Class | Method | HTTP request | Description
  - [OfflineenrollmentlogsSettingsConfig](docs/OfflineenrollmentlogsSettingsConfig.md)
  - [OneloginEventsSecretsConfig](docs/OneloginEventsSecretsConfig.md)
  - [OneloginEventsSettingsConfig](docs/OneloginEventsSettingsConfig.md)
+ - [OpalEventsSecretsConfig](docs/OpalEventsSecretsConfig.md)
+ - [OpalEventsSettingsConfig](docs/OpalEventsSettingsConfig.md)
  - [OpenaiSettingsConfig](docs/OpenaiSettingsConfig.md)
  - [OpensearchSecretsConfig](docs/OpensearchSecretsConfig.md)
  - [OpensearchSettingsConfig](docs/OpensearchSettingsConfig.md)
