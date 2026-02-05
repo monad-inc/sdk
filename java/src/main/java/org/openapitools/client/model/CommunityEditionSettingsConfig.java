@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * GreyNoise Community Edition settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-05T14:39:01.657481489Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-05T17:27:36.173264382Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class CommunityEditionSettingsConfig {
   public static final String SERIALIZED_NAME_DESTINATION_PATH = "destination_path";
   @SerializedName(SERIALIZED_NAME_DESTINATION_PATH)

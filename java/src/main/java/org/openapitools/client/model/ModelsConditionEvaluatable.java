@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsConditionEvaluatable
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-05T14:39:01.657481489Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-05T17:27:36.173264382Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsConditionEvaluatable {
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
