@@ -26,6 +26,7 @@ export class GithubComMonadIncAlertsModelsAlert {
     'organizationId'?: string;
     'resource'?: GithubComMonadIncAlertsModelsResourceReference;
     'ruleId'?: string;
+    'ruleType'?: string;
     'severity'?: string;
     'status'?: GithubComMonadIncAlertsModelsAlertStatus;
 
@@ -79,6 +80,12 @@ export class GithubComMonadIncAlertsModelsAlert {
         {
             "name": "ruleId",
             "baseName": "rule_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "ruleType",
+            "baseName": "rule_type",
             "type": "string",
             "format": ""
         },

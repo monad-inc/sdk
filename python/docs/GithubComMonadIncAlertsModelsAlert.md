@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **organization_id** | **str** |  | [optional] 
 **resource** | [**GithubComMonadIncAlertsModelsResourceReference**](GithubComMonadIncAlertsModelsResourceReference.md) |  | [optional] 
 **rule_id** | **str** |  | [optional] 
+**rule_type** | **str** |  | [optional] 
 **severity** | **str** |  | [optional] 
 **status** | [**GithubComMonadIncAlertsModelsAlertStatus**](GithubComMonadIncAlertsModelsAlertStatus.md) |  | [optional] 
 

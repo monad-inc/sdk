@@ -37,9 +37,10 @@ class GithubComMonadIncAlertsModelsAlert(BaseModel):
     organization_id: Optional[StrictStr] = None
     resource: Optional[GithubComMonadIncAlertsModelsResourceReference] = None
     rule_id: Optional[StrictStr] = None
+    rule_type: Optional[StrictStr] = None
     severity: Optional[StrictStr] = None
     status: Optional[GithubComMonadIncAlertsModelsAlertStatus] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "metadata", "name", "organization_id", "resource", "rule_id", "severity", "status"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "metadata", "name", "organization_id", "resource", "rule_id", "rule_type", "severity", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -111,6 +112,7 @@ class GithubComMonadIncAlertsModelsAlert(BaseModel):
             "organization_id": obj.get("organization_id"),
             "resource": GithubComMonadIncAlertsModelsResourceReference.from_dict(obj["resource"]) if obj.get("resource") is not None else None,
             "rule_id": obj.get("rule_id"),
+            "rule_type": obj.get("rule_type"),
             "severity": obj.get("severity"),
             "status": GithubComMonadIncAlertsModelsAlertStatus.from_dict(obj["status"]) if obj.get("status") is not None else None
         })

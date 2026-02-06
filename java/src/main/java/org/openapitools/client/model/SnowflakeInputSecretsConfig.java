@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Snowflake Input Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-05T23:00:46.032718180Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-06T21:49:19.026063498Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class SnowflakeInputSecretsConfig {
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)

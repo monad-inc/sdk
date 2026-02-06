@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * GithubComMonadIncAlertsModelsAlert
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-05T23:00:46.032718180Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-06T21:49:19.026063498Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class GithubComMonadIncAlertsModelsAlert {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -92,6 +92,11 @@ public class GithubComMonadIncAlertsModelsAlert {
   @SerializedName(SERIALIZED_NAME_RULE_ID)
   @javax.annotation.Nullable
   private String ruleId;
+
+  public static final String SERIALIZED_NAME_RULE_TYPE = "rule_type";
+  @SerializedName(SERIALIZED_NAME_RULE_TYPE)
+  @javax.annotation.Nullable
+  private String ruleType;
 
   public static final String SERIALIZED_NAME_SEVERITY = "severity";
   @SerializedName(SERIALIZED_NAME_SEVERITY)
@@ -258,6 +263,25 @@ public class GithubComMonadIncAlertsModelsAlert {
   }
 
 
+  public GithubComMonadIncAlertsModelsAlert ruleType(@javax.annotation.Nullable String ruleType) {
+    this.ruleType = ruleType;
+    return this;
+  }
+
+  /**
+   * Get ruleType
+   * @return ruleType
+   */
+  @javax.annotation.Nullable
+  public String getRuleType() {
+    return ruleType;
+  }
+
+  public void setRuleType(@javax.annotation.Nullable String ruleType) {
+    this.ruleType = ruleType;
+  }
+
+
   public GithubComMonadIncAlertsModelsAlert severity(@javax.annotation.Nullable String severity) {
     this.severity = severity;
     return this;
@@ -314,6 +338,7 @@ public class GithubComMonadIncAlertsModelsAlert {
         Objects.equals(this.organizationId, githubComMonadIncAlertsModelsAlert.organizationId) &&
         Objects.equals(this.resource, githubComMonadIncAlertsModelsAlert.resource) &&
         Objects.equals(this.ruleId, githubComMonadIncAlertsModelsAlert.ruleId) &&
+        Objects.equals(this.ruleType, githubComMonadIncAlertsModelsAlert.ruleType) &&
         Objects.equals(this.severity, githubComMonadIncAlertsModelsAlert.severity) &&
         Objects.equals(this.status, githubComMonadIncAlertsModelsAlert.status);
   }
@@ -324,7 +349,7 @@ public class GithubComMonadIncAlertsModelsAlert {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, id, metadata, name, organizationId, resource, ruleId, severity, status);
+    return Objects.hash(createdAt, description, id, metadata, name, organizationId, resource, ruleId, ruleType, severity, status);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -346,6 +371,7 @@ public class GithubComMonadIncAlertsModelsAlert {
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
     sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
+    sb.append("    ruleType: ").append(toIndentedString(ruleType)).append("\n");
     sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
@@ -369,7 +395,7 @@ public class GithubComMonadIncAlertsModelsAlert {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "id", "metadata", "name", "organization_id", "resource", "rule_id", "severity", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "id", "metadata", "name", "organization_id", "resource", "rule_id", "rule_type", "severity", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -414,6 +440,9 @@ public class GithubComMonadIncAlertsModelsAlert {
       }
       if ((jsonObj.get("rule_id") != null && !jsonObj.get("rule_id").isJsonNull()) && !jsonObj.get("rule_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rule_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rule_id").toString()));
+      }
+      if ((jsonObj.get("rule_type") != null && !jsonObj.get("rule_type").isJsonNull()) && !jsonObj.get("rule_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rule_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rule_type").toString()));
       }
       if ((jsonObj.get("severity") != null && !jsonObj.get("severity").isJsonNull()) && !jsonObj.get("severity").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));

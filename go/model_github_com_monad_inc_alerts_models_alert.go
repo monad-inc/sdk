@@ -29,6 +29,7 @@ type GithubComMonadIncAlertsModelsAlert struct {
 	OrganizationId *string `json:"organization_id,omitempty"`
 	Resource *GithubComMonadIncAlertsModelsResourceReference `json:"resource,omitempty"`
 	RuleId *string `json:"rule_id,omitempty"`
+	RuleType *string `json:"rule_type,omitempty"`
 	Severity *string `json:"severity,omitempty"`
 	Status *GithubComMonadIncAlertsModelsAlertStatus `json:"status,omitempty"`
 }
@@ -307,6 +308,38 @@ func (o *GithubComMonadIncAlertsModelsAlert) SetRuleId(v string) {
 	o.RuleId = &v
 }
 
+// GetRuleType returns the RuleType field value if set, zero value otherwise.
+func (o *GithubComMonadIncAlertsModelsAlert) GetRuleType() string {
+	if o == nil || IsNil(o.RuleType) {
+		var ret string
+		return ret
+	}
+	return *o.RuleType
+}
+
+// GetRuleTypeOk returns a tuple with the RuleType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GithubComMonadIncAlertsModelsAlert) GetRuleTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.RuleType) {
+		return nil, false
+	}
+	return o.RuleType, true
+}
+
+// HasRuleType returns a boolean if a field has been set.
+func (o *GithubComMonadIncAlertsModelsAlert) HasRuleType() bool {
+	if o != nil && !IsNil(o.RuleType) {
+		return true
+	}
+
+	return false
+}
+
+// SetRuleType gets a reference to the given string and assigns it to the RuleType field.
+func (o *GithubComMonadIncAlertsModelsAlert) SetRuleType(v string) {
+	o.RuleType = &v
+}
+
 // GetSeverity returns the Severity field value if set, zero value otherwise.
 func (o *GithubComMonadIncAlertsModelsAlert) GetSeverity() string {
 	if o == nil || IsNil(o.Severity) {
@@ -404,6 +437,9 @@ func (o GithubComMonadIncAlertsModelsAlert) ToMap() (map[string]interface{}, err
 	}
 	if !IsNil(o.RuleId) {
 		toSerialize["rule_id"] = o.RuleId
+	}
+	if !IsNil(o.RuleType) {
+		toSerialize["rule_type"] = o.RuleType
 	}
 	if !IsNil(o.Severity) {
 		toSerialize["severity"] = o.Severity

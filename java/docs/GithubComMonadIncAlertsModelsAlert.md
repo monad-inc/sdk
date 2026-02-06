@@ -15,6 +15,7 @@
 |**organizationId** | **String** |  |  [optional] |
 |**resource** | [**GithubComMonadIncAlertsModelsResourceReference**](GithubComMonadIncAlertsModelsResourceReference.md) |  |  [optional] |
 |**ruleId** | **String** |  |  [optional] |
+|**ruleType** | **String** |  |  [optional] |
 |**severity** | **String** |  |  [optional] |
 |**status** | [**GithubComMonadIncAlertsModelsAlertStatus**](GithubComMonadIncAlertsModelsAlertStatus.md) |  |  [optional] |
 

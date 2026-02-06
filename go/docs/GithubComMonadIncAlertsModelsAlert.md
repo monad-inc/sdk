@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to [**GithubComMonadIncAlertsModelsResourceReference**](GithubComMonadIncAlertsModelsResourceReference.md) |  | [optional] 
 **RuleId** | Pointer to **string** |  | [optional] 
+**RuleType** | Pointer to **string** |  | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**GithubComMonadIncAlertsModelsAlertStatus**](GithubComMonadIncAlertsModelsAlertStatus.md) |  | [optional] 
 
@@ -243,6 +244,31 @@ SetRuleId sets RuleId field to given value.
 `func (o *GithubComMonadIncAlertsModelsAlert) HasRuleId() bool`
 
 HasRuleId returns a boolean if a field has been set.
+
+### GetRuleType
+
+`func (o *GithubComMonadIncAlertsModelsAlert) GetRuleType() string`
+
+GetRuleType returns the RuleType field if non-nil, zero value otherwise.
+
+### GetRuleTypeOk
+
+`func (o *GithubComMonadIncAlertsModelsAlert) GetRuleTypeOk() (*string, bool)`
+
+GetRuleTypeOk returns a tuple with the RuleType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRuleType
+
+`func (o *GithubComMonadIncAlertsModelsAlert) SetRuleType(v string)`
+
+SetRuleType sets RuleType field to given value.
+
+### HasRuleType
+
+`func (o *GithubComMonadIncAlertsModelsAlert) HasRuleType() bool`
+
+HasRuleType returns a boolean if a field has been set.
 
 ### GetSeverity
 
