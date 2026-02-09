@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Pagerduty Audit Records secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-09T15:27:42.313471946Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-09T16:01:33.322467575Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class PagerdutyAuditRecordsSecretsConfig {
   public static final String SERIALIZED_NAME_AUTH_TOKEN = "auth_token";
   @SerializedName(SERIALIZED_NAME_AUTH_TOKEN)
