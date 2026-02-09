@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3SecurityDataAnalysis
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-09T18:22:58.820763668Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-09T18:44:00.919360931Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV3SecurityDataAnalysis {
   public static final String SERIALIZED_NAME_ERROR_MSG = "error_msg";
   @SerializedName(SERIALIZED_NAME_ERROR_MSG)
