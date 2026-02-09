@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * KV Lookup Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-06T21:49:19.026063498Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-09T07:19:08.625442241Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class KvLookupOutputSettingsConfig {
   public static final String SERIALIZED_NAME_KEY_FIELD = "key_field";
   @SerializedName(SERIALIZED_NAME_KEY_FIELD)
