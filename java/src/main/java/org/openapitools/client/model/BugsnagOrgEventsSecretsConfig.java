@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Bugsnag Org Events secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-09T16:21:27.397426253Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-09T18:22:58.820763668Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class BugsnagOrgEventsSecretsConfig {
   public static final String SERIALIZED_NAME_PERSONAL_AUTH_TOKEN = "personal_auth_token";
   @SerializedName(SERIALIZED_NAME_PERSONAL_AUTH_TOKEN)

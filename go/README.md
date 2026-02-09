@@ -691,8 +691,6 @@ Class | Method | HTTP request | Description
  - [SnowflakeOutputSettingsConfig](docs/SnowflakeOutputSettingsConfig.md)
  - [SnykIssuesSecretsConfig](docs/SnykIssuesSecretsConfig.md)
  - [SnykIssuesSettingsConfig](docs/SnykIssuesSettingsConfig.md)
- - [SnykOrganizationsSecretsConfig](docs/SnykOrganizationsSecretsConfig.md)
- - [SnykOrganizationsSettingsConfig](docs/SnykOrganizationsSettingsConfig.md)
  - [SnykProjectsSecretsConfig](docs/SnykProjectsSecretsConfig.md)
  - [SnykProjectsSettingsConfig](docs/SnykProjectsSettingsConfig.md)
  - [SnykTargetsSecretsConfig](docs/SnykTargetsSecretsConfig.md)

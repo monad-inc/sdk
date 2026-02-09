@@ -454,8 +454,6 @@ export * from '../models/SnowflakeOutputSecretsConfig';
 export * from '../models/SnowflakeOutputSettingsConfig';
 export * from '../models/SnykIssuesSecretsConfig';
 export * from '../models/SnykIssuesSettingsConfig';
-export * from '../models/SnykOrganizationsSecretsConfig';
-export * from '../models/SnykOrganizationsSettingsConfig';
 export * from '../models/SnykProjectsSecretsConfig';
 export * from '../models/SnykProjectsSettingsConfig';
 export * from '../models/SnykTargetsSecretsConfig';
@@ -983,8 +981,6 @@ import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsCo
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
 import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
 import { SnykIssuesSettingsConfig } from '../models/SnykIssuesSettingsConfig';
-import { SnykOrganizationsSecretsConfig } from '../models/SnykOrganizationsSecretsConfig';
-import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
 import { SnykProjectsSecretsConfig } from '../models/SnykProjectsSecretsConfig';
 import { SnykProjectsSettingsConfig } from '../models/SnykProjectsSettingsConfig';
 import { SnykTargetsSecretsConfig } from '../models/SnykTargetsSecretsConfig';
@@ -1544,8 +1540,6 @@ let typeMap: {[index: string]: any} = {
     "SnowflakeOutputSettingsConfig": SnowflakeOutputSettingsConfig,
     "SnykIssuesSecretsConfig": SnykIssuesSecretsConfig,
     "SnykIssuesSettingsConfig": SnykIssuesSettingsConfig,
-    "SnykOrganizationsSecretsConfig": SnykOrganizationsSecretsConfig,
-    "SnykOrganizationsSettingsConfig": SnykOrganizationsSettingsConfig,
     "SnykProjectsSecretsConfig": SnykProjectsSecretsConfig,
     "SnykProjectsSettingsConfig": SnykProjectsSettingsConfig,
     "SnykTargetsSecretsConfig": SnykTargetsSecretsConfig,

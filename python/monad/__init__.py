@@ -518,8 +518,6 @@ __all__ = [
     "SnowflakeOutputSettingsConfig",
     "SnykIssuesSecretsConfig",
     "SnykIssuesSettingsConfig",
-    "SnykOrganizationsSecretsConfig",
-    "SnykOrganizationsSettingsConfig",
     "SnykProjectsSecretsConfig",
     "SnykProjectsSettingsConfig",
     "SnykTargetsSecretsConfig",
@@ -1096,8 +1094,6 @@ from monad.models.snowflake_output_secrets_config import SnowflakeOutputSecretsC
 from monad.models.snowflake_output_settings_config import SnowflakeOutputSettingsConfig as SnowflakeOutputSettingsConfig
 from monad.models.snyk_issues_secrets_config import SnykIssuesSecretsConfig as SnykIssuesSecretsConfig
 from monad.models.snyk_issues_settings_config import SnykIssuesSettingsConfig as SnykIssuesSettingsConfig
-from monad.models.snyk_organizations_secrets_config import SnykOrganizationsSecretsConfig as SnykOrganizationsSecretsConfig
-from monad.models.snyk_organizations_settings_config import SnykOrganizationsSettingsConfig as SnykOrganizationsSettingsConfig
 from monad.models.snyk_projects_secrets_config import SnykProjectsSecretsConfig as SnykProjectsSecretsConfig
 from monad.models.snyk_projects_settings_config import SnykProjectsSettingsConfig as SnykProjectsSettingsConfig
 from monad.models.snyk_targets_secrets_config import SnykTargetsSecretsConfig as SnykTargetsSecretsConfig

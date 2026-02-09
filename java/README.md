@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-02-09T16:21:27.397426253Z[Etc/UTC]
+  - Build date: 2026-02-09T18:22:58.820763668Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -741,8 +741,6 @@ Class | Method | HTTP request | Description
  - [SnowflakeOutputSettingsConfig](docs/SnowflakeOutputSettingsConfig.md)
  - [SnykIssuesSecretsConfig](docs/SnykIssuesSecretsConfig.md)
  - [SnykIssuesSettingsConfig](docs/SnykIssuesSettingsConfig.md)
- - [SnykOrganizationsSecretsConfig](docs/SnykOrganizationsSecretsConfig.md)
- - [SnykOrganizationsSettingsConfig](docs/SnykOrganizationsSettingsConfig.md)
  - [SnykProjectsSecretsConfig](docs/SnykProjectsSecretsConfig.md)
  - [SnykProjectsSettingsConfig](docs/SnykProjectsSettingsConfig.md)
  - [SnykTargetsSecretsConfig](docs/SnykTargetsSecretsConfig.md)

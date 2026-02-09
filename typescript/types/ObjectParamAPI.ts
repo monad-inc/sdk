@@ -458,8 +458,6 @@ import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsCo
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
 import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
 import { SnykIssuesSettingsConfig } from '../models/SnykIssuesSettingsConfig';
-import { SnykOrganizationsSecretsConfig } from '../models/SnykOrganizationsSecretsConfig';
-import { SnykOrganizationsSettingsConfig } from '../models/SnykOrganizationsSettingsConfig';
 import { SnykProjectsSecretsConfig } from '../models/SnykProjectsSecretsConfig';
 import { SnykProjectsSettingsConfig } from '../models/SnykProjectsSettingsConfig';
 import { SnykTargetsSecretsConfig } from '../models/SnykTargetsSecretsConfig';

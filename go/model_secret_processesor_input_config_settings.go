@@ -126,7 +126,6 @@ type SecretProcessesorInputConfigSettings struct {
 	SlackgroupsSettingsConfig *SlackgroupsSettingsConfig
 	SnowflakeInputSettingsConfig *SnowflakeInputSettingsConfig
 	SnykIssuesSettingsConfig *SnykIssuesSettingsConfig
-	SnykOrganizationsSettingsConfig *SnykOrganizationsSettingsConfig
 	SnykProjectsSettingsConfig *SnykProjectsSettingsConfig
 	SnykTargetsSettingsConfig *SnykTargetsSettingsConfig
 	SyntheticDataCustomSettingsConfig *SyntheticDataCustomSettingsConfig
@@ -907,13 +906,6 @@ func SnowflakeInputSettingsConfigAsSecretProcessesorInputConfigSettings(v *Snowf
 func SnykIssuesSettingsConfigAsSecretProcessesorInputConfigSettings(v *SnykIssuesSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		SnykIssuesSettingsConfig: v,
-	}
-}
-
-// SnykOrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SnykOrganizationsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func SnykOrganizationsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SnykOrganizationsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		SnykOrganizationsSettingsConfig: v,
 	}
 }
 
@@ -2965,23 +2957,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.SnykIssuesSettingsConfig = nil
 	}
 
-	// try to unmarshal data into SnykOrganizationsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.SnykOrganizationsSettingsConfig)
-	if err == nil {
-		jsonSnykOrganizationsSettingsConfig, _ := json.Marshal(dst.SnykOrganizationsSettingsConfig)
-		if string(jsonSnykOrganizationsSettingsConfig) == "{}" { // empty struct
-			dst.SnykOrganizationsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SnykOrganizationsSettingsConfig); err != nil {
-				dst.SnykOrganizationsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SnykOrganizationsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into SnykProjectsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.SnykProjectsSettingsConfig)
 	if err == nil {
@@ -3635,7 +3610,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.SlackgroupsSettingsConfig = nil
 		dst.SnowflakeInputSettingsConfig = nil
 		dst.SnykIssuesSettingsConfig = nil
-		dst.SnykOrganizationsSettingsConfig = nil
 		dst.SnykProjectsSettingsConfig = nil
 		dst.SnykTargetsSettingsConfig = nil
 		dst.SyntheticDataCustomSettingsConfig = nil
@@ -4105,10 +4079,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.SnykIssuesSettingsConfig != nil {
 		return json.Marshal(&src.SnykIssuesSettingsConfig)
-	}
-
-	if src.SnykOrganizationsSettingsConfig != nil {
-		return json.Marshal(&src.SnykOrganizationsSettingsConfig)
 	}
 
 	if src.SnykProjectsSettingsConfig != nil {
@@ -4675,10 +4645,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.SnykIssuesSettingsConfig
 	}
 
-	if obj.SnykOrganizationsSettingsConfig != nil {
-		return obj.SnykOrganizationsSettingsConfig
-	}
-
 	if obj.SnykProjectsSettingsConfig != nil {
 		return obj.SnykProjectsSettingsConfig
 	}
@@ -5239,10 +5205,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.SnykIssuesSettingsConfig != nil {
 		return *obj.SnykIssuesSettingsConfig
-	}
-
-	if obj.SnykOrganizationsSettingsConfig != nil {
-		return *obj.SnykOrganizationsSettingsConfig
 	}
 
 	if obj.SnykProjectsSettingsConfig != nil {
