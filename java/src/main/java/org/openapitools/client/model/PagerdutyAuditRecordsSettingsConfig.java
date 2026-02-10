@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Pagerduty Audit Records settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T17:26:00.518852476Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T18:16:49.400810740Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class PagerdutyAuditRecordsSettingsConfig {
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)

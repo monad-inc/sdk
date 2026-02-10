@@ -158,6 +158,9 @@ const request: SandboxApiV2SandboxTransformPostRequest = {
           },
           description: "description_example",
           operation: "operation_example",
+          secrets: {
+            "key": null,
+          },
         },
       ],
     },

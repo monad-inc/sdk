@@ -23,6 +23,7 @@ type ModelsTransformOperation struct {
 	Arguments map[string]interface{} `json:"arguments,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Operation *string `json:"operation,omitempty"`
+	Secrets map[string]interface{} `json:"secrets,omitempty"`
 }
 
 // NewModelsTransformOperation instantiates a new ModelsTransformOperation object
@@ -138,6 +139,38 @@ func (o *ModelsTransformOperation) SetOperation(v string) {
 	o.Operation = &v
 }
 
+// GetSecrets returns the Secrets field value if set, zero value otherwise.
+func (o *ModelsTransformOperation) GetSecrets() map[string]interface{} {
+	if o == nil || IsNil(o.Secrets) {
+		var ret map[string]interface{}
+		return ret
+	}
+	return o.Secrets
+}
+
+// GetSecretsOk returns a tuple with the Secrets field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsTransformOperation) GetSecretsOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.Secrets) {
+		return map[string]interface{}{}, false
+	}
+	return o.Secrets, true
+}
+
+// HasSecrets returns a boolean if a field has been set.
+func (o *ModelsTransformOperation) HasSecrets() bool {
+	if o != nil && !IsNil(o.Secrets) {
+		return true
+	}
+
+	return false
+}
+
+// SetSecrets gets a reference to the given map[string]interface{} and assigns it to the Secrets field.
+func (o *ModelsTransformOperation) SetSecrets(v map[string]interface{}) {
+	o.Secrets = v
+}
+
 func (o ModelsTransformOperation) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -156,6 +189,9 @@ func (o ModelsTransformOperation) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Operation) {
 		toSerialize["operation"] = o.Operation
+	}
+	if !IsNil(o.Secrets) {
+		toSerialize["secrets"] = o.Secrets
 	}
 	return toSerialize, nil
 }

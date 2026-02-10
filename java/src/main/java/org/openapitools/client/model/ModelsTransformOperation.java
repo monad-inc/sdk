@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsTransformOperation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T17:26:00.518852476Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T18:16:49.400810740Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsTransformOperation {
   public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
   @SerializedName(SERIALIZED_NAME_ARGUMENTS)
@@ -66,6 +66,11 @@ public class ModelsTransformOperation {
   @SerializedName(SERIALIZED_NAME_OPERATION)
   @javax.annotation.Nullable
   private String operation;
+
+  public static final String SERIALIZED_NAME_SECRETS = "secrets";
+  @SerializedName(SERIALIZED_NAME_SECRETS)
+  @javax.annotation.Nullable
+  private Map<String, Object> secrets = new HashMap<>();
 
   public ModelsTransformOperation() {
   }
@@ -135,6 +140,33 @@ public class ModelsTransformOperation {
   }
 
 
+  public ModelsTransformOperation secrets(@javax.annotation.Nullable Map<String, Object> secrets) {
+    this.secrets = secrets;
+    return this;
+  }
+
+  public ModelsTransformOperation putSecretsItem(String key, Object secretsItem) {
+    if (this.secrets == null) {
+      this.secrets = new HashMap<>();
+    }
+    this.secrets.put(key, secretsItem);
+    return this;
+  }
+
+  /**
+   * Get secrets
+   * @return secrets
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getSecrets() {
+    return secrets;
+  }
+
+  public void setSecrets(@javax.annotation.Nullable Map<String, Object> secrets) {
+    this.secrets = secrets;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -147,12 +179,13 @@ public class ModelsTransformOperation {
     ModelsTransformOperation modelsTransformOperation = (ModelsTransformOperation) o;
     return Objects.equals(this.arguments, modelsTransformOperation.arguments) &&
         Objects.equals(this.description, modelsTransformOperation.description) &&
-        Objects.equals(this.operation, modelsTransformOperation.operation);
+        Objects.equals(this.operation, modelsTransformOperation.operation) &&
+        Objects.equals(this.secrets, modelsTransformOperation.secrets);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(arguments, description, operation);
+    return Objects.hash(arguments, description, operation, secrets);
   }
 
   @Override
@@ -162,6 +195,7 @@ public class ModelsTransformOperation {
     sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
+    sb.append("    secrets: ").append(toIndentedString(secrets)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -183,7 +217,7 @@ public class ModelsTransformOperation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("arguments", "description", "operation"));
+    openapiFields = new HashSet<String>(Arrays.asList("arguments", "description", "operation", "secrets"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
