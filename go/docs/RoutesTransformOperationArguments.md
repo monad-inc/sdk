@@ -7,6 +7,14 @@ Name | Type | Description | Notes
 **Key** | Pointer to **string** | The key to store the timestamp in | [optional] 
 **Value** | Pointer to **interface{}** |  | [optional] 
 **Type** | Pointer to **string** | The new type of the key | [optional] 
+**SourceFormat** | Pointer to **string** | Required: Format of source timestamp | [optional] 
+**SourceFormatCustom** | Pointer to **string** | Optional: Custom Go time layout (only if SourceFormat &#x3D; \&quot;custom\&quot;) | [optional] 
+**SourceKey** | Pointer to **string** | Required: JSONPath to source timestamp field | [optional] 
+**SourceTimezone** | Pointer to **string** | Optional: Source timezone (default: UTC) | [optional] 
+**TargetFormat** | Pointer to **string** | Required: Target format | [optional] 
+**TargetFormatCustom** | Pointer to **string** | Optional: Custom target format (only if TargetFormat &#x3D; \&quot;custom\&quot;) | [optional] 
+**TargetKey** | Pointer to **string** | Optional: Target field (if empty, overwrites SourceKey) | [optional] 
+**TargetTimezone** | Pointer to **string** | Optional: Target timezone (default: UTC) | [optional] 
 **KeyToWatch** | Pointer to **string** | The key to watch for | [optional] 
 **ValueToWatch** | Pointer to **interface{}** |  | [optional] 
 **NewKey** | Pointer to **string** | The new key to rename to | [optional] 
@@ -118,6 +126,206 @@ SetType sets Type field to given value.
 `func (o *RoutesTransformOperationArguments) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetSourceFormat
+
+`func (o *RoutesTransformOperationArguments) GetSourceFormat() string`
+
+GetSourceFormat returns the SourceFormat field if non-nil, zero value otherwise.
+
+### GetSourceFormatOk
+
+`func (o *RoutesTransformOperationArguments) GetSourceFormatOk() (*string, bool)`
+
+GetSourceFormatOk returns a tuple with the SourceFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceFormat
+
+`func (o *RoutesTransformOperationArguments) SetSourceFormat(v string)`
+
+SetSourceFormat sets SourceFormat field to given value.
+
+### HasSourceFormat
+
+`func (o *RoutesTransformOperationArguments) HasSourceFormat() bool`
+
+HasSourceFormat returns a boolean if a field has been set.
+
+### GetSourceFormatCustom
+
+`func (o *RoutesTransformOperationArguments) GetSourceFormatCustom() string`
+
+GetSourceFormatCustom returns the SourceFormatCustom field if non-nil, zero value otherwise.
+
+### GetSourceFormatCustomOk
+
+`func (o *RoutesTransformOperationArguments) GetSourceFormatCustomOk() (*string, bool)`
+
+GetSourceFormatCustomOk returns a tuple with the SourceFormatCustom field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceFormatCustom
+
+`func (o *RoutesTransformOperationArguments) SetSourceFormatCustom(v string)`
+
+SetSourceFormatCustom sets SourceFormatCustom field to given value.
+
+### HasSourceFormatCustom
+
+`func (o *RoutesTransformOperationArguments) HasSourceFormatCustom() bool`
+
+HasSourceFormatCustom returns a boolean if a field has been set.
+
+### GetSourceKey
+
+`func (o *RoutesTransformOperationArguments) GetSourceKey() string`
+
+GetSourceKey returns the SourceKey field if non-nil, zero value otherwise.
+
+### GetSourceKeyOk
+
+`func (o *RoutesTransformOperationArguments) GetSourceKeyOk() (*string, bool)`
+
+GetSourceKeyOk returns a tuple with the SourceKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceKey
+
+`func (o *RoutesTransformOperationArguments) SetSourceKey(v string)`
+
+SetSourceKey sets SourceKey field to given value.
+
+### HasSourceKey
+
+`func (o *RoutesTransformOperationArguments) HasSourceKey() bool`
+
+HasSourceKey returns a boolean if a field has been set.
+
+### GetSourceTimezone
+
+`func (o *RoutesTransformOperationArguments) GetSourceTimezone() string`
+
+GetSourceTimezone returns the SourceTimezone field if non-nil, zero value otherwise.
+
+### GetSourceTimezoneOk
+
+`func (o *RoutesTransformOperationArguments) GetSourceTimezoneOk() (*string, bool)`
+
+GetSourceTimezoneOk returns a tuple with the SourceTimezone field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceTimezone
+
+`func (o *RoutesTransformOperationArguments) SetSourceTimezone(v string)`
+
+SetSourceTimezone sets SourceTimezone field to given value.
+
+### HasSourceTimezone
+
+`func (o *RoutesTransformOperationArguments) HasSourceTimezone() bool`
+
+HasSourceTimezone returns a boolean if a field has been set.
+
+### GetTargetFormat
+
+`func (o *RoutesTransformOperationArguments) GetTargetFormat() string`
+
+GetTargetFormat returns the TargetFormat field if non-nil, zero value otherwise.
+
+### GetTargetFormatOk
+
+`func (o *RoutesTransformOperationArguments) GetTargetFormatOk() (*string, bool)`
+
+GetTargetFormatOk returns a tuple with the TargetFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTargetFormat
+
+`func (o *RoutesTransformOperationArguments) SetTargetFormat(v string)`
+
+SetTargetFormat sets TargetFormat field to given value.
+
+### HasTargetFormat
+
+`func (o *RoutesTransformOperationArguments) HasTargetFormat() bool`
+
+HasTargetFormat returns a boolean if a field has been set.
+
+### GetTargetFormatCustom
+
+`func (o *RoutesTransformOperationArguments) GetTargetFormatCustom() string`
+
+GetTargetFormatCustom returns the TargetFormatCustom field if non-nil, zero value otherwise.
+
+### GetTargetFormatCustomOk
+
+`func (o *RoutesTransformOperationArguments) GetTargetFormatCustomOk() (*string, bool)`
+
+GetTargetFormatCustomOk returns a tuple with the TargetFormatCustom field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTargetFormatCustom
+
+`func (o *RoutesTransformOperationArguments) SetTargetFormatCustom(v string)`
+
+SetTargetFormatCustom sets TargetFormatCustom field to given value.
+
+### HasTargetFormatCustom
+
+`func (o *RoutesTransformOperationArguments) HasTargetFormatCustom() bool`
+
+HasTargetFormatCustom returns a boolean if a field has been set.
+
+### GetTargetKey
+
+`func (o *RoutesTransformOperationArguments) GetTargetKey() string`
+
+GetTargetKey returns the TargetKey field if non-nil, zero value otherwise.
+
+### GetTargetKeyOk
+
+`func (o *RoutesTransformOperationArguments) GetTargetKeyOk() (*string, bool)`
+
+GetTargetKeyOk returns a tuple with the TargetKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTargetKey
+
+`func (o *RoutesTransformOperationArguments) SetTargetKey(v string)`
+
+SetTargetKey sets TargetKey field to given value.
+
+### HasTargetKey
+
+`func (o *RoutesTransformOperationArguments) HasTargetKey() bool`
+
+HasTargetKey returns a boolean if a field has been set.
+
+### GetTargetTimezone
+
+`func (o *RoutesTransformOperationArguments) GetTargetTimezone() string`
+
+GetTargetTimezone returns the TargetTimezone field if non-nil, zero value otherwise.
+
+### GetTargetTimezoneOk
+
+`func (o *RoutesTransformOperationArguments) GetTargetTimezoneOk() (*string, bool)`
+
+GetTargetTimezoneOk returns a tuple with the TargetTimezone field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTargetTimezone
+
+`func (o *RoutesTransformOperationArguments) SetTargetTimezone(v string)`
+
+SetTargetTimezone sets TargetTimezone field to given value.
+
+### HasTargetTimezone
+
+`func (o *RoutesTransformOperationArguments) HasTargetTimezone() bool`
+
+HasTargetTimezone returns a boolean if a field has been set.
 
 ### GetKeyToWatch
 

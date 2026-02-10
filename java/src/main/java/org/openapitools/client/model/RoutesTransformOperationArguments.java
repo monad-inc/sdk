@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.Map;
 import org.openapitools.client.model.AddAdd;
 import org.openapitools.client.model.AddIdAddIdentifier;
+import org.openapitools.client.model.ConvertTimestampConvertTimestamp;
 import org.openapitools.client.model.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue;
 import org.openapitools.client.model.DropKeyDropKey;
 import org.openapitools.client.model.DropKeyWhereValueEqDropKeyWhereValueEq;
@@ -76,7 +77,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T18:16:49.400810740Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T18:51:51.042387013Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesTransformOperationArguments.class.getName());
 
@@ -90,6 +91,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
             final TypeAdapter<AddAdd> adapterAddAdd = gson.getDelegateAdapter(this, TypeToken.get(AddAdd.class));
             final TypeAdapter<AddIdAddIdentifier> adapterAddIdAddIdentifier = gson.getDelegateAdapter(this, TypeToken.get(AddIdAddIdentifier.class));
+            final TypeAdapter<ConvertTimestampConvertTimestamp> adapterConvertTimestampConvertTimestamp = gson.getDelegateAdapter(this, TypeToken.get(ConvertTimestampConvertTimestamp.class));
             final TypeAdapter<CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue> adapterCreateKeyValueIfKeyValueCreateKeyValueIfKeyValue = gson.getDelegateAdapter(this, TypeToken.get(CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.class));
             final TypeAdapter<DropKeyDropKey> adapterDropKeyDropKey = gson.getDelegateAdapter(this, TypeToken.get(DropKeyDropKey.class));
             final TypeAdapter<DropKeyWhereValueEqDropKeyWhereValueEq> adapterDropKeyWhereValueEqDropKeyWhereValueEq = gson.getDelegateAdapter(this, TypeToken.get(DropKeyWhereValueEqDropKeyWhereValueEq.class));
@@ -125,6 +127,12 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `AddIdAddIdentifier`
                     if (value.getActualInstance() instanceof AddIdAddIdentifier) {
                         JsonElement element = adapterAddIdAddIdentifier.toJsonTree((AddIdAddIdentifier)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `ConvertTimestampConvertTimestamp`
+                    if (value.getActualInstance() instanceof ConvertTimestampConvertTimestamp) {
+                        JsonElement element = adapterConvertTimestampConvertTimestamp.toJsonTree((ConvertTimestampConvertTimestamp)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -224,7 +232,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AddAdd, AddIdAddIdentifier, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AddAdd, AddIdAddIdentifier, ConvertTimestampConvertTimestamp, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp");
                 }
 
                 @Override
@@ -259,6 +267,18 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddIdAddIdentifier failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'AddIdAddIdentifier'", e);
+                    }
+                    // deserialize ConvertTimestampConvertTimestamp
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ConvertTimestampConvertTimestamp.validateJsonElement(jsonElement);
+                        actualAdapter = adapterConvertTimestampConvertTimestamp;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ConvertTimestampConvertTimestamp'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ConvertTimestampConvertTimestamp failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'ConvertTimestampConvertTimestamp'", e);
                     }
                     // deserialize CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
                     try {
@@ -483,6 +503,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     static {
         schemas.put("AddAdd", AddAdd.class);
         schemas.put("AddIdAddIdentifier", AddIdAddIdentifier.class);
+        schemas.put("ConvertTimestampConvertTimestamp", ConvertTimestampConvertTimestamp.class);
         schemas.put("CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue", CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.class);
         schemas.put("DropKeyDropKey", DropKeyDropKey.class);
         schemas.put("DropKeyWhereValueEqDropKeyWhereValueEq", DropKeyWhereValueEqDropKeyWhereValueEq.class);
@@ -509,7 +530,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AddAdd, AddIdAddIdentifier, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp
+     * AddAdd, AddIdAddIdentifier, ConvertTimestampConvertTimestamp, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -521,6 +542,11 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
         }
 
         if (instance instanceof AddIdAddIdentifier) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ConvertTimestampConvertTimestamp) {
             super.setActualInstance(instance);
             return;
         }
@@ -605,14 +631,14 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be AddAdd, AddIdAddIdentifier, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp");
+        throw new RuntimeException("Invalid instance type. Must be AddAdd, AddIdAddIdentifier, ConvertTimestampConvertTimestamp, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AddAdd, AddIdAddIdentifier, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp
+     * AddAdd, AddIdAddIdentifier, ConvertTimestampConvertTimestamp, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp
      *
-     * @return The actual instance (AddAdd, AddIdAddIdentifier, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp)
+     * @return The actual instance (AddAdd, AddIdAddIdentifier, ConvertTimestampConvertTimestamp, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -640,6 +666,17 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
      */
     public AddIdAddIdentifier getAddIdAddIdentifier() throws ClassCastException {
         return (AddIdAddIdentifier)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ConvertTimestampConvertTimestamp`. If the actual instance is not `ConvertTimestampConvertTimestamp`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ConvertTimestampConvertTimestamp`
+     * @throws ClassCastException if the instance is not `ConvertTimestampConvertTimestamp`
+     */
+    public ConvertTimestampConvertTimestamp getConvertTimestampConvertTimestamp() throws ClassCastException {
+        return (ConvertTimestampConvertTimestamp)super.getActualInstance();
     }
 
     /**
@@ -844,6 +881,14 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddIdAddIdentifier failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with ConvertTimestampConvertTimestamp
+        try {
+            ConvertTimestampConvertTimestamp.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ConvertTimestampConvertTimestamp failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
         try {
             CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.validateJsonElement(jsonElement);
@@ -976,7 +1021,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for RoutesTransformOperationArguments with oneOf schemas: AddAdd, AddIdAddIdentifier, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for RoutesTransformOperationArguments with oneOf schemas: AddAdd, AddIdAddIdentifier, ConvertTimestampConvertTimestamp, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

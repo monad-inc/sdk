@@ -114,6 +114,7 @@ export * from '../models/CommunityEditionSettingsConfig';
 export * from '../models/CommunityTransformsInternalTransformConfig';
 export * from '../models/CommunityTransformsInternalTransformMetadata';
 export * from '../models/CommunityTransformsInternalTransformsIndex';
+export * from '../models/ConvertTimestampConvertTimestamp';
 export * from '../models/CortexXsoarManagementLogsSecretsConfig';
 export * from '../models/CortexXsoarManagementLogsSettingsConfig';
 export * from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
@@ -642,6 +643,7 @@ import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettin
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
+import { ConvertTimestampConvertTimestamp } from '../models/ConvertTimestampConvertTimestamp';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
 import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
@@ -1202,6 +1204,7 @@ let typeMap: {[index: string]: any} = {
     "CommunityTransformsInternalTransformConfig": CommunityTransformsInternalTransformConfig,
     "CommunityTransformsInternalTransformMetadata": CommunityTransformsInternalTransformMetadata,
     "CommunityTransformsInternalTransformsIndex": CommunityTransformsInternalTransformsIndex,
+    "ConvertTimestampConvertTimestamp": ConvertTimestampConvertTimestamp,
     "CortexXsoarManagementLogsSecretsConfig": CortexXsoarManagementLogsSecretsConfig,
     "CortexXsoarManagementLogsSettingsConfig": CortexXsoarManagementLogsSettingsConfig,
     "CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue": CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue,

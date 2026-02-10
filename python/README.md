@@ -374,6 +374,7 @@ Class | Method | HTTP request | Description
  - [CommunityTransformsInternalTransformConfig](docs/CommunityTransformsInternalTransformConfig.md)
  - [CommunityTransformsInternalTransformMetadata](docs/CommunityTransformsInternalTransformMetadata.md)
  - [CommunityTransformsInternalTransformsIndex](docs/CommunityTransformsInternalTransformsIndex.md)
+ - [ConvertTimestampConvertTimestamp](docs/ConvertTimestampConvertTimestamp.md)
  - [CortexXsoarManagementLogsSecretsConfig](docs/CortexXsoarManagementLogsSecretsConfig.md)
  - [CortexXsoarManagementLogsSettingsConfig](docs/CortexXsoarManagementLogsSettingsConfig.md)
  - [CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue](docs/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.md)

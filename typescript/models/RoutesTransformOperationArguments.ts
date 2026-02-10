@@ -12,6 +12,7 @@
 
 import { AddAdd } from '../models/AddAdd';
 import { AddIdAddIdentifier } from '../models/AddIdAddIdentifier';
+import { ConvertTimestampConvertTimestamp } from '../models/ConvertTimestampConvertTimestamp';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 import { DropKeyDropKey } from '../models/DropKeyDropKey';
 import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
@@ -34,7 +35,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesTransformOperationArguments = AddAdd | AddIdAddIdentifier | CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue | DropKeyDropKey | DropKeyWhereValueEqDropKeyWhereValueEq | DropRecordWhereValueEqDropRecordWhereValueEq | DuplicateKeyValueToKeyDuplicateKeyValueToKey | FlattenFlatten | FlattenallFlattenAll | JqJQ | MathMultiplyWithValueMathMultiplyWithValue | MutateTypeMutateType | MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq | MutateValueWhereKeyEqMutateValueWhereKeyEq | RenameKeyRenameKey | RenameKeyWhereValueEqRenameKeyWhereValueEq | UtcTimestampTimestamp | { [key: string]: any; };
+export type RoutesTransformOperationArguments = AddAdd | AddIdAddIdentifier | ConvertTimestampConvertTimestamp | CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue | DropKeyDropKey | DropKeyWhereValueEqDropKeyWhereValueEq | DropRecordWhereValueEqDropRecordWhereValueEq | DuplicateKeyValueToKeyDuplicateKeyValueToKey | FlattenFlatten | FlattenallFlattenAll | JqJQ | MathMultiplyWithValueMathMultiplyWithValue | MutateTypeMutateType | MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq | MutateValueWhereKeyEqMutateValueWhereKeyEq | RenameKeyRenameKey | RenameKeyWhereValueEqRenameKeyWhereValueEq | UtcTimestampTimestamp | { [key: string]: any; };
 
 /**
 * @type RoutesTransformOperationArgumentsClass
@@ -45,6 +46,7 @@ export class RoutesTransformOperationArgumentsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

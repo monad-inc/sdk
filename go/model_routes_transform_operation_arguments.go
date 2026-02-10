@@ -21,6 +21,7 @@ import (
 type RoutesTransformOperationArguments struct {
 	AddAdd *AddAdd
 	AddIdAddIdentifier *AddIdAddIdentifier
+	ConvertTimestampConvertTimestamp *ConvertTimestampConvertTimestamp
 	CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
 	DropKeyDropKey *DropKeyDropKey
 	DropKeyWhereValueEqDropKeyWhereValueEq *DropKeyWhereValueEqDropKeyWhereValueEq
@@ -50,6 +51,13 @@ func AddAddAsRoutesTransformOperationArguments(v *AddAdd) RoutesTransformOperati
 func AddIdAddIdentifierAsRoutesTransformOperationArguments(v *AddIdAddIdentifier) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
 		AddIdAddIdentifier: v,
+	}
+}
+
+// ConvertTimestampConvertTimestampAsRoutesTransformOperationArguments is a convenience function that returns ConvertTimestampConvertTimestamp wrapped in RoutesTransformOperationArguments
+func ConvertTimestampConvertTimestampAsRoutesTransformOperationArguments(v *ConvertTimestampConvertTimestamp) RoutesTransformOperationArguments {
+	return RoutesTransformOperationArguments{
+		ConvertTimestampConvertTimestamp: v,
 	}
 }
 
@@ -202,6 +210,23 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AddIdAddIdentifier = nil
+	}
+
+	// try to unmarshal data into ConvertTimestampConvertTimestamp
+	err = newStrictDecoder(data).Decode(&dst.ConvertTimestampConvertTimestamp)
+	if err == nil {
+		jsonConvertTimestampConvertTimestamp, _ := json.Marshal(dst.ConvertTimestampConvertTimestamp)
+		if string(jsonConvertTimestampConvertTimestamp) == "{}" { // empty struct
+			dst.ConvertTimestampConvertTimestamp = nil
+		} else {
+			if err = validator.Validate(dst.ConvertTimestampConvertTimestamp); err != nil {
+				dst.ConvertTimestampConvertTimestamp = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ConvertTimestampConvertTimestamp = nil
 	}
 
 	// try to unmarshal data into CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
@@ -480,6 +505,7 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		// reset to nil
 		dst.AddAdd = nil
 		dst.AddIdAddIdentifier = nil
+		dst.ConvertTimestampConvertTimestamp = nil
 		dst.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue = nil
 		dst.DropKeyDropKey = nil
 		dst.DropKeyWhereValueEqDropKeyWhereValueEq = nil
@@ -513,6 +539,10 @@ func (src RoutesTransformOperationArguments) MarshalJSON() ([]byte, error) {
 
 	if src.AddIdAddIdentifier != nil {
 		return json.Marshal(&src.AddIdAddIdentifier)
+	}
+
+	if src.ConvertTimestampConvertTimestamp != nil {
+		return json.Marshal(&src.ConvertTimestampConvertTimestamp)
 	}
 
 	if src.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue != nil {
@@ -595,6 +625,10 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 		return obj.AddIdAddIdentifier
 	}
 
+	if obj.ConvertTimestampConvertTimestamp != nil {
+		return obj.ConvertTimestampConvertTimestamp
+	}
+
 	if obj.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue != nil {
 		return obj.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
 	}
@@ -671,6 +705,10 @@ func (obj RoutesTransformOperationArguments) GetActualInstanceValue() (interface
 
 	if obj.AddIdAddIdentifier != nil {
 		return *obj.AddIdAddIdentifier
+	}
+
+	if obj.ConvertTimestampConvertTimestamp != nil {
+		return *obj.ConvertTimestampConvertTimestamp
 	}
 
 	if obj.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue != nil {
