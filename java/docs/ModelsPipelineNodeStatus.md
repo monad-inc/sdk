@@ -16,7 +16,7 @@
 |**lastIngestedTime** | **String** |  |  [optional] |
 |**nodeId** | **String** |  |  [optional] |
 |**nodeSlug** | **String** |  |  [optional] |
-|**progressTimestamps** | [**PipelineNodeStatusProgressTimestamps**](PipelineNodeStatusProgressTimestamps.md) |  |  [optional] |
+|**progress** | [**PipelineNodeStatusProgressEntries**](PipelineNodeStatusProgressEntries.md) |  |  [optional] |
 |**status** | **String** |  |  [optional] |
 
 

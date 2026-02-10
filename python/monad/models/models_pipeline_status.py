@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_data_usage import ModelsDataUsage
 from monad.models.models_pipeline_node_status import ModelsPipelineNodeStatus
+from monad.models.pipeline_node_status_progress_entries import PipelineNodeStatusProgressEntries
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -39,8 +40,9 @@ class ModelsPipelineStatus(BaseModel):
     organization_name: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None
     pipeline_name: Optional[StrictStr] = None
+    progress: Optional[PipelineNodeStatusProgressEntries] = None
     status: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["egress", "errors", "expired_messages", "ingress", "last_ingested_time", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "status"]
+    __properties: ClassVar[List[str]] = ["egress", "errors", "expired_messages", "ingress", "last_ingested_time", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +96,9 @@ class ModelsPipelineStatus(BaseModel):
                 if _item_nodes:
                     _items.append(_item_nodes.to_dict())
             _dict['nodes'] = _items
+        # override the default output from pydantic by calling `to_dict()` of progress
+        if self.progress:
+            _dict['progress'] = self.progress.to_dict()
         return _dict
 
     @classmethod
@@ -116,6 +121,7 @@ class ModelsPipelineStatus(BaseModel):
             "organization_name": obj.get("organization_name"),
             "pipeline_id": obj.get("pipeline_id"),
             "pipeline_name": obj.get("pipeline_name"),
+            "progress": PipelineNodeStatusProgressEntries.from_dict(obj["progress"]) if obj.get("progress") is not None else None,
             "status": obj.get("status")
         })
         return _obj

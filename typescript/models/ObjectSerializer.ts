@@ -306,8 +306,9 @@ export * from '../models/PaloAltoDataSecurityAlertsSettingsConfig';
 export * from '../models/PantherSecretsConfig';
 export * from '../models/PantherSettingsConfig';
 export * from '../models/ParquetParquetFormatter';
-export * from '../models/PipelineNodeStatusProgressTimestamp';
-export * from '../models/PipelineNodeStatusProgressTimestamps';
+export * from '../models/PipelineNodeStatusProgressEntries';
+export * from '../models/PipelineNodeStatusProgressEntry';
+export * from '../models/PipelineNodeStatusTimeRange';
 export * from '../models/PolymerSecretsConfig';
 export * from '../models/PolymerSettingsConfig';
 export * from '../models/PostgresqlSecretsConfig';
@@ -833,8 +834,9 @@ import { PaloAltoDataSecurityAlertsSettingsConfig } from '../models/PaloAltoData
 import { PantherSecretsConfig } from '../models/PantherSecretsConfig';
 import { PantherSettingsConfig } from '../models/PantherSettingsConfig';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
-import { PipelineNodeStatusProgressTimestamp } from '../models/PipelineNodeStatusProgressTimestamp';
-import { PipelineNodeStatusProgressTimestamps } from '../models/PipelineNodeStatusProgressTimestamps';
+import { PipelineNodeStatusProgressEntries } from '../models/PipelineNodeStatusProgressEntries';
+import { PipelineNodeStatusProgressEntry } from '../models/PipelineNodeStatusProgressEntry';
+import { PipelineNodeStatusTimeRange } from '../models/PipelineNodeStatusTimeRange';
 import { PolymerSecretsConfig } from '../models/PolymerSecretsConfig';
 import { PolymerSettingsConfig } from '../models/PolymerSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
@@ -1392,8 +1394,9 @@ let typeMap: {[index: string]: any} = {
     "PantherSecretsConfig": PantherSecretsConfig,
     "PantherSettingsConfig": PantherSettingsConfig,
     "ParquetParquetFormatter": ParquetParquetFormatter,
-    "PipelineNodeStatusProgressTimestamp": PipelineNodeStatusProgressTimestamp,
-    "PipelineNodeStatusProgressTimestamps": PipelineNodeStatusProgressTimestamps,
+    "PipelineNodeStatusProgressEntries": PipelineNodeStatusProgressEntries,
+    "PipelineNodeStatusProgressEntry": PipelineNodeStatusProgressEntry,
+    "PipelineNodeStatusTimeRange": PipelineNodeStatusTimeRange,
     "PolymerSecretsConfig": PolymerSecretsConfig,
     "PolymerSettingsConfig": PolymerSettingsConfig,
     "PostgresqlSecretsConfig": PostgresqlSecretsConfig,

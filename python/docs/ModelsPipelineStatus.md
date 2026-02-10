@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **organization_name** | **str** |  | [optional] 
 **pipeline_id** | **str** |  | [optional] 
 **pipeline_name** | **str** |  | [optional] 
+**progress** | [**PipelineNodeStatusProgressEntries**](PipelineNodeStatusProgressEntries.md) |  | [optional] 
 **status** | **str** |  | [optional] 
 
 ## Example

@@ -29,7 +29,7 @@ type ModelsPipelineNodeStatus struct {
 	LastIngestedTime *string `json:"last_ingested_time,omitempty"`
 	NodeId *string `json:"node_id,omitempty"`
 	NodeSlug *string `json:"node_slug,omitempty"`
-	ProgressTimestamps *PipelineNodeStatusProgressTimestamps `json:"progress_timestamps,omitempty"`
+	Progress *PipelineNodeStatusProgressEntries `json:"progress,omitempty"`
 	Status *string `json:"status,omitempty"`
 }
 
@@ -338,36 +338,36 @@ func (o *ModelsPipelineNodeStatus) SetNodeSlug(v string) {
 	o.NodeSlug = &v
 }
 
-// GetProgressTimestamps returns the ProgressTimestamps field value if set, zero value otherwise.
-func (o *ModelsPipelineNodeStatus) GetProgressTimestamps() PipelineNodeStatusProgressTimestamps {
-	if o == nil || IsNil(o.ProgressTimestamps) {
-		var ret PipelineNodeStatusProgressTimestamps
+// GetProgress returns the Progress field value if set, zero value otherwise.
+func (o *ModelsPipelineNodeStatus) GetProgress() PipelineNodeStatusProgressEntries {
+	if o == nil || IsNil(o.Progress) {
+		var ret PipelineNodeStatusProgressEntries
 		return ret
 	}
-	return *o.ProgressTimestamps
+	return *o.Progress
 }
 
-// GetProgressTimestampsOk returns a tuple with the ProgressTimestamps field value if set, nil otherwise
+// GetProgressOk returns a tuple with the Progress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPipelineNodeStatus) GetProgressTimestampsOk() (*PipelineNodeStatusProgressTimestamps, bool) {
-	if o == nil || IsNil(o.ProgressTimestamps) {
+func (o *ModelsPipelineNodeStatus) GetProgressOk() (*PipelineNodeStatusProgressEntries, bool) {
+	if o == nil || IsNil(o.Progress) {
 		return nil, false
 	}
-	return o.ProgressTimestamps, true
+	return o.Progress, true
 }
 
-// HasProgressTimestamps returns a boolean if a field has been set.
-func (o *ModelsPipelineNodeStatus) HasProgressTimestamps() bool {
-	if o != nil && !IsNil(o.ProgressTimestamps) {
+// HasProgress returns a boolean if a field has been set.
+func (o *ModelsPipelineNodeStatus) HasProgress() bool {
+	if o != nil && !IsNil(o.Progress) {
 		return true
 	}
 
 	return false
 }
 
-// SetProgressTimestamps gets a reference to the given PipelineNodeStatusProgressTimestamps and assigns it to the ProgressTimestamps field.
-func (o *ModelsPipelineNodeStatus) SetProgressTimestamps(v PipelineNodeStatusProgressTimestamps) {
-	o.ProgressTimestamps = &v
+// SetProgress gets a reference to the given PipelineNodeStatusProgressEntries and assigns it to the Progress field.
+func (o *ModelsPipelineNodeStatus) SetProgress(v PipelineNodeStatusProgressEntries) {
+	o.Progress = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -439,8 +439,8 @@ func (o ModelsPipelineNodeStatus) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NodeSlug) {
 		toSerialize["node_slug"] = o.NodeSlug
 	}
-	if !IsNil(o.ProgressTimestamps) {
-		toSerialize["progress_timestamps"] = o.ProgressTimestamps
+	if !IsNil(o.Progress) {
+		toSerialize["progress"] = o.Progress
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **LastIngestedTime** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **NodeSlug** | Pointer to **string** |  | [optional] 
-**ProgressTimestamps** | Pointer to [**PipelineNodeStatusProgressTimestamps**](PipelineNodeStatusProgressTimestamps.md) |  | [optional] 
+**Progress** | Pointer to [**PipelineNodeStatusProgressEntries**](PipelineNodeStatusProgressEntries.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -260,30 +260,30 @@ SetNodeSlug sets NodeSlug field to given value.
 
 HasNodeSlug returns a boolean if a field has been set.
 
-### GetProgressTimestamps
+### GetProgress
 
-`func (o *ModelsPipelineNodeStatus) GetProgressTimestamps() PipelineNodeStatusProgressTimestamps`
+`func (o *ModelsPipelineNodeStatus) GetProgress() PipelineNodeStatusProgressEntries`
 
-GetProgressTimestamps returns the ProgressTimestamps field if non-nil, zero value otherwise.
+GetProgress returns the Progress field if non-nil, zero value otherwise.
 
-### GetProgressTimestampsOk
+### GetProgressOk
 
-`func (o *ModelsPipelineNodeStatus) GetProgressTimestampsOk() (*PipelineNodeStatusProgressTimestamps, bool)`
+`func (o *ModelsPipelineNodeStatus) GetProgressOk() (*PipelineNodeStatusProgressEntries, bool)`
 
-GetProgressTimestampsOk returns a tuple with the ProgressTimestamps field if it's non-nil, zero value otherwise
+GetProgressOk returns a tuple with the Progress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProgressTimestamps
+### SetProgress
 
-`func (o *ModelsPipelineNodeStatus) SetProgressTimestamps(v PipelineNodeStatusProgressTimestamps)`
+`func (o *ModelsPipelineNodeStatus) SetProgress(v PipelineNodeStatusProgressEntries)`
 
-SetProgressTimestamps sets ProgressTimestamps field to given value.
+SetProgress sets Progress field to given value.
 
-### HasProgressTimestamps
+### HasProgress
 
-`func (o *ModelsPipelineNodeStatus) HasProgressTimestamps() bool`
+`func (o *ModelsPipelineNodeStatus) HasProgress() bool`
 
-HasProgressTimestamps returns a boolean if a field has been set.
+HasProgress returns a boolean if a field has been set.
 
 ### GetStatus
 

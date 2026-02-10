@@ -370,8 +370,9 @@ __all__ = [
     "PantherSecretsConfig",
     "PantherSettingsConfig",
     "ParquetParquetFormatter",
-    "PipelineNodeStatusProgressTimestamp",
-    "PipelineNodeStatusProgressTimestamps",
+    "PipelineNodeStatusProgressEntries",
+    "PipelineNodeStatusProgressEntry",
+    "PipelineNodeStatusTimeRange",
     "PolymerSecretsConfig",
     "PolymerSettingsConfig",
     "PostgresqlSecretsConfig",
@@ -946,8 +947,9 @@ from monad.models.palo_alto_data_security_alerts_settings_config import PaloAlto
 from monad.models.panther_secrets_config import PantherSecretsConfig as PantherSecretsConfig
 from monad.models.panther_settings_config import PantherSettingsConfig as PantherSettingsConfig
 from monad.models.parquet_parquet_formatter import ParquetParquetFormatter as ParquetParquetFormatter
-from monad.models.pipeline_node_status_progress_timestamp import PipelineNodeStatusProgressTimestamp as PipelineNodeStatusProgressTimestamp
-from monad.models.pipeline_node_status_progress_timestamps import PipelineNodeStatusProgressTimestamps as PipelineNodeStatusProgressTimestamps
+from monad.models.pipeline_node_status_progress_entries import PipelineNodeStatusProgressEntries as PipelineNodeStatusProgressEntries
+from monad.models.pipeline_node_status_progress_entry import PipelineNodeStatusProgressEntry as PipelineNodeStatusProgressEntry
+from monad.models.pipeline_node_status_time_range import PipelineNodeStatusTimeRange as PipelineNodeStatusTimeRange
 from monad.models.polymer_secrets_config import PolymerSecretsConfig as PolymerSecretsConfig
 from monad.models.polymer_settings_config import PolymerSettingsConfig as PolymerSettingsConfig
 from monad.models.postgresql_secrets_config import PostgresqlSecretsConfig as PostgresqlSecretsConfig

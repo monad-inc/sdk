@@ -30,6 +30,7 @@ type ModelsPipelineStatus struct {
 	OrganizationName *string `json:"organization_name,omitempty"`
 	PipelineId *string `json:"pipeline_id,omitempty"`
 	PipelineName *string `json:"pipeline_name,omitempty"`
+	Progress *PipelineNodeStatusProgressEntries `json:"progress,omitempty"`
 	Status *string `json:"status,omitempty"`
 }
 
@@ -370,6 +371,38 @@ func (o *ModelsPipelineStatus) SetPipelineName(v string) {
 	o.PipelineName = &v
 }
 
+// GetProgress returns the Progress field value if set, zero value otherwise.
+func (o *ModelsPipelineStatus) GetProgress() PipelineNodeStatusProgressEntries {
+	if o == nil || IsNil(o.Progress) {
+		var ret PipelineNodeStatusProgressEntries
+		return ret
+	}
+	return *o.Progress
+}
+
+// GetProgressOk returns a tuple with the Progress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineStatus) GetProgressOk() (*PipelineNodeStatusProgressEntries, bool) {
+	if o == nil || IsNil(o.Progress) {
+		return nil, false
+	}
+	return o.Progress, true
+}
+
+// HasProgress returns a boolean if a field has been set.
+func (o *ModelsPipelineStatus) HasProgress() bool {
+	if o != nil && !IsNil(o.Progress) {
+		return true
+	}
+
+	return false
+}
+
+// SetProgress gets a reference to the given PipelineNodeStatusProgressEntries and assigns it to the Progress field.
+func (o *ModelsPipelineStatus) SetProgress(v PipelineNodeStatusProgressEntries) {
+	o.Progress = &v
+}
+
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *ModelsPipelineStatus) GetStatus() string {
 	if o == nil || IsNil(o.Status) {
@@ -441,6 +474,9 @@ func (o ModelsPipelineStatus) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PipelineName) {
 		toSerialize["pipeline_name"] = o.PipelineName
+	}
+	if !IsNil(o.Progress) {
+		toSerialize["progress"] = o.Progress
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

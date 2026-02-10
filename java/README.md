@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-02-10T00:54:56.209056687Z[Etc/UTC]
+  - Build date: 2026-02-10T17:26:00.518852476Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -593,8 +593,9 @@ Class | Method | HTTP request | Description
  - [PantherSecretsConfig](docs/PantherSecretsConfig.md)
  - [PantherSettingsConfig](docs/PantherSettingsConfig.md)
  - [ParquetParquetFormatter](docs/ParquetParquetFormatter.md)
- - [PipelineNodeStatusProgressTimestamp](docs/PipelineNodeStatusProgressTimestamp.md)
- - [PipelineNodeStatusProgressTimestamps](docs/PipelineNodeStatusProgressTimestamps.md)
+ - [PipelineNodeStatusProgressEntries](docs/PipelineNodeStatusProgressEntries.md)
+ - [PipelineNodeStatusProgressEntry](docs/PipelineNodeStatusProgressEntry.md)
+ - [PipelineNodeStatusTimeRange](docs/PipelineNodeStatusTimeRange.md)
  - [PolymerSecretsConfig](docs/PolymerSecretsConfig.md)
  - [PolymerSettingsConfig](docs/PolymerSettingsConfig.md)
  - [PostgresqlSecretsConfig](docs/PostgresqlSecretsConfig.md)

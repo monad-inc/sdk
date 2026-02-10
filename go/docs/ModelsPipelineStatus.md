@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **OrganizationName** | Pointer to **string** |  | [optional] 
 **PipelineId** | Pointer to **string** |  | [optional] 
 **PipelineName** | Pointer to **string** |  | [optional] 
+**Progress** | Pointer to [**PipelineNodeStatusProgressEntries**](PipelineNodeStatusProgressEntries.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -284,6 +285,31 @@ SetPipelineName sets PipelineName field to given value.
 `func (o *ModelsPipelineStatus) HasPipelineName() bool`
 
 HasPipelineName returns a boolean if a field has been set.
+
+### GetProgress
+
+`func (o *ModelsPipelineStatus) GetProgress() PipelineNodeStatusProgressEntries`
+
+GetProgress returns the Progress field if non-nil, zero value otherwise.
+
+### GetProgressOk
+
+`func (o *ModelsPipelineStatus) GetProgressOk() (*PipelineNodeStatusProgressEntries, bool)`
+
+GetProgressOk returns a tuple with the Progress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProgress
+
+`func (o *ModelsPipelineStatus) SetProgress(v PipelineNodeStatusProgressEntries)`
+
+SetProgress sets Progress field to given value.
+
+### HasProgress
+
+`func (o *ModelsPipelineStatus) HasProgress() bool`
+
+HasProgress returns a boolean if a field has been set.
 
 ### GetStatus
 

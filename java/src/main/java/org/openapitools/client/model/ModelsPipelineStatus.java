@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.ModelsDataUsage;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
+import org.openapitools.client.model.PipelineNodeStatusProgressEntries;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T00:54:56.209056687Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-10T17:26:00.518852476Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsPipelineStatus {
   public static final String SERIALIZED_NAME_EGRESS = "egress";
   @SerializedName(SERIALIZED_NAME_EGRESS)
@@ -103,6 +104,11 @@ public class ModelsPipelineStatus {
   @SerializedName(SERIALIZED_NAME_PIPELINE_NAME)
   @javax.annotation.Nullable
   private String pipelineName;
+
+  public static final String SERIALIZED_NAME_PROGRESS = "progress";
+  @SerializedName(SERIALIZED_NAME_PROGRESS)
+  @javax.annotation.Nullable
+  private PipelineNodeStatusProgressEntries progress;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -310,6 +316,25 @@ public class ModelsPipelineStatus {
   }
 
 
+  public ModelsPipelineStatus progress(@javax.annotation.Nullable PipelineNodeStatusProgressEntries progress) {
+    this.progress = progress;
+    return this;
+  }
+
+  /**
+   * Get progress
+   * @return progress
+   */
+  @javax.annotation.Nullable
+  public PipelineNodeStatusProgressEntries getProgress() {
+    return progress;
+  }
+
+  public void setProgress(@javax.annotation.Nullable PipelineNodeStatusProgressEntries progress) {
+    this.progress = progress;
+  }
+
+
   public ModelsPipelineStatus status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
@@ -349,12 +374,13 @@ public class ModelsPipelineStatus {
         Objects.equals(this.organizationName, modelsPipelineStatus.organizationName) &&
         Objects.equals(this.pipelineId, modelsPipelineStatus.pipelineId) &&
         Objects.equals(this.pipelineName, modelsPipelineStatus.pipelineName) &&
+        Objects.equals(this.progress, modelsPipelineStatus.progress) &&
         Objects.equals(this.status, modelsPipelineStatus.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(egress, errors, expiredMessages, ingress, lastIngestedTime, nodes, organizationId, organizationName, pipelineId, pipelineName, status);
+    return Objects.hash(egress, errors, expiredMessages, ingress, lastIngestedTime, nodes, organizationId, organizationName, pipelineId, pipelineName, progress, status);
   }
 
   @Override
@@ -371,6 +397,7 @@ public class ModelsPipelineStatus {
     sb.append("    organizationName: ").append(toIndentedString(organizationName)).append("\n");
     sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
     sb.append("    pipelineName: ").append(toIndentedString(pipelineName)).append("\n");
+    sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -393,7 +420,7 @@ public class ModelsPipelineStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("egress", "errors", "expired_messages", "ingress", "last_ingested_time", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("egress", "errors", "expired_messages", "ingress", "last_ingested_time", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -456,6 +483,10 @@ public class ModelsPipelineStatus {
       }
       if ((jsonObj.get("pipeline_name") != null && !jsonObj.get("pipeline_name").isJsonNull()) && !jsonObj.get("pipeline_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pipeline_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_name").toString()));
+      }
+      // validate the optional field `progress`
+      if (jsonObj.get("progress") != null && !jsonObj.get("progress").isJsonNull()) {
+        PipelineNodeStatusProgressEntries.validateJsonElement(jsonObj.get("progress"));
       }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));

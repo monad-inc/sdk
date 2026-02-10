@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **last_ingested_time** | **str** |  | [optional] 
 **node_id** | **str** |  | [optional] 
 **node_slug** | **str** |  | [optional] 
-**progress_timestamps** | [**PipelineNodeStatusProgressTimestamps**](PipelineNodeStatusProgressTimestamps.md) |  | [optional] 
+**progress** | [**PipelineNodeStatusProgressEntries**](PipelineNodeStatusProgressEntries.md) |  | [optional] 
 **status** | **str** |  | [optional] 
 
 ## Example
