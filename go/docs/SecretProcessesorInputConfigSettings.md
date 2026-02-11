@@ -61,6 +61,7 @@ Name | Type | Description | Notes
 **BaseUrl** | Pointer to **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | [optional] 
 **EventType** | Pointer to **string** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **FilterTerm** | Pointer to **string** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
+**Hostname** | Pointer to **string** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
 **OrganizationId** | Pointer to **string** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
 **OrgSlug** | Pointer to **string** | The ID or slug of the organization | [optional] 
 **EnablePagination** | Pointer to **bool** | Enable pagination support | [optional] 
@@ -1629,6 +1630,31 @@ SetFilterTerm sets FilterTerm field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasFilterTerm() bool`
 
 HasFilterTerm returns a boolean if a field has been set.
+
+### GetHostname
+
+`func (o *SecretProcessesorInputConfigSettings) GetHostname() string`
+
+GetHostname returns the Hostname field if non-nil, zero value otherwise.
+
+### GetHostnameOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetHostnameOk() (*string, bool)`
+
+GetHostnameOk returns a tuple with the Hostname field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHostname
+
+`func (o *SecretProcessesorInputConfigSettings) SetHostname(v string)`
+
+SetHostname sets Hostname field to given value.
+
+### HasHostname
+
+`func (o *SecretProcessesorInputConfigSettings) HasHostname() bool`
+
+HasHostname returns a boolean if a field has been set.
 
 ### GetOrganizationId
 

@@ -21,6 +21,8 @@
 |**applicationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**applicationKeyId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**enterpriseId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**password** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**username** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**personalAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
@@ -33,11 +35,9 @@
 |**refreshToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**userOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**token** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**password** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**privateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**twilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**twilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**username** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**customerId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**domain** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 

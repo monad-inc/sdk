@@ -300,6 +300,8 @@ Class | Method | HTTP request | Description
  - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
  - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
  - [BoxUsersSettingsConfig](docs/BoxUsersSettingsConfig.md)
+ - [BrinqaAuditLogsSecretsConfig](docs/BrinqaAuditLogsSecretsConfig.md)
+ - [BrinqaAuditLogsSettingsConfig](docs/BrinqaAuditLogsSettingsConfig.md)
  - [BugsnagOrgEventsSecretsConfig](docs/BugsnagOrgEventsSecretsConfig.md)
  - [BugsnagOrgEventsSettingsConfig](docs/BugsnagOrgEventsSettingsConfig.md)
  - [BuildkiteAuditLogsSecretsConfig](docs/BuildkiteAuditLogsSecretsConfig.md)

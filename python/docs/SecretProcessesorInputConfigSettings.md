@@ -62,6 +62,7 @@ Name | Type | Description | Notes
 **base_url** | **str** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | [optional] 
 **event_type** | **str** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **filter_term** | **str** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
+**hostname** | **str** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
 **organization_id** | **str** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
 **org_slug** | **str** | The ID or slug of the organization | [optional] 
 **enable_pagination** | **bool** | Enable pagination support | [optional] 

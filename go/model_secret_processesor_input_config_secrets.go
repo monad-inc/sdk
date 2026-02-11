@@ -41,6 +41,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	BitwardenEventsSecretsConfig *BitwardenEventsSecretsConfig
 	BoxEventsSecretsConfig *BoxEventsSecretsConfig
 	BoxUsersSecretsConfig *BoxUsersSecretsConfig
+	BrinqaAuditLogsSecretsConfig *BrinqaAuditLogsSecretsConfig
 	BugsnagOrgEventsSecretsConfig *BugsnagOrgEventsSecretsConfig
 	BuildkiteAuditLogsSecretsConfig *BuildkiteAuditLogsSecretsConfig
 	BuildkiteGraphqlInputSecretsConfig *BuildkiteGraphqlInputSecretsConfig
@@ -295,6 +296,13 @@ func BoxEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BoxEventsSec
 func BoxUsersSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BoxUsersSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		BoxUsersSecretsConfig: v,
+	}
+}
+
+// BrinqaAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns BrinqaAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func BrinqaAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BrinqaAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		BrinqaAuditLogsSecretsConfig: v,
 	}
 }
 
@@ -1382,6 +1390,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.BoxUsersSecretsConfig = nil
+	}
+
+	// try to unmarshal data into BrinqaAuditLogsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.BrinqaAuditLogsSecretsConfig)
+	if err == nil {
+		jsonBrinqaAuditLogsSecretsConfig, _ := json.Marshal(dst.BrinqaAuditLogsSecretsConfig)
+		if string(jsonBrinqaAuditLogsSecretsConfig) == "{}" { // empty struct
+			dst.BrinqaAuditLogsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BrinqaAuditLogsSecretsConfig); err != nil {
+				dst.BrinqaAuditLogsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BrinqaAuditLogsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into BugsnagOrgEventsSecretsConfig
@@ -3125,6 +3150,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.BitwardenEventsSecretsConfig = nil
 		dst.BoxEventsSecretsConfig = nil
 		dst.BoxUsersSecretsConfig = nil
+		dst.BrinqaAuditLogsSecretsConfig = nil
 		dst.BugsnagOrgEventsSecretsConfig = nil
 		dst.BuildkiteAuditLogsSecretsConfig = nil
 		dst.BuildkiteGraphqlInputSecretsConfig = nil
@@ -3323,6 +3349,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.BoxUsersSecretsConfig != nil {
 		return json.Marshal(&src.BoxUsersSecretsConfig)
+	}
+
+	if src.BrinqaAuditLogsSecretsConfig != nil {
+		return json.Marshal(&src.BrinqaAuditLogsSecretsConfig)
 	}
 
 	if src.BugsnagOrgEventsSecretsConfig != nil {
@@ -3825,6 +3855,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.BoxUsersSecretsConfig
 	}
 
+	if obj.BrinqaAuditLogsSecretsConfig != nil {
+		return obj.BrinqaAuditLogsSecretsConfig
+	}
+
 	if obj.BugsnagOrgEventsSecretsConfig != nil {
 		return obj.BugsnagOrgEventsSecretsConfig
 	}
@@ -4321,6 +4355,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.BoxUsersSecretsConfig != nil {
 		return *obj.BoxUsersSecretsConfig
+	}
+
+	if obj.BrinqaAuditLogsSecretsConfig != nil {
+		return *obj.BrinqaAuditLogsSecretsConfig
 	}
 
 	if obj.BugsnagOrgEventsSecretsConfig != nil {
