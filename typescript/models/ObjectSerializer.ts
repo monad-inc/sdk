@@ -57,6 +57,8 @@ export * from '../models/BigqueryInputSecretsConfig';
 export * from '../models/BigqueryInputSettingsConfig';
 export * from '../models/BigquerySecretsConfig';
 export * from '../models/BigquerySettingsConfig';
+export * from '../models/BitwardenEventsSecretsConfig';
+export * from '../models/BitwardenEventsSettingsConfig';
 export * from '../models/BoxEventsSecretsConfig';
 export * from '../models/BoxEventsSettingsConfig';
 export * from '../models/BoxUsersSecretsConfig';
@@ -586,6 +588,8 @@ import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
 import { BigquerySettingsConfig } from '../models/BigquerySettingsConfig';
+import { BitwardenEventsSecretsConfig } from '../models/BitwardenEventsSecretsConfig';
+import { BitwardenEventsSettingsConfig } from '../models/BitwardenEventsSettingsConfig';
 import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';
@@ -1147,6 +1151,8 @@ let typeMap: {[index: string]: any} = {
     "BigqueryInputSettingsConfig": BigqueryInputSettingsConfig,
     "BigquerySecretsConfig": BigquerySecretsConfig,
     "BigquerySettingsConfig": BigquerySettingsConfig,
+    "BitwardenEventsSecretsConfig": BitwardenEventsSecretsConfig,
+    "BitwardenEventsSettingsConfig": BitwardenEventsSettingsConfig,
     "BoxEventsSecretsConfig": BoxEventsSecretsConfig,
     "BoxEventsSettingsConfig": BoxEventsSettingsConfig,
     "BoxUsersSecretsConfig": BoxUsersSecretsConfig,

@@ -38,6 +38,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	BackblazeB2SecretsConfig *BackblazeB2SecretsConfig
 	BigqueryCronSecretsConfig *BigqueryCronSecretsConfig
 	BigqueryInputSecretsConfig *BigqueryInputSecretsConfig
+	BitwardenEventsSecretsConfig *BitwardenEventsSecretsConfig
 	BoxEventsSecretsConfig *BoxEventsSecretsConfig
 	BoxUsersSecretsConfig *BoxUsersSecretsConfig
 	BugsnagOrgEventsSecretsConfig *BugsnagOrgEventsSecretsConfig
@@ -273,6 +274,13 @@ func BigqueryCronSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BigqueryC
 func BigqueryInputSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BigqueryInputSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		BigqueryInputSecretsConfig: v,
+	}
+}
+
+// BitwardenEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns BitwardenEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func BitwardenEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BitwardenEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		BitwardenEventsSecretsConfig: v,
 	}
 }
 
@@ -1323,6 +1331,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.BigqueryInputSecretsConfig = nil
+	}
+
+	// try to unmarshal data into BitwardenEventsSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.BitwardenEventsSecretsConfig)
+	if err == nil {
+		jsonBitwardenEventsSecretsConfig, _ := json.Marshal(dst.BitwardenEventsSecretsConfig)
+		if string(jsonBitwardenEventsSecretsConfig) == "{}" { // empty struct
+			dst.BitwardenEventsSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.BitwardenEventsSecretsConfig); err != nil {
+				dst.BitwardenEventsSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.BitwardenEventsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into BoxEventsSecretsConfig
@@ -3097,6 +3122,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.BackblazeB2SecretsConfig = nil
 		dst.BigqueryCronSecretsConfig = nil
 		dst.BigqueryInputSecretsConfig = nil
+		dst.BitwardenEventsSecretsConfig = nil
 		dst.BoxEventsSecretsConfig = nil
 		dst.BoxUsersSecretsConfig = nil
 		dst.BugsnagOrgEventsSecretsConfig = nil
@@ -3285,6 +3311,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.BigqueryInputSecretsConfig != nil {
 		return json.Marshal(&src.BigqueryInputSecretsConfig)
+	}
+
+	if src.BitwardenEventsSecretsConfig != nil {
+		return json.Marshal(&src.BitwardenEventsSecretsConfig)
 	}
 
 	if src.BoxEventsSecretsConfig != nil {
@@ -3783,6 +3813,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.BigqueryInputSecretsConfig
 	}
 
+	if obj.BitwardenEventsSecretsConfig != nil {
+		return obj.BitwardenEventsSecretsConfig
+	}
+
 	if obj.BoxEventsSecretsConfig != nil {
 		return obj.BoxEventsSecretsConfig
 	}
@@ -4275,6 +4309,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.BigqueryInputSecretsConfig != nil {
 		return *obj.BigqueryInputSecretsConfig
+	}
+
+	if obj.BitwardenEventsSecretsConfig != nil {
+		return *obj.BitwardenEventsSecretsConfig
 	}
 
 	if obj.BoxEventsSecretsConfig != nil {

@@ -121,6 +121,8 @@ __all__ = [
     "BigqueryInputSettingsConfig",
     "BigquerySecretsConfig",
     "BigquerySettingsConfig",
+    "BitwardenEventsSecretsConfig",
+    "BitwardenEventsSettingsConfig",
     "BoxEventsSecretsConfig",
     "BoxEventsSettingsConfig",
     "BoxUsersSecretsConfig",
@@ -699,6 +701,8 @@ from monad.models.bigquery_input_secrets_config import BigqueryInputSecretsConfi
 from monad.models.bigquery_input_settings_config import BigqueryInputSettingsConfig as BigqueryInputSettingsConfig
 from monad.models.bigquery_secrets_config import BigquerySecretsConfig as BigquerySecretsConfig
 from monad.models.bigquery_settings_config import BigquerySettingsConfig as BigquerySettingsConfig
+from monad.models.bitwarden_events_secrets_config import BitwardenEventsSecretsConfig as BitwardenEventsSecretsConfig
+from monad.models.bitwarden_events_settings_config import BitwardenEventsSettingsConfig as BitwardenEventsSettingsConfig
 from monad.models.box_events_secrets_config import BoxEventsSecretsConfig as BoxEventsSecretsConfig
 from monad.models.box_events_settings_config import BoxEventsSettingsConfig as BoxEventsSettingsConfig
 from monad.models.box_users_secrets_config import BoxUsersSecretsConfig as BoxUsersSecretsConfig

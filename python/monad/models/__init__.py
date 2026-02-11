@@ -73,6 +73,8 @@ from monad.models.bigquery_input_secrets_config import BigqueryInputSecretsConfi
 from monad.models.bigquery_input_settings_config import BigqueryInputSettingsConfig
 from monad.models.bigquery_secrets_config import BigquerySecretsConfig
 from monad.models.bigquery_settings_config import BigquerySettingsConfig
+from monad.models.bitwarden_events_secrets_config import BitwardenEventsSecretsConfig
+from monad.models.bitwarden_events_settings_config import BitwardenEventsSettingsConfig
 from monad.models.box_events_secrets_config import BoxEventsSecretsConfig
 from monad.models.box_events_settings_config import BoxEventsSettingsConfig
 from monad.models.box_users_secrets_config import BoxUsersSecretsConfig

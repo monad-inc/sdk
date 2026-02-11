@@ -294,6 +294,8 @@ Class | Method | HTTP request | Description
  - [BigqueryInputSettingsConfig](docs/BigqueryInputSettingsConfig.md)
  - [BigquerySecretsConfig](docs/BigquerySecretsConfig.md)
  - [BigquerySettingsConfig](docs/BigquerySettingsConfig.md)
+ - [BitwardenEventsSecretsConfig](docs/BitwardenEventsSecretsConfig.md)
+ - [BitwardenEventsSettingsConfig](docs/BitwardenEventsSettingsConfig.md)
  - [BoxEventsSecretsConfig](docs/BoxEventsSecretsConfig.md)
  - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
  - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)

@@ -61,6 +61,8 @@ import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
 import { BigquerySettingsConfig } from '../models/BigquerySettingsConfig';
+import { BitwardenEventsSecretsConfig } from '../models/BitwardenEventsSecretsConfig';
+import { BitwardenEventsSettingsConfig } from '../models/BitwardenEventsSettingsConfig';
 import { BoxEventsSecretsConfig } from '../models/BoxEventsSecretsConfig';
 import { BoxEventsSettingsConfig } from '../models/BoxEventsSettingsConfig';
 import { BoxUsersSecretsConfig } from '../models/BoxUsersSecretsConfig';

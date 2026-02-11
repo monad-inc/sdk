@@ -58,6 +58,7 @@ Name | Type | Description | Notes
 **Query** | Pointer to **string** | Optional custom query to use instead of table (must include timestamp_column) | [optional] 
 **Table** | Pointer to **string** | The name of the table in Snowflake to query data from. | [optional] 
 **TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
+**BaseUrl** | Pointer to **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | [optional] 
 **EventType** | Pointer to **string** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **FilterTerm** | Pointer to **string** | Limits the results to only users who&#39;s name or login start with the search term. | [optional] 
 **OrganizationId** | Pointer to **string** | The tailnet organization name. Defaults to \&quot;-\&quot; to reference the default organization. | [optional] 
@@ -139,7 +140,6 @@ Name | Type | Description | Notes
 **TenantDataCenter** | Pointer to **string** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | [optional] 
 **KmsType** | Pointer to **string** | Type of KMS resources to list | [optional] 
 **AuditLogTypes** | Pointer to **[]string** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
-**BaseUrl** | Pointer to **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | [optional] 
 **LogType** | Pointer to **string** |  | [optional] 
 **Endpoint** | Pointer to **string** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | [optional] 
 **SkipSslVerification** | Pointer to **bool** | Skip SSL verification for self-signed certificates | [optional] 
@@ -1554,6 +1554,31 @@ SetTimestampColumn sets TimestampColumn field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasTimestampColumn() bool`
 
 HasTimestampColumn returns a boolean if a field has been set.
+
+### GetBaseUrl
+
+`func (o *SecretProcessesorInputConfigSettings) GetBaseUrl() string`
+
+GetBaseUrl returns the BaseUrl field if non-nil, zero value otherwise.
+
+### GetBaseUrlOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetBaseUrlOk() (*string, bool)`
+
+GetBaseUrlOk returns a tuple with the BaseUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBaseUrl
+
+`func (o *SecretProcessesorInputConfigSettings) SetBaseUrl(v string)`
+
+SetBaseUrl sets BaseUrl field to given value.
+
+### HasBaseUrl
+
+`func (o *SecretProcessesorInputConfigSettings) HasBaseUrl() bool`
+
+HasBaseUrl returns a boolean if a field has been set.
 
 ### GetEventType
 
@@ -3579,31 +3604,6 @@ SetAuditLogTypes sets AuditLogTypes field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasAuditLogTypes() bool`
 
 HasAuditLogTypes returns a boolean if a field has been set.
-
-### GetBaseUrl
-
-`func (o *SecretProcessesorInputConfigSettings) GetBaseUrl() string`
-
-GetBaseUrl returns the BaseUrl field if non-nil, zero value otherwise.
-
-### GetBaseUrlOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetBaseUrlOk() (*string, bool)`
-
-GetBaseUrlOk returns a tuple with the BaseUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBaseUrl
-
-`func (o *SecretProcessesorInputConfigSettings) SetBaseUrl(v string)`
-
-SetBaseUrl sets BaseUrl field to given value.
-
-### HasBaseUrl
-
-`func (o *SecretProcessesorInputConfigSettings) HasBaseUrl() bool`
-
-HasBaseUrl returns a boolean if a field has been set.
 
 ### GetLogType
 

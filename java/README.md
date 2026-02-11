@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-02-10T23:53:43.185339109Z[Etc/UTC]
+  - Build date: 2026-02-11T15:55:43.862081633Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -344,6 +344,8 @@ Class | Method | HTTP request | Description
  - [BigqueryInputSettingsConfig](docs/BigqueryInputSettingsConfig.md)
  - [BigquerySecretsConfig](docs/BigquerySecretsConfig.md)
  - [BigquerySettingsConfig](docs/BigquerySettingsConfig.md)
+ - [BitwardenEventsSecretsConfig](docs/BitwardenEventsSecretsConfig.md)
+ - [BitwardenEventsSettingsConfig](docs/BitwardenEventsSettingsConfig.md)
  - [BoxEventsSecretsConfig](docs/BoxEventsSecretsConfig.md)
  - [BoxEventsSettingsConfig](docs/BoxEventsSettingsConfig.md)
  - [BoxUsersSecretsConfig](docs/BoxUsersSecretsConfig.md)
