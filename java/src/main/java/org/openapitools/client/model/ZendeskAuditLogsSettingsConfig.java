@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Zendesk Audit Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-11T15:55:43.862081633Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-11T16:38:32.970900194Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ZendeskAuditLogsSettingsConfig {
   public static final String SERIALIZED_NAME_AUTH_TYPE = "auth_type";
   @SerializedName(SERIALIZED_NAME_AUTH_TYPE)
