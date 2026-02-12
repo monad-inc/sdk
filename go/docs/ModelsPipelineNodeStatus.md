@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AvgBytesPerRecordEgress** | Pointer to **int32** |  | [optional] 
+**AvgBytesPerRecordIngress** | Pointer to **int32** |  | [optional] 
 **ComponentType** | Pointer to **string** |  | [optional] 
 **ComponentTypeId** | Pointer to **string** |  | [optional] 
 **Egress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
@@ -11,6 +13,7 @@ Name | Type | Description | Notes
 **ExpiredMessages** | Pointer to **int32** |  | [optional] 
 **Ingress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **LastIngestedTime** | Pointer to **string** |  | [optional] 
+**LastRecordProcessedTime** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **NodeSlug** | Pointer to **string** |  | [optional] 
 **Progress** | Pointer to [**PipelineNodeStatusProgressEntries**](PipelineNodeStatusProgressEntries.md) |  | [optional] 
@@ -34,6 +37,56 @@ will change when the set of required properties is changed
 NewModelsPipelineNodeStatusWithDefaults instantiates a new ModelsPipelineNodeStatus object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAvgBytesPerRecordEgress
+
+`func (o *ModelsPipelineNodeStatus) GetAvgBytesPerRecordEgress() int32`
+
+GetAvgBytesPerRecordEgress returns the AvgBytesPerRecordEgress field if non-nil, zero value otherwise.
+
+### GetAvgBytesPerRecordEgressOk
+
+`func (o *ModelsPipelineNodeStatus) GetAvgBytesPerRecordEgressOk() (*int32, bool)`
+
+GetAvgBytesPerRecordEgressOk returns a tuple with the AvgBytesPerRecordEgress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAvgBytesPerRecordEgress
+
+`func (o *ModelsPipelineNodeStatus) SetAvgBytesPerRecordEgress(v int32)`
+
+SetAvgBytesPerRecordEgress sets AvgBytesPerRecordEgress field to given value.
+
+### HasAvgBytesPerRecordEgress
+
+`func (o *ModelsPipelineNodeStatus) HasAvgBytesPerRecordEgress() bool`
+
+HasAvgBytesPerRecordEgress returns a boolean if a field has been set.
+
+### GetAvgBytesPerRecordIngress
+
+`func (o *ModelsPipelineNodeStatus) GetAvgBytesPerRecordIngress() int32`
+
+GetAvgBytesPerRecordIngress returns the AvgBytesPerRecordIngress field if non-nil, zero value otherwise.
+
+### GetAvgBytesPerRecordIngressOk
+
+`func (o *ModelsPipelineNodeStatus) GetAvgBytesPerRecordIngressOk() (*int32, bool)`
+
+GetAvgBytesPerRecordIngressOk returns a tuple with the AvgBytesPerRecordIngress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAvgBytesPerRecordIngress
+
+`func (o *ModelsPipelineNodeStatus) SetAvgBytesPerRecordIngress(v int32)`
+
+SetAvgBytesPerRecordIngress sets AvgBytesPerRecordIngress field to given value.
+
+### HasAvgBytesPerRecordIngress
+
+`func (o *ModelsPipelineNodeStatus) HasAvgBytesPerRecordIngress() bool`
+
+HasAvgBytesPerRecordIngress returns a boolean if a field has been set.
 
 ### GetComponentType
 
@@ -209,6 +262,31 @@ SetLastIngestedTime sets LastIngestedTime field to given value.
 `func (o *ModelsPipelineNodeStatus) HasLastIngestedTime() bool`
 
 HasLastIngestedTime returns a boolean if a field has been set.
+
+### GetLastRecordProcessedTime
+
+`func (o *ModelsPipelineNodeStatus) GetLastRecordProcessedTime() string`
+
+GetLastRecordProcessedTime returns the LastRecordProcessedTime field if non-nil, zero value otherwise.
+
+### GetLastRecordProcessedTimeOk
+
+`func (o *ModelsPipelineNodeStatus) GetLastRecordProcessedTimeOk() (*string, bool)`
+
+GetLastRecordProcessedTimeOk returns a tuple with the LastRecordProcessedTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastRecordProcessedTime
+
+`func (o *ModelsPipelineNodeStatus) SetLastRecordProcessedTime(v string)`
+
+SetLastRecordProcessedTime sets LastRecordProcessedTime field to given value.
+
+### HasLastRecordProcessedTime
+
+`func (o *ModelsPipelineNodeStatus) HasLastRecordProcessedTime() bool`
+
+HasLastRecordProcessedTime returns a boolean if a field has been set.
 
 ### GetNodeId
 

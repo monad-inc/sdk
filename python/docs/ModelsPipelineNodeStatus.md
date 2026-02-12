@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**avg_bytes_per_record_egress** | **int** |  | [optional] 
+**avg_bytes_per_record_ingress** | **int** |  | [optional] 
 **component_type** | **str** |  | [optional] 
 **component_type_id** | **str** |  | [optional] 
 **egress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
@@ -12,6 +14,7 @@ Name | Type | Description | Notes
 **expired_messages** | **int** |  | [optional] 
 **ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **last_ingested_time** | **str** |  | [optional] 
+**last_record_processed_time** | **str** |  | [optional] 
 **node_id** | **str** |  | [optional] 
 **node_slug** | **str** |  | [optional] 
 **progress** | [**PipelineNodeStatusProgressEntries**](PipelineNodeStatusProgressEntries.md) |  | [optional] 

@@ -30,6 +30,8 @@ class ModelsPipelineStatus(BaseModel):
     """
     ModelsPipelineStatus
     """ # noqa: E501
+    average_size_egressed: Optional[StrictInt] = None
+    average_size_ingested: Optional[StrictInt] = None
     egress: Optional[ModelsDataUsage] = None
     errors: Optional[StrictInt] = None
     expired_messages: Optional[StrictInt] = None
@@ -42,7 +44,7 @@ class ModelsPipelineStatus(BaseModel):
     pipeline_name: Optional[StrictStr] = None
     progress: Optional[PipelineNodeStatusProgressEntries] = None
     status: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["egress", "errors", "expired_messages", "ingress", "last_ingested_time", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"]
+    __properties: ClassVar[List[str]] = ["average_size_egressed", "average_size_ingested", "egress", "errors", "expired_messages", "ingress", "last_ingested_time", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -111,6 +113,8 @@ class ModelsPipelineStatus(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "average_size_egressed": obj.get("average_size_egressed"),
+            "average_size_ingested": obj.get("average_size_ingested"),
             "egress": ModelsDataUsage.from_dict(obj["egress"]) if obj.get("egress") is not None else None,
             "errors": obj.get("errors"),
             "expired_messages": obj.get("expired_messages"),

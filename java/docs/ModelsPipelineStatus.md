@@ -7,6 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**averageSizeEgressed** | **Integer** |  |  [optional] |
+|**averageSizeIngested** | **Integer** |  |  [optional] |
 |**egress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  |  [optional] |
 |**errors** | **Integer** |  |  [optional] |
 |**expiredMessages** | **Integer** |  |  [optional] |

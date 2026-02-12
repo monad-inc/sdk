@@ -50,8 +50,18 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineNodeStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-11T17:07:01.954753605Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-12T02:05:54.093213352Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsPipelineNodeStatus {
+  public static final String SERIALIZED_NAME_AVG_BYTES_PER_RECORD_EGRESS = "avg_bytes_per_record_egress";
+  @SerializedName(SERIALIZED_NAME_AVG_BYTES_PER_RECORD_EGRESS)
+  @javax.annotation.Nullable
+  private Integer avgBytesPerRecordEgress;
+
+  public static final String SERIALIZED_NAME_AVG_BYTES_PER_RECORD_INGRESS = "avg_bytes_per_record_ingress";
+  @SerializedName(SERIALIZED_NAME_AVG_BYTES_PER_RECORD_INGRESS)
+  @javax.annotation.Nullable
+  private Integer avgBytesPerRecordIngress;
+
   public static final String SERIALIZED_NAME_COMPONENT_TYPE = "component_type";
   @SerializedName(SERIALIZED_NAME_COMPONENT_TYPE)
   @javax.annotation.Nullable
@@ -87,6 +97,11 @@ public class ModelsPipelineNodeStatus {
   @javax.annotation.Nullable
   private String lastIngestedTime;
 
+  public static final String SERIALIZED_NAME_LAST_RECORD_PROCESSED_TIME = "last_record_processed_time";
+  @SerializedName(SERIALIZED_NAME_LAST_RECORD_PROCESSED_TIME)
+  @javax.annotation.Nullable
+  private String lastRecordProcessedTime;
+
   public static final String SERIALIZED_NAME_NODE_ID = "node_id";
   @SerializedName(SERIALIZED_NAME_NODE_ID)
   @javax.annotation.Nullable
@@ -109,6 +124,44 @@ public class ModelsPipelineNodeStatus {
 
   public ModelsPipelineNodeStatus() {
   }
+
+  public ModelsPipelineNodeStatus avgBytesPerRecordEgress(@javax.annotation.Nullable Integer avgBytesPerRecordEgress) {
+    this.avgBytesPerRecordEgress = avgBytesPerRecordEgress;
+    return this;
+  }
+
+  /**
+   * Get avgBytesPerRecordEgress
+   * @return avgBytesPerRecordEgress
+   */
+  @javax.annotation.Nullable
+  public Integer getAvgBytesPerRecordEgress() {
+    return avgBytesPerRecordEgress;
+  }
+
+  public void setAvgBytesPerRecordEgress(@javax.annotation.Nullable Integer avgBytesPerRecordEgress) {
+    this.avgBytesPerRecordEgress = avgBytesPerRecordEgress;
+  }
+
+
+  public ModelsPipelineNodeStatus avgBytesPerRecordIngress(@javax.annotation.Nullable Integer avgBytesPerRecordIngress) {
+    this.avgBytesPerRecordIngress = avgBytesPerRecordIngress;
+    return this;
+  }
+
+  /**
+   * Get avgBytesPerRecordIngress
+   * @return avgBytesPerRecordIngress
+   */
+  @javax.annotation.Nullable
+  public Integer getAvgBytesPerRecordIngress() {
+    return avgBytesPerRecordIngress;
+  }
+
+  public void setAvgBytesPerRecordIngress(@javax.annotation.Nullable Integer avgBytesPerRecordIngress) {
+    this.avgBytesPerRecordIngress = avgBytesPerRecordIngress;
+  }
+
 
   public ModelsPipelineNodeStatus componentType(@javax.annotation.Nullable String componentType) {
     this.componentType = componentType;
@@ -243,6 +296,25 @@ public class ModelsPipelineNodeStatus {
   }
 
 
+  public ModelsPipelineNodeStatus lastRecordProcessedTime(@javax.annotation.Nullable String lastRecordProcessedTime) {
+    this.lastRecordProcessedTime = lastRecordProcessedTime;
+    return this;
+  }
+
+  /**
+   * Get lastRecordProcessedTime
+   * @return lastRecordProcessedTime
+   */
+  @javax.annotation.Nullable
+  public String getLastRecordProcessedTime() {
+    return lastRecordProcessedTime;
+  }
+
+  public void setLastRecordProcessedTime(@javax.annotation.Nullable String lastRecordProcessedTime) {
+    this.lastRecordProcessedTime = lastRecordProcessedTime;
+  }
+
+
   public ModelsPipelineNodeStatus nodeId(@javax.annotation.Nullable String nodeId) {
     this.nodeId = nodeId;
     return this;
@@ -329,13 +401,16 @@ public class ModelsPipelineNodeStatus {
       return false;
     }
     ModelsPipelineNodeStatus modelsPipelineNodeStatus = (ModelsPipelineNodeStatus) o;
-    return Objects.equals(this.componentType, modelsPipelineNodeStatus.componentType) &&
+    return Objects.equals(this.avgBytesPerRecordEgress, modelsPipelineNodeStatus.avgBytesPerRecordEgress) &&
+        Objects.equals(this.avgBytesPerRecordIngress, modelsPipelineNodeStatus.avgBytesPerRecordIngress) &&
+        Objects.equals(this.componentType, modelsPipelineNodeStatus.componentType) &&
         Objects.equals(this.componentTypeId, modelsPipelineNodeStatus.componentTypeId) &&
         Objects.equals(this.egress, modelsPipelineNodeStatus.egress) &&
         Objects.equals(this.errors, modelsPipelineNodeStatus.errors) &&
         Objects.equals(this.expiredMessages, modelsPipelineNodeStatus.expiredMessages) &&
         Objects.equals(this.ingress, modelsPipelineNodeStatus.ingress) &&
         Objects.equals(this.lastIngestedTime, modelsPipelineNodeStatus.lastIngestedTime) &&
+        Objects.equals(this.lastRecordProcessedTime, modelsPipelineNodeStatus.lastRecordProcessedTime) &&
         Objects.equals(this.nodeId, modelsPipelineNodeStatus.nodeId) &&
         Objects.equals(this.nodeSlug, modelsPipelineNodeStatus.nodeSlug) &&
         Objects.equals(this.progress, modelsPipelineNodeStatus.progress) &&
@@ -344,13 +419,15 @@ public class ModelsPipelineNodeStatus {
 
   @Override
   public int hashCode() {
-    return Objects.hash(componentType, componentTypeId, egress, errors, expiredMessages, ingress, lastIngestedTime, nodeId, nodeSlug, progress, status);
+    return Objects.hash(avgBytesPerRecordEgress, avgBytesPerRecordIngress, componentType, componentTypeId, egress, errors, expiredMessages, ingress, lastIngestedTime, lastRecordProcessedTime, nodeId, nodeSlug, progress, status);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsPipelineNodeStatus {\n");
+    sb.append("    avgBytesPerRecordEgress: ").append(toIndentedString(avgBytesPerRecordEgress)).append("\n");
+    sb.append("    avgBytesPerRecordIngress: ").append(toIndentedString(avgBytesPerRecordIngress)).append("\n");
     sb.append("    componentType: ").append(toIndentedString(componentType)).append("\n");
     sb.append("    componentTypeId: ").append(toIndentedString(componentTypeId)).append("\n");
     sb.append("    egress: ").append(toIndentedString(egress)).append("\n");
@@ -358,6 +435,7 @@ public class ModelsPipelineNodeStatus {
     sb.append("    expiredMessages: ").append(toIndentedString(expiredMessages)).append("\n");
     sb.append("    ingress: ").append(toIndentedString(ingress)).append("\n");
     sb.append("    lastIngestedTime: ").append(toIndentedString(lastIngestedTime)).append("\n");
+    sb.append("    lastRecordProcessedTime: ").append(toIndentedString(lastRecordProcessedTime)).append("\n");
     sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
     sb.append("    nodeSlug: ").append(toIndentedString(nodeSlug)).append("\n");
     sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
@@ -383,7 +461,7 @@ public class ModelsPipelineNodeStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "last_ingested_time", "node_id", "node_slug", "progress", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("avg_bytes_per_record_egress", "avg_bytes_per_record_ingress", "component_type", "component_type_id", "egress", "errors", "expired_messages", "ingress", "last_ingested_time", "last_record_processed_time", "node_id", "node_slug", "progress", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -426,6 +504,9 @@ public class ModelsPipelineNodeStatus {
       }
       if ((jsonObj.get("last_ingested_time") != null && !jsonObj.get("last_ingested_time").isJsonNull()) && !jsonObj.get("last_ingested_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `last_ingested_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_ingested_time").toString()));
+      }
+      if ((jsonObj.get("last_record_processed_time") != null && !jsonObj.get("last_record_processed_time").isJsonNull()) && !jsonObj.get("last_record_processed_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `last_record_processed_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_record_processed_time").toString()));
       }
       if ((jsonObj.get("node_id") != null && !jsonObj.get("node_id").isJsonNull()) && !jsonObj.get("node_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `node_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("node_id").toString()));

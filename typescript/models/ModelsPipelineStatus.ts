@@ -16,6 +16,8 @@ import { PipelineNodeStatusProgressEntries } from '../models/PipelineNodeStatusP
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineStatus {
+    'averageSizeEgressed'?: number;
+    'averageSizeIngested'?: number;
     'egress'?: ModelsDataUsage;
     'errors'?: number;
     'expiredMessages'?: number;
@@ -34,6 +36,18 @@ export class ModelsPipelineStatus {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "averageSizeEgressed",
+            "baseName": "average_size_egressed",
+            "type": "number",
+            "format": ""
+        },
+        {
+            "name": "averageSizeIngested",
+            "baseName": "average_size_ingested",
+            "type": "number",
+            "format": ""
+        },
         {
             "name": "egress",
             "baseName": "egress",

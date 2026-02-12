@@ -20,6 +20,8 @@ var _ MappedNullable = &ModelsPipelineStatus{}
 
 // ModelsPipelineStatus struct for ModelsPipelineStatus
 type ModelsPipelineStatus struct {
+	AverageSizeEgressed *int32 `json:"average_size_egressed,omitempty"`
+	AverageSizeIngested *int32 `json:"average_size_ingested,omitempty"`
 	Egress *ModelsDataUsage `json:"egress,omitempty"`
 	Errors *int32 `json:"errors,omitempty"`
 	ExpiredMessages *int32 `json:"expired_messages,omitempty"`
@@ -49,6 +51,70 @@ func NewModelsPipelineStatus() *ModelsPipelineStatus {
 func NewModelsPipelineStatusWithDefaults() *ModelsPipelineStatus {
 	this := ModelsPipelineStatus{}
 	return &this
+}
+
+// GetAverageSizeEgressed returns the AverageSizeEgressed field value if set, zero value otherwise.
+func (o *ModelsPipelineStatus) GetAverageSizeEgressed() int32 {
+	if o == nil || IsNil(o.AverageSizeEgressed) {
+		var ret int32
+		return ret
+	}
+	return *o.AverageSizeEgressed
+}
+
+// GetAverageSizeEgressedOk returns a tuple with the AverageSizeEgressed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineStatus) GetAverageSizeEgressedOk() (*int32, bool) {
+	if o == nil || IsNil(o.AverageSizeEgressed) {
+		return nil, false
+	}
+	return o.AverageSizeEgressed, true
+}
+
+// HasAverageSizeEgressed returns a boolean if a field has been set.
+func (o *ModelsPipelineStatus) HasAverageSizeEgressed() bool {
+	if o != nil && !IsNil(o.AverageSizeEgressed) {
+		return true
+	}
+
+	return false
+}
+
+// SetAverageSizeEgressed gets a reference to the given int32 and assigns it to the AverageSizeEgressed field.
+func (o *ModelsPipelineStatus) SetAverageSizeEgressed(v int32) {
+	o.AverageSizeEgressed = &v
+}
+
+// GetAverageSizeIngested returns the AverageSizeIngested field value if set, zero value otherwise.
+func (o *ModelsPipelineStatus) GetAverageSizeIngested() int32 {
+	if o == nil || IsNil(o.AverageSizeIngested) {
+		var ret int32
+		return ret
+	}
+	return *o.AverageSizeIngested
+}
+
+// GetAverageSizeIngestedOk returns a tuple with the AverageSizeIngested field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineStatus) GetAverageSizeIngestedOk() (*int32, bool) {
+	if o == nil || IsNil(o.AverageSizeIngested) {
+		return nil, false
+	}
+	return o.AverageSizeIngested, true
+}
+
+// HasAverageSizeIngested returns a boolean if a field has been set.
+func (o *ModelsPipelineStatus) HasAverageSizeIngested() bool {
+	if o != nil && !IsNil(o.AverageSizeIngested) {
+		return true
+	}
+
+	return false
+}
+
+// SetAverageSizeIngested gets a reference to the given int32 and assigns it to the AverageSizeIngested field.
+func (o *ModelsPipelineStatus) SetAverageSizeIngested(v int32) {
+	o.AverageSizeIngested = &v
 }
 
 // GetEgress returns the Egress field value if set, zero value otherwise.
@@ -445,6 +511,12 @@ func (o ModelsPipelineStatus) MarshalJSON() ([]byte, error) {
 
 func (o ModelsPipelineStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AverageSizeEgressed) {
+		toSerialize["average_size_egressed"] = o.AverageSizeEgressed
+	}
+	if !IsNil(o.AverageSizeIngested) {
+		toSerialize["average_size_ingested"] = o.AverageSizeIngested
+	}
 	if !IsNil(o.Egress) {
 		toSerialize["egress"] = o.Egress
 	}

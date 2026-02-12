@@ -20,6 +20,8 @@ var _ MappedNullable = &ModelsPipelineNodeStatus{}
 
 // ModelsPipelineNodeStatus struct for ModelsPipelineNodeStatus
 type ModelsPipelineNodeStatus struct {
+	AvgBytesPerRecordEgress *int32 `json:"avg_bytes_per_record_egress,omitempty"`
+	AvgBytesPerRecordIngress *int32 `json:"avg_bytes_per_record_ingress,omitempty"`
 	ComponentType *string `json:"component_type,omitempty"`
 	ComponentTypeId *string `json:"component_type_id,omitempty"`
 	Egress *ModelsDataUsage `json:"egress,omitempty"`
@@ -27,6 +29,7 @@ type ModelsPipelineNodeStatus struct {
 	ExpiredMessages *int32 `json:"expired_messages,omitempty"`
 	Ingress *ModelsDataUsage `json:"ingress,omitempty"`
 	LastIngestedTime *string `json:"last_ingested_time,omitempty"`
+	LastRecordProcessedTime *string `json:"last_record_processed_time,omitempty"`
 	NodeId *string `json:"node_id,omitempty"`
 	NodeSlug *string `json:"node_slug,omitempty"`
 	Progress *PipelineNodeStatusProgressEntries `json:"progress,omitempty"`
@@ -48,6 +51,70 @@ func NewModelsPipelineNodeStatus() *ModelsPipelineNodeStatus {
 func NewModelsPipelineNodeStatusWithDefaults() *ModelsPipelineNodeStatus {
 	this := ModelsPipelineNodeStatus{}
 	return &this
+}
+
+// GetAvgBytesPerRecordEgress returns the AvgBytesPerRecordEgress field value if set, zero value otherwise.
+func (o *ModelsPipelineNodeStatus) GetAvgBytesPerRecordEgress() int32 {
+	if o == nil || IsNil(o.AvgBytesPerRecordEgress) {
+		var ret int32
+		return ret
+	}
+	return *o.AvgBytesPerRecordEgress
+}
+
+// GetAvgBytesPerRecordEgressOk returns a tuple with the AvgBytesPerRecordEgress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineNodeStatus) GetAvgBytesPerRecordEgressOk() (*int32, bool) {
+	if o == nil || IsNil(o.AvgBytesPerRecordEgress) {
+		return nil, false
+	}
+	return o.AvgBytesPerRecordEgress, true
+}
+
+// HasAvgBytesPerRecordEgress returns a boolean if a field has been set.
+func (o *ModelsPipelineNodeStatus) HasAvgBytesPerRecordEgress() bool {
+	if o != nil && !IsNil(o.AvgBytesPerRecordEgress) {
+		return true
+	}
+
+	return false
+}
+
+// SetAvgBytesPerRecordEgress gets a reference to the given int32 and assigns it to the AvgBytesPerRecordEgress field.
+func (o *ModelsPipelineNodeStatus) SetAvgBytesPerRecordEgress(v int32) {
+	o.AvgBytesPerRecordEgress = &v
+}
+
+// GetAvgBytesPerRecordIngress returns the AvgBytesPerRecordIngress field value if set, zero value otherwise.
+func (o *ModelsPipelineNodeStatus) GetAvgBytesPerRecordIngress() int32 {
+	if o == nil || IsNil(o.AvgBytesPerRecordIngress) {
+		var ret int32
+		return ret
+	}
+	return *o.AvgBytesPerRecordIngress
+}
+
+// GetAvgBytesPerRecordIngressOk returns a tuple with the AvgBytesPerRecordIngress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineNodeStatus) GetAvgBytesPerRecordIngressOk() (*int32, bool) {
+	if o == nil || IsNil(o.AvgBytesPerRecordIngress) {
+		return nil, false
+	}
+	return o.AvgBytesPerRecordIngress, true
+}
+
+// HasAvgBytesPerRecordIngress returns a boolean if a field has been set.
+func (o *ModelsPipelineNodeStatus) HasAvgBytesPerRecordIngress() bool {
+	if o != nil && !IsNil(o.AvgBytesPerRecordIngress) {
+		return true
+	}
+
+	return false
+}
+
+// SetAvgBytesPerRecordIngress gets a reference to the given int32 and assigns it to the AvgBytesPerRecordIngress field.
+func (o *ModelsPipelineNodeStatus) SetAvgBytesPerRecordIngress(v int32) {
+	o.AvgBytesPerRecordIngress = &v
 }
 
 // GetComponentType returns the ComponentType field value if set, zero value otherwise.
@@ -274,6 +341,38 @@ func (o *ModelsPipelineNodeStatus) SetLastIngestedTime(v string) {
 	o.LastIngestedTime = &v
 }
 
+// GetLastRecordProcessedTime returns the LastRecordProcessedTime field value if set, zero value otherwise.
+func (o *ModelsPipelineNodeStatus) GetLastRecordProcessedTime() string {
+	if o == nil || IsNil(o.LastRecordProcessedTime) {
+		var ret string
+		return ret
+	}
+	return *o.LastRecordProcessedTime
+}
+
+// GetLastRecordProcessedTimeOk returns a tuple with the LastRecordProcessedTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineNodeStatus) GetLastRecordProcessedTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.LastRecordProcessedTime) {
+		return nil, false
+	}
+	return o.LastRecordProcessedTime, true
+}
+
+// HasLastRecordProcessedTime returns a boolean if a field has been set.
+func (o *ModelsPipelineNodeStatus) HasLastRecordProcessedTime() bool {
+	if o != nil && !IsNil(o.LastRecordProcessedTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastRecordProcessedTime gets a reference to the given string and assigns it to the LastRecordProcessedTime field.
+func (o *ModelsPipelineNodeStatus) SetLastRecordProcessedTime(v string) {
+	o.LastRecordProcessedTime = &v
+}
+
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
 func (o *ModelsPipelineNodeStatus) GetNodeId() string {
 	if o == nil || IsNil(o.NodeId) {
@@ -412,6 +511,12 @@ func (o ModelsPipelineNodeStatus) MarshalJSON() ([]byte, error) {
 
 func (o ModelsPipelineNodeStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AvgBytesPerRecordEgress) {
+		toSerialize["avg_bytes_per_record_egress"] = o.AvgBytesPerRecordEgress
+	}
+	if !IsNil(o.AvgBytesPerRecordIngress) {
+		toSerialize["avg_bytes_per_record_ingress"] = o.AvgBytesPerRecordIngress
+	}
 	if !IsNil(o.ComponentType) {
 		toSerialize["component_type"] = o.ComponentType
 	}
@@ -432,6 +537,9 @@ func (o ModelsPipelineNodeStatus) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LastIngestedTime) {
 		toSerialize["last_ingested_time"] = o.LastIngestedTime
+	}
+	if !IsNil(o.LastRecordProcessedTime) {
+		toSerialize["last_record_processed_time"] = o.LastRecordProcessedTime
 	}
 	if !IsNil(o.NodeId) {
 		toSerialize["node_id"] = o.NodeId

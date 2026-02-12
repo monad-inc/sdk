@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**average_size_egressed** | **int** |  | [optional] 
+**average_size_ingested** | **int** |  | [optional] 
 **egress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **errors** | **int** |  | [optional] 
 **expired_messages** | **int** |  | [optional] 

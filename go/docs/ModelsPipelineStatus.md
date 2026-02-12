@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AverageSizeEgressed** | Pointer to **int32** |  | [optional] 
+**AverageSizeIngested** | Pointer to **int32** |  | [optional] 
 **Egress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
 **Errors** | Pointer to **int32** |  | [optional] 
 **ExpiredMessages** | Pointer to **int32** |  | [optional] 
@@ -35,6 +37,56 @@ will change when the set of required properties is changed
 NewModelsPipelineStatusWithDefaults instantiates a new ModelsPipelineStatus object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAverageSizeEgressed
+
+`func (o *ModelsPipelineStatus) GetAverageSizeEgressed() int32`
+
+GetAverageSizeEgressed returns the AverageSizeEgressed field if non-nil, zero value otherwise.
+
+### GetAverageSizeEgressedOk
+
+`func (o *ModelsPipelineStatus) GetAverageSizeEgressedOk() (*int32, bool)`
+
+GetAverageSizeEgressedOk returns a tuple with the AverageSizeEgressed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAverageSizeEgressed
+
+`func (o *ModelsPipelineStatus) SetAverageSizeEgressed(v int32)`
+
+SetAverageSizeEgressed sets AverageSizeEgressed field to given value.
+
+### HasAverageSizeEgressed
+
+`func (o *ModelsPipelineStatus) HasAverageSizeEgressed() bool`
+
+HasAverageSizeEgressed returns a boolean if a field has been set.
+
+### GetAverageSizeIngested
+
+`func (o *ModelsPipelineStatus) GetAverageSizeIngested() int32`
+
+GetAverageSizeIngested returns the AverageSizeIngested field if non-nil, zero value otherwise.
+
+### GetAverageSizeIngestedOk
+
+`func (o *ModelsPipelineStatus) GetAverageSizeIngestedOk() (*int32, bool)`
+
+GetAverageSizeIngestedOk returns a tuple with the AverageSizeIngested field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAverageSizeIngested
+
+`func (o *ModelsPipelineStatus) SetAverageSizeIngested(v int32)`
+
+SetAverageSizeIngested sets AverageSizeIngested field to given value.
+
+### HasAverageSizeIngested
+
+`func (o *ModelsPipelineStatus) HasAverageSizeIngested() bool`
+
+HasAverageSizeIngested returns a boolean if a field has been set.
 
 ### GetEgress
 

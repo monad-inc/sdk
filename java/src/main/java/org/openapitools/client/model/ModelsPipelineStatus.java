@@ -53,8 +53,18 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-11T17:07:01.954753605Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-12T02:05:54.093213352Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsPipelineStatus {
+  public static final String SERIALIZED_NAME_AVERAGE_SIZE_EGRESSED = "average_size_egressed";
+  @SerializedName(SERIALIZED_NAME_AVERAGE_SIZE_EGRESSED)
+  @javax.annotation.Nullable
+  private Integer averageSizeEgressed;
+
+  public static final String SERIALIZED_NAME_AVERAGE_SIZE_INGESTED = "average_size_ingested";
+  @SerializedName(SERIALIZED_NAME_AVERAGE_SIZE_INGESTED)
+  @javax.annotation.Nullable
+  private Integer averageSizeIngested;
+
   public static final String SERIALIZED_NAME_EGRESS = "egress";
   @SerializedName(SERIALIZED_NAME_EGRESS)
   @javax.annotation.Nullable
@@ -117,6 +127,44 @@ public class ModelsPipelineStatus {
 
   public ModelsPipelineStatus() {
   }
+
+  public ModelsPipelineStatus averageSizeEgressed(@javax.annotation.Nullable Integer averageSizeEgressed) {
+    this.averageSizeEgressed = averageSizeEgressed;
+    return this;
+  }
+
+  /**
+   * Get averageSizeEgressed
+   * @return averageSizeEgressed
+   */
+  @javax.annotation.Nullable
+  public Integer getAverageSizeEgressed() {
+    return averageSizeEgressed;
+  }
+
+  public void setAverageSizeEgressed(@javax.annotation.Nullable Integer averageSizeEgressed) {
+    this.averageSizeEgressed = averageSizeEgressed;
+  }
+
+
+  public ModelsPipelineStatus averageSizeIngested(@javax.annotation.Nullable Integer averageSizeIngested) {
+    this.averageSizeIngested = averageSizeIngested;
+    return this;
+  }
+
+  /**
+   * Get averageSizeIngested
+   * @return averageSizeIngested
+   */
+  @javax.annotation.Nullable
+  public Integer getAverageSizeIngested() {
+    return averageSizeIngested;
+  }
+
+  public void setAverageSizeIngested(@javax.annotation.Nullable Integer averageSizeIngested) {
+    this.averageSizeIngested = averageSizeIngested;
+  }
+
 
   public ModelsPipelineStatus egress(@javax.annotation.Nullable ModelsDataUsage egress) {
     this.egress = egress;
@@ -364,7 +412,9 @@ public class ModelsPipelineStatus {
       return false;
     }
     ModelsPipelineStatus modelsPipelineStatus = (ModelsPipelineStatus) o;
-    return Objects.equals(this.egress, modelsPipelineStatus.egress) &&
+    return Objects.equals(this.averageSizeEgressed, modelsPipelineStatus.averageSizeEgressed) &&
+        Objects.equals(this.averageSizeIngested, modelsPipelineStatus.averageSizeIngested) &&
+        Objects.equals(this.egress, modelsPipelineStatus.egress) &&
         Objects.equals(this.errors, modelsPipelineStatus.errors) &&
         Objects.equals(this.expiredMessages, modelsPipelineStatus.expiredMessages) &&
         Objects.equals(this.ingress, modelsPipelineStatus.ingress) &&
@@ -380,13 +430,15 @@ public class ModelsPipelineStatus {
 
   @Override
   public int hashCode() {
-    return Objects.hash(egress, errors, expiredMessages, ingress, lastIngestedTime, nodes, organizationId, organizationName, pipelineId, pipelineName, progress, status);
+    return Objects.hash(averageSizeEgressed, averageSizeIngested, egress, errors, expiredMessages, ingress, lastIngestedTime, nodes, organizationId, organizationName, pipelineId, pipelineName, progress, status);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsPipelineStatus {\n");
+    sb.append("    averageSizeEgressed: ").append(toIndentedString(averageSizeEgressed)).append("\n");
+    sb.append("    averageSizeIngested: ").append(toIndentedString(averageSizeIngested)).append("\n");
     sb.append("    egress: ").append(toIndentedString(egress)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    expiredMessages: ").append(toIndentedString(expiredMessages)).append("\n");
@@ -420,7 +472,7 @@ public class ModelsPipelineStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("egress", "errors", "expired_messages", "ingress", "last_ingested_time", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("average_size_egressed", "average_size_ingested", "egress", "errors", "expired_messages", "ingress", "last_ingested_time", "nodes", "organization_id", "organization_name", "pipeline_id", "pipeline_name", "progress", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

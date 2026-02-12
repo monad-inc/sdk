@@ -15,6 +15,8 @@ import { PipelineNodeStatusProgressEntries } from '../models/PipelineNodeStatusP
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineNodeStatus {
+    'avgBytesPerRecordEgress'?: number;
+    'avgBytesPerRecordIngress'?: number;
     'componentType'?: string;
     'componentTypeId'?: string;
     'egress'?: ModelsDataUsage;
@@ -22,6 +24,7 @@ export class ModelsPipelineNodeStatus {
     'expiredMessages'?: number;
     'ingress'?: ModelsDataUsage;
     'lastIngestedTime'?: string;
+    'lastRecordProcessedTime'?: string;
     'nodeId'?: string;
     'nodeSlug'?: string;
     'progress'?: PipelineNodeStatusProgressEntries;
@@ -32,6 +35,18 @@ export class ModelsPipelineNodeStatus {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "avgBytesPerRecordEgress",
+            "baseName": "avg_bytes_per_record_egress",
+            "type": "number",
+            "format": ""
+        },
+        {
+            "name": "avgBytesPerRecordIngress",
+            "baseName": "avg_bytes_per_record_ingress",
+            "type": "number",
+            "format": ""
+        },
         {
             "name": "componentType",
             "baseName": "component_type",
@@ -71,6 +86,12 @@ export class ModelsPipelineNodeStatus {
         {
             "name": "lastIngestedTime",
             "baseName": "last_ingested_time",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "lastRecordProcessedTime",
+            "baseName": "last_record_processed_time",
             "type": "string",
             "format": ""
         },
