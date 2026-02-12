@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-12T18:10:16.817822738Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-12T19:44:39.769671323Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class ModelsPipelineStatus {
   public static final String SERIALIZED_NAME_AVERAGE_SIZE_EGRESSED = "average_size_egressed";
   @SerializedName(SERIALIZED_NAME_AVERAGE_SIZE_EGRESSED)
