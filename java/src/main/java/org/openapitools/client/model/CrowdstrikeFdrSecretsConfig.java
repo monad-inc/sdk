@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Crowdstrike Falcon Data Replicator secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-13T16:37:37.912314992Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-13T21:22:18.541866777Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class CrowdstrikeFdrSecretsConfig {
   public static final String SERIALIZED_NAME_AWS_ACCESS_KEY = "aws_access_key";
   @SerializedName(SERIALIZED_NAME_AWS_ACCESS_KEY)
