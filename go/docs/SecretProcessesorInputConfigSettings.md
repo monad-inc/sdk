@@ -166,7 +166,6 @@ Name | Type | Description | Notes
 **Rate** | Pointer to **int32** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
 **RecordType** | Pointer to **string** | The type of record to generate | [optional] 
 **CustomTemplate** | Pointer to **string** | A custom template using the functions we provide to generate demo data | [optional] 
-**OrgUrl** | Pointer to **string** | The URL of the Okta organization | [optional] 
 **UserRoleOption** | Pointer to **string** | Allows for filtering the output by user role. | [optional] 
 **UserTypeOption** | Pointer to **string** | Allows for filtering the output by user type. | [optional] 
 **OperationNames** | Pointer to **[]string** | Filter by specific operation names (optional) | [optional] 
@@ -4255,31 +4254,6 @@ SetCustomTemplate sets CustomTemplate field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasCustomTemplate() bool`
 
 HasCustomTemplate returns a boolean if a field has been set.
-
-### GetOrgUrl
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrgUrl() string`
-
-GetOrgUrl returns the OrgUrl field if non-nil, zero value otherwise.
-
-### GetOrgUrlOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrgUrlOk() (*string, bool)`
-
-GetOrgUrlOk returns a tuple with the OrgUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOrgUrl
-
-`func (o *SecretProcessesorInputConfigSettings) SetOrgUrl(v string)`
-
-SetOrgUrl sets OrgUrl field to given value.
-
-### HasOrgUrl
-
-`func (o *SecretProcessesorInputConfigSettings) HasOrgUrl() bool`
-
-HasOrgUrl returns a boolean if a field has been set.
 
 ### GetUserRoleOption
 

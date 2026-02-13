@@ -169,7 +169,6 @@
 |**rate** | **Integer** | The rate at which to generate records (between 1 and 1000) per second |  [optional] |
 |**recordType** | **String** | The type of record to generate |  [optional] |
 |**customTemplate** | **String** | A custom template using the functions we provide to generate demo data |  [optional] |
-|**orgUrl** | **String** | The URL of the Okta organization |  [optional] |
 |**userRoleOption** | **String** | Allows for filtering the output by user role. |  [optional] |
 |**userTypeOption** | **String** | Allows for filtering the output by user type. |  [optional] |
 |**operationNames** | **List&lt;String&gt;** | Filter by specific operation names (optional) |  [optional] |

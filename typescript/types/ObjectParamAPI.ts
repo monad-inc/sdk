@@ -476,8 +476,6 @@ import { SumologicSourceMetadata } from '../models/SumologicSourceMetadata';
 import { SumologicSumoField } from '../models/SumologicSumoField';
 import { SyntheticDataCustomSettingsConfig } from '../models/SyntheticDataCustomSettingsConfig';
 import { SyntheticDataSettingsConfig } from '../models/SyntheticDataSettingsConfig';
-import { SystemlogSecretsConfig } from '../models/SystemlogSecretsConfig';
-import { SystemlogSettingsConfig } from '../models/SystemlogSettingsConfig';
 import { TailscaleUsersSecretsConfig } from '../models/TailscaleUsersSecretsConfig';
 import { TailscaleUsersSettingsConfig } from '../models/TailscaleUsersSettingsConfig';
 import { TaniumGraphqlInputSecretsConfig } from '../models/TaniumGraphqlInputSecretsConfig';

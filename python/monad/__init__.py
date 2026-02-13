@@ -536,8 +536,6 @@ __all__ = [
     "SumologicSumoField",
     "SyntheticDataCustomSettingsConfig",
     "SyntheticDataSettingsConfig",
-    "SystemlogSecretsConfig",
-    "SystemlogSettingsConfig",
     "TailscaleUsersSecretsConfig",
     "TailscaleUsersSettingsConfig",
     "TaniumGraphqlInputSecretsConfig",
@@ -1118,8 +1116,6 @@ from monad.models.sumologic_source_metadata import SumologicSourceMetadata as Su
 from monad.models.sumologic_sumo_field import SumologicSumoField as SumologicSumoField
 from monad.models.synthetic_data_custom_settings_config import SyntheticDataCustomSettingsConfig as SyntheticDataCustomSettingsConfig
 from monad.models.synthetic_data_settings_config import SyntheticDataSettingsConfig as SyntheticDataSettingsConfig
-from monad.models.systemlog_secrets_config import SystemlogSecretsConfig as SystemlogSecretsConfig
-from monad.models.systemlog_settings_config import SystemlogSettingsConfig as SystemlogSettingsConfig
 from monad.models.tailscale_users_secrets_config import TailscaleUsersSecretsConfig as TailscaleUsersSecretsConfig
 from monad.models.tailscale_users_settings_config import TailscaleUsersSettingsConfig as TailscaleUsersSettingsConfig
 from monad.models.tanium_graphql_input_secrets_config import TaniumGraphqlInputSecretsConfig as TaniumGraphqlInputSecretsConfig

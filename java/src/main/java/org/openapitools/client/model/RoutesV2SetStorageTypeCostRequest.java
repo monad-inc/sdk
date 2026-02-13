@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2SetStorageTypeCostRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-13T02:18:46.993421522Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-13T16:37:37.912314992Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class RoutesV2SetStorageTypeCostRequest {
   public static final String SERIALIZED_NAME_COSTS = "costs";
   @SerializedName(SERIALIZED_NAME_COSTS)

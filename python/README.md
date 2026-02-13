@@ -732,8 +732,6 @@ Class | Method | HTTP request | Description
  - [SumologicSumoField](docs/SumologicSumoField.md)
  - [SyntheticDataCustomSettingsConfig](docs/SyntheticDataCustomSettingsConfig.md)
  - [SyntheticDataSettingsConfig](docs/SyntheticDataSettingsConfig.md)
- - [SystemlogSecretsConfig](docs/SystemlogSecretsConfig.md)
- - [SystemlogSettingsConfig](docs/SystemlogSettingsConfig.md)
  - [TailscaleUsersSecretsConfig](docs/TailscaleUsersSecretsConfig.md)
  - [TailscaleUsersSettingsConfig](docs/TailscaleUsersSettingsConfig.md)
  - [TaniumGraphqlInputSecretsConfig](docs/TaniumGraphqlInputSecretsConfig.md)

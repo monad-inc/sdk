@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-02-13T02:18:46.993421522Z[Etc/UTC]
+  - Build date: 2026-02-13T16:37:37.912314992Z[Etc/UTC]
   - Generator version: 7.19.0
 
 This is the monad API
@@ -759,8 +759,6 @@ Class | Method | HTTP request | Description
  - [SumologicSumoField](docs/SumologicSumoField.md)
  - [SyntheticDataCustomSettingsConfig](docs/SyntheticDataCustomSettingsConfig.md)
  - [SyntheticDataSettingsConfig](docs/SyntheticDataSettingsConfig.md)
- - [SystemlogSecretsConfig](docs/SystemlogSecretsConfig.md)
- - [SystemlogSettingsConfig](docs/SystemlogSettingsConfig.md)
  - [TailscaleUsersSecretsConfig](docs/TailscaleUsersSecretsConfig.md)
  - [TailscaleUsersSettingsConfig](docs/TailscaleUsersSettingsConfig.md)
  - [TaniumGraphqlInputSecretsConfig](docs/TaniumGraphqlInputSecretsConfig.md)

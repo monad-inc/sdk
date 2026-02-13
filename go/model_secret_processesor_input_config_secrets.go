@@ -115,7 +115,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	SnykIssuesSecretsConfig *SnykIssuesSecretsConfig
 	SnykProjectsSecretsConfig *SnykProjectsSecretsConfig
 	SnykTargetsSecretsConfig *SnykTargetsSecretsConfig
-	SystemlogSecretsConfig *SystemlogSecretsConfig
 	TailscaleUsersSecretsConfig *TailscaleUsersSecretsConfig
 	TaniumGraphqlInputSecretsConfig *TaniumGraphqlInputSecretsConfig
 	TeamAccessLogsSecretsConfig *TeamAccessLogsSecretsConfig
@@ -814,13 +813,6 @@ func SnykProjectsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SnykProje
 func SnykTargetsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SnykTargetsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		SnykTargetsSecretsConfig: v,
-	}
-}
-
-// SystemlogSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SystemlogSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SystemlogSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SystemlogSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SystemlogSecretsConfig: v,
 	}
 }
 
@@ -2650,23 +2642,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.SnykTargetsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into SystemlogSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SystemlogSecretsConfig)
-	if err == nil {
-		jsonSystemlogSecretsConfig, _ := json.Marshal(dst.SystemlogSecretsConfig)
-		if string(jsonSystemlogSecretsConfig) == "{}" { // empty struct
-			dst.SystemlogSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SystemlogSecretsConfig); err != nil {
-				dst.SystemlogSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SystemlogSecretsConfig = nil
-	}
-
 	// try to unmarshal data into TailscaleUsersSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.TailscaleUsersSecretsConfig)
 	if err == nil {
@@ -3224,7 +3199,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.SnykIssuesSecretsConfig = nil
 		dst.SnykProjectsSecretsConfig = nil
 		dst.SnykTargetsSecretsConfig = nil
-		dst.SystemlogSecretsConfig = nil
 		dst.TailscaleUsersSecretsConfig = nil
 		dst.TaniumGraphqlInputSecretsConfig = nil
 		dst.TeamAccessLogsSecretsConfig = nil
@@ -3645,10 +3619,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.SnykTargetsSecretsConfig != nil {
 		return json.Marshal(&src.SnykTargetsSecretsConfig)
-	}
-
-	if src.SystemlogSecretsConfig != nil {
-		return json.Marshal(&src.SystemlogSecretsConfig)
 	}
 
 	if src.TailscaleUsersSecretsConfig != nil {
@@ -4151,10 +4121,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.SnykTargetsSecretsConfig
 	}
 
-	if obj.SystemlogSecretsConfig != nil {
-		return obj.SystemlogSecretsConfig
-	}
-
 	if obj.TailscaleUsersSecretsConfig != nil {
 		return obj.TailscaleUsersSecretsConfig
 	}
@@ -4651,10 +4617,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.SnykTargetsSecretsConfig != nil {
 		return *obj.SnykTargetsSecretsConfig
-	}
-
-	if obj.SystemlogSecretsConfig != nil {
-		return *obj.SystemlogSecretsConfig
 	}
 
 	if obj.TailscaleUsersSecretsConfig != nil {
