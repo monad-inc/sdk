@@ -10,18 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { RenameKeyWhereValueEqArgumentsConfig } from '../models/RenameKeyWhereValueEqArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class RenameKeyWhereValueEqRenameKeyWhereValueEq {
-    /**
-    * The key to rename
-    */
-    'key'?: string;
-    /**
-    * The new key to rename to
-    */
-    'newKey'?: string;
-    'value'?: any | null;
+    'arguments'?: RenameKeyWhereValueEqArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,21 +22,9 @@ export class RenameKeyWhereValueEqRenameKeyWhereValueEq {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "key",
-            "baseName": "key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "newKey",
-            "baseName": "new_key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "value",
-            "baseName": "value",
-            "type": "any",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "RenameKeyWhereValueEqArgumentsConfig",
             "format": ""
         }    ];
 

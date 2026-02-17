@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.jq_arguments_config import JqArgumentsConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +28,8 @@ class JqJQ(BaseModel):
     """
     JqJQ
     """ # noqa: E501
-    key: Optional[StrictStr] = Field(default=None, description="The key to store the JQ query result under. If this is not provided the output will be the result of the JQ query.")
-    query: Optional[StrictStr] = Field(default=None, description="The JQ query to apply to the record")
-    __properties: ClassVar[List[str]] = ["key", "query"]
+    arguments: Optional[JqArgumentsConfig] = None
+    __properties: ClassVar[List[str]] = ["arguments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,6 +70,9 @@ class JqJQ(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of arguments
+        if self.arguments:
+            _dict['arguments'] = self.arguments.to_dict()
         return _dict
 
     @classmethod
@@ -82,8 +85,7 @@ class JqJQ(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "key": obj.get("key"),
-            "query": obj.get("query")
+            "arguments": JqArgumentsConfig.from_dict(obj["arguments"]) if obj.get("arguments") is not None else None
         })
         return _obj
 

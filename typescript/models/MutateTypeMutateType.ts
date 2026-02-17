@@ -10,17 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { MutateTypeArgumentsConfig } from '../models/MutateTypeArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class MutateTypeMutateType {
-    /**
-    * The key to mutate the type of
-    */
-    'key'?: string;
-    /**
-    * The new type of the key
-    */
-    'type'?: string;
+    'arguments'?: MutateTypeArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -28,15 +22,9 @@ export class MutateTypeMutateType {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "key",
-            "baseName": "key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "type",
-            "baseName": "type",
-            "type": "string",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "MutateTypeArgumentsConfig",
             "format": ""
         }    ];
 

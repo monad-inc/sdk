@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** | The key which values should be checked | [optional] 
-**value** | **object** |  | [optional] 
+**arguments** | [**DropRecordWhereValueEqArgumentsConfig**](DropRecordWhereValueEqArgumentsConfig.md) |  | [optional] 
 
 ## Example
 

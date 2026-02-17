@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.utc_timestamp_arguments_config import UtcTimestampArgumentsConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +28,8 @@ class UtcTimestampTimestamp(BaseModel):
     """
     UtcTimestampTimestamp
     """ # noqa: E501
-    format: Optional[StrictStr] = Field(default=None, description="The format of the timestamp")
-    key: Optional[StrictStr] = Field(default=None, description="The key to store the timestamp in")
-    __properties: ClassVar[List[str]] = ["format", "key"]
+    arguments: Optional[UtcTimestampArgumentsConfig] = None
+    __properties: ClassVar[List[str]] = ["arguments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,6 +70,9 @@ class UtcTimestampTimestamp(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of arguments
+        if self.arguments:
+            _dict['arguments'] = self.arguments.to_dict()
         return _dict
 
     @classmethod
@@ -82,8 +85,7 @@ class UtcTimestampTimestamp(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "format": obj.get("format"),
-            "key": obj.get("key")
+            "arguments": UtcTimestampArgumentsConfig.from_dict(obj["arguments"]) if obj.get("arguments") is not None else None
         })
         return _obj
 

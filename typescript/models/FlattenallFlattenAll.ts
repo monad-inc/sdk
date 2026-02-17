@@ -10,13 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class FlattenallFlattenAll {
-    /**
-    * The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1
-    */
-    'delimiter'?: string;
+    'arguments'?: FlattenallArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -24,9 +22,9 @@ export class FlattenallFlattenAll {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "delimiter",
-            "baseName": "delimiter",
-            "type": "string",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "FlattenallArgumentsConfig",
             "format": ""
         }    ];
 

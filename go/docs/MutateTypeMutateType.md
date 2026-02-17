@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Key** | Pointer to **string** | The key to mutate the type of | [optional] 
-**Type** | Pointer to **string** | The new type of the key | [optional] 
+**Arguments** | Pointer to [**MutateTypeArgumentsConfig**](MutateTypeArgumentsConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -26,55 +25,30 @@ NewMutateTypeMutateTypeWithDefaults instantiates a new MutateTypeMutateType obje
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetKey
+### GetArguments
 
-`func (o *MutateTypeMutateType) GetKey() string`
+`func (o *MutateTypeMutateType) GetArguments() MutateTypeArgumentsConfig`
 
-GetKey returns the Key field if non-nil, zero value otherwise.
+GetArguments returns the Arguments field if non-nil, zero value otherwise.
 
-### GetKeyOk
+### GetArgumentsOk
 
-`func (o *MutateTypeMutateType) GetKeyOk() (*string, bool)`
+`func (o *MutateTypeMutateType) GetArgumentsOk() (*MutateTypeArgumentsConfig, bool)`
 
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+GetArgumentsOk returns a tuple with the Arguments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKey
+### SetArguments
 
-`func (o *MutateTypeMutateType) SetKey(v string)`
+`func (o *MutateTypeMutateType) SetArguments(v MutateTypeArgumentsConfig)`
 
-SetKey sets Key field to given value.
+SetArguments sets Arguments field to given value.
 
-### HasKey
+### HasArguments
 
-`func (o *MutateTypeMutateType) HasKey() bool`
+`func (o *MutateTypeMutateType) HasArguments() bool`
 
-HasKey returns a boolean if a field has been set.
-
-### GetType
-
-`func (o *MutateTypeMutateType) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *MutateTypeMutateType) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *MutateTypeMutateType) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *MutateTypeMutateType) HasType() bool`
-
-HasType returns a boolean if a field has been set.
+HasArguments returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.mutate_type_arguments_config import MutateTypeArgumentsConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +28,8 @@ class MutateTypeMutateType(BaseModel):
     """
     MutateTypeMutateType
     """ # noqa: E501
-    key: Optional[StrictStr] = Field(default=None, description="The key to mutate the type of")
-    type: Optional[StrictStr] = Field(default=None, description="The new type of the key")
-    __properties: ClassVar[List[str]] = ["key", "type"]
+    arguments: Optional[MutateTypeArgumentsConfig] = None
+    __properties: ClassVar[List[str]] = ["arguments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,6 +70,9 @@ class MutateTypeMutateType(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of arguments
+        if self.arguments:
+            _dict['arguments'] = self.arguments.to_dict()
         return _dict
 
     @classmethod
@@ -82,8 +85,7 @@ class MutateTypeMutateType(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "key": obj.get("key"),
-            "type": obj.get("type")
+            "arguments": MutateTypeArgumentsConfig.from_dict(obj["arguments"]) if obj.get("arguments") is not None else None
         })
         return _obj
 

@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Key** | Pointer to **string** | The key to add to the record with id value | [optional] 
-**Type** | Pointer to **string** | The type of the identifier | [optional] 
+**Arguments** | Pointer to [**AddIdArgumentsConfig**](AddIdArgumentsConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -26,55 +25,30 @@ NewAddIdAddIdentifierWithDefaults instantiates a new AddIdAddIdentifier object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetKey
+### GetArguments
 
-`func (o *AddIdAddIdentifier) GetKey() string`
+`func (o *AddIdAddIdentifier) GetArguments() AddIdArgumentsConfig`
 
-GetKey returns the Key field if non-nil, zero value otherwise.
+GetArguments returns the Arguments field if non-nil, zero value otherwise.
 
-### GetKeyOk
+### GetArgumentsOk
 
-`func (o *AddIdAddIdentifier) GetKeyOk() (*string, bool)`
+`func (o *AddIdAddIdentifier) GetArgumentsOk() (*AddIdArgumentsConfig, bool)`
 
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+GetArgumentsOk returns a tuple with the Arguments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKey
+### SetArguments
 
-`func (o *AddIdAddIdentifier) SetKey(v string)`
+`func (o *AddIdAddIdentifier) SetArguments(v AddIdArgumentsConfig)`
 
-SetKey sets Key field to given value.
+SetArguments sets Arguments field to given value.
 
-### HasKey
+### HasArguments
 
-`func (o *AddIdAddIdentifier) HasKey() bool`
+`func (o *AddIdAddIdentifier) HasArguments() bool`
 
-HasKey returns a boolean if a field has been set.
-
-### GetType
-
-`func (o *AddIdAddIdentifier) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *AddIdAddIdentifier) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *AddIdAddIdentifier) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *AddIdAddIdentifier) HasType() bool`
-
-HasType returns a boolean if a field has been set.
+HasArguments returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

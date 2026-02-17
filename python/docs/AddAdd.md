@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** | The key to add to the record | [optional] 
-**value** | **object** |  | [optional] 
+**arguments** | [**AddArgumentsConfig**](AddArgumentsConfig.md) |  | [optional] 
 
 ## Example
 

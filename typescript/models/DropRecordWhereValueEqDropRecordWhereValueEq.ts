@@ -10,14 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhereValueEqArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class DropRecordWhereValueEqDropRecordWhereValueEq {
-    /**
-    * The key which values should be checked
-    */
-    'key'?: string;
-    'value'?: any | null;
+    'arguments'?: DropRecordWhereValueEqArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -25,15 +22,9 @@ export class DropRecordWhereValueEqDropRecordWhereValueEq {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "key",
-            "baseName": "key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "value",
-            "baseName": "value",
-            "type": "any",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "DropRecordWhereValueEqArgumentsConfig",
             "format": ""
         }    ];
 

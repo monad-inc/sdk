@@ -7,8 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**key** | **String** | The key to rename |  [optional] |
-|**newKey** | **String** | The new key to rename to |  [optional] |
+|**arguments** | [**RenameKeyArgumentsConfig**](RenameKeyArgumentsConfig.md) |  |  [optional] |
 
 
 

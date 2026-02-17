@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.flattenall_arguments_config import FlattenallArgumentsConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +28,8 @@ class FlattenallFlattenAll(BaseModel):
     """
     FlattenallFlattenAll
     """ # noqa: E501
-    delimiter: Optional[StrictStr] = Field(default=None, description="The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1")
-    __properties: ClassVar[List[str]] = ["delimiter"]
+    arguments: Optional[FlattenallArgumentsConfig] = None
+    __properties: ClassVar[List[str]] = ["arguments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -69,6 +70,9 @@ class FlattenallFlattenAll(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of arguments
+        if self.arguments:
+            _dict['arguments'] = self.arguments.to_dict()
         return _dict
 
     @classmethod
@@ -81,7 +85,7 @@ class FlattenallFlattenAll(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "delimiter": obj.get("delimiter")
+            "arguments": FlattenallArgumentsConfig.from_dict(obj["arguments"]) if obj.get("arguments") is not None else None
         })
         return _obj
 

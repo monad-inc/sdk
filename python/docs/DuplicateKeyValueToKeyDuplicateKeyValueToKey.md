@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** | The key to duplicate from the record | [optional] 
-**new_key** | **str** | The new key to duplicate the value to | [optional] 
+**arguments** | [**DuplicateKeyValueToKeyArgumentsConfig**](DuplicateKeyValueToKeyArgumentsConfig.md) |  | [optional] 
 
 ## Example
 

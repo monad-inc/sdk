@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** | The key to mutate the type of | [optional] 
-**type** | **str** | The new type of the key | [optional] 
+**arguments** | [**MutateTypeArgumentsConfig**](MutateTypeArgumentsConfig.md) |  | [optional] 
 
 ## Example
 

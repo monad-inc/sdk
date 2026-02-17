@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.drop_key_arguments_config import DropKeyArgumentsConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +28,8 @@ class DropKeyDropKey(BaseModel):
     """
     DropKeyDropKey
     """ # noqa: E501
-    key: Optional[StrictStr] = Field(default=None, description="The key to drop from the record")
-    __properties: ClassVar[List[str]] = ["key"]
+    arguments: Optional[DropKeyArgumentsConfig] = None
+    __properties: ClassVar[List[str]] = ["arguments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -69,6 +70,9 @@ class DropKeyDropKey(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of arguments
+        if self.arguments:
+            _dict['arguments'] = self.arguments.to_dict()
         return _dict
 
     @classmethod
@@ -81,7 +85,7 @@ class DropKeyDropKey(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "key": obj.get("key")
+            "arguments": DropKeyArgumentsConfig.from_dict(obj["arguments"]) if obj.get("arguments") is not None else None
         })
         return _obj
 

@@ -5,9 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** | The key to rename | [optional] 
-**new_key** | **str** | The new key to rename to | [optional] 
-**value** | **object** |  | [optional] 
+**arguments** | [**RenameKeyWhereValueEqArgumentsConfig**](RenameKeyWhereValueEqArgumentsConfig.md) |  | [optional] 
 
 ## Example
 

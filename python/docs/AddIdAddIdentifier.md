@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** | The key to add to the record with id value | [optional] 
-**type** | **str** | The type of the identifier | [optional] 
+**arguments** | [**AddIdArgumentsConfig**](AddIdArgumentsConfig.md) |  | [optional] 
 
 ## Example
 

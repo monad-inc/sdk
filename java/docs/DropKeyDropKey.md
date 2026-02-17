@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**key** | **String** | The key to drop from the record |  [optional] |
+|**arguments** | [**DropKeyArgumentsConfig**](DropKeyArgumentsConfig.md) |  |  [optional] |
 
 
 

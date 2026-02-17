@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
+import org.openapitools.client.model.AddArgumentsConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,56 +49,32 @@ import org.openapitools.client.JSON;
 /**
  * AddAdd
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T16:15:28.735310203Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T20:36:25.519329063Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class AddAdd {
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
+  public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
+  @SerializedName(SERIALIZED_NAME_ARGUMENTS)
   @javax.annotation.Nullable
-  private String key;
-
-  public static final String SERIALIZED_NAME_VALUE = "value";
-  @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
-  private Object value = null;
+  private AddArgumentsConfig arguments;
 
   public AddAdd() {
   }
 
-  public AddAdd key(@javax.annotation.Nullable String key) {
-    this.key = key;
+  public AddAdd arguments(@javax.annotation.Nullable AddArgumentsConfig arguments) {
+    this.arguments = arguments;
     return this;
   }
 
   /**
-   * The key to add to the record
-   * @return key
+   * Get arguments
+   * @return arguments
    */
   @javax.annotation.Nullable
-  public String getKey() {
-    return key;
+  public AddArgumentsConfig getArguments() {
+    return arguments;
   }
 
-  public void setKey(@javax.annotation.Nullable String key) {
-    this.key = key;
-  }
-
-
-  public AddAdd value(@javax.annotation.Nullable Object value) {
-    this.value = value;
-    return this;
-  }
-
-  /**
-   * Get value
-   * @return value
-   */
-  @javax.annotation.Nullable
-  public Object getValue() {
-    return value;
-  }
-
-  public void setValue(@javax.annotation.Nullable Object value) {
-    this.value = value;
+  public void setArguments(@javax.annotation.Nullable AddArgumentsConfig arguments) {
+    this.arguments = arguments;
   }
 
 
@@ -112,32 +88,19 @@ public class AddAdd {
       return false;
     }
     AddAdd addAdd = (AddAdd) o;
-    return Objects.equals(this.key, addAdd.key) &&
-        Objects.equals(this.value, addAdd.value);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    return Objects.equals(this.arguments, addAdd.arguments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, value);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(arguments);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddAdd {\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -159,7 +122,7 @@ public class AddAdd {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("key", "value"));
+    openapiFields = new HashSet<String>(Arrays.asList("arguments"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -186,8 +149,9 @@ public class AddAdd {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+      // validate the optional field `arguments`
+      if (jsonObj.get("arguments") != null && !jsonObj.get("arguments").isJsonNull()) {
+        AddArgumentsConfig.validateJsonElement(jsonObj.get("arguments"));
       }
   }
 

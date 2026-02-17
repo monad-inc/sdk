@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.FlattenallArgumentsConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,32 +49,32 @@ import org.openapitools.client.JSON;
 /**
  * FlattenallFlattenAll
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T16:15:28.735310203Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T20:36:25.519329063Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class FlattenallFlattenAll {
-  public static final String SERIALIZED_NAME_DELIMITER = "delimiter";
-  @SerializedName(SERIALIZED_NAME_DELIMITER)
+  public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
+  @SerializedName(SERIALIZED_NAME_ARGUMENTS)
   @javax.annotation.Nullable
-  private String delimiter;
+  private FlattenallArgumentsConfig arguments;
 
   public FlattenallFlattenAll() {
   }
 
-  public FlattenallFlattenAll delimiter(@javax.annotation.Nullable String delimiter) {
-    this.delimiter = delimiter;
+  public FlattenallFlattenAll arguments(@javax.annotation.Nullable FlattenallArgumentsConfig arguments) {
+    this.arguments = arguments;
     return this;
   }
 
   /**
-   * The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1
-   * @return delimiter
+   * Get arguments
+   * @return arguments
    */
   @javax.annotation.Nullable
-  public String getDelimiter() {
-    return delimiter;
+  public FlattenallArgumentsConfig getArguments() {
+    return arguments;
   }
 
-  public void setDelimiter(@javax.annotation.Nullable String delimiter) {
-    this.delimiter = delimiter;
+  public void setArguments(@javax.annotation.Nullable FlattenallArgumentsConfig arguments) {
+    this.arguments = arguments;
   }
 
 
@@ -87,19 +88,19 @@ public class FlattenallFlattenAll {
       return false;
     }
     FlattenallFlattenAll flattenallFlattenAll = (FlattenallFlattenAll) o;
-    return Objects.equals(this.delimiter, flattenallFlattenAll.delimiter);
+    return Objects.equals(this.arguments, flattenallFlattenAll.arguments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(delimiter);
+    return Objects.hash(arguments);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class FlattenallFlattenAll {\n");
-    sb.append("    delimiter: ").append(toIndentedString(delimiter)).append("\n");
+    sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -121,7 +122,7 @@ public class FlattenallFlattenAll {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("delimiter"));
+    openapiFields = new HashSet<String>(Arrays.asList("arguments"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -148,8 +149,9 @@ public class FlattenallFlattenAll {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("delimiter") != null && !jsonObj.get("delimiter").isJsonNull()) && !jsonObj.get("delimiter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `delimiter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("delimiter").toString()));
+      // validate the optional field `arguments`
+      if (jsonObj.get("arguments") != null && !jsonObj.get("arguments").isJsonNull()) {
+        FlattenallArgumentsConfig.validateJsonElement(jsonObj.get("arguments"));
       }
   }
 

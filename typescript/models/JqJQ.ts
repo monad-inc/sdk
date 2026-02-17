@@ -10,17 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class JqJQ {
-    /**
-    * The key to store the JQ query result under. If this is not provided the output will be the result of the JQ query.
-    */
-    'key'?: string;
-    /**
-    * The JQ query to apply to the record
-    */
-    'query'?: string;
+    'arguments'?: JqArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -28,15 +22,9 @@ export class JqJQ {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "key",
-            "baseName": "key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "query",
-            "baseName": "query",
-            "type": "string",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "JqArgumentsConfig",
             "format": ""
         }    ];
 

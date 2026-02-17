@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Key** | Pointer to **string** | The key to drop from the record | [optional] 
+**Arguments** | Pointer to [**DropKeyArgumentsConfig**](DropKeyArgumentsConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -25,30 +25,30 @@ NewDropKeyDropKeyWithDefaults instantiates a new DropKeyDropKey object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetKey
+### GetArguments
 
-`func (o *DropKeyDropKey) GetKey() string`
+`func (o *DropKeyDropKey) GetArguments() DropKeyArgumentsConfig`
 
-GetKey returns the Key field if non-nil, zero value otherwise.
+GetArguments returns the Arguments field if non-nil, zero value otherwise.
 
-### GetKeyOk
+### GetArgumentsOk
 
-`func (o *DropKeyDropKey) GetKeyOk() (*string, bool)`
+`func (o *DropKeyDropKey) GetArgumentsOk() (*DropKeyArgumentsConfig, bool)`
 
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+GetArgumentsOk returns a tuple with the Arguments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKey
+### SetArguments
 
-`func (o *DropKeyDropKey) SetKey(v string)`
+`func (o *DropKeyDropKey) SetArguments(v DropKeyArgumentsConfig)`
 
-SetKey sets Key field to given value.
+SetArguments sets Arguments field to given value.
 
-### HasKey
+### HasArguments
 
-`func (o *DropKeyDropKey) HasKey() bool`
+`func (o *DropKeyDropKey) HasArguments() bool`
 
-HasKey returns a boolean if a field has been set.
+HasArguments returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

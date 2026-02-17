@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.RenameKeyArgumentsConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,56 +49,32 @@ import org.openapitools.client.JSON;
 /**
  * RenameKeyRenameKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T16:15:28.735310203Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T20:36:25.519329063Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RenameKeyRenameKey {
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
+  public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
+  @SerializedName(SERIALIZED_NAME_ARGUMENTS)
   @javax.annotation.Nullable
-  private String key;
-
-  public static final String SERIALIZED_NAME_NEW_KEY = "new_key";
-  @SerializedName(SERIALIZED_NAME_NEW_KEY)
-  @javax.annotation.Nullable
-  private String newKey;
+  private RenameKeyArgumentsConfig arguments;
 
   public RenameKeyRenameKey() {
   }
 
-  public RenameKeyRenameKey key(@javax.annotation.Nullable String key) {
-    this.key = key;
+  public RenameKeyRenameKey arguments(@javax.annotation.Nullable RenameKeyArgumentsConfig arguments) {
+    this.arguments = arguments;
     return this;
   }
 
   /**
-   * The key to rename
-   * @return key
+   * Get arguments
+   * @return arguments
    */
   @javax.annotation.Nullable
-  public String getKey() {
-    return key;
+  public RenameKeyArgumentsConfig getArguments() {
+    return arguments;
   }
 
-  public void setKey(@javax.annotation.Nullable String key) {
-    this.key = key;
-  }
-
-
-  public RenameKeyRenameKey newKey(@javax.annotation.Nullable String newKey) {
-    this.newKey = newKey;
-    return this;
-  }
-
-  /**
-   * The new key to rename to
-   * @return newKey
-   */
-  @javax.annotation.Nullable
-  public String getNewKey() {
-    return newKey;
-  }
-
-  public void setNewKey(@javax.annotation.Nullable String newKey) {
-    this.newKey = newKey;
+  public void setArguments(@javax.annotation.Nullable RenameKeyArgumentsConfig arguments) {
+    this.arguments = arguments;
   }
 
 
@@ -111,21 +88,19 @@ public class RenameKeyRenameKey {
       return false;
     }
     RenameKeyRenameKey renameKeyRenameKey = (RenameKeyRenameKey) o;
-    return Objects.equals(this.key, renameKeyRenameKey.key) &&
-        Objects.equals(this.newKey, renameKeyRenameKey.newKey);
+    return Objects.equals(this.arguments, renameKeyRenameKey.arguments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, newKey);
+    return Objects.hash(arguments);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RenameKeyRenameKey {\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    newKey: ").append(toIndentedString(newKey)).append("\n");
+    sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -147,7 +122,7 @@ public class RenameKeyRenameKey {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("key", "new_key"));
+    openapiFields = new HashSet<String>(Arrays.asList("arguments"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -174,11 +149,9 @@ public class RenameKeyRenameKey {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
-      }
-      if ((jsonObj.get("new_key") != null && !jsonObj.get("new_key").isJsonNull()) && !jsonObj.get("new_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `new_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("new_key").toString()));
+      // validate the optional field `arguments`
+      if (jsonObj.get("arguments") != null && !jsonObj.get("arguments").isJsonNull()) {
+        RenameKeyArgumentsConfig.validateJsonElement(jsonObj.get("arguments"));
       }
   }
 

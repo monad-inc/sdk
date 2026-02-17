@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** | The key to mutate | [optional] 
-**value** | **object** |  | [optional] 
+**arguments** | [**MutateValueWhereKeyEqArgumentsConfig**](MutateValueWhereKeyEqArgumentsConfig.md) |  | [optional] 
 
 ## Example
 

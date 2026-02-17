@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.convert_timestamp_arguments_config import ConvertTimestampArgumentsConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,15 +28,8 @@ class ConvertTimestampConvertTimestamp(BaseModel):
     """
     ConvertTimestampConvertTimestamp
     """ # noqa: E501
-    source_format: Optional[StrictStr] = Field(default=None, description="Required: Format of source timestamp")
-    source_format_custom: Optional[StrictStr] = Field(default=None, description="Optional: Custom Go time layout (only if SourceFormat = \"custom\")")
-    source_key: Optional[StrictStr] = Field(default=None, description="Required: JSONPath to source timestamp field")
-    source_timezone: Optional[StrictStr] = Field(default=None, description="Optional: Source timezone (default: UTC)")
-    target_format: Optional[StrictStr] = Field(default=None, description="Required: Target format")
-    target_format_custom: Optional[StrictStr] = Field(default=None, description="Optional: Custom target format (only if TargetFormat = \"custom\")")
-    target_key: Optional[StrictStr] = Field(default=None, description="Optional: Target field (if empty, overwrites SourceKey)")
-    target_timezone: Optional[StrictStr] = Field(default=None, description="Optional: Target timezone (default: UTC)")
-    __properties: ClassVar[List[str]] = ["source_format", "source_format_custom", "source_key", "source_timezone", "target_format", "target_format_custom", "target_key", "target_timezone"]
+    arguments: Optional[ConvertTimestampArgumentsConfig] = None
+    __properties: ClassVar[List[str]] = ["arguments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +70,9 @@ class ConvertTimestampConvertTimestamp(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of arguments
+        if self.arguments:
+            _dict['arguments'] = self.arguments.to_dict()
         return _dict
 
     @classmethod
@@ -88,14 +85,7 @@ class ConvertTimestampConvertTimestamp(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "source_format": obj.get("source_format"),
-            "source_format_custom": obj.get("source_format_custom"),
-            "source_key": obj.get("source_key"),
-            "source_timezone": obj.get("source_timezone"),
-            "target_format": obj.get("target_format"),
-            "target_format_custom": obj.get("target_format_custom"),
-            "target_key": obj.get("target_key"),
-            "target_timezone": obj.get("target_timezone")
+            "arguments": ConvertTimestampArgumentsConfig.from_dict(obj["arguments"]) if obj.get("arguments") is not None else None
         })
         return _obj
 

@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ConvertTimestampArgumentsConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,200 +49,32 @@ import org.openapitools.client.JSON;
 /**
  * ConvertTimestampConvertTimestamp
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T16:15:28.735310203Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T20:36:25.519329063Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ConvertTimestampConvertTimestamp {
-  public static final String SERIALIZED_NAME_SOURCE_FORMAT = "source_format";
-  @SerializedName(SERIALIZED_NAME_SOURCE_FORMAT)
+  public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
+  @SerializedName(SERIALIZED_NAME_ARGUMENTS)
   @javax.annotation.Nullable
-  private String sourceFormat;
-
-  public static final String SERIALIZED_NAME_SOURCE_FORMAT_CUSTOM = "source_format_custom";
-  @SerializedName(SERIALIZED_NAME_SOURCE_FORMAT_CUSTOM)
-  @javax.annotation.Nullable
-  private String sourceFormatCustom;
-
-  public static final String SERIALIZED_NAME_SOURCE_KEY = "source_key";
-  @SerializedName(SERIALIZED_NAME_SOURCE_KEY)
-  @javax.annotation.Nullable
-  private String sourceKey;
-
-  public static final String SERIALIZED_NAME_SOURCE_TIMEZONE = "source_timezone";
-  @SerializedName(SERIALIZED_NAME_SOURCE_TIMEZONE)
-  @javax.annotation.Nullable
-  private String sourceTimezone;
-
-  public static final String SERIALIZED_NAME_TARGET_FORMAT = "target_format";
-  @SerializedName(SERIALIZED_NAME_TARGET_FORMAT)
-  @javax.annotation.Nullable
-  private String targetFormat;
-
-  public static final String SERIALIZED_NAME_TARGET_FORMAT_CUSTOM = "target_format_custom";
-  @SerializedName(SERIALIZED_NAME_TARGET_FORMAT_CUSTOM)
-  @javax.annotation.Nullable
-  private String targetFormatCustom;
-
-  public static final String SERIALIZED_NAME_TARGET_KEY = "target_key";
-  @SerializedName(SERIALIZED_NAME_TARGET_KEY)
-  @javax.annotation.Nullable
-  private String targetKey;
-
-  public static final String SERIALIZED_NAME_TARGET_TIMEZONE = "target_timezone";
-  @SerializedName(SERIALIZED_NAME_TARGET_TIMEZONE)
-  @javax.annotation.Nullable
-  private String targetTimezone;
+  private ConvertTimestampArgumentsConfig arguments;
 
   public ConvertTimestampConvertTimestamp() {
   }
 
-  public ConvertTimestampConvertTimestamp sourceFormat(@javax.annotation.Nullable String sourceFormat) {
-    this.sourceFormat = sourceFormat;
+  public ConvertTimestampConvertTimestamp arguments(@javax.annotation.Nullable ConvertTimestampArgumentsConfig arguments) {
+    this.arguments = arguments;
     return this;
   }
 
   /**
-   * Required: Format of source timestamp
-   * @return sourceFormat
+   * Get arguments
+   * @return arguments
    */
   @javax.annotation.Nullable
-  public String getSourceFormat() {
-    return sourceFormat;
+  public ConvertTimestampArgumentsConfig getArguments() {
+    return arguments;
   }
 
-  public void setSourceFormat(@javax.annotation.Nullable String sourceFormat) {
-    this.sourceFormat = sourceFormat;
-  }
-
-
-  public ConvertTimestampConvertTimestamp sourceFormatCustom(@javax.annotation.Nullable String sourceFormatCustom) {
-    this.sourceFormatCustom = sourceFormatCustom;
-    return this;
-  }
-
-  /**
-   * Optional: Custom Go time layout (only if SourceFormat &#x3D; \&quot;custom\&quot;)
-   * @return sourceFormatCustom
-   */
-  @javax.annotation.Nullable
-  public String getSourceFormatCustom() {
-    return sourceFormatCustom;
-  }
-
-  public void setSourceFormatCustom(@javax.annotation.Nullable String sourceFormatCustom) {
-    this.sourceFormatCustom = sourceFormatCustom;
-  }
-
-
-  public ConvertTimestampConvertTimestamp sourceKey(@javax.annotation.Nullable String sourceKey) {
-    this.sourceKey = sourceKey;
-    return this;
-  }
-
-  /**
-   * Required: JSONPath to source timestamp field
-   * @return sourceKey
-   */
-  @javax.annotation.Nullable
-  public String getSourceKey() {
-    return sourceKey;
-  }
-
-  public void setSourceKey(@javax.annotation.Nullable String sourceKey) {
-    this.sourceKey = sourceKey;
-  }
-
-
-  public ConvertTimestampConvertTimestamp sourceTimezone(@javax.annotation.Nullable String sourceTimezone) {
-    this.sourceTimezone = sourceTimezone;
-    return this;
-  }
-
-  /**
-   * Optional: Source timezone (default: UTC)
-   * @return sourceTimezone
-   */
-  @javax.annotation.Nullable
-  public String getSourceTimezone() {
-    return sourceTimezone;
-  }
-
-  public void setSourceTimezone(@javax.annotation.Nullable String sourceTimezone) {
-    this.sourceTimezone = sourceTimezone;
-  }
-
-
-  public ConvertTimestampConvertTimestamp targetFormat(@javax.annotation.Nullable String targetFormat) {
-    this.targetFormat = targetFormat;
-    return this;
-  }
-
-  /**
-   * Required: Target format
-   * @return targetFormat
-   */
-  @javax.annotation.Nullable
-  public String getTargetFormat() {
-    return targetFormat;
-  }
-
-  public void setTargetFormat(@javax.annotation.Nullable String targetFormat) {
-    this.targetFormat = targetFormat;
-  }
-
-
-  public ConvertTimestampConvertTimestamp targetFormatCustom(@javax.annotation.Nullable String targetFormatCustom) {
-    this.targetFormatCustom = targetFormatCustom;
-    return this;
-  }
-
-  /**
-   * Optional: Custom target format (only if TargetFormat &#x3D; \&quot;custom\&quot;)
-   * @return targetFormatCustom
-   */
-  @javax.annotation.Nullable
-  public String getTargetFormatCustom() {
-    return targetFormatCustom;
-  }
-
-  public void setTargetFormatCustom(@javax.annotation.Nullable String targetFormatCustom) {
-    this.targetFormatCustom = targetFormatCustom;
-  }
-
-
-  public ConvertTimestampConvertTimestamp targetKey(@javax.annotation.Nullable String targetKey) {
-    this.targetKey = targetKey;
-    return this;
-  }
-
-  /**
-   * Optional: Target field (if empty, overwrites SourceKey)
-   * @return targetKey
-   */
-  @javax.annotation.Nullable
-  public String getTargetKey() {
-    return targetKey;
-  }
-
-  public void setTargetKey(@javax.annotation.Nullable String targetKey) {
-    this.targetKey = targetKey;
-  }
-
-
-  public ConvertTimestampConvertTimestamp targetTimezone(@javax.annotation.Nullable String targetTimezone) {
-    this.targetTimezone = targetTimezone;
-    return this;
-  }
-
-  /**
-   * Optional: Target timezone (default: UTC)
-   * @return targetTimezone
-   */
-  @javax.annotation.Nullable
-  public String getTargetTimezone() {
-    return targetTimezone;
-  }
-
-  public void setTargetTimezone(@javax.annotation.Nullable String targetTimezone) {
-    this.targetTimezone = targetTimezone;
+  public void setArguments(@javax.annotation.Nullable ConvertTimestampArgumentsConfig arguments) {
+    this.arguments = arguments;
   }
 
 
@@ -255,33 +88,19 @@ public class ConvertTimestampConvertTimestamp {
       return false;
     }
     ConvertTimestampConvertTimestamp convertTimestampConvertTimestamp = (ConvertTimestampConvertTimestamp) o;
-    return Objects.equals(this.sourceFormat, convertTimestampConvertTimestamp.sourceFormat) &&
-        Objects.equals(this.sourceFormatCustom, convertTimestampConvertTimestamp.sourceFormatCustom) &&
-        Objects.equals(this.sourceKey, convertTimestampConvertTimestamp.sourceKey) &&
-        Objects.equals(this.sourceTimezone, convertTimestampConvertTimestamp.sourceTimezone) &&
-        Objects.equals(this.targetFormat, convertTimestampConvertTimestamp.targetFormat) &&
-        Objects.equals(this.targetFormatCustom, convertTimestampConvertTimestamp.targetFormatCustom) &&
-        Objects.equals(this.targetKey, convertTimestampConvertTimestamp.targetKey) &&
-        Objects.equals(this.targetTimezone, convertTimestampConvertTimestamp.targetTimezone);
+    return Objects.equals(this.arguments, convertTimestampConvertTimestamp.arguments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceFormat, sourceFormatCustom, sourceKey, sourceTimezone, targetFormat, targetFormatCustom, targetKey, targetTimezone);
+    return Objects.hash(arguments);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConvertTimestampConvertTimestamp {\n");
-    sb.append("    sourceFormat: ").append(toIndentedString(sourceFormat)).append("\n");
-    sb.append("    sourceFormatCustom: ").append(toIndentedString(sourceFormatCustom)).append("\n");
-    sb.append("    sourceKey: ").append(toIndentedString(sourceKey)).append("\n");
-    sb.append("    sourceTimezone: ").append(toIndentedString(sourceTimezone)).append("\n");
-    sb.append("    targetFormat: ").append(toIndentedString(targetFormat)).append("\n");
-    sb.append("    targetFormatCustom: ").append(toIndentedString(targetFormatCustom)).append("\n");
-    sb.append("    targetKey: ").append(toIndentedString(targetKey)).append("\n");
-    sb.append("    targetTimezone: ").append(toIndentedString(targetTimezone)).append("\n");
+    sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -303,7 +122,7 @@ public class ConvertTimestampConvertTimestamp {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("source_format", "source_format_custom", "source_key", "source_timezone", "target_format", "target_format_custom", "target_key", "target_timezone"));
+    openapiFields = new HashSet<String>(Arrays.asList("arguments"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -330,29 +149,9 @@ public class ConvertTimestampConvertTimestamp {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("source_format") != null && !jsonObj.get("source_format").isJsonNull()) && !jsonObj.get("source_format").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `source_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_format").toString()));
-      }
-      if ((jsonObj.get("source_format_custom") != null && !jsonObj.get("source_format_custom").isJsonNull()) && !jsonObj.get("source_format_custom").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `source_format_custom` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_format_custom").toString()));
-      }
-      if ((jsonObj.get("source_key") != null && !jsonObj.get("source_key").isJsonNull()) && !jsonObj.get("source_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `source_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_key").toString()));
-      }
-      if ((jsonObj.get("source_timezone") != null && !jsonObj.get("source_timezone").isJsonNull()) && !jsonObj.get("source_timezone").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `source_timezone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_timezone").toString()));
-      }
-      if ((jsonObj.get("target_format") != null && !jsonObj.get("target_format").isJsonNull()) && !jsonObj.get("target_format").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `target_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target_format").toString()));
-      }
-      if ((jsonObj.get("target_format_custom") != null && !jsonObj.get("target_format_custom").isJsonNull()) && !jsonObj.get("target_format_custom").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `target_format_custom` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target_format_custom").toString()));
-      }
-      if ((jsonObj.get("target_key") != null && !jsonObj.get("target_key").isJsonNull()) && !jsonObj.get("target_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `target_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target_key").toString()));
-      }
-      if ((jsonObj.get("target_timezone") != null && !jsonObj.get("target_timezone").isJsonNull()) && !jsonObj.get("target_timezone").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `target_timezone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("target_timezone").toString()));
+      // validate the optional field `arguments`
+      if (jsonObj.get("arguments") != null && !jsonObj.get("arguments").isJsonNull()) {
+        ConvertTimestampArgumentsConfig.validateJsonElement(jsonObj.get("arguments"));
       }
   }
 

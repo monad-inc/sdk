@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Key** | Pointer to **string** | The key to mutate | [optional] 
-**Value** | Pointer to **interface{}** |  | [optional] 
+**Arguments** | Pointer to [**MutateValueWhereKeyEqArgumentsConfig**](MutateValueWhereKeyEqArgumentsConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -26,66 +25,31 @@ NewMutateValueWhereKeyEqMutateValueWhereKeyEqWithDefaults instantiates a new Mut
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetKey
+### GetArguments
 
-`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) GetKey() string`
+`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) GetArguments() MutateValueWhereKeyEqArgumentsConfig`
 
-GetKey returns the Key field if non-nil, zero value otherwise.
+GetArguments returns the Arguments field if non-nil, zero value otherwise.
 
-### GetKeyOk
+### GetArgumentsOk
 
-`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) GetKeyOk() (*string, bool)`
+`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) GetArgumentsOk() (*MutateValueWhereKeyEqArgumentsConfig, bool)`
 
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+GetArgumentsOk returns a tuple with the Arguments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKey
+### SetArguments
 
-`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) SetKey(v string)`
+`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) SetArguments(v MutateValueWhereKeyEqArgumentsConfig)`
 
-SetKey sets Key field to given value.
+SetArguments sets Arguments field to given value.
 
-### HasKey
+### HasArguments
 
-`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) HasKey() bool`
+`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) HasArguments() bool`
 
-HasKey returns a boolean if a field has been set.
+HasArguments returns a boolean if a field has been set.
 
-### GetValue
-
-`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) GetValue() interface{}`
-
-GetValue returns the Value field if non-nil, zero value otherwise.
-
-### GetValueOk
-
-`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) GetValueOk() (*interface{}, bool)`
-
-GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValue
-
-`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) SetValue(v interface{})`
-
-SetValue sets Value field to given value.
-
-### HasValue
-
-`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) HasValue() bool`
-
-HasValue returns a boolean if a field has been set.
-
-### SetValueNil
-
-`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) SetValueNil(b bool)`
-
- SetValueNil sets the value for Value to be an explicit nil
-
-### UnsetValue
-`func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) UnsetValue()`
-
-UnsetValue ensures that no value is present for Value, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,8 +20,7 @@ var _ MappedNullable = &DropKeyDropKey{}
 
 // DropKeyDropKey struct for DropKeyDropKey
 type DropKeyDropKey struct {
-	// The key to drop from the record
-	Key *string `json:"key,omitempty"`
+	Arguments *DropKeyArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewDropKeyDropKey instantiates a new DropKeyDropKey object
@@ -41,36 +40,36 @@ func NewDropKeyDropKeyWithDefaults() *DropKeyDropKey {
 	return &this
 }
 
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *DropKeyDropKey) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *DropKeyDropKey) GetArguments() DropKeyArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret DropKeyArgumentsConfig
 		return ret
 	}
-	return *o.Key
+	return *o.Arguments
 }
 
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DropKeyDropKey) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
+func (o *DropKeyDropKey) GetArgumentsOk() (*DropKeyArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Key, true
+	return o.Arguments, true
 }
 
-// HasKey returns a boolean if a field has been set.
-func (o *DropKeyDropKey) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
+// HasArguments returns a boolean if a field has been set.
+func (o *DropKeyDropKey) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *DropKeyDropKey) SetKey(v string) {
-	o.Key = &v
+// SetArguments gets a reference to the given DropKeyArgumentsConfig and assigns it to the Arguments field.
+func (o *DropKeyDropKey) SetArguments(v DropKeyArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o DropKeyDropKey) MarshalJSON() ([]byte, error) {
@@ -83,8 +82,8 @@ func (o DropKeyDropKey) MarshalJSON() ([]byte, error) {
 
 func (o DropKeyDropKey) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

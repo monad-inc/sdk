@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.duplicate_key_value_to_key_arguments_config import DuplicateKeyValueToKeyArgumentsConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +28,8 @@ class DuplicateKeyValueToKeyDuplicateKeyValueToKey(BaseModel):
     """
     DuplicateKeyValueToKeyDuplicateKeyValueToKey
     """ # noqa: E501
-    key: Optional[StrictStr] = Field(default=None, description="The key to duplicate from the record")
-    new_key: Optional[StrictStr] = Field(default=None, description="The new key to duplicate the value to")
-    __properties: ClassVar[List[str]] = ["key", "new_key"]
+    arguments: Optional[DuplicateKeyValueToKeyArgumentsConfig] = None
+    __properties: ClassVar[List[str]] = ["arguments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,6 +70,9 @@ class DuplicateKeyValueToKeyDuplicateKeyValueToKey(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of arguments
+        if self.arguments:
+            _dict['arguments'] = self.arguments.to_dict()
         return _dict
 
     @classmethod
@@ -82,8 +85,7 @@ class DuplicateKeyValueToKeyDuplicateKeyValueToKey(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "key": obj.get("key"),
-            "new_key": obj.get("new_key")
+            "arguments": DuplicateKeyValueToKeyArgumentsConfig.from_dict(obj["arguments"]) if obj.get("arguments") is not None else None
         })
         return _obj
 

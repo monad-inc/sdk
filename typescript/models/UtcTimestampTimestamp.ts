@@ -10,17 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class UtcTimestampTimestamp {
-    /**
-    * The format of the timestamp
-    */
-    'format'?: string;
-    /**
-    * The key to store the timestamp in
-    */
-    'key'?: string;
+    'arguments'?: UtcTimestampArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -28,15 +22,9 @@ export class UtcTimestampTimestamp {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "format",
-            "baseName": "format",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "key",
-            "baseName": "key",
-            "type": "string",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "UtcTimestampArgumentsConfig",
             "format": ""
         }    ];
 

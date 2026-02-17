@@ -20,12 +20,7 @@ var _ MappedNullable = &CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue{}
 
 // CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue struct for CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
 type CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue struct {
-	// The key to add to the record
-	Key *string `json:"key,omitempty"`
-	// The key to watch for
-	KeyToWatch *string `json:"key_to_watch,omitempty"`
-	Value interface{} `json:"value,omitempty"`
-	ValueToWatch interface{} `json:"value_to_watch,omitempty"`
+	Arguments *CreateKeyValueIfKeyValueArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewCreateKeyValueIfKeyValueCreateKeyValueIfKeyValue instantiates a new CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue object
@@ -45,134 +40,36 @@ func NewCreateKeyValueIfKeyValueCreateKeyValueIfKeyValueWithDefaults() *CreateKe
 	return &this
 }
 
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) GetArguments() CreateKeyValueIfKeyValueArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret CreateKeyValueIfKeyValueArgumentsConfig
 		return ret
 	}
-	return *o.Key
+	return *o.Arguments
 }
 
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
+func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) GetArgumentsOk() (*CreateKeyValueIfKeyValueArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Key, true
+	return o.Arguments, true
 }
 
-// HasKey returns a boolean if a field has been set.
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
+// HasArguments returns a boolean if a field has been set.
+func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetKeyToWatch returns the KeyToWatch field value if set, zero value otherwise.
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) GetKeyToWatch() string {
-	if o == nil || IsNil(o.KeyToWatch) {
-		var ret string
-		return ret
-	}
-	return *o.KeyToWatch
-}
-
-// GetKeyToWatchOk returns a tuple with the KeyToWatch field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) GetKeyToWatchOk() (*string, bool) {
-	if o == nil || IsNil(o.KeyToWatch) {
-		return nil, false
-	}
-	return o.KeyToWatch, true
-}
-
-// HasKeyToWatch returns a boolean if a field has been set.
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) HasKeyToWatch() bool {
-	if o != nil && !IsNil(o.KeyToWatch) {
-		return true
-	}
-
-	return false
-}
-
-// SetKeyToWatch gets a reference to the given string and assigns it to the KeyToWatch field.
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) SetKeyToWatch(v string) {
-	o.KeyToWatch = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) GetValue() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) GetValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return &o.Value, true
-}
-
-// HasValue returns a boolean if a field has been set.
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) HasValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
-// SetValue gets a reference to the given interface{} and assigns it to the Value field.
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) SetValue(v interface{}) {
-	o.Value = v
-}
-
-// GetValueToWatch returns the ValueToWatch field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) GetValueToWatch() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.ValueToWatch
-}
-
-// GetValueToWatchOk returns a tuple with the ValueToWatch field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) GetValueToWatchOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.ValueToWatch) {
-		return nil, false
-	}
-	return &o.ValueToWatch, true
-}
-
-// HasValueToWatch returns a boolean if a field has been set.
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) HasValueToWatch() bool {
-	if o != nil && !IsNil(o.ValueToWatch) {
-		return true
-	}
-
-	return false
-}
-
-// SetValueToWatch gets a reference to the given interface{} and assigns it to the ValueToWatch field.
-func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) SetValueToWatch(v interface{}) {
-	o.ValueToWatch = v
+// SetArguments gets a reference to the given CreateKeyValueIfKeyValueArgumentsConfig and assigns it to the Arguments field.
+func (o *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) SetArguments(v CreateKeyValueIfKeyValueArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) MarshalJSON() ([]byte, error) {
@@ -185,17 +82,8 @@ func (o CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) MarshalJSON() ([]byte,
 
 func (o CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
-	}
-	if !IsNil(o.KeyToWatch) {
-		toSerialize["key_to_watch"] = o.KeyToWatch
-	}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
-	}
-	if o.ValueToWatch != nil {
-		toSerialize["value_to_watch"] = o.ValueToWatch
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

@@ -20,10 +20,7 @@ var _ MappedNullable = &UtcTimestampTimestamp{}
 
 // UtcTimestampTimestamp struct for UtcTimestampTimestamp
 type UtcTimestampTimestamp struct {
-	// The format of the timestamp
-	Format *string `json:"format,omitempty"`
-	// The key to store the timestamp in
-	Key *string `json:"key,omitempty"`
+	Arguments *UtcTimestampArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewUtcTimestampTimestamp instantiates a new UtcTimestampTimestamp object
@@ -43,68 +40,36 @@ func NewUtcTimestampTimestampWithDefaults() *UtcTimestampTimestamp {
 	return &this
 }
 
-// GetFormat returns the Format field value if set, zero value otherwise.
-func (o *UtcTimestampTimestamp) GetFormat() string {
-	if o == nil || IsNil(o.Format) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *UtcTimestampTimestamp) GetArguments() UtcTimestampArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret UtcTimestampArgumentsConfig
 		return ret
 	}
-	return *o.Format
+	return *o.Arguments
 }
 
-// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UtcTimestampTimestamp) GetFormatOk() (*string, bool) {
-	if o == nil || IsNil(o.Format) {
+func (o *UtcTimestampTimestamp) GetArgumentsOk() (*UtcTimestampArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Format, true
+	return o.Arguments, true
 }
 
-// HasFormat returns a boolean if a field has been set.
-func (o *UtcTimestampTimestamp) HasFormat() bool {
-	if o != nil && !IsNil(o.Format) {
+// HasArguments returns a boolean if a field has been set.
+func (o *UtcTimestampTimestamp) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetFormat gets a reference to the given string and assigns it to the Format field.
-func (o *UtcTimestampTimestamp) SetFormat(v string) {
-	o.Format = &v
-}
-
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *UtcTimestampTimestamp) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
-		return ret
-	}
-	return *o.Key
-}
-
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UtcTimestampTimestamp) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
-		return nil, false
-	}
-	return o.Key, true
-}
-
-// HasKey returns a boolean if a field has been set.
-func (o *UtcTimestampTimestamp) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
-		return true
-	}
-
-	return false
-}
-
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *UtcTimestampTimestamp) SetKey(v string) {
-	o.Key = &v
+// SetArguments gets a reference to the given UtcTimestampArgumentsConfig and assigns it to the Arguments field.
+func (o *UtcTimestampTimestamp) SetArguments(v UtcTimestampArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o UtcTimestampTimestamp) MarshalJSON() ([]byte, error) {
@@ -117,11 +82,8 @@ func (o UtcTimestampTimestamp) MarshalJSON() ([]byte, error) {
 
 func (o UtcTimestampTimestamp) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Format) {
-		toSerialize["format"] = o.Format
-	}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

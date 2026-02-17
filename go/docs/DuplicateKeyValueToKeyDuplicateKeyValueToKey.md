@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Key** | Pointer to **string** | The key to duplicate from the record | [optional] 
-**NewKey** | Pointer to **string** | The new key to duplicate the value to | [optional] 
+**Arguments** | Pointer to [**DuplicateKeyValueToKeyArgumentsConfig**](DuplicateKeyValueToKeyArgumentsConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -26,55 +25,30 @@ NewDuplicateKeyValueToKeyDuplicateKeyValueToKeyWithDefaults instantiates a new D
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetKey
+### GetArguments
 
-`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetKey() string`
+`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetArguments() DuplicateKeyValueToKeyArgumentsConfig`
 
-GetKey returns the Key field if non-nil, zero value otherwise.
+GetArguments returns the Arguments field if non-nil, zero value otherwise.
 
-### GetKeyOk
+### GetArgumentsOk
 
-`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetKeyOk() (*string, bool)`
+`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetArgumentsOk() (*DuplicateKeyValueToKeyArgumentsConfig, bool)`
 
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+GetArgumentsOk returns a tuple with the Arguments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKey
+### SetArguments
 
-`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) SetKey(v string)`
+`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) SetArguments(v DuplicateKeyValueToKeyArgumentsConfig)`
 
-SetKey sets Key field to given value.
+SetArguments sets Arguments field to given value.
 
-### HasKey
+### HasArguments
 
-`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) HasKey() bool`
+`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) HasArguments() bool`
 
-HasKey returns a boolean if a field has been set.
-
-### GetNewKey
-
-`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetNewKey() string`
-
-GetNewKey returns the NewKey field if non-nil, zero value otherwise.
-
-### GetNewKeyOk
-
-`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetNewKeyOk() (*string, bool)`
-
-GetNewKeyOk returns a tuple with the NewKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNewKey
-
-`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) SetNewKey(v string)`
-
-SetNewKey sets NewKey field to given value.
-
-### HasNewKey
-
-`func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) HasNewKey() bool`
-
-HasNewKey returns a boolean if a field has been set.
+HasArguments returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

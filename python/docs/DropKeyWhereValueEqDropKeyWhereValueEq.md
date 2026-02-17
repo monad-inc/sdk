@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** | The key to drop from the record | [optional] 
-**value** | **object** |  | [optional] 
+**arguments** | [**DropKeyWhereValueEqArgumentsConfig**](DropKeyWhereValueEqArgumentsConfig.md) |  | [optional] 
 
 ## Example
 

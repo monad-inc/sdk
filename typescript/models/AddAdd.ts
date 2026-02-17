@@ -10,14 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { AddArgumentsConfig } from '../models/AddArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class AddAdd {
-    /**
-    * The key to add to the record
-    */
-    'key'?: string;
-    'value'?: any | null;
+    'arguments'?: AddArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -25,15 +22,9 @@ export class AddAdd {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "key",
-            "baseName": "key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "value",
-            "baseName": "value",
-            "type": "any",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "AddArgumentsConfig",
             "format": ""
         }    ];
 

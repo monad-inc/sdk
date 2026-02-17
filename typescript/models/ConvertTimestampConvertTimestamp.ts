@@ -10,41 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { ConvertTimestampArgumentsConfig } from '../models/ConvertTimestampArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class ConvertTimestampConvertTimestamp {
-    /**
-    * Required: Format of source timestamp
-    */
-    'sourceFormat'?: string;
-    /**
-    * Optional: Custom Go time layout (only if SourceFormat = \"custom\")
-    */
-    'sourceFormatCustom'?: string;
-    /**
-    * Required: JSONPath to source timestamp field
-    */
-    'sourceKey'?: string;
-    /**
-    * Optional: Source timezone (default: UTC)
-    */
-    'sourceTimezone'?: string;
-    /**
-    * Required: Target format
-    */
-    'targetFormat'?: string;
-    /**
-    * Optional: Custom target format (only if TargetFormat = \"custom\")
-    */
-    'targetFormatCustom'?: string;
-    /**
-    * Optional: Target field (if empty, overwrites SourceKey)
-    */
-    'targetKey'?: string;
-    /**
-    * Optional: Target timezone (default: UTC)
-    */
-    'targetTimezone'?: string;
+    'arguments'?: ConvertTimestampArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -52,51 +22,9 @@ export class ConvertTimestampConvertTimestamp {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "sourceFormat",
-            "baseName": "source_format",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "sourceFormatCustom",
-            "baseName": "source_format_custom",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "sourceKey",
-            "baseName": "source_key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "sourceTimezone",
-            "baseName": "source_timezone",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "targetFormat",
-            "baseName": "target_format",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "targetFormatCustom",
-            "baseName": "target_format_custom",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "targetKey",
-            "baseName": "target_key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "targetTimezone",
-            "baseName": "target_timezone",
-            "type": "string",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "ConvertTimestampArgumentsConfig",
             "format": ""
         }    ];
 

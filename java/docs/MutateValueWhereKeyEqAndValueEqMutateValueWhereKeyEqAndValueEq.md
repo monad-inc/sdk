@@ -7,9 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**key** | **String** | The key to mutate |  [optional] |
-|**value** | **Object** |  |  [optional] |
-|**valueToSet** | **Object** |  |  [optional] |
+|**arguments** | [**MutateValueWhereKeyEqAndValueEqArgumentsConfig**](MutateValueWhereKeyEqAndValueEqArgumentsConfig.md) |  |  [optional] |
 
 
 

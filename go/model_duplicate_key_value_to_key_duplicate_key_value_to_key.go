@@ -20,10 +20,7 @@ var _ MappedNullable = &DuplicateKeyValueToKeyDuplicateKeyValueToKey{}
 
 // DuplicateKeyValueToKeyDuplicateKeyValueToKey struct for DuplicateKeyValueToKeyDuplicateKeyValueToKey
 type DuplicateKeyValueToKeyDuplicateKeyValueToKey struct {
-	// The key to duplicate from the record
-	Key *string `json:"key,omitempty"`
-	// The new key to duplicate the value to
-	NewKey *string `json:"new_key,omitempty"`
+	Arguments *DuplicateKeyValueToKeyArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewDuplicateKeyValueToKeyDuplicateKeyValueToKey instantiates a new DuplicateKeyValueToKeyDuplicateKeyValueToKey object
@@ -43,68 +40,36 @@ func NewDuplicateKeyValueToKeyDuplicateKeyValueToKeyWithDefaults() *DuplicateKey
 	return &this
 }
 
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetArguments() DuplicateKeyValueToKeyArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret DuplicateKeyValueToKeyArgumentsConfig
 		return ret
 	}
-	return *o.Key
+	return *o.Arguments
 }
 
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
+func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetArgumentsOk() (*DuplicateKeyValueToKeyArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Key, true
+	return o.Arguments, true
 }
 
-// HasKey returns a boolean if a field has been set.
-func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
+// HasArguments returns a boolean if a field has been set.
+func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetNewKey returns the NewKey field value if set, zero value otherwise.
-func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetNewKey() string {
-	if o == nil || IsNil(o.NewKey) {
-		var ret string
-		return ret
-	}
-	return *o.NewKey
-}
-
-// GetNewKeyOk returns a tuple with the NewKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) GetNewKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.NewKey) {
-		return nil, false
-	}
-	return o.NewKey, true
-}
-
-// HasNewKey returns a boolean if a field has been set.
-func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) HasNewKey() bool {
-	if o != nil && !IsNil(o.NewKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetNewKey gets a reference to the given string and assigns it to the NewKey field.
-func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) SetNewKey(v string) {
-	o.NewKey = &v
+// SetArguments gets a reference to the given DuplicateKeyValueToKeyArgumentsConfig and assigns it to the Arguments field.
+func (o *DuplicateKeyValueToKeyDuplicateKeyValueToKey) SetArguments(v DuplicateKeyValueToKeyArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o DuplicateKeyValueToKeyDuplicateKeyValueToKey) MarshalJSON() ([]byte, error) {
@@ -117,11 +82,8 @@ func (o DuplicateKeyValueToKeyDuplicateKeyValueToKey) MarshalJSON() ([]byte, err
 
 func (o DuplicateKeyValueToKeyDuplicateKeyValueToKey) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
-	}
-	if !IsNil(o.NewKey) {
-		toSerialize["new_key"] = o.NewKey
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

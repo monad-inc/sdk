@@ -10,19 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue {
-    /**
-    * The key to add to the record
-    */
-    'key'?: string;
-    /**
-    * The key to watch for
-    */
-    'keyToWatch'?: string;
-    'value'?: any | null;
-    'valueToWatch'?: any | null;
+    'arguments'?: CreateKeyValueIfKeyValueArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,27 +22,9 @@ export class CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "key",
-            "baseName": "key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "keyToWatch",
-            "baseName": "key_to_watch",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "value",
-            "baseName": "value",
-            "type": "any",
-            "format": ""
-        },
-        {
-            "name": "valueToWatch",
-            "baseName": "value_to_watch",
-            "type": "any",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "CreateKeyValueIfKeyValueArgumentsConfig",
             "format": ""
         }    ];
 

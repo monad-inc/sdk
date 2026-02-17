@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.drop_record_where_value_eq_arguments_config import DropRecordWhereValueEqArgumentsConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +28,8 @@ class DropRecordWhereValueEqDropRecordWhereValueEq(BaseModel):
     """
     DropRecordWhereValueEqDropRecordWhereValueEq
     """ # noqa: E501
-    key: Optional[StrictStr] = Field(default=None, description="The key which values should be checked")
-    value: Optional[Any] = None
-    __properties: ClassVar[List[str]] = ["key", "value"]
+    arguments: Optional[DropRecordWhereValueEqArgumentsConfig] = None
+    __properties: ClassVar[List[str]] = ["arguments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,11 +70,9 @@ class DropRecordWhereValueEqDropRecordWhereValueEq(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if value (nullable) is None
-        # and model_fields_set contains the field
-        if self.value is None and "value" in self.model_fields_set:
-            _dict['value'] = None
-
+        # override the default output from pydantic by calling `to_dict()` of arguments
+        if self.arguments:
+            _dict['arguments'] = self.arguments.to_dict()
         return _dict
 
     @classmethod
@@ -87,8 +85,7 @@ class DropRecordWhereValueEqDropRecordWhereValueEq(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "key": obj.get("key"),
-            "value": obj.get("value")
+            "arguments": DropRecordWhereValueEqArgumentsConfig.from_dict(obj["arguments"]) if obj.get("arguments") is not None else None
         })
         return _obj
 

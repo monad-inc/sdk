@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Key** | Pointer to **string** | The key to store the JQ query result under. If this is not provided the output will be the result of the JQ query. | [optional] 
-**Query** | Pointer to **string** | The JQ query to apply to the record | [optional] 
+**Arguments** | Pointer to [**JqArgumentsConfig**](JqArgumentsConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -26,55 +25,30 @@ NewJqJQWithDefaults instantiates a new JqJQ object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetKey
+### GetArguments
 
-`func (o *JqJQ) GetKey() string`
+`func (o *JqJQ) GetArguments() JqArgumentsConfig`
 
-GetKey returns the Key field if non-nil, zero value otherwise.
+GetArguments returns the Arguments field if non-nil, zero value otherwise.
 
-### GetKeyOk
+### GetArgumentsOk
 
-`func (o *JqJQ) GetKeyOk() (*string, bool)`
+`func (o *JqJQ) GetArgumentsOk() (*JqArgumentsConfig, bool)`
 
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+GetArgumentsOk returns a tuple with the Arguments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKey
+### SetArguments
 
-`func (o *JqJQ) SetKey(v string)`
+`func (o *JqJQ) SetArguments(v JqArgumentsConfig)`
 
-SetKey sets Key field to given value.
+SetArguments sets Arguments field to given value.
 
-### HasKey
+### HasArguments
 
-`func (o *JqJQ) HasKey() bool`
+`func (o *JqJQ) HasArguments() bool`
 
-HasKey returns a boolean if a field has been set.
-
-### GetQuery
-
-`func (o *JqJQ) GetQuery() string`
-
-GetQuery returns the Query field if non-nil, zero value otherwise.
-
-### GetQueryOk
-
-`func (o *JqJQ) GetQueryOk() (*string, bool)`
-
-GetQueryOk returns a tuple with the Query field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetQuery
-
-`func (o *JqJQ) SetQuery(v string)`
-
-SetQuery sets Query field to given value.
-
-### HasQuery
-
-`func (o *JqJQ) HasQuery() bool`
-
-HasQuery returns a boolean if a field has been set.
+HasArguments returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

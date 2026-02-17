@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Format** | Pointer to **string** | The format of the timestamp | [optional] 
-**Key** | Pointer to **string** | The key to store the timestamp in | [optional] 
+**Arguments** | Pointer to [**UtcTimestampArgumentsConfig**](UtcTimestampArgumentsConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -26,55 +25,30 @@ NewUtcTimestampTimestampWithDefaults instantiates a new UtcTimestampTimestamp ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetFormat
+### GetArguments
 
-`func (o *UtcTimestampTimestamp) GetFormat() string`
+`func (o *UtcTimestampTimestamp) GetArguments() UtcTimestampArgumentsConfig`
 
-GetFormat returns the Format field if non-nil, zero value otherwise.
+GetArguments returns the Arguments field if non-nil, zero value otherwise.
 
-### GetFormatOk
+### GetArgumentsOk
 
-`func (o *UtcTimestampTimestamp) GetFormatOk() (*string, bool)`
+`func (o *UtcTimestampTimestamp) GetArgumentsOk() (*UtcTimestampArgumentsConfig, bool)`
 
-GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+GetArgumentsOk returns a tuple with the Arguments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFormat
+### SetArguments
 
-`func (o *UtcTimestampTimestamp) SetFormat(v string)`
+`func (o *UtcTimestampTimestamp) SetArguments(v UtcTimestampArgumentsConfig)`
 
-SetFormat sets Format field to given value.
+SetArguments sets Arguments field to given value.
 
-### HasFormat
+### HasArguments
 
-`func (o *UtcTimestampTimestamp) HasFormat() bool`
+`func (o *UtcTimestampTimestamp) HasArguments() bool`
 
-HasFormat returns a boolean if a field has been set.
-
-### GetKey
-
-`func (o *UtcTimestampTimestamp) GetKey() string`
-
-GetKey returns the Key field if non-nil, zero value otherwise.
-
-### GetKeyOk
-
-`func (o *UtcTimestampTimestamp) GetKeyOk() (*string, bool)`
-
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKey
-
-`func (o *UtcTimestampTimestamp) SetKey(v string)`
-
-SetKey sets Key field to given value.
-
-### HasKey
-
-`func (o *UtcTimestampTimestamp) HasKey() bool`
-
-HasKey returns a boolean if a field has been set.
+HasArguments returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

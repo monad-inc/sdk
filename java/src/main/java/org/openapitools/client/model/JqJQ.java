@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.JqArgumentsConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,56 +49,32 @@ import org.openapitools.client.JSON;
 /**
  * JqJQ
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T16:15:28.735310203Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T20:36:25.519329063Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class JqJQ {
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
+  public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
+  @SerializedName(SERIALIZED_NAME_ARGUMENTS)
   @javax.annotation.Nullable
-  private String key;
-
-  public static final String SERIALIZED_NAME_QUERY = "query";
-  @SerializedName(SERIALIZED_NAME_QUERY)
-  @javax.annotation.Nullable
-  private String query;
+  private JqArgumentsConfig arguments;
 
   public JqJQ() {
   }
 
-  public JqJQ key(@javax.annotation.Nullable String key) {
-    this.key = key;
+  public JqJQ arguments(@javax.annotation.Nullable JqArgumentsConfig arguments) {
+    this.arguments = arguments;
     return this;
   }
 
   /**
-   * The key to store the JQ query result under. If this is not provided the output will be the result of the JQ query.
-   * @return key
+   * Get arguments
+   * @return arguments
    */
   @javax.annotation.Nullable
-  public String getKey() {
-    return key;
+  public JqArgumentsConfig getArguments() {
+    return arguments;
   }
 
-  public void setKey(@javax.annotation.Nullable String key) {
-    this.key = key;
-  }
-
-
-  public JqJQ query(@javax.annotation.Nullable String query) {
-    this.query = query;
-    return this;
-  }
-
-  /**
-   * The JQ query to apply to the record
-   * @return query
-   */
-  @javax.annotation.Nullable
-  public String getQuery() {
-    return query;
-  }
-
-  public void setQuery(@javax.annotation.Nullable String query) {
-    this.query = query;
+  public void setArguments(@javax.annotation.Nullable JqArgumentsConfig arguments) {
+    this.arguments = arguments;
   }
 
 
@@ -111,21 +88,19 @@ public class JqJQ {
       return false;
     }
     JqJQ jqJQ = (JqJQ) o;
-    return Objects.equals(this.key, jqJQ.key) &&
-        Objects.equals(this.query, jqJQ.query);
+    return Objects.equals(this.arguments, jqJQ.arguments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, query);
+    return Objects.hash(arguments);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class JqJQ {\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    query: ").append(toIndentedString(query)).append("\n");
+    sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -147,7 +122,7 @@ public class JqJQ {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("key", "query"));
+    openapiFields = new HashSet<String>(Arrays.asList("arguments"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -174,11 +149,9 @@ public class JqJQ {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
-      }
-      if ((jsonObj.get("query") != null && !jsonObj.get("query").isJsonNull()) && !jsonObj.get("query").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
+      // validate the optional field `arguments`
+      if (jsonObj.get("arguments") != null && !jsonObj.get("arguments").isJsonNull()) {
+        JqArgumentsConfig.validateJsonElement(jsonObj.get("arguments"));
       }
   }
 

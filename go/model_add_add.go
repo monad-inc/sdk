@@ -20,9 +20,7 @@ var _ MappedNullable = &AddAdd{}
 
 // AddAdd struct for AddAdd
 type AddAdd struct {
-	// The key to add to the record
-	Key *string `json:"key,omitempty"`
-	Value interface{} `json:"value,omitempty"`
+	Arguments *AddArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewAddAdd instantiates a new AddAdd object
@@ -42,69 +40,36 @@ func NewAddAddWithDefaults() *AddAdd {
 	return &this
 }
 
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *AddAdd) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *AddAdd) GetArguments() AddArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret AddArgumentsConfig
 		return ret
 	}
-	return *o.Key
+	return *o.Arguments
 }
 
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddAdd) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
+func (o *AddAdd) GetArgumentsOk() (*AddArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Key, true
+	return o.Arguments, true
 }
 
-// HasKey returns a boolean if a field has been set.
-func (o *AddAdd) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
+// HasArguments returns a boolean if a field has been set.
+func (o *AddAdd) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *AddAdd) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddAdd) GetValue() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddAdd) GetValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return &o.Value, true
-}
-
-// HasValue returns a boolean if a field has been set.
-func (o *AddAdd) HasValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
-// SetValue gets a reference to the given interface{} and assigns it to the Value field.
-func (o *AddAdd) SetValue(v interface{}) {
-	o.Value = v
+// SetArguments gets a reference to the given AddArgumentsConfig and assigns it to the Arguments field.
+func (o *AddAdd) SetArguments(v AddArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o AddAdd) MarshalJSON() ([]byte, error) {
@@ -117,11 +82,8 @@ func (o AddAdd) MarshalJSON() ([]byte, error) {
 
 func (o AddAdd) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
-	}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

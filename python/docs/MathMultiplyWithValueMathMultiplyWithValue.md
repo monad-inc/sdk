@@ -5,9 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** | The Key value to multiply | [optional] 
-**new_key** | **str** | The key to store the result of the multiplication | [optional] 
-**value** | **object** |  | [optional] 
+**arguments** | [**MathMultiplyWithValueArgumentsConfig**](MathMultiplyWithValueArgumentsConfig.md) |  | [optional] 
 
 ## Example
 

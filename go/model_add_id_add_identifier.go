@@ -20,10 +20,7 @@ var _ MappedNullable = &AddIdAddIdentifier{}
 
 // AddIdAddIdentifier struct for AddIdAddIdentifier
 type AddIdAddIdentifier struct {
-	// The key to add to the record with id value
-	Key *string `json:"key,omitempty"`
-	// The type of the identifier
-	Type *string `json:"type,omitempty"`
+	Arguments *AddIdArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewAddIdAddIdentifier instantiates a new AddIdAddIdentifier object
@@ -43,68 +40,36 @@ func NewAddIdAddIdentifierWithDefaults() *AddIdAddIdentifier {
 	return &this
 }
 
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *AddIdAddIdentifier) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *AddIdAddIdentifier) GetArguments() AddIdArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret AddIdArgumentsConfig
 		return ret
 	}
-	return *o.Key
+	return *o.Arguments
 }
 
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddIdAddIdentifier) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
+func (o *AddIdAddIdentifier) GetArgumentsOk() (*AddIdArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Key, true
+	return o.Arguments, true
 }
 
-// HasKey returns a boolean if a field has been set.
-func (o *AddIdAddIdentifier) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
+// HasArguments returns a boolean if a field has been set.
+func (o *AddIdAddIdentifier) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *AddIdAddIdentifier) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *AddIdAddIdentifier) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddIdAddIdentifier) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// HasType returns a boolean if a field has been set.
-func (o *AddIdAddIdentifier) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *AddIdAddIdentifier) SetType(v string) {
-	o.Type = &v
+// SetArguments gets a reference to the given AddIdArgumentsConfig and assigns it to the Arguments field.
+func (o *AddIdAddIdentifier) SetArguments(v AddIdArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o AddIdAddIdentifier) MarshalJSON() ([]byte, error) {
@@ -117,11 +82,8 @@ func (o AddIdAddIdentifier) MarshalJSON() ([]byte, error) {
 
 func (o AddIdAddIdentifier) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
-	}
-	if !IsNil(o.Type) {
-		toSerialize["type"] = o.Type
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

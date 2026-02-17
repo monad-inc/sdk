@@ -20,9 +20,7 @@ var _ MappedNullable = &DropKeyWhereValueEqDropKeyWhereValueEq{}
 
 // DropKeyWhereValueEqDropKeyWhereValueEq struct for DropKeyWhereValueEqDropKeyWhereValueEq
 type DropKeyWhereValueEqDropKeyWhereValueEq struct {
-	// The key to drop from the record
-	Key *string `json:"key,omitempty"`
-	Value interface{} `json:"value,omitempty"`
+	Arguments *DropKeyWhereValueEqArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewDropKeyWhereValueEqDropKeyWhereValueEq instantiates a new DropKeyWhereValueEqDropKeyWhereValueEq object
@@ -42,69 +40,36 @@ func NewDropKeyWhereValueEqDropKeyWhereValueEqWithDefaults() *DropKeyWhereValueE
 	return &this
 }
 
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *DropKeyWhereValueEqDropKeyWhereValueEq) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *DropKeyWhereValueEqDropKeyWhereValueEq) GetArguments() DropKeyWhereValueEqArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret DropKeyWhereValueEqArgumentsConfig
 		return ret
 	}
-	return *o.Key
+	return *o.Arguments
 }
 
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DropKeyWhereValueEqDropKeyWhereValueEq) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
+func (o *DropKeyWhereValueEqDropKeyWhereValueEq) GetArgumentsOk() (*DropKeyWhereValueEqArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Key, true
+	return o.Arguments, true
 }
 
-// HasKey returns a boolean if a field has been set.
-func (o *DropKeyWhereValueEqDropKeyWhereValueEq) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
+// HasArguments returns a boolean if a field has been set.
+func (o *DropKeyWhereValueEqDropKeyWhereValueEq) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *DropKeyWhereValueEqDropKeyWhereValueEq) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DropKeyWhereValueEqDropKeyWhereValueEq) GetValue() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DropKeyWhereValueEqDropKeyWhereValueEq) GetValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return &o.Value, true
-}
-
-// HasValue returns a boolean if a field has been set.
-func (o *DropKeyWhereValueEqDropKeyWhereValueEq) HasValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
-// SetValue gets a reference to the given interface{} and assigns it to the Value field.
-func (o *DropKeyWhereValueEqDropKeyWhereValueEq) SetValue(v interface{}) {
-	o.Value = v
+// SetArguments gets a reference to the given DropKeyWhereValueEqArgumentsConfig and assigns it to the Arguments field.
+func (o *DropKeyWhereValueEqDropKeyWhereValueEq) SetArguments(v DropKeyWhereValueEqArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o DropKeyWhereValueEqDropKeyWhereValueEq) MarshalJSON() ([]byte, error) {
@@ -117,11 +82,8 @@ func (o DropKeyWhereValueEqDropKeyWhereValueEq) MarshalJSON() ([]byte, error) {
 
 func (o DropKeyWhereValueEqDropKeyWhereValueEq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
-	}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

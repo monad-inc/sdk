@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** | The key to drop from the record | [optional] 
+**arguments** | [**DropKeyArgumentsConfig**](DropKeyArgumentsConfig.md) |  | [optional] 
 
 ## Example
 

@@ -10,17 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class RenameKeyRenameKey {
-    /**
-    * The key to rename
-    */
-    'key'?: string;
-    /**
-    * The new key to rename to
-    */
-    'newKey'?: string;
+    'arguments'?: RenameKeyArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -28,15 +22,9 @@ export class RenameKeyRenameKey {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "key",
-            "baseName": "key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "newKey",
-            "baseName": "new_key",
-            "type": "string",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "RenameKeyArgumentsConfig",
             "format": ""
         }    ];
 

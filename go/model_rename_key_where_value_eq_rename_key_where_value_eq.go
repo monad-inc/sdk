@@ -20,11 +20,7 @@ var _ MappedNullable = &RenameKeyWhereValueEqRenameKeyWhereValueEq{}
 
 // RenameKeyWhereValueEqRenameKeyWhereValueEq struct for RenameKeyWhereValueEqRenameKeyWhereValueEq
 type RenameKeyWhereValueEqRenameKeyWhereValueEq struct {
-	// The key to rename
-	Key *string `json:"key,omitempty"`
-	// The new key to rename to
-	NewKey *string `json:"new_key,omitempty"`
-	Value interface{} `json:"value,omitempty"`
+	Arguments *RenameKeyWhereValueEqArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewRenameKeyWhereValueEqRenameKeyWhereValueEq instantiates a new RenameKeyWhereValueEqRenameKeyWhereValueEq object
@@ -44,101 +40,36 @@ func NewRenameKeyWhereValueEqRenameKeyWhereValueEqWithDefaults() *RenameKeyWhere
 	return &this
 }
 
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetArguments() RenameKeyWhereValueEqArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret RenameKeyWhereValueEqArgumentsConfig
 		return ret
 	}
-	return *o.Key
+	return *o.Arguments
 }
 
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
+func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetArgumentsOk() (*RenameKeyWhereValueEqArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Key, true
+	return o.Arguments, true
 }
 
-// HasKey returns a boolean if a field has been set.
-func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
+// HasArguments returns a boolean if a field has been set.
+func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetNewKey returns the NewKey field value if set, zero value otherwise.
-func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetNewKey() string {
-	if o == nil || IsNil(o.NewKey) {
-		var ret string
-		return ret
-	}
-	return *o.NewKey
-}
-
-// GetNewKeyOk returns a tuple with the NewKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetNewKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.NewKey) {
-		return nil, false
-	}
-	return o.NewKey, true
-}
-
-// HasNewKey returns a boolean if a field has been set.
-func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) HasNewKey() bool {
-	if o != nil && !IsNil(o.NewKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetNewKey gets a reference to the given string and assigns it to the NewKey field.
-func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) SetNewKey(v string) {
-	o.NewKey = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetValue() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return &o.Value, true
-}
-
-// HasValue returns a boolean if a field has been set.
-func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) HasValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
-// SetValue gets a reference to the given interface{} and assigns it to the Value field.
-func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) SetValue(v interface{}) {
-	o.Value = v
+// SetArguments gets a reference to the given RenameKeyWhereValueEqArgumentsConfig and assigns it to the Arguments field.
+func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) SetArguments(v RenameKeyWhereValueEqArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o RenameKeyWhereValueEqRenameKeyWhereValueEq) MarshalJSON() ([]byte, error) {
@@ -151,14 +82,8 @@ func (o RenameKeyWhereValueEqRenameKeyWhereValueEq) MarshalJSON() ([]byte, error
 
 func (o RenameKeyWhereValueEqRenameKeyWhereValueEq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
-	}
-	if !IsNil(o.NewKey) {
-		toSerialize["new_key"] = o.NewKey
-	}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

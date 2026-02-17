@@ -10,17 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class DuplicateKeyValueToKeyDuplicateKeyValueToKey {
-    /**
-    * The key to duplicate from the record
-    */
-    'key'?: string;
-    /**
-    * The new key to duplicate the value to
-    */
-    'newKey'?: string;
+    'arguments'?: DuplicateKeyValueToKeyArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -28,15 +22,9 @@ export class DuplicateKeyValueToKeyDuplicateKeyValueToKey {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "key",
-            "baseName": "key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "newKey",
-            "baseName": "new_key",
-            "type": "string",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "DuplicateKeyValueToKeyArgumentsConfig",
             "format": ""
         }    ];
 

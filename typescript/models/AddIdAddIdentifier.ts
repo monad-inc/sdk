@@ -10,17 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { AddIdArgumentsConfig } from '../models/AddIdArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class AddIdAddIdentifier {
-    /**
-    * The key to add to the record with id value
-    */
-    'key'?: string;
-    /**
-    * The type of the identifier
-    */
-    'type'?: string;
+    'arguments'?: AddIdArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -28,15 +22,9 @@ export class AddIdAddIdentifier {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "key",
-            "baseName": "key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "type",
-            "baseName": "type",
-            "type": "string",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "AddIdArgumentsConfig",
             "format": ""
         }    ];
 

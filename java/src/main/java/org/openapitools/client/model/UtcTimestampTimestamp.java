@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.UtcTimestampArgumentsConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,56 +49,32 @@ import org.openapitools.client.JSON;
 /**
  * UtcTimestampTimestamp
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T16:15:28.735310203Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T20:36:25.519329063Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class UtcTimestampTimestamp {
-  public static final String SERIALIZED_NAME_FORMAT = "format";
-  @SerializedName(SERIALIZED_NAME_FORMAT)
+  public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
+  @SerializedName(SERIALIZED_NAME_ARGUMENTS)
   @javax.annotation.Nullable
-  private String format;
-
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
-  @javax.annotation.Nullable
-  private String key;
+  private UtcTimestampArgumentsConfig arguments;
 
   public UtcTimestampTimestamp() {
   }
 
-  public UtcTimestampTimestamp format(@javax.annotation.Nullable String format) {
-    this.format = format;
+  public UtcTimestampTimestamp arguments(@javax.annotation.Nullable UtcTimestampArgumentsConfig arguments) {
+    this.arguments = arguments;
     return this;
   }
 
   /**
-   * The format of the timestamp
-   * @return format
+   * Get arguments
+   * @return arguments
    */
   @javax.annotation.Nullable
-  public String getFormat() {
-    return format;
+  public UtcTimestampArgumentsConfig getArguments() {
+    return arguments;
   }
 
-  public void setFormat(@javax.annotation.Nullable String format) {
-    this.format = format;
-  }
-
-
-  public UtcTimestampTimestamp key(@javax.annotation.Nullable String key) {
-    this.key = key;
-    return this;
-  }
-
-  /**
-   * The key to store the timestamp in
-   * @return key
-   */
-  @javax.annotation.Nullable
-  public String getKey() {
-    return key;
-  }
-
-  public void setKey(@javax.annotation.Nullable String key) {
-    this.key = key;
+  public void setArguments(@javax.annotation.Nullable UtcTimestampArgumentsConfig arguments) {
+    this.arguments = arguments;
   }
 
 
@@ -111,21 +88,19 @@ public class UtcTimestampTimestamp {
       return false;
     }
     UtcTimestampTimestamp utcTimestampTimestamp = (UtcTimestampTimestamp) o;
-    return Objects.equals(this.format, utcTimestampTimestamp.format) &&
-        Objects.equals(this.key, utcTimestampTimestamp.key);
+    return Objects.equals(this.arguments, utcTimestampTimestamp.arguments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(format, key);
+    return Objects.hash(arguments);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UtcTimestampTimestamp {\n");
-    sb.append("    format: ").append(toIndentedString(format)).append("\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -147,7 +122,7 @@ public class UtcTimestampTimestamp {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("format", "key"));
+    openapiFields = new HashSet<String>(Arrays.asList("arguments"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -174,11 +149,9 @@ public class UtcTimestampTimestamp {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("format") != null && !jsonObj.get("format").isJsonNull()) && !jsonObj.get("format").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
-      }
-      if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+      // validate the optional field `arguments`
+      if (jsonObj.get("arguments") != null && !jsonObj.get("arguments").isJsonNull()) {
+        UtcTimestampArgumentsConfig.validateJsonElement(jsonObj.get("arguments"));
       }
   }
 

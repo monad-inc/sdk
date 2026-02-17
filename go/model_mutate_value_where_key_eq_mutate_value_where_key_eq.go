@@ -20,9 +20,7 @@ var _ MappedNullable = &MutateValueWhereKeyEqMutateValueWhereKeyEq{}
 
 // MutateValueWhereKeyEqMutateValueWhereKeyEq struct for MutateValueWhereKeyEqMutateValueWhereKeyEq
 type MutateValueWhereKeyEqMutateValueWhereKeyEq struct {
-	// The key to mutate
-	Key *string `json:"key,omitempty"`
-	Value interface{} `json:"value,omitempty"`
+	Arguments *MutateValueWhereKeyEqArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewMutateValueWhereKeyEqMutateValueWhereKeyEq instantiates a new MutateValueWhereKeyEqMutateValueWhereKeyEq object
@@ -42,69 +40,36 @@ func NewMutateValueWhereKeyEqMutateValueWhereKeyEqWithDefaults() *MutateValueWhe
 	return &this
 }
 
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) GetArguments() MutateValueWhereKeyEqArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret MutateValueWhereKeyEqArgumentsConfig
 		return ret
 	}
-	return *o.Key
+	return *o.Arguments
 }
 
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
+func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) GetArgumentsOk() (*MutateValueWhereKeyEqArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Key, true
+	return o.Arguments, true
 }
 
-// HasKey returns a boolean if a field has been set.
-func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
+// HasArguments returns a boolean if a field has been set.
+func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) GetValue() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) GetValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return &o.Value, true
-}
-
-// HasValue returns a boolean if a field has been set.
-func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) HasValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
-// SetValue gets a reference to the given interface{} and assigns it to the Value field.
-func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) SetValue(v interface{}) {
-	o.Value = v
+// SetArguments gets a reference to the given MutateValueWhereKeyEqArgumentsConfig and assigns it to the Arguments field.
+func (o *MutateValueWhereKeyEqMutateValueWhereKeyEq) SetArguments(v MutateValueWhereKeyEqArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o MutateValueWhereKeyEqMutateValueWhereKeyEq) MarshalJSON() ([]byte, error) {
@@ -117,11 +82,8 @@ func (o MutateValueWhereKeyEqMutateValueWhereKeyEq) MarshalJSON() ([]byte, error
 
 func (o MutateValueWhereKeyEqMutateValueWhereKeyEq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
-	}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

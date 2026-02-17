@@ -20,8 +20,7 @@ var _ MappedNullable = &FlattenallFlattenAll{}
 
 // FlattenallFlattenAll struct for FlattenallFlattenAll
 type FlattenallFlattenAll struct {
-	// The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1
-	Delimiter *string `json:"delimiter,omitempty"`
+	Arguments *FlattenallArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewFlattenallFlattenAll instantiates a new FlattenallFlattenAll object
@@ -41,36 +40,36 @@ func NewFlattenallFlattenAllWithDefaults() *FlattenallFlattenAll {
 	return &this
 }
 
-// GetDelimiter returns the Delimiter field value if set, zero value otherwise.
-func (o *FlattenallFlattenAll) GetDelimiter() string {
-	if o == nil || IsNil(o.Delimiter) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *FlattenallFlattenAll) GetArguments() FlattenallArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret FlattenallArgumentsConfig
 		return ret
 	}
-	return *o.Delimiter
+	return *o.Arguments
 }
 
-// GetDelimiterOk returns a tuple with the Delimiter field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlattenallFlattenAll) GetDelimiterOk() (*string, bool) {
-	if o == nil || IsNil(o.Delimiter) {
+func (o *FlattenallFlattenAll) GetArgumentsOk() (*FlattenallArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Delimiter, true
+	return o.Arguments, true
 }
 
-// HasDelimiter returns a boolean if a field has been set.
-func (o *FlattenallFlattenAll) HasDelimiter() bool {
-	if o != nil && !IsNil(o.Delimiter) {
+// HasArguments returns a boolean if a field has been set.
+func (o *FlattenallFlattenAll) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetDelimiter gets a reference to the given string and assigns it to the Delimiter field.
-func (o *FlattenallFlattenAll) SetDelimiter(v string) {
-	o.Delimiter = &v
+// SetArguments gets a reference to the given FlattenallArgumentsConfig and assigns it to the Arguments field.
+func (o *FlattenallFlattenAll) SetArguments(v FlattenallArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o FlattenallFlattenAll) MarshalJSON() ([]byte, error) {
@@ -83,8 +82,8 @@ func (o FlattenallFlattenAll) MarshalJSON() ([]byte, error) {
 
 func (o FlattenallFlattenAll) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Delimiter) {
-		toSerialize["delimiter"] = o.Delimiter
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

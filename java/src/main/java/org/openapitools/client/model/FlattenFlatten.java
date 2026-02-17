@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.FlattenArgumentsConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,56 +49,32 @@ import org.openapitools.client.JSON;
 /**
  * FlattenFlatten
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T16:15:28.735310203Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T20:36:25.519329063Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class FlattenFlatten {
-  public static final String SERIALIZED_NAME_DELIMITER = "delimiter";
-  @SerializedName(SERIALIZED_NAME_DELIMITER)
+  public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
+  @SerializedName(SERIALIZED_NAME_ARGUMENTS)
   @javax.annotation.Nullable
-  private String delimiter;
-
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
-  @javax.annotation.Nullable
-  private String key;
+  private FlattenArgumentsConfig arguments;
 
   public FlattenFlatten() {
   }
 
-  public FlattenFlatten delimiter(@javax.annotation.Nullable String delimiter) {
-    this.delimiter = delimiter;
+  public FlattenFlatten arguments(@javax.annotation.Nullable FlattenArgumentsConfig arguments) {
+    this.arguments = arguments;
     return this;
   }
 
   /**
-   * The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1
-   * @return delimiter
+   * Get arguments
+   * @return arguments
    */
   @javax.annotation.Nullable
-  public String getDelimiter() {
-    return delimiter;
+  public FlattenArgumentsConfig getArguments() {
+    return arguments;
   }
 
-  public void setDelimiter(@javax.annotation.Nullable String delimiter) {
-    this.delimiter = delimiter;
-  }
-
-
-  public FlattenFlatten key(@javax.annotation.Nullable String key) {
-    this.key = key;
-    return this;
-  }
-
-  /**
-   * The key to flatten
-   * @return key
-   */
-  @javax.annotation.Nullable
-  public String getKey() {
-    return key;
-  }
-
-  public void setKey(@javax.annotation.Nullable String key) {
-    this.key = key;
+  public void setArguments(@javax.annotation.Nullable FlattenArgumentsConfig arguments) {
+    this.arguments = arguments;
   }
 
 
@@ -111,21 +88,19 @@ public class FlattenFlatten {
       return false;
     }
     FlattenFlatten flattenFlatten = (FlattenFlatten) o;
-    return Objects.equals(this.delimiter, flattenFlatten.delimiter) &&
-        Objects.equals(this.key, flattenFlatten.key);
+    return Objects.equals(this.arguments, flattenFlatten.arguments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(delimiter, key);
+    return Objects.hash(arguments);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class FlattenFlatten {\n");
-    sb.append("    delimiter: ").append(toIndentedString(delimiter)).append("\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -147,7 +122,7 @@ public class FlattenFlatten {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("delimiter", "key"));
+    openapiFields = new HashSet<String>(Arrays.asList("arguments"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -174,11 +149,9 @@ public class FlattenFlatten {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("delimiter") != null && !jsonObj.get("delimiter").isJsonNull()) && !jsonObj.get("delimiter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `delimiter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("delimiter").toString()));
-      }
-      if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+      // validate the optional field `arguments`
+      if (jsonObj.get("arguments") != null && !jsonObj.get("arguments").isJsonNull()) {
+        FlattenArgumentsConfig.validateJsonElement(jsonObj.get("arguments"));
       }
   }
 

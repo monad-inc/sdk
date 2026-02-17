@@ -10,18 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { MathMultiplyWithValueArgumentsConfig } from '../models/MathMultiplyWithValueArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class MathMultiplyWithValueMathMultiplyWithValue {
-    /**
-    * The Key value to multiply
-    */
-    'key'?: string;
-    /**
-    * The key to store the result of the multiplication
-    */
-    'newKey'?: string;
-    'value'?: any | null;
+    'arguments'?: MathMultiplyWithValueArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,21 +22,9 @@ export class MathMultiplyWithValueMathMultiplyWithValue {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "key",
-            "baseName": "key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "newKey",
-            "baseName": "new_key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "value",
-            "baseName": "value",
-            "type": "any",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "MathMultiplyWithValueArgumentsConfig",
             "format": ""
         }    ];
 

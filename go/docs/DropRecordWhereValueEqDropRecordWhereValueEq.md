@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Key** | Pointer to **string** | The key which values should be checked | [optional] 
-**Value** | Pointer to **interface{}** |  | [optional] 
+**Arguments** | Pointer to [**DropRecordWhereValueEqArgumentsConfig**](DropRecordWhereValueEqArgumentsConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -26,66 +25,31 @@ NewDropRecordWhereValueEqDropRecordWhereValueEqWithDefaults instantiates a new D
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetKey
+### GetArguments
 
-`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) GetKey() string`
+`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) GetArguments() DropRecordWhereValueEqArgumentsConfig`
 
-GetKey returns the Key field if non-nil, zero value otherwise.
+GetArguments returns the Arguments field if non-nil, zero value otherwise.
 
-### GetKeyOk
+### GetArgumentsOk
 
-`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) GetKeyOk() (*string, bool)`
+`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) GetArgumentsOk() (*DropRecordWhereValueEqArgumentsConfig, bool)`
 
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+GetArgumentsOk returns a tuple with the Arguments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKey
+### SetArguments
 
-`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) SetKey(v string)`
+`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) SetArguments(v DropRecordWhereValueEqArgumentsConfig)`
 
-SetKey sets Key field to given value.
+SetArguments sets Arguments field to given value.
 
-### HasKey
+### HasArguments
 
-`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) HasKey() bool`
+`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) HasArguments() bool`
 
-HasKey returns a boolean if a field has been set.
+HasArguments returns a boolean if a field has been set.
 
-### GetValue
-
-`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) GetValue() interface{}`
-
-GetValue returns the Value field if non-nil, zero value otherwise.
-
-### GetValueOk
-
-`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) GetValueOk() (*interface{}, bool)`
-
-GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValue
-
-`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) SetValue(v interface{})`
-
-SetValue sets Value field to given value.
-
-### HasValue
-
-`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) HasValue() bool`
-
-HasValue returns a boolean if a field has been set.
-
-### SetValueNil
-
-`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) SetValueNil(b bool)`
-
- SetValueNil sets the value for Value to be an explicit nil
-
-### UnsetValue
-`func (o *DropRecordWhereValueEqDropRecordWhereValueEq) UnsetValue()`
-
-UnsetValue ensures that no value is present for Value, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

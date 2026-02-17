@@ -20,10 +20,7 @@ var _ MappedNullable = &JqJQ{}
 
 // JqJQ struct for JqJQ
 type JqJQ struct {
-	// The key to store the JQ query result under. If this is not provided the output will be the result of the JQ query.
-	Key *string `json:"key,omitempty"`
-	// The JQ query to apply to the record
-	Query *string `json:"query,omitempty"`
+	Arguments *JqArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewJqJQ instantiates a new JqJQ object
@@ -43,68 +40,36 @@ func NewJqJQWithDefaults() *JqJQ {
 	return &this
 }
 
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *JqJQ) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *JqJQ) GetArguments() JqArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret JqArgumentsConfig
 		return ret
 	}
-	return *o.Key
+	return *o.Arguments
 }
 
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *JqJQ) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
+func (o *JqJQ) GetArgumentsOk() (*JqArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Key, true
+	return o.Arguments, true
 }
 
-// HasKey returns a boolean if a field has been set.
-func (o *JqJQ) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
+// HasArguments returns a boolean if a field has been set.
+func (o *JqJQ) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *JqJQ) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetQuery returns the Query field value if set, zero value otherwise.
-func (o *JqJQ) GetQuery() string {
-	if o == nil || IsNil(o.Query) {
-		var ret string
-		return ret
-	}
-	return *o.Query
-}
-
-// GetQueryOk returns a tuple with the Query field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *JqJQ) GetQueryOk() (*string, bool) {
-	if o == nil || IsNil(o.Query) {
-		return nil, false
-	}
-	return o.Query, true
-}
-
-// HasQuery returns a boolean if a field has been set.
-func (o *JqJQ) HasQuery() bool {
-	if o != nil && !IsNil(o.Query) {
-		return true
-	}
-
-	return false
-}
-
-// SetQuery gets a reference to the given string and assigns it to the Query field.
-func (o *JqJQ) SetQuery(v string) {
-	o.Query = &v
+// SetArguments gets a reference to the given JqArgumentsConfig and assigns it to the Arguments field.
+func (o *JqJQ) SetArguments(v JqArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o JqJQ) MarshalJSON() ([]byte, error) {
@@ -117,11 +82,8 @@ func (o JqJQ) MarshalJSON() ([]byte, error) {
 
 func (o JqJQ) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
-	}
-	if !IsNil(o.Query) {
-		toSerialize["query"] = o.Query
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

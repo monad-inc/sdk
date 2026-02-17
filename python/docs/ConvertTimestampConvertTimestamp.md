@@ -5,14 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**source_format** | **str** | Required: Format of source timestamp | [optional] 
-**source_format_custom** | **str** | Optional: Custom Go time layout (only if SourceFormat &#x3D; \&quot;custom\&quot;) | [optional] 
-**source_key** | **str** | Required: JSONPath to source timestamp field | [optional] 
-**source_timezone** | **str** | Optional: Source timezone (default: UTC) | [optional] 
-**target_format** | **str** | Required: Target format | [optional] 
-**target_format_custom** | **str** | Optional: Custom target format (only if TargetFormat &#x3D; \&quot;custom\&quot;) | [optional] 
-**target_key** | **str** | Optional: Target field (if empty, overwrites SourceKey) | [optional] 
-**target_timezone** | **str** | Optional: Target timezone (default: UTC) | [optional] 
+**arguments** | [**ConvertTimestampArgumentsConfig**](ConvertTimestampArgumentsConfig.md) |  | [optional] 
 
 ## Example
 

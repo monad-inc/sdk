@@ -20,22 +20,7 @@ var _ MappedNullable = &ConvertTimestampConvertTimestamp{}
 
 // ConvertTimestampConvertTimestamp struct for ConvertTimestampConvertTimestamp
 type ConvertTimestampConvertTimestamp struct {
-	// Required: Format of source timestamp
-	SourceFormat *string `json:"source_format,omitempty"`
-	// Optional: Custom Go time layout (only if SourceFormat = \"custom\")
-	SourceFormatCustom *string `json:"source_format_custom,omitempty"`
-	// Required: JSONPath to source timestamp field
-	SourceKey *string `json:"source_key,omitempty"`
-	// Optional: Source timezone (default: UTC)
-	SourceTimezone *string `json:"source_timezone,omitempty"`
-	// Required: Target format
-	TargetFormat *string `json:"target_format,omitempty"`
-	// Optional: Custom target format (only if TargetFormat = \"custom\")
-	TargetFormatCustom *string `json:"target_format_custom,omitempty"`
-	// Optional: Target field (if empty, overwrites SourceKey)
-	TargetKey *string `json:"target_key,omitempty"`
-	// Optional: Target timezone (default: UTC)
-	TargetTimezone *string `json:"target_timezone,omitempty"`
+	Arguments *ConvertTimestampArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewConvertTimestampConvertTimestamp instantiates a new ConvertTimestampConvertTimestamp object
@@ -55,260 +40,36 @@ func NewConvertTimestampConvertTimestampWithDefaults() *ConvertTimestampConvertT
 	return &this
 }
 
-// GetSourceFormat returns the SourceFormat field value if set, zero value otherwise.
-func (o *ConvertTimestampConvertTimestamp) GetSourceFormat() string {
-	if o == nil || IsNil(o.SourceFormat) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *ConvertTimestampConvertTimestamp) GetArguments() ConvertTimestampArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret ConvertTimestampArgumentsConfig
 		return ret
 	}
-	return *o.SourceFormat
+	return *o.Arguments
 }
 
-// GetSourceFormatOk returns a tuple with the SourceFormat field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConvertTimestampConvertTimestamp) GetSourceFormatOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceFormat) {
+func (o *ConvertTimestampConvertTimestamp) GetArgumentsOk() (*ConvertTimestampArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.SourceFormat, true
+	return o.Arguments, true
 }
 
-// HasSourceFormat returns a boolean if a field has been set.
-func (o *ConvertTimestampConvertTimestamp) HasSourceFormat() bool {
-	if o != nil && !IsNil(o.SourceFormat) {
+// HasArguments returns a boolean if a field has been set.
+func (o *ConvertTimestampConvertTimestamp) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetSourceFormat gets a reference to the given string and assigns it to the SourceFormat field.
-func (o *ConvertTimestampConvertTimestamp) SetSourceFormat(v string) {
-	o.SourceFormat = &v
-}
-
-// GetSourceFormatCustom returns the SourceFormatCustom field value if set, zero value otherwise.
-func (o *ConvertTimestampConvertTimestamp) GetSourceFormatCustom() string {
-	if o == nil || IsNil(o.SourceFormatCustom) {
-		var ret string
-		return ret
-	}
-	return *o.SourceFormatCustom
-}
-
-// GetSourceFormatCustomOk returns a tuple with the SourceFormatCustom field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ConvertTimestampConvertTimestamp) GetSourceFormatCustomOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceFormatCustom) {
-		return nil, false
-	}
-	return o.SourceFormatCustom, true
-}
-
-// HasSourceFormatCustom returns a boolean if a field has been set.
-func (o *ConvertTimestampConvertTimestamp) HasSourceFormatCustom() bool {
-	if o != nil && !IsNil(o.SourceFormatCustom) {
-		return true
-	}
-
-	return false
-}
-
-// SetSourceFormatCustom gets a reference to the given string and assigns it to the SourceFormatCustom field.
-func (o *ConvertTimestampConvertTimestamp) SetSourceFormatCustom(v string) {
-	o.SourceFormatCustom = &v
-}
-
-// GetSourceKey returns the SourceKey field value if set, zero value otherwise.
-func (o *ConvertTimestampConvertTimestamp) GetSourceKey() string {
-	if o == nil || IsNil(o.SourceKey) {
-		var ret string
-		return ret
-	}
-	return *o.SourceKey
-}
-
-// GetSourceKeyOk returns a tuple with the SourceKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ConvertTimestampConvertTimestamp) GetSourceKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceKey) {
-		return nil, false
-	}
-	return o.SourceKey, true
-}
-
-// HasSourceKey returns a boolean if a field has been set.
-func (o *ConvertTimestampConvertTimestamp) HasSourceKey() bool {
-	if o != nil && !IsNil(o.SourceKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetSourceKey gets a reference to the given string and assigns it to the SourceKey field.
-func (o *ConvertTimestampConvertTimestamp) SetSourceKey(v string) {
-	o.SourceKey = &v
-}
-
-// GetSourceTimezone returns the SourceTimezone field value if set, zero value otherwise.
-func (o *ConvertTimestampConvertTimestamp) GetSourceTimezone() string {
-	if o == nil || IsNil(o.SourceTimezone) {
-		var ret string
-		return ret
-	}
-	return *o.SourceTimezone
-}
-
-// GetSourceTimezoneOk returns a tuple with the SourceTimezone field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ConvertTimestampConvertTimestamp) GetSourceTimezoneOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceTimezone) {
-		return nil, false
-	}
-	return o.SourceTimezone, true
-}
-
-// HasSourceTimezone returns a boolean if a field has been set.
-func (o *ConvertTimestampConvertTimestamp) HasSourceTimezone() bool {
-	if o != nil && !IsNil(o.SourceTimezone) {
-		return true
-	}
-
-	return false
-}
-
-// SetSourceTimezone gets a reference to the given string and assigns it to the SourceTimezone field.
-func (o *ConvertTimestampConvertTimestamp) SetSourceTimezone(v string) {
-	o.SourceTimezone = &v
-}
-
-// GetTargetFormat returns the TargetFormat field value if set, zero value otherwise.
-func (o *ConvertTimestampConvertTimestamp) GetTargetFormat() string {
-	if o == nil || IsNil(o.TargetFormat) {
-		var ret string
-		return ret
-	}
-	return *o.TargetFormat
-}
-
-// GetTargetFormatOk returns a tuple with the TargetFormat field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ConvertTimestampConvertTimestamp) GetTargetFormatOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetFormat) {
-		return nil, false
-	}
-	return o.TargetFormat, true
-}
-
-// HasTargetFormat returns a boolean if a field has been set.
-func (o *ConvertTimestampConvertTimestamp) HasTargetFormat() bool {
-	if o != nil && !IsNil(o.TargetFormat) {
-		return true
-	}
-
-	return false
-}
-
-// SetTargetFormat gets a reference to the given string and assigns it to the TargetFormat field.
-func (o *ConvertTimestampConvertTimestamp) SetTargetFormat(v string) {
-	o.TargetFormat = &v
-}
-
-// GetTargetFormatCustom returns the TargetFormatCustom field value if set, zero value otherwise.
-func (o *ConvertTimestampConvertTimestamp) GetTargetFormatCustom() string {
-	if o == nil || IsNil(o.TargetFormatCustom) {
-		var ret string
-		return ret
-	}
-	return *o.TargetFormatCustom
-}
-
-// GetTargetFormatCustomOk returns a tuple with the TargetFormatCustom field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ConvertTimestampConvertTimestamp) GetTargetFormatCustomOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetFormatCustom) {
-		return nil, false
-	}
-	return o.TargetFormatCustom, true
-}
-
-// HasTargetFormatCustom returns a boolean if a field has been set.
-func (o *ConvertTimestampConvertTimestamp) HasTargetFormatCustom() bool {
-	if o != nil && !IsNil(o.TargetFormatCustom) {
-		return true
-	}
-
-	return false
-}
-
-// SetTargetFormatCustom gets a reference to the given string and assigns it to the TargetFormatCustom field.
-func (o *ConvertTimestampConvertTimestamp) SetTargetFormatCustom(v string) {
-	o.TargetFormatCustom = &v
-}
-
-// GetTargetKey returns the TargetKey field value if set, zero value otherwise.
-func (o *ConvertTimestampConvertTimestamp) GetTargetKey() string {
-	if o == nil || IsNil(o.TargetKey) {
-		var ret string
-		return ret
-	}
-	return *o.TargetKey
-}
-
-// GetTargetKeyOk returns a tuple with the TargetKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ConvertTimestampConvertTimestamp) GetTargetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetKey) {
-		return nil, false
-	}
-	return o.TargetKey, true
-}
-
-// HasTargetKey returns a boolean if a field has been set.
-func (o *ConvertTimestampConvertTimestamp) HasTargetKey() bool {
-	if o != nil && !IsNil(o.TargetKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetTargetKey gets a reference to the given string and assigns it to the TargetKey field.
-func (o *ConvertTimestampConvertTimestamp) SetTargetKey(v string) {
-	o.TargetKey = &v
-}
-
-// GetTargetTimezone returns the TargetTimezone field value if set, zero value otherwise.
-func (o *ConvertTimestampConvertTimestamp) GetTargetTimezone() string {
-	if o == nil || IsNil(o.TargetTimezone) {
-		var ret string
-		return ret
-	}
-	return *o.TargetTimezone
-}
-
-// GetTargetTimezoneOk returns a tuple with the TargetTimezone field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ConvertTimestampConvertTimestamp) GetTargetTimezoneOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetTimezone) {
-		return nil, false
-	}
-	return o.TargetTimezone, true
-}
-
-// HasTargetTimezone returns a boolean if a field has been set.
-func (o *ConvertTimestampConvertTimestamp) HasTargetTimezone() bool {
-	if o != nil && !IsNil(o.TargetTimezone) {
-		return true
-	}
-
-	return false
-}
-
-// SetTargetTimezone gets a reference to the given string and assigns it to the TargetTimezone field.
-func (o *ConvertTimestampConvertTimestamp) SetTargetTimezone(v string) {
-	o.TargetTimezone = &v
+// SetArguments gets a reference to the given ConvertTimestampArgumentsConfig and assigns it to the Arguments field.
+func (o *ConvertTimestampConvertTimestamp) SetArguments(v ConvertTimestampArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o ConvertTimestampConvertTimestamp) MarshalJSON() ([]byte, error) {
@@ -321,29 +82,8 @@ func (o ConvertTimestampConvertTimestamp) MarshalJSON() ([]byte, error) {
 
 func (o ConvertTimestampConvertTimestamp) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SourceFormat) {
-		toSerialize["source_format"] = o.SourceFormat
-	}
-	if !IsNil(o.SourceFormatCustom) {
-		toSerialize["source_format_custom"] = o.SourceFormatCustom
-	}
-	if !IsNil(o.SourceKey) {
-		toSerialize["source_key"] = o.SourceKey
-	}
-	if !IsNil(o.SourceTimezone) {
-		toSerialize["source_timezone"] = o.SourceTimezone
-	}
-	if !IsNil(o.TargetFormat) {
-		toSerialize["target_format"] = o.TargetFormat
-	}
-	if !IsNil(o.TargetFormatCustom) {
-		toSerialize["target_format_custom"] = o.TargetFormatCustom
-	}
-	if !IsNil(o.TargetKey) {
-		toSerialize["target_key"] = o.TargetKey
-	}
-	if !IsNil(o.TargetTimezone) {
-		toSerialize["target_timezone"] = o.TargetTimezone
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

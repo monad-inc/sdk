@@ -5,10 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** | The key to add to the record | [optional] 
-**key_to_watch** | **str** | The key to watch for | [optional] 
-**value** | **object** |  | [optional] 
-**value_to_watch** | **object** |  | [optional] 
+**arguments** | [**CreateKeyValueIfKeyValueArgumentsConfig**](CreateKeyValueIfKeyValueArgumentsConfig.md) |  | [optional] 
 
 ## Example
 

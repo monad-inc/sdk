@@ -10,13 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { DropKeyArgumentsConfig } from '../models/DropKeyArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class DropKeyDropKey {
-    /**
-    * The key to drop from the record
-    */
-    'key'?: string;
+    'arguments'?: DropKeyArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -24,9 +22,9 @@ export class DropKeyDropKey {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "key",
-            "baseName": "key",
-            "type": "string",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "DropKeyArgumentsConfig",
             "format": ""
         }    ];
 

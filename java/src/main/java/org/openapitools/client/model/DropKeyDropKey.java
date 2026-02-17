@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.DropKeyArgumentsConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,32 +49,32 @@ import org.openapitools.client.JSON;
 /**
  * DropKeyDropKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T16:15:28.735310203Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T20:36:25.519329063Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class DropKeyDropKey {
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
+  public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
+  @SerializedName(SERIALIZED_NAME_ARGUMENTS)
   @javax.annotation.Nullable
-  private String key;
+  private DropKeyArgumentsConfig arguments;
 
   public DropKeyDropKey() {
   }
 
-  public DropKeyDropKey key(@javax.annotation.Nullable String key) {
-    this.key = key;
+  public DropKeyDropKey arguments(@javax.annotation.Nullable DropKeyArgumentsConfig arguments) {
+    this.arguments = arguments;
     return this;
   }
 
   /**
-   * The key to drop from the record
-   * @return key
+   * Get arguments
+   * @return arguments
    */
   @javax.annotation.Nullable
-  public String getKey() {
-    return key;
+  public DropKeyArgumentsConfig getArguments() {
+    return arguments;
   }
 
-  public void setKey(@javax.annotation.Nullable String key) {
-    this.key = key;
+  public void setArguments(@javax.annotation.Nullable DropKeyArgumentsConfig arguments) {
+    this.arguments = arguments;
   }
 
 
@@ -87,19 +88,19 @@ public class DropKeyDropKey {
       return false;
     }
     DropKeyDropKey dropKeyDropKey = (DropKeyDropKey) o;
-    return Objects.equals(this.key, dropKeyDropKey.key);
+    return Objects.equals(this.arguments, dropKeyDropKey.arguments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key);
+    return Objects.hash(arguments);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DropKeyDropKey {\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -121,7 +122,7 @@ public class DropKeyDropKey {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("key"));
+    openapiFields = new HashSet<String>(Arrays.asList("arguments"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -148,8 +149,9 @@ public class DropKeyDropKey {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+      // validate the optional field `arguments`
+      if (jsonObj.get("arguments") != null && !jsonObj.get("arguments").isJsonNull()) {
+        DropKeyArgumentsConfig.validateJsonElement(jsonObj.get("arguments"));
       }
   }
 

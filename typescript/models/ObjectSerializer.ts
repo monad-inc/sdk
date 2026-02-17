@@ -7,7 +7,9 @@ export * from '../models/ActivitylogsSettingsConfig';
 export * from '../models/ActorsInfoSecretsConfig';
 export * from '../models/ActorsInfoSettingsConfig';
 export * from '../models/AddAdd';
+export * from '../models/AddArgumentsConfig';
 export * from '../models/AddIdAddIdentifier';
+export * from '../models/AddIdArgumentsConfig';
 export * from '../models/AdminLogsSecretsConfig';
 export * from '../models/AdminLogsSettingsConfig';
 export * from '../models/AivenServiceLogsSecretsConfig';
@@ -118,9 +120,11 @@ export * from '../models/CommunityEditionSettingsConfig';
 export * from '../models/CommunityTransformsInternalTransformConfig';
 export * from '../models/CommunityTransformsInternalTransformMetadata';
 export * from '../models/CommunityTransformsInternalTransformsIndex';
+export * from '../models/ConvertTimestampArgumentsConfig';
 export * from '../models/ConvertTimestampConvertTimestamp';
 export * from '../models/CortexXsoarManagementLogsSecretsConfig';
 export * from '../models/CortexXsoarManagementLogsSettingsConfig';
+export * from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
 export * from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 export * from '../models/CriblHttpSecretsConfig';
 export * from '../models/CriblHttpSettingsConfig';
@@ -137,9 +141,13 @@ export * from '../models/DeviceDetailsSecretsConfig';
 export * from '../models/DeviceDetailsSettingsConfig';
 export * from '../models/DevicesSecretsConfig';
 export * from '../models/DevicesSettingsConfig';
+export * from '../models/DropKeyArgumentsConfig';
 export * from '../models/DropKeyDropKey';
+export * from '../models/DropKeyWhereValueEqArgumentsConfig';
 export * from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
+export * from '../models/DropRecordWhereValueEqArgumentsConfig';
 export * from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
+export * from '../models/DuplicateKeyValueToKeyArgumentsConfig';
 export * from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 export * from '../models/ElasticsearchSecretsConfig';
 export * from '../models/ElasticsearchSettingsConfig';
@@ -151,7 +159,9 @@ export * from '../models/EntraIdSettingsConfig';
 export * from '../models/EventSecretsConfig';
 export * from '../models/EventSettingsConfig';
 export * from '../models/FlagsmithFlag';
+export * from '../models/FlattenArgumentsConfig';
 export * from '../models/FlattenFlatten';
+export * from '../models/FlattenallArgumentsConfig';
 export * from '../models/FlattenallFlattenAll';
 export * from '../models/FormatterFormatConfig';
 export * from '../models/FullScansSecretsConfig';
@@ -189,6 +199,7 @@ export * from '../models/IssuesReportSecretsConfig';
 export * from '../models/IssuesReportSettingsConfig';
 export * from '../models/IssuesSecretsConfig';
 export * from '../models/IssuesSettingsConfig';
+export * from '../models/JqArgumentsConfig';
 export * from '../models/JqJQ';
 export * from '../models/JsonJsonFormatter';
 export * from '../models/KmsSettingsConfig';
@@ -201,6 +212,7 @@ export * from '../models/LogAnalyticsQuerySecretsConfig';
 export * from '../models/LogAnalyticsQuerySettingsConfig';
 export * from '../models/LoginSessionsSecretsConfig';
 export * from '../models/LoginSessionsSettingsConfig';
+export * from '../models/MathMultiplyWithValueArgumentsConfig';
 export * from '../models/MathMultiplyWithValueMathMultiplyWithValue';
 export * from '../models/MerakiConfigLogsSecretsConfig';
 export * from '../models/MerakiConfigLogsSettingsConfig';
@@ -273,8 +285,11 @@ export * from '../models/ModelsUserAuthProvider';
 export * from '../models/ModelsUserRoleWithPermissions';
 export * from '../models/MonadGraphqlInputVariable';
 export * from '../models/MonadLogSettingsConfig';
+export * from '../models/MutateTypeArgumentsConfig';
 export * from '../models/MutateTypeMutateType';
+export * from '../models/MutateValueWhereKeyEqAndValueEqArgumentsConfig';
 export * from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
+export * from '../models/MutateValueWhereKeyEqArgumentsConfig';
 export * from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
 export * from '../models/NextGenSiemSecretsConfig';
 export * from '../models/NextGenSiemSettingsConfig';
@@ -322,7 +337,9 @@ export * from '../models/PostmanAuditLogsSecretsConfig';
 export * from '../models/PostmanAuditLogsSettingsConfig';
 export * from '../models/PubsubSecretsConfig';
 export * from '../models/PubsubSettingsConfig';
+export * from '../models/RenameKeyArgumentsConfig';
 export * from '../models/RenameKeyRenameKey';
+export * from '../models/RenameKeyWhereValueEqArgumentsConfig';
 export * from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 export * from '../models/ResourceEvaluationsSettingsConfig';
 export * from '../models/ResponderErrorResponse';
@@ -507,6 +524,7 @@ export * from '../models/UsersInfoSecretsConfig';
 export * from '../models/UsersInfoSettingsConfig';
 export * from '../models/UsersSecretsConfig';
 export * from '../models/UsersSettingsConfig';
+export * from '../models/UtcTimestampArgumentsConfig';
 export * from '../models/UtcTimestampTimestamp';
 export * from '../models/VercelUserEventsSecretsConfig';
 export * from '../models/VercelUserEventsSettingsConfig';
@@ -538,7 +556,9 @@ import { ActivitylogsSettingsConfig } from '../models/ActivitylogsSettingsConfig
 import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddAdd } from '../models/AddAdd';
+import { AddArgumentsConfig } from '../models/AddArgumentsConfig';
 import { AddIdAddIdentifier } from '../models/AddIdAddIdentifier';
+import { AddIdArgumentsConfig } from '../models/AddIdArgumentsConfig';
 import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
 import { AivenServiceLogsSecretsConfig } from '../models/AivenServiceLogsSecretsConfig';
@@ -649,9 +669,11 @@ import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettin
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
+import { ConvertTimestampArgumentsConfig } from '../models/ConvertTimestampArgumentsConfig';
 import { ConvertTimestampConvertTimestamp } from '../models/ConvertTimestampConvertTimestamp';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
 import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
+import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
 import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
 import { CriblHttpSettingsConfig } from '../models/CriblHttpSettingsConfig';
@@ -668,9 +690,13 @@ import { DeviceDetailsSecretsConfig } from '../models/DeviceDetailsSecretsConfig
 import { DeviceDetailsSettingsConfig } from '../models/DeviceDetailsSettingsConfig';
 import { DevicesSecretsConfig } from '../models/DevicesSecretsConfig';
 import { DevicesSettingsConfig } from '../models/DevicesSettingsConfig';
+import { DropKeyArgumentsConfig } from '../models/DropKeyArgumentsConfig';
 import { DropKeyDropKey } from '../models/DropKeyDropKey';
+import { DropKeyWhereValueEqArgumentsConfig } from '../models/DropKeyWhereValueEqArgumentsConfig';
 import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
+import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhereValueEqArgumentsConfig';
 import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
+import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
 import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
@@ -682,7 +708,9 @@ import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
 import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { FlagsmithFlag } from '../models/FlagsmithFlag';
+import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenFlatten } from '../models/FlattenFlatten';
+import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
 import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
@@ -720,6 +748,7 @@ import { IssuesReportSecretsConfig } from '../models/IssuesReportSecretsConfig';
 import { IssuesReportSettingsConfig       , IssuesReportSettingsConfigIssueTypesEnum    , IssuesReportSettingsConfigResolutionReasonsEnum      , IssuesReportSettingsConfigSeveritiesEnum  , IssuesReportSettingsConfigStackLayersEnum  , IssuesReportSettingsConfigStatusEnum     } from '../models/IssuesReportSettingsConfig';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig      , IssuesSettingsConfigIssueTypesEnum    , IssuesSettingsConfigResolutionReasonsEnum      , IssuesSettingsConfigSeveritiesEnum  , IssuesSettingsConfigStackLayersEnum  , IssuesSettingsConfigStatusEnum     } from '../models/IssuesSettingsConfig';
+import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
 import { JqJQ } from '../models/JqJQ';
 import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
 import { KmsSettingsConfig } from '../models/KmsSettingsConfig';
@@ -732,6 +761,7 @@ import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecre
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
 import { LoginSessionsSecretsConfig } from '../models/LoginSessionsSecretsConfig';
 import { LoginSessionsSettingsConfig } from '../models/LoginSessionsSettingsConfig';
+import { MathMultiplyWithValueArgumentsConfig } from '../models/MathMultiplyWithValueArgumentsConfig';
 import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultiplyWithValueMathMultiplyWithValue';
 import { MerakiConfigLogsSecretsConfig } from '../models/MerakiConfigLogsSecretsConfig';
 import { MerakiConfigLogsSettingsConfig } from '../models/MerakiConfigLogsSettingsConfig';
@@ -804,8 +834,11 @@ import { ModelsUserAuthProvider } from '../models/ModelsUserAuthProvider';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadGraphqlInputVariable } from '../models/MonadGraphqlInputVariable';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
+import { MutateTypeArgumentsConfig } from '../models/MutateTypeArgumentsConfig';
 import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
+import { MutateValueWhereKeyEqAndValueEqArgumentsConfig } from '../models/MutateValueWhereKeyEqAndValueEqArgumentsConfig';
 import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
+import { MutateValueWhereKeyEqArgumentsConfig } from '../models/MutateValueWhereKeyEqArgumentsConfig';
 import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
 import { NextGenSiemSecretsConfig } from '../models/NextGenSiemSecretsConfig';
 import { NextGenSiemSettingsConfig } from '../models/NextGenSiemSettingsConfig';
@@ -853,7 +886,9 @@ import { PostmanAuditLogsSecretsConfig } from '../models/PostmanAuditLogsSecrets
 import { PostmanAuditLogsSettingsConfig } from '../models/PostmanAuditLogsSettingsConfig';
 import { PubsubSecretsConfig } from '../models/PubsubSecretsConfig';
 import { PubsubSettingsConfig } from '../models/PubsubSettingsConfig';
+import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
 import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
+import { RenameKeyWhereValueEqArgumentsConfig } from '../models/RenameKeyWhereValueEqArgumentsConfig';
 import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
 import { ResourceEvaluationsSettingsConfig } from '../models/ResourceEvaluationsSettingsConfig';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
@@ -1038,6 +1073,7 @@ import { UsersInfoSecretsConfig } from '../models/UsersInfoSecretsConfig';
 import { UsersInfoSettingsConfig } from '../models/UsersInfoSettingsConfig';
 import { UsersSecretsConfig } from '../models/UsersSecretsConfig';
 import { UsersSettingsConfig } from '../models/UsersSettingsConfig';
+import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
 import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
 import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettingsConfig';
@@ -1101,7 +1137,9 @@ let typeMap: {[index: string]: any} = {
     "ActorsInfoSecretsConfig": ActorsInfoSecretsConfig,
     "ActorsInfoSettingsConfig": ActorsInfoSettingsConfig,
     "AddAdd": AddAdd,
+    "AddArgumentsConfig": AddArgumentsConfig,
     "AddIdAddIdentifier": AddIdAddIdentifier,
+    "AddIdArgumentsConfig": AddIdArgumentsConfig,
     "AdminLogsSecretsConfig": AdminLogsSecretsConfig,
     "AdminLogsSettingsConfig": AdminLogsSettingsConfig,
     "AivenServiceLogsSecretsConfig": AivenServiceLogsSecretsConfig,
@@ -1212,9 +1250,11 @@ let typeMap: {[index: string]: any} = {
     "CommunityTransformsInternalTransformConfig": CommunityTransformsInternalTransformConfig,
     "CommunityTransformsInternalTransformMetadata": CommunityTransformsInternalTransformMetadata,
     "CommunityTransformsInternalTransformsIndex": CommunityTransformsInternalTransformsIndex,
+    "ConvertTimestampArgumentsConfig": ConvertTimestampArgumentsConfig,
     "ConvertTimestampConvertTimestamp": ConvertTimestampConvertTimestamp,
     "CortexXsoarManagementLogsSecretsConfig": CortexXsoarManagementLogsSecretsConfig,
     "CortexXsoarManagementLogsSettingsConfig": CortexXsoarManagementLogsSettingsConfig,
+    "CreateKeyValueIfKeyValueArgumentsConfig": CreateKeyValueIfKeyValueArgumentsConfig,
     "CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue": CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue,
     "CriblHttpSecretsConfig": CriblHttpSecretsConfig,
     "CriblHttpSettingsConfig": CriblHttpSettingsConfig,
@@ -1231,9 +1271,13 @@ let typeMap: {[index: string]: any} = {
     "DeviceDetailsSettingsConfig": DeviceDetailsSettingsConfig,
     "DevicesSecretsConfig": DevicesSecretsConfig,
     "DevicesSettingsConfig": DevicesSettingsConfig,
+    "DropKeyArgumentsConfig": DropKeyArgumentsConfig,
     "DropKeyDropKey": DropKeyDropKey,
+    "DropKeyWhereValueEqArgumentsConfig": DropKeyWhereValueEqArgumentsConfig,
     "DropKeyWhereValueEqDropKeyWhereValueEq": DropKeyWhereValueEqDropKeyWhereValueEq,
+    "DropRecordWhereValueEqArgumentsConfig": DropRecordWhereValueEqArgumentsConfig,
     "DropRecordWhereValueEqDropRecordWhereValueEq": DropRecordWhereValueEqDropRecordWhereValueEq,
+    "DuplicateKeyValueToKeyArgumentsConfig": DuplicateKeyValueToKeyArgumentsConfig,
     "DuplicateKeyValueToKeyDuplicateKeyValueToKey": DuplicateKeyValueToKeyDuplicateKeyValueToKey,
     "ElasticsearchSecretsConfig": ElasticsearchSecretsConfig,
     "ElasticsearchSettingsConfig": ElasticsearchSettingsConfig,
@@ -1245,7 +1289,9 @@ let typeMap: {[index: string]: any} = {
     "EventSecretsConfig": EventSecretsConfig,
     "EventSettingsConfig": EventSettingsConfig,
     "FlagsmithFlag": FlagsmithFlag,
+    "FlattenArgumentsConfig": FlattenArgumentsConfig,
     "FlattenFlatten": FlattenFlatten,
+    "FlattenallArgumentsConfig": FlattenallArgumentsConfig,
     "FlattenallFlattenAll": FlattenallFlattenAll,
     "FormatterFormatConfig": FormatterFormatConfig,
     "FullScansSecretsConfig": FullScansSecretsConfig,
@@ -1283,6 +1329,7 @@ let typeMap: {[index: string]: any} = {
     "IssuesReportSettingsConfig": IssuesReportSettingsConfig,
     "IssuesSecretsConfig": IssuesSecretsConfig,
     "IssuesSettingsConfig": IssuesSettingsConfig,
+    "JqArgumentsConfig": JqArgumentsConfig,
     "JqJQ": JqJQ,
     "JsonJsonFormatter": JsonJsonFormatter,
     "KmsSettingsConfig": KmsSettingsConfig,
@@ -1295,6 +1342,7 @@ let typeMap: {[index: string]: any} = {
     "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,
     "LoginSessionsSecretsConfig": LoginSessionsSecretsConfig,
     "LoginSessionsSettingsConfig": LoginSessionsSettingsConfig,
+    "MathMultiplyWithValueArgumentsConfig": MathMultiplyWithValueArgumentsConfig,
     "MathMultiplyWithValueMathMultiplyWithValue": MathMultiplyWithValueMathMultiplyWithValue,
     "MerakiConfigLogsSecretsConfig": MerakiConfigLogsSecretsConfig,
     "MerakiConfigLogsSettingsConfig": MerakiConfigLogsSettingsConfig,
@@ -1367,8 +1415,11 @@ let typeMap: {[index: string]: any} = {
     "ModelsUserRoleWithPermissions": ModelsUserRoleWithPermissions,
     "MonadGraphqlInputVariable": MonadGraphqlInputVariable,
     "MonadLogSettingsConfig": MonadLogSettingsConfig,
+    "MutateTypeArgumentsConfig": MutateTypeArgumentsConfig,
     "MutateTypeMutateType": MutateTypeMutateType,
+    "MutateValueWhereKeyEqAndValueEqArgumentsConfig": MutateValueWhereKeyEqAndValueEqArgumentsConfig,
     "MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq": MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq,
+    "MutateValueWhereKeyEqArgumentsConfig": MutateValueWhereKeyEqArgumentsConfig,
     "MutateValueWhereKeyEqMutateValueWhereKeyEq": MutateValueWhereKeyEqMutateValueWhereKeyEq,
     "NextGenSiemSecretsConfig": NextGenSiemSecretsConfig,
     "NextGenSiemSettingsConfig": NextGenSiemSettingsConfig,
@@ -1416,7 +1467,9 @@ let typeMap: {[index: string]: any} = {
     "PostmanAuditLogsSettingsConfig": PostmanAuditLogsSettingsConfig,
     "PubsubSecretsConfig": PubsubSecretsConfig,
     "PubsubSettingsConfig": PubsubSettingsConfig,
+    "RenameKeyArgumentsConfig": RenameKeyArgumentsConfig,
     "RenameKeyRenameKey": RenameKeyRenameKey,
+    "RenameKeyWhereValueEqArgumentsConfig": RenameKeyWhereValueEqArgumentsConfig,
     "RenameKeyWhereValueEqRenameKeyWhereValueEq": RenameKeyWhereValueEqRenameKeyWhereValueEq,
     "ResourceEvaluationsSettingsConfig": ResourceEvaluationsSettingsConfig,
     "ResponderErrorResponse": ResponderErrorResponse,
@@ -1599,6 +1652,7 @@ let typeMap: {[index: string]: any} = {
     "UsersInfoSettingsConfig": UsersInfoSettingsConfig,
     "UsersSecretsConfig": UsersSecretsConfig,
     "UsersSettingsConfig": UsersSettingsConfig,
+    "UtcTimestampArgumentsConfig": UtcTimestampArgumentsConfig,
     "UtcTimestampTimestamp": UtcTimestampTimestamp,
     "VercelUserEventsSecretsConfig": VercelUserEventsSecretsConfig,
     "VercelUserEventsSettingsConfig": VercelUserEventsSettingsConfig,

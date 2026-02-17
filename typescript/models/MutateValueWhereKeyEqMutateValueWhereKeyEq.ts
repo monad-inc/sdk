@@ -10,14 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { MutateValueWhereKeyEqArgumentsConfig } from '../models/MutateValueWhereKeyEqArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 export class MutateValueWhereKeyEqMutateValueWhereKeyEq {
-    /**
-    * The key to mutate
-    */
-    'key'?: string;
-    'value'?: any | null;
+    'arguments'?: MutateValueWhereKeyEqArgumentsConfig;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -25,15 +22,9 @@ export class MutateValueWhereKeyEqMutateValueWhereKeyEq {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "key",
-            "baseName": "key",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "value",
-            "baseName": "value",
-            "type": "any",
+            "name": "arguments",
+            "baseName": "arguments",
+            "type": "MutateValueWhereKeyEqArgumentsConfig",
             "format": ""
         }    ];
 

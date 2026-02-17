@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**format** | **str** | The format of the timestamp | [optional] 
-**key** | **str** | The key to store the timestamp in | [optional] 
+**arguments** | [**UtcTimestampArgumentsConfig**](UtcTimestampArgumentsConfig.md) |  | [optional] 
 
 ## Example
 

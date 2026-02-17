@@ -20,9 +20,7 @@ var _ MappedNullable = &DropRecordWhereValueEqDropRecordWhereValueEq{}
 
 // DropRecordWhereValueEqDropRecordWhereValueEq struct for DropRecordWhereValueEqDropRecordWhereValueEq
 type DropRecordWhereValueEqDropRecordWhereValueEq struct {
-	// The key which values should be checked
-	Key *string `json:"key,omitempty"`
-	Value interface{} `json:"value,omitempty"`
+	Arguments *DropRecordWhereValueEqArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewDropRecordWhereValueEqDropRecordWhereValueEq instantiates a new DropRecordWhereValueEqDropRecordWhereValueEq object
@@ -42,69 +40,36 @@ func NewDropRecordWhereValueEqDropRecordWhereValueEqWithDefaults() *DropRecordWh
 	return &this
 }
 
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *DropRecordWhereValueEqDropRecordWhereValueEq) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *DropRecordWhereValueEqDropRecordWhereValueEq) GetArguments() DropRecordWhereValueEqArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret DropRecordWhereValueEqArgumentsConfig
 		return ret
 	}
-	return *o.Key
+	return *o.Arguments
 }
 
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DropRecordWhereValueEqDropRecordWhereValueEq) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
+func (o *DropRecordWhereValueEqDropRecordWhereValueEq) GetArgumentsOk() (*DropRecordWhereValueEqArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Key, true
+	return o.Arguments, true
 }
 
-// HasKey returns a boolean if a field has been set.
-func (o *DropRecordWhereValueEqDropRecordWhereValueEq) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
+// HasArguments returns a boolean if a field has been set.
+func (o *DropRecordWhereValueEqDropRecordWhereValueEq) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *DropRecordWhereValueEqDropRecordWhereValueEq) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DropRecordWhereValueEqDropRecordWhereValueEq) GetValue() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DropRecordWhereValueEqDropRecordWhereValueEq) GetValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return &o.Value, true
-}
-
-// HasValue returns a boolean if a field has been set.
-func (o *DropRecordWhereValueEqDropRecordWhereValueEq) HasValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
-// SetValue gets a reference to the given interface{} and assigns it to the Value field.
-func (o *DropRecordWhereValueEqDropRecordWhereValueEq) SetValue(v interface{}) {
-	o.Value = v
+// SetArguments gets a reference to the given DropRecordWhereValueEqArgumentsConfig and assigns it to the Arguments field.
+func (o *DropRecordWhereValueEqDropRecordWhereValueEq) SetArguments(v DropRecordWhereValueEqArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o DropRecordWhereValueEqDropRecordWhereValueEq) MarshalJSON() ([]byte, error) {
@@ -117,11 +82,8 @@ func (o DropRecordWhereValueEqDropRecordWhereValueEq) MarshalJSON() ([]byte, err
 
 func (o DropRecordWhereValueEqDropRecordWhereValueEq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
-	}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

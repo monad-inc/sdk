@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.AddIdArgumentsConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,56 +49,32 @@ import org.openapitools.client.JSON;
 /**
  * AddIdAddIdentifier
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T16:15:28.735310203Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T20:36:25.519329063Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class AddIdAddIdentifier {
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
+  public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
+  @SerializedName(SERIALIZED_NAME_ARGUMENTS)
   @javax.annotation.Nullable
-  private String key;
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
-  private String type;
+  private AddIdArgumentsConfig arguments;
 
   public AddIdAddIdentifier() {
   }
 
-  public AddIdAddIdentifier key(@javax.annotation.Nullable String key) {
-    this.key = key;
+  public AddIdAddIdentifier arguments(@javax.annotation.Nullable AddIdArgumentsConfig arguments) {
+    this.arguments = arguments;
     return this;
   }
 
   /**
-   * The key to add to the record with id value
-   * @return key
+   * Get arguments
+   * @return arguments
    */
   @javax.annotation.Nullable
-  public String getKey() {
-    return key;
+  public AddIdArgumentsConfig getArguments() {
+    return arguments;
   }
 
-  public void setKey(@javax.annotation.Nullable String key) {
-    this.key = key;
-  }
-
-
-  public AddIdAddIdentifier type(@javax.annotation.Nullable String type) {
-    this.type = type;
-    return this;
-  }
-
-  /**
-   * The type of the identifier
-   * @return type
-   */
-  @javax.annotation.Nullable
-  public String getType() {
-    return type;
-  }
-
-  public void setType(@javax.annotation.Nullable String type) {
-    this.type = type;
+  public void setArguments(@javax.annotation.Nullable AddIdArgumentsConfig arguments) {
+    this.arguments = arguments;
   }
 
 
@@ -111,21 +88,19 @@ public class AddIdAddIdentifier {
       return false;
     }
     AddIdAddIdentifier addIdAddIdentifier = (AddIdAddIdentifier) o;
-    return Objects.equals(this.key, addIdAddIdentifier.key) &&
-        Objects.equals(this.type, addIdAddIdentifier.type);
+    return Objects.equals(this.arguments, addIdAddIdentifier.arguments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, type);
+    return Objects.hash(arguments);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddIdAddIdentifier {\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -147,7 +122,7 @@ public class AddIdAddIdentifier {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("key", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("arguments"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -174,11 +149,9 @@ public class AddIdAddIdentifier {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
-      }
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      // validate the optional field `arguments`
+      if (jsonObj.get("arguments") != null && !jsonObj.get("arguments").isJsonNull()) {
+        AddIdArgumentsConfig.validateJsonElement(jsonObj.get("arguments"));
       }
   }
 

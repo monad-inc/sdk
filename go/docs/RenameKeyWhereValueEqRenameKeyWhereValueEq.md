@@ -4,9 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Key** | Pointer to **string** | The key to rename | [optional] 
-**NewKey** | Pointer to **string** | The new key to rename to | [optional] 
-**Value** | Pointer to **interface{}** |  | [optional] 
+**Arguments** | Pointer to [**RenameKeyWhereValueEqArgumentsConfig**](RenameKeyWhereValueEqArgumentsConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -27,91 +25,31 @@ NewRenameKeyWhereValueEqRenameKeyWhereValueEqWithDefaults instantiates a new Ren
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetKey
+### GetArguments
 
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetKey() string`
+`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetArguments() RenameKeyWhereValueEqArgumentsConfig`
 
-GetKey returns the Key field if non-nil, zero value otherwise.
+GetArguments returns the Arguments field if non-nil, zero value otherwise.
 
-### GetKeyOk
+### GetArgumentsOk
 
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetKeyOk() (*string, bool)`
+`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetArgumentsOk() (*RenameKeyWhereValueEqArgumentsConfig, bool)`
 
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+GetArgumentsOk returns a tuple with the Arguments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKey
+### SetArguments
 
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) SetKey(v string)`
+`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) SetArguments(v RenameKeyWhereValueEqArgumentsConfig)`
 
-SetKey sets Key field to given value.
+SetArguments sets Arguments field to given value.
 
-### HasKey
+### HasArguments
 
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) HasKey() bool`
+`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) HasArguments() bool`
 
-HasKey returns a boolean if a field has been set.
+HasArguments returns a boolean if a field has been set.
 
-### GetNewKey
-
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetNewKey() string`
-
-GetNewKey returns the NewKey field if non-nil, zero value otherwise.
-
-### GetNewKeyOk
-
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetNewKeyOk() (*string, bool)`
-
-GetNewKeyOk returns a tuple with the NewKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNewKey
-
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) SetNewKey(v string)`
-
-SetNewKey sets NewKey field to given value.
-
-### HasNewKey
-
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) HasNewKey() bool`
-
-HasNewKey returns a boolean if a field has been set.
-
-### GetValue
-
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetValue() interface{}`
-
-GetValue returns the Value field if non-nil, zero value otherwise.
-
-### GetValueOk
-
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) GetValueOk() (*interface{}, bool)`
-
-GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValue
-
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) SetValue(v interface{})`
-
-SetValue sets Value field to given value.
-
-### HasValue
-
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) HasValue() bool`
-
-HasValue returns a boolean if a field has been set.
-
-### SetValueNil
-
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) SetValueNil(b bool)`
-
- SetValueNil sets the value for Value to be an explicit nil
-
-### UnsetValue
-`func (o *RenameKeyWhereValueEqRenameKeyWhereValueEq) UnsetValue()`
-
-UnsetValue ensures that no value is present for Value, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

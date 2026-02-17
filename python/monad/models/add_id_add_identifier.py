@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.add_id_arguments_config import AddIdArgumentsConfig
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +28,8 @@ class AddIdAddIdentifier(BaseModel):
     """
     AddIdAddIdentifier
     """ # noqa: E501
-    key: Optional[StrictStr] = Field(default=None, description="The key to add to the record with id value")
-    type: Optional[StrictStr] = Field(default=None, description="The type of the identifier")
-    __properties: ClassVar[List[str]] = ["key", "type"]
+    arguments: Optional[AddIdArgumentsConfig] = None
+    __properties: ClassVar[List[str]] = ["arguments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,6 +70,9 @@ class AddIdAddIdentifier(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of arguments
+        if self.arguments:
+            _dict['arguments'] = self.arguments.to_dict()
         return _dict
 
     @classmethod
@@ -82,8 +85,7 @@ class AddIdAddIdentifier(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "key": obj.get("key"),
-            "type": obj.get("type")
+            "arguments": AddIdArgumentsConfig.from_dict(obj["arguments"]) if obj.get("arguments") is not None else None
         })
         return _obj
 

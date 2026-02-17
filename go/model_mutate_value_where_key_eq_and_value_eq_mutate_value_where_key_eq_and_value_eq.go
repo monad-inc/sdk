@@ -20,10 +20,7 @@ var _ MappedNullable = &MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndV
 
 // MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq struct for MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq
 type MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq struct {
-	// The key to mutate
-	Key *string `json:"key,omitempty"`
-	Value interface{} `json:"value,omitempty"`
-	ValueToSet interface{} `json:"value_to_set,omitempty"`
+	Arguments *MutateValueWhereKeyEqAndValueEqArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewMutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq instantiates a new MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq object
@@ -43,102 +40,36 @@ func NewMutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEqWithDefaul
 	return &this
 }
 
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) GetArguments() MutateValueWhereKeyEqAndValueEqArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret MutateValueWhereKeyEqAndValueEqArgumentsConfig
 		return ret
 	}
-	return *o.Key
+	return *o.Arguments
 }
 
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
+func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) GetArgumentsOk() (*MutateValueWhereKeyEqAndValueEqArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Key, true
+	return o.Arguments, true
 }
 
-// HasKey returns a boolean if a field has been set.
-func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
+// HasArguments returns a boolean if a field has been set.
+func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) GetValue() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) GetValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return &o.Value, true
-}
-
-// HasValue returns a boolean if a field has been set.
-func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) HasValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
-// SetValue gets a reference to the given interface{} and assigns it to the Value field.
-func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) SetValue(v interface{}) {
-	o.Value = v
-}
-
-// GetValueToSet returns the ValueToSet field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) GetValueToSet() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.ValueToSet
-}
-
-// GetValueToSetOk returns a tuple with the ValueToSet field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) GetValueToSetOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.ValueToSet) {
-		return nil, false
-	}
-	return &o.ValueToSet, true
-}
-
-// HasValueToSet returns a boolean if a field has been set.
-func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) HasValueToSet() bool {
-	if o != nil && !IsNil(o.ValueToSet) {
-		return true
-	}
-
-	return false
-}
-
-// SetValueToSet gets a reference to the given interface{} and assigns it to the ValueToSet field.
-func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) SetValueToSet(v interface{}) {
-	o.ValueToSet = v
+// SetArguments gets a reference to the given MutateValueWhereKeyEqAndValueEqArgumentsConfig and assigns it to the Arguments field.
+func (o *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) SetArguments(v MutateValueWhereKeyEqAndValueEqArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) MarshalJSON() ([]byte, error) {
@@ -151,14 +82,8 @@ func (o MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) MarshalJ
 
 func (o MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
-	}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
-	}
-	if o.ValueToSet != nil {
-		toSerialize["value_to_set"] = o.ValueToSet
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

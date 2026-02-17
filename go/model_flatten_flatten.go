@@ -20,10 +20,7 @@ var _ MappedNullable = &FlattenFlatten{}
 
 // FlattenFlatten struct for FlattenFlatten
 type FlattenFlatten struct {
-	// The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1
-	Delimiter *string `json:"delimiter,omitempty"`
-	// The key to flatten
-	Key *string `json:"key,omitempty"`
+	Arguments *FlattenArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewFlattenFlatten instantiates a new FlattenFlatten object
@@ -43,68 +40,36 @@ func NewFlattenFlattenWithDefaults() *FlattenFlatten {
 	return &this
 }
 
-// GetDelimiter returns the Delimiter field value if set, zero value otherwise.
-func (o *FlattenFlatten) GetDelimiter() string {
-	if o == nil || IsNil(o.Delimiter) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *FlattenFlatten) GetArguments() FlattenArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret FlattenArgumentsConfig
 		return ret
 	}
-	return *o.Delimiter
+	return *o.Arguments
 }
 
-// GetDelimiterOk returns a tuple with the Delimiter field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlattenFlatten) GetDelimiterOk() (*string, bool) {
-	if o == nil || IsNil(o.Delimiter) {
+func (o *FlattenFlatten) GetArgumentsOk() (*FlattenArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Delimiter, true
+	return o.Arguments, true
 }
 
-// HasDelimiter returns a boolean if a field has been set.
-func (o *FlattenFlatten) HasDelimiter() bool {
-	if o != nil && !IsNil(o.Delimiter) {
+// HasArguments returns a boolean if a field has been set.
+func (o *FlattenFlatten) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetDelimiter gets a reference to the given string and assigns it to the Delimiter field.
-func (o *FlattenFlatten) SetDelimiter(v string) {
-	o.Delimiter = &v
-}
-
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *FlattenFlatten) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
-		return ret
-	}
-	return *o.Key
-}
-
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *FlattenFlatten) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
-		return nil, false
-	}
-	return o.Key, true
-}
-
-// HasKey returns a boolean if a field has been set.
-func (o *FlattenFlatten) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
-		return true
-	}
-
-	return false
-}
-
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *FlattenFlatten) SetKey(v string) {
-	o.Key = &v
+// SetArguments gets a reference to the given FlattenArgumentsConfig and assigns it to the Arguments field.
+func (o *FlattenFlatten) SetArguments(v FlattenArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o FlattenFlatten) MarshalJSON() ([]byte, error) {
@@ -117,11 +82,8 @@ func (o FlattenFlatten) MarshalJSON() ([]byte, error) {
 
 func (o FlattenFlatten) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Delimiter) {
-		toSerialize["delimiter"] = o.Delimiter
-	}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

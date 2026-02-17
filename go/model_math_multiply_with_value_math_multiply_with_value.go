@@ -20,11 +20,7 @@ var _ MappedNullable = &MathMultiplyWithValueMathMultiplyWithValue{}
 
 // MathMultiplyWithValueMathMultiplyWithValue struct for MathMultiplyWithValueMathMultiplyWithValue
 type MathMultiplyWithValueMathMultiplyWithValue struct {
-	// The Key value to multiply
-	Key *string `json:"key,omitempty"`
-	// The key to store the result of the multiplication
-	NewKey *string `json:"new_key,omitempty"`
-	Value interface{} `json:"value,omitempty"`
+	Arguments *MathMultiplyWithValueArgumentsConfig `json:"arguments,omitempty"`
 }
 
 // NewMathMultiplyWithValueMathMultiplyWithValue instantiates a new MathMultiplyWithValueMathMultiplyWithValue object
@@ -44,101 +40,36 @@ func NewMathMultiplyWithValueMathMultiplyWithValueWithDefaults() *MathMultiplyWi
 	return &this
 }
 
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *MathMultiplyWithValueMathMultiplyWithValue) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
+// GetArguments returns the Arguments field value if set, zero value otherwise.
+func (o *MathMultiplyWithValueMathMultiplyWithValue) GetArguments() MathMultiplyWithValueArgumentsConfig {
+	if o == nil || IsNil(o.Arguments) {
+		var ret MathMultiplyWithValueArgumentsConfig
 		return ret
 	}
-	return *o.Key
+	return *o.Arguments
 }
 
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MathMultiplyWithValueMathMultiplyWithValue) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
+func (o *MathMultiplyWithValueMathMultiplyWithValue) GetArgumentsOk() (*MathMultiplyWithValueArgumentsConfig, bool) {
+	if o == nil || IsNil(o.Arguments) {
 		return nil, false
 	}
-	return o.Key, true
+	return o.Arguments, true
 }
 
-// HasKey returns a boolean if a field has been set.
-func (o *MathMultiplyWithValueMathMultiplyWithValue) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
+// HasArguments returns a boolean if a field has been set.
+func (o *MathMultiplyWithValueMathMultiplyWithValue) HasArguments() bool {
+	if o != nil && !IsNil(o.Arguments) {
 		return true
 	}
 
 	return false
 }
 
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *MathMultiplyWithValueMathMultiplyWithValue) SetKey(v string) {
-	o.Key = &v
-}
-
-// GetNewKey returns the NewKey field value if set, zero value otherwise.
-func (o *MathMultiplyWithValueMathMultiplyWithValue) GetNewKey() string {
-	if o == nil || IsNil(o.NewKey) {
-		var ret string
-		return ret
-	}
-	return *o.NewKey
-}
-
-// GetNewKeyOk returns a tuple with the NewKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MathMultiplyWithValueMathMultiplyWithValue) GetNewKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.NewKey) {
-		return nil, false
-	}
-	return o.NewKey, true
-}
-
-// HasNewKey returns a boolean if a field has been set.
-func (o *MathMultiplyWithValueMathMultiplyWithValue) HasNewKey() bool {
-	if o != nil && !IsNil(o.NewKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetNewKey gets a reference to the given string and assigns it to the NewKey field.
-func (o *MathMultiplyWithValueMathMultiplyWithValue) SetNewKey(v string) {
-	o.NewKey = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MathMultiplyWithValueMathMultiplyWithValue) GetValue() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MathMultiplyWithValueMathMultiplyWithValue) GetValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return &o.Value, true
-}
-
-// HasValue returns a boolean if a field has been set.
-func (o *MathMultiplyWithValueMathMultiplyWithValue) HasValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
-// SetValue gets a reference to the given interface{} and assigns it to the Value field.
-func (o *MathMultiplyWithValueMathMultiplyWithValue) SetValue(v interface{}) {
-	o.Value = v
+// SetArguments gets a reference to the given MathMultiplyWithValueArgumentsConfig and assigns it to the Arguments field.
+func (o *MathMultiplyWithValueMathMultiplyWithValue) SetArguments(v MathMultiplyWithValueArgumentsConfig) {
+	o.Arguments = &v
 }
 
 func (o MathMultiplyWithValueMathMultiplyWithValue) MarshalJSON() ([]byte, error) {
@@ -151,14 +82,8 @@ func (o MathMultiplyWithValueMathMultiplyWithValue) MarshalJSON() ([]byte, error
 
 func (o MathMultiplyWithValueMathMultiplyWithValue) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
-	}
-	if !IsNil(o.NewKey) {
-		toSerialize["new_key"] = o.NewKey
-	}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
+	if !IsNil(o.Arguments) {
+		toSerialize["arguments"] = o.Arguments
 	}
 	return toSerialize, nil
 }

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**delimiter** | **str** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 | [optional] 
+**arguments** | [**FlattenallArgumentsConfig**](FlattenallArgumentsConfig.md) |  | [optional] 
 
 ## Example
 
