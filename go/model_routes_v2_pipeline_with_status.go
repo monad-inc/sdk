@@ -23,6 +23,7 @@ var _ MappedNullable = &RoutesV2PipelineWithStatus{}
 // RoutesV2PipelineWithStatus struct for RoutesV2PipelineWithStatus
 type RoutesV2PipelineWithStatus struct {
 	Id string `json:"id"`
+	LastIngestedTime *string `json:"last_ingested_time,omitempty"`
 	Status string `json:"status"`
 }
 
@@ -71,6 +72,38 @@ func (o *RoutesV2PipelineWithStatus) SetId(v string) {
 	o.Id = v
 }
 
+// GetLastIngestedTime returns the LastIngestedTime field value if set, zero value otherwise.
+func (o *RoutesV2PipelineWithStatus) GetLastIngestedTime() string {
+	if o == nil || IsNil(o.LastIngestedTime) {
+		var ret string
+		return ret
+	}
+	return *o.LastIngestedTime
+}
+
+// GetLastIngestedTimeOk returns a tuple with the LastIngestedTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2PipelineWithStatus) GetLastIngestedTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.LastIngestedTime) {
+		return nil, false
+	}
+	return o.LastIngestedTime, true
+}
+
+// HasLastIngestedTime returns a boolean if a field has been set.
+func (o *RoutesV2PipelineWithStatus) HasLastIngestedTime() bool {
+	if o != nil && !IsNil(o.LastIngestedTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastIngestedTime gets a reference to the given string and assigns it to the LastIngestedTime field.
+func (o *RoutesV2PipelineWithStatus) SetLastIngestedTime(v string) {
+	o.LastIngestedTime = &v
+}
+
 // GetStatus returns the Status field value
 func (o *RoutesV2PipelineWithStatus) GetStatus() string {
 	if o == nil {
@@ -106,6 +139,9 @@ func (o RoutesV2PipelineWithStatus) MarshalJSON() ([]byte, error) {
 func (o RoutesV2PipelineWithStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+	if !IsNil(o.LastIngestedTime) {
+		toSerialize["last_ingested_time"] = o.LastIngestedTime
+	}
 	toSerialize["status"] = o.Status
 	return toSerialize, nil
 }

@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineWithStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-13T21:22:18.541866777Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T15:03:50.444536155Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesV2PipelineWithStatus {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nonnull
   private String id;
+
+  public static final String SERIALIZED_NAME_LAST_INGESTED_TIME = "last_ingested_time";
+  @SerializedName(SERIALIZED_NAME_LAST_INGESTED_TIME)
+  @javax.annotation.Nullable
+  private String lastIngestedTime;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -79,6 +84,25 @@ public class RoutesV2PipelineWithStatus {
 
   public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
+  }
+
+
+  public RoutesV2PipelineWithStatus lastIngestedTime(@javax.annotation.Nullable String lastIngestedTime) {
+    this.lastIngestedTime = lastIngestedTime;
+    return this;
+  }
+
+  /**
+   * Get lastIngestedTime
+   * @return lastIngestedTime
+   */
+  @javax.annotation.Nullable
+  public String getLastIngestedTime() {
+    return lastIngestedTime;
+  }
+
+  public void setLastIngestedTime(@javax.annotation.Nullable String lastIngestedTime) {
+    this.lastIngestedTime = lastIngestedTime;
   }
 
 
@@ -112,12 +136,13 @@ public class RoutesV2PipelineWithStatus {
     }
     RoutesV2PipelineWithStatus routesV2PipelineWithStatus = (RoutesV2PipelineWithStatus) o;
     return Objects.equals(this.id, routesV2PipelineWithStatus.id) &&
+        Objects.equals(this.lastIngestedTime, routesV2PipelineWithStatus.lastIngestedTime) &&
         Objects.equals(this.status, routesV2PipelineWithStatus.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status);
+    return Objects.hash(id, lastIngestedTime, status);
   }
 
   @Override
@@ -125,6 +150,7 @@ public class RoutesV2PipelineWithStatus {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV2PipelineWithStatus {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    lastIngestedTime: ").append(toIndentedString(lastIngestedTime)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -147,7 +173,7 @@ public class RoutesV2PipelineWithStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "last_ingested_time", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "status"));
@@ -183,6 +209,9 @@ public class RoutesV2PipelineWithStatus {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if ((jsonObj.get("last_ingested_time") != null && !jsonObj.get("last_ingested_time").isJsonNull()) && !jsonObj.get("last_ingested_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `last_ingested_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_ingested_time").toString()));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));

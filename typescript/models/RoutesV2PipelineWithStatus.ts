@@ -14,6 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class RoutesV2PipelineWithStatus {
     'id': string;
+    'lastIngestedTime'?: string;
     'status': string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -24,6 +25,12 @@ export class RoutesV2PipelineWithStatus {
         {
             "name": "id",
             "baseName": "id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "lastIngestedTime",
+            "baseName": "last_ingested_time",
             "type": "string",
             "format": ""
         },

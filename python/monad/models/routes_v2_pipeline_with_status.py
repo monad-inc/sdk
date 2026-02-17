@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,8 +28,9 @@ class RoutesV2PipelineWithStatus(BaseModel):
     RoutesV2PipelineWithStatus
     """ # noqa: E501
     id: StrictStr
+    last_ingested_time: Optional[StrictStr] = None
     status: StrictStr
-    __properties: ClassVar[List[str]] = ["id", "status"]
+    __properties: ClassVar[List[str]] = ["id", "last_ingested_time", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,6 +84,7 @@ class RoutesV2PipelineWithStatus(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
+            "last_ingested_time": obj.get("last_ingested_time"),
             "status": obj.get("status")
         })
         return _obj

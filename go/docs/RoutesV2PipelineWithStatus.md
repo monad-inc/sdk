@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
+**LastIngestedTime** | Pointer to **string** |  | [optional] 
 **Status** | **string** |  | 
 
 ## Methods
@@ -45,6 +46,31 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+
+### GetLastIngestedTime
+
+`func (o *RoutesV2PipelineWithStatus) GetLastIngestedTime() string`
+
+GetLastIngestedTime returns the LastIngestedTime field if non-nil, zero value otherwise.
+
+### GetLastIngestedTimeOk
+
+`func (o *RoutesV2PipelineWithStatus) GetLastIngestedTimeOk() (*string, bool)`
+
+GetLastIngestedTimeOk returns a tuple with the LastIngestedTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastIngestedTime
+
+`func (o *RoutesV2PipelineWithStatus) SetLastIngestedTime(v string)`
+
+SetLastIngestedTime sets LastIngestedTime field to given value.
+
+### HasLastIngestedTime
+
+`func (o *RoutesV2PipelineWithStatus) HasLastIngestedTime() bool`
+
+HasLastIngestedTime returns a boolean if a field has been set.
 
 ### GetStatus
 

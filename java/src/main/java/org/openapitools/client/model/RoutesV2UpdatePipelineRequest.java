@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2UpdatePipelineRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-13T21:22:18.541866777Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T15:03:50.444536155Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesV2UpdatePipelineRequest {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -282,29 +282,29 @@ public class RoutesV2UpdatePipelineRequest {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("edges").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `edges` to be an array in the JSON string but got `%s`", jsonObj.get("edges").toString()));
+      if (jsonObj.get("edges") != null) {
+        if (!jsonObj.get("edges").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `edges` to be an array in the JSON string but got `%s`", jsonObj.get("edges").toString()));
+        }
+        JsonArray jsonArrayedges = jsonObj.getAsJsonArray("edges");
+        // validate the required field `edges` (array)
+        for (int i = 0; i < jsonArrayedges.size(); i++) {
+          RoutesV2PipelineRequestEdge.validateJsonElement(jsonArrayedges.get(i));
+        }
       }
-
-      JsonArray jsonArrayedges = jsonObj.getAsJsonArray("edges");
-      // validate the required field `edges` (array)
-      for (int i = 0; i < jsonArrayedges.size(); i++) {
-        RoutesV2PipelineRequestEdge.validateJsonElement(jsonArrayedges.get(i));
-      };
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("nodes").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nodes` to be an array in the JSON string but got `%s`", jsonObj.get("nodes").toString()));
+      if (jsonObj.get("nodes") != null) {
+        if (!jsonObj.get("nodes").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nodes` to be an array in the JSON string but got `%s`", jsonObj.get("nodes").toString()));
+        }
+        JsonArray jsonArraynodes = jsonObj.getAsJsonArray("nodes");
+        // validate the required field `nodes` (array)
+        for (int i = 0; i < jsonArraynodes.size(); i++) {
+          RoutesV2PipelineRequestNode.validateJsonElement(jsonArraynodes.get(i));
+        }
       }
-
-      JsonArray jsonArraynodes = jsonObj.getAsJsonArray("nodes");
-      // validate the required field `nodes` (array)
-      for (int i = 0; i < jsonArraynodes.size(); i++) {
-        RoutesV2PipelineRequestNode.validateJsonElement(jsonArraynodes.get(i));
-      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
