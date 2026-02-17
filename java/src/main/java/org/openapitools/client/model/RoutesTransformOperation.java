@@ -21,6 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import org.openapitools.client.model.RoutesTransformOperationArguments;
 
 import com.google.gson.Gson;
@@ -49,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesTransformOperation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T21:33:18.940961660Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T22:11:37.655630851Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesTransformOperation {
   public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
   @SerializedName(SERIALIZED_NAME_ARGUMENTS)
@@ -65,6 +67,11 @@ public class RoutesTransformOperation {
   @SerializedName(SERIALIZED_NAME_OPERATION)
   @javax.annotation.Nullable
   private String operation;
+
+  public static final String SERIALIZED_NAME_SECRETS = "secrets";
+  @SerializedName(SERIALIZED_NAME_SECRETS)
+  @javax.annotation.Nullable
+  private Map<String, Object> secrets = new HashMap<>();
 
   public RoutesTransformOperation() {
   }
@@ -126,6 +133,33 @@ public class RoutesTransformOperation {
   }
 
 
+  public RoutesTransformOperation secrets(@javax.annotation.Nullable Map<String, Object> secrets) {
+    this.secrets = secrets;
+    return this;
+  }
+
+  public RoutesTransformOperation putSecretsItem(String key, Object secretsItem) {
+    if (this.secrets == null) {
+      this.secrets = new HashMap<>();
+    }
+    this.secrets.put(key, secretsItem);
+    return this;
+  }
+
+  /**
+   * Get secrets
+   * @return secrets
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getSecrets() {
+    return secrets;
+  }
+
+  public void setSecrets(@javax.annotation.Nullable Map<String, Object> secrets) {
+    this.secrets = secrets;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -138,12 +172,13 @@ public class RoutesTransformOperation {
     RoutesTransformOperation routesTransformOperation = (RoutesTransformOperation) o;
     return Objects.equals(this.arguments, routesTransformOperation.arguments) &&
         Objects.equals(this.description, routesTransformOperation.description) &&
-        Objects.equals(this.operation, routesTransformOperation.operation);
+        Objects.equals(this.operation, routesTransformOperation.operation) &&
+        Objects.equals(this.secrets, routesTransformOperation.secrets);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(arguments, description, operation);
+    return Objects.hash(arguments, description, operation, secrets);
   }
 
   @Override
@@ -153,6 +188,7 @@ public class RoutesTransformOperation {
     sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
+    sb.append("    secrets: ").append(toIndentedString(secrets)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -174,7 +210,7 @@ public class RoutesTransformOperation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("arguments", "description", "operation"));
+    openapiFields = new HashSet<String>(Arrays.asList("arguments", "description", "operation", "secrets"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

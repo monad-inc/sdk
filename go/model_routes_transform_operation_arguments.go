@@ -19,150 +19,150 @@ import (
 
 // RoutesTransformOperationArguments - struct for RoutesTransformOperationArguments
 type RoutesTransformOperationArguments struct {
-	AddAdd *AddAdd
-	AddIdAddIdentifier *AddIdAddIdentifier
-	ConvertTimestampConvertTimestamp *ConvertTimestampConvertTimestamp
-	CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
-	DropKeyDropKey *DropKeyDropKey
-	DropKeyWhereValueEqDropKeyWhereValueEq *DropKeyWhereValueEqDropKeyWhereValueEq
-	DropRecordWhereValueEqDropRecordWhereValueEq *DropRecordWhereValueEqDropRecordWhereValueEq
-	DuplicateKeyValueToKeyDuplicateKeyValueToKey *DuplicateKeyValueToKeyDuplicateKeyValueToKey
-	FlattenFlatten *FlattenFlatten
-	FlattenallFlattenAll *FlattenallFlattenAll
-	JqJQ *JqJQ
-	MathMultiplyWithValueMathMultiplyWithValue *MathMultiplyWithValueMathMultiplyWithValue
-	MutateTypeMutateType *MutateTypeMutateType
-	MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq
-	MutateValueWhereKeyEqMutateValueWhereKeyEq *MutateValueWhereKeyEqMutateValueWhereKeyEq
-	RenameKeyRenameKey *RenameKeyRenameKey
-	RenameKeyWhereValueEqRenameKeyWhereValueEq *RenameKeyWhereValueEqRenameKeyWhereValueEq
-	UtcTimestampTimestamp *UtcTimestampTimestamp
+	AddArgumentsConfig *AddArgumentsConfig
+	AddIdArgumentsConfig *AddIdArgumentsConfig
+	ConvertTimestampArgumentsConfig *ConvertTimestampArgumentsConfig
+	CreateKeyValueIfKeyValueArgumentsConfig *CreateKeyValueIfKeyValueArgumentsConfig
+	DropKeyArgumentsConfig *DropKeyArgumentsConfig
+	DropKeyWhereValueEqArgumentsConfig *DropKeyWhereValueEqArgumentsConfig
+	DropRecordWhereValueEqArgumentsConfig *DropRecordWhereValueEqArgumentsConfig
+	DuplicateKeyValueToKeyArgumentsConfig *DuplicateKeyValueToKeyArgumentsConfig
+	FlattenArgumentsConfig *FlattenArgumentsConfig
+	FlattenallArgumentsConfig *FlattenallArgumentsConfig
+	JqArgumentsConfig *JqArgumentsConfig
+	MathMultiplyWithValueArgumentsConfig *MathMultiplyWithValueArgumentsConfig
+	MutateTypeArgumentsConfig *MutateTypeArgumentsConfig
+	MutateValueWhereKeyEqAndValueEqArgumentsConfig *MutateValueWhereKeyEqAndValueEqArgumentsConfig
+	MutateValueWhereKeyEqArgumentsConfig *MutateValueWhereKeyEqArgumentsConfig
+	RenameKeyArgumentsConfig *RenameKeyArgumentsConfig
+	RenameKeyWhereValueEqArgumentsConfig *RenameKeyWhereValueEqArgumentsConfig
+	UtcTimestampArgumentsConfig *UtcTimestampArgumentsConfig
 	MapmapOfStringAny *map[string]interface{}
 }
 
-// AddAddAsRoutesTransformOperationArguments is a convenience function that returns AddAdd wrapped in RoutesTransformOperationArguments
-func AddAddAsRoutesTransformOperationArguments(v *AddAdd) RoutesTransformOperationArguments {
+// AddArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns AddArgumentsConfig wrapped in RoutesTransformOperationArguments
+func AddArgumentsConfigAsRoutesTransformOperationArguments(v *AddArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		AddAdd: v,
+		AddArgumentsConfig: v,
 	}
 }
 
-// AddIdAddIdentifierAsRoutesTransformOperationArguments is a convenience function that returns AddIdAddIdentifier wrapped in RoutesTransformOperationArguments
-func AddIdAddIdentifierAsRoutesTransformOperationArguments(v *AddIdAddIdentifier) RoutesTransformOperationArguments {
+// AddIdArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns AddIdArgumentsConfig wrapped in RoutesTransformOperationArguments
+func AddIdArgumentsConfigAsRoutesTransformOperationArguments(v *AddIdArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		AddIdAddIdentifier: v,
+		AddIdArgumentsConfig: v,
 	}
 }
 
-// ConvertTimestampConvertTimestampAsRoutesTransformOperationArguments is a convenience function that returns ConvertTimestampConvertTimestamp wrapped in RoutesTransformOperationArguments
-func ConvertTimestampConvertTimestampAsRoutesTransformOperationArguments(v *ConvertTimestampConvertTimestamp) RoutesTransformOperationArguments {
+// ConvertTimestampArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns ConvertTimestampArgumentsConfig wrapped in RoutesTransformOperationArguments
+func ConvertTimestampArgumentsConfigAsRoutesTransformOperationArguments(v *ConvertTimestampArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		ConvertTimestampConvertTimestamp: v,
+		ConvertTimestampArgumentsConfig: v,
 	}
 }
 
-// CreateKeyValueIfKeyValueCreateKeyValueIfKeyValueAsRoutesTransformOperationArguments is a convenience function that returns CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue wrapped in RoutesTransformOperationArguments
-func CreateKeyValueIfKeyValueCreateKeyValueIfKeyValueAsRoutesTransformOperationArguments(v *CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) RoutesTransformOperationArguments {
+// CreateKeyValueIfKeyValueArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns CreateKeyValueIfKeyValueArgumentsConfig wrapped in RoutesTransformOperationArguments
+func CreateKeyValueIfKeyValueArgumentsConfigAsRoutesTransformOperationArguments(v *CreateKeyValueIfKeyValueArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue: v,
+		CreateKeyValueIfKeyValueArgumentsConfig: v,
 	}
 }
 
-// DropKeyDropKeyAsRoutesTransformOperationArguments is a convenience function that returns DropKeyDropKey wrapped in RoutesTransformOperationArguments
-func DropKeyDropKeyAsRoutesTransformOperationArguments(v *DropKeyDropKey) RoutesTransformOperationArguments {
+// DropKeyArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns DropKeyArgumentsConfig wrapped in RoutesTransformOperationArguments
+func DropKeyArgumentsConfigAsRoutesTransformOperationArguments(v *DropKeyArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		DropKeyDropKey: v,
+		DropKeyArgumentsConfig: v,
 	}
 }
 
-// DropKeyWhereValueEqDropKeyWhereValueEqAsRoutesTransformOperationArguments is a convenience function that returns DropKeyWhereValueEqDropKeyWhereValueEq wrapped in RoutesTransformOperationArguments
-func DropKeyWhereValueEqDropKeyWhereValueEqAsRoutesTransformOperationArguments(v *DropKeyWhereValueEqDropKeyWhereValueEq) RoutesTransformOperationArguments {
+// DropKeyWhereValueEqArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns DropKeyWhereValueEqArgumentsConfig wrapped in RoutesTransformOperationArguments
+func DropKeyWhereValueEqArgumentsConfigAsRoutesTransformOperationArguments(v *DropKeyWhereValueEqArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		DropKeyWhereValueEqDropKeyWhereValueEq: v,
+		DropKeyWhereValueEqArgumentsConfig: v,
 	}
 }
 
-// DropRecordWhereValueEqDropRecordWhereValueEqAsRoutesTransformOperationArguments is a convenience function that returns DropRecordWhereValueEqDropRecordWhereValueEq wrapped in RoutesTransformOperationArguments
-func DropRecordWhereValueEqDropRecordWhereValueEqAsRoutesTransformOperationArguments(v *DropRecordWhereValueEqDropRecordWhereValueEq) RoutesTransformOperationArguments {
+// DropRecordWhereValueEqArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns DropRecordWhereValueEqArgumentsConfig wrapped in RoutesTransformOperationArguments
+func DropRecordWhereValueEqArgumentsConfigAsRoutesTransformOperationArguments(v *DropRecordWhereValueEqArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		DropRecordWhereValueEqDropRecordWhereValueEq: v,
+		DropRecordWhereValueEqArgumentsConfig: v,
 	}
 }
 
-// DuplicateKeyValueToKeyDuplicateKeyValueToKeyAsRoutesTransformOperationArguments is a convenience function that returns DuplicateKeyValueToKeyDuplicateKeyValueToKey wrapped in RoutesTransformOperationArguments
-func DuplicateKeyValueToKeyDuplicateKeyValueToKeyAsRoutesTransformOperationArguments(v *DuplicateKeyValueToKeyDuplicateKeyValueToKey) RoutesTransformOperationArguments {
+// DuplicateKeyValueToKeyArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns DuplicateKeyValueToKeyArgumentsConfig wrapped in RoutesTransformOperationArguments
+func DuplicateKeyValueToKeyArgumentsConfigAsRoutesTransformOperationArguments(v *DuplicateKeyValueToKeyArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		DuplicateKeyValueToKeyDuplicateKeyValueToKey: v,
+		DuplicateKeyValueToKeyArgumentsConfig: v,
 	}
 }
 
-// FlattenFlattenAsRoutesTransformOperationArguments is a convenience function that returns FlattenFlatten wrapped in RoutesTransformOperationArguments
-func FlattenFlattenAsRoutesTransformOperationArguments(v *FlattenFlatten) RoutesTransformOperationArguments {
+// FlattenArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns FlattenArgumentsConfig wrapped in RoutesTransformOperationArguments
+func FlattenArgumentsConfigAsRoutesTransformOperationArguments(v *FlattenArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		FlattenFlatten: v,
+		FlattenArgumentsConfig: v,
 	}
 }
 
-// FlattenallFlattenAllAsRoutesTransformOperationArguments is a convenience function that returns FlattenallFlattenAll wrapped in RoutesTransformOperationArguments
-func FlattenallFlattenAllAsRoutesTransformOperationArguments(v *FlattenallFlattenAll) RoutesTransformOperationArguments {
+// FlattenallArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns FlattenallArgumentsConfig wrapped in RoutesTransformOperationArguments
+func FlattenallArgumentsConfigAsRoutesTransformOperationArguments(v *FlattenallArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		FlattenallFlattenAll: v,
+		FlattenallArgumentsConfig: v,
 	}
 }
 
-// JqJQAsRoutesTransformOperationArguments is a convenience function that returns JqJQ wrapped in RoutesTransformOperationArguments
-func JqJQAsRoutesTransformOperationArguments(v *JqJQ) RoutesTransformOperationArguments {
+// JqArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns JqArgumentsConfig wrapped in RoutesTransformOperationArguments
+func JqArgumentsConfigAsRoutesTransformOperationArguments(v *JqArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		JqJQ: v,
+		JqArgumentsConfig: v,
 	}
 }
 
-// MathMultiplyWithValueMathMultiplyWithValueAsRoutesTransformOperationArguments is a convenience function that returns MathMultiplyWithValueMathMultiplyWithValue wrapped in RoutesTransformOperationArguments
-func MathMultiplyWithValueMathMultiplyWithValueAsRoutesTransformOperationArguments(v *MathMultiplyWithValueMathMultiplyWithValue) RoutesTransformOperationArguments {
+// MathMultiplyWithValueArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns MathMultiplyWithValueArgumentsConfig wrapped in RoutesTransformOperationArguments
+func MathMultiplyWithValueArgumentsConfigAsRoutesTransformOperationArguments(v *MathMultiplyWithValueArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		MathMultiplyWithValueMathMultiplyWithValue: v,
+		MathMultiplyWithValueArgumentsConfig: v,
 	}
 }
 
-// MutateTypeMutateTypeAsRoutesTransformOperationArguments is a convenience function that returns MutateTypeMutateType wrapped in RoutesTransformOperationArguments
-func MutateTypeMutateTypeAsRoutesTransformOperationArguments(v *MutateTypeMutateType) RoutesTransformOperationArguments {
+// MutateTypeArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns MutateTypeArgumentsConfig wrapped in RoutesTransformOperationArguments
+func MutateTypeArgumentsConfigAsRoutesTransformOperationArguments(v *MutateTypeArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		MutateTypeMutateType: v,
+		MutateTypeArgumentsConfig: v,
 	}
 }
 
-// MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEqAsRoutesTransformOperationArguments is a convenience function that returns MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq wrapped in RoutesTransformOperationArguments
-func MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEqAsRoutesTransformOperationArguments(v *MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) RoutesTransformOperationArguments {
+// MutateValueWhereKeyEqAndValueEqArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns MutateValueWhereKeyEqAndValueEqArgumentsConfig wrapped in RoutesTransformOperationArguments
+func MutateValueWhereKeyEqAndValueEqArgumentsConfigAsRoutesTransformOperationArguments(v *MutateValueWhereKeyEqAndValueEqArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq: v,
+		MutateValueWhereKeyEqAndValueEqArgumentsConfig: v,
 	}
 }
 
-// MutateValueWhereKeyEqMutateValueWhereKeyEqAsRoutesTransformOperationArguments is a convenience function that returns MutateValueWhereKeyEqMutateValueWhereKeyEq wrapped in RoutesTransformOperationArguments
-func MutateValueWhereKeyEqMutateValueWhereKeyEqAsRoutesTransformOperationArguments(v *MutateValueWhereKeyEqMutateValueWhereKeyEq) RoutesTransformOperationArguments {
+// MutateValueWhereKeyEqArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns MutateValueWhereKeyEqArgumentsConfig wrapped in RoutesTransformOperationArguments
+func MutateValueWhereKeyEqArgumentsConfigAsRoutesTransformOperationArguments(v *MutateValueWhereKeyEqArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		MutateValueWhereKeyEqMutateValueWhereKeyEq: v,
+		MutateValueWhereKeyEqArgumentsConfig: v,
 	}
 }
 
-// RenameKeyRenameKeyAsRoutesTransformOperationArguments is a convenience function that returns RenameKeyRenameKey wrapped in RoutesTransformOperationArguments
-func RenameKeyRenameKeyAsRoutesTransformOperationArguments(v *RenameKeyRenameKey) RoutesTransformOperationArguments {
+// RenameKeyArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns RenameKeyArgumentsConfig wrapped in RoutesTransformOperationArguments
+func RenameKeyArgumentsConfigAsRoutesTransformOperationArguments(v *RenameKeyArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		RenameKeyRenameKey: v,
+		RenameKeyArgumentsConfig: v,
 	}
 }
 
-// RenameKeyWhereValueEqRenameKeyWhereValueEqAsRoutesTransformOperationArguments is a convenience function that returns RenameKeyWhereValueEqRenameKeyWhereValueEq wrapped in RoutesTransformOperationArguments
-func RenameKeyWhereValueEqRenameKeyWhereValueEqAsRoutesTransformOperationArguments(v *RenameKeyWhereValueEqRenameKeyWhereValueEq) RoutesTransformOperationArguments {
+// RenameKeyWhereValueEqArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns RenameKeyWhereValueEqArgumentsConfig wrapped in RoutesTransformOperationArguments
+func RenameKeyWhereValueEqArgumentsConfigAsRoutesTransformOperationArguments(v *RenameKeyWhereValueEqArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		RenameKeyWhereValueEqRenameKeyWhereValueEq: v,
+		RenameKeyWhereValueEqArgumentsConfig: v,
 	}
 }
 
-// UtcTimestampTimestampAsRoutesTransformOperationArguments is a convenience function that returns UtcTimestampTimestamp wrapped in RoutesTransformOperationArguments
-func UtcTimestampTimestampAsRoutesTransformOperationArguments(v *UtcTimestampTimestamp) RoutesTransformOperationArguments {
+// UtcTimestampArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns UtcTimestampArgumentsConfig wrapped in RoutesTransformOperationArguments
+func UtcTimestampArgumentsConfigAsRoutesTransformOperationArguments(v *UtcTimestampArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
-		UtcTimestampTimestamp: v,
+		UtcTimestampArgumentsConfig: v,
 	}
 }
 
@@ -178,310 +178,310 @@ func MapmapOfStringAnyAsRoutesTransformOperationArguments(v *map[string]interfac
 func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into AddAdd
-	err = newStrictDecoder(data).Decode(&dst.AddAdd)
+	// try to unmarshal data into AddArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.AddArgumentsConfig)
 	if err == nil {
-		jsonAddAdd, _ := json.Marshal(dst.AddAdd)
-		if string(jsonAddAdd) == "{}" { // empty struct
-			dst.AddAdd = nil
+		jsonAddArgumentsConfig, _ := json.Marshal(dst.AddArgumentsConfig)
+		if string(jsonAddArgumentsConfig) == "{}" { // empty struct
+			dst.AddArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.AddAdd); err != nil {
-				dst.AddAdd = nil
+			if err = validator.Validate(dst.AddArgumentsConfig); err != nil {
+				dst.AddArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.AddAdd = nil
+		dst.AddArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into AddIdAddIdentifier
-	err = newStrictDecoder(data).Decode(&dst.AddIdAddIdentifier)
+	// try to unmarshal data into AddIdArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.AddIdArgumentsConfig)
 	if err == nil {
-		jsonAddIdAddIdentifier, _ := json.Marshal(dst.AddIdAddIdentifier)
-		if string(jsonAddIdAddIdentifier) == "{}" { // empty struct
-			dst.AddIdAddIdentifier = nil
+		jsonAddIdArgumentsConfig, _ := json.Marshal(dst.AddIdArgumentsConfig)
+		if string(jsonAddIdArgumentsConfig) == "{}" { // empty struct
+			dst.AddIdArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.AddIdAddIdentifier); err != nil {
-				dst.AddIdAddIdentifier = nil
+			if err = validator.Validate(dst.AddIdArgumentsConfig); err != nil {
+				dst.AddIdArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.AddIdAddIdentifier = nil
+		dst.AddIdArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into ConvertTimestampConvertTimestamp
-	err = newStrictDecoder(data).Decode(&dst.ConvertTimestampConvertTimestamp)
+	// try to unmarshal data into ConvertTimestampArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.ConvertTimestampArgumentsConfig)
 	if err == nil {
-		jsonConvertTimestampConvertTimestamp, _ := json.Marshal(dst.ConvertTimestampConvertTimestamp)
-		if string(jsonConvertTimestampConvertTimestamp) == "{}" { // empty struct
-			dst.ConvertTimestampConvertTimestamp = nil
+		jsonConvertTimestampArgumentsConfig, _ := json.Marshal(dst.ConvertTimestampArgumentsConfig)
+		if string(jsonConvertTimestampArgumentsConfig) == "{}" { // empty struct
+			dst.ConvertTimestampArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.ConvertTimestampConvertTimestamp); err != nil {
-				dst.ConvertTimestampConvertTimestamp = nil
+			if err = validator.Validate(dst.ConvertTimestampArgumentsConfig); err != nil {
+				dst.ConvertTimestampArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ConvertTimestampConvertTimestamp = nil
+		dst.ConvertTimestampArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
-	err = newStrictDecoder(data).Decode(&dst.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue)
+	// try to unmarshal data into CreateKeyValueIfKeyValueArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.CreateKeyValueIfKeyValueArgumentsConfig)
 	if err == nil {
-		jsonCreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, _ := json.Marshal(dst.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue)
-		if string(jsonCreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) == "{}" { // empty struct
-			dst.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue = nil
+		jsonCreateKeyValueIfKeyValueArgumentsConfig, _ := json.Marshal(dst.CreateKeyValueIfKeyValueArgumentsConfig)
+		if string(jsonCreateKeyValueIfKeyValueArgumentsConfig) == "{}" { // empty struct
+			dst.CreateKeyValueIfKeyValueArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue); err != nil {
-				dst.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue = nil
+			if err = validator.Validate(dst.CreateKeyValueIfKeyValueArgumentsConfig); err != nil {
+				dst.CreateKeyValueIfKeyValueArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue = nil
+		dst.CreateKeyValueIfKeyValueArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into DropKeyDropKey
-	err = newStrictDecoder(data).Decode(&dst.DropKeyDropKey)
+	// try to unmarshal data into DropKeyArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.DropKeyArgumentsConfig)
 	if err == nil {
-		jsonDropKeyDropKey, _ := json.Marshal(dst.DropKeyDropKey)
-		if string(jsonDropKeyDropKey) == "{}" { // empty struct
-			dst.DropKeyDropKey = nil
+		jsonDropKeyArgumentsConfig, _ := json.Marshal(dst.DropKeyArgumentsConfig)
+		if string(jsonDropKeyArgumentsConfig) == "{}" { // empty struct
+			dst.DropKeyArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.DropKeyDropKey); err != nil {
-				dst.DropKeyDropKey = nil
+			if err = validator.Validate(dst.DropKeyArgumentsConfig); err != nil {
+				dst.DropKeyArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.DropKeyDropKey = nil
+		dst.DropKeyArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into DropKeyWhereValueEqDropKeyWhereValueEq
-	err = newStrictDecoder(data).Decode(&dst.DropKeyWhereValueEqDropKeyWhereValueEq)
+	// try to unmarshal data into DropKeyWhereValueEqArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.DropKeyWhereValueEqArgumentsConfig)
 	if err == nil {
-		jsonDropKeyWhereValueEqDropKeyWhereValueEq, _ := json.Marshal(dst.DropKeyWhereValueEqDropKeyWhereValueEq)
-		if string(jsonDropKeyWhereValueEqDropKeyWhereValueEq) == "{}" { // empty struct
-			dst.DropKeyWhereValueEqDropKeyWhereValueEq = nil
+		jsonDropKeyWhereValueEqArgumentsConfig, _ := json.Marshal(dst.DropKeyWhereValueEqArgumentsConfig)
+		if string(jsonDropKeyWhereValueEqArgumentsConfig) == "{}" { // empty struct
+			dst.DropKeyWhereValueEqArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.DropKeyWhereValueEqDropKeyWhereValueEq); err != nil {
-				dst.DropKeyWhereValueEqDropKeyWhereValueEq = nil
+			if err = validator.Validate(dst.DropKeyWhereValueEqArgumentsConfig); err != nil {
+				dst.DropKeyWhereValueEqArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.DropKeyWhereValueEqDropKeyWhereValueEq = nil
+		dst.DropKeyWhereValueEqArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into DropRecordWhereValueEqDropRecordWhereValueEq
-	err = newStrictDecoder(data).Decode(&dst.DropRecordWhereValueEqDropRecordWhereValueEq)
+	// try to unmarshal data into DropRecordWhereValueEqArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.DropRecordWhereValueEqArgumentsConfig)
 	if err == nil {
-		jsonDropRecordWhereValueEqDropRecordWhereValueEq, _ := json.Marshal(dst.DropRecordWhereValueEqDropRecordWhereValueEq)
-		if string(jsonDropRecordWhereValueEqDropRecordWhereValueEq) == "{}" { // empty struct
-			dst.DropRecordWhereValueEqDropRecordWhereValueEq = nil
+		jsonDropRecordWhereValueEqArgumentsConfig, _ := json.Marshal(dst.DropRecordWhereValueEqArgumentsConfig)
+		if string(jsonDropRecordWhereValueEqArgumentsConfig) == "{}" { // empty struct
+			dst.DropRecordWhereValueEqArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.DropRecordWhereValueEqDropRecordWhereValueEq); err != nil {
-				dst.DropRecordWhereValueEqDropRecordWhereValueEq = nil
+			if err = validator.Validate(dst.DropRecordWhereValueEqArgumentsConfig); err != nil {
+				dst.DropRecordWhereValueEqArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.DropRecordWhereValueEqDropRecordWhereValueEq = nil
+		dst.DropRecordWhereValueEqArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into DuplicateKeyValueToKeyDuplicateKeyValueToKey
-	err = newStrictDecoder(data).Decode(&dst.DuplicateKeyValueToKeyDuplicateKeyValueToKey)
+	// try to unmarshal data into DuplicateKeyValueToKeyArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.DuplicateKeyValueToKeyArgumentsConfig)
 	if err == nil {
-		jsonDuplicateKeyValueToKeyDuplicateKeyValueToKey, _ := json.Marshal(dst.DuplicateKeyValueToKeyDuplicateKeyValueToKey)
-		if string(jsonDuplicateKeyValueToKeyDuplicateKeyValueToKey) == "{}" { // empty struct
-			dst.DuplicateKeyValueToKeyDuplicateKeyValueToKey = nil
+		jsonDuplicateKeyValueToKeyArgumentsConfig, _ := json.Marshal(dst.DuplicateKeyValueToKeyArgumentsConfig)
+		if string(jsonDuplicateKeyValueToKeyArgumentsConfig) == "{}" { // empty struct
+			dst.DuplicateKeyValueToKeyArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.DuplicateKeyValueToKeyDuplicateKeyValueToKey); err != nil {
-				dst.DuplicateKeyValueToKeyDuplicateKeyValueToKey = nil
+			if err = validator.Validate(dst.DuplicateKeyValueToKeyArgumentsConfig); err != nil {
+				dst.DuplicateKeyValueToKeyArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.DuplicateKeyValueToKeyDuplicateKeyValueToKey = nil
+		dst.DuplicateKeyValueToKeyArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into FlattenFlatten
-	err = newStrictDecoder(data).Decode(&dst.FlattenFlatten)
+	// try to unmarshal data into FlattenArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.FlattenArgumentsConfig)
 	if err == nil {
-		jsonFlattenFlatten, _ := json.Marshal(dst.FlattenFlatten)
-		if string(jsonFlattenFlatten) == "{}" { // empty struct
-			dst.FlattenFlatten = nil
+		jsonFlattenArgumentsConfig, _ := json.Marshal(dst.FlattenArgumentsConfig)
+		if string(jsonFlattenArgumentsConfig) == "{}" { // empty struct
+			dst.FlattenArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.FlattenFlatten); err != nil {
-				dst.FlattenFlatten = nil
+			if err = validator.Validate(dst.FlattenArgumentsConfig); err != nil {
+				dst.FlattenArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.FlattenFlatten = nil
+		dst.FlattenArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into FlattenallFlattenAll
-	err = newStrictDecoder(data).Decode(&dst.FlattenallFlattenAll)
+	// try to unmarshal data into FlattenallArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.FlattenallArgumentsConfig)
 	if err == nil {
-		jsonFlattenallFlattenAll, _ := json.Marshal(dst.FlattenallFlattenAll)
-		if string(jsonFlattenallFlattenAll) == "{}" { // empty struct
-			dst.FlattenallFlattenAll = nil
+		jsonFlattenallArgumentsConfig, _ := json.Marshal(dst.FlattenallArgumentsConfig)
+		if string(jsonFlattenallArgumentsConfig) == "{}" { // empty struct
+			dst.FlattenallArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.FlattenallFlattenAll); err != nil {
-				dst.FlattenallFlattenAll = nil
+			if err = validator.Validate(dst.FlattenallArgumentsConfig); err != nil {
+				dst.FlattenallArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.FlattenallFlattenAll = nil
+		dst.FlattenallArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into JqJQ
-	err = newStrictDecoder(data).Decode(&dst.JqJQ)
+	// try to unmarshal data into JqArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.JqArgumentsConfig)
 	if err == nil {
-		jsonJqJQ, _ := json.Marshal(dst.JqJQ)
-		if string(jsonJqJQ) == "{}" { // empty struct
-			dst.JqJQ = nil
+		jsonJqArgumentsConfig, _ := json.Marshal(dst.JqArgumentsConfig)
+		if string(jsonJqArgumentsConfig) == "{}" { // empty struct
+			dst.JqArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.JqJQ); err != nil {
-				dst.JqJQ = nil
+			if err = validator.Validate(dst.JqArgumentsConfig); err != nil {
+				dst.JqArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.JqJQ = nil
+		dst.JqArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into MathMultiplyWithValueMathMultiplyWithValue
-	err = newStrictDecoder(data).Decode(&dst.MathMultiplyWithValueMathMultiplyWithValue)
+	// try to unmarshal data into MathMultiplyWithValueArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.MathMultiplyWithValueArgumentsConfig)
 	if err == nil {
-		jsonMathMultiplyWithValueMathMultiplyWithValue, _ := json.Marshal(dst.MathMultiplyWithValueMathMultiplyWithValue)
-		if string(jsonMathMultiplyWithValueMathMultiplyWithValue) == "{}" { // empty struct
-			dst.MathMultiplyWithValueMathMultiplyWithValue = nil
+		jsonMathMultiplyWithValueArgumentsConfig, _ := json.Marshal(dst.MathMultiplyWithValueArgumentsConfig)
+		if string(jsonMathMultiplyWithValueArgumentsConfig) == "{}" { // empty struct
+			dst.MathMultiplyWithValueArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.MathMultiplyWithValueMathMultiplyWithValue); err != nil {
-				dst.MathMultiplyWithValueMathMultiplyWithValue = nil
+			if err = validator.Validate(dst.MathMultiplyWithValueArgumentsConfig); err != nil {
+				dst.MathMultiplyWithValueArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MathMultiplyWithValueMathMultiplyWithValue = nil
+		dst.MathMultiplyWithValueArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into MutateTypeMutateType
-	err = newStrictDecoder(data).Decode(&dst.MutateTypeMutateType)
+	// try to unmarshal data into MutateTypeArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.MutateTypeArgumentsConfig)
 	if err == nil {
-		jsonMutateTypeMutateType, _ := json.Marshal(dst.MutateTypeMutateType)
-		if string(jsonMutateTypeMutateType) == "{}" { // empty struct
-			dst.MutateTypeMutateType = nil
+		jsonMutateTypeArgumentsConfig, _ := json.Marshal(dst.MutateTypeArgumentsConfig)
+		if string(jsonMutateTypeArgumentsConfig) == "{}" { // empty struct
+			dst.MutateTypeArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.MutateTypeMutateType); err != nil {
-				dst.MutateTypeMutateType = nil
+			if err = validator.Validate(dst.MutateTypeArgumentsConfig); err != nil {
+				dst.MutateTypeArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MutateTypeMutateType = nil
+		dst.MutateTypeArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq
-	err = newStrictDecoder(data).Decode(&dst.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq)
+	// try to unmarshal data into MutateValueWhereKeyEqAndValueEqArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.MutateValueWhereKeyEqAndValueEqArgumentsConfig)
 	if err == nil {
-		jsonMutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, _ := json.Marshal(dst.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq)
-		if string(jsonMutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) == "{}" { // empty struct
-			dst.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq = nil
+		jsonMutateValueWhereKeyEqAndValueEqArgumentsConfig, _ := json.Marshal(dst.MutateValueWhereKeyEqAndValueEqArgumentsConfig)
+		if string(jsonMutateValueWhereKeyEqAndValueEqArgumentsConfig) == "{}" { // empty struct
+			dst.MutateValueWhereKeyEqAndValueEqArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq); err != nil {
-				dst.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq = nil
+			if err = validator.Validate(dst.MutateValueWhereKeyEqAndValueEqArgumentsConfig); err != nil {
+				dst.MutateValueWhereKeyEqAndValueEqArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq = nil
+		dst.MutateValueWhereKeyEqAndValueEqArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into MutateValueWhereKeyEqMutateValueWhereKeyEq
-	err = newStrictDecoder(data).Decode(&dst.MutateValueWhereKeyEqMutateValueWhereKeyEq)
+	// try to unmarshal data into MutateValueWhereKeyEqArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.MutateValueWhereKeyEqArgumentsConfig)
 	if err == nil {
-		jsonMutateValueWhereKeyEqMutateValueWhereKeyEq, _ := json.Marshal(dst.MutateValueWhereKeyEqMutateValueWhereKeyEq)
-		if string(jsonMutateValueWhereKeyEqMutateValueWhereKeyEq) == "{}" { // empty struct
-			dst.MutateValueWhereKeyEqMutateValueWhereKeyEq = nil
+		jsonMutateValueWhereKeyEqArgumentsConfig, _ := json.Marshal(dst.MutateValueWhereKeyEqArgumentsConfig)
+		if string(jsonMutateValueWhereKeyEqArgumentsConfig) == "{}" { // empty struct
+			dst.MutateValueWhereKeyEqArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.MutateValueWhereKeyEqMutateValueWhereKeyEq); err != nil {
-				dst.MutateValueWhereKeyEqMutateValueWhereKeyEq = nil
+			if err = validator.Validate(dst.MutateValueWhereKeyEqArgumentsConfig); err != nil {
+				dst.MutateValueWhereKeyEqArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MutateValueWhereKeyEqMutateValueWhereKeyEq = nil
+		dst.MutateValueWhereKeyEqArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into RenameKeyRenameKey
-	err = newStrictDecoder(data).Decode(&dst.RenameKeyRenameKey)
+	// try to unmarshal data into RenameKeyArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.RenameKeyArgumentsConfig)
 	if err == nil {
-		jsonRenameKeyRenameKey, _ := json.Marshal(dst.RenameKeyRenameKey)
-		if string(jsonRenameKeyRenameKey) == "{}" { // empty struct
-			dst.RenameKeyRenameKey = nil
+		jsonRenameKeyArgumentsConfig, _ := json.Marshal(dst.RenameKeyArgumentsConfig)
+		if string(jsonRenameKeyArgumentsConfig) == "{}" { // empty struct
+			dst.RenameKeyArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.RenameKeyRenameKey); err != nil {
-				dst.RenameKeyRenameKey = nil
+			if err = validator.Validate(dst.RenameKeyArgumentsConfig); err != nil {
+				dst.RenameKeyArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.RenameKeyRenameKey = nil
+		dst.RenameKeyArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into RenameKeyWhereValueEqRenameKeyWhereValueEq
-	err = newStrictDecoder(data).Decode(&dst.RenameKeyWhereValueEqRenameKeyWhereValueEq)
+	// try to unmarshal data into RenameKeyWhereValueEqArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.RenameKeyWhereValueEqArgumentsConfig)
 	if err == nil {
-		jsonRenameKeyWhereValueEqRenameKeyWhereValueEq, _ := json.Marshal(dst.RenameKeyWhereValueEqRenameKeyWhereValueEq)
-		if string(jsonRenameKeyWhereValueEqRenameKeyWhereValueEq) == "{}" { // empty struct
-			dst.RenameKeyWhereValueEqRenameKeyWhereValueEq = nil
+		jsonRenameKeyWhereValueEqArgumentsConfig, _ := json.Marshal(dst.RenameKeyWhereValueEqArgumentsConfig)
+		if string(jsonRenameKeyWhereValueEqArgumentsConfig) == "{}" { // empty struct
+			dst.RenameKeyWhereValueEqArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.RenameKeyWhereValueEqRenameKeyWhereValueEq); err != nil {
-				dst.RenameKeyWhereValueEqRenameKeyWhereValueEq = nil
+			if err = validator.Validate(dst.RenameKeyWhereValueEqArgumentsConfig); err != nil {
+				dst.RenameKeyWhereValueEqArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.RenameKeyWhereValueEqRenameKeyWhereValueEq = nil
+		dst.RenameKeyWhereValueEqArgumentsConfig = nil
 	}
 
-	// try to unmarshal data into UtcTimestampTimestamp
-	err = newStrictDecoder(data).Decode(&dst.UtcTimestampTimestamp)
+	// try to unmarshal data into UtcTimestampArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.UtcTimestampArgumentsConfig)
 	if err == nil {
-		jsonUtcTimestampTimestamp, _ := json.Marshal(dst.UtcTimestampTimestamp)
-		if string(jsonUtcTimestampTimestamp) == "{}" { // empty struct
-			dst.UtcTimestampTimestamp = nil
+		jsonUtcTimestampArgumentsConfig, _ := json.Marshal(dst.UtcTimestampArgumentsConfig)
+		if string(jsonUtcTimestampArgumentsConfig) == "{}" { // empty struct
+			dst.UtcTimestampArgumentsConfig = nil
 		} else {
-			if err = validator.Validate(dst.UtcTimestampTimestamp); err != nil {
-				dst.UtcTimestampTimestamp = nil
+			if err = validator.Validate(dst.UtcTimestampArgumentsConfig); err != nil {
+				dst.UtcTimestampArgumentsConfig = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.UtcTimestampTimestamp = nil
+		dst.UtcTimestampArgumentsConfig = nil
 	}
 
 	// try to unmarshal data into MapmapOfStringAny
@@ -503,24 +503,24 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.AddAdd = nil
-		dst.AddIdAddIdentifier = nil
-		dst.ConvertTimestampConvertTimestamp = nil
-		dst.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue = nil
-		dst.DropKeyDropKey = nil
-		dst.DropKeyWhereValueEqDropKeyWhereValueEq = nil
-		dst.DropRecordWhereValueEqDropRecordWhereValueEq = nil
-		dst.DuplicateKeyValueToKeyDuplicateKeyValueToKey = nil
-		dst.FlattenFlatten = nil
-		dst.FlattenallFlattenAll = nil
-		dst.JqJQ = nil
-		dst.MathMultiplyWithValueMathMultiplyWithValue = nil
-		dst.MutateTypeMutateType = nil
-		dst.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq = nil
-		dst.MutateValueWhereKeyEqMutateValueWhereKeyEq = nil
-		dst.RenameKeyRenameKey = nil
-		dst.RenameKeyWhereValueEqRenameKeyWhereValueEq = nil
-		dst.UtcTimestampTimestamp = nil
+		dst.AddArgumentsConfig = nil
+		dst.AddIdArgumentsConfig = nil
+		dst.ConvertTimestampArgumentsConfig = nil
+		dst.CreateKeyValueIfKeyValueArgumentsConfig = nil
+		dst.DropKeyArgumentsConfig = nil
+		dst.DropKeyWhereValueEqArgumentsConfig = nil
+		dst.DropRecordWhereValueEqArgumentsConfig = nil
+		dst.DuplicateKeyValueToKeyArgumentsConfig = nil
+		dst.FlattenArgumentsConfig = nil
+		dst.FlattenallArgumentsConfig = nil
+		dst.JqArgumentsConfig = nil
+		dst.MathMultiplyWithValueArgumentsConfig = nil
+		dst.MutateTypeArgumentsConfig = nil
+		dst.MutateValueWhereKeyEqAndValueEqArgumentsConfig = nil
+		dst.MutateValueWhereKeyEqArgumentsConfig = nil
+		dst.RenameKeyArgumentsConfig = nil
+		dst.RenameKeyWhereValueEqArgumentsConfig = nil
+		dst.UtcTimestampArgumentsConfig = nil
 		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(RoutesTransformOperationArguments)")
@@ -533,76 +533,76 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src RoutesTransformOperationArguments) MarshalJSON() ([]byte, error) {
-	if src.AddAdd != nil {
-		return json.Marshal(&src.AddAdd)
+	if src.AddArgumentsConfig != nil {
+		return json.Marshal(&src.AddArgumentsConfig)
 	}
 
-	if src.AddIdAddIdentifier != nil {
-		return json.Marshal(&src.AddIdAddIdentifier)
+	if src.AddIdArgumentsConfig != nil {
+		return json.Marshal(&src.AddIdArgumentsConfig)
 	}
 
-	if src.ConvertTimestampConvertTimestamp != nil {
-		return json.Marshal(&src.ConvertTimestampConvertTimestamp)
+	if src.ConvertTimestampArgumentsConfig != nil {
+		return json.Marshal(&src.ConvertTimestampArgumentsConfig)
 	}
 
-	if src.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue != nil {
-		return json.Marshal(&src.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue)
+	if src.CreateKeyValueIfKeyValueArgumentsConfig != nil {
+		return json.Marshal(&src.CreateKeyValueIfKeyValueArgumentsConfig)
 	}
 
-	if src.DropKeyDropKey != nil {
-		return json.Marshal(&src.DropKeyDropKey)
+	if src.DropKeyArgumentsConfig != nil {
+		return json.Marshal(&src.DropKeyArgumentsConfig)
 	}
 
-	if src.DropKeyWhereValueEqDropKeyWhereValueEq != nil {
-		return json.Marshal(&src.DropKeyWhereValueEqDropKeyWhereValueEq)
+	if src.DropKeyWhereValueEqArgumentsConfig != nil {
+		return json.Marshal(&src.DropKeyWhereValueEqArgumentsConfig)
 	}
 
-	if src.DropRecordWhereValueEqDropRecordWhereValueEq != nil {
-		return json.Marshal(&src.DropRecordWhereValueEqDropRecordWhereValueEq)
+	if src.DropRecordWhereValueEqArgumentsConfig != nil {
+		return json.Marshal(&src.DropRecordWhereValueEqArgumentsConfig)
 	}
 
-	if src.DuplicateKeyValueToKeyDuplicateKeyValueToKey != nil {
-		return json.Marshal(&src.DuplicateKeyValueToKeyDuplicateKeyValueToKey)
+	if src.DuplicateKeyValueToKeyArgumentsConfig != nil {
+		return json.Marshal(&src.DuplicateKeyValueToKeyArgumentsConfig)
 	}
 
-	if src.FlattenFlatten != nil {
-		return json.Marshal(&src.FlattenFlatten)
+	if src.FlattenArgumentsConfig != nil {
+		return json.Marshal(&src.FlattenArgumentsConfig)
 	}
 
-	if src.FlattenallFlattenAll != nil {
-		return json.Marshal(&src.FlattenallFlattenAll)
+	if src.FlattenallArgumentsConfig != nil {
+		return json.Marshal(&src.FlattenallArgumentsConfig)
 	}
 
-	if src.JqJQ != nil {
-		return json.Marshal(&src.JqJQ)
+	if src.JqArgumentsConfig != nil {
+		return json.Marshal(&src.JqArgumentsConfig)
 	}
 
-	if src.MathMultiplyWithValueMathMultiplyWithValue != nil {
-		return json.Marshal(&src.MathMultiplyWithValueMathMultiplyWithValue)
+	if src.MathMultiplyWithValueArgumentsConfig != nil {
+		return json.Marshal(&src.MathMultiplyWithValueArgumentsConfig)
 	}
 
-	if src.MutateTypeMutateType != nil {
-		return json.Marshal(&src.MutateTypeMutateType)
+	if src.MutateTypeArgumentsConfig != nil {
+		return json.Marshal(&src.MutateTypeArgumentsConfig)
 	}
 
-	if src.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq != nil {
-		return json.Marshal(&src.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq)
+	if src.MutateValueWhereKeyEqAndValueEqArgumentsConfig != nil {
+		return json.Marshal(&src.MutateValueWhereKeyEqAndValueEqArgumentsConfig)
 	}
 
-	if src.MutateValueWhereKeyEqMutateValueWhereKeyEq != nil {
-		return json.Marshal(&src.MutateValueWhereKeyEqMutateValueWhereKeyEq)
+	if src.MutateValueWhereKeyEqArgumentsConfig != nil {
+		return json.Marshal(&src.MutateValueWhereKeyEqArgumentsConfig)
 	}
 
-	if src.RenameKeyRenameKey != nil {
-		return json.Marshal(&src.RenameKeyRenameKey)
+	if src.RenameKeyArgumentsConfig != nil {
+		return json.Marshal(&src.RenameKeyArgumentsConfig)
 	}
 
-	if src.RenameKeyWhereValueEqRenameKeyWhereValueEq != nil {
-		return json.Marshal(&src.RenameKeyWhereValueEqRenameKeyWhereValueEq)
+	if src.RenameKeyWhereValueEqArgumentsConfig != nil {
+		return json.Marshal(&src.RenameKeyWhereValueEqArgumentsConfig)
 	}
 
-	if src.UtcTimestampTimestamp != nil {
-		return json.Marshal(&src.UtcTimestampTimestamp)
+	if src.UtcTimestampArgumentsConfig != nil {
+		return json.Marshal(&src.UtcTimestampArgumentsConfig)
 	}
 
 	if src.MapmapOfStringAny != nil {
@@ -617,76 +617,76 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 	if obj == nil {
 		return nil
 	}
-	if obj.AddAdd != nil {
-		return obj.AddAdd
+	if obj.AddArgumentsConfig != nil {
+		return obj.AddArgumentsConfig
 	}
 
-	if obj.AddIdAddIdentifier != nil {
-		return obj.AddIdAddIdentifier
+	if obj.AddIdArgumentsConfig != nil {
+		return obj.AddIdArgumentsConfig
 	}
 
-	if obj.ConvertTimestampConvertTimestamp != nil {
-		return obj.ConvertTimestampConvertTimestamp
+	if obj.ConvertTimestampArgumentsConfig != nil {
+		return obj.ConvertTimestampArgumentsConfig
 	}
 
-	if obj.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue != nil {
-		return obj.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
+	if obj.CreateKeyValueIfKeyValueArgumentsConfig != nil {
+		return obj.CreateKeyValueIfKeyValueArgumentsConfig
 	}
 
-	if obj.DropKeyDropKey != nil {
-		return obj.DropKeyDropKey
+	if obj.DropKeyArgumentsConfig != nil {
+		return obj.DropKeyArgumentsConfig
 	}
 
-	if obj.DropKeyWhereValueEqDropKeyWhereValueEq != nil {
-		return obj.DropKeyWhereValueEqDropKeyWhereValueEq
+	if obj.DropKeyWhereValueEqArgumentsConfig != nil {
+		return obj.DropKeyWhereValueEqArgumentsConfig
 	}
 
-	if obj.DropRecordWhereValueEqDropRecordWhereValueEq != nil {
-		return obj.DropRecordWhereValueEqDropRecordWhereValueEq
+	if obj.DropRecordWhereValueEqArgumentsConfig != nil {
+		return obj.DropRecordWhereValueEqArgumentsConfig
 	}
 
-	if obj.DuplicateKeyValueToKeyDuplicateKeyValueToKey != nil {
-		return obj.DuplicateKeyValueToKeyDuplicateKeyValueToKey
+	if obj.DuplicateKeyValueToKeyArgumentsConfig != nil {
+		return obj.DuplicateKeyValueToKeyArgumentsConfig
 	}
 
-	if obj.FlattenFlatten != nil {
-		return obj.FlattenFlatten
+	if obj.FlattenArgumentsConfig != nil {
+		return obj.FlattenArgumentsConfig
 	}
 
-	if obj.FlattenallFlattenAll != nil {
-		return obj.FlattenallFlattenAll
+	if obj.FlattenallArgumentsConfig != nil {
+		return obj.FlattenallArgumentsConfig
 	}
 
-	if obj.JqJQ != nil {
-		return obj.JqJQ
+	if obj.JqArgumentsConfig != nil {
+		return obj.JqArgumentsConfig
 	}
 
-	if obj.MathMultiplyWithValueMathMultiplyWithValue != nil {
-		return obj.MathMultiplyWithValueMathMultiplyWithValue
+	if obj.MathMultiplyWithValueArgumentsConfig != nil {
+		return obj.MathMultiplyWithValueArgumentsConfig
 	}
 
-	if obj.MutateTypeMutateType != nil {
-		return obj.MutateTypeMutateType
+	if obj.MutateTypeArgumentsConfig != nil {
+		return obj.MutateTypeArgumentsConfig
 	}
 
-	if obj.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq != nil {
-		return obj.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq
+	if obj.MutateValueWhereKeyEqAndValueEqArgumentsConfig != nil {
+		return obj.MutateValueWhereKeyEqAndValueEqArgumentsConfig
 	}
 
-	if obj.MutateValueWhereKeyEqMutateValueWhereKeyEq != nil {
-		return obj.MutateValueWhereKeyEqMutateValueWhereKeyEq
+	if obj.MutateValueWhereKeyEqArgumentsConfig != nil {
+		return obj.MutateValueWhereKeyEqArgumentsConfig
 	}
 
-	if obj.RenameKeyRenameKey != nil {
-		return obj.RenameKeyRenameKey
+	if obj.RenameKeyArgumentsConfig != nil {
+		return obj.RenameKeyArgumentsConfig
 	}
 
-	if obj.RenameKeyWhereValueEqRenameKeyWhereValueEq != nil {
-		return obj.RenameKeyWhereValueEqRenameKeyWhereValueEq
+	if obj.RenameKeyWhereValueEqArgumentsConfig != nil {
+		return obj.RenameKeyWhereValueEqArgumentsConfig
 	}
 
-	if obj.UtcTimestampTimestamp != nil {
-		return obj.UtcTimestampTimestamp
+	if obj.UtcTimestampArgumentsConfig != nil {
+		return obj.UtcTimestampArgumentsConfig
 	}
 
 	if obj.MapmapOfStringAny != nil {
@@ -699,76 +699,76 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 
 // Get the actual instance value
 func (obj RoutesTransformOperationArguments) GetActualInstanceValue() (interface{}) {
-	if obj.AddAdd != nil {
-		return *obj.AddAdd
+	if obj.AddArgumentsConfig != nil {
+		return *obj.AddArgumentsConfig
 	}
 
-	if obj.AddIdAddIdentifier != nil {
-		return *obj.AddIdAddIdentifier
+	if obj.AddIdArgumentsConfig != nil {
+		return *obj.AddIdArgumentsConfig
 	}
 
-	if obj.ConvertTimestampConvertTimestamp != nil {
-		return *obj.ConvertTimestampConvertTimestamp
+	if obj.ConvertTimestampArgumentsConfig != nil {
+		return *obj.ConvertTimestampArgumentsConfig
 	}
 
-	if obj.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue != nil {
-		return *obj.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
+	if obj.CreateKeyValueIfKeyValueArgumentsConfig != nil {
+		return *obj.CreateKeyValueIfKeyValueArgumentsConfig
 	}
 
-	if obj.DropKeyDropKey != nil {
-		return *obj.DropKeyDropKey
+	if obj.DropKeyArgumentsConfig != nil {
+		return *obj.DropKeyArgumentsConfig
 	}
 
-	if obj.DropKeyWhereValueEqDropKeyWhereValueEq != nil {
-		return *obj.DropKeyWhereValueEqDropKeyWhereValueEq
+	if obj.DropKeyWhereValueEqArgumentsConfig != nil {
+		return *obj.DropKeyWhereValueEqArgumentsConfig
 	}
 
-	if obj.DropRecordWhereValueEqDropRecordWhereValueEq != nil {
-		return *obj.DropRecordWhereValueEqDropRecordWhereValueEq
+	if obj.DropRecordWhereValueEqArgumentsConfig != nil {
+		return *obj.DropRecordWhereValueEqArgumentsConfig
 	}
 
-	if obj.DuplicateKeyValueToKeyDuplicateKeyValueToKey != nil {
-		return *obj.DuplicateKeyValueToKeyDuplicateKeyValueToKey
+	if obj.DuplicateKeyValueToKeyArgumentsConfig != nil {
+		return *obj.DuplicateKeyValueToKeyArgumentsConfig
 	}
 
-	if obj.FlattenFlatten != nil {
-		return *obj.FlattenFlatten
+	if obj.FlattenArgumentsConfig != nil {
+		return *obj.FlattenArgumentsConfig
 	}
 
-	if obj.FlattenallFlattenAll != nil {
-		return *obj.FlattenallFlattenAll
+	if obj.FlattenallArgumentsConfig != nil {
+		return *obj.FlattenallArgumentsConfig
 	}
 
-	if obj.JqJQ != nil {
-		return *obj.JqJQ
+	if obj.JqArgumentsConfig != nil {
+		return *obj.JqArgumentsConfig
 	}
 
-	if obj.MathMultiplyWithValueMathMultiplyWithValue != nil {
-		return *obj.MathMultiplyWithValueMathMultiplyWithValue
+	if obj.MathMultiplyWithValueArgumentsConfig != nil {
+		return *obj.MathMultiplyWithValueArgumentsConfig
 	}
 
-	if obj.MutateTypeMutateType != nil {
-		return *obj.MutateTypeMutateType
+	if obj.MutateTypeArgumentsConfig != nil {
+		return *obj.MutateTypeArgumentsConfig
 	}
 
-	if obj.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq != nil {
-		return *obj.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq
+	if obj.MutateValueWhereKeyEqAndValueEqArgumentsConfig != nil {
+		return *obj.MutateValueWhereKeyEqAndValueEqArgumentsConfig
 	}
 
-	if obj.MutateValueWhereKeyEqMutateValueWhereKeyEq != nil {
-		return *obj.MutateValueWhereKeyEqMutateValueWhereKeyEq
+	if obj.MutateValueWhereKeyEqArgumentsConfig != nil {
+		return *obj.MutateValueWhereKeyEqArgumentsConfig
 	}
 
-	if obj.RenameKeyRenameKey != nil {
-		return *obj.RenameKeyRenameKey
+	if obj.RenameKeyArgumentsConfig != nil {
+		return *obj.RenameKeyArgumentsConfig
 	}
 
-	if obj.RenameKeyWhereValueEqRenameKeyWhereValueEq != nil {
-		return *obj.RenameKeyWhereValueEqRenameKeyWhereValueEq
+	if obj.RenameKeyWhereValueEqArgumentsConfig != nil {
+		return *obj.RenameKeyWhereValueEqArgumentsConfig
 	}
 
-	if obj.UtcTimestampTimestamp != nil {
-		return *obj.UtcTimestampTimestamp
+	if obj.UtcTimestampArgumentsConfig != nil {
+		return *obj.UtcTimestampArgumentsConfig
 	}
 
 	if obj.MapmapOfStringAny != nil {

@@ -112,6 +112,9 @@ const request: OrganizationTransformsApiV1OrganizationIdTransformsPostRequest = 
           ,
           description: "description_example",
           operation: "operation_example",
+          secrets: {
+            "key": null,
+          },
         },
       ],
     },
@@ -313,6 +316,9 @@ const request: OrganizationTransformsApiV1OrganizationIdTransformsTransformIdPat
           ,
           description: "description_example",
           operation: "operation_example",
+          secrets: {
+            "key": null,
+          },
         },
       ],
     },

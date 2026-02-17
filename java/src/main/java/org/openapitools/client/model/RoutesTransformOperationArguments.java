@@ -22,25 +22,25 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
-import org.openapitools.client.model.AddAdd;
-import org.openapitools.client.model.AddIdAddIdentifier;
-import org.openapitools.client.model.ConvertTimestampConvertTimestamp;
-import org.openapitools.client.model.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue;
-import org.openapitools.client.model.DropKeyDropKey;
-import org.openapitools.client.model.DropKeyWhereValueEqDropKeyWhereValueEq;
-import org.openapitools.client.model.DropRecordWhereValueEqDropRecordWhereValueEq;
-import org.openapitools.client.model.DuplicateKeyValueToKeyDuplicateKeyValueToKey;
-import org.openapitools.client.model.FlattenFlatten;
-import org.openapitools.client.model.FlattenallFlattenAll;
-import org.openapitools.client.model.JqJQ;
-import org.openapitools.client.model.MathMultiplyWithValueMathMultiplyWithValue;
-import org.openapitools.client.model.MutateTypeMutateType;
-import org.openapitools.client.model.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq;
-import org.openapitools.client.model.MutateValueWhereKeyEqMutateValueWhereKeyEq;
-import org.openapitools.client.model.RenameKeyRenameKey;
-import org.openapitools.client.model.RenameKeyWhereValueEqRenameKeyWhereValueEq;
+import org.openapitools.client.model.AddArgumentsConfig;
+import org.openapitools.client.model.AddIdArgumentsConfig;
+import org.openapitools.client.model.ConvertTimestampArgumentsConfig;
+import org.openapitools.client.model.CreateKeyValueIfKeyValueArgumentsConfig;
+import org.openapitools.client.model.DropKeyArgumentsConfig;
+import org.openapitools.client.model.DropKeyWhereValueEqArgumentsConfig;
+import org.openapitools.client.model.DropRecordWhereValueEqArgumentsConfig;
+import org.openapitools.client.model.DuplicateKeyValueToKeyArgumentsConfig;
+import org.openapitools.client.model.FlattenArgumentsConfig;
+import org.openapitools.client.model.FlattenallArgumentsConfig;
+import org.openapitools.client.model.JqArgumentsConfig;
+import org.openapitools.client.model.MathMultiplyWithValueArgumentsConfig;
+import org.openapitools.client.model.MutateTypeArgumentsConfig;
+import org.openapitools.client.model.MutateValueWhereKeyEqAndValueEqArgumentsConfig;
+import org.openapitools.client.model.MutateValueWhereKeyEqArgumentsConfig;
+import org.openapitools.client.model.RenameKeyArgumentsConfig;
+import org.openapitools.client.model.RenameKeyWhereValueEqArgumentsConfig;
 import org.openapitools.client.model.UtcTimestampArgumentsConfig;
-import org.openapitools.client.model.UtcTimestampTimestamp;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 
 
@@ -77,7 +77,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T21:33:18.940961660Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-17T22:11:37.655630851Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutesTransformOperationArguments.class.getName());
 
@@ -89,26 +89,26 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                 return null; // this class only serializes 'RoutesTransformOperationArguments' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<AddAdd> adapterAddAdd = gson.getDelegateAdapter(this, TypeToken.get(AddAdd.class));
-            final TypeAdapter<AddIdAddIdentifier> adapterAddIdAddIdentifier = gson.getDelegateAdapter(this, TypeToken.get(AddIdAddIdentifier.class));
-            final TypeAdapter<ConvertTimestampConvertTimestamp> adapterConvertTimestampConvertTimestamp = gson.getDelegateAdapter(this, TypeToken.get(ConvertTimestampConvertTimestamp.class));
-            final TypeAdapter<CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue> adapterCreateKeyValueIfKeyValueCreateKeyValueIfKeyValue = gson.getDelegateAdapter(this, TypeToken.get(CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.class));
-            final TypeAdapter<DropKeyDropKey> adapterDropKeyDropKey = gson.getDelegateAdapter(this, TypeToken.get(DropKeyDropKey.class));
-            final TypeAdapter<DropKeyWhereValueEqDropKeyWhereValueEq> adapterDropKeyWhereValueEqDropKeyWhereValueEq = gson.getDelegateAdapter(this, TypeToken.get(DropKeyWhereValueEqDropKeyWhereValueEq.class));
-            final TypeAdapter<DropRecordWhereValueEqDropRecordWhereValueEq> adapterDropRecordWhereValueEqDropRecordWhereValueEq = gson.getDelegateAdapter(this, TypeToken.get(DropRecordWhereValueEqDropRecordWhereValueEq.class));
-            final TypeAdapter<DuplicateKeyValueToKeyDuplicateKeyValueToKey> adapterDuplicateKeyValueToKeyDuplicateKeyValueToKey = gson.getDelegateAdapter(this, TypeToken.get(DuplicateKeyValueToKeyDuplicateKeyValueToKey.class));
-            final TypeAdapter<FlattenFlatten> adapterFlattenFlatten = gson.getDelegateAdapter(this, TypeToken.get(FlattenFlatten.class));
-            final TypeAdapter<FlattenallFlattenAll> adapterFlattenallFlattenAll = gson.getDelegateAdapter(this, TypeToken.get(FlattenallFlattenAll.class));
-            final TypeAdapter<JqJQ> adapterJqJQ = gson.getDelegateAdapter(this, TypeToken.get(JqJQ.class));
-            final TypeAdapter<MathMultiplyWithValueMathMultiplyWithValue> adapterMathMultiplyWithValueMathMultiplyWithValue = gson.getDelegateAdapter(this, TypeToken.get(MathMultiplyWithValueMathMultiplyWithValue.class));
+            final TypeAdapter<AddArgumentsConfig> adapterAddArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(AddArgumentsConfig.class));
+            final TypeAdapter<AddIdArgumentsConfig> adapterAddIdArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(AddIdArgumentsConfig.class));
+            final TypeAdapter<ConvertTimestampArgumentsConfig> adapterConvertTimestampArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(ConvertTimestampArgumentsConfig.class));
+            final TypeAdapter<CreateKeyValueIfKeyValueArgumentsConfig> adapterCreateKeyValueIfKeyValueArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(CreateKeyValueIfKeyValueArgumentsConfig.class));
+            final TypeAdapter<DropKeyArgumentsConfig> adapterDropKeyArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(DropKeyArgumentsConfig.class));
+            final TypeAdapter<DropKeyWhereValueEqArgumentsConfig> adapterDropKeyWhereValueEqArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(DropKeyWhereValueEqArgumentsConfig.class));
+            final TypeAdapter<DropRecordWhereValueEqArgumentsConfig> adapterDropRecordWhereValueEqArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(DropRecordWhereValueEqArgumentsConfig.class));
+            final TypeAdapter<DuplicateKeyValueToKeyArgumentsConfig> adapterDuplicateKeyValueToKeyArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(DuplicateKeyValueToKeyArgumentsConfig.class));
+            final TypeAdapter<FlattenArgumentsConfig> adapterFlattenArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(FlattenArgumentsConfig.class));
+            final TypeAdapter<FlattenallArgumentsConfig> adapterFlattenallArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(FlattenallArgumentsConfig.class));
+            final TypeAdapter<JqArgumentsConfig> adapterJqArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(JqArgumentsConfig.class));
+            final TypeAdapter<MathMultiplyWithValueArgumentsConfig> adapterMathMultiplyWithValueArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(MathMultiplyWithValueArgumentsConfig.class));
             final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
             final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
-            final TypeAdapter<MutateTypeMutateType> adapterMutateTypeMutateType = gson.getDelegateAdapter(this, TypeToken.get(MutateTypeMutateType.class));
-            final TypeAdapter<MutateValueWhereKeyEqMutateValueWhereKeyEq> adapterMutateValueWhereKeyEqMutateValueWhereKeyEq = gson.getDelegateAdapter(this, TypeToken.get(MutateValueWhereKeyEqMutateValueWhereKeyEq.class));
-            final TypeAdapter<MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq> adapterMutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq = gson.getDelegateAdapter(this, TypeToken.get(MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq.class));
-            final TypeAdapter<RenameKeyRenameKey> adapterRenameKeyRenameKey = gson.getDelegateAdapter(this, TypeToken.get(RenameKeyRenameKey.class));
-            final TypeAdapter<RenameKeyWhereValueEqRenameKeyWhereValueEq> adapterRenameKeyWhereValueEqRenameKeyWhereValueEq = gson.getDelegateAdapter(this, TypeToken.get(RenameKeyWhereValueEqRenameKeyWhereValueEq.class));
-            final TypeAdapter<UtcTimestampTimestamp> adapterUtcTimestampTimestamp = gson.getDelegateAdapter(this, TypeToken.get(UtcTimestampTimestamp.class));
+            final TypeAdapter<MutateTypeArgumentsConfig> adapterMutateTypeArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(MutateTypeArgumentsConfig.class));
+            final TypeAdapter<MutateValueWhereKeyEqArgumentsConfig> adapterMutateValueWhereKeyEqArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(MutateValueWhereKeyEqArgumentsConfig.class));
+            final TypeAdapter<MutateValueWhereKeyEqAndValueEqArgumentsConfig> adapterMutateValueWhereKeyEqAndValueEqArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(MutateValueWhereKeyEqAndValueEqArgumentsConfig.class));
+            final TypeAdapter<RenameKeyArgumentsConfig> adapterRenameKeyArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(RenameKeyArgumentsConfig.class));
+            final TypeAdapter<RenameKeyWhereValueEqArgumentsConfig> adapterRenameKeyWhereValueEqArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(RenameKeyWhereValueEqArgumentsConfig.class));
+            final TypeAdapter<UtcTimestampArgumentsConfig> adapterUtcTimestampArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(UtcTimestampArgumentsConfig.class));
 
             return (TypeAdapter<T>) new TypeAdapter<RoutesTransformOperationArguments>() {
                 @Override
@@ -118,75 +118,75 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         return;
                     }
 
-                    // check if the actual instance is of the type `AddAdd`
-                    if (value.getActualInstance() instanceof AddAdd) {
-                        JsonElement element = adapterAddAdd.toJsonTree((AddAdd)value.getActualInstance());
+                    // check if the actual instance is of the type `AddArgumentsConfig`
+                    if (value.getActualInstance() instanceof AddArgumentsConfig) {
+                        JsonElement element = adapterAddArgumentsConfig.toJsonTree((AddArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `AddIdAddIdentifier`
-                    if (value.getActualInstance() instanceof AddIdAddIdentifier) {
-                        JsonElement element = adapterAddIdAddIdentifier.toJsonTree((AddIdAddIdentifier)value.getActualInstance());
+                    // check if the actual instance is of the type `AddIdArgumentsConfig`
+                    if (value.getActualInstance() instanceof AddIdArgumentsConfig) {
+                        JsonElement element = adapterAddIdArgumentsConfig.toJsonTree((AddIdArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `ConvertTimestampConvertTimestamp`
-                    if (value.getActualInstance() instanceof ConvertTimestampConvertTimestamp) {
-                        JsonElement element = adapterConvertTimestampConvertTimestamp.toJsonTree((ConvertTimestampConvertTimestamp)value.getActualInstance());
+                    // check if the actual instance is of the type `ConvertTimestampArgumentsConfig`
+                    if (value.getActualInstance() instanceof ConvertTimestampArgumentsConfig) {
+                        JsonElement element = adapterConvertTimestampArgumentsConfig.toJsonTree((ConvertTimestampArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue`
-                    if (value.getActualInstance() instanceof CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) {
-                        JsonElement element = adapterCreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.toJsonTree((CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue)value.getActualInstance());
+                    // check if the actual instance is of the type `CreateKeyValueIfKeyValueArgumentsConfig`
+                    if (value.getActualInstance() instanceof CreateKeyValueIfKeyValueArgumentsConfig) {
+                        JsonElement element = adapterCreateKeyValueIfKeyValueArgumentsConfig.toJsonTree((CreateKeyValueIfKeyValueArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `DropKeyDropKey`
-                    if (value.getActualInstance() instanceof DropKeyDropKey) {
-                        JsonElement element = adapterDropKeyDropKey.toJsonTree((DropKeyDropKey)value.getActualInstance());
+                    // check if the actual instance is of the type `DropKeyArgumentsConfig`
+                    if (value.getActualInstance() instanceof DropKeyArgumentsConfig) {
+                        JsonElement element = adapterDropKeyArgumentsConfig.toJsonTree((DropKeyArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `DropKeyWhereValueEqDropKeyWhereValueEq`
-                    if (value.getActualInstance() instanceof DropKeyWhereValueEqDropKeyWhereValueEq) {
-                        JsonElement element = adapterDropKeyWhereValueEqDropKeyWhereValueEq.toJsonTree((DropKeyWhereValueEqDropKeyWhereValueEq)value.getActualInstance());
+                    // check if the actual instance is of the type `DropKeyWhereValueEqArgumentsConfig`
+                    if (value.getActualInstance() instanceof DropKeyWhereValueEqArgumentsConfig) {
+                        JsonElement element = adapterDropKeyWhereValueEqArgumentsConfig.toJsonTree((DropKeyWhereValueEqArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `DropRecordWhereValueEqDropRecordWhereValueEq`
-                    if (value.getActualInstance() instanceof DropRecordWhereValueEqDropRecordWhereValueEq) {
-                        JsonElement element = adapterDropRecordWhereValueEqDropRecordWhereValueEq.toJsonTree((DropRecordWhereValueEqDropRecordWhereValueEq)value.getActualInstance());
+                    // check if the actual instance is of the type `DropRecordWhereValueEqArgumentsConfig`
+                    if (value.getActualInstance() instanceof DropRecordWhereValueEqArgumentsConfig) {
+                        JsonElement element = adapterDropRecordWhereValueEqArgumentsConfig.toJsonTree((DropRecordWhereValueEqArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `DuplicateKeyValueToKeyDuplicateKeyValueToKey`
-                    if (value.getActualInstance() instanceof DuplicateKeyValueToKeyDuplicateKeyValueToKey) {
-                        JsonElement element = adapterDuplicateKeyValueToKeyDuplicateKeyValueToKey.toJsonTree((DuplicateKeyValueToKeyDuplicateKeyValueToKey)value.getActualInstance());
+                    // check if the actual instance is of the type `DuplicateKeyValueToKeyArgumentsConfig`
+                    if (value.getActualInstance() instanceof DuplicateKeyValueToKeyArgumentsConfig) {
+                        JsonElement element = adapterDuplicateKeyValueToKeyArgumentsConfig.toJsonTree((DuplicateKeyValueToKeyArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `FlattenFlatten`
-                    if (value.getActualInstance() instanceof FlattenFlatten) {
-                        JsonElement element = adapterFlattenFlatten.toJsonTree((FlattenFlatten)value.getActualInstance());
+                    // check if the actual instance is of the type `FlattenArgumentsConfig`
+                    if (value.getActualInstance() instanceof FlattenArgumentsConfig) {
+                        JsonElement element = adapterFlattenArgumentsConfig.toJsonTree((FlattenArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `FlattenallFlattenAll`
-                    if (value.getActualInstance() instanceof FlattenallFlattenAll) {
-                        JsonElement element = adapterFlattenallFlattenAll.toJsonTree((FlattenallFlattenAll)value.getActualInstance());
+                    // check if the actual instance is of the type `FlattenallArgumentsConfig`
+                    if (value.getActualInstance() instanceof FlattenallArgumentsConfig) {
+                        JsonElement element = adapterFlattenallArgumentsConfig.toJsonTree((FlattenallArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `JqJQ`
-                    if (value.getActualInstance() instanceof JqJQ) {
-                        JsonElement element = adapterJqJQ.toJsonTree((JqJQ)value.getActualInstance());
+                    // check if the actual instance is of the type `JqArgumentsConfig`
+                    if (value.getActualInstance() instanceof JqArgumentsConfig) {
+                        JsonElement element = adapterJqArgumentsConfig.toJsonTree((JqArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `MathMultiplyWithValueMathMultiplyWithValue`
-                    if (value.getActualInstance() instanceof MathMultiplyWithValueMathMultiplyWithValue) {
-                        JsonElement element = adapterMathMultiplyWithValueMathMultiplyWithValue.toJsonTree((MathMultiplyWithValueMathMultiplyWithValue)value.getActualInstance());
+                    // check if the actual instance is of the type `MathMultiplyWithValueArgumentsConfig`
+                    if (value.getActualInstance() instanceof MathMultiplyWithValueArgumentsConfig) {
+                        JsonElement element = adapterMathMultiplyWithValueArgumentsConfig.toJsonTree((MathMultiplyWithValueArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -196,43 +196,43 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         elementAdapter.write(out, object);
                         return;
                     }
-                    // check if the actual instance is of the type `MutateTypeMutateType`
-                    if (value.getActualInstance() instanceof MutateTypeMutateType) {
-                        JsonElement element = adapterMutateTypeMutateType.toJsonTree((MutateTypeMutateType)value.getActualInstance());
+                    // check if the actual instance is of the type `MutateTypeArgumentsConfig`
+                    if (value.getActualInstance() instanceof MutateTypeArgumentsConfig) {
+                        JsonElement element = adapterMutateTypeArgumentsConfig.toJsonTree((MutateTypeArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `MutateValueWhereKeyEqMutateValueWhereKeyEq`
-                    if (value.getActualInstance() instanceof MutateValueWhereKeyEqMutateValueWhereKeyEq) {
-                        JsonElement element = adapterMutateValueWhereKeyEqMutateValueWhereKeyEq.toJsonTree((MutateValueWhereKeyEqMutateValueWhereKeyEq)value.getActualInstance());
+                    // check if the actual instance is of the type `MutateValueWhereKeyEqArgumentsConfig`
+                    if (value.getActualInstance() instanceof MutateValueWhereKeyEqArgumentsConfig) {
+                        JsonElement element = adapterMutateValueWhereKeyEqArgumentsConfig.toJsonTree((MutateValueWhereKeyEqArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq`
-                    if (value.getActualInstance() instanceof MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) {
-                        JsonElement element = adapterMutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq.toJsonTree((MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq)value.getActualInstance());
+                    // check if the actual instance is of the type `MutateValueWhereKeyEqAndValueEqArgumentsConfig`
+                    if (value.getActualInstance() instanceof MutateValueWhereKeyEqAndValueEqArgumentsConfig) {
+                        JsonElement element = adapterMutateValueWhereKeyEqAndValueEqArgumentsConfig.toJsonTree((MutateValueWhereKeyEqAndValueEqArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `RenameKeyRenameKey`
-                    if (value.getActualInstance() instanceof RenameKeyRenameKey) {
-                        JsonElement element = adapterRenameKeyRenameKey.toJsonTree((RenameKeyRenameKey)value.getActualInstance());
+                    // check if the actual instance is of the type `RenameKeyArgumentsConfig`
+                    if (value.getActualInstance() instanceof RenameKeyArgumentsConfig) {
+                        JsonElement element = adapterRenameKeyArgumentsConfig.toJsonTree((RenameKeyArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `RenameKeyWhereValueEqRenameKeyWhereValueEq`
-                    if (value.getActualInstance() instanceof RenameKeyWhereValueEqRenameKeyWhereValueEq) {
-                        JsonElement element = adapterRenameKeyWhereValueEqRenameKeyWhereValueEq.toJsonTree((RenameKeyWhereValueEqRenameKeyWhereValueEq)value.getActualInstance());
+                    // check if the actual instance is of the type `RenameKeyWhereValueEqArgumentsConfig`
+                    if (value.getActualInstance() instanceof RenameKeyWhereValueEqArgumentsConfig) {
+                        JsonElement element = adapterRenameKeyWhereValueEqArgumentsConfig.toJsonTree((RenameKeyWhereValueEqArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `UtcTimestampTimestamp`
-                    if (value.getActualInstance() instanceof UtcTimestampTimestamp) {
-                        JsonElement element = adapterUtcTimestampTimestamp.toJsonTree((UtcTimestampTimestamp)value.getActualInstance());
+                    // check if the actual instance is of the type `UtcTimestampArgumentsConfig`
+                    if (value.getActualInstance() instanceof UtcTimestampArgumentsConfig) {
+                        JsonElement element = adapterUtcTimestampArgumentsConfig.toJsonTree((UtcTimestampArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AddAdd, AddIdAddIdentifier, ConvertTimestampConvertTimestamp, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig");
                 }
 
                 @Override
@@ -244,149 +244,149 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                     ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
-                    // deserialize AddAdd
+                    // deserialize AddArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        AddAdd.validateJsonElement(jsonElement);
-                        actualAdapter = adapterAddAdd;
+                        AddArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAddArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'AddAdd'");
+                        log.log(Level.FINER, "Input data matches schema 'AddArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddAdd failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'AddAdd'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AddArgumentsConfig'", e);
                     }
-                    // deserialize AddIdAddIdentifier
+                    // deserialize AddIdArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        AddIdAddIdentifier.validateJsonElement(jsonElement);
-                        actualAdapter = adapterAddIdAddIdentifier;
+                        AddIdArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAddIdArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'AddIdAddIdentifier'");
+                        log.log(Level.FINER, "Input data matches schema 'AddIdArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddIdAddIdentifier failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'AddIdAddIdentifier'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddIdArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AddIdArgumentsConfig'", e);
                     }
-                    // deserialize ConvertTimestampConvertTimestamp
+                    // deserialize ConvertTimestampArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        ConvertTimestampConvertTimestamp.validateJsonElement(jsonElement);
-                        actualAdapter = adapterConvertTimestampConvertTimestamp;
+                        ConvertTimestampArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterConvertTimestampArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'ConvertTimestampConvertTimestamp'");
+                        log.log(Level.FINER, "Input data matches schema 'ConvertTimestampArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ConvertTimestampConvertTimestamp failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'ConvertTimestampConvertTimestamp'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ConvertTimestampArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'ConvertTimestampArgumentsConfig'", e);
                     }
-                    // deserialize CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
+                    // deserialize CreateKeyValueIfKeyValueArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.validateJsonElement(jsonElement);
-                        actualAdapter = adapterCreateKeyValueIfKeyValueCreateKeyValueIfKeyValue;
+                        CreateKeyValueIfKeyValueArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCreateKeyValueIfKeyValueArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue'");
+                        log.log(Level.FINER, "Input data matches schema 'CreateKeyValueIfKeyValueArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CreateKeyValueIfKeyValueArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'CreateKeyValueIfKeyValueArgumentsConfig'", e);
                     }
-                    // deserialize DropKeyDropKey
+                    // deserialize DropKeyArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        DropKeyDropKey.validateJsonElement(jsonElement);
-                        actualAdapter = adapterDropKeyDropKey;
+                        DropKeyArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDropKeyArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'DropKeyDropKey'");
+                        log.log(Level.FINER, "Input data matches schema 'DropKeyArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropKeyDropKey failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'DropKeyDropKey'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropKeyArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DropKeyArgumentsConfig'", e);
                     }
-                    // deserialize DropKeyWhereValueEqDropKeyWhereValueEq
+                    // deserialize DropKeyWhereValueEqArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        DropKeyWhereValueEqDropKeyWhereValueEq.validateJsonElement(jsonElement);
-                        actualAdapter = adapterDropKeyWhereValueEqDropKeyWhereValueEq;
+                        DropKeyWhereValueEqArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDropKeyWhereValueEqArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'DropKeyWhereValueEqDropKeyWhereValueEq'");
+                        log.log(Level.FINER, "Input data matches schema 'DropKeyWhereValueEqArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropKeyWhereValueEqDropKeyWhereValueEq failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'DropKeyWhereValueEqDropKeyWhereValueEq'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropKeyWhereValueEqArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DropKeyWhereValueEqArgumentsConfig'", e);
                     }
-                    // deserialize DropRecordWhereValueEqDropRecordWhereValueEq
+                    // deserialize DropRecordWhereValueEqArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        DropRecordWhereValueEqDropRecordWhereValueEq.validateJsonElement(jsonElement);
-                        actualAdapter = adapterDropRecordWhereValueEqDropRecordWhereValueEq;
+                        DropRecordWhereValueEqArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDropRecordWhereValueEqArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'DropRecordWhereValueEqDropRecordWhereValueEq'");
+                        log.log(Level.FINER, "Input data matches schema 'DropRecordWhereValueEqArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropRecordWhereValueEqDropRecordWhereValueEq failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'DropRecordWhereValueEqDropRecordWhereValueEq'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropRecordWhereValueEqArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DropRecordWhereValueEqArgumentsConfig'", e);
                     }
-                    // deserialize DuplicateKeyValueToKeyDuplicateKeyValueToKey
+                    // deserialize DuplicateKeyValueToKeyArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        DuplicateKeyValueToKeyDuplicateKeyValueToKey.validateJsonElement(jsonElement);
-                        actualAdapter = adapterDuplicateKeyValueToKeyDuplicateKeyValueToKey;
+                        DuplicateKeyValueToKeyArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterDuplicateKeyValueToKeyArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'DuplicateKeyValueToKeyDuplicateKeyValueToKey'");
+                        log.log(Level.FINER, "Input data matches schema 'DuplicateKeyValueToKeyArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DuplicateKeyValueToKeyDuplicateKeyValueToKey failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'DuplicateKeyValueToKeyDuplicateKeyValueToKey'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DuplicateKeyValueToKeyArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'DuplicateKeyValueToKeyArgumentsConfig'", e);
                     }
-                    // deserialize FlattenFlatten
+                    // deserialize FlattenArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        FlattenFlatten.validateJsonElement(jsonElement);
-                        actualAdapter = adapterFlattenFlatten;
+                        FlattenArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterFlattenArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'FlattenFlatten'");
+                        log.log(Level.FINER, "Input data matches schema 'FlattenArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FlattenFlatten failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'FlattenFlatten'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FlattenArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'FlattenArgumentsConfig'", e);
                     }
-                    // deserialize FlattenallFlattenAll
+                    // deserialize FlattenallArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        FlattenallFlattenAll.validateJsonElement(jsonElement);
-                        actualAdapter = adapterFlattenallFlattenAll;
+                        FlattenallArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterFlattenallArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'FlattenallFlattenAll'");
+                        log.log(Level.FINER, "Input data matches schema 'FlattenallArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FlattenallFlattenAll failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'FlattenallFlattenAll'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FlattenallArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'FlattenallArgumentsConfig'", e);
                     }
-                    // deserialize JqJQ
+                    // deserialize JqArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        JqJQ.validateJsonElement(jsonElement);
-                        actualAdapter = adapterJqJQ;
+                        JqArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterJqArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'JqJQ'");
+                        log.log(Level.FINER, "Input data matches schema 'JqArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for JqJQ failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'JqJQ'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for JqArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'JqArgumentsConfig'", e);
                     }
-                    // deserialize MathMultiplyWithValueMathMultiplyWithValue
+                    // deserialize MathMultiplyWithValueArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        MathMultiplyWithValueMathMultiplyWithValue.validateJsonElement(jsonElement);
-                        actualAdapter = adapterMathMultiplyWithValueMathMultiplyWithValue;
+                        MathMultiplyWithValueArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterMathMultiplyWithValueArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'MathMultiplyWithValueMathMultiplyWithValue'");
+                        log.log(Level.FINER, "Input data matches schema 'MathMultiplyWithValueArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MathMultiplyWithValueMathMultiplyWithValue failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'MathMultiplyWithValueMathMultiplyWithValue'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MathMultiplyWithValueArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'MathMultiplyWithValueArgumentsConfig'", e);
                     }
                     // deserialize Map<String, Object>
                     try {
@@ -403,77 +403,77 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'Map<String, Object>'", e);
                     }
-                    // deserialize MutateTypeMutateType
+                    // deserialize MutateTypeArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        MutateTypeMutateType.validateJsonElement(jsonElement);
-                        actualAdapter = adapterMutateTypeMutateType;
+                        MutateTypeArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterMutateTypeArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'MutateTypeMutateType'");
+                        log.log(Level.FINER, "Input data matches schema 'MutateTypeArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateTypeMutateType failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'MutateTypeMutateType'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateTypeArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'MutateTypeArgumentsConfig'", e);
                     }
-                    // deserialize MutateValueWhereKeyEqMutateValueWhereKeyEq
+                    // deserialize MutateValueWhereKeyEqArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        MutateValueWhereKeyEqMutateValueWhereKeyEq.validateJsonElement(jsonElement);
-                        actualAdapter = adapterMutateValueWhereKeyEqMutateValueWhereKeyEq;
+                        MutateValueWhereKeyEqArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterMutateValueWhereKeyEqArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'MutateValueWhereKeyEqMutateValueWhereKeyEq'");
+                        log.log(Level.FINER, "Input data matches schema 'MutateValueWhereKeyEqArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateValueWhereKeyEqMutateValueWhereKeyEq failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'MutateValueWhereKeyEqMutateValueWhereKeyEq'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateValueWhereKeyEqArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'MutateValueWhereKeyEqArgumentsConfig'", e);
                     }
-                    // deserialize MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq
+                    // deserialize MutateValueWhereKeyEqAndValueEqArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq.validateJsonElement(jsonElement);
-                        actualAdapter = adapterMutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq;
+                        MutateValueWhereKeyEqAndValueEqArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterMutateValueWhereKeyEqAndValueEqArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq'");
+                        log.log(Level.FINER, "Input data matches schema 'MutateValueWhereKeyEqAndValueEqArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateValueWhereKeyEqAndValueEqArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'MutateValueWhereKeyEqAndValueEqArgumentsConfig'", e);
                     }
-                    // deserialize RenameKeyRenameKey
+                    // deserialize RenameKeyArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        RenameKeyRenameKey.validateJsonElement(jsonElement);
-                        actualAdapter = adapterRenameKeyRenameKey;
+                        RenameKeyArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterRenameKeyArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'RenameKeyRenameKey'");
+                        log.log(Level.FINER, "Input data matches schema 'RenameKeyArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RenameKeyRenameKey failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'RenameKeyRenameKey'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RenameKeyArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'RenameKeyArgumentsConfig'", e);
                     }
-                    // deserialize RenameKeyWhereValueEqRenameKeyWhereValueEq
+                    // deserialize RenameKeyWhereValueEqArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        RenameKeyWhereValueEqRenameKeyWhereValueEq.validateJsonElement(jsonElement);
-                        actualAdapter = adapterRenameKeyWhereValueEqRenameKeyWhereValueEq;
+                        RenameKeyWhereValueEqArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterRenameKeyWhereValueEqArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'RenameKeyWhereValueEqRenameKeyWhereValueEq'");
+                        log.log(Level.FINER, "Input data matches schema 'RenameKeyWhereValueEqArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RenameKeyWhereValueEqRenameKeyWhereValueEq failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'RenameKeyWhereValueEqRenameKeyWhereValueEq'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RenameKeyWhereValueEqArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'RenameKeyWhereValueEqArgumentsConfig'", e);
                     }
-                    // deserialize UtcTimestampTimestamp
+                    // deserialize UtcTimestampArgumentsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        UtcTimestampTimestamp.validateJsonElement(jsonElement);
-                        actualAdapter = adapterUtcTimestampTimestamp;
+                        UtcTimestampArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterUtcTimestampArgumentsConfig;
                         match++;
-                        log.log(Level.FINER, "Input data matches schema 'UtcTimestampTimestamp'");
+                        log.log(Level.FINER, "Input data matches schema 'UtcTimestampArgumentsConfig'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for UtcTimestampTimestamp failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'UtcTimestampTimestamp'", e);
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for UtcTimestampArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'UtcTimestampArgumentsConfig'", e);
                     }
 
                     if (match == 1) {
@@ -501,25 +501,25 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     }
 
     static {
-        schemas.put("AddAdd", AddAdd.class);
-        schemas.put("AddIdAddIdentifier", AddIdAddIdentifier.class);
-        schemas.put("ConvertTimestampConvertTimestamp", ConvertTimestampConvertTimestamp.class);
-        schemas.put("CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue", CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.class);
-        schemas.put("DropKeyDropKey", DropKeyDropKey.class);
-        schemas.put("DropKeyWhereValueEqDropKeyWhereValueEq", DropKeyWhereValueEqDropKeyWhereValueEq.class);
-        schemas.put("DropRecordWhereValueEqDropRecordWhereValueEq", DropRecordWhereValueEqDropRecordWhereValueEq.class);
-        schemas.put("DuplicateKeyValueToKeyDuplicateKeyValueToKey", DuplicateKeyValueToKeyDuplicateKeyValueToKey.class);
-        schemas.put("FlattenFlatten", FlattenFlatten.class);
-        schemas.put("FlattenallFlattenAll", FlattenallFlattenAll.class);
-        schemas.put("JqJQ", JqJQ.class);
-        schemas.put("MathMultiplyWithValueMathMultiplyWithValue", MathMultiplyWithValueMathMultiplyWithValue.class);
+        schemas.put("AddArgumentsConfig", AddArgumentsConfig.class);
+        schemas.put("AddIdArgumentsConfig", AddIdArgumentsConfig.class);
+        schemas.put("ConvertTimestampArgumentsConfig", ConvertTimestampArgumentsConfig.class);
+        schemas.put("CreateKeyValueIfKeyValueArgumentsConfig", CreateKeyValueIfKeyValueArgumentsConfig.class);
+        schemas.put("DropKeyArgumentsConfig", DropKeyArgumentsConfig.class);
+        schemas.put("DropKeyWhereValueEqArgumentsConfig", DropKeyWhereValueEqArgumentsConfig.class);
+        schemas.put("DropRecordWhereValueEqArgumentsConfig", DropRecordWhereValueEqArgumentsConfig.class);
+        schemas.put("DuplicateKeyValueToKeyArgumentsConfig", DuplicateKeyValueToKeyArgumentsConfig.class);
+        schemas.put("FlattenArgumentsConfig", FlattenArgumentsConfig.class);
+        schemas.put("FlattenallArgumentsConfig", FlattenallArgumentsConfig.class);
+        schemas.put("JqArgumentsConfig", JqArgumentsConfig.class);
+        schemas.put("MathMultiplyWithValueArgumentsConfig", MathMultiplyWithValueArgumentsConfig.class);
         schemas.put("Map<String, Object>", Map.class);
-        schemas.put("MutateTypeMutateType", MutateTypeMutateType.class);
-        schemas.put("MutateValueWhereKeyEqMutateValueWhereKeyEq", MutateValueWhereKeyEqMutateValueWhereKeyEq.class);
-        schemas.put("MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq", MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq.class);
-        schemas.put("RenameKeyRenameKey", RenameKeyRenameKey.class);
-        schemas.put("RenameKeyWhereValueEqRenameKeyWhereValueEq", RenameKeyWhereValueEqRenameKeyWhereValueEq.class);
-        schemas.put("UtcTimestampTimestamp", UtcTimestampTimestamp.class);
+        schemas.put("MutateTypeArgumentsConfig", MutateTypeArgumentsConfig.class);
+        schemas.put("MutateValueWhereKeyEqArgumentsConfig", MutateValueWhereKeyEqArgumentsConfig.class);
+        schemas.put("MutateValueWhereKeyEqAndValueEqArgumentsConfig", MutateValueWhereKeyEqAndValueEqArgumentsConfig.class);
+        schemas.put("RenameKeyArgumentsConfig", RenameKeyArgumentsConfig.class);
+        schemas.put("RenameKeyWhereValueEqArgumentsConfig", RenameKeyWhereValueEqArgumentsConfig.class);
+        schemas.put("UtcTimestampArgumentsConfig", UtcTimestampArgumentsConfig.class);
     }
 
     @Override
@@ -530,68 +530,68 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AddAdd, AddIdAddIdentifier, ConvertTimestampConvertTimestamp, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp
+     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (instance instanceof AddAdd) {
+        if (instance instanceof AddArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof AddIdAddIdentifier) {
+        if (instance instanceof AddIdArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof ConvertTimestampConvertTimestamp) {
+        if (instance instanceof ConvertTimestampArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue) {
+        if (instance instanceof CreateKeyValueIfKeyValueArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof DropKeyDropKey) {
+        if (instance instanceof DropKeyArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof DropKeyWhereValueEqDropKeyWhereValueEq) {
+        if (instance instanceof DropKeyWhereValueEqArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof DropRecordWhereValueEqDropRecordWhereValueEq) {
+        if (instance instanceof DropRecordWhereValueEqArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof DuplicateKeyValueToKeyDuplicateKeyValueToKey) {
+        if (instance instanceof DuplicateKeyValueToKeyArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof FlattenFlatten) {
+        if (instance instanceof FlattenArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof FlattenallFlattenAll) {
+        if (instance instanceof FlattenallArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof JqJQ) {
+        if (instance instanceof JqArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof MathMultiplyWithValueMathMultiplyWithValue) {
+        if (instance instanceof MathMultiplyWithValueArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -601,44 +601,44 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             return;
         }
 
-        if (instance instanceof MutateTypeMutateType) {
+        if (instance instanceof MutateTypeArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof MutateValueWhereKeyEqMutateValueWhereKeyEq) {
+        if (instance instanceof MutateValueWhereKeyEqArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq) {
+        if (instance instanceof MutateValueWhereKeyEqAndValueEqArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof RenameKeyRenameKey) {
+        if (instance instanceof RenameKeyArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof RenameKeyWhereValueEqRenameKeyWhereValueEq) {
+        if (instance instanceof RenameKeyWhereValueEqArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof UtcTimestampTimestamp) {
+        if (instance instanceof UtcTimestampArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be AddAdd, AddIdAddIdentifier, ConvertTimestampConvertTimestamp, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp");
+        throw new RuntimeException("Invalid instance type. Must be AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AddAdd, AddIdAddIdentifier, ConvertTimestampConvertTimestamp, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp
+     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
      *
-     * @return The actual instance (AddAdd, AddIdAddIdentifier, ConvertTimestampConvertTimestamp, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp)
+     * @return The actual instance (AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -647,135 +647,135 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `AddAdd`. If the actual instance is not `AddAdd`,
+     * Get the actual instance of `AddArgumentsConfig`. If the actual instance is not `AddArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `AddAdd`
-     * @throws ClassCastException if the instance is not `AddAdd`
+     * @return The actual instance of `AddArgumentsConfig`
+     * @throws ClassCastException if the instance is not `AddArgumentsConfig`
      */
-    public AddAdd getAddAdd() throws ClassCastException {
-        return (AddAdd)super.getActualInstance();
+    public AddArgumentsConfig getAddArgumentsConfig() throws ClassCastException {
+        return (AddArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `AddIdAddIdentifier`. If the actual instance is not `AddIdAddIdentifier`,
+     * Get the actual instance of `AddIdArgumentsConfig`. If the actual instance is not `AddIdArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `AddIdAddIdentifier`
-     * @throws ClassCastException if the instance is not `AddIdAddIdentifier`
+     * @return The actual instance of `AddIdArgumentsConfig`
+     * @throws ClassCastException if the instance is not `AddIdArgumentsConfig`
      */
-    public AddIdAddIdentifier getAddIdAddIdentifier() throws ClassCastException {
-        return (AddIdAddIdentifier)super.getActualInstance();
+    public AddIdArgumentsConfig getAddIdArgumentsConfig() throws ClassCastException {
+        return (AddIdArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `ConvertTimestampConvertTimestamp`. If the actual instance is not `ConvertTimestampConvertTimestamp`,
+     * Get the actual instance of `ConvertTimestampArgumentsConfig`. If the actual instance is not `ConvertTimestampArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `ConvertTimestampConvertTimestamp`
-     * @throws ClassCastException if the instance is not `ConvertTimestampConvertTimestamp`
+     * @return The actual instance of `ConvertTimestampArgumentsConfig`
+     * @throws ClassCastException if the instance is not `ConvertTimestampArgumentsConfig`
      */
-    public ConvertTimestampConvertTimestamp getConvertTimestampConvertTimestamp() throws ClassCastException {
-        return (ConvertTimestampConvertTimestamp)super.getActualInstance();
+    public ConvertTimestampArgumentsConfig getConvertTimestampArgumentsConfig() throws ClassCastException {
+        return (ConvertTimestampArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue`. If the actual instance is not `CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue`,
+     * Get the actual instance of `CreateKeyValueIfKeyValueArgumentsConfig`. If the actual instance is not `CreateKeyValueIfKeyValueArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue`
-     * @throws ClassCastException if the instance is not `CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue`
+     * @return The actual instance of `CreateKeyValueIfKeyValueArgumentsConfig`
+     * @throws ClassCastException if the instance is not `CreateKeyValueIfKeyValueArgumentsConfig`
      */
-    public CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue getCreateKeyValueIfKeyValueCreateKeyValueIfKeyValue() throws ClassCastException {
-        return (CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue)super.getActualInstance();
+    public CreateKeyValueIfKeyValueArgumentsConfig getCreateKeyValueIfKeyValueArgumentsConfig() throws ClassCastException {
+        return (CreateKeyValueIfKeyValueArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `DropKeyDropKey`. If the actual instance is not `DropKeyDropKey`,
+     * Get the actual instance of `DropKeyArgumentsConfig`. If the actual instance is not `DropKeyArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `DropKeyDropKey`
-     * @throws ClassCastException if the instance is not `DropKeyDropKey`
+     * @return The actual instance of `DropKeyArgumentsConfig`
+     * @throws ClassCastException if the instance is not `DropKeyArgumentsConfig`
      */
-    public DropKeyDropKey getDropKeyDropKey() throws ClassCastException {
-        return (DropKeyDropKey)super.getActualInstance();
+    public DropKeyArgumentsConfig getDropKeyArgumentsConfig() throws ClassCastException {
+        return (DropKeyArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `DropKeyWhereValueEqDropKeyWhereValueEq`. If the actual instance is not `DropKeyWhereValueEqDropKeyWhereValueEq`,
+     * Get the actual instance of `DropKeyWhereValueEqArgumentsConfig`. If the actual instance is not `DropKeyWhereValueEqArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `DropKeyWhereValueEqDropKeyWhereValueEq`
-     * @throws ClassCastException if the instance is not `DropKeyWhereValueEqDropKeyWhereValueEq`
+     * @return The actual instance of `DropKeyWhereValueEqArgumentsConfig`
+     * @throws ClassCastException if the instance is not `DropKeyWhereValueEqArgumentsConfig`
      */
-    public DropKeyWhereValueEqDropKeyWhereValueEq getDropKeyWhereValueEqDropKeyWhereValueEq() throws ClassCastException {
-        return (DropKeyWhereValueEqDropKeyWhereValueEq)super.getActualInstance();
+    public DropKeyWhereValueEqArgumentsConfig getDropKeyWhereValueEqArgumentsConfig() throws ClassCastException {
+        return (DropKeyWhereValueEqArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `DropRecordWhereValueEqDropRecordWhereValueEq`. If the actual instance is not `DropRecordWhereValueEqDropRecordWhereValueEq`,
+     * Get the actual instance of `DropRecordWhereValueEqArgumentsConfig`. If the actual instance is not `DropRecordWhereValueEqArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `DropRecordWhereValueEqDropRecordWhereValueEq`
-     * @throws ClassCastException if the instance is not `DropRecordWhereValueEqDropRecordWhereValueEq`
+     * @return The actual instance of `DropRecordWhereValueEqArgumentsConfig`
+     * @throws ClassCastException if the instance is not `DropRecordWhereValueEqArgumentsConfig`
      */
-    public DropRecordWhereValueEqDropRecordWhereValueEq getDropRecordWhereValueEqDropRecordWhereValueEq() throws ClassCastException {
-        return (DropRecordWhereValueEqDropRecordWhereValueEq)super.getActualInstance();
+    public DropRecordWhereValueEqArgumentsConfig getDropRecordWhereValueEqArgumentsConfig() throws ClassCastException {
+        return (DropRecordWhereValueEqArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `DuplicateKeyValueToKeyDuplicateKeyValueToKey`. If the actual instance is not `DuplicateKeyValueToKeyDuplicateKeyValueToKey`,
+     * Get the actual instance of `DuplicateKeyValueToKeyArgumentsConfig`. If the actual instance is not `DuplicateKeyValueToKeyArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `DuplicateKeyValueToKeyDuplicateKeyValueToKey`
-     * @throws ClassCastException if the instance is not `DuplicateKeyValueToKeyDuplicateKeyValueToKey`
+     * @return The actual instance of `DuplicateKeyValueToKeyArgumentsConfig`
+     * @throws ClassCastException if the instance is not `DuplicateKeyValueToKeyArgumentsConfig`
      */
-    public DuplicateKeyValueToKeyDuplicateKeyValueToKey getDuplicateKeyValueToKeyDuplicateKeyValueToKey() throws ClassCastException {
-        return (DuplicateKeyValueToKeyDuplicateKeyValueToKey)super.getActualInstance();
+    public DuplicateKeyValueToKeyArgumentsConfig getDuplicateKeyValueToKeyArgumentsConfig() throws ClassCastException {
+        return (DuplicateKeyValueToKeyArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `FlattenFlatten`. If the actual instance is not `FlattenFlatten`,
+     * Get the actual instance of `FlattenArgumentsConfig`. If the actual instance is not `FlattenArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `FlattenFlatten`
-     * @throws ClassCastException if the instance is not `FlattenFlatten`
+     * @return The actual instance of `FlattenArgumentsConfig`
+     * @throws ClassCastException if the instance is not `FlattenArgumentsConfig`
      */
-    public FlattenFlatten getFlattenFlatten() throws ClassCastException {
-        return (FlattenFlatten)super.getActualInstance();
+    public FlattenArgumentsConfig getFlattenArgumentsConfig() throws ClassCastException {
+        return (FlattenArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `FlattenallFlattenAll`. If the actual instance is not `FlattenallFlattenAll`,
+     * Get the actual instance of `FlattenallArgumentsConfig`. If the actual instance is not `FlattenallArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `FlattenallFlattenAll`
-     * @throws ClassCastException if the instance is not `FlattenallFlattenAll`
+     * @return The actual instance of `FlattenallArgumentsConfig`
+     * @throws ClassCastException if the instance is not `FlattenallArgumentsConfig`
      */
-    public FlattenallFlattenAll getFlattenallFlattenAll() throws ClassCastException {
-        return (FlattenallFlattenAll)super.getActualInstance();
+    public FlattenallArgumentsConfig getFlattenallArgumentsConfig() throws ClassCastException {
+        return (FlattenallArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `JqJQ`. If the actual instance is not `JqJQ`,
+     * Get the actual instance of `JqArgumentsConfig`. If the actual instance is not `JqArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `JqJQ`
-     * @throws ClassCastException if the instance is not `JqJQ`
+     * @return The actual instance of `JqArgumentsConfig`
+     * @throws ClassCastException if the instance is not `JqArgumentsConfig`
      */
-    public JqJQ getJqJQ() throws ClassCastException {
-        return (JqJQ)super.getActualInstance();
+    public JqArgumentsConfig getJqArgumentsConfig() throws ClassCastException {
+        return (JqArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `MathMultiplyWithValueMathMultiplyWithValue`. If the actual instance is not `MathMultiplyWithValueMathMultiplyWithValue`,
+     * Get the actual instance of `MathMultiplyWithValueArgumentsConfig`. If the actual instance is not `MathMultiplyWithValueArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `MathMultiplyWithValueMathMultiplyWithValue`
-     * @throws ClassCastException if the instance is not `MathMultiplyWithValueMathMultiplyWithValue`
+     * @return The actual instance of `MathMultiplyWithValueArgumentsConfig`
+     * @throws ClassCastException if the instance is not `MathMultiplyWithValueArgumentsConfig`
      */
-    public MathMultiplyWithValueMathMultiplyWithValue getMathMultiplyWithValueMathMultiplyWithValue() throws ClassCastException {
-        return (MathMultiplyWithValueMathMultiplyWithValue)super.getActualInstance();
+    public MathMultiplyWithValueArgumentsConfig getMathMultiplyWithValueArgumentsConfig() throws ClassCastException {
+        return (MathMultiplyWithValueArgumentsConfig)super.getActualInstance();
     }
 
     /**
@@ -790,69 +790,69 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `MutateTypeMutateType`. If the actual instance is not `MutateTypeMutateType`,
+     * Get the actual instance of `MutateTypeArgumentsConfig`. If the actual instance is not `MutateTypeArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `MutateTypeMutateType`
-     * @throws ClassCastException if the instance is not `MutateTypeMutateType`
+     * @return The actual instance of `MutateTypeArgumentsConfig`
+     * @throws ClassCastException if the instance is not `MutateTypeArgumentsConfig`
      */
-    public MutateTypeMutateType getMutateTypeMutateType() throws ClassCastException {
-        return (MutateTypeMutateType)super.getActualInstance();
+    public MutateTypeArgumentsConfig getMutateTypeArgumentsConfig() throws ClassCastException {
+        return (MutateTypeArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `MutateValueWhereKeyEqMutateValueWhereKeyEq`. If the actual instance is not `MutateValueWhereKeyEqMutateValueWhereKeyEq`,
+     * Get the actual instance of `MutateValueWhereKeyEqArgumentsConfig`. If the actual instance is not `MutateValueWhereKeyEqArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `MutateValueWhereKeyEqMutateValueWhereKeyEq`
-     * @throws ClassCastException if the instance is not `MutateValueWhereKeyEqMutateValueWhereKeyEq`
+     * @return The actual instance of `MutateValueWhereKeyEqArgumentsConfig`
+     * @throws ClassCastException if the instance is not `MutateValueWhereKeyEqArgumentsConfig`
      */
-    public MutateValueWhereKeyEqMutateValueWhereKeyEq getMutateValueWhereKeyEqMutateValueWhereKeyEq() throws ClassCastException {
-        return (MutateValueWhereKeyEqMutateValueWhereKeyEq)super.getActualInstance();
+    public MutateValueWhereKeyEqArgumentsConfig getMutateValueWhereKeyEqArgumentsConfig() throws ClassCastException {
+        return (MutateValueWhereKeyEqArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq`. If the actual instance is not `MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq`,
+     * Get the actual instance of `MutateValueWhereKeyEqAndValueEqArgumentsConfig`. If the actual instance is not `MutateValueWhereKeyEqAndValueEqArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq`
-     * @throws ClassCastException if the instance is not `MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq`
+     * @return The actual instance of `MutateValueWhereKeyEqAndValueEqArgumentsConfig`
+     * @throws ClassCastException if the instance is not `MutateValueWhereKeyEqAndValueEqArgumentsConfig`
      */
-    public MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq getMutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq() throws ClassCastException {
-        return (MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq)super.getActualInstance();
+    public MutateValueWhereKeyEqAndValueEqArgumentsConfig getMutateValueWhereKeyEqAndValueEqArgumentsConfig() throws ClassCastException {
+        return (MutateValueWhereKeyEqAndValueEqArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `RenameKeyRenameKey`. If the actual instance is not `RenameKeyRenameKey`,
+     * Get the actual instance of `RenameKeyArgumentsConfig`. If the actual instance is not `RenameKeyArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `RenameKeyRenameKey`
-     * @throws ClassCastException if the instance is not `RenameKeyRenameKey`
+     * @return The actual instance of `RenameKeyArgumentsConfig`
+     * @throws ClassCastException if the instance is not `RenameKeyArgumentsConfig`
      */
-    public RenameKeyRenameKey getRenameKeyRenameKey() throws ClassCastException {
-        return (RenameKeyRenameKey)super.getActualInstance();
+    public RenameKeyArgumentsConfig getRenameKeyArgumentsConfig() throws ClassCastException {
+        return (RenameKeyArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `RenameKeyWhereValueEqRenameKeyWhereValueEq`. If the actual instance is not `RenameKeyWhereValueEqRenameKeyWhereValueEq`,
+     * Get the actual instance of `RenameKeyWhereValueEqArgumentsConfig`. If the actual instance is not `RenameKeyWhereValueEqArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `RenameKeyWhereValueEqRenameKeyWhereValueEq`
-     * @throws ClassCastException if the instance is not `RenameKeyWhereValueEqRenameKeyWhereValueEq`
+     * @return The actual instance of `RenameKeyWhereValueEqArgumentsConfig`
+     * @throws ClassCastException if the instance is not `RenameKeyWhereValueEqArgumentsConfig`
      */
-    public RenameKeyWhereValueEqRenameKeyWhereValueEq getRenameKeyWhereValueEqRenameKeyWhereValueEq() throws ClassCastException {
-        return (RenameKeyWhereValueEqRenameKeyWhereValueEq)super.getActualInstance();
+    public RenameKeyWhereValueEqArgumentsConfig getRenameKeyWhereValueEqArgumentsConfig() throws ClassCastException {
+        return (RenameKeyWhereValueEqArgumentsConfig)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `UtcTimestampTimestamp`. If the actual instance is not `UtcTimestampTimestamp`,
+     * Get the actual instance of `UtcTimestampArgumentsConfig`. If the actual instance is not `UtcTimestampArgumentsConfig`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `UtcTimestampTimestamp`
-     * @throws ClassCastException if the instance is not `UtcTimestampTimestamp`
+     * @return The actual instance of `UtcTimestampArgumentsConfig`
+     * @throws ClassCastException if the instance is not `UtcTimestampArgumentsConfig`
      */
-    public UtcTimestampTimestamp getUtcTimestampTimestamp() throws ClassCastException {
-        return (UtcTimestampTimestamp)super.getActualInstance();
+    public UtcTimestampArgumentsConfig getUtcTimestampArgumentsConfig() throws ClassCastException {
+        return (UtcTimestampArgumentsConfig)super.getActualInstance();
     }
 
     /**
@@ -865,100 +865,100 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
         // validate oneOf schemas one by one
         int validCount = 0;
         ArrayList<String> errorMessages = new ArrayList<>();
-        // validate the json string with AddAdd
+        // validate the json string with AddArgumentsConfig
         try {
-            AddAdd.validateJsonElement(jsonElement);
+            AddArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddAdd failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with AddIdAddIdentifier
+        // validate the json string with AddIdArgumentsConfig
         try {
-            AddIdAddIdentifier.validateJsonElement(jsonElement);
+            AddIdArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddIdAddIdentifier failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddIdArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with ConvertTimestampConvertTimestamp
+        // validate the json string with ConvertTimestampArgumentsConfig
         try {
-            ConvertTimestampConvertTimestamp.validateJsonElement(jsonElement);
+            ConvertTimestampArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ConvertTimestampConvertTimestamp failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ConvertTimestampArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue
+        // validate the json string with CreateKeyValueIfKeyValueArgumentsConfig
         try {
-            CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue.validateJsonElement(jsonElement);
+            CreateKeyValueIfKeyValueArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for CreateKeyValueIfKeyValueArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with DropKeyDropKey
+        // validate the json string with DropKeyArgumentsConfig
         try {
-            DropKeyDropKey.validateJsonElement(jsonElement);
+            DropKeyArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropKeyDropKey failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropKeyArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with DropKeyWhereValueEqDropKeyWhereValueEq
+        // validate the json string with DropKeyWhereValueEqArgumentsConfig
         try {
-            DropKeyWhereValueEqDropKeyWhereValueEq.validateJsonElement(jsonElement);
+            DropKeyWhereValueEqArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropKeyWhereValueEqDropKeyWhereValueEq failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropKeyWhereValueEqArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with DropRecordWhereValueEqDropRecordWhereValueEq
+        // validate the json string with DropRecordWhereValueEqArgumentsConfig
         try {
-            DropRecordWhereValueEqDropRecordWhereValueEq.validateJsonElement(jsonElement);
+            DropRecordWhereValueEqArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropRecordWhereValueEqDropRecordWhereValueEq failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DropRecordWhereValueEqArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with DuplicateKeyValueToKeyDuplicateKeyValueToKey
+        // validate the json string with DuplicateKeyValueToKeyArgumentsConfig
         try {
-            DuplicateKeyValueToKeyDuplicateKeyValueToKey.validateJsonElement(jsonElement);
+            DuplicateKeyValueToKeyArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DuplicateKeyValueToKeyDuplicateKeyValueToKey failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for DuplicateKeyValueToKeyArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with FlattenFlatten
+        // validate the json string with FlattenArgumentsConfig
         try {
-            FlattenFlatten.validateJsonElement(jsonElement);
+            FlattenArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FlattenFlatten failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FlattenArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with FlattenallFlattenAll
+        // validate the json string with FlattenallArgumentsConfig
         try {
-            FlattenallFlattenAll.validateJsonElement(jsonElement);
+            FlattenallArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FlattenallFlattenAll failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for FlattenallArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with JqJQ
+        // validate the json string with JqArgumentsConfig
         try {
-            JqJQ.validateJsonElement(jsonElement);
+            JqArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for JqJQ failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for JqArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with MathMultiplyWithValueMathMultiplyWithValue
+        // validate the json string with MathMultiplyWithValueArgumentsConfig
         try {
-            MathMultiplyWithValueMathMultiplyWithValue.validateJsonElement(jsonElement);
+            MathMultiplyWithValueArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MathMultiplyWithValueMathMultiplyWithValue failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MathMultiplyWithValueArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with Map<String, Object>
@@ -972,56 +972,56 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with MutateTypeMutateType
+        // validate the json string with MutateTypeArgumentsConfig
         try {
-            MutateTypeMutateType.validateJsonElement(jsonElement);
+            MutateTypeArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateTypeMutateType failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateTypeArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with MutateValueWhereKeyEqMutateValueWhereKeyEq
+        // validate the json string with MutateValueWhereKeyEqArgumentsConfig
         try {
-            MutateValueWhereKeyEqMutateValueWhereKeyEq.validateJsonElement(jsonElement);
+            MutateValueWhereKeyEqArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateValueWhereKeyEqMutateValueWhereKeyEq failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateValueWhereKeyEqArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq
+        // validate the json string with MutateValueWhereKeyEqAndValueEqArgumentsConfig
         try {
-            MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq.validateJsonElement(jsonElement);
+            MutateValueWhereKeyEqAndValueEqArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for MutateValueWhereKeyEqAndValueEqArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with RenameKeyRenameKey
+        // validate the json string with RenameKeyArgumentsConfig
         try {
-            RenameKeyRenameKey.validateJsonElement(jsonElement);
+            RenameKeyArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RenameKeyRenameKey failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RenameKeyArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with RenameKeyWhereValueEqRenameKeyWhereValueEq
+        // validate the json string with RenameKeyWhereValueEqArgumentsConfig
         try {
-            RenameKeyWhereValueEqRenameKeyWhereValueEq.validateJsonElement(jsonElement);
+            RenameKeyWhereValueEqArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RenameKeyWhereValueEqRenameKeyWhereValueEq failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RenameKeyWhereValueEqArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with UtcTimestampTimestamp
+        // validate the json string with UtcTimestampArgumentsConfig
         try {
-            UtcTimestampTimestamp.validateJsonElement(jsonElement);
+            UtcTimestampArgumentsConfig.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for UtcTimestampTimestamp failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for UtcTimestampArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for RoutesTransformOperationArguments with oneOf schemas: AddAdd, AddIdAddIdentifier, ConvertTimestampConvertTimestamp, CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue, DropKeyDropKey, DropKeyWhereValueEqDropKeyWhereValueEq, DropRecordWhereValueEqDropRecordWhereValueEq, DuplicateKeyValueToKeyDuplicateKeyValueToKey, FlattenFlatten, FlattenallFlattenAll, JqJQ, Map<String, Object>, MathMultiplyWithValueMathMultiplyWithValue, MutateTypeMutateType, MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq, MutateValueWhereKeyEqMutateValueWhereKeyEq, RenameKeyRenameKey, RenameKeyWhereValueEqRenameKeyWhereValueEq, UtcTimestampTimestamp. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for RoutesTransformOperationArguments with oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

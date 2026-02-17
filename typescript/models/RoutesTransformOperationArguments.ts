@@ -10,24 +10,24 @@
  * Do not edit the class manually.
  */
 
-import { AddAdd } from '../models/AddAdd';
-import { AddIdAddIdentifier } from '../models/AddIdAddIdentifier';
-import { ConvertTimestampConvertTimestamp } from '../models/ConvertTimestampConvertTimestamp';
-import { CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue } from '../models/CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue';
-import { DropKeyDropKey } from '../models/DropKeyDropKey';
-import { DropKeyWhereValueEqDropKeyWhereValueEq } from '../models/DropKeyWhereValueEqDropKeyWhereValueEq';
-import { DropRecordWhereValueEqDropRecordWhereValueEq } from '../models/DropRecordWhereValueEqDropRecordWhereValueEq';
-import { DuplicateKeyValueToKeyDuplicateKeyValueToKey } from '../models/DuplicateKeyValueToKeyDuplicateKeyValueToKey';
-import { FlattenFlatten } from '../models/FlattenFlatten';
-import { FlattenallFlattenAll } from '../models/FlattenallFlattenAll';
-import { JqJQ } from '../models/JqJQ';
-import { MathMultiplyWithValueMathMultiplyWithValue } from '../models/MathMultiplyWithValueMathMultiplyWithValue';
-import { MutateTypeMutateType } from '../models/MutateTypeMutateType';
-import { MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq } from '../models/MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq';
-import { MutateValueWhereKeyEqMutateValueWhereKeyEq } from '../models/MutateValueWhereKeyEqMutateValueWhereKeyEq';
-import { RenameKeyRenameKey } from '../models/RenameKeyRenameKey';
-import { RenameKeyWhereValueEqRenameKeyWhereValueEq } from '../models/RenameKeyWhereValueEqRenameKeyWhereValueEq';
-import { UtcTimestampTimestamp } from '../models/UtcTimestampTimestamp';
+import { AddArgumentsConfig } from '../models/AddArgumentsConfig';
+import { AddIdArgumentsConfig } from '../models/AddIdArgumentsConfig';
+import { ConvertTimestampArgumentsConfig } from '../models/ConvertTimestampArgumentsConfig';
+import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
+import { DropKeyArgumentsConfig } from '../models/DropKeyArgumentsConfig';
+import { DropKeyWhereValueEqArgumentsConfig } from '../models/DropKeyWhereValueEqArgumentsConfig';
+import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhereValueEqArgumentsConfig';
+import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
+import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
+import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
+import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
+import { MathMultiplyWithValueArgumentsConfig } from '../models/MathMultiplyWithValueArgumentsConfig';
+import { MutateTypeArgumentsConfig } from '../models/MutateTypeArgumentsConfig';
+import { MutateValueWhereKeyEqAndValueEqArgumentsConfig } from '../models/MutateValueWhereKeyEqAndValueEqArgumentsConfig';
+import { MutateValueWhereKeyEqArgumentsConfig } from '../models/MutateValueWhereKeyEqArgumentsConfig';
+import { RenameKeyArgumentsConfig } from '../models/RenameKeyArgumentsConfig';
+import { RenameKeyWhereValueEqArgumentsConfig } from '../models/RenameKeyWhereValueEqArgumentsConfig';
+import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { HttpFile } from '../http/http';
 
 /**
@@ -35,7 +35,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesTransformOperationArguments = AddAdd | AddIdAddIdentifier | ConvertTimestampConvertTimestamp | CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue | DropKeyDropKey | DropKeyWhereValueEqDropKeyWhereValueEq | DropRecordWhereValueEqDropRecordWhereValueEq | DuplicateKeyValueToKeyDuplicateKeyValueToKey | FlattenFlatten | FlattenallFlattenAll | JqJQ | MathMultiplyWithValueMathMultiplyWithValue | MutateTypeMutateType | MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq | MutateValueWhereKeyEqMutateValueWhereKeyEq | RenameKeyRenameKey | RenameKeyWhereValueEqRenameKeyWhereValueEq | UtcTimestampTimestamp | { [key: string]: any; };
+export type RoutesTransformOperationArguments = AddArgumentsConfig | AddIdArgumentsConfig | ConvertTimestampArgumentsConfig | CreateKeyValueIfKeyValueArgumentsConfig | DropKeyArgumentsConfig | DropKeyWhereValueEqArgumentsConfig | DropRecordWhereValueEqArgumentsConfig | DuplicateKeyValueToKeyArgumentsConfig | FlattenArgumentsConfig | FlattenallArgumentsConfig | JqArgumentsConfig | MathMultiplyWithValueArgumentsConfig | MutateTypeArgumentsConfig | MutateValueWhereKeyEqAndValueEqArgumentsConfig | MutateValueWhereKeyEqArgumentsConfig | RenameKeyArgumentsConfig | RenameKeyWhereValueEqArgumentsConfig | UtcTimestampArgumentsConfig | { [key: string]: any; };
 
 /**
 * @type RoutesTransformOperationArgumentsClass

@@ -31,7 +31,8 @@ class RoutesTransformOperation(BaseModel):
     arguments: Optional[RoutesTransformOperationArguments] = None
     description: Optional[StrictStr] = None
     operation: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["arguments", "description", "operation"]
+    secrets: Optional[Dict[str, Any]] = None
+    __properties: ClassVar[List[str]] = ["arguments", "description", "operation", "secrets"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,7 +90,8 @@ class RoutesTransformOperation(BaseModel):
         _obj = cls.model_validate({
             "arguments": RoutesTransformOperationArguments.from_dict(obj["arguments"]) if obj.get("arguments") is not None else None,
             "description": obj.get("description"),
-            "operation": obj.get("operation")
+            "operation": obj.get("operation"),
+            "secrets": obj.get("secrets")
         })
         return _obj
 
