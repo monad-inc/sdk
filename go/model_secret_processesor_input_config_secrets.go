@@ -76,6 +76,7 @@ type SecretProcessesorInputConfigSecrets struct {
 	FullScansSecretsConfig *FullScansSecretsConfig
 	GitlabIssuesSecretsConfig *GitlabIssuesSecretsConfig
 	GoogleCloudStorageSecretsConfig *GoogleCloudStorageSecretsConfig
+	GoogleWorkspaceSecretsConfig *GoogleWorkspaceSecretsConfig
 	GreenhouseAuditLogsSecretsConfig *GreenhouseAuditLogsSecretsConfig
 	IndividualAlertsSecretsConfig *IndividualAlertsSecretsConfig
 	InspectorSecretsConfig *InspectorSecretsConfig
@@ -540,6 +541,13 @@ func GitlabIssuesSecretsConfigAsSecretProcessesorInputConfigSecrets(v *GitlabIss
 func GoogleCloudStorageSecretsConfigAsSecretProcessesorInputConfigSecrets(v *GoogleCloudStorageSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		GoogleCloudStorageSecretsConfig: v,
+	}
+}
+
+// GoogleWorkspaceSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns GoogleWorkspaceSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
+func GoogleWorkspaceSecretsConfigAsSecretProcessesorInputConfigSecrets(v *GoogleWorkspaceSecretsConfig) SecretProcessesorInputConfigSecrets {
+	return SecretProcessesorInputConfigSecrets{
+		GoogleWorkspaceSecretsConfig: v,
 	}
 }
 
@@ -1979,6 +1987,23 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.GoogleCloudStorageSecretsConfig = nil
 	}
 
+	// try to unmarshal data into GoogleWorkspaceSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.GoogleWorkspaceSecretsConfig)
+	if err == nil {
+		jsonGoogleWorkspaceSecretsConfig, _ := json.Marshal(dst.GoogleWorkspaceSecretsConfig)
+		if string(jsonGoogleWorkspaceSecretsConfig) == "{}" { // empty struct
+			dst.GoogleWorkspaceSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.GoogleWorkspaceSecretsConfig); err != nil {
+				dst.GoogleWorkspaceSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.GoogleWorkspaceSecretsConfig = nil
+	}
+
 	// try to unmarshal data into GreenhouseAuditLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.GreenhouseAuditLogsSecretsConfig)
 	if err == nil {
@@ -3160,6 +3185,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.FullScansSecretsConfig = nil
 		dst.GitlabIssuesSecretsConfig = nil
 		dst.GoogleCloudStorageSecretsConfig = nil
+		dst.GoogleWorkspaceSecretsConfig = nil
 		dst.GreenhouseAuditLogsSecretsConfig = nil
 		dst.IndividualAlertsSecretsConfig = nil
 		dst.InspectorSecretsConfig = nil
@@ -3463,6 +3489,10 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.GoogleCloudStorageSecretsConfig != nil {
 		return json.Marshal(&src.GoogleCloudStorageSecretsConfig)
+	}
+
+	if src.GoogleWorkspaceSecretsConfig != nil {
+		return json.Marshal(&src.GoogleWorkspaceSecretsConfig)
 	}
 
 	if src.GreenhouseAuditLogsSecretsConfig != nil {
@@ -3965,6 +3995,10 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.GoogleCloudStorageSecretsConfig
 	}
 
+	if obj.GoogleWorkspaceSecretsConfig != nil {
+		return obj.GoogleWorkspaceSecretsConfig
+	}
+
 	if obj.GreenhouseAuditLogsSecretsConfig != nil {
 		return obj.GreenhouseAuditLogsSecretsConfig
 	}
@@ -4461,6 +4495,10 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.GoogleCloudStorageSecretsConfig != nil {
 		return *obj.GoogleCloudStorageSecretsConfig
+	}
+
+	if obj.GoogleWorkspaceSecretsConfig != nil {
+		return *obj.GoogleWorkspaceSecretsConfig
 	}
 
 	if obj.GreenhouseAuditLogsSecretsConfig != nil {

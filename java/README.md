@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-02-17T22:11:37.655630851Z[Etc/UTC]
+  - Build date: 2026-02-18T01:04:05.317107084Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -459,6 +459,8 @@ Class | Method | HTTP request | Description
  - [GoogleCloudStorageOutputSettingsConfig](docs/GoogleCloudStorageOutputSettingsConfig.md)
  - [GoogleCloudStorageSecretsConfig](docs/GoogleCloudStorageSecretsConfig.md)
  - [GoogleCloudStorageSettingsConfig](docs/GoogleCloudStorageSettingsConfig.md)
+ - [GoogleWorkspaceSecretsConfig](docs/GoogleWorkspaceSecretsConfig.md)
+ - [GoogleWorkspaceSettingsConfig](docs/GoogleWorkspaceSettingsConfig.md)
  - [GreenhouseAuditLogsSecretsConfig](docs/GreenhouseAuditLogsSecretsConfig.md)
  - [GreenhouseAuditLogsSettingsConfig](docs/GreenhouseAuditLogsSettingsConfig.md)
  - [HttpHeaders](docs/HttpHeaders.md)

@@ -236,6 +236,8 @@ __all__ = [
     "GoogleCloudStorageOutputSettingsConfig",
     "GoogleCloudStorageSecretsConfig",
     "GoogleCloudStorageSettingsConfig",
+    "GoogleWorkspaceSecretsConfig",
+    "GoogleWorkspaceSettingsConfig",
     "GreenhouseAuditLogsSecretsConfig",
     "GreenhouseAuditLogsSettingsConfig",
     "HttpHeaders",
@@ -816,6 +818,8 @@ from monad.models.google_cloud_storage_output_secrets_config import GoogleCloudS
 from monad.models.google_cloud_storage_output_settings_config import GoogleCloudStorageOutputSettingsConfig as GoogleCloudStorageOutputSettingsConfig
 from monad.models.google_cloud_storage_secrets_config import GoogleCloudStorageSecretsConfig as GoogleCloudStorageSecretsConfig
 from monad.models.google_cloud_storage_settings_config import GoogleCloudStorageSettingsConfig as GoogleCloudStorageSettingsConfig
+from monad.models.google_workspace_secrets_config import GoogleWorkspaceSecretsConfig as GoogleWorkspaceSecretsConfig
+from monad.models.google_workspace_settings_config import GoogleWorkspaceSettingsConfig as GoogleWorkspaceSettingsConfig
 from monad.models.greenhouse_audit_logs_secrets_config import GreenhouseAuditLogsSecretsConfig as GreenhouseAuditLogsSecretsConfig
 from monad.models.greenhouse_audit_logs_settings_config import GreenhouseAuditLogsSettingsConfig as GreenhouseAuditLogsSettingsConfig
 from monad.models.http_headers import HttpHeaders as HttpHeaders

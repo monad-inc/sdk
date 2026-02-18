@@ -409,6 +409,8 @@ Class | Method | HTTP request | Description
  - [GoogleCloudStorageOutputSettingsConfig](docs/GoogleCloudStorageOutputSettingsConfig.md)
  - [GoogleCloudStorageSecretsConfig](docs/GoogleCloudStorageSecretsConfig.md)
  - [GoogleCloudStorageSettingsConfig](docs/GoogleCloudStorageSettingsConfig.md)
+ - [GoogleWorkspaceSecretsConfig](docs/GoogleWorkspaceSecretsConfig.md)
+ - [GoogleWorkspaceSettingsConfig](docs/GoogleWorkspaceSettingsConfig.md)
  - [GreenhouseAuditLogsSecretsConfig](docs/GreenhouseAuditLogsSecretsConfig.md)
  - [GreenhouseAuditLogsSettingsConfig](docs/GreenhouseAuditLogsSettingsConfig.md)
  - [HttpHeaders](docs/HttpHeaders.md)

@@ -172,6 +172,8 @@ export * from '../models/GoogleCloudStorageOutputSecretsConfig';
 export * from '../models/GoogleCloudStorageOutputSettingsConfig';
 export * from '../models/GoogleCloudStorageSecretsConfig';
 export * from '../models/GoogleCloudStorageSettingsConfig';
+export * from '../models/GoogleWorkspaceSecretsConfig';
+export * from '../models/GoogleWorkspaceSettingsConfig';
 export * from '../models/GreenhouseAuditLogsSecretsConfig';
 export * from '../models/GreenhouseAuditLogsSettingsConfig';
 export * from '../models/HttpHeaders';
@@ -703,6 +705,8 @@ import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStor
 import { GoogleCloudStorageOutputSettingsConfig } from '../models/GoogleCloudStorageOutputSettingsConfig';
 import { GoogleCloudStorageSecretsConfig } from '../models/GoogleCloudStorageSecretsConfig';
 import { GoogleCloudStorageSettingsConfig } from '../models/GoogleCloudStorageSettingsConfig';
+import { GoogleWorkspaceSecretsConfig } from '../models/GoogleWorkspaceSecretsConfig';
+import { GoogleWorkspaceSettingsConfig } from '../models/GoogleWorkspaceSettingsConfig';
 import { GreenhouseAuditLogsSecretsConfig } from '../models/GreenhouseAuditLogsSecretsConfig';
 import { GreenhouseAuditLogsSettingsConfig } from '../models/GreenhouseAuditLogsSettingsConfig';
 import { HttpHeaders } from '../models/HttpHeaders';
@@ -1266,6 +1270,8 @@ let typeMap: {[index: string]: any} = {
     "GoogleCloudStorageOutputSettingsConfig": GoogleCloudStorageOutputSettingsConfig,
     "GoogleCloudStorageSecretsConfig": GoogleCloudStorageSecretsConfig,
     "GoogleCloudStorageSettingsConfig": GoogleCloudStorageSettingsConfig,
+    "GoogleWorkspaceSecretsConfig": GoogleWorkspaceSecretsConfig,
+    "GoogleWorkspaceSettingsConfig": GoogleWorkspaceSettingsConfig,
     "GreenhouseAuditLogsSecretsConfig": GreenhouseAuditLogsSecretsConfig,
     "GreenhouseAuditLogsSettingsConfig": GreenhouseAuditLogsSettingsConfig,
     "HttpHeaders": HttpHeaders,
