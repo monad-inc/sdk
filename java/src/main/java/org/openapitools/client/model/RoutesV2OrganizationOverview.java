@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2OrganizationOverview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-18T08:14:33.427061724Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-18T17:20:29.393033976Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesV2OrganizationOverview {
   public static final String SERIALIZED_NAME_DISABLED = "disabled";
   @SerializedName(SERIALIZED_NAME_DISABLED)
@@ -80,6 +80,11 @@ public class RoutesV2OrganizationOverview {
   @SerializedName(SERIALIZED_NAME_INGRESS)
   @javax.annotation.Nullable
   private ModelsDataUsage ingress;
+
+  public static final String SERIALIZED_NAME_LAST_INGESTED_TIME = "last_ingested_time";
+  @SerializedName(SERIALIZED_NAME_LAST_INGESTED_TIME)
+  @javax.annotation.Nullable
+  private String lastIngestedTime;
 
   public static final String SERIALIZED_NAME_UNHEALTHY = "unhealthy";
   @SerializedName(SERIALIZED_NAME_UNHEALTHY)
@@ -203,6 +208,25 @@ public class RoutesV2OrganizationOverview {
   }
 
 
+  public RoutesV2OrganizationOverview lastIngestedTime(@javax.annotation.Nullable String lastIngestedTime) {
+    this.lastIngestedTime = lastIngestedTime;
+    return this;
+  }
+
+  /**
+   * Get lastIngestedTime
+   * @return lastIngestedTime
+   */
+  @javax.annotation.Nullable
+  public String getLastIngestedTime() {
+    return lastIngestedTime;
+  }
+
+  public void setLastIngestedTime(@javax.annotation.Nullable String lastIngestedTime) {
+    this.lastIngestedTime = lastIngestedTime;
+  }
+
+
   public RoutesV2OrganizationOverview unhealthy(@javax.annotation.Nonnull Integer unhealthy) {
     this.unhealthy = unhealthy;
     return this;
@@ -238,12 +262,13 @@ public class RoutesV2OrganizationOverview {
         Objects.equals(this.expiredMessages, routesV2OrganizationOverview.expiredMessages) &&
         Objects.equals(this.healthy, routesV2OrganizationOverview.healthy) &&
         Objects.equals(this.ingress, routesV2OrganizationOverview.ingress) &&
+        Objects.equals(this.lastIngestedTime, routesV2OrganizationOverview.lastIngestedTime) &&
         Objects.equals(this.unhealthy, routesV2OrganizationOverview.unhealthy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(disabled, egress, errors, expiredMessages, healthy, ingress, unhealthy);
+    return Objects.hash(disabled, egress, errors, expiredMessages, healthy, ingress, lastIngestedTime, unhealthy);
   }
 
   @Override
@@ -256,6 +281,7 @@ public class RoutesV2OrganizationOverview {
     sb.append("    expiredMessages: ").append(toIndentedString(expiredMessages)).append("\n");
     sb.append("    healthy: ").append(toIndentedString(healthy)).append("\n");
     sb.append("    ingress: ").append(toIndentedString(ingress)).append("\n");
+    sb.append("    lastIngestedTime: ").append(toIndentedString(lastIngestedTime)).append("\n");
     sb.append("    unhealthy: ").append(toIndentedString(unhealthy)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -278,7 +304,7 @@ public class RoutesV2OrganizationOverview {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("disabled", "egress", "errors", "expired_messages", "healthy", "ingress", "unhealthy"));
+    openapiFields = new HashSet<String>(Arrays.asList("disabled", "egress", "errors", "expired_messages", "healthy", "ingress", "last_ingested_time", "unhealthy"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("disabled", "healthy", "unhealthy"));
@@ -319,6 +345,9 @@ public class RoutesV2OrganizationOverview {
       // validate the optional field `ingress`
       if (jsonObj.get("ingress") != null && !jsonObj.get("ingress").isJsonNull()) {
         ModelsDataUsage.validateJsonElement(jsonObj.get("ingress"));
+      }
+      if ((jsonObj.get("last_ingested_time") != null && !jsonObj.get("last_ingested_time").isJsonNull()) && !jsonObj.get("last_ingested_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `last_ingested_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_ingested_time").toString()));
       }
   }
 

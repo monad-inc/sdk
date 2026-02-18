@@ -32,10 +32,11 @@ class RoutesV2PipelineStatus(BaseModel):
     errors: Optional[StrictInt] = None
     expired_messages: Optional[StrictInt] = None
     ingress: Optional[ModelsDataUsage] = None
+    last_ingested_time: Optional[StrictStr] = None
     pipeline_id: StrictStr
     pipeline_name: StrictStr
     status: StrictStr
-    __properties: ClassVar[List[str]] = ["egress", "errors", "expired_messages", "ingress", "pipeline_id", "pipeline_name", "status"]
+    __properties: ClassVar[List[str]] = ["egress", "errors", "expired_messages", "ingress", "last_ingested_time", "pipeline_id", "pipeline_name", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +99,7 @@ class RoutesV2PipelineStatus(BaseModel):
             "errors": obj.get("errors"),
             "expired_messages": obj.get("expired_messages"),
             "ingress": ModelsDataUsage.from_dict(obj["ingress"]) if obj.get("ingress") is not None else None,
+            "last_ingested_time": obj.get("last_ingested_time"),
             "pipeline_id": obj.get("pipeline_id"),
             "pipeline_name": obj.get("pipeline_name"),
             "status": obj.get("status")

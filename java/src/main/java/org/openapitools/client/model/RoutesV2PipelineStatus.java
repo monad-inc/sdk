@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2PipelineStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-18T08:14:33.427061724Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-18T17:20:29.393033976Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesV2PipelineStatus {
   public static final String SERIALIZED_NAME_EGRESS = "egress";
   @SerializedName(SERIALIZED_NAME_EGRESS)
@@ -70,6 +70,11 @@ public class RoutesV2PipelineStatus {
   @SerializedName(SERIALIZED_NAME_INGRESS)
   @javax.annotation.Nullable
   private ModelsDataUsage ingress;
+
+  public static final String SERIALIZED_NAME_LAST_INGESTED_TIME = "last_ingested_time";
+  @SerializedName(SERIALIZED_NAME_LAST_INGESTED_TIME)
+  @javax.annotation.Nullable
+  private String lastIngestedTime;
 
   public static final String SERIALIZED_NAME_PIPELINE_ID = "pipeline_id";
   @SerializedName(SERIALIZED_NAME_PIPELINE_ID)
@@ -165,6 +170,25 @@ public class RoutesV2PipelineStatus {
   }
 
 
+  public RoutesV2PipelineStatus lastIngestedTime(@javax.annotation.Nullable String lastIngestedTime) {
+    this.lastIngestedTime = lastIngestedTime;
+    return this;
+  }
+
+  /**
+   * Get lastIngestedTime
+   * @return lastIngestedTime
+   */
+  @javax.annotation.Nullable
+  public String getLastIngestedTime() {
+    return lastIngestedTime;
+  }
+
+  public void setLastIngestedTime(@javax.annotation.Nullable String lastIngestedTime) {
+    this.lastIngestedTime = lastIngestedTime;
+  }
+
+
   public RoutesV2PipelineStatus pipelineId(@javax.annotation.Nonnull String pipelineId) {
     this.pipelineId = pipelineId;
     return this;
@@ -236,6 +260,7 @@ public class RoutesV2PipelineStatus {
         Objects.equals(this.errors, routesV2PipelineStatus.errors) &&
         Objects.equals(this.expiredMessages, routesV2PipelineStatus.expiredMessages) &&
         Objects.equals(this.ingress, routesV2PipelineStatus.ingress) &&
+        Objects.equals(this.lastIngestedTime, routesV2PipelineStatus.lastIngestedTime) &&
         Objects.equals(this.pipelineId, routesV2PipelineStatus.pipelineId) &&
         Objects.equals(this.pipelineName, routesV2PipelineStatus.pipelineName) &&
         Objects.equals(this.status, routesV2PipelineStatus.status);
@@ -243,7 +268,7 @@ public class RoutesV2PipelineStatus {
 
   @Override
   public int hashCode() {
-    return Objects.hash(egress, errors, expiredMessages, ingress, pipelineId, pipelineName, status);
+    return Objects.hash(egress, errors, expiredMessages, ingress, lastIngestedTime, pipelineId, pipelineName, status);
   }
 
   @Override
@@ -254,6 +279,7 @@ public class RoutesV2PipelineStatus {
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    expiredMessages: ").append(toIndentedString(expiredMessages)).append("\n");
     sb.append("    ingress: ").append(toIndentedString(ingress)).append("\n");
+    sb.append("    lastIngestedTime: ").append(toIndentedString(lastIngestedTime)).append("\n");
     sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
     sb.append("    pipelineName: ").append(toIndentedString(pipelineName)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
@@ -278,7 +304,7 @@ public class RoutesV2PipelineStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("egress", "errors", "expired_messages", "ingress", "pipeline_id", "pipeline_name", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("egress", "errors", "expired_messages", "ingress", "last_ingested_time", "pipeline_id", "pipeline_name", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("pipeline_id", "pipeline_name", "status"));
@@ -319,6 +345,9 @@ public class RoutesV2PipelineStatus {
       // validate the optional field `ingress`
       if (jsonObj.get("ingress") != null && !jsonObj.get("ingress").isJsonNull()) {
         ModelsDataUsage.validateJsonElement(jsonObj.get("ingress"));
+      }
+      if ((jsonObj.get("last_ingested_time") != null && !jsonObj.get("last_ingested_time").isJsonNull()) && !jsonObj.get("last_ingested_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `last_ingested_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_ingested_time").toString()));
       }
       if (!jsonObj.get("pipeline_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pipeline_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_id").toString()));

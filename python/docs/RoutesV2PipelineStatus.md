@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **errors** | **int** |  | [optional] 
 **expired_messages** | **int** |  | [optional] 
 **ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
+**last_ingested_time** | **str** |  | [optional] 
 **pipeline_id** | **str** |  | 
 **pipeline_name** | **str** |  | 
 **status** | **str** |  | 

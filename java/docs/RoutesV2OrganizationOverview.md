@@ -13,6 +13,7 @@
 |**expiredMessages** | **Integer** |  |  [optional] |
 |**healthy** | **Integer** |  |  |
 |**ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  |  [optional] |
+|**lastIngestedTime** | **String** |  |  [optional] |
 |**unhealthy** | **Integer** |  |  |
 
 

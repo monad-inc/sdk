@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_data_usage import ModelsDataUsage
 from typing import Optional, Set
@@ -34,8 +34,9 @@ class RoutesV2OrganizationOverview(BaseModel):
     expired_messages: Optional[StrictInt] = None
     healthy: StrictInt
     ingress: Optional[ModelsDataUsage] = None
+    last_ingested_time: Optional[StrictStr] = None
     unhealthy: StrictInt
-    __properties: ClassVar[List[str]] = ["disabled", "egress", "errors", "expired_messages", "healthy", "ingress", "unhealthy"]
+    __properties: ClassVar[List[str]] = ["disabled", "egress", "errors", "expired_messages", "healthy", "ingress", "last_ingested_time", "unhealthy"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -100,6 +101,7 @@ class RoutesV2OrganizationOverview(BaseModel):
             "expired_messages": obj.get("expired_messages"),
             "healthy": obj.get("healthy"),
             "ingress": ModelsDataUsage.from_dict(obj["ingress"]) if obj.get("ingress") is not None else None,
+            "last_ingested_time": obj.get("last_ingested_time"),
             "unhealthy": obj.get("unhealthy")
         })
         return _obj

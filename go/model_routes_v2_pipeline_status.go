@@ -26,6 +26,7 @@ type RoutesV2PipelineStatus struct {
 	Errors *int32 `json:"errors,omitempty"`
 	ExpiredMessages *int32 `json:"expired_messages,omitempty"`
 	Ingress *ModelsDataUsage `json:"ingress,omitempty"`
+	LastIngestedTime *string `json:"last_ingested_time,omitempty"`
 	PipelineId string `json:"pipeline_id"`
 	PipelineName string `json:"pipeline_name"`
 	Status string `json:"status"`
@@ -181,6 +182,38 @@ func (o *RoutesV2PipelineStatus) SetIngress(v ModelsDataUsage) {
 	o.Ingress = &v
 }
 
+// GetLastIngestedTime returns the LastIngestedTime field value if set, zero value otherwise.
+func (o *RoutesV2PipelineStatus) GetLastIngestedTime() string {
+	if o == nil || IsNil(o.LastIngestedTime) {
+		var ret string
+		return ret
+	}
+	return *o.LastIngestedTime
+}
+
+// GetLastIngestedTimeOk returns a tuple with the LastIngestedTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2PipelineStatus) GetLastIngestedTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.LastIngestedTime) {
+		return nil, false
+	}
+	return o.LastIngestedTime, true
+}
+
+// HasLastIngestedTime returns a boolean if a field has been set.
+func (o *RoutesV2PipelineStatus) HasLastIngestedTime() bool {
+	if o != nil && !IsNil(o.LastIngestedTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastIngestedTime gets a reference to the given string and assigns it to the LastIngestedTime field.
+func (o *RoutesV2PipelineStatus) SetLastIngestedTime(v string) {
+	o.LastIngestedTime = &v
+}
+
 // GetPipelineId returns the PipelineId field value
 func (o *RoutesV2PipelineStatus) GetPipelineId() string {
 	if o == nil {
@@ -274,6 +307,9 @@ func (o RoutesV2PipelineStatus) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Ingress) {
 		toSerialize["ingress"] = o.Ingress
+	}
+	if !IsNil(o.LastIngestedTime) {
+		toSerialize["last_ingested_time"] = o.LastIngestedTime
 	}
 	toSerialize["pipeline_id"] = o.PipelineId
 	toSerialize["pipeline_name"] = o.PipelineName

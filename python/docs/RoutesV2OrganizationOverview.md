@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **expired_messages** | **int** |  | [optional] 
 **healthy** | **int** |  | 
 **ingress** | [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
+**last_ingested_time** | **str** |  | [optional] 
 **unhealthy** | **int** |  | 
 
 ## Example

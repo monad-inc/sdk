@@ -20,6 +20,7 @@ export class RoutesV2OrganizationOverview {
     'expiredMessages'?: number;
     'healthy': number;
     'ingress'?: ModelsDataUsage;
+    'lastIngestedTime'?: string;
     'unhealthy': number;
 
     static readonly discriminator: string | undefined = undefined;
@@ -61,6 +62,12 @@ export class RoutesV2OrganizationOverview {
             "name": "ingress",
             "baseName": "ingress",
             "type": "ModelsDataUsage",
+            "format": ""
+        },
+        {
+            "name": "lastIngestedTime",
+            "baseName": "last_ingested_time",
+            "type": "string",
             "format": ""
         },
         {

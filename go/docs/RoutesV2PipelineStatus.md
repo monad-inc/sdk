@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Errors** | Pointer to **int32** |  | [optional] 
 **ExpiredMessages** | Pointer to **int32** |  | [optional] 
 **Ingress** | Pointer to [**ModelsDataUsage**](ModelsDataUsage.md) |  | [optional] 
+**LastIngestedTime** | Pointer to **string** |  | [optional] 
 **PipelineId** | **string** |  | 
 **PipelineName** | **string** |  | 
 **Status** | **string** |  | 
@@ -130,6 +131,31 @@ SetIngress sets Ingress field to given value.
 `func (o *RoutesV2PipelineStatus) HasIngress() bool`
 
 HasIngress returns a boolean if a field has been set.
+
+### GetLastIngestedTime
+
+`func (o *RoutesV2PipelineStatus) GetLastIngestedTime() string`
+
+GetLastIngestedTime returns the LastIngestedTime field if non-nil, zero value otherwise.
+
+### GetLastIngestedTimeOk
+
+`func (o *RoutesV2PipelineStatus) GetLastIngestedTimeOk() (*string, bool)`
+
+GetLastIngestedTimeOk returns a tuple with the LastIngestedTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastIngestedTime
+
+`func (o *RoutesV2PipelineStatus) SetLastIngestedTime(v string)`
+
+SetLastIngestedTime sets LastIngestedTime field to given value.
+
+### HasLastIngestedTime
+
+`func (o *RoutesV2PipelineStatus) HasLastIngestedTime() bool`
+
+HasLastIngestedTime returns a boolean if a field has been set.
 
 ### GetPipelineId
 

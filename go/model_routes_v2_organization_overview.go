@@ -28,6 +28,7 @@ type RoutesV2OrganizationOverview struct {
 	ExpiredMessages *int32 `json:"expired_messages,omitempty"`
 	Healthy int32 `json:"healthy"`
 	Ingress *ModelsDataUsage `json:"ingress,omitempty"`
+	LastIngestedTime *string `json:"last_ingested_time,omitempty"`
 	Unhealthy int32 `json:"unhealthy"`
 }
 
@@ -229,6 +230,38 @@ func (o *RoutesV2OrganizationOverview) SetIngress(v ModelsDataUsage) {
 	o.Ingress = &v
 }
 
+// GetLastIngestedTime returns the LastIngestedTime field value if set, zero value otherwise.
+func (o *RoutesV2OrganizationOverview) GetLastIngestedTime() string {
+	if o == nil || IsNil(o.LastIngestedTime) {
+		var ret string
+		return ret
+	}
+	return *o.LastIngestedTime
+}
+
+// GetLastIngestedTimeOk returns a tuple with the LastIngestedTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2OrganizationOverview) GetLastIngestedTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.LastIngestedTime) {
+		return nil, false
+	}
+	return o.LastIngestedTime, true
+}
+
+// HasLastIngestedTime returns a boolean if a field has been set.
+func (o *RoutesV2OrganizationOverview) HasLastIngestedTime() bool {
+	if o != nil && !IsNil(o.LastIngestedTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastIngestedTime gets a reference to the given string and assigns it to the LastIngestedTime field.
+func (o *RoutesV2OrganizationOverview) SetLastIngestedTime(v string) {
+	o.LastIngestedTime = &v
+}
+
 // GetUnhealthy returns the Unhealthy field value
 func (o *RoutesV2OrganizationOverview) GetUnhealthy() int32 {
 	if o == nil {
@@ -276,6 +309,9 @@ func (o RoutesV2OrganizationOverview) ToMap() (map[string]interface{}, error) {
 	toSerialize["healthy"] = o.Healthy
 	if !IsNil(o.Ingress) {
 		toSerialize["ingress"] = o.Ingress
+	}
+	if !IsNil(o.LastIngestedTime) {
+		toSerialize["last_ingested_time"] = o.LastIngestedTime
 	}
 	toSerialize["unhealthy"] = o.Unhealthy
 	return toSerialize, nil

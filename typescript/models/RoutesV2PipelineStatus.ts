@@ -18,6 +18,7 @@ export class RoutesV2PipelineStatus {
     'errors'?: number;
     'expiredMessages'?: number;
     'ingress'?: ModelsDataUsage;
+    'lastIngestedTime'?: string;
     'pipelineId': string;
     'pipelineName': string;
     'status': string;
@@ -49,6 +50,12 @@ export class RoutesV2PipelineStatus {
             "name": "ingress",
             "baseName": "ingress",
             "type": "ModelsDataUsage",
+            "format": ""
+        },
+        {
+            "name": "lastIngestedTime",
+            "baseName": "last_ingested_time",
+            "type": "string",
             "format": ""
         },
         {
