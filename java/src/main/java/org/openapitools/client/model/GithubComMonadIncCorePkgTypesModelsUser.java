@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * GithubComMonadIncCorePkgTypesModelsUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-19T20:06:55.115515435Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-19T23:45:16.322005166Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class GithubComMonadIncCorePkgTypesModelsUser {
   public static final String SERIALIZED_NAME_AUTH_PROVIDERS = "auth_providers";
   @SerializedName(SERIALIZED_NAME_AUTH_PROVIDERS)
