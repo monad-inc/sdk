@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2UpdateBillingAccountRoleRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-19T19:47:18.386669632Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-19T20:06:55.115515435Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesV2UpdateBillingAccountRoleRequest {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
