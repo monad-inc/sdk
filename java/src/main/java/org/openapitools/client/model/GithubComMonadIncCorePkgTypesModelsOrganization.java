@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * GithubComMonadIncCorePkgTypesModelsOrganization
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-19T17:29:33.213193001Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-19T18:25:39.096345555Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class GithubComMonadIncCorePkgTypesModelsOrganization {
   public static final String SERIALIZED_NAME_BILLING_ACCOUNT_ID = "billing_account_id";
   @SerializedName(SERIALIZED_NAME_BILLING_ACCOUNT_ID)
@@ -79,6 +79,11 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
+
+  public static final String SERIALIZED_NAME_PARENT_ORGANIZATION_ID = "parent_organization_id";
+  @SerializedName(SERIALIZED_NAME_PARENT_ORGANIZATION_ID)
+  @javax.annotation.Nullable
+  private String parentOrganizationId;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -202,6 +207,25 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
   }
 
 
+  public GithubComMonadIncCorePkgTypesModelsOrganization parentOrganizationId(@javax.annotation.Nullable String parentOrganizationId) {
+    this.parentOrganizationId = parentOrganizationId;
+    return this;
+  }
+
+  /**
+   * Get parentOrganizationId
+   * @return parentOrganizationId
+   */
+  @javax.annotation.Nullable
+  public String getParentOrganizationId() {
+    return parentOrganizationId;
+  }
+
+  public void setParentOrganizationId(@javax.annotation.Nullable String parentOrganizationId) {
+    this.parentOrganizationId = parentOrganizationId;
+  }
+
+
   public GithubComMonadIncCorePkgTypesModelsOrganization updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -237,12 +261,13 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
         Objects.equals(this.description, githubComMonadIncCorePkgTypesModelsOrganization.description) &&
         Objects.equals(this.id, githubComMonadIncCorePkgTypesModelsOrganization.id) &&
         Objects.equals(this.name, githubComMonadIncCorePkgTypesModelsOrganization.name) &&
+        Objects.equals(this.parentOrganizationId, githubComMonadIncCorePkgTypesModelsOrganization.parentOrganizationId) &&
         Objects.equals(this.updatedAt, githubComMonadIncCorePkgTypesModelsOrganization.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, connectionId, createdAt, description, id, name, updatedAt);
+    return Objects.hash(billingAccountId, connectionId, createdAt, description, id, name, parentOrganizationId, updatedAt);
   }
 
   @Override
@@ -255,6 +280,7 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    parentOrganizationId: ").append(toIndentedString(parentOrganizationId)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -277,7 +303,7 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("billing_account_id", "connection_id", "created_at", "description", "id", "name", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("billing_account_id", "connection_id", "created_at", "description", "id", "name", "parent_organization_id", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -321,6 +347,9 @@ public class GithubComMonadIncCorePkgTypesModelsOrganization {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("parent_organization_id") != null && !jsonObj.get("parent_organization_id").isJsonNull()) && !jsonObj.get("parent_organization_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `parent_organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parent_organization_id").toString()));
       }
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));

@@ -19,6 +19,7 @@ export class GithubComMonadIncCorePkgTypesModelsOrganization {
     'description'?: string;
     'id'?: string;
     'name'?: string;
+    'parentOrganizationId'?: string;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -59,6 +60,12 @@ export class GithubComMonadIncCorePkgTypesModelsOrganization {
         {
             "name": "name",
             "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "parentOrganizationId",
+            "baseName": "parent_organization_id",
             "type": "string",
             "format": ""
         },

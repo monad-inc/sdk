@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**parent_organization_id** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 
 ## Example

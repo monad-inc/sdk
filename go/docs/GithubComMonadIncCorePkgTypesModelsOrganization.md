@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**ParentOrganizationId** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -180,6 +181,31 @@ SetName sets Name field to given value.
 `func (o *GithubComMonadIncCorePkgTypesModelsOrganization) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetParentOrganizationId
+
+`func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetParentOrganizationId() string`
+
+GetParentOrganizationId returns the ParentOrganizationId field if non-nil, zero value otherwise.
+
+### GetParentOrganizationIdOk
+
+`func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetParentOrganizationIdOk() (*string, bool)`
+
+GetParentOrganizationIdOk returns a tuple with the ParentOrganizationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentOrganizationId
+
+`func (o *GithubComMonadIncCorePkgTypesModelsOrganization) SetParentOrganizationId(v string)`
+
+SetParentOrganizationId sets ParentOrganizationId field to given value.
+
+### HasParentOrganizationId
+
+`func (o *GithubComMonadIncCorePkgTypesModelsOrganization) HasParentOrganizationId() bool`
+
+HasParentOrganizationId returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

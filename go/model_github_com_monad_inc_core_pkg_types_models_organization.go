@@ -26,6 +26,7 @@ type GithubComMonadIncCorePkgTypesModelsOrganization struct {
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	ParentOrganizationId *string `json:"parent_organization_id,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
 
@@ -238,6 +239,38 @@ func (o *GithubComMonadIncCorePkgTypesModelsOrganization) SetName(v string) {
 	o.Name = &v
 }
 
+// GetParentOrganizationId returns the ParentOrganizationId field value if set, zero value otherwise.
+func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetParentOrganizationId() string {
+	if o == nil || IsNil(o.ParentOrganizationId) {
+		var ret string
+		return ret
+	}
+	return *o.ParentOrganizationId
+}
+
+// GetParentOrganizationIdOk returns a tuple with the ParentOrganizationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetParentOrganizationIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ParentOrganizationId) {
+		return nil, false
+	}
+	return o.ParentOrganizationId, true
+}
+
+// HasParentOrganizationId returns a boolean if a field has been set.
+func (o *GithubComMonadIncCorePkgTypesModelsOrganization) HasParentOrganizationId() bool {
+	if o != nil && !IsNil(o.ParentOrganizationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetParentOrganizationId gets a reference to the given string and assigns it to the ParentOrganizationId field.
+func (o *GithubComMonadIncCorePkgTypesModelsOrganization) SetParentOrganizationId(v string) {
+	o.ParentOrganizationId = &v
+}
+
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *GithubComMonadIncCorePkgTypesModelsOrganization) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
@@ -297,6 +330,9 @@ func (o GithubComMonadIncCorePkgTypesModelsOrganization) ToMap() (map[string]int
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.ParentOrganizationId) {
+		toSerialize["parent_organization_id"] = o.ParentOrganizationId
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt

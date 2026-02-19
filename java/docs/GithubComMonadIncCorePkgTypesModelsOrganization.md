@@ -13,6 +13,7 @@
 |**description** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
+|**parentOrganizationId** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 
 
