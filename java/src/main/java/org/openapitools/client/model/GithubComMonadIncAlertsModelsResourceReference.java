@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * GithubComMonadIncAlertsModelsResourceReference
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-20T18:20:42.978325165Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-22T16:23:55.551877188Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class GithubComMonadIncAlertsModelsResourceReference {
   public static final String SERIALIZED_NAME_PARENT_ID = "parent_id";
   @SerializedName(SERIALIZED_NAME_PARENT_ID)
