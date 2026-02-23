@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2MetricsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-23T18:19:46.305529914Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-23T20:46:26.086967178Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesV2MetricsResponse {
   public static final String SERIALIZED_NAME_EGRESS_BYTES = "egress_bytes";
   @SerializedName(SERIALIZED_NAME_EGRESS_BYTES)
