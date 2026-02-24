@@ -272,6 +272,8 @@ export * from '../models/ModelsTransformOperation';
 export * from '../models/ModelsTransformsRepositoryList';
 export * from '../models/ModelsTransformsRepositoryTransform';
 export * from '../models/ModelsUserAuthProvider';
+export * from '../models/ModelsUserOrganization';
+export * from '../models/ModelsUserOrganizationList';
 export * from '../models/ModelsUserRoleWithPermissions';
 export * from '../models/MonadGraphqlInputVariable';
 export * from '../models/MonadLogSettingsConfig';
@@ -394,6 +396,7 @@ export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/RoutesV2UpdateRoleV2Request';
 export * from '../models/RoutesV3AlertList';
 export * from '../models/RoutesV3CreateAlertRuleRequest';
+export * from '../models/RoutesV3CreateChildOrganizationRequest';
 export * from '../models/RoutesV3CreateConnectionRequest';
 export * from '../models/RoutesV3CreateConnectionRequestSaml';
 export * from '../models/RoutesV3CreateEnrichmentRequest';
@@ -805,6 +808,8 @@ import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
 import { ModelsUserAuthProvider } from '../models/ModelsUserAuthProvider';
+import { ModelsUserOrganization } from '../models/ModelsUserOrganization';
+import { ModelsUserOrganizationList } from '../models/ModelsUserOrganizationList';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadGraphqlInputVariable } from '../models/MonadGraphqlInputVariable';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
@@ -927,6 +932,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3AlertList } from '../models/RoutesV3AlertList';
 import { RoutesV3CreateAlertRuleRequest } from '../models/RoutesV3CreateAlertRuleRequest';
+import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3CreateChildOrganizationRequest';
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
 import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateConnectionRequestSaml';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
@@ -1370,6 +1376,8 @@ let typeMap: {[index: string]: any} = {
     "ModelsTransformsRepositoryList": ModelsTransformsRepositoryList,
     "ModelsTransformsRepositoryTransform": ModelsTransformsRepositoryTransform,
     "ModelsUserAuthProvider": ModelsUserAuthProvider,
+    "ModelsUserOrganization": ModelsUserOrganization,
+    "ModelsUserOrganizationList": ModelsUserOrganizationList,
     "ModelsUserRoleWithPermissions": ModelsUserRoleWithPermissions,
     "MonadGraphqlInputVariable": MonadGraphqlInputVariable,
     "MonadLogSettingsConfig": MonadLogSettingsConfig,
@@ -1492,6 +1500,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
     "RoutesV3AlertList": RoutesV3AlertList,
     "RoutesV3CreateAlertRuleRequest": RoutesV3CreateAlertRuleRequest,
+    "RoutesV3CreateChildOrganizationRequest": RoutesV3CreateChildOrganizationRequest,
     "RoutesV3CreateConnectionRequest": RoutesV3CreateConnectionRequest,
     "RoutesV3CreateConnectionRequestSaml": RoutesV3CreateConnectionRequestSaml,
     "RoutesV3CreateEnrichmentRequest": RoutesV3CreateEnrichmentRequest,

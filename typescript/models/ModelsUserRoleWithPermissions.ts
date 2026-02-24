@@ -14,16 +14,24 @@ import { GithubComMonadIncCorePkgTypesModelsPermission } from '../models/GithubC
 import { HttpFile } from '../http/http';
 
 export class ModelsUserRoleWithPermissions {
+    'inherited'?: boolean;
     'organizationId'?: string;
     'permissions'?: Array<GithubComMonadIncCorePkgTypesModelsPermission>;
     'roleId'?: string;
     'roleName'?: string;
+    'sourceOrganizationId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "inherited",
+            "baseName": "inherited",
+            "type": "boolean",
+            "format": ""
+        },
         {
             "name": "organizationId",
             "baseName": "organization_id",
@@ -45,6 +53,12 @@ export class ModelsUserRoleWithPermissions {
         {
             "name": "roleName",
             "baseName": "role_name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "sourceOrganizationId",
+            "baseName": "source_organization_id",
             "type": "string",
             "format": ""
         }    ];

@@ -276,6 +276,8 @@ import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
 import { ModelsUserAuthProvider } from '../models/ModelsUserAuthProvider';
+import { ModelsUserOrganization } from '../models/ModelsUserOrganization';
+import { ModelsUserOrganizationList } from '../models/ModelsUserOrganizationList';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadGraphqlInputVariable } from '../models/MonadGraphqlInputVariable';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
@@ -398,6 +400,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3AlertList } from '../models/RoutesV3AlertList';
 import { RoutesV3CreateAlertRuleRequest } from '../models/RoutesV3CreateAlertRuleRequest';
+import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3CreateChildOrganizationRequest';
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
 import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateConnectionRequestSaml';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
@@ -4006,6 +4009,20 @@ export interface OrganizationsApiV1OrganizationsGetRequest {
      * @memberof OrganizationsApiv1OrganizationsGet
      */
     offset?: number
+    /**
+     * If true, only return organizations that are directly associated with the user, not child organizations (default: false)
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationsApiv1OrganizationsGet
+     */
+    noChildren?: boolean
+    /**
+     * If provided, only return organizations that are children of the specified parent organization
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv1OrganizationsGet
+     */
+    parentOrganizationId?: string
 }
 
 export interface OrganizationsApiV1OrganizationsOrganizationIdDeleteRequest {
@@ -4325,6 +4342,46 @@ export interface OrganizationsApiV2OrganizationIdStorageTypeCostPutRequest {
     routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest
 }
 
+export interface OrganizationsApiV3OrganizationIdOrganizationsGetRequest {
+    /**
+     * Parent Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv3OrganizationIdOrganizationsGet
+     */
+    organizationId: string
+    /**
+     * Limit the number of organizations returned (default: 10)
+     * Defaults to: undefined
+     * @type number
+     * @memberof OrganizationsApiv3OrganizationIdOrganizationsGet
+     */
+    limit?: number
+    /**
+     * Offset the organizations returned (default: 0)
+     * Defaults to: undefined
+     * @type number
+     * @memberof OrganizationsApiv3OrganizationIdOrganizationsGet
+     */
+    offset?: number
+}
+
+export interface OrganizationsApiV3OrganizationIdOrganizationsPostRequest {
+    /**
+     * Parent Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv3OrganizationIdOrganizationsPost
+     */
+    organizationId: string
+    /**
+     * Request body
+     * @type RoutesV3CreateChildOrganizationRequest
+     * @memberof OrganizationsApiv3OrganizationIdOrganizationsPost
+     */
+    routesV3CreateChildOrganizationRequest: RoutesV3CreateChildOrganizationRequest
+}
+
 export class ObjectOrganizationsApi {
     private api: ObservableOrganizationsApi
 
@@ -4338,7 +4395,7 @@ export class ObjectOrganizationsApi {
      * @param param the request object
      */
     public v1OrganizationsGetWithHttpInfo(param: OrganizationsApiV1OrganizationsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationList>> {
-        return this.api.v1OrganizationsGetWithHttpInfo(param.limit, param.offset,  options).toPromise();
+        return this.api.v1OrganizationsGetWithHttpInfo(param.limit, param.offset, param.noChildren, param.parentOrganizationId,  options).toPromise();
     }
 
     /**
@@ -4347,7 +4404,7 @@ export class ObjectOrganizationsApi {
      * @param param the request object
      */
     public v1OrganizationsGet(param: OrganizationsApiV1OrganizationsGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsOrganizationList> {
-        return this.api.v1OrganizationsGet(param.limit, param.offset,  options).toPromise();
+        return this.api.v1OrganizationsGet(param.limit, param.offset, param.noChildren, param.parentOrganizationId,  options).toPromise();
     }
 
     /**
@@ -4546,6 +4603,42 @@ export class ObjectOrganizationsApi {
      */
     public v2OrganizationIdStorageTypeCostPut(param: OrganizationsApiV2OrganizationIdStorageTypeCostPutRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeCostConfig> {
         return this.api.v2OrganizationIdStorageTypeCostPut(param.organizationId, param.routesV2SetStorageTypeCostRequest,  options).toPromise();
+    }
+
+    /**
+     * List child organizations for the given parent organization
+     * List child organizations
+     * @param param the request object
+     */
+    public v3OrganizationIdOrganizationsGetWithHttpInfo(param: OrganizationsApiV3OrganizationIdOrganizationsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsUserOrganizationList>> {
+        return this.api.v3OrganizationIdOrganizationsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List child organizations for the given parent organization
+     * List child organizations
+     * @param param the request object
+     */
+    public v3OrganizationIdOrganizationsGet(param: OrganizationsApiV3OrganizationIdOrganizationsGetRequest, options?: ConfigurationOptions): Promise<ModelsUserOrganizationList> {
+        return this.api.v3OrganizationIdOrganizationsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Create a new child organization under the given parent organization
+     * Create child organization
+     * @param param the request object
+     */
+    public v3OrganizationIdOrganizationsPostWithHttpInfo(param: OrganizationsApiV3OrganizationIdOrganizationsPostRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+        return this.api.v3OrganizationIdOrganizationsPostWithHttpInfo(param.organizationId, param.routesV3CreateChildOrganizationRequest,  options).toPromise();
+    }
+
+    /**
+     * Create a new child organization under the given parent organization
+     * Create child organization
+     * @param param the request object
+     */
+    public v3OrganizationIdOrganizationsPost(param: OrganizationsApiV3OrganizationIdOrganizationsPostRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
+        return this.api.v3OrganizationIdOrganizationsPost(param.organizationId, param.routesV3CreateChildOrganizationRequest,  options).toPromise();
     }
 
 }

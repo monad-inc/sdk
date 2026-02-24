@@ -7,11 +7,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **str** | When the secret was created | [optional] 
 **description** | **str** | The user set Description of the secret | [optional] 
+**enrichments** | [**List[ModelsComponentReference]**](ModelsComponentReference.md) |  | [optional] 
 **id** | **str** | The ID of the secret | [optional] 
 **inputs** | [**List[ModelsComponentReference]**](ModelsComponentReference.md) |  | [optional] 
 **name** | **str** | The user set Name of the secret | [optional] 
 **organization_id** | **str** | The OrganizationID the secret belongs to | [optional] 
 **outputs** | [**List[ModelsComponentReference]**](ModelsComponentReference.md) |  | [optional] 
+**transforms** | [**List[ModelsComponentReference]**](ModelsComponentReference.md) |  | [optional] 
 **updated_at** | **str** | When the secret was updated | [optional] 
 **value** | **str** | The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload. | [optional] 
 

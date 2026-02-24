@@ -178,6 +178,8 @@ Class | Method | HTTP request | Description
 *OrganizationsAPI* | [**V2OrganizationIdMetricsStorageTypesSummaryGet**](docs/OrganizationsAPI.md#v2organizationidmetricsstoragetypessummaryget) | **Get** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary
 *OrganizationsAPI* | [**V2OrganizationIdStorageTypeCostGet**](docs/OrganizationsAPI.md#v2organizationidstoragetypecostget) | **Get** /v2/{organization_id}/storage-type-cost | Get storage type cost
 *OrganizationsAPI* | [**V2OrganizationIdStorageTypeCostPut**](docs/OrganizationsAPI.md#v2organizationidstoragetypecostput) | **Put** /v2/{organization_id}/storage-type-cost | Set storage type cost
+*OrganizationsAPI* | [**V3OrganizationIdOrganizationsGet**](docs/OrganizationsAPI.md#v3organizationidorganizationsget) | **Get** /v3/{organization_id}/organizations | List child organizations
+*OrganizationsAPI* | [**V3OrganizationIdOrganizationsPost**](docs/OrganizationsAPI.md#v3organizationidorganizationspost) | **Post** /v3/{organization_id}/organizations | Create child organization
 *OutputsAPI* | [**V1OutputsGet**](docs/OutputsAPI.md#v1outputsget) | **Get** /v1/outputs | List outputs
 *OutputsAPI* | [**V1OutputsOutputTypeIdGet**](docs/OutputsAPI.md#v1outputsoutputtypeidget) | **Get** /v1/outputs/{output_type_id} | Get output config meta
 *PermissionsAPI* | [**V2OrganizationIdRolesPermissionsGet**](docs/PermissionsAPI.md#v2organizationidrolespermissionsget) | **Get** /v2/{organization_id}/roles/permissions | List permissions
@@ -509,6 +511,8 @@ Class | Method | HTTP request | Description
  - [ModelsTransformsRepositoryList](docs/ModelsTransformsRepositoryList.md)
  - [ModelsTransformsRepositoryTransform](docs/ModelsTransformsRepositoryTransform.md)
  - [ModelsUserAuthProvider](docs/ModelsUserAuthProvider.md)
+ - [ModelsUserOrganization](docs/ModelsUserOrganization.md)
+ - [ModelsUserOrganizationList](docs/ModelsUserOrganizationList.md)
  - [ModelsUserRoleWithPermissions](docs/ModelsUserRoleWithPermissions.md)
  - [MonadGraphqlInputVariable](docs/MonadGraphqlInputVariable.md)
  - [MonadLogSettingsConfig](docs/MonadLogSettingsConfig.md)
@@ -631,6 +635,7 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [RoutesV3AlertList](docs/RoutesV3AlertList.md)
  - [RoutesV3CreateAlertRuleRequest](docs/RoutesV3CreateAlertRuleRequest.md)
+ - [RoutesV3CreateChildOrganizationRequest](docs/RoutesV3CreateChildOrganizationRequest.md)
  - [RoutesV3CreateConnectionRequest](docs/RoutesV3CreateConnectionRequest.md)
  - [RoutesV3CreateConnectionRequestSaml](docs/RoutesV3CreateConnectionRequestSaml.md)
  - [RoutesV3CreateEnrichmentRequest](docs/RoutesV3CreateEnrichmentRequest.md)

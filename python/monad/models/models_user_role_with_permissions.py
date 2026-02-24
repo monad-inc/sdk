@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.github_com_monad_inc_core_pkg_types_models_permission import GithubComMonadIncCorePkgTypesModelsPermission
 from typing import Optional, Set
@@ -28,11 +28,13 @@ class ModelsUserRoleWithPermissions(BaseModel):
     """
     ModelsUserRoleWithPermissions
     """ # noqa: E501
+    inherited: Optional[StrictBool] = None
     organization_id: Optional[StrictStr] = None
     permissions: Optional[List[GithubComMonadIncCorePkgTypesModelsPermission]] = None
     role_id: Optional[StrictStr] = None
     role_name: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["organization_id", "permissions", "role_id", "role_name"]
+    source_organization_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["inherited", "organization_id", "permissions", "role_id", "role_name", "source_organization_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,10 +94,12 @@ class ModelsUserRoleWithPermissions(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "inherited": obj.get("inherited"),
             "organization_id": obj.get("organization_id"),
             "permissions": [GithubComMonadIncCorePkgTypesModelsPermission.from_dict(_item) for _item in obj["permissions"]] if obj.get("permissions") is not None else None,
             "role_id": obj.get("role_id"),
-            "role_name": obj.get("role_name")
+            "role_name": obj.get("role_name"),
+            "source_organization_id": obj.get("source_organization_id")
         })
         return _obj
 

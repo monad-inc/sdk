@@ -33,10 +33,13 @@ import org.openapitools.client.model.ModelsPipelineMetrics;
 import org.openapitools.client.model.ModelsStorageTypeCostConfig;
 import org.openapitools.client.model.ModelsStorageTypeSummaryResponse;
 import org.openapitools.client.model.ModelsStorageTypeTimeSeriesResponse;
+import org.openapitools.client.model.ModelsUserOrganizationList;
+import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesCreateOrganizationRequest;
 import org.openapitools.client.model.RoutesUpdateOrganizationRequest;
 import org.openapitools.client.model.RoutesV2SetStorageTypeCostRequest;
 import org.openapitools.client.model.RoutesV2StorageTypeDetailsResponse;
+import org.openapitools.client.model.RoutesV3CreateChildOrganizationRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -85,6 +88,8 @@ public class OrganizationsApi {
      * Build call for v1OrganizationsGet
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
+     * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -95,7 +100,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationsGetCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationsGetCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -128,6 +133,14 @@ public class OrganizationsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
         }
 
+        if (noChildren != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("no_children", noChildren));
+        }
+
+        if (parentOrganizationId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("parent_organization_id", parentOrganizationId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -148,8 +161,8 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationsGetValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
-        return v1OrganizationsGetCall(limit, offset, _callback);
+    private okhttp3.Call v1OrganizationsGetValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, final ApiCallback _callback) throws ApiException {
+        return v1OrganizationsGetCall(limit, offset, noChildren, parentOrganizationId, _callback);
 
     }
 
@@ -158,6 +171,8 @@ public class OrganizationsApi {
      * List organizations for user
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
+     * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization (optional)
      * @return ModelsOrganizationList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -167,8 +182,8 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsOrganizationList v1OrganizationsGet(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
-        ApiResponse<ModelsOrganizationList> localVarResp = v1OrganizationsGetWithHttpInfo(limit, offset);
+    public ModelsOrganizationList v1OrganizationsGet(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId) throws ApiException {
+        ApiResponse<ModelsOrganizationList> localVarResp = v1OrganizationsGetWithHttpInfo(limit, offset, noChildren, parentOrganizationId);
         return localVarResp.getData();
     }
 
@@ -177,6 +192,8 @@ public class OrganizationsApi {
      * List organizations for user
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
+     * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization (optional)
      * @return ApiResponse&lt;ModelsOrganizationList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -186,8 +203,8 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsOrganizationList> v1OrganizationsGetWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
-        okhttp3.Call localVarCall = v1OrganizationsGetValidateBeforeCall(limit, offset, null);
+    public ApiResponse<ModelsOrganizationList> v1OrganizationsGetWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId) throws ApiException {
+        okhttp3.Call localVarCall = v1OrganizationsGetValidateBeforeCall(limit, offset, noChildren, parentOrganizationId, null);
         Type localVarReturnType = new TypeToken<ModelsOrganizationList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -197,6 +214,8 @@ public class OrganizationsApi {
      * List organizations for user
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
+     * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -207,9 +226,9 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationsGetAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsOrganizationList> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationsGetAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, final ApiCallback<ModelsOrganizationList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1OrganizationsGetValidateBeforeCall(limit, offset, _callback);
+        okhttp3.Call localVarCall = v1OrganizationsGetValidateBeforeCall(limit, offset, noChildren, parentOrganizationId, _callback);
         Type localVarReturnType = new TypeToken<ModelsOrganizationList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1958,6 +1977,298 @@ public class OrganizationsApi {
 
         okhttp3.Call localVarCall = v2OrganizationIdStorageTypeCostPutValidateBeforeCall(organizationId, routesV2SetStorageTypeCostRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsStorageTypeCostConfig>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v3OrganizationIdOrganizationsGet
+     * @param organizationId Parent Organization ID (required)
+     * @param limit Limit the number of organizations returned (default: 10) (optional)
+     * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> List of child organizations </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3OrganizationIdOrganizationsGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/{organization_id}/organizations"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v3OrganizationIdOrganizationsGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v3OrganizationIdOrganizationsGet(Async)");
+        }
+
+        return v3OrganizationIdOrganizationsGetCall(organizationId, limit, offset, _callback);
+
+    }
+
+    /**
+     * List child organizations
+     * List child organizations for the given parent organization
+     * @param organizationId Parent Organization ID (required)
+     * @param limit Limit the number of organizations returned (default: 10) (optional)
+     * @param offset Offset the organizations returned (default: 0) (optional)
+     * @return ModelsUserOrganizationList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> List of child organizations </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ModelsUserOrganizationList v3OrganizationIdOrganizationsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        ApiResponse<ModelsUserOrganizationList> localVarResp = v3OrganizationIdOrganizationsGetWithHttpInfo(organizationId, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List child organizations
+     * List child organizations for the given parent organization
+     * @param organizationId Parent Organization ID (required)
+     * @param limit Limit the number of organizations returned (default: 10) (optional)
+     * @param offset Offset the organizations returned (default: 0) (optional)
+     * @return ApiResponse&lt;ModelsUserOrganizationList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> List of child organizations </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ModelsUserOrganizationList> v3OrganizationIdOrganizationsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = v3OrganizationIdOrganizationsGetValidateBeforeCall(organizationId, limit, offset, null);
+        Type localVarReturnType = new TypeToken<ModelsUserOrganizationList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List child organizations (asynchronously)
+     * List child organizations for the given parent organization
+     * @param organizationId Parent Organization ID (required)
+     * @param limit Limit the number of organizations returned (default: 10) (optional)
+     * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> List of child organizations </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3OrganizationIdOrganizationsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsUserOrganizationList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v3OrganizationIdOrganizationsGetValidateBeforeCall(organizationId, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<ModelsUserOrganizationList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v3OrganizationIdOrganizationsPost
+     * @param organizationId Parent Organization ID (required)
+     * @param routesV3CreateChildOrganizationRequest Request body (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Created child organization </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3OrganizationIdOrganizationsPostCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateChildOrganizationRequest routesV3CreateChildOrganizationRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = routesV3CreateChildOrganizationRequest;
+
+        // create path and map variables
+        String localVarPath = "/v3/{organization_id}/organizations"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v3OrganizationIdOrganizationsPostValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateChildOrganizationRequest routesV3CreateChildOrganizationRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v3OrganizationIdOrganizationsPost(Async)");
+        }
+
+        // verify the required parameter 'routesV3CreateChildOrganizationRequest' is set
+        if (routesV3CreateChildOrganizationRequest == null) {
+            throw new ApiException("Missing the required parameter 'routesV3CreateChildOrganizationRequest' when calling v3OrganizationIdOrganizationsPost(Async)");
+        }
+
+        return v3OrganizationIdOrganizationsPostCall(organizationId, routesV3CreateChildOrganizationRequest, _callback);
+
+    }
+
+    /**
+     * Create child organization
+     * Create a new child organization under the given parent organization
+     * @param organizationId Parent Organization ID (required)
+     * @param routesV3CreateChildOrganizationRequest Request body (required)
+     * @return GithubComMonadIncCorePkgTypesModelsOrganization
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Created child organization </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public GithubComMonadIncCorePkgTypesModelsOrganization v3OrganizationIdOrganizationsPost(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateChildOrganizationRequest routesV3CreateChildOrganizationRequest) throws ApiException {
+        ApiResponse<GithubComMonadIncCorePkgTypesModelsOrganization> localVarResp = v3OrganizationIdOrganizationsPostWithHttpInfo(organizationId, routesV3CreateChildOrganizationRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create child organization
+     * Create a new child organization under the given parent organization
+     * @param organizationId Parent Organization ID (required)
+     * @param routesV3CreateChildOrganizationRequest Request body (required)
+     * @return ApiResponse&lt;GithubComMonadIncCorePkgTypesModelsOrganization&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Created child organization </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<GithubComMonadIncCorePkgTypesModelsOrganization> v3OrganizationIdOrganizationsPostWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateChildOrganizationRequest routesV3CreateChildOrganizationRequest) throws ApiException {
+        okhttp3.Call localVarCall = v3OrganizationIdOrganizationsPostValidateBeforeCall(organizationId, routesV3CreateChildOrganizationRequest, null);
+        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsOrganization>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create child organization (asynchronously)
+     * Create a new child organization under the given parent organization
+     * @param organizationId Parent Organization ID (required)
+     * @param routesV3CreateChildOrganizationRequest Request body (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Created child organization </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3OrganizationIdOrganizationsPostAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull RoutesV3CreateChildOrganizationRequest routesV3CreateChildOrganizationRequest, final ApiCallback<GithubComMonadIncCorePkgTypesModelsOrganization> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v3OrganizationIdOrganizationsPostValidateBeforeCall(organizationId, routesV3CreateChildOrganizationRequest, _callback);
+        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsOrganization>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

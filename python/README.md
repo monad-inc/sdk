@@ -201,6 +201,8 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**v2_organization_id_metrics_storage_types_summary_get**](docs/OrganizationsApi.md#v2_organization_id_metrics_storage_types_summary_get) | **GET** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary
 *OrganizationsApi* | [**v2_organization_id_storage_type_cost_get**](docs/OrganizationsApi.md#v2_organization_id_storage_type_cost_get) | **GET** /v2/{organization_id}/storage-type-cost | Get storage type cost
 *OrganizationsApi* | [**v2_organization_id_storage_type_cost_put**](docs/OrganizationsApi.md#v2_organization_id_storage_type_cost_put) | **PUT** /v2/{organization_id}/storage-type-cost | Set storage type cost
+*OrganizationsApi* | [**v3_organization_id_organizations_get**](docs/OrganizationsApi.md#v3_organization_id_organizations_get) | **GET** /v3/{organization_id}/organizations | List child organizations
+*OrganizationsApi* | [**v3_organization_id_organizations_post**](docs/OrganizationsApi.md#v3_organization_id_organizations_post) | **POST** /v3/{organization_id}/organizations | Create child organization
 *OutputsApi* | [**v1_outputs_get**](docs/OutputsApi.md#v1_outputs_get) | **GET** /v1/outputs | List outputs
 *OutputsApi* | [**v1_outputs_output_type_id_get**](docs/OutputsApi.md#v1_outputs_output_type_id_get) | **GET** /v1/outputs/{output_type_id} | Get output config meta
 *PermissionsApi* | [**v2_organization_id_roles_permissions_get**](docs/PermissionsApi.md#v2_organization_id_roles_permissions_get) | **GET** /v2/{organization_id}/roles/permissions | List permissions
@@ -532,6 +534,8 @@ Class | Method | HTTP request | Description
  - [ModelsTransformsRepositoryList](docs/ModelsTransformsRepositoryList.md)
  - [ModelsTransformsRepositoryTransform](docs/ModelsTransformsRepositoryTransform.md)
  - [ModelsUserAuthProvider](docs/ModelsUserAuthProvider.md)
+ - [ModelsUserOrganization](docs/ModelsUserOrganization.md)
+ - [ModelsUserOrganizationList](docs/ModelsUserOrganizationList.md)
  - [ModelsUserRoleWithPermissions](docs/ModelsUserRoleWithPermissions.md)
  - [MonadGraphqlInputVariable](docs/MonadGraphqlInputVariable.md)
  - [MonadLogSettingsConfig](docs/MonadLogSettingsConfig.md)
@@ -654,6 +658,7 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [RoutesV3AlertList](docs/RoutesV3AlertList.md)
  - [RoutesV3CreateAlertRuleRequest](docs/RoutesV3CreateAlertRuleRequest.md)
+ - [RoutesV3CreateChildOrganizationRequest](docs/RoutesV3CreateChildOrganizationRequest.md)
  - [RoutesV3CreateConnectionRequest](docs/RoutesV3CreateConnectionRequest.md)
  - [RoutesV3CreateConnectionRequestSaml](docs/RoutesV3CreateConnectionRequestSaml.md)
  - [RoutesV3CreateEnrichmentRequest](docs/RoutesV3CreateEnrichmentRequest.md)

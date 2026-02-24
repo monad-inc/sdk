@@ -51,8 +51,13 @@ import org.openapitools.client.JSON;
 /**
  * ModelsUserRoleWithPermissions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-23T20:46:26.086967178Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-24T16:18:27.012020072Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsUserRoleWithPermissions {
+  public static final String SERIALIZED_NAME_INHERITED = "inherited";
+  @SerializedName(SERIALIZED_NAME_INHERITED)
+  @javax.annotation.Nullable
+  private Boolean inherited;
+
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
   @javax.annotation.Nullable
@@ -73,8 +78,32 @@ public class ModelsUserRoleWithPermissions {
   @javax.annotation.Nullable
   private String roleName;
 
+  public static final String SERIALIZED_NAME_SOURCE_ORGANIZATION_ID = "source_organization_id";
+  @SerializedName(SERIALIZED_NAME_SOURCE_ORGANIZATION_ID)
+  @javax.annotation.Nullable
+  private String sourceOrganizationId;
+
   public ModelsUserRoleWithPermissions() {
   }
+
+  public ModelsUserRoleWithPermissions inherited(@javax.annotation.Nullable Boolean inherited) {
+    this.inherited = inherited;
+    return this;
+  }
+
+  /**
+   * Get inherited
+   * @return inherited
+   */
+  @javax.annotation.Nullable
+  public Boolean getInherited() {
+    return inherited;
+  }
+
+  public void setInherited(@javax.annotation.Nullable Boolean inherited) {
+    this.inherited = inherited;
+  }
+
 
   public ModelsUserRoleWithPermissions organizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
@@ -160,6 +189,25 @@ public class ModelsUserRoleWithPermissions {
   }
 
 
+  public ModelsUserRoleWithPermissions sourceOrganizationId(@javax.annotation.Nullable String sourceOrganizationId) {
+    this.sourceOrganizationId = sourceOrganizationId;
+    return this;
+  }
+
+  /**
+   * Get sourceOrganizationId
+   * @return sourceOrganizationId
+   */
+  @javax.annotation.Nullable
+  public String getSourceOrganizationId() {
+    return sourceOrganizationId;
+  }
+
+  public void setSourceOrganizationId(@javax.annotation.Nullable String sourceOrganizationId) {
+    this.sourceOrganizationId = sourceOrganizationId;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -170,25 +218,29 @@ public class ModelsUserRoleWithPermissions {
       return false;
     }
     ModelsUserRoleWithPermissions modelsUserRoleWithPermissions = (ModelsUserRoleWithPermissions) o;
-    return Objects.equals(this.organizationId, modelsUserRoleWithPermissions.organizationId) &&
+    return Objects.equals(this.inherited, modelsUserRoleWithPermissions.inherited) &&
+        Objects.equals(this.organizationId, modelsUserRoleWithPermissions.organizationId) &&
         Objects.equals(this.permissions, modelsUserRoleWithPermissions.permissions) &&
         Objects.equals(this.roleId, modelsUserRoleWithPermissions.roleId) &&
-        Objects.equals(this.roleName, modelsUserRoleWithPermissions.roleName);
+        Objects.equals(this.roleName, modelsUserRoleWithPermissions.roleName) &&
+        Objects.equals(this.sourceOrganizationId, modelsUserRoleWithPermissions.sourceOrganizationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(organizationId, permissions, roleId, roleName);
+    return Objects.hash(inherited, organizationId, permissions, roleId, roleName, sourceOrganizationId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsUserRoleWithPermissions {\n");
+    sb.append("    inherited: ").append(toIndentedString(inherited)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
     sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
     sb.append("    roleName: ").append(toIndentedString(roleName)).append("\n");
+    sb.append("    sourceOrganizationId: ").append(toIndentedString(sourceOrganizationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -210,7 +262,7 @@ public class ModelsUserRoleWithPermissions {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("organization_id", "permissions", "role_id", "role_name"));
+    openapiFields = new HashSet<String>(Arrays.asList("inherited", "organization_id", "permissions", "role_id", "role_name", "source_organization_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -259,6 +311,9 @@ public class ModelsUserRoleWithPermissions {
       }
       if ((jsonObj.get("role_name") != null && !jsonObj.get("role_name").isJsonNull()) && !jsonObj.get("role_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `role_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_name").toString()));
+      }
+      if ((jsonObj.get("source_organization_id") != null && !jsonObj.get("source_organization_id").isJsonNull()) && !jsonObj.get("source_organization_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `source_organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_organization_id").toString()));
       }
   }
 

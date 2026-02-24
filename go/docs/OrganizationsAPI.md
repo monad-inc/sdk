@@ -16,12 +16,14 @@ Method | HTTP request | Description
 [**V2OrganizationIdMetricsStorageTypesSummaryGet**](OrganizationsAPI.md#V2OrganizationIdMetricsStorageTypesSummaryGet) | **Get** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary
 [**V2OrganizationIdStorageTypeCostGet**](OrganizationsAPI.md#V2OrganizationIdStorageTypeCostGet) | **Get** /v2/{organization_id}/storage-type-cost | Get storage type cost
 [**V2OrganizationIdStorageTypeCostPut**](OrganizationsAPI.md#V2OrganizationIdStorageTypeCostPut) | **Put** /v2/{organization_id}/storage-type-cost | Set storage type cost
+[**V3OrganizationIdOrganizationsGet**](OrganizationsAPI.md#V3OrganizationIdOrganizationsGet) | **Get** /v3/{organization_id}/organizations | List child organizations
+[**V3OrganizationIdOrganizationsPost**](OrganizationsAPI.md#V3OrganizationIdOrganizationsPost) | **Post** /v3/{organization_id}/organizations | Create child organization
 
 
 
 ## V1OrganizationsGet
 
-> ModelsOrganizationList V1OrganizationsGet(ctx).Limit(limit).Offset(offset).Execute()
+> ModelsOrganizationList V1OrganizationsGet(ctx).Limit(limit).Offset(offset).NoChildren(noChildren).ParentOrganizationId(parentOrganizationId).Execute()
 
 List organizations for user
 
@@ -42,10 +44,12 @@ import (
 func main() {
 	limit := int32(56) // int32 | Limit the number of organizations returned (default: 10) (optional)
 	offset := int32(56) // int32 | Offset the organizations returned (default: 0) (optional)
+	noChildren := true // bool | If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
+	parentOrganizationId := "parentOrganizationId_example" // string | If provided, only return organizations that are children of the specified parent organization (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationsAPI.V1OrganizationsGet(context.Background()).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.OrganizationsAPI.V1OrganizationsGet(context.Background()).Limit(limit).Offset(offset).NoChildren(noChildren).ParentOrganizationId(parentOrganizationId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.V1OrganizationsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -68,6 +72,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int32** | Limit the number of organizations returned (default: 10) | 
  **offset** | **int32** | Offset the organizations returned (default: 0) | 
+ **noChildren** | **bool** | If true, only return organizations that are directly associated with the user, not child organizations (default: false) | 
+ **parentOrganizationId** | **string** | If provided, only return organizations that are children of the specified parent organization | 
 
 ### Return type
 
@@ -900,6 +906,152 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ModelsStorageTypeCostConfig**](ModelsStorageTypeCostConfig.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V3OrganizationIdOrganizationsGet
+
+> ModelsUserOrganizationList V3OrganizationIdOrganizationsGet(ctx, organizationId).Limit(limit).Offset(offset).Execute()
+
+List child organizations
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Parent Organization ID
+	limit := int32(56) // int32 | Limit the number of organizations returned (default: 10) (optional)
+	offset := int32(56) // int32 | Offset the organizations returned (default: 0) (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OrganizationsAPI.V3OrganizationIdOrganizationsGet(context.Background(), organizationId).Limit(limit).Offset(offset).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.V3OrganizationIdOrganizationsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V3OrganizationIdOrganizationsGet`: ModelsUserOrganizationList
+	fmt.Fprintf(os.Stdout, "Response from `OrganizationsAPI.V3OrganizationIdOrganizationsGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Parent Organization ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV3OrganizationIdOrganizationsGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **int32** | Limit the number of organizations returned (default: 10) | 
+ **offset** | **int32** | Offset the organizations returned (default: 0) | 
+
+### Return type
+
+[**ModelsUserOrganizationList**](ModelsUserOrganizationList.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V3OrganizationIdOrganizationsPost
+
+> GithubComMonadIncCorePkgTypesModelsOrganization V3OrganizationIdOrganizationsPost(ctx, organizationId).RoutesV3CreateChildOrganizationRequest(routesV3CreateChildOrganizationRequest).Execute()
+
+Create child organization
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Parent Organization ID
+	routesV3CreateChildOrganizationRequest := *openapiclient.NewRoutesV3CreateChildOrganizationRequest() // RoutesV3CreateChildOrganizationRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OrganizationsAPI.V3OrganizationIdOrganizationsPost(context.Background(), organizationId).RoutesV3CreateChildOrganizationRequest(routesV3CreateChildOrganizationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.V3OrganizationIdOrganizationsPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V3OrganizationIdOrganizationsPost`: GithubComMonadIncCorePkgTypesModelsOrganization
+	fmt.Fprintf(os.Stdout, "Response from `OrganizationsAPI.V3OrganizationIdOrganizationsPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Parent Organization ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV3OrganizationIdOrganizationsPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **routesV3CreateChildOrganizationRequest** | [**RoutesV3CreateChildOrganizationRequest**](RoutesV3CreateChildOrganizationRequest.md) | Request body | 
+
+### Return type
+
+[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
 
 ### Authorization
 

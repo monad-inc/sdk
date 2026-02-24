@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsOrganizationUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-23T20:46:26.086967178Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-24T16:18:27.012020072Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsOrganizationUser {
   public static final String SERIALIZED_NAME_AUTH_PROVIDER = "auth_provider";
   @SerializedName(SERIALIZED_NAME_AUTH_PROVIDER)
@@ -76,10 +76,30 @@ public class ModelsOrganizationUser {
   @javax.annotation.Nullable
   private String id;
 
+  public static final String SERIALIZED_NAME_INHERITED = "inherited";
+  @SerializedName(SERIALIZED_NAME_INHERITED)
+  @javax.annotation.Nullable
+  private Boolean inherited;
+
   public static final String SERIALIZED_NAME_ROLE_ID = "role_id";
   @SerializedName(SERIALIZED_NAME_ROLE_ID)
   @javax.annotation.Nullable
   private String roleId;
+
+  public static final String SERIALIZED_NAME_ROLE_NAME = "role_name";
+  @SerializedName(SERIALIZED_NAME_ROLE_NAME)
+  @javax.annotation.Nullable
+  private String roleName;
+
+  public static final String SERIALIZED_NAME_SOURCE_ORGANIZATION_ID = "source_organization_id";
+  @SerializedName(SERIALIZED_NAME_SOURCE_ORGANIZATION_ID)
+  @javax.annotation.Nullable
+  private String sourceOrganizationId;
+
+  public static final String SERIALIZED_NAME_SOURCE_ORGANIZATION_NAME = "source_organization_name";
+  @SerializedName(SERIALIZED_NAME_SOURCE_ORGANIZATION_NAME)
+  @javax.annotation.Nullable
+  private String sourceOrganizationName;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -189,6 +209,25 @@ public class ModelsOrganizationUser {
   }
 
 
+  public ModelsOrganizationUser inherited(@javax.annotation.Nullable Boolean inherited) {
+    this.inherited = inherited;
+    return this;
+  }
+
+  /**
+   * Get inherited
+   * @return inherited
+   */
+  @javax.annotation.Nullable
+  public Boolean getInherited() {
+    return inherited;
+  }
+
+  public void setInherited(@javax.annotation.Nullable Boolean inherited) {
+    this.inherited = inherited;
+  }
+
+
   public ModelsOrganizationUser roleId(@javax.annotation.Nullable String roleId) {
     this.roleId = roleId;
     return this;
@@ -205,6 +244,63 @@ public class ModelsOrganizationUser {
 
   public void setRoleId(@javax.annotation.Nullable String roleId) {
     this.roleId = roleId;
+  }
+
+
+  public ModelsOrganizationUser roleName(@javax.annotation.Nullable String roleName) {
+    this.roleName = roleName;
+    return this;
+  }
+
+  /**
+   * Get roleName
+   * @return roleName
+   */
+  @javax.annotation.Nullable
+  public String getRoleName() {
+    return roleName;
+  }
+
+  public void setRoleName(@javax.annotation.Nullable String roleName) {
+    this.roleName = roleName;
+  }
+
+
+  public ModelsOrganizationUser sourceOrganizationId(@javax.annotation.Nullable String sourceOrganizationId) {
+    this.sourceOrganizationId = sourceOrganizationId;
+    return this;
+  }
+
+  /**
+   * Get sourceOrganizationId
+   * @return sourceOrganizationId
+   */
+  @javax.annotation.Nullable
+  public String getSourceOrganizationId() {
+    return sourceOrganizationId;
+  }
+
+  public void setSourceOrganizationId(@javax.annotation.Nullable String sourceOrganizationId) {
+    this.sourceOrganizationId = sourceOrganizationId;
+  }
+
+
+  public ModelsOrganizationUser sourceOrganizationName(@javax.annotation.Nullable String sourceOrganizationName) {
+    this.sourceOrganizationName = sourceOrganizationName;
+    return this;
+  }
+
+  /**
+   * Get sourceOrganizationName
+   * @return sourceOrganizationName
+   */
+  @javax.annotation.Nullable
+  public String getSourceOrganizationName() {
+    return sourceOrganizationName;
+  }
+
+  public void setSourceOrganizationName(@javax.annotation.Nullable String sourceOrganizationName) {
+    this.sourceOrganizationName = sourceOrganizationName;
   }
 
 
@@ -261,14 +357,18 @@ public class ModelsOrganizationUser {
         Objects.equals(this.createdAt, modelsOrganizationUser.createdAt) &&
         Objects.equals(this.email, modelsOrganizationUser.email) &&
         Objects.equals(this.id, modelsOrganizationUser.id) &&
+        Objects.equals(this.inherited, modelsOrganizationUser.inherited) &&
         Objects.equals(this.roleId, modelsOrganizationUser.roleId) &&
+        Objects.equals(this.roleName, modelsOrganizationUser.roleName) &&
+        Objects.equals(this.sourceOrganizationId, modelsOrganizationUser.sourceOrganizationId) &&
+        Objects.equals(this.sourceOrganizationName, modelsOrganizationUser.sourceOrganizationName) &&
         Objects.equals(this.updatedAt, modelsOrganizationUser.updatedAt) &&
         Objects.equals(this.username, modelsOrganizationUser.username);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authProvider, connectionId, createdAt, email, id, roleId, updatedAt, username);
+    return Objects.hash(authProvider, connectionId, createdAt, email, id, inherited, roleId, roleName, sourceOrganizationId, sourceOrganizationName, updatedAt, username);
   }
 
   @Override
@@ -280,7 +380,11 @@ public class ModelsOrganizationUser {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    inherited: ").append(toIndentedString(inherited)).append("\n");
     sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
+    sb.append("    roleName: ").append(toIndentedString(roleName)).append("\n");
+    sb.append("    sourceOrganizationId: ").append(toIndentedString(sourceOrganizationId)).append("\n");
+    sb.append("    sourceOrganizationName: ").append(toIndentedString(sourceOrganizationName)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("}");
@@ -304,7 +408,7 @@ public class ModelsOrganizationUser {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("auth_provider", "connection_id", "created_at", "email", "id", "role_id", "updated_at", "username"));
+    openapiFields = new HashSet<String>(Arrays.asList("auth_provider", "connection_id", "created_at", "email", "id", "inherited", "role_id", "role_name", "source_organization_id", "source_organization_name", "updated_at", "username"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -349,6 +453,15 @@ public class ModelsOrganizationUser {
       }
       if ((jsonObj.get("role_id") != null && !jsonObj.get("role_id").isJsonNull()) && !jsonObj.get("role_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `role_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_id").toString()));
+      }
+      if ((jsonObj.get("role_name") != null && !jsonObj.get("role_name").isJsonNull()) && !jsonObj.get("role_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `role_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_name").toString()));
+      }
+      if ((jsonObj.get("source_organization_id") != null && !jsonObj.get("source_organization_id").isJsonNull()) && !jsonObj.get("source_organization_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `source_organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_organization_id").toString()));
+      }
+      if ((jsonObj.get("source_organization_name") != null && !jsonObj.get("source_organization_name").isJsonNull()) && !jsonObj.get("source_organization_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `source_organization_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_organization_name").toString()));
       }
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));

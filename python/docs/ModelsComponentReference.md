@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**kind** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 

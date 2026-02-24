@@ -25,7 +25,11 @@ type ModelsOrganizationUser struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	Email *string `json:"email,omitempty"`
 	Id *string `json:"id,omitempty"`
+	Inherited *bool `json:"inherited,omitempty"`
 	RoleId *string `json:"role_id,omitempty"`
+	RoleName *string `json:"role_name,omitempty"`
+	SourceOrganizationId *string `json:"source_organization_id,omitempty"`
+	SourceOrganizationName *string `json:"source_organization_name,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 	Username *string `json:"username,omitempty"`
 }
@@ -207,6 +211,38 @@ func (o *ModelsOrganizationUser) SetId(v string) {
 	o.Id = &v
 }
 
+// GetInherited returns the Inherited field value if set, zero value otherwise.
+func (o *ModelsOrganizationUser) GetInherited() bool {
+	if o == nil || IsNil(o.Inherited) {
+		var ret bool
+		return ret
+	}
+	return *o.Inherited
+}
+
+// GetInheritedOk returns a tuple with the Inherited field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsOrganizationUser) GetInheritedOk() (*bool, bool) {
+	if o == nil || IsNil(o.Inherited) {
+		return nil, false
+	}
+	return o.Inherited, true
+}
+
+// HasInherited returns a boolean if a field has been set.
+func (o *ModelsOrganizationUser) HasInherited() bool {
+	if o != nil && !IsNil(o.Inherited) {
+		return true
+	}
+
+	return false
+}
+
+// SetInherited gets a reference to the given bool and assigns it to the Inherited field.
+func (o *ModelsOrganizationUser) SetInherited(v bool) {
+	o.Inherited = &v
+}
+
 // GetRoleId returns the RoleId field value if set, zero value otherwise.
 func (o *ModelsOrganizationUser) GetRoleId() string {
 	if o == nil || IsNil(o.RoleId) {
@@ -237,6 +273,102 @@ func (o *ModelsOrganizationUser) HasRoleId() bool {
 // SetRoleId gets a reference to the given string and assigns it to the RoleId field.
 func (o *ModelsOrganizationUser) SetRoleId(v string) {
 	o.RoleId = &v
+}
+
+// GetRoleName returns the RoleName field value if set, zero value otherwise.
+func (o *ModelsOrganizationUser) GetRoleName() string {
+	if o == nil || IsNil(o.RoleName) {
+		var ret string
+		return ret
+	}
+	return *o.RoleName
+}
+
+// GetRoleNameOk returns a tuple with the RoleName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsOrganizationUser) GetRoleNameOk() (*string, bool) {
+	if o == nil || IsNil(o.RoleName) {
+		return nil, false
+	}
+	return o.RoleName, true
+}
+
+// HasRoleName returns a boolean if a field has been set.
+func (o *ModelsOrganizationUser) HasRoleName() bool {
+	if o != nil && !IsNil(o.RoleName) {
+		return true
+	}
+
+	return false
+}
+
+// SetRoleName gets a reference to the given string and assigns it to the RoleName field.
+func (o *ModelsOrganizationUser) SetRoleName(v string) {
+	o.RoleName = &v
+}
+
+// GetSourceOrganizationId returns the SourceOrganizationId field value if set, zero value otherwise.
+func (o *ModelsOrganizationUser) GetSourceOrganizationId() string {
+	if o == nil || IsNil(o.SourceOrganizationId) {
+		var ret string
+		return ret
+	}
+	return *o.SourceOrganizationId
+}
+
+// GetSourceOrganizationIdOk returns a tuple with the SourceOrganizationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsOrganizationUser) GetSourceOrganizationIdOk() (*string, bool) {
+	if o == nil || IsNil(o.SourceOrganizationId) {
+		return nil, false
+	}
+	return o.SourceOrganizationId, true
+}
+
+// HasSourceOrganizationId returns a boolean if a field has been set.
+func (o *ModelsOrganizationUser) HasSourceOrganizationId() bool {
+	if o != nil && !IsNil(o.SourceOrganizationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceOrganizationId gets a reference to the given string and assigns it to the SourceOrganizationId field.
+func (o *ModelsOrganizationUser) SetSourceOrganizationId(v string) {
+	o.SourceOrganizationId = &v
+}
+
+// GetSourceOrganizationName returns the SourceOrganizationName field value if set, zero value otherwise.
+func (o *ModelsOrganizationUser) GetSourceOrganizationName() string {
+	if o == nil || IsNil(o.SourceOrganizationName) {
+		var ret string
+		return ret
+	}
+	return *o.SourceOrganizationName
+}
+
+// GetSourceOrganizationNameOk returns a tuple with the SourceOrganizationName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsOrganizationUser) GetSourceOrganizationNameOk() (*string, bool) {
+	if o == nil || IsNil(o.SourceOrganizationName) {
+		return nil, false
+	}
+	return o.SourceOrganizationName, true
+}
+
+// HasSourceOrganizationName returns a boolean if a field has been set.
+func (o *ModelsOrganizationUser) HasSourceOrganizationName() bool {
+	if o != nil && !IsNil(o.SourceOrganizationName) {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceOrganizationName gets a reference to the given string and assigns it to the SourceOrganizationName field.
+func (o *ModelsOrganizationUser) SetSourceOrganizationName(v string) {
+	o.SourceOrganizationName = &v
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
@@ -328,8 +460,20 @@ func (o ModelsOrganizationUser) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+	if !IsNil(o.Inherited) {
+		toSerialize["inherited"] = o.Inherited
+	}
 	if !IsNil(o.RoleId) {
 		toSerialize["role_id"] = o.RoleId
+	}
+	if !IsNil(o.RoleName) {
+		toSerialize["role_name"] = o.RoleName
+	}
+	if !IsNil(o.SourceOrganizationId) {
+		toSerialize["source_organization_id"] = o.SourceOrganizationId
+	}
+	if !IsNil(o.SourceOrganizationName) {
+		toSerialize["source_organization_name"] = o.SourceOrganizationName
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt

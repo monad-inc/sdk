@@ -10,7 +10,11 @@ Name | Type | Description | Notes
 **created_at** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
+**inherited** | **bool** |  | [optional] 
 **role_id** | **str** |  | [optional] 
+**role_name** | **str** |  | [optional] 
+**source_organization_id** | **str** |  | [optional] 
+**source_organization_name** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 **username** | **str** |  | [optional] 
 

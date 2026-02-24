@@ -28,9 +28,10 @@ class ModelsComponentReference(BaseModel):
     ModelsComponentReference
     """ # noqa: E501
     id: Optional[StrictStr] = None
+    kind: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "name", "type"]
+    __properties: ClassVar[List[str]] = ["id", "kind", "name", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,6 +85,7 @@ class ModelsComponentReference(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
+            "kind": obj.get("kind"),
             "name": obj.get("name"),
             "type": obj.get("type")
         })

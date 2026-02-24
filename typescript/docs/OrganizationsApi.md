@@ -16,6 +16,8 @@ Method | HTTP request | Description
 [**v2OrganizationIdMetricsStorageTypesSummaryGet**](OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesSummaryGet) | **GET** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary
 [**v2OrganizationIdStorageTypeCostGet**](OrganizationsApi.md#v2OrganizationIdStorageTypeCostGet) | **GET** /v2/{organization_id}/storage-type-cost | Get storage type cost
 [**v2OrganizationIdStorageTypeCostPut**](OrganizationsApi.md#v2OrganizationIdStorageTypeCostPut) | **PUT** /v2/{organization_id}/storage-type-cost | Set storage type cost
+[**v3OrganizationIdOrganizationsGet**](OrganizationsApi.md#v3OrganizationIdOrganizationsGet) | **GET** /v3/{organization_id}/organizations | List child organizations
+[**v3OrganizationIdOrganizationsPost**](OrganizationsApi.md#v3OrganizationIdOrganizationsPost) | **POST** /v3/{organization_id}/organizations | Create child organization
 
 
 # **v1OrganizationsGet**
@@ -38,6 +40,10 @@ const request: OrganizationsApiV1OrganizationsGetRequest = {
   limit: 1,
     // Offset the organizations returned (default: 0) (optional)
   offset: 1,
+    // If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
+  noChildren: true,
+    // If provided, only return organizations that are children of the specified parent organization (optional)
+  parentOrganizationId: "parent_organization_id_example",
 };
 
 const data = await apiInstance.v1OrganizationsGet(request);
@@ -51,6 +57,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | [**number**] | Limit the number of organizations returned (default: 10) | (optional) defaults to undefined
  **offset** | [**number**] | Offset the organizations returned (default: 0) | (optional) defaults to undefined
+ **noChildren** | [**boolean**] | If true, only return organizations that are directly associated with the user, not child organizations (default: false) | (optional) defaults to undefined
+ **parentOrganizationId** | [**string**] | If provided, only return organizations that are children of the specified parent organization | (optional) defaults to undefined
 
 
 ### Return type
@@ -779,6 +787,127 @@ Name | Type | Description  | Notes
 **200** | Updated storage type cost |  -  |
 **400** | Bad request |  -  |
 **404** | Organization not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v3OrganizationIdOrganizationsGet**
+> ModelsUserOrganizationList v3OrganizationIdOrganizationsGet()
+
+List child organizations for the given parent organization
+
+### Example
+
+
+```typescript
+import { createConfiguration, OrganizationsApi } from '';
+import type { OrganizationsApiV3OrganizationIdOrganizationsGetRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new OrganizationsApi(configuration);
+
+const request: OrganizationsApiV3OrganizationIdOrganizationsGetRequest = {
+    // Parent Organization ID
+  organizationId: "organization_id_example",
+    // Limit the number of organizations returned (default: 10) (optional)
+  limit: 1,
+    // Offset the organizations returned (default: 0) (optional)
+  offset: 1,
+};
+
+const data = await apiInstance.v3OrganizationIdOrganizationsGet(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Parent Organization ID | defaults to undefined
+ **limit** | [**number**] | Limit the number of organizations returned (default: 10) | (optional) defaults to undefined
+ **offset** | [**number**] | Offset the organizations returned (default: 0) | (optional) defaults to undefined
+
+
+### Return type
+
+**ModelsUserOrganizationList**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of child organizations |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v3OrganizationIdOrganizationsPost**
+> GithubComMonadIncCorePkgTypesModelsOrganization v3OrganizationIdOrganizationsPost(routesV3CreateChildOrganizationRequest)
+
+Create a new child organization under the given parent organization
+
+### Example
+
+
+```typescript
+import { createConfiguration, OrganizationsApi } from '';
+import type { OrganizationsApiV3OrganizationIdOrganizationsPostRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new OrganizationsApi(configuration);
+
+const request: OrganizationsApiV3OrganizationIdOrganizationsPostRequest = {
+    // Parent Organization ID
+  organizationId: "organization_id_example",
+    // Request body
+  routesV3CreateChildOrganizationRequest: {
+    description: "description_example",
+    name: "name_example",
+  },
+};
+
+const data = await apiInstance.v3OrganizationIdOrganizationsPost(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **routesV3CreateChildOrganizationRequest** | **RoutesV3CreateChildOrganizationRequest**| Request body |
+ **organizationId** | [**string**] | Parent Organization ID | defaults to undefined
+
+
+### Return type
+
+**GithubComMonadIncCorePkgTypesModelsOrganization**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Created child organization |  -  |
+**400** | Invalid request body |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

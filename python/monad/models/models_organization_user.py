@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_user_auth_provider import ModelsUserAuthProvider
 from typing import Optional, Set
@@ -33,10 +33,14 @@ class ModelsOrganizationUser(BaseModel):
     created_at: Optional[StrictStr] = None
     email: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
+    inherited: Optional[StrictBool] = None
     role_id: Optional[StrictStr] = None
+    role_name: Optional[StrictStr] = None
+    source_organization_id: Optional[StrictStr] = None
+    source_organization_name: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["auth_provider", "connection_id", "created_at", "email", "id", "role_id", "updated_at", "username"]
+    __properties: ClassVar[List[str]] = ["auth_provider", "connection_id", "created_at", "email", "id", "inherited", "role_id", "role_name", "source_organization_id", "source_organization_name", "updated_at", "username"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,7 +101,11 @@ class ModelsOrganizationUser(BaseModel):
             "created_at": obj.get("created_at"),
             "email": obj.get("email"),
             "id": obj.get("id"),
+            "inherited": obj.get("inherited"),
             "role_id": obj.get("role_id"),
+            "role_name": obj.get("role_name"),
+            "source_organization_id": obj.get("source_organization_id"),
+            "source_organization_name": obj.get("source_organization_name"),
             "updated_at": obj.get("updated_at"),
             "username": obj.get("username")
         })

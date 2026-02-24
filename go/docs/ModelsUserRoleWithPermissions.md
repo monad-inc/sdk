@@ -4,10 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Inherited** | Pointer to **bool** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **Permissions** | Pointer to [**[]GithubComMonadIncCorePkgTypesModelsPermission**](GithubComMonadIncCorePkgTypesModelsPermission.md) |  | [optional] 
 **RoleId** | Pointer to **string** |  | [optional] 
 **RoleName** | Pointer to **string** |  | [optional] 
+**SourceOrganizationId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,6 +29,31 @@ will change when the set of required properties is changed
 NewModelsUserRoleWithPermissionsWithDefaults instantiates a new ModelsUserRoleWithPermissions object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetInherited
+
+`func (o *ModelsUserRoleWithPermissions) GetInherited() bool`
+
+GetInherited returns the Inherited field if non-nil, zero value otherwise.
+
+### GetInheritedOk
+
+`func (o *ModelsUserRoleWithPermissions) GetInheritedOk() (*bool, bool)`
+
+GetInheritedOk returns a tuple with the Inherited field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInherited
+
+`func (o *ModelsUserRoleWithPermissions) SetInherited(v bool)`
+
+SetInherited sets Inherited field to given value.
+
+### HasInherited
+
+`func (o *ModelsUserRoleWithPermissions) HasInherited() bool`
+
+HasInherited returns a boolean if a field has been set.
 
 ### GetOrganizationId
 
@@ -127,6 +154,31 @@ SetRoleName sets RoleName field to given value.
 `func (o *ModelsUserRoleWithPermissions) HasRoleName() bool`
 
 HasRoleName returns a boolean if a field has been set.
+
+### GetSourceOrganizationId
+
+`func (o *ModelsUserRoleWithPermissions) GetSourceOrganizationId() string`
+
+GetSourceOrganizationId returns the SourceOrganizationId field if non-nil, zero value otherwise.
+
+### GetSourceOrganizationIdOk
+
+`func (o *ModelsUserRoleWithPermissions) GetSourceOrganizationIdOk() (*string, bool)`
+
+GetSourceOrganizationIdOk returns a tuple with the SourceOrganizationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceOrganizationId
+
+`func (o *ModelsUserRoleWithPermissions) SetSourceOrganizationId(v string)`
+
+SetSourceOrganizationId sets SourceOrganizationId field to given value.
+
+### HasSourceOrganizationId
+
+`func (o *ModelsUserRoleWithPermissions) HasSourceOrganizationId() bool`
+
+HasSourceOrganizationId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

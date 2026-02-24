@@ -20,10 +20,12 @@ var _ MappedNullable = &ModelsUserRoleWithPermissions{}
 
 // ModelsUserRoleWithPermissions struct for ModelsUserRoleWithPermissions
 type ModelsUserRoleWithPermissions struct {
+	Inherited *bool `json:"inherited,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	Permissions []GithubComMonadIncCorePkgTypesModelsPermission `json:"permissions,omitempty"`
 	RoleId *string `json:"role_id,omitempty"`
 	RoleName *string `json:"role_name,omitempty"`
+	SourceOrganizationId *string `json:"source_organization_id,omitempty"`
 }
 
 // NewModelsUserRoleWithPermissions instantiates a new ModelsUserRoleWithPermissions object
@@ -41,6 +43,38 @@ func NewModelsUserRoleWithPermissions() *ModelsUserRoleWithPermissions {
 func NewModelsUserRoleWithPermissionsWithDefaults() *ModelsUserRoleWithPermissions {
 	this := ModelsUserRoleWithPermissions{}
 	return &this
+}
+
+// GetInherited returns the Inherited field value if set, zero value otherwise.
+func (o *ModelsUserRoleWithPermissions) GetInherited() bool {
+	if o == nil || IsNil(o.Inherited) {
+		var ret bool
+		return ret
+	}
+	return *o.Inherited
+}
+
+// GetInheritedOk returns a tuple with the Inherited field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsUserRoleWithPermissions) GetInheritedOk() (*bool, bool) {
+	if o == nil || IsNil(o.Inherited) {
+		return nil, false
+	}
+	return o.Inherited, true
+}
+
+// HasInherited returns a boolean if a field has been set.
+func (o *ModelsUserRoleWithPermissions) HasInherited() bool {
+	if o != nil && !IsNil(o.Inherited) {
+		return true
+	}
+
+	return false
+}
+
+// SetInherited gets a reference to the given bool and assigns it to the Inherited field.
+func (o *ModelsUserRoleWithPermissions) SetInherited(v bool) {
+	o.Inherited = &v
 }
 
 // GetOrganizationId returns the OrganizationId field value if set, zero value otherwise.
@@ -171,6 +205,38 @@ func (o *ModelsUserRoleWithPermissions) SetRoleName(v string) {
 	o.RoleName = &v
 }
 
+// GetSourceOrganizationId returns the SourceOrganizationId field value if set, zero value otherwise.
+func (o *ModelsUserRoleWithPermissions) GetSourceOrganizationId() string {
+	if o == nil || IsNil(o.SourceOrganizationId) {
+		var ret string
+		return ret
+	}
+	return *o.SourceOrganizationId
+}
+
+// GetSourceOrganizationIdOk returns a tuple with the SourceOrganizationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsUserRoleWithPermissions) GetSourceOrganizationIdOk() (*string, bool) {
+	if o == nil || IsNil(o.SourceOrganizationId) {
+		return nil, false
+	}
+	return o.SourceOrganizationId, true
+}
+
+// HasSourceOrganizationId returns a boolean if a field has been set.
+func (o *ModelsUserRoleWithPermissions) HasSourceOrganizationId() bool {
+	if o != nil && !IsNil(o.SourceOrganizationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceOrganizationId gets a reference to the given string and assigns it to the SourceOrganizationId field.
+func (o *ModelsUserRoleWithPermissions) SetSourceOrganizationId(v string) {
+	o.SourceOrganizationId = &v
+}
+
 func (o ModelsUserRoleWithPermissions) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -181,6 +247,9 @@ func (o ModelsUserRoleWithPermissions) MarshalJSON() ([]byte, error) {
 
 func (o ModelsUserRoleWithPermissions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Inherited) {
+		toSerialize["inherited"] = o.Inherited
+	}
 	if !IsNil(o.OrganizationId) {
 		toSerialize["organization_id"] = o.OrganizationId
 	}
@@ -192,6 +261,9 @@ func (o ModelsUserRoleWithPermissions) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RoleName) {
 		toSerialize["role_name"] = o.RoleName
+	}
+	if !IsNil(o.SourceOrganizationId) {
+		toSerialize["source_organization_id"] = o.SourceOrganizationId
 	}
 	return toSerialize, nil
 }

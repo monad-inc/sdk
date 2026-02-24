@@ -22,6 +22,7 @@ export class ModelsSecretWithComponents {
     * The user set Description of the secret
     */
     'description'?: string;
+    'enrichments'?: Array<ModelsComponentReference>;
     /**
     * The ID of the secret
     */
@@ -36,6 +37,7 @@ export class ModelsSecretWithComponents {
     */
     'organizationId'?: string;
     'outputs'?: Array<ModelsComponentReference>;
+    'transforms'?: Array<ModelsComponentReference>;
     /**
     * When the secret was updated
     */
@@ -60,6 +62,12 @@ export class ModelsSecretWithComponents {
             "name": "description",
             "baseName": "description",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "enrichments",
+            "baseName": "enrichments",
+            "type": "Array<ModelsComponentReference>",
             "format": ""
         },
         {
@@ -89,6 +97,12 @@ export class ModelsSecretWithComponents {
         {
             "name": "outputs",
             "baseName": "outputs",
+            "type": "Array<ModelsComponentReference>",
+            "format": ""
+        },
+        {
+            "name": "transforms",
+            "baseName": "transforms",
             "type": "Array<ModelsComponentReference>",
             "format": ""
         },

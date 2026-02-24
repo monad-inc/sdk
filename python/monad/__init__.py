@@ -336,6 +336,8 @@ __all__ = [
     "ModelsTransformsRepositoryList",
     "ModelsTransformsRepositoryTransform",
     "ModelsUserAuthProvider",
+    "ModelsUserOrganization",
+    "ModelsUserOrganizationList",
     "ModelsUserRoleWithPermissions",
     "MonadGraphqlInputVariable",
     "MonadLogSettingsConfig",
@@ -458,6 +460,7 @@ __all__ = [
     "RoutesV2UpdateRoleV2Request",
     "RoutesV3AlertList",
     "RoutesV3CreateAlertRuleRequest",
+    "RoutesV3CreateChildOrganizationRequest",
     "RoutesV3CreateConnectionRequest",
     "RoutesV3CreateConnectionRequestSaml",
     "RoutesV3CreateEnrichmentRequest",
@@ -918,6 +921,8 @@ from monad.models.models_transform_operation import ModelsTransformOperation as 
 from monad.models.models_transforms_repository_list import ModelsTransformsRepositoryList as ModelsTransformsRepositoryList
 from monad.models.models_transforms_repository_transform import ModelsTransformsRepositoryTransform as ModelsTransformsRepositoryTransform
 from monad.models.models_user_auth_provider import ModelsUserAuthProvider as ModelsUserAuthProvider
+from monad.models.models_user_organization import ModelsUserOrganization as ModelsUserOrganization
+from monad.models.models_user_organization_list import ModelsUserOrganizationList as ModelsUserOrganizationList
 from monad.models.models_user_role_with_permissions import ModelsUserRoleWithPermissions as ModelsUserRoleWithPermissions
 from monad.models.monad_graphql_input_variable import MonadGraphqlInputVariable as MonadGraphqlInputVariable
 from monad.models.monad_log_settings_config import MonadLogSettingsConfig as MonadLogSettingsConfig
@@ -1040,6 +1045,7 @@ from monad.models.routes_v2_update_pipeline_request import RoutesV2UpdatePipelin
 from monad.models.routes_v2_update_role_v2_request import RoutesV2UpdateRoleV2Request as RoutesV2UpdateRoleV2Request
 from monad.models.routes_v3_alert_list import RoutesV3AlertList as RoutesV3AlertList
 from monad.models.routes_v3_create_alert_rule_request import RoutesV3CreateAlertRuleRequest as RoutesV3CreateAlertRuleRequest
+from monad.models.routes_v3_create_child_organization_request import RoutesV3CreateChildOrganizationRequest as RoutesV3CreateChildOrganizationRequest
 from monad.models.routes_v3_create_connection_request import RoutesV3CreateConnectionRequest as RoutesV3CreateConnectionRequest
 from monad.models.routes_v3_create_connection_request_saml import RoutesV3CreateConnectionRequestSaml as RoutesV3CreateConnectionRequestSaml
 from monad.models.routes_v3_create_enrichment_request import RoutesV3CreateEnrichmentRequest as RoutesV3CreateEnrichmentRequest

@@ -30,14 +30,16 @@ class ModelsSecretWithComponents(BaseModel):
     """ # noqa: E501
     created_at: Optional[StrictStr] = Field(default=None, description="When the secret was created")
     description: Optional[StrictStr] = Field(default=None, description="The user set Description of the secret")
+    enrichments: Optional[List[ModelsComponentReference]] = None
     id: Optional[StrictStr] = Field(default=None, description="The ID of the secret")
     inputs: Optional[List[ModelsComponentReference]] = None
     name: Optional[StrictStr] = Field(default=None, description="The user set Name of the secret")
     organization_id: Optional[StrictStr] = Field(default=None, description="The OrganizationID the secret belongs to")
     outputs: Optional[List[ModelsComponentReference]] = None
+    transforms: Optional[List[ModelsComponentReference]] = None
     updated_at: Optional[StrictStr] = Field(default=None, description="When the secret was updated")
     value: Optional[StrictStr] = Field(default=None, description="The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload.")
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "inputs", "name", "organization_id", "outputs", "updated_at", "value"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "enrichments", "id", "inputs", "name", "organization_id", "outputs", "transforms", "updated_at", "value"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -78,6 +80,13 @@ class ModelsSecretWithComponents(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in enrichments (list)
+        _items = []
+        if self.enrichments:
+            for _item_enrichments in self.enrichments:
+                if _item_enrichments:
+                    _items.append(_item_enrichments.to_dict())
+            _dict['enrichments'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in inputs (list)
         _items = []
         if self.inputs:
@@ -92,6 +101,13 @@ class ModelsSecretWithComponents(BaseModel):
                 if _item_outputs:
                     _items.append(_item_outputs.to_dict())
             _dict['outputs'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in transforms (list)
+        _items = []
+        if self.transforms:
+            for _item_transforms in self.transforms:
+                if _item_transforms:
+                    _items.append(_item_transforms.to_dict())
+            _dict['transforms'] = _items
         return _dict
 
     @classmethod
@@ -106,11 +122,13 @@ class ModelsSecretWithComponents(BaseModel):
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
+            "enrichments": [ModelsComponentReference.from_dict(_item) for _item in obj["enrichments"]] if obj.get("enrichments") is not None else None,
             "id": obj.get("id"),
             "inputs": [ModelsComponentReference.from_dict(_item) for _item in obj["inputs"]] if obj.get("inputs") is not None else None,
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
             "outputs": [ModelsComponentReference.from_dict(_item) for _item in obj["outputs"]] if obj.get("outputs") is not None else None,
+            "transforms": [ModelsComponentReference.from_dict(_item) for _item in obj["transforms"]] if obj.get("transforms") is not None else None,
             "updated_at": obj.get("updated_at"),
             "value": obj.get("value")
         })

@@ -48,12 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * ModelsComponentReference
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-23T20:46:26.086967178Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-24T16:18:27.012020072Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsComponentReference {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
   private String id;
+
+  public static final String SERIALIZED_NAME_KIND = "kind";
+  @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nullable
+  private String kind;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -84,6 +89,25 @@ public class ModelsComponentReference {
 
   public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
+  }
+
+
+  public ModelsComponentReference kind(@javax.annotation.Nullable String kind) {
+    this.kind = kind;
+    return this;
+  }
+
+  /**
+   * Get kind
+   * @return kind
+   */
+  @javax.annotation.Nullable
+  public String getKind() {
+    return kind;
+  }
+
+  public void setKind(@javax.annotation.Nullable String kind) {
+    this.kind = kind;
   }
 
 
@@ -136,13 +160,14 @@ public class ModelsComponentReference {
     }
     ModelsComponentReference modelsComponentReference = (ModelsComponentReference) o;
     return Objects.equals(this.id, modelsComponentReference.id) &&
+        Objects.equals(this.kind, modelsComponentReference.kind) &&
         Objects.equals(this.name, modelsComponentReference.name) &&
         Objects.equals(this.type, modelsComponentReference.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, type);
+    return Objects.hash(id, kind, name, type);
   }
 
   @Override
@@ -150,6 +175,7 @@ public class ModelsComponentReference {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsComponentReference {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
@@ -173,7 +199,7 @@ public class ModelsComponentReference {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "name", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "kind", "name", "type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -202,6 +228,9 @@ public class ModelsComponentReference {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

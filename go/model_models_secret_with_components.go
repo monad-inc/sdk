@@ -24,6 +24,7 @@ type ModelsSecretWithComponents struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	// The user set Description of the secret
 	Description *string `json:"description,omitempty"`
+	Enrichments []ModelsComponentReference `json:"enrichments,omitempty"`
 	// The ID of the secret
 	Id *string `json:"id,omitempty"`
 	Inputs []ModelsComponentReference `json:"inputs,omitempty"`
@@ -32,6 +33,7 @@ type ModelsSecretWithComponents struct {
 	// The OrganizationID the secret belongs to
 	OrganizationId *string `json:"organization_id,omitempty"`
 	Outputs []ModelsComponentReference `json:"outputs,omitempty"`
+	Transforms []ModelsComponentReference `json:"transforms,omitempty"`
 	// When the secret was updated
 	UpdatedAt *string `json:"updated_at,omitempty"`
 	// The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload.
@@ -117,6 +119,38 @@ func (o *ModelsSecretWithComponents) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *ModelsSecretWithComponents) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetEnrichments returns the Enrichments field value if set, zero value otherwise.
+func (o *ModelsSecretWithComponents) GetEnrichments() []ModelsComponentReference {
+	if o == nil || IsNil(o.Enrichments) {
+		var ret []ModelsComponentReference
+		return ret
+	}
+	return o.Enrichments
+}
+
+// GetEnrichmentsOk returns a tuple with the Enrichments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsSecretWithComponents) GetEnrichmentsOk() ([]ModelsComponentReference, bool) {
+	if o == nil || IsNil(o.Enrichments) {
+		return nil, false
+	}
+	return o.Enrichments, true
+}
+
+// HasEnrichments returns a boolean if a field has been set.
+func (o *ModelsSecretWithComponents) HasEnrichments() bool {
+	if o != nil && !IsNil(o.Enrichments) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnrichments gets a reference to the given []ModelsComponentReference and assigns it to the Enrichments field.
+func (o *ModelsSecretWithComponents) SetEnrichments(v []ModelsComponentReference) {
+	o.Enrichments = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -279,6 +313,38 @@ func (o *ModelsSecretWithComponents) SetOutputs(v []ModelsComponentReference) {
 	o.Outputs = v
 }
 
+// GetTransforms returns the Transforms field value if set, zero value otherwise.
+func (o *ModelsSecretWithComponents) GetTransforms() []ModelsComponentReference {
+	if o == nil || IsNil(o.Transforms) {
+		var ret []ModelsComponentReference
+		return ret
+	}
+	return o.Transforms
+}
+
+// GetTransformsOk returns a tuple with the Transforms field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsSecretWithComponents) GetTransformsOk() ([]ModelsComponentReference, bool) {
+	if o == nil || IsNil(o.Transforms) {
+		return nil, false
+	}
+	return o.Transforms, true
+}
+
+// HasTransforms returns a boolean if a field has been set.
+func (o *ModelsSecretWithComponents) HasTransforms() bool {
+	if o != nil && !IsNil(o.Transforms) {
+		return true
+	}
+
+	return false
+}
+
+// SetTransforms gets a reference to the given []ModelsComponentReference and assigns it to the Transforms field.
+func (o *ModelsSecretWithComponents) SetTransforms(v []ModelsComponentReference) {
+	o.Transforms = v
+}
+
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *ModelsSecretWithComponents) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
@@ -359,6 +425,9 @@ func (o ModelsSecretWithComponents) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	if !IsNil(o.Enrichments) {
+		toSerialize["enrichments"] = o.Enrichments
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
@@ -373,6 +442,9 @@ func (o ModelsSecretWithComponents) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Outputs) {
 		toSerialize["outputs"] = o.Outputs
+	}
+	if !IsNil(o.Transforms) {
+		toSerialize["transforms"] = o.Transforms
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt

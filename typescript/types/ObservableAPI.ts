@@ -277,6 +277,8 @@ import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
 import { ModelsTransformsRepositoryList } from '../models/ModelsTransformsRepositoryList';
 import { ModelsTransformsRepositoryTransform } from '../models/ModelsTransformsRepositoryTransform';
 import { ModelsUserAuthProvider } from '../models/ModelsUserAuthProvider';
+import { ModelsUserOrganization } from '../models/ModelsUserOrganization';
+import { ModelsUserOrganizationList } from '../models/ModelsUserOrganizationList';
 import { ModelsUserRoleWithPermissions } from '../models/ModelsUserRoleWithPermissions';
 import { MonadGraphqlInputVariable } from '../models/MonadGraphqlInputVariable';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
@@ -399,6 +401,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3AlertList } from '../models/RoutesV3AlertList';
 import { RoutesV3CreateAlertRuleRequest } from '../models/RoutesV3CreateAlertRuleRequest';
+import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3CreateChildOrganizationRequest';
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
 import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateConnectionRequestSaml';
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
@@ -4135,11 +4138,13 @@ export class ObservableOrganizationsApi {
      * List organizations for user
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
+     * @param [noChildren] If true, only return organizations that are directly associated with the user, not child organizations (default: false)
+     * @param [parentOrganizationId] If provided, only return organizations that are children of the specified parent organization
      */
-    public v1OrganizationsGetWithHttpInfo(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOrganizationList>> {
+    public v1OrganizationsGetWithHttpInfo(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOrganizationList>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v1OrganizationsGet(limit, offset, _config);
+        const requestContextPromise = this.requestFactory.v1OrganizationsGet(limit, offset, noChildren, parentOrganizationId, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -4161,9 +4166,11 @@ export class ObservableOrganizationsApi {
      * List organizations for user
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
+     * @param [noChildren] If true, only return organizations that are directly associated with the user, not child organizations (default: false)
+     * @param [parentOrganizationId] If provided, only return organizations that are children of the specified parent organization
      */
-    public v1OrganizationsGet(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsOrganizationList> {
-        return this.v1OrganizationsGetWithHttpInfo(limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsOrganizationList>) => apiResponse.data));
+    public v1OrganizationsGet(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, _options?: ConfigurationOptions): Observable<ModelsOrganizationList> {
+        return this.v1OrganizationsGetWithHttpInfo(limit, offset, noChildren, parentOrganizationId, _options).pipe(map((apiResponse: HttpInfo<ModelsOrganizationList>) => apiResponse.data));
     }
 
     /**
@@ -4598,6 +4605,80 @@ export class ObservableOrganizationsApi {
      */
     public v2OrganizationIdStorageTypeCostPut(organizationId: string, routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest, _options?: ConfigurationOptions): Observable<ModelsStorageTypeCostConfig> {
         return this.v2OrganizationIdStorageTypeCostPutWithHttpInfo(organizationId, routesV2SetStorageTypeCostRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsStorageTypeCostConfig>) => apiResponse.data));
+    }
+
+    /**
+     * List child organizations for the given parent organization
+     * List child organizations
+     * @param organizationId Parent Organization ID
+     * @param [limit] Limit the number of organizations returned (default: 10)
+     * @param [offset] Offset the organizations returned (default: 0)
+     */
+    public v3OrganizationIdOrganizationsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsUserOrganizationList>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdOrganizationsGet(organizationId, limit, offset, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdOrganizationsGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List child organizations for the given parent organization
+     * List child organizations
+     * @param organizationId Parent Organization ID
+     * @param [limit] Limit the number of organizations returned (default: 10)
+     * @param [offset] Offset the organizations returned (default: 0)
+     */
+    public v3OrganizationIdOrganizationsGet(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsUserOrganizationList> {
+        return this.v3OrganizationIdOrganizationsGetWithHttpInfo(organizationId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsUserOrganizationList>) => apiResponse.data));
+    }
+
+    /**
+     * Create a new child organization under the given parent organization
+     * Create child organization
+     * @param organizationId Parent Organization ID
+     * @param routesV3CreateChildOrganizationRequest Request body
+     */
+    public v3OrganizationIdOrganizationsPostWithHttpInfo(organizationId: string, routesV3CreateChildOrganizationRequest: RoutesV3CreateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdOrganizationsPost(organizationId, routesV3CreateChildOrganizationRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdOrganizationsPostWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Create a new child organization under the given parent organization
+     * Create child organization
+     * @param organizationId Parent Organization ID
+     * @param routesV3CreateChildOrganizationRequest Request body
+     */
+    public v3OrganizationIdOrganizationsPost(organizationId: string, routesV3CreateChildOrganizationRequest: RoutesV3CreateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<GithubComMonadIncCorePkgTypesModelsOrganization> {
+        return this.v3OrganizationIdOrganizationsPostWithHttpInfo(organizationId, routesV3CreateChildOrganizationRequest, _options).pipe(map((apiResponse: HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>) => apiResponse.data));
     }
 
 }

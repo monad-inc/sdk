@@ -16,10 +16,12 @@ Method | HTTP request | Description
 [**v2_organization_id_metrics_storage_types_summary_get**](OrganizationsApi.md#v2_organization_id_metrics_storage_types_summary_get) | **GET** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary
 [**v2_organization_id_storage_type_cost_get**](OrganizationsApi.md#v2_organization_id_storage_type_cost_get) | **GET** /v2/{organization_id}/storage-type-cost | Get storage type cost
 [**v2_organization_id_storage_type_cost_put**](OrganizationsApi.md#v2_organization_id_storage_type_cost_put) | **PUT** /v2/{organization_id}/storage-type-cost | Set storage type cost
+[**v3_organization_id_organizations_get**](OrganizationsApi.md#v3_organization_id_organizations_get) | **GET** /v3/{organization_id}/organizations | List child organizations
+[**v3_organization_id_organizations_post**](OrganizationsApi.md#v3_organization_id_organizations_post) | **POST** /v3/{organization_id}/organizations | Create child organization
 
 
 # **v1_organizations_get**
-> ModelsOrganizationList v1_organizations_get(limit=limit, offset=offset)
+> ModelsOrganizationList v1_organizations_get(limit=limit, offset=offset, no_children=no_children, parent_organization_id=parent_organization_id)
 
 List organizations for user
 
@@ -65,10 +67,12 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationsApi(api_client)
     limit = 56 # int | Limit the number of organizations returned (default: 10) (optional)
     offset = 56 # int | Offset the organizations returned (default: 0) (optional)
+    no_children = True # bool | If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
+    parent_organization_id = 'parent_organization_id_example' # str | If provided, only return organizations that are children of the specified parent organization (optional)
 
     try:
         # List organizations for user
-        api_response = api_instance.v1_organizations_get(limit=limit, offset=offset)
+        api_response = api_instance.v1_organizations_get(limit=limit, offset=offset, no_children=no_children, parent_organization_id=parent_organization_id)
         print("The response of OrganizationsApi->v1_organizations_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -84,6 +88,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Limit the number of organizations returned (default: 10) | [optional] 
  **offset** | **int**| Offset the organizations returned (default: 0) | [optional] 
+ **no_children** | **bool**| If true, only return organizations that are directly associated with the user, not child organizations (default: false) | [optional] 
+ **parent_organization_id** | **str**| If provided, only return organizations that are children of the specified parent organization | [optional] 
 
 ### Return type
 
@@ -1133,6 +1139,188 @@ Name | Type | Description  | Notes
 **200** | Updated storage type cost |  -  |
 **400** | Bad request |  -  |
 **404** | Organization not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v3_organization_id_organizations_get**
+> ModelsUserOrganizationList v3_organization_id_organizations_get(organization_id, limit=limit, offset=offset)
+
+List child organizations
+
+List child organizations for the given parent organization
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.models_user_organization_list import ModelsUserOrganizationList
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.OrganizationsApi(api_client)
+    organization_id = 'organization_id_example' # str | Parent Organization ID
+    limit = 56 # int | Limit the number of organizations returned (default: 10) (optional)
+    offset = 56 # int | Offset the organizations returned (default: 0) (optional)
+
+    try:
+        # List child organizations
+        api_response = api_instance.v3_organization_id_organizations_get(organization_id, limit=limit, offset=offset)
+        print("The response of OrganizationsApi->v3_organization_id_organizations_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->v3_organization_id_organizations_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Parent Organization ID | 
+ **limit** | **int**| Limit the number of organizations returned (default: 10) | [optional] 
+ **offset** | **int**| Offset the organizations returned (default: 0) | [optional] 
+
+### Return type
+
+[**ModelsUserOrganizationList**](ModelsUserOrganizationList.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of child organizations |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v3_organization_id_organizations_post**
+> GithubComMonadIncCorePkgTypesModelsOrganization v3_organization_id_organizations_post(organization_id, routes_v3_create_child_organization_request)
+
+Create child organization
+
+Create a new child organization under the given parent organization
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
+from monad.models.routes_v3_create_child_organization_request import RoutesV3CreateChildOrganizationRequest
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.OrganizationsApi(api_client)
+    organization_id = 'organization_id_example' # str | Parent Organization ID
+    routes_v3_create_child_organization_request = monad.RoutesV3CreateChildOrganizationRequest() # RoutesV3CreateChildOrganizationRequest | Request body
+
+    try:
+        # Create child organization
+        api_response = api_instance.v3_organization_id_organizations_post(organization_id, routes_v3_create_child_organization_request)
+        print("The response of OrganizationsApi->v3_organization_id_organizations_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->v3_organization_id_organizations_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Parent Organization ID | 
+ **routes_v3_create_child_organization_request** | [**RoutesV3CreateChildOrganizationRequest**](RoutesV3CreateChildOrganizationRequest.md)| Request body | 
+
+### Return type
+
+[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Created child organization |  -  |
+**400** | Invalid request body |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -16,11 +16,13 @@ All URIs are relative to *https://monad.com/api*
 | [**v2OrganizationIdMetricsStorageTypesSummaryGet**](OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesSummaryGet) | **GET** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary |
 | [**v2OrganizationIdStorageTypeCostGet**](OrganizationsApi.md#v2OrganizationIdStorageTypeCostGet) | **GET** /v2/{organization_id}/storage-type-cost | Get storage type cost |
 | [**v2OrganizationIdStorageTypeCostPut**](OrganizationsApi.md#v2OrganizationIdStorageTypeCostPut) | **PUT** /v2/{organization_id}/storage-type-cost | Set storage type cost |
+| [**v3OrganizationIdOrganizationsGet**](OrganizationsApi.md#v3OrganizationIdOrganizationsGet) | **GET** /v3/{organization_id}/organizations | List child organizations |
+| [**v3OrganizationIdOrganizationsPost**](OrganizationsApi.md#v3OrganizationIdOrganizationsPost) | **POST** /v3/{organization_id}/organizations | Create child organization |
 
 
 <a id="v1OrganizationsGet"></a>
 # **v1OrganizationsGet**
-> ModelsOrganizationList v1OrganizationsGet(limit, offset)
+> ModelsOrganizationList v1OrganizationsGet(limit, offset, noChildren, parentOrganizationId)
 
 List organizations for user
 
@@ -56,8 +58,10 @@ public class Example {
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     Integer limit = 56; // Integer | Limit the number of organizations returned (default: 10)
     Integer offset = 56; // Integer | Offset the organizations returned (default: 0)
+    Boolean noChildren = true; // Boolean | If true, only return organizations that are directly associated with the user, not child organizations (default: false)
+    String parentOrganizationId = "parentOrganizationId_example"; // String | If provided, only return organizations that are children of the specified parent organization
     try {
-      ModelsOrganizationList result = apiInstance.v1OrganizationsGet(limit, offset);
+      ModelsOrganizationList result = apiInstance.v1OrganizationsGet(limit, offset, noChildren, parentOrganizationId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#v1OrganizationsGet");
@@ -76,6 +80,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **limit** | **Integer**| Limit the number of organizations returned (default: 10) | [optional] |
 | **offset** | **Integer**| Offset the organizations returned (default: 0) | [optional] |
+| **noChildren** | **Boolean**| If true, only return organizations that are directly associated with the user, not child organizations (default: false) | [optional] |
+| **parentOrganizationId** | **String**| If provided, only return organizations that are children of the specified parent organization | [optional] |
 
 ### Return type
 
@@ -1001,5 +1007,164 @@ public class Example {
 | **200** | Updated storage type cost |  -  |
 | **400** | Bad request |  -  |
 | **404** | Organization not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="v3OrganizationIdOrganizationsGet"></a>
+# **v3OrganizationIdOrganizationsGet**
+> ModelsUserOrganizationList v3OrganizationIdOrganizationsGet(organizationId, limit, offset)
+
+List child organizations
+
+List child organizations for the given parent organization
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OrganizationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Parent Organization ID
+    Integer limit = 56; // Integer | Limit the number of organizations returned (default: 10)
+    Integer offset = 56; // Integer | Offset the organizations returned (default: 0)
+    try {
+      ModelsUserOrganizationList result = apiInstance.v3OrganizationIdOrganizationsGet(organizationId, limit, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OrganizationsApi#v3OrganizationIdOrganizationsGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Parent Organization ID | |
+| **limit** | **Integer**| Limit the number of organizations returned (default: 10) | [optional] |
+| **offset** | **Integer**| Offset the organizations returned (default: 0) | [optional] |
+
+### Return type
+
+[**ModelsUserOrganizationList**](ModelsUserOrganizationList.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | List of child organizations |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="v3OrganizationIdOrganizationsPost"></a>
+# **v3OrganizationIdOrganizationsPost**
+> GithubComMonadIncCorePkgTypesModelsOrganization v3OrganizationIdOrganizationsPost(organizationId, routesV3CreateChildOrganizationRequest)
+
+Create child organization
+
+Create a new child organization under the given parent organization
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OrganizationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Parent Organization ID
+    RoutesV3CreateChildOrganizationRequest routesV3CreateChildOrganizationRequest = new RoutesV3CreateChildOrganizationRequest(); // RoutesV3CreateChildOrganizationRequest | Request body
+    try {
+      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.v3OrganizationIdOrganizationsPost(organizationId, routesV3CreateChildOrganizationRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OrganizationsApi#v3OrganizationIdOrganizationsPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Parent Organization ID | |
+| **routesV3CreateChildOrganizationRequest** | [**RoutesV3CreateChildOrganizationRequest**](RoutesV3CreateChildOrganizationRequest.md)| Request body | |
+
+### Return type
+
+[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Created child organization |  -  |
+| **400** | Invalid request body |  -  |
 | **500** | Internal server error |  -  |
 

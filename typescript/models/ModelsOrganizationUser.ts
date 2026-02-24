@@ -19,7 +19,11 @@ export class ModelsOrganizationUser {
     'createdAt'?: string;
     'email'?: string;
     'id'?: string;
+    'inherited'?: boolean;
     'roleId'?: string;
+    'roleName'?: string;
+    'sourceOrganizationId'?: string;
+    'sourceOrganizationName'?: string;
     'updatedAt'?: string;
     'username'?: string;
 
@@ -59,8 +63,32 @@ export class ModelsOrganizationUser {
             "format": ""
         },
         {
+            "name": "inherited",
+            "baseName": "inherited",
+            "type": "boolean",
+            "format": ""
+        },
+        {
             "name": "roleId",
             "baseName": "role_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "roleName",
+            "baseName": "role_name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "sourceOrganizationId",
+            "baseName": "source_organization_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "sourceOrganizationName",
+            "baseName": "source_organization_name",
             "type": "string",
             "format": ""
         },

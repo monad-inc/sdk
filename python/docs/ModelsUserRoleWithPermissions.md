@@ -5,10 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**inherited** | **bool** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **permissions** | [**List[GithubComMonadIncCorePkgTypesModelsPermission]**](GithubComMonadIncCorePkgTypesModelsPermission.md) |  | [optional] 
 **role_id** | **str** |  | [optional] 
 **role_name** | **str** |  | [optional] 
+**source_organization_id** | **str** |  | [optional] 
 
 ## Example
 

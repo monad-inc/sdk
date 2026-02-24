@@ -14,6 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class ModelsComponentReference {
     'id'?: string;
+    'kind'?: string;
     'name'?: string;
     'type'?: string;
 
@@ -25,6 +26,12 @@ export class ModelsComponentReference {
         {
             "name": "id",
             "baseName": "id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "kind",
+            "baseName": "kind",
             "type": "string",
             "format": ""
         },

@@ -6,11 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **string** | When the secret was created | [optional] 
 **Description** | Pointer to **string** | The user set Description of the secret | [optional] 
+**Enrichments** | Pointer to [**[]ModelsComponentReference**](ModelsComponentReference.md) |  | [optional] 
 **Id** | Pointer to **string** | The ID of the secret | [optional] 
 **Inputs** | Pointer to [**[]ModelsComponentReference**](ModelsComponentReference.md) |  | [optional] 
 **Name** | Pointer to **string** | The user set Name of the secret | [optional] 
 **OrganizationId** | Pointer to **string** | The OrganizationID the secret belongs to | [optional] 
 **Outputs** | Pointer to [**[]ModelsComponentReference**](ModelsComponentReference.md) |  | [optional] 
+**Transforms** | Pointer to [**[]ModelsComponentReference**](ModelsComponentReference.md) |  | [optional] 
 **UpdatedAt** | Pointer to **string** | When the secret was updated | [optional] 
 **Value** | Pointer to **string** | The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload. | [optional] 
 
@@ -82,6 +84,31 @@ SetDescription sets Description field to given value.
 `func (o *ModelsSecretWithComponents) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetEnrichments
+
+`func (o *ModelsSecretWithComponents) GetEnrichments() []ModelsComponentReference`
+
+GetEnrichments returns the Enrichments field if non-nil, zero value otherwise.
+
+### GetEnrichmentsOk
+
+`func (o *ModelsSecretWithComponents) GetEnrichmentsOk() (*[]ModelsComponentReference, bool)`
+
+GetEnrichmentsOk returns a tuple with the Enrichments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnrichments
+
+`func (o *ModelsSecretWithComponents) SetEnrichments(v []ModelsComponentReference)`
+
+SetEnrichments sets Enrichments field to given value.
+
+### HasEnrichments
+
+`func (o *ModelsSecretWithComponents) HasEnrichments() bool`
+
+HasEnrichments returns a boolean if a field has been set.
 
 ### GetId
 
@@ -207,6 +234,31 @@ SetOutputs sets Outputs field to given value.
 `func (o *ModelsSecretWithComponents) HasOutputs() bool`
 
 HasOutputs returns a boolean if a field has been set.
+
+### GetTransforms
+
+`func (o *ModelsSecretWithComponents) GetTransforms() []ModelsComponentReference`
+
+GetTransforms returns the Transforms field if non-nil, zero value otherwise.
+
+### GetTransformsOk
+
+`func (o *ModelsSecretWithComponents) GetTransformsOk() (*[]ModelsComponentReference, bool)`
+
+GetTransformsOk returns a tuple with the Transforms field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTransforms
+
+`func (o *ModelsSecretWithComponents) SetTransforms(v []ModelsComponentReference)`
+
+SetTransforms sets Transforms field to given value.
+
+### HasTransforms
+
+`func (o *ModelsSecretWithComponents) HasTransforms() bool`
+
+HasTransforms returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

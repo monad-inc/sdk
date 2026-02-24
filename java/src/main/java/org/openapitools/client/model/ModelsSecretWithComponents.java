@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsSecretWithComponents
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-23T20:46:26.086967178Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-24T16:18:27.012020072Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsSecretWithComponents {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -62,6 +62,11 @@ public class ModelsSecretWithComponents {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
   private String description;
+
+  public static final String SERIALIZED_NAME_ENRICHMENTS = "enrichments";
+  @SerializedName(SERIALIZED_NAME_ENRICHMENTS)
+  @javax.annotation.Nullable
+  private List<ModelsComponentReference> enrichments = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -87,6 +92,11 @@ public class ModelsSecretWithComponents {
   @SerializedName(SERIALIZED_NAME_OUTPUTS)
   @javax.annotation.Nullable
   private List<ModelsComponentReference> outputs = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_TRANSFORMS = "transforms";
+  @SerializedName(SERIALIZED_NAME_TRANSFORMS)
+  @javax.annotation.Nullable
+  private List<ModelsComponentReference> transforms = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -136,6 +146,33 @@ public class ModelsSecretWithComponents {
 
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public ModelsSecretWithComponents enrichments(@javax.annotation.Nullable List<ModelsComponentReference> enrichments) {
+    this.enrichments = enrichments;
+    return this;
+  }
+
+  public ModelsSecretWithComponents addEnrichmentsItem(ModelsComponentReference enrichmentsItem) {
+    if (this.enrichments == null) {
+      this.enrichments = new ArrayList<>();
+    }
+    this.enrichments.add(enrichmentsItem);
+    return this;
+  }
+
+  /**
+   * Get enrichments
+   * @return enrichments
+   */
+  @javax.annotation.Nullable
+  public List<ModelsComponentReference> getEnrichments() {
+    return enrichments;
+  }
+
+  public void setEnrichments(@javax.annotation.Nullable List<ModelsComponentReference> enrichments) {
+    this.enrichments = enrichments;
   }
 
 
@@ -250,6 +287,33 @@ public class ModelsSecretWithComponents {
   }
 
 
+  public ModelsSecretWithComponents transforms(@javax.annotation.Nullable List<ModelsComponentReference> transforms) {
+    this.transforms = transforms;
+    return this;
+  }
+
+  public ModelsSecretWithComponents addTransformsItem(ModelsComponentReference transformsItem) {
+    if (this.transforms == null) {
+      this.transforms = new ArrayList<>();
+    }
+    this.transforms.add(transformsItem);
+    return this;
+  }
+
+  /**
+   * Get transforms
+   * @return transforms
+   */
+  @javax.annotation.Nullable
+  public List<ModelsComponentReference> getTransforms() {
+    return transforms;
+  }
+
+  public void setTransforms(@javax.annotation.Nullable List<ModelsComponentReference> transforms) {
+    this.transforms = transforms;
+  }
+
+
   public ModelsSecretWithComponents updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -300,18 +364,20 @@ public class ModelsSecretWithComponents {
     ModelsSecretWithComponents modelsSecretWithComponents = (ModelsSecretWithComponents) o;
     return Objects.equals(this.createdAt, modelsSecretWithComponents.createdAt) &&
         Objects.equals(this.description, modelsSecretWithComponents.description) &&
+        Objects.equals(this.enrichments, modelsSecretWithComponents.enrichments) &&
         Objects.equals(this.id, modelsSecretWithComponents.id) &&
         Objects.equals(this.inputs, modelsSecretWithComponents.inputs) &&
         Objects.equals(this.name, modelsSecretWithComponents.name) &&
         Objects.equals(this.organizationId, modelsSecretWithComponents.organizationId) &&
         Objects.equals(this.outputs, modelsSecretWithComponents.outputs) &&
+        Objects.equals(this.transforms, modelsSecretWithComponents.transforms) &&
         Objects.equals(this.updatedAt, modelsSecretWithComponents.updatedAt) &&
         Objects.equals(this.value, modelsSecretWithComponents.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, id, inputs, name, organizationId, outputs, updatedAt, value);
+    return Objects.hash(createdAt, description, enrichments, id, inputs, name, organizationId, outputs, transforms, updatedAt, value);
   }
 
   @Override
@@ -320,11 +386,13 @@ public class ModelsSecretWithComponents {
     sb.append("class ModelsSecretWithComponents {\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    enrichments: ").append(toIndentedString(enrichments)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    inputs: ").append(toIndentedString(inputs)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
+    sb.append("    transforms: ").append(toIndentedString(transforms)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
@@ -348,7 +416,7 @@ public class ModelsSecretWithComponents {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "id", "inputs", "name", "organization_id", "outputs", "updated_at", "value"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "enrichments", "id", "inputs", "name", "organization_id", "outputs", "transforms", "updated_at", "value"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -380,6 +448,20 @@ public class ModelsSecretWithComponents {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if (jsonObj.get("enrichments") != null && !jsonObj.get("enrichments").isJsonNull()) {
+        JsonArray jsonArrayenrichments = jsonObj.getAsJsonArray("enrichments");
+        if (jsonArrayenrichments != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("enrichments").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `enrichments` to be an array in the JSON string but got `%s`", jsonObj.get("enrichments").toString()));
+          }
+
+          // validate the optional field `enrichments` (array)
+          for (int i = 0; i < jsonArrayenrichments.size(); i++) {
+            ModelsComponentReference.validateJsonElement(jsonArrayenrichments.get(i));
+          };
+        }
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
@@ -415,6 +497,20 @@ public class ModelsSecretWithComponents {
           // validate the optional field `outputs` (array)
           for (int i = 0; i < jsonArrayoutputs.size(); i++) {
             ModelsComponentReference.validateJsonElement(jsonArrayoutputs.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("transforms") != null && !jsonObj.get("transforms").isJsonNull()) {
+        JsonArray jsonArraytransforms = jsonObj.getAsJsonArray("transforms");
+        if (jsonArraytransforms != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("transforms").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `transforms` to be an array in the JSON string but got `%s`", jsonObj.get("transforms").toString()));
+          }
+
+          // validate the optional field `transforms` (array)
+          for (int i = 0; i < jsonArraytransforms.size(); i++) {
+            ModelsComponentReference.validateJsonElement(jsonArraytransforms.get(i));
           };
         }
       }

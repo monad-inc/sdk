@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
+**Kind** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
@@ -51,6 +52,31 @@ SetId sets Id field to given value.
 `func (o *ModelsComponentReference) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetKind
+
+`func (o *ModelsComponentReference) GetKind() string`
+
+GetKind returns the Kind field if non-nil, zero value otherwise.
+
+### GetKindOk
+
+`func (o *ModelsComponentReference) GetKindOk() (*string, bool)`
+
+GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKind
+
+`func (o *ModelsComponentReference) SetKind(v string)`
+
+SetKind sets Kind field to given value.
+
+### HasKind
+
+`func (o *ModelsComponentReference) HasKind() bool`
+
+HasKind returns a boolean if a field has been set.
 
 ### GetName
 

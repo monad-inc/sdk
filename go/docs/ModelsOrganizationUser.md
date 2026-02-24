@@ -9,7 +9,11 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**Inherited** | Pointer to **bool** |  | [optional] 
 **RoleId** | Pointer to **string** |  | [optional] 
+**RoleName** | Pointer to **string** |  | [optional] 
+**SourceOrganizationId** | Pointer to **string** |  | [optional] 
+**SourceOrganizationName** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 **Username** | Pointer to **string** |  | [optional] 
 
@@ -157,6 +161,31 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### GetInherited
+
+`func (o *ModelsOrganizationUser) GetInherited() bool`
+
+GetInherited returns the Inherited field if non-nil, zero value otherwise.
+
+### GetInheritedOk
+
+`func (o *ModelsOrganizationUser) GetInheritedOk() (*bool, bool)`
+
+GetInheritedOk returns a tuple with the Inherited field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInherited
+
+`func (o *ModelsOrganizationUser) SetInherited(v bool)`
+
+SetInherited sets Inherited field to given value.
+
+### HasInherited
+
+`func (o *ModelsOrganizationUser) HasInherited() bool`
+
+HasInherited returns a boolean if a field has been set.
+
 ### GetRoleId
 
 `func (o *ModelsOrganizationUser) GetRoleId() string`
@@ -181,6 +210,81 @@ SetRoleId sets RoleId field to given value.
 `func (o *ModelsOrganizationUser) HasRoleId() bool`
 
 HasRoleId returns a boolean if a field has been set.
+
+### GetRoleName
+
+`func (o *ModelsOrganizationUser) GetRoleName() string`
+
+GetRoleName returns the RoleName field if non-nil, zero value otherwise.
+
+### GetRoleNameOk
+
+`func (o *ModelsOrganizationUser) GetRoleNameOk() (*string, bool)`
+
+GetRoleNameOk returns a tuple with the RoleName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoleName
+
+`func (o *ModelsOrganizationUser) SetRoleName(v string)`
+
+SetRoleName sets RoleName field to given value.
+
+### HasRoleName
+
+`func (o *ModelsOrganizationUser) HasRoleName() bool`
+
+HasRoleName returns a boolean if a field has been set.
+
+### GetSourceOrganizationId
+
+`func (o *ModelsOrganizationUser) GetSourceOrganizationId() string`
+
+GetSourceOrganizationId returns the SourceOrganizationId field if non-nil, zero value otherwise.
+
+### GetSourceOrganizationIdOk
+
+`func (o *ModelsOrganizationUser) GetSourceOrganizationIdOk() (*string, bool)`
+
+GetSourceOrganizationIdOk returns a tuple with the SourceOrganizationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceOrganizationId
+
+`func (o *ModelsOrganizationUser) SetSourceOrganizationId(v string)`
+
+SetSourceOrganizationId sets SourceOrganizationId field to given value.
+
+### HasSourceOrganizationId
+
+`func (o *ModelsOrganizationUser) HasSourceOrganizationId() bool`
+
+HasSourceOrganizationId returns a boolean if a field has been set.
+
+### GetSourceOrganizationName
+
+`func (o *ModelsOrganizationUser) GetSourceOrganizationName() string`
+
+GetSourceOrganizationName returns the SourceOrganizationName field if non-nil, zero value otherwise.
+
+### GetSourceOrganizationNameOk
+
+`func (o *ModelsOrganizationUser) GetSourceOrganizationNameOk() (*string, bool)`
+
+GetSourceOrganizationNameOk returns a tuple with the SourceOrganizationName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceOrganizationName
+
+`func (o *ModelsOrganizationUser) SetSourceOrganizationName(v string)`
+
+SetSourceOrganizationName sets SourceOrganizationName field to given value.
+
+### HasSourceOrganizationName
+
+`func (o *ModelsOrganizationUser) HasSourceOrganizationName() bool`
+
+HasSourceOrganizationName returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 
