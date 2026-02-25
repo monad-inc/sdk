@@ -51,7 +51,10 @@ class TestRoutesV3SecurityDataAnalysis(unittest.TestCase):
                             arguments = {
                                 'key' : null
                                 }, 
-                            description = '', ), )
+                            description = '', 
+                            secrets = {
+                                'key' : null
+                                }, ), )
                     ]
             )
         else:

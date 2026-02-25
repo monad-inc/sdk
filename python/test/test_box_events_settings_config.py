@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,9 +36,11 @@ class TestBoxEventsSettingsConfig(unittest.TestCase):
         model = BoxEventsSettingsConfig()
         if include_optional:
             return BoxEventsSettingsConfig(
+                backfill_start_time = '',
                 event_type = [
                     ''
-                    ]
+                    ],
+                use_synthetic_data = True
             )
         else:
             return BoxEventsSettingsConfig(

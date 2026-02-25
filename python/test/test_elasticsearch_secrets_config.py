@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,8 +36,22 @@ class TestElasticsearchSecretsConfig(unittest.TestCase):
         model = ElasticsearchSecretsConfig()
         if include_optional:
             return ElasticsearchSecretsConfig(
-                api_key = '',
-                password = ''
+                api_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
+                password = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', )
             )
         else:
             return ElasticsearchSecretsConfig(

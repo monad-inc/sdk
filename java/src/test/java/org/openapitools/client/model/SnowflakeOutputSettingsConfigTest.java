@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -60,6 +60,14 @@ public class SnowflakeOutputSettingsConfigTest {
     @Test
     public void batchConfigTest() {
         // TODO: test batchConfig
+    }
+
+    /**
+     * Test the property 'caseInsensitivity'
+     */
+    @Test
+    public void caseInsensitivityTest() {
+        // TODO: test caseInsensitivity
     }
 
     /**

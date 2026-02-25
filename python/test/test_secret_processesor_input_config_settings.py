@@ -41,43 +41,75 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 cron = '',
                 sort = '',
                 target_industries = '',
+                use_synthetic_data = True,
+                host = '',
+                backfill_start_time = '',
+                project = '',
+                service = '',
                 auth_type = '',
                 email = '',
-                host = '',
+                interval_seconds = 56,
                 actions = [
                     ''
                     ],
                 actor = '',
                 country = '',
-                created_after = '',
                 enterprise = '',
                 include = '',
                 organization = '',
                 repository = '',
                 user = '',
+                region = '',
+                role_arn = '',
+                severity = '',
+                accounts = [
+                    monad.models.aws_iam_aliases/account.aws_iam_aliases.Account(
+                        account_id = '', 
+                        role_name = '', )
+                    ],
+                child_type = '',
+                parent_id = '',
                 bucket = '',
                 compression = '',
                 format = '',
                 partition_format = '',
                 prefix = '',
                 record_location = '',
-                region = '',
-                role_arn = '',
+                queue_url = '',
+                with_metadata = True,
                 correlation_id = '',
                 resource_group_name = '',
                 resource_provider = '',
                 resource_uri = '',
                 subscription_id = '',
                 tenant_id = '',
+                account_url = '',
+                container = '',
+                consumer_group = '',
+                event_hub_name = '',
+                event_hub_namespace = '',
+                lookback_duration = '',
+                storage_account_url = '',
+                virtual_network_name = '',
                 dataset = '',
-                project = '',
                 query = '',
                 table = '',
                 timestamp_column = '',
-                event_type = [
-                    ''
-                    ],
+                base_url = '',
+                event_type = '',
                 filter_term = '',
+                hostname = '',
+                organization_id = '',
+                org_slug = '',
+                enable_pagination = True,
+                graphql_query = '',
+                has_next_page_path = '',
+                pagination_cursor_path = '',
+                variables = [
+                    monad.models.monad_graphql_input/variable.monad_graphql_input.Variable(
+                        name = '', 
+                        value = '', )
+                    ],
                 asset_types = [
                     ''
                     ],
@@ -88,12 +120,14 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 result = [
                     ''
                     ],
-                severity = '',
                 status = [
                     ''
                     ],
                 enable_proto_payload_parsing = True,
-                filter = '',
+                filter = monad.models.cognito_users/filter.cognito_users.Filter(
+                    attribute = '', 
+                    operator = '', 
+                    value = '', ),
                 cloud_platform = [
                     ''
                     ],
@@ -102,25 +136,71 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ],
                 full_snapshot = True,
                 interval = 56,
+                account_id = '',
+                zone_ids = [
+                    ''
+                    ],
+                include_bot_fields = True,
+                zone_id = '',
+                fields = [
+                    ''
+                    ],
+                exclude_cdn_cgi = True,
+                exclude_issue_type = [
+                    ''
+                    ],
+                exclude_severity = [
+                    ''
+                    ],
+                issue_type = '',
+                filter_my_scans = True,
+                parent_entity_id = '',
+                parent_entity_type = '',
+                org_id = '',
+                user_pool_id = '',
+                api_key_id = '',
+                domain_name = '',
                 aws_queue_url = '',
                 aws_region_name = '',
                 aws_s3_url = '',
                 visibility_timeout = 56,
+                environment = '',
+                user_id = '',
                 category = '',
-                rate = 56,
-                record_type = '',
-                custom_template = '',
                 field_option = '',
-                organization_id = '',
+                namespace = '',
                 workspace_id = '',
                 app_name = '',
                 cloud = '',
                 member_cid = '',
-                story_id = '',
-                team_id = '',
-                tenant_url = '',
-                org_slug = '',
+                fleet_url = '',
                 repo = '',
+                confidential = True,
+                gitlab_url = '',
+                project_id = '',
+                state = '',
+                with_label_details = True,
+                bucket_name = '',
+                analyzer_arn = '',
+                filters = [
+                    monad.models.security_groups/filter.security_groups.Filter(
+                        name = '', 
+                        values = [
+                            ''
+                            ], )
+                    ],
+                alert_type = '',
+                embed = '',
+                primary_entity_type = '',
+                primary_entity_value = '',
+                severities = [
+                    'INFORMATIONAL'
+                    ],
+                severity_filter = [
+                    monad.models.types/string_filter.types.StringFilter(
+                        comparison = 'EQUALS', 
+                        value = '', )
+                    ],
                 control_ids = [
                     ''
                     ],
@@ -148,32 +228,70 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ],
                 search_query = '',
                 security_scan = '',
-                severities = [
-                    'INFORMATIONAL'
-                    ],
                 stack_layers = [
                     'APPLICATION_AND_DATA'
                     ],
                 tenant_data_center = '',
+                kms_type = '',
+                audit_log_types = [
+                    ''
+                    ],
                 log_type = '',
+                endpoint = '',
+                skip_ssl_verification = True,
+                use_path_style = True,
+                subdomain = '',
+                category_type = '',
+                domain = '',
+                username = '',
+                github_app_installation_id = '',
+                github_client_id = '',
+                domain_url = '',
+                topic = '',
+                evaluation_context_identifier = '',
+                include_inactive = True,
+                include_planned_deletion = True,
+                host_name = '',
+                team_id = '',
                 account = '',
                 database = '',
                 role = '',
                 var_schema = '',
                 warehouse = '',
+                rate = 56,
+                record_type = '',
+                custom_template = '',
                 user_role_option = '',
                 user_type_option = '',
-                full_sync = True,
+                operation_names = [
+                    ''
+                    ],
+                tenant_domain = '',
+                user_ids = [
+                    ''
+                    ],
+                story_id = '',
+                tenant_url = '',
+                actor_sid = '',
+                replication_start_time = '',
+                resource_sid = '',
+                instance_name = '',
+                streams = [
+                    ''
+                    ],
+                with_payload = True,
+                customer_id = '',
                 asset_status = [
                     ''
                     ],
-                asset_type = '',
                 detection_method = [
                     ''
                     ],
                 vendor_severity = [
                     ''
-                    ]
+                    ],
+                email_address = '',
+                sub_domain = ''
             )
         else:
             return SecretProcessesorInputConfigSettings(

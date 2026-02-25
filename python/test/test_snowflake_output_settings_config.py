@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -42,6 +42,7 @@ class TestSnowflakeOutputSettingsConfig(unittest.TestCase):
                     batch_data_size = 56, 
                     batch_record_count = 56, 
                     publish_rate = 56, ),
+                case_insensitivity = True,
                 database = '',
                 role = '',
                 var_schema = '',

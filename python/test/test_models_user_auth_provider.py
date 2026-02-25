@@ -36,6 +36,7 @@ class TestModelsUserAuthProvider(unittest.TestCase):
         model = ModelsUserAuthProvider()
         if include_optional:
             return ModelsUserAuthProvider(
+                connection_id = '',
                 created_at = '',
                 id = '',
                 provider = '',

@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import org.openapitools.client.model.ModelsSecret;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

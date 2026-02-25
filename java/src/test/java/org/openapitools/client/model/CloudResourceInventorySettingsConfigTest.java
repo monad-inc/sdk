@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -40,6 +40,14 @@ public class CloudResourceInventorySettingsConfigTest {
     }
 
     /**
+     * Test the property 'backfillStartTime'
+     */
+    @Test
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
+    }
+
+    /**
      * Test the property 'cloudPlatform'
      */
     @Test
@@ -61,6 +69,30 @@ public class CloudResourceInventorySettingsConfigTest {
     @Test
     public void entityTypeTest() {
         // TODO: test entityType
+    }
+
+    /**
+     * Test the property 'fullSnapshot'
+     */
+    @Test
+    public void fullSnapshotTest() {
+        // TODO: test fullSnapshot
+    }
+
+    /**
+     * Test the property 'interval'
+     */
+    @Test
+    public void intervalTest() {
+        // TODO: test interval
+    }
+
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
     }
 
 }

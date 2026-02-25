@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -37,7 +37,8 @@ class TestUsersInfoSettingsConfig(unittest.TestCase):
         if include_optional:
             return UsersInfoSettingsConfig(
                 cloud_type = '',
-                cron = ''
+                cron = '',
+                use_synthetic_data = True
             )
         else:
             return UsersInfoSettingsConfig(

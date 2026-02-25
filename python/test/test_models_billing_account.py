@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -38,10 +38,52 @@ class TestModelsBillingAccount(unittest.TestCase):
             return ModelsBillingAccount(
                 billing_email = '',
                 created_at = '',
+                current_billing_cycle_end = '',
+                current_billing_cycle_start = '',
+                deleted_at = '',
                 description = '',
+                has_payment_method = True,
                 id = '',
                 name = '',
+                next_product = monad.models.models/billing_product.models.BillingProduct(
+                    contact_email = '', 
+                    created_at = '', 
+                    description = '', 
+                    features = [
+                        ''
+                        ], 
+                    id = '', 
+                    is_default = True, 
+                    name = '', 
+                    product_type = '', 
+                    recurring_cost_cents = 56, 
+                    recurring_frequency = '', 
+                    slug = '', 
+                    updated_at = '', 
+                    usage_unit = '', 
+                    usage_unit_cost_cents = 56, ),
+                next_product_id = '',
+                product = monad.models.models/billing_product.models.BillingProduct(
+                    contact_email = '', 
+                    created_at = '', 
+                    description = '', 
+                    features = [
+                        ''
+                        ], 
+                    id = '', 
+                    is_default = True, 
+                    name = '', 
+                    product_type = '', 
+                    recurring_cost_cents = 56, 
+                    recurring_frequency = '', 
+                    slug = '', 
+                    updated_at = '', 
+                    usage_unit = '', 
+                    usage_unit_cost_cents = 56, ),
+                product_change_after = '',
+                product_id = '',
                 status = '',
+                suspend_on = '',
                 updated_at = ''
             )
         else:

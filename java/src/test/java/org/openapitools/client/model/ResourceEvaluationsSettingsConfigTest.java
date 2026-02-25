@@ -69,4 +69,12 @@ public class ResourceEvaluationsSettingsConfigTest {
         // TODO: test roleArn
     }
 
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
+    }
+
 }

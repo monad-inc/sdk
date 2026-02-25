@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -20,21 +20,25 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.AddAdd;
-import org.openapitools.client.model.CreateKeyValueIfKeyValueCreateKeyValueIfKeyValue;
-import org.openapitools.client.model.DropKeyDropKey;
-import org.openapitools.client.model.DropKeyWhereValueEqDropKeyWhereValueEq;
-import org.openapitools.client.model.DropRecordWhereValueEqDropRecordWhereValueEq;
-import org.openapitools.client.model.DuplicateKeyValueToKeyDuplicateKeyValueToKey;
-import org.openapitools.client.model.FlattenFlatten;
-import org.openapitools.client.model.JqJQ;
-import org.openapitools.client.model.MathMultiplyWithValueMathMultiplyWithValue;
-import org.openapitools.client.model.MutateTypeMutateType;
-import org.openapitools.client.model.MutateValueWhereKeyEqAndValueEqMutateValueWhereKeyEqAndValueEq;
-import org.openapitools.client.model.MutateValueWhereKeyEqMutateValueWhereKeyEq;
-import org.openapitools.client.model.RenameKeyRenameKey;
-import org.openapitools.client.model.RenameKeyWhereValueEqRenameKeyWhereValueEq;
-import org.openapitools.client.model.UtcTimestampTimestamp;
+import java.util.Map;
+import org.openapitools.client.model.AddArgumentsConfig;
+import org.openapitools.client.model.AddIdArgumentsConfig;
+import org.openapitools.client.model.ConvertTimestampArgumentsConfig;
+import org.openapitools.client.model.CreateKeyValueIfKeyValueArgumentsConfig;
+import org.openapitools.client.model.DropKeyArgumentsConfig;
+import org.openapitools.client.model.DropKeyWhereValueEqArgumentsConfig;
+import org.openapitools.client.model.DropRecordWhereValueEqArgumentsConfig;
+import org.openapitools.client.model.DuplicateKeyValueToKeyArgumentsConfig;
+import org.openapitools.client.model.FlattenArgumentsConfig;
+import org.openapitools.client.model.FlattenallArgumentsConfig;
+import org.openapitools.client.model.JqArgumentsConfig;
+import org.openapitools.client.model.MathMultiplyWithValueArgumentsConfig;
+import org.openapitools.client.model.MutateTypeArgumentsConfig;
+import org.openapitools.client.model.MutateValueWhereKeyEqAndValueEqArgumentsConfig;
+import org.openapitools.client.model.MutateValueWhereKeyEqArgumentsConfig;
+import org.openapitools.client.model.RenameKeyArgumentsConfig;
+import org.openapitools.client.model.RenameKeyWhereValueEqArgumentsConfig;
+import org.openapitools.client.model.UtcTimestampArgumentsConfig;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -54,35 +58,11 @@ public class RoutesTransformOperationArgumentsTest {
     }
 
     /**
-     * Test the property 'delimiter'
-     */
-    @Test
-    public void delimiterTest() {
-        // TODO: test delimiter
-    }
-
-    /**
      * Test the property 'key'
      */
     @Test
     public void keyTest() {
         // TODO: test key
-    }
-
-    /**
-     * Test the property 'type'
-     */
-    @Test
-    public void typeTest() {
-        // TODO: test type
-    }
-
-    /**
-     * Test the property 'newKey'
-     */
-    @Test
-    public void newKeyTest() {
-        // TODO: test newKey
     }
 
     /**
@@ -94,11 +74,75 @@ public class RoutesTransformOperationArgumentsTest {
     }
 
     /**
-     * Test the property 'format'
+     * Test the property 'type'
      */
     @Test
-    public void formatTest() {
-        // TODO: test format
+    public void typeTest() {
+        // TODO: test type
+    }
+
+    /**
+     * Test the property 'sourceFormat'
+     */
+    @Test
+    public void sourceFormatTest() {
+        // TODO: test sourceFormat
+    }
+
+    /**
+     * Test the property 'sourceFormatCustom'
+     */
+    @Test
+    public void sourceFormatCustomTest() {
+        // TODO: test sourceFormatCustom
+    }
+
+    /**
+     * Test the property 'sourceKey'
+     */
+    @Test
+    public void sourceKeyTest() {
+        // TODO: test sourceKey
+    }
+
+    /**
+     * Test the property 'sourceTimezone'
+     */
+    @Test
+    public void sourceTimezoneTest() {
+        // TODO: test sourceTimezone
+    }
+
+    /**
+     * Test the property 'targetFormat'
+     */
+    @Test
+    public void targetFormatTest() {
+        // TODO: test targetFormat
+    }
+
+    /**
+     * Test the property 'targetFormatCustom'
+     */
+    @Test
+    public void targetFormatCustomTest() {
+        // TODO: test targetFormatCustom
+    }
+
+    /**
+     * Test the property 'targetKey'
+     */
+    @Test
+    public void targetKeyTest() {
+        // TODO: test targetKey
+    }
+
+    /**
+     * Test the property 'targetTimezone'
+     */
+    @Test
+    public void targetTimezoneTest() {
+        // TODO: test targetTimezone
     }
 
     /**
@@ -118,14 +162,6 @@ public class RoutesTransformOperationArgumentsTest {
     }
 
     /**
-     * Test the property 'query'
-     */
-    @Test
-    public void queryTest() {
-        // TODO: test query
-    }
-
-    /**
      * Test the property 'newKey'
      */
     @Test
@@ -134,11 +170,35 @@ public class RoutesTransformOperationArgumentsTest {
     }
 
     /**
+     * Test the property 'delimiter'
+     */
+    @Test
+    public void delimiterTest() {
+        // TODO: test delimiter
+    }
+
+    /**
+     * Test the property 'query'
+     */
+    @Test
+    public void queryTest() {
+        // TODO: test query
+    }
+
+    /**
      * Test the property 'valueToSet'
      */
     @Test
     public void valueToSetTest() {
         // TODO: test valueToSet
+    }
+
+    /**
+     * Test the property 'format'
+     */
+    @Test
+    public void formatTest() {
+        // TODO: test format
     }
 
 }

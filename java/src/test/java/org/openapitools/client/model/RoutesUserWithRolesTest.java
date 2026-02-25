@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -23,6 +23,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import org.openapitools.client.model.ModelsUserRoleWithPermissions;
+import org.openapitools.client.model.RoutesUserAuthProvider;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -41,11 +42,11 @@ public class RoutesUserWithRolesTest {
     }
 
     /**
-     * Test the property 'authId'
+     * Test the property 'authProvider'
      */
     @Test
-    public void authIdTest() {
-        // TODO: test authId
+    public void authProviderTest() {
+        // TODO: test authProvider
     }
 
     /**

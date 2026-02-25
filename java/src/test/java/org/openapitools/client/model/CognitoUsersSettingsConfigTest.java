@@ -71,6 +71,14 @@ public class CognitoUsersSettingsConfigTest {
     }
 
     /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
+    }
+
+    /**
      * Test the property 'userPoolId'
      */
     @Test

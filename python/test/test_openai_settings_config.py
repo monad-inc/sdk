@@ -36,6 +36,7 @@ class TestOpenaiSettingsConfig(unittest.TestCase):
         model = OpenaiSettingsConfig()
         if include_optional:
             return OpenaiSettingsConfig(
+                backfill_start_time = '',
                 use_synthetic_data = True
             )
         else:

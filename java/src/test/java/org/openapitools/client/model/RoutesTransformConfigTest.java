@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsTransformConditional;
 import org.openapitools.client.model.RoutesTransformOperation;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -38,6 +39,14 @@ public class RoutesTransformConfigTest {
     @Test
     public void testRoutesTransformConfig() {
         // TODO: test RoutesTransformConfig
+    }
+
+    /**
+     * Test the property 'conditional'
+     */
+    @Test
+    public void conditionalTest() {
+        // TODO: test conditional
     }
 
     /**

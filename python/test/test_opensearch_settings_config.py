@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,8 +36,11 @@ class TestOpensearchSettingsConfig(unittest.TestCase):
         model = OpensearchSettingsConfig()
         if include_optional:
             return OpensearchSettingsConfig(
+                auth_mode = '',
                 index = '',
                 insecure_skip_verify = True,
+                region = '',
+                role_arn = '',
                 url = '',
                 username = ''
             )

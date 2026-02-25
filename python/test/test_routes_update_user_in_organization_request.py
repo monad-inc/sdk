@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,7 +36,8 @@ class TestRoutesUpdateUserInOrganizationRequest(unittest.TestCase):
         model = RoutesUpdateUserInOrganizationRequest()
         if include_optional:
             return RoutesUpdateUserInOrganizationRequest(
-                role_id = ''
+                role_id = '',
+                user_auth_provider_id = ''
             )
         else:
             return RoutesUpdateUserInOrganizationRequest(

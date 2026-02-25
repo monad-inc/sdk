@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -46,6 +46,14 @@ public class SplunkSettingsConfigTest {
     }
 
     /**
+     * Test the property 'index'
+     */
+    @Test
+    public void indexTest() {
+        // TODO: test index
+    }
+
+    /**
      * Test the property 'port'
      */
     @Test
@@ -54,11 +62,27 @@ public class SplunkSettingsConfigTest {
     }
 
     /**
+     * Test the property 'toCreate'
+     */
+    @Test
+    public void toCreateTest() {
+        // TODO: test toCreate
+    }
+
+    /**
      * Test the property 'url'
      */
     @Test
     public void urlTest() {
         // TODO: test url
+    }
+
+    /**
+     * Test the property 'username'
+     */
+    @Test
+    public void usernameTest() {
+        // TODO: test username
     }
 
 }

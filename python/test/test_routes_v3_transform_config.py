@@ -37,7 +37,7 @@ class TestRoutesV3TransformConfig(unittest.TestCase):
         if include_optional:
             return RoutesV3TransformConfig(
                 operations = [
-                    monad.models.models/transform_operation.models.TransformOperation(
+                    monad.models.routes_v3/transform_operation.routesV3.TransformOperation(
                         arguments = {
                             'key' : null
                             }, 

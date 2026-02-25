@@ -39,11 +39,27 @@ public class EnrichmentConnectorMetaTest {
     }
 
     /**
+     * Test the property 'authType'
+     */
+    @Test
+    public void authTypeTest() {
+        // TODO: test authType
+    }
+
+    /**
      * Test the property 'config'
      */
     @Test
     public void configTest() {
         // TODO: test config
+    }
+
+    /**
+     * Test the property 'connectorCategory'
+     */
+    @Test
+    public void connectorCategoryTest() {
+        // TODO: test connectorCategory
     }
 
     /**
@@ -60,6 +76,14 @@ public class EnrichmentConnectorMetaTest {
     @Test
     public void houseTest() {
         // TODO: test house
+    }
+
+    /**
+     * Test the property 'inBeta'
+     */
+    @Test
+    public void inBetaTest() {
+        // TODO: test inBeta
     }
 
     /**

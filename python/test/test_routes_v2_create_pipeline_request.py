@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -39,9 +39,14 @@ class TestRoutesV2CreatePipelineRequest(unittest.TestCase):
                 description = '',
                 edges = [
                     monad.models.routes_v2/pipeline_request_edge.routesV2.PipelineRequestEdge(
-                        conditions = monad.models.models/pipeline_edge_conditions.models.PipelineEdgeConditions(
-                            operator = '', ), 
+                        conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
+                            config = {
+                                'key' : null
+                                }, 
+                            operator = '', 
+                            type_id = '', ), 
                         description = '', 
+                        disabled = True, 
                         from_node_instance_id = '', 
                         name = '', 
                         to_node_instance_id = '', )
@@ -61,9 +66,14 @@ class TestRoutesV2CreatePipelineRequest(unittest.TestCase):
             return RoutesV2CreatePipelineRequest(
                 edges = [
                     monad.models.routes_v2/pipeline_request_edge.routesV2.PipelineRequestEdge(
-                        conditions = monad.models.models/pipeline_edge_conditions.models.PipelineEdgeConditions(
-                            operator = '', ), 
+                        conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
+                            config = {
+                                'key' : null
+                                }, 
+                            operator = '', 
+                            type_id = '', ), 
                         description = '', 
+                        disabled = True, 
                         from_node_instance_id = '', 
                         name = '', 
                         to_node_instance_id = '', )

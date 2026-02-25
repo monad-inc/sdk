@@ -42,6 +42,14 @@ public class CommunityTransformsInternalTransformConfigTest {
     }
 
     /**
+     * Test the property 'author'
+     */
+    @Test
+    public void authorTest() {
+        // TODO: test author
+    }
+
+    /**
      * Test the property 'config'
      */
     @Test
@@ -50,11 +58,11 @@ public class CommunityTransformsInternalTransformConfigTest {
     }
 
     /**
-     * Test the property 'createdBy'
+     * Test the property 'contributors'
      */
     @Test
-    public void createdByTest() {
-        // TODO: test createdBy
+    public void contributorsTest() {
+        // TODO: test contributors
     }
 
     /**
@@ -79,14 +87,6 @@ public class CommunityTransformsInternalTransformConfigTest {
     @Test
     public void nameTest() {
         // TODO: test name
-    }
-
-    /**
-     * Test the property 'outputs'
-     */
-    @Test
-    public void outputsTest() {
-        // TODO: test outputs
     }
 
     /**

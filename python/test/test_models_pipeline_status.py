@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,26 +36,63 @@ class TestModelsPipelineStatus(unittest.TestCase):
         model = ModelsPipelineStatus()
         if include_optional:
             return ModelsPipelineStatus(
+                average_size_egressed = 56,
+                average_size_ingested = 56,
                 egress = monad.models.models/data_usage.models.DataUsage(
                     bytes = 56, 
                     records = 56, ),
+                errors = 56,
+                expired_messages = 56,
                 ingress = monad.models.models/data_usage.models.DataUsage(
                     bytes = 56, 
                     records = 56, ),
+                last_ingested_time = '',
                 nodes = [
                     monad.models.models/pipeline_node_status.models.PipelineNodeStatus(
+                        avg_bytes_per_record_egress = 56, 
+                        avg_bytes_per_record_ingress = 56, 
+                        component_type = '', 
+                        component_type_id = '', 
                         egress = monad.models.models/data_usage.models.DataUsage(
                             bytes = 56, 
                             records = 56, ), 
+                        errors = 56, 
+                        expired_messages = 56, 
                         ingress = monad.models.models/data_usage.models.DataUsage(
                             bytes = 56, 
                             records = 56, ), 
+                        last_ingested_time = '', 
+                        last_record_processed_time = '', 
                         node_id = '', 
                         node_slug = '', 
+                        progress = monad.models.pipeline_node_status/progress_entries.pipeline_node_status.ProgressEntries(
+                            entries = [
+                                monad.models.pipeline_node_status/progress_entry.pipeline_node_status.ProgressEntry(
+                                    label = '', 
+                                    partition_key = '', 
+                                    ranges = [
+                                        monad.models.pipeline_node_status/time_range.pipeline_node_status.TimeRange(
+                                            end = '', 
+                                            start = '', )
+                                        ], )
+                                ], ), 
                         status = '', )
                     ],
                 organization_id = '',
+                organization_name = '',
                 pipeline_id = '',
+                pipeline_name = '',
+                progress = monad.models.pipeline_node_status/progress_entries.pipeline_node_status.ProgressEntries(
+                    entries = [
+                        monad.models.pipeline_node_status/progress_entry.pipeline_node_status.ProgressEntry(
+                            label = '', 
+                            partition_key = '', 
+                            ranges = [
+                                monad.models.pipeline_node_status/time_range.pipeline_node_status.TimeRange(
+                                    end = '', 
+                                    start = '', )
+                                ], )
+                        ], ),
                 status = ''
             )
         else:

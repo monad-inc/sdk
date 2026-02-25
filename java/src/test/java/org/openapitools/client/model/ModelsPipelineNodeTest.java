@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -44,6 +44,14 @@ public class ModelsPipelineNodeTest {
     @Test
     public void componentTest() {
         // TODO: test component
+    }
+
+    /**
+     * Test the property 'componentHouse'
+     */
+    @Test
+    public void componentHouseTest() {
+        // TODO: test componentHouse
     }
 
     /**

@@ -43,6 +43,7 @@ class TestCognitoUsersSettingsConfig(unittest.TestCase):
                     value = '', ),
                 region = '',
                 role_arn = '',
+                use_synthetic_data = True,
                 user_pool_id = ''
             )
         else:

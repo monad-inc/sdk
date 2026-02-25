@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -39,7 +39,11 @@ class TestRoutesTransformOperation(unittest.TestCase):
                 arguments = {
                     'key' : null
                     },
-                operation = ''
+                description = '',
+                operation = '',
+                secrets = {
+                    'key' : null
+                    }
             )
         else:
             return RoutesTransformOperation(

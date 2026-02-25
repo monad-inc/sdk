@@ -49,7 +49,6 @@ class TestModelsStorageTypeSummaryResponse(unittest.TestCase):
                 outputs = {
                     'key' : monad.models.models/storage_type_output_detail.models.StorageTypeOutputDetail(
                         cost_id = '', 
-                        cost_per_byte = 1.337, 
                         cost_per_gb = 1.337, 
                         egress_bytes = 56, 
                         egress_bytes_gb = 1.337, 

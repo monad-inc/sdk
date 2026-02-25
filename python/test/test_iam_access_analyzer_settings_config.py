@@ -54,7 +54,8 @@ class TestIamAccessAnalyzerSettingsConfig(unittest.TestCase):
                         filter_key = '', )
                     ],
                 region = '',
-                role_arn = ''
+                role_arn = '',
+                use_synthetic_data = True
             )
         else:
             return IamAccessAnalyzerSettingsConfig(

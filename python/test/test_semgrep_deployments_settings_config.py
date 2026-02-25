@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,7 +36,8 @@ class TestSemgrepDeploymentsSettingsConfig(unittest.TestCase):
         model = SemgrepDeploymentsSettingsConfig()
         if include_optional:
             return SemgrepDeploymentsSettingsConfig(
-                cron = ''
+                cron = '',
+                use_synthetic_data = True
             )
         else:
             return SemgrepDeploymentsSettingsConfig(

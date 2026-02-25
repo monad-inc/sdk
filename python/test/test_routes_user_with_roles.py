@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,15 +36,19 @@ class TestRoutesUserWithRoles(unittest.TestCase):
         model = RoutesUserWithRoles()
         if include_optional:
             return RoutesUserWithRoles(
-                auth_id = '',
+                auth_provider = monad.models.routes/user_auth_provider.routes.UserAuthProvider(
+                    id = '', 
+                    provider = '', 
+                    provider_id = '', ),
                 created_at = '',
                 email = '',
                 id = '',
                 organization_roles = {
                     'key' : monad.models.models/user_role_with_permissions.models.UserRoleWithPermissions(
+                        inherited = True, 
                         organization_id = '', 
                         permissions = [
-                            monad.models.models/permission.models.Permission(
+                            monad.models.github_com_monad_inc_core_pkg_types_models/permission.github_com_monad-inc_core_pkg_types_models.Permission(
                                 created_at = '', 
                                 description = '', 
                                 id = '', 
@@ -53,7 +57,8 @@ class TestRoutesUserWithRoles(unittest.TestCase):
                                 updated_at = '', )
                             ], 
                         role_id = '', 
-                        role_name = '', )
+                        role_name = '', 
+                        source_organization_id = '', )
                     },
                 updated_at = '',
                 username = ''

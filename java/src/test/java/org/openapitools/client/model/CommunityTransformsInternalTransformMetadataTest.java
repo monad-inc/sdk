@@ -40,6 +40,22 @@ public class CommunityTransformsInternalTransformMetadataTest {
     }
 
     /**
+     * Test the property 'author'
+     */
+    @Test
+    public void authorTest() {
+        // TODO: test author
+    }
+
+    /**
+     * Test the property 'contributors'
+     */
+    @Test
+    public void contributorsTest() {
+        // TODO: test contributors
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test
@@ -48,19 +64,19 @@ public class CommunityTransformsInternalTransformMetadataTest {
     }
 
     /**
-     * Test the property 'createdBy'
-     */
-    @Test
-    public void createdByTest() {
-        // TODO: test createdBy
-    }
-
-    /**
      * Test the property 'description'
      */
     @Test
     public void descriptionTest() {
         // TODO: test description
+    }
+
+    /**
+     * Test the property 'inputs'
+     */
+    @Test
+    public void inputsTest() {
+        // TODO: test inputs
     }
 
     /**

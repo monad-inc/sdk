@@ -36,6 +36,7 @@ class TestSemgrepSupplyChainFindingsSettingsConfig(unittest.TestCase):
         model = SemgrepSupplyChainFindingsSettingsConfig()
         if include_optional:
             return SemgrepSupplyChainFindingsSettingsConfig(
+                backfill_start_time = '',
                 use_synthetic_data = True
             )
         else:

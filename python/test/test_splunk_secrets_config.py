@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,7 +36,22 @@ class TestSplunkSecretsConfig(unittest.TestCase):
         model = SplunkSecretsConfig()
         if include_optional:
             return SplunkSecretsConfig(
-                token = ''
+                password = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
+                token = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', )
             )
         else:
             return SplunkSecretsConfig(

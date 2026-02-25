@@ -37,11 +37,13 @@ class TestAzureBlobStorageSettingsConfig(unittest.TestCase):
         if include_optional:
             return AzureBlobStorageSettingsConfig(
                 account_url = '',
+                backfill_start_time = '',
                 compression = '',
                 container = '',
                 format = '',
                 partition_format = '',
-                prefix = ''
+                prefix = '',
+                record_location = ''
             )
         else:
             return AzureBlobStorageSettingsConfig(

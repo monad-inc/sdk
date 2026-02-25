@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -37,11 +37,14 @@ class TestModelsOrganizationList(unittest.TestCase):
         if include_optional:
             return ModelsOrganizationList(
                 organizations = [
-                    monad.models.models/organization.models.Organization(
+                    monad.models.github_com_monad_inc_core_pkg_types_models/organization.github_com_monad-inc_core_pkg_types_models.Organization(
+                        billing_account_id = '', 
+                        connection_id = '', 
                         created_at = '', 
                         description = '', 
                         id = '', 
                         name = '', 
+                        parent_organization_id = '', 
                         updated_at = '', )
                     ],
                 pagination = monad.models.models/pagination.models.Pagination(

@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -41,7 +41,8 @@ class TestAzureActivityLogsSettingsConfig(unittest.TestCase):
                 resource_provider = '',
                 resource_uri = '',
                 subscription_id = '',
-                tenant_id = ''
+                tenant_id = '',
+                use_synthetic_data = True
             )
         else:
             return AzureActivityLogsSettingsConfig(

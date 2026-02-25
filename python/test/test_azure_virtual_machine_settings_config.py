@@ -38,7 +38,8 @@ class TestAzureVirtualMachineSettingsConfig(unittest.TestCase):
             return AzureVirtualMachineSettingsConfig(
                 cron = '',
                 subscription_id = '',
-                tenant_id = ''
+                tenant_id = '',
+                use_synthetic_data = True
             )
         else:
             return AzureVirtualMachineSettingsConfig(

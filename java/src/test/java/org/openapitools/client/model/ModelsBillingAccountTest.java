@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsBillingProduct;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -54,11 +55,43 @@ public class ModelsBillingAccountTest {
     }
 
     /**
+     * Test the property 'currentBillingCycleEnd'
+     */
+    @Test
+    public void currentBillingCycleEndTest() {
+        // TODO: test currentBillingCycleEnd
+    }
+
+    /**
+     * Test the property 'currentBillingCycleStart'
+     */
+    @Test
+    public void currentBillingCycleStartTest() {
+        // TODO: test currentBillingCycleStart
+    }
+
+    /**
+     * Test the property 'deletedAt'
+     */
+    @Test
+    public void deletedAtTest() {
+        // TODO: test deletedAt
+    }
+
+    /**
      * Test the property 'description'
      */
     @Test
     public void descriptionTest() {
         // TODO: test description
+    }
+
+    /**
+     * Test the property 'hasPaymentMethod'
+     */
+    @Test
+    public void hasPaymentMethodTest() {
+        // TODO: test hasPaymentMethod
     }
 
     /**
@@ -78,11 +111,59 @@ public class ModelsBillingAccountTest {
     }
 
     /**
+     * Test the property 'nextProduct'
+     */
+    @Test
+    public void nextProductTest() {
+        // TODO: test nextProduct
+    }
+
+    /**
+     * Test the property 'nextProductId'
+     */
+    @Test
+    public void nextProductIdTest() {
+        // TODO: test nextProductId
+    }
+
+    /**
+     * Test the property 'product'
+     */
+    @Test
+    public void productTest() {
+        // TODO: test product
+    }
+
+    /**
+     * Test the property 'productChangeAfter'
+     */
+    @Test
+    public void productChangeAfterTest() {
+        // TODO: test productChangeAfter
+    }
+
+    /**
+     * Test the property 'productId'
+     */
+    @Test
+    public void productIdTest() {
+        // TODO: test productId
+    }
+
+    /**
      * Test the property 'status'
      */
     @Test
     public void statusTest() {
         // TODO: test status
+    }
+
+    /**
+     * Test the property 'suspendOn'
+     */
+    @Test
+    public void suspendOnTest() {
+        // TODO: test suspendOn
     }
 
     /**

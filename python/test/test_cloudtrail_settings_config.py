@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,10 +36,12 @@ class TestCloudtrailSettingsConfig(unittest.TestCase):
         model = CloudtrailSettingsConfig()
         if include_optional:
             return CloudtrailSettingsConfig(
+                backfill_start_time = '',
                 bucket = '',
                 prefix = '',
                 region = '',
-                role_arn = ''
+                role_arn = '',
+                use_synthetic_data = True
             )
         else:
             return CloudtrailSettingsConfig(

@@ -36,9 +36,11 @@ class TestAwsGuarddutySettingsConfig(unittest.TestCase):
         model = AwsGuarddutySettingsConfig()
         if include_optional:
             return AwsGuarddutySettingsConfig(
+                backfill_start_time = '',
                 region = '',
                 role_arn = '',
-                severity = ''
+                severity = '',
+                use_synthetic_data = True
             )
         else:
             return AwsGuarddutySettingsConfig(

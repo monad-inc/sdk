@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -38,7 +38,9 @@ class TestRoutesGetOutputResponse(unittest.TestCase):
             return RoutesGetOutputResponse(
                 component_of = [
                     monad.models.models/pipeline.models.Pipeline(
+                        component_tier = 56, 
                         created_at = '', 
+                        cron_schedule = '', 
                         description = '', 
                         enabled = True, 
                         id = '', 
@@ -47,7 +49,7 @@ class TestRoutesGetOutputResponse(unittest.TestCase):
                         organization_id = '', 
                         updated_at = '', )
                     ],
-                config = monad.models.models/input_config.models.InputConfig(
+                config = monad.models.models/enrichment_config.models.EnrichmentConfig(
                     secrets = {
                         'key' : null
                         }, 
@@ -64,10 +66,6 @@ class TestRoutesGetOutputResponse(unittest.TestCase):
             )
         else:
             return RoutesGetOutputResponse(
-                id = '',
-                name = '',
-                organization_id = '',
-                type = '',
         )
         """
 

@@ -21,6 +21,8 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
+import org.openapitools.client.model.CommunityEditionSettingsConfig;
+import org.openapitools.client.model.GeolocusSettingsConfig;
 import org.openapitools.client.model.KvLookupSettingsConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -40,6 +42,46 @@ public class SecretProcessesorEnrichmentConfigSettingsTest {
     }
 
     /**
+     * Test the property 'destinationPath'
+     */
+    @Test
+    public void destinationPathTest() {
+        // TODO: test destinationPath
+    }
+
+    /**
+     * Test the property 'errorOnRateLimit'
+     */
+    @Test
+    public void errorOnRateLimitTest() {
+        // TODO: test errorOnRateLimit
+    }
+
+    /**
+     * Test the property 'ipAddressPath'
+     */
+    @Test
+    public void ipAddressPathTest() {
+        // TODO: test ipAddressPath
+    }
+
+    /**
+     * Test the property 'noMatchResponse'
+     */
+    @Test
+    public void noMatchResponseTest() {
+        // TODO: test noMatchResponse
+    }
+
+    /**
+     * Test the property 'rateLimitResponse'
+     */
+    @Test
+    public void rateLimitResponseTest() {
+        // TODO: test rateLimitResponse
+    }
+
+    /**
      * Test the property 'destinationKey'
      */
     @Test
@@ -56,11 +98,11 @@ public class SecretProcessesorEnrichmentConfigSettingsTest {
     }
 
     /**
-     * Test the property 'joinKey'
+     * Test the property 'joinPath'
      */
     @Test
-    public void joinKeyTest() {
-        // TODO: test joinKey
+    public void joinPathTest() {
+        // TODO: test joinPath
     }
 
     /**

@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,7 +36,8 @@ class TestSnykProjectsSettingsConfig(unittest.TestCase):
         model = SnykProjectsSettingsConfig()
         if include_optional:
             return SnykProjectsSettingsConfig(
-                cron = ''
+                cron = '',
+                use_synthetic_data = True
             )
         else:
             return SnykProjectsSettingsConfig(

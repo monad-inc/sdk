@@ -42,6 +42,7 @@ class TestAzureVnetFlowLogsSettingsConfig(unittest.TestCase):
                 storage_account_url = '',
                 subscription_id = '',
                 tenant_id = '',
+                use_synthetic_data = True,
                 virtual_network_name = ''
             )
         else:

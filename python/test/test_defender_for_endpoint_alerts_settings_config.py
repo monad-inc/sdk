@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -38,7 +38,8 @@ class TestDefenderForEndpointAlertsSettingsConfig(unittest.TestCase):
             return DefenderForEndpointAlertsSettingsConfig(
                 category = '',
                 severity = '',
-                tenant_id = ''
+                tenant_id = '',
+                use_synthetic_data = True
             )
         else:
             return DefenderForEndpointAlertsSettingsConfig(

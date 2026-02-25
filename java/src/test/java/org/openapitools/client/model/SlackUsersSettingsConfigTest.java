@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -51,6 +51,14 @@ public class SlackUsersSettingsConfigTest {
     @Test
     public void teamIdTest() {
         // TODO: test teamId
+    }
+
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
     }
 
 }

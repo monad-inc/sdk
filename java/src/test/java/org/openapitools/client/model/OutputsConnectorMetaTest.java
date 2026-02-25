@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -55,6 +55,14 @@ public class OutputsConnectorMetaTest {
     }
 
     /**
+     * Test the property 'category'
+     */
+    @Test
+    public void categoryTest() {
+        // TODO: test category
+    }
+
+    /**
      * Test the property 'config'
      */
     @Test
@@ -68,6 +76,22 @@ public class OutputsConnectorMetaTest {
     @Test
     public void descriptionTest() {
         // TODO: test description
+    }
+
+    /**
+     * Test the property 'house'
+     */
+    @Test
+    public void houseTest() {
+        // TODO: test house
+    }
+
+    /**
+     * Test the property 'inBeta'
+     */
+    @Test
+    public void inBetaTest() {
+        // TODO: test inBeta
     }
 
     /**
@@ -87,11 +111,27 @@ public class OutputsConnectorMetaTest {
     }
 
     /**
-     * Test the property 'typeID'
+     * Test the property 'releaseDate'
      */
     @Test
-    public void typeIDTest() {
-        // TODO: test typeID
+    public void releaseDateTest() {
+        // TODO: test releaseDate
+    }
+
+    /**
+     * Test the property 'tier'
+     */
+    @Test
+    public void tierTest() {
+        // TODO: test tier
+    }
+
+    /**
+     * Test the property 'typeId'
+     */
+    @Test
+    public void typeIdTest() {
+        // TODO: test typeId
     }
 
 }

@@ -36,7 +36,6 @@ class TestRoutesV2SetStorageTypeCostEntry(unittest.TestCase):
         model = RoutesV2SetStorageTypeCostEntry()
         if include_optional:
             return RoutesV2SetStorageTypeCostEntry(
-                cost_per_byte = 1.337,
                 cost_per_gb = 1.337
             )
         else:

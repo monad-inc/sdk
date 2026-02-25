@@ -36,11 +36,13 @@ class TestGitlabIssuesSettingsConfig(unittest.TestCase):
         model = GitlabIssuesSettingsConfig()
         if include_optional:
             return GitlabIssuesSettingsConfig(
+                backfill_start_time = '',
                 confidential = True,
                 gitlab_url = '',
                 issue_type = '',
                 project_id = '',
                 state = '',
+                use_synthetic_data = True,
                 with_label_details = True
             )
         else:

@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,8 +36,13 @@ class TestRoutesV2ApplyTransformationResponse(unittest.TestCase):
         model = RoutesV2ApplyTransformationResponse()
         if include_optional:
             return RoutesV2ApplyTransformationResponse(
-                record = [
-                    56
+                bytes_after = 56,
+                bytes_before = 56,
+                percentage_change = 1.337,
+                records = [
+                    [
+                        56
+                        ]
                     ]
             )
         else:

@@ -36,6 +36,16 @@ class TestRoutesV3GetFeatureFlagResponse(unittest.TestCase):
         model = RoutesV3GetFeatureFlagResponse()
         if include_optional:
             return RoutesV3GetFeatureFlagResponse(
+                organizations = {
+                    'key' : [
+                        monad.models.flagsmith/flag.flagsmith.Flag(
+                            enabled = True, 
+                            feature_id = 56, 
+                            feature_name = '', 
+                            is_default = True, 
+                            value = null, )
+                        ]
+                    },
                 user = [
                     monad.models.flagsmith/flag.flagsmith.Flag(
                         enabled = True, 

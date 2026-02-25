@@ -105,6 +105,14 @@ public class GithubComMonadIncAlertsModelsAlertTest {
     }
 
     /**
+     * Test the property 'ruleType'
+     */
+    @Test
+    public void ruleTypeTest() {
+        // TODO: test ruleType
+    }
+
+    /**
      * Test the property 'severity'
      */
     @Test

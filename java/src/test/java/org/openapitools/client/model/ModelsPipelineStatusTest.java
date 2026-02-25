@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.ModelsDataUsage;
 import org.openapitools.client.model.ModelsPipelineNodeStatus;
+import org.openapitools.client.model.PipelineNodeStatusProgressEntries;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -42,6 +43,22 @@ public class ModelsPipelineStatusTest {
     }
 
     /**
+     * Test the property 'averageSizeEgressed'
+     */
+    @Test
+    public void averageSizeEgressedTest() {
+        // TODO: test averageSizeEgressed
+    }
+
+    /**
+     * Test the property 'averageSizeIngested'
+     */
+    @Test
+    public void averageSizeIngestedTest() {
+        // TODO: test averageSizeIngested
+    }
+
+    /**
      * Test the property 'egress'
      */
     @Test
@@ -50,11 +67,35 @@ public class ModelsPipelineStatusTest {
     }
 
     /**
+     * Test the property 'errors'
+     */
+    @Test
+    public void errorsTest() {
+        // TODO: test errors
+    }
+
+    /**
+     * Test the property 'expiredMessages'
+     */
+    @Test
+    public void expiredMessagesTest() {
+        // TODO: test expiredMessages
+    }
+
+    /**
      * Test the property 'ingress'
      */
     @Test
     public void ingressTest() {
         // TODO: test ingress
+    }
+
+    /**
+     * Test the property 'lastIngestedTime'
+     */
+    @Test
+    public void lastIngestedTimeTest() {
+        // TODO: test lastIngestedTime
     }
 
     /**
@@ -74,11 +115,35 @@ public class ModelsPipelineStatusTest {
     }
 
     /**
+     * Test the property 'organizationName'
+     */
+    @Test
+    public void organizationNameTest() {
+        // TODO: test organizationName
+    }
+
+    /**
      * Test the property 'pipelineId'
      */
     @Test
     public void pipelineIdTest() {
         // TODO: test pipelineId
+    }
+
+    /**
+     * Test the property 'pipelineName'
+     */
+    @Test
+    public void pipelineNameTest() {
+        // TODO: test pipelineName
+    }
+
+    /**
+     * Test the property 'progress'
+     */
+    @Test
+    public void progressTest() {
+        // TODO: test progress
     }
 
     /**

@@ -46,6 +46,14 @@ public class GithubComMonadIncCorePkgTypesModelsOrganizationTest {
     }
 
     /**
+     * Test the property 'connectionId'
+     */
+    @Test
+    public void connectionIdTest() {
+        // TODO: test connectionId
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test
@@ -75,6 +83,14 @@ public class GithubComMonadIncCorePkgTypesModelsOrganizationTest {
     @Test
     public void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'parentOrganizationId'
+     */
+    @Test
+    public void parentOrganizationIdTest() {
+        // TODO: test parentOrganizationId
     }
 
     /**

@@ -38,27 +38,11 @@ public class ClumioAuditLogsSettingsConfigTest {
     }
 
     /**
-     * Test the property 'bucketRegion'
+     * Test the property 'backfillStartTime'
      */
     @Test
-    public void bucketRegionTest() {
-        // TODO: test bucketRegion
-    }
-
-    /**
-     * Test the property 'parentProtectionGroupBackupId'
-     */
-    @Test
-    public void parentProtectionGroupBackupIdTest() {
-        // TODO: test parentProtectionGroupBackupId
-    }
-
-    /**
-     * Test the property 'protectionGroupS3AssetId'
-     */
-    @Test
-    public void protectionGroupS3AssetIdTest() {
-        // TODO: test protectionGroupS3AssetId
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
     }
 
     /**

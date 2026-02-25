@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -38,10 +38,15 @@ class TestOutputsConnectorMeta(unittest.TestCase):
             return OutputsConnectorMeta(
                 auth_type = '',
                 billing_type = 56,
+                category = '',
                 config = None,
                 description = '',
+                house = '',
+                in_beta = True,
                 internal = True,
                 name = '',
+                release_date = '',
+                tier = 56,
                 type_id = ''
             )
         else:

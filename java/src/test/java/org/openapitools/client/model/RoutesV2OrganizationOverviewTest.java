@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -55,6 +55,22 @@ public class RoutesV2OrganizationOverviewTest {
     }
 
     /**
+     * Test the property 'errors'
+     */
+    @Test
+    public void errorsTest() {
+        // TODO: test errors
+    }
+
+    /**
+     * Test the property 'expiredMessages'
+     */
+    @Test
+    public void expiredMessagesTest() {
+        // TODO: test expiredMessages
+    }
+
+    /**
      * Test the property 'healthy'
      */
     @Test
@@ -68,6 +84,14 @@ public class RoutesV2OrganizationOverviewTest {
     @Test
     public void ingressTest() {
         // TODO: test ingress
+    }
+
+    /**
+     * Test the property 'lastIngestedTime'
+     */
+    @Test
+    public void lastIngestedTimeTest() {
+        // TODO: test lastIngestedTime
     }
 
     /**

@@ -36,6 +36,7 @@ class TestSemgrepCodeFindingsSettingsConfig(unittest.TestCase):
         model = SemgrepCodeFindingsSettingsConfig()
         if include_optional:
             return SemgrepCodeFindingsSettingsConfig(
+                backfill_start_time = '',
                 use_synthetic_data = True
             )
         else:

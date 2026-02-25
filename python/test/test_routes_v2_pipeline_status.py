@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -39,9 +39,12 @@ class TestRoutesV2PipelineStatus(unittest.TestCase):
                 egress = monad.models.models/data_usage.models.DataUsage(
                     bytes = 56, 
                     records = 56, ),
+                errors = 56,
+                expired_messages = 56,
                 ingress = monad.models.models/data_usage.models.DataUsage(
                     bytes = 56, 
                     records = 56, ),
+                last_ingested_time = '',
                 pipeline_id = '',
                 pipeline_name = '',
                 status = ''

@@ -21,7 +21,9 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.client.model.FlagsmithFlag;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -38,6 +40,14 @@ public class RoutesV3GetFeatureFlagResponseTest {
     @Test
     public void testRoutesV3GetFeatureFlagResponse() {
         // TODO: test RoutesV3GetFeatureFlagResponse
+    }
+
+    /**
+     * Test the property 'organizations'
+     */
+    @Test
+    public void organizationsTest() {
+        // TODO: test organizations
     }
 
     /**

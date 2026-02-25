@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,17 +36,24 @@ class TestRoutesTransformOperationArguments(unittest.TestCase):
         model = RoutesTransformOperationArguments()
         if include_optional:
             return RoutesTransformOperationArguments(
-                delimiter = '',
                 key = '',
-                type = '',
-                new_key = '',
                 value = None,
-                format = '',
+                type = '',
+                source_format = '',
+                source_format_custom = '',
+                source_key = '',
+                source_timezone = '',
+                target_format = '',
+                target_format_custom = '',
+                target_key = '',
+                target_timezone = '',
                 key_to_watch = '',
                 value_to_watch = None,
-                query = '',
                 new_key = '',
-                value_to_set = None
+                delimiter = '',
+                query = '',
+                value_to_set = None,
+                format = ''
             )
         else:
             return RoutesTransformOperationArguments(

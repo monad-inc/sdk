@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -38,7 +38,7 @@ class TestRoutesV2CreateOrUpdateSecretRequest(unittest.TestCase):
             return RoutesV2CreateOrUpdateSecretRequest(
                 description = '',
                 name = '',
-                value = None
+                value = ''
             )
         else:
             return RoutesV2CreateOrUpdateSecretRequest(

@@ -22,14 +22,23 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import org.openapitools.client.model.AbsSecretsConfig;
+import org.openapitools.client.model.AxiomSecretsConfig;
+import org.openapitools.client.model.BackblazeSecretsConfig;
 import org.openapitools.client.model.BigquerySecretsConfig;
 import org.openapitools.client.model.CriblHttpSecretsConfig;
+import org.openapitools.client.model.DatadogSecretsConfig;
 import org.openapitools.client.model.ElasticsearchSecretsConfig;
+import org.openapitools.client.model.GoogleCloudStorageOutputSecretsConfig;
 import org.openapitools.client.model.HttpSecretsConfig;
 import org.openapitools.client.model.ModelsSecret;
 import org.openapitools.client.model.NextGenSiemSecretsConfig;
+import org.openapitools.client.model.ObjectStorageSecretsConfig;
 import org.openapitools.client.model.OpensearchSecretsConfig;
+import org.openapitools.client.model.PagerdutySecretsConfig;
+import org.openapitools.client.model.PantherSecretsConfig;
 import org.openapitools.client.model.PostgresqlSecretsConfig;
+import org.openapitools.client.model.S3SecretsConfig;
 import org.openapitools.client.model.SentinelSecretsConfig;
 import org.openapitools.client.model.SnowflakeOutputSecretsConfig;
 import org.openapitools.client.model.SplunkSecretsConfig;
@@ -49,6 +58,54 @@ public class SecretProcessesorOutputConfigSecretsTest {
     @Test
     public void testSecretProcessesorOutputConfigSecrets() {
         // TODO: test SecretProcessesorOutputConfigSecrets
+    }
+
+    /**
+     * Test the property 'clientId'
+     */
+    @Test
+    public void clientIdTest() {
+        // TODO: test clientId
+    }
+
+    /**
+     * Test the property 'clientSecret'
+     */
+    @Test
+    public void clientSecretTest() {
+        // TODO: test clientSecret
+    }
+
+    /**
+     * Test the property 'tenantId'
+     */
+    @Test
+    public void tenantIdTest() {
+        // TODO: test tenantId
+    }
+
+    /**
+     * Test the property 'apiToken'
+     */
+    @Test
+    public void apiTokenTest() {
+        // TODO: test apiToken
+    }
+
+    /**
+     * Test the property 'applicationKey'
+     */
+    @Test
+    public void applicationKeyTest() {
+        // TODO: test applicationKey
+    }
+
+    /**
+     * Test the property 'applicationKeyId'
+     */
+    @Test
+    public void applicationKeyIdTest() {
+        // TODO: test applicationKeyId
     }
 
     /**
@@ -84,6 +141,14 @@ public class SecretProcessesorOutputConfigSecretsTest {
     }
 
     /**
+     * Test the property 'credentialsJson'
+     */
+    @Test
+    public void credentialsJsonTest() {
+        // TODO: test credentialsJson
+    }
+
+    /**
      * Test the property 'authHeaders'
      */
     @Test
@@ -92,35 +157,43 @@ public class SecretProcessesorOutputConfigSecretsTest {
     }
 
     /**
+     * Test the property 'accessKey'
+     */
+    @Test
+    public void accessKeyTest() {
+        // TODO: test accessKey
+    }
+
+    /**
+     * Test the property 'secretKey'
+     */
+    @Test
+    public void secretKeyTest() {
+        // TODO: test secretKey
+    }
+
+    /**
+     * Test the property 'routingKey'
+     */
+    @Test
+    public void routingKeyTest() {
+        // TODO: test routingKey
+    }
+
+    /**
+     * Test the property 'bearerToken'
+     */
+    @Test
+    public void bearerTokenTest() {
+        // TODO: test bearerToken
+    }
+
+    /**
      * Test the property 'connectionString'
      */
     @Test
     public void connectionStringTest() {
         // TODO: test connectionString
-    }
-
-    /**
-     * Test the property 'clientId'
-     */
-    @Test
-    public void clientIdTest() {
-        // TODO: test clientId
-    }
-
-    /**
-     * Test the property 'clientSecret'
-     */
-    @Test
-    public void clientSecretTest() {
-        // TODO: test clientSecret
-    }
-
-    /**
-     * Test the property 'tenantId'
-     */
-    @Test
-    public void tenantIdTest() {
-        // TODO: test tenantId
     }
 
     /**
@@ -145,14 +218,6 @@ public class SecretProcessesorOutputConfigSecretsTest {
     @Test
     public void accessIdTest() {
         // TODO: test accessId
-    }
-
-    /**
-     * Test the property 'accessKey'
-     */
-    @Test
-    public void accessKeyTest() {
-        // TODO: test accessKey
     }
 
 }

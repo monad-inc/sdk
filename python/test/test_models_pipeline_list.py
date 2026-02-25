@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -42,7 +42,9 @@ class TestModelsPipelineList(unittest.TestCase):
                     total = 56, ),
                 pipelines = [
                     monad.models.models/pipeline.models.Pipeline(
+                        component_tier = 56, 
                         created_at = '', 
+                        cron_schedule = '', 
                         description = '', 
                         enabled = True, 
                         id = '', 

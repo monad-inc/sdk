@@ -37,11 +37,18 @@ class TestCommunityTransformsInternalTransformsIndex(unittest.TestCase):
         if include_optional:
             return CommunityTransformsInternalTransformsIndex(
                 last_updated = '',
+                schema_hash = '',
                 transforms = [
                     monad.models.community_transforms_internal/transform_metadata.community_transforms_internal.TransformMetadata(
+                        author = '', 
+                        contributors = [
+                            ''
+                            ], 
                         created_at = '', 
-                        created_by = '', 
                         description = '', 
+                        inputs = [
+                            ''
+                            ], 
                         last_modified = '', 
                         name = '', 
                         path = '', 

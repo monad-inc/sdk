@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,7 +36,14 @@ class TestSemgrepProjectDetailsSecretsConfig(unittest.TestCase):
         model = SemgrepProjectDetailsSecretsConfig()
         if include_optional:
             return SemgrepProjectDetailsSecretsConfig(
-                api_key = ''
+                api_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', )
             )
         else:
             return SemgrepProjectDetailsSecretsConfig(

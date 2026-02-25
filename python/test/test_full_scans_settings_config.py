@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,8 +36,10 @@ class TestFullScansSettingsConfig(unittest.TestCase):
         model = FullScansSettingsConfig()
         if include_optional:
             return FullScansSettingsConfig(
+                backfill_start_time = '',
                 org_slug = '',
-                repo = ''
+                repo = '',
+                use_synthetic_data = True
             )
         else:
             return FullScansSettingsConfig(

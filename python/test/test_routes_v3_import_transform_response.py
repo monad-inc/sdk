@@ -38,7 +38,7 @@ class TestRoutesV3ImportTransformResponse(unittest.TestCase):
             return RoutesV3ImportTransformResponse(
                 config = monad.models.routes_v3/transform_config.routesV3.TransformConfig(
                     operations = [
-                        monad.models.models/transform_operation.models.TransformOperation(
+                        monad.models.routes_v3/transform_operation.routesV3.TransformOperation(
                             arguments = {
                                 'key' : null
                                 }, 

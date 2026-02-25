@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,8 +36,22 @@ class TestTenableVulnerabilitiesSecretsConfig(unittest.TestCase):
         model = TenableVulnerabilitiesSecretsConfig()
         if include_optional:
             return TenableVulnerabilitiesSecretsConfig(
-                access_key = '',
-                secret_key = ''
+                access_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
+                secret_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', )
             )
         else:
             return TenableVulnerabilitiesSecretsConfig(

@@ -36,14 +36,11 @@ class TestRoutesV3CreateConnectionRequest(unittest.TestCase):
         model = RoutesV3CreateConnectionRequest()
         if include_optional:
             return RoutesV3CreateConnectionRequest(
-                config = monad.models.authenticationtypes/connection_config.authenticationtypes.ConnectionConfig(
-                    auth0 = monad.models.authenticationtypes/auth0.authenticationtypes.Auth0(
-                        okta = monad.models.authenticationtypes/okta.authenticationtypes.Okta(
-                            client_id = '', 
-                            client_secret = '', 
-                            domain = '', ), ), ),
                 description = '',
-                name = ''
+                name = '',
+                saml = monad.models.routes_v3_create_connection_request_saml.routesV3_CreateConnectionRequest_saml(
+                    entity_id = '', 
+                    metadata_url = '', )
             )
         else:
             return RoutesV3CreateConnectionRequest(

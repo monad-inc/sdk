@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,6 +36,15 @@ class TestSumologicSettingsConfig(unittest.TestCase):
         model = SumologicSettingsConfig()
         if include_optional:
             return SumologicSettingsConfig(
+                source_metadata = monad.models.sumologic/source_metadata.sumologic.SourceMetadata(
+                    custom_source_category = '', 
+                    custom_source_host = '', 
+                    custom_source_name = '', 
+                    sumo_fields = [
+                        monad.models.sumologic/sumo_field.sumologic.SumoField(
+                            field_name = '', 
+                            field_value = '', )
+                        ], ),
                 url = ''
             )
         else:

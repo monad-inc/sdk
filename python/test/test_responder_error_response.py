@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,6 +36,7 @@ class TestResponderErrorResponse(unittest.TestCase):
         model = ResponderErrorResponse()
         if include_optional:
             return ResponderErrorResponse(
+                additional_details = None,
                 code = 56,
                 error = ''
             )

@@ -36,9 +36,14 @@ class TestSecretProcessesorEnrichmentConfigSettings(unittest.TestCase):
         model = SecretProcessesorEnrichmentConfigSettings()
         if include_optional:
             return SecretProcessesorEnrichmentConfigSettings(
+                destination_path = '',
+                error_on_rate_limit = True,
+                ip_address_path = '',
+                no_match_response = '',
+                rate_limit_response = '',
                 destination_key = '',
                 error_on_missing_key = True,
-                join_key = '',
+                join_path = '',
                 kv_lookup_output_id = ''
             )
         else:

@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -41,16 +41,20 @@ class TestModelsQuotaList(unittest.TestCase):
                     offset = 56, 
                     total = 56, ),
                 quotas = [
-                    monad.models.models/quota.models.Quota(
+                    monad.models.github_com_monad_inc_core_pkg_types_models/quota.github_com_monad-inc_core_pkg_types_models.Quota(
+                        action = '', 
+                        billing_account_id = '', 
                         created_at = '', 
                         current_usage = 56, 
                         current_usage_updated_at = '', 
+                        end_at = '', 
                         id = '', 
                         limit_amount = 56, 
                         limit_type = '', 
                         limit_unit = '', 
                         name = '', 
                         organization_id = '', 
+                        start_at = '', 
                         timeframe = '', 
                         updated_at = '', )
                     ]

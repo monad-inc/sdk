@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -42,7 +42,7 @@ class TestRoutesV2MetricsResponse(unittest.TestCase):
                         pipeline_name = '', 
                         total_bytes = 56, 
                         values = [
-                            monad.models.models/pipeline_node_metrics_value.models.PipelineNodeMetricsValue(
+                            monad.models.models/pipeline_metrics_value.models.PipelineMetricsValue(
                                 timestamp = 56, 
                                 value = 1.337, )
                             ], )
@@ -53,7 +53,7 @@ class TestRoutesV2MetricsResponse(unittest.TestCase):
                         pipeline_name = '', 
                         total_bytes = 56, 
                         values = [
-                            monad.models.models/pipeline_node_metrics_value.models.PipelineNodeMetricsValue(
+                            monad.models.models/pipeline_metrics_value.models.PipelineMetricsValue(
                                 timestamp = 56, 
                                 value = 1.337, )
                             ], )

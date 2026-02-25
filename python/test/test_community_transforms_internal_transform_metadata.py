@@ -36,9 +36,15 @@ class TestCommunityTransformsInternalTransformMetadata(unittest.TestCase):
         model = CommunityTransformsInternalTransformMetadata()
         if include_optional:
             return CommunityTransformsInternalTransformMetadata(
+                author = '',
+                contributors = [
+                    ''
+                    ],
                 created_at = '',
-                created_by = '',
                 description = '',
+                inputs = [
+                    ''
+                    ],
                 last_modified = '',
                 name = '',
                 path = '',

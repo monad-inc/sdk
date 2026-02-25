@@ -50,6 +50,7 @@ class TestRoutesV3AlertList(unittest.TestCase):
                             resource_id = '', 
                             resource_type = '', ), 
                         rule_id = '', 
+                        rule_type = '', 
                         severity = '', 
                         status = monad.models.github_com_monad_inc_alerts_models/alert_status.github_com_monad-inc_alerts_models.AlertStatus(
                             clearing_started_at = 56, 

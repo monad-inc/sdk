@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,7 +36,7 @@ class TestRoutesV2CreateOutputRequest(unittest.TestCase):
         model = RoutesV2CreateOutputRequest()
         if include_optional:
             return RoutesV2CreateOutputRequest(
-                config = monad.models.routes_v2/output_config.routesV2.OutputConfig(
+                config = monad.models.secret_processesor/output_config.secret_processesor.OutputConfig(
                     secrets = {
                         'key' : null
                         }, 

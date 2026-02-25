@@ -36,6 +36,7 @@ class TestSnykIssuesSettingsConfig(unittest.TestCase):
         model = SnykIssuesSettingsConfig()
         if include_optional:
             return SnykIssuesSettingsConfig(
+                backfill_start_time = '',
                 use_synthetic_data = True
             )
         else:

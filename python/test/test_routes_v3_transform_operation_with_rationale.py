@@ -44,7 +44,10 @@ class TestRoutesV3TransformOperationWithRationale(unittest.TestCase):
                     arguments = {
                         'key' : null
                         }, 
-                    description = '', )
+                    description = '', 
+                    secrets = {
+                        'key' : null
+                        }, )
             )
         else:
             return RoutesV3TransformOperationWithRationale(

@@ -36,18 +36,18 @@ class TestCommunityTransformsInternalTransformConfig(unittest.TestCase):
         model = CommunityTransformsInternalTransformConfig()
         if include_optional:
             return CommunityTransformsInternalTransformConfig(
+                author = '',
                 config = {
                     'key' : null
                     },
-                created_by = '',
+                contributors = [
+                    ''
+                    ],
                 description = '',
                 inputs = [
                     ''
                     ],
                 name = '',
-                outputs = [
-                    ''
-                    ],
                 tags = [
                     ''
                     ]

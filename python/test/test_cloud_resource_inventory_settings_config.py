@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,13 +36,17 @@ class TestCloudResourceInventorySettingsConfig(unittest.TestCase):
         model = CloudResourceInventorySettingsConfig()
         if include_optional:
             return CloudResourceInventorySettingsConfig(
+                backfill_start_time = '',
                 cloud_platform = [
                     ''
                     ],
                 endpoint_url = '',
                 entity_type = [
                     ''
-                    ]
+                    ],
+                full_snapshot = True,
+                interval = 56,
+                use_synthetic_data = True
             )
         else:
             return CloudResourceInventorySettingsConfig(

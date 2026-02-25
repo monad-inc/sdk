@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,8 +36,8 @@ class TestTenableAssetsSettingsConfig(unittest.TestCase):
         model = TenableAssetsSettingsConfig()
         if include_optional:
             return TenableAssetsSettingsConfig(
-                cron = '',
-                full_sync = True
+                backfill_start_time = '',
+                use_synthetic_data = True
             )
         else:
             return TenableAssetsSettingsConfig(

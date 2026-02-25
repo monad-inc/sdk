@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -43,12 +43,21 @@ class TestModelsTransformsRepositoryList(unittest.TestCase):
                 transforms = [
                     monad.models.models/transforms_repository_transform.models.TransformsRepositoryTransform(
                         config = monad.models.models/transform_config.models.TransformConfig(
+                            conditional = monad.models.models/transform_conditional.models.TransformConditional(
+                                conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
+                                    operator = '', 
+                                    type_id = '', ), 
+                                else = '', ), 
                             operations = [
                                 monad.models.models/transform_operation.models.TransformOperation(
                                     arguments = {
                                         'key' : null
                                         }, 
-                                    operation = '', )
+                                    description = '', 
+                                    operation = '', 
+                                    secrets = {
+                                        'key' : null
+                                        }, )
                                 ], ), 
                         created_at = '', 
                         description = '', 

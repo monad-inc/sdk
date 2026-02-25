@@ -36,12 +36,6 @@ class TestRoutesV3UpdateConnectionRequest(unittest.TestCase):
         model = RoutesV3UpdateConnectionRequest()
         if include_optional:
             return RoutesV3UpdateConnectionRequest(
-                config = monad.models.authenticationtypes/connection_config.authenticationtypes.ConnectionConfig(
-                    auth0 = monad.models.authenticationtypes/auth0.authenticationtypes.Auth0(
-                        okta = monad.models.authenticationtypes/okta.authenticationtypes.Okta(
-                            client_id = '', 
-                            client_secret = '', 
-                            domain = '', ), ), ),
                 description = '',
                 name = ''
             )

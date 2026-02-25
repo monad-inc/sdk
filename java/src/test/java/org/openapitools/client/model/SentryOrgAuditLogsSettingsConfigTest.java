@@ -38,6 +38,14 @@ public class SentryOrgAuditLogsSettingsConfigTest {
     }
 
     /**
+     * Test the property 'backfillStartTime'
+     */
+    @Test
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
+    }
+
+    /**
      * Test the property 'hostName'
      */
     @Test
@@ -51,6 +59,14 @@ public class SentryOrgAuditLogsSettingsConfigTest {
     @Test
     public void orgSlugTest() {
         // TODO: test orgSlug
+    }
+
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
     }
 
 }

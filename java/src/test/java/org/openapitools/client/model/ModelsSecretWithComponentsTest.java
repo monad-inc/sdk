@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -57,6 +57,14 @@ public class ModelsSecretWithComponentsTest {
     }
 
     /**
+     * Test the property 'enrichments'
+     */
+    @Test
+    public void enrichmentsTest() {
+        // TODO: test enrichments
+    }
+
+    /**
      * Test the property 'id'
      */
     @Test
@@ -94,6 +102,14 @@ public class ModelsSecretWithComponentsTest {
     @Test
     public void outputsTest() {
         // TODO: test outputs
+    }
+
+    /**
+     * Test the property 'transforms'
+     */
+    @Test
+    public void transformsTest() {
+        // TODO: test transforms
     }
 
     /**

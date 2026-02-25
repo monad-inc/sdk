@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,12 +36,24 @@ class TestModelsTransformConfig(unittest.TestCase):
         model = ModelsTransformConfig()
         if include_optional:
             return ModelsTransformConfig(
+                conditional = monad.models.models/transform_conditional.models.TransformConditional(
+                    conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
+                        config = {
+                            'key' : null
+                            }, 
+                        operator = '', 
+                        type_id = '', ), 
+                    else = '', ),
                 operations = [
                     monad.models.models/transform_operation.models.TransformOperation(
                         arguments = {
                             'key' : null
                             }, 
-                        operation = '', )
+                        description = '', 
+                        operation = '', 
+                        secrets = {
+                            'key' : null
+                            }, )
                     ]
             )
         else:

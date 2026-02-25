@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -40,6 +40,14 @@ public class ModelsBillingProductTest {
     }
 
     /**
+     * Test the property 'contactEmail'
+     */
+    @Test
+    public void contactEmailTest() {
+        // TODO: test contactEmail
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test
@@ -72,11 +80,27 @@ public class ModelsBillingProductTest {
     }
 
     /**
+     * Test the property 'isDefault'
+     */
+    @Test
+    public void isDefaultTest() {
+        // TODO: test isDefault
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test
     public void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'productType'
+     */
+    @Test
+    public void productTypeTest() {
+        // TODO: test productType
     }
 
     /**

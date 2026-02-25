@@ -36,8 +36,10 @@ class TestSentryOrgAuditLogsSettingsConfig(unittest.TestCase):
         model = SentryOrgAuditLogsSettingsConfig()
         if include_optional:
             return SentryOrgAuditLogsSettingsConfig(
+                backfill_start_time = '',
                 host_name = '',
-                org_slug = ''
+                org_slug = '',
+                use_synthetic_data = True
             )
         else:
             return SentryOrgAuditLogsSettingsConfig(

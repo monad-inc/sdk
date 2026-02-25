@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -37,6 +37,7 @@ class TestRoutesV2PipelineWithStatus(unittest.TestCase):
         if include_optional:
             return RoutesV2PipelineWithStatus(
                 id = '',
+                last_ingested_time = '',
                 status = ''
             )
         else:

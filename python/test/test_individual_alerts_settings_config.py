@@ -37,12 +37,14 @@ class TestIndividualAlertsSettingsConfig(unittest.TestCase):
         if include_optional:
             return IndividualAlertsSettingsConfig(
                 alert_type = '',
+                backfill_start_time = '',
                 embed = '',
                 primary_entity_type = '',
                 primary_entity_value = '',
                 region = '',
                 severity = '',
-                status = ''
+                status = '',
+                use_synthetic_data = True
             )
         else:
             return IndividualAlertsSettingsConfig(

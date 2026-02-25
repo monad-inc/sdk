@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,8 +36,22 @@ class TestAdminLogsSecretsConfig(unittest.TestCase):
         model = AdminLogsSecretsConfig()
         if include_optional:
             return AdminLogsSecretsConfig(
-                integration_key = '',
-                secret_key = ''
+                integration_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', ),
+                secret_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', )
             )
         else:
             return AdminLogsSecretsConfig(

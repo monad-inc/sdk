@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -37,6 +37,14 @@ public class IssuesSettingsConfigTest {
     @Test
     public void testIssuesSettingsConfig() {
         // TODO: test IssuesSettingsConfig
+    }
+
+    /**
+     * Test the property 'backfillStartTime'
+     */
+    @Test
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
     }
 
     /**
@@ -173,6 +181,14 @@ public class IssuesSettingsConfigTest {
     @Test
     public void tenantDataCenterTest() {
         // TODO: test tenantDataCenter
+    }
+
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
     }
 
 }

@@ -38,7 +38,7 @@ class TestCommunityEditionSettingsConfig(unittest.TestCase):
             return CommunityEditionSettingsConfig(
                 destination_path = '',
                 error_on_rate_limit = True,
-                ip_field_path = '',
+                ip_address_path = '',
                 no_match_response = '',
                 rate_limit_response = ''
             )

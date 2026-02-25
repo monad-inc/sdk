@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -44,20 +44,28 @@ class TestModelsSecretWithComponentsList(unittest.TestCase):
                     monad.models.models/secret_with_components.models.SecretWithComponents(
                         created_at = '', 
                         description = '', 
+                        enrichments = [
+                            monad.models.models/component_reference.models.ComponentReference(
+                                id = '', 
+                                kind = '', 
+                                name = '', 
+                                type = '', )
+                            ], 
                         id = '', 
                         inputs = [
                             monad.models.models/component_reference.models.ComponentReference(
                                 id = '', 
+                                kind = '', 
                                 name = '', 
                                 type = '', )
                             ], 
                         name = '', 
                         organization_id = '', 
                         outputs = [
-                            monad.models.models/component_reference.models.ComponentReference(
-                                id = '', 
-                                name = '', 
-                                type = '', )
+                            
+                            ], 
+                        transforms = [
+                            
                             ], 
                         updated_at = '', 
                         value = '', )

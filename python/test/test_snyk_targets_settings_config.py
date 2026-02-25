@@ -36,6 +36,7 @@ class TestSnykTargetsSettingsConfig(unittest.TestCase):
         model = SnykTargetsSettingsConfig()
         if include_optional:
             return SnykTargetsSettingsConfig(
+                backfill_start_time = '',
                 use_synthetic_data = True
             )
         else:

@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,7 +36,9 @@ class TestVulnerabilitiesSettingsConfig(unittest.TestCase):
         model = VulnerabilitiesSettingsConfig()
         if include_optional:
             return VulnerabilitiesSettingsConfig(
-                cloud_type = ''
+                backfill_start_time = '',
+                cloud_type = '',
+                use_synthetic_data = True
             )
         else:
             return VulnerabilitiesSettingsConfig(

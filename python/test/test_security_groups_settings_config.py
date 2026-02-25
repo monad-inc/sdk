@@ -38,14 +38,15 @@ class TestSecurityGroupsSettingsConfig(unittest.TestCase):
             return SecurityGroupsSettingsConfig(
                 cron = '',
                 filters = [
-                    monad.models.security_groups/filter_config.security_groups.filterConfig(
+                    monad.models.security_groups/filter.security_groups.Filter(
                         name = '', 
                         values = [
                             ''
                             ], )
                     ],
                 region = '',
-                role_arn = ''
+                role_arn = '',
+                use_synthetic_data = True
             )
         else:
             return SecurityGroupsSettingsConfig(

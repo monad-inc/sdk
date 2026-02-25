@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,9 +36,24 @@ class TestS3SettingsConfig(unittest.TestCase):
         model = S3SettingsConfig()
         if include_optional:
             return S3SettingsConfig(
+                batch_config = monad.models.batch_config/batch_config.batch_config.BatchConfig(
+                    batch_data_size = 56, 
+                    batch_record_count = 56, 
+                    publish_rate = 56, ),
                 bucket = '',
                 compression = '',
-                format = '',
+                format_config = monad.models.formatter/format_config.formatter.FormatConfig(
+                    format = '', 
+                    delimited_format = monad.models.delimited/delimiter_formatter.delimited.DelimiterFormatter(
+                        delimiter = '', 
+                        headers = [
+                            ''
+                            ], ), 
+                    json_format = monad.models.json/json_formatter.json.JsonFormatter(
+                        key = '', 
+                        type = '', ), 
+                    parquet_format = monad.models.parquet/parquet_formatter.parquet.ParquetFormatter(
+                        schema = '', ), ),
                 partition_format = '',
                 prefix = '',
                 region = '',

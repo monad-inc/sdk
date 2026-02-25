@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -38,7 +38,8 @@ class TestDevicesSettingsConfig(unittest.TestCase):
             return DevicesSettingsConfig(
                 cron = '',
                 field_option = '',
-                organization_id = ''
+                organization_id = '',
+                use_synthetic_data = True
             )
         else:
             return DevicesSettingsConfig(

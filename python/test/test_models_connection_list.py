@@ -41,14 +41,10 @@ class TestModelsConnectionList(unittest.TestCase):
                         created_at = '', 
                         description = '', 
                         id = '', 
-                        metadata = monad.models.models/connection_metadata.models.ConnectionMetadata(
-                            client_id = '', 
-                            domain = '', 
-                            issuer = '', 
-                            jwks_uri = '', 
-                            scope = '', ), 
                         name = '', 
-                        third_party_id = '', 
+                        organization_id = '', 
+                        saml_entity_id = '', 
+                        saml_metadata_url = '', 
                         type = '', 
                         updated_at = '', )
                     ],

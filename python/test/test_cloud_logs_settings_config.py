@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,10 +36,12 @@ class TestCloudLogsSettingsConfig(unittest.TestCase):
         model = CloudLogsSettingsConfig()
         if include_optional:
             return CloudLogsSettingsConfig(
+                enable_proto_payload_parsing = True,
                 filter = '',
                 resource_names = [
                     ''
-                    ]
+                    ],
+                use_synthetic_data = True
             )
         else:
             return CloudLogsSettingsConfig(

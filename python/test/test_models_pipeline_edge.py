@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,10 +36,15 @@ class TestModelsPipelineEdge(unittest.TestCase):
         model = ModelsPipelineEdge()
         if include_optional:
             return ModelsPipelineEdge(
-                conditions = monad.models.models/pipeline_edge_conditions.models.PipelineEdgeConditions(
-                    operator = '', ),
+                conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
+                    config = {
+                        'key' : null
+                        }, 
+                    operator = '', 
+                    type_id = '', ),
                 created_at = '',
                 description = '',
+                disabled = True,
                 from_node_instance_id = '',
                 id = '',
                 name = '',
@@ -49,10 +54,6 @@ class TestModelsPipelineEdge(unittest.TestCase):
             )
         else:
             return ModelsPipelineEdge(
-                conditions = monad.models.models/pipeline_edge_conditions.models.PipelineEdgeConditions(
-                    operator = '', ),
-                from_node_instance_id = '',
-                to_node_instance_id = '',
         )
         """
 

@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -42,7 +42,8 @@ class TestCloudAssetInventorySettingsConfig(unittest.TestCase):
                 cron = '',
                 resource_names = [
                     ''
-                    ]
+                    ],
+                use_synthetic_data = True
             )
         else:
             return CloudAssetInventorySettingsConfig(

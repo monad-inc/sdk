@@ -38,6 +38,14 @@ public class AwsGuarddutySettingsConfigTest {
     }
 
     /**
+     * Test the property 'backfillStartTime'
+     */
+    @Test
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
+    }
+
+    /**
      * Test the property 'region'
      */
     @Test
@@ -59,6 +67,14 @@ public class AwsGuarddutySettingsConfigTest {
     @Test
     public void severityTest() {
         // TODO: test severity
+    }
+
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
     }
 
 }

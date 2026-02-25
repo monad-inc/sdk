@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -38,7 +38,9 @@ class TestRoutesGetTransformResponse(unittest.TestCase):
             return RoutesGetTransformResponse(
                 component_of = [
                     monad.models.models/pipeline.models.Pipeline(
+                        component_tier = 56, 
                         created_at = '', 
+                        cron_schedule = '', 
                         description = '', 
                         enabled = True, 
                         id = '', 
@@ -48,12 +50,24 @@ class TestRoutesGetTransformResponse(unittest.TestCase):
                         updated_at = '', )
                     ],
                 config = monad.models.models/transform_config.models.TransformConfig(
+                    conditional = monad.models.models/transform_conditional.models.TransformConditional(
+                        conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
+                            config = {
+                                'key' : null
+                                }, 
+                            operator = '', 
+                            type_id = '', ), 
+                        else = '', ), 
                     operations = [
                         monad.models.models/transform_operation.models.TransformOperation(
                             arguments = {
                                 'key' : null
                                 }, 
-                            operation = '', )
+                            description = '', 
+                            operation = '', 
+                            secrets = {
+                                'key' : null
+                                }, )
                         ], ),
                 created_at = '',
                 description = '',
@@ -64,8 +78,6 @@ class TestRoutesGetTransformResponse(unittest.TestCase):
             )
         else:
             return RoutesGetTransformResponse(
-                id = '',
-                name = '',
         )
         """
 

@@ -46,7 +46,8 @@ class TestSecretsmanagerSettingsConfig(unittest.TestCase):
                     ],
                 include_planned_deletion = True,
                 region = '',
-                role_arn = ''
+                role_arn = '',
+                use_synthetic_data = True
             )
         else:
             return SecretsmanagerSettingsConfig(

@@ -36,7 +36,7 @@ class TestVercelUserEventsSettingsConfig(unittest.TestCase):
         model = VercelUserEventsSettingsConfig()
         if include_optional:
             return VercelUserEventsSettingsConfig(
-                lookback_hours = 56,
+                backfill_start_time = '',
                 use_synthetic_data = True,
                 with_payload = True
             )

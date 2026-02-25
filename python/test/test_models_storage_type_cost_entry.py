@@ -36,7 +36,6 @@ class TestModelsStorageTypeCostEntry(unittest.TestCase):
         model = ModelsStorageTypeCostEntry()
         if include_optional:
             return ModelsStorageTypeCostEntry(
-                cost_per_byte = 1.337,
                 cost_per_gb = 1.337,
                 id = '',
                 storage_type = ''

@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -42,11 +42,22 @@ class TestModelsOrganizationUserList(unittest.TestCase):
                     total = 56, ),
                 users = [
                     monad.models.models/organization_user.models.OrganizationUser(
-                        auth_id = '', 
+                        auth_provider = monad.models.models/user_auth_provider.models.UserAuthProvider(
+                            connection_id = '', 
+                            created_at = '', 
+                            id = '', 
+                            provider = '', 
+                            provider_id = '', 
+                            user_id = '', ), 
+                        connection_id = '', 
                         created_at = '', 
                         email = '', 
                         id = '', 
+                        inherited = True, 
                         role_id = '', 
+                        role_name = '', 
+                        source_organization_id = '', 
+                        source_organization_name = '', 
                         updated_at = '', 
                         username = '', )
                     ]

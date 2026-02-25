@@ -36,45 +36,13 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
         model = SecretProcessesorOutputConfigSettings()
         if include_optional:
             return SecretProcessesorOutputConfigSettings(
-                dataset = '',
-                project_id = '',
-                table = '',
-                ingress_address = '',
-                path = '',
-                port = '',
-                auth_type = '',
-                cloud_id = '',
-                connection_type = '',
-                index = '',
-                insecure_skip_verify = True,
-                url = '',
-                username = '',
-                endpoint = '',
-                headers = {
-                    'key' : ''
-                    },
-                max_batch_data_size = 56,
-                max_batch_record_count = 56,
-                method = '',
-                payload_structure = '',
-                rate_limit = 56,
-                tls_skip_verify = True,
-                wrapper_key = '',
-                auth_mode = '',
-                region = '',
-                role_arn = '',
-                column_names = [
-                    ''
-                    ],
-                database = '',
-                host = '',
-                user = '',
+                account_url = '',
                 batch_config = monad.models.batch_config/batch_config.batch_config.BatchConfig(
                     batch_data_size = 56, 
                     batch_record_count = 56, 
                     publish_rate = 56, ),
-                bucket = '',
                 compression = '',
+                container = '',
                 format_config = monad.models.formatter/format_config.formatter.FormatConfig(
                     format = '', 
                     delimited_format = monad.models.delimited/delimiter_formatter.delimited.DelimiterFormatter(
@@ -89,6 +57,80 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                         schema = '', ), ),
                 partition_format = '',
                 prefix = '',
+                message_group_id = '',
+                queue_type = '',
+                queue_url = '',
+                region = '',
+                role_arn = '',
+                dataset = '',
+                bucket = '',
+                project_id = '',
+                table = '',
+                ingress_address = '',
+                path = '',
+                port = '',
+                ddsource = '',
+                ddtags = [
+                    ''
+                    ],
+                domain_url = '',
+                hostname = '',
+                service = '',
+                auth_type = '',
+                cloud_id = '',
+                connection_type = '',
+                index = '',
+                insecure_skip_verify = True,
+                url = '',
+                username = '',
+                format = monad.models.formatter/format_config.formatter.FormatConfig(
+                    format = '', 
+                    delimited_format = monad.models.delimited/delimiter_formatter.delimited.DelimiterFormatter(
+                        delimiter = '', 
+                        headers = [
+                            ''
+                            ], ), 
+                    json_format = monad.models.json/json_formatter.json.JsonFormatter(
+                        key = '', 
+                        type = '', ), 
+                    parquet_format = monad.models.parquet/parquet_formatter.parquet.ParquetFormatter(
+                        schema = '', ), ),
+                endpoint = '',
+                headers = [
+                    monad.models.http/headers.http.Headers(
+                        header_key = '', 
+                        header_value = '', )
+                    ],
+                max_batch_data_size = 56,
+                max_batch_record_count = 56,
+                method = '',
+                payload_structure = '',
+                rate_limit = 56,
+                tls_skip_verify = True,
+                wrapper_key = '',
+                key_field = '',
+                ttl = 56,
+                value_field = '',
+                skip_ssl_verification = True,
+                use_path_style = True,
+                auth_mode = '',
+                alerts_config = monad.models.pagerduty/alerts_config.pagerduty.alertsConfig(
+                    class = '', 
+                    group = '', 
+                    severity = '', ),
+                default_event_type = '',
+                summary_config = monad.models.pagerduty/summary_config.pagerduty.summaryConfig(
+                    alert_source = '', 
+                    alert_summary = '', 
+                    change_source = '', 
+                    change_summary = '', ),
+                http_ingest_url = '',
+                column_names = [
+                    ''
+                    ],
+                database = '',
+                host = '',
+                user = '',
                 bucket_name = '',
                 bucket_url = '',
                 key = '',
@@ -100,12 +142,22 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 rule_id = '',
                 stream_name = '',
                 account = '',
+                case_insensitivity = True,
                 role = '',
                 var_schema = '',
                 stage = '',
                 warehouse = '',
                 allow_insecure = True,
-                to_create = True
+                to_create = True,
+                source_metadata = monad.models.sumologic/source_metadata.sumologic.SourceMetadata(
+                    custom_source_category = '', 
+                    custom_source_host = '', 
+                    custom_source_name = '', 
+                    sumo_fields = [
+                        monad.models.sumologic/sumo_field.sumologic.SumoField(
+                            field_name = '', 
+                            field_value = '', )
+                        ], )
             )
         else:
             return SecretProcessesorOutputConfigSettings(

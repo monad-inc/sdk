@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -37,9 +37,11 @@ class TestHttpSettingsConfig(unittest.TestCase):
         if include_optional:
             return HttpSettingsConfig(
                 endpoint = '',
-                headers = {
-                    'key' : ''
-                    },
+                headers = [
+                    monad.models.http/headers.http.Headers(
+                        header_key = '', 
+                        header_value = '', )
+                    ],
                 max_batch_data_size = 56,
                 max_batch_record_count = 56,
                 method = '',

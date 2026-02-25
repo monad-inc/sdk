@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,6 +36,7 @@ class TestCloudConfigurationFindingsSettingsConfig(unittest.TestCase):
         model = CloudConfigurationFindingsSettingsConfig()
         if include_optional:
             return CloudConfigurationFindingsSettingsConfig(
+                backfill_start_time = '',
                 endpoint_url = '',
                 result = [
                     ''
@@ -45,7 +46,8 @@ class TestCloudConfigurationFindingsSettingsConfig(unittest.TestCase):
                     ],
                 status = [
                     ''
-                    ]
+                    ],
+                use_synthetic_data = True
             )
         else:
             return CloudConfigurationFindingsSettingsConfig(

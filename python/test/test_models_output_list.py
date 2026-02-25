@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -38,7 +38,7 @@ class TestModelsOutputList(unittest.TestCase):
             return ModelsOutputList(
                 outputs = [
                     monad.models.models/output.models.Output(
-                        config = monad.models.models/input_config.models.InputConfig(
+                        config = monad.models.models/enrichment_config.models.EnrichmentConfig(
                             secrets = {
                                 'key' : null
                                 }, 

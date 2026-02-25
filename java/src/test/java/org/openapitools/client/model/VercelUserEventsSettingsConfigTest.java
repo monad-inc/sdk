@@ -38,11 +38,11 @@ public class VercelUserEventsSettingsConfigTest {
     }
 
     /**
-     * Test the property 'lookbackHours'
+     * Test the property 'backfillStartTime'
      */
     @Test
-    public void lookbackHoursTest() {
-        // TODO: test lookbackHours
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
     }
 
     /**

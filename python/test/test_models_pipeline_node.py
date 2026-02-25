@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -44,6 +44,7 @@ class TestModelsPipelineNode(unittest.TestCase):
                     id = '', 
                     name = '', 
                     type = '', ),
+                component_house = '',
                 component_id = '',
                 component_sub_type = '',
                 component_type = '',
@@ -56,9 +57,6 @@ class TestModelsPipelineNode(unittest.TestCase):
             )
         else:
             return ModelsPipelineNode(
-                component_id = '',
-                component_type = '',
-                enabled = True,
         )
         """
 

@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.SecurityGroupsFilterConfig;
+import org.openapitools.client.model.SecurityGroupsFilter;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -70,6 +70,14 @@ public class SecurityGroupsSettingsConfigTest {
     @Test
     public void roleArnTest() {
         // TODO: test roleArn
+    }
+
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
     }
 
 }

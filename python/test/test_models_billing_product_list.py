@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -38,13 +38,16 @@ class TestModelsBillingProductList(unittest.TestCase):
             return ModelsBillingProductList(
                 billing_products = [
                     monad.models.models/billing_product.models.BillingProduct(
+                        contact_email = '', 
                         created_at = '', 
                         description = '', 
                         features = [
                             ''
                             ], 
                         id = '', 
+                        is_default = True, 
                         name = '', 
+                        product_type = '', 
                         recurring_cost_cents = 56, 
                         recurring_frequency = '', 
                         slug = '', 

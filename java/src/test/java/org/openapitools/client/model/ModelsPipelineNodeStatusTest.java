@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.ModelsDataUsage;
+import org.openapitools.client.model.PipelineNodeStatusProgressEntries;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -39,6 +40,38 @@ public class ModelsPipelineNodeStatusTest {
     }
 
     /**
+     * Test the property 'avgBytesPerRecordEgress'
+     */
+    @Test
+    public void avgBytesPerRecordEgressTest() {
+        // TODO: test avgBytesPerRecordEgress
+    }
+
+    /**
+     * Test the property 'avgBytesPerRecordIngress'
+     */
+    @Test
+    public void avgBytesPerRecordIngressTest() {
+        // TODO: test avgBytesPerRecordIngress
+    }
+
+    /**
+     * Test the property 'componentType'
+     */
+    @Test
+    public void componentTypeTest() {
+        // TODO: test componentType
+    }
+
+    /**
+     * Test the property 'componentTypeId'
+     */
+    @Test
+    public void componentTypeIdTest() {
+        // TODO: test componentTypeId
+    }
+
+    /**
      * Test the property 'egress'
      */
     @Test
@@ -47,11 +80,43 @@ public class ModelsPipelineNodeStatusTest {
     }
 
     /**
+     * Test the property 'errors'
+     */
+    @Test
+    public void errorsTest() {
+        // TODO: test errors
+    }
+
+    /**
+     * Test the property 'expiredMessages'
+     */
+    @Test
+    public void expiredMessagesTest() {
+        // TODO: test expiredMessages
+    }
+
+    /**
      * Test the property 'ingress'
      */
     @Test
     public void ingressTest() {
         // TODO: test ingress
+    }
+
+    /**
+     * Test the property 'lastIngestedTime'
+     */
+    @Test
+    public void lastIngestedTimeTest() {
+        // TODO: test lastIngestedTime
+    }
+
+    /**
+     * Test the property 'lastRecordProcessedTime'
+     */
+    @Test
+    public void lastRecordProcessedTimeTest() {
+        // TODO: test lastRecordProcessedTime
     }
 
     /**
@@ -68,6 +133,14 @@ public class ModelsPipelineNodeStatusTest {
     @Test
     public void nodeSlugTest() {
         // TODO: test nodeSlug
+    }
+
+    /**
+     * Test the property 'progress'
+     */
+    @Test
+    public void progressTest() {
+        // TODO: test progress
     }
 
     /**

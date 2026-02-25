@@ -54,11 +54,11 @@ public class CommunityEditionSettingsConfigTest {
     }
 
     /**
-     * Test the property 'ipFieldPath'
+     * Test the property 'ipAddressPath'
      */
     @Test
-    public void ipFieldPathTest() {
-        // TODO: test ipFieldPath
+    public void ipAddressPathTest() {
+        // TODO: test ipAddressPath
     }
 
     /**

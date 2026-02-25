@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -43,6 +43,14 @@ public class RoutesV2PipelineWithStatusTest {
     @Test
     public void idTest() {
         // TODO: test id
+    }
+
+    /**
+     * Test the property 'lastIngestedTime'
+     */
+    @Test
+    public void lastIngestedTimeTest() {
+        // TODO: test lastIngestedTime
     }
 
     /**

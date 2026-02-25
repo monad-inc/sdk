@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -37,8 +37,11 @@ class TestSplunkSettingsConfig(unittest.TestCase):
         if include_optional:
             return SplunkSettingsConfig(
                 allow_insecure = True,
+                index = '',
                 port = '',
-                url = ''
+                to_create = True,
+                url = '',
+                username = ''
             )
         else:
             return SplunkSettingsConfig(

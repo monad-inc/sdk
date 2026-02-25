@@ -36,6 +36,7 @@ class TestCisaUserSettingsConfig(unittest.TestCase):
         model = CisaUserSettingsConfig()
         if include_optional:
             return CisaUserSettingsConfig(
+                backfill_start_time = '',
                 use_synthetic_data = True
             )
         else:

@@ -24,55 +24,150 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import org.openapitools.client.model.ActorsInfoSettingsConfig;
-import org.openapitools.client.model.AdminActivitySettingsConfig;
 import org.openapitools.client.model.AdminLogsSettingsConfig;
+import org.openapitools.client.model.AivenServiceLogsSettingsConfig;
+import org.openapitools.client.model.AlertCenterSettingsConfig;
+import org.openapitools.client.model.ArizeAuditLogsSettingsConfig;
 import org.openapitools.client.model.AuditLogsSettingsConfig;
 import org.openapitools.client.model.AuthLogsSettingsConfig;
+import org.openapitools.client.model.AwsGuarddutySettingsConfig;
+import org.openapitools.client.model.AwsIamAliasesAccount;
+import org.openapitools.client.model.AwsIamAliasesSettingsConfig;
+import org.openapitools.client.model.AwsOrganizationsSettingsConfig;
 import org.openapitools.client.model.AwsS3SettingsConfig;
+import org.openapitools.client.model.AwssecurityhubSettingsConfig;
+import org.openapitools.client.model.Awssqss3SettingsConfig;
 import org.openapitools.client.model.AzureActivityLogsSettingsConfig;
+import org.openapitools.client.model.AzureBlobStorageSettingsConfig;
+import org.openapitools.client.model.AzureEventHubsSettingsConfig;
+import org.openapitools.client.model.AzureVirtualMachineSettingsConfig;
+import org.openapitools.client.model.AzureVnetFlowLogsSettingsConfig;
+import org.openapitools.client.model.BackblazeB2SettingsConfig;
+import org.openapitools.client.model.BigqueryCronSettingsConfig;
 import org.openapitools.client.model.BigqueryInputSettingsConfig;
+import org.openapitools.client.model.BitwardenEventsSettingsConfig;
 import org.openapitools.client.model.BoxEventsSettingsConfig;
 import org.openapitools.client.model.BoxUsersSettingsConfig;
+import org.openapitools.client.model.BrinqaAuditLogsSettingsConfig;
+import org.openapitools.client.model.BugsnagOrgEventsSettingsConfig;
+import org.openapitools.client.model.BuildkiteAuditLogsSettingsConfig;
+import org.openapitools.client.model.BuildkiteGraphqlInputSettingsConfig;
+import org.openapitools.client.model.CisaUserSettingsConfig;
 import org.openapitools.client.model.CloudAssetInventorySettingsConfig;
 import org.openapitools.client.model.CloudConfigurationFindingsSettingsConfig;
 import org.openapitools.client.model.CloudLogsSettingsConfig;
+import org.openapitools.client.model.CloudResourceInventoryReportsSettingsConfig;
 import org.openapitools.client.model.CloudResourceInventorySettingsConfig;
+import org.openapitools.client.model.CloudflareDdosAttackAnalyticsSettingsConfig;
+import org.openapitools.client.model.CloudflareDnsRecordsSettingsConfig;
+import org.openapitools.client.model.CloudflareFirewallEventsSettingsConfig;
+import org.openapitools.client.model.CloudflareHttpRequestsSettingsConfig;
+import org.openapitools.client.model.CloudflarePageShieldConnectionsSettingsConfig;
+import org.openapitools.client.model.CloudflareRulesetsSettingsConfig;
+import org.openapitools.client.model.CloudflareSecurityInsightsSettingsConfig;
+import org.openapitools.client.model.CloudflareUrlScannerSettingsConfig;
+import org.openapitools.client.model.CloudflareUsersSettingsConfig;
+import org.openapitools.client.model.CloudflareZeroTrustAccessRequestsSettingsConfig;
+import org.openapitools.client.model.CloudflareZonesSettingsConfig;
 import org.openapitools.client.model.CloudtrailSettingsConfig;
+import org.openapitools.client.model.ClumioAuditLogsSettingsConfig;
+import org.openapitools.client.model.ClumioConsolidatedAlertsSettingsConfig;
+import org.openapitools.client.model.CodaAuditEventsSettingsConfig;
+import org.openapitools.client.model.CognitoUsersFilter;
+import org.openapitools.client.model.CognitoUsersSettingsConfig;
+import org.openapitools.client.model.CortexXsoarManagementLogsSettingsConfig;
 import org.openapitools.client.model.CrowdstrikeFdrSettingsConfig;
+import org.openapitools.client.model.CustomerEventDataSettingsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSettingsConfig;
-import org.openapitools.client.model.DemoCustomSettingsConfig;
-import org.openapitools.client.model.DemoSettingsConfig;
-import org.openapitools.client.model.DetectSummariesSettingsConfig;
-import org.openapitools.client.model.DeviceActivitySettingsConfig;
 import org.openapitools.client.model.DeviceDetailsSettingsConfig;
 import org.openapitools.client.model.DevicesSettingsConfig;
-import org.openapitools.client.model.DriveActivitySettingsConfig;
+import org.openapitools.client.model.DuoSecurityActivityLogsSettingsConfig;
+import org.openapitools.client.model.EndorLabsAuditLogsSettingsConfig;
 import org.openapitools.client.model.EntraIdSettingsConfig;
 import org.openapitools.client.model.EventSettingsConfig;
-import org.openapitools.client.model.EventsLogsSettingsConfig;
+import org.openapitools.client.model.FleetdmActivityLogsSettingsConfig;
 import org.openapitools.client.model.FullScansSettingsConfig;
+import org.openapitools.client.model.GithubAdvisoryUserSettingsConfig;
+import org.openapitools.client.model.GitlabIssuesSettingsConfig;
+import org.openapitools.client.model.GoogleCloudStorageSettingsConfig;
+import org.openapitools.client.model.GoogleWorkspaceSettingsConfig;
+import org.openapitools.client.model.GreenhouseAuditLogsSettingsConfig;
+import org.openapitools.client.model.IamAccessAnalyzerSettingsConfig;
+import org.openapitools.client.model.IndividualAlertsSettingsConfig;
+import org.openapitools.client.model.InspectorSettingsConfig;
+import org.openapitools.client.model.IssuesReportSettingsConfig;
 import org.openapitools.client.model.IssuesSettingsConfig;
+import org.openapitools.client.model.KmsSettingsConfig;
+import org.openapitools.client.model.KoiAuditLogsSettingsConfig;
 import org.openapitools.client.model.LogAnalyticsQuerySettingsConfig;
-import org.openapitools.client.model.LoginActivitySettingsConfig;
 import org.openapitools.client.model.LoginSessionsSettingsConfig;
+import org.openapitools.client.model.MerakiConfigLogsSettingsConfig;
+import org.openapitools.client.model.Microsoft365GenericSettingsConfig;
+import org.openapitools.client.model.MonadGraphqlInputVariable;
 import org.openapitools.client.model.MonadLogSettingsConfig;
-import org.openapitools.client.model.OauthActivitySettingsConfig;
+import org.openapitools.client.model.ObjectStorageInputSettingsConfig;
+import org.openapitools.client.model.OfflineenrollmentlogsSettingsConfig;
+import org.openapitools.client.model.OneloginEventsSettingsConfig;
+import org.openapitools.client.model.OpalEventsSettingsConfig;
+import org.openapitools.client.model.OpenaiSettingsConfig;
+import org.openapitools.client.model.OperationLogsSettingsConfig;
+import org.openapitools.client.model.OracleSettingsConfig;
+import org.openapitools.client.model.OrgAuditLogsSettingsConfig;
+import org.openapitools.client.model.OwnbackupAccountEventsSettingsConfig;
+import org.openapitools.client.model.PagerdutyAuditRecordsSettingsConfig;
+import org.openapitools.client.model.PaloAltoDataSecurityAlertsSettingsConfig;
+import org.openapitools.client.model.PolymerSettingsConfig;
+import org.openapitools.client.model.PostmanAuditLogsSettingsConfig;
+import org.openapitools.client.model.PubsubSettingsConfig;
+import org.openapitools.client.model.ResourceEvaluationsSettingsConfig;
 import org.openapitools.client.model.RolesInfoSettingsConfig;
+import org.openapitools.client.model.RootlyAuditLogsSettingsConfig;
+import org.openapitools.client.model.SalesforceUsersSettingsConfig;
+import org.openapitools.client.model.SecretsmanagerSettingsConfig;
+import org.openapitools.client.model.SecurityGroupsFilter;
+import org.openapitools.client.model.SecurityGroupsSettingsConfig;
+import org.openapitools.client.model.SemgrepCodeFindingsSettingsConfig;
 import org.openapitools.client.model.SemgrepDeploymentsSettingsConfig;
 import org.openapitools.client.model.SemgrepProjectDetailsSettingsConfig;
 import org.openapitools.client.model.SemgrepProjectsSettingsConfig;
+import org.openapitools.client.model.SemgrepSupplyChainFindingsSettingsConfig;
+import org.openapitools.client.model.SentryOrgAuditLogsSettingsConfig;
+import org.openapitools.client.model.SlackEnterpriseAuditLogsSettingsConfig;
 import org.openapitools.client.model.SlackUsersSettingsConfig;
 import org.openapitools.client.model.SlackgroupsSettingsConfig;
 import org.openapitools.client.model.SnowflakeInputSettingsConfig;
-import org.openapitools.client.model.SnykOrganizationsSettingsConfig;
+import org.openapitools.client.model.SnykIssuesSettingsConfig;
 import org.openapitools.client.model.SnykProjectsSettingsConfig;
+import org.openapitools.client.model.SnykTargetsSettingsConfig;
+import org.openapitools.client.model.SyntheticDataCustomSettingsConfig;
+import org.openapitools.client.model.SyntheticDataSettingsConfig;
 import org.openapitools.client.model.TailscaleUsersSettingsConfig;
+import org.openapitools.client.model.TaniumGraphqlInputSettingsConfig;
+import org.openapitools.client.model.TeamAccessLogsSettingsConfig;
+import org.openapitools.client.model.TeamIntegrationLogsSettingsConfig;
+import org.openapitools.client.model.TelephonyLogsSettingsConfig;
+import org.openapitools.client.model.TenableAssetsCronSettingsConfig;
 import org.openapitools.client.model.TenableAssetsSettingsConfig;
+import org.openapitools.client.model.TenableVulnerabilitiesCronSettingsConfig;
 import org.openapitools.client.model.TenableVulnerabilitiesSettingsConfig;
+import org.openapitools.client.model.TinesAuditLogsSettingsConfig;
+import org.openapitools.client.model.TinesEventsLogsSettingsConfig;
+import org.openapitools.client.model.TwilioEventsSettingsConfig;
+import org.openapitools.client.model.TwilioSendgridEmailActivitySettingsConfig;
+import org.openapitools.client.model.TypesStringFilter;
+import org.openapitools.client.model.UniversalSettingsConfig;
 import org.openapitools.client.model.UsersInfoSettingsConfig;
 import org.openapitools.client.model.UsersSettingsConfig;
+import org.openapitools.client.model.VercelUserEventsSettingsConfig;
+import org.openapitools.client.model.VoltioAuditLogsSettingsConfig;
+import org.openapitools.client.model.VulnerabilitiesCronSettingsConfig;
 import org.openapitools.client.model.VulnerabilitiesSettingsConfig;
+import org.openapitools.client.model.VulnerabilityFindingsReportSettingsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSettingsConfig;
+import org.openapitools.client.model.WizAuditLogsSettingsConfig;
+import org.openapitools.client.model.ZendeskAuditLogsSettingsConfig;
+import org.openapitools.client.model.ZoomActivityLogsSettingsConfig;
+import org.openapitools.client.model.ZoomMeetingActivityLogsSettingsConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -131,6 +226,46 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
+    }
+
+    /**
+     * Test the property 'host'
+     */
+    @Test
+    public void hostTest() {
+        // TODO: test host
+    }
+
+    /**
+     * Test the property 'backfillStartTime'
+     */
+    @Test
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
+    }
+
+    /**
+     * Test the property 'project'
+     */
+    @Test
+    public void projectTest() {
+        // TODO: test project
+    }
+
+    /**
+     * Test the property 'service'
+     */
+    @Test
+    public void serviceTest() {
+        // TODO: test service
+    }
+
+    /**
      * Test the property 'authType'
      */
     @Test
@@ -147,11 +282,11 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'host'
+     * Test the property 'intervalSeconds'
      */
     @Test
-    public void hostTest() {
-        // TODO: test host
+    public void intervalSecondsTest() {
+        // TODO: test intervalSeconds
     }
 
     /**
@@ -176,14 +311,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void countryTest() {
         // TODO: test country
-    }
-
-    /**
-     * Test the property 'createdAfter'
-     */
-    @Test
-    public void createdAfterTest() {
-        // TODO: test createdAfter
     }
 
     /**
@@ -224,6 +351,54 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void userTest() {
         // TODO: test user
+    }
+
+    /**
+     * Test the property 'region'
+     */
+    @Test
+    public void regionTest() {
+        // TODO: test region
+    }
+
+    /**
+     * Test the property 'roleArn'
+     */
+    @Test
+    public void roleArnTest() {
+        // TODO: test roleArn
+    }
+
+    /**
+     * Test the property 'severity'
+     */
+    @Test
+    public void severityTest() {
+        // TODO: test severity
+    }
+
+    /**
+     * Test the property 'accounts'
+     */
+    @Test
+    public void accountsTest() {
+        // TODO: test accounts
+    }
+
+    /**
+     * Test the property 'childType'
+     */
+    @Test
+    public void childTypeTest() {
+        // TODO: test childType
+    }
+
+    /**
+     * Test the property 'parentId'
+     */
+    @Test
+    public void parentIdTest() {
+        // TODO: test parentId
     }
 
     /**
@@ -275,19 +450,19 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'region'
+     * Test the property 'queueUrl'
      */
     @Test
-    public void regionTest() {
-        // TODO: test region
+    public void queueUrlTest() {
+        // TODO: test queueUrl
     }
 
     /**
-     * Test the property 'roleArn'
+     * Test the property 'withMetadata'
      */
     @Test
-    public void roleArnTest() {
-        // TODO: test roleArn
+    public void withMetadataTest() {
+        // TODO: test withMetadata
     }
 
     /**
@@ -339,19 +514,75 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'accountUrl'
+     */
+    @Test
+    public void accountUrlTest() {
+        // TODO: test accountUrl
+    }
+
+    /**
+     * Test the property 'container'
+     */
+    @Test
+    public void containerTest() {
+        // TODO: test container
+    }
+
+    /**
+     * Test the property 'consumerGroup'
+     */
+    @Test
+    public void consumerGroupTest() {
+        // TODO: test consumerGroup
+    }
+
+    /**
+     * Test the property 'eventHubName'
+     */
+    @Test
+    public void eventHubNameTest() {
+        // TODO: test eventHubName
+    }
+
+    /**
+     * Test the property 'eventHubNamespace'
+     */
+    @Test
+    public void eventHubNamespaceTest() {
+        // TODO: test eventHubNamespace
+    }
+
+    /**
+     * Test the property 'lookbackDuration'
+     */
+    @Test
+    public void lookbackDurationTest() {
+        // TODO: test lookbackDuration
+    }
+
+    /**
+     * Test the property 'storageAccountUrl'
+     */
+    @Test
+    public void storageAccountUrlTest() {
+        // TODO: test storageAccountUrl
+    }
+
+    /**
+     * Test the property 'virtualNetworkName'
+     */
+    @Test
+    public void virtualNetworkNameTest() {
+        // TODO: test virtualNetworkName
+    }
+
+    /**
      * Test the property 'dataset'
      */
     @Test
     public void datasetTest() {
         // TODO: test dataset
-    }
-
-    /**
-     * Test the property 'project'
-     */
-    @Test
-    public void projectTest() {
-        // TODO: test project
     }
 
     /**
@@ -379,6 +610,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'baseUrl'
+     */
+    @Test
+    public void baseUrlTest() {
+        // TODO: test baseUrl
+    }
+
+    /**
      * Test the property 'eventType'
      */
     @Test
@@ -392,6 +631,70 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void filterTermTest() {
         // TODO: test filterTerm
+    }
+
+    /**
+     * Test the property 'hostname'
+     */
+    @Test
+    public void hostnameTest() {
+        // TODO: test hostname
+    }
+
+    /**
+     * Test the property 'organizationId'
+     */
+    @Test
+    public void organizationIdTest() {
+        // TODO: test organizationId
+    }
+
+    /**
+     * Test the property 'orgSlug'
+     */
+    @Test
+    public void orgSlugTest() {
+        // TODO: test orgSlug
+    }
+
+    /**
+     * Test the property 'enablePagination'
+     */
+    @Test
+    public void enablePaginationTest() {
+        // TODO: test enablePagination
+    }
+
+    /**
+     * Test the property 'graphqlQuery'
+     */
+    @Test
+    public void graphqlQueryTest() {
+        // TODO: test graphqlQuery
+    }
+
+    /**
+     * Test the property 'hasNextPagePath'
+     */
+    @Test
+    public void hasNextPagePathTest() {
+        // TODO: test hasNextPagePath
+    }
+
+    /**
+     * Test the property 'paginationCursorPath'
+     */
+    @Test
+    public void paginationCursorPathTest() {
+        // TODO: test paginationCursorPath
+    }
+
+    /**
+     * Test the property 'variables'
+     */
+    @Test
+    public void variablesTest() {
+        // TODO: test variables
     }
 
     /**
@@ -424,14 +727,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void resultTest() {
         // TODO: test result
-    }
-
-    /**
-     * Test the property 'severity'
-     */
-    @Test
-    public void severityTest() {
-        // TODO: test severity
     }
 
     /**
@@ -491,6 +786,134 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'accountId'
+     */
+    @Test
+    public void accountIdTest() {
+        // TODO: test accountId
+    }
+
+    /**
+     * Test the property 'zoneIds'
+     */
+    @Test
+    public void zoneIdsTest() {
+        // TODO: test zoneIds
+    }
+
+    /**
+     * Test the property 'includeBotFields'
+     */
+    @Test
+    public void includeBotFieldsTest() {
+        // TODO: test includeBotFields
+    }
+
+    /**
+     * Test the property 'zoneId'
+     */
+    @Test
+    public void zoneIdTest() {
+        // TODO: test zoneId
+    }
+
+    /**
+     * Test the property 'fields'
+     */
+    @Test
+    public void fieldsTest() {
+        // TODO: test fields
+    }
+
+    /**
+     * Test the property 'excludeCdnCgi'
+     */
+    @Test
+    public void excludeCdnCgiTest() {
+        // TODO: test excludeCdnCgi
+    }
+
+    /**
+     * Test the property 'excludeIssueType'
+     */
+    @Test
+    public void excludeIssueTypeTest() {
+        // TODO: test excludeIssueType
+    }
+
+    /**
+     * Test the property 'excludeSeverity'
+     */
+    @Test
+    public void excludeSeverityTest() {
+        // TODO: test excludeSeverity
+    }
+
+    /**
+     * Test the property 'issueType'
+     */
+    @Test
+    public void issueTypeTest() {
+        // TODO: test issueType
+    }
+
+    /**
+     * Test the property 'filterMyScans'
+     */
+    @Test
+    public void filterMyScansTest() {
+        // TODO: test filterMyScans
+    }
+
+    /**
+     * Test the property 'parentEntityId'
+     */
+    @Test
+    public void parentEntityIdTest() {
+        // TODO: test parentEntityId
+    }
+
+    /**
+     * Test the property 'parentEntityType'
+     */
+    @Test
+    public void parentEntityTypeTest() {
+        // TODO: test parentEntityType
+    }
+
+    /**
+     * Test the property 'orgId'
+     */
+    @Test
+    public void orgIdTest() {
+        // TODO: test orgId
+    }
+
+    /**
+     * Test the property 'userPoolId'
+     */
+    @Test
+    public void userPoolIdTest() {
+        // TODO: test userPoolId
+    }
+
+    /**
+     * Test the property 'apiKeyId'
+     */
+    @Test
+    public void apiKeyIdTest() {
+        // TODO: test apiKeyId
+    }
+
+    /**
+     * Test the property 'domainName'
+     */
+    @Test
+    public void domainNameTest() {
+        // TODO: test domainName
+    }
+
+    /**
      * Test the property 'awsQueueUrl'
      */
     @Test
@@ -523,35 +946,27 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'environment'
+     */
+    @Test
+    public void environmentTest() {
+        // TODO: test environment
+    }
+
+    /**
+     * Test the property 'userId'
+     */
+    @Test
+    public void userIdTest() {
+        // TODO: test userId
+    }
+
+    /**
      * Test the property 'category'
      */
     @Test
     public void categoryTest() {
         // TODO: test category
-    }
-
-    /**
-     * Test the property 'rate'
-     */
-    @Test
-    public void rateTest() {
-        // TODO: test rate
-    }
-
-    /**
-     * Test the property 'recordType'
-     */
-    @Test
-    public void recordTypeTest() {
-        // TODO: test recordType
-    }
-
-    /**
-     * Test the property 'customTemplate'
-     */
-    @Test
-    public void customTemplateTest() {
-        // TODO: test customTemplate
     }
 
     /**
@@ -563,11 +978,11 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'organizationId'
+     * Test the property 'namespace'
      */
     @Test
-    public void organizationIdTest() {
-        // TODO: test organizationId
+    public void namespaceTest() {
+        // TODO: test namespace
     }
 
     /**
@@ -603,35 +1018,11 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'storyId'
+     * Test the property 'fleetUrl'
      */
     @Test
-    public void storyIdTest() {
-        // TODO: test storyId
-    }
-
-    /**
-     * Test the property 'teamId'
-     */
-    @Test
-    public void teamIdTest() {
-        // TODO: test teamId
-    }
-
-    /**
-     * Test the property 'tenantUrl'
-     */
-    @Test
-    public void tenantUrlTest() {
-        // TODO: test tenantUrl
-    }
-
-    /**
-     * Test the property 'orgSlug'
-     */
-    @Test
-    public void orgSlugTest() {
-        // TODO: test orgSlug
+    public void fleetUrlTest() {
+        // TODO: test fleetUrl
     }
 
     /**
@@ -640,6 +1031,118 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void repoTest() {
         // TODO: test repo
+    }
+
+    /**
+     * Test the property 'confidential'
+     */
+    @Test
+    public void confidentialTest() {
+        // TODO: test confidential
+    }
+
+    /**
+     * Test the property 'gitlabUrl'
+     */
+    @Test
+    public void gitlabUrlTest() {
+        // TODO: test gitlabUrl
+    }
+
+    /**
+     * Test the property 'projectId'
+     */
+    @Test
+    public void projectIdTest() {
+        // TODO: test projectId
+    }
+
+    /**
+     * Test the property 'state'
+     */
+    @Test
+    public void stateTest() {
+        // TODO: test state
+    }
+
+    /**
+     * Test the property 'withLabelDetails'
+     */
+    @Test
+    public void withLabelDetailsTest() {
+        // TODO: test withLabelDetails
+    }
+
+    /**
+     * Test the property 'bucketName'
+     */
+    @Test
+    public void bucketNameTest() {
+        // TODO: test bucketName
+    }
+
+    /**
+     * Test the property 'analyzerArn'
+     */
+    @Test
+    public void analyzerArnTest() {
+        // TODO: test analyzerArn
+    }
+
+    /**
+     * Test the property 'filters'
+     */
+    @Test
+    public void filtersTest() {
+        // TODO: test filters
+    }
+
+    /**
+     * Test the property 'alertType'
+     */
+    @Test
+    public void alertTypeTest() {
+        // TODO: test alertType
+    }
+
+    /**
+     * Test the property 'embed'
+     */
+    @Test
+    public void embedTest() {
+        // TODO: test embed
+    }
+
+    /**
+     * Test the property 'primaryEntityType'
+     */
+    @Test
+    public void primaryEntityTypeTest() {
+        // TODO: test primaryEntityType
+    }
+
+    /**
+     * Test the property 'primaryEntityValue'
+     */
+    @Test
+    public void primaryEntityValueTest() {
+        // TODO: test primaryEntityValue
+    }
+
+    /**
+     * Test the property 'severities'
+     */
+    @Test
+    public void severitiesTest() {
+        // TODO: test severities
+    }
+
+    /**
+     * Test the property 'severityFilter'
+     */
+    @Test
+    public void severityFilterTest() {
+        // TODO: test severityFilter
     }
 
     /**
@@ -747,14 +1250,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'severities'
-     */
-    @Test
-    public void severitiesTest() {
-        // TODO: test severities
-    }
-
-    /**
      * Test the property 'stackLayers'
      */
     @Test
@@ -771,11 +1266,155 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'kmsType'
+     */
+    @Test
+    public void kmsTypeTest() {
+        // TODO: test kmsType
+    }
+
+    /**
+     * Test the property 'auditLogTypes'
+     */
+    @Test
+    public void auditLogTypesTest() {
+        // TODO: test auditLogTypes
+    }
+
+    /**
      * Test the property 'logType'
      */
     @Test
     public void logTypeTest() {
         // TODO: test logType
+    }
+
+    /**
+     * Test the property 'endpoint'
+     */
+    @Test
+    public void endpointTest() {
+        // TODO: test endpoint
+    }
+
+    /**
+     * Test the property 'skipSslVerification'
+     */
+    @Test
+    public void skipSslVerificationTest() {
+        // TODO: test skipSslVerification
+    }
+
+    /**
+     * Test the property 'usePathStyle'
+     */
+    @Test
+    public void usePathStyleTest() {
+        // TODO: test usePathStyle
+    }
+
+    /**
+     * Test the property 'subdomain'
+     */
+    @Test
+    public void subdomainTest() {
+        // TODO: test subdomain
+    }
+
+    /**
+     * Test the property 'categoryType'
+     */
+    @Test
+    public void categoryTypeTest() {
+        // TODO: test categoryType
+    }
+
+    /**
+     * Test the property 'domain'
+     */
+    @Test
+    public void domainTest() {
+        // TODO: test domain
+    }
+
+    /**
+     * Test the property 'username'
+     */
+    @Test
+    public void usernameTest() {
+        // TODO: test username
+    }
+
+    /**
+     * Test the property 'githubAppInstallationId'
+     */
+    @Test
+    public void githubAppInstallationIdTest() {
+        // TODO: test githubAppInstallationId
+    }
+
+    /**
+     * Test the property 'githubClientId'
+     */
+    @Test
+    public void githubClientIdTest() {
+        // TODO: test githubClientId
+    }
+
+    /**
+     * Test the property 'domainUrl'
+     */
+    @Test
+    public void domainUrlTest() {
+        // TODO: test domainUrl
+    }
+
+    /**
+     * Test the property 'topic'
+     */
+    @Test
+    public void topicTest() {
+        // TODO: test topic
+    }
+
+    /**
+     * Test the property 'evaluationContextIdentifier'
+     */
+    @Test
+    public void evaluationContextIdentifierTest() {
+        // TODO: test evaluationContextIdentifier
+    }
+
+    /**
+     * Test the property 'includeInactive'
+     */
+    @Test
+    public void includeInactiveTest() {
+        // TODO: test includeInactive
+    }
+
+    /**
+     * Test the property 'includePlannedDeletion'
+     */
+    @Test
+    public void includePlannedDeletionTest() {
+        // TODO: test includePlannedDeletion
+    }
+
+    /**
+     * Test the property 'hostName'
+     */
+    @Test
+    public void hostNameTest() {
+        // TODO: test hostName
+    }
+
+    /**
+     * Test the property 'teamId'
+     */
+    @Test
+    public void teamIdTest() {
+        // TODO: test teamId
     }
 
     /**
@@ -819,6 +1458,30 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'rate'
+     */
+    @Test
+    public void rateTest() {
+        // TODO: test rate
+    }
+
+    /**
+     * Test the property 'recordType'
+     */
+    @Test
+    public void recordTypeTest() {
+        // TODO: test recordType
+    }
+
+    /**
+     * Test the property 'customTemplate'
+     */
+    @Test
+    public void customTemplateTest() {
+        // TODO: test customTemplate
+    }
+
+    /**
      * Test the property 'userRoleOption'
      */
     @Test
@@ -835,11 +1498,99 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'fullSync'
+     * Test the property 'operationNames'
      */
     @Test
-    public void fullSyncTest() {
-        // TODO: test fullSync
+    public void operationNamesTest() {
+        // TODO: test operationNames
+    }
+
+    /**
+     * Test the property 'tenantDomain'
+     */
+    @Test
+    public void tenantDomainTest() {
+        // TODO: test tenantDomain
+    }
+
+    /**
+     * Test the property 'userIds'
+     */
+    @Test
+    public void userIdsTest() {
+        // TODO: test userIds
+    }
+
+    /**
+     * Test the property 'storyId'
+     */
+    @Test
+    public void storyIdTest() {
+        // TODO: test storyId
+    }
+
+    /**
+     * Test the property 'tenantUrl'
+     */
+    @Test
+    public void tenantUrlTest() {
+        // TODO: test tenantUrl
+    }
+
+    /**
+     * Test the property 'actorSid'
+     */
+    @Test
+    public void actorSidTest() {
+        // TODO: test actorSid
+    }
+
+    /**
+     * Test the property 'replicationStartTime'
+     */
+    @Test
+    public void replicationStartTimeTest() {
+        // TODO: test replicationStartTime
+    }
+
+    /**
+     * Test the property 'resourceSid'
+     */
+    @Test
+    public void resourceSidTest() {
+        // TODO: test resourceSid
+    }
+
+    /**
+     * Test the property 'instanceName'
+     */
+    @Test
+    public void instanceNameTest() {
+        // TODO: test instanceName
+    }
+
+    /**
+     * Test the property 'streams'
+     */
+    @Test
+    public void streamsTest() {
+        // TODO: test streams
+    }
+
+    /**
+     * Test the property 'withPayload'
+     */
+    @Test
+    public void withPayloadTest() {
+        // TODO: test withPayload
+    }
+
+    /**
+     * Test the property 'customerId'
+     */
+    @Test
+    public void customerIdTest() {
+        // TODO: test customerId
     }
 
     /**
@@ -848,14 +1599,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void assetStatusTest() {
         // TODO: test assetStatus
-    }
-
-    /**
-     * Test the property 'assetType'
-     */
-    @Test
-    public void assetTypeTest() {
-        // TODO: test assetType
     }
 
     /**
@@ -872,6 +1615,22 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void vendorSeverityTest() {
         // TODO: test vendorSeverity
+    }
+
+    /**
+     * Test the property 'emailAddress'
+     */
+    @Test
+    public void emailAddressTest() {
+        // TODO: test emailAddress
+    }
+
+    /**
+     * Test the property 'subDomain'
+     */
+    @Test
+    public void subDomainTest() {
+        // TODO: test subDomain
     }
 
 }

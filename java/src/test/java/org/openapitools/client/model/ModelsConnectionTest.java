@@ -20,7 +20,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsConnectionMetadata;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -63,14 +62,6 @@ public class ModelsConnectionTest {
     }
 
     /**
-     * Test the property 'metadata'
-     */
-    @Test
-    public void metadataTest() {
-        // TODO: test metadata
-    }
-
-    /**
      * Test the property 'name'
      */
     @Test
@@ -79,11 +70,27 @@ public class ModelsConnectionTest {
     }
 
     /**
-     * Test the property 'thirdPartyId'
+     * Test the property 'organizationId'
      */
     @Test
-    public void thirdPartyIdTest() {
-        // TODO: test thirdPartyId
+    public void organizationIdTest() {
+        // TODO: test organizationId
+    }
+
+    /**
+     * Test the property 'samlEntityId'
+     */
+    @Test
+    public void samlEntityIdTest() {
+        // TODO: test samlEntityId
+    }
+
+    /**
+     * Test the property 'samlMetadataUrl'
+     */
+    @Test
+    public void samlMetadataUrlTest() {
+        // TODO: test samlMetadataUrl
     }
 
     /**

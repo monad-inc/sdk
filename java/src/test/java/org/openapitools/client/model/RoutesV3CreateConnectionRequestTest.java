@@ -20,7 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.AuthenticationtypesConnectionConfig;
+import org.openapitools.client.model.RoutesV3CreateConnectionRequestSaml;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -39,14 +39,6 @@ public class RoutesV3CreateConnectionRequestTest {
     }
 
     /**
-     * Test the property 'config'
-     */
-    @Test
-    public void configTest() {
-        // TODO: test config
-    }
-
-    /**
      * Test the property 'description'
      */
     @Test
@@ -60,6 +52,14 @@ public class RoutesV3CreateConnectionRequestTest {
     @Test
     public void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'saml'
+     */
+    @Test
+    public void samlTest() {
+        // TODO: test saml
     }
 
 }

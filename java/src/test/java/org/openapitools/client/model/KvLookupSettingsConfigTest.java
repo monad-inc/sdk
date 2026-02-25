@@ -54,11 +54,11 @@ public class KvLookupSettingsConfigTest {
     }
 
     /**
-     * Test the property 'joinKey'
+     * Test the property 'joinPath'
      */
     @Test
-    public void joinKeyTest() {
-        // TODO: test joinKey
+    public void joinPathTest() {
+        // TODO: test joinPath
     }
 
     /**
@@ -67,6 +67,14 @@ public class KvLookupSettingsConfigTest {
     @Test
     public void kvLookupOutputIdTest() {
         // TODO: test kvLookupOutputId
+    }
+
+    /**
+     * Test the property 'noMatchResponse'
+     */
+    @Test
+    public void noMatchResponseTest() {
+        // TODO: test noMatchResponse
     }
 
 }

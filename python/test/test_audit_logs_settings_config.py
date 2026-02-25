@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -40,12 +40,13 @@ class TestAuditLogsSettingsConfig(unittest.TestCase):
                     ''
                     ],
                 actor = '',
+                backfill_start_time = '',
                 country = '',
-                created_after = '',
                 enterprise = '',
                 include = '',
                 organization = '',
                 repository = '',
+                use_synthetic_data = True,
                 user = ''
             )
         else:

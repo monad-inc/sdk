@@ -36,7 +36,9 @@ class TestPaloAltoDataSecurityAlertsSettingsConfig(unittest.TestCase):
         model = PaloAltoDataSecurityAlertsSettingsConfig()
         if include_optional:
             return PaloAltoDataSecurityAlertsSettingsConfig(
-                base_url = ''
+                backfill_start_time = '',
+                base_url = '',
+                use_synthetic_data = True
             )
         else:
             return PaloAltoDataSecurityAlertsSettingsConfig(

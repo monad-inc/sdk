@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -20,6 +20,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.BatchConfigBatchConfig;
+import org.openapitools.client.model.FormatterFormatConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -35,6 +37,14 @@ public class S3SettingsConfigTest {
     @Test
     public void testS3SettingsConfig() {
         // TODO: test S3SettingsConfig
+    }
+
+    /**
+     * Test the property 'batchConfig'
+     */
+    @Test
+    public void batchConfigTest() {
+        // TODO: test batchConfig
     }
 
     /**
@@ -54,11 +64,11 @@ public class S3SettingsConfigTest {
     }
 
     /**
-     * Test the property 'format'
+     * Test the property 'formatConfig'
      */
     @Test
-    public void formatTest() {
-        // TODO: test format
+    public void formatConfigTest() {
+        // TODO: test formatConfig
     }
 
     /**

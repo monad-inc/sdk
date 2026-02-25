@@ -38,7 +38,6 @@ class TestModelsStorageTypeCostConfig(unittest.TestCase):
             return ModelsStorageTypeCostConfig(
                 costs = [
                     monad.models.models/storage_type_cost_entry.models.StorageTypeCostEntry(
-                        cost_per_byte = 1.337, 
                         cost_per_gb = 1.337, 
                         id = '', 
                         storage_type = '', )

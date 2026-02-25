@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -19,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,6 +38,30 @@ public class RoutesV2ApplyTransformationResponseTest {
     @Test
     public void testRoutesV2ApplyTransformationResponse() {
         // TODO: test RoutesV2ApplyTransformationResponse
+    }
+
+    /**
+     * Test the property 'bytesAfter'
+     */
+    @Test
+    public void bytesAfterTest() {
+        // TODO: test bytesAfter
+    }
+
+    /**
+     * Test the property 'bytesBefore'
+     */
+    @Test
+    public void bytesBeforeTest() {
+        // TODO: test bytesBefore
+    }
+
+    /**
+     * Test the property 'percentageChange'
+     */
+    @Test
+    public void percentageChangeTest() {
+        // TODO: test percentageChange
     }
 
     /**

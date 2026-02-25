@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -37,6 +37,7 @@ class TestAuthenticationtypesTokenResponse(unittest.TestCase):
         if include_optional:
             return AuthenticationtypesTokenResponse(
                 access_token = '',
+                email = '',
                 expires_in = 56,
                 id_token = '',
                 refresh_token = '',

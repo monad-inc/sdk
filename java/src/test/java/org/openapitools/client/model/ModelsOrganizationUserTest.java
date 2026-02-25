@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsUserAuthProvider;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -38,11 +39,19 @@ public class ModelsOrganizationUserTest {
     }
 
     /**
-     * Test the property 'authId'
+     * Test the property 'authProvider'
      */
     @Test
-    public void authIdTest() {
-        // TODO: test authId
+    public void authProviderTest() {
+        // TODO: test authProvider
+    }
+
+    /**
+     * Test the property 'connectionId'
+     */
+    @Test
+    public void connectionIdTest() {
+        // TODO: test connectionId
     }
 
     /**
@@ -70,11 +79,43 @@ public class ModelsOrganizationUserTest {
     }
 
     /**
+     * Test the property 'inherited'
+     */
+    @Test
+    public void inheritedTest() {
+        // TODO: test inherited
+    }
+
+    /**
      * Test the property 'roleId'
      */
     @Test
     public void roleIdTest() {
         // TODO: test roleId
+    }
+
+    /**
+     * Test the property 'roleName'
+     */
+    @Test
+    public void roleNameTest() {
+        // TODO: test roleName
+    }
+
+    /**
+     * Test the property 'sourceOrganizationId'
+     */
+    @Test
+    public void sourceOrganizationIdTest() {
+        // TODO: test sourceOrganizationId
+    }
+
+    /**
+     * Test the property 'sourceOrganizationName'
+     */
+    @Test
+    public void sourceOrganizationNameTest() {
+        // TODO: test sourceOrganizationName
     }
 
     /**

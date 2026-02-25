@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -40,7 +40,8 @@ class TestActorsInfoSettingsConfig(unittest.TestCase):
                 cloud_type = '',
                 cron = '',
                 sort = '',
-                target_industries = ''
+                target_industries = '',
+                use_synthetic_data = True
             )
         else:
             return ActorsInfoSettingsConfig(

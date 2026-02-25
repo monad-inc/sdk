@@ -38,6 +38,14 @@ public class ModelsUserAuthProviderTest {
     }
 
     /**
+     * Test the property 'connectionId'
+     */
+    @Test
+    public void connectionIdTest() {
+        // TODO: test connectionId
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test

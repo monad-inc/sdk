@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,6 +36,7 @@ class TestRoutesCreateOrganizationRequest(unittest.TestCase):
         model = RoutesCreateOrganizationRequest()
         if include_optional:
             return RoutesCreateOrganizationRequest(
+                billing_account_id = '',
                 description = '',
                 name = ''
             )

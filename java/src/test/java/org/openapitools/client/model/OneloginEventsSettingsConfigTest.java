@@ -45,4 +45,12 @@ public class OneloginEventsSettingsConfigTest {
         // TODO: test subdomain
     }
 
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
+    }
+
 }

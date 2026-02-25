@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,6 +36,7 @@ class TestIssuesSettingsConfig(unittest.TestCase):
         model = IssuesSettingsConfig()
         if include_optional:
             return IssuesSettingsConfig(
+                backfill_start_time = '',
                 control_ids = [
                     ''
                     ],
@@ -72,7 +73,8 @@ class TestIssuesSettingsConfig(unittest.TestCase):
                 status = [
                     'OPEN'
                     ],
-                tenant_data_center = ''
+                tenant_data_center = '',
+                use_synthetic_data = True
             )
         else:
             return IssuesSettingsConfig(

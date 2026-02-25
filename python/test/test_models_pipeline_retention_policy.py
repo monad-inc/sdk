@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -37,9 +37,7 @@ class TestModelsPipelineRetentionPolicy(unittest.TestCase):
         if include_optional:
             return ModelsPipelineRetentionPolicy(
                 stream_age_limit = 56,
-                stream_replicas = 56,
-                stream_size_limit = monad.models.resource/quantity.resource.Quantity(
-                    format = 'DecimalExponent', )
+                stream_size_limit = ''
             )
         else:
             return ModelsPipelineRetentionPolicy(

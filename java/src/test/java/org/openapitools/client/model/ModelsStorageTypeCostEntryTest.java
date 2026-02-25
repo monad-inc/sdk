@@ -39,14 +39,6 @@ public class ModelsStorageTypeCostEntryTest {
     }
 
     /**
-     * Test the property 'costPerByte'
-     */
-    @Test
-    public void costPerByteTest() {
-        // TODO: test costPerByte
-    }
-
-    /**
      * Test the property 'costPerGb'
      */
     @Test

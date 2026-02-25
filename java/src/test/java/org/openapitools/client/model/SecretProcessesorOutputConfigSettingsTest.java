@@ -21,17 +21,29 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.openapitools.client.model.AbsSettingsConfig;
+import org.openapitools.client.model.AwssqsoutputSettingsConfig;
+import org.openapitools.client.model.AxiomSettingsConfig;
+import org.openapitools.client.model.BackblazeSettingsConfig;
 import org.openapitools.client.model.BatchConfigBatchConfig;
 import org.openapitools.client.model.BigquerySettingsConfig;
 import org.openapitools.client.model.CriblHttpSettingsConfig;
+import org.openapitools.client.model.DatadogSettingsConfig;
 import org.openapitools.client.model.ElasticsearchSettingsConfig;
 import org.openapitools.client.model.FormatterFormatConfig;
+import org.openapitools.client.model.GoogleCloudStorageOutputSettingsConfig;
+import org.openapitools.client.model.HttpHeaders;
 import org.openapitools.client.model.HttpSettingsConfig;
+import org.openapitools.client.model.KvLookupOutputSettingsConfig;
 import org.openapitools.client.model.NextGenSiemSettingsConfig;
+import org.openapitools.client.model.ObjectStorageSettingsConfig;
 import org.openapitools.client.model.OpensearchSettingsConfig;
+import org.openapitools.client.model.PagerdutyAlertsConfig;
+import org.openapitools.client.model.PagerdutySettingsConfig;
+import org.openapitools.client.model.PagerdutySummaryConfig;
+import org.openapitools.client.model.PantherSettingsConfig;
 import org.openapitools.client.model.ParquetParquetFormatter;
 import org.openapitools.client.model.PostgresqlSettingsConfig;
 import org.openapitools.client.model.S3SettingsConfig;
@@ -41,6 +53,7 @@ import org.openapitools.client.model.SentinelSettingsConfig;
 import org.openapitools.client.model.SnowflakeOutputSettingsConfig;
 import org.openapitools.client.model.SplunkSettingsConfig;
 import org.openapitools.client.model.SumologicSettingsConfig;
+import org.openapitools.client.model.SumologicSourceMetadata;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -59,11 +72,115 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'accountUrl'
+     */
+    @Test
+    public void accountUrlTest() {
+        // TODO: test accountUrl
+    }
+
+    /**
+     * Test the property 'batchConfig'
+     */
+    @Test
+    public void batchConfigTest() {
+        // TODO: test batchConfig
+    }
+
+    /**
+     * Test the property 'compression'
+     */
+    @Test
+    public void compressionTest() {
+        // TODO: test compression
+    }
+
+    /**
+     * Test the property 'container'
+     */
+    @Test
+    public void containerTest() {
+        // TODO: test container
+    }
+
+    /**
+     * Test the property 'formatConfig'
+     */
+    @Test
+    public void formatConfigTest() {
+        // TODO: test formatConfig
+    }
+
+    /**
+     * Test the property 'partitionFormat'
+     */
+    @Test
+    public void partitionFormatTest() {
+        // TODO: test partitionFormat
+    }
+
+    /**
+     * Test the property 'prefix'
+     */
+    @Test
+    public void prefixTest() {
+        // TODO: test prefix
+    }
+
+    /**
+     * Test the property 'messageGroupId'
+     */
+    @Test
+    public void messageGroupIdTest() {
+        // TODO: test messageGroupId
+    }
+
+    /**
+     * Test the property 'queueType'
+     */
+    @Test
+    public void queueTypeTest() {
+        // TODO: test queueType
+    }
+
+    /**
+     * Test the property 'queueUrl'
+     */
+    @Test
+    public void queueUrlTest() {
+        // TODO: test queueUrl
+    }
+
+    /**
+     * Test the property 'region'
+     */
+    @Test
+    public void regionTest() {
+        // TODO: test region
+    }
+
+    /**
+     * Test the property 'roleArn'
+     */
+    @Test
+    public void roleArnTest() {
+        // TODO: test roleArn
+    }
+
+    /**
      * Test the property 'dataset'
      */
     @Test
     public void datasetTest() {
         // TODO: test dataset
+    }
+
+    /**
+     * Test the property 'bucket'
+     */
+    @Test
+    public void bucketTest() {
+        // TODO: test bucket
     }
 
     /**
@@ -104,6 +221,46 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void portTest() {
         // TODO: test port
+    }
+
+    /**
+     * Test the property 'ddsource'
+     */
+    @Test
+    public void ddsourceTest() {
+        // TODO: test ddsource
+    }
+
+    /**
+     * Test the property 'ddtags'
+     */
+    @Test
+    public void ddtagsTest() {
+        // TODO: test ddtags
+    }
+
+    /**
+     * Test the property 'domainUrl'
+     */
+    @Test
+    public void domainUrlTest() {
+        // TODO: test domainUrl
+    }
+
+    /**
+     * Test the property 'hostname'
+     */
+    @Test
+    public void hostnameTest() {
+        // TODO: test hostname
+    }
+
+    /**
+     * Test the property 'service'
+     */
+    @Test
+    public void serviceTest() {
+        // TODO: test service
     }
 
     /**
@@ -160,6 +317,14 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void usernameTest() {
         // TODO: test username
+    }
+
+    /**
+     * Test the property 'format'
+     */
+    @Test
+    public void formatTest() {
+        // TODO: test format
     }
 
     /**
@@ -235,6 +400,46 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'keyField'
+     */
+    @Test
+    public void keyFieldTest() {
+        // TODO: test keyField
+    }
+
+    /**
+     * Test the property 'ttl'
+     */
+    @Test
+    public void ttlTest() {
+        // TODO: test ttl
+    }
+
+    /**
+     * Test the property 'valueField'
+     */
+    @Test
+    public void valueFieldTest() {
+        // TODO: test valueField
+    }
+
+    /**
+     * Test the property 'skipSslVerification'
+     */
+    @Test
+    public void skipSslVerificationTest() {
+        // TODO: test skipSslVerification
+    }
+
+    /**
+     * Test the property 'usePathStyle'
+     */
+    @Test
+    public void usePathStyleTest() {
+        // TODO: test usePathStyle
+    }
+
+    /**
      * Test the property 'authMode'
      */
     @Test
@@ -243,19 +448,35 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'region'
+     * Test the property 'alertsConfig'
      */
     @Test
-    public void regionTest() {
-        // TODO: test region
+    public void alertsConfigTest() {
+        // TODO: test alertsConfig
     }
 
     /**
-     * Test the property 'roleArn'
+     * Test the property 'defaultEventType'
      */
     @Test
-    public void roleArnTest() {
-        // TODO: test roleArn
+    public void defaultEventTypeTest() {
+        // TODO: test defaultEventType
+    }
+
+    /**
+     * Test the property 'summaryConfig'
+     */
+    @Test
+    public void summaryConfigTest() {
+        // TODO: test summaryConfig
+    }
+
+    /**
+     * Test the property 'httpIngestUrl'
+     */
+    @Test
+    public void httpIngestUrlTest() {
+        // TODO: test httpIngestUrl
     }
 
     /**
@@ -288,54 +509,6 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void userTest() {
         // TODO: test user
-    }
-
-    /**
-     * Test the property 'batchConfig'
-     */
-    @Test
-    public void batchConfigTest() {
-        // TODO: test batchConfig
-    }
-
-    /**
-     * Test the property 'bucket'
-     */
-    @Test
-    public void bucketTest() {
-        // TODO: test bucket
-    }
-
-    /**
-     * Test the property 'compression'
-     */
-    @Test
-    public void compressionTest() {
-        // TODO: test compression
-    }
-
-    /**
-     * Test the property 'formatConfig'
-     */
-    @Test
-    public void formatConfigTest() {
-        // TODO: test formatConfig
-    }
-
-    /**
-     * Test the property 'partitionFormat'
-     */
-    @Test
-    public void partitionFormatTest() {
-        // TODO: test partitionFormat
-    }
-
-    /**
-     * Test the property 'prefix'
-     */
-    @Test
-    public void prefixTest() {
-        // TODO: test prefix
     }
 
     /**
@@ -403,6 +576,14 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'caseInsensitivity'
+     */
+    @Test
+    public void caseInsensitivityTest() {
+        // TODO: test caseInsensitivity
+    }
+
+    /**
      * Test the property 'role'
      */
     @Test
@@ -448,6 +629,14 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void toCreateTest() {
         // TODO: test toCreate
+    }
+
+    /**
+     * Test the property 'sourceMetadata'
+     */
+    @Test
+    public void sourceMetadataTest() {
+        // TODO: test sourceMetadata
     }
 
 }

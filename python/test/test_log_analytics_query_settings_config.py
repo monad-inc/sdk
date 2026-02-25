@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -38,6 +38,7 @@ class TestLogAnalyticsQuerySettingsConfig(unittest.TestCase):
             return LogAnalyticsQuerySettingsConfig(
                 query = '',
                 tenant_id = '',
+                use_synthetic_data = True,
                 workspace_id = ''
             )
         else:

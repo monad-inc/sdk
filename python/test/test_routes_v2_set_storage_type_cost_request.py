@@ -38,7 +38,6 @@ class TestRoutesV2SetStorageTypeCostRequest(unittest.TestCase):
             return RoutesV2SetStorageTypeCostRequest(
                 costs = {
                     'key' : monad.models.routes_v2/set_storage_type_cost_entry.routesV2.SetStorageTypeCostEntry(
-                        cost_per_byte = 1.337, 
                         cost_per_gb = 1.337, )
                     }
             )

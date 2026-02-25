@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,7 +36,8 @@ class TestAuthLogsSettingsConfig(unittest.TestCase):
         model = AuthLogsSettingsConfig()
         if include_optional:
             return AuthLogsSettingsConfig(
-                host = ''
+                host = '',
+                use_synthetic_data = True
             )
         else:
             return AuthLogsSettingsConfig(

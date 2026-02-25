@@ -36,7 +36,15 @@ class TestGithubComMonadIncCorePkgTypesModelsUser(unittest.TestCase):
         model = GithubComMonadIncCorePkgTypesModelsUser()
         if include_optional:
             return GithubComMonadIncCorePkgTypesModelsUser(
-                auth_id = '',
+                auth_providers = [
+                    monad.models.models/user_auth_provider.models.UserAuthProvider(
+                        connection_id = '', 
+                        created_at = '', 
+                        id = '', 
+                        provider = '', 
+                        provider_id = '', 
+                        user_id = '', )
+                    ],
                 created_at = '',
                 email = '',
                 id = '',

@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.ModelsPipelineEdge;
 import org.openapitools.client.model.ModelsPipelineNode;
+import org.openapitools.client.model.ModelsPipelineRetentionPolicy;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -42,11 +43,35 @@ public class ModelsPipelineConfigV2Test {
     }
 
     /**
+     * Test the property 'billingAccountId'
+     */
+    @Test
+    public void billingAccountIdTest() {
+        // TODO: test billingAccountId
+    }
+
+    /**
+     * Test the property 'componentTier'
+     */
+    @Test
+    public void componentTierTest() {
+        // TODO: test componentTier
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test
     public void createdAtTest() {
         // TODO: test createdAt
+    }
+
+    /**
+     * Test the property 'cronSchedule'
+     */
+    @Test
+    public void cronScheduleTest() {
+        // TODO: test cronSchedule
     }
 
     /**
@@ -82,11 +107,27 @@ public class ModelsPipelineConfigV2Test {
     }
 
     /**
+     * Test the property 'isSynthetic'
+     */
+    @Test
+    public void isSyntheticTest() {
+        // TODO: test isSynthetic
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test
     public void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'nextCronRunAt'
+     */
+    @Test
+    public void nextCronRunAtTest() {
+        // TODO: test nextCronRunAt
     }
 
     /**
@@ -111,6 +152,14 @@ public class ModelsPipelineConfigV2Test {
     @Test
     public void organizationNameTest() {
         // TODO: test organizationName
+    }
+
+    /**
+     * Test the property 'retentionPolicy'
+     */
+    @Test
+    public void retentionPolicyTest() {
+        // TODO: test retentionPolicy
     }
 
     /**

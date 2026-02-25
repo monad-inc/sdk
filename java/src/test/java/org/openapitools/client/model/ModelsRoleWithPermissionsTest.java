@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.ModelsPermission;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsPermission;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -86,6 +86,14 @@ public class ModelsRoleWithPermissionsTest {
     @Test
     public void permissionsTest() {
         // TODO: test permissions
+    }
+
+    /**
+     * Test the property '_protected'
+     */
+    @Test
+    public void _protectedTest() {
+        // TODO: test _protected
     }
 
     /**

@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,7 +36,9 @@ class TestModelsPipeline(unittest.TestCase):
         model = ModelsPipeline()
         if include_optional:
             return ModelsPipeline(
+                component_tier = 56,
                 created_at = '',
+                cron_schedule = '',
                 description = '',
                 enabled = True,
                 id = '',
@@ -47,10 +49,6 @@ class TestModelsPipeline(unittest.TestCase):
             )
         else:
             return ModelsPipeline(
-                enabled = True,
-                id = '',
-                name = '',
-                organization_id = '',
         )
         """
 

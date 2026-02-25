@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -40,18 +40,24 @@ class TestModelsBillingAccountList(unittest.TestCase):
                     monad.models.models/billing_account.models.BillingAccount(
                         billing_email = '', 
                         created_at = '', 
+                        current_billing_cycle_end = '', 
+                        current_billing_cycle_start = '', 
+                        deleted_at = '', 
                         description = '', 
                         has_payment_method = True, 
                         id = '', 
                         name = '', 
                         next_product = monad.models.models/billing_product.models.BillingProduct(
+                            contact_email = '', 
                             created_at = '', 
                             description = '', 
                             features = [
                                 ''
                                 ], 
                             id = '', 
+                            is_default = True, 
                             name = '', 
+                            product_type = '', 
                             recurring_cost_cents = 56, 
                             recurring_frequency = '', 
                             slug = '', 
@@ -60,9 +66,11 @@ class TestModelsBillingAccountList(unittest.TestCase):
                             usage_unit_cost_cents = 56, ), 
                         next_product_id = '', 
                         product = monad.models.models/billing_product.models.BillingProduct(
+                            contact_email = '', 
                             created_at = '', 
                             description = '', 
                             id = '', 
+                            is_default = True, 
                             name = '', 
                             recurring_cost_cents = 56, 
                             recurring_frequency = '', 
@@ -73,6 +81,7 @@ class TestModelsBillingAccountList(unittest.TestCase):
                         product_change_after = '', 
                         product_id = '', 
                         status = '', 
+                        suspend_on = '', 
                         updated_at = '', )
                     ],
                 pagination = monad.models.models/pagination.models.Pagination(

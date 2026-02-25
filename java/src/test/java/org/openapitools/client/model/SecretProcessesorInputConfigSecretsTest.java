@@ -22,55 +22,129 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
 import org.openapitools.client.model.ActorsInfoSecretsConfig;
-import org.openapitools.client.model.AdminActivitySecretsConfig;
 import org.openapitools.client.model.AdminLogsSecretsConfig;
+import org.openapitools.client.model.AivenServiceLogsSecretsConfig;
+import org.openapitools.client.model.AlertCenterSecretsConfig;
+import org.openapitools.client.model.ArizeAuditLogsSecretsConfig;
 import org.openapitools.client.model.AuditLogsSecretsConfig;
 import org.openapitools.client.model.AuthLogsSecretsConfig;
+import org.openapitools.client.model.AwsGuarddutySecretsConfig;
+import org.openapitools.client.model.AwsS3SecretsConfig;
+import org.openapitools.client.model.AwssecurityhubSecretsConfig;
 import org.openapitools.client.model.AzureActivityLogsSecretsConfig;
+import org.openapitools.client.model.AzureBlobStorageSecretsConfig;
+import org.openapitools.client.model.AzureEventHubsSecretsConfig;
+import org.openapitools.client.model.AzureVnetFlowLogsSecretsConfig;
+import org.openapitools.client.model.BackblazeB2SecretsConfig;
+import org.openapitools.client.model.BigqueryCronSecretsConfig;
 import org.openapitools.client.model.BigqueryInputSecretsConfig;
+import org.openapitools.client.model.BitwardenEventsSecretsConfig;
 import org.openapitools.client.model.BoxEventsSecretsConfig;
 import org.openapitools.client.model.BoxUsersSecretsConfig;
+import org.openapitools.client.model.BrinqaAuditLogsSecretsConfig;
+import org.openapitools.client.model.BugsnagOrgEventsSecretsConfig;
+import org.openapitools.client.model.BuildkiteAuditLogsSecretsConfig;
+import org.openapitools.client.model.BuildkiteGraphqlInputSecretsConfig;
 import org.openapitools.client.model.CloudAssetInventorySecretsConfig;
 import org.openapitools.client.model.CloudConfigurationFindingsSecretsConfig;
 import org.openapitools.client.model.CloudLogsSecretsConfig;
+import org.openapitools.client.model.CloudResourceInventoryReportsSecretsConfig;
 import org.openapitools.client.model.CloudResourceInventorySecretsConfig;
+import org.openapitools.client.model.CloudflareDdosAttackAnalyticsSecretsConfig;
+import org.openapitools.client.model.CloudflareDnsRecordsSecretsConfig;
+import org.openapitools.client.model.CloudflareFirewallEventsSecretsConfig;
+import org.openapitools.client.model.CloudflareHttpRequestsSecretsConfig;
+import org.openapitools.client.model.CloudflarePageShieldConnectionsSecretsConfig;
+import org.openapitools.client.model.CloudflareRulesetsSecretsConfig;
+import org.openapitools.client.model.CloudflareSecurityInsightsSecretsConfig;
+import org.openapitools.client.model.CloudflareUrlScannerSecretsConfig;
+import org.openapitools.client.model.CloudflareUsersSecretsConfig;
+import org.openapitools.client.model.CloudflareZeroTrustAccessRequestsSecretsConfig;
+import org.openapitools.client.model.CloudflareZonesSecretsConfig;
+import org.openapitools.client.model.ClumioAuditLogsSecretsConfig;
+import org.openapitools.client.model.ClumioConsolidatedAlertsSecretsConfig;
+import org.openapitools.client.model.CodaAuditEventsSecretsConfig;
+import org.openapitools.client.model.CortexXsoarManagementLogsSecretsConfig;
 import org.openapitools.client.model.CrowdstrikeFdrSecretsConfig;
+import org.openapitools.client.model.CustomerEventDataSecretsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSecretsConfig;
-import org.openapitools.client.model.DetectSummariesSecretsConfig;
-import org.openapitools.client.model.DeviceActivitySecretsConfig;
 import org.openapitools.client.model.DeviceDetailsSecretsConfig;
 import org.openapitools.client.model.DevicesSecretsConfig;
-import org.openapitools.client.model.DriveActivitySecretsConfig;
+import org.openapitools.client.model.DuoSecurityActivityLogsSecretsConfig;
+import org.openapitools.client.model.EndorLabsAuditLogsSecretsConfig;
 import org.openapitools.client.model.EntraIdSecretsConfig;
 import org.openapitools.client.model.EventSecretsConfig;
-import org.openapitools.client.model.EventsLogsSecretsConfig;
+import org.openapitools.client.model.FleetdmActivityLogsSecretsConfig;
 import org.openapitools.client.model.FullScansSecretsConfig;
+import org.openapitools.client.model.GitlabIssuesSecretsConfig;
+import org.openapitools.client.model.GoogleCloudStorageSecretsConfig;
+import org.openapitools.client.model.GoogleWorkspaceSecretsConfig;
+import org.openapitools.client.model.GreenhouseAuditLogsSecretsConfig;
+import org.openapitools.client.model.IndividualAlertsSecretsConfig;
+import org.openapitools.client.model.InspectorSecretsConfig;
+import org.openapitools.client.model.IssuesReportSecretsConfig;
 import org.openapitools.client.model.IssuesSecretsConfig;
+import org.openapitools.client.model.KoiAuditLogsSecretsConfig;
 import org.openapitools.client.model.LogAnalyticsQuerySecretsConfig;
-import org.openapitools.client.model.LoginActivitySecretsConfig;
 import org.openapitools.client.model.LoginSessionsSecretsConfig;
+import org.openapitools.client.model.MerakiConfigLogsSecretsConfig;
+import org.openapitools.client.model.Microsoft365GenericSecretsConfig;
 import org.openapitools.client.model.ModelsSecret;
-import org.openapitools.client.model.OauthActivitySecretsConfig;
+import org.openapitools.client.model.ObjectStorageInputSecretsConfig;
+import org.openapitools.client.model.OfflineenrollmentlogsSecretsConfig;
+import org.openapitools.client.model.OneloginEventsSecretsConfig;
+import org.openapitools.client.model.OpalEventsSecretsConfig;
+import org.openapitools.client.model.OperationLogsSecretsConfig;
+import org.openapitools.client.model.OrgAuditLogsSecretsConfig;
+import org.openapitools.client.model.OwnbackupAccountEventsSecretsConfig;
+import org.openapitools.client.model.PagerdutyAuditRecordsSecretsConfig;
+import org.openapitools.client.model.PaloAltoDataSecurityAlertsSecretsConfig;
+import org.openapitools.client.model.PolymerSecretsConfig;
+import org.openapitools.client.model.PostmanAuditLogsSecretsConfig;
+import org.openapitools.client.model.PubsubSecretsConfig;
 import org.openapitools.client.model.RolesInfoSecretsConfig;
+import org.openapitools.client.model.RootlyAuditLogsSecretsConfig;
+import org.openapitools.client.model.SalesforceUsersSecretsConfig;
+import org.openapitools.client.model.SecretsmanagerSecretsConfig;
 import org.openapitools.client.model.SemgrepCodeFindingsSecretsConfig;
 import org.openapitools.client.model.SemgrepDeploymentsSecretsConfig;
 import org.openapitools.client.model.SemgrepProjectDetailsSecretsConfig;
 import org.openapitools.client.model.SemgrepProjectsSecretsConfig;
 import org.openapitools.client.model.SemgrepSupplyChainFindingsSecretsConfig;
+import org.openapitools.client.model.SentryOrgAuditLogsSecretsConfig;
+import org.openapitools.client.model.SlackEnterpriseAuditLogsSecretsConfig;
 import org.openapitools.client.model.SlackUsersSecretsConfig;
 import org.openapitools.client.model.SlackgroupsSecretsConfig;
 import org.openapitools.client.model.SnowflakeInputSecretsConfig;
 import org.openapitools.client.model.SnykIssuesSecretsConfig;
-import org.openapitools.client.model.SnykOrganizationsSecretsConfig;
 import org.openapitools.client.model.SnykProjectsSecretsConfig;
 import org.openapitools.client.model.SnykTargetsSecretsConfig;
 import org.openapitools.client.model.TailscaleUsersSecretsConfig;
+import org.openapitools.client.model.TaniumGraphqlInputSecretsConfig;
+import org.openapitools.client.model.TeamAccessLogsSecretsConfig;
+import org.openapitools.client.model.TeamIntegrationLogsSecretsConfig;
+import org.openapitools.client.model.TelephonyLogsSecretsConfig;
+import org.openapitools.client.model.TenableAssetsCronSecretsConfig;
 import org.openapitools.client.model.TenableAssetsSecretsConfig;
+import org.openapitools.client.model.TenableVulnerabilitiesCronSecretsConfig;
 import org.openapitools.client.model.TenableVulnerabilitiesSecretsConfig;
+import org.openapitools.client.model.TinesAuditLogsSecretsConfig;
+import org.openapitools.client.model.TinesEventsLogsSecretsConfig;
+import org.openapitools.client.model.TwilioEventsSecretsConfig;
+import org.openapitools.client.model.TwilioSendgridEmailActivitySecretsConfig;
+import org.openapitools.client.model.UniversalSecretsConfig;
 import org.openapitools.client.model.UsersInfoSecretsConfig;
 import org.openapitools.client.model.UsersSecretsConfig;
+import org.openapitools.client.model.VercelUserEventsSecretsConfig;
+import org.openapitools.client.model.VoltioAuditLogsSecretsConfig;
+import org.openapitools.client.model.VulnerabilitiesCronSecretsConfig;
 import org.openapitools.client.model.VulnerabilitiesSecretsConfig;
+import org.openapitools.client.model.VulnerabilityFindingsReportSecretsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSecretsConfig;
+import org.openapitools.client.model.WizAuditLogsSecretsConfig;
+import org.openapitools.client.model.ZendeskAuditLogsSecretsConfig;
+import org.openapitools.client.model.ZoomActivityLogsSecretsConfig;
+import org.openapitools.client.model.ZoomMeetingActivityLogsSecretsConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -105,22 +179,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     }
 
     /**
-     * Test the property 'credentialsJson'
-     */
-    @Test
-    public void credentialsJsonTest() {
-        // TODO: test credentialsJson
-    }
-
-    /**
-     * Test the property 'oauthToken'
-     */
-    @Test
-    public void oauthTokenTest() {
-        // TODO: test oauthToken
-    }
-
-    /**
      * Test the property 'integrationKey'
      */
     @Test
@@ -137,6 +195,38 @@ public class SecretProcessesorInputConfigSecretsTest {
     }
 
     /**
+     * Test the property 'authToken'
+     */
+    @Test
+    public void authTokenTest() {
+        // TODO: test authToken
+    }
+
+    /**
+     * Test the property 'credentialsJson'
+     */
+    @Test
+    public void credentialsJsonTest() {
+        // TODO: test credentialsJson
+    }
+
+    /**
+     * Test the property 'oauthToken'
+     */
+    @Test
+    public void oauthTokenTest() {
+        // TODO: test oauthToken
+    }
+
+    /**
+     * Test the property 'apiKey'
+     */
+    @Test
+    public void apiKeyTest() {
+        // TODO: test apiKey
+    }
+
+    /**
      * Test the property 'personalAccessToken'
      */
     @Test
@@ -145,11 +235,83 @@ public class SecretProcessesorInputConfigSecretsTest {
     }
 
     /**
+     * Test the property 'accessKey'
+     */
+    @Test
+    public void accessKeyTest() {
+        // TODO: test accessKey
+    }
+
+    /**
+     * Test the property 'tenantId'
+     */
+    @Test
+    public void tenantIdTest() {
+        // TODO: test tenantId
+    }
+
+    /**
+     * Test the property 'applicationKey'
+     */
+    @Test
+    public void applicationKeyTest() {
+        // TODO: test applicationKey
+    }
+
+    /**
+     * Test the property 'applicationKeyId'
+     */
+    @Test
+    public void applicationKeyIdTest() {
+        // TODO: test applicationKeyId
+    }
+
+    /**
      * Test the property 'enterpriseId'
      */
     @Test
     public void enterpriseIdTest() {
         // TODO: test enterpriseId
+    }
+
+    /**
+     * Test the property 'password'
+     */
+    @Test
+    public void passwordTest() {
+        // TODO: test password
+    }
+
+    /**
+     * Test the property 'username'
+     */
+    @Test
+    public void usernameTest() {
+        // TODO: test username
+    }
+
+    /**
+     * Test the property 'personalAuthToken'
+     */
+    @Test
+    public void personalAuthTokenTest() {
+        // TODO: test personalAuthToken
+    }
+
+    /**
+     * Test the property 'apiToken'
+     */
+    @Test
+    public void apiTokenTest() {
+        // TODO: test apiToken
+    }
+
+    /**
+     * Test the property 'accessToken'
+     */
+    @Test
+    public void accessTokenTest() {
+        // TODO: test accessToken
     }
 
     /**
@@ -169,11 +331,51 @@ public class SecretProcessesorInputConfigSecretsTest {
     }
 
     /**
-     * Test the property 'apiKey'
+     * Test the property 'rsaPrivateKey'
      */
     @Test
-    public void apiKeyTest() {
-        // TODO: test apiKey
+    public void rsaPrivateKeyTest() {
+        // TODO: test rsaPrivateKey
+    }
+
+    /**
+     * Test the property 'apiSecret'
+     */
+    @Test
+    public void apiSecretTest() {
+        // TODO: test apiSecret
+    }
+
+    /**
+     * Test the property 'harvestApiKey'
+     */
+    @Test
+    public void harvestApiKeyTest() {
+        // TODO: test harvestApiKey
+    }
+
+    /**
+     * Test the property 'githubAppPrivateKey'
+     */
+    @Test
+    public void githubAppPrivateKeyTest() {
+        // TODO: test githubAppPrivateKey
+    }
+
+    /**
+     * Test the property 'refreshToken'
+     */
+    @Test
+    public void refreshTokenTest() {
+        // TODO: test refreshToken
+    }
+
+    /**
+     * Test the property 'userOauthToken'
+     */
+    @Test
+    public void userOauthTokenTest() {
+        // TODO: test userOauthToken
     }
 
     /**
@@ -185,14 +387,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     }
 
     /**
-     * Test the property 'password'
-     */
-    @Test
-    public void passwordTest() {
-        // TODO: test password
-    }
-
-    /**
      * Test the property 'privateKey'
      */
     @Test
@@ -201,11 +395,19 @@ public class SecretProcessesorInputConfigSecretsTest {
     }
 
     /**
-     * Test the property 'accessKey'
+     * Test the property 'twilioAccountSid'
      */
     @Test
-    public void accessKeyTest() {
-        // TODO: test accessKey
+    public void twilioAccountSidTest() {
+        // TODO: test twilioAccountSid
+    }
+
+    /**
+     * Test the property 'twilioAuthToken'
+     */
+    @Test
+    public void twilioAuthTokenTest() {
+        // TODO: test twilioAuthToken
     }
 
     /**

@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -38,6 +38,14 @@ public class UsersSettingsConfigTest {
     }
 
     /**
+     * Test the property 'authType'
+     */
+    @Test
+    public void authTypeTest() {
+        // TODO: test authType
+    }
+
+    /**
      * Test the property 'cron'
      */
     @Test
@@ -51,6 +59,14 @@ public class UsersSettingsConfigTest {
     @Test
     public void emailTest() {
         // TODO: test email
+    }
+
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
     }
 
 }

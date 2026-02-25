@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -43,6 +43,14 @@ public class AuthenticationtypesTokenResponseTest {
     @Test
     public void accessTokenTest() {
         // TODO: test accessToken
+    }
+
+    /**
+     * Test the property 'email'
+     */
+    @Test
+    public void emailTest() {
+        // TODO: test email
     }
 
     /**

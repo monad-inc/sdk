@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -46,7 +46,9 @@ class TestModelsBillingAccountRole(unittest.TestCase):
                     ],
                 updated_at = '',
                 users = [
-                    ''
+                    monad.models.models/billing_account_role_user.models.BillingAccountRoleUser(
+                        email = '', 
+                        id = '', )
                     ]
             )
         else:

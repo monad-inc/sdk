@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -38,19 +38,19 @@ public class TenableVulnerabilitiesSettingsConfigTest {
     }
 
     /**
-     * Test the property 'cron'
+     * Test the property 'backfillStartTime'
      */
     @Test
-    public void cronTest() {
-        // TODO: test cron
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
     }
 
     /**
-     * Test the property 'fullSync'
+     * Test the property 'useSyntheticData'
      */
     @Test
-    public void fullSyncTest() {
-        // TODO: test fullSync
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
     }
 
 }

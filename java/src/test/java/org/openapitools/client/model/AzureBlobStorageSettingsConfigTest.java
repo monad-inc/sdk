@@ -46,6 +46,14 @@ public class AzureBlobStorageSettingsConfigTest {
     }
 
     /**
+     * Test the property 'backfillStartTime'
+     */
+    @Test
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
+    }
+
+    /**
      * Test the property 'compression'
      */
     @Test
@@ -83,6 +91,14 @@ public class AzureBlobStorageSettingsConfigTest {
     @Test
     public void prefixTest() {
         // TODO: test prefix
+    }
+
+    /**
+     * Test the property 'recordLocation'
+     */
+    @Test
+    public void recordLocationTest() {
+        // TODO: test recordLocation
     }
 
 }

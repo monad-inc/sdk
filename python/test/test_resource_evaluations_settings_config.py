@@ -39,7 +39,8 @@ class TestResourceEvaluationsSettingsConfig(unittest.TestCase):
                 cron = '',
                 evaluation_context_identifier = '',
                 region = '',
-                role_arn = ''
+                role_arn = '',
+                use_synthetic_data = True
             )
         else:
             return ResourceEvaluationsSettingsConfig(

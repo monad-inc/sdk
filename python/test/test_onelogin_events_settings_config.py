@@ -36,7 +36,8 @@ class TestOneloginEventsSettingsConfig(unittest.TestCase):
         model = OneloginEventsSettingsConfig()
         if include_optional:
             return OneloginEventsSettingsConfig(
-                subdomain = ''
+                subdomain = '',
+                use_synthetic_data = True
             )
         else:
             return OneloginEventsSettingsConfig(

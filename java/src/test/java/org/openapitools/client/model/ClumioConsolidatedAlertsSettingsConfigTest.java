@@ -38,6 +38,14 @@ public class ClumioConsolidatedAlertsSettingsConfigTest {
     }
 
     /**
+     * Test the property 'backfillStartTime'
+     */
+    @Test
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
+    }
+
+    /**
      * Test the property 'parentEntityId'
      */
     @Test
@@ -59,6 +67,14 @@ public class ClumioConsolidatedAlertsSettingsConfigTest {
     @Test
     public void regionTest() {
         // TODO: test region
+    }
+
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
     }
 
 }

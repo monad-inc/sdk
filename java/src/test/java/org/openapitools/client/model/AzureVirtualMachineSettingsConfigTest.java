@@ -61,4 +61,12 @@ public class AzureVirtualMachineSettingsConfigTest {
         // TODO: test tenantId
     }
 
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
+    }
+
 }

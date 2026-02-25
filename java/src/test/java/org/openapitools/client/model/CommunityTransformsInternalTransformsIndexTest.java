@@ -49,6 +49,14 @@ public class CommunityTransformsInternalTransformsIndexTest {
     }
 
     /**
+     * Test the property 'schemaHash'
+     */
+    @Test
+    public void schemaHashTest() {
+        // TODO: test schemaHash
+    }
+
+    /**
      * Test the property 'transforms'
      */
     @Test

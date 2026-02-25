@@ -36,9 +36,7 @@ class TestClumioAuditLogsSettingsConfig(unittest.TestCase):
         model = ClumioAuditLogsSettingsConfig()
         if include_optional:
             return ClumioAuditLogsSettingsConfig(
-                bucket_region = '',
-                parent_protection_group_backup_id = '',
-                protection_group_s3_asset_id = '',
+                backfill_start_time = '',
                 region = '',
                 use_synthetic_data = True
             )

@@ -38,8 +38,9 @@ class TestKvLookupSettingsConfig(unittest.TestCase):
             return KvLookupSettingsConfig(
                 destination_key = '',
                 error_on_missing_key = True,
-                join_key = '',
-                kv_lookup_output_id = ''
+                join_path = '',
+                kv_lookup_output_id = '',
+                no_match_response = ''
             )
         else:
             return KvLookupSettingsConfig(

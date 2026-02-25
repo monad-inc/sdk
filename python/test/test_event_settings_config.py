@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -38,7 +38,8 @@ class TestEventSettingsConfig(unittest.TestCase):
             return EventSettingsConfig(
                 app_name = '',
                 cloud = '',
-                member_cid = ''
+                member_cid = '',
+                use_synthetic_data = True
             )
         else:
             return EventSettingsConfig(

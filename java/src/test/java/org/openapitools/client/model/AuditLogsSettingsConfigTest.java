@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -56,19 +56,19 @@ public class AuditLogsSettingsConfigTest {
     }
 
     /**
+     * Test the property 'backfillStartTime'
+     */
+    @Test
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
+    }
+
+    /**
      * Test the property 'country'
      */
     @Test
     public void countryTest() {
         // TODO: test country
-    }
-
-    /**
-     * Test the property 'createdAfter'
-     */
-    @Test
-    public void createdAfterTest() {
-        // TODO: test createdAfter
     }
 
     /**
@@ -101,6 +101,14 @@ public class AuditLogsSettingsConfigTest {
     @Test
     public void repositoryTest() {
         // TODO: test repository
+    }
+
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
     }
 
     /**

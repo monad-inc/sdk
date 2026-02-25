@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -38,6 +38,14 @@ public class OpensearchSettingsConfigTest {
     }
 
     /**
+     * Test the property 'authMode'
+     */
+    @Test
+    public void authModeTest() {
+        // TODO: test authMode
+    }
+
+    /**
      * Test the property 'index'
      */
     @Test
@@ -51,6 +59,22 @@ public class OpensearchSettingsConfigTest {
     @Test
     public void insecureSkipVerifyTest() {
         // TODO: test insecureSkipVerify
+    }
+
+    /**
+     * Test the property 'region'
+     */
+    @Test
+    public void regionTest() {
+        // TODO: test region
+    }
+
+    /**
+     * Test the property 'roleArn'
+     */
+    @Test
+    public void roleArnTest() {
+        // TODO: test roleArn
     }
 
     /**

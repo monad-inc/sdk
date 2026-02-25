@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,7 +36,14 @@ class TestCriblHttpSecretsConfig(unittest.TestCase):
         model = CriblHttpSecretsConfig()
         if include_optional:
             return CriblHttpSecretsConfig(
-                auth_token = ''
+                auth_token = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', )
             )
         else:
             return CriblHttpSecretsConfig(

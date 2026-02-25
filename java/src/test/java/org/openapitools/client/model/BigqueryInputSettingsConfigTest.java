@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -35,14 +35,6 @@ public class BigqueryInputSettingsConfigTest {
     @Test
     public void testBigqueryInputSettingsConfig() {
         // TODO: test BigqueryInputSettingsConfig
-    }
-
-    /**
-     * Test the property 'cron'
-     */
-    @Test
-    public void cronTest() {
-        // TODO: test cron
     }
 
     /**

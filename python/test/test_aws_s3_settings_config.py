@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,6 +36,7 @@ class TestAwsS3SettingsConfig(unittest.TestCase):
         model = AwsS3SettingsConfig()
         if include_optional:
             return AwsS3SettingsConfig(
+                backfill_start_time = '',
                 bucket = '',
                 compression = '',
                 format = '',

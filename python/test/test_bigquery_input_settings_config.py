@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,7 +36,6 @@ class TestBigqueryInputSettingsConfig(unittest.TestCase):
         model = BigqueryInputSettingsConfig()
         if include_optional:
             return BigqueryInputSettingsConfig(
-                cron = '',
                 dataset = '',
                 project = '',
                 query = '',

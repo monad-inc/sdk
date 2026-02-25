@@ -36,9 +36,12 @@ class TestEnrichmentConnectorMeta(unittest.TestCase):
         model = EnrichmentConnectorMeta()
         if include_optional:
             return EnrichmentConnectorMeta(
+                auth_type = '',
                 config = None,
+                connector_category = '',
                 description = '',
                 house = '',
+                in_beta = True,
                 internal = True,
                 name = '',
                 tier = 56,

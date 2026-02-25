@@ -1,5 +1,5 @@
 /*
- * Monad Swagger API
+ * Monad API
  * This is the monad API
  *
  * The version of the OpenAPI document: 1.0
@@ -35,6 +35,14 @@ public class RoutesCreateOrganizationRequestTest {
     @Test
     public void testRoutesCreateOrganizationRequest() {
         // TODO: test RoutesCreateOrganizationRequest
+    }
+
+    /**
+     * Test the property 'billingAccountId'
+     */
+    @Test
+    public void billingAccountIdTest() {
+        // TODO: test billingAccountId
     }
 
     /**

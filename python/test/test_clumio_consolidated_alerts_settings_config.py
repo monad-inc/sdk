@@ -36,9 +36,11 @@ class TestClumioConsolidatedAlertsSettingsConfig(unittest.TestCase):
         model = ClumioConsolidatedAlertsSettingsConfig()
         if include_optional:
             return ClumioConsolidatedAlertsSettingsConfig(
+                backfill_start_time = '',
                 parent_entity_id = '',
                 parent_entity_type = '',
-                region = ''
+                region = '',
+                use_synthetic_data = True
             )
         else:
             return ClumioConsolidatedAlertsSettingsConfig(

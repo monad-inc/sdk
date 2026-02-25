@@ -36,6 +36,7 @@ class TestRoutesUserAuthProvider(unittest.TestCase):
         model = RoutesUserAuthProvider()
         if include_optional:
             return RoutesUserAuthProvider(
+                id = '',
                 provider = '',
                 provider_id = ''
             )

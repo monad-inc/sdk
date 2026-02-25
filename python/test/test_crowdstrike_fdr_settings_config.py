@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -40,6 +40,7 @@ class TestCrowdstrikeFdrSettingsConfig(unittest.TestCase):
                 aws_region_name = '',
                 aws_s3_url = '',
                 cron = '',
+                use_synthetic_data = True,
                 visibility_timeout = 56
             )
         else:

@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,7 +36,14 @@ class TestSnykProjectsSecretsConfig(unittest.TestCase):
         model = SnykProjectsSecretsConfig()
         if include_optional:
             return SnykProjectsSecretsConfig(
-                api_key = ''
+                api_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    updated_at = '', 
+                    value = '', )
             )
         else:
             return SnykProjectsSecretsConfig(

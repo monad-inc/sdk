@@ -37,10 +37,12 @@ class TestGithubComMonadIncCorePkgTypesModelsOrganization(unittest.TestCase):
         if include_optional:
             return GithubComMonadIncCorePkgTypesModelsOrganization(
                 billing_account_id = '',
+                connection_id = '',
                 created_at = '',
                 description = '',
                 id = '',
                 name = '',
+                parent_organization_id = '',
                 updated_at = ''
             )
         else:

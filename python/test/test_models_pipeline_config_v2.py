@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Monad Swagger API
+    Monad API
 
     This is the monad API
 
@@ -36,14 +36,22 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
         model = ModelsPipelineConfigV2()
         if include_optional:
             return ModelsPipelineConfigV2(
+                billing_account_id = '',
+                component_tier = 56,
                 created_at = '',
+                cron_schedule = '',
                 description = '',
                 edges = [
                     monad.models.models/pipeline_edge.models.PipelineEdge(
-                        conditions = monad.models.models/pipeline_edge_conditions.models.PipelineEdgeConditions(
-                            operator = '', ), 
+                        conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
+                            config = {
+                                'key' : null
+                                }, 
+                            operator = '', 
+                            type_id = '', ), 
                         created_at = '', 
                         description = '', 
+                        disabled = True, 
                         from_node_instance_id = '', 
                         id = '', 
                         name = '', 
@@ -53,7 +61,9 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                     ],
                 enabled = True,
                 id = '',
+                is_synthetic = True,
                 name = '',
+                next_cron_run_at = '',
                 nodes = [
                     monad.models.models/pipeline_node.models.PipelineNode(
                         component = monad.models.models/node_component.models.NodeComponent(
@@ -64,6 +74,7 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                             id = '', 
                             name = '', 
                             type = '', ), 
+                        component_house = '', 
                         component_id = '', 
                         component_sub_type = '', 
                         component_type = '', 
@@ -76,47 +87,13 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                     ],
                 organization_id = '',
                 organization_name = '',
+                retention_policy = monad.models.models/pipeline_retention_policy.models.PipelineRetentionPolicy(
+                    stream_age_limit = 56, 
+                    stream_size_limit = '', ),
                 updated_at = ''
             )
         else:
             return ModelsPipelineConfigV2(
-                edges = [
-                    monad.models.models/pipeline_edge.models.PipelineEdge(
-                        conditions = monad.models.models/pipeline_edge_conditions.models.PipelineEdgeConditions(
-                            operator = '', ), 
-                        created_at = '', 
-                        description = '', 
-                        from_node_instance_id = '', 
-                        id = '', 
-                        name = '', 
-                        organization_id = '', 
-                        pipeline_id = '', 
-                        to_node_instance_id = '', )
-                    ],
-                enabled = True,
-                id = '',
-                name = '',
-                nodes = [
-                    monad.models.models/pipeline_node.models.PipelineNode(
-                        component = monad.models.models/node_component.models.NodeComponent(
-                            config = {
-                                'key' : null
-                                }, 
-                            description = '', 
-                            id = '', 
-                            name = '', 
-                            type = '', ), 
-                        component_id = '', 
-                        component_sub_type = '', 
-                        component_type = '', 
-                        created_at = '', 
-                        enabled = True, 
-                        id = '', 
-                        organization_id = '', 
-                        pipeline_id = '', 
-                        slug = '', )
-                    ],
-                organization_id = '',
         )
         """
 
