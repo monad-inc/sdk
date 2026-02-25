@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * The format config to use
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-24T23:34:36.784990859Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-25T21:10:52.715364311Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class FormatterFormatConfig {
   public static final String SERIALIZED_NAME_FORMAT = "Format";
   @SerializedName(SERIALIZED_NAME_FORMAT)
