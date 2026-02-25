@@ -7,14 +7,14 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**integrationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**integrationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**authToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**oauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**personalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**accessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**tenantId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

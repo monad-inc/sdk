@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **access_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **tenant_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

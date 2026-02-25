@@ -19,8 +19,6 @@ import (
 
 // SecretProcessesorInputConfigSettings - struct for SecretProcessesorInputConfigSettings
 type SecretProcessesorInputConfigSettings struct {
-	ActivityLogsSettingsConfig *ActivityLogsSettingsConfig
-	ActivitylogsSettingsConfig *ActivitylogsSettingsConfig
 	ActorsInfoSettingsConfig *ActorsInfoSettingsConfig
 	AdminLogsSettingsConfig *AdminLogsSettingsConfig
 	AivenServiceLogsSettingsConfig *AivenServiceLogsSettingsConfig
@@ -77,9 +75,11 @@ type SecretProcessesorInputConfigSettings struct {
 	DefenderForEndpointAlertsSettingsConfig *DefenderForEndpointAlertsSettingsConfig
 	DeviceDetailsSettingsConfig *DeviceDetailsSettingsConfig
 	DevicesSettingsConfig *DevicesSettingsConfig
+	DuoSecurityActivityLogsSettingsConfig *DuoSecurityActivityLogsSettingsConfig
 	EndorLabsAuditLogsSettingsConfig *EndorLabsAuditLogsSettingsConfig
 	EntraIdSettingsConfig *EntraIdSettingsConfig
 	EventSettingsConfig *EventSettingsConfig
+	FleetdmActivityLogsSettingsConfig *FleetdmActivityLogsSettingsConfig
 	FullScansSettingsConfig *FullScansSettingsConfig
 	GithubAdvisoryUserSettingsConfig *GithubAdvisoryUserSettingsConfig
 	GitlabIssuesSettingsConfig *GitlabIssuesSettingsConfig
@@ -160,20 +160,6 @@ type SecretProcessesorInputConfigSettings struct {
 	ZoomActivityLogsSettingsConfig *ZoomActivityLogsSettingsConfig
 	ZoomMeetingActivityLogsSettingsConfig *ZoomMeetingActivityLogsSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
-}
-
-// ActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ActivityLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func ActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ActivityLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		ActivityLogsSettingsConfig: v,
-	}
-}
-
-// ActivitylogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ActivitylogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func ActivitylogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ActivitylogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		ActivitylogsSettingsConfig: v,
-	}
 }
 
 // ActorsInfoSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ActorsInfoSettingsConfig wrapped in SecretProcessesorInputConfigSettings
@@ -568,6 +554,13 @@ func DevicesSettingsConfigAsSecretProcessesorInputConfigSettings(v *DevicesSetti
 	}
 }
 
+// DuoSecurityActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns DuoSecurityActivityLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func DuoSecurityActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *DuoSecurityActivityLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		DuoSecurityActivityLogsSettingsConfig: v,
+	}
+}
+
 // EndorLabsAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns EndorLabsAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func EndorLabsAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *EndorLabsAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -586,6 +579,13 @@ func EntraIdSettingsConfigAsSecretProcessesorInputConfigSettings(v *EntraIdSetti
 func EventSettingsConfigAsSecretProcessesorInputConfigSettings(v *EventSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		EventSettingsConfig: v,
+	}
+}
+
+// FleetdmActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns FleetdmActivityLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func FleetdmActivityLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *FleetdmActivityLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		FleetdmActivityLogsSettingsConfig: v,
 	}
 }
 
@@ -1154,40 +1154,6 @@ func MapmapOfStringAnyAsSecretProcessesorInputConfigSettings(v *map[string]inter
 func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into ActivityLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.ActivityLogsSettingsConfig)
-	if err == nil {
-		jsonActivityLogsSettingsConfig, _ := json.Marshal(dst.ActivityLogsSettingsConfig)
-		if string(jsonActivityLogsSettingsConfig) == "{}" { // empty struct
-			dst.ActivityLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.ActivityLogsSettingsConfig); err != nil {
-				dst.ActivityLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ActivityLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into ActivitylogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.ActivitylogsSettingsConfig)
-	if err == nil {
-		jsonActivitylogsSettingsConfig, _ := json.Marshal(dst.ActivitylogsSettingsConfig)
-		if string(jsonActivitylogsSettingsConfig) == "{}" { // empty struct
-			dst.ActivitylogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.ActivitylogsSettingsConfig); err != nil {
-				dst.ActivitylogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ActivitylogsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into ActorsInfoSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.ActorsInfoSettingsConfig)
 	if err == nil {
@@ -2140,6 +2106,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.DevicesSettingsConfig = nil
 	}
 
+	// try to unmarshal data into DuoSecurityActivityLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.DuoSecurityActivityLogsSettingsConfig)
+	if err == nil {
+		jsonDuoSecurityActivityLogsSettingsConfig, _ := json.Marshal(dst.DuoSecurityActivityLogsSettingsConfig)
+		if string(jsonDuoSecurityActivityLogsSettingsConfig) == "{}" { // empty struct
+			dst.DuoSecurityActivityLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.DuoSecurityActivityLogsSettingsConfig); err != nil {
+				dst.DuoSecurityActivityLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.DuoSecurityActivityLogsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into EndorLabsAuditLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.EndorLabsAuditLogsSettingsConfig)
 	if err == nil {
@@ -2189,6 +2172,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.EventSettingsConfig = nil
+	}
+
+	// try to unmarshal data into FleetdmActivityLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.FleetdmActivityLogsSettingsConfig)
+	if err == nil {
+		jsonFleetdmActivityLogsSettingsConfig, _ := json.Marshal(dst.FleetdmActivityLogsSettingsConfig)
+		if string(jsonFleetdmActivityLogsSettingsConfig) == "{}" { // empty struct
+			dst.FleetdmActivityLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.FleetdmActivityLogsSettingsConfig); err != nil {
+				dst.FleetdmActivityLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.FleetdmActivityLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into FullScansSettingsConfig
@@ -3553,8 +3553,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.ActivityLogsSettingsConfig = nil
-		dst.ActivitylogsSettingsConfig = nil
 		dst.ActorsInfoSettingsConfig = nil
 		dst.AdminLogsSettingsConfig = nil
 		dst.AivenServiceLogsSettingsConfig = nil
@@ -3611,9 +3609,11 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
 		dst.DeviceDetailsSettingsConfig = nil
 		dst.DevicesSettingsConfig = nil
+		dst.DuoSecurityActivityLogsSettingsConfig = nil
 		dst.EndorLabsAuditLogsSettingsConfig = nil
 		dst.EntraIdSettingsConfig = nil
 		dst.EventSettingsConfig = nil
+		dst.FleetdmActivityLogsSettingsConfig = nil
 		dst.FullScansSettingsConfig = nil
 		dst.GithubAdvisoryUserSettingsConfig = nil
 		dst.GitlabIssuesSettingsConfig = nil
@@ -3705,14 +3705,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
-	if src.ActivityLogsSettingsConfig != nil {
-		return json.Marshal(&src.ActivityLogsSettingsConfig)
-	}
-
-	if src.ActivitylogsSettingsConfig != nil {
-		return json.Marshal(&src.ActivitylogsSettingsConfig)
-	}
-
 	if src.ActorsInfoSettingsConfig != nil {
 		return json.Marshal(&src.ActorsInfoSettingsConfig)
 	}
@@ -3937,6 +3929,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.DevicesSettingsConfig)
 	}
 
+	if src.DuoSecurityActivityLogsSettingsConfig != nil {
+		return json.Marshal(&src.DuoSecurityActivityLogsSettingsConfig)
+	}
+
 	if src.EndorLabsAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.EndorLabsAuditLogsSettingsConfig)
 	}
@@ -3947,6 +3943,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.EventSettingsConfig != nil {
 		return json.Marshal(&src.EventSettingsConfig)
+	}
+
+	if src.FleetdmActivityLogsSettingsConfig != nil {
+		return json.Marshal(&src.FleetdmActivityLogsSettingsConfig)
 	}
 
 	if src.FullScansSettingsConfig != nil {
@@ -4277,14 +4277,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 	if obj == nil {
 		return nil
 	}
-	if obj.ActivityLogsSettingsConfig != nil {
-		return obj.ActivityLogsSettingsConfig
-	}
-
-	if obj.ActivitylogsSettingsConfig != nil {
-		return obj.ActivitylogsSettingsConfig
-	}
-
 	if obj.ActorsInfoSettingsConfig != nil {
 		return obj.ActorsInfoSettingsConfig
 	}
@@ -4509,6 +4501,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.DevicesSettingsConfig
 	}
 
+	if obj.DuoSecurityActivityLogsSettingsConfig != nil {
+		return obj.DuoSecurityActivityLogsSettingsConfig
+	}
+
 	if obj.EndorLabsAuditLogsSettingsConfig != nil {
 		return obj.EndorLabsAuditLogsSettingsConfig
 	}
@@ -4519,6 +4515,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.EventSettingsConfig != nil {
 		return obj.EventSettingsConfig
+	}
+
+	if obj.FleetdmActivityLogsSettingsConfig != nil {
+		return obj.FleetdmActivityLogsSettingsConfig
 	}
 
 	if obj.FullScansSettingsConfig != nil {
@@ -4847,14 +4847,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 // Get the actual instance value
 func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interface{}) {
-	if obj.ActivityLogsSettingsConfig != nil {
-		return *obj.ActivityLogsSettingsConfig
-	}
-
-	if obj.ActivitylogsSettingsConfig != nil {
-		return *obj.ActivitylogsSettingsConfig
-	}
-
 	if obj.ActorsInfoSettingsConfig != nil {
 		return *obj.ActorsInfoSettingsConfig
 	}
@@ -5079,6 +5071,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.DevicesSettingsConfig
 	}
 
+	if obj.DuoSecurityActivityLogsSettingsConfig != nil {
+		return *obj.DuoSecurityActivityLogsSettingsConfig
+	}
+
 	if obj.EndorLabsAuditLogsSettingsConfig != nil {
 		return *obj.EndorLabsAuditLogsSettingsConfig
 	}
@@ -5089,6 +5085,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.EventSettingsConfig != nil {
 		return *obj.EventSettingsConfig
+	}
+
+	if obj.FleetdmActivityLogsSettingsConfig != nil {
+		return *obj.FleetdmActivityLogsSettingsConfig
 	}
 
 	if obj.FullScansSettingsConfig != nil {

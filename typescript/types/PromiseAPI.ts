@@ -4,10 +4,6 @@ import { PromiseMiddleware, Middleware, PromiseMiddlewareWrapper } from '../midd
 
 import { AbsSecretsConfig } from '../models/AbsSecretsConfig';
 import { AbsSettingsConfig } from '../models/AbsSettingsConfig';
-import { ActivityLogsSecretsConfig } from '../models/ActivityLogsSecretsConfig';
-import { ActivityLogsSettingsConfig } from '../models/ActivityLogsSettingsConfig';
-import { ActivitylogsSecretsConfig } from '../models/ActivitylogsSecretsConfig';
-import { ActivitylogsSettingsConfig } from '../models/ActivitylogsSettingsConfig';
 import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddArgumentsConfig } from '../models/AddArgumentsConfig';
@@ -144,6 +140,8 @@ import { DevicesSettingsConfig } from '../models/DevicesSettingsConfig';
 import { DropKeyArgumentsConfig } from '../models/DropKeyArgumentsConfig';
 import { DropKeyWhereValueEqArgumentsConfig } from '../models/DropKeyWhereValueEqArgumentsConfig';
 import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhereValueEqArgumentsConfig';
+import { DuoSecurityActivityLogsSecretsConfig } from '../models/DuoSecurityActivityLogsSecretsConfig';
+import { DuoSecurityActivityLogsSettingsConfig } from '../models/DuoSecurityActivityLogsSettingsConfig';
 import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
@@ -157,6 +155,8 @@ import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
+import { FleetdmActivityLogsSecretsConfig } from '../models/FleetdmActivityLogsSecretsConfig';
+import { FleetdmActivityLogsSettingsConfig } from '../models/FleetdmActivityLogsSettingsConfig';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';

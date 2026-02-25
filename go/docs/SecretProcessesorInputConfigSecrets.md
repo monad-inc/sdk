@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**IntegrationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**IntegrationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**SecretKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **CredentialsJson** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **OauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AccessKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **TenantId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -57,30 +57,45 @@ NewSecretProcessesorInputConfigSecretsWithDefaults instantiates a new SecretProc
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetApiKey
+### GetClientId
 
-`func (o *SecretProcessesorInputConfigSecrets) GetApiKey() ModelsSecret`
+`func (o *SecretProcessesorInputConfigSecrets) GetClientId() ModelsSecret`
 
-GetApiKey returns the ApiKey field if non-nil, zero value otherwise.
+GetClientId returns the ClientId field if non-nil, zero value otherwise.
 
-### GetApiKeyOk
+### GetClientIdOk
 
-`func (o *SecretProcessesorInputConfigSecrets) GetApiKeyOk() (*ModelsSecret, bool)`
+`func (o *SecretProcessesorInputConfigSecrets) GetClientIdOk() (*ModelsSecret, bool)`
 
-GetApiKeyOk returns a tuple with the ApiKey field if it's non-nil, zero value otherwise
+GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetApiKey
+### SetClientId
 
-`func (o *SecretProcessesorInputConfigSecrets) SetApiKey(v ModelsSecret)`
+`func (o *SecretProcessesorInputConfigSecrets) SetClientId(v ModelsSecret)`
 
-SetApiKey sets ApiKey field to given value.
+SetClientId sets ClientId field to given value.
 
-### HasApiKey
 
-`func (o *SecretProcessesorInputConfigSecrets) HasApiKey() bool`
+### GetClientSecret
 
-HasApiKey returns a boolean if a field has been set.
+`func (o *SecretProcessesorInputConfigSecrets) GetClientSecret() ModelsSecret`
+
+GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
+
+### GetClientSecretOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetClientSecretOk() (*ModelsSecret, bool)`
+
+GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSecret
+
+`func (o *SecretProcessesorInputConfigSecrets) SetClientSecret(v ModelsSecret)`
+
+SetClientSecret sets ClientSecret field to given value.
+
 
 ### GetIntegrationKey
 
@@ -131,46 +146,6 @@ SetSecretKey sets SecretKey field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasSecretKey() bool`
 
 HasSecretKey returns a boolean if a field has been set.
-
-### GetClientId
-
-`func (o *SecretProcessesorInputConfigSecrets) GetClientId() ModelsSecret`
-
-GetClientId returns the ClientId field if non-nil, zero value otherwise.
-
-### GetClientIdOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetClientIdOk() (*ModelsSecret, bool)`
-
-GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClientId
-
-`func (o *SecretProcessesorInputConfigSecrets) SetClientId(v ModelsSecret)`
-
-SetClientId sets ClientId field to given value.
-
-
-### GetClientSecret
-
-`func (o *SecretProcessesorInputConfigSecrets) GetClientSecret() ModelsSecret`
-
-GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
-
-### GetClientSecretOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetClientSecretOk() (*ModelsSecret, bool)`
-
-GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClientSecret
-
-`func (o *SecretProcessesorInputConfigSecrets) SetClientSecret(v ModelsSecret)`
-
-SetClientSecret sets ClientSecret field to given value.
-
 
 ### GetAuthToken
 
@@ -246,6 +221,31 @@ SetOauthToken sets OauthToken field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasOauthToken() bool`
 
 HasOauthToken returns a boolean if a field has been set.
+
+### GetApiKey
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApiKey() ModelsSecret`
+
+GetApiKey returns the ApiKey field if non-nil, zero value otherwise.
+
+### GetApiKeyOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApiKeyOk() (*ModelsSecret, bool)`
+
+GetApiKeyOk returns a tuple with the ApiKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiKey
+
+`func (o *SecretProcessesorInputConfigSecrets) SetApiKey(v ModelsSecret)`
+
+SetApiKey sets ApiKey field to given value.
+
+### HasApiKey
+
+`func (o *SecretProcessesorInputConfigSecrets) HasApiKey() bool`
+
+HasApiKey returns a boolean if a field has been set.
 
 ### GetPersonalAccessToken
 

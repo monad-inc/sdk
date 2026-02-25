@@ -16,10 +16,6 @@
 # import models into model package
 from monad.models.abs_secrets_config import AbsSecretsConfig
 from monad.models.abs_settings_config import AbsSettingsConfig
-from monad.models.activity_logs_secrets_config import ActivityLogsSecretsConfig
-from monad.models.activity_logs_settings_config import ActivityLogsSettingsConfig
-from monad.models.activitylogs_secrets_config import ActivitylogsSecretsConfig
-from monad.models.activitylogs_settings_config import ActivitylogsSettingsConfig
 from monad.models.actors_info_secrets_config import ActorsInfoSecretsConfig
 from monad.models.actors_info_settings_config import ActorsInfoSettingsConfig
 from monad.models.add_arguments_config import AddArgumentsConfig
@@ -156,6 +152,8 @@ from monad.models.devices_settings_config import DevicesSettingsConfig
 from monad.models.drop_key_arguments_config import DropKeyArgumentsConfig
 from monad.models.drop_key_where_value_eq_arguments_config import DropKeyWhereValueEqArgumentsConfig
 from monad.models.drop_record_where_value_eq_arguments_config import DropRecordWhereValueEqArgumentsConfig
+from monad.models.duo_security_activity_logs_secrets_config import DuoSecurityActivityLogsSecretsConfig
+from monad.models.duo_security_activity_logs_settings_config import DuoSecurityActivityLogsSettingsConfig
 from monad.models.duplicate_key_value_to_key_arguments_config import DuplicateKeyValueToKeyArgumentsConfig
 from monad.models.elasticsearch_secrets_config import ElasticsearchSecretsConfig
 from monad.models.elasticsearch_settings_config import ElasticsearchSettingsConfig
@@ -169,6 +167,8 @@ from monad.models.event_settings_config import EventSettingsConfig
 from monad.models.flagsmith_flag import FlagsmithFlag
 from monad.models.flatten_arguments_config import FlattenArgumentsConfig
 from monad.models.flattenall_arguments_config import FlattenallArgumentsConfig
+from monad.models.fleetdm_activity_logs_secrets_config import FleetdmActivityLogsSecretsConfig
+from monad.models.fleetdm_activity_logs_settings_config import FleetdmActivityLogsSettingsConfig
 from monad.models.formatter_format_config import FormatterFormatConfig
 from monad.models.full_scans_secrets_config import FullScansSecretsConfig
 from monad.models.full_scans_settings_config import FullScansSettingsConfig

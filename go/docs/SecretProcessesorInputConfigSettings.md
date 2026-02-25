@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FleetUrl** | Pointer to **string** | URL of the Fleet DM instance | [optional] 
-**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
-**Host** | Pointer to **string** | The API hostname for your Duo Security integration. | [optional] 
 **ActorType** | Pointer to **string** | Type of actor. Ex: &#39;APT&#39;, &#39;eCrime&#39;, &#39;Hacktivist&#39;, &#39;Insider Threat&#39;, &#39;Nation-State&#39;, &#39;Unknown&#39;, &#39;Other&#39;, etc. Select &#39;None&#39; for no preference. | [optional] 
 **CloudType** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **Cron** | Pointer to **string** | Cron string for scheduling the ingest of your input | [optional] 
 **Sort** | Pointer to **string** | Order fields in ascending or descending order. Ex: &#39;created_date|asc&#39;, &#39;created_date|desc&#39;. | [optional] 
 **TargetIndustries** | Pointer to **string** | Industries targeted by the actor. Ex: &#39;Financial&#39;, &#39;Healthcare&#39;, &#39;Energy&#39;, &#39;Government&#39;, &#39;Manufacturing&#39;, &#39;Technology&#39;, etc. Select &#39;None&#39; for no preference. | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
+**Host** | Pointer to **string** | The API hostname for your Duo Security integration. | [optional] 
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, data from 6 months ago up till now from zoom is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
 **Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
 **Service** | Pointer to **string** | The Aiven service name | [optional] 
@@ -109,6 +108,7 @@ Name | Type | Description | Notes
 **AppName** | Pointer to **string** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
 **Cloud** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **MemberCid** | Pointer to **string** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 
+**FleetUrl** | Pointer to **string** | URL of the Fleet DM instance | [optional] 
 **Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
 **Confidential** | Pointer to **bool** | Confidential to filter issues by confidentiality status. Confidential &#x3D; true means only show confidential issues. | [optional] 
 **GitlabUrl** | Pointer to **string** | GitLab URL (for Custom-Urls when self hosting. Defaults to https://gitlab.com.) | [optional] 
@@ -204,81 +204,6 @@ will change when the set of required properties is changed
 NewSecretProcessesorInputConfigSettingsWithDefaults instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetFleetUrl
-
-`func (o *SecretProcessesorInputConfigSettings) GetFleetUrl() string`
-
-GetFleetUrl returns the FleetUrl field if non-nil, zero value otherwise.
-
-### GetFleetUrlOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetFleetUrlOk() (*string, bool)`
-
-GetFleetUrlOk returns a tuple with the FleetUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFleetUrl
-
-`func (o *SecretProcessesorInputConfigSettings) SetFleetUrl(v string)`
-
-SetFleetUrl sets FleetUrl field to given value.
-
-### HasFleetUrl
-
-`func (o *SecretProcessesorInputConfigSettings) HasFleetUrl() bool`
-
-HasFleetUrl returns a boolean if a field has been set.
-
-### GetUseSyntheticData
-
-`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticData() bool`
-
-GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
-
-### GetUseSyntheticDataOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticDataOk() (*bool, bool)`
-
-GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUseSyntheticData
-
-`func (o *SecretProcessesorInputConfigSettings) SetUseSyntheticData(v bool)`
-
-SetUseSyntheticData sets UseSyntheticData field to given value.
-
-### HasUseSyntheticData
-
-`func (o *SecretProcessesorInputConfigSettings) HasUseSyntheticData() bool`
-
-HasUseSyntheticData returns a boolean if a field has been set.
-
-### GetHost
-
-`func (o *SecretProcessesorInputConfigSettings) GetHost() string`
-
-GetHost returns the Host field if non-nil, zero value otherwise.
-
-### GetHostOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetHostOk() (*string, bool)`
-
-GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHost
-
-`func (o *SecretProcessesorInputConfigSettings) SetHost(v string)`
-
-SetHost sets Host field to given value.
-
-### HasHost
-
-`func (o *SecretProcessesorInputConfigSettings) HasHost() bool`
-
-HasHost returns a boolean if a field has been set.
 
 ### GetActorType
 
@@ -404,6 +329,56 @@ SetTargetIndustries sets TargetIndustries field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasTargetIndustries() bool`
 
 HasTargetIndustries returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
+
+### GetHost
+
+`func (o *SecretProcessesorInputConfigSettings) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHost
+
+`func (o *SecretProcessesorInputConfigSettings) SetHost(v string)`
+
+SetHost sets Host field to given value.
+
+### HasHost
+
+`func (o *SecretProcessesorInputConfigSettings) HasHost() bool`
+
+HasHost returns a boolean if a field has been set.
 
 ### GetBackfillStartTime
 
@@ -2829,6 +2804,31 @@ SetMemberCid sets MemberCid field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasMemberCid() bool`
 
 HasMemberCid returns a boolean if a field has been set.
+
+### GetFleetUrl
+
+`func (o *SecretProcessesorInputConfigSettings) GetFleetUrl() string`
+
+GetFleetUrl returns the FleetUrl field if non-nil, zero value otherwise.
+
+### GetFleetUrlOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetFleetUrlOk() (*string, bool)`
+
+GetFleetUrlOk returns a tuple with the FleetUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFleetUrl
+
+`func (o *SecretProcessesorInputConfigSettings) SetFleetUrl(v string)`
+
+SetFleetUrl sets FleetUrl field to given value.
+
+### HasFleetUrl
+
+`func (o *SecretProcessesorInputConfigSettings) HasFleetUrl() bool`
+
+HasFleetUrl returns a boolean if a field has been set.
 
 ### GetRepo
 

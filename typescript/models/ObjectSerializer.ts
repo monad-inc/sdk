@@ -1,9 +1,5 @@
 export * from '../models/AbsSecretsConfig';
 export * from '../models/AbsSettingsConfig';
-export * from '../models/ActivityLogsSecretsConfig';
-export * from '../models/ActivityLogsSettingsConfig';
-export * from '../models/ActivitylogsSecretsConfig';
-export * from '../models/ActivitylogsSettingsConfig';
 export * from '../models/ActorsInfoSecretsConfig';
 export * from '../models/ActorsInfoSettingsConfig';
 export * from '../models/AddArgumentsConfig';
@@ -140,6 +136,8 @@ export * from '../models/DevicesSettingsConfig';
 export * from '../models/DropKeyArgumentsConfig';
 export * from '../models/DropKeyWhereValueEqArgumentsConfig';
 export * from '../models/DropRecordWhereValueEqArgumentsConfig';
+export * from '../models/DuoSecurityActivityLogsSecretsConfig';
+export * from '../models/DuoSecurityActivityLogsSettingsConfig';
 export * from '../models/DuplicateKeyValueToKeyArgumentsConfig';
 export * from '../models/ElasticsearchSecretsConfig';
 export * from '../models/ElasticsearchSettingsConfig';
@@ -153,6 +151,8 @@ export * from '../models/EventSettingsConfig';
 export * from '../models/FlagsmithFlag';
 export * from '../models/FlattenArgumentsConfig';
 export * from '../models/FlattenallArgumentsConfig';
+export * from '../models/FleetdmActivityLogsSecretsConfig';
+export * from '../models/FleetdmActivityLogsSettingsConfig';
 export * from '../models/FormatterFormatConfig';
 export * from '../models/FullScansSecretsConfig';
 export * from '../models/FullScansSettingsConfig';
@@ -536,10 +536,6 @@ export * from '../models/ZoomMeetingActivityLogsSettingsConfig';
 
 import { AbsSecretsConfig } from '../models/AbsSecretsConfig';
 import { AbsSettingsConfig } from '../models/AbsSettingsConfig';
-import { ActivityLogsSecretsConfig } from '../models/ActivityLogsSecretsConfig';
-import { ActivityLogsSettingsConfig } from '../models/ActivityLogsSettingsConfig';
-import { ActivitylogsSecretsConfig } from '../models/ActivitylogsSecretsConfig';
-import { ActivitylogsSettingsConfig } from '../models/ActivitylogsSettingsConfig';
 import { ActorsInfoSecretsConfig } from '../models/ActorsInfoSecretsConfig';
 import { ActorsInfoSettingsConfig } from '../models/ActorsInfoSettingsConfig';
 import { AddArgumentsConfig } from '../models/AddArgumentsConfig';
@@ -676,6 +672,8 @@ import { DevicesSettingsConfig } from '../models/DevicesSettingsConfig';
 import { DropKeyArgumentsConfig } from '../models/DropKeyArgumentsConfig';
 import { DropKeyWhereValueEqArgumentsConfig } from '../models/DropKeyWhereValueEqArgumentsConfig';
 import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhereValueEqArgumentsConfig';
+import { DuoSecurityActivityLogsSecretsConfig } from '../models/DuoSecurityActivityLogsSecretsConfig';
+import { DuoSecurityActivityLogsSettingsConfig } from '../models/DuoSecurityActivityLogsSettingsConfig';
 import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
 import { ElasticsearchSecretsConfig } from '../models/ElasticsearchSecretsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
@@ -689,6 +687,8 @@ import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { FlagsmithFlag } from '../models/FlagsmithFlag';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
+import { FleetdmActivityLogsSecretsConfig } from '../models/FleetdmActivityLogsSecretsConfig';
+import { FleetdmActivityLogsSettingsConfig } from '../models/FleetdmActivityLogsSettingsConfig';
 import { FormatterFormatConfig } from '../models/FormatterFormatConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { FullScansSettingsConfig } from '../models/FullScansSettingsConfig';
@@ -1104,10 +1104,6 @@ let enumsMap: Set<string> = new Set<string>([
 let typeMap: {[index: string]: any} = {
     "AbsSecretsConfig": AbsSecretsConfig,
     "AbsSettingsConfig": AbsSettingsConfig,
-    "ActivityLogsSecretsConfig": ActivityLogsSecretsConfig,
-    "ActivityLogsSettingsConfig": ActivityLogsSettingsConfig,
-    "ActivitylogsSecretsConfig": ActivitylogsSecretsConfig,
-    "ActivitylogsSettingsConfig": ActivitylogsSettingsConfig,
     "ActorsInfoSecretsConfig": ActorsInfoSecretsConfig,
     "ActorsInfoSettingsConfig": ActorsInfoSettingsConfig,
     "AddArgumentsConfig": AddArgumentsConfig,
@@ -1244,6 +1240,8 @@ let typeMap: {[index: string]: any} = {
     "DropKeyArgumentsConfig": DropKeyArgumentsConfig,
     "DropKeyWhereValueEqArgumentsConfig": DropKeyWhereValueEqArgumentsConfig,
     "DropRecordWhereValueEqArgumentsConfig": DropRecordWhereValueEqArgumentsConfig,
+    "DuoSecurityActivityLogsSecretsConfig": DuoSecurityActivityLogsSecretsConfig,
+    "DuoSecurityActivityLogsSettingsConfig": DuoSecurityActivityLogsSettingsConfig,
     "DuplicateKeyValueToKeyArgumentsConfig": DuplicateKeyValueToKeyArgumentsConfig,
     "ElasticsearchSecretsConfig": ElasticsearchSecretsConfig,
     "ElasticsearchSettingsConfig": ElasticsearchSettingsConfig,
@@ -1257,6 +1255,8 @@ let typeMap: {[index: string]: any} = {
     "FlagsmithFlag": FlagsmithFlag,
     "FlattenArgumentsConfig": FlattenArgumentsConfig,
     "FlattenallArgumentsConfig": FlattenallArgumentsConfig,
+    "FleetdmActivityLogsSecretsConfig": FleetdmActivityLogsSecretsConfig,
+    "FleetdmActivityLogsSettingsConfig": FleetdmActivityLogsSettingsConfig,
     "FormatterFormatConfig": FormatterFormatConfig,
     "FullScansSecretsConfig": FullScansSecretsConfig,
     "FullScansSettingsConfig": FullScansSettingsConfig,

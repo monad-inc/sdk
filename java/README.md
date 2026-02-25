@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-02-25T21:58:28.571494429Z[Etc/UTC]
+  - Build date: 2026-02-25T22:20:49.925026090Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -289,10 +289,6 @@ Class | Method | HTTP request | Description
 
  - [AbsSecretsConfig](docs/AbsSecretsConfig.md)
  - [AbsSettingsConfig](docs/AbsSettingsConfig.md)
- - [ActivityLogsSecretsConfig](docs/ActivityLogsSecretsConfig.md)
- - [ActivityLogsSettingsConfig](docs/ActivityLogsSettingsConfig.md)
- - [ActivitylogsSecretsConfig](docs/ActivitylogsSecretsConfig.md)
- - [ActivitylogsSettingsConfig](docs/ActivitylogsSettingsConfig.md)
  - [ActorsInfoSecretsConfig](docs/ActorsInfoSecretsConfig.md)
  - [ActorsInfoSettingsConfig](docs/ActorsInfoSettingsConfig.md)
  - [AddArgumentsConfig](docs/AddArgumentsConfig.md)
@@ -429,6 +425,8 @@ Class | Method | HTTP request | Description
  - [DropKeyArgumentsConfig](docs/DropKeyArgumentsConfig.md)
  - [DropKeyWhereValueEqArgumentsConfig](docs/DropKeyWhereValueEqArgumentsConfig.md)
  - [DropRecordWhereValueEqArgumentsConfig](docs/DropRecordWhereValueEqArgumentsConfig.md)
+ - [DuoSecurityActivityLogsSecretsConfig](docs/DuoSecurityActivityLogsSecretsConfig.md)
+ - [DuoSecurityActivityLogsSettingsConfig](docs/DuoSecurityActivityLogsSettingsConfig.md)
  - [DuplicateKeyValueToKeyArgumentsConfig](docs/DuplicateKeyValueToKeyArgumentsConfig.md)
  - [ElasticsearchSecretsConfig](docs/ElasticsearchSecretsConfig.md)
  - [ElasticsearchSettingsConfig](docs/ElasticsearchSettingsConfig.md)
@@ -442,6 +440,8 @@ Class | Method | HTTP request | Description
  - [FlagsmithFlag](docs/FlagsmithFlag.md)
  - [FlattenArgumentsConfig](docs/FlattenArgumentsConfig.md)
  - [FlattenallArgumentsConfig](docs/FlattenallArgumentsConfig.md)
+ - [FleetdmActivityLogsSecretsConfig](docs/FleetdmActivityLogsSecretsConfig.md)
+ - [FleetdmActivityLogsSettingsConfig](docs/FleetdmActivityLogsSettingsConfig.md)
  - [FormatterFormatConfig](docs/FormatterFormatConfig.md)
  - [FullScansSecretsConfig](docs/FullScansSecretsConfig.md)
  - [FullScansSettingsConfig](docs/FullScansSettingsConfig.md)
