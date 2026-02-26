@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 # **v1_organizations_get**
-> ModelsOrganizationList v1_organizations_get(limit=limit, offset=offset, no_children=no_children, parent_organization_id=parent_organization_id)
+> ModelsOrganizationList v1_organizations_get(limit=limit, offset=offset, no_children=no_children, parent_organization_id=parent_organization_id, name_search=name_search)
 
 List organizations for user
 
@@ -69,10 +69,11 @@ with monad.ApiClient(configuration) as api_client:
     offset = 56 # int | Offset the organizations returned (default: 0) (optional)
     no_children = True # bool | If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
     parent_organization_id = 'parent_organization_id_example' # str | If provided, only return organizations that are children of the specified parent organization (optional)
+    name_search = 'name_search_example' # str | If provided, only return organizations with names that contain the search string (optional)
 
     try:
         # List organizations for user
-        api_response = api_instance.v1_organizations_get(limit=limit, offset=offset, no_children=no_children, parent_organization_id=parent_organization_id)
+        api_response = api_instance.v1_organizations_get(limit=limit, offset=offset, no_children=no_children, parent_organization_id=parent_organization_id, name_search=name_search)
         print("The response of OrganizationsApi->v1_organizations_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -90,6 +91,7 @@ Name | Type | Description  | Notes
  **offset** | **int**| Offset the organizations returned (default: 0) | [optional] 
  **no_children** | **bool**| If true, only return organizations that are directly associated with the user, not child organizations (default: false) | [optional] 
  **parent_organization_id** | **str**| If provided, only return organizations that are children of the specified parent organization | [optional] 
+ **name_search** | **str**| If provided, only return organizations with names that contain the search string | [optional] 
 
 ### Return type
 
@@ -1144,7 +1146,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v3_organization_id_organizations_get**
-> ModelsUserOrganizationList v3_organization_id_organizations_get(organization_id, limit=limit, offset=offset)
+> ModelsUserOrganizationList v3_organization_id_organizations_get(organization_id, limit=limit, offset=offset, name_search=name_search)
 
 List child organizations
 
@@ -1191,10 +1193,11 @@ with monad.ApiClient(configuration) as api_client:
     organization_id = 'organization_id_example' # str | Parent Organization ID
     limit = 56 # int | Limit the number of organizations returned (default: 10) (optional)
     offset = 56 # int | Offset the organizations returned (default: 0) (optional)
+    name_search = 'name_search_example' # str | If provided, only return organizations with names that contain the search string (optional)
 
     try:
         # List child organizations
-        api_response = api_instance.v3_organization_id_organizations_get(organization_id, limit=limit, offset=offset)
+        api_response = api_instance.v3_organization_id_organizations_get(organization_id, limit=limit, offset=offset, name_search=name_search)
         print("The response of OrganizationsApi->v3_organization_id_organizations_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -1211,6 +1214,7 @@ Name | Type | Description  | Notes
  **organization_id** | **str**| Parent Organization ID | 
  **limit** | **int**| Limit the number of organizations returned (default: 10) | [optional] 
  **offset** | **int**| Offset the organizations returned (default: 0) | [optional] 
+ **name_search** | **str**| If provided, only return organizations with names that contain the search string | [optional] 
 
 ### Return type
 

@@ -31,6 +31,7 @@ type ApiV1OrganizationsGetRequest struct {
 	offset *int32
 	noChildren *bool
 	parentOrganizationId *string
+	nameSearch *string
 }
 
 // Limit the number of organizations returned (default: 10)
@@ -54,6 +55,12 @@ func (r ApiV1OrganizationsGetRequest) NoChildren(noChildren bool) ApiV1Organizat
 // If provided, only return organizations that are children of the specified parent organization
 func (r ApiV1OrganizationsGetRequest) ParentOrganizationId(parentOrganizationId string) ApiV1OrganizationsGetRequest {
 	r.parentOrganizationId = &parentOrganizationId
+	return r
+}
+
+// If provided, only return organizations with names that contain the search string
+func (r ApiV1OrganizationsGetRequest) NameSearch(nameSearch string) ApiV1OrganizationsGetRequest {
+	r.nameSearch = &nameSearch
 	return r
 }
 
@@ -108,6 +115,9 @@ func (a *OrganizationsAPIService) V1OrganizationsGetExecute(r ApiV1Organizations
 	}
 	if r.parentOrganizationId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "parent_organization_id", r.parentOrganizationId, "form", "")
+	}
+	if r.nameSearch != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name_search", r.nameSearch, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -2185,6 +2195,7 @@ type ApiV3OrganizationIdOrganizationsGetRequest struct {
 	organizationId string
 	limit *int32
 	offset *int32
+	nameSearch *string
 }
 
 // Limit the number of organizations returned (default: 10)
@@ -2196,6 +2207,12 @@ func (r ApiV3OrganizationIdOrganizationsGetRequest) Limit(limit int32) ApiV3Orga
 // Offset the organizations returned (default: 0)
 func (r ApiV3OrganizationIdOrganizationsGetRequest) Offset(offset int32) ApiV3OrganizationIdOrganizationsGetRequest {
 	r.offset = &offset
+	return r
+}
+
+// If provided, only return organizations with names that contain the search string
+func (r ApiV3OrganizationIdOrganizationsGetRequest) NameSearch(nameSearch string) ApiV3OrganizationIdOrganizationsGetRequest {
+	r.nameSearch = &nameSearch
 	return r
 }
 
@@ -2247,6 +2264,9 @@ func (a *OrganizationsAPIService) V3OrganizationIdOrganizationsGetExecute(r ApiV
 	}
 	if r.offset != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
+	}
+	if r.nameSearch != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name_search", r.nameSearch, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

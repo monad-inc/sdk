@@ -90,6 +90,7 @@ public class OrganizationsApi {
      * @param offset Offset the organizations returned (default: 0) (optional)
      * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
      * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization (optional)
+     * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -100,7 +101,7 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationsGetCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationsGetCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, @javax.annotation.Nullable String nameSearch, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,6 +142,10 @@ public class OrganizationsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("parent_organization_id", parentOrganizationId));
         }
 
+        if (nameSearch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("name_search", nameSearch));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -161,8 +166,8 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OrganizationsGetValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, final ApiCallback _callback) throws ApiException {
-        return v1OrganizationsGetCall(limit, offset, noChildren, parentOrganizationId, _callback);
+    private okhttp3.Call v1OrganizationsGetValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, @javax.annotation.Nullable String nameSearch, final ApiCallback _callback) throws ApiException {
+        return v1OrganizationsGetCall(limit, offset, noChildren, parentOrganizationId, nameSearch, _callback);
 
     }
 
@@ -173,6 +178,7 @@ public class OrganizationsApi {
      * @param offset Offset the organizations returned (default: 0) (optional)
      * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
      * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization (optional)
+     * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @return ModelsOrganizationList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -182,8 +188,8 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsOrganizationList v1OrganizationsGet(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId) throws ApiException {
-        ApiResponse<ModelsOrganizationList> localVarResp = v1OrganizationsGetWithHttpInfo(limit, offset, noChildren, parentOrganizationId);
+    public ModelsOrganizationList v1OrganizationsGet(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, @javax.annotation.Nullable String nameSearch) throws ApiException {
+        ApiResponse<ModelsOrganizationList> localVarResp = v1OrganizationsGetWithHttpInfo(limit, offset, noChildren, parentOrganizationId, nameSearch);
         return localVarResp.getData();
     }
 
@@ -194,6 +200,7 @@ public class OrganizationsApi {
      * @param offset Offset the organizations returned (default: 0) (optional)
      * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
      * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization (optional)
+     * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @return ApiResponse&lt;ModelsOrganizationList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -203,8 +210,8 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsOrganizationList> v1OrganizationsGetWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId) throws ApiException {
-        okhttp3.Call localVarCall = v1OrganizationsGetValidateBeforeCall(limit, offset, noChildren, parentOrganizationId, null);
+    public ApiResponse<ModelsOrganizationList> v1OrganizationsGetWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, @javax.annotation.Nullable String nameSearch) throws ApiException {
+        okhttp3.Call localVarCall = v1OrganizationsGetValidateBeforeCall(limit, offset, noChildren, parentOrganizationId, nameSearch, null);
         Type localVarReturnType = new TypeToken<ModelsOrganizationList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -216,6 +223,7 @@ public class OrganizationsApi {
      * @param offset Offset the organizations returned (default: 0) (optional)
      * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
      * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization (optional)
+     * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -226,9 +234,9 @@ public class OrganizationsApi {
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OrganizationsGetAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, final ApiCallback<ModelsOrganizationList> _callback) throws ApiException {
+    public okhttp3.Call v1OrganizationsGetAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, @javax.annotation.Nullable String nameSearch, final ApiCallback<ModelsOrganizationList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1OrganizationsGetValidateBeforeCall(limit, offset, noChildren, parentOrganizationId, _callback);
+        okhttp3.Call localVarCall = v1OrganizationsGetValidateBeforeCall(limit, offset, noChildren, parentOrganizationId, nameSearch, _callback);
         Type localVarReturnType = new TypeToken<ModelsOrganizationList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1985,6 +1993,7 @@ public class OrganizationsApi {
      * @param organizationId Parent Organization ID (required)
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1996,7 +2005,7 @@ public class OrganizationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v3OrganizationIdOrganizationsGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v3OrganizationIdOrganizationsGetCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String nameSearch, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2030,6 +2039,10 @@ public class OrganizationsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
         }
 
+        if (nameSearch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("name_search", nameSearch));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2050,13 +2063,13 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v3OrganizationIdOrganizationsGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v3OrganizationIdOrganizationsGetValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String nameSearch, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling v3OrganizationIdOrganizationsGet(Async)");
         }
 
-        return v3OrganizationIdOrganizationsGetCall(organizationId, limit, offset, _callback);
+        return v3OrganizationIdOrganizationsGetCall(organizationId, limit, offset, nameSearch, _callback);
 
     }
 
@@ -2066,6 +2079,7 @@ public class OrganizationsApi {
      * @param organizationId Parent Organization ID (required)
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @return ModelsUserOrganizationList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2076,8 +2090,8 @@ public class OrganizationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsUserOrganizationList v3OrganizationIdOrganizationsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
-        ApiResponse<ModelsUserOrganizationList> localVarResp = v3OrganizationIdOrganizationsGetWithHttpInfo(organizationId, limit, offset);
+    public ModelsUserOrganizationList v3OrganizationIdOrganizationsGet(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String nameSearch) throws ApiException {
+        ApiResponse<ModelsUserOrganizationList> localVarResp = v3OrganizationIdOrganizationsGetWithHttpInfo(organizationId, limit, offset, nameSearch);
         return localVarResp.getData();
     }
 
@@ -2087,6 +2101,7 @@ public class OrganizationsApi {
      * @param organizationId Parent Organization ID (required)
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @return ApiResponse&lt;ModelsUserOrganizationList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2097,8 +2112,8 @@ public class OrganizationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsUserOrganizationList> v3OrganizationIdOrganizationsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
-        okhttp3.Call localVarCall = v3OrganizationIdOrganizationsGetValidateBeforeCall(organizationId, limit, offset, null);
+    public ApiResponse<ModelsUserOrganizationList> v3OrganizationIdOrganizationsGetWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String nameSearch) throws ApiException {
+        okhttp3.Call localVarCall = v3OrganizationIdOrganizationsGetValidateBeforeCall(organizationId, limit, offset, nameSearch, null);
         Type localVarReturnType = new TypeToken<ModelsUserOrganizationList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2109,6 +2124,7 @@ public class OrganizationsApi {
      * @param organizationId Parent Organization ID (required)
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2120,9 +2136,9 @@ public class OrganizationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v3OrganizationIdOrganizationsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsUserOrganizationList> _callback) throws ApiException {
+    public okhttp3.Call v3OrganizationIdOrganizationsGetAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String nameSearch, final ApiCallback<ModelsUserOrganizationList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v3OrganizationIdOrganizationsGetValidateBeforeCall(organizationId, limit, offset, _callback);
+        okhttp3.Call localVarCall = v3OrganizationIdOrganizationsGetValidateBeforeCall(organizationId, limit, offset, nameSearch, _callback);
         Type localVarReturnType = new TypeToken<ModelsUserOrganizationList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

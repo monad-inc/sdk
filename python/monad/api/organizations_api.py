@@ -57,6 +57,7 @@ class OrganizationsApi:
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
         no_children: Annotated[Optional[StrictBool], Field(description="If true, only return organizations that are directly associated with the user, not child organizations (default: false)")] = None,
         parent_organization_id: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations that are children of the specified parent organization")] = None,
+        name_search: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations with names that contain the search string")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -82,6 +83,8 @@ class OrganizationsApi:
         :type no_children: bool
         :param parent_organization_id: If provided, only return organizations that are children of the specified parent organization
         :type parent_organization_id: str
+        :param name_search: If provided, only return organizations with names that contain the search string
+        :type name_search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -109,6 +112,7 @@ class OrganizationsApi:
             offset=offset,
             no_children=no_children,
             parent_organization_id=parent_organization_id,
+            name_search=name_search,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -136,6 +140,7 @@ class OrganizationsApi:
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
         no_children: Annotated[Optional[StrictBool], Field(description="If true, only return organizations that are directly associated with the user, not child organizations (default: false)")] = None,
         parent_organization_id: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations that are children of the specified parent organization")] = None,
+        name_search: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations with names that contain the search string")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -161,6 +166,8 @@ class OrganizationsApi:
         :type no_children: bool
         :param parent_organization_id: If provided, only return organizations that are children of the specified parent organization
         :type parent_organization_id: str
+        :param name_search: If provided, only return organizations with names that contain the search string
+        :type name_search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -188,6 +195,7 @@ class OrganizationsApi:
             offset=offset,
             no_children=no_children,
             parent_organization_id=parent_organization_id,
+            name_search=name_search,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -215,6 +223,7 @@ class OrganizationsApi:
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
         no_children: Annotated[Optional[StrictBool], Field(description="If true, only return organizations that are directly associated with the user, not child organizations (default: false)")] = None,
         parent_organization_id: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations that are children of the specified parent organization")] = None,
+        name_search: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations with names that contain the search string")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -240,6 +249,8 @@ class OrganizationsApi:
         :type no_children: bool
         :param parent_organization_id: If provided, only return organizations that are children of the specified parent organization
         :type parent_organization_id: str
+        :param name_search: If provided, only return organizations with names that contain the search string
+        :type name_search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -267,6 +278,7 @@ class OrganizationsApi:
             offset=offset,
             no_children=no_children,
             parent_organization_id=parent_organization_id,
+            name_search=name_search,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -289,6 +301,7 @@ class OrganizationsApi:
         offset,
         no_children,
         parent_organization_id,
+        name_search,
         _request_auth,
         _content_type,
         _headers,
@@ -326,6 +339,10 @@ class OrganizationsApi:
         if parent_organization_id is not None:
             
             _query_params.append(('parent_organization_id', parent_organization_id))
+            
+        if name_search is not None:
+            
+            _query_params.append(('name_search', name_search))
             
         # process the header parameters
         # process the form parameters
@@ -3863,6 +3880,7 @@ class OrganizationsApi:
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
         limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: 10)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
+        name_search: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations with names that contain the search string")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3886,6 +3904,8 @@ class OrganizationsApi:
         :type limit: int
         :param offset: Offset the organizations returned (default: 0)
         :type offset: int
+        :param name_search: If provided, only return organizations with names that contain the search string
+        :type name_search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3912,6 +3932,7 @@ class OrganizationsApi:
             organization_id=organization_id,
             limit=limit,
             offset=offset,
+            name_search=name_search,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3939,6 +3960,7 @@ class OrganizationsApi:
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
         limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: 10)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
+        name_search: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations with names that contain the search string")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3962,6 +3984,8 @@ class OrganizationsApi:
         :type limit: int
         :param offset: Offset the organizations returned (default: 0)
         :type offset: int
+        :param name_search: If provided, only return organizations with names that contain the search string
+        :type name_search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3988,6 +4012,7 @@ class OrganizationsApi:
             organization_id=organization_id,
             limit=limit,
             offset=offset,
+            name_search=name_search,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4015,6 +4040,7 @@ class OrganizationsApi:
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
         limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: 10)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
+        name_search: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations with names that contain the search string")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4038,6 +4064,8 @@ class OrganizationsApi:
         :type limit: int
         :param offset: Offset the organizations returned (default: 0)
         :type offset: int
+        :param name_search: If provided, only return organizations with names that contain the search string
+        :type name_search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4064,6 +4092,7 @@ class OrganizationsApi:
             organization_id=organization_id,
             limit=limit,
             offset=offset,
+            name_search=name_search,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4086,6 +4115,7 @@ class OrganizationsApi:
         organization_id,
         limit,
         offset,
+        name_search,
         _request_auth,
         _content_type,
         _headers,
@@ -4117,6 +4147,10 @@ class OrganizationsApi:
         if offset is not None:
             
             _query_params.append(('offset', offset))
+            
+        if name_search is not None:
+            
+            _query_params.append(('name_search', name_search))
             
         # process the header parameters
         # process the form parameters

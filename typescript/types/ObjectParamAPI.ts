@@ -4023,6 +4023,13 @@ export interface OrganizationsApiV1OrganizationsGetRequest {
      * @memberof OrganizationsApiv1OrganizationsGet
      */
     parentOrganizationId?: string
+    /**
+     * If provided, only return organizations with names that contain the search string
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv1OrganizationsGet
+     */
+    nameSearch?: string
 }
 
 export interface OrganizationsApiV1OrganizationsOrganizationIdDeleteRequest {
@@ -4364,6 +4371,13 @@ export interface OrganizationsApiV3OrganizationIdOrganizationsGetRequest {
      * @memberof OrganizationsApiv3OrganizationIdOrganizationsGet
      */
     offset?: number
+    /**
+     * If provided, only return organizations with names that contain the search string
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv3OrganizationIdOrganizationsGet
+     */
+    nameSearch?: string
 }
 
 export interface OrganizationsApiV3OrganizationIdOrganizationsPostRequest {
@@ -4395,7 +4409,7 @@ export class ObjectOrganizationsApi {
      * @param param the request object
      */
     public v1OrganizationsGetWithHttpInfo(param: OrganizationsApiV1OrganizationsGetRequest = {}, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganizationList>> {
-        return this.api.v1OrganizationsGetWithHttpInfo(param.limit, param.offset, param.noChildren, param.parentOrganizationId,  options).toPromise();
+        return this.api.v1OrganizationsGetWithHttpInfo(param.limit, param.offset, param.noChildren, param.parentOrganizationId, param.nameSearch,  options).toPromise();
     }
 
     /**
@@ -4404,7 +4418,7 @@ export class ObjectOrganizationsApi {
      * @param param the request object
      */
     public v1OrganizationsGet(param: OrganizationsApiV1OrganizationsGetRequest = {}, options?: ConfigurationOptions): Promise<ModelsOrganizationList> {
-        return this.api.v1OrganizationsGet(param.limit, param.offset, param.noChildren, param.parentOrganizationId,  options).toPromise();
+        return this.api.v1OrganizationsGet(param.limit, param.offset, param.noChildren, param.parentOrganizationId, param.nameSearch,  options).toPromise();
     }
 
     /**
@@ -4611,7 +4625,7 @@ export class ObjectOrganizationsApi {
      * @param param the request object
      */
     public v3OrganizationIdOrganizationsGetWithHttpInfo(param: OrganizationsApiV3OrganizationIdOrganizationsGetRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsUserOrganizationList>> {
-        return this.api.v3OrganizationIdOrganizationsGetWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
+        return this.api.v3OrganizationIdOrganizationsGetWithHttpInfo(param.organizationId, param.limit, param.offset, param.nameSearch,  options).toPromise();
     }
 
     /**
@@ -4620,7 +4634,7 @@ export class ObjectOrganizationsApi {
      * @param param the request object
      */
     public v3OrganizationIdOrganizationsGet(param: OrganizationsApiV3OrganizationIdOrganizationsGetRequest, options?: ConfigurationOptions): Promise<ModelsUserOrganizationList> {
-        return this.api.v3OrganizationIdOrganizationsGet(param.organizationId, param.limit, param.offset,  options).toPromise();
+        return this.api.v3OrganizationIdOrganizationsGet(param.organizationId, param.limit, param.offset, param.nameSearch,  options).toPromise();
     }
 
     /**

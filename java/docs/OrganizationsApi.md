@@ -22,7 +22,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="v1OrganizationsGet"></a>
 # **v1OrganizationsGet**
-> ModelsOrganizationList v1OrganizationsGet(limit, offset, noChildren, parentOrganizationId)
+> ModelsOrganizationList v1OrganizationsGet(limit, offset, noChildren, parentOrganizationId, nameSearch)
 
 List organizations for user
 
@@ -60,8 +60,9 @@ public class Example {
     Integer offset = 56; // Integer | Offset the organizations returned (default: 0)
     Boolean noChildren = true; // Boolean | If true, only return organizations that are directly associated with the user, not child organizations (default: false)
     String parentOrganizationId = "parentOrganizationId_example"; // String | If provided, only return organizations that are children of the specified parent organization
+    String nameSearch = "nameSearch_example"; // String | If provided, only return organizations with names that contain the search string
     try {
-      ModelsOrganizationList result = apiInstance.v1OrganizationsGet(limit, offset, noChildren, parentOrganizationId);
+      ModelsOrganizationList result = apiInstance.v1OrganizationsGet(limit, offset, noChildren, parentOrganizationId, nameSearch);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#v1OrganizationsGet");
@@ -82,6 +83,7 @@ public class Example {
 | **offset** | **Integer**| Offset the organizations returned (default: 0) | [optional] |
 | **noChildren** | **Boolean**| If true, only return organizations that are directly associated with the user, not child organizations (default: false) | [optional] |
 | **parentOrganizationId** | **String**| If provided, only return organizations that are children of the specified parent organization | [optional] |
+| **nameSearch** | **String**| If provided, only return organizations with names that contain the search string | [optional] |
 
 ### Return type
 
@@ -1011,7 +1013,7 @@ public class Example {
 
 <a id="v3OrganizationIdOrganizationsGet"></a>
 # **v3OrganizationIdOrganizationsGet**
-> ModelsUserOrganizationList v3OrganizationIdOrganizationsGet(organizationId, limit, offset)
+> ModelsUserOrganizationList v3OrganizationIdOrganizationsGet(organizationId, limit, offset, nameSearch)
 
 List child organizations
 
@@ -1048,8 +1050,9 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Parent Organization ID
     Integer limit = 56; // Integer | Limit the number of organizations returned (default: 10)
     Integer offset = 56; // Integer | Offset the organizations returned (default: 0)
+    String nameSearch = "nameSearch_example"; // String | If provided, only return organizations with names that contain the search string
     try {
-      ModelsUserOrganizationList result = apiInstance.v3OrganizationIdOrganizationsGet(organizationId, limit, offset);
+      ModelsUserOrganizationList result = apiInstance.v3OrganizationIdOrganizationsGet(organizationId, limit, offset, nameSearch);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#v3OrganizationIdOrganizationsGet");
@@ -1069,6 +1072,7 @@ public class Example {
 | **organizationId** | **String**| Parent Organization ID | |
 | **limit** | **Integer**| Limit the number of organizations returned (default: 10) | [optional] |
 | **offset** | **Integer**| Offset the organizations returned (default: 0) | [optional] |
+| **nameSearch** | **String**| If provided, only return organizations with names that contain the search string | [optional] |
 
 ### Return type
 

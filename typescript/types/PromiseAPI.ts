@@ -3114,10 +3114,11 @@ export class PromiseOrganizationsApi {
      * @param [offset] Offset the organizations returned (default: 0)
      * @param [noChildren] If true, only return organizations that are directly associated with the user, not child organizations (default: false)
      * @param [parentOrganizationId] If provided, only return organizations that are children of the specified parent organization
+     * @param [nameSearch] If provided, only return organizations with names that contain the search string
      */
-    public v1OrganizationsGetWithHttpInfo(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOrganizationList>> {
+    public v1OrganizationsGetWithHttpInfo(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, nameSearch?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOrganizationList>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v1OrganizationsGetWithHttpInfo(limit, offset, noChildren, parentOrganizationId, observableOptions);
+        const result = this.api.v1OrganizationsGetWithHttpInfo(limit, offset, noChildren, parentOrganizationId, nameSearch, observableOptions);
         return result.toPromise();
     }
 
@@ -3128,10 +3129,11 @@ export class PromiseOrganizationsApi {
      * @param [offset] Offset the organizations returned (default: 0)
      * @param [noChildren] If true, only return organizations that are directly associated with the user, not child organizations (default: false)
      * @param [parentOrganizationId] If provided, only return organizations that are children of the specified parent organization
+     * @param [nameSearch] If provided, only return organizations with names that contain the search string
      */
-    public v1OrganizationsGet(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, _options?: PromiseConfigurationOptions): Promise<ModelsOrganizationList> {
+    public v1OrganizationsGet(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, nameSearch?: string, _options?: PromiseConfigurationOptions): Promise<ModelsOrganizationList> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v1OrganizationsGet(limit, offset, noChildren, parentOrganizationId, observableOptions);
+        const result = this.api.v1OrganizationsGet(limit, offset, noChildren, parentOrganizationId, nameSearch, observableOptions);
         return result.toPromise();
     }
 
@@ -3443,10 +3445,11 @@ export class PromiseOrganizationsApi {
      * @param organizationId Parent Organization ID
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
+     * @param [nameSearch] If provided, only return organizations with names that contain the search string
      */
-    public v3OrganizationIdOrganizationsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsUserOrganizationList>> {
+    public v3OrganizationIdOrganizationsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, nameSearch?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsUserOrganizationList>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v3OrganizationIdOrganizationsGetWithHttpInfo(organizationId, limit, offset, observableOptions);
+        const result = this.api.v3OrganizationIdOrganizationsGetWithHttpInfo(organizationId, limit, offset, nameSearch, observableOptions);
         return result.toPromise();
     }
 
@@ -3456,10 +3459,11 @@ export class PromiseOrganizationsApi {
      * @param organizationId Parent Organization ID
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
+     * @param [nameSearch] If provided, only return organizations with names that contain the search string
      */
-    public v3OrganizationIdOrganizationsGet(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsUserOrganizationList> {
+    public v3OrganizationIdOrganizationsGet(organizationId: string, limit?: number, offset?: number, nameSearch?: string, _options?: PromiseConfigurationOptions): Promise<ModelsUserOrganizationList> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.v3OrganizationIdOrganizationsGet(organizationId, limit, offset, observableOptions);
+        const result = this.api.v3OrganizationIdOrganizationsGet(organizationId, limit, offset, nameSearch, observableOptions);
         return result.toPromise();
     }
 

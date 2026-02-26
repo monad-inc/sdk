@@ -4140,11 +4140,12 @@ export class ObservableOrganizationsApi {
      * @param [offset] Offset the organizations returned (default: 0)
      * @param [noChildren] If true, only return organizations that are directly associated with the user, not child organizations (default: false)
      * @param [parentOrganizationId] If provided, only return organizations that are children of the specified parent organization
+     * @param [nameSearch] If provided, only return organizations with names that contain the search string
      */
-    public v1OrganizationsGetWithHttpInfo(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOrganizationList>> {
+    public v1OrganizationsGetWithHttpInfo(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, nameSearch?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOrganizationList>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v1OrganizationsGet(limit, offset, noChildren, parentOrganizationId, _config);
+        const requestContextPromise = this.requestFactory.v1OrganizationsGet(limit, offset, noChildren, parentOrganizationId, nameSearch, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -4168,9 +4169,10 @@ export class ObservableOrganizationsApi {
      * @param [offset] Offset the organizations returned (default: 0)
      * @param [noChildren] If true, only return organizations that are directly associated with the user, not child organizations (default: false)
      * @param [parentOrganizationId] If provided, only return organizations that are children of the specified parent organization
+     * @param [nameSearch] If provided, only return organizations with names that contain the search string
      */
-    public v1OrganizationsGet(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, _options?: ConfigurationOptions): Observable<ModelsOrganizationList> {
-        return this.v1OrganizationsGetWithHttpInfo(limit, offset, noChildren, parentOrganizationId, _options).pipe(map((apiResponse: HttpInfo<ModelsOrganizationList>) => apiResponse.data));
+    public v1OrganizationsGet(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, nameSearch?: string, _options?: ConfigurationOptions): Observable<ModelsOrganizationList> {
+        return this.v1OrganizationsGetWithHttpInfo(limit, offset, noChildren, parentOrganizationId, nameSearch, _options).pipe(map((apiResponse: HttpInfo<ModelsOrganizationList>) => apiResponse.data));
     }
 
     /**
@@ -4613,11 +4615,12 @@ export class ObservableOrganizationsApi {
      * @param organizationId Parent Organization ID
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
+     * @param [nameSearch] If provided, only return organizations with names that contain the search string
      */
-    public v3OrganizationIdOrganizationsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsUserOrganizationList>> {
+    public v3OrganizationIdOrganizationsGetWithHttpInfo(organizationId: string, limit?: number, offset?: number, nameSearch?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsUserOrganizationList>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.v3OrganizationIdOrganizationsGet(organizationId, limit, offset, _config);
+        const requestContextPromise = this.requestFactory.v3OrganizationIdOrganizationsGet(organizationId, limit, offset, nameSearch, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -4640,9 +4643,10 @@ export class ObservableOrganizationsApi {
      * @param organizationId Parent Organization ID
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
+     * @param [nameSearch] If provided, only return organizations with names that contain the search string
      */
-    public v3OrganizationIdOrganizationsGet(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsUserOrganizationList> {
-        return this.v3OrganizationIdOrganizationsGetWithHttpInfo(organizationId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsUserOrganizationList>) => apiResponse.data));
+    public v3OrganizationIdOrganizationsGet(organizationId: string, limit?: number, offset?: number, nameSearch?: string, _options?: ConfigurationOptions): Observable<ModelsUserOrganizationList> {
+        return this.v3OrganizationIdOrganizationsGetWithHttpInfo(organizationId, limit, offset, nameSearch, _options).pipe(map((apiResponse: HttpInfo<ModelsUserOrganizationList>) => apiResponse.data));
     }
 
     /**

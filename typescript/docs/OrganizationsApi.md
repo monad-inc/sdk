@@ -44,6 +44,8 @@ const request: OrganizationsApiV1OrganizationsGetRequest = {
   noChildren: true,
     // If provided, only return organizations that are children of the specified parent organization (optional)
   parentOrganizationId: "parent_organization_id_example",
+    // If provided, only return organizations with names that contain the search string (optional)
+  nameSearch: "name_search_example",
 };
 
 const data = await apiInstance.v1OrganizationsGet(request);
@@ -59,6 +61,7 @@ Name | Type | Description  | Notes
  **offset** | [**number**] | Offset the organizations returned (default: 0) | (optional) defaults to undefined
  **noChildren** | [**boolean**] | If true, only return organizations that are directly associated with the user, not child organizations (default: false) | (optional) defaults to undefined
  **parentOrganizationId** | [**string**] | If provided, only return organizations that are children of the specified parent organization | (optional) defaults to undefined
+ **nameSearch** | [**string**] | If provided, only return organizations with names that contain the search string | (optional) defaults to undefined
 
 
 ### Return type
@@ -813,6 +816,8 @@ const request: OrganizationsApiV3OrganizationIdOrganizationsGetRequest = {
   limit: 1,
     // Offset the organizations returned (default: 0) (optional)
   offset: 1,
+    // If provided, only return organizations with names that contain the search string (optional)
+  nameSearch: "name_search_example",
 };
 
 const data = await apiInstance.v3OrganizationIdOrganizationsGet(request);
@@ -827,6 +832,7 @@ Name | Type | Description  | Notes
  **organizationId** | [**string**] | Parent Organization ID | defaults to undefined
  **limit** | [**number**] | Limit the number of organizations returned (default: 10) | (optional) defaults to undefined
  **offset** | [**number**] | Offset the organizations returned (default: 0) | (optional) defaults to undefined
+ **nameSearch** | [**string**] | If provided, only return organizations with names that contain the search string | (optional) defaults to undefined
 
 
 ### Return type

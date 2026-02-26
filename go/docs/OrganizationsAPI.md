@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 ## V1OrganizationsGet
 
-> ModelsOrganizationList V1OrganizationsGet(ctx).Limit(limit).Offset(offset).NoChildren(noChildren).ParentOrganizationId(parentOrganizationId).Execute()
+> ModelsOrganizationList V1OrganizationsGet(ctx).Limit(limit).Offset(offset).NoChildren(noChildren).ParentOrganizationId(parentOrganizationId).NameSearch(nameSearch).Execute()
 
 List organizations for user
 
@@ -46,10 +46,11 @@ func main() {
 	offset := int32(56) // int32 | Offset the organizations returned (default: 0) (optional)
 	noChildren := true // bool | If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
 	parentOrganizationId := "parentOrganizationId_example" // string | If provided, only return organizations that are children of the specified parent organization (optional)
+	nameSearch := "nameSearch_example" // string | If provided, only return organizations with names that contain the search string (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationsAPI.V1OrganizationsGet(context.Background()).Limit(limit).Offset(offset).NoChildren(noChildren).ParentOrganizationId(parentOrganizationId).Execute()
+	resp, r, err := apiClient.OrganizationsAPI.V1OrganizationsGet(context.Background()).Limit(limit).Offset(offset).NoChildren(noChildren).ParentOrganizationId(parentOrganizationId).NameSearch(nameSearch).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.V1OrganizationsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -74,6 +75,7 @@ Name | Type | Description  | Notes
  **offset** | **int32** | Offset the organizations returned (default: 0) | 
  **noChildren** | **bool** | If true, only return organizations that are directly associated with the user, not child organizations (default: false) | 
  **parentOrganizationId** | **string** | If provided, only return organizations that are children of the specified parent organization | 
+ **nameSearch** | **string** | If provided, only return organizations with names that contain the search string | 
 
 ### Return type
 
@@ -923,7 +925,7 @@ Name | Type | Description  | Notes
 
 ## V3OrganizationIdOrganizationsGet
 
-> ModelsUserOrganizationList V3OrganizationIdOrganizationsGet(ctx, organizationId).Limit(limit).Offset(offset).Execute()
+> ModelsUserOrganizationList V3OrganizationIdOrganizationsGet(ctx, organizationId).Limit(limit).Offset(offset).NameSearch(nameSearch).Execute()
 
 List child organizations
 
@@ -945,10 +947,11 @@ func main() {
 	organizationId := "organizationId_example" // string | Parent Organization ID
 	limit := int32(56) // int32 | Limit the number of organizations returned (default: 10) (optional)
 	offset := int32(56) // int32 | Offset the organizations returned (default: 0) (optional)
+	nameSearch := "nameSearch_example" // string | If provided, only return organizations with names that contain the search string (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrganizationsAPI.V3OrganizationIdOrganizationsGet(context.Background(), organizationId).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.OrganizationsAPI.V3OrganizationIdOrganizationsGet(context.Background(), organizationId).Limit(limit).Offset(offset).NameSearch(nameSearch).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.V3OrganizationIdOrganizationsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -976,6 +979,7 @@ Name | Type | Description  | Notes
 
  **limit** | **int32** | Limit the number of organizations returned (default: 10) | 
  **offset** | **int32** | Offset the organizations returned (default: 0) | 
+ **nameSearch** | **string** | If provided, only return organizations with names that contain the search string | 
 
 ### Return type
 

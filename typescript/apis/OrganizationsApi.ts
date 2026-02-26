@@ -34,9 +34,11 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
      * @param offset Offset the organizations returned (default: 0)
      * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false)
      * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization
+     * @param nameSearch If provided, only return organizations with names that contain the search string
      */
-    public async v1OrganizationsGet(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, _options?: Configuration): Promise<RequestContext> {
+    public async v1OrganizationsGet(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, nameSearch?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
 
 
 
@@ -67,6 +69,11 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
         // Query Params
         if (parentOrganizationId !== undefined) {
             requestContext.setQueryParam("parent_organization_id", ObjectSerializer.serialize(parentOrganizationId, "string", ""));
+        }
+
+        // Query Params
+        if (nameSearch !== undefined) {
+            requestContext.setQueryParam("name_search", ObjectSerializer.serialize(nameSearch, "string", ""));
         }
 
 
@@ -823,14 +830,16 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
      * @param organizationId Parent Organization ID
      * @param limit Limit the number of organizations returned (default: 10)
      * @param offset Offset the organizations returned (default: 0)
+     * @param nameSearch If provided, only return organizations with names that contain the search string
      */
-    public async v3OrganizationIdOrganizationsGet(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+    public async v3OrganizationIdOrganizationsGet(organizationId: string, limit?: number, offset?: number, nameSearch?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
             throw new RequiredError("OrganizationsApi", "v3OrganizationIdOrganizationsGet", "organizationId");
         }
+
 
 
 
@@ -851,6 +860,11 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
         // Query Params
         if (offset !== undefined) {
             requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
+        }
+
+        // Query Params
+        if (nameSearch !== undefined) {
+            requestContext.setQueryParam("name_search", ObjectSerializer.serialize(nameSearch, "string", ""));
         }
 
 
