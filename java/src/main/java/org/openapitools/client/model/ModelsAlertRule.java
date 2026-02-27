@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsAlertRule
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-27T00:16:46.995024300Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-27T10:05:10.884426830Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsAlertRule {
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
