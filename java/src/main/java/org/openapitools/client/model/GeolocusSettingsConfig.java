@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Geolocus settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-27T16:49:39.612664542Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-27T18:08:18.104565724Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class GeolocusSettingsConfig {
   public static final String SERIALIZED_NAME_DESTINATION_PATH = "destination_path";
   @SerializedName(SERIALIZED_NAME_DESTINATION_PATH)
