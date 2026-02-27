@@ -74,6 +74,8 @@ type APIClient struct {
 
 	InputsAPI *InputsAPIService
 
+	KvAPI *KvAPIService
+
 	LogsAPI *LogsAPIService
 
 	OauthAPI *OauthAPIService
@@ -147,6 +149,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.EnrichmentsAPI = (*EnrichmentsAPIService)(&c.common)
 	c.FeatureFlagsAPI = (*FeatureFlagsAPIService)(&c.common)
 	c.InputsAPI = (*InputsAPIService)(&c.common)
+	c.KvAPI = (*KvAPIService)(&c.common)
 	c.LogsAPI = (*LogsAPIService)(&c.common)
 	c.OauthAPI = (*OauthAPIService)(&c.common)
 	c.OrganizationApiKeysAPI = (*OrganizationApiKeysAPIService)(&c.common)

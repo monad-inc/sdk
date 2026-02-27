@@ -13,6 +13,7 @@ from monad.api.data_api import DataApi
 from monad.api.enrichments_api import EnrichmentsApi
 from monad.api.feature_flags_api import FeatureFlagsApi
 from monad.api.inputs_api import InputsApi
+from monad.api.kv_api import KvApi
 from monad.api.logs_api import LogsApi
 from monad.api.oauth_api import OauthApi
 from monad.api.organization_api_keys_api import OrganizationApiKeysApi

@@ -121,6 +121,9 @@ Class | Method | HTTP request | Description
 *FeatureFlagsAPI* | [**V3FeatureFlagsGet**](docs/FeatureFlagsAPI.md#v3featureflagsget) | **Get** /v3/feature_flags | Get feature flags
 *InputsAPI* | [**V1InputsGet**](docs/InputsAPI.md#v1inputsget) | **Get** /v1/inputs | List inputs
 *InputsAPI* | [**V1InputsInputTypeIdGet**](docs/InputsAPI.md#v1inputsinputtypeidget) | **Get** /v1/inputs/{input_type_id} | Get input config meta
+*KvAPI* | [**V3OrganizationIdKvLookupMetadataGet**](docs/KvAPI.md#v3organizationidkvlookupmetadataget) | **Get** /v3/{organization_id}/kv_lookup/metadata | Get KV lookup metadata
+*KvAPI* | [**V3OrganizationIdKvLookupSampleGet**](docs/KvAPI.md#v3organizationidkvlookupsampleget) | **Get** /v3/{organization_id}/kv_lookup/sample | Get KV lookup sample entries
+*KvAPI* | [**V3OrganizationIdKvLookupValueGet**](docs/KvAPI.md#v3organizationidkvlookupvalueget) | **Get** /v3/{organization_id}/kv_lookup/value | Get value by key from KV lookup
 *LogsAPI* | [**V1OrganizationIdLogsApiGet**](docs/LogsAPI.md#v1organizationidlogsapiget) | **Get** /v1/{organization_id}/logs/api | Stream organization api logs
 *LogsAPI* | [**V1OrganizationIdLogsGet**](docs/LogsAPI.md#v1organizationidlogsget) | **Get** /v1/{organization_id}/logs | Stream organization logs
 *LogsAPI* | [**V1OrganizationIdLogsPipelinesGet**](docs/LogsAPI.md#v1organizationidlogspipelinesget) | **Get** /v1/{organization_id}/logs/pipelines | Stream organization pipeline logs
@@ -437,6 +440,8 @@ Class | Method | HTTP request | Description
  - [KoiAuditLogsSettingsConfig](docs/KoiAuditLogsSettingsConfig.md)
  - [KvLookupOutputSettingsConfig](docs/KvLookupOutputSettingsConfig.md)
  - [KvLookupSettingsConfig](docs/KvLookupSettingsConfig.md)
+ - [KvlookupGetMetadataResponse](docs/KvlookupGetMetadataResponse.md)
+ - [KvlookupKVEntry](docs/KvlookupKVEntry.md)
  - [LeafconditionsInfo](docs/LeafconditionsInfo.md)
  - [LogAnalyticsQuerySecretsConfig](docs/LogAnalyticsQuerySecretsConfig.md)
  - [LogAnalyticsQuerySettingsConfig](docs/LogAnalyticsQuerySettingsConfig.md)

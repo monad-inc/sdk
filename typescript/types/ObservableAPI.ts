@@ -203,6 +203,8 @@ import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
 import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
+import { KvlookupGetMetadataResponse } from '../models/KvlookupGetMetadataResponse';
+import { KvlookupKVEntry } from '../models/KvlookupKVEntry';
 import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
@@ -2249,6 +2251,136 @@ export class ObservableInputsApi {
      */
     public v1InputsInputTypeIdGet(inputTypeId: string, _options?: ConfigurationOptions): Observable<ModelsConnectorMeta> {
         return this.v1InputsInputTypeIdGetWithHttpInfo(inputTypeId, _options).pipe(map((apiResponse: HttpInfo<ModelsConnectorMeta>) => apiResponse.data));
+    }
+
+}
+
+import { KvApiRequestFactory, KvApiResponseProcessor} from "../apis/KvApi";
+export class ObservableKvApi {
+    private requestFactory: KvApiRequestFactory;
+    private responseProcessor: KvApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: KvApiRequestFactory,
+        responseProcessor?: KvApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new KvApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new KvApiResponseProcessor();
+    }
+
+    /**
+     * Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+     * Get KV lookup metadata
+     * @param organizationId Organization ID
+     * @param componentId Component ID
+     */
+    public v3OrganizationIdKvLookupMetadataGetWithHttpInfo(organizationId: string, componentId: string, _options?: ConfigurationOptions): Observable<HttpInfo<KvlookupGetMetadataResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdKvLookupMetadataGet(organizationId, componentId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdKvLookupMetadataGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+     * Get KV lookup metadata
+     * @param organizationId Organization ID
+     * @param componentId Component ID
+     */
+    public v3OrganizationIdKvLookupMetadataGet(organizationId: string, componentId: string, _options?: ConfigurationOptions): Observable<KvlookupGetMetadataResponse> {
+        return this.v3OrganizationIdKvLookupMetadataGetWithHttpInfo(organizationId, componentId, _options).pipe(map((apiResponse: HttpInfo<KvlookupGetMetadataResponse>) => apiResponse.data));
+    }
+
+    /**
+     * Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+     * Get KV lookup sample entries
+     * @param organizationId Organization ID
+     * @param componentId Component ID
+     * @param numEntries Number of sample entries to return
+     */
+    public v3OrganizationIdKvLookupSampleGetWithHttpInfo(organizationId: string, componentId: string, numEntries: number, _options?: ConfigurationOptions): Observable<HttpInfo<Array<KvlookupKVEntry>>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdKvLookupSampleGet(organizationId, componentId, numEntries, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdKvLookupSampleGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+     * Get KV lookup sample entries
+     * @param organizationId Organization ID
+     * @param componentId Component ID
+     * @param numEntries Number of sample entries to return
+     */
+    public v3OrganizationIdKvLookupSampleGet(organizationId: string, componentId: string, numEntries: number, _options?: ConfigurationOptions): Observable<Array<KvlookupKVEntry>> {
+        return this.v3OrganizationIdKvLookupSampleGetWithHttpInfo(organizationId, componentId, numEntries, _options).pipe(map((apiResponse: HttpInfo<Array<KvlookupKVEntry>>) => apiResponse.data));
+    }
+
+    /**
+     * Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+     * Get value by key from KV lookup
+     * @param organizationId Organization ID
+     * @param componentId Component ID
+     * @param key Key to look up
+     */
+    public v3OrganizationIdKvLookupValueGetWithHttpInfo(organizationId: string, componentId: string, key: string, _options?: ConfigurationOptions): Observable<HttpInfo<KvlookupKVEntry>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdKvLookupValueGet(organizationId, componentId, key, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdKvLookupValueGetWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+     * Get value by key from KV lookup
+     * @param organizationId Organization ID
+     * @param componentId Component ID
+     * @param key Key to look up
+     */
+    public v3OrganizationIdKvLookupValueGet(organizationId: string, componentId: string, key: string, _options?: ConfigurationOptions): Observable<KvlookupKVEntry> {
+        return this.v3OrganizationIdKvLookupValueGetWithHttpInfo(organizationId, componentId, key, _options).pipe(map((apiResponse: HttpInfo<KvlookupKVEntry>) => apiResponse.data));
     }
 
 }

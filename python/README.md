@@ -144,6 +144,9 @@ Class | Method | HTTP request | Description
 *FeatureFlagsApi* | [**v3_feature_flags_get**](docs/FeatureFlagsApi.md#v3_feature_flags_get) | **GET** /v3/feature_flags | Get feature flags
 *InputsApi* | [**v1_inputs_get**](docs/InputsApi.md#v1_inputs_get) | **GET** /v1/inputs | List inputs
 *InputsApi* | [**v1_inputs_input_type_id_get**](docs/InputsApi.md#v1_inputs_input_type_id_get) | **GET** /v1/inputs/{input_type_id} | Get input config meta
+*KvApi* | [**v3_organization_id_kv_lookup_metadata_get**](docs/KvApi.md#v3_organization_id_kv_lookup_metadata_get) | **GET** /v3/{organization_id}/kv_lookup/metadata | Get KV lookup metadata
+*KvApi* | [**v3_organization_id_kv_lookup_sample_get**](docs/KvApi.md#v3_organization_id_kv_lookup_sample_get) | **GET** /v3/{organization_id}/kv_lookup/sample | Get KV lookup sample entries
+*KvApi* | [**v3_organization_id_kv_lookup_value_get**](docs/KvApi.md#v3_organization_id_kv_lookup_value_get) | **GET** /v3/{organization_id}/kv_lookup/value | Get value by key from KV lookup
 *LogsApi* | [**v1_organization_id_logs_api_get**](docs/LogsApi.md#v1_organization_id_logs_api_get) | **GET** /v1/{organization_id}/logs/api | Stream organization api logs
 *LogsApi* | [**v1_organization_id_logs_get**](docs/LogsApi.md#v1_organization_id_logs_get) | **GET** /v1/{organization_id}/logs | Stream organization logs
 *LogsApi* | [**v1_organization_id_logs_pipelines_get**](docs/LogsApi.md#v1_organization_id_logs_pipelines_get) | **GET** /v1/{organization_id}/logs/pipelines | Stream organization pipeline logs
@@ -460,6 +463,8 @@ Class | Method | HTTP request | Description
  - [KoiAuditLogsSettingsConfig](docs/KoiAuditLogsSettingsConfig.md)
  - [KvLookupOutputSettingsConfig](docs/KvLookupOutputSettingsConfig.md)
  - [KvLookupSettingsConfig](docs/KvLookupSettingsConfig.md)
+ - [KvlookupGetMetadataResponse](docs/KvlookupGetMetadataResponse.md)
+ - [KvlookupKVEntry](docs/KvlookupKVEntry.md)
  - [LeafconditionsInfo](docs/LeafconditionsInfo.md)
  - [LogAnalyticsQuerySecretsConfig](docs/LogAnalyticsQuerySecretsConfig.md)
  - [LogAnalyticsQuerySettingsConfig](docs/LogAnalyticsQuerySettingsConfig.md)

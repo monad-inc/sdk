@@ -198,6 +198,8 @@ export * from '../models/KoiAuditLogsSecretsConfig';
 export * from '../models/KoiAuditLogsSettingsConfig';
 export * from '../models/KvLookupOutputSettingsConfig';
 export * from '../models/KvLookupSettingsConfig';
+export * from '../models/KvlookupGetMetadataResponse';
+export * from '../models/KvlookupKVEntry';
 export * from '../models/LeafconditionsInfo';
 export * from '../models/LogAnalyticsQuerySecretsConfig';
 export * from '../models/LogAnalyticsQuerySettingsConfig';
@@ -734,6 +736,8 @@ import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
 import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
+import { KvlookupGetMetadataResponse } from '../models/KvlookupGetMetadataResponse';
+import { KvlookupKVEntry } from '../models/KvlookupKVEntry';
 import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
@@ -1302,6 +1306,8 @@ let typeMap: {[index: string]: any} = {
     "KoiAuditLogsSettingsConfig": KoiAuditLogsSettingsConfig,
     "KvLookupOutputSettingsConfig": KvLookupOutputSettingsConfig,
     "KvLookupSettingsConfig": KvLookupSettingsConfig,
+    "KvlookupGetMetadataResponse": KvlookupGetMetadataResponse,
+    "KvlookupKVEntry": KvlookupKVEntry,
     "LeafconditionsInfo": LeafconditionsInfo,
     "LogAnalyticsQuerySecretsConfig": LogAnalyticsQuerySecretsConfig,
     "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,

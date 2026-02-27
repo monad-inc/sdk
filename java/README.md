@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-02-27T18:08:18.104565724Z[Etc/UTC]
+  - Build date: 2026-02-27T18:51:15.714112983Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -171,6 +171,9 @@ Class | Method | HTTP request | Description
 *FeatureFlagsApi* | [**v3FeatureFlagsGet**](docs/FeatureFlagsApi.md#v3FeatureFlagsGet) | **GET** /v3/feature_flags | Get feature flags
 *InputsApi* | [**v1InputsGet**](docs/InputsApi.md#v1InputsGet) | **GET** /v1/inputs | List inputs
 *InputsApi* | [**v1InputsInputTypeIdGet**](docs/InputsApi.md#v1InputsInputTypeIdGet) | **GET** /v1/inputs/{input_type_id} | Get input config meta
+*KvApi* | [**v3OrganizationIdKvLookupMetadataGet**](docs/KvApi.md#v3OrganizationIdKvLookupMetadataGet) | **GET** /v3/{organization_id}/kv_lookup/metadata | Get KV lookup metadata
+*KvApi* | [**v3OrganizationIdKvLookupSampleGet**](docs/KvApi.md#v3OrganizationIdKvLookupSampleGet) | **GET** /v3/{organization_id}/kv_lookup/sample | Get KV lookup sample entries
+*KvApi* | [**v3OrganizationIdKvLookupValueGet**](docs/KvApi.md#v3OrganizationIdKvLookupValueGet) | **GET** /v3/{organization_id}/kv_lookup/value | Get value by key from KV lookup
 *LogsApi* | [**v1OrganizationIdLogsApiGet**](docs/LogsApi.md#v1OrganizationIdLogsApiGet) | **GET** /v1/{organization_id}/logs/api | Stream organization api logs
 *LogsApi* | [**v1OrganizationIdLogsGet**](docs/LogsApi.md#v1OrganizationIdLogsGet) | **GET** /v1/{organization_id}/logs | Stream organization logs
 *LogsApi* | [**v1OrganizationIdLogsPipelinesGet**](docs/LogsApi.md#v1OrganizationIdLogsPipelinesGet) | **GET** /v1/{organization_id}/logs/pipelines | Stream organization pipeline logs
@@ -487,6 +490,8 @@ Class | Method | HTTP request | Description
  - [KoiAuditLogsSettingsConfig](docs/KoiAuditLogsSettingsConfig.md)
  - [KvLookupOutputSettingsConfig](docs/KvLookupOutputSettingsConfig.md)
  - [KvLookupSettingsConfig](docs/KvLookupSettingsConfig.md)
+ - [KvlookupGetMetadataResponse](docs/KvlookupGetMetadataResponse.md)
+ - [KvlookupKVEntry](docs/KvlookupKVEntry.md)
  - [LeafconditionsInfo](docs/LeafconditionsInfo.md)
  - [LogAnalyticsQuerySecretsConfig](docs/LogAnalyticsQuerySecretsConfig.md)
  - [LogAnalyticsQuerySettingsConfig](docs/LogAnalyticsQuerySettingsConfig.md)

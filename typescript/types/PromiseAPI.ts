@@ -202,6 +202,8 @@ import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
 import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
+import { KvlookupGetMetadataResponse } from '../models/KvlookupGetMetadataResponse';
+import { KvlookupKVEntry } from '../models/KvlookupKVEntry';
 import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
@@ -1751,6 +1753,101 @@ export class PromiseInputsApi {
     public v1InputsInputTypeIdGet(inputTypeId: string, _options?: PromiseConfigurationOptions): Promise<ModelsConnectorMeta> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v1InputsInputTypeIdGet(inputTypeId, observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableKvApi } from './ObservableAPI';
+
+import { KvApiRequestFactory, KvApiResponseProcessor} from "../apis/KvApi";
+export class PromiseKvApi {
+    private api: ObservableKvApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: KvApiRequestFactory,
+        responseProcessor?: KvApiResponseProcessor
+    ) {
+        this.api = new ObservableKvApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+     * Get KV lookup metadata
+     * @param organizationId Organization ID
+     * @param componentId Component ID
+     */
+    public v3OrganizationIdKvLookupMetadataGetWithHttpInfo(organizationId: string, componentId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<KvlookupGetMetadataResponse>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdKvLookupMetadataGetWithHttpInfo(organizationId, componentId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+     * Get KV lookup metadata
+     * @param organizationId Organization ID
+     * @param componentId Component ID
+     */
+    public v3OrganizationIdKvLookupMetadataGet(organizationId: string, componentId: string, _options?: PromiseConfigurationOptions): Promise<KvlookupGetMetadataResponse> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdKvLookupMetadataGet(organizationId, componentId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+     * Get KV lookup sample entries
+     * @param organizationId Organization ID
+     * @param componentId Component ID
+     * @param numEntries Number of sample entries to return
+     */
+    public v3OrganizationIdKvLookupSampleGetWithHttpInfo(organizationId: string, componentId: string, numEntries: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<KvlookupKVEntry>>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdKvLookupSampleGetWithHttpInfo(organizationId, componentId, numEntries, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+     * Get KV lookup sample entries
+     * @param organizationId Organization ID
+     * @param componentId Component ID
+     * @param numEntries Number of sample entries to return
+     */
+    public v3OrganizationIdKvLookupSampleGet(organizationId: string, componentId: string, numEntries: number, _options?: PromiseConfigurationOptions): Promise<Array<KvlookupKVEntry>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdKvLookupSampleGet(organizationId, componentId, numEntries, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+     * Get value by key from KV lookup
+     * @param organizationId Organization ID
+     * @param componentId Component ID
+     * @param key Key to look up
+     */
+    public v3OrganizationIdKvLookupValueGetWithHttpInfo(organizationId: string, componentId: string, key: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<KvlookupKVEntry>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdKvLookupValueGetWithHttpInfo(organizationId, componentId, key, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+     * Get value by key from KV lookup
+     * @param organizationId Organization ID
+     * @param componentId Component ID
+     * @param key Key to look up
+     */
+    public v3OrganizationIdKvLookupValueGet(organizationId: string, componentId: string, key: string, _options?: PromiseConfigurationOptions): Promise<KvlookupKVEntry> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdKvLookupValueGet(organizationId, componentId, key, observableOptions);
         return result.toPromise();
     }
 
