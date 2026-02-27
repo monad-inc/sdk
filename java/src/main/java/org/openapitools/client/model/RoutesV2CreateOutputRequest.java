@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2CreateOutputRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-27T20:22:40.095338465Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-27T22:33:20.674456163Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesV2CreateOutputRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
