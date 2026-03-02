@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3GetFeatureFlagResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-01T19:11:40.387176562Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-02T18:05:45.714976722Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesV3GetFeatureFlagResponse {
   public static final String SERIALIZED_NAME_ORGANIZATIONS = "organizations";
   @SerializedName(SERIALIZED_NAME_ORGANIZATIONS)
