@@ -20,7 +20,7 @@ var _ MappedNullable = &KvlookupKVEntry{}
 
 // KvlookupKVEntry struct for KvlookupKVEntry
 type KvlookupKVEntry struct {
-	CreatedAt *string `json:"created_at,omitempty"`
+	LastUpdatedAt *string `json:"last_updated_at,omitempty"`
 	Value []int32 `json:"value,omitempty"`
 }
 
@@ -41,36 +41,36 @@ func NewKvlookupKVEntryWithDefaults() *KvlookupKVEntry {
 	return &this
 }
 
-// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
-func (o *KvlookupKVEntry) GetCreatedAt() string {
-	if o == nil || IsNil(o.CreatedAt) {
+// GetLastUpdatedAt returns the LastUpdatedAt field value if set, zero value otherwise.
+func (o *KvlookupKVEntry) GetLastUpdatedAt() string {
+	if o == nil || IsNil(o.LastUpdatedAt) {
 		var ret string
 		return ret
 	}
-	return *o.CreatedAt
+	return *o.LastUpdatedAt
 }
 
-// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
+// GetLastUpdatedAtOk returns a tuple with the LastUpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KvlookupKVEntry) GetCreatedAtOk() (*string, bool) {
-	if o == nil || IsNil(o.CreatedAt) {
+func (o *KvlookupKVEntry) GetLastUpdatedAtOk() (*string, bool) {
+	if o == nil || IsNil(o.LastUpdatedAt) {
 		return nil, false
 	}
-	return o.CreatedAt, true
+	return o.LastUpdatedAt, true
 }
 
-// HasCreatedAt returns a boolean if a field has been set.
-func (o *KvlookupKVEntry) HasCreatedAt() bool {
-	if o != nil && !IsNil(o.CreatedAt) {
+// HasLastUpdatedAt returns a boolean if a field has been set.
+func (o *KvlookupKVEntry) HasLastUpdatedAt() bool {
+	if o != nil && !IsNil(o.LastUpdatedAt) {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedAt gets a reference to the given string and assigns it to the CreatedAt field.
-func (o *KvlookupKVEntry) SetCreatedAt(v string) {
-	o.CreatedAt = &v
+// SetLastUpdatedAt gets a reference to the given string and assigns it to the LastUpdatedAt field.
+func (o *KvlookupKVEntry) SetLastUpdatedAt(v string) {
+	o.LastUpdatedAt = &v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
@@ -115,8 +115,8 @@ func (o KvlookupKVEntry) MarshalJSON() ([]byte, error) {
 
 func (o KvlookupKVEntry) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CreatedAt) {
-		toSerialize["created_at"] = o.CreatedAt
+	if !IsNil(o.LastUpdatedAt) {
+		toSerialize["last_updated_at"] = o.LastUpdatedAt
 	}
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value

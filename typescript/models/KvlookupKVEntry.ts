@@ -13,7 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class KvlookupKVEntry {
-    'createdAt'?: string;
+    'lastUpdatedAt'?: string;
     'value'?: Array<number>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -22,8 +22,8 @@ export class KvlookupKVEntry {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "createdAt",
-            "baseName": "created_at",
+            "name": "lastUpdatedAt",
+            "baseName": "last_updated_at",
             "type": "string",
             "format": ""
         },

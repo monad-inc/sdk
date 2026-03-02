@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedAt** | Pointer to **string** |  | [optional] 
+**LastUpdatedAt** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
@@ -26,30 +26,30 @@ NewKvlookupKVEntryWithDefaults instantiates a new KvlookupKVEntry object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCreatedAt
+### GetLastUpdatedAt
 
-`func (o *KvlookupKVEntry) GetCreatedAt() string`
+`func (o *KvlookupKVEntry) GetLastUpdatedAt() string`
 
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+GetLastUpdatedAt returns the LastUpdatedAt field if non-nil, zero value otherwise.
 
-### GetCreatedAtOk
+### GetLastUpdatedAtOk
 
-`func (o *KvlookupKVEntry) GetCreatedAtOk() (*string, bool)`
+`func (o *KvlookupKVEntry) GetLastUpdatedAtOk() (*string, bool)`
 
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+GetLastUpdatedAtOk returns a tuple with the LastUpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCreatedAt
+### SetLastUpdatedAt
 
-`func (o *KvlookupKVEntry) SetCreatedAt(v string)`
+`func (o *KvlookupKVEntry) SetLastUpdatedAt(v string)`
 
-SetCreatedAt sets CreatedAt field to given value.
+SetLastUpdatedAt sets LastUpdatedAt field to given value.
 
-### HasCreatedAt
+### HasLastUpdatedAt
 
-`func (o *KvlookupKVEntry) HasCreatedAt() bool`
+`func (o *KvlookupKVEntry) HasLastUpdatedAt() bool`
 
-HasCreatedAt returns a boolean if a field has been set.
+HasLastUpdatedAt returns a boolean if a field has been set.
 
 ### GetValue
 

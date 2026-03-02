@@ -50,12 +50,12 @@ import org.openapitools.client.JSON;
 /**
  * KvlookupKVEntry
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-02T18:55:02.450558710Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-02T19:28:20.827116301Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class KvlookupKVEntry {
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  public static final String SERIALIZED_NAME_LAST_UPDATED_AT = "last_updated_at";
+  @SerializedName(SERIALIZED_NAME_LAST_UPDATED_AT)
   @javax.annotation.Nullable
-  private String createdAt;
+  private String lastUpdatedAt;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
@@ -65,22 +65,22 @@ public class KvlookupKVEntry {
   public KvlookupKVEntry() {
   }
 
-  public KvlookupKVEntry createdAt(@javax.annotation.Nullable String createdAt) {
-    this.createdAt = createdAt;
+  public KvlookupKVEntry lastUpdatedAt(@javax.annotation.Nullable String lastUpdatedAt) {
+    this.lastUpdatedAt = lastUpdatedAt;
     return this;
   }
 
   /**
-   * Get createdAt
-   * @return createdAt
+   * Get lastUpdatedAt
+   * @return lastUpdatedAt
    */
   @javax.annotation.Nullable
-  public String getCreatedAt() {
-    return createdAt;
+  public String getLastUpdatedAt() {
+    return lastUpdatedAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
-    this.createdAt = createdAt;
+  public void setLastUpdatedAt(@javax.annotation.Nullable String lastUpdatedAt) {
+    this.lastUpdatedAt = lastUpdatedAt;
   }
 
 
@@ -121,20 +121,20 @@ public class KvlookupKVEntry {
       return false;
     }
     KvlookupKVEntry kvlookupKVEntry = (KvlookupKVEntry) o;
-    return Objects.equals(this.createdAt, kvlookupKVEntry.createdAt) &&
+    return Objects.equals(this.lastUpdatedAt, kvlookupKVEntry.lastUpdatedAt) &&
         Objects.equals(this.value, kvlookupKVEntry.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, value);
+    return Objects.hash(lastUpdatedAt, value);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class KvlookupKVEntry {\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    lastUpdatedAt: ").append(toIndentedString(lastUpdatedAt)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -157,7 +157,7 @@ public class KvlookupKVEntry {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "value"));
+    openapiFields = new HashSet<String>(Arrays.asList("last_updated_at", "value"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -184,8 +184,8 @@ public class KvlookupKVEntry {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
+      if ((jsonObj.get("last_updated_at") != null && !jsonObj.get("last_updated_at").isJsonNull()) && !jsonObj.get("last_updated_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `last_updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_updated_at").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("value") != null && !jsonObj.get("value").isJsonNull() && !jsonObj.get("value").isJsonArray()) {

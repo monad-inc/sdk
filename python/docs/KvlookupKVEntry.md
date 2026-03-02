@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **str** |  | [optional] 
+**last_updated_at** | **str** |  | [optional] 
 **value** | **List[int]** |  | [optional] 
 
 ## Example

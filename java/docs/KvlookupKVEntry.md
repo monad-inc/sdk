@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**createdAt** | **String** |  |  [optional] |
+|**lastUpdatedAt** | **String** |  |  [optional] |
 |**value** | **List&lt;Integer&gt;** |  |  [optional] |
 
 

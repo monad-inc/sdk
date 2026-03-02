@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * AuthenticationtypesMFAEnrollmentTicket
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-02T18:55:02.450558710Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-02T19:28:20.827116301Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class AuthenticationtypesMFAEnrollmentTicket {
   public static final String SERIALIZED_NAME_TICKET_ID = "ticket_id";
   @SerializedName(SERIALIZED_NAME_TICKET_ID)

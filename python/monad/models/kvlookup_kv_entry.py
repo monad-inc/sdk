@@ -27,9 +27,9 @@ class KvlookupKVEntry(BaseModel):
     """
     KvlookupKVEntry
     """ # noqa: E501
-    created_at: Optional[StrictStr] = None
+    last_updated_at: Optional[StrictStr] = None
     value: Optional[List[StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["created_at", "value"]
+    __properties: ClassVar[List[str]] = ["last_updated_at", "value"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,7 +82,7 @@ class KvlookupKVEntry(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "created_at": obj.get("created_at"),
+            "last_updated_at": obj.get("last_updated_at"),
             "value": obj.get("value")
         })
         return _obj

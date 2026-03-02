@@ -40,11 +40,11 @@ public class KvlookupKVEntryTest {
     }
 
     /**
-     * Test the property 'createdAt'
+     * Test the property 'lastUpdatedAt'
      */
     @Test
-    public void createdAtTest() {
-        // TODO: test createdAt
+    public void lastUpdatedAtTest() {
+        // TODO: test lastUpdatedAt
     }
 
     /**

@@ -36,7 +36,7 @@ class TestKvlookupKVEntry(unittest.TestCase):
         model = KvlookupKVEntry()
         if include_optional:
             return KvlookupKVEntry(
-                created_at = '',
+                last_updated_at = '',
                 value = [
                     56
                     ]
