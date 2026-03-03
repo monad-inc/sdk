@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Zoom Operation Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-02T19:47:32.523056595Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-03T00:27:38.755501972Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ZoomActivityLogsSettingsConfig {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
