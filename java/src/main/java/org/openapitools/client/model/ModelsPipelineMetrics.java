@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipelineMetrics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-03T16:16:18.845157930Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-03T17:26:43.380743153Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsPipelineMetrics {
   public static final String SERIALIZED_NAME_END_AT = "end_at";
   @SerializedName(SERIALIZED_NAME_END_AT)
