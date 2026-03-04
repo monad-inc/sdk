@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * PipelineNodeStatusTimeRange
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-03T17:26:43.380743153Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-04T16:38:20.777737164Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class PipelineNodeStatusTimeRange {
   public static final String SERIALIZED_NAME_END = "end";
   @SerializedName(SERIALIZED_NAME_END)

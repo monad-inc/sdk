@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * S3 Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-03T17:26:43.380743153Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-04T16:38:20.777737164Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class S3SettingsConfig {
   public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
   @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
