@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * AWS Inspector secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-04T22:40:03.113459325Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T03:24:53.918920648Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class InspectorSecretsConfig {
   public static final String SERIALIZED_NAME_ACCESS_KEY = "access_key";
   @SerializedName(SERIALIZED_NAME_ACCESS_KEY)
