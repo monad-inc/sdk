@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV2ListTemplatesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-06T00:36:45.119545119Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-06T16:03:26.737151129Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class RoutesV2ListTemplatesResponse {
   public static final String SERIALIZED_NAME_TEMPLATES = "templates";
   @SerializedName(SERIALIZED_NAME_TEMPLATES)
