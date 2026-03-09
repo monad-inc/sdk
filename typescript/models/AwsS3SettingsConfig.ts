@@ -41,7 +41,7 @@ export class AwsS3SettingsConfig {
     */
     'prefix'?: string;
     /**
-    * Location of the record in the JSON object. This can be ignored if the record is not in JSON format.
+    * Location of the record in the JSON object. This can be ignored if the record is not in JSON format. Leave empty if you want the entire record.
     */
     'recordLocation'?: string;
     /**

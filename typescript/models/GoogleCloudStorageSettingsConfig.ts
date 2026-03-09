@@ -41,7 +41,7 @@ export class GoogleCloudStorageSettingsConfig {
     */
     'projectId'?: string;
     /**
-    * Location of the record in the JSON object. Applies only if the format is JSON.
+    * Location of the record in the JSON object. Applies only if the format is JSON. Leave empty if you want the entire record.
     */
     'recordLocation'?: string;
 

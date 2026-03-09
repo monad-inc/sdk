@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Format** | Pointer to **string** | File format of the Blob storage objects in Azure. | [optional] 
 **PartitionFormat** | Pointer to **string** | Specifies the format for organizing data into partitions within your Azure container. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., &#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) and simple date-based formats (e.g., &#39;2024/01/01&#39;). | [optional] 
 **Prefix** | Pointer to **string** | An optional prefix for Azure object keys to organize data within the container | [optional] 
-**RecordLocation** | Pointer to **string** | Location of the record in the JSON object. Applies only if the format is JSON. | [optional] 
+**RecordLocation** | Pointer to **string** | Location of the record in the JSON object. Applies only if the format is JSON. Leave empty if you want the entire record. | [optional] 
 
 ## Methods
 

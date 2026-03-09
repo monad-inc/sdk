@@ -34,7 +34,7 @@ type AzureBlobStorageSettingsConfig struct {
 	PartitionFormat *string `json:"partition_format,omitempty"`
 	// An optional prefix for Azure object keys to organize data within the container
 	Prefix *string `json:"prefix,omitempty"`
-	// Location of the record in the JSON object. Applies only if the format is JSON.
+	// Location of the record in the JSON object. Applies only if the format is JSON. Leave empty if you want the entire record.
 	RecordLocation *string `json:"record_location,omitempty"`
 }
 

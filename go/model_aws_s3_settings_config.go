@@ -32,7 +32,7 @@ type AwsS3SettingsConfig struct {
 	PartitionFormat *string `json:"partition_format,omitempty"`
 	// Prefix of the S3 object keys to read.
 	Prefix *string `json:"prefix,omitempty"`
-	// Location of the record in the JSON object. This can be ignored if the record is not in JSON format.
+	// Location of the record in the JSON object. This can be ignored if the record is not in JSON format. Leave empty if you want the entire record.
 	RecordLocation *string `json:"record_location,omitempty"`
 	// AWS Region of your bucket.
 	Region *string `json:"region,omitempty"`

@@ -34,7 +34,7 @@ class AzureBlobStorageSettingsConfig(BaseModel):
     format: Optional[StrictStr] = Field(default=None, description="File format of the Blob storage objects in Azure.")
     partition_format: Optional[StrictStr] = Field(default=None, description="Specifies the format for organizing data into partitions within your Azure container. This determines the directory structure and naming convention for stored objects, affecting data organization and query efficiency. Examples include Hive-style partitioning (e.g., 'year=2024/month=01/day=01') and simple date-based formats (e.g., '2024/01/01').")
     prefix: Optional[StrictStr] = Field(default=None, description="An optional prefix for Azure object keys to organize data within the container")
-    record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the JSON object. Applies only if the format is JSON.")
+    record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the JSON object. Applies only if the format is JSON. Leave empty if you want the entire record.")
     __properties: ClassVar[List[str]] = ["account_url", "backfill_start_time", "compression", "container", "format", "partition_format", "prefix", "record_location"]
 
     model_config = ConfigDict(

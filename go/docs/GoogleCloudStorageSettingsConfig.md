@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **PartitionFormat** | Pointer to **string** | Specifies the partition format of your bucket. Select the option that matches how your data is currently organized. This ensures that the system can correctly navigate your bucket structure. Options include Hive-compatible format (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;) commonly used in data lake setups, and simple date format (&#39;2024/01/01&#39;) for basic chronological organization. | [optional] 
 **Prefix** | Pointer to **string** | The prefix to use when reading from the bucket. This is used to filter objects in the bucket. | [optional] 
 **ProjectId** | Pointer to **string** | The Google Cloud project ID to use | [optional] 
-**RecordLocation** | Pointer to **string** | Location of the record in the JSON object. Applies only if the format is JSON. | [optional] 
+**RecordLocation** | Pointer to **string** | Location of the record in the JSON object. Applies only if the format is JSON. Leave empty if you want the entire record. | [optional] 
 
 ## Methods
 
