@@ -82,6 +82,14 @@ public class RoutesGetOutputResponseTest {
     }
 
     /**
+     * Test the property 'managedBy'
+     */
+    @Test
+    public void managedByTest() {
+        // TODO: test managedBy
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test

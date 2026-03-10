@@ -20,6 +20,7 @@ export class ModelsPipeline {
     'enabled'?: boolean;
     'id'?: string;
     'inputId'?: string;
+    'managedBy'?: string;
     'name'?: string;
     'organizationId'?: string;
     'updatedAt'?: string;
@@ -68,6 +69,12 @@ export class ModelsPipeline {
         {
             "name": "inputId",
             "baseName": "input_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "managedBy",
+            "baseName": "managed_by",
             "type": "string",
             "format": ""
         },

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Tines Events Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-09T23:11:57.197173568Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-10T10:16:19.832680844Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class TinesEventsLogsSettingsConfig {
   public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
   @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)

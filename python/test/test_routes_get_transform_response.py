@@ -45,6 +45,7 @@ class TestRoutesGetTransformResponse(unittest.TestCase):
                         enabled = True, 
                         id = '', 
                         input_id = '', 
+                        managed_by = '', 
                         name = '', 
                         organization_id = '', 
                         updated_at = '', )
@@ -72,6 +73,7 @@ class TestRoutesGetTransformResponse(unittest.TestCase):
                 created_at = '',
                 description = '',
                 id = '',
+                managed_by = '',
                 name = '',
                 organization_id = '',
                 updated_at = ''

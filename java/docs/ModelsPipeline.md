@@ -14,6 +14,7 @@
 |**enabled** | **Boolean** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**inputId** | **String** |  |  [optional] |
+|**managedBy** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |

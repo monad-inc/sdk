@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsPipeline
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-09T23:11:57.197173568Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-10T10:16:19.832680844Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsPipeline {
   public static final String SERIALIZED_NAME_COMPONENT_TIER = "component_tier";
   @SerializedName(SERIALIZED_NAME_COMPONENT_TIER)
@@ -84,6 +84,11 @@ public class ModelsPipeline {
   @SerializedName(SERIALIZED_NAME_INPUT_ID)
   @javax.annotation.Nullable
   private String inputId;
+
+  public static final String SERIALIZED_NAME_MANAGED_BY = "managed_by";
+  @SerializedName(SERIALIZED_NAME_MANAGED_BY)
+  @javax.annotation.Nullable
+  private String managedBy;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -236,6 +241,25 @@ public class ModelsPipeline {
   }
 
 
+  public ModelsPipeline managedBy(@javax.annotation.Nullable String managedBy) {
+    this.managedBy = managedBy;
+    return this;
+  }
+
+  /**
+   * Get managedBy
+   * @return managedBy
+   */
+  @javax.annotation.Nullable
+  public String getManagedBy() {
+    return managedBy;
+  }
+
+  public void setManagedBy(@javax.annotation.Nullable String managedBy) {
+    this.managedBy = managedBy;
+  }
+
+
   public ModelsPipeline name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
@@ -310,6 +334,7 @@ public class ModelsPipeline {
         Objects.equals(this.enabled, modelsPipeline.enabled) &&
         Objects.equals(this.id, modelsPipeline.id) &&
         Objects.equals(this.inputId, modelsPipeline.inputId) &&
+        Objects.equals(this.managedBy, modelsPipeline.managedBy) &&
         Objects.equals(this.name, modelsPipeline.name) &&
         Objects.equals(this.organizationId, modelsPipeline.organizationId) &&
         Objects.equals(this.updatedAt, modelsPipeline.updatedAt);
@@ -317,7 +342,7 @@ public class ModelsPipeline {
 
   @Override
   public int hashCode() {
-    return Objects.hash(componentTier, createdAt, cronSchedule, description, enabled, id, inputId, name, organizationId, updatedAt);
+    return Objects.hash(componentTier, createdAt, cronSchedule, description, enabled, id, inputId, managedBy, name, organizationId, updatedAt);
   }
 
   @Override
@@ -331,6 +356,7 @@ public class ModelsPipeline {
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    inputId: ").append(toIndentedString(inputId)).append("\n");
+    sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -355,7 +381,7 @@ public class ModelsPipeline {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component_tier", "created_at", "cron_schedule", "description", "enabled", "id", "input_id", "name", "organization_id", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("component_tier", "created_at", "cron_schedule", "description", "enabled", "id", "input_id", "managed_by", "name", "organization_id", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -396,6 +422,9 @@ public class ModelsPipeline {
       }
       if ((jsonObj.get("input_id") != null && !jsonObj.get("input_id").isJsonNull()) && !jsonObj.get("input_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `input_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("input_id").toString()));
+      }
+      if ((jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) && !jsonObj.get("managed_by").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `managed_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("managed_by").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

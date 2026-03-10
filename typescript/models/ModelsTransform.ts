@@ -18,6 +18,7 @@ export class ModelsTransform {
     'createdAt'?: string;
     'description'?: string;
     'id'?: string;
+    'managedBy'?: string;
     'name'?: string;
     'organizationId'?: string;
     'updatedAt'?: string;
@@ -48,6 +49,12 @@ export class ModelsTransform {
         {
             "name": "id",
             "baseName": "id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "managedBy",
+            "baseName": "managed_by",
             "type": "string",
             "format": ""
         },

@@ -45,6 +45,7 @@ class TestRoutesGetOutputResponse(unittest.TestCase):
                         enabled = True, 
                         id = '', 
                         input_id = '', 
+                        managed_by = '', 
                         name = '', 
                         organization_id = '', 
                         updated_at = '', )
@@ -59,6 +60,7 @@ class TestRoutesGetOutputResponse(unittest.TestCase):
                 created_at = '',
                 description = '',
                 id = '',
+                managed_by = '',
                 name = '',
                 organization_id = '',
                 type = '',

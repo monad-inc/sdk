@@ -12,6 +12,7 @@
 |**createdAt** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
+|**managedBy** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**type** | **String** |  |  [optional] |

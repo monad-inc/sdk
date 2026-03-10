@@ -34,11 +34,12 @@ class RoutesGetInputResponse(BaseModel):
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
+    managed_by: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["component_of", "config", "created_at", "description", "id", "name", "organization_id", "type", "updated_at"]
+    __properties: ClassVar[List[str]] = ["component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "type", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,6 +107,7 @@ class RoutesGetInputResponse(BaseModel):
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
             "id": obj.get("id"),
+            "managed_by": obj.get("managed_by"),
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
             "type": obj.get("type"),

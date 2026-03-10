@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**ManagedBy** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
@@ -156,6 +157,31 @@ SetId sets Id field to given value.
 `func (o *RoutesGetTransformResponse) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetManagedBy
+
+`func (o *RoutesGetTransformResponse) GetManagedBy() string`
+
+GetManagedBy returns the ManagedBy field if non-nil, zero value otherwise.
+
+### GetManagedByOk
+
+`func (o *RoutesGetTransformResponse) GetManagedByOk() (*string, bool)`
+
+GetManagedByOk returns a tuple with the ManagedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManagedBy
+
+`func (o *RoutesGetTransformResponse) SetManagedBy(v string)`
+
+SetManagedBy sets ManagedBy field to given value.
+
+### HasManagedBy
+
+`func (o *RoutesGetTransformResponse) HasManagedBy() bool`
+
+HasManagedBy returns a boolean if a field has been set.
 
 ### GetName
 

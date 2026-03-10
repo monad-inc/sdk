@@ -48,6 +48,7 @@ class TestModelsEnrichmentList(unittest.TestCase):
                         created_at = '', 
                         description = '', 
                         id = '', 
+                        managed_by = '', 
                         name = '', 
                         organization_id = '', 
                         type = '', 

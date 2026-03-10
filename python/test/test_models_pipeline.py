@@ -43,6 +43,7 @@ class TestModelsPipeline(unittest.TestCase):
                 enabled = True,
                 id = '',
                 input_id = '',
+                managed_by = '',
                 name = '',
                 organization_id = '',
                 updated_at = ''

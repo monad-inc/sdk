@@ -25,6 +25,7 @@ type RoutesGetTransformResponse struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
+	ManagedBy *string `json:"managed_by,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
@@ -207,6 +208,38 @@ func (o *RoutesGetTransformResponse) SetId(v string) {
 	o.Id = &v
 }
 
+// GetManagedBy returns the ManagedBy field value if set, zero value otherwise.
+func (o *RoutesGetTransformResponse) GetManagedBy() string {
+	if o == nil || IsNil(o.ManagedBy) {
+		var ret string
+		return ret
+	}
+	return *o.ManagedBy
+}
+
+// GetManagedByOk returns a tuple with the ManagedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesGetTransformResponse) GetManagedByOk() (*string, bool) {
+	if o == nil || IsNil(o.ManagedBy) {
+		return nil, false
+	}
+	return o.ManagedBy, true
+}
+
+// HasManagedBy returns a boolean if a field has been set.
+func (o *RoutesGetTransformResponse) HasManagedBy() bool {
+	if o != nil && !IsNil(o.ManagedBy) {
+		return true
+	}
+
+	return false
+}
+
+// SetManagedBy gets a reference to the given string and assigns it to the ManagedBy field.
+func (o *RoutesGetTransformResponse) SetManagedBy(v string) {
+	o.ManagedBy = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *RoutesGetTransformResponse) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -327,6 +360,9 @@ func (o RoutesGetTransformResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.ManagedBy) {
+		toSerialize["managed_by"] = o.ManagedBy
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

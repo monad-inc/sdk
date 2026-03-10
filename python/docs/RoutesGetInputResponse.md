@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **created_at** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
+**managed_by** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
