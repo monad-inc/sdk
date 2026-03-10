@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsSecretWithComponentsList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-10T10:16:19.832680844Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-10T10:38:34.480448091Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsSecretWithComponentsList {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
