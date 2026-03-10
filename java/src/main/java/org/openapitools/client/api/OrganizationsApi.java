@@ -40,6 +40,7 @@ import org.openapitools.client.model.RoutesUpdateOrganizationRequest;
 import org.openapitools.client.model.RoutesV2SetStorageTypeCostRequest;
 import org.openapitools.client.model.RoutesV2StorageTypeDetailsResponse;
 import org.openapitools.client.model.RoutesV3CreateChildOrganizationRequest;
+import org.openapitools.client.model.RoutesV3UpdateChildOrganizationRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -1985,6 +1986,306 @@ public class OrganizationsApi {
 
         okhttp3.Call localVarCall = v2OrganizationIdStorageTypeCostPutValidateBeforeCall(organizationId, routesV2SetStorageTypeCostRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsStorageTypeCostConfig>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v3OrganizationIdOrganizationsChildOrganizationIdDelete
+     * @param organizationId Parent Organization ID (required)
+     * @param childOrganizationId Child Organization ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Child organization deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3OrganizationIdOrganizationsChildOrganizationIdDeleteCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/{organization_id}/organizations/{child_organization_id}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "child_organization_id" + "}", localVarApiClient.escapeString(childOrganizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v3OrganizationIdOrganizationsChildOrganizationIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v3OrganizationIdOrganizationsChildOrganizationIdDelete(Async)");
+        }
+
+        // verify the required parameter 'childOrganizationId' is set
+        if (childOrganizationId == null) {
+            throw new ApiException("Missing the required parameter 'childOrganizationId' when calling v3OrganizationIdOrganizationsChildOrganizationIdDelete(Async)");
+        }
+
+        return v3OrganizationIdOrganizationsChildOrganizationIdDeleteCall(organizationId, childOrganizationId, _callback);
+
+    }
+
+    /**
+     * Delete child organization
+     * Delete a child organization under the given parent organization
+     * @param organizationId Parent Organization ID (required)
+     * @param childOrganizationId Child Organization ID (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Child organization deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public void v3OrganizationIdOrganizationsChildOrganizationIdDelete(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId) throws ApiException {
+        v3OrganizationIdOrganizationsChildOrganizationIdDeleteWithHttpInfo(organizationId, childOrganizationId);
+    }
+
+    /**
+     * Delete child organization
+     * Delete a child organization under the given parent organization
+     * @param organizationId Parent Organization ID (required)
+     * @param childOrganizationId Child Organization ID (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Child organization deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> v3OrganizationIdOrganizationsChildOrganizationIdDeleteWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId) throws ApiException {
+        okhttp3.Call localVarCall = v3OrganizationIdOrganizationsChildOrganizationIdDeleteValidateBeforeCall(organizationId, childOrganizationId, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Delete child organization (asynchronously)
+     * Delete a child organization under the given parent organization
+     * @param organizationId Parent Organization ID (required)
+     * @param childOrganizationId Child Organization ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Child organization deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3OrganizationIdOrganizationsChildOrganizationIdDeleteAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v3OrganizationIdOrganizationsChildOrganizationIdDeleteValidateBeforeCall(organizationId, childOrganizationId, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for v3OrganizationIdOrganizationsChildOrganizationIdPatch
+     * @param organizationId Parent Organization ID (required)
+     * @param childOrganizationId Child Organization ID (required)
+     * @param routesV3UpdateChildOrganizationRequest Request body (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Updated child organization </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3OrganizationIdOrganizationsChildOrganizationIdPatchCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, @javax.annotation.Nonnull RoutesV3UpdateChildOrganizationRequest routesV3UpdateChildOrganizationRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = routesV3UpdateChildOrganizationRequest;
+
+        // create path and map variables
+        String localVarPath = "/v3/{organization_id}/organizations/{child_organization_id}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "child_organization_id" + "}", localVarApiClient.escapeString(childOrganizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v3OrganizationIdOrganizationsChildOrganizationIdPatchValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, @javax.annotation.Nonnull RoutesV3UpdateChildOrganizationRequest routesV3UpdateChildOrganizationRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling v3OrganizationIdOrganizationsChildOrganizationIdPatch(Async)");
+        }
+
+        // verify the required parameter 'childOrganizationId' is set
+        if (childOrganizationId == null) {
+            throw new ApiException("Missing the required parameter 'childOrganizationId' when calling v3OrganizationIdOrganizationsChildOrganizationIdPatch(Async)");
+        }
+
+        // verify the required parameter 'routesV3UpdateChildOrganizationRequest' is set
+        if (routesV3UpdateChildOrganizationRequest == null) {
+            throw new ApiException("Missing the required parameter 'routesV3UpdateChildOrganizationRequest' when calling v3OrganizationIdOrganizationsChildOrganizationIdPatch(Async)");
+        }
+
+        return v3OrganizationIdOrganizationsChildOrganizationIdPatchCall(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest, _callback);
+
+    }
+
+    /**
+     * Update child organization
+     * Update a child organization under the given parent organization
+     * @param organizationId Parent Organization ID (required)
+     * @param childOrganizationId Child Organization ID (required)
+     * @param routesV3UpdateChildOrganizationRequest Request body (required)
+     * @return GithubComMonadIncCorePkgTypesModelsOrganization
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Updated child organization </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public GithubComMonadIncCorePkgTypesModelsOrganization v3OrganizationIdOrganizationsChildOrganizationIdPatch(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, @javax.annotation.Nonnull RoutesV3UpdateChildOrganizationRequest routesV3UpdateChildOrganizationRequest) throws ApiException {
+        ApiResponse<GithubComMonadIncCorePkgTypesModelsOrganization> localVarResp = v3OrganizationIdOrganizationsChildOrganizationIdPatchWithHttpInfo(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update child organization
+     * Update a child organization under the given parent organization
+     * @param organizationId Parent Organization ID (required)
+     * @param childOrganizationId Child Organization ID (required)
+     * @param routesV3UpdateChildOrganizationRequest Request body (required)
+     * @return ApiResponse&lt;GithubComMonadIncCorePkgTypesModelsOrganization&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Updated child organization </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<GithubComMonadIncCorePkgTypesModelsOrganization> v3OrganizationIdOrganizationsChildOrganizationIdPatchWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, @javax.annotation.Nonnull RoutesV3UpdateChildOrganizationRequest routesV3UpdateChildOrganizationRequest) throws ApiException {
+        okhttp3.Call localVarCall = v3OrganizationIdOrganizationsChildOrganizationIdPatchValidateBeforeCall(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest, null);
+        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsOrganization>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update child organization (asynchronously)
+     * Update a child organization under the given parent organization
+     * @param organizationId Parent Organization ID (required)
+     * @param childOrganizationId Child Organization ID (required)
+     * @param routesV3UpdateChildOrganizationRequest Request body (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Updated child organization </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v3OrganizationIdOrganizationsChildOrganizationIdPatchAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String childOrganizationId, @javax.annotation.Nonnull RoutesV3UpdateChildOrganizationRequest routesV3UpdateChildOrganizationRequest, final ApiCallback<GithubComMonadIncCorePkgTypesModelsOrganization> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v3OrganizationIdOrganizationsChildOrganizationIdPatchValidateBeforeCall(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest, _callback);
+        Type localVarReturnType = new TypeToken<GithubComMonadIncCorePkgTypesModelsOrganization>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

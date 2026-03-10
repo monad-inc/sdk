@@ -16,6 +16,8 @@ All URIs are relative to *https://monad.com/api*
 | [**v2OrganizationIdMetricsStorageTypesSummaryGet**](OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesSummaryGet) | **GET** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary |
 | [**v2OrganizationIdStorageTypeCostGet**](OrganizationsApi.md#v2OrganizationIdStorageTypeCostGet) | **GET** /v2/{organization_id}/storage-type-cost | Get storage type cost |
 | [**v2OrganizationIdStorageTypeCostPut**](OrganizationsApi.md#v2OrganizationIdStorageTypeCostPut) | **PUT** /v2/{organization_id}/storage-type-cost | Set storage type cost |
+| [**v3OrganizationIdOrganizationsChildOrganizationIdDelete**](OrganizationsApi.md#v3OrganizationIdOrganizationsChildOrganizationIdDelete) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization |
+| [**v3OrganizationIdOrganizationsChildOrganizationIdPatch**](OrganizationsApi.md#v3OrganizationIdOrganizationsChildOrganizationIdPatch) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization |
 | [**v3OrganizationIdOrganizationsGet**](OrganizationsApi.md#v3OrganizationIdOrganizationsGet) | **GET** /v3/{organization_id}/organizations | List child organizations |
 | [**v3OrganizationIdOrganizationsPost**](OrganizationsApi.md#v3OrganizationIdOrganizationsPost) | **POST** /v3/{organization_id}/organizations | Create child organization |
 
@@ -1009,6 +1011,166 @@ public class Example {
 | **200** | Updated storage type cost |  -  |
 | **400** | Bad request |  -  |
 | **404** | Organization not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="v3OrganizationIdOrganizationsChildOrganizationIdDelete"></a>
+# **v3OrganizationIdOrganizationsChildOrganizationIdDelete**
+> v3OrganizationIdOrganizationsChildOrganizationIdDelete(organizationId, childOrganizationId)
+
+Delete child organization
+
+Delete a child organization under the given parent organization
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OrganizationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Parent Organization ID
+    String childOrganizationId = "childOrganizationId_example"; // String | Child Organization ID
+    try {
+      apiInstance.v3OrganizationIdOrganizationsChildOrganizationIdDelete(organizationId, childOrganizationId);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OrganizationsApi#v3OrganizationIdOrganizationsChildOrganizationIdDelete");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Parent Organization ID | |
+| **childOrganizationId** | **String**| Child Organization ID | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Child organization deleted successfully |  -  |
+| **404** | Child organization not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="v3OrganizationIdOrganizationsChildOrganizationIdPatch"></a>
+# **v3OrganizationIdOrganizationsChildOrganizationIdPatch**
+> GithubComMonadIncCorePkgTypesModelsOrganization v3OrganizationIdOrganizationsChildOrganizationIdPatch(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest)
+
+Update child organization
+
+Update a child organization under the given parent organization
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OrganizationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Parent Organization ID
+    String childOrganizationId = "childOrganizationId_example"; // String | Child Organization ID
+    RoutesV3UpdateChildOrganizationRequest routesV3UpdateChildOrganizationRequest = new RoutesV3UpdateChildOrganizationRequest(); // RoutesV3UpdateChildOrganizationRequest | Request body
+    try {
+      GithubComMonadIncCorePkgTypesModelsOrganization result = apiInstance.v3OrganizationIdOrganizationsChildOrganizationIdPatch(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OrganizationsApi#v3OrganizationIdOrganizationsChildOrganizationIdPatch");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Parent Organization ID | |
+| **childOrganizationId** | **String**| Child Organization ID | |
+| **routesV3UpdateChildOrganizationRequest** | [**RoutesV3UpdateChildOrganizationRequest**](RoutesV3UpdateChildOrganizationRequest.md)| Request body | |
+
+### Return type
+
+[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Updated child organization |  -  |
+| **400** | Invalid request body |  -  |
+| **404** | Child organization not found |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="v3OrganizationIdOrganizationsGet"></a>

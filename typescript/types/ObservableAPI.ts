@@ -425,6 +425,7 @@ import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation
 import { RoutesV3TransformOperationWithRationale } from '../models/RoutesV3TransformOperationWithRationale';
 import { RoutesV3TransformRecommendationRequest } from '../models/RoutesV3TransformRecommendationRequest';
 import { RoutesV3UpdateAlertRuleRequest } from '../models/RoutesV3UpdateAlertRuleRequest';
+import { RoutesV3UpdateChildOrganizationRequest } from '../models/RoutesV3UpdateChildOrganizationRequest';
 import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
@@ -4739,6 +4740,80 @@ export class ObservableOrganizationsApi {
      */
     public v2OrganizationIdStorageTypeCostPut(organizationId: string, routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest, _options?: ConfigurationOptions): Observable<ModelsStorageTypeCostConfig> {
         return this.v2OrganizationIdStorageTypeCostPutWithHttpInfo(organizationId, routesV2SetStorageTypeCostRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsStorageTypeCostConfig>) => apiResponse.data));
+    }
+
+    /**
+     * Delete a child organization under the given parent organization
+     * Delete child organization
+     * @param organizationId Parent Organization ID
+     * @param childOrganizationId Child Organization ID
+     */
+    public v3OrganizationIdOrganizationsChildOrganizationIdDeleteWithHttpInfo(organizationId: string, childOrganizationId: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdOrganizationsChildOrganizationIdDelete(organizationId, childOrganizationId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdOrganizationsChildOrganizationIdDeleteWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Delete a child organization under the given parent organization
+     * Delete child organization
+     * @param organizationId Parent Organization ID
+     * @param childOrganizationId Child Organization ID
+     */
+    public v3OrganizationIdOrganizationsChildOrganizationIdDelete(organizationId: string, childOrganizationId: string, _options?: ConfigurationOptions): Observable<void> {
+        return this.v3OrganizationIdOrganizationsChildOrganizationIdDeleteWithHttpInfo(organizationId, childOrganizationId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    }
+
+    /**
+     * Update a child organization under the given parent organization
+     * Update child organization
+     * @param organizationId Parent Organization ID
+     * @param childOrganizationId Child Organization ID
+     * @param routesV3UpdateChildOrganizationRequest Request body
+     */
+    public v3OrganizationIdOrganizationsChildOrganizationIdPatchWithHttpInfo(organizationId: string, childOrganizationId: string, routesV3UpdateChildOrganizationRequest: RoutesV3UpdateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.v3OrganizationIdOrganizationsChildOrganizationIdPatch(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v3OrganizationIdOrganizationsChildOrganizationIdPatchWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Update a child organization under the given parent organization
+     * Update child organization
+     * @param organizationId Parent Organization ID
+     * @param childOrganizationId Child Organization ID
+     * @param routesV3UpdateChildOrganizationRequest Request body
+     */
+    public v3OrganizationIdOrganizationsChildOrganizationIdPatch(organizationId: string, childOrganizationId: string, routesV3UpdateChildOrganizationRequest: RoutesV3UpdateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<GithubComMonadIncCorePkgTypesModelsOrganization> {
+        return this.v3OrganizationIdOrganizationsChildOrganizationIdPatchWithHttpInfo(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest, _options).pipe(map((apiResponse: HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>) => apiResponse.data));
     }
 
     /**

@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Build date: 2026-03-10T14:57:26.692928136Z[Etc/UTC]
+  - Build date: 2026-03-10T19:56:45.841316810Z[Etc/UTC]
   - Generator version: 7.20.0
 
 This is the monad API
@@ -231,6 +231,8 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**v2OrganizationIdMetricsStorageTypesSummaryGet**](docs/OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesSummaryGet) | **GET** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary
 *OrganizationsApi* | [**v2OrganizationIdStorageTypeCostGet**](docs/OrganizationsApi.md#v2OrganizationIdStorageTypeCostGet) | **GET** /v2/{organization_id}/storage-type-cost | Get storage type cost
 *OrganizationsApi* | [**v2OrganizationIdStorageTypeCostPut**](docs/OrganizationsApi.md#v2OrganizationIdStorageTypeCostPut) | **PUT** /v2/{organization_id}/storage-type-cost | Set storage type cost
+*OrganizationsApi* | [**v3OrganizationIdOrganizationsChildOrganizationIdDelete**](docs/OrganizationsApi.md#v3OrganizationIdOrganizationsChildOrganizationIdDelete) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization
+*OrganizationsApi* | [**v3OrganizationIdOrganizationsChildOrganizationIdPatch**](docs/OrganizationsApi.md#v3OrganizationIdOrganizationsChildOrganizationIdPatch) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization
 *OrganizationsApi* | [**v3OrganizationIdOrganizationsGet**](docs/OrganizationsApi.md#v3OrganizationIdOrganizationsGet) | **GET** /v3/{organization_id}/organizations | List child organizations
 *OrganizationsApi* | [**v3OrganizationIdOrganizationsPost**](docs/OrganizationsApi.md#v3OrganizationIdOrganizationsPost) | **POST** /v3/{organization_id}/organizations | Create child organization
 *OutputsApi* | [**v1OutputsGet**](docs/OutputsApi.md#v1OutputsGet) | **GET** /v1/outputs | List outputs
@@ -712,6 +714,7 @@ Class | Method | HTTP request | Description
  - [RoutesV3TransformOperationWithRationale](docs/RoutesV3TransformOperationWithRationale.md)
  - [RoutesV3TransformRecommendationRequest](docs/RoutesV3TransformRecommendationRequest.md)
  - [RoutesV3UpdateAlertRuleRequest](docs/RoutesV3UpdateAlertRuleRequest.md)
+ - [RoutesV3UpdateChildOrganizationRequest](docs/RoutesV3UpdateChildOrganizationRequest.md)
  - [RoutesV3UpdateConnectionRequest](docs/RoutesV3UpdateConnectionRequest.md)
  - [RoutesV3UpdateEnrichmentRequest](docs/RoutesV3UpdateEnrichmentRequest.md)
  - [S3SecretsConfig](docs/S3SecretsConfig.md)

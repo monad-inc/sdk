@@ -21,6 +21,7 @@ import { RoutesUpdateOrganizationRequest } from '../models/RoutesUpdateOrganizat
 import { RoutesV2SetStorageTypeCostRequest } from '../models/RoutesV2SetStorageTypeCostRequest';
 import { RoutesV2StorageTypeDetailsResponse } from '../models/RoutesV2StorageTypeDetailsResponse';
 import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3CreateChildOrganizationRequest';
+import { RoutesV3UpdateChildOrganizationRequest } from '../models/RoutesV3UpdateChildOrganizationRequest';
 
 /**
  * no description
@@ -825,6 +826,126 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
+     * Delete a child organization under the given parent organization
+     * Delete child organization
+     * @param organizationId Parent Organization ID
+     * @param childOrganizationId Child Organization ID
+     */
+    public async v3OrganizationIdOrganizationsChildOrganizationIdDelete(organizationId: string, childOrganizationId: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("OrganizationsApi", "v3OrganizationIdOrganizationsChildOrganizationIdDelete", "organizationId");
+        }
+
+
+        // verify required parameter 'childOrganizationId' is not null or undefined
+        if (childOrganizationId === null || childOrganizationId === undefined) {
+            throw new RequiredError("OrganizationsApi", "v3OrganizationIdOrganizationsChildOrganizationIdDelete", "childOrganizationId");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v3/{organization_id}/organizations/{child_organization_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'child_organization_id' + '}', encodeURIComponent(String(childOrganizationId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Update a child organization under the given parent organization
+     * Update child organization
+     * @param organizationId Parent Organization ID
+     * @param childOrganizationId Child Organization ID
+     * @param routesV3UpdateChildOrganizationRequest Request body
+     */
+    public async v3OrganizationIdOrganizationsChildOrganizationIdPatch(organizationId: string, childOrganizationId: string, routesV3UpdateChildOrganizationRequest: RoutesV3UpdateChildOrganizationRequest, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("OrganizationsApi", "v3OrganizationIdOrganizationsChildOrganizationIdPatch", "organizationId");
+        }
+
+
+        // verify required parameter 'childOrganizationId' is not null or undefined
+        if (childOrganizationId === null || childOrganizationId === undefined) {
+            throw new RequiredError("OrganizationsApi", "v3OrganizationIdOrganizationsChildOrganizationIdPatch", "childOrganizationId");
+        }
+
+
+        // verify required parameter 'routesV3UpdateChildOrganizationRequest' is not null or undefined
+        if (routesV3UpdateChildOrganizationRequest === null || routesV3UpdateChildOrganizationRequest === undefined) {
+            throw new RequiredError("OrganizationsApi", "v3OrganizationIdOrganizationsChildOrganizationIdPatch", "routesV3UpdateChildOrganizationRequest");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v3/{organization_id}/organizations/{child_organization_id}'
+            .replace('{' + 'organization_id' + '}', encodeURIComponent(String(organizationId)))
+            .replace('{' + 'child_organization_id' + '}', encodeURIComponent(String(childOrganizationId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(routesV3UpdateChildOrganizationRequest, "RoutesV3UpdateChildOrganizationRequest", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
      * List child organizations for the given parent organization
      * List child organizations
      * @param organizationId Parent Organization ID
@@ -1456,6 +1577,95 @@ export class OrganizationsApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ModelsStorageTypeCostConfig", ""
             ) as ModelsStorageTypeCostConfig;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v3OrganizationIdOrganizationsChildOrganizationIdDelete
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async v3OrganizationIdOrganizationsChildOrganizationIdDeleteWithHttpInfo(response: ResponseContext): Promise<HttpInfo<void >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("204", response.httpStatusCode)) {
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, undefined);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Child organization not found", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: void = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "void", ""
+            ) as void;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to v3OrganizationIdOrganizationsChildOrganizationIdPatch
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async v3OrganizationIdOrganizationsChildOrganizationIdPatchWithHttpInfo(response: ResponseContext): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: GithubComMonadIncCorePkgTypesModelsOrganization = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "GithubComMonadIncCorePkgTypesModelsOrganization", ""
+            ) as GithubComMonadIncCorePkgTypesModelsOrganization;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Child organization not found", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: GithubComMonadIncCorePkgTypesModelsOrganization = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "GithubComMonadIncCorePkgTypesModelsOrganization", ""
+            ) as GithubComMonadIncCorePkgTypesModelsOrganization;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

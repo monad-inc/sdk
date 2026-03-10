@@ -424,6 +424,7 @@ import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation
 import { RoutesV3TransformOperationWithRationale } from '../models/RoutesV3TransformOperationWithRationale';
 import { RoutesV3TransformRecommendationRequest } from '../models/RoutesV3TransformRecommendationRequest';
 import { RoutesV3UpdateAlertRuleRequest } from '../models/RoutesV3UpdateAlertRuleRequest';
+import { RoutesV3UpdateChildOrganizationRequest } from '../models/RoutesV3UpdateChildOrganizationRequest';
 import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
@@ -4482,6 +4483,46 @@ export interface OrganizationsApiV2OrganizationIdStorageTypeCostPutRequest {
     routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest
 }
 
+export interface OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdDeleteRequest {
+    /**
+     * Parent Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv3OrganizationIdOrganizationsChildOrganizationIdDelete
+     */
+    organizationId: string
+    /**
+     * Child Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv3OrganizationIdOrganizationsChildOrganizationIdDelete
+     */
+    childOrganizationId: string
+}
+
+export interface OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdPatchRequest {
+    /**
+     * Parent Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv3OrganizationIdOrganizationsChildOrganizationIdPatch
+     */
+    organizationId: string
+    /**
+     * Child Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationsApiv3OrganizationIdOrganizationsChildOrganizationIdPatch
+     */
+    childOrganizationId: string
+    /**
+     * Request body
+     * @type RoutesV3UpdateChildOrganizationRequest
+     * @memberof OrganizationsApiv3OrganizationIdOrganizationsChildOrganizationIdPatch
+     */
+    routesV3UpdateChildOrganizationRequest: RoutesV3UpdateChildOrganizationRequest
+}
+
 export interface OrganizationsApiV3OrganizationIdOrganizationsGetRequest {
     /**
      * Parent Organization ID
@@ -4750,6 +4791,42 @@ export class ObjectOrganizationsApi {
      */
     public v2OrganizationIdStorageTypeCostPut(param: OrganizationsApiV2OrganizationIdStorageTypeCostPutRequest, options?: ConfigurationOptions): Promise<ModelsStorageTypeCostConfig> {
         return this.api.v2OrganizationIdStorageTypeCostPut(param.organizationId, param.routesV2SetStorageTypeCostRequest,  options).toPromise();
+    }
+
+    /**
+     * Delete a child organization under the given parent organization
+     * Delete child organization
+     * @param param the request object
+     */
+    public v3OrganizationIdOrganizationsChildOrganizationIdDeleteWithHttpInfo(param: OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdDeleteRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.v3OrganizationIdOrganizationsChildOrganizationIdDeleteWithHttpInfo(param.organizationId, param.childOrganizationId,  options).toPromise();
+    }
+
+    /**
+     * Delete a child organization under the given parent organization
+     * Delete child organization
+     * @param param the request object
+     */
+    public v3OrganizationIdOrganizationsChildOrganizationIdDelete(param: OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdDeleteRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.v3OrganizationIdOrganizationsChildOrganizationIdDelete(param.organizationId, param.childOrganizationId,  options).toPromise();
+    }
+
+    /**
+     * Update a child organization under the given parent organization
+     * Update child organization
+     * @param param the request object
+     */
+    public v3OrganizationIdOrganizationsChildOrganizationIdPatchWithHttpInfo(param: OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdPatchRequest, options?: ConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+        return this.api.v3OrganizationIdOrganizationsChildOrganizationIdPatchWithHttpInfo(param.organizationId, param.childOrganizationId, param.routesV3UpdateChildOrganizationRequest,  options).toPromise();
+    }
+
+    /**
+     * Update a child organization under the given parent organization
+     * Update child organization
+     * @param param the request object
+     */
+    public v3OrganizationIdOrganizationsChildOrganizationIdPatch(param: OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdPatchRequest, options?: ConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
+        return this.api.v3OrganizationIdOrganizationsChildOrganizationIdPatch(param.organizationId, param.childOrganizationId, param.routesV3UpdateChildOrganizationRequest,  options).toPromise();
     }
 
     /**

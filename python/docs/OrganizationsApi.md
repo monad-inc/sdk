@@ -16,6 +16,8 @@ Method | HTTP request | Description
 [**v2_organization_id_metrics_storage_types_summary_get**](OrganizationsApi.md#v2_organization_id_metrics_storage_types_summary_get) | **GET** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary
 [**v2_organization_id_storage_type_cost_get**](OrganizationsApi.md#v2_organization_id_storage_type_cost_get) | **GET** /v2/{organization_id}/storage-type-cost | Get storage type cost
 [**v2_organization_id_storage_type_cost_put**](OrganizationsApi.md#v2_organization_id_storage_type_cost_put) | **PUT** /v2/{organization_id}/storage-type-cost | Set storage type cost
+[**v3_organization_id_organizations_child_organization_id_delete**](OrganizationsApi.md#v3_organization_id_organizations_child_organization_id_delete) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization
+[**v3_organization_id_organizations_child_organization_id_patch**](OrganizationsApi.md#v3_organization_id_organizations_child_organization_id_patch) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization
 [**v3_organization_id_organizations_get**](OrganizationsApi.md#v3_organization_id_organizations_get) | **GET** /v3/{organization_id}/organizations | List child organizations
 [**v3_organization_id_organizations_post**](OrganizationsApi.md#v3_organization_id_organizations_post) | **POST** /v3/{organization_id}/organizations | Create child organization
 
@@ -1141,6 +1143,187 @@ Name | Type | Description  | Notes
 **200** | Updated storage type cost |  -  |
 **400** | Bad request |  -  |
 **404** | Organization not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v3_organization_id_organizations_child_organization_id_delete**
+> v3_organization_id_organizations_child_organization_id_delete(organization_id, child_organization_id)
+
+Delete child organization
+
+Delete a child organization under the given parent organization
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.OrganizationsApi(api_client)
+    organization_id = 'organization_id_example' # str | Parent Organization ID
+    child_organization_id = 'child_organization_id_example' # str | Child Organization ID
+
+    try:
+        # Delete child organization
+        api_instance.v3_organization_id_organizations_child_organization_id_delete(organization_id, child_organization_id)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->v3_organization_id_organizations_child_organization_id_delete: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Parent Organization ID | 
+ **child_organization_id** | **str**| Child Organization ID | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Child organization deleted successfully |  -  |
+**404** | Child organization not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v3_organization_id_organizations_child_organization_id_patch**
+> GithubComMonadIncCorePkgTypesModelsOrganization v3_organization_id_organizations_child_organization_id_patch(organization_id, child_organization_id, routes_v3_update_child_organization_request)
+
+Update child organization
+
+Update a child organization under the given parent organization
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.github_com_monad_inc_core_pkg_types_models_organization import GithubComMonadIncCorePkgTypesModelsOrganization
+from monad.models.routes_v3_update_child_organization_request import RoutesV3UpdateChildOrganizationRequest
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.OrganizationsApi(api_client)
+    organization_id = 'organization_id_example' # str | Parent Organization ID
+    child_organization_id = 'child_organization_id_example' # str | Child Organization ID
+    routes_v3_update_child_organization_request = monad.RoutesV3UpdateChildOrganizationRequest() # RoutesV3UpdateChildOrganizationRequest | Request body
+
+    try:
+        # Update child organization
+        api_response = api_instance.v3_organization_id_organizations_child_organization_id_patch(organization_id, child_organization_id, routes_v3_update_child_organization_request)
+        print("The response of OrganizationsApi->v3_organization_id_organizations_child_organization_id_patch:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->v3_organization_id_organizations_child_organization_id_patch: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Parent Organization ID | 
+ **child_organization_id** | **str**| Child Organization ID | 
+ **routes_v3_update_child_organization_request** | [**RoutesV3UpdateChildOrganizationRequest**](RoutesV3UpdateChildOrganizationRequest.md)| Request body | 
+
+### Return type
+
+[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Updated child organization |  -  |
+**400** | Invalid request body |  -  |
+**404** | Child organization not found |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

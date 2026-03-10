@@ -424,6 +424,7 @@ import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation
 import { RoutesV3TransformOperationWithRationale } from '../models/RoutesV3TransformOperationWithRationale';
 import { RoutesV3TransformRecommendationRequest } from '../models/RoutesV3TransformRecommendationRequest';
 import { RoutesV3UpdateAlertRuleRequest } from '../models/RoutesV3UpdateAlertRuleRequest';
+import { RoutesV3UpdateChildOrganizationRequest } from '../models/RoutesV3UpdateChildOrganizationRequest';
 import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
@@ -3533,6 +3534,56 @@ export class PromiseOrganizationsApi {
     public v2OrganizationIdStorageTypeCostPut(organizationId: string, routesV2SetStorageTypeCostRequest: RoutesV2SetStorageTypeCostRequest, _options?: PromiseConfigurationOptions): Promise<ModelsStorageTypeCostConfig> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.v2OrganizationIdStorageTypeCostPut(organizationId, routesV2SetStorageTypeCostRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Delete a child organization under the given parent organization
+     * Delete child organization
+     * @param organizationId Parent Organization ID
+     * @param childOrganizationId Child Organization ID
+     */
+    public v3OrganizationIdOrganizationsChildOrganizationIdDeleteWithHttpInfo(organizationId: string, childOrganizationId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<void>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdOrganizationsChildOrganizationIdDeleteWithHttpInfo(organizationId, childOrganizationId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Delete a child organization under the given parent organization
+     * Delete child organization
+     * @param organizationId Parent Organization ID
+     * @param childOrganizationId Child Organization ID
+     */
+    public v3OrganizationIdOrganizationsChildOrganizationIdDelete(organizationId: string, childOrganizationId: string, _options?: PromiseConfigurationOptions): Promise<void> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdOrganizationsChildOrganizationIdDelete(organizationId, childOrganizationId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update a child organization under the given parent organization
+     * Update child organization
+     * @param organizationId Parent Organization ID
+     * @param childOrganizationId Child Organization ID
+     * @param routesV3UpdateChildOrganizationRequest Request body
+     */
+    public v3OrganizationIdOrganizationsChildOrganizationIdPatchWithHttpInfo(organizationId: string, childOrganizationId: string, routesV3UpdateChildOrganizationRequest: RoutesV3UpdateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<GithubComMonadIncCorePkgTypesModelsOrganization>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdOrganizationsChildOrganizationIdPatchWithHttpInfo(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Update a child organization under the given parent organization
+     * Update child organization
+     * @param organizationId Parent Organization ID
+     * @param childOrganizationId Child Organization ID
+     * @param routesV3UpdateChildOrganizationRequest Request body
+     */
+    public v3OrganizationIdOrganizationsChildOrganizationIdPatch(organizationId: string, childOrganizationId: string, routesV3UpdateChildOrganizationRequest: RoutesV3UpdateChildOrganizationRequest, _options?: PromiseConfigurationOptions): Promise<GithubComMonadIncCorePkgTypesModelsOrganization> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.v3OrganizationIdOrganizationsChildOrganizationIdPatch(organizationId, childOrganizationId, routesV3UpdateChildOrganizationRequest, observableOptions);
         return result.toPromise();
     }
 

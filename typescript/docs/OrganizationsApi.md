@@ -16,6 +16,8 @@ Method | HTTP request | Description
 [**v2OrganizationIdMetricsStorageTypesSummaryGet**](OrganizationsApi.md#v2OrganizationIdMetricsStorageTypesSummaryGet) | **GET** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary
 [**v2OrganizationIdStorageTypeCostGet**](OrganizationsApi.md#v2OrganizationIdStorageTypeCostGet) | **GET** /v2/{organization_id}/storage-type-cost | Get storage type cost
 [**v2OrganizationIdStorageTypeCostPut**](OrganizationsApi.md#v2OrganizationIdStorageTypeCostPut) | **PUT** /v2/{organization_id}/storage-type-cost | Set storage type cost
+[**v3OrganizationIdOrganizationsChildOrganizationIdDelete**](OrganizationsApi.md#v3OrganizationIdOrganizationsChildOrganizationIdDelete) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization
+[**v3OrganizationIdOrganizationsChildOrganizationIdPatch**](OrganizationsApi.md#v3OrganizationIdOrganizationsChildOrganizationIdPatch) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization
 [**v3OrganizationIdOrganizationsGet**](OrganizationsApi.md#v3OrganizationIdOrganizationsGet) | **GET** /v3/{organization_id}/organizations | List child organizations
 [**v3OrganizationIdOrganizationsPost**](OrganizationsApi.md#v3OrganizationIdOrganizationsPost) | **POST** /v3/{organization_id}/organizations | Create child organization
 
@@ -790,6 +792,129 @@ Name | Type | Description  | Notes
 **200** | Updated storage type cost |  -  |
 **400** | Bad request |  -  |
 **404** | Organization not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v3OrganizationIdOrganizationsChildOrganizationIdDelete**
+> void v3OrganizationIdOrganizationsChildOrganizationIdDelete()
+
+Delete a child organization under the given parent organization
+
+### Example
+
+
+```typescript
+import { createConfiguration, OrganizationsApi } from '';
+import type { OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdDeleteRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new OrganizationsApi(configuration);
+
+const request: OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdDeleteRequest = {
+    // Parent Organization ID
+  organizationId: "organization_id_example",
+    // Child Organization ID
+  childOrganizationId: "child_organization_id_example",
+};
+
+const data = await apiInstance.v3OrganizationIdOrganizationsChildOrganizationIdDelete(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Parent Organization ID | defaults to undefined
+ **childOrganizationId** | [**string**] | Child Organization ID | defaults to undefined
+
+
+### Return type
+
+**void**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Child organization deleted successfully |  -  |
+**404** | Child organization not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v3OrganizationIdOrganizationsChildOrganizationIdPatch**
+> GithubComMonadIncCorePkgTypesModelsOrganization v3OrganizationIdOrganizationsChildOrganizationIdPatch(routesV3UpdateChildOrganizationRequest)
+
+Update a child organization under the given parent organization
+
+### Example
+
+
+```typescript
+import { createConfiguration, OrganizationsApi } from '';
+import type { OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdPatchRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new OrganizationsApi(configuration);
+
+const request: OrganizationsApiV3OrganizationIdOrganizationsChildOrganizationIdPatchRequest = {
+    // Parent Organization ID
+  organizationId: "organization_id_example",
+    // Child Organization ID
+  childOrganizationId: "child_organization_id_example",
+    // Request body
+  routesV3UpdateChildOrganizationRequest: {
+    description: "description_example",
+    name: "name_example",
+  },
+};
+
+const data = await apiInstance.v3OrganizationIdOrganizationsChildOrganizationIdPatch(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **routesV3UpdateChildOrganizationRequest** | **RoutesV3UpdateChildOrganizationRequest**| Request body |
+ **organizationId** | [**string**] | Parent Organization ID | defaults to undefined
+ **childOrganizationId** | [**string**] | Child Organization ID | defaults to undefined
+
+
+### Return type
+
+**GithubComMonadIncCorePkgTypesModelsOrganization**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Updated child organization |  -  |
+**400** | Invalid request body |  -  |
+**404** | Child organization not found |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

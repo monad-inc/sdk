@@ -16,6 +16,8 @@ Method | HTTP request | Description
 [**V2OrganizationIdMetricsStorageTypesSummaryGet**](OrganizationsAPI.md#V2OrganizationIdMetricsStorageTypesSummaryGet) | **Get** /v2/{organization_id}/metrics/storage-types/summary | Get storage type cost summary
 [**V2OrganizationIdStorageTypeCostGet**](OrganizationsAPI.md#V2OrganizationIdStorageTypeCostGet) | **Get** /v2/{organization_id}/storage-type-cost | Get storage type cost
 [**V2OrganizationIdStorageTypeCostPut**](OrganizationsAPI.md#V2OrganizationIdStorageTypeCostPut) | **Put** /v2/{organization_id}/storage-type-cost | Set storage type cost
+[**V3OrganizationIdOrganizationsChildOrganizationIdDelete**](OrganizationsAPI.md#V3OrganizationIdOrganizationsChildOrganizationIdDelete) | **Delete** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization
+[**V3OrganizationIdOrganizationsChildOrganizationIdPatch**](OrganizationsAPI.md#V3OrganizationIdOrganizationsChildOrganizationIdPatch) | **Patch** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization
 [**V3OrganizationIdOrganizationsGet**](OrganizationsAPI.md#V3OrganizationIdOrganizationsGet) | **Get** /v3/{organization_id}/organizations | List child organizations
 [**V3OrganizationIdOrganizationsPost**](OrganizationsAPI.md#V3OrganizationIdOrganizationsPost) | **Post** /v3/{organization_id}/organizations | Create child organization
 
@@ -908,6 +910,152 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ModelsStorageTypeCostConfig**](ModelsStorageTypeCostConfig.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V3OrganizationIdOrganizationsChildOrganizationIdDelete
+
+> V3OrganizationIdOrganizationsChildOrganizationIdDelete(ctx, organizationId, childOrganizationId).Execute()
+
+Delete child organization
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Parent Organization ID
+	childOrganizationId := "childOrganizationId_example" // string | Child Organization ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OrganizationsAPI.V3OrganizationIdOrganizationsChildOrganizationIdDelete(context.Background(), organizationId, childOrganizationId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.V3OrganizationIdOrganizationsChildOrganizationIdDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Parent Organization ID | 
+**childOrganizationId** | **string** | Child Organization ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV3OrganizationIdOrganizationsChildOrganizationIdDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V3OrganizationIdOrganizationsChildOrganizationIdPatch
+
+> GithubComMonadIncCorePkgTypesModelsOrganization V3OrganizationIdOrganizationsChildOrganizationIdPatch(ctx, organizationId, childOrganizationId).RoutesV3UpdateChildOrganizationRequest(routesV3UpdateChildOrganizationRequest).Execute()
+
+Update child organization
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Parent Organization ID
+	childOrganizationId := "childOrganizationId_example" // string | Child Organization ID
+	routesV3UpdateChildOrganizationRequest := *openapiclient.NewRoutesV3UpdateChildOrganizationRequest() // RoutesV3UpdateChildOrganizationRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OrganizationsAPI.V3OrganizationIdOrganizationsChildOrganizationIdPatch(context.Background(), organizationId, childOrganizationId).RoutesV3UpdateChildOrganizationRequest(routesV3UpdateChildOrganizationRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationsAPI.V3OrganizationIdOrganizationsChildOrganizationIdPatch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V3OrganizationIdOrganizationsChildOrganizationIdPatch`: GithubComMonadIncCorePkgTypesModelsOrganization
+	fmt.Fprintf(os.Stdout, "Response from `OrganizationsAPI.V3OrganizationIdOrganizationsChildOrganizationIdPatch`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Parent Organization ID | 
+**childOrganizationId** | **string** | Child Organization ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV3OrganizationIdOrganizationsChildOrganizationIdPatchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **routesV3UpdateChildOrganizationRequest** | [**RoutesV3UpdateChildOrganizationRequest**](RoutesV3UpdateChildOrganizationRequest.md) | Request body | 
+
+### Return type
+
+[**GithubComMonadIncCorePkgTypesModelsOrganization**](GithubComMonadIncCorePkgTypesModelsOrganization.md)
 
 ### Authorization
 

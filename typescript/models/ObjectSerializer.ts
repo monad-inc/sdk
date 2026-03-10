@@ -420,6 +420,7 @@ export * from '../models/RoutesV3TransformOperation';
 export * from '../models/RoutesV3TransformOperationWithRationale';
 export * from '../models/RoutesV3TransformRecommendationRequest';
 export * from '../models/RoutesV3UpdateAlertRuleRequest';
+export * from '../models/RoutesV3UpdateChildOrganizationRequest';
 export * from '../models/RoutesV3UpdateConnectionRequest';
 export * from '../models/RoutesV3UpdateEnrichmentRequest';
 export * from '../models/S3SecretsConfig';
@@ -958,6 +959,7 @@ import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation
 import { RoutesV3TransformOperationWithRationale } from '../models/RoutesV3TransformOperationWithRationale';
 import { RoutesV3TransformRecommendationRequest } from '../models/RoutesV3TransformRecommendationRequest';
 import { RoutesV3UpdateAlertRuleRequest } from '../models/RoutesV3UpdateAlertRuleRequest';
+import { RoutesV3UpdateChildOrganizationRequest } from '../models/RoutesV3UpdateChildOrganizationRequest';
 import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
@@ -1528,6 +1530,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3TransformOperationWithRationale": RoutesV3TransformOperationWithRationale,
     "RoutesV3TransformRecommendationRequest": RoutesV3TransformRecommendationRequest,
     "RoutesV3UpdateAlertRuleRequest": RoutesV3UpdateAlertRuleRequest,
+    "RoutesV3UpdateChildOrganizationRequest": RoutesV3UpdateChildOrganizationRequest,
     "RoutesV3UpdateConnectionRequest": RoutesV3UpdateConnectionRequest,
     "RoutesV3UpdateEnrichmentRequest": RoutesV3UpdateEnrichmentRequest,
     "S3SecretsConfig": S3SecretsConfig,
