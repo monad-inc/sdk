@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Wiz Audit Logs settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T14:47:20.085657341Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T15:11:59.259059170Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class WizAuditLogsSettingsConfig {
   public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
   @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
